@@ -1,0 +1,114 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: accessControl
+  name: 'Role-based access control '
+  href: Documentation/Access_Control.html
+- uid: accountApplications
+  name: Applications
+  href: Documentation/Management/Account_Applications.html
+- uid: accountNamespace
+  name: Namespace
+  href: Documentation/Management/Account_Namespace.html
+- uid: AccountNamespaceTier
+  name: NamespaceTier
+  href: Documentation/Management/Account_NamespaceTier.html
+- uid: accountRole
+  name: Role
+  href: Documentation/Management/Account_Role.html
+- uid: accountRootAccessControl
+  name: RootAccessControl
+  href: Documentation/Management/Account_RootAccessControl.html
+- uid: accountServiceBlog
+  name: ServiceBlog
+  href: Documentation/Management/Account_ServiceBlog.html
+- uid: accountTenant
+  name: Tenant
+  href: Documentation/Management/Account_Tenant.html
+- uid: accountUser
+  name: User
+  href: Documentation/Management/Account_User.html
+- uid: dataIngress
+  name: Data Ingress and OSIsoft Message Format
+  href: Documentation/DataIngress/Data_Ingress.html
+- uid: index
+  name: Welcome
+  href: index.html
+- uid: managementOverview
+  name: Management
+  href: Documentation/Management/Management_Overview.html
+- uid: omfIngressPublishers
+  name: Publishers
+  href: Documentation/DataIngress/OMF_Ingress_Publishers.html
+- uid: omfIngressSpecification
+  name: Using OMF with Cloud Services
+  href: Documentation/DataIngress/OMF_Ingress_Specification.html
+- uid: omfIngressSubsctriptions
+  name: 'Subscriptions '
+  href: Documentation/DataIngress/OMF_Ingress_Subscriptions.html
+- uid: omfIngressToOCS
+  name: Data ingress to Cloud Services using OMF
+  href: Documentation/DataIngress/OMF_Ingress_to_OCS.html
+- uid: omfIngressTopics
+  name: 'Topics '
+  href: Documentation/DataIngress/OMF_Ingress_Topics.html
+- uid: osisoftCloudServices
+  name: OSIsoft Cloud Services
+  href: Documentation/OSIsoft_Cloud_Services.html
+- uid: samples
+  name: Samples
+  href: Documentation/samples.html
+- uid: sds
+  name: Sequential data store
+  href: Documentation/SequentialDataStore/Data_Store_and_Qi.html
+- uid: sdsCompression
+  name: Compression
+  href: Documentation/SequentialDataStore/Compression.html
+- uid: sdsFilterExpressions
+  name: Filter Expressions
+  href: Documentation/SequentialDataStore/Filter_Expressions.html
+- uid: sdsIndexes
+  name: Indexes
+  href: Documentation/SequentialDataStore/indexes.html
+- uid: sdsIntroduction
+  name: Introducing the Sequential Data Store
+  href: Documentation/SequentialDataStore/Introducing_Qi.html
+- uid: sdsQuickStart
+  name: Quick start
+  href: Documentation/SequentialDataStore/Quick_Start.html
+- uid: sdsReadingData
+  name: Reading data
+  href: Documentation/SequentialDataStore/Reading_Data.html
+- uid: sdsReadingDataApi
+  name: API calls for reading data
+  href: Documentation/SequentialDataStore/Reading_Data_API.html
+- uid: sdsSearching
+  name: Searching for streams
+  href: Documentation/SequentialDataStore/Searching.html
+- uid: sdsStreamExtra
+  name: Stream Metadata and Tags
+  href: Documentation/SequentialDataStore/QiStreamExtra.html
+- uid: sdsStreams
+  name: Streams
+  href: Documentation/SequentialDataStore/Qi_Streams.html
+- uid: sdsStreamsApi
+  name: QiStream API
+  href: Documentation/SequentialDataStore/Qi_Streams_API.html
+- uid: sdsTableFormat
+  name: Table format
+  href: Documentation/SequentialDataStore/table_format.html
+- uid: sdsTypes
+  name: Types
+  href: Documentation/SequentialDataStore/Qi_Types.html
+- uid: sdsViews
+  name: Sds Views
+  href: Documentation/SequentialDataStore/Qi_Views.html
+- uid: sdsWritingData
+  name: Writing data
+  href: Documentation/SequentialDataStore/Writing_Data.html
+- uid: sdsWritingDataApi
+  name: API calls for writing data
+  href: Documentation/SequentialDataStore/Writing_Data_API.html
+- uid: support
+  name: Getting support
+  href: Documentation/support.html

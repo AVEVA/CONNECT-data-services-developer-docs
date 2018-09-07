@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Namespace </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Namespace ">
+    <meta name="generator" content="docfx 2.36.2.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" src="../../images/atlas_icon.png" alt="">
+              </a>    </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="accountNamespace">
+<h1 id="namespace">Namespace</h1>
+
+<p>A Namespace is a collection of Data Streams.</p>
+<pre><code>For HTTP requests and responses, the Namespace object has the following properties and JSON-serialized body: 
+</code></pre><h4 id="namespaceobj">NamespaceObj</h4>
+<p><code>string Id</code>
+    Name of this Namespace. Unique within a Tenant&#39;s Namespaces.
+<code>string TenantId</code>
+    GUID of the Tenant that this Namespace corresponds to
+<code>string Description</code>
+    Description of this Namespace.
+<code>string TierId</code>
+    Id of the Tier that this Namespace is associated with.
+<code>int32 ThroughputUnits</code>
+    Number of Throughput units for this Namespace.
+<code>int32 StorageUnits</code>
+    Number of Storage units for this Namespace.
+<code>NamespaceProvisioningState State</code>
+    Current state of this Namespace.
+<code>OwnerTrustee Owner</code>
+    Owner <a class="xref" href="../Access_Control.html#trusteeobj">Trustee</a> of this Namespace.
+<code>AccessControlList AccessControlList</code>
+    Access Control List.</p>
+<p>.. highlight:: C#</p>
+<pre><code>    HTTP/1.1 200
+    Content-Type: application/json
+
+ {
+    &quot;Id&quot;: &quot;id&quot;,
+    &quot;TenantId&quot;: &quot;tenantid&quot;,
+    &quot;Description&quot;: &quot;description&quot;,
+    &quot;TierId&quot;: &quot;tierid&quot;,
+    &quot;ThroughputUnits&quot;: 0,
+    &quot;StorageUnits&quot;: 0,
+    &quot;State&quot;: 0,
+    &quot;Owner&quot;:  {
+        &quot;Type&quot;: 2,
+        &quot;TenantId&quot;: &quot;string&quot;,
+        &quot;ApplicationId&quot;: &quot;string&quot;
+     },
+    &quot;AccessControlList&quot;:  {
+        &quot;RoleTrusteeAccessControlEntries&quot;: []
+     }
+ }
+</code></pre><hr>
+<h2 id="getall"><code>GetAll()</code></h2>
+<p>Returns all <a href="#namespaceobj">Namespaces</a> owned by the specified tenant that the caller has access to.</p>
+<p><strong>Http</strong></p>
+<pre><code>    GET api/Tenants/{tenantId}/Namespaces
+</code></pre><p><strong>Parameters</strong></p>
+<p><code>string tenantId</code>
+    The <a class="xref" href="Account_Tenant.html#tenantobj">Tenant</a> identifier for the request.</p>
+<p><strong>Security</strong><br>A <a href="#namespaceobj">Namespace</a> can only be retrieved if the current principle has Read access.</p>
+<p><strong>Returns</strong><br>An array of all <a href="#namespaceobj">Namespace</a> objects for the specified tenantId that the caller has access.</p>
+<hr>
+<h2 id="getnamespacebyid"><code>GetNamespaceById()</code></h2>
+<p>Returns the Namespace with the specified Id.</p>
+<p><strong>Http</strong></p>
+<pre><code>    GET api/Tenants/{tenantId}/Namespaces/{namespaceId}
+</code></pre><p><strong>Parameters</strong></p>
+<p><code>string tenantId</code>
+    The account identifier for the request
+<code>string namespaceId</code>
+    The Namespace identifier for this request</p>
+<p><strong>Security</strong><br>A <a href="#namespaceobj">Namespace</a> can only be retrieved if the current principle has Read access.</p>
+<p><strong>Returns</strong><br>A <a href="#namespaceobj">Namespace</a> object with the specified namespaceId</p>
+<hr>
+<h2 id="create"><code>Create()</code></h2>
+<p>Creates a namespace.</p>
+<p><strong>Http</strong></p>
+<pre><code>    POST api/Tenants/{tenantId}/Namespaces
+</code></pre><p><strong>Parameters</strong></p>
+<p><code>string tenantId</code>
+    The idenfifier for the account the namespace is to be created for.
+<code>Namespace namespaceObj</code>
+    The <a href="#namespaceobj">Namespace</a> to be created.</p>
+<p><strong>Security</strong><br>A <a href="#namespaceobj">Namespace</a> can only be create if the current principle has Write access.</p>
+<p><strong>Returns</strong><br>The created <a href="#namespaceobj">Namespace</a> object</p>
+<hr>
+<h2 id="update"><code>Update()</code></h2>
+<p>Updates Namespace information - Description, TierId, AccessControl, and Owner.</p>
+<p><strong>Http</strong></p>
+<pre><code>    PUT api/Tenants/{tenantId}/Namespaces/{namespaceId}
+</code></pre><p><strong>Parameters</strong></p>
+<p><code>string tenantId</code>
+    The identifier of Namespace&#39;s Account.
+<code>string namespaceId</code>
+    The identifier for the Namespace to update.
+<code>Namespace newProperties</code>
+    The new details to store for the Namespace.</p>
+<p><strong>Security</strong><br>A <a href="#namespaceobj">Namespace</a> can only be updated if the current principle has Write access.
+            The AccessControlList and Owner can only be updated if the current principle has ManageAccessControl access.</p>
+<p><strong>Returns</strong><br>The updated <a href="#namespaceobj">Namespace</a>.</p>
+<hr>
+<h2 id="delete"><code>Delete()</code></h2>
+<p>Deletes a namespace.</p>
+<p><strong>Http</strong></p>
+<pre><code>    DELETE api/Tenants/{tenantId}/Namespaces/{namespaceId}
+</code></pre><p><strong>Parameters</strong></p>
+<p><code>string tenantId</code>
+    The identifier of namespace&#39;s account
+<code>string namespaceId</code>
+    The identifier of the namespace to be deleted</p>
+<p><strong>Security</strong><br>A <a href="#namespaceobj">Namespace</a> can only be deleted if the current principle has Delete access.</p>
+<p><strong>Returns</strong><br>Nothing is returned</p>
+<hr>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/hunterkipt/OCS-Docs/blob/master/Documentation/Management/Account_Namespace.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+            <span id='copyright-text'>© 2018 - OSIsoft, LLC.<span>
+        </span></span></div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

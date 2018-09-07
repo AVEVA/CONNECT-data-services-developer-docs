@@ -1,0 +1,646 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Users/hkippen.OSI/Documents/Qi-Docs-MD",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/Access_Control.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/Access_Control.html",
+          "hash": "ORK5c806RGnkwEdIACjngg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/DataIngress/Data_Ingress.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/DataIngress/Data_Ingress.html",
+          "hash": "8ghj6nBuz8fREQ/5l+NYNg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/DataIngress/OMF_Ingress_Publishers.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/DataIngress/OMF_Ingress_Publishers.html",
+          "hash": "RmPeW04AmradEnMipcgbgw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/DataIngress/OMF_Ingress_Specification.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/DataIngress/OMF_Ingress_Specification.html",
+          "hash": "xtgeEI9mFtP40DHTxj/vBQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/DataIngress/OMF_Ingress_Subscriptions.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/DataIngress/OMF_Ingress_Subscriptions.html",
+          "hash": "6g3En/OgnKCIaYDBj48oAA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/DataIngress/OMF_Ingress_Topics.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/DataIngress/OMF_Ingress_Topics.html",
+          "hash": "Cd/LfDzQvbWyWhIxThvzSw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/DataIngress/OMF_Ingress_to_OCS.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/DataIngress/OMF_Ingress_to_OCS.html",
+          "hash": "zqtyWcRgQMSQQqfCUgu65g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/Management/Account_Applications.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/Management/Account_Applications.html",
+          "hash": "+eVJxFaPTYTjvo75tyN1dw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/Management/Account_Namespace.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/Management/Account_Namespace.html",
+          "hash": "Wl7e5R5WZQH37sgolvKFOQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/Management/Account_NamespaceTier.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/Management/Account_NamespaceTier.html",
+          "hash": "qrEqbe9aufJj61YKRGvxuw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/Management/Account_Role.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/Management/Account_Role.html",
+          "hash": "8nGFYS6LWNGpEIEG3VF2Pg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/Management/Account_RootAccessControl.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/Management/Account_RootAccessControl.html",
+          "hash": "NRbDcqaLJ/q+e+mocsX/Dg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/Management/Account_ServiceBlog.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/Management/Account_ServiceBlog.html",
+          "hash": "Vwwj4+Zyu5LMhsOY+ScXpw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/Management/Account_Tenant.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/Management/Account_Tenant.html",
+          "hash": "Khv0NiALOukPjCRuogkTbA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/Management/Account_User.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/Management/Account_User.html",
+          "hash": "2DE0utK+gSfwuc5itYnT8A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/Management/Management_Overview.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/Management/Management_Overview.html",
+          "hash": "+zWsnErvO7DefXEuBgSUPA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/OSIsoft_Cloud_Services.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/OSIsoft_Cloud_Services.html",
+          "hash": "nLrbxkCoU/lR01OTXyKuRQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/SequentialDataStore/Compression.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/SequentialDataStore/Compression.html",
+          "hash": "4keZ/1mauu3MIi2TzwLeaA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/SequentialDataStore/Data_Store_and_Qi.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/SequentialDataStore/Data_Store_and_Qi.html",
+          "hash": "+FdJSzxT4qa/LZtKssJc1g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/SequentialDataStore/Filter_Expressions.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/SequentialDataStore/Filter_Expressions.html",
+          "hash": "6EoN2v4fc/PoYcB/ZF9L1w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/SequentialDataStore/Introducing_Qi.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/SequentialDataStore/Introducing_Qi.html",
+          "hash": "/KhvBAg3pwGzZOGGLraBaw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/SequentialDataStore/QiStreamExtra.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/SequentialDataStore/QiStreamExtra.html",
+          "hash": "M1o35HpQThcqRDqVflP9FQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/SequentialDataStore/Qi_Streams.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/SequentialDataStore/Qi_Streams.html",
+          "hash": "wVkplliORA1wQg/ScSaCvw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/SequentialDataStore/Qi_Streams_API.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/SequentialDataStore/Qi_Streams_API.html",
+          "hash": "yG7RtZ9GAn35RIBj1EGfPQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/SequentialDataStore/Qi_Types.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/SequentialDataStore/Qi_Types.html",
+          "hash": "y/EYUDVA3ok9lCBTBNmSzA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/SequentialDataStore/Qi_Views.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/SequentialDataStore/Qi_Views.html",
+          "hash": "gG1bHi6T3ldta5wia7bU6A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/SequentialDataStore/Quick_Start.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/SequentialDataStore/Quick_Start.html",
+          "hash": "XNrgTiU7PUDKR6ECshJaSw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/SequentialDataStore/Reading_Data.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/SequentialDataStore/Reading_Data.html",
+          "hash": "BGgobfC0+GNgkSF0xZwb1A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/SequentialDataStore/Reading_Data_API.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/SequentialDataStore/Reading_Data_API.html",
+          "hash": "vAD8HEpYv9RP3U+jRuXYrg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/SequentialDataStore/Searching.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/SequentialDataStore/Searching.html",
+          "hash": "N/6fnRFVtB+VFWU/6EezYA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/SequentialDataStore/Writing_Data.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/SequentialDataStore/Writing_Data.html",
+          "hash": "qgb+XMl6S0MTXnYnzic8Og=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/SequentialDataStore/Writing_Data_API.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/SequentialDataStore/Writing_Data_API.html",
+          "hash": "ESQUSvGgky6Cg9MwI0LF1Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/SequentialDataStore/indexes.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/SequentialDataStore/indexes.html",
+          "hash": "pDK3DqPOa1uJy/AyWS1v/g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/SequentialDataStore/table_format.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/SequentialDataStore/table_format.html",
+          "hash": "5SU3DWW1Sfvo962JooAPyA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Documentation/images/Acquire_Client_Key.png",
+      "output": {
+        "resource": {
+          "relative_path": "Documentation/images/Acquire_Client_Key.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Documentation/images/Acquire_Token.png",
+      "output": {
+        "resource": {
+          "relative_path": "Documentation/images/Acquire_Token.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Documentation/images/Add_Button.png",
+      "output": {
+        "resource": {
+          "relative_path": "Documentation/images/Add_Button.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Documentation/images/ContainersA.png",
+      "output": {
+        "resource": {
+          "relative_path": "Documentation/images/ContainersA.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Documentation/images/Containers_1A.png",
+      "output": {
+        "resource": {
+          "relative_path": "Documentation/images/Containers_1A.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Documentation/images/QiDataBehaviorsComplexType.PNG",
+      "output": {
+        "resource": {
+          "relative_path": "Documentation/images/QiDataBehaviorsComplexType.PNG"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Documentation/images/QiDataBehaviorsComplexTypeWithBehavior.PNG",
+      "output": {
+        "resource": {
+          "relative_path": "Documentation/images/QiDataBehaviorsComplexTypeWithBehavior.PNG"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Documentation/images/QiDataBehaviorsSimpleContinuous.PNG",
+      "output": {
+        "resource": {
+          "relative_path": "Documentation/images/QiDataBehaviorsSimpleContinuous.PNG"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Documentation/images/QiDataBehaviorsSimpleDiscrete.PNG",
+      "output": {
+        "resource": {
+          "relative_path": "Documentation/images/QiDataBehaviorsSimpleDiscrete.PNG"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Documentation/images/QiDataBehaviorsSimpleStepwiseContinuous1.PNG",
+      "output": {
+        "resource": {
+          "relative_path": "Documentation/images/QiDataBehaviorsSimpleStepwiseContinuous1.PNG"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Documentation/images/QiDataBehaviorsSimpleStepwiseContinuous2.PNG",
+      "output": {
+        "resource": {
+          "relative_path": "Documentation/images/QiDataBehaviorsSimpleStepwiseContinuous2.PNG"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Documentation/images/QiDataBehaviorsSimpleType.PNG",
+      "output": {
+        "resource": {
+          "relative_path": "Documentation/images/QiDataBehaviorsSimpleType.PNG"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/samples.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/samples.html",
+          "hash": "xcc8ykHJY6mfsOFlAgj6ng=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/support.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/support.html",
+          "hash": "Iq43RPvXLTQ0pIhl7nwwfA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "Documentation/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/toc.html",
+          "hash": "5qCewylkKu9y0keXgOjEPw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "FPk/0IEtgsSlYup1rnsntA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "KRdspRMk7FokzRXd2uZy9A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build"
+      },
+      "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build"
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "incrementalPhase": "postProcessing"
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

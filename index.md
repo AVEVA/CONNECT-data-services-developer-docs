@@ -5,8 +5,6 @@ uid: index
 Welcome
 =======
 
-# THIS IS A TEST!!! PLEASE IGNORE
-
 OSIsoft Cloud Services (OCS) is a highly flexible cloud-based platform that provides scalable, elastic,  
 centralized environment to aggregate data for reporting, advanced analytics, and third-party applications.
 

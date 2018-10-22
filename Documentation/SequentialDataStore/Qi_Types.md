@@ -1108,7 +1108,7 @@ Returns a list of types within a given namespace.
 
 **Request**
 
-        GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Types?skip={skip}&count={count}
+        GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Types?query={query}&skip={skip}&count={count}
 
 
 **Parameters**
@@ -1117,6 +1117,8 @@ Returns a list of types within a given namespace.
   The tenant identifier
 ``string namespaceId``
   The namespace identifier
+``string query``
+  An optional query string to filter which SdsTypes will be returned.  See the [Search](xref:sdsSearching#qisearchingtopic) topic for information about specifying the query parameter.
 ``int skip``
   An optional value representing the zero-based offset of the first SdsType to retrieve. If not specified, 
   a default value of 0 is used.
@@ -1194,7 +1196,7 @@ Returns a list of types within a given namespace.
 
 **.NET Library**
 
-      Task<IEnumerable<SdsType>> GetTypesAsync(int skip = 0, int count = 100);
+      Task<IEnumerable<SdsType>> GetTypesAsync(string query = "", int skip = 0, int count = 100);
 
 
 **Security**

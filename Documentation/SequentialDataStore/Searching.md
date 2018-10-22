@@ -7,11 +7,11 @@ uid: sdsSearching
 Searching for streams
 =====================
 
-``GetStreamsAsync`` is an overloaded method that is also used to search for and return streams (also see [Streams](xref:sdsStreams) for information about using ``GetStreamAsync`` to return streams). When you call an overloaded method, the software determines the most appropriate method to use by comparing the argument types specified in the call to the method definition.
+``GetStreamsAsync`` is an overloaded method that is also used to search for and return streams (also see [Streams](xref:sdsStreams) for information about using ``GetStreamsAsync`` to return streams). When you call an overloaded method, the software determines the most appropriate method to use by comparing the argument types specified in the call to the method definition.
 
 The syntax of the client libraries method is as follows:
 
-      _metadataService.GetStreamsAsync(string searchText, int skip, int count);
+      _metadataService.GetStreamsAsync(query:"QueryString", skip:0, count:100);
 
 
 Searching for streams is also possible using the REST API and specifying the optional ``query`` parameter, as shown here:
@@ -71,6 +71,22 @@ After the previous call, you can use the following call to return the remaining 
 
        _metadataService.GetStreamsAsync(“temperature*”, 100, 100) 
 
+
+Searching for types
+=====================
+
+Searching for types is very similar to searching for streams.  The query syntax is the same and the request parameters are the same.
+The only difference is the resource you're searching on, and the type properties that can be filtered on are different than
+on streams. See [Types](xref:sdsTypes) for more information.
+
+The syntax of the client libraries method is as follows:
+
+      _metadataService.GetTypesAsync(query:"QueryString", skip:0, count:100);
+
+
+Searching for types is also possible using the REST API and specifying the optional ``query`` parameter, as shown here:
+
+      GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Types?query={query}&skip={skip}&count={count}
 
 Search operators
 ----------------

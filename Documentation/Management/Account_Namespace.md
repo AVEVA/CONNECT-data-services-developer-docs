@@ -2,7 +2,8 @@
 uid: AccountNamespace
 ---
 
-# Namespace
+Namespace
+=======================================================
 
 A Namespace is a collection of Data Streams.
 

@@ -40,7 +40,7 @@ The number of Storage units associated with this Tier.
 ```
 ***
 
-### `GetNamespaceTier()`
+## `GetNamespaceTier()`
 
 Retrieves a Namespace tier associated with a specified id
 
@@ -64,7 +64,7 @@ Allowed by Account Member [`Role <RoleObj>`](Account_Role.md)
 A `NamespaceTier <NamespaceTier>` object with the specified namespaceTierId
 
 ***
-### `GetAllNamespaceTiers()`
+## `GetAllNamespaceTiers()`
 
 Retrieves a list of all available namespace tiers.
 

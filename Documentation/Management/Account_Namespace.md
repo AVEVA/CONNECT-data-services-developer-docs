@@ -98,7 +98,7 @@ Access Control List.
 ```
 ***
 
-### `GetAll()`
+## `GetAll()`
 
 Returns all `Namespaces <Namespace>` owned by the specified tenant that the caller has access to.
 
@@ -128,7 +128,7 @@ An array of all `Namespace <Namespace>` objects for the specified tenantId that 
 
 
 ***
-### `GetNamespaceById()`
+## `GetNamespaceById()`
 
 Returns the Namespace with the specified Id.
 
@@ -158,7 +158,7 @@ A `Namespace <Namespace>` object with the specified namespaceId
 
 
 ***
-### `Create()`
+## `Create()`
 
 Creates a namespace.
 
@@ -188,7 +188,7 @@ The created `Namespace <Namespace>` object.
 
 
 ***
-### `Update()`
+## `Update()`
 
 Updates Namespace information - Description, TierId, AccessControl, and Owner.
 
@@ -217,15 +217,14 @@ The new details to store for the Namespace.
 A `Namespace <Namespace>` can only be updated if the current principal has Write access.
 
 The `AccessControl <AccessControl>` and `OwnerTrustee <OwnerTrustee>` can only be updated if the current principal has Manage Access Control access.
-            
 
 **Returns**
 
 The updated `Namespace <Namespace>`.
 
-
 ***
-### `Delete()`
+
+## `Delete()`
 
 Deletes a namespace.
 
@@ -255,7 +254,7 @@ Nothing is returned.
 
 
 ***
-### `GetAccessControl()`
+## `GetAccessControl()`
 
 Gets the `AccessControlList <AccessControlList>` that is used to authorize access to a `Namespace <Namespace>`.
 
@@ -285,7 +284,7 @@ The `AccessControlList <AccessControlList>` for the `Namespace <Namespace>`.
 
 
 ***
-### `SetAccessControl()`
+## `SetAccessControl()`
 
 Edits the `AccessControlList <AccessControlList>` that is used to authorize access to a `Namespace <Namespace>`.
 
@@ -319,7 +318,7 @@ The updated `AccessControlList <AccessControlList>` for the `Namespace <Namespac
 
 
 ***
-### `GetOwner()`
+## `GetOwner()`
 
 Gets the `OwnerTrustee <OwnerTrustee>` for a given `Namespace <Namespace>`.
 
@@ -349,7 +348,7 @@ The `OwnerTrustee <OwnerTrustee>` of the `Namespace <Namespace>`.
 
 
 ***
-### `SetOwner()`
+## `SetOwner()`
 
 Changes the `OwnerTrustee <OwnerTrustee>` for a given `Namespace <Namespace>`.
 

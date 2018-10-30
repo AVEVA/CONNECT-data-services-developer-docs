@@ -216,7 +216,7 @@ The new details to store for the Namespace.
 
 A [`Namespace`](xref:AccountNamespace) can only be updated if the current principal has Write access.
 
-The [`AccessControl`](xref:accessControl#accessControlListobj) and [`OwnerTrustee`](xref:accessControl#trusteeobj) can only be updated if the current principal has Manage Access Control access.
+The [`AccessControl`](xref:accessControl#accesscontrollistobj) and [`OwnerTrustee`](xref:accessControl#trusteeobj) can only be updated if the current principal has Manage Access Control access.
 
 **Returns**
 

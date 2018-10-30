@@ -59,12 +59,12 @@ Current state of this Namespace.
 ```csharp
 OwnerTrustee Owner
 ```
-Owner `Trustee <Trustee>` of this Namespace.
+Owner [`Trustee`](xref:accessControl#trusteeobj) of this Namespace.
 
 ```csharp
 AccessControlList AccessControl
 ```
-The `AccessControlList <AccessControlList>` that defines Access Control for this `Namespace <Namespace>`
+The [`AccessControl`](xref:accessControl#accesscontrollistobj) that defines Access Control for this [`Namespace`](xref:AccountNamespace)
 
 ```csharp
 AccessControlList AccessControlList
@@ -100,7 +100,7 @@ Access Control List.
 
 ## `GetAll()`
 
-Returns all `Namespaces <Namespace>` owned by the specified tenant that the caller has access to.
+Returns all [`Namespaces`](xref:AccountNamespace) owned by the specified tenant that the caller has access to.
 
 **Http**
 
@@ -111,7 +111,7 @@ Returns all `Namespaces <Namespace>` owned by the specified tenant that the call
 ```csharp
 string tenantId
 ```
-The `Tenant <Tenant>` identifier for the request.
+The [`Tenant`](xref:accountTenant) identifier for the request.
 ```csharp
 string include
 ```
@@ -120,11 +120,11 @@ An optional parameter specifying which attatched properties to include
 
 **Security**
 
-A `Namespace <Namespace>` can only be retrieved if the current principal has Read access.
+A [`Namespace`](xref:AccountNamespace) can only be retrieved if the current principal has Read access.
 
 **Returns**
 
-An array of all `Namespace <Namespace>` objects for the specified tenantId that the caller has access.
+An array of all [`Namespace`](xref:AccountNamespace) objects for the specified tenantId that the caller has access.
 
 
 ***
@@ -150,11 +150,11 @@ The Namespace identifier for this request
 
 **Security**
 
-A `Namespace <Namespace>` can only be retrieved if the current principal has Read access.
+A [`Namespace`](xref:AccountNamespace) can only be retrieved if the current principal has Read access.
 
 **Returns**
 
-A `Namespace <Namespace>` object with the specified namespaceId
+A [`Namespace`](xref:AccountNamespace) object with the specified namespaceId
 
 
 ***
@@ -175,16 +175,16 @@ The identifier for the account the namespace is to be created for.
 ```csharp
 Namespace namespaceObj
 ```
-The `Namespace <Namespace>` to be created.
+The [`Namespace`](xref:AccountNamespace) to be created.
 
 
 **Security**
 
-A `Namespace <Namespace>` can only be created if the current principal has Write access.
+A [`Namespace`](xref:AccountNamespace) can only be created if the current principal has Write access.
 
 **Returns**
 
-The created `Namespace <Namespace>` object.
+The created [`Namespace`](xref:AccountNamespace) object.
 
 
 ***
@@ -214,13 +214,13 @@ The new details to store for the Namespace.
 
 **Security**
 
-A `Namespace <Namespace>` can only be updated if the current principal has Write access.
+A [`Namespace`](xref:AccountNamespace) can only be updated if the current principal has Write access.
 
-The `AccessControl <AccessControl>` and `OwnerTrustee <OwnerTrustee>` can only be updated if the current principal has Manage Access Control access.
+The [`AccessControl`](xref:accessControl#accessControlListobj) and [`OwnerTrustee`](xref:accessControl#trusteeobj) can only be updated if the current principal has Manage Access Control access.
 
 **Returns**
 
-The updated `Namespace <Namespace>`.
+The updated [`Namespace`](xref:AccountNamespace).
 
 ***
 
@@ -246,7 +246,7 @@ The identifier of the namespace to be deleted
 
 **Security**
 
-A `Namespace <Namespace>` can only be deleted if the current principal has Delete access.
+A [`Namespace`](xref:AccountNamespace) can only be deleted if the current principal has Delete access.
 
 **Returns**
 
@@ -256,7 +256,7 @@ Nothing is returned.
 ***
 ## `GetAccessControl()`
 
-Gets the `AccessControlList <AccessControlList>` that is used to authorize access to a `Namespace <Namespace>`.
+Gets the [`AccessControl`](xref:accessControl#accesscontrollistobj) that is used to authorize access to a [`Namespace`](xref:AccountNamespace).
 
 **Http**
 
@@ -271,7 +271,7 @@ The idenfifier of the account being accessed.
 ```csharp
 string namespaceId
 ```
-The identifier of the `Namespace <Namespace>` being accessed.
+The identifier of the [`Namespace`](xref:AccountNamespace) being accessed.
 
 
 **Security**
@@ -280,13 +280,13 @@ The identifier of the `Namespace <Namespace>` being accessed.
 
 **Returns**
 
-The `AccessControlList <AccessControlList>` for the `Namespace <Namespace>`.
+The [`AccessControl`](xref:accessControl#accesscontrollistobj) for the [`Namespace`](xref:AccountNamespace).
 
 
 ***
 ## `SetAccessControl()`
 
-Edits the `AccessControlList <AccessControlList>` that is used to authorize access to a `Namespace <Namespace>`.
+Edits the [`AccessControl`](xref:accessControl#accesscontrollistobj) that is used to authorize access to a [`Namespace`](xref:AccountNamespace).
 
 **Http**
 
@@ -301,11 +301,11 @@ The idenfifier of the account being modified.
 ```csharp
 string namespaceId
 ```
-The identifier of the `Namespace <Namespace>` being modified.
+The identifier of the [`Namespace`](xref:AccountNamespace) being modified.
 ```csharp
 AccessControlList newAccessControlList
 ```
-The new `AccessControlList <AccessControlList>` for the `Namespace <Namespace>`.
+The new [`AccessControlList`](xref:accessControl#accesscontrollistobj) for the [`Namespace`](xref:AccountNamespace).
 
 
 **Security**
@@ -314,13 +314,13 @@ The new `AccessControlList <AccessControlList>` for the `Namespace <Namespace>`.
 
 **Returns**
 
-The updated `AccessControlList <AccessControlList>` for the `Namespace <Namespace>`.
+The updated [`AccessControlList`](xref:accessControl#accesscontrollistobj) for the [`Namespace`](xref:AccountNamespace).
 
 
 ***
 ## `GetOwner()`
 
-Gets the `OwnerTrustee <OwnerTrustee>` for a given `Namespace <Namespace>`.
+Gets the [`OwnerTrustee`](xref:accessControl#trusteeobj) for a given [`Namespace`](xref:AccountNamespace).
 
 **Http**
 
@@ -335,7 +335,7 @@ The idenfifier of the account being accessed.
 ```csharp
 string namespaceId
 ```
-The identifier of the `Namespace <Namespace>` being accessed.
+The identifier of the [`Namespace`](xref:AccountNamespace) being accessed.
 
 
 **Security**
@@ -344,13 +344,13 @@ The identifier of the `Namespace <Namespace>` being accessed.
 
 **Returns**
 
-The `OwnerTrustee <OwnerTrustee>` of the `Namespace <Namespace>`.
+The [`OwnerTrustee`](xref:accessControl#trusteeobj) of the [`Namespace`](xref:AccountNamespace).
 
 
 ***
 ## `SetOwner()`
 
-Changes the `OwnerTrustee <OwnerTrustee>` for a given `Namespace <Namespace>`.
+Changes the [`OwnerTrustee`](xref:accessControl#trusteeobj) for a given [`Namespace`](xref:AccountNamespace).
 
 **Http**
 
@@ -365,11 +365,11 @@ The idenfifier of the account being edited.
 ```csharp
 string namespaceId
 ```
-The identifier of the `Namespace <Namespace>` being edited.
+The identifier of the [`Namespace`](xref:AccountNamespace) being edited.
 ```csharp
 OwnerTrustee newOwner
 ```
-The new `OwnerTrustee <OwnerTrustee>` for the `Namespace <Namespace>`.
+The new [`OwnerTrustee`](xref:accessControl#trusteeobj) for the [`Namespace`](xref:AccountNamespace).
 
 
 **Security**
@@ -378,18 +378,6 @@ The new `OwnerTrustee <OwnerTrustee>` for the `Namespace <Namespace>`.
 
 **Returns**
 
-The new `OwnerTrustee <OwnerTrustee>` of the `Namespace <Namespace>`.
-
-## Properties
-
-**Notes**
-
-For HTTP requests and responses, the OwnerTrustee object has the following properties and JSON-serialized body: 
-
-
-```json
-
-```
-
+The new [`OwnerTrustee`](xref:accessControl#trusteeobj) of the [`Namespace`](xref:AccountNamespace).
 
 ***

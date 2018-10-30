@@ -11,7 +11,7 @@ Apis to control default access to entities governed by an [`AccessControlList`](
 
 ### `GetRootNamespaceAcl()`
 
-Get the [`AccessControlList`](xref:accessControl#accesscontrollistobj) that is used to authorize access to a [`Namespace`](xref:accountNamespace) if none is specified during creation.
+Get the [`AccessControlList`](xref:accessControl#accesscontrollistobj) that is used to authorize access to a [`Namespace`](xref:AccountNamespace) if none is specified during creation.
 
 **Http**
 
@@ -37,7 +37,7 @@ The root `AccessControlList` for `Namespaces`.
 
 ### `SetRootNamespaceAcl()`
 
-Set the [`AccessControlList`](xref:accessControl#accesscontrollistobj) that is used to authorize access to a [`Namespace`](xref:accountNamespace) if none is specified during creation.
+Set the [`AccessControlList`](xref:accessControl#accesscontrollistobj) that is used to authorize access to a [`Namespace`](xref:AccountNamespace) if none is specified during creation.
 
 **Http**
 

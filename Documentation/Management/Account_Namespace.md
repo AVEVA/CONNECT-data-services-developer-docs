@@ -214,9 +214,9 @@ The new details to store for the Namespace.
 
 **Security**
 
+A `Namespace <Namespace>` can only be updated if the current principal has Write access.
 
-                A `Namespace <Namespace>` can only be updated if the current principal has `CommonAccessRights.Write <CommonAccessRights>` access.
-                The `AccessControl <AccessControl>` and `OwnerTrustee <OwnerTrustee>` can only be updated if the current principal has `CommonAccessRights.ManageAccessControl <CommonAccessRights>` access.
+The `AccessControl <AccessControl>` and `OwnerTrustee <OwnerTrustee>` can only be updated if the current principal has Manage Access Control access.
             
 
 **Returns**

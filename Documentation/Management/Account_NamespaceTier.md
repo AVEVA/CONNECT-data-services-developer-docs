@@ -57,11 +57,11 @@ The tier identifier for this request
 
 **Security**
 
-Allowed by Account Member [`Role <RoleObj>`](Account_Role.md)
+Allowed by Account Member [`Role`](xref:AccountRole)
 
 **Returns**
 
-A `NamespaceTier <NamespaceTier>` object with the specified namespaceTierId
+A `NamespaceTier` object with the specified namespaceTierId
 
 ***
 ## `GetAllNamespaceTiers()`
@@ -78,10 +78,10 @@ This API call does not have any parameters.
 
 **Security**
 
-Allowed by Account Member [`Role <RoleObj>`](Account_Role.md)
+Allowed by Account Member [`Role`](xref:AccountRole)
 
 **Returns**
 
-An array of `NamespaceTier <NamespaceTier>` objects
+An array of `NamespaceTier` objects
 
 ***

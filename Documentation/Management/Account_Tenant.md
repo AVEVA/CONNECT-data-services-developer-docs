@@ -77,16 +77,16 @@ Get a specific tenant by ID
 ```csharp
 string tenantId
 ```
-The `Tenant <Tenant>` identifier for this request
+The `Tenant` identifier for this request
 
 
 **Security**
 
-Allowed by Account Member [`Role <RoleObj>`](xref:AccountRole)
+Allowed by Account Member [`Role`](xref:AccountRole)
 
 **Returns**
 
-`Tenant <Tenant>` with the specified tenant ID
+`Tenant` with the specified tenant ID
 
 ***
 
@@ -103,12 +103,12 @@ Check if a tenant with a specific id exists
 ```csharp
 string tenantId
 ```
-The `Tenant <Tenant>` identifier for this request
+The `Tenant` identifier for this request
 
 
 **Security**
 
-Allowed by Account Member [`Role <RoleObj>`](xref:AccountRole)
+Allowed by Account Member [`Role`](xref:AccountRole)
 
 **Returns**
 
@@ -129,15 +129,15 @@ update tenant object
 ```csharp
 string tenantId
 ```
-The `Tenant <Tenant>` identifier for this request
+The `Tenant` identifier for this request
 ```csharp
 Tenant tenant
 ```
-The `Tenant <Tenant>` identifier for this request
+The `Tenant` identifier for this request
 
 **Security**
 
-Allowed by Account Administrator [`Role <RoleObj>`](xref:AccountRole)
+Allowed by Account Administrator [`Role`](xref:AccountRole)
 
 **Returns**
 

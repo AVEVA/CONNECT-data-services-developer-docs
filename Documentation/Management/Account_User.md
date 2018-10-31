@@ -91,11 +91,11 @@ The identifier for the user
 
 **Security**
 
-Allowed by Account Member and Account Administrator [`Roles <RoleObj>`](xref:AccountRole)
+Allowed by Account Member and Account Administrator [`Roles`](xref:AccountRole)
 
 **Returns**
 
-The `User <User>` with the specified userId
+The `User` with the specified userId
 
 ***
 
@@ -117,11 +117,11 @@ The identifier for the account
 
 **Security**
 
-Allowed by Account Administrator [`Role <RoleObj>`](xref:AccountRole)
+Allowed by Account Administrator [`Role`](xref:AccountRole)
 
 **Returns**
 
-An array of `User <User>` objects belonging to the account with the specified tenantId
+An array of `User` objects belonging to the account with the specified tenantId
 
 ***
 
@@ -142,16 +142,16 @@ The identifier for the account
 ```csharp
 CreateUser user
 ```
-`CreateUser <CreateUser>` object for this request
+`CreateUser` object for this request
 
 
 **Security**
 
-Allowed by Account Administrator [`Role <RoleObj>`](xref:AccountRole)
+Allowed by Account Administrator [`Role`](xref:AccountRole)
 
 **Returns**
 
-The created `User <User>`
+The created `User`
 
 ## Properties
 
@@ -246,7 +246,7 @@ The user identifier for the request
 ```csharp
 User user
 ```
-The `User <User>` to be updated
+The `User` to be updated
 
 
 **Security**
@@ -255,7 +255,7 @@ Cluster Operator, Account Administrator, or Account Member (self).
 
 **Returns**
 
-The updated `User <User>`
+The updated `User`
 
 ***
 
@@ -276,12 +276,12 @@ The identifier for the account in which the user belongs
 ```csharp
 string userId
 ```
-The `User <User>` to be deleted
+The `User` to be deleted
 
 
 **Security**
 
-Allowed by Account Administrator [`Role <RoleObj>`](xref:AccountRole)
+Allowed by Account Administrator [`Role`](xref:AccountRole)
 
 **Returns**
 
@@ -306,7 +306,7 @@ The identifier for the account in which the user belongs
 ```csharp
 string userId
 ```
-The identifier of the `User <User>` whose password is to be reset
+The identifier of the `User` whose password is to be reset
 
 
 **Security**
@@ -336,15 +336,15 @@ The identifier for the account in which the user belongs
 ```csharp
 string userId
 ```
-The identifier of the `User <User>` whose roles will be retrieved
+The identifier of the `User` whose roles will be retrieved
 ```csharp
 string skip
 ```
-Number of `Roles <Role>` to ignore
+Number of `Roles` to ignore
 ```csharp
 string count
 ```
-Number of `Roles <Role>` to be returned
+Number of `Roles` to be returned
 ```csharp
 string query
 ```
@@ -353,11 +353,11 @@ Unsupported parameter
 
 **Security**
 
-Allowed by Account Member and Account Administrator [`Roles <RoleObj>`](xref:AccountRole)
+Allowed by Account Member and Account Administrator [`Roles`](xref:AccountRole)
 
 **Returns**
 
-An array of `Role <Role>` objects belonging to the user with the specified userId.
+An array of `Role` objects belonging to the user with the specified userId.
 
 ***
 
@@ -378,20 +378,20 @@ The identifier for the account in which the user belongs
 ```csharp
 string userId
 ```
-The identifier of the `User <User>` who will be given the role
+The identifier of the `User` who will be given the role
 ```csharp
 string roleId
 ```
-The identifier of the role to add to the `User <User>`
+The identifier of the role to add to the `User`
 
 
 **Security**
 
-Allowed by Account Administrator [`Role <RoleObj>`](xref:AccountRole)
+Allowed by Account Administrator [`Role`](xref:AccountRole)
 
 **Returns**
 
-The `Role <Role>` with the specified roleId
+The `Role` with the specified roleId
 
 ***
 
@@ -412,16 +412,16 @@ The identifier for the account in which the user belongs
 ```csharp
 string userId
 ```
-The identifier of the `User <User>` whose role will be removed
+The identifier of the `User` whose role will be removed
 ```csharp
 string roleId
 ```
-The identifier of the role to remove from the `User <User>`
+The identifier of the role to remove from the `User`
 
 
 **Security**
 
-Allowed by Account Administrator [`Role <RoleObj>`](xref:AccountRole)
+Allowed by Account Administrator [`Role`](xref:AccountRole)
 
 **Returns**
 
@@ -446,20 +446,20 @@ The identifier for the account in which the user belongs
 ```csharp
 string userId
 ```
-The identifier of the `User <User>` whose roles will be replaced
+The identifier of the `User` whose roles will be replaced
 ```csharp
 [Role] newRoles
 ```
-From the body. An array of `Role <Role>` objects to set as the Roles for the specified user
+From the body. An array of `Role` objects to set as the Roles for the specified user
 
 
 **Security**
 
-Allowed by Account Administrator and Community Lead [`Roles <RoleObj>`](xref:AccountRole)
+Allowed by Account Administrator and Community Lead [`Roles`](xref:AccountRole)
 
 **Returns**
 
-An array of all `Role <Role>` objects assigned to the user specified by userId after the replacement operation is complete
+An array of all `Role` objects assigned to the user specified by userId after the replacement operation is complete
 
 ***
 
@@ -480,7 +480,7 @@ The identifier for the account in which the user belongs
 ```csharp
 string userId
 ```
-The identifier of the `User <User>` whose roles will be replaced
+The identifier of the `User` whose roles will be replaced
 
 
 **Security**
@@ -510,7 +510,7 @@ The identifier for the account in which the user belongs
 ```csharp
 string userId
 ```
-The identifier of the `User <User>` whose roles will be replaced
+The identifier of the `User` whose roles will be replaced
 ```csharp
 JObject preferences
 ```
@@ -557,10 +557,10 @@ Prefix match to filter users by, can be first name, last name, or email address.
 
 **Security**
 
-Allowed by Account Administrator [`Role <RoleObj>`](xref:AccountRole)
+Allowed by Account Administrator [`Role`](xref:AccountRole)
 
 **Returns**
 
-An array of `User <User>` objects that could be added to this account.
+An array of `User` objects that could be added to this account.
 
 ***

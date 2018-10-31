@@ -130,7 +130,7 @@ An array of all [`Namespace`](xref:AccountNamespace) objects for the specified t
 ***
 ## `GetNamespaceById()`
 
-Returns the Namespace with the specified Id.
+Returns the [`Namespace`](xref:AccountNamespace) with the specified Id.
 
 **Http**
 
@@ -175,22 +175,22 @@ The identifier for the account the namespace is to be created for.
 ```csharp
 Namespace namespaceObj
 ```
-The [`Namespace`](xref:AccountNamespace) to be created.
+The Namespace to be created.
 
 
 **Security**
 
-A [`Namespace`](xref:AccountNamespace) can only be created if the current principal has Write access.
+A Namespace can only be created if the current principal has Write access.
 
 **Returns**
 
-The created [`Namespace`](xref:AccountNamespace) object.
+The created Namespace object.
 
 
 ***
 ## `Update()`
 
-Updates Namespace information - Description, TierId, AccessControl, and Owner.
+Updates [`Namespace`](xref:AccountNamespace) information - Description, TierId, AccessControl, and Owner.
 
 **Http**
 
@@ -220,13 +220,13 @@ The [`AccessControl`](xref:accessControl#accesscontrollistobj) and [`OwnerTruste
 
 **Returns**
 
-The updated [`Namespace`](xref:AccountNamespace).
+The updated Namespace.
 
 ***
 
 ## `Delete()`
 
-Deletes a namespace.
+Deletes a [`Namespace`](xref:AccountNamespace).
 
 **Http**
 
@@ -246,7 +246,7 @@ The identifier of the namespace to be deleted
 
 **Security**
 
-A [`Namespace`](xref:AccountNamespace) can only be deleted if the current principal has Delete access.
+A Namespace can only be deleted if the current principal has Delete access.
 
 **Returns**
 

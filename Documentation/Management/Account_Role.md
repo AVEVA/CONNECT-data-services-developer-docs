@@ -83,7 +83,7 @@ Authorized for Account Administrator role
 
 **Returns**
 
-The `Role <Role>` with Id roleId
+The `Role` with Id roleId
 
 ***
 
@@ -104,11 +104,11 @@ The Account identifier for this request
 ```csharp
 string skip
 ```
-Number of `Roles <Role>` to ignore
+Number of `Roles` to ignore
 ```csharp
 string count
 ```
-Number of `Roles <Role>` to be returned
+Number of `Roles` to be returned
 ```csharp
 string query
 ```
@@ -121,7 +121,7 @@ Authorized for Account Member role
 
 **Returns**
 
-An array of `Role <Role>` objects 
+An array of `Role` objects 
 
 ***
 
@@ -142,7 +142,7 @@ The Account identifier for this request
 ```csharp
 Role role
 ```
-The `Role <Role>` for this request
+The `Role` for this request
 
 
 **Security**
@@ -151,13 +151,13 @@ Authorized for Account Administrator role
 
 **Returns**
 
-The `Role <Role>`
+The `Role` created
 
 ***
 
 ## `UpdateAccountRole()`
 
-Update a Role by its Role Id
+Update a `Role` by its Role Id
 
 **Http**
 
@@ -176,7 +176,7 @@ The Role identifier for this request.
 ```csharp
 Role role
 ```
-The `Role <Role>` for this request.
+The `Role` for this request.
 
 
 **Security**
@@ -185,7 +185,7 @@ Authorized for Account Administrator role
 
 **Returns**
 
-The `Role <Role>` with Id roleId
+The `Role` with Id roleId
 
 ***
 

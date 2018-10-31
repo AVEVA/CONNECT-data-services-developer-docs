@@ -9,7 +9,7 @@ Applications
 
 ## `CreateClientApiKeyForApplication()`
 
-Create a `ClientApiKeySet <ClientApiKeySet>` for the specified application.
+Create a `ClientApiKeySet` for the specified application.
 
 **Http**
 
@@ -28,22 +28,22 @@ ID of the application for this request
 ```csharp
 string description
 ```
-Description of the `ClientApiKeySet <ClientApiKeySet>`
+Description of the `ClientApiKeySet`
 
 
 **Security**
 
-Allowed by Account Administrator [`Role <RoleObj>`](xref:AccountRole)
+Allowed by Account Administrator [`Role`](xref:AccountRole)
 
 **Returns**
 
-The created `ClientApiKeySet <ClientApiKeySet>`
+The created `ClientApiKeySet`
 
 ***
 
 ## `GetClientApiKeyCollectionFromApplication()`
 
-Get the `ClientApiKeyCollection <ClientApiKeyCollection>` for the specified applicaiton.
+Get the `ClientApiKeyCollection` for the specified applicaiton.
 
 **Http**
 
@@ -63,17 +63,17 @@ ID of the application for this request
 
 **Security**
 
-Allowed by Account Administrator [`Role <RoleObj>`](xref:AccountRole)
+Allowed by Account Administrator [`Role`](xref:AccountRole)
 
 **Returns**
 
-`ClientApiKeyCollection <ClientApiKeyCollection>` for the specified applicaiton.
+`ClientApiKeyCollection` for the specified applicaiton.
 
 ***
 
 ## `DeleteClientApiKeyFromApplication()`
 
-Delete a specified `ClientApiKeySet <ClientApiKeySet>`.
+Delete a specified `ClientApiKeySet`.
 
 **Http**
 
@@ -92,16 +92,16 @@ ID of the application for this request
 ```csharp
 string keyId
 ```
-ID of the `ClientApiKeySet <ClientApiKeySet>` to be deleted.
+ID of the `ClientApiKeySet` to be deleted.
 
 
 **Security**
 
-Allowed by Account Administrator [`Role <RoleObj>`](xref:AccountRole)
+Allowed by Account Administrator [`Role`](xref:AccountRole)
 
 **Returns**
 
-HTTP status code - 200 OK if the `ClientApiKeySet <ClientApiKeySet>` was deleted.
+HTTP status code - 200 OK if the `ClientApiKeySet` was deleted.
 
 ***
 
@@ -135,11 +135,11 @@ Prefix match to filter applications by applicationId or display name
 
 **Security**
 
-Allowed by Account Administrator [`Role <RoleObj>`](xref:AccountRole)
+Allowed by Account Administrator [`Role`](xref:AccountRole)
 
 **Returns**
 
-An array of `Application <Application>` objects that could be added to this account.
+An array of `Application` objects that could be added to this account.
 
 ***
 
@@ -160,7 +160,7 @@ ID of the tenant the application belongs to
 ```csharp
 Application application
 ```
-`Application <Application>` object with required properties.
+`Application` object with required properties.
 
 
 **Security**
@@ -169,7 +169,7 @@ Account admin or Cluster operator
 
 **Returns**
 
-The `Application <Application>` for a tenant
+The `Application` for a tenant
 
 ## Properties
 

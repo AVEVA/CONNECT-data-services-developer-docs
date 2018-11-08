@@ -75,8 +75,6 @@ query, skip, and count parameters.
 
 **REST API example**
 
-::
-
   GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure&orderby=name
 
   GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure&orderby=id asc
@@ -90,8 +88,6 @@ Search operators
 =====================
 
 You can specify search operators in the ``searchText`` string to return more specific search results. 
-
-#### operators 
 
 Operators | Description
 ----------|-------------------------------------------------------------------
@@ -110,12 +106,9 @@ For example, assume that a namespace contains the following Streams:
 
 **streamId** | **Name**  | **Description**  | **Tags**
 ------------ | --------- | ---------------- | -------------------------
-stream1      | tempA     | The temperature  | “temperature”, “DeviceA”
-             |           | from DeviceA     |          
-stream2      | pressureA | The pressure     | “pressure”, “DeviceA”
-             |           | from DeviceA     |
-stream3      | calcA     | calculation from | “temperature”, 
-             |           | DeviceA values   | “pressure”, “DeviceA”
+stream1      | tempA     | The temperature from DeviceA | “temperature”, “DeviceA”
+stream2      | pressureA | The pressure from DeviceA    | “pressure”, “DeviceA”
+stream3      | calcA     | calculation from DeviceA values | “temperature”, “pressure”, “DeviceA”
 
 
 Using the stream data above, the following table shows the results of a ``GetStreamsAsync`` call with different ``SearchText`` values:
@@ -131,76 +124,54 @@ Using the stream data above, the following table shows the results of a ``GetStr
 
 You can also qualify which fields are searched by using the following syntax: 
 
-::
-
   fieldname:fieldvalue
 
 **REST API example**
-
-::
 
   GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure
 
 **C# example**
 
-::
-
   GetStreamsAsync(query:”name:pump name:pressure”);
 
-*** Operator**
+**\* Operator**
 
 You can use the ‘\*’ character as a wildcard to specify an incomplete
 string.
 
-+----------------+-----------------------+-----------------------------+
-| Query string   | Matches field value   | Does not match field value  |
-+================+=======================+=============================+
-| log\*          | -  log                | -  analog                   |
-|                |                       |                             |
-|                | -  logs               |                             |
-|                |                       |                             |
-|                | -  logger             |                             |
-+----------------+-----------------------+-----------------------------+
+**Query string**   | **Matches field value**    | Does not match field value
+------------------ | ---------------------------|-----------------------------
+``“log\*”``        | log						| analog
+				   | logs						|
+				   | logger						|
 
 **REST API example**
-
-::
 
   GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=log*
 
 **C# example**
 
-::
-
   GetStreamsAsync(query:”log*”);
 
 
-** "" Operatore (Search for a phrase)**
+** \\"" Operator (Search for a phrase)**
 -------------------
 
 The search engine automatically searches on strings delimited by
 whitespace and dashes (with the exception of identifier fields like Id
 or TypeId fields). To search for values that include delimiters, enclose the value in double quotes.
 
-+-------------------+------------------------------+-----------------------------+
-| Query string      | Matches field value          | Does not match field value  |
-+===================+==============================+=============================+
-| “pump pressure”   | -  pump pressure             | -  the pump                 |
-|                   |                              |                             |
-|                   | -  the pump pressure gauge   | -  pressure                 |
-|                   |                              |                             |
-|                   |                              | -  pressure pump            |
-+-------------------+------------------------------+-----------------------------+
+**Query string**   | **Matches field value**    | Does not match field value
+------------------ | ---------------------------|-----------------------------
+`“pump pressure”   | pump pressure 				| the pump
+				   | the pump pressure gauge	| pressure
+				   |							| pressure pump
 
 **REST API example**
-
-::
 
   GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=”pump pressure”
 
 **C# example**
-
-::
 
   GetStreamsAsync(query:”\\”pump pressure\\””);
 

@@ -67,11 +67,11 @@ After the previous call, you can use the following call to return the remaining 
        _metadataService.GetStreamsAsync(“temperature”, 100, 100)
 
 
-orderBy Parameter
+OrderBy Parameter
 =====================
-The orderby parameter is supported for searching both the streams and types. The basic functionality of it is to search the streams/types and then return the result in sorted order.
-The default value for orderby parameter is ascending order. It can be changed to descending order by specifying desc alongside the orderby field value. It can be used in conjunction with 
-query, skip, and count parameters.
+The ``orderby`` parameter is supported for searching both the streams and types. The basic functionality of it is to search the streams or types and then return the result in sorted order.
+The default value for ``orderby`` parameter is ascending order. It can be changed to descending order by specifying ``desc`` alongside the orderby field value. It can be used in conjunction with 
+``query``, ``skip``, and ``count`` parameters.
 
 **REST API example**
 
@@ -121,40 +121,42 @@ Using the stream data above, the following table shows the results of a ``GetStr
 ``“humidity*”``    | No streams returned.
 
 **: Operator**
+---------------
 
 You can also qualify which fields are searched by using the following syntax: 
 
-  fieldname:fieldvalue
+	fieldname:fieldvalue
 
 **REST API example**
 
-  GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure
+	GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure
 
 **C# example**
 
-  GetStreamsAsync(query:”name:pump name:pressure”);
+	GetStreamsAsync(query:”name:pump name:pressure”);
 
 **\* Operator**
+-----------------
 
 You can use the ‘\*’ character as a wildcard to specify an incomplete
 string.
 
 **Query string**   | **Matches field value**    | **Does not match field value**
------------------- | ---------------------------|-----------------------------
-     “log\*”       | log						| analog
+------------------ | -------------------------- | ----------------------------
+     log\*         | log						| analog
 				   | logs						|
 				   | logger						|
 
 **REST API example**
 
-  GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=log*
+	GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=log*
 
 **C# example**
 
-  GetStreamsAsync(query:”log*”);
+	GetStreamsAsync(query:”log*”);
 
 
-** \\"" Operator (Search for a phrase)**
+** \"" Operator (Search for a phrase)**
 -------------------
 
 The search engine automatically searches on strings delimited by
@@ -169,11 +171,11 @@ or TypeId fields). To search for values that include delimiters, enclose the val
 
 **REST API example**
 
-  GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=”pump pressure”
+	GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=”pump pressure”
 
 **C# example**
 
-  GetStreamsAsync(query:”\\”pump pressure\\””);
+	GetStreamsAsync(query:”\\”pump pressure\\””);
 
 Other useful examples.
 

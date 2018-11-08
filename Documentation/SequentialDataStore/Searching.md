@@ -1,3 +1,4 @@
+
 ---
 uid: sdsSearching
 ---
@@ -7,11 +8,11 @@ uid: sdsSearching
 Searching for streams
 =====================
 
-``GetStreamsAsync`` is an overloaded method that is also used to search for and return streams (also see [Streams](xref:sdsStreams) for information about using ``GetStreamAsync`` to return streams). When you call an overloaded method, the software determines the most appropriate method to use by comparing the argument types specified in the call to the method definition.
+``GetStreamsAsync`` is an overloaded method that is also used to search for and return streams (also see [Streams](xref:sdsStreams) for information about using ``GetStreamsAsync`` to return streams). When you call an overloaded method, the software determines the most appropriate method to use by comparing the argument types specified in the call to the method definition.
 
 The syntax of the client libraries method is as follows:
 
-      _metadataService.GetStreamsAsync(string searchText, int skip, int count);
+      _metadataService.GetStreamsAsync(query:"QueryString", skip:0, count:100);
 
 
 Searching for streams is also possible using the REST API and specifying the optional ``query`` parameter, as shown here:
@@ -27,12 +28,10 @@ For example, assume that a namespace contains the following Streams:
 
 **streamId** | **Name**  | **Description**  | **Tags**
 ------------ | --------- | ---------------- | -------------------------
-stream1      | tempA     | The temperature  | “temperature”, “DeviceA”
-             |           | from DeviceA     |          
-stream2      | pressureA | The pressure     | “pressure”, “DeviceA”
-             |           | from DeviceA     |
-stream3      | calcA     | calculation from | “temperature”, 
-             |           | DeviceA values   | “pressure”, “DeviceA”
+stream1      | tempA     | The temperature from DeviceA | “temperature”, “DeviceA”
+stream2      | pressureA | The pressure from DeviceA    | “pressure”, “DeviceA”
+stream3      | calcA     | calculation from DeviceA values | “temperature”, “pressure”, “DeviceA”
+
 
 
 Using the stream data above, the following table shows the results of a ``GetStreamsAsync`` call with different ``SearchText`` values:
@@ -72,6 +71,22 @@ After the previous call, you can use the following call to return the remaining 
        _metadataService.GetStreamsAsync(“temperature*”, 100, 100) 
 
 
+Searching for types
+=====================
+
+Searching for types is very similar to searching for streams.  The query syntax is the same and the request parameters are the same.
+The only difference is the resource you're searching on, and the type properties that can be filtered on are different than
+on streams. See [Types](xref:sdsTypes) for more information.
+
+The syntax of the client libraries method is as follows:
+
+      _metadataService.GetTypesAsync(query:"QueryString", skip:0, count:100);
+
+
+Searching for types is also possible using the REST API and specifying the optional ``query`` parameter, as shown here:
+
+      GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Types?query={query}&skip={skip}&count={count}
+
 Search operators
 ----------------
 
@@ -84,7 +99,7 @@ Operators | Description
 ``AND`` | AND operator. For example, ``"cat AND dog"`` searches for streams containing both "cat" and "dog".  AND must be in all caps.
 ``OR``  | OR operator. For example, ``"cat OR dog"`` searches for streams containing either "cat" or "dog" or both.  OR must be in all caps.
 ``NOT`` | NOT operator. For example, ``"cat NOT dog"`` searches for streams that have the "cat" term or do not have "dog".  NOT must be in all caps.
-``*``   | Suffix operator. For example, ``"cat*"`` searches for streams that have a term that starts with "cat", ignoring case.
+``*``   | Suffix operator. For example, ``"cat*"`` searches for streams that have a term that starts with "cat", ignoring case.
 ``:``   | Field-scoped query.  For example, ``id:stream*`` will search for streams where the ``id`` field starts with "stream", but will not search on other fields like ``name`` or ``description``.  *Note that field names are camel case and are case sensitive.*
 ``" "`` | Phrase search operator. For example, while ``Roach Motel`` (without quotes) would search for streams containing Roach Motel anywhere in any order, ``"Roach Motel"`` (with quotes) will only match documents that contain the whole phrase together and in that order.
 ``( )`` | Precedence operator. For example, ``motel AND (wifi OR luxury)`` searches for streams containing the motel term and either wifi or luxury (or both).

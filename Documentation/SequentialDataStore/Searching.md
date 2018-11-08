@@ -2,7 +2,7 @@
 uid: sdsSearching
 ---
 
-#### Qi_Searching_topic
+#### Sds_Searching_topic
 
 Searching
 =====================
@@ -139,9 +139,9 @@ You can also qualify which fields are searched by using the following syntax:
 You can use the ‘\*’ character as a wildcard to specify an incomplete
 string.
 
-**Query string**   | **Matches field value**    | Does not match field value
+**Query string**   | **Matches field value**    | **Does not match field value**
 ------------------ | ---------------------------|-----------------------------
-``“log\*”``        | log						| analog
+     “log\*”       | log						| analog
 				   | logs						|
 				   | logger						|
 
@@ -161,9 +161,9 @@ The search engine automatically searches on strings delimited by
 whitespace and dashes (with the exception of identifier fields like Id
 or TypeId fields). To search for values that include delimiters, enclose the value in double quotes.
 
-**Query string**   | **Matches field value**    | Does not match field value
+**Query string**   | **Matches field value**    | **Does not match field value**
 ------------------ | ---------------------------|-----------------------------
-`“pump pressure”   | pump pressure 				| the pump
+   pump pressure   | pump pressure 				| the pump
 				   | the pump pressure gauge	| pressure
 				   |							| pressure pump
 

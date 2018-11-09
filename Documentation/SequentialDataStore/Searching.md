@@ -99,7 +99,7 @@ Operators | Description
 ``" "`` | Phrase search operator. For example, while ``Roach Motel`` (without quotes) would search for streams containing Roach Motel anywhere in any order, ``"Roach Motel"`` (with quotes) will only match documents that contain the whole phrase together and in that order.
 ``( )`` | Precedence operator. For example, ``motel AND (wifi OR luxury)`` searches for streams containing the motel term and either wifi or luxury (or both).
 
-**Note** The wildcard ``*`` can't be combined when searching for a phrase using the ``" "`` operators which combine multiple ordered search terms. 
+**Note:** The wildcard ``*`` can't be combined when searching for a phrase using the ``" "`` operators which combine multiple ordered search terms. 
 It only works when specifying a single search term. For example, you can search for ``Tank*``, ``*Tank``, ``Ta*nk`` but not ``"Tank Meter*"``.
 
 For example, assume that a namespace contains the following Streams:
@@ -152,11 +152,11 @@ You can use the ``‘\*’`` character as a wildcard to specify an incomplete st
 
 **Supported**   | **Not Supported**    
 ------------------ | ----------------
-``"*"``			   |	*l*g*
-``"*log"``		   |	*l*g
-``"l*g"``		   |	l*g*
-``"log*"``		   |	**
-``"*log*"``		   |	***
+``"*"``			   |	\*l\*g\*
+``"*log"``		   |	\*l\*g
+``"l*g"``		   |	l\*g\*
+``"log*"``		   |	\*\*
+``"*log*"``		   |	\*\*\*
 
 **REST API example**
 
@@ -173,12 +173,13 @@ You can use the ``‘\*’`` character as a wildcard to specify an incomplete st
 The search engine automatically searches on strings delimited by
 whitespace and dashes (with the exception of identifier fields like Id
 or TypeId fields). To search for values that include delimiters, enclose the value in double quotes.
+``"*"`` can not be used in conjunction with this operator.
 
 **Query string**   | **Matches field value**    | **Does not match field value**
 ------------------ | -------------------------- | ----------------------------
 ``"pump pressure"`` | pump pressure 			| the pump
-``"pump pressure"``	| the pump pressure gauge	| pressure
-``"pump pressure"``	|							| pressure pump
+``"pump pressure"``	| pump pressure gauge	    | pressure
+``"pump pressure"``	| the pump pressure gauge	| pressure pump
 
 **REST API example**
 

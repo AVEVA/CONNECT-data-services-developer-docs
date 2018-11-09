@@ -73,7 +73,7 @@ The ``orderby`` parameter is supported for searching both the streams and types.
 The default value for ``orderby`` parameter is ascending order. It can be changed to descending order by specifying ``desc`` alongside the orderby field value. It can be used in conjunction with 
 ``query``, ``skip``, and ``count`` parameters.
 
-**REST API example**
+**REST API examples**
 
 	GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure&orderby=name
 
@@ -113,7 +113,7 @@ stream3      | calcA     | calculation from DeviceA values | “temperature”, 
 
 Using the stream data above, the following table shows the results of a ``GetStreamsAsync`` call with different ``SearchText`` values:
 
-**SearchText**     | **Streams returned**
+**QueryString**     | **Streams returned**
 ------------------ | ----------------------------------------
 ``“temperature”``  | stream1 and stream3 returned.
 ``“calc*”``        | Only stream3 returned.
@@ -143,9 +143,8 @@ string.
 
 **Query string**   | **Matches field value**    | **Does not match field value**
 ------------------ | -------------------------- | ----------------------------
-     log\*         | log						| analog
-				   | logs						|
-				   | logger						|
+     ``"log\*"``   |	log	\n logs \n logger   | analog
+	
 
 **REST API example**
 
@@ -156,7 +155,7 @@ string.
 	GetStreamsAsync(query:”log*”);
 
 
-** \"" Operator (Search for a phrase)**
+\"" Operator
 -------------------
 
 The search engine automatically searches on strings delimited by
@@ -165,7 +164,7 @@ or TypeId fields). To search for values that include delimiters, enclose the val
 
 **Query string**   | **Matches field value**    | **Does not match field value**
 ------------------ | ---------------------------|-----------------------------
-   pump pressure   | pump pressure 				| the pump
+   ``"pump pressure"``   | pump pressure 				| the pump
 				   | the pump pressure gauge	| pressure
 				   |							| pressure pump
 

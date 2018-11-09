@@ -30,7 +30,7 @@ Searching for types
 =====================
 
 Similarly, the search functionality for types is also exposed through REST API and the client libraries method ``GetTypesAsync``. The query syntax and the request parameters are the same. 
-The only difference is the resource you're searching on, and the type properties that can be filtered on are different than on streams.
+The only difference is the resource you're searching on, and the type properties that can be filtered on are different than on streams. See [Types](xref:sdsTypes) for more information.
 
 ``GetTypesAsync`` is an overloaded method that is used to search for and return types. 
 

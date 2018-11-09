@@ -176,51 +176,23 @@ whitespace and dashes (with the exception of identifier fields like Id
 or TypeId fields). To search for values that include delimiters, enclose the value in double quotes.
 ``"*"`` can not be used in conjunction with this operator.
 
-**Query string**	| **Matches field value**	| **Does not match field value**
------------------- | -------------------------- | ----------------------------
-``"pump pressure"`` | - pump pressure 			| -	the pump
-``"pump pressure"`` |  - pump pressure gauge		  -	pressure
-``"pump pressure"``	|  -	the pump pressure gauge	  -	pressure pump
-
 <table>
 	<thead>
 		<tr>
-			<th>
-				Query string
-			</th>
-			<th>
-				Matches field value
-			</th>
-			<th>
-				Does not match field value
-			</th>
+			<th>Query string</th>
+			<th>Matches field value</th>
+			<th>Does not match field value</th>
 		</tr>
 		<tr>
-			<th>
-				pump pressure
-			</th>
-			<th>
-				<ul>
-					pump pressure
-				</ul>
-				<ul>
-					pump pressure gauge
-				</ul>
-				<ul>
-					the pump pressure gauge
-				</ul>
-			</th>
-			<th>
-				<ul>
-					the pump
-				</ul>
-				<ul>
-					pressure
-				</ul>
-				<ul>
-					pressure pump
-				</ul>
-			</th>
+			<td>pump pressure</td>
+			<td><ul>pump pressure</ul>
+				<ul>pump pressure gauge</ul>
+				<ul>the pump pressure gauge</ul>
+			</td>
+			<td><ul>the pump</ul>
+				<ul>pressure</ul>
+				<ul>pressure pump</ul>
+			</td>
 		</tr>
 	</thead>
 </table>

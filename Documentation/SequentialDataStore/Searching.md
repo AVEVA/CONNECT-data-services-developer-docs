@@ -186,25 +186,40 @@ or TypeId fields). To search for values that include delimiters, enclose the val
 	<thead>
 		<tr>
 			<th>
-				``"pump pressure"``
+				Query string
 			</th>
 			<th>
-				**Matches field value**
+				Matches field value
 			</th>
 			<th>
-				**Does not match field value**
-			</th>
-		</tr>
-		<tr>
-			<th>
-			</th>
-			<th>
+				Does not match field value
 			</th>
 		</tr>
 		<tr>
 			<th>
+				pump pressure
 			</th>
 			<th>
+				<ul>
+					pump pressure
+				</ul>
+				<ul>
+					pump pressure gauge
+				</ul>
+				<ul>
+					the pump pressure gauge
+				</ul>
+			</th>
+			<th>
+				<ul>
+					the pump
+				</ul>
+				<ul>
+					pressure
+				</ul>
+				<ul>
+					pressure pump
+				</ul>
 			</th>
 		</tr>
 	</thead>

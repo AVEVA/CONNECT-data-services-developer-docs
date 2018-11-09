@@ -14,11 +14,11 @@ Searching for streams
 
 The search functionality for streams is exposed through REST API and the client libraries method ``GetStreamsAsync``.
 
-``GetStreamsAsync`` is an overloaded method that is also used to search for and return streams (also see [Streams](xref:sdsStreams) for information about using ``GetStreamAsync`` to return streams). When you call an overloaded method, the software determines the most appropriate method to use by comparing the argument types specified in the call to the method definition.
+``GetStreamsAsync`` is an overloaded method that is used to search for and return streams (also see [Streams](xref:sdsStreams) for information about using ``GetStreamAsync`` to return streams). When you call an overloaded method, the software determines the most appropriate method to use by comparing the argument types specified in the call to the method definition.
 
 The syntax of the client libraries method is as follows:
 
-      _metadataService.GetStreamsAsync(string searchText, int skip, int count);
+      _metadataService.GetStreamsAsync(query:"QueryString", skip:0, count:100);
 
 
 Searching for streams is also possible using the REST API and specifying the optional ``query`` parameter, as shown here:
@@ -29,31 +29,32 @@ Searching for streams is also possible using the REST API and specifying the opt
 Searching for types
 =====================
 
-Similarly, the search functionality for types is also exposed through REST API and the client libraries method ``GetTypesAsync``.
+Similarly, the search functionality for types is also exposed through REST API and the client libraries method ``GetTypesAsync``. The query syntax and the request parameters are the same. 
+The only difference is the resource you're searching on, and the type properties that can be filtered on are different than on streams.
 
-``GetTypesAsync`` is an overloaded method that is also used to search for and return types. 
+``GetTypesAsync`` is an overloaded method that is used to search for and return types. 
 
 The syntax of the client libraries method is as follows:
 
-      _metadataService.GetTypesAsync(string searchText, int skip, int count);
+      _metadataService.GetStreamsAsync(query:"QueryString", skip:0, count:100);
 
 
 As previously mentioned, searching for types is also possible using the REST API and specifying the optional ``query`` parameter, as shown here:
 
       GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Types?query={query}&skip={skip}&count={count}
 
-The ``GetStreamsAsync`` or ``GetTypesAsync`` overload returns streams/types that match specific search criteria within a given namespace. 
-You use the ``searchText`` parameter to specify a search string. Both methods then return any stream/type
-that matches the search string in the ``name``, ``description`` list. 
+The ``GetStreamsAsync`` or ``GetTypesAsync`` overload returns streams or types that match specific search criteria within a given namespace. 
+You use the ``query`` parameter to specify a search string. Both methods then return any stream or type
+that matches the search string in the ``name``, ``description``, ``tag`` list. 
 
-The ``skip`` and ``count`` parameters determine which streams/types are returned when a large number of streams/types match 
-the ``searchText`` criteria.   
+The ``skip`` and ``count`` parameters determine which streams or types are returned when a large number of streams or types match 
+the ``query`` criteria.   
 
-``count`` indicates the maximum number of streams/types returned by the ``GetStreamsAsync()`` or ``GetTypesAsync()`` call. The maximum value of 
+``count`` indicates the maximum number of streams or types returned by the ``GetStreamsAsync()`` or ``GetTypesAsync()`` call. The maximum value of 
 the ``count`` parameter is 1000. 
 
-``skip`` indicates the number of matched streams/types to skip over before returning matching streams/types. You use the 
-skip parameter when more streams/types match the search criteria than can be returned in a single call. 
+``skip`` indicates the number of matched streams or types to skip over before returning matching streams or types. You use the 
+skip parameter when more streams or types match the search criteria than can be returned in a single call. 
 
 For example, assume there are 175 streams that match the search criteria: “temperature”.
 

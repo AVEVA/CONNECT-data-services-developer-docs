@@ -144,7 +144,7 @@ string.
 **Query string**   | **Matches field value**    | **Does not match field value**
 ------------------ | -------------------------- | --------------------------------
 ``"log*"``		   |	log	                    | analog
-`"log*"``	       |    logger                  |
+			       |    logger                  |
 
 **REST API example**
 
@@ -165,8 +165,8 @@ or TypeId fields). To search for values that include delimiters, enclose the val
 **Query string**   | **Matches field value**    | **Does not match field value**
 ------------------ | -------------------------- | ----------------------------
 ``"pump pressure"`` | pump pressure 			| the pump
-``"pump pressure"``	| the pump pressure gauge	| pressure
-``"pump pressure"``	|							| pressure pump
+					| the pump pressure gauge	| pressure
+					|							| pressure pump
 
 **REST API example**
 
@@ -178,28 +178,18 @@ or TypeId fields). To search for values that include delimiters, enclose the val
 
 Other useful examples.
 
-+--------------------------------------------------+-----------------------------------------------------------------------------------+-----------------------------+
-| Query string                                     | Matches field value                                                               | Does not match field value  |
-+==================================================+===================================================================================+=============================+
-| mud AND log                                      | -  log mud                                                                        | -  mud                      |
-|                                                  |                                                                                   |                             |
-|                                                  | -  mud log                                                                        | -  log                      |
-+--------------------------------------------------+-----------------------------------------------------------------------------------+-----------------------------+
-| mud OR log                                       | -  mud                                                                            |                             |
-|                                                  |                                                                                   |                             |
-|                                                  | -  log                                                                            |                             |
-|                                                  |                                                                                   |                             |
-|                                                  | -  mud log                                                                        |                             |
-+--------------------------------------------------+-----------------------------------------------------------------------------------+-----------------------------+
-| mud AND (NOT log)                                | -  mud                                                                            | -  mud log                  |
-+--------------------------------------------------+-----------------------------------------------------------------------------------+-----------------------------+
-| mud AND (log OR pump\*)                          | -  mud log                                                                        | -  mud bath                 |
-|                                                  |                                                                                   |                             |
-|                                                  | -  mud pumps                                                                      |                             |
-+--------------------------------------------------+-----------------------------------------------------------------------------------+-----------------------------+
-| name:stream\* AND (tags:pressure OR tags:pump)   | The name starts with “stream” and has tag values of either “pressure” or “pump”   |                             |
-+--------------------------------------------------+-----------------------------------------------------------------------------------+-----------------------------+
-	   
+Query string | Matches field value | Does not match field value
+----------|-------------------------------------------------------------------
+``"mud AND log"``		| log mud		| mud
+``"mud AND log"``		| mud log		| log
+``"mud OR log"``		| mud			|
+``"mud OR log"``   		| log			|
+``"mud OR log"``		| mud log		|
+``"mud AND (NOT log)"`` | mud			| mud log
+``"mud AND (log OR pump\*)"`` | mud log | mud bath
+``"name:stream\* AND (tags:pressure OR tags:pump)"`` | The name starts with “stream” and has tag values of either “pressure” or “pump” | 
+
+
 Searching on Metadata
 ---------------------
 

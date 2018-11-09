@@ -2,7 +2,7 @@
 uid: sdsSearching
 ---
 
-#### Sds_Searching_topic
+#### Qi_Searching_topic
 
 Searching
 =====================
@@ -99,7 +99,7 @@ Operators | Description
 ``" "`` | Phrase search operator. For example, while ``Roach Motel`` (without quotes) would search for streams containing Roach Motel anywhere in any order, ``"Roach Motel"`` (with quotes) will only match documents that contain the whole phrase together and in that order.
 ``( )`` | Precedence operator. For example, ``motel AND (wifi OR luxury)`` searches for streams containing the motel term and either wifi or luxury (or both).
 
- The wildcard ``*`` can't be combined when searching for a phrase using the ``" "`` operators which combine multiple ordered search terms. 
+**Note** The wildcard ``*`` can't be combined when searching for a phrase using the ``" "`` operators which combine multiple ordered search terms. 
 It only works when specifying a single search term. For example, you can search for ``Tank*``, ``*Tank``, ``Ta*nk`` but not ``"Tank Meter*"``.
 
 For example, assume that a namespace contains the following Streams:
@@ -138,13 +138,25 @@ You can also qualify which fields are searched by using the following syntax:
 **\* Operator**
 -----------------
 
-You can use the ‘\*’ character as a wildcard to specify an incomplete
-string.
+You can use the ``‘\*’`` character as a wildcard to specify an incomplete string.
 
 **Query string**   | **Matches field value**    | **Does not match field value**
 ------------------ | -------------------------- | --------------------------------
 ``"log*"``		   |	log	                    | analog
-``"log*"``			|    logger                  |
+``"log*"``		   |    logger                  | alog
+``"*log"``		   |    analog                  | logg
+``"*log"``		   |    alog                    | logg
+``"*log*"``		   |    analog                  | lop
+``"*log*"``		   |    alogger                 | lop
+``"l*g"``		   |    logg                    | lop
+
+**Supported**   | **Not Supported**    
+------------------ | ----------------
+``"*"``			   |	*l*g*
+``"*log"``		   |	*l*g
+``"l*g"``		   |	l*g*
+``"log*"``		   |	**
+``"*log*"``		   |	***
 
 **REST API example**
 
@@ -176,7 +188,8 @@ or TypeId fields). To search for values that include delimiters, enclose the val
 
 	GetStreamsAsync(query:”\\”pump pressure\\””);
 
-Other useful examples.
+Other operators examples
+----------------------
 
 Query string | Matches field value | Does not match field value
 ---------- | ----------------------- | -------------------------------------------
@@ -186,8 +199,8 @@ Query string | Matches field value | Does not match field value
 ``"mud OR log"``   		| log			|
 ``"mud OR log"``		| mud log		|
 ``"mud AND (NOT log)"`` | mud			| mud log
-``"mud AND (log OR pump\*)"`` | mud log | mud bath
-``"name:stream\* AND (tags:pressure OR tags:pump)"`` | The name starts with “stream” and has tag values of either “pressure” or “pump” | 
+``"mud AND (log OR pump*)"`` | mud log | mud bath
+``"name:stream* AND (tags:pressure OR tags:pump)"`` | The name starts with “stream” and has tag values of either “pressure” or “pump” | 
 
 
 Searching on Metadata

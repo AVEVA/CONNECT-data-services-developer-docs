@@ -185,13 +185,13 @@ or TypeId fields). To search for values that include delimiters, enclose the val
 		</tr>
 		<tr>
 			<td>pump pressure</td>
-			<td><ul>pump pressure</ul>
-				<ul>pump pressure gauge</ul>
-				<ul>the pump pressure gauge</ul>
+			<td><ul><li>pump pressure</li>
+				<li>pump pressure gauge</li>
+				<li>the pump pressure gauge</li></ul>
 			</td>
-			<td><ul>the pump</ul>
-				<ul>pressure</ul>
-				<ul>pressure pump</ul>
+			<td><ul><li>the pump</li>
+				<li>pressure</li>
+				<li>pressure pump</li></ul>
 			</td>
 		</tr>
 	</thead>

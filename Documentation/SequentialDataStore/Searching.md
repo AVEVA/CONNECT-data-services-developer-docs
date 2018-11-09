@@ -144,7 +144,7 @@ string.
 **Query string**   | **Matches field value**    | **Does not match field value**
 ------------------ | -------------------------- | --------------------------------
 ``"log*"``		   |	log	                    | analog
-			       |    logger                  |
+``"log*"``			|    logger                  |
 
 **REST API example**
 
@@ -165,8 +165,8 @@ or TypeId fields). To search for values that include delimiters, enclose the val
 **Query string**   | **Matches field value**    | **Does not match field value**
 ------------------ | -------------------------- | ----------------------------
 ``"pump pressure"`` | pump pressure 			| the pump
-					| the pump pressure gauge	| pressure
-					|							| pressure pump
+``"pump pressure"``	| the pump pressure gauge	| pressure
+``"pump pressure"``	|							| pressure pump
 
 **REST API example**
 
@@ -179,7 +179,7 @@ or TypeId fields). To search for values that include delimiters, enclose the val
 Other useful examples.
 
 Query string | Matches field value | Does not match field value
-----------|-------------------------------------------------------------------
+---------- | ----------------------- | -------------------------------------------
 ``"mud AND log"``		| log mud		| mud
 ``"mud AND log"``		| mud log		| log
 ``"mud OR log"``		| mud			|

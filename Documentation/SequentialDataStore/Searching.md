@@ -178,19 +178,10 @@ or TypeId fields). To search for values that include delimiters, enclose the val
 
 **Query string**   | **Matches field value**    | **Does not match field value**
 ------------------ | -------------------------- | ----------------------------
-``"pump pressure"`` | pump pressure 			| the pump
-``"pump pressure"``	| pump pressure gauge	    | pressure
-``"pump pressure"``	| the pump pressure gauge	| pressure pump
+``"pump pressure"`` | - pump pressure 			| -	the pump
+					| - pump pressure gauge	    | -	pressure
+					| -	the pump pressure gauge	| -	pressure pump
 
-+-------------------+------------------------------+-----------------------------+
-| Query string      | Matches field value          | Does not match field value  |
-+===================+==============================+=============================+
-| “pump pressure”   | -  pump pressure             | -  the pump                 |
-|                   |                              |                             |
-|                   | -  the pump pressure gauge   | -  pressure                 |
-|                   |                              |                             |
-|                   |                              | -  pressure pump            |
-+-------------------+------------------------------+-----------------------------+
 
 **REST API example**
 

@@ -151,6 +151,49 @@ You can use the ``‘\*’`` character as a wildcard to specify an incomplete st
 ``"*log*"``		   |    alogger                 | lop
 ``"l*g"``		   |    logg                    | lop
 
+<table>
+	<thead>
+		<tr>
+			<th>Query string</th>
+			<th>Matches field value</th>
+			<th>Does not match field value</th>
+		</tr>
+		<tr>
+			<td>log*</td>
+			<td><ul><li>log</li>
+				<li>logger</li></ul>
+			</td>
+			<td><ul><li>analog</li></ul>
+			</td>
+		</tr>
+		<tr>
+			<td>*log</td>
+			<td><ul><li>analog</li>
+				<li>alog</li></ul>
+			</td>
+			<td><ul><li>logg</li></ul>
+			</td>
+		</tr>
+		<tr>
+			<td>*log*</td>
+			<td><ul><li>analog</li>
+				<li>alogger</li></ul>
+			</td>
+			<td><ul><li>lop</li></ul>
+			</td>
+		</tr>
+		<tr>
+			<td>l*g</td>
+			<td><ul><li>log</li>
+				<li>logg</li></ul>
+			</td>
+			<td><ul><li>lop</li></ul>
+			</td>
+		</tr>
+	</thead>
+</table>
+
+
 **Supported**   | **Not Supported**    
 ------------------ | ----------------
 ``"*"``			   |	\*l\*g\*

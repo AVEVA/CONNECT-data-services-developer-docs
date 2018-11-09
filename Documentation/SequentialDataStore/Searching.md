@@ -159,6 +159,28 @@ You can use the ``‘\*’`` character as a wildcard to specify an incomplete st
 ``"log*"``		   |	\*\*
 ``"*log*"``		   |	\*\*\*
 
+<table>
+	<thead>
+		<tr>
+			<th>Supported</th>
+			<th>Not Supported</th>
+		</tr>
+		<tr>
+			<td><ul><li>*</li>
+				<li>*log</li>
+				<li>l*g</li>
+				<li>log*</li>
+				<li>*log*</li></ul>
+			</td>
+			<td><ul><li>*l*g*</li>
+				<li>*l*g</li>
+				<li>l*g*</li></ul>
+			</td>
+		</tr>
+	</thead>
+</table>
+
+
 **REST API example**
 
 	GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=log*

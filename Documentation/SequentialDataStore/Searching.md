@@ -287,13 +287,6 @@ Other operators examples
 			</td>
 		</tr>
 		<tr>
-			<td>mud AND (NOT log)</td>
-			<td><ul><li>mud</li></ul>
-			</td>
-			<td><ul><li>mud log</li></ul>
-			</td>
-		</tr>
-		<tr>
 			<td>mud AND (log OR pump*)</td>
 			<td><ul><li>mud log</li>
 			<li>mud pumps</li></ul>

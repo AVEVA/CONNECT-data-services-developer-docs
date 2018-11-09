@@ -176,11 +176,25 @@ whitespace and dashes (with the exception of identifier fields like Id
 or TypeId fields). To search for values that include delimiters, enclose the value in double quotes.
 ``"*"`` can not be used in conjunction with this operator.
 
-**Query string**	| **Matches field value**	 | **Does not match field value**
+**Query string**	| **Matches field value**	| **Does not match field value**
 ------------------ | -------------------------- | ----------------------------
-``"pump pressure"``| - pump pressure 			 | -	the pump
-				   | - pump pressure gauge		 | -	pressure
-				   | -	the pump pressure gauge	 | -	pressure pump
+``"pump pressure"``| - pump pressure 			| -	the pump
+				     - pump pressure gauge		  -	pressure
+				     -	the pump pressure gauge	  -	pressure pump
+
++-----------------+-----------------------+-----------------------------+
+| Query string    | Matches field value   | Does not match field value  |
++================= + ======================= + =============================+
+| pump            | -  pump               | -  pumps                    |
+|                 |                       |                             |
+|                 | -  the pump           |                             |
++----------------- + ----------------------- + -----------------------------+
+| pump pressure   | -  pump               | -  pumps                    |
+|                 |                       |                             |
+|                 | -  pressure           | -  pressures                |
+|                 |                       |                             |
+|                 | -  pressure pump      |                             |
++-----------------+-----------------------+-----------------------------+
 
 
 **REST API example**

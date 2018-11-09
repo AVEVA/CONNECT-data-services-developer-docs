@@ -12,7 +12,7 @@ searching for SdsStreams and SdsTypes.
 Searching for streams
 =====================
 
-The search functionality for streams is exposed through REST API and the client libraries method ``GetStreamsAsync``.
+The search functionality for streams is exposed through the REST API and the client libraries method ``GetStreamsAsync``.
 
 ``GetStreamsAsync`` is an overloaded method that is used to search for and return streams (also see [Streams](xref:sdsStreams) for information about using ``GetStreamAsync`` to return streams). When you call an overloaded method, the software determines the most appropriate method to use by comparing the argument types specified in the call to the method definition.
 
@@ -45,9 +45,27 @@ As previously mentioned, searching for types is also possible using the REST API
 
 The ``GetStreamsAsync`` or ``GetTypesAsync`` overload returns streams or types that match specific search criteria within a given namespace. 
 You use the ``query`` parameter to specify a search string. Both methods then return any stream or type
-that matches the search string in the ``name``, ``description``, ``tag`` list. 
+that matches the search string in the ``name``, ``description``, or ``tag`` list.
 
-The ``skip`` and ``count`` parameters determine which streams or types are returned when a large number of streams or types match 
+For example, assume that a namespace contains the following Streams:
+
+**streamId** | **Name**  | **Description**  | **Tags**
+------------ | --------- | ---------------- | -------------------------
+stream1      | tempA     | The temperature from DeviceA | “temperature”, “DeviceA”
+stream2      | pressureA | The pressure from DeviceA    | “pressure”, “DeviceA”
+stream3      | calcA     | calculation from DeviceA values | “temperature”, “pressure”, “DeviceA”
+
+
+Using the stream data above, the following table shows the results of a ``GetStreamsAsync`` call with different ``SearchText`` values:
+
+**QueryString**     | **Streams returned**
+------------------ | ----------------------------------------
+``“temperature”``  | stream1 and stream3 returned.
+``“calc*”``        | Only stream3 returned.
+``“DeviceA*”``     | All three streams returned.
+``“humidity*”``    | No streams returned.
+
+The ``skip`` and ``count`` parameters determine which streams or types are returned when a large number of them match 
 the ``query`` criteria.   
 
 ``count`` indicates the maximum number of streams or types returned by the ``GetStreamsAsync()`` or ``GetTypesAsync()`` call. The maximum value of 
@@ -102,24 +120,6 @@ Operators | Description
 
 **Note:** The wildcard ``*`` can't be combined when searching for a phrase using the ``" "`` operators which combine multiple ordered search terms. 
 It only works when specifying a single search term. For example, you can search for ``Tank*``, ``*Tank``, ``Ta*nk`` but not ``"Tank Meter*"``.
-
-For example, assume that a namespace contains the following Streams:
-
-**streamId** | **Name**  | **Description**  | **Tags**
------------- | --------- | ---------------- | -------------------------
-stream1      | tempA     | The temperature from DeviceA | “temperature”, “DeviceA”
-stream2      | pressureA | The pressure from DeviceA    | “pressure”, “DeviceA”
-stream3      | calcA     | calculation from DeviceA values | “temperature”, “pressure”, “DeviceA”
-
-
-Using the stream data above, the following table shows the results of a ``GetStreamsAsync`` call with different ``SearchText`` values:
-
-**QueryString**     | **Streams returned**
------------------- | ----------------------------------------
-``“temperature”``  | stream1 and stream3 returned.
-``“calc*”``        | Only stream3 returned.
-``“DeviceA*”``     | All three streams returned.
-``“humidity*”``    | No streams returned.
 
 **: Operator**
 ---------------

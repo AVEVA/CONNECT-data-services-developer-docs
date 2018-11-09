@@ -142,9 +142,9 @@ You can use the ‘\*’ character as a wildcard to specify an incomplete
 string.
 
 **Query string**   | **Matches field value**    | **Does not match field value**
------------------- | -------------------------- | ----------------------------
-     ``"log\*"``   |	log	\n logs \n logger   | analog
-	
+------------------ | -------------------------- | --------------------------------
+``"log*"``		   |	log	                    | analog
+`"log*"``	       |    logger                  |
 
 **REST API example**
 
@@ -163,10 +163,10 @@ whitespace and dashes (with the exception of identifier fields like Id
 or TypeId fields). To search for values that include delimiters, enclose the value in double quotes.
 
 **Query string**   | **Matches field value**    | **Does not match field value**
------------------- | ---------------------------|-----------------------------
-   ``"pump pressure"``   | pump pressure 				| the pump
-				   | the pump pressure gauge	| pressure
-				   |							| pressure pump
+------------------ | -------------------------- | ----------------------------
+``"pump pressure"`` | pump pressure 			| the pump
+``"pump pressure"``	| the pump pressure gauge	| pressure
+``"pump pressure"``	|							| pressure pump
 
 **REST API example**
 

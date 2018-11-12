@@ -43,9 +43,8 @@ As previously mentioned, searching for types is also possible using the REST API
 
       GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Types?query={query}&skip={skip}&count={count}
 
-The ``GetStreamsAsync`` or ``GetTypesAsync`` overload returns streams or types that match specific search criteria within a given namespace. 
-You use the ``query`` parameter to specify a search string. Both methods then return any stream or type
-that matches the search string in the ``name``, ``description``, or ``tag`` list.
+The ``GetStreamsAsync`` or ``GetTypesAsync`` overload return items that match specific search criteria within a given namespace. 
+The query parameter will be applied across all properties of items we’re searching on by default, such as ``Name``, ``Description``, or ``Tags``.
 
 For example, assume that a namespace contains the following Streams:
 
@@ -56,7 +55,7 @@ stream2      | pressureA | The pressure from DeviceA    | “pressure”, “Dev
 stream3      | calcA     | calculation from DeviceA values | “temperature”, “pressure”, “DeviceA”
 
 
-Using the stream data above, the following table shows the results of a ``GetStreamsAsync`` call with different ``SearchText`` values:
+Using the stream data above, the following table shows the results of a ``GetStreamsAsync`` call with different ``Query`` values:
 
 **QueryString**     | **Streams returned**
 ------------------ | ----------------------------------------
@@ -65,14 +64,14 @@ Using the stream data above, the following table shows the results of a ``GetStr
 ``“DeviceA*”``     | All three streams returned.
 ``“humidity*”``    | No streams returned.
 
-The ``skip`` and ``count`` parameters determine which streams or types are returned when a large number of them match 
+The ``skip`` and ``count`` parameters determine which items are returned when a large number of them match 
 the ``query`` criteria.   
 
-``count`` indicates the maximum number of streams or types returned by the ``GetStreamsAsync()`` or ``GetTypesAsync()`` call. The maximum value of 
+``count`` indicates the maximum number of items returned by the ``GetStreamsAsync()`` or ``GetTypesAsync()`` call. The maximum value of 
 the ``count`` parameter is 1000. 
 
-``skip`` indicates the number of matched streams or types to skip over before returning matching streams or types. You use the 
-skip parameter when more streams or types match the search criteria than can be returned in a single call. 
+``skip`` indicates the number of matched items to skip over before returning matching items. You use the 
+skip parameter when more items match the search criteria than can be returned in a single call. 
 
 For example, assume there are 175 streams that match the search criteria: “temperature”.
 
@@ -85,10 +84,7 @@ After the previous call, you can use the following call to return the remaining 
 
        _metadataService.GetStreamsAsync(“temperature”, 100, 100)
 
-
-OrderBy Parameter
-=====================
-The ``orderby`` parameter is supported for searching both the streams and types. The basic functionality of it is to search the streams or types and then return the result in sorted order.
+The ``orderby`` parameter is supported for searching both the streams and types. The basic functionality of it is to search the items and then return the result in sorted order.
 The default value for ``orderby`` parameter is ascending order. It can be changed to descending order by specifying ``desc`` alongside the orderby field value. It can be used in conjunction with 
 ``query``, ``skip``, and ``count`` parameters.
 
@@ -106,7 +102,7 @@ The default value for ``orderby`` parameter is ascending order. It can be change
 Search operators
 =====================
 
-You can specify search operators in the ``searchText`` string to return more specific search results. 
+You can specify search operators in the ``Query`` string to return more specific search results. 
 
 Operators | Description
 ----------|-------------------------------------------------------------------
@@ -139,7 +135,7 @@ You can also qualify which fields are searched by using the following syntax:
 **\* Operator**
 -----------------
 
-You can use the ``‘\*’`` character as a wildcard to specify an incomplete string.
+You can use the ``‘*’`` character as a wildcard to specify an incomplete string.
 
 <table>
 	<thead>

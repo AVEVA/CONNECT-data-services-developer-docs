@@ -102,7 +102,7 @@ The default value for ``orderby`` parameter is ascending order. It can be change
 Search operators
 =====================
 
-You can specify search operators in the ``Query`` string to return more specific search results. 
+You can specify search operators in the ``query`` string to return more specific search results. 
 
 Operators | Description
 ----------|-------------------------------------------------------------------

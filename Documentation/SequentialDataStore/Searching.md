@@ -6,7 +6,7 @@ uid: sdsSearching
 
 Searching
 =====================
-SdsSearch provides a way to search text, phrases, fields etc over the Sequential Data Store. This document covers the 
+SdsSearch provides a way to search text, phrases, fields, etc. cross the Sequential Data Store. This document covers the 
 searching for SdsStreams and SdsTypes.
 
 Searching for streams
@@ -30,7 +30,7 @@ Searching for types
 =====================
 
 Similarly, the search functionality for types is also exposed through REST API and the client libraries method ``GetTypesAsync``. The query syntax and the request parameters are the same. 
-The only difference is the resource you're searching on, and the type properties that can be filtered on are different than on streams. See [Types](xref:sdsTypes) for more information.
+The only difference is the resource you're searching on, and you can filter on different properties for types than for streams. See [Types](xref:sdsTypes) for more information.
 
 ``GetTypesAsync`` is an overloaded method that is used to search for and return types. 
 

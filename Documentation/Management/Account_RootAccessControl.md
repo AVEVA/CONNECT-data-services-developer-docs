@@ -1,66 +1,58 @@
 ---
-uid: accountRootAccessControl
+uid: AccountRootAccessControl
 ---
 
-RootAccessControl
-=======================================================
+# RootAccessControl
 
-Apis to control default access to entities governed by an [`AccessControlList`](xref:accessControl#accesscontrollistobj).
+Apis to control default access to entities governed by an [AccessControl](xref:accessControl).
 
 ***
 
-### `GetRootNamespaceAcl()`
+## `GetRootNamespaceAcl()`
 
-Get the [`AccessControlList`](xref:accessControl#accesscontrollistobj) that is used to authorize access to a [`Namespace`](xref:AccountNamespace) if none is specified during creation.
+Get the [AccessControl](xref:accessControl) that is used to authorize access to a `Namespace` if none is specified during creation.
 
-**Http**
+### Http
 
 `GET api/Tenants/{tenantId}/AccessControl/Namespaces`
 
-**Parameters**
+### Parameters
 
-```csharp
-string tenantId
-```
-The idenfifier for the account being accessed.
+`string tenantId`:	The identifier for the account being accessed.
 
 
-**Security**
 
-[`CommonAccessRights.Read`](xref:accessControl#accesscontrollistobj)
+### Security
 
-**Returns**
+`CommonAccessRights.Read`
 
-The root `AccessControlList` for `Namespaces`.
+### Returns
+
+The root [AccessControl](xref:accessControl) for `Namespaces`.
 
 ***
+## `SetRootNamespaceAcl()`
 
-### `SetRootNamespaceAcl()`
+Set the [AccessControl](xref:accessControl) that is used to authorize access to a `Namespace` if none is specified during creation.
 
-Set the [`AccessControlList`](xref:accessControl#accesscontrollistobj) that is used to authorize access to a [`Namespace`](xref:AccountNamespace) if none is specified during creation.
-
-**Http**
+### Http
 
 `PUT api/Tenants/{tenantId}/AccessControl/Namespaces`
 
-**Parameters**
+### Parameters
 
-```csharp
-string tenantId
-```
-The idenfifier for the account being modified.
-```csharp
-AccessControlList newAccessControlList
-```
-The new root `AccessControlList` for `Namespaces`.
+`string tenantId`:	The identifier for the account being modified.
+
+`AccessControlList newAccessControlList`:	The new root [AccessControl](xref:accessControl) for `Namespaces`.
 
 
-**Security**
 
-[`CommonAccessRights.ManageAccessControl`](xref:accessControl#accesscontrollistobj)
+### Security
 
-**Returns**
+`CommonAccessRights.ManageAccessControl`
 
-The new root `AccessControlList` for `Namespaces`.
+### Returns
+
+The new root [AccessControl](xref:accessControl) for `Namespaces`.
 
 ***

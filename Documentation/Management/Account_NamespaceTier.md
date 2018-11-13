@@ -2,32 +2,20 @@
 uid: AccountNamespaceTier
 ---
 
-NamespaceTier
-=======================================================
+# NamespaceTier
+
+An attribute that specifies namespace performance.
 
 ## Properties
 
 For HTTP requests and responses, the NamespaceTier object has the following properties and JSON-serialized body: 
 
-```csharp
-string Id
-```
-GUID for this Namespace Tier.
-
-```csharp
-string Description
-```
-Description of this Tier.
-
-```csharp
-int32 ThroughputUnits
-```
-The number of throughput units associated with this Tier.
-
-```csharp
-int32 StorageUnits
-```
-The number of Storage units associated with this Tier.
+| Property | Type | Description | 
+ | --- | --- | ---  | 
+| Id | string | GUID for this Namespace Tier. | 
+| Description | string | Description of this Tier. | 
+| ThroughputUnits | int32 | The number of throughput units associated with this Tier. | 
+| StorageUnits | int32 | The number of Storage units associated with this Tier. | 
 
 
 ```json
@@ -44,22 +32,21 @@ The number of Storage units associated with this Tier.
 
 Retrieves a Namespace tier associated with a specified id
 
-**Http**
+### Http
 
 `GET api/NamespaceTiers/{namespaceTierId}`
 
-**Parameters**
+### Parameters
 
-```csharp
-string namespaceTierId
-```
-The tier identifier for this request
+`string namespaceTierId`:	The tier identifier for this request
 
-**Security**
 
-Allowed by Account Member [`Role`](xref:AccountRole)
 
-**Returns**
+### Security
+
+Allowed by Account Member [Role](xref:AccountRole)
+
+### Returns
 
 A `NamespaceTier` object with the specified namespaceTierId
 
@@ -68,19 +55,19 @@ A `NamespaceTier` object with the specified namespaceTierId
 
 Retrieves a list of all available namespace tiers.
 
-**Http**
+### Http
 
 `GET api/NamespaceTiers`
 
-**Parameters**
+### Parameters
 
 This API call does not have any parameters.
 
-**Security**
+### Security
 
-Allowed by Account Member [`Role`](xref:AccountRole)
+Allowed by Account Member [Role](xref:AccountRole)
 
-**Returns**
+### Returns
 
 An array of `NamespaceTier` objects
 

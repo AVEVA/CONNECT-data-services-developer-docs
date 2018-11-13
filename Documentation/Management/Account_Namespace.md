@@ -2,8 +2,7 @@
 uid: AccountNamespace
 ---
 
-Namespace
-=======================================================
+# Namespace
 
 A Namespace is a collection of Data Streams.
 
@@ -11,65 +10,20 @@ A Namespace is a collection of Data Streams.
 
 For HTTP requests and responses, the Namespace object has the following properties and JSON-serialized body: 
 
-```csharp
-string Id
-```
-Name of this Namespace. Unique within a Tenant's Namespaces.
-
-```csharp
-string TenantId
-```
-GUID of the Tenant that this Namespace corresponds to
-
-```csharp
-string Region
-```
-The region that the namespace is provisioned in
-
-```csharp
-string Self
-```
-The namespace's URI
-
-```csharp
-string Description
-```
-Description of this Namespace.
-
-```csharp
-string TierId
-```
-Id of the Tier that this Namespace is associated with.
-
-```csharp
-int32 ThroughputUnits
-```
-Number of Throughput units for this Namespace.
-
-```csharp
-int32 StorageUnits
-```
-Number of Storage units for this Namespace.
-
-```csharp
-NamespaceProvisioningState State
-```
-Current state of this Namespace.
-
-```csharp
-OwnerTrustee Owner
-```
-Owner [`Trustee`](xref:accessControl#trusteeobj) of this Namespace.
-
-```csharp
-AccessControlList AccessControl
-```
-The [`AccessControl`](xref:accessControl#accesscontrollistobj) that defines Access Control for this [`Namespace`](xref:AccountNamespace)
-
-```csharp
-AccessControlList AccessControlList
-```
-Access Control List.
+| Property | Type | Description | 
+ | --- | --- | ---  | 
+| Id | string | Name of this Namespace. Unique within a Tenant's Namespaces. | 
+| TenantId | string | GUID of the Tenant that this Namespace corresponds to | 
+| Region | string | The region that the namespace is provisioned in | 
+| Self | string | The namespace's URI | 
+| Description | string | Description of this Namespace. | 
+| TierId | string | Id of the Tier that this Namespace is associated with. | 
+| ThroughputUnits | int32 | Number of Throughput units for this Namespace. | 
+| StorageUnits | int32 | Number of Storage units for this Namespace. | 
+| State | NamespaceProvisioningState | Current state of this Namespace. | 
+| Owner | Trustee | Owner [Trustee](xref:accessControl) of this Namespace. | 
+| AccessControl | AccessControlList | The [AccessControl](xref:accessControl) that defines Access Control for this `Namespace` | 
+| AccessControlList | AccessControlList | Access Control List. | 
 
 
 ```json
@@ -84,9 +38,7 @@ Access Control List.
 	"StorageUnits": 0,
 	"State": 0,
 	"Owner": {
-		"Type": 2,
-		"TenantId": "string",
-		"ApplicationId": "string"
+		"Type": 0
 	},
 	"AccessControl": {
 		"RoleTrusteeAccessControlEntries": []
@@ -100,284 +52,232 @@ Access Control List.
 
 ## `GetAll()`
 
-Returns all [`Namespaces`](xref:AccountNamespace) owned by the specified tenant that the caller has access to.
+Returns all `Namespaces` owned by the specified tenant that the caller has access to.
 
-**Http**
+### Http
 
 `GET api/Tenants/{tenantId}/Namespaces`
 
-**Parameters**
+### Parameters
 
-```csharp
-string tenantId
-```
-The [`Tenant`](xref:accountTenant) identifier for the request.
-```csharp
-string include
-```
-An optional parameter specifying which attatched properties to include
+`string tenantId`:	The `Tenant` identifier for the request.
+
+`string include`:	An optional parameter specifying which attached properties to include
 
 
-**Security**
 
-A [`Namespace`](xref:AccountNamespace) can only be retrieved if the current principal has Read access.
+### Security
 
-**Returns**
+A `Namespace` can only be retrieved if the current principal has Read access.
 
-An array of all [`Namespace`](xref:AccountNamespace) objects for the specified tenantId that the caller has access.
+### Returns
 
+An array of all `Namespace` objects for the specified tenantId that the caller has access.
 
 ***
 ## `GetNamespaceById()`
 
-Returns the [`Namespace`](xref:AccountNamespace) with the specified Id.
+Returns the Namespace with the specified Id.
 
-**Http**
+### Http
 
 `GET api/Tenants/{tenantId}/Namespaces/{namespaceId}`
 
-**Parameters**
+### Parameters
 
-```csharp
-string tenantId
-```
-The account identifier for the request
-```csharp
-string namespaceId
-```
-The Namespace identifier for this request
+`string tenantId`:	The account identifier for the request
+
+`string namespaceId`:	The Namespace identifier for this request
 
 
-**Security**
 
-A [`Namespace`](xref:AccountNamespace) can only be retrieved if the current principal has Read access.
+### Security
 
-**Returns**
+A `Namespace` can only be retrieved if the current principal has Read access.
 
-A [`Namespace`](xref:AccountNamespace) object with the specified namespaceId
+### Returns
 
+A `Namespace` object with the specified namespaceId
 
 ***
 ## `Create()`
 
 Creates a namespace.
 
-**Http**
+### Http
 
 `POST api/Tenants/{tenantId}/Namespaces`
 
-**Parameters**
+### Parameters
 
-```csharp
-string tenantId
-```
-The identifier for the account the namespace is to be created for.
-```csharp
-Namespace namespaceObj
-```
-The Namespace to be created.
+`string tenantId`:	The identifier for the account the namespace is to be created for.
+
+`Namespace namespaceObj`:	The `Namespace` to be created.
 
 
-**Security**
 
-A Namespace can only be created if the current principal has Write access.
+### Security
 
-**Returns**
+A `Namespace` can only be create if the current principal has Write access.
 
-The created Namespace object.
+### Returns
 
+The created `Namespace` object
 
 ***
 ## `Update()`
 
-Updates [`Namespace`](xref:AccountNamespace) information - Description, TierId, AccessControl, and Owner.
+Updates Namespace information - Description, TierId, AccessControl, and Owner.
 
-**Http**
+### Http
 
 `PUT api/Tenants/{tenantId}/Namespaces/{namespaceId}`
 
-**Parameters**
+### Parameters
 
-```csharp
-string tenantId
-```
-The identifier of Namespace's Account.
-```csharp
-string namespaceId
-```
-The identifier for the Namespace to update.
-```csharp
-Namespace newProperties
-```
-The new details to store for the Namespace.
+`string tenantId`:	The identifier of Namespace's Account.
+
+`string namespaceId`:	The identifier for the Namespace to update.
+
+`Namespace newProperties`:	The new details to store for the Namespace.
 
 
-**Security**
 
-A [`Namespace`](xref:AccountNamespace) can only be updated if the current principal has Write access.
+### Security
 
-The [`AccessControl`](xref:accessControl#accesscontrollistobj) and [`OwnerTrustee`](xref:accessControl#trusteeobj) can only be updated if the current principal has Manage Access Control access.
+A `Namespace` can only be updated if the current principal has Write access. The [AccessControl](xref:accessControl) and owner [Trustee](xref:accessControl) can only be updated if the current principal has ManageAccessControl access.
 
-**Returns**
+### Returns
 
-The updated Namespace.
+The updated `Namespace`.
 
 ***
-
 ## `Delete()`
 
-Deletes a [`Namespace`](xref:AccountNamespace).
+Deletes a namespace.
 
-**Http**
+### Http
 
 `DELETE api/Tenants/{tenantId}/Namespaces/{namespaceId}`
 
-**Parameters**
+### Parameters
 
-```csharp
-string tenantId
-```
-The identifier of namespace's account
-```csharp
-string namespaceId
-```
-The identifier of the namespace to be deleted
+`string tenantId`:	The identifier of namespace's account
+
+`string namespaceId`:	The identifier of the namespace to be deleted
 
 
-**Security**
 
-A Namespace can only be deleted if the current principal has Delete access.
+### Security
 
-**Returns**
+A `Namespace` can only be deleted if the current principal has Delete access.
+
+### Returns
 
 Nothing is returned.
-
 
 ***
 ## `GetAccessControl()`
 
-Gets the [`AccessControl`](xref:accessControl#accesscontrollistobj) that is used to authorize access to a [`Namespace`](xref:AccountNamespace).
+Gets the [AccessControl](xref:accessControl) that is used to authorize access to a `Namespace`.
 
-**Http**
+### Http
 
 `GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/accesscontrol`
 
-**Parameters**
+### Parameters
 
-```csharp
-string tenantId
-```
-The idenfifier of the account being accessed.
-```csharp
-string namespaceId
-```
-The identifier of the [`Namespace`](xref:AccountNamespace) being accessed.
+`string tenantId`:	The identifier of the account being accessed.
+
+`string namespaceId`:	The identifier of the `Namespace` being accessed.
 
 
-**Security**
 
- The current principal has Read access.
+### Security
 
-**Returns**
+The current principal has Read access.
 
-The [`AccessControl`](xref:accessControl#accesscontrollistobj) for the [`Namespace`](xref:AccountNamespace).
+### Returns
 
+The [AccessControl](xref:accessControl) for the `Namespace`.
 
 ***
 ## `SetAccessControl()`
 
-Edits the [`AccessControl`](xref:accessControl#accesscontrollistobj) that is used to authorize access to a [`Namespace`](xref:AccountNamespace).
+Edits the [AccessControl](xref:accessControl) that is used to authorize access to a `Namespace`.
 
-**Http**
+### Http
 
 `PUT api/Tenants/{tenantId}/Namespaces/{namespaceId}/accesscontrol`
 
-**Parameters**
+### Parameters
 
-```csharp
-string tenantId
-```
-The idenfifier of the account being modified.
-```csharp
-string namespaceId
-```
-The identifier of the [`Namespace`](xref:AccountNamespace) being modified.
-```csharp
-AccessControlList newAccessControlList
-```
-The new [`AccessControlList`](xref:accessControl#accesscontrollistobj) for the [`Namespace`](xref:AccountNamespace).
+`string tenantId`:	The identifier of the account being modified.
+
+`string namespaceId`:	The identifier of the `Namespace` being modified.
+
+`AccessControlList newAccessControlList`:	The new [AccessControl](xref:accessControl) for the `Namespace`.
 
 
-**Security**
 
- The current principal has ManageAccessControl access.
+### Security
 
-**Returns**
+The current principal has ManageAccessControl access.
 
-The updated [`AccessControlList`](xref:accessControl#accesscontrollistobj) for the [`Namespace`](xref:AccountNamespace).
+### Returns
 
+The updated [AccessControl](xref:accessControl) for the `Namespace`.
 
 ***
 ## `GetOwner()`
 
-Gets the [`OwnerTrustee`](xref:accessControl#trusteeobj) for a given [`Namespace`](xref:AccountNamespace).
+Gets the owner for a given `Namespace`.
 
-**Http**
+### Http
 
 `GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/owner`
 
-**Parameters**
+### Parameters
 
-```csharp
-string tenantId
-```
-The idenfifier of the account being accessed.
-```csharp
-string namespaceId
-```
-The identifier of the [`Namespace`](xref:AccountNamespace) being accessed.
+`string tenantId`:	The identifier of the account being accessed.
+
+`string namespaceId`:	The identifier of the `Namespace` being accessed.
 
 
-**Security**
 
- The current principal has Read access.
+### Security
 
-**Returns**
+The current principal has Read access.
 
-The [`OwnerTrustee`](xref:accessControl#trusteeobj) of the [`Namespace`](xref:AccountNamespace).
+### Returns
 
+The owner [Trustee](xref:accessControl) of the `Namespace`.
 
 ***
 ## `SetOwner()`
 
-Changes the [`OwnerTrustee`](xref:accessControl#trusteeobj) for a given [`Namespace`](xref:AccountNamespace).
+Changes the owner for a given `Namespace`.
 
-**Http**
+### Http
 
 `PUT api/Tenants/{tenantId}/Namespaces/{namespaceId}/owner`
 
-**Parameters**
+### Parameters
 
-```csharp
-string tenantId
-```
-The idenfifier of the account being edited.
-```csharp
-string namespaceId
-```
-The identifier of the [`Namespace`](xref:AccountNamespace) being edited.
-```csharp
-OwnerTrustee newOwner
-```
-The new [`OwnerTrustee`](xref:accessControl#trusteeobj) for the [`Namespace`](xref:AccountNamespace).
+`string tenantId`:	The identifier of the account being edited.
+
+`string namespaceId`:	The identifier of the `Namespace` being edited.
+
+`Trustee newOwner`:	The new owner [Trustee](xref:accessControl) for the `Namespace`.
 
 
-**Security**
 
- The current principal has ManageAccessControl access.
+### Security
 
-**Returns**
+The current principal has ManageAccessControl access.
 
-The new [`OwnerTrustee`](xref:accessControl#trusteeobj) of the [`Namespace`](xref:AccountNamespace).
+### Returns
+
+The new owner [Trustee](xref:accessControl) of the `Namespace`.
 
 ***

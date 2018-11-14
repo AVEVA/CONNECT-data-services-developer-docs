@@ -83,7 +83,7 @@ references:
   name: API calls for reading data
   href: Documentation/SequentialDataStore/Reading_Data_API.html
 - uid: sdsSearching
-  name: Searching for streams
+  name: Searching
   href: Documentation/SequentialDataStore/Searching.html
 - uid: sdsStreamExtra
   name: Stream Metadata and Tags

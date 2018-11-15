@@ -83,7 +83,7 @@ searching for SdsStreams and SdsTypes.</p>
 The only difference is the resource you&#39;re searching on, and you can filter on different properties for types than for streams. See <a class="xref" href="SDS_Types.html">Types</a> for more information.</p>
 <p><code>GetTypesAsync</code> is an overloaded method that is used to search for and return types. </p>
 <p>The syntax of the client libraries method is as follows:</p>
-<pre><code>  _metadataService.GetStreamsAsync(query:&quot;QueryString&quot;, skip:0, count:100);
+<pre><code>  _metadataService.GetTypesAsync(query:&quot;QueryString&quot;, skip:0, count:100);
 </code></pre><p>As previously mentioned, searching for types is also possible using the REST API and specifying the optional <code>query</code> parameter, as shown here:</p>
 <pre><code>  GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Types?query={query}&amp;skip={skip}&amp;count={count}
 </code></pre><p>The <code>GetStreamsAsync</code> or <code>GetTypesAsync</code> overload return items that match specific search criteria within a given namespace. 
@@ -221,69 +221,50 @@ It only works when specifying a single search term. For example, you can search 
 </code></pre><h2 id="-operator-1"><strong>* Operator</strong></h2>
 <p>You can use the <code>‘*’</code> character as a wildcard to specify an incomplete string.</p>
 <table>
-    <thead>
-        <tr>
-            <th>Query string</th>
-            <th>Matches field value</th>
-            <th>Does not match field value</th>
-        </tr>
-        <tr>
-            <td>log<em></em></td>
-            <td><ul><li>log</li>
-                <li>logger</li></ul>
-            </td>
-            <td><ul><li>analog</li></ul>
-            </td>
-        </tr>
-        <tr>
-            <td>log</td>
-            <td><ul><li>analog</li>
-                <li>alog</li></ul>
-            </td>
-            <td><ul><li>logg</li></ul>
-            </td>
-        </tr>
-        <tr>
-            <td><em>log</em></td>
-            <td><ul><li>analog</li>
-                <li>alogger</li></ul>
-            </td>
-            <td><ul><li>lop</li></ul>
-            </td>
-        </tr>
-        <tr>
-            <td>l*g</td>
-            <td><ul><li>log</li>
-                <li>logg</li></ul>
-            </td>
-            <td><ul><li>lop</li></ul>
-            </td>
-        </tr>
-    </thead>
+<thead>
+<tr>
+<th><strong>Query string</strong></th>
+<th><strong>Matches field value</strong></th>
+<th><strong>Does not match field value</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>“log*”</code></td>
+<td>log<br>logger</td>
+<td>analog</td>
+</tr>
+<tr>
+<td><code>“*log”</code></td>
+<td>analog<br>alog</td>
+<td>logg</td>
+</tr>
+<tr>
+<td><code>“*log*”</code></td>
+<td>analog<br>alogger</td>
+<td>lop</td>
+</tr>
+<tr>
+<td><code>“l*g”</code></td>
+<td>log<br>logg</td>
+<td>lop</td>
+</tr>
+</tbody>
 </table>
-
 <table>
-    <thead>
-        <tr>
-            <th>Supported</th>
-            <th>Not Supported</th>
-        </tr>
-        <tr>
-            <td><ul><li><em></em></li>
-                <li>log</li>
-                <li>l<em>g</em></li>
-                <li>log</li>
-                <li><em>log</em></li></ul>
-            </td>
-            <td><ul><li><em>l</em>g<em></em></li>
-                <li>l<em>g</em></li>
-                <li>lg*</li></ul>
-            </td>
-        </tr>
-    </thead>
+<thead>
+<tr>
+<th><strong>Supported</strong></th>
+<th><strong>Not Supported</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>“*”</code><br><code>“*log”</code><br><code>“l*g”</code><br><code>“log*”</code><br><code>“*log*”</code></td>
+<td><code>“*l*g*”</code><br><code>“*l*g”</code><br><code>“l*g*”</code></td>
+</tr>
+</tbody>
 </table>
-
-
 <p><strong>REST API example</strong></p>
 <pre><code>GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=log*
 </code></pre><p><strong>C# example</strong></p>
@@ -294,81 +275,62 @@ whitespace and dashes (with the exception of identifier fields like Id
 or TypeId fields). To search for values that include delimiters, enclose the value in double quotes.
 <code>&quot;*&quot;</code> can not be used in conjunction with this operator.</p>
 <table>
-    <thead>
-        <tr>
-            <th>Query string</th>
-            <th>Matches field value</th>
-            <th>Does not match field value</th>
-        </tr>
-        <tr>
-            <td>pump pressure</td>
-            <td><ul><li>pump pressure</li>
-                <li>pump pressure gauge</li>
-                <li>the pump pressure gauge</li></ul>
-            </td>
-            <td><ul><li>the pump</li>
-                <li>pressure</li>
-                <li>pressure pump</li></ul>
-            </td>
-        </tr>
-    </thead>
+<thead>
+<tr>
+<th><strong>Query string</strong></th>
+<th><strong>Matches field value</strong></th>
+<th><strong>Does not match field value</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>“pump pressure”</code></td>
+<td>pump pressure<br>pump pressure gauge<br>the pump pressure gauge</td>
+<td>the pump<br>pressure<br>pressure pump</td>
+</tr>
+</tbody>
 </table>
-
 <p><strong>REST API example</strong></p>
 <pre><code>GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=”pump pressure”
 </code></pre><p><strong>C# example</strong></p>
 <pre><code>GetStreamsAsync(query:”\\”pump pressure\\””);
 </code></pre><h2 id="other-operators-examples">Other operators examples</h2>
 <table>
-    <thead>
-        <tr>
-            <th>Query string</th>
-            <th>Matches field value</th>
-            <th>Does not match field value</th>
-        </tr>
-        <tr>
-            <td>mud AND log</td>
-            <td><ul><li>log mud</li>
-                <li>mud log</li></ul>
-            </td>
-            <td><ul><li>mud</li>
-                <li>log</li></ul>
-            </td>
-        </tr>
-        <tr>
-            <td>mud OR log</td>
-            <td><ul><li>mud</li>
-                <li>log</li>
-                <li>mud log</li></ul>
-            </td>
-            <td>
-            </td>
-        </tr>
-        <tr>
-            <td>mud AND (NOT log)</td>
-            <td><ul><li>mud</li></ul>
-            </td>
-            <td><ul><li>mud log</li></ul>
-            </td>
-        </tr>
-        <tr>
-            <td>mud AND (log OR pump*)</td>
-            <td><ul><li>mud log</li>
-            <li>mud pumps</li></ul>
-            </td>
-            <td><ul><li>mud bath</li></ul>
-            </td>
-        </tr>
-        <tr>
-            <td>name:stream* AND (tags:pressure OR tags:pump)</td>
-            <td>The name starts with “stream” and has tag values of either “pressure” or “pump”
-            </td>
-            <td>
-            </td>
-        </tr>
-    </thead>
+<thead>
+<tr>
+<th><strong>Query string</strong></th>
+<th><strong>Matches field value</strong></th>
+<th><strong>Does not match field value</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>“mud AND log”</code></td>
+<td>log mud<br>mud log</td>
+<td>mud<br>log</td>
+</tr>
+<tr>
+<td><code>“mud OR log”</code></td>
+<td>log mud<br>mud<br>log</td>
+<td></td>
+</tr>
+<tr>
+<td><code>“mud AND (NOT log)”</code></td>
+<td>mud</td>
+<td>mud log</td>
+</tr>
+<tr>
+<td><code>“mud AND (log OR pump*)”</code></td>
+<td>mud log<br>mud pumps</td>
+<td>mud bath</td>
+</tr>
+<tr>
+<td><code>“name:stream\* AND (tags:pressure OR tags:pump)”</code></td>
+<td>The name starts with “stream” and has tag values of either “pressure” or “pump”</td>
+<td></td>
+</tr>
+</tbody>
 </table>
-
 <h2 id="searching-on-metadata">Searching on Metadata</h2>
 <p>Streams can have metadata collections associated with them. Metadata allows you to specify arbitrary key-value 
 pairs to help organize and add context your streams. To search for streams by metadata, use the following syntax:

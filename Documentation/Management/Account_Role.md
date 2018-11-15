@@ -44,10 +44,18 @@ Retrieves an Account Role based on the specified Account Id and Role Id.
 
 ### Parameters
 
-`string tenantId`:	The Account identifier for this request
+```csharp
+[Required]
+string tenantId
+```
 
-`string roleId`:	The Role identifier for this request
+The Account identifier for this request
+```csharp
+[Required]
+string roleId
+```
 
+The Role identifier for this request
 
 
 ### Security
@@ -69,14 +77,31 @@ Retrieves all Account Roles for the specified Account Id.
 
 ### Parameters
 
-`string tenantId`:	The Account identifier for this request
+```csharp
+[Required]
+string tenantId
+```
 
-`string skip`:	Number of `Roles` to ignore
+The Account identifier for this request
+```csharp
+[Required]
+string skip
+```
 
-`string count`:	Number of `Roles` to be returned
+Number of `Roles` to ignore
+```csharp
+[Required]
+string count
+```
 
-`string query`:	Unsupported parameter
+Number of `Roles` to be returned
+```csharp
+[Optional]
+[Default = ""]
+string query
+```
 
+Unsupported parameter
 
 
 ### Security
@@ -98,10 +123,19 @@ Create an Account Role
 
 ### Parameters
 
-`string tenantId`:	The Account identifier for this request
+```csharp
+[Required]
+string tenantId
+```
 
-`Role role`:	The `Role` for this request
+The Account identifier for this request
+```csharp
+[Required]
+[FromBody]
+Role role
+```
 
+The `Role` for this request
 
 
 ### Security
@@ -123,12 +157,25 @@ Update a Role by its Role Id
 
 ### Parameters
 
-`string tenantId`:	The Account identifier for this request.
+```csharp
+[Required]
+string tenantId
+```
 
-`string roleId`:	The Role identifier for this request.
+The Account identifier for this request.
+```csharp
+[Required]
+string roleId
+```
 
-`Role role`:	The `Role` for this request.
+The Role identifier for this request.
+```csharp
+[Required]
+[FromBody]
+Role role
+```
 
+The `Role` for this request.
 
 
 ### Security
@@ -150,10 +197,18 @@ Delete any Account scoped, non built-in Role by its Role Id
 
 ### Parameters
 
-`string tenantId`:	The Account identifier for this request
+```csharp
+[Required]
+string tenantId
+```
 
-`string roleId`:	The Role identifier for this request
+The Account identifier for this request
+```csharp
+[Required]
+string roleId
+```
 
+The Role identifier for this request
 
 
 ### Security

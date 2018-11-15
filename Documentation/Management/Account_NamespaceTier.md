@@ -38,8 +38,12 @@ Retrieves a Namespace tier associated with a specified id
 
 ### Parameters
 
-`string namespaceTierId`:	The tier identifier for this request
+```csharp
+[Required]
+string namespaceTierId
+```
 
+The tier identifier for this request
 
 
 ### Security

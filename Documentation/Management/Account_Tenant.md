@@ -48,8 +48,12 @@ Get a specific tenant by ID
 
 ### Parameters
 
-`string tenantId`:	The `Tenant` identifier for this request
+```csharp
+[Required]
+string tenantId
+```
 
+The `Tenant` identifier for this request
 
 
 ### Security
@@ -71,8 +75,12 @@ Check if a tenant with a specific id exists
 
 ### Parameters
 
-`string tenantId`:	The `Tenant` identifier for this request
+```csharp
+[Required]
+string tenantId
+```
 
+The `Tenant` identifier for this request
 
 
 ### Security
@@ -94,10 +102,19 @@ update tenant object
 
 ### Parameters
 
-`string tenantId`:	The `Tenant` identifier for this request
+```csharp
+[Required]
+string tenantId
+```
 
-`Tenant tenant`:	The `Tenant` identifier for this request
+The `Tenant` identifier for this request
+```csharp
+[Required]
+[FromBody]
+Tenant tenant
+```
 
+The `Tenant` identifier for this request
 
 
 ### Security

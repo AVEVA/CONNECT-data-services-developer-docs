@@ -34,12 +34,24 @@ Assign a `Role` to a specified client.
 
 ### Parameters
 
-`string tenantId`:	ID of the tenant for this request.
+```csharp
+[Required]
+string tenantId
+```
 
-`string clientId`:	ID of the client for this request.
+ID of the tenant for this request.
+```csharp
+[Required]
+string clientId
+```
 
-`string roleId`:	ID of the `Role` to be assigned.
+ID of the client for this request.
+```csharp
+[Required]
+string roleId
+```
 
+ID of the `Role` to be assigned.
 
 
 ### Security
@@ -61,12 +73,25 @@ Assign a set of roles to a specified client.
 
 ### Parameters
 
-`string tenantId`:	ID of the tenant the client belongs to.
+```csharp
+[Required]
+string tenantId
+```
 
-`string clientId`:	ID of the client for this request
+ID of the tenant the client belongs to.
+```csharp
+[Required]
+string clientId
+```
 
-`[Role] roleList`:	List of `Roles` to be assigned.
+ID of the client for this request
+```csharp
+[Required]
+[FromBody]
+[Role] roleList
+```
 
+List of `Roles` to be assigned.
 
 
 ### Security
@@ -88,12 +113,24 @@ Remove a `Role` specified by its Id.
 
 ### Parameters
 
-`string tenantId`:	ID of the tenant for this request.
+```csharp
+[Required]
+string tenantId
+```
 
-`string clientId`:	ID of the client for this request.
+ID of the tenant for this request.
+```csharp
+[Required]
+string clientId
+```
 
-`string roleId`:	ID of the `Role` to be removed.
+ID of the client for this request.
+```csharp
+[Required]
+string roleId
+```
 
+ID of the `Role` to be removed.
 
 
 ### Security
@@ -115,16 +152,37 @@ Get a list of an client's `Roles`.
 
 ### Parameters
 
-`string tenantId`:	ID of the tenant for this request.
+```csharp
+[Required]
+string tenantId
+```
 
-`string clientId`:	ID of the client for this request
+ID of the tenant for this request.
+```csharp
+[Required]
+string clientId
+```
 
-`string skip`:	Number of `Roles` to ignore.
+ID of the client for this request
+```csharp
+[Required]
+string skip
+```
 
-`string count`:	Number of `Roles` to return.
+Number of `Roles` to ignore.
+```csharp
+[Required]
+string count
+```
 
-`string query`:	Unsupported parameter.
+Number of `Roles` to return.
+```csharp
+[Optional]
+[Default = ""]
+string query
+```
 
+Unsupported parameter.
 
 
 ### Security

@@ -18,8 +18,12 @@ Get the [AccessControl](xref:accessControl) that is used to authorize access to 
 
 ### Parameters
 
-`string tenantId`:	The identifier for the account being accessed.
+```csharp
+[Required]
+string tenantId
+```
 
+The identifier for the account being accessed.
 
 
 ### Security
@@ -41,10 +45,19 @@ Set the [AccessControl](xref:accessControl) that is used to authorize access to 
 
 ### Parameters
 
-`string tenantId`:	The identifier for the account being modified.
+```csharp
+[Required]
+string tenantId
+```
 
-`AccessControlList newAccessControlList`:	The new root [AccessControl](xref:accessControl) for `Namespaces`.
+The identifier for the account being modified.
+```csharp
+[Required]
+[FromBody]
+AccessControlList newAccessControlList
+```
 
+The new root [AccessControl](xref:accessControl) for `Namespaces`.
 
 
 ### Security

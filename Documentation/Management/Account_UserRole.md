@@ -34,16 +34,37 @@ Retrieves all roles for the specified user.
 
 ### Parameters
 
-`string tenantId`:	The identifier for the account in which the user belongs
+```csharp
+[Required]
+string tenantId
+```
 
-`string userId`:	The identifier of the <see cref="!:User" /> whose roles will be retrieved
+The identifier for the account in which the user belongs
+```csharp
+[Required]
+string userId
+```
 
-`string skip`:	Number of `Roles` to ignore
+The identifier of the <see cref="!:User" /> whose roles will be retrieved
+```csharp
+[Required]
+string skip
+```
 
-`string count`:	Number of `Roles` to be returned
+Number of `Roles` to ignore
+```csharp
+[Required]
+string count
+```
 
-`string query`:	Unsupported parameter
+Number of `Roles` to be returned
+```csharp
+[Optional]
+[Default = ""]
+string query
+```
 
+Unsupported parameter
 
 
 ### Security
@@ -65,12 +86,24 @@ Adds an account role to the specified user.
 
 ### Parameters
 
-`string tenantId`:	The identifier for the account in which the user belongs
+```csharp
+[Required]
+string tenantId
+```
 
-`string userId`:	The identifier of the <see cref="!:User" /> who will be given the role
+The identifier for the account in which the user belongs
+```csharp
+[Required]
+string userId
+```
 
-`string roleId`:	The identifier of the role to add to the <see cref="!:User" />
+The identifier of the <see cref="!:User" /> who will be given the role
+```csharp
+[Required]
+string roleId
+```
 
+The identifier of the role to add to the <see cref="!:User" />
 
 
 ### Security
@@ -92,12 +125,24 @@ Removes a role from a user.
 
 ### Parameters
 
-`string tenantId`:	The identifier for the account in which the user belongs
+```csharp
+[Required]
+string tenantId
+```
 
-`string userId`:	The identifier of the <see cref="!:User" /> whose role will be removed
+The identifier for the account in which the user belongs
+```csharp
+[Required]
+string userId
+```
 
-`string roleId`:	The identifier of the role to remove from the <see cref="!:User" />
+The identifier of the <see cref="!:User" /> whose role will be removed
+```csharp
+[Required]
+string roleId
+```
 
+The identifier of the role to remove from the <see cref="!:User" />
 
 
 ### Security
@@ -119,12 +164,25 @@ Replace the roles of a user with a new list of roles.
 
 ### Parameters
 
-`string tenantId`:	The identifier for the account in which the user belongs
+```csharp
+[Required]
+string tenantId
+```
 
-`string userId`:	The identifier of the <see cref="!:User" /> whose roles will be replaced
+The identifier for the account in which the user belongs
+```csharp
+[Required]
+string userId
+```
 
-`[Role] newRoles`:	From the body. An array of `Role` objects to set as the Roles for the specified user
+The identifier of the <see cref="!:User" /> whose roles will be replaced
+```csharp
+[Required]
+[FromBody]
+[Role] newRoles
+```
 
+From the body. An array of `Role` objects to set as the Roles for the specified user
 
 
 ### Security

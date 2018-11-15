@@ -18,10 +18,18 @@ Returns blog entries ordered by time posted.
 
 ### Parameters
 
-`string skip`:	Number of blogs to skip for paging purposes
+```csharp
+[Required]
+string skip
+```
 
-`string count`:	Blogs to count after skip for paging purposes
+Number of blogs to skip for paging purposes
+```csharp
+[Required]
+string count
+```
 
+Blogs to count after skip for paging purposes
 
 
 ### Security

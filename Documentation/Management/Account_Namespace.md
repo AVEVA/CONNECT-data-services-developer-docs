@@ -60,10 +60,19 @@ Returns all `Namespaces` owned by the specified tenant that the caller has acces
 
 ### Parameters
 
-`string tenantId`:	The `Tenant` identifier for the request.
+```csharp
+[Required]
+string tenantId
+```
 
-`string include`:	An optional parameter specifying which attached properties to include
+The `Tenant` identifier for the request.
+```csharp
+[Optional]
+[Default = ""]
+string include
+```
 
+An optional parameter specifying which attached properties to include
 
 
 ### Security
@@ -85,10 +94,18 @@ Returns the Namespace with the specified Id.
 
 ### Parameters
 
-`string tenantId`:	The account identifier for the request
+```csharp
+[Required]
+string tenantId
+```
 
-`string namespaceId`:	The Namespace identifier for this request
+The account identifier for the request
+```csharp
+[Required]
+string namespaceId
+```
 
+The Namespace identifier for this request
 
 
 ### Security
@@ -110,10 +127,19 @@ Creates a namespace.
 
 ### Parameters
 
-`string tenantId`:	The identifier for the account the namespace is to be created for.
+```csharp
+[Required]
+string tenantId
+```
 
-`Namespace namespaceObj`:	The `Namespace` to be created.
+The identifier for the account the namespace is to be created for.
+```csharp
+[Required]
+[FromBody]
+Namespace namespaceObj
+```
 
+The `Namespace` to be created.
 
 
 ### Security
@@ -135,12 +161,25 @@ Updates Namespace information - Description, TierId, AccessControl, and Owner.
 
 ### Parameters
 
-`string tenantId`:	The identifier of Namespace's Account.
+```csharp
+[Required]
+string tenantId
+```
 
-`string namespaceId`:	The identifier for the Namespace to update.
+The identifier of Namespace's Account.
+```csharp
+[Required]
+string namespaceId
+```
 
-`Namespace newProperties`:	The new details to store for the Namespace.
+The identifier for the Namespace to update.
+```csharp
+[Required]
+[FromBody]
+Namespace newProperties
+```
 
+The new details to store for the Namespace.
 
 
 ### Security
@@ -162,10 +201,18 @@ Deletes a namespace.
 
 ### Parameters
 
-`string tenantId`:	The identifier of namespace's account
+```csharp
+[Required]
+string tenantId
+```
 
-`string namespaceId`:	The identifier of the namespace to be deleted
+The identifier of namespace's account
+```csharp
+[Required]
+string namespaceId
+```
 
+The identifier of the namespace to be deleted
 
 
 ### Security
@@ -187,10 +234,18 @@ Gets the [AccessControl](xref:accessControl) that is used to authorize access to
 
 ### Parameters
 
-`string tenantId`:	The identifier of the account being accessed.
+```csharp
+[Required]
+string tenantId
+```
 
-`string namespaceId`:	The identifier of the `Namespace` being accessed.
+The identifier of the account being accessed.
+```csharp
+[Required]
+string namespaceId
+```
 
+The identifier of the `Namespace` being accessed.
 
 
 ### Security
@@ -212,12 +267,25 @@ Edits the [AccessControl](xref:accessControl) that is used to authorize access t
 
 ### Parameters
 
-`string tenantId`:	The identifier of the account being modified.
+```csharp
+[Required]
+string tenantId
+```
 
-`string namespaceId`:	The identifier of the `Namespace` being modified.
+The identifier of the account being modified.
+```csharp
+[Required]
+string namespaceId
+```
 
-`AccessControlList newAccessControlList`:	The new [AccessControl](xref:accessControl) for the `Namespace`.
+The identifier of the `Namespace` being modified.
+```csharp
+[Required]
+[FromBody]
+AccessControlList newAccessControlList
+```
 
+The new [AccessControl](xref:accessControl) for the `Namespace`.
 
 
 ### Security
@@ -239,10 +307,18 @@ Gets the owner for a given `Namespace`.
 
 ### Parameters
 
-`string tenantId`:	The identifier of the account being accessed.
+```csharp
+[Required]
+string tenantId
+```
 
-`string namespaceId`:	The identifier of the `Namespace` being accessed.
+The identifier of the account being accessed.
+```csharp
+[Required]
+string namespaceId
+```
 
+The identifier of the `Namespace` being accessed.
 
 
 ### Security
@@ -264,12 +340,25 @@ Changes the owner for a given `Namespace`.
 
 ### Parameters
 
-`string tenantId`:	The identifier of the account being edited.
+```csharp
+[Required]
+string tenantId
+```
 
-`string namespaceId`:	The identifier of the `Namespace` being edited.
+The identifier of the account being edited.
+```csharp
+[Required]
+string namespaceId
+```
 
-`Trustee newOwner`:	The new owner [Trustee](xref:accessControl) for the `Namespace`.
+The identifier of the `Namespace` being edited.
+```csharp
+[Required]
+[FromBody]
+Trustee newOwner
+```
 
+The new owner [Trustee](xref:accessControl) for the `Namespace`.
 
 
 ### Security

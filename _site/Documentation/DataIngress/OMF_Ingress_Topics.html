@@ -315,42 +315,6 @@ called <code>MappedTopic</code> which extends <code>Topic</code>: </p>
 <p><strong>Returns</strong></p>
 <p>A MappedTopic object. </p>
 <hr>
-<h2 id="post-apitenantstenantidnamespacesnamespaceidtopics"><code>POST api/tenants/{tenantId}/namespaces/{namespaceId}/topics</code></h2>
-<p>Creates or updates multiple topic. Only the topic name and description can be updated. </p>
-<p><strong>Parameters</strong></p>
-<p><code>tenantId</code>
-  Unique Id for the tenant. 
-<code>namespaceId</code>
-  Unique Id for the namespace. </p>
-<p><strong>Body</strong></p>
-<p>An array of MappedTopic objects. </p>
-<p><strong>Returns</strong></p>
-<p>An array of MappedTopic objects. </p>
-<hr>
-<h2 id="post-apitenantstenantidnamespacesnamespaceidpublishertopicmapping"><code>POST api/tenants/{tenantId}/namespaces/{namespaceId}/publishertopicmapping</code></h2>
-<p>Creates a mapping between a publisher and topic. </p>
-<p><strong>Parameters</strong></p>
-<p><code>tenantId</code>
-  Unique Id for the tenant. 
-<code>namespaceId</code>
-  Unique Id for the namespace. </p>
-<p><strong>Body</strong></p>
-<p>A MappedPublisher object. </p>
-<p><strong>Returns</strong></p>
-<p>A MappedPublisher object. </p>
-<hr>
-<h2 id="post-apitenantstenantidnamespacesnamespaceidpublishertopicmappings"><code>POST api/tenants/{tenantId}/namespaces/{namespaceId}/publishertopicmappings</code></h2>
-<p>Creates multiple mappings between publishers and topics </p>
-<p><strong>Parameters</strong></p>
-<p><code>tenantId</code>
-  Unique Id for the tenant. 
-<code>namespaceId</code>
-  Unique Id for the namespace. </p>
-<p><strong>Body</strong></p>
-<p>An array of MappedPublisher objects. </p>
-<p><strong>Returns</strong> </p>
-<p>An array of MappedPublisher objects. </p>
-<hr>
 <h2 id="put-apitenantstenantidnamespacesnamespaceidaccesscontroltopics"><code>PUT api/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/topics</code></h2>
 <p>Update the default Access Control List for new topics</p>
 <p><strong>Parameters</strong></p>
@@ -372,18 +336,6 @@ called <code>MappedTopic</code> which extends <code>Topic</code>: </p>
   Unique Id for the topic. </p>
 <p><strong>Body</strong></p>
 <p>An AccessControlList object.</p>
-<hr>
-<h2 id="delete-apitenantstenantidnamespacesnamespaceidpublishertopicmappingstopicid"><code>DELETE api/tenants/{tenantId}/namespaces/{namespaceId}/publishertopicmappings/{topicId}</code></h2>
-<p>Delete mappings between a topic and multiple publishers. </p>
-<p><strong>Parameters</strong></p>
-<p><code>tenantId</code>
-  Unique Id for the tenant. 
-<code>namespaceId</code>
-  Unique Id for the namespace. 
-<code>topicId</code>
-  Unique Id for the topic. </p>
-<p><strong>Body</strong></p>
-<p>A string array of Publisher Ids to remove from the Topic. </p>
 <hr>
 <h2 id="delete-apitenantstenantidnamespacesnamespaceidtopicstopicid"><code>DELETE api/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}</code></h2>
 <p>Delete a topic. </p>

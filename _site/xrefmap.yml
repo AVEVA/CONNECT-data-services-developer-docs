@@ -115,3 +115,6 @@ references:
 - uid: support
   name: Getting support
   href: Documentation/support.html
+- uid: unitsOfMeasure
+  name: Units of Measure
+  href: Documentation/SequentialDataStore/Units_of_Measure.html

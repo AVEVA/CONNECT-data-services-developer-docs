@@ -222,10 +222,10 @@ SdsType Properties for a specific stream.</p>
 </tbody>
 </table>
 <p>The unit of measure can be overridden for any type property defined by the stream type, including primary keys 
-and secondary indexes. For more information about type property units of measure see <a class="xref" href="SDS_Types.html#qitypetopic">QiType_topic</a>. </p>
+and secondary indexes. For more information about type property units of measure see <a class="xref" href="SDS_Types.html#sdstypetopic">QiType_topic</a>. </p>
 <p>Read characteristics of the stream are determined by the type and the PropertyOverrides of the stream. The 
 interpolation mode for non-index properties can be defined and overridden at the stream level. For more 
-information about type read characteristics see <a class="xref" href="SDS_Types.html#qitypetopic">QiType_topic</a>.</p>
+information about type read characteristics see <a class="xref" href="SDS_Types.html#sdstypetopic">QiType_topic</a>.</p>
 <p>When specifying property interpolation overrides, if the SdsType InterpolationMode is <code>Discrete</code>, it cannot be overridden 
 at any level. When InterpolationMode is set to <code>Discrete</code> and an event it not defined for that index, a null 
 value is returned for the entire event.</p>
@@ -233,7 +233,7 @@ value is returned for the entire event.</p>
 <p>The REST APIs provide programmatic access to read and write SDS data. The APIs in this 
 section interact with SdsStreams. When working in .NET convenient SDS Client libraries are 
 available. The <code>ISdsMetadataService</code> interface, accessed using the <code>SdsService.GetMetadataService( )</code> helper, 
-defines the available functions. See <a href="#qistreamtopic">Qi_Stream_topic</a> for general 
+defines the available functions. See <a href="#sdsstreamtopic">Qi_Stream_topic</a> for general 
 SdsStream information. </p>
 <hr>
 <h2 id="get-stream"><code>Get Stream</code></h2>

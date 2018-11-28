@@ -341,15 +341,6 @@ the token is valid. </p>
 <p><strong>Returns</strong></p>
 <p>  A Publisher object. </p>
 <hr>
-<h2 id="post-apitenantstenantidpublishers"><code>POST api/tenants/{tenantId}/publishers</code></h2>
-<p>Creates or updates multiple publishers. Only the name and description of a publisher can be updated.</p>
-<p><strong>Parameters</strong></p>
-<p><code>tenantId</code>
-  Unique Id for the tenant. </p>
-<p><strong>Body</strong><br>An array of Publisher objects. </p>
-<p><strong>Returns</strong></p>
-<p>An array of Publisher objects. </p>
-<hr>
 <h2 id="post-apitenantstenantidpublisherspublisheridtokens"><code>POST api/tenants/{tenantId}/publishers/{publisherId}/tokens</code></h2>
 <p>Create or undelete a token. If the token object provided does not have a tokenId, a new token is created.
 Otherwise, specify the id of an existing deleted token that isn&#39;t expired, and it will be undeleted.</p>
@@ -400,14 +391,6 @@ Otherwise, specify the id of an existing deleted token that isn&#39;t expired, a
   Unique Id for the token. </p>
 <p><strong>Returns</strong></p>
 <p>A Token object for the deleted token. </p>
-<hr>
-<h2 id="delete-apitenantstenantidpublisherspublisheridtokens"><code>DELETE api/tenants/{tenantId}/publishers/{publisherId}/tokens</code></h2>
-<p>Deletes all tokens for a publisher.</p>
-<p><strong>Parameters</strong></p>
-<p><code>tenantId</code> 
-  Unique Id for the tenant. 
-<code>publisherId</code>
-  Unique Id for the publisher. </p>
 <hr>
 </article>
           </div>

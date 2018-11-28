@@ -351,198 +351,7 @@ The InterpolationMode and Uom of a Property can be overriden on the stream. For 
 Supported Units of Measure
 --------------------------
 
-The following unit of measures are supported for an SdsTypeProperty:
-
-| Name                                             | Abbreviation |
-|--------------------------------------------------|--------------|
-| acre                                             | acre         |
-| acre foot                                        | acre ft      |
-| ampere                                           | A            |
-| Ampere hour                                      | Ah           |
-| atmosphere                                       | atm          |
-| bar                                              | bar          |
-| barrel                                           | bbl          |
-| barrel per day                                   | bbl/d        |
-| British thermal unit                             | Btu          |
-| British thermal unit per degree Fahrenheit       | Btu/°F       |
-| British thermal unit per degree Rankine          | Btu/°R       |
-| British thermal unit per hour                    | Btu/h        |
-| British thermal unit per pound                   | Btu/lb       |
-| British thermal unit per pound degree Fahrenheit | Btu/(lb °F)  |
-| British thermal unit per pound degree Rankine    | Btu/(lb °R)  |
-| calorie                                          | cal          |
-| calorie per second                               | cal/s        |
-| candela                                          | cd           |
-| centimeter                                       | cm           |
-| centimeter per second                            | cm/s         |
-| coulomb                                          | C            |
-| count                                            | count        |
-| cubic centimeter                                 | cm3          |
-| cubic centimeter per gram                        | cm3/g        |
-| cubic centimeter per second                      | cm3/s        |
-| cubic foot                                       | ft3          |
-| cubic foot per pound                             | ft3/lb       |
-| cubic foot per second                            | ft3/s        |
-| cubic meter                                      | m3           |
-| cubic meter per hour                             | m3/h         |
-| cubic meter per kilogram                         | m3/kg        |
-| cubic meter per second                           | m3/s         |
-| day                                              | d            |
-| degree                                           | °            |
-| degree Celsius                                   | °C           |
-| degree Fahrenheit                                | °F           |
-| degree Rankine                                   | °R           |
-| delta degree Celsius                             | delta °C     |
-| delta degree Fahrenheit                          | delta °F     |
-| delta degree Rankine                             | delta °R     |
-| delta kelvin                                     | delta K      |
-| dyne                                             | dyne         |
-| foot                                             | ft           |
-| foot per second                                  | ft/s         |
-| gigajoule                                        | GJ           |
-| gigawatt                                         | GW           |
-| gigawatt hour                                    | GWh          |
-| gram                                             | g            |
-| gram mole                                        | gmol         |
-| gram mole per second                             | gmol/s       |
-| gram per gram mole                               | g/gmol       |
-| gram per liter                                   | g/L          |
-| gram per second                                  | g/s          |
-| hectare                                          | ha           |
-| hertz                                            | Hz           |
-| horsepower                                       | hp           |
-| hour                                             | h            |
-| Imperial gallon                                  | Imp gal      |
-| Imperial gallon per minute                       | Imp gal/min  |
-| inch                                             | in           |
-| inches of mercury                                | inHg         |
-| International nautical mile                      | nmi          |
-| International nautical mile per hour             | nmi/h        |
-| joule                                            | J            |
-| joule per gram                                   | J/g          |
-| joule per gram kelvin                            | J/(g K)      |
-| joule per kelvin                                 | J/K          |
-| joule per kilogram                               | J/kg         |
-| joule per kilogram kelvin                        | J/(kg K)     |
-| joule per second                                 | J/s          |
-| kelvin                                           | K            |
-| kilocalorie                                      | kcal         |
-| kilocalorie per kilogram                         | kcal/kg      |
-| kilogram                                         | kg           |
-| kilogram mole                                    | kmol         |
-| kilogram mole per second                         | kmol/s       |
-| kilogram per cubic meter                         | kg/m3        |
-| kilogram per kilogram mole                       | kg/kmol      |
-| kilogram per liter                               | kg/L         |
-| kilogram per mole                                | kg/mol       |
-| kilogram per second                              | kg/s         |
-| kilogram-force                                   | kgf          |
-| kilogram-force per square centimeter             | kgf/cm2      |
-| kilogram-force per square meter                  | kgf/m2       |
-| kilojoule                                        | kJ           |
-| kilojoule per kelvin                             | kJ/K         |
-| kilojoule per kilogram                           | kJ/kg        |
-| kilojoule per kilogram kelvin                    | kJ/(kg K)    |
-| kilojoule per pound                              | kJ/lb        |
-| kiloliter                                        | kL           |
-| kilometer                                        | km           |
-| kilometer per hour                               | km/h         |
-| kilopascal                                       | kPa          |
-| kilovolt                                         | kV           |
-| kilowatt                                         | kW           |
-| kilowatt hour                                    | kWh          |
-| liter                                            | L            |
-| liter per second                                 | L/s          |
-| long ton                                         | lton         |
-| long ton per day                                 | lton/d       |
-| megajoule                                        | MJ           |
-| megajoule per hour                               | MJ/h         |
-| megaliter                                        | M L          |
-| megavolt                                         | MV           |
-| megawatt                                         | MW           |
-| megawatt hour                                    | MWh          |
-| meter                                            | m            |
-| meter per second                                 | m/s          |
-| mile                                             | mi           |
-| mile per hour                                    | mi/h         |
-| milliampere                                      | mA           |
-| milligram                                        | mg           |
-| milliliter                                       | mL           |
-| millimeter                                       | mm           |
-| millimeter of mercury                            | mmHg         |
-| million barrel                                   | MMbbl        |
-| million British thermal unit                     | MM Btu       |
-| million British thermal unit per day             | MM Btu/d     |
-| million British thermal unit per hour            | MM Btu/h     |
-| million calorie                                  | MMcal        |
-| million calorie per hour                         | MMcal/h      |
-| million imperial gallon                          | Imp Mgal     |
-| million pound                                    | MM lb        |
-| million pound per day                            | MMlb/d       |
-| million US gallon                                | US Mgal      |
-| millivolt                                        | mV           |
-| minute                                           | min          |
-| mole                                             | mol          |
-| mole per second                                  | mol/s        |
-| month                                            | month        |
-| newton                                           | N            |
-| newton per square meter                          | N/m2         |
-| ohm                                              | Ω            |
-| ounce                                            | oz           |
-| parts per billion                                | ppb          |
-| parts per million                                | ppm          |
-| pascal                                           | Pa           |
-| pascal second                                    | Pa*s         |
-| percent                                          | %            |
-| poise                                            | P            |
-| pound                                            | lb           |
-| pound mole                                       | lbmol        |
-| pound mole per second                            | lbmol/s      |
-| pound per barrel                                 | lb/bbl       |
-| pound per cubic foot                             | lb/ft3       |
-| pound per pound mole                             | lb/lbmol     |
-| pound per second                                 | lb/s         |
-| ound per US gallon                               | lb/US gal    |
-| pound-force                                      | lbf          |
-| pound-force per square inch                      | psi          |
-| pound-force per square inch (customary)          | psia         |
-| radian                                           | rad          |
-| radian per second                                | rad/s        |
-| revolution                                       | r            |
-| revolution per minute                            | rpm          |
-| second                                           | s            |
-| short ton                                        | ston         |
-| short ton per day                                | ston/d       |
-| sixteenth of an inch                             | sxi          |
-| square centimeter                                | cm2          |
-| square foot                                      | ft2          |
-| square inch                                      | in2          |
-| square kilometer                                 | km2          |
-| square meter                                     | m2           |
-| square mile                                      | mi2          |
-| square millimeter                                | mm2          |
-| square yard                                      | yd2          |
-| thousand barrel                                  | kbbl         |
-| thousand cubic meter                             | k m3         |
-| thousand imperial gallon                         | Imp kgal     |
-| thousand pound                                   | klb          |
-| thousand pound per day                           | klb/d        |
-| thousand US gallon                               | US kgal      |
-| ton                                              | ton          |
-| tonne                                            | t            |
-| tonne per cubic mete                             | t/m3         |
-| tonne per day                                    | t/d          |
-| torr                                             | torr         |
-| US gallon                                        | US gal       |
-| US gallon per minute                             | US gal/min   |
-| volt                                             | V            |
-| watt                                             | W            |
-| watt hour                                        | Wh           |
-| watt second                                      | Ws           |
-| week                                             | week         |
-| yard                                             | yd           |
-| year                                             | yr           |
-
+For a list of units of measures that are supported for an SdsTypeProperty, see [Units of Measure](xref:unitsOfMeasure#Supported-Units-of-Measure).
 
 Working with SdsTypes using .NET
 --------------------------------
@@ -1009,12 +818,14 @@ Returns the type corresponding to the specified typeId within a given namespace.
 
 **Parameters**
 
-``string tenantId``
-  The tenant identifier
-``string namespaceId``
-  The namespace identifier
-``string typeId``
-  The type identifier
+``string tenantId``  
+The tenant identifier
+
+``string namespaceId``  
+The namespace identifier
+
+``string typeId``  
+The type identifier
 
 
 **Response**
@@ -1113,15 +924,18 @@ Returns a list of types within a given namespace.
 
 **Parameters**
 
-``string tenantId``
-  The tenant identifier
-``string namespaceId``
-  The namespace identifier
-``int skip``
-  An optional value representing the zero-based offset of the first SdsType to retrieve. If not specified, 
-  a default value of 0 is used.
-``int count``
-  An optional value representing the maximum number of SdsTypes to retrieve. If not specified, a default value of 100 is used.
+``string tenantId``  
+The tenant identifier
+
+``string namespaceId``  
+The namespace identifier
+
+``int skip``  
+An optional value representing the zero-based offset of the first SdsType to retrieve. If not specified, 
+a default value of 0 is used.
+
+``int count``  
+An optional value representing the maximum number of SdsTypes to retrieve. If not specified, a default value of 100 is used.
 
 **Response**
 
@@ -1227,12 +1041,14 @@ redirect with the authorization header, you should disable automatic redirect an
 
 **Parameters**
 
-``string tenantId``
-  The tenant identifier
-``string namespaceId``
-  The namespace identifier
-``string typeId``
-  The type identifier. The identifier must match the SdsType.Id field. 
+``string tenantId``  
+The tenant identifier
+
+``string namespaceId``  
+The namespace identifier
+
+``string typeId``  
+The type identifier. The identifier must match the SdsType.Id field. 
 
 
 **Response**
@@ -1456,12 +1272,14 @@ they are defined.
 
 **Parameters**
 
-``string tenantId``
-  The tenant identifier
-``string namespaceId``
-  The namespace identifier
-``string typeId``
-  The type identifier
+``string tenantId``  
+The tenant identifier
+
+``string namespaceId``  
+The namespace identifier
+
+``string typeId``  
+The type identifier
 
 
 **Response**
@@ -1499,12 +1317,14 @@ Deletes a type from the specified tenant and namespace. Note that a type cannot 
 
 **Parameters**
 
-``string tenantId``
-  The tenant identifier
-``string namespaceId``
-  The namespace identifier
-``string typeId``
-  The type identifier
+``string tenantId``  
+The tenant identifier
+
+``string namespaceId``  
+The namespace identifier
+
+``string typeId``  
+The type identifier
 
 
 **Response**

@@ -12,6 +12,8 @@
   href: Qi_Views.md
 - name: Indexes
   href: indexes.md
+- name: Units of Measure
+  href: Units_of_Measure.md
 - name: Reading Data
   href: Reading_Data.md
 - name: Writing Data

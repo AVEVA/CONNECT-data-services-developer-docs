@@ -5,7 +5,7 @@ uid: sdsTypes
 Types
 =====
 
-#### Qi_Type_topic
+#### SDS_Type_topic
 
 The Sequential Data Store (SDS) stores streams of events and provides convenient ways to find and associate 
 events. Events are stored in streams, called SdsStreams. An SdsType defines the shape or structure of the 
@@ -919,7 +919,7 @@ Returns a list of types within a given namespace.
 
 **Request**
 
-        GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Types?skip={skip}&count={count}
+        GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Types?query={query}&skip={skip}&count={count}
 
 
 **Parameters**
@@ -930,8 +930,11 @@ The tenant identifier
 ``string namespaceId``  
 The namespace identifier
 
+``string query``  
+An optional query string to filter which SdsTypes will be returned.  See the [Search](xref:sdsSearching#qisearchingtopic) topic for information about specifying the query parameter.
+
 ``int skip``  
-An optional value representing the zero-based offset of the first SdsType to retrieve. If not specified, 
+  An optional value representing the zero-based offset of the first SdsType to retrieve. If not specified, 
 a default value of 0 is used.
 
 ``int count``  
@@ -1008,7 +1011,7 @@ An optional value representing the maximum number of SdsTypes to retrieve. If no
 
 **.NET Library**
 
-      Task<IEnumerable<SdsType>> GetTypesAsync(int skip = 0, int count = 100);
+      Task<IEnumerable<SdsType>> GetTypesAsync(string query = "", int skip = 0, int count = 100);
 
 
 **Security**

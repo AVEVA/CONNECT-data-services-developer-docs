@@ -33,19 +33,22 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/DataIngress/OMF_Ingress_Publishers.html",
-          "hash": "MQRhQNGfLYjVePMVtaht7w=="
+          "hash": "8VAy4d5YeDPv+nVnz9Is5g=="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
+      "log_codes": [
+        "UidNotFound"
+      ],
       "type": "Conceptual",
       "source_relative_path": "Documentation/DataIngress/OMF_Ingress_Specification.md",
       "output": {
         ".html": {
           "relative_path": "Documentation/DataIngress/OMF_Ingress_Specification.html",
-          "hash": "Tz4uyvD/O4ufaDULddgAfQ=="
+          "hash": "Oxdj/ZQPeQja/giv8OMj+g=="
         }
       },
       "is_incremental": false,
@@ -57,7 +60,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/DataIngress/OMF_Ingress_Subscriptions.html",
-          "hash": "nXhJEVN9+neDFFaxDOII0g=="
+          "hash": "1TRk/hn/ZmM27cvc7m+a+A=="
         }
       },
       "is_incremental": false,
@@ -69,7 +72,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/DataIngress/OMF_Ingress_Topics.html",
-          "hash": "pf8We463rkxOVMSAVndp6Q=="
+          "hash": "F5NitDS8uR+ZVxrGtkXfIw=="
         }
       },
       "is_incremental": false,
@@ -93,7 +96,19 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Management/Account_Applications.html",
-          "hash": "sR0p5TMiAs0iG3ZSgv6SHA=="
+          "hash": "oU3fV92C7lqTKXpLw/NHAA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/Management/Account_ClientRole.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/Management/Account_ClientRole.html",
+          "hash": "o7XCm9KndDZ7/wv7HUUowQ=="
         }
       },
       "is_incremental": false,
@@ -105,7 +120,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Management/Account_Namespace.html",
-          "hash": "aRQXK67KV0TSP4v22kuO8A=="
+          "hash": "HUxYqAyrzfNDnYd3gVqhrQ=="
         }
       },
       "is_incremental": false,
@@ -117,7 +132,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Management/Account_NamespaceTier.html",
-          "hash": "dr3uwdKnMr+487R0hxjNEg=="
+          "hash": "EC2BxIAucQduz2A29BRhpA=="
         }
       },
       "is_incremental": false,
@@ -129,7 +144,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Management/Account_Role.html",
-          "hash": "EAh1x9IBdhxE3iV0YJJhkA=="
+          "hash": "bbxbR1EomqWe0BkLkEWAmQ=="
         }
       },
       "is_incremental": false,
@@ -141,7 +156,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Management/Account_RootAccessControl.html",
-          "hash": "JzkqIXKQPVyDuTDVm8VPXw=="
+          "hash": "IK1zROkE8R8/mhPCVuHfcQ=="
         }
       },
       "is_incremental": false,
@@ -153,7 +168,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Management/Account_ServiceBlog.html",
-          "hash": "VMZtGCTuC8OVDCCYYZmRFA=="
+          "hash": "p8Hbc2/i0KkssroVvbQl+Q=="
         }
       },
       "is_incremental": false,
@@ -165,7 +180,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Management/Account_Tenant.html",
-          "hash": "dVsv+UQJ9YMIsqbOhefVSg=="
+          "hash": "a2nISPPfkS9YgtqM1OGZjg=="
         }
       },
       "is_incremental": false,
@@ -177,7 +192,19 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Management/Account_User.html",
-          "hash": "tIVS7jLsE8PaaIpoRjxguw=="
+          "hash": "z9CsXAw1NY1RWfObYT+dpA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/Management/Account_UserRole.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/Management/Account_UserRole.html",
+          "hash": "+CIaBS+ykCcTA14+ualvNg=="
         }
       },
       "is_incremental": false,
@@ -189,7 +216,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Management/Management_Overview.html",
-          "hash": "CTy4lZnskxUOhivZFeK8wQ=="
+          "hash": "F1RKoH7sIgaAYCWxlVdesg=="
         }
       },
       "is_incremental": false,
@@ -221,11 +248,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "Documentation/SequentialDataStore/Data_Store_and_Qi.md",
+      "source_relative_path": "Documentation/SequentialDataStore/Data_Store_and_SDS.md",
       "output": {
         ".html": {
-          "relative_path": "Documentation/SequentialDataStore/Data_Store_and_Qi.html",
-          "hash": "oyzU5Ou3ebSilgUjSEbHaA=="
+          "relative_path": "Documentation/SequentialDataStore/Data_Store_and_SDS.html",
+          "hash": "114EVcGHCkOawA8mDZbIWw=="
         }
       },
       "is_incremental": false,
@@ -245,71 +272,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "Documentation/SequentialDataStore/Introducing_Qi.md",
+      "source_relative_path": "Documentation/SequentialDataStore/Introducing_SDS.md",
       "output": {
         ".html": {
-          "relative_path": "Documentation/SequentialDataStore/Introducing_Qi.html",
-          "hash": "5AJkQ9Ak0LR7UgugnAx+Ug=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/SequentialDataStore/QiStreamExtra.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/SequentialDataStore/QiStreamExtra.html",
-          "hash": "sKGq5RZwGkgpuUOLi80iBg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/SequentialDataStore/Qi_Streams.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/SequentialDataStore/Qi_Streams.html",
-          "hash": "GXnXpPf69AcIb3WefNBFHA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/SequentialDataStore/Qi_Streams_API.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/SequentialDataStore/Qi_Streams_API.html",
-          "hash": "gXtOIbybKkN2qV7gpSkbJA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/SequentialDataStore/Qi_Types.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/SequentialDataStore/Qi_Types.html",
-          "hash": "4C2vAceW0AhcPQ41fkdzlQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/SequentialDataStore/Qi_Views.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/SequentialDataStore/Qi_Views.html",
-          "hash": "q7os7oiUeRhqsY8PwLYU0Q=="
+          "relative_path": "Documentation/SequentialDataStore/Introducing_SDS.html",
+          "hash": "mSjeEGvHQ8RTIEE7kei0eQ=="
         }
       },
       "is_incremental": false,
@@ -321,7 +288,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/SequentialDataStore/Quick_Start.html",
-          "hash": "Xozp3RgS1L2e2cRkeOgiOg=="
+          "hash": "QqqgRN6GqbEUcoi8F7WdZg=="
         }
       },
       "is_incremental": false,
@@ -333,7 +300,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/SequentialDataStore/Reading_Data.html",
-          "hash": "AShPejwoZNTfGPfYApCOGg=="
+          "hash": "IWaW3KW7/8KoD5AHrw/Gvg=="
         }
       },
       "is_incremental": false,
@@ -353,11 +320,59 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "Documentation/SequentialDataStore/SDS_Streams.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/SequentialDataStore/SDS_Streams.html",
+          "hash": "BawCQT6nvHiVi7wMZLIafg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/SequentialDataStore/SDS_Types.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/SequentialDataStore/SDS_Types.html",
+          "hash": "6vGP8iMPdp/tWtXHDGoymQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/SequentialDataStore/SDS_Views.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/SequentialDataStore/SDS_Views.html",
+          "hash": "7WcrqVAyke6ieiG0nlolOg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/SequentialDataStore/SdsStreamExtra.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/SequentialDataStore/SdsStreamExtra.html",
+          "hash": "G794TuTaBieiiKe1f6g11A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "Documentation/SequentialDataStore/Searching.md",
       "output": {
         ".html": {
           "relative_path": "Documentation/SequentialDataStore/Searching.html",
-          "hash": "NT2CpkKq4s/6nQ77///mHA=="
+          "hash": "FVeBhTT/YCP5+vC4+vkXyw=="
         }
       },
       "is_incremental": false,
@@ -568,12 +583,15 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
       "type": "Toc",
       "source_relative_path": "Documentation/toc.yml",
       "output": {
         ".html": {
           "relative_path": "Documentation/toc.html",
-          "hash": "KDDcSuMZlcm3rPFUhmFEmg=="
+          "hash": "lthljppECOUn3L78UhleHQ=="
         }
       },
       "is_incremental": false,
@@ -585,7 +603,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "8vWz3CdbC0b7CWq4AYk+ww=="
+          "hash": "F47Y5fU0+e7HQQKX2RWW4g=="
         }
       },
       "is_incremental": false,

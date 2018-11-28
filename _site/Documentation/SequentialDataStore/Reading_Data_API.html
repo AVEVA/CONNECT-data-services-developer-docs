@@ -305,7 +305,7 @@ event fields. Filter expressions are explained in detail in the <a class="xref" 
 <code>string startIndex</code>
   The index defining the beginning of the range
 <code>string endIndex</code>
-  The index defining the end of the range<br><code>string count</code>
+  The index defining the end of the range<br><code>int count</code>
   The number of events to return. Read characteristics of the stream determine how the form of the event.
 <code>string viewId</code>
   Optional view identifier</p>
@@ -456,9 +456,9 @@ how to filter the data.</p>
   The stream identifier
 <code>string startIndex</code>
   Index identifying the beginning of the series of events to return
-<code>string count</code>
+<code>int count</code>
   The number of events to return
-<code>integer skip</code>
+<code>int skip</code>
   Optional value specifying the number of events to skip at the beginning of the result
 <code>bool reversed</code>
   Optional specification of the direction of the request. By default, range requests move forward 
@@ -666,7 +666,7 @@ For the first request, specify a null or empty string for the ContinuationToken.
   Index bounding the beginning of the series of events to return
 <code>string endIndex</code>
   Index bounding the end of the series of events to return
-<code>string count</code>
+<code>int count</code>
   Optional maximum number of events to return
 <code>QiBoundaryType boundaryType</code>
   Optional QiBoundaryType specifies handling of events at or near the start and end indexes
@@ -1017,7 +1017,7 @@ summary values.</p>
   The start index for the intervals
 <code>string endIndex</code>
   The end index for the intervals
-<code>string count</code>
+<code>int count</code>
   The number of intervals requested
 <code>string filter</code>
   Optional filter expression

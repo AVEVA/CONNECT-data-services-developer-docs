@@ -219,72 +219,6 @@ A MappedTopic object.
 
 ***********************
 
-``POST api/tenants/{tenantId}/namespaces/{namespaceId}/topics``
---------------------------------------------
-
-Creates or updates multiple topic. Only the topic name and description can be updated. 
-
-**Parameters**
-
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace. 
-
-**Body**
-
-An array of MappedTopic objects. 
-
-**Returns**
-
-An array of MappedTopic objects. 
-
-**********************
-
-``POST api/tenants/{tenantId}/namespaces/{namespaceId}/publishertopicmapping``
----------------------------------------------------------
-
-Creates a mapping between a publisher and topic. 
-
-**Parameters**
-
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace. 
-
-**Body**
-
-A MappedPublisher object. 
-
-**Returns**
-
-A MappedPublisher object. 
-
-**********************
-
-``POST api/tenants/{tenantId}/namespaces/{namespaceId}/publishertopicmappings``
-----------------------------------------------------------
-
-Creates multiple mappings between publishers and topics 
-
-**Parameters**
-
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace. 
-
-**Body**
-
-An array of MappedPublisher objects. 
-
-**Returns** 
-
-An array of MappedPublisher objects. 
-
-************************
-
 ``PUT api/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/topics``
 ----------------------------------------------------------
 
@@ -322,26 +256,6 @@ Update the Access Control List for a particular topic
 An AccessControlList object.
 
 ************************
-``DELETE api/tenants/{tenantId}/namespaces/{namespaceId}/publishertopicmappings/{topicId}``
-------------------------------------------------------------------------------
-
-Delete mappings between a topic and multiple publishers. 
-
-**Parameters**
-
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace. 
-``topicId``
-  Unique Id for the topic. 
-
-**Body**
-
-A string array of Publisher Ids to remove from the Topic. 
-
-
-**************************
 
 ``DELETE api/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}``
 ----------------------------------------------------------------

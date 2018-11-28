@@ -8,7 +8,7 @@ Reading data
 ============
 
 The REST APIs provide programmatic access to read and write data. This section identifies and describes 
-the APIs used to read [Qi_Stream_topic](xref:sdsStreams#qistreamtopic) data. Results are influenced by [Qi_Types_topic](xref:sdsTypes#qitypetopic),  
+the APIs used to read [Qi_Stream_topic](xref:sdsStreams#sdsstreamtopic) data. Results are influenced by [Qi_Types_topic](xref:sdsTypes#sdstypetopic),  
 [Sds_View_topic](xref:sdsViews), [Qi_Filter_expressions_topic](xref:sdsFilterExpressions), and [Qi_Table_format_topic](xref:sdsTableFormat).
 
 If you are working in a .NET environment, convenient SDS Client libraries are available. 
@@ -75,7 +75,7 @@ When data is requested at an index for which no stored event exists, the read ch
 whether the result is an error, null event, interpolated event, or extrapolated event. The combination of 
 the type of the index and the interpolation and extrapolation modes of the SdsType and the SdsStream 
 determine the read characteristics. For more information on read characteristics, 
-see [QiType_topic](xref:sdsTypes#qitypetopic) and [Qi_Stream_topic](xref:sdsStreams#qistreamtopic).
+see [QiType_topic](xref:sdsTypes#sdstypetopic) and [Qi_Stream_topic](xref:sdsStreams#sdsstreamtopic).
 
 **Methods affected by Read Characteristics**
 

@@ -96,11 +96,11 @@ The ``SdsStreamPropertyOverride`` object has the following structure:
 
 
 The unit of measure can be overridden for any type property defined by the stream type, including primary keys 
-and secondary indexes. For more information about type property units of measure see [QiType_topic](xref:sdsTypes#qitypetopic). 
+and secondary indexes. For more information about type property units of measure see [QiType_topic](xref:sdsTypes#sdstypetopic). 
 
 Read characteristics of the stream are determined by the type and the PropertyOverrides of the stream. The 
 interpolation mode for non-index properties can be defined and overridden at the stream level. For more 
-information about type read characteristics see [QiType_topic](xref:sdsTypes#qitypetopic).
+information about type read characteristics see [QiType_topic](xref:sdsTypes#sdstypetopic).
 
 When specifying property interpolation overrides, if the SdsType InterpolationMode is ``Discrete``, it cannot be overridden 
 at any level. When InterpolationMode is set to ``Discrete`` and an event it not defined for that index, a null 
@@ -114,7 +114,7 @@ SdsStream API
 The REST APIs provide programmatic access to read and write SDS data. The APIs in this 
 section interact with SdsStreams. When working in .NET convenient SDS Client libraries are 
 available. The ``ISdsMetadataService`` interface, accessed using the ``SdsService.GetMetadataService( )`` helper, 
-defines the available functions. See [Qi_Stream_topic](#qistreamtopic) for general 
+defines the available functions. See [Qi_Stream_topic](#sdsstreamtopic) for general 
 SdsStream information. 
 
 

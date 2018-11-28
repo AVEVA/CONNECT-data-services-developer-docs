@@ -3,13 +3,13 @@
 - name: Quick start
   href: Quick_Start.md
 - name: Types
-  href: Qi_Types.md
+  href: SDS_Types.md
 - name: Streams
-  href: Qi_Streams.md
+  href: SDS_Streams.md
 - name: Stream Metadata and Tags
-  href: QiStreamExtra.md
+  href: SdsStreamExtra.md
 - name: Sds Views
-  href: Qi_Views.md
+  href: SDS_Views.md
 - name: Indexes
   href: indexes.md
 - name: Units of Measure

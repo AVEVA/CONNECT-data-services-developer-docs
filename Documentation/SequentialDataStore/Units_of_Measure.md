@@ -647,4 +647,4 @@ Sample response body:
 At [SdsType](xref:sdsTypes#qitypetopic) creation, a SdsUom can be associated with a [SdsTypeProperty](xref:sdsTypes#sdstypeproperty). 
 
 ## Associating a unit of measure with a SdsStream
-At [SdsStream](xref:sdsStreams) creation, you can override any uom associated with a SdsTypeProperty belonging the the SdsType. This enables the reuse of a SdsType that may have default unit information associated with it already.
+At [SdsStream](xref:sdsStreams) creation, you can override any unit of measure associated with a SdsTypeProperty belonging to the SdsType of the stream. This enables the reuse of a SdsType that may have default unit information associated with it already.

@@ -7,34 +7,40 @@ references:
 - uid: accountApplications
   name: Applications
   href: Documentation/Management/Account_Applications.html
-- uid: accountNamespace
+- uid: AccountClientRole
+  name: ClientRole
+  href: Documentation/Management/Account_ClientRole.html
+- uid: AccountNamespace
   name: Namespace
   href: Documentation/Management/Account_Namespace.html
 - uid: AccountNamespaceTier
   name: NamespaceTier
   href: Documentation/Management/Account_NamespaceTier.html
-- uid: accountRole
+- uid: AccountRole
   name: Role
   href: Documentation/Management/Account_Role.html
-- uid: accountRootAccessControl
+- uid: AccountRootAccessControl
   name: RootAccessControl
   href: Documentation/Management/Account_RootAccessControl.html
-- uid: accountServiceBlog
+- uid: AccountServiceBlog
   name: ServiceBlog
   href: Documentation/Management/Account_ServiceBlog.html
-- uid: accountTenant
+- uid: AccountTenant
   name: Tenant
   href: Documentation/Management/Account_Tenant.html
 - uid: accountUser
   name: User
   href: Documentation/Management/Account_User.html
+- uid: AccountUserRole
+  name: UserRole
+  href: Documentation/Management/Account_UserRole.html
 - uid: dataIngress
   name: Data Ingress and OSIsoft Message Format
   href: Documentation/DataIngress/Data_Ingress.html
 - uid: index
   name: Welcome
   href: index.html
-- uid: managementOverview
+- uid: ManagementOverview
   name: Management
   href: Documentation/Management/Management_Overview.html
 - uid: omfIngressPublishers
@@ -59,8 +65,8 @@ references:
   name: Samples
   href: Documentation/samples.html
 - uid: sds
-  name: Sequential data store
-  href: Documentation/SequentialDataStore/Data_Store_and_Qi.html
+  name: Sequential Data Store
+  href: Documentation/SequentialDataStore/Data_Store_and_SDS.html
 - uid: sdsCompression
   name: Compression
   href: Documentation/SequentialDataStore/Compression.html
@@ -72,7 +78,7 @@ references:
   href: Documentation/SequentialDataStore/indexes.html
 - uid: sdsIntroduction
   name: Introducing the Sequential Data Store
-  href: Documentation/SequentialDataStore/Introducing_Qi.html
+  href: Documentation/SequentialDataStore/Introducing_SDS.html
 - uid: sdsQuickStart
   name: Quick start
   href: Documentation/SequentialDataStore/Quick_Start.html
@@ -83,26 +89,23 @@ references:
   name: API calls for reading data
   href: Documentation/SequentialDataStore/Reading_Data_API.html
 - uid: sdsSearching
-  name: Searching for streams
+  name: Searching
   href: Documentation/SequentialDataStore/Searching.html
 - uid: sdsStreamExtra
   name: Stream Metadata and Tags
-  href: Documentation/SequentialDataStore/QiStreamExtra.html
+  href: Documentation/SequentialDataStore/SdsStreamExtra.html
 - uid: sdsStreams
   name: Streams
-  href: Documentation/SequentialDataStore/Qi_Streams.html
-- uid: sdsStreamsApi
-  name: QiStream API
-  href: Documentation/SequentialDataStore/Qi_Streams_API.html
+  href: Documentation/SequentialDataStore/SDS_Streams.html
 - uid: sdsTableFormat
   name: Table format
   href: Documentation/SequentialDataStore/table_format.html
 - uid: sdsTypes
   name: Types
-  href: Documentation/SequentialDataStore/Qi_Types.html
+  href: Documentation/SequentialDataStore/SDS_Types.html
 - uid: sdsViews
-  name: Sds Views
-  href: Documentation/SequentialDataStore/Qi_Views.html
+  name: SDS Views
+  href: Documentation/SequentialDataStore/SDS_Views.html
 - uid: sdsWritingData
   name: Writing data
   href: Documentation/SequentialDataStore/Writing_Data.html

@@ -68,7 +68,7 @@
             <article class="content wrap" id="_content" data-uid="sdsTypes">
 <h1 id="types">Types</h1>
 
-<h4 id="qitypetopic">Qi_Type_topic</h4>
+<h4 id="sdstypetopic">SDS_Type_topic</h4>
 <p>The Sequential Data Store (SDS) stores streams of events and provides convenient ways to find and associate 
 events. Events are stored in streams, called SdsStreams. An SdsType defines the shape or structure of the 
 event and how to associate events within the SdsStream.</p>
@@ -681,7 +681,7 @@ indexes that occur between data in a stream:</p>
 Decimal.MaxValue) the call might result in a BadRequest exception.</p>
 <p>If the InterpolationMode is not assigned, the events are interpolated in the default manner, unless the interpolation 
 mode is overridden in the TypeProperty or the SdsStream. For more information on overriding the interpolation mode 
-on a specific type property see SdsTypeProperty_. For more information on overriding the interpolation mode for a specific stream see <a class="xref" href="Qi_Streams.html">Sds Streams</a>.</p>
+on a specific type property see SdsTypeProperty_. For more information on overriding the interpolation mode for a specific stream see <a class="xref" href="SDS_Streams.html">Sds Streams</a>.</p>
 <h2 id="extrapolation">Extrapolation</h2>
 <p>Extrapolation defines how a stream responds to requests with indexes that precede or follow all 
 data in the steam. ExtrapolationMode acts as a master switch to determine whether extrapolation 
@@ -836,7 +836,7 @@ show how ExtrapolationMode affects returned values for each InterpolationMode va
 </tr>
 </tbody>
 </table>
-<p>If the ExtrapolationMode is not assigned, the events are extrapolated in the default manner, unless the extrapolation mode is overridden on the SdsStream. For more information on overriding the extrapolation mode on a specific stream see <a class="xref" href="Qi_Streams.html">Sds Streams</a>.</p>
+<p>If the ExtrapolationMode is not assigned, the events are extrapolated in the default manner, unless the extrapolation mode is overridden on the SdsStream. For more information on overriding the extrapolation mode on a specific stream see <a class="xref" href="SDS_Streams.html">Sds Streams</a>.</p>
 <p>For additional information about the effect of read characteristics, see the
 documentation on the <a class="xref" href="Reading_Data_API.html">read method</a>
 you are using.</p>
@@ -957,7 +957,7 @@ in the manner defined by the SdsType’s IntepolationMode.</p>
 For more information on interpolation of events see Interpolation_.</p>
 <p>Uom is the unit of measure for the Property. The Uom of a Property may be specified by the name or the 
 abbreviation. The names and abbreviations of Uoms are case sensitive. </p>
-<p>The InterpolationMode and Uom of a Property can be overriden on the stream. For more information, see <a class="xref" href="Qi_Streams.html#propertyoverrides">Sds Streams</a>. </p>
+<p>The InterpolationMode and Uom of a Property can be overriden on the stream. For more information, see <a class="xref" href="SDS_Streams.html#propertyoverrides">Sds Streams</a>. </p>
 <h2 id="supported-units-of-measure">Supported Units of Measure</h2>
 <p>The following unit of measures are supported for an SdsTypeProperty:</p>
 <table>
@@ -2796,7 +2796,7 @@ they are defined.</p>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/SequentialDataStore/Qi_Types.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/SequentialDataStore/SDS_Types.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

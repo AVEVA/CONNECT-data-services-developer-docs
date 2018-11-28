@@ -289,7 +289,7 @@ A list of the supported units of measure is below. Supported units of measure ar
 
 
 ## SdsUomQuantity API
-The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact with SdsUomQuantitys. When working in .NET, convenient SDS Client Libraries are available. The ``ISdsMetadataService`` interface, accessed using the ``SdsService.GetMetadataService( )`` helper, defines the available functions. See [Units of Measure](#Units-of-Measure) for general [SdsUomQuantity](#SdsUomQuantity) information.
+The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact with SdsUomQuantitys. When working in .NET, convenient SDS Client Libraries are available. The ``ISdsMetadataService`` interface, accessed using the ``SdsService.GetMetadataService( )`` helper, defines the available functions. See [Units of Measure](#units-of-measure) for general [SdsUomQuantity](#sdsuomquantity) information.
 ***
 ## ``Get Quantity``
 Returns the quantity corresponding to the specified quantityId within a given namespace.
@@ -535,7 +535,7 @@ Sample response for quantityId = "Electric Current":
 
 
 ## SdsUom API
-The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact with SdsUoms. When working in .NET, convenient SDS Client Libraries are available. The ``ISdsMetadataService`` interface, accessed using the ``SdsService.GetMetadataService( )`` helper, defines the available functions. See [Units of Measure](#Units-of-Measure) for general [SdsUom](#SdsUom) information.
+The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact with SdsUoms. When working in .NET, convenient SDS Client Libraries are available. The ``ISdsMetadataService`` interface, accessed using the ``SdsService.GetMetadataService( )`` helper, defines the available functions. See [Units of Measure](#units-of-measure) for general [SdsUom](#sdsuom) information.
 
 ***
 
@@ -647,4 +647,4 @@ Sample response body:
 At [SdsType](xref:sdsTypes#qitypetopic) creation, a SdsUom can be associated with a [SdsTypeProperty](xref:sdsTypes#sdstypeproperty). 
 
 ## Associating a unit of measure with a SdsStream
-At [SdsStream](xref:sdsStreams#sdsstreamtopic) creation, you can override any uom associated with a SdsTypeProperty belonging the the SdsType. This enables the reuse of a SdsType that may have default unit information associated with it already.
+At [SdsStream](xref:sdsStreams) creation, you can override any uom associated with a SdsTypeProperty belonging the the SdsType. This enables the reuse of a SdsType that may have default unit information associated with it already.

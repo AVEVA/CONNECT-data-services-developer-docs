@@ -351,7 +351,7 @@ The InterpolationMode and Uom of a Property can be overriden on the stream. For 
 Supported Units of Measure
 --------------------------
 
-For a list of units of measures that are supported for an SdsTypeProperty, see [Units of Measure](xref:unitsOfMeasure#Supported-Units-of-Measure).
+For a list of units of measures that are supported for an SdsTypeProperty, see [Units of Measure](xref:unitsOfMeasure#supported-units-of-measure).
 
 Working with SdsTypes using .NET
 --------------------------------

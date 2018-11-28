@@ -80,6 +80,7 @@ A list of the supported quantities and their base unit of measures is below. Sup
 
 ## Supported Units of Measure
 A list of the supported units of measure is below. Supported units of measure are read-only.
+
 | Uom Id                                           | Abbreviation | Quantity Id                                 | Conversion Factor | Conversion Offset |
 | ------------------------------------------------ | ------------ | ------------------------------------------- | ----------------- | ----------------- |
 | count                                            | count        | Quantity                                    | 1                 | 0                 |

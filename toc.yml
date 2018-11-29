@@ -1,6 +1,0 @@
-- name: Home
-  href: index.md
-  homepage: index.md
-- name: Docs
-  href: Documentation/
-  topicHref: Documentation/OSIsoft_Cloud_Services.md

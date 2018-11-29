@@ -2,19 +2,12 @@
 uid: sdsStreams
 ---
 
-#### SDS_Stream_topic
-
 Streams
 =======
 
 SDS stores collections of events and provides convenient ways to find and associating events. Events 
 of consistent structure are stored in streams, called SdsStreams.  An SdsType defines the structure 
 of events in an SdsStream.
-
-.. contents:: Topics in this section:
-    :depth: 2
-
-
 
 SdsStreams are referenced by their identifier or Id field. SdsStream identifiers must be unique 
 within a Namespace.

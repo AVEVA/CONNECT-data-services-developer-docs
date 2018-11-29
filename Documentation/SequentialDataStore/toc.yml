@@ -1,5 +1,5 @@
 - name: Introducing the Sequential Data Store
-  href: Introducing_Qi.md
+  href: Introducing_SDS.md
 - name: Quick start
   href: Quick_Start.md
 - name: Types
@@ -16,8 +16,12 @@
   href: Units_of_Measure.md
 - name: Reading Data
   href: Reading_Data.md
+- name: Reading Data API
+  href: Reading_Data_API.md
 - name: Writing Data
   href: Writing_Data.md
+- name: Writing Data API
+  href: Writing_Data_API.md
 - name: Compression
   href: Compression.md
 - name: Searching for Streams

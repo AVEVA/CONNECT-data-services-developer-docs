@@ -73,7 +73,7 @@ DateTime is a common index for time-series stores.
 
 SDS supports a wide variety of property types, including simple types like integers, strings and floats 
 and complex types like lists, arrays and enumerations. Properties can be of any complex SdsType. 
-For additional information, including a detailed list of supported data types, refer to [Qi_Types_topic](xref:sdsTypes#qitypetopic).
+For additional information, including a detailed list of supported data types, refer to [Qi_Types_topic](xref:sdsTypes#sdstypetopic).
 
 To create an SdsType in .NET, use the .NET SDS libraries SdsTypeBuilder.
 

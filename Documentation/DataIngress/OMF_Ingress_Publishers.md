@@ -236,25 +236,6 @@ A Publisher object.
 
 ******************************
 
-``POST api/tenants/{tenantId}/publishers``
----------------------------------------
-
-Creates or updates multiple publishers. Only the name and description of a publisher can be updated.
-
-**Parameters**
-
-``tenantId``
-  Unique Id for the tenant. 
-
-**Body**  
-An array of Publisher objects. 
-
-**Returns**
-
-An array of Publisher objects. 
-
-************************************
-
 ``POST api/tenants/{tenantId}/publishers/{publisherId}/tokens``
 --------------------------------------------
 
@@ -341,19 +322,5 @@ Deletes a token.
 **Returns**
 
 A Token object for the deleted token. 
-
-********************************
-
-``DELETE api/tenants/{tenantId}/publishers/{publisherId}/tokens``
----------------------------------------------------
-
-Deletes all tokens for a publisher.
-
-**Parameters**
-
-``tenantId`` 
-  Unique Id for the tenant. 
-``publisherId``
-  Unique Id for the publisher. 
 
 ********************************

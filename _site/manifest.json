@@ -12,7 +12,7 @@
           "hash": "bzi4t8iMayuLUZs3cgjCmQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -24,7 +24,7 @@
           "hash": "X5X44JdE6p/5Rqei8aW1IQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -33,10 +33,10 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/DataIngress/OMF_Ingress_Publishers.html",
-          "hash": "8VAy4d5YeDPv+nVnz9Is5g=="
+          "hash": "kC79dOD3JkbIeoi7m/8IiQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -48,10 +48,10 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/DataIngress/OMF_Ingress_Specification.html",
-          "hash": "Oxdj/ZQPeQja/giv8OMj+g=="
+          "hash": "USWzacjCAZvpjyig62Dngg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -63,7 +63,7 @@
           "hash": "1TRk/hn/ZmM27cvc7m+a+A=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -72,10 +72,10 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/DataIngress/OMF_Ingress_Topics.html",
-          "hash": "F5NitDS8uR+ZVxrGtkXfIw=="
+          "hash": "lL+5C6rxdXvxHnGCM6HqCQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -87,7 +87,7 @@
           "hash": "Rwe8ElyWo2nYIr+I0pkEDA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -99,7 +99,7 @@
           "hash": "oU3fV92C7lqTKXpLw/NHAA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -111,7 +111,7 @@
           "hash": "o7XCm9KndDZ7/wv7HUUowQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -123,7 +123,7 @@
           "hash": "HUxYqAyrzfNDnYd3gVqhrQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -135,7 +135,7 @@
           "hash": "EC2BxIAucQduz2A29BRhpA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -147,7 +147,7 @@
           "hash": "bbxbR1EomqWe0BkLkEWAmQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -159,7 +159,7 @@
           "hash": "IK1zROkE8R8/mhPCVuHfcQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -171,7 +171,7 @@
           "hash": "p8Hbc2/i0KkssroVvbQl+Q=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -183,7 +183,7 @@
           "hash": "a2nISPPfkS9YgtqM1OGZjg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -195,7 +195,7 @@
           "hash": "z9CsXAw1NY1RWfObYT+dpA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -207,7 +207,7 @@
           "hash": "+CIaBS+ykCcTA14+ualvNg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -219,7 +219,7 @@
           "hash": "F1RKoH7sIgaAYCWxlVdesg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -231,7 +231,7 @@
           "hash": "saYj33c4HLD08SKJKE13eA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -243,7 +243,7 @@
           "hash": "Qi+97S77z9rdH/3NuDyepQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -255,7 +255,7 @@
           "hash": "114EVcGHCkOawA8mDZbIWw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -267,7 +267,7 @@
           "hash": "YhaO3piNq6h0h6DSxir6Pw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -279,7 +279,7 @@
           "hash": "mSjeEGvHQ8RTIEE7kei0eQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -288,10 +288,10 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/SequentialDataStore/Quick_Start.html",
-          "hash": "QqqgRN6GqbEUcoi8F7WdZg=="
+          "hash": "avwghpNas+Ko8HhnVu55Wg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -300,10 +300,10 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/SequentialDataStore/Reading_Data.html",
-          "hash": "IWaW3KW7/8KoD5AHrw/Gvg=="
+          "hash": "h43B/7bB+bDBUWWXu161cA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -312,10 +312,10 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/SequentialDataStore/Reading_Data_API.html",
-          "hash": "zKbsUyf+7M6ReppgyJQD8A=="
+          "hash": "nzbfulwY452KDGInTSRhmw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -324,10 +324,10 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/SequentialDataStore/SDS_Streams.html",
-          "hash": "BawCQT6nvHiVi7wMZLIafg=="
+          "hash": "kTSpxEBXOcfvVjekFE+20A=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -336,10 +336,10 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/SequentialDataStore/SDS_Types.html",
-          "hash": "6vGP8iMPdp/tWtXHDGoymQ=="
+          "hash": "dmVA4s+M4dg2muATH/HO6Q=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -351,7 +351,7 @@
           "hash": "7WcrqVAyke6ieiG0nlolOg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -363,7 +363,7 @@
           "hash": "G794TuTaBieiiKe1f6g11A=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -375,7 +375,19 @@
           "hash": "FVeBhTT/YCP5+vC4+vkXyw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/SequentialDataStore/Units_of_Measure.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/SequentialDataStore/Units_of_Measure.html",
+          "hash": "6vxMxDRoG++TNSinRWopXA=="
+        }
+      },
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -387,7 +399,7 @@
           "hash": "b1Os3ZK+c75Zs0rj+95Qow=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -399,7 +411,7 @@
           "hash": "unk8bFTXNFcArP4izd7uFA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -411,7 +423,7 @@
           "hash": "5zuYaa+HO7p6egp6ksvmNA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -423,7 +435,7 @@
           "hash": "fdZMCaOH6YYF7lRc2boMEw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -567,7 +579,7 @@
           "hash": "NTqZLWjSJN8x8S98MOVIwA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -579,19 +591,16 @@
           "hash": "aOh76MVw/NKH8XCBwuLnHw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Toc",
       "source_relative_path": "Documentation/toc.yml",
       "output": {
         ".html": {
           "relative_path": "Documentation/toc.html",
-          "hash": "lthljppECOUn3L78UhleHQ=="
+          "hash": "K0vYIbuT5FugeEKmMTxHbg=="
         }
       },
       "is_incremental": false,
@@ -603,10 +612,10 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "F47Y5fU0+e7HQQKX2RWW4g=="
+          "hash": "7G3jPILQFck0hcEKxwOx9w=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -625,8 +634,7 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": false,
-        "details": "Cannot build incrementally because last build info is missing.",
+        "can_incremental": true,
         "incrementalPhase": "build"
       },
       "processors": {
@@ -636,7 +644,7 @@
           "incrementalPhase": "build"
         },
         "ConceptualDocumentProcessor": {
-          "can_incremental": false,
+          "can_incremental": true,
           "incrementalPhase": "build"
         },
         "ResourceDocumentProcessor": {
@@ -648,8 +656,8 @@
     },
     {
       "status": {
-        "can_incremental": false,
-        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
         "incrementalPhase": "postProcessing"
       },
       "processors": {}

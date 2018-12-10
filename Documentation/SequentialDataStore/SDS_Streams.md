@@ -172,18 +172,15 @@ Returns the specified stream.
 
 Returns a list of streams.
 
-If the optional search parameter is specified, the list of streams returned are filtered to match 
-the search criteria. If the optional search parameter is not specified, the list includes all streams 
+If specifying the optional search parameter or optional filter parameter, the list of streams returned are filtered to match 
+the search/filter criteria. If the neither parameter is specified, the list includes all streams 
 in the Namespace. See [Qi_Searching_topic](xref:sdsSearching#qisearchingtopic) 
-for information about specifying the search parameter.
+and [Filter Expressions: Objects](xref:sdsFilterExpressionsObjects#Sds_Filter_expressions_objects_topic)  
+for information about specifying those respective parameters.
 
 **Request**
 
-        GET	api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query={query}
-            &skip={skip}&count={count}
-
-
-
+        GET	api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query={query}&filter={filter}&skip={skip}&count={count}
 
 **Parameters**
 
@@ -195,6 +192,10 @@ for information about specifying the search parameter.
   An optional parameter representing a string search. 
   See [Qi_Searching_topic](xref:sdsSearching#qisearchingtopic)
   for information about specifying the search parameter.
+``string filter`` 
+  An optional filter string to match which SdsStreams will be returned.  See the 
+  [Filter Expressions: Objects](xref:sdsFilterExpressionsObjects#Sds_Filter_expressions_objects_topic) 
+  topic for information about specifying the filter parameter.
 ``int skip``
   An optional parameter representing the zero-based offset of the first SdsStream to retrieve. 
   If not specified, a default value of 0 is used.

@@ -7,6 +7,8 @@ uid: sdsFilterExpressions
 Filter Expressions
 ==================
 
+Filter expressions can be applied to certain read operations that return Sequential Data Store values or objects. This section covers values. For filtering on object data refer to [Filter Expressions: Objects](xref:sdsFilterExpressionsObjects#Sds_Filter_expressions_objects_topic).
+
 Filter expressions can be applied to any read that returns multiple values, including 
 ``Get Values``, ``Get Range Values``, ``Get Window Values``, and ``Get Intervals``.”
 

@@ -89,5 +89,5 @@ The lambda operators require defining a lambda parameter and a boolean expressio
 
 The following examples show logical operators which have a body defining the required lambda parameter and a single boolean expression. The lambda parameter is defined initially, and in the provided examples the user has chosen a query time lambda parameter named "parameter". After the ':' proceed to define your expression as defined in the aforementioned examples for [string functions](#Sds_Filter_expressions_objects_string_functions_topic) (or the 'eq' [logical operator](#Sds_Filter_expressions_objects_logical_operators_topic)) but replace all references to your SdsType/SdsStream field name with the lambda parameter name.
 
-- ``Properties/any(parameter: parameter eq "value")``
+- ``Properties/any(parameter: parameter eq 'value')``
 - ``Properties/all(parameter: startswith(parameter, 'abc'))``

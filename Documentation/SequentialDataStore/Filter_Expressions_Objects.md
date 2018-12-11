@@ -46,7 +46,6 @@ filter expression:
 
 
 ## <a name="Sds_Filter_expressions_objects_logical_operators_topic"></a>Logical operators
-------------
 
 **Supported**
 
@@ -76,7 +75,6 @@ The following examples show logical operators and string functions.
 - ``(startswith(Id, 'abc') and endswith(Id, 'xyz')) or (startswith(Name, 'abc') and endswith(Name, 'abc'))``
 
 ## <a name="Sds_Filter_expressions_objects_lambda_operators_topic"></a>Lambda operators
-------------
 
 **Supported**
 

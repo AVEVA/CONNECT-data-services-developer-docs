@@ -167,7 +167,7 @@ available SdsSearchModes:
 | Previous        | 4                 | Returns the stored event before the specified index.        |
 
 ## Unit conversion of data
-SDS supports assigning [Units of Measure](xref:unitsOfMeasure) (Uom) to stream data. If stream data has Uom information associated, SDS supports reading data with unit conversions applied. On each read data request, unit conversions are specified by specifying a collection of `SdsStreamPropertyOverride` objects in read requests. The `SdsStreamPropertyOverride` object has the following structure:
+SDS supports assigning [Units of Measure](xref:unitsOfMeasure) (Uom) to stream data. If stream data has Uom information associated, SDS supports reading data with unit conversions applied. On each read data request, unit conversions are specified by a user defined collection of `SdsStreamPropertyOverride` objects in read requests. The `SdsStreamPropertyOverride` object has the following structure:
 
 
 | Property          | Type                 | Optionality | Details                                              |
@@ -176,7 +176,7 @@ SDS supports assigning [Units of Measure](xref:unitsOfMeasure) (Uom) to stream d
 | Uom               | String               | Required    | Target unit of measure                               |
 | InterpolationMode | SdsInterpolationMode | N/A         | Currently not supported in context of data reads     |
 
- This is supported in the .NET API via overloads that accept a collection of `SdsStreamPropertyOverride` objects, and in the REST API via HTTP POST calls with a request body containing a collection of `SdsStreamPropertyOverride` objects. See [API calls for reading data](xref:sdsReadingDataApi) for more information.
+This is supported in the .NET API via overloads that accept a collection of `SdsStreamPropertyOverride` objects, and in the REST API via HTTP POST calls with a request body containing a collection of `SdsStreamPropertyOverride` objects. See [API calls for reading data](xref:sdsReadingDataApi) for more information.
 
 Reading data API and examples
 -----------------------------

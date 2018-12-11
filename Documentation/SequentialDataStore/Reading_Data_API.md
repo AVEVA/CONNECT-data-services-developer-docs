@@ -244,7 +244,7 @@ this request receives a response with an event interpolated at the specified ind
         POST api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/GetValue
             ?index={index}&viewId={viewId}
 
-**Parameters**
+**Request Parameters**
 
 ``string tenantId``  
 The tenant identifier
@@ -261,9 +261,9 @@ The index
 ``string viewId``  
 Optional view identifier
 
-**Body**
+**Request Body**
 
-A collection of `SdsStreamPropertyOverride` objects:
+The Request Body contains a collection of `SdsStreamPropertyOverride` objects:
 
     [
       {
@@ -274,7 +274,7 @@ A collection of `SdsStreamPropertyOverride` objects:
 
 **Response**
 
-  The response includes a status code and a response body containing a serialized event similar to the standard (without Uom conversion) request above. The event will have its `Measurement` property converted.
+The response includes a status code and response body containing a serialized event similar to the standard request above (without Uom conversion). In this response, the system will have applied the conversion factor for the base unit (in this case Meters) to the `Measurement` property of the event.
 
 **Response body**
 
@@ -283,7 +283,7 @@ A collection of `SdsStreamPropertyOverride` objects:
 
       {  
          "Time":"2017-11-23T13:00:00Z",
-         "Measurement":100.0 
+         "Measurement":1000.0 
       }
 
 

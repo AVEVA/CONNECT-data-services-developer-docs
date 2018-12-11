@@ -3,10 +3,7 @@
 uid: sdsFilterExpressionsObjects
 ---
 
-#### Sds_Filter_expressions_objects_topic
-
-Filter Expressions: Objects
-==================
+#### <a name="Sds_Filter_expressions_objects_topic">Filter Expressions: Objects</a>
 
 This section focuses on filter expressions that can be applied to certain read operations that return Sequential Data Store objects. For filtering on read operations of Sequential Data Store values refer to [Filter Expressions: Values](xref:sdsFilterExpressions#Sds_Filter_expressions_topic).
 

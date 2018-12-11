@@ -5,7 +5,7 @@ uid: sdsReadingData
 Reading data
 ============
 
-The REST APIs provide programmatic access to read and write data. This section identifies and describes 
+The .NET and REST APIs provide programmatic access to read and write data. This section identifies and describes 
 the APIs used to read [Stream](xref:sdsStreams) data. Results are influenced by [Types](xref:sdsTypes),  
 [Sds Views](xref:sdsViews), [Filter expressions](xref:sdsFilterExpressions), and [Table format](xref:sdsTableFormat).
 
@@ -38,12 +38,14 @@ All reads are HTTP GET actions. Reading data involves getting events from stream
 
 **where:**
 
-``string tenantId``
-  The tenant identifier
-``string namespaceId``
-  The namespace identifier
-``string streamId``
-  The stream identifier
+``string tenantId``  
+The tenant identifier
+
+``string namespaceId``  
+The namespace identifier
+
+``string streamId``  
+The stream identifier
 
 
 Response Format
@@ -86,7 +88,7 @@ Read characteristics applied when an index determined by the call is between, be
 [`GetWindowValuesAsync`](xref:sdsReadingDataApi#get-window-values)  
 Read characteristics applied to indexes between, before, or after data when the calls Boundary parameter is set to ExactOrCalculated.
 
-[`GetRangeValuesAsync`](xref:sdsReadingDataApi#get-window-values)  
+[`GetRangeValuesAsync`](xref:sdsReadingDataApi#get-range-values)  
 Read characteristics applied to indexes between, before, or after data when the calls Boundary parameter is set to ExactOrCalculated.
 
 SdsView and reading data
@@ -133,17 +135,17 @@ SdsBoundaryType
 SdsBoundaryType defines how data on the boundary of queries is handled: around the start index for range value queries, 
 and around the start and end index for window values. The following are valid values for SdsBoundaryType:
 
-| Boundary          | Enumeration value                 | Operation                                                     |
-|-------------------|-----------------------------------|---------------------------------------------------------------|
-| Exact             | 0                                 | Results include the event at the specified index boundary     |
-|                   |                                   | if a stored event exists at that index.                       |
-| Inside            | 1                                 | Results include only events within the index boundaries       |
-| Outside           | 2                                 | Results include up to one event that falls immediately        |
-|                   |                                   | outside of the specified index boundary.                      |
-| ExactOrCalculated | 3                                 | Results include the event at the specified index boundary. If |
-|                   |                                   | no stored event exists at that index, one is calculated based |
-|                   |                                   | on the index type and interpolation and extrapolation         |
-|                   |                                   | settings.                                                     |
+| Boundary          | Enumeration value | Operation                                                     |
+| ----------------- | ----------------- | ------------------------------------------------------------- |
+| Exact             | 0                 | Results include the event at the specified index boundary     |
+|                   |                   | if a stored event exists at that index.                       |
+| Inside            | 1                 | Results include only events within the index boundaries       |
+| Outside           | 2                 | Results include up to one event that falls immediately        |
+|                   |                   | outside of the specified index boundary.                      |
+| ExactOrCalculated | 3                 | Results include the event at the specified index boundary. If |
+|                   |                   | no stored event exists at that index, one is calculated based |
+|                   |                   | on the index type and interpolation and extrapolation         |
+|                   |                   | settings.                                                     |
 
 SdsSearchMode
 -------------
@@ -151,18 +153,30 @@ SdsSearchMode
 The SdsSearchMode enum defines search behavior when seeking a stored event near a specified index. The following are 
 available SdsSearchModes:
 
-| Mode              | Enumeration value                 | Operation                                                     |
-|-------------------|-----------------------------------|---------------------------------------------------------------|
-| Exact             | 0                                 | If a stored event exists at the specified index, that event   |
-|                   |                                   | is returned. Otherwise no event is returned.                  |
-| ExactOrNext       | 1                                 | If a stored event exists at the specified index, that event   |
-|                   |                                   | is returned. Otherwise the next event in the stream is        |
-|                   |                                   | returned.                                                     |
-| Next              | 2                                 | Returns the stored event after the specified index.           |
-| ExactOrPrevious   | 3                                 | If a stored event exists at the specified index, that event   |
-|                   |                                   | is returned. Otherwise the previous event in the stream is    |
-|                   |                                   | returned.                                                     |
-| Previous          | 4                                 | Returns the stored event before the specified index.          |
+| Mode            | Enumeration value | Operation                                                   |
+| --------------- | ----------------- | ----------------------------------------------------------- |
+| Exact           | 0                 | If a stored event exists at the specified index, that event |
+|                 |                   | is returned. Otherwise no event is returned.                |
+| ExactOrNext     | 1                 | If a stored event exists at the specified index, that event |
+|                 |                   | is returned. Otherwise the next event in the stream is      |
+|                 |                   | returned.                                                   |
+| Next            | 2                 | Returns the stored event after the specified index.         |
+| ExactOrPrevious | 3                 | If a stored event exists at the specified index, that event |
+|                 |                   | is returned. Otherwise the previous event in the stream is  |
+|                 |                   | returned.                                                   |
+| Previous        | 4                 | Returns the stored event before the specified index.        |
+
+## Unit conversion of data
+SDS supports assigning [Units of Measure](xref:unitsOfMeasure) (Uom) to stream data. If stream data has Uom information associated, SDS supports reading data with unit conversions applied. On each read data request, unit conversions are specified by specifying a collection of `SdsStreamPropertyOverride` objects in read requests. The `SdsStreamPropertyOverride` object has the following structure:
+
+
+| Property          | Type                 | Optionality | Details                                              |
+| ----------------- | -------------------- | ----------- | ---------------------------------------------------- |
+| SdsTypePropertyId | String               | Required    | Identifier for a SdsTypeProperty with a Uom assigned |
+| Uom               | String               | Required    | Target unit of measure                               |
+| InterpolationMode | SdsInterpolationMode | N/A         | Currently not supported in context of data reads     |
+
+ This is supported in the .NET API via overloads that accept a collection of `SdsStreamPropertyOverride` objects, and in the REST API via HTTP POST calls with a request body containing a collection of `SdsStreamPropertyOverride` objects. See [API calls for reading data](xref:sdsReadingDataApi) for more information.
 
 Reading data API and examples
 -----------------------------

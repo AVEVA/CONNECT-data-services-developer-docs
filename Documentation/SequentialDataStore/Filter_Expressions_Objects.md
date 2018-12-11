@@ -19,10 +19,9 @@ Fields
 For Streams and Types the filter expressions are valid for the same properties that are valid for the Search parameter. Valid fields 
 for both Streams and Types would be ``Name``, ``Id``, and ``Description``. 
 
-Types additionally have a an IList of SdsTypeProperty objects named ``Properties``.
-For object filter expressions we add all SdsTypeProperty Names and Ids to a collection of strings and that collection is mapped to the field name ``Properties``. 
-Note that this string collection version of ``Properties`` includes all related SdsTypeProperty Names and Ids, including Base SdsType objects
-that the object in question derives from.
+Streams additionally have a ``TypeId`` field that is filterable.
+
+Types additionally have a field ``Properties`` that is a collection of SdsTypeProperty Id and Name values. This is composed based on the IList of SdsTypeProperty objects that is a member of the Sds Type (also named ``Properties``). The filter (and search) functionality of Sds Types and Streams is intended for string values and therefore we only filter on the Names and Ids of SdsTypeProperty objects associated with a given Sds Type. Note that this string collection version of ``Properties`` includes all related SdsTypeProperty Names and Ids, including Base SdsType objects that the Sds Type object in question derives from.
 
 String functions
 ------------

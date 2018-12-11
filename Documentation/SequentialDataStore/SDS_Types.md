@@ -5,8 +5,6 @@ uid: sdsTypes
 Types
 =====
 
-#### SDS_Type_topic
-
 The Sequential Data Store (SDS) stores streams of events and provides convenient ways to find and associate 
 events. Events are stored in streams, called SdsStreams. An SdsType defines the shape or structure of the 
 event and how to associate events within the SdsStream.
@@ -931,7 +929,7 @@ The tenant identifier
 The namespace identifier
 
 ``string query``  
-An optional query string to filter which SdsTypes will be returned.  See the [Search](xref:sdsSearching#qisearchingtopic) topic for information about specifying the query parameter.
+An optional query string to filter which SdsTypes will be returned.  See the [Search](xref:sdsSearching#searching) topic for information about specifying the query parameter.
 
 ``int skip``  
   An optional value representing the zero-based offset of the first SdsType to retrieve. If not specified, 

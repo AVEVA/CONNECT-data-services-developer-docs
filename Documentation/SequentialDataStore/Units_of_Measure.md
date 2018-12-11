@@ -4,7 +4,7 @@ uid: unitsOfMeasure
 
 # Units of Measure
 
-The Sequential Data Store (SDS) provides a collection of built-in units of measure (Uom). These units of measure can be [associated](#associating-a-unit-of-measure-with-a-sdstype) with SdsStreams and SdsTypes in order to provide unit information for stream data that model measurable quantities. If data has unit information associated with it, SDS is able to support unit conversions when retrieving data. See [Reading data](xref:sdsReadingData#qireadingdatatopic) for more information.
+The Sequential Data Store (SDS) provides a collection of built-in units of measure (Uom). These units of measure can be [associated](#associating-a-unit-of-measure-with-a-sdstype) with SdsStreams and SdsTypes in order to provide unit information for stream data that model measurable quantities. If data has unit information associated with it, SDS is able to support unit conversions when retrieving data. See [Reading data](xref:sdsReadingData) for more information.
 
 Since a unit of measurement (i.e. meter) defines the magnitude of a quantity (i.e. Length), SDS represents this via two objects: SdsUom and SdsUomQuantity. 
 
@@ -16,7 +16,7 @@ The following table shows the required and optional SdsUom fields.
 
 | Property         | Type   | Optionality | Details                                                                                                                                                                                                                  | Example           |
 | ---------------- | ------ | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------- |
-| Id               | String | Required    | Unique identifier for the unit of measure                                                                                                                                                                                | meters_per_second |
+| Id               | String | Required    | Unique identifier for the unit of measure                                                                                                                                                                                | meters per second |
 | Abbreviation     | String | Optional    | Abbreviation for the unit of measure                                                                                                                                                                                     | m/s               |
 | Name             | String | Optional    | Full name for the unit of measure                                                                                                                                                                                        | Meters per second |
 | DisplayName      | String | Optional    | Friendly display name for the unit of measure                                                                                                                                                                            | meters per second |
@@ -645,7 +645,7 @@ Sample response body:
 
 
 ## Associating a unit of measure with a SdsType
-At [SdsType](xref:sdsTypes#qitypetopic) creation, a SdsUom can be associated with a [SdsTypeProperty](xref:sdsTypes#sdstypeproperty). 
+At [SdsType](xref:sdsTypes) creation, a SdsUom can be associated with a [SdsTypeProperty](xref:sdsTypes#sdstypeproperty). 
 
 ## Associating a unit of measure with a SdsStream
 At [SdsStream](xref:sdsStreams) creation, you can override any unit of measure associated with a SdsTypeProperty belonging to the SdsType of the stream. This enables the reuse of a SdsType that may have default unit information associated with it already.

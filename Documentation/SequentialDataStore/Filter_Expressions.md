@@ -2,8 +2,6 @@
 uid: sdsFilterExpressions
 ---
 
-#### Qi_Filter_expressions_topic
-
 Filter Expressions
 ==================
 

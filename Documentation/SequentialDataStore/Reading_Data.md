@@ -2,14 +2,12 @@
 uid: sdsReadingData
 ---
 
-#### Qi_Reading_data_topic
-
 Reading data
 ============
 
 The REST APIs provide programmatic access to read and write data. This section identifies and describes 
-the APIs used to read [Qi_Stream_topic](xref:sdsStreams#sdsstreamtopic) data. Results are influenced by [Qi_Types_topic](xref:sdsTypes#sdstypetopic),  
-[Sds_View_topic](xref:sdsViews), [Qi_Filter_expressions_topic](xref:sdsFilterExpressions), and [Qi_Table_format_topic](xref:sdsTableFormat).
+the APIs used to read [Stream](xref:sdsStreams) data. Results are influenced by [Types](xref:sdsTypes),  
+[Sds Views](xref:sdsViews), [Filter expressions](xref:sdsFilterExpressions), and [Table format](xref:sdsTableFormat).
 
 If you are working in a .NET environment, convenient SDS Client libraries are available. 
 The ``ISdsDataServiceinterface``, which is accessed using the ``SdsService.GetDataService()`` helper, 
@@ -66,7 +64,7 @@ Indexes and reading data
 
 Most read operations take at least one index as a parameter. Indexes may be specified as strings, or, 
 when using the Sds Client libraries, the index may be passed as-is to read methods that take the index 
-type as a generic argument. Additional details about working with indexes can be found on the [Indexes_topic](xref:sdsIndexes) page.
+type as a generic argument. Additional details about working with indexes can be found on the [Indexes](xref:sdsIndexes) page.
 
 Read Characteristics
 --------------------
@@ -75,21 +73,21 @@ When data is requested at an index for which no stored event exists, the read ch
 whether the result is an error, null event, interpolated event, or extrapolated event. The combination of 
 the type of the index and the interpolation and extrapolation modes of the SdsType and the SdsStream 
 determine the read characteristics. For more information on read characteristics, 
-see [QiType_topic](xref:sdsTypes#sdstypetopic) and [Qi_Stream_topic](xref:sdsStreams#sdsstreamtopic).
+see [Types](xref:sdsTypes) and [Streams](xref:sdsStreams).
 
 **Methods affected by Read Characteristics**
 
-`GetValueAsync <https://qi-docs-rst.readthedocs.org/en/latest/Reading_Data_API.html#getvalueasync>`__
-  Read characteristics are applied when the index is between, before, or after all data.
+[`GetValueAsync`](xref:sdsReadingDataApi#get-value)  
+Read characteristics are applied when the index is between, before, or after all data.
 
-`GetValuesAsync <https://qi-docs-rst.readthedocs.org/en/latest/Reading_Data_API.html#getvaluesasync>`__
-  Read characteristics applied when an index determined by the call is between, before, or after all data.
+[`GetValuesAsync`](xref:sdsReadingDataApi#get-values)  
+Read characteristics applied when an index determined by the call is between, before, or after all data.
 
-`GetWindowValuesAsync <https://qi-docs-rst.readthedocs.org/en/latest/Reading_Data_API.html#getwindowvaluesasync>`__
-  Read characteristics applied to indexes between, before, or after data when the calls Boundary parameter is set to ExactOrCalculated.
+[`GetWindowValuesAsync`](xref:sdsReadingDataApi#get-window-values)  
+Read characteristics applied to indexes between, before, or after data when the calls Boundary parameter is set to ExactOrCalculated.
 
-`GetRangeValuesAsync <https://qi-docs-rst.readthedocs.org/en/latest/Reading_Data_API.html#getrangevaluesasync>`__
-  Read characteristics applied to indexes between, before, or after data when the calls Boundary parameter is set to ExactOrCalculated.
+[`GetRangeValuesAsync`](xref:sdsReadingDataApi#get-window-values)  
+Read characteristics applied to indexes between, before, or after data when the calls Boundary parameter is set to ExactOrCalculated.
 
 SdsView and reading data
 ------------------------
@@ -98,7 +96,7 @@ All reads support specifying a SdsView identifier in the query string to shape t
 
 ``viewId={viewId}``
 
-Working with views is covered in detail in the [Sds_View_topic](xref:sdsViews) section.
+Working with views is covered in detail in the [Sds Views](xref:sdsViews) section.
 
 When data is requested with a SdsView the read characteristics defined by the *target type* of the SdsView 
 determine what is returned. The read characteristics are discussed in the *Get Value*, 
@@ -111,7 +109,7 @@ Filter expressions can be applied to any read that returns multiple values, incl
 Get Window Values, and Get Intervals. The filter expression is applied to the collection events conditionally 
 filtering events that do not meet the filter conditions.
 
-Filter expressions are covered in detail in the [Qi_Filter_expressions_topic](xref:sdsFilterExpressions) section.
+Filter expressions are covered in detail in the [Filter expressions](xref:sdsFilterExpressions) section.
 
 Table Format
 ------------
@@ -126,7 +124,7 @@ Results include a collection named ``Columns`` that lists column name and type a
 Specifying a form of type ``table-headers``, ``?form=tableh``, results in a collection where the Rows collection 
 contains a column header list.
 
-Table formats are covered in detail in the [Qi_Table_format_topic](xref:sdsTableFormat) section.
+Table formats are covered in detail in the [Table format](xref:sdsTableFormat) section.
 
 
 SdsBoundaryType

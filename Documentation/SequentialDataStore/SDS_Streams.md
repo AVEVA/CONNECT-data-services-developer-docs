@@ -63,7 +63,7 @@ compound secondary indexes. Only SdsTypeCodes
 that can be ordered are supported for use in a secondary index.
 
 
-Indexes are discussed in greater detail here: :doc:`Qi_Indexes_topic`
+Indexes are discussed in greater detail here: [Indexes](xref:sdsIndexes)
 
 
 Interpolation and Extrapolation
@@ -89,11 +89,11 @@ The ``SdsStreamPropertyOverride`` object has the following structure:
 
 
 The unit of measure can be overridden for any type property defined by the stream type, including primary keys 
-and secondary indexes. For more information about type property units of measure see [QiType_topic](xref:sdsTypes#sdstypetopic). 
+and secondary indexes. For more information about type property units of measure see [Types](xref:sdsTypes). 
 
 Read characteristics of the stream are determined by the type and the PropertyOverrides of the stream. The 
 interpolation mode for non-index properties can be defined and overridden at the stream level. For more 
-information about type read characteristics see [QiType_topic](xref:sdsTypes#sdstypetopic).
+information about type read characteristics see [Types](xref:sdsTypes).
 
 When specifying property interpolation overrides, if the SdsType InterpolationMode is ``Discrete``, it cannot be overridden 
 at any level. When InterpolationMode is set to ``Discrete`` and an event it not defined for that index, a null 
@@ -107,7 +107,7 @@ SdsStream API
 The REST APIs provide programmatic access to read and write SDS data. The APIs in this 
 section interact with SdsStreams. When working in .NET convenient SDS Client libraries are 
 available. The ``ISdsMetadataService`` interface, accessed using the ``SdsService.GetMetadataService( )`` helper, 
-defines the available functions. See [Qi_Stream_topic](#sdsstreamtopic) for general 
+defines the available functions. See [Streams](#streams) for general 
 SdsStream information. 
 
 
@@ -174,7 +174,7 @@ Returns a list of streams.
 
 If the optional search parameter is specified, the list of streams returned are filtered to match 
 the search criteria. If the optional search parameter is not specified, the list includes all streams 
-in the Namespace. See [Qi_Searching_topic](xref:sdsSearching#qisearchingtopic) 
+in the Namespace. See [Searching](xref:sdsSearching#searching) 
 for information about specifying the search parameter.
 
 **Request**
@@ -193,7 +193,7 @@ for information about specifying the search parameter.
   The namespace identifier
 ``string query``
   An optional parameter representing a string search. 
-  See [Qi_Searching_topic](xref:sdsSearching#qisearchingtopic)
+  See [Searching](xref:sdsSearching#searching)
   for information about specifying the search parameter.
 ``int skip``
   An optional parameter representing the zero-based offset of the first SdsStream to retrieve. 

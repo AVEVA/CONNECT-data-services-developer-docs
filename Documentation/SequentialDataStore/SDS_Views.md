@@ -5,8 +5,6 @@ uid: sdsViews
 SDS Views
 =========
 
-#### SDS_Views_topic
-
 An SdsView provides a way to map Stream data requests from one data type to another. You can apply 
 a View to any read or GET operation. SdsView is used to specify the mapping between source and target types.
 
@@ -131,7 +129,7 @@ To update a Stream Type, define an SdsView and PUT the view to the following:
        api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type?viewId={viewId}
 
 
-For details, see [SdsView API](#sdsviewstopic). 
+For details, see [SdsView API](#sds-views). 
 
 Working with SdsViews when using .NET
 ------------------------------------

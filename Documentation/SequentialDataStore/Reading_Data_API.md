@@ -1,11 +1,11 @@
 ---
 uid: sdsReadingDataApi
 ---
-API calls for reading data
-===========================
-
+# API calls for reading data
 Reading and writing data with the Sds Client Libraries is performed through the ``ISdsDataService`` interface, which can be accessed with the ``SdsService.GetDataService( )`` helper.
+***********************
 
+## Sample Types
 Many of the API methods described below contain sample JSON and sample code. 
 
 When specifying a parameter of type enum, the API accepts both the name of the field and the numeric value of the field. 
@@ -13,9 +13,9 @@ Samples vary to highlight enum flexibility.
 
 Samples use the following types:
 
-Type with a simple index, named *Simple*:
+### Type with a simple index, named *Simple*:
 
-**.NET**
+#### .NET
 ```csharp
       public enum State
       {
@@ -33,7 +33,7 @@ Type with a simple index, named *Simple*:
         public Double Measurement { get; set; }
       }
 ```
-**Python**
+#### Python
 ```python
       class State(Enum):
         Ok = 0
@@ -59,7 +59,7 @@ Type with a simple index, named *Simple*:
         def setValue(self, measurement):
           self.__measurement = measurement
 ```
-**JavaScript**
+#### JavaScript
 ```javascript
       var State =
       {
@@ -82,10 +82,9 @@ Has values as follows:
       11/23/2017  3:00:00 PM: Ok 30
       11/23/2017  4:00:00 PM: Ok 40
 
-Type with Compound Index, named ``DerivedCompoundIndex``
+### Type with Compound Index, named ``DerivedCompoundIndex``
 
-
-**.NET**
+#### .NET
 ```csharp
       public class Simple
       {
@@ -101,7 +100,7 @@ Type with Compound Index, named ``DerivedCompoundIndex``
         public DateTime Recorded { get; set; }
       }
 ```
-**Python**
+#### Python
 ```python
       class Simple(object):
       # First-order Key property
@@ -132,7 +131,7 @@ Type with Compound Index, named ``DerivedCompoundIndex``
       def Recorded(self, recorded):
         self.__recorded = recorded
 ```
-**JavaScript**
+#### JavaScript
 ```javascript
       var Simple = function () {
         this.Time = null;
@@ -159,21 +158,15 @@ All times are represented at offset 0, GMT.
 
 ***********************
 
-``Get Value``
---------------
+## ``Get Value``
 
-Returns the value at the specified index. If no stored event exists at the specified index, the stream’s read characteristics determines how the returned event is calculated. Get Value also supports unit conversion of data via HTTP POST when the SdsType contains unit information.
-
-Below are the supported request types for Get Value. Click the links for details.
-| Request                                   | HTTP Method                                                                                                           | .NET Method                                                                                                                          |
-| ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| [Standard](#getvaluestandard)             | `GET	api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/GetValue?index={index}&viewId={viewId}`  | `Task<T> GetValueAsync<T>(string streamId, string index, string viewId = null);`                                                     |
-| [Unit Conversion](#getvalueuomconversion) | `POST api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/GetValue?index={index}&viewId={viewId}` | `Task<T> GetValueAsync<T>(string streamId, string index, IList<SdsStreamPropertyOverride> propertyOverrides, string viewId = null);` |  
-
-
+Get Value supports two ways to retrieve an event:
+* [Standard](#getvaluestandard): Returns the value at the specified index. If no stored event exists at the specified index, the stream’s read characteristics determines how the returned event is calculated.
+* [Unit Conversion](#getvalueuomconversion): Same as Standard, but with unit conversion(s) applied to data when the SdsStream or SdsType contains unit of measure information.
 
 <a name="getvaluestandard"></a>
-**Request (Standard)**
+
+### Request (Standard) 
 
       GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/GetValue
          ?index={index}&viewId={viewId}
@@ -247,7 +240,8 @@ this request receives a response with an event interpolated at the specified ind
       string viewId = null);
 
 <a name="getvalueuomconversion"></a>
-**Request (Uom Conversion)** 
+
+### Request (Uom Conversion)
 
         POST api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/GetValue
             ?index={index}&viewId={viewId}

@@ -919,8 +919,8 @@ Returns a list of types within a given namespace.
 
 If specifying the optional search parameter or optional filter parameter, the list of types returned are filtered to match 
 the search/filter criteria. If the neither parameter is specified, the list includes all types 
-in the Namespace. See [Qi_Searching_topic](xref:sdsSearching#qisearchingtopic) 
-and [Filter Expressions: Objects](xref:sdsFilterExpressionsObjects#Sds_Filter_expressions_objects_topic)  
+in the Namespace. See [Searching](xref:sdsSearching#searching) 
+and [Filter Expressions: Metadata Objects](xref:sdsFilterExpressionsMetadata) 
 for information about specifying those respective parameters.
 
 **Request**
@@ -937,10 +937,10 @@ The tenant identifier
 The namespace identifier
 
 ``string query``  
-An optional query string to match which SdsTypes will be returned.  See the [Search](xref:sdsSearching#qisearchingtopic) topic for information about specifying the query parameter.
+An optional query string to match which SdsTypes will be returned.  See the [Searching](xref:sdsSearching#searching) topic for information about specifying the query parameter.
 
 ``string filter``  
-An optional filter string to match which SdsTypes will be returned.  See the [Filter Expressions: Objects](xref:sdsFilterExpressionsObjects#Sds_Filter_expressions_objects_topic) 
+An optional filter string to match which SdsTypes will be returned.  See the [Filter Expressions: Metadata Objects](xref:sdsFilterExpressionsMetadata) 
 topic for information about specifying the filter parameter.
 
 ``int skip``  

@@ -1,40 +1,192 @@
 ---
 uid: sdsReadingDataApi
 ---
-
-API calls for reading data
-===========================
-
+# API calls for reading data
 Reading and writing data with the Sds Client Libraries is performed through the ``ISdsDataService`` interface, which can be accessed with the ``SdsService.GetDataService( )`` helper.
+***********************
 
+## Sample Types
+Many of the API methods described below contain sample JSON and sample code. 
 
+When specifying a parameter of type enum, the API accepts both the name of the field and the numeric value of the field. 
+Samples vary to highlight enum flexibility.
 
-``Get Value``
---------------
+Samples use the following types:
 
-Returns the value at the specified index. If no stored event exists at the specified index, the stream’s 
-read characteristics determines how the returned event is calculated.
+### Type with a simple index, named *Simple*:
 
+#### .NET
+```csharp
+      public enum State
+      {
+        Ok,
+        Warning,
+        Alarm
+      }
 
-**Request**
+      public class Simple
+      {
+        [SdsMember(IsKey = true, Order = 0) ]
+        public DateTime Time { get; set; }
+        public State State { get; set; }
+        [SdsMember(Uom = "meter")]
+        public Double Measurement { get; set; }
+      }
+```
+#### Python
+```python
+      class State(Enum):
+        Ok = 0
+        Warning = 1
+        Alarm = 2
 
-        GET	api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/GetValue
-            ?index={index}&viewId={viewId}
+      class Simple(object):
+        Time = property(getTime, setTime)
+        def getTime(self):
+          return self.__time
+        def setTime(self, time):
+          self.__time = time
 
+        State = property(getState, setState)
+        def getState(self):
+          return self.__state
+        def setState(self, state):
+          self.__state = state
 
+        Measurement = property(getValue, setValue)
+        def getValue(self):
+          return self.__measurement
+        def setValue(self, measurement):
+          self.__measurement = measurement
+```
+#### JavaScript
+```javascript
+      var State =
+      {
+        Ok: 0,
+        Warning: 1,
+        Alarm: 2,
+      }
 
-**Parameters**
+      var Simple = function () {
+        this.Time = null;
+        this.State = null;
+        this.Value = null;
+      }
+```
+Has values as follows:
 
-``string tenantId``
-  The tenant identifier
-``string namespaceId``
-  The namespace identifier
-``string streamId``
-  The stream identifier
-``string index``
-  The index
-``string viewId``
-  Optional view identifier
+      11/23/2017 12:00:00 PM: Ok  0
+      11/23/2017  1:00:00 PM: Ok 10
+      11/23/2017  2:00:00 PM: Ok 20
+      11/23/2017  3:00:00 PM: Ok 30
+      11/23/2017  4:00:00 PM: Ok 40
+
+### Type with Compound Index, named ``DerivedCompoundIndex``
+
+#### .NET
+```csharp
+      public class Simple
+      {
+        [SdsMember(IsKey = true, Order = 0)]
+        public DateTime Time { get; set; }
+        public State State { get; set; }
+        public Double Measurement { get; set; }
+      }
+
+      public class DerivedCompoundIndex : Simple
+      {
+        [SdsMember(IsKey = true, Order = 1)]
+        public DateTime Recorded { get; set; }
+      }
+```
+#### Python
+```python
+      class Simple(object):
+      # First-order Key property
+      Time = property(getTime, setTime)
+      def getTime(self):
+        return self.__time
+      def setTime(self, time):
+        self.__time = time
+
+      State = property(getState, setState)
+      def getState(self):
+        return self.__state
+      def setState(self, state):
+        self.__state = state
+
+      Measurement = property(getValue, setValue)
+      def getValue(self):
+        return self.__measurement
+      def setValue(self, measurement):
+        self.__measurement = measurement
+
+      class DerivedCompoundIndex(Simple):
+      # Second-order Key property
+      @property
+      def Recorded(self):
+        return self.__recorded
+      @Recorded.setter
+      def Recorded(self, recorded):
+        self.__recorded = recorded
+```
+#### JavaScript
+```javascript
+      var Simple = function () {
+        this.Time = null;
+        this.State = null;
+        this.Value = null;
+      }
+
+      var DerivedCompoundIndex = function() {
+        Simple.call(this);
+        this.Recorded = null;
+      }
+```
+Has values as follows:
+
+      1/20/2017 1:00:00 AM : 1/20/2017 12:00:00 AM 	0
+      1/20/2017 1:00:00 AM : 1/20/2017  1:00:00 AM 	2
+      1/20/2017 1:00:00 AM : 1/20/2017  2:00:00 PM 	5
+      1/20/2017 2:00:00 AM : 1/20/2017 12:00:00 AM 	1
+      1/20/2017 2:00:00 AM : 1/20/2017  1:00:00 AM 	3
+      1/20/2017 2:00:00 AM : 1/20/2017  2:00:00 AM 	4
+      1/20/2017 2:00:00 AM : 1/20/2017  2:00:00 PM 	6
+
+All times are represented at offset 0, GMT.
+
+***********************
+
+## ``Get Value``
+
+Get Value supports two ways to retrieve an event:
+* [Standard](#getvaluestandard): Returns the value at the specified index. If no stored event exists at the specified index, the stream’s read characteristics determines how the returned event is calculated.
+* [Unit Conversion](#getvalueuomconversion): Same as Standard, but with unit conversion(s) applied to data when the SdsStream or SdsType contains unit of measure information.
+
+<a name="getvaluestandard"></a>
+
+### Request (Standard) 
+
+      GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/GetValue
+         ?index={index}&viewId={viewId}
+
+**Request Parameters**
+
+``string tenantId``  
+The tenant identifier
+
+``string namespaceId``  
+The namespace identifier
+
+``string streamId``  
+The stream identifier
+
+``string index``  
+The index
+
+``string viewId``  
+Optional view identifier
 
 
 **Response**
@@ -78,10 +230,6 @@ this request receives a response with an event interpolated at the specified ind
          "Measurement":15.0
       }
 
-
-
-
-
 **.NET Library**
 
       Task<T> GetValueAsync<T>(string streamId, string index, 
@@ -91,18 +239,69 @@ this request receives a response with an event interpolated at the specified ind
       Task<T> GetValueAsync<T, T1, T2>(string streamId, Tuple<T1, T2> index, 
       string viewId = null);
 
+<a name="getvalueuomconversion"></a>
 
-**Security**
+### Request (Uom Conversion)
 
-  Allowed for administrator and user accounts
+        POST api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/GetValue
+            ?index={index}&viewId={viewId}
 
+**Request Parameters**
+
+``string tenantId``  
+The tenant identifier
+
+``string namespaceId``  
+The namespace identifier
+
+``string streamId``  
+The stream identifier
+
+``string index``  
+The index
+
+``string viewId``  
+Optional view identifier
+
+**Request Body**
+
+The Request Body contains a collection of `SdsStreamPropertyOverride` objects. The example request body below requests Sds convert the `Measurement` property of the returned data from meter to centimeter.
+```json
+    [
+      {
+        "SdsTypePropertyId" : "Measurement",
+        "Uom" : "centimeter" 
+      }
+    ]
+```
+
+**Response**
+
+The response includes a status code and response body containing a serialized event similar to the standard request above (without Uom conversion). In this response, the system will have applied the conversion factor for the base unit (in this case Meters) to the `Measurement` property of the event.
+
+**Response body**
+
+      HTTP/1.1 200
+      Content-Type: application/json
+
+      {  
+         "Time":"2017-11-23T13:00:00Z",
+         "Measurement":1000.0 
+      }
+
+
+**.NET Library**
+
+      Task<T> GetValueAsync<T>(string streamId, string index, IList<SdsStreamPropertyOverride> propertyOverrides, string viewId = null);
+      Task<T> GetValueAsync<T, T1>(string streamId, Tuple<T1> index, IList<SdsStreamPropertyOverride> propertyOverrides, string viewId = null);
+      Task<T> GetValueAsync<T, T1, T2>(string streamId, Tuple<T1, T2> index, IList<SdsStreamPropertyOverride> propertyOverrides, string viewId = null);
 
 ***********************
 
 ``Get First Value``
 --------------
 
-Returns the first value in the stream. If no values exist in the stream, null is returned.
+Returns the first value in the stream. If no values exist in the stream, null is returned. Get First Value also supports unit conversion of data via HTTP POST when the SdsType contains unit information.
 
 
 **Request**
@@ -110,36 +309,27 @@ Returns the first value in the stream. If no values exist in the stream, null is
         GET	api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/GetFirstValue
             ?viewId={viewId}
 
+**Request Parameters**
 
+``string tenantId``  
+The tenant identifier
 
+``string namespaceId``  
+The namespace identifier
 
-**Parameters**
+``string streamId``  
+The stream identifier
 
-``string tenantId``
-  The tenant identifier
-``string namespaceId``
-  The namespace identifier
-``string streamId``
-  The stream identifier
-``string viewId``
-  Optional view identifier
-
+``string viewId``  
+Optional view identifier
 
 **Response**
 
   The response includes a status code and a response body containing a serialized event.
 
-
-
 **.NET Library**
 
       Task<T> GetFirstValueAsync<T>(string streamId, string viewId = null);
-
-
-
-**Security**
-
-  Allowed for administrator and user accounts
 
 
 ***********************
@@ -156,16 +346,19 @@ Returns the last value in the stream. If no values exist in the stream, null is 
             ?viewId={viewId}
 
 
-**Parameters**
+**Request Parameters**
 
-``string tenantId``
-  The tenant identifier
-``string namespaceId``
-  The namespace identifier
-``string streamId``
-  The stream identifier
-``string viewId``
-  Optional view identifier
+``string tenantId``  
+The tenant identifier
+
+``string namespaceId``  
+The namespace identifier 
+
+``string streamId``  
+The stream identifier
+
+``string viewId``  
+Optional view identifier
 
 
 **Response**
@@ -199,17 +392,21 @@ do not affect Get Distinct Value.
             ?index={index}&viewId={viewId}
 
 
-**Parameters**
+**Request Parameters**
 
-``string tenantId``
+``string tenantId``  
   The tenant identifier
-``string namespaceId``
+
+``string namespaceId``  
   The namespace identifier
-``string streamId``
+
+``string streamId``  
   The stream identifier
-``string index``
+
+``string index``  
   The index
-``string viewId``
+
+``string viewId``  
   Optional view identifier
 
 
@@ -262,13 +459,6 @@ No distinct value is found at the specified index, and an error response is retu
       Task<T> GetDistinctValueAsync<T, T1, T2>(string streamId, Tuple<T1, T2> index, 
         string viewId = null);
 
-
-**Security**
-
-  Allowed for administrator and user accounts
-
-
-
 ***********************
 
 ``Find Distinct Value``
@@ -284,20 +474,25 @@ Returns a stored event found based on the specified SdsSearchMode and index.
 
 
 
-**Parameters**
+**Request Parameters**
 
-``string tenantId``
-  The tenant identifier
-``string namespaceId``
-  The namespace identifier
-``string streamId``
-  The stream identifier
-``string index``
-  The index
-``string mode``
-  The SdsSearchMode
-``string viewId``
-  Optional view identifier
+``string tenantId``  
+The tenant identifier
+
+``string namespaceId``  
+The namespace identifier
+
+``string streamId``  
+The stream identifier
+
+``string index``  
+The index
+
+``string mode``  
+The SdsSearchMode
+
+``string viewId``  
+Optional view identifier
 
 
 **Response**
@@ -361,12 +556,6 @@ The next event in the stream is retrieved.
               SdsSearchMode mode, string viewId = null);
 
 
-
-**Security**
-
-  Allowed for administrator and user accounts
-
-
 ***********************
 
 ``Get Values``
@@ -393,22 +582,28 @@ Get Values supports three ways of specifying which events to return.
 
 
 
-**Parameters**
+**Request Parameters**
 
-``string tenantId``
-  The tenant identifier
-``string namespaceId``
-  The namespace identifier
-``string streamId``
-  The stream identifier
-``string startIndex``
-  The index defining the beginning of the range
-``string endIndex``
-  The index defining the end of the range  
-``int count``
-  The number of events to return. Read characteristics of the stream determine how the form of the event.
-``string viewId``
-  Optional view identifier
+``string tenantId``  
+The tenant identifier
+
+``string namespaceId``  
+The namespace identifier
+
+``string streamId``  
+The stream identifier
+
+``string startIndex``  
+The index defining the beginning of the range
+
+``string endIndex``  
+The index defining the end of the range  
+
+``int count``  
+The number of events to return. Read characteristics of the stream determine how the form of the event.
+
+``string viewId``  
+Optional view identifier
 
 
 **Response**
@@ -457,12 +652,6 @@ Note that State is not included in the JSON as its value is the default value.
            Tuple<T1, T2> endIndex, int count, string viewId = null);
 
 
-
-**Security**
-
-  Allowed for administrator and user accounts
-
-
 **Request (Index collection)**
 
         GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/ 
@@ -470,18 +659,22 @@ Note that State is not included in the JSON as its value is the default value.
 
 
 
-**Parameters**
+**Request Parameters**
 
-``string tenantId``
-  The tenant identifier
-``string namespaceId``
-  The namespace identifier
-``string streamId``
-  The stream identifier
-``string index``
-  One or more indexes of values to retrieve
-``string viewId``
-  Optional view identifier
+``string tenantId``  
+The tenant identifier
+
+``string namespaceId``  
+The namespace identifier
+
+``string streamId``  
+The stream identifier
+
+``string index``  
+One or more indexes of values to retrieve
+
+``string viewId``  
+Optional view identifier
 
 
 **Response**
@@ -531,29 +724,28 @@ Note that State is not included in the JSON as its value is the default value.
            IEnumerable<Tuple< T1, T2>> index, string viewId = null);
 
 
-
-
-**Security**
-
-  Allowed for administrator and user accounts
-
 **Request (Filtered)**
 
         GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/ 
            GetValues?filter={filter}&viewId={viewId}
 
 
-**Parameters**
+**Request Parameters**
 
-``string tenantId``
-  The tenant identifier
-``string namespaceId``
-  The namespace identifier
-``string streamId``
-  The stream identifier
-``string filter``
-  The filter expression (see [Filter expressions](xref:sdsFilterExpressions)) ``string viewId``
-  Optional view identifier
+``string tenantId``  
+The tenant identifier
+
+``string namespaceId``  
+The namespace identifier
+
+``string streamId``  
+The stream identifier
+
+``string filter``  
+The filter expression (see [Filter expressions](xref:sdsFilterExpressions))
+
+``string viewId``  
+Optional view identifier
 
 
 **Response**
@@ -598,15 +790,6 @@ Note that State is not included in the JSON as its value is the default value.
       Task<IEnumerable<T>> GetFilteredValuesAsync<T>(string streamId, string filter, 
           string viewId = null);
 
-
-
-**Security**
-
-  Allowed for administrator and user accounts
-
-
-
-
 ***********************
 
 ``Get Range Values``
@@ -628,30 +811,39 @@ how to filter the data.
 
 
 
-**Parameters**
+**Request Parameters**
 
-``string tenantId``
-  The tenant identifier
-``string namespaceId``
-  The namespace identifier
-``string streamId``
-  The stream identifier
-``string startIndex``
-  Index identifying the beginning of the series of events to return
-``int count``
-  The number of events to return
-``int skip``
-  Optional value specifying the number of events to skip at the beginning of the result
-``bool reversed``
-  Optional specification of the direction of the request. By default, range requests move forward 
-  from startIndex, collecting events after startIndex from the stream. A reversed request will 
-  collect events before startIndex from the stream.
-``SdsBoundaryType boundaryType``
-  Optional SdsBoundaryType specifies the handling of events at or near startIndex
-``string filter``
-  Optional filter expression
-``string viewId``
-  Optional view identifier
+``string tenantId``  
+The tenant identifier
+
+``string namespaceId``  
+The namespace identifier
+
+``string streamId``  
+The stream identifier
+
+``string startIndex``  
+Index identifying the beginning of the series of events to return
+
+``int count``  
+The number of events to return
+
+``int skip``  
+Optional value specifying the number of events to skip at the beginning of the result
+
+``bool reversed``  
+Optional specification of the direction of the request. By default, range requests move forward 
+from startIndex, collecting events after startIndex from the stream. A reversed request will 
+collect events before startIndex from the stream.
+
+``SdsBoundaryType boundaryType``  
+Optional SdsBoundaryType specifies the handling of events at or near startIndex
+
+``string filter``  
+Optional filter expression
+
+``string viewId``  
+Optional view identifier
 
 
 
@@ -822,13 +1014,6 @@ Adding a filter to the request means only events that meet the filter criteria a
           Tuple<T1, T2> startIndex, int skip, int count, bool reversed, SdsBoundaryType boundaryType, 
           string filter, string viewId = null);
 
-
-
-**Security**
-
-  Allowed for administrator and user accounts
-
-
 ***********************
 
 ``Get Window Values``
@@ -843,10 +1028,10 @@ Get Window Values also supports paging for large result sets. Results for paged 
 as a SdsResultPage.
 
 
-| Property          | Type                         | Details                                                  |
-|-------------------|------------------------------|----------------------------------------------------------|
-| Results           | IList                        | Collection of events of type T                           |
-| ContinuationToken | String                       | The token used to retrieve the next page of data         |
+| Property          | Type   | Details                                          |
+| ----------------- | ------ | ------------------------------------------------ |
+| Results           | IList  | Collection of events of type T                   |
+| ContinuationToken | String | The token used to retrieve the next page of data |
 
 To retrieve the next page of values, include the ContinuationToken from the results of the previous request. 
 For the first request, specify a null or empty string for the ContinuationToken.
@@ -874,29 +1059,39 @@ For the first request, specify a null or empty string for the ContinuationToken.
 
 
 
-**Parameters**
+**Request Parameters**
 
-``string tenantId``
-  The tenant identifier
-``string namespaceId``
-  The namespace identifier
-``string streamId``
-  The stream identifier
-``string startIndex``
-  Index bounding the beginning of the series of events to return
-``string endIndex``
-  Index bounding the end of the series of events to return
-``int count``
-  Optional maximum number of events to return
-``SdsBoundaryType boundaryType``
-  Optional SdsBoundaryType specifies handling of events at or near the start and end indexes
-``SdsBoundaryType startBoundaryType``
-  Optional SdsBoundaryType specifies the first value in the result in relation to the start index
-``SdsBoundaryType endBoundaryType``
+``string tenantId``  
+The tenant identifier
+
+``string namespaceId``  
+The namespace identifier
+
+``string streamId``  
+The stream identifier
+
+``string startIndex``  
+Index bounding the beginning of the series of events to return
+
+``string endIndex``  
+Index bounding the end of the series of events to return
+
+``int count``  
+Optional maximum number of events to return
+
+``SdsBoundaryType boundaryType``  
+Optional SdsBoundaryType specifies handling of events at or near the start and end indexes
+
+``SdsBoundaryType startBoundaryType``  
+Optional SdsBoundaryType specifies the first value in the result in relation to the start index
+
+``SdsBoundaryType endBoundaryType``  
   Optional SdsBoundaryType specifies the last value in the result in relation to the end index
-``string filter``
+
+``string filter``  
   Optional filter expression
-``string viewId``
+
+``string viewId``  
   Optional view identifier
 
 
@@ -913,7 +1108,7 @@ For the first request, specify a null or empty string for the ContinuationToken.
 The response will contain the event stored at the specified index:
 
 **Response body**
-
+```json
       Content-Type: application/json
 
       [  
@@ -930,7 +1125,7 @@ The response will contain the event stored at the specified index:
             "Measurement":30.0
          }
       ] 
-
+```
 
 Note that State is not included in the JSON as its value is the default value.
 
@@ -1155,12 +1350,6 @@ Note that State is not included in the JSON as its value is the default value.
           string filter, int count, string continuationToken, string viewId = null);
 
 
-
-**Security**
-
-  Allowed for administrator and user accounts
-
-
 ***********************
 
 ``Get Intervals``
@@ -1176,32 +1365,32 @@ that consist of multiple properties is not defined and results in non-determinan
 Results are returned as a collection of SdsIntervals. Each SdsInterval has a start, end, and collection of 
 summary values.
 
-| Property          | Type                         | Details                                                  |
-|-------------------|------------------------------|----------------------------------------------------------|
-| Start             | T                            | The start of the interval                                |
-| End               | T                            | The end of the interval                                  |
-| Summaries         | IDictionary<SdsSummaryType,   | The summary values for the interval, keyed by            |
-|                   | IDictionary<string, object>  | summary type. The nested dictionary contains             |
-|                   | Summaries                    | property name keys and summary calculation result        |
-|                   |                              | values.                                                  |
+| Property  | Type                        | Details                                           |
+| --------- | --------------------------- | ------------------------------------------------- |
+| Start     | T                           | The start of the interval                         |
+| End       | T                           | The end of the interval                           |
+| Summaries | IDictionary<SdsSummaryType, | The summary values for the interval, keyed by     |
+|           | IDictionary<string, object> | summary type. The nested dictionary contains      |
+|           | Summaries                   | property name keys and summary calculation result |
+|           |                             | values.                                           |
 
 
 Summary values supported by SdsSummaryType enum:
 
-| Summary                                                        | Enumeration value            | 
-|----------------------------------------------------------------|------------------------------|
-| Count                                                          | 1                            |
-| Minimum                                                        | 2                            |
-| Maximum                                                        | 4                            |
-| Range                                                          | 8                            |
-| Mean                                                           | 16                           |
-| StandardDeviation                                              | 64                           |
-| Total                                                          | 128                          |
-| Skewness                                                       | 256                          |
-| Kurtosis                                                       | 512                          |
-| WeightedMean                                                   | 1024                         |
-| WeightedStandardDeviation                                      | 2048                         |
-| WeightedPopulationStandardDeviatio                             | 4096                         |
+| Summary                            | Enumeration value |
+| ---------------------------------- | ----------------- |
+| Count                              | 1                 |
+| Minimum                            | 2                 |
+| Maximum                            | 4                 |
+| Range                              | 8                 |
+| Mean                               | 16                |
+| StandardDeviation                  | 64                |
+| Total                              | 128               |
+| Skewness                           | 256               |
+| Kurtosis                           | 512               |
+| WeightedMean                       | 1024              |
+| WeightedStandardDeviation          | 2048              |
+| WeightedPopulationStandardDeviatio | 4096              |
 
 
 **Request**
@@ -1211,24 +1400,31 @@ Summary values supported by SdsSummaryType enum:
 
 
 
-**Parameters**
+**Request Parameters**
 
-``string tenantId``
-  The tenant identifier
-``string namespaceId``
-  The namespace identifier
-``string streamId``
-  The stream identifier
-``string startIndex``
-  The start index for the intervals
-``string endIndex``
-  The end index for the intervals
-``int count``
-  The number of intervals requested
-``string filter``
-  Optional filter expression
-``string viewId``
-  Optional view identifier
+``string tenantId``  
+The tenant identifier
+
+``string namespaceId``  
+The namespace identifier
+
+``string streamId``  
+The stream identifier
+
+``string startIndex``  
+The start index for the intervals
+
+``string endIndex``  
+The end index for the intervals
+
+``int count``  
+The number of intervals requested
+
+``string filter``  
+Optional filter expression
+  
+``string viewId``  
+Optional view identifier
 
 **Response**
 
@@ -1371,12 +1567,5 @@ and last events:
       Task<IEnumerable<SdsInterval<T>>> GetFilteredIntervalsAsync<T, T1, T2>(string 
           streamId, Tuple<T1, T2> startIndex, Tuple<T1, T2> endIndex, int count, 
           string filter, string viewId = null);
-
-
-
-**Security**
-
-  Allowed for administrator and user accounts
-
 
 ***********************

@@ -1,8 +1,10 @@
 ---
 uid: sdsReadingDataApi
 ---
-Reading data API and examples
------------------------------
+API calls for reading data
+===========================
+
+Reading and writing data with the Sds Client Libraries is performed through the ``ISdsDataService`` interface, which can be accessed with the ``SdsService.GetDataService( )`` helper.
 
 Many of the API methods described below contain sample JSON and sample code. 
 
@@ -14,7 +16,7 @@ Samples use the following types:
 Type with a simple index, named *Simple*:
 
 **.NET**
-
+```csharp
       public enum State
       {
         Ok,
@@ -27,11 +29,12 @@ Type with a simple index, named *Simple*:
         [SdsMember(IsKey = true, Order = 0) ]
         public DateTime Time { get; set; }
         public State State { get; set; }
+        [SdsMember(Uom = "meter")]
         public Double Measurement { get; set; }
       }
-
+```
 **Python**
-
+```python
       class State(Enum):
         Ok = 0
         Warning = 1
@@ -55,9 +58,9 @@ Type with a simple index, named *Simple*:
           return self.__measurement
         def setValue(self, measurement):
           self.__measurement = measurement
-
+```
 **JavaScript**
-
+```javascript
       var State =
       {
         Ok: 0,
@@ -70,7 +73,7 @@ Type with a simple index, named *Simple*:
         this.State = null;
         this.Value = null;
       }
-
+```
 Has values as follows:
 
       11/23/2017 12:00:00 PM: Ok  0
@@ -83,7 +86,7 @@ Type with Compound Index, named ``DerivedCompoundIndex``
 
 
 **.NET**
-
+```csharp
       public class Simple
       {
         [SdsMember(IsKey = true, Order = 0)]
@@ -97,9 +100,9 @@ Type with Compound Index, named ``DerivedCompoundIndex``
         [SdsMember(IsKey = true, Order = 1)]
         public DateTime Recorded { get; set; }
       }
-
+```
 **Python**
-
+```python
       class Simple(object):
       # First-order Key property
       Time = property(getTime, setTime)
@@ -128,9 +131,9 @@ Type with Compound Index, named ``DerivedCompoundIndex``
       @Recorded.setter
       def Recorded(self, recorded):
         self.__recorded = recorded
-
+```
 **JavaScript**
-
+```javascript
       var Simple = function () {
         this.Time = null;
         this.State = null;
@@ -141,7 +144,7 @@ Type with Compound Index, named ``DerivedCompoundIndex``
         Simple.call(this);
         this.Recorded = null;
       }
-
+```
 Has values as follows:
 
       1/20/2017 1:00:00 AM : 1/20/2017 12:00:00 AM 	0
@@ -154,24 +157,28 @@ Has values as follows:
 
 All times are represented at offset 0, GMT.
 
-API calls for reading data
-===========================
-
-Reading and writing data with the Sds Client Libraries is performed through the ``ISdsDataService`` interface, which can be accessed with the ``SdsService.GetDataService( )`` helper.
-
-
+***********************
 
 ``Get Value``
 --------------
 
 Returns the value at the specified index. If no stored event exists at the specified index, the stream’s read characteristics determines how the returned event is calculated. Get Value also supports unit conversion of data via HTTP POST when the SdsType contains unit information.
 
-**Request**
+Below are the supported request types for Get Value. Click the links for details.
+| Request                                   | HTTP Method                                                                                                           | .NET Method                                                                                                                          |
+| ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| [Standard](#getvaluestandard)             | `GET	api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/GetValue?index={index}&viewId={viewId}`  | `Task<T> GetValueAsync<T>(string streamId, string index, string viewId = null);`                                                     |
+| [Unit Conversion](#getvalueuomconversion) | `POST api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/GetValue?index={index}&viewId={viewId}` | `Task<T> GetValueAsync<T>(string streamId, string index, IList<SdsStreamPropertyOverride> propertyOverrides, string viewId = null);` |  
 
-        GET	api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/GetValue
-            ?index={index}&viewId={viewId}
 
-**Parameters**
+
+<a name="getvaluestandard"></a>
+**Request (Standard)**
+
+      GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/GetValue
+         ?index={index}&viewId={viewId}
+
+**Request Parameters**
 
 ``string tenantId``  
 The tenant identifier
@@ -239,7 +246,8 @@ this request receives a response with an event interpolated at the specified ind
       Task<T> GetValueAsync<T, T1, T2>(string streamId, Tuple<T1, T2> index, 
       string viewId = null);
 
-**Request (Uom Conversion)**
+<a name="getvalueuomconversion"></a>
+**Request (Uom Conversion)** 
 
         POST api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/GetValue
             ?index={index}&viewId={viewId}
@@ -263,14 +271,15 @@ Optional view identifier
 
 **Request Body**
 
-The Request Body contains a collection of `SdsStreamPropertyOverride` objects:
-
+The Request Body contains a collection of `SdsStreamPropertyOverride` objects. The example request body below requests Sds convert the `Measurement` property of the returned data from meter to centimeter.
+```json
     [
       {
-        "SdsTypePropertyId" : "Measurement"
-        "Uom" : "centimeter"
+        "SdsTypePropertyId" : "Measurement",
+        "Uom" : "centimeter" 
       }
     ]
+```
 
 **Response**
 
@@ -298,7 +307,7 @@ The response includes a status code and response body containing a serialized ev
 ``Get First Value``
 --------------
 
-Returns the first value in the stream. If no values exist in the stream, null is returned.
+Returns the first value in the stream. If no values exist in the stream, null is returned. Get First Value also supports unit conversion of data via HTTP POST when the SdsType contains unit information.
 
 
 **Request**
@@ -306,10 +315,7 @@ Returns the first value in the stream. If no values exist in the stream, null is
         GET	api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/GetFirstValue
             ?viewId={viewId}
 
-
-
-
-**Parameters**
+**Request Parameters**
 
 ``string tenantId``  
 The tenant identifier
@@ -323,12 +329,9 @@ The stream identifier
 ``string viewId``  
 Optional view identifier
 
-
 **Response**
 
   The response includes a status code and a response body containing a serialized event.
-
-
 
 **.NET Library**
 
@@ -349,7 +352,7 @@ Returns the last value in the stream. If no values exist in the stream, null is 
             ?viewId={viewId}
 
 
-**Parameters**
+**Request Parameters**
 
 ``string tenantId``  
 The tenant identifier
@@ -395,7 +398,7 @@ do not affect Get Distinct Value.
             ?index={index}&viewId={viewId}
 
 
-**Parameters**
+**Request Parameters**
 
 ``string tenantId``  
   The tenant identifier
@@ -477,7 +480,7 @@ Returns a stored event found based on the specified SdsSearchMode and index.
 
 
 
-**Parameters**
+**Request Parameters**
 
 ``string tenantId``  
 The tenant identifier
@@ -585,7 +588,7 @@ Get Values supports three ways of specifying which events to return.
 
 
 
-**Parameters**
+**Request Parameters**
 
 ``string tenantId``  
 The tenant identifier
@@ -662,7 +665,7 @@ Note that State is not included in the JSON as its value is the default value.
 
 
 
-**Parameters**
+**Request Parameters**
 
 ``string tenantId``  
 The tenant identifier
@@ -733,7 +736,7 @@ Note that State is not included in the JSON as its value is the default value.
            GetValues?filter={filter}&viewId={viewId}
 
 
-**Parameters**
+**Request Parameters**
 
 ``string tenantId``  
 The tenant identifier
@@ -814,7 +817,7 @@ how to filter the data.
 
 
 
-**Parameters**
+**Request Parameters**
 
 ``string tenantId``  
 The tenant identifier
@@ -1062,7 +1065,7 @@ For the first request, specify a null or empty string for the ContinuationToken.
 
 
 
-**Parameters**
+**Request Parameters**
 
 ``string tenantId``  
 The tenant identifier
@@ -1111,7 +1114,7 @@ Optional SdsBoundaryType specifies the first value in the result in relation to 
 The response will contain the event stored at the specified index:
 
 **Response body**
-
+```json
       Content-Type: application/json
 
       [  
@@ -1128,7 +1131,7 @@ The response will contain the event stored at the specified index:
             "Measurement":30.0
          }
       ] 
-
+```
 
 Note that State is not included in the JSON as its value is the default value.
 
@@ -1403,7 +1406,7 @@ Summary values supported by SdsSummaryType enum:
 
 
 
-**Parameters**
+**Request Parameters**
 
 ``string tenantId``  
 The tenant identifier

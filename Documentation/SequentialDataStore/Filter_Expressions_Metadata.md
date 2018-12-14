@@ -14,10 +14,10 @@ Filter expressions can be applied to any read operation that returns multiple va
 
 Fields
 ------------
-For Streams and Types the filter expressions are valid for the same properties that are valid for the Search parameter. Valid fields 
-for both Streams and Types would be ``Name``, ``Id``, and ``Description``. 
+For Streams and Types, filter expressions are valid for the same properties that are valid for the Search parameter. Valid fields 
+for both Streams and Types are ``Name``, ``Id``, and ``Description``. 
 
-Streams additionally have a ``TypeId`` field that is filterable.
+Streams have an additional ``TypeId`` field that is filterable.
 
 Additionally, Types have a collection of SdsTypeProperty objects held in a field named Properties (see [Types](xref:sdsTypes)). When filtering on these property objects, the filter is applied to the Name or Id of the property. If the Type derives from a base Type, the inherited properties will be filtered as well. To perform a filter on this collection, the Any() or All() functions must be used (see [Lambda Operators](#Sds_Filter_expressions_metadata_lambda_operators_topic)).
 

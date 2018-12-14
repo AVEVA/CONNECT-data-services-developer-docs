@@ -453,7 +453,7 @@ The response includes a status code and a response body containing a serialized 
 ## ``Get Distinct Value``
 
 Get Distinct Value supports two ways to retrieve an event:
-* [Standard](getdistinctvaluestandard): Returns the value at the specified index. If no value exists at the specified index, 
+* [Standard](#getdistinctvaluestandard): Returns the value at the specified index. If no value exists at the specified index, 
 Get Distinct Value returns HTTP Status Code Not Found, 404.  The stream’s read characteristics 
 do not affect Get Distinct Value.
 * [Uom Conversion](#getdistinctvalueuomconversion): Same as Standard, but with unit conversion(s) applied to data when the SdsStream or SdsType contains unit of measure information. See  [Units of Measure](xref:unitsOfMeasure) for additional information
@@ -763,7 +763,7 @@ Get Values supports six ways of specifying which events to return.
 * [Filtered](#getvaluesfilteredstandard): A filtered request accepts a [filter expression](xref:sdsFilterExpressions) that limits results by applying an expression against 
   event fields. Filter expressions are explained in detail in the [Filter expressions](xref:sdsFilterExpressions) section.
 * [Ranged with Uom Conversion](#getvaluesrangeduomconversion): Same as Ranged, but with unit conversion(s) applied to data when the SdsStream or SdsType contains unit of measure information. See  [Units of Measure](xref:unitsOfMeasure) for additional information
-* [Index Collection with Uom Conversion](#getvaluesindexcollectionconversion): Same as Index Collection, but with unit conversion(s) applied to data when the SdsStream or SdsType contains unit of measure information. See  [Units of Measure](xref:unitsOfMeasure) for additional information
+* [Index Collection with Uom Conversion](#getvaluesindexcollectionuomconversion): Same as Index Collection, but with unit conversion(s) applied to data when the SdsStream or SdsType contains unit of measure information. See  [Units of Measure](xref:unitsOfMeasure) for additional information
 * [Filtered with Uom Conversion](#getvaluesfiltereduomconversion): Same as Filtered, but with unit conversion(s) applied to data when the SdsStream or SdsType contains unit of measure information. Note that the filter is applied *before* any unit conversions. See [Units of Measure](xref:unitsOfMeasure) for additional information
 
 <a name="getvaluesrangedstandard"></a>

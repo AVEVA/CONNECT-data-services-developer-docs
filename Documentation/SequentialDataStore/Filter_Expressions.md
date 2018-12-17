@@ -2,10 +2,10 @@
 uid: sdsFilterExpressions
 ---
 
-#### Qi_Filter_expressions_topic
-
-Filter Expressions
+Filter Expressions: Values
 ==================
+
+Filter expressions can be applied to certain read operations that return Sequential Data Store values or objects. This section covers data values. For filtering on metadata objects refer to [Filter Expressions: Metadata Objects](xref:sdsFilterExpressionsMetadata).
 
 Filter expressions can be applied to any read that returns multiple values, including 
 ``Get Values``, ``Get Range Values``, ``Get Window Values``, and ``Get Intervals``.”

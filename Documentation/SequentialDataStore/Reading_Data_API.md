@@ -334,8 +334,8 @@ Optional view identifier
 <a name="getfirstvalueuomconversion"></a>
 ### Request (Uom Conversion)
 
-        GET	api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/GetFirstValue
-            ?viewId={viewId}
+      POST api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/GetFirstValue
+         ?viewId={viewId}
 
 **Request Parameters**
 
@@ -461,8 +461,8 @@ do not affect Get Distinct Value.
 <a name="getdistinctvaluestandard"></a>
 ### Request (Standard)
 
-        GET	api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/GetDistinctValue
-            ?index={index}&viewId={viewId}
+      GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/GetDistinctValue
+         ?index={index}&viewId={viewId}
 
 
 **Request Parameters**
@@ -489,8 +489,7 @@ do not affect Get Distinct Value.
 
   For a stream of type Simple, when making a Get Distinct Value request at an existing stored index: 
 
-      api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data/ 
-        GetDistinctValue?index=2017-11-23T13:00:00Z 
+      api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data/GetDistinctValue?index=2017-11-23T13:00:00Z 
 
 The event at that index is returned in the response:
 
@@ -536,8 +535,8 @@ No distinct value is found at the specified index, and an error response is retu
 <a name="getdistinctvalueuomconversion"></a>
 ### Request (Uom Conversion)
 
-        POST api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/GetDistinctValue
-            ?index={index}&viewId={viewId}
+      POST api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/GetDistinctValue
+         ?index={index}&viewId={viewId}
 
 **Request Parameters**
 
@@ -599,10 +598,10 @@ Get Last Value supports two ways to retrieve an event:
 * [Uom Conversion](#finddistinctvalueuomconversion): Same as Standard, but with unit conversion(s) applied to data when the SdsStream or SdsType contains unit of measure information. See  [Units of Measure](xref:unitsOfMeasure) for additional information
 
 <a name="finddistinctvaluestandard"></a>
-## Request (Standard)
+### Request (Standard)
 
-        GET	api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/FindDistinctValue
-            ?index={index}&mode={mode}&viewId={viewId}
+      GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/FindDistinctValue
+         ?index={index}&mode={mode}&viewId={viewId}
 
 **Request Parameters**
 
@@ -681,10 +680,10 @@ The next event in the stream is retrieved.
             SdsSearchMode mode, string viewId = null);
 ```
 <a name="finddistinctvalueuomconversion"></a>
-## Request (Uom Conversion)
+### Request (Uom Conversion)
 
-        POST api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/FindDistinctValue
-            ?index={index}&mode={mode}&viewId={viewId}
+      POST api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/FindDistinctValue
+         ?index={index}&mode={mode}&viewId={viewId}
 
 **Request Parameters**
 
@@ -769,8 +768,8 @@ Get Values supports six ways of specifying which events to return.
 <a name="getvaluesrangedstandard"></a>
 ### Request (Ranged)
 
-        GET	api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/ 
-          GetValues?startIndex={startIndex}&endIndex={endIndex}&count={count}&viewId={viewId}
+      GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/GetValues
+      ?startIndex={startIndex}&endIndex={endIndex}&count={count}&viewId={viewId}
 
 **Request Parameters**
 
@@ -845,8 +844,8 @@ Note that State is not included in the JSON as its value is the default value.
 <a name="getvaluesindexcollectionstandard"></a>
 ### Request (Index collection)
 
-        GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/ 
-           GetValues?index={index}[&index={index} …]&viewId={viewId}
+      GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/GetValues
+      ?index={index}[&index={index} …]&viewId={viewId}
 
 **Request Parameters**
 
@@ -914,7 +913,7 @@ Note that State is not included in the JSON as its value is the default value.
 ```
 
 <a name="getvaluesfilteredstandard"></a>
-## Request (Filtered)
+### Request (Filtered)
 
         GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/ 
            GetValues?filter={filter}&viewId={viewId}
@@ -984,8 +983,8 @@ Note that State is not included in the JSON as its value is the default value.
 <a name="getvaluesrangeduomconversion"></a>
 ### Request (Ranged with Uom Conversion)
 
-      POST api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/ 
-         GetValues?startIndex={startIndex}&endIndex={endIndex}&count={count}&viewId={viewId}
+      POST api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/GetValues
+      ?startIndex={startIndex}&endIndex={endIndex}&count={count}&viewId={viewId}
 
 **Request Parameters**
 
@@ -1059,8 +1058,8 @@ The response includes a status code and response body containing a serialized co
 <a name="getvaluesindexcollectionuomconversion"></a>
 ### Request (Index collection with Uom Conversion)
 
-        GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/ 
-           GetValues?index={index}[&index={index} …]&viewId={viewId}
+      POST api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/GetValues
+      ?index={index}[&index={index} …]&viewId={viewId}
 
 **Request Parameters**
 
@@ -1128,10 +1127,10 @@ The response includes a status code and response body containing a serialized co
 ```
 
 <a name="getvaluesfiltereduomconversion"></a>
-## Request (Filtered with Uom Conversion)
+### Request (Filtered with Uom Conversion)
 
-        GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/ 
-           GetValues?filter={filter}&viewId={viewId}
+      POST api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/GetValues
+      ?filter={filter}&viewId={viewId}
 
 
 **Request Parameters**
@@ -1202,9 +1201,9 @@ Get Range Values supports two ways to retrieve events:
 <a name="getrangevaluesstandard"></a>
 ### Request (Standard)
 
-        GET	api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/GetRangeValues 
-            ?startIndex={startIndex}&count={count}&skip={skip}&reversed={reversed} 
-            &boundaryType={boundaryType}&filter={filter}&viewId={viewId}
+      GET	api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/GetRangeValues
+         ?startIndex={startIndex}&count={count}&skip={skip}&reversed={reversed} 
+         &boundaryType={boundaryType}&filter={filter}&viewId={viewId}
 
 **Request Parameters**
 
@@ -1409,9 +1408,9 @@ Adding a filter to the request means only events that meet the filter criteria a
 <a name="getrangevaluesuomconversion"></a>
 ### Request (Unit Conversion)
 
-        POST api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/GetRangeValues 
-            ?startIndex={startIndex}&count={count}&skip={skip}&reversed={reversed} 
-            &boundaryType={boundaryType}&filter={filter}&viewId={viewId}
+      POST api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/GetRangeValues 
+         ?startIndex={startIndex}&count={count}&skip={skip}&reversed={reversed} 
+         &boundaryType={boundaryType}&filter={filter}&viewId={viewId}
 
 **Request Parameters**
 
@@ -2089,8 +2088,8 @@ Summary values supported by SdsSummaryType enum:
 <a name="getintervalsstandard"></a>
 ### Request (Standard)
 
-       GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/GetIntervals
-           ?startIndex={startIndex}&endIndex={endIndex}&count={count}&filter={filter}&viewId={viewId}
+      GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/GetIntervals
+         ?startIndex={startIndex}&endIndex={endIndex}&count={count}&filter={filter}&viewId={viewId}
 
 **Request Parameters**
 
@@ -2263,8 +2262,8 @@ and last events:
 <a name="getintervalsuomconversion"></a>
 ### Request (Uom Conversion)
 
-       POST api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/GetIntervals
-           ?startIndex={startIndex}&endIndex={endIndex}&count={count}&filter={filter}&viewId={viewId}
+      POST api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/GetIntervals
+         ?startIndex={startIndex}&endIndex={endIndex}&count={count}&filter={filter}&viewId={viewId}
 
 **Request Parameters**
 

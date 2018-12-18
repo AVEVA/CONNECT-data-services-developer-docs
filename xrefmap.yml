@@ -71,8 +71,11 @@ references:
   name: Compression
   href: Documentation/SequentialDataStore/Compression.html
 - uid: sdsFilterExpressions
-  name: Filter Expressions
+  name: 'Filter Expressions: Values'
   href: Documentation/SequentialDataStore/Filter_Expressions.html
+- uid: sdsFilterExpressionsMetadata
+  name: 'Filter Expressions: Metadata Objects'
+  href: Documentation/SequentialDataStore/Filter_Expressions_Metadata.html
 - uid: sdsIndexes
   name: Indexes
   href: Documentation/SequentialDataStore/indexes.html
@@ -104,7 +107,7 @@ references:
   name: Types
   href: Documentation/SequentialDataStore/SDS_Types.html
 - uid: sdsViews
-  name: SDS Views
+  name: Stream Views
   href: Documentation/SequentialDataStore/SDS_Views.html
 - uid: sdsWritingData
   name: Writing data

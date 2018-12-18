@@ -70,7 +70,6 @@
 
 <p>.. contents:: Topics in this section:
     :depth: 3</p>
-<h4 id="quickstarttopic">Quick_start_topic</h4>
 <h2 id="sds-quick-start">SDS quick start</h2>
 <p>SDS is a sophisticated data store. The information in this section describes a very simple interaction with SDS.
 To follow along with the steps in this section, you will first need a Tenant and associated security credentials. 
@@ -109,7 +108,7 @@ simple, such as a single integer property, or compound, represented by multiple 
 DateTime is a common index for time-series stores. </p>
 <p>SDS supports a wide variety of property types, including simple types like integers, strings and floats 
 and complex types like lists, arrays and enumerations. Properties can be of any complex SdsType. 
-For additional information, including a detailed list of supported data types, refer to <a class="xref" href="SDS_Types.html#sdstypetopic">Qi_Types_topic</a>.</p>
+For additional information, including a detailed list of supported data types, refer to <a class="xref" href="SDS_Types.html">Types</a>.</p>
 <p>To create an SdsType in .NET, use the .NET SDS libraries SdsTypeBuilder.</p>
 <pre><code>  public enum State
   {
@@ -301,7 +300,7 @@ Inserts fail if events with the same index already exist in the database. Update
      &quot;State&quot;:0,
      &quot;Measurement&quot;:123.45
   }
-</code></pre><p>Additional information about writing data can be found in <a class="xref" href="Writing_Data.html#qiwritingdatatopic">Qi_Writing_Data_topic</a>.</p>
+</code></pre><p>Additional information about writing data can be found in <a class="xref" href="Writing_Data.html#writing-data">Writing data</a>.</p>
 <p>Step 7: Read data</p>
 <hr>
 <p>SDS includes many different read methods for retrieving data from streams. In this section, 
@@ -322,7 +321,7 @@ The simplest way to supply an index is as a string. In .NET a <code>DateTime</co
   Content-Length: 0
   Content-Type: 
   Host: dat-a.osisoft.com
-</code></pre><p>Additional information about reading data can be found in <a class="xref" href="Reading_Data.html#qireadingdatatopic">Qi_Reading_data_topic</a>.</p>
+</code></pre><p>Additional information about reading data can be found in <a class="xref" href="Reading_Data.html">Reading data</a>.</p>
 <h2 id="handling-transient-service-interruptions">Handling transient service interruptions</h2>
 <p>All applications that communicate with remote systems must manage transient faults. 
 Temporary service interruptions are a fact of life in real-world cloud applications. </p>

@@ -66,9 +66,8 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="sdsIndexes">
-
-<h4 id="indexestopic">Indexes_topic</h4>
 <h1 id="indexes">Indexes</h1>
+
 <p>Indexes speed up and order the results of searches. A key uniquely identifies a record within 
 a collection of records. Keys are unique within the collection.</p>
 <p>In Sds, the key of an SdsType is also an index. The key is often referred to as the <em>primary index,</em> 
@@ -207,7 +206,7 @@ and query as follows.</p>
 <pre><code>  IEnumerable&lt;Simple&gt; values = await
   client.GetWindowValuesAsync&lt;Simple&gt;(simpleStream.Id,
   &quot;2010-01-01T08:00:00.000Z&quot;,&quot;2010-02-01T08:00:00.000Z&quot;);
-</code></pre><p>More information about querying data can be found in <a class="xref" href="Reading_Data.html#qireadingdatatopic">Qi_Reading_data_topic</a>.</p>
+</code></pre><p>More information about querying data can be found in <a class="xref" href="Reading_Data.html">Reading data</a>.</p>
 <p><strong>Secondary Indexes</strong></p>
 <p>Secondary indexes are defined at the SdsStream. To add indexes to an SdsStream, you add them to the SdsStream’s Indexes field.</p>
 <p>For example, to add a second index on Measurement, use the following code:</p>
@@ -653,7 +652,7 @@ samples. Samples in other languages can be found <code>here &lt;https://github.c
 ISO 8601 representation of dates and times. To query for a window of values between January 1, 
 2010 and February 1, 2010, you would define indexes as “2010-01-01T08:00:00.000Z” and 
 “2010-02-01T08:00:00.000Z”, respectively.</p>
-<p>Additional information can be found in <a class="xref" href="Reading_Data.html#qireadingdatatopic">Qi_Reading_data_topic</a>.</p>
+<p>Additional information can be found in <a class="xref" href="Reading_Data.html">Reading data</a>.</p>
 <p><strong>Secondary Indexes</strong></p>
 <p>Secondary Indexes are defined at the SdsStream. To create an SdsStream 
 using the Simple class and add a Secondary index on the Measurement, 

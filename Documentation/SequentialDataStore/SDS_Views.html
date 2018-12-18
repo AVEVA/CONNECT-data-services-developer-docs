@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>SDS Views </title>
+    <title>Stream Views </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="SDS Views ">
+    <meta name="title" content="Stream Views ">
     <meta name="generator" content="docfx 2.39.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -66,11 +66,10 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="sdsViews">
-<h1 id="sds-views">SDS Views</h1>
+<h1 id="stream-views">Stream Views</h1>
 
-<h4 id="sdsviewstopic">SDS_Views_topic</h4>
 <p>An SdsView provides a way to map Stream data requests from one data type to another. You can apply 
-a View to any read or GET operation. SdsView is used to specify the mapping between source and target types.</p>
+a Stream View to any read or GET operation. SdsView is used to specify the mapping between source and target types.</p>
 <p>Sds attempts to determine how to map Properties from the source to the destination. When the mapping 
 is straightforward, such as when the properties are in the same position and of the same data type, 
 or when the properties have the same name, SDS will map the properties automatically.</p>
@@ -93,7 +92,7 @@ and add it to the SdsView’s Properties collection.</p>
 <td>Id</td>
 <td>String</td>
 <td>Required</td>
-<td>Identifier for referencing the view</td>
+<td>Identifier for referencing the stream view</td>
 </tr>
 <tr>
 <td>Name</td>
@@ -373,12 +372,12 @@ retrieved from Sds, so required and optional have no meaning.</p>
 </tbody>
 </table>
 <h2 id="changing-stream-type">Changing Stream Type</h2>
-<p>Views can be used to change the Type defining a Stream. You cannot modify the SdsType; types are immutable. 
+<p>Stream Views can be used to change the Type defining a Stream. You cannot modify the SdsType; types are immutable. 
 But you can map a stream from its current type to a new type.</p>
-<p>To update a Stream Type, define an SdsView and PUT the view to the following:</p>
+<p>To update a Stream Type, define an SdsView and PUT the stream view to the following:</p>
 <pre><code>   api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type?viewId={viewId}
-</code></pre><p>For details, see <a href="#sdsviewstopic">SdsView API</a>. </p>
-<h2 id="working-with-sdsviews-when-using-net">Working with SdsViews when using .NET</h2>
+</code></pre><p>For details, see <a href="#sds-views">SdsView API</a>. </p>
+<h2 id="working-with-stream-views-when-using-net">Working with Stream Views when using .NET</h2>
 <p><strong>Using .Net</strong></p>
 <p>When working in .NET, use the Sds Client libraries’ ISdsMetadataService.</p>
 <p>Given the following:</p>
@@ -651,7 +650,7 @@ foreach (Simple3 value in simple3Values)
 //    4 / 1 / 2017 7:08:00 AM: Warning, 8
 //    4 / 1 / 2017 7:09:00 AM: Warning, 9
 </code></pre><h2 id="working-with-sdsviews-when-not-using-net">Working with SdsViews when not using .NET</h2>
-<p>When working with Views and not using .NET, either invoke HTTP directly or use some of 
+<p>When working with Stream Views and not using .NET, either invoke HTTP directly or use some of 
 the sample code. Both Python and JavaScript samples have SdsView definitions.</p>
 <p>The JSON for a simple mapping between a source type with identifier Sample and a target 
 type with identifier Sample1 would appear as follows.</p>
@@ -687,17 +686,17 @@ with SdsViews. When working in .NET convenient Sds Client libraries are availabl
 interface, accessed using the <code>SdsService.GetMetadataService()</code> helper, defines the available functions. 
 See <code>Sds View information &lt;https://qi-docs.readthedocs.io/en/latest/QiView_information.html&gt;</code>__ for general SdsView information.</p>
 <hr>
-<h2 id="get-view"><code>Get View</code></h2>
-<p>Returns the view corresponding to the specified viewId within a given namespace.</p>
+<h2 id="get-stream-view"><code>Get Stream View</code></h2>
+<p>Returns the stream view corresponding to the specified viewId within a given namespace.</p>
 <p><strong>Request</strong></p>
-<pre><code>    GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Views/{viewId}
+<pre><code>    GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{viewId}
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code>
   The tenant identifier
 <code>string namespaceId</code>
   The namespace identifier
 <code>string viewId</code>
-  The view identifier</p>
+  The stream view identifier</p>
 <p><strong>Response</strong></p>
 <p>  The response includes a status code and a response body.</p>
 <p><strong>Response body</strong></p>
@@ -731,17 +730,17 @@ See <code>Sds View information &lt;https://qi-docs.readthedocs.io/en/latest/QiVi
 </code></pre><p><strong>Security</strong></p>
 <p>  Allowed for administrator and user accounts</p>
 <hr>
-<h2 id="get-view-map"><code>Get View Map</code></h2>
-<p>Returns the view map corresponding to the specified viewId within a given namespace.</p>
+<h2 id="get-stream-view-map"><code>Get Stream View Map</code></h2>
+<p>Returns the stream view map corresponding to the specified viewId within a given namespace.</p>
 <p><strong>Request</strong></p>
-<pre><code>    GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Views/{viewId}/Map
+<pre><code>    GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{viewId}/Map
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code>
   The tenant identifier
 <code>string namespaceId</code>
   The namespace identifier
 <code>string viewId</code>
-  The view identifier</p>
+  The stream view identifier</p>
 <p><strong>Response</strong></p>
 <p>  The response includes a status code and a response body.</p>
 <p><strong>Response body</strong></p>
@@ -778,10 +777,10 @@ See <code>Sds View information &lt;https://qi-docs.readthedocs.io/en/latest/QiVi
 </code></pre><p><strong>Security</strong></p>
 <p>  Allowed for administrator and user accounts</p>
 <hr>
-<h2 id="get-views"><code>Get Views</code></h2>
-<p>Returns a list of views within a given namespace.</p>
+<h2 id="get-stream-views"><code>Get Stream Views</code></h2>
+<p>Returns a list of stream views within a given namespace.</p>
 <p><strong>Request</strong></p>
-<pre><code>    GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Views?skip={skip}&amp;count={count}
+<pre><code>    GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews?skip={skip}&amp;count={count}
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code>
   The tenant identifier
@@ -801,19 +800,19 @@ See <code>Sds View information &lt;https://qi-docs.readthedocs.io/en/latest/QiVi
 </code></pre><p><strong>Security</strong></p>
 <p>  Allowed for administrator and user accounts</p>
 <hr>
-<h2 id="get-or-create-view"><code>Get or Create View</code></h2>
-<p>If a view with a matching identifier already exists, the view passed in is compared with the existing view.
-If the views are identical, the view is returned. If the views are different, the Found (302) error is returned.</p>
-<p>If no matching identifier is found, the specified view is created.  </p>
+<h2 id="get-or-create-stream-view"><code>Get or Create Stream View</code></h2>
+<p>If a stream view with a matching identifier already exists, the stream view passed in is compared with the existing stream view.
+If the stream views are identical, the stream view is returned. If the stream views are different, the Found (302) error is returned.</p>
+<p>If no matching identifier is found, the specified stream view is created.  </p>
 <p><strong>Request</strong></p>
-<pre><code>    POST api/Tenants/{tenantId}/Namespaces/{namespaceId}/Views/{viewId}
+<pre><code>    POST api/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{viewId}
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code>
   The tenant identifier
 <code>string namespaceId</code>
   The namespace identifier
 <code>string viewId</code>
-  The view identifier. The identifier must match the <code>SdsView.Id</code> field. </p>
+  The stream view identifier. The identifier must match the <code>SdsView.Id</code> field. </p>
 <p>The request content is the serialized SdsView. If you are not using the Sds client libraries, using JSON is recommended.</p>
 <p><strong>Response</strong></p>
 <p>  The response includes a status code and a response body.</p>
@@ -824,17 +823,17 @@ If the views are identical, the view is returned. If the views are different, th
 </code></pre><p><strong>Security</strong></p>
 <p>  Allowed for administrator accounts</p>
 <hr>
-<h2 id="create-or-update-view"><code>Create or Update View</code></h2>
-<p>Creates or updates the definition of a view. </p>
+<h2 id="create-or-update-stream-view"><code>Create or Update Stream View</code></h2>
+<p>Creates or updates the definition of a stream view. </p>
 <p><strong>Request</strong></p>
-<pre><code>    PUT api/Tenants/{tenantId}/Namespaces/{namespaceId}/Views/{viewId}
+<pre><code>    PUT api/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{viewId}
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code>
   The tenant identifier
 <code>string namespaceId</code>
   The namespace identifier
 <code>string viewId</code>
-  The view identifier</p>
+  The stream view identifier</p>
 <p><strong>Response</strong></p>
 <p>  The response includes a status code and a response body.</p>
 <p><strong>Response body</strong></p>
@@ -844,17 +843,17 @@ If the views are identical, the view is returned. If the views are different, th
 </code></pre><p><strong>Security</strong></p>
 <p>  Allowed for administrator accounts</p>
 <hr>
-<h2 id="delete-view"><code>Delete View</code></h2>
-<p>Deletes a view from the specified tenant and namespace.</p>
+<h2 id="delete-stream-view"><code>Delete Stream View</code></h2>
+<p>Deletes a stream view from the specified tenant and namespace.</p>
 <p><strong>Request</strong></p>
-<pre><code>    GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Views/{viewId}
+<pre><code>    GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{viewId}
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code>
   The tenant identifier
 <code>string namespaceId</code>
   The namespace identifier
 <code>string viewId</code>
-  The view identifier</p>
+  The stream view identifier</p>
 <p><strong>Response</strong></p>
 <p>  The response includes a status code.</p>
 <p><strong>.NET Library</strong></p>

@@ -68,7 +68,6 @@
             <article class="content wrap" id="_content" data-uid="sdsTypes">
 <h1 id="types">Types</h1>
 
-<h4 id="sdstypetopic">SDS_Type_topic</h4>
 <p>The Sequential Data Store (SDS) stores streams of events and provides convenient ways to find and associate 
 events. Events are stored in streams, called SdsStreams. An SdsType defines the shape or structure of the 
 event and how to associate events within the SdsStream.</p>
@@ -1707,12 +1706,19 @@ defines the available functions. See Types_ for general SdsType information.</p>
 <hr>
 <h2 id="get-types"><code>Get Types</code></h2>
 <p>Returns a list of types within a given namespace.</p>
+<p>If specifying the optional search parameter or optional filter parameter, the list of types returned are filtered to match 
+the search/filter criteria. If the neither parameter is specified, the list includes all types 
+in the Namespace. See <a class="xref" href="Searching.html#searching">Searching</a> 
+and <a class="xref" href="Filter_Expressions_Metadata.html">Filter Expressions: Metadata Objects</a> 
+for information about specifying those respective parameters.</p>
 <p><strong>Request</strong></p>
-<pre><code>    GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Types?query={query}&amp;skip={skip}&amp;count={count}
+<pre><code>    GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Types?query={query}&amp;filter={filter}&amp;skip={skip}&amp;count={count}
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
-<p><code>string query</code><br>An optional query string to filter which SdsTypes will be returned.  See the <a class="xref" href="Searching.html#qisearchingtopic">Search</a> topic for information about specifying the query parameter.</p>
+<p><code>string query</code><br>An optional query string to match which SdsTypes will be returned.  See the <a class="xref" href="Searching.html#searching">Searching</a> topic for information about specifying the query parameter.</p>
+<p><code>string filter</code><br>An optional filter string to match which SdsTypes will be returned.  See the <a class="xref" href="Filter_Expressions_Metadata.html">Filter Expressions: Metadata Objects</a> 
+topic for information about specifying the filter parameter.</p>
 <p><code>int skip</code><br>  An optional value representing the zero-based offset of the first SdsType to retrieve. If not specified, 
 a default value of 0 is used.</p>
 <p><code>int count</code><br>An optional value representing the maximum number of SdsTypes to retrieve. If not specified, a default value of 100 is used.</p>

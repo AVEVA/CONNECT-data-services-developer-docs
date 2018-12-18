@@ -40,18 +40,15 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "UidNotFound"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Documentation/DataIngress/OMF_Ingress_Specification.md",
       "output": {
         ".html": {
           "relative_path": "Documentation/DataIngress/OMF_Ingress_Specification.html",
-          "hash": "USWzacjCAZvpjyig62Dngg=="
+          "hash": "6dBrfBTZ00kOpbVhuq2BLg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -243,7 +240,7 @@
           "hash": "Qi+97S77z9rdH/3NuDyepQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -264,10 +261,22 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/SequentialDataStore/Filter_Expressions.html",
-          "hash": "YhaO3piNq6h0h6DSxir6Pw=="
+          "hash": "aSCMDzRWmr7aAjd3HDD9EQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/SequentialDataStore/Filter_Expressions_Metadata.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/SequentialDataStore/Filter_Expressions_Metadata.html",
+          "hash": "NLLb9LSU0vkryrDLeLYdZg=="
+        }
+      },
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -276,10 +285,10 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/SequentialDataStore/Introducing_SDS.html",
-          "hash": "mSjeEGvHQ8RTIEE7kei0eQ=="
+          "hash": "Fn9yWM3YmmMLiVYed0d05A=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -288,10 +297,10 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/SequentialDataStore/Quick_Start.html",
-          "hash": "avwghpNas+Ko8HhnVu55Wg=="
+          "hash": "dmE4OTKi1uSCYOZPbqHrbA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -300,10 +309,10 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/SequentialDataStore/Reading_Data.html",
-          "hash": "h43B/7bB+bDBUWWXu161cA=="
+          "hash": "vpP3AYpSUKCHWXMHo+tv4Q=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -312,10 +321,10 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/SequentialDataStore/Reading_Data_API.html",
-          "hash": "nzbfulwY452KDGInTSRhmw=="
+          "hash": "PJS0xeLtUAJXnm73xoiYXg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -324,10 +333,10 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/SequentialDataStore/SDS_Streams.html",
-          "hash": "kTSpxEBXOcfvVjekFE+20A=="
+          "hash": "GWjWQm+xKuN5v2o2ApirOA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -336,10 +345,10 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/SequentialDataStore/SDS_Types.html",
-          "hash": "dmVA4s+M4dg2muATH/HO6Q=="
+          "hash": "3wFQRdcycDJ6wHv1B2A+Eg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -348,10 +357,10 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/SequentialDataStore/SDS_Views.html",
-          "hash": "7WcrqVAyke6ieiG0nlolOg=="
+          "hash": "7r8fHGOxUfwoUYQtm2TFZQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -372,10 +381,10 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/SequentialDataStore/Searching.html",
-          "hash": "FVeBhTT/YCP5+vC4+vkXyw=="
+          "hash": "XWU2LmUN8o2a7Z0nIhHQeA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -384,10 +393,10 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/SequentialDataStore/Units_of_Measure.html",
-          "hash": "6vxMxDRoG++TNSinRWopXA=="
+          "hash": "bgU0KQCJn2ORhw6qWpjbXw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -396,10 +405,10 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/SequentialDataStore/Writing_Data.html",
-          "hash": "b1Os3ZK+c75Zs0rj+95Qow=="
+          "hash": "Trkqs+8vh0zMl2o5otqwuQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -420,10 +429,10 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/SequentialDataStore/indexes.html",
-          "hash": "5zuYaa+HO7p6egp6ksvmNA=="
+          "hash": "Yddk3uFIyUNA26DP8HEchg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -432,10 +441,10 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/SequentialDataStore/table_format.html",
-          "hash": "fdZMCaOH6YYF7lRc2boMEw=="
+          "hash": "srWnZFVDN1G++hF4wYuLbg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -600,7 +609,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/toc.html",
-          "hash": "K0vYIbuT5FugeEKmMTxHbg=="
+          "hash": "PCPESH2Nm05RB+42ozBBPw=="
         }
       },
       "is_incremental": false,
@@ -612,10 +621,10 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "7G3jPILQFck0hcEKxwOx9w=="
+          "hash": "Ci8/k/pfhoLdSY4A6Qh/6A=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -638,6 +647,11 @@
         "incrementalPhase": "build"
       },
       "processors": {
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
         "TocDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
@@ -645,11 +659,6 @@
         },
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
-          "incrementalPhase": "build"
-        },
-        "ResourceDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         }
       }

@@ -66,9 +66,8 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="sdsWritingData">
-
-<h4 id="qiwritingdatatopic">Qi_Writing_Data_topic</h4>
 <h1 id="writing-data">Writing data</h1>
+
 <p>The Sds REST APIs provide programmatic access to read and write Sds data. This section describes 
 the APIs used to write SdsStream data.</p>
 <p>When working in .NET, convenient Sds Client libraries are available. The <code>ISdsDataServiceinterface</code>, accessed using the
@@ -115,7 +114,7 @@ To specify verbose JSON return, add the header <code>Accept-Verbosity</code> wit
 Most writes use the index as specified by the value. Deletes are the exception to this rule. When deleting, 
 indexes are specified as strings in the URI, or, when using the Sds Client libraries, the index may be 
 passed as-is to delete methods that take the index type as a generic argument. More details about working 
-with indexes can be found on the <a class="xref" href="indexes.html">Qi_Indexes_topic</a> page. </p>
+with indexes can be found on the <a class="xref" href="indexes.html">Indexes</a> page. </p>
 <p>To specify compound indexes in the URI, specify each field that composes the index, in the specified order, 
 separated by the pipe character, ‘|’.</p>
 <h2 id="examples">Examples</h2>

@@ -2,7 +2,7 @@
 uid: AccountServiceBlog
 ---
 
-# ServiceBlog
+# Service Blog
 
 APIs for CRUD operations on the Service Blog.
 

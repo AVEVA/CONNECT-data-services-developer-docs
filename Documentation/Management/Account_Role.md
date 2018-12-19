@@ -2,7 +2,7 @@
 uid: AccountRole
 ---
 
-# Role
+# Roles
 
 A `Role` is an entity that is used to manage access within an OSIsoft Cloud Services (OCS) account. By default, users have the Account Member role.
 
@@ -107,14 +107,6 @@ string count
 ```
 
 Number of `Roles` to be returned.
-```csharp
-[Optional]
-[Default = ""]
-string query
-```
-
-Unsupported parameter.
-
 
 ### Security
 

@@ -2,7 +2,7 @@
 uid: AccountNamespaceTier
 ---
 
-# NamespaceTier
+# Namespace Tier
 
 An attribute that specifies `Namespace` performance.
 

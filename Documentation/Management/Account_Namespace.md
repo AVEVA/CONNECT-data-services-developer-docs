@@ -165,8 +165,7 @@ A `Namespace` can only be created if the current principal has Write access.
 ***
 ## `Update()`
 
-Updates `Namespace` information: Description and TierId.
-The [AccessControl](xref:accessControl) and owner [Trustee](xref:accessControl) can only be updated through their own routes.
+Updates `Namespace` information: Description and TierId. The [AccessControl](xref:accessControl) and Owner's [Trustee](xref:accessControl) can only be updated through their own routes.
 
 ### Http
 
@@ -332,7 +331,7 @@ An [AccessControl](xref:accessControl) can only be updated if the current princi
 ***
 ## `GetOwner()`
 
-Returns the owner [Trustee](xref:accessControl) for a given `Namespace`.
+Returns the Owner's [Trustee](xref:accessControl) for a given `Namespace`.
 
 ### Http
 
@@ -356,21 +355,21 @@ The identifier of the `Namespace` to access.
 
 ### Security
 
-An owner can only be retrieved if the current principal has Read access.
+An Owner's [Trustee](xref:accessControl) can only be retrieved if the current principal has Read access.
 
 ### Returns
 
 | Status Code | Return Type | Description | 
  | --- | --- | ---  | 
-| 200 | Trustee | Returns the owner [Trustee](xref:accessControl) of the specified `Namespace`. | 
-| 400 | Nothing is returned | Could not retrieve the owner [Trustee](xref:accessControl) of the specified `Namespace` due to missing or invalid input. | 
-| 403 | Nothing is returned | Unauthorized to get the owner [Trustee](xref:accessControl) of the specified `Namespace`. | 
+| 200 | Trustee | Returns the Owner's [Trustee](xref:accessControl) of the specified `Namespace`. | 
+| 400 | Nothing is returned | Could not retrieve the Owner's [Trustee](xref:accessControl) of the specified `Namespace` due to missing or invalid input. | 
+| 403 | Nothing is returned | Unauthorized to get the Owner's [Trustee](xref:accessControl) of the specified `Namespace`. | 
 
 
 ***
 ## `SetOwner()`
 
-Changes the owner [Trustee](xref:accessControl) for a given `Namespace`.
+Changes the Owner's [Trustee](xref:accessControl) for a given `Namespace`.
 
 ### Http
 
@@ -396,20 +395,20 @@ The identifier of the `Namespace` to access.
 Trustee newOwner
 ```
 
-The new owner [Trustee](xref:accessControl) of the `Namespace`.
+The new Owner's [Trustee](xref:accessControl) of the `Namespace`.
 
 
 ### Security
 
-An owner can only be changed if the current principal has ManageAccessControl access.
+An Owner's [Trustee](xref:accessControl) can only be changed if the current principal has ManageAccessControl access.
 
 ### Returns
 
 | Status Code | Return Type | Description | 
  | --- | --- | ---  | 
-| 200 | Trustee | Returns the new owner [Trustee](xref:accessControl) of the specified `Namespace`. | 
-| 400 | Nothing is returned | Could not change the owner [Trustee](xref:accessControl) of the specified `Namespace` due to missing or invalid input. | 
-| 403 | Nothing is returned | Unauthorized to change the owner [Trustee](xref:accessControl) of the specified `Namespace`. | 
+| 200 | Trustee | Returns the new Owner's [Trustee](xref:accessControl) of the specified `Namespace`. | 
+| 400 | Nothing is returned | Could not change the Owner's [Trustee](xref:accessControl) of the specified `Namespace` due to missing or invalid input. | 
+| 403 | Nothing is returned | Unauthorized to change the Owner's [Trustee](xref:accessControl) of the specified `Namespace`. | 
 
 
 ***

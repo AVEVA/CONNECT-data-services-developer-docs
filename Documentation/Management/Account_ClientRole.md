@@ -200,13 +200,6 @@ string count
 ```
 
 Number of `Roles` to return.
-```csharp
-[Optional]
-[Default = ""]
-string query
-```
-
-Unsupported parameter.
 
 ### Security
 

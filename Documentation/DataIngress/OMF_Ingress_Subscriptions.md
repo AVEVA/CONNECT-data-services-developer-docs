@@ -73,7 +73,7 @@ An integer count of subscriptions.
 
 *****************
 
-``GET api/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions``
+``GET api/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions?skip={skip}&count={count}``
 ---------------------------------------------
 
 Get all subscriptions for a tenant. 
@@ -84,7 +84,11 @@ Get all subscriptions for a tenant.
   Unique Id for the tenant. 
 ``namespaceId``
   Unique Id for the namespace. 
-  
+``int skip``
+  An optional parameter representing the zero-based offset of the first subscription to retrieve. If not specified, a default value of 0 is used. 
+``int count``
+  An optional parameter representing the maximum number of subscriptions to retrieve. If not specified, a default value of 100 is used.
+
 **Returns**
 
 An array of Subscription objects. 

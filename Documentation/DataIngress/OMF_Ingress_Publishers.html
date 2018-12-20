@@ -273,11 +273,15 @@ the token is valid. </p>
 <p><strong>Returns</strong></p>
 <p>Integer count of the number of publishers found. </p>
 <hr>
-<h2 id="get-apitenantstenantidpublishers"><code>GET api/tenants/{tenantId}/publishers</code></h2>
+<h2 id="get-apitenantstenantidpublishersskipskipcountcount"><code>GET api/tenants/{tenantId}/publishers?skip={skip}&amp;count={count}</code></h2>
 <p>Returns all publishers for a tenant. </p>
 <p><strong>Parameters</strong></p>
 <p><code>tenantId</code>
-  Unique Id for the tenant. </p>
+  Unique Id for the tenant. 
+<code>int skip</code>
+  An optional parameter representing the zero-based offset of the first publisher to retrieve. If not specified, a default value of 0 is used. 
+<code>int count</code>
+  An optional parameter representing the maximum number of publishers to retrieve. If not specified, a default value of 100 is used.</p>
 <p><strong>Returns</strong></p>
 <p>  A list of Publisher objects found. </p>
 <hr>
@@ -309,13 +313,17 @@ the token is valid. </p>
 <p><strong>Returns</strong></p>
 <p>An AccessControlList object.</p>
 <hr>
-<h2 id="get-apitenantstenantidpublisherspublisheridtokens"><code>GET api/tenants/{tenantId}/publishers/{publisherId}/tokens</code></h2>
+<h2 id="get-apitenantstenantidpublisherspublisheridtokensskipskipcountcount"><code>GET api/tenants/{tenantId}/publishers/{publisherId}/tokens?skip={skip}&amp;count={count}</code></h2>
 <p>Get all tokens for a publisher.</p>
 <p><strong>Parameters</strong></p>
 <p><code>tenantId</code>
  Unique Id for the tenant. 
 <code>publisherId</code>
-  Unique Id for the publisher. </p>
+  Unique Id for the publisher. 
+<code>int skip</code>
+  An optional parameter representing the zero-based offset of the first token to retrieve. If not specified, a default value of 0 is used. 
+<code>int count</code>
+  An optional parameter representing the maximum number of tokens to retrieve. If not specified, a default value of 100 is used.</p>
 <p><strong>Returns</strong></p>
 <p>An array of Token objects.   </p>
 <hr>

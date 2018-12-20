@@ -205,13 +205,17 @@ Standard Subscriptions are not yet supported.</p>
 <p><strong>Returns</strong></p>
 <p>An integer count of subscriptions. </p>
 <hr>
-<h2 id="get-apitenantstenantidnamespacesnamespaceidsubscriptions"><code>GET api/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions</code></h2>
+<h2 id="get-apitenantstenantidnamespacesnamespaceidsubscriptionsskipskipcountcount"><code>GET api/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions?skip={skip}&amp;count={count}</code></h2>
 <p>Get all subscriptions for a tenant. </p>
 <p><strong>Parameters</strong></p>
 <p><code>tenantId</code>
   Unique Id for the tenant. 
 <code>namespaceId</code>
-  Unique Id for the namespace. </p>
+  Unique Id for the namespace. 
+<code>int skip</code>
+  An optional parameter representing the zero-based offset of the first subscription to retrieve. If not specified, a default value of 0 is used. 
+<code>int count</code>
+  An optional parameter representing the maximum number of subscriptions to retrieve. If not specified, a default value of 100 is used.</p>
 <p><strong>Returns</strong></p>
 <p>An array of Subscription objects. </p>
 <hr>

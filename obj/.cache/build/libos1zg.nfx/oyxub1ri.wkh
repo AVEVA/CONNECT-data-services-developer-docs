@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -66,12 +66,12 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="AccountTenant">
-<h1 id="tenant">Tenant</h1>
+<h1 id="tenant" sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="5" sourceendlinenumber="5">Tenant</h1>
 
-<p>APIs to manage an OCS Customer Tenant Account.</p>
-<h2 id="properties">Properties</h2>
-<p>For HTTP requests and responses, the Tenant object has the following properties and JSON-serialized body: </p>
-<table>
+<p sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="7" sourceendlinenumber="7">APIs to manage an OCS Customer Tenant Account.</p>
+<h2 id="properties" sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="9" sourceendlinenumber="9">Properties</h2>
+<p sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="11" sourceendlinenumber="11">For HTTP requests and responses, the Tenant object has the following properties and JSON-serialized body: </p>
+<table sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="13" sourceendlinenumber="23">
 <thead>
 <tr>
 <th>Property</th>
@@ -127,7 +127,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-json">{
+<pre sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="26" sourceendlinenumber="38"><code class="lang-json">{
     &quot;Id&quot;: &quot;id&quot;,
     &quot;CompanyName&quot;: &quot;companyname&quot;,
     &quot;State&quot;: 0,
@@ -139,18 +139,18 @@
     &quot;Features&quot;: []
 }
 </code></pre><hr>
-<h2 id="gettenant"><code>GetTenant()</code></h2>
-<p>Retrieves a specific <code>Tenant</code> by ID.</p>
-<h3 id="http">Http</h3>
-<p><code>GET api/Tenants/{tenantId}</code></p>
-<h3 id="parameters">Parameters</h3>
-<pre><code class="lang-csharp">[Required]
+<h2 id="gettenant" sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="41" sourceendlinenumber="41"><code>GetTenant()</code></h2>
+<p sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="43" sourceendlinenumber="43">Retrieves a specific <code>Tenant</code> by ID.</p>
+<h3 id="http" sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="45" sourceendlinenumber="45">Http</h3>
+<p sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="47" sourceendlinenumber="47"><code>GET api/Tenants/{tenantId}</code></p>
+<h3 id="parameters" sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="49" sourceendlinenumber="49">Parameters</h3>
+<pre sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="51" sourceendlinenumber="54"><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>The identifier of the <code>Tenant</code> to retrieve.</p>
-<h3 id="security">Security</h3>
-<p>Authorized for Account Members of the specified <code>Tenant</code>.</p>
-<h3 id="returns">Returns</h3>
-<table>
+</code></pre><p sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="56" sourceendlinenumber="56">The identifier of the <code>Tenant</code> to retrieve.</p>
+<h3 id="security" sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="59" sourceendlinenumber="59">Security</h3>
+<p sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="61" sourceendlinenumber="61">Authorized for Account Members of the specified <code>Tenant</code>.</p>
+<h3 id="returns" sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="63" sourceendlinenumber="63">Returns</h3>
+<table sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="65" sourceendlinenumber="69">
 <thead>
 <tr>
 <th>Status Code</th>
@@ -177,18 +177,18 @@ string tenantId
 </tbody>
 </table>
 <hr>
-<h2 id="tenantexists"><code>TenantExists()</code></h2>
-<p>Checks if a <code>Tenant</code> with a specific ID exists.</p>
-<h3 id="http-1">Http</h3>
-<p><code>HEAD api/Tenants/{tenantId}</code></p>
-<h3 id="parameters-1">Parameters</h3>
-<pre><code class="lang-csharp">[Required]
+<h2 id="tenantexists" sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="73" sourceendlinenumber="73"><code>TenantExists()</code></h2>
+<p sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="75" sourceendlinenumber="75">Checks if a <code>Tenant</code> with a specific ID exists.</p>
+<h3 id="http-1" sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="77" sourceendlinenumber="77">Http</h3>
+<p sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="79" sourceendlinenumber="79"><code>HEAD api/Tenants/{tenantId}</code></p>
+<h3 id="parameters-1" sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="81" sourceendlinenumber="81">Parameters</h3>
+<pre sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="83" sourceendlinenumber="86"><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>The identifier of the <code>Tenant</code> for this request.</p>
-<h3 id="security-1">Security</h3>
-<p>Authorized for Account Members of the specified <code>Tenant</code>.</p>
-<h3 id="returns-1">Returns</h3>
-<table>
+</code></pre><p sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="88" sourceendlinenumber="88">The identifier of the <code>Tenant</code> for this request.</p>
+<h3 id="security-1" sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="91" sourceendlinenumber="91">Security</h3>
+<p sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="93" sourceendlinenumber="93">Authorized for Account Members of the specified <code>Tenant</code>.</p>
+<h3 id="returns-1" sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="95" sourceendlinenumber="95">Returns</h3>
+<table sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="97" sourceendlinenumber="101">
 <thead>
 <tr>
 <th>Status Code</th>
@@ -215,22 +215,22 @@ string tenantId
 </tbody>
 </table>
 <hr>
-<h2 id="updatetenant"><code>UpdateTenant()</code></h2>
-<p>Updates a specified <code>Tenant</code> object.</p>
-<h3 id="http-2">Http</h3>
-<p><code>PUT api/Tenants/{tenantId}</code></p>
-<h3 id="parameters-2">Parameters</h3>
-<pre><code class="lang-csharp">[Required]
+<h2 id="updatetenant" sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="105" sourceendlinenumber="105"><code>UpdateTenant()</code></h2>
+<p sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="107" sourceendlinenumber="107">Updates a specified <code>Tenant</code> object.</p>
+<h3 id="http-2" sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="109" sourceendlinenumber="109">Http</h3>
+<p sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="111" sourceendlinenumber="111"><code>PUT api/Tenants/{tenantId}</code></p>
+<h3 id="parameters-2" sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="113" sourceendlinenumber="113">Parameters</h3>
+<pre sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="115" sourceendlinenumber="118"><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>The identifier of the <code>Tenant</code> to update.</p>
-<pre><code class="lang-csharp">[Required]
+</code></pre><p sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="120" sourceendlinenumber="120">The identifier of the <code>Tenant</code> to update.</p>
+<pre sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="121" sourceendlinenumber="125"><code class="lang-csharp">[Required]
 [FromBody]
 Tenant tenant
-</code></pre><p>The updated details of the <code>Tenant</code>.</p>
-<h3 id="security-2">Security</h3>
-<p>Authorized for Account Administrators of the specified <code>Tenant</code>.</p>
-<h3 id="returns-2">Returns</h3>
-<table>
+</code></pre><p sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="127" sourceendlinenumber="127">The updated details of the <code>Tenant</code>.</p>
+<h3 id="security-2" sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="130" sourceendlinenumber="130">Security</h3>
+<p sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="132" sourceendlinenumber="132">Authorized for Account Administrators of the specified <code>Tenant</code>.</p>
+<h3 id="returns-2" sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="134" sourceendlinenumber="134">Returns</h3>
+<table sourcefile="Documentation/Management/Account_Tenant.md" sourcestartlinenumber="136" sourceendlinenumber="140">
 <thead>
 <tr>
 <th>Status Code</th>

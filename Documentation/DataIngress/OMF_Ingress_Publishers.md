@@ -110,7 +110,7 @@ Integer count of the number of publishers found.
 
 ***********************
 
-``GET api/tenants/{tenantId}/publishers``
+``GET api/tenants/{tenantId}/publishers?skip={skip}&count={count}``
 --------------------------------------------
 
 Returns all publishers for a tenant. 
@@ -119,6 +119,10 @@ Returns all publishers for a tenant.
 
 ``tenantId``
   Unique Id for the tenant. 
+``int skip``
+  An optional parameter representing the zero-based offset of the first publisher to retrieve. If not specified, a default value of 0 is used. 
+``int count``
+  An optional parameter representing the maximum number of publishers to retrieve. If not specified, a default value of 100 is used.
 
 **Returns**
 
@@ -178,7 +182,7 @@ An AccessControlList object.
 
 ***************************
 
-``GET api/tenants/{tenantId}/publishers/{publisherId}/tokens``
+``GET api/tenants/{tenantId}/publishers/{publisherId}/tokens?skip={skip}&count={count}``
 --------------------------------------------
 
 Get all tokens for a publisher.
@@ -189,6 +193,10 @@ Get all tokens for a publisher.
  Unique Id for the tenant. 
 ``publisherId``
   Unique Id for the publisher. 
+``int skip``
+  An optional parameter representing the zero-based offset of the first token to retrieve. If not specified, a default value of 0 is used. 
+``int count``
+  An optional parameter representing the maximum number of tokens to retrieve. If not specified, a default value of 100 is used.
 
 **Returns**
 

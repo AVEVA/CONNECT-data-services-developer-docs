@@ -34,7 +34,7 @@ easily obtain needed information.
      - [Types](xref:sdsTypes)
      - [Streams](xref:sdsStreams)
      - [Stream Metadata and Tags](xref:sdsStreamExtra)
-     - [Sds Views](xref:sdsViews)
+     - [Stream Views](xref:sdsViews)
      - [Indexes](xref:sdsIndexes)
      - [Units of Measure](xref:unitsOfMeasure)
      - [Reading Data](xref:sdsReadingData)

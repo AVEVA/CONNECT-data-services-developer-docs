@@ -62,7 +62,7 @@ OMF message types fall into three categories: Type, Container, and Data, which a
   types (see [Types](xref:sdsTypes))
 
 
-Type     | Format   | QiTypeCode
+Type     | Format   | SdsTypeCode
 -------- | -------- | -----------
 array		 |          | IEnumerable
 boolean  |          | boolean

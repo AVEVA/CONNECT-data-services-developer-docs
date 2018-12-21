@@ -11,7 +11,7 @@ Filter expressions can be applied to any read that returns multiple values, incl
 ``Get Values``, ``Get Range Values``, ``Get Window Values``, and ``Get Intervals``.”
 
 
-QiTypeCodes
+SdsTypeCodes
 ------------
 
 **Supported**

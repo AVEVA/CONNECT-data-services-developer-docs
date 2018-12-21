@@ -49,7 +49,6 @@ easily obtain needed information.
      - [Table Format](xref:sdsTableFormat)
    - [Data Ingress and OSIsoft Message Format](xref:dataIngress)
      - [Data Ingress to Cloud Services Using OMF](xref:omfIngressToOCS)
-     - [Quick Start](xref:sdsQuickStart)
      - [Using OMF with Cloud Services](xref:omfIngressSpecification)
      - [Publishers](xref:omfIngressPublishers)
      - [Topics](xref:omfIngressTopics)

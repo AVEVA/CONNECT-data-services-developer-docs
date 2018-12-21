@@ -18,7 +18,7 @@ set to a security token obtained from the OCS Portal. The security token is used
 the sender and to authorize the sender for use with a particular Tenant and Publisher.
 
 The ``omfversion`` header must match the version of the OMF spec used to construct the message.
-Version 1.0 of the spec is currently supported. 
+Version 1.1 of the spec is currently supported. 
 
 Message Types
 -------------

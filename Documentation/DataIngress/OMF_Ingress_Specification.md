@@ -87,7 +87,7 @@ A Container message is interpreted as a SdsStream in the OCS Data Store. The key
 in the Container definition are interpreted as follows:
 
 * ``id``: Corresponds to the SdsStream Id field. It must conform to the rules defined for
-    an SdsStream.Id specified here : [Streams](xref:sdsStreams#streams).
+    an SdsStream Id specified here: [Streams](xref:sdsStreams#streams).
 * ``typeid``: Corresponds to the SdsStream TypeId field.
 * ``typeversion``: Versioning of SdsTypes is not supported.
 * ``name``: Corresponds to the SdsStream Name field. This is a friendly name for the stream.

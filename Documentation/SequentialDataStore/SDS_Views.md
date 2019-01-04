@@ -20,16 +20,14 @@ and add it to the SdsView’s Properties collection.
 
 The following table shows the required and optional SdsView fields. Fields that are not included are reserved for internal Sds use.
 
-| Property         | Type                    | Optionality | Details                             |
-|------------------|-------------------------|-------------|-------------------------------------|
-| Id               | String                  | Required    | Identifier for referencing the stream view |
-| Name             | String                  | Optional    | Friendly name                       |
-| Description      | String                  | Optional    | Description text                    |
-| SourceTypeId     | String                  | Required    | Identifier of the SdsType of the    |
-|                  |                         |             | SdsStream. The source type          |
-| TargetTypeId     | String                  | Required    | Identifier of the SdsType to convert|
-|                  |                         |             | events to                           |
-| Properties       | IList<SdsViewProperty>  | Optional    | Property level mapping              |
+| Property     | Type                   | Optionality | Details                                        |
+|--------------|------------------------|-------------|------------------------------------------------|
+| Id           | String                 | Required    | Identifier for referencing the stream view     |
+| Name         | String                 | Optional    | Friendly name                                  |
+| Description  | String                 | Optional    | Description text                               |
+| SourceTypeId | String                 | Required    | Identifier of the SdsType of the SdsStream     |
+| TargetTypeId | String                 | Required    | Identifier of the SdsType to convert events to |
+| Properties   | IList<SdsViewProperty> | Optional    | Property level mapping                         |
 
 
 **Rules for type identifier**
@@ -55,16 +53,11 @@ property for it.
 
 The following table shows the required and optional SdsViewProperty fields.
 
-| Property         | Type                    | Optionality | Details                             |
-|------------------|-------------------------|-------------|-------------------------------------|
-| SourceId         | String                  | Required    | Identifier of the SdsTypeProperty   |
-|                  |                         |             | from the source SdsType Properties  |
-|                  |                         |             | list.                               |
-| TargetId         | String                  | Required    | Identifier of the SdsTypeProperty   |
-|                  |                         |             | from the target SdsType Properties  |
-|                  |                         |             | list                                |
-| SdsView          | SdsView                 | Optional    | Additional mapping instructions     |
-|                  |                         |             | for derived types                   |
+| Property | Type    | Optionality | Details                             |
+|----------|---------|-------------|-------------------------------------|
+| SourceId | String  | Required    | Identifier of the SdsTypeProperty from the source SdsType Properties list |
+| TargetId | String  | Required    | Identifier of the SdsTypeProperty from the target SdsType Properties list |
+| SdsView  | SdsView | Optional    | Additional mapping instructions for derived types |
 
 The SdsView field supports nested Properties.
 
@@ -77,12 +70,11 @@ The SdsViewMap provides a detailed Property-by-Property definition of the mappin
 The following table shows the SdsViewMap fields. The SdsViewMap cannot be written to Sds, 
 so required and optional have no meaning.
 
-| Property                  | Type                     | Optionality  | Details                                          |
-|---------------------------|--------------------------|--------------|--------------------------------------------------|
-| SourceTypeId              | String                   | Required     | Identifier of the SdsType of the SdsStream. The  |
-|                           |                          |              | source type                                      |
-| TargetTypeId              | String                   | Required     | Identifier of the SdsType to convert events to   |
-| Properties                | IList<SdsViewMapProperty>| Optional     | Property level mapping                           |
+| Property     | Type                     | Optionality  | Details |
+|--------------|--------------------------|--------------|---------|
+| SourceTypeId | String                   | Required     | Identifier of the SdsType of the SdsStream |
+| TargetTypeId | String                   | Required     | Identifier of the SdsType to convert events to |
+| Properties   | IList<SdsViewMapProperty>| Optional     | Property level mapping |
 
 Properties / SdsViewMapProperty
 ------------------------------
@@ -93,30 +85,24 @@ the Property.
 The following table shows the SdsViewMapProperty fields. The SdsViewMap cannot be written; it can only be 
 retrieved from Sds, so required and optional have no meaning.
 
-| Property                  | Type                           | Details                                          |
-|---------------------------|--------------------------------|--------------------------------------------------|
-| SourceTypeId              | String                         | Identifier of the SdsType of the SdsStream. The  |
-|                           |                                | source type                                      |
-| TargetTypeId              | String                         | Identifier of the SdsType to convert events to   |
-| Mode                      | SdsViewMode                    | Aggregate of actions applied to the properties.  |
-|                           |                                | SdsViewModes are combined via binary arithmetic  |
-| SdsViewMap                 | SdsViewMap                    | Mapping for derived types                        |
+| Property     | Type        | Details |
+|--------------|-------------|---------|
+| SourceTypeId | String      | Identifier of the SdsType of the SdsStream |
+| TargetTypeId | String      | Identifier of the SdsType to convert events to |
+| Mode         | SdsViewMode | Aggregate of actions applied to the properties. SdsViewModes are combined via binary arithmetic |
+| SdsViewMap   | SdsViewMap  | Mapping for derived types |
 
 The available SdsViewModes are shown in the table below.
 
-| Name                      | Value                          | Description                                      |
-|---------------------------|--------------------------------|--------------------------------------------------|
-| None                      | 0x0000                         | No action                                        |
-| FieldAdd                  | 0x0001                         | Add a property matching the specified            |
-|                           |                                | SdsTypeProperty                                  |
-| FieldRemove               | 0x0002                         | Remove the property matching the specified       |
-|                           |                                | SdsTypeProperty                                  |
-| FieldRename               | 0x0004                         | Rename the property matching the source          |
-|                           |                                | SdsTypeProperty to the target SdsTypeProperty    |
-| FieldMove                 | 0x0008                         | Move the property from the location in the       |
-|                           |                                | source to the location in the target             |
-| FieldConversion           | 0x0016                         | Converts the source property to the target type  |
-| InvalidFieldConversion    | 0x0032                         | Cannot perform the specified mapping             |
+| Name                   | Value  | Description |
+|------------------------|--------|-------------|
+| None                   | 0x0000 | No action   |
+| FieldAdd               | 0x0001 | Add a property matching the specified SdsTypeProperty |
+| FieldRemove            | 0x0002 | Remove the property matching the specified SdsTypeProperty |
+| FieldRename            | 0x0004 | Rename the property matching the source SdsTypeProperty to the target SdsTypeProperty |
+| FieldMove              | 0x0008 | Move the property from the location in the source to the location in the target|
+| FieldConversion        | 0x0016 | Converts the source property to the target type |
+| InvalidFieldConversion | 0x0032 | Cannot perform the specified mapping |
 
 Changing Stream Type
 --------------------

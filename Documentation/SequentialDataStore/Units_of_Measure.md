@@ -14,15 +14,15 @@ A SdsUom represents a single unit of measure, such as 'meter'.
 
 The following table shows the required and optional SdsUom fields.
 
-| Property         | Type   | Optionality | Details                                                                                                                                                                                                                  | Example           |
-| ---------------- | ------ | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------- |
-| Id               | String | Required    | Unique identifier for the unit of measure                                                                                                                                                                                | meters per second |
-| Abbreviation     | String | Optional    | Abbreviation for the unit of measure                                                                                                                                                                                     | m/s               |
-| Name             | String | Optional    | Full name for the unit of measure                                                                                                                                                                                        | Meters per second |
-| DisplayName      | String | Optional    | Friendly display name for the unit of measure                                                                                                                                                                            | meters per second |
-| QuantityId       | String | Required    | The identifier associated with the quantity that this unit is a measure of                                                                                                                                               | Velocity          |
-| ConversionFactor | Double | Required    | Used for unit conversions.  When a value of this unit is multiplied by the ConversionFactor and then incremented by the ConversionOffset, the value in terms of the base unit of the corresponding quantity is returned. | 1.0               |
-| ConversionOffset | Double | Required    | Used for unit conversions. See details for ConversionFactor                                                                                                                                                              | 0.0               |
+| Property         | Type   | Optionality | Details | Example  |
+| ---------------- | ------ | ----------- | ------- | -------- |
+| Id               | String | Required    | Unique identifier for the unit of measure | meters per second |
+| Abbreviation     | String | Optional    | Abbreviation for the unit of measure  | m/s |
+| Name             | String | Optional    | Full name for the unit of measure | Meters per second |
+| DisplayName      | String | Optional    | Friendly display name for the unit of measure | meters per second |
+| QuantityId       | String | Required    | The identifier associated with the quantity that this unit is a measure of | Velocity|
+| ConversionFactor | Double | Required    | Used for unit conversions.  When a value of this unit is multiplied by the ConversionFactor and then incremented by the ConversionOffset, the value in terms of the base unit of the corresponding quantity is returned. | 1.0 |
+| ConversionOffset | Double | Required    | Used for unit conversions. See details for ConversionFactor | 0.0  |
 
 
 ## SdsUomQuantity
@@ -31,12 +31,12 @@ Represents a single measurable quantity (i.e. Length)
 
 The following table shows the required and optional SdsUomQuantity fields.
 
-| Property   | Type    | Optionality | Details                                                                                                                                                                         | Example                                 |
-| ---------- | ------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------- |
-| Id         | String  | Required    | Unique identifier for the quantity                                                                                                                                              | Velocity                                |
-| Name       | String  | Optional    | Full name for the quantity                                                                                                                                                      | Velocity                                |
-| BaseUom    | SdsUom  | Required    | The base unit of measure for this quantity. All other Uom's measuring this quantity will have ConversionFactor's and ConversionOffsets relative to the BaseUom                  | SdsUom representing "meters per second" |
-| Dimensions | short[] | Optional    | Reserved for internal use. Represents the seven base SI dimensions: Length, Mass, Time, Electric Current, Thermodynamic Temperature, Amount of Substance, and Luminous Density. | [1,0,-1,0,0,0,0]                        |
+| Property   | Type    | Optionality | Details | Example  |
+| ---------- | ------- | ----------- | ------- | ---------|
+| Id         | String  | Required    | Unique identifier for the quantity | Velocity |
+| Name       | String  | Optional    | Full name for the quantity | Velocity |
+| BaseUom    | SdsUom  | Required    | The base unit of measure for this quantity. All other Uom's measuring this quantity will have ConversionFactor's and ConversionOffsets relative to the BaseUom  | SdsUom representing "meters per second" |
+| Dimensions | short[] | Optional    | Reserved for internal use. Represents the seven base SI dimensions: Length, Mass, Time, Electric Current, Thermodynamic Temperature, Amount of Substance, and Luminous Density. | [1,0,-1,0,0,0,0] |
 
 ## Supported Quantities
 A list of the supported quantities and their base unit of measures is below. Supported quantities are read-only.

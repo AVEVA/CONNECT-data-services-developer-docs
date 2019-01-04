@@ -44,18 +44,15 @@ to be added to the Data Store independently.
 The following table shows the required and optional SdsType fields. Fields that are not included are reserved for internal SDS use.
 
 
-| Property          | Type                    | Optionality | Details                             |
-|-------------------|-------------------------|-------------|-------------------------------------|
-| Id                | String                  | Required    | Identifier for referencing the type |
-| Name              | String                  | Optional    | Friendly name                       |
-| Description       | String                  | Optional    | Description text                    |
-| SdsTypeCode       | SdsTypeCode             | Required    | Numeric code identifying the base   |
-|                   |                         |             | SdsType                             |
-| InterpolationMode | SdsInterpolationMode    | Optional    | Interpolation setting of the type.  |
-|                   |                         |             | Default is Continuous.              |
-| ExtrapolationMode | SdsExtrapolationMode    | Optional    | Extrapolation setting of the type.  |
-|                   |                         |             | Default is All.                     |
-| Properties        | IList<SdsTypeProperty>  | Required    | List of SdsTypeProperty items       |
+| Property          | Type                   | Optionality | Details |
+|-------------------|------------------------|-------------|---------|
+| Id                | String                 | Required    | Identifier for referencing the type |
+| Name              | String                 | Optional    | Friendly name |
+| Description       | String                 | Optional    | Description text |
+| SdsTypeCode       | SdsTypeCode            | Required    | Numeric code identifying the base SdsType |
+| InterpolationMode | SdsInterpolationMode   | Optional    | Interpolation setting of the type. Default is Continuous. |
+| ExtrapolationMode | SdsExtrapolationMode   | Optional    | Extrapolation setting of the type. Default is All. |
+| Properties        | IList<SdsTypeProperty> | Required    | List of SdsTypeProperty items |
 
 
 
@@ -199,14 +196,13 @@ Interpolation determines how a stream behaves when asked to return an event at a
 two existing events. InterpolationMode determines how the returned event is constructed. The table 
 below lists InterpolationModes:
 
-|Mode                       |Enumeration value               |Operation                                         |
-|---------------------------|--------------------------------|--------------------------------------------------|
-|Default                    |0                               |The default InterpolationMode is Continuous       |
-|Continuous                 |0                               |Interpolates the data using previous and next     |
-|                           |                                |index values                                      |
-|StepwiseContinuousLeading  |1                               |Returns the data from the previous index          |
-|StepwiseContinuousTrailing |2                               |Returns the data from the next index              |
-|Discrete                   |3                               |Returns ‘null’                                    |
+|Mode                       |Enumeration value |Operation |
+|---------------------------|------------------|----------|
+|Default                    |0                 |The default InterpolationMode is Continuous |
+|Continuous                 |0                 |Interpolates the data using previous and next index values | 
+|StepwiseContinuousLeading  |1                 |Returns the data from the previous index  |
+|StepwiseContinuousTrailing |2                 |Returns the data from the next index |
+|Discrete                   |3                 |Returns ‘null’ |
 
 Note that ``Continuous`` cannot return events for values that cannot be interpolated, such as when the type is not numeric.
 
@@ -215,20 +211,18 @@ indexes that occur between data in a stream:
 
 **InterpolationMode = Continuous or Default**
 
-| Type                      | Result for an index between    | Comment                                          |
-|                           | data in a stream               |                                                  |
-|---------------------------|--------------------------------|--------------------------------------------------|
-|Numeric Types              |Interpolated*                   |Rounding is done as needed for integer types      |
-|Time related Types         |Interpolated                    |DateTime, DateTimeOffset, TimeSpan                |
-|Nullable Types             |Returns ‘null’                  |Cannot reliably interpolate due to possibility of |
-|                           |                                |a null value                                      |
-|Array and List Types       |Returns ‘null’                  |                                                  |
-|String Type                |Returns ‘null’                  |                                                  |
-|Boolean Type               |Returns value of nearest index  |                                                  |
-|Enumeration Types          |Returns Enum value at 0         |This may have a value for the enumeration         |
-|GUID                       |                                |                                                  |
-|Version                    |Returns ‘null’                  |                                                  |
-|IDictionary or IEnumerable |Returns ‘null’                  |Dictionary, Array, List, and so on.               |
+| Type                      | Result for an index between data in a stream  | Comment |
+|---------------------------|-----------------------------------------------|---------|
+|Numeric Types              |Interpolated*                                  |Rounding is done as needed for integer types |
+|Time related Types         |Interpolated                                   |DateTime, DateTimeOffset, TimeSpan |
+|Nullable Types             |Returns ‘null’                                 |Cannot reliably interpolate due to possibility of a null value |
+|Array and List Types       |Returns ‘null’                                 |         |
+|String Type                |Returns ‘null’                                 |         |
+|Boolean Type               |Returns value of nearest index                 |         |
+|Enumeration Types          |Returns Enum value at 0                        |This may have a value for the enumeration |
+|GUID                       |                                               |         |
+|Version                    |Returns ‘null’                                 |         |
+|IDictionary or IEnumerable |Returns ‘null’                                 |Dictionary, Array, List, and so on. |
 
 \*When extreme values are involved in an interpolation (for example
 Decimal.MaxValue) the call might result in a BadRequest exception.
@@ -300,22 +294,17 @@ The Properties collection define the fields in an SdsType.
 The following table shows the required and optional SdsTypeProperty fields. Fields that 
 are not included are reserved for internal SDS use.
 
-|          Property         | Type                    | Optionality | Details                                |
-|---------------------------|-------------------------|-------------|----------------------------------------|
-| Id                        | String                  | Required    | Identifier for referencing the type    |
-| Name                      | String                  | Optional    | Friendly name                          |
-| Description               | String                  | Optional    | Description text                       |
-| SdsType                   | SdsType                 | Required    | Field defining the property's          |
-|                           |                         |             | Type                                   |
-| IsKey                     | Boolean                 | Required    | Identifies the property as the Key     |
-|                           |                         |             | (Primary Index)                        |
-| Value                     | Object                  | Optional    | Value of the property                  |
-| Order                     | Int                     | Optional    | Order of comparison within a           |
-|                           |                         |             | compound index. Also used              |
-|                           |                         |             | internally                             |
-| InterpolationMode         | SdsInterpolationMode    | Optional    | Interpolation setting of the property. |
-|                           |                         |             | Default is null.                       |
-| Uom                       | String                  | Optional    | Unit of Measure of the property.       |
+|          Property         | Type                    | Optionality | Details |
+|---------------------------|-------------------------|-------------|---------|
+| Id                        | String                  | Required    | Identifier for referencing the type |
+| Name                      | String                  | Optional    | Friendly name |
+| Description               | String                  | Optional    | Description text |
+| SdsType                   | SdsType                 | Required    | Field defining the property's Type |
+| IsKey                     | Boolean                 | Required    | Identifies the property as the Key (Primary Index) |
+| Value                     | Object                  | Optional    | Value of the property |
+| Order                     | Int                     | Optional    | Order of comparison within a compound index |
+| InterpolationMode         | SdsInterpolationMode    | Optional    | Interpolation setting of the property. Default is null. |
+| Uom                       | String                  | Optional    | Unit of Measure of the property |
 
 
 The SdsTypeProperty’s identifier follows the same rules as the SdsType’s identifier.

@@ -20,14 +20,14 @@ and add it to the SdsView’s Properties collection.
 
 The following table shows the required and optional SdsView fields. Fields that are not included are reserved for internal Sds use.
 
-| Property     | Type                   | Optionality | Details                                        |
-|--------------|------------------------|-------------|------------------------------------------------|
-| Id           | String                 | Required    | Identifier for referencing the stream view     |
-| Name         | String                 | Optional    | Friendly name                                  |
-| Description  | String                 | Optional    | Description text                               |
-| SourceTypeId | String                 | Required    | Identifier of the SdsType of the SdsStream     |
+| Property     | Type                   | Optionality | Details |
+|--------------|------------------------|-------------|---------|
+| Id           | String                 | Required    | Identifier for referencing the stream view |
+| Name         | String                 | Optional    | Friendly name |
+| Description  | String                 | Optional    | Description text |
+| SourceTypeId | String                 | Required    | Identifier of the SdsType of the SdsStream |
 | TargetTypeId | String                 | Required    | Identifier of the SdsType to convert events to |
-| Properties   | IList<SdsViewProperty> | Optional    | Property level mapping                         |
+| Properties   | IList<SdsViewProperty> | Optional    | Property level mapping |
 
 
 **Rules for type identifier**
@@ -53,8 +53,8 @@ property for it.
 
 The following table shows the required and optional SdsViewProperty fields.
 
-| Property | Type    | Optionality | Details                             |
-|----------|---------|-------------|-------------------------------------|
+| Property | Type    | Optionality | Details |
+|----------|---------|-------------|---------|
 | SourceId | String  | Required    | Identifier of the SdsTypeProperty from the source SdsType Properties list |
 | TargetId | String  | Required    | Identifier of the SdsTypeProperty from the target SdsType Properties list |
 | SdsView  | SdsView | Optional    | Additional mapping instructions for derived types |

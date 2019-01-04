@@ -22,20 +22,16 @@ The following table shows the required and optional SdsStream fields. Fields not
 for internal SDS use. 
 
 
-| Property          | Type                             | Optionality |Details                                       |
-|-------------------|----------------------------------|-------------|----------------------------------------------|
-| Id                | String                           | Required    | An identifier for referencing the stream.    |
-| TypeId            | String                           | Required    | The SdsType identifier of the type to be     |
-|                   |                                  |             | used for this stream.                        |
-| Name              | String                           | Optional    | Friendly name                                |
-| Description       | String                           | Optional    | Description text                             |
-| Indexes           | IList<SdsStreamIndex>            | Optional    | Used to define secondary indexes for stream  |
-| InterpolationMode | SdsInterpolationMode             | Optional    | Interpolation setting of the stream.         |
-|                   |                                  |             | Default is null.                             |
-| ExtrapolationMode | SdsExtrapolationMode             | Optional    | Extrapolation setting of the stream.         |
-|                   |                                  |             | Default is null.                             |
-| PropertyOverrides | IList<SdsStreamPropertyOverride> | Optional    | Used to define unit of measure and           |
-|                   |                                  |             | interpolation mode overrides for a stream    |
+| Property          | Type                             | Optionality | Details |
+|-------------------|----------------------------------|-------------|---------|
+| Id                | String                           | Required    | An identifier for referencing the stream |
+| TypeId            | String                           | Required    | The SdsType identifier of the type to be used for this stream |
+| Name              | String                           | Optional    | Friendly name |
+| Description       | String                           | Optional    | Description text |
+| Indexes           | IList<SdsStreamIndex>            | Optional    | Used to define secondary indexes for stream |
+| InterpolationMode | SdsInterpolationMode             | Optional    | Interpolation setting of the stream. Default is null. |
+| ExtrapolationMode | SdsExtrapolationMode             | Optional    | Extrapolation setting of the stream. Default is null. |
+| PropertyOverrides | IList<SdsStreamPropertyOverride> | Optional    | Used to define unit of measure and interpolation mode overrides for a stream |
 
 
 **Rules for Identifier (SdsStream.Id)**
@@ -81,11 +77,11 @@ SdsType Properties for a specific stream.
 The ``SdsStreamPropertyOverride`` object has the following structure:
 
 
-| Property          | Type                           | Optionality | Details                                           |
-|-------------------|--------------------------------|-------------|---------------------------------------------------|
-| SdsTypePropertyId | String                         | Required    | SdsTypeProperty identifier                        |
-| InterpolationMode | SdsInterpolationMode           | Optional    | Interpolation setting. Default is null            |
-| Uom               | String                         | Optional    | Unit of measure                                   |
+| Property          | Type                           | Optionality | Details |
+|-------------------|--------------------------------|-------------|---------|
+| SdsTypePropertyId | String                         | Required    | SdsTypeProperty identifier |
+| InterpolationMode | SdsInterpolationMode           | Optional    | Interpolation setting. Default is null |
+| Uom               | String                         | Optional    | Unit of measure |
 
 
 The unit of measure can be overridden for any type property defined by the stream type, including primary keys 

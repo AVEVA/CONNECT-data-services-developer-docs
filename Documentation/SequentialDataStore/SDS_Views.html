@@ -120,25 +120,13 @@ and add it to the SdsView’s Properties collection.</p>
 <td>SourceTypeId</td>
 <td>String</td>
 <td>Required</td>
-<td>Identifier of the SdsType of the</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td>SdsStream. The source type</td>
+<td>Identifier of the SdsType of the SdsStream</td>
 </tr>
 <tr>
 <td>TargetTypeId</td>
 <td>String</td>
 <td>Required</td>
-<td>Identifier of the SdsType to convert</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td>events to</td>
+<td>Identifier of the SdsType to convert events to</td>
 </tr>
 <tr>
 <td>Properties</td>
@@ -180,49 +168,19 @@ property for it.</p>
 <td>SourceId</td>
 <td>String</td>
 <td>Required</td>
-<td>Identifier of the SdsTypeProperty</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td>from the source SdsType Properties</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td>list.</td>
+<td>Identifier of the SdsTypeProperty from the source SdsType Properties list</td>
 </tr>
 <tr>
 <td>TargetId</td>
 <td>String</td>
 <td>Required</td>
-<td>Identifier of the SdsTypeProperty</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td>from the target SdsType Properties</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td>list</td>
+<td>Identifier of the SdsTypeProperty from the target SdsType Properties list</td>
 </tr>
 <tr>
 <td>SdsView</td>
 <td>SdsView</td>
 <td>Optional</td>
-<td>Additional mapping instructions</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td>for derived types</td>
+<td>Additional mapping instructions for derived types</td>
 </tr>
 </tbody>
 </table>
@@ -246,13 +204,7 @@ so required and optional have no meaning.</p>
 <td>SourceTypeId</td>
 <td>String</td>
 <td>Required</td>
-<td>Identifier of the SdsType of the SdsStream. The</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td>source type</td>
+<td>Identifier of the SdsType of the SdsStream</td>
 </tr>
 <tr>
 <td>TargetTypeId</td>
@@ -285,12 +237,7 @@ retrieved from Sds, so required and optional have no meaning.</p>
 <tr>
 <td>SourceTypeId</td>
 <td>String</td>
-<td>Identifier of the SdsType of the SdsStream. The</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>source type</td>
+<td>Identifier of the SdsType of the SdsStream</td>
 </tr>
 <tr>
 <td>TargetTypeId</td>
@@ -300,12 +247,7 @@ retrieved from Sds, so required and optional have no meaning.</p>
 <tr>
 <td>Mode</td>
 <td>SdsViewMode</td>
-<td>Aggregate of actions applied to the properties.</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>SdsViewModes are combined via binary arithmetic</td>
+<td>Aggregate of actions applied to the properties. SdsViewModes are combined via binary arithmetic</td>
 </tr>
 <tr>
 <td>SdsViewMap</td>
@@ -332,42 +274,22 @@ retrieved from Sds, so required and optional have no meaning.</p>
 <tr>
 <td>FieldAdd</td>
 <td>0x0001</td>
-<td>Add a property matching the specified</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>SdsTypeProperty</td>
+<td>Add a property matching the specified SdsTypeProperty</td>
 </tr>
 <tr>
 <td>FieldRemove</td>
 <td>0x0002</td>
-<td>Remove the property matching the specified</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>SdsTypeProperty</td>
+<td>Remove the property matching the specified SdsTypeProperty</td>
 </tr>
 <tr>
 <td>FieldRename</td>
 <td>0x0004</td>
-<td>Rename the property matching the source</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>SdsTypeProperty to the target SdsTypeProperty</td>
+<td>Rename the property matching the source SdsTypeProperty to the target SdsTypeProperty</td>
 </tr>
 <tr>
 <td>FieldMove</td>
 <td>0x0008</td>
-<td>Move the property from the location in the</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>source to the location in the target</td>
+<td>Move the property from the location in the source to the location in the target</td>
 </tr>
 <tr>
 <td>FieldConversion</td>

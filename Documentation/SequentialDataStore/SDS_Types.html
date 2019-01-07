@@ -136,37 +136,19 @@ to be added to the Data Store independently.</p>
 <td>SdsTypeCode</td>
 <td>SdsTypeCode</td>
 <td>Required</td>
-<td>Numeric code identifying the base</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td>SdsType</td>
+<td>Numeric code identifying the base SdsType</td>
 </tr>
 <tr>
 <td>InterpolationMode</td>
 <td>SdsInterpolationMode</td>
 <td>Optional</td>
-<td>Interpolation setting of the type.</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td>Default is Continuous.</td>
+<td>Interpolation setting of the type. Default is Continuous.</td>
 </tr>
 <tr>
 <td>ExtrapolationMode</td>
 <td>SdsExtrapolationMode</td>
 <td>Optional</td>
-<td>Extrapolation setting of the type.</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td>Default is All.</td>
+<td>Extrapolation setting of the type. Default is All.</td>
 </tr>
 <tr>
 <td>Properties</td>
@@ -591,12 +573,7 @@ below lists InterpolationModes:</p>
 <tr>
 <td>Continuous</td>
 <td>0</td>
-<td>Interpolates the data using previous and next</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>index values</td>
+<td>Interpolates the data using previous and next index values</td>
 </tr>
 <tr>
 <td>StepwiseContinuousLeading</td>
@@ -619,13 +596,12 @@ below lists InterpolationModes:</p>
 <p>The table below describes how the <strong>Continuous InterpolationMode</strong> affects
 indexes that occur between data in a stream:</p>
 <p><strong>InterpolationMode = Continuous or Default</strong></p>
-<p>| Type                      | Result for an index between    | Comment                                          |</p>
 <table>
 <thead>
 <tr>
-<th></th>
-<th>data in a stream</th>
-<th></th>
+<th>Type</th>
+<th>Result for an index between data in a stream</th>
+<th>Comment</th>
 </tr>
 </thead>
 <tbody>
@@ -642,12 +618,7 @@ indexes that occur between data in a stream:</p>
 <tr>
 <td>Nullable Types</td>
 <td>Returns ‘null’</td>
-<td>Cannot reliably interpolate due to possibility of</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>a null value</td>
+<td>Cannot reliably interpolate due to possibility of a null value</td>
 </tr>
 <tr>
 <td>Array and List Types</td>
@@ -885,25 +856,13 @@ are not included are reserved for internal SDS use.</p>
 <td>SdsType</td>
 <td>SdsType</td>
 <td>Required</td>
-<td>Field defining the property&#39;s</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td>Type</td>
+<td>Field defining the property&#39;s Type</td>
 </tr>
 <tr>
 <td>IsKey</td>
 <td>Boolean</td>
 <td>Required</td>
-<td>Identifies the property as the Key</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td>(Primary Index)</td>
+<td>Identifies the property as the Key (Primary Index)</td>
 </tr>
 <tr>
 <td>Value</td>
@@ -915,37 +874,19 @@ are not included are reserved for internal SDS use.</p>
 <td>Order</td>
 <td>Int</td>
 <td>Optional</td>
-<td>Order of comparison within a</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td>compound index. Also used</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td>internally</td>
+<td>Order of comparison within a compound index</td>
 </tr>
 <tr>
 <td>InterpolationMode</td>
 <td>SdsInterpolationMode</td>
 <td>Optional</td>
-<td>Interpolation setting of the property.</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td>Default is null.</td>
+<td>Interpolation setting of the property. Default is null.</td>
 </tr>
 <tr>
 <td>Uom</td>
 <td>String</td>
 <td>Optional</td>
-<td>Unit of Measure of the property.</td>
+<td>Unit of Measure of the property</td>
 </tr>
 </tbody>
 </table>

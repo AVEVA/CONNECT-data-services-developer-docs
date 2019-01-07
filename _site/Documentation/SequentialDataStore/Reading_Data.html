@@ -165,12 +165,7 @@ and around the start and end index for window values. The following are valid va
 <tr>
 <td>Exact</td>
 <td>0</td>
-<td>Results include the event at the specified index boundary</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>if a stored event exists at that index.</td>
+<td>Results include the event at the specified index boundary if a stored event exists at that index.</td>
 </tr>
 <tr>
 <td>Inside</td>
@@ -180,32 +175,12 @@ and around the start and end index for window values. The following are valid va
 <tr>
 <td>Outside</td>
 <td>2</td>
-<td>Results include up to one event that falls immediately</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>outside of the specified index boundary.</td>
+<td>Results include up to one event that falls immediately outside of the specified index boundary.</td>
 </tr>
 <tr>
 <td>ExactOrCalculated</td>
 <td>3</td>
-<td>Results include the event at the specified index boundary. If</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>no stored event exists at that index, one is calculated based</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>on the index type and interpolation and extrapolation</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>settings.</td>
+<td>Results include the event at the specified index boundary. If no stored event exists at that index, one is calculated based on the index type and interpolation and extrapolation settings.</td>
 </tr>
 </tbody>
 </table>
@@ -224,27 +199,12 @@ available SdsSearchModes:</p>
 <tr>
 <td>Exact</td>
 <td>0</td>
-<td>If a stored event exists at the specified index, that event</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>is returned. Otherwise no event is returned.</td>
+<td>If a stored event exists at the specified index, that event is returned. Otherwise no event is returned.</td>
 </tr>
 <tr>
 <td>ExactOrNext</td>
 <td>1</td>
-<td>If a stored event exists at the specified index, that event</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>is returned. Otherwise the next event in the stream is</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>returned.</td>
+<td>If a stored event exists at the specified index, that event is returned. Otherwise the next event in the stream is returned.</td>
 </tr>
 <tr>
 <td>Next</td>
@@ -254,17 +214,7 @@ available SdsSearchModes:</p>
 <tr>
 <td>ExactOrPrevious</td>
 <td>3</td>
-<td>If a stored event exists at the specified index, that event</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>is returned. Otherwise the previous event in the stream is</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>returned.</td>
+<td>If a stored event exists at the specified index, that event is returned. Otherwise the previous event in the stream is returned.</td>
 </tr>
 <tr>
 <td>Previous</td>

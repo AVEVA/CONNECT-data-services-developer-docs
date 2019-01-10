@@ -35,7 +35,7 @@ references:
   name: Data Ingress and OSIsoft Message Format
   href: Documentation/DataIngress/Data_Ingress.html
 - uid: index
-  name: Welcome
+  name: Welcome to the OCS API Documentation
   href: index.html
 - uid: ManagementOverview
   name: Account Management

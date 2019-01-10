@@ -205,10 +205,6 @@ for information about specifying those respective parameters.
   An optional parameter representing the maximum number of SdsStreams to retrieve. 
   If not specified, a default value of 100 is used.
 
-``int count``
-  An optional parameter representing the maximum number of SdsStreams to retrieve. 
-  If not specified, a default value of 100 is used.
-
 ``string orderby``
   An optional parameter representing sorted order which SdsStreams will be returned. The sorting is based on the stored values for a given
   field (of type string). For example, ``orderby=name`` would sort the returned results by the ``name`` values (ascending by default). 

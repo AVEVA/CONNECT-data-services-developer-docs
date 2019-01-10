@@ -32,7 +32,7 @@ Topic information is contained in an object called ``Topic`` and has the followi
 | Name            | string                  | A friendly name for the Topic          |
 | Description     | string                  | An optional description for the Topic. |
 | CreationDate    | string                  | The time that the Topic was created. The string is formatted using ISO 8601 format. |
-| Publishers	  | string array            | An array of Publisher Ids mapped to the Topic   |
+| Publishers	    | string array            | An array of Publisher Ids mapped to the Topic   |
 
 ********************************
 

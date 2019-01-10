@@ -170,36 +170,52 @@ Returns a list of streams.
 
 If specifying the optional search parameter or optional filter parameter, the list of streams returned are filtered to match 
 the search/filter criteria. If the neither parameter is specified, the list includes all streams 
-in the Namespace. See [Searching](xref:sdsSearching#searching) 
+in the Namespace. See [Searching](xref:sdsSearching) 
 and [Filter Expressions: Metadata Objects](xref:sdsFilterExpressionsMetadata)  
 for information about specifying those respective parameters.
 
 
 **Request**
 
-        GET	api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query={query}&filter={filter}&skip={skip}&count={count}
+        GET	api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query={query}&filter={filter}&skip={skip}&count={count}&orderby={orderby}
 
 **Parameters**
 
-``string tenantId``
+``string tenantId``  
   The tenant identifier
-``string namespaceId``
+
+``string namespaceId``  
   The namespace identifier
-``string query``
+
+``string query``  
   An optional parameter representing a string search. 
-  See [Searching](xref:sdsSearching#searching)
+  See [Searching](xref:sdsSearching)
   for information about specifying the search parameter.
-``string filter`` 
+
+``string filter``   
   An optional filter string to match which SdsStreams will be returned.  See the 
   [Filter Expressions: Metadata Objects](xref:sdsFilterExpressionsMetadata) 
   topic for information about specifying the filter parameter.
-``int skip``
+
+``int skip``  
   An optional parameter representing the zero-based offset of the first SdsStream to retrieve. 
   If not specified, a default value of 0 is used.
+
+``int count``  
+  An optional parameter representing the maximum number of SdsStreams to retrieve. 
+  If not specified, a default value of 100 is used.
+
 ``int count``
   An optional parameter representing the maximum number of SdsStreams to retrieve. 
   If not specified, a default value of 100 is used.
 
+``string orderby``
+  An optional parameter representing sorted order which SdsStreams will be returned. The sorting is based on the stored values for a given
+  field (of type string). For example, ``orderby=name`` would sort the returned results by the name values (ascending by default). 
+  Additionally, a value can be provided after the provided field name to identify whether to sort ascending or descending, by 
+  using values ``asc`` or ``desc``, respectively.
+  For example, ``orderby=name desc`` would sort the returned results by the ``name`` values, descending.
+  If no value is specified, there is no sorting of results.
 
 **Response**
 

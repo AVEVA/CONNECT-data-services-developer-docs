@@ -24,7 +24,7 @@
   href: Writing_Data_API.md
 - name: Compression
   href: Compression.md
-- name: Searching for Streams
+- name: Searching
   href: Searching.md
 - name: Filter Expressions - Data
   href: Filter_Expressions.md

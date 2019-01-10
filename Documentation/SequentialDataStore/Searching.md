@@ -87,7 +87,7 @@ After the previous call, you can use the following call to return the remaining 
 
 The ``orderby`` parameter is supported for searching both the streams and types. The basic functionality of it is to search the items and then return the result in sorted order.
 The default value for ``orderby`` parameter is ascending order. It can be changed to descending order by specifying ``desc`` alongside the orderby field value. It can be used in conjunction with 
-``query``, ``skip``, and ``count`` parameters.
+``query``, ``filter``, ``skip``, and ``count`` parameters.
 
 **REST API examples**
 

@@ -2,8 +2,6 @@
 uid: sdsSearching
 ---
 
-#### Qi_Searching_topic
-
 Searching
 =====================
 SdsSearch provides a way to search text, phrases, fields, etc. cross the Sequential Data Store. This document covers the 

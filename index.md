@@ -2,7 +2,7 @@
 uid: index
 ---
 
-Welcome
+Welcome to the OCS API Documentation
 =======
 
 OSIsoft Cloud Services (OCS) is a highly flexible cloud-based platform that provides scalable, elastic,  
@@ -20,13 +20,14 @@ easily obtain needed information.
 
    - [OSIsoft Cloud Services](xref:osisoftCloudServices)
    - [Management](xref:ManagementOverview)
-     - [Client](xref:AccountClientRole)
+     - [Client Roles](xref:AccountClientRole)
      - [Namespace](xref:AccountNamespace)
      - [NamespaceTier](xref:AccountNamespaceTier)
-     - [Role](xref:AccountRole)
+     - [Roles](xref:AccountRole)
      - [RootAccessControl](xref:AccountRootAccessControl)
      - [Tenant](xref:AccountTenant)
-     - [User](xref:AccountUserRole)
+     - [Tenant Feature States](xref:AccountTenantFeatureState)
+     - [User Roles](xref:AccountUserRole)
      - [ServiceBlog](xref:AccountServiceBlog)
    - [Sequential Data Store](xref:sds)
      - [Introducing the Sequential Data Store](xref:sdsIntroduction)
@@ -34,7 +35,7 @@ easily obtain needed information.
      - [Types](xref:sdsTypes)
      - [Streams](xref:sdsStreams)
      - [Stream Metadata and Tags](xref:sdsStreamExtra)
-     - [Sds Views](xref:sdsViews)
+     - [Stream Views](xref:sdsViews)
      - [Indexes](xref:sdsIndexes)
      - [Units of Measure](xref:unitsOfMeasure)
      - [Reading Data](xref:sdsReadingData)

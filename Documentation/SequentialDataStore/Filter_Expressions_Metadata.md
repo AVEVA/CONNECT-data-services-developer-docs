@@ -38,9 +38,9 @@ filter expression:
 
 |Example                                      |Result                                                           |
 |---------------------------------------------|-----------------------------------------------------------------|
-|``endswith(Name, 'xyz')``                  |True if ``Name`` ends with the string ‘xyz’                |
-|``startswith(Id, 'abc')``                 |True if ``Id`` starts with the string ‘abc’              |
-|``substringof('bc', Name)``                 |True if string ‘bc’ is found anywhere in ``Name``         |
+|``endswith(Name, 'xyz')``                    |True if ``Name`` ends with the string ‘xyz’                |
+|``startswith(Id, 'abc')``                    |True if ``Id`` starts with the string ‘abc’              |
+|``substringof('bc', Name)``                  |True if string ‘bc’ is found anywhere in ``Name``         |
 
 
 ## <a name="Sds_Filter_expressions_metadata_logical_operators_topic">Logical operators</a>

@@ -17,7 +17,7 @@
     <meta property="docfx:navrel" content="../../toc.html">
     <meta property="docfx:tocrel" content="../toc.html">
     
-    
+    <meta property="docfx:rel" content="../../">
     
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
@@ -55,6 +55,16 @@
           </div>
         </div>
       </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
       <div role="main" class="container body-content hide-when-search">
         
         <div class="sidenav hide-when-search">
@@ -68,7 +78,7 @@
             <article class="content wrap" id="_content" data-uid="unitsOfMeasure">
 <h1 id="units-of-measure">Units of Measure</h1>
 
-<p>The Sequential Data Store (SDS) provides a collection of built-in units of measure (Uom). These units of measure can be <a href="#associating-a-unit-of-measure-with-a-sdstype">associated</a> with SdsStreams and SdsTypes in order to provide unit information for stream data that model measurable quantities. If data has unit information associated with it, SDS is able to support unit conversions when retrieving data. See <a class="xref" href="Reading_Data.html#qireadingdatatopic">Reading data</a> for more information.</p>
+<p>The Sequential Data Store (SDS) provides a collection of built-in units of measure (Uom). These units of measure can be <a href="#associating-a-unit-of-measure-with-a-sdstype">associated</a> with SdsStreams and SdsTypes in order to provide unit information for stream data that model measurable quantities. If data has unit information associated with it, SDS is able to support unit conversions when retrieving data. See <a class="xref" href="Reading_Data.html">Reading data</a> for more information.</p>
 <p>Since a unit of measurement (i.e. meter) defines the magnitude of a quantity (i.e. Length), SDS represents this via two objects: SdsUom and SdsUomQuantity. </p>
 <h2 id="sdsuom">SdsUom</h2>
 <p>A SdsUom represents a single unit of measure, such as &#39;meter&#39;.</p>
@@ -89,7 +99,7 @@
 <td>String</td>
 <td>Required</td>
 <td>Unique identifier for the unit of measure</td>
-<td>meters_per_second</td>
+<td>meters per second</td>
 </tr>
 <tr>
 <td>Abbreviation</td>
@@ -2011,7 +2021,7 @@
 <pre><code>    Task&lt;IEnumerable&lt;SdsUom&gt;&gt; GetUomsAsync(int skip = 0, int count = 100);
 </code></pre><hr>
 <h2 id="associating-a-unit-of-measure-with-a-sdstype">Associating a unit of measure with a SdsType</h2>
-<p>At <a class="xref" href="SDS_Types.html#qitypetopic">SdsType</a> creation, a SdsUom can be associated with a <a class="xref" href="SDS_Types.html#sdstypeproperty">SdsTypeProperty</a>. </p>
+<p>At <a class="xref" href="SDS_Types.html">SdsType</a> creation, a SdsUom can be associated with a <a class="xref" href="SDS_Types.html#sdstypeproperty">SdsTypeProperty</a>. </p>
 <h2 id="associating-a-unit-of-measure-with-a-sdsstream">Associating a unit of measure with a SdsStream</h2>
 <p>At <a class="xref" href="SDS_Streams.html">SdsStream</a> creation, you can override any unit of measure associated with a SdsTypeProperty belonging to the SdsType of the stream. This enables the reuse of a SdsType that may have default unit information associated with it already.</p>
 </article>

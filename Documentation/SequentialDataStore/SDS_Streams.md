@@ -211,7 +211,7 @@ for information about specifying those respective parameters.
 
 ``string orderby``
   An optional parameter representing sorted order which SdsStreams will be returned. The sorting is based on the stored values for a given
-  field (of type string). For example, ``orderby=name`` would sort the returned results by the name values (ascending by default). 
+  field (of type string). For example, ``orderby=name`` would sort the returned results by the ``name`` values (ascending by default). 
   Additionally, a value can be provided after the provided field name to identify whether to sort ascending or descending, by 
   using values ``asc`` or ``desc``, respectively.
   For example, ``orderby=name desc`` would sort the returned results by the ``name`` values, descending.

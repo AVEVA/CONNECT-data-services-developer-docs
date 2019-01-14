@@ -169,7 +169,7 @@ Returns the specified stream.
 Returns a list of streams.
 
 If specifying the optional search parameter or optional filter parameter, the list of streams returned are filtered to match 
-the search/filter criteria. If the neither parameter is specified, the list includes all streams 
+the search/filter criteria. If neither parameter is specified, the list includes all streams 
 in the Namespace. See [Searching](xref:sdsSearching) 
 and [Filter Expressions: Metadata Objects](xref:sdsFilterExpressionsMetadata)  
 for information about specifying those respective parameters.
@@ -204,7 +204,6 @@ for information about specifying those respective parameters.
 ``int count``  
   An optional parameter representing the maximum number of SdsStreams to retrieve. 
   If not specified, a default value of 100 is used.
-
 ``string orderby``
   An optional parameter representing sorted order which SdsStreams will be returned. The sorting is based on the stored values for a given
   field (of type string). For example, ``orderby=name`` would sort the returned results by the ``name`` values (ascending by default). 

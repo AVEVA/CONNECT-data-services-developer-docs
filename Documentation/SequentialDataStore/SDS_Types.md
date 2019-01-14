@@ -905,7 +905,7 @@ The response includes a status code and a response body.
 Returns a list of types within a given namespace.
 
 If specifying the optional search parameter or optional filter parameter, the list of types returned are filtered to match 
-the search/filter criteria. If the neither parameter is specified, the list includes all types 
+the search/filter criteria. If neither parameter is specified, the list includes all types 
 in the Namespace. See [Searching](xref:sdsSearching) 
 and [Filter Expressions: Metadata Objects](xref:sdsFilterExpressionsMetadata) 
 for information about specifying those respective parameters.
@@ -934,8 +934,7 @@ topic for information about specifying the filter parameter.
   An optional value representing the zero-based offset of the first SdsType to retrieve. If not specified, 
 a default value of 0 is used.
 
-``int count``  
-An optional value representing the maximum number of SdsTypes to retrieve. If not specified, a default value of 100 is used.
+``int count``  n optional value representing the maximum number of SdsTypes to retrieve. If not specified, a default value of 100 is used.
 
 ``string orderby``  
 An optional parameter representing sorted order which SdsTypes will be returned. The sorting is based on the stored values for a given

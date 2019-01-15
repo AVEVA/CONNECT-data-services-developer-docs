@@ -9,7 +9,7 @@ A Publisher is a logical construct which is used by OSIsoft Cloud Services (OCS)
 and categorize OSIsoft Message Format (OMF) messages. After creating a publisher using the API, 
 a user can then generate a security token for that publisher. The token must be added to the headers 
 of OMF messages that are sent to OCS. If a publisher is deleted, all security tokens generated 
-for the Publisher become invalid. Individual tokens can also be deleted to make them invalid.
+for the Publisher become invalid. Individual tokens can be deleted as needed.
 
 The API calls in this section are all used to manage publishers.
 
@@ -244,7 +244,7 @@ A Publisher object.
 ``PUT api/tenants/{tenantId}/publishers/{publisherId}/tokens``
 --------------------------------------------
 
-Create or undelete a token. If the token object provided does not have a tokenId, a new token is created.
+Create or restore a token. If the token object provided does not have a tokenId, a new token is created.
 Otherwise, specify the id of an existing deleted token that isn't expired, and it will be undeleted.
 
 **Parameters**

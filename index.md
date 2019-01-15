@@ -43,7 +43,7 @@ easily obtain needed information.
      - [Writing Data](xref:sdsWritingData)
      - [Writing Data API](xref:sdsWritingDataApi)
      - [Compression](xref:sdsCompression)
-     - [Searching for Streams](xref:sdsSearching)
+     - [Searching](xref:sdsSearching)
      - [Filter Expressions - Data](xref:sdsFilterExpressions)
      - [Filter Expressions - Metadata Objects](xref:sdsFilterExpressionsMetadata)
      - [Table Format](xref:sdsTableFormat)

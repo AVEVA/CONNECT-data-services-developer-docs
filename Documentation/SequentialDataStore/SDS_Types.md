@@ -934,12 +934,13 @@ topic for information about specifying the filter parameter.
   An optional value representing the zero-based offset of the first SdsType to retrieve. If not specified, 
 a default value of 0 is used.
 
-``int count``  n optional value representing the maximum number of SdsTypes to retrieve. If not specified, a default value of 100 is used.
+``int count``  
+An optional value representing the maximum number of SdsTypes to retrieve. If not specified, a default value of 100 is used.
 
 ``string orderby``  
-An optional parameter representing sorted order which SdsTypes will be returned. The sorting is based on the stored values for a given
+An optional parameter representing sorted order which SdsTypes will be returned. A field name is required. The sorting is based on the stored values for the given
   field (of type string). For example, ``orderby=name`` would sort the returned results by the ``name`` values (ascending by default). 
-  Additionally, a value can be provided after the provided field name to identify whether to sort ascending or descending, by 
+  Additionally, a value can be provided along with the field name to identify whether to sort ascending or descending, by 
   using values ``asc`` or ``desc``, respectively.
   For example, ``orderby=name desc`` would sort the returned results by the ``name`` values, descending.
   If no value is specified, there is no sorting of results.

@@ -2,7 +2,7 @@
 uid: index
 ---
 
-Welcome to the OCS API Documentation
+OCS API
 =======
 
 OSIsoft Cloud Services (OCS) is a highly flexible cloud-based platform that provides scalable, elastic,  

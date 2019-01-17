@@ -164,7 +164,7 @@ to be added to the Data Store independently.</p>
 <li>Can contain spaces</li>
 <li>Cannot begin with two underscores (&quot;__&quot;)</li>
 <li>Cannot contain forward slash or backslash characters (&quot;/&quot; or &quot;\&quot;)</li>
-<li>Can contain a maximum of 260 characters</li>
+<li>Can contain a maximum of 100 characters</li>
 <li>Cannot start or end with a period.</li>
 <li>Cannot contain consecutive periods.</li>
 <li>Cannot consist of only periods.</li>
@@ -1658,21 +1658,27 @@ defines the available functions. See Types_ for general SdsType information.</p>
 <h2 id="get-types"><code>Get Types</code></h2>
 <p>Returns a list of types within a given namespace.</p>
 <p>If specifying the optional search parameter or optional filter parameter, the list of types returned are filtered to match 
-the search/filter criteria. If the neither parameter is specified, the list includes all types 
-in the Namespace. See <a class="xref" href="Searching.html#searching">Searching</a> 
+the search/filter criteria. If neither parameter is specified, the list includes all types 
+in the Namespace. See <a class="xref" href="Searching.html">Searching</a> 
 and <a class="xref" href="Filter_Expressions_Metadata.html">Filter Expressions: Metadata Objects</a> 
 for information about specifying those respective parameters.</p>
 <p><strong>Request</strong></p>
-<pre><code>    GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Types?query={query}&amp;filter={filter}&amp;skip={skip}&amp;count={count}
+<pre><code>    GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/Types?query={query}&amp;filter={filter}&amp;skip={skip}&amp;count={count}&amp;orderby={orderby}
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
-<p><code>string query</code><br>An optional query string to match which SdsTypes will be returned.  See the <a class="xref" href="Searching.html#searching">Searching</a> topic for information about specifying the query parameter.</p>
+<p><code>string query</code><br>An optional query string to match which SdsTypes will be returned.  See the <a class="xref" href="Searching.html">Searching</a> topic for information about specifying the query parameter.</p>
 <p><code>string filter</code><br>An optional filter string to match which SdsTypes will be returned.  See the <a class="xref" href="Filter_Expressions_Metadata.html">Filter Expressions: Metadata Objects</a> 
 topic for information about specifying the filter parameter.</p>
 <p><code>int skip</code><br>  An optional value representing the zero-based offset of the first SdsType to retrieve. If not specified, 
 a default value of 0 is used.</p>
 <p><code>int count</code><br>An optional value representing the maximum number of SdsTypes to retrieve. If not specified, a default value of 100 is used.</p>
+<p><code>string orderby</code><br>An optional parameter representing sorted order which SdsTypes will be returned. A field name is required. The sorting is based on the stored values for the given
+  field (of type string). For example, <code>orderby=name</code> would sort the returned results by the <code>name</code> values (ascending by default). 
+  Additionally, a value can be provided along with the field name to identify whether to sort ascending or descending, by 
+  using values <code>asc</code> or <code>desc</code>, respectively.
+  For example, <code>orderby=name desc</code> would sort the returned results by the <code>name</code> values, descending.
+  If no value is specified, there is no sorting of results.</p>
 <p><strong>Response</strong></p>
 <p>  The response includes a status code and a response body.</p>
 <p><strong>Response body</strong></p>

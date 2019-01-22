@@ -166,7 +166,7 @@ Response
             },
             {  
                "Name":"State",
-               "Type":"Object"
+               "Type":"Int32Enum"
             },
             {  
                "Name":"Measurement",
@@ -248,7 +248,7 @@ Response
             },
             {  
                "Name":"State",
-               "Type":"Object"
+               "Type":"Int32Enum"
             },
             {  
                "Name":"Measurement",

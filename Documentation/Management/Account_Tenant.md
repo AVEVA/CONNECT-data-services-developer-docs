@@ -44,7 +44,7 @@ Retrieves a specific `Tenant` by ID.
 
 ### Http
 
-`GET api/Tenants/{tenantId}`
+`GET api/v1-preview/Tenants/{tenantId}`
 
 ### Parameters
 
@@ -76,7 +76,7 @@ Checks if a `Tenant` with a specific ID exists.
 
 ### Http
 
-`HEAD api/Tenants/{tenantId}`
+`HEAD api/v1-preview/Tenants/{tenantId}`
 
 ### Parameters
 
@@ -108,7 +108,7 @@ Updates a specified `Tenant` object.
 
 ### Http
 
-`PUT api/Tenants/{tenantId}`
+`PUT api/v1-preview/Tenants/{tenantId}`
 
 ### Parameters
 
@@ -118,6 +118,7 @@ string tenantId
 ```
 
 The identifier of the `Tenant` to update.
+
 ```csharp
 [Required]
 [FromBody]
@@ -138,6 +139,112 @@ Authorized for Account Administrators of the specified `Tenant`.
 | 200 | Tenant | Returns the updated `Tenant`. | 
 | 400 | Nothing is returned | Could not update the `Tenant` due to missing or invalid input. | 
 | 403 | Nothing is returned | Unauthorized to update the specified `Tenant`. | 
+
+
+***
+## `GetTenantIcon()`
+
+Returns an icon specified by its `Tenant` ID.
+
+### Http
+
+`GET api/v1-preview/Tenants/{tenantId}/Icon`
+
+
+### Parameters
+
+```csharp
+[Required]
+string tenantId
+```
+
+The identifier of the `Tenant` for this request.
+
+
+### Security
+
+Authorized for Account Members of the specified `Tenant`.
+
+### Returns
+
+| Status Code | Return Type | Description | 
+ | --- | --- | ---  | 
+| 200 | string | Returns the Base64 encoded PNG icon string of the specified `Tenant`. | 
+| 400 | Nothing is returned | Could not retrieve the `Tenant` icon due to missing or invalid input. | 
+| 403 | Nothing is returned | Unauthorized to retrieve the specified `Tenant` icon. | 
+
+
+***
+## `CreateOrUpdateTenantIcon()`
+
+Creates or updates the icon for a `Tenant`. Note that the icon size must be less than 65536 bytes.
+
+### Http
+
+`PUT api/v1-preview/Tenants/{tenantId}/Icon`
+
+
+### Parameters
+
+```csharp
+[Required]
+string tenantId
+```
+
+The `Tenant` identifier for this request.
+```csharp
+[Required]
+[FromBody]
+string icon
+```
+
+The Base64 encoded PNG icon for the `Tenant`.
+
+
+### Security
+
+Authorized for Account Administrators of the specified `Tenant`.
+
+### Returns
+
+| Status Code | Return Type | Description | 
+ | --- | --- | ---  | 
+| 200 | string | Returns the new/updated Base64 encoded PNG icon string specified in the request. | 
+| 400 | Nothing is returned | Could not create/update the `Tenant` icon due to missing or invalid input. | 
+| 403 | Nothing is returned | Unauthorized to create/update the specified `Tenant` icon. | 
+
+
+***
+## `DeleteTenantIcon()`
+
+Deletes the icon for a `Tenant`.
+
+### Http
+
+`DELETE api/v1-preview/Tenants/{tenantId}/Icon`
+
+
+### Parameters
+
+```csharp
+[Required]
+string tenantId
+```
+
+The `Tenant` identifier for this request
+
+
+### Security
+
+Authorized for Account Administrators of the specified `Tenant`.
+
+### Returns
+
+| Status Code | Return Type | Description | 
+ | --- | --- | ---  | 
+| 204 | string | The `Tenant` icon was deleted. | 
+| 400 | Nothing is returned | Could not delete the `Tenant` icon due to missing or invalid input. | 
+| 403 | Nothing is returned | Unauthorized to delete the specified `Tenant` icon. | 
 
 
 ***

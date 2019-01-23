@@ -47,7 +47,7 @@ Retrieves an account `Role` based on the specified account Id and role Id.
 
 ### Http
 
-`GET api/Tenants/{tenantId}/Roles/{roleId}`
+`GET api/v1-preview/Tenants/{tenantId}/Roles/{roleId}`
 
 ### Parameters
 
@@ -85,7 +85,7 @@ Retrieves all account `Roles` for the specified Account Id.
 
 ### Http
 
-`GET api/Tenants/{tenantId}/Roles`
+`GET api/v1-preview/Tenants/{tenantId}/Roles`
 
 ### Parameters
 
@@ -127,7 +127,7 @@ Creates a new account `Role`.
 
 ### Http
 
-`POST api/Tenants/{tenantId}/Roles`
+`POST api/v1-preview/Tenants/{tenantId}/Roles`
 
 ### Parameters
 
@@ -166,7 +166,7 @@ Updates a `Role` by its Role Id.
 
 ### Http
 
-`PUT api/Tenants/{tenantId}/Roles/{roleId}`
+`PUT api/v1-preview/Tenants/{tenantId}/Roles/{roleId}`
 
 ### Parameters
 
@@ -211,7 +211,7 @@ Deletes any Account scoped, non built-in `Role` by its Role Id.
 
 ### Http
 
-`DELETE api/Tenants/{tenantId}/Roles/{roleId}`
+`DELETE api/v1-preview/Tenants/{tenantId}/Roles/{roleId}`
 
 ### Parameters
 

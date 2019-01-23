@@ -14,7 +14,7 @@ Returns blog entries ordered by time posted.
 
 ### Http
 
-`GET api/ServiceBlog/Entries`
+`GET api/v1-preview/ServiceBlog/Entries`
 
 ### Parameters
 

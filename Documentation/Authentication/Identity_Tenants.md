@@ -331,7 +331,7 @@ New `ClientCredentialClientCreateDto <ClientCredentialClientCreateDto>` object
   "Name": "String",
   "Enabled": true,
   "SecretDescription": "String",
-  "SecretExpirationDate": "2019-01-23T11:20:51.5088417-08:00",
+  "SecretExpirationDate": "2019-01-23T15:19:32.6885904-08:00",
   "AllowOfflineAccess": true,
   "AllowAccessTokensViaBrowser": true,
   "ClientUri": "String",
@@ -355,7 +355,7 @@ Success. Returns OSIsoft.Identity.Common.Models.ClientResponseDto
   "Name": "String",
   "ClientId": "String",
   "ClientSecret": "String",
-  "SecretExpirationDate": "2019-01-23T11:20:51.5219785-08:00",
+  "SecretExpirationDate": "2019-01-23T15:19:32.7028422-08:00",
   "SecretDescription": "String",
   "SecretId": 3600
 }
@@ -408,7 +408,7 @@ New `ClientCredentialClientCreateDto <ClientCredentialClientCreateDto>` object
   "Name": "String",
   "Enabled": true,
   "SecretDescription": "String",
-  "SecretExpirationDate": "2019-01-23T11:20:51.5268468-08:00",
+  "SecretExpirationDate": "2019-01-23T15:19:32.7070234-08:00",
   "AllowOfflineAccess": true,
   "AllowAccessTokensViaBrowser": true,
   "ClientUri": "String",
@@ -432,7 +432,7 @@ Success. Returns OSIsoft.Identity.Common.Models.ClientResponseDto
   "Name": "String",
   "ClientId": "String",
   "ClientSecret": "String",
-  "SecretExpirationDate": "2019-01-23T11:20:51.5270058-08:00",
+  "SecretExpirationDate": "2019-01-23T15:19:32.7072177-08:00",
   "SecretDescription": "String",
   "SecretId": 3600
 }
@@ -493,7 +493,7 @@ New `ImplicitClientCreateDto <ImplicitClientCreateDto>` object
   "Name": "String",
   "Enabled": true,
   "SecretDescription": "String",
-  "SecretExpirationDate": "2019-01-23T11:20:51.5284696-08:00",
+  "SecretExpirationDate": "2019-01-23T15:19:32.7095172-08:00",
   "AllowOfflineAccess": true,
   "AllowAccessTokensViaBrowser": true,
   "ClientUri": "String",
@@ -517,7 +517,7 @@ Success. Returns OSIsoft.Identity.Common.Models.ClientResponseDto
   "Name": "String",
   "ClientId": "String",
   "ClientSecret": "String",
-  "SecretExpirationDate": "2019-01-23T11:20:51.5313906-08:00",
+  "SecretExpirationDate": "2019-01-23T15:19:32.7141142-08:00",
   "SecretDescription": "String",
   "SecretId": 3600
 }
@@ -578,7 +578,7 @@ New `HybridClientCreateDto <HybridClientCreateDto>` object
   "Name": "String",
   "Enabled": true,
   "SecretDescription": "String",
-  "SecretExpirationDate": "2019-01-23T11:20:51.5329072-08:00",
+  "SecretExpirationDate": "2019-01-23T15:19:32.7167388-08:00",
   "AllowOfflineAccess": true,
   "AllowAccessTokensViaBrowser": true,
   "ClientUri": "String",
@@ -602,7 +602,7 @@ Success. Returns OSIsoft.Identity.Common.Models.ClientResponseDto
   "Name": "String",
   "ClientId": "String",
   "ClientSecret": "String",
-  "SecretExpirationDate": "2019-01-23T11:20:51.5361957-08:00",
+  "SecretExpirationDate": "2019-01-23T15:19:32.7211536-08:00",
   "SecretDescription": "String",
   "SecretId": 3600
 }
@@ -747,7 +747,7 @@ Success. Returns OSIsoft.Identity.Common.Models.ClientResponseDto
   "Name": "String",
   "ClientId": "String",
   "ClientSecret": "String",
-  "SecretExpirationDate": "2019-01-23T11:20:51.5366432-08:00",
+  "SecretExpirationDate": "2019-01-23T15:19:32.7218807-08:00",
   "SecretDescription": "String",
   "SecretId": 3600
 }
@@ -1039,7 +1039,7 @@ Success. Returns System.Collections.Generic.List`1[OSIsoft.Identity.Common.Model
   "Id": 0,
   "Description": "String",
   "Value": "String",
-  "Expiration": "2019-01-23T11:20:51.5463053-08:00",
+  "Expiration": "2019-01-23T15:19:32.7340244-08:00",
   "Type": "String"
 }
 ]
@@ -1101,7 +1101,7 @@ Success. Returns OSIsoft.Identity.Common.Models.Secret
   "Id": 0,
   "Description": "String",
   "Value": "String",
-  "Expiration": "2019-01-23T11:20:51.5487532-08:00",
+  "Expiration": "2019-01-23T15:19:32.7364261-08:00",
   "Type": "String"
 }
 ```
@@ -1147,7 +1147,7 @@ ClientSecretDto clientSecretDto [FromBody] [Required] [No-Default]
 
 ```json
 {
-  "Expiration": "2019-01-23T11:20:51.5491246-08:00",
+  "Expiration": "2019-01-23T15:19:32.7369303-08:00",
   "Description": "String"
 }
 ```
@@ -1169,7 +1169,7 @@ Success. Returns System.Collections.Generic.List`1[OSIsoft.Identity.Common.Model
   "Id": 0,
   "Description": "String",
   "Value": "String",
-  "Expiration": "2019-01-23T11:20:51.5506746-08:00",
+  "Expiration": "2019-01-23T15:19:32.7387707-08:00",
   "Type": "String"
 }
 ]
@@ -1222,7 +1222,7 @@ ClientSecretDto secretUpdate [FromBody] [Required] [No-Default]
 secretId
 ```json
 {
-  "Expiration": "2019-01-23T11:20:51.5508732-08:00",
+  "Expiration": "2019-01-23T15:19:32.7391364-08:00",
   "Description": "String"
 }
 ```
@@ -1243,7 +1243,7 @@ Success. Returns OSIsoft.Identity.Common.Models.Secret
   "Id": 0,
   "Description": "String",
   "Value": "String",
-  "Expiration": "2019-01-23T11:20:51.5509878-08:00",
+  "Expiration": "2019-01-23T15:19:32.7393257-08:00",
   "Type": "String"
 }
 ```
@@ -1310,7 +1310,7 @@ Success. Returns System.Collections.Generic.List`1[OSIsoft.Identity.Common.Model
   "Id": 0,
   "Description": "String",
   "Value": "String",
-  "Expiration": "2019-01-23T11:20:51.5514773-08:00",
+  "Expiration": "2019-01-23T15:19:32.7397989-08:00",
   "Type": "String"
 }
 ]
@@ -1583,13 +1583,45 @@ Success. Returns OSIsoft.Identity.Common.Models.Invitation
 ```json
 {
   "Id": "String",
-  "Issued": "0001-01-01T00:00:00",
-  "Expires": "0001-01-01T00:00:00",
+  "Issued": "2019-01-23T15:19:32.7505646-08:00",
+  "Expires": "2019-01-23T15:19:32.7506454-08:00",
   "State": 0,
   "TenantId": "String",
-  "Tenant": null,
+  "Tenant": {
+    "Id": "String",
+    "DisplayName": "String",
+    "Alias": "String",
+    "State": "String",
+    "AzureAdTenantId": "String",
+    "IsCloudConnectCustomer": false
+  },
   "UserId": "String",
-  "User": null
+  "User": {
+    "Id": "String",
+    "GivenName": "String",
+    "Surname": "String",
+    "Name": "String",
+    "Email": "String",
+    "ContactEmail": "String",
+    "ContactGivenName": "String",
+    "ContactSurname": "String",
+    "ExternalUserId": "String",
+    "Preferences": "String",
+    "Tenant": {
+      "Id": "String",
+      "DisplayName": "String",
+      "Alias": "String",
+      "State": "String",
+      "AzureAdTenantId": "String",
+      "IsCloudConnectCustomer": false
+    },
+    "IdentityProvider": {
+      "Id": "String",
+      "DisplayName": "String",
+      "Scheme": "String",
+      "UserIdClaimType": "String"
+    }
+  }
 }
 ```
 
@@ -1660,13 +1692,45 @@ Success. Returns System.Collections.Generic.List`1[OSIsoft.Identity.Common.Model
 [
 {
   "Id": "String",
-  "Issued": "0001-01-01T00:00:00",
-  "Expires": "0001-01-01T00:00:00",
+  "Issued": "2019-01-23T15:21:15.7206593-08:00",
+  "Expires": "2019-01-23T15:21:15.7207658-08:00",
   "State": 0,
   "TenantId": "String",
-  "Tenant": null,
+  "Tenant": {
+    "Id": "String",
+    "DisplayName": "String",
+    "Alias": "String",
+    "State": "String",
+    "AzureAdTenantId": "String",
+    "IsCloudConnectCustomer": false
+  },
   "UserId": "String",
-  "User": null
+  "User": {
+    "Id": "String",
+    "GivenName": "String",
+    "Surname": "String",
+    "Name": "String",
+    "Email": "String",
+    "ContactEmail": "String",
+    "ContactGivenName": "String",
+    "ContactSurname": "String",
+    "ExternalUserId": "String",
+    "Preferences": "String",
+    "Tenant": {
+      "Id": "String",
+      "DisplayName": "String",
+      "Alias": "String",
+      "State": "String",
+      "AzureAdTenantId": "String",
+      "IsCloudConnectCustomer": false
+    },
+    "IdentityProvider": {
+      "Id": "String",
+      "DisplayName": "String",
+      "Scheme": "String",
+      "UserIdClaimType": "String"
+    }
+  }
 }
 ]
 ```
@@ -1712,7 +1776,7 @@ InvitationUpdateDto invitationUpdateDto [FromBody] [Required] [No-Default]
 New InvitationUpdateDto object
 ```json
 {
-  "ExpiresDateTime": "2019-01-23T11:20:51.5610572-08:00",
+  "ExpiresDateTime": "2019-01-23T15:21:34.6658249-08:00",
   "State": 0
 }
 ```
@@ -1731,13 +1795,45 @@ Success. Returns OSIsoft.Identity.Common.Models.Invitation
 ```json
 {
   "Id": "String",
-  "Issued": "0001-01-01T00:00:00",
-  "Expires": "0001-01-01T00:00:00",
+  "Issued": "2019-01-23T15:21:47.3328051-08:00",
+  "Expires": "2019-01-23T15:21:47.3328086-08:00",
   "State": 0,
   "TenantId": "String",
-  "Tenant": null,
+  "Tenant": {
+    "Id": "String",
+    "DisplayName": "String",
+    "Alias": "String",
+    "State": "String",
+    "AzureAdTenantId": "String",
+    "IsCloudConnectCustomer": false
+  },
   "UserId": "String",
-  "User": null
+  "User": {
+    "Id": "String",
+    "GivenName": "String",
+    "Surname": "String",
+    "Name": "String",
+    "Email": "String",
+    "ContactEmail": "String",
+    "ContactGivenName": "String",
+    "ContactSurname": "String",
+    "ExternalUserId": "String",
+    "Preferences": "String",
+    "Tenant": {
+      "Id": "String",
+      "DisplayName": "String",
+      "Alias": "String",
+      "State": "String",
+      "AzureAdTenantId": "String",
+      "IsCloudConnectCustomer": false
+    },
+    "IdentityProvider": {
+      "Id": "String",
+      "DisplayName": "String",
+      "Scheme": "String",
+      "UserIdClaimType": "String"
+    }
+  }
 }
 ```
 
@@ -1857,8 +1953,20 @@ Success.. Returns System.Collections.Generic.List`1[OSIsoft.Identity.Common.Mode
   "ContactSurname": "String",
   "ExternalUserId": "String",
   "Preferences": "String",
-  "Tenant": null,
-  "IdentityProvider": null
+  "Tenant": {
+    "Id": "String",
+    "DisplayName": "String",
+    "Alias": "String",
+    "State": "String",
+    "AzureAdTenantId": "String",
+    "IsCloudConnectCustomer": false
+  },
+  "IdentityProvider": {
+    "Id": "String",
+    "DisplayName": "String",
+    "Scheme": "String",
+    "UserIdClaimType": "String"
+  }
 }
 ]
 ```
@@ -1944,8 +2052,20 @@ Success.. Returns System.Collections.Generic.IList`1[OSIsoft.Identity.Common.Mod
   "ContactSurname": "String",
   "ExternalUserId": "String",
   "Preferences": "String",
-  "Tenant": null,
-  "IdentityProvider": null
+  "Tenant": {
+    "Id": "String",
+    "DisplayName": "String",
+    "Alias": "String",
+    "State": "String",
+    "AzureAdTenantId": "String",
+    "IsCloudConnectCustomer": false
+  },
+  "IdentityProvider": {
+    "Id": "String",
+    "DisplayName": "String",
+    "Scheme": "String",
+    "UserIdClaimType": "String"
+  }
 }
 ]
 ```
@@ -2022,7 +2142,32 @@ Success.. Returns System.Collections.Generic.List`1[OSIsoft.Identity.Common.Mode
 [
 {
   "InvitationStatus": 0,
-  "User": null
+  "User": {
+    "Id": "String",
+    "GivenName": "String",
+    "Surname": "String",
+    "Name": "String",
+    "Email": "String",
+    "ContactEmail": "String",
+    "ContactGivenName": "String",
+    "ContactSurname": "String",
+    "ExternalUserId": "String",
+    "Preferences": "String",
+    "Tenant": {
+      "Id": "String",
+      "DisplayName": "String",
+      "Alias": "String",
+      "State": "String",
+      "AzureAdTenantId": "String",
+      "IsCloudConnectCustomer": false
+    },
+    "IdentityProvider": {
+      "Id": "String",
+      "DisplayName": "String",
+      "Scheme": "String",
+      "UserIdClaimType": "String"
+    }
+  }
 }
 ]
 ```
@@ -2089,8 +2234,20 @@ Success. Returns OSIsoft.Identity.Common.Models.User
   "ContactSurname": "String",
   "ExternalUserId": "String",
   "Preferences": "String",
-  "Tenant": null,
-  "IdentityProvider": null
+  "Tenant": {
+    "Id": "String",
+    "DisplayName": "String",
+    "Alias": "String",
+    "State": "String",
+    "AzureAdTenantId": "String",
+    "IsCloudConnectCustomer": false
+  },
+  "IdentityProvider": {
+    "Id": "String",
+    "DisplayName": "String",
+    "Scheme": "String",
+    "UserIdClaimType": "String"
+  }
 }
 ```
 
@@ -2152,7 +2309,32 @@ Success. Returns OSIsoft.Identity.Common.Models.UserStatusDto
 ```json
 {
   "InvitationStatus": 0,
-  "User": null
+  "User": {
+    "Id": "String",
+    "GivenName": "String",
+    "Surname": "String",
+    "Name": "String",
+    "Email": "String",
+    "ContactEmail": "String",
+    "ContactGivenName": "String",
+    "ContactSurname": "String",
+    "ExternalUserId": "String",
+    "Preferences": "String",
+    "Tenant": {
+      "Id": "String",
+      "DisplayName": "String",
+      "Alias": "String",
+      "State": "String",
+      "AzureAdTenantId": "String",
+      "IsCloudConnectCustomer": false
+    },
+    "IdentityProvider": {
+      "Id": "String",
+      "DisplayName": "String",
+      "Scheme": "String",
+      "UserIdClaimType": "String"
+    }
+  }
 }
 ```
 
@@ -2338,7 +2520,7 @@ User data transfer object
     "string2"
   ],
   "CreateInvitation": true,
-  "InvitationExpiresDateTime": "2019-01-23T11:20:51.5765879-08:00"
+  "InvitationExpiresDateTime": "2019-01-23T15:22:40.0826132-08:00"
 }
 ```
 
@@ -2365,8 +2547,20 @@ Created. Returns OSIsoft.Identity.Common.Models.User
   "ContactSurname": "String",
   "ExternalUserId": "String",
   "Preferences": "String",
-  "Tenant": null,
-  "IdentityProvider": null
+  "Tenant": {
+    "Id": "String",
+    "DisplayName": "String",
+    "Alias": "String",
+    "State": "String",
+    "AzureAdTenantId": "String",
+    "IsCloudConnectCustomer": false
+  },
+  "IdentityProvider": {
+    "Id": "String",
+    "DisplayName": "String",
+    "Scheme": "String",
+    "UserIdClaimType": "String"
+  }
 }
 ```
 
@@ -2429,7 +2623,7 @@ User data transfer object
     "string2"
   ],
   "CreateInvitation": true,
-  "InvitationExpiresDateTime": "2019-01-23T11:20:51.5808222-08:00"
+  "InvitationExpiresDateTime": "2019-01-23T15:22:40.4976386-08:00"
 }
 ```
 
@@ -2456,8 +2650,20 @@ Created. Returns OSIsoft.Identity.Common.Models.User
   "ContactSurname": "String",
   "ExternalUserId": "String",
   "Preferences": "String",
-  "Tenant": null,
-  "IdentityProvider": null
+  "Tenant": {
+    "Id": "String",
+    "DisplayName": "String",
+    "Alias": "String",
+    "State": "String",
+    "AzureAdTenantId": "String",
+    "IsCloudConnectCustomer": false
+  },
+  "IdentityProvider": {
+    "Id": "String",
+    "DisplayName": "String",
+    "Scheme": "String",
+    "UserIdClaimType": "String"
+  }
 }
 ```
 
@@ -2551,8 +2757,20 @@ Updated. Returns OSIsoft.Identity.Common.Models.User
   "ContactSurname": "String",
   "ExternalUserId": "String",
   "Preferences": "String",
-  "Tenant": null,
-  "IdentityProvider": null
+  "Tenant": {
+    "Id": "String",
+    "DisplayName": "String",
+    "Alias": "String",
+    "State": "String",
+    "AzureAdTenantId": "String",
+    "IsCloudConnectCustomer": false
+  },
+  "IdentityProvider": {
+    "Id": "String",
+    "DisplayName": "String",
+    "Scheme": "String",
+    "UserIdClaimType": "String"
+  }
 }
 ```
 
@@ -2661,13 +2879,45 @@ Success. Returns OSIsoft.Identity.Common.Models.Invitation
 ```json
 {
   "Id": "String",
-  "Issued": "0001-01-01T00:00:00",
-  "Expires": "0001-01-01T00:00:00",
+  "Issued": "2019-01-23T15:22:41.4752815-08:00",
+  "Expires": "2019-01-23T15:22:41.4752861-08:00",
   "State": 0,
   "TenantId": "String",
-  "Tenant": null,
+  "Tenant": {
+    "Id": "String",
+    "DisplayName": "String",
+    "Alias": "String",
+    "State": "String",
+    "AzureAdTenantId": "String",
+    "IsCloudConnectCustomer": false
+  },
   "UserId": "String",
-  "User": null
+  "User": {
+    "Id": "String",
+    "GivenName": "String",
+    "Surname": "String",
+    "Name": "String",
+    "Email": "String",
+    "ContactEmail": "String",
+    "ContactGivenName": "String",
+    "ContactSurname": "String",
+    "ExternalUserId": "String",
+    "Preferences": "String",
+    "Tenant": {
+      "Id": "String",
+      "DisplayName": "String",
+      "Alias": "String",
+      "State": "String",
+      "AzureAdTenantId": "String",
+      "IsCloudConnectCustomer": false
+    },
+    "IdentityProvider": {
+      "Id": "String",
+      "DisplayName": "String",
+      "Scheme": "String",
+      "UserIdClaimType": "String"
+    }
+  }
 }
 ```
 
@@ -2712,7 +2962,7 @@ InvitationCreateDto invitationCreateDto [FromBody] [Required] [No-Default]
 InvitationCreateDto object
 ```json
 {
-  "ExpiresDateTime": "2019-01-23T11:20:51.5850935-08:00",
+  "ExpiresDateTime": "2019-01-23T15:22:41.6684353-08:00",
   "DeleteExisting": true,
   "SendInvitation": true
 }
@@ -2732,13 +2982,45 @@ Created. Returns OSIsoft.Identity.Common.Models.Invitation
 ```json
 {
   "Id": "String",
-  "Issued": "0001-01-01T00:00:00",
-  "Expires": "0001-01-01T00:00:00",
+  "Issued": "2019-01-23T15:22:41.8392593-08:00",
+  "Expires": "2019-01-23T15:22:41.8392635-08:00",
   "State": 0,
   "TenantId": "String",
-  "Tenant": null,
+  "Tenant": {
+    "Id": "String",
+    "DisplayName": "String",
+    "Alias": "String",
+    "State": "String",
+    "AzureAdTenantId": "String",
+    "IsCloudConnectCustomer": false
+  },
   "UserId": "String",
-  "User": null
+  "User": {
+    "Id": "String",
+    "GivenName": "String",
+    "Surname": "String",
+    "Name": "String",
+    "Email": "String",
+    "ContactEmail": "String",
+    "ContactGivenName": "String",
+    "ContactSurname": "String",
+    "ExternalUserId": "String",
+    "Preferences": "String",
+    "Tenant": {
+      "Id": "String",
+      "DisplayName": "String",
+      "Alias": "String",
+      "State": "String",
+      "AzureAdTenantId": "String",
+      "IsCloudConnectCustomer": false
+    },
+    "IdentityProvider": {
+      "Id": "String",
+      "DisplayName": "String",
+      "Scheme": "String",
+      "UserIdClaimType": "String"
+    }
+  }
 }
 ```
 
@@ -2815,8 +3097,20 @@ Success. Returns OSIsoft.Identity.Common.Models.User
   "ContactSurname": "String",
   "ExternalUserId": "String",
   "Preferences": "String",
-  "Tenant": null,
-  "IdentityProvider": null
+  "Tenant": {
+    "Id": "String",
+    "DisplayName": "String",
+    "Alias": "String",
+    "State": "String",
+    "AzureAdTenantId": "String",
+    "IsCloudConnectCustomer": false
+  },
+  "IdentityProvider": {
+    "Id": "String",
+    "DisplayName": "String",
+    "Scheme": "String",
+    "UserIdClaimType": "String"
+  }
 }
 ```
 

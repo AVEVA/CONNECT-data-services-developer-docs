@@ -1,7 +1,3 @@
----
-uid: authConsent
----
-
 # Consent to OSIsoft Applications
 
 You have chosen to use your organization’s existing Azure Active Directory (Azure AD) to log in to OSIsoft Cloud Services (OCS). In order to proceed, you will need to complete the consent workflow. In this step, you will grant permissions for OSIsoft Cloud Services Identity to do the following:

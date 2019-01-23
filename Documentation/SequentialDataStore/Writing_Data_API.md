@@ -119,7 +119,8 @@ An IEnumerable of all behavior objects
 
   For HTTP requests, the values to be inserted must be formatted as a serialized JSON array of type T. JSON arrays are 
   comma-delimited lists of type T enclosed within square brackets. The following code shows a list 
-  of three WaveData events that are properly formatted for insertion. See the OCS code samples for 
+  of three WaveData events that are properly formatted for insertion. See the SDS code samples for 
+
   the complete WaveData example.
 
     	[

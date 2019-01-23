@@ -1,5 +1,5 @@
 ---
-uid: Consent
+uid: authConsent
 ---
 
 # Consent to OSIsoft Applications
@@ -15,5 +15,3 @@ Below are the next steps required to complete your OCS account provisioning:
 - Select the box "Consent on behalf of the organization" before clicking the consent button.
 
 OCS will notify the initial signup user via email once the account is ready.
-
-***

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -76,22 +76,22 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="sdsCompression">
-<h1 id="compression">Compression</h1>
+<h1 id="compression" sourcefile="Documentation/SequentialDataStore/Compression.md" sourcestartlinenumber="5" sourceendlinenumber="6">Compression</h1>
 
-<p>To more efficiently utilize network bandwidth the OCS Sequential Data Store supports compression for <a class="xref" href="Reading_Data_API.html">reading data</a> and
-<a class="xref" href="Writing_Data_API.html">writing data</a> through the REST API</p>
-<h2 id="supported-compression-schemes">Supported compression schemes</h2>
-<ul>
-<li><code>gzip</code></li>
-<li><code>deflate</code></li>
+<p sourcefile="Documentation/SequentialDataStore/Compression.md" sourcestartlinenumber="7" sourceendlinenumber="8">To more efficiently utilize network bandwidth the OCS Sequential Data Store supports compression for <a class="xref" href="Reading_Data_API.html" data-raw-source="[reading data](xref:sdsReadingDataApi)" sourcefile="Documentation/SequentialDataStore/Compression.md" sourcestartlinenumber="7" sourceendlinenumber="7">reading data</a> and
+<a class="xref" href="Writing_Data_API.html" data-raw-source="[writing data](xref:sdsWritingDataApi)" sourcefile="Documentation/SequentialDataStore/Compression.md" sourcestartlinenumber="8" sourceendlinenumber="8">writing data</a> through the REST API</p>
+<h2 id="supported-compression-schemes" sourcefile="Documentation/SequentialDataStore/Compression.md" sourcestartlinenumber="10" sourceendlinenumber="11">Supported compression schemes</h2>
+<ul sourcefile="Documentation/SequentialDataStore/Compression.md" sourcestartlinenumber="12" sourceendlinenumber="13">
+<li sourcefile="Documentation/SequentialDataStore/Compression.md" sourcestartlinenumber="12" sourceendlinenumber="12"><code>gzip</code></li>
+<li sourcefile="Documentation/SequentialDataStore/Compression.md" sourcestartlinenumber="13" sourceendlinenumber="13"><code>deflate</code></li>
 </ul>
-<h2 id="request-compression-writing-data">Request compression (writing data)</h2>
-<p>The body content of an HTTP request can be compressed using the <a href="#supported-compression-schemes">supported compression schemes</a> allowing you to send stream values to the REST API more efficiently.</p>
-<p>The <code>Content-Encoding</code> HTTP header must be used to specify the compression scheme of compressed-content requests. This header provides context to the API to properly decode the request content.</p>
-<h2 id="response-compression-reading-data">Response compression (reading data)</h2>
-<p>Compressed responses can be requested from the REST API by specifying one of the <a href="#supported-compression-schemes">supported compression schemes</a> using the <code>Accept-Encoding</code> HTTP header.</p>
-<p>Compressed responses from the REST API will include a <code>Content-Encoding</code> HTTP header indicating the compression scheme used to compress the response content.</p>
-<p><em>Note that specifying a compression scheme through the use of the</em> <code>Accept-Encoding</code> <em>HTTP header does not guarantee a compressed response. Always refer to presence and value of the</em> <code>Content-Encoding</code> <em>HTTP header of the response to properly decode the response content.</em> </p>
+<h2 id="request-compression-writing-data" sourcefile="Documentation/SequentialDataStore/Compression.md" sourcestartlinenumber="15" sourceendlinenumber="16">Request compression (writing data)</h2>
+<p sourcefile="Documentation/SequentialDataStore/Compression.md" sourcestartlinenumber="17" sourceendlinenumber="17">The body content of an HTTP request can be compressed using the <a href="#supported-compression-schemes" data-raw-source="[supported compression schemes](#supported-compression-schemes)" sourcefile="Documentation/SequentialDataStore/Compression.md" sourcestartlinenumber="17" sourceendlinenumber="17">supported compression schemes</a> allowing you to send stream values to the REST API more efficiently.</p>
+<p sourcefile="Documentation/SequentialDataStore/Compression.md" sourcestartlinenumber="19" sourceendlinenumber="19">The <code>Content-Encoding</code> HTTP header must be used to specify the compression scheme of compressed-content requests. This header provides context to the API to properly decode the request content.</p>
+<h2 id="response-compression-reading-data" sourcefile="Documentation/SequentialDataStore/Compression.md" sourcestartlinenumber="21" sourceendlinenumber="22">Response compression (reading data)</h2>
+<p sourcefile="Documentation/SequentialDataStore/Compression.md" sourcestartlinenumber="23" sourceendlinenumber="23">Compressed responses can be requested from the REST API by specifying one of the <a href="#supported-compression-schemes" data-raw-source="[supported compression schemes](#supported-compression-schemes)" sourcefile="Documentation/SequentialDataStore/Compression.md" sourcestartlinenumber="23" sourceendlinenumber="23">supported compression schemes</a> using the <code>Accept-Encoding</code> HTTP header.</p>
+<p sourcefile="Documentation/SequentialDataStore/Compression.md" sourcestartlinenumber="25" sourceendlinenumber="25">Compressed responses from the REST API will include a <code>Content-Encoding</code> HTTP header indicating the compression scheme used to compress the response content.</p>
+<p sourcefile="Documentation/SequentialDataStore/Compression.md" sourcestartlinenumber="27" sourceendlinenumber="27"><em>Note that specifying a compression scheme through the use of the</em> <code>Accept-Encoding</code> <em>HTTP header does not guarantee a compressed response. Always refer to presence and value of the</em> <code>Content-Encoding</code> <em>HTTP header of the response to properly decode the response content.</em> </p>
 </article>
           </div>
           

@@ -233,6 +233,10 @@ Gets or sets the allowed CORS origins for JavaScript clients.
 Gets or sets the custom properties for the client.
 
 
+
+
+### Serialized Model
+
 ```json
 {
   "Enabled": true,
@@ -599,7 +603,7 @@ New `ClientCredentialClientCreateDto <ClientCredentialClientCreateDto>` object
   "Name": "String",
   "Enabled": true,
   "SecretDescription": "String",
-  "SecretExpirationDate": "2019-01-25T15:31:27.5834363-08:00",
+  "SecretExpirationDate": "2019-01-25T15:44:12.6988386-08:00",
   "AllowOfflineAccess": true,
   "AllowAccessTokensViaBrowser": true,
   "ClientUri": "String",
@@ -623,7 +627,7 @@ Success. Returns OSIsoft.Identity.Common.Models.ClientResponseDto
   "Name": "String",
   "ClientId": "String",
   "ClientSecret": "String",
-  "SecretExpirationDate": "2019-01-25T15:31:27.6005036-08:00",
+  "SecretExpirationDate": "2019-01-25T15:44:12.715195-08:00",
   "SecretDescription": "String",
   "SecretId": 3600
 }
@@ -681,7 +685,7 @@ New `ClientCredentialClientCreateDto <ClientCredentialClientCreateDto>` object
   "Name": "String",
   "Enabled": true,
   "SecretDescription": "String",
-  "SecretExpirationDate": "2019-01-25T15:31:27.6051993-08:00",
+  "SecretExpirationDate": "2019-01-25T15:44:12.719252-08:00",
   "AllowOfflineAccess": true,
   "AllowAccessTokensViaBrowser": true,
   "ClientUri": "String",
@@ -705,7 +709,7 @@ Success. Returns OSIsoft.Identity.Common.Models.ClientResponseDto
   "Name": "String",
   "ClientId": "String",
   "ClientSecret": "String",
-  "SecretExpirationDate": "2019-01-25T15:31:27.605407-08:00",
+  "SecretExpirationDate": "2019-01-25T15:44:12.7193807-08:00",
   "SecretDescription": "String",
   "SecretId": 3600
 }
@@ -771,7 +775,7 @@ New `ImplicitClientCreateDto <ImplicitClientCreateDto>` object
   "Name": "String",
   "Enabled": true,
   "SecretDescription": "String",
-  "SecretExpirationDate": "2019-01-25T15:31:27.6071458-08:00",
+  "SecretExpirationDate": "2019-01-25T15:44:12.7211689-08:00",
   "AllowOfflineAccess": true,
   "AllowAccessTokensViaBrowser": true,
   "ClientUri": "String",
@@ -795,7 +799,7 @@ Success. Returns OSIsoft.Identity.Common.Models.ClientResponseDto
   "Name": "String",
   "ClientId": "String",
   "ClientSecret": "String",
-  "SecretExpirationDate": "2019-01-25T15:31:27.610992-08:00",
+  "SecretExpirationDate": "2019-01-25T15:44:12.7275498-08:00",
   "SecretDescription": "String",
   "SecretId": 3600
 }
@@ -861,7 +865,7 @@ New `HybridClientCreateDto <HybridClientCreateDto>` object
   "Name": "String",
   "Enabled": true,
   "SecretDescription": "String",
-  "SecretExpirationDate": "2019-01-25T15:31:27.6130564-08:00",
+  "SecretExpirationDate": "2019-01-25T15:44:12.7300541-08:00",
   "AllowOfflineAccess": true,
   "AllowAccessTokensViaBrowser": true,
   "ClientUri": "String",
@@ -885,7 +889,7 @@ Success. Returns OSIsoft.Identity.Common.Models.ClientResponseDto
   "Name": "String",
   "ClientId": "String",
   "ClientSecret": "String",
-  "SecretExpirationDate": "2019-01-25T15:31:27.6168332-08:00",
+  "SecretExpirationDate": "2019-01-25T15:44:12.7344426-08:00",
   "SecretDescription": "String",
   "SecretId": 3600
 }
@@ -1035,7 +1039,7 @@ Success. Returns OSIsoft.Identity.Common.Models.ClientResponseDto
   "Name": "String",
   "ClientId": "String",
   "ClientSecret": "String",
-  "SecretExpirationDate": "2019-01-25T15:31:27.6174358-08:00",
+  "SecretExpirationDate": "2019-01-25T15:44:12.7352026-08:00",
   "SecretDescription": "String",
   "SecretId": 3600
 }
@@ -1357,7 +1361,7 @@ Success. Returns System.Collections.Generic.List`1[OSIsoft.Identity.Common.Model
   "Id": 0,
   "Description": "String",
   "Value": "String",
-  "Expiration": "2019-01-25T15:31:27.6193936-08:00",
+  "Expiration": "2019-01-25T15:44:12.7377891-08:00",
   "Type": "String"
 }
 ]
@@ -1429,7 +1433,7 @@ Success. Returns OSIsoft.Identity.Common.Models.Secret
   "Id": 0,
   "Description": "String",
   "Value": "String",
-  "Expiration": "2019-01-25T15:31:27.621483-08:00",
+  "Expiration": "2019-01-25T15:44:12.7407561-08:00",
   "Type": "String"
 }
 ```
@@ -1485,7 +1489,7 @@ ClientSecretDto clientSecretDto [FromBody] [Required] [No-Default]
 
 ```json
 {
-  "Expiration": "2019-01-25T15:31:27.6218635-08:00",
+  "Expiration": "2019-01-25T15:44:12.7412625-08:00",
   "Description": "String"
 }
 ```
@@ -1507,7 +1511,7 @@ Success. Returns System.Collections.Generic.List`1[OSIsoft.Identity.Common.Model
   "Id": 0,
   "Description": "String",
   "Value": "String",
-  "Expiration": "2019-01-25T15:31:27.6230571-08:00",
+  "Expiration": "2019-01-25T15:44:12.7430031-08:00",
   "Type": "String"
 }
 ]
@@ -1570,7 +1574,7 @@ ClientSecretDto secretUpdate [FromBody] [Required] [No-Default]
 secretId
 ```json
 {
-  "Expiration": "2019-01-25T15:31:27.6233964-08:00",
+  "Expiration": "2019-01-25T15:44:12.7432129-08:00",
   "Description": "String"
 }
 ```
@@ -1591,7 +1595,7 @@ Success. Returns OSIsoft.Identity.Common.Models.Secret
   "Id": 0,
   "Description": "String",
   "Value": "String",
-  "Expiration": "2019-01-25T15:31:27.623571-08:00",
+  "Expiration": "2019-01-25T15:44:12.7433215-08:00",
   "Type": "String"
 }
 ```
@@ -1668,7 +1672,7 @@ Success. Returns System.Collections.Generic.List`1[OSIsoft.Identity.Common.Model
   "Id": 0,
   "Description": "String",
   "Value": "String",
-  "Expiration": "2019-01-25T15:31:27.6240442-08:00",
+  "Expiration": "2019-01-25T15:44:12.7436146-08:00",
   "Type": "String"
 }
 ]

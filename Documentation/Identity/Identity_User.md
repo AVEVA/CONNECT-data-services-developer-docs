@@ -71,6 +71,10 @@ IdentityProvider IdentityProvider
 Identity provider used to authenticate user.
 
 
+
+
+### Serialized Model
+
 ```json
 {
   "Id": "String",
@@ -750,7 +754,7 @@ User data transfer object
     "string2"
   ],
   "CreateInvitation": true,
-  "InvitationExpiresDateTime": "2019-01-25T15:31:27.6465721-08:00"
+  "InvitationExpiresDateTime": "2019-01-25T15:44:12.7665098-08:00"
 }
 ```
 
@@ -856,7 +860,7 @@ User data transfer object
     "string2"
   ],
   "CreateInvitation": true,
-  "InvitationExpiresDateTime": "2019-01-25T15:31:27.6516152-08:00"
+  "InvitationExpiresDateTime": "2019-01-25T15:44:12.7738932-08:00"
 }
 ```
 
@@ -1133,8 +1137,8 @@ Success. Returns OSIsoft.Identity.Common.Models.Invitation
 ```json
 {
   "Id": "String",
-  "Issued": "2019-01-25T15:31:27.6565546-08:00",
-  "Expires": "2019-01-25T15:31:27.6565595-08:00",
+  "Issued": "2019-01-25T15:44:12.7807892-08:00",
+  "Expires": "2019-01-25T15:44:12.7808037-08:00",
   "State": 0,
   "TenantId": "String",
   "Tenant": {

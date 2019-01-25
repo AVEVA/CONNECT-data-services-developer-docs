@@ -51,11 +51,15 @@ User User
 User `User <User>` whom the invitation was issued to.
 
 
+
+
+### Serialized Model
+
 ```json
 {
   "Id": "String",
-  "Issued": "2019-01-25T15:31:27.6290964-08:00",
-  "Expires": "2019-01-25T15:31:27.629101-08:00",
+  "Issued": "2019-01-25T15:44:12.7485123-08:00",
+  "Expires": "2019-01-25T15:44:12.7485169-08:00",
   "State": 0,
   "TenantId": "String",
   "Tenant": {
@@ -130,8 +134,8 @@ Success. Returns OSIsoft.Identity.Common.Models.Invitation
 ```json
 {
   "Id": "String",
-  "Issued": "2019-01-25T15:31:27.6338799-08:00",
-  "Expires": "2019-01-25T15:31:27.6338842-08:00",
+  "Issued": "2019-01-25T15:44:12.753204-08:00",
+  "Expires": "2019-01-25T15:44:12.7532096-08:00",
   "State": 0,
   "TenantId": "String",
   "Tenant": {
@@ -245,8 +249,8 @@ Success. Returns System.Collections.Generic.List`1[OSIsoft.Identity.Common.Model
 [
 {
   "Id": "String",
-  "Issued": "2019-01-25T15:31:27.6344432-08:00",
-  "Expires": "2019-01-25T15:31:27.6344456-08:00",
+  "Issued": "2019-01-25T15:44:12.7540048-08:00",
+  "Expires": "2019-01-25T15:44:12.7540087-08:00",
   "State": 0,
   "TenantId": "String",
   "Tenant": {
@@ -340,7 +344,7 @@ InvitationUpdateDto invitationUpdateDto [FromBody] [Required] [No-Default]
 New InvitationUpdateDto object
 ```json
 {
-  "ExpiresDateTime": "2019-01-25T15:31:27.6347732-08:00",
+  "ExpiresDateTime": "2019-01-25T15:44:12.754551-08:00",
   "State": 0
 }
 ```
@@ -359,8 +363,8 @@ Success. Returns OSIsoft.Identity.Common.Models.Invitation
 ```json
 {
   "Id": "String",
-  "Issued": "2019-01-25T15:31:27.6368418-08:00",
-  "Expires": "2019-01-25T15:31:27.6368457-08:00",
+  "Issued": "2019-01-25T15:44:12.7569788-08:00",
+  "Expires": "2019-01-25T15:44:12.7569827-08:00",
   "State": 0,
   "TenantId": "String",
   "Tenant": {
@@ -504,7 +508,7 @@ InvitationCreateDto invitationCreateDto [FromBody] [Required] [No-Default]
 InvitationCreateDto object
 ```json
 {
-  "ExpiresDateTime": "2019-01-25T15:31:27.657196-08:00",
+  "ExpiresDateTime": "2019-01-25T15:44:12.7832185-08:00",
   "DeleteExisting": true,
   "SendInvitation": true
 }
@@ -524,8 +528,8 @@ Created. Returns OSIsoft.Identity.Common.Models.Invitation
 ```json
 {
   "Id": "String",
-  "Issued": "2019-01-25T15:31:27.6592092-08:00",
-  "Expires": "2019-01-25T15:31:27.6592135-08:00",
+  "Issued": "2019-01-25T15:44:12.7858428-08:00",
+  "Expires": "2019-01-25T15:44:12.7858474-08:00",
   "State": 0,
   "TenantId": "String",
   "Tenant": {

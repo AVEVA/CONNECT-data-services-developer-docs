@@ -31,6 +31,10 @@ bool IsCloudConnectCustomer
 Specify if Tenant is a Cloud Connect customer.
 
 
+
+
+### Serialized Model
+
 ```json
 {
   "Id": "String",

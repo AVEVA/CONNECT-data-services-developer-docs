@@ -31,6 +31,10 @@ string UserIdClaimType
 Type of claim
 
 
+
+
+### Serialized Model
+
 ```json
 {
   "Id": "String",

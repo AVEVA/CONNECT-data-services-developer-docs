@@ -1,6 +1,0 @@
-- name: Authentication Overview
-  href: Identity_Overview.md
-- name: Tenant Calls
-  href: Identity_Tenants.md
-- name: Consent
-  href: Consent.md

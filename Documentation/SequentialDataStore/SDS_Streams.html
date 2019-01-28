@@ -84,7 +84,7 @@ of events in an SdsStream.</p>
 <p>SdsStreams are referenced by their identifier or Id field. SdsStream identifiers must be unique 
 within a Namespace.</p>
 <p>An SdsStream must include a TypeId that references the identifier of an existing SdsType. 
-When an SdsStream contains data, you must use a view to update the stream type.</p>
+When an SdsStream contains data, you must use a stream view to update the stream type.</p>
 <p>SdsStream management using the .NET SDS Client Libraries is performed through ISdsMetadataService. 
 Create the ISdsMetadataService, using one of the <code>SdsService.GetMetadataService()</code> factory methods.</p>
 <p>The following table shows the required and optional SdsStream fields. Fields not listed are reserved
@@ -370,22 +370,22 @@ The following changes are permitted:</p>
 <p>  Allowed for administrator accounts</p>
 <hr>
 <h2 id="update-stream-type"><code>Update Stream Type</code></h2>
-<p>Updates a stream’s type. The type is modified to match the specified view. 
+<p>Updates a stream’s type. The type is modified to match the specified stream view. 
 Defined Indexes and PropertyOverrides are removed when updating a stream type.</p>
 <p><strong>Request</strong></p>
-<pre><code>    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type?viewId={viewId}
+<pre><code>    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type?streamViewId={streamViewId}
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>  The tenant identifier  </p>
 <p><code>string namespaceId</code><br>  The namespace identifier  </p>
 <p><code>string streamId</code><br>  The stream identifier  </p>
-<p><code>string viewId</code><br>  The stream view identifier  </p>
+<p><code>string streamViewId</code><br>  The stream view identifier  </p>
 <p>The request contains no content.</p>
 <p><strong>Response</strong></p>
 <p>  The response includes a status code.</p>
 <p><strong>Response body</strong></p>
 <p>  On failure, the content contains a message describing the issue.</p>
 <p><strong>.NET Library</strong></p>
-<pre><code>  Task UpdateStreamTypeAsync(string streamId, string viewId);
+<pre><code>  Task UpdateStreamTypeAsync(string streamId, string streamViewId);
 </code></pre><p><strong>Security</strong></p>
 <p>  Allowed for administrator accounts</p>
 <hr>

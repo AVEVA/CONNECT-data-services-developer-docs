@@ -203,13 +203,8 @@ Get Window Values, and Get Intervals. </p>
         &quot;Measurement&quot;:9.0
      }
   ]
-
-
- To retrieve the results in table format, add the form variable and specify table.
-
- ::
-
-   api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data/GetWindowValues
+</code></pre><p>To retrieve the results in table format, add the form variable and specify table.</p>
+<pre><code>   api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data/GetWindowValues
    ?startIndex=2017-04-01T07:00:00Z&amp;endIndex=2017-04-01T07:10:00Z
    &amp;form=table
 </code></pre><p>Response</p>
@@ -224,7 +219,7 @@ Get Window Values, and Get Intervals. </p>
         },
         {  
            &quot;Name&quot;:&quot;State&quot;,
-           &quot;Type&quot;:&quot;State&quot;
+           &quot;Type&quot;:&quot;Int32Enum&quot;
         },
         {  
            &quot;Name&quot;:&quot;Measurement&quot;,
@@ -300,7 +295,7 @@ Get Window Values, and Get Intervals. </p>
         },
         {  
            &quot;Name&quot;:&quot;State&quot;,
-           &quot;Type&quot;:&quot;State&quot;
+           &quot;Type&quot;:&quot;Int32Enum&quot;
         },
         {  
            &quot;Name&quot;:&quot;Measurement&quot;,

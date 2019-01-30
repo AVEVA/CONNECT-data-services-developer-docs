@@ -1957,6 +1957,7 @@
 <pre><code>    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Units/{uomId}
 </code></pre><p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
+<p><code>string uomId</code><br>The unit of measure identifier</p>
 <p><strong>Response</strong></p>
 <p>The response includes a status code and a response body.</p>
 <p><strong>Response body</strong></p>
@@ -1982,6 +1983,8 @@
 <pre><code>    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Units?skip={skip}&amp;count={count}
 </code></pre><p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
+<p><code>int skip</code><br>An optional parameter representing the zero-based offset of the first SdsUomQuantity to retrieve. If not specified, a default value of 0 is used.</p>
+<p><code>int count</code><br>An optional parameter representing the maximum number of SdsUomQuantity to retrieve. If not specified, a default value of 100 is used.</p>
 <p><strong>Response</strong></p>
 <p>The response includes a status code and a response body.</p>
 <p><strong>Response body</strong></p>

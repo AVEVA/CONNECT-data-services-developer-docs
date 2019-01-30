@@ -90,22 +90,17 @@ helper.</p>
 <pre><code>    POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/InsertValue
 </code></pre><p>Content is serialized event of type T</p>
 <p><strong>Parameters</strong></p>
-<p><code>string tenantId</code>
-  The tenant identifier for the request
-<code>string namespaceId</code>
-  The namespace identifier for the request.
-<code>string streamId</code>
-  The stream identifier for the request.
-<code>T item</code>
-  The event to insert, where T is the type of the event and the stream</p>
+<p><code>string tenantId</code><br>  The tenant identifier for the request  </p>
+<p><code>string namespaceId</code><br>  The namespace identifier for the request </p>
+<p><code>string streamId</code><br>  The stream identifier for the request  </p>
+<p><code>T item</code><br>  The event to insert, where T is the type of the event and the stream  </p>
 <p><strong>Returns</strong><br>An IEnumerable of all behavior objects</p>
 <p>Security
   Allowed by administrator accounts</p>
 <p><strong>Notes</strong><br><code>InsertValue</code> throws an exception if an event already exists at the specified index.</p>
 <p>  For HTTP requests, the message content (the event) must be serialized in JSON format. JSON objects 
   consist of a series of name-value property pairs enclosed within brackets. </p>
-<p>  .. _Introducing JSON: <a href="http://json.org/index.html">http://json.org/index.html</a></p>
-<p>  You can serialize your data using one of many available JSON serializers available at <code>Introducing JSON</code>_. </p>
+<p>  You can serialize your data using one of many available JSON serializers available at <a href="http://json.org/index.html">Introducing JSON</a>. </p>
 <p>  How the data is serialized depends upon the type of event you are inserting. For example, the following code 
   shows a single WaveData event serialized as JSON. See the OCS code samples for the complete WaveData example.</p>
 <p>  ::</p>
@@ -129,14 +124,10 @@ helper.</p>
 <pre><code>    POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/InsertValues
 </code></pre><p>Content is serialized list of events of type T  </p>
 <p><strong>Parameters</strong></p>
-<p><code>string tenantId</code>
-  The tenant identifier for the request
-<code>string namespaceId</code>
-  The namespace identifier for the request.
-<code>string streamId</code>
-  The stream identifier for the request.
-<code>T items</code>
-  The list of events to insert, where T is the type of the stream and events</p>
+<p><code>string tenantId</code><br>  The tenant identifier for the request  </p>
+<p><code>string namespaceId</code><br>  The namespace identifier for the request</p>
+<p><code>string streamId</code><br>  The stream identifier for the request</p>
+<p><code>T items</code><br>  The list of events to insert, where T is the type of the stream and events</p>
 <p><strong>Returns</strong><br>An IEnumerable of all behavior objects</p>
 <p><strong>Notes</strong><br><code>InsertValuesAsync</code> throws an exception if any index in <strong>items</strong> already has an event. If any individual
   index encounters a problem, the entire operation is rolled back and no
@@ -192,16 +183,11 @@ helper.</p>
 <pre><code>    PATCH api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/PatchValue?select={selectExpression}
 </code></pre><p>Content is serialized patch property</p>
 <p><strong>Parameters</strong></p>
-<p><code>string tenantId</code>
-  The tenant identifier for the request
-<code>string namespaceId</code>
-  The namespace identifier for the request.
-<code>string streamId</code>
-  The stream identifier for the request.
-<code>string selectExpression</code>
-  CSV list of strings that indicates the event fields that will be changed in stream events.
-<code>T item</code>
-  Object with index and new values to patch in the stream.</p>
+<p><code>string tenantId</code><br>  The tenant identifier for the request  </p>
+<p><code>string namespaceId</code><br>  The namespace identifier for the request  </p>
+<p><code>string streamId</code><br>  The stream identifier for the request  </p>
+<p><code>string selectExpression</code><br>  CSV list of strings that indicates the event fields that will be changed in stream events.  </p>
+<p><code>T item</code><br>  Object with index and new values to patch in the stream.</p>
 <p><strong>Returns</strong><br>An IEnumerable of all behavior objects</p>
 <p><strong>Notes</strong><br><code>PatchValue</code> is used to modify the stream events. Only the values 
   for fields specified in the SelectExpression are taken from the item 
@@ -220,16 +206,11 @@ helper.</p>
 <pre><code>    PATCH api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/PatchValues?select={selectExpression}
 </code></pre><p>Content is serialized list of patch property values</p>
 <p><strong>Parameters</strong></p>
-<p><code>string tenantId</code>
-  The tenant identifier for the request
-<code>string namespaceId</code>
-  The namespace identifier for the request.
-<code>string streamId</code>
-  The stream identifier for the request.
-<code>string selectExpression</code>
-  CSV list strings that indicates the event fields that will be changed in stream events.
-<code>T items</code>
-  List which contain indexes and new values to patch in the stream.</p>
+<p><code>string tenantId</code><br>  The tenant identifier for the request  </p>
+<p><code>string namespaceId</code><br>  The namespace identifier for the request  </p>
+<p><code>string streamId</code><br>  The stream identifier for the request  </p>
+<p><code>string selectExpression</code><br>  CSV list strings that indicates the event fields that will be changed in stream events  </p>
+<p><code>T items</code><br>  List which contain indexes and new values to patch in the stream.</p>
 <p><strong>Returns</strong><br>An IEnumerable of all behavior objects</p>
 <p>Security
   Allowed by administrator accounts</p>
@@ -252,14 +233,10 @@ helper.</p>
 </code></pre><p><strong>Http</strong></p>
 <pre><code>    DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/RemoveValue?index={index}
 </code></pre><p><strong>Parameters</strong></p>
-<p><code>string tenantId</code>
-  The tenant identifier for the request
-<code>string namespaceId</code>
-  The namespace identifier for the request.
-<code>string streamId</code>
-  The stream identifier for the request.
-<code>index</code>
-  String representation of the index in the stream to be deleted.</p>
+<p><code>string tenantId</code><br>  The tenant identifier for the request  </p>
+<p><code>string namespaceId</code><br>  The namespace identifier for the request  </p>
+<p><code>string streamId</code><br>  The stream identifier for the request  </p>
+<p><code>index</code><br>  String representation of the index in the stream to be deleted.</p>
 <p><strong>Returns</strong><br>An IEnumerable of all behavior objects</p>
 <p>Security
   Allowed by administrator accounts</p>
@@ -275,14 +252,10 @@ helper.</p>
 </code></pre><p><strong>Http</strong></p>
 <pre><code>    DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/RemoveValues?index={index}
 </code></pre><p><strong>Parameters</strong></p>
-<p><code>string tenantId</code>
-  The tenant identifier for the request
-<code>string namespaceId</code>
-  The namespace identifier for the request.
-<code>string streamId</code>
-  The stream identifier for the request.
-<code>index</code>
-  List of indices at which to remove events in the stream</p>
+<p><code>string tenantId</code><br>  The tenant identifier for the request  </p>
+<p><code>string namespaceId</code><br>  The namespace identifier for the request  </p>
+<p><code>string streamId</code><br>  The stream identifier for the request  </p>
+<p><code>index</code><br>  List of indices at which to remove events in the stream  </p>
 <p><strong>Returns</strong><br>An IEnumerable of all behavior objects</p>
 <p>Security
   Allowed by administrator accounts</p>
@@ -300,16 +273,11 @@ helper.</p>
 </code></pre><p><strong>Http</strong></p>
 <pre><code>    DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/RemoveWindowValues?startIndex={startIndex}&amp;endIndex={endIndex}
 </code></pre><p><strong>Parameters</strong></p>
-<p><code>string tenantId</code>
-  The tenant identifier for the request
-<code>string namespaceId</code>
-  The namespace identifier for the request.
-<code>string streamId</code>
-  The stream identifier for the request.
-<code>startIndex</code>
-  String representation of the starting index value.
-<code>endIndex</code>
-  String representation of the ending index value</p>
+<p><code>string tenantId</code><br>  The tenant identifier for the request  </p>
+<p><code>string namespaceId</code><br>  The namespace identifier for the request  </p>
+<p><code>string streamId</code><br>  The stream identifier for the request  </p>
+<p><code>startIndex</code><br>  String representation of the starting index value  </p>
+<p><code>endIndex</code><br>  String representation of the ending index value  </p>
 <p><strong>Returns</strong><br>An IEnumerable of all behavior objects</p>
 <p>Security
   Allowed by administrator accounts</p>
@@ -324,12 +292,9 @@ helper.</p>
 <pre><code>    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/ReplaceValue
 </code></pre><p>Content is serialized replacement object</p>
 <p><strong>Parameters</strong></p>
-<p><code>string tenantId</code>
-  The tenant identifier for the request
-<code>string namespaceId</code>
-  The namespace identifier for the request.
-<code>string streamId</code>
-  The stream identifier for the request.</p>
+<p><code>string tenantId</code><br>  The tenant identifier for the request  </p>
+<p><code>string namespaceId</code><br>  The namespace identifier for the request  </p>
+<p><code>string streamId</code><br>  The stream identifier for the request  </p>
 <p><strong>Returns</strong><br>An IEnumerable of all behavior objects</p>
 <p>Security
   Allowed by administrator accounts</p>
@@ -344,14 +309,10 @@ helper.</p>
 <pre><code>    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/ReplaceValues
 </code></pre><p>Content is serialized list of replacement values</p>
 <p><strong>Parameters</strong></p>
-<p><code>string tenantId</code>
-  The tenant identifier for the request
-<code>string namespaceId</code>
-  The namespace identifier for the request.
-<code>string streamId</code>
-  The stream identifier for the request.
-<code>T items</code>
-  List of new items to replace existing items in the stream</p>
+<p><code>string tenantId</code><br>  The tenant identifier for the request  </p>
+<p><code>string namespaceId</code><br>  The namespace identifier for the request  </p>
+<p><code>string streamId</code><br>  The stream identifier for the request  </p>
+<p><code>T items</code><br>  List of new items to replace existing items in the stream  </p>
 <p><strong>Returns</strong><br>An IEnumerable of all behavior objects</p>
 <p>Security
   Allowed by administrator accounts</p>
@@ -365,14 +326,10 @@ helper.</p>
 <pre><code>    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/UpdateValue
 </code></pre><p>Content is serialized updated value</p>
 <p><strong>Parameters</strong></p>
-<p><code>string tenantId</code>
-  The tenant identifier for the request
-<code>string namespaceId</code>
-  The namespace identifier for the request.
-<code>string streamId</code>
-  The stream identifier for the request.
-<code>T item</code>
-  Event to write to the stream</p>
+<p><code>string tenantId</code><br>  The tenant identifier for the request  </p>
+<p><code>string namespaceId</code><br>  The namespace identifier for the request  </p>
+<p><code>string streamId</code><br>  The stream identifier for the request  </p>
+<p><code>T item</code><br>  Event to write to the stream  </p>
 <p><strong>Returns</strong><br>An IEnumerable of all behavior objects</p>
 <p>Security
   Allowed by administrator accounts</p>
@@ -386,14 +343,10 @@ helper.</p>
 <pre><code>    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/UpdateValues
 </code></pre><p>Content is serialized list of updated values    </p>
 <p><strong>Parameters</strong></p>
-<p><code>string tenantId</code>
-  The tenant identifier for the request
-<code>string namespaceId</code>
-  The namespace identifier for the request.
-<code>string streamId</code>
-  The stream identifier for the request.
-<code>T items</code>
-  Events to write to the stream.</p>
+<p><code>string tenantId</code><br>  The tenant identifier for the request  </p>
+<p><code>string namespaceId</code><br>  The namespace identifier for the request  </p>
+<p><code>string streamId</code><br>  The stream identifier for the request  </p>
+<p><code>T items</code><br>  Events to write to the stream  </p>
 <p><strong>Returns</strong><br>An IEnumerable of all behavior objects</p>
 <p>Security
   Allowed by administrator accounts</p>

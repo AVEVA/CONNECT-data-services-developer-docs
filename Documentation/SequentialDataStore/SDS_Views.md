@@ -115,7 +115,7 @@ To update a Stream Type, define an SdsStreamView and PUT the stream view to the 
        api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type?streamViewId={streamViewId}
 
 
-For details, see [SdsStreamView API](#sds-views). 
+For details, see [SdsStreamView API](#sdsstreamview-api). 
 
 Working with Stream Views when using .NET
 ------------------------------------
@@ -455,7 +455,8 @@ SdsStreamView API
 The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact 
 with SdsStreamViews. When working in .NET convenient SDS Client libraries are available. The ISdsMetadataService 
 interface, accessed using the ``SdsService.GetMetadataService()`` helper, defines the available functions. 
-See [SdsStreamView information](https://ocs-docs.osisoft.com/Documentation/SequentialDataStore/SDS_Views.html) for general SdsStreamView information.
+See [Stream Views](#stream-views) for general SdsStreamView information.
+
 
 ***********************
 

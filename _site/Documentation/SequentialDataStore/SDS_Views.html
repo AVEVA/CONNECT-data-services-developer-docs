@@ -308,7 +308,7 @@ retrieved from Sds, so required and optional have no meaning.</p>
 But you can map a stream from its current type to a new type.</p>
 <p>To update a Stream Type, define an SdsStreamView and PUT the stream view to the following:</p>
 <pre><code>   api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type?streamViewId={streamViewId}
-</code></pre><p>For details, see <a href="#sds-views">SdsStreamView API</a>. </p>
+</code></pre><p>For details, see <a href="#sdsstreamview-api">SdsStreamView API</a>. </p>
 <h2 id="working-with-stream-views-when-using-net">Working with Stream Views when using .NET</h2>
 <p><strong>Using .Net</strong></p>
 <p>When working in .NET, use the SDS Client libraries’ ISdsMetadataService.</p>
@@ -616,7 +616,7 @@ type with identifier Sample1 would appear as follows.</p>
 <p>The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact 
 with SdsStreamViews. When working in .NET convenient SDS Client libraries are available. The ISdsMetadataService 
 interface, accessed using the <code>SdsService.GetMetadataService()</code> helper, defines the available functions. 
-See <a href="https://ocs-docs.osisoft.com/Documentation/SequentialDataStore/SDS_Views.html">SdsStreamView information</a> for general SdsStreamView information.</p>
+See <a href="#stream-views">Stream Views</a> for general SdsStreamView information.</p>
 <hr>
 <h2 id="get-stream-view"><code>Get Stream View</code></h2>
 <p>Returns the stream view corresponding to the specified streamViewId within a given namespace.</p>

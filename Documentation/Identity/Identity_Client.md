@@ -21,7 +21,7 @@ string ClientId
 Unique ID of the client
 
 ```csharp
-[Secret] ClientSecrets
+Secret[] ClientSecrets
 ```
 Client secrets - only relevant for flows that require a secret
 
@@ -61,7 +61,7 @@ bool AllowRememberConsent
 Specifies whether user can choose to store consent decisions (defaults to true)
 
 ```csharp
-[string] AllowedGrantTypes
+string[] AllowedGrantTypes
 ```
 Specifies the allowed grant types (legal combinations of AuthorizationCode, Implicit, Hybrid, ResourceOwner,
             ClientCredentials).
@@ -73,12 +73,12 @@ Controls whether access tokens are transmitted via the browser for this client (
             This can prevent accidental leakage of access tokens when multiple response types are allowed.
 
 ```csharp
-[string] RedirectUris
+string[] RedirectUris
 ```
 Specifies allowed URIs to return tokens or authorization codes to
 
 ```csharp
-[string] PostLogoutRedirectUris
+string[] PostLogoutRedirectUris
 ```
 Specifies allowed URIs to redirect to after logout
 
@@ -108,7 +108,7 @@ bool AllowOfflineAccess
 Gets or sets a value indicating whether [allow offline access]. Defaults to false.
 
 ```csharp
-[string] AllowedScopes
+string[] AllowedScopes
 ```
 Specifies the api scopes that the client is allowed to request. If empty, the client can't access any scope
 
@@ -175,7 +175,7 @@ AccessTokenType AccessTokenType
 Specifies whether the access token is a reference token or a self contained JWT token (defaults to Jwt).
 
 ```csharp
-[string] IdentityProviderRestrictions
+string[] IdentityProviderRestrictions
 ```
 Specifies which external IdPs can be used with this client (if list is empty all IdPs are allowed). Defaults to
             empty.
@@ -186,7 +186,7 @@ bool IncludeJwtId
 Gets or sets a value indicating whether JWT access tokens should include an identifier. Defaults to false.
 
 ```csharp
-[Claim] Claims
+Claim[] Claims
 ```
 Allows settings claims for the client (will be included in the access token).
 
@@ -223,17 +223,14 @@ int32 DeviceCodeLifetime
 Gets or sets the device code lifetime.
 
 ```csharp
-[string] AllowedCorsOrigins
+string[] AllowedCorsOrigins
 ```
 Gets or sets the allowed CORS origins for JavaScript clients.
 
 ```csharp
-[string,string] Properties
+string,string[] Properties
 ```
 Gets or sets the custom properties for the client.
-
-
-
 
 ### Serialized Model
 
@@ -303,18 +300,18 @@ Gets or sets the custom properties for the client.
   }
 }
 ```
+
 ***
 
-## `GetClients()`
+## `Get Clients`
 
 Get all clients for a tenant
 
-### Http 
+### Request
 
 `GET api/Tenant/{tenantId}/Clients`
 
 ### Parameters
-
 
 ```csharp
 string tenantId [FromRoute] [Required] [No-Default]
@@ -340,16 +337,23 @@ int32 count [FromQuery] [Optional] [Default = 100]
 
 Max number of clients to return
 
-
 ### Security
 
-Allowed for these roles: **Account Administrator**, **Cluster Operator**, **Cluster Support**
+Allowed for these roles:
+
+- `Account Administrator`
+- `Cluster Operator`
+- `Cluster Support`
 
 ### Returns
 
 #### 200
 
-Success. Returns System.Collections.Generic.List`1[OSIsoft.Identity.Common.Models.Client]
+Success
+
+##### Type:
+
+ `List[Client]`
 
 ```json
 [
@@ -424,38 +428,32 @@ Success. Returns System.Collections.Generic.List`1[OSIsoft.Identity.Common.Model
 
 Unauthorized
 
-
 #### 403
 
 Forbidden
-
 
 #### 404
 
 Tenant not found
 
-
 #### 400
 
 Missing or invalid inputs
 
-
 #### 500
 
 Oops! Something happened, somewhere inside our server, just a while ago
-
 ***
 
-## `GetClient()`
+## `Get Client`
 
 Get a client object
 
-### Http 
+### Request
 
 `GET api/Tenant/{tenantId}/Clients/{clientId}`
 
 ### Parameters
-
 
 ```csharp
 string tenantId [FromRoute] [Required] [No-Default]
@@ -469,16 +467,23 @@ string clientId [FromRoute] [Required] [No-Default]
 
 Id of client
 
-
 ### Security
 
-Allowed for these roles: **Account Administrator**, **Cluster Operator**, **Cluster Support**
+Allowed for these roles:
+
+- `Account Administrator`
+- `Cluster Operator`
+- `Cluster Support`
 
 ### Returns
 
 #### 200
 
-Success. Returns OSIsoft.Identity.Common.Models.Client
+Success
+
+##### Type:
+
+ `Client`
 
 ```json
 {
@@ -551,24 +556,20 @@ Success. Returns OSIsoft.Identity.Common.Models.Client
 
 Unauthorized
 
-
 #### 403
 
 Forbidden
-
 
 #### 404
 
 Client or Tenant not found
 
-
 #### 500
 
 Oops! Something happened, somewhere inside our server, just a while ago
-
 ***
 
-## `CreateClient()`
+## `Create Client`
 
 Create a client
             This method is obsolete, please use one of the following instead:
@@ -576,13 +577,12 @@ Create a client
             {tenantId}/Clients/Implicit
             {tenantId}/Clients/Hybrid
 
-### Http 
+### Request
 
 `POST api/Tenant/{tenantId}/Clients`
 
 ### Parameters
 
-
 ```csharp
 string tenantId [FromRoute] [Required] [No-Default]
 ```
@@ -594,6 +594,7 @@ ClientCredentialClientCreateDto clientCredentialClientCreateDto [FromBody] [Requ
 ```
 
 New `ClientCredentialClientCreateDto <ClientCredentialClientCreateDto>` object
+
 ```json
 {
   "RoleIds": [
@@ -603,7 +604,7 @@ New `ClientCredentialClientCreateDto <ClientCredentialClientCreateDto>` object
   "Name": "String",
   "Enabled": true,
   "SecretDescription": "String",
-  "SecretExpirationDate": "2019-01-25T15:44:12.6988386-08:00",
+  "SecretExpirationDate": "2019-01-29T15:18:37.3967261-08:00",
   "AllowOfflineAccess": true,
   "AllowAccessTokensViaBrowser": true,
   "ClientUri": "String",
@@ -611,23 +612,28 @@ New `ClientCredentialClientCreateDto <ClientCredentialClientCreateDto>` object
 }
 ```
 
-
 ### Security
 
-Allowed for these roles: **Account Administrator**
+Allowed for these roles:
+
+- `Account Administrator`
 
 ### Returns
 
 #### 200
 
-Success. Returns OSIsoft.Identity.Common.Models.ClientResponseDto
+Success
+
+##### Type:
+
+ `ClientResponseDto`
 
 ```json
 {
   "Name": "String",
   "ClientId": "String",
   "ClientSecret": "String",
-  "SecretExpirationDate": "2019-01-25T15:44:12.715195-08:00",
+  "SecretExpirationDate": "2019-01-29T15:18:37.4108343-08:00",
   "SecretDescription": "String",
   "SecretId": 3600
 }
@@ -637,34 +643,29 @@ Success. Returns OSIsoft.Identity.Common.Models.ClientResponseDto
 
 Unauthorized
 
-
 #### 403
 
 Forbidden
-
 
 #### 404
 
 Tenant not found
 
-
 #### 500
 
 Oops! Something happened, somewhere inside our server, just a while ago
-
 ***
 
-## `CreateClientCredentialClient()`
+## `Create Client Credential Client`
 
 Create a Client Credential flow `Client <Client>`
 
-### Http 
+### Request
 
 `POST api/Tenant/{tenantId}/Clients/ClientCredential`
 
 ### Parameters
 
-
 ```csharp
 string tenantId [FromRoute] [Required] [No-Default]
 ```
@@ -676,6 +677,7 @@ ClientCredentialClientCreateDto clientCredentialClientCreateDto [FromBody] [Requ
 ```
 
 New `ClientCredentialClientCreateDto <ClientCredentialClientCreateDto>` object
+
 ```json
 {
   "RoleIds": [
@@ -685,7 +687,7 @@ New `ClientCredentialClientCreateDto <ClientCredentialClientCreateDto>` object
   "Name": "String",
   "Enabled": true,
   "SecretDescription": "String",
-  "SecretExpirationDate": "2019-01-25T15:44:12.719252-08:00",
+  "SecretExpirationDate": "2019-01-29T15:18:37.4154769-08:00",
   "AllowOfflineAccess": true,
   "AllowAccessTokensViaBrowser": true,
   "ClientUri": "String",
@@ -693,23 +695,28 @@ New `ClientCredentialClientCreateDto <ClientCredentialClientCreateDto>` object
 }
 ```
 
-
 ### Security
 
-Allowed for these roles: **Account Administrator**
+Allowed for these roles:
+
+- `Account Administrator`
 
 ### Returns
 
 #### 200
 
-Success. Returns OSIsoft.Identity.Common.Models.ClientResponseDto
+Success
+
+##### Type:
+
+ `ClientResponseDto`
 
 ```json
 {
   "Name": "String",
   "ClientId": "String",
   "ClientSecret": "String",
-  "SecretExpirationDate": "2019-01-25T15:44:12.7193807-08:00",
+  "SecretExpirationDate": "2019-01-29T15:18:37.4156268-08:00",
   "SecretDescription": "String",
   "SecretId": 3600
 }
@@ -719,33 +726,28 @@ Success. Returns OSIsoft.Identity.Common.Models.ClientResponseDto
 
 Unauthorized
 
-
 #### 403
 
 Forbidden
-
 
 #### 404
 
 Tenant not found
 
-
 #### 500
 
 Oops! Something happened, somewhere inside our server, just a while ago
-
 ***
 
-## `CreateImplicitClient()`
+## `Create Implicit Client`
 
 Create an Implicit flow `Client <Client>`
 
-### Http 
+### Request
 
 `POST api/Tenant/{tenantId}/Clients/Implicit`
 
 ### Parameters
-
 
 ```csharp
 string tenantId [FromRoute] [Required] [No-Default]
@@ -758,6 +760,7 @@ ImplicitClientCreateDto implicitClientCreateDto [FromBody] [Required] [No-Defaul
 ```
 
 New `ImplicitClientCreateDto <ImplicitClientCreateDto>` object
+
 ```json
 {
   "RedirectUris": [
@@ -768,14 +771,14 @@ New `ImplicitClientCreateDto <ImplicitClientCreateDto>` object
     "string1",
     "string2"
   ],
-  "AllowedCorsOrigin": [
+  "AllowedCorsOrigins": [
     "string1",
     "string2"
   ],
   "Name": "String",
   "Enabled": true,
   "SecretDescription": "String",
-  "SecretExpirationDate": "2019-01-25T15:44:12.7211689-08:00",
+  "SecretExpirationDate": "2019-01-29T15:18:37.4176723-08:00",
   "AllowOfflineAccess": true,
   "AllowAccessTokensViaBrowser": true,
   "ClientUri": "String",
@@ -783,23 +786,28 @@ New `ImplicitClientCreateDto <ImplicitClientCreateDto>` object
 }
 ```
 
-
 ### Security
 
-Allowed for these roles: **Account Administrator**
+Allowed for these roles:
+
+- `Account Administrator`
 
 ### Returns
 
 #### 200
 
-Success. Returns OSIsoft.Identity.Common.Models.ClientResponseDto
+Success
+
+##### Type:
+
+ `ClientResponseDto`
 
 ```json
 {
   "Name": "String",
   "ClientId": "String",
   "ClientSecret": "String",
-  "SecretExpirationDate": "2019-01-25T15:44:12.7275498-08:00",
+  "SecretExpirationDate": "2019-01-29T15:18:37.4210993-08:00",
   "SecretDescription": "String",
   "SecretId": 3600
 }
@@ -809,33 +817,28 @@ Success. Returns OSIsoft.Identity.Common.Models.ClientResponseDto
 
 Unauthorized
 
-
 #### 403
 
 Forbidden
-
 
 #### 404
 
 Tenant not found
 
-
 #### 500
 
 Oops! Something happened, somewhere inside our server, just a while ago
-
 ***
 
-## `CreateHybridClient()`
+## `Create Hybrid Client`
 
 Create a Hybrid flow `Client <Client>`
 
-### Http 
+### Request
 
 `POST api/Tenant/{tenantId}/Clients/Hybrid`
 
 ### Parameters
-
 
 ```csharp
 string tenantId [FromRoute] [Required] [No-Default]
@@ -848,6 +851,7 @@ HybridClientCreateDto hybridClientCreateDto [FromBody] [Required] [No-Default]
 ```
 
 New `HybridClientCreateDto <HybridClientCreateDto>` object
+
 ```json
 {
   "RedirectUris": [
@@ -858,14 +862,14 @@ New `HybridClientCreateDto <HybridClientCreateDto>` object
     "string1",
     "string2"
   ],
-  "AllowedCorsOrigin": [
+  "AllowedCorsOrigins": [
     "string1",
     "string2"
   ],
   "Name": "String",
   "Enabled": true,
   "SecretDescription": "String",
-  "SecretExpirationDate": "2019-01-25T15:44:12.7300541-08:00",
+  "SecretExpirationDate": "2019-01-29T15:18:37.423605-08:00",
   "AllowOfflineAccess": true,
   "AllowAccessTokensViaBrowser": true,
   "ClientUri": "String",
@@ -873,23 +877,28 @@ New `HybridClientCreateDto <HybridClientCreateDto>` object
 }
 ```
 
-
 ### Security
 
-Allowed for these roles: **Account Administrator**
+Allowed for these roles:
+
+- `Account Administrator`
 
 ### Returns
 
 #### 200
 
-Success. Returns OSIsoft.Identity.Common.Models.ClientResponseDto
+Success
+
+##### Type:
+
+ `ClientResponseDto`
 
 ```json
 {
   "Name": "String",
   "ClientId": "String",
   "ClientSecret": "String",
-  "SecretExpirationDate": "2019-01-25T15:44:12.7344426-08:00",
+  "SecretExpirationDate": "2019-01-29T15:18:37.4278125-08:00",
   "SecretDescription": "String",
   "SecretId": 3600
 }
@@ -899,33 +908,28 @@ Success. Returns OSIsoft.Identity.Common.Models.ClientResponseDto
 
 Unauthorized
 
-
 #### 403
 
 Forbidden
-
 
 #### 404
 
 Tenant not found
 
-
 #### 500
 
 Oops! Something happened, somewhere inside our server, just a while ago
-
 ***
 
-## `CreateClient()`
+## `Create Client`
 
 Create a client
 
-### Http 
+### Request
 
 `POST api/Tenant/{tenantId}/Clients/{clientId}`
 
 ### Parameters
-
 
 ```csharp
 string tenantId [FromRoute] [Required] [No-Default]
@@ -956,6 +960,7 @@ Client client [FromBody] [Required] [No-Default]
 ```
 
 New Client object
+
 ```json
 {
   "Enabled": true,
@@ -1023,23 +1028,28 @@ New Client object
 }
 ```
 
-
 ### Security
 
-Allowed for these roles: **Account Administrator**
+Allowed for these roles:
+
+- `Account Administrator`
 
 ### Returns
 
 #### 200
 
-Success. Returns OSIsoft.Identity.Common.Models.ClientResponseDto
+Success
+
+##### Type:
+
+ `ClientResponseDto`
 
 ```json
 {
   "Name": "String",
   "ClientId": "String",
   "ClientSecret": "String",
-  "SecretExpirationDate": "2019-01-25T15:44:12.7352026-08:00",
+  "SecretExpirationDate": "2019-01-29T15:18:37.428412-08:00",
   "SecretDescription": "String",
   "SecretId": 3600
 }
@@ -1049,33 +1059,28 @@ Success. Returns OSIsoft.Identity.Common.Models.ClientResponseDto
 
 Unauthorized
 
-
 #### 403
 
 Forbidden
-
 
 #### 404
 
 Client or Tenant not found
 
-
 #### 500
 
 Oops! Something happened, somewhere inside our server, just a while ago
-
 ***
 
-## `UpdateClient()`
+## `Update Client`
 
 Update a client
 
-### Http 
+### Request
 
 `PUT api/Tenant/{tenantId}/Clients/{clientId}`
 
 ### Parameters
-
 
 ```csharp
 string tenantId [FromRoute] [Required] [No-Default]
@@ -1094,6 +1099,7 @@ Client client [FromBody] [Required] [No-Default]
 ```
 
 New Client
+
 ```json
 {
   "Enabled": true,
@@ -1161,16 +1167,21 @@ New Client
 }
 ```
 
-
 ### Security
 
-Allowed for these roles: **Account Administrator**
+Allowed for these roles:
+
+- `Account Administrator`
 
 ### Returns
 
 #### 200
 
-Success. Returns OSIsoft.Identity.Common.Models.Client
+Success
+
+##### Type:
+
+ `Client`
 
 ```json
 {
@@ -1243,38 +1254,32 @@ Success. Returns OSIsoft.Identity.Common.Models.Client
 
 Unauthorized
 
-
 #### 403
 
 Forbidden
-
 
 #### 400
 
 Missing or invalid inputs
 
-
 #### 404
 
 Client or Tenant not found
 
-
 #### 500
 
 Oops! Something happened, somewhere inside our server, just a while ago
-
 ***
 
-## `DeleteClient()`
+## `Delete Client`
 
 Delete a client
 
-### Http 
+### Request
 
 `DELETE api/Tenant/{tenantId}/Clients/{clientId}`
 
 ### Parameters
-
 
 ```csharp
 string tenantId [FromRoute] [Required] [No-Default]
@@ -1288,10 +1293,11 @@ string clientId [FromRoute] [Required] [No-Default]
 
 Id of client
 
-
 ### Security
 
-Allowed for these roles: **Account Administrator**
+Allowed for these roles:
+
+- `Account Administrator`
 
 ### Returns
 
@@ -1299,38 +1305,32 @@ Allowed for these roles: **Account Administrator**
 
 Deleted
 
-
 #### 401
 
 Unauthorized
-
 
 #### 403
 
 Forbidden
 
-
 #### 404
 
 Client or Tenant not found
 
-
 #### 500
 
 Oops! Something happened, somewhere inside our server, just a while ago
-
 ***
 
-## `GetClientSecrets()`
+## `Get Client Secrets`
 
 Get all secrets for a client
 
-### Http 
+### Request
 
 `GET api/Tenant/{tenantId}/Clients/{clientId}/Secrets`
 
 ### Parameters
-
 
 ```csharp
 string tenantId [FromRoute] [Required] [No-Default]
@@ -1344,16 +1344,23 @@ string clientId [FromRoute] [Required] [No-Default]
 
 Id of client
 
-
 ### Security
 
-Allowed for these roles: **Account Administrator**, **Cluster Operator**, **Cluster Support**
+Allowed for these roles:
+
+- `Account Administrator`
+- `Cluster Operator`
+- `Cluster Support`
 
 ### Returns
 
 #### 200
 
-Success. Returns System.Collections.Generic.List`1[OSIsoft.Identity.Common.Models.Secret]
+Success
+
+##### Type:
+
+ `List[Secret]`
 
 ```json
 [
@@ -1361,7 +1368,7 @@ Success. Returns System.Collections.Generic.List`1[OSIsoft.Identity.Common.Model
   "Id": 0,
   "Description": "String",
   "Value": "String",
-  "Expiration": "2019-01-25T15:44:12.7377891-08:00",
+  "Expiration": "2019-01-29T15:18:37.4305851-08:00",
   "Type": "String"
 }
 ]
@@ -1371,33 +1378,28 @@ Success. Returns System.Collections.Generic.List`1[OSIsoft.Identity.Common.Model
 
 Unauthorized
 
-
 #### 403
 
 Forbidden
-
 
 #### 404
 
 Client or Tenant not found
 
-
 #### 500
 
 Oops! Something happened, somewhere inside our server, just a while ago
-
 ***
 
-## `GetClientSecret()`
+## `Get Client Secret`
 
 Get a specific client secret
 
-### Http 
+### Request
 
 `GET api/Tenant/{tenantId}/Clients/{clientId}/Secrets/{secretId}`
 
 ### Parameters
-
 
 ```csharp
 string tenantId [FromRoute] [Required] [No-Default]
@@ -1417,23 +1419,30 @@ int32 secretId [FromRoute] [Required] [No-Default]
 
 Id of secret
 
-
 ### Security
 
-Allowed for these roles: **Account Administrator**, **Cluster Operator**, **Cluster Support**
+Allowed for these roles:
+
+- `Account Administrator`
+- `Cluster Operator`
+- `Cluster Support`
 
 ### Returns
 
 #### 200
 
-Success. Returns OSIsoft.Identity.Common.Models.Secret
+Success
+
+##### Type:
+
+ `Secret`
 
 ```json
 {
   "Id": 0,
   "Description": "String",
   "Value": "String",
-  "Expiration": "2019-01-25T15:44:12.7407561-08:00",
+  "Expiration": "2019-01-29T15:18:37.4330051-08:00",
   "Type": "String"
 }
 ```
@@ -1442,33 +1451,28 @@ Success. Returns OSIsoft.Identity.Common.Models.Secret
 
 Unauthorized
 
-
 #### 403
 
 Forbidden
-
 
 #### 404
 
 Secret, Client, or Tenant not found
 
-
 #### 500
 
 Oops! Something happened, somewhere inside our server, just a while ago
-
 ***
 
-## `AddClientSecret()`
+## `Add Client Secret`
 
 Add a new secret for a client
 
-### Http 
+### Request
 
 `POST api/Tenant/{tenantId}/Clients/{clientId}/Secrets`
 
 ### Parameters
-
 
 ```csharp
 string tenantId [FromRoute] [Required] [No-Default]
@@ -1487,23 +1491,29 @@ ClientSecretDto clientSecretDto [FromBody] [Required] [No-Default]
 ```
 
 
+
 ```json
 {
-  "Expiration": "2019-01-25T15:44:12.7412625-08:00",
+  "Expiration": "2019-01-29T15:18:37.4334625-08:00",
   "Description": "String"
 }
 ```
 
-
 ### Security
 
-Allowed for these roles: **Account Administrator**
+Allowed for these roles:
+
+- `Account Administrator`
 
 ### Returns
 
 #### 200
 
-Success. Returns System.Collections.Generic.List`1[OSIsoft.Identity.Common.Models.Secret]
+Success
+
+##### Type:
+
+ `List[Secret]`
 
 ```json
 [
@@ -1511,7 +1521,7 @@ Success. Returns System.Collections.Generic.List`1[OSIsoft.Identity.Common.Model
   "Id": 0,
   "Description": "String",
   "Value": "String",
-  "Expiration": "2019-01-25T15:44:12.7430031-08:00",
+  "Expiration": "2019-01-29T15:18:37.4347947-08:00",
   "Type": "String"
 }
 ]
@@ -1521,33 +1531,28 @@ Success. Returns System.Collections.Generic.List`1[OSIsoft.Identity.Common.Model
 
 Unauthorized
 
-
 #### 403
 
 Forbidden
-
 
 #### 404
 
 Client or Tenant not found
 
-
 #### 500
 
 Oops! Something happened, somewhere inside our server, just a while ago
-
 ***
 
-## `UpdateClientSecret()`
+## `Update Client Secret`
 
 Update a client secret (Only Secret Description and Secret Expiration Date could be updated)
 
-### Http 
+### Request
 
 `PUT api/Tenant/{tenantId}/Clients/{clientId}/Secrets/{secretId}`
 
 ### Parameters
-
 
 ```csharp
 string tenantId [FromRoute] [Required] [No-Default]
@@ -1572,30 +1577,36 @@ ClientSecretDto secretUpdate [FromBody] [Required] [No-Default]
 ```
 
 secretId
+
 ```json
 {
-  "Expiration": "2019-01-25T15:44:12.7432129-08:00",
+  "Expiration": "2019-01-29T15:18:37.4350123-08:00",
   "Description": "String"
 }
 ```
 
-
 ### Security
 
-Allowed for these roles: **Account Administrator**
+Allowed for these roles:
+
+- `Account Administrator`
 
 ### Returns
 
 #### 200
 
-Success. Returns OSIsoft.Identity.Common.Models.Secret
+Success
+
+##### Type:
+
+ `Secret`
 
 ```json
 {
   "Id": 0,
   "Description": "String",
   "Value": "String",
-  "Expiration": "2019-01-25T15:44:12.7433215-08:00",
+  "Expiration": "2019-01-29T15:18:37.4351159-08:00",
   "Type": "String"
 }
 ```
@@ -1604,38 +1615,32 @@ Success. Returns OSIsoft.Identity.Common.Models.Secret
 
 Missing or invalid inputs
 
-
 #### 401
 
 Unauthorized
-
 
 #### 403
 
 Forbidden
 
-
 #### 404
 
 Secret, Client, or Tenant not found
 
-
 #### 500
 
 Oops! Something happened, somewhere inside our server, just a while ago
-
 ***
 
-## `DeleteClientSecret()`
+## `Delete Client Secret`
 
 Delete a secret from a client
 
-### Http 
+### Request
 
 `DELETE api/Tenant/{tenantId}/Clients/{clientId}/Secrets/{secretId}`
 
 ### Parameters
-
 
 ```csharp
 string tenantId [FromRoute] [Required] [No-Default]
@@ -1655,16 +1660,21 @@ int32 secretId [FromRoute] [Required] [No-Default]
 
 Id of secret
 
-
 ### Security
 
-Allowed for these roles: **Account Administrator**
+Allowed for these roles:
+
+- `Account Administrator`
 
 ### Returns
 
 #### 200
 
-Success. Returns System.Collections.Generic.List`1[OSIsoft.Identity.Common.Models.Secret]
+Success
+
+##### Type:
+
+ `List[Secret]`
 
 ```json
 [
@@ -1672,7 +1682,7 @@ Success. Returns System.Collections.Generic.List`1[OSIsoft.Identity.Common.Model
   "Id": 0,
   "Description": "String",
   "Value": "String",
-  "Expiration": "2019-01-25T15:44:12.7436146-08:00",
+  "Expiration": "2019-01-29T15:18:37.4353924-08:00",
   "Type": "String"
 }
 ]
@@ -1682,20 +1692,16 @@ Success. Returns System.Collections.Generic.List`1[OSIsoft.Identity.Common.Model
 
 Unauthorized
 
-
 #### 403
 
 Forbidden
-
 
 #### 404
 
 Secret, Client, or Tenant not found
 
-
 #### 500
 
 Oops! Something happened, somewhere inside our server, just a while ago
-
 ***
 

@@ -30,9 +30,6 @@ string UserIdClaimType
 ```
 Type of claim
 
-
-
-
 ### Serialized Model
 
 ```json
@@ -43,18 +40,18 @@ Type of claim
   "UserIdClaimType": "String"
 }
 ```
+
 ***
 
-## `GetIdentityProvider()`
+## `Get Identity Provider`
 
 Returns an IdentityProvider object
 
-### Http 
+### Request
 
 `GET api/IdentityProvider/{identityProviderId}`
 
 ### Parameters
-
 
 ```csharp
 string identityProviderId [FromRoute] [Required] [No-Default]
@@ -62,16 +59,23 @@ string identityProviderId [FromRoute] [Required] [No-Default]
 
 Id of provider
 
-
 ### Security
 
-Allowed for these roles: **Account Administrator**, **Cluster Operator**, **Cluster Support**
+Allowed for these roles:
+
+- `Account Administrator`
+- `Cluster Operator`
+- `Cluster Support`
 
 ### Returns
 
 #### 200
 
-Success. Returns OSIsoft.Identity.Common.Models.IdentityProvider
+Success
+
+##### Type:
+
+ `IdentityProvider`
 
 ```json
 {
@@ -86,33 +90,28 @@ Success. Returns OSIsoft.Identity.Common.Models.IdentityProvider
 
 Unauthorized
 
-
 #### 403
 
 Forbidden
-
 
 #### 404
 
 Identity Provider not found
 
-
 #### 500
 
 Oops! Something happened, somewhere inside our server, just a while ago
-
 ***
 
-## `GetIdentityProviderByScheme()`
+## `Get Identity Provider By Scheme`
 
 Returns a list of IdentityProvider objects that follow a scheme
 
-### Http 
+### Request
 
 `GET api/IdentityProvider/schemes/{scheme}`
 
 ### Parameters
-
 
 ```csharp
 string scheme [FromRoute] [Required] [No-Default]
@@ -120,16 +119,21 @@ string scheme [FromRoute] [Required] [No-Default]
 
 Scheme name
 
-
 ### Security
 
-Allowed for these roles: **Cluster Operator**
+Allowed for these roles:
+
+- `Cluster Operator`
 
 ### Returns
 
 #### 200
 
-Success. Returns OSIsoft.Identity.Common.Models.IdentityProvider
+Success
+
+##### Type:
+
+ `IdentityProvider`
 
 ```json
 {
@@ -144,33 +148,28 @@ Success. Returns OSIsoft.Identity.Common.Models.IdentityProvider
 
 Unauthorized
 
-
 #### 403
 
 Forbidden
-
 
 #### 404
 
 Identity Provider not found
 
-
 #### 500
 
 Oops! Something happened, somewhere inside our server, just a while ago
-
 ***
 
-## `GetIdentityProviders()`
+## `Get Identity Providers`
 
 Returns a list of IdentityProvider objects
 
-### Http 
+### Request
 
 `GET api/IdentityProvider/`
 
 ### Parameters
-
 
 ```csharp
 string query [FromQuery] [Optional] [Default = ""]
@@ -190,16 +189,21 @@ int32 count [FromQuery] [Optional] [Default = 100]
 
 Max number of providers to return
 
-
 ### Security
 
-Allowed for these roles: **Cluster Operator**
+Allowed for these roles:
+
+- `Cluster Operator`
 
 ### Returns
 
 #### 200
 
-Success. Returns System.Collections.Generic.List`1[OSIsoft.Identity.Common.Models.IdentityProvider]
+Success
+
+##### Type:
+
+ `List[IdentityProvider]`
 
 ```json
 [
@@ -216,33 +220,28 @@ Success. Returns System.Collections.Generic.List`1[OSIsoft.Identity.Common.Model
 
 Missing or invalid inputs
 
-
 #### 401
 
 Unauthorized
-
 
 #### 403
 
 Forbidden
 
-
 #### 500
 
 Oops! Something happened, somewhere inside our server, just a while ago
-
 ***
 
-## `GetIdentityProvidersFromTenantId()`
+## `Get Tenant Identity Providers`
 
 Get all identity providers for a tenant
 
-### Http 
+### Request
 
 `GET api/Tenant/{tenantId}/IdentityProviders`
 
 ### Parameters
-
 
 ```csharp
 string tenantId [FromRoute] [Required] [No-Default]
@@ -268,16 +267,23 @@ int32 count [FromQuery] [Optional] [Default = 100]
 
 Max number of providers to return
 
-
 ### Security
 
-Allowed for these roles: **Account Administrator**, **Cluster Operator**, **Cluster Support**
+Allowed for these roles:
+
+- `Account Administrator`
+- `Cluster Operator`
+- `Cluster Support`
 
 ### Returns
 
 #### 200
 
-Success. Returns System.Collections.Generic.List`1[OSIsoft.Identity.Common.Models.IdentityProvider]
+Success
+
+##### Type:
+
+ `List[IdentityProvider]`
 
 ```json
 [
@@ -294,33 +300,28 @@ Success. Returns System.Collections.Generic.List`1[OSIsoft.Identity.Common.Model
 
 Unauthorized
 
-
 #### 403
 
 Forbidden
-
 
 #### 404
 
 Tenant not found
 
-
 #### 500
 
 Oops! Something happened, somewhere inside our server, just a while ago
-
 ***
 
-## `GetIdentityProvider()`
+## `Get Tenant Identity Provider`
 
 Get an identity provider
 
-### Http 
+### Request
 
 `GET api/Tenant/{tenantId}/IdentityProviders/{identityProviderId}`
 
 ### Parameters
-
 
 ```csharp
 string tenantId [FromRoute] [Required] [No-Default]
@@ -334,16 +335,23 @@ string identityProviderId [FromRoute] [Required] [No-Default]
 
 Id of provider
 
-
 ### Security
 
-Allowed for these roles: **Account Administrator**, **Cluster Operator**, **Cluster Support**
+Allowed for these roles:
+
+- `Account Administrator`
+- `Cluster Operator`
+- `Cluster Support`
 
 ### Returns
 
 #### 200
 
-Success. Returns OSIsoft.Identity.Common.Models.IdentityProvider
+Success
+
+##### Type:
+
+ `IdentityProvider`
 
 ```json
 {
@@ -358,33 +366,28 @@ Success. Returns OSIsoft.Identity.Common.Models.IdentityProvider
 
 Unauthorized
 
-
 #### 403
 
 Forbidden
-
 
 #### 404
 
 IdentityProvider or Tenant not found
 
-
 #### 500
 
 Oops! Something happened, somewhere inside our server, just a while ago
-
 ***
 
-## `AddIdentityProvider()`
+## `Add Identity Provider to Tenant`
 
 Add an existing identity provider to a tenant
 
-### Http 
+### Request
 
 `POST api/Tenant/{tenantId}/IdentityProviders`
 
 ### Parameters
-
 
 ```csharp
 string tenantId [FromRoute] [Required] [No-Default]
@@ -398,10 +401,11 @@ string identityProviderId [FromQuery] [Required] [No-Default]
 
 Id of provider
 
-
 ### Security
 
-Allowed for these roles: **Account Administrator**
+Allowed for these roles:
+
+- `Account Administrator`
 
 ### Returns
 
@@ -409,43 +413,36 @@ Allowed for these roles: **Account Administrator**
 
 Added
 
-
 #### 400
 
 Missing or invalid inputs
-
 
 #### 401
 
 Unauthorized
 
-
 #### 403
 
 Forbidden
-
 
 #### 404
 
 Tenant not found
 
-
 #### 500
 
 Oops! Something happened, somewhere inside our server, just a while ago
-
 ***
 
-## `RemoveIdentityProvider()`
+## `Remove Identity Provider From Tenant`
 
 Remove an identity provider from a tenant
 
-### Http 
+### Request
 
 `DELETE api/Tenant/{tenantId}/IdentityProviders/{identityProviderId}`
 
 ### Parameters
-
 
 ```csharp
 string tenantId [FromRoute] [Required] [No-Default]
@@ -459,10 +456,11 @@ string identityProviderId [FromRoute] [Required] [No-Default]
 
 Id of provider
 
-
 ### Security
 
-Allowed for these roles: **Account Administrator**
+Allowed for these roles:
+
+- `Account Administrator`
 
 ### Returns
 
@@ -470,25 +468,20 @@ Allowed for these roles: **Account Administrator**
 
 Removed
 
-
 #### 401
 
 Unauthorized
-
 
 #### 403
 
 Forbidden
 
-
 #### 404
 
 IdentityProvider or Tenant not found
 
-
 #### 500
 
 Oops! Something happened, somewhere inside our server, just a while ago
-
 ***
 

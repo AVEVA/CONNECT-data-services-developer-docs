@@ -30,9 +30,6 @@ bool IsCloudConnectCustomer
 ```
 Specify if Tenant is a Cloud Connect customer.
 
-
-
-
 ### Serialized Model
 
 ```json
@@ -43,18 +40,18 @@ Specify if Tenant is a Cloud Connect customer.
   "IsCloudConnectCustomer": false
 }
 ```
+
 ***
 
-## `GetIdentityProvidersFromTenantAlias()`
+## `Get Identity Providers from Alias`
 
 Get all identity providers for a tenant from its alias
 
-### Http 
+### Request
 
 `GET api/Tenant/Aliases/{tenantAlias}/IdentityProviders`
 
 ### Parameters
-
 
 ```csharp
 string tenantAlias [FromRoute] [Required] [No-Default]
@@ -80,16 +77,23 @@ int32 count [FromQuery] [Optional] [Default = 100]
 
 Max number of providers to return
 
-
 ### Security
 
-Allowed for these roles: **Account Administrator**, **Cluster Operator**, **Cluster Support**
+Allowed for these roles:
+
+- `Account Administrator`
+- `Cluster Operator`
+- `Cluster Support`
 
 ### Returns
 
 #### 200
 
-Success. Returns System.Collections.Generic.List`1[OSIsoft.Identity.Common.Models.IdentityProvider]
+Success
+
+##### Type:
+
+ `List[IdentityProvider]`
 
 ```json
 [
@@ -106,33 +110,28 @@ Success. Returns System.Collections.Generic.List`1[OSIsoft.Identity.Common.Model
 
 Unauthorized
 
-
 #### 403
 
 Forbidden
-
 
 #### 404
 
 Tenant not found
 
-
 #### 500
 
 Oops! Something happened, somewhere inside our server, just a while ago
-
 ***
 
-## `FindUserByTenantAlias()`
+## `Find Users by Tenant Alias`
 
 Search for an external user in a tenant using an alias
 
-### Http 
+### Request
 
 `GET api/Tenant/Aliases/{tenantAlias}/Users/Search`
 
 ### Parameters
-
 
 ```csharp
 string tenantAlias [FromRoute] [Required] [No-Default]
@@ -152,16 +151,23 @@ string externalUserId [FromQuery] [Required] [No-Default]
 
 User external Id
 
-
 ### Security
 
-Allowed for these roles: **Account Administrator**, **Cluster Operator**, **Cluster Support**
+Allowed for these roles:
+
+- `Account Administrator`
+- `Cluster Operator`
+- `Cluster Support`
 
 ### Returns
 
 #### 200
 
-Success. Returns OSIsoft.Identity.Common.Models.User
+Success
+
+##### Type:
+
+ `User`
 
 ```json
 {
@@ -194,33 +200,28 @@ Success. Returns OSIsoft.Identity.Common.Models.User
 
 Unauthorized
 
-
 #### 403
 
 Forbidden
-
 
 #### 404
 
 User or Tenant not found
 
-
 #### 500
 
 Oops! Something happened, somewhere inside our server, just a while ago
-
 ***
 
-## `AddAzureActiveDirectoryTenantInformationToTenant()`
+## `Add AAD Information`
 
 Add Azure Active Directory Tenant Information to a Tenant
 
-### Http 
+### Request
 
 `POST api/Tenant/{tenantId}/AzureActiveDirectoryTenantInformation`
 
 ### Parameters
-
 
 ```csharp
 string tenantId [FromRoute] [Required] [No-Default]
@@ -233,22 +234,28 @@ AzureActiveDirectoryTenantInformationDto azureActiveDirectoryTenantInformationDt
 ```
 
 Azure Active Directory Tenant information to add
+
 ```json
 {
   "TenantId": "String"
 }
 ```
 
-
 ### Security
 
-Allowed for these roles: **Account Administrator**
+Allowed for these roles:
+
+- `Account Administrator`
 
 ### Returns
 
 #### 201
 
-Created. Returns OSIsoft.Identity.Common.Models.AzureActiveDirectoryTenantInformationDto
+Created
+
+##### Type:
+
+ `AzureActiveDirectoryTenantInformationDto`
 
 ```json
 {
@@ -260,43 +267,36 @@ Created. Returns OSIsoft.Identity.Common.Models.AzureActiveDirectoryTenantInform
 
 Missing or invalid inputs
 
-
 #### 401
 
 Unauthorized
-
 
 #### 403
 
 Forbidden
 
-
 #### 404
 
 Tenant not found
-
 
 #### 409
 
 Azure Active Directory Tenant Id is already in use on the specified Tenant
 
-
 #### 500
 
 Oops! Something happened, somewhere inside our server, just a while ago
-
 ***
 
-## `GetAllAzureActiveDirectoryTenantInformationFromTenant()`
+## `Get All AAD Information`
 
 Get all Azure Active Directory Tenant Information for a Tenant
 
-### Http 
+### Request
 
 `GET api/Tenant/{tenantId}/AzureActiveDirectoryTenantInformation`
 
 ### Parameters
-
 
 ```csharp
 string tenantId [FromRoute] [Required] [No-Default]
@@ -322,16 +322,23 @@ int32 count [FromQuery] [Optional] [Default = 100]
 
 Max number of providers to return
 
-
 ### Security
 
-Allowed for these roles: **Account Administrator**, **Cluster Operator**, **Cluster Support**
+Allowed for these roles:
+
+- `Account Administrator`
+- `Cluster Operator`
+- `Cluster Support`
 
 ### Returns
 
 #### 200
 
-Success. Returns System.Collections.Generic.List`1[OSIsoft.Identity.Common.Models.AzureActiveDirectoryTenantInformationDto]
+Success
+
+##### Type:
+
+ `List[AzureActiveDirectoryTenantInformationDto]`
 
 ```json
 [
@@ -345,33 +352,28 @@ Success. Returns System.Collections.Generic.List`1[OSIsoft.Identity.Common.Model
 
 Unauthorized
 
-
 #### 403
 
 Forbidden
 
-
 #### 403
 
 Forbidden
-
 
 #### 500
 
 Oops! Something happened, somewhere inside our server, just a while ago
-
 ***
 
-## `GetAzureActiveDirectoryTenantInformationFromTenant()`
+## `Get AAD Information`
 
 Remove Azure Active Directory Tenant Information from a tenant
 
-### Http 
+### Request
 
 `GET api/Tenant/{tenantId}/AzureActiveDirectoryTenantInformation/{azureActiveDirectoryTenantId}`
 
 ### Parameters
-
 
 ```csharp
 string tenantId [FromRoute] [Required] [No-Default]
@@ -385,16 +387,21 @@ string azureActiveDirectoryTenantId [FromQuery] [Required] [No-Default]
 
 Azure Active Directory Tenant Id to remove
 
-
 ### Security
 
-Allowed for these roles: **Account Administrator**
+Allowed for these roles:
+
+- `Account Administrator`
 
 ### Returns
 
 #### 200
 
-Success. Returns OSIsoft.Identity.Common.Models.AzureActiveDirectoryTenantInformationDto
+Success
+
+##### Type:
+
+ `AzureActiveDirectoryTenantInformationDto`
 
 ```json
 {
@@ -406,38 +413,32 @@ Success. Returns OSIsoft.Identity.Common.Models.AzureActiveDirectoryTenantInform
 
 Missing or invalid inputs
 
-
 #### 401
 
 Unauthorized
-
 
 #### 403
 
 Forbidden
 
-
 #### 404
 
 Tenant not found
 
-
 #### 500
 
 Oops! Something happened, somewhere inside our server, just a while ago
-
 ***
 
-## `RemoveAzureActiveDirectoryTenantInformationFromTenant()`
+## `Remove AAD Information`
 
 Remove Azure Active Directory Tenant Information from a tenant
 
-### Http 
+### Request
 
 `DELETE api/Tenant/{tenantId}/AzureActiveDirectoryTenantInformation/{azureActiveDirectoryTenantId}`
 
 ### Parameters
-
 
 ```csharp
 string tenantId [FromRoute] [Required] [No-Default]
@@ -451,10 +452,11 @@ string azureActiveDirectoryTenantId [FromQuery] [Required] [No-Default]
 
 Azure Active Directory Tenant Id to remove
 
-
 ### Security
 
-Allowed for these roles: **Account Administrator**
+Allowed for these roles:
+
+- `Account Administrator`
 
 ### Returns
 
@@ -462,118 +464,24 @@ Allowed for these roles: **Account Administrator**
 
 Removed
 
-
 #### 400
 
 Missing or invalid inputs
-
 
 #### 401
 
 Unauthorized
 
-
 #### 403
 
 Forbidden
-
 
 #### 404
 
 Tenant not found
 
-
 #### 500
 
 Oops! Something happened, somewhere inside our server, just a while ago
-
-***
-
-## `FindUserByTenantId()`
-
-Search for an external user in a tenant
-
-### Http 
-
-`GET api/Tenant/{tenantId}/Users/Search`
-
-### Parameters
-
-
-```csharp
-string tenantId [FromRoute] [Required] [No-Default]
-```
-
-Id of tenant
-
-```csharp
-string identityProviderScheme [FromQuery] [Required] [No-Default]
-```
-
-Identity provider scheme
-
-```csharp
-string externalUserId [FromQuery] [Required] [No-Default]
-```
-
-User external Id
-
-
-### Security
-
-Allowed for these roles: **Account Administrator**, **Cluster Operator**, **Cluster Support**
-
-### Returns
-
-#### 200
-
-Success. Returns OSIsoft.Identity.Common.Models.User
-
-```json
-{
-  "Id": "String",
-  "GivenName": "String",
-  "Surname": "String",
-  "Name": "String",
-  "Email": "String",
-  "ContactEmail": "String",
-  "ContactGivenName": "String",
-  "ContactSurname": "String",
-  "ExternalUserId": "String",
-  "Preferences": "String",
-  "Tenant": {
-    "Id": "String",
-    "Alias": "String",
-    "State": "String",
-    "IsCloudConnectCustomer": false
-  },
-  "IdentityProvider": {
-    "Id": "String",
-    "DisplayName": "String",
-    "Scheme": "String",
-    "UserIdClaimType": "String"
-  }
-}
-```
-
-#### 401
-
-Unauthorized
-
-
-#### 403
-
-Forbidden
-
-
-#### 404
-
-User or Tenant not found
-
-
-#### 500
-
-Oops! Something happened, somewhere inside our server, just a while ago
-
 ***
 

@@ -1108,7 +1108,7 @@ User data transfer object
     "String"
   ],
   "CreateInvitation": false,
-  "InvitationExpiresDateTime": "2019-02-05T19:11:14.8141277-08:00"
+  "InvitationExpiresDateTime": "2019-02-06T09:56:10.2713071-08:00"
 }
 ```
 
@@ -1215,7 +1215,7 @@ User data transfer object
     "String"
   ],
   "CreateInvitation": false,
-  "InvitationExpiresDateTime": "2019-02-05T19:11:14.8201057-08:00"
+  "InvitationExpiresDateTime": "2019-02-06T09:56:10.2777685-08:00"
 }
 ```
 
@@ -1493,8 +1493,8 @@ Success
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-02-05T19:11:14.8322226-08:00",
-  "Expires": "2019-02-05T19:11:14.8322276-08:00",
+  "Issued": "2019-02-06T09:56:10.2907473-08:00",
+  "Expires": "2019-02-06T09:56:10.2907519-08:00",
   "State": 0,
   "TenantId": "TenantId",
   "Tenant": {

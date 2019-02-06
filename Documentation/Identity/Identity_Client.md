@@ -22,10 +22,8 @@ string | ClientUri | URI to further information about client (used on consent sc
 string | LogoUri | URI to client logo (used on consent screen)
 bool | RequireConsent | Specifies whether a consent screen is required (defaults to true)
 bool | AllowRememberConsent | Specifies whether user can choose to store consent decisions (defaults to true)
-string[] | AllowedGrantTypes | Specifies the allowed grant types (legal combinations of AuthorizationCode, Implicit, Hybrid, ResourceOwner,
-            ClientCredentials).
-bool | AllowAccessTokensViaBrowser | Controls whether access tokens are transmitted via the browser for this client (defaults to false).
-            This can prevent accidental leakage of access tokens when multiple response types are allowed.
+string[] | AllowedGrantTypes | Specifies the allowed grant types (legal combinations of AuthorizationCode, Implicit, Hybrid, ResourceOwner, ClientCredentials).
+bool | AllowAccessTokensViaBrowser | Controls whether access tokens are transmitted via the browser for this client (defaults to false). This can prevent accidental leakage of access tokens when multiple response types are allowed.
 string[] | RedirectUris | Specifies allowed URIs to return tokens or authorization codes to
 string[] | PostLogoutRedirectUris | Specifies allowed URIs to redirect to after logout
 string | FrontChannelLogoutUri | Specifies logout URI at client for HTTP front-channel based logout.
@@ -34,31 +32,21 @@ string | BackChannelLogoutUri | Specifies logout URI at client for HTTP back-cha
 bool | BackChannelLogoutSessionRequired | Specifies is the user's session id should be sent to the BackChannelLogoutUri. Defaults to true.
 bool | AllowOfflineAccess | Gets or sets a value indicating whether [allow offline access]. Defaults to false.
 string[] | AllowedScopes | Specifies the api scopes that the client is allowed to request. If empty, the client can't access any scope
-bool | AlwaysIncludeUserClaimsInIdToken | When requesting both an id token and access token, should the user claims always be added to the id token instead
-            of requiring the client to use the user info endpoint.
-            Defaults to false.
+bool | AlwaysIncludeUserClaimsInIdToken | When requesting both an id token and access token, should the user claims always be added to the id token instead of requiring the client to use the user info endpoint. Defaults to false.
 int32 | IdentityTokenLifetime | Lifetime of identity token in seconds (defaults to 300 seconds / 5 minutes)
 int32 | AccessTokenLifetime | Lifetime of access token in seconds (defaults to 3600 seconds / 1 hour)
 int32 | AuthorizationCodeLifetime | Lifetime of authorization code in seconds (defaults to 300 seconds / 5 minutes)
 int32 | AbsoluteRefreshTokenLifetime | Maximum lifetime of a refresh token in seconds. Defaults to 2592000 seconds / 30 days
 int32 | SlidingRefreshTokenLifetime | Sliding lifetime of a refresh token in seconds. Defaults to 1296000 seconds / 15 days
 optional: int32 | ConsentLifetime | Lifetime of a user consent in seconds. Defaults to null (no expiration)
-TokenUsage | RefreshTokenUsage | ReUse: the refresh token handle will stay the same when refreshing tokens
-            OneTime: the refresh token handle will be updated when refreshing tokens
-bool | UpdateAccessTokenClaimsOnRefresh | Gets or sets a value indicating whether the access token (and its claims) should be updated on a refresh token
-            request.
-            Defaults to false.
-TokenExpiration | RefreshTokenExpiration | Absolute: the refresh token will expire on a fixed point in time (specified by the AbsoluteRefreshTokenLifetime)
-            Sliding: when refreshing the token, the lifetime of the refresh token will be renewed (by the amount specified in
-            SlidingRefreshTokenLifetime). The lifetime will not exceed AbsoluteRefreshTokenLifetime.
+TokenUsage | RefreshTokenUsage | ReUse: the refresh token handle will stay the same when refreshing tokens OneTime: the refresh token handle will be updated when refreshing tokens
+bool | UpdateAccessTokenClaimsOnRefresh | Gets or sets a value indicating whether the access token (and its claims) should be updated on a refresh token request. Defaults to false.
+TokenExpiration | RefreshTokenExpiration | Absolute: the refresh token will expire on a fixed point in time (specified by the AbsoluteRefreshTokenLifetime) Sliding: when refreshing the token, the lifetime of the refresh token will be renewed (by the amount specified in SlidingRefreshTokenLifetime). The lifetime will not exceed AbsoluteRefreshTokenLifetime.
 AccessTokenType | AccessTokenType | Specifies whether the access token is a reference token or a self contained JWT token (defaults to Jwt).
-string[] | IdentityProviderRestrictions | Specifies which external IdPs can be used with this client (if list is empty all IdPs are allowed). Defaults to
-            empty.
+string[] | IdentityProviderRestrictions | Specifies which external IdPs can be used with this client (if list is empty all IdPs are allowed). Defaults to empty.
 bool | IncludeJwtId | Gets or sets a value indicating whether JWT access tokens should include an identifier. Defaults to false.
 Claim[] | Claims | Allows settings claims for the client (will be included in the access token).
-bool | AlwaysSendClientClaims | Gets or sets a value indicating whether client claims should be always included in the access tokens - or only for
-            client credentials flow.
-            Defaults to false
+bool | AlwaysSendClientClaims | Gets or sets a value indicating whether client claims should be always included in the access tokens - or only for client credentials flow. Defaults to false
 string | ClientClaimsPrefix | Gets or sets a value to prefix it on client claim types. Defaults to client_.
 string | PairWiseSubjectSalt | Subject salt to be used.
 optional: int32 | UserSsoLifetime | The maximum duration (in seconds) since the last time the user authenticated.
@@ -78,14 +66,14 @@ string,string[] | Properties | Gets or sets the custom properties for the client
       "Id": 0,
       "Description": "description",
       "Value": "Value",
-      "Expiration": "2019-02-05T19:11:14.5823992-08:00",
+      "Expiration": "2019-02-06T09:56:10.0754176-08:00",
       "Type": "Type"
     },
     {
       "Id": 0,
       "Description": "description",
       "Value": "Value",
-      "Expiration": "2019-02-05T19:11:14.5851253-08:00",
+      "Expiration": "2019-02-06T09:56:10.0774723-08:00",
       "Type": "Type"
     }
   ],
@@ -258,14 +246,14 @@ Success
         "Id": 0,
         "Description": "description",
         "Value": "Value",
-        "Expiration": "2019-02-05T19:11:14.6874061-08:00",
+        "Expiration": "2019-02-06T09:56:10.1681384-08:00",
         "Type": "Type"
       },
       {
         "Id": 0,
         "Description": "description",
         "Value": "Value",
-        "Expiration": "2019-02-05T19:11:14.6874361-08:00",
+        "Expiration": "2019-02-06T09:56:10.1730193-08:00",
         "Type": "Type"
       }
     ],
@@ -380,14 +368,14 @@ Success
         "Id": 0,
         "Description": "description",
         "Value": "Value",
-        "Expiration": "2019-02-05T19:11:14.6877358-08:00",
+        "Expiration": "2019-02-06T09:56:10.1731787-08:00",
         "Type": "Type"
       },
       {
         "Id": 0,
         "Description": "description",
         "Value": "Value",
-        "Expiration": "2019-02-05T19:11:14.6877662-08:00",
+        "Expiration": "2019-02-06T09:56:10.1731857-08:00",
         "Type": "Type"
       }
     ],
@@ -567,14 +555,14 @@ Success
       "Id": 0,
       "Description": "description",
       "Value": "Value",
-      "Expiration": "2019-02-05T19:11:14.6886929-08:00",
+      "Expiration": "2019-02-06T09:56:10.1773039-08:00",
       "Type": "Type"
     },
     {
       "Id": 0,
       "Description": "description",
       "Value": "Value",
-      "Expiration": "2019-02-05T19:11:14.6887084-08:00",
+      "Expiration": "2019-02-06T09:56:10.1773212-08:00",
       "Type": "Type"
     }
   ],
@@ -729,7 +717,7 @@ New `ClientCredentialClientCreateDto <ClientCredentialClientCreateDto>` object
 ```json
 {
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-02-05T19:11:14.7233195-08:00",
+  "SecretExpirationDate": "2019-02-06T09:56:10.1977363-08:00",
   "RoleIds": [
     "String",
     "String"
@@ -763,7 +751,7 @@ Success
   "Name": "Name",
   "ClientId": "ClientId",
   "ClientSecret": "ClientSecret",
-  "SecretExpirationDate": "2019-02-05T19:11:14.7317775-08:00",
+  "SecretExpirationDate": "2019-02-06T09:56:10.2049171-08:00",
   "SecretDescription": "description",
   "SecretId": 0
 }
@@ -811,7 +799,7 @@ New `ClientCredentialClientCreateDto <ClientCredentialClientCreateDto>` object
 ```json
 {
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-02-05T19:11:14.7372074-08:00",
+  "SecretExpirationDate": "2019-02-06T09:56:10.2084153-08:00",
   "RoleIds": [
     "String",
     "String"
@@ -845,7 +833,7 @@ Success
   "Name": "Name",
   "ClientId": "ClientId",
   "ClientSecret": "ClientSecret",
-  "SecretExpirationDate": "2019-02-05T19:11:14.7374743-08:00",
+  "SecretExpirationDate": "2019-02-06T09:56:10.208719-08:00",
   "SecretDescription": "description",
   "SecretId": 0
 }
@@ -977,7 +965,7 @@ New `HybridClientCreateDto <HybridClientCreateDto>` object
 ```json
 {
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-02-05T19:11:14.7464146-08:00",
+  "SecretExpirationDate": "2019-02-06T09:56:10.2160651-08:00",
   "RedirectUris": [
     "String",
     "String"
@@ -1016,7 +1004,7 @@ Success
   "Name": "Name",
   "ClientId": "ClientId",
   "ClientSecret": "ClientSecret",
-  "SecretExpirationDate": "2019-02-05T19:11:14.7520554-08:00",
+  "SecretExpirationDate": "2019-02-06T09:56:10.2207849-08:00",
   "SecretDescription": "description",
   "SecretId": 0,
   "AllowOfflineAccess": false
@@ -1089,14 +1077,14 @@ New Client object
       "Id": 0,
       "Description": "description",
       "Value": "Value",
-      "Expiration": "2019-02-05T19:11:14.756844-08:00",
+      "Expiration": "2019-02-06T09:56:10.2244848-08:00",
       "Type": "Type"
     },
     {
       "Id": 0,
       "Description": "description",
       "Value": "Value",
-      "Expiration": "2019-02-05T19:11:14.7568588-08:00",
+      "Expiration": "2019-02-06T09:56:10.2245074-08:00",
       "Type": "Type"
     }
   ],
@@ -1224,7 +1212,7 @@ Success
 ```json
 {
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-02-05T19:11:14.7571815-08:00",
+  "SecretExpirationDate": "2019-02-06T09:56:10.2248375-08:00",
   "RoleIds": [
     "String",
     "String"
@@ -1291,14 +1279,14 @@ New Client
       "Id": 0,
       "Description": "description",
       "Value": "Value",
-      "Expiration": "2019-02-05T19:11:14.7577279-08:00",
+      "Expiration": "2019-02-06T09:56:10.2253382-08:00",
       "Type": "Type"
     },
     {
       "Id": 0,
       "Description": "description",
       "Value": "Value",
-      "Expiration": "2019-02-05T19:11:14.7577367-08:00",
+      "Expiration": "2019-02-06T09:56:10.225347-08:00",
       "Type": "Type"
     }
   ],
@@ -1432,14 +1420,14 @@ Success
       "Id": 0,
       "Description": "description",
       "Value": "Value",
-      "Expiration": "2019-02-05T19:11:14.7582491-08:00",
+      "Expiration": "2019-02-06T09:56:10.2257476-08:00",
       "Type": "Type"
     },
     {
       "Id": 0,
       "Description": "description",
       "Value": "Value",
-      "Expiration": "2019-02-05T19:11:14.7582632-08:00",
+      "Expiration": "2019-02-06T09:56:10.225756-08:00",
       "Type": "Type"
     }
   ],
@@ -1666,14 +1654,14 @@ Success
     "Id": 0,
     "Description": "description",
     "Value": "Value",
-    "Expiration": "2019-02-05T19:11:14.7595242-08:00",
+    "Expiration": "2019-02-06T09:56:10.2264394-08:00",
     "Type": "Type"
   },
   {
     "Id": 0,
     "Description": "description",
     "Value": "Value",
-    "Expiration": "2019-02-05T19:11:14.759551-08:00",
+    "Expiration": "2019-02-06T09:56:10.2264478-08:00",
     "Type": "Type"
   }
 ]
@@ -1747,7 +1735,7 @@ Success
   "Id": 0,
   "Description": "description",
   "Value": "Value",
-  "Expiration": "2019-02-05T19:11:14.7599294-08:00",
+  "Expiration": "2019-02-06T09:56:10.2267173-08:00",
   "Type": "Type"
 }
 ```
@@ -1799,7 +1787,7 @@ ClientSecretDto clientSecretDto [FromBody] [Required] [No-Default]
 
 ```json
 {
-  "Expiration": "2019-02-05T19:11:14.7603754-08:00",
+  "Expiration": "2019-02-06T09:56:10.2270124-08:00",
   "Description": "description"
 }
 ```
@@ -1826,14 +1814,14 @@ Success
     "Id": 0,
     "Description": "description",
     "Value": "Value",
-    "Expiration": "2019-02-05T19:11:14.7621833-08:00",
+    "Expiration": "2019-02-06T09:56:10.2282522-08:00",
     "Type": "Type"
   },
   {
     "Id": 0,
     "Description": "description",
     "Value": "Value",
-    "Expiration": "2019-02-05T19:11:14.7621978-08:00",
+    "Expiration": "2019-02-06T09:56:10.2282599-08:00",
     "Type": "Type"
   }
 ]
@@ -1892,7 +1880,7 @@ secretId
 
 ```json
 {
-  "Expiration": "2019-02-05T19:11:14.7626664-08:00",
+  "Expiration": "2019-02-06T09:56:10.2284581-08:00",
   "Description": "description"
 }
 ```
@@ -1918,7 +1906,7 @@ Success
   "Id": 0,
   "Description": "description",
   "Value": "Value",
-  "Expiration": "2019-02-05T19:11:14.7629891-08:00",
+  "Expiration": "2019-02-06T09:56:10.2285766-08:00",
   "Type": "Type"
 }
 ```
@@ -1994,14 +1982,14 @@ Success
     "Id": 0,
     "Description": "description",
     "Value": "Value",
-    "Expiration": "2019-02-05T19:11:14.7634925-08:00",
+    "Expiration": "2019-02-06T09:56:10.2288404-08:00",
     "Type": "Type"
   },
   {
     "Id": 0,
     "Description": "description",
     "Value": "Value",
-    "Expiration": "2019-02-05T19:11:14.7635112-08:00",
+    "Expiration": "2019-02-06T09:56:10.2288481-08:00",
     "Type": "Type"
   }
 ]

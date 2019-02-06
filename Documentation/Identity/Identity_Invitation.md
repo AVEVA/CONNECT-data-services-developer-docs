@@ -26,8 +26,8 @@ User | User | User `User <User>` whom the invitation was issued to.
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-02-05T19:11:14.7678552-08:00",
-  "Expires": "2019-02-05T19:11:14.767859-08:00",
+  "Issued": "2019-02-06T09:56:10.2339734-08:00",
+  "Expires": "2019-02-06T09:56:10.2339769-08:00",
   "State": 0,
   "TenantId": "TenantId",
   "Tenant": {
@@ -96,7 +96,7 @@ InvitationCreateDto object
 
 ```json
 {
-  "ExpiresDateTime": "2019-02-05T19:11:14.7718874-08:00",
+  "ExpiresDateTime": "2019-02-06T09:56:10.2420882-08:00",
   "DeleteExisting": false,
   "SendInvitation": false
 }
@@ -121,8 +121,8 @@ Created
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-02-05T19:11:14.7735675-08:00",
-  "Expires": "2019-02-05T19:11:14.77357-08:00",
+  "Issued": "2019-02-06T09:56:10.2436979-08:00",
+  "Expires": "2019-02-06T09:56:10.2437-08:00",
   "State": 0,
   "TenantId": "TenantId",
   "Tenant": {
@@ -227,8 +227,8 @@ Success
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-02-05T19:11:14.7739804-08:00",
-  "Expires": "2019-02-05T19:11:14.7739822-08:00",
+  "Issued": "2019-02-06T09:56:10.2441027-08:00",
+  "Expires": "2019-02-06T09:56:10.2441045-08:00",
   "State": 0,
   "TenantId": "TenantId",
   "Tenant": {
@@ -344,8 +344,8 @@ Success
 [
   {
     "Id": "Id",
-    "Issued": "2019-02-05T19:11:14.7745168-08:00",
-    "Expires": "2019-02-05T19:11:14.7745189-08:00",
+    "Issued": "2019-02-06T09:56:10.2446394-08:00",
+    "Expires": "2019-02-06T09:56:10.2446416-08:00",
     "State": 0,
     "TenantId": "TenantId",
     "Tenant": {
@@ -382,8 +382,8 @@ Success
   },
   {
     "Id": "Id",
-    "Issued": "2019-02-05T19:11:14.774575-08:00",
-    "Expires": "2019-02-05T19:11:14.774576-08:00",
+    "Issued": "2019-02-06T09:56:10.2446916-08:00",
+    "Expires": "2019-02-06T09:56:10.2446927-08:00",
     "State": 0,
     "TenantId": "TenantId",
     "Tenant": {
@@ -472,7 +472,7 @@ New InvitationUpdateDto object
 
 ```json
 {
-  "ExpiresDateTime": "2019-02-05T19:11:14.7751011-08:00",
+  "ExpiresDateTime": "2019-02-06T09:56:10.2450837-08:00",
   "State": 0,
   "ResendInvitationEmail": false
 }
@@ -499,8 +499,8 @@ Success
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-02-05T19:11:14.7802746-08:00",
-  "Expires": "2019-02-05T19:11:14.7802792-08:00",
+  "Issued": "2019-02-06T09:56:10.2470443-08:00",
+  "Expires": "2019-02-06T09:56:10.2470475-08:00",
   "State": 0,
   "TenantId": "TenantId",
   "Tenant": {

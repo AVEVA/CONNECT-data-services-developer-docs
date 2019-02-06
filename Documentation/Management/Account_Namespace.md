@@ -59,7 +59,7 @@ Returns all `Namespaces` owned by the specified `Tenant` that the caller has acc
 
 ### Http
 
-`GET api/Tenants/{tenantId}/Namespaces`
+`GET api/v1-preview/Tenants/{tenantId}/Namespaces`
 
 ### Parameters
 
@@ -91,7 +91,7 @@ Returns a `Namespace` with the specified Id.
 
 ### Http
 
-`GET api/Tenants/{tenantId}/Namespaces/{namespaceId}`
+`GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}`
 
 ### Parameters
 
@@ -130,7 +130,7 @@ Creates a new `Namespace` in the specified `Tenant`.
 
 ### Http
 
-`POST api/Tenants/{tenantId}/Namespaces`
+`POST api/v1-preview/Tenants/{tenantId}/Namespaces`
 
 ### Parameters
 
@@ -169,7 +169,7 @@ Updates `Namespace` information: Description and TierId. The [AccessControl](xre
 
 ### Http
 
-`PUT api/Tenants/{tenantId}/Namespaces/{namespaceId}`
+`PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}`
 
 ### Parameters
 
@@ -214,7 +214,7 @@ Deletes a `Namespace` in the specified `Tenant`.
 
 ### Http
 
-`DELETE api/Tenants/{tenantId}/Namespaces/{namespaceId}`
+`DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}`
 
 ### Parameters
 
@@ -252,7 +252,7 @@ Returns the [AccessControl](xref:accessControl) that is used to authorize access
 
 ### Http
 
-`GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/accesscontrol`
+`GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/accesscontrol`
 
 ### Parameters
 
@@ -290,7 +290,7 @@ Updates the [AccessControl](xref:accessControl) that is used to authorize access
 
 ### Http
 
-`PUT api/Tenants/{tenantId}/Namespaces/{namespaceId}/accesscontrol`
+`PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/accesscontrol`
 
 ### Parameters
 
@@ -335,7 +335,7 @@ Returns the Owner's [Trustee](xref:accessControl) for a given `Namespace`.
 
 ### Http
 
-`GET api/Tenants/{tenantId}/Namespaces/{namespaceId}/owner`
+`GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/owner`
 
 ### Parameters
 
@@ -373,7 +373,7 @@ Changes the Owner's [Trustee](xref:accessControl) for a given `Namespace`.
 
 ### Http
 
-`PUT api/Tenants/{tenantId}/Namespaces/{namespaceId}/owner`
+`PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/owner`
 
 ### Parameters
 

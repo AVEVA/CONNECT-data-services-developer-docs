@@ -34,7 +34,7 @@ Retrieves all `Roles` for the specified user.
 
 ### Http
 
-`GET api/Tenants/{tenantId}/Users/{userId}/Roles`
+`GET api/v1-preview/Tenants/{tenantId}/Users/{userId}/Roles`
 
 ### Parameters
 
@@ -84,7 +84,7 @@ Adds a `Role` to the specified user.
 
 ### Http
 
-`PUT api/Tenants/{tenantId}/Users/{userId}/Roles/{roleId}`
+`PUT api/v1-preview/Tenants/{tenantId}/Users/{userId}/Roles/{roleId}`
 
 ### Parameters
 
@@ -129,7 +129,7 @@ Removes a `Role` from a user.
 
 ### Http
 
-`DELETE api/Tenants/{tenantId}/Users/{userId}/Roles/{roleId}`
+`DELETE api/v1-preview/Tenants/{tenantId}/Users/{userId}/Roles/{roleId}`
 
 ### Parameters
 
@@ -174,7 +174,7 @@ Replaces the `Roles` of a user with a new list of roles.
 
 ### Http
 
-`PUT api/Tenants/{tenantId}/Users/{userId}/Roles`
+`PUT api/v1-preview/Tenants/{tenantId}/Users/{userId}/Roles`
 
 ### Parameters
 

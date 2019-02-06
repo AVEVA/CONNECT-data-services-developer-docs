@@ -36,7 +36,7 @@ Assigns a `Role` to a specified client.
 
 ### Http
 
-`PUT api/Tenants/{tenantId}/Clients/{clientId}/Roles/{roleId}`
+`PUT api/v1-preview/Tenants/{tenantId}/Clients/{clientId}/Roles/{roleId}`
 
 ### Parameters
 
@@ -81,7 +81,7 @@ Replaces the `Roles` of a client with a new list of roles.
 
 ### Http
 
-`PUT api/Tenants/{tenantId}/Clients/{clientId}/Roles`
+`PUT api/v1-preview/Tenants/{tenantId}/Clients/{clientId}/Roles`
 
 ### Parameters
 
@@ -127,7 +127,7 @@ Removes a `Role` from a client.
 
 ### Http
 
-`DELETE api/Tenants/{tenantId}/Clients/{clientId}/Roles/{roleId}`
+`DELETE api/v1-preview/Tenants/{tenantId}/Clients/{clientId}/Roles/{roleId}`
 
 ### Parameters
 
@@ -172,7 +172,7 @@ Retrieves all `Roles` from a client.
 
 ### Http
 
-`GET api/Tenants/{tenantId}/Clients/{clientId}/Roles`
+`GET api/v1-preview/Tenants/{tenantId}/Clients/{clientId}/Roles`
 
 ### Parameters
 

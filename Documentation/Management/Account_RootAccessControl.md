@@ -2,7 +2,7 @@
 uid: AccountRootAccessControl
 ---
 
-# Root Access Control
+# Root AccessControl
 
 APIs to manage default access to entities governed by an [AccessControl](xref:accessControl).
 
@@ -14,7 +14,7 @@ Retrieves the [AccessControl](xref:accessControl) that is used to authorize acce
 
 ### Http
 
-`GET api/Tenants/{tenantId}/AccessControl/Namespaces`
+`GET api/v1-preview/Tenants/{tenantId}/AccessControl/Namespaces`
 
 ### Parameters
 
@@ -46,7 +46,7 @@ Modifies the [AccessControl](xref:accessControl) that is used to authorize acces
 
 ### Http
 
-`PUT api/Tenants/{tenantId}/AccessControl/Namespaces`
+`PUT api/v1-preview/Tenants/{tenantId}/AccessControl/Namespaces`
 
 ### Parameters
 

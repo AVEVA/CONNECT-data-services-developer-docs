@@ -10,91 +10,46 @@ CRUD operations on User
 
 For HTTP requests and responses, the User object has the following properties and JSON-serialized body: 
 
-```csharp
-string Id
-```
-Unique User ID.
-
-```csharp
-string GivenName
-```
-Given name of user.
-
-```csharp
-string Surname
-```
-Surname of user.
-
-```csharp
-string Name
-```
-Name of user.
-
-```csharp
-string Email
-```
-Email of user.
-
-```csharp
-string ContactEmail
-```
-Preferred contact email to be used.
-
-```csharp
-string ContactGivenName
-```
-Preferred name to be used when contacting user.
-
-```csharp
-string ContactSurname
-```
-Preferred surname to be used when contacting user.
-
-```csharp
-string ExternalUserId
-```
-Provider id for user.
-
-```csharp
-string Preferences
-```
-User preferences.
-
-```csharp
-Tenant Tenant
-```
-Tenant the user belongs to.
-
-```csharp
-IdentityProvider IdentityProvider
-```
-Identity provider used to authenticate user.
+Property | Type | Descriptions
+ --- | --- | ---
+string | Id | Unique User ID.
+string | GivenName | Given name of user.
+string | Surname | Surname of user.
+string | Name | Name of user.
+string | Email | Email of user.
+string | ContactEmail | Preferred contact email to be used.
+string | ContactGivenName | Preferred name to be used when contacting user.
+string | ContactSurname | Preferred surname to be used when contacting user.
+string | ExternalUserId | Provider id for user.
+string | Preferences | User preferences.
+Tenant | Tenant | Tenant the user belongs to.
+IdentityProvider | IdentityProvider | Identity provider used to authenticate user.
 
 ### Serialized Model
 
 ```json
 {
-  "Id": "String",
-  "GivenName": "String",
-  "Surname": "String",
-  "Name": "String",
-  "Email": "String",
-  "ContactEmail": "String",
-  "ContactGivenName": "String",
-  "ContactSurname": "String",
-  "ExternalUserId": "String",
-  "Preferences": "String",
+  "Id": "Id",
+  "GivenName": "Name",
+  "Surname": "Surname",
+  "Name": "Name",
+  "Email": "user@company.com",
+  "ContactEmail": "user@company.com",
+  "ContactGivenName": "Name",
+  "ContactSurname": "Surname",
+  "ExternalUserId": "ExternalUserId",
+  "Preferences": "Preferences",
   "Tenant": {
-    "Id": "String",
-    "Alias": "String",
-    "State": "String",
+    "Id": "Id",
+    "Alias": "Alias",
+    "State": "State",
     "IsCloudConnectCustomer": false
   },
   "IdentityProvider": {
-    "Id": "String",
-    "DisplayName": "String",
-    "Scheme": "String",
-    "UserIdClaimType": "String"
+    "Id": "Id",
+    "DisplayName": "Name",
+    "Scheme": "Scheme",
+    "UserIdClaimType": "UserIdClaimType"
   }
 }
 ```
@@ -155,30 +110,54 @@ Success.
 
 ```json
 [
-{
-  "Id": "String",
-  "GivenName": "String",
-  "Surname": "String",
-  "Name": "String",
-  "Email": "String",
-  "ContactEmail": "String",
-  "ContactGivenName": "String",
-  "ContactSurname": "String",
-  "ExternalUserId": "String",
-  "Preferences": "String",
-  "Tenant": {
-    "Id": "String",
-    "Alias": "String",
-    "State": "String",
-    "IsCloudConnectCustomer": false
+  {
+    "Id": "Id",
+    "GivenName": "Name",
+    "Surname": "Surname",
+    "Name": "Name",
+    "Email": "user@company.com",
+    "ContactEmail": "user@company.com",
+    "ContactGivenName": "Name",
+    "ContactSurname": "Surname",
+    "ExternalUserId": "ExternalUserId",
+    "Preferences": "Preferences",
+    "Tenant": {
+      "Id": "Id",
+      "Alias": "Alias",
+      "State": "State",
+      "IsCloudConnectCustomer": false
+    },
+    "IdentityProvider": {
+      "Id": "Id",
+      "DisplayName": "Name",
+      "Scheme": "Scheme",
+      "UserIdClaimType": "UserIdClaimType"
+    }
   },
-  "IdentityProvider": {
-    "Id": "String",
-    "DisplayName": "String",
-    "Scheme": "String",
-    "UserIdClaimType": "String"
+  {
+    "Id": "Id",
+    "GivenName": "Name",
+    "Surname": "Surname",
+    "Name": "Name",
+    "Email": "user@company.com",
+    "ContactEmail": "user@company.com",
+    "ContactGivenName": "Name",
+    "ContactSurname": "Surname",
+    "ExternalUserId": "ExternalUserId",
+    "Preferences": "Preferences",
+    "Tenant": {
+      "Id": "Id",
+      "Alias": "Alias",
+      "State": "State",
+      "IsCloudConnectCustomer": false
+    },
+    "IdentityProvider": {
+      "Id": "Id",
+      "DisplayName": "Name",
+      "Scheme": "Scheme",
+      "UserIdClaimType": "UserIdClaimType"
+    }
   }
-}
 ]
 ```
 
@@ -200,7 +179,7 @@ Tenant not found
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 
 ## `Get Users By IDs`
@@ -263,30 +242,54 @@ Success.
 
 ```json
 [
-{
-  "Id": "String",
-  "GivenName": "String",
-  "Surname": "String",
-  "Name": "String",
-  "Email": "String",
-  "ContactEmail": "String",
-  "ContactGivenName": "String",
-  "ContactSurname": "String",
-  "ExternalUserId": "String",
-  "Preferences": "String",
-  "Tenant": {
-    "Id": "String",
-    "Alias": "String",
-    "State": "String",
-    "IsCloudConnectCustomer": false
+  {
+    "Id": "Id",
+    "GivenName": "Name",
+    "Surname": "Surname",
+    "Name": "Name",
+    "Email": "user@company.com",
+    "ContactEmail": "user@company.com",
+    "ContactGivenName": "Name",
+    "ContactSurname": "Surname",
+    "ExternalUserId": "ExternalUserId",
+    "Preferences": "Preferences",
+    "Tenant": {
+      "Id": "Id",
+      "Alias": "Alias",
+      "State": "State",
+      "IsCloudConnectCustomer": false
+    },
+    "IdentityProvider": {
+      "Id": "Id",
+      "DisplayName": "Name",
+      "Scheme": "Scheme",
+      "UserIdClaimType": "UserIdClaimType"
+    }
   },
-  "IdentityProvider": {
-    "Id": "String",
-    "DisplayName": "String",
-    "Scheme": "String",
-    "UserIdClaimType": "String"
+  {
+    "Id": "Id",
+    "GivenName": "Name",
+    "Surname": "Surname",
+    "Name": "Name",
+    "Email": "user@company.com",
+    "ContactEmail": "user@company.com",
+    "ContactGivenName": "Name",
+    "ContactSurname": "Surname",
+    "ExternalUserId": "ExternalUserId",
+    "Preferences": "Preferences",
+    "Tenant": {
+      "Id": "Id",
+      "Alias": "Alias",
+      "State": "State",
+      "IsCloudConnectCustomer": false
+    },
+    "IdentityProvider": {
+      "Id": "Id",
+      "DisplayName": "Name",
+      "Scheme": "Scheme",
+      "UserIdClaimType": "UserIdClaimType"
+    }
   }
-}
 ]
 ```
 
@@ -299,34 +302,85 @@ Partial success.
  `MultiStatusResponseDto[IList[User]]`
 
 ```json
-[
-[
 {
-  "Id": "String",
-  "GivenName": "String",
-  "Surname": "String",
-  "Name": "String",
-  "Email": "String",
-  "ContactEmail": "String",
-  "ContactGivenName": "String",
-  "ContactSurname": "String",
-  "ExternalUserId": "String",
-  "Preferences": "String",
-  "Tenant": {
-    "Id": "String",
-    "Alias": "String",
-    "State": "String",
-    "IsCloudConnectCustomer": false
-  },
-  "IdentityProvider": {
-    "Id": "String",
-    "DisplayName": "String",
-    "Scheme": "String",
-    "UserIdClaimType": "String"
-  }
+  "OperationId": "OperationId",
+  "Error": "Error",
+  "Reason": "Reason",
+  "ChildErrors": [
+    {
+      "OperationId": "OperationId",
+      "Error": "Error",
+      "Reason": "Reason",
+      "Resolution": "Resolution",
+      "StatusCode": 0,
+      "ModelId": {
+        "String": "String"
+      },
+      "TenantId": "TenantId"
+    },
+    {
+      "OperationId": "OperationId",
+      "Error": "Error",
+      "Reason": "Reason",
+      "Resolution": "Resolution",
+      "StatusCode": 0,
+      "ModelId": {
+        "String": "String"
+      },
+      "TenantId": "TenantId"
+    }
+  ],
+  "Data": [
+    {
+      "Id": "Id",
+      "GivenName": "Name",
+      "Surname": "Surname",
+      "Name": "Name",
+      "Email": "user@company.com",
+      "ContactEmail": "user@company.com",
+      "ContactGivenName": "Name",
+      "ContactSurname": "Surname",
+      "ExternalUserId": "ExternalUserId",
+      "Preferences": "Preferences",
+      "Tenant": {
+        "Id": "Id",
+        "Alias": "Alias",
+        "State": "State",
+        "IsCloudConnectCustomer": false
+      },
+      "IdentityProvider": {
+        "Id": "Id",
+        "DisplayName": "Name",
+        "Scheme": "Scheme",
+        "UserIdClaimType": "UserIdClaimType"
+      }
+    },
+    {
+      "Id": "Id",
+      "GivenName": "Name",
+      "Surname": "Surname",
+      "Name": "Name",
+      "Email": "user@company.com",
+      "ContactEmail": "user@company.com",
+      "ContactGivenName": "Name",
+      "ContactSurname": "Surname",
+      "ExternalUserId": "ExternalUserId",
+      "Preferences": "Preferences",
+      "Tenant": {
+        "Id": "Id",
+        "Alias": "Alias",
+        "State": "State",
+        "IsCloudConnectCustomer": false
+      },
+      "IdentityProvider": {
+        "Id": "Id",
+        "DisplayName": "Name",
+        "Scheme": "Scheme",
+        "UserIdClaimType": "UserIdClaimType"
+      }
+    }
+  ]
 }
-]
-]
 ```
 
 #### 400
@@ -347,7 +401,7 @@ Tenant not found
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 
 ## `Get Users' Status`
@@ -410,33 +464,60 @@ Success.
 
 ```json
 [
-{
-  "InvitationStatus": 0,
-  "User": {
-    "Id": "String",
-    "GivenName": "String",
-    "Surname": "String",
-    "Name": "String",
-    "Email": "String",
-    "ContactEmail": "String",
-    "ContactGivenName": "String",
-    "ContactSurname": "String",
-    "ExternalUserId": "String",
-    "Preferences": "String",
-    "Tenant": {
-      "Id": "String",
-      "Alias": "String",
-      "State": "String",
-      "IsCloudConnectCustomer": false
-    },
-    "IdentityProvider": {
-      "Id": "String",
-      "DisplayName": "String",
-      "Scheme": "String",
-      "UserIdClaimType": "String"
+  {
+    "InvitationStatus": 0,
+    "User": {
+      "Id": "Id",
+      "GivenName": "Name",
+      "Surname": "Surname",
+      "Name": "Name",
+      "Email": "user@company.com",
+      "ContactEmail": "user@company.com",
+      "ContactGivenName": "Name",
+      "ContactSurname": "Surname",
+      "ExternalUserId": "ExternalUserId",
+      "Preferences": "Preferences",
+      "Tenant": {
+        "Id": "Id",
+        "Alias": "Alias",
+        "State": "State",
+        "IsCloudConnectCustomer": false
+      },
+      "IdentityProvider": {
+        "Id": "Id",
+        "DisplayName": "Name",
+        "Scheme": "Scheme",
+        "UserIdClaimType": "UserIdClaimType"
+      }
+    }
+  },
+  {
+    "InvitationStatus": 0,
+    "User": {
+      "Id": "Id",
+      "GivenName": "Name",
+      "Surname": "Surname",
+      "Name": "Name",
+      "Email": "user@company.com",
+      "ContactEmail": "user@company.com",
+      "ContactGivenName": "Name",
+      "ContactSurname": "Surname",
+      "ExternalUserId": "ExternalUserId",
+      "Preferences": "Preferences",
+      "Tenant": {
+        "Id": "Id",
+        "Alias": "Alias",
+        "State": "State",
+        "IsCloudConnectCustomer": false
+      },
+      "IdentityProvider": {
+        "Id": "Id",
+        "DisplayName": "Name",
+        "Scheme": "Scheme",
+        "UserIdClaimType": "UserIdClaimType"
+      }
     }
   }
-}
 ]
 ```
 
@@ -454,7 +535,7 @@ Forbidden
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 
 #### 404
 
@@ -504,27 +585,27 @@ Success
 
 ```json
 {
-  "Id": "String",
-  "GivenName": "String",
-  "Surname": "String",
-  "Name": "String",
-  "Email": "String",
-  "ContactEmail": "String",
-  "ContactGivenName": "String",
-  "ContactSurname": "String",
-  "ExternalUserId": "String",
-  "Preferences": "String",
+  "Id": "Id",
+  "GivenName": "Name",
+  "Surname": "Surname",
+  "Name": "Name",
+  "Email": "user@company.com",
+  "ContactEmail": "user@company.com",
+  "ContactGivenName": "Name",
+  "ContactSurname": "Surname",
+  "ExternalUserId": "ExternalUserId",
+  "Preferences": "Preferences",
   "Tenant": {
-    "Id": "String",
-    "Alias": "String",
-    "State": "String",
+    "Id": "Id",
+    "Alias": "Alias",
+    "State": "State",
     "IsCloudConnectCustomer": false
   },
   "IdentityProvider": {
-    "Id": "String",
-    "DisplayName": "String",
-    "Scheme": "String",
-    "UserIdClaimType": "String"
+    "Id": "Id",
+    "DisplayName": "Name",
+    "Scheme": "Scheme",
+    "UserIdClaimType": "UserIdClaimType"
   }
 }
 ```
@@ -543,7 +624,7 @@ User or Tenant not found
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 
 ## `Get User's Status`
@@ -591,27 +672,27 @@ Success
 {
   "InvitationStatus": 0,
   "User": {
-    "Id": "String",
-    "GivenName": "String",
-    "Surname": "String",
-    "Name": "String",
-    "Email": "String",
-    "ContactEmail": "String",
-    "ContactGivenName": "String",
-    "ContactSurname": "String",
-    "ExternalUserId": "String",
-    "Preferences": "String",
+    "Id": "Id",
+    "GivenName": "Name",
+    "Surname": "Surname",
+    "Name": "Name",
+    "Email": "user@company.com",
+    "ContactEmail": "user@company.com",
+    "ContactGivenName": "Name",
+    "ContactSurname": "Surname",
+    "ExternalUserId": "ExternalUserId",
+    "Preferences": "Preferences",
     "Tenant": {
-      "Id": "String",
-      "Alias": "String",
-      "State": "String",
+      "Id": "Id",
+      "Alias": "Alias",
+      "State": "State",
       "IsCloudConnectCustomer": false
     },
     "IdentityProvider": {
-      "Id": "String",
-      "DisplayName": "String",
-      "Scheme": "String",
-      "UserIdClaimType": "String"
+      "Id": "Id",
+      "DisplayName": "Name",
+      "Scheme": "Scheme",
+      "UserIdClaimType": "UserIdClaimType"
     }
   }
 }
@@ -631,7 +712,7 @@ User or Tenant not found
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 
 ## `Get Users' Status By IDs`
@@ -694,30 +775,54 @@ Success.
 
 ```json
 [
-{
-  "Id": "String",
-  "GivenName": "String",
-  "Surname": "String",
-  "Name": "String",
-  "Email": "String",
-  "ContactEmail": "String",
-  "ContactGivenName": "String",
-  "ContactSurname": "String",
-  "ExternalUserId": "String",
-  "Preferences": "String",
-  "Tenant": {
-    "Id": "String",
-    "Alias": "String",
-    "State": "String",
-    "IsCloudConnectCustomer": false
+  {
+    "Id": "Id",
+    "GivenName": "Name",
+    "Surname": "Surname",
+    "Name": "Name",
+    "Email": "user@company.com",
+    "ContactEmail": "user@company.com",
+    "ContactGivenName": "Name",
+    "ContactSurname": "Surname",
+    "ExternalUserId": "ExternalUserId",
+    "Preferences": "Preferences",
+    "Tenant": {
+      "Id": "Id",
+      "Alias": "Alias",
+      "State": "State",
+      "IsCloudConnectCustomer": false
+    },
+    "IdentityProvider": {
+      "Id": "Id",
+      "DisplayName": "Name",
+      "Scheme": "Scheme",
+      "UserIdClaimType": "UserIdClaimType"
+    }
   },
-  "IdentityProvider": {
-    "Id": "String",
-    "DisplayName": "String",
-    "Scheme": "String",
-    "UserIdClaimType": "String"
+  {
+    "Id": "Id",
+    "GivenName": "Name",
+    "Surname": "Surname",
+    "Name": "Name",
+    "Email": "user@company.com",
+    "ContactEmail": "user@company.com",
+    "ContactGivenName": "Name",
+    "ContactSurname": "Surname",
+    "ExternalUserId": "ExternalUserId",
+    "Preferences": "Preferences",
+    "Tenant": {
+      "Id": "Id",
+      "Alias": "Alias",
+      "State": "State",
+      "IsCloudConnectCustomer": false
+    },
+    "IdentityProvider": {
+      "Id": "Id",
+      "DisplayName": "Name",
+      "Scheme": "Scheme",
+      "UserIdClaimType": "UserIdClaimType"
+    }
   }
-}
 ]
 ```
 
@@ -730,37 +835,91 @@ Partial success.
  `MultiStatusResponseDto[IList[UserStatusDto]]`
 
 ```json
-[
-[
 {
-  "InvitationStatus": 0,
-  "User": {
-    "Id": "String",
-    "GivenName": "String",
-    "Surname": "String",
-    "Name": "String",
-    "Email": "String",
-    "ContactEmail": "String",
-    "ContactGivenName": "String",
-    "ContactSurname": "String",
-    "ExternalUserId": "String",
-    "Preferences": "String",
-    "Tenant": {
-      "Id": "String",
-      "Alias": "String",
-      "State": "String",
-      "IsCloudConnectCustomer": false
+  "OperationId": "OperationId",
+  "Error": "Error",
+  "Reason": "Reason",
+  "ChildErrors": [
+    {
+      "OperationId": "OperationId",
+      "Error": "Error",
+      "Reason": "Reason",
+      "Resolution": "Resolution",
+      "StatusCode": 0,
+      "ModelId": {
+        "String": "String"
+      },
+      "TenantId": "TenantId"
     },
-    "IdentityProvider": {
-      "Id": "String",
-      "DisplayName": "String",
-      "Scheme": "String",
-      "UserIdClaimType": "String"
+    {
+      "OperationId": "OperationId",
+      "Error": "Error",
+      "Reason": "Reason",
+      "Resolution": "Resolution",
+      "StatusCode": 0,
+      "ModelId": {
+        "String": "String"
+      },
+      "TenantId": "TenantId"
     }
-  }
+  ],
+  "Data": [
+    {
+      "InvitationStatus": 0,
+      "User": {
+        "Id": "Id",
+        "GivenName": "Name",
+        "Surname": "Surname",
+        "Name": "Name",
+        "Email": "user@company.com",
+        "ContactEmail": "user@company.com",
+        "ContactGivenName": "Name",
+        "ContactSurname": "Surname",
+        "ExternalUserId": "ExternalUserId",
+        "Preferences": "Preferences",
+        "Tenant": {
+          "Id": "Id",
+          "Alias": "Alias",
+          "State": "State",
+          "IsCloudConnectCustomer": false
+        },
+        "IdentityProvider": {
+          "Id": "Id",
+          "DisplayName": "Name",
+          "Scheme": "Scheme",
+          "UserIdClaimType": "UserIdClaimType"
+        }
+      }
+    },
+    {
+      "InvitationStatus": 0,
+      "User": {
+        "Id": "Id",
+        "GivenName": "Name",
+        "Surname": "Surname",
+        "Name": "Name",
+        "Email": "user@company.com",
+        "ContactEmail": "user@company.com",
+        "ContactGivenName": "Name",
+        "ContactSurname": "Surname",
+        "ExternalUserId": "ExternalUserId",
+        "Preferences": "Preferences",
+        "Tenant": {
+          "Id": "Id",
+          "Alias": "Alias",
+          "State": "State",
+          "IsCloudConnectCustomer": false
+        },
+        "IdentityProvider": {
+          "Id": "Id",
+          "DisplayName": "Name",
+          "Scheme": "Scheme",
+          "UserIdClaimType": "UserIdClaimType"
+        }
+      }
+    }
+  ]
 }
-]
-]
 ```
 
 #### 400
@@ -781,7 +940,7 @@ Tenant not found
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 
 ## `Get User's Preferences`
@@ -843,7 +1002,7 @@ User or Tenant not found
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 
 ## `Update User's Preferences`
@@ -914,7 +1073,7 @@ User or Tenant not found
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 
 ## `Create User`
@@ -941,15 +1100,15 @@ User data transfer object
 
 ```json
 {
-  "ContactGivenName": "String",
-  "ContactSurname": "String",
-  "ContactEmail": "String",
+  "ContactGivenName": "Name",
+  "ContactSurname": "Surname",
+  "ContactEmail": "user@company.com",
   "RoleIds": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
-  "CreateInvitation": true,
-  "InvitationExpiresDateTime": "2019-01-29T15:18:37.4576005-08:00"
+  "CreateInvitation": false,
+  "InvitationExpiresDateTime": "2019-02-05T19:11:14.8141277-08:00"
 }
 ```
 
@@ -972,27 +1131,27 @@ Created
 
 ```json
 {
-  "Id": "String",
-  "GivenName": "String",
-  "Surname": "String",
-  "Name": "String",
-  "Email": "String",
-  "ContactEmail": "String",
-  "ContactGivenName": "String",
-  "ContactSurname": "String",
-  "ExternalUserId": "String",
-  "Preferences": "String",
+  "Id": "Id",
+  "GivenName": "Name",
+  "Surname": "Surname",
+  "Name": "Name",
+  "Email": "user@company.com",
+  "ContactEmail": "user@company.com",
+  "ContactGivenName": "Name",
+  "ContactSurname": "Surname",
+  "ExternalUserId": "ExternalUserId",
+  "Preferences": "Preferences",
   "Tenant": {
-    "Id": "String",
-    "Alias": "String",
-    "State": "String",
+    "Id": "Id",
+    "Alias": "Alias",
+    "State": "State",
     "IsCloudConnectCustomer": false
   },
   "IdentityProvider": {
-    "Id": "String",
-    "DisplayName": "String",
-    "Scheme": "String",
-    "UserIdClaimType": "String"
+    "Id": "Id",
+    "DisplayName": "Name",
+    "Scheme": "Scheme",
+    "UserIdClaimType": "UserIdClaimType"
   }
 }
 ```
@@ -1015,7 +1174,7 @@ Tenant not found
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 
 ## `Create User With ID`
@@ -1048,15 +1207,15 @@ User data transfer object
 
 ```json
 {
-  "ContactGivenName": "String",
-  "ContactSurname": "String",
-  "ContactEmail": "String",
+  "ContactGivenName": "Name",
+  "ContactSurname": "Surname",
+  "ContactEmail": "user@company.com",
   "RoleIds": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
-  "CreateInvitation": true,
-  "InvitationExpiresDateTime": "2019-01-29T15:18:37.4629233-08:00"
+  "CreateInvitation": false,
+  "InvitationExpiresDateTime": "2019-02-05T19:11:14.8201057-08:00"
 }
 ```
 
@@ -1078,27 +1237,27 @@ Created
 
 ```json
 {
-  "Id": "String",
-  "GivenName": "String",
-  "Surname": "String",
-  "Name": "String",
-  "Email": "String",
-  "ContactEmail": "String",
-  "ContactGivenName": "String",
-  "ContactSurname": "String",
-  "ExternalUserId": "String",
-  "Preferences": "String",
+  "Id": "Id",
+  "GivenName": "Name",
+  "Surname": "Surname",
+  "Name": "Name",
+  "Email": "user@company.com",
+  "ContactEmail": "user@company.com",
+  "ContactGivenName": "Name",
+  "ContactSurname": "Surname",
+  "ExternalUserId": "ExternalUserId",
+  "Preferences": "Preferences",
   "Tenant": {
-    "Id": "String",
-    "Alias": "String",
-    "State": "String",
+    "Id": "Id",
+    "Alias": "Alias",
+    "State": "State",
     "IsCloudConnectCustomer": false
   },
   "IdentityProvider": {
-    "Id": "String",
-    "DisplayName": "String",
-    "Scheme": "String",
-    "UserIdClaimType": "String"
+    "Id": "Id",
+    "DisplayName": "Name",
+    "Scheme": "Scheme",
+    "UserIdClaimType": "UserIdClaimType"
   }
 }
 ```
@@ -1125,7 +1284,7 @@ Conflict. Client already exists.
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 
 ## `Update User`
@@ -1158,13 +1317,13 @@ A UserStatusDto object
 
 ```json
 {
-  "ContactGivenName": "String",
-  "ContactSurname": "String",
-  "ContactEmail": "String",
-  "Preferences": "String",
+  "ContactGivenName": "Name",
+  "ContactSurname": "Surname",
+  "ContactEmail": "user@company.com",
+  "Preferences": "Preferences",
   "RoleIds": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ]
 }
 ```
@@ -1188,27 +1347,27 @@ Updated
 
 ```json
 {
-  "Id": "String",
-  "GivenName": "String",
-  "Surname": "String",
-  "Name": "String",
-  "Email": "String",
-  "ContactEmail": "String",
-  "ContactGivenName": "String",
-  "ContactSurname": "String",
-  "ExternalUserId": "String",
-  "Preferences": "String",
+  "Id": "Id",
+  "GivenName": "Name",
+  "Surname": "Surname",
+  "Name": "Name",
+  "Email": "user@company.com",
+  "ContactEmail": "user@company.com",
+  "ContactGivenName": "Name",
+  "ContactSurname": "Surname",
+  "ExternalUserId": "ExternalUserId",
+  "Preferences": "Preferences",
   "Tenant": {
-    "Id": "String",
-    "Alias": "String",
-    "State": "String",
+    "Id": "Id",
+    "Alias": "Alias",
+    "State": "State",
     "IsCloudConnectCustomer": false
   },
   "IdentityProvider": {
-    "Id": "String",
-    "DisplayName": "String",
-    "Scheme": "String",
-    "UserIdClaimType": "String"
+    "Id": "Id",
+    "DisplayName": "Name",
+    "Scheme": "Scheme",
+    "UserIdClaimType": "UserIdClaimType"
   }
 }
 ```
@@ -1231,7 +1390,7 @@ User or Tenant not found
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 
 ## `Delete User`
@@ -1282,7 +1441,7 @@ User or Tenant not found
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 
 ## `Get User's Invitation`
@@ -1333,40 +1492,40 @@ Success
 
 ```json
 {
-  "Id": "String",
-  "Issued": "2019-01-29T15:18:37.4691001-08:00",
-  "Expires": "2019-01-29T15:18:37.4691047-08:00",
+  "Id": "Id",
+  "Issued": "2019-02-05T19:11:14.8322226-08:00",
+  "Expires": "2019-02-05T19:11:14.8322276-08:00",
   "State": 0,
-  "TenantId": "String",
+  "TenantId": "TenantId",
   "Tenant": {
-    "Id": "String",
-    "Alias": "String",
-    "State": "String",
+    "Id": "Id",
+    "Alias": "Alias",
+    "State": "State",
     "IsCloudConnectCustomer": false
   },
-  "UserId": "String",
+  "UserId": "UserId",
   "User": {
-    "Id": "String",
-    "GivenName": "String",
-    "Surname": "String",
-    "Name": "String",
-    "Email": "String",
-    "ContactEmail": "String",
-    "ContactGivenName": "String",
-    "ContactSurname": "String",
-    "ExternalUserId": "String",
-    "Preferences": "String",
+    "Id": "Id",
+    "GivenName": "Name",
+    "Surname": "Surname",
+    "Name": "Name",
+    "Email": "user@company.com",
+    "ContactEmail": "user@company.com",
+    "ContactGivenName": "Name",
+    "ContactSurname": "Surname",
+    "ExternalUserId": "ExternalUserId",
+    "Preferences": "Preferences",
     "Tenant": {
-      "Id": "String",
-      "Alias": "String",
-      "State": "String",
+      "Id": "Id",
+      "Alias": "Alias",
+      "State": "State",
       "IsCloudConnectCustomer": false
     },
     "IdentityProvider": {
-      "Id": "String",
-      "DisplayName": "String",
-      "Scheme": "String",
-      "UserIdClaimType": "String"
+      "Id": "Id",
+      "DisplayName": "Name",
+      "Scheme": "Scheme",
+      "UserIdClaimType": "UserIdClaimType"
     }
   }
 }
@@ -1386,7 +1545,7 @@ Invitation, User, or Tenant not found
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 
 ## `Find User By Tenant ID`
@@ -1437,27 +1596,27 @@ Success
 
 ```json
 {
-  "Id": "String",
-  "GivenName": "String",
-  "Surname": "String",
-  "Name": "String",
-  "Email": "String",
-  "ContactEmail": "String",
-  "ContactGivenName": "String",
-  "ContactSurname": "String",
-  "ExternalUserId": "String",
-  "Preferences": "String",
+  "Id": "Id",
+  "GivenName": "Name",
+  "Surname": "Surname",
+  "Name": "Name",
+  "Email": "user@company.com",
+  "ContactEmail": "user@company.com",
+  "ContactGivenName": "Name",
+  "ContactSurname": "Surname",
+  "ExternalUserId": "ExternalUserId",
+  "Preferences": "Preferences",
   "Tenant": {
-    "Id": "String",
-    "Alias": "String",
-    "State": "String",
+    "Id": "Id",
+    "Alias": "Alias",
+    "State": "State",
     "IsCloudConnectCustomer": false
   },
   "IdentityProvider": {
-    "Id": "String",
-    "DisplayName": "String",
-    "Scheme": "String",
-    "UserIdClaimType": "String"
+    "Id": "Id",
+    "DisplayName": "Name",
+    "Scheme": "Scheme",
+    "UserIdClaimType": "UserIdClaimType"
   }
 }
 ```
@@ -1476,6 +1635,6 @@ User or Tenant not found
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 

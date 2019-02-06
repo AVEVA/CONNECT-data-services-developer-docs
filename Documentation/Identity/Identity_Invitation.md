@@ -10,84 +10,55 @@ CRUD operations on Invitation
 
 For HTTP requests and responses, the Invitation object has the following properties and JSON-serialized body: 
 
-```csharp
-string Id
-```
-Unique invitation id.
-
-```csharp
-DateTime Issued
-```
-Invitation issuing timestamp.
-
-```csharp
-DateTime Expires
-```
-Invitation expiration timestamp.
-
-```csharp
-int32 State
-```
-Current state of invitation.
-
-```csharp
-string TenantId
-```
-ID of tenant the invitation belongs to.
-
-```csharp
-Tenant Tenant
-```
-Tenant `Tenant <Tenant>` that owns the invitation.
-
-```csharp
-string UserId
-```
-ID of user whom the invitation was issued to.
-
-```csharp
-User User
-```
-User `User <User>` whom the invitation was issued to.
+Property | Type | Descriptions
+ --- | --- | ---
+string | Id | Unique invitation id.
+DateTime | Issued | Invitation issuing timestamp.
+DateTime | Expires | Invitation expiration timestamp.
+int32 | State | Current state of invitation.
+string | TenantId | ID of tenant the invitation belongs to.
+Tenant | Tenant | Tenant `Tenant <Tenant>` that owns the invitation.
+string | UserId | ID of user whom the invitation was issued to.
+User | User | User `User <User>` whom the invitation was issued to.
 
 ### Serialized Model
 
 ```json
 {
-  "Id": "String",
-  "Issued": "2019-01-29T15:18:37.4389538-08:00",
-  "Expires": "2019-01-29T15:18:37.4389574-08:00",
+  "Id": "Id",
+  "Issued": "2019-02-05T19:11:14.7678552-08:00",
+  "Expires": "2019-02-05T19:11:14.767859-08:00",
   "State": 0,
-  "TenantId": "String",
+  "TenantId": "TenantId",
   "Tenant": {
-    "Id": "String",
-    "Alias": "String",
-    "State": "String",
+    "Id": "Id",
+    "Alias": "Alias",
+    "State": "State",
     "IsCloudConnectCustomer": false
   },
-  "UserId": "String",
+  "UserId": "UserId",
   "User": {
-    "Id": "String",
-    "GivenName": "String",
-    "Surname": "String",
-    "Name": "String",
-    "Email": "String",
-    "ContactEmail": "String",
-    "ContactGivenName": "String",
-    "ContactSurname": "String",
-    "ExternalUserId": "String",
-    "Preferences": "String",
+    "Id": "Id",
+    "GivenName": "Name",
+    "Surname": "Surname",
+    "Name": "Name",
+    "Email": "user@company.com",
+    "ContactEmail": "user@company.com",
+    "ContactGivenName": "Name",
+    "ContactSurname": "Surname",
+    "ExternalUserId": "ExternalUserId",
+    "Preferences": "Preferences",
     "Tenant": {
-      "Id": "String",
-      "Alias": "String",
-      "State": "String",
+      "Id": "Id",
+      "Alias": "Alias",
+      "State": "State",
       "IsCloudConnectCustomer": false
     },
     "IdentityProvider": {
-      "Id": "String",
-      "DisplayName": "String",
-      "Scheme": "String",
-      "UserIdClaimType": "String"
+      "Id": "Id",
+      "DisplayName": "Name",
+      "Scheme": "Scheme",
+      "UserIdClaimType": "UserIdClaimType"
     }
   }
 }
@@ -125,9 +96,9 @@ InvitationCreateDto object
 
 ```json
 {
-  "ExpiresDateTime": "2019-01-29T15:18:37.4430474-08:00",
-  "DeleteExisting": true,
-  "SendInvitation": true
+  "ExpiresDateTime": "2019-02-05T19:11:14.7718874-08:00",
+  "DeleteExisting": false,
+  "SendInvitation": false
 }
 ```
 
@@ -149,40 +120,40 @@ Created
 
 ```json
 {
-  "Id": "String",
-  "Issued": "2019-01-29T15:18:37.4453016-08:00",
-  "Expires": "2019-01-29T15:18:37.4453058-08:00",
+  "Id": "Id",
+  "Issued": "2019-02-05T19:11:14.7735675-08:00",
+  "Expires": "2019-02-05T19:11:14.77357-08:00",
   "State": 0,
-  "TenantId": "String",
+  "TenantId": "TenantId",
   "Tenant": {
-    "Id": "String",
-    "Alias": "String",
-    "State": "String",
+    "Id": "Id",
+    "Alias": "Alias",
+    "State": "State",
     "IsCloudConnectCustomer": false
   },
-  "UserId": "String",
+  "UserId": "UserId",
   "User": {
-    "Id": "String",
-    "GivenName": "String",
-    "Surname": "String",
-    "Name": "String",
-    "Email": "String",
-    "ContactEmail": "String",
-    "ContactGivenName": "String",
-    "ContactSurname": "String",
-    "ExternalUserId": "String",
-    "Preferences": "String",
+    "Id": "Id",
+    "GivenName": "Name",
+    "Surname": "Surname",
+    "Name": "Name",
+    "Email": "user@company.com",
+    "ContactEmail": "user@company.com",
+    "ContactGivenName": "Name",
+    "ContactSurname": "Surname",
+    "ExternalUserId": "ExternalUserId",
+    "Preferences": "Preferences",
     "Tenant": {
-      "Id": "String",
-      "Alias": "String",
-      "State": "String",
+      "Id": "Id",
+      "Alias": "Alias",
+      "State": "State",
       "IsCloudConnectCustomer": false
     },
     "IdentityProvider": {
-      "Id": "String",
-      "DisplayName": "String",
-      "Scheme": "String",
-      "UserIdClaimType": "String"
+      "Id": "Id",
+      "DisplayName": "Name",
+      "Scheme": "Scheme",
+      "UserIdClaimType": "UserIdClaimType"
     }
   }
 }
@@ -210,7 +181,7 @@ Invitation already exists
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 
 ## `Get Invitation`
@@ -255,40 +226,40 @@ Success
 
 ```json
 {
-  "Id": "String",
-  "Issued": "2019-01-29T15:18:37.4458637-08:00",
-  "Expires": "2019-01-29T15:18:37.4458669-08:00",
+  "Id": "Id",
+  "Issued": "2019-02-05T19:11:14.7739804-08:00",
+  "Expires": "2019-02-05T19:11:14.7739822-08:00",
   "State": 0,
-  "TenantId": "String",
+  "TenantId": "TenantId",
   "Tenant": {
-    "Id": "String",
-    "Alias": "String",
-    "State": "String",
+    "Id": "Id",
+    "Alias": "Alias",
+    "State": "State",
     "IsCloudConnectCustomer": false
   },
-  "UserId": "String",
+  "UserId": "UserId",
   "User": {
-    "Id": "String",
-    "GivenName": "String",
-    "Surname": "String",
-    "Name": "String",
-    "Email": "String",
-    "ContactEmail": "String",
-    "ContactGivenName": "String",
-    "ContactSurname": "String",
-    "ExternalUserId": "String",
-    "Preferences": "String",
+    "Id": "Id",
+    "GivenName": "Name",
+    "Surname": "Surname",
+    "Name": "Name",
+    "Email": "user@company.com",
+    "ContactEmail": "user@company.com",
+    "ContactGivenName": "Name",
+    "ContactSurname": "Surname",
+    "ExternalUserId": "ExternalUserId",
+    "Preferences": "Preferences",
     "Tenant": {
-      "Id": "String",
-      "Alias": "String",
-      "State": "String",
+      "Id": "Id",
+      "Alias": "Alias",
+      "State": "State",
       "IsCloudConnectCustomer": false
     },
     "IdentityProvider": {
-      "Id": "String",
-      "DisplayName": "String",
-      "Scheme": "String",
-      "UserIdClaimType": "String"
+      "Id": "Id",
+      "DisplayName": "Name",
+      "Scheme": "Scheme",
+      "UserIdClaimType": "UserIdClaimType"
     }
   }
 }
@@ -308,7 +279,7 @@ Invitation or Tenant not found
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 
 ## `Get Invitations`
@@ -371,44 +342,82 @@ Success
 
 ```json
 [
-{
-  "Id": "String",
-  "Issued": "2019-01-29T15:18:37.4465545-08:00",
-  "Expires": "2019-01-29T15:18:37.4465573-08:00",
-  "State": 0,
-  "TenantId": "String",
-  "Tenant": {
-    "Id": "String",
-    "Alias": "String",
-    "State": "String",
-    "IsCloudConnectCustomer": false
-  },
-  "UserId": "String",
-  "User": {
-    "Id": "String",
-    "GivenName": "String",
-    "Surname": "String",
-    "Name": "String",
-    "Email": "String",
-    "ContactEmail": "String",
-    "ContactGivenName": "String",
-    "ContactSurname": "String",
-    "ExternalUserId": "String",
-    "Preferences": "String",
+  {
+    "Id": "Id",
+    "Issued": "2019-02-05T19:11:14.7745168-08:00",
+    "Expires": "2019-02-05T19:11:14.7745189-08:00",
+    "State": 0,
+    "TenantId": "TenantId",
     "Tenant": {
-      "Id": "String",
-      "Alias": "String",
-      "State": "String",
+      "Id": "Id",
+      "Alias": "Alias",
+      "State": "State",
       "IsCloudConnectCustomer": false
     },
-    "IdentityProvider": {
-      "Id": "String",
-      "DisplayName": "String",
-      "Scheme": "String",
-      "UserIdClaimType": "String"
+    "UserId": "UserId",
+    "User": {
+      "Id": "Id",
+      "GivenName": "Name",
+      "Surname": "Surname",
+      "Name": "Name",
+      "Email": "user@company.com",
+      "ContactEmail": "user@company.com",
+      "ContactGivenName": "Name",
+      "ContactSurname": "Surname",
+      "ExternalUserId": "ExternalUserId",
+      "Preferences": "Preferences",
+      "Tenant": {
+        "Id": "Id",
+        "Alias": "Alias",
+        "State": "State",
+        "IsCloudConnectCustomer": false
+      },
+      "IdentityProvider": {
+        "Id": "Id",
+        "DisplayName": "Name",
+        "Scheme": "Scheme",
+        "UserIdClaimType": "UserIdClaimType"
+      }
+    }
+  },
+  {
+    "Id": "Id",
+    "Issued": "2019-02-05T19:11:14.774575-08:00",
+    "Expires": "2019-02-05T19:11:14.774576-08:00",
+    "State": 0,
+    "TenantId": "TenantId",
+    "Tenant": {
+      "Id": "Id",
+      "Alias": "Alias",
+      "State": "State",
+      "IsCloudConnectCustomer": false
+    },
+    "UserId": "UserId",
+    "User": {
+      "Id": "Id",
+      "GivenName": "Name",
+      "Surname": "Surname",
+      "Name": "Name",
+      "Email": "user@company.com",
+      "ContactEmail": "user@company.com",
+      "ContactGivenName": "Name",
+      "ContactSurname": "Surname",
+      "ExternalUserId": "ExternalUserId",
+      "Preferences": "Preferences",
+      "Tenant": {
+        "Id": "Id",
+        "Alias": "Alias",
+        "State": "State",
+        "IsCloudConnectCustomer": false
+      },
+      "IdentityProvider": {
+        "Id": "Id",
+        "DisplayName": "Name",
+        "Scheme": "Scheme",
+        "UserIdClaimType": "UserIdClaimType"
+      }
     }
   }
-}
 ]
 ```
 
@@ -430,7 +439,7 @@ Tenant not found
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 
 ## `Update Invitation`
@@ -463,9 +472,9 @@ New InvitationUpdateDto object
 
 ```json
 {
-  "ExpiresDateTime": "2019-01-29T15:18:37.4471032-08:00",
+  "ExpiresDateTime": "2019-02-05T19:11:14.7751011-08:00",
   "State": 0,
-  "ResendInvitationEmail": true
+  "ResendInvitationEmail": false
 }
 ```
 
@@ -489,40 +498,40 @@ Success
 
 ```json
 {
-  "Id": "String",
-  "Issued": "2019-01-29T15:18:37.4492369-08:00",
-  "Expires": "2019-01-29T15:18:37.4492393-08:00",
+  "Id": "Id",
+  "Issued": "2019-02-05T19:11:14.7802746-08:00",
+  "Expires": "2019-02-05T19:11:14.7802792-08:00",
   "State": 0,
-  "TenantId": "String",
+  "TenantId": "TenantId",
   "Tenant": {
-    "Id": "String",
-    "Alias": "String",
-    "State": "String",
+    "Id": "Id",
+    "Alias": "Alias",
+    "State": "State",
     "IsCloudConnectCustomer": false
   },
-  "UserId": "String",
+  "UserId": "UserId",
   "User": {
-    "Id": "String",
-    "GivenName": "String",
-    "Surname": "String",
-    "Name": "String",
-    "Email": "String",
-    "ContactEmail": "String",
-    "ContactGivenName": "String",
-    "ContactSurname": "String",
-    "ExternalUserId": "String",
-    "Preferences": "String",
+    "Id": "Id",
+    "GivenName": "Name",
+    "Surname": "Surname",
+    "Name": "Name",
+    "Email": "user@company.com",
+    "ContactEmail": "user@company.com",
+    "ContactGivenName": "Name",
+    "ContactSurname": "Surname",
+    "ExternalUserId": "ExternalUserId",
+    "Preferences": "Preferences",
     "Tenant": {
-      "Id": "String",
-      "Alias": "String",
-      "State": "String",
+      "Id": "Id",
+      "Alias": "Alias",
+      "State": "State",
       "IsCloudConnectCustomer": false
     },
     "IdentityProvider": {
-      "Id": "String",
-      "DisplayName": "String",
-      "Scheme": "String",
-      "UserIdClaimType": "String"
+      "Id": "Id",
+      "DisplayName": "Name",
+      "Scheme": "Scheme",
+      "UserIdClaimType": "UserIdClaimType"
     }
   }
 }
@@ -542,7 +551,7 @@ Invitation or Tenant not found
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 
 ## `Delete Invitation`
@@ -593,6 +602,6 @@ Invitation or Tenant not found
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 

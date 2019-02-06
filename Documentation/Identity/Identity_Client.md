@@ -10,263 +10,113 @@ CRUD operations on Client
 
 For HTTP requests and responses, the Client object has the following properties and JSON-serialized body: 
 
-```csharp
-bool Enabled
-```
-Specifies if client is enabled (defaults to true)
-
-```csharp
-string ClientId
-```
-Unique ID of the client
-
-```csharp
-Secret[] ClientSecrets
-```
-Client secrets - only relevant for flows that require a secret
-
-```csharp
-bool RequireClientSecret
-```
-If set to false, no client secret is needed to request tokens at the token endpoint (defaults to true)
-
-```csharp
-string ClientName
-```
-Client display name (used for logging and consent screen)
-
-```csharp
-string Description
-```
-Client description
-
-```csharp
-string ClientUri
-```
-URI to further information about client (used on consent screen)
-
-```csharp
-string LogoUri
-```
-URI to client logo (used on consent screen)
-
-```csharp
-bool RequireConsent
-```
-Specifies whether a consent screen is required (defaults to true)
-
-```csharp
-bool AllowRememberConsent
-```
-Specifies whether user can choose to store consent decisions (defaults to true)
-
-```csharp
-string[] AllowedGrantTypes
-```
-Specifies the allowed grant types (legal combinations of AuthorizationCode, Implicit, Hybrid, ResourceOwner,
+Property | Type | Descriptions
+ --- | --- | ---
+bool | Enabled | Specifies if client is enabled (defaults to true)
+string | ClientId | Unique ID of the client
+Secret[] | ClientSecrets | Client secrets - only relevant for flows that require a secret
+bool | RequireClientSecret | If set to false, no client secret is needed to request tokens at the token endpoint (defaults to true)
+string | ClientName | Client display name (used for logging and consent screen)
+string | Description | Client description
+string | ClientUri | URI to further information about client (used on consent screen)
+string | LogoUri | URI to client logo (used on consent screen)
+bool | RequireConsent | Specifies whether a consent screen is required (defaults to true)
+bool | AllowRememberConsent | Specifies whether user can choose to store consent decisions (defaults to true)
+string[] | AllowedGrantTypes | Specifies the allowed grant types (legal combinations of AuthorizationCode, Implicit, Hybrid, ResourceOwner,
             ClientCredentials).
-
-```csharp
-bool AllowAccessTokensViaBrowser
-```
-Controls whether access tokens are transmitted via the browser for this client (defaults to false).
+bool | AllowAccessTokensViaBrowser | Controls whether access tokens are transmitted via the browser for this client (defaults to false).
             This can prevent accidental leakage of access tokens when multiple response types are allowed.
-
-```csharp
-string[] RedirectUris
-```
-Specifies allowed URIs to return tokens or authorization codes to
-
-```csharp
-string[] PostLogoutRedirectUris
-```
-Specifies allowed URIs to redirect to after logout
-
-```csharp
-string FrontChannelLogoutUri
-```
-Specifies logout URI at client for HTTP front-channel based logout.
-
-```csharp
-bool FrontChannelLogoutSessionRequired
-```
-Specifies is the user's session id should be sent to the FrontChannelLogoutUri. Defaults to true.
-
-```csharp
-string BackChannelLogoutUri
-```
-Specifies logout URI at client for HTTP back-channel based logout.
-
-```csharp
-bool BackChannelLogoutSessionRequired
-```
-Specifies is the user's session id should be sent to the BackChannelLogoutUri. Defaults to true.
-
-```csharp
-bool AllowOfflineAccess
-```
-Gets or sets a value indicating whether [allow offline access]. Defaults to false.
-
-```csharp
-string[] AllowedScopes
-```
-Specifies the api scopes that the client is allowed to request. If empty, the client can't access any scope
-
-```csharp
-bool AlwaysIncludeUserClaimsInIdToken
-```
-When requesting both an id token and access token, should the user claims always be added to the id token instead
+string[] | RedirectUris | Specifies allowed URIs to return tokens or authorization codes to
+string[] | PostLogoutRedirectUris | Specifies allowed URIs to redirect to after logout
+string | FrontChannelLogoutUri | Specifies logout URI at client for HTTP front-channel based logout.
+bool | FrontChannelLogoutSessionRequired | Specifies is the user's session id should be sent to the FrontChannelLogoutUri. Defaults to true.
+string | BackChannelLogoutUri | Specifies logout URI at client for HTTP back-channel based logout.
+bool | BackChannelLogoutSessionRequired | Specifies is the user's session id should be sent to the BackChannelLogoutUri. Defaults to true.
+bool | AllowOfflineAccess | Gets or sets a value indicating whether [allow offline access]. Defaults to false.
+string[] | AllowedScopes | Specifies the api scopes that the client is allowed to request. If empty, the client can't access any scope
+bool | AlwaysIncludeUserClaimsInIdToken | When requesting both an id token and access token, should the user claims always be added to the id token instead
             of requiring the client to use the user info endpoint.
             Defaults to false.
-
-```csharp
-int32 IdentityTokenLifetime
-```
-Lifetime of identity token in seconds (defaults to 300 seconds / 5 minutes)
-
-```csharp
-int32 AccessTokenLifetime
-```
-Lifetime of access token in seconds (defaults to 3600 seconds / 1 hour)
-
-```csharp
-int32 AuthorizationCodeLifetime
-```
-Lifetime of authorization code in seconds (defaults to 300 seconds / 5 minutes)
-
-```csharp
-int32 AbsoluteRefreshTokenLifetime
-```
-Maximum lifetime of a refresh token in seconds. Defaults to 2592000 seconds / 30 days
-
-```csharp
-int32 SlidingRefreshTokenLifetime
-```
-Sliding lifetime of a refresh token in seconds. Defaults to 1296000 seconds / 15 days
-
-```csharp
-optional: int32 ConsentLifetime
-```
-Lifetime of a user consent in seconds. Defaults to null (no expiration)
-
-```csharp
-TokenUsage RefreshTokenUsage
-```
-ReUse: the refresh token handle will stay the same when refreshing tokens
+int32 | IdentityTokenLifetime | Lifetime of identity token in seconds (defaults to 300 seconds / 5 minutes)
+int32 | AccessTokenLifetime | Lifetime of access token in seconds (defaults to 3600 seconds / 1 hour)
+int32 | AuthorizationCodeLifetime | Lifetime of authorization code in seconds (defaults to 300 seconds / 5 minutes)
+int32 | AbsoluteRefreshTokenLifetime | Maximum lifetime of a refresh token in seconds. Defaults to 2592000 seconds / 30 days
+int32 | SlidingRefreshTokenLifetime | Sliding lifetime of a refresh token in seconds. Defaults to 1296000 seconds / 15 days
+optional: int32 | ConsentLifetime | Lifetime of a user consent in seconds. Defaults to null (no expiration)
+TokenUsage | RefreshTokenUsage | ReUse: the refresh token handle will stay the same when refreshing tokens
             OneTime: the refresh token handle will be updated when refreshing tokens
-
-```csharp
-bool UpdateAccessTokenClaimsOnRefresh
-```
-Gets or sets a value indicating whether the access token (and its claims) should be updated on a refresh token
+bool | UpdateAccessTokenClaimsOnRefresh | Gets or sets a value indicating whether the access token (and its claims) should be updated on a refresh token
             request.
             Defaults to false.
-
-```csharp
-TokenExpiration RefreshTokenExpiration
-```
-Absolute: the refresh token will expire on a fixed point in time (specified by the AbsoluteRefreshTokenLifetime)
+TokenExpiration | RefreshTokenExpiration | Absolute: the refresh token will expire on a fixed point in time (specified by the AbsoluteRefreshTokenLifetime)
             Sliding: when refreshing the token, the lifetime of the refresh token will be renewed (by the amount specified in
             SlidingRefreshTokenLifetime). The lifetime will not exceed AbsoluteRefreshTokenLifetime.
-
-```csharp
-AccessTokenType AccessTokenType
-```
-Specifies whether the access token is a reference token or a self contained JWT token (defaults to Jwt).
-
-```csharp
-string[] IdentityProviderRestrictions
-```
-Specifies which external IdPs can be used with this client (if list is empty all IdPs are allowed). Defaults to
+AccessTokenType | AccessTokenType | Specifies whether the access token is a reference token or a self contained JWT token (defaults to Jwt).
+string[] | IdentityProviderRestrictions | Specifies which external IdPs can be used with this client (if list is empty all IdPs are allowed). Defaults to
             empty.
-
-```csharp
-bool IncludeJwtId
-```
-Gets or sets a value indicating whether JWT access tokens should include an identifier. Defaults to false.
-
-```csharp
-Claim[] Claims
-```
-Allows settings claims for the client (will be included in the access token).
-
-```csharp
-bool AlwaysSendClientClaims
-```
-Gets or sets a value indicating whether client claims should be always included in the access tokens - or only for
+bool | IncludeJwtId | Gets or sets a value indicating whether JWT access tokens should include an identifier. Defaults to false.
+Claim[] | Claims | Allows settings claims for the client (will be included in the access token).
+bool | AlwaysSendClientClaims | Gets or sets a value indicating whether client claims should be always included in the access tokens - or only for
             client credentials flow.
             Defaults to false
-
-```csharp
-string ClientClaimsPrefix
-```
-Gets or sets a value to prefix it on client claim types. Defaults to client_.
-
-```csharp
-string PairWiseSubjectSalt
-```
-Subject salt to be used.
-
-```csharp
-optional: int32 UserSsoLifetime
-```
-The maximum duration (in seconds) since the last time the user authenticated.
-
-```csharp
-string UserCodeType
-```
-Gets or sets the type of the device flow user code.
-
-```csharp
-int32 DeviceCodeLifetime
-```
-Gets or sets the device code lifetime.
-
-```csharp
-string[] AllowedCorsOrigins
-```
-Gets or sets the allowed CORS origins for JavaScript clients.
-
-```csharp
-string,string[] Properties
-```
-Gets or sets the custom properties for the client.
+string | ClientClaimsPrefix | Gets or sets a value to prefix it on client claim types. Defaults to client_.
+string | PairWiseSubjectSalt | Subject salt to be used.
+optional: int32 | UserSsoLifetime | The maximum duration (in seconds) since the last time the user authenticated.
+string | UserCodeType | Gets or sets the type of the device flow user code.
+int32 | DeviceCodeLifetime | Gets or sets the device code lifetime.
+string[] | AllowedCorsOrigins | Gets or sets the allowed CORS origins for JavaScript clients.
+string,string[] | Properties | Gets or sets the custom properties for the client.
 
 ### Serialized Model
 
 ```json
 {
   "Enabled": true,
-  "ClientId": "String",
-  "ClientSecrets": [],
+  "ClientId": "ClientId",
+  "ClientSecrets": [
+    {
+      "Id": 0,
+      "Description": "description",
+      "Value": "Value",
+      "Expiration": "2019-02-05T19:11:14.5823992-08:00",
+      "Type": "Type"
+    },
+    {
+      "Id": 0,
+      "Description": "description",
+      "Value": "Value",
+      "Expiration": "2019-02-05T19:11:14.5851253-08:00",
+      "Type": "Type"
+    }
+  ],
   "RequireClientSecret": true,
-  "ClientName": "String",
-  "Description": "String",
-  "ClientUri": "String",
-  "LogoUri": "String",
+  "ClientName": "Name",
+  "Description": "description",
+  "ClientUri": "ClientUri",
+  "LogoUri": "LogoUri",
   "RequireConsent": true,
   "AllowRememberConsent": true,
   "AllowedGrantTypes": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
   "AllowAccessTokensViaBrowser": false,
   "RedirectUris": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
   "PostLogoutRedirectUris": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
-  "FrontChannelLogoutUri": "String",
+  "FrontChannelLogoutUri": "FrontChannelLogoutUri",
   "FrontChannelLogoutSessionRequired": true,
-  "BackChannelLogoutUri": "String",
+  "BackChannelLogoutUri": "BackChannelLogoutUri",
   "BackChannelLogoutSessionRequired": true,
   "AllowOfflineAccess": false,
   "AllowedScopes": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
   "AlwaysIncludeUserClaimsInIdToken": false,
   "IdentityTokenLifetime": 300,
@@ -274,29 +124,72 @@ Gets or sets the custom properties for the client.
   "AuthorizationCodeLifetime": 300,
   "AbsoluteRefreshTokenLifetime": 2592000,
   "SlidingRefreshTokenLifetime": 1296000,
-  "ConsentLifetime": 3600,
+  "ConsentLifetime": 0,
   "RefreshTokenUsage": 0,
   "UpdateAccessTokenClaimsOnRefresh": false,
   "RefreshTokenExpiration": 0,
   "AccessTokenType": 0,
   "IdentityProviderRestrictions": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
   "IncludeJwtId": false,
-  "Claims": [],
+  "Claims": [
+    {
+      "Issuer": "Issuer",
+      "OriginalIssuer": "OriginalIssuer",
+      "Properties": {
+        "String": "String"
+      },
+      "Subject": {
+        "AuthenticationType": null,
+        "IsAuthenticated": false,
+        "Actor": null,
+        "BootstrapContext": null,
+        "Claims": [],
+        "Label": "Label",
+        "Name": null,
+        "NameClaimType": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
+        "RoleClaimType": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role"
+      },
+      "Type": "Type",
+      "Value": "Value",
+      "ValueType": "ValueType"
+    },
+    {
+      "Issuer": "Issuer",
+      "OriginalIssuer": "OriginalIssuer",
+      "Properties": {
+        "String": "String"
+      },
+      "Subject": {
+        "AuthenticationType": null,
+        "IsAuthenticated": false,
+        "Actor": null,
+        "BootstrapContext": null,
+        "Claims": [],
+        "Label": "Label",
+        "Name": null,
+        "NameClaimType": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
+        "RoleClaimType": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role"
+      },
+      "Type": "Type",
+      "Value": "Value",
+      "ValueType": "ValueType"
+    }
+  ],
   "AlwaysSendClientClaims": false,
-  "ClientClaimsPrefix": "String",
-  "PairWiseSubjectSalt": "String",
-  "UserSsoLifetime": 3600,
-  "UserCodeType": "String",
+  "ClientClaimsPrefix": "ClientClaimsPrefix",
+  "PairWiseSubjectSalt": "PairWiseSubjectSalt",
+  "UserSsoLifetime": 0,
+  "UserCodeType": "UserCodeType",
   "DeviceCodeLifetime": 300,
   "AllowedCorsOrigins": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
   "Properties": {
-    "key": "value"
+    "String": "String"
   }
 }
 ```
@@ -357,70 +250,250 @@ Success
 
 ```json
 [
-{
-  "Enabled": true,
-  "ClientId": "String",
-  "ClientSecrets": [],
-  "RequireClientSecret": true,
-  "ClientName": "String",
-  "Description": "String",
-  "ClientUri": "String",
-  "LogoUri": "String",
-  "RequireConsent": true,
-  "AllowRememberConsent": true,
-  "AllowedGrantTypes": [
-    "string1",
-    "string2"
-  ],
-  "AllowAccessTokensViaBrowser": false,
-  "RedirectUris": [
-    "string1",
-    "string2"
-  ],
-  "PostLogoutRedirectUris": [
-    "string1",
-    "string2"
-  ],
-  "FrontChannelLogoutUri": "String",
-  "FrontChannelLogoutSessionRequired": true,
-  "BackChannelLogoutUri": "String",
-  "BackChannelLogoutSessionRequired": true,
-  "AllowOfflineAccess": false,
-  "AllowedScopes": [
-    "string1",
-    "string2"
-  ],
-  "AlwaysIncludeUserClaimsInIdToken": false,
-  "IdentityTokenLifetime": 300,
-  "AccessTokenLifetime": 3600,
-  "AuthorizationCodeLifetime": 300,
-  "AbsoluteRefreshTokenLifetime": 2592000,
-  "SlidingRefreshTokenLifetime": 1296000,
-  "ConsentLifetime": 3600,
-  "RefreshTokenUsage": 0,
-  "UpdateAccessTokenClaimsOnRefresh": false,
-  "RefreshTokenExpiration": 0,
-  "AccessTokenType": 0,
-  "IdentityProviderRestrictions": [
-    "string1",
-    "string2"
-  ],
-  "IncludeJwtId": false,
-  "Claims": [],
-  "AlwaysSendClientClaims": false,
-  "ClientClaimsPrefix": "String",
-  "PairWiseSubjectSalt": "String",
-  "UserSsoLifetime": 3600,
-  "UserCodeType": "String",
-  "DeviceCodeLifetime": 300,
-  "AllowedCorsOrigins": [
-    "string1",
-    "string2"
-  ],
-  "Properties": {
-    "key": "value"
+  {
+    "Enabled": true,
+    "ClientId": "ClientId",
+    "ClientSecrets": [
+      {
+        "Id": 0,
+        "Description": "description",
+        "Value": "Value",
+        "Expiration": "2019-02-05T19:11:14.6874061-08:00",
+        "Type": "Type"
+      },
+      {
+        "Id": 0,
+        "Description": "description",
+        "Value": "Value",
+        "Expiration": "2019-02-05T19:11:14.6874361-08:00",
+        "Type": "Type"
+      }
+    ],
+    "RequireClientSecret": true,
+    "ClientName": "Name",
+    "Description": "description",
+    "ClientUri": "ClientUri",
+    "LogoUri": "LogoUri",
+    "RequireConsent": true,
+    "AllowRememberConsent": true,
+    "AllowedGrantTypes": [
+      "String",
+      "String"
+    ],
+    "AllowAccessTokensViaBrowser": false,
+    "RedirectUris": [
+      "String",
+      "String"
+    ],
+    "PostLogoutRedirectUris": [
+      "String",
+      "String"
+    ],
+    "FrontChannelLogoutUri": "FrontChannelLogoutUri",
+    "FrontChannelLogoutSessionRequired": true,
+    "BackChannelLogoutUri": "BackChannelLogoutUri",
+    "BackChannelLogoutSessionRequired": true,
+    "AllowOfflineAccess": false,
+    "AllowedScopes": [
+      "String",
+      "String"
+    ],
+    "AlwaysIncludeUserClaimsInIdToken": false,
+    "IdentityTokenLifetime": 300,
+    "AccessTokenLifetime": 3600,
+    "AuthorizationCodeLifetime": 300,
+    "AbsoluteRefreshTokenLifetime": 2592000,
+    "SlidingRefreshTokenLifetime": 1296000,
+    "ConsentLifetime": 0,
+    "RefreshTokenUsage": 0,
+    "UpdateAccessTokenClaimsOnRefresh": false,
+    "RefreshTokenExpiration": 0,
+    "AccessTokenType": 0,
+    "IdentityProviderRestrictions": [
+      "String",
+      "String"
+    ],
+    "IncludeJwtId": false,
+    "Claims": [
+      {
+        "Issuer": "Issuer",
+        "OriginalIssuer": "OriginalIssuer",
+        "Properties": {
+          "String": "String"
+        },
+        "Subject": {
+          "AuthenticationType": null,
+          "IsAuthenticated": false,
+          "Actor": null,
+          "BootstrapContext": null,
+          "Claims": [],
+          "Label": "Label",
+          "Name": null,
+          "NameClaimType": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
+          "RoleClaimType": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role"
+        },
+        "Type": "Type",
+        "Value": "Value",
+        "ValueType": "ValueType"
+      },
+      {
+        "Issuer": "Issuer",
+        "OriginalIssuer": "OriginalIssuer",
+        "Properties": {
+          "String": "String"
+        },
+        "Subject": {
+          "AuthenticationType": null,
+          "IsAuthenticated": false,
+          "Actor": null,
+          "BootstrapContext": null,
+          "Claims": [],
+          "Label": "Label",
+          "Name": null,
+          "NameClaimType": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
+          "RoleClaimType": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role"
+        },
+        "Type": "Type",
+        "Value": "Value",
+        "ValueType": "ValueType"
+      }
+    ],
+    "AlwaysSendClientClaims": false,
+    "ClientClaimsPrefix": "ClientClaimsPrefix",
+    "PairWiseSubjectSalt": "PairWiseSubjectSalt",
+    "UserSsoLifetime": 0,
+    "UserCodeType": "UserCodeType",
+    "DeviceCodeLifetime": 300,
+    "AllowedCorsOrigins": [
+      "String",
+      "String"
+    ],
+    "Properties": {
+      "String": "String"
+    }
+  },
+  {
+    "Enabled": true,
+    "ClientId": "ClientId",
+    "ClientSecrets": [
+      {
+        "Id": 0,
+        "Description": "description",
+        "Value": "Value",
+        "Expiration": "2019-02-05T19:11:14.6877358-08:00",
+        "Type": "Type"
+      },
+      {
+        "Id": 0,
+        "Description": "description",
+        "Value": "Value",
+        "Expiration": "2019-02-05T19:11:14.6877662-08:00",
+        "Type": "Type"
+      }
+    ],
+    "RequireClientSecret": true,
+    "ClientName": "Name",
+    "Description": "description",
+    "ClientUri": "ClientUri",
+    "LogoUri": "LogoUri",
+    "RequireConsent": true,
+    "AllowRememberConsent": true,
+    "AllowedGrantTypes": [
+      "String",
+      "String"
+    ],
+    "AllowAccessTokensViaBrowser": false,
+    "RedirectUris": [
+      "String",
+      "String"
+    ],
+    "PostLogoutRedirectUris": [
+      "String",
+      "String"
+    ],
+    "FrontChannelLogoutUri": "FrontChannelLogoutUri",
+    "FrontChannelLogoutSessionRequired": true,
+    "BackChannelLogoutUri": "BackChannelLogoutUri",
+    "BackChannelLogoutSessionRequired": true,
+    "AllowOfflineAccess": false,
+    "AllowedScopes": [
+      "String",
+      "String"
+    ],
+    "AlwaysIncludeUserClaimsInIdToken": false,
+    "IdentityTokenLifetime": 300,
+    "AccessTokenLifetime": 3600,
+    "AuthorizationCodeLifetime": 300,
+    "AbsoluteRefreshTokenLifetime": 2592000,
+    "SlidingRefreshTokenLifetime": 1296000,
+    "ConsentLifetime": 0,
+    "RefreshTokenUsage": 0,
+    "UpdateAccessTokenClaimsOnRefresh": false,
+    "RefreshTokenExpiration": 0,
+    "AccessTokenType": 0,
+    "IdentityProviderRestrictions": [
+      "String",
+      "String"
+    ],
+    "IncludeJwtId": false,
+    "Claims": [
+      {
+        "Issuer": "Issuer",
+        "OriginalIssuer": "OriginalIssuer",
+        "Properties": {
+          "String": "String"
+        },
+        "Subject": {
+          "AuthenticationType": null,
+          "IsAuthenticated": false,
+          "Actor": null,
+          "BootstrapContext": null,
+          "Claims": [],
+          "Label": "Label",
+          "Name": null,
+          "NameClaimType": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
+          "RoleClaimType": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role"
+        },
+        "Type": "Type",
+        "Value": "Value",
+        "ValueType": "ValueType"
+      },
+      {
+        "Issuer": "Issuer",
+        "OriginalIssuer": "OriginalIssuer",
+        "Properties": {
+          "String": "String"
+        },
+        "Subject": {
+          "AuthenticationType": null,
+          "IsAuthenticated": false,
+          "Actor": null,
+          "BootstrapContext": null,
+          "Claims": [],
+          "Label": "Label",
+          "Name": null,
+          "NameClaimType": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
+          "RoleClaimType": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role"
+        },
+        "Type": "Type",
+        "Value": "Value",
+        "ValueType": "ValueType"
+      }
+    ],
+    "AlwaysSendClientClaims": false,
+    "ClientClaimsPrefix": "ClientClaimsPrefix",
+    "PairWiseSubjectSalt": "PairWiseSubjectSalt",
+    "UserSsoLifetime": 0,
+    "UserCodeType": "UserCodeType",
+    "DeviceCodeLifetime": 300,
+    "AllowedCorsOrigins": [
+      "String",
+      "String"
+    ],
+    "Properties": {
+      "String": "String"
+    }
   }
-}
 ]
 ```
 
@@ -442,7 +515,7 @@ Missing or invalid inputs
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 
 ## `Get Client`
@@ -488,36 +561,51 @@ Success
 ```json
 {
   "Enabled": true,
-  "ClientId": "String",
-  "ClientSecrets": [],
+  "ClientId": "ClientId",
+  "ClientSecrets": [
+    {
+      "Id": 0,
+      "Description": "description",
+      "Value": "Value",
+      "Expiration": "2019-02-05T19:11:14.6886929-08:00",
+      "Type": "Type"
+    },
+    {
+      "Id": 0,
+      "Description": "description",
+      "Value": "Value",
+      "Expiration": "2019-02-05T19:11:14.6887084-08:00",
+      "Type": "Type"
+    }
+  ],
   "RequireClientSecret": true,
-  "ClientName": "String",
-  "Description": "String",
-  "ClientUri": "String",
-  "LogoUri": "String",
+  "ClientName": "Name",
+  "Description": "description",
+  "ClientUri": "ClientUri",
+  "LogoUri": "LogoUri",
   "RequireConsent": true,
   "AllowRememberConsent": true,
   "AllowedGrantTypes": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
   "AllowAccessTokensViaBrowser": false,
   "RedirectUris": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
   "PostLogoutRedirectUris": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
-  "FrontChannelLogoutUri": "String",
+  "FrontChannelLogoutUri": "FrontChannelLogoutUri",
   "FrontChannelLogoutSessionRequired": true,
-  "BackChannelLogoutUri": "String",
+  "BackChannelLogoutUri": "BackChannelLogoutUri",
   "BackChannelLogoutSessionRequired": true,
   "AllowOfflineAccess": false,
   "AllowedScopes": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
   "AlwaysIncludeUserClaimsInIdToken": false,
   "IdentityTokenLifetime": 300,
@@ -525,29 +613,72 @@ Success
   "AuthorizationCodeLifetime": 300,
   "AbsoluteRefreshTokenLifetime": 2592000,
   "SlidingRefreshTokenLifetime": 1296000,
-  "ConsentLifetime": 3600,
+  "ConsentLifetime": 0,
   "RefreshTokenUsage": 0,
   "UpdateAccessTokenClaimsOnRefresh": false,
   "RefreshTokenExpiration": 0,
   "AccessTokenType": 0,
   "IdentityProviderRestrictions": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
   "IncludeJwtId": false,
-  "Claims": [],
+  "Claims": [
+    {
+      "Issuer": "Issuer",
+      "OriginalIssuer": "OriginalIssuer",
+      "Properties": {
+        "String": "String"
+      },
+      "Subject": {
+        "AuthenticationType": null,
+        "IsAuthenticated": false,
+        "Actor": null,
+        "BootstrapContext": null,
+        "Claims": [],
+        "Label": "Label",
+        "Name": null,
+        "NameClaimType": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
+        "RoleClaimType": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role"
+      },
+      "Type": "Type",
+      "Value": "Value",
+      "ValueType": "ValueType"
+    },
+    {
+      "Issuer": "Issuer",
+      "OriginalIssuer": "OriginalIssuer",
+      "Properties": {
+        "String": "String"
+      },
+      "Subject": {
+        "AuthenticationType": null,
+        "IsAuthenticated": false,
+        "Actor": null,
+        "BootstrapContext": null,
+        "Claims": [],
+        "Label": "Label",
+        "Name": null,
+        "NameClaimType": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
+        "RoleClaimType": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role"
+      },
+      "Type": "Type",
+      "Value": "Value",
+      "ValueType": "ValueType"
+    }
+  ],
   "AlwaysSendClientClaims": false,
-  "ClientClaimsPrefix": "String",
-  "PairWiseSubjectSalt": "String",
-  "UserSsoLifetime": 3600,
-  "UserCodeType": "String",
+  "ClientClaimsPrefix": "ClientClaimsPrefix",
+  "PairWiseSubjectSalt": "PairWiseSubjectSalt",
+  "UserSsoLifetime": 0,
+  "UserCodeType": "UserCodeType",
   "DeviceCodeLifetime": 300,
   "AllowedCorsOrigins": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
   "Properties": {
-    "key": "value"
+    "String": "String"
   }
 }
 ```
@@ -566,7 +697,7 @@ Client or Tenant not found
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 
 ## `Create Client`
@@ -597,18 +728,17 @@ New `ClientCredentialClientCreateDto <ClientCredentialClientCreateDto>` object
 
 ```json
 {
+  "SecretDescription": "description",
+  "SecretExpirationDate": "2019-02-05T19:11:14.7233195-08:00",
   "RoleIds": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
-  "Name": "String",
-  "Enabled": true,
-  "SecretDescription": "String",
-  "SecretExpirationDate": "2019-01-29T15:18:37.3967261-08:00",
-  "AllowOfflineAccess": true,
-  "AllowAccessTokensViaBrowser": true,
-  "ClientUri": "String",
-  "LogoUri": "String"
+  "Name": "Name",
+  "Enabled": false,
+  "AllowAccessTokensViaBrowser": false,
+  "ClientUri": "ClientUri",
+  "LogoUri": "LogoUri"
 }
 ```
 
@@ -626,16 +756,16 @@ Success
 
 ##### Type:
 
- `ClientResponseDto`
+ `ClientCredentialClientResponseDto`
 
 ```json
 {
-  "Name": "String",
-  "ClientId": "String",
-  "ClientSecret": "String",
-  "SecretExpirationDate": "2019-01-29T15:18:37.4108343-08:00",
-  "SecretDescription": "String",
-  "SecretId": 3600
+  "Name": "Name",
+  "ClientId": "ClientId",
+  "ClientSecret": "ClientSecret",
+  "SecretExpirationDate": "2019-02-05T19:11:14.7317775-08:00",
+  "SecretDescription": "description",
+  "SecretId": 0
 }
 ```
 
@@ -653,7 +783,7 @@ Tenant not found
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 
 ## `Create Client Credential Client`
@@ -680,18 +810,17 @@ New `ClientCredentialClientCreateDto <ClientCredentialClientCreateDto>` object
 
 ```json
 {
+  "SecretDescription": "description",
+  "SecretExpirationDate": "2019-02-05T19:11:14.7372074-08:00",
   "RoleIds": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
-  "Name": "String",
-  "Enabled": true,
-  "SecretDescription": "String",
-  "SecretExpirationDate": "2019-01-29T15:18:37.4154769-08:00",
-  "AllowOfflineAccess": true,
-  "AllowAccessTokensViaBrowser": true,
-  "ClientUri": "String",
-  "LogoUri": "String"
+  "Name": "Name",
+  "Enabled": false,
+  "AllowAccessTokensViaBrowser": false,
+  "ClientUri": "ClientUri",
+  "LogoUri": "LogoUri"
 }
 ```
 
@@ -709,16 +838,16 @@ Success
 
 ##### Type:
 
- `ClientResponseDto`
+ `ClientCredentialClientResponseDto`
 
 ```json
 {
-  "Name": "String",
-  "ClientId": "String",
-  "ClientSecret": "String",
-  "SecretExpirationDate": "2019-01-29T15:18:37.4156268-08:00",
-  "SecretDescription": "String",
-  "SecretId": 3600
+  "Name": "Name",
+  "ClientId": "ClientId",
+  "ClientSecret": "ClientSecret",
+  "SecretExpirationDate": "2019-02-05T19:11:14.7374743-08:00",
+  "SecretDescription": "description",
+  "SecretId": 0
 }
 ```
 
@@ -736,7 +865,7 @@ Tenant not found
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 
 ## `Create Implicit Client`
@@ -764,25 +893,22 @@ New `ImplicitClientCreateDto <ImplicitClientCreateDto>` object
 ```json
 {
   "RedirectUris": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
   "PostLogoutRedirectUris": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
   "AllowedCorsOrigins": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
-  "Name": "String",
-  "Enabled": true,
-  "SecretDescription": "String",
-  "SecretExpirationDate": "2019-01-29T15:18:37.4176723-08:00",
-  "AllowOfflineAccess": true,
-  "AllowAccessTokensViaBrowser": true,
-  "ClientUri": "String",
-  "LogoUri": "String"
+  "Name": "Name",
+  "Enabled": false,
+  "AllowAccessTokensViaBrowser": false,
+  "ClientUri": "ClientUri",
+  "LogoUri": "LogoUri"
 }
 ```
 
@@ -800,16 +926,12 @@ Success
 
 ##### Type:
 
- `ClientResponseDto`
+ `ImplicitClientResponseDto`
 
 ```json
 {
-  "Name": "String",
-  "ClientId": "String",
-  "ClientSecret": "String",
-  "SecretExpirationDate": "2019-01-29T15:18:37.4210993-08:00",
-  "SecretDescription": "String",
-  "SecretId": 3600
+  "Name": "Name",
+  "ClientId": "ClientId"
 }
 ```
 
@@ -827,7 +949,7 @@ Tenant not found
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 
 ## `Create Hybrid Client`
@@ -854,26 +976,22 @@ New `HybridClientCreateDto <HybridClientCreateDto>` object
 
 ```json
 {
+  "SecretDescription": "description",
+  "SecretExpirationDate": "2019-02-05T19:11:14.7464146-08:00",
   "RedirectUris": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
   "PostLogoutRedirectUris": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
-  "AllowedCorsOrigins": [
-    "string1",
-    "string2"
-  ],
-  "Name": "String",
-  "Enabled": true,
-  "SecretDescription": "String",
-  "SecretExpirationDate": "2019-01-29T15:18:37.423605-08:00",
-  "AllowOfflineAccess": true,
-  "AllowAccessTokensViaBrowser": true,
-  "ClientUri": "String",
-  "LogoUri": "String"
+  "AllowOfflineAccess": false,
+  "Name": "Name",
+  "Enabled": false,
+  "AllowAccessTokensViaBrowser": false,
+  "ClientUri": "ClientUri",
+  "LogoUri": "LogoUri"
 }
 ```
 
@@ -891,16 +1009,17 @@ Success
 
 ##### Type:
 
- `ClientResponseDto`
+ `HybridClientResponseDto`
 
 ```json
 {
-  "Name": "String",
-  "ClientId": "String",
-  "ClientSecret": "String",
-  "SecretExpirationDate": "2019-01-29T15:18:37.4278125-08:00",
-  "SecretDescription": "String",
-  "SecretId": 3600
+  "Name": "Name",
+  "ClientId": "ClientId",
+  "ClientSecret": "ClientSecret",
+  "SecretExpirationDate": "2019-02-05T19:11:14.7520554-08:00",
+  "SecretDescription": "description",
+  "SecretId": 0,
+  "AllowOfflineAccess": false
 }
 ```
 
@@ -918,10 +1037,10 @@ Tenant not found
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 
-## `Create Client`
+## `Update Client With a Given ID`
 
 Create a client
 
@@ -964,36 +1083,51 @@ New Client object
 ```json
 {
   "Enabled": true,
-  "ClientId": "String",
-  "ClientSecrets": [],
+  "ClientId": "ClientId",
+  "ClientSecrets": [
+    {
+      "Id": 0,
+      "Description": "description",
+      "Value": "Value",
+      "Expiration": "2019-02-05T19:11:14.756844-08:00",
+      "Type": "Type"
+    },
+    {
+      "Id": 0,
+      "Description": "description",
+      "Value": "Value",
+      "Expiration": "2019-02-05T19:11:14.7568588-08:00",
+      "Type": "Type"
+    }
+  ],
   "RequireClientSecret": true,
-  "ClientName": "String",
-  "Description": "String",
-  "ClientUri": "String",
-  "LogoUri": "String",
+  "ClientName": "Name",
+  "Description": "description",
+  "ClientUri": "ClientUri",
+  "LogoUri": "LogoUri",
   "RequireConsent": true,
   "AllowRememberConsent": true,
   "AllowedGrantTypes": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
   "AllowAccessTokensViaBrowser": false,
   "RedirectUris": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
   "PostLogoutRedirectUris": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
-  "FrontChannelLogoutUri": "String",
+  "FrontChannelLogoutUri": "FrontChannelLogoutUri",
   "FrontChannelLogoutSessionRequired": true,
-  "BackChannelLogoutUri": "String",
+  "BackChannelLogoutUri": "BackChannelLogoutUri",
   "BackChannelLogoutSessionRequired": true,
   "AllowOfflineAccess": false,
   "AllowedScopes": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
   "AlwaysIncludeUserClaimsInIdToken": false,
   "IdentityTokenLifetime": 300,
@@ -1001,29 +1135,72 @@ New Client object
   "AuthorizationCodeLifetime": 300,
   "AbsoluteRefreshTokenLifetime": 2592000,
   "SlidingRefreshTokenLifetime": 1296000,
-  "ConsentLifetime": 3600,
+  "ConsentLifetime": 0,
   "RefreshTokenUsage": 0,
   "UpdateAccessTokenClaimsOnRefresh": false,
   "RefreshTokenExpiration": 0,
   "AccessTokenType": 0,
   "IdentityProviderRestrictions": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
   "IncludeJwtId": false,
-  "Claims": [],
+  "Claims": [
+    {
+      "Issuer": "Issuer",
+      "OriginalIssuer": "OriginalIssuer",
+      "Properties": {
+        "String": "String"
+      },
+      "Subject": {
+        "AuthenticationType": null,
+        "IsAuthenticated": false,
+        "Actor": null,
+        "BootstrapContext": null,
+        "Claims": [],
+        "Label": "Label",
+        "Name": null,
+        "NameClaimType": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
+        "RoleClaimType": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role"
+      },
+      "Type": "Type",
+      "Value": "Value",
+      "ValueType": "ValueType"
+    },
+    {
+      "Issuer": "Issuer",
+      "OriginalIssuer": "OriginalIssuer",
+      "Properties": {
+        "String": "String"
+      },
+      "Subject": {
+        "AuthenticationType": null,
+        "IsAuthenticated": false,
+        "Actor": null,
+        "BootstrapContext": null,
+        "Claims": [],
+        "Label": "Label",
+        "Name": null,
+        "NameClaimType": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
+        "RoleClaimType": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role"
+      },
+      "Type": "Type",
+      "Value": "Value",
+      "ValueType": "ValueType"
+    }
+  ],
   "AlwaysSendClientClaims": false,
-  "ClientClaimsPrefix": "String",
-  "PairWiseSubjectSalt": "String",
-  "UserSsoLifetime": 3600,
-  "UserCodeType": "String",
+  "ClientClaimsPrefix": "ClientClaimsPrefix",
+  "PairWiseSubjectSalt": "PairWiseSubjectSalt",
+  "UserSsoLifetime": 0,
+  "UserCodeType": "UserCodeType",
   "DeviceCodeLifetime": 300,
   "AllowedCorsOrigins": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
   "Properties": {
-    "key": "value"
+    "String": "String"
   }
 }
 ```
@@ -1042,16 +1219,21 @@ Success
 
 ##### Type:
 
- `ClientResponseDto`
+ `ClientCredentialClientCreateDto`
 
 ```json
 {
-  "Name": "String",
-  "ClientId": "String",
-  "ClientSecret": "String",
-  "SecretExpirationDate": "2019-01-29T15:18:37.428412-08:00",
-  "SecretDescription": "String",
-  "SecretId": 3600
+  "SecretDescription": "description",
+  "SecretExpirationDate": "2019-02-05T19:11:14.7571815-08:00",
+  "RoleIds": [
+    "String",
+    "String"
+  ],
+  "Name": "Name",
+  "Enabled": false,
+  "AllowAccessTokensViaBrowser": false,
+  "ClientUri": "ClientUri",
+  "LogoUri": "LogoUri"
 }
 ```
 
@@ -1069,7 +1251,7 @@ Client or Tenant not found
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 
 ## `Update Client`
@@ -1103,36 +1285,51 @@ New Client
 ```json
 {
   "Enabled": true,
-  "ClientId": "String",
-  "ClientSecrets": [],
+  "ClientId": "ClientId",
+  "ClientSecrets": [
+    {
+      "Id": 0,
+      "Description": "description",
+      "Value": "Value",
+      "Expiration": "2019-02-05T19:11:14.7577279-08:00",
+      "Type": "Type"
+    },
+    {
+      "Id": 0,
+      "Description": "description",
+      "Value": "Value",
+      "Expiration": "2019-02-05T19:11:14.7577367-08:00",
+      "Type": "Type"
+    }
+  ],
   "RequireClientSecret": true,
-  "ClientName": "String",
-  "Description": "String",
-  "ClientUri": "String",
-  "LogoUri": "String",
+  "ClientName": "Name",
+  "Description": "description",
+  "ClientUri": "ClientUri",
+  "LogoUri": "LogoUri",
   "RequireConsent": true,
   "AllowRememberConsent": true,
   "AllowedGrantTypes": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
   "AllowAccessTokensViaBrowser": false,
   "RedirectUris": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
   "PostLogoutRedirectUris": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
-  "FrontChannelLogoutUri": "String",
+  "FrontChannelLogoutUri": "FrontChannelLogoutUri",
   "FrontChannelLogoutSessionRequired": true,
-  "BackChannelLogoutUri": "String",
+  "BackChannelLogoutUri": "BackChannelLogoutUri",
   "BackChannelLogoutSessionRequired": true,
   "AllowOfflineAccess": false,
   "AllowedScopes": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
   "AlwaysIncludeUserClaimsInIdToken": false,
   "IdentityTokenLifetime": 300,
@@ -1140,29 +1337,72 @@ New Client
   "AuthorizationCodeLifetime": 300,
   "AbsoluteRefreshTokenLifetime": 2592000,
   "SlidingRefreshTokenLifetime": 1296000,
-  "ConsentLifetime": 3600,
+  "ConsentLifetime": 0,
   "RefreshTokenUsage": 0,
   "UpdateAccessTokenClaimsOnRefresh": false,
   "RefreshTokenExpiration": 0,
   "AccessTokenType": 0,
   "IdentityProviderRestrictions": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
   "IncludeJwtId": false,
-  "Claims": [],
+  "Claims": [
+    {
+      "Issuer": "Issuer",
+      "OriginalIssuer": "OriginalIssuer",
+      "Properties": {
+        "String": "String"
+      },
+      "Subject": {
+        "AuthenticationType": null,
+        "IsAuthenticated": false,
+        "Actor": null,
+        "BootstrapContext": null,
+        "Claims": [],
+        "Label": "Label",
+        "Name": null,
+        "NameClaimType": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
+        "RoleClaimType": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role"
+      },
+      "Type": "Type",
+      "Value": "Value",
+      "ValueType": "ValueType"
+    },
+    {
+      "Issuer": "Issuer",
+      "OriginalIssuer": "OriginalIssuer",
+      "Properties": {
+        "String": "String"
+      },
+      "Subject": {
+        "AuthenticationType": null,
+        "IsAuthenticated": false,
+        "Actor": null,
+        "BootstrapContext": null,
+        "Claims": [],
+        "Label": "Label",
+        "Name": null,
+        "NameClaimType": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
+        "RoleClaimType": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role"
+      },
+      "Type": "Type",
+      "Value": "Value",
+      "ValueType": "ValueType"
+    }
+  ],
   "AlwaysSendClientClaims": false,
-  "ClientClaimsPrefix": "String",
-  "PairWiseSubjectSalt": "String",
-  "UserSsoLifetime": 3600,
-  "UserCodeType": "String",
+  "ClientClaimsPrefix": "ClientClaimsPrefix",
+  "PairWiseSubjectSalt": "PairWiseSubjectSalt",
+  "UserSsoLifetime": 0,
+  "UserCodeType": "UserCodeType",
   "DeviceCodeLifetime": 300,
   "AllowedCorsOrigins": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
   "Properties": {
-    "key": "value"
+    "String": "String"
   }
 }
 ```
@@ -1186,36 +1426,51 @@ Success
 ```json
 {
   "Enabled": true,
-  "ClientId": "String",
-  "ClientSecrets": [],
+  "ClientId": "ClientId",
+  "ClientSecrets": [
+    {
+      "Id": 0,
+      "Description": "description",
+      "Value": "Value",
+      "Expiration": "2019-02-05T19:11:14.7582491-08:00",
+      "Type": "Type"
+    },
+    {
+      "Id": 0,
+      "Description": "description",
+      "Value": "Value",
+      "Expiration": "2019-02-05T19:11:14.7582632-08:00",
+      "Type": "Type"
+    }
+  ],
   "RequireClientSecret": true,
-  "ClientName": "String",
-  "Description": "String",
-  "ClientUri": "String",
-  "LogoUri": "String",
+  "ClientName": "Name",
+  "Description": "description",
+  "ClientUri": "ClientUri",
+  "LogoUri": "LogoUri",
   "RequireConsent": true,
   "AllowRememberConsent": true,
   "AllowedGrantTypes": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
   "AllowAccessTokensViaBrowser": false,
   "RedirectUris": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
   "PostLogoutRedirectUris": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
-  "FrontChannelLogoutUri": "String",
+  "FrontChannelLogoutUri": "FrontChannelLogoutUri",
   "FrontChannelLogoutSessionRequired": true,
-  "BackChannelLogoutUri": "String",
+  "BackChannelLogoutUri": "BackChannelLogoutUri",
   "BackChannelLogoutSessionRequired": true,
   "AllowOfflineAccess": false,
   "AllowedScopes": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
   "AlwaysIncludeUserClaimsInIdToken": false,
   "IdentityTokenLifetime": 300,
@@ -1223,29 +1478,72 @@ Success
   "AuthorizationCodeLifetime": 300,
   "AbsoluteRefreshTokenLifetime": 2592000,
   "SlidingRefreshTokenLifetime": 1296000,
-  "ConsentLifetime": 3600,
+  "ConsentLifetime": 0,
   "RefreshTokenUsage": 0,
   "UpdateAccessTokenClaimsOnRefresh": false,
   "RefreshTokenExpiration": 0,
   "AccessTokenType": 0,
   "IdentityProviderRestrictions": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
   "IncludeJwtId": false,
-  "Claims": [],
+  "Claims": [
+    {
+      "Issuer": "Issuer",
+      "OriginalIssuer": "OriginalIssuer",
+      "Properties": {
+        "String": "String"
+      },
+      "Subject": {
+        "AuthenticationType": null,
+        "IsAuthenticated": false,
+        "Actor": null,
+        "BootstrapContext": null,
+        "Claims": [],
+        "Label": "Label",
+        "Name": null,
+        "NameClaimType": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
+        "RoleClaimType": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role"
+      },
+      "Type": "Type",
+      "Value": "Value",
+      "ValueType": "ValueType"
+    },
+    {
+      "Issuer": "Issuer",
+      "OriginalIssuer": "OriginalIssuer",
+      "Properties": {
+        "String": "String"
+      },
+      "Subject": {
+        "AuthenticationType": null,
+        "IsAuthenticated": false,
+        "Actor": null,
+        "BootstrapContext": null,
+        "Claims": [],
+        "Label": "Label",
+        "Name": null,
+        "NameClaimType": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
+        "RoleClaimType": "http://schemas.microsoft.com/ws/2008/06/identity/claims/role"
+      },
+      "Type": "Type",
+      "Value": "Value",
+      "ValueType": "ValueType"
+    }
+  ],
   "AlwaysSendClientClaims": false,
-  "ClientClaimsPrefix": "String",
-  "PairWiseSubjectSalt": "String",
-  "UserSsoLifetime": 3600,
-  "UserCodeType": "String",
+  "ClientClaimsPrefix": "ClientClaimsPrefix",
+  "PairWiseSubjectSalt": "PairWiseSubjectSalt",
+  "UserSsoLifetime": 0,
+  "UserCodeType": "UserCodeType",
   "DeviceCodeLifetime": 300,
   "AllowedCorsOrigins": [
-    "string1",
-    "string2"
+    "String",
+    "String"
   ],
   "Properties": {
-    "key": "value"
+    "String": "String"
   }
 }
 ```
@@ -1268,7 +1566,7 @@ Client or Tenant not found
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 
 ## `Delete Client`
@@ -1319,7 +1617,7 @@ Client or Tenant not found
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 
 ## `Get Client Secrets`
@@ -1364,13 +1662,20 @@ Success
 
 ```json
 [
-{
-  "Id": 0,
-  "Description": "String",
-  "Value": "String",
-  "Expiration": "2019-01-29T15:18:37.4305851-08:00",
-  "Type": "String"
-}
+  {
+    "Id": 0,
+    "Description": "description",
+    "Value": "Value",
+    "Expiration": "2019-02-05T19:11:14.7595242-08:00",
+    "Type": "Type"
+  },
+  {
+    "Id": 0,
+    "Description": "description",
+    "Value": "Value",
+    "Expiration": "2019-02-05T19:11:14.759551-08:00",
+    "Type": "Type"
+  }
 ]
 ```
 
@@ -1388,7 +1693,7 @@ Client or Tenant not found
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 
 ## `Get Client Secret`
@@ -1440,10 +1745,10 @@ Success
 ```json
 {
   "Id": 0,
-  "Description": "String",
-  "Value": "String",
-  "Expiration": "2019-01-29T15:18:37.4330051-08:00",
-  "Type": "String"
+  "Description": "description",
+  "Value": "Value",
+  "Expiration": "2019-02-05T19:11:14.7599294-08:00",
+  "Type": "Type"
 }
 ```
 
@@ -1461,7 +1766,7 @@ Secret, Client, or Tenant not found
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 
 ## `Add Client Secret`
@@ -1494,8 +1799,8 @@ ClientSecretDto clientSecretDto [FromBody] [Required] [No-Default]
 
 ```json
 {
-  "Expiration": "2019-01-29T15:18:37.4334625-08:00",
-  "Description": "String"
+  "Expiration": "2019-02-05T19:11:14.7603754-08:00",
+  "Description": "description"
 }
 ```
 
@@ -1517,13 +1822,20 @@ Success
 
 ```json
 [
-{
-  "Id": 0,
-  "Description": "String",
-  "Value": "String",
-  "Expiration": "2019-01-29T15:18:37.4347947-08:00",
-  "Type": "String"
-}
+  {
+    "Id": 0,
+    "Description": "description",
+    "Value": "Value",
+    "Expiration": "2019-02-05T19:11:14.7621833-08:00",
+    "Type": "Type"
+  },
+  {
+    "Id": 0,
+    "Description": "description",
+    "Value": "Value",
+    "Expiration": "2019-02-05T19:11:14.7621978-08:00",
+    "Type": "Type"
+  }
 ]
 ```
 
@@ -1541,7 +1853,7 @@ Client or Tenant not found
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 
 ## `Update Client Secret`
@@ -1580,8 +1892,8 @@ secretId
 
 ```json
 {
-  "Expiration": "2019-01-29T15:18:37.4350123-08:00",
-  "Description": "String"
+  "Expiration": "2019-02-05T19:11:14.7626664-08:00",
+  "Description": "description"
 }
 ```
 
@@ -1604,10 +1916,10 @@ Success
 ```json
 {
   "Id": 0,
-  "Description": "String",
-  "Value": "String",
-  "Expiration": "2019-01-29T15:18:37.4351159-08:00",
-  "Type": "String"
+  "Description": "description",
+  "Value": "Value",
+  "Expiration": "2019-02-05T19:11:14.7629891-08:00",
+  "Type": "Type"
 }
 ```
 
@@ -1629,7 +1941,7 @@ Secret, Client, or Tenant not found
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 
 ## `Delete Client Secret`
@@ -1678,13 +1990,20 @@ Success
 
 ```json
 [
-{
-  "Id": 0,
-  "Description": "String",
-  "Value": "String",
-  "Expiration": "2019-01-29T15:18:37.4353924-08:00",
-  "Type": "String"
-}
+  {
+    "Id": 0,
+    "Description": "description",
+    "Value": "Value",
+    "Expiration": "2019-02-05T19:11:14.7634925-08:00",
+    "Type": "Type"
+  },
+  {
+    "Id": 0,
+    "Description": "description",
+    "Value": "Value",
+    "Expiration": "2019-02-05T19:11:14.7635112-08:00",
+    "Type": "Type"
+  }
 ]
 ```
 
@@ -1702,6 +2021,6 @@ Secret, Client, or Tenant not found
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 

@@ -10,34 +10,21 @@ APIs for CRUD operations on identity providers
 
 For HTTP requests and responses, the IdentityProvider object has the following properties and JSON-serialized body: 
 
-```csharp
-string Id
-```
-Id of an identity provider
-
-```csharp
-string DisplayName
-```
-Identity provider display name to use
-
-```csharp
-string Scheme
-```
-Specifies the name of the cookie handler that will temporarily store the outcome of the external authentication.
-
-```csharp
-string UserIdClaimType
-```
-Type of claim
+Property | Type | Descriptions
+ --- | --- | ---
+string | Id | Id of an identity provider
+string | DisplayName | Identity provider display name to use
+string | Scheme | Specifies the name of the cookie handler that will temporarily store the outcome of the external authentication.
+string | UserIdClaimType | Type of claim
 
 ### Serialized Model
 
 ```json
 {
-  "Id": "String",
-  "DisplayName": "String",
-  "Scheme": "String",
-  "UserIdClaimType": "String"
+  "Id": "Id",
+  "DisplayName": "Name",
+  "Scheme": "Scheme",
+  "UserIdClaimType": "UserIdClaimType"
 }
 ```
 
@@ -79,10 +66,10 @@ Success
 
 ```json
 {
-  "Id": "String",
-  "DisplayName": "String",
-  "Scheme": "String",
-  "UserIdClaimType": "String"
+  "Id": "Id",
+  "DisplayName": "Name",
+  "Scheme": "Scheme",
+  "UserIdClaimType": "UserIdClaimType"
 }
 ```
 
@@ -100,7 +87,7 @@ Identity Provider not found
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 
 ## `Get Identity Provider By Scheme`
@@ -137,10 +124,10 @@ Success
 
 ```json
 {
-  "Id": "String",
-  "DisplayName": "String",
-  "Scheme": "String",
-  "UserIdClaimType": "String"
+  "Id": "Id",
+  "DisplayName": "Name",
+  "Scheme": "Scheme",
+  "UserIdClaimType": "UserIdClaimType"
 }
 ```
 
@@ -158,7 +145,7 @@ Identity Provider not found
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 
 ## `Get Identity Providers`
@@ -207,12 +194,18 @@ Success
 
 ```json
 [
-{
-  "Id": "String",
-  "DisplayName": "String",
-  "Scheme": "String",
-  "UserIdClaimType": "String"
-}
+  {
+    "Id": "Id",
+    "DisplayName": "Name",
+    "Scheme": "Scheme",
+    "UserIdClaimType": "UserIdClaimType"
+  },
+  {
+    "Id": "Id",
+    "DisplayName": "Name",
+    "Scheme": "Scheme",
+    "UserIdClaimType": "UserIdClaimType"
+  }
 ]
 ```
 
@@ -230,7 +223,7 @@ Forbidden
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 
 ## `Get Tenant Identity Providers`
@@ -287,12 +280,18 @@ Success
 
 ```json
 [
-{
-  "Id": "String",
-  "DisplayName": "String",
-  "Scheme": "String",
-  "UserIdClaimType": "String"
-}
+  {
+    "Id": "Id",
+    "DisplayName": "Name",
+    "Scheme": "Scheme",
+    "UserIdClaimType": "UserIdClaimType"
+  },
+  {
+    "Id": "Id",
+    "DisplayName": "Name",
+    "Scheme": "Scheme",
+    "UserIdClaimType": "UserIdClaimType"
+  }
 ]
 ```
 
@@ -310,7 +309,7 @@ Tenant not found
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 
 ## `Get Tenant Identity Provider`
@@ -355,10 +354,10 @@ Success
 
 ```json
 {
-  "Id": "String",
-  "DisplayName": "String",
-  "Scheme": "String",
-  "UserIdClaimType": "String"
+  "Id": "Id",
+  "DisplayName": "Name",
+  "Scheme": "Scheme",
+  "UserIdClaimType": "UserIdClaimType"
 }
 ```
 
@@ -376,7 +375,7 @@ IdentityProvider or Tenant not found
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 
 ## `Add Identity Provider to Tenant`
@@ -431,7 +430,7 @@ Tenant not found
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 
 ## `Remove Identity Provider From Tenant`
@@ -482,6 +481,6 @@ IdentityProvider or Tenant not found
 
 #### 500
 
-Oops! Something happened, somewhere inside our server, just a while ago
+Internal server error
 ***
 

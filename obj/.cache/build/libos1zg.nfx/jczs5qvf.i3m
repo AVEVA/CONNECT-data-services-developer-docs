@@ -1,13 +1,13 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Account Management </title>
+    <title>Service Blog </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Account Management ">
+    <meta name="title" content="Service Blog ">
     <meta name="generator" content="docfx 2.39.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -75,20 +75,42 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="ManagementOverview">
-<h1 id="account-management">Account Management</h1>
+            <article class="content wrap" id="_content" data-uid="AccountServiceBlog">
+<h1 id="service-blog" sourcefile="Documentation/Management/Account_ServiceBlog.md" sourcestartlinenumber="5" sourceendlinenumber="5">Service Blog</h1>
 
-<p>The Account Management API allows users to create, manage, and administer OSIsoft Cloud Services (OCS) accounts by assigning users, roles, and namespaces to their tenants. Through the API, users can manage access control used the OCS infrastructure. Generally, only administrators access the Account Management features. Administration functionality is also available from the OCS portal.</p>
-<p>Below is an index of the Account Management API:</p>
-<h3 id="clientrolexrefaccountclientrole"><a class="xref" href="Account_ClientRole.html">ClientRole</a></h3>
-<h3 id="namespacexrefaccountnamespace"><a class="xref" href="Account_Namespace.html">Namespace</a></h3>
-<h3 id="namespacetierxrefaccountnamespacetier"><a class="xref" href="Account_NamespaceTier.html">NamespaceTier</a></h3>
-<h3 id="rolexrefaccountrole"><a class="xref" href="Account_Role.html">Role</a></h3>
-<h3 id="rootaccesscontrolxrefaccountrootaccesscontrol"><a class="xref" href="Account_RootAccessControl.html">RootAccessControl</a></h3>
-<h3 id="tenantxrefaccounttenant"><a class="xref" href="Account_Tenant.html">Tenant</a></h3>
-<h3 id="tenantfeaturestatexrefaccounttenantfeaturestate"><a class="xref" href="Account_TenantFeatureState.html">TenantFeatureState</a></h3>
-<h3 id="userrolexrefaccountuserrole"><a class="xref" href="Account_UserRole.html">UserRole</a></h3>
-<h3 id="serviceblogxrefaccountserviceblog"><a class="xref" href="Account_ServiceBlog.html">ServiceBlog</a></h3>
+<p sourcefile="Documentation/Management/Account_ServiceBlog.md" sourcestartlinenumber="7" sourceendlinenumber="7">APIs for CRUD operations on the Service Blog.</p>
+<hr>
+<h2 id="getbypage" sourcefile="Documentation/Management/Account_ServiceBlog.md" sourcestartlinenumber="11" sourceendlinenumber="11"><code>GetByPage()</code></h2>
+<p sourcefile="Documentation/Management/Account_ServiceBlog.md" sourcestartlinenumber="13" sourceendlinenumber="13">Returns blog entries ordered by time posted.</p>
+<h3 id="http" sourcefile="Documentation/Management/Account_ServiceBlog.md" sourcestartlinenumber="15" sourceendlinenumber="15">Http</h3>
+<p sourcefile="Documentation/Management/Account_ServiceBlog.md" sourcestartlinenumber="17" sourceendlinenumber="17"><code>GET api/v1-preview/ServiceBlog/Entries</code></p>
+<h3 id="parameters" sourcefile="Documentation/Management/Account_ServiceBlog.md" sourcestartlinenumber="19" sourceendlinenumber="19">Parameters</h3>
+<pre sourcefile="Documentation/Management/Account_ServiceBlog.md" sourcestartlinenumber="21" sourceendlinenumber="24"><code class="lang-csharp">[Required]
+string skip
+</code></pre><p sourcefile="Documentation/Management/Account_ServiceBlog.md" sourcestartlinenumber="26" sourceendlinenumber="26">Number of blogs to skip for paging purposes.</p>
+<pre sourcefile="Documentation/Management/Account_ServiceBlog.md" sourcestartlinenumber="27" sourceendlinenumber="30"><code class="lang-csharp">[Required]
+string count
+</code></pre><p sourcefile="Documentation/Management/Account_ServiceBlog.md" sourcestartlinenumber="32" sourceendlinenumber="32">Number of blogs to count after skip for paging purposes.</p>
+<h3 id="security" sourcefile="Documentation/Management/Account_ServiceBlog.md" sourcestartlinenumber="34" sourceendlinenumber="34">Security</h3>
+<p sourcefile="Documentation/Management/Account_ServiceBlog.md" sourcestartlinenumber="36" sourceendlinenumber="36">Any identity, including anonymous, can retrieve service blog entries.</p>
+<h3 id="returns" sourcefile="Documentation/Management/Account_ServiceBlog.md" sourcestartlinenumber="38" sourceendlinenumber="38">Returns</h3>
+<table sourcefile="Documentation/Management/Account_ServiceBlog.md" sourcestartlinenumber="40" sourceendlinenumber="42">
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>([QiServiceBlogEntry], int32)</td>
+<td>Returns an response object including a list of blog entries and an int with the total number of entries.</td>
+</tr>
+</tbody>
+</table>
+<hr>
 </article>
           </div>
           
@@ -97,7 +119,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/Management/Management_Overview.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/Management/Account_ServiceBlog.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

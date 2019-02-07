@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -76,12 +76,12 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="AccountNamespaceTier">
-<h1 id="namespace-tier">Namespace Tier</h1>
+<h1 id="namespace-tier" sourcefile="Documentation/Management/Account_NamespaceTier.md" sourcestartlinenumber="5" sourceendlinenumber="5">Namespace Tier</h1>
 
-<p>An attribute that specifies <code>Namespace</code> performance.</p>
-<h2 id="properties">Properties</h2>
-<p>For HTTP requests and responses, the NamespaceTier object has the following properties and JSON-serialized body: </p>
-<table>
+<p sourcefile="Documentation/Management/Account_NamespaceTier.md" sourcestartlinenumber="7" sourceendlinenumber="7">An attribute that specifies <code>Namespace</code> performance.</p>
+<h2 id="properties" sourcefile="Documentation/Management/Account_NamespaceTier.md" sourcestartlinenumber="9" sourceendlinenumber="9">Properties</h2>
+<p sourcefile="Documentation/Management/Account_NamespaceTier.md" sourcestartlinenumber="11" sourceendlinenumber="11">For HTTP requests and responses, the NamespaceTier object has the following properties and JSON-serialized body: </p>
+<table sourcefile="Documentation/Management/Account_NamespaceTier.md" sourcestartlinenumber="13" sourceendlinenumber="18">
 <thead>
 <tr>
 <th>Property</th>
@@ -112,25 +112,25 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-json">{
+<pre sourcefile="Documentation/Management/Account_NamespaceTier.md" sourcestartlinenumber="21" sourceendlinenumber="28"><code class="lang-json">{
     &quot;Id&quot;: &quot;id&quot;,
     &quot;Description&quot;: &quot;description&quot;,
     &quot;ThroughputUnits&quot;: 0,
     &quot;StorageUnits&quot;: 0
 }
 </code></pre><hr>
-<h2 id="getnamespacetier"><code>GetNamespaceTier()</code></h2>
-<p>Retrieves a Namespace tier associated with a specified id.</p>
-<h3 id="http">Http</h3>
-<p><code>GET api/v1-preview/NamespaceTiers/{namespaceTierId}</code></p>
-<h3 id="parameters">Parameters</h3>
-<pre><code class="lang-csharp">[Required]
+<h2 id="getnamespacetier" sourcefile="Documentation/Management/Account_NamespaceTier.md" sourcestartlinenumber="31" sourceendlinenumber="31"><code>GetNamespaceTier()</code></h2>
+<p sourcefile="Documentation/Management/Account_NamespaceTier.md" sourcestartlinenumber="33" sourceendlinenumber="33">Retrieves a Namespace tier associated with a specified id.</p>
+<h3 id="http" sourcefile="Documentation/Management/Account_NamespaceTier.md" sourcestartlinenumber="35" sourceendlinenumber="35">Http</h3>
+<p sourcefile="Documentation/Management/Account_NamespaceTier.md" sourcestartlinenumber="37" sourceendlinenumber="37"><code>GET api/v1-preview/NamespaceTiers/{namespaceTierId}</code></p>
+<h3 id="parameters" sourcefile="Documentation/Management/Account_NamespaceTier.md" sourcestartlinenumber="39" sourceendlinenumber="39">Parameters</h3>
+<pre sourcefile="Documentation/Management/Account_NamespaceTier.md" sourcestartlinenumber="41" sourceendlinenumber="44"><code class="lang-csharp">[Required]
 string namespaceTierId
-</code></pre><p>The tier identifier for this request.</p>
-<h3 id="security">Security</h3>
-<p>A <code>NamespaceTier</code> can be retrieved by an Account Member.</p>
-<h3 id="returns">Returns</h3>
-<table>
+</code></pre><p sourcefile="Documentation/Management/Account_NamespaceTier.md" sourcestartlinenumber="46" sourceendlinenumber="46">The tier identifier for this request.</p>
+<h3 id="security" sourcefile="Documentation/Management/Account_NamespaceTier.md" sourcestartlinenumber="49" sourceendlinenumber="49">Security</h3>
+<p sourcefile="Documentation/Management/Account_NamespaceTier.md" sourcestartlinenumber="51" sourceendlinenumber="51">A <code>NamespaceTier</code> can be retrieved by an Account Member.</p>
+<h3 id="returns" sourcefile="Documentation/Management/Account_NamespaceTier.md" sourcestartlinenumber="53" sourceendlinenumber="53">Returns</h3>
+<table sourcefile="Documentation/Management/Account_NamespaceTier.md" sourcestartlinenumber="55" sourceendlinenumber="58">
 <thead>
 <tr>
 <th>Status Code</th>
@@ -152,16 +152,16 @@ string namespaceTierId
 </tbody>
 </table>
 <hr>
-<h2 id="getallnamespacetiers"><code>GetAllNamespaceTiers()</code></h2>
-<p>Retrieves a list of all available namespace tiers.</p>
-<h3 id="http-1">Http</h3>
-<p><code>GET api/v1-preview/NamespaceTiers</code></p>
-<h3 id="parameters-1">Parameters</h3>
-<p>This API call does not have any parameters.</p>
-<h3 id="security-1">Security</h3>
-<p><code>NamespaceTiers</code> can be retrieved by an Account Member.</p>
-<h3 id="returns-1">Returns</h3>
-<table>
+<h2 id="getallnamespacetiers" sourcefile="Documentation/Management/Account_NamespaceTier.md" sourcestartlinenumber="62" sourceendlinenumber="62"><code>GetAllNamespaceTiers()</code></h2>
+<p sourcefile="Documentation/Management/Account_NamespaceTier.md" sourcestartlinenumber="64" sourceendlinenumber="64">Retrieves a list of all available namespace tiers.</p>
+<h3 id="http-1" sourcefile="Documentation/Management/Account_NamespaceTier.md" sourcestartlinenumber="66" sourceendlinenumber="66">Http</h3>
+<p sourcefile="Documentation/Management/Account_NamespaceTier.md" sourcestartlinenumber="68" sourceendlinenumber="68"><code>GET api/v1-preview/NamespaceTiers</code></p>
+<h3 id="parameters-1" sourcefile="Documentation/Management/Account_NamespaceTier.md" sourcestartlinenumber="70" sourceendlinenumber="70">Parameters</h3>
+<p sourcefile="Documentation/Management/Account_NamespaceTier.md" sourcestartlinenumber="72" sourceendlinenumber="72">This API call does not have any parameters.</p>
+<h3 id="security-1" sourcefile="Documentation/Management/Account_NamespaceTier.md" sourcestartlinenumber="74" sourceendlinenumber="74">Security</h3>
+<p sourcefile="Documentation/Management/Account_NamespaceTier.md" sourcestartlinenumber="76" sourceendlinenumber="76"><code>NamespaceTiers</code> can be retrieved by an Account Member.</p>
+<h3 id="returns-1" sourcefile="Documentation/Management/Account_NamespaceTier.md" sourcestartlinenumber="78" sourceendlinenumber="78">Returns</h3>
+<table sourcefile="Documentation/Management/Account_NamespaceTier.md" sourcestartlinenumber="80" sourceendlinenumber="82">
 <thead>
 <tr>
 <th>Status Code</th>

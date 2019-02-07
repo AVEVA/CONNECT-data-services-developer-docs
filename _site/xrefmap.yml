@@ -17,7 +17,7 @@ references:
   name: Roles
   href: Documentation/Management/Account_Role.html
 - uid: AccountRootAccessControl
-  name: Root Access Control
+  name: Root AccessControl
   href: Documentation/Management/Account_RootAccessControl.html
 - uid: AccountServiceBlog
   name: Service Blog

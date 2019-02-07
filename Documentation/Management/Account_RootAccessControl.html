@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Root Access Control </title>
+    <title>Root AccessControl </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Root Access Control ">
+    <meta name="title" content="Root AccessControl ">
     <meta name="generator" content="docfx 2.39.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -76,14 +76,14 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="AccountRootAccessControl">
-<h1 id="root-access-control">Root Access Control</h1>
+<h1 id="root-accesscontrol">Root AccessControl</h1>
 
 <p>APIs to manage default access to entities governed by an <a class="xref" href="../Access_Control.html">AccessControl</a>.</p>
 <hr>
 <h2 id="getrootnamespaceacl"><code>GetRootNamespaceAcl()</code></h2>
 <p>Retrieves the <a class="xref" href="../Access_Control.html">AccessControl</a> that is used to authorize access to a <code>Namespace</code> if none is specified during creation.</p>
 <h3 id="http">Http</h3>
-<p><code>GET api/Tenants/{tenantId}/AccessControl/Namespaces</code></p>
+<p><code>GET api/v1-preview/Tenants/{tenantId}/AccessControl/Namespaces</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -121,7 +121,7 @@ string tenantId
 <h2 id="setrootnamespaceacl"><code>SetRootNamespaceAcl()</code></h2>
 <p>Modifies the <a class="xref" href="../Access_Control.html">AccessControl</a> that is used to authorize access to a <code>Namespace</code> if none is specified during creation.</p>
 <h3 id="http-1">Http</h3>
-<p><code>PUT api/Tenants/{tenantId}/AccessControl/Namespaces</code></p>
+<p><code>PUT api/v1-preview/Tenants/{tenantId}/AccessControl/Namespaces</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId

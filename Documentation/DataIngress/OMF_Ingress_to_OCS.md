@@ -12,4 +12,4 @@ in this and subsequent topics:
 * A producer of OMF messages needs a *client* identity to authenticate and send messges.
 * Messages are sent to a queue called a *Topic*. 
 * A *Subscription* recieves messages from a Topic and writes them either to the OCS 
-  data store or makes them available to an external consumer. 
+  data store or makes them available to an external consumer.

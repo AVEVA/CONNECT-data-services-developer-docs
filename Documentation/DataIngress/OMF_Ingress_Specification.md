@@ -18,7 +18,7 @@ set to a security token obtained from the OCS Portal. The security token is used
 the sender and to authorize the sender for use with a particular Tenant and Publisher.
 
 The ``omfversion`` header must match the version of the OMF spec used to construct the message.
-Version 1.0 of the spec is currently supported. 
+Version 1.1 of the spec is currently supported. 
 
 Message Types
 -------------
@@ -62,7 +62,7 @@ OMF message types fall into three categories: Type, Container, and Data, which a
   types (see [Types](xref:sdsTypes))
 
 
-Type     | Format   | QiTypeCode
+Type     | Format   | SdsTypeCode
 -------- | -------- | -----------
 array		 |          | IEnumerable
 boolean  |          | boolean
@@ -87,7 +87,7 @@ A Container message is interpreted as a SdsStream in the OCS Data Store. The key
 in the Container definition are interpreted as follows:
 
 * ``id``: Corresponds to the SdsStream Id field. It must conform to the rules defined for
-    an SdsStream.Id specified here : [Streams](xref:sdsStreams#streams).
+    an SdsStream Id specified here: [Streams](xref:sdsStreams#streams).
 * ``typeid``: Corresponds to the SdsStream TypeId field.
 * ``typeversion``: Versioning of SdsTypes is not supported.
 * ``name``: Corresponds to the SdsStream Name field. This is a friendly name for the stream.

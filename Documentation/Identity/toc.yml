@@ -1,0 +1,14 @@
+- name: Identity Overview
+  href: Identity_Overview.md
+- name: Tenant Calls
+  href: Identity_Tenant.md
+- name: Client Calls
+  href: Identity_Client.md
+- name: Identity Provider Calls
+  href: Identity_IdentityProvider.md
+- name: Invitation Calls
+  href: Identity_Invitation.md
+- name: User Calls
+  href: Identity_User.md
+- name: Consent
+  href: Consent.md

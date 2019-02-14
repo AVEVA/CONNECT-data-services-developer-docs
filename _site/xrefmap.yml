@@ -31,12 +31,30 @@ references:
 - uid: AccountUserRole
   name: User Roles
   href: Documentation/Management/Account_UserRole.html
-- uid: Consent
-  name: Consent to OSIsoft Applications
-  href: Documentation/Management/Consent.html
 - uid: dataIngress
   name: Data Ingress and OSIsoft Message Format
   href: Documentation/DataIngress/Data_Ingress.html
+- uid: identityClient
+  name: Client
+  href: Documentation/Identity/Identity_Client.html
+- uid: identityConsent
+  name: Consent to OSIsoft Applications
+  href: Documentation/Identity/Consent.html
+- uid: identityIdentityProvider
+  name: IdentityProvider
+  href: Documentation/Identity/Identity_IdentityProvider.html
+- uid: identityInvitation
+  name: Invitation
+  href: Documentation/Identity/Identity_Invitation.html
+- uid: identityOverview
+  name: OSIsoft Identity Service
+  href: Documentation/Identity/Identity_Overview.html
+- uid: identityTenant
+  name: Tenant
+  href: Documentation/Identity/Identity_Tenant.html
+- uid: identityUser
+  name: User
+  href: Documentation/Identity/Identity_User.html
 - uid: index
   name: OCS API
   href: index.html

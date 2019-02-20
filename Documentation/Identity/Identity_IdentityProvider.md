@@ -12,10 +12,10 @@ For HTTP requests and responses, the IdentityProvider object has the following p
 
 Property | Type | Descriptions
  --- | --- | ---
-string | Id | Id of an identity provider
-string | DisplayName | Identity provider display name to use
-string | Scheme | Specifies the name of the cookie handler that will temporarily store the outcome of the external authentication.
-string | UserIdClaimType | Type of claim
+Id | string | Id of an identity provider
+DisplayName | string | Identity provider display name to use
+Scheme | string | Specifies the name of the cookie handler that will temporarily store the outcome of the external authentication.
+UserIdClaimType | string | Type of claim
 
 ### Serialized Model
 
@@ -41,7 +41,8 @@ Returns an IdentityProvider object
 ### Parameters
 
 ```csharp
-string identityProviderId [FromRoute] [Required] [No-Default]
+[Required]
+string identityProviderId
 ```
 
 Id of provider
@@ -101,7 +102,8 @@ Returns a list of IdentityProvider objects that follow a scheme
 ### Parameters
 
 ```csharp
-string scheme [FromRoute] [Required] [No-Default]
+[Required]
+string scheme
 ```
 
 Scheme name
@@ -159,19 +161,28 @@ Returns a list of IdentityProvider objects
 ### Parameters
 
 ```csharp
-string query [FromQuery] [Optional] [Default = ""]
+[FromQuery]
+[Optional]
+[Default = ""]
+string query
 ```
 
 Query to execute. Currently not supported
 
 ```csharp
-int32 skip [FromQuery] [Optional] [Default = 0]
+[FromQuery]
+[Optional]
+[Default = 0]
+int32 skip
 ```
 
 Number of providers to skip.
 
 ```csharp
-int32 count [FromQuery] [Optional] [Default = 100]
+[FromQuery]
+[Optional]
+[Default = 100]
+int32 count
 ```
 
 Max number of providers to return
@@ -232,30 +243,40 @@ Get all identity providers for a tenant
 
 ### Request
 
-`GET api/Tenant/{tenantId}/IdentityProviders`
+`GET api/Tenants/{tenantId}/IdentityProvider/`
 
 ### Parameters
 
 ```csharp
-string tenantId [FromRoute] [Required] [No-Default]
+[Required]
+string tenantId
 ```
 
 Id of tenant
 
 ```csharp
-string query [FromQuery] [Optional] [Default = ""]
+[FromQuery]
+[Optional]
+[Default = ""]
+string query
 ```
 
 Query to execute. Currently not supported
 
 ```csharp
-int32 skip [FromQuery] [Optional] [Default = 0]
+[FromQuery]
+[Optional]
+[Default = 0]
+int32 skip
 ```
 
 Number of providers to skip.
 
 ```csharp
-int32 count [FromQuery] [Optional] [Default = 100]
+[FromQuery]
+[Optional]
+[Default = 100]
+int32 count
 ```
 
 Max number of providers to return
@@ -318,18 +339,20 @@ Get an identity provider
 
 ### Request
 
-`GET api/Tenant/{tenantId}/IdentityProviders/{identityProviderId}`
+`GET api/Tenants/{tenantId}/IdentityProvider/{identityProviderId}`
 
 ### Parameters
 
 ```csharp
-string tenantId [FromRoute] [Required] [No-Default]
+[Required]
+string tenantId
 ```
 
 Id of tenant
 
 ```csharp
-string identityProviderId [FromRoute] [Required] [No-Default]
+[Required]
+string identityProviderId
 ```
 
 Id of provider
@@ -384,18 +407,20 @@ Add an existing identity provider to a tenant
 
 ### Request
 
-`POST api/Tenant/{tenantId}/IdentityProviders`
+`POST api/Tenants/{tenantId}/IdentityProvider/{identityProviderId}`
 
 ### Parameters
 
 ```csharp
-string tenantId [FromRoute] [Required] [No-Default]
+[Required]
+string tenantId
 ```
 
 Id of tenant
 
 ```csharp
-string identityProviderId [FromQuery] [Required] [No-Default]
+[Required]
+string identityProviderId
 ```
 
 Id of provider
@@ -408,9 +433,22 @@ Allowed for these roles:
 
 ### Returns
 
-#### 204
+#### 201
 
-Added
+Created
+
+##### Type:
+
+ `IdentityProvider`
+
+```json
+{
+  "Id": "Id",
+  "DisplayName": "Name",
+  "Scheme": "Scheme",
+  "UserIdClaimType": "UserIdClaimType"
+}
+```
 
 #### 400
 
@@ -439,18 +477,20 @@ Remove an identity provider from a tenant
 
 ### Request
 
-`DELETE api/Tenant/{tenantId}/IdentityProviders/{identityProviderId}`
+`DELETE api/Tenants/{tenantId}/IdentityProvider/{identityProviderId}`
 
 ### Parameters
 
 ```csharp
-string tenantId [FromRoute] [Required] [No-Default]
+[Required]
+string tenantId
 ```
 
 Id of tenant
 
 ```csharp
-string identityProviderId [FromRoute] [Required] [No-Default]
+[Required]
+string identityProviderId
 ```
 
 Id of provider

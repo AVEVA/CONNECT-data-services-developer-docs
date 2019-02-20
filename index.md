@@ -60,6 +60,8 @@ easily obtain needed information.
      - [Publishers](xref:omfIngressPublishers)
      - [Topics](xref:omfIngressTopics)
      - [Subscriptions](xref:omfIngressSubsctriptions)
+   - [Data Views (Preview)](xref:DataViewsOverview)
+     - [Data Views API](xref:DataViewsApi)
    - [Role-based Access Control](xref:accessControl)
    - [Samples](xref:samples)
    - [Getting Support](xref:support)

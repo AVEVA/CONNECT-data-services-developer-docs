@@ -4,7 +4,7 @@ uid: identityUser
 
 # User
 
-CRUD operations on User
+APIs for creating, getting, updating, and deleting Users
 
 ## Properties
 
@@ -12,16 +12,15 @@ For HTTP requests and responses, the User object has the following properties an
 
 Property | Type | Descriptions
  --- | --- | ---
-string | Id | Unique User ID.
-string | GivenName | Given name of user.
-string | Surname | Surname of user.
-string | Name | Name of user.
-string | Email | Email of user.
-string | ContactEmail | Preferred contact email to be used.
-string | ContactGivenName | Preferred name to be used when contacting user.
-string | ContactSurname | Preferred surname to be used when contacting user.
-string | ExternalUserId | Provider id for user.
-string | Preferences | User preferences.
+Id | string | Unique User ID.
+GivenName | string | Given name of user.
+Surname | string | Surname of user.
+Name | string | Name of user.
+Email | string | Email of user.
+ContactEmail | string | Preferred contact email to be used.
+ContactGivenName | string | Preferred name to be used when contacting user.
+ContactSurname | string | Preferred surname to be used when contacting user.
+ExternalUserId | string | Provider id for user.
 Tenant | Tenant | Tenant the user belongs to.
 IdentityProvider | IdentityProvider | Identity provider used to authenticate user.
 
@@ -38,7 +37,6 @@ IdentityProvider | IdentityProvider | Identity provider used to authenticate use
   "ContactGivenName": "Name",
   "ContactSurname": "Surname",
   "ExternalUserId": "ExternalUserId",
-  "Preferences": "Preferences",
   "Tenant": {
     "Id": "Id",
     "Alias": "Alias",
@@ -62,30 +60,40 @@ Returns a list of User objects for a given tenant
 
 ### Request
 
-`GET api/Tenant/{tenantId}/Users`
+`GET api/Tenants/{tenantId}/User/`
 
 ### Parameters
 
 ```csharp
-string tenantId [FromRoute] [Required] [No-Default]
+[Required]
+string tenantId
 ```
 
 Id of tenant
 
 ```csharp
-string query [FromQuery] [Optional] [Default = ""]
+[FromQuery]
+[Optional]
+[Default = ""]
+string query
 ```
 
 Query to execute. Currently not supported
 
 ```csharp
-int32 skip [FromQuery] [Optional] [Default = 0]
+[FromQuery]
+[Optional]
+[Default = 0]
+int32 skip
 ```
 
 Number of users to skip
 
 ```csharp
-int32 count [FromQuery] [Optional] [Default = 100]
+[FromQuery]
+[Optional]
+[Default = 100]
+int32 count
 ```
 
 Max number of users to return
@@ -95,6 +103,7 @@ Max number of users to return
 Allowed for these roles:
 
 - `Account Administrator`
+- `Account Member`
 - `Cluster Operator`
 - `Cluster Support`
 
@@ -120,7 +129,6 @@ Success.
     "ContactGivenName": "Name",
     "ContactSurname": "Surname",
     "ExternalUserId": "ExternalUserId",
-    "Preferences": "Preferences",
     "Tenant": {
       "Id": "Id",
       "Alias": "Alias",
@@ -144,7 +152,6 @@ Success.
     "ContactGivenName": "Name",
     "ContactSurname": "Surname",
     "ExternalUserId": "ExternalUserId",
-    "Preferences": "Preferences",
     "Tenant": {
       "Id": "Id",
       "Alias": "Alias",
@@ -188,36 +195,48 @@ Returns an ordered list of User objects based on userId for a given tenant or a 
 
 ### Request
 
-`GET api/Tenant/{tenantId}/Users/Ids`
+`GET api/Tenants/{tenantId}/User/Ids`
 
 ### Parameters
 
 ```csharp
-string tenantId [FromRoute] [Required] [No-Default]
+[Required]
+string tenantId
 ```
 
 Id of tenant
 
 ```csharp
-string[] userIds [FromQuery] [Required] [No-Default]
+[FromQuery]
+[Required]
+string[] userIds
 ```
 
 Unordered list of ids for all users to get
 
 ```csharp
-string query [FromQuery] [Optional] [Default = ""]
+[FromQuery]
+[Optional]
+[Default = ""]
+string query
 ```
 
 Query to execute. Currently not supported
 
 ```csharp
-int32 skip [FromQuery] [Optional] [Default = 0]
+[FromQuery]
+[Optional]
+[Default = 0]
+int32 skip
 ```
 
 Number of users to skip
 
 ```csharp
-int32 count [FromQuery] [Optional] [Default = 100]
+[FromQuery]
+[Optional]
+[Default = 100]
+int32 count
 ```
 
 Max number of users to return
@@ -252,7 +271,6 @@ Success.
     "ContactGivenName": "Name",
     "ContactSurname": "Surname",
     "ExternalUserId": "ExternalUserId",
-    "Preferences": "Preferences",
     "Tenant": {
       "Id": "Id",
       "Alias": "Alias",
@@ -276,7 +294,6 @@ Success.
     "ContactGivenName": "Name",
     "ContactSurname": "Surname",
     "ExternalUserId": "ExternalUserId",
-    "Preferences": "Preferences",
     "Tenant": {
       "Id": "Id",
       "Alias": "Alias",
@@ -341,7 +358,6 @@ Partial success.
       "ContactGivenName": "Name",
       "ContactSurname": "Surname",
       "ExternalUserId": "ExternalUserId",
-      "Preferences": "Preferences",
       "Tenant": {
         "Id": "Id",
         "Alias": "Alias",
@@ -365,7 +381,6 @@ Partial success.
       "ContactGivenName": "Name",
       "ContactSurname": "Surname",
       "ExternalUserId": "ExternalUserId",
-      "Preferences": "Preferences",
       "Tenant": {
         "Id": "Id",
         "Alias": "Alias",
@@ -410,36 +425,49 @@ Get User status for multiple users, optionally restrict it to only Users of a sp
 
 ### Request
 
-`GET api/Tenant/{tenantId}/Users/Status`
+`GET api/Tenants/{tenantId}/User/Status`
 
 ### Parameters
 
 ```csharp
-string tenantId [FromRoute] [Required] [No-Default]
+[Required]
+string tenantId
 ```
 
 Id of tenant
 
 ```csharp
-string query [FromQuery] [Optional] [Default = ""]
+[FromQuery]
+[Optional]
+[Default = ""]
+string query
 ```
 
 Query to execute. Currently not supported
 
 ```csharp
-int32 skip [FromQuery] [Optional] [Default = 0]
+[FromQuery]
+[Optional]
+[Default = 0]
+int32 skip
 ```
 
 Number of users to skip
 
 ```csharp
-int32 count [FromQuery] [Optional] [Default = 100]
+[FromQuery]
+[Optional]
+[Default = 100]
+int32 count
 ```
 
 Max number of users to return
 
 ```csharp
-string status [FromQuery] [Optional] [Default = ""]
+[FromQuery]
+[Optional]
+[Default = ""]
+string status
 ```
 
 Only return statuses that match this value
@@ -476,7 +504,6 @@ Success.
       "ContactGivenName": "Name",
       "ContactSurname": "Surname",
       "ExternalUserId": "ExternalUserId",
-      "Preferences": "Preferences",
       "Tenant": {
         "Id": "Id",
         "Alias": "Alias",
@@ -503,7 +530,6 @@ Success.
       "ContactGivenName": "Name",
       "ContactSurname": "Surname",
       "ExternalUserId": "ExternalUserId",
-      "Preferences": "Preferences",
       "Tenant": {
         "Id": "Id",
         "Alias": "Alias",
@@ -548,18 +574,20 @@ Returns a User
 
 ### Request
 
-`GET api/Tenant/{tenantId}/Users/{userId}`
+`GET api/Tenants/{tenantId}/User/{userId}`
 
 ### Parameters
 
 ```csharp
-string tenantId [FromRoute] [Required] [No-Default]
+[Required]
+string tenantId
 ```
 
 Id of Tenant
 
 ```csharp
-string userId [FromRoute] [Required] [No-Default]
+[Required]
+string userId
 ```
 
 Id of User
@@ -594,7 +622,6 @@ Success
   "ContactGivenName": "Name",
   "ContactSurname": "Surname",
   "ExternalUserId": "ExternalUserId",
-  "Preferences": "Preferences",
   "Tenant": {
     "Id": "Id",
     "Alias": "Alias",
@@ -633,18 +660,20 @@ Returns user invitation status
 
 ### Request
 
-`GET api/Tenant/{tenantId}/Users/{userId}/Status`
+`GET api/Tenants/{tenantId}/User/{userId}/Status`
 
 ### Parameters
 
 ```csharp
-string tenantId [FromRoute] [Required] [No-Default]
+[Required]
+string tenantId
 ```
 
 Id of tenant
 
 ```csharp
-string userId [FromRoute] [Required] [No-Default]
+[Required]
+string userId
 ```
 
 Id of user
@@ -681,7 +710,6 @@ Success
     "ContactGivenName": "Name",
     "ContactSurname": "Surname",
     "ExternalUserId": "ExternalUserId",
-    "Preferences": "Preferences",
     "Tenant": {
       "Id": "Id",
       "Alias": "Alias",
@@ -721,36 +749,48 @@ Returns an ordered list of UserStatusDto objects for a given tenant or a MultiSt
 
 ### Request
 
-`GET api/Tenant/{tenantId}/Users/Status/Ids`
+`GET api/Tenants/{tenantId}/User/Status/Ids`
 
 ### Parameters
 
 ```csharp
-string tenantId [FromRoute] [Required] [No-Default]
+[Required]
+string tenantId
 ```
 
 Id of tenant
 
 ```csharp
-string[] userIds [FromQuery] [Required] [No-Default]
+[FromQuery]
+[Required]
+string[] userIds
 ```
 
 Unordered list of ids for all users
 
 ```csharp
-string query [FromQuery] [Optional] [Default = ""]
+[FromQuery]
+[Optional]
+[Default = ""]
+string query
 ```
 
 Query to execute. Currently not supported
 
 ```csharp
-int32 skip [FromQuery] [Optional] [Default = 0]
+[FromQuery]
+[Optional]
+[Default = 0]
+int32 skip
 ```
 
 Number of users to skip
 
 ```csharp
-int32 count [FromQuery] [Optional] [Default = 100]
+[FromQuery]
+[Optional]
+[Default = 100]
+int32 count
 ```
 
 Max number of users to return
@@ -785,7 +825,6 @@ Success.
     "ContactGivenName": "Name",
     "ContactSurname": "Surname",
     "ExternalUserId": "ExternalUserId",
-    "Preferences": "Preferences",
     "Tenant": {
       "Id": "Id",
       "Alias": "Alias",
@@ -809,7 +848,6 @@ Success.
     "ContactGivenName": "Name",
     "ContactSurname": "Surname",
     "ExternalUserId": "ExternalUserId",
-    "Preferences": "Preferences",
     "Tenant": {
       "Id": "Id",
       "Alias": "Alias",
@@ -876,7 +914,6 @@ Partial success.
         "ContactGivenName": "Name",
         "ContactSurname": "Surname",
         "ExternalUserId": "ExternalUserId",
-        "Preferences": "Preferences",
         "Tenant": {
           "Id": "Id",
           "Alias": "Alias",
@@ -903,7 +940,6 @@ Partial success.
         "ContactGivenName": "Name",
         "ContactSurname": "Surname",
         "ExternalUserId": "ExternalUserId",
-        "Preferences": "Preferences",
         "Tenant": {
           "Id": "Id",
           "Alias": "Alias",
@@ -949,18 +985,20 @@ Returns a user's preferences
 
 ### Request
 
-`GET api/Tenant/{tenantId}/Users/{userId}/Preferences`
+`GET api/Tenants/{tenantId}/User/{userId}/Preferences`
 
 ### Parameters
 
 ```csharp
-string tenantId [FromRoute] [Required] [No-Default]
+[Required]
+string tenantId
 ```
 
 Id of Tenant
 
 ```csharp
-string userId [FromRoute] [Required] [No-Default]
+[Required]
+string userId
 ```
 
 Id of User
@@ -982,10 +1020,10 @@ Success
 
 ##### Type:
 
- `System.String`
+ `Newtonsoft.Json.Linq.JObject`
 
 ```json
-string
+{}
 ```
 
 #### 401
@@ -1011,27 +1049,31 @@ Put a user's preferences
 
 ### Request
 
-`PUT api/Tenant/{tenantId}/Users/{userId}/Preferences`
+`PUT api/Tenants/{tenantId}/User/{userId}/Preferences`
 
 ### Parameters
 
 ```csharp
-string tenantId [FromRoute] [Required] [No-Default]
+[Required]
+string tenantId
 ```
 
 Id of Tenant
 
 ```csharp
-string userId [FromRoute] [Required] [No-Default]
+[Required]
+string userId
 ```
 
 Id of User
 
 ```csharp
-string preferences [FromQuery] [Required] [No-Default]
+[FromBody]
+[Required]
+JObject preferences
 ```
 
-Preferences
+JSON Preferences
 
 ### Security
 
@@ -1049,10 +1091,10 @@ Success
 
 ##### Type:
 
- `System.String`
+ `Newtonsoft.Json.Linq.JObject`
 
 ```json
-string
+{}
 ```
 
 #### 400
@@ -1078,39 +1120,28 @@ Internal server error
 
 ## `Create User`
 
-Creates a `User <User>`
+Creates a User
 
 ### Request
 
-`POST api/Tenant/{tenantId}/Users`
+`POST api/Tenants/{tenantId}/User/`
 
 ### Parameters
 
 ```csharp
-string tenantId [FromRoute] [Required] [No-Default]
+[Required]
+string tenantId
 ```
 
 Id of Tenant
 
 ```csharp
-UserCreateDto userCreateDto [FromBody] [Required] [No-Default]
+[FromBody]
+[Required]
+UserCreateDto userCreateDto
 ```
 
 User data transfer object
-
-```json
-{
-  "ContactGivenName": "Name",
-  "ContactSurname": "Surname",
-  "ContactEmail": "user@company.com",
-  "RoleIds": [
-    "String",
-    "String"
-  ],
-  "CreateInvitation": false,
-  "InvitationExpiresDateTime": "2019-02-06T09:56:10.2713071-08:00"
-}
-```
 
 ### Security
 
@@ -1140,7 +1171,6 @@ Created
   "ContactGivenName": "Name",
   "ContactSurname": "Surname",
   "ExternalUserId": "ExternalUserId",
-  "Preferences": "Preferences",
   "Tenant": {
     "Id": "Id",
     "Alias": "Alias",
@@ -1179,45 +1209,35 @@ Internal server error
 
 ## `Create User With ID`
 
-Creates a `User <User>` with an Id
+Creates a User with an Id
 
 ### Request
 
-`POST api/Tenant/{tenantId}/Users/{userId}`
+`POST api/Tenants/{tenantId}/User/{userId}`
 
 ### Parameters
 
 ```csharp
-string tenantId [FromRoute] [Required] [No-Default]
+[Required]
+string tenantId
 ```
 
 Id of Tenant
 
 ```csharp
-string userId [FromRoute] [Required] [No-Default]
+[Required]
+string userId
 ```
 
-Id of `User <User>`
+Id of User
 
 ```csharp
-UserCreateDto userCreateDto [FromBody] [Required] [No-Default]
+[FromBody]
+[Required]
+UserCreateDto userCreateDto
 ```
 
 User data transfer object
-
-```json
-{
-  "ContactGivenName": "Name",
-  "ContactSurname": "Surname",
-  "ContactEmail": "user@company.com",
-  "RoleIds": [
-    "String",
-    "String"
-  ],
-  "CreateInvitation": false,
-  "InvitationExpiresDateTime": "2019-02-06T09:56:10.2777685-08:00"
-}
-```
 
 ### Security
 
@@ -1246,7 +1266,6 @@ Created
   "ContactGivenName": "Name",
   "ContactSurname": "Surname",
   "ExternalUserId": "ExternalUserId",
-  "Preferences": "Preferences",
   "Tenant": {
     "Id": "Id",
     "Alias": "Alias",
@@ -1293,40 +1312,31 @@ Update a user
 
 ### Request
 
-`PUT api/Tenant/{tenantId}/Users/{userId}`
+`PUT api/Tenants/{tenantId}/User/{userId}`
 
 ### Parameters
 
 ```csharp
-string tenantId [FromRoute] [Required] [No-Default]
+[Required]
+string tenantId
 ```
 
 Id of tenant
 
 ```csharp
-string userId [FromRoute] [Required] [No-Default]
+[Required]
+string userId
 ```
 
 Id of user
 
 ```csharp
-UserUpdateDto userUpdateDto [FromBody] [Required] [No-Default]
+[FromBody]
+[Required]
+UserUpdateDto userUpdateDto
 ```
 
 A UserStatusDto object
-
-```json
-{
-  "ContactGivenName": "Name",
-  "ContactSurname": "Surname",
-  "ContactEmail": "user@company.com",
-  "Preferences": "Preferences",
-  "RoleIds": [
-    "String",
-    "String"
-  ]
-}
-```
 
 ### Security
 
@@ -1356,7 +1366,6 @@ Updated
   "ContactGivenName": "Name",
   "ContactSurname": "Surname",
   "ExternalUserId": "ExternalUserId",
-  "Preferences": "Preferences",
   "Tenant": {
     "Id": "Id",
     "Alias": "Alias",
@@ -1399,18 +1408,20 @@ Delete a user
 
 ### Request
 
-`DELETE api/Tenant/{tenantId}/Users/{userId}`
+`DELETE api/Tenants/{tenantId}/User/{userId}`
 
 ### Parameters
 
 ```csharp
-string tenantId [FromRoute] [Required] [No-Default]
+[Required]
+string tenantId
 ```
 
 Id of tenant
 
 ```csharp
-string userId [FromRoute] [Required] [No-Default]
+[Required]
+string userId
 ```
 
 Id of user
@@ -1450,24 +1461,29 @@ Get the invitations for a user
 
 ### Request
 
-`GET api/Tenant/{tenantId}/Users/{userId}/Invitation`
+`GET api/Tenants/{tenantId}/User/{userId}/Invitation`
 
 ### Parameters
 
 ```csharp
-string tenantId [FromRoute] [Required] [No-Default]
+[Required]
+string tenantId
 ```
 
 Id of tenant
 
 ```csharp
-string userId [FromRoute] [Required] [No-Default]
+[Required]
+string userId
 ```
 
 Id of user
 
 ```csharp
-bool includeExpiredInvitations [FromQuery] [Optional] [Default = False]
+[FromQuery]
+[Optional]
+[Default = False]
+bool includeExpiredInvitations
 ```
 
 Specify to return expired invitations
@@ -1493,8 +1509,8 @@ Success
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-02-06T09:56:10.2907473-08:00",
-  "Expires": "2019-02-06T09:56:10.2907519-08:00",
+  "Issued": "2019-02-20T01:57:33.4002929-05:00",
+  "Expires": "2019-02-20T01:57:33.4002979-05:00",
   "State": 0,
   "TenantId": "TenantId",
   "Tenant": {
@@ -1514,7 +1530,6 @@ Success
     "ContactGivenName": "Name",
     "ContactSurname": "Surname",
     "ExternalUserId": "ExternalUserId",
-    "Preferences": "Preferences",
     "Tenant": {
       "Id": "Id",
       "Alias": "Alias",
@@ -1554,24 +1569,29 @@ Search for an external user in a tenant
 
 ### Request
 
-`GET api/Tenant/{tenantId}/Users/Search`
+`GET api/Tenants/{tenantId}/User/Search`
 
 ### Parameters
 
 ```csharp
-string tenantId [FromRoute] [Required] [No-Default]
+[Required]
+string tenantId
 ```
 
 Id of tenant
 
 ```csharp
-string identityProviderScheme [FromQuery] [Required] [No-Default]
+[FromQuery]
+[Required]
+string identityProviderScheme
 ```
 
 Identity provider scheme
 
 ```csharp
-string externalUserId [FromQuery] [Required] [No-Default]
+[FromQuery]
+[Required]
+string externalUserId
 ```
 
 User external Id
@@ -1605,7 +1625,6 @@ Success
   "ContactGivenName": "Name",
   "ContactSurname": "Surname",
   "ExternalUserId": "ExternalUserId",
-  "Preferences": "Preferences",
   "Tenant": {
     "Id": "Id",
     "Alias": "Alias",

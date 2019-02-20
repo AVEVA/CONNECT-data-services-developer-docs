@@ -17,9 +17,9 @@ Name | string | (Optional) Name of the data view
 Description | string | (Optional) Description of the data view
 Queries | [QueryInfo] | A list of queries to select the data items to be displayed in the data view
 GroupRules | [GroupRule] | (Optional) A list of group rules to organize data items into data groups
-Mappings | Mappings | (Optional) Mappings define the name of the columns and the stream properties that get mapped to them
+Mappings | Mappings | (Optional) Mappings define the names of the columns and the stream properties that get mapped to them
 IndexDataType | string | Defines the index data type that index config uses
-IndexConfig | IndexConfig | (Optional) Defines the index information to retrieve data from. Currently, only interpolation mode is supported
+IndexConfig | IndexConfig | (Optional) Defines the index information from which to retrieve data. Currently, only interpolation mode is supported
 
 ### Full object example:
 ```json

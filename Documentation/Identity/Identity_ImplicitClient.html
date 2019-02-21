@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>IdentityProvider </title>
+    <title>ImplicitClient </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="IdentityProvider ">
+    <meta name="title" content="ImplicitClient ">
     <meta name="generator" content="docfx 2.39.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -75,12 +75,12 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="identityIdentityProvider">
-<h1 id="identityprovider">IdentityProvider</h1>
+            <article class="content wrap" id="_content" data-uid="identityImplicitClient">
+<h1 id="implicitclient">ImplicitClient</h1>
 
-<p>APIs for CRUD operations on identity providers</p>
+<p>APIs for creating, getting, updating, and deleting Implicit Clients</p>
 <h2 id="properties">Properties</h2>
-<p>For HTTP requests and responses, the IdentityProvider object has the following properties and JSON-serialized body: </p>
+<p>For HTTP requests and responses, the ImplicitClientDto object has the following properties and JSON-serialized body: </p>
 <table>
 <thead>
 <tr>
@@ -91,160 +91,228 @@
 </thead>
 <tbody>
 <tr>
-<td>Id</td>
-<td>string</td>
-<td>Id of an identity provider</td>
+<td>AllowedCorsOrigins</td>
+<td>string[]</td>
+<td>If specified, will be used by the default CORS policy service implementations to build a CORS policy for JavaScript clients.</td>
 </tr>
 <tr>
-<td>DisplayName</td>
-<td>string</td>
-<td>Identity provider display name to use</td>
+<td>RedirectUris</td>
+<td>string[]</td>
+<td>Specifies the allowed URIs to return tokens or authorization codes to</td>
 </tr>
 <tr>
-<td>Scheme</td>
-<td>string</td>
-<td>Specifies the name of the cookie handler that will temporarily store the outcome of the external authentication.</td>
+<td>PostLogoutRedirectUris</td>
+<td>string[]</td>
+<td>Specifies allowed URIs to redirect to after logout.</td>
 </tr>
 <tr>
-<td>UserIdClaimType</td>
+<td>ClientUri</td>
 <td>string</td>
-<td>Type of claim</td>
+<td>URI to further information about client (used on consent screen)</td>
+</tr>
+<tr>
+<td>LogoUri</td>
+<td>string</td>
+<td>URI to client logo (used on consent screen)</td>
+</tr>
+<tr>
+<td>ClientId</td>
+<td>string</td>
+<td>Client ID for this Client</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>Name of Client.</td>
+</tr>
+<tr>
+<td>Enabled</td>
+<td>optional: bool</td>
+<td>Is Client Enabled</td>
 </tr>
 </tbody>
 </table>
 <h3 id="serialized-model">Serialized Model</h3>
 <pre><code class="lang-json">{
-  &quot;Id&quot;: &quot;Id&quot;,
-  &quot;DisplayName&quot;: &quot;Name&quot;,
-  &quot;Scheme&quot;: &quot;Scheme&quot;,
-  &quot;UserIdClaimType&quot;: &quot;UserIdClaimType&quot;
+  &quot;AllowedCorsOrigins&quot;: [
+    &quot;String&quot;,
+    &quot;String&quot;
+  ],
+  &quot;RedirectUris&quot;: [
+    &quot;String&quot;,
+    &quot;String&quot;
+  ],
+  &quot;PostLogoutRedirectUris&quot;: [
+    &quot;String&quot;,
+    &quot;String&quot;
+  ],
+  &quot;ClientUri&quot;: &quot;ClientUri&quot;,
+  &quot;LogoUri&quot;: &quot;LogoUri&quot;,
+  &quot;ClientId&quot;: &quot;ClientId&quot;,
+  &quot;Name&quot;: &quot;Name&quot;,
+  &quot;Enabled&quot;: false
 }
 </code></pre><hr>
-<h2 id="get-identity-provider"><code>Get Identity Provider</code></h2>
-<p>Returns an IdentityProvider object</p>
+<h2 id="create-implicit-client"><code>Create Implicit Client</code></h2>
+<p>Create an Implicit flow Client</p>
 <h3 id="request">Request</h3>
-<p><code>GET api/IdentityProvider/{identityProviderId}</code></p>
+<p><code>POST api/Tenants/{tenantId}/ImplicitClient/</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
-string identityProviderId
-</code></pre><p>Id of provider</p>
+string tenantId
+</code></pre><p>Id of tenant</p>
+<pre><code class="lang-csharp">[FromBody]
+[Required]
+ImplicitClientDto implicitClientDto
+</code></pre><p>New ImplicitClientDto object</p>
 <h3 id="security">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
 <li><code>Account Administrator</code></li>
-<li><code>Cluster Operator</code></li>
-<li><code>Cluster Support</code></li>
 </ul>
 <h3 id="returns">Returns</h3>
-<h4 id="200">200</h4>
-<p>Success</p>
+<h4 id="201">201</h4>
+<p>Created</p>
 <h5 id="type">Type:</h5>
-<p> <code>IdentityProvider</code></p>
+<p> <code>ImplicitClientDto</code></p>
 <pre><code class="lang-json">{
-  &quot;Id&quot;: &quot;Id&quot;,
-  &quot;DisplayName&quot;: &quot;Name&quot;,
-  &quot;Scheme&quot;: &quot;Scheme&quot;,
-  &quot;UserIdClaimType&quot;: &quot;UserIdClaimType&quot;
+  &quot;AllowedCorsOrigins&quot;: [
+    &quot;String&quot;,
+    &quot;String&quot;
+  ],
+  &quot;RedirectUris&quot;: [
+    &quot;String&quot;,
+    &quot;String&quot;
+  ],
+  &quot;PostLogoutRedirectUris&quot;: [
+    &quot;String&quot;,
+    &quot;String&quot;
+  ],
+  &quot;ClientUri&quot;: &quot;ClientUri&quot;,
+  &quot;LogoUri&quot;: &quot;LogoUri&quot;,
+  &quot;ClientId&quot;: &quot;ClientId&quot;,
+  &quot;Name&quot;: &quot;Name&quot;,
+  &quot;Enabled&quot;: false
 }
 </code></pre><h4 id="401">401</h4>
 <p>Unauthorized</p>
 <h4 id="403">403</h4>
 <p>Forbidden</p>
 <h4 id="404">404</h4>
-<p>Identity Provider not found</p>
+<p>Tenant not found</p>
 <h4 id="500">500</h4>
 <p>Internal server error</p>
 <hr>
-<h2 id="get-identity-provider-by-scheme"><code>Get Identity Provider By Scheme</code></h2>
-<p>Returns a list of IdentityProvider objects that follow a scheme</p>
+<h2 id="update-implicit-client"><code>Update Implicit Client</code></h2>
+<p>Update an Implicit Client</p>
 <h3 id="request-1">Request</h3>
-<p><code>GET api/IdentityProvider/schemes/{scheme}</code></p>
+<p><code>PUT api/Tenants/{tenantId}/ImplicitClient/{clientId}</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
-string scheme
-</code></pre><p>Scheme name</p>
+string tenantId
+</code></pre><p>Id of tenant</p>
+<pre><code class="lang-csharp">[Required]
+string clientId
+</code></pre><p>Id of client</p>
+<pre><code class="lang-csharp">[FromBody]
+[Required]
+ImplicitClientDto updatedImplicitClientDto
+</code></pre><p>Updated Implicit Client values</p>
 <h3 id="security-1">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Cluster Operator</code></li>
+<li><code>Account Administrator</code></li>
 </ul>
 <h3 id="returns-1">Returns</h3>
-<h4 id="200-1">200</h4>
+<h4 id="200">200</h4>
 <p>Success</p>
 <h5 id="type-1">Type:</h5>
-<p> <code>IdentityProvider</code></p>
+<p> <code>ImplicitClientDto</code></p>
 <pre><code class="lang-json">{
-  &quot;Id&quot;: &quot;Id&quot;,
-  &quot;DisplayName&quot;: &quot;Name&quot;,
-  &quot;Scheme&quot;: &quot;Scheme&quot;,
-  &quot;UserIdClaimType&quot;: &quot;UserIdClaimType&quot;
+  &quot;AllowedCorsOrigins&quot;: [
+    &quot;String&quot;,
+    &quot;String&quot;
+  ],
+  &quot;RedirectUris&quot;: [
+    &quot;String&quot;,
+    &quot;String&quot;
+  ],
+  &quot;PostLogoutRedirectUris&quot;: [
+    &quot;String&quot;,
+    &quot;String&quot;
+  ],
+  &quot;ClientUri&quot;: &quot;ClientUri&quot;,
+  &quot;LogoUri&quot;: &quot;LogoUri&quot;,
+  &quot;ClientId&quot;: &quot;ClientId&quot;,
+  &quot;Name&quot;: &quot;Name&quot;,
+  &quot;Enabled&quot;: false
 }
 </code></pre><h4 id="401-1">401</h4>
 <p>Unauthorized</p>
 <h4 id="403-1">403</h4>
 <p>Forbidden</p>
+<h4 id="400">400</h4>
+<p>Missing or invalid inputs</p>
 <h4 id="404-1">404</h4>
-<p>Identity Provider not found</p>
+<p>Client or Tenant not found</p>
 <h4 id="500-1">500</h4>
 <p>Internal server error</p>
 <hr>
-<h2 id="get-identity-providers"><code>Get Identity Providers</code></h2>
-<p>Returns a list of IdentityProvider objects</p>
+<h2 id="get-implicit-client"><code>Get Implicit Client</code></h2>
+<p>Get an Implicit Client</p>
 <h3 id="request-2">Request</h3>
-<p><code>GET api/IdentityProvider/</code></p>
+<p><code>GET api/Tenants/{tenantId}/ImplicitClient/{clientId}</code></p>
 <h3 id="parameters-2">Parameters</h3>
-<pre><code class="lang-csharp">[FromQuery]
-[Optional]
-[Default = &quot;&quot;]
-string query
-</code></pre><p>Query to execute. Currently not supported</p>
-<pre><code class="lang-csharp">[FromQuery]
-[Optional]
-[Default = 0]
-int32 skip
-</code></pre><p>Number of providers to skip.</p>
-<pre><code class="lang-csharp">[FromQuery]
-[Optional]
-[Default = 100]
-int32 count
-</code></pre><p>Max number of providers to return</p>
+<pre><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p>Id of tenant</p>
+<pre><code class="lang-csharp">[Required]
+string clientId
+</code></pre><p>Id of client</p>
 <h3 id="security-2">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
+<li><code>Account Administrator</code></li>
 <li><code>Cluster Operator</code></li>
+<li><code>Cluster Support</code></li>
 </ul>
 <h3 id="returns-2">Returns</h3>
-<h4 id="200-2">200</h4>
+<h4 id="200-1">200</h4>
 <p>Success</p>
 <h5 id="type-2">Type:</h5>
-<p> <code>List[IdentityProvider]</code></p>
-<pre><code class="lang-json">[
-  {
-    &quot;Id&quot;: &quot;Id&quot;,
-    &quot;DisplayName&quot;: &quot;Name&quot;,
-    &quot;Scheme&quot;: &quot;Scheme&quot;,
-    &quot;UserIdClaimType&quot;: &quot;UserIdClaimType&quot;
-  },
-  {
-    &quot;Id&quot;: &quot;Id&quot;,
-    &quot;DisplayName&quot;: &quot;Name&quot;,
-    &quot;Scheme&quot;: &quot;Scheme&quot;,
-    &quot;UserIdClaimType&quot;: &quot;UserIdClaimType&quot;
-  }
-]
-</code></pre><h4 id="400">400</h4>
-<p>Missing or invalid inputs</p>
-<h4 id="401-2">401</h4>
+<p> <code>ImplicitClientDto</code></p>
+<pre><code class="lang-json">{
+  &quot;AllowedCorsOrigins&quot;: [
+    &quot;String&quot;,
+    &quot;String&quot;
+  ],
+  &quot;RedirectUris&quot;: [
+    &quot;String&quot;,
+    &quot;String&quot;
+  ],
+  &quot;PostLogoutRedirectUris&quot;: [
+    &quot;String&quot;,
+    &quot;String&quot;
+  ],
+  &quot;ClientUri&quot;: &quot;ClientUri&quot;,
+  &quot;LogoUri&quot;: &quot;LogoUri&quot;,
+  &quot;ClientId&quot;: &quot;ClientId&quot;,
+  &quot;Name&quot;: &quot;Name&quot;,
+  &quot;Enabled&quot;: false
+}
+</code></pre><h4 id="401-2">401</h4>
 <p>Unauthorized</p>
 <h4 id="403-2">403</h4>
 <p>Forbidden</p>
+<h4 id="404-2">404</h4>
+<p>Client or Tenant not found</p>
 <h4 id="500-2">500</h4>
 <p>Internal server error</p>
 <hr>
-<h2 id="get-tenant-identity-providers"><code>Get Tenant Identity Providers</code></h2>
-<p>Get all identity providers for a tenant</p>
+<h2 id="get-all-implicit-clients"><code>Get All Implicit Clients</code></h2>
+<p>Get all Implicit Clients</p>
 <h3 id="request-3">Request</h3>
-<p><code>GET api/Tenants/{tenantId}/IdentityProvider/</code></p>
+<p><code>GET api/Tenants/{tenantId}/ImplicitClient/</code></p>
 <h3 id="parameters-3">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -258,12 +326,12 @@ string query
 [Optional]
 [Default = 0]
 int32 skip
-</code></pre><p>Number of providers to skip.</p>
+</code></pre><p>Number of clients to skip. From query.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
 [Default = 100]
 int32 count
-</code></pre><p>Max number of providers to return</p>
+</code></pre><p>Max number of clients to return</p>
 <h3 id="security-3">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -272,135 +340,85 @@ int32 count
 <li><code>Cluster Support</code></li>
 </ul>
 <h3 id="returns-3">Returns</h3>
-<h4 id="200-3">200</h4>
+<h4 id="200-2">200</h4>
 <p>Success</p>
 <h5 id="type-3">Type:</h5>
-<p> <code>List[IdentityProvider]</code></p>
+<p> <code>List[ImplicitClientDto]</code></p>
 <pre><code class="lang-json">[
   {
-    &quot;Id&quot;: &quot;Id&quot;,
-    &quot;DisplayName&quot;: &quot;Name&quot;,
-    &quot;Scheme&quot;: &quot;Scheme&quot;,
-    &quot;UserIdClaimType&quot;: &quot;UserIdClaimType&quot;
+    &quot;AllowedCorsOrigins&quot;: [
+      &quot;String&quot;,
+      &quot;String&quot;
+    ],
+    &quot;RedirectUris&quot;: [
+      &quot;String&quot;,
+      &quot;String&quot;
+    ],
+    &quot;PostLogoutRedirectUris&quot;: [
+      &quot;String&quot;,
+      &quot;String&quot;
+    ],
+    &quot;ClientUri&quot;: &quot;ClientUri&quot;,
+    &quot;LogoUri&quot;: &quot;LogoUri&quot;,
+    &quot;ClientId&quot;: &quot;ClientId&quot;,
+    &quot;Name&quot;: &quot;Name&quot;,
+    &quot;Enabled&quot;: false
   },
   {
-    &quot;Id&quot;: &quot;Id&quot;,
-    &quot;DisplayName&quot;: &quot;Name&quot;,
-    &quot;Scheme&quot;: &quot;Scheme&quot;,
-    &quot;UserIdClaimType&quot;: &quot;UserIdClaimType&quot;
+    &quot;AllowedCorsOrigins&quot;: [
+      &quot;String&quot;,
+      &quot;String&quot;
+    ],
+    &quot;RedirectUris&quot;: [
+      &quot;String&quot;,
+      &quot;String&quot;
+    ],
+    &quot;PostLogoutRedirectUris&quot;: [
+      &quot;String&quot;,
+      &quot;String&quot;
+    ],
+    &quot;ClientUri&quot;: &quot;ClientUri&quot;,
+    &quot;LogoUri&quot;: &quot;LogoUri&quot;,
+    &quot;ClientId&quot;: &quot;ClientId&quot;,
+    &quot;Name&quot;: &quot;Name&quot;,
+    &quot;Enabled&quot;: false
   }
 ]
 </code></pre><h4 id="401-3">401</h4>
 <p>Unauthorized</p>
 <h4 id="403-3">403</h4>
 <p>Forbidden</p>
-<h4 id="404-2">404</h4>
+<h4 id="404-3">404</h4>
 <p>Tenant not found</p>
 <h4 id="500-3">500</h4>
 <p>Internal server error</p>
 <hr>
-<h2 id="get-tenant-identity-provider"><code>Get Tenant Identity Provider</code></h2>
-<p>Get an identity provider</p>
+<h2 id="delete-implicit-client"><code>Delete Implicit Client</code></h2>
+<p>Delete an Implicit Client</p>
 <h3 id="request-4">Request</h3>
-<p><code>GET api/Tenants/{tenantId}/IdentityProvider/{identityProviderId}</code></p>
+<p><code>DELETE api/Tenants/{tenantId}/ImplicitClient/{clientId}</code></p>
 <h3 id="parameters-4">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
 </code></pre><p>Id of tenant</p>
 <pre><code class="lang-csharp">[Required]
-string identityProviderId
-</code></pre><p>Id of provider</p>
+string clientId
+</code></pre><p>Id of client</p>
 <h3 id="security-4">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
 <li><code>Account Administrator</code></li>
-<li><code>Cluster Operator</code></li>
-<li><code>Cluster Support</code></li>
 </ul>
 <h3 id="returns-4">Returns</h3>
-<h4 id="200-4">200</h4>
-<p>Success</p>
-<h5 id="type-4">Type:</h5>
-<p> <code>IdentityProvider</code></p>
-<pre><code class="lang-json">{
-  &quot;Id&quot;: &quot;Id&quot;,
-  &quot;DisplayName&quot;: &quot;Name&quot;,
-  &quot;Scheme&quot;: &quot;Scheme&quot;,
-  &quot;UserIdClaimType&quot;: &quot;UserIdClaimType&quot;
-}
-</code></pre><h4 id="401-4">401</h4>
+<h4 id="204">204</h4>
+<p>Deleted</p>
+<h4 id="401-4">401</h4>
 <p>Unauthorized</p>
 <h4 id="403-4">403</h4>
 <p>Forbidden</p>
-<h4 id="404-3">404</h4>
-<p>IdentityProvider or Tenant not found</p>
-<h4 id="500-4">500</h4>
-<p>Internal server error</p>
-<hr>
-<h2 id="add-identity-provider-to-tenant"><code>Add Identity Provider to Tenant</code></h2>
-<p>Add an existing identity provider to a tenant</p>
-<h3 id="request-5">Request</h3>
-<p><code>POST api/Tenants/{tenantId}/IdentityProvider/{identityProviderId}</code></p>
-<h3 id="parameters-5">Parameters</h3>
-<pre><code class="lang-csharp">[Required]
-string tenantId
-</code></pre><p>Id of tenant</p>
-<pre><code class="lang-csharp">[Required]
-string identityProviderId
-</code></pre><p>Id of provider</p>
-<h3 id="security-5">Security</h3>
-<p>Allowed for these roles:</p>
-<ul>
-<li><code>Account Administrator</code></li>
-</ul>
-<h3 id="returns-5">Returns</h3>
-<h4 id="201">201</h4>
-<p>Created</p>
-<h5 id="type-5">Type:</h5>
-<p> <code>IdentityProvider</code></p>
-<pre><code class="lang-json">{
-  &quot;Id&quot;: &quot;Id&quot;,
-  &quot;DisplayName&quot;: &quot;Name&quot;,
-  &quot;Scheme&quot;: &quot;Scheme&quot;,
-  &quot;UserIdClaimType&quot;: &quot;UserIdClaimType&quot;
-}
-</code></pre><h4 id="400-1">400</h4>
-<p>Missing or invalid inputs</p>
-<h4 id="401-5">401</h4>
-<p>Unauthorized</p>
-<h4 id="403-5">403</h4>
-<p>Forbidden</p>
 <h4 id="404-4">404</h4>
-<p>Tenant not found</p>
-<h4 id="500-5">500</h4>
-<p>Internal server error</p>
-<hr>
-<h2 id="remove-identity-provider-from-tenant"><code>Remove Identity Provider From Tenant</code></h2>
-<p>Remove an identity provider from a tenant</p>
-<h3 id="request-6">Request</h3>
-<p><code>DELETE api/Tenants/{tenantId}/IdentityProvider/{identityProviderId}</code></p>
-<h3 id="parameters-6">Parameters</h3>
-<pre><code class="lang-csharp">[Required]
-string tenantId
-</code></pre><p>Id of tenant</p>
-<pre><code class="lang-csharp">[Required]
-string identityProviderId
-</code></pre><p>Id of provider</p>
-<h3 id="security-6">Security</h3>
-<p>Allowed for these roles:</p>
-<ul>
-<li><code>Account Administrator</code></li>
-</ul>
-<h3 id="returns-6">Returns</h3>
-<h4 id="204">204</h4>
-<p>Removed</p>
-<h4 id="401-6">401</h4>
-<p>Unauthorized</p>
-<h4 id="403-6">403</h4>
-<p>Forbidden</p>
-<h4 id="404-5">404</h4>
-<p>IdentityProvider or Tenant not found</p>
-<h4 id="500-6">500</h4>
+<p>Client or Tenant not found</p>
+<h4 id="500-4">500</h4>
 <p>Internal server error</p>
 <hr>
 </article>
@@ -411,7 +429,7 @@ string identityProviderId
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/Identity/Identity_IdentityProvider.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/Identity/Identity_ImplicitClient.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

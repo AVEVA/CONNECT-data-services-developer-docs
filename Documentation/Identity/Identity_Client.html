@@ -78,7 +78,7 @@
             <article class="content wrap" id="_content" data-uid="identityClient">
 <h1 id="client">Client</h1>
 
-<p>CRUD operations on Client</p>
+<p>APIs for creating, getting, updating, and deleting Clients</p>
 <h2 id="properties">Properties</h2>
 <p>For HTTP requests and responses, the Client object has the following properties and JSON-serialized body: </p>
 <table>
@@ -91,153 +91,153 @@
 </thead>
 <tbody>
 <tr>
-<td>bool</td>
 <td>Enabled</td>
+<td>bool</td>
 <td>Specifies if client is enabled (defaults to true)</td>
 </tr>
 <tr>
-<td>string</td>
 <td>ClientId</td>
+<td>string</td>
 <td>Unique ID of the client</td>
 </tr>
 <tr>
-<td>Secret[]</td>
 <td>ClientSecrets</td>
+<td>Secret[]</td>
 <td>Client secrets - only relevant for flows that require a secret</td>
 </tr>
 <tr>
-<td>bool</td>
 <td>RequireClientSecret</td>
+<td>bool</td>
 <td>If set to false, no client secret is needed to request tokens at the token endpoint (defaults to true)</td>
 </tr>
 <tr>
-<td>string</td>
 <td>ClientName</td>
+<td>string</td>
 <td>Client display name (used for logging and consent screen)</td>
 </tr>
 <tr>
-<td>string</td>
 <td>Description</td>
+<td>string</td>
 <td>Client description</td>
 </tr>
 <tr>
-<td>string</td>
 <td>ClientUri</td>
+<td>string</td>
 <td>URI to further information about client (used on consent screen)</td>
 </tr>
 <tr>
-<td>string</td>
 <td>LogoUri</td>
+<td>string</td>
 <td>URI to client logo (used on consent screen)</td>
 </tr>
 <tr>
-<td>bool</td>
 <td>RequireConsent</td>
+<td>bool</td>
 <td>Specifies whether a consent screen is required (defaults to true)</td>
 </tr>
 <tr>
-<td>bool</td>
 <td>AllowRememberConsent</td>
+<td>bool</td>
 <td>Specifies whether user can choose to store consent decisions (defaults to true)</td>
 </tr>
 <tr>
-<td>string[]</td>
 <td>AllowedGrantTypes</td>
+<td>string[]</td>
 <td>Specifies the allowed grant types (legal combinations of AuthorizationCode, Implicit, Hybrid, ResourceOwner, ClientCredentials).</td>
 </tr>
 <tr>
-<td>bool</td>
 <td>AllowAccessTokensViaBrowser</td>
+<td>bool</td>
 <td>Controls whether access tokens are transmitted via the browser for this client (defaults to false). This can prevent accidental leakage of access tokens when multiple response types are allowed.</td>
 </tr>
 <tr>
-<td>string[]</td>
 <td>RedirectUris</td>
+<td>string[]</td>
 <td>Specifies allowed URIs to return tokens or authorization codes to</td>
 </tr>
 <tr>
-<td>string[]</td>
 <td>PostLogoutRedirectUris</td>
+<td>string[]</td>
 <td>Specifies allowed URIs to redirect to after logout</td>
 </tr>
 <tr>
-<td>string</td>
 <td>FrontChannelLogoutUri</td>
+<td>string</td>
 <td>Specifies logout URI at client for HTTP front-channel based logout.</td>
 </tr>
 <tr>
-<td>bool</td>
 <td>FrontChannelLogoutSessionRequired</td>
+<td>bool</td>
 <td>Specifies is the user&#39;s session id should be sent to the FrontChannelLogoutUri. Defaults to true.</td>
 </tr>
 <tr>
-<td>string</td>
 <td>BackChannelLogoutUri</td>
+<td>string</td>
 <td>Specifies logout URI at client for HTTP back-channel based logout.</td>
 </tr>
 <tr>
-<td>bool</td>
 <td>BackChannelLogoutSessionRequired</td>
+<td>bool</td>
 <td>Specifies is the user&#39;s session id should be sent to the BackChannelLogoutUri. Defaults to true.</td>
 </tr>
 <tr>
-<td>bool</td>
 <td>AllowOfflineAccess</td>
+<td>bool</td>
 <td>Gets or sets a value indicating whether [allow offline access]. Defaults to false.</td>
 </tr>
 <tr>
-<td>string[]</td>
 <td>AllowedScopes</td>
+<td>string[]</td>
 <td>Specifies the api scopes that the client is allowed to request. If empty, the client can&#39;t access any scope</td>
 </tr>
 <tr>
-<td>bool</td>
 <td>AlwaysIncludeUserClaimsInIdToken</td>
+<td>bool</td>
 <td>When requesting both an id token and access token, should the user claims always be added to the id token instead of requiring the client to use the user info endpoint. Defaults to false.</td>
 </tr>
 <tr>
-<td>int32</td>
 <td>IdentityTokenLifetime</td>
+<td>int32</td>
 <td>Lifetime of identity token in seconds (defaults to 300 seconds / 5 minutes)</td>
 </tr>
 <tr>
-<td>int32</td>
 <td>AccessTokenLifetime</td>
+<td>int32</td>
 <td>Lifetime of access token in seconds (defaults to 3600 seconds / 1 hour)</td>
 </tr>
 <tr>
-<td>int32</td>
 <td>AuthorizationCodeLifetime</td>
+<td>int32</td>
 <td>Lifetime of authorization code in seconds (defaults to 300 seconds / 5 minutes)</td>
 </tr>
 <tr>
-<td>int32</td>
 <td>AbsoluteRefreshTokenLifetime</td>
+<td>int32</td>
 <td>Maximum lifetime of a refresh token in seconds. Defaults to 2592000 seconds / 30 days</td>
 </tr>
 <tr>
-<td>int32</td>
 <td>SlidingRefreshTokenLifetime</td>
+<td>int32</td>
 <td>Sliding lifetime of a refresh token in seconds. Defaults to 1296000 seconds / 15 days</td>
 </tr>
 <tr>
-<td>optional: int32</td>
 <td>ConsentLifetime</td>
+<td>optional: int32</td>
 <td>Lifetime of a user consent in seconds. Defaults to null (no expiration)</td>
 </tr>
 <tr>
-<td>TokenUsage</td>
 <td>RefreshTokenUsage</td>
+<td>TokenUsage</td>
 <td>ReUse: the refresh token handle will stay the same when refreshing tokens OneTime: the refresh token handle will be updated when refreshing tokens</td>
 </tr>
 <tr>
-<td>bool</td>
 <td>UpdateAccessTokenClaimsOnRefresh</td>
+<td>bool</td>
 <td>Gets or sets a value indicating whether the access token (and its claims) should be updated on a refresh token request. Defaults to false.</td>
 </tr>
 <tr>
-<td>TokenExpiration</td>
 <td>RefreshTokenExpiration</td>
+<td>TokenExpiration</td>
 <td>Absolute: the refresh token will expire on a fixed point in time (specified by the AbsoluteRefreshTokenLifetime) Sliding: when refreshing the token, the lifetime of the refresh token will be renewed (by the amount specified in SlidingRefreshTokenLifetime). The lifetime will not exceed AbsoluteRefreshTokenLifetime.</td>
 </tr>
 <tr>
@@ -246,58 +246,58 @@
 <td>Specifies whether the access token is a reference token or a self contained JWT token (defaults to Jwt).</td>
 </tr>
 <tr>
-<td>string[]</td>
 <td>IdentityProviderRestrictions</td>
+<td>string[]</td>
 <td>Specifies which external IdPs can be used with this client (if list is empty all IdPs are allowed). Defaults to empty.</td>
 </tr>
 <tr>
-<td>bool</td>
 <td>IncludeJwtId</td>
+<td>bool</td>
 <td>Gets or sets a value indicating whether JWT access tokens should include an identifier. Defaults to false.</td>
 </tr>
 <tr>
-<td>Claim[]</td>
 <td>Claims</td>
+<td>Claim[]</td>
 <td>Allows settings claims for the client (will be included in the access token).</td>
 </tr>
 <tr>
-<td>bool</td>
 <td>AlwaysSendClientClaims</td>
+<td>bool</td>
 <td>Gets or sets a value indicating whether client claims should be always included in the access tokens - or only for client credentials flow. Defaults to false</td>
 </tr>
 <tr>
-<td>string</td>
 <td>ClientClaimsPrefix</td>
+<td>string</td>
 <td>Gets or sets a value to prefix it on client claim types. Defaults to client_.</td>
 </tr>
 <tr>
-<td>string</td>
 <td>PairWiseSubjectSalt</td>
+<td>string</td>
 <td>Subject salt to be used.</td>
 </tr>
 <tr>
-<td>optional: int32</td>
 <td>UserSsoLifetime</td>
+<td>optional: int32</td>
 <td>The maximum duration (in seconds) since the last time the user authenticated.</td>
 </tr>
 <tr>
-<td>string</td>
 <td>UserCodeType</td>
+<td>string</td>
 <td>Gets or sets the type of the device flow user code.</td>
 </tr>
 <tr>
-<td>int32</td>
 <td>DeviceCodeLifetime</td>
+<td>int32</td>
 <td>Gets or sets the device code lifetime.</td>
 </tr>
 <tr>
-<td>string[]</td>
 <td>AllowedCorsOrigins</td>
+<td>string[]</td>
 <td>Gets or sets the allowed CORS origins for JavaScript clients.</td>
 </tr>
 <tr>
-<td>string,string[]</td>
 <td>Properties</td>
+<td>string,string[]</td>
 <td>Gets or sets the custom properties for the client.</td>
 </tr>
 </tbody>
@@ -311,14 +311,14 @@
       &quot;Id&quot;: 0,
       &quot;Description&quot;: &quot;description&quot;,
       &quot;Value&quot;: &quot;Value&quot;,
-      &quot;Expiration&quot;: &quot;2019-02-06T09:56:10.0754176-08:00&quot;,
+      &quot;Expiration&quot;: &quot;2019-02-20T01:57:33.0731668-05:00&quot;,
       &quot;Type&quot;: &quot;Type&quot;
     },
     {
       &quot;Id&quot;: 0,
       &quot;Description&quot;: &quot;description&quot;,
       &quot;Value&quot;: &quot;Value&quot;,
-      &quot;Expiration&quot;: &quot;2019-02-06T09:56:10.0774723-08:00&quot;,
+      &quot;Expiration&quot;: &quot;2019-02-20T01:57:33.0733354-05:00&quot;,
       &quot;Type&quot;: &quot;Type&quot;
     }
   ],
@@ -429,15 +429,25 @@
 <h2 id="get-clients"><code>Get Clients</code></h2>
 <p>Get all clients for a tenant</p>
 <h3 id="request">Request</h3>
-<p><code>GET api/Tenant/{tenantId}/Clients</code></p>
+<p><code>GET api/Tenants/{tenantId}/Client/</code></p>
 <h3 id="parameters">Parameters</h3>
-<pre><code class="lang-csharp">string tenantId [FromRoute] [Required] [No-Default]
+<pre><code class="lang-csharp">[Required]
+string tenantId
 </code></pre><p>Id of tenant</p>
-<pre><code class="lang-csharp">string query [FromQuery] [Optional] [Default = &quot;&quot;]
+<pre><code class="lang-csharp">[FromQuery]
+[Optional]
+[Default = &quot;&quot;]
+string query
 </code></pre><p>Query to execute. Currently not supported</p>
-<pre><code class="lang-csharp">int32 skip [FromQuery] [Optional] [Default = 0]
+<pre><code class="lang-csharp">[FromQuery]
+[Optional]
+[Default = 0]
+int32 skip
 </code></pre><p>Number of clients to skip. From query.</p>
-<pre><code class="lang-csharp">int32 count [FromQuery] [Optional] [Default = 100]
+<pre><code class="lang-csharp">[FromQuery]
+[Optional]
+[Default = 100]
+int32 count
 </code></pre><p>Max number of clients to return</p>
 <h3 id="security">Security</h3>
 <p>Allowed for these roles:</p>
@@ -460,14 +470,14 @@
         &quot;Id&quot;: 0,
         &quot;Description&quot;: &quot;description&quot;,
         &quot;Value&quot;: &quot;Value&quot;,
-        &quot;Expiration&quot;: &quot;2019-02-06T09:56:10.1681384-08:00&quot;,
+        &quot;Expiration&quot;: &quot;2019-02-20T01:57:33.1150524-05:00&quot;,
         &quot;Type&quot;: &quot;Type&quot;
       },
       {
         &quot;Id&quot;: 0,
         &quot;Description&quot;: &quot;description&quot;,
         &quot;Value&quot;: &quot;Value&quot;,
-        &quot;Expiration&quot;: &quot;2019-02-06T09:56:10.1730193-08:00&quot;,
+        &quot;Expiration&quot;: &quot;2019-02-20T01:57:33.1150644-05:00&quot;,
         &quot;Type&quot;: &quot;Type&quot;
       }
     ],
@@ -582,14 +592,14 @@
         &quot;Id&quot;: 0,
         &quot;Description&quot;: &quot;description&quot;,
         &quot;Value&quot;: &quot;Value&quot;,
-        &quot;Expiration&quot;: &quot;2019-02-06T09:56:10.1731787-08:00&quot;,
+        &quot;Expiration&quot;: &quot;2019-02-20T01:57:33.1151752-05:00&quot;,
         &quot;Type&quot;: &quot;Type&quot;
       },
       {
         &quot;Id&quot;: 0,
         &quot;Description&quot;: &quot;description&quot;,
         &quot;Value&quot;: &quot;Value&quot;,
-        &quot;Expiration&quot;: &quot;2019-02-06T09:56:10.1731857-08:00&quot;,
+        &quot;Expiration&quot;: &quot;2019-02-20T01:57:33.1151826-05:00&quot;,
         &quot;Type&quot;: &quot;Type&quot;
       }
     ],
@@ -711,11 +721,13 @@
 <h2 id="get-client"><code>Get Client</code></h2>
 <p>Get a client object</p>
 <h3 id="request-1">Request</h3>
-<p><code>GET api/Tenant/{tenantId}/Clients/{clientId}</code></p>
+<p><code>GET api/Tenants/{tenantId}/Client/{clientId}</code></p>
 <h3 id="parameters-1">Parameters</h3>
-<pre><code class="lang-csharp">string tenantId [FromRoute] [Required] [No-Default]
+<pre><code class="lang-csharp">[Required]
+string tenantId
 </code></pre><p>Id of tenant</p>
-<pre><code class="lang-csharp">string clientId [FromRoute] [Required] [No-Default]
+<pre><code class="lang-csharp">[Required]
+string clientId
 </code></pre><p>Id of client</p>
 <h3 id="security-1">Security</h3>
 <p>Allowed for these roles:</p>
@@ -737,14 +749,14 @@
       &quot;Id&quot;: 0,
       &quot;Description&quot;: &quot;description&quot;,
       &quot;Value&quot;: &quot;Value&quot;,
-      &quot;Expiration&quot;: &quot;2019-02-06T09:56:10.1773039-08:00&quot;,
+      &quot;Expiration&quot;: &quot;2019-02-20T01:57:33.1156974-05:00&quot;,
       &quot;Type&quot;: &quot;Type&quot;
     },
     {
       &quot;Id&quot;: 0,
       &quot;Description&quot;: &quot;description&quot;,
       &quot;Value&quot;: &quot;Value&quot;,
-      &quot;Expiration&quot;: &quot;2019-02-06T09:56:10.1773212-08:00&quot;,
+      &quot;Expiration&quot;: &quot;2019-02-20T01:57:33.1157055-05:00&quot;,
       &quot;Type&quot;: &quot;Type&quot;
     }
   ],
@@ -860,33 +872,30 @@
 <h4 id="500-1">500</h4>
 <p>Internal server error</p>
 <hr>
-<h2 id="create-client"><code>Create Client</code></h2>
-<p>Create a client
-            This method is obsolete, please use one of the following instead:
-            {tenantId}/Clients/ClientCredential
-            {tenantId}/Clients/Implicit
-            {tenantId}/Clients/Hybrid</p>
+<h2 id="update-client-with-a-given-id"><code>Update Client With a Given ID</code></h2>
+<p>Create a client</p>
 <h3 id="request-2">Request</h3>
-<p><code>POST api/Tenant/{tenantId}/Clients</code></p>
+<p><code>POST api/Tenants/{tenantId}/Client/{clientId}</code></p>
 <h3 id="parameters-2">Parameters</h3>
-<pre><code class="lang-csharp">string tenantId [FromRoute] [Required] [No-Default]
+<pre><code class="lang-csharp">[Required]
+string tenantId
 </code></pre><p>Id of tenant</p>
-<pre><code class="lang-csharp">ClientCredentialClientCreateDto clientCredentialClientCreateDto [FromBody] [Required] [No-Default]
-</code></pre><p>New <code>ClientCredentialClientCreateDto &lt;ClientCredentialClientCreateDto&gt;</code> object</p>
-<pre><code class="lang-json">{
-  &quot;SecretDescription&quot;: &quot;description&quot;,
-  &quot;SecretExpirationDate&quot;: &quot;2019-02-06T09:56:10.1977363-08:00&quot;,
-  &quot;RoleIds&quot;: [
-    &quot;String&quot;,
-    &quot;String&quot;
-  ],
-  &quot;Name&quot;: &quot;Name&quot;,
-  &quot;Enabled&quot;: false,
-  &quot;AllowAccessTokensViaBrowser&quot;: false,
-  &quot;ClientUri&quot;: &quot;ClientUri&quot;,
-  &quot;LogoUri&quot;: &quot;LogoUri&quot;
-}
-</code></pre><h3 id="security-2">Security</h3>
+<pre><code class="lang-csharp">[Required]
+string clientId
+</code></pre><p>Id of client</p>
+<pre><code class="lang-csharp">[FromQuery]
+[Required]
+string secretDescription
+</code></pre><p>Description of Client secret</p>
+<pre><code class="lang-csharp">[FromQuery]
+[Required]
+string secretExpiration
+</code></pre><p>Expiration of Client secret</p>
+<pre><code class="lang-csharp">[FromBody]
+[Required]
+Client client
+</code></pre><p>New Client object</p>
+<h3 id="security-2">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
 <li><code>Account Administrator</code></li>
@@ -895,47 +904,43 @@
 <h4 id="200-2">200</h4>
 <p>Success</p>
 <h5 id="type-2">Type:</h5>
-<p> <code>ClientCredentialClientResponseDto</code></p>
+<p> <code>ClientCredentialClientCreateDto</code></p>
 <pre><code class="lang-json">{
-  &quot;Name&quot;: &quot;Name&quot;,
-  &quot;ClientId&quot;: &quot;ClientId&quot;,
-  &quot;ClientSecret&quot;: &quot;ClientSecret&quot;,
-  &quot;SecretExpirationDate&quot;: &quot;2019-02-06T09:56:10.2049171-08:00&quot;,
   &quot;SecretDescription&quot;: &quot;description&quot;,
-  &quot;SecretId&quot;: 0
+  &quot;SecretExpirationDate&quot;: &quot;2019-02-20T01:57:33.1161762-05:00&quot;,
+  &quot;RoleIds&quot;: [
+    &quot;String&quot;,
+    &quot;String&quot;
+  ],
+  &quot;ClientId&quot;: &quot;ClientId&quot;,
+  &quot;Name&quot;: &quot;Name&quot;,
+  &quot;Enabled&quot;: false
 }
 </code></pre><h4 id="401-2">401</h4>
 <p>Unauthorized</p>
 <h4 id="403-2">403</h4>
 <p>Forbidden</p>
 <h4 id="404-2">404</h4>
-<p>Tenant not found</p>
+<p>Client or Tenant not found</p>
 <h4 id="500-2">500</h4>
 <p>Internal server error</p>
 <hr>
-<h2 id="create-client-credential-client"><code>Create Client Credential Client</code></h2>
-<p>Create a Client Credential flow <code>Client &lt;Client&gt;</code></p>
+<h2 id="update-client"><code>Update Client</code></h2>
+<p>Update a client</p>
 <h3 id="request-3">Request</h3>
-<p><code>POST api/Tenant/{tenantId}/Clients/ClientCredential</code></p>
+<p><code>PUT api/Tenants/{tenantId}/Client/{clientId}</code></p>
 <h3 id="parameters-3">Parameters</h3>
-<pre><code class="lang-csharp">string tenantId [FromRoute] [Required] [No-Default]
+<pre><code class="lang-csharp">[Required]
+string tenantId
 </code></pre><p>Id of tenant</p>
-<pre><code class="lang-csharp">ClientCredentialClientCreateDto clientCredentialClientCreateDto [FromBody] [Required] [No-Default]
-</code></pre><p>New <code>ClientCredentialClientCreateDto &lt;ClientCredentialClientCreateDto&gt;</code> object</p>
-<pre><code class="lang-json">{
-  &quot;SecretDescription&quot;: &quot;description&quot;,
-  &quot;SecretExpirationDate&quot;: &quot;2019-02-06T09:56:10.2084153-08:00&quot;,
-  &quot;RoleIds&quot;: [
-    &quot;String&quot;,
-    &quot;String&quot;
-  ],
-  &quot;Name&quot;: &quot;Name&quot;,
-  &quot;Enabled&quot;: false,
-  &quot;AllowAccessTokensViaBrowser&quot;: false,
-  &quot;ClientUri&quot;: &quot;ClientUri&quot;,
-  &quot;LogoUri&quot;: &quot;LogoUri&quot;
-}
-</code></pre><h3 id="security-3">Security</h3>
+<pre><code class="lang-csharp">[Required]
+string clientId
+</code></pre><p>Id of client</p>
+<pre><code class="lang-csharp">[FromBody]
+[Required]
+Client client
+</code></pre><p>New Client</p>
+<h3 id="security-3">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
 <li><code>Account Administrator</code></li>
@@ -944,441 +949,6 @@
 <h4 id="200-3">200</h4>
 <p>Success</p>
 <h5 id="type-3">Type:</h5>
-<p> <code>ClientCredentialClientResponseDto</code></p>
-<pre><code class="lang-json">{
-  &quot;Name&quot;: &quot;Name&quot;,
-  &quot;ClientId&quot;: &quot;ClientId&quot;,
-  &quot;ClientSecret&quot;: &quot;ClientSecret&quot;,
-  &quot;SecretExpirationDate&quot;: &quot;2019-02-06T09:56:10.208719-08:00&quot;,
-  &quot;SecretDescription&quot;: &quot;description&quot;,
-  &quot;SecretId&quot;: 0
-}
-</code></pre><h4 id="401-3">401</h4>
-<p>Unauthorized</p>
-<h4 id="403-3">403</h4>
-<p>Forbidden</p>
-<h4 id="404-3">404</h4>
-<p>Tenant not found</p>
-<h4 id="500-3">500</h4>
-<p>Internal server error</p>
-<hr>
-<h2 id="create-implicit-client"><code>Create Implicit Client</code></h2>
-<p>Create an Implicit flow <code>Client &lt;Client&gt;</code></p>
-<h3 id="request-4">Request</h3>
-<p><code>POST api/Tenant/{tenantId}/Clients/Implicit</code></p>
-<h3 id="parameters-4">Parameters</h3>
-<pre><code class="lang-csharp">string tenantId [FromRoute] [Required] [No-Default]
-</code></pre><p>Id of tenant</p>
-<pre><code class="lang-csharp">ImplicitClientCreateDto implicitClientCreateDto [FromBody] [Required] [No-Default]
-</code></pre><p>New <code>ImplicitClientCreateDto &lt;ImplicitClientCreateDto&gt;</code> object</p>
-<pre><code class="lang-json">{
-  &quot;RedirectUris&quot;: [
-    &quot;String&quot;,
-    &quot;String&quot;
-  ],
-  &quot;PostLogoutRedirectUris&quot;: [
-    &quot;String&quot;,
-    &quot;String&quot;
-  ],
-  &quot;AllowedCorsOrigins&quot;: [
-    &quot;String&quot;,
-    &quot;String&quot;
-  ],
-  &quot;Name&quot;: &quot;Name&quot;,
-  &quot;Enabled&quot;: false,
-  &quot;AllowAccessTokensViaBrowser&quot;: false,
-  &quot;ClientUri&quot;: &quot;ClientUri&quot;,
-  &quot;LogoUri&quot;: &quot;LogoUri&quot;
-}
-</code></pre><h3 id="security-4">Security</h3>
-<p>Allowed for these roles:</p>
-<ul>
-<li><code>Account Administrator</code></li>
-</ul>
-<h3 id="returns-4">Returns</h3>
-<h4 id="200-4">200</h4>
-<p>Success</p>
-<h5 id="type-4">Type:</h5>
-<p> <code>ImplicitClientResponseDto</code></p>
-<pre><code class="lang-json">{
-  &quot;Name&quot;: &quot;Name&quot;,
-  &quot;ClientId&quot;: &quot;ClientId&quot;
-}
-</code></pre><h4 id="401-4">401</h4>
-<p>Unauthorized</p>
-<h4 id="403-4">403</h4>
-<p>Forbidden</p>
-<h4 id="404-4">404</h4>
-<p>Tenant not found</p>
-<h4 id="500-4">500</h4>
-<p>Internal server error</p>
-<hr>
-<h2 id="create-hybrid-client"><code>Create Hybrid Client</code></h2>
-<p>Create a Hybrid flow <code>Client &lt;Client&gt;</code></p>
-<h3 id="request-5">Request</h3>
-<p><code>POST api/Tenant/{tenantId}/Clients/Hybrid</code></p>
-<h3 id="parameters-5">Parameters</h3>
-<pre><code class="lang-csharp">string tenantId [FromRoute] [Required] [No-Default]
-</code></pre><p>Id of tenant</p>
-<pre><code class="lang-csharp">HybridClientCreateDto hybridClientCreateDto [FromBody] [Required] [No-Default]
-</code></pre><p>New <code>HybridClientCreateDto &lt;HybridClientCreateDto&gt;</code> object</p>
-<pre><code class="lang-json">{
-  &quot;SecretDescription&quot;: &quot;description&quot;,
-  &quot;SecretExpirationDate&quot;: &quot;2019-02-06T09:56:10.2160651-08:00&quot;,
-  &quot;RedirectUris&quot;: [
-    &quot;String&quot;,
-    &quot;String&quot;
-  ],
-  &quot;PostLogoutRedirectUris&quot;: [
-    &quot;String&quot;,
-    &quot;String&quot;
-  ],
-  &quot;AllowOfflineAccess&quot;: false,
-  &quot;Name&quot;: &quot;Name&quot;,
-  &quot;Enabled&quot;: false,
-  &quot;AllowAccessTokensViaBrowser&quot;: false,
-  &quot;ClientUri&quot;: &quot;ClientUri&quot;,
-  &quot;LogoUri&quot;: &quot;LogoUri&quot;
-}
-</code></pre><h3 id="security-5">Security</h3>
-<p>Allowed for these roles:</p>
-<ul>
-<li><code>Account Administrator</code></li>
-</ul>
-<h3 id="returns-5">Returns</h3>
-<h4 id="200-5">200</h4>
-<p>Success</p>
-<h5 id="type-5">Type:</h5>
-<p> <code>HybridClientResponseDto</code></p>
-<pre><code class="lang-json">{
-  &quot;Name&quot;: &quot;Name&quot;,
-  &quot;ClientId&quot;: &quot;ClientId&quot;,
-  &quot;ClientSecret&quot;: &quot;ClientSecret&quot;,
-  &quot;SecretExpirationDate&quot;: &quot;2019-02-06T09:56:10.2207849-08:00&quot;,
-  &quot;SecretDescription&quot;: &quot;description&quot;,
-  &quot;SecretId&quot;: 0,
-  &quot;AllowOfflineAccess&quot;: false
-}
-</code></pre><h4 id="401-5">401</h4>
-<p>Unauthorized</p>
-<h4 id="403-5">403</h4>
-<p>Forbidden</p>
-<h4 id="404-5">404</h4>
-<p>Tenant not found</p>
-<h4 id="500-5">500</h4>
-<p>Internal server error</p>
-<hr>
-<h2 id="update-client-with-a-given-id"><code>Update Client With a Given ID</code></h2>
-<p>Create a client</p>
-<h3 id="request-6">Request</h3>
-<p><code>POST api/Tenant/{tenantId}/Clients/{clientId}</code></p>
-<h3 id="parameters-6">Parameters</h3>
-<pre><code class="lang-csharp">string tenantId [FromRoute] [Required] [No-Default]
-</code></pre><p>Id of tenant</p>
-<pre><code class="lang-csharp">string clientId [FromRoute] [Required] [No-Default]
-</code></pre><p>Id of client</p>
-<pre><code class="lang-csharp">string secretDescription [FromQuery] [Required] [No-Default]
-</code></pre><p>Description of Client secret</p>
-<pre><code class="lang-csharp">string secretExpiration [FromQuery] [Required] [No-Default]
-</code></pre><p>Expiration of Client secret</p>
-<pre><code class="lang-csharp">Client client [FromBody] [Required] [No-Default]
-</code></pre><p>New Client object</p>
-<pre><code class="lang-json">{
-  &quot;Enabled&quot;: true,
-  &quot;ClientId&quot;: &quot;ClientId&quot;,
-  &quot;ClientSecrets&quot;: [
-    {
-      &quot;Id&quot;: 0,
-      &quot;Description&quot;: &quot;description&quot;,
-      &quot;Value&quot;: &quot;Value&quot;,
-      &quot;Expiration&quot;: &quot;2019-02-06T09:56:10.2244848-08:00&quot;,
-      &quot;Type&quot;: &quot;Type&quot;
-    },
-    {
-      &quot;Id&quot;: 0,
-      &quot;Description&quot;: &quot;description&quot;,
-      &quot;Value&quot;: &quot;Value&quot;,
-      &quot;Expiration&quot;: &quot;2019-02-06T09:56:10.2245074-08:00&quot;,
-      &quot;Type&quot;: &quot;Type&quot;
-    }
-  ],
-  &quot;RequireClientSecret&quot;: true,
-  &quot;ClientName&quot;: &quot;Name&quot;,
-  &quot;Description&quot;: &quot;description&quot;,
-  &quot;ClientUri&quot;: &quot;ClientUri&quot;,
-  &quot;LogoUri&quot;: &quot;LogoUri&quot;,
-  &quot;RequireConsent&quot;: true,
-  &quot;AllowRememberConsent&quot;: true,
-  &quot;AllowedGrantTypes&quot;: [
-    &quot;String&quot;,
-    &quot;String&quot;
-  ],
-  &quot;AllowAccessTokensViaBrowser&quot;: false,
-  &quot;RedirectUris&quot;: [
-    &quot;String&quot;,
-    &quot;String&quot;
-  ],
-  &quot;PostLogoutRedirectUris&quot;: [
-    &quot;String&quot;,
-    &quot;String&quot;
-  ],
-  &quot;FrontChannelLogoutUri&quot;: &quot;FrontChannelLogoutUri&quot;,
-  &quot;FrontChannelLogoutSessionRequired&quot;: true,
-  &quot;BackChannelLogoutUri&quot;: &quot;BackChannelLogoutUri&quot;,
-  &quot;BackChannelLogoutSessionRequired&quot;: true,
-  &quot;AllowOfflineAccess&quot;: false,
-  &quot;AllowedScopes&quot;: [
-    &quot;String&quot;,
-    &quot;String&quot;
-  ],
-  &quot;AlwaysIncludeUserClaimsInIdToken&quot;: false,
-  &quot;IdentityTokenLifetime&quot;: 300,
-  &quot;AccessTokenLifetime&quot;: 3600,
-  &quot;AuthorizationCodeLifetime&quot;: 300,
-  &quot;AbsoluteRefreshTokenLifetime&quot;: 2592000,
-  &quot;SlidingRefreshTokenLifetime&quot;: 1296000,
-  &quot;ConsentLifetime&quot;: 0,
-  &quot;RefreshTokenUsage&quot;: 0,
-  &quot;UpdateAccessTokenClaimsOnRefresh&quot;: false,
-  &quot;RefreshTokenExpiration&quot;: 0,
-  &quot;AccessTokenType&quot;: 0,
-  &quot;IdentityProviderRestrictions&quot;: [
-    &quot;String&quot;,
-    &quot;String&quot;
-  ],
-  &quot;IncludeJwtId&quot;: false,
-  &quot;Claims&quot;: [
-    {
-      &quot;Issuer&quot;: &quot;Issuer&quot;,
-      &quot;OriginalIssuer&quot;: &quot;OriginalIssuer&quot;,
-      &quot;Properties&quot;: {
-        &quot;String&quot;: &quot;String&quot;
-      },
-      &quot;Subject&quot;: {
-        &quot;AuthenticationType&quot;: null,
-        &quot;IsAuthenticated&quot;: false,
-        &quot;Actor&quot;: null,
-        &quot;BootstrapContext&quot;: null,
-        &quot;Claims&quot;: [],
-        &quot;Label&quot;: &quot;Label&quot;,
-        &quot;Name&quot;: null,
-        &quot;NameClaimType&quot;: &quot;http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name&quot;,
-        &quot;RoleClaimType&quot;: &quot;http://schemas.microsoft.com/ws/2008/06/identity/claims/role&quot;
-      },
-      &quot;Type&quot;: &quot;Type&quot;,
-      &quot;Value&quot;: &quot;Value&quot;,
-      &quot;ValueType&quot;: &quot;ValueType&quot;
-    },
-    {
-      &quot;Issuer&quot;: &quot;Issuer&quot;,
-      &quot;OriginalIssuer&quot;: &quot;OriginalIssuer&quot;,
-      &quot;Properties&quot;: {
-        &quot;String&quot;: &quot;String&quot;
-      },
-      &quot;Subject&quot;: {
-        &quot;AuthenticationType&quot;: null,
-        &quot;IsAuthenticated&quot;: false,
-        &quot;Actor&quot;: null,
-        &quot;BootstrapContext&quot;: null,
-        &quot;Claims&quot;: [],
-        &quot;Label&quot;: &quot;Label&quot;,
-        &quot;Name&quot;: null,
-        &quot;NameClaimType&quot;: &quot;http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name&quot;,
-        &quot;RoleClaimType&quot;: &quot;http://schemas.microsoft.com/ws/2008/06/identity/claims/role&quot;
-      },
-      &quot;Type&quot;: &quot;Type&quot;,
-      &quot;Value&quot;: &quot;Value&quot;,
-      &quot;ValueType&quot;: &quot;ValueType&quot;
-    }
-  ],
-  &quot;AlwaysSendClientClaims&quot;: false,
-  &quot;ClientClaimsPrefix&quot;: &quot;ClientClaimsPrefix&quot;,
-  &quot;PairWiseSubjectSalt&quot;: &quot;PairWiseSubjectSalt&quot;,
-  &quot;UserSsoLifetime&quot;: 0,
-  &quot;UserCodeType&quot;: &quot;UserCodeType&quot;,
-  &quot;DeviceCodeLifetime&quot;: 300,
-  &quot;AllowedCorsOrigins&quot;: [
-    &quot;String&quot;,
-    &quot;String&quot;
-  ],
-  &quot;Properties&quot;: {
-    &quot;String&quot;: &quot;String&quot;
-  }
-}
-</code></pre><h3 id="security-6">Security</h3>
-<p>Allowed for these roles:</p>
-<ul>
-<li><code>Account Administrator</code></li>
-</ul>
-<h3 id="returns-6">Returns</h3>
-<h4 id="200-6">200</h4>
-<p>Success</p>
-<h5 id="type-6">Type:</h5>
-<p> <code>ClientCredentialClientCreateDto</code></p>
-<pre><code class="lang-json">{
-  &quot;SecretDescription&quot;: &quot;description&quot;,
-  &quot;SecretExpirationDate&quot;: &quot;2019-02-06T09:56:10.2248375-08:00&quot;,
-  &quot;RoleIds&quot;: [
-    &quot;String&quot;,
-    &quot;String&quot;
-  ],
-  &quot;Name&quot;: &quot;Name&quot;,
-  &quot;Enabled&quot;: false,
-  &quot;AllowAccessTokensViaBrowser&quot;: false,
-  &quot;ClientUri&quot;: &quot;ClientUri&quot;,
-  &quot;LogoUri&quot;: &quot;LogoUri&quot;
-}
-</code></pre><h4 id="401-6">401</h4>
-<p>Unauthorized</p>
-<h4 id="403-6">403</h4>
-<p>Forbidden</p>
-<h4 id="404-6">404</h4>
-<p>Client or Tenant not found</p>
-<h4 id="500-6">500</h4>
-<p>Internal server error</p>
-<hr>
-<h2 id="update-client"><code>Update Client</code></h2>
-<p>Update a client</p>
-<h3 id="request-7">Request</h3>
-<p><code>PUT api/Tenant/{tenantId}/Clients/{clientId}</code></p>
-<h3 id="parameters-7">Parameters</h3>
-<pre><code class="lang-csharp">string tenantId [FromRoute] [Required] [No-Default]
-</code></pre><p>Id of tenant</p>
-<pre><code class="lang-csharp">string clientId [FromRoute] [Required] [No-Default]
-</code></pre><p>Id of client</p>
-<pre><code class="lang-csharp">Client client [FromBody] [Required] [No-Default]
-</code></pre><p>New Client</p>
-<pre><code class="lang-json">{
-  &quot;Enabled&quot;: true,
-  &quot;ClientId&quot;: &quot;ClientId&quot;,
-  &quot;ClientSecrets&quot;: [
-    {
-      &quot;Id&quot;: 0,
-      &quot;Description&quot;: &quot;description&quot;,
-      &quot;Value&quot;: &quot;Value&quot;,
-      &quot;Expiration&quot;: &quot;2019-02-06T09:56:10.2253382-08:00&quot;,
-      &quot;Type&quot;: &quot;Type&quot;
-    },
-    {
-      &quot;Id&quot;: 0,
-      &quot;Description&quot;: &quot;description&quot;,
-      &quot;Value&quot;: &quot;Value&quot;,
-      &quot;Expiration&quot;: &quot;2019-02-06T09:56:10.225347-08:00&quot;,
-      &quot;Type&quot;: &quot;Type&quot;
-    }
-  ],
-  &quot;RequireClientSecret&quot;: true,
-  &quot;ClientName&quot;: &quot;Name&quot;,
-  &quot;Description&quot;: &quot;description&quot;,
-  &quot;ClientUri&quot;: &quot;ClientUri&quot;,
-  &quot;LogoUri&quot;: &quot;LogoUri&quot;,
-  &quot;RequireConsent&quot;: true,
-  &quot;AllowRememberConsent&quot;: true,
-  &quot;AllowedGrantTypes&quot;: [
-    &quot;String&quot;,
-    &quot;String&quot;
-  ],
-  &quot;AllowAccessTokensViaBrowser&quot;: false,
-  &quot;RedirectUris&quot;: [
-    &quot;String&quot;,
-    &quot;String&quot;
-  ],
-  &quot;PostLogoutRedirectUris&quot;: [
-    &quot;String&quot;,
-    &quot;String&quot;
-  ],
-  &quot;FrontChannelLogoutUri&quot;: &quot;FrontChannelLogoutUri&quot;,
-  &quot;FrontChannelLogoutSessionRequired&quot;: true,
-  &quot;BackChannelLogoutUri&quot;: &quot;BackChannelLogoutUri&quot;,
-  &quot;BackChannelLogoutSessionRequired&quot;: true,
-  &quot;AllowOfflineAccess&quot;: false,
-  &quot;AllowedScopes&quot;: [
-    &quot;String&quot;,
-    &quot;String&quot;
-  ],
-  &quot;AlwaysIncludeUserClaimsInIdToken&quot;: false,
-  &quot;IdentityTokenLifetime&quot;: 300,
-  &quot;AccessTokenLifetime&quot;: 3600,
-  &quot;AuthorizationCodeLifetime&quot;: 300,
-  &quot;AbsoluteRefreshTokenLifetime&quot;: 2592000,
-  &quot;SlidingRefreshTokenLifetime&quot;: 1296000,
-  &quot;ConsentLifetime&quot;: 0,
-  &quot;RefreshTokenUsage&quot;: 0,
-  &quot;UpdateAccessTokenClaimsOnRefresh&quot;: false,
-  &quot;RefreshTokenExpiration&quot;: 0,
-  &quot;AccessTokenType&quot;: 0,
-  &quot;IdentityProviderRestrictions&quot;: [
-    &quot;String&quot;,
-    &quot;String&quot;
-  ],
-  &quot;IncludeJwtId&quot;: false,
-  &quot;Claims&quot;: [
-    {
-      &quot;Issuer&quot;: &quot;Issuer&quot;,
-      &quot;OriginalIssuer&quot;: &quot;OriginalIssuer&quot;,
-      &quot;Properties&quot;: {
-        &quot;String&quot;: &quot;String&quot;
-      },
-      &quot;Subject&quot;: {
-        &quot;AuthenticationType&quot;: null,
-        &quot;IsAuthenticated&quot;: false,
-        &quot;Actor&quot;: null,
-        &quot;BootstrapContext&quot;: null,
-        &quot;Claims&quot;: [],
-        &quot;Label&quot;: &quot;Label&quot;,
-        &quot;Name&quot;: null,
-        &quot;NameClaimType&quot;: &quot;http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name&quot;,
-        &quot;RoleClaimType&quot;: &quot;http://schemas.microsoft.com/ws/2008/06/identity/claims/role&quot;
-      },
-      &quot;Type&quot;: &quot;Type&quot;,
-      &quot;Value&quot;: &quot;Value&quot;,
-      &quot;ValueType&quot;: &quot;ValueType&quot;
-    },
-    {
-      &quot;Issuer&quot;: &quot;Issuer&quot;,
-      &quot;OriginalIssuer&quot;: &quot;OriginalIssuer&quot;,
-      &quot;Properties&quot;: {
-        &quot;String&quot;: &quot;String&quot;
-      },
-      &quot;Subject&quot;: {
-        &quot;AuthenticationType&quot;: null,
-        &quot;IsAuthenticated&quot;: false,
-        &quot;Actor&quot;: null,
-        &quot;BootstrapContext&quot;: null,
-        &quot;Claims&quot;: [],
-        &quot;Label&quot;: &quot;Label&quot;,
-        &quot;Name&quot;: null,
-        &quot;NameClaimType&quot;: &quot;http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name&quot;,
-        &quot;RoleClaimType&quot;: &quot;http://schemas.microsoft.com/ws/2008/06/identity/claims/role&quot;
-      },
-      &quot;Type&quot;: &quot;Type&quot;,
-      &quot;Value&quot;: &quot;Value&quot;,
-      &quot;ValueType&quot;: &quot;ValueType&quot;
-    }
-  ],
-  &quot;AlwaysSendClientClaims&quot;: false,
-  &quot;ClientClaimsPrefix&quot;: &quot;ClientClaimsPrefix&quot;,
-  &quot;PairWiseSubjectSalt&quot;: &quot;PairWiseSubjectSalt&quot;,
-  &quot;UserSsoLifetime&quot;: 0,
-  &quot;UserCodeType&quot;: &quot;UserCodeType&quot;,
-  &quot;DeviceCodeLifetime&quot;: 300,
-  &quot;AllowedCorsOrigins&quot;: [
-    &quot;String&quot;,
-    &quot;String&quot;
-  ],
-  &quot;Properties&quot;: {
-    &quot;String&quot;: &quot;String&quot;
-  }
-}
-</code></pre><h3 id="security-7">Security</h3>
-<p>Allowed for these roles:</p>
-<ul>
-<li><code>Account Administrator</code></li>
-</ul>
-<h3 id="returns-7">Returns</h3>
-<h4 id="200-7">200</h4>
-<p>Success</p>
-<h5 id="type-7">Type:</h5>
 <p> <code>Client</code></p>
 <pre><code class="lang-json">{
   &quot;Enabled&quot;: true,
@@ -1388,14 +958,14 @@
       &quot;Id&quot;: 0,
       &quot;Description&quot;: &quot;description&quot;,
       &quot;Value&quot;: &quot;Value&quot;,
-      &quot;Expiration&quot;: &quot;2019-02-06T09:56:10.2257476-08:00&quot;,
+      &quot;Expiration&quot;: &quot;2019-02-20T01:57:33.1179443-05:00&quot;,
       &quot;Type&quot;: &quot;Type&quot;
     },
     {
       &quot;Id&quot;: 0,
       &quot;Description&quot;: &quot;description&quot;,
       &quot;Value&quot;: &quot;Value&quot;,
-      &quot;Expiration&quot;: &quot;2019-02-06T09:56:10.225756-08:00&quot;,
+      &quot;Expiration&quot;: &quot;2019-02-20T01:57:33.1179531-05:00&quot;,
       &quot;Type&quot;: &quot;Type&quot;
     }
   ],
@@ -1502,266 +1072,43 @@
     &quot;String&quot;: &quot;String&quot;
   }
 }
-</code></pre><h4 id="401-7">401</h4>
+</code></pre><h4 id="401-3">401</h4>
 <p>Unauthorized</p>
-<h4 id="403-7">403</h4>
+<h4 id="403-3">403</h4>
 <p>Forbidden</p>
 <h4 id="400-1">400</h4>
 <p>Missing or invalid inputs</p>
-<h4 id="404-7">404</h4>
+<h4 id="404-3">404</h4>
 <p>Client or Tenant not found</p>
-<h4 id="500-7">500</h4>
+<h4 id="500-3">500</h4>
 <p>Internal server error</p>
 <hr>
 <h2 id="delete-client"><code>Delete Client</code></h2>
 <p>Delete a client</p>
-<h3 id="request-8">Request</h3>
-<p><code>DELETE api/Tenant/{tenantId}/Clients/{clientId}</code></p>
-<h3 id="parameters-8">Parameters</h3>
-<pre><code class="lang-csharp">string tenantId [FromRoute] [Required] [No-Default]
+<h3 id="request-4">Request</h3>
+<p><code>DELETE api/Tenants/{tenantId}/Client/{clientId}</code></p>
+<h3 id="parameters-4">Parameters</h3>
+<pre><code class="lang-csharp">[Required]
+string tenantId
 </code></pre><p>Id of tenant</p>
-<pre><code class="lang-csharp">string clientId [FromRoute] [Required] [No-Default]
+<pre><code class="lang-csharp">[Required]
+string clientId
 </code></pre><p>Id of client</p>
-<h3 id="security-8">Security</h3>
+<h3 id="security-4">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
 <li><code>Account Administrator</code></li>
 </ul>
-<h3 id="returns-8">Returns</h3>
+<h3 id="returns-4">Returns</h3>
 <h4 id="204">204</h4>
 <p>Deleted</p>
-<h4 id="401-8">401</h4>
+<h4 id="401-4">401</h4>
 <p>Unauthorized</p>
-<h4 id="403-8">403</h4>
+<h4 id="403-4">403</h4>
 <p>Forbidden</p>
-<h4 id="404-8">404</h4>
+<h4 id="404-4">404</h4>
 <p>Client or Tenant not found</p>
-<h4 id="500-8">500</h4>
-<p>Internal server error</p>
-<hr>
-<h2 id="get-client-secrets"><code>Get Client Secrets</code></h2>
-<p>Get all secrets for a client</p>
-<h3 id="request-9">Request</h3>
-<p><code>GET api/Tenant/{tenantId}/Clients/{clientId}/Secrets</code></p>
-<h3 id="parameters-9">Parameters</h3>
-<pre><code class="lang-csharp">string tenantId [FromRoute] [Required] [No-Default]
-</code></pre><p>Id of tenant</p>
-<pre><code class="lang-csharp">string clientId [FromRoute] [Required] [No-Default]
-</code></pre><p>Id of client</p>
-<h3 id="security-9">Security</h3>
-<p>Allowed for these roles:</p>
-<ul>
-<li><code>Account Administrator</code></li>
-<li><code>Cluster Operator</code></li>
-<li><code>Cluster Support</code></li>
-</ul>
-<h3 id="returns-9">Returns</h3>
-<h4 id="200-8">200</h4>
-<p>Success</p>
-<h5 id="type-8">Type:</h5>
-<p> <code>List[Secret]</code></p>
-<pre><code class="lang-json">[
-  {
-    &quot;Id&quot;: 0,
-    &quot;Description&quot;: &quot;description&quot;,
-    &quot;Value&quot;: &quot;Value&quot;,
-    &quot;Expiration&quot;: &quot;2019-02-06T09:56:10.2264394-08:00&quot;,
-    &quot;Type&quot;: &quot;Type&quot;
-  },
-  {
-    &quot;Id&quot;: 0,
-    &quot;Description&quot;: &quot;description&quot;,
-    &quot;Value&quot;: &quot;Value&quot;,
-    &quot;Expiration&quot;: &quot;2019-02-06T09:56:10.2264478-08:00&quot;,
-    &quot;Type&quot;: &quot;Type&quot;
-  }
-]
-</code></pre><h4 id="401-9">401</h4>
-<p>Unauthorized</p>
-<h4 id="403-9">403</h4>
-<p>Forbidden</p>
-<h4 id="404-9">404</h4>
-<p>Client or Tenant not found</p>
-<h4 id="500-9">500</h4>
-<p>Internal server error</p>
-<hr>
-<h2 id="get-client-secret"><code>Get Client Secret</code></h2>
-<p>Get a specific client secret</p>
-<h3 id="request-10">Request</h3>
-<p><code>GET api/Tenant/{tenantId}/Clients/{clientId}/Secrets/{secretId}</code></p>
-<h3 id="parameters-10">Parameters</h3>
-<pre><code class="lang-csharp">string tenantId [FromRoute] [Required] [No-Default]
-</code></pre><p>Id of tenant</p>
-<pre><code class="lang-csharp">string clientId [FromRoute] [Required] [No-Default]
-</code></pre><p>Id of client</p>
-<pre><code class="lang-csharp">int32 secretId [FromRoute] [Required] [No-Default]
-</code></pre><p>Id of secret</p>
-<h3 id="security-10">Security</h3>
-<p>Allowed for these roles:</p>
-<ul>
-<li><code>Account Administrator</code></li>
-<li><code>Cluster Operator</code></li>
-<li><code>Cluster Support</code></li>
-</ul>
-<h3 id="returns-10">Returns</h3>
-<h4 id="200-9">200</h4>
-<p>Success</p>
-<h5 id="type-9">Type:</h5>
-<p> <code>Secret</code></p>
-<pre><code class="lang-json">{
-  &quot;Id&quot;: 0,
-  &quot;Description&quot;: &quot;description&quot;,
-  &quot;Value&quot;: &quot;Value&quot;,
-  &quot;Expiration&quot;: &quot;2019-02-06T09:56:10.2267173-08:00&quot;,
-  &quot;Type&quot;: &quot;Type&quot;
-}
-</code></pre><h4 id="401-10">401</h4>
-<p>Unauthorized</p>
-<h4 id="403-10">403</h4>
-<p>Forbidden</p>
-<h4 id="404-10">404</h4>
-<p>Secret, Client, or Tenant not found</p>
-<h4 id="500-10">500</h4>
-<p>Internal server error</p>
-<hr>
-<h2 id="add-client-secret"><code>Add Client Secret</code></h2>
-<p>Add a new secret for a client</p>
-<h3 id="request-11">Request</h3>
-<p><code>POST api/Tenant/{tenantId}/Clients/{clientId}/Secrets</code></p>
-<h3 id="parameters-11">Parameters</h3>
-<pre><code class="lang-csharp">string tenantId [FromRoute] [Required] [No-Default]
-</code></pre><p>Id of tenant</p>
-<pre><code class="lang-csharp">string clientId [FromRoute] [Required] [No-Default]
-</code></pre><p>Id of client</p>
-<pre><code class="lang-csharp">ClientSecretDto clientSecretDto [FromBody] [Required] [No-Default]
-</code></pre><pre><code class="lang-json">{
-  &quot;Expiration&quot;: &quot;2019-02-06T09:56:10.2270124-08:00&quot;,
-  &quot;Description&quot;: &quot;description&quot;
-}
-</code></pre><h3 id="security-11">Security</h3>
-<p>Allowed for these roles:</p>
-<ul>
-<li><code>Account Administrator</code></li>
-</ul>
-<h3 id="returns-11">Returns</h3>
-<h4 id="200-10">200</h4>
-<p>Success</p>
-<h5 id="type-10">Type:</h5>
-<p> <code>List[Secret]</code></p>
-<pre><code class="lang-json">[
-  {
-    &quot;Id&quot;: 0,
-    &quot;Description&quot;: &quot;description&quot;,
-    &quot;Value&quot;: &quot;Value&quot;,
-    &quot;Expiration&quot;: &quot;2019-02-06T09:56:10.2282522-08:00&quot;,
-    &quot;Type&quot;: &quot;Type&quot;
-  },
-  {
-    &quot;Id&quot;: 0,
-    &quot;Description&quot;: &quot;description&quot;,
-    &quot;Value&quot;: &quot;Value&quot;,
-    &quot;Expiration&quot;: &quot;2019-02-06T09:56:10.2282599-08:00&quot;,
-    &quot;Type&quot;: &quot;Type&quot;
-  }
-]
-</code></pre><h4 id="401-11">401</h4>
-<p>Unauthorized</p>
-<h4 id="403-11">403</h4>
-<p>Forbidden</p>
-<h4 id="404-11">404</h4>
-<p>Client or Tenant not found</p>
-<h4 id="500-11">500</h4>
-<p>Internal server error</p>
-<hr>
-<h2 id="update-client-secret"><code>Update Client Secret</code></h2>
-<p>Update a client secret (Only Secret Description and Secret Expiration Date could be updated)</p>
-<h3 id="request-12">Request</h3>
-<p><code>PUT api/Tenant/{tenantId}/Clients/{clientId}/Secrets/{secretId}</code></p>
-<h3 id="parameters-12">Parameters</h3>
-<pre><code class="lang-csharp">string tenantId [FromRoute] [Required] [No-Default]
-</code></pre><p>Id of tenant</p>
-<pre><code class="lang-csharp">string clientId [FromRoute] [Required] [No-Default]
-</code></pre><p>Id of client</p>
-<pre><code class="lang-csharp">int32 secretId [FromRoute] [Required] [No-Default]
-</code></pre><p>secretId</p>
-<pre><code class="lang-csharp">ClientSecretDto secretUpdate [FromBody] [Required] [No-Default]
-</code></pre><p>secretId</p>
-<pre><code class="lang-json">{
-  &quot;Expiration&quot;: &quot;2019-02-06T09:56:10.2284581-08:00&quot;,
-  &quot;Description&quot;: &quot;description&quot;
-}
-</code></pre><h3 id="security-12">Security</h3>
-<p>Allowed for these roles:</p>
-<ul>
-<li><code>Account Administrator</code></li>
-</ul>
-<h3 id="returns-12">Returns</h3>
-<h4 id="200-11">200</h4>
-<p>Success</p>
-<h5 id="type-11">Type:</h5>
-<p> <code>Secret</code></p>
-<pre><code class="lang-json">{
-  &quot;Id&quot;: 0,
-  &quot;Description&quot;: &quot;description&quot;,
-  &quot;Value&quot;: &quot;Value&quot;,
-  &quot;Expiration&quot;: &quot;2019-02-06T09:56:10.2285766-08:00&quot;,
-  &quot;Type&quot;: &quot;Type&quot;
-}
-</code></pre><h4 id="400-2">400</h4>
-<p>Missing or invalid inputs</p>
-<h4 id="401-12">401</h4>
-<p>Unauthorized</p>
-<h4 id="403-12">403</h4>
-<p>Forbidden</p>
-<h4 id="404-12">404</h4>
-<p>Secret, Client, or Tenant not found</p>
-<h4 id="500-12">500</h4>
-<p>Internal server error</p>
-<hr>
-<h2 id="delete-client-secret"><code>Delete Client Secret</code></h2>
-<p>Delete a secret from a client</p>
-<h3 id="request-13">Request</h3>
-<p><code>DELETE api/Tenant/{tenantId}/Clients/{clientId}/Secrets/{secretId}</code></p>
-<h3 id="parameters-13">Parameters</h3>
-<pre><code class="lang-csharp">string tenantId [FromRoute] [Required] [No-Default]
-</code></pre><p>Id of tenant</p>
-<pre><code class="lang-csharp">string clientId [FromRoute] [Required] [No-Default]
-</code></pre><p>Id of client</p>
-<pre><code class="lang-csharp">int32 secretId [FromRoute] [Required] [No-Default]
-</code></pre><p>Id of secret</p>
-<h3 id="security-13">Security</h3>
-<p>Allowed for these roles:</p>
-<ul>
-<li><code>Account Administrator</code></li>
-</ul>
-<h3 id="returns-13">Returns</h3>
-<h4 id="200-12">200</h4>
-<p>Success</p>
-<h5 id="type-12">Type:</h5>
-<p> <code>List[Secret]</code></p>
-<pre><code class="lang-json">[
-  {
-    &quot;Id&quot;: 0,
-    &quot;Description&quot;: &quot;description&quot;,
-    &quot;Value&quot;: &quot;Value&quot;,
-    &quot;Expiration&quot;: &quot;2019-02-06T09:56:10.2288404-08:00&quot;,
-    &quot;Type&quot;: &quot;Type&quot;
-  },
-  {
-    &quot;Id&quot;: 0,
-    &quot;Description&quot;: &quot;description&quot;,
-    &quot;Value&quot;: &quot;Value&quot;,
-    &quot;Expiration&quot;: &quot;2019-02-06T09:56:10.2288481-08:00&quot;,
-    &quot;Type&quot;: &quot;Type&quot;
-  }
-]
-</code></pre><h4 id="401-13">401</h4>
-<p>Unauthorized</p>
-<h4 id="403-13">403</h4>
-<p>Forbidden</p>
-<h4 id="404-13">404</h4>
-<p>Secret, Client, or Tenant not found</p>
-<h4 id="500-13">500</h4>
+<h4 id="500-4">500</h4>
 <p>Internal server error</p>
 <hr>
 </article>

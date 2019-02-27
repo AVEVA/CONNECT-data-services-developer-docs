@@ -10,8 +10,6 @@ events. Events are stored in streams, called SdsStreams. An SdsType defines the 
 event and how to associate events within the SdsStream.
 
 
-
-
 SdsTypes can define simple atomic types, such as integers, floats, strings, arrays, and dictionaries, or 
 they can define complex types using SdsTypes. You can define complex, nested types using the Properties 
 collection of an SdsType. 
@@ -53,9 +51,6 @@ The following table shows the required and optional SdsType fields. Fields that 
 | InterpolationMode | SdsInterpolationMode   | Optional    | Interpolation setting of the type. Default is Continuous. |
 | ExtrapolationMode | SdsExtrapolationMode   | Optional    | Extrapolation setting of the type. Default is All. |
 | Properties        | IList<SdsTypeProperty> | Required    | List of SdsTypeProperty items |
-
-
-
 
 
 **Rules for typeId**
@@ -215,14 +210,14 @@ indexes that occur between data in a stream:
 |---------------------------|-----------------------------------------------|---------|
 |Numeric Types              |Interpolated*                                  |Rounding is done as needed for integer types |
 |Time related Types         |Interpolated                                   |DateTime, DateTimeOffset, TimeSpan |
-|Nullable Types             |Returns ‘null’                                 |Cannot reliably interpolate due to possibility of a null value |
-|Array and List Types       |Returns ‘null’                                 |         |
-|String Type                |Returns ‘null’                                 |         |
+|Nullable Types             |No event is returned                           |Cannot reliably interpolate due to possibility of a null value |
+|Array and List Types       |No event is returned                           |         |
+|String Type                |No event is returned                           |         |
 |Boolean Type               |Returns value of nearest index                 |         |
 |Enumeration Types          |Returns Enum value at 0                        |This may have a value for the enumeration |
 |GUID                       |                                               |         |
-|Version                    |Returns ‘null’                                 |         |
-|IDictionary or IEnumerable |Returns ‘null’                                 |Dictionary, Array, List, and so on. |
+|Version                    |No event is returned                           |         |
+|IDictionary or IEnumerable |No event is returned                           |Dictionary, Array, List, and so on. |
 
 \*When extreme values are involved in an interpolation (for example
 Decimal.MaxValue) the call might result in a BadRequest exception.
@@ -243,41 +238,41 @@ occurs and at which end of the data.
 ExtrapolationMode works with the InterpolationMode to determine how a stream responds. The following tables 
 show how ExtrapolationMode affects returned values for each InterpolationMode value:
 
-**ExtrapolationMode with Mode\ =Default or Continuous**
+**ExtrapolationMode with InterpolationMode = Default or Continuous**
 
 | ExtrapolationMode   | Enumeration value   | Index before data          | Index after data          |
 |---------------------|---------------------|----------------------------|---------------------------|
 | All                 | 0                   | Returns first data value   | Returns last data value   |
-| None                | 1                   | Returns ‘null’             | Returns ‘null’            |
-| Forward             | 2                   | Returns ‘null’             | Returns last data value   |
-| Backward            | 3                   | Returns first data value   | Returns ‘null’            |
+| None                | 1                   | No event is returned       | No event is returned      |
+| Forward             | 2                   | No event is returned       | Returns last data value   |
+| Backward            | 3                   | Returns first data value   | No event is returned      |
 
-**ExtrapolationMode with InterpolationMode\ =Discrete**
+**ExtrapolationMode with InterpolationMode = Discrete**
 
-| ExtrapolationMode   | Enumeration value   | Index before data   | Index after data   |
-|---------------------|---------------------|---------------------|--------------------|
-| All                 | 0                   | Returns ‘null’      | Returns ‘null’     |
-| None                | 1                   | Returns ‘null’      | Returns ‘null’     |
-| Forward             | 2                   | Returns ‘null’      | Returns ‘null’     |
-| Backward            | 3                   | Returns ‘null’      | Returns ‘null’     |
+| ExtrapolationMode   | Enumeration value   | Index before data   | Index after data    |
+|---------------------|---------------------|---------------------|---------------------|
+| All                 | 0                   | No event is returned| No event is returned|
+| None                | 1                   | No event is returned| No event is returned|
+| Forward             | 2                   | No event is returned| No event is returned|
+| Backward            | 3                   | No event is returned| No event is returned|
 
-**ExtrapolationMode with InterpolationMode\ =StepwiseContinuousLeading**
-
-| ExtrapolationMode   | Enumeration value   | Index before data          | Index after data          |
-|---------------------|---------------------|----------------------------|---------------------------|
-| All                 | 0                   | Returns first data value   | Returns last data value   |
-| None                | 1                   | Returns ‘null’             | Returns ‘null’            |
-| Forward             | 2                   | Returns ‘null’             | Returns last data value   |
-| Backward            | 3                   | Returns first data value   | Returns ‘null’            |
-
-**ExtrapolationMode with InterpolationMode\ =StepwiseContinuousTrailing**
+**ExtrapolationMode with InterpolationMode = StepwiseContinuousLeading**
 
 | ExtrapolationMode   | Enumeration value   | Index before data          | Index after data          |
 |---------------------|---------------------|----------------------------|---------------------------|
 | All                 | 0                   | Returns first data value   | Returns last data value   |
-| None                | 1                   | Returns ‘null’             | Returns ‘null’            |
-| Forward             | 2                   | Returns ‘null’             | Returns last data value   |
-| Backward            | 3                   | Returns first data value   | Returns ‘null’            |
+| None                | 1                   | No event is returned       | No event is returned      |
+| Forward             | 2                   | No event is returned       | Returns last data value   |
+| Backward            | 3                   | Returns first data value   | No event is returned      |
+
+**ExtrapolationMode with InterpolationMode = StepwiseContinuousTrailing**
+
+| ExtrapolationMode   | Enumeration value   | Index before data          | Index after data          |
+|---------------------|---------------------|----------------------------|---------------------------|
+| All                 | 0                   | Returns first data value   | Returns last data value   |
+| None                | 1                   | No event is returned       | No event is returned      |
+| Forward             | 2                   | No event is returned       | Returns last data value   |
+| Backward            | 3                   | Returns first data value   | No event is returned      |
 
 
 If the ExtrapolationMode is not assigned, the events are extrapolated in the default manner, unless the extrapolation mode is overridden on the SdsStream. For more information on overriding the extrapolation mode on a specific stream see [Sds Streams](xref:sdsStreams).
@@ -349,27 +344,27 @@ potential errors that can occur when working with SdsTypes manually.
 
 There are several ways to work with the builder. The most convenient is to use the static 
 methods, as shown here:
-
-      public enum State
-      {
-          Ok,
-          Warning,
-          Alarm
-      }
-
-      public class Simple
-      {
-          [SdsMember(IsKey = true, Order = 0)]
-          public DateTime Time { get; set; }
-          public State State { get; set; }
-          public Double Measurement { get; set; }
-      }
-
-      SdsType simpleType = SdsTypeBuilder.CreateSdsType<Simple>();
-      simpleType.Id = "Simple";
-      simpleType.Name = "Simple";
-      simpleType.Description = "Basic sample type";
-
+```csharp
+    public enum State
+    {
+        Ok,
+        Warning,
+        Alarm
+    }
+    
+    public class Simple
+    {
+        [SdsMember(IsKey = true, Order = 0)]
+        public DateTime Time { get; set; }
+        public State State { get; set; }
+        public Double Measurement { get; set; }
+    }
+    
+    SdsType simpleType = SdsTypeBuilder.CreateSdsType<Simple>();
+    simpleType.Id = "Simple";
+    simpleType.Name = "Simple";
+    simpleType.Description = "Basic sample type";
+```
 
 SdsTypeBuilder recognizes the ``System.ComponentModel.DataAnnotations.KeyAttribute`` and 
 its own ``OSIsoft.Sds.SdsMemberAttribute``. When using the SdsMemberAttribute to specify 
@@ -451,7 +446,7 @@ Samples in other languages can be found here: [Samples](https://github.com/osiso
 In the sample code, ``SdsType``, ``SdsTypeProperty``, and ``SdsTypeCode`` are defined as in the code snippets shown here:
 
 **Python**
-
+```python
       class SdsTypeCode(Enum):
           Empty = 0
           Object = 1
@@ -523,11 +518,11 @@ In the sample code, ``SdsType``, ``SdsTypeProperty``, and ``SdsTypeCode`` are de
           @Properties.setter
           def Properties(self, properties):
               self.__properties = properties
-
+```
 
 
 **JavaScript**
-
+```javascript
       SdsTypeCodeMap: {
           Empty: 0,
           "Object": 1,
@@ -569,14 +564,14 @@ In the sample code, ``SdsType``, ``SdsTypeProperty``, and ``SdsTypeCode`` are de
               this.Properties = SdsType.Properties;
           }
       },
-
+```
 
 
 Working with the following types (both Python and JavaScript classes are shown):
 
 
 **Python**
-
+```python
       class State(Enum):
           Ok = 0
           Warning = 1
@@ -600,10 +595,10 @@ Working with the following types (both Python and JavaScript classes are shown):
               return self.__measurement
           def setMeasurement(self, measurement):
               self.__measurement = measurement
-
+```
 
 **JavaScript**
-
+```javascript
       var State =
         {
             Ok: 0,
@@ -616,12 +611,12 @@ Working with the following types (both Python and JavaScript classes are shown):
             this.State = null;
             this.Measurement = null;
         }
-
+```
 
 Define the SdsType as follows:
 
 **Python**
-
+```python
       # Create the properties
 
       # Time is the primary key
@@ -671,10 +666,10 @@ Define the SdsType as follows:
       simpleType.Description = "Basic sample type"
       simpleType.SdsTypeCode = SdsTypeCode.Object
       simpleType.Properties = [ time ]
-
+```
 
 **JavaScript**
-
+```javascript
       // Time is the primary key
       var timeProperty = new SdsObjects.SdsTypeProperty({
           "Id": "Time",
@@ -725,10 +720,11 @@ Define the SdsType as follows:
           "SdsTypeCode": SdsObjects.SdsTypeCodeMap.Object,
           "Properties": [timeProperty, stateProperty, measurementProperty]
       });
+```
 
+Working with a derived class is easy. For the following derived class:
 
-     Working with a derived class is easy. For the following derived class:
-
+```javascript
       class Derrived(Simple):
           @property
           def Observation(self):
@@ -736,12 +732,12 @@ Define the SdsType as follows:
           @Observation.setter
           def Observation(self, observation):
               self.__observation = observation
-
+```
 
 Extend the SdsType as follows:
 
 **Python**
-
+```python
       # Observation property is a simple non-inexed, standard data type
       observation = SdsTypeProperty()
       observation.Id = "Observation"
@@ -759,10 +755,10 @@ Extend the SdsType as follows:
       derived.BaseType = simpleType # Set the base type to the derived type
       derived.SdsTypeCode = SdsTypeCode.Object
       derived.Properties = [ observation ]
-
+```
 
 **JavaScript**
-
+```javascript
       var observationProprety = new SdsObjects.SdsTypeProperty({
           "Id": "Observation",
           "SdsType": new SdsObjects.SdsType({
@@ -779,15 +775,14 @@ Extend the SdsType as follows:
           "SdsTypeCode": SdsObjects.SdsTypeCodeMap.Object,
           "Properties": [ observationProprety ]
       });
-
+```
 
 SdsType API
 ----------
 
-
 The REST APIs provide programmatic access to read and write Sds data. The APIs in this section 
-interact with SdsTypes. When working in .NET convenient Sds Client libraries are available. 
-The ISdsMetadataService interface, accessed using the ``SdsService.GetMetadataService( )`` helper, 
+interact with SdsTypes. When working in .NET, convenient SDS Client Libraries are available. 
+The ISdsMetadataService interface, accessed using the ``SdsService.GetMetadataService()`` helper, 
 defines the available functions. See [Types](#types) for general SdsType information.
 
 
@@ -824,78 +819,65 @@ The response includes a status code and a response body.
   The requested SdsType
 
   Sample response body:
+```json
+HTTP/1.1 200
+Accept: application/json
 
-      HTTP/1.1 200
-      Content-Type: application/json
-
-      {  
-         "Id":"f1a7ef61-d47f-3007-a260-449643a7c219",
-         "Name":"Simple",
-         "SdsTypeCode":1,
-         "Properties":[  
-            {  
-               "Id":"Time",
-               "Name":"Time",
-               "IsKey":true,
-               "SdsType":{  
-                  "$id":"567",
-                  "Id":"19a87a76-614a-385b-ba48-6f8b30ff6ab2",
-                  "Name":"DateTime",
-                  "SdsTypeCode":16
-               }
-            },
-            {  
-               "Id":"State",
-              "Name":"State",
-               "SdsType":{  
-                  "$id":"569",
-                  "Id":"e20bdd7e-590b-3372-ab39-ff61950fb4f3",
-                  "Name":"State",
-                  "SdsTypeCode":609,
-                  "Properties":[  
-                     {  
-                        "$id":"570",
-                        "Id":"Ok",
-                        "Value":0
-                     },
-                     {  
-                        "$id":"571",
-                        "Id":"Warning",
-                        "Value":1
-                     },
-                     {  
-                        "$id":"572",
-                        "Id":"Aalrm",
-                        "Value":2
-                     }
-                  ]
-               }
-            },
-            {  
-               "$id":"573",
-               "Id":"Measurement",
-               "Name":"Measurement",
-               "SdsType":{  
-                  "$id":"574",
-                  "Id":"6fecef77-20b1-37ae-aa3b-e6bb838d5a86",
-                  "Name":"Double",
-                  "SdsTypeCode":14
-               }
+{
+    "Id": "Simple",
+    "Name": "Simple",
+    "SdsTypeCode": 1,
+    "Properties": [
+        {
+            "Id": "Time",
+            "Name": "Time",
+            "IsKey": true,
+            "SdsType": {
+                "Id": "19a87a76-614a-385b-ba48-6f8b30ff6ab2",
+                "Name": "DateTime",
+                "SdsTypeCode": 16
             }
-         ]
-      }
-
-
+        },
+        {
+            "Id": "State",
+            "Name": "State",
+            "SdsType": {
+                "Id": "e20bdd7e-590b-3372-ab39-ff61950fb4f3",
+                "Name": "State",
+                "SdsTypeCode": 609,
+                "Properties": [
+                    {
+                        "Id": "Ok",
+                        "Value": 0
+                    },
+                    {
+                        "Id": "Warning",
+                        "Value": 1
+                    },
+                    {
+                        "Id": "Aalrm",
+                        "Value": 2
+                    }
+                ]
+            }
+        },
+        {
+            "Id": "Measurement",
+            "Name": "Measurement",
+            "SdsType": {
+                "Id": "6fecef77-20b1-37ae-aa3b-e6bb838d5a86",
+                "Name": "Double",
+                "SdsTypeCode": 14
+            }
+        }
+    ]
+}
+```
 
 **.NET Library**
-
-      Task<SdsType> GetTypeAsync(string typeId);
-
-
-**Security**
-
-  Allowed by administrator and user accounts
-
+```csharp
+    Task<SdsType> GetTypeAsync(string typeId);
+```
 
 ***********************
 
@@ -914,8 +896,7 @@ for information about specifying those respective parameters.
 
         GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types?query={query}&filter={filter}&skip={skip}&count={count}&orderby={orderby}
 
-
-**Parameters**
+**Parameters**  
 
 ``string tenantId``  
 The tenant identifier
@@ -944,82 +925,76 @@ If no value is specified, there is no sorting of results.
 
 **Response**
 
-  The response includes a status code and a response body.
+The response includes a status code and a response body.
 
 **Response body**
 
-  A collection of zero or more SdsTypes.
+A collection of zero or more SdsTypes
 
-  Sample response body:
+Sample response body:
+```json
+HTTP/1.1 200
+Accept: application/json
 
-      HTTP/1.1 200
-      Content-Type: application/json
-
-      [  
-        {  
-            "Id":"f1a7ef61-d47f-3007-a260-449643a7c219",
-            "Name":"Simple",
-            "SdsTypeCode":1,
-            "Properties":[  
-               {  
-                  "Id":"Time",
-                  "Name":"Time",
-                  "IsKey":true,
-                  "SdsType":{  
-                     "Id":"19a87a76-614a-385b-ba48-6f8b30ff6ab2",
-                     "Name":"DateTime",
-                     "SdsTypeCode":16
-                  }
-               },
-               {  
-                  "Id":"State",
-                  "Name":"State",
-                  "SdsType":{  
-                     "Id":"e20bdd7e-590b-3372-ab39-ff61950fb4f3",
-                     "Name":"State",
-                     "SdsTypeCode":609,
-                     "Properties":[  
-                        {  
-                           "Id":"Ok",
-                           "Value":0
+[    
+    {
+        "Id": "Simple",
+        "Name": "Simple",
+        "SdsTypeCode": 1,
+        "Properties": [
+            {
+                "Id": "Time",
+                "Name": "Time",
+                "IsKey": true,
+                "SdsType": {
+                    "Id": "19a87a76-614a-385b-ba48-6f8b30ff6ab2",
+                    "Name": "DateTime",
+                    "SdsTypeCode": 16
+                }
+            },
+            {
+                "Id": "State",
+                "Name": "State",
+                "SdsType": {
+                    "Id": "e20bdd7e-590b-3372-ab39-ff61950fb4f3",
+                    "Name": "State",
+                    "SdsTypeCode": 609,
+                    "Properties": [
+                        {
+                            "Id": "Ok",
+                            "Value": 0
                         },
-                        {  
-                           "Id":"Warning",
-                           "Value":1
+                        {
+                            "Id": "Warning",
+                            "Value": 1
                         },
-                        {  
-                           "Id":"Aalrm",
-                           "Value":2
+                        {
+                            "Id": "Aalrm",
+                            "Value": 2
                         }
-                     ]
-                  }
-               },
-               {  
-                  "Id":"Measurement",
-                  "Name":"Measurement",
-                  "SdsType":{  
-                     "$id":"574",
-                     "Id":"6fecef77-20b1-37ae-aa3b-e6bb838d5a86",
-                     "Name":"Double",
-                     "SdsTypeCode":14
-                  }
-               }
-            ]
-         },
-         …
-      ]
-
+                    ]
+                }
+            },
+            {
+                "Id": "Measurement",
+                "Name": "Measurement",
+                "SdsType": {
+                    "Id": "6fecef77-20b1-37ae-aa3b-e6bb838d5a86",
+                    "Name": "Double",
+                    "SdsTypeCode": 14
+                }
+            }
+        ]
+    },
+    …
+]
+```
 
 
 **.NET Library**
-
+```csharp
       Task<IEnumerable<SdsType>> GetTypesAsync(string query = "", int skip = 0, int count = 100);
-
-
-**Security**
-
-  Allowed by administrator and user accounts
-
+```
 
 ***********************
 
@@ -1056,209 +1031,216 @@ The namespace identifier
 The type identifier. The identifier must match the SdsType.Id field. 
 
 
-**Response**
+**Response**  
+The response includes a status code and a response body.
 
-  The response includes a status code and a response body.
+**Response body**  
+The request content is the serialized SdsType. If you are not using the SDS Client Libraries, it is recommended that you use JSON.
 
-**Response body**
-
-  The request content is the serialized SdsType. If you are not using the SDS client libraries, it is recommended 
-  that you use JSON.
-
-  Sample SdsType content:
-
-      {  
-         "Id":"Simple",
-         "Name":"Simple",
-         "Description":"Basic sample type",
-         "SdsTypeCode":1,
-         "IsGenericType":false,
-         "IsReferenceType":false,
-         "GenericArguments":null,
-         "Properties":[  
-            {  
-               "Id":"Time",
-               "Name":"Time",
-               "Description":null,
-               "Order":0,
-               "IsKey":true,
-               "FixedSize":0,
-               "SdsType":{  
-                  "Id":"c48bfdf5-a271-384b-bf13-bd21d931c1bf",
-                  "Name":"DateTime",
-                  "Description":null,
-                  "SdsTypeCode":16,
-                  "IsGenericType":false,
-                  "IsReferenceType":false,
-                  "GenericArguments":null,
-                  "Properties":null,
-                  "BaseType":null,
-                  "DerivedTypes":null
-               },
-               "Value":null
-            },
-            {  
-               "Id":"State",
-               "Name":"State",
-               "Description":null,
-               "Order":0,
-               "IsKey":false,
-               "FixedSize":0,
-               "SdsType":{  
-                  "Id":"ba5d20e1-cd21-3ad0-99f3-c3a3b0146aa1",
-                  "Name":"State",
-                  "Description":null,
-                  "SdsTypeCode":609,
-                  "IsGenericType":false,
-                  "IsReferenceType":false,
-                  "GenericArguments":null,
-                  "Properties":[  
-                     {  
-                        "Id":"Ok",
-                        "Name":null,
-                        "Description":null,
-                        "Order":0,
-                        "IsKey":false,
-                        "FixedSize":0,
-                        "SdsType":null,
-                        "Value":0
-                     },
-                     {  
-                        "Id":"Warning",
-                        "Name":null,
-                        "Description":null,
-                        "Order":0,
-                        "IsKey":false,
-                        "FixedSize":0,
-                        "SdsType":null,
-                        "Value":1
-                     },
-                     {  
-                        "Id":"Alarm",
-                        "Name":null,
-                        "Description":null,
-                        "Order":0,
-                        "IsKey":false,
-                        "FixedSize":0,
-                        "SdsType":null,
-                        "Value":2
-                     }
-                  ],
-                  "BaseType":null,
-                  "DerivedTypes":null
-               },
-               "Value":null
-            },
-            {  
-               "Id":"Measurement",
-               "Name":"Measurement",
-               "Description":null,
-               "Order":0,
-               "IsKey":false,
-               "FixedSize":0,
-               "SdsType":{  
-                  "Id":"0f4f147f-4369-3388-8e4b-71e20c96f9ad",
-                  "Name":"Double",
-                  "Description":null,
-                  "SdsTypeCode":14,
-                  "IsGenericType":false,
-                  "IsReferenceType":false,
-                  "GenericArguments":null,
-                  "Properties":null,
-                  "BaseType":null,
-                  "DerivedTypes":null
-               },
-               "Value":null
+Sample SdsType content:
+```json
+{
+    "Id": "Simple",
+    "Name": "Simple",
+    "SdsTypeCode": 1,
+    "Properties": [
+        {
+            "Id": "Time",
+            "Name": "Time",
+            "IsKey": true,
+            "SdsType": {
+                "Id": "19a87a76-614a-385b-ba48-6f8b30ff6ab2",
+                "Name": "DateTime",
+                "SdsTypeCode": 16
             }
-         ],
-         "BaseType":null,
-         "DerivedTypes":null
-      }
-
+        },
+        {
+            "Id": "State",
+            "Name": "State",
+            "SdsType": {
+                "Id": "e20bdd7e-590b-3372-ab39-ff61950fb4f3",
+                "Name": "State",
+                "SdsTypeCode": 609,
+                "Properties": [
+                    {
+                        "Id": "Ok",
+                        "Value": 0
+                    },
+                    {
+                        "Id": "Warning",
+                        "Value": 1
+                    },
+                    {
+                        "Id": "Aalrm",
+                        "Value": 2
+                    }
+                ]
+            }
+        },
+        {
+            "Id": "Measurement",
+            "Name": "Measurement",
+            "SdsType": {
+                "Id": "6fecef77-20b1-37ae-aa3b-e6bb838d5a86",
+                "Name": "Double",
+                "SdsTypeCode": 14
+            }
+        }
+    ]
+}
+```json
 
 Response
 
 The response includes a status code and a response body.
 
 Response body
-
-      HTTP/1.1 200
-      Content-Type: application/json
-
-      {  
-         "Id":"Simple",
-         "Name":"Simple",
-         "Description":"Basic sample type",
-         "SdsTypeCode":1,
-         "Properties":[  
-            {  
-               "Id":"Time",
-               "Name":"Time",
-               "IsKey":true,
-               "SdsType":{  
-                  "$id":"596",
-                  "Id":"c48bfdf5-a271-384b-bf13-bd21d931c1bf",
-                  "Name":"DateTime",
-                  "SdsTypeCode":16
-               }
+```json
+HTTP/1.1 201
+Accept: application/json
+Accept-Verbosity: verbose
+{
+    "Id": "Simple",
+    "Name": "Simple",
+    "Description": null,
+    "SdsTypeCode": 1,
+    "IsGenericType": false,
+    "IsReferenceType": false,
+    "GenericArguments": null,
+    "Properties": [
+        {
+            "Id": "Time",
+            "Name": "Time",
+            "Description": null,
+            "Order": 0,
+            "IsKey": true,
+            "FixedSize": 0,
+            "SdsType": {
+                "Id": "19a87a76-614a-385b-ba48-6f8b30ff6ab2",
+                "Name": "DateTime",
+                "Description": null,
+                "SdsTypeCode": 16,
+                "IsGenericType": false,
+                "IsReferenceType": false,
+                "GenericArguments": null,
+                "Properties": null,
+                "BaseType": null,
+                "DerivedTypes": null,
+                "InterpolationMode": 0,
+                "ExtrapolationMode": 0
             },
-            {  
-               "Id":"State",
-               "Name":"State",
-               "SdsType":{  
-                  "$id":"598",
-                  "Id":"ba5d20e1-cd21-3ad0-99f3-c3a3b0146aa1",
-                  "Name":"State",
-                  "SdsTypeCode":609,
-                  "Properties":[  
-                     {  
-                        "Id":"Ok",
-                        "Value":0
-                     },
-                     {  
-                        "Id":"Warning",
-                        "Value":1
-                     },
-                     {  
-                        "Id":"Alarm",
-                        "Value":2
-                     }
-                  ]
-               }
+            "Value": null,
+            "Uom": null,
+            "InterpolationMode": null
+        },
+        {
+            "Id": "State",
+            "Name": "State",
+            "Description": null,
+            "Order": 0,
+            "IsKey": false,
+            "FixedSize": 0,
+            "SdsType": {
+                "Id": "e20bdd7e-590b-3372-ab39-ff61950fb4f3",
+                "Name": "State",
+                "Description": null,
+                "SdsTypeCode": 609,
+                "IsGenericType": false,
+                "IsReferenceType": false,
+                "GenericArguments": null,
+                "Properties": [
+                    {
+                        "Id": "Ok",
+                        "Name": null,
+                        "Description": null,
+                        "Order": 0,
+                        "IsKey": false,
+                        "FixedSize": 0,
+                        "SdsType": null,
+                        "Value": 0,
+                        "Uom": null,
+                        "InterpolationMode": null
+                    },
+                    {
+                        "Id": "Warning",
+                        "Name": null,
+                        "Description": null,
+                        "Order": 0,
+                        "IsKey": false,
+                        "FixedSize": 0,
+                        "SdsType": null,
+                        "Value": 1,
+                        "Uom": null,
+                        "InterpolationMode": null
+                    },
+                    {
+                        "Id": "Aalrm",
+                        "Name": null,
+                        "Description": null,
+                        "Order": 0,
+                        "IsKey": false,
+                        "FixedSize": 0,
+                        "SdsType": null,
+                        "Value": 2,
+                        "Uom": null,
+                        "InterpolationMode": null
+                    }
+                ],
+                "BaseType": null,
+                "DerivedTypes": null,
+                "InterpolationMode": 0,
+                "ExtrapolationMode": 0
             },
-            {  
-               "Id":"Measurement",
-               "Name":"Measurement",
-               "SdsType":{  
-                  "Id":"0f4f147f-4369-3388-8e4b-71e20c96f9ad",
-                  "Name":"Double",
-                  "SdsTypeCode":14
-               }
-            }
-         ]
-      }
-
-
-
+            "Value": null,
+            "Uom": null,
+            "InterpolationMode": null
+        },
+        {
+            "Id": "Measurement",
+            "Name": "Measurement",
+            "Description": null,
+            "Order": 0,
+            "IsKey": false,
+            "FixedSize": 0,
+            "SdsType": {
+                "Id": "6fecef77-20b1-37ae-aa3b-e6bb838d5a86",
+                "Name": "Double",
+                "Description": null,
+                "SdsTypeCode": 14,
+                "IsGenericType": false,
+                "IsReferenceType": false,
+                "GenericArguments": null,
+                "Properties": null,
+                "BaseType": null,
+                "DerivedTypes": null,
+                "InterpolationMode": 0,
+                "ExtrapolationMode": 0
+            },
+            "Value": null,
+            "Uom": null,
+            "InterpolationMode": null
+        }
+    ],
+    "BaseType": null,
+    "DerivedTypes": null,
+    "InterpolationMode": 0,
+    "ExtrapolationMode": 0
+}
+```
 
 **.NET Library**
+```csharp
+    Task<SdsType> GetOrCreateTypeAsync(SdsType SdsType);
+```
 
+If a type with a matching identifier already exists and it matches the type in the request body, 
+the client redirects a GET to the Location header. If the existing type does not match the type
+in the request body, a Conflict error response is returned and the client library method throws an exception. 
 
-  ``Task<SdsType> GetOrCreateTypeAsync(SdsType SdsType);``
-
-  If a type with a matching identifier already exists and it matches the type in the request body, 
-  the client redirects a GET to the Location header. If the existing type does not match the type
-  in the request body, a Conflict error response is returned and the client library method throws an exception. 
-
-  The SDS .NET Libraries manage redirects.
-
-**Security**
-
-  Allowed by administrator accounts
+The .NET SDS Client Libraries manage redirects.
 
 
 ***********************
-
 
 
 ``Create or Update Type``
@@ -1274,7 +1256,6 @@ they are defined.
 
         PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
 
-
 **Parameters**
 
 ``string tenantId``  
@@ -1286,29 +1267,19 @@ The namespace identifier
 ``string typeId``  
 The type identifier
 
+**Response**  
+The response includes a status code and a response body.
 
-**Response**
-
-  The response includes a status code and a response body.
-
-**Response body**
-
-  The content is set to true on success.
+**Response body**  
+The content is set to true on success.
 
 
 **.NET Library**
-
-      Task CreateOrUpdateTypeAsync(SdsType SdsType)
-
-
-**Security**
-
-  Allowed by administrator accounts
-
+```csharp
+    Task CreateOrUpdateTypeAsync(SdsType SdsType)
+```
 
 ***********************
-
-
 
 ``Delete Type``
 ------------
@@ -1317,7 +1288,7 @@ Deletes a type from the specified tenant and namespace. Note that a type cannot 
 
 **Request**
 
-        DELETE	api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
+        DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
 
 
 **Parameters**
@@ -1332,16 +1303,12 @@ The namespace identifier
 The type identifier
 
 
-**Response**
-
-  The response includes a status code.
+**Response**  
+The response includes a status code.
 
 
 **.NET Library**
+```csharp
+    Task DeleteTypeAsync(string typeId);
+```
 
-      Task DeleteTypeAsync(string typeId);
-
-
-**Security**
-
-  Allowed by administrator accounts

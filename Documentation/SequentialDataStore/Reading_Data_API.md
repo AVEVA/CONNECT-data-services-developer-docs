@@ -166,7 +166,7 @@ The index
 ``string searchMode``  
 The [SdsSearchMode](xref:sdsReadingData#sdssearchmode), the default is ``exact``
 
-**Response**
+**Response**  
 The response includes a status code and a response body containing a serialized collection with one event. 
 
 Depending on the request `index` and `searchMode`, it is possible to have an empty collection returned.
@@ -258,7 +258,7 @@ The stream identifier
 ``string filter``  
 The filter expression (see [Filter expressions](xref:sdsFilterExpressions))
 
-**Response**
+**Response**  
 The response includes a status code and a response body containing a serialized collection of events.
 
 **Example**  
@@ -338,7 +338,7 @@ Optional SdsBoundaryType specifies the handling of events at or near startIndex
 ``string filter``  
 Optional filter expression
 
-**Response**
+**Response**  
 The response includes a status code and a response body containing a serialized collection of events.
 
 **Example**  
@@ -850,7 +850,7 @@ Returns events at the specified indexes. If no stored event exists at a specifie
 **Request**  
 
       GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
-        Interpolated?index={index}[&index={index}...]
+          Interpolated?index={index}[&index={index}...]
 
 **Parameters**  
 ``string tenantId``  
@@ -874,8 +874,8 @@ Depending on the specified indexes and read characteristics of the stream, it is
 Consider a stream of type ``Simple`` with the default ``InterpolationMode`` of ``Continuous`` and 
 ``ExtrapolationMode`` of ``All``. In the following request, the specified index matches an existing stored event:
 
-    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data/
-      Interpolated?index=2017-11-23T13:00:00Z
+      GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data/
+          Interpolated?index=2017-11-23T13:00:00Z
 
 The response will contain the event stored at the specified index.
 
@@ -897,7 +897,7 @@ Accept-Verbosity: verbose
 The following request specifies an index for which no stored event exists:
 
       GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data/
-        Interpolated?index=2017-11-23T13:30:00Z
+          Interpolated?index=2017-11-23T13:30:00Z
 
 Because the index is a valid type for interpolation and the stream has a ``InterpolationMode`` of ``Continuous``, 
 this request receives a response with an event interpolated at the specified index:
@@ -1690,8 +1690,8 @@ Accept-Verbosity: verbose
 ```
 
 
-<a name="getjoin"></a>
-### POST Requests
+<a name="postjoin"></a>
+### POST Request
 
         POST api/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
             ?joinMode={joinMode}
@@ -1707,7 +1707,7 @@ The namespace identifier
 ``SdsJoinMode joinMode``  
 Type of join, i.e. inner, outer, etc.
 
-**Reqeust Body**  
+**Request Body**  
 Read options specific to each stream.
 
 **Response**  
@@ -1722,27 +1722,29 @@ where in the request body, different start indexes and end indexes are specified
 
 ```json
 [  
-   {  
-		"StreamId": "Simple1",
-		"Options": {
-			"StartIndex": "2017-11-23T11:00:00Z",
-			"EndIndex": "2017-11-23T14:00:00Z",
-			"StartBoundaryType": "Exact",
-			"EndBoundaryType": "Exact",
-			"Count": 100,
-			"Filter": ""
-		}
-	},
+    {  
+        "StreamId": "Simple1",
+        "Options": 
 	{
-		"StreamId": "Simple2",
-		"Options": {
-			"StartIndex": "2017-11-23T15:00:00Z",
-			"EndIndex": "2017-11-23T17:00:00Z",
-			"StartBoundaryType": "Exact",
-			"EndBoundaryType": "Exact",
-			"Count": 100,
-			"Filter": ""
-		}
+           "StartIndex": "2017-11-23T11:00:00Z",
+	   "EndIndex": "2017-11-23T14:00:00Z",
+	   "StartBoundaryType": "Exact",
+	   "EndBoundaryType": "Exact",
+	   "Count": 100,
+	   "Filter": ""
+        }
+    },
+    {
+        "StreamId": "Simple2",
+        "Options": 
+	{
+           "StartIndex": "2017-11-23T15:00:00Z",
+	   "EndIndex": "2017-11-23T17:00:00Z",
+	   "StartBoundaryType": "Exact",
+	   "EndBoundaryType": "Exact",
+	   "Count": 100,
+	   "Filter": ""
+        }
     }
 ] 
 ```

@@ -1088,7 +1088,7 @@ Sample SdsType content:
         }
     ]
 }
-```json
+```
 
 Response
 

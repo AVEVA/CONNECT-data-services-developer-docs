@@ -30,7 +30,6 @@ easily obtain needed information.
      - [User Roles](xref:AccountUserRole)
      - [ServiceBlog](xref:AccountServiceBlog)
    - [Identity](xref:identityOverview)
-     - [AAD Tenant Information](xref:identityAzureActiveDirectoryTenantInformation)
      - [Client](xref:identityClient)
      - [Client Credential Client](xref:identityClientCredentialClient)
      - [Hybrid Client](xref:identityHybridClient)

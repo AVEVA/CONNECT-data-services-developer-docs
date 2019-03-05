@@ -61,7 +61,7 @@ New ClientCredentialClientCreateDto object
 ```json
 {
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-03-05T12:06:00.0861076-08:00",
+  "SecretExpirationDate": "2019-03-05T12:43:53.8261485-08:00",
   "RoleIds": [
     "00000000-0000-0000-0000-000000000000",
     "00000000-0000-0000-0000-000000000000"
@@ -93,7 +93,7 @@ Created
   "ClientSecret": "ClientSecret",
   "SecretId": "SecretId",
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-03-05T12:06:00.0906246-08:00",
+  "SecretExpirationDate": "2019-03-05T12:43:53.8283904-08:00",
   "RoleIds": [
     "00000000-0000-0000-0000-000000000000",
     "00000000-0000-0000-0000-000000000000"

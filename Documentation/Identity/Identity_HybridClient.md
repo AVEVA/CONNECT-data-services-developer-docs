@@ -74,7 +74,7 @@ New HybridClientCreateDto object
 ```json
 {
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-03-05T12:05:59.9623404-08:00",
+  "SecretExpirationDate": "2019-03-05T12:43:53.7472335-08:00",
   "AllowOfflineAccess": false,
   "AllowAccessTokensViaBrowser": false,
   "RedirectUris": [
@@ -114,7 +114,7 @@ Created
   "ClientSecret": "ClientSecret",
   "SecretId": "SecretId",
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-03-05T12:05:59.9672069-08:00",
+  "SecretExpirationDate": "2019-03-05T12:43:53.7518721-08:00",
   "AllowOfflineAccess": false,
   "AllowAccessTokensViaBrowser": false,
   "RedirectUris": [

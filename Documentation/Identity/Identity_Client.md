@@ -167,7 +167,7 @@ Client or Tenant not found
 
 #### 400
 
-
+Bad Request
 
 #### 500
 

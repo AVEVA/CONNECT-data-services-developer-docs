@@ -13,10 +13,10 @@ For HTTP requests and responses, the ImplicitClientDto object has the following 
 Property | Type | Descriptions
  --- | --- | ---
 AllowedCorsOrigins | string[] | If specified, will be used by the default CORS policy service implementations to build a CORS policy for JavaScript clients.
-RedirectUris | string[] | Specifies the allowed URIs to return tokens or authorization codes to
+RedirectUris | string[] | Specifies the allowed URIs to return tokens or authorization codes to.
 PostLogoutRedirectUris | string[] | Specifies allowed URIs to redirect to after logout.
-ClientUri | string | URI to further information about client (used on consent screen)
-LogoUri | string | URI to client logo (used on consent screen)
+ClientUri | string | URI to a page with information about client (used on consent screen).
+LogoUri | string | URI to client logo (used on consent screen).
 ClientId | string | Client ID for this Client
 Name | string | Name of ClientDto.
 Enabled | optional: bool | Is ClientDto Enabled

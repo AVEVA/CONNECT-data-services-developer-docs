@@ -12,12 +12,12 @@ For HTTP requests and responses, the HybridClientDto object has the following pr
 
 Property | Type | Descriptions
  --- | --- | ---
-AllowOfflineAccess | optional: bool | Specifies whether this client can request refresh tokens, by providing the offline_access copes.
-AllowAccessTokensViaBrowser | optional: bool | Specifies whether this HybridClientDto is allowed to receive access tokens via the browser. This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow HybridClientDto that is supposed to use code id_token to add the token response type and thus leaking the token to the browser).
-RedirectUris | string[] | Specifies the allowed URIs to return tokens or authorization codes to
+AllowOfflineAccess | optional: bool | Specifies whether this client can request refresh tokens, by providing the *offline_access* scopes.
+AllowAccessTokensViaBrowser | optional: bool | Specifies whether this HybridClientDto is allowed to receive access tokens via the browser. This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow client that is supposed to use code *id_token* to add the *token* response type, thus leaking the token to the browser).
+RedirectUris | string[] | Specifies the allowed URIs to return tokens or authorization codes to.
 PostLogoutRedirectUris | string[] | Specifies allowed URIs to redirect to after logout.
-ClientUri | string | URI to further information about client (used on consent screen)
-LogoUri | string | URI to client logo (used on consent screen)
+ClientUri | string | URI to a page with information about client (used on consent screen).
+LogoUri | string | URI to client logo (used on consent screen).
 ClientId | string | Client ID for this Client
 Name | string | Name of ClientDto.
 Enabled | optional: bool | Is ClientDto Enabled
@@ -74,7 +74,7 @@ New HybridClientCreateDto object
 ```json
 {
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-03-05T12:43:53.7472335-08:00",
+  "SecretExpirationDate": "2019-03-06T11:39:54.711037-08:00",
   "AllowOfflineAccess": false,
   "AllowAccessTokensViaBrowser": false,
   "RedirectUris": [
@@ -114,7 +114,7 @@ Created
   "ClientSecret": "ClientSecret",
   "SecretId": "SecretId",
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-03-05T12:43:53.7518721-08:00",
+  "SecretExpirationDate": "2019-03-06T11:39:54.7151333-08:00",
   "AllowOfflineAccess": false,
   "AllowAccessTokensViaBrowser": false,
   "RedirectUris": [

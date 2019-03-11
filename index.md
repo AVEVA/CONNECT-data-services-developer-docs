@@ -60,7 +60,6 @@ easily obtain needed information.
    - [Data Ingress and OSIsoft Message Format](xref:dataIngress)
      - [Data Ingress to Cloud Services Using OMF](xref:omfIngressToOCS)
      - [Using OMF with Cloud Services](xref:omfIngressSpecification)
-     - [Publishers](xref:omfIngressPublishers)
      - [Topics](xref:omfIngressTopics)
      - [Subscriptions](xref:omfIngressSubsctriptions)
    - [Data Views (Preview)](xref:DataViewsOverview)

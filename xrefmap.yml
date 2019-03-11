@@ -40,9 +40,6 @@ references:
 - uid: DataViewsOverview
   name: Data Views (Preview)
   href: Documentation/DataViews/DataViews_Overview.html
-- uid: identityAzureActiveDirectoryTenantInformation
-  name: AzureActiveDirectoryTenantInformation
-  href: Documentation/Identity/Identity_AzureActiveDirectoryTenantInformation.html
 - uid: identityClient
   name: Client
   href: Documentation/Identity/Identity_Client.html

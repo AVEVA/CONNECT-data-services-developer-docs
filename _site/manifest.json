@@ -30,19 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/DataIngress/Data_Ingress.html",
-          "hash": "huacZezzDKTU3HNwP66/+Q=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/DataIngress/OMF_Ingress_Publishers.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/DataIngress/OMF_Ingress_Publishers.html",
-          "hash": "/NwN88Z6Qv15SOfHTaqi6A=="
+          "hash": "Ks+EYXCArkWV8CWl+t65JQ=="
         }
       },
       "is_incremental": false,
@@ -54,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/DataIngress/OMF_Ingress_Specification.html",
-          "hash": "9ayo2lfWWNMMl4LrtQLcxQ=="
+          "hash": "CHMOs8s9TcoQxUiDvNUAow=="
         }
       },
       "is_incremental": false,
@@ -78,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/DataIngress/OMF_Ingress_Topics.html",
-          "hash": "2kiEjh6HXaOxIfTjFBUgIA=="
+          "hash": "B6EMjzqP7qbWACSqHN/1lQ=="
         }
       },
       "is_incremental": false,
@@ -90,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/DataIngress/OMF_Ingress_to_OCS.html",
-          "hash": "MXts3eOXBYRO8fb7UOl+9A=="
+          "hash": "Xv+2HESE87BZA6HWKCsuhQ=="
         }
       },
       "is_incremental": false,
@@ -740,7 +728,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/samples.html",
-          "hash": "2K84Wwg/PeCGBzhd88L2nQ=="
+          "hash": "iofRCtN5xnz3bXpKiWc2FQ=="
         }
       },
       "is_incremental": false,
@@ -764,7 +752,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/toc.html",
-          "hash": "OlzYhVSOAPT5YB4VmzFnKw=="
+          "hash": "CTj5FQpcrNdvnPaezZAhkA=="
         }
       },
       "is_incremental": false,
@@ -776,7 +764,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "SmsCZgNVW8R5RD04fkXESA=="
+          "hash": "e6SopcHN90OtOA5Dvk1bVw=="
         }
       },
       "is_incremental": false,

@@ -76,9 +76,6 @@ references:
 - uid: ManagementOverview
   name: Account Management
   href: Documentation/Management/Management_Overview.html
-- uid: omfIngressPublishers
-  name: Publishers
-  href: Documentation/DataIngress/OMF_Ingress_Publishers.html
 - uid: omfIngressSpecification
   name: Using OMF with Cloud Services
   href: Documentation/DataIngress/OMF_Ingress_Specification.html

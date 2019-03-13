@@ -36,7 +36,7 @@ Returns an IdentityProvider object
 
 ### Request
 
-`GET api/v1-preview/IdentityProvider/{identityProviderId}`
+`GET api/v1-preview/IdentityProviders/{identityProviderId}`
 
 ### Parameters
 
@@ -95,7 +95,7 @@ Get all identity providers for a tenant
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/IdentityProvider/`
+`GET api/v1-preview/Tenants/{tenantId}/IdentityProviders`
 
 ### Parameters
 
@@ -189,7 +189,7 @@ Get an identity provider
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/IdentityProvider/{identityProviderId}`
+`GET api/v1-preview/Tenants/{tenantId}/IdentityProviders/{identityProviderId}`
 
 ### Parameters
 
@@ -255,7 +255,7 @@ Add an existing identity provider to a tenant
 
 ### Request
 
-`POST api/v1-preview/Tenants/{tenantId}/IdentityProvider/{identityProviderId}`
+`POST api/v1-preview/Tenants/{tenantId}/IdentityProviders/{identityProviderId}`
 
 ### Parameters
 
@@ -325,7 +325,7 @@ Remove an identity provider from a tenant
 
 ### Request
 
-`DELETE api/v1-preview/Tenants/{tenantId}/IdentityProvider/{identityProviderId}`
+`DELETE api/v1-preview/Tenants/{tenantId}/IdentityProviders/{identityProviderId}`
 
 ### Parameters
 

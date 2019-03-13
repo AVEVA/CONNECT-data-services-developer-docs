@@ -12,23 +12,25 @@ For HTTP requests and responses, the InvitationDto object has the following prop
 
 Property | Type | Descriptions
  --- | --- | ---
-Id | string | Unique invitation id.
+Id | string | Unique Invitation Id.
 Issued | DateTime | Invitation issuing timestamp.
 Expires | DateTime | Invitation expiration timestamp.
-State | InvitationStates | Invitation state
-TenantId | Guid | ID of tenant the invitation belongs to.
-UserId | Guid | ID of user whom the invitation was issued to.
+State | InvitationStates | Invitation state.
+TenantId | Guid | ID of the Tenant the invitation belongs to.
+UserId | Guid | ID of the User whom the invitation was issued to.
+IdentityProviderId | optional: Guid | ID of the Identity Provider that must be used to accept the invitation.
 
 ### Serialized Model
 
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-03-06T11:39:54.5851986-08:00",
-  "Expires": "2019-03-06T11:39:54.5852039-08:00",
+  "Issued": "2019-03-13T13:35:43.8020311-07:00",
+  "Expires": "2019-03-13T13:35:43.8020346-07:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
-  "UserId": "00000000-0000-0000-0000-000000000000"
+  "UserId": "00000000-0000-0000-0000-000000000000",
+  "IdentityProviderId": "00000000-0000-0000-0000-000000000000"
 }
 ```
 
@@ -40,7 +42,7 @@ Get an Invitation using its id in a tenant
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/Invitation/{invitationId}`
+`GET api/v1-preview/Tenants/{tenantId}/Invitations/{invitationId}`
 
 ### Parameters
 
@@ -77,11 +79,12 @@ Success
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-03-06T11:39:54.5905483-08:00",
-  "Expires": "2019-03-06T11:39:54.5905536-08:00",
+  "Issued": "2019-03-13T13:35:43.8078213-07:00",
+  "Expires": "2019-03-13T13:35:43.8078245-07:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
-  "UserId": "00000000-0000-0000-0000-000000000000"
+  "UserId": "00000000-0000-0000-0000-000000000000",
+  "IdentityProviderId": "00000000-0000-0000-0000-000000000000"
 }
 ```
 
@@ -108,7 +111,7 @@ Get all invitations for a tenant
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/Invitation/`
+`GET api/v1-preview/Tenants/{tenantId}/Invitations`
 
 ### Parameters
 
@@ -175,19 +178,21 @@ Success
 [
   {
     "Id": "Id",
-    "Issued": "2019-03-06T11:39:54.5914111-08:00",
-    "Expires": "2019-03-06T11:39:54.5914143-08:00",
+    "Issued": "2019-03-13T13:35:43.8082938-07:00",
+    "Expires": "2019-03-13T13:35:43.8082956-07:00",
     "State": 0,
     "TenantId": "00000000-0000-0000-0000-000000000000",
-    "UserId": "00000000-0000-0000-0000-000000000000"
+    "UserId": "00000000-0000-0000-0000-000000000000",
+    "IdentityProviderId": "00000000-0000-0000-0000-000000000000"
   },
   {
     "Id": "Id",
-    "Issued": "2019-03-06T11:39:54.5914298-08:00",
-    "Expires": "2019-03-06T11:39:54.5914315-08:00",
+    "Issued": "2019-03-13T13:35:43.8083072-07:00",
+    "Expires": "2019-03-13T13:35:43.8083079-07:00",
     "State": 0,
     "TenantId": "00000000-0000-0000-0000-000000000000",
-    "UserId": "00000000-0000-0000-0000-000000000000"
+    "UserId": "00000000-0000-0000-0000-000000000000",
+    "IdentityProviderId": "00000000-0000-0000-0000-000000000000"
   }
 ]
 ```
@@ -219,7 +224,7 @@ Update an invitation
 
 ### Request
 
-`PUT api/v1-preview/Tenants/{tenantId}/Invitation/{invitationId}`
+`PUT api/v1-preview/Tenants/{tenantId}/Invitations/{invitationId}`
 
 ### Parameters
 
@@ -247,9 +252,10 @@ New InvitationUpdateDto object
 
 ```json
 {
-  "ExpiresDateTime": "2019-03-06T11:39:54.5922045-08:00",
+  "ExpiresDateTime": "2019-03-13T13:35:43.8087851-07:00",
   "State": 0,
-  "SendInvitation": false
+  "SendInvitation": false,
+  "IdentityProviderId": "00000000-0000-0000-0000-000000000000"
 }
 ```
 
@@ -272,11 +278,12 @@ Success
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-03-06T11:39:54.5948915-08:00",
-  "Expires": "2019-03-06T11:39:54.5948964-08:00",
+  "Issued": "2019-03-13T13:35:43.811625-07:00",
+  "Expires": "2019-03-13T13:35:43.8116293-07:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
-  "UserId": "00000000-0000-0000-0000-000000000000"
+  "UserId": "00000000-0000-0000-0000-000000000000",
+  "IdentityProviderId": "00000000-0000-0000-0000-000000000000"
 }
 ```
 
@@ -303,7 +310,7 @@ Delete an invitation
 
 ### Request
 
-`DELETE api/v1-preview/Tenants/{tenantId}/Invitation/{invitationId}`
+`DELETE api/v1-preview/Tenants/{tenantId}/Invitations/{invitationId}`
 
 ### Parameters
 

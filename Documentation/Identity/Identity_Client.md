@@ -18,7 +18,7 @@ This method is obsolete, please use the following instead:
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/Client/`
+`GET api/v1-preview/Tenants/{tenantId}/Clients`
 
 ### Parameters
 
@@ -81,7 +81,11 @@ Success
     ],
     "ClientId": "ClientId",
     "Name": "Name",
-    "Enabled": false
+    "Enabled": false,
+    "Tags": [
+      "String",
+      "String"
+    ]
   },
   {
     "RoleIds": [
@@ -90,7 +94,11 @@ Success
     ],
     "ClientId": "ClientId",
     "Name": "Name",
-    "Enabled": false
+    "Enabled": false,
+    "Tags": [
+      "String",
+      "String"
+    ]
   }
 ]
 ```
@@ -123,7 +131,7 @@ This method is obsolete, please use the following instead:
 
 ### Request
 
-`DELETE api/v1-preview/Tenants/{tenantId}/Client/{clientId}`
+`DELETE api/v1-preview/Tenants/{tenantId}/Clients/{clientId}`
 
 ### Parameters
 

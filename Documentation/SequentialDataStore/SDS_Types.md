@@ -214,7 +214,7 @@ indexes that occur between data in a stream:
 |Version                    |No event is returned                           |         |
 |IDictionary or IEnumerable |No event is returned                           |Dictionary, Array, List, and so on. |
 
-When extreme values are involved in an interpolation (for example
+*When extreme values are involved in an interpolation (for example
 Decimal.MaxValue) the call might result in a BadRequest exception.
 
 If the InterpolationMode is not assigned, the events are interpolated in the default manner, unless the interpolation 

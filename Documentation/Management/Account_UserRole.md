@@ -4,11 +4,10 @@ uid: AccountUserRole
 
 # User Roles
 
-User `Roles` authorize API requests made by users to various OCS features. Users can be assigned more than one `Role`, but all users have the Account Member role.
-
-The following are currently available User `Roles`:
+User `Roles` authorize API requests made by users to various OCS features. Users can be assigned more than one `Role`, but all users have the Account Member role. The following are currently available User `Roles`:
 - Account Administrator: Can add, edit, and remove users. Can also edit the permissions of existing users.
 - Account Member: Can log in and access the OCS portal.
+
 
 ## Properties
 
@@ -28,7 +27,7 @@ For HTTP requests and responses, the UserRole object has the following propertie
 ```
 ***
 
-## `GetRolesForUser()`
+## `Get Roles for User`
 
 Retrieves all `Roles` for the specified user.
 
@@ -36,28 +35,33 @@ Retrieves all `Roles` for the specified user.
 
 `GET api/v1-preview/Tenants/{tenantId}/Users/{userId}/Roles`
 
+
 ### Parameters
 
 ```csharp
 [Required]
+[FromRoute]
 string tenantId
 ```
 
 The identifier of the account in which the user belongs.
 ```csharp
 [Required]
+[FromRoute]
 string userId
 ```
 
 The identifier of the user whose roles will be retrieved.
 ```csharp
 [Required]
+[FromRoute]
 string skip
 ```
 
 Number of `Roles` to ignore.
 ```csharp
 [Required]
+[FromRoute]
 string count
 ```
 
@@ -78,7 +82,8 @@ Authorized for Account Administrators of the specified account and an Account Me
 
 
 ***
-## `AddAccountRoleToUser()`
+
+## `Add Account Role to User`
 
 Adds a `Role` to the specified user.
 
@@ -86,22 +91,26 @@ Adds a `Role` to the specified user.
 
 `PUT api/v1-preview/Tenants/{tenantId}/Users/{userId}/Roles/{roleId}`
 
+
 ### Parameters
 
 ```csharp
 [Required]
+[FromRoute]
 string tenantId
 ```
 
 The identifier for the account in which the user belongs.
 ```csharp
 [Required]
+[FromRoute]
 string userId
 ```
 
 The identifier of the user who will be given the `Role`.
 ```csharp
 [Required]
+[FromRoute]
 string roleId
 ```
 
@@ -123,7 +132,8 @@ Authorized for Account Administrators of the specified account.
 
 
 ***
-## `RemoveRoleFromUser()`
+
+## `Remove Role from User`
 
 Removes a `Role` from a user.
 
@@ -131,22 +141,26 @@ Removes a `Role` from a user.
 
 `DELETE api/v1-preview/Tenants/{tenantId}/Users/{userId}/Roles/{roleId}`
 
+
 ### Parameters
 
 ```csharp
 [Required]
+[FromRoute]
 string tenantId
 ```
 
 The identifier for the account in which the user belongs.
 ```csharp
 [Required]
+[FromRoute]
 string userId
 ```
 
 The identifier of the user whose `Role` will be removed.
 ```csharp
 [Required]
+[FromRoute]
 string roleId
 ```
 
@@ -168,7 +182,8 @@ Authorized for Account Administrators of the specified account.
 
 
 ***
-## `ReplaceUserRoles()`
+
+## `Replace User Roles`
 
 Replaces the `Roles` of a user with a new list of roles.
 
@@ -176,16 +191,19 @@ Replaces the `Roles` of a user with a new list of roles.
 
 `PUT api/v1-preview/Tenants/{tenantId}/Users/{userId}/Roles`
 
+
 ### Parameters
 
 ```csharp
 [Required]
+[FromRoute]
 string tenantId
 ```
 
 The identifier for the account in which the user belongs.
 ```csharp
 [Required]
+[FromRoute]
 string userId
 ```
 
@@ -214,3 +232,4 @@ Authorized for Account Administrators of the specified account.
 
 
 ***
+

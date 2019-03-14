@@ -4,14 +4,10 @@ uid: AccountRole
 
 # Roles
 
-A `Role` is an entity that is used to manage access within an OSIsoft Cloud Services (OCS) account. By default, users have the Account Member role.
-
-There are five predefined `Roles` for OCS accounts. Check the user or client `Role` APIs for more information.
+A `Role` is an entity that is used to manage access within an OSIsoft Cloud Services (OCS) account. By default, users have the Account Member role. There are two predefined Roles for OCS accounts. Check the user or client role APIs for more information.
 - Account Administrator
-- Account Contributor
-- Account Data Steward
-- Account Viewer
 - Account Member
+
 
 ## Properties
 
@@ -41,7 +37,7 @@ For HTTP requests and responses, the Role object has the following properties an
 ```
 ***
 
-## `GetAccountRole()`
+## `Get Account Role`
 
 Retrieves an account `Role` based on the specified account Id and role Id.
 
@@ -49,16 +45,19 @@ Retrieves an account `Role` based on the specified account Id and role Id.
 
 `GET api/v1-preview/Tenants/{tenantId}/Roles/{roleId}`
 
+
 ### Parameters
 
 ```csharp
 [Required]
+[FromRoute]
 string tenantId
 ```
 
 The identifier of the account to access.
 ```csharp
 [Required]
+[FromRoute]
 string roleId
 ```
 
@@ -79,7 +78,8 @@ Authorized for Account Administrators of the specified account.
 
 
 ***
-## `GetAccountRoles()`
+
+## `Get Account Roles`
 
 Retrieves all account `Roles` for the specified Account Id.
 
@@ -87,22 +87,26 @@ Retrieves all account `Roles` for the specified Account Id.
 
 `GET api/v1-preview/Tenants/{tenantId}/Roles`
 
+
 ### Parameters
 
 ```csharp
 [Required]
+[FromRoute]
 string tenantId
 ```
 
 The identifier of the account to access.
 ```csharp
 [Required]
+[FromRoute]
 string skip
 ```
 
 Number of `Roles` to ignore.
 ```csharp
 [Required]
+[FromRoute]
 string count
 ```
 
@@ -121,7 +125,8 @@ Authorized for Account Members of the specified account.
 
 
 ***
-## `CreateAccountRole()`
+
+## `Create Account Role`
 
 Creates a new account `Role`.
 
@@ -129,10 +134,12 @@ Creates a new account `Role`.
 
 `POST api/v1-preview/Tenants/{tenantId}/Roles`
 
+
 ### Parameters
 
 ```csharp
 [Required]
+[FromRoute]
 string tenantId
 ```
 
@@ -160,7 +167,8 @@ Authorized for Account Administrators of the specified account.
 
 
 ***
-## `UpdateAccountRole()`
+
+## `Update Account Role`
 
 Updates a `Role` by its Role Id.
 
@@ -168,16 +176,19 @@ Updates a `Role` by its Role Id.
 
 `PUT api/v1-preview/Tenants/{tenantId}/Roles/{roleId}`
 
+
 ### Parameters
 
 ```csharp
 [Required]
+[FromRoute]
 string tenantId
 ```
 
 The identifier of the account to access.
 ```csharp
 [Required]
+[FromRoute]
 string roleId
 ```
 
@@ -205,7 +216,8 @@ Authorized for Account Administrators of the specified account.
 
 
 ***
-## `DeleteAccountRole()`
+
+## `Delete Account Role`
 
 Deletes any Account scoped, non built-in `Role` by its Role Id.
 
@@ -213,16 +225,19 @@ Deletes any Account scoped, non built-in `Role` by its Role Id.
 
 `DELETE api/v1-preview/Tenants/{tenantId}/Roles/{roleId}`
 
+
 ### Parameters
 
 ```csharp
 [Required]
+[FromRoute]
 string tenantId
 ```
 
 The identifier of the account to access.
 ```csharp
 [Required]
+[FromRoute]
 string roleId
 ```
 
@@ -243,3 +258,4 @@ Authorized for Account Administrators of the specified account.
 
 
 ***
+

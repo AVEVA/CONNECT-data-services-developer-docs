@@ -2,7 +2,7 @@
 uid: AccountTenant
 ---
 
-# Tenant
+# Tenants
 
 APIs to manage an OCS Customer Tenant Account.
 
@@ -19,7 +19,6 @@ For HTTP requests and responses, the Tenant object has the following properties 
 | LastUpdated | DateTime | Date this Tenant was last updated. | 
 | Alias | string | Specifies a unique alias for this Tenant | 
 | AzureAdTenantId | string | Specifies if this tenant uses Azure AD and its Tenant Id if so | 
-| Icon | string | Gets or sets the base64 encoded PNG icon for this Account. | 
 | Features | [FeatureState] | List of Feature States for this Tenant. Returned during get calls. | 
 
 
@@ -32,13 +31,12 @@ For HTTP requests and responses, the Tenant object has the following properties 
 	"LastUpdated": "0001-01-01T00:00:00",
 	"Alias": "alias",
 	"AzureAdTenantId": "azureadtenantid",
-	"Icon": "icon",
 	"Features": []
 }
 ```
 ***
 
-## `GetTenant()`
+## `Get Tenant`
 
 Retrieves a specific `Tenant` by ID.
 
@@ -46,10 +44,12 @@ Retrieves a specific `Tenant` by ID.
 
 `GET api/v1-preview/Tenants/{tenantId}`
 
+
 ### Parameters
 
 ```csharp
 [Required]
+[FromRoute]
 string tenantId
 ```
 
@@ -70,7 +70,8 @@ Authorized for Account Members of the specified `Tenant`.
 
 
 ***
-## `TenantExists()`
+
+## `Tenant Exists`
 
 Checks if a `Tenant` with a specific ID exists.
 
@@ -78,10 +79,12 @@ Checks if a `Tenant` with a specific ID exists.
 
 `HEAD api/v1-preview/Tenants/{tenantId}`
 
+
 ### Parameters
 
 ```csharp
 [Required]
+[FromRoute]
 string tenantId
 ```
 
@@ -102,7 +105,8 @@ Authorized for Account Members of the specified `Tenant`.
 
 
 ***
-## `UpdateTenant()`
+
+## `Update Tenant`
 
 Updates a specified `Tenant` object.
 
@@ -110,15 +114,16 @@ Updates a specified `Tenant` object.
 
 `PUT api/v1-preview/Tenants/{tenantId}`
 
+
 ### Parameters
 
 ```csharp
 [Required]
+[FromRoute]
 string tenantId
 ```
 
 The identifier of the `Tenant` to update.
-
 ```csharp
 [Required]
 [FromBody]
@@ -142,7 +147,8 @@ Authorized for Account Administrators of the specified `Tenant`.
 
 
 ***
-## `GetTenantIcon()`
+
+## `Get Tenant Icon`
 
 Returns an icon specified by its `Tenant` ID.
 
@@ -155,6 +161,7 @@ Returns an icon specified by its `Tenant` ID.
 
 ```csharp
 [Required]
+[FromRoute]
 string tenantId
 ```
 
@@ -175,9 +182,10 @@ Authorized for Account Members of the specified `Tenant`.
 
 
 ***
-## `CreateOrUpdateTenantIcon()`
 
-Creates or updates the icon for a `Tenant`. Note that the icon size must be less than 65536 bytes.
+## `Create or Update Tenant Icon`
+
+Creates or updates the icon for a `Tenant`. Note that the icon size must be less than MaxIconSizeInBytes.
 
 ### Http
 
@@ -188,6 +196,7 @@ Creates or updates the icon for a `Tenant`. Note that the icon size must be less
 
 ```csharp
 [Required]
+[FromRoute]
 string tenantId
 ```
 
@@ -215,7 +224,8 @@ Authorized for Account Administrators of the specified `Tenant`.
 
 
 ***
-## `DeleteTenantIcon()`
+
+## `Delete Tenant Icon`
 
 Deletes the icon for a `Tenant`.
 
@@ -228,6 +238,7 @@ Deletes the icon for a `Tenant`.
 
 ```csharp
 [Required]
+[FromRoute]
 string tenantId
 ```
 
@@ -248,3 +259,4 @@ Authorized for Account Administrators of the specified `Tenant`.
 
 
 ***
+

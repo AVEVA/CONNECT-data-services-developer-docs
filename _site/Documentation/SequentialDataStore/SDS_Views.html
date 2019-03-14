@@ -186,9 +186,9 @@ property for it.</p>
 </table>
 <p>The SdsStreamView field supports nested Properties.</p>
 <h2 id="sdsstreamviewmap">SdsStreamViewMap</h2>
-<p>When an SdsStreamView is added, Sds defines a plan mapping. Plan details are retrieved as an SdsStreamViewMap. 
+<p>When an SdsStreamView is added, SDS defines a plan mapping. Plan details are retrieved as an SdsStreamViewMap. 
 The SdsStreamViewMap provides a detailed Property-by-Property definition of the mapping. </p>
-<p>The following table shows the SdsStreamViewMap fields. The SdsStreamViewMap cannot be written to Sds, 
+<p>The following table shows the SdsStreamViewMap fields. The SdsStreamViewMap cannot be written to SDS, 
 so required and optional have no meaning.</p>
 <table>
 <thead>
@@ -224,7 +224,7 @@ so required and optional have no meaning.</p>
 <p>The SdsStreamViewMapProperty is similar an SdsStreamViewProperty but adds a Mode detailing one or more actions taken on 
 the Property.</p>
 <p>The following table shows the SdsStreamViewMapProperty fields. The SdsStreamViewMap cannot be written; it can only be 
-retrieved from Sds, so required and optional have no meaning.</p>
+retrieved from SDS, so required and optional have no meaning.</p>
 <table>
 <thead>
 <tr>
@@ -753,7 +753,7 @@ Content-Type: application/json
 </code></pre><hr>
 <h2 id="get-or-create-stream-view"><code>Get or Create Stream View</code></h2>
 <p>If a stream view with a matching identifier already exists, the stream view passed in is compared with the existing stream view.
-If the stream views are identical, a Found (302) status is returnd and the stream view. If the stream views are different, the Conflict (409) error is returned.</p>
+If the stream views are identical, a Found (302) status is returned and the stream view. If the stream views are different, the Conflict (409) error is returned.</p>
 <p>If no matching identifier is found, the specified stream view is created.  </p>
 <p><strong>Request</strong></p>
 <pre><code>    POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
@@ -793,6 +793,82 @@ The tenant identifier  </p>
 <p><strong>Response</strong><br>The response includes a status code.</p>
 <p><strong>.NET Library</strong></p>
 <pre><code class="lang-csharp">   Task DeleteStreamViewAsync(string streamViewId);
+</code></pre><hr>
+<h2 id="get-stream-views-access-control-list"><code>Get Stream Views Access Control List</code></h2>
+<p>Get the default ACL for the Stream Views collection. For more information on ACLs, see <a href="xref:accesscontrol">Access Control</a>.</p>
+<p><strong>Request</strong></p>
+<pre><code>    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/AccessControl
+</code></pre><p><strong>Parameters</strong></p>
+<p><code>string tenantId</code><br>The tenant identifier  </p>
+<p><code>string namespaceId</code><br>The namespace identifier  </p>
+<p><strong>Response</strong><br>The response includes a status code and a response body.</p>
+<p><strong>Response body</strong><br>The default ACL for Stream Views</p>
+<p><strong>.NET Library</strong></p>
+<pre><code class="lang-csharp">   Task&lt;AccessControlList&gt; GetStreamViewsAccessControlListAsync();
+</code></pre><hr>
+<h2 id="update-stream-views-access-control-list"><code>Update Stream Views Access Control List</code></h2>
+<p>Update the default ACL for the Stream Views collection. For more information on ACLs, see <a href="xref:accesscontrol">Access Control</a>.</p>
+<p><strong>Request</strong></p>
+<pre><code>    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/AccessControl
+</code></pre><p><strong>Parameters</strong></p>
+<p><code>string tenantId</code><br>The tenant identifier  </p>
+<p><code>string namespaceId</code><br>The namespace identifier  </p>
+<p><strong>Request body</strong><br>Serialized ACL</p>
+<p><strong>Response</strong><br>The response includes a status code.</p>
+<p><strong>.NET Library</strong></p>
+<pre><code class="lang-csharp">   Task UpdateStreamViewsAccessControlListAsync(AccessControlList viewsAcl);
+</code></pre><hr>
+<h2 id="get-stream-view-access-control-list"><code>Get Stream View Access Control List</code></h2>
+<p>Get the ACL of the specified stream view. For more information on ACLs, see <a href="xref:accesscontrol">Access Control</a>.</p>
+<p><strong>Request</strong></p>
+<pre><code>    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/AccessControl
+</code></pre><p><strong>Parameters</strong></p>
+<p><code>string tenantId</code><br>The tenant identifier  </p>
+<p><code>string namespaceId</code><br>The namespace identifier  </p>
+<p><code>string streamViewId</code><br>The stream view identifier  </p>
+<p><strong>Response</strong><br>The response includes a status code and a response body.</p>
+<p><strong>Response Body</strong><br>The ACL for the specified stream view</p>
+<p><strong>.NET Library</strong></p>
+<pre><code class="lang-csharp">   Task&lt;AccessControlList&gt; GetStreamViewAccessControlListAsync(string streamViewId);
+</code></pre><hr>
+<h2 id="update-stream-view-access-control-list"><code>Update Stream View Access Control List</code></h2>
+<p>Update the ACL of the specified stream view. For more information on ACLs, see <a href="xref:accesscontrol">Access Control</a>.</p>
+<p><strong>Request</strong></p>
+<pre><code>    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/AccessControl
+</code></pre><p><strong>Parameters</strong></p>
+<p><code>string tenantId</code><br>The tenant identifier  </p>
+<p><code>string namespaceId</code><br>The namespace identifier  </p>
+<p><code>string streamViewId</code><br>The stream view identifier  </p>
+<p><strong>Request body</strong><br>Serialized ACL</p>
+<p><strong>Response</strong><br>The response includes a status code.</p>
+<p><strong>.NET Library</strong></p>
+<pre><code class="lang-csharp">   Task UpdateStreamViewAccessControlListAsync(string streamViewId, AccessControlList viewAcl);
+</code></pre><hr>
+<h2 id="get-stream-view-owner"><code>Get Stream View Owner</code></h2>
+<p>Get the Owner of the specified stream view. For more information on Owners, see <a href="xref:accesscontrol">Access Control</a>.</p>
+<p><strong>Request</strong></p>
+<pre><code>    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Owner
+</code></pre><p><strong>Parameters</strong></p>
+<p><code>string tenantId</code><br>The tenant identifier  </p>
+<p><code>string namespaceId</code><br>The namespace identifier  </p>
+<p><code>string streamViewId</code><br>The stream view identifier  </p>
+<p><strong>Response</strong><br>The response includes a status code and a response body.</p>
+<p><strong>Response Body</strong><br>The Owner for the specified stream view</p>
+<p><strong>.NET Library</strong></p>
+<pre><code class="lang-csharp">   Task&lt;Trustee&gt; GetStreamViewOwnerAsync(string streamViewId);
+</code></pre><hr>
+<h2 id="update-stream-view-owner"><code>Update Stream View Owner</code></h2>
+<p>Update the Owner of the specified stream view. For more information on Owners, see <a href="xref:accesscontrol">Access Control</a>.</p>
+<p><strong>Request</strong></p>
+<pre><code>    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Owner
+</code></pre><p><strong>Parameters</strong></p>
+<p><code>string tenantId</code><br>The tenant identifier  </p>
+<p><code>string namespaceId</code><br>The namespace identifier  </p>
+<p><code>string streamViewId</code><br>The stream view identifier  </p>
+<p><strong>Request body</strong><br>Serialized Owner</p>
+<p><strong>Response</strong><br>The response includes a status code.</p>
+<p><strong>.NET Library</strong></p>
+<pre><code class="lang-csharp">   Task UpdateStreamViewOwnerAsync(string streamViewId, Trustee viewOwner);
 </code></pre></article>
           </div>
           

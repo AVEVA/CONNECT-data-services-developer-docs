@@ -903,8 +903,8 @@ that consist of multiple properties is not defined and results in non-determinan
 </tr>
 </tbody>
 </table>
-<p><strong>Example</strong><br>The following requests calculates two summary intervals between the <code>startIndex</code> and <code>endIndex</code>: </p>
-<pre><code>  GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data 
+<p><strong>Example</strong><br>The following request calculates two summary intervals between the <code>startIndex</code> and <code>endIndex</code>: </p>
+<pre><code>  GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data/ 
     Summaries?startIndex=2017-11-23T12:00:00Z&amp;endIndex=2017-11-23T16:00:00Z&amp;count=2
 </code></pre><p><strong>Response body</strong></p>
 <pre><code class="lang-json">HTTP/1.1 200

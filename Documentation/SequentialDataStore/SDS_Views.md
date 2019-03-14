@@ -61,10 +61,10 @@ The SdsStreamView field supports nested Properties.
 
 ## SdsStreamViewMap
 
-When an SdsStreamView is added, Sds defines a plan mapping. Plan details are retrieved as an SdsStreamViewMap. 
+When an SdsStreamView is added, SDS defines a plan mapping. Plan details are retrieved as an SdsStreamViewMap. 
 The SdsStreamViewMap provides a detailed Property-by-Property definition of the mapping. 
 
-The following table shows the SdsStreamViewMap fields. The SdsStreamViewMap cannot be written to Sds, 
+The following table shows the SdsStreamViewMap fields. The SdsStreamViewMap cannot be written to SDS, 
 so required and optional have no meaning.
 
 | Property     | Type                     | Optionality  | Details |
@@ -79,7 +79,7 @@ The SdsStreamViewMapProperty is similar an SdsStreamViewProperty but adds a Mode
 the Property.
 
 The following table shows the SdsStreamViewMapProperty fields. The SdsStreamViewMap cannot be written; it can only be 
-retrieved from Sds, so required and optional have no meaning.
+retrieved from SDS, so required and optional have no meaning.
 
 | Property     | Type        | Details |
 |--------------|-------------|---------|
@@ -672,7 +672,7 @@ Content-Type: application/json
 ## `Get or Create Stream View`
 
 If a stream view with a matching identifier already exists, the stream view passed in is compared with the existing stream view.
-If the stream views are identical, a Found (302) status is returnd and the stream view. If the stream views are different, the Conflict (409) error is returned.
+If the stream views are identical, a Found (302) status is returned and the stream view. If the stream views are different, the Conflict (409) error is returned.
 
 If no matching identifier is found, the specified stream view is created.  
 
@@ -769,3 +769,183 @@ The response includes a status code.
    Task DeleteStreamViewAsync(string streamViewId);
 ```
 
+***********************
+## `Get Stream Views Access Control List`
+
+Get the default ACL for the Stream Views collection. For more information on ACLs, see [Access Control](xref:accesscontrol).
+
+**Request**
+
+        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/AccessControl
+
+**Parameters**
+
+`string tenantId`  
+The tenant identifier  
+  
+`string namespaceId`  
+The namespace identifier  
+
+**Response**  
+The response includes a status code and a response body.
+
+**Response body**  
+The default ACL for Stream Views
+
+**.NET Library**
+```csharp
+   Task<AccessControlList> GetStreamViewsAccessControlListAsync();
+```
+***********************
+
+## `Update Stream Views Access Control List`
+
+Update the default ACL for the Stream Views collection. For more information on ACLs, see [Access Control](xref:accesscontrol).
+
+**Request**
+
+        PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/AccessControl
+
+**Parameters**
+
+`string tenantId`  
+The tenant identifier  
+  
+`string namespaceId`  
+The namespace identifier  
+
+**Request body**  
+Serialized ACL
+
+**Response**  
+The response includes a status code.
+
+**.NET Library**
+```csharp
+   Task UpdateStreamViewsAccessControlListAsync(AccessControlList viewsAcl);
+```
+
+***********************
+
+## `Get Stream View Access Control List`
+
+Get the ACL of the specified stream view. For more information on ACLs, see [Access Control](xref:accesscontrol).
+
+**Request**
+
+        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/AccessControl
+
+**Parameters**
+
+`string tenantId`  
+The tenant identifier  
+  
+`string namespaceId`  
+The namespace identifier  
+  
+`string streamViewId`  
+The stream view identifier  
+
+**Response**  
+The response includes a status code and a response body.
+
+**Response Body**  
+The ACL for the specified stream view
+
+**.NET Library**
+```csharp
+   Task<AccessControlList> GetStreamViewAccessControlListAsync(string streamViewId);
+```
+***********************
+
+## `Update Stream View Access Control List`
+
+Update the ACL of the specified stream view. For more information on ACLs, see [Access Control](xref:accesscontrol).
+
+**Request**
+
+        PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/AccessControl
+
+**Parameters**
+
+`string tenantId`  
+The tenant identifier  
+  
+`string namespaceId`  
+The namespace identifier  
+  
+`string streamViewId`  
+The stream view identifier  
+
+**Request body**  
+Serialized ACL
+
+**Response**  
+The response includes a status code.
+
+**.NET Library**
+```csharp
+   Task UpdateStreamViewAccessControlListAsync(string streamViewId, AccessControlList viewAcl);
+```
+***
+
+## `Get Stream View Owner`
+
+Get the Owner of the specified stream view. For more information on Owners, see [Access Control](xref:accesscontrol).
+
+**Request**
+
+        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Owner
+
+**Parameters**
+
+`string tenantId`  
+The tenant identifier  
+  
+`string namespaceId`  
+The namespace identifier  
+  
+`string streamViewId`  
+The stream view identifier  
+
+**Response**  
+The response includes a status code and a response body.
+
+**Response Body**  
+The Owner for the specified stream view
+
+**.NET Library**
+```csharp
+   Task<Trustee> GetStreamViewOwnerAsync(string streamViewId);
+```
+***********************
+
+## `Update Stream View Owner`
+
+Update the Owner of the specified stream view. For more information on Owners, see [Access Control](xref:accesscontrol).
+
+**Request**
+
+        PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Owner
+
+**Parameters**
+
+`string tenantId`  
+The tenant identifier  
+  
+`string namespaceId`  
+The namespace identifier  
+  
+`string streamViewId`  
+The stream view identifier  
+
+**Request body**  
+Serialized Owner
+
+**Response**  
+The response includes a status code.
+
+**.NET Library**
+```csharp
+   Task UpdateStreamViewOwnerAsync(string streamViewId, Trustee viewOwner);
+```

@@ -81,7 +81,6 @@ types do not need fields to define the type.
 Types requiring additional definition, such as enums and objects, are identified using a generic 
 SdsTypeCode, such as ByteEnum, Int32Enum, NullableInt32Enum, or Object, plus additional SdsProperty fields.
 
-
 **Supported Types**
 
 The following types are supported and defined by the SdsTypeCode:
@@ -215,9 +214,8 @@ indexes that occur between data in a stream:
 |Version                    |No event is returned                           |         |
 |IDictionary or IEnumerable |No event is returned                           |Dictionary, Array, List, and so on. |
 
-\*When extreme values are involved in an interpolation (for example
+When extreme values are involved in an interpolation (for example
 Decimal.MaxValue) the call might result in a BadRequest exception.
-
 
 If the InterpolationMode is not assigned, the events are interpolated in the default manner, unless the interpolation 
 mode is overridden in the TypeProperty or the SdsStream. For more information on overriding the interpolation mode 
@@ -306,7 +304,7 @@ Key is specified as IsKey. The Order field defines the precedence of fields appl
 
 The Value field is used for properties that represent a value. An example of a property with a 
 value is an enum’s named constant. When representing an enum in a SdsType, the SdsType’s 
-Properies collection defines the enum’s constant list. The SdsTypeProperty’s Identifier represents 
+Properties collection defines the enum’s constant list. The SdsTypeProperty’s Identifier represents 
 the constant’s name and the SdsTypeProperty’s Value represents the constant’s value (see the enum State definitions below).
 
 InterpolationMode is assigned when the Property of the event should be interpolated in a specific way 
@@ -322,7 +320,7 @@ For more information on interpolation of events see [Interpolation](#interpolati
 Uom is the unit of measure for the Property. The Uom of a Property may be specified by the name or the 
 abbreviation. The names and abbreviations of Uoms are case sensitive. 
 
-The InterpolationMode and Uom of a Property can be overriden on the stream. For more information, see [Sds Streams](xref:sdsStreams#propertyoverrides). 
+The InterpolationMode and Uom of a Property can be overridden on the stream. For more information, see [Streams](xref:sdsStreams#propertyoverrides). 
 
 ## Supported Units of Measure
 
@@ -592,7 +590,7 @@ var State =
 {
     Ok: 0,
     Warning: 1,
-    Aalrm: 2,
+    Alarm: 2,
 }
 
 var Simple = function () {
@@ -714,7 +712,7 @@ var simpleType = new SdsObjects.SdsType({
 Working with a derived class is easy. For the following derived class:
 
 ```javascript
-class Derrived(Simple):
+class Derived(Simple):
     @property
     def Observation(self):
         return self.__observation
@@ -727,7 +725,7 @@ Extend the SdsType as follows:
 
 **Python**
 ```python
-# Observation property is a simple non-inexed, standard data type
+# Observation property is a simple non-indexed, standard data type
 observation = SdsTypeProperty()
 observation.Id = "Observation"
 observation.Name = "Observation"
@@ -768,7 +766,7 @@ var derivedType = new SdsObjects.SdsType({
 
 # SdsType API
 
-The REST APIs provide programmatic access to read and write Sds data. The APIs in this section 
+The REST APIs provide programmatic access to read and write SDS data. The APIs in this section 
 interact with SdsTypes. When working in .NET, convenient SDS Client Libraries are available. 
 The ISdsMetadataService interface, accessed using the ``SdsService.GetMetadataService()`` helper, 
 defines the available functions. See [Types](#types) for general SdsType information.
@@ -840,7 +838,7 @@ Content-Type: application/json
                         "Value": 1
                     },
                     {
-                        "Id": "Aalrm",
+                        "Id": "Alarm",
                         "Value": 2
                     }
                 ]
@@ -951,7 +949,7 @@ Content-Type: application/json
                             "Value": 1
                         },
                         {
-                            "Id": "Aalrm",
+                            "Id": "Alarm",
                             "Value": 2
                         }
                     ]
@@ -1048,7 +1046,7 @@ Example SdsType content:
                         "Value": 1
                     },
                     {
-                        "Id": "Aalrm",
+                        "Id": "Alarm",
                         "Value": 2
                     }
                 ]
@@ -1153,7 +1151,7 @@ Content-Type: application/json
                         "InterpolationMode": null
                     },
                     {
-                        "Id": "Aalrm",
+                        "Id": "Alarm",
                         "Name": null,
                         "Description": null,
                         "Order": 0,
@@ -1209,7 +1207,7 @@ Content-Type: application/json
 
 **.NET Library**
 ```csharp
-    Task<SdsType> GetOrCreateTypeAsync(SdsType SdsType);
+    Task<SdsType> GetOrCreateTypeAsync(SdsType sdsType)
 ```
 
 If a type with a matching identifier already exists and it matches the type in the request body, 
@@ -1283,3 +1281,184 @@ The response includes a status code.
     Task DeleteTypeAsync(string typeId);
 ```
 
+***********************
+
+## `Get Types Access Control List`
+
+Get the default ACL for the Types collection. For more information on ACLs, see [Access Control](xref:accesscontrol).
+
+**Request**
+
+        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/AccessControl
+
+**Parameters**
+
+`string tenantId`  
+The tenant identifier  
+  
+`string namespaceId`  
+The namespace identifier  
+
+**Response**  
+The response includes a status code and a response body.
+
+**Response body**  
+The default ACL for Types
+
+**.NET Library**
+```csharp
+   Task<AccessControlList> GetTypesAccessControlListAsync();
+```
+***********************
+
+## `Update Types Access Control List`
+
+Update the default ACL for the Types collection. For more information on ACLs, see [Access Control](xref:accesscontrol).
+
+**Request**
+
+        PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/AccessControl
+
+**Parameters**
+
+`string tenantId`  
+The tenant identifier  
+  
+`string namespaceId`  
+The namespace identifier  
+
+**Request body**  
+Serialized ACL
+
+**Response**  
+The response includes a status code.
+
+**.NET Library**
+```csharp
+   Task UpdateTypesAccessControlListAsync(AccessControlList typesAcl);
+```
+
+***********************
+
+## `Get Type Access Control List`
+
+Get the ACL of the specified type. For more information on ACLs, see [Access Control](xref:accesscontrol).
+
+**Request**
+
+        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessControl
+
+**Parameters**
+
+`string tenantId`  
+The tenant identifier  
+  
+`string namespaceId`  
+The namespace identifier  
+  
+`string typeId`  
+The type identifier  
+
+**Response**  
+The response includes a status code and a response body.
+
+**Response Body**  
+The ACL for the specified type
+
+**.NET Library**
+```csharp
+   Task<AccessControlList> GetTypeAccessControlListAsync(string typeId);
+```
+***********************
+
+## `Update Type Access Control List`
+
+Update the ACL of the specified type. For more information on ACLs, see [Access Control](xref:accesscontrol).
+
+**Request**
+
+        PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessControl
+
+**Parameters**
+
+`string tenantId`  
+The tenant identifier  
+  
+`string namespaceId`  
+The namespace identifier  
+  
+`string typeId`  
+The type identifier  
+
+**Request body**  
+Serialized ACL
+
+**Response**  
+The response includes a status code.
+
+**.NET Library**
+```csharp
+   Task UpdateTypeAccessControlListAsync(string typeId, AccessControlList typeAcl);
+```
+***
+
+## `Get Type Owner`
+
+Get the Owner of the specified type. For more information on Owners, see [Access Control](xref:accesscontrol).
+
+**Request**
+
+        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Owner
+
+**Parameters**
+
+`string tenantId`  
+The tenant identifier  
+  
+`string namespaceId`  
+The namespace identifier  
+  
+`string typeId`  
+The type identifier  
+
+**Response**  
+The response includes a status code and a response body.
+
+**Response Body**  
+The Owner for the specified type 
+
+**.NET Library**
+```csharp
+   Task<Trustee> GetTypeOwnerAsync(string typeId);
+```
+***********************
+
+## `Update Type Owner`
+
+Update the Owner of the specified type. For more information on Owners, see [Access Control](xref:accesscontrol).
+
+**Request**
+
+        PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Owner
+
+**Parameters**
+
+`string tenantId`  
+The tenant identifier  
+  
+`string namespaceId`  
+The namespace identifier  
+  
+`string typeId`  
+The type identifier  
+
+**Request body**  
+Serialized Owner
+
+**Response**  
+The response includes a status code.
+
+**.NET Library**
+```csharp
+   Task UpdateTypeOwnerAsync(string typeId, Trustee typeOwner);
+```

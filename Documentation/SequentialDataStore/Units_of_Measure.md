@@ -373,7 +373,7 @@ An optional parameter representing the maximum number of SdsUomQuantity to retri
 The response includes a status code and a response body.
 
 **Response body**  
-A list of SdsUomQuantity objects.
+A list of SdsUomQuantity objects
 
 Example response body:
 ```json
@@ -456,7 +456,7 @@ The unit of measure identifier
 The response includes a status code and a response body.
 
 **Response body**  
-The requested SdsUom.
+The requested SdsUom
 
 Example response for quantityId = "Length" and uomId ="mile":
 ```json
@@ -499,7 +499,7 @@ The quantity identifier
 The response includes a status code and a response body.
 
 **Response body**  
-A collection of SdsUom objects for the specified quantity.
+A collection of SdsUom objects for the specified quantity
 
 Example response for quantityId = "Electric Current":
 ```json
@@ -532,6 +532,187 @@ Content-Type: application/json
 ```
 ***
 
+## `Get Quantities Access Control List`
+
+Get the default ACL for the Quantities collection. For more information on ACLs, see [Access Control](xref:accesscontrol).
+
+**Request**
+
+        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/AccessControl
+
+**Parameters**
+
+`string tenantId`  
+The tenant identifier  
+  
+`string namespaceId`  
+The namespace identifier  
+
+**Response**  
+The response includes a status code and a response body.
+
+**Response body**  
+The default ACL for Quantities
+
+**.NET Library**
+```csharp
+   Task<AccessControlList> GetQuantitiesAccessControlListAsync();
+```
+***
+
+## `Update Quantities Access Control List`
+
+Update the default ACL for the Quantities collection. For more information on ACLs, see [Access Control](xref:accesscontrol).
+
+**Request**
+
+        PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/AccessControl
+
+**Parameters**
+
+`string tenantId`  
+The tenant identifier  
+  
+`string namespaceId`  
+The namespace identifier  
+
+**Request body**  
+Serialized ACL
+
+**Response**  
+The response includes a status code.
+
+**.NET Library**
+```csharp
+   Task UpdateQuantitiesAccessControlListAsync(AccessControlList quantitiesAcl);
+```
+
+***********************
+
+## `Get Quantity Access Control List`
+
+Get the ACL of the specified quantity. For more information on ACLs, see [Access Control](xref:accesscontrol).
+
+**Request**
+
+        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/AccessControl
+
+**Parameters**
+
+`string tenantId`  
+The tenant identifier  
+  
+`string namespaceId`  
+The namespace identifier  
+  
+`string quantityId`  
+The quantity identifier  
+
+**Response**  
+The response includes a status code and a response body.
+
+**Response body**
+The ACL for the specified quantity
+
+**.NET Library**
+```csharp
+   Task<AccessControlList> GetQuantityAccessControlListAsync(string quantityId);
+```
+***********************
+
+## `Update Quantity Access Control List`
+
+Update the ACL of the specified quantity. For more information on ACLs, see [Access Control](xref:accesscontrol).
+
+**Request**
+
+        PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/AccessControl
+
+**Parameters**
+
+`string tenantId`  
+The tenant identifier  
+  
+`string namespaceId`  
+The namespace identifier  
+  
+`string quantityId`  
+The quantity identifier  
+
+**Request body**  
+Serialized ACL
+
+**Response**  
+The response includes a status code.
+
+**.NET Library**
+```csharp
+   Task UpdateQuantityAccessControlListAsync(string quantityId, AccessControlList quantityAcl);
+```
+***
+
+## `Get Quantity Owner`
+
+Get the Owner of the specified quantity. For more information on Owners, see [Access Control](xref:accesscontrol).
+
+**Request**
+
+        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Owner
+
+**Parameters**
+
+`string tenantId`  
+The tenant identifier  
+  
+`string namespaceId`  
+The namespace identifier  
+  
+`string quantityId`  
+The quantity identifier  
+
+**Response**  
+The response includes a status code and a response body.
+
+**Response body**
+The Owner for the specified quantity
+
+**.NET Library**
+```csharp
+   Task<Trustee> GetQuantityOwnerAsync(string quantityId);
+```
+***********************
+
+## `Update Quantity Owner`
+
+Update the Owner of the specified quantity. For more information on Owners, see [Access Control](xref:accesscontrol).
+
+**Request**
+
+        PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Owner
+
+**Parameters**
+
+`string tenantId`  
+The tenant identifier  
+  
+`string namespaceId`  
+The namespace identifier  
+  
+`string quantityId`  
+The quantity identifier  
+
+**Request body**  
+Serialized Owner
+
+**Response**  
+The response includes a status code.
+
+**.NET Library**
+```csharp
+   Task UpdateQuantityOwnerAsync(string quantityId, Trustee quantityOwner);
+```
+****
+
 # SdsUom API
 The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact with SdsUoms. When working in .NET, convenient SDS Client Libraries are available. The ``ISdsMetadataService`` interface, accessed using the ``SdsService.GetMetadataService( )`` helper, defines the available functions. See [Units of Measure](#units-of-measure) for general [SdsUom](#sdsuom) information.
 
@@ -558,7 +739,7 @@ The unit of measure identifier
 The response includes a status code and a response body.
 
 **Response body**  
-The requested SdsUom.
+The requested SdsUom
 
 Example response body for uomId = "ounce":
 ```json
@@ -600,14 +781,11 @@ An optional parameter representing the zero-based offset of the first SdsUomQuan
 ``int count``  
 An optional parameter representing the maximum number of SdsUomQuantity to retrieve. If not specified, a default value of 100 is used.
 
-
-**Response**
-
+**Response**  
 The response includes a status code and a response body.
 
-**Response body**
-
-A list of SdsUom objects.
+**Response body**  
+A list of SdsUom objects
 
 Example response body:
 ```json
@@ -646,6 +824,144 @@ Content-Type: application/json
    Task<IEnumerable<SdsUom>> GetUomsAsync(int skip = 0, int count = 100);
 ```
 ***
+
+
+## `Get Uom Access Control List`
+
+Get the ACL of the specified unit of measure. For more information on ACLs, see [Access Control](xref:accesscontrol).
+
+**Request**
+
+        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/AccessControl
+
+**Parameters**
+
+`string tenantId`  
+The tenant identifier  
+  
+`string namespaceId`  
+The namespace identifier  
+  
+`string quantityId`  
+The quantity identifier  
+
+`string uomId`  
+The unit of measure identifier
+
+**Response**  
+The response includes a status code and a response body.
+
+**Response body**  
+The ACL for the specified Uom
+
+**.NET Library**
+```csharp
+   Task<AccessControlList> GetQuantityUomAccessControlListAsync(string quantityId, string uomId);
+```
+***********************
+
+## `Update Uom Access Control List`
+
+Update the ACL of the specified unit of measure. For more information on ACLs, see [Access Control](xref:accesscontrol).
+
+**Request**
+
+        PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/AccessControl
+
+**Parameters**
+
+`string tenantId`  
+The tenant identifier  
+  
+`string namespaceId`  
+The namespace identifier  
+  
+`string quantityId`  
+The quantity identifier  
+
+`string uomId`  
+The unit of measure identifier
+
+**Request body**  
+Serialized ACL
+
+**Response**  
+The response includes a status code.
+
+**.NET Library**
+```csharp
+   Task UpdateQuantityUomAccessControlListAsync(string quantityId, string uomId, AccessControlList uomAcl);
+```
+***
+
+## `Get Uom Owner`
+
+Get the Owner of the specified unit of measure. For more information on Owners, see [Access Control](xref:accesscontrol).
+
+**Request**
+
+        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/Owner
+
+**Parameters**
+
+`string tenantId`  
+The tenant identifier  
+  
+`string namespaceId`  
+The namespace identifier  
+  
+`string quantityId`  
+The quantity identifier  
+
+`string uomId`  
+The unit of measure identifier
+
+**Response**  
+The response includes a status code and a response body.
+
+**Response Body**  
+The Owner for the specified Uom 
+
+**.NET Library**
+```csharp
+   Task<Trustee> GetQuantityUomOwnerAsync(string quantityId, string uomId);
+```
+***********************
+
+## `Update Uom Owner`
+
+Update the Owner of the specified unit of measure. For more information on Owners, see [Access Control](xref:accesscontrol).
+
+**Request**
+
+        PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/Owner
+
+**Parameters**
+
+`string tenantId`  
+The tenant identifier  
+  
+`string namespaceId`  
+The namespace identifier  
+  
+`string quantityId`  
+The quantity identifier  
+
+`string uomId`  
+The unit of measure identifier
+
+**Request body**  
+Serialized Owner
+
+**Response**  
+The response includes a status code.
+
+**.NET Library**
+```csharp
+   Task UpdateQuantityUomOwnerAsync(string quantityId, string uomId, Trustee uomOwner);
+```
+****
+
 
 ## Associating a unit of measure with a SdsType
 At [SdsType](xref:sdsTypes) creation, a SdsUom can be associated with a [SdsTypeProperty](xref:sdsTypes#sdstypeproperty). 

@@ -864,6 +864,38 @@ Content-Type: application/json
 
 ***********************
 
+## `Get Type Reference Count`
+
+Returns the number of references by streams and stream views to a specified type. See [Streams](xref:sdsstreams) and [Steam Views](xref:sdsviews) for more information on the use of types to define streams and stream views.
+
+**Request**
+
+        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/ReferenceCount
+
+**Parameters**  
+
+`string tenantId`  
+The tenant identifier
+
+`string namespaceId`  
+The namespace identifier
+
+`string typeId`  
+The type identifier
+
+**Response**  
+The response includes a status code and a response body.
+
+**Response body**  
+The number of references to the specified type
+
+**.NET Library**
+```csharp
+    Task<int> GetTypeReferenceCountAsync(string typeId);
+```
+
+***********************
+
 ## `Get Types`
 
 Returns a list of types within a given namespace.
@@ -973,7 +1005,7 @@ Content-Type: application/json
 
 **.NET Library**
 ```csharp
-      Task<IEnumerable<SdsType>> GetTypesAsync(string query = "", int skip = 0, int count = 100);
+    Task<IEnumerable<SdsType>> GetTypesAsync(string query = "", int skip = 0, int count = 100);
 ```
 
 ***********************

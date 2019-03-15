@@ -234,7 +234,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Management/Account_ClientRole.html",
-          "hash": "0NpGCq0ZdlobJLwyPjb95Q=="
+          "hash": "t6q6WZhQVlTIofOy04UJxA=="
         }
       },
       "is_incremental": false,
@@ -246,7 +246,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Management/Account_Namespace.html",
-          "hash": "r6DCZgLe8q+s/X2v6yysPA=="
+          "hash": "UTlP2Vykxtd5qpJrLzrg+g=="
         }
       },
       "is_incremental": false,
@@ -258,7 +258,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Management/Account_NamespaceTier.html",
-          "hash": "BM3GgE1UhV72eGmwN8V3Lw=="
+          "hash": "2gtPuSZNa3RbT2F7h6cq0Q=="
         }
       },
       "is_incremental": false,
@@ -270,7 +270,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Management/Account_Role.html",
-          "hash": "VBya/5wODeuANJ9iD729GA=="
+          "hash": "juzdPf1x7FvQVac8TfPwQA=="
         }
       },
       "is_incremental": false,
@@ -282,7 +282,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Management/Account_RootAccessControl.html",
-          "hash": "vu6UN79PF/DapUiupWMMqA=="
+          "hash": "w/pYza1vtqk99SHJ9jDSSg=="
         }
       },
       "is_incremental": false,
@@ -294,7 +294,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Management/Account_ServiceBlog.html",
-          "hash": "aRfzDC90dWpUsmNI0SI0ng=="
+          "hash": "Qn+emR3cTkPVxoGkOtGW6g=="
         }
       },
       "is_incremental": false,
@@ -306,7 +306,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Management/Account_Tenant.html",
-          "hash": "TtQdisknmfUcNRvfctboNw=="
+          "hash": "+877gbuh5r7JNGjZiWKqCQ=="
         }
       },
       "is_incremental": false,
@@ -318,7 +318,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Management/Account_TenantFeatureState.html",
-          "hash": "E2ejKeLvfEwRa5oUc1+XWQ=="
+          "hash": "a+VvYEfWYVwNEOVT7OQVyA=="
         }
       },
       "is_incremental": false,
@@ -330,7 +330,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Management/Account_UserRole.html",
-          "hash": "KJnMdTfNrfpOhBsMnql+XQ=="
+          "hash": "9cnox9UNrlC2qy1xb8PEew=="
         }
       },
       "is_incremental": false,
@@ -414,7 +414,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/SequentialDataStore/Introducing_SDS.html",
-          "hash": "eYGrcriy6K+AXn+QO2oqRA=="
+          "hash": "cf5siMtagJW0Ik57pR6CqQ=="
         }
       },
       "is_incremental": false,
@@ -480,7 +480,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/SequentialDataStore/SDS_Types.html",
-          "hash": "yD1hecMAEXl8oEdD/nh3XQ=="
+          "hash": "bONXtbqnSGv//OnWXa9PLQ=="
         }
       },
       "is_incremental": false,
@@ -616,17 +616,6 @@
       "output": {
         "resource": {
           "relative_path": "Documentation/images/Add_Button.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "Documentation/images/ContainersA.png",
-      "output": {
-        "resource": {
-          "relative_path": "Documentation/images/ContainersA.png"
         }
       },
       "is_incremental": false,

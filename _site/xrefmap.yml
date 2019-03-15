@@ -8,10 +8,10 @@ references:
   name: Client Roles
   href: Documentation/Management/Account_ClientRole.html
 - uid: AccountNamespace
-  name: Namespace
+  name: Namespaces
   href: Documentation/Management/Account_Namespace.html
 - uid: AccountNamespaceTier
-  name: Namespace Tier
+  name: Namespace Tiers
   href: Documentation/Management/Account_NamespaceTier.html
 - uid: AccountRole
   name: Roles
@@ -23,7 +23,7 @@ references:
   name: Service Blog
   href: Documentation/Management/Account_ServiceBlog.html
 - uid: AccountTenant
-  name: Tenant
+  name: Tenants
   href: Documentation/Management/Account_Tenant.html
 - uid: AccountTenantFeatureState
   name: Tenant Feature States

@@ -1641,6 +1641,19 @@ Content-Type: application/json
 </code></pre><p><strong>.NET Library</strong></p>
 <pre><code class="lang-csharp">    Task&lt;SdsType&gt; GetTypeAsync(string typeId);
 </code></pre><hr>
+<h2 id="get-type-reference-count"><code>Get Type Reference Count</code></h2>
+<p>Returns the number of references by streams and stream views to a specified type. See <a href="xref:sdsstreams">Streams</a> and <a href="xref:sdsviews">Steam Views</a> for more information on the use of types to define streams and stream views.</p>
+<p><strong>Request</strong></p>
+<pre><code>    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/ReferenceCount
+</code></pre><p><strong>Parameters</strong>  </p>
+<p><code>string tenantId</code><br>The tenant identifier</p>
+<p><code>string namespaceId</code><br>The namespace identifier</p>
+<p><code>string typeId</code><br>The type identifier</p>
+<p><strong>Response</strong><br>The response includes a status code and a response body.</p>
+<p><strong>Response body</strong><br>The number of references to the specified type</p>
+<p><strong>.NET Library</strong></p>
+<pre><code class="lang-csharp">    Task&lt;int&gt; GetTypeReferenceCountAsync(string typeId);
+</code></pre><hr>
 <h2 id="get-types"><code>Get Types</code></h2>
 <p>Returns a list of types within a given namespace.</p>
 <p>If specifying the optional search parameter or optional filter parameter, the list of types returned are filtered to match 
@@ -1721,7 +1734,7 @@ Content-Type: application/json
     …
 ]
 </code></pre><p><strong>.NET Library</strong></p>
-<pre><code class="lang-csharp">      Task&lt;IEnumerable&lt;SdsType&gt;&gt; GetTypesAsync(string query = &quot;&quot;, int skip = 0, int count = 100);
+<pre><code class="lang-csharp">    Task&lt;IEnumerable&lt;SdsType&gt;&gt; GetTypesAsync(string query = &quot;&quot;, int skip = 0, int count = 100);
 </code></pre><hr>
 <h2 id="get-or-create-type"><code>Get or Create Type</code></h2>
 <p>Creates the specified type. If a type with a matching identifier already exists, The Data Store compares the 

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -76,45 +76,45 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="sdsIntroduction">
-<h1 id="introducing-the-sequential-data-store">Introducing the Sequential Data Store</h1>
+<h1 id="introducing-the-sequential-data-store" sourcefile="Documentation/SequentialDataStore/Introducing_SDS.md" sourcestartlinenumber="6" sourceendlinenumber="7">Introducing the Sequential Data Store</h1>
 
-<p>The Sequential Data Store (SDS) is a highly flexible cloud-based sequential data store that you use to store, 
+<p sourcefile="Documentation/SequentialDataStore/Introducing_SDS.md" sourcestartlinenumber="9" sourceendlinenumber="14">The Sequential Data Store (SDS) is a highly flexible cloud-based sequential data store that you use to store, 
 retrieve, and analyze data. You 
 create and write data to <em>streams</em> using a simple REST (<em>REpresentational State Transfer</em>) API (<em>Application 
 Programming Interface</em>). The streams you create can be used to store simple or complex data types to suit 
 your application needs. You can define simple or complex indexing to arrange and relate your data. An assortment 
 of methods with customizable behaviors are available to read data and easily obtain needed information.</p>
-<h2 id="access-to-sds">Access to SDS</h2>
-<p>You must acquire a Tenant, security credentials, and a Namespace before interacting with the Data Store. If you do not 
-have a Tenant, you can request access to the SDS Preview at <a href="mailto://cloudservices@osisoft.com">OSIsoft Cloud Services</a>.</p>
-<p>The SDS Preview program is limited; contacting OSIsoft does not assure participation.</p>
-<p>If you are selected to
+<h2 id="access-to-sds" sourcefile="Documentation/SequentialDataStore/Introducing_SDS.md" sourcestartlinenumber="17" sourceendlinenumber="18">Access to SDS</h2>
+<p sourcefile="Documentation/SequentialDataStore/Introducing_SDS.md" sourcestartlinenumber="20" sourceendlinenumber="21">You must acquire a Tenant, security credentials, and a Namespace before interacting with the Data Store. If you do not 
+have a Tenant, you can request access to the SDS Preview at <a href="mailto://cloudservices@osisoft.com" data-raw-source="[OSIsoft Cloud Services](mailto://cloudservices@osisoft.com)" sourcefile="Documentation/SequentialDataStore/Introducing_SDS.md" sourcestartlinenumber="21" sourceendlinenumber="21">OSIsoft Cloud Services</a>.</p>
+<p sourcefile="Documentation/SequentialDataStore/Introducing_SDS.md" sourcestartlinenumber="23" sourceendlinenumber="23">The SDS Preview program is limited; contacting OSIsoft does not assure participation.</p>
+<p sourcefile="Documentation/SequentialDataStore/Introducing_SDS.md" sourcestartlinenumber="26" sourceendlinenumber="29">If you are selected to
 participate in the preview, you will receive an email notifying you of the name of your Tenant. 
 Use the credentials you were provided to sign into the portal. Signing in grants you access 
 to additional functionality.</p>
-<h2 id="samples">Samples</h2>
-<p>The best way to get started with SDS is to run one or more of the code samples. Code samples are 
+<h2 id="samples" sourcefile="Documentation/SequentialDataStore/Introducing_SDS.md" sourcestartlinenumber="31" sourceendlinenumber="32">Samples</h2>
+<p sourcefile="Documentation/SequentialDataStore/Introducing_SDS.md" sourcestartlinenumber="34" sourceendlinenumber="37">The best way to get started with SDS is to run one or more of the code samples. Code samples are 
 provided in a number of different programming languages to illustrate how to easily and effectively 
 interact with SDS. The code samples can be found in the SDS-Samples repository on GitHub. Obtain SDS 
-REST API access keys from <a href="https://cloud.osisoft.com">https://cloud.osisoft.com</a> before running the sample code.</p>
-<p>Each sample includes a readme file which describes the steps required to run the sample and a brief description 
+REST API access keys from <a href="https://cloud.osisoft.com" data-raw-source="https://cloud.osisoft.com" sourcefile="Documentation/SequentialDataStore/Introducing_SDS.md" sourcestartlinenumber="37" sourceendlinenumber="37">https://cloud.osisoft.com</a> before running the sample code.</p>
+<p sourcefile="Documentation/SequentialDataStore/Introducing_SDS.md" sourcestartlinenumber="39" sourceendlinenumber="41">Each sample includes a readme file which describes the steps required to run the sample and a brief description 
 that highlights some of the sample’s functionality. Be sure to read the readme file to understand 
 how the sample works.</p>
-<p>After you have finished this introduction and worked with one of the samples, refer to 
-the <a class="xref" href="Quick_Start.html#sds-quick-start">Quick start</a> section, which describes the interaction of 
+<p sourcefile="Documentation/SequentialDataStore/Introducing_SDS.md" sourcestartlinenumber="43" sourceendlinenumber="45">After you have finished this introduction and worked with one of the samples, refer to 
+the <a class="xref" href="Quick_Start.html#sds-quick-start" data-raw-source="[Quick start](xref:sdsQuickStart#sds-quick-start)" sourcefile="Documentation/SequentialDataStore/Introducing_SDS.md" sourcestartlinenumber="44" sourceendlinenumber="44">Quick start</a> section, which describes the interaction of 
 various SDS objects and helps you get started with your own application.</p>
-<h2 id="architecture">Architecture</h2>
-<p>A Tenant represents a client or organization that owns and manages a collection of OSIsoft Cloud Services, including 
+<h2 id="architecture" sourcefile="Documentation/SequentialDataStore/Introducing_SDS.md" sourcestartlinenumber="48" sourceendlinenumber="49">Architecture</h2>
+<p sourcefile="Documentation/SequentialDataStore/Introducing_SDS.md" sourcestartlinenumber="51" sourceendlinenumber="52">A Tenant represents a client or organization that owns and manages a collection of OSIsoft Cloud Services, including 
 the Sequential Data Store. </p>
-<p>Tenants are divided into one or more logical units called Namespaces. Each Namespace is distinct and separate from 
+<p sourcefile="Documentation/SequentialDataStore/Introducing_SDS.md" sourcestartlinenumber="54" sourceendlinenumber="56">Tenants are divided into one or more logical units called Namespaces. Each Namespace is distinct and separate from 
 other Namespaces, with its own instances of the various OSIsoft Cloud Services and data stores. 
 Namespaces provide isolation of resources. </p>
-<p>Isolation provided by Tenants and Namespaces prevents accidental or malicious data access. </p>
-<h2 id="getting-help">Getting help</h2>
-<p>The following email address is available to participants of the SDS
+<p sourcefile="Documentation/SequentialDataStore/Introducing_SDS.md" sourcestartlinenumber="58" sourceendlinenumber="58">Isolation provided by Tenants and Namespaces prevents accidental or malicious data access. </p>
+<h2 id="getting-help" sourcefile="Documentation/SequentialDataStore/Introducing_SDS.md" sourcestartlinenumber="60" sourceendlinenumber="61">Getting help</h2>
+<p sourcefile="Documentation/SequentialDataStore/Introducing_SDS.md" sourcestartlinenumber="63" sourceendlinenumber="64">The following email address is available to participants of the SDS
 Preview for both product support and feedback:</p>
-<p><a href="mailto://CloudServices@osisoft.com">CloudServices@osisoft.com</a></p>
-<p>The OSIsoft team will respond to all support requests as
+<p sourcefile="Documentation/SequentialDataStore/Introducing_SDS.md" sourcestartlinenumber="66" sourceendlinenumber="66"><a href="mailto://CloudServices@osisoft.com" data-raw-source="[CloudServices@osisoft.com](mailto://CloudServices@osisoft.com)" sourcefile="Documentation/SequentialDataStore/Introducing_SDS.md" sourcestartlinenumber="66" sourceendlinenumber="66">CloudServices@osisoft.com</a></p>
+<p sourcefile="Documentation/SequentialDataStore/Introducing_SDS.md" sourcestartlinenumber="68" sourceendlinenumber="69">The OSIsoft team will respond to all support requests as
 quickly as possible during business hours (Pacific Time).</p>
 </article>
           </div>

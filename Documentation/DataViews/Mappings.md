@@ -4,7 +4,7 @@ uid: Mappings
 
  
  # Mappings
-The Mappings object lets users define the columns in the resulting data set by specifying their name and properties, as well as create shared mapping rules that can be used throughout all columns of the data view. By using default mappings, all properties of the resulting data set will be mapped to their own column. 
+The Mappings object lets users define the columns in the resulting data set by specifying their name and properties, as well as create shared mapping rules that can be used throughout all columns of the data view. By using default mappings, all properties of the query will be mapped to their own column, generated on data item retrieval. If the mappings are defined in the data view definition they will be persisted over time, and might need to be updated accordingly should a change occur in the data source
 ### Properties
 
 Property | Type | Requried | Descriptions
@@ -16,7 +16,7 @@ IsDefault | bool | False | Determines whether default parameters should be used
 
 
  ## `SharedMappingRules` 
- Used to define rules using a token and a pattern that can then be applied to one or many columns that share similar behavior. With the token property, users can specify a certain value that will differentiate the different columns that adhere to the defined pattern. See examples below. 
+ Used to define rules using a token and a pattern that can then be applied to one or many columns that share similar behavior. With the token property, users can specify a certain value that will differentiate the different columns that adhere to the defined pattern. See examples below.
 ### Properties
 
 Property | Type | Requried | Descriptions
@@ -28,7 +28,7 @@ MappingRulePattern | PropertyMappingRule | True | Data source identifier
 
 
  ## `MappingRulePattern` 
- Used to map a column to a data source by defining the paths to the property that the user wants to select, and an identifier to the resource of the property 
+ Used to map a column to a data source by defining the paths to the property that the user wants to select, and an identifier to the resource of the property
 ### Properties
 
 Property | Type | Requried | Descriptions
@@ -41,7 +41,7 @@ ItemIdentifier | QueryBase | False | Identifier for the resource that contain th
 
 
  ## `Columns` 
- The Column lets users specify the name and properties of a column in the resulting data set. Using the mapping rule object, users can decide what type of data mapping the column is using. 
+ The Column lets users specify the name and properties of a column in the resulting data set. Using the mapping rule object, users can decide what type of data mapping the column is using.
 ### Properties
 
 Property | Type | Requried | Descriptions
@@ -56,7 +56,7 @@ DataType | string | False | Type of the mapped data source
 ## `MappingRule` 
  The MappingRule can be used in the following forms 
  # [GroupRuleMappingRule](#tab/tabid-1) 
-Used to map a column to a group rule by specifying the Id of the rule, and a token defined in the group rule to identify what pattern to use. 
+Used to map a column to a group rule by specifying the Id of the rule, and a token defined in the group rule to identify what pattern to use.
 
 ### Properties
 
@@ -67,7 +67,7 @@ GroupRuleToken | string | True | Token to use in the specified group rule
 
 
 # [LinkedMappingRule](#tab/tabid-2) 
-Used when mapping a column to a shared mapping rule, using the token to define the value to be used for the token property of the rule. 
+Used when mapping a column to a shared mapping rule, using the token to define the value to be used for the token property of the rule.
 
 ### Properties
 
@@ -78,7 +78,7 @@ Token | string | True | Token to use in the specified mapping rule
 
 
 # [PropertyMappingRule](#tab/tabid-3) 
-Used to map a column to a data source by defining the paths to the property that the user wants to select, and an identifier to the resource of the property 
+Used to map a column to a data source by defining the paths to the property that the user wants to select, and an identifier to the resource of the property
 
 ### Properties
 
@@ -92,18 +92,16 @@ ItemIdentifier | QueryBase | False | Identifier for the resource that contain th
 
 
 ## `Example` 
-The following examples show different definitions of the Mappings object. The first example is the simplest way to define mappings by using the default. 
+The following examples show different definitions of the Mappings object. The first example is the simplest way to define mappings by using the default. The second example shows a mapping with one column defined, using a property mapping rule to define the property paths while leaving the item identifier undefined. This is accepted as long as the specified paths do not lead to an ambiguous result, and would in such case requrie the user to include an item identifier to further specify their rule. Since only one column is defined, it is required to define it as the key column. 
 
-The second example shows a mapping with one column defined, using a property mapping rule to define the property paths while leaving the item identifier undefined. This is accepted as long as the specified paths do not lead to an ambiguous result, and would in such case requrie the user to include an item identifier to further specify their rule. Since only one column is defined, it is required to define it as the key column. 
-
-The last example uses a shared mapping rule with a token to match the property path, and the item identifier including every stream with TankStream as its description. It also uses the group rule defined in the GroupRule Example section to create data groups based on the home states of the streams. The FlowRate and Temperature columns are defined with the shared mapping rule, using the token to specify their property path. The Volume column is an example of explicitly defining the property mapping rule in the column definition, this is done to demonstrate the difference and the result would be identical using the shared rule and a token, as the previous columns do.
+The last example uses a shared mapping rule with a token to match the property path, and the item identifier including every stream with TankStream as its description. It also uses the group rule defined in the [Group Rules](xref:Mappings) page to create data groups based on the states of the data source. The FlowRate and Temperature columns are defined with the shared mapping rule, using the token to specify their property path. The Volume column is an example of explicitly defining the property mapping rule in the column definition, this is done to demonstrate the difference and the result would be identical using the shared rule and a token, as the previous columns do.
 ```json
 {
   "SharedMappingRules": null,
   "Columns": [],
   "IsDefault": true
 }
-```
+``` 
 ```json
 {
   "SharedMappingRules": null,
@@ -121,7 +119,7 @@ The last example uses a shared mapping rule with a token to match the property p
     }
   ]
 }
-```
+``` 
 ```json
 {
   "SharedMappingRules": [
@@ -157,8 +155,8 @@ The last example uses a shared mapping rule with a token to match the property p
     {
       "Name": "State",
       "MappingRule": {
-        "GroupRuleId": "group_rule",
-        "GroupRuleToken": "{state}"
+        "GroupRuleId": "StateGroupRule",
+        "GroupRuleToken": null
       },
       "IsKey": false,
       "DataType": "string"
@@ -200,4 +198,4 @@ The last example uses a shared mapping rule with a token to match the property p
     }
   ]
 }
-```
+``` 

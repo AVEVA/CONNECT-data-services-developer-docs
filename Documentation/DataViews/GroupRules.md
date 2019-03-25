@@ -4,7 +4,7 @@ uid: GroupRules
 
  
  # GroupRules
-The GroupRule lets users organize data items in the query, within or across streams, to form data groups in the resulting data set. By specifying the type to group on, optionally also token rules defining patterns that describe the group, users can retrieve organized data sets to compare results and examine the data easier. 
+The GroupRule lets users organize data items in the query, within or across streams, to form data groups in the resulting data set. By specifying the type to group on, users can retrieve organized data items to compare and better examine the results.
 ### Properties
 
 Property | Type | Requried | Descriptions
@@ -26,43 +26,26 @@ StreamMetadata | string | Group on Stream Metadata
 
 
 ## `Example` 
-The following examples show group rule definitions, with the first example being a simple definition using only stream names to create data groups. 
-
-The second example creates groups according to the name of streams and the specified pattern. Streams whose name property match the {state}_Stream pattern, where {state} is the token, would in this case create a data group. 
-
-These groups could then be used as column mapping rules using a group rule mapping rule to get the value of the {state} token for the stream of the respective column. For example, using two streams named California_Stream and Pennsylvania_Stream with this group rule would result in two data groups being created, that, if used in a group rule mapping rule for a column representing the State, would result in the respective state, such as California, being the value for columns where the data item is contained in the California_Stream. (See the [mappings](xref:Mappings) page for more information about mapping rules). When working with large data sets, this allows users to group their data items and retrieve organized results.
+The following example shows a group rule definition that creates data groups based on state names defined in the stream metadata. It will result in a data group for every state, that will organize the data items accordingly in the result. By using this group rule as group rule mapping rule (See [mappings](xref:Mappings)), the value of the state can be reflected in its own column in the result. Users can use different stream properties to create group rules, using tokens to define the values that they are interested in.
 ```json
 [
   {
-    "Id": "DefaultGroupRule",
-    "Type": "StreamName",
-    "TokenRules": null
-  }
-]
-```
-```json
-[
-  {
-    "Id": "group_rule",
-    "Type": "StreamName",
+    "Id": "StateGroupRule",
+    "Type": "StreamTag",
     "TokenRules": {
       "Tokens": [
-        "{state}"
+        "Arizona",
+        "Pennsylvania",
+        "California"
       ],
-      "Patterns": [
-        {
-          "QueryId": "*",
-          "Name": "test_pattern",
-          "Value": "{state}_Stream"
-        }
-      ]
+      "Patterns": null
     }
   }
 ]
-```
+``` 
 ```json
-An example output using this group rule as described above could look like the following:
-```
+An example output using this group rule as described above could look like the following: (See [mappings](xref:Mappings) for a description on how to create the columns
+``` 
 ```json
 
 [
@@ -74,13 +57,6 @@ An example output using this group rule as described above could look like the f
         "Volume": "100"
     },
     {
-        "Timestamp": "2018-10-03T03:10:00Z",
-        "State": "Pennsylvania",
-        "FlowRate": "3",
-        "Temperature": "5.3334",
-        "Volume": "114.223"
-    },
-    {
         "Timestamp": "2018-10-03T03:00:00Z",
         "State": "California",
         "FlowRate": "44",
@@ -88,11 +64,11 @@ An example output using this group rule as described above could look like the f
         "Volume": "245.12"
     },
     {
-        "Timestamp": "2018-10-03T03:10:00Z",
-        "State": "California",
+        "Timestamp": "2018-10-03T03:00:00Z",
+        "State": "Arizona",
         "FlowRate": "42",
         "Temperature": "25.223",
         "Volume": "247.5"
     },
 ]
-```
+``` 

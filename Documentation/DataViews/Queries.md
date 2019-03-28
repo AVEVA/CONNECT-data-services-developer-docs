@@ -7,7 +7,7 @@ uid: Queries
 A list of queries to select the data items to be displayed in the data view
 ### Properties
 
-Property | Type | Requried | Descriptions
+Property | Type | Required | Descriptions
  --- | --- | --- | ---
 Id | string | True | Id of the query
 Query | QueryBase | True | Query to use for data retrieval
@@ -18,7 +18,7 @@ Query | QueryBase | True | Query to use for data retrieval
  The Query lets users define query parameters or build expressions to form queries using Or, And, and Not operators. It serves as the base for the different type of query operations available and can therefore be used recursively to form logical expressions as well as simple queries. To form a simple query, users would specify the parameters using the query properties. To form complex queries, the user can specify the Or, And, or Not operator to introduce a logical expression, and then proceed to build the query from that. See examples below. Whether building simple or complex queries, however, the expression needs to be concluded with query parameters.
 ### Properties
 
-Property | Type | Requried | Descriptions
+Property | Type | Required | Descriptions
  --- | --- | --- | ---
 Resource | QueryResource | True | Type of the resource used
 Field | QueryField | True | Field within the resource to query against

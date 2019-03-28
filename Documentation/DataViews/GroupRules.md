@@ -7,7 +7,7 @@ uid: GroupRules
 The GroupRule lets users organize data items in the query, within or across streams, to form data groups in the resulting data set. By specifying the type to group on, users can retrieve organized data items to compare and better examine the results.
 ### Properties
 
-Property | Type | Requried | Descriptions
+Property | Type | Required | Descriptions
  --- | --- | --- | ---
 Id | string | True | Id of the rule
 Type | GroupRuleType | False | Stream property to base grouping on
@@ -26,7 +26,7 @@ StreamMetadata | string | Group on Stream Metadata
 
 
 ## `Example` 
-The following example shows a group rule definition that creates data groups based on state names defined in the stream metadata. It will result in a data group for every state, that will organize the data items accordingly in the result. By using this group rule as group rule mapping rule (See [mappings](xref:Mappings)), the value of the state can be reflected in its own column in the result. Users can use different stream properties to create group rules, using tokens to define the values that they are interested in.
+The following example shows a group rule definition that creates data groups based on state names defined in the stream metadata. It will result in a data group for every state, that will organize the data items accordingly in the result. By using this group rule as a group rule mapping rule (See [mappings](xref:Mappings)), the value of the state can be reflected in its own column in the result. Users can use different stream properties to create group rules, using tokens to define the values that they are interested in.
 ```json
 [
   {
@@ -44,7 +44,7 @@ The following example shows a group rule definition that creates data groups bas
 ]
 ``` 
 ```json
-An example output using this group rule as described above could look like the following: (See [mappings](xref:Mappings) for a description on how to create the columns
+An example output using this group rule as described above could look like the following: (See [mappings](xref:Mappings) for a description on how to create the columns).
 ``` 
 ```json
 

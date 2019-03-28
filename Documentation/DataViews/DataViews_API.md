@@ -15,7 +15,7 @@ Name | string | False | Name of the data view
 Description | string | False | Description of the data view
 Queries | [QueryInfo] | True | A list of queries to select the data items to be displayed in the data view
 GroupRules | [GroupRule] | False | A list of group rules to organize data items into data groups
-Mappings | Mappings | False | Define the names of the columns and the stream properties that get mapped to them
+Mappings | Mappings | False | Defines the names of the columns and the stream properties that get mapped to them
 IndexDataType | string | True | Defines the index data type that index config uses
 IndexConfig | IndexConfig | False | Defines the index information from which to retrieve data. Currently, only interpolation mode is supported
 

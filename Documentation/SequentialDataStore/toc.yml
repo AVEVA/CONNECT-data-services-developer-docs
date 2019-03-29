@@ -8,7 +8,7 @@
   href: SDS_Streams.md
 - name: Stream Metadata and Tags
   href: SdsStreamExtra.md
-- name: Sds Views
+- name: Stream Views
   href: SDS_Views.md
 - name: Indexes
   href: indexes.md
@@ -24,7 +24,7 @@
   href: Writing_Data_API.md
 - name: Compression
   href: Compression.md
-- name: Searching for Streams
+- name: Searching
   href: Searching.md
 - name: Filter Expressions - Data
   href: Filter_Expressions.md

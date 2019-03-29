@@ -2,9 +2,9 @@
 uid: AccountNamespaceTier
 ---
 
-# NamespaceTier
+# Namespace Tiers
 
-An attribute that specifies namespace performance.
+An attribute that specifies `Namespace` performance.
 
 ## Properties
 
@@ -28,40 +28,48 @@ For HTTP requests and responses, the NamespaceTier object has the following prop
 ```
 ***
 
-## `GetNamespaceTier()`
+## `Get Namespace Tier`
 
-Retrieves a Namespace tier associated with a specified id
+Retrieves a Namespace tier associated with a specified id.
 
 ### Http
 
-`GET api/NamespaceTiers/{namespaceTierId}`
+`GET api/v1-preview/NamespaceTiers/{namespaceTierId}`
+
 
 ### Parameters
 
 ```csharp
 [Required]
+[FromRoute]
 string namespaceTierId
 ```
 
-The tier identifier for this request
+The tier identifier for this request.
 
 
 ### Security
 
-Allowed by Account Member [Role](xref:AccountRole)
+A `NamespaceTier` can be retrieved by an Account Member.
 
 ### Returns
 
-A `NamespaceTier` object with the specified namespaceTierId
+| Status Code | Return Type | Description | 
+ | --- | --- | ---  | 
+| 200 | NamespaceTier | A `NamespaceTier` object with the specified namespaceTierId. | 
+| 400 | Nothing is returned | Could not retrieve the specified `NamespaceTier` due to missing or invalid input. | 
+
 
 ***
-## `GetAllNamespaceTiers()`
+
+## `Get All Namespace Tiers`
 
 Retrieves a list of all available namespace tiers.
 
 ### Http
 
-`GET api/NamespaceTiers`
+`GET api/v1-preview/NamespaceTiers`
+
 
 ### Parameters
 
@@ -69,10 +77,14 @@ This API call does not have any parameters.
 
 ### Security
 
-Allowed by Account Member [Role](xref:AccountRole)
+`NamespaceTiers` can be retrieved by an Account Member.
 
 ### Returns
 
-An array of `NamespaceTier` objects
+| Status Code | Return Type | Description | 
+ | --- | --- | ---  | 
+| 200 | [NamespaceTier] | Returns a list of `NamespaceTier` objects. | 
+
 
 ***
+

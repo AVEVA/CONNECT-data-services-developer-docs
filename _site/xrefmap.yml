@@ -4,48 +4,78 @@ references:
 - uid: accessControl
   name: 'Role-based access control '
   href: Documentation/Access_Control.html
-- uid: accountApplications
-  name: Applications
-  href: Documentation/Management/Account_Applications.html
 - uid: AccountClientRole
-  name: ClientRole
+  name: Client Roles
   href: Documentation/Management/Account_ClientRole.html
 - uid: AccountNamespace
-  name: Namespace
+  name: Namespaces
   href: Documentation/Management/Account_Namespace.html
 - uid: AccountNamespaceTier
-  name: NamespaceTier
+  name: Namespace Tiers
   href: Documentation/Management/Account_NamespaceTier.html
 - uid: AccountRole
-  name: Role
+  name: Roles
   href: Documentation/Management/Account_Role.html
 - uid: AccountRootAccessControl
-  name: RootAccessControl
+  name: Root AccessControl
   href: Documentation/Management/Account_RootAccessControl.html
 - uid: AccountServiceBlog
-  name: ServiceBlog
+  name: Service Blog
   href: Documentation/Management/Account_ServiceBlog.html
 - uid: AccountTenant
-  name: Tenant
+  name: Tenants
   href: Documentation/Management/Account_Tenant.html
-- uid: accountUser
-  name: User
-  href: Documentation/Management/Account_User.html
+- uid: AccountTenantFeatureState
+  name: Tenant Feature States
+  href: Documentation/Management/Account_TenantFeatureState.html
 - uid: AccountUserRole
-  name: UserRole
+  name: User Roles
   href: Documentation/Management/Account_UserRole.html
 - uid: dataIngress
   name: Data Ingress and OSIsoft Message Format
   href: Documentation/DataIngress/Data_Ingress.html
+- uid: DataViewsApi
+  name: DataViews
+  href: Documentation/DataViews/DataViews_API.html
+- uid: DataViewsOverview
+  name: Data Views (Preview)
+  href: Documentation/DataViews/DataViews_Overview.html
+- uid: identityClient
+  name: Client
+  href: Documentation/Identity/Identity_Client.html
+- uid: identityClientCredentialClient
+  name: ClientCredentialClient
+  href: Documentation/Identity/Identity_ClientCredentialClient.html
+- uid: identityConsent
+  name: Consent to OSIsoft Applications
+  href: Documentation/Identity/Consent.html
+- uid: identityHybridClient
+  name: HybridClient
+  href: Documentation/Identity/Identity_HybridClient.html
+- uid: identityIdentityProvider
+  name: IdentityProvider
+  href: Documentation/Identity/Identity_IdentityProvider.html
+- uid: identityImplicitClient
+  name: ImplicitClient
+  href: Documentation/Identity/Identity_ImplicitClient.html
+- uid: identityInvitation
+  name: Invitation
+  href: Documentation/Identity/Identity_Invitation.html
+- uid: identityOverview
+  name: OSIsoft Identity Service
+  href: Documentation/Identity/Identity_Overview.html
+- uid: identitySecret
+  name: Secret
+  href: Documentation/Identity/Identity_Secret.html
+- uid: identityUser
+  name: User
+  href: Documentation/Identity/Identity_User.html
 - uid: index
-  name: Welcome
+  name: OCS API
   href: index.html
 - uid: ManagementOverview
-  name: Management
+  name: Account Management
   href: Documentation/Management/Management_Overview.html
-- uid: omfIngressPublishers
-  name: Publishers
-  href: Documentation/DataIngress/OMF_Ingress_Publishers.html
 - uid: omfIngressSpecification
   name: Using OMF with Cloud Services
   href: Documentation/DataIngress/OMF_Ingress_Specification.html
@@ -71,8 +101,11 @@ references:
   name: Compression
   href: Documentation/SequentialDataStore/Compression.html
 - uid: sdsFilterExpressions
-  name: Filter Expressions
+  name: 'Filter Expressions: Values'
   href: Documentation/SequentialDataStore/Filter_Expressions.html
+- uid: sdsFilterExpressionsMetadata
+  name: 'Filter Expressions: Metadata Objects'
+  href: Documentation/SequentialDataStore/Filter_Expressions_Metadata.html
 - uid: sdsIndexes
   name: Indexes
   href: Documentation/SequentialDataStore/indexes.html
@@ -104,7 +137,7 @@ references:
   name: Types
   href: Documentation/SequentialDataStore/SDS_Types.html
 - uid: sdsViews
-  name: SDS Views
+  name: Stream Views
   href: Documentation/SequentialDataStore/SDS_Views.html
 - uid: sdsWritingData
   name: Writing data

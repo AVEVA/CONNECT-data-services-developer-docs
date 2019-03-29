@@ -2,9 +2,12 @@
 uid: AccountUserRole
 ---
 
-# UserRole
+# User Roles
 
-APIs to manage user roles.
+User `Roles` authorize API requests made by users to various OCS features. Users can be assigned more than one `Role`, but all users have the Account Member role. The following are currently available User `Roles`:
+- Account Administrator: Can add, edit, and remove users. Can also edit the permissions of existing users.
+- Account Member: Can log in and access the OCS portal.
+
 
 ## Properties
 
@@ -24,173 +27,209 @@ For HTTP requests and responses, the UserRole object has the following propertie
 ```
 ***
 
-## `GetRolesForUser()`
+## `Get Roles for User`
 
-Retrieves all roles for the specified user.
+Retrieves all `Roles` for the specified user.
 
 ### Http
 
-`GET api/Tenants/{tenantId}/Users/{userId}/Roles`
+`GET api/v1-preview/Tenants/{tenantId}/Users/{userId}/Roles`
+
 
 ### Parameters
 
 ```csharp
 [Required]
+[FromRoute]
 string tenantId
 ```
 
-The identifier for the account in which the user belongs
+The identifier of the account in which the user belongs.
 ```csharp
 [Required]
+[FromRoute]
 string userId
 ```
 
-The identifier of the <see cref="!:User" /> whose roles will be retrieved
+The identifier of the user whose roles will be retrieved.
 ```csharp
 [Required]
+[FromRoute]
 string skip
 ```
 
-Number of `Roles` to ignore
+Number of `Roles` to ignore.
 ```csharp
 [Required]
+[FromRoute]
 string count
 ```
 
-Number of `Roles` to be returned
-```csharp
-[Optional]
-[Default = ""]
-string query
-```
-
-Unsupported parameter
-
+Number of `Roles` to return.
 
 ### Security
 
-Allowed by Account Member and Account Administrator [Roles](xref:AccountRole)
+Authorized for Account Administrators of the specified account and an Account Member's own `Roles` within the specified account.
 
 ### Returns
 
-An array of `Role` objects belonging to the user with the specified userId.
+| Status Code | Return Type | Description | 
+ | --- | --- | ---  | 
+| 200 | [Role] | Returns a list of `Role` objects belonging to the user with the specified userId. | 
+| 400 | Nothing is returned | Could not retrieve `Roles` due to missing or invalid input. | 
+| 403 | Nothing is returned | Unauthorized to get `Roles` for the specified user. | 
+| 404 | Nothing is returned | User not found in the specified `Tenant`. | 
+
 
 ***
-## `AddAccountRoleToUser()`
 
-Adds an account role to the specified user.
+## `Add Account Role to User`
+
+Adds a `Role` to the specified user.
 
 ### Http
 
-`PUT api/Tenants/{tenantId}/Users/{userId}/Roles/{roleId}`
+`PUT api/v1-preview/Tenants/{tenantId}/Users/{userId}/Roles/{roleId}`
+
 
 ### Parameters
 
 ```csharp
 [Required]
+[FromRoute]
 string tenantId
 ```
 
-The identifier for the account in which the user belongs
+The identifier for the account in which the user belongs.
 ```csharp
 [Required]
+[FromRoute]
 string userId
 ```
 
-The identifier of the <see cref="!:User" /> who will be given the role
+The identifier of the user who will be given the `Role`.
 ```csharp
 [Required]
+[FromRoute]
 string roleId
 ```
 
-The identifier of the role to add to the <see cref="!:User" />
+The identifier of the `Role` to be assigned.
 
 
 ### Security
 
-Allowed by Account Administrator [Role](xref:AccountRole)
+Authorized for Account Administrators of the specified account.
 
 ### Returns
 
-The `Role` with the specified roleId
+| Status Code | Return Type | Description | 
+ | --- | --- | ---  | 
+| 200 | Role | Returns the added `Role` with the specified roleId. | 
+| 400 | Nothing is returned | Could not add the `Role` to the specified user due to missing or invalid input. | 
+| 403 | Nothing is returned | Unauthorized to add the `Role` to the specified user. | 
+| 404 | Nothing is returned | A user with the specified userId was not found. | 
+
 
 ***
-## `RemoveRoleFromUser()`
 
-Removes a role from a user.
+## `Remove Role from User`
+
+Removes a `Role` from a user.
 
 ### Http
 
-`DELETE api/Tenants/{tenantId}/Users/{userId}/Roles/{roleId}`
+`DELETE api/v1-preview/Tenants/{tenantId}/Users/{userId}/Roles/{roleId}`
+
 
 ### Parameters
 
 ```csharp
 [Required]
+[FromRoute]
 string tenantId
 ```
 
-The identifier for the account in which the user belongs
+The identifier for the account in which the user belongs.
 ```csharp
 [Required]
+[FromRoute]
 string userId
 ```
 
-The identifier of the <see cref="!:User" /> whose role will be removed
+The identifier of the user whose `Role` will be removed.
 ```csharp
 [Required]
+[FromRoute]
 string roleId
 ```
 
-The identifier of the role to remove from the <see cref="!:User" />
+The identifier of the `Role` to be removed.
 
 
 ### Security
 
-Allowed by Account Administrator [Role](xref:AccountRole)
+Authorized for Account Administrators of the specified account.
 
 ### Returns
 
-Nothing is returned
+| Status Code | Return Type | Description | 
+ | --- | --- | ---  | 
+| 204 | Nothing is returned | The `Role` was removed from the specified user. | 
+| 400 | Nothing is returned | Could not remove the `Role` due to missing or invalid input. | 
+| 403 | Nothing is returned | Unauthorized to remove the `Role` from the specified user. | 
+| 404 | Nothing is returned | A user with the specified userId was not found. | 
+
 
 ***
-## `ReplaceUserRoles()`
 
-Replace the roles of a user with a new list of roles.
+## `Replace User Roles`
+
+Replaces the `Roles` of a user with a new list of roles.
 
 ### Http
 
-`PUT api/Tenants/{tenantId}/Users/{userId}/Roles`
+`PUT api/v1-preview/Tenants/{tenantId}/Users/{userId}/Roles`
+
 
 ### Parameters
 
 ```csharp
 [Required]
+[FromRoute]
 string tenantId
 ```
 
-The identifier for the account in which the user belongs
+The identifier for the account in which the user belongs.
 ```csharp
 [Required]
+[FromRoute]
 string userId
 ```
 
-The identifier of the <see cref="!:User" /> whose roles will be replaced
+The identifier of the user whose roles will be replaced.
 ```csharp
 [Required]
 [FromBody]
-[Role] newRoles
+[Role] roleList
 ```
 
-From the body. An array of `Role` objects to set as the Roles for the specified user
+A list of `Role` objects to set as the Roles for the specified user.
 
 
 ### Security
 
-Allowed by Account Administrator and Community Lead [Roles](xref:AccountRole)
+Authorized for Account Administrators of the specified account.
 
 ### Returns
 
-An array of all `Role` objects assigned to the user specified by userId after the replacement operation is complete
+| Status Code | Return Type | Description | 
+ | --- | --- | ---  | 
+| 200 | Nothing is returned | Returns the new list of all `Role` objects assigned to the specified user. | 
+| 400 | Nothing is returned | Could not replace the `Roles` of the specified user due to missing or invalid input. | 
+| 403 | Nothing is returned | Unauthorized to replace the `Roles` of the specified user. | 
+| 404 | Nothing is returned | A user with the specified userId was not found. | 
+
 
 ***
+

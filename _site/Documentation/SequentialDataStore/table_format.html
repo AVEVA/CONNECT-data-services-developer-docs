@@ -17,7 +17,7 @@
     <meta property="docfx:navrel" content="../../toc.html">
     <meta property="docfx:tocrel" content="../toc.html">
     
-    
+    <meta property="docfx:rel" content="../../">
     
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
@@ -33,10 +33,10 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              
-              <a class="navbar-brand" href="../../index.html">
-                <img id="logo" src="../../images/atlas_icon.png" alt="">
-              </a>    </div>
+              <a class="navbar-brand" href="../../index.html" width="46">
+                <img id="logo" src="../../Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              </a>
+            </div>
             <div class="collapse navbar-collapse" id="navbar">
               <form class="navbar-form navbar-right" role="search" id="search">
                 <div class="form-group">
@@ -55,6 +55,16 @@
           </div>
         </div>
       </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
       <div role="main" class="container body-content hide-when-search">
         
         <div class="sidenav hide-when-search">
@@ -66,14 +76,12 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="sdsTableFormat">
-
-<h4 id="qitableformattopic">Qi_Table_format_topic</h4>
 <h1 id="table-format">Table format</h1>
+
 <p>A table is a convenient structure for analytics and display. The REST APIs for retrieving multiple events from 
 the data store supports returning results in a table. The form variable can be set to specify a table or a table 
 with headers.</p>
-<p>Table format can be applied to any read that returns multiple values, including Get Values, Get Range Values, 
-Get Window Values, and Get Intervals. </p>
+<p>Table format can be applied to any read that returns multiple values and summaries. </p>
 <p><strong>.NET</strong></p>
 <pre><code>  public enum State
   {
@@ -84,7 +92,7 @@ Get Window Values, and Get Intervals. </p>
 
   public class Simple
   {
-    [QiMember(IsKey = true, Order = 0) ]
+    [SdsMember(IsKey = true, Order = 0) ]
     public DateTime Time { get; set; }
     public State State { get; set; }
     public Double Measurement { get; set; }
@@ -137,9 +145,9 @@ Get Window Values, and Get Intervals. </p>
   4/1/2017 7:07:00 AM : Warning  7
   4/1/2017 7:08:00 AM : Warning  8
   4/1/2017 7:09:00 AM : Warning  9 
-</code></pre><p>The following is a standard Get Window Values request:</p>
-<pre><code>  api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data/
-    GetWindowValues?startIndex= 2017-04-01T07:00:00Z&amp;endIndex= 2017-04-01T07:10:00Z
+</code></pre><p>The following is a request to retrieve values using the window parameters:</p>
+<pre><code>  GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data
+  ?startIndex=2017-04-01T07:00:00Z&amp;endIndex=2017-04-01T07:10:00Z
 </code></pre><p>The following response would be returned from the above code:</p>
 <pre><code>  Content-Type: application/json
 
@@ -194,15 +202,10 @@ Get Window Values, and Get Intervals. </p>
         &quot;Measurement&quot;:9.0
      }
   ]
-
-
- To retrieve the results in table format, add the form variable and specify table.
-
- ::
-
-   api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data/GetWindowValues
-   ?startIndex=2017-04-01T07:00:00Z&amp;endIndex=2017-04-01T07:10:00Z
-   &amp;form=table
+</code></pre><p>To retrieve the results in table format, add the form variable and specify table.</p>
+<pre><code>  GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data
+  ?startIndex=2017-04-01T07:00:00Z&amp;endIndex=2017-04-01T07:10:00Z
+  &amp;form=table
 </code></pre><p>Response</p>
 <pre><code>  Content-Type: application/json
 
@@ -215,7 +218,7 @@ Get Window Values, and Get Intervals. </p>
         },
         {  
            &quot;Name&quot;:&quot;State&quot;,
-           &quot;Type&quot;:&quot;State&quot;
+           &quot;Type&quot;:&quot;Int32Enum&quot;
         },
         {  
            &quot;Name&quot;:&quot;Measurement&quot;,
@@ -276,7 +279,7 @@ Get Window Values, and Get Intervals. </p>
      ]
   }
 </code></pre><p>To retrieve the results in table format with column headers, add the form variable and specify <code>tableh</code>.</p>
-<pre><code>  api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data/GetWindowValues
+<pre><code>  GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data
   ?startIndex=2017-04-01T07:00:00Z&amp;endIndex=2017-04-01T07:10:00Z
   &amp;form=tableh
 </code></pre><p>Response</p>
@@ -291,7 +294,7 @@ Get Window Values, and Get Intervals. </p>
         },
         {  
            &quot;Name&quot;:&quot;State&quot;,
-           &quot;Type&quot;:&quot;State&quot;
+           &quot;Type&quot;:&quot;Int32Enum&quot;
         },
         {  
            &quot;Name&quot;:&quot;Measurement&quot;,
@@ -379,7 +382,7 @@ Get Window Values, and Get Intervals. </p>
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
-            <span id='copyright-text'>© 2018 - OSIsoft, LLC.<span>
+            <span id='copyright-text'>© 2019 - OSIsoft, LLC.<span>
         </span></span></div>
       </footer>
     </div>

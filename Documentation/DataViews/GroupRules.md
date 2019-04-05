@@ -44,7 +44,7 @@ The following example shows a group rule definition that creates data groups bas
 ]
 ``` 
 ```json
-An example output using this group rule as described above could look like the following: (See [mappings](xref:Mappings) for a description on how to create the columns).
+An example output using this group rule as described above could look like the following:
 ``` 
 ```json
 

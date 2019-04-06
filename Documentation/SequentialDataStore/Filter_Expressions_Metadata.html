@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Filter Expressions: Metadata Objects </title>
+    <title>Filter Expressions: SDS Objects </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Filter Expressions: Metadata Objects ">
+    <meta name="title" content="Filter Expressions: SDS Objects ">
     <meta name="generator" content="docfx 2.39.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -75,12 +75,11 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="sdsFilterExpressionsMetadata">
-<h1 id="filter-expressions-metadata-objects">Filter Expressions: Metadata Objects</h1>
+            <article class="content wrap" id="_content" data-uid="sdsFilterExpressionsObjects">
+<h1 id="filter-expressions-sds-objects">Filter Expressions: SDS Objects</h1>
 
 <p>This section focuses on filter expressions that can be applied to certain read operations that return Sequential Data Store objects (e.g. Streams, Types). For filtering on read operations of Sequential Data Store values refer to <a class="xref" href="Filter_Expressions.html">Filter Expressions: Values</a>.</p>
-<p>Filter expressions can be applied to any read operation that returns multiple values, including 
-<code>Get Types</code> and <code>Get Streams</code>.</p>
+<p>Filter expressions can be applied to any read operation that return Sequential Data Store objects, including Streams, Types, and Stream Views.</p>
 <h2 id="fields">Fields</h2>
 <p>For Streams and Types, filter expressions are valid for the same properties that are valid for the Search parameter. Valid fields 
 for both Streams and Types are <code>Name</code>, <code>Id</code>, and <code>Description</code>. </p>
@@ -169,8 +168,8 @@ expression:</p>
 </tr>
 </tbody>
 </table>
-<p>Not all operators supported for <a class="xref" href="Filter_Expressions.html">values</a> are 
-supported for filtering on object metadata string fields.</p>
+<p>Note that not all of the operators supported for filtering on <a class="xref" href="Filter_Expressions.html">values</a> are 
+supported for filtering on SDS objects.</p>
 <p><strong>Logical Operator Examples</strong></p>
 <p>The following examples show logical operators and string functions.</p>
 <ul>

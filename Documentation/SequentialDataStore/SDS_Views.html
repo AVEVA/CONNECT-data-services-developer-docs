@@ -87,13 +87,15 @@ or when the properties have the same name, SDS will map the properties automatic
 a target property that it cannot map to, the property is added and configured with a default value.</p>
 <p>To map a property that is beyond the ability of SDS to map on its own, you should define an SdsStreamViewProperty 
 and add it to the SdsStreamView’s Properties collection.</p>
-<p>The following table shows the required and optional SdsStreamView fields. Fields that are not included are reserved for internal SDS use.</p>
+<p>The following table shows the required and optional SdsStreamView fields. Fields that are not included are reserved for internal SDS use.
+See the <a class="xref" href="Searching.html">Searching</a> topic regarding limitations on search.</p>
 <table>
 <thead>
 <tr>
 <th>Property</th>
 <th>Type</th>
 <th>Optionality</th>
+<th>Searchable</th>
 <th>Details</th>
 </tr>
 </thead>
@@ -102,50 +104,52 @@ and add it to the SdsStreamView’s Properties collection.</p>
 <td>Id</td>
 <td>String</td>
 <td>Required</td>
+<td>Yes</td>
 <td>Identifier for referencing the stream view</td>
 </tr>
 <tr>
 <td>Name</td>
 <td>String</td>
 <td>Optional</td>
+<td>Yes</td>
 <td>Friendly name</td>
 </tr>
 <tr>
 <td>Description</td>
 <td>String</td>
 <td>Optional</td>
+<td>Yes</td>
 <td>Description text</td>
 </tr>
 <tr>
 <td>SourceTypeId</td>
 <td>String</td>
 <td>Required</td>
+<td>Yes</td>
 <td>Identifier of the SdsType of the SdsStream</td>
 </tr>
 <tr>
 <td>TargetTypeId</td>
 <td>String</td>
 <td>Required</td>
+<td>Yes</td>
 <td>Identifier of the SdsType to convert events to</td>
 </tr>
 <tr>
 <td>Properties</td>
-<td>IList<sdsstreamviewproperty></sdsstreamviewproperty></td>
+<td>IList&lt;SdsStreamViewProperty></td>
 <td>Optional</td>
+<td>Yes, with limitations</td>
 <td>Property level mapping</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Rules for type identifier</strong></p>
+<p><strong>Rules for the Stream View Identifier (SdsStreamView.Id)</strong></p>
 <ol>
 <li>Is not case sensitive</li>
 <li>Can contain spaces</li>
-<li>Cannot begin with two underscores (&quot;__&quot;)</li>
-<li>Cannot contain forward slash or backslash characters (&quot;/&quot; or &quot;\&quot;)</li>
+<li>Cannot contain forward slash (&quot;/&quot;)</li>
 <li>Can contain a maximum of 100 characters</li>
-<li>Cannot start or end with a period.</li>
-<li>Cannot contain consecutive periods.</li>
-<li>Cannot consist of only periods.</li>
 </ol>
 <h2 id="properties--sdsstreamviewproperty">Properties / SdsStreamViewProperty</h2>
 <p>The SdsStreamView Properties collection provides detailed instructions for specifying the mapping of 
@@ -698,7 +702,7 @@ Content-Type: application/json
 <p>Returns a list of stream views within a given namespace.</p>
 <p>If specifying the optional query parameter or optional filter parameter, the list of stream views returned is filtered to match 
 the search/filter criteria. If neither parameter is specified, the list includes all stream views 
-in the Namespace. See <a class="xref" href="Searching.html">Searching</a> and <a class="xref" href="Filter_Expressions_Metadata.html">Filter Expressions: Metadata Objects</a> for information about specifying those respective parameters.</p>
+in the Namespace. See <a class="xref" href="Searching.html">Searching</a> and <a class="xref" href="Filter_Expressions_Metadata.html">Filter Expressions: SDS Objects</a> for information about specifying those respective parameters.</p>
 <p><strong>Request</strong></p>
 <pre><code>    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews?query={query}&amp;filter={filter}&amp;skip={skip}&amp;count={count}&amp;orderby={orderby}
 </code></pre><p><strong>Parameters</strong></p>
@@ -708,7 +712,7 @@ in the Namespace. See <a class="xref" href="Searching.html">Searching</a> and <a
 See <a class="xref" href="Searching.html">Searching</a>
 for information about specifying the search parameter.</p>
 <p><code>string filter</code><br>An optional filter string to match which SdsStreamViews will be returned.  See the 
-<a class="xref" href="Filter_Expressions_Metadata.html">Filter Expressions: Metadata Objects</a> 
+<a class="xref" href="Filter_Expressions_Metadata.html">Filter Expressions: SDS Objects</a> 
 topic for information about specifying the filter parameter.</p>
 <p><code>int skip</code><br>An optional parameter representing the zero-based offset of the first SdsStreamView to retrieve. 
 If not specified, a default value of 0 is used.</p>

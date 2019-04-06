@@ -80,7 +80,10 @@
 
 <p>SdsStream metadata is represented as a dictionary of string keys and associated string values. 
 It can be used to associate additional information with a stream. SdsStream tags are represented 
-as a list of strings. Tags can be used to categorize or denote special attributes of streams. </p>
+as a list of strings. Tags can be used to categorize or denote special attributes of streams. 
+The SdsStream Metadata API And SdsStream Tags API do not accept the search query parameter in their respective
+Get calls. However, stream tags and metadata can be used as criteria in search query strings to return 
+SdsStream results with the <a class="xref" href="SDS_Streams.html">Stream</a> API.</p>
 <h2 id="sdsstream-metadata-api-">SdsStream Metadata API </h2>
 <h2 id="get-stream-metadata"><code>Get stream metadata</code></h2>
 <p>Returns the metadata dictionary for the specified stream. </p>

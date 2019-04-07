@@ -8,7 +8,7 @@ APIs for working with data views.
 
 ### Properties
 
-Property | Type | Requried | Descriptions
+Property | Type | Required | Descriptions
  --- | --- | --- | ---
 Id | string | True | Id of the data view
 Name | string | False | Name of the data view

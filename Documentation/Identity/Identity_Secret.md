@@ -783,7 +783,7 @@ Add a new secret for a Client Credential Client
 
 ### Request
 
-`POST api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets/`
+`POST api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets`
 
 ### Parameters
 

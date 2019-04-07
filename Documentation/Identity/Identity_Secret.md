@@ -16,7 +16,7 @@ This method is obsolete, please use the following instead:
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/Clients/{clientId}/Secret/`
+`GET api/v1-preview/Tenants/{tenantId}/Clients/{clientId}/Secrets`
 
 ### Parameters
 
@@ -81,12 +81,12 @@ Success
 [
   {
     "SecretId": "SecretId",
-    "Expiration": "2019-03-06T11:39:54.458818-08:00",
+    "Expiration": "2019-03-13T13:35:43.6928171-07:00",
     "Description": "description"
   },
   {
     "SecretId": "SecretId",
-    "Expiration": "2019-03-06T11:39:54.4613886-08:00",
+    "Expiration": "2019-03-13T13:35:43.6956327-07:00",
     "Description": "description"
   }
 ]
@@ -116,7 +116,7 @@ This method is obsolete, please use the following instead:
 
 ### Request
 
-`PUT api/v1-preview/Tenants/{tenantId}/Clients/{clientId}/Secret/{secretId}`
+`PUT api/v1-preview/Tenants/{tenantId}/Clients/{clientId}/Secrets/{secretId}`
 
 ### Parameters
 
@@ -152,7 +152,7 @@ secretId
 ```json
 {
   "SecretId": "SecretId",
-  "Expiration": "2019-03-06T11:39:54.4707641-08:00",
+  "Expiration": "2019-03-13T13:35:43.7061245-07:00",
   "Description": "description"
 }
 ```
@@ -176,7 +176,7 @@ Success
 ```json
 {
   "SecretId": "SecretId",
-  "Expiration": "2019-03-06T11:39:54.4708819-08:00",
+  "Expiration": "2019-03-13T13:35:43.7062952-07:00",
   "Description": "description"
 }
 ```
@@ -208,7 +208,7 @@ Get all secrets for a Hybrid Client
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}/Secret/`
+`GET api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}/Secrets`
 
 ### Parameters
 
@@ -273,12 +273,12 @@ Success
 [
   {
     "SecretId": "SecretId",
-    "Expiration": "2019-03-06T11:39:54.7607538-08:00",
+    "Expiration": "2019-03-13T13:35:44.0054967-07:00",
     "Description": "description"
   },
   {
     "SecretId": "SecretId",
-    "Expiration": "2019-03-06T11:39:54.7607651-08:00",
+    "Expiration": "2019-03-13T13:35:44.0055182-07:00",
     "Description": "description"
   }
 ]
@@ -307,7 +307,7 @@ Get a specific Hybrid Client Secret
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}/Secret/{secretId}`
+`GET api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}/Secrets/{secretId}`
 
 ### Parameters
 
@@ -351,7 +351,7 @@ Success
 ```json
 {
   "SecretId": "SecretId",
-  "Expiration": "2019-03-06T11:39:54.7611276-08:00",
+  "Expiration": "2019-03-13T13:35:44.006263-07:00",
   "Description": "description"
 }
 ```
@@ -379,7 +379,7 @@ Add a new secret for a Hybrid Client
 
 ### Request
 
-`POST api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}/Secret/`
+`POST api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}/Secrets`
 
 ### Parameters
 
@@ -407,7 +407,7 @@ ClientSecretCreateOrUpdateDto clientSecretCreateOrUpdateDto
 
 ```json
 {
-  "Expiration": "2019-03-06T11:39:54.7613924-08:00",
+  "Expiration": "2019-03-13T13:35:44.0068177-07:00",
   "Description": "description"
 }
 ```
@@ -432,7 +432,7 @@ Created
 {
   "ClientSecret": "ClientSecret",
   "SecretId": "SecretId",
-  "Expiration": "2019-03-06T11:39:54.7628819-08:00",
+  "Expiration": "2019-03-13T13:35:44.0086882-07:00",
   "Description": "description"
 }
 ```
@@ -461,7 +461,7 @@ Update a Hybrid Client Secret
 
 ### Request
 
-`PUT api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}/Secret/{secretId}`
+`PUT api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}/Secrets/{secretId}`
 
 ### Parameters
 
@@ -496,7 +496,7 @@ secretId
 
 ```json
 {
-  "Expiration": "2019-03-06T11:39:54.7646348-08:00",
+  "Expiration": "2019-03-13T13:35:44.0145544-07:00",
   "Description": "description"
 }
 ```
@@ -520,7 +520,7 @@ Success
 ```json
 {
   "SecretId": "SecretId",
-  "Expiration": "2019-03-06T11:39:54.764713-08:00",
+  "Expiration": "2019-03-13T13:35:44.0147004-07:00",
   "Description": "description"
 }
 ```
@@ -552,7 +552,7 @@ Delete a secret from a Hybrid Client
 
 ### Request
 
-`DELETE api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}/Secret/{secretId}`
+`DELETE api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}/Secrets/{secretId}`
 
 ### Parameters
 
@@ -612,7 +612,7 @@ Get all secrets for a Client Credential Client
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secret/`
+`GET api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets`
 
 ### Parameters
 
@@ -677,12 +677,12 @@ Success
 [
   {
     "SecretId": "SecretId",
-    "Expiration": "2019-03-06T11:39:54.8710892-08:00",
+    "Expiration": "2019-03-13T13:35:44.1746429-07:00",
     "Description": "description"
   },
   {
     "SecretId": "SecretId",
-    "Expiration": "2019-03-06T11:39:54.8711103-08:00",
+    "Expiration": "2019-03-13T13:35:44.1746574-07:00",
     "Description": "description"
   }
 ]
@@ -711,7 +711,7 @@ Get a specific Client Credential Client Secret
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secret/{secretId}`
+`GET api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets/{secretId}`
 
 ### Parameters
 
@@ -755,7 +755,7 @@ Success
 ```json
 {
   "SecretId": "SecretId",
-  "Expiration": "2019-03-06T11:39:54.8716206-08:00",
+  "Expiration": "2019-03-13T13:35:44.1754134-07:00",
   "Description": "description"
 }
 ```
@@ -783,7 +783,7 @@ Add a new secret for a Client Credential Client
 
 ### Request
 
-`POST api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secret/`
+`POST api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets`
 
 ### Parameters
 
@@ -811,7 +811,7 @@ ClientSecretCreateOrUpdateDto clientSecretCreateOrUpdateDto
 
 ```json
 {
-  "Expiration": "2019-03-06T11:39:54.8719443-08:00",
+  "Expiration": "2019-03-13T13:35:44.1758036-07:00",
   "Description": "description"
 }
 ```
@@ -836,7 +836,7 @@ Created
 {
   "ClientSecret": "ClientSecret",
   "SecretId": "SecretId",
-  "Expiration": "2019-03-06T11:39:54.872019-08:00",
+  "Expiration": "2019-03-13T13:35:44.1759637-07:00",
   "Description": "description"
 }
 ```
@@ -865,7 +865,7 @@ Update a Client Credential Client Secret
 
 ### Request
 
-`PUT api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secret/{secretId}`
+`PUT api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets/{secretId}`
 
 ### Parameters
 
@@ -900,7 +900,7 @@ secretId
 
 ```json
 {
-  "Expiration": "2019-03-06T11:39:54.8725398-08:00",
+  "Expiration": "2019-03-13T13:35:44.1771031-07:00",
   "Description": "description"
 }
 ```
@@ -924,7 +924,7 @@ Success
 ```json
 {
   "SecretId": "SecretId",
-  "Expiration": "2019-03-06T11:39:54.872665-08:00",
+  "Expiration": "2019-03-13T13:35:44.1772509-07:00",
   "Description": "description"
 }
 ```
@@ -956,7 +956,7 @@ Delete a secret from a Client Credential Client
 
 ### Request
 
-`DELETE api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secret/{secretId}`
+`DELETE api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets/{secretId}`
 
 ### Parameters
 

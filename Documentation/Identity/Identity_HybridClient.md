@@ -21,6 +21,7 @@ LogoUri | string | URI to client logo (used on consent screen).
 ClientId | string | Client ID for this Client
 Name | string | Name of ClientDto.
 Enabled | optional: bool | Is ClientDto Enabled
+Tags | string[] | For OSIsoft internal use only
 
 ### Serialized Model
 
@@ -40,7 +41,11 @@ Enabled | optional: bool | Is ClientDto Enabled
   "LogoUri": "LogoUri",
   "ClientId": "ClientId",
   "Name": "Name",
-  "Enabled": false
+  "Enabled": false,
+  "Tags": [
+    "String",
+    "String"
+  ]
 }
 ```
 
@@ -52,7 +57,7 @@ Create a Hybrid flow Client
 
 ### Request
 
-`POST api/v1-preview/Tenants/{tenantId}/HybridClient/`
+`POST api/v1-preview/Tenants/{tenantId}/HybridClients`
 
 ### Parameters
 
@@ -74,7 +79,7 @@ New HybridClientCreateDto object
 ```json
 {
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-03-06T11:39:54.711037-08:00",
+  "SecretExpirationDate": "2019-03-13T13:35:43.9417411-07:00",
   "AllowOfflineAccess": false,
   "AllowAccessTokensViaBrowser": false,
   "RedirectUris": [
@@ -89,7 +94,11 @@ New HybridClientCreateDto object
   "LogoUri": "LogoUri",
   "ClientId": "ClientId",
   "Name": "Name",
-  "Enabled": false
+  "Enabled": false,
+  "Tags": [
+    "String",
+    "String"
+  ]
 }
 ```
 
@@ -114,7 +123,7 @@ Created
   "ClientSecret": "ClientSecret",
   "SecretId": "SecretId",
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-03-06T11:39:54.7151333-08:00",
+  "SecretExpirationDate": "2019-03-13T13:35:43.9552005-07:00",
   "AllowOfflineAccess": false,
   "AllowAccessTokensViaBrowser": false,
   "RedirectUris": [
@@ -129,7 +138,11 @@ Created
   "LogoUri": "LogoUri",
   "ClientId": "ClientId",
   "Name": "Name",
-  "Enabled": false
+  "Enabled": false,
+  "Tags": [
+    "String",
+    "String"
+  ]
 }
 ```
 
@@ -160,7 +173,7 @@ Update a Hybrid Client
 
 ### Request
 
-`PUT api/v1-preview/Tenants/{tenantId}/HybridClient/{clientId}`
+`PUT api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}`
 
 ### Parameters
 
@@ -202,7 +215,11 @@ Updated Hybrid Client values
   "LogoUri": "LogoUri",
   "ClientId": "ClientId",
   "Name": "Name",
-  "Enabled": false
+  "Enabled": false,
+  "Tags": [
+    "String",
+    "String"
+  ]
 }
 ```
 
@@ -238,7 +255,11 @@ Success
   "LogoUri": "LogoUri",
   "ClientId": "ClientId",
   "Name": "Name",
-  "Enabled": false
+  "Enabled": false,
+  "Tags": [
+    "String",
+    "String"
+  ]
 }
 ```
 
@@ -269,7 +290,7 @@ Get a Hybrid Client
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/HybridClient/{clientId}`
+`GET api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}`
 
 ### Parameters
 
@@ -319,7 +340,11 @@ Success
   "LogoUri": "LogoUri",
   "ClientId": "ClientId",
   "Name": "Name",
-  "Enabled": false
+  "Enabled": false,
+  "Tags": [
+    "String",
+    "String"
+  ]
 }
 ```
 
@@ -346,7 +371,7 @@ Get all Hybrid Clients
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/HybridClient/`
+`GET api/v1-preview/Tenants/{tenantId}/HybridClients`
 
 ### Parameters
 
@@ -417,7 +442,11 @@ Success
     "LogoUri": "LogoUri",
     "ClientId": "ClientId",
     "Name": "Name",
-    "Enabled": false
+    "Enabled": false,
+    "Tags": [
+      "String",
+      "String"
+    ]
   },
   {
     "AllowOfflineAccess": false,
@@ -434,7 +463,11 @@ Success
     "LogoUri": "LogoUri",
     "ClientId": "ClientId",
     "Name": "Name",
-    "Enabled": false
+    "Enabled": false,
+    "Tags": [
+      "String",
+      "String"
+    ]
   }
 ]
 ```
@@ -462,7 +495,7 @@ Delete an Hybrid Client
 
 ### Request
 
-`DELETE api/v1-preview/Tenants/{tenantId}/HybridClient/{clientId}`
+`DELETE api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}`
 
 ### Parameters
 

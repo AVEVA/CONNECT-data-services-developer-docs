@@ -50,7 +50,7 @@ Returns a list of User objects for a given tenant
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/User/`
+`GET api/v1-preview/Tenants/{tenantId}/Users`
 
 ### Parameters
 
@@ -163,7 +163,7 @@ Returns an ordered list of User objects based on userId for a given tenant or a 
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/User/Ids`
+`GET api/v1-preview/Tenants/{tenantId}/Users/Ids`
 
 ### Parameters
 
@@ -351,7 +351,7 @@ Get User status for multiple users, optionally restrict it to only Users of a sp
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/User/Status`
+`GET api/v1-preview/Tenants/{tenantId}/Users/Status`
 
 ### Parameters
 
@@ -478,7 +478,7 @@ Returns a User
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/User/{userId}`
+`GET api/v1-preview/Tenants/{tenantId}/Users/{userId}`
 
 ### Parameters
 
@@ -552,7 +552,7 @@ Returns user invitation status
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/User/{userId}/Status`
+`GET api/v1-preview/Tenants/{tenantId}/Users/{userId}/Status`
 
 ### Parameters
 
@@ -629,7 +629,7 @@ Returns an ordered list of UserStatusDto objects for a given tenant or a MultiSt
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/User/Status/Ids`
+`GET api/v1-preview/Tenants/{tenantId}/Users/Status/Ids`
 
 ### Parameters
 
@@ -829,7 +829,7 @@ Returns a user's preferences
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/User/{userId}/Preferences`
+`GET api/v1-preview/Tenants/{tenantId}/Users/{userId}/Preferences`
 
 ### Parameters
 
@@ -891,7 +891,7 @@ Put a user's preferences
 
 ### Request
 
-`PUT api/v1-preview/Tenants/{tenantId}/User/{userId}/Preferences`
+`PUT api/v1-preview/Tenants/{tenantId}/Users/{userId}/Preferences`
 
 ### Parameters
 
@@ -969,7 +969,7 @@ Creates a User
 
 ### Request
 
-`POST api/v1-preview/Tenants/{tenantId}/User/`
+`POST api/v1-preview/Tenants/{tenantId}/Users`
 
 ### Parameters
 
@@ -1060,7 +1060,7 @@ Create or Update a User
 
 ### Request
 
-`PUT api/v1-preview/Tenants/{tenantId}/User/{userId}`
+`PUT api/v1-preview/Tenants/{tenantId}/Users/{userId}`
 
 ### Parameters
 
@@ -1159,7 +1159,7 @@ Delete a user
 
 ### Request
 
-`DELETE api/v1-preview/Tenants/{tenantId}/User/{userId}`
+`DELETE api/v1-preview/Tenants/{tenantId}/Users/{userId}`
 
 ### Parameters
 
@@ -1212,7 +1212,7 @@ Get the invitations for a user
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/User/{userId}/Invitation`
+`GET api/v1-preview/Tenants/{tenantId}/Users/{userId}/Invitation`
 
 ### Parameters
 
@@ -1258,11 +1258,12 @@ Success
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-03-06T11:39:54.6750133-08:00",
-  "Expires": "2019-03-06T11:39:54.6750186-08:00",
+  "Issued": "2019-03-13T13:35:43.8850403-07:00",
+  "Expires": "2019-03-13T13:35:43.8850453-07:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
-  "UserId": "00000000-0000-0000-0000-000000000000"
+  "UserId": "00000000-0000-0000-0000-000000000000",
+  "IdentityProviderId": "00000000-0000-0000-0000-000000000000"
 }
 ```
 
@@ -1289,7 +1290,7 @@ Create an invitation for a user
 
 ### Request
 
-`POST api/v1-preview/Tenants/{tenantId}/User/{userId}/Invitation`
+`POST api/v1-preview/Tenants/{tenantId}/Users/{userId}/Invitation`
 
 ### Parameters
 
@@ -1317,9 +1318,10 @@ InvitationCreateDto object
 
 ```json
 {
-  "ExpiresDateTime": "2019-03-06T11:39:54.6774696-08:00",
+  "ExpiresDateTime": "2019-03-13T13:35:43.8872798-07:00",
   "State": 0,
-  "SendInvitation": false
+  "SendInvitation": false,
+  "IdentityProviderId": "00000000-0000-0000-0000-000000000000"
 }
 ```
 
@@ -1342,11 +1344,12 @@ Created
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-03-06T11:39:54.6776252-08:00",
-  "Expires": "2019-03-06T11:39:54.6776368-08:00",
+  "Issued": "2019-03-13T13:35:43.8874469-07:00",
+  "Expires": "2019-03-13T13:35:43.8874497-07:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
-  "UserId": "00000000-0000-0000-0000-000000000000"
+  "UserId": "00000000-0000-0000-0000-000000000000",
+  "IdentityProviderId": "00000000-0000-0000-0000-000000000000"
 }
 ```
 

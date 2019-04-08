@@ -93,7 +93,7 @@
 <tr>
 <td>Id</td>
 <td>string</td>
-<td>Unique invitation id.</td>
+<td>Unique Invitation Id.</td>
 </tr>
 <tr>
 <td>Issued</td>
@@ -108,34 +108,40 @@
 <tr>
 <td>State</td>
 <td>InvitationStates</td>
-<td>Invitation state</td>
+<td>Invitation state.</td>
 </tr>
 <tr>
 <td>TenantId</td>
 <td>Guid</td>
-<td>ID of tenant the invitation belongs to.</td>
+<td>ID of the Tenant the invitation belongs to.</td>
 </tr>
 <tr>
 <td>UserId</td>
 <td>Guid</td>
-<td>ID of user whom the invitation was issued to.</td>
+<td>ID of the User whom the invitation was issued to.</td>
+</tr>
+<tr>
+<td>IdentityProviderId</td>
+<td>optional: Guid</td>
+<td>ID of the Identity Provider that must be used to accept the invitation.</td>
 </tr>
 </tbody>
 </table>
 <h3 id="serialized-model">Serialized Model</h3>
 <pre><code class="lang-json">{
   &quot;Id&quot;: &quot;Id&quot;,
-  &quot;Issued&quot;: &quot;2019-03-06T11:39:54.5851986-08:00&quot;,
-  &quot;Expires&quot;: &quot;2019-03-06T11:39:54.5852039-08:00&quot;,
+  &quot;Issued&quot;: &quot;2019-03-13T13:35:43.8020311-07:00&quot;,
+  &quot;Expires&quot;: &quot;2019-03-13T13:35:43.8020346-07:00&quot;,
   &quot;State&quot;: 0,
   &quot;TenantId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
-  &quot;UserId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
+  &quot;UserId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
+  &quot;IdentityProviderId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
 }
 </code></pre><hr>
 <h2 id="get-invitation"><code>Get Invitation</code></h2>
 <p>Get an Invitation using its id in a tenant</p>
 <h3 id="request">Request</h3>
-<p><code>GET api/v1-preview/Tenants/{tenantId}/Invitation/{invitationId}</code></p>
+<p><code>GET api/v1-preview/Tenants/{tenantId}/Invitations/{invitationId}</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 Guid tenantId
@@ -155,11 +161,12 @@ string invitationId
 <p> <code>InvitationDto</code></p>
 <pre><code class="lang-json">{
   &quot;Id&quot;: &quot;Id&quot;,
-  &quot;Issued&quot;: &quot;2019-03-06T11:39:54.5905483-08:00&quot;,
-  &quot;Expires&quot;: &quot;2019-03-06T11:39:54.5905536-08:00&quot;,
+  &quot;Issued&quot;: &quot;2019-03-13T13:35:43.8078213-07:00&quot;,
+  &quot;Expires&quot;: &quot;2019-03-13T13:35:43.8078245-07:00&quot;,
   &quot;State&quot;: 0,
   &quot;TenantId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
-  &quot;UserId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
+  &quot;UserId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
+  &quot;IdentityProviderId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
 }
 </code></pre><h4 id="401">401</h4>
 <p>Unauthorized</p>
@@ -173,7 +180,7 @@ string invitationId
 <h2 id="get-invitations"><code>Get Invitations</code></h2>
 <p>Get all invitations for a tenant</p>
 <h3 id="request-1">Request</h3>
-<p><code>GET api/v1-preview/Tenants/{tenantId}/Invitation/</code></p>
+<p><code>GET api/v1-preview/Tenants/{tenantId}/Invitations</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 Guid tenantId
@@ -211,19 +218,21 @@ bool includeExpiredInvitations
 <pre><code class="lang-json">[
   {
     &quot;Id&quot;: &quot;Id&quot;,
-    &quot;Issued&quot;: &quot;2019-03-06T11:39:54.5914111-08:00&quot;,
-    &quot;Expires&quot;: &quot;2019-03-06T11:39:54.5914143-08:00&quot;,
+    &quot;Issued&quot;: &quot;2019-03-13T13:35:43.8082938-07:00&quot;,
+    &quot;Expires&quot;: &quot;2019-03-13T13:35:43.8082956-07:00&quot;,
     &quot;State&quot;: 0,
     &quot;TenantId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
-    &quot;UserId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
+    &quot;UserId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
+    &quot;IdentityProviderId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
   },
   {
     &quot;Id&quot;: &quot;Id&quot;,
-    &quot;Issued&quot;: &quot;2019-03-06T11:39:54.5914298-08:00&quot;,
-    &quot;Expires&quot;: &quot;2019-03-06T11:39:54.5914315-08:00&quot;,
+    &quot;Issued&quot;: &quot;2019-03-13T13:35:43.8083072-07:00&quot;,
+    &quot;Expires&quot;: &quot;2019-03-13T13:35:43.8083079-07:00&quot;,
     &quot;State&quot;: 0,
     &quot;TenantId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
-    &quot;UserId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
+    &quot;UserId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
+    &quot;IdentityProviderId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
   }
 ]
 </code></pre><h4 id="400">400</h4>
@@ -240,7 +249,7 @@ bool includeExpiredInvitations
 <h2 id="update-invitation"><code>Update Invitation</code></h2>
 <p>Update an invitation</p>
 <h3 id="request-2">Request</h3>
-<p><code>PUT api/v1-preview/Tenants/{tenantId}/Invitation/{invitationId}</code></p>
+<p><code>PUT api/v1-preview/Tenants/{tenantId}/Invitations/{invitationId}</code></p>
 <h3 id="parameters-2">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 Guid tenantId
@@ -253,9 +262,10 @@ string invitationId
 InvitationCreateOrUpdateDto invitationCreateOrUpdateDto
 </code></pre><p>New InvitationUpdateDto object</p>
 <pre><code class="lang-json">{
-  &quot;ExpiresDateTime&quot;: &quot;2019-03-06T11:39:54.5922045-08:00&quot;,
+  &quot;ExpiresDateTime&quot;: &quot;2019-03-13T13:35:43.8087851-07:00&quot;,
   &quot;State&quot;: 0,
-  &quot;SendInvitation&quot;: false
+  &quot;SendInvitation&quot;: false,
+  &quot;IdentityProviderId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
 }
 </code></pre><h3 id="security-2">Security</h3>
 <p>Allowed for these roles:</p>
@@ -269,11 +279,12 @@ InvitationCreateOrUpdateDto invitationCreateOrUpdateDto
 <p> <code>InvitationDto</code></p>
 <pre><code class="lang-json">{
   &quot;Id&quot;: &quot;Id&quot;,
-  &quot;Issued&quot;: &quot;2019-03-06T11:39:54.5948915-08:00&quot;,
-  &quot;Expires&quot;: &quot;2019-03-06T11:39:54.5948964-08:00&quot;,
+  &quot;Issued&quot;: &quot;2019-03-13T13:35:43.811625-07:00&quot;,
+  &quot;Expires&quot;: &quot;2019-03-13T13:35:43.8116293-07:00&quot;,
   &quot;State&quot;: 0,
   &quot;TenantId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
-  &quot;UserId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
+  &quot;UserId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
+  &quot;IdentityProviderId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
 }
 </code></pre><h4 id="401-2">401</h4>
 <p>Unauthorized</p>
@@ -287,7 +298,7 @@ InvitationCreateOrUpdateDto invitationCreateOrUpdateDto
 <h2 id="delete-invitation"><code>Delete Invitation</code></h2>
 <p>Delete an invitation</p>
 <h3 id="request-3">Request</h3>
-<p><code>DELETE api/v1-preview/Tenants/{tenantId}/Invitation/{invitationId}</code></p>
+<p><code>DELETE api/v1-preview/Tenants/{tenantId}/Invitations/{invitationId}</code></p>
 <h3 id="parameters-3">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 Guid tenantId

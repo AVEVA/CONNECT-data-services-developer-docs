@@ -130,6 +130,11 @@
 <td>optional: bool</td>
 <td>Is ClientDto Enabled</td>
 </tr>
+<tr>
+<td>Tags</td>
+<td>string[]</td>
+<td>For OSIsoft internal use only</td>
+</tr>
 </tbody>
 </table>
 <h3 id="serialized-model">Serialized Model</h3>
@@ -150,13 +155,17 @@
   &quot;LogoUri&quot;: &quot;LogoUri&quot;,
   &quot;ClientId&quot;: &quot;ClientId&quot;,
   &quot;Name&quot;: &quot;Name&quot;,
-  &quot;Enabled&quot;: false
+  &quot;Enabled&quot;: false,
+  &quot;Tags&quot;: [
+    &quot;String&quot;,
+    &quot;String&quot;
+  ]
 }
 </code></pre><hr>
 <h2 id="create-implicit-client"><code>Create Implicit Client</code></h2>
 <p>Create an Implicit flow Clients</p>
 <h3 id="request">Request</h3>
-<p><code>POST api/v1-preview/Tenants/{tenantId}/ImplicitClient/</code></p>
+<p><code>POST api/v1-preview/Tenants/{tenantId}/ImplicitClients</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 Guid tenantId
@@ -182,7 +191,11 @@ ImplicitClientDto implicitClientDto
   &quot;LogoUri&quot;: &quot;LogoUri&quot;,
   &quot;ClientId&quot;: &quot;ClientId&quot;,
   &quot;Name&quot;: &quot;Name&quot;,
-  &quot;Enabled&quot;: false
+  &quot;Enabled&quot;: false,
+  &quot;Tags&quot;: [
+    &quot;String&quot;,
+    &quot;String&quot;
+  ]
 }
 </code></pre><h3 id="security">Security</h3>
 <p>Allowed for these roles:</p>
@@ -211,7 +224,11 @@ ImplicitClientDto implicitClientDto
   &quot;LogoUri&quot;: &quot;LogoUri&quot;,
   &quot;ClientId&quot;: &quot;ClientId&quot;,
   &quot;Name&quot;: &quot;Name&quot;,
-  &quot;Enabled&quot;: false
+  &quot;Enabled&quot;: false,
+  &quot;Tags&quot;: [
+    &quot;String&quot;,
+    &quot;String&quot;
+  ]
 }
 </code></pre><h4 id="401">401</h4>
 <p>Unauthorized</p>
@@ -227,7 +244,7 @@ ImplicitClientDto implicitClientDto
 <h2 id="update-implicit-client"><code>Update Implicit Client</code></h2>
 <p>Update an Implicit Client</p>
 <h3 id="request-1">Request</h3>
-<p><code>PUT api/v1-preview/Tenants/{tenantId}/ImplicitClient/{clientId}</code></p>
+<p><code>PUT api/v1-preview/Tenants/{tenantId}/ImplicitClients/{clientId}</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 Guid tenantId
@@ -256,7 +273,11 @@ ImplicitClientDto updatedImplicitClientDto
   &quot;LogoUri&quot;: &quot;LogoUri&quot;,
   &quot;ClientId&quot;: &quot;ClientId&quot;,
   &quot;Name&quot;: &quot;Name&quot;,
-  &quot;Enabled&quot;: false
+  &quot;Enabled&quot;: false,
+  &quot;Tags&quot;: [
+    &quot;String&quot;,
+    &quot;String&quot;
+  ]
 }
 </code></pre><h3 id="security-1">Security</h3>
 <p>Allowed for these roles:</p>
@@ -285,7 +306,11 @@ ImplicitClientDto updatedImplicitClientDto
   &quot;LogoUri&quot;: &quot;LogoUri&quot;,
   &quot;ClientId&quot;: &quot;ClientId&quot;,
   &quot;Name&quot;: &quot;Name&quot;,
-  &quot;Enabled&quot;: false
+  &quot;Enabled&quot;: false,
+  &quot;Tags&quot;: [
+    &quot;String&quot;,
+    &quot;String&quot;
+  ]
 }
 </code></pre><h4 id="401-1">401</h4>
 <p>Unauthorized</p>
@@ -301,7 +326,7 @@ ImplicitClientDto updatedImplicitClientDto
 <h2 id="get-implicit-client"><code>Get Implicit Client</code></h2>
 <p>Get an Implicit Client</p>
 <h3 id="request-2">Request</h3>
-<p><code>GET api/v1-preview/Tenants/{tenantId}/ImplicitClient/{clientId}</code></p>
+<p><code>GET api/v1-preview/Tenants/{tenantId}/ImplicitClients/{clientId}</code></p>
 <h3 id="parameters-2">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 Guid tenantId
@@ -336,7 +361,11 @@ string clientId
   &quot;LogoUri&quot;: &quot;LogoUri&quot;,
   &quot;ClientId&quot;: &quot;ClientId&quot;,
   &quot;Name&quot;: &quot;Name&quot;,
-  &quot;Enabled&quot;: false
+  &quot;Enabled&quot;: false,
+  &quot;Tags&quot;: [
+    &quot;String&quot;,
+    &quot;String&quot;
+  ]
 }
 </code></pre><h4 id="401-2">401</h4>
 <p>Unauthorized</p>
@@ -350,7 +379,7 @@ string clientId
 <h2 id="get-all-implicit-clients"><code>Get All Implicit Clients</code></h2>
 <p>Get all Implicit Clients</p>
 <h3 id="request-3">Request</h3>
-<p><code>GET api/v1-preview/Tenants/{tenantId}/ImplicitClient/</code></p>
+<p><code>GET api/v1-preview/Tenants/{tenantId}/ImplicitClients</code></p>
 <h3 id="parameters-3">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 Guid tenantId
@@ -398,7 +427,11 @@ int32 count
     &quot;LogoUri&quot;: &quot;LogoUri&quot;,
     &quot;ClientId&quot;: &quot;ClientId&quot;,
     &quot;Name&quot;: &quot;Name&quot;,
-    &quot;Enabled&quot;: false
+    &quot;Enabled&quot;: false,
+    &quot;Tags&quot;: [
+      &quot;String&quot;,
+      &quot;String&quot;
+    ]
   },
   {
     &quot;AllowedCorsOrigins&quot;: [
@@ -417,7 +450,11 @@ int32 count
     &quot;LogoUri&quot;: &quot;LogoUri&quot;,
     &quot;ClientId&quot;: &quot;ClientId&quot;,
     &quot;Name&quot;: &quot;Name&quot;,
-    &quot;Enabled&quot;: false
+    &quot;Enabled&quot;: false,
+    &quot;Tags&quot;: [
+      &quot;String&quot;,
+      &quot;String&quot;
+    ]
   }
 ]
 </code></pre><h4 id="401-3">401</h4>
@@ -432,7 +469,7 @@ int32 count
 <h2 id="delete-implicit-client"><code>Delete Implicit Client</code></h2>
 <p>Delete an Implicit Client</p>
 <h3 id="request-4">Request</h3>
-<p><code>DELETE api/v1-preview/Tenants/{tenantId}/ImplicitClient/{clientId}</code></p>
+<p><code>DELETE api/v1-preview/Tenants/{tenantId}/ImplicitClients/{clientId}</code></p>
 <h3 id="parameters-4">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 Guid tenantId

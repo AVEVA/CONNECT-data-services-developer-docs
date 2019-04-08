@@ -132,15 +132,15 @@ Using the default configurations, the result would be returned with no grouping,
 ```json
     {
         "Time": "2018-10-03T03:00:00Z",
-        "Az_Stream_Temperature": 5,
-        "Az_Stream_FlowRate": 2,
-        "Az_Stream_Volume": 100,
-        "Cali_Stream_Temperature": 24,
-        "Cali_Stream_FlowRate": 44,
-        "Cali_Stream_Volume": 245,
-        "Philly_Stream_Temperature": 24,
-        "Philly_Stream_FlowRate": 44,
-        "Philly_Stream_Volume": 245
+        "Arizona_Stream_Temperature": 5,
+        "Arizona_Stream_FlowRate": 2,
+        "Arizona_Stream_Volume": 100,
+        "California_Stream_Temperature": 24,
+        "California_Stream_FlowRate": 44,
+        "California_Stream_Volume": 245,
+        "Pennsylvania_Stream_Temperature": 24,
+        "Pennsylvania_Stream_FlowRate": 44,
+        "Pennsylvania_Stream_Volume": 245
     },
 ```
 

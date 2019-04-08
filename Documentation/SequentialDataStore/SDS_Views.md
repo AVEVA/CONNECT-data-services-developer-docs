@@ -68,7 +68,7 @@ so required and optional have no meaning.
 |--------------|--------------------------|--------------|---------|
 | SourceTypeId | String                   | Required     | Identifier of the SdsType of the SdsStream |
 | TargetTypeId | String                   | Required     | Identifier of the SdsType to convert events to |
-| Properties   | IList<SdsStreamViewMapProperty>| Optional     | Property level mapping |
+| Properties   | IList\<SdsStreamViewMapProperty\>| Optional     | Property level mapping |
 
 ### Properties / SdsStreamViewMapProperty
 

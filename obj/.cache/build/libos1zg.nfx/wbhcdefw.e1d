@@ -1,13 +1,13 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Client </title>
+    <title>IndexConfig </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Client ">
+    <meta name="title" content="IndexConfig ">
     <meta name="generator" content="docfx 2.39.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -75,118 +75,56 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="identityClient">
-<h1 id="client">Client</h1>
+            <article class="content wrap" id="_content" data-uid="IndexConfig">
+<h1 id="indexconfig" sourcefile="Documentation/DataViews/IndexConfig.md" sourcestartlinenumber="6" sourceendlinenumber="6">IndexConfig</h1>
 
-<p>APIs for creating, getting, updating, and deleting Clients</p>
-<hr>
-<h2 id="get-clients"><code>Get Clients</code></h2>
-<p>This method is obsolete, please use the following instead:
-            {tenantId}/ClientCredentialClients
-            {tenantId}/HybridClients
-            {tenantId}/ImplicitClients</p>
-<h3 id="request">Request</h3>
-<p><code>GET api/v1-preview/Tenants/{tenantId}/Clients</code></p>
-<h3 id="parameters">Parameters</h3>
-<pre><code class="lang-csharp">[Required]
-Guid tenantId
-</code></pre><p>Id of tenant</p>
-<pre><code class="lang-csharp">[FromQuery]
-[Optional]
-[Default = &quot;&quot;]
-string query
-</code></pre><p>Query to execute. Currently not supported</p>
-<pre><code class="lang-csharp">[FromQuery]
-[Optional]
-[Default = 0]
-int32 skip
-</code></pre><p>Number of clients to skip. From query.</p>
-<pre><code class="lang-csharp">[FromQuery]
-[Optional]
-[Default = 100]
-int32 count
-</code></pre><p>Max number of clients to return</p>
-<h3 id="security">Security</h3>
-<p>Allowed for these roles:</p>
-<ul>
-<li><code>Account Administrator</code></li>
-</ul>
-<h3 id="returns">Returns</h3>
-<h4 id="200">200</h4>
-<p>Success</p>
-<h5 id="type">Type:</h5>
-<p> <code>List[ClientCredentialClientDto]</code></p>
-<pre><code class="lang-json">[
-  {
-    &quot;RoleIds&quot;: [
-      &quot;00000000-0000-0000-0000-000000000000&quot;,
-      &quot;00000000-0000-0000-0000-000000000000&quot;
-    ],
-    &quot;ClientId&quot;: &quot;ClientId&quot;,
-    &quot;Name&quot;: &quot;Name&quot;,
-    &quot;Enabled&quot;: false,
-    &quot;Tags&quot;: [
-      &quot;String&quot;,
-      &quot;String&quot;
-    ]
-  },
-  {
-    &quot;RoleIds&quot;: [
-      &quot;00000000-0000-0000-0000-000000000000&quot;,
-      &quot;00000000-0000-0000-0000-000000000000&quot;
-    ],
-    &quot;ClientId&quot;: &quot;ClientId&quot;,
-    &quot;Name&quot;: &quot;Name&quot;,
-    &quot;Enabled&quot;: false,
-    &quot;Tags&quot;: [
-      &quot;String&quot;,
-      &quot;String&quot;
-    ]
-  }
-]
-</code></pre><h4 id="401">401</h4>
-<p>Unauthorized</p>
-<h4 id="403">403</h4>
-<p>Forbidden</p>
-<h4 id="404">404</h4>
-<p>Tenant not found</p>
-<h4 id="400">400</h4>
-<p>Missing or invalid inputs</p>
-<h4 id="500">500</h4>
-<p>Internal server error</p>
-<hr>
-<h2 id="delete-client"><code>Delete Client</code></h2>
-<p>This method is obsolete, please use the following instead:
-            {tenantId}/ClientCredentialClients/{clientId}</p>
-<h3 id="request-1">Request</h3>
-<p><code>DELETE api/v1-preview/Tenants/{tenantId}/Clients/{clientId}</code></p>
-<h3 id="parameters-1">Parameters</h3>
-<pre><code class="lang-csharp">[Required]
-Guid tenantId
-</code></pre><p>Id of tenant</p>
-<pre><code class="lang-csharp">[Required]
-string clientId
-</code></pre><p>Id of client</p>
-<h3 id="security-1">Security</h3>
-<p>Allowed for these roles:</p>
-<ul>
-<li><code>Account Administrator</code></li>
-</ul>
-<h3 id="returns-1">Returns</h3>
-<h4 id="204">204</h4>
-<p>Deleted</p>
-<h4 id="401-1">401</h4>
-<p>Unauthorized</p>
-<h4 id="403-1">403</h4>
-<p>Forbidden</p>
-<h4 id="404-1">404</h4>
-<p>Client or Tenant not found</p>
-<h4 id="400-1">400</h4>
-<p>Bad Request</p>
-<h4 id="500-1">500</h4>
-<p>Internal server error</p>
-<hr>
-</article>
+<p sourcefile="Documentation/DataViews/IndexConfig.md" sourcestartlinenumber="7" sourceendlinenumber="7">The IndexConfig defines the index information for retrieving data, and lets the user specify start and end times with an interval time, and the data retrieval mode. Currently, only interpolation mode is supported. The index config can be defined or left null in the data view definition. If left null, it will be generated at the time of data retrieval with a start index of 24 hours ago and end index as the current time, using interval of 1 and interpolation mode. If configured in the data view definition, the config can always be overwritten when using the data APIs by indicating the parameters in the call. The start and end indices are to follow the ISO 8601 date and time format, and the interval should comply with the .Net TimeSpan struct.</p>
+<h3 id="properties" sourcefile="Documentation/DataViews/IndexConfig.md" sourcestartlinenumber="8" sourceendlinenumber="8">Properties</h3>
+<table sourcefile="Documentation/DataViews/IndexConfig.md" sourcestartlinenumber="10" sourceendlinenumber="15">
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Descriptions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>StartIndex</td>
+<td>string</td>
+<td>True</td>
+<td>The start index of data retrieval in ISO 8601 format</td>
+</tr>
+<tr>
+<td>EndIndex</td>
+<td>string</td>
+<td>True</td>
+<td>The end index of data retrieval in ISO 8601 format</td>
+</tr>
+<tr>
+<td>Mode</td>
+<td>string</td>
+<td>True</td>
+<td>The data retrieval mode</td>
+</tr>
+<tr>
+<td>Interval</td>
+<td>string</td>
+<td>True</td>
+<td>The data retrieval interval</td>
+</tr>
+</tbody>
+</table>
+<h2 id="example" sourcefile="Documentation/DataViews/IndexConfig.md" sourcestartlinenumber="17" sourceendlinenumber="17"><code>Example</code></h2>
+<p sourcefile="Documentation/DataViews/IndexConfig.md" sourcestartlinenumber="18" sourceendlinenumber="18">The following example shows an index config set for data to be indexed between the start and end index, and give interpolated data using an interval of 5 minutes.</p>
+<pre sourcefile="Documentation/DataViews/IndexConfig.md" sourcestartlinenumber="19" sourceendlinenumber="26"><code class="lang-json">{
+  &quot;StartIndex&quot;: &quot;2018-01-01T00:00:00Z&quot;,
+  &quot;EndIndex&quot;: &quot;2018-01-02T00:00:00Z&quot;,
+  &quot;Mode&quot;: &quot;Interpolated&quot;,
+  &quot;Interval&quot;: &quot;00:05:00&quot;
+}
+</code></pre></article>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
@@ -194,7 +132,7 @@ string clientId
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/Identity/Identity_Client.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/DataViews/IndexConfig.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -76,11 +76,11 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="GroupRules">
-<h1 id="grouprules">GroupRules</h1>
+<h1 id="grouprules" sourcefile="Documentation/DataViews/GroupRules.md" sourcestartlinenumber="6" sourceendlinenumber="6">GroupRules</h1>
 
-<p>The GroupRule lets users organize data items in the query, within or across streams, to form data groups in the resulting data set. By specifying the type to group on, users can retrieve organized data items to compare and better examine the results.</p>
-<h3 id="properties">Properties</h3>
-<table>
+<p sourcefile="Documentation/DataViews/GroupRules.md" sourcestartlinenumber="7" sourceendlinenumber="7">The GroupRule lets users organize data items in the query, within or across streams, to form data groups in the resulting data set. By specifying the type to group on, users can retrieve organized data items to compare and better examine the results.</p>
+<h3 id="properties" sourcefile="Documentation/DataViews/GroupRules.md" sourcestartlinenumber="8" sourceendlinenumber="8">Properties</h3>
+<table sourcefile="Documentation/DataViews/GroupRules.md" sourcestartlinenumber="10" sourceendlinenumber="14">
 <thead>
 <tr>
 <th>Property</th>
@@ -110,9 +110,9 @@
 </tr>
 </tbody>
 </table>
-<h2 id="type"><code>Type</code></h2>
-<p> The Type can have the following values: </p>
-<table>
+<h2 id="type" sourcefile="Documentation/DataViews/GroupRules.md" sourcestartlinenumber="18" sourceendlinenumber="18"><code>Type</code></h2>
+<p sourcefile="Documentation/DataViews/GroupRules.md" sourcestartlinenumber="19" sourceendlinenumber="19"> The Type can have the following values: </p>
+<table sourcefile="Documentation/DataViews/GroupRules.md" sourcestartlinenumber="20" sourceendlinenumber="25">
 <thead>
 <tr>
 <th>Value</th>
@@ -143,9 +143,9 @@
 </tr>
 </tbody>
 </table>
-<h2 id="example"><code>Example</code></h2>
-<p>The following example shows a group rule definition that creates data groups based on state names defined in the stream metadata. It will result in a data group for every state, that will organize the data items accordingly in the result. By using this group rule as a group rule mapping rule (See <a class="xref" href="Mappings.html">mappings</a>), the value of the state can be reflected in its own column in the result. Users can use different stream properties to create group rules, using tokens to define the values that they are interested in.</p>
-<pre><code class="lang-json">[
+<h2 id="example" sourcefile="Documentation/DataViews/GroupRules.md" sourcestartlinenumber="28" sourceendlinenumber="28"><code>Example</code></h2>
+<p sourcefile="Documentation/DataViews/GroupRules.md" sourcestartlinenumber="29" sourceendlinenumber="29">The following example shows a group rule definition that creates data groups based on state names defined in the stream metadata. It will result in a data group for every state, that will organize the data items accordingly in the result. By using this group rule as a group rule mapping rule (See <a class="xref" href="Mappings.html" data-raw-source="[mappings](xref:Mappings)" sourcefile="Documentation/DataViews/GroupRules.md" sourcestartlinenumber="29" sourceendlinenumber="29">mappings</a>), the value of the state can be reflected in its own column in the result. Users can use different stream properties to create group rules, using tokens to define the values that they are interested in.</p>
+<pre sourcefile="Documentation/DataViews/GroupRules.md" sourcestartlinenumber="30" sourceendlinenumber="45"><code class="lang-json">[
   {
     &quot;Id&quot;: &quot;StateGroupRule&quot;,
     &quot;Type&quot;: &quot;StreamTag&quot;,
@@ -159,8 +159,8 @@
     }
   }
 ]
-</code></pre><pre><code class="lang-json">An example output using this group rule as described above could look like the following:
-</code></pre><pre><code class="lang-json">
+</code></pre><pre sourcefile="Documentation/DataViews/GroupRules.md" sourcestartlinenumber="46" sourceendlinenumber="48"><code class="lang-json">An example output using this group rule as described above could look like the following:
+</code></pre><pre sourcefile="Documentation/DataViews/GroupRules.md" sourcestartlinenumber="49" sourceendlinenumber="74"><code class="lang-json">
 [
     {
         &quot;Timestamp&quot;: &quot;2018-10-03T03:00:00Z&quot;,

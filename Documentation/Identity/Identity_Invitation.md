@@ -15,7 +15,8 @@ Property | Type | Descriptions
 Id | string | Unique Invitation Id.
 Issued | DateTime | Invitation issuing timestamp.
 Expires | DateTime | Invitation expiration timestamp.
-State | InvitationStates | Invitation state.
+Accepted | optional: DateTime | Invitation accepted timestamp.
+State | InvitationStates | Invitation state. Can be None (0), InvitationEmailSent (1), InvitationAccepted (2)
 TenantId | Guid | ID of the Tenant the invitation belongs to.
 UserId | Guid | ID of the User whom the invitation was issued to.
 IdentityProviderId | optional: Guid | ID of the Identity Provider that must be used to accept the invitation.
@@ -25,8 +26,9 @@ IdentityProviderId | optional: Guid | ID of the Identity Provider that must be u
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-03-13T13:35:43.8020311-07:00",
-  "Expires": "2019-03-13T13:35:43.8020346-07:00",
+  "Issued": "2019-04-09T17:09:10.660212-07:00",
+  "Expires": "2019-04-09T17:09:10.6602155-07:00",
+  "Accepted": "2019-04-09T17:09:10.6602184-07:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -79,8 +81,9 @@ Success
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-03-13T13:35:43.8078213-07:00",
-  "Expires": "2019-03-13T13:35:43.8078245-07:00",
+  "Issued": "2019-04-09T17:09:10.6655943-07:00",
+  "Expires": "2019-04-09T17:09:10.6655979-07:00",
+  "Accepted": "2019-04-09T17:09:10.6656007-07:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -178,8 +181,9 @@ Success
 [
   {
     "Id": "Id",
-    "Issued": "2019-03-13T13:35:43.8082938-07:00",
-    "Expires": "2019-03-13T13:35:43.8082956-07:00",
+    "Issued": "2019-04-09T17:09:10.667252-07:00",
+    "Expires": "2019-04-09T17:09:10.6672552-07:00",
+    "Accepted": "2019-04-09T17:09:10.6672576-07:00",
     "State": 0,
     "TenantId": "00000000-0000-0000-0000-000000000000",
     "UserId": "00000000-0000-0000-0000-000000000000",
@@ -187,8 +191,9 @@ Success
   },
   {
     "Id": "Id",
-    "Issued": "2019-03-13T13:35:43.8083072-07:00",
-    "Expires": "2019-03-13T13:35:43.8083079-07:00",
+    "Issued": "2019-04-09T17:09:10.6672746-07:00",
+    "Expires": "2019-04-09T17:09:10.6672753-07:00",
+    "Accepted": "2019-04-09T17:09:10.667277-07:00",
     "State": 0,
     "TenantId": "00000000-0000-0000-0000-000000000000",
     "UserId": "00000000-0000-0000-0000-000000000000",
@@ -252,7 +257,7 @@ New InvitationUpdateDto object
 
 ```json
 {
-  "ExpiresDateTime": "2019-03-13T13:35:43.8087851-07:00",
+  "ExpiresDateTime": "2019-04-09T17:09:10.6686036-07:00",
   "State": 0,
   "SendInvitation": false,
   "IdentityProviderId": "00000000-0000-0000-0000-000000000000"
@@ -278,14 +283,19 @@ Success
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-03-13T13:35:43.811625-07:00",
-  "Expires": "2019-03-13T13:35:43.8116293-07:00",
+  "Issued": "2019-04-09T17:09:10.6719176-07:00",
+  "Expires": "2019-04-09T17:09:10.6719204-07:00",
+  "Accepted": "2019-04-09T17:09:10.6719235-07:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
   "IdentityProviderId": "00000000-0000-0000-0000-000000000000"
 }
 ```
+
+#### 400
+
+Missing or invalid inputs
 
 #### 401
 

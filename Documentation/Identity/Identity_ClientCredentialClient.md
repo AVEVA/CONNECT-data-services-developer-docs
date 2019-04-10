@@ -66,7 +66,7 @@ New ClientCredentialClientCreateDto object
 ```json
 {
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-03-13T13:35:44.1011846-07:00",
+  "SecretExpirationDate": "2019-04-09T17:09:10.8385691-07:00",
   "RoleIds": [
     "00000000-0000-0000-0000-000000000000",
     "00000000-0000-0000-0000-000000000000"
@@ -102,7 +102,7 @@ Created
   "ClientSecret": "ClientSecret",
   "SecretId": "SecretId",
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-03-13T13:35:44.1048794-07:00",
+  "SecretExpirationDate": "2019-04-09T17:09:10.8412779-07:00",
   "RoleIds": [
     "00000000-0000-0000-0000-000000000000",
     "00000000-0000-0000-0000-000000000000"
@@ -272,6 +272,7 @@ Id of client
 Allowed for these roles:
 
 - `Account Administrator`
+- `Account Member`
 
 ### Returns
 
@@ -337,6 +338,15 @@ Id of tenant
 [FromQuery]
 [Optional]
 [Default = ""]
+string[] tags
+```
+
+A list of all tags to include
+
+```csharp
+[FromQuery]
+[Optional]
+[Default = ""]
 string query
 ```
 
@@ -365,6 +375,7 @@ Max number of clients to return
 Allowed for these roles:
 
 - `Account Administrator`
+- `Account Member`
 
 ### Returns
 

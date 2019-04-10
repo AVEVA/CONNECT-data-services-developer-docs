@@ -138,6 +138,7 @@ Max number of providers to return
 Allowed for these roles:
 
 - `Account Administrator`
+- `Account Member`
 
 ### Returns
 
@@ -212,6 +213,7 @@ Id of provider
 Allowed for these roles:
 
 - `Account Administrator`
+- `Account Member`
 
 ### Returns
 
@@ -255,7 +257,7 @@ Add an existing identity provider to a tenant
 
 ### Request
 
-`POST api/v1-preview/Tenants/{tenantId}/IdentityProviders/{identityProviderId}`
+`POST api/v1-preview/Tenants/{tenantId}/IdentityProviders`
 
 ### Parameters
 
@@ -267,11 +269,23 @@ Guid tenantId
 Id of tenant
 
 ```csharp
+[FromBody]
 [Required]
-Guid identityProviderId
+IdentityProviderAddDto identityProviderAddDto
 ```
 
-Id of provider
+Add Identity Provider object
+
+```json
+{
+  "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
+  "AzureActiveDirectoryTenant": "AzureActiveDirectoryTenant",
+  "AzureActiveDirectorySendConsent": false,
+  "AzureActiveDirectoryConsentEmail": "user@company.com",
+  "AzureActiveDirectoryConsentGivenName": "Name",
+  "AzureActiveDirectoryConsentSurname": "Surname"
+}
+```
 
 ### Security
 
@@ -313,6 +327,10 @@ Forbidden
 #### 404
 
 Tenant not found
+
+#### 409
+
+Identity Provider already exists in Tenant
 
 #### 500
 

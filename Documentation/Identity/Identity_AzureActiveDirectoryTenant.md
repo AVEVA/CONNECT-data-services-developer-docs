@@ -315,7 +315,7 @@ Internal server error
 
 ## `Send Consent for Azure Active Directory Tenant`
 
-Send consent for a Azure Active Directory Tenant
+Send consent for an Azure Active Directory Tenant
 
 ### Request
 

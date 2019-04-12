@@ -1258,8 +1258,9 @@ Success
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-03-13T13:35:43.8850403-07:00",
-  "Expires": "2019-03-13T13:35:43.8850453-07:00",
+  "Issued": "2019-04-11T17:16:26.4044082-07:00",
+  "Expires": "2019-04-11T17:16:26.4044121-07:00",
+  "Accepted": "2019-04-11T17:16:26.404416-07:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -1286,7 +1287,7 @@ Internal server error
 
 ## `Create Invitation`
 
-Create an invitation for a user
+Create an invitation for a user. Should use when no other invitation exists for the user.
 
 ### Request
 
@@ -1318,7 +1319,7 @@ InvitationCreateDto object
 
 ```json
 {
-  "ExpiresDateTime": "2019-03-13T13:35:43.8872798-07:00",
+  "ExpiresDateTime": "2019-04-11T17:16:26.4065042-07:00",
   "State": 0,
   "SendInvitation": false,
   "IdentityProviderId": "00000000-0000-0000-0000-000000000000"
@@ -1344,8 +1345,9 @@ Created
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-03-13T13:35:43.8874469-07:00",
-  "Expires": "2019-03-13T13:35:43.8874497-07:00",
+  "Issued": "2019-04-11T17:16:26.406617-07:00",
+  "Expires": "2019-04-11T17:16:26.4066188-07:00",
+  "Accepted": "2019-04-11T17:16:26.4066213-07:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -1372,6 +1374,118 @@ User or Tenant not found
 #### 409
 
 Invitation already exists
+
+#### 500
+
+Internal server error
+***
+
+## `Create Invitation`
+
+Create or update an invitation for a user
+
+### Request
+
+`PUT api/v1-preview/Tenants/{tenantId}/Users/{userId}/Invitation`
+
+### Parameters
+
+```csharp
+[Required]
+Guid tenantId
+```
+
+Id of tenant
+
+```csharp
+[Required]
+Guid userId
+```
+
+Id of user
+
+```csharp
+[FromBody]
+[Required]
+InvitationCreateOrUpdateDto invitationCreateOrUpdateDto
+```
+
+InvitationCreateDto object
+
+```json
+{
+  "ExpiresDateTime": "2019-04-11T17:16:26.4075064-07:00",
+  "State": 0,
+  "SendInvitation": false,
+  "IdentityProviderId": "00000000-0000-0000-0000-000000000000"
+}
+```
+
+### Security
+
+Allowed for these roles:
+
+- `Account Administrator`
+
+### Returns
+
+#### 200
+
+Updated
+
+##### Type:
+
+ `InvitationDto`
+
+```json
+{
+  "Id": "Id",
+  "Issued": "2019-04-11T17:16:26.4075896-07:00",
+  "Expires": "2019-04-11T17:16:26.407591-07:00",
+  "Accepted": "2019-04-11T17:16:26.4075931-07:00",
+  "State": 0,
+  "TenantId": "00000000-0000-0000-0000-000000000000",
+  "UserId": "00000000-0000-0000-0000-000000000000",
+  "IdentityProviderId": "00000000-0000-0000-0000-000000000000"
+}
+```
+
+#### 201
+
+Created
+
+##### Type:
+
+ `InvitationDto`
+
+```json
+{
+  "Id": "Id",
+  "Issued": "2019-04-11T17:16:26.4076175-07:00",
+  "Expires": "2019-04-11T17:16:26.4076185-07:00",
+  "Accepted": "2019-04-11T17:16:26.4076203-07:00",
+  "State": 0,
+  "TenantId": "00000000-0000-0000-0000-000000000000",
+  "UserId": "00000000-0000-0000-0000-000000000000",
+  "IdentityProviderId": "00000000-0000-0000-0000-000000000000"
+}
+```
+
+#### 400
+
+Missing or invalid inputs
+
+#### 401
+
+Unauthorized
+
+#### 403
+
+Forbidden
+
+#### 404
+
+User or Tenant not found
 
 #### 500
 

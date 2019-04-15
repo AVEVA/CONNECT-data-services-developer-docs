@@ -182,6 +182,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "Documentation/Identity/Identity_AzureActiveDirectoryTenant.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/Identity/Identity_AzureActiveDirectoryTenant.html",
+          "hash": "eYDWcPKvwOEJBe8sN7AXrg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "Documentation/Identity/Identity_Client.md",
       "output": {
         ".html": {
@@ -198,7 +210,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Identity/Identity_ClientCredentialClient.html",
-          "hash": "FbkCba7n8iPMBsE58SIUWg=="
+          "hash": "X1t5ltHq5cl8NgwiPQWBKA=="
         }
       },
       "is_incremental": false,
@@ -210,7 +222,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Identity/Identity_HybridClient.html",
-          "hash": "/O2vePisxsiCva5IivnG7w=="
+          "hash": "eTXLojZi6C+fEHIGreHvTA=="
         }
       },
       "is_incremental": false,
@@ -222,7 +234,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Identity/Identity_IdentityProvider.html",
-          "hash": "wDosYNc4q6aY/ieetUKI8w=="
+          "hash": "XirrvDO5kwZEjFxkG6rQAw=="
         }
       },
       "is_incremental": false,
@@ -246,7 +258,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Identity/Identity_Invitation.html",
-          "hash": "a+wz5GD6UjVbToyVkpBvBQ=="
+          "hash": "JLztvLyUHP/iQCV+QN66Ow=="
         }
       },
       "is_incremental": false,
@@ -270,7 +282,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Identity/Identity_Secret.html",
-          "hash": "qhaKhcnKlEIZQnFTItBY7A=="
+          "hash": "Z5dhRYTVIrCajrqi1juMLw=="
         }
       },
       "is_incremental": false,
@@ -282,7 +294,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Identity/Identity_User.html",
-          "hash": "p9fwiXvdH7NMJSJGAT2pvw=="
+          "hash": "QY2Ux0G0OE/G2XgguO96Zw=="
         }
       },
       "is_incremental": false,
@@ -810,7 +822,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/toc.html",
-          "hash": "9nd6Bqn2OX9a+tVeL4gegA=="
+          "hash": "suKZ5xo7xFgQ2do2yYLegw=="
         }
       },
       "is_incremental": false,
@@ -822,7 +834,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "n2a+3ztZGVQXZkh5TpU2qw=="
+          "hash": "7xTiiG660WKECQWYuMiE3Q=="
         }
       },
       "is_incremental": false,

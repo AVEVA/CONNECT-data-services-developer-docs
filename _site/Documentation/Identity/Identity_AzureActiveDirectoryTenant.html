@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Invitation </title>
+    <title>AzureActiveDirectoryTenant </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Invitation ">
+    <meta name="title" content="AzureActiveDirectoryTenant ">
     <meta name="generator" content="docfx 2.39.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -75,12 +75,12 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="identityInvitation">
-<h1 id="invitation">Invitation</h1>
+            <article class="content wrap" id="_content" data-uid="identityAzureActiveDirectoryTenant">
+<h1 id="azureactivedirectorytenant">AzureActiveDirectoryTenant</h1>
 
-<p>APIs for creating, getting, updating, and deleting an Invitation</p>
+<p>APIs for creating, getting, updating, and deleting Azure Active Directory Tenant for a Tenant</p>
 <h2 id="properties">Properties</h2>
-<p>For HTTP requests and responses, the InvitationDto object has the following properties and JSON-serialized body: </p>
+<p>For HTTP requests and responses, the AzureActiveDirectoryTenant object has the following properties and JSON-serialized body: </p>
 <table>
 <thead>
 <tr>
@@ -93,101 +93,63 @@
 <tr>
 <td>Id</td>
 <td>string</td>
-<td>Unique Invitation Id.</td>
+<td>Id of an Azure Active Directory Tenant</td>
 </tr>
 <tr>
-<td>Issued</td>
-<td>DateTime</td>
-<td>Invitation issuing timestamp.</td>
-</tr>
-<tr>
-<td>Expires</td>
-<td>DateTime</td>
-<td>Invitation expiration timestamp.</td>
-</tr>
-<tr>
-<td>Accepted</td>
-<td>optional: DateTime</td>
-<td>Invitation accepted timestamp.</td>
-</tr>
-<tr>
-<td>State</td>
-<td>InvitationStates</td>
-<td>Invitation state. Can be None (0), InvitationEmailSent (1), InvitationAccepted (2)</td>
-</tr>
-<tr>
-<td>TenantId</td>
-<td>Guid</td>
-<td>ID of the Tenant the invitation belongs to.</td>
-</tr>
-<tr>
-<td>UserId</td>
-<td>Guid</td>
-<td>ID of the User whom the invitation was issued to.</td>
-</tr>
-<tr>
-<td>IdentityProviderId</td>
-<td>optional: Guid</td>
-<td>ID of the Identity Provider that must be used to accept the invitation.</td>
+<td>ConsentState</td>
+<td>ConsentState</td>
+<td>Consent State of Azure Active Directory Tenant. Can be: NotConsented (0), Consented (1)</td>
 </tr>
 </tbody>
 </table>
 <h3 id="serialized-model">Serialized Model</h3>
 <pre><code class="lang-json">{
   &quot;Id&quot;: &quot;Id&quot;,
-  &quot;Issued&quot;: &quot;2019-04-11T17:16:26.3260882-07:00&quot;,
-  &quot;Expires&quot;: &quot;2019-04-11T17:16:26.3260921-07:00&quot;,
-  &quot;Accepted&quot;: &quot;2019-04-11T17:16:26.3260953-07:00&quot;,
-  &quot;State&quot;: 0,
-  &quot;TenantId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
-  &quot;UserId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
-  &quot;IdentityProviderId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
+  &quot;ConsentState&quot;: 0
 }
 </code></pre><hr>
-<h2 id="get-invitation"><code>Get Invitation</code></h2>
-<p>Get an Invitation using its id in a tenant</p>
+<h2 id="add-azure-active-directory-tenant"><code>Add Azure Active Directory Tenant</code></h2>
+<p>Add Azure Active Directory Tenant to a Tenant</p>
 <h3 id="request">Request</h3>
-<p><code>GET api/v1-preview/Tenants/{tenantId}/Invitations/{invitationId}</code></p>
+<p><code>POST api/v1-preview/Tenants/{tenantId}/AzureActiveDirectoryTenants</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 Guid tenantId
 </code></pre><p>Id of tenant</p>
 <pre><code class="lang-csharp">[Required]
-string invitationId
-</code></pre><p>Id of invitation</p>
+string azureActiveDirectoryTenantId
+</code></pre><p>Azure Active Directory Tenant Id or Domain Name to add</p>
 <h3 id="security">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
 <li><code>Account Administrator</code></li>
 </ul>
 <h3 id="returns">Returns</h3>
-<h4 id="200">200</h4>
-<p>Success</p>
+<h4 id="201">201</h4>
+<p>Created</p>
 <h5 id="type">Type:</h5>
-<p> <code>InvitationDto</code></p>
+<p> <code>AzureActiveDirectoryTenant</code></p>
 <pre><code class="lang-json">{
   &quot;Id&quot;: &quot;Id&quot;,
-  &quot;Issued&quot;: &quot;2019-04-11T17:16:26.3320979-07:00&quot;,
-  &quot;Expires&quot;: &quot;2019-04-11T17:16:26.3321018-07:00&quot;,
-  &quot;Accepted&quot;: &quot;2019-04-11T17:16:26.3321046-07:00&quot;,
-  &quot;State&quot;: 0,
-  &quot;TenantId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
-  &quot;UserId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
-  &quot;IdentityProviderId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
+  &quot;ConsentState&quot;: 0
 }
-</code></pre><h4 id="401">401</h4>
+</code></pre><h4 id="400">400</h4>
+<p>Missing or invalid inputs</p>
+<h4 id="401">401</h4>
 <p>Unauthorized</p>
 <h4 id="403">403</h4>
 <p>Forbidden</p>
 <h4 id="404">404</h4>
-<p>Invitation or Tenant not found</p>
+<p>Tenant not found</p>
+<h4 id="409">409</h4>
+<p>Azure Active Directory Tenant Id is already in use on the specified Tenant</p>
 <h4 id="500">500</h4>
 <p>Internal server error</p>
 <hr>
-<h2 id="get-invitations"><code>Get Invitations</code></h2>
-<p>Get all invitations for a tenant</p>
+<h2 id="get-all-azure-active-directory-tenants"><code>Get All Azure Active Directory Tenants</code></h2>
+<p>Get all Azure Active Directory Tenants for a Tenant</p>
 <h3 id="request-1">Request</h3>
-<p><code>GET api/v1-preview/Tenants/{tenantId}/Invitations</code></p>
+<p><code>GET api/v1-preview/Tenants/{tenantId}/AzureActiveDirectoryTenants</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 Guid tenantId
@@ -201,123 +163,88 @@ string query
 [Optional]
 [Default = 0]
 int32 skip
-</code></pre><p>Number of invitations to skip</p>
+</code></pre><p>Number of providers to skip.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
 [Default = 100]
 int32 count
-</code></pre><p>Max number of invitations to return</p>
-<pre><code class="lang-csharp">[FromQuery]
-[Optional]
-[Default = False]
-bool includeExpiredInvitations
-</code></pre><p>Specify to return expired invitations</p>
+</code></pre><p>Max number of providers to return</p>
 <h3 id="security-1">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
 <li><code>Account Administrator</code></li>
 </ul>
 <h3 id="returns-1">Returns</h3>
-<h4 id="200-1">200</h4>
+<h4 id="200">200</h4>
 <p>Success</p>
 <h5 id="type-1">Type:</h5>
-<p> <code>List[InvitationDto]</code></p>
+<p> <code>List[AzureActiveDirectoryTenant]</code></p>
 <pre><code class="lang-json">[
   {
     &quot;Id&quot;: &quot;Id&quot;,
-    &quot;Issued&quot;: &quot;2019-04-11T17:16:26.3339044-07:00&quot;,
-    &quot;Expires&quot;: &quot;2019-04-11T17:16:26.3339079-07:00&quot;,
-    &quot;Accepted&quot;: &quot;2019-04-11T17:16:26.3339108-07:00&quot;,
-    &quot;State&quot;: 0,
-    &quot;TenantId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
-    &quot;UserId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
-    &quot;IdentityProviderId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
+    &quot;ConsentState&quot;: 0
   },
   {
     &quot;Id&quot;: &quot;Id&quot;,
-    &quot;Issued&quot;: &quot;2019-04-11T17:16:26.3339298-07:00&quot;,
-    &quot;Expires&quot;: &quot;2019-04-11T17:16:26.3339309-07:00&quot;,
-    &quot;Accepted&quot;: &quot;2019-04-11T17:16:26.3339326-07:00&quot;,
-    &quot;State&quot;: 0,
-    &quot;TenantId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
-    &quot;UserId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
-    &quot;IdentityProviderId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
+    &quot;ConsentState&quot;: 0
   }
 ]
-</code></pre><h4 id="400">400</h4>
-<p>Missing or invalid inputs</p>
-<h4 id="401-1">401</h4>
+</code></pre><h4 id="401-1">401</h4>
 <p>Unauthorized</p>
 <h4 id="403-1">403</h4>
 <p>Forbidden</p>
-<h4 id="404-1">404</h4>
-<p>Tenant not found</p>
+<h4 id="403-2">403</h4>
+<p>Forbidden</p>
 <h4 id="500-1">500</h4>
 <p>Internal server error</p>
 <hr>
-<h2 id="update-invitation"><code>Update Invitation</code></h2>
-<p>Update an invitation</p>
+<h2 id="get-azure-active-directory-tenant"><code>Get Azure Active Directory Tenant</code></h2>
+<p>Get Azure Active Directory Tenant from a tenant</p>
 <h3 id="request-2">Request</h3>
-<p><code>PUT api/v1-preview/Tenants/{tenantId}/Invitations/{invitationId}</code></p>
+<p><code>GET api/v1-preview/Tenants/{tenantId}/AzureActiveDirectoryTenants/{azureActiveDirectoryTenantId}</code></p>
 <h3 id="parameters-2">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 Guid tenantId
 </code></pre><p>Id of tenant</p>
 <pre><code class="lang-csharp">[Required]
-string invitationId
-</code></pre><p>Id of invitation</p>
-<pre><code class="lang-csharp">[FromBody]
-[Required]
-InvitationCreateOrUpdateDto invitationCreateOrUpdateDto
-</code></pre><p>New InvitationUpdateDto object</p>
-<pre><code class="lang-json">{
-  &quot;ExpiresDateTime&quot;: &quot;2019-04-11T17:16:26.3353508-07:00&quot;,
-  &quot;State&quot;: 0,
-  &quot;SendInvitation&quot;: false,
-  &quot;IdentityProviderId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
-}
-</code></pre><h3 id="security-2">Security</h3>
+string azureActiveDirectoryTenantId
+</code></pre><p>Azure Active Directory Tenant Id to remove</p>
+<h3 id="security-2">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
 <li><code>Account Administrator</code></li>
 </ul>
 <h3 id="returns-2">Returns</h3>
-<h4 id="200-2">200</h4>
+<h4 id="200-1">200</h4>
 <p>Success</p>
 <h5 id="type-2">Type:</h5>
-<p> <code>InvitationDto</code></p>
+<p> <code>AzureActiveDirectoryTenant</code></p>
 <pre><code class="lang-json">{
   &quot;Id&quot;: &quot;Id&quot;,
-  &quot;Issued&quot;: &quot;2019-04-11T17:16:26.3394024-07:00&quot;,
-  &quot;Expires&quot;: &quot;2019-04-11T17:16:26.339407-07:00&quot;,
-  &quot;Accepted&quot;: &quot;2019-04-11T17:16:26.3394123-07:00&quot;,
-  &quot;State&quot;: 0,
-  &quot;TenantId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
-  &quot;UserId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
-  &quot;IdentityProviderId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
+  &quot;ConsentState&quot;: 0
 }
 </code></pre><h4 id="400-1">400</h4>
 <p>Missing or invalid inputs</p>
 <h4 id="401-2">401</h4>
 <p>Unauthorized</p>
-<h4 id="403-2">403</h4>
+<h4 id="403-3">403</h4>
 <p>Forbidden</p>
-<h4 id="404-2">404</h4>
-<p>Invitation or Tenant not found</p>
+<h4 id="404-1">404</h4>
+<p>Tenant not found</p>
 <h4 id="500-2">500</h4>
 <p>Internal server error</p>
 <hr>
-<h2 id="delete-invitation"><code>Delete Invitation</code></h2>
-<p>Delete an invitation</p>
+<h2 id="remove-azure-active-directory-tenant-from-tenant"><code>Remove Azure Active Directory Tenant From Tenant</code></h2>
+<p>Remove Azure Active Directory Tenant from a tenant</p>
 <h3 id="request-3">Request</h3>
-<p><code>DELETE api/v1-preview/Tenants/{tenantId}/Invitations/{invitationId}</code></p>
+<p><code>DELETE api/v1-preview/Tenants/{tenantId}/AzureActiveDirectoryTenants/{azureActiveDirectoryTenantId}</code></p>
 <h3 id="parameters-3">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 Guid tenantId
 </code></pre><p>Id of tenant</p>
 <pre><code class="lang-csharp">[Required]
-string invitationId
-</code></pre><p>Id of invitation</p>
+string azureActiveDirectoryTenantId
+</code></pre><p>Azure Active Directory Tenant Id to remove</p>
 <h3 id="security-3">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -325,14 +252,55 @@ string invitationId
 </ul>
 <h3 id="returns-3">Returns</h3>
 <h4 id="204">204</h4>
-<p>Deleted</p>
+<p>Removed</p>
+<h4 id="400-2">400</h4>
+<p>Missing or invalid inputs</p>
 <h4 id="401-3">401</h4>
 <p>Unauthorized</p>
-<h4 id="403-3">403</h4>
+<h4 id="403-4">403</h4>
+<p>Forbidden</p>
+<h4 id="404-2">404</h4>
+<p>Tenant not found</p>
+<h4 id="500-3">500</h4>
+<p>Internal server error</p>
+<hr>
+<h2 id="send-consent-for-azure-active-directory-tenant"><code>Send Consent for Azure Active Directory Tenant</code></h2>
+<p>Send consent for an Azure Active Directory Tenant</p>
+<h3 id="request-4">Request</h3>
+<p><code>POST api/v1-preview/Tenants/{tenantId}/AzureActiveDirectoryTenants/{azureActiveDirectoryTenantId}/SendConsent</code></p>
+<h3 id="parameters-4">Parameters</h3>
+<pre><code class="lang-csharp">[Required]
+Guid tenantId
+</code></pre><p>Id of tenant</p>
+<pre><code class="lang-csharp">[Required]
+string azureActiveDirectoryTenantId
+</code></pre><p>Azure Active Directory Tenant Id to remove</p>
+<pre><code class="lang-csharp">[FromBody]
+[Required]
+ConsentInformationDto consentInformationDto
+</code></pre><p>Consent information used to send</p>
+<pre><code class="lang-json">{
+  &quot;AzureActiveDirectoryConsentEmail&quot;: &quot;user@company.com&quot;,
+  &quot;AzureActiveDirectoryConsentGivenName&quot;: &quot;Name&quot;,
+  &quot;AzureActiveDirectoryConsentSurname&quot;: &quot;Surname&quot;
+}
+</code></pre><h3 id="security-4">Security</h3>
+<p>Allowed for these roles:</p>
+<ul>
+<li><code>Account Administrator</code></li>
+</ul>
+<h3 id="returns-4">Returns</h3>
+<h4 id="204-1">204</h4>
+<p>Removed</p>
+<h4 id="400-3">400</h4>
+<p>Missing or invalid inputs</p>
+<h4 id="401-4">401</h4>
+<p>Unauthorized</p>
+<h4 id="403-5">403</h4>
 <p>Forbidden</p>
 <h4 id="404-3">404</h4>
-<p>Invitation or Tenant not found</p>
-<h4 id="500-3">500</h4>
+<p>Tenant not found</p>
+<h4 id="500-4">500</h4>
 <p>Internal server error</p>
 <hr>
 </article>
@@ -343,7 +311,7 @@ string invitationId
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/Identity/Identity_Invitation.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/Identity/Identity_AzureActiveDirectoryTenant.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

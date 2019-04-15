@@ -27,7 +27,7 @@ for internal SDS use.
 | TypeId            | String                           | Required    | Yes		  | The SdsType identifier of the type to be used for this stream |
 | Name              | String                           | Optional    | Yes		  | Friendly name |
 | Description       | String                           | Optional    | Yes		  | Description text |
-| Indexes           | IList<SdsStreamIndex>            | Optional    | No		  | Used to define secondary indexes for stream |
+| Indexes           | IList\<SdsStreamIndex\>            | Optional    | No		  | Used to define secondary indexes for stream |
 | InterpolationMode | SdsInterpolationMode             | Optional    | No		  | Interpolation setting of the stream. Default is null. |
 | ExtrapolationMode | SdsExtrapolationMode             | Optional    | No		  | Extrapolation setting of the stream. Default is null. |
 | PropertyOverrides | IList\<SdsStreamPropertyOverride\> | Optional    | No		  | Used to define unit of measure and interpolation mode overrides for a stream. |
@@ -70,11 +70,11 @@ SdsType Properties for a specific stream.
 The ``SdsStreamPropertyOverride`` object has the following structure:
 
 
-| Property          | Type                           | Optionality | Details |
-|-------------------|--------------------------------|-------------|---------|
-| SdsTypePropertyId | String                         | Required    | SdsTypeProperty identifier |
-| InterpolationMode | SdsInterpolationMode           | Optional    | Interpolation setting. Default is null |
-| Uom               | String                         | Optional    | Unit of measure |
+| Property          | Type                 | Optionality | Details |
+|-------------------|----------------------|-------------|---------|
+| SdsTypePropertyId | String               | Required    | SdsTypeProperty identifier |
+| InterpolationMode | SdsInterpolationMode | Optional    | Interpolation setting. Default is null |
+| Uom               | String               | Optional    | Unit of measure |
 
 
 The unit of measure can be overridden for any type property defined by the stream type, including primary keys 

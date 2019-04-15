@@ -205,7 +205,7 @@ indexes that occur between data in a stream:
 |---------------------------|-----------------------------------------------|---------|
 |Numeric Types              |Interpolated*                   |Rounding is done as needed for integer types |
 |Time related Types         |Interpolated                    |DateTime, DateTimeOffset, TimeSpan |
-|Nullable Types             |Interpolated**                  |Cannot reliably interpolate due to possibility of a null value |
+|Nullable Types             |Interpolated**                  |Limited support for nullable numeric types |
 |Array and List Types       |No event is returned            |         |
 |String Type                |No event is returned            |         |
 |Boolean Type               |Returns value of nearest index  |         |
@@ -1066,7 +1066,7 @@ The namespace identifier
 An optional query string to match which SdsTypes will be returned.  See the [Searching](xref:sdsSearching) topic for information about specifying the query parameter.
 
 `string filter`  
-An optional filter string to match which SdsTypes will be returned.  See the [Filter Expressions: Objects](xref:sdsFilterExpressionsObjects) 
+An optional filter string to match which SdsTypes will be returned.  See the [Filter Expressions: SDS Objects](xref:sdsFilterExpressionsObjects) 
 topic for information about specifying the filter parameter.
 
 `int skip`  

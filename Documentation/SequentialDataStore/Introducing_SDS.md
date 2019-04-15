@@ -18,9 +18,9 @@ Access to SDS
 ------------
 
 You must acquire a Tenant, security credentials, and a Namespace before interacting with the Data Store. If you do not 
-have a Tenant, you can request access to the SDS Preview at [OSIsoft Cloud Services](mailto://cloudservices@osisoft.com).
+have a Tenant, you can request access to the OCS Preview at [OSIsoft Cloud Services](mailto://cloudservices@osisoft.com).
 
-The SDS Preview program is limited; contacting OSIsoft does not assure participation.
+The OCS Preview program is limited; contacting OSIsoft does not assure participation.
 
 
 If you are selected to
@@ -60,7 +60,7 @@ Isolation provided by Tenants and Namespaces prevents accidental or malicious da
 Getting help
 ------------
 
-The following email address is available to participants of the SDS
+The following email address is available to participants of the OCS
 Preview for both product support and feedback:
 
 [CloudServices@osisoft.com](mailto://CloudServices@osisoft.com)

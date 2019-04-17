@@ -913,8 +913,8 @@ Returns the type corresponding to the specified typeId within a given namespace.
 
 **Request**
 
-        ```text
-		GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
+        ```
+			GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
 		```
 
 

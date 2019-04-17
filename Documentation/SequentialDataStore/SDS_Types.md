@@ -1601,7 +1601,7 @@ Get the Owner of the specified type. For more information on Owners, see [Access
 
 **Request**
  ```
- GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Owner
+		GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Owner
  ```
 
 **Parameters**

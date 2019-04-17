@@ -1003,8 +1003,9 @@ Content-Type: application/json
 Returns a dictionary mapping the object name to the number of references held by streams, stream views and parent types for the specified type. See [Streams](xref:sdsstreams) and [Steam Views](xref:sdsviews) for more information on the use of types to define streams and stream views. For further details about type referencing please see: [Type Reusability](#type-reusability).
 
 **Request**
-
-        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/ReferenceCount
+ ```
+ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/ReferenceCount
+ ```
 
 **Parameters**  
 
@@ -1052,8 +1053,9 @@ for information about specifying those respective parameters.
 Note that the results will also include types that were automatically created by SDS as a result of type referencing. For further details about type referencing please see: [Type Reusability](#type-reusability)
 
 **Request**
-
-        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types?query={query}&filter={filter}&skip={skip}&count={count}&orderby={orderby}
+ ```
+ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types?query={query}&filter={filter}&skip={skip}&count={count}&orderby={orderby}
+ ```
 
 **Parameters**  
 
@@ -1175,8 +1177,9 @@ returns ``Unauthorized`` (401). For this reason, it is recommended that when usi
 redirect with the authorization header, you should disable automatic redirect and perform the redirect manually.
 
 **Request**
-
-        POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
+ ```
+ POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
+ ```
 
 **Parameters**
 
@@ -1409,8 +1412,9 @@ Also, certain parameters, including the type id, cannot be changed after
 they are defined.
 
 **Request**
-
-        PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
+ ```
+ PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
+ ```
 
 **Parameters**
 
@@ -1441,8 +1445,9 @@ The content is set to true on success.
 Deletes a type from the specified tenant and namespace. Note that a type cannot be deleted if any streams or stream views or other types reference it.
 
 **Request**
-
-        DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
+ ```
+ DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
+ ```
 
 **Parameters**
 
@@ -1470,8 +1475,9 @@ The response includes a status code.
 Get the default ACL for the Types collection. For more information on ACLs, see [Access Control](xref:accesscontrol).
 
 **Request**
-
-        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/AccessControl
+ ```
+ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/AccessControl
+ ```
 
 **Parameters**
 
@@ -1498,8 +1504,9 @@ The default ACL for Types
 Update the default ACL for the Types collection. For more information on ACLs, see [Access Control](xref:accesscontrol).
 
 **Request**
-
-        PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/AccessControl
+ ```
+ PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/AccessControl
+ ```
 
 **Parameters**
 
@@ -1527,8 +1534,9 @@ The response includes a status code.
 Get the ACL of the specified type. For more information on ACLs, see [Access Control](xref:accesscontrol).
 
 **Request**
-
-        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessControl
+ ```
+ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessControl
+ ```
 
 **Parameters**
 
@@ -1560,8 +1568,9 @@ Update the ACL of the specified type. For more information on ACLs, see [Access 
 Note that this does not update the ACL for the associated types. For further details about type referencing please see: [Type Reusability](#type-reusability).
 
 **Request**
-
-        PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessControl
+ ```
+ PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessControl
+ ```
 
 **Parameters**
 
@@ -1591,8 +1600,9 @@ The response includes a status code.
 Get the Owner of the specified type. For more information on Owners, see [Access Control](xref:accesscontrol).
 
 **Request**
-
-        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Owner
+ ```
+ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Owner
+ ```
 
 **Parameters**
 
@@ -1624,8 +1634,9 @@ Update the Owner of the specified type. For more information on Owners, see [Acc
 Note that this does not update the Owner for the associated types. For further details about type referencing please see: [Type Reusability](#type-reusability).
 
 **Request**
-
-        PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Owner
+ ```
+		PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Owner
+ ```
 
 **Parameters**
 

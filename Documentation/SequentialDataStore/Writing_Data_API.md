@@ -92,8 +92,9 @@ All times are represented at offset 0, GMT.
 Inserts data into the specified stream. Returns an error if data is already present at the index of any event.
 
 **Request**
-
+ ```
         POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
+ ```
 
 **Parameters**  
 ``string tenantId``  
@@ -148,9 +149,10 @@ where the request body specifies the values to insert:
 Modifies the specified stream event(s). Patching affects only the data item parameters that are included in the call.
 
 **Request**
-
+ ```
        PATCH api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 		    ?select={selectExpression}
+ ```
 
 **Parameters**  
 ``string tenantId``  
@@ -213,9 +215,10 @@ There are two options for specifying which events to remove from a stream:
 Removes the event at each index from the specified stream. Different overloads are available to make it easier to indicate the index where you want to remove a data event. 
 
 **Request**  
-
+ ```
         DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 		    ?index={index}[&index={index}…]
+ ```
 
 **Parameters**  
 ``string tenantId``  
@@ -255,9 +258,10 @@ If you attempt to remove events at indexes that have no events, an error is retu
 Removes events at and between the start index and end index.
 
 **Request**
-
+ ```
         DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 		    ?startIndex={startIndex}&endIndex={endIndex}
+ ```
 
 **Parameters**  
 ``string tenantId``  
@@ -295,9 +299,10 @@ If any individual event fails to be removed, the entire operation is rolled back
 Writes one or more events over existing events in the specified stream.
 
 **Request**
-
+ ```
         PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 		    ?allowCreate=false
+ ```
 
 **Parameters**  
 ``string tenantId``  
@@ -331,8 +336,9 @@ This request returns an error if the stream does not have an event to be replace
 Writes one or more events to the specified stream.
 
 **Request**
-
+ ```
         PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
+ ```
 
 **Parameters**  
 ``string tenantId``  

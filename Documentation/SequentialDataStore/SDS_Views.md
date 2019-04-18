@@ -454,9 +454,9 @@ See [Stream Views](#stream-views) for general SdsStreamView information.
 Returns the stream view corresponding to the specified streamViewId within a given namespace.
 
 **Request**
-
+ ```
         GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
-
+ ```
 
 **Parameters**
 
@@ -514,10 +514,9 @@ Content-Type: application/json
 Returns the stream view map corresponding to the specified streamViewId within a given namespace.
 
 **Request**
-
+ ```
         GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Map
-
-
+ ```
 
 **Parameters**
 
@@ -585,8 +584,9 @@ in the Namespace. See [Searching](xref:sdsSearching) and [Filter Expressions: SD
 
 
 **Request**
-
+ ```
         GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews?query={query}&filter={filter}&skip={skip}&count={count}&orderby={orderby}
+ ```
 
 **Parameters**
 
@@ -674,8 +674,9 @@ If the stream views are identical, a Found (302) status is returned and the stre
 If no matching identifier is found, the specified stream view is created.  
 
 **Request**
-
+ ```
         POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
+ ```
 
 **Parameters**
 
@@ -709,8 +710,9 @@ The newly created or matching SdsStreamView.
 Creates or updates the definition of a stream view. 
 
 **Request**
-
+ ```
         PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
+ ```
 
 **Parameters**
 
@@ -744,8 +746,9 @@ The newly created or updated SdsStreamView.
 Deletes a stream view from the specified tenant and namespace.
 
 **Request**
-
+ ```
         GET	api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
+ ```
 
 **Parameters**
 
@@ -772,8 +775,9 @@ The response includes a status code.
 Get the default ACL for the Stream Views collection. For more information on ACLs, see [Access Control](xref:accesscontrol).
 
 **Request**
-
+ ```
         GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/AccessControl
+ ```
 
 **Parameters**
 
@@ -800,8 +804,9 @@ The default ACL for Stream Views
 Update the default ACL for the Stream Views collection. For more information on ACLs, see [Access Control](xref:accesscontrol).
 
 **Request**
-
+ ```
         PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/AccessControl
+ ```
 
 **Parameters**
 
@@ -829,8 +834,9 @@ The response includes a status code.
 Get the ACL of the specified stream view. For more information on ACLs, see [Access Control](xref:accesscontrol).
 
 **Request**
-
+ ```
         GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/AccessControl
+ ```
 
 **Parameters**
 
@@ -860,8 +866,9 @@ The ACL for the specified stream view
 Update the ACL of the specified stream view. For more information on ACLs, see [Access Control](xref:accesscontrol).
 
 **Request**
-
+ ```
         PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/AccessControl
+ ```
 
 **Parameters**
 
@@ -891,8 +898,9 @@ The response includes a status code.
 Get the Owner of the specified stream view. For more information on Owners, see [Access Control](xref:accesscontrol).
 
 **Request**
-
+ ```
         GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Owner
+ ```
 
 **Parameters**
 
@@ -922,8 +930,9 @@ The Owner for the specified stream view
 Update the Owner of the specified stream view. For more information on Owners, see [Access Control](xref:accesscontrol).
 
 **Request**
-
+ ```
         PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Owner
+ ```
 
 **Parameters**
 

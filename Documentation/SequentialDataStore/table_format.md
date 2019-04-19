@@ -150,7 +150,6 @@ To retrieve the results in table format, add the form variable and specify table
       ?startIndex=2017-04-01T07:00:00Z&endIndex=2017-04-01T07:10:00Z
       &form=table
 
-
 Response
 
       Content-Type: application/json

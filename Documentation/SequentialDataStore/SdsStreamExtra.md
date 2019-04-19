@@ -57,9 +57,9 @@ Returns the metadata dictionary for the specified stream.
 
 
 **.NET Library**
-
+```csharp
       Task<IDictionary<string, string>> GetStreamMetadataAsync(string streamId); 
-
+```
 
 **Security**
 
@@ -114,9 +114,9 @@ Returns the value for the specified key in the metadata dictionary of the specif
 
 
 **.NET Library**
-
+```csharp
       Task<string> GetStreamMetadataValueAsync(string streamId, string key); 
-
+```
 
 **Security**
 
@@ -155,9 +155,9 @@ Overwrites any existing metadata; does not merge.
 
 
 **.NET Library**
-
+```csharp
       Task UpdateStreamMetadataAsync(string streamId, IDictionary<string, string> metadata); 
-
+```
 
 **Security**
 
@@ -196,9 +196,9 @@ Deletes the metadata for the specified stream.
 
 
 **.NET Library**
-
+```csharp
       Task DeleteStreamMetadataAsync(string streamId); 
-
+```
 
 **Security**
 
@@ -254,9 +254,9 @@ Returns the tag list for the specified stream.
 
 
 **.NET Library**
-
+```csharp
       Task<IList<string>> GetStreamTagsAsync(string streamId); 
-
+```
 
 **Security**
 
@@ -296,9 +296,9 @@ Overwrites any existing tags; does not merge.
 
 
 **.NET Library**
-
+```csharp
       Task UpdateStreamTagsAsync(string streamId, IList<string> tags); 
-
+```
 
 **Security**
 
@@ -337,9 +337,9 @@ Deletes the tag list for the specified stream.
 
 
 **.NET Library**
-
+```csharp
       Task DeleteStreamTagsAsync(string streamId); 
-
+```
 
 **Security**
 

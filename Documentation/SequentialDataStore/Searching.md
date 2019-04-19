@@ -29,9 +29,9 @@ The searchable properties are below.
 ``GetStreamsAsync`` is an overloaded method that is used to search for and return streams (also see [Streams](xref:sdsStreams) for information about using ``GetStreamAsync`` to return streams). When you call an overloaded method, the software determines the most appropriate method to use by comparing the argument types specified in the call to the method definition.
 
 The syntax of the client libraries method is as follows:
-
+```csharp
       _metadataService.GetStreamsAsync(query:"QueryString", skip:0, count:100);
-
+```
 
 Searching for streams is also possible using the REST API and specifying the optional `query` parameter, as shown here:
  ```
@@ -62,9 +62,9 @@ See [Types](xref:sdsTypes) for more information.
 ``GetTypesAsync`` is an overloaded method that is used to search for and return types. 
 
 The syntax of the client libraries method is as follows:
-
+```csharp
       _metadataService.GetTypesAsync(query:"QueryString", skip:0, count:100);
-
+```
 
 As previously mentioned, searching for types is also possible using the REST API and specifying the optional `query` parameter, as shown here:
  ```

@@ -93,7 +93,7 @@ Inserts data into the specified stream. Returns an error if data is already pres
 
 **Request**
  ```
-        POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
+    POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
  ```
 
 **Parameters**  
@@ -117,8 +117,9 @@ This request will return an error if an event already exists for any index in th
 
 **Example**  
 The following request is used to insert events into stream `Simple` of `SimpleType`,
-
-        POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
+ ```
+    POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
+ ```
 
 where the request body specifies the values to insert: 
 ```json
@@ -150,8 +151,8 @@ Modifies the specified stream event(s). Patching affects only the data item para
 
 **Request**
  ```
-       PATCH api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
-		    ?select={selectExpression}
+    PATCH api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
+		 ?select={selectExpression}
  ```
 
 **Parameters**  
@@ -174,9 +175,10 @@ A serialized collection of one or more patch property events
 The response includes a status code
 
 Consider you have a stream `Simple` of `SimpleType`, to change one property, `Measurement`, for one event specify the following request
-        
-       PATCH api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data
-		    ?select=measurement
+ ```        
+    PATCH api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data
+		?select=measurement
+ ```
 
 With the following request body,
 ```json
@@ -216,8 +218,8 @@ Removes the event at each index from the specified stream. Different overloads a
 
 **Request**  
  ```
-        DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
-		    ?index={index}[&index={index}…]
+    DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
+		?index={index}[&index={index}…]
  ```
 
 **Parameters**  
@@ -259,8 +261,8 @@ Removes events at and between the start index and end index.
 
 **Request**
  ```
-        DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
-		    ?startIndex={startIndex}&endIndex={endIndex}
+    DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
+		?startIndex={startIndex}&endIndex={endIndex}
  ```
 
 **Parameters**  
@@ -300,8 +302,8 @@ Writes one or more events over existing events in the specified stream.
 
 **Request**
  ```
-        PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
-		    ?allowCreate=false
+    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
+		?allowCreate=false
  ```
 
 **Parameters**  
@@ -337,7 +339,7 @@ Writes one or more events to the specified stream.
 
 **Request**
  ```
-        PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
+    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
  ```
 
 **Parameters**  

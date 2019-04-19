@@ -27,7 +27,7 @@ In addition, the following methods support reading multiple values:
 
 All single stream reads are HTTP GET actions. Reading data involves getting events from streams. The base reading URI from a single stream is as follows:
  ```
-        api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
+	api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
  ```
 
 **Parameters**
@@ -48,7 +48,7 @@ SDS supports reading from multiple streams in one request. The following method 
 
 Multi-stream reads can be HTTP GET or POST actions. The base reading URI for reading from multiple streams is as follows:
  ```
-        api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data
+    api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data
  ```
 
 **Parameters**
@@ -177,7 +177,7 @@ This is supported in the .NET API via overloads that accept a collection of `Sds
 
 All unit conversions are POST HTTP requests. The unit conversion transformation URI is as follows:
  ```
-        POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform
+    POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform
  ```
 
 **Request body**  

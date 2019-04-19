@@ -105,7 +105,7 @@ Returns the specified stream.
 
 **Request**
  ```
-		GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
+	GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
  ```
 
 **Parameters**
@@ -158,7 +158,7 @@ for information about specifying those respective parameters.
 
 **Request**
  ```
-		GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query={query}&filter={filter}&skip={skip}&count={count}&orderby={orderby}
+	GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query={query}&filter={filter}&skip={skip}&count={count}&orderby={orderby}
  ```
 
 **Parameters**
@@ -237,7 +237,7 @@ Returns the type definition that is associated with a given stream.
 
 **Request**
  ```
-		GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type
+	GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type
  ```
 
 **Parameters**
@@ -282,7 +282,7 @@ redirect with the authorization header, you should disable automatic redirect.
 
 **Request**
  ```
-		POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
+	POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
  ```
 
 **Parameters**
@@ -337,7 +337,7 @@ Unpermitted changes result in an error.
 
 **Request**
  ```
-	    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
+	PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
  ```
 
 **Parameters**
@@ -371,7 +371,7 @@ Defined Indexes and PropertyOverrides are removed when updating a stream type.
 
 **Request**
  ```
-        PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type?streamViewId={streamViewId}
+    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type?streamViewId={streamViewId}
  ```
 
 **Parameters**
@@ -410,7 +410,7 @@ Deletes a stream.
 
 **Request**
  ```
-        DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
+    DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
  ```
 
 **Parameters**
@@ -440,7 +440,7 @@ Get the default ACL for the Streams collection. For more information on ACLs, se
 
 **Request**
  ```
-        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/AccessControl
+    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/AccessControl
  ```
 
 **Parameters**
@@ -469,7 +469,7 @@ Update the default ACL for the Streams collection. For more information on ACLs,
 
 **Request**
  ```
-        PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/AccessControl
+    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/AccessControl
  ```
 
 **Parameters**
@@ -499,7 +499,7 @@ Get the ACL of the specified stream. For more information on ACLs, see [Access C
 
 **Request**
  ```
-        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/AccessControl
+    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/AccessControl
  ```
 
 **Parameters**
@@ -531,7 +531,7 @@ Update the ACL of the specified stream. For more information on ACLs, see [Acces
 
 **Request**
  ```
-        PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/AccessControl
+    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/AccessControl
  ```
 
 **Parameters**
@@ -563,7 +563,7 @@ Get the Owner of the specified stream. For more information on Owners, see [Acce
 
 **Request**
  ```
-        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Owner
+    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Owner
  ```
 
 **Parameters**
@@ -595,7 +595,7 @@ Update the Owner of the specified stream. For more information on Owners, see [A
 
 **Request**
  ```
-        PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Owner
+    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Owner
  ```
 
 **Parameters**

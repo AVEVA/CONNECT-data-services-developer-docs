@@ -22,9 +22,9 @@ Returns the metadata dictionary for the specified stream.
 
 
 **Request**
-
-        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Metadata 
-
+ ```
+      GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Metadata 
+ ```
 
 **Parameters**
 
@@ -57,9 +57,9 @@ Returns the metadata dictionary for the specified stream.
 
 
 **.NET Library**
-
+```csharp
       Task<IDictionary<string, string>> GetStreamMetadataAsync(string streamId); 
-
+```
 
 **Security**
 
@@ -76,9 +76,9 @@ Returns the value for the specified key in the metadata dictionary of the specif
 
 
 **Request**
-
-        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Metadata/{key} 
-
+ ```
+      GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Metadata/{key} 
+ ```
 
 **Parameters**
 
@@ -114,9 +114,9 @@ Returns the value for the specified key in the metadata dictionary of the specif
 
 
 **.NET Library**
-
+```csharp
       Task<string> GetStreamMetadataValueAsync(string streamId, string key); 
-
+```
 
 **Security**
 
@@ -133,9 +133,9 @@ Overwrites any existing metadata; does not merge.
 
 
 **Request**
-
-        PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Metadata 
-
+ ```
+      PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Metadata 
+ ```
 
 **Parameters**
 
@@ -155,9 +155,9 @@ Overwrites any existing metadata; does not merge.
 
 
 **.NET Library**
-
-       Task UpdateStreamMetadataAsync(string streamId, IDictionary<string, string> metadata); 
-
+```csharp
+      Task UpdateStreamMetadataAsync(string streamId, IDictionary<string, string> metadata); 
+```
 
 **Security**
 
@@ -174,9 +174,9 @@ Overwrites any existing metadata; does not merge.
 Deletes the metadata for the specified stream.  
 
 **Request**
-
-        DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Metadata 
-
+ ```
+      DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Metadata 
+ ```
 
 **Parameters**
 
@@ -196,9 +196,9 @@ Deletes the metadata for the specified stream.
 
 
 **.NET Library**
-
-        Task DeleteStreamMetadataAsync(string streamId); 
-
+```csharp
+      Task DeleteStreamMetadataAsync(string streamId); 
+```
 
 **Security**
 
@@ -219,9 +219,9 @@ Returns the tag list for the specified stream.
 
 
 **Request**
-
-        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Tags 
-
+ ```
+      GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Tags 
+ ```
 
 **Parameters**
 
@@ -254,9 +254,9 @@ Returns the tag list for the specified stream.
 
 
 **.NET Library**
-
+```csharp
       Task<IList<string>> GetStreamTagsAsync(string streamId); 
-
+```
 
 **Security**
 
@@ -273,9 +273,9 @@ Overwrites any existing tags; does not merge.
 
 
 **Request**
-
-        PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Tags 
-
+ ```
+      PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Tags 
+ ```
 
 **Parameters**
 
@@ -296,9 +296,9 @@ Overwrites any existing tags; does not merge.
 
 
 **.NET Library**
-
-       Task UpdateStreamTagsAsync(string streamId, IList<string> tags); 
-
+```csharp
+      Task UpdateStreamTagsAsync(string streamId, IList<string> tags); 
+```
 
 **Security**
 
@@ -315,9 +315,9 @@ Deletes the tag list for the specified stream.
 
 
 **Request**
-
-       DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Tags 
-
+ ```
+      DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Tags 
+ ```
 
 **Parameters**
 
@@ -337,9 +337,9 @@ Deletes the tag list for the specified stream.
 
 
 **.NET Library**
-
-       Task DeleteStreamTagsAsync(string streamId); 
-
+```csharp
+      Task DeleteStreamTagsAsync(string streamId); 
+```
 
 **Security**
 

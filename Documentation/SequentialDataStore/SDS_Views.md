@@ -1,5 +1,5 @@
----
-uid: sdsViews
+﻿---
+uid: sdsStreamViews
 ---
 
 # Stream Views
@@ -359,8 +359,8 @@ SdsStreamView view = new SdsStreamView()
         },
         new SdsStreamViewProperty()
         {
-            SourceId = "Status",
-            TargetId = "Status"
+            SourceId = "State",
+            TargetId = "State"
         },
         new SdsStreamViewProperty()
         {

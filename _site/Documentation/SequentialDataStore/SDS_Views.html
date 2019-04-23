@@ -311,8 +311,8 @@ retrieved from SDS, so required and optional have no meaning.</p>
 <p>Stream Views can be used to change the Type defining a Stream. You cannot modify the SdsType; types are immutable. 
 But you can map a stream from its current type to a new type.</p>
 <p>To update a Stream&#39;s Type, define an SdsStreamView and PUT the stream view to the following:</p>
-<pre><code>   PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type?streamViewId={streamViewId}
-</code></pre><p>For details, see <a href="xref:sdsStreams-update-stream-type">Update Stream Type</a>. </p>
+<p>   PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type?streamViewId={streamViewId}</p>
+<p>For details, see <a href="xref:sdsStreams-update-stream-type">Update Stream Type</a>. </p>
 <h2 id="working-with-stream-views-when-using-net">Working with Stream Views when using .NET</h2>
 <p><strong>Using .Net</strong></p>
 <p>When working in .NET, use the SDS Client libraries’ ISdsMetadataService.</p>
@@ -625,7 +625,7 @@ See <a href="#stream-views">Stream Views</a> for general SdsStreamView informati
 <h2 id="get-stream-view"><code>Get Stream View</code></h2>
 <p>Returns the stream view corresponding to the specified streamViewId within a given namespace.</p>
 <p><strong>Request</strong></p>
-<pre><code>    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
+<pre><code>   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -661,7 +661,7 @@ Content-Type: application/json
 <h2 id="get-stream-view-map"><code>Get Stream View Map</code></h2>
 <p>Returns the stream view map corresponding to the specified streamViewId within a given namespace.</p>
 <p><strong>Request</strong></p>
-<pre><code>    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Map
+<pre><code>   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Map
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -704,7 +704,7 @@ Content-Type: application/json
 the search/filter criteria. If neither parameter is specified, the list includes all stream views 
 in the Namespace. See <a class="xref" href="Searching.html">Searching</a> and <a class="xref" href="Filter_Expressions_Metadata.html">Filter Expressions: SDS Objects</a> for information about specifying those respective parameters.</p>
 <p><strong>Request</strong></p>
-<pre><code>    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews?query={query}&amp;filter={filter}&amp;skip={skip}&amp;count={count}&amp;orderby={orderby}
+<pre><code>   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews?query={query}&amp;filter={filter}&amp;skip={skip}&amp;count={count}&amp;orderby={orderby}
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -760,7 +760,7 @@ Content-Type: application/json
 If the stream views are identical, a Found (302) status is returned and the stream view. If the stream views are different, the Conflict (409) error is returned.</p>
 <p>If no matching identifier is found, the specified stream view is created.  </p>
 <p><strong>Request</strong></p>
-<pre><code>    POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
+<pre><code>   POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -774,7 +774,7 @@ If the stream views are identical, a Found (302) status is returned and the stre
 <h2 id="create-or-update-stream-view"><code>Create or Update Stream View</code></h2>
 <p>Creates or updates the definition of a stream view. </p>
 <p><strong>Request</strong></p>
-<pre><code>    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
+<pre><code>   PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code>
 The tenant identifier  </p>
@@ -789,7 +789,7 @@ The tenant identifier  </p>
 <h2 id="delete-stream-view"><code>Delete Stream View</code></h2>
 <p>Deletes a stream view from the specified tenant and namespace.</p>
 <p><strong>Request</strong></p>
-<pre><code>    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
+<pre><code>   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -801,7 +801,7 @@ The tenant identifier  </p>
 <h2 id="get-stream-views-access-control-list"><code>Get Stream Views Access Control List</code></h2>
 <p>Get the default ACL for the Stream Views collection. For more information on ACLs, see <a href="xref:accesscontrol">Access Control</a>.</p>
 <p><strong>Request</strong></p>
-<pre><code>    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/AccessControl
+<pre><code>   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/AccessControl
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -813,7 +813,7 @@ The tenant identifier  </p>
 <h2 id="update-stream-views-access-control-list"><code>Update Stream Views Access Control List</code></h2>
 <p>Update the default ACL for the Stream Views collection. For more information on ACLs, see <a href="xref:accesscontrol">Access Control</a>.</p>
 <p><strong>Request</strong></p>
-<pre><code>    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/AccessControl
+<pre><code>   PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/AccessControl
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -825,7 +825,7 @@ The tenant identifier  </p>
 <h2 id="get-stream-view-access-control-list"><code>Get Stream View Access Control List</code></h2>
 <p>Get the ACL of the specified stream view. For more information on ACLs, see <a href="xref:accesscontrol">Access Control</a>.</p>
 <p><strong>Request</strong></p>
-<pre><code>    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/AccessControl
+<pre><code>   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/AccessControl
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -838,7 +838,7 @@ The tenant identifier  </p>
 <h2 id="update-stream-view-access-control-list"><code>Update Stream View Access Control List</code></h2>
 <p>Update the ACL of the specified stream view. For more information on ACLs, see <a href="xref:accesscontrol">Access Control</a>.</p>
 <p><strong>Request</strong></p>
-<pre><code>    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/AccessControl
+<pre><code>   PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/AccessControl
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -851,7 +851,7 @@ The tenant identifier  </p>
 <h2 id="get-stream-view-owner"><code>Get Stream View Owner</code></h2>
 <p>Get the Owner of the specified stream view. For more information on Owners, see <a href="xref:accesscontrol">Access Control</a>.</p>
 <p><strong>Request</strong></p>
-<pre><code>    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Owner
+<pre><code>   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Owner
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -864,7 +864,7 @@ The tenant identifier  </p>
 <h2 id="update-stream-view-owner"><code>Update Stream View Owner</code></h2>
 <p>Update the Owner of the specified stream view. For more information on Owners, see <a href="xref:accesscontrol">Access Control</a>.</p>
 <p><strong>Request</strong></p>
-<pre><code>    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Owner
+<pre><code>   PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Owner
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>

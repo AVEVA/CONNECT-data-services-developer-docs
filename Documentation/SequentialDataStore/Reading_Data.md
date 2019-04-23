@@ -26,8 +26,9 @@ In addition, the following methods support reading multiple values:
   and specified start and end indexes.
 
 All single stream reads are HTTP GET actions. Reading data involves getting events from streams. The base reading URI from a single stream is as follows:
-
-        api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
+ ```
+	api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
+ ```
 
 **Parameters**
 
@@ -46,8 +47,9 @@ SDS supports reading from multiple streams in one request. The following method 
 * [Join Values](xref:sdsReadingDataApi#join-values) retrieves a collection of events across multiple streams and joins the results based on the request parameters.
 
 Multi-stream reads can be HTTP GET or POST actions. The base reading URI for reading from multiple streams is as follows:
- 
-        api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data
+ ```
+    api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data
+ ```
 
 **Parameters**
 
@@ -150,8 +152,9 @@ Data tranformations are suppported for all single stream reads, but transformati
 When transforming data with an SdsStreamView, the data read is converted to the *target type* specified in the SdsStreamView. Working with stream views is covered in detail in the [Stream Views](xref:sdsViews) section.
 
 All stream view transformations are GET HTTP requests. The stream view is specified by appending the stream view identifier to requests to the transformation endpoint. For example the following request:
-
+ ```
     GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/First?streamViewId={streamViewId}
+ ```
 
 would return the first event in the stream as the target type in the stream view specified by the `streamViewId`.
 
@@ -173,8 +176,9 @@ SDS supports assigning [Units of Measure](xref:unitsOfMeasure) (UOM) to stream d
 This is supported in the .NET API via overloads that accept a collection of `SdsStreamPropertyOverride` objects, and in the REST API via HTTP POST calls with a request body containing a collection of `SdsStreamPropertyOverride` objects.  
 
 All unit conversions are POST HTTP requests. The unit conversion transformation URI is as follows:
-
-        POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform
+ ```
+    POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform
+ ```
 
 **Request body**  
 The Request Body contains a collection of `SdsStreamPropertyOverride` objects. 

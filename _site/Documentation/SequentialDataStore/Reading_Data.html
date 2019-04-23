@@ -98,7 +98,7 @@ defines the functions that are available.</p>
 and specified start and end indexes.</li>
 </ul>
 <p>All single stream reads are HTTP GET actions. Reading data involves getting events from streams. The base reading URI from a single stream is as follows:</p>
-<pre><code>    api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
+<pre><code>   api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -109,7 +109,7 @@ and specified start and end indexes.</li>
 <li><a class="xref" href="Reading_Data_API.html#join-values">Join Values</a> retrieves a collection of events across multiple streams and joins the results based on the request parameters.</li>
 </ul>
 <p>Multi-stream reads can be HTTP GET or POST actions. The base reading URI for reading from multiple streams is as follows:</p>
-<pre><code>    api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data
+<pre><code>   api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -230,7 +230,7 @@ and around the start and end index for window values. The following are valid va
 </code></pre><h3 id="reading-with-sdsstreamviews">Reading with SdsStreamViews</h3>
 <p>When transforming data with an SdsStreamView, the data read is converted to the <em>target type</em> specified in the SdsStreamView. Working with stream views is covered in detail in the <a class="xref" href="SDS_Views.html">Stream Views</a> section.</p>
 <p>All stream view transformations are GET HTTP requests. The stream view is specified by appending the stream view identifier to requests to the transformation endpoint. For example the following request:</p>
-<pre><code>GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/First?streamViewId={streamViewId}
+<pre><code>   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/First?streamViewId={streamViewId}
 </code></pre><p>would return the first event in the stream as the target type in the stream view specified by the <code>streamViewId</code>.</p>
 <p>All single stream data reads support stream view transformations.</p>
 <p>When data is requested with an SdsStreamView, the read characteristics defined by the <em>target type</em> of the SdsStreamView 
@@ -269,7 +269,7 @@ determine what is returned. The read characteristics are discussed in the code s
 </table>
 <p>This is supported in the .NET API via overloads that accept a collection of <code>SdsStreamPropertyOverride</code> objects, and in the REST API via HTTP POST calls with a request body containing a collection of <code>SdsStreamPropertyOverride</code> objects.  </p>
 <p>All unit conversions are POST HTTP requests. The unit conversion transformation URI is as follows:</p>
-<pre><code>    POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform
+<pre><code>   POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform
 </code></pre><p><strong>Request body</strong><br>The Request Body contains a collection of <code>SdsStreamPropertyOverride</code> objects. </p>
 <p>The following code defines a <code>Simple Type</code> with one index, <code>Time</code>, and one additional property, <code>Measurement</code>. <code>Measurement</code> has an assigned unit of measure, meter.</p>
 <pre><code class="lang-csharp">public class SimpleType

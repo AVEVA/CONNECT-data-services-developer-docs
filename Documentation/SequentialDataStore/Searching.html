@@ -135,9 +135,9 @@ The searchable properties are below. </p>
 </table>
 <p><code>GetStreamsAsync</code> is an overloaded method that is used to search for and return streams (also see <a class="xref" href="SDS_Streams.html">Streams</a> for information about using <code>GetStreamAsync</code> to return streams). When you call an overloaded method, the software determines the most appropriate method to use by comparing the argument types specified in the call to the method definition.</p>
 <p>The syntax of the client libraries method is as follows:</p>
-<pre><code>  _metadataService.GetStreamsAsync(query:&quot;QueryString&quot;, skip:0, count:100);
+<pre><code class="lang-csharp">      _metadataService.GetStreamsAsync(query:&quot;QueryString&quot;, skip:0, count:100);
 </code></pre><p>Searching for streams is also possible using the REST API and specifying the optional <code>query</code> parameter, as shown here:</p>
-<pre><code>  GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query={query}&amp;skip={skip}&amp;count={count}
+<pre><code>     GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query={query}&amp;skip={skip}&amp;count={count}
 </code></pre><p>The Stream fields valid for search are identified in the fields table located on the <a class="xref" href="SDS_Streams.html">Streams</a> page. Note that Stream Metadata has unique 
 syntax rules, see <a href="#Stream_Metadata_search_topic">How Searching Works: Stream Metadata</a>.</p>
 <h1 id="searching-for-types">Searching for Types</h1>
@@ -184,9 +184,9 @@ See <a class="xref" href="SDS_Types.html">Types</a> for more information.</p>
 </table>
 <p><code>GetTypesAsync</code> is an overloaded method that is used to search for and return types. </p>
 <p>The syntax of the client libraries method is as follows:</p>
-<pre><code>  _metadataService.GetTypesAsync(query:&quot;QueryString&quot;, skip:0, count:100);
+<pre><code class="lang-csharp">      _metadataService.GetTypesAsync(query:&quot;QueryString&quot;, skip:0, count:100);
 </code></pre><p>As previously mentioned, searching for types is also possible using the REST API and specifying the optional <code>query</code> parameter, as shown here:</p>
-<pre><code>  GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types?query={query}&amp;skip={skip}&amp;count={count}
+<pre><code>     GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types?query={query}&amp;skip={skip}&amp;count={count}
 </code></pre><p>The Type fields valid for search are identified in the fields table located on the <a class="xref" href="SDS_Types.html">Types</a> page. The Properties field is identified
 as being searchable but with limitations: Each SdsTypeProperty of a given SdsType has its Name and Id included in the Properties field. This includes nested
 SdsTypes of the given SdsType. Therefore, the searching of Properties will distinguish SdsTypes by their respective lists of relevant SdsTypeProperty Ids and Names.</p>
@@ -230,9 +230,9 @@ The searchable properties are below. See <a class="xref" href="SDS_Views.html">S
 </table>
 <p><code>GetStreamViewsAsync</code> is an overloaded method that is used to search for and return stream views. </p>
 <p>The syntax of the client libraries method is as follows:</p>
-<pre><code>  _metadataService.GetStreamViewsAsync(query:&quot;QueryString&quot;, skip:0, count:100);
+<pre><code class="lang-csharp">    _metadataService.GetStreamViewsAsync(query:&quot;QueryString&quot;, skip:0, count:100);
 </code></pre><p>As previously mentioned, searching for stream views is also possible using the REST API and specifying the optional <code>query</code> parameter, as shown here:</p>
-<pre><code>  GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews?query={query}&amp;skip={skip}&amp;count={count}
+<pre><code>   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews?query={query}&amp;skip={skip}&amp;count={count}
 </code></pre><p>The Stream View fields valid for search are identified in the fields table located on the <a class="xref" href="SDS_Views.html">Stream Views</a> page. The Properties field
 is identified as being searchable but with limitations because SdsStreamViewProperty objects are not searchable. Only the SdsStreamViewProperty&#39;s
 SdsStreamView is searchable by its Id, SourceTypeId, and TargetTypeId, which are used to return the top level SdsStreamView object when searching. 
@@ -304,21 +304,21 @@ skip parameter when more items match the search criteria than can be returned in
 <p><strong>.NET Library</strong></p>
 <p>For example, assume there are 175 streams that match the search criteria: “temperature”.</p>
 <p>The following call returns the first 100 matches:</p>
-<pre><code>   _metadataService.GetStreamsAsync(“temperature”, 0, 100)
+<pre><code class="lang-csharp">    _metadataService.GetStreamsAsync(“temperature”, 0, 100)
 </code></pre><p>After the previous call, you can use the following call to return the remaining 75 matches, skipping over the first 
 100 matches because of the skip parameter set at 100):</p>
-<pre><code>   _metadataService.GetStreamsAsync(“temperature”, 100, 100)
+<pre><code class="lang-csharp">    _metadataService.GetStreamsAsync(“temperature”, 100, 100)
 </code></pre><p>The <code>orderby</code> parameter is supported for searching both the streams and types. The basic functionality of it is to search the items and then return the result in sorted order.
 The default value for <code>orderby</code> parameter is ascending order. It can be changed to descending order by specifying <code>desc</code> alongside the orderby field value. It can be used in conjunction with 
 <code>query</code>, <code>filter</code>, <code>skip</code>, and <code>count</code> parameters.</p>
 <p><strong>Request</strong></p>
-<pre><code>GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure&amp;orderby=name
+<pre><code>   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure&amp;orderby=name
 
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure&amp;orderby=id asc
+   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure&amp;orderby=id asc
 
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure&amp;orderby=name desc
+   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure&amp;orderby=name desc
 
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure&amp;orderby=name desc&amp;skip=10&amp;count=20
+   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure&amp;orderby=name desc&amp;skip=10&amp;count=20
 </code></pre><h1 id="search-operators">Search operators</h1>
 <p>You can specify search operators in the <code>query</code> string to return more specific search results. </p>
 <table>
@@ -367,9 +367,9 @@ It only works when specifying a single search term. For example, you can search 
 <p>You can also qualify which fields are searched by using the following syntax: </p>
 <pre><code>fieldname:fieldvalue
 </code></pre><p><strong>Request</strong></p>
-<pre><code>GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure
+<pre><code>   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure
 </code></pre><p><strong>.NET Library</strong></p>
-<pre><code>GetStreamsAsync(query:”name:pump name:pressure”);
+<pre><code class="lang-csharp">    GetStreamsAsync(query:”name:pump name:pressure”);
 </code></pre><h2 id="-operator-1"><strong>* Operator</strong></h2>
 <p>You can use the <code>‘*’</code> character as a wildcard to specify an incomplete string.</p>
 <table>
@@ -418,9 +418,9 @@ It only works when specifying a single search term. For example, you can search 
 </tbody>
 </table>
 <p><strong>Request</strong></p>
-<pre><code>GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=log*
+<pre><code>   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=log*
 </code></pre><p><strong>.NET Library</strong></p>
-<pre><code>GetStreamsAsync(query:”log*”);
+<pre><code class="lang-csharp">    GetStreamsAsync(query:”log*”);
 </code></pre><h2 id="-operator-2">&quot;&quot; Operator</h2>
 <p>The search engine automatically searches on strings delimited by
 whitespace and dashes (with the exception of identifier fields like Id
@@ -443,9 +443,9 @@ or TypeId fields). To search for values that include delimiters, enclose the val
 </tbody>
 </table>
 <p><strong>Request</strong></p>
-<pre><code>GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=”pump pressure”
+<pre><code>   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=”pump pressure”
 </code></pre><p><strong>.NET Library</strong></p>
-<pre><code>GetStreamsAsync(query:“\\“pump pressure\\””);
+<pre><code class="lang-csharp">    GetStreamsAsync(query:“\\“pump pressure\\””);
 </code></pre><h2 id="other-operators-examples">Other operators examples</h2>
 <table>
 <thead>
@@ -536,9 +536,9 @@ Values are searched against (along with the other searchable Stream fields).</p>
 </tbody>
 </table>
 <p><strong>Request</strong></p>
-<pre><code>GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=manufacturer:company
+<pre><code>   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=manufacturer:company
 </code></pre><p><strong>.NET Library</strong></p>
-<pre><code>GetStreamsAsync(query:“manufacturer:company”);
+<pre><code class="lang-csharp">    GetStreamsAsync(query:“manufacturer:company”);
 </code></pre><h2 id="-operator-4">* Operator</h2>
 <p>For searching on Metadata values the <code>‘*’</code> character is again used as a wildcard to specify an incomplete string. Additionally,
 this wildcard character can be used with the Metadata key as well. This is not supported for any other &quot;fields&quot;, so by including a wildcard in a field
@@ -576,9 +576,9 @@ this wildcard character can be used with the Metadata key as well. This is not s
 <p>Note that in the final example nothing matches on a Stream&#39;s Id value because including <code>‘*’</code> in a search clause&#39;s 
 field prevents non-Stream Metadata fields from being searched.</p>
 <p><strong>Request</strong></p>
-<pre><code>GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=manufa*turer:compan*
+<pre><code>   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=manufa*turer:compan*
 </code></pre><p><strong>.NET Library</strong></p>
-<pre><code>GetStreamsAsync(query:“manufa*turer:compan*”);
+<pre><code class="lang-csharp">    GetStreamsAsync(query:“manufa*turer:compan*”);
 </code></pre><h2 id="-operator-5">&quot;&quot; Operator</h2>
 <p>This operator works the same when matching on Stream Metadata values as other Stream fields.
 Also, when defining a field scoped search clause with a Stream Metadata key this operator is invalid, 
@@ -608,9 +608,9 @@ an exact match on the key with a Phrase style search clause is not valid.</p>
 </table>
 <p>In the last example the wildcard operator <code>‘*’</code> is utilized to construct a similar query in lieu of a phrase search query clause.</p>
 <p><strong>Request</strong></p>
-<pre><code>GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=second*:“second value”
+<pre><code>   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=second*:“second value”
 </code></pre><p><strong>.NET Library</strong></p>
-<pre><code>GetStreamsAsync(query:“second*:\\“second value\\””);
+<pre><code class="lang-csharp">    GetStreamsAsync(query:“second*:\\“second value\\””);
 </code></pre></article>
           </div>
           

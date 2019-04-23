@@ -145,10 +145,11 @@ The following response would be returned from the above code:
       ]
 
 To retrieve the results in table format, add the form variable and specify table.
-
+```
       GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data
       ?startIndex=2017-04-01T07:00:00Z&endIndex=2017-04-01T07:10:00Z
       &form=table
+```
 
 Response
 

@@ -242,7 +242,7 @@ SdsStream information. </p>
 <h2 id="get-stream"><code>Get Stream</code></h2>
 <p>Returns the specified stream.</p>
 <p><strong>Request</strong></p>
-<pre><code>    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
+<pre><code>   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -268,7 +268,7 @@ the search/filter criteria. If neither parameter is specified, the list includes
 in the Namespace. See <a class="xref" href="Searching.html">Searching</a> 
 and <a class="xref" href="Filter_Expressions_Metadata.html">Filter Expressions: SDS Objects</a><br>for information about specifying those respective parameters.</p>
 <p><strong>Request</strong></p>
-<pre><code>    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query={query}&amp;filter={filter}&amp;skip={skip}&amp;count={count}&amp;orderby={orderby}
+<pre><code>   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query={query}&amp;filter={filter}&amp;skip={skip}&amp;count={count}&amp;orderby={orderby}
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -316,7 +316,7 @@ Content-Type: application/json
 <h2 id="get-stream-type"><code>Get Stream Type</code></h2>
 <p>Returns the type definition that is associated with a given stream.</p>
 <p><strong>Request</strong></p>
-<pre><code>    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type
+<pre><code>   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -338,7 +338,7 @@ including the .NET HttpClient, consider redirecting with the authorization token
 returns <code>Unauthorized</code> (401). For this reason, it is recommended that when using clients that do not 
 redirect with the authorization header, you should disable automatic redirect.</p>
 <p><strong>Request</strong></p>
-<pre><code>    POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
+<pre><code>   POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -367,7 +367,7 @@ The following changes are permitted:  </p>
 <p>For more information on secondary indexes, see <a href="#indexes">Indexes</a>.</p>
 <p>Unpermitted changes result in an error.</p>
 <p><strong>Request</strong></p>
-<pre><code>    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
+<pre><code>   PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -381,7 +381,7 @@ The following changes are permitted:  </p>
 <p>Updates a stream’s type. The type is modified to match the specified stream view. 
 Defined Indexes and PropertyOverrides are removed when updating a stream type. </p>
 <p><strong>Request</strong></p>
-<pre><code>    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type?streamViewId={streamViewId}
+<pre><code>   PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type?streamViewId={streamViewId}
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -396,7 +396,7 @@ Defined Indexes and PropertyOverrides are removed when updating a stream type. <
 <h2 id="delete-stream"><code>Delete Stream</code></h2>
 <p>Deletes a stream. </p>
 <p><strong>Request</strong></p>
-<pre><code>    DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
+<pre><code>   DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -408,7 +408,7 @@ Defined Indexes and PropertyOverrides are removed when updating a stream type. <
 <h2 id="get-streams-access-control-list"><code>Get Streams Access Control List</code></h2>
 <p>Get the default ACL for the Streams collection. For more information on ACLs, see <a href="xref:accesscontrol">Access Control</a>.</p>
 <p><strong>Request</strong></p>
-<pre><code>    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/AccessControl
+<pre><code>   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/AccessControl
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -420,7 +420,7 @@ Defined Indexes and PropertyOverrides are removed when updating a stream type. <
 <h2 id="update-streams-access-control-list"><code>Update Streams Access Control List</code></h2>
 <p>Update the default ACL for the Streams collection. For more information on ACLs, see <a href="xref:accesscontrol">Access Control</a>.</p>
 <p><strong>Request</strong></p>
-<pre><code>    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/AccessControl
+<pre><code>   PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/AccessControl
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -432,7 +432,7 @@ Defined Indexes and PropertyOverrides are removed when updating a stream type. <
 <h2 id="get-stream-access-control-list"><code>Get Stream Access Control List</code></h2>
 <p>Get the ACL of the specified stream. For more information on ACLs, see <a href="xref:accesscontrol">Access Control</a>.</p>
 <p><strong>Request</strong></p>
-<pre><code>    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/AccessControl
+<pre><code>   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/AccessControl
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -445,7 +445,7 @@ Defined Indexes and PropertyOverrides are removed when updating a stream type. <
 <h2 id="update-stream-access-control-list"><code>Update Stream Access Control List</code></h2>
 <p>Update the ACL of the specified stream. For more information on ACLs, see <a href="xref:accesscontrol">Access Control</a>.</p>
 <p><strong>Request</strong></p>
-<pre><code>    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/AccessControl
+<pre><code>   PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/AccessControl
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -458,7 +458,7 @@ Defined Indexes and PropertyOverrides are removed when updating a stream type. <
 <h2 id="get-stream-owner"><code>Get Stream Owner</code></h2>
 <p>Get the Owner of the specified stream. For more information on Owners, see <a href="xref:accesscontrol">Access Control</a>.</p>
 <p><strong>Request</strong></p>
-<pre><code>    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Owner
+<pre><code>   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Owner
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -471,7 +471,7 @@ Defined Indexes and PropertyOverrides are removed when updating a stream type. <
 <h2 id="update-stream-owner"><code>Update Stream Owner</code></h2>
 <p>Update the Owner of the specified stream. For more information on Owners, see <a href="xref:accesscontrol">Access Control</a>.</p>
 <p><strong>Request</strong></p>
-<pre><code>    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Owner
+<pre><code>   PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Owner
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>

@@ -193,7 +193,7 @@ SdsTypes of the given SdsType. Therefore, the searching of Properties will disti
 <h1 id="searching-for-stream-views">Searching for Stream Views</h1>
 <p>Similarly, the search functionality for stream views is also exposed through REST API and the client libraries method <code>GetStreamViewsAsync</code>. The query syntax and the request parameters are the same. 
 The only difference is the resource you&#39;re searching on, and you can match on different properties for stream views than for streams and types. 
-The searchable properties are below. See <a class="xref" href="SDS_Views.html">Stream Views</a> for more information.</p>
+The searchable properties are below. See <a href="xref:sdsViews">Stream Views</a> for more information.</p>
 <table>
 <thead>
 <tr>
@@ -233,7 +233,7 @@ The searchable properties are below. See <a class="xref" href="SDS_Views.html">S
 <pre><code class="lang-csharp">    _metadataService.GetStreamViewsAsync(query:&quot;QueryString&quot;, skip:0, count:100);
 </code></pre><p>As previously mentioned, searching for stream views is also possible using the REST API and specifying the optional <code>query</code> parameter, as shown here:</p>
 <pre><code>   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews?query={query}&amp;skip={skip}&amp;count={count}
-</code></pre><p>The Stream View fields valid for search are identified in the fields table located on the <a class="xref" href="SDS_Views.html">Stream Views</a> page. The Properties field
+</code></pre><p>The Stream View fields valid for search are identified in the fields table located on the <a href="xref:sdsViews">Stream Views</a> page. The Properties field
 is identified as being searchable but with limitations because SdsStreamViewProperty objects are not searchable. Only the SdsStreamViewProperty&#39;s
 SdsStreamView is searchable by its Id, SourceTypeId, and TargetTypeId, which are used to return the top level SdsStreamView object when searching. 
 This includes nested SdsStreamViewProperties.</p>

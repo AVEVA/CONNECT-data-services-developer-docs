@@ -148,15 +148,15 @@ references:
 - uid: sdsStreams
   name: Streams
   href: Documentation/SequentialDataStore/SDS_Streams.html
+- uid: sdsStreamViews
+  name: Stream Views
+  href: Documentation/SequentialDataStore/SDS_Views.html
 - uid: sdsTableFormat
   name: Table format
   href: Documentation/SequentialDataStore/table_format.html
 - uid: sdsTypes
   name: Types
   href: Documentation/SequentialDataStore/SDS_Types.html
-- uid: sdsViews
-  name: Stream Views
-  href: Documentation/SequentialDataStore/SDS_Views.html
 - uid: sdsWritingData
   name: Writing data
   href: Documentation/SequentialDataStore/Writing_Data.html

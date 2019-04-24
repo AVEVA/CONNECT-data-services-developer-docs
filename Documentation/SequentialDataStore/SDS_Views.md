@@ -647,8 +647,8 @@ Content-Type: application/json
            "TargetId":"Time"
         },
         {
-           "SourceId":"Status",
-           "TargetId":"Status"
+           "SourceId":"State",
+           "TargetId":"State"
         },
         {
            "SourceId":"Measurement",

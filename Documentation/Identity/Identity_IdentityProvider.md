@@ -12,7 +12,7 @@ For HTTP requests and responses, the IdentityProvider object has the following p
 
 Property | Type | Descriptions
  --- | --- | ---
-Id | Guid | Id of an identity provider
+Id | string | Id of an identity provider
 DisplayName | string | Identity provider display name to use
 Scheme | string | Specifies the name of the cookie handler that will temporarily store the outcome of the external authentication.
 UserIdClaimType | string | Type of claim
@@ -101,7 +101,7 @@ Get all identity providers for a tenant
 
 ```csharp
 [Required]
-Guid tenantId
+string tenantId
 ```
 
 Id of tenant
@@ -196,14 +196,14 @@ Get an identity provider
 
 ```csharp
 [Required]
-Guid tenantId
+string tenantId
 ```
 
 Id of tenant
 
 ```csharp
 [Required]
-Guid identityProviderId
+string identityProviderId
 ```
 
 Id of provider
@@ -263,7 +263,7 @@ Add an existing identity provider to a tenant
 
 ```csharp
 [Required]
-Guid tenantId
+string tenantId
 ```
 
 Id of tenant
@@ -349,14 +349,14 @@ Remove an identity provider from a tenant
 
 ```csharp
 [Required]
-Guid tenantId
+string tenantId
 ```
 
 Id of tenant
 
 ```csharp
 [Required]
-Guid identityProviderId
+string identityProviderId
 ```
 
 Id of provider

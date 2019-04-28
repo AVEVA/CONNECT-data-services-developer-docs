@@ -37,7 +37,6 @@ easily obtain needed information.
      - [Implicit Client](xref:identityImplicitClient)
      - [Secret](xref:identitySecret)
      - [User](xref:identityUser)
-     - [Invitation](xref:identityInvitation)
      - [IdentityProvider](xref:identityIdentityProvider)
      - [Consent to OSIsoft Applications](xref:identityConsent)
    - [Sequential Data Store](xref:sds)

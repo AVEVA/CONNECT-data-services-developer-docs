@@ -42,7 +42,7 @@ Any identity, including anonymous, can retrieve service blog entries.
 
 | Status Code | Return Type | Description | 
  | --- | --- | ---  | 
-| 200 | ([SdsServiceBlogEntry], int32) | Returns an response object including a list of blog entries and an int with the total number of entries. | 
+| 200 | ([SdsServiceBlogEntry], int32) | Returns a response object including a list of blog entries and an int with the total number of entries. | 
 
 
 ***
@@ -75,7 +75,7 @@ Any identity, including anonymous, can retrieve service blog entries.
 
 | Status Code | Return Type | Description | 
  | --- | --- | ---  | 
-| 200 | SdsServiceBlogEntry | Returns an response object including the specified blog entry. | 
+| 200 | SdsServiceBlogEntry | Returns a response object including the specified blog entry. | 
 
 
 ***

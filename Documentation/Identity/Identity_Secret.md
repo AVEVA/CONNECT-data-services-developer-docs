@@ -22,7 +22,7 @@ This method is obsolete, please use the following instead:
 
 ```csharp
 [Required]
-Guid tenantId
+string tenantId
 ```
 
 Id of tenant
@@ -81,12 +81,12 @@ Success
 [
   {
     "SecretId": "SecretId",
-    "Expiration": "2019-04-11T17:16:26.2574678-07:00",
+    "Expiration": "2019-04-27T17:16:45.3161897-07:00",
     "Description": "description"
   },
   {
     "SecretId": "SecretId",
-    "Expiration": "2019-04-11T17:16:26.25941-07:00",
+    "Expiration": "2019-04-27T17:16:45.3181944-07:00",
     "Description": "description"
   }
 ]
@@ -122,7 +122,7 @@ This method is obsolete, please use the following instead:
 
 ```csharp
 [Required]
-Guid tenantId
+string tenantId
 ```
 
 Id of tenant
@@ -152,7 +152,7 @@ secretId
 ```json
 {
   "SecretId": "SecretId",
-  "Expiration": "2019-04-11T17:16:26.2689074-07:00",
+  "Expiration": "2019-04-27T17:16:45.3263114-07:00",
   "Description": "description"
 }
 ```
@@ -176,7 +176,7 @@ Success
 ```json
 {
   "SecretId": "SecretId",
-  "Expiration": "2019-04-11T17:16:26.2689942-07:00",
+  "Expiration": "2019-04-27T17:16:45.326426-07:00",
   "Description": "description"
 }
 ```
@@ -214,7 +214,7 @@ Get all secrets for a Hybrid Client
 
 ```csharp
 [Required]
-Guid tenantId
+string tenantId
 ```
 
 Id of tenant
@@ -273,12 +273,12 @@ Success
 [
   {
     "SecretId": "SecretId",
-    "Expiration": "2019-04-11T17:16:26.4665977-07:00",
+    "Expiration": "2019-04-27T17:16:45.5048546-07:00",
     "Description": "description"
   },
   {
     "SecretId": "SecretId",
-    "Expiration": "2019-04-11T17:16:26.4666086-07:00",
+    "Expiration": "2019-04-27T17:16:45.5048747-07:00",
     "Description": "description"
   }
 ]
@@ -313,7 +313,7 @@ Get a specific Hybrid Client Secret
 
 ```csharp
 [Required]
-Guid tenantId
+string tenantId
 ```
 
 Id of tenant
@@ -351,7 +351,7 @@ Success
 ```json
 {
   "SecretId": "SecretId",
-  "Expiration": "2019-04-11T17:16:26.4675614-07:00",
+  "Expiration": "2019-04-27T17:16:45.5058607-07:00",
   "Description": "description"
 }
 ```
@@ -385,7 +385,7 @@ Add a new secret for a Hybrid Client
 
 ```csharp
 [Required]
-Guid tenantId
+string tenantId
 ```
 
 Id of tenant
@@ -407,7 +407,7 @@ ClientSecretCreateOrUpdateDto clientSecretCreateOrUpdateDto
 
 ```json
 {
-  "Expiration": "2019-04-11T17:16:26.468463-07:00",
+  "Expiration": "2019-04-27T17:16:45.5066852-07:00",
   "Description": "description"
 }
 ```
@@ -432,7 +432,7 @@ Created
 {
   "ClientSecret": "ClientSecret",
   "SecretId": "SecretId",
-  "Expiration": "2019-04-11T17:16:26.4695995-07:00",
+  "Expiration": "2019-04-27T17:16:45.5078103-07:00",
   "Description": "description"
 }
 ```
@@ -467,7 +467,7 @@ Update a Hybrid Client Secret
 
 ```csharp
 [Required]
-Guid tenantId
+string tenantId
 ```
 
 Id of tenant
@@ -496,7 +496,7 @@ secretId
 
 ```json
 {
-  "Expiration": "2019-04-11T17:16:26.4724561-07:00",
+  "Expiration": "2019-04-27T17:16:45.5109684-07:00",
   "Description": "description"
 }
 ```
@@ -520,7 +520,7 @@ Success
 ```json
 {
   "SecretId": "SecretId",
-  "Expiration": "2019-04-11T17:16:26.4725852-07:00",
+  "Expiration": "2019-04-27T17:16:45.5110619-07:00",
   "Description": "description"
 }
 ```
@@ -558,7 +558,7 @@ Delete a secret from a Hybrid Client
 
 ```csharp
 [Required]
-Guid tenantId
+string tenantId
 ```
 
 Id of tenant
@@ -618,7 +618,7 @@ Get all secrets for a Client Credential Client
 
 ```csharp
 [Required]
-Guid tenantId
+string tenantId
 ```
 
 Id of tenant
@@ -677,12 +677,12 @@ Success
 [
   {
     "SecretId": "SecretId",
-    "Expiration": "2019-04-11T17:16:26.5374432-07:00",
+    "Expiration": "2019-04-27T17:16:45.5990334-07:00",
     "Description": "description"
   },
   {
     "SecretId": "SecretId",
-    "Expiration": "2019-04-11T17:16:26.5374527-07:00",
+    "Expiration": "2019-04-27T17:16:45.5990429-07:00",
     "Description": "description"
   }
 ]
@@ -717,7 +717,7 @@ Get a specific Client Credential Client Secret
 
 ```csharp
 [Required]
-Guid tenantId
+string tenantId
 ```
 
 Id of tenant
@@ -755,7 +755,7 @@ Success
 ```json
 {
   "SecretId": "SecretId",
-  "Expiration": "2019-04-11T17:16:26.5385472-07:00",
+  "Expiration": "2019-04-27T17:16:45.600079-07:00",
   "Description": "description"
 }
 ```
@@ -789,7 +789,7 @@ Add a new secret for a Client Credential Client
 
 ```csharp
 [Required]
-Guid tenantId
+string tenantId
 ```
 
 Id of tenant
@@ -811,7 +811,7 @@ ClientSecretCreateOrUpdateDto clientSecretCreateOrUpdateDto
 
 ```json
 {
-  "Expiration": "2019-04-11T17:16:26.5402444-07:00",
+  "Expiration": "2019-04-27T17:16:45.6010882-07:00",
   "Description": "description"
 }
 ```
@@ -836,7 +836,7 @@ Created
 {
   "ClientSecret": "ClientSecret",
   "SecretId": "SecretId",
-  "Expiration": "2019-04-11T17:16:26.540384-07:00",
+  "Expiration": "2019-04-27T17:16:45.6011731-07:00",
   "Description": "description"
 }
 ```
@@ -871,7 +871,7 @@ Update a Client Credential Client Secret
 
 ```csharp
 [Required]
-Guid tenantId
+string tenantId
 ```
 
 Id of tenant
@@ -900,7 +900,7 @@ secretId
 
 ```json
 {
-  "Expiration": "2019-04-11T17:16:26.5439575-07:00",
+  "Expiration": "2019-04-27T17:16:45.616829-07:00",
   "Description": "description"
 }
 ```
@@ -924,7 +924,7 @@ Success
 ```json
 {
   "SecretId": "SecretId",
-  "Expiration": "2019-04-11T17:16:26.5440841-07:00",
+  "Expiration": "2019-04-27T17:16:45.6169546-07:00",
   "Description": "description"
 }
 ```
@@ -962,7 +962,7 @@ Delete a secret from a Client Credential Client
 
 ```csharp
 [Required]
-Guid tenantId
+string tenantId
 ```
 
 Id of tenant

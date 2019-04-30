@@ -81,12 +81,12 @@ Success
 [
   {
     "SecretId": "SecretId",
-    "Expiration": "2019-04-30T11:14:57.8863557-07:00",
+    "Expiration": "2019-04-30T11:35:12.1584316-07:00",
     "Description": "description"
   },
   {
     "SecretId": "SecretId",
-    "Expiration": "2019-04-30T11:14:57.8884276-07:00",
+    "Expiration": "2019-04-30T11:35:12.1604126-07:00",
     "Description": "description"
   }
 ]
@@ -152,7 +152,7 @@ secretId
 ```json
 {
   "SecretId": "SecretId",
-  "Expiration": "2019-04-30T11:14:57.8971097-07:00",
+  "Expiration": "2019-04-30T11:35:12.1728992-07:00",
   "Description": "description"
 }
 ```
@@ -176,7 +176,7 @@ Success
 ```json
 {
   "SecretId": "SecretId",
-  "Expiration": "2019-04-30T11:14:57.8971791-07:00",
+  "Expiration": "2019-04-30T11:35:12.1729806-07:00",
   "Description": "description"
 }
 ```
@@ -273,12 +273,12 @@ Success
 [
   {
     "SecretId": "SecretId",
-    "Expiration": "2019-04-30T11:14:58.0600918-07:00",
+    "Expiration": "2019-04-30T11:35:12.3284441-07:00",
     "Description": "description"
   },
   {
     "SecretId": "SecretId",
-    "Expiration": "2019-04-30T11:14:58.0601045-07:00",
+    "Expiration": "2019-04-30T11:35:12.3284561-07:00",
     "Description": "description"
   }
 ]
@@ -351,7 +351,7 @@ Success
 ```json
 {
   "SecretId": "SecretId",
-  "Expiration": "2019-04-30T11:14:58.0611782-07:00",
+  "Expiration": "2019-04-30T11:35:12.3293711-07:00",
   "Description": "description"
 }
 ```
@@ -407,7 +407,7 @@ ClientSecretCreateOrUpdateDto clientSecretCreateOrUpdateDto
 
 ```json
 {
-  "Expiration": "2019-04-30T11:14:58.0620731-07:00",
+  "Expiration": "2019-04-30T11:35:12.3301741-07:00",
   "Description": "description"
 }
 ```
@@ -432,7 +432,7 @@ Created
 {
   "ClientSecret": "ClientSecret",
   "SecretId": "SecretId",
-  "Expiration": "2019-04-30T11:14:58.0634236-07:00",
+  "Expiration": "2019-04-30T11:35:12.3311769-07:00",
   "Description": "description"
 }
 ```
@@ -496,7 +496,7 @@ secretId
 
 ```json
 {
-  "Expiration": "2019-04-30T11:14:58.0661204-07:00",
+  "Expiration": "2019-04-30T11:35:12.3333296-07:00",
   "Description": "description"
 }
 ```
@@ -520,7 +520,7 @@ Success
 ```json
 {
   "SecretId": "SecretId",
-  "Expiration": "2019-04-30T11:14:58.0661945-07:00",
+  "Expiration": "2019-04-30T11:35:12.3333976-07:00",
   "Description": "description"
 }
 ```
@@ -677,12 +677,12 @@ Success
 [
   {
     "SecretId": "SecretId",
-    "Expiration": "2019-04-30T11:14:58.144787-07:00",
+    "Expiration": "2019-04-30T11:35:12.4015011-07:00",
     "Description": "description"
   },
   {
     "SecretId": "SecretId",
-    "Expiration": "2019-04-30T11:14:58.1448015-07:00",
+    "Expiration": "2019-04-30T11:35:12.4015099-07:00",
     "Description": "description"
   }
 ]
@@ -755,7 +755,7 @@ Success
 ```json
 {
   "SecretId": "SecretId",
-  "Expiration": "2019-04-30T11:14:58.1464623-07:00",
+  "Expiration": "2019-04-30T11:35:12.4024647-07:00",
   "Description": "description"
 }
 ```
@@ -811,7 +811,7 @@ ClientSecretCreateOrUpdateDto clientSecretCreateOrUpdateDto
 
 ```json
 {
-  "Expiration": "2019-04-30T11:14:58.1478456-07:00",
+  "Expiration": "2019-04-30T11:35:12.4033506-07:00",
   "Description": "description"
 }
 ```
@@ -836,7 +836,7 @@ Created
 {
   "ClientSecret": "ClientSecret",
   "SecretId": "SecretId",
-  "Expiration": "2019-04-30T11:14:58.1479835-07:00",
+  "Expiration": "2019-04-30T11:35:12.4034257-07:00",
   "Description": "description"
 }
 ```
@@ -900,7 +900,7 @@ secretId
 
 ```json
 {
-  "Expiration": "2019-04-30T11:14:58.1496813-07:00",
+  "Expiration": "2019-04-30T11:35:12.404437-07:00",
   "Description": "description"
 }
 ```
@@ -924,7 +924,7 @@ Success
 ```json
 {
   "SecretId": "SecretId",
-  "Expiration": "2019-04-30T11:14:58.1498026-07:00",
+  "Expiration": "2019-04-30T11:35:12.4044983-07:00",
   "Description": "description"
 }
 ```

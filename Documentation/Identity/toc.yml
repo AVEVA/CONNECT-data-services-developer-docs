@@ -12,6 +12,8 @@
   href: Identity_ClientCredentialClient.md
 - name: User
   href: Identity_User.md
+- name: Invitation
+  href: Identity_Invitation.md
 - name: Identity Provider
   href: Identity_IdentityProvider.md
 - name: Secret

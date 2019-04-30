@@ -12,7 +12,7 @@ For HTTP requests and responses, the ClientCredentialClientDto object has the fo
 
 Property | Type | Descriptions
  --- | --- | ---
-RoleIds | string[] | List of Roles to be assigned to this client.
+RoleIds | Guid[] | List of Roles to be assigned to this client.
 ClientId | string | Client ID for this Client
 Name | string | Name of ClientDto.
 Enabled | optional: bool | Is ClientDto Enabled
@@ -66,7 +66,7 @@ New ClientCredentialClientCreateDto object
 ```json
 {
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-04-27T17:16:45.5494206-07:00",
+  "SecretExpirationDate": "2019-04-29T18:26:11.1071942-07:00",
   "RoleIds": [
     "00000000-0000-0000-0000-000000000000",
     "00000000-0000-0000-0000-000000000000"
@@ -102,7 +102,7 @@ Created
   "ClientSecret": "ClientSecret",
   "SecretId": "SecretId",
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-04-27T17:16:45.5522028-07:00",
+  "SecretExpirationDate": "2019-04-29T18:26:11.1097556-07:00",
   "RoleIds": [
     "00000000-0000-0000-0000-000000000000",
     "00000000-0000-0000-0000-000000000000"

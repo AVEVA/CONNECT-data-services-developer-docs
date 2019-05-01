@@ -12,7 +12,7 @@ For HTTP requests and responses, the UserDto object has the following properties
 
 Property | Type | Descriptions
  --- | --- | ---
-Id | string | Unique User ID.
+Id | Guid | Unique User ID.
 GivenName | string | Given name of user.
 Surname | string | Surname of user.
 Name | string | Name of user.
@@ -22,8 +22,8 @@ ContactGivenName | string | Preferred contact name for user.
 ContactSurname | string | Preferred contact surname for user.
 ExternalUserId | string | Provider id for user.
 TenantId | string | Tenant Id the User belongs to.
-IdentityProviderId | optional: string | Identity Provider Id used to authenticate user.
-RoleIds | string[] | List of strings of RoleIds.
+IdentityProviderId | optional: Guid | Identity Provider Id used to authenticate user.
+RoleIds | Guid[] | List of strings of RoleIds.
 
 ### Serialized Model
 
@@ -190,7 +190,7 @@ Id of tenant
 ```csharp
 [FromQuery]
 [Required]
-string[] userIds
+Guid[] userIds
 ```
 
 Unordered list of ids for all users to get
@@ -528,7 +528,7 @@ Id of Tenant
 
 ```csharp
 [Required]
-string userId
+Guid userId
 ```
 
 Id of User
@@ -606,7 +606,7 @@ Id of tenant
 
 ```csharp
 [Required]
-string userId
+Guid userId
 ```
 
 Id of user
@@ -688,7 +688,7 @@ Id of tenant
 ```csharp
 [FromQuery]
 [Required]
-string[] userIds
+Guid[] userIds
 ```
 
 Unordered list of ids for all users
@@ -903,7 +903,7 @@ Id of Tenant
 
 ```csharp
 [Required]
-string userId
+Guid userId
 ```
 
 Id of User
@@ -965,7 +965,7 @@ Id of Tenant
 
 ```csharp
 [Required]
-string userId
+Guid userId
 ```
 
 Id of User
@@ -1138,7 +1138,7 @@ Id of tenant
 
 ```csharp
 [Required]
-string userId
+Guid userId
 ```
 
 Id of user
@@ -1241,7 +1241,7 @@ Id of tenant
 
 ```csharp
 [Required]
-string userId
+Guid userId
 ```
 
 Id of user

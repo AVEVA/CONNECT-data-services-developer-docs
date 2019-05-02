@@ -92,7 +92,7 @@
 <tbody>
 <tr>
 <td>Id</td>
-<td>string</td>
+<td>Guid</td>
 <td>Unique User ID.</td>
 </tr>
 <tr>
@@ -142,12 +142,12 @@
 </tr>
 <tr>
 <td>IdentityProviderId</td>
-<td>optional: string</td>
+<td>optional: Guid</td>
 <td>Identity Provider Id used to authenticate user.</td>
 </tr>
 <tr>
 <td>RoleIds</td>
-<td>string[]</td>
+<td>Guid[]</td>
 <td>List of strings of RoleIds.</td>
 </tr>
 </tbody>
@@ -262,7 +262,7 @@ string tenantId
 </code></pre><p>Id of tenant</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Required]
-string[] userIds
+Guid[] userIds
 </code></pre><p>Unordered list of ids for all users to get</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
@@ -505,7 +505,7 @@ string status
 string tenantId
 </code></pre><p>Id of Tenant</p>
 <pre><code class="lang-csharp">[Required]
-string userId
+Guid userId
 </code></pre><p>Id of User</p>
 <h3 id="security-3">Security</h3>
 <p>Allowed for these roles:</p>
@@ -553,7 +553,7 @@ string userId
 string tenantId
 </code></pre><p>Id of tenant</p>
 <pre><code class="lang-csharp">[Required]
-string userId
+Guid userId
 </code></pre><p>Id of user</p>
 <h3 id="security-4">Security</h3>
 <p>Allowed for these roles:</p>
@@ -605,7 +605,7 @@ string tenantId
 </code></pre><p>Id of tenant</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Required]
-string[] userIds
+Guid[] userIds
 </code></pre><p>Unordered list of ids for all users</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
@@ -769,7 +769,7 @@ int32 count
 string tenantId
 </code></pre><p>Id of Tenant</p>
 <pre><code class="lang-csharp">[Required]
-string userId
+Guid userId
 </code></pre><p>Id of User</p>
 <h3 id="security-6">Security</h3>
 <p>Allowed for these roles:</p>
@@ -801,7 +801,7 @@ string userId
 string tenantId
 </code></pre><p>Id of Tenant</p>
 <pre><code class="lang-csharp">[Required]
-string userId
+Guid userId
 </code></pre><p>Id of User</p>
 <pre><code class="lang-csharp">[FromBody]
 [Required]
@@ -900,7 +900,7 @@ UserCreateOrUpdateDto userCreateOrUpdateDto
 string tenantId
 </code></pre><p>Id of tenant</p>
 <pre><code class="lang-csharp">[Required]
-string userId
+Guid userId
 </code></pre><p>Id of user</p>
 <pre><code class="lang-csharp">[FromBody]
 [Required]
@@ -964,7 +964,7 @@ UserCreateOrUpdateDto userCreateOrUpdateDto
 string tenantId
 </code></pre><p>Id of tenant</p>
 <pre><code class="lang-csharp">[Required]
-string userId
+Guid userId
 </code></pre><p>Id of user</p>
 <h3 id="security-10">Security</h3>
 <p>Allowed for these roles:</p>

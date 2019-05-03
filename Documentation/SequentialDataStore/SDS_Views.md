@@ -1,4 +1,4 @@
-﻿---
+---
 uid: sdsStreamViews
 ---
 
@@ -748,7 +748,7 @@ Deletes a stream view from the specified tenant and namespace.
 
 **Request**
  ```text
-    GET	api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
+    DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
  ```
 
 **Parameters**

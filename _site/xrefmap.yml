@@ -131,7 +131,7 @@ references:
   name: Introducing the Sequential Data Store
   href: Documentation/SequentialDataStore/Introducing_SDS.html
 - uid: sdsQuickStart
-  name: Quick start
+  name: Quick Start
   href: Documentation/SequentialDataStore/Quick_Start.html
 - uid: sdsReadingData
   name: Reading data

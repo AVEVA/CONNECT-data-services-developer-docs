@@ -135,6 +135,11 @@
 <td>optional: bool</td>
 <td>Is ClientDto Enabled</td>
 </tr>
+<tr>
+<td>Tags</td>
+<td>string[]</td>
+<td>For OSIsoft internal use only</td>
+</tr>
 </tbody>
 </table>
 <h3 id="serialized-model">Serialized Model</h3>
@@ -153,16 +158,20 @@
   &quot;LogoUri&quot;: &quot;LogoUri&quot;,
   &quot;ClientId&quot;: &quot;ClientId&quot;,
   &quot;Name&quot;: &quot;Name&quot;,
-  &quot;Enabled&quot;: false
+  &quot;Enabled&quot;: false,
+  &quot;Tags&quot;: [
+    &quot;String&quot;,
+    &quot;String&quot;
+  ]
 }
 </code></pre><hr>
 <h2 id="create-hybrid-client"><code>Create Hybrid Client</code></h2>
 <p>Create a Hybrid flow Client</p>
 <h3 id="request">Request</h3>
-<p><code>POST api/v1-preview/Tenants/{tenantId}/HybridClient/</code></p>
+<p><code>POST api/v1-preview/Tenants/{tenantId}/HybridClients</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
-Guid tenantId
+string tenantId
 </code></pre><p>Id of tenant</p>
 <pre><code class="lang-csharp">[FromBody]
 [Required]
@@ -170,7 +179,7 @@ HybridClientCreateDto hybridClientCreateDto
 </code></pre><p>New HybridClientCreateDto object</p>
 <pre><code class="lang-json">{
   &quot;SecretDescription&quot;: &quot;description&quot;,
-  &quot;SecretExpirationDate&quot;: &quot;2019-03-06T11:39:54.711037-08:00&quot;,
+  &quot;SecretExpirationDate&quot;: &quot;2019-04-30T11:35:12.2957095-07:00&quot;,
   &quot;AllowOfflineAccess&quot;: false,
   &quot;AllowAccessTokensViaBrowser&quot;: false,
   &quot;RedirectUris&quot;: [
@@ -185,7 +194,11 @@ HybridClientCreateDto hybridClientCreateDto
   &quot;LogoUri&quot;: &quot;LogoUri&quot;,
   &quot;ClientId&quot;: &quot;ClientId&quot;,
   &quot;Name&quot;: &quot;Name&quot;,
-  &quot;Enabled&quot;: false
+  &quot;Enabled&quot;: false,
+  &quot;Tags&quot;: [
+    &quot;String&quot;,
+    &quot;String&quot;
+  ]
 }
 </code></pre><h3 id="security">Security</h3>
 <p>Allowed for these roles:</p>
@@ -201,7 +214,7 @@ HybridClientCreateDto hybridClientCreateDto
   &quot;ClientSecret&quot;: &quot;ClientSecret&quot;,
   &quot;SecretId&quot;: &quot;SecretId&quot;,
   &quot;SecretDescription&quot;: &quot;description&quot;,
-  &quot;SecretExpirationDate&quot;: &quot;2019-03-06T11:39:54.7151333-08:00&quot;,
+  &quot;SecretExpirationDate&quot;: &quot;2019-04-30T11:35:12.2989504-07:00&quot;,
   &quot;AllowOfflineAccess&quot;: false,
   &quot;AllowAccessTokensViaBrowser&quot;: false,
   &quot;RedirectUris&quot;: [
@@ -216,9 +229,15 @@ HybridClientCreateDto hybridClientCreateDto
   &quot;LogoUri&quot;: &quot;LogoUri&quot;,
   &quot;ClientId&quot;: &quot;ClientId&quot;,
   &quot;Name&quot;: &quot;Name&quot;,
-  &quot;Enabled&quot;: false
+  &quot;Enabled&quot;: false,
+  &quot;Tags&quot;: [
+    &quot;String&quot;,
+    &quot;String&quot;
+  ]
 }
-</code></pre><h4 id="401">401</h4>
+</code></pre><h4 id="400">400</h4>
+<p>Client Limit exceeded</p>
+<h4 id="401">401</h4>
 <p>Unauthorized</p>
 <h4 id="403">403</h4>
 <p>Forbidden</p>
@@ -232,10 +251,10 @@ HybridClientCreateDto hybridClientCreateDto
 <h2 id="update-hybrid-client"><code>Update Hybrid Client</code></h2>
 <p>Update a Hybrid Client</p>
 <h3 id="request-1">Request</h3>
-<p><code>PUT api/v1-preview/Tenants/{tenantId}/HybridClient/{clientId}</code></p>
+<p><code>PUT api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
-Guid tenantId
+string tenantId
 </code></pre><p>Id of tenant</p>
 <pre><code class="lang-csharp">[Required]
 string clientId
@@ -259,7 +278,11 @@ HybridClientDto updatedHybridClientDto
   &quot;LogoUri&quot;: &quot;LogoUri&quot;,
   &quot;ClientId&quot;: &quot;ClientId&quot;,
   &quot;Name&quot;: &quot;Name&quot;,
-  &quot;Enabled&quot;: false
+  &quot;Enabled&quot;: false,
+  &quot;Tags&quot;: [
+    &quot;String&quot;,
+    &quot;String&quot;
+  ]
 }
 </code></pre><h3 id="security-1">Security</h3>
 <p>Allowed for these roles:</p>
@@ -286,13 +309,17 @@ HybridClientDto updatedHybridClientDto
   &quot;LogoUri&quot;: &quot;LogoUri&quot;,
   &quot;ClientId&quot;: &quot;ClientId&quot;,
   &quot;Name&quot;: &quot;Name&quot;,
-  &quot;Enabled&quot;: false
+  &quot;Enabled&quot;: false,
+  &quot;Tags&quot;: [
+    &quot;String&quot;,
+    &quot;String&quot;
+  ]
 }
 </code></pre><h4 id="401-1">401</h4>
 <p>Unauthorized</p>
 <h4 id="403-1">403</h4>
 <p>Forbidden</p>
-<h4 id="400">400</h4>
+<h4 id="400-1">400</h4>
 <p>Missing or invalid inputs</p>
 <h4 id="404-1">404</h4>
 <p>Client or Tenant not found</p>
@@ -302,10 +329,10 @@ HybridClientDto updatedHybridClientDto
 <h2 id="get-hybrid-client"><code>Get Hybrid Client</code></h2>
 <p>Get a Hybrid Client</p>
 <h3 id="request-2">Request</h3>
-<p><code>GET api/v1-preview/Tenants/{tenantId}/HybridClient/{clientId}</code></p>
+<p><code>GET api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}</code></p>
 <h3 id="parameters-2">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
-Guid tenantId
+string tenantId
 </code></pre><p>Id of tenant</p>
 <pre><code class="lang-csharp">[Required]
 string clientId
@@ -335,7 +362,11 @@ string clientId
   &quot;LogoUri&quot;: &quot;LogoUri&quot;,
   &quot;ClientId&quot;: &quot;ClientId&quot;,
   &quot;Name&quot;: &quot;Name&quot;,
-  &quot;Enabled&quot;: false
+  &quot;Enabled&quot;: false,
+  &quot;Tags&quot;: [
+    &quot;String&quot;,
+    &quot;String&quot;
+  ]
 }
 </code></pre><h4 id="401-2">401</h4>
 <p>Unauthorized</p>
@@ -349,11 +380,16 @@ string clientId
 <h2 id="get-all-hybrid-clients"><code>Get All Hybrid Clients</code></h2>
 <p>Get all Hybrid Clients</p>
 <h3 id="request-3">Request</h3>
-<p><code>GET api/v1-preview/Tenants/{tenantId}/HybridClient/</code></p>
+<p><code>GET api/v1-preview/Tenants/{tenantId}/HybridClients</code></p>
 <h3 id="parameters-3">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
-Guid tenantId
+string tenantId
 </code></pre><p>Id of tenant</p>
+<pre><code class="lang-csharp">[FromQuery]
+[Optional]
+[Default = &quot;&quot;]
+string[] tags
+</code></pre><p>Only return Clients that have these tags.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
 [Default = &quot;&quot;]
@@ -395,7 +431,11 @@ int32 count
     &quot;LogoUri&quot;: &quot;LogoUri&quot;,
     &quot;ClientId&quot;: &quot;ClientId&quot;,
     &quot;Name&quot;: &quot;Name&quot;,
-    &quot;Enabled&quot;: false
+    &quot;Enabled&quot;: false,
+    &quot;Tags&quot;: [
+      &quot;String&quot;,
+      &quot;String&quot;
+    ]
   },
   {
     &quot;AllowOfflineAccess&quot;: false,
@@ -412,7 +452,11 @@ int32 count
     &quot;LogoUri&quot;: &quot;LogoUri&quot;,
     &quot;ClientId&quot;: &quot;ClientId&quot;,
     &quot;Name&quot;: &quot;Name&quot;,
-    &quot;Enabled&quot;: false
+    &quot;Enabled&quot;: false,
+    &quot;Tags&quot;: [
+      &quot;String&quot;,
+      &quot;String&quot;
+    ]
   }
 ]
 </code></pre><h4 id="401-3">401</h4>
@@ -427,10 +471,10 @@ int32 count
 <h2 id="delete-hybrid-client"><code>Delete Hybrid Client</code></h2>
 <p>Delete an Hybrid Client</p>
 <h3 id="request-4">Request</h3>
-<p><code>DELETE api/v1-preview/Tenants/{tenantId}/HybridClient/{clientId}</code></p>
+<p><code>DELETE api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}</code></p>
 <h3 id="parameters-4">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
-Guid tenantId
+string tenantId
 </code></pre><p>Id of tenant</p>
 <pre><code class="lang-csharp">[Required]
 string clientId

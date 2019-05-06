@@ -80,12 +80,15 @@
 
 <p>SdsStream metadata is represented as a dictionary of string keys and associated string values. 
 It can be used to associate additional information with a stream. SdsStream tags are represented 
-as a list of strings. Tags can be used to categorize or denote special attributes of streams. </p>
+as a list of strings. Tags can be used to categorize or denote special attributes of streams. 
+The SdsStream Metadata API And SdsStream Tags API do not accept the search query parameter in their respective
+Get calls. However, stream tags and metadata can be used as criteria in search query strings to return 
+SdsStream results with the <a class="xref" href="SDS_Streams.html">Stream</a> API.</p>
 <h2 id="sdsstream-metadata-api-">SdsStream Metadata API </h2>
 <h2 id="get-stream-metadata"><code>Get stream metadata</code></h2>
 <p>Returns the metadata dictionary for the specified stream. </p>
 <p><strong>Request</strong></p>
-<pre><code>    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Metadata 
+<pre><code class="lang-text">     GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Metadata 
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>  The tenant identifier  </p>
 <p><code>string namespaceId</code><br>  The namespace identifier  </p>
@@ -102,14 +105,14 @@ as a list of strings. Tags can be used to categorize or denote special attribute
       &quot;another key&quot;:&quot;another value&quot; 
   } 
 </code></pre><p><strong>.NET Library</strong></p>
-<pre><code>  Task&lt;IDictionary&lt;string, string&gt;&gt; GetStreamMetadataAsync(string streamId); 
+<pre><code class="lang-csharp">      Task&lt;IDictionary&lt;string, string&gt;&gt; GetStreamMetadataAsync(string streamId); 
 </code></pre><p><strong>Security</strong></p>
 <p>  Allowed for administrator and user accounts</p>
 <hr>
 <h2 id="get-stream-metadata-value"><code>Get stream metadata value</code></h2>
 <p>Returns the value for the specified key in the metadata dictionary of the specified stream. </p>
 <p><strong>Request</strong></p>
-<pre><code>    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Metadata/{key} 
+<pre><code class="lang-text">     GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Metadata/{key} 
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>  The tenant identifier  </p>
 <p><code>string namespaceId</code><br>  The namespace identifier  </p>
@@ -126,7 +129,7 @@ as a list of strings. Tags can be used to categorize or denote special attribute
       &quot;a metadata value” 
   } 
 </code></pre><p><strong>.NET Library</strong></p>
-<pre><code>  Task&lt;string&gt; GetStreamMetadataValueAsync(string streamId, string key); 
+<pre><code class="lang-csharp">      Task&lt;string&gt; GetStreamMetadataValueAsync(string streamId, string key); 
 </code></pre><p><strong>Security</strong></p>
 <p>  Allowed for administrator and user accounts</p>
 <hr>
@@ -134,7 +137,7 @@ as a list of strings. Tags can be used to categorize or denote special attribute
 <p>Replaces the metadata for the specified stream with the metadata in the request body. 
 Overwrites any existing metadata; does not merge. </p>
 <p><strong>Request</strong></p>
-<pre><code>    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Metadata 
+<pre><code class="lang-text">     PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Metadata 
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>  The tenant identifier  </p>
 <p><code>string namespaceId</code><br>  The namespace identifier  </p>
@@ -142,14 +145,14 @@ Overwrites any existing metadata; does not merge. </p>
 <p><strong>Response</strong></p>
 <p>  The response includes a status code.</p>
 <p><strong>.NET Library</strong></p>
-<pre><code>   Task UpdateStreamMetadataAsync(string streamId, IDictionary&lt;string, string&gt; metadata); 
+<pre><code class="lang-csharp">      Task UpdateStreamMetadataAsync(string streamId, IDictionary&lt;string, string&gt; metadata); 
 </code></pre><p><strong>Security</strong></p>
 <p>  Allowed for administrator accounts</p>
 <hr>
 <h2 id="delete-stream-metadata"><code>Delete stream metadata</code></h2>
 <p>Deletes the metadata for the specified stream.  </p>
 <p><strong>Request</strong></p>
-<pre><code>    DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Metadata 
+<pre><code class="lang-text">     DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Metadata 
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>  The tenant identifier  </p>
 <p><code>string namespaceId</code><br>  The namespace identifier  </p>
@@ -157,7 +160,7 @@ Overwrites any existing metadata; does not merge. </p>
 <p><strong>Response</strong></p>
 <p>  The response includes a status code.</p>
 <p><strong>.NET Library</strong></p>
-<pre><code>    Task DeleteStreamMetadataAsync(string streamId); 
+<pre><code class="lang-csharp">      Task DeleteStreamMetadataAsync(string streamId); 
 </code></pre><p><strong>Security</strong></p>
 <p>  Allowed for administrator accounts</p>
 <hr>
@@ -165,7 +168,7 @@ Overwrites any existing metadata; does not merge. </p>
 <h2 id="get-stream-tags"><code>Get stream tags</code></h2>
 <p>Returns the tag list for the specified stream. </p>
 <p><strong>Request</strong></p>
-<pre><code>    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Tags 
+<pre><code class="lang-text">     GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Tags 
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>  The tenant identifier  </p>
 <p><code>string namespaceId</code><br>  The namespace identifier  </p>
@@ -182,14 +185,14 @@ Overwrites any existing metadata; does not merge. </p>
       &quot;another tag&quot; 
   ] 
 </code></pre><p><strong>.NET Library</strong></p>
-<pre><code>  Task&lt;IList&lt;string&gt;&gt; GetStreamTagsAsync(string streamId); 
+<pre><code class="lang-csharp">      Task&lt;IList&lt;string&gt;&gt; GetStreamTagsAsync(string streamId); 
 </code></pre><p><strong>Security</strong></p>
 <p>  Allowed for administrator and user accounts</p>
 <hr>
 <h2 id="update-stream-tags"><code>Update stream tags</code></h2>
 <p>Replaces the tag list for the specified stream with the tags listed in the request body.<br>Overwrites any existing tags; does not merge. </p>
 <p><strong>Request</strong></p>
-<pre><code>    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Tags 
+<pre><code class="lang-text">     PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Tags 
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>  The tenant identifier  </p>
 <p><code>string namespaceId</code><br>  The namespace identifier  </p>
@@ -198,14 +201,14 @@ Overwrites any existing metadata; does not merge. </p>
 <p><strong>Response</strong></p>
 <p>  The response includes a status code.</p>
 <p><strong>.NET Library</strong></p>
-<pre><code>   Task UpdateStreamTagsAsync(string streamId, IList&lt;string&gt; tags); 
+<pre><code class="lang-csharp">      Task UpdateStreamTagsAsync(string streamId, IList&lt;string&gt; tags); 
 </code></pre><p><strong>Security</strong></p>
 <p>  Allowed by administrator accounts.</p>
 <hr>
 <h2 id="delete-stream-tags"><code>Delete stream tags</code></h2>
 <p>Deletes the tag list for the specified stream. </p>
 <p><strong>Request</strong></p>
-<pre><code>   DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Tags 
+<pre><code class="lang-text">     DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Tags 
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>  The tenant identifier  </p>
 <p><code>string namespaceId</code><br>  The namespace identifier  </p>
@@ -213,7 +216,7 @@ Overwrites any existing metadata; does not merge. </p>
 <p><strong>Response</strong></p>
 <p>  The response includes a status code.</p>
 <p><strong>.NET Library</strong></p>
-<pre><code>   Task DeleteStreamTagsAsync(string streamId); 
+<pre><code class="lang-csharp">      Task DeleteStreamTagsAsync(string streamId); 
 </code></pre><p><strong>Security</strong></p>
 <p>  Allowed for administrator accounts.</p>
 <hr>

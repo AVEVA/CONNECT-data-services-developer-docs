@@ -75,7 +75,7 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="sdsViews">
+            <article class="content wrap" id="_content" data-uid="sdsStreamViews">
 <h1 id="stream-views">Stream Views</h1>
 
 <p>An SdsStreamView provides a way to map Stream data requests from one data type to another. You can apply 
@@ -87,13 +87,15 @@ or when the properties have the same name, SDS will map the properties automatic
 a target property that it cannot map to, the property is added and configured with a default value.</p>
 <p>To map a property that is beyond the ability of SDS to map on its own, you should define an SdsStreamViewProperty 
 and add it to the SdsStreamView’s Properties collection.</p>
-<p>The following table shows the required and optional SdsStreamView fields. Fields that are not included are reserved for internal SDS use.</p>
+<p>The following table shows the required and optional SdsStreamView fields. Fields that are not included are reserved for internal SDS use.
+See the <a class="xref" href="Searching.html">Searching</a> topic regarding limitations on search.</p>
 <table>
 <thead>
 <tr>
 <th>Property</th>
 <th>Type</th>
 <th>Optionality</th>
+<th>Searchable</th>
 <th>Details</th>
 </tr>
 </thead>
@@ -102,50 +104,52 @@ and add it to the SdsStreamView’s Properties collection.</p>
 <td>Id</td>
 <td>String</td>
 <td>Required</td>
+<td>Yes</td>
 <td>Identifier for referencing the stream view</td>
 </tr>
 <tr>
 <td>Name</td>
 <td>String</td>
 <td>Optional</td>
+<td>Yes</td>
 <td>Friendly name</td>
 </tr>
 <tr>
 <td>Description</td>
 <td>String</td>
 <td>Optional</td>
+<td>Yes</td>
 <td>Description text</td>
 </tr>
 <tr>
 <td>SourceTypeId</td>
 <td>String</td>
 <td>Required</td>
+<td>Yes</td>
 <td>Identifier of the SdsType of the SdsStream</td>
 </tr>
 <tr>
 <td>TargetTypeId</td>
 <td>String</td>
 <td>Required</td>
+<td>Yes</td>
 <td>Identifier of the SdsType to convert events to</td>
 </tr>
 <tr>
 <td>Properties</td>
-<td>IList<sdsstreamviewproperty></sdsstreamviewproperty></td>
+<td>IList&lt;SdsStreamViewProperty></td>
 <td>Optional</td>
+<td>Yes, with limitations</td>
 <td>Property level mapping</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Rules for type identifier</strong></p>
+<p><strong>Rules for the Stream View Identifier (SdsStreamView.Id)</strong></p>
 <ol>
 <li>Is not case sensitive</li>
 <li>Can contain spaces</li>
-<li>Cannot begin with two underscores (&quot;__&quot;)</li>
-<li>Cannot contain forward slash or backslash characters (&quot;/&quot; or &quot;\&quot;)</li>
+<li>Cannot contain forward slash (&quot;/&quot;)</li>
 <li>Can contain a maximum of 100 characters</li>
-<li>Cannot start or end with a period.</li>
-<li>Cannot contain consecutive periods.</li>
-<li>Cannot consist of only periods.</li>
 </ol>
 <h2 id="properties--sdsstreamviewproperty">Properties / SdsStreamViewProperty</h2>
 <p>The SdsStreamView Properties collection provides detailed instructions for specifying the mapping of 
@@ -214,7 +218,7 @@ so required and optional have no meaning.</p>
 </tr>
 <tr>
 <td>Properties</td>
-<td>IList<sdsstreamviewmapproperty></sdsstreamviewmapproperty></td>
+<td>IList&lt;SdsStreamViewMapProperty></td>
 <td>Optional</td>
 <td>Property level mapping</td>
 </tr>
@@ -307,7 +311,7 @@ retrieved from SDS, so required and optional have no meaning.</p>
 <p>Stream Views can be used to change the Type defining a Stream. You cannot modify the SdsType; types are immutable. 
 But you can map a stream from its current type to a new type.</p>
 <p>To update a Stream&#39;s Type, define an SdsStreamView and PUT the stream view to the following:</p>
-<pre><code>   PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type?streamViewId={streamViewId}
+<pre><code class="lang-text">   PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type?streamViewId={streamViewId}
 </code></pre><p>For details, see <a href="xref:sdsStreams-update-stream-type">Update Stream Type</a>. </p>
 <h2 id="working-with-stream-views-when-using-net">Working with Stream Views when using .NET</h2>
 <p><strong>Using .Net</strong></p>
@@ -542,8 +546,8 @@ foreach (Simple3 value in simple3Values)
         },
         new SdsStreamViewProperty()
         {
-            SourceId = &quot;Status&quot;,
-            TargetId = &quot;Status&quot;
+            SourceId = &quot;State&quot;,
+            TargetId = &quot;State&quot;
         },
         new SdsStreamViewProperty()
         {
@@ -621,7 +625,7 @@ See <a href="#stream-views">Stream Views</a> for general SdsStreamView informati
 <h2 id="get-stream-view"><code>Get Stream View</code></h2>
 <p>Returns the stream view corresponding to the specified streamViewId within a given namespace.</p>
 <p><strong>Request</strong></p>
-<pre><code>    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
+<pre><code class="lang-text">   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -642,8 +646,8 @@ Content-Type: application/json
          &quot;TargetId&quot;:&quot;Time&quot;
       },
       {  
-         &quot;SourceId&quot;:&quot;Status&quot;,
-         &quot;TargetId&quot;:&quot;Status&quot;
+         &quot;SourceId&quot;:&quot;State&quot;,
+         &quot;TargetId&quot;:&quot;State&quot;
       },
       {  
          &quot;SourceId&quot;:&quot;Measurement&quot;,
@@ -657,7 +661,7 @@ Content-Type: application/json
 <h2 id="get-stream-view-map"><code>Get Stream View Map</code></h2>
 <p>Returns the stream view map corresponding to the specified streamViewId within a given namespace.</p>
 <p><strong>Request</strong></p>
-<pre><code>    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Map
+<pre><code class="lang-text">   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Map
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -698,9 +702,9 @@ Content-Type: application/json
 <p>Returns a list of stream views within a given namespace.</p>
 <p>If specifying the optional query parameter or optional filter parameter, the list of stream views returned is filtered to match 
 the search/filter criteria. If neither parameter is specified, the list includes all stream views 
-in the Namespace. See <a class="xref" href="Searching.html">Searching</a> and <a class="xref" href="Filter_Expressions_Metadata.html">Filter Expressions: Metadata Objects</a> for information about specifying those respective parameters.</p>
+in the Namespace. See <a class="xref" href="Searching.html">Searching</a> and <a class="xref" href="Filter_Expressions_Metadata.html">Filter Expressions: SDS Objects</a> for information about specifying those respective parameters.</p>
 <p><strong>Request</strong></p>
-<pre><code>    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews?query={query}&amp;filter={filter}&amp;skip={skip}&amp;count={count}&amp;orderby={orderby}
+<pre><code class="lang-text">   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews?query={query}&amp;filter={filter}&amp;skip={skip}&amp;count={count}&amp;orderby={orderby}
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -708,7 +712,7 @@ in the Namespace. See <a class="xref" href="Searching.html">Searching</a> and <a
 See <a class="xref" href="Searching.html">Searching</a>
 for information about specifying the search parameter.</p>
 <p><code>string filter</code><br>An optional filter string to match which SdsStreamViews will be returned.  See the 
-<a class="xref" href="Filter_Expressions_Metadata.html">Filter Expressions: Metadata Objects</a> 
+<a class="xref" href="Filter_Expressions_Metadata.html">Filter Expressions: SDS Objects</a> 
 topic for information about specifying the filter parameter.</p>
 <p><code>int skip</code><br>An optional parameter representing the zero-based offset of the first SdsStreamView to retrieve. 
 If not specified, a default value of 0 is used.</p>
@@ -738,8 +742,8 @@ Content-Type: application/json
            &quot;TargetId&quot;:&quot;Time&quot;
         },
         {
-           &quot;SourceId&quot;:&quot;Status&quot;,
-           &quot;TargetId&quot;:&quot;Status&quot;
+           &quot;SourceId&quot;:&quot;State&quot;,
+           &quot;TargetId&quot;:&quot;State&quot;
         },
         {
            &quot;SourceId&quot;:&quot;Measurement&quot;,
@@ -756,7 +760,7 @@ Content-Type: application/json
 If the stream views are identical, a Found (302) status is returned and the stream view. If the stream views are different, the Conflict (409) error is returned.</p>
 <p>If no matching identifier is found, the specified stream view is created.  </p>
 <p><strong>Request</strong></p>
-<pre><code>    POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
+<pre><code class="lang-text">   POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -770,7 +774,7 @@ If the stream views are identical, a Found (302) status is returned and the stre
 <h2 id="create-or-update-stream-view"><code>Create or Update Stream View</code></h2>
 <p>Creates or updates the definition of a stream view. </p>
 <p><strong>Request</strong></p>
-<pre><code>    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
+<pre><code class="lang-text">   PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code>
 The tenant identifier  </p>
@@ -785,7 +789,7 @@ The tenant identifier  </p>
 <h2 id="delete-stream-view"><code>Delete Stream View</code></h2>
 <p>Deletes a stream view from the specified tenant and namespace.</p>
 <p><strong>Request</strong></p>
-<pre><code>    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
+<pre><code class="lang-text">   DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -797,7 +801,7 @@ The tenant identifier  </p>
 <h2 id="get-stream-views-access-control-list"><code>Get Stream Views Access Control List</code></h2>
 <p>Get the default ACL for the Stream Views collection. For more information on ACLs, see <a href="xref:accesscontrol">Access Control</a>.</p>
 <p><strong>Request</strong></p>
-<pre><code>    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/AccessControl
+<pre><code class="lang-text">   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/AccessControl
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -809,7 +813,7 @@ The tenant identifier  </p>
 <h2 id="update-stream-views-access-control-list"><code>Update Stream Views Access Control List</code></h2>
 <p>Update the default ACL for the Stream Views collection. For more information on ACLs, see <a href="xref:accesscontrol">Access Control</a>.</p>
 <p><strong>Request</strong></p>
-<pre><code>    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/AccessControl
+<pre><code class="lang-text">   PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/AccessControl
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -821,7 +825,7 @@ The tenant identifier  </p>
 <h2 id="get-stream-view-access-control-list"><code>Get Stream View Access Control List</code></h2>
 <p>Get the ACL of the specified stream view. For more information on ACLs, see <a href="xref:accesscontrol">Access Control</a>.</p>
 <p><strong>Request</strong></p>
-<pre><code>    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/AccessControl
+<pre><code class="lang-text">   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/AccessControl
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -834,7 +838,7 @@ The tenant identifier  </p>
 <h2 id="update-stream-view-access-control-list"><code>Update Stream View Access Control List</code></h2>
 <p>Update the ACL of the specified stream view. For more information on ACLs, see <a href="xref:accesscontrol">Access Control</a>.</p>
 <p><strong>Request</strong></p>
-<pre><code>    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/AccessControl
+<pre><code class="lang-text">   PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/AccessControl
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -847,7 +851,7 @@ The tenant identifier  </p>
 <h2 id="get-stream-view-owner"><code>Get Stream View Owner</code></h2>
 <p>Get the Owner of the specified stream view. For more information on Owners, see <a href="xref:accesscontrol">Access Control</a>.</p>
 <p><strong>Request</strong></p>
-<pre><code>    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Owner
+<pre><code class="lang-text">   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Owner
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -860,7 +864,7 @@ The tenant identifier  </p>
 <h2 id="update-stream-view-owner"><code>Update Stream View Owner</code></h2>
 <p>Update the Owner of the specified stream view. For more information on Owners, see <a href="xref:accesscontrol">Access Control</a>.</p>
 <p><strong>Request</strong></p>
-<pre><code>    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Owner
+<pre><code class="lang-text">   PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Owner
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>

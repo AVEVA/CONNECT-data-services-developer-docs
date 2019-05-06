@@ -18,33 +18,31 @@ SdsStream management using the .NET SDS Client Libraries is performed through IS
 Create the ISdsMetadataService, using one of the ``SdsService.GetMetadataService()`` factory methods.
 
 The following table shows the required and optional SdsStream fields. Fields not listed are reserved
-for internal SDS use. 
+for internal SDS use.
 
 
-| Property          | Type                             | Optionality | Details |
-|-------------------|----------------------------------|-------------|---------|
-| Id                | String                           | Required    | An identifier for referencing the stream |
-| TypeId            | String                           | Required    | The SdsType identifier of the type to be used for this stream |
-| Name              | String                           | Optional    | Friendly name |
-| Description       | String                           | Optional    | Description text |
-| Indexes           | IList<SdsStreamIndex>            | Optional    | Used to define secondary indexes for stream |
-| InterpolationMode | SdsInterpolationMode             | Optional    | Interpolation setting of the stream. Default is null. |
-| ExtrapolationMode | SdsExtrapolationMode             | Optional    | Extrapolation setting of the stream. Default is null. |
-| PropertyOverrides | IList<SdsStreamPropertyOverride> | Optional    | Used to define unit of measure and interpolation mode overrides for a stream |
+| Property          | Type                             | Optionality | Searchable | Details |
+|-------------------|----------------------------------|-------------|------------|---------|
+| Id                | String                           | Required    | Yes		  | An identifier for referencing the stream |
+| TypeId            | String                           | Required    | Yes		  | The SdsType identifier of the type to be used for this stream |
+| Name              | String                           | Optional    | Yes		  | Friendly name |
+| Description       | String                           | Optional    | Yes		  | Description text |
+| Indexes           | IList\<SdsStreamIndex\>            | Optional    | No		  | Used to define secondary indexes for stream |
+| InterpolationMode | SdsInterpolationMode             | Optional    | No		  | Interpolation setting of the stream. Default is null. |
+| ExtrapolationMode | SdsExtrapolationMode             | Optional    | No		  | Extrapolation setting of the stream. Default is null. |
+| PropertyOverrides | IList\<SdsStreamPropertyOverride\> | Optional    | No		  | Used to define unit of measure and interpolation mode overrides for a stream. |
+| [Tags](xref:sdsStreamExtra)*		| IList\<String\>					| Optional    | Yes		  | A list of tags denoting special attributes or categories.|
+| [Metadata](xref:sdsStreamExtra)*	| IDictionary\<String, String\>	| Optional    | Yes		  | A dictionary of string keys and associated string values.  |
 
+**\* Notes regarding Tags and Metadata:** Stream Tags and Metadata are accessed via the Tags API And Metadata API respectively. However, 
+they are associated with SdsStream objects and can be used as search criteria.
 
-**Rules for Identifier (SdsStream.Id)**
+**Rules for the Stream Identifier (SdsStream.Id)**
 
-1. Is not case sensitive.
-2. Can contain spaces.
-3. Cannot start with two underscores ("\_\_").
-4. Can contain a maximum of 100 characters.
-5. Cannot use the following characters: ( / : ? # [ ] @ ! $ & ' ( ) \\\* +
-   , ; = %)
-6. Cannot start or end with a period.
-7. Cannot contain consecutive periods.
-8. Cannot consist of only periods. 
-
+1. Is not case sensitive
+2. Can contain spaces
+3. Cannot contain forward slash ("/")
+4. Can contain a maximum of 100 characters
 
 ## Indexes
 
@@ -72,11 +70,11 @@ SdsType Properties for a specific stream.
 The ``SdsStreamPropertyOverride`` object has the following structure:
 
 
-| Property          | Type                           | Optionality | Details |
-|-------------------|--------------------------------|-------------|---------|
-| SdsTypePropertyId | String                         | Required    | SdsTypeProperty identifier |
-| InterpolationMode | SdsInterpolationMode           | Optional    | Interpolation setting. Default is null |
-| Uom               | String                         | Optional    | Unit of measure |
+| Property          | Type                 | Optionality | Details |
+|-------------------|----------------------|-------------|---------|
+| SdsTypePropertyId | String               | Required    | SdsTypeProperty identifier |
+| InterpolationMode | SdsInterpolationMode | Optional    | Interpolation setting. Default is null |
+| Uom               | String               | Optional    | Unit of measure |
 
 
 The unit of measure can be overridden for any type property defined by the stream type, including primary keys 
@@ -106,8 +104,9 @@ SdsStream information.
 Returns the specified stream.
 
 **Request**
-
-        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
+ ```text
+	GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
+ ```
 
 **Parameters**
 
@@ -153,13 +152,14 @@ Returns a list of streams.
 If specifying the optional search parameter or optional filter parameter, the list of streams returned are filtered to match 
 the search/filter criteria. If neither parameter is specified, the list includes all streams 
 in the Namespace. See [Searching](xref:sdsSearching) 
-and [Filter Expressions: Metadata Objects](xref:sdsFilterExpressionsMetadata)  
+and [Filter Expressions: SDS Objects](xref:sdsFilterExpressionsObjects)  
 for information about specifying those respective parameters.
 
 
 **Request**
-
-        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query={query}&filter={filter}&skip={skip}&count={count}&orderby={orderby}
+ ```text
+	GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query={query}&filter={filter}&skip={skip}&count={count}&orderby={orderby}
+ ```
 
 **Parameters**
 
@@ -176,7 +176,7 @@ for information about specifying the search parameter.
 
 `string filter`  
 An optional filter string to match which SdsStreams will be returned.  See the 
-[Filter Expressions: Metadata Objects](xref:sdsFilterExpressionsMetadata) 
+[Filter Expressions: SDS Objects](xref:sdsFilterExpressionsObjects) 
 topic for information about specifying the filter parameter.
 
 `int skip`  
@@ -236,8 +236,9 @@ Content-Type: application/json
 Returns the type definition that is associated with a given stream.
 
 **Request**
-
-        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type
+ ```text
+	GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type
+ ```
 
 **Parameters**
 
@@ -280,8 +281,9 @@ redirect with the authorization header, you should disable automatic redirect.
 
 
 **Request**
-
-        POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
+ ```text
+	POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
+ ```
 
 **Parameters**
 
@@ -334,8 +336,9 @@ For more information on secondary indexes, see [Indexes](#indexes).
 Unpermitted changes result in an error.
 
 **Request**
-
-        PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
+ ```text
+	PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
+ ```
 
 **Parameters**
 
@@ -367,8 +370,9 @@ Updates a stream’s type. The type is modified to match the specified stream vi
 Defined Indexes and PropertyOverrides are removed when updating a stream type. 
 
 **Request**
-
-        PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type?streamViewId={streamViewId}
+ ```text
+    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type?streamViewId={streamViewId}
+ ```
 
 **Parameters**
 
@@ -405,8 +409,9 @@ On failure, the content contains a message describing the issue.
 Deletes a stream. 
 
 **Request**
-
-        DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
+ ```text
+    DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
+ ```
 
 **Parameters**
 
@@ -434,8 +439,9 @@ The response includes a status code.
 Get the default ACL for the Streams collection. For more information on ACLs, see [Access Control](xref:accesscontrol).
 
 **Request**
-
-        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/AccessControl
+ ```text
+    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/AccessControl
+ ```
 
 **Parameters**
 
@@ -462,8 +468,9 @@ The default ACL for Streams
 Update the default ACL for the Streams collection. For more information on ACLs, see [Access Control](xref:accesscontrol).
 
 **Request**
-
-        PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/AccessControl
+ ```text
+    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/AccessControl
+ ```
 
 **Parameters**
 
@@ -491,8 +498,9 @@ The response includes a status code.
 Get the ACL of the specified stream. For more information on ACLs, see [Access Control](xref:accesscontrol).
 
 **Request**
-
-        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/AccessControl
+ ```text
+    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/AccessControl
+ ```
 
 **Parameters**
 
@@ -522,8 +530,9 @@ The ACL for the specified stream
 Update the ACL of the specified stream. For more information on ACLs, see [Access Control](xref:accesscontrol).
 
 **Request**
-
-        PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/AccessControl
+ ```text
+    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/AccessControl
+ ```
 
 **Parameters**
 
@@ -553,8 +562,9 @@ The response includes a status code.
 Get the Owner of the specified stream. For more information on Owners, see [Access Control](xref:accesscontrol).
 
 **Request**
-
-        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Owner
+ ```text
+    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Owner
+ ```
 
 **Parameters**
 
@@ -584,8 +594,9 @@ The Owner for the specified stream
 Update the Owner of the specified stream. For more information on Owners, see [Access Control](xref:accesscontrol).
 
 **Request**
-
-        PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Owner
+ ```text
+    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Owner
+ ```
 
 **Parameters**
 

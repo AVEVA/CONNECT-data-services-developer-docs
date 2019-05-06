@@ -36,7 +36,7 @@ Returns an IdentityProvider object
 
 ### Request
 
-`GET api/v1-preview/IdentityProvider/{identityProviderId}`
+`GET api/v1-preview/IdentityProviders/{identityProviderId}`
 
 ### Parameters
 
@@ -95,13 +95,13 @@ Get all identity providers for a tenant
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/IdentityProvider/`
+`GET api/v1-preview/Tenants/{tenantId}/IdentityProviders`
 
 ### Parameters
 
 ```csharp
 [Required]
-Guid tenantId
+string tenantId
 ```
 
 Id of tenant
@@ -138,6 +138,7 @@ Max number of providers to return
 Allowed for these roles:
 
 - `Account Administrator`
+- `Account Member`
 
 ### Returns
 
@@ -189,13 +190,13 @@ Get an identity provider
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/IdentityProvider/{identityProviderId}`
+`GET api/v1-preview/Tenants/{tenantId}/IdentityProviders/{identityProviderId}`
 
 ### Parameters
 
 ```csharp
 [Required]
-Guid tenantId
+string tenantId
 ```
 
 Id of tenant
@@ -212,6 +213,7 @@ Id of provider
 Allowed for these roles:
 
 - `Account Administrator`
+- `Account Member`
 
 ### Returns
 
@@ -255,23 +257,35 @@ Add an existing identity provider to a tenant
 
 ### Request
 
-`POST api/v1-preview/Tenants/{tenantId}/IdentityProvider/{identityProviderId}`
+`POST api/v1-preview/Tenants/{tenantId}/IdentityProviders`
 
 ### Parameters
 
 ```csharp
 [Required]
-Guid tenantId
+string tenantId
 ```
 
 Id of tenant
 
 ```csharp
+[FromBody]
 [Required]
-Guid identityProviderId
+IdentityProviderAddDto identityProviderAddDto
 ```
 
-Id of provider
+Add Identity Provider object
+
+```json
+{
+  "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
+  "AzureActiveDirectoryTenant": "AzureActiveDirectoryTenant",
+  "AzureActiveDirectorySendConsent": false,
+  "AzureActiveDirectoryConsentEmail": "user@company.com",
+  "AzureActiveDirectoryConsentGivenName": "Name",
+  "AzureActiveDirectoryConsentSurname": "Surname"
+}
+```
 
 ### Security
 
@@ -314,6 +328,10 @@ Forbidden
 
 Tenant not found
 
+#### 409
+
+Identity Provider already exists in Tenant
+
 #### 500
 
 Internal server error
@@ -325,13 +343,13 @@ Remove an identity provider from a tenant
 
 ### Request
 
-`DELETE api/v1-preview/Tenants/{tenantId}/IdentityProvider/{identityProviderId}`
+`DELETE api/v1-preview/Tenants/{tenantId}/IdentityProviders/{identityProviderId}`
 
 ### Parameters
 
 ```csharp
 [Required]
-Guid tenantId
+string tenantId
 ```
 
 Id of tenant

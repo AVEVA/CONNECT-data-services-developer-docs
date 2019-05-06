@@ -20,6 +20,7 @@ LogoUri | string | URI to client logo (used on consent screen).
 ClientId | string | Client ID for this Client
 Name | string | Name of ClientDto.
 Enabled | optional: bool | Is ClientDto Enabled
+Tags | string[] | For OSIsoft internal use only
 
 ### Serialized Model
 
@@ -41,7 +42,11 @@ Enabled | optional: bool | Is ClientDto Enabled
   "LogoUri": "LogoUri",
   "ClientId": "ClientId",
   "Name": "Name",
-  "Enabled": false
+  "Enabled": false,
+  "Tags": [
+    "String",
+    "String"
+  ]
 }
 ```
 
@@ -53,13 +58,13 @@ Create an Implicit flow Clients
 
 ### Request
 
-`POST api/v1-preview/Tenants/{tenantId}/ImplicitClient/`
+`POST api/v1-preview/Tenants/{tenantId}/ImplicitClients`
 
 ### Parameters
 
 ```csharp
 [Required]
-Guid tenantId
+string tenantId
 ```
 
 Id of tenant
@@ -90,7 +95,11 @@ New ImplicitClientDto object
   "LogoUri": "LogoUri",
   "ClientId": "ClientId",
   "Name": "Name",
-  "Enabled": false
+  "Enabled": false,
+  "Tags": [
+    "String",
+    "String"
+  ]
 }
 ```
 
@@ -128,9 +137,17 @@ Created
   "LogoUri": "LogoUri",
   "ClientId": "ClientId",
   "Name": "Name",
-  "Enabled": false
+  "Enabled": false,
+  "Tags": [
+    "String",
+    "String"
+  ]
 }
 ```
+
+#### 400
+
+Client limit exceeded.
 
 #### 401
 
@@ -159,13 +176,13 @@ Update an Implicit Client
 
 ### Request
 
-`PUT api/v1-preview/Tenants/{tenantId}/ImplicitClient/{clientId}`
+`PUT api/v1-preview/Tenants/{tenantId}/ImplicitClients/{clientId}`
 
 ### Parameters
 
 ```csharp
 [Required]
-Guid tenantId
+string tenantId
 ```
 
 Id of tenant
@@ -203,7 +220,11 @@ Updated Implicit Client values
   "LogoUri": "LogoUri",
   "ClientId": "ClientId",
   "Name": "Name",
-  "Enabled": false
+  "Enabled": false,
+  "Tags": [
+    "String",
+    "String"
+  ]
 }
 ```
 
@@ -241,7 +262,11 @@ Success
   "LogoUri": "LogoUri",
   "ClientId": "ClientId",
   "Name": "Name",
-  "Enabled": false
+  "Enabled": false,
+  "Tags": [
+    "String",
+    "String"
+  ]
 }
 ```
 
@@ -272,13 +297,13 @@ Get an Implicit Client
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/ImplicitClient/{clientId}`
+`GET api/v1-preview/Tenants/{tenantId}/ImplicitClients/{clientId}`
 
 ### Parameters
 
 ```csharp
 [Required]
-Guid tenantId
+string tenantId
 ```
 
 Id of tenant
@@ -324,7 +349,11 @@ Success
   "LogoUri": "LogoUri",
   "ClientId": "ClientId",
   "Name": "Name",
-  "Enabled": false
+  "Enabled": false,
+  "Tags": [
+    "String",
+    "String"
+  ]
 }
 ```
 
@@ -351,16 +380,25 @@ Get all Implicit Clients
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/ImplicitClient/`
+`GET api/v1-preview/Tenants/{tenantId}/ImplicitClients`
 
 ### Parameters
 
 ```csharp
 [Required]
-Guid tenantId
+string tenantId
 ```
 
 Id of tenant
+
+```csharp
+[FromQuery]
+[Optional]
+[Default = ""]
+string[] tags
+```
+
+Only return Clients that have these tags.
 
 ```csharp
 [FromQuery]
@@ -424,7 +462,11 @@ Success
     "LogoUri": "LogoUri",
     "ClientId": "ClientId",
     "Name": "Name",
-    "Enabled": false
+    "Enabled": false,
+    "Tags": [
+      "String",
+      "String"
+    ]
   },
   {
     "AllowedCorsOrigins": [
@@ -443,7 +485,11 @@ Success
     "LogoUri": "LogoUri",
     "ClientId": "ClientId",
     "Name": "Name",
-    "Enabled": false
+    "Enabled": false,
+    "Tags": [
+      "String",
+      "String"
+    ]
   }
 ]
 ```
@@ -471,13 +517,13 @@ Delete an Implicit Client
 
 ### Request
 
-`DELETE api/v1-preview/Tenants/{tenantId}/ImplicitClient/{clientId}`
+`DELETE api/v1-preview/Tenants/{tenantId}/ImplicitClients/{clientId}`
 
 ### Parameters
 
 ```csharp
 [Required]
-Guid tenantId
+string tenantId
 ```
 
 Id of tenant

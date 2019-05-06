@@ -86,10 +86,10 @@
             {tenantId}/HybridClients
             {tenantId}/ImplicitClients</p>
 <h3 id="request">Request</h3>
-<p><code>GET api/v1-preview/Tenants/{tenantId}/Client/</code></p>
+<p><code>GET api/v1-preview/Tenants/{tenantId}/Clients</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
-Guid tenantId
+string tenantId
 </code></pre><p>Id of tenant</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
@@ -124,7 +124,11 @@ int32 count
     ],
     &quot;ClientId&quot;: &quot;ClientId&quot;,
     &quot;Name&quot;: &quot;Name&quot;,
-    &quot;Enabled&quot;: false
+    &quot;Enabled&quot;: false,
+    &quot;Tags&quot;: [
+      &quot;String&quot;,
+      &quot;String&quot;
+    ]
   },
   {
     &quot;RoleIds&quot;: [
@@ -133,7 +137,11 @@ int32 count
     ],
     &quot;ClientId&quot;: &quot;ClientId&quot;,
     &quot;Name&quot;: &quot;Name&quot;,
-    &quot;Enabled&quot;: false
+    &quot;Enabled&quot;: false,
+    &quot;Tags&quot;: [
+      &quot;String&quot;,
+      &quot;String&quot;
+    ]
   }
 ]
 </code></pre><h4 id="401">401</h4>
@@ -151,10 +159,10 @@ int32 count
 <p>This method is obsolete, please use the following instead:
             {tenantId}/ClientCredentialClients/{clientId}</p>
 <h3 id="request-1">Request</h3>
-<p><code>DELETE api/v1-preview/Tenants/{tenantId}/Client/{clientId}</code></p>
+<p><code>DELETE api/v1-preview/Tenants/{tenantId}/Clients/{clientId}</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
-Guid tenantId
+string tenantId
 </code></pre><p>Id of tenant</p>
 <pre><code class="lang-csharp">[Required]
 string clientId

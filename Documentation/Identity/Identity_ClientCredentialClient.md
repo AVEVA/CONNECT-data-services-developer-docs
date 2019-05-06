@@ -16,6 +16,7 @@ RoleIds | Guid[] | List of Roles to be assigned to this client.
 ClientId | string | Client ID for this Client
 Name | string | Name of ClientDto.
 Enabled | optional: bool | Is ClientDto Enabled
+Tags | string[] | For OSIsoft internal use only
 
 ### Serialized Model
 
@@ -27,7 +28,11 @@ Enabled | optional: bool | Is ClientDto Enabled
   ],
   "ClientId": "ClientId",
   "Name": "Name",
-  "Enabled": false
+  "Enabled": false,
+  "Tags": [
+    "String",
+    "String"
+  ]
 }
 ```
 
@@ -39,13 +44,13 @@ Create a Client Credential flow Client
 
 ### Request
 
-`POST api/v1-preview/Tenants/{tenantId}/ClientCredentialClient/`
+`POST api/v1-preview/Tenants/{tenantId}/ClientCredentialClients`
 
 ### Parameters
 
 ```csharp
 [Required]
-Guid tenantId
+string tenantId
 ```
 
 Id of tenant
@@ -61,14 +66,18 @@ New ClientCredentialClientCreateDto object
 ```json
 {
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-03-06T11:39:54.8039461-08:00",
+  "SecretExpirationDate": "2019-04-30T11:35:12.3647771-07:00",
   "RoleIds": [
     "00000000-0000-0000-0000-000000000000",
     "00000000-0000-0000-0000-000000000000"
   ],
   "ClientId": "ClientId",
   "Name": "Name",
-  "Enabled": false
+  "Enabled": false,
+  "Tags": [
+    "String",
+    "String"
+  ]
 }
 ```
 
@@ -93,20 +102,24 @@ Created
   "ClientSecret": "ClientSecret",
   "SecretId": "SecretId",
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-03-06T11:39:54.8074223-08:00",
+  "SecretExpirationDate": "2019-04-30T11:35:12.3673783-07:00",
   "RoleIds": [
     "00000000-0000-0000-0000-000000000000",
     "00000000-0000-0000-0000-000000000000"
   ],
   "ClientId": "ClientId",
   "Name": "Name",
-  "Enabled": false
+  "Enabled": false,
+  "Tags": [
+    "String",
+    "String"
+  ]
 }
 ```
 
 #### 400
 
-Missing or invalid inputs
+Missing or invalid inputs, or Client limit exceeded.
 
 #### 401
 
@@ -135,13 +148,13 @@ Update a Client Credential Client
 
 ### Request
 
-`PUT api/v1-preview/Tenants/{tenantId}/ClientCredentialClient/{clientId}`
+`PUT api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}`
 
 ### Parameters
 
 ```csharp
 [Required]
-Guid tenantId
+string tenantId
 ```
 
 Id of tenant
@@ -169,7 +182,11 @@ Updated Client Credential Client values
   ],
   "ClientId": "ClientId",
   "Name": "Name",
-  "Enabled": false
+  "Enabled": false,
+  "Tags": [
+    "String",
+    "String"
+  ]
 }
 ```
 
@@ -197,7 +214,11 @@ Success
   ],
   "ClientId": "ClientId",
   "Name": "Name",
-  "Enabled": false
+  "Enabled": false,
+  "Tags": [
+    "String",
+    "String"
+  ]
 }
 ```
 
@@ -228,13 +249,13 @@ Get a Client Credential Client
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/ClientCredentialClient/{clientId}`
+`GET api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}`
 
 ### Parameters
 
 ```csharp
 [Required]
-Guid tenantId
+string tenantId
 ```
 
 Id of tenant
@@ -251,6 +272,7 @@ Id of client
 Allowed for these roles:
 
 - `Account Administrator`
+- `Account Member`
 
 ### Returns
 
@@ -270,7 +292,11 @@ Success
   ],
   "ClientId": "ClientId",
   "Name": "Name",
-  "Enabled": false
+  "Enabled": false,
+  "Tags": [
+    "String",
+    "String"
+  ]
 }
 ```
 
@@ -297,16 +323,25 @@ Get all Client Credential Clients
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/ClientCredentialClient/`
+`GET api/v1-preview/Tenants/{tenantId}/ClientCredentialClients`
 
 ### Parameters
 
 ```csharp
 [Required]
-Guid tenantId
+string tenantId
 ```
 
 Id of tenant
+
+```csharp
+[FromQuery]
+[Optional]
+[Default = ""]
+string[] tags
+```
+
+Only return Clients that have these tags.
 
 ```csharp
 [FromQuery]
@@ -340,6 +375,7 @@ Max number of clients to return
 Allowed for these roles:
 
 - `Account Administrator`
+- `Account Member`
 
 ### Returns
 
@@ -360,7 +396,11 @@ Success
     ],
     "ClientId": "ClientId",
     "Name": "Name",
-    "Enabled": false
+    "Enabled": false,
+    "Tags": [
+      "String",
+      "String"
+    ]
   },
   {
     "RoleIds": [
@@ -369,7 +409,11 @@ Success
     ],
     "ClientId": "ClientId",
     "Name": "Name",
-    "Enabled": false
+    "Enabled": false,
+    "Tags": [
+      "String",
+      "String"
+    ]
   }
 ]
 ```
@@ -419,7 +463,11 @@ Partial success.
       ],
       "ClientId": "ClientId",
       "Name": "Name",
-      "Enabled": false
+      "Enabled": false,
+      "Tags": [
+        "String",
+        "String"
+      ]
     },
     {
       "RoleIds": [
@@ -428,7 +476,11 @@ Partial success.
       ],
       "ClientId": "ClientId",
       "Name": "Name",
-      "Enabled": false
+      "Enabled": false,
+      "Tags": [
+        "String",
+        "String"
+      ]
     }
   ]
 }
@@ -457,13 +509,13 @@ Delete a Client Credential Client
 
 ### Request
 
-`DELETE api/v1-preview/Tenants/{tenantId}/ClientCredentialClient/{clientId}`
+`DELETE api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}`
 
 ### Parameters
 
 ```csharp
 [Required]
-Guid tenantId
+string tenantId
 ```
 
 Id of tenant

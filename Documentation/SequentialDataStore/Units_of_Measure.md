@@ -294,8 +294,9 @@ The REST APIs provide programmatic access to read and write SDS data. The APIs i
 Returns the quantity corresponding to the specified quantityId within a given namespace.
 
 **Request**
-
-        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}
+ ```text
+    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}
+```
 
 **Parameters**
 
@@ -354,8 +355,9 @@ Content-Type: application/json
 Returns a list of all quantities available within a given namespace.
 
 **Request**
-
-        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities?skip={skip}&count={count}
+ ```text
+    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities?skip={skip}&count={count}
+ ```
 
 `string tenantId`  
 The tenant identifier  
@@ -428,7 +430,7 @@ Content-Type: application/json
 ```
 **.NET Library**
 ```csharp
-        Task<IEnumerable<SdsUomQuantity>> GetQuantitiesAsync(int skip = 0, int count = 100);
+    Task<IEnumerable<SdsUomQuantity>> GetQuantitiesAsync(int skip = 0, int count = 100);
 ```
 ***
 
@@ -437,8 +439,9 @@ Content-Type: application/json
 Returns the unit of measure associated with the specified uomId belonging to the quantity with the specified quantityId.
 
 **Request**
-
-        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}
+ ```text
+    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}
+ ```
 
 `string tenantId`  
 The tenant identifier  
@@ -483,8 +486,9 @@ Content-Type: application/json
 Returns the list of units of measure that belongs to the quantity with the specified quantityId.
 
 **Request**
-
-        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units
+ ```text
+    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units
+ ```
 
 `string tenantId`  
 The tenant identifier  
@@ -537,8 +541,9 @@ Content-Type: application/json
 Get the default ACL for the Quantities collection. For more information on ACLs, see [Access Control](xref:accesscontrol).
 
 **Request**
-
-        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/AccessControl
+ ```text
+    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/AccessControl
+ ```
 
 **Parameters**
 
@@ -565,8 +570,9 @@ The default ACL for Quantities
 Update the default ACL for the Quantities collection. For more information on ACLs, see [Access Control](xref:accesscontrol).
 
 **Request**
-
-        PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/AccessControl
+ ```text
+    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/AccessControl
+ ```
 
 **Parameters**
 
@@ -594,8 +600,9 @@ The response includes a status code.
 Get the ACL of the specified quantity. For more information on ACLs, see [Access Control](xref:accesscontrol).
 
 **Request**
-
-        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/AccessControl
+ ```text
+    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/AccessControl
+ ```
 
 **Parameters**
 
@@ -625,8 +632,9 @@ The ACL for the specified quantity
 Update the ACL of the specified quantity. For more information on ACLs, see [Access Control](xref:accesscontrol).
 
 **Request**
-
-        PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/AccessControl
+ ```text
+    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/AccessControl
+ ```
 
 **Parameters**
 
@@ -656,8 +664,9 @@ The response includes a status code.
 Get the Owner of the specified quantity. For more information on Owners, see [Access Control](xref:accesscontrol).
 
 **Request**
-
-        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Owner
+ ```text
+    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Owner
+ ```
 
 **Parameters**
 
@@ -687,8 +696,9 @@ The Owner for the specified quantity
 Update the Owner of the specified quantity. For more information on Owners, see [Access Control](xref:accesscontrol).
 
 **Request**
-
-        PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Owner
+ ```text
+    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Owner
+ ```
 
 **Parameters**
 
@@ -723,8 +733,9 @@ The REST APIs provide programmatic access to read and write SDS data. The APIs i
 Returns the unit of measure corresponding to the specified uomId within a given namespace.
 
 **Request**
-
-        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Units/{uomId}
+ ```text
+    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Units/{uomId}
+ ```
 
 `string tenantId`  
 The tenant identifier  
@@ -766,8 +777,9 @@ Content-Type: application/json
 Returns a list of all available units of measure in the system.
 
 **Request**
-
-        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Units?skip={skip}&count={count}
+ ```text
+    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Units?skip={skip}&count={count}
+ ```
 
 ``string tenantId``  
 The tenant identifier  
@@ -831,8 +843,9 @@ Content-Type: application/json
 Get the ACL of the specified unit of measure. For more information on ACLs, see [Access Control](xref:accesscontrol).
 
 **Request**
-
-        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/AccessControl
+ ```text
+    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/AccessControl
+ ```
 
 **Parameters**
 
@@ -865,8 +878,9 @@ The ACL for the specified Uom
 Update the ACL of the specified unit of measure. For more information on ACLs, see [Access Control](xref:accesscontrol).
 
 **Request**
-
-        PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/AccessControl
+ ```text
+    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/AccessControl
+ ```
 
 **Parameters**
 
@@ -899,8 +913,9 @@ The response includes a status code.
 Get the Owner of the specified unit of measure. For more information on Owners, see [Access Control](xref:accesscontrol).
 
 **Request**
-
-        GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/Owner
+ ```text
+    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/Owner
+ ```
 
 **Parameters**
 
@@ -933,8 +948,9 @@ The Owner for the specified Uom
 Update the Owner of the specified unit of measure. For more information on Owners, see [Access Control](xref:accesscontrol).
 
 **Request**
-
-        PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/Owner
+ ```text
+    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/Owner
+ ```
 
 **Parameters**
 

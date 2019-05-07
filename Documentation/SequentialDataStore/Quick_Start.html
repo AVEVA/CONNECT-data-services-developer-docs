@@ -86,11 +86,9 @@ If you have not already acquired a tenant, email OCS support at: <a href="mailto
 identified, you must sign into the Portal using the credentials associated with the Tenant.</p>
 <p>You will also need a Namespace and administrative client keys. </p>
 <h4 id="step-1-acquire-a-namespace">Step 1: Acquire a Namespace</h4>
-<hr>
 <p>Navigate to the OSIsoft Cloud Services page. Then, select the <strong>Manage</strong> tab and select <strong>Namespaces</strong>. For the 
 steps in this section, you can use either an existing Namespace or you can create a new Namespace.</p>
 <h4 id="step-2-acquire-client-keys">Step 2: Acquire client keys</h4>
-<hr>
 <p>For this example, the application acts as a confidential client – an application that is capable 
 of securely maintaining a secret. In Azure Active Directory, the confidential client authentication 
 flow is accomplished using an <em>Application Identity</em>. OSIsoft Cloud Services supports this authentication 
@@ -101,13 +99,11 @@ with a Client Key and a Secret.</p>
 to see configuration information. You will need the Tenant Identity, Client Identity, and Client Secret to proceed.<br>The Tenant Identity, Client Identity, and Client Secret are used to acquire a security Token from an identity 
 provider (Azure Active Directory).</p>
 <h4 id="step-3-acquire-authentication-token">Step 3: Acquire authentication token</h4>
-<hr>
 <p>You use the Tenant Identity, Client Identity, and Client Secret to acquire an access token 
 from Azure Active Directory. Click on the eye icon next to the desired key to see the values 
 and code samples for various languages.</p>
 <p><img src="../images/Acquire_Token.png" alt="images/Acquire_Token.png"></p>
 <h4 id="step-4-create-data-types">Step 4: Create data types</h4>
-<hr>
 <p>An SdsType describes the structure of a single measured event or object. An SdsStream has an associated 
 SdsType and stores a stream of events or objects that take the shape of that type.</p>
 <p>An SdsType consists of one or more data properties, one of which must represent an index. Indexes can be 
@@ -116,7 +112,7 @@ DateTime is a common index for time-series stores. </p>
 <p>SDS supports a wide variety of property types, including simple types like integers, strings and floats 
 and complex types like lists, arrays and enumerations. Properties can be of any complex SdsType. 
 For additional information, including a detailed list of supported data types, refer to <a class="xref" href="SDS_Types.html">Types</a>.</p>
-<p>To help users develop .NET client applications, OSIsoft provides OCS client libraries through NuGet packages, <a href="xref:https://www.nuget.org/packages/OSIsoft.OCSClients/">OCSClients</a>. OCSClients contains the libraries necessary to connect to OCS and manage data.</p>
+<p>To help users develop .NET client applications, OSIsoft provides OCS client libraries through NuGet packages, <a href="https://www.nuget.org/packages/OSIsoft.OCSClients/">OCSClients</a>. OCSClients contains the libraries necessary to connect to OCS and manage data.</p>
 <p>To create an SdsType in .NET, use the .NET SDS client libraries SdsTypeBuilder.</p>
 <pre><code class="lang-csharp">public enum State
 {
@@ -273,7 +269,6 @@ Host: dat-b.osisoft.com
     &quot;ExtrapolationMode&quot;: 0
 }
 </code></pre><h4 id="step-5-create-a-stream">Step 5: Create a stream</h4>
-<hr>
 <p>An SdsStream has an associated SdsType and stores a stream of events or objects that take the shape of that type. 
 Detailed information about streams can be found in SdsStreams.</p>
 <p>Create an SdsStream of Simple events using the .NET SDS libraries as follows:</p>
@@ -293,14 +288,16 @@ Content-Length: 139
 Content-Type: application/json
 Host: dat-b.osisoft.com
 {  
-    &quot;Id&quot;:&quot;Simple&quot;,
-    &quot;Name&quot;:&quot;Simple&quot;,
-    &quot;Description&quot;:null,
-    &quot;TypeId&quot;:&quot;Simple&quot;,
-    &quot;Indexes&quot;:null 
+    &quot;Id&quot;: &quot;Simple&quot;,
+    &quot;Name&quot;: &quot;Simple&quot;,
+    &quot;Description&quot;: null,
+    &quot;TypeId&quot;: &quot;Simple&quot;,
+    &quot;Indexes&quot;: null,
+    &quot;InterpolationMode&quot;: null,
+    &quot;ExtrapolationMode&quot;: null,
+    &quot;PropertyOverrides&quot;: null 
 }
 </code></pre><h4 id="step-6-write-data">Step 6: Write data</h4>
-<hr>
 <p>SDS supports many methods for adding and updating data. In this section, you will insert data. 
 Inserts fail if events with the same index already exist in the database. Update<br>adds new events and replaces existing events.</p>
 <p>To insert an event using the .NET SDS libraries:</p>
@@ -328,7 +325,6 @@ Host: dat-b.osisoft.com
 ]
 </code></pre><p>Additional information about writing data can be found in <a class="xref" href="Writing_Data.html#writing-data">Writing data</a>.</p>
 <h4 id="step-7-read-data">Step 7: Read data</h4>
-<hr>
 <p>SDS includes many different read methods for retrieving data from streams. In this section, 
 you will read the value that was recently written.</p>
 <p>Reads typically require an index or indexes. The index in the example is the <code>Time</code> property of <code>Simple</code>. 

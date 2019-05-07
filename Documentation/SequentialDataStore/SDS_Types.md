@@ -33,9 +33,8 @@ characteristics when attempting to read non-existent indexes, indexes that fall 
 existing indexes, are determined by the interpolation and extrapolation settings of the SdsType. For more 
 information about read characteristics see [Interpolation](#interpolation) and [Extrapolation](#extrapolation).
 
-SdsTypes are mostly immutable. When an SdsType is referenced by a stream or a stream view or another type, its form  cannot be changed. 
-Certain fields, such as the friendly name or description, can be changed because they do not affect the function 
-of the SdsType. In addition, the SdsType may be deleted only if no streams or stream views or types reference it.
+SdsTypes are immutable. After an SdsType is created, its definition cannot change. An SdsType must be deleted and recreated if the definition is incorrect.
+In addition, the SdsType may be deleted only if no streams or stream views or types reference it.
 
 Only SdsTypes used to define SdsStreams or SdsStreamViews are required to be added to the Sequential data store. 
 SdsTypes that define Properties or base types are contained within the parent SdsType and are not required
@@ -859,7 +858,7 @@ The new type may also include the full type definition of the reference type ins
 }
 ```
 
-If the full definition is sent, the referenced types (base type "Simple" in the above example) should match the actual type initially created, unless a type update is attempted. For type update behavior, see [Create Or Update Type](#create-or-update-type). If the full definition is sent and the referenced types did not exist, they will be created automatically by SDS. Further type creations can reference them as demostrated above. Note that when trying to get types back from SDS, the results will also include types that were automatically created by SDS.
+If the full definition is sent, the referenced types (base type "Simple" in the above example) should match the actual type initially created. If the full definition is sent and the referenced types did not exist, they will be created automatically by SDS. Further type creations can reference them as demostrated above. Note that when trying to get types back from SDS, the results will also include types that were automatically created by SDS.
 
 Base types and properties of type Object, Enum, user-defined collections, such as, Array, List and Dictionary will be treated as referenced types. Note that streams cannot be created using these referenced types. If a stream of particular type is to be created, the type should contain at least one property with a valid index type as described in this section, [Indexes](xref:sdsIndexes). The index property may also be in the base type as shown in the example above.
 
@@ -1398,45 +1397,6 @@ the client redirects a GET to the Location header. If the existing type does not
 in the request body, a Conflict error response is returned and the client library method throws an exception. 
 
 The .NET SDS Client Libraries manage redirects.
-
-***********************
-
-## `Create or Update Type`
-
-Creates the specified type. If a type with the same Id already exists, the definition of the type is updated.
-
-Note that a type cannot be updated if any streams or stream views or other types are 
-associated with it. This will also be true for any reference types that it includes. For further details about type referencing please see: [Type Reusability](#type-reusability).
-
-Also, certain parameters, including the type id, cannot be changed after 
-they are defined.
-
-**Request**
- ```text
-	PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
- ```
-
-**Parameters**
-
-`string tenantId`  
-The tenant identifier
-
-`string namespaceId`  
-The namespace identifier
-
-`string typeId`  
-The type identifier
-
-**Response**  
-The response includes a status code and a response body.
-
-**Response body**  
-The content is set to true on success.
-
-**.NET Library**
-```csharp
-    Task CreateOrUpdateTypeAsync(SdsType SdsType)
-```
 
 ***********************
 

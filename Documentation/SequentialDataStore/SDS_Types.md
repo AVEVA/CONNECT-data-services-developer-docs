@@ -34,7 +34,7 @@ existing indexes, are determined by the interpolation and extrapolation settings
 information about read characteristics see [Interpolation](#interpolation) and [Extrapolation](#extrapolation).
 
 SdsTypes are immutable. After an SdsType is created, its definition cannot change. An SdsType must be deleted and recreated if the definition is incorrect.
-In addition, the SdsType may be deleted only if no streams or stream views or types reference it.
+In addition, the SdsType may be deleted only if no streams, stream views, or types reference it.
 
 Only SdsTypes used to define SdsStreams or SdsStreamViews are required to be added to the Sequential data store. 
 SdsTypes that define Properties or base types are contained within the parent SdsType and are not required
@@ -1402,7 +1402,7 @@ The .NET SDS Client Libraries manage redirects.
 
 ## `Delete Type`
 
-Deletes a type from the specified tenant and namespace. Note that a type cannot be deleted if any streams or stream views or other types reference it.
+Deletes a type from the specified tenant and namespace. Note that a type cannot be deleted if any streams, stream views, or other types reference it.
 
 **Request**
  ```text

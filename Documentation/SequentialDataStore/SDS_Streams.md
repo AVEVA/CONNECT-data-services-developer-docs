@@ -149,16 +149,15 @@ Content-Type: application/json
 
 Returns a list of streams.
 
-If specifying the optional search parameter or optional filter parameter, the list of streams returned are filtered to match 
-the search/filter criteria. If neither parameter is specified, the list includes all streams 
-in the Namespace. See [Searching](xref:sdsSearching) 
-and [Filter Expressions: SDS Objects](xref:sdsFilterExpressionsObjects)  
+If specifying the optional search query parameter, the list of streams returned will match 
+the search criteria. If the search query parameter is not specified, the list will include 
+all streams in the Namespace. See [Searching](xref:sdsSearching) 
 for information about specifying those respective parameters.
 
 
 **Request**
  ```text
-	GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query={query}&filter={filter}&skip={skip}&count={count}&orderby={orderby}
+	GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query={query}&skip={skip}&count={count}&orderby={orderby}
  ```
 
 **Parameters**
@@ -173,11 +172,6 @@ The namespace identifier
 An optional parameter representing a string search. 
 See [Searching](xref:sdsSearching)
 for information about specifying the search parameter.
-
-`string filter`  
-An optional filter string to match which SdsStreams will be returned.  See the 
-[Filter Expressions: SDS Objects](xref:sdsFilterExpressionsObjects) 
-topic for information about specifying the filter parameter.
 
 `int skip`  
 An optional parameter representing the zero-based offset of the first SdsStream to retrieve. 

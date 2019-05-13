@@ -335,7 +335,7 @@ public class Simple
 SdsType simpleType = SdsTypeBuilder.CreateSdsType&lt;Simple&gt;();
 simpleType.Id = &quot;Simple&quot;;
 simpleType.Name = &quot;Simple&quot;;
-await config.GetOrCreateTypeAsync(simpleType);//.CreateOrUpdateTypeAsync(simpleType);//.GetOrCreateTypeAsync(simpleType);
+await config.GetOrCreateTypeAsync(simpleType);
 
 SdsStream simpleStream = await config.GetOrCreateStreamAsync(new SdsStream()
 {

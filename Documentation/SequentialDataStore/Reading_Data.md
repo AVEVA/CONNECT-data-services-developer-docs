@@ -139,7 +139,7 @@ SDS provides the ability to transform data upon reads. The supported data transf
 * [Reading with SdsStreamViews](#reading-with-sdsstreamviews): Changing the shape of the returned data
 * [Unit of Measure Conversions](#unit-conversion-of-data): Converting the unit of measure of the data  
 
-Data tranformations are suppported for all single stream reads, but transformations have specific endpoints. The following are the base URIs for the tranformation endpoints:
+Data transformations are supported for all single stream reads, but transformations have specific endpoints. The following are the base URIs for the tranformation endpoints:
 ```text
     api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/First
     api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/Last

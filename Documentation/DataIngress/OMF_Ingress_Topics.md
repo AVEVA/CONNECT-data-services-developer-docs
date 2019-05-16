@@ -196,11 +196,11 @@ Creates a new topic.
 
 **Body**
 
-A MappedTopic object. 
+A Topic object. 
 
 **Returns**
 
-A MappedTopic object. 
+A Topic object. 
 
 
 ***********************
@@ -221,11 +221,11 @@ Updates an existing topic. Only the topic name and description can be updated.
 
 **Body**
 
-A MappedTopic object. 
+A Topic object. 
 
 **Returns**
 
-A MappedTopic object. 
+A Topic object. 
 
 
 ***********************

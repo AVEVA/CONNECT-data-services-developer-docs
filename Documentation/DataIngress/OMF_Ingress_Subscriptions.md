@@ -73,7 +73,7 @@ Get a specific Subscription.
 
 **Returns**
 
-A Subscription object that was found. 
+A Subscription object. 
 
 *****************
 

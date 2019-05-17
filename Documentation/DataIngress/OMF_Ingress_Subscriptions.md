@@ -27,11 +27,11 @@ Subscription information is contained in an object called Subscription which has
 | TopicTenantId        | string                  | Identifies the owner of the Topic.     |
 | TopicNamespaceId     | string                  | Identifies the namespace for the Topic |
 | TenantId             | string                  | Identifies the owner of the Subscription. |
-| NamespaceId          | string                  | Identifies the namespace for the Subscription |
+| NamespaceId          | string                  | Identifies the namespace for the Subscription. |
 | Description          | string                  | Description of the Subscription.       |
 | Type                 | integer                 | An enumeration which describes the type of Subscription where OCSDataStore=1 |
 | CreatedDate          | string                  | The time that the Subscription was created. The string is formatted using ISO 8601 format. |
-| Enabled              | boolean                 | Whether the topic exists or not        |
+| Enabled              | boolean                 | Whether the topic exists or not.        |
 
 ***************
 

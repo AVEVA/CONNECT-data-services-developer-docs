@@ -187,10 +187,10 @@ A Trustee object.
 
 *******************
 
-``PUT api/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions``
+``POST api/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions``
 --------------------------------------------
 
-Create or update a subscription. Only the name and description may be updated. 
+Creates a new subscription.
 
 **Parameters**
 
@@ -198,6 +198,30 @@ Create or update a subscription. Only the name and description may be updated.
   Unique Id for the tenant. 
 ``namespaceId``
   Unique Id for the namespace. 
+
+**Body**
+
+A Subscription object. 
+
+**Returns**
+
+A Subscription object that was created or updated. 
+
+*******************
+
+``PUT api/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}``
+--------------------------------------------
+
+Updates an existing subscription. Only the name and description may be updated. 
+
+**Parameters**
+
+``tenantId``
+  Unique Id for the tenant. 
+``namespaceId``
+  Unique Id for the namespace. 
+``subscriptionId``
+  Subscription Id for the subscription to be updated.
 
 **Body**
 

@@ -182,10 +182,10 @@ A Trustee object.
 
 ***************************
 
-``PUT api/tenants/{tenantId}/namespaces/{namespaceId}/topics``
+``POST api/tenants/{tenantId}/namespaces/{namespaceId}/topics``
 -----------------------------------------
 
-Creates or updates a topic. Only the topic name and description can be updated. 
+Creates a new topic. 
 
 **Parameters**
 
@@ -196,11 +196,36 @@ Creates or updates a topic. Only the topic name and description can be updated.
 
 **Body**
 
-A MappedTopic object. 
+A Topic object. 
 
 **Returns**
 
-A MappedTopic object. 
+A Topic object. 
+
+
+***********************
+
+``PUT api/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}``
+-----------------------------------------
+
+Updates an existing topic. Only the topic name and description can be updated. 
+
+**Parameters**
+
+``tenantId``
+  Unique Id for the tenant. 
+``namespaceId``
+  Unique Id for the namespace. 
+``topicId``
+  Topic Id for the topic to be updated.
+
+**Body**
+
+A Topic object. 
+
+**Returns**
+
+A Topic object. 
 
 
 ***********************

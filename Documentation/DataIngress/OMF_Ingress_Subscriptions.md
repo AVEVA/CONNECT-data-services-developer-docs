@@ -80,7 +80,7 @@ A Subscription object.
 ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/subscriptions``
 --------------------------------------------
 
-Gets the default access control list for new Subscriptions.
+Get the default Access Control List for new Subscriptions.
 
 **Parameters**
 
@@ -98,7 +98,7 @@ An AccessControlList object.
 ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}/accesscontrol``
 --------------------------------------------
 
-Gets the access control list for a particular Subscription.
+Get the Access Control List for a particular Subscription.
 
 **Parameters**
 
@@ -118,7 +118,7 @@ An AccessControlList object.
 ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}/owner``
 --------------------------------------------
 
-Gets the Owner for a particular Subscription.
+Get the Owner for a particular Subscription.
 
 **Parameters**
 
@@ -138,7 +138,7 @@ A Trustee object.
 ``POST api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions``
 --------------------------------------------
 
-Creates a new Subscription.
+Create a new Subscription.
 
 **Parameters**
 
@@ -160,7 +160,7 @@ The Subscription object that was created.
 ``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}``
 --------------------------------------------
 
-Updates an existing Subscription. Only the name and description may be updated. 
+Update an existing Subscription. Only the name and description may be updated. 
 
 **Parameters**
 
@@ -184,7 +184,7 @@ The Subscription object that was updated.
 ``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/subscriptions``
 --------------------------------------------
 
-Updates the default access control list for new Subscriptions.
+Update the default Access Control List for new Subscriptions.
 
 **Parameters**
 
@@ -202,7 +202,7 @@ An AccessControlList object.
 ``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}/accesscontrol``
 --------------------------------------------
 
-Updates the Access Control List for a particular Subscription.
+Update the Access Control List for a particular Subscription.
 
 **Parameters**
 
@@ -222,7 +222,7 @@ An AccessControlList object.
 ``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}/owner``
 --------------------------------------------
 
-Updates the Owner for a particular Subscription.
+Update the Owner for a particular Subscription.
 
 **Parameters**
 
@@ -242,7 +242,7 @@ A Trustee object.
 ``DELETE api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}``
 -----------------------------------------------------------------
 
-Deletes a Subscription. 
+Delete a Subscription. 
 
 **Parameters**
 

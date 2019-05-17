@@ -46,9 +46,9 @@ Get all Subscriptions for a tenant.
   Unique Id for the tenant. 
 ``namespaceId``
   Unique Id for the namespace. 
-``int skip``
+``skip``
   An optional parameter representing the zero-based offset of the first Subscription to retrieve. If not specified, a default value of 0 is used. 
-``int count``
+``count``
   An optional parameter representing the maximum number of Subscriptions to retrieve. If not specified, a default value of 100 is used.
 
 **Returns**
@@ -252,3 +252,4 @@ Delete a Subscription.
   Unique Id for the namespace.   
 ``subscriptionId``
   Unique Id for the Subscription. 
+*******************

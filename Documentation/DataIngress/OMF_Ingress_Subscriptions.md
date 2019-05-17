@@ -4,6 +4,8 @@ uid: omfIngressSubsctriptions
 
 Subscriptions 
 =============
+Subscription Information 
+-----------------------
 
 A Subscription is used to consume data from a Topic. Multiple Subscriptions can retrieve data from a single Topic.
 

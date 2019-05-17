@@ -33,24 +33,6 @@ Subscription information is contained in an object called Subscription which has
 | CreatedDate          | string                  | The time that the Subscription was created. The string is formatted using ISO 8601 format. |
 | Enabled              | boolean                 | Whether the topic exists or not.        |
 
-***************
-
-``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/count``
--------------------------------------------------
-
-Get the number of Subscriptions for a tenant.  
-
-**Parameters**
-
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace.   
-
-**Returns**
-
-An integer count of Subscriptions. 
-
 *****************
 
 ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions?skip={skip}&count={count}``

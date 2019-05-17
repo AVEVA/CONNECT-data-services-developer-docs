@@ -33,7 +33,7 @@ Subscription information is contained in an object called Subscription which has
 | Description          | string                  | Description of the Subscription.       |
 | Type                 | integer                 | An enumeration which describes the type of Subscription where OCSDataStore=1 |
 | CreatedDate          | string                  | The time that the Subscription was created. The string is formatted using ISO 8601 format. |
-| Enabled              | boolean                 | Whether the topic exists or not.        |
+| Enabled              | boolean                 | Whether the Topic exists or not.        |
 
 *****************
 

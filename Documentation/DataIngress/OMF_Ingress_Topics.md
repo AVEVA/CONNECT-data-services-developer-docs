@@ -51,9 +51,9 @@ Get all Topics for a tenant.
   Unique Id for the tenant. 
 ``namespaceId``
   Unique Id for the namespace.
-``int skip``
+``skip``
   An optional parameter representing the zero-based offset of the first topic to retrieve. If not specified, a default value of 0 is used. 
-``int count``
+``count``
   An optional parameter representing the maximum number of topics to retrieve. If not specified, a default value of 100 is used.
 
 **Returns**
@@ -95,9 +95,9 @@ Get all Subscriptions across all namespaces mapped to a Topic.
   Unique Id for the namespace of the Topic.
 ``topicId``
   Unique Id for the Topic.
-``int skip``
+``skip``
   An optional parameter representing the zero-based offset of the first Subscription mapped to a Topic to retrieve. If not specified, a default value of 0 is used. 
-``int count``
+``count``
   An optional parameter representing the maximum number of Subscriptions mapped to a Topic to retrieve. If not specified, a default value of 100 is used.
 
 **Returns**

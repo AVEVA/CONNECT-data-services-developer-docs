@@ -151,7 +151,7 @@ Create a new Subscription.
 
 **Body**
 
-A Subscription object. 
+A Subscription object. The ``Id`` property should not be specified, since it will be automatically generated during creation.
 
 **Returns**
 
@@ -175,7 +175,7 @@ Update an existing Subscription. Only the name and description may be updated.
 
 **Body**
 
-A Subscription object. 
+A Subscription object. The ``Id`` property should match the ``subscriptionId`` in the route.
 
 **Returns**
 

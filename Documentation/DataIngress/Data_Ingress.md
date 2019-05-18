@@ -6,7 +6,7 @@ Data Ingress and OSIsoft Message Format
 =======================================
 
 You use OSIsoft Message Format (OMF) to achieve high-throughput asynchronous data ingress 
-into the OCS data store. The following terms might be useful for understanding the information
+into the Sequential Data Store. The following terms might be useful for understanding the information
 in this and subsequent sections:
 
 * A producer of OMF messages needs a *Client* identity to authenticate and send messges.

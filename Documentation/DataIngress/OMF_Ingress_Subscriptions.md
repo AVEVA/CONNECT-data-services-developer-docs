@@ -14,7 +14,7 @@ The API calls in this section are used to create and manipulate Subscriptions.
 Sequential Data Store (Sds) Subscription 
 ---------------
 
-A Sequential Data Store Subscription retrieves data from a Topic and writes it directly to a namespace in the Sequential Data Store. 
+A Sequential Data Store Subscription retrieves data from a Topic and writes it directly to a namespace in the Sequential Data Store. Currently only Sds Subscriptions are supported. The documentation uses Sds Subscription and Subscription interchangeably.
 
 Data Models 
 -----------

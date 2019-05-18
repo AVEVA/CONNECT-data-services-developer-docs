@@ -11,10 +11,10 @@ A Subscription is used to consume data from a Topic. Multiple Subscriptions can 
 
 The API calls in this section are used to create and manipulate Subscriptions.
 
-OCS Data Store Subscription 
+Sequential Data Store (Sds) Subscription 
 ---------------
 
-An OCS Data Store Subscription retrieves data from a Topic and writes it directly to a namespace in the OCS Data Store. 
+A Sequential Data Store Subscription retrieves data from a Topic and writes it directly to a namespace in the Sequential Data Store. 
 
 Data Models 
 -----------
@@ -31,7 +31,7 @@ Subscription information is contained in an object called Subscription which has
 | TenantId             | string                  | Identifies the owner of the Subscription. |
 | NamespaceId          | string                  | Identifies the namespace for the Subscription. |
 | Description          | string                  | Description of the Subscription.       |
-| Type                 | integer                 | An enumeration which describes the type of Subscription where OCSDataStore=1 |
+| Type                 | integer                 | An enumeration which describes the type of Subscription where Sds=1 |
 | CreatedDate          | string                  | The time that the Subscription was created. The string is formatted using ISO 8601 format. |
 | Enabled              | boolean                 | Whether the Topic exists or not.        |
 

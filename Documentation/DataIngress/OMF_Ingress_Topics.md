@@ -178,7 +178,7 @@ Create a new topic.
 
 **Body**
 
-A Topic object. 
+A Topic object. The ``Id`` property should not be specified, since it will be automatically generated during creation.
 
 **Returns**
 
@@ -202,7 +202,7 @@ Update an existing Topic. Only the name and description can be updated.
 
 **Body**
 
-A Topic object. 
+A Topic object. The ``Id`` property should match the ``topicId`` in the route.
 
 **Returns**
 

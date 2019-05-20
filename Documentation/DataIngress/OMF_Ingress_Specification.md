@@ -57,7 +57,7 @@ OMF message types fall into three categories: Type, Container, and Data, which a
 
   OMF supports setting the ``format`` keyword to specify how a particular JSON type should 
   be interpreted. The following is a mapping for the Sequential Data Store supported 
-  types (see [Types](xref:sdsTypes))
+  types (see [Types](xref:sdsTypes)):
 
 
 Type     | Format   | SdsTypeCode

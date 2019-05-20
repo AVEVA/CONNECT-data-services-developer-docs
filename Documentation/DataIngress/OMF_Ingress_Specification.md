@@ -91,7 +91,7 @@ in the Container definition are interpreted as follows:
 * ``name``: Corresponds to the SdsStream Name field. This is a friendly name for the stream.
 * ``description``: Corresponds to the SdsStream Description field.
 * ``tags``: Corresponds to the SdsStream Tag field. 
-* ``metadata``: Corresponds to the SdsStream Metadata field        
+* ``metadata``: Corresponds to the SdsStream Metadata field.        
 
 
 Data messages

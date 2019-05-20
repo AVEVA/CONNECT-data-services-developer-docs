@@ -39,7 +39,7 @@ OMF message types fall into three categories: Type, Container, and Data, which a
   + ``tags``: Currently unsupported.
   + ``metadata``: Currently unsupported.
 
-  The ``isindex`` keyword corresponds to the ``iskey`` attribute of a SdsTypeProperty. 
+  The ``isindex`` keyword corresponds to the ``iskey`` attribute of an SdsTypeProperty. 
   SdsTypes support clustered indexes which can be specified with multiple properties marked 
   with the ``isindex`` keyword with a value of ``true``. For compound indexes, the 
   index property order within the message corresponds to the ``Order`` field of 
@@ -81,7 +81,7 @@ string   | date-time | DateTime
 Container messages
 ------------------
 
-A Container message is interpreted as a SdsStream in the Sequential Data Store. The keywords 
+A Container message is interpreted as an SdsStream in the Sequential Data Store. The keywords 
 in the Container definition are interpreted as follows:
 
 * ``id``: Corresponds to the SdsStream Id field. It must conform to the rules defined for

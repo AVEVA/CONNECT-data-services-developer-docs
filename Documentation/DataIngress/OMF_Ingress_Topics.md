@@ -14,7 +14,7 @@ removed from an existing Topic. A given Client may also belong to multiple Topic
 
 When a Topic is created, data sent from its associated Clients is routed to a special queue 
 where it can be consumed by a Subscription. This queue provides a buffer of up to one day for 
-Subscriptions which are temporarily unable to receive data.
+Subscriptions, which are temporarily unable to receive data.
 
 While OMF messages may be sent to OCS immediately after creating a Topic, the messages 
 cannot be made available for consumption until a Subscription is created. However, some 

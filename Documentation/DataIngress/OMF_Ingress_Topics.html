@@ -224,17 +224,31 @@ messages are stored for later consumption in OCS databases. See OMF documentatio
 <p><strong>Returns</strong></p>
 <p>A Trustee object.</p>
 <hr>
-<h2 id="put-apitenantstenantidnamespacesnamespaceidtopics"><code>PUT api/tenants/{tenantId}/namespaces/{namespaceId}/topics</code></h2>
-<p>Creates or updates a topic. Only the topic name and description can be updated. </p>
+<h2 id="post-apitenantstenantidnamespacesnamespaceidtopics"><code>POST api/tenants/{tenantId}/namespaces/{namespaceId}/topics</code></h2>
+<p>Creates a new topic. </p>
 <p><strong>Parameters</strong></p>
 <p><code>tenantId</code>
   Unique Id for the tenant. 
 <code>namespaceId</code>
   Unique Id for the namespace. </p>
 <p><strong>Body</strong></p>
-<p>A MappedTopic object. </p>
+<p>A Topic object. </p>
 <p><strong>Returns</strong></p>
-<p>A MappedTopic object. </p>
+<p>A Topic object. </p>
+<hr>
+<h2 id="put-apitenantstenantidnamespacesnamespaceidtopicstopicid"><code>PUT api/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}</code></h2>
+<p>Updates an existing topic. Only the topic name and description can be updated. </p>
+<p><strong>Parameters</strong></p>
+<p><code>tenantId</code>
+  Unique Id for the tenant. 
+<code>namespaceId</code>
+  Unique Id for the namespace. 
+<code>topicId</code>
+  Topic Id for the topic to be updated.</p>
+<p><strong>Body</strong></p>
+<p>A Topic object. </p>
+<p><strong>Returns</strong></p>
+<p>A Topic object. </p>
 <hr>
 <h2 id="put-apitenantstenantidnamespacesnamespaceidaccesscontroltopics"><code>PUT api/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/topics</code></h2>
 <p>Update the default Access Control List for new topics</p>

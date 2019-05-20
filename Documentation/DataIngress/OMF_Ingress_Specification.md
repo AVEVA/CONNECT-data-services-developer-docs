@@ -25,7 +25,7 @@ OMF message types fall into three categories: Type, Container, and Data, which a
 
 * **Type messages**
 
-  A Type message is interpreted by OSIsoft Cloud Services as an SdsType in the OCS Data Store. 
+  A Type message is interpreted by OSIsoft Cloud Services as an SdsType in the Sequential Data Store. 
   Because SdsTypes are immutable, update operations are not supported. The keywords in the 
   Type definition are interpreted as follows:
 
@@ -47,16 +47,16 @@ OMF message types fall into three categories: Type, Container, and Data, which a
 
 * **Link Type**
 
-  Link Types are not supported in OCS Data Store.
+  Link Types are not supported in Sequential Data Store.
 
 * **Span Type**
 
-  Span Types are not supported in OCS Data Store.
+  Span Types are not supported in Sequential Data Store.
 
 * **Property Types and Formats**
 
   OMF supports setting the ``format`` keyword to specify how a particular JSON type should 
-  be interpreted. The following is a mapping for the OCS Data Store supported 
+  be interpreted. The following is a mapping for the Sequential Data Store supported 
   types (see [Types](xref:sdsTypes))
 
 
@@ -81,7 +81,7 @@ string   | date-time | DateTime
 Container messages
 ------------------
 
-A Container message is interpreted as a SdsStream in the OCS Data Store. The keywords 
+A Container message is interpreted as a SdsStream in the Sequential Data Store. The keywords 
 in the Container definition are interpreted as follows:
 
 * ``id``: Corresponds to the SdsStream Id field. It must conform to the rules defined for
@@ -97,7 +97,7 @@ in the Container definition are interpreted as follows:
 Data messages
 -------------
 
-A Data message is mapped to generic Sds values in the OCS Data Store. The keywords in the 
+A Data message is mapped to generic Sds values in the Sequential Data Store. The keywords in the 
 Data definitions are interpreted as follows:
 
 * ``typeid``: Data that is not grouped by containerId is not supported.

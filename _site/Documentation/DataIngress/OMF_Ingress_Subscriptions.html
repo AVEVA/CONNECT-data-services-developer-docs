@@ -249,13 +249,27 @@ Standard Subscriptions are not yet supported.</p>
 <p><strong>Returns</strong></p>
 <p>A Trustee object.</p>
 <hr>
-<h2 id="put-apitenantstenantidnamespacesnamespaceidsubscriptions"><code>PUT api/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions</code></h2>
-<p>Create or update a subscription. Only the name and description may be updated. </p>
+<h2 id="post-apitenantstenantidnamespacesnamespaceidsubscriptions"><code>POST api/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions</code></h2>
+<p>Creates a new subscription.</p>
 <p><strong>Parameters</strong></p>
 <p><code>tenantId</code>
   Unique Id for the tenant. 
 <code>namespaceId</code>
   Unique Id for the namespace. </p>
+<p><strong>Body</strong></p>
+<p>A Subscription object. </p>
+<p><strong>Returns</strong></p>
+<p>A Subscription object that was created or updated. </p>
+<hr>
+<h2 id="put-apitenantstenantidnamespacesnamespaceidsubscriptionssubscriptionid"><code>PUT api/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}</code></h2>
+<p>Updates an existing subscription. Only the name and description may be updated. </p>
+<p><strong>Parameters</strong></p>
+<p><code>tenantId</code>
+  Unique Id for the tenant. 
+<code>namespaceId</code>
+  Unique Id for the namespace. 
+<code>subscriptionId</code>
+  Subscription Id for the subscription to be updated.</p>
 <p><strong>Body</strong></p>
 <p>A Subscription object. </p>
 <p><strong>Returns</strong></p>

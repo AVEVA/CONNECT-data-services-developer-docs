@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -76,15 +76,15 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="omfIngressToOCS">
-<h1 id="data-ingress-to-cloud-services-using-omf">Data Ingress to Cloud Services using OMF</h1>
+<h1 id="data-ingress-to-cloud-services-using-omf" sourcefile="Documentation/DataIngress/OMF_Ingress_to_OCS.md" sourcestartlinenumber="5" sourceendlinenumber="6">Data Ingress to Cloud Services using OMF</h1>
 
-<p>You can use OSIsoft Message Format (OMF) to achieve high-throughput asynchronous data ingress 
+<p sourcefile="Documentation/DataIngress/OMF_Ingress_to_OCS.md" sourcestartlinenumber="8" sourceendlinenumber="10">You can use OSIsoft Message Format (OMF) to achieve high-throughput asynchronous data ingress 
 into the Sequential Data Store. The following terms are useful for understanding the information
 in this and subsequent sections:</p>
-<ul>
-<li>A producer of OMF messages needs a <em>Client</em> identity to authenticate and send messages.</li>
-<li>Messages are sent to a queue called a <em>Topic</em>. </li>
-<li>A <em>Subscription</em> receives messages from a <em>Topic</em> and writes them to the Sequential Data Store.</li>
+<ul sourcefile="Documentation/DataIngress/OMF_Ingress_to_OCS.md" sourcestartlinenumber="12" sourceendlinenumber="14">
+<li sourcefile="Documentation/DataIngress/OMF_Ingress_to_OCS.md" sourcestartlinenumber="12" sourceendlinenumber="12">A producer of OMF messages needs a <em>Client</em> identity to authenticate and send messages.</li>
+<li sourcefile="Documentation/DataIngress/OMF_Ingress_to_OCS.md" sourcestartlinenumber="13" sourceendlinenumber="13">Messages are sent to a queue called a <em>Topic</em>. </li>
+<li sourcefile="Documentation/DataIngress/OMF_Ingress_to_OCS.md" sourcestartlinenumber="14" sourceendlinenumber="14">A <em>Subscription</em> receives messages from a <em>Topic</em> and writes them to the Sequential Data Store.</li>
 </ul>
 </article>
           </div>

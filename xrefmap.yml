@@ -98,7 +98,7 @@ references:
   name: 'Subscriptions '
   href: Documentation/DataIngress/OMF_Ingress_Subscriptions.html
 - uid: omfIngressToOCS
-  name: Data ingress to Cloud Services using OMF
+  name: Data Ingress to Cloud Services using OMF
   href: Documentation/DataIngress/OMF_Ingress_to_OCS.html
 - uid: omfIngressTopics
   name: 'Topics '

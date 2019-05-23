@@ -182,7 +182,8 @@ VersionArray            | 222
 ## Interpolation
 
 Interpolation determines how a stream behaves when asked to return an event at an index between 
-two existing events. InterpolationMode determines how the returned event is constructed. The table 
+two existing events. InterpolationMode determines how the returned event is constructed. SDS provides 
+multiple ways to set the interpolation mode to get the desired behavior. The table 
 below lists InterpolationModes:
 
 |Mode                       |Enumeration value |Operation |
@@ -191,12 +192,12 @@ below lists InterpolationModes:
 |Continuous                 |0                 |Interpolates the data using previous and next index values | 
 |StepwiseContinuousLeading  |1                 |Returns the data from the previous index  |
 |StepwiseContinuousTrailing |2                 |Returns the data from the next index |
-|Discrete                   |3                 |Returns ‘null’ |
+|Discrete                   |3                 |No event is returned |
 
-Note that ``Continuous`` cannot return events for values that cannot be interpolated, such as when the type is not numeric.
+Note that ``Continuous`` cannot return events for type properties that cannot be interpolated, such as when the type property is not numeric.
 
 The table below describes how the **Continuous InterpolationMode** affects
-indexes that occur between data in a stream:
+properties that occur between data in a stream:
 
 **InterpolationMode = Continuous or Default**
 
@@ -313,10 +314,8 @@ that differs from the InterpolationMode of the SdsType. InterpolationMode is onl
 that is not part of the Index. If the InterpolationMode is not set, the Property is are interpolated 
 in the manner defined by the SdsType’s IntepolationMode.
 
-
 An SdsType with the InterpolationMode set to ``Discrete`` cannot have a Property with an InteroplationMode. 
 For more information on interpolation of events see [Interpolation](#interpolation).
-
 
 Uom is the unit of measure for the Property. The Uom of a Property may be specified by the name or the 
 abbreviation. The names and abbreviations of Uoms are case sensitive. 

@@ -58,7 +58,7 @@ Create an Implicit flow Clients
 
 ### Request
 
-`POST api/v1-preview/Tenants/{tenantId}/ImplicitClients`
+`POST api/v1/Tenants/{tenantId}/ImplicitClients`
 
 ### Parameters
 
@@ -176,7 +176,7 @@ Update an Implicit Client
 
 ### Request
 
-`PUT api/v1-preview/Tenants/{tenantId}/ImplicitClients/{clientId}`
+`PUT api/v1/Tenants/{tenantId}/ImplicitClients/{clientId}`
 
 ### Parameters
 
@@ -297,7 +297,7 @@ Get an Implicit Client
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/ImplicitClients/{clientId}`
+`GET api/v1/Tenants/{tenantId}/ImplicitClients/{clientId}`
 
 ### Parameters
 
@@ -380,7 +380,7 @@ Get all Implicit Clients
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/ImplicitClients`
+`GET api/v1/Tenants/{tenantId}/ImplicitClients`
 
 ### Parameters
 
@@ -517,7 +517,7 @@ Delete an Implicit Client
 
 ### Request
 
-`DELETE api/v1-preview/Tenants/{tenantId}/ImplicitClients/{clientId}`
+`DELETE api/v1/Tenants/{tenantId}/ImplicitClients/{clientId}`
 
 ### Parameters
 

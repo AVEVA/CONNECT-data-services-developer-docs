@@ -16,7 +16,7 @@ This method is obsolete, please use the following instead:
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/Clients/{clientId}/Secrets`
+`GET api/v1/Tenants/{tenantId}/Clients/{clientId}/Secrets`
 
 ### Parameters
 
@@ -116,7 +116,7 @@ This method is obsolete, please use the following instead:
 
 ### Request
 
-`PUT api/v1-preview/Tenants/{tenantId}/Clients/{clientId}/Secrets/{secretId}`
+`PUT api/v1/Tenants/{tenantId}/Clients/{clientId}/Secrets/{secretId}`
 
 ### Parameters
 
@@ -208,7 +208,7 @@ Get all secrets for a Hybrid Client
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}/Secrets`
+`GET api/v1/Tenants/{tenantId}/HybridClients/{clientId}/Secrets`
 
 ### Parameters
 
@@ -307,7 +307,7 @@ Get a specific Hybrid Client Secret
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}/Secrets/{secretId}`
+`GET api/v1/Tenants/{tenantId}/HybridClients/{clientId}/Secrets/{secretId}`
 
 ### Parameters
 
@@ -379,7 +379,7 @@ Add a new secret for a Hybrid Client
 
 ### Request
 
-`POST api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}/Secrets`
+`POST api/v1/Tenants/{tenantId}/HybridClients/{clientId}/Secrets`
 
 ### Parameters
 
@@ -461,7 +461,7 @@ Update a Hybrid Client Secret
 
 ### Request
 
-`PUT api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}/Secrets/{secretId}`
+`PUT api/v1/Tenants/{tenantId}/HybridClients/{clientId}/Secrets/{secretId}`
 
 ### Parameters
 
@@ -552,7 +552,7 @@ Delete a secret from a Hybrid Client
 
 ### Request
 
-`DELETE api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}/Secrets/{secretId}`
+`DELETE api/v1/Tenants/{tenantId}/HybridClients/{clientId}/Secrets/{secretId}`
 
 ### Parameters
 
@@ -612,7 +612,7 @@ Get all secrets for a Client Credential Client
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets`
+`GET api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets`
 
 ### Parameters
 
@@ -711,7 +711,7 @@ Get a specific Client Credential Client Secret
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets/{secretId}`
+`GET api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets/{secretId}`
 
 ### Parameters
 
@@ -783,7 +783,7 @@ Add a new secret for a Client Credential Client
 
 ### Request
 
-`POST api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets`
+`POST api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets`
 
 ### Parameters
 
@@ -865,7 +865,7 @@ Update a Client Credential Client Secret
 
 ### Request
 
-`PUT api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets/{secretId}`
+`PUT api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets/{secretId}`
 
 ### Parameters
 
@@ -956,7 +956,7 @@ Delete a secret from a Client Credential Client
 
 ### Request
 
-`DELETE api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets/{secretId}`
+`DELETE api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets/{secretId}`
 
 ### Parameters
 

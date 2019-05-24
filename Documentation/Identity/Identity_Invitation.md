@@ -44,7 +44,7 @@ Get an Invitation using its id in a tenant
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/Invitations/{invitationId}`
+`GET api/v1/Tenants/{tenantId}/Invitations/{invitationId}`
 
 ### Parameters
 
@@ -114,7 +114,7 @@ Get all invitations for a tenant
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/Invitations`
+`GET api/v1/Tenants/{tenantId}/Invitations`
 
 ### Parameters
 
@@ -229,7 +229,7 @@ Update an invitation
 
 ### Request
 
-`PUT api/v1-preview/Tenants/{tenantId}/Invitations/{invitationId}`
+`PUT api/v1/Tenants/{tenantId}/Invitations/{invitationId}`
 
 ### Parameters
 
@@ -320,7 +320,7 @@ Delete an invitation
 
 ### Request
 
-`DELETE api/v1-preview/Tenants/{tenantId}/Invitations/{invitationId}`
+`DELETE api/v1/Tenants/{tenantId}/Invitations/{invitationId}`
 
 ### Parameters
 
@@ -373,7 +373,7 @@ Get the invitations for a user
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/Users/{userId}/Invitation`
+`GET api/v1/Tenants/{tenantId}/Users/{userId}/Invitation`
 
 ### Parameters
 
@@ -452,7 +452,7 @@ Create an invitation for a user. Should use when no other invitation exists for 
 
 ### Request
 
-`POST api/v1-preview/Tenants/{tenantId}/Users/{userId}/Invitation`
+`POST api/v1/Tenants/{tenantId}/Users/{userId}/Invitation`
 
 ### Parameters
 
@@ -547,7 +547,7 @@ Create or update an invitation for a user
 
 ### Request
 
-`PUT api/v1-preview/Tenants/{tenantId}/Users/{userId}/Invitation`
+`PUT api/v1/Tenants/{tenantId}/Users/{userId}/Invitation`
 
 ### Parameters
 

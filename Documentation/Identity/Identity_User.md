@@ -55,7 +55,7 @@ Returns a list of User objects for a given tenant
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/Users`
+`GET api/v1/Tenants/{tenantId}/Users`
 
 ### Parameters
 
@@ -176,7 +176,7 @@ Returns an ordered list of User objects based on userId for a given tenant or a 
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/Users/Ids`
+`GET api/v1/Tenants/{tenantId}/Users/Ids`
 
 ### Parameters
 
@@ -380,7 +380,7 @@ Get User status for multiple users, optionally restrict it to only Users of a sp
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/Users/Status`
+`GET api/v1/Tenants/{tenantId}/Users/Status`
 
 ### Parameters
 
@@ -515,7 +515,7 @@ Returns a User
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/Users/{userId}`
+`GET api/v1/Tenants/{tenantId}/Users/{userId}`
 
 ### Parameters
 
@@ -593,7 +593,7 @@ Returns user invitation status
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/Users/{userId}/Status`
+`GET api/v1/Tenants/{tenantId}/Users/{userId}/Status`
 
 ### Parameters
 
@@ -674,7 +674,7 @@ Returns an ordered list of UserStatusDto objects for a given tenant or a MultiSt
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/Users/Status/Ids`
+`GET api/v1/Tenants/{tenantId}/Users/Status/Ids`
 
 ### Parameters
 
@@ -890,7 +890,7 @@ Returns a user's preferences
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/Users/{userId}/Preferences`
+`GET api/v1/Tenants/{tenantId}/Users/{userId}/Preferences`
 
 ### Parameters
 
@@ -952,7 +952,7 @@ Put a user's preferences
 
 ### Request
 
-`PUT api/v1-preview/Tenants/{tenantId}/Users/{userId}/Preferences`
+`PUT api/v1/Tenants/{tenantId}/Users/{userId}/Preferences`
 
 ### Parameters
 
@@ -1030,7 +1030,7 @@ Creates a User
 
 ### Request
 
-`POST api/v1-preview/Tenants/{tenantId}/Users`
+`POST api/v1/Tenants/{tenantId}/Users`
 
 ### Parameters
 
@@ -1125,7 +1125,7 @@ Create or Update a User
 
 ### Request
 
-`PUT api/v1-preview/Tenants/{tenantId}/Users/{userId}`
+`PUT api/v1/Tenants/{tenantId}/Users/{userId}`
 
 ### Parameters
 
@@ -1228,7 +1228,7 @@ Delete a user
 
 ### Request
 
-`DELETE api/v1-preview/Tenants/{tenantId}/Users/{userId}`
+`DELETE api/v1/Tenants/{tenantId}/Users/{userId}`
 
 ### Parameters
 

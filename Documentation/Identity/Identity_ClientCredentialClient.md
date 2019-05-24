@@ -44,7 +44,7 @@ Create a Client Credential flow Client
 
 ### Request
 
-`POST api/v1-preview/Tenants/{tenantId}/ClientCredentialClients`
+`POST api/v1/Tenants/{tenantId}/ClientCredentialClients`
 
 ### Parameters
 
@@ -148,7 +148,7 @@ Update a Client Credential Client
 
 ### Request
 
-`PUT api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}`
+`PUT api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}`
 
 ### Parameters
 
@@ -249,7 +249,7 @@ Get a Client Credential Client
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}`
+`GET api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}`
 
 ### Parameters
 
@@ -323,7 +323,7 @@ Get all Client Credential Clients
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/ClientCredentialClients`
+`GET api/v1/Tenants/{tenantId}/ClientCredentialClients`
 
 ### Parameters
 
@@ -509,7 +509,7 @@ Delete a Client Credential Client
 
 ### Request
 
-`DELETE api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}`
+`DELETE api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}`
 
 ### Parameters
 

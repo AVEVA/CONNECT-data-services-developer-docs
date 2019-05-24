@@ -32,7 +32,7 @@ Retrieves all `FeatureStates` for the specified `Tenant`.
 
 ### Http
 
-`GET api/v1-preview/Tenants/{tenantId}/Features`
+`GET api/v1/Tenants/{tenantId}/Features`
 
 
 ### Parameters
@@ -67,7 +67,7 @@ Retrieves a `FeatureState` with the specified ID from a `Tenant`.
 
 ### Http
 
-`GET api/v1-preview/Tenants/{tenantId}/Features/{id}`
+`GET api/v1/Tenants/{tenantId}/Features/{id}`
 
 
 ### Parameters

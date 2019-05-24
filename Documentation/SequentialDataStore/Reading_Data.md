@@ -27,7 +27,7 @@ In addition, the following methods support reading multiple values:
 
 All single stream reads are HTTP GET actions. Reading data involves getting events from streams. The base reading URI from a single stream is as follows:
  ```text
-	api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
+	api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
  ```
 
 **Parameters**
@@ -48,7 +48,7 @@ SDS supports reading from multiple streams in one request. The following method 
 
 Multi-stream reads can be HTTP GET or POST actions. The base reading URI for reading from multiple streams is as follows:
  ```text
-    api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data
+    api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data
  ```
 
 **Parameters**
@@ -141,11 +141,11 @@ SDS provides the ability to transform data upon reads. The supported data transf
 
 Data transformations are supported for all single stream reads, but transformations have specific endpoints. The following are the base URIs for the tranformation endpoints:
 ```text
-    api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/First
-    api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/Last
-    api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform
-    api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/Interpolated
-    api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/Summaries
+    api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/First
+    api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/Last
+    api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform
+    api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/Interpolated
+    api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/Summaries
 ```
 
 ### Reading with SdsStreamViews
@@ -153,7 +153,7 @@ When transforming data with an SdsStreamView, the data read is converted to the 
 
 All stream view transformations are GET HTTP requests. The stream view is specified by appending the stream view identifier to requests to the transformation endpoint. For example the following request:
  ```text
-    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/First?streamViewId={streamViewId}
+    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/First?streamViewId={streamViewId}
  ```
 
 would return the first event in the stream as the target type in the stream view specified by the `streamViewId`.
@@ -177,7 +177,7 @@ This is supported in the .NET API via overloads that accept a collection of `Sds
 
 All unit conversions are POST HTTP requests. The unit conversion transformation URI is as follows:
  ```text
-    POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform
+    POST api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform
  ```
 
 **Request body**  

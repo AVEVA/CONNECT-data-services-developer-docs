@@ -80,13 +80,13 @@ Success
 [
   {
     "Id": 0,
-    "Expiration": "2019-05-30T10:23:28.0182915-07:00",
+    "Expiration": "2019-05-30T11:29:02.2732158-07:00",
     "Expires": false,
     "Description": "description"
   },
   {
     "Id": 0,
-    "Expiration": "2019-05-30T10:23:28.0186022-07:00",
+    "Expiration": "2019-05-30T11:29:02.2735937-07:00",
     "Expires": false,
     "Description": "description"
   }
@@ -160,7 +160,7 @@ Success
 ```json
 {
   "Id": 0,
-  "Expiration": "2019-05-30T10:23:28.0225719-07:00",
+  "Expiration": "2019-05-30T11:29:02.2785955-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -225,7 +225,7 @@ Description | string | No | Description for the client secret
 
 ```json
 {
-  "Expiration": "2019-05-30T10:23:28.0242681-07:00",
+  "Expiration": "2019-05-30T11:29:02.2808625-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -251,7 +251,7 @@ Created
 {
   "Secret": "Secret",
   "Id": 0,
-  "Expiration": "2019-05-30T10:23:28.0261184-07:00",
+  "Expiration": "2019-05-30T11:29:02.2866829-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -324,7 +324,7 @@ Description | string | No | Description for the client secret
 
 ```json
 {
-  "Expiration": "2019-05-30T10:23:28.0306946-07:00",
+  "Expiration": "2019-05-30T11:29:02.2919479-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -349,7 +349,7 @@ Success
 ```json
 {
   "Id": 0,
-  "Expiration": "2019-05-30T10:23:28.0308552-07:00",
+  "Expiration": "2019-05-30T11:29:02.2920694-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -507,13 +507,13 @@ Success
 [
   {
     "Id": 0,
-    "Expiration": "2019-05-30T10:23:28.140008-07:00",
+    "Expiration": "2019-05-30T11:29:02.4143088-07:00",
     "Expires": false,
     "Description": "description"
   },
   {
     "Id": 0,
-    "Expiration": "2019-05-30T10:23:28.1400328-07:00",
+    "Expiration": "2019-05-30T11:29:02.4143307-07:00",
     "Expires": false,
     "Description": "description"
   }
@@ -587,7 +587,7 @@ Success
 ```json
 {
   "Id": 0,
-  "Expiration": "2019-05-30T10:23:28.1416253-07:00",
+  "Expiration": "2019-05-30T11:29:02.4159896-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -652,7 +652,7 @@ Description | string | No | Description for the client secret
 
 ```json
 {
-  "Expiration": "2019-05-30T10:23:28.1447945-07:00",
+  "Expiration": "2019-05-30T11:29:02.4197033-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -678,7 +678,7 @@ Created
 {
   "Secret": "Secret",
   "Id": 0,
-  "Expiration": "2019-05-30T10:23:28.1449501-07:00",
+  "Expiration": "2019-05-30T11:29:02.4198563-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -751,7 +751,7 @@ Description | string | No | Description for the client secret
 
 ```json
 {
-  "Expiration": "2019-05-30T10:23:28.1469402-07:00",
+  "Expiration": "2019-05-30T11:29:02.4216581-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -776,7 +776,7 @@ Success
 ```json
 {
   "Id": 0,
-  "Expiration": "2019-05-30T10:23:28.1470449-07:00",
+  "Expiration": "2019-05-30T11:29:02.4217562-07:00",
   "Expires": false,
   "Description": "description"
 }

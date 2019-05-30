@@ -78,8 +78,8 @@ New HybridClientCreate object
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-SecretDescription | string | No | Description for the initial secret for the client />.
-SecretExpirationDate | optional: DateTime | No | Expiration date for the initial secret for the client />.
+SecretDescription | string | No | Description for the initial secret for the client.
+SecretExpirationDate | optional: DateTime | No | Expiration date for the initial secret for the client.
 AllowOfflineAccess | optional: bool | No | Specifies whether this client can request refresh tokens, by providing the *offline_access* scopes.
 AllowAccessTokensViaBrowser | optional: bool | No | Specifies whether this HybridClient is allowed to receive access tokens via the browser.            This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow            client that is supposed to use code *id_token* to add the *token* response type, thus            leaking the token to the browser).
 RedirectUris | string[] | No | Specifies the allowed URIs to return tokens or authorization codes to.
@@ -96,7 +96,7 @@ Tags | string[] | No | For OSIsoft internal use only
 ```json
 {
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-05-30T10:23:27.957918-07:00",
+  "SecretExpirationDate": "2019-05-30T11:29:02.2149303-07:00",
   "AllowOfflineAccess": false,
   "AllowAccessTokensViaBrowser": false,
   "RedirectUris": [
@@ -140,7 +140,7 @@ Created
   "Secret": "Secret",
   "Id": 0,
   "Description": "description",
-  "ExpirationDate": "2019-05-30T10:23:27.9727686-07:00",
+  "ExpirationDate": "2019-05-30T11:29:02.2287273-07:00",
   "Client": {
     "AllowOfflineAccess": false,
     "AllowAccessTokensViaBrowser": false,

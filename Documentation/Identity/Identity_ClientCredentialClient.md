@@ -78,7 +78,7 @@ Tags | string[] | No | For OSIsoft internal use only
 ```json
 {
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-05-30T10:23:28.0754159-07:00",
+  "SecretExpirationDate": "2019-05-30T11:29:02.3410348-07:00",
   "RoleIds": [
     "00000000-0000-0000-0000-000000000000",
     "00000000-0000-0000-0000-000000000000"
@@ -114,7 +114,7 @@ Created
   "Secret": "Secret",
   "Id": 0,
   "Description": "description",
-  "ExpirationDate": "2019-05-30T10:23:28.0786212-07:00",
+  "ExpirationDate": "2019-05-30T11:29:02.3440195-07:00",
   "Client": {
     "RoleIds": [
       "00000000-0000-0000-0000-000000000000",
@@ -615,7 +615,7 @@ Tags | string[] | No |
 ```json
 {
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-05-30T10:23:28.0979619-07:00",
+  "SecretExpirationDate": "2019-05-30T11:29:02.3660424-07:00",
   "RoleIds": [
     "00000000-0000-0000-0000-000000000000",
     "00000000-0000-0000-0000-000000000000"
@@ -652,7 +652,7 @@ Created
   "ClientSecret": "ClientSecret",
   "SecretId": "SecretId",
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-05-30T10:23:28.1019375-07:00",
+  "SecretExpirationDate": "2019-05-30T11:29:02.371092-07:00",
   "RoleIds": [
     "00000000-0000-0000-0000-000000000000",
     "00000000-0000-0000-0000-000000000000"

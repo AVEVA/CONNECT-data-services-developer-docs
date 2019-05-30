@@ -8,27 +8,27 @@ APIs for creating, getting, updating, and deleting an Invitation
 
 ## Properties
 
-For HTTP requests and responses, the InvitationDto object has the following properties and JSON-serialized body: 
+For HTTP requests and responses, the Invitation object has the following properties and JSON-serialized body: 
 
-Property | Type | Descriptions
- --- | --- | ---
-Id | string | Unique Invitation Id.
-Issued | DateTime | Invitation issuing timestamp.
-Expires | DateTime | Invitation expiration timestamp.
-Accepted | optional: DateTime | Invitation accepted timestamp.
-State | InvitationStates | Invitation state. Can be None (0), InvitationEmailSent (1), InvitationAccepted (2)
-TenantId | string | ID of the Tenant the invitation belongs to.
-UserId | Guid | ID of the User whom the invitation was issued to.
-IdentityProviderId | optional: Guid | ID of the Identity Provider that must be used to accept the invitation.
+Property | Type | Required | Descriptions
+ --- | --- | --- | ---
+Id | string | Yes | Unique Invitation Id.
+Issued | DateTime | Yes | Invitation issuing timestamp.
+Expires | DateTime | Yes | Invitation expiration timestamp.
+Accepted | optional: DateTime | No | Invitation accepted timestamp.
+State | InvitationStates | Yes | Invitation state. Can be None (0), InvitationEmailSent (1), InvitationAccepted (2)
+TenantId | string | Yes | ID of the Tenant the invitation belongs to.
+UserId | Guid | Yes | ID of the User whom the invitation was issued to.
+IdentityProviderId | optional: Guid | No | ID of the Identity Provider that must be used to accept the invitation.
 
 ### Serialized Model
 
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-04-30T11:35:12.4754265-07:00",
-  "Expires": "2019-04-30T11:35:12.4754297-07:00",
-  "Accepted": "2019-04-30T11:35:12.4754329-07:00",
+  "Issued": "2019-05-30T10:23:28.2540564-07:00",
+  "Expires": "2019-05-30T10:23:28.2540625-07:00",
+  "Accepted": "2019-05-30T10:23:28.2540676-07:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -44,7 +44,7 @@ Get an Invitation using its id in a tenant
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/Invitations/{invitationId}`
+`GET api/v1/Tenants/{tenantId}/Invitations/{invitationId}`
 
 ### Parameters
 
@@ -76,14 +76,14 @@ Success
 
 ##### Type:
 
- `InvitationDto`
+ `Invitation`
 
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-04-30T11:35:12.4818597-07:00",
-  "Expires": "2019-04-30T11:35:12.4818639-07:00",
-  "Accepted": "2019-04-30T11:35:12.4818667-07:00",
+  "Issued": "2019-05-30T10:23:28.2606158-07:00",
+  "Expires": "2019-05-30T10:23:28.260621-07:00",
+  "Accepted": "2019-05-30T10:23:28.2606359-07:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -114,7 +114,7 @@ Get all invitations for a tenant
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/Invitations`
+`GET api/v1/Tenants/{tenantId}/Invitations`
 
 ### Parameters
 
@@ -175,15 +175,15 @@ Success
 
 ##### Type:
 
- `List[InvitationDto]`
+ `List[Invitation]`
 
 ```json
 [
   {
     "Id": "Id",
-    "Issued": "2019-04-30T11:35:12.4835434-07:00",
-    "Expires": "2019-04-30T11:35:12.4835466-07:00",
-    "Accepted": "2019-04-30T11:35:12.483549-07:00",
+    "Issued": "2019-05-30T10:23:28.2629257-07:00",
+    "Expires": "2019-05-30T10:23:28.2629314-07:00",
+    "Accepted": "2019-05-30T10:23:28.2629369-07:00",
     "State": 0,
     "TenantId": "00000000-0000-0000-0000-000000000000",
     "UserId": "00000000-0000-0000-0000-000000000000",
@@ -191,9 +191,9 @@ Success
   },
   {
     "Id": "Id",
-    "Issued": "2019-04-30T11:35:12.4835631-07:00",
-    "Expires": "2019-04-30T11:35:12.4835638-07:00",
-    "Accepted": "2019-04-30T11:35:12.4835656-07:00",
+    "Issued": "2019-05-30T10:23:28.2629644-07:00",
+    "Expires": "2019-05-30T10:23:28.2629661-07:00",
+    "Accepted": "2019-05-30T10:23:28.2629692-07:00",
     "State": 0,
     "TenantId": "00000000-0000-0000-0000-000000000000",
     "UserId": "00000000-0000-0000-0000-000000000000",
@@ -229,7 +229,7 @@ Update an invitation
 
 ### Request
 
-`PUT api/v1-preview/Tenants/{tenantId}/Invitations/{invitationId}`
+`PUT api/v1/Tenants/{tenantId}/Invitations/{invitationId}`
 
 ### Parameters
 
@@ -250,14 +250,23 @@ Id of invitation
 ```csharp
 [FromBody]
 [Required]
-InvitationCreateOrUpdateDto invitationCreateOrUpdateDto
+InvitationCreateOrUpdate invitationCreateOrUpdate
 ```
 
-New InvitationUpdateDto object
+New InvitationCreateOrUpdate object
+
+Property | Type | Required | Description 
+ --- | --- | --- | ---
+ExpiresDateTime | optional: DateTime | No | Invitation expiration date. Must be in the future.
+State | optional: InvitationStates | No | Set the state of invitation.
+SendInvitation | optional: bool | No | Send the invitation. Default is true.
+IdentityProviderId | optional: Guid | No | Identity Provider to use for accepting this invitation. Null implies invitation can be accepted using any            configured Identity Provider.
+
+
 
 ```json
 {
-  "ExpiresDateTime": "2019-04-30T11:35:12.4847775-07:00",
+  "ExpiresDateTime": "2019-05-30T10:23:28.265126-07:00",
   "State": 0,
   "SendInvitation": false,
   "IdentityProviderId": "00000000-0000-0000-0000-000000000000"
@@ -278,14 +287,14 @@ Success
 
 ##### Type:
 
- `InvitationDto`
+ `Invitation`
 
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-04-30T11:35:12.4873555-07:00",
-  "Expires": "2019-04-30T11:35:12.4873587-07:00",
-  "Accepted": "2019-04-30T11:35:12.4873612-07:00",
+  "Issued": "2019-05-30T10:23:28.2681685-07:00",
+  "Expires": "2019-05-30T10:23:28.2681733-07:00",
+  "Accepted": "2019-05-30T10:23:28.2681785-07:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -320,7 +329,7 @@ Delete an invitation
 
 ### Request
 
-`DELETE api/v1-preview/Tenants/{tenantId}/Invitations/{invitationId}`
+`DELETE api/v1/Tenants/{tenantId}/Invitations/{invitationId}`
 
 ### Parameters
 
@@ -373,7 +382,7 @@ Get the invitations for a user
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/Users/{userId}/Invitation`
+`GET api/v1/Tenants/{tenantId}/Users/{userId}/Invitation`
 
 ### Parameters
 
@@ -391,15 +400,6 @@ Guid userId
 
 Id of user
 
-```csharp
-[FromQuery]
-[Optional]
-[Default = False]
-bool includeExpiredInvitations
-```
-
-Specify to return expired invitations
-
 ### Security
 
 Allowed for these roles:
@@ -414,14 +414,14 @@ Success
 
 ##### Type:
 
- `InvitationDto`
+ `Invitation`
 
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-04-30T11:35:12.5224649-07:00",
-  "Expires": "2019-04-30T11:35:12.5224684-07:00",
-  "Accepted": "2019-04-30T11:35:12.5224723-07:00",
+  "Issued": "2019-05-30T10:23:28.3166374-07:00",
+  "Expires": "2019-05-30T10:23:28.3166432-07:00",
+  "Accepted": "2019-05-30T10:23:28.31665-07:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -452,7 +452,7 @@ Create an invitation for a user. Should use when no other invitation exists for 
 
 ### Request
 
-`POST api/v1-preview/Tenants/{tenantId}/Users/{userId}/Invitation`
+`POST api/v1/Tenants/{tenantId}/Users/{userId}/Invitation`
 
 ### Parameters
 
@@ -473,14 +473,23 @@ Id of user
 ```csharp
 [FromBody]
 [Required]
-InvitationCreateOrUpdateDto invitationCreateOrUpdateDto
+InvitationCreateOrUpdate invitationCreateOrUpdate
 ```
 
-InvitationCreateDto object
+InvitationCreateOrUpdate object
+
+Property | Type | Required | Description 
+ --- | --- | --- | ---
+ExpiresDateTime | optional: DateTime | No | Invitation expiration date. Must be in the future.
+State | optional: InvitationStates | No | Set the state of invitation.
+SendInvitation | optional: bool | No | Send the invitation. Default is true.
+IdentityProviderId | optional: Guid | No | Identity Provider to use for accepting this invitation. Null implies invitation can be accepted using any            configured Identity Provider.
+
+
 
 ```json
 {
-  "ExpiresDateTime": "2019-04-30T11:35:12.5234555-07:00",
+  "ExpiresDateTime": "2019-05-30T10:23:28.3187293-07:00",
   "State": 0,
   "SendInvitation": false,
   "IdentityProviderId": "00000000-0000-0000-0000-000000000000"
@@ -501,14 +510,14 @@ Created
 
 ##### Type:
 
- `InvitationDto`
+ `Invitation`
 
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-04-30T11:35:12.5235496-07:00",
-  "Expires": "2019-04-30T11:35:12.5235514-07:00",
-  "Accepted": "2019-04-30T11:35:12.5235535-07:00",
+  "Issued": "2019-05-30T10:23:28.3188831-07:00",
+  "Expires": "2019-05-30T10:23:28.318886-07:00",
+  "Accepted": "2019-05-30T10:23:28.3188902-07:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -547,7 +556,7 @@ Create or update an invitation for a user
 
 ### Request
 
-`PUT api/v1-preview/Tenants/{tenantId}/Users/{userId}/Invitation`
+`PUT api/v1/Tenants/{tenantId}/Users/{userId}/Invitation`
 
 ### Parameters
 
@@ -568,14 +577,23 @@ Id of user
 ```csharp
 [FromBody]
 [Required]
-InvitationCreateOrUpdateDto invitationCreateOrUpdateDto
+InvitationCreateOrUpdate invitationCreateOrUpdate
 ```
 
-InvitationCreateDto object
+InvitationCreateOrUpdate object
+
+Property | Type | Required | Description 
+ --- | --- | --- | ---
+ExpiresDateTime | optional: DateTime | No | Invitation expiration date. Must be in the future.
+State | optional: InvitationStates | No | Set the state of invitation.
+SendInvitation | optional: bool | No | Send the invitation. Default is true.
+IdentityProviderId | optional: Guid | No | Identity Provider to use for accepting this invitation. Null implies invitation can be accepted using any            configured Identity Provider.
+
+
 
 ```json
 {
-  "ExpiresDateTime": "2019-04-30T11:35:12.5245418-07:00",
+  "ExpiresDateTime": "2019-05-30T10:23:28.3206494-07:00",
   "State": 0,
   "SendInvitation": false,
   "IdentityProviderId": "00000000-0000-0000-0000-000000000000"
@@ -596,14 +614,14 @@ Updated
 
 ##### Type:
 
- `InvitationDto`
+ `Invitation`
 
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-04-30T11:35:12.5246716-07:00",
-  "Expires": "2019-04-30T11:35:12.5246733-07:00",
-  "Accepted": "2019-04-30T11:35:12.5246758-07:00",
+  "Issued": "2019-05-30T10:23:28.3207466-07:00",
+  "Expires": "2019-05-30T10:23:28.3207483-07:00",
+  "Accepted": "2019-05-30T10:23:28.3207508-07:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -617,14 +635,14 @@ Created
 
 ##### Type:
 
- `InvitationDto`
+ `Invitation`
 
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-04-30T11:35:12.5247103-07:00",
-  "Expires": "2019-04-30T11:35:12.5247114-07:00",
-  "Accepted": "2019-04-30T11:35:12.5247132-07:00",
+  "Issued": "2019-05-30T10:23:28.3207809-07:00",
+  "Expires": "2019-05-30T10:23:28.320782-07:00",
+  "Accepted": "2019-05-30T10:23:28.320784-07:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -647,6 +665,59 @@ Forbidden
 #### 404
 
 User or Tenant not found
+
+#### 500
+
+Internal server error
+***
+
+## `Delete Invitation`
+
+Delete an invitation for a user
+
+### Request
+
+`DELETE api/v1/Tenants/{tenantId}/Users/{userId}/Invitation`
+
+### Parameters
+
+```csharp
+[Required]
+string tenantId
+```
+
+Id of tenant
+
+```csharp
+[Required]
+Guid userId
+```
+
+Id of user
+
+### Security
+
+Allowed for these roles:
+
+- `Account Administrator`
+
+### Returns
+
+#### 204
+
+Deleted
+
+#### 401
+
+Unauthorized
+
+#### 403
+
+Forbidden
+
+#### 404
+
+Invitation or Tenant not found
 
 #### 500
 

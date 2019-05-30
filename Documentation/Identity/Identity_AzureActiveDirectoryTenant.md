@@ -10,10 +10,10 @@ APIs for creating, getting, updating, and deleting Azure Active Directory Tenant
 
 For HTTP requests and responses, the AzureActiveDirectoryTenant object has the following properties and JSON-serialized body: 
 
-Property | Type | Descriptions
- --- | --- | ---
-Id | string | Id of an Azure Active Directory Tenant
-ConsentState | ConsentState | Consent State of Azure Active Directory Tenant. Can be: NotConsented (0), Consented (1)
+Property | Type | Required | Descriptions
+ --- | --- | --- | ---
+Id | string | No | Id of an Azure Active Directory Tenant
+ConsentState | ConsentState | No | Consent State of Azure Active Directory Tenant. Can be: NotConsented (0), Consented (1)
 
 ### Serialized Model
 
@@ -32,7 +32,7 @@ Add Azure Active Directory Tenant to a Tenant
 
 ### Request
 
-`POST api/v1-preview/Tenants/{tenantId}/AzureActiveDirectoryTenants`
+`POST api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{azureActiveDirectoryTenantId}`
 
 ### Parameters
 
@@ -104,7 +104,7 @@ Get all Azure Active Directory Tenants for a Tenant
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/AzureActiveDirectoryTenants`
+`GET api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants`
 
 ### Parameters
 
@@ -194,7 +194,7 @@ Get Azure Active Directory Tenant from a tenant
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/AzureActiveDirectoryTenants/{azureActiveDirectoryTenantId}`
+`GET api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{azureActiveDirectoryTenantId}`
 
 ### Parameters
 
@@ -262,7 +262,7 @@ Remove Azure Active Directory Tenant from a tenant
 
 ### Request
 
-`DELETE api/v1-preview/Tenants/{tenantId}/AzureActiveDirectoryTenants/{azureActiveDirectoryTenantId}`
+`DELETE api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{azureActiveDirectoryTenantId}`
 
 ### Parameters
 
@@ -319,7 +319,7 @@ Send consent for an Azure Active Directory Tenant
 
 ### Request
 
-`POST api/v1-preview/Tenants/{tenantId}/AzureActiveDirectoryTenants/{azureActiveDirectoryTenantId}/SendConsent`
+`POST api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{azureActiveDirectoryTenantId}/SendConsent`
 
 ### Parameters
 
@@ -340,10 +340,18 @@ Azure Active Directory Tenant Id to remove
 ```csharp
 [FromBody]
 [Required]
-ConsentInformationDto consentInformationDto
+ConsentInformation consentInformation
 ```
 
 Consent information used to send
+
+Property | Type | Required | Description 
+ --- | --- | --- | ---
+AzureActiveDirectoryConsentEmail | string | No | Preferred Azure Active Directory consent email for user.
+AzureActiveDirectoryConsentGivenName | string | No | Preferred Azure Active Directory consent name for user.
+AzureActiveDirectoryConsentSurname | string | No | Preferred Azure Active Directory consent surname for user.
+
+
 
 ```json
 {

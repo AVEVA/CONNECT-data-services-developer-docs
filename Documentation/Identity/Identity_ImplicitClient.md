@@ -8,19 +8,19 @@ APIs for creating, getting, updating, and deleting Implicit Clients
 
 ## Properties
 
-For HTTP requests and responses, the ImplicitClientDto object has the following properties and JSON-serialized body: 
+For HTTP requests and responses, the ImplicitClient object has the following properties and JSON-serialized body: 
 
-Property | Type | Descriptions
- --- | --- | ---
-AllowedCorsOrigins | string[] | If specified, will be used by the default CORS policy service implementations to build a CORS policy for JavaScript clients.
-RedirectUris | string[] | Specifies the allowed URIs to return tokens or authorization codes to.
-PostLogoutRedirectUris | string[] | Specifies allowed URIs to redirect to after logout.
-ClientUri | string | URI to a page with information about client (used on consent screen).
-LogoUri | string | URI to client logo (used on consent screen).
-ClientId | string | Client ID for this Client
-Name | string | Name of ClientDto.
-Enabled | optional: bool | Is ClientDto Enabled
-Tags | string[] | For OSIsoft internal use only
+Property | Type | Required | Descriptions
+ --- | --- | --- | ---
+AllowedCorsOrigins | string[] | No | If specified, will be used by the default CORS policy service implementations to build a CORS policy for JavaScript clients.
+RedirectUris | string[] | No | Specifies the allowed URIs to return tokens or authorization codes to.
+PostLogoutRedirectUris | string[] | No | Specifies allowed URIs to redirect to after logout.
+ClientUri | string | No | URI to a page with information about client (used on consent screen).
+LogoUri | string | No | URI to client logo (used on consent screen).
+Id | string | No | Client ID for this Client
+Name | string | Yes | Name of Client.
+Enabled | optional: bool | No | Is Client Enabled
+Tags | string[] | No | For OSIsoft internal use only
 
 ### Serialized Model
 
@@ -40,7 +40,7 @@ Tags | string[] | For OSIsoft internal use only
   ],
   "ClientUri": "ClientUri",
   "LogoUri": "LogoUri",
-  "ClientId": "ClientId",
+  "Id": "Id",
   "Name": "Name",
   "Enabled": false,
   "Tags": [
@@ -58,7 +58,7 @@ Create an Implicit flow Clients
 
 ### Request
 
-`POST api/v1-preview/Tenants/{tenantId}/ImplicitClients`
+`POST api/v1/Tenants/{tenantId}/ImplicitClients`
 
 ### Parameters
 
@@ -72,10 +72,24 @@ Id of tenant
 ```csharp
 [FromBody]
 [Required]
-ImplicitClientDto implicitClientDto
+ImplicitClient implicitClient
 ```
 
-New ImplicitClientDto object
+New ImplicitClient object
+
+Property | Type | Required | Description 
+ --- | --- | --- | ---
+AllowedCorsOrigins | string[] | No | If specified, will be used by the default CORS policy service implementations to build a            CORS policy for JavaScript clients.
+RedirectUris | string[] | No | Specifies the allowed URIs to return tokens or authorization codes to.
+PostLogoutRedirectUris | string[] | No | Specifies allowed URIs to redirect to after logout.
+ClientUri | string | No | URI to a page with information about client (used on consent screen).
+LogoUri | string | No | URI to client logo (used on consent screen).
+Id | string | No | Client ID for this Client
+Name | string | Yes | Name of Client.
+Enabled | optional: bool | No | Is Client Enabled
+Tags | string[] | No | For OSIsoft internal use only
+
+
 
 ```json
 {
@@ -93,7 +107,7 @@ New ImplicitClientDto object
   ],
   "ClientUri": "ClientUri",
   "LogoUri": "LogoUri",
-  "ClientId": "ClientId",
+  "Id": "Id",
   "Name": "Name",
   "Enabled": false,
   "Tags": [
@@ -117,7 +131,7 @@ Created
 
 ##### Type:
 
- `ImplicitClientDto`
+ `ImplicitClient`
 
 ```json
 {
@@ -135,7 +149,7 @@ Created
   ],
   "ClientUri": "ClientUri",
   "LogoUri": "LogoUri",
-  "ClientId": "ClientId",
+  "Id": "Id",
   "Name": "Name",
   "Enabled": false,
   "Tags": [
@@ -176,7 +190,7 @@ Update an Implicit Client
 
 ### Request
 
-`PUT api/v1-preview/Tenants/{tenantId}/ImplicitClients/{clientId}`
+`PUT api/v1/Tenants/{tenantId}/ImplicitClients/{clientId}`
 
 ### Parameters
 
@@ -197,10 +211,24 @@ Id of client
 ```csharp
 [FromBody]
 [Required]
-ImplicitClientDto updatedImplicitClientDto
+ImplicitClient implicitClient
 ```
 
 Updated Implicit Client values
+
+Property | Type | Required | Description 
+ --- | --- | --- | ---
+AllowedCorsOrigins | string[] | No | If specified, will be used by the default CORS policy service implementations to build a            CORS policy for JavaScript clients.
+RedirectUris | string[] | No | Specifies the allowed URIs to return tokens or authorization codes to.
+PostLogoutRedirectUris | string[] | No | Specifies allowed URIs to redirect to after logout.
+ClientUri | string | No | URI to a page with information about client (used on consent screen).
+LogoUri | string | No | URI to client logo (used on consent screen).
+Id | string | No | Client ID for this Client
+Name | string | Yes | Name of Client.
+Enabled | optional: bool | No | Is Client Enabled
+Tags | string[] | No | For OSIsoft internal use only
+
+
 
 ```json
 {
@@ -218,7 +246,7 @@ Updated Implicit Client values
   ],
   "ClientUri": "ClientUri",
   "LogoUri": "LogoUri",
-  "ClientId": "ClientId",
+  "Id": "Id",
   "Name": "Name",
   "Enabled": false,
   "Tags": [
@@ -242,7 +270,7 @@ Success
 
 ##### Type:
 
- `ImplicitClientDto`
+ `ImplicitClient`
 
 ```json
 {
@@ -260,7 +288,7 @@ Success
   ],
   "ClientUri": "ClientUri",
   "LogoUri": "LogoUri",
-  "ClientId": "ClientId",
+  "Id": "Id",
   "Name": "Name",
   "Enabled": false,
   "Tags": [
@@ -297,7 +325,7 @@ Get an Implicit Client
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/ImplicitClients/{clientId}`
+`GET api/v1/Tenants/{tenantId}/ImplicitClients/{clientId}`
 
 ### Parameters
 
@@ -329,7 +357,7 @@ Success
 
 ##### Type:
 
- `ImplicitClientDto`
+ `ImplicitClient`
 
 ```json
 {
@@ -347,7 +375,7 @@ Success
   ],
   "ClientUri": "ClientUri",
   "LogoUri": "LogoUri",
-  "ClientId": "ClientId",
+  "Id": "Id",
   "Name": "Name",
   "Enabled": false,
   "Tags": [
@@ -380,7 +408,7 @@ Get all Implicit Clients
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/ImplicitClients`
+`GET api/v1/Tenants/{tenantId}/ImplicitClients`
 
 ### Parameters
 
@@ -395,7 +423,7 @@ Id of tenant
 [FromQuery]
 [Optional]
 [Default = ""]
-string[] tags
+string[] tag
 ```
 
 Only return Clients that have these tags.
@@ -441,7 +469,7 @@ Success
 
 ##### Type:
 
- `List[ImplicitClientDto]`
+ `List[ImplicitClient]`
 
 ```json
 [
@@ -460,7 +488,7 @@ Success
     ],
     "ClientUri": "ClientUri",
     "LogoUri": "LogoUri",
-    "ClientId": "ClientId",
+    "Id": "Id",
     "Name": "Name",
     "Enabled": false,
     "Tags": [
@@ -483,7 +511,7 @@ Success
     ],
     "ClientUri": "ClientUri",
     "LogoUri": "LogoUri",
-    "ClientId": "ClientId",
+    "Id": "Id",
     "Name": "Name",
     "Enabled": false,
     "Tags": [
@@ -517,7 +545,7 @@ Delete an Implicit Client
 
 ### Request
 
-`DELETE api/v1-preview/Tenants/{tenantId}/ImplicitClients/{clientId}`
+`DELETE api/v1/Tenants/{tenantId}/ImplicitClients/{clientId}`
 
 ### Parameters
 

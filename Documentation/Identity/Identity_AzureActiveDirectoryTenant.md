@@ -10,10 +10,10 @@ APIs for creating, getting, updating, and deleting Azure Active Directory Tenant
 
 For HTTP requests and responses, the AzureActiveDirectoryTenant object has the following properties and JSON-serialized body: 
 
-Property | Type | Required | Descriptions
+Property | Type | Descriptions
  --- | --- | --- | ---
-Id | string | No | Id of an Azure Active Directory Tenant
-ConsentState | ConsentState | No | Consent State of Azure Active Directory Tenant. Can be: NotConsented (0), Consented (1)
+Id | string | Id of an Azure Active Directory Tenant
+ConsentState | ConsentState | Consent State of Azure Active Directory Tenant. Can be: NotConsented (0), Consented (1)
 
 ### Serialized Model
 
@@ -156,7 +156,7 @@ Success
 
 ##### Type:
 
- `List[AzureActiveDirectoryTenant]`
+ `List`
 
 ```json
 [
@@ -210,7 +210,7 @@ Id of tenant
 string azureActiveDirectoryTenantId
 ```
 
-Azure Active Directory Tenant Id to remove
+Azure Active Directory Tenant Id
 
 ### Security
 
@@ -335,7 +335,7 @@ Id of tenant
 string azureActiveDirectoryTenantId
 ```
 
-Azure Active Directory Tenant Id to remove
+Azure Active Directory Tenant Id
 
 ```csharp
 [FromBody]
@@ -347,9 +347,10 @@ Consent information used to send
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-AzureActiveDirectoryConsentEmail | string | No | Preferred Azure Active Directory consent email for user.
-AzureActiveDirectoryConsentGivenName | string | No | Preferred Azure Active Directory consent name for user.
-AzureActiveDirectoryConsentSurname | string | No | Preferred Azure Active Directory consent surname for user.
+AzureActiveDirectoryConsentEmail | string | Yes | Preferred Azure Active Directory consent email for user.
+AzureActiveDirectoryConsentGivenName | string | Yes | Preferred Azure Active Directory consent name for user.
+AzureActiveDirectoryConsentSurname | string | Yes | Preferred Azure Active Directory consent surname for user.
+AzureActiveDirectoryTenant | string | Yes | Domain Name of Azure Active Directory (e.g. mydomain.onmicrosoft.com)
 
 
 
@@ -357,7 +358,8 @@ AzureActiveDirectoryConsentSurname | string | No | Preferred Azure Active Direct
 {
   "AzureActiveDirectoryConsentEmail": "user@company.com",
   "AzureActiveDirectoryConsentGivenName": "Name",
-  "AzureActiveDirectoryConsentSurname": "Surname"
+  "AzureActiveDirectoryConsentSurname": "Surname",
+  "AzureActiveDirectoryTenant": "AzureActiveDirectoryTenant"
 }
 ```
 

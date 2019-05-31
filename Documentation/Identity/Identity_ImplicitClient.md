@@ -10,17 +10,17 @@ APIs for creating, getting, updating, and deleting Implicit Clients
 
 For HTTP requests and responses, the ImplicitClient object has the following properties and JSON-serialized body: 
 
-Property | Type | Required | Descriptions
+Property | Type | Descriptions
  --- | --- | --- | ---
-AllowedCorsOrigins | string[] | No | If specified, will be used by the default CORS policy service implementations to build a CORS policy for JavaScript clients.
-RedirectUris | string[] | No | Specifies the allowed URIs to return tokens or authorization codes to.
-PostLogoutRedirectUris | string[] | No | Specifies allowed URIs to redirect to after logout.
-ClientUri | string | No | URI to a page with information about client (used on consent screen).
-LogoUri | string | No | URI to client logo (used on consent screen).
-Id | string | No | Client ID for this Client
-Name | string | Yes | Name of Client.
-Enabled | optional: bool | No | Is Client Enabled
-Tags | string[] | No | For OSIsoft internal use only
+AllowedCorsOrigins | string[] | If specified, will be used by the default CORS policy service implementations to build a CORS policy for JavaScript clients.
+RedirectUris | string[] | Specifies the allowed URIs to return tokens or authorization codes to.
+PostLogoutRedirectUris | string[] | Specifies allowed URIs to redirect to after logout.
+ClientUri | string | URI to a page with information about client (used on consent screen).
+LogoUri | string | URI to client logo (used on consent screen).
+Id | string | Client ID for this Client
+Name | string | Name of Client.
+Enabled | bool | Is Client Enabled
+Tags | string[] | For OSIsoft internal use only
 
 ### Serialized Model
 
@@ -86,7 +86,7 @@ ClientUri | string | No | URI to a page with information about client (used on c
 LogoUri | string | No | URI to client logo (used on consent screen).
 Id | string | No | Client ID for this Client
 Name | string | Yes | Name of Client.
-Enabled | optional: bool | No | Is Client Enabled
+Enabled | bool | No | Is Client Enabled
 Tags | string[] | No | For OSIsoft internal use only
 
 
@@ -223,9 +223,9 @@ RedirectUris | string[] | No | Specifies the allowed URIs to return tokens or au
 PostLogoutRedirectUris | string[] | No | Specifies allowed URIs to redirect to after logout.
 ClientUri | string | No | URI to a page with information about client (used on consent screen).
 LogoUri | string | No | URI to client logo (used on consent screen).
-Id | string | No | Client ID for this Client
+Id | string | No | Client ID for this Client. Must be the same as the Id in the route.
 Name | string | Yes | Name of Client.
-Enabled | optional: bool | No | Is Client Enabled
+Enabled | bool | No | Is Client Enabled
 Tags | string[] | No | For OSIsoft internal use only
 
 
@@ -469,7 +469,7 @@ Success
 
 ##### Type:
 
- `List[ImplicitClient]`
+ `List`
 
 ```json
 [

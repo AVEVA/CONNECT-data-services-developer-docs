@@ -10,12 +10,12 @@ APIs for getting a list of all supported Identity Providers
 
 For HTTP requests and responses, the IdentityProvider object has the following properties and JSON-serialized body: 
 
-Property | Type | Required | Descriptions
+Property | Type | Descriptions
  --- | --- | --- | ---
-Id | Guid | No | Id of an identity provider
-DisplayName | string | No | Identity provider display name to use
-Scheme | string | No | Specifies the name of the cookie handler that will temporarily store the outcome of the external authentication.
-UserIdClaimType | string | No | Type of claim
+Id | Guid | Id of an identity provider
+DisplayName | string | Identity provider display name to use
+Scheme | string | Specifies the name of the cookie handler that will temporarily store the outcome of the external authentication.
+UserIdClaimType | string | Type of claim
 
 ### Serialized Model
 
@@ -148,7 +148,7 @@ Success
 
 ##### Type:
 
- `List[IdentityProvider]`
+ `List`
 
 ```json
 [
@@ -279,22 +279,22 @@ Add Identity Provider object
 Property | Type | Required | Description 
  --- | --- | --- | ---
 IdentityProviderId | Guid | Yes | Identity Provider Id to Add
-AzureActiveDirectoryTenant | string | No | Domain Name or Tenant Id of Azure Active Directory
 AzureActiveDirectorySendConsent | bool | No | Send consent email for Azure Active Directory.
-AzureActiveDirectoryConsentEmail | string | No | Preferred Azure Active Directory consent email for user.
-AzureActiveDirectoryConsentGivenName | string | No | Preferred Azure Active Directory consent name for user.
-AzureActiveDirectoryConsentSurname | string | No | Preferred Azure Active Directory consent surname for user.
+AzureActiveDirectoryConsentEmail | string | No | Preferred Azure Active Directory consent email for user. Must be provided if AzureActiveDirectorySendConsent is set to true.
+AzureActiveDirectoryConsentGivenName | string | No | Preferred Azure Active Directory consent name for user. Must be provided if AzureActiveDirectorySendConsent is set to true.
+AzureActiveDirectoryConsentSurname | string | No | Preferred Azure Active Directory consent surname for user. Must be provided if AzureActiveDirectorySendConsent is set to true.
+AzureActiveDirectoryTenant | string | No | Domain Name of Azure Active Directory (e.g. mydomain.onmicrosoft.com). Must be provided if you add AAd as an Identity Provider.
 
 
 
 ```json
 {
   "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
-  "AzureActiveDirectoryTenant": "AzureActiveDirectoryTenant",
   "AzureActiveDirectorySendConsent": false,
   "AzureActiveDirectoryConsentEmail": "user@company.com",
   "AzureActiveDirectoryConsentGivenName": "Name",
-  "AzureActiveDirectoryConsentSurname": "Surname"
+  "AzureActiveDirectoryConsentSurname": "Surname",
+  "AzureActiveDirectoryTenant": "AzureActiveDirectoryTenant"
 }
 ```
 

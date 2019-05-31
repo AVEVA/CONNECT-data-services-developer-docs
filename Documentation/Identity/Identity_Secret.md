@@ -74,19 +74,19 @@ Success
 
 ##### Type:
 
- `List[ClientSecret]`
+ `List`
 
 ```json
 [
   {
     "Id": 0,
-    "Expiration": "2019-05-30T11:29:02.2732158-07:00",
+    "Expiration": "2019-05-31T14:57:08.5721303-07:00",
     "Expires": false,
     "Description": "description"
   },
   {
     "Id": 0,
-    "Expiration": "2019-05-30T11:29:02.2735937-07:00",
+    "Expiration": "2019-05-31T14:57:08.5724552-07:00",
     "Expires": false,
     "Description": "description"
   }
@@ -160,7 +160,7 @@ Success
 ```json
 {
   "Id": 0,
-  "Expiration": "2019-05-30T11:29:02.2785955-07:00",
+  "Expiration": "2019-05-31T14:57:08.5763045-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -217,15 +217,15 @@ ClientSecretCreateOrUpdate clientSecretCreateOrUpdate
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-Expiration | optional: DateTime | No | Expiration date for the client secret
-Expires | optional: bool | No | Determines if the secret expires. If this value is set, non null Expiration will be ignored. Defaults to true.
+Expiration | DateTime | No | Expiration date for the client secret. If not provided the secret will never expire.
+Expires | bool | No | Determines if the secret expires. If this value is set, non null Expiration will be ignored. Defaults to true.
 Description | string | No | Description for the client secret
 
 
 
 ```json
 {
-  "Expiration": "2019-05-30T11:29:02.2808625-07:00",
+  "Expiration": "2019-05-31T14:57:08.577856-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -251,7 +251,7 @@ Created
 {
   "Secret": "Secret",
   "Id": 0,
-  "Expiration": "2019-05-30T11:29:02.2866829-07:00",
+  "Expiration": "2019-05-31T14:57:08.5795202-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -277,7 +277,6 @@ Internal server error
 ## `Update Hybrid Client Secret`
 
 Update a Hybrid Client Secret
-            Only Secret Description and Secret Expiration Date can be updated
 
 ### Request
 
@@ -316,15 +315,15 @@ secretId
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-Expiration | optional: DateTime | No | Expiration date for the client secret
-Expires | optional: bool | No | Determines if the secret expires. If this value is set, non null Expiration will be ignored. Defaults to true.
+Expiration | DateTime | No | Expiration date for the client secret. If not provided the secret will never expire.
+Expires | bool | No | Determines if the secret expires. If this value is set, non null Expiration will be ignored. Defaults to true.
 Description | string | No | Description for the client secret
 
 
 
 ```json
 {
-  "Expiration": "2019-05-30T11:29:02.2919479-07:00",
+  "Expiration": "2019-05-31T14:57:08.5829853-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -349,7 +348,7 @@ Success
 ```json
 {
   "Id": 0,
-  "Expiration": "2019-05-30T11:29:02.2920694-07:00",
+  "Expiration": "2019-05-31T14:57:08.5830795-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -501,19 +500,19 @@ Success
 
 ##### Type:
 
- `List[ClientSecret]`
+ `List`
 
 ```json
 [
   {
     "Id": 0,
-    "Expiration": "2019-05-30T11:29:02.4143088-07:00",
+    "Expiration": "2019-05-31T14:57:08.6890608-07:00",
     "Expires": false,
     "Description": "description"
   },
   {
     "Id": 0,
-    "Expiration": "2019-05-30T11:29:02.4143307-07:00",
+    "Expiration": "2019-05-31T14:57:08.6890792-07:00",
     "Expires": false,
     "Description": "description"
   }
@@ -587,7 +586,7 @@ Success
 ```json
 {
   "Id": 0,
-  "Expiration": "2019-05-30T11:29:02.4159896-07:00",
+  "Expiration": "2019-05-31T14:57:08.6906466-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -644,15 +643,15 @@ ClientSecretCreateOrUpdate clientSecretCreateOrUpdate
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-Expiration | optional: DateTime | No | Expiration date for the client secret
-Expires | optional: bool | No | Determines if the secret expires. If this value is set, non null Expiration will be ignored. Defaults to true.
+Expiration | DateTime | No | Expiration date for the client secret.  If not provided the secret will never expire.
+Expires | bool | No | Determines if the secret expires. If this value is set, non null Expiration will be ignored. Defaults to true.
 Description | string | No | Description for the client secret
 
 
 
 ```json
 {
-  "Expiration": "2019-05-30T11:29:02.4197033-07:00",
+  "Expiration": "2019-05-31T14:57:08.6923968-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -678,7 +677,7 @@ Created
 {
   "Secret": "Secret",
   "Id": 0,
-  "Expiration": "2019-05-30T11:29:02.4198563-07:00",
+  "Expiration": "2019-05-31T14:57:08.692539-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -704,7 +703,6 @@ Internal server error
 ## `Update Client Credential Client Secret`
 
 Update a Client Credential Client Secret
-            Only Secret Description and Secret Expiration Date can be updated
 
 ### Request
 
@@ -743,15 +741,15 @@ secretId
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-Expiration | optional: DateTime | No | Expiration date for the client secret
-Expires | optional: bool | No | Determines if the secret expires. If this value is set, non null Expiration will be ignored. Defaults to true.
+Expiration | DateTime | No | Expiration date for the client secret. If not provided the secret will never expire.
+Expires | bool | No | Determines if the secret expires. If this value is set, non null Expiration will be ignored. Defaults to true.
 Description | string | No | Description for the client secret
 
 
 
 ```json
 {
-  "Expiration": "2019-05-30T11:29:02.4216581-07:00",
+  "Expiration": "2019-05-31T14:57:08.6970108-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -776,7 +774,7 @@ Success
 ```json
 {
   "Id": 0,
-  "Expiration": "2019-05-30T11:29:02.4217562-07:00",
+  "Expiration": "2019-05-31T14:57:08.6971447-07:00",
   "Expires": false,
   "Description": "description"
 }

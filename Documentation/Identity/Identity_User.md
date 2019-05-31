@@ -10,19 +10,19 @@ APIs for creating, getting, updating, and deleting Users
 
 For HTTP requests and responses, the User object has the following properties and JSON-serialized body: 
 
-Property | Type | Required | Descriptions
+Property | Type | Descriptions
  --- | --- | --- | ---
-Id | Guid | No | Unique User ID.
-GivenName | string | No | Given name of user.
-Surname | string | No | Surname of user.
-Name | string | No | Name of user.
-Email | string | No | Email of user.
-ContactEmail | string | No | Preferred contact email for user.
-ContactGivenName | string | No | Preferred contact name for user.
-ContactSurname | string | No | Preferred contact surname for user.
-ExternalUserId | string | No | Provider id for user.
-IdentityProviderId | optional: Guid | No | Identity Provider Id used to authenticate user.
-RoleIds | Guid[] | No | List of strings of RoleIds.
+Id | Guid | Unique User ID.
+GivenName | string | Given name of user.
+Surname | string | Surname of user.
+Name | string | Name of user.
+Email | string | Email of user.
+ContactEmail | string | Preferred contact email for user.
+ContactGivenName | string | Preferred contact name for user.
+ContactSurname | string | Preferred contact surname for user.
+ExternalUserId | string | Provider id for user.
+IdentityProviderId | Guid | Identity Provider Id used to authenticate user.
+RoleIds | Guid[] | List of strings of RoleIds.
 
 ### Serialized Model
 
@@ -106,7 +106,7 @@ Success.
 
 ##### Type:
 
- `List[User]`
+ `List`
 
 ```json
 [
@@ -151,7 +151,7 @@ Success.
 
 ##### Type:
 
- `MultiStatusResponse[User]`
+ `MultiStatusResponse`
 
 ```json
 {
@@ -301,7 +301,7 @@ Success.
 
 ##### Type:
 
- `List[UserStatus]`
+ `List`
 
 ```json
 [
@@ -563,7 +563,7 @@ Success
 
 ##### Type:
 
- `Newtonsoft.Json.Linq.JObject`
+ `JObject`
 
 ```json
 {}
@@ -618,23 +618,6 @@ JObject preferences
 
 JSON Preferences
 
-Property | Type | Required | Description 
- --- | --- | --- | ---
-Type | JTokenType | No | 
-Item | JToken | No | 
-Item | JToken | No | 
-HasValues | bool | No | 
-First | JToken | No | 
-Last | JToken | No | 
-Count | int32 | No | 
-Parent | JContainer | No | 
-Root | JToken | No | 
-Next | JToken | No | 
-Previous | JToken | No | 
-Path | string | No | 
-
-
-
 ```json
 {}
 ```
@@ -654,7 +637,7 @@ Success
 
 ##### Type:
 
- `Newtonsoft.Json.Linq.JObject`
+ `JObject`
 
 ```json
 {}
@@ -708,17 +691,17 @@ User values to use during creating
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-UserId | optional: Guid | No | User Id for the user. When creating a user, if User ID is not specified, one will be generated.
-ContactGivenName | string | No | Preferred name to be used when contacting user.
-ContactSurname | string | No | Preferred surname to be used when contacting user.
-ContactEmail | string | No | Preferred contact email to be used.
-RoleIds | Guid[] | No | List of strings of RoleIds.
+Id | Guid | No | User Id for the user. When creating a user, if User ID is not specified, one will be generated.
+ContactGivenName | string | Yes | Preferred name to be used when contacting user.
+ContactSurname | string | Yes | Preferred surname to be used when contacting user.
+ContactEmail | string | Yes | Preferred contact email to be used.
+RoleIds | Guid[] | Yes | List of strings of RoleIds. At least one role must be provided.
 
 
 
 ```json
 {
-  "UserId": "00000000-0000-0000-0000-000000000000",
+  "Id": "00000000-0000-0000-0000-000000000000",
   "ContactGivenName": "Name",
   "ContactSurname": "Surname",
   "ContactEmail": "user@company.com",
@@ -819,7 +802,7 @@ A UserStatus object
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-UserId | optional: Guid | No | User Id for the user. When creating a user, if User ID is not specified, one will be generated.
+Id | Guid | No | User Id for the user. When creating a user. Must be the same as the one in the route.
 ContactGivenName | string | No | Preferred name to be used when contacting user.
 ContactSurname | string | No | Preferred surname to be used when contacting user.
 ContactEmail | string | No | Preferred contact email to be used.
@@ -829,7 +812,7 @@ RoleIds | Guid[] | No | List of strings of RoleIds.
 
 ```json
 {
-  "UserId": "00000000-0000-0000-0000-000000000000",
+  "Id": "00000000-0000-0000-0000-000000000000",
   "ContactGivenName": "Name",
   "ContactSurname": "Surname",
   "ContactEmail": "user@company.com",

@@ -10,18 +10,18 @@ APIs for creating, getting, updating, and deleting Hybrid Clients
 
 For HTTP requests and responses, the HybridClient object has the following properties and JSON-serialized body: 
 
-Property | Type | Required | Descriptions
+Property | Type | Descriptions
  --- | --- | --- | ---
-AllowOfflineAccess | optional: bool | No | Specifies whether this client can request refresh tokens, by providing the *offline_access* scopes.
-AllowAccessTokensViaBrowser | optional: bool | No | Specifies whether this HybridClient is allowed to receive access tokens via the browser. This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow client that is supposed to use code *id_token* to add the *token* response type, thus leaking the token to the browser).
-RedirectUris | string[] | No | Specifies the allowed URIs to return tokens or authorization codes to.
-PostLogoutRedirectUris | string[] | No | Specifies allowed URIs to redirect to after logout.
-ClientUri | string | No | URI to a page with information about client (used on consent screen).
-LogoUri | string | No | URI to client logo (used on consent screen).
-Id | string | No | Client ID for this Client
-Name | string | Yes | Name of Client.
-Enabled | optional: bool | No | Is Client Enabled
-Tags | string[] | No | For OSIsoft internal use only
+AllowOfflineAccess | bool | Specifies whether this client can request refresh tokens, by providing the *offline_access* scopes.
+AllowAccessTokensViaBrowser | bool | Specifies whether this HybridClient is allowed to receive access tokens via the browser. This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow client that is supposed to use code *id_token* to add the *token* response type, thus leaking the token to the browser).
+RedirectUris | string[] | Specifies the allowed URIs to return tokens or authorization codes to.
+PostLogoutRedirectUris | string[] | Specifies allowed URIs to redirect to after logout.
+ClientUri | string | URI to a page with information about client (used on consent screen).
+LogoUri | string | URI to client logo (used on consent screen).
+Id | string | Client ID for this Client
+Name | string | Name of Client.
+Enabled | bool | Is Client Enabled
+Tags | string[] | For OSIsoft internal use only
 
 ### Serialized Model
 
@@ -79,16 +79,16 @@ New HybridClientCreate object
 Property | Type | Required | Description 
  --- | --- | --- | ---
 SecretDescription | string | No | Description for the initial secret for the client.
-SecretExpirationDate | optional: DateTime | No | Expiration date for the initial secret for the client.
-AllowOfflineAccess | optional: bool | No | Specifies whether this client can request refresh tokens, by providing the *offline_access* scopes.
-AllowAccessTokensViaBrowser | optional: bool | No | Specifies whether this HybridClient is allowed to receive access tokens via the browser.            This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow            client that is supposed to use code *id_token* to add the *token* response type, thus            leaking the token to the browser).
+SecretExpirationDate | DateTime | No | Expiration date for the initial secret for the client.
+AllowOfflineAccess | bool | No | Specifies whether this client can request refresh tokens, by providing the *offline_access* scopes.
+AllowAccessTokensViaBrowser | bool | No | Specifies whether this HybridClient is allowed to receive access tokens via the browser.            This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow            client that is supposed to use code *id_token* to add the *token* response type, thus            leaking the token to the browser).
 RedirectUris | string[] | No | Specifies the allowed URIs to return tokens or authorization codes to.
 PostLogoutRedirectUris | string[] | No | Specifies allowed URIs to redirect to after logout.
 ClientUri | string | No | URI to a page with information about client (used on consent screen).
 LogoUri | string | No | URI to client logo (used on consent screen).
 Id | string | No | Client ID for this Client
 Name | string | Yes | Name of Client.
-Enabled | optional: bool | No | Is Client Enabled
+Enabled | bool | No | Is Client Enabled
 Tags | string[] | No | For OSIsoft internal use only
 
 
@@ -96,7 +96,7 @@ Tags | string[] | No | For OSIsoft internal use only
 ```json
 {
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-05-30T11:29:02.2149303-07:00",
+  "SecretExpirationDate": "2019-05-31T14:57:08.5227228-07:00",
   "AllowOfflineAccess": false,
   "AllowAccessTokensViaBrowser": false,
   "RedirectUris": [
@@ -133,14 +133,14 @@ Created
 
 ##### Type:
 
- `ClientResponse[HybridClient]`
+ `ClientResponse`
 
 ```json
 {
   "Secret": "Secret",
   "Id": 0,
   "Description": "description",
-  "ExpirationDate": "2019-05-30T11:29:02.2287273-07:00",
+  "ExpirationDate": "2019-05-31T14:57:08.533641-07:00",
   "Client": {
     "AllowOfflineAccess": false,
     "AllowAccessTokensViaBrowser": false,
@@ -224,15 +224,15 @@ Updated Hybrid Client values
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-AllowOfflineAccess | optional: bool | No | Specifies whether this client can request refresh tokens, by providing the *offline_access* scopes.
-AllowAccessTokensViaBrowser | optional: bool | No | Specifies whether this HybridClient is allowed to receive access tokens via the browser.            This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow            client that is supposed to use code *id_token* to add the *token* response type, thus            leaking the token to the browser).
+AllowOfflineAccess | bool | No | Specifies whether this client can request refresh tokens, by providing the *offline_access* scopes.
+AllowAccessTokensViaBrowser | bool | No | Specifies whether this HybridClient is allowed to receive access tokens via the browser.            This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow            client that is supposed to use code *id_token* to add the *token* response type, thus            leaking the token to the browser).
 RedirectUris | string[] | No | Specifies the allowed URIs to return tokens or authorization codes to.
 PostLogoutRedirectUris | string[] | No | Specifies allowed URIs to redirect to after logout.
 ClientUri | string | No | URI to a page with information about client (used on consent screen).
 LogoUri | string | No | URI to client logo (used on consent screen).
-Id | string | No | Client ID for this Client
+Id | string | No | Client ID for this Client. Must be same as the one in the route. Must be the same as the Id in the route.
 Name | string | Yes | Name of Client.
-Enabled | optional: bool | No | Is Client Enabled
+Enabled | bool | No | Is Client Enabled
 Tags | string[] | No | For OSIsoft internal use only
 
 
@@ -470,7 +470,7 @@ Success
 
 ##### Type:
 
- `List[HybridClient]`
+ `List`
 
 ```json
 [

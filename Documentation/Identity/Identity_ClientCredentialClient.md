@@ -10,13 +10,13 @@ APIs for creating, getting, updating, and deleting Client Credential Clients
 
 For HTTP requests and responses, the ClientCredentialClient object has the following properties and JSON-serialized body: 
 
-Property | Type | Required | Descriptions
+Property | Type | Descriptions
  --- | --- | --- | ---
-RoleIds | Guid[] | No | List of Roles to be assigned to this client.
-Id | string | No | Client ID for this Client
-Name | string | Yes | Name of Client.
-Enabled | optional: bool | No | Is Client Enabled
-Tags | string[] | No | For OSIsoft internal use only
+RoleIds | Guid[] | List of Roles to be assigned to this client.
+Id | string | Client ID for this Client
+Name | string | Name of Client.
+Enabled | bool | Is Client Enabled
+Tags | string[] | For OSIsoft internal use only
 
 ### Serialized Model
 
@@ -66,11 +66,11 @@ New ClientCredentialClientCreate object
 Property | Type | Required | Description 
  --- | --- | --- | ---
 SecretDescription | string | No | Description for the initial secret for the client.
-SecretExpirationDate | optional: DateTime | No | Expiration date for the initial secret for the client.
+SecretExpirationDate | DateTime | No | Expiration date for the initial secret for the client.
 RoleIds | Guid[] | No | List of Roles to be assigned to this client.
-Id | string | No | Client ID for this Client
+Id | string | No | Client ID for this Client.Must be the same as the one in the route
 Name | string | Yes | Name of Client.
-Enabled | optional: bool | No | Is Client Enabled
+Enabled | bool | No | Is Client Enabled
 Tags | string[] | No | For OSIsoft internal use only
 
 
@@ -78,7 +78,7 @@ Tags | string[] | No | For OSIsoft internal use only
 ```json
 {
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-05-30T11:29:02.3410348-07:00",
+  "SecretExpirationDate": "2019-05-31T14:40:00.9915507-07:00",
   "RoleIds": [
     "00000000-0000-0000-0000-000000000000",
     "00000000-0000-0000-0000-000000000000"
@@ -107,14 +107,14 @@ Created
 
 ##### Type:
 
- `ClientResponse[ClientCredentialClient]`
+ `ClientResponse`
 
 ```json
 {
   "Secret": "Secret",
   "Id": 0,
   "Description": "description",
-  "ExpirationDate": "2019-05-30T11:29:02.3440195-07:00",
+  "ExpirationDate": "2019-05-31T14:40:00.9937295-07:00",
   "Client": {
     "RoleIds": [
       "00000000-0000-0000-0000-000000000000",
@@ -191,9 +191,9 @@ Updated Client Credential Client values
 Property | Type | Required | Description 
  --- | --- | --- | ---
 RoleIds | Guid[] | No | List of Roles to be assigned to this client.
-Id | string | No | Client ID for this Client
+Id | string | No | Client ID for this Client. Must be the same as the Id in the route.
 Name | string | Yes | Name of Client.
-Enabled | optional: bool | No | Is Client Enabled
+Enabled | bool | No | Is Client Enabled
 Tags | string[] | No | For OSIsoft internal use only
 
 
@@ -409,7 +409,7 @@ Success
 
 ##### Type:
 
- `List[ClientCredentialClient]`
+ `List`
 
 ```json
 [
@@ -448,7 +448,7 @@ Partial success.
 
 ##### Type:
 
- `MultiStatusResponse[ClientCredentialClient]`
+ `MultiStatusResponse`
 
 ```json
 {
@@ -568,125 +568,6 @@ Forbidden
 #### 404
 
 Client or Tenant not found
-
-#### 500
-
-Internal server error
-***
-
-## `Create Client Credential Client`
-
-Create a Client Credential flow Client
-
-### Request
-
-`POST api/v1/Tenants/{tenantId}/ClientCredentialClients`
-
-### Parameters
-
-```csharp
-[Required]
-string tenantId
-```
-
-Id of tenant
-
-```csharp
-[FromBody]
-[Required]
-ClientCredentialClientCreate clientCredentialClientCreate
-```
-
-New ClientCredentialClientCreate object
-
-Property | Type | Required | Description 
- --- | --- | --- | ---
-SecretDescription | string | No | 
-SecretExpirationDate | optional: DateTime | No | 
-RoleIds | Guid[] | No | 
-ClientId | string | No | 
-Id | string | No | 
-Name | string | Yes | 
-Enabled | optional: bool | No | 
-Tags | string[] | No | 
-
-
-
-```json
-{
-  "SecretDescription": "description",
-  "SecretExpirationDate": "2019-05-30T11:29:02.3660424-07:00",
-  "RoleIds": [
-    "00000000-0000-0000-0000-000000000000",
-    "00000000-0000-0000-0000-000000000000"
-  ],
-  "ClientId": "ClientId",
-  "Id": "Id",
-  "Name": "Name",
-  "Enabled": false,
-  "Tags": [
-    "String",
-    "String"
-  ]
-}
-```
-
-### Security
-
-Allowed for these roles:
-
-- `Account Administrator`
-
-### Returns
-
-#### 201
-
-Created
-
-##### Type:
-
- `VPreview.ClientCredentialClientResponse`
-
-```json
-{
-  "ClientSecret": "ClientSecret",
-  "SecretId": "SecretId",
-  "SecretDescription": "description",
-  "SecretExpirationDate": "2019-05-30T11:29:02.371092-07:00",
-  "RoleIds": [
-    "00000000-0000-0000-0000-000000000000",
-    "00000000-0000-0000-0000-000000000000"
-  ],
-  "ClientId": "ClientId",
-  "Id": "Id",
-  "Name": "Name",
-  "Enabled": false,
-  "Tags": [
-    "String",
-    "String"
-  ]
-}
-```
-
-#### 400
-
-Missing or invalid inputs, or Client limit exceeded.
-
-#### 401
-
-Unauthorized
-
-#### 403
-
-Forbidden
-
-#### 404
-
-Tenant not found
-
-#### 409
-
-Client Id already exists
 
 #### 500
 

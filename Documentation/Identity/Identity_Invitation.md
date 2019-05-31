@@ -10,25 +10,25 @@ APIs for creating, getting, updating, and deleting an Invitation
 
 For HTTP requests and responses, the Invitation object has the following properties and JSON-serialized body: 
 
-Property | Type | Required | Descriptions
+Property | Type | Descriptions
  --- | --- | --- | ---
-Id | string | Yes | Unique Invitation Id.
-Issued | DateTime | Yes | Invitation issuing timestamp.
-Expires | DateTime | Yes | Invitation expiration timestamp.
-Accepted | optional: DateTime | No | Invitation accepted timestamp.
-State | InvitationStates | Yes | Invitation state. Can be None (0), InvitationEmailSent (1), InvitationAccepted (2)
-TenantId | string | Yes | ID of the Tenant the invitation belongs to.
-UserId | Guid | Yes | ID of the User whom the invitation was issued to.
-IdentityProviderId | optional: Guid | No | ID of the Identity Provider that must be used to accept the invitation.
+Id | string | Unique Invitation Id.
+Issued | DateTime | Invitation issuing timestamp.
+Expires | DateTime | Invitation expiration timestamp.
+Accepted | DateTime | Invitation accepted timestamp.
+State | InvitationStates | Invitation state. Can be None (0), InvitationEmailSent (1), InvitationAccepted (2)
+TenantId | string | ID of the Tenant the invitation belongs to.
+UserId | Guid | ID of the User whom the invitation was issued to.
+IdentityProviderId | Guid | ID of the Identity Provider that must be used to accept the invitation.
 
 ### Serialized Model
 
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-05-30T11:29:02.5157384-07:00",
-  "Expires": "2019-05-30T11:29:02.5157419-07:00",
-  "Accepted": "2019-05-30T11:29:02.5157447-07:00",
+  "Issued": "2019-05-31T14:57:08.818742-07:00",
+  "Expires": "2019-05-31T14:57:08.8187457-07:00",
+  "Accepted": "2019-05-31T14:57:08.8187487-07:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -81,9 +81,9 @@ Success
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-05-30T11:29:02.5216478-07:00",
-  "Expires": "2019-05-30T11:29:02.5216525-07:00",
-  "Accepted": "2019-05-30T11:29:02.5216595-07:00",
+  "Issued": "2019-05-31T14:57:08.8230985-07:00",
+  "Expires": "2019-05-31T14:57:08.8231026-07:00",
+  "Accepted": "2019-05-31T14:57:08.823106-07:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -175,15 +175,15 @@ Success
 
 ##### Type:
 
- `List[Invitation]`
+ `List`
 
 ```json
 [
   {
     "Id": "Id",
-    "Issued": "2019-05-30T11:29:02.5239654-07:00",
-    "Expires": "2019-05-30T11:29:02.5239692-07:00",
-    "Accepted": "2019-05-30T11:29:02.5239739-07:00",
+    "Issued": "2019-05-31T14:57:08.8247538-07:00",
+    "Expires": "2019-05-31T14:57:08.8247586-07:00",
+    "Accepted": "2019-05-31T14:57:08.8247617-07:00",
     "State": 0,
     "TenantId": "00000000-0000-0000-0000-000000000000",
     "UserId": "00000000-0000-0000-0000-000000000000",
@@ -191,9 +191,9 @@ Success
   },
   {
     "Id": "Id",
-    "Issued": "2019-05-30T11:29:02.523995-07:00",
-    "Expires": "2019-05-30T11:29:02.5239967-07:00",
-    "Accepted": "2019-05-30T11:29:02.5239996-07:00",
+    "Issued": "2019-05-31T14:57:08.8247759-07:00",
+    "Expires": "2019-05-31T14:57:08.8247768-07:00",
+    "Accepted": "2019-05-31T14:57:08.8247784-07:00",
     "State": 0,
     "TenantId": "00000000-0000-0000-0000-000000000000",
     "UserId": "00000000-0000-0000-0000-000000000000",
@@ -257,16 +257,16 @@ New InvitationCreateOrUpdate object
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-ExpiresDateTime | optional: DateTime | No | Invitation expiration date. Must be in the future.
-State | optional: InvitationStates | No | Set the state of invitation.
-SendInvitation | optional: bool | No | Send the invitation. Default is true.
-IdentityProviderId | optional: Guid | No | Identity Provider to use for accepting this invitation. Null implies invitation can be accepted using any            configured Identity Provider.
+ExpiresDateTime | DateTime | No | Invitation expiration date. Must be in the future.
+State | InvitationStates | No | Set the state of invitation.
+SendInvitation | bool | No | Send the invitation. Default is true.
+IdentityProviderId | Guid | No | Identity Provider to use for accepting this invitation. Null implies invitation can be accepted using any            configured Identity Provider.
 
 
 
 ```json
 {
-  "ExpiresDateTime": "2019-05-30T11:29:02.5260377-07:00",
+  "ExpiresDateTime": "2019-05-31T14:57:08.8271583-07:00",
   "State": 0,
   "SendInvitation": false,
   "IdentityProviderId": "00000000-0000-0000-0000-000000000000"
@@ -292,9 +292,9 @@ Success
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-05-30T11:29:02.5295716-07:00",
-  "Expires": "2019-05-30T11:29:02.5295772-07:00",
-  "Accepted": "2019-05-30T11:29:02.5295831-07:00",
+  "Issued": "2019-05-31T14:57:08.829861-07:00",
+  "Expires": "2019-05-31T14:57:08.8298663-07:00",
+  "Accepted": "2019-05-31T14:57:08.8298719-07:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -419,9 +419,9 @@ Success
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-05-30T11:29:02.5734101-07:00",
-  "Expires": "2019-05-30T11:29:02.573416-07:00",
-  "Accepted": "2019-05-30T11:29:02.5734227-07:00",
+  "Issued": "2019-05-31T14:57:08.8742373-07:00",
+  "Expires": "2019-05-31T14:57:08.8742414-07:00",
+  "Accepted": "2019-05-31T14:57:08.874277-07:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -480,16 +480,16 @@ InvitationCreateOrUpdate object
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-ExpiresDateTime | optional: DateTime | No | Invitation expiration date. Must be in the future.
-State | optional: InvitationStates | No | Set the state of invitation.
-SendInvitation | optional: bool | No | Send the invitation. Default is true.
-IdentityProviderId | optional: Guid | No | Identity Provider to use for accepting this invitation. Null implies invitation can be accepted using any            configured Identity Provider.
+ExpiresDateTime | DateTime | No | Invitation expiration date. Must be within 2 months in the future.
+State | InvitationStates | No | Set the state of invitation.
+SendInvitation | bool | No | Send the invitation. Default is true.
+IdentityProviderId | Guid | No | Identity Provider to use for accepting this invitation. Null implies invitation can be accepted using any            configured Identity Provider.
 
 
 
 ```json
 {
-  "ExpiresDateTime": "2019-05-30T11:29:02.5748297-07:00",
+  "ExpiresDateTime": "2019-05-31T14:57:08.8763743-07:00",
   "State": 0,
   "SendInvitation": false,
   "IdentityProviderId": "00000000-0000-0000-0000-000000000000"
@@ -515,9 +515,9 @@ Created
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-05-30T11:29:02.5749278-07:00",
-  "Expires": "2019-05-30T11:29:02.5749301-07:00",
-  "Accepted": "2019-05-30T11:29:02.5749338-07:00",
+  "Issued": "2019-05-31T14:57:08.8765326-07:00",
+  "Expires": "2019-05-31T14:57:08.8765354-07:00",
+  "Accepted": "2019-05-31T14:57:08.8765399-07:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -584,16 +584,16 @@ InvitationCreateOrUpdate object
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-ExpiresDateTime | optional: DateTime | No | Invitation expiration date. Must be in the future.
-State | optional: InvitationStates | No | Set the state of invitation.
-SendInvitation | optional: bool | No | Send the invitation. Default is true.
-IdentityProviderId | optional: Guid | No | Identity Provider to use for accepting this invitation. Null implies invitation can be accepted using any            configured Identity Provider.
+ExpiresDateTime | DateTime | No | Invitation expiration date. Must be within 2 months in the future.
+State | InvitationStates | No | Set the state of invitation.
+SendInvitation | bool | No | Send the invitation. Default is true.
+IdentityProviderId | Guid | No | Identity Provider to use for accepting this invitation. Null implies invitation can be accepted using any            configured Identity Provider.
 
 
 
 ```json
 {
-  "ExpiresDateTime": "2019-05-30T11:29:02.5768757-07:00",
+  "ExpiresDateTime": "2019-05-31T14:57:08.8782746-07:00",
   "State": 0,
   "SendInvitation": false,
   "IdentityProviderId": "00000000-0000-0000-0000-000000000000"
@@ -619,9 +619,9 @@ Updated
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-05-30T11:29:02.5770236-07:00",
-  "Expires": "2019-05-30T11:29:02.577026-07:00",
-  "Accepted": "2019-05-30T11:29:02.5770302-07:00",
+  "Issued": "2019-05-31T14:57:08.8784046-07:00",
+  "Expires": "2019-05-31T14:57:08.8784072-07:00",
+  "Accepted": "2019-05-31T14:57:08.8784113-07:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -640,9 +640,9 @@ Created
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-05-30T11:29:02.5771215-07:00",
-  "Expires": "2019-05-30T11:29:02.5771236-07:00",
-  "Accepted": "2019-05-30T11:29:02.5771275-07:00",
+  "Issued": "2019-05-31T14:57:08.8784625-07:00",
+  "Expires": "2019-05-31T14:57:08.8784643-07:00",
+  "Accepted": "2019-05-31T14:57:08.878468-07:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",

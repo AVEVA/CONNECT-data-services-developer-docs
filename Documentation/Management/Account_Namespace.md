@@ -5,7 +5,7 @@ uid: AccountNamespace
 # Namespaces
 
 A `Namespace` is a collection of SDS types, streams, and stream views. Namespace identifiers are unique within an account. Requirements for Namespace IDs are the following:
-- Must contain 100 characters or fewer
+- Must contain 260 characters or fewer
 - Must only contain alphanumeric characters, underscores, dashes, spaces, and periods
 - Must not contain two consecutive periods
 - Must not start or end with a period
@@ -18,17 +18,17 @@ For HTTP requests and responses, the Namespace object has the following properti
 
 | Property | Type | Description | 
  | --- | --- | ---  | 
-| Id | string | Name of this Namespace. Unique within a Tenant's Namespaces. | 
-| TenantId | string | GUID of the Tenant that this Namespace corresponds to | 
-| Region | string | The region that the namespace is provisioned in | 
-| Self | string | The namespace's URI | 
-| Description | string | Description of this Namespace. | 
-| TierId | string | Id of the Tier that this Namespace is associated with. | 
-| ThroughputUnits | int32 | Number of Throughput units for this Namespace. | 
-| StorageUnits | int32 | Number of Storage units for this Namespace. | 
-| State | NamespaceProvisioningState | Current state of this Namespace. | 
-| Owner | Trustee | Owner [Trustee](xref:accessControl) of this Namespace. | 
-| AccessControl | AccessControlList | The [AccessControlList](xref:accessControl) that defines Access Control for this `Namespace` | 
+| Id | string | Gets or sets name of this Namespace; unique within a Tenant's Namespaces. | 
+| TenantId | string | Gets or sets unique identifier of the Tenant that this Namespace corresponds to. | 
+| Region | string | Gets or sets the region that the namespace is provisioned in. | 
+| Self | string | Gets or sets the namespace's URI. | 
+| Description | string | Gets or sets description of this Namespace. | 
+| TierId | string | Gets or sets id of the Tier that this Namespace is associated with. | 
+| ThroughputUnits | int32 | Gets or sets number of Throughput units for this Namespace. | 
+| StorageUnits | int32 | Gets or sets number of Storage units for this Namespace. | 
+| State | NamespaceProvisioningState | Gets or sets current state of this Namespace. | 
+| Owner | Trustee | Gets or sets owner [Trustee](xref:accessControl) of this Namespace. | 
+| AccessControl | AccessControlList | Gets or sets the [AccessControlList](xref:accessControl) that defines Access Control for this `Namespace`. | 
 
 
 ```json
@@ -162,7 +162,7 @@ The new `Namespace` to be created.
 string namespaceId
 ```
 
-The Id of the new `Namespace`. The Id can also be specified in the namespaceObj. If it is omitted in both, the Id will be generated.
+The Id of the new `Namespace`. The Id can also be specified in the namespace object. If it is omitted in both, the Id will be generated.
 
 
 ### Security

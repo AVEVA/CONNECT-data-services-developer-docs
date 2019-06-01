@@ -4,7 +4,7 @@ uid: AccountServiceBlog
 
 # Service Blog
 
-API's for retrieving service blog entries from OSIsoft Cloud Services.
+API's for CRUD operations on the Service Blog.
 
 ***
 
@@ -20,16 +20,18 @@ Returns blog entries ordered by time posted.
 ### Parameters
 
 ```csharp
-[Required]
-[FromRoute]
-string skip
+[Optional]
+[Default = "0"]
+[FromQuery]
+int32 skip
 ```
 
 Number of blogs to skip for paging purposes.
 ```csharp
-[Required]
-[FromRoute]
-string count
+[Optional]
+[Default = "100"]
+[FromQuery]
+int32 count
 ```
 
 Number of blogs to count after skip for paging purposes.

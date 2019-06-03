@@ -1267,6 +1267,138 @@ Content-Type: application/json
 ```
 ****
 
+## ``Get Sampled Values``
+
+Returns representative data sampled by intervals between a specified start and end index. 
+  
+Sampling is driven by a specified property or properties of the stream's Sds Type. Property types that cannot be interpolated do not support sampling requests. Strings are an example of a property that cannot be interpolated. For more 
+information see [Interpolation.](https://ocs-docs.osisoft.com/Documentation/SequentialDataStore/SDS_Types.html#interpolation) 
+
+**Request**  
+ ```text
+    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
+        Sampled?startIndex={startIndex}&endIndex={endIndex}&intervals={intervals}&sampleBy={sampleBy}
+        &boundaryType={boundaryType}&startBoundaryType={startBoundaryType}
+        &endBoundaryType={endBoundaryType}&filter={filter}&streamViewId={streamViewId}
+ ```
+
+**Parameters**  
+``string tenantId``  
+The tenant identifier
+
+``string namespaceId``  
+The namespace identifier
+
+``string streamId``  
+The stream identifier
+
+``string startIndex``  
+The start index for the intervals
+
+``string endIndex``  
+The end index for the intervals
+
+``int intervals``  
+The number of intervals requested
+
+``string sampleBy``  
+Property or properties to use when sampling
+
+``SdsBoundaryType boundaryType``  
+Optional SdsBoundaryType specifies the handling of events at or near the startIndex and endIndex
+
+``SdsBoundaryType startBoundaryType``  
+Optional SdsBoundaryType specifies the handling of events at or near the startIndex
+
+``SdsBoundaryType endBoundaryType``  
+Optional SdsBoundaryType specifies the handling of events at or near the endIndex
+
+``string filter``  
+Optional filter expression
+
+**Response**  
+The response includes a status code and a response body containing a serialized collection of events.
+
+**Example**  
+The following request returns two sample intervals between the `startIndex` and `endIndex`: 
+ ```text
+    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data/
+        Sampled?startIndex=2019-01-01T00:00:00Z&endIndex=2019-01-02T00:00:00Z&intervals=2&sampleBy=Measurement
+ ```
+ 
+**Response body**
+```json
+HTTP/1.1 200
+Content-Type: application/json
+
+[
+    {
+        "Time": "2019-01-01T00:00:01Z",
+        "State": 1,
+        "Measurement": 1
+    },
+    {
+        "Time": "2019-01-01T00:11:50Z",
+        "State": 2,
+        "Measurement": 0.00006028870675578446
+    },
+    {
+        "Time": "2019-01-01T11:55:33Z",
+        "Measurement": 6.277981349066863
+    },
+    {
+        "Time": "2019-01-01T12:00:00Z",
+        "Measurement": 3.101013140344655
+    },
+    {
+        "Time": "2019-01-01T12:00:01Z",
+        "State": 1,
+        "Measurement": 4.101013140344655
+    },
+    {
+        "Time": "2019-01-01T12:01:50Z",
+        "State": 2,
+        "Measurement": 0.0036776111121028521
+    },
+    {
+        "Time": "2019-01-01T23:57:23Z",
+        "State": 2,
+        "Measurement": 6.2816589601789659
+    },
+    {
+        "Time": "2019-01-02T00:00:00Z",
+        "Measurement": 6.20202628068931
+    }
+]
+```
+Note that `State` is not included in the JSON when its value is the default value.
+
+**.NET Library**
+```csharp
+   Task<IEnumerable<T>> GetSampledValuesAsync<T>(string streamId, string startIndex, string endIndex,
+      int intervals, IEnumerable<string> sampleBy, string streamViewId = null);  
+   
+   Task<IEnumerable<T>> GetSampledValuesAsync<T>(string streamId, string startIndex, string endIndex,
+      int intervals, IEnumerable<string> sampleBy, SdsBoundaryType boundaryType, 
+      string streamViewId = null);  
+   
+   Task<IEnumerable<T>> GetSampledValuesAsync<T>(string streamId, string startIndex, string endIndex,
+      int intervals, IEnumerable<string> sampleBy, SdsBoundaryType startBoundaryType, 
+      SdsBoundaryType endBoundaryType, string streamViewId = null);
+
+   Task<IEnumerable<T>> GetSampledFilteredValuesAsync<T>(string streamId, string startIndex, string endIndex,
+      int intervals, IEnumerable<string> sampleBy, string filter, string streamViewId = null);  
+   
+   Task<IEnumerable<T>> GetSampledFilteredValuesAsync<T>(string streamId, string startIndex, string endIndex,
+      int intervals, IEnumerable<string> sampleBy, SdsBoundaryType boundaryType, string filter, 
+      string streamViewId = null);  
+   
+   Task<IEnumerable<T>> GetSampledFilteredValuesAsync<T>(string streamId, string startIndex, string endIndex,
+      int intervals, IEnumerable<string> sampleBy, SdsBoundaryType startBoundaryType, 
+      SdsBoundaryType endBoundaryType, string filter, string streamViewId = null);
+```
+****
+
 ## ``Join Values``
 
 Returns data from multiple streams, which are joined based on the request specifications. The streams must be of the same SdsType.

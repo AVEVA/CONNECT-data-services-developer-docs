@@ -10,8 +10,8 @@ APIs for creating, getting, updating, and deleting Users
 
 For HTTP requests and responses, the User object has the following properties and JSON-serialized body: 
 
-Property | Type | Descriptions
- --- | --- | --- | ---
+Property | Type | Description
+ --- | --- | ---
 Id | Guid | Unique User ID.
 GivenName | string | Given name of user.
 Surname | string | Surname of user.

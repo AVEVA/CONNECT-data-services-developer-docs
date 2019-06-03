@@ -10,8 +10,8 @@ APIs for creating, getting, updating, and deleting Implicit Clients
 
 For HTTP requests and responses, the ImplicitClient object has the following properties and JSON-serialized body: 
 
-Property | Type | Descriptions
- --- | --- | --- | ---
+Property | Type | Description
+ --- | --- | --- 
 AllowedCorsOrigins | string[] | If specified, will be used by the default CORS policy service implementations to build a CORS policy for JavaScript clients.
 RedirectUris | string[] | Specifies the allowed URIs to return tokens or authorization codes to.
 PostLogoutRedirectUris | string[] | Specifies allowed URIs to redirect to after logout.

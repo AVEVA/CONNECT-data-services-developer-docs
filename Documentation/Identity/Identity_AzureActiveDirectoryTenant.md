@@ -10,8 +10,8 @@ APIs for creating, getting, updating, and deleting Azure Active Directory Tenant
 
 For HTTP requests and responses, the AzureActiveDirectoryTenant object has the following properties and JSON-serialized body: 
 
-Property | Type | Descriptions
- --- | --- | --- | ---
+Property | Type | Description
+ --- | --- | ---
 Id | string | Id of an Azure Active Directory Tenant
 ConsentState | ConsentState | Consent State of Azure Active Directory Tenant. Can be: NotConsented (0), Consented (1)
 

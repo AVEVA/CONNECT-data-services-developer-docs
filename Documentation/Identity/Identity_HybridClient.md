@@ -10,8 +10,8 @@ APIs for creating, getting, updating, and deleting Hybrid Clients
 
 For HTTP requests and responses, the HybridClient object has the following properties and JSON-serialized body: 
 
-Property | Type | Descriptions
- --- | --- | --- | ---
+Property | Type | Description
+ --- | --- | ---
 AllowOfflineAccess | bool | Specifies whether this client can request refresh tokens, by providing the *offline_access* scopes.
 AllowAccessTokensViaBrowser | bool | Specifies whether this HybridClient is allowed to receive access tokens via the browser. This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow client that is supposed to use code *id_token* to add the *token* response type, thus leaking the token to the browser).
 RedirectUris | string[] | Specifies the allowed URIs to return tokens or authorization codes to.

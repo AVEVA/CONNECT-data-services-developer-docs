@@ -10,8 +10,8 @@ APIs for creating, getting, updating, and deleting Client Credential Clients
 
 For HTTP requests and responses, the ClientCredentialClient object has the following properties and JSON-serialized body: 
 
-Property | Type | Descriptions
- --- | --- | --- | ---
+Property | Type | Description
+ --- | --- | ---
 RoleIds | Guid[] | List of Roles to be assigned to this client.
 Id | string | Client ID for this Client
 Name | string | Name of Client.

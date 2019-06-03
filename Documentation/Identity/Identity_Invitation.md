@@ -10,8 +10,8 @@ APIs for creating, getting, updating, and deleting an Invitation
 
 For HTTP requests and responses, the Invitation object has the following properties and JSON-serialized body: 
 
-Property | Type | Descriptions
- --- | --- | --- | ---
+Property | Type | Description
+ --- | --- | ---
 Id | string | Unique Invitation Id.
 Issued | DateTime | Invitation issuing timestamp.
 Expires | DateTime | Invitation expiration timestamp.

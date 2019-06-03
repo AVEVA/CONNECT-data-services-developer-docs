@@ -847,7 +847,7 @@ In this case, the results contain the final event. The returned continuation tok
 
 ## `Get Interpolated Values`
 
-Returns a collection of values based on request parameters. The stream’s read characteristics determine how events 
+Returns a collection of values based on request parameters. The stream's read characteristics determine how events 
 are calculated for indexes at which no stored event exists. Interpolation is not supported for streams with compound indexes.
 
 SDS supports two ways of specifying which interpolated events to return:  
@@ -857,7 +857,7 @@ SDS supports two ways of specifying which interpolated events to return:
 <a name="getvaluesindexcollection"></a>
 ### `Index Collection`  
 
-Returns events at the specified indexes. If no stored event exists at a specified index, the stream’s read characteristics determine how the returned event is calculated.
+Returns events at the specified indexes. If no stored event exists at a specified index, the stream's read characteristics determine how the returned event is calculated.
 
 **Request**  
  ```text
@@ -979,7 +979,7 @@ Content-Type: application/json
 <a name="getvaluesinterpolatedinterval"></a>
 ### `Interval`
 
-Returns events at evenly spaced intervals based on the specified start index, end index, and count. If no stored event exists at an index interval, the stream’s read characteristics determine how the returned event is calculated.
+Returns events at evenly spaced intervals based on the specified start index, end index, and count. If no stored event exists at an index interval, the stream's read characteristics determine how the returned event is calculated.
 
 **Request**  
  ```text

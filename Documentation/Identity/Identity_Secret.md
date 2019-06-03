@@ -49,7 +49,7 @@ Query to execute. Currently not supported
 int32 skip
 ```
 
-Number of clients to skip. From query.
+Number of secrets to skip. From query.
 
 ```csharp
 [FromQuery]
@@ -58,7 +58,7 @@ Number of clients to skip. From query.
 int32 count
 ```
 
-Max number of clients to return
+Max number of secrets to return
 
 ### Security
 
@@ -74,7 +74,7 @@ Success
 
 ##### Type:
 
- `List`
+ `List[ClientSecret]`
 
 ```json
 [
@@ -475,7 +475,7 @@ Query to execute. Currently not supported
 int32 skip
 ```
 
-Number of clients to skip. From query.
+Number of secrets to skip. From query.
 
 ```csharp
 [FromQuery]
@@ -484,7 +484,7 @@ Number of clients to skip. From query.
 int32 count
 ```
 
-Max number of clients to return
+Max number of secrets to return
 
 ### Security
 
@@ -500,7 +500,7 @@ Success
 
 ##### Type:
 
- `List`
+ `List[ClientSecret]`
 
 ```json
 [

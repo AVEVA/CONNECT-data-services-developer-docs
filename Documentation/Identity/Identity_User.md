@@ -106,7 +106,7 @@ Success.
 
 ##### Type:
 
- `List`
+ `List[User]`
 
 ```json
 [
@@ -151,7 +151,7 @@ Success.
 
 ##### Type:
 
- `MultiStatusResponse`
+ `MultiStatusResponse[User]`
 
 ```json
 {
@@ -301,7 +301,7 @@ Success.
 
 ##### Type:
 
- `List`
+ `List[User]`
 
 ```json
 [

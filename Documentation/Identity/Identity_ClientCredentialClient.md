@@ -409,7 +409,7 @@ Success
 
 ##### Type:
 
- `List`
+ `List[ClientCredentialClient]`
 
 ```json
 [
@@ -448,7 +448,7 @@ Partial success.
 
 ##### Type:
 
- `MultiStatusResponse`
+ `MultiStatusResponse[ClientCredentialClient]`
 
 ```json
 {

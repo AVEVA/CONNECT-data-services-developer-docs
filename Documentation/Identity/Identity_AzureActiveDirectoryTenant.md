@@ -156,7 +156,7 @@ Success
 
 ##### Type:
 
- `List`
+ `List[AzureActiveDirectoryTenant]`
 
 ```json
 [

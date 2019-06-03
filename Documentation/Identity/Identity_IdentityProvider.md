@@ -148,7 +148,7 @@ Success
 
 ##### Type:
 
- `List`
+ `List[IdentityProvider]`
 
 ```json
 [

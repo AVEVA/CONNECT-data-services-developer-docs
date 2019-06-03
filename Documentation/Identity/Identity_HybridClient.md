@@ -470,7 +470,7 @@ Success
 
 ##### Type:
 
- `List`
+ `List[HybridClient]`
 
 ```json
 [

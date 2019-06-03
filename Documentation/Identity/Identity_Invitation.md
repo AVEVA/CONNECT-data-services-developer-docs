@@ -175,7 +175,7 @@ Success
 
 ##### Type:
 
- `List`
+ `List[Invitation]`
 
 ```json
 [

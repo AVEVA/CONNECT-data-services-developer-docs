@@ -469,7 +469,7 @@ Success
 
 ##### Type:
 
- `List`
+ `List[ImplicitClient]`
 
 ```json
 [

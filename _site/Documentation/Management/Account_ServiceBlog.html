@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>ServiceBlog </title>
+    <title>Service Blog </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="ServiceBlog ">
+    <meta name="title" content="Service Blog ">
     <meta name="generator" content="docfx 2.39.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -17,7 +17,7 @@
     <meta property="docfx:navrel" content="../../toc.html">
     <meta property="docfx:tocrel" content="../toc.html">
     
-    
+    <meta property="docfx:rel" content="../../">
     
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
@@ -33,10 +33,10 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              
-              <a class="navbar-brand" href="../../index.html">
-                <img id="logo" src="../../images/atlas_icon.png" alt="">
-              </a>    </div>
+              <a class="navbar-brand" href="../../index.html" width="46">
+                <img id="logo" src="../../Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              </a>
+            </div>
             <div class="collapse navbar-collapse" id="navbar">
               <form class="navbar-form navbar-right" role="search" id="search">
                 <div class="form-group">
@@ -55,6 +55,16 @@
           </div>
         </div>
       </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
       <div role="main" class="container body-content hide-when-search">
         
         <div class="sidenav hide-when-search">
@@ -65,22 +75,72 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="accountServiceBlog">
-<h1 id="serviceblog">ServiceBlog</h1>
+            <article class="content wrap" id="_content" data-uid="AccountServiceBlog">
+<h1 id="service-blog">Service Blog</h1>
 
-<p>API&#39;s for CRUD operations on ServiceBlog</p>
+<p>API&#39;s for retrieving service blog entries from OSIsoft Cloud Services.</p>
 <hr>
-<h2 id="getbypage"><code>GetByPage()</code></h2>
+<h2 id="get-service-blog-entries"><code>Get Service Blog Entries</code></h2>
 <p>Returns blog entries ordered by time posted.</p>
-<p><strong>Http</strong></p>
-<pre><code>    GET api/ServiceBlog/Entries
-</code></pre><p><strong>Parameters</strong></p>
-<p><code>string skip</code>
-    Number of blogs to skip for paging purposes
-<code>string count</code>
-    Blogs to count after skip for paging purposes</p>
-<p><strong>Security</strong><br>Any identity, including anonymous</p>
-<p><strong>Returns</strong><br>Returns an object including an IEnumerable of blogEntries and an int with the total number of entries.</p>
+<h3 id="http">Http</h3>
+<p><code>GET api/v1-preview/ServiceBlog/Entries</code></p>
+<h3 id="parameters">Parameters</h3>
+<pre><code class="lang-csharp">[Required]
+[FromRoute]
+string skip
+</code></pre><p>Number of blogs to skip for paging purposes.</p>
+<pre><code class="lang-csharp">[Required]
+[FromRoute]
+string count
+</code></pre><p>Number of blogs to count after skip for paging purposes.</p>
+<h3 id="security">Security</h3>
+<p>Any identity, including anonymous, can retrieve service blog entries.</p>
+<h3 id="returns">Returns</h3>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>([SdsServiceBlogEntry], int32)</td>
+<td>Returns a response object including a list of blog entries and an int with the total number of entries.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="get-service-blog-entry"><code>Get Service Blog Entry</code></h2>
+<p>Returns a blog entry specified by ID.</p>
+<h3 id="http-1">Http</h3>
+<p><code>GET api/v1-preview/ServiceBlog/Entries/{id}</code></p>
+<h3 id="parameters-1">Parameters</h3>
+<pre><code class="lang-csharp">[Required]
+[FromRoute]
+string id
+</code></pre><p>Identifier of the blog entry to retrieve.</p>
+<h3 id="security-1">Security</h3>
+<p>Any identity, including anonymous, can retrieve service blog entries.</p>
+<h3 id="returns-1">Returns</h3>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>SdsServiceBlogEntry</td>
+<td>Returns a response object including the specified blog entry.</td>
+</tr>
+</tbody>
+</table>
 <hr>
 </article>
           </div>
@@ -105,7 +165,7 @@
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
-            <span id='copyright-text'>© 2018 - OSIsoft, LLC.<span>
+            <span id='copyright-text'>© 2019 - OSIsoft, LLC.<span>
         </span></span></div>
       </footer>
     </div>

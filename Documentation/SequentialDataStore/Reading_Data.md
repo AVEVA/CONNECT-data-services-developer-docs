@@ -2,119 +2,97 @@
 uid: sdsReadingData
 ---
 
-#### Qi_Reading_data_topic
+# Reading data
 
-Reading data
-============
+The .NET and REST APIs provide programmatic access to read and write data. This section identifies and describes 
+the APIs used to read [Streams](xref:sdsStreams) data. Results are influenced by [Types](xref:sdsTypes), [Stream Views](xref:sdsStreamViews), [Filter expressions](xref:sdsFilterExpressions), and [Table format](xref:sdsTableFormat).
 
-The REST APIs provide programmatic access to read and write data. This section identifies and describes 
-the APIs used to read [Qi_Stream_topic](xref:sdsStreams#qistreamtopic) data. Results are influenced by [Qi_Types_topic](xref:sdsTypes#qitypetopic),  
-[Sds_View_topic](xref:sdsViews), [Qi_Filter_expressions_topic](xref:sdsFilterExpressions), and [Qi_Table_format_topic](xref:sdsTableFormat).
-
-If you are working in a .NET environment, convenient SDS Client libraries are available. 
-The ``ISdsDataServiceinterface``, which is accessed using the ``SdsService.GetDataService()`` helper, 
+If you are working in a .NET environment, convenient SDS Client Libraries are available. 
+The `ISdsDataService` interface, which is accessed using the ``SdsService.GetDataService()`` helper, 
 defines the functions that are available.
 
+### Single Stream Reads  
 The following methods for reading a single value are available:
 
-* ``Get Value`` returns a value at a specified index, calculated if no stored value exists at that index. 
-* ``Get First Value`` returns the first value in the stream.
-* ``Get Last Value`` returns the last value in the stream.
-* ``Get Distinct Value`` returns a value at the specified index, only if a stored value exists at that index.
-* ``Find Distinct Value`` searches for a value based on a starting index and search criteria.
+* [Get First Value](xref:sdsReadingDataApi#get-first-value) returns the first value in the stream.
+* [Get Last Value](xref:sdsReadingDataApi#get-last-value) returns the last value in the stream.
+* [Find Distinct Value](xref:sdsReadingDataApi#find-distinct-value) returns a value based on a starting index and search criteria.
 
 In addition, the following methods support reading multiple values:
 
-* ``Get Values`` retrieves a collection of values at specified indexes, calculated if no stored 
-  value exists at the index(es). ``Get values`` supports specifying the desired indexes as a list of indexes, 
-  a filter expression and count, or a starting index, ending index, and count.
-* ``Get Range Values`` retrieves a collection of stored values based on the specified start index and count.
-* ``Get Window Values`` retrieves a collection of stored values based on specified start and end indexes.
-* ``Get Intervals`` retrieves a collection of evenly spaced summary intervals based on a count 
+* [Get Values](xref:sdsReadingDataApi#get-values) retrieves a collection of stored values based on the request parameters.
+* [Get Interpolated Values](xref:sdsReadingDataApi#get-interpolated-values) retrieves a collection of stored or calculated values based on the request parameters.
+* [Get Summaries](xref:sdsReadingDataApi#get-summaries) retrieves a collection of evenly spaced summary intervals based on a count 
   and specified start and end indexes.
 
-All reads are HTTP GET actions. Reading data involves getting events from streams. The base reading URI is as follows:
+All single stream reads are HTTP GET actions. Reading data involves getting events from streams. The base reading URI from a single stream is as follows:
+ ```text
+	api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
+ ```
 
-``api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data``
+**Parameters**
+
+``string tenantId``  
+The tenant identifier
+
+``string namespaceId``  
+The namespace identifier
+
+``string streamId``  
+The stream identifier
+
+### Bulk Reads   
+ 
+SDS supports reading from multiple streams in one request. The following method for reading data from multiple streams is available:
+* [Join Values](xref:sdsReadingDataApi#join-values) retrieves a collection of events across multiple streams and joins the results based on the request parameters.
+
+Multi-stream reads can be HTTP GET or POST actions. The base reading URI for reading from multiple streams is as follows:
+ ```text
+    api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data
+ ```
+
+**Parameters**
+
+``string tenantId``  
+The tenant identifier
+
+``string namespaceId``  
+The namespace identifier
 
 
-**where:**
+### Response Format
 
-``string tenantId``
-  The tenant identifier
-``string namespaceId``
-  The namespace identifier
-``string streamId``
-  The stream identifier
+Supported response formats include JSON, verbose JSON, and SDS. 
 
+The default response format for SDS is JSON, which is used in all examples in this document. Default JSON responses do not include any values that are equal to the default value for their type.
 
-Response Format
----------------
+Verbose JSON responses include all values, including defaults, in the returned JSON payload. To specify verbose JSON return, add the header ``Accept-Verbosity`` with a value of ``verbose`` to the request.  
 
-Supported response formats include json, verbose json, and Sds. 
+To specify SDS format, set the ``Accept`` header in the request to ``application/sds``.
 
-The default response format for is json, which is used in all examples in this document.  Default json 
-responses do not include any values that are equal to the default value for their type.
-
-Verbose json responses include all values, including defaults, in the returned json payload. To specify 
-verbose json return, add the header ``Accept-Verbosity`` with a value of ``verbose`` to the request.  
-
-To specify SDS format, set the ``Accept`` header in the request to ``application/Sds``.
-
-Indexes and reading data
-------------------------
+### Indexes and reading data
 
 Most read operations take at least one index as a parameter. Indexes may be specified as strings, or, 
-when using the Sds Client libraries, the index may be passed as-is to read methods that take the index 
-type as a generic argument. Additional details about working with indexes can be found on the [Indexes_topic](xref:sdsIndexes) page.
+when using the SDS Client libraries, the index may be passed as-is to read methods that take the index 
+type as a generic argument. Additional details about working with indexes can be found on the [Indexes](xref:sdsIndexes) page.
 
-Read Characteristics
---------------------
+### Read Characteristics
 
 When data is requested at an index for which no stored event exists, the read characterisitics determine 
-whether the result is an error, null event, interpolated event, or extrapolated event. The combination of 
+whether the result is an error, no event, interpolated event, or extrapolated event. The combination of 
 the type of the index and the interpolation and extrapolation modes of the SdsType and the SdsStream 
 determine the read characteristics. For more information on read characteristics, 
-see [QiType_topic](xref:sdsTypes#qitypetopic) and [Qi_Stream_topic](xref:sdsStreams#qistreamtopic).
+see [Types](xref:sdsTypes) and [Streams](xref:sdsStreams).
 
-**Methods affected by Read Characteristics**
-
-`GetValueAsync <https://qi-docs-rst.readthedocs.org/en/latest/Reading_Data_API.html#getvalueasync>`__
-  Read characteristics are applied when the index is between, before, or after all data.
-
-`GetValuesAsync <https://qi-docs-rst.readthedocs.org/en/latest/Reading_Data_API.html#getvaluesasync>`__
-  Read characteristics applied when an index determined by the call is between, before, or after all data.
-
-`GetWindowValuesAsync <https://qi-docs-rst.readthedocs.org/en/latest/Reading_Data_API.html#getwindowvaluesasync>`__
-  Read characteristics applied to indexes between, before, or after data when the calls Boundary parameter is set to ExactOrCalculated.
-
-`GetRangeValuesAsync <https://qi-docs-rst.readthedocs.org/en/latest/Reading_Data_API.html#getrangevaluesasync>`__
-  Read characteristics applied to indexes between, before, or after data when the calls Boundary parameter is set to ExactOrCalculated.
-
-SdsView and reading data
-------------------------
-
-All reads support specifying a SdsView identifier in the query string to shape the results of the read:
-
-``viewId={viewId}``
-
-Working with views is covered in detail in the [Sds_View_topic](xref:sdsViews) section.
-
-When data is requested with a SdsView the read characteristics defined by the *target type* of the SdsView 
-determine what is returned. The read characteristics are discussed in the *Get Value*, 
-*GetValues* and *GetWindowValues* code samples.
-
-Filter Expressions
-------------------
+### Filter Expressions
 
 Filter expressions can be applied to any read that returns multiple values, including Get Values, Get Range Values, 
 Get Window Values, and Get Intervals. The filter expression is applied to the collection events conditionally 
 filtering events that do not meet the filter conditions.
 
-Filter expressions are covered in detail in the [Qi_Filter_expressions_topic](xref:sdsFilterExpressions) section.
+Filter expressions are covered in detail in the [Filter expressions](xref:sdsFilterExpressions) section.
 
-Table Format
-------------
+### Table Format
 
 Results of a query can be organized into tables by directing the form parameter to return a table. 
 Two forms of table are available: table and header table.
@@ -126,195 +104,108 @@ Results include a collection named ``Columns`` that lists column name and type a
 Specifying a form of type ``table-headers``, ``?form=tableh``, results in a collection where the Rows collection 
 contains a column header list.
 
-Table formats are covered in detail in the [Qi_Table_format_topic](xref:sdsTableFormat) section.
+Table formats are covered in detail in the [Table format](xref:sdsTableFormat) section.
+
+### SdsBoundaryType
+
+The `SdsBoundaryType` enum defines how data on the boundary of queries is handled: around the start index for range value queries, 
+and around the start and end index for window values. The following are valid values for `SdsBoundaryType`:
+
+| Boundary | Enumeration value | Operation |
+| -------  | ----------------- | --------- |
+| Exact    | 0                 | Results include the event at the specified index boundary if a stored event exists at that index. |
+| Inside   | 1                 | Results include only events within the index boundaries |
+| Outside  | 2                 | Results include up to one event that falls immediately outside of the specified index boundary. |
+| ExactOrCalculated | 3        | Results include the event at the specified index boundary. If no stored event exists at that index, one is calculated based on the index type and interpolation and extrapolation settings. |
+
+### SdsSearchMode
+
+The `SdsSearchMode` enum defines search behavior when seeking a stored event near a specified index. The following are valid values for `SdsSearchMode`:
+
+| Mode  | Enumeration value | Operation |
+| ----- | ----------------- | --------- |
+| Exact | 0                 | If a stored event exists at the specified index, that event is returned. Otherwise no event is returned. |
+| ExactOrNext | 1           | If a stored event exists at the specified index, that event is returned. Otherwise the next event in the stream is returned. |
+| Next | 2                  | Returns the stored event after the specified index. |
+| ExactOrPrevious | 3       | If a stored event exists at the specified index, that event is returned. Otherwise the previous event in the stream is returned. |
+| Previous | 4              | Returns the stored event before the specified index. |
 
 
-SdsBoundaryType
---------------
+*****
 
-SdsBoundaryType defines how data on the boundary of queries is handled: around the start index for range value queries, 
-and around the start and end index for window values. The following are valid values for SdsBoundaryType:
+## Transforming Data
 
-| Boundary          | Enumeration value                 | Operation                                                     |
-|-------------------|-----------------------------------|---------------------------------------------------------------|
-| Exact             | 0                                 | Results include the event at the specified index boundary     |
-|                   |                                   | if a stored event exists at that index.                       |
-| Inside            | 1                                 | Results include only events within the index boundaries       |
-| Outside           | 2                                 | Results include up to one event that falls immediately        |
-|                   |                                   | outside of the specified index boundary.                      |
-| ExactOrCalculated | 3                                 | Results include the event at the specified index boundary. If |
-|                   |                                   | no stored event exists at that index, one is calculated based |
-|                   |                                   | on the index type and interpolation and extrapolation         |
-|                   |                                   | settings.                                                     |
+SDS provides the ability to transform data upon reads. The supported data transformations are:
+* [Reading with SdsStreamViews](#reading-with-sdsstreamviews): Changing the shape of the returned data
+* [Unit of Measure Conversions](#unit-conversion-of-data): Converting the unit of measure of the data  
 
-SdsSearchMode
--------------
+Data transformations are supported for all single stream reads, but transformations have specific endpoints. The following are the base URIs for the tranformation endpoints:
+```text
+    api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/First
+    api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/Last
+    api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform
+    api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/Interpolated
+    api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/Summaries
+```
 
-The SdsSearchMode enum defines search behavior when seeking a stored event near a specified index. The following are 
-available SdsSearchModes:
+### Reading with SdsStreamViews
+When transforming data with an SdsStreamView, the data read is converted to the *target type* specified in the SdsStreamView. Working with stream views is covered in detail in the [Stream Views](xref:sdsStreamViews) section.
 
-| Mode              | Enumeration value                 | Operation                                                     |
-|-------------------|-----------------------------------|---------------------------------------------------------------|
-| Exact             | 0                                 | If a stored event exists at the specified index, that event   |
-|                   |                                   | is returned. Otherwise no event is returned.                  |
-| ExactOrNext       | 1                                 | If a stored event exists at the specified index, that event   |
-|                   |                                   | is returned. Otherwise the next event in the stream is        |
-|                   |                                   | returned.                                                     |
-| Next              | 2                                 | Returns the stored event after the specified index.           |
-| ExactOrPrevious   | 3                                 | If a stored event exists at the specified index, that event   |
-|                   |                                   | is returned. Otherwise the previous event in the stream is    |
-|                   |                                   | returned.                                                     |
-| Previous          | 4                                 | Returns the stored event before the specified index.          |
+All stream view transformations are GET HTTP requests. The stream view is specified by appending the stream view identifier to requests to the transformation endpoint. For example the following request:
+ ```text
+    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/First?streamViewId={streamViewId}
+ ```
 
-Reading data API and examples
------------------------------
+would return the first event in the stream as the target type in the stream view specified by the `streamViewId`.
 
-Many of the API methods described below contain sample JSON and sample code. 
+All single stream data reads support stream view transformations.
 
-When specifying a parameter of type enum, the API accepts both the name of the field and the numeric value of the field. 
-Samples vary to highlight enum flexibility.
-
-Samples use the following types:
-
-Type with a simple index, named *Simple*:
-
-**.NET**
-
-      public enum State
-      {
-        Ok,
-        Warning,
-        Alarm
-      }
-
-      public class Simple
-      {
-        [SdsMember(IsKey = true, Order = 0) ]
-        public DateTime Time { get; set; }
-        public State State { get; set; }
-        public Double Measurement { get; set; }
-      }
-
-**Python**
-
-      class State(Enum):
-        Ok = 0
-        Warning = 1
-        Alarm = 2
-
-      class Simple(object):
-        Time = property(getTime, setTime)
-        def getTime(self):
-          return self.__time
-        def setTime(self, time):
-          self.__time = time
-
-        State = property(getState, setState)
-        def getState(self):
-          return self.__state
-        def setState(self, state):
-          self.__state = state
-
-        Measurement = property(getValue, setValue)
-        def getValue(self):
-          return self.__measurement
-        def setValue(self, measurement):
-          self.__measurement = measurement
-
-**JavaScript**
-
-      var State =
-      {
-        Ok: 0,
-        Warning: 1,
-        Alarm: 2,
-      }
-
-      var Simple = function () {
-        this.Time = null;
-        this.State = null;
-        this.Value = null;
-      }
-
-Has values as follows:
-
-      11/23/2017 12:00:00 PM: Ok  0
-      11/23/2017  1:00:00 PM: Ok 10
-      11/23/2017  2:00:00 PM: Ok 20
-      11/23/2017  3:00:00 PM: Ok 30
-      11/23/2017  4:00:00 PM: Ok 40
-
-Type with Compound Index, named ``DerivedCompoundIndex``
+When data is requested with an SdsStreamView, the read characteristics defined by the *target type* of the SdsStreamView 
+determine what is returned. The read characteristics are discussed in the code samples.
 
 
-**.NET**
+### Unit conversion of data
+SDS supports assigning [Units of Measure](xref:unitsOfMeasure) (UOM) to stream data. If stream data has UOM information associated, SDS supports reading data with unit conversions applied. On each read data request, unit conversions are specified by a user defined collection of `SdsStreamPropertyOverride` objects in read requests. The `SdsStreamPropertyOverride` object has the following structure:
 
-      public class Simple
-      {
-        [SdsMember(IsKey = true, Order = 0)]
-        public DateTime Time { get; set; }
-        public State State { get; set; }
-        public Double Measurement { get; set; }
-      }
+| Property          | Type                 | Optionality | Details                                               |
+| ----------------- | -------------------- | ----------- | ----------------------------------------------------  |
+| SdsTypePropertyId | String               | Required    | Identifier for an SdsTypeProperty with a UOM assigned |
+| Uom               | String               | Required    | Target unit of measure                                |
+| InterpolationMode | SdsInterpolationMode | N/A         | Currently not supported in context of data reads      |
 
-      public class DerivedCompoundIndex : Simple
-      {
-        [SdsMember(IsKey = true, Order = 1)]
-        public DateTime Recorded { get; set; }
-      }
+This is supported in the .NET API via overloads that accept a collection of `SdsStreamPropertyOverride` objects, and in the REST API via HTTP POST calls with a request body containing a collection of `SdsStreamPropertyOverride` objects.  
 
-**Python**
+All unit conversions are POST HTTP requests. The unit conversion transformation URI is as follows:
+ ```text
+    POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform
+ ```
 
-      class Simple(object):
-      # First-order Key property
-      Time = property(getTime, setTime)
-      def getTime(self):
-        return self.__time
-      def setTime(self, time):
-        self.__time = time
+**Request body**  
+The Request Body contains a collection of `SdsStreamPropertyOverride` objects. 
 
-      State = property(getState, setState)
-      def getState(self):
-        return self.__state
-      def setState(self, state):
-        self.__state = state
+The following code defines a `Simple Type` with one index, `Time`, and one additional property, `Measurement`. `Measurement` has an assigned unit of measure, meter.
 
-      Measurement = property(getValue, setValue)
-      def getValue(self):
-        return self.__measurement
-      def setValue(self, measurement):
-        self.__measurement = measurement
+```csharp
+public class SimpleType
+{
+   [SdsMember(IsKey = true, Order = 0) ]
+   public DateTime Time { get; set; }
+   [SdsMember(Uom = "meter")]
+   public Double Measurement { get; set; }
+}
+```
 
-      class DerivedCompoundIndex(Simple):
-      # Second-order Key property
-      @property
-      def Recorded(self):
-        return self.__recorded
-      @Recorded.setter
-      def Recorded(self, recorded):
-        self.__recorded = recorded
+This type is assigned to a stream, and the example request body below requests SDS to convert the `Measurement` property of the returned data from meter to centimeter.
 
-**JavaScript**
+```json
+[
+  {
+    "SdsTypePropertyId" : "Measurement",
+    "Uom" : "centimeter" 
+  }
+]
+```
 
-      var Simple = function () {
-        this.Time = null;
-        this.State = null;
-        this.Value = null;
-      }
+All single stream data reads with streams that have specified UOMs support UOM conversions.
 
-      var DerivedCompoundIndex = function() {
-        Simple.call(this);
-        this.Recorded = null;
-      }
-
-Has values as follows:
-
-      1/20/2017 1:00:00 AM : 1/20/2017 12:00:00 AM 	0
-      1/20/2017 1:00:00 AM : 1/20/2017  1:00:00 AM 	2
-      1/20/2017 1:00:00 AM : 1/20/2017  2:00:00 PM 	5
-      1/20/2017 2:00:00 AM : 1/20/2017 12:00:00 AM 	1
-      1/20/2017 2:00:00 AM : 1/20/2017  1:00:00 AM 	3
-      1/20/2017 2:00:00 AM : 1/20/2017  2:00:00 AM 	4
-      1/20/2017 2:00:00 AM : 1/20/2017  2:00:00 PM 	6
-
-All times are represented at offset 0, GMT.
+***********************

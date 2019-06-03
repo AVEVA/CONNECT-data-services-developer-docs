@@ -1,4 +1,4 @@
----
+﻿---
 uid: sdsReadingDataApi
 ---
 # API calls for reading data
@@ -1272,11 +1272,11 @@ Content-Type: application/json
 Returns representative data sampled by intervals between a specified start and end index. 
   
 Sampling is driven by a specified property or properties of the stream's Sds Type. Property types that cannot be interpolated do not support sampling requests. Strings are an example of a property that cannot be interpolated. For more 
-information see [Interpolation.](https://ocs-docs.osisoft.com/Documentation/SequentialDataStore/SDS_Types.html#interpolation) 
+information see [Interpolation.](xref:sdsTypes#interpolation) 
 
 **Request**  
  ```text
-    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
+    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
         Sampled?startIndex={startIndex}&endIndex={endIndex}&intervals={intervals}&sampleBy={sampleBy}
         &boundaryType={boundaryType}&startBoundaryType={startBoundaryType}
         &endBoundaryType={endBoundaryType}&filter={filter}&streamViewId={streamViewId}
@@ -1322,7 +1322,7 @@ The response includes a status code and a response body containing a serialized 
 **Example**  
 The following request returns two sample intervals between the `startIndex` and `endIndex`: 
  ```text
-    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data/
+    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data/
         Sampled?startIndex=2019-01-01T00:00:00Z&endIndex=2019-01-02T00:00:00Z&intervals=2&sampleBy=Measurement
  ```
  

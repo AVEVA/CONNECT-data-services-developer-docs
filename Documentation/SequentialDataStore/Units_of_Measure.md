@@ -295,7 +295,7 @@ Returns the quantity corresponding to the specified quantityId within a given na
 
 **Request**
  ```text
-    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}
+    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}
 ```
 
 **Parameters**
@@ -356,7 +356,7 @@ Returns a list of all quantities available within a given namespace.
 
 **Request**
  ```text
-    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities?skip={skip}&count={count}
+    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities?skip={skip}&count={count}
  ```
 
 `string tenantId`  
@@ -440,7 +440,7 @@ Returns the unit of measure associated with the specified uomId belonging to the
 
 **Request**
  ```text
-    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}
+    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}
  ```
 
 `string tenantId`  
@@ -487,7 +487,7 @@ Returns the list of units of measure that belongs to the quantity with the speci
 
 **Request**
  ```text
-    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units
+    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units
  ```
 
 `string tenantId`  
@@ -542,7 +542,7 @@ Get the default ACL for the Quantities collection. For more information on ACLs,
 
 **Request**
  ```text
-    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/AccessControl
+    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/AccessControl
  ```
 
 **Parameters**
@@ -571,7 +571,7 @@ Update the default ACL for the Quantities collection. For more information on AC
 
 **Request**
  ```text
-    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/AccessControl
+    PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/AccessControl
  ```
 
 **Parameters**
@@ -601,7 +601,7 @@ Get the ACL of the specified quantity. For more information on ACLs, see [Access
 
 **Request**
  ```text
-    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/AccessControl
+    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/AccessControl
  ```
 
 **Parameters**
@@ -633,7 +633,7 @@ Update the ACL of the specified quantity. For more information on ACLs, see [Acc
 
 **Request**
  ```text
-    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/AccessControl
+    PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/AccessControl
  ```
 
 **Parameters**
@@ -665,7 +665,7 @@ Get the Owner of the specified quantity. For more information on Owners, see [Ac
 
 **Request**
  ```text
-    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Owner
+    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Owner
  ```
 
 **Parameters**
@@ -697,7 +697,7 @@ Update the Owner of the specified quantity. For more information on Owners, see 
 
 **Request**
  ```text
-    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Owner
+    PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Owner
  ```
 
 **Parameters**
@@ -734,7 +734,7 @@ Returns the unit of measure corresponding to the specified uomId within a given 
 
 **Request**
  ```text
-    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Units/{uomId}
+    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Units/{uomId}
  ```
 
 `string tenantId`  
@@ -778,7 +778,7 @@ Returns a list of all available units of measure in the system.
 
 **Request**
  ```text
-    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Units?skip={skip}&count={count}
+    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Units?skip={skip}&count={count}
  ```
 
 ``string tenantId``  
@@ -844,7 +844,7 @@ Get the ACL of the specified unit of measure. For more information on ACLs, see 
 
 **Request**
  ```text
-    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/AccessControl
+    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/AccessControl
  ```
 
 **Parameters**
@@ -879,7 +879,7 @@ Update the ACL of the specified unit of measure. For more information on ACLs, s
 
 **Request**
  ```text
-    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/AccessControl
+    PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/AccessControl
  ```
 
 **Parameters**
@@ -914,7 +914,7 @@ Get the Owner of the specified unit of measure. For more information on Owners, 
 
 **Request**
  ```text
-    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/Owner
+    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/Owner
  ```
 
 **Parameters**
@@ -949,7 +949,7 @@ Update the Owner of the specified unit of measure. For more information on Owner
 
 **Request**
  ```text
-    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/Owner
+    PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/Owner
  ```
 
 **Parameters**

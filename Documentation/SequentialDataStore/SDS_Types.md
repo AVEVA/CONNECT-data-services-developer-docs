@@ -912,7 +912,7 @@ Returns the type corresponding to the specified typeId within a given namespace.
 
 **Request**
  ```text
-	GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
+	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
  ```
 
 
@@ -1003,7 +1003,7 @@ Returns a dictionary mapping the object name to the number of references held by
 
 **Request**
  ```text
-	GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/ReferenceCount
+	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/ReferenceCount
  ```
 
 **Parameters**  
@@ -1052,7 +1052,7 @@ Note that the results will also include types that were automatically created by
 
 **Request**
  ```text
-	GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types?query={query}&skip={skip}&count={count}&orderby={orderby}
+	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types?query={query}&skip={skip}&count={count}&orderby={orderby}
  ```
 
 **Parameters**  
@@ -1172,7 +1172,7 @@ redirect with the authorization header, you should disable automatic redirect an
 
 **Request**
  ```text
-	POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
+	POST api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
  ```
 
 **Parameters**
@@ -1401,7 +1401,7 @@ Deletes a type from the specified tenant and namespace. Note that a type cannot 
 
 **Request**
  ```text
-	DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
+	DELETE api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
  ```
 
 **Parameters**
@@ -1431,7 +1431,7 @@ Get the default ACL for the Types collection. For more information on ACLs, see 
 
 **Request**
  ```text
-	GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/AccessControl
+	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/AccessControl
  ```
 
 **Parameters**
@@ -1460,7 +1460,7 @@ Update the default ACL for the Types collection. For more information on ACLs, s
 
 **Request**
  ```text
-	PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/AccessControl
+	PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/AccessControl
  ```
 
 **Parameters**
@@ -1490,7 +1490,7 @@ Get the ACL of the specified type. For more information on ACLs, see [Access Con
 
 **Request**
  ```text
-	GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessControl
+	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessControl
  ```
 
 **Parameters**
@@ -1524,7 +1524,7 @@ Note that this does not update the ACL for the associated types. For further det
 
 **Request**
  ```text
-	PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessControl
+	PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessControl
  ```
 
 **Parameters**
@@ -1556,7 +1556,7 @@ Get the Owner of the specified type. For more information on Owners, see [Access
 
 **Request**
  ```text
-	GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Owner
+	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Owner
  ```
 
 **Parameters**
@@ -1590,7 +1590,7 @@ Note that this does not update the Owner for the associated types. For further d
 
 **Request**
  ```text
-	PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Owner
+	PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Owner
  ```
 
 **Parameters**

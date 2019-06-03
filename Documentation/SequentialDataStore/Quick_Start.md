@@ -92,7 +92,7 @@ await config.CreateTypeAsync(simpleType);
 When working outside of .NET, SDS client libraries are unavailable. The SdsType is defined using JSON and is posted to the OSIsoft Cloud Services endpoint.
 
 ```json
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}  
+POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}  
 HTTP/1.1
 Authorization: Bearer <bearer-token>
 Content-Length: 1562
@@ -248,7 +248,7 @@ simpleStream = config.CreateStreamAsync(simpleStream);
 To create the stream without the libraries, post a JSON representation of the SdsStream to OSIsoft Cloud Services.
 
 ```json 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}  
+POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}  
 HTTP/1.1
 Authorization: Bearer <bearer-token>
 Content-Length: 139
@@ -288,7 +288,7 @@ await client.InsertValueAsync(simpleStream.Id, value);
 To POST a JSON serialized event to the OSIsoft Cloud Services:
 
 ```json
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
+POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 HTTP/1.1
 Authorization: Bearer <bearer-token>
 Content-Length: 57
@@ -329,7 +329,7 @@ value = await client.GetDistinctValueAsync<Simple>(simpleStream.Id, index);
 
 To read using REST:
 ```json
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data?index=2017-08-17T17:21:36.3494129Z 
+GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data?index=2017-08-17T17:21:36.3494129Z 
 HTTP/1.1 200
 Content-Type: application/json
 [

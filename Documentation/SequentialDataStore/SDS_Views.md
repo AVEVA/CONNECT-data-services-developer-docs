@@ -104,7 +104,7 @@ But you can map a stream from its current type to a new type.
 
 To update a Stream's Type, define an SdsStreamView and PUT the stream view to the following:
 ```text
-   PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type?streamViewId={streamViewId}
+   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type?streamViewId={streamViewId}
 ```
 
 For details, see [Update Stream Type](xref:sdsStreams-update-stream-type). 
@@ -456,7 +456,7 @@ Returns the stream view corresponding to the specified streamViewId within a giv
 
 **Request**
  ```text
-    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
+    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
  ```
 
 **Parameters**
@@ -516,7 +516,7 @@ Returns the stream view map corresponding to the specified streamViewId within a
 
 **Request**
  ```text
-    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Map
+    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Map
  ```
 
 **Parameters**
@@ -586,7 +586,7 @@ all stream views in the Namespace. See [Searching](xref:sdsSearching) for inform
 
 **Request**
  ```text
-    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews?query={query}&skip={skip}&count={count}&orderby={orderby}
+    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews?query={query}&skip={skip}&count={count}&orderby={orderby}
  ```
 
 **Parameters**
@@ -671,7 +671,7 @@ If no matching identifier is found, the specified stream view is created.
 
 **Request**
  ```text
-    POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
+    POST api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
  ```
 
 **Parameters**
@@ -707,7 +707,7 @@ Creates or updates the definition of a stream view.
 
 **Request**
  ```text
-    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
+    PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
  ```
 
 **Parameters**
@@ -743,7 +743,7 @@ Deletes a stream view from the specified tenant and namespace.
 
 **Request**
  ```text
-    DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
+    DELETE api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
  ```
 
 **Parameters**
@@ -772,7 +772,7 @@ Get the default ACL for the Stream Views collection. For more information on ACL
 
 **Request**
  ```text
-    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/AccessControl
+    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/AccessControl
  ```
 
 **Parameters**
@@ -801,7 +801,7 @@ Update the default ACL for the Stream Views collection. For more information on 
 
 **Request**
  ```text
-    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/AccessControl
+    PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/AccessControl
  ```
 
 **Parameters**
@@ -831,7 +831,7 @@ Get the ACL of the specified stream view. For more information on ACLs, see [Acc
 
 **Request**
  ```text
-    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/AccessControl
+    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/AccessControl
  ```
 
 **Parameters**
@@ -863,7 +863,7 @@ Update the ACL of the specified stream view. For more information on ACLs, see [
 
 **Request**
  ```text
-    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/AccessControl
+    PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/AccessControl
  ```
 
 **Parameters**
@@ -895,7 +895,7 @@ Get the Owner of the specified stream view. For more information on Owners, see 
 
 **Request**
  ```text
-    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Owner
+    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Owner
  ```
 
 **Parameters**
@@ -927,7 +927,7 @@ Update the Owner of the specified stream view. For more information on Owners, s
 
 **Request**
  ```text
-    PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Owner
+    PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Owner
  ```
 
 **Parameters**

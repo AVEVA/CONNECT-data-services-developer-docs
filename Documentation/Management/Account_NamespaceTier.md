@@ -6,6 +6,8 @@ uid: AccountNamespaceTier
 
 An attribute that specifies `Namespace` performance.
 
+**Note:** Namespace Tiers will be removed in the next version. Please remove references to it.
+
 ## Properties
 
 For HTTP requests and responses, the NamespaceTier object has the following properties and JSON-serialized body: 

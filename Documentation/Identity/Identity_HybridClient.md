@@ -57,7 +57,7 @@ Create a Hybrid flow Client
 
 ### Request
 
-`POST api/v1/Tenants/{tenantId}/HybridClients`
+`POST api/v1-preview/Tenants/{tenantId}/HybridClients`
 
 ### Parameters
 
@@ -177,7 +177,7 @@ Update a Hybrid Client
 
 ### Request
 
-`PUT api/v1/Tenants/{tenantId}/HybridClients/{clientId}`
+`PUT api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}`
 
 ### Parameters
 
@@ -294,7 +294,7 @@ Get a Hybrid Client
 
 ### Request
 
-`GET api/v1/Tenants/{tenantId}/HybridClients/{clientId}`
+`GET api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}`
 
 ### Parameters
 
@@ -375,7 +375,7 @@ Get all Hybrid Clients
 
 ### Request
 
-`GET api/v1/Tenants/{tenantId}/HybridClients`
+`GET api/v1-preview/Tenants/{tenantId}/HybridClients`
 
 ### Parameters
 
@@ -508,7 +508,7 @@ Delete an Hybrid Client
 
 ### Request
 
-`DELETE api/v1/Tenants/{tenantId}/HybridClients/{clientId}`
+`DELETE api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}`
 
 ### Parameters
 

@@ -18,7 +18,7 @@ This method is obsolete, please use the following instead:
 
 ### Request
 
-`GET api/v1/Tenants/{tenantId}/Clients`
+`GET api/v1-preview/Tenants/{tenantId}/Clients`
 
 ### Parameters
 
@@ -131,7 +131,7 @@ This method is obsolete, please use the following instead:
 
 ### Request
 
-`DELETE api/v1/Tenants/{tenantId}/Clients/{clientId}`
+`DELETE api/v1-preview/Tenants/{tenantId}/Clients/{clientId}`
 
 ### Parameters
 

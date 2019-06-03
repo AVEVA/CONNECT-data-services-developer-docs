@@ -34,7 +34,7 @@ Retrieves a Namespace tier associated with a specified id.
 
 ### Http
 
-`GET api/v1/NamespaceTiers/{namespaceTierId}`
+`GET api/v1-preview/NamespaceTiers/{namespaceTierId}`
 
 
 ### Parameters
@@ -68,7 +68,7 @@ Retrieves a list of all available namespace tiers.
 
 ### Http
 
-`GET api/v1/NamespaceTiers`
+`GET api/v1-preview/NamespaceTiers`
 
 
 ### Parameters

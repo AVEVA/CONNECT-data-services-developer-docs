@@ -32,7 +32,7 @@ Add Azure Active Directory Tenant to a Tenant
 
 ### Request
 
-`POST api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants`
+`POST api/v1-preview/Tenants/{tenantId}/AzureActiveDirectoryTenants`
 
 ### Parameters
 
@@ -104,7 +104,7 @@ Get all Azure Active Directory Tenants for a Tenant
 
 ### Request
 
-`GET api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants`
+`GET api/v1-preview/Tenants/{tenantId}/AzureActiveDirectoryTenants`
 
 ### Parameters
 
@@ -194,7 +194,7 @@ Get Azure Active Directory Tenant from a tenant
 
 ### Request
 
-`GET api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{azureActiveDirectoryTenantId}`
+`GET api/v1-preview/Tenants/{tenantId}/AzureActiveDirectoryTenants/{azureActiveDirectoryTenantId}`
 
 ### Parameters
 
@@ -262,7 +262,7 @@ Remove Azure Active Directory Tenant from a tenant
 
 ### Request
 
-`DELETE api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{azureActiveDirectoryTenantId}`
+`DELETE api/v1-preview/Tenants/{tenantId}/AzureActiveDirectoryTenants/{azureActiveDirectoryTenantId}`
 
 ### Parameters
 
@@ -319,7 +319,7 @@ Send consent for an Azure Active Directory Tenant
 
 ### Request
 
-`POST api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{azureActiveDirectoryTenantId}/SendConsent`
+`POST api/v1-preview/Tenants/{tenantId}/AzureActiveDirectoryTenants/{azureActiveDirectoryTenantId}/SendConsent`
 
 ### Parameters
 

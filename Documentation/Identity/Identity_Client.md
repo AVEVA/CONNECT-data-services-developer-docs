@@ -70,7 +70,7 @@ Success
 
 ##### Type:
 
- `List[ClientCredentialClientDto]`
+ `List[ClientCredentialClient]`
 
 ```json
 [
@@ -79,7 +79,7 @@ Success
       "00000000-0000-0000-0000-000000000000",
       "00000000-0000-0000-0000-000000000000"
     ],
-    "ClientId": "ClientId",
+    "Id": "Id",
     "Name": "Name",
     "Enabled": false,
     "Tags": [
@@ -92,7 +92,7 @@ Success
       "00000000-0000-0000-0000-000000000000",
       "00000000-0000-0000-0000-000000000000"
     ],
-    "ClientId": "ClientId",
+    "Id": "Id",
     "Name": "Name",
     "Enabled": false,
     "Tags": [

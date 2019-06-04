@@ -8,19 +8,19 @@ APIs for creating, getting, updating, and deleting Hybrid Clients
 
 ## Properties
 
-For HTTP requests and responses, the HybridClientDto object has the following properties and JSON-serialized body: 
+For HTTP requests and responses, the HybridClient object has the following properties and JSON-serialized body: 
 
-Property | Type | Descriptions
+Property | Type | Description
  --- | --- | ---
-AllowOfflineAccess | optional: bool | Specifies whether this client can request refresh tokens, by providing the *offline_access* scopes.
-AllowAccessTokensViaBrowser | optional: bool | Specifies whether this HybridClientDto is allowed to receive access tokens via the browser. This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow client that is supposed to use code *id_token* to add the *token* response type, thus leaking the token to the browser).
+AllowOfflineAccess | bool | Specifies whether this client can request refresh tokens, by providing the *offline_access* scopes.
+AllowAccessTokensViaBrowser | bool | Specifies whether this HybridClient is allowed to receive access tokens via the browser. This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow client that is supposed to use code *id_token* to add the *token* response type, thus leaking the token to the browser).
 RedirectUris | string[] | Specifies the allowed URIs to return tokens or authorization codes to.
 PostLogoutRedirectUris | string[] | Specifies allowed URIs to redirect to after logout.
 ClientUri | string | URI to a page with information about client (used on consent screen).
 LogoUri | string | URI to client logo (used on consent screen).
-ClientId | string | Client ID for this Client
-Name | string | Name of ClientDto.
-Enabled | optional: bool | Is ClientDto Enabled
+Id | string | Client ID for this Client
+Name | string | Name of Client.
+Enabled | bool | Is Client Enabled
 Tags | string[] | For OSIsoft internal use only
 
 ### Serialized Model
@@ -39,7 +39,7 @@ Tags | string[] | For OSIsoft internal use only
   ],
   "ClientUri": "ClientUri",
   "LogoUri": "LogoUri",
-  "ClientId": "ClientId",
+  "Id": "Id",
   "Name": "Name",
   "Enabled": false,
   "Tags": [
@@ -57,7 +57,7 @@ Create a Hybrid flow Client
 
 ### Request
 
-`POST api/v1-preview/Tenants/{tenantId}/HybridClients`
+`POST api/v1/Tenants/{tenantId}/HybridClients`
 
 ### Parameters
 
@@ -71,15 +71,32 @@ Id of tenant
 ```csharp
 [FromBody]
 [Required]
-HybridClientCreateDto hybridClientCreateDto
+HybridClientCreate hybridClientCreate
 ```
 
-New HybridClientCreateDto object
+New HybridClientCreate object
+
+Property | Type | Required | Description 
+ --- | --- | --- | ---
+SecretDescription | string | No | Description for the initial secret for the client.
+SecretExpirationDate | DateTime | No | Expiration date for the initial secret for the client.
+AllowOfflineAccess | bool | No | Specifies whether this client can request refresh tokens, by providing the *offline_access* scopes.
+AllowAccessTokensViaBrowser | bool | No | Specifies whether this HybridClient is allowed to receive access tokens via the browser.            This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow            client that is supposed to use code *id_token* to add the *token* response type, thus            leaking the token to the browser).
+RedirectUris | string[] | No | Specifies the allowed URIs to return tokens or authorization codes to.
+PostLogoutRedirectUris | string[] | No | Specifies allowed URIs to redirect to after logout.
+ClientUri | string | No | URI to a page with information about client (used on consent screen).
+LogoUri | string | No | URI to client logo (used on consent screen).
+Id | string | No | Client ID for this Client
+Name | string | Yes | Name of Client.
+Enabled | bool | No | Is Client Enabled
+Tags | string[] | No | For OSIsoft internal use only
+
+
 
 ```json
 {
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-04-30T11:35:12.2957095-07:00",
+  "SecretExpirationDate": "2019-05-31T14:57:08.5227228-07:00",
   "AllowOfflineAccess": false,
   "AllowAccessTokensViaBrowser": false,
   "RedirectUris": [
@@ -92,7 +109,7 @@ New HybridClientCreateDto object
   ],
   "ClientUri": "ClientUri",
   "LogoUri": "LogoUri",
-  "ClientId": "ClientId",
+  "Id": "Id",
   "Name": "Name",
   "Enabled": false,
   "Tags": [
@@ -116,33 +133,35 @@ Created
 
 ##### Type:
 
- `HybridClientResponseDto`
+ `ClientResponse`
 
 ```json
 {
-  "ClientSecret": "ClientSecret",
-  "SecretId": "SecretId",
-  "SecretDescription": "description",
-  "SecretExpirationDate": "2019-04-30T11:35:12.2989504-07:00",
-  "AllowOfflineAccess": false,
-  "AllowAccessTokensViaBrowser": false,
-  "RedirectUris": [
-    "String",
-    "String"
-  ],
-  "PostLogoutRedirectUris": [
-    "String",
-    "String"
-  ],
-  "ClientUri": "ClientUri",
-  "LogoUri": "LogoUri",
-  "ClientId": "ClientId",
-  "Name": "Name",
-  "Enabled": false,
-  "Tags": [
-    "String",
-    "String"
-  ]
+  "Secret": "Secret",
+  "Id": 0,
+  "Description": "description",
+  "ExpirationDate": "2019-05-31T14:57:08.533641-07:00",
+  "Client": {
+    "AllowOfflineAccess": false,
+    "AllowAccessTokensViaBrowser": false,
+    "RedirectUris": [
+      "String",
+      "String"
+    ],
+    "PostLogoutRedirectUris": [
+      "String",
+      "String"
+    ],
+    "ClientUri": "ClientUri",
+    "LogoUri": "LogoUri",
+    "Id": "Id",
+    "Name": "Name",
+    "Enabled": false,
+    "Tags": [
+      "String",
+      "String"
+    ]
+  }
 }
 ```
 
@@ -177,7 +196,7 @@ Update a Hybrid Client
 
 ### Request
 
-`PUT api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}`
+`PUT api/v1/Tenants/{tenantId}/HybridClients/{clientId}`
 
 ### Parameters
 
@@ -198,10 +217,25 @@ Id of client
 ```csharp
 [FromBody]
 [Required]
-HybridClientDto updatedHybridClientDto
+HybridClient hybridClient
 ```
 
 Updated Hybrid Client values
+
+Property | Type | Required | Description 
+ --- | --- | --- | ---
+AllowOfflineAccess | bool | No | Specifies whether this client can request refresh tokens, by providing the *offline_access* scopes.
+AllowAccessTokensViaBrowser | bool | No | Specifies whether this HybridClient is allowed to receive access tokens via the browser.            This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow            client that is supposed to use code *id_token* to add the *token* response type, thus            leaking the token to the browser).
+RedirectUris | string[] | No | Specifies the allowed URIs to return tokens or authorization codes to.
+PostLogoutRedirectUris | string[] | No | Specifies allowed URIs to redirect to after logout.
+ClientUri | string | No | URI to a page with information about client (used on consent screen).
+LogoUri | string | No | URI to client logo (used on consent screen).
+Id | string | No | Client ID for this Client. Must be same as the one in the route. Must be the same as the Id in the route.
+Name | string | Yes | Name of Client.
+Enabled | bool | No | Is Client Enabled
+Tags | string[] | No | For OSIsoft internal use only
+
+
 
 ```json
 {
@@ -217,7 +251,7 @@ Updated Hybrid Client values
   ],
   "ClientUri": "ClientUri",
   "LogoUri": "LogoUri",
-  "ClientId": "ClientId",
+  "Id": "Id",
   "Name": "Name",
   "Enabled": false,
   "Tags": [
@@ -241,7 +275,7 @@ Success
 
 ##### Type:
 
- `HybridClientDto`
+ `HybridClient`
 
 ```json
 {
@@ -257,7 +291,7 @@ Success
   ],
   "ClientUri": "ClientUri",
   "LogoUri": "LogoUri",
-  "ClientId": "ClientId",
+  "Id": "Id",
   "Name": "Name",
   "Enabled": false,
   "Tags": [
@@ -294,7 +328,7 @@ Get a Hybrid Client
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}`
+`GET api/v1/Tenants/{tenantId}/HybridClients/{clientId}`
 
 ### Parameters
 
@@ -326,7 +360,7 @@ Success
 
 ##### Type:
 
- `HybridClientDto`
+ `HybridClient`
 
 ```json
 {
@@ -342,7 +376,7 @@ Success
   ],
   "ClientUri": "ClientUri",
   "LogoUri": "LogoUri",
-  "ClientId": "ClientId",
+  "Id": "Id",
   "Name": "Name",
   "Enabled": false,
   "Tags": [
@@ -375,7 +409,7 @@ Get all Hybrid Clients
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/HybridClients`
+`GET api/v1/Tenants/{tenantId}/HybridClients`
 
 ### Parameters
 
@@ -390,7 +424,7 @@ Id of tenant
 [FromQuery]
 [Optional]
 [Default = ""]
-string[] tags
+string[] tag
 ```
 
 Only return Clients that have these tags.
@@ -436,7 +470,7 @@ Success
 
 ##### Type:
 
- `List[HybridClientDto]`
+ `List[HybridClient]`
 
 ```json
 [
@@ -453,7 +487,7 @@ Success
     ],
     "ClientUri": "ClientUri",
     "LogoUri": "LogoUri",
-    "ClientId": "ClientId",
+    "Id": "Id",
     "Name": "Name",
     "Enabled": false,
     "Tags": [
@@ -474,7 +508,7 @@ Success
     ],
     "ClientUri": "ClientUri",
     "LogoUri": "LogoUri",
-    "ClientId": "ClientId",
+    "Id": "Id",
     "Name": "Name",
     "Enabled": false,
     "Tags": [
@@ -508,7 +542,7 @@ Delete an Hybrid Client
 
 ### Request
 
-`DELETE api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}`
+`DELETE api/v1/Tenants/{tenantId}/HybridClients/{clientId}`
 
 ### Parameters
 

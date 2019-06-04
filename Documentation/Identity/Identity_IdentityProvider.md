@@ -10,7 +10,7 @@ APIs for getting a list of all supported Identity Providers
 
 For HTTP requests and responses, the IdentityProvider object has the following properties and JSON-serialized body: 
 
-Property | Type | Descriptions
+Property | Type | Description
  --- | --- | ---
 Id | Guid | Id of an identity provider
 DisplayName | string | Identity provider display name to use
@@ -36,7 +36,7 @@ Returns an IdentityProvider object
 
 ### Request
 
-`GET api/v1-preview/IdentityProviders/{identityProviderId}`
+`GET api/v1/IdentityProviders/{identityProviderId}`
 
 ### Parameters
 
@@ -95,7 +95,7 @@ Get all identity providers for a tenant
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/IdentityProviders`
+`GET api/v1/Tenants/{tenantId}/IdentityProviders`
 
 ### Parameters
 
@@ -190,7 +190,7 @@ Get an identity provider
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/IdentityProviders/{identityProviderId}`
+`GET api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}`
 
 ### Parameters
 
@@ -257,7 +257,7 @@ Add an existing identity provider to a tenant
 
 ### Request
 
-`POST api/v1-preview/Tenants/{tenantId}/IdentityProviders`
+`POST api/v1/Tenants/{tenantId}/IdentityProviders`
 
 ### Parameters
 
@@ -271,19 +271,30 @@ Id of tenant
 ```csharp
 [FromBody]
 [Required]
-IdentityProviderAddDto identityProviderAddDto
+IdentityProviderAdd identityProviderAdd
 ```
 
 Add Identity Provider object
 
+Property | Type | Required | Description 
+ --- | --- | --- | ---
+IdentityProviderId | Guid | Yes | Identity Provider Id to Add
+AzureActiveDirectorySendConsent | bool | No | Send consent email for Azure Active Directory.
+AzureActiveDirectoryConsentEmail | string | No | Preferred Azure Active Directory consent email for user. Must be provided if AzureActiveDirectorySendConsent is set to true.
+AzureActiveDirectoryConsentGivenName | string | No | Preferred Azure Active Directory consent name for user. Must be provided if AzureActiveDirectorySendConsent is set to true.
+AzureActiveDirectoryConsentSurname | string | No | Preferred Azure Active Directory consent surname for user. Must be provided if AzureActiveDirectorySendConsent is set to true.
+AzureActiveDirectoryTenant | string | No | Domain Name of Azure Active Directory (e.g. mydomain.onmicrosoft.com). Must be provided if you add AAd as an Identity Provider.
+
+
+
 ```json
 {
   "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
-  "AzureActiveDirectoryTenant": "AzureActiveDirectoryTenant",
   "AzureActiveDirectorySendConsent": false,
   "AzureActiveDirectoryConsentEmail": "user@company.com",
   "AzureActiveDirectoryConsentGivenName": "Name",
-  "AzureActiveDirectoryConsentSurname": "Surname"
+  "AzureActiveDirectoryConsentSurname": "Surname",
+  "AzureActiveDirectoryTenant": "AzureActiveDirectoryTenant"
 }
 ```
 
@@ -343,7 +354,7 @@ Remove an identity provider from a tenant
 
 ### Request
 
-`DELETE api/v1-preview/Tenants/{tenantId}/IdentityProviders/{identityProviderId}`
+`DELETE api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}`
 
 ### Parameters
 

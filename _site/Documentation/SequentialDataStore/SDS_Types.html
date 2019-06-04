@@ -1695,7 +1695,7 @@ defines the available functions. See <a href="#types">Types</a> for general SdsT
 <h2 id="get-type"><code>Get Type</code></h2>
 <p>Returns the type corresponding to the specified typeId within a given namespace.</p>
 <p><strong>Request</strong></p>
-<pre><code class="lang-text">   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -1761,7 +1761,7 @@ Content-Type: application/json
 <h2 id="get-type-reference-count"><code>Get Type Reference Count</code></h2>
 <p>Returns a dictionary mapping the object name to the number of references held by streams, stream views and parent types for the specified type. See <a href="xref:sdsstreams">Streams</a> and <a class="xref" href="SDS_Views.html">Steam Views</a> for more information on the use of types to define streams and stream views. For further details about type referencing please see: <a href="#type-reusability">Type Reusability</a>.</p>
 <p><strong>Request</strong></p>
-<pre><code class="lang-text">   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/ReferenceCount
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/ReferenceCount
 </code></pre><p><strong>Parameters</strong>  </p>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -1785,7 +1785,7 @@ all types in the Namespace. See <a class="xref" href="Searching.html">Searching<
 for information about specifying those respective parameters.</p>
 <p>Note that the results will also include types that were automatically created by SDS as a result of type referencing. For further details about type referencing please see: <a href="#type-reusability">Type Reusability</a></p>
 <p><strong>Request</strong></p>
-<pre><code class="lang-text">   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types?query={query}&amp;skip={skip}&amp;count={count}&amp;orderby={orderby}
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types?query={query}&amp;skip={skip}&amp;count={count}&amp;orderby={orderby}
 </code></pre><p><strong>Parameters</strong>  </p>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -1871,7 +1871,7 @@ including the .NET HttpClient, consider redirecting with the authorization token
 returns <code>Unauthorized</code> (401). For this reason, it is recommended that when using clients that do not 
 redirect with the authorization header, you should disable automatic redirect and perform the redirect manually.</p>
 <p><strong>Request</strong></p>
-<pre><code class="lang-text">   POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
+<pre><code class="lang-text">   POST api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -2070,7 +2070,7 @@ in the request body, a Conflict error response is returned and the client librar
 <h2 id="delete-type"><code>Delete Type</code></h2>
 <p>Deletes a type from the specified tenant and namespace. Note that a type cannot be deleted if any streams, stream views, or other types reference it.</p>
 <p><strong>Request</strong></p>
-<pre><code class="lang-text">   DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
+<pre><code class="lang-text">   DELETE api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -2082,7 +2082,7 @@ in the request body, a Conflict error response is returned and the client librar
 <h2 id="get-types-access-control-list"><code>Get Types Access Control List</code></h2>
 <p>Get the default ACL for the Types collection. For more information on ACLs, see <a href="xref:accesscontrol">Access Control</a>.</p>
 <p><strong>Request</strong></p>
-<pre><code class="lang-text">   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/AccessControl
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/AccessControl
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -2094,7 +2094,7 @@ in the request body, a Conflict error response is returned and the client librar
 <h2 id="update-types-access-control-list"><code>Update Types Access Control List</code></h2>
 <p>Update the default ACL for the Types collection. For more information on ACLs, see <a href="xref:accesscontrol">Access Control</a>.</p>
 <p><strong>Request</strong></p>
-<pre><code class="lang-text">   PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/AccessControl
+<pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/AccessControl
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -2106,7 +2106,7 @@ in the request body, a Conflict error response is returned and the client librar
 <h2 id="get-type-access-control-list"><code>Get Type Access Control List</code></h2>
 <p>Get the ACL of the specified type. For more information on ACLs, see <a href="xref:accesscontrol">Access Control</a>.</p>
 <p><strong>Request</strong></p>
-<pre><code class="lang-text">   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessControl
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessControl
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -2120,7 +2120,7 @@ in the request body, a Conflict error response is returned and the client librar
 <p>Update the ACL of the specified type. For more information on ACLs, see <a href="xref:accesscontrol">Access Control</a>.</p>
 <p>Note that this does not update the ACL for the associated types. For further details about type referencing please see: <a href="#type-reusability">Type Reusability</a>.</p>
 <p><strong>Request</strong></p>
-<pre><code class="lang-text">   PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessControl
+<pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessControl
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -2133,7 +2133,7 @@ in the request body, a Conflict error response is returned and the client librar
 <h2 id="get-type-owner"><code>Get Type Owner</code></h2>
 <p>Get the Owner of the specified type. For more information on Owners, see <a href="xref:accesscontrol">Access Control</a>.</p>
 <p><strong>Request</strong></p>
-<pre><code class="lang-text">   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Owner
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Owner
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -2147,7 +2147,7 @@ in the request body, a Conflict error response is returned and the client librar
 <p>Update the Owner of the specified type. For more information on Owners, see <a href="xref:accesscontrol">Access Control</a>.</p>
 <p>Note that this does not update the Owner for the associated types. For further details about type referencing please see: <a href="#type-reusability">Type Reusability</a>.</p>
 <p><strong>Request</strong></p>
-<pre><code class="lang-text">   PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Owner
+<pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Owner
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>

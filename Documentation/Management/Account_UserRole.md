@@ -35,6 +35,7 @@ Retrieves all `Roles` for the specified user.
 
 `GET api/v1-preview/Tenants/{tenantId}/Users/{userId}/Roles`
 
+`GET api/v1/Tenants/{tenantId}/Users/{userId}/Roles`
 
 ### Parameters
 
@@ -93,6 +94,7 @@ Replaces the `Roles` of a user with a new list of roles.
 
 `PUT api/v1-preview/Tenants/{tenantId}/Users/{userId}/Roles`
 
+`PUT api/v1/Tenants/{tenantId}/Users/{userId}/Roles`
 
 ### Parameters
 

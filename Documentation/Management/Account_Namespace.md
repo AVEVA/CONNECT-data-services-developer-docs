@@ -16,6 +16,8 @@ A `Namespace` is a collection of SDS types, streams, and stream views. Namespace
 
 For HTTP requests and responses, the Namespace object has the following properties and JSON-serialized body: 
 
+### Version 1-Preview
+
 | Property | Type | Description | 
  | --- | --- | ---  | 
 | Id | string | Gets or sets name of this Namespace; unique within a Tenant's Namespaces. | 
@@ -27,7 +29,6 @@ For HTTP requests and responses, the Namespace object has the following properti
 | ThroughputUnits | int32 | Gets or sets number of Throughput units for this Namespace. **Note:** ThroughputUnits will be removed in the next version. Please remove references to it. | 
 | StorageUnits | int32 | Gets or sets number of Storage units for this Namespace. **Note:** StorageUnits will be removed in the next version. Please remove references to it. | 
 | State | NamespaceProvisioningState | Gets or sets current state of this Namespace. | 
-
 
 
 ```json
@@ -43,6 +44,28 @@ For HTTP requests and responses, the Namespace object has the following properti
 	"State": 0
 }
 ```
+***
+
+### Version 1
+| Property | Type | Description | 
+ | --- | --- | ---  | 
+| Id | string | Gets or sets name of this Namespace; unique within a Tenant's Namespaces. | 
+| Region | string | Gets or sets the region that the namespace is provisioned in. | 
+| Self | string | Gets or sets the namespace's URI. | 
+| Description | string | Gets or sets description of this Namespace. | 
+| State | NamespaceProvisioningState | Gets or sets current state of this Namespace. | 
+
+
+```json
+{
+	"Id": "id",
+	"Region": "region",
+	"Self": "self",
+	"Description": "description",
+	"State": 0
+}
+```
+***
 
 # NamespaceProvisioningState
 
@@ -64,6 +87,7 @@ Returns all `Namespaces` owned by the specified `Tenant` that the caller has acc
 
 `GET api/v1-preview/Tenants/{tenantId}/Namespaces`
 
+`GET api/v1/Tenants/{tenantId}/Namespaces`
 
 ### Parameters
 
@@ -99,6 +123,7 @@ Returns a `Namespace` with the specified Id.
 
 `GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}`
 
+`GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}`
 
 ### Parameters
 
@@ -141,6 +166,8 @@ Creates a new `Namespace` in the specified `Tenant`.
 ### Http
 
 `POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId?}`
+
+`POST api/v1/Tenants/{tenantId}/Namespaces/{namespaceId?}`
 
 
 ### Parameters
@@ -188,13 +215,13 @@ A `Namespace` can only be created if the current principal has Write access.
 
 ## `Update Namespace`
 
-Updates `Namespace` information: Description and TierId.
-            The [AccessControlList](xref:accessControl) and Owner's [Trustee](xref:accessControl) can only be updated through their own routes.
+Updates `Namespace` information: Description and TierId. The [AccessControlList](xref:accessControl) and Owner's [Trustee](xref:accessControl) can only be updated through their own routes.
 
 ### Http
 
 `PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}`
 
+`PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}`
 
 ### Parameters
 
@@ -244,6 +271,7 @@ Deletes a `Namespace` in the specified `Tenant`.
 
 `DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}`
 
+`DELETE api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}`
 
 ### Parameters
 
@@ -286,6 +314,7 @@ Returns the [AccessControlList](xref:accessControl) that is used to authorize ac
 
 `GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/accesscontrol`
 
+`GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/accesscontrol`
 
 ### Parameters
 
@@ -328,6 +357,7 @@ Updates the [AccessControlList](xref:accessControl) that is used to authorize ac
 
 `PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/accesscontrol`
 
+`PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/accesscontrol`
 
 ### Parameters
 
@@ -377,6 +407,7 @@ Returns the Owner's [Trustee](xref:accessControl) for a given `Namespace`.
 
 `GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/owner`
 
+`GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/owner`
 
 ### Parameters
 
@@ -419,6 +450,7 @@ Changes the Owner's [Trustee](xref:accessControl) for a given `Namespace`.
 
 `PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/owner`
 
+`PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/owner`
 
 ### Parameters
 

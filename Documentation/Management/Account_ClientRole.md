@@ -35,6 +35,7 @@ Replaces the `Roles` of a client with a new list of roles.
 
 `PUT api/v1-preview/Tenants/{tenantId}/Clients/{clientId}/Roles`
 
+`PUT api/v1/Tenants/{tenantId}/Clients/{clientId}/Roles`
 
 ### Parameters
 
@@ -85,6 +86,7 @@ Retrieves all `Roles` from a client.
 
 `GET api/v1-preview/Tenants/{tenantId}/Clients/{clientId}/Roles`
 
+`GET api/v1/Tenants/{tenantId}/Clients/{clientId}/Roles`
 
 ### Parameters
 

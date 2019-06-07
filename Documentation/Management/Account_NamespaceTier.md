@@ -6,7 +6,9 @@ uid: AccountNamespaceTier
 
 An attribute that specifies `Namespace` performance.
 
-**Note:** Namespace Tiers will be removed in the next version. Please remove references to it.
+## Note
+
+Namespace tiers are only applicatble for version 1-preview. Namespace tiers are removed in version 1. Please remove references to it.
 
 ## Properties
 

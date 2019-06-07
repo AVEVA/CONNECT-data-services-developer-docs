@@ -16,6 +16,7 @@ Returns blog entries ordered by time posted.
 
 `GET api/v1-preview/ServiceBlog/Entries`
 
+`GET api/v1/ServiceBlog/Entries`
 
 ### Parameters
 
@@ -57,6 +58,7 @@ Returns a blog entry specified by ID.
 
 `GET api/v1-preview/ServiceBlog/Entries/{id}`
 
+`GET api/v1/ServiceBlog/Entries/{id}`
 
 ### Parameters
 

@@ -4,7 +4,7 @@ uid: AccountServiceBlog
 
 # Service Blog
 
-API's for CRUD operations on the Service Blog.
+API's for retrieving service blog entries from OSIsoft Cloud Services.
 
 ***
 

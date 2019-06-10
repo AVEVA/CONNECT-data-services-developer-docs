@@ -161,7 +161,7 @@ A `Namespace` can only be retrieved if the current principal has Read access.
 
 ## `Create New Namespace`
 
-Creates a new `Namespace` in the specified `Tenant`.
+Creates a new `Namespace` in the specified `Tenant`. Currently, there is a limit of five Namespaces per tenant.
 
 ### Http
 

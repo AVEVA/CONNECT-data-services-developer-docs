@@ -5,7 +5,7 @@ uid: AccountNamespace
 # Namespaces
 
 A `Namespace` is a collection of SDS types, streams, and stream views. Namespace identifiers are unique within an account. Requirements for Namespace IDs are the following:
-- Must contain 260 characters or fewer
+- Must contain 100 characters or fewer
 - Must only contain alphanumeric characters, underscores, dashes, spaces, and periods
 - Must not contain two consecutive periods
 - Must not start or end with a period

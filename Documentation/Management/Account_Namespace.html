@@ -88,6 +88,7 @@
 </ul>
 <h2 id="properties">Properties</h2>
 <p>For HTTP requests and responses, the Namespace object has the following properties and JSON-serialized body: </p>
+<h3 id="version-1-preview">Version 1-Preview</h3>
 <table>
 <thead>
 <tr>
@@ -100,57 +101,47 @@
 <tr>
 <td>Id</td>
 <td>string</td>
-<td>Name of this Namespace. Unique within a Tenant&#39;s Namespaces.</td>
+<td>Gets or sets name of this Namespace; unique within a Tenant&#39;s Namespaces.</td>
 </tr>
 <tr>
 <td>TenantId</td>
 <td>string</td>
-<td>GUID of the Tenant that this Namespace corresponds to</td>
+<td>Gets or sets unique identifier of the Tenant that this Namespace corresponds to. <strong>Note:</strong> TenantId will be removed in the next version. Please remove references to it.</td>
 </tr>
 <tr>
 <td>Region</td>
 <td>string</td>
-<td>The region that the namespace is provisioned in</td>
+<td>Gets or sets the region that the namespace is provisioned in.</td>
 </tr>
 <tr>
 <td>Self</td>
 <td>string</td>
-<td>The namespace&#39;s URI</td>
+<td>Gets or sets the namespace&#39;s URI.</td>
 </tr>
 <tr>
 <td>Description</td>
 <td>string</td>
-<td>Description of this Namespace.</td>
+<td>Gets or sets description of this Namespace.</td>
 </tr>
 <tr>
 <td>TierId</td>
 <td>string</td>
-<td>Id of the Tier that this Namespace is associated with.</td>
+<td>Gets or sets id of the Tier that this Namespace is associated with. <strong>Note:</strong> TierId will be removed in the next version. Please remove references to it.</td>
 </tr>
 <tr>
 <td>ThroughputUnits</td>
 <td>int32</td>
-<td>Number of Throughput units for this Namespace.</td>
+<td>Gets or sets number of Throughput units for this Namespace. <strong>Note:</strong> ThroughputUnits will be removed in the next version. Please remove references to it.</td>
 </tr>
 <tr>
 <td>StorageUnits</td>
 <td>int32</td>
-<td>Number of Storage units for this Namespace.</td>
+<td>Gets or sets number of Storage units for this Namespace. <strong>Note:</strong> StorageUnits will be removed in the next version. Please remove references to it.</td>
 </tr>
 <tr>
 <td>State</td>
 <td>NamespaceProvisioningState</td>
-<td>Current state of this Namespace.</td>
-</tr>
-<tr>
-<td>Owner</td>
-<td>Trustee</td>
-<td>Owner <a class="xref" href="../Access_Control.html">Trustee</a> of this Namespace.</td>
-</tr>
-<tr>
-<td>AccessControl</td>
-<td>AccessControlList</td>
-<td>The <a class="xref" href="../Access_Control.html">AccessControlList</a> that defines Access Control for this <code>Namespace</code></td>
+<td>Gets or sets current state of this Namespace.</td>
 </tr>
 </tbody>
 </table>
@@ -163,19 +154,93 @@
     &quot;TierId&quot;: &quot;tierid&quot;,
     &quot;ThroughputUnits&quot;: 0,
     &quot;StorageUnits&quot;: 0,
-    &quot;State&quot;: 0,
-    &quot;Owner&quot;: {
-        &quot;Type&quot;: 0
-    },
-    &quot;AccessControl&quot;: {
-        &quot;RoleTrusteeAccessControlEntries&quot;: []
-    }
+    &quot;State&quot;: 0
 }
 </code></pre><hr>
+<h3 id="version-1">Version 1</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>string</td>
+<td>Gets or sets name of this Namespace; unique within a Tenant&#39;s Namespaces.</td>
+</tr>
+<tr>
+<td>Region</td>
+<td>string</td>
+<td>Gets or sets the region that the namespace is provisioned in.</td>
+</tr>
+<tr>
+<td>Self</td>
+<td>string</td>
+<td>Gets or sets the namespace&#39;s URI.</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>string</td>
+<td>Gets or sets description of this Namespace.</td>
+</tr>
+<tr>
+<td>State</td>
+<td>NamespaceProvisioningState</td>
+<td>Gets or sets current state of this Namespace.</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+    &quot;Id&quot;: &quot;id&quot;,
+    &quot;Region&quot;: &quot;region&quot;,
+    &quot;Self&quot;: &quot;self&quot;,
+    &quot;Description&quot;: &quot;description&quot;,
+    &quot;State&quot;: 0
+}
+</code></pre><hr>
+<h1 id="namespaceprovisioningstate">NamespaceProvisioningState</h1>
+<p>A <code>NamespaceProvisioningState</code> is a status code describing a Namespace&#39;s current Provisioning State.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Creating</td>
+<td>A Namespace cannot be used until all resources are provisioned successfully.  In this state, the Namespace cannot be used until it transitions to Active.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Active</td>
+<td>The required resources for the Namespace have been created. The Namespace is ready for use.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Deleting</td>
+<td>The Namespace has been marked for deletion. The Namespace and its resources will be removed and unavailable while in this state.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Deleted</td>
+<td>The Namespace has been deleted, along with any resources (e.g. Types and Streams) associated with the Namespace.</td>
+</tr>
+</tbody>
+</table>
+<hr>
 <h2 id="get-all-namespaces"><code>Get All Namespaces</code></h2>
 <p>Returns all <code>Namespaces</code> owned by the specified <code>Tenant</code> that the caller has access to.</p>
 <h3 id="http">Http</h3>
 <p><code>GET api/v1-preview/Tenants/{tenantId}/Namespaces</code></p>
+<p><code>GET api/v1/Tenants/{tenantId}/Namespaces</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
@@ -215,6 +280,7 @@ string tenantId
 <p>Returns a <code>Namespace</code> with the specified Id.</p>
 <h3 id="http-1">Http</h3>
 <p><code>GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}</code></p>
+<p><code>GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
@@ -260,9 +326,10 @@ string namespaceId
 </table>
 <hr>
 <h2 id="create-new-namespace"><code>Create New Namespace</code></h2>
-<p>Creates a new <code>Namespace</code> in the specified <code>Tenant</code>.</p>
+<p>Creates a new <code>Namespace</code> in the specified <code>Tenant</code>. Currently, there is a limit of five Namespaces per tenant.</p>
 <h3 id="http-2">Http</h3>
 <p><code>POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId?}</code></p>
+<p><code>POST api/v1/Tenants/{tenantId}/Namespaces/{namespaceId?}</code></p>
 <h3 id="parameters-2">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
@@ -276,7 +343,7 @@ Namespace namespaceObj
 [Default = &quot;&quot;]
 [FromRoute]
 string namespaceId
-</code></pre><p>The Id of the new <code>Namespace</code>. The Id can also be specified in the namespaceObj. If it is omitted in both, the Id will be generated.</p>
+</code></pre><p>The Id of the new <code>Namespace</code>. The Id can also be specified in the namespace object. If it is omitted in both, the Id will be generated.</p>
 <h3 id="security-2">Security</h3>
 <p>A <code>Namespace</code> can only be created if the current principal has Write access.</p>
 <h3 id="returns-2">Returns</h3>
@@ -318,10 +385,10 @@ string namespaceId
 </table>
 <hr>
 <h2 id="update-namespace"><code>Update Namespace</code></h2>
-<p>Updates <code>Namespace</code> information: Description and TierId.
-            The <a class="xref" href="../Access_Control.html">AccessControlList</a> and Owner&#39;s <a class="xref" href="../Access_Control.html">Trustee</a> can only be updated through their own routes.</p>
+<p>Updates <code>Namespace</code> information: Description and TierId. The <a class="xref" href="../Access_Control.html">AccessControlList</a> and Owner&#39;s <a class="xref" href="../Access_Control.html">Trustee</a> can only be updated through their own routes.</p>
 <h3 id="http-3">Http</h3>
 <p><code>PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}</code></p>
+<p><code>PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}</code></p>
 <h3 id="parameters-3">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
@@ -369,6 +436,7 @@ Namespace newProperties
 <p>Deletes a <code>Namespace</code> in the specified <code>Tenant</code>.</p>
 <h3 id="http-4">Http</h3>
 <p><code>DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}</code></p>
+<p><code>DELETE api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}</code></p>
 <h3 id="parameters-4">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
@@ -412,6 +480,7 @@ string namespaceId
 <p>Returns the <a class="xref" href="../Access_Control.html">AccessControlList</a> that is used to authorize access to a <code>Namespace</code>.</p>
 <h3 id="http-5">Http</h3>
 <p><code>GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/accesscontrol</code></p>
+<p><code>GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/accesscontrol</code></p>
 <h3 id="parameters-5">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
@@ -455,6 +524,7 @@ string namespaceId
 <p>Updates the <a class="xref" href="../Access_Control.html">AccessControlList</a> that is used to authorize access to a <code>Namespace</code>.</p>
 <h3 id="http-6">Http</h3>
 <p><code>PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/accesscontrol</code></p>
+<p><code>PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/accesscontrol</code></p>
 <h3 id="parameters-6">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
@@ -502,6 +572,7 @@ AccessControlList newAccessControlList
 <p>Returns the Owner&#39;s <a class="xref" href="../Access_Control.html">Trustee</a> for a given <code>Namespace</code>.</p>
 <h3 id="http-7">Http</h3>
 <p><code>GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/owner</code></p>
+<p><code>GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/owner</code></p>
 <h3 id="parameters-7">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
@@ -545,6 +616,7 @@ string namespaceId
 <p>Changes the Owner&#39;s <a class="xref" href="../Access_Control.html">Trustee</a> for a given <code>Namespace</code>.</p>
 <h3 id="http-8">Http</h3>
 <p><code>PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/owner</code></p>
+<p><code>PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/owner</code></p>
 <h3 id="parameters-8">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]

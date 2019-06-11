@@ -10,8 +10,8 @@ The GroupRule lets users organize data items in the query, within or across stre
 Property | Type | Required | Descriptions
  --- | --- | --- | ---
 Id | string | True | Id of the rule
-Type | GroupRuleType | False | Stream property to base grouping on
-TokenRules | TokenRules | True | Token rules that create patterns to form groups
+Type | GroupRuleType | True | Stream property to base grouping on
+TokenRules | TokenRules | False | Token rules that create patterns to form groups
 
 
 
@@ -37,8 +37,7 @@ The following example shows a group rule definition that creates data groups bas
         "Arizona",
         "Pennsylvania",
         "California"
-      ],
-      "Patterns": null
+      ]
     }
   }
 ]

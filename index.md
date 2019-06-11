@@ -31,7 +31,6 @@ easily obtain needed information.
      - [ServiceBlog](xref:AccountServiceBlog)
    - [Identity](xref:identityOverview)
      - [AAD Tenant](xref:identityAzureActiveDirectoryTenant)
-     - [Client](xref:identityClient)
      - [Client Credential Client](xref:identityClientCredentialClient)
      - [Hybrid Client](xref:identityHybridClient)
      - [Implicit Client](xref:identityImplicitClient)

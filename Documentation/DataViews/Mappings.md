@@ -104,21 +104,6 @@ PropertyPaths | [string] | True | Paths to property
 ItemIdentifier | FilterUnit | False | Identifier for the resource that contain the property used
 
 
-
- ## `ItemIdentifier` 
- Identifies the property the user wants to select with a PropertyMappingRule.
-### Properties
-
-Property | Type | Required | Descriptions
- --- | --- | --- | ---
-Resource | FilterResource | True | Type of the resource used
-Field | FilterField | True | Field within the resource to query against
-Name | string | False | Name of the attribute within the field (Only applies when Field is an attribute)
-Value | string | True | Value for field to use in query
-Function | FilterFunction | True | Function to use in query
-
-
-
 ***
 
 

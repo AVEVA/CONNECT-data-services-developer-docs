@@ -15,8 +15,9 @@ TokenRules | TokenRules | False | Token rules that create patterns to form group
 
 
 
- ## `Type` 
- The Type can have the following values: 
+## `Type` 
+The Type can have the following values:
+
 Value | Type | Description
  --- | --- | ---
 StreamId | string | Group on Stream ID

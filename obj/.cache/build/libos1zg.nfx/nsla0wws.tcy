@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -76,15 +76,15 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="osisoftCloudServices">
-<h1 id="osisoft-cloud-services">OSIsoft Cloud Services</h1>
+<h1 id="osisoft-cloud-services" sourcefile="Documentation/OSIsoft_Cloud_Services.md" sourcestartlinenumber="5" sourceendlinenumber="6">OSIsoft Cloud Services</h1>
 
-<p>The information in the sections that follow document the APIs and usage for each of the following:</p>
-<ul>
-<li>Management - Use the information in this section to create, manage, and administer your account by assigning users, roles,
+<p sourcefile="Documentation/OSIsoft_Cloud_Services.md" sourcestartlinenumber="8" sourceendlinenumber="8">The information in the sections that follow document the APIs and usage for each of the following:</p>
+<ul sourcefile="Documentation/OSIsoft_Cloud_Services.md" sourcestartlinenumber="10" sourceendlinenumber="15">
+<li sourcefile="Documentation/OSIsoft_Cloud_Services.md" sourcestartlinenumber="10" sourceendlinenumber="11">Management - Use the information in this section to create, manage, and administer your account by assigning users, roles,
 and namespaces to your tenant.</li>
-<li>Sequential Data Store (SDS) - Use the information in this section to learn about the OSIsoft Cloud Services Sequential Data
+<li sourcefile="Documentation/OSIsoft_Cloud_Services.md" sourcestartlinenumber="12" sourceendlinenumber="13">Sequential Data Store (SDS) - Use the information in this section to learn about the OSIsoft Cloud Services Sequential Data
 Store. The data store is an optimized sequential data store based on the Qi technology.</li>
-<li>Data ingress and OSIsoft Message Format - You use OSIsoft Message Format (OMF) to achieve high-throughput asynchronous
+<li sourcefile="Documentation/OSIsoft_Cloud_Services.md" sourcestartlinenumber="14" sourceendlinenumber="15">Data ingress and OSIsoft Message Format - You use OSIsoft Message Format (OMF) to achieve high-throughput asynchronous
 data ingress into the OCS Sequential Data Store.</li>
 </ul>
 </article>

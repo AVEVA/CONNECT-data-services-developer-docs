@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -76,26 +76,26 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="accessControl">
-<h1 id="role-based-access-control-">Role-based access control </h1>
+<h1 id="role-based-access-control-" sourcefile="Documentation/Access_Control.md" sourcestartlinenumber="5" sourceendlinenumber="6">Role-based access control </h1>
 
-<p>Within OCS, role-based access control to entities such as Namespaces, Streams, and so on, is managed using an Access Control 
+<p sourcefile="Documentation/Access_Control.md" sourcestartlinenumber="8" sourceendlinenumber="12">Within OCS, role-based access control to entities such as Namespaces, Streams, and so on, is managed using an Access Control 
 List (ACL) and an Owner identity assigned to each entity. ACLs control access to entities based on their OCS Roles. Owners 
 are granted access for all operations regardless of the contents of the ACL. Not all entities in the OCS system support 
 role-based access control at this time, but the list will quickly grow and currently includes Namespaces and several unreleased 
 entities.</p>
-<h2 id="access-control-lists">Access Control Lists</h2>
-<p>Access Control Lists (ACLs) contain sets of Access Control Entries (ACEs) each with a trustee (reference to an identity, such 
+<h2 id="access-control-lists" sourcefile="Documentation/Access_Control.md" sourcestartlinenumber="15" sourceendlinenumber="16">Access Control Lists</h2>
+<p sourcefile="Documentation/Access_Control.md" sourcestartlinenumber="18" sourceendlinenumber="19">Access Control Lists (ACLs) contain sets of Access Control Entries (ACEs) each with a trustee (reference to an identity, such 
 as a role, user, or application), AccessType, and AccessRights. </p>
-<p>A user or application that attempts to read, write, delete, or manage access control of an entity assigned an ACL must be 
+<p sourcefile="Documentation/Access_Control.md" sourcestartlinenumber="21" sourceendlinenumber="22">A user or application that attempts to read, write, delete, or manage access control of an entity assigned an ACL must be 
 assigned a trustee that has <code>AccessType</code> set to <code>Allowed</code> for the AccessRight corresponding to that operation.</p>
-<p>AccessRights are the bitwise union of all of the access rights they encompass. For example, <code>AccessRights 3</code> indicates 
+<p sourcefile="Documentation/Access_Control.md" sourcestartlinenumber="24" sourceendlinenumber="25">AccessRights are the bitwise union of all of the access rights they encompass. For example, <code>AccessRights 3</code> indicates 
 that Read and Write access is permitted.</p>
-<p><em>Note</em><br>If an operation requires more than one access right then an identity can obtain 
+<p sourcefile="Documentation/Access_Control.md" sourcestartlinenumber="27" sourceendlinenumber="29"><em>Note</em><br>If an operation requires more than one access right then an identity can obtain 
   those rights from multiple ACL entries.</p>
-<p><em>Note</em><br><code>AccessType.Denied</code> takes precedence over <code>AccessType.Allowed</code>. For example, a role that is assigned <code>AccessType.Denied</code> for
+<p sourcefile="Documentation/Access_Control.md" sourcestartlinenumber="31" sourceendlinenumber="33"><em>Note</em><br><code>AccessType.Denied</code> takes precedence over <code>AccessType.Allowed</code>. For example, a role that is assigned <code>AccessType.Denied</code> for
   <code>AccessRights.All</code> will receive a <code>forbidden</code> for all  requests unless they are the owner of the entity.</p>
-<p><em>Note</em><br>Roles are the only TrusteeType supported for AccessControlList ACEs.</p>
-<table>
+<p sourcefile="Documentation/Access_Control.md" sourcestartlinenumber="35" sourceendlinenumber="36"><em>Note</em><br>Roles are the only TrusteeType supported for AccessControlList ACEs.</p>
+<table sourcefile="Documentation/Access_Control.md" sourcestartlinenumber="39" sourceendlinenumber="43">
 <thead>
 <tr>
 <th>TrusteeType</th>
@@ -117,7 +117,7 @@ that Read and Write access is permitted.</p>
 </tr>
 </tbody>
 </table>
-<table>
+<table sourcefile="Documentation/Access_Control.md" sourcestartlinenumber="46" sourceendlinenumber="49">
 <thead>
 <tr>
 <th>AccessType</th>
@@ -135,8 +135,8 @@ that Read and Write access is permitted.</p>
 </tr>
 </tbody>
 </table>
-<h4 id="commonaccessrightsenum">CommonAccessRightsEnum</h4>
-<table>
+<h4 id="commonaccessrightsenum" sourcefile="Documentation/Access_Control.md" sourcestartlinenumber="51" sourceendlinenumber="51">CommonAccessRightsEnum</h4>
+<table sourcefile="Documentation/Access_Control.md" sourcestartlinenumber="53" sourceendlinenumber="60">
 <thead>
 <tr>
 <th>AccessRights</th>
@@ -177,13 +177,13 @@ that Read and Write access is permitted.</p>
 </tr>
 </tbody>
 </table>
-<p>The following code sample shows the structure and format for an ACL
+<p sourcefile="Documentation/Access_Control.md" sourcestartlinenumber="62" sourceendlinenumber="64">The following code sample shows the structure and format for an ACL
 that gives Role 1 Read Access, Role 2 All access 
 but denies Role 3 ManageAccessControl Access:</p>
-<h4 id="accesscontrollist">AccessControlList</h4>
-<p><strong>Body</strong></p>
-<p>  Sample  body:</p>
-<pre><code>  HTTP/1.1 200
+<h4 id="accesscontrollist" sourcefile="Documentation/Access_Control.md" sourcestartlinenumber="66" sourceendlinenumber="66">AccessControlList</h4>
+<p sourcefile="Documentation/Access_Control.md" sourcestartlinenumber="68" sourceendlinenumber="68"><strong>Body</strong></p>
+<p sourcefile="Documentation/Access_Control.md" sourcestartlinenumber="70" sourceendlinenumber="70">  Sample  body:</p>
+<pre sourcefile="Documentation/Access_Control.md" sourcestartlinenumber="72" sourceendlinenumber="102"><code>  HTTP/1.1 200
   Content-Type: application/json
 
   &quot;AccessControlList&quot;: {
@@ -214,20 +214,20 @@ but denies Role 3 ManageAccessControl Access:</p>
         }
     ],
     }
-</code></pre><h2 id="owner">Owner</h2>
-<p>Owner objects on OCS entities are used to grant access for all operations on the entity regardless of the 
+</code></pre><h2 id="owner" sourcefile="Documentation/Access_Control.md" sourcestartlinenumber="105" sourceendlinenumber="106">Owner</h2>
+<p sourcefile="Documentation/Access_Control.md" sourcestartlinenumber="108" sourceendlinenumber="109">Owner objects on OCS entities are used to grant access for all operations on the entity regardless of the 
 entity&#39;s AccessControlList&#39;s AccessControlEntries. </p>
-<p><em>Note</em><br>Currently, only Users and Applications are valid owners for entities.  </p>
-<p>The following code samples shows the format and structure of an owner object:</p>
-<h4 id="trustee">Trustee</h4>
-<p><strong>User Owner Body</strong></p>
-<pre><code>&quot;Owner&quot;: {
+<p sourcefile="Documentation/Access_Control.md" sourcestartlinenumber="111" sourceendlinenumber="112"><em>Note</em><br>Currently, only Users and Applications are valid owners for entities.  </p>
+<p sourcefile="Documentation/Access_Control.md" sourcestartlinenumber="114" sourceendlinenumber="114">The following code samples shows the format and structure of an owner object:</p>
+<h4 id="trustee" sourcefile="Documentation/Access_Control.md" sourcestartlinenumber="116" sourceendlinenumber="116">Trustee</h4>
+<p sourcefile="Documentation/Access_Control.md" sourcestartlinenumber="118" sourceendlinenumber="118"><strong>User Owner Body</strong></p>
+<pre sourcefile="Documentation/Access_Control.md" sourcestartlinenumber="120" sourceendlinenumber="124"><code>&quot;Owner&quot;: {
     &quot;Type&quot;: 1,
     &quot;TenantId&quot;: &quot;55555555-5555-5555-5555-555555555555&quot;,
     &quot;ObjectId&quot;: &quot;44444444-4444-4444-4444-444444444444&quot;
 },
-</code></pre><p><strong>Application Owner Body</strong></p>
-<pre><code>&quot;Owner&quot;: {
+</code></pre><p sourcefile="Documentation/Access_Control.md" sourcestartlinenumber="126" sourceendlinenumber="126"><strong>Application Owner Body</strong></p>
+<pre sourcefile="Documentation/Access_Control.md" sourcestartlinenumber="128" sourceendlinenumber="132"><code>&quot;Owner&quot;: {
     &quot;Type&quot;: 2,
     &quot;TenantId&quot;: &quot;55555555-5555-5555-5555-555555555555&quot;,
     &quot;ApplicationId&quot;: &quot;66666666-6666-6666-6666-666666666666&quot;

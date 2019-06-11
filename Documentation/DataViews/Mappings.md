@@ -10,7 +10,7 @@ The Mappings object lets users define the columns in the resulting data set by s
 Property | Type | Required | Descriptions
  --- | --- | --- | ---
 SharedMappingRules | [SharedMappingRule] | False | Rules shared across mappings
-Columns | [ColumnDefinition] | True | Columns in your data view
+Columns | [Column] | False | Columns in your data view
 IsDefault | bool | False | Determines whether default parameters should be used
 
 
@@ -34,7 +34,22 @@ MappingRulePattern | PropertyMappingRule | True | Data source identifier
 Property | Type | Required | Descriptions
  --- | --- | --- | ---
 PropertyPaths | [string] | True | Paths to property
-ItemIdentifier | QueryBase | False | Identifier for the resource that contain the property used
+ItemIdentifier | FilterUnit | False | Identifier for the resource that contain the property used
+
+
+
+ ## `ItemIdentifier` 
+ Identifies the property the user wants to select with a PropertyMappingRule.
+### Properties
+
+Property | Type | Required | Descriptions
+ --- | --- | --- | ---
+Resource | FilterResource | True | Type of the resource used
+Field | FilterField | True | Field within the resource to query against
+Name | string | False | Name of the attribute within the field (Only applies when Field is an attribute)
+Value | string | True | Value for field to use in query
+Function | FilterFunction | True | Function to use in query
+
 
 
 
@@ -47,8 +62,9 @@ ItemIdentifier | QueryBase | False | Identifier for the resource that contain th
 Property | Type | Required | Descriptions
  --- | --- | --- | ---
 Name | string | True | Name to be displayed for the column
+NamespaceId | string | False | 
 MappingRule | MappingRule | True | Mapping to the data source
-IsKey | optional: bool | True | Column is the key column (Optional once key column is defined)
+IsKey | optional: bool | False | Column is the key column (Optional once key column is defined)
 DataType | string | False | Type of the mapped data source
 
 
@@ -63,7 +79,7 @@ Used to map a column to a group rule by specifying the Id of the rule, and a tok
 Property | Type | Required | Descriptions
  --- | --- | --- | ---
 GroupRuleId | string | True | Id of the group rule to use as mapping rule
-GroupRuleToken | string | True | Token to use in the specified group rule
+GroupRuleToken | string | False | Token to use in the specified group rule
 
 
 # [LinkedMappingRule](#tab/tabid-2) 
@@ -85,7 +101,22 @@ Used to map a column to a data source by defining the paths to the property that
 Property | Type | Required | Descriptions
  --- | --- | --- | ---
 PropertyPaths | [string] | True | Paths to property
-ItemIdentifier | QueryBase | False | Identifier for the resource that contain the property used
+ItemIdentifier | FilterUnit | False | Identifier for the resource that contain the property used
+
+
+
+ ## `ItemIdentifier` 
+ Identifies the property the user wants to select with a PropertyMappingRule.
+### Properties
+
+Property | Type | Required | Descriptions
+ --- | --- | --- | ---
+Resource | FilterResource | True | Type of the resource used
+Field | FilterField | True | Field within the resource to query against
+Name | string | False | Name of the attribute within the field (Only applies when Field is an attribute)
+Value | string | True | Value for field to use in query
+Function | FilterFunction | True | Function to use in query
+
 
 
 ***
@@ -97,25 +128,20 @@ The following examples show different definitions of the Mappings object. The fi
 The last example uses a shared mapping rule with a token to match the property path, and the item identifier including every stream with TankStream as its description. It also uses the group rule defined in the [Group Rules](xref:Mappings) page to create data groups based on the states of the data source. The FlowRate and Temperature columns are defined with the shared mapping rule, using the token to specify their property path. The Volume column is an example of explicitly defining the property mapping rule in the column definition. This is done to demonstrate the difference and the result would be identical using the shared rule and a token, as the previous columns do.
 ```json
 {
-  "SharedMappingRules": null,
-  "Columns": [],
   "IsDefault": true
 }
 ``` 
 ```json
 {
-  "SharedMappingRules": null,
   "Columns": [
     {
       "Name": "column1",
       "MappingRule": {
         "PropertyPaths": [
           "path"
-        ],
-        "ItemIdentifier": null
+        ]
       },
-      "IsKey": true,
-      "DataType": null
+      "IsKey": true
     }
   ]
 }
@@ -133,7 +159,6 @@ The last example uses a shared mapping rule with a token to match the property p
         "ItemIdentifier": {
           "Resource": "Streams",
           "Field": "Description",
-          "Name": null,
           "Value": "TankStream",
           "Function": "Equals"
         }
@@ -146,8 +171,7 @@ The last example uses a shared mapping rule with a token to match the property p
       "MappingRule": {
         "PropertyPaths": [
           "path"
-        ],
-        "ItemIdentifier": null
+        ]
       },
       "IsKey": true,
       "DataType": "DateTime"
@@ -155,8 +179,7 @@ The last example uses a shared mapping rule with a token to match the property p
     {
       "Name": "State",
       "MappingRule": {
-        "GroupRuleId": "StateGroupRule",
-        "GroupRuleToken": null
+        "GroupRuleId": "StateGroupRule"
       },
       "IsKey": false,
       "DataType": "string"
@@ -167,8 +190,7 @@ The last example uses a shared mapping rule with a token to match the property p
         "SharedMappingRuleId": "shared_mapping_rule",
         "Token": "{FlowRate}"
       },
-      "IsKey": false,
-      "DataType": null
+      "IsKey": false
     },
     {
       "Name": "Temperature",
@@ -176,8 +198,7 @@ The last example uses a shared mapping rule with a token to match the property p
         "SharedMappingRuleId": "shared_mapping_rule",
         "Token": "{Temperature}"
       },
-      "IsKey": false,
-      "DataType": null
+      "IsKey": false
     },
     {
       "Name": "Volume",
@@ -188,13 +209,11 @@ The last example uses a shared mapping rule with a token to match the property p
         "ItemIdentifier": {
           "Resource": "Streams",
           "Field": "Description",
-          "Name": null,
           "Value": "TankStream",
           "Function": "Equals"
         }
       },
-      "IsKey": false,
-      "DataType": null
+      "IsKey": false
     }
   ]
 }

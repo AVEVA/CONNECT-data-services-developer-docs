@@ -10,8 +10,7 @@ The information in the sections that follow document the APIs and usage for each
   and namespaces to your tenant.
 * Sequential Data Store (SDS) - Use the information in this section to learn about the OSIsoft Cloud Services Sequential Data 
   Store. The SDS is optimized for sequential data operations.
-* Data ingress and OSIsoft Message Format - You use OSIsoft Message Format (OMF) to achieve high-throughput asynchronous 
-  data ingress into the OCS Sequential data store.
+* Data ingress and OSIsoft Message Format - You use OSIsoft Message Format (OMF) to achieve high-throughput asynchronous data ingress into the OCS Sequential Data Store.
 * Identity - Use the information in this section to create, manage and administer Users and Clients.
 
 

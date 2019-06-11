@@ -4,11 +4,10 @@ uid: AccountUserRole
 
 # User Roles
 
-User `Roles` authorize API requests made by users to various OCS features. Users can be assigned more than one `Role`, but all users have the Account Member role.
-
-The following are currently available User `Roles`:
+User `Roles` authorize API requests made by users to various OCS features. Users can be assigned more than one `Role`, but all users have the Account Member role. The following are currently available User `Roles`:
 - Account Administrator: Can add, edit, and remove users. Can also edit the permissions of existing users.
 - Account Member: Can log in and access the OCS portal.
+
 
 ## Properties
 
@@ -28,37 +27,45 @@ For HTTP requests and responses, the UserRole object has the following propertie
 ```
 ***
 
-## `GetRolesForUser()`
+## `Get Roles for User`
 
 Retrieves all `Roles` for the specified user.
 
 ### Http
 
-`GET api/Tenants/{tenantId}/Users/{userId}/Roles`
+`GET api/v1-preview/Tenants/{tenantId}/Users/{userId}/Roles`
+
+`GET api/v1/Tenants/{tenantId}/Users/{userId}/Roles`
 
 ### Parameters
 
 ```csharp
 [Required]
+[FromRoute]
 string tenantId
 ```
 
 The identifier of the account in which the user belongs.
 ```csharp
 [Required]
+[FromRoute]
 string userId
 ```
 
 The identifier of the user whose roles will be retrieved.
 ```csharp
-[Required]
-string skip
+[Optional]
+[Default = "0"]
+[FromQuery]
+int32 skip
 ```
 
 Number of `Roles` to ignore.
 ```csharp
-[Required]
-string count
+[Optional]
+[Default = "100"]
+[FromQuery]
+int32 count
 ```
 
 Number of `Roles` to return.
@@ -78,114 +85,29 @@ Authorized for Account Administrators of the specified account and an Account Me
 
 
 ***
-## `AddAccountRoleToUser()`
 
-Adds a `Role` to the specified user.
-
-### Http
-
-`PUT api/Tenants/{tenantId}/Users/{userId}/Roles/{roleId}`
-
-### Parameters
-
-```csharp
-[Required]
-string tenantId
-```
-
-The identifier for the account in which the user belongs.
-```csharp
-[Required]
-string userId
-```
-
-The identifier of the user who will be given the `Role`.
-```csharp
-[Required]
-string roleId
-```
-
-The identifier of the `Role` to be assigned.
-
-
-### Security
-
-Authorized for Account Administrators of the specified account.
-
-### Returns
-
-| Status Code | Return Type | Description | 
- | --- | --- | ---  | 
-| 200 | Role | Returns the added `Role` with the specified roleId. | 
-| 400 | Nothing is returned | Could not add the `Role` to the specified user due to missing or invalid input. | 
-| 403 | Nothing is returned | Unauthorized to add the `Role` to the specified user. | 
-| 404 | Nothing is returned | A user with the specified userId was not found. | 
-
-
-***
-## `RemoveRoleFromUser()`
-
-Removes a `Role` from a user.
-
-### Http
-
-`DELETE api/Tenants/{tenantId}/Users/{userId}/Roles/{roleId}`
-
-### Parameters
-
-```csharp
-[Required]
-string tenantId
-```
-
-The identifier for the account in which the user belongs.
-```csharp
-[Required]
-string userId
-```
-
-The identifier of the user whose `Role` will be removed.
-```csharp
-[Required]
-string roleId
-```
-
-The identifier of the `Role` to be removed.
-
-
-### Security
-
-Authorized for Account Administrators of the specified account.
-
-### Returns
-
-| Status Code | Return Type | Description | 
- | --- | --- | ---  | 
-| 204 | Nothing is returned | The `Role` was removed from the specified user. | 
-| 400 | Nothing is returned | Could not remove the `Role` due to missing or invalid input. | 
-| 403 | Nothing is returned | Unauthorized to remove the `Role` from the specified user. | 
-| 404 | Nothing is returned | A user with the specified userId was not found. | 
-
-
-***
-## `ReplaceUserRoles()`
+## `Replace User Roles`
 
 Replaces the `Roles` of a user with a new list of roles.
 
 ### Http
 
-`PUT api/Tenants/{tenantId}/Users/{userId}/Roles`
+`PUT api/v1-preview/Tenants/{tenantId}/Users/{userId}/Roles`
+
+`PUT api/v1/Tenants/{tenantId}/Users/{userId}/Roles`
 
 ### Parameters
 
 ```csharp
 [Required]
+[FromRoute]
 string tenantId
 ```
 
 The identifier for the account in which the user belongs.
 ```csharp
 [Required]
+[FromRoute]
 string userId
 ```
 
@@ -214,3 +136,4 @@ Authorized for Account Administrators of the specified account.
 
 
 ***
+

@@ -9,8 +9,7 @@ A table is a convenient structure for analytics and display. The REST APIs for r
 the data store supports returning results in a table. The form variable can be set to specify a table or a table 
 with headers.
 
-Table format can be applied to any read that returns multiple values, including Get Values, Get Range Values, 
-Get Window Values, and Get Intervals. 
+Table format can be applied to any read that returns multiple values and summaries. 
 
 **.NET**
 
@@ -23,7 +22,7 @@ Get Window Values, and Get Intervals.
 
       public class Simple
       {
-        [QiMember(IsKey = true, Order = 0) ]
+        [SdsMember(IsKey = true, Order = 0) ]
         public DateTime Time { get; set; }
         public State State { get; set; }
         public Double Measurement { get; set; }
@@ -83,11 +82,11 @@ Get Window Values, and Get Intervals.
       4/1/2017 7:08:00 AM : Warning  8
       4/1/2017 7:09:00 AM : Warning  9 
 
-The following is a standard Get Window Values request:
-
-      api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data/
-        GetWindowValues?startIndex= 2017-04-01T07:00:00Z&endIndex= 2017-04-01T07:10:00Z
-
+The following is a request to retrieve values using the window parameters:
+ ```text
+      GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data
+      ?startIndex=2017-04-01T07:00:00Z&endIndex=2017-04-01T07:10:00Z
+ ```
 
 The following response would be returned from the above code:
 
@@ -145,15 +144,12 @@ The following response would be returned from the above code:
          }
       ]
 
-
-     To retrieve the results in table format, add the form variable and specify table.
-
-     ::
-
-       api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data/GetWindowValues
-       ?startIndex=2017-04-01T07:00:00Z&endIndex=2017-04-01T07:10:00Z
-       &form=table
-
+To retrieve the results in table format, add the form variable and specify table.
+ ```text
+      GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data
+      ?startIndex=2017-04-01T07:00:00Z&endIndex=2017-04-01T07:10:00Z
+      &form=table
+ ```
 
 Response
 
@@ -168,7 +164,7 @@ Response
             },
             {  
                "Name":"State",
-               "Type":"State"
+               "Type":"Int32Enum"
             },
             {  
                "Name":"Measurement",
@@ -231,11 +227,11 @@ Response
 
 
 To retrieve the results in table format with column headers, add the form variable and specify ``tableh``.
-
-      api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data/GetWindowValues
+ ```text
+      GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data
       ?startIndex=2017-04-01T07:00:00Z&endIndex=2017-04-01T07:10:00Z
       &form=tableh
-
+ ```
 
 Response
 
@@ -250,7 +246,7 @@ Response
             },
             {  
                "Name":"State",
-               "Type":"State"
+               "Type":"Int32Enum"
             },
             {  
                "Name":"Measurement",

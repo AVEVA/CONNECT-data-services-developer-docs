@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Data ingress to Cloud Services using OMF </title>
+    <title>Data Ingress to Cloud Services using OMF </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Data ingress to Cloud Services using OMF ">
+    <meta name="title" content="Data Ingress to Cloud Services using OMF ">
     <meta name="generator" content="docfx 2.39.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -76,16 +76,15 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="omfIngressToOCS">
-<h1 id="data-ingress-to-cloud-services-using-omf">Data ingress to Cloud Services using OMF</h1>
+<h1 id="data-ingress-to-cloud-services-using-omf">Data Ingress to Cloud Services using OMF</h1>
 
 <p>You can use OSIsoft Message Format (OMF) to achieve high-throughput asynchronous data ingress 
-into the OCS data store. The following terms might be useful for understanding the information
-in this and subsequent topics:</p>
+into the Sequential Data Store. The following terms are useful for understanding the information
+in this and subsequent sections:</p>
 <ul>
-<li>A producer of OMF messages intended for OCS is called a <em>Publisher</em>. </li>
+<li>A producer of OMF messages needs a <em>Client</em> identity to authenticate and send messages.</li>
 <li>Messages are sent to a queue called a <em>Topic</em>. </li>
-<li>A <em>Subscription</em> recieves messages from a Topic and writes them either to the OCS 
-data store or makes them available to an external consumer. </li>
+<li>A <em>Subscription</em> receives messages from a <em>Topic</em> and writes them to the Sequential Data Store.</li>
 </ul>
 </article>
           </div>

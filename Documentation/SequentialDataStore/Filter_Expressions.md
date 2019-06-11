@@ -5,13 +5,11 @@ uid: sdsFilterExpressions
 Filter Expressions: Values
 ==================
 
-Filter expressions can be applied to certain read operations that return Sequential Data Store values or objects. This section covers data values. For filtering on metadata objects refer to [Filter Expressions: Metadata Objects](xref:sdsFilterExpressionsMetadata).
-
-Filter expressions can be applied to any read that returns multiple values, including 
-``Get Values``, ``Get Range Values``, ``Get Window Values``, and ``Get Intervals``.”
+Filter expressions can be applied to certain read operations that return Sequential Data Store values, including: 
+`Get Values` and `Get Summaries`.
 
 
-QiTypeCodes
+SdsTypeCodes
 ------------
 
 **Supported**
@@ -47,8 +45,8 @@ expression:
 -  ``IEnumerable``
 -  ``IDictionary``
 -  ``IList``
--  ``QiType``
--  ``QiTypeProperty``
+-  ``SdsType``
+-  ``SdsTypeProperty``
 -  ``Nullable Types``
 
 
@@ -76,7 +74,7 @@ expression:
 
 **Logical Operator Examples**
 
-For the following examples, assume that the Qi Type event includes a field named ``Value`` of type **double**: 
+For the following examples, assume that the SDS Type event includes a field named ``Value`` of type **double**: 
 
 - ``Value eq 1.0``
 - ``Value ne 15.6``
@@ -109,7 +107,7 @@ expression:
 
 **Math Function Examples**
 
-For the following examples, assume that the Qi Type event includes a field named ``Value`` of type **double**: 
+For the following examples, assume that the SDS Type event includes a field named ``Value`` of type **double**: 
 
 - ``Value eq (6.0 add 3.0)``
 - ``Value eq (6.0 sub 3.0)``
@@ -133,23 +131,23 @@ String operations are case sensitive. The character index in a string is
 0-based. The following string functions are supported for use within a
 filter expression:
 
-| function      | Comment                                                         |
-|---------------|-----------------------------------------------------------------|
-| ``endswith``  | Compare the character at the end of the input string            |
-| ``startwith`` | Compare the character at the start of the input string          |
-| ``length``    | Examines the string length                                      |
-| ``indexof``   | Examines the character starting at a given index                |
-| ``substring`` | Examine characters within another string at a specific location |
-|``substringof``| Search for characters anywhere in another string                |
-|``tolower``    | Convert characters to lowercase                                 |
-| ``toupper``   | Convert characters to uppercase                                 |
-| ``trim``      | Remove whitespace from front and end of a string                |
-| ``concat``    | Concatenate strings together                                    |
-| ``replace``   | Replace one set of characters with another                      |
+| function       | Comment                                                         |
+|----------------|-----------------------------------------------------------------|
+| ``endswith``   | Compare the character at the end of the input string            |
+| ``startswith`` | Compare the character at the start of the input string          |
+| ``length``     | Examines the string length                                      |
+| ``indexof``    | Examines the character starting at a given index                |
+| ``substring``  | Examine characters within another string at a specific location |
+| ``contains``	 | Search for characters anywhere in another string                |
+| ``tolower``    | Convert characters to lowercase                                 |
+| ``toupper``    | Convert characters to uppercase                                 |
+| ``trim``       | Remove whitespace from front and end of a string                |
+| ``concat``     | Concatenate strings together                                    |
+| ``replace``    | Replace one set of characters with another                      |
 
 **String function examples**
 
-The following examples assume that the Qi Type event includes a field named
+The following examples assume that the SDS Type event includes a field named
 ``sValue`` of type **string**:
 
 |Example                                      |Result                                                           |
@@ -158,8 +156,8 @@ The following examples assume that the Qi Type event includes a field named
 |``startswith(sValue, 'Val'``                 |True if ``sValue`` starts with the characters ‘Val’              |
 |``length(sValue) eq 11``                     |True if ``sValue`` is 11 characters                              |
 |``indexof(sValue, 'ab') eq 4``               |True if the 5th and 6th characters are ‘ab’                      |
+|``contains(sValue, 'ab')``                   |True if characters ‘ab’ are found anywhere in ``sValue``         |
 |``substring(sValue, 10) eq 'a b'``           |True if ‘a b’ is found in ``sValue`` at index 10                 |
-|``substringof('ab',sValue)``                 |True if characters ‘ab’ are found anywhere in ``sValue``         |
 |``tolower(sValue) eq 'val5'``                |Change ``sValue`` to lowercase and compare to ‘val5’             |
 |``toupper(sValue) eq 'ABC'``                 |Change ``sValue`` to uppercase and compare to ‘ABC’              |
 |``trim(sValue) eq 'vall22'``                 |Trim whitespace from front and end of ``sValue`` and compare to ‘val22’|
@@ -185,7 +183,7 @@ expression:
 
 **DateTime Function Examples**
 
-The following examples assume that the Qi Type event includes a field named
+The following examples assume that the SDS Type event includes a field named
 ``TimeId`` of type **DateTime**:
 
 -  ``year(TimeId) eq 2015``
@@ -213,7 +211,7 @@ expression:
 
 **TimeSpan Function Examples**
 
-For the following examples, assume that the Qi Type event includes a field named
+For the following examples, assume that the SDS Type event includes a field named
 ``TimeSpanValue`` of type **TimeSpan**:
 
 -  ``years(TimeSpanValue) eq 1``

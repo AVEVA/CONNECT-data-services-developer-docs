@@ -2,7 +2,7 @@
 uid: AccountTenant
 ---
 
-# Tenant
+# Tenants
 
 APIs to manage an OCS Customer Tenant Account.
 
@@ -18,8 +18,6 @@ For HTTP requests and responses, the Tenant object has the following properties 
 | Created | DateTime | Date and time this Tenant was added to OCS. | 
 | LastUpdated | DateTime | Date this Tenant was last updated. | 
 | Alias | string | Specifies a unique alias for this Tenant | 
-| AzureAdTenantId | string | Specifies if this tenant uses Azure AD and its Tenant Id if so | 
-| Icon | string | Gets or sets the base64 encoded PNG icon for this Account. | 
 | Features | [FeatureState] | List of Feature States for this Tenant. Returned during get calls. | 
 
 
@@ -31,25 +29,26 @@ For HTTP requests and responses, the Tenant object has the following properties 
 	"Created": "0001-01-01T00:00:00",
 	"LastUpdated": "0001-01-01T00:00:00",
 	"Alias": "alias",
-	"AzureAdTenantId": "azureadtenantid",
-	"Icon": "icon",
 	"Features": []
 }
 ```
 ***
 
-## `GetTenant()`
+## `Get Tenant`
 
 Retrieves a specific `Tenant` by ID.
 
 ### Http
 
-`GET api/Tenants/{tenantId}`
+`GET api/v1-preview/Tenants/{tenantId}`
+
+`GET api/v1/Tenants/{tenantId}`
 
 ### Parameters
 
 ```csharp
 [Required]
+[FromRoute]
 string tenantId
 ```
 
@@ -70,18 +69,22 @@ Authorized for Account Members of the specified `Tenant`.
 
 
 ***
-## `TenantExists()`
+
+## `Tenant Exists`
 
 Checks if a `Tenant` with a specific ID exists.
 
 ### Http
 
-`HEAD api/Tenants/{tenantId}`
+`HEAD api/v1-preview/Tenants/{tenantId}`
+
+`HEAD api/v1/Tenants/{tenantId}`
 
 ### Parameters
 
 ```csharp
 [Required]
+[FromRoute]
 string tenantId
 ```
 
@@ -102,18 +105,22 @@ Authorized for Account Members of the specified `Tenant`.
 
 
 ***
-## `UpdateTenant()`
+
+## `Update Tenant`
 
 Updates a specified `Tenant` object.
 
 ### Http
 
-`PUT api/Tenants/{tenantId}`
+`PUT api/v1-preview/Tenants/{tenantId}`
+
+`PUT api/v1/Tenants/{tenantId}`
 
 ### Parameters
 
 ```csharp
 [Required]
+[FromRoute]
 string tenantId
 ```
 
@@ -141,3 +148,119 @@ Authorized for Account Administrators of the specified `Tenant`.
 
 
 ***
+
+## `Get Tenant Icon`
+
+Returns an icon specified by its `Tenant` ID.
+
+### Http
+
+`GET api/v1-preview/Tenants/{tenantId}/Icon`
+
+`GET api/v1/Tenants/{tenantId}/Icon`
+
+### Parameters
+
+```csharp
+[Required]
+[FromRoute]
+string tenantId
+```
+
+The identifier of the `Tenant` for this request.
+
+
+### Security
+
+Authorized for Account Members of the specified `Tenant`.
+
+### Returns
+
+| Status Code | Return Type | Description | 
+ | --- | --- | ---  | 
+| 200 | string | Returns the Base64 encoded PNG icon string of the specified `Tenant`. | 
+| 400 | Nothing is returned | Could not retrieve the `Tenant` icon due to missing or invalid input. | 
+| 403 | Nothing is returned | Unauthorized to retrieve the specified `Tenant` icon. | 
+
+
+***
+
+## `Create or Update Tenant Icon`
+
+Creates or updates the icon for a `Tenant`. Note that the icon size must be less than MaxIconSizeInBytes.
+
+### Http
+
+`PUT api/v1-preview/Tenants/{tenantId}/Icon`
+
+`PUT api/v1/Tenants/{tenantId}/Icon`
+
+### Parameters
+
+```csharp
+[Required]
+[FromRoute]
+string tenantId
+```
+
+The `Tenant` identifier for this request.
+```csharp
+[Required]
+[FromBody]
+string icon
+```
+
+The Base64 encoded PNG icon for the `Tenant`.
+
+
+### Security
+
+Authorized for Account Administrators of the specified `Tenant`.
+
+### Returns
+
+| Status Code | Return Type | Description | 
+ | --- | --- | ---  | 
+| 200 | string | Returns the new/updated Base64 encoded PNG icon string specified in the request. | 
+| 400 | Nothing is returned | Could not create/update the `Tenant` icon due to missing or invalid input. | 
+| 403 | Nothing is returned | Unauthorized to create/update the specified `Tenant` icon. | 
+
+
+***
+
+## `Delete Tenant Icon`
+
+Deletes the icon for a `Tenant`.
+
+### Http
+
+`DELETE api/v1-preview/Tenants/{tenantId}/Icon`
+
+`DELETE api/v1/Tenants/{tenantId}/Icon`
+
+### Parameters
+
+```csharp
+[Required]
+[FromRoute]
+string tenantId
+```
+
+The `Tenant` identifier for this request
+
+
+### Security
+
+Authorized for Account Administrators of the specified `Tenant`.
+
+### Returns
+
+| Status Code | Return Type | Description | 
+ | --- | --- | ---  | 
+| 204 | string | The `Tenant` icon was deleted. | 
+| 400 | Nothing is returned | Could not delete the `Tenant` icon due to missing or invalid input. | 
+| 403 | Nothing is returned | Unauthorized to delete the specified `Tenant` icon. | 
+
+
+***
+

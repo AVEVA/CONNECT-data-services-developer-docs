@@ -58,7 +58,7 @@ properties that are combined to define the index. Set the ``IsKey`` property to 
 zero-based index value. The ``Order`` field defines the precedence of the property when sorting. A property with 
 an order of 0 has highest precedence.
 
-When defining compound indexes outside of .NET, specify the ``IsKey`` and ``Order`` fields on the ``SdsTypePropertyor``
+When defining compound indexes outside of .NET, specify the ``IsKey`` and ``Order`` fields on the ``SdsTypeProperty`` of
 Properties.
 
 Only the primary index (or key) supports compound indexes.
@@ -345,14 +345,13 @@ Simple Indexes
 When the .NET SdsTypeBuilder is unavailable, indexes must be built manually.
 
 
-The following discusses the types defined in the `Python <https://github.com/osisoft/Qi-Samples/tree/master/Basic/Python>`__
-and `Java Script <https://github.com/osisoft/Qi-Samples/tree/master/Basic/JavaScript>`__
-samples. Samples in other languages can be found `here <https://github.com/osisoft/Qi-Samples/tree/master/Basic>`__.
+The following discusses the types defined in the [Python](<https://github.com/osisoft/OCS-Samples/tree/master/basic_samples/SDS/Python/SDSPy>)
+and [Java Script](<https://github.com/osisoft/OCS-Samples/tree/master/basic_samples/SDS/JavaScript>)
+samples. Samples in other languages can be found [here](<https://github.com/osisoft/OCS-Samples/tree/master/basic_samples/SDS>).
 
-To build a SdsType representation of the following sample class, see code_example_1_:
+To build a SdsType representation of the following sample class, see [Sample](#sample):
 
 *Python*
-
 
       class State(Enum):
         Ok = 0
@@ -386,7 +385,7 @@ To build a SdsType representation of the following sample class, see code_exampl
       {
         Ok: 0,
         Warning: 1,
-        Aalrm: 2,
+        Alarm: 2
       }
 
       var Simple = function () {
@@ -395,7 +394,7 @@ To build a SdsType representation of the following sample class, see code_exampl
         this.Value = null;
       }
 
-#### code_example_1
+#### Sample
 
 The following code is used to build an SdsType representation of the sample class above:
 

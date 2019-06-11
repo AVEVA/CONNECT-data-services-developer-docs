@@ -2,9 +2,13 @@
 uid: AccountNamespaceTier
 ---
 
-# Namespace Tier
+# Namespace Tiers
 
 An attribute that specifies `Namespace` performance.
+
+## Note
+
+Namespace tiers are only applicatble for version 1-preview. Namespace tiers are removed in version 1. Please remove references to it.
 
 ## Properties
 
@@ -12,10 +16,10 @@ For HTTP requests and responses, the NamespaceTier object has the following prop
 
 | Property | Type | Description | 
  | --- | --- | ---  | 
-| Id | string | GUID for this Namespace Tier. | 
-| Description | string | Description of this Tier. | 
-| ThroughputUnits | int32 | The number of throughput units associated with this Tier. | 
-| StorageUnits | int32 | The number of Storage units associated with this Tier. | 
+| Id | string | Gets or sets unique identifier for this Namespace Tier. | 
+| Description | string | Gets or sets description of this Tier. | 
+| ThroughputUnits | int32 | Gets or sets the number of throughput units associated with this Tier. | 
+| StorageUnits | int32 | Gets or sets the number of Storage units associated with this Tier. | 
 
 
 ```json
@@ -28,18 +32,20 @@ For HTTP requests and responses, the NamespaceTier object has the following prop
 ```
 ***
 
-## `GetNamespaceTier()`
+## `Get Namespace Tier`
 
 Retrieves a Namespace tier associated with a specified id.
 
 ### Http
 
-`GET api/NamespaceTiers/{namespaceTierId}`
+`GET api/v1-preview/NamespaceTiers/{namespaceTierId}`
+
 
 ### Parameters
 
 ```csharp
 [Required]
+[FromRoute]
 string namespaceTierId
 ```
 
@@ -59,13 +65,15 @@ A `NamespaceTier` can be retrieved by an Account Member.
 
 
 ***
-## `GetAllNamespaceTiers()`
+
+## `Get All Namespace Tiers`
 
 Retrieves a list of all available namespace tiers.
 
 ### Http
 
-`GET api/NamespaceTiers`
+`GET api/v1-preview/NamespaceTiers`
+
 
 ### Parameters
 
@@ -83,3 +91,4 @@ This API call does not have any parameters.
 
 
 ***
+

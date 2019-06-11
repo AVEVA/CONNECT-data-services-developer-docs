@@ -4,29 +4,35 @@ uid: AccountServiceBlog
 
 # Service Blog
 
-APIs for CRUD operations on the Service Blog.
+API's for retrieving service blog entries from OSIsoft Cloud Services.
 
 ***
 
-## `GetByPage()`
+## `Get Service Blog Entries`
 
 Returns blog entries ordered by time posted.
 
 ### Http
 
-`GET api/ServiceBlog/Entries`
+`GET api/v1-preview/ServiceBlog/Entries`
+
+`GET api/v1/ServiceBlog/Entries`
 
 ### Parameters
 
 ```csharp
-[Required]
-string skip
+[Optional]
+[Default = "0"]
+[FromQuery]
+int32 skip
 ```
 
 Number of blogs to skip for paging purposes.
 ```csharp
-[Required]
-string count
+[Optional]
+[Default = "100"]
+[FromQuery]
+int32 count
 ```
 
 Number of blogs to count after skip for paging purposes.
@@ -39,7 +45,42 @@ Any identity, including anonymous, can retrieve service blog entries.
 
 | Status Code | Return Type | Description | 
  | --- | --- | ---  | 
-| 200 | ([QiServiceBlogEntry], int32) | Returns an response object including a list of blog entries and an int with the total number of entries. | 
+| 200 | ([SdsServiceBlogEntry], int32) | Returns a response object including a list of blog entries and an int with the total number of entries. | 
 
 
 ***
+
+## `Get Service Blog Entry`
+
+Returns a blog entry specified by ID.
+
+### Http
+
+`GET api/v1-preview/ServiceBlog/Entries/{id}`
+
+`GET api/v1/ServiceBlog/Entries/{id}`
+
+### Parameters
+
+```csharp
+[Required]
+[FromRoute]
+string id
+```
+
+Identifier of the blog entry to retrieve.
+
+
+### Security
+
+Any identity, including anonymous, can retrieve service blog entries.
+
+### Returns
+
+| Status Code | Return Type | Description | 
+ | --- | --- | ---  | 
+| 200 | SdsServiceBlogEntry | Returns a response object including the specified blog entry. | 
+
+
+***
+

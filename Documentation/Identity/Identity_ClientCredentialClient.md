@@ -107,7 +107,7 @@ Created
 
 ##### Type:
 
- `ClientResponse`
+ `ClientResponse<ClientCredentialClient>`
 
 ```json
 {

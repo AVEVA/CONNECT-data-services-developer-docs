@@ -21,7 +21,6 @@ centralized environment to aggregate data for reporting, advanced analytics, and
      - [ServiceBlog](xref:AccountServiceBlog)
    - [Identity](xref:identityOverview)
      - [AAD Tenant](xref:identityAzureActiveDirectoryTenant)
-     - [Client](xref:identityClient)
      - [Client Credential Client](xref:identityClientCredentialClient)
      - [Hybrid Client](xref:identityHybridClient)
      - [Implicit Client](xref:identityImplicitClient)

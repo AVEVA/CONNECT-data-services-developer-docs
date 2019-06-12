@@ -4,7 +4,7 @@ uid: Queries
 
  
  # Queries
-A list of queries to select the data items to be displayed in the data view
+A list of queries to select the data items to be displayed in the Data View
 ### Properties
 
 Property | Type | Required | Descriptions

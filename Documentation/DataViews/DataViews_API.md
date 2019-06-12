@@ -617,8 +617,7 @@ CancellationToken cancellationToken  [Optional] [Default = ""]
 #### 200
 
 OK - retrieved the Data View Access Control List.
-                 See [Role-based access control](https://ocs-docs.osisoft.com/Documentation/Access_Control.html) for more information.
-            . Return type: AccessControlList
+                 See [Role-based access control](https://ocs-docs.osisoft.com/Documentation/Access_Control.html) for more information. Return type: AccessControlList
 
 ```json
 {

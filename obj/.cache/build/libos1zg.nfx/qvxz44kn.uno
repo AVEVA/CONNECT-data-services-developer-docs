@@ -1,13 +1,13 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>OSIsoft Cloud Services </title>
+    <title>Samples </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="OSIsoft Cloud Services ">
+    <meta name="title" content="Samples ">
     <meta name="generator" content="docfx 2.39.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -75,44 +75,27 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="osisoftCloudServices">
-<h1 id="osisoft-cloud-services">OSIsoft Cloud Services</h1>
+            <article class="content wrap" id="_content" data-uid="samples">
+<h1 id="samples" sourcefile="Documentation/samples.md" sourcestartlinenumber="5" sourceendlinenumber="6">Samples</h1>
 
-<p>The information in the sections that follow document the APIs and usage for each of the following:</p>
-<ul>
-<li>Management - Use the information in this section to create, manage, and administer your account by assigning users, roles,
-and namespaces to your tenant.</li>
-<li>Sequential Data Store (SDS) - Use the information in this section to learn about the OSIsoft Cloud Services Sequential Data 
-Store. The SDS is optimized for sequential data operations.</li>
-<li>Data ingress and OSIsoft Message Format - You use OSIsoft Message Format (OMF) to achieve high-throughput asynchronous data ingress into the OCS Sequential Data Store.</li>
-<li>Identity - Use the information in this section to create, manage and administer Users and Clients.</li>
+<p sourcefile="Documentation/samples.md" sourcestartlinenumber="8" sourceendlinenumber="8">The OCS-Samples illustrate several ways for applications to interact with the OCS REST API.</p>
+<p sourcefile="Documentation/samples.md" sourcestartlinenumber="10" sourceendlinenumber="10">The examples cover the basics of interacting with SDS, such as:</p>
+<ul sourcefile="Documentation/samples.md" sourcestartlinenumber="12" sourceendlinenumber="16">
+<li sourcefile="Documentation/samples.md" sourcestartlinenumber="12" sourceendlinenumber="12">Connecting to OCS</li>
+<li sourcefile="Documentation/samples.md" sourcestartlinenumber="13" sourceendlinenumber="13">Creating SdsTypes and instances of SdsStreams </li>
+<li sourcefile="Documentation/samples.md" sourcestartlinenumber="14" sourceendlinenumber="14">Sending data to, and retrieving data from SdsStreams </li>
+<li sourcefile="Documentation/samples.md" sourcestartlinenumber="15" sourceendlinenumber="15">Performing queries against SdsStreams </li>
+<li sourcefile="Documentation/samples.md" sourcestartlinenumber="16" sourceendlinenumber="16">Removing SdsStreams and SdsTypes</li>
 </ul>
-<h2 id="access-to-ocs">Access to OCS</h2>
-<p>You must acquire an account before interacting with OCS. If you do not 
-have an account, you can request access to OCS at <a href="https://cloud.osisoft.com/?signup">https://cloud.osisoft.com/?signup</a>.</p>
-<h2 id="architecture">Architecture</h2>
-<p>A Tenant represents a client or organization that owns and manages a collection of OSIsoft Cloud Services.</p>
-<p>Tenants are divided into one or more logical units called Namespaces. Each Namespace is distinct and separate from 
-other Namespaces, with its own instances of the various OSIsoft Cloud Services and data stores. 
-Namespaces provide isolation of resources. </p>
-<p>Isolation provided by Tenants and Namespaces prevents accidental or malicious data access. </p>
-<h2 id="ocs-api-versioning">OCS API Versioning</h2>
-<p>New versions of the API are released when major changes occur in the OCS API. When a newer version of the API is released, 
-the legacy version of the API will only be supported for a period of time. We encourage all users to switch to the 
-newer version as soon as possible. Versions are inline in the routes, following the host:</p>
-<pre><code>api/v{version}/Tenants/{tenantId}/Namespaces/{namespaceId}/...  
-</code></pre><p>Where:  </p>
-<ul>
-<li><p>version is an incrementally (singular) increasing integer value </p>
-</li>
-<li><p>v{version}-preview will be used to expose beta functionality</p>
-</li>
+<p sourcefile="Documentation/samples.md" sourcestartlinenumber="18" sourceendlinenumber="18">Currently, the samples are available in these languages:</p>
+<ul sourcefile="Documentation/samples.md" sourcestartlinenumber="20" sourceendlinenumber="22">
+<li sourcefile="Documentation/samples.md" sourcestartlinenumber="20" sourceendlinenumber="20">C# </li>
+<li sourcefile="Documentation/samples.md" sourcestartlinenumber="21" sourceendlinenumber="21">Java</li>
+<li sourcefile="Documentation/samples.md" sourcestartlinenumber="22" sourceendlinenumber="22">Python</li>
 </ul>
-<p>The currently supported versions are:</p>
-<ul>
-<li>v1</li>
-<li>v1-preview</li>
-</ul>
+<p sourcefile="Documentation/samples.md" sourcestartlinenumber="24" sourceendlinenumber="26">Because the examples are intended for demonstration purposes, they represent some example
+practices. The patterns may change as the OCS Preview progresses. Be sure
+to follow the OCS-Samples repository on GitHub for updates.</p>
 </article>
           </div>
           
@@ -121,7 +104,7 @@ newer version as soon as possible. Versions are inline in the routes, following 
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/OSIsoft_Cloud_Services.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/samples.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

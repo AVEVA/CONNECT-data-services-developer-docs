@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -76,24 +76,24 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="sds">
-<h1 id="sequential-data-store">Sequential Data Store</h1>
+<h1 id="sequential-data-store" sourcefile="Documentation/SequentialDataStore/Data_Store_and_SDS.md" sourcestartlinenumber="5" sourceendlinenumber="5">Sequential Data Store</h1>
 
-<p>The Sequential Data Store (SDS) is a highly flexible cloud-based sequential data store that you use to store, 
+<p sourcefile="Documentation/SequentialDataStore/Data_Store_and_SDS.md" sourcestartlinenumber="7" sourceendlinenumber="12">The Sequential Data Store (SDS) is a highly flexible cloud-based sequential data store that you use to store, 
 retrieve, and analyze data. You 
 create and write data to <em>streams</em> using a simple REST (<em>REpresentational State Transfer</em>) API (<em>Application 
 Programming Interface</em>). The streams you create can be used to store simple or complex data types to suit 
 your application needs. You can define simple or complex indexing to arrange and relate your data. An assortment 
 of methods with customizable behaviors are available to read data and easily obtain needed information.</p>
-<h2 id="samples">Samples</h2>
-<p>The best way to get started with SDS is to run one or more of the code samples. Code samples are 
+<h2 id="samples" sourcefile="Documentation/SequentialDataStore/Data_Store_and_SDS.md" sourcestartlinenumber="14" sourceendlinenumber="15">Samples</h2>
+<p sourcefile="Documentation/SequentialDataStore/Data_Store_and_SDS.md" sourcestartlinenumber="17" sourceendlinenumber="20">The best way to get started with SDS is to run one or more of the code samples. Code samples are 
 provided in a number of different programming languages to illustrate how to easily and effectively 
-interact with SDS. The code samples can be found in the <a href="https://github.com/osisoft/OSI-Samples">OSI-Samples</a> repository on GitHub. Obtain SDS 
-REST API access keys from <a href="https://cloud.osisoft.com">https://cloud.osisoft.com</a> before running the sample code.</p>
-<p>Each sample includes a readme file which describes the steps required to run the sample and a brief description 
+interact with SDS. The code samples can be found in the <a href="https://github.com/osisoft/OSI-Samples" data-raw-source="[OSI-Samples](https://github.com/osisoft/OSI-Samples)" sourcefile="Documentation/SequentialDataStore/Data_Store_and_SDS.md" sourcestartlinenumber="19" sourceendlinenumber="19">OSI-Samples</a> repository on GitHub. Obtain SDS 
+REST API access keys from <a href="https://cloud.osisoft.com" data-raw-source="https://cloud.osisoft.com" sourcefile="Documentation/SequentialDataStore/Data_Store_and_SDS.md" sourcestartlinenumber="20" sourceendlinenumber="20">https://cloud.osisoft.com</a> before running the sample code.</p>
+<p sourcefile="Documentation/SequentialDataStore/Data_Store_and_SDS.md" sourcestartlinenumber="22" sourceendlinenumber="24">Each sample includes a readme file which describes the steps required to run the sample and a brief description 
 that highlights some of the sample�s functionality. Be sure to read the readme file to understand 
 how the sample works.</p>
-<p>After you have finished this introduction and worked with one of the samples, refer to 
-the <a class="xref" href="Quick_Start.html#sds-quick-start">Quick start</a> section, which describes the interaction of 
+<p sourcefile="Documentation/SequentialDataStore/Data_Store_and_SDS.md" sourcestartlinenumber="26" sourceendlinenumber="28">After you have finished this introduction and worked with one of the samples, refer to 
+the <a class="xref" href="Quick_Start.html#sds-quick-start" data-raw-source="[Quick start](xref:sdsQuickStart#sds-quick-start)" sourcefile="Documentation/SequentialDataStore/Data_Store_and_SDS.md" sourcestartlinenumber="27" sourceendlinenumber="27">Quick start</a> section, which describes the interaction of 
 various SDS objects and helps you get started with your own application.</p>
 </article>
           </div>

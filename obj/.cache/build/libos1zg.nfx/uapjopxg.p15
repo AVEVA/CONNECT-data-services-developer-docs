@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -76,42 +76,42 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="osisoftCloudServices">
-<h1 id="osisoft-cloud-services">OSIsoft Cloud Services</h1>
+<h1 id="osisoft-cloud-services" sourcefile="Documentation/OSIsoft_Cloud_Services.md" sourcestartlinenumber="5" sourceendlinenumber="5">OSIsoft Cloud Services</h1>
 
-<p>The information in the sections that follow document the APIs and usage for each of the following:</p>
-<ul>
-<li>Management - Use the information in this section to create, manage, and administer your account by assigning users, roles,
+<p sourcefile="Documentation/OSIsoft_Cloud_Services.md" sourcestartlinenumber="7" sourceendlinenumber="7">The information in the sections that follow document the APIs and usage for each of the following:</p>
+<ul sourcefile="Documentation/OSIsoft_Cloud_Services.md" sourcestartlinenumber="9" sourceendlinenumber="14">
+<li sourcefile="Documentation/OSIsoft_Cloud_Services.md" sourcestartlinenumber="9" sourceendlinenumber="10">Management - Use the information in this section to create, manage, and administer your account by assigning users, roles,
 and namespaces to your tenant.</li>
-<li>Sequential Data Store (SDS) - Use the information in this section to learn about the OSIsoft Cloud Services Sequential Data 
+<li sourcefile="Documentation/OSIsoft_Cloud_Services.md" sourcestartlinenumber="11" sourceendlinenumber="12">Sequential Data Store (SDS) - Use the information in this section to learn about the OSIsoft Cloud Services Sequential Data 
 Store. The SDS is optimized for sequential data operations.</li>
-<li>Data ingress and OSIsoft Message Format - You use OSIsoft Message Format (OMF) to achieve high-throughput asynchronous data ingress into the OCS Sequential Data Store.</li>
-<li>Identity - Use the information in this section to create, manage and administer Users and Clients.</li>
+<li sourcefile="Documentation/OSIsoft_Cloud_Services.md" sourcestartlinenumber="13" sourceendlinenumber="13">Data ingress and OSIsoft Message Format - You use OSIsoft Message Format (OMF) to achieve high-throughput asynchronous data ingress into the OCS Sequential Data Store.</li>
+<li sourcefile="Documentation/OSIsoft_Cloud_Services.md" sourcestartlinenumber="14" sourceendlinenumber="14">Identity - Use the information in this section to create, manage and administer Users and Clients.</li>
 </ul>
-<h2 id="access-to-ocs">Access to OCS</h2>
-<p>You must acquire an account before interacting with OCS. If you do not 
-have an account, you can request access to OCS at <a href="https://cloud.osisoft.com/?signup">https://cloud.osisoft.com/?signup</a>.</p>
-<h2 id="architecture">Architecture</h2>
-<p>A Tenant represents a client or organization that owns and manages a collection of OSIsoft Cloud Services.</p>
-<p>Tenants are divided into one or more logical units called Namespaces. Each Namespace is distinct and separate from 
+<h2 id="access-to-ocs" sourcefile="Documentation/OSIsoft_Cloud_Services.md" sourcestartlinenumber="17" sourceendlinenumber="17">Access to OCS</h2>
+<p sourcefile="Documentation/OSIsoft_Cloud_Services.md" sourcestartlinenumber="19" sourceendlinenumber="20">You must acquire an account before interacting with OCS. If you do not 
+have an account, you can request access to OCS at <a href="https://cloud.osisoft.com/?signup" data-raw-source="https://cloud.osisoft.com/?signup" sourcefile="Documentation/OSIsoft_Cloud_Services.md" sourcestartlinenumber="20" sourceendlinenumber="20">https://cloud.osisoft.com/?signup</a>.</p>
+<h2 id="architecture" sourcefile="Documentation/OSIsoft_Cloud_Services.md" sourcestartlinenumber="23" sourceendlinenumber="23">Architecture</h2>
+<p sourcefile="Documentation/OSIsoft_Cloud_Services.md" sourcestartlinenumber="25" sourceendlinenumber="25">A Tenant represents a client or organization that owns and manages a collection of OSIsoft Cloud Services.</p>
+<p sourcefile="Documentation/OSIsoft_Cloud_Services.md" sourcestartlinenumber="27" sourceendlinenumber="29">Tenants are divided into one or more logical units called Namespaces. Each Namespace is distinct and separate from 
 other Namespaces, with its own instances of the various OSIsoft Cloud Services and data stores. 
 Namespaces provide isolation of resources. </p>
-<p>Isolation provided by Tenants and Namespaces prevents accidental or malicious data access. </p>
-<h2 id="ocs-api-versioning">OCS API Versioning</h2>
-<p>New versions of the API are released when major changes occur in the OCS API. When a newer version of the API is released, 
+<p sourcefile="Documentation/OSIsoft_Cloud_Services.md" sourcestartlinenumber="31" sourceendlinenumber="31">Isolation provided by Tenants and Namespaces prevents accidental or malicious data access. </p>
+<h2 id="ocs-api-versioning" sourcefile="Documentation/OSIsoft_Cloud_Services.md" sourcestartlinenumber="33" sourceendlinenumber="33">OCS API Versioning</h2>
+<p sourcefile="Documentation/OSIsoft_Cloud_Services.md" sourcestartlinenumber="35" sourceendlinenumber="37">New versions of the API are released when major changes occur in the OCS API. When a newer version of the API is released, 
 the legacy version of the API will only be supported for a period of time. We encourage all users to switch to the 
 newer version as soon as possible. Versions are inline in the routes, following the host:</p>
-<pre><code>api/v{version}/Tenants/{tenantId}/Namespaces/{namespaceId}/...  
-</code></pre><p>Where:  </p>
-<ul>
-<li><p>version is an incrementally (singular) increasing integer value </p>
+<pre sourcefile="Documentation/OSIsoft_Cloud_Services.md" sourcestartlinenumber="39" sourceendlinenumber="39"><code>api/v{version}/Tenants/{tenantId}/Namespaces/{namespaceId}/...  
+</code></pre><p sourcefile="Documentation/OSIsoft_Cloud_Services.md" sourcestartlinenumber="41" sourceendlinenumber="41">Where:  </p>
+<ul sourcefile="Documentation/OSIsoft_Cloud_Services.md" sourcestartlinenumber="42" sourceendlinenumber="44">
+<li sourcefile="Documentation/OSIsoft_Cloud_Services.md" sourcestartlinenumber="42" sourceendlinenumber="42"><p sourcefile="Documentation/OSIsoft_Cloud_Services.md" sourcestartlinenumber="42" sourceendlinenumber="42">version is an incrementally (singular) increasing integer value </p>
 </li>
-<li><p>v{version}-preview will be used to expose beta functionality</p>
+<li sourcefile="Documentation/OSIsoft_Cloud_Services.md" sourcestartlinenumber="44" sourceendlinenumber="44"><p sourcefile="Documentation/OSIsoft_Cloud_Services.md" sourcestartlinenumber="44" sourceendlinenumber="44">v{version}-preview will be used to expose beta functionality</p>
 </li>
 </ul>
-<p>The currently supported versions are:</p>
-<ul>
-<li>v1</li>
-<li>v1-preview</li>
+<p sourcefile="Documentation/OSIsoft_Cloud_Services.md" sourcestartlinenumber="46" sourceendlinenumber="46">The currently supported versions are:</p>
+<ul sourcefile="Documentation/OSIsoft_Cloud_Services.md" sourcestartlinenumber="47" sourceendlinenumber="48">
+<li sourcefile="Documentation/OSIsoft_Cloud_Services.md" sourcestartlinenumber="47" sourceendlinenumber="47">v1</li>
+<li sourcefile="Documentation/OSIsoft_Cloud_Services.md" sourcestartlinenumber="48" sourceendlinenumber="48">v1-preview</li>
 </ul>
 </article>
           </div>

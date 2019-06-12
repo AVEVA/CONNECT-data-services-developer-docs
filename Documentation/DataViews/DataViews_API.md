@@ -619,7 +619,7 @@ OK - retrieved the data view access control list. Return type: AccessControlList
 
 ```json
 {
-  "RoleTrusteeAccessControlEntries": "List`1"
+  "RoleTrusteeAccessControlEntries": "[ AccessControlEntry object collection ]"
 }
 ```
 
@@ -737,7 +737,7 @@ AccessControlList acl [FromBody] [Required] [No Default Value]
 
 ```json
 {
-  "RoleTrusteeAccessControlEntries": "List`1"
+  "RoleTrusteeAccessControlEntries": "[ AccessControlEntry object collection ]"
 }
 ```
 
@@ -2259,8 +2259,8 @@ Successfully retrieved data. Return type: DataGroupCollection
 
 ```json
 {
-  "Errors": "IReadOnlyList`1",
-  "DataGroups": "IReadOnlyList`1"
+  "Errors": "[ ErrorResponse object collection ]",
+  "DataGroups": "[ DataGroup object collection ]"
 }
 ```
 
@@ -2270,8 +2270,8 @@ Multi-status. Look at response message. Return type: DataGroupCollection
 
 ```json
 {
-  "Errors": "IReadOnlyList`1",
-  "DataGroups": "IReadOnlyList`1"
+  "Errors": "[ ErrorResponse object collection ]",
+  "DataGroups": "[ DataGroup object collection ]"
 }
 ```
 
@@ -2338,9 +2338,9 @@ Successfully retrieved data group. Return type: DataGroup
 
 ```json
 {
-  "Errors": "IReadOnlyList`1",
-  "Tokens": "Dictionary of <String, IDictionary`2> pairs",
-  "DataItems": "IReadOnlyList`1"
+  "Errors": "[ ErrorResponse object collection ]",
+  "Tokens": "[ String object collection ]",
+  "DataItems": "[ IDataItem object collection ]"
 }
 ```
 

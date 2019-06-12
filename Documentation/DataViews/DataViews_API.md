@@ -23,6 +23,7 @@ IndexConfig | IndexConfig | False | Defines the index information from which to 
 
  ## `IndexDataType` 
  The IndexDataType can have the following values: 
+
 Value | Type | Description
  --- | --- | ---
 DateTime | string | Use DateTime as index type

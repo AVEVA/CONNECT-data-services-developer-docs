@@ -52,6 +52,45 @@ Function | FilterFunction | True | Function to use in query
 
 
 
+ ## `Resource` 
+ The Resource can have the following values: 
+
+Value | Type | Description
+ --- | --- | ---
+Streams | string | Streams
+TypeProperties | string | Type Properties
+
+
+
+
+ ## `Field` 
+ The Field can have the following values: 
+
+Value | Type | Description
+ --- | --- | ---
+Id | string | Id of resource
+Name | string | Name of resource
+Tag | string | Tag of resource
+Description | string | Description of resource
+TypeId | string | TypeId of resource
+MetadataKey | string | MetadataKey of resource
+
+
+
+
+ ## `Function` 
+ The Function can have the following values: 
+
+Value | Type | Description
+ --- | --- | ---
+Contains | string | Use Contains as function
+Equals | string | 
+EndsWith | string | Use EndsWith as function
+StartsWith | string | Use StartsWith as function
+
+
+
+
 
 
 

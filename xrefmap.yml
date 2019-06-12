@@ -46,9 +46,6 @@ references:
 - uid: identityAzureActiveDirectoryTenant
   name: AzureActiveDirectoryTenant
   href: Documentation/Identity/Identity_AzureActiveDirectoryTenant.html
-- uid: identityClient
-  name: Client
-  href: Documentation/Identity/Identity_Client.html
 - uid: identityClientCredentialClient
   name: ClientCredentialClient
   href: Documentation/Identity/Identity_ClientCredentialClient.html
@@ -124,9 +121,6 @@ references:
 - uid: sdsIndexes
   name: Indexes
   href: Documentation/SequentialDataStore/indexes.html
-- uid: sdsIntroduction
-  name: Introducing the Sequential Data Store
-  href: Documentation/SequentialDataStore/Introducing_SDS.html
 - uid: sdsQuickStart
   name: Quick Start
   href: Documentation/SequentialDataStore/Quick_Start.html

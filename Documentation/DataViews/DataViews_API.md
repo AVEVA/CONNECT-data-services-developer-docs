@@ -4,7 +4,7 @@ uid: DataViewsApi
 
 # DataViews
 
-APIs for working with data views.
+APIs for working with Data Views
 
 ### Properties
 
@@ -133,7 +133,7 @@ DateTime | string | Use DateTime as index type
 
 ## `Get Data Views`
 
-Get all created dataviews
+Get all created Data Views
 
 ### Request
 `GET api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/`
@@ -174,7 +174,7 @@ CancellationToken cancellationToken  [Optional] [Default = ""]
 
 #### 200
 
-OK - retrieved the data views (could be an empty array). Return type: [DataViewDefinition]
+OK - retrieved the Data Views (could be an empty array). Return type: [DataViewDefinition]
 
 ```json
 [
@@ -204,7 +204,7 @@ Internal server error
 
 ## `Get Data View`
 
-Get a dataview by id
+Get a Data View by id
 
 ### Request
 `GET api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}`
@@ -223,7 +223,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview:
+Id of Data View:
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -239,7 +239,7 @@ CancellationToken cancellationToken  [Optional] [Default = ""]
 
 #### 200
 
-OK - retrieved the data view. Return type: DataViewDefinition
+OK - retrieved the Data View. Return type: DataViewDefinition
 
 ```json
 {
@@ -261,7 +261,7 @@ Unauthorized
 
 #### 404
 
-Specified data view not found
+Specified Data View not found
 
 
 #### 500
@@ -272,7 +272,7 @@ Internal server error
 
 ## `Create Data View`
 
-Create a new dataview
+Create a new Data View
 
 ### Request
 `POST api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/`
@@ -292,7 +292,7 @@ string namespaceId  [Required] [No Default Value]
 
 ### Parameters from request body: 
 
-Dataview definition object:
+DataViewDefinition object:
 ```csharp
 DataViewDefinition dataViewDefinitionDto [FromBody] [Required] [No Default Value]
 ```
@@ -320,7 +320,7 @@ CancellationToken cancellationToken  [Optional] [Default = ""]
 
 #### 201
 
-Successfully created a dataview definition. Return type: DataViewDefinition
+Successfully created a Data View Definition. Return type: DataViewDefinition
 
 ```json
 {
@@ -353,7 +353,7 @@ Internal server error
 
 ## `Create Data View With Id`
 
-Create a new dataview
+Create a new Data View
 
 ### Request
 `POST api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}`
@@ -372,14 +372,14 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview:
+Id of Data View:
 ```csharp
 string id  [Required] [No Default Value]
 ```
 
 ### Parameters from request body: 
 
-Dataview definition object:
+DataViewDefinition object:
 ```csharp
 DataViewDefinition dataViewDefinitionDto [FromBody] [Required] [No Default Value]
 ```
@@ -407,7 +407,7 @@ CancellationToken cancellationToken  [Optional] [Default = ""]
 
 #### 201
 
-Successfully created a dataview definition. Return type: DataViewDefinition
+Successfully created a Data View Definition. Return type: DataViewDefinition
 
 ```json
 {
@@ -434,7 +434,7 @@ Unauthorized
 
 #### 409
 
-Data view definition with the specified Id already exists
+Data View Definition with the specified Id already exists
 
 
 #### 500
@@ -445,7 +445,7 @@ Internal server error
 
 ## `Create or Update Data View`
 
-Edit the dataview with specified Id
+Edit the Data View with specified Id
 
 ### Request
 `PUT api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}`
@@ -464,14 +464,14 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview:
+Id of Data View:
 ```csharp
 string id  [Required] [No Default Value]
 ```
 
 ### Parameters from request body: 
 
-Updated dataview definition object in the request body:
+Updated DataViewDefinition object in the request body:
 ```csharp
 DataViewDefinition dataViewDefinitionDto [FromBody] [Required] [No Default Value]
 ```
@@ -499,7 +499,7 @@ CancellationToken cancellationToken  [Optional] [Default = ""]
 
 #### 204
 
-Data view successfully created or updated
+Data View successfully created or updated
 
 
 #### 400
@@ -514,7 +514,7 @@ Unauthorized
 
 #### 404
 
-Specified data view not found
+Specified Data View not found
 
 
 #### 500
@@ -525,7 +525,7 @@ Internal server error
 
 ## `Delete Data View`
 
-Delete the dataview with specified Id
+Delete the Data View with specified Id
 
 ### Request
 `DELETE api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}`
@@ -544,7 +544,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview:
+Id of Data View:
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -560,7 +560,7 @@ CancellationToken cancellationToken  [Optional] [Default = ""]
 
 #### 204
 
-Successfully deleted the data view
+Successfully deleted the Data View
 
 
 #### 403
@@ -570,7 +570,7 @@ Unauthorized
 
 #### 404
 
-Specified data view not found
+Specified Data View not found
 
 
 #### 500
@@ -581,7 +581,7 @@ Internal server error
 
 ## `Get Data View Access Control List`
 
-Get the dataview access control list for dataview with specified Id
+Get the Data View Access Control List for Data View with specified Id
 
 ### Request
 `GET api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/accesscontrol`
@@ -600,7 +600,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview:
+Id of Data View:
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -616,7 +616,7 @@ CancellationToken cancellationToken  [Optional] [Default = ""]
 
 #### 200
 
-OK - retrieved the data view access control list. Return type: AccessControlList
+OK - retrieved the Data View Access Control List. Return type: AccessControlList
 
 ```json
 {
@@ -631,7 +631,7 @@ Unauthorized
 
 #### 404
 
-Specified data view not found
+Specified Data View not found
 
 
 #### 500
@@ -642,7 +642,7 @@ Internal server error
 
 ## `Get Data View Owner`
 
-Get the dataview owner for dataview with specified Id
+Get the Data View owner for Data View with specified Id
 
 ### Request
 `GET api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/owner`
@@ -661,7 +661,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview:
+Id of Data View:
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -677,7 +677,7 @@ CancellationToken cancellationToken  [Optional] [Default = ""]
 
 #### 200
 
-OK - retrieved the data view owner. Return type: Trustee
+OK - retrieved the Data View owner. Return type: Trustee
 
 ```json
 {
@@ -694,7 +694,7 @@ Unauthorized
 
 #### 404
 
-Specified data view not found
+Specified Data View not found
 
 
 #### 500
@@ -705,7 +705,7 @@ Internal server error
 
 ## `Update Data View Access Control List`
 
-Update the dataview access control list for dataview with specified Id
+Update the Data View Access Control List for Data View with specified Id
 
 ### Request
 `PUT api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/accesscontrol`
@@ -724,14 +724,14 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview:
+Id of Data View:
 ```csharp
 string id  [Required] [No Default Value]
 ```
 
 ### Parameters from request body: 
 
-Updated access control list:
+Updated Access Control List:
 ```csharp
 AccessControlList acl [FromBody] [Required] [No Default Value]
 ```
@@ -752,7 +752,7 @@ CancellationToken cancellationToken  [Optional] [Default = ""]
 
 #### 204
 
-Successfully updated the data view access control list
+Successfully updated the Data View Access Control List
 
 
 #### 400
@@ -767,7 +767,7 @@ Unauthorized
 
 #### 404
 
-Specified data view not found
+Specified Data View not found
 
 
 #### 500
@@ -778,7 +778,7 @@ Internal server error
 
 ## `Update Data View Owner`
 
-Update the dataview owner for dataview with specified Id
+Update the Data View owner for Data View with specified Id
 
 ### Request
 `PUT api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/owner`
@@ -797,7 +797,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview:
+Id of Data View:
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -827,7 +827,7 @@ CancellationToken cancellationToken  [Optional] [Default = ""]
 
 #### 204
 
-Successfully updated the data view owner
+Successfully updated the Data View owner
 
 
 #### 400
@@ -842,7 +842,7 @@ Unauthorized
 
 #### 404
 
-Specified data view not found
+Specified Data View not found
 
 
 #### 500
@@ -853,7 +853,7 @@ Internal server error
 
 ## `Get Data View Name`
 
-Get data view name by data view id
+Get Data View name by Data View id
 
 ### Request
 `GET api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/name`
@@ -872,7 +872,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview:
+Id of Data View:
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -888,7 +888,7 @@ CancellationToken cancellationToken  [Optional] [Default = ""]
 
 #### 200
 
-OK - retrieved the data view name. Return type: String
+OK - retrieved the Data View name. Return type: String
 
 ```json
 {}
@@ -901,7 +901,7 @@ Unauthorized
 
 #### 404
 
-Specified data view not found
+Specified Data View not found
 
 
 #### 500
@@ -912,7 +912,7 @@ Internal server error
 
 ## `Update Data View Name`
 
-Edit data view name specified by data view id
+Edit Data View name specified by Data View id
 
 ### Request
 `PUT api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/name`
@@ -931,7 +931,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview:
+Id of Data View:
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -957,7 +957,7 @@ CancellationToken cancellationToken  [Optional] [Default = ""]
 
 #### 204
 
-Successfully updated the data view name
+Successfully updated the Data View name
 
 
 #### 400
@@ -972,7 +972,7 @@ Unauthorized
 
 #### 404
 
-Specified data view not found
+Specified Data View not found
 
 
 #### 500
@@ -983,7 +983,7 @@ Internal server error
 
 ## `Get Data View Description`
 
-Get data view description by data view id
+Get Data View description by Data View id
 
 ### Request
 `GET api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/description`
@@ -1002,7 +1002,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview:
+Id of Data View:
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -1018,7 +1018,7 @@ CancellationToken cancellationToken  [Optional] [Default = ""]
 
 #### 200
 
-OK - retrieved the data view description. Return type: String
+OK - retrieved the Data View description. Return type: String
 
 ```json
 {}
@@ -1031,7 +1031,7 @@ Unauthorized
 
 #### 404
 
-Specified data view not found
+Specified Data View not found
 
 
 #### 500
@@ -1042,7 +1042,7 @@ Internal server error
 
 ## `Update Data View Description`
 
-Edit data view description specified by data view id
+Edit Data View description specified by Data View id
 
 ### Request
 `PUT api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/description`
@@ -1061,7 +1061,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview:
+Id of Data View:
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -1087,7 +1087,7 @@ CancellationToken cancellationToken  [Optional] [Default = ""]
 
 #### 204
 
-Successfully updated the data view description
+Successfully updated the Data View description
 
 
 #### 400
@@ -1102,7 +1102,7 @@ Unauthorized
 
 #### 404
 
-Specified data view not found
+Specified Data View not found
 
 
 #### 500
@@ -1113,7 +1113,7 @@ Internal server error
 
 ## `Delete Data View Description`
 
-Delete data view description specified by data view id
+Delete Data View description specified by Data View id
 
 ### Request
 `DELETE api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/description`
@@ -1132,7 +1132,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview:
+Id of Data View:
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -1148,7 +1148,7 @@ CancellationToken cancellationToken  [Optional] [Default = ""]
 
 #### 204
 
-Successfully deleted the data view description
+Successfully deleted the Data View description
 
 
 #### 403
@@ -1158,7 +1158,7 @@ Unauthorized
 
 #### 404
 
-Specified data view not found
+Specified Data View not found
 
 
 #### 500
@@ -1169,7 +1169,7 @@ Internal server error
 
 ## `Get Data View Queries`
 
-Get data view queries by data view id
+Get Data View queries by Data View id
 
 ### Request
 `GET api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/queries`
@@ -1188,7 +1188,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview:
+Id of Data View:
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -1204,7 +1204,7 @@ CancellationToken cancellationToken  [Optional] [Default = ""]
 
 #### 200
 
-OK - retrieved the data view queries. Return type: [QueryInfo]
+OK - retrieved the Data View queries. Return type: [QueryInfo]
 
 ```json
 [
@@ -1223,7 +1223,7 @@ Unauthorized
 
 #### 404
 
-Specified data view not found
+Specified Data View not found
 
 
 #### 500
@@ -1234,7 +1234,7 @@ Internal server error
 
 ## `Update Data View Queries`
 
-Edit data view queries specified by data view id
+Edit Data View queries specified by Data View id
 
 ### Request
 `PUT api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/queries`
@@ -1253,7 +1253,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview:
+Id of Data View:
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -1285,7 +1285,7 @@ CancellationToken cancellationToken  [Optional] [Default = ""]
 
 #### 204
 
-Successfully updated the data view queries
+Successfully updated the Data View queries
 
 
 #### 400
@@ -1300,7 +1300,7 @@ Unauthorized
 
 #### 404
 
-Specified data view not found
+Specified Data View not found
 
 
 #### 500
@@ -1311,7 +1311,7 @@ Internal server error
 
 ## `Get Data View Group Rules`
 
-Get data view group rules by data view id
+Get Data View group rules by Data View id
 
 ### Request
 `GET api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/grouprules`
@@ -1330,7 +1330,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview:
+Id of Data View:
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -1346,7 +1346,7 @@ CancellationToken cancellationToken  [Optional] [Default = ""]
 
 #### 200
 
-OK - retrieved the data view group rules. Return type: [GroupRule]
+OK - retrieved the Data View group rules. Return type: [GroupRule]
 
 ```json
 [
@@ -1365,7 +1365,7 @@ Unauthorized
 
 #### 404
 
-Specified data view not found
+Specified Data View not found
 
 
 #### 500
@@ -1376,7 +1376,7 @@ Internal server error
 
 ## `Update Data View Group Rules`
 
-Edit data view group rules specified by data view id
+Edit Data View group rules specified by Data View id
 
 ### Request
 `PUT api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/grouprules`
@@ -1395,7 +1395,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview:
+Id of Data View:
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -1427,7 +1427,7 @@ CancellationToken cancellationToken  [Optional] [Default = ""]
 
 #### 204
 
-Successfully updated the data view group rules
+Successfully updated the Data View group rules
 
 
 #### 400
@@ -1442,7 +1442,7 @@ Unauthorized
 
 #### 404
 
-Specified data view not found
+Specified Data View not found
 
 
 #### 500
@@ -1453,7 +1453,7 @@ Internal server error
 
 ## `Delete Data View Group Rules`
 
-Delete data view group rules specified by data view id
+Delete Data View group rules specified by Data View id
 
 ### Request
 `DELETE api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/grouprules`
@@ -1472,7 +1472,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview:
+Id of Data View:
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -1488,7 +1488,7 @@ CancellationToken cancellationToken  [Optional] [Default = ""]
 
 #### 204
 
-Successfully deleted the data view group rules
+Successfully deleted the Data View group rules
 
 
 #### 403
@@ -1498,7 +1498,7 @@ Unauthorized
 
 #### 404
 
-Specified data view not found
+Specified Data View not found
 
 
 #### 500
@@ -1509,7 +1509,7 @@ Internal server error
 
 ## `Get Data View Mappings`
 
-Get data view mappings by data view id
+Get Data View mappings by Data View id
 
 ### Request
 `GET api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/mappings`
@@ -1528,7 +1528,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview:
+Id of Data View:
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -1544,7 +1544,7 @@ CancellationToken cancellationToken  [Optional] [Default = ""]
 
 #### 200
 
-OK - retrieved the data view mappings. Return type: Mappings
+OK - retrieved the Data View mappings. Return type: Mappings
 
 ```json
 {
@@ -1560,7 +1560,7 @@ Unauthorized
 
 #### 404
 
-Specified data view not found
+Specified Data View not found
 
 
 #### 500
@@ -1571,7 +1571,7 @@ Internal server error
 
 ## `Update Data View Mappings`
 
-Edit data view mappings specified by data view id
+Edit Data View mappings specified by Data View id
 
 ### Request
 `PUT api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/mappings`
@@ -1590,7 +1590,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview:
+Id of Data View:
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -1619,7 +1619,7 @@ CancellationToken cancellationToken  [Optional] [Default = ""]
 
 #### 204
 
-Successfully updated the data view mappings
+Successfully updated the Data View mappings
 
 
 #### 400
@@ -1634,7 +1634,7 @@ Unauthorized
 
 #### 404
 
-Specified data view not found
+Specified Data View not found
 
 
 #### 500
@@ -1645,7 +1645,7 @@ Internal server error
 
 ## `Delete Data View Mappings`
 
-Delete data view mappings specified by data view id
+Delete Data View mappings specified by Data View id
 
 ### Request
 `DELETE api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/mappings`
@@ -1664,7 +1664,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview:
+Id of Data View:
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -1680,7 +1680,7 @@ CancellationToken cancellationToken  [Optional] [Default = ""]
 
 #### 204
 
-Successfully deleted the data view mappings
+Successfully deleted the Data View mappings
 
 
 #### 403
@@ -1690,7 +1690,7 @@ Unauthorized
 
 #### 404
 
-Specified data view not found
+Specified Data View not found
 
 
 #### 500
@@ -1701,7 +1701,7 @@ Internal server error
 
 ## `Get Data View Index Data Type`
 
-Get data view index data type by data view id
+Get Data View index data type by Data View id
 
 ### Request
 `GET api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/indexdatatype`
@@ -1720,7 +1720,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview:
+Id of Data View:
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -1736,7 +1736,7 @@ CancellationToken cancellationToken  [Optional] [Default = ""]
 
 #### 200
 
-OK - retrieved the data view index data type. Return type: String
+OK - retrieved the Data View index data type. Return type: String
 
 ```json
 {}
@@ -1749,7 +1749,7 @@ Unauthorized
 
 #### 404
 
-Specified data view not found
+Specified Data View not found
 
 
 #### 500
@@ -1760,7 +1760,7 @@ Internal server error
 
 ## `Update Data View Index Data Type`
 
-Edit data view index data type specified by data view id
+Edit Data View index data type specified by Data View id
 
 ### Request
 `PUT api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/indexdatatype`
@@ -1779,7 +1779,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview:
+Id of Data View:
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -1805,7 +1805,7 @@ CancellationToken cancellationToken  [Optional] [Default = ""]
 
 #### 204
 
-Successfully updated the data view index data type
+Successfully updated the Data View index data type
 
 
 #### 400
@@ -1820,7 +1820,7 @@ Unauthorized
 
 #### 404
 
-Specified data view not found
+Specified Data View not found
 
 
 #### 500
@@ -1831,7 +1831,7 @@ Internal server error
 
 ## `Get Data View Index Config`
 
-Get data view index config by data view id
+Get Data View index config by Data View id
 
 ### Request
 `GET api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/indexconfig`
@@ -1850,7 +1850,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview:
+Id of Data View:
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -1866,7 +1866,7 @@ CancellationToken cancellationToken  [Optional] [Default = ""]
 
 #### 200
 
-OK - retrieved the data view index config. Return type: IndexConfig
+OK - retrieved the Data View index config. Return type: IndexConfig
 
 ```json
 {
@@ -1884,7 +1884,7 @@ Unauthorized
 
 #### 404
 
-Specified data view not found
+Specified Data View not found
 
 
 #### 500
@@ -1895,7 +1895,7 @@ Internal server error
 
 ## `Update Data View Index Config`
 
-Edit data view index config specified by data view id
+Edit Data View index config specified by Data View id
 
 ### Request
 `PUT api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/indexconfig`
@@ -1914,7 +1914,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview:
+Id of Data View:
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -1945,7 +1945,7 @@ CancellationToken cancellationToken  [Optional] [Default = ""]
 
 #### 204
 
-Successfully updated the data view index config
+Successfully updated the Data View index config
 
 
 #### 400
@@ -1960,7 +1960,7 @@ Unauthorized
 
 #### 404
 
-Specified data view not found
+Specified Data View not found
 
 
 #### 500
@@ -1971,7 +1971,7 @@ Internal server error
 
 ## `Delete Data View Index Config`
 
-Delete data view index config specified by data view id
+Delete Data View index config specified by Data View id
 
 ### Request
 `DELETE api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/indexconfig`
@@ -1990,7 +1990,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview:
+Id of Data View:
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -2006,7 +2006,7 @@ CancellationToken cancellationToken  [Optional] [Default = ""]
 
 #### 204
 
-Successfully deleted the data view index config
+Successfully deleted the Data View index config
 
 
 #### 403
@@ -2016,7 +2016,7 @@ Unauthorized
 
 #### 404
 
-Specified data view not found
+Specified Data View not found
 
 
 #### 500
@@ -2027,7 +2027,7 @@ Internal server error
 
 ## `Preview Data View Data`
 
-Get data preview based on created data view definition
+Get data preview based on created Data View definition
 
 ### Request
 `GET api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/preview/interpolated`
@@ -2046,7 +2046,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview:
+Id of Data View:
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -2110,7 +2110,7 @@ Unauthorized
 
 #### 404
 
-Specified data view Id not found
+Specified Data View Id not found
 
 
 #### 500
@@ -2140,7 +2140,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview:
+Id of Data View:
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -2198,7 +2198,7 @@ Unauthorized
 
 #### 404
 
-Specified data view Id or session Id not found
+Specified Data View Id or session Id not found
 
 
 #### 500
@@ -2209,7 +2209,7 @@ Internal server error
 
 ## `Get Data Groups`
 
-Get data groups for a specified data view
+Get data groups for a specified Data View
 
 ### Request
 `GET api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/datagroups`
@@ -2228,7 +2228,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview:
+Id of Data View:
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -2283,7 +2283,7 @@ Unauthorized
 
 #### 404
 
-Specified data view Id not found
+Specified Data View Id not found
 
 
 #### 500
@@ -2313,7 +2313,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview:
+Id of Data View:
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -2352,7 +2352,7 @@ Unauthorized
 
 #### 404
 
-Specified data view Id not found
+Specified Data View Id not found
 
 
 #### 500
@@ -2363,7 +2363,7 @@ Internal server error
 
 ## `Create Data View Session`
 
-Create a session for a dataview
+Create a session for a Data View
 
 ### Request
 `POST api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/sessions`
@@ -2382,7 +2382,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Dataview id:
+Id of Data View:
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -2438,7 +2438,7 @@ Unauthorized
 
 #### 404
 
-Specified data view id not found
+Specified Data View id not found
 
 
 #### 500
@@ -2449,7 +2449,7 @@ Internal server error
 
 ## `Get Data View Session`
 
-Get a specific session corresponding to a specific dataview
+Get a specific session corresponding to a specific Data View
 
 ### Request
 `GET api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/sessions/{sessionId}`
@@ -2468,7 +2468,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Dataview id:
+Id of Data View:
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -2512,7 +2512,7 @@ Unauthorized
 
 #### 404
 
-Session or dataview not found
+Session or Data View not found
 
 
 #### 500
@@ -2523,7 +2523,7 @@ Internal server error
 
 ## `Get Data View Sessions`
 
-Get all sessions for a dataview
+Get all sessions for a Data View
 
 ### Request
 `GET api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/sessions`
@@ -2542,7 +2542,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Dataview id:
+Id of Data View:
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -2582,7 +2582,7 @@ Unauthorized
 
 #### 404
 
-Specified data view id not found
+Specified Data View id not found
 
 
 #### 500
@@ -2593,7 +2593,7 @@ Internal server error
 
 ## `Get Sessions`
 
-Get all sessions for all dataviews
+Get all sessions for all Data Views
 
 ### Request
 `GET api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/sessions`
@@ -2666,7 +2666,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview:
+Id of Data View:
 ```csharp
 string id  [Required] [No Default Value]
 ```

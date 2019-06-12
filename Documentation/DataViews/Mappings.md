@@ -4,13 +4,13 @@ uid: Mappings
 
  
  # Mappings
-The Mappings object lets users define the columns in the resulting data set by specifying their name and properties, as well as create shared mapping rules that can be used throughout all columns of the data view. By using default mappings, all properties of the query will be mapped to their own column, generated on data item retrieval. If the mappings are defined in the data view definition they will be persisted over time, and might need to be updated accordingly should a change occur in the data source.
+The Mappings object lets users define the columns in the resulting data set by specifying their name and properties, as well as create shared mapping rules that can be used throughout all columns of the Data View. By using default mappings, all properties of the query will be mapped to their own column, generated on data item retrieval. If the mappings are defined in the Data View definition they will be persisted over time, and might need to be updated accordingly should a change occur in the data source.
 ### Properties
 
 Property | Type | Required | Descriptions
  --- | --- | --- | ---
 SharedMappingRules | [SharedMappingRule] | False | Rules shared across mappings
-Columns | [Column] | False | Columns in your data view
+Columns | [Column] | False | Columns in your Data View
 IsDefault | bool | False | Determines whether default parameters should be used
 
 

@@ -10,10 +10,10 @@ APIs for working with Data Views
 
 Property | Type | Required | Descriptions
  --- | --- | --- | ---
-Id | string | False | Id of the data view
-Name | string | False | Name of the data view
-Description | string | False | Description of the data view
-Queries | [QueryInfo] | True | A list of queries to select the data items to be displayed in the data view
+Id | string | False | Id of the Data View
+Name | string | False | Name of the Data View
+Description | string | False | Description of the Data View
+Queries | [QueryInfo] | True | A list of queries to select the data items to be displayed in the Data View
 GroupRules | [GroupRule] | False | A list of group rules to organize data items into data groups
 Mappings | Mappings | False | Defines the names of the columns and the stream properties that get mapped to them
 IndexDataType | IndexDataType | True | Defines the index data type that index config uses
@@ -616,7 +616,9 @@ CancellationToken cancellationToken  [Optional] [Default = ""]
 
 #### 200
 
-OK - retrieved the Data View Access Control List. Return type: AccessControlList
+OK - retrieved the Data View Access Control List.
+                 See [Role-based access control](https://ocs-docs.osisoft.com/Documentation/Access_Control.html) for more information.
+            . Return type: AccessControlList
 
 ```json
 {

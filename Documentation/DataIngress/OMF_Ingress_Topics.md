@@ -34,7 +34,7 @@ Topic information is contained in an object called ``Topic`` and has the followi
 | Name            | string                  | A friendly name for the Topic.          |
 | ClientIds    	  | string array            | An array of Client Ids mapped to the Topic.   |
 | Description     | string                  | Description of the Topic. |
-| CreatedDate    | string                  | The time that the Topic was created. The string is formatted using ISO 8601 format. |
+| CreatedDate     | DateTime                | Date and time this Topic was created. |
 
 **************************
 

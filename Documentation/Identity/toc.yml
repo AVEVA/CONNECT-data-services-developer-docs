@@ -2,8 +2,6 @@
   href: Identity_Overview.md
 - name: AAD Tenant
   href: Identity_AzureActiveDirectoryTenant.md
-- name: Client
-  href: Identity_Client.md
 - name: Implicit Client
   href: Identity_ImplicitClient.md
 - name: Hybrid Client

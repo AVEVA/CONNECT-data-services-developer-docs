@@ -35,7 +35,7 @@ The syntax of the client libraries method is as follows:
 
 Searching for streams is also possible using the REST API and specifying the optional `query` parameter, as shown here:
  ```text
-      GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query={query}&skip={skip}&count={count}
+      GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query={query}&skip={skip}&count={count}
  ```
 
 The Stream fields valid for search are identified in the fields table located on the [Streams](xref:sdsStreams) page. Note that Stream Metadata has unique 
@@ -68,7 +68,7 @@ The syntax of the client libraries method is as follows:
 
 As previously mentioned, searching for types is also possible using the REST API and specifying the optional `query` parameter, as shown here:
  ```text
-      GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types?query={query}&skip={skip}&count={count}
+      GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types?query={query}&skip={skip}&count={count}
  ```
 
 The Type fields valid for search are identified in the fields table located on the [Types](xref:sdsTypes) page. The Properties field is identified
@@ -101,7 +101,7 @@ The syntax of the client libraries method is as follows:
 
 As previously mentioned, searching for stream views is also possible using the REST API and specifying the optional `query` parameter, as shown here:
  ```text
-    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews?query={query}&skip={skip}&count={count}
+    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews?query={query}&skip={skip}&count={count}
  ```
 The Stream View fields valid for search are identified in the fields table located on the [Stream Views](xref:sdsStreamViews) page. The Properties field
 is identified as being searchable but with limitations because SdsStreamViewProperty objects are not searchable. Only the SdsStreamViewProperty's
@@ -148,13 +148,13 @@ For example, assume there are 175 streams that match the search criteria: “tem
 
 The following call returns the first 100 matches:
 ```csharp
-    _metadataService.GetStreamsAsync(“temperature”, 0, 100)
+    _metadataService.GetStreamsAsync("temperature", 0, 100)
 ```
 
 After the previous call, you can use the following call to return the remaining 75 matches, skipping over the first 
 100 matches because of the skip parameter set at 100):
 ```csharp
-    _metadataService.GetStreamsAsync(“temperature”, 100, 100)
+    _metadataService.GetStreamsAsync("temperature", 100, 100)
 ```
 
 The ``orderby`` parameter is supported for searching both the streams and types. The basic functionality of it is to search the items and then return the result in sorted order.
@@ -163,13 +163,13 @@ The default value for ``orderby`` parameter is ascending order. It can be change
 
 **Request**
  ```text
-	GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure&orderby=name
+	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure&orderby=name
 
-	GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure&orderby=id asc
+	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure&orderby=id asc
 
-	GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure&orderby=name desc
+	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure&orderby=name desc
 
-	GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure&orderby=name desc&skip=10&count=20
+	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure&orderby=name desc&skip=10&count=20
  ```
 
 Search operators
@@ -200,7 +200,7 @@ You can also qualify which fields are searched by using the following syntax:
 
 **Request**
  ```text
-	GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure
+	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure
  ```
 
 **.NET Library**
@@ -211,7 +211,7 @@ You can also qualify which fields are searched by using the following syntax:
 **\* Operator**
 -----------------
 
-You can use the ``‘*’`` character as a wildcard to specify an incomplete string.
+You can use the ``'*'`` character as a wildcard to specify an incomplete string.
 
 **Query string**     | **Matches field value** | **Does not match field value**
 ------------------ | --------------------------------- | -----------------------------
@@ -226,7 +226,7 @@ You can use the ``‘*’`` character as a wildcard to specify an incomplete str
 
 **Request**
  ```text
-	GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=log*
+	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=log*
  ```
 
 **.NET Library**
@@ -243,7 +243,7 @@ Other operators examples
 ``mud OR log`` | log mud<br>mud<br>log | 
 ``mud AND (NOT log)`` | mud | mud log
 ``mud AND (log OR pump*)`` | mud log<br>mud pumps | mud bath
-``name:stream\* AND (description:pressure OR description:pump)`` | The name starts with “stream” and the description has the either of the terms “pressure” or “pump” | 
+``name:stream* AND (description:pressure OR description:pump)`` | The name starts with "stream" and the description has the either of the terms "pressure" or "pump" | 
 
 
 ## <a name="Stream_Metadata_search_topic">How Searching Works: Stream Metadata</a>
@@ -260,11 +260,11 @@ stream3      | { status, active }<br>{ second key, second value }
 
 : Operator
 -------------------
-A Stream Metadata key is only searchable in association with a Stream Metadata value. This pairing is defined using the same  field scoping ``‘:’`` operator. 
+A Stream Metadata key is only searchable in association with a Stream Metadata value. This pairing is defined using the same  field scoping ``':'`` operator. 
 
 	myStreamMetadataKey:streamMetadataValue
 
-If the ``‘:’`` operator is not used within an individual search clause then Metadata Keys are not searched against but Metadata 
+If the ``':'`` operator is not used within an individual search clause then Metadata Keys are not searched against but Metadata 
 Values are searched against (along with the other searchable Stream fields).
 
 **QueryString**     | **Streams returned**
@@ -275,20 +275,20 @@ Values are searched against (along with the other searchable Stream fields).
 
 **Request**
  ```text
-	GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=manufacturer:company
+	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=manufacturer:company
  ```
 
 **.NET Library**
 ```csharp
-	GetStreamsAsync(query:“manufacturer:company”);
+	GetStreamsAsync(query:"manufacturer:company");
 ```
 
 \* Operator
 -------------------
 
-For searching on Metadata values the ``‘*’`` character is again used as a wildcard to specify an incomplete string. Additionally,
+For searching on Metadata values the ``'*'`` character is again used as a wildcard to specify an incomplete string. Additionally,
 this wildcard character can be used with the Metadata key as well. This is not supported for any other "fields", so by including a wildcard in a field
-(defined as a value to the immediate left of a ``‘:’`` operator) the query will only be valid against Stream Metadata.
+(defined as a value to the immediate left of a ``':'`` operator) the query will only be valid against Stream Metadata.
 
 **QueryString**     | **Streams returned**
 ------------------  | ----------------------------------------
@@ -298,16 +298,16 @@ this wildcard character can be used with the Metadata key as well. This is not s
 ``Id:stream*``  |  All three streams returned.
 ``Id*:stream*``  | Nothing returned.
 
-Note that in the final example nothing matches on a Stream's Id value because including ``‘*’`` in a search clause's 
+Note that in the final example nothing matches on a Stream's Id value because including ``'*'`` in a search clause's 
 field prevents non-Stream Metadata fields from being searched.
 
 **Request**
  ```text
-	GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=manufa*turer:compan*
+	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=manufa*turer:compan*
  ```
 
 **.NET Library**
 ```csharp
-	GetStreamsAsync(query:“manufa*turer:compan*”);
+	GetStreamsAsync(query:"manufa*turer:compan*");
 ```
 

@@ -8,9 +8,9 @@ APIs for creating, getting, updating, and deleting Users
 
 ## Properties
 
-For HTTP requests and responses, the UserDto object has the following properties and JSON-serialized body: 
+For HTTP requests and responses, the User object has the following properties and JSON-serialized body: 
 
-Property | Type | Descriptions
+Property | Type | Description
  --- | --- | ---
 Id | Guid | Unique User ID.
 GivenName | string | Given name of user.
@@ -21,8 +21,7 @@ ContactEmail | string | Preferred contact email for user.
 ContactGivenName | string | Preferred contact name for user.
 ContactSurname | string | Preferred contact surname for user.
 ExternalUserId | string | Provider id for user.
-TenantId | string | Tenant Id the User belongs to.
-IdentityProviderId | optional: Guid | Identity Provider Id used to authenticate user.
+IdentityProviderId | Guid | Identity Provider Id used to authenticate user.
 RoleIds | Guid[] | List of strings of RoleIds.
 
 ### Serialized Model
@@ -38,7 +37,6 @@ RoleIds | Guid[] | List of strings of RoleIds.
   "ContactGivenName": "Name",
   "ContactSurname": "Surname",
   "ExternalUserId": "ExternalUserId",
-  "TenantId": "00000000-0000-0000-0000-000000000000",
   "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
   "RoleIds": [
     "00000000-0000-0000-0000-000000000000",
@@ -55,7 +53,7 @@ Returns a list of User objects for a given tenant
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/Users`
+`GET api/v1/Tenants/{tenantId}/Users`
 
 ### Parameters
 
@@ -108,7 +106,7 @@ Success.
 
 ##### Type:
 
- `List[UserDto]`
+ `List[User]`
 
 ```json
 [
@@ -122,7 +120,6 @@ Success.
     "ContactGivenName": "Name",
     "ContactSurname": "Surname",
     "ExternalUserId": "ExternalUserId",
-    "TenantId": "00000000-0000-0000-0000-000000000000",
     "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
     "RoleIds": [
       "00000000-0000-0000-0000-000000000000",
@@ -139,135 +136,6 @@ Success.
     "ContactGivenName": "Name",
     "ContactSurname": "Surname",
     "ExternalUserId": "ExternalUserId",
-    "TenantId": "00000000-0000-0000-0000-000000000000",
-    "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
-    "RoleIds": [
-      "00000000-0000-0000-0000-000000000000",
-      "00000000-0000-0000-0000-000000000000"
-    ]
-  }
-]
-```
-
-#### 400
-
-Missing or invalid inputs
-
-#### 401
-
-Unauthorized
-
-#### 403
-
-Forbidden
-
-#### 404
-
-Tenant not found
-
-#### 500
-
-Internal server error
-***
-
-## `Get Users By IDs`
-
-Returns an ordered list of User objects based on userId for a given tenant or a MultiStatusResponseDto with a list of User objects and a list of errors
-
-### Request
-
-`GET api/v1-preview/Tenants/{tenantId}/Users/Ids`
-
-### Parameters
-
-```csharp
-[Required]
-string tenantId
-```
-
-Id of tenant
-
-```csharp
-[FromQuery]
-[Required]
-Guid[] userIds
-```
-
-Unordered list of ids for all users to get
-
-```csharp
-[FromQuery]
-[Optional]
-[Default = ""]
-string query
-```
-
-Query to execute. Currently not supported
-
-```csharp
-[FromQuery]
-[Optional]
-[Default = 0]
-int32 skip
-```
-
-Number of users to skip
-
-```csharp
-[FromQuery]
-[Optional]
-[Default = 100]
-int32 count
-```
-
-Max number of users to return
-
-### Security
-
-Allowed for these roles:
-
-- `Account Administrator`
-
-### Returns
-
-#### 200
-
-Success.
-
-##### Type:
-
- `List[UserDto]`
-
-```json
-[
-  {
-    "Id": "00000000-0000-0000-0000-000000000000",
-    "GivenName": "Name",
-    "Surname": "Surname",
-    "Name": "Name",
-    "Email": "user@company.com",
-    "ContactEmail": "user@company.com",
-    "ContactGivenName": "Name",
-    "ContactSurname": "Surname",
-    "ExternalUserId": "ExternalUserId",
-    "TenantId": "00000000-0000-0000-0000-000000000000",
-    "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
-    "RoleIds": [
-      "00000000-0000-0000-0000-000000000000",
-      "00000000-0000-0000-0000-000000000000"
-    ]
-  },
-  {
-    "Id": "00000000-0000-0000-0000-000000000000",
-    "GivenName": "Name",
-    "Surname": "Surname",
-    "Name": "Name",
-    "Email": "user@company.com",
-    "ContactEmail": "user@company.com",
-    "ContactGivenName": "Name",
-    "ContactSurname": "Surname",
-    "ExternalUserId": "ExternalUserId",
-    "TenantId": "00000000-0000-0000-0000-000000000000",
     "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
     "RoleIds": [
       "00000000-0000-0000-0000-000000000000",
@@ -279,11 +147,11 @@ Success.
 
 #### 207
 
-Partial success.
+
 
 ##### Type:
 
- `MultiStatusResponseDto[List[UserDto]]`
+ `MultiStatusResponse<User>`
 
 ```json
 {
@@ -292,26 +160,20 @@ Partial success.
   "Reason": "Reason",
   "ChildErrors": [
     {
+      "StatusCode": 0,
+      "ModelId": "ModelId",
       "OperationId": "OperationId",
       "Error": "Error",
       "Reason": "Reason",
-      "Resolution": "Resolution",
-      "StatusCode": 0,
-      "ModelId": {
-        "String": "String"
-      },
-      "TenantId": "00000000-0000-0000-0000-000000000000"
+      "Resolution": "Resolution"
     },
     {
+      "StatusCode": 0,
+      "ModelId": "ModelId",
       "OperationId": "OperationId",
       "Error": "Error",
       "Reason": "Reason",
-      "Resolution": "Resolution",
-      "StatusCode": 0,
-      "ModelId": {
-        "String": "String"
-      },
-      "TenantId": "00000000-0000-0000-0000-000000000000"
+      "Resolution": "Resolution"
     }
   ],
   "Data": [
@@ -325,7 +187,6 @@ Partial success.
       "ContactGivenName": "Name",
       "ContactSurname": "Surname",
       "ExternalUserId": "ExternalUserId",
-      "TenantId": "00000000-0000-0000-0000-000000000000",
       "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
       "RoleIds": [
         "00000000-0000-0000-0000-000000000000",
@@ -342,7 +203,6 @@ Partial success.
       "ContactGivenName": "Name",
       "ContactSurname": "Surname",
       "ExternalUserId": "ExternalUserId",
-      "TenantId": "00000000-0000-0000-0000-000000000000",
       "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
       "RoleIds": [
         "00000000-0000-0000-0000-000000000000",
@@ -380,7 +240,7 @@ Get User status for multiple users, optionally restrict it to only Users of a sp
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/Users/Status`
+`GET api/v1/Tenants/{tenantId}/Users/Status`
 
 ### Parameters
 
@@ -441,7 +301,7 @@ Success.
 
 ##### Type:
 
- `List[UserStatusDto]`
+ `List[User]`
 
 ```json
 [
@@ -457,7 +317,6 @@ Success.
       "ContactGivenName": "Name",
       "ContactSurname": "Surname",
       "ExternalUserId": "ExternalUserId",
-      "TenantId": "00000000-0000-0000-0000-000000000000",
       "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
       "RoleIds": [
         "00000000-0000-0000-0000-000000000000",
@@ -477,7 +336,6 @@ Success.
       "ContactGivenName": "Name",
       "ContactSurname": "Surname",
       "ExternalUserId": "ExternalUserId",
-      "TenantId": "00000000-0000-0000-0000-000000000000",
       "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
       "RoleIds": [
         "00000000-0000-0000-0000-000000000000",
@@ -515,7 +373,7 @@ Returns a User
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/Users/{userId}`
+`GET api/v1/Tenants/{tenantId}/Users/{userId}`
 
 ### Parameters
 
@@ -548,7 +406,7 @@ Success
 
 ##### Type:
 
- `UserDto`
+ `User`
 
 ```json
 {
@@ -561,7 +419,6 @@ Success
   "ContactGivenName": "Name",
   "ContactSurname": "Surname",
   "ExternalUserId": "ExternalUserId",
-  "TenantId": "00000000-0000-0000-0000-000000000000",
   "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
   "RoleIds": [
     "00000000-0000-0000-0000-000000000000",
@@ -593,7 +450,7 @@ Returns user invitation status
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/Users/{userId}/Status`
+`GET api/v1/Tenants/{tenantId}/Users/{userId}/Status`
 
 ### Parameters
 
@@ -626,7 +483,7 @@ Success
 
 ##### Type:
 
- `UserStatusDto`
+ `UserStatus`
 
 ```json
 {
@@ -641,7 +498,6 @@ Success
     "ContactGivenName": "Name",
     "ContactSurname": "Surname",
     "ExternalUserId": "ExternalUserId",
-    "TenantId": "00000000-0000-0000-0000-000000000000",
     "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
     "RoleIds": [
       "00000000-0000-0000-0000-000000000000",
@@ -668,229 +524,13 @@ User or Tenant not found
 Internal server error
 ***
 
-## `Get Users' Status By IDs`
-
-Returns an ordered list of UserStatusDto objects for a given tenant or a MultiStatusDto response with a list of UserStatusDto objects and a list of errors
-
-### Request
-
-`GET api/v1-preview/Tenants/{tenantId}/Users/Status/Ids`
-
-### Parameters
-
-```csharp
-[Required]
-string tenantId
-```
-
-Id of tenant
-
-```csharp
-[FromQuery]
-[Required]
-Guid[] userIds
-```
-
-Unordered list of ids for all users
-
-```csharp
-[FromQuery]
-[Optional]
-[Default = ""]
-string query
-```
-
-Query to execute. Currently not supported
-
-```csharp
-[FromQuery]
-[Optional]
-[Default = 0]
-int32 skip
-```
-
-Number of users to skip
-
-```csharp
-[FromQuery]
-[Optional]
-[Default = 100]
-int32 count
-```
-
-Max number of users to return
-
-### Security
-
-Allowed for these roles:
-
-- `Account Administrator`
-
-### Returns
-
-#### 200
-
-Success.
-
-##### Type:
-
- `List[UserStatusDto]`
-
-```json
-[
-  {
-    "InvitationStatus": 0,
-    "User": {
-      "Id": "00000000-0000-0000-0000-000000000000",
-      "GivenName": "Name",
-      "Surname": "Surname",
-      "Name": "Name",
-      "Email": "user@company.com",
-      "ContactEmail": "user@company.com",
-      "ContactGivenName": "Name",
-      "ContactSurname": "Surname",
-      "ExternalUserId": "ExternalUserId",
-      "TenantId": "00000000-0000-0000-0000-000000000000",
-      "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
-      "RoleIds": [
-        "00000000-0000-0000-0000-000000000000",
-        "00000000-0000-0000-0000-000000000000"
-      ]
-    }
-  },
-  {
-    "InvitationStatus": 0,
-    "User": {
-      "Id": "00000000-0000-0000-0000-000000000000",
-      "GivenName": "Name",
-      "Surname": "Surname",
-      "Name": "Name",
-      "Email": "user@company.com",
-      "ContactEmail": "user@company.com",
-      "ContactGivenName": "Name",
-      "ContactSurname": "Surname",
-      "ExternalUserId": "ExternalUserId",
-      "TenantId": "00000000-0000-0000-0000-000000000000",
-      "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
-      "RoleIds": [
-        "00000000-0000-0000-0000-000000000000",
-        "00000000-0000-0000-0000-000000000000"
-      ]
-    }
-  }
-]
-```
-
-#### 207
-
-Partial success.
-
-##### Type:
-
- `MultiStatusResponseDto[List[UserStatusDto]]`
-
-```json
-{
-  "OperationId": "OperationId",
-  "Error": "Error",
-  "Reason": "Reason",
-  "ChildErrors": [
-    {
-      "OperationId": "OperationId",
-      "Error": "Error",
-      "Reason": "Reason",
-      "Resolution": "Resolution",
-      "StatusCode": 0,
-      "ModelId": {
-        "String": "String"
-      },
-      "TenantId": "00000000-0000-0000-0000-000000000000"
-    },
-    {
-      "OperationId": "OperationId",
-      "Error": "Error",
-      "Reason": "Reason",
-      "Resolution": "Resolution",
-      "StatusCode": 0,
-      "ModelId": {
-        "String": "String"
-      },
-      "TenantId": "00000000-0000-0000-0000-000000000000"
-    }
-  ],
-  "Data": [
-    {
-      "InvitationStatus": 0,
-      "User": {
-        "Id": "00000000-0000-0000-0000-000000000000",
-        "GivenName": "Name",
-        "Surname": "Surname",
-        "Name": "Name",
-        "Email": "user@company.com",
-        "ContactEmail": "user@company.com",
-        "ContactGivenName": "Name",
-        "ContactSurname": "Surname",
-        "ExternalUserId": "ExternalUserId",
-        "TenantId": "00000000-0000-0000-0000-000000000000",
-        "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
-        "RoleIds": [
-          "00000000-0000-0000-0000-000000000000",
-          "00000000-0000-0000-0000-000000000000"
-        ]
-      }
-    },
-    {
-      "InvitationStatus": 0,
-      "User": {
-        "Id": "00000000-0000-0000-0000-000000000000",
-        "GivenName": "Name",
-        "Surname": "Surname",
-        "Name": "Name",
-        "Email": "user@company.com",
-        "ContactEmail": "user@company.com",
-        "ContactGivenName": "Name",
-        "ContactSurname": "Surname",
-        "ExternalUserId": "ExternalUserId",
-        "TenantId": "00000000-0000-0000-0000-000000000000",
-        "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
-        "RoleIds": [
-          "00000000-0000-0000-0000-000000000000",
-          "00000000-0000-0000-0000-000000000000"
-        ]
-      }
-    }
-  ]
-}
-```
-
-#### 400
-
-Missing or invalid inputs
-
-#### 401
-
-Unauthorized
-
-#### 403
-
-Forbidden
-
-#### 404
-
-Tenant not found
-
-#### 500
-
-Internal server error
-***
-
 ## `Get User's Preferences`
 
 Returns a user's preferences
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/Users/{userId}/Preferences`
+`GET api/v1/Tenants/{tenantId}/Users/{userId}/Preferences`
 
 ### Parameters
 
@@ -923,7 +563,7 @@ Success
 
 ##### Type:
 
- `Newtonsoft.Json.Linq.JObject`
+ `JObject`
 
 ```json
 {}
@@ -952,7 +592,7 @@ Put a user's preferences
 
 ### Request
 
-`PUT api/v1-preview/Tenants/{tenantId}/Users/{userId}/Preferences`
+`PUT api/v1/Tenants/{tenantId}/Users/{userId}/Preferences`
 
 ### Parameters
 
@@ -997,7 +637,7 @@ Success
 
 ##### Type:
 
- `Newtonsoft.Json.Linq.JObject`
+ `JObject`
 
 ```json
 {}
@@ -1030,7 +670,7 @@ Creates a User
 
 ### Request
 
-`POST api/v1-preview/Tenants/{tenantId}/Users`
+`POST api/v1/Tenants/{tenantId}/Users`
 
 ### Parameters
 
@@ -1044,14 +684,24 @@ Id of Tenant
 ```csharp
 [FromBody]
 [Required]
-UserCreateOrUpdateDto userCreateOrUpdateDto
+UserCreateOrUpdate userCreateOrUpdate
 ```
 
-User data transfer object
+User values to use during creating
+
+Property | Type | Required | Description 
+ --- | --- | --- | ---
+Id | Guid | No | User Id for the user. When creating a user, if User ID is not specified, one will be generated.
+ContactGivenName | string | Yes | Preferred name to be used when contacting user.
+ContactSurname | string | Yes | Preferred surname to be used when contacting user.
+ContactEmail | string | Yes | Preferred contact email to be used.
+RoleIds | Guid[] | Yes | List of strings of RoleIds. At least one role must be provided.
+
+
 
 ```json
 {
-  "UserId": "00000000-0000-0000-0000-000000000000",
+  "Id": "00000000-0000-0000-0000-000000000000",
   "ContactGivenName": "Name",
   "ContactSurname": "Surname",
   "ContactEmail": "user@company.com",
@@ -1076,7 +726,7 @@ Created
 
 ##### Type:
 
- `UserDto`
+ `User`
 
 ```json
 {
@@ -1089,7 +739,6 @@ Created
   "ContactGivenName": "Name",
   "ContactSurname": "Surname",
   "ExternalUserId": "ExternalUserId",
-  "TenantId": "00000000-0000-0000-0000-000000000000",
   "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
   "RoleIds": [
     "00000000-0000-0000-0000-000000000000",
@@ -1125,7 +774,7 @@ Create or Update a User
 
 ### Request
 
-`PUT api/v1-preview/Tenants/{tenantId}/Users/{userId}`
+`PUT api/v1/Tenants/{tenantId}/Users/{userId}`
 
 ### Parameters
 
@@ -1146,14 +795,24 @@ Id of user
 ```csharp
 [FromBody]
 [Required]
-UserCreateOrUpdateDto userCreateOrUpdateDto
+UserCreateOrUpdate userCreateOrUpdate
 ```
 
-A UserStatusDto object
+A UserStatus object
+
+Property | Type | Required | Description 
+ --- | --- | --- | ---
+Id | Guid | No | User Id for the user. When creating a user. Must be the same as the one in the route.
+ContactGivenName | string | No | Preferred name to be used when contacting user.
+ContactSurname | string | No | Preferred surname to be used when contacting user.
+ContactEmail | string | No | Preferred contact email to be used.
+RoleIds | Guid[] | No | List of strings of RoleIds.
+
+
 
 ```json
 {
-  "UserId": "00000000-0000-0000-0000-000000000000",
+  "Id": "00000000-0000-0000-0000-000000000000",
   "ContactGivenName": "Name",
   "ContactSurname": "Surname",
   "ContactEmail": "user@company.com",
@@ -1179,7 +838,7 @@ Updated
 
 ##### Type:
 
- `UserDto`
+ `User`
 
 ```json
 {
@@ -1192,7 +851,6 @@ Updated
   "ContactGivenName": "Name",
   "ContactSurname": "Surname",
   "ExternalUserId": "ExternalUserId",
-  "TenantId": "00000000-0000-0000-0000-000000000000",
   "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
   "RoleIds": [
     "00000000-0000-0000-0000-000000000000",
@@ -1228,7 +886,7 @@ Delete a user
 
 ### Request
 
-`DELETE api/v1-preview/Tenants/{tenantId}/Users/{userId}`
+`DELETE api/v1/Tenants/{tenantId}/Users/{userId}`
 
 ### Parameters
 

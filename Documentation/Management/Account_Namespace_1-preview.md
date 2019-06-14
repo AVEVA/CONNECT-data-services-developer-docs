@@ -4,8 +4,7 @@ uid: AccountNamespace_1-preview
 
 # Namespaces (Version 1-preview)
 
-A `Namespace` is a collection of SDS types, streams, and stream views. Namespace identifiers are unique within an account. Requirements
-for Namespace IDs are the following:
+A `Namespace` is a collection of SDS types, streams, and stream views. Namespace identifiers are unique within an account. Requirements for Namespace IDs are the following:
 - Must contain 100 characters or fewer
 - Must only contain alphanumeric characters, underscores, dashes, spaces, and periods
 - Must not contain two consecutive periods
@@ -125,7 +124,7 @@ A `Namespace` can only be retrieved if the current principal has Read access.
 
 ## `Create New Namespace`
 
-Creates a new `Namespace` in the specified `Tenant`.
+Creates a new `Namespace` in the specified `Tenant`. Currently, there is a limit of five Namespaces per tenant.
 
 ### Http
 

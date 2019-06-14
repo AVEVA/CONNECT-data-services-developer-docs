@@ -20,9 +20,9 @@ For HTTP requests and responses, the Role object has the following properties an
 | Name | string | Gets or sets name of this Role. | 
 | Description | string | Gets or sets description of this Role. | 
 | RoleScope | RoleScope | Gets or sets scope of this Role. | 
-| TenantId | string | Gets or sets unique identifier of Tenant for this Role, if this is a Account Role, null otherwise. | 
+| TenantId | string | Gets or sets unique identifier of Tenant for this Role, if this is an Account Role, null otherwise. **Note:** TenantId will be removed in the next version. Please remove references to it. | 
 | CommunityId | string | Gets or sets unique identifier of Community for this Role, if this is a Community Role, null otherwise. | 
-| RoleTypeId | string | Gets or sets unique identifier of Role Type for this Role, if this is a Account Role and is not a customer defined Role. | 
+| RoleTypeId | string | Gets or sets unique identifier of Role Type for this Role, if this is an Account Role and is not a customer defined Role. | 
 
 
 ```json

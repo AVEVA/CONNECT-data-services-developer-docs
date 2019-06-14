@@ -34,7 +34,7 @@ MappingRulePattern | PropertyMappingRule | True | Data source identifier
 Property | Type | Required | Descriptions
  --- | --- | --- | ---
 PropertyPaths | [string] | True | Paths to property
-ItemIdentifier | FilterUnit | False | Identifier for the resource that contain the property used
+ItemIdentifier | FilterUnit | False | Identifier for the resource that contains the property used
 
 
 
@@ -140,7 +140,7 @@ The PropertyMappingRule is used to map a column to a data source by defining the
 Property | Type | Required | Descriptions
  --- | --- | --- | ---
 PropertyPaths | [string] | True | Paths to property
-ItemIdentifier | FilterUnit | False | Identifier for the resource that contain the property used
+ItemIdentifier | FilterUnit | False | Identifier for the resource that contains the property used
 
 
 ***

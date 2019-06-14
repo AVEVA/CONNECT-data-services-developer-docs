@@ -16,7 +16,7 @@ IsDefault | bool | False | Determines whether default parameters should be used
 
 
  ## `SharedMappingRules` 
- Used to define rules using a token and a pattern that can then be applied to one or many columns that share similar behavior. With the token property, users can specify a certain value that will differentiate the columns that adhere to the defined pattern. See examples below.
+ The SharedMappingRule is used to define rules using a token and a pattern that can then be applied to one or many columns that share similar behavior. With the token property, users can specify a certain value that will differentiate the columns that adhere to the defined pattern. See examples below.
 ### Properties
 
 Property | Type | Required | Descriptions
@@ -28,7 +28,7 @@ MappingRulePattern | PropertyMappingRule | True | Data source identifier
 
 
  ## `MappingRulePattern` 
- Used to map a column to a data source by defining the paths to the property that the user wants to select, and an identifier to the resource of the property.
+ The PropertyMappingRule is used to map a column to a data source by defining the paths to the property that the user wants to select, and an identifier to the resource of the property.
 ### Properties
 
 Property | Type | Required | Descriptions
@@ -39,7 +39,7 @@ ItemIdentifier | FilterUnit | False | Identifier for the resource that contain t
 
 
  ## `ItemIdentifier` 
- Identifies the property the user wants to select with a PropertyMappingRule.
+ The FilterUnit identifies the property that the user wants to select with a [PropertyMappingRule](#propertymappingrule).
 ### Properties
 
 Property | Type | Required | Descriptions
@@ -111,7 +111,7 @@ DataType | string | False | Type of the mapped data source
 ## `MappingRule` 
  The MappingRule can be used in the following forms 
  # [GroupRuleMappingRule](#tab/tabid-1) 
-Used to map a column to a group rule by specifying the Id of the rule, and a token defined in the group rule to identify what pattern to use.
+The GroupMappingRule is used to map a column to a group rule by specifying the Id of the rule and a token defined in the group rule to identify what pattern to use.
 
 ### Properties
 
@@ -122,7 +122,7 @@ GroupRuleToken | string | False | Token to use in the specified group rule
 
 
 # [LinkedMappingRule](#tab/tabid-2) 
-Used when mapping a column to a shared mapping rule, using the token to define the value to be used for the token property of the rule.
+The LinkedMappingRule is used when mapping a column to a shared mapping rule, using the token to define the value to be used for the token property of the rule.
 
 ### Properties
 
@@ -133,7 +133,7 @@ Token | string | True | Token to use in the specified mapping rule
 
 
 # [PropertyMappingRule](#tab/tabid-3) 
-Used to map a column to a data source by defining the paths to the property that the user wants to select, and an identifier to the resource of the property.
+The PropertyMappingRule is used to map a column to a data source by defining the paths to the property that the user wants to select, and an identifier to the resource of the property.
 
 ### Properties
 

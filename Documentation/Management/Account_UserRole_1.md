@@ -1,10 +1,11 @@
 ---
-uid: AccountUserRole
+uid: AccountUserRole_1
 ---
 
-# User Roles
+# User Roles (Version 1)
 
-User `Roles` authorize API requests made by users to various OCS features. Users can be assigned more than one `Role`, but all users have the Account Member role. The following are currently available User `Roles`:
+User `Roles` authorize API requests made by users to various OCS features. Users can be assigned more than one `Role`,
+but all users have the Account Member role. The following are currently available User `Roles`:
 - Account Administrator: Can add, edit, and remove users. Can also edit the permissions of existing users.
 - Account Member: Can log in and access the OCS portal.
 
@@ -33,9 +34,8 @@ Retrieves all `Roles` for the specified user.
 
 ### Http
 
-`GET api/v1-preview/Tenants/{tenantId}/Users/{userId}/Roles`
-
 `GET api/v1/Tenants/{tenantId}/Users/{userId}/Roles`
+
 
 ### Parameters
 
@@ -69,6 +69,15 @@ int32 count
 ```
 
 Number of `Roles` to return.
+```csharp
+[Optional]
+[Default = ""]
+[FromRoute]
+string query
+```
+
+Unsupported parameter.
+
 
 ### Security
 
@@ -92,9 +101,8 @@ Replaces the `Roles` of a user with a new list of roles.
 
 ### Http
 
-`PUT api/v1-preview/Tenants/{tenantId}/Users/{userId}/Roles`
-
 `PUT api/v1/Tenants/{tenantId}/Users/{userId}/Roles`
+
 
 ### Parameters
 

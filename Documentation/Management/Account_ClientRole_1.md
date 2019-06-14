@@ -1,10 +1,11 @@
 ---
-uid: AccountClientRole
+uid: AccountClientRole_1
 ---
 
-# Client Roles
+# Client Roles (Version 1)
 
-Client `Roles` authorize API requests made by clients to various OCS features. Clients can be assigned more than one `Role`, but all clients have the Account Member role. The following are currently available Client `Roles`:
+Client `Roles` authorize API requests made by clients to various OCS features. Clients can be assigned more than one
+`Role`, but all clients have the Account Member role. The following are currently available Client `Roles`:
 - Account Administrator: Can add, edit, and remove data using APIs.
 - Account Member: Can read data using most APIs.
 
@@ -33,9 +34,8 @@ Replaces the `Roles` of a client with a new list of roles.
 
 ### Http
 
-`PUT api/v1-preview/Tenants/{tenantId}/Clients/{clientId}/Roles`
-
 `PUT api/v1/Tenants/{tenantId}/Clients/{clientId}/Roles`
+
 
 ### Parameters
 
@@ -84,9 +84,8 @@ Retrieves all `Roles` from a client.
 
 ### Http
 
-`GET api/v1-preview/Tenants/{tenantId}/Clients/{clientId}/Roles`
-
 `GET api/v1/Tenants/{tenantId}/Clients/{clientId}/Roles`
+
 
 ### Parameters
 
@@ -120,6 +119,15 @@ int32 count
 ```
 
 Number of `Roles` to return.
+```csharp
+[Optional]
+[Default = ""]
+[FromRoute]
+string query
+```
+
+Unsupported parameter.
+
 
 ### Security
 

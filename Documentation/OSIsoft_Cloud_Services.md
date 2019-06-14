@@ -13,4 +13,4 @@ The information in the sections that follow document the APIs and usage for each
   Store. The data store is an optimized sequential data store based on the Qi technology.
 * Data ingress and OSIsoft Message Format - You use OSIsoft Message Format (OMF) to achieve high-throughput asynchronous
   data ingress into the OCS Sequential Data Store.
-* Data Views - Use the information in this section to create a user-selected subsets of data stored in OSIsoft Cloud Services which are mapped into a customizable table format.
+* Data Views - Use the information in this section to create user-selected subsets of data stored in OSIsoft Cloud Services which are mapped into customizable table formats.

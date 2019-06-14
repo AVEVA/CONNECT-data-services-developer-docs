@@ -133,7 +133,7 @@ Created
 
 ##### Type:
 
- `ClientResponse`
+ `ClientResponse<HybridClient>`
 
 ```json
 {

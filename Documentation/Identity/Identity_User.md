@@ -151,7 +151,7 @@ Success.
 
 ##### Type:
 
- `MultiStatusResponse[User]`
+ `MultiStatusResponse<User>`
 
 ```json
 {

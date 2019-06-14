@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/DataIngress/OMF_Ingress_Specification.html",
-          "hash": "mGISa3CoDnfTvj9kxnT4OQ=="
+          "hash": "GF6xyuo1+rzEDOxdYWU2lg=="
         }
       },
       "is_incremental": false,
@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/DataIngress/OMF_Ingress_Subscriptions.html",
-          "hash": "13fkZINWtIfXZ1BHRwzDCw=="
+          "hash": "zumy32rO5t7IhnsnaWGucw=="
         }
       },
       "is_incremental": false,
@@ -66,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/DataIngress/OMF_Ingress_Topics.html",
-          "hash": "2Rpm4xMf3DhLfWGZt3jLLA=="
+          "hash": "gIiM72b607JvN3M3TcCeCQ=="
         }
       },
       "is_incremental": false,
@@ -194,23 +194,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "Documentation/Identity/Identity_Client.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/Identity/Identity_Client.html",
-          "hash": "QXbW11ESxoCUHoDBJgQhzw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
       "source_relative_path": "Documentation/Identity/Identity_ClientCredentialClient.md",
       "output": {
         ".html": {
           "relative_path": "Documentation/Identity/Identity_ClientCredentialClient.html",
-          "hash": "Pmvcd6cRFJpaMA/6fMVviA=="
+          "hash": "jPCJuXPHH6XQ8rDfKdnqSA=="
         }
       },
       "is_incremental": false,
@@ -222,7 +210,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Identity/Identity_HybridClient.html",
-          "hash": "DTWtvAnIdsofCRVpfcuFMw=="
+          "hash": "JkG2KFNi5nMIgzUq2H4aoQ=="
         }
       },
       "is_incremental": false,
@@ -294,7 +282,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Identity/Identity_User.html",
-          "hash": "0UR1fSBxQJgvpRDTemEF5A=="
+          "hash": "ds7buKi5q2CtYzOWSHr1kg=="
         }
       },
       "is_incremental": false,
@@ -426,7 +414,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/OSIsoft_Cloud_Services.html",
-          "hash": "5Pa4xeqSahbMhqh2EAcTVA=="
+          "hash": "oJpcq80R6vrkbGIq3EJ9OA=="
         }
       },
       "is_incremental": false,
@@ -450,7 +438,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/SequentialDataStore/Data_Store_and_SDS.html",
-          "hash": "XRh/RFnFW0rcQlIcQ0xCwg=="
+          "hash": "bB46xFVviznS6vNimsRgWA=="
         }
       },
       "is_incremental": false,
@@ -470,23 +458,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "Documentation/SequentialDataStore/Introducing_SDS.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/SequentialDataStore/Introducing_SDS.html",
-          "hash": "+5scyXc0gu3uuClcas4p8Q=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
       "source_relative_path": "Documentation/SequentialDataStore/Quick_Start.md",
       "output": {
         ".html": {
           "relative_path": "Documentation/SequentialDataStore/Quick_Start.html",
-          "hash": "Rkfdus80d65L+l7AJU3wVQ=="
+          "hash": "XryM5WoNDa6+mCPnttSdBQ=="
         }
       },
       "is_incremental": false,
@@ -510,7 +486,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/SequentialDataStore/Reading_Data_API.html",
-          "hash": "/mNc03s3upbAAtRCFES79w=="
+          "hash": "qQJH8vMu6KmK3WxqLHGgvQ=="
         }
       },
       "is_incremental": false,
@@ -650,120 +626,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "Documentation/images/Acquire_Client_Key.png",
-      "output": {
-        "resource": {
-          "relative_path": "Documentation/images/Acquire_Client_Key.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "Documentation/images/Acquire_Token.png",
-      "output": {
-        "resource": {
-          "relative_path": "Documentation/images/Acquire_Token.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
       "source_relative_path": "Documentation/images/Add_Button.png",
       "output": {
         "resource": {
           "relative_path": "Documentation/images/Add_Button.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "Documentation/images/Containers_1A.png",
-      "output": {
-        "resource": {
-          "relative_path": "Documentation/images/Containers_1A.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "Documentation/images/QiDataBehaviorsComplexType.PNG",
-      "output": {
-        "resource": {
-          "relative_path": "Documentation/images/QiDataBehaviorsComplexType.PNG"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "Documentation/images/QiDataBehaviorsComplexTypeWithBehavior.PNG",
-      "output": {
-        "resource": {
-          "relative_path": "Documentation/images/QiDataBehaviorsComplexTypeWithBehavior.PNG"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "Documentation/images/QiDataBehaviorsSimpleContinuous.PNG",
-      "output": {
-        "resource": {
-          "relative_path": "Documentation/images/QiDataBehaviorsSimpleContinuous.PNG"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "Documentation/images/QiDataBehaviorsSimpleDiscrete.PNG",
-      "output": {
-        "resource": {
-          "relative_path": "Documentation/images/QiDataBehaviorsSimpleDiscrete.PNG"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "Documentation/images/QiDataBehaviorsSimpleStepwiseContinuous1.PNG",
-      "output": {
-        "resource": {
-          "relative_path": "Documentation/images/QiDataBehaviorsSimpleStepwiseContinuous1.PNG"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "Documentation/images/QiDataBehaviorsSimpleStepwiseContinuous2.PNG",
-      "output": {
-        "resource": {
-          "relative_path": "Documentation/images/QiDataBehaviorsSimpleStepwiseContinuous2.PNG"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "Documentation/images/QiDataBehaviorsSimpleType.PNG",
-      "output": {
-        "resource": {
-          "relative_path": "Documentation/images/QiDataBehaviorsSimpleType.PNG"
         }
       },
       "is_incremental": false,
@@ -786,7 +652,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/samples.html",
-          "hash": "iofRCtN5xnz3bXpKiWc2FQ=="
+          "hash": "n6eJBEHn15EDEm7MwEAcPg=="
         }
       },
       "is_incremental": false,
@@ -798,7 +664,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/support.html",
-          "hash": "t240QA7r9BQkIfAFuozcUg=="
+          "hash": "ZpMXr7v56gbiW8cAjXT1qg=="
         }
       },
       "is_incremental": false,
@@ -810,7 +676,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/toc.html",
-          "hash": "r+q/6QWi/uNd03y0yF7u2A=="
+          "hash": "Ory2uvbfa0ZNxt22+qyvpw=="
         }
       },
       "is_incremental": false,
@@ -822,7 +688,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "Pg8T8WL0nnSMdR/0b9KtNg=="
+          "hash": "pnQmQ0oZ4MGieEi3YqGHdg=="
         }
       },
       "is_incremental": false,

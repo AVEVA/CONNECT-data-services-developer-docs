@@ -1080,7 +1080,7 @@ Summary values supported by `SdsSummaryType` enum:
 **Request**  
  ```text
     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
-        Summaries?startIndex={startIndex}&endIndex={endIndex}&count={count}&filter={filter}
+        Summaries?startIndex={startIndex}&endIndex={endIndex}&count={count}[&filter={filter}]
  ```
 
 **Parameters**  
@@ -1105,9 +1105,6 @@ The number of intervals requested
 ``string filter``  
 Optional filter expression
   
-``string streamViewId``  
-Optional stream view identifier
-
 **Response**  
 The response includes a status code and a response body containing a serialized collection of SdsIntervals.
 
@@ -1278,8 +1275,8 @@ information see [Interpolation.](xref:sdsTypes#interpolation)
  ```text
     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
         Sampled?startIndex={startIndex}&endIndex={endIndex}&intervals={intervals}&sampleBy={sampleBy}
-        &boundaryType={boundaryType}&startBoundaryType={startBoundaryType}
-        &endBoundaryType={endBoundaryType}&filter={filter}&streamViewId={streamViewId}
+        [&sampleBy={sampleBy}&...&boundaryType={boundaryType}&startBoundaryType={startBoundaryType}
+        &endBoundaryType={endBoundaryType}&filter={filter}]
  ```
 
 **Parameters**  

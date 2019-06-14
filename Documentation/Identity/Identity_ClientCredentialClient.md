@@ -107,7 +107,7 @@ Created
 
 ##### Type:
 
- `ClientResponse`
+ `ClientResponse<ClientCredentialClient>`
 
 ```json
 {
@@ -448,7 +448,7 @@ Partial success.
 
 ##### Type:
 
- `MultiStatusResponse[ClientCredentialClient]`
+ `MultiStatusResponse<ClientCredentialClient>`
 
 ```json
 {

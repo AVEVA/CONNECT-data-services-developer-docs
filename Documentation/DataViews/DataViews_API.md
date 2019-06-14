@@ -445,7 +445,7 @@ Internal server error
 
 ## `Create or Update Data View`
 
-Edit the Data View with specified Id
+Update the Data View with specified Id
 
 ### Request
 `PUT api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}`
@@ -913,7 +913,7 @@ Internal server error
 
 ## `Update Data View Name`
 
-Edit Data View name specified by Data View id
+Update Data View name specified by Data View id
 
 ### Request
 `PUT api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/name`
@@ -1043,7 +1043,7 @@ Internal server error
 
 ## `Update Data View Description`
 
-Edit Data View description specified by Data View id
+Update Data View description specified by Data View id
 
 ### Request
 `PUT api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/description`
@@ -1235,7 +1235,7 @@ Internal server error
 
 ## `Update Data View Queries`
 
-Edit Data View queries specified by Data View id
+Update Data View queries specified by Data View id
 
 ### Request
 `PUT api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/queries`
@@ -1377,7 +1377,7 @@ Internal server error
 
 ## `Update Data View Group Rules`
 
-Edit Data View group rules specified by Data View id
+Update Data View group rules specified by Data View id
 
 ### Request
 `PUT api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/grouprules`
@@ -1572,7 +1572,7 @@ Internal server error
 
 ## `Update Data View Mappings`
 
-Edit Data View mappings specified by Data View id
+Update Data View mappings specified by Data View id
 
 ### Request
 `PUT api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/mappings`
@@ -1761,7 +1761,7 @@ Internal server error
 
 ## `Update Data View Index Data Type`
 
-Edit Data View index data type specified by Data View id
+Update Data View index data type specified by Data View id
 
 ### Request
 `PUT api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/indexdatatype`
@@ -1896,7 +1896,7 @@ Internal server error
 
 ## `Update Data View Index Config`
 
-Edit Data View index config specified by Data View id
+Update Data View index config specified by Data View id
 
 ### Request
 `PUT api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/indexconfig`
@@ -2210,7 +2210,7 @@ Internal server error
 
 ## `Get Data Groups`
 
-Get data groups for a specified Data View
+Get Data Groups for a specified Data View
 
 ### Request
 `GET api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/datagroups`
@@ -2295,7 +2295,7 @@ Internal server error
 
 ## `Get Data Group`
 
-Get a specific data group
+Get a specific Data Group
 
 ### Request
 `GET api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/dataGroups/{dataGroupId}`

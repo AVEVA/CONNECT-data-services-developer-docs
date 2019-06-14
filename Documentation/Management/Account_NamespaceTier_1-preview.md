@@ -6,6 +6,10 @@ uid: AccountNamespaceTier_1-preview
 
 An attribute that specifies `Namespace` performance.
 
+## Note
+
+Namespace tiers are only applicatble for version 1-preview. Namespace tiers are removed in version 1. Please remove references to it.
+
 ## Properties
 
 For HTTP requests and responses, the NamespaceTier object has the following properties and JSON-serialized body: 

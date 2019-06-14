@@ -17,15 +17,15 @@ A `Namespace` is a collection of SDS types, streams, and stream views. Namespace
 For HTTP requests and responses, the Namespace object has the following properties and JSON-serialized body: 
 
 | Property | Type | Description | 
- | --- | --- | ---  | 
+| --- | --- | ---  | 
 | Id | string | Gets or sets name of this Namespace; unique within a Tenant's Namespaces. | 
-| TenantId | string | Gets or sets unique identifier of the Tenant that this Namespace corresponds to. | 
+| TenantId | string | Gets or sets unique identifier of the Tenant that this Namespace corresponds to. **Note**: TenantId will be removed in the next version. Please remove references to it.| 
 | Region | string | Gets or sets the region that the namespace is provisioned in. | 
 | Self | string | Gets or sets the namespace's URI. | 
 | Description | string | Gets or sets description of this Namespace. | 
-| TierId | string | Gets or sets id of the Tier that this Namespace is associated with. | 
-| ThroughputUnits | int32 | Gets or sets number of Throughput units for this Namespace. | 
-| StorageUnits | int32 | Gets or sets number of Storage units for this Namespace. | 
+| TierId | string | Gets or sets id of the Tier that this Namespace is associated with. **Note**: TierId will be removed in the next version. Please remove references to it.| 
+| ThroughputUnits | int32 | Gets or sets number of Throughput units for this Namespace. **Note**: ThroughputUnits will be removed in the next version. Please remove references to it.| 
+| StorageUnits | int32 | Gets or sets number of Storage units for this Namespace. **Note**: StorageUnits will be removed in the next version. Please remove references to it.| 
 | State | NamespaceProvisioningState | Gets or sets current state of this Namespace. | 
 
 

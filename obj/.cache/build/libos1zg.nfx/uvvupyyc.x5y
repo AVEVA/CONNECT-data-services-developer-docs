@@ -1,23 +1,23 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Sequential Data Store </title>
+    <title>Getting support </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Sequential Data Store ">
+    <meta name="title" content="Getting support ">
     <meta name="generator" content="docfx 2.39.2.0">
     
-    <link rel="shortcut icon" href="../../favicon.ico">
-    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../../styles/docfx.css">
-    <link rel="stylesheet" href="../../styles/main.css">
-    <meta property="docfx:navrel" content="../../toc.html">
-    <meta property="docfx:tocrel" content="../toc.html">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
     
-    <meta property="docfx:rel" content="../../">
+    <meta property="docfx:rel" content="../">
     
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
@@ -33,8 +33,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../index.html" width="46">
-                <img id="logo" src="../../Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              <a class="navbar-brand" href="../index.html" width="46">
+                <img id="logo" src="../Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -75,26 +75,19 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="sds">
-<h1 id="sequential-data-store">Sequential Data Store</h1>
+            <article class="content wrap" id="_content" data-uid="support">
+<h1 id="getting-support" sourcefile="Documentation/support.md" sourcestartlinenumber="5" sourceendlinenumber="5">Getting support</h1>
 
-<p>The Sequential Data Store (SDS) is a highly flexible cloud-based sequential data store that you use to store, 
-retrieve, and analyze data. You 
-create and write data to <em>streams</em> using a simple REST (<em>REpresentational State Transfer</em>) API (<em>Application 
-Programming Interface</em>). The streams you create can be used to store simple or complex data types to suit 
-your application needs. You can define simple or complex indexing to arrange and relate your data. An assortment 
-of methods with customizable behaviors are available to read data and easily obtain needed information.</p>
-<h2 id="samples">Samples</h2>
-<p>The best way to get started with SDS is to run one or more of the code samples. Code samples are 
-provided in a number of different programming languages to illustrate how to easily and effectively 
-interact with SDS. The code samples can be found in the <a href="https://github.com/osisoft/OSI-Samples">OSI-Samples</a> repository on GitHub. Obtain SDS 
-REST API access keys from <a href="https://cloud.osisoft.com">https://cloud.osisoft.com</a> before running the sample code.</p>
-<p>Each sample includes a readme file which describes the steps required to run the sample and a brief description 
-that highlights some of the sample&#39;s functionality. Be sure to read the readme file to understand 
-how the sample works.</p>
-<p>After you have finished this introduction and worked with one of the samples, refer to 
-the <a class="xref" href="Quick_Start.html#sds-quick-start">Quick start</a> section, which describes the interaction of 
-various SDS objects and helps you get started with your own application.</p>
+<p sourcefile="Documentation/support.md" sourcestartlinenumber="7" sourceendlinenumber="14">We will provide you with our standard support for this offering at no additional charge. 
+End users can access contact information for OSIsoft Technical Support via the Portal. You 
+will be entitled to contact the OSIsoft Technical Support twenty-four (24) hours a day, 
+seven (7) days a week to ask questions or seek advice regarding the use of OCS. OSIsoft 
+will assist end users in using this offering and in identifying and providing workarounds, 
+if possible, for problems or limitations with the service. Such assistance may include 
+remote computer communications to end users&#39; facilities. OSIsoft will use its best efforts 
+to respond to all Technical Support queries within four (4) hours.</p>
+<p sourcefile="Documentation/support.md" sourcestartlinenumber="17" sourceendlinenumber="18">If you have feedback, please visit <a href="https://feedback.osisoft.com/forums/597811-osisoft-cloud-services" data-raw-source="[UserVoice](https://feedback.osisoft.com/forums/597811-osisoft-cloud-services)" sourcefile="Documentation/support.md" sourcestartlinenumber="17" sourceendlinenumber="17">UserVoice</a>. 
+UserVoice is monitored by our product department. </p>
 </article>
           </div>
           
@@ -103,7 +96,7 @@ various SDS objects and helps you get started with your own application.</p>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/SequentialDataStore/Data_Store_and_SDS.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/support.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -123,8 +116,8 @@ various SDS objects and helps you get started with your own application.</p>
       </footer>
     </div>
     
-    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../styles/main.js"></script>
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
   </body>
 </html>

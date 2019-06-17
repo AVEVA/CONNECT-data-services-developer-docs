@@ -1,7 +1,7 @@
-- name: Data Views API
-  href: DataViews_API.md
 - name: Introduction
   href: Introduction.md
+- name: Data Views API
+  href: DataViews_API.md
 - name: Queries
   href: Queries.md
 - name: Mappings

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -76,11 +76,11 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="IndexConfig">
-<h1 id="indexconfig">IndexConfig</h1>
+<h1 id="indexconfig" sourcefile="Documentation/DataViews/IndexConfig.md" sourcestartlinenumber="6" sourceendlinenumber="6">IndexConfig</h1>
 
-<p>The IndexConfig defines the index information for retrieving data, and lets the user specify start and end times with an interval time, and the data retrieval mode. Currently, only interpolation mode is supported. The index config can be defined or left null in the data view definition. If left null, it will be generated at the time of data retrieval with a start index of 24 hours ago and end index as the current time, using interval of 1 and interpolation mode. If configured in the data view definition, the config can always be overwritten when using the data APIs by indicating the parameters in the call. The start and end indices are to follow the ISO 8601 date and time format, and the interval should comply with the .Net TimeSpan struct.</p>
-<h3 id="properties">Properties</h3>
-<table>
+<p sourcefile="Documentation/DataViews/IndexConfig.md" sourcestartlinenumber="7" sourceendlinenumber="7">The IndexConfig defines the index information for retrieving data, and lets the user specify start and end times with an interval time, and the data retrieval mode. Currently, only interpolation mode is supported. The index config can be defined or left null in the data view definition. If left null, it will be generated at the time of data retrieval with a start index of 24 hours ago and end index as the current time, using interval of 1 and interpolation mode. If configured in the data view definition, the config can always be overwritten when using the data APIs by indicating the parameters in the call. The start and end indices are to follow the ISO 8601 date and time format, and the interval should comply with the .Net TimeSpan struct.</p>
+<h3 id="properties" sourcefile="Documentation/DataViews/IndexConfig.md" sourcestartlinenumber="8" sourceendlinenumber="8">Properties</h3>
+<table sourcefile="Documentation/DataViews/IndexConfig.md" sourcestartlinenumber="10" sourceendlinenumber="15">
 <thead>
 <tr>
 <th>Property</th>
@@ -116,9 +116,9 @@
 </tr>
 </tbody>
 </table>
-<h2 id="example"><code>Example</code></h2>
-<p>The following example shows an index config set for data to be indexed between the start and end index, and give interpolated data using an interval of 5 minutes.</p>
-<pre><code class="lang-json">{
+<h2 id="example" sourcefile="Documentation/DataViews/IndexConfig.md" sourcestartlinenumber="17" sourceendlinenumber="17"><code>Example</code></h2>
+<p sourcefile="Documentation/DataViews/IndexConfig.md" sourcestartlinenumber="18" sourceendlinenumber="18">The following example shows an index config set for data to be indexed between the start and end index, and give interpolated data using an interval of 5 minutes.</p>
+<pre sourcefile="Documentation/DataViews/IndexConfig.md" sourcestartlinenumber="19" sourceendlinenumber="26"><code class="lang-json">{
   &quot;StartIndex&quot;: &quot;2018-01-01T00:00:00Z&quot;,
   &quot;EndIndex&quot;: &quot;2018-01-02T00:00:00Z&quot;,
   &quot;Mode&quot;: &quot;Interpolated&quot;,

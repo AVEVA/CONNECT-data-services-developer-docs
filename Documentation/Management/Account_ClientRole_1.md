@@ -45,7 +45,7 @@ Replaces the `Roles` of a client with a new list of roles.
 string tenantId
 ```
 
-The identifier of the account the client belongs to.
+The identifier of the account to which the client belongs.
 ```csharp
 [Required]
 [FromRoute]
@@ -95,7 +95,7 @@ Retrieves all `Roles` from a client.
 string tenantId
 ```
 
-The identifier for the account in which the client belongs to.
+The identifier of the account to which the client belongs.
 ```csharp
 [Required]
 [FromRoute]

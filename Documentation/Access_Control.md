@@ -4,7 +4,7 @@ uid: accessControl
 
 # Role-based access control 
 
-Within OCS, role-based access control to entities such as Namespaces, Streams, and so on, is managed using an Access Control List (ACL) and an Owner identity assigned to each entity. ACLs control access to entities based on their OCS Roles.
+Within OCS, role-based access control to entities such as Namespaces and Streams, is managed using an Access Control List (ACL) and an Owner identity assigned to each entity. ACLs control access to entities based on their OCS Roles.
 
 Owners are granted access for all operations regardless of the contents of the ACL. Not all entities in the OCS system support role-based access control at this time, but the list will quickly grow and currently includes Namespaces and several unreleased entities.
 

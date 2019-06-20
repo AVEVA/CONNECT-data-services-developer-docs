@@ -28,7 +28,7 @@ For HTTP requests and responses, the TenantFeatureState object has the following
 
 ## `Get All Tenant Feature States`
 
-Retrieves all `FeatureState` s for the specified `Tenant`.
+Retrieves all instances of `FeatureState` for the specified `Tenant`.
 
 ### Http
 
@@ -56,9 +56,9 @@ Authorized for Account Members of the specified account.
 
 | Status Code | Return Type | Description | 
  | --- | --- | ---  | 
-| 200 | [FeatureState] | Returns a list of `FeatureState` s for the specified account. | 
-| 400 | Nothing is returned | Unable to retrieve `FeatureState` s due to missing or invalid input. | 
-| 403 | Nothing is returned | Unauthorized to retrieve `FeatureState` s for the specified account. | 
+| 200 | [FeatureState] | Returns a list of `FeatureState` for the specified `Tenant`. | 
+| 400 | Nothing is returned | Unable to retrieve `FeatureState` instances due to missing or invalid input. | 
+| 403 | Nothing is returned | Unauthorized to retrieve `FeatureState` instances for the specified `Tenant`. | 
 
 
 ***

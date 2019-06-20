@@ -159,7 +159,7 @@ Authorized for Account Administrators of the specified account.
 
 | Status Code | Return Type | Description | 
  | --- | --- | ---  | 
-| 200 | Role | Returns the `Role` with with specified Id roleId. | 
+| 200 | Role | Returns the `Role` with specified Id roleId. | 
 | 400 | Nothing is returned | Could not retrieve the specified `Role` due to missing or invalid input. | 
 | 403 | Nothing is returned | Unauthorized to retrieve account `Roles` from this account. | 
 

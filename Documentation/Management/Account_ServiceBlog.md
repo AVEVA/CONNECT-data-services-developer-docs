@@ -4,7 +4,7 @@ uid: AccountServiceBlog
 
 # Service Blog
 
-API's for retrieving service blog entries from OSIsoft Cloud Services.
+API's for CRUD operations on the Service Blog.
 
 ***
 
@@ -14,9 +14,10 @@ Returns blog entries ordered by time posted.
 
 ### Http
 
+`GET api/v1/ServiceBlog/Entries`
+
 `GET api/v1-preview/ServiceBlog/Entries`
 
-`GET api/v1/ServiceBlog/Entries`
 
 ### Parameters
 
@@ -36,6 +37,15 @@ int32 count
 ```
 
 Number of blogs to count after skip for paging purposes.
+```csharp
+[Optional]
+[Default = "False"]
+[FromRoute]
+bool includeDeleted
+```
+
+Whether deleted entries are included in return.
+
 
 ### Security
 
@@ -56,9 +66,10 @@ Returns a blog entry specified by ID.
 
 ### Http
 
+`GET api/v1/ServiceBlog/Entries/{id}`
+
 `GET api/v1-preview/ServiceBlog/Entries/{id}`
 
-`GET api/v1/ServiceBlog/Entries/{id}`
 
 ### Parameters
 

@@ -1,8 +1,8 @@
 ---
-uid: AccountNamespaceTier
+uid: AccountNamespaceTier_1-preview
 ---
 
-# Namespace Tiers
+# Namespace Tiers (Version 1-preview)
 
 An attribute that specifies `Namespace` performance.
 

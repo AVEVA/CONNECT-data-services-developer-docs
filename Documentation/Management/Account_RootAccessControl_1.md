@@ -1,8 +1,8 @@
 ---
-uid: AccountRootAccessControl
+uid: AccountRootAccessControl_1
 ---
 
-# Root AccessControl
+# Root AccessControl (Version 1)
 
 APIs to manage default access to entities governed by an [AccessControlList](xref:accessControl).
 
@@ -14,9 +14,8 @@ Retrieves the [AccessControlList](xref:accessControl) that is used to authorize 
 
 ### Http
 
-`GET api/v1-preview/Tenants/{tenantId}/AccessControl/Namespaces`
-
 `GET api/v1/Tenants/{tenantId}/AccessControl/Namespaces`
+
 
 ### Parameters
 
@@ -50,9 +49,8 @@ Modifies the [AccessControlList](xref:accessControl) that is used to authorize a
 
 ### Http
 
-`PUT api/v1-preview/Tenants/{tenantId}/AccessControl/Namespaces`
-
 `PUT api/v1/Tenants/{tenantId}/AccessControl/Namespaces`
+
 
 ### Parameters
 

@@ -10,7 +10,7 @@ Owners are granted access for all operations regardless of the contents of the A
 
 ## Access Control Lists
 
-Access Control Lists (ACLs) contain sets of Access Control Entries (ACEs) each with a trustee (reference to an identity, such as a role, user, or application), AccessType, and AccessRights. 
+Access Control Lists (ACLs) contain sets of Access Control Entries (ACEs), each with a trustee (reference to an identity, such as a role, user, or application), AccessType, and AccessRights. 
 
 A user or application that attempts to read, write, delete, or manage access control of an entity assigned an ACL must be assigned a trustee that has `AccessType` set to `Allowed` for the AccessRight corresponding to that operation.
 

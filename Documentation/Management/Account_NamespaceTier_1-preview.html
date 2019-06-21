@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Account Management </title>
+    <title>Namespace Tiers (Version 1-preview) </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Account Management ">
+    <meta name="title" content="Namespace Tiers (Version 1-preview) ">
     <meta name="generator" content="docfx 2.39.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -75,28 +75,112 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="AccountManagementOverview">
-<h1 id="account-management">Account Management</h1>
+            <article class="content wrap" id="_content" data-uid="AccountNamespaceTier_1-preview">
+<h1 id="namespace-tiers-version-1-preview">Namespace Tiers (Version 1-preview)</h1>
 
-<p>The Account Management API allows users to create, manage, and administer OSIsoft Cloud Services (OCS) accounts by assigning users, roles, and namespaces to their tenants. Through the API, users can manage access control used the OCS infrastructure. Generally, only administrators access the Account Management features. Administration functionality is also available from the OCS portal.</p>
-<h3 id="tenantxrefaccounttenant"><a class="xref" href="Account_Tenant.html">Tenant</a></h3>
-<h3 id="tenantfeaturestatexrefaccounttenantfeaturestate"><a class="xref" href="Account_TenantFeatureState.html">TenantFeatureState</a></h3>
-<h3 id="serviceblogxrefaccountserviceblog"><a class="xref" href="Account_ServiceBlog.html">ServiceBlog</a></h3>
-<h2 id="version-1">Version 1</h2>
+<p>An attribute that specifies <code>Namespace</code> performance.</p>
+<h2 id="note">Note</h2>
+<p>Namespace tiers are only applicatble for version 1-preview. Namespace tiers are removed in version 1. Please remove references to it.</p>
+<h2 id="properties">Properties</h2>
+<p>For HTTP requests and responses, the NamespaceTier object has the following properties and JSON-serialized body: </p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>string</td>
+<td>Gets or sets unique identifier for this Namespace Tier.</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>string</td>
+<td>Gets or sets description of this Tier.</td>
+</tr>
+<tr>
+<td>ThroughputUnits</td>
+<td>int32</td>
+<td>Gets or sets the number of throughput units associated with this Tier.</td>
+</tr>
+<tr>
+<td>StorageUnits</td>
+<td>int32</td>
+<td>Gets or sets the number of Storage units associated with this Tier.</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+    &quot;Id&quot;: &quot;id&quot;,
+    &quot;Description&quot;: &quot;description&quot;,
+    &quot;ThroughputUnits&quot;: 0,
+    &quot;StorageUnits&quot;: 0
+}
+</code></pre><hr>
+<h2 id="get-namespace-tier"><code>Get Namespace Tier</code></h2>
+<p>Retrieves a Namespace tier associated with a specified id.</p>
+<h3 id="http">Http</h3>
+<p><code>GET api/v1-preview/NamespaceTiers/{namespaceTierId}</code></p>
+<h3 id="parameters">Parameters</h3>
+<pre><code class="lang-csharp">[Required]
+[FromRoute]
+string namespaceTierId
+</code></pre><p>The tier identifier for this request.</p>
+<h3 id="security">Security</h3>
+<p>A <code>NamespaceTier</code> can be retrieved by an Account Member.</p>
+<h3 id="returns">Returns</h3>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>NamespaceTier</td>
+<td>A <code>NamespaceTier</code> object with the specified namespaceTierId.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Nothing is returned</td>
+<td>Could not retrieve the specified <code>NamespaceTier</code> due to missing or invalid input.</td>
+</tr>
+</tbody>
+</table>
 <hr>
-<h3 id="clientrolexrefaccountclientrole1"><a class="xref" href="Account_ClientRole_1.html">ClientRole</a></h3>
-<h3 id="namespacexrefaccountnamespace1"><a class="xref" href="Account_Namespace_1.html">Namespace</a></h3>
-<h3 id="rolexrefaccountrole1"><a class="xref" href="Account_Role_1.html">Role</a></h3>
-<h3 id="rootaccesscontrolxrefaccountrootaccesscontrol1"><a class="xref" href="Account_RootAccessControl_1.html">RootAccessControl</a></h3>
-<h3 id="userrolexrefaccountuserrole1"><a class="xref" href="Account_UserRole_1.html">UserRole</a></h3>
-<h2 id="version-1-preview">Version 1-preview</h2>
+<h2 id="get-all-namespace-tiers"><code>Get All Namespace Tiers</code></h2>
+<p>Retrieves a list of all available namespace tiers.</p>
+<h3 id="http-1">Http</h3>
+<p><code>GET api/v1-preview/NamespaceTiers</code></p>
+<h3 id="parameters-1">Parameters</h3>
+<p>This API call does not have any parameters.</p>
+<h3 id="security-1">Security</h3>
+<p><code>NamespaceTiers</code> can be retrieved by an Account Member.</p>
+<h3 id="returns-1">Returns</h3>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>[NamespaceTier]</td>
+<td>Returns a list of <code>NamespaceTier</code> objects.</td>
+</tr>
+</tbody>
+</table>
 <hr>
-<h3 id="clientrolexrefaccountclientrole1-preview"><a class="xref" href="Account_ClientRole_1-preview.html">ClientRole</a></h3>
-<h3 id="namespacexrefaccountnamespace1-preview"><a class="xref" href="Account_Namespace_1-preview.html">Namespace</a></h3>
-<h3 id="namespacetierxrefaccountnamespacetier1-preview"><a class="xref" href="Account_NamespaceTier_1-preview.html">NamespaceTier</a></h3>
-<h3 id="rolexrefaccountrole1-preview"><a class="xref" href="Account_Role_1-preview.html">Role</a></h3>
-<h3 id="rootaccesscontrolxrefaccountrootaccesscontrol1-preview"><a class="xref" href="Account_RootAccessControl_1-preview.html">RootAccessControl</a></h3>
-<h3 id="userrolexrefaccountuserrole1-preview"><a class="xref" href="Account_UserRole_1-preview.html">UserRole</a></h3>
 </article>
           </div>
           
@@ -105,7 +189,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/Management/Management_Overview.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/Management/Account_NamespaceTier_1-preview.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

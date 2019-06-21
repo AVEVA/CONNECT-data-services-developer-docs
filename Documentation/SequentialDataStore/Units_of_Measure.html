@@ -1943,7 +1943,7 @@ Content-Type: application/json
 <pre><code class="lang-csharp">   Task&lt;IEnumerable&lt;SdsUom&gt;&gt; GetQuantityUomsAsync(string quantityId);
 </code></pre><hr>
 <h2 id="get-quantities-access-control-list"><code>Get Quantities Access Control List</code></h2>
-<p>Get the default ACL for the Quantities collection. For more information on ACLs, see <a href="xref:accesscontrol">Access Control</a>.</p>
+<p>Get the default ACL for the Quantities collection. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/AccessControl
 </code></pre><p><strong>Parameters</strong></p>
@@ -1955,7 +1955,7 @@ Content-Type: application/json
 <pre><code class="lang-csharp">   Task&lt;AccessControlList&gt; GetQuantitiesAccessControlListAsync();
 </code></pre><hr>
 <h2 id="update-quantities-access-control-list"><code>Update Quantities Access Control List</code></h2>
-<p>Update the default ACL for the Quantities collection. For more information on ACLs, see <a href="xref:accesscontrol">Access Control</a>.</p>
+<p>Update the default ACL for the Quantities collection. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/AccessControl
 </code></pre><p><strong>Parameters</strong></p>
@@ -1967,7 +1967,7 @@ Content-Type: application/json
 <pre><code class="lang-csharp">   Task UpdateQuantitiesAccessControlListAsync(AccessControlList quantitiesAcl);
 </code></pre><hr>
 <h2 id="get-quantity-access-control-list"><code>Get Quantity Access Control List</code></h2>
-<p>Get the ACL of the specified quantity. For more information on ACLs, see <a href="xref:accesscontrol">Access Control</a>.</p>
+<p>Get the ACL of the specified quantity. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/AccessControl
 </code></pre><p><strong>Parameters</strong></p>
@@ -1981,7 +1981,7 @@ The ACL for the specified quantity</p>
 <pre><code class="lang-csharp">   Task&lt;AccessControlList&gt; GetQuantityAccessControlListAsync(string quantityId);
 </code></pre><hr>
 <h2 id="update-quantity-access-control-list"><code>Update Quantity Access Control List</code></h2>
-<p>Update the ACL of the specified quantity. For more information on ACLs, see <a href="xref:accesscontrol">Access Control</a>.</p>
+<p>Update the ACL of the specified quantity. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/AccessControl
 </code></pre><p><strong>Parameters</strong></p>
@@ -1994,7 +1994,7 @@ The ACL for the specified quantity</p>
 <pre><code class="lang-csharp">   Task UpdateQuantityAccessControlListAsync(string quantityId, AccessControlList quantityAcl);
 </code></pre><hr>
 <h2 id="get-quantity-owner"><code>Get Quantity Owner</code></h2>
-<p>Get the Owner of the specified quantity. For more information on Owners, see <a href="xref:accesscontrol">Access Control</a>.</p>
+<p>Get the Owner of the specified quantity. For more information on Owners, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Owner
 </code></pre><p><strong>Parameters</strong></p>
@@ -2008,7 +2008,7 @@ The Owner for the specified quantity</p>
 <pre><code class="lang-csharp">   Task&lt;Trustee&gt; GetQuantityOwnerAsync(string quantityId);
 </code></pre><hr>
 <h2 id="update-quantity-owner"><code>Update Quantity Owner</code></h2>
-<p>Update the Owner of the specified quantity. For more information on Owners, see <a href="xref:accesscontrol">Access Control</a>.</p>
+<p>Update the Owner of the specified quantity. For more information on Owners, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Owner
 </code></pre><p><strong>Parameters</strong></p>
@@ -2091,7 +2091,7 @@ Content-Type: application/json
 <pre><code class="lang-csharp">   Task&lt;IEnumerable&lt;SdsUom&gt;&gt; GetUomsAsync(int skip = 0, int count = 100);
 </code></pre><hr>
 <h2 id="get-uom-access-control-list"><code>Get Uom Access Control List</code></h2>
-<p>Get the ACL of the specified unit of measure. For more information on ACLs, see <a href="xref:accesscontrol">Access Control</a>.</p>
+<p>Get the ACL of the specified unit of measure. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/AccessControl
 </code></pre><p><strong>Parameters</strong></p>
@@ -2105,7 +2105,7 @@ Content-Type: application/json
 <pre><code class="lang-csharp">   Task&lt;AccessControlList&gt; GetQuantityUomAccessControlListAsync(string quantityId, string uomId);
 </code></pre><hr>
 <h2 id="update-uom-access-control-list"><code>Update Uom Access Control List</code></h2>
-<p>Update the ACL of the specified unit of measure. For more information on ACLs, see <a href="xref:accesscontrol">Access Control</a>.</p>
+<p>Update the ACL of the specified unit of measure. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/AccessControl
 </code></pre><p><strong>Parameters</strong></p>
@@ -2119,7 +2119,7 @@ Content-Type: application/json
 <pre><code class="lang-csharp">   Task UpdateQuantityUomAccessControlListAsync(string quantityId, string uomId, AccessControlList uomAcl);
 </code></pre><hr>
 <h2 id="get-uom-owner"><code>Get Uom Owner</code></h2>
-<p>Get the Owner of the specified unit of measure. For more information on Owners, see <a href="xref:accesscontrol">Access Control</a>.</p>
+<p>Get the Owner of the specified unit of measure. For more information on Owners, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/Owner
 </code></pre><p><strong>Parameters</strong></p>
@@ -2133,7 +2133,7 @@ Content-Type: application/json
 <pre><code class="lang-csharp">   Task&lt;Trustee&gt; GetQuantityUomOwnerAsync(string quantityId, string uomId);
 </code></pre><hr>
 <h2 id="update-uom-owner"><code>Update Uom Owner</code></h2>
-<p>Update the Owner of the specified unit of measure. For more information on Owners, see <a href="xref:accesscontrol">Access Control</a>.</p>
+<p>Update the Owner of the specified unit of measure. For more information on Owners, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/Owner
 </code></pre><p><strong>Parameters</strong></p>

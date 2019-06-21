@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Tenant Feature States </title>
+    <title>User Roles (Version 1-preview) </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Tenant Feature States ">
+    <meta name="title" content="User Roles (Version 1-preview) ">
     <meta name="generator" content="docfx 2.39.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -75,12 +75,17 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="AccountTenantFeatureState">
-<h1 id="tenant-feature-states">Tenant Feature States</h1>
+            <article class="content wrap" id="_content" data-uid="AccountUserRole_1-preview">
+<h1 id="user-roles-version-1-preview">User Roles (Version 1-preview)</h1>
 
-<p>APIs for managing the feature states of an OCS <code>Tenant</code>.</p>
+<p>User <code>Roles</code> authorize API requests made by users to various OCS features. Users can be assigned more than one <code>Role</code>,
+but all users have the Account Member role. The following are currently available User <code>Roles</code>:</p>
+<ul>
+<li>Account Administrator: Can add, edit, and remove users. Can also edit the permissions of existing users.</li>
+<li>Account Member: Can log in and access the OCS portal.</li>
+</ul>
 <h2 id="properties">Properties</h2>
-<p>For HTTP requests and responses, the TenantFeatureState object has the following properties and JSON-serialized body: </p>
+<p>For HTTP requests and responses, the UserRole object has the following properties and JSON-serialized body: </p>
 <table>
 <thead>
 <tr>
@@ -91,40 +96,52 @@
 </thead>
 <tbody>
 <tr>
-<td>TenantId</td>
+<td>UserId</td>
 <td>string</td>
-<td>The identifier of the Tenant that the TenantFeatureState corresponds to.</td>
+<td>User Id.</td>
 </tr>
 <tr>
-<td>FeatureId</td>
+<td>RoleId</td>
 <td>string</td>
-<td>The identifier of the Service that the TenantFeatureState corresponds to.</td>
-</tr>
-<tr>
-<td>State</td>
-<td>int32</td>
-<td>Current state of this TenantFeatureState.</td>
+<td>Role Id.</td>
 </tr>
 </tbody>
 </table>
 <pre><code class="lang-json">{
-    &quot;TenantId&quot;: &quot;tenantid&quot;,
-    &quot;FeatureId&quot;: &quot;featureid&quot;,
-    &quot;State&quot;: 0
+    &quot;UserId&quot;: &quot;userid&quot;,
+    &quot;RoleId&quot;: &quot;roleid&quot;
 }
 </code></pre><hr>
-<h2 id="get-all-tenant-feature-states"><code>Get All Tenant Feature States</code></h2>
-<p>Retrieves all instances of <code>FeatureState</code> for the specified <code>Tenant</code>.</p>
+<h2 id="get-roles-for-user"><code>Get Roles for User</code></h2>
+<p>Retrieves all <code>Roles</code> for the specified user.</p>
 <h3 id="http">Http</h3>
-<p><code>GET api/v1/Tenants/{tenantId}/Features</code></p>
-<p><code>GET api/v1-preview/Tenants/{tenantId}/Features</code></p>
+<p><code>GET api/v1-preview/Tenants/{tenantId}/Users/{userId}/Roles</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
 string tenantId
-</code></pre><p>The identifier of the account to access.</p>
+</code></pre><p>The identifier of the account in which the user belongs.</p>
+<pre><code class="lang-csharp">[Required]
+[FromRoute]
+string userId
+</code></pre><p>The identifier of the user whose roles will be retrieved.</p>
+<pre><code class="lang-csharp">[Optional]
+[Default = &quot;0&quot;]
+[FromQuery]
+int32 skip
+</code></pre><p>Number of <code>Roles</code> to ignore.</p>
+<pre><code class="lang-csharp">[Optional]
+[Default = &quot;100&quot;]
+[FromQuery]
+int32 count
+</code></pre><p>Number of <code>Roles</code> to return.</p>
+<pre><code class="lang-csharp">[Optional]
+[Default = &quot;&quot;]
+[FromRoute]
+string query
+</code></pre><p>Unsupported parameter.</p>
 <h3 id="security">Security</h3>
-<p>Authorized for Account Members of the specified account.</p>
+<p>Authorized for Account Administrators of the specified account and an Account Member&#39;s own <code>Roles</code> within the specified account.</p>
 <h3 id="returns">Returns</h3>
 <table>
 <thead>
@@ -137,38 +154,46 @@ string tenantId
 <tbody>
 <tr>
 <td>200</td>
-<td>[FeatureState]</td>
-<td>Returns a list of <code>FeatureState</code> for the specified <code>Tenant</code>.</td>
+<td>[Role]</td>
+<td>Returns a list of <code>Role</code> objects belonging to the user with the specified userId.</td>
 </tr>
 <tr>
 <td>400</td>
 <td>Nothing is returned</td>
-<td>Unable to retrieve <code>FeatureState</code> instances due to missing or invalid input.</td>
+<td>Could not retrieve <code>Roles</code> due to missing or invalid input.</td>
 </tr>
 <tr>
 <td>403</td>
 <td>Nothing is returned</td>
-<td>Unauthorized to retrieve <code>FeatureState</code> instances for the specified <code>Tenant</code>.</td>
+<td>Unauthorized to get <code>Roles</code> for the specified user.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Nothing is returned</td>
+<td>User not found in the specified <code>Tenant</code>.</td>
 </tr>
 </tbody>
 </table>
 <hr>
-<h2 id="get-tenant-feature-state"><code>Get Tenant Feature State</code></h2>
-<p>Retrieves a <code>FeatureState</code> with the specified ID from a <code>Tenant</code>.</p>
+<h2 id="replace-user-roles"><code>Replace User Roles</code></h2>
+<p>Replaces the <code>Roles</code> of a user with a new list of roles.</p>
 <h3 id="http-1">Http</h3>
-<p><code>GET api/v1/Tenants/{tenantId}/Features/{id}</code></p>
-<p><code>GET api/v1-preview/Tenants/{tenantId}/Features/{id}</code></p>
+<p><code>PUT api/v1-preview/Tenants/{tenantId}/Users/{userId}/Roles</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
 string tenantId
-</code></pre><p>The identifier of the account to access.</p>
+</code></pre><p>The identifier for the account in which the user belongs.</p>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
-string id
-</code></pre><p>The identifier of the <code>FeatureState</code> to retrieve.</p>
+string userId
+</code></pre><p>The identifier of the user whose roles will be replaced.</p>
+<pre><code class="lang-csharp">[Required]
+[FromBody]
+[Role] roleList
+</code></pre><p>A list of <code>Role</code> objects to set as the Roles for the specified user.</p>
 <h3 id="security-1">Security</h3>
-<p>Authorized for Account Members of the specified account.</p>
+<p>Authorized for Account Administrators of the specified account.</p>
 <h3 id="returns-1">Returns</h3>
 <table>
 <thead>
@@ -181,18 +206,23 @@ string id
 <tbody>
 <tr>
 <td>200</td>
-<td>FeatureState</td>
-<td>Returns the <code>FeatureState</code> of the specified account.</td>
+<td>Nothing is returned</td>
+<td>Returns the new list of all <code>Role</code> objects assigned to the specified user.</td>
 </tr>
 <tr>
 <td>400</td>
 <td>Nothing is returned</td>
-<td>Unable to retrieve the <code>FeatureState</code> due to missing or invalid input.</td>
+<td>Could not replace the <code>Roles</code> of the specified user due to missing or invalid input.</td>
 </tr>
 <tr>
 <td>403</td>
 <td>Nothing is returned</td>
-<td>Unauthorized to retrieve the <code>FeatureState</code> of the specified account.</td>
+<td>Unauthorized to replace the <code>Roles</code> of the specified user.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Nothing is returned</td>
+<td>A user with the specified userId was not found.</td>
 </tr>
 </tbody>
 </table>
@@ -205,7 +235,7 @@ string id
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/Management/Account_TenantFeatureState.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/Management/Account_UserRole_1-preview.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

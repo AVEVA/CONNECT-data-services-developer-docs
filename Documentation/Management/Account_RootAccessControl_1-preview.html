@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Account Management </title>
+    <title>Root AccessControl (Version 1-preview) </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Account Management ">
+    <meta name="title" content="Root AccessControl (Version 1-preview) ">
     <meta name="generator" content="docfx 2.39.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -75,28 +75,93 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="AccountManagementOverview">
-<h1 id="account-management">Account Management</h1>
+            <article class="content wrap" id="_content" data-uid="AccountRootAccessControl_1-preview">
+<h1 id="root-accesscontrol-version-1-preview">Root AccessControl (Version 1-preview)</h1>
 
-<p>The Account Management API allows users to create, manage, and administer OSIsoft Cloud Services (OCS) accounts by assigning users, roles, and namespaces to their tenants. Through the API, users can manage access control used the OCS infrastructure. Generally, only administrators access the Account Management features. Administration functionality is also available from the OCS portal.</p>
-<h3 id="tenantxrefaccounttenant"><a class="xref" href="Account_Tenant.html">Tenant</a></h3>
-<h3 id="tenantfeaturestatexrefaccounttenantfeaturestate"><a class="xref" href="Account_TenantFeatureState.html">TenantFeatureState</a></h3>
-<h3 id="serviceblogxrefaccountserviceblog"><a class="xref" href="Account_ServiceBlog.html">ServiceBlog</a></h3>
-<h2 id="version-1">Version 1</h2>
+<p>APIs to manage default access to entities governed by an <a class="xref" href="../Access_Control.html">AccessControlList</a>.</p>
 <hr>
-<h3 id="clientrolexrefaccountclientrole1"><a class="xref" href="Account_ClientRole_1.html">ClientRole</a></h3>
-<h3 id="namespacexrefaccountnamespace1"><a class="xref" href="Account_Namespace_1.html">Namespace</a></h3>
-<h3 id="rolexrefaccountrole1"><a class="xref" href="Account_Role_1.html">Role</a></h3>
-<h3 id="rootaccesscontrolxrefaccountrootaccesscontrol1"><a class="xref" href="Account_RootAccessControl_1.html">RootAccessControl</a></h3>
-<h3 id="userrolexrefaccountuserrole1"><a class="xref" href="Account_UserRole_1.html">UserRole</a></h3>
-<h2 id="version-1-preview">Version 1-preview</h2>
+<h2 id="get-root-namespace-accesscontrollist"><code>Get Root Namespace AccessControlList</code></h2>
+<p>Retrieves the <a class="xref" href="../Access_Control.html">AccessControlList</a> that is used to authorize access to a <code>Namespace</code> if none is specified during creation.</p>
+<h3 id="http">Http</h3>
+<p><code>GET api/v1-preview/Tenants/{tenantId}/AccessControl/Namespaces</code></p>
+<h3 id="parameters">Parameters</h3>
+<pre><code class="lang-csharp">[Required]
+[FromRoute]
+string tenantId
+</code></pre><p>The identifier of the account to access.</p>
+<h3 id="security">Security</h3>
+<p>A root <a class="xref" href="../Access_Control.html">AccessControlList</a> can only be retrieved if the current principal has Read access.</p>
+<h3 id="returns">Returns</h3>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>AccessControlList</td>
+<td>Returns the root <a class="xref" href="../Access_Control.html">AccessControlList</a> for <code>Namespaces</code>.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Nothing is returned</td>
+<td>Could not retrieve the root <a class="xref" href="../Access_Control.html">AccessControlList</a> for <code>Namespaces</code> due to missing or invalid input.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Nothing is returned</td>
+<td>Unauthorized to retrieve the root <a class="xref" href="../Access_Control.html">AccessControlList</a> for <code>Namespaces</code>.</td>
+</tr>
+</tbody>
+</table>
 <hr>
-<h3 id="clientrolexrefaccountclientrole1-preview"><a class="xref" href="Account_ClientRole_1-preview.html">ClientRole</a></h3>
-<h3 id="namespacexrefaccountnamespace1-preview"><a class="xref" href="Account_Namespace_1-preview.html">Namespace</a></h3>
-<h3 id="namespacetierxrefaccountnamespacetier1-preview"><a class="xref" href="Account_NamespaceTier_1-preview.html">NamespaceTier</a></h3>
-<h3 id="rolexrefaccountrole1-preview"><a class="xref" href="Account_Role_1-preview.html">Role</a></h3>
-<h3 id="rootaccesscontrolxrefaccountrootaccesscontrol1-preview"><a class="xref" href="Account_RootAccessControl_1-preview.html">RootAccessControl</a></h3>
-<h3 id="userrolexrefaccountuserrole1-preview"><a class="xref" href="Account_UserRole_1-preview.html">UserRole</a></h3>
+<h2 id="set-root-accesscontrollist"><code>Set Root AccessControlList</code></h2>
+<p>Modifies the <a class="xref" href="../Access_Control.html">AccessControlList</a> that is used to authorize access to a <code>Namespace</code> if none is specified during creation.</p>
+<h3 id="http-1">Http</h3>
+<p><code>PUT api/v1-preview/Tenants/{tenantId}/AccessControl/Namespaces</code></p>
+<h3 id="parameters-1">Parameters</h3>
+<pre><code class="lang-csharp">[Required]
+[FromRoute]
+string tenantId
+</code></pre><p>The identifier of the account to modify.</p>
+<pre><code class="lang-csharp">[Required]
+[FromBody]
+AccessControlList newAccessControlList
+</code></pre><p>The new root <a class="xref" href="../Access_Control.html">AccessControlList</a> for <code>Namespaces</code>.</p>
+<h3 id="security-1">Security</h3>
+<p>A root <a class="xref" href="../Access_Control.html">AccessControlList</a> can only be modified if the current principal has ManageAccessControl access.</p>
+<h3 id="returns-1">Returns</h3>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>AccessControlList</td>
+<td>Returns the modified root <a class="xref" href="../Access_Control.html">AccessControlList</a> for <code>Namespaces</code>.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Nothing is returned</td>
+<td>Could not modify the root <a class="xref" href="../Access_Control.html">AccessControlList</a> for <code>Namespaces</code> due to missing or invalid input.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Nothing is returned</td>
+<td>Unauthorized to change the root <a class="xref" href="../Access_Control.html">AccessControlList</a> for <code>Namespaces</code>.</td>
+</tr>
+</tbody>
+</table>
+<hr>
 </article>
           </div>
           
@@ -105,7 +170,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/Management/Management_Overview.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/Management/Account_RootAccessControl_1-preview.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

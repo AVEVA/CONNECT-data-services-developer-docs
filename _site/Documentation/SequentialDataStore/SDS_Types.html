@@ -2080,7 +2080,7 @@ in the request body, a Conflict error response is returned and the client librar
 <pre><code class="lang-csharp">    Task DeleteTypeAsync(string typeId);
 </code></pre><hr>
 <h2 id="get-types-access-control-list"><code>Get Types Access Control List</code></h2>
-<p>Get the default ACL for the Types collection. For more information on ACLs, see <a href="xref:accesscontrol">Access Control</a>.</p>
+<p>Get the default ACL for the Types collection. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/AccessControl
 </code></pre><p><strong>Parameters</strong></p>
@@ -2092,7 +2092,7 @@ in the request body, a Conflict error response is returned and the client librar
 <pre><code class="lang-csharp">   Task&lt;AccessControlList&gt; GetTypesAccessControlListAsync();
 </code></pre><hr>
 <h2 id="update-types-access-control-list"><code>Update Types Access Control List</code></h2>
-<p>Update the default ACL for the Types collection. For more information on ACLs, see <a href="xref:accesscontrol">Access Control</a>.</p>
+<p>Update the default ACL for the Types collection. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/AccessControl
 </code></pre><p><strong>Parameters</strong></p>
@@ -2104,7 +2104,7 @@ in the request body, a Conflict error response is returned and the client librar
 <pre><code class="lang-csharp">   Task UpdateTypesAccessControlListAsync(AccessControlList typesAcl);
 </code></pre><hr>
 <h2 id="get-type-access-control-list"><code>Get Type Access Control List</code></h2>
-<p>Get the ACL of the specified type. For more information on ACLs, see <a href="xref:accesscontrol">Access Control</a>.</p>
+<p>Get the ACL of the specified type. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessControl
 </code></pre><p><strong>Parameters</strong></p>
@@ -2117,7 +2117,7 @@ in the request body, a Conflict error response is returned and the client librar
 <pre><code class="lang-csharp">   Task&lt;AccessControlList&gt; GetTypeAccessControlListAsync(string typeId);
 </code></pre><hr>
 <h2 id="update-type-access-control-list"><code>Update Type Access Control List</code></h2>
-<p>Update the ACL of the specified type. For more information on ACLs, see <a href="xref:accesscontrol">Access Control</a>.</p>
+<p>Update the ACL of the specified type. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <p>Note that this does not update the ACL for the associated types. For further details about type referencing please see: <a href="#type-reusability">Type Reusability</a>.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessControl
@@ -2131,7 +2131,7 @@ in the request body, a Conflict error response is returned and the client librar
 <pre><code class="lang-csharp">   Task UpdateTypeAccessControlListAsync(string typeId, AccessControlList typeAcl);
 </code></pre><hr>
 <h2 id="get-type-owner"><code>Get Type Owner</code></h2>
-<p>Get the Owner of the specified type. For more information on Owners, see <a href="xref:accesscontrol">Access Control</a>.</p>
+<p>Get the Owner of the specified type. For more information on Owners, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Owner
 </code></pre><p><strong>Parameters</strong></p>
@@ -2144,7 +2144,7 @@ in the request body, a Conflict error response is returned and the client librar
 <pre><code class="lang-csharp">   Task&lt;Trustee&gt; GetTypeOwnerAsync(string typeId);
 </code></pre><hr>
 <h2 id="update-type-owner"><code>Update Type Owner</code></h2>
-<p>Update the Owner of the specified type. For more information on Owners, see <a href="xref:accesscontrol">Access Control</a>.</p>
+<p>Update the Owner of the specified type. For more information on Owners, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <p>Note that this does not update the Owner for the associated types. For further details about type referencing please see: <a href="#type-reusability">Type Reusability</a>.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Owner

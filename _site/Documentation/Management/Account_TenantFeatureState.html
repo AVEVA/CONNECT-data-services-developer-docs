@@ -114,10 +114,10 @@
 }
 </code></pre><hr>
 <h2 id="get-all-tenant-feature-states"><code>Get All Tenant Feature States</code></h2>
-<p>Retrieves all <code>FeatureStates</code> for the specified <code>Tenant</code>.</p>
+<p>Retrieves all instances of <code>FeatureState</code> for the specified <code>Tenant</code>.</p>
 <h3 id="http">Http</h3>
-<p><code>GET api/v1-preview/Tenants/{tenantId}/Features</code></p>
 <p><code>GET api/v1/Tenants/{tenantId}/Features</code></p>
+<p><code>GET api/v1-preview/Tenants/{tenantId}/Features</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
@@ -138,17 +138,17 @@ string tenantId
 <tr>
 <td>200</td>
 <td>[FeatureState]</td>
-<td>Returns a list of <code>FeatureStates</code> for the specified account.</td>
+<td>Returns a list of <code>FeatureState</code> for the specified <code>Tenant</code>.</td>
 </tr>
 <tr>
 <td>400</td>
 <td>Nothing is returned</td>
-<td>Unable to retrieve <code>FeatureStates</code> due to missing or invalid input.</td>
+<td>Unable to retrieve <code>FeatureState</code> instances due to missing or invalid input.</td>
 </tr>
 <tr>
 <td>403</td>
 <td>Nothing is returned</td>
-<td>Unauthorized to retrieve <code>FeatureStates</code> for the specified account.</td>
+<td>Unauthorized to retrieve <code>FeatureState</code> instances for the specified <code>Tenant</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -156,8 +156,8 @@ string tenantId
 <h2 id="get-tenant-feature-state"><code>Get Tenant Feature State</code></h2>
 <p>Retrieves a <code>FeatureState</code> with the specified ID from a <code>Tenant</code>.</p>
 <h3 id="http-1">Http</h3>
-<p><code>GET api/v1-preview/Tenants/{tenantId}/Features/{id}</code></p>
 <p><code>GET api/v1/Tenants/{tenantId}/Features/{id}</code></p>
+<p><code>GET api/v1-preview/Tenants/{tenantId}/Features/{id}</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]

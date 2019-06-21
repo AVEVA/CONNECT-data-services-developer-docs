@@ -2,23 +2,38 @@
 sorted: true
 references:
 - uid: accessControl
-  name: 'Role-based access control '
+  name: Role-based access control
   href: Documentation/Access_Control.html
-- uid: AccountClientRole
-  name: Client Roles
-  href: Documentation/Management/Account_ClientRole.html
-- uid: AccountNamespace
-  name: Namespaces
-  href: Documentation/Management/Account_Namespace.html
-- uid: AccountNamespaceTier
-  name: Namespace Tiers
-  href: Documentation/Management/Account_NamespaceTier.html
-- uid: AccountRole
-  name: Roles
-  href: Documentation/Management/Account_Role.html
-- uid: AccountRootAccessControl
-  name: Root AccessControl
-  href: Documentation/Management/Account_RootAccessControl.html
+- uid: AccountClientRole_1
+  name: Client Roles (Version 1)
+  href: Documentation/Management/Account_ClientRole_1.html
+- uid: AccountClientRole_1-preview
+  name: Client Roles (Version 1-preview)
+  href: Documentation/Management/Account_ClientRole_1-preview.html
+- uid: AccountManagementOverview
+  name: Account Management
+  href: Documentation/Management/Management_Overview.html
+- uid: AccountNamespace_1
+  name: Namespaces (Version 1)
+  href: Documentation/Management/Account_Namespace_1.html
+- uid: AccountNamespace_1-preview
+  name: Namespaces (Version 1-preview)
+  href: Documentation/Management/Account_Namespace_1-preview.html
+- uid: AccountNamespaceTier_1-preview
+  name: Namespace Tiers (Version 1-preview)
+  href: Documentation/Management/Account_NamespaceTier_1-preview.html
+- uid: AccountRole_1
+  name: Roles (Version 1)
+  href: Documentation/Management/Account_Role_1.html
+- uid: AccountRole_1-preview
+  name: Roles (Version 1-preview)
+  href: Documentation/Management/Account_Role_1-preview.html
+- uid: AccountRootAccessControl_1
+  name: Root AccessControl (Version 1)
+  href: Documentation/Management/Account_RootAccessControl_1.html
+- uid: AccountRootAccessControl_1-preview
+  name: Root AccessControl (Version 1-preview)
+  href: Documentation/Management/Account_RootAccessControl_1-preview.html
 - uid: AccountServiceBlog
   name: Service Blog
   href: Documentation/Management/Account_ServiceBlog.html
@@ -28,9 +43,12 @@ references:
 - uid: AccountTenantFeatureState
   name: Tenant Feature States
   href: Documentation/Management/Account_TenantFeatureState.html
-- uid: AccountUserRole
-  name: User Roles
-  href: Documentation/Management/Account_UserRole.html
+- uid: AccountUserRole_1
+  name: User Roles (Version 1)
+  href: Documentation/Management/Account_UserRole_1.html
+- uid: AccountUserRole_1-preview
+  name: User Roles (Version 1-preview)
+  href: Documentation/Management/Account_UserRole_1-preview.html
 - uid: dataIngress
   name: Data Ingress and OSIsoft Message Format
   href: Documentation/DataIngress/Data_Ingress.html
@@ -82,9 +100,6 @@ references:
 - uid: Introduction
   name: Introduction to Data Views
   href: Documentation/DataViews/Introduction.html
-- uid: ManagementOverview
-  name: Account Management
-  href: Documentation/Management/Management_Overview.html
 - uid: Mappings
   name: Mappings
   href: Documentation/DataViews/Mappings.html

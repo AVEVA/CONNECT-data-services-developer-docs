@@ -285,7 +285,7 @@ Max number of users to return
 string status
 ```
 
-Only return statuses that match this value
+Only return statuses that match this value. Possible values are: InvitationAccepted, NoInvitation, InvitationNotSent, InvitationSent, InvitationExpired.
 
 ### Security
 

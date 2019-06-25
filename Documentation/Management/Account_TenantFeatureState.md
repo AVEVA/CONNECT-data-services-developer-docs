@@ -34,9 +34,6 @@ Retrieves all instances of `FeatureState` for the specified `Tenant`.
 
 `GET api/v1/Tenants/{tenantId}/Features`
 
-`GET api/v1-preview/Tenants/{tenantId}/Features`
-
-
 ### Parameters
 
 ```csharp
@@ -70,9 +67,6 @@ Retrieves a `FeatureState` with the specified ID from a `Tenant`.
 ### Http
 
 `GET api/v1/Tenants/{tenantId}/Features/{id}`
-
-`GET api/v1-preview/Tenants/{tenantId}/Features/{id}`
-
 
 ### Parameters
 

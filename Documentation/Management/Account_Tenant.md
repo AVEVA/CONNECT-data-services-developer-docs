@@ -42,9 +42,6 @@ Retrieves a specific `Tenant` by ID.
 
 `GET api/v1/Tenants/{tenantId}`
 
-`GET api/v1-preview/Tenants/{tenantId}`
-
-
 ### Parameters
 
 ```csharp
@@ -79,9 +76,6 @@ Checks if a `Tenant` with a specific ID exists.
 
 `HEAD api/v1/Tenants/{tenantId}`
 
-`HEAD api/v1-preview/Tenants/{tenantId}`
-
-
 ### Parameters
 
 ```csharp
@@ -115,9 +109,6 @@ Updates a specified `Tenant` object.
 ### Http
 
 `PUT api/v1/Tenants/{tenantId}`
-
-`PUT api/v1-preview/Tenants/{tenantId}`
-
 
 ### Parameters
 
@@ -160,9 +151,6 @@ Returns an icon specified by its `Tenant` ID.
 
 `GET api/v1/Tenants/{tenantId}/Icon`
 
-`GET api/v1-preview/Tenants/{tenantId}/Icon`
-
-
 ### Parameters
 
 ```csharp
@@ -191,14 +179,11 @@ Authorized for Account Members of the specified `Tenant`.
 
 ## `Create or Update Tenant Icon`
 
-Creates or updates the icon for a `Tenant`. Note that the icon size must be less than MaxIconSizeInBytes.
+Creates or updates the icon for a `Tenant`. Note that the icon size must be less than 65536 bytes.
 
 ### Http
 
 `PUT api/v1/Tenants/{tenantId}/Icon`
-
-`PUT api/v1-preview/Tenants/{tenantId}/Icon`
-
 
 ### Parameters
 
@@ -240,9 +225,6 @@ Deletes the icon for a `Tenant`.
 ### Http
 
 `DELETE api/v1/Tenants/{tenantId}/Icon`
-
-`DELETE api/v1-preview/Tenants/{tenantId}/Icon`
-
 
 ### Parameters
 

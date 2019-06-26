@@ -52,7 +52,7 @@ The identifier of the account to which the client belongs.
 string clientId
 ```
 
-The identifier of the client whose roles will be replaced.
+The identifier of the client whose `Roles` will be replaced.
 ```csharp
 [Required]
 [FromBody]

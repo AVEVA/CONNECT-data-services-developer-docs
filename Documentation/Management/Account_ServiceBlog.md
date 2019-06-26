@@ -4,7 +4,7 @@ uid: AccountServiceBlog
 
 # Service Blog
 
-API's for CRUD operations on the Service Blog.
+API's for reading entries posted on the Service Blog.
 
 ***
 
@@ -15,9 +15,6 @@ Returns blog entries ordered by time posted.
 ### Http
 
 `GET api/v1/ServiceBlog/Entries`
-
-`GET api/v1-preview/ServiceBlog/Entries`
-
 
 ### Parameters
 
@@ -37,15 +34,6 @@ int32 count
 ```
 
 Number of blogs to count after skip for paging purposes.
-```csharp
-[Optional]
-[Default = "False"]
-[FromRoute]
-bool includeDeleted
-```
-
-Whether deleted entries are included in return.
-
 
 ### Security
 
@@ -54,8 +42,8 @@ Any identity, including anonymous, can retrieve service blog entries.
 ### Returns
 
 | Status Code | Return Type | Description | 
- | --- | --- | ---  | 
-| 200 | ([SdsServiceBlogEntry], int32) | Returns a response object including a list of blog entries and an int with the total number of entries. | 
+| --- | --- | ---  | 
+| 200 | [SdsServiceBlogEntry] | Returns a list of blog entries. | 
 
 
 ***
@@ -67,9 +55,6 @@ Returns a blog entry specified by ID.
 ### Http
 
 `GET api/v1/ServiceBlog/Entries/{id}`
-
-`GET api/v1-preview/ServiceBlog/Entries/{id}`
-
 
 ### Parameters
 
@@ -89,8 +74,8 @@ Any identity, including anonymous, can retrieve service blog entries.
 ### Returns
 
 | Status Code | Return Type | Description | 
- | --- | --- | ---  | 
-| 200 | SdsServiceBlogEntry | Returns a response object including the specified blog entry. | 
+| --- | --- | ---  | 
+| 200 | SdsServiceBlogEntry | Returns the specified blog entry. | 
 
 
 ***

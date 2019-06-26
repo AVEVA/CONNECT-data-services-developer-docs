@@ -870,7 +870,7 @@ that consist of multiple properties is not defined and results in non-determinan
 </table>
 <p><strong>Request</strong>  </p>
 <pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
-       Summaries?startIndex={startIndex}&amp;endIndex={endIndex}&amp;count={count}&amp;filter={filter}
+       Summaries?startIndex={startIndex}&amp;endIndex={endIndex}&amp;count={count}[&amp;filter={filter}]
 </code></pre><p><strong>Parameters</strong><br><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string streamId</code><br>The stream identifier</p>
@@ -878,7 +878,6 @@ that consist of multiple properties is not defined and results in non-determinan
 <p><code>string endIndex</code><br>The end index for the intervals</p>
 <p><code>int count</code><br>The number of intervals requested</p>
 <p><code>string filter</code><br>Optional filter expression</p>
-<p><code>string streamViewId</code><br>Optional stream view identifier</p>
 <p><strong>Response</strong><br>The response includes a status code and a response body containing a serialized collection of SdsIntervals.</p>
 <p>Each SdsInterval has a start, end, and collection of summary values.</p>
 <table>
@@ -1048,8 +1047,8 @@ information see <a class="xref" href="SDS_Types.html#interpolation">Interpolatio
 <p><strong>Request</strong>  </p>
 <pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
        Sampled?startIndex={startIndex}&amp;endIndex={endIndex}&amp;intervals={intervals}&amp;sampleBy={sampleBy}
-       &amp;boundaryType={boundaryType}&amp;startBoundaryType={startBoundaryType}
-       &amp;endBoundaryType={endBoundaryType}&amp;filter={filter}&amp;streamViewId={streamViewId}
+       [&amp;sampleBy={sampleBy}&amp;...&amp;boundaryType={boundaryType}&amp;startBoundaryType={startBoundaryType}
+       &amp;endBoundaryType={endBoundaryType}&amp;filter={filter}]
 </code></pre><p><strong>Parameters</strong><br><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string streamId</code><br>The stream identifier</p>

@@ -1429,7 +1429,7 @@ The response includes a status code.
 
 ## `Get Types Access Control List`
 
-Get the default ACL for the Types collection. For more information on ACLs, see [Access Control](xref:accesscontrol).
+Get the default ACL for the Types collection. For more information on ACLs, see [Access Control](xref:accessControl).
 
 **Request**
  ```text
@@ -1458,7 +1458,7 @@ The default ACL for Types
 
 ## `Update Types Access Control List`
 
-Update the default ACL for the Types collection. For more information on ACLs, see [Access Control](xref:accesscontrol).
+Update the default ACL for the Types collection. For more information on ACLs, see [Access Control](xref:accessControl).
 
 **Request**
  ```text
@@ -1488,7 +1488,7 @@ The response includes a status code.
 
 ## `Get Type Access Control List`
 
-Get the ACL of the specified type. For more information on ACLs, see [Access Control](xref:accesscontrol).
+Get the ACL of the specified type. For more information on ACLs, see [Access Control](xref:accessControl).
 
 **Request**
  ```text
@@ -1520,7 +1520,7 @@ The ACL for the specified type
 
 ## `Update Type Access Control List`
 
-Update the ACL of the specified type. For more information on ACLs, see [Access Control](xref:accesscontrol).
+Update the ACL of the specified type. For more information on ACLs, see [Access Control](xref:accessControl).
 
 Note that this does not update the ACL for the associated types. For further details about type referencing please see: [Type Reusability](#type-reusability).
 
@@ -1554,7 +1554,7 @@ The response includes a status code.
 
 ## `Get Type Owner`
 
-Get the Owner of the specified type. For more information on Owners, see [Access Control](xref:accesscontrol).
+Get the Owner of the specified type. For more information on Owners, see [Access Control](xref:accessControl).
 
 **Request**
  ```text
@@ -1586,7 +1586,7 @@ The Owner for the specified type
 
 ## `Update Type Owner`
 
-Update the Owner of the specified type. For more information on Owners, see [Access Control](xref:accesscontrol).
+Update the Owner of the specified type. For more information on Owners, see [Access Control](xref:accessControl).
 
 Note that this does not update the Owner for the associated types. For further details about type referencing please see: [Type Reusability](#type-reusability).
 

@@ -40,8 +40,6 @@ Retrieves a specific `Tenant` by ID.
 
 ### Http
 
-`GET api/v1-preview/Tenants/{tenantId}`
-
 `GET api/v1/Tenants/{tenantId}`
 
 ### Parameters
@@ -76,8 +74,6 @@ Checks if a `Tenant` with a specific ID exists.
 
 ### Http
 
-`HEAD api/v1-preview/Tenants/{tenantId}`
-
 `HEAD api/v1/Tenants/{tenantId}`
 
 ### Parameters
@@ -111,8 +107,6 @@ Authorized for Account Members of the specified `Tenant`.
 Updates a specified `Tenant` object.
 
 ### Http
-
-`PUT api/v1-preview/Tenants/{tenantId}`
 
 `PUT api/v1/Tenants/{tenantId}`
 
@@ -155,8 +149,6 @@ Returns an icon specified by its `Tenant` ID.
 
 ### Http
 
-`GET api/v1-preview/Tenants/{tenantId}/Icon`
-
 `GET api/v1/Tenants/{tenantId}/Icon`
 
 ### Parameters
@@ -187,11 +179,9 @@ Authorized for Account Members of the specified `Tenant`.
 
 ## `Create or Update Tenant Icon`
 
-Creates or updates the icon for a `Tenant`. Note that the icon size must be less than MaxIconSizeInBytes.
+Creates or updates the icon for a `Tenant`. Note that the icon size must be less than 65536 bytes.
 
 ### Http
-
-`PUT api/v1-preview/Tenants/{tenantId}/Icon`
 
 `PUT api/v1/Tenants/{tenantId}/Icon`
 
@@ -234,8 +224,6 @@ Deletes the icon for a `Tenant`.
 
 ### Http
 
-`DELETE api/v1-preview/Tenants/{tenantId}/Icon`
-
 `DELETE api/v1/Tenants/{tenantId}/Icon`
 
 ### Parameters
@@ -246,7 +234,7 @@ Deletes the icon for a `Tenant`.
 string tenantId
 ```
 
-The `Tenant` identifier for this request
+The `Tenant` identifier for this request.
 
 
 ### Security

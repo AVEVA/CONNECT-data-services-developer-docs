@@ -235,7 +235,7 @@ int32 count
 ]
 </code></pre><h4 id="207">207</h4>
 <h5 id="type-1">Type:</h5>
-<p> <code>MultiStatusResponse[User]</code></p>
+<p> <code>MultiStatusResponse&lt;User&gt;</code></p>
 <pre><code class="lang-json">{
   &quot;OperationId&quot;: &quot;OperationId&quot;,
   &quot;Error&quot;: &quot;Error&quot;,
@@ -331,7 +331,7 @@ int32 count
 [Optional]
 [Default = &quot;&quot;]
 string status
-</code></pre><p>Only return statuses that match this value</p>
+</code></pre><p>Only return statuses that match this value. Possible values are: InvitationAccepted, NoInvitation, InvitationNotSent, InvitationSent, InvitationExpired.</p>
 <h3 id="security-1">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>

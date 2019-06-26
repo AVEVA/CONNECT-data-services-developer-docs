@@ -1,19 +1,17 @@
-- name: Client Roles
-  href: Account_ClientRole.md
-- name: Namespace
-  href: Account_Namespace.md
-- name: NamespaceTier
-  href: Account_NamespaceTier.md
-- name: Roles
-  href: Account_Role.md
-- name: RootAccessControl
-  href: Account_RootAccessControl.md
-- name: Tenant
+- name: Client Roles (V1)
+  href: Account_ClientRole_1.md
+- name: Namespace (V1)
+  href: Account_Namespace_1.md
+- name: Roles (V1)
+  href: Account_Role_1.md
+- name: RootAccessControl (V1)
+  href: Account_RootAccessControl_1.md
+- name: Tenant (V1)
   href: Account_Tenant.md
-- name: Tenant Feature States
+- name: Tenant Feature States (V1)
   href: Account_TenantFeatureState.md
-- name: User Roles
-  href: Account_UserRole.md
-- name: ServiceBlog
+- name: User Roles (V1)
+  href: Account_UserRole_1.md
+- name: ServiceBlog (V1)
   href: Account_ServiceBlog.md
   

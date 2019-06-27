@@ -2,7 +2,7 @@
 uid: AccountNamespace_1
 ---
 
-# Namespaces (Version 1)
+# Namespaces
 
 A `Namespace` is a collection of SDS types, streams, and stream views. Namespace identifiers are unique within an account. Requirements
 for Namespace IDs are the following:

@@ -2,7 +2,7 @@
 uid: AccountRole_1
 ---
 
-# Roles (Version 1)
+# Roles
 
 A `Role` is used to manage access within an OSIsoft Cloud Services (OCS) account. All users are assigned the Account Member role by default. There are two predefined Roles for OCS accounts. Check the user or client role APIs for more information.
 - Account Administrator

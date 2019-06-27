@@ -2,7 +2,7 @@
 uid: AccountUserRole_1
 ---
 
-# User Roles (Version 1)
+# User Roles
 
 User `Roles` authorize API requests made by users to various OCS features. Users can be assigned more than one `Role`,
 but all users have the Account Member role. The following are currently available User `Roles`:

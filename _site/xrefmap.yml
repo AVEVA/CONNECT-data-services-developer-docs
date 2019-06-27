@@ -7,33 +7,18 @@ references:
 - uid: AccountClientRole_1
   name: Client Roles (Version 1)
   href: Documentation/Management/Account_ClientRole_1.html
-- uid: AccountClientRole_1-preview
-  name: Client Roles (Version 1-preview)
-  href: Documentation/Management/Account_ClientRole_1-preview.html
 - uid: AccountManagementOverview
   name: Account Management
   href: Documentation/Management/Management_Overview.html
 - uid: AccountNamespace_1
   name: Namespaces (Version 1)
   href: Documentation/Management/Account_Namespace_1.html
-- uid: AccountNamespace_1-preview
-  name: Namespaces (Version 1-preview)
-  href: Documentation/Management/Account_Namespace_1-preview.html
-- uid: AccountNamespaceTier_1-preview
-  name: Namespace Tiers (Version 1-preview)
-  href: Documentation/Management/Account_NamespaceTier_1-preview.html
 - uid: AccountRole_1
   name: Roles (Version 1)
   href: Documentation/Management/Account_Role_1.html
-- uid: AccountRole_1-preview
-  name: Roles (Version 1-preview)
-  href: Documentation/Management/Account_Role_1-preview.html
 - uid: AccountRootAccessControl_1
   name: Root AccessControl (Version 1)
   href: Documentation/Management/Account_RootAccessControl_1.html
-- uid: AccountRootAccessControl_1-preview
-  name: Root AccessControl (Version 1-preview)
-  href: Documentation/Management/Account_RootAccessControl_1-preview.html
 - uid: AccountServiceBlog
   name: Service Blog
   href: Documentation/Management/Account_ServiceBlog.html

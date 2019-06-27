@@ -21,7 +21,7 @@ Indexes are discussed in greater detail here: [Indexes](xref:sdsIndexes)
 
 When defining a type, consider how the events will be represented in a stream. The SdsType defines 
 each event in the stream. An event is a single unit whose properties have values that relate to the 
-index; that is, each property of an SdsType event is related to the event’s index. Each event is a single unit.
+index; that is, each property of an SdsType event is related to the event's index. Each event is a single unit.
 
 An SdsType is referenced by its identifier or Id field. SdsType identifiers must be unique within a Namespace.
 
@@ -193,10 +193,10 @@ below lists InterpolationModes:
 |StepwiseContinuousLeading  |1                 |Returns the data from the previous index  |
 |StepwiseContinuousTrailing |2                 |Returns the data from the next index |
 |Discrete                   |3                 |No event is returned |
-|ContinuousNullableLeading  |4                 |Returns an interpolated data or data from the previous index if either of the surrounding indexes has a null value|
-|ContinuousNullableTrailing |5                 |Returns an interpolated data or data from the trialing index if either of the surrounding indexes has a null value|
+|ContinuousNullableLeading  |4                 |Returns interpolated data or data from the previous index if either of the surrounding indexes has a null value|
+|ContinuousNullableTrailing |5                 |Returns interpolated data or data from the trialing index if either of the surrounding indexes has a null value|
 
-Note that ``Continuous`` cannot return events for type properties that cannot be interpolated, such as when the type property is not numeric.
+Note that `Continuous` cannot return events for type properties that cannot be interpolated, such as when the type property is not numeric. 
 
 The table below describes how the **Continuous InterpolationMode** affects
 properties that occur between data in a stream:
@@ -218,9 +218,7 @@ properties that occur between data in a stream:
 *When extreme values are involved in an interpolation (for example
 Decimal.MaxValue) the call might result in a BadRequest exception.
 
-\**For the **Continuous** interpolation mode, Nullable types are interpolated in the same manner as their non-nulllable equivalents as long as the values surrounding the desired interpolation index are non-null. If either of the values are null, the interpolated value will be null.
-
- 
+\**For the `Continuous` interpolation mode, Nullable types are interpolated in the same manner as their non-nulllable equivalents as long as the values surrounding the desired interpolation index are non-null. If either of the values are null, the interpolated value will be null.
 
 If the InterpolationMode is not assigned, the events are interpolated in the default manner, unless the interpolation 
 mode is overridden in the SdsTypeProperty or the SdsStream. For more information on overriding the interpolation mode 
@@ -299,25 +297,25 @@ are not included are reserved for internal SDS use.
 | Uom                       | String                  | Optional    | Unit of Measure of the property |
 
 
-The SdsTypeProperty’s identifier follows the same rules as the SdsType’s identifier.
+The SdsTypeProperty's identifier follows the same rules as the SdsType's identifier.
 
-IsKey is a Boolean value used to identify the SdsType’s Key. A Key defined by more than one 
+IsKey is a Boolean value used to identify the SdsType's Key. A Key defined by more than one 
 Property is called a compound key. The maximum number of Properties that can define a compound key is three. 
 
 In a compound key, each Property that is included in the 
 Key is specified as IsKey. The Order field defines the precedence of fields applied to the Index.
 
 The Value field is used for properties that represent a value. An example of a property with a 
-value is an enum’s named constant. When representing an enum in a SdsType, the SdsType’s 
-Properties collection defines the enum’s constant list. The SdsTypeProperty’s Identifier represents 
-the constant’s name and the SdsTypeProperty’s Value represents the constant’s value (see the enum State definitions below).
+value is an enum's named constant. When representing an enum in a SdsType, the SdsType's 
+Properties collection defines the enum's constant list. The SdsTypeProperty's Identifier represents 
+the constant's name and the SdsTypeProperty's Value represents the constant's value (see the enum State definitions below).
 
 InterpolationMode is assigned when the Property of the event should be interpolated in a specific way 
 that differs from the InterpolationMode of the SdsType. InterpolationMode is only applied to a Property 
 that is not part of the Index. If the InterpolationMode is not set, the Property is are interpolated 
-in the manner defined by the SdsType’s IntepolationMode.
+in the manner defined by the SdsType's IntepolationMode.
 
-An SdsType with the InterpolationMode set to ``Discrete`` cannot have a Property with an InteroplationMode. 
+An SdsType with the InterpolationMode set to `Discrete` cannot have a Property with an InteroplationMode. 
 For more information on interpolation of events see [Interpolation](#interpolation).
 
 Uom is the unit of measure for the Property. The Uom of a Property may be specified by the name or the 
@@ -432,7 +430,7 @@ refers to the following types and are defined in
 [JavaScript](https://github.com/osisoft/OCS-Samples/tree/master/basic_samples/SDS/JavaScript) samples. 
 Samples in other languages can be found here: [Samples](https://github.com/osisoft/OCS-Samples/tree/master/basic_samples).
 
-In the sample code, ``SdsType``, ``SdsTypeProperty``, and ``SdsTypeCode`` are defined as in the code snippets shown here:
+In the sample code, SdsType, SdsTypeProperty, and SdsTypeCode are defined as in the code snippets shown here:
 
 **Python**
 ```python
@@ -902,7 +900,7 @@ Note that the base type's Id can also be changed, if necessary, to be more meani
 
 The REST APIs provide programmatic access to read and write SDS data. The APIs in this section 
 interact with SdsTypes. When working in .NET, convenient SDS Client Libraries are available. 
-The ISdsMetadataService interface, accessed using the ``SdsService.GetMetadataService()`` helper, 
+The ISdsMetadataService interface, accessed using the `SdsService.GetMetadataService()` helper, 
 defines the available functions. See [Types](#types) for general SdsType information.
 
 

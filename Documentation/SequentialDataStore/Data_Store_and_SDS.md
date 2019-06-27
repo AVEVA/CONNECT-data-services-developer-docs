@@ -24,6 +24,6 @@ that highlights some of the sample's functionality. Be sure to read the readme f
 how the sample works.
 
 After you have finished this introduction and worked with one of the samples, refer to 
-the [Quick start](xref:sdsQuickStart#sds-quick-start) section, which describes the interaction of 
+the [Quick start](xref:sdsQuickStart#quick-start) section, which describes the interaction of 
 various SDS objects and helps you get started with your own application.
 

@@ -567,7 +567,7 @@ Index bounding the end of the series of events to return
 Optional maximum number of events to return. If `count` is specified, a `continuationToken` must also be specified.
 
 ``SdsBoundaryType boundaryType``  
-Optional [SdsBoundaryType](xref:sdsReadingData#sdsBoundaryType) specifies handling of events at or near the start and end indexes
+Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundarytype) specifies handling of events at or near the start and end indexes
 
 ``SdsBoundaryType startBoundaryType``  
 Optional [SdsBoundaryType](xref:sdsReadingData#sdsBoundaryType) specifies the first value in the result in relation to the start index. If `startBoundaryType` is specified, `endBoundaryType` must be specified.

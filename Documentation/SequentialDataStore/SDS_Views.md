@@ -107,7 +107,7 @@ To update a Stream's Type, define an SdsStreamView and PUT the stream view to th
    PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type?streamViewId={streamViewId}
 ```
 
-For details, see [Update Stream Type](xref:sdsStreams-update-stream-type). 
+For details, see [Update Stream Type](xref:sdsStreams#update-stream-type). 
 
 ## Working with Stream Views when using .NET
 

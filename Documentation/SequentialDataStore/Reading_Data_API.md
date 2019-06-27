@@ -567,13 +567,13 @@ Index bounding the end of the series of events to return
 Optional maximum number of events to return. If `count` is specified, a `continuationToken` must also be specified.
 
 ``SdsBoundaryType boundaryType``  
-Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundaryType) specifies handling of events at or near the start and end indexes
+Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundarytype) specifies handling of events at or near the start and end indexes
 
 ``SdsBoundaryType startBoundaryType``  
-Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundaryType) specifies the first value in the result in relation to the start index. If `startBoundaryType` is specified, `endBoundaryType` must be specified.
+Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundarytype) specifies the first value in the result in relation to the start index. If `startBoundaryType` is specified, `endBoundaryType` must be specified.
 
 ``SdsBoundaryType endBoundaryType``  
-Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundaryType) specifies the last value in the result in relation to the end index. If `startBoundaryType` is specified, `endBoundaryType` must be specified.
+Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundarytype) specifies the last value in the result in relation to the end index. If `startBoundaryType` is specified, `endBoundaryType` must be specified.
 
 ``string filter``  
 Optional [filter expression](xref:sdsFilterExpressions)
@@ -1732,7 +1732,7 @@ Content-Type: application/json
  ```
 
 **Response**  
-This is similar to [OuterJoin](#outerjoin-request), but value at each index is the first available value at that index when iterating the given list of streams from left to right.
+This is similar to [OuterJoin](#outer-join-example), but value at each index is the first available value at that index when iterating the given list of streams from left to right.
 
 **Response body**
 ```json
@@ -1786,7 +1786,7 @@ Content-Type: application/json
  ```
 
 **Response**  
-This is similar to [OuterJoin](#outerjoin-request), but value at each index is the first available value at that index when iterating the given list of streams from right to left.
+This is similar to [OuterJoin](#outer-join-example), but value at each index is the first available value at that index when iterating the given list of streams from right to left.
 
 **Response body**
 ```json
@@ -1836,8 +1836,8 @@ Content-Type: application/json
 <a name="postjoin"></a>
 ### POST Request
  ```text
-    POST api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
-        ?joinMode={joinMode}
+    POST api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins?
+        joinMode={joinMode}
  ```
 
 **Parameters**

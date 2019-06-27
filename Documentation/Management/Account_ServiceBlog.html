@@ -78,13 +78,12 @@
             <article class="content wrap" id="_content" data-uid="AccountServiceBlog">
 <h1 id="service-blog">Service Blog</h1>
 
-<p>API&#39;s for CRUD operations on the Service Blog.</p>
+<p>API&#39;s for reading entries posted on the Service Blog.</p>
 <hr>
 <h2 id="get-service-blog-entries"><code>Get Service Blog Entries</code></h2>
 <p>Returns blog entries ordered by time posted.</p>
 <h3 id="http">Http</h3>
 <p><code>GET api/v1/ServiceBlog/Entries</code></p>
-<p><code>GET api/v1-preview/ServiceBlog/Entries</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Optional]
 [Default = &quot;0&quot;]
@@ -96,11 +95,6 @@ int32 skip
 [FromQuery]
 int32 count
 </code></pre><p>Number of blogs to count after skip for paging purposes.</p>
-<pre><code class="lang-csharp">[Optional]
-[Default = &quot;False&quot;]
-[FromRoute]
-bool includeDeleted
-</code></pre><p>Whether deleted entries are included in return.</p>
 <h3 id="security">Security</h3>
 <p>Any identity, including anonymous, can retrieve service blog entries.</p>
 <h3 id="returns">Returns</h3>
@@ -115,8 +109,8 @@ bool includeDeleted
 <tbody>
 <tr>
 <td>200</td>
-<td>([SdsServiceBlogEntry], int32)</td>
-<td>Returns a response object including a list of blog entries and an int with the total number of entries.</td>
+<td>[SdsServiceBlogEntry]</td>
+<td>Returns a list of blog entries.</td>
 </tr>
 </tbody>
 </table>
@@ -125,7 +119,6 @@ bool includeDeleted
 <p>Returns a blog entry specified by ID.</p>
 <h3 id="http-1">Http</h3>
 <p><code>GET api/v1/ServiceBlog/Entries/{id}</code></p>
-<p><code>GET api/v1-preview/ServiceBlog/Entries/{id}</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
@@ -146,7 +139,7 @@ string id
 <tr>
 <td>200</td>
 <td>SdsServiceBlogEntry</td>
-<td>Returns a response object including the specified blog entry.</td>
+<td>Returns the specified blog entry.</td>
 </tr>
 </tbody>
 </table>

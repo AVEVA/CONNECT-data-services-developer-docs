@@ -2,7 +2,7 @@
 uid: AccountClientRole_1
 ---
 
-# Client Roles (Version 1)
+# Client Roles
 
 Client `Roles` authorize API requests made by clients to various OCS features. Clients can be assigned more than one
 `Role`, but all clients have the Account Member role. The following are currently available Client `Roles`:

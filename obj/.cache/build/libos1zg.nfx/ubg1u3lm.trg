@@ -1,13 +1,13 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Account Management </title>
+    <title>Sequential Data Store </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Account Management ">
+    <meta name="title" content="Sequential Data Store ">
     <meta name="generator" content="docfx 2.39.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -75,19 +75,26 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="AccountManagementOverview">
-<h1 id="account-management">Account Management</h1>
+            <article class="content wrap" id="_content" data-uid="sds">
+<h1 id="sequential-data-store" sourcefile="Documentation/SequentialDataStore/Data_Store_and_SDS.md" sourcestartlinenumber="5" sourceendlinenumber="5">Sequential Data Store</h1>
 
-<p>The Account Management API allows users to create, manage, and administer OSIsoft Cloud Services (OCS) accounts by assigning users, roles, and namespaces to their tenants. Through the API, users can manage access control used the OCS infrastructure. Generally, only administrators access the Account Management features. Administration functionality is also available from the OCS portal.</p>
-<hr>
-<h3 id="clientrolexrefaccountclientrole1"><a class="xref" href="Account_ClientRole_1.html">ClientRole</a></h3>
-<h3 id="namespacexrefaccountnamespace1"><a class="xref" href="Account_Namespace_1.html">Namespace</a></h3>
-<h3 id="rolexrefaccountrole1"><a class="xref" href="Account_Role_1.html">Role</a></h3>
-<h3 id="rootaccesscontrolxrefaccountrootaccesscontrol1"><a class="xref" href="Account_RootAccessControl_1.html">RootAccessControl</a></h3>
-<h3 id="serviceblogxrefaccountserviceblog"><a class="xref" href="Account_ServiceBlog.html">ServiceBlog</a></h3>
-<h3 id="tenantxrefaccounttenant"><a class="xref" href="Account_Tenant.html">Tenant</a></h3>
-<h3 id="tenantfeaturestatexrefaccounttenantfeaturestate"><a class="xref" href="Account_TenantFeatureState.html">TenantFeatureState</a></h3>
-<h3 id="userrolexrefaccountuserrole1"><a class="xref" href="Account_UserRole_1.html">UserRole</a></h3>
+<p sourcefile="Documentation/SequentialDataStore/Data_Store_and_SDS.md" sourcestartlinenumber="7" sourceendlinenumber="12">The Sequential Data Store (SDS) is a highly flexible cloud-based sequential data store that you use to store, 
+retrieve, and analyze data. You 
+create and write data to <em>streams</em> using a simple REST (<em>REpresentational State Transfer</em>) API (<em>Application 
+Programming Interface</em>). The streams you create can be used to store simple or complex data types to suit 
+your application needs. You can define simple or complex indexing to arrange and relate your data. An assortment 
+of methods with customizable behaviors are available to read data and easily obtain needed information.</p>
+<h2 id="samples" sourcefile="Documentation/SequentialDataStore/Data_Store_and_SDS.md" sourcestartlinenumber="14" sourceendlinenumber="15">Samples</h2>
+<p sourcefile="Documentation/SequentialDataStore/Data_Store_and_SDS.md" sourcestartlinenumber="17" sourceendlinenumber="20">The best way to get started with SDS is to run one or more of the code samples. Code samples are 
+provided in a number of different programming languages to illustrate how to easily and effectively 
+interact with SDS. The code samples can be found in the <a href="https://github.com/osisoft/OSI-Samples" data-raw-source="[OSI-Samples](https://github.com/osisoft/OSI-Samples)" sourcefile="Documentation/SequentialDataStore/Data_Store_and_SDS.md" sourcestartlinenumber="19" sourceendlinenumber="19">OSI-Samples</a> repository on GitHub. Obtain SDS 
+REST API access keys from <a href="https://cloud.osisoft.com" data-raw-source="https://cloud.osisoft.com" sourcefile="Documentation/SequentialDataStore/Data_Store_and_SDS.md" sourcestartlinenumber="20" sourceendlinenumber="20">https://cloud.osisoft.com</a> before running the sample code.</p>
+<p sourcefile="Documentation/SequentialDataStore/Data_Store_and_SDS.md" sourcestartlinenumber="22" sourceendlinenumber="24">Each sample includes a readme file which describes the steps required to run the sample and a brief description 
+that highlights some of the sample&#39;s functionality. Be sure to read the readme file to understand 
+how the sample works.</p>
+<p sourcefile="Documentation/SequentialDataStore/Data_Store_and_SDS.md" sourcestartlinenumber="26" sourceendlinenumber="28">After you have finished this introduction and worked with one of the samples, refer to 
+the <a class="xref" href="Quick_Start.html#quick-start" data-raw-source="[Quick start](xref:sdsQuickStart#quick-start)" sourcefile="Documentation/SequentialDataStore/Data_Store_and_SDS.md" sourcestartlinenumber="27" sourceendlinenumber="27">Quick start</a> section, which describes the interaction of 
+various SDS objects and helps you get started with your own application.</p>
 </article>
           </div>
           
@@ -96,7 +103,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/Management/Management_Overview.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/SequentialDataStore/Data_Store_and_SDS.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

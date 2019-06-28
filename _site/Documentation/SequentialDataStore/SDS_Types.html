@@ -91,7 +91,7 @@ can be ordered is permitted. Other indexes (secondary indexes), are defined in t
 Indexes are discussed in greater detail here: <a class="xref" href="indexes.html">Indexes</a></p>
 <p>When defining a type, consider how the events will be represented in a stream. The SdsType defines 
 each event in the stream. An event is a single unit whose properties have values that relate to the 
-index; that is, each property of an SdsType event is related to the event’s index. Each event is a single unit.</p>
+index; that is, each property of an SdsType event is related to the event&#39;s index. Each event is a single unit.</p>
 <p>An SdsType is referenced by its identifier or Id field. SdsType identifiers must be unique within a Namespace.</p>
 <p>An SdsType can also refer other SdsTypes by using their identifiers. This enables type re-usability.
 Nested types and base types are automatically created as separate types. For further information, see <a href="#type-reusability">Type Reusability</a></p>
@@ -560,7 +560,8 @@ SdsTypeCode, such as ByteEnum, Int32Enum, NullableInt32Enum, or Object, plus add
 </table>
 <h2 id="interpolation">Interpolation</h2>
 <p>Interpolation determines how a stream behaves when asked to return an event at an index between 
-two existing events. InterpolationMode determines how the returned event is constructed. The table 
+two existing events. InterpolationMode determines how the returned event is constructed. SDS provides 
+multiple ways to set the interpolation mode to get the desired behavior. The table 
 below lists InterpolationModes:</p>
 <table>
 <thead>
@@ -579,7 +580,7 @@ below lists InterpolationModes:</p>
 <tr>
 <td>Continuous</td>
 <td>0</td>
-<td>Interpolates the data using previous and next index values</td>
+<td>Returns interpolated data using previous and next index values</td>
 </tr>
 <tr>
 <td>StepwiseContinuousLeading</td>
@@ -594,19 +595,29 @@ below lists InterpolationModes:</p>
 <tr>
 <td>Discrete</td>
 <td>3</td>
-<td>Returns ‘null’</td>
+<td>No event is returned</td>
+</tr>
+<tr>
+<td>ContinuousNullableLeading</td>
+<td>4</td>
+<td>Returns interpolated data or data from the previous index if either of the surrounding indexes has a null value</td>
+</tr>
+<tr>
+<td>ContinuousNullableTrailing</td>
+<td>5</td>
+<td>Returns interpolated data or data from the trialing index if either of the surrounding indexes has a null value</td>
 </tr>
 </tbody>
 </table>
-<p>Note that <code>Continuous</code> cannot return events for values that cannot be interpolated, such as when the type is not numeric.</p>
+<p>Note that <code>Continuous</code> cannot return events for type properties that cannot be interpolated, such as when the type property is not numeric. </p>
 <p>The table below describes how the <strong>Continuous InterpolationMode</strong> affects
-indexes that occur between data in a stream:</p>
-<p><strong>InterpolationMode = Continuous or Default</strong></p>
+properties that occur between data in a stream:
+<strong>InterpolationMode = Continuous or Default</strong></p>
 <table>
 <thead>
 <tr>
-<th>Type</th>
-<th>Result for an index between data in a stream</th>
+<th>Property Type</th>
+<th>Result for a property for an index between data in a stream</th>
 <th>Comment</th>
 </tr>
 </thead>
@@ -628,12 +639,12 @@ indexes that occur between data in a stream:</p>
 </tr>
 <tr>
 <td>Array and List Types</td>
-<td>No event is returned</td>
+<td>Default value</td>
 <td></td>
 </tr>
 <tr>
 <td>String Type</td>
-<td>No event is returned</td>
+<td>Default value</td>
 <td></td>
 </tr>
 <tr>
@@ -648,24 +659,24 @@ indexes that occur between data in a stream:</p>
 </tr>
 <tr>
 <td>GUID</td>
-<td>No event is returned</td>
+<td>Default value</td>
 <td></td>
 </tr>
 <tr>
 <td>Version</td>
-<td>No event is returned</td>
+<td>Default value</td>
 <td></td>
 </tr>
 <tr>
 <td>IDictionary or IEnumerable</td>
-<td>No event is returned</td>
+<td>Default value</td>
 <td>Dictionary, Array, List, and so on.</td>
 </tr>
 </tbody>
 </table>
 <p>*When extreme values are involved in an interpolation (for example
 Decimal.MaxValue) the call might result in a BadRequest exception.</p>
-<p>**Nullable types are interpolated in the same manner as their non-nulllable equivalents as long as the values surrounding the desired interpolation index are non-null. If either of the values are null, the interpolated value will be null.</p>
+<p>**For the <code>Continuous</code> interpolation mode, Nullable types are interpolated in the same manner as their non-nulllable equivalents as long as the values surrounding the desired interpolation index are non-null. If either of the values are null, the interpolated value will be null.</p>
 <p>If the InterpolationMode is not assigned, the events are interpolated in the default manner, unless the interpolation 
 mode is overridden in the SdsTypeProperty or the SdsStream. For more information on overriding the interpolation mode 
 on a specific type property see <a href="#sdstypeproperty">SdsTypeProperty</a>. For more information on overriding the interpolation mode for a specific stream see <a class="xref" href="SDS_Streams.html">Sds Streams</a>.</p>
@@ -897,19 +908,19 @@ are not included are reserved for internal SDS use.</p>
 </tr>
 </tbody>
 </table>
-<p>The SdsTypeProperty’s identifier follows the same rules as the SdsType’s identifier.</p>
-<p>IsKey is a Boolean value used to identify the SdsType’s Key. A Key defined by more than one 
+<p>The SdsTypeProperty&#39;s identifier follows the same rules as the SdsType&#39;s identifier.</p>
+<p>IsKey is a Boolean value used to identify the SdsType&#39;s Key. A Key defined by more than one 
 Property is called a compound key. The maximum number of Properties that can define a compound key is three. </p>
 <p>In a compound key, each Property that is included in the 
 Key is specified as IsKey. The Order field defines the precedence of fields applied to the Index.</p>
 <p>The Value field is used for properties that represent a value. An example of a property with a 
-value is an enum’s named constant. When representing an enum in a SdsType, the SdsType’s 
-Properties collection defines the enum’s constant list. The SdsTypeProperty’s Identifier represents 
-the constant’s name and the SdsTypeProperty’s Value represents the constant’s value (see the enum State definitions below).</p>
+value is an enum&#39;s named constant. When representing an enum in a SdsType, the SdsType&#39;s 
+Properties collection defines the enum&#39;s constant list. The SdsTypeProperty&#39;s Identifier represents 
+the constant&#39;s name and the SdsTypeProperty&#39;s Value represents the constant&#39;s value (see the enum State definitions below).</p>
 <p>InterpolationMode is assigned when the Property of the event should be interpolated in a specific way 
 that differs from the InterpolationMode of the SdsType. InterpolationMode is only applied to a Property 
 that is not part of the Index. If the InterpolationMode is not set, the Property is are interpolated 
-in the manner defined by the SdsType’s IntepolationMode.</p>
+in the manner defined by the SdsType&#39;s IntepolationMode.</p>
 <p>An SdsType with the InterpolationMode set to <code>Discrete</code> cannot have a Property with an InteroplationMode. 
 For more information on interpolation of events see <a href="#interpolation">Interpolation</a>.</p>
 <p>Uom is the unit of measure for the Property. The Uom of a Property may be specified by the name or the 
@@ -1277,7 +1288,7 @@ the Data Store before using SdsTypeBuilder. Base types are maintained within the
 refers to the following types and are defined in<br><a href="https://github.com/osisoft/OCS-Samples/tree/master/basic_samples/SDS/Python/SDSPy">Python</a> and 
 <a href="https://github.com/osisoft/OCS-Samples/tree/master/basic_samples/SDS/JavaScript">JavaScript</a> samples. 
 Samples in other languages can be found here: <a href="https://github.com/osisoft/OCS-Samples/tree/master/basic_samples">Samples</a>.</p>
-<p>In the sample code, <code>SdsType</code>, <code>SdsTypeProperty</code>, and <code>SdsTypeCode</code> are defined as in the code snippets shown here:</p>
+<p>In the sample code, SdsType, SdsTypeProperty, and SdsTypeCode are defined as in the code snippets shown here:</p>
 <p><strong>Python</strong></p>
 <pre><code class="lang-python">class SdsTypeCode(Enum):
     Empty = 0
@@ -1759,7 +1770,7 @@ Content-Type: application/json
 <pre><code class="lang-csharp">    Task&lt;SdsType&gt; GetTypeAsync(string typeId);
 </code></pre><hr>
 <h2 id="get-type-reference-count"><code>Get Type Reference Count</code></h2>
-<p>Returns a dictionary mapping the object name to the number of references held by streams, stream views and parent types for the specified type. See <a href="xref:sdsstreams">Streams</a> and <a class="xref" href="SDS_Views.html">Steam Views</a> for more information on the use of types to define streams and stream views. For further details about type referencing please see: <a href="#type-reusability">Type Reusability</a>.</p>
+<p>Returns a dictionary mapping the object name to the number of references held by streams, stream views and parent types for the specified type. See <a class="xref" href="SDS_Streams.html">Streams</a> and <a class="xref" href="SDS_Views.html">Steam Views</a> for more information on the use of types to define streams and stream views. For further details about type referencing please see: <a href="#type-reusability">Type Reusability</a>.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/ReferenceCount
 </code></pre><p><strong>Parameters</strong>  </p>

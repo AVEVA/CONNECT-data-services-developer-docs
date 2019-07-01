@@ -9,9 +9,9 @@ The Mappings object lets users define the columns in the resulting data set by s
 
 Property | Type | Required | Descriptions
  --- | --- | --- | ---
+TimeOfResolution | optional: DateTimeOffset | False | Time when the data view instance was resolved
 SharedMappingRules | [SharedMappingRule] | False | Rules shared across mappings
 Columns | [Column] | False | Columns in your Data View
-IsDefault | bool | False | Determines whether default parameters should be used
 
 
 
@@ -101,7 +101,6 @@ StartsWith | string | Use StartsWith as function
 Property | Type | Required | Descriptions
  --- | --- | --- | ---
 Name | string | True | Name to be displayed for the column
-NamespaceId | string | False | 
 MappingRule | MappingRule | True | Mapping to the data source
 IsKey | optional: bool | False | Column is the key column (Optional once key column is defined)
 DataType | string | False | Type of the mapped data source

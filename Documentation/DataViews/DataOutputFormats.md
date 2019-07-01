@@ -41,7 +41,7 @@ The following is a request to retrieve Data using the default output
 The following is a request to retrieve Data in a Table format with out headers
  ```text
       GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataView/Simple/Data/Interpolated
-      ?form=table
+      /form=table
  ```
 The following response would be returned from the above code:
 
@@ -90,7 +90,7 @@ The following response would be returned from the above code:
 The following is a request to retrieve Data in a Table format with headers
  ```text
       GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataView/Simple/Data?Interpolated
-      ?form=tableh
+      /form=tableh
  ```
 The following response would be returned from the above code:
 

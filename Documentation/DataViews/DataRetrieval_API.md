@@ -139,7 +139,7 @@ string id  [Required] [No Default Value]
 ```
 
 
-Optional, default is **preserve**. Using **refresh** causes Data View backing resources to be refreshed. See [Retrieving Data](#DataRetrieval)
+Optional, default is **preserve**. Using **refresh** causes Data View backing resources to be refreshed. See [Retrieving Data](#DataRetrieval.md)
 ```csharp
 string cache [FromQuery] [Optional] [Default = "preserve"]
 ```
@@ -288,7 +288,7 @@ string dataGroupId  [Required] [No Default Value]
 ```
 
 
-Optional, default is **preserve**. Using **refresh** causes Data View backing resources to be refreshed. See [Retrieving Data](#DataRetrieval)
+Optional, default is **preserve**. Using **refresh** causes Data View backing resources to be refreshed. See [Retrieving Data](#DataRetrieval.md)
 ```csharp
 string cache  [Optional] [Default = "preserve"]
 ```
@@ -389,7 +389,7 @@ string id  [Required] [No Default Value]
 ```
 
 
-Optional, default is **preserve**. Using **refresh** causes Data View backing resources to be refreshed. See [Retrieving Data](#DataRetrieval)
+Optional, default is **preserve**. Using **refresh** causes Data View backing resources to be refreshed. See [Retrieving Data](#DataRetrieval.md)
 ```csharp
 string cache [FromQuery] [Optional] [Default = "preserve"]
 ```
@@ -469,7 +469,7 @@ string id  [Required] [No Default Value]
 ```
 
 
-Optional, default value is **preserve**. Using **refresh** causes Data View backing resources to be refreshed. See [Retrieving Data](#DataRetrieval)
+Optional, default value is **preserve**. Using **refresh** causes Data View backing resources to be refreshed. See [Retrieving Data](#DataRetrieval.md)
 ```csharp
 string cache [FromQuery] [Optional] [Default = "preserve"]
 ```
@@ -566,7 +566,7 @@ string id  [Required] [No Default Value]
 ```
 
 
-Optional, default is **preserve**. Using **refresh** causes Data View backing resources to be refreshed. See [Retrieving Data](#DataRetrieval)
+Optional, default is **preserve**. Using **refresh** causes Data View backing resources to be refreshed. See [Retrieving Data](#DataRetrieval.md)
 ```csharp
 string cache [FromQuery] [Optional] [Default = "preserve"]
 ```

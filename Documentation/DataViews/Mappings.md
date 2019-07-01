@@ -39,7 +39,7 @@ ItemIdentifier | FilterUnit | False | Identifier for the resource that contains 
 
 
  ## `ItemIdentifier` 
- The FilterUnit identifies the property that the user wants to select with a [PropertyMappingRule](#propertymappingrule).
+ The FilterUnit identifies the property that the user wants to select with a [PropertyMappingRule](#MappingRule).
 ### Properties
 
 Property | Type | Required | Descriptions

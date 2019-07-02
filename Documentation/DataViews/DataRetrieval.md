@@ -95,4 +95,4 @@ Since each data view can contain a large amount of data, the get data call can e
 A single data view can serve results with different ranges of indices. Therefore, index config can be overridden using query parameters during a get data call, even if one is specified in the data view. The index config needs to be specified on the first page of data retrieval, and remains the same on subsequent pages to allow correct paging through the entire data collection. If an index config is not specified in either the data view definition or in the query parameter, the default (start index of 24 hours ago, end index of now, with an interval of 1 minute) will be used. 
 
 #### Format
-There are several [data output formats](xref:DataOutputFormats) available from the get data call.
+There are several [data output formats](DataOutputFormats.md) available from the get data call.

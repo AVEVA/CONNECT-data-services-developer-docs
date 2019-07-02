@@ -35,25 +35,25 @@ string id  [Required] [No Default Value]
 ```
 
 
-Optional, specifies beginning date and time. The default value is specified in the [Index Config](IndexConfig.md).
+Specifies beginning date and time. The default value is specified in the [Index Config](IndexConfig.md).
 ```csharp
 string startIndex [FromQuery] [Required] [No Default Value]
 ```
 
 
-Optional, specifies end date and time. The default value is specified in the [Index Config](IndexConfig.md).
+Specifies end date and time. The default value is specified in the [Index Config](IndexConfig.md).
 ```csharp
 string endIndex [FromQuery] [Required] [No Default Value]
 ```
 
 
-Optional, specifies data retrieval interval. The default value is specified in the [Index Config](IndexConfig.md).
+Specifies data retrieval interval. The default value is specified in the [Index Config](IndexConfig.md).
 ```csharp
 string interval [FromQuery] [Required] [No Default Value]
 ```
 
 
-Optional, specifies the data [output format](DataOutputFormats.md). Output formats: default, table, tableh, csv, csvh
+Specifies the data [output format](DataOutputFormats.md). Output formats: default, table, tableh, csv, csvh
 ```csharp
 string form [FromQuery] [Required] [No Default Value]
 ```
@@ -65,13 +65,13 @@ string continuationToken [FromQuery] [Required] [No Default Value]
 ```
 
 
-Optional, specifies cache behavior. Used only on the first data call; the default value is **refresh**. Ignored if used with the continuationToken.
+Specifies cache behavior. Used only on the first data call; the default value is **refresh**. Ignored if used with the continuationToken.
 ```csharp
 string cache [FromQuery] [Optional] [Default = "refresh"]
 ```
 
 
-Optional, specifies the total count retrieved events. The default value is 1000. The maximum is 250,000.
+Specifies the total count of retrieved events. The default value is 1000. The maximum is 250,000.
 ```csharp
 Int32 count [FromQuery] [Optional] [Default = 1000]
 ```
@@ -139,7 +139,7 @@ string id  [Required] [No Default Value]
 ```
 
 
-Optional, default is **preserve**. Using **refresh** causes Data View backing resources to be refreshed. See [Retrieving Data](DataRetrieval.md)
+Default is **refesh**, causes Data View backing resources to be refreshed. See [Retrieving Data](DataRetrieval.md)
 ```csharp
 string cache [FromQuery] [Optional] [Default = "preserve"]
 ```
@@ -193,7 +193,7 @@ Successfully retrieved data
 
 #### 207
 
-Multi-status. Look at response message
+Multi-status. Successfully retrieved data groups along with errors
 
 ```json
 {
@@ -288,7 +288,7 @@ string dataGroupId  [Required] [No Default Value]
 ```
 
 
-Optional, default is **preserve**. Using **refresh** causes Data View backing resources to be refreshed. See [Retrieving Data](DataRetrieval.md)
+Default is **preserve**. Using **refresh** causes Data View backing resources to be refreshed. See [Retrieving Data](DataRetrieval.md)
 ```csharp
 string cache  [Optional] [Default = "preserve"]
 ```
@@ -325,7 +325,7 @@ Successfully retrieved data group
 
 #### 207
 
-Multi-status. Look at response message
+Multi-status. Successfully retrieved data groups along with errors
 
 ```json
 {
@@ -389,7 +389,7 @@ string id  [Required] [No Default Value]
 ```
 
 
-Optional, default is **preserve**. Using **refresh** causes Data View backing resources to be refreshed. See [Retrieving Data](DataRetrieval.md)
+Default is **preserve**. Using **refresh** causes Data View backing resources to be refreshed. See [Retrieving Data](DataRetrieval.md)
 ```csharp
 string cache [FromQuery] [Optional] [Default = "preserve"]
 ```
@@ -469,7 +469,7 @@ string id  [Required] [No Default Value]
 ```
 
 
-Optional, default value is **preserve**. Using **refresh** causes Data View backing resources to be refreshed. See [Retrieving Data](DataRetrieval.md)
+Default value is **preserve**. Using **refresh** causes Data View backing resources to be refreshed. See [Retrieving Data](DataRetrieval.md)
 ```csharp
 string cache [FromQuery] [Optional] [Default = "preserve"]
 ```
@@ -510,7 +510,7 @@ Successfully retrieved data items
 
 #### 207
 
-Multi-status. Look at response message
+Multi-status. Successfully retrieved data groups along with errors
 
 ```json
 {
@@ -566,7 +566,7 @@ string id  [Required] [No Default Value]
 ```
 
 
-Optional, default is **preserve**. Using **refresh** causes Data View backing resources to be refreshed. See [Retrieving Data](DataRetrieval.md)
+Default is **preserve**. Using **refresh** causes Data View backing resources to be refreshed. See [Retrieving Data](DataRetrieval.md)
 ```csharp
 string cache [FromQuery] [Optional] [Default = "preserve"]
 ```

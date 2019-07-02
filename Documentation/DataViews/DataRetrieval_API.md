@@ -35,13 +35,13 @@ string id  [Required] [No Default Value]
 ```
 
 
-Specifies beginning date and time. The default value is specified in the [Index Config](IndexConfig.md).
+Specifies beginning index. The default value is specified by the [IndexDataType](DataViews_API.md).
 ```csharp
 string startIndex [FromQuery] [Required] [No Default Value]
 ```
 
 
-Specifies end date and time. The default value is specified in the [Index Config](IndexConfig.md).
+Specifies end index. The default value is specified by the [IndexDataType](DataViews_API.md).
 ```csharp
 string endIndex [FromQuery] [Required] [No Default Value]
 ```
@@ -59,13 +59,13 @@ string form [FromQuery] [Required] [No Default Value]
 ```
 
 
-Not used on the first data call. Afterwards, a continuationToken is provided in the Next Page HTTPS response header. It contains all necessary information for the next page of data such as index config and resolved resources.
+Not used on the first data call. Afterwards, a continuationToken is provided in the NextPage HTTP response header. It contains all necessary information for the next page of data such as index config and resolved resources.
 ```csharp
 string continuationToken [FromQuery] [Required] [No Default Value]
 ```
 
 
-Specifies cache behavior. Used only on the first data call; the default value is **refresh**. Ignored if used with the continuationToken.
+Specifies if Data View backing resources are to be refreshed. Used only on the first data call. Ignored if used with the continuationToken.
 ```csharp
 string cache [FromQuery] [Optional] [Default = "refresh"]
 ```
@@ -139,7 +139,7 @@ string id  [Required] [No Default Value]
 ```
 
 
-Default is **refesh**, causes Data View backing resources to be refreshed. See [Retrieving Data](DataRetrieval.md)
+Specifies if Data View backing resources are to be refreshed. See [Retrieving Data](DataRetrieval.md)
 ```csharp
 string cache [FromQuery] [Optional] [Default = "preserve"]
 ```
@@ -203,7 +203,13 @@ Multi-status. Successfully retrieved data groups along with errors
       "OperationId": "String",
       "Error": "String",
       "Reason": "String",
-      "Resolution": "String"
+      "Resolution": "String",
+      "AdditionalParameters": [
+        {
+          "Chars": "Char",
+          "Length": "Int32"
+        }
+      ]
     }
   ],
   "DataGroups": [
@@ -216,7 +222,13 @@ Multi-status. Successfully retrieved data groups along with errors
           "OperationId": "String",
           "Error": "String",
           "Reason": "String",
-          "Resolution": "String"
+          "Resolution": "String",
+          "AdditionalParameters": [
+            {
+              "Chars": "Char",
+              "Length": "Int32"
+            }
+          ]
         }
       ],
       "Tokens": [
@@ -288,7 +300,7 @@ string dataGroupId  [Required] [No Default Value]
 ```
 
 
-Default is **preserve**. Using **refresh** causes Data View backing resources to be refreshed. See [Retrieving Data](DataRetrieval.md)
+Specifies if Data View backing resources are to be refreshed. See [Retrieving Data](DataRetrieval.md)
 ```csharp
 string cache  [Optional] [Default = "preserve"]
 ```
@@ -337,7 +349,13 @@ Multi-status. Successfully retrieved data groups along with errors
       "OperationId": "String",
       "Error": "String",
       "Reason": "String",
-      "Resolution": "String"
+      "Resolution": "String",
+      "AdditionalParameters": [
+        {
+          "Chars": "Char",
+          "Length": "Int32"
+        }
+      ]
     }
   ],
   "Tokens": [
@@ -389,7 +407,7 @@ string id  [Required] [No Default Value]
 ```
 
 
-Default is **preserve**. Using **refresh** causes Data View backing resources to be refreshed. See [Retrieving Data](DataRetrieval.md)
+Specifies if Data View backing resources are to be refreshed. See [Retrieving Data](DataRetrieval.md)
 ```csharp
 string cache [FromQuery] [Optional] [Default = "preserve"]
 ```
@@ -469,7 +487,7 @@ string id  [Required] [No Default Value]
 ```
 
 
-Default value is **preserve**. Using **refresh** causes Data View backing resources to be refreshed. See [Retrieving Data](DataRetrieval.md)
+Specifies if Data View backing resources are to be refreshed. See [Retrieving Data](DataRetrieval.md)
 ```csharp
 string cache [FromQuery] [Optional] [Default = "preserve"]
 ```
@@ -520,7 +538,13 @@ Multi-status. Successfully retrieved data groups along with errors
       "OperationId": "String",
       "Error": "String",
       "Reason": "String",
-      "Resolution": "String"
+      "Resolution": "String",
+      "AdditionalParameters": [
+        {
+          "Chars": "Char",
+          "Length": "Int32"
+        }
+      ]
     }
   ],
   "Items": [
@@ -566,7 +590,7 @@ string id  [Required] [No Default Value]
 ```
 
 
-Default is **preserve**. Using **refresh** causes Data View backing resources to be refreshed. See [Retrieving Data](DataRetrieval.md)
+Specifies if Data View backing resources are to be refreshed. See [Retrieving Data](DataRetrieval.md)
 ```csharp
 string cache [FromQuery] [Optional] [Default = "preserve"]
 ```

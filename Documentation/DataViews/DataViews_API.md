@@ -179,6 +179,7 @@ OK - retrieved the Data Views (could be an empty array)
   "Queries": [
     {
       "Id": "String",
+      "NamespaceId": "String",
       "Query": "String"
     }
   ],
@@ -229,11 +230,13 @@ OK - retrieved the Data Views (could be an empty array)
     "Columns": [
       {
         "Name": "String",
+        "NamespaceId": "String",
         "MappingRule": {},
         "IsKey": "Boolean",
         "DataType": "String"
       }
-    ]
+    ],
+    "IsDefault": "Boolean"
   },
   "IndexDataType": "IndexDataType enumeration",
   "IndexConfig": {
@@ -298,6 +301,7 @@ OK - retrieved the Data View
   "Queries": [
     {
       "Id": "String",
+      "NamespaceId": "String",
       "Query": "String"
     }
   ],
@@ -348,11 +352,13 @@ OK - retrieved the Data View
     "Columns": [
       {
         "Name": "String",
+        "NamespaceId": "String",
         "MappingRule": {},
         "IsKey": "Boolean",
         "DataType": "String"
       }
-    ]
+    ],
+    "IsDefault": "Boolean"
   },
   "IndexDataType": "IndexDataType enumeration",
   "IndexConfig": {
@@ -415,6 +421,7 @@ DataViewDefinition dataViewDefinitionDto [FromBody] [Required] [No Default Value
   "Queries": [
     {
       "Id": "String",
+      "NamespaceId": "String",
       "Query": "String"
     }
   ],
@@ -465,11 +472,13 @@ DataViewDefinition dataViewDefinitionDto [FromBody] [Required] [No Default Value
     "Columns": [
       {
         "Name": "String",
+        "NamespaceId": "String",
         "MappingRule": {},
         "IsKey": "Boolean",
         "DataType": "String"
       }
-    ]
+    ],
+    "IsDefault": "Boolean"
   },
   "IndexDataType": "IndexDataType enumeration",
   "IndexConfig": {
@@ -495,6 +504,7 @@ Successfully created a Data View Definition
   "Queries": [
     {
       "Id": "String",
+      "NamespaceId": "String",
       "Query": "String"
     }
   ],
@@ -545,11 +555,13 @@ Successfully created a Data View Definition
     "Columns": [
       {
         "Name": "String",
+        "NamespaceId": "String",
         "MappingRule": {},
         "IsKey": "Boolean",
         "DataType": "String"
       }
-    ]
+    ],
+    "IsDefault": "Boolean"
   },
   "IndexDataType": "IndexDataType enumeration",
   "IndexConfig": {
@@ -618,6 +630,7 @@ DataViewDefinition dataViewDefinitionDto [FromBody] [Required] [No Default Value
   "Queries": [
     {
       "Id": "String",
+      "NamespaceId": "String",
       "Query": "String"
     }
   ],
@@ -668,11 +681,13 @@ DataViewDefinition dataViewDefinitionDto [FromBody] [Required] [No Default Value
     "Columns": [
       {
         "Name": "String",
+        "NamespaceId": "String",
         "MappingRule": {},
         "IsKey": "Boolean",
         "DataType": "String"
       }
-    ]
+    ],
+    "IsDefault": "Boolean"
   },
   "IndexDataType": "IndexDataType enumeration",
   "IndexConfig": {
@@ -698,6 +713,7 @@ Successfully created a Data View Definition
   "Queries": [
     {
       "Id": "String",
+      "NamespaceId": "String",
       "Query": "String"
     }
   ],
@@ -748,11 +764,13 @@ Successfully created a Data View Definition
     "Columns": [
       {
         "Name": "String",
+        "NamespaceId": "String",
         "MappingRule": {},
         "IsKey": "Boolean",
         "DataType": "String"
       }
-    ]
+    ],
+    "IsDefault": "Boolean"
   },
   "IndexDataType": "IndexDataType enumeration",
   "IndexConfig": {
@@ -826,6 +844,7 @@ DataViewDefinition dataViewDefinitionDto [FromBody] [Required] [No Default Value
   "Queries": [
     {
       "Id": "String",
+      "NamespaceId": "String",
       "Query": "String"
     }
   ],
@@ -876,11 +895,13 @@ DataViewDefinition dataViewDefinitionDto [FromBody] [Required] [No Default Value
     "Columns": [
       {
         "Name": "String",
+        "NamespaceId": "String",
         "MappingRule": {},
         "IsKey": "Boolean",
         "DataType": "String"
       }
-    ]
+    ],
+    "IsDefault": "Boolean"
   },
   "IndexDataType": "IndexDataType enumeration",
   "IndexConfig": {
@@ -1574,6 +1595,7 @@ OK - retrieved the Data View queries
 [
 {
   "Id": "String",
+  "NamespaceId": "String",
   "Query": "String"
 }
 ]
@@ -1632,6 +1654,7 @@ Updated queries in the request body
 [
 {
   "Id": "String",
+  "NamespaceId": "String",
   "Query": "String"
 }
 ]
@@ -1933,11 +1956,13 @@ OK - retrieved the Data View mappings
   "Columns": [
     {
       "Name": "String",
+      "NamespaceId": "String",
       "MappingRule": {},
       "IsKey": "Boolean",
       "DataType": "String"
     }
-  ]
+  ],
+  "IsDefault": "Boolean"
 }
 ```
 
@@ -2017,11 +2042,13 @@ Mappings mappingsDto [FromBody] [Required] [No Default Value]
   "Columns": [
     {
       "Name": "String",
+      "NamespaceId": "String",
       "MappingRule": {},
       "IsKey": "Boolean",
       "DataType": "String"
     }
-  ]
+  ],
+  "IsDefault": "Boolean"
 }
 ```
 
@@ -2453,7 +2480,7 @@ string form [FromQuery] [Required] [No Default Value]
 ```
 
 
-Optional, default is **preserve**. Using **refresh** causes Data View backing resources to be refreshed. See [Retrieving Data](#DataRetrieval)
+Specifies if Data View backing resources are to be refreshed. See [Retrieving Data](DataRetrieval.md)
 ```csharp
 string cache [FromQuery] [Optional] [Default = "refresh"]
 ```

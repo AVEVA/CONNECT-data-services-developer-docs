@@ -4,7 +4,7 @@ uid: DataRetrieval
 
 # Retrieving Data with Data Views
 
-Once the data view is defined and saved, [APIs for Working with Data Views](DataViews_API.md), data can be retrieved from the data view. In the following sections, we will discuss two kinds of useful information that can be obtained from each data view:
+Once the data view is defined and saved, ([see Data Views APIs](DataViews_API.md)), data can be retrieved from the data view. In the following sections, we will discuss two kinds of useful information that can be obtained from each data view:
 * [Resolved data view resources](#metadata)
 * [Data](#data)
 
@@ -13,15 +13,17 @@ Once the data view is defined and saved, [APIs for Working with Data Views](Data
 Data view resources show the selected subset of data in each data view, as defined by the queries and group rules. Data values from the data view directly belong to these resources, so it is important to retrieve and verify that these resources include the data of interest before proceeding to obtain the data values. 
 
 #### Data Items
-A data item is an SdsStream. The collection of data items are defined by the [queries](Queries.md)  property in the data view, where the queries define the search criteria and the data items represent results of the search. Each data item can have one or more properties in the data view data. 
+A data item is an SdsStream. The collection of data items are defined by the [queries](Queries.md)  property in the data view, where the queries define the search criteria and the data items represent results of the search. Each data item can have one or more properties in the data view data.  
 
 #### Data Groups
-Data items can optionally be organized into data groups in order for users to more easily compare similar properties in the same column of a data view. Data groups are defined by the [group rules](GroupRules.md) property in the data view, where the group rules define the grouping criteria and the data groups represent the results of such grouping. Each data group contains one or more data items. The entire collection of data groups contains all data items.
+Data items can optionally be organized into data groups in order for users to more easily compare similar properties in the same column of a data view. Each data group contains one or more data items. The entire collection of data groups contains all data items.
 
+
+Data groups are defined by the [group rules](GroupRules.md) property in the data view, where the group rules define the grouping criteria and the data groups represent the results of such grouping. Any streams that do not meet grouping criteria are consolidated in a single group with a group rule name of "(NoMatch)". 
 #### Data Mappings
 Data mappings are identical to the [mappings](Mappings.md) property in the data view if explicitly defined. Otherwise, a default set of data mappings is generated based on all the properties of all data items, after taking grouping into account. 
 
-In each case, the resource is "resolved" and cached when any of the resources is first accessed on a per data view, per user basis. Subsequent calls to the resources return the cached results, which is evident from the time of resolution property in the returned response. A cache parameter can be included in the request to control whether the resolved resources is to be refreshed. By default, the cache parameter is set to presever the cache for all data view resources endpoints. If there are changes to the underlying streams in SDS, the results will not be updated unless the cache is explicitly refreshed. 
+In each of the Data Items, Data Groups, and Data Mappings, the resource is "resolved" and cached when any of the resources is first accessed on a per data view, per user basis. Subsequent calls to the resources return the cached results, which is evident from the time of resolution property in the returned response. A cache parameter can be included in the request to control whether the resolved resources is to be refreshed. By default, the cache parameter is set to presever the cache for all data view resources endpoints. If there are changes to the underlying streams in SDS, the results will not be updated unless the cache is explicitly refreshed. 
 
 The following APIs are available to retrieve resolved resources of a data view.
 
@@ -92,7 +94,7 @@ Since each data view can contain a large amount of data, the get data call can e
 * NextPage: ...DataViews/DataViewId/Data/Interpolated?count=100&continuationToken=MjAxOC0wMS0wMVQwMDowMDoxMVo_MD90Yk1OblE_QUxXcEZBP1VEdGxIMWJROG9z
 
 #### Index config
-A single data view can serve results with different ranges of indices. Therefore, index config can be overridden using query parameters during a get data call, even if one is specified in the data view. The index config needs to be specified on the first page of data retrieval, and remains the same on subsequent pages to allow correct paging through the entire data collection. If an index config is not specified in either the data view definition or in the query parameter, the default (start index of 24 hours ago, end index of now, with an interval of 1 minute) will be used. 
+A single data view can serve results with different ranges of indices. Therefore, index config can be overridden using query parameters during a get data call, even if one is specified in the data view. The index config needs to be specified on the first page of data retrieval, and remains the same on subsequent pages to allow correct paging through the entire data collection. If an index config is not specified in either the data view definition or in the query parameter, the default (start index of 24 hours ago, end index of current UTC time, with an interval of 1 minute) will be used. 
 
 #### Format
 There are several [data output formats](DataOutputFormats.md) available from the get data call.

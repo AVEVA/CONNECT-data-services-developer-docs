@@ -4,7 +4,7 @@ uid: DataViewsApi
 
 # DataViews
 
-APIs for Working with Data Views
+APIs for Working with Data Views 
 
 ### Properties
 
@@ -173,78 +173,179 @@ OK - retrieved the Data Views (could be an empty array)
 ```json
 [
 {
-  "Id": "String",
-  "Name": "String",
-  "Description": "String",
-  "Queries": [
+  "DataViews": [
     {
       "Id": "String",
-      "NamespaceId": "String",
-      "Query": "String"
-    }
-  ],
-  "GroupRules": [
-    {
-      "Id": "String",
-      "GroupRuleType": "GroupRuleType enumeration",
-      "TokenRules": {
-        "Tokens": [
-          {
-            "Chars": "Char",
-            "Length": "Int32"
-          }
-        ],
-        "Patterns": [
-          {
-            "QueryId": "String",
-            "Name": "String",
-            "Value": "String"
-          }
-        ]
-      }
-    }
-  ],
-  "Mappings": {
-    "TimeOfResolution": "DateTimeOffset",
-    "SharedMappingRules": [
-      {
-        "Id": "String",
-        "Token": "String",
-        "MappingRulePattern": {
-          "PropertyPaths": [
-            {
-              "Chars": "Char",
-              "Length": "Int32"
-            }
-          ],
-          "ItemIdentifier": {
-            "FilterResource": "FilterResource enumeration",
-            "FilterField": "FilterField enumeration",
-            "Name": "String",
-            "Value": "String",
-            "FilterFunction": "FilterFunction enumeration"
+      "Name": "String",
+      "Description": "String",
+      "Queries": [
+        {
+          "Id": "String",
+          "Query": "String"
+        }
+      ],
+      "GroupRules": [
+        {
+          "Id": "String",
+          "GroupRuleType": "GroupRuleType enumeration",
+          "TokenRules": {
+            "Tokens": [
+              {
+                "Chars": "Char",
+                "Length": "Int32"
+              }
+            ],
+            "Patterns": [
+              {
+                "QueryId": "String",
+                "Name": "String",
+                "Value": "String"
+              }
+            ]
           }
         }
+      ],
+      "Mappings": {
+        "TimeOfResolution": "DateTimeOffset",
+        "SharedMappingRules": [
+          {
+            "Id": "String",
+            "Token": "String",
+            "MappingRulePattern": {
+              "PropertyPaths": [
+                {
+                  "Chars": "Char",
+                  "Length": "Int32"
+                }
+              ],
+              "ItemIdentifier": {
+                "FilterResource": "FilterResource enumeration",
+                "FilterField": "FilterField enumeration",
+                "Name": "String",
+                "Value": "String",
+                "FilterFunction": "FilterFunction enumeration"
+              }
+            }
+          }
+        ],
+        "Columns": [
+          {
+            "Name": "String",
+            "MappingRule": {},
+            "IsKey": "Boolean",
+            "DataType": "String"
+          }
+        ],
+        "IsDefault": "Boolean"
+      },
+      "IndexDataType": "IndexDataType enumeration",
+      "IndexConfig": {
+        "StartIndex": "String",
+        "EndIndex": "String",
+        "DataRetrievalMode": "DataRetrievalMode enumeration",
+        "Interval": "String"
       }
-    ],
-    "Columns": [
-      {
-        "Name": "String",
-        "NamespaceId": "String",
-        "MappingRule": {},
-        "IsKey": "Boolean",
-        "DataType": "String"
+    }
+  ]
+}
+]
+```
+
+#### 207
+
+Multi Status - retrieved valid Data Views along with Errors
+
+```json
+[
+{
+  "Errors": [
+    {
+      "OperationId": "String",
+      "Error": "String",
+      "Reason": "String",
+      "Resolution": "String",
+      "AdditionalParameters": [
+        {
+          "Chars": "Char",
+          "Length": "Int32"
+        }
+      ]
+    }
+  ],
+  "DataViews": [
+    {
+      "Id": "String",
+      "Name": "String",
+      "Description": "String",
+      "Queries": [
+        {
+          "Id": "String",
+          "Query": "String"
+        }
+      ],
+      "GroupRules": [
+        {
+          "Id": "String",
+          "GroupRuleType": "GroupRuleType enumeration",
+          "TokenRules": {
+            "Tokens": [
+              {
+                "Chars": "Char",
+                "Length": "Int32"
+              }
+            ],
+            "Patterns": [
+              {
+                "QueryId": "String",
+                "Name": "String",
+                "Value": "String"
+              }
+            ]
+          }
+        }
+      ],
+      "Mappings": {
+        "TimeOfResolution": "DateTimeOffset",
+        "SharedMappingRules": [
+          {
+            "Id": "String",
+            "Token": "String",
+            "MappingRulePattern": {
+              "PropertyPaths": [
+                {
+                  "Chars": "Char",
+                  "Length": "Int32"
+                }
+              ],
+              "ItemIdentifier": {
+                "FilterResource": "FilterResource enumeration",
+                "FilterField": "FilterField enumeration",
+                "Name": "String",
+                "Value": "String",
+                "FilterFunction": "FilterFunction enumeration"
+              }
+            }
+          }
+        ],
+        "Columns": [
+          {
+            "Name": "String",
+            "MappingRule": {},
+            "IsKey": "Boolean",
+            "DataType": "String"
+          }
+        ],
+        "IsDefault": "Boolean"
+      },
+      "IndexDataType": "IndexDataType enumeration",
+      "IndexConfig": {
+        "StartIndex": "String",
+        "EndIndex": "String",
+        "DataRetrievalMode": "DataRetrievalMode enumeration",
+        "Interval": "String"
       }
-    ],
-    "IsDefault": "Boolean"
-  },
-  "IndexDataType": "IndexDataType enumeration",
-  "IndexConfig": {
-    "StartIndex": "String",
-    "EndIndex": "String",
-    "DataRetrievalMode": "DataRetrievalMode enumeration",
-    "Interval": "String"
-  }
+    }
+  ]
 }
 ]
 ```
@@ -301,7 +402,6 @@ OK - retrieved the Data View
   "Queries": [
     {
       "Id": "String",
-      "NamespaceId": "String",
       "Query": "String"
     }
   ],
@@ -352,7 +452,6 @@ OK - retrieved the Data View
     "Columns": [
       {
         "Name": "String",
-        "NamespaceId": "String",
         "MappingRule": {},
         "IsKey": "Boolean",
         "DataType": "String"
@@ -421,7 +520,6 @@ DataViewDefinition dataViewDefinitionDto [FromBody] [Required] [No Default Value
   "Queries": [
     {
       "Id": "String",
-      "NamespaceId": "String",
       "Query": "String"
     }
   ],
@@ -472,7 +570,6 @@ DataViewDefinition dataViewDefinitionDto [FromBody] [Required] [No Default Value
     "Columns": [
       {
         "Name": "String",
-        "NamespaceId": "String",
         "MappingRule": {},
         "IsKey": "Boolean",
         "DataType": "String"
@@ -504,7 +601,6 @@ Successfully created a Data View Definition
   "Queries": [
     {
       "Id": "String",
-      "NamespaceId": "String",
       "Query": "String"
     }
   ],
@@ -555,7 +651,6 @@ Successfully created a Data View Definition
     "Columns": [
       {
         "Name": "String",
-        "NamespaceId": "String",
         "MappingRule": {},
         "IsKey": "Boolean",
         "DataType": "String"
@@ -630,7 +725,6 @@ DataViewDefinition dataViewDefinitionDto [FromBody] [Required] [No Default Value
   "Queries": [
     {
       "Id": "String",
-      "NamespaceId": "String",
       "Query": "String"
     }
   ],
@@ -681,7 +775,6 @@ DataViewDefinition dataViewDefinitionDto [FromBody] [Required] [No Default Value
     "Columns": [
       {
         "Name": "String",
-        "NamespaceId": "String",
         "MappingRule": {},
         "IsKey": "Boolean",
         "DataType": "String"
@@ -713,7 +806,6 @@ Successfully created a Data View Definition
   "Queries": [
     {
       "Id": "String",
-      "NamespaceId": "String",
       "Query": "String"
     }
   ],
@@ -764,7 +856,6 @@ Successfully created a Data View Definition
     "Columns": [
       {
         "Name": "String",
-        "NamespaceId": "String",
         "MappingRule": {},
         "IsKey": "Boolean",
         "DataType": "String"
@@ -844,7 +935,6 @@ DataViewDefinition dataViewDefinitionDto [FromBody] [Required] [No Default Value
   "Queries": [
     {
       "Id": "String",
-      "NamespaceId": "String",
       "Query": "String"
     }
   ],
@@ -895,7 +985,6 @@ DataViewDefinition dataViewDefinitionDto [FromBody] [Required] [No Default Value
     "Columns": [
       {
         "Name": "String",
-        "NamespaceId": "String",
         "MappingRule": {},
         "IsKey": "Boolean",
         "DataType": "String"
@@ -1595,7 +1684,6 @@ OK - retrieved the Data View queries
 [
 {
   "Id": "String",
-  "NamespaceId": "String",
   "Query": "String"
 }
 ]
@@ -1654,7 +1742,6 @@ Updated queries in the request body
 [
 {
   "Id": "String",
-  "NamespaceId": "String",
   "Query": "String"
 }
 ]
@@ -1956,7 +2043,6 @@ OK - retrieved the Data View mappings
   "Columns": [
     {
       "Name": "String",
-      "NamespaceId": "String",
       "MappingRule": {},
       "IsKey": "Boolean",
       "DataType": "String"
@@ -2042,7 +2128,6 @@ Mappings mappingsDto [FromBody] [Required] [No Default Value]
   "Columns": [
     {
       "Name": "String",
-      "NamespaceId": "String",
       "MappingRule": {},
       "IsKey": "Boolean",
       "DataType": "String"

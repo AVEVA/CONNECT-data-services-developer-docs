@@ -4,7 +4,7 @@ uid: DataRetrievalApi
 
 # DataRetrieval
 
-APIs for Retrieving Data
+APIs for Retrieving Data 
 
 ***
 

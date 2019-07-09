@@ -8,14 +8,14 @@ APIs for creating, getting, updating, and deleting Client Credential Clients
 
 ## Properties
 
-For HTTP requests and responses, the ClientCredentialClientDto object has the following properties and JSON-serialized body: 
+For HTTP requests and responses, the ClientCredentialClient object has the following properties and JSON-serialized body: 
 
-Property | Type | Descriptions
+Property | Type | Description
  --- | --- | ---
 RoleIds | Guid[] | List of Roles to be assigned to this client.
-ClientId | string | Client ID for this Client
-Name | string | Name of ClientDto.
-Enabled | optional: bool | Is ClientDto Enabled
+Id | string | Client ID for this Client
+Name | string | Name of Client.
+Enabled | bool | Is Client Enabled
 Tags | string[] | For OSIsoft internal use only
 
 ### Serialized Model
@@ -26,7 +26,7 @@ Tags | string[] | For OSIsoft internal use only
     "00000000-0000-0000-0000-000000000000",
     "00000000-0000-0000-0000-000000000000"
   ],
-  "ClientId": "ClientId",
+  "Id": "Id",
   "Name": "Name",
   "Enabled": false,
   "Tags": [
@@ -44,7 +44,7 @@ Create a Client Credential flow Client
 
 ### Request
 
-`POST api/v1-preview/Tenants/{tenantId}/ClientCredentialClients`
+`POST api/v1/Tenants/{tenantId}/ClientCredentialClients`
 
 ### Parameters
 
@@ -58,20 +58,32 @@ Id of tenant
 ```csharp
 [FromBody]
 [Required]
-ClientCredentialClientCreateDto clientCredentialClientCreateDto
+ClientCredentialClientCreate clientCredentialClientCreate
 ```
 
-New ClientCredentialClientCreateDto object
+New ClientCredentialClientCreate object
+
+Property | Type | Required | Description 
+ --- | --- | --- | ---
+SecretDescription | string | No | Description for the initial secret for the client.
+SecretExpirationDate | DateTime | No | Expiration date for the initial secret for the client.
+RoleIds | Guid[] | No | List of Roles to be assigned to this client.
+Id | string | No | Client ID for this Client.Must be the same as the one in the route
+Name | string | Yes | Name of Client.
+Enabled | bool | No | Is Client Enabled
+Tags | string[] | No | For OSIsoft internal use only
+
+
 
 ```json
 {
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-04-30T11:35:12.3647771-07:00",
+  "SecretExpirationDate": "2019-05-31T14:40:00.9915507-07:00",
   "RoleIds": [
     "00000000-0000-0000-0000-000000000000",
     "00000000-0000-0000-0000-000000000000"
   ],
-  "ClientId": "ClientId",
+  "Id": "Id",
   "Name": "Name",
   "Enabled": false,
   "Tags": [
@@ -95,25 +107,27 @@ Created
 
 ##### Type:
 
- `ClientCredentialClientResponseDto`
+ `ClientResponse<ClientCredentialClient>`
 
 ```json
 {
-  "ClientSecret": "ClientSecret",
-  "SecretId": "SecretId",
-  "SecretDescription": "description",
-  "SecretExpirationDate": "2019-04-30T11:35:12.3673783-07:00",
-  "RoleIds": [
-    "00000000-0000-0000-0000-000000000000",
-    "00000000-0000-0000-0000-000000000000"
-  ],
-  "ClientId": "ClientId",
-  "Name": "Name",
-  "Enabled": false,
-  "Tags": [
-    "String",
-    "String"
-  ]
+  "Secret": "Secret",
+  "Id": 0,
+  "Description": "description",
+  "ExpirationDate": "2019-05-31T14:40:00.9937295-07:00",
+  "Client": {
+    "RoleIds": [
+      "00000000-0000-0000-0000-000000000000",
+      "00000000-0000-0000-0000-000000000000"
+    ],
+    "Id": "Id",
+    "Name": "Name",
+    "Enabled": false,
+    "Tags": [
+      "String",
+      "String"
+    ]
+  }
 }
 ```
 
@@ -148,7 +162,7 @@ Update a Client Credential Client
 
 ### Request
 
-`PUT api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}`
+`PUT api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}`
 
 ### Parameters
 
@@ -169,10 +183,20 @@ Id of client
 ```csharp
 [FromBody]
 [Required]
-ClientCredentialClientDto updatedClientCredentialClientDto
+ClientCredentialClient updatedClientCredentialClient
 ```
 
 Updated Client Credential Client values
+
+Property | Type | Required | Description 
+ --- | --- | --- | ---
+RoleIds | Guid[] | No | List of Roles to be assigned to this client.
+Id | string | No | Client ID for this Client. Must be the same as the Id in the route.
+Name | string | Yes | Name of Client.
+Enabled | bool | No | Is Client Enabled
+Tags | string[] | No | For OSIsoft internal use only
+
+
 
 ```json
 {
@@ -180,7 +204,7 @@ Updated Client Credential Client values
     "00000000-0000-0000-0000-000000000000",
     "00000000-0000-0000-0000-000000000000"
   ],
-  "ClientId": "ClientId",
+  "Id": "Id",
   "Name": "Name",
   "Enabled": false,
   "Tags": [
@@ -204,7 +228,7 @@ Success
 
 ##### Type:
 
- `ClientCredentialClientDto`
+ `ClientCredentialClient`
 
 ```json
 {
@@ -212,7 +236,7 @@ Success
     "00000000-0000-0000-0000-000000000000",
     "00000000-0000-0000-0000-000000000000"
   ],
-  "ClientId": "ClientId",
+  "Id": "Id",
   "Name": "Name",
   "Enabled": false,
   "Tags": [
@@ -249,7 +273,7 @@ Get a Client Credential Client
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}`
+`GET api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}`
 
 ### Parameters
 
@@ -282,7 +306,7 @@ Success
 
 ##### Type:
 
- `ClientCredentialClientDto`
+ `ClientCredentialClient`
 
 ```json
 {
@@ -290,7 +314,7 @@ Success
     "00000000-0000-0000-0000-000000000000",
     "00000000-0000-0000-0000-000000000000"
   ],
-  "ClientId": "ClientId",
+  "Id": "Id",
   "Name": "Name",
   "Enabled": false,
   "Tags": [
@@ -323,7 +347,7 @@ Get all Client Credential Clients
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/ClientCredentialClients`
+`GET api/v1/Tenants/{tenantId}/ClientCredentialClients`
 
 ### Parameters
 
@@ -338,7 +362,7 @@ Id of tenant
 [FromQuery]
 [Optional]
 [Default = ""]
-string[] tags
+string[] tag
 ```
 
 Only return Clients that have these tags.
@@ -385,7 +409,7 @@ Success
 
 ##### Type:
 
- `List[ClientCredentialClientDto]`
+ `List[ClientCredentialClient]`
 
 ```json
 [
@@ -394,7 +418,7 @@ Success
       "00000000-0000-0000-0000-000000000000",
       "00000000-0000-0000-0000-000000000000"
     ],
-    "ClientId": "ClientId",
+    "Id": "Id",
     "Name": "Name",
     "Enabled": false,
     "Tags": [
@@ -407,7 +431,7 @@ Success
       "00000000-0000-0000-0000-000000000000",
       "00000000-0000-0000-0000-000000000000"
     ],
-    "ClientId": "ClientId",
+    "Id": "Id",
     "Name": "Name",
     "Enabled": false,
     "Tags": [
@@ -424,7 +448,7 @@ Partial success.
 
 ##### Type:
 
- `MultiStatusResponseDto[List[ClientCredentialClientDto]]`
+ `MultiStatusResponse<ClientCredentialClient>`
 
 ```json
 {
@@ -433,26 +457,20 @@ Partial success.
   "Reason": "Reason",
   "ChildErrors": [
     {
+      "StatusCode": 0,
+      "ModelId": "ModelId",
       "OperationId": "OperationId",
       "Error": "Error",
       "Reason": "Reason",
-      "Resolution": "Resolution",
-      "StatusCode": 0,
-      "ModelId": {
-        "String": "String"
-      },
-      "TenantId": "00000000-0000-0000-0000-000000000000"
+      "Resolution": "Resolution"
     },
     {
+      "StatusCode": 0,
+      "ModelId": "ModelId",
       "OperationId": "OperationId",
       "Error": "Error",
       "Reason": "Reason",
-      "Resolution": "Resolution",
-      "StatusCode": 0,
-      "ModelId": {
-        "String": "String"
-      },
-      "TenantId": "00000000-0000-0000-0000-000000000000"
+      "Resolution": "Resolution"
     }
   ],
   "Data": [
@@ -461,7 +479,7 @@ Partial success.
         "00000000-0000-0000-0000-000000000000",
         "00000000-0000-0000-0000-000000000000"
       ],
-      "ClientId": "ClientId",
+      "Id": "Id",
       "Name": "Name",
       "Enabled": false,
       "Tags": [
@@ -474,7 +492,7 @@ Partial success.
         "00000000-0000-0000-0000-000000000000",
         "00000000-0000-0000-0000-000000000000"
       ],
-      "ClientId": "ClientId",
+      "Id": "Id",
       "Name": "Name",
       "Enabled": false,
       "Tags": [
@@ -509,7 +527,7 @@ Delete a Client Credential Client
 
 ### Request
 
-`DELETE api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}`
+`DELETE api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}`
 
 ### Parameters
 

@@ -2,23 +2,23 @@
 sorted: true
 references:
 - uid: accessControl
-  name: 'Role-based access control '
+  name: Role-based access control
   href: Documentation/Access_Control.html
-- uid: AccountClientRole
+- uid: AccountClientRole_1
   name: Client Roles
-  href: Documentation/Management/Account_ClientRole.html
-- uid: AccountNamespace
+  href: Documentation/Management/Account_ClientRole_1.html
+- uid: AccountManagementOverview
+  name: Account Management
+  href: Documentation/Management/Management_Overview.html
+- uid: AccountNamespace_1
   name: Namespaces
-  href: Documentation/Management/Account_Namespace.html
-- uid: AccountNamespaceTier
-  name: Namespace Tiers
-  href: Documentation/Management/Account_NamespaceTier.html
-- uid: AccountRole
+  href: Documentation/Management/Account_Namespace_1.html
+- uid: AccountRole_1
   name: Roles
-  href: Documentation/Management/Account_Role.html
-- uid: AccountRootAccessControl
+  href: Documentation/Management/Account_Role_1.html
+- uid: AccountRootAccessControl_1
   name: Root AccessControl
-  href: Documentation/Management/Account_RootAccessControl.html
+  href: Documentation/Management/Account_RootAccessControl_1.html
 - uid: AccountServiceBlog
   name: Service Blog
   href: Documentation/Management/Account_ServiceBlog.html
@@ -28,9 +28,9 @@ references:
 - uid: AccountTenantFeatureState
   name: Tenant Feature States
   href: Documentation/Management/Account_TenantFeatureState.html
-- uid: AccountUserRole
+- uid: AccountUserRole_1
   name: User Roles
-  href: Documentation/Management/Account_UserRole.html
+  href: Documentation/Management/Account_UserRole_1.html
 - uid: dataIngress
   name: Data Ingress and OSIsoft Message Format
   href: Documentation/DataIngress/Data_Ingress.html
@@ -46,9 +46,6 @@ references:
 - uid: identityAzureActiveDirectoryTenant
   name: AzureActiveDirectoryTenant
   href: Documentation/Identity/Identity_AzureActiveDirectoryTenant.html
-- uid: identityClient
-  name: Client
-  href: Documentation/Identity/Identity_Client.html
 - uid: identityClientCredentialClient
   name: ClientCredentialClient
   href: Documentation/Identity/Identity_ClientCredentialClient.html
@@ -85,9 +82,6 @@ references:
 - uid: Introduction
   name: Introduction to Data Views
   href: Documentation/DataViews/Introduction.html
-- uid: ManagementOverview
-  name: Account Management
-  href: Documentation/Management/Management_Overview.html
 - uid: Mappings
   name: Mappings
   href: Documentation/DataViews/Mappings.html
@@ -98,7 +92,7 @@ references:
   name: 'Subscriptions '
   href: Documentation/DataIngress/OMF_Ingress_Subscriptions.html
 - uid: omfIngressToOCS
-  name: Data ingress to Cloud Services using OMF
+  name: Data Ingress to Cloud Services using OMF
   href: Documentation/DataIngress/OMF_Ingress_to_OCS.html
 - uid: omfIngressTopics
   name: 'Topics '
@@ -124,9 +118,6 @@ references:
 - uid: sdsIndexes
   name: Indexes
   href: Documentation/SequentialDataStore/indexes.html
-- uid: sdsIntroduction
-  name: Introducing the Sequential Data Store
-  href: Documentation/SequentialDataStore/Introducing_SDS.html
 - uid: sdsQuickStart
   name: Quick Start
   href: Documentation/SequentialDataStore/Quick_Start.html

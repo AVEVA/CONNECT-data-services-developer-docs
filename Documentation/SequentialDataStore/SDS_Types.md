@@ -21,7 +21,7 @@ Indexes are discussed in greater detail here: [Indexes](xref:sdsIndexes)
 
 When defining a type, consider how the events will be represented in a stream. The SdsType defines 
 each event in the stream. An event is a single unit whose properties have values that relate to the 
-index; that is, each property of an SdsType event is related to the event’s index. Each event is a single unit.
+index; that is, each property of an SdsType event is related to the event's index. Each event is a single unit.
 
 An SdsType is referenced by its identifier or Id field. SdsType identifiers must be unique within a Namespace.
 
@@ -182,41 +182,43 @@ VersionArray            | 222
 ## Interpolation
 
 Interpolation determines how a stream behaves when asked to return an event at an index between 
-two existing events. InterpolationMode determines how the returned event is constructed. The table 
+two existing events. InterpolationMode determines how the returned event is constructed. SDS provides 
+multiple ways to set the interpolation mode to get the desired behavior. The table 
 below lists InterpolationModes:
 
 |Mode                       |Enumeration value |Operation |
 |---------------------------|------------------|----------|
 |Default                    |0                 |The default InterpolationMode is Continuous |
-|Continuous                 |0                 |Interpolates the data using previous and next index values | 
+|Continuous                 |0                 |Returns interpolated data using previous and next index values | 
 |StepwiseContinuousLeading  |1                 |Returns the data from the previous index  |
 |StepwiseContinuousTrailing |2                 |Returns the data from the next index |
-|Discrete                   |3                 |Returns ‘null’ |
+|Discrete                   |3                 |No event is returned |
+|ContinuousNullableLeading  |4                 |Returns interpolated data or data from the previous index if either of the surrounding indexes has a null value|
+|ContinuousNullableTrailing |5                 |Returns interpolated data or data from the trailing index if either of the surrounding indexes has a null value|
 
-Note that ``Continuous`` cannot return events for values that cannot be interpolated, such as when the type is not numeric.
+Note that `Continuous` cannot return values for type properties that cannot be interpolated, such as when the type property is not numeric. 
 
 The table below describes how the **Continuous InterpolationMode** affects
-indexes that occur between data in a stream:
-
+properties that occur between data in a stream:
 **InterpolationMode = Continuous or Default**
 
-| Type                      | Result for an index between data in a stream  | Comment |
-|---------------------------|-----------------------------------------------|---------|
+| Property Type             | Result for a property for an index between data in a stream  | Comment |
+|---------------------------|--------------------------------------------------------------|---------|
 |Numeric Types              |Interpolated*                   |Rounding is done as needed for integer types |
 |Time related Types         |Interpolated                    |DateTime, DateTimeOffset, TimeSpan |
 |Nullable Types             |Interpolated**                  |Limited support for nullable numeric types |
-|Array and List Types       |No event is returned            |         |
-|String Type                |No event is returned            |         |
+|Array and List Types       |Default value                   |         |
+|String Type                |Default value                   |         |
 |Boolean Type               |Returns value of nearest index  |         |
 |Enumeration Types          |Returns Enum value at 0         |This may have a value for the enumeration |
-|GUID                       |No event is returned            |         |
-|Version                    |No event is returned            |         |
-|IDictionary or IEnumerable |No event is returned            |Dictionary, Array, List, and so on. |
+|GUID                       |Default value                   |         |
+|Version                    |Default value                   |         |
+|IDictionary or IEnumerable |Default value                   |Dictionary, Array, List, and so on. |
 
 *When extreme values are involved in an interpolation (for example
 Decimal.MaxValue) the call might result in a BadRequest exception.
 
-\**Nullable types are interpolated in the same manner as their non-nulllable equivalents as long as the values surrounding the desired interpolation index are non-null. If either of the values are null, the interpolated value will be null.
+\**For the `Continuous` interpolation mode, Nullable types are interpolated in the same manner as their non-nulllable equivalents as long as the values surrounding the desired interpolation index are non-null. If either of the values are null, the interpolated value will be null.
 
 If the InterpolationMode is not assigned, the events are interpolated in the default manner, unless the interpolation 
 mode is overridden in the SdsTypeProperty or the SdsStream. For more information on overriding the interpolation mode 
@@ -295,28 +297,26 @@ are not included are reserved for internal SDS use.
 | Uom                       | String                  | Optional    | Unit of Measure of the property |
 
 
-The SdsTypeProperty’s identifier follows the same rules as the SdsType’s identifier.
+The SdsTypeProperty's identifier follows the same rules as the SdsType's identifier.
 
-IsKey is a Boolean value used to identify the SdsType’s Key. A Key defined by more than one 
+IsKey is a Boolean value used to identify the SdsType's Key. A Key defined by more than one 
 Property is called a compound key. The maximum number of Properties that can define a compound key is three. 
 
 In a compound key, each Property that is included in the 
 Key is specified as IsKey. The Order field defines the precedence of fields applied to the Index.
 
 The Value field is used for properties that represent a value. An example of a property with a 
-value is an enum’s named constant. When representing an enum in a SdsType, the SdsType’s 
-Properties collection defines the enum’s constant list. The SdsTypeProperty’s Identifier represents 
-the constant’s name and the SdsTypeProperty’s Value represents the constant’s value (see the enum State definitions below).
+value is an enum's named constant. When representing an enum in a SdsType, the SdsType's 
+Properties collection defines the enum's constant list. The SdsTypeProperty's Identifier represents 
+the constant's name and the SdsTypeProperty's Value represents the constant's value (see the enum State definitions below).
 
 InterpolationMode is assigned when the Property of the event should be interpolated in a specific way 
 that differs from the InterpolationMode of the SdsType. InterpolationMode is only applied to a Property 
 that is not part of the Index. If the InterpolationMode is not set, the Property is are interpolated 
-in the manner defined by the SdsType’s IntepolationMode.
+in the manner defined by the SdsType's IntepolationMode.
 
-
-An SdsType with the InterpolationMode set to ``Discrete`` cannot have a Property with an InteroplationMode. 
+An SdsType with the InterpolationMode set to `Discrete` cannot have a Property with an InteroplationMode. 
 For more information on interpolation of events see [Interpolation](#interpolation).
-
 
 Uom is the unit of measure for the Property. The Uom of a Property may be specified by the name or the 
 abbreviation. The names and abbreviations of Uoms are case sensitive. 
@@ -430,7 +430,7 @@ refers to the following types and are defined in
 [JavaScript](https://github.com/osisoft/OCS-Samples/tree/master/basic_samples/SDS/JavaScript) samples. 
 Samples in other languages can be found here: [Samples](https://github.com/osisoft/OCS-Samples/tree/master/basic_samples).
 
-In the sample code, ``SdsType``, ``SdsTypeProperty``, and ``SdsTypeCode`` are defined as in the code snippets shown here:
+In the sample code, SdsType, SdsTypeProperty, and SdsTypeCode are defined as in the code snippets shown here:
 
 **Python**
 ```python
@@ -900,7 +900,7 @@ Note that the base type's Id can also be changed, if necessary, to be more meani
 
 The REST APIs provide programmatic access to read and write SDS data. The APIs in this section 
 interact with SdsTypes. When working in .NET, convenient SDS Client Libraries are available. 
-The ISdsMetadataService interface, accessed using the ``SdsService.GetMetadataService()`` helper, 
+The ISdsMetadataService interface, accessed using the `SdsService.GetMetadataService()` helper, 
 defines the available functions. See [Types](#types) for general SdsType information.
 
 
@@ -912,7 +912,7 @@ Returns the type corresponding to the specified typeId within a given namespace.
 
 **Request**
  ```text
-	GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
+	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
  ```
 
 
@@ -999,11 +999,11 @@ Content-Type: application/json
 
 ## `Get Type Reference Count`
 
-Returns a dictionary mapping the object name to the number of references held by streams, stream views and parent types for the specified type. See [Streams](xref:sdsstreams) and [Steam Views](xref:sdsStreamViews) for more information on the use of types to define streams and stream views. For further details about type referencing please see: [Type Reusability](#type-reusability).
+Returns a dictionary mapping the object name to the number of references held by streams, stream views and parent types for the specified type. See [Streams](xref:sdsStreams) and [Steam Views](xref:sdsStreamViews) for more information on the use of types to define streams and stream views. For further details about type referencing please see: [Type Reusability](#type-reusability).
 
 **Request**
  ```text
-	GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/ReferenceCount
+	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/ReferenceCount
  ```
 
 **Parameters**  
@@ -1052,7 +1052,7 @@ Note that the results will also include types that were automatically created by
 
 **Request**
  ```text
-	GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types?query={query}&skip={skip}&count={count}&orderby={orderby}
+	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types?query={query}&skip={skip}&count={count}&orderby={orderby}
  ```
 
 **Parameters**  
@@ -1172,7 +1172,7 @@ redirect with the authorization header, you should disable automatic redirect an
 
 **Request**
  ```text
-	POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
+	POST api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
  ```
 
 **Parameters**
@@ -1401,7 +1401,7 @@ Deletes a type from the specified tenant and namespace. Note that a type cannot 
 
 **Request**
  ```text
-	DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
+	DELETE api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
  ```
 
 **Parameters**
@@ -1427,11 +1427,11 @@ The response includes a status code.
 
 ## `Get Types Access Control List`
 
-Get the default ACL for the Types collection. For more information on ACLs, see [Access Control](xref:accesscontrol).
+Get the default ACL for the Types collection. For more information on ACLs, see [Access Control](xref:accessControl).
 
 **Request**
  ```text
-	GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/AccessControl
+	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/AccessControl
  ```
 
 **Parameters**
@@ -1456,11 +1456,11 @@ The default ACL for Types
 
 ## `Update Types Access Control List`
 
-Update the default ACL for the Types collection. For more information on ACLs, see [Access Control](xref:accesscontrol).
+Update the default ACL for the Types collection. For more information on ACLs, see [Access Control](xref:accessControl).
 
 **Request**
  ```text
-	PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/AccessControl
+	PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/AccessControl
  ```
 
 **Parameters**
@@ -1486,11 +1486,11 @@ The response includes a status code.
 
 ## `Get Type Access Control List`
 
-Get the ACL of the specified type. For more information on ACLs, see [Access Control](xref:accesscontrol).
+Get the ACL of the specified type. For more information on ACLs, see [Access Control](xref:accessControl).
 
 **Request**
  ```text
-	GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessControl
+	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessControl
  ```
 
 **Parameters**
@@ -1518,13 +1518,13 @@ The ACL for the specified type
 
 ## `Update Type Access Control List`
 
-Update the ACL of the specified type. For more information on ACLs, see [Access Control](xref:accesscontrol).
+Update the ACL of the specified type. For more information on ACLs, see [Access Control](xref:accessControl).
 
 Note that this does not update the ACL for the associated types. For further details about type referencing please see: [Type Reusability](#type-reusability).
 
 **Request**
  ```text
-	PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessControl
+	PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessControl
  ```
 
 **Parameters**
@@ -1552,11 +1552,11 @@ The response includes a status code.
 
 ## `Get Type Owner`
 
-Get the Owner of the specified type. For more information on Owners, see [Access Control](xref:accesscontrol).
+Get the Owner of the specified type. For more information on Owners, see [Access Control](xref:accessControl).
 
 **Request**
  ```text
-	GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Owner
+	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Owner
  ```
 
 **Parameters**
@@ -1584,13 +1584,13 @@ The Owner for the specified type
 
 ## `Update Type Owner`
 
-Update the Owner of the specified type. For more information on Owners, see [Access Control](xref:accesscontrol).
+Update the Owner of the specified type. For more information on Owners, see [Access Control](xref:accessControl).
 
 Note that this does not update the Owner for the associated types. For further details about type referencing please see: [Type Reusability](#type-reusability).
 
 **Request**
  ```text
-	PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Owner
+	PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Owner
  ```
 
 **Parameters**

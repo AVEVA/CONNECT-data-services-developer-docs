@@ -37,7 +37,7 @@ Subscription information is contained in an object called Subscription which has
 
 *****************
 
-``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions?skip={skip}&count={count}``
+``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions``
 ---------------------------------------------
 
 Get all Subscriptions for a tenant. 
@@ -48,10 +48,6 @@ Get all Subscriptions for a tenant.
   Unique Id for the tenant. 
 ``namespaceId``
   Unique Id for the namespace. 
-``skip``
-  An optional parameter representing the zero-based offset of the first Subscription to retrieve. If not specified, a default value of 0 is used. 
-``count``
-  An optional parameter representing the maximum number of Subscriptions to retrieve. If not specified, a default value of 100 is used.
 
 **Returns**
 

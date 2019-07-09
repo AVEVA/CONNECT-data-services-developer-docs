@@ -38,7 +38,7 @@ Topic information is contained in an object called ``Topic`` and has the followi
 
 **************************
 
-``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics?skip={skip}&count={count}``
+``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics``
 -------------------------------------------
 
 Get all Topics for a tenant. 
@@ -49,10 +49,6 @@ Get all Topics for a tenant.
   Unique Id for the tenant. 
 ``namespaceId``
   Unique Id for the namespace.
-``skip``
-  An optional parameter representing the zero-based offset of the first topic to retrieve. If not specified, a default value of 0 is used. 
-``count``
-  An optional parameter representing the maximum number of topics to retrieve. If not specified, a default value of 100 is used.
 
 **Returns**
 
@@ -80,7 +76,7 @@ A Topic object.
 
 ************************
 
-``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/subscriptions?skip={skip}&count={count}``
+``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/subscriptions``
 -------------------------------------------
 
 Get all Subscriptions across all namespaces mapped to a Topic.
@@ -93,10 +89,6 @@ Get all Subscriptions across all namespaces mapped to a Topic.
   Unique Id for the namespace of the Topic.
 ``topicId``
   Unique Id for the Topic.
-``skip``
-  An optional parameter representing the zero-based offset of the first Subscription mapped to a Topic to retrieve. If not specified, a default value of 0 is used. 
-``count``
-  An optional parameter representing the maximum number of Subscriptions mapped to a Topic to retrieve. If not specified, a default value of 100 is used.
 
 **Returns**
 

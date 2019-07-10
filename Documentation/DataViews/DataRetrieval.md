@@ -23,7 +23,7 @@ Data groups are defined by the [group rules](GroupRules.md) property in the data
 #### Data Mappings
 Data mappings are identical to the [mappings](Mappings.md) property in the data view if explicitly defined. Otherwise, a default set of data mappings is generated based on all the properties of all data items, after taking grouping into account. 
 
-In each of the Data Items, Data Groups, and Data Mappings, the resource is "resolved" and cached when any of the resources is first accessed on a per data view, per user basis. Subsequent calls to the resources return the cached results, which is evident from the time of resolution property in the returned response. A cache parameter can be included in the request to control whether the resolved resources is to be refreshed. By default, the cache parameter is set to presever the cache for all data view resources endpoints. If there are changes to the underlying streams in SDS, the results will not be updated unless the cache is explicitly refreshed. 
+In each of the Data Items, Data Groups, and Data Mappings, the resource is "resolved" and cached when any of the resources is first accessed on a per data view, per user basis. Subsequent calls to the resources return the cached results, which is evident from the time of resolution property in the returned response. A cache parameter can be included in the request to control whether the resolved resources are to be refreshed. By default, the cache parameter is set to presever the cache for all data view resources endpoints. If there are changes to the underlying streams in SDS, the results will not be updated unless the cache is explicitly refreshed. 
 
 The following APIs are available to retrieve resolved resources of a data view.
 
@@ -74,7 +74,7 @@ Results from the get data groups and data items API calls can be quite large. Li
 
 ## <a name="data">`Data View Data` </a>
 
-Retrieving data involves retrieving data values from the optionally grouped data items defined in the data view. The [mappings](Mappings.md) in the data view define the sources of data in each column, whereas the [index config](IndexConfig.md) and index data type define what data values populate each row. 
+Retrieving data involves retrieving data values from the optionally grouped data items defined in the data view. The [mappings](Mappings.md) in the data view define the sources of data in each column, whereas the [index config](IndexConfig.md) and index data type define which data values populate each row. 
 
 Currently, only datetime interpolated data is supported. 
 

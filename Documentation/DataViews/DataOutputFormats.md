@@ -4,7 +4,7 @@ uid: DataOutputFormats
 
 # Data Output Formats
 
-Data View Data can be viewed in the following formats: [default](#default), [table](#table) and [csv](#csv). Table and csv also have the option of including headers. Provide the output format using in the form parameter in Data call parameter list.
+Data View Data can be viewed in the following formats: [default](#default), [table](#table) and [csv](#csv). Table and csv also have the option of including headers. Provide the output format using the form parameter in Data call parameter list.
 
 ## <a name="default">`Default Format` </a>
 
@@ -38,7 +38,7 @@ The following is a request to retrieve Data using the default output
 ## <a name="table">`Table Output Format` </a>
 
 
-The following is a request to retrieve Data in a Table format with out headers
+The following is a request to retrieve Data in a Table format without headers
  ```text
       GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataView/Simple/Data/Interpolated
       /form=table
@@ -145,7 +145,7 @@ The following response would be returned from the above code:
 
 ## <a name="csv">`CSV Output Format` </a>
 
-The following is a request to retrieve Data in a csv format with out headers
+The following is a request to retrieve Data in a csv format without headers
  ```text
       GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataView/Simple/Data?Interpolated
       ?form=csv

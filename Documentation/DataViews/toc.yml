@@ -1,12 +1,21 @@
 - name: Introduction
   href: Introduction.md
-- name: Data Views API
-  href: DataViews_API.md
 - name: Queries
   href: Queries.md
-- name: Mappings
-  href: Mappings.md
 - name: Group Rules
   href: GroupRules.md
+- name: Mappings
+  href: Mappings.md
 - name: Index Config
   href: IndexConfig.md
+- name: Data Views API
+  href: DataViews_API.md
+- name: Data Retrival
+  href: DataRetrieval.md
+- name: Data Retrival API
+  href: DataRetrieval_API.md
+- name: DataOutput Formats
+  href: DataOutputFormats.md
+
+
+  

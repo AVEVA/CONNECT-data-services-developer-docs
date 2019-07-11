@@ -91,6 +91,12 @@
 </thead>
 <tbody>
 <tr>
+<td>TimeOfResolution</td>
+<td>optional: DateTimeOffset</td>
+<td>False</td>
+<td>Time when the data view instance was resolved</td>
+</tr>
+<tr>
 <td>SharedMappingRules</td>
 <td>[SharedMappingRule]</td>
 <td>False</td>
@@ -101,12 +107,6 @@
 <td>[Column]</td>
 <td>False</td>
 <td>Columns in your Data View</td>
-</tr>
-<tr>
-<td>IsDefault</td>
-<td>bool</td>
-<td>False</td>
-<td>Determines whether default parameters should be used</td>
 </tr>
 </tbody>
 </table>
@@ -171,7 +171,7 @@
 </tbody>
 </table>
 <h2 id="itemidentifier"><code>ItemIdentifier</code></h2>
-<p> The FilterUnit identifies the property that the user wants to select with a <a href="#propertymappingrule">PropertyMappingRule</a>.</p>
+<p> The FilterUnit identifies the property that the user wants to select with a <a href="#MappingRule">PropertyMappingRule</a>.</p>
 <h3 id="properties-3">Properties</h3>
 <table>
 <thead>
@@ -332,12 +332,6 @@
 <td>string</td>
 <td>True</td>
 <td>Name to be displayed for the column</td>
-</tr>
-<tr>
-<td>NamespaceId</td>
-<td>string</td>
-<td>False</td>
-<td></td>
 </tr>
 <tr>
 <td>MappingRule</td>

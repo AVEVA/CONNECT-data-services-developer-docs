@@ -128,17 +128,13 @@ messages are stored for later consumption in OCS databases. See OMF documentatio
 </tbody>
 </table>
 <hr>
-<h2 id="get-apiv1tenantstenantidnamespacesnamespaceidtopicsskipskipcountcount"><code>GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics?skip={skip}&amp;count={count}</code></h2>
+<h2 id="get-apiv1tenantstenantidnamespacesnamespaceidtopics"><code>GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics</code></h2>
 <p>Get all Topics for a tenant. </p>
 <p><strong>Parameters</strong></p>
 <p><code>tenantId</code>
   Unique Id for the tenant. 
 <code>namespaceId</code>
-  Unique Id for the namespace.
-<code>skip</code>
-  An optional parameter representing the zero-based offset of the first topic to retrieve. If not specified, a default value of 0 is used. 
-<code>count</code>
-  An optional parameter representing the maximum number of topics to retrieve. If not specified, a default value of 100 is used.</p>
+  Unique Id for the namespace.</p>
 <p><strong>Returns</strong></p>
 <p>An array of Topic objects. </p>
 <hr>
@@ -154,7 +150,7 @@ messages are stored for later consumption in OCS databases. See OMF documentatio
 <p><strong>Returns</strong></p>
 <p>A Topic object. </p>
 <hr>
-<h2 id="get-apiv1tenantstenantidnamespacesnamespaceidtopicstopicidsubscriptionsskipskipcountcount"><code>GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/subscriptions?skip={skip}&amp;count={count}</code></h2>
+<h2 id="get-apiv1tenantstenantidnamespacesnamespaceidtopicstopicidsubscriptions"><code>GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/subscriptions</code></h2>
 <p>Get all Subscriptions across all namespaces mapped to a Topic.</p>
 <p><strong>Parameters</strong></p>
 <p><code>tenantId</code>
@@ -162,11 +158,7 @@ messages are stored for later consumption in OCS databases. See OMF documentatio
 <code>namespaceId</code>
   Unique Id for the namespace of the Topic.
 <code>topicId</code>
-  Unique Id for the Topic.
-<code>skip</code>
-  An optional parameter representing the zero-based offset of the first Subscription mapped to a Topic to retrieve. If not specified, a default value of 0 is used. 
-<code>count</code>
-  An optional parameter representing the maximum number of Subscriptions mapped to a Topic to retrieve. If not specified, a default value of 100 is used.</p>
+  Unique Id for the Topic.</p>
 <p><strong>Returns</strong></p>
 <p>An array of Subscription objects. </p>
 <hr>

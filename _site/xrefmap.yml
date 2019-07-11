@@ -34,6 +34,15 @@ references:
 - uid: dataIngress
   name: Data Ingress and OSIsoft Message Format
   href: Documentation/DataIngress/Data_Ingress.html
+- uid: DataOutputFormats
+  name: Data Output Formats
+  href: Documentation/DataViews/DataOutputFormats.html
+- uid: DataRetrieval
+  name: Retrieving Data with Data Views
+  href: Documentation/DataViews/DataRetrieval.html
+- uid: DataRetrievalApi
+  name: DataRetrieval
+  href: Documentation/DataViews/DataRetrieval_API.html
 - uid: DataViewsApi
   name: DataViews
   href: Documentation/DataViews/DataViews_API.html

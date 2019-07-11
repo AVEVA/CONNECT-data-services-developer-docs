@@ -1,0 +1,486 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>DataRetrieval </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="DataRetrieval ">
+    <meta name="generator" content="docfx 2.39.2.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../../index.html" width="46">
+                <img id="logo" src="../../Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="DataRetrievalApi">
+<h1 id="dataretrieval">DataRetrieval</h1>
+
+<p>APIs for Retrieving Data </p>
+<hr>
+<h2 id="get-data-view-data"><code>Get Data View Data</code></h2>
+<p>Get data for the provided index parameters with paging</p>
+<h3 id="request">Request</h3>
+<p><code>GET api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/data/interpolated</code></p>
+<h3 id="parameters">Parameters</h3>
+<p>Id of tenant</p>
+<pre><code class="lang-csharp">string tenantId  [Required] [No Default Value]
+</code></pre><p>Id of namespace</p>
+<pre><code class="lang-csharp">string namespaceId  [Required] [No Default Value]
+</code></pre><p>Id of dataview</p>
+<pre><code class="lang-csharp">string id  [Required] [No Default Value]
+</code></pre><p>Specifies beginning index. The default value is specified by the <a href="DataViews_API.html">IndexDataType</a>.</p>
+<pre><code class="lang-csharp">string startIndex [FromQuery] [Required] [No Default Value]
+</code></pre><p>Specifies end index. The default value is specified by the <a href="DataViews_API.html">IndexDataType</a>.</p>
+<pre><code class="lang-csharp">string endIndex [FromQuery] [Required] [No Default Value]
+</code></pre><p>Specifies data retrieval interval. The default value is specified in the <a href="IndexConfig.html">Index Config</a>.</p>
+<pre><code class="lang-csharp">string interval [FromQuery] [Required] [No Default Value]
+</code></pre><p>Specifies the data <a href="DataOutputFormats.html">output format</a>. Output formats: default, table, tableh, csv, csvh</p>
+<pre><code class="lang-csharp">string form [FromQuery] [Required] [No Default Value]
+</code></pre><p>Not used on the first data call. Afterwards, a continuationToken is provided in the NextPage HTTP response header. It contains all necessary information for the next page of data such as index config and resolved resources.</p>
+<pre><code class="lang-csharp">string continuationToken [FromQuery] [Required] [No Default Value]
+</code></pre><p>Specifies if Data View backing resources are to be refreshed. Used only on the first data call. Ignored if used with the continuationToken.</p>
+<pre><code class="lang-csharp">string cache [FromQuery] [Optional] [Default = &quot;refresh&quot;]
+</code></pre><p>Specifies the total count of retrieved events. The default value is 1000. The maximum is 250,000.</p>
+<pre><code class="lang-csharp">Int32 count [FromQuery] [Optional] [Default = 1000]
+</code></pre><h3 id="returns">Returns</h3>
+<h4 id="200">200</h4>
+<p>Successfully retrieved data</p>
+<pre><code class="lang-json">
+Time,Temperature,Flowrate,Volume
+2018-01-01T00:00:00Z,24,44,245
+2018-01-01T00:00:01Z,24,44,245
+2018-01-01T00:00:02Z,24,44,245
+</code></pre><h4 id="400">400</h4>
+<p>Bad request</p>
+<h4 id="403">403</h4>
+<p>Unauthorized</p>
+<h4 id="404">404</h4>
+<p>Specified data view Id not found</p>
+<h4 id="500">500</h4>
+<p>Internal server error</p>
+<hr>
+<h2 id="get-data-groups"><code>Get Data Groups</code></h2>
+<p>Get Data Groups for a specified Data View</p>
+<h3 id="request-1">Request</h3>
+<p><code>GET api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/datagroups</code></p>
+<h3 id="parameters-1">Parameters</h3>
+<p>Id of tenant</p>
+<pre><code class="lang-csharp">string tenantId  [Required] [No Default Value]
+</code></pre><p>Id of namespace</p>
+<pre><code class="lang-csharp">string namespaceId  [Required] [No Default Value]
+</code></pre><p>Id of dataview</p>
+<pre><code class="lang-csharp">string id  [Required] [No Default Value]
+</code></pre><p>Specifies if Data View backing resources are to be refreshed. See <a href="DataRetrieval.html">Retrieving Data</a></p>
+<pre><code class="lang-csharp">string cache [FromQuery] [Optional] [Default = &quot;preserve&quot;]
+</code></pre><p>The number of data groups to skip</p>
+<pre><code class="lang-csharp">Int32 skip [FromQuery] [Optional] [Default = 0]
+</code></pre><p>The number of data groups to display per page. Maximum count allowed is 1000</p>
+<pre><code class="lang-csharp">Int32 count [FromQuery] [Optional] [Default = 100]
+</code></pre><h3 id="returns-1">Returns</h3>
+<h4 id="200-1">200</h4>
+<p>Successfully retrieved data</p>
+<pre><code class="lang-json">{
+  &quot;TimeOfResolution&quot;: &quot;DateTimeOffset&quot;,
+  &quot;DataGroups&quot;: [
+    {
+      &quot;TimeOfResolution&quot;: &quot;DateTimeOffset&quot;,
+      &quot;Id&quot;: &quot;Int32&quot;,
+      &quot;ItemCount&quot;: &quot;Int32&quot;,
+      &quot;Tokens&quot;: [
+        {
+          &quot;Chars&quot;: &quot;Char&quot;,
+          &quot;Length&quot;: &quot;Int32&quot;
+        }
+      ],
+      &quot;DataItems&quot;: [
+        {
+          &quot;ItemType&quot;: &quot;ItemType enumeration&quot;,
+          &quot;Id&quot;: &quot;String&quot;,
+          &quot;Name&quot;: &quot;String&quot;,
+          &quot;TenantId&quot;: &quot;String&quot;,
+          &quot;NamespaceId&quot;: &quot;String&quot;
+        }
+      ]
+    }
+  ]
+}
+</code></pre><h4 id="207">207</h4>
+<p>Multi-status. Successfully retrieved data groups along with errors</p>
+<pre><code class="lang-json">{
+  &quot;TimeOfResolution&quot;: &quot;DateTimeOffset&quot;,
+  &quot;Errors&quot;: [
+    {
+      &quot;OperationId&quot;: &quot;String&quot;,
+      &quot;Error&quot;: &quot;String&quot;,
+      &quot;Reason&quot;: &quot;String&quot;,
+      &quot;Resolution&quot;: &quot;String&quot;,
+      &quot;AdditionalParameters&quot;: [
+        {
+          &quot;Chars&quot;: &quot;Char&quot;,
+          &quot;Length&quot;: &quot;Int32&quot;
+        }
+      ]
+    }
+  ],
+  &quot;DataGroups&quot;: [
+    {
+      &quot;TimeOfResolution&quot;: &quot;DateTimeOffset&quot;,
+      &quot;Id&quot;: &quot;Int32&quot;,
+      &quot;ItemCount&quot;: &quot;Int32&quot;,
+      &quot;Errors&quot;: [
+        {
+          &quot;OperationId&quot;: &quot;String&quot;,
+          &quot;Error&quot;: &quot;String&quot;,
+          &quot;Reason&quot;: &quot;String&quot;,
+          &quot;Resolution&quot;: &quot;String&quot;,
+          &quot;AdditionalParameters&quot;: [
+            {
+              &quot;Chars&quot;: &quot;Char&quot;,
+              &quot;Length&quot;: &quot;Int32&quot;
+            }
+          ]
+        }
+      ],
+      &quot;Tokens&quot;: [
+        {
+          &quot;Chars&quot;: &quot;Char&quot;,
+          &quot;Length&quot;: &quot;Int32&quot;
+        }
+      ],
+      &quot;DataItems&quot;: [
+        {
+          &quot;ItemType&quot;: &quot;ItemType enumeration&quot;,
+          &quot;Id&quot;: &quot;String&quot;,
+          &quot;Name&quot;: &quot;String&quot;,
+          &quot;TenantId&quot;: &quot;String&quot;,
+          &quot;NamespaceId&quot;: &quot;String&quot;
+        }
+      ]
+    }
+  ]
+}
+</code></pre><h4 id="403-1">403</h4>
+<p>Unauthorized</p>
+<h4 id="404-1">404</h4>
+<p>Specified Data View Id not found</p>
+<h4 id="500-1">500</h4>
+<p>Internal server error</p>
+<hr>
+<h2 id="get-data-group"><code>Get Data Group</code></h2>
+<p>Get a specific Data Group</p>
+<h3 id="request-2">Request</h3>
+<p><code>GET api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/dataGroups/{dataGroupId}</code></p>
+<h3 id="parameters-2">Parameters</h3>
+<p>Id of tenant</p>
+<pre><code class="lang-csharp">string tenantId  [Required] [No Default Value]
+</code></pre><p>Id of namespace</p>
+<pre><code class="lang-csharp">string namespaceId  [Required] [No Default Value]
+</code></pre><p>Id of Data View</p>
+<pre><code class="lang-csharp">string id  [Required] [No Default Value]
+</code></pre><p>Id of the data group</p>
+<pre><code class="lang-csharp">string dataGroupId  [Required] [No Default Value]
+</code></pre><p>Specifies if Data View backing resources are to be refreshed. See <a href="DataRetrieval.html">Retrieving Data</a></p>
+<pre><code class="lang-csharp">string cache  [Optional] [Default = &quot;preserve&quot;]
+</code></pre><h3 id="returns-2">Returns</h3>
+<h4 id="200-2">200</h4>
+<p>Successfully retrieved data group</p>
+<pre><code class="lang-json">{
+  &quot;TimeOfResolution&quot;: &quot;DateTimeOffset&quot;,
+  &quot;Id&quot;: &quot;Int32&quot;,
+  &quot;ItemCount&quot;: &quot;Int32&quot;,
+  &quot;Tokens&quot;: [
+    {
+      &quot;Chars&quot;: &quot;Char&quot;,
+      &quot;Length&quot;: &quot;Int32&quot;
+    }
+  ],
+  &quot;DataItems&quot;: [
+    {
+      &quot;ItemType&quot;: &quot;ItemType enumeration&quot;,
+      &quot;Id&quot;: &quot;String&quot;,
+      &quot;Name&quot;: &quot;String&quot;,
+      &quot;TenantId&quot;: &quot;String&quot;,
+      &quot;NamespaceId&quot;: &quot;String&quot;
+    }
+  ]
+}
+</code></pre><h4 id="207-1">207</h4>
+<p>Multi-status. Successfully retrieved data groups along with errors</p>
+<pre><code class="lang-json">{
+  &quot;TimeOfResolution&quot;: &quot;DateTimeOffset&quot;,
+  &quot;Id&quot;: &quot;Int32&quot;,
+  &quot;ItemCount&quot;: &quot;Int32&quot;,
+  &quot;Errors&quot;: [
+    {
+      &quot;OperationId&quot;: &quot;String&quot;,
+      &quot;Error&quot;: &quot;String&quot;,
+      &quot;Reason&quot;: &quot;String&quot;,
+      &quot;Resolution&quot;: &quot;String&quot;,
+      &quot;AdditionalParameters&quot;: [
+        {
+          &quot;Chars&quot;: &quot;Char&quot;,
+          &quot;Length&quot;: &quot;Int32&quot;
+        }
+      ]
+    }
+  ],
+  &quot;Tokens&quot;: [
+    {
+      &quot;Chars&quot;: &quot;Char&quot;,
+      &quot;Length&quot;: &quot;Int32&quot;
+    }
+  ],
+  &quot;DataItems&quot;: [
+    {
+      &quot;ItemType&quot;: &quot;ItemType enumeration&quot;,
+      &quot;Id&quot;: &quot;String&quot;,
+      &quot;Name&quot;: &quot;String&quot;,
+      &quot;TenantId&quot;: &quot;String&quot;,
+      &quot;NamespaceId&quot;: &quot;String&quot;
+    }
+  ]
+}
+</code></pre><h4 id="403-2">403</h4>
+<p>Unauthorized</p>
+<h4 id="404-2">404</h4>
+<p>Specified Data View Id not found</p>
+<h4 id="500-2">500</h4>
+<p>Internal server error</p>
+<hr>
+<h2 id="get-data-mappings"><code>Get Data Mappings</code></h2>
+<p>Get mappings for a dataview by Id</p>
+<h3 id="request-3">Request</h3>
+<p><code>GET api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/datamappings</code></p>
+<h3 id="parameters-3">Parameters</h3>
+<p>Id of the dataview</p>
+<pre><code class="lang-csharp">string id  [Required] [No Default Value]
+</code></pre><p>Specifies if Data View backing resources are to be refreshed. See <a href="DataRetrieval.html">Retrieving Data</a></p>
+<pre><code class="lang-csharp">string cache [FromQuery] [Optional] [Default = &quot;preserve&quot;]
+</code></pre><h3 id="returns-3">Returns</h3>
+<h4 id="200-3">200</h4>
+<p>Successfully retrieved data mappings</p>
+<pre><code class="lang-json">{
+  &quot;SharedMappingRules&quot;: [
+    {
+      &quot;Id&quot;: &quot;String&quot;,
+      &quot;Token&quot;: &quot;String&quot;,
+      &quot;MappingRulePattern&quot;: {
+        &quot;PropertyPaths&quot;: [
+          {
+            &quot;Chars&quot;: &quot;Char&quot;,
+            &quot;Length&quot;: &quot;Int32&quot;
+          }
+        ],
+        &quot;ItemIdentifier&quot;: {
+          &quot;FilterResource&quot;: &quot;FilterResource enumeration&quot;,
+          &quot;FilterField&quot;: &quot;FilterField enumeration&quot;,
+          &quot;Name&quot;: &quot;String&quot;,
+          &quot;Value&quot;: &quot;String&quot;,
+          &quot;FilterFunction&quot;: &quot;FilterFunction enumeration&quot;
+        }
+      }
+    }
+  ],
+  &quot;Columns&quot;: [
+    {
+      &quot;Name&quot;: &quot;String&quot;,
+      &quot;NamespaceId&quot;: &quot;String&quot;,
+      &quot;MappingRule&quot;: {},
+      &quot;IsKey&quot;: &quot;Boolean&quot;,
+      &quot;DataType&quot;: &quot;String&quot;,
+      &quot;UOM&quot;: &quot;String&quot;
+    }
+  ],
+  &quot;IsDefault&quot;: &quot;Boolean&quot;
+}
+</code></pre><h4 id="403-3">403</h4>
+<p>Unauthorized</p>
+<h4 id="404-3">404</h4>
+<p>Specified data view Id not found</p>
+<h4 id="500-3">500</h4>
+<p>Internal server error</p>
+<hr>
+<h2 id="get-dataitems"><code>Get DataItems</code></h2>
+<p>Get data items for a dataview by Id</p>
+<h3 id="request-4">Request</h3>
+<p><code>GET api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/dataitems</code></p>
+<h3 id="parameters-4">Parameters</h3>
+<p>Id of the dataview</p>
+<pre><code class="lang-csharp">string id  [Required] [No Default Value]
+</code></pre><p>Specifies if Data View backing resources are to be refreshed. See <a href="DataRetrieval.html">Retrieving Data</a></p>
+<pre><code class="lang-csharp">string cache [FromQuery] [Optional] [Default = &quot;preserve&quot;]
+</code></pre><p>The number of data items to skip</p>
+<pre><code class="lang-csharp">Int32 skip [FromQuery] [Optional] [Default = 0]
+</code></pre><p>The number of data items to display per page. Maximum count allowed is 1000</p>
+<pre><code class="lang-csharp">Int32 count [FromQuery] [Optional] [Default = 100]
+</code></pre><h3 id="returns-4">Returns</h3>
+<h4 id="200-4">200</h4>
+<p>Successfully retrieved data items</p>
+<pre><code class="lang-json">{
+  &quot;TimeOfResolution&quot;: &quot;DateTimeOffset&quot;,
+  &quot;Items&quot;: [
+    {
+      &quot;ItemType&quot;: &quot;ItemType enumeration&quot;,
+      &quot;Id&quot;: &quot;String&quot;,
+      &quot;Name&quot;: &quot;String&quot;,
+      &quot;TenantId&quot;: &quot;String&quot;,
+      &quot;NamespaceId&quot;: &quot;String&quot;
+    }
+  ]
+}
+</code></pre><h4 id="207-2">207</h4>
+<p>Multi-status. Successfully retrieved data groups along with errors</p>
+<pre><code class="lang-json">{
+  &quot;TimeOfResolution&quot;: &quot;DateTimeOffset&quot;,
+  &quot;Errors&quot;: [
+    {
+      &quot;OperationId&quot;: &quot;String&quot;,
+      &quot;Error&quot;: &quot;String&quot;,
+      &quot;Reason&quot;: &quot;String&quot;,
+      &quot;Resolution&quot;: &quot;String&quot;,
+      &quot;AdditionalParameters&quot;: [
+        {
+          &quot;Chars&quot;: &quot;Char&quot;,
+          &quot;Length&quot;: &quot;Int32&quot;
+        }
+      ]
+    }
+  ],
+  &quot;Items&quot;: [
+    {
+      &quot;ItemType&quot;: &quot;ItemType enumeration&quot;,
+      &quot;Id&quot;: &quot;String&quot;,
+      &quot;Name&quot;: &quot;String&quot;,
+      &quot;TenantId&quot;: &quot;String&quot;,
+      &quot;NamespaceId&quot;: &quot;String&quot;
+    }
+  ]
+}
+</code></pre><h4 id="403-4">403</h4>
+<p>Unauthorized</p>
+<h4 id="404-4">404</h4>
+<p>Specified data view Id not found</p>
+<h4 id="500-4">500</h4>
+<p>Internal server error</p>
+<hr>
+<h2 id="get-statistics"><code>Get Statistics</code></h2>
+<p>Get statistics for a dataview by Id</p>
+<h3 id="request-5">Request</h3>
+<p><code>GET api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/statistics</code></p>
+<h3 id="parameters-5">Parameters</h3>
+<p>Id of the dataview</p>
+<pre><code class="lang-csharp">string id  [Required] [No Default Value]
+</code></pre><p>Specifies if Data View backing resources are to be refreshed. See <a href="DataRetrieval.html">Retrieving Data</a></p>
+<pre><code class="lang-csharp">string cache [FromQuery] [Optional] [Default = &quot;preserve&quot;]
+</code></pre><h3 id="returns-5">Returns</h3>
+<h4 id="200-5">200</h4>
+<p>Successfully retrieved data view statistics</p>
+<pre><code class="lang-json">{
+  &quot;TimeOfResolution&quot;: &quot;DateTimeOffset&quot;,
+  &quot;DataItemsCount&quot;: &quot;Int32&quot;,
+  &quot;DataGroupsCount&quot;: &quot;Int32&quot;,
+  &quot;ColumnCount&quot;: &quot;Int32&quot;
+}
+</code></pre><h4 id="403-5">403</h4>
+<p>Unauthorized</p>
+<h4 id="404-5">404</h4>
+<p>Specified data view Id not found</p>
+<h4 id="500-5">500</h4>
+<p>Internal server error</p>
+<hr>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/DataViews/DataRetrieval_API.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+            <span id='copyright-text'>© 2019 - OSIsoft, LLC.<span>
+        </span></span></div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

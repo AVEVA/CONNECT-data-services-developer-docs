@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -76,11 +76,11 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="Queries">
-<h1 id="queries">Queries</h1>
+<h1 id="queries" sourcefile="Documentation/DataViews/Queries.md" sourcestartlinenumber="6" sourceendlinenumber="6">Queries</h1>
 
-<p>A list of queries to select the data items to be displayed in the Data View</p>
-<h3 id="properties">Properties</h3>
-<table>
+<p sourcefile="Documentation/DataViews/Queries.md" sourcestartlinenumber="7" sourceendlinenumber="7">A list of queries to select the data items to be displayed in the Data View</p>
+<h3 id="properties" sourcefile="Documentation/DataViews/Queries.md" sourcestartlinenumber="8" sourceendlinenumber="8">Properties</h3>
+<table sourcefile="Documentation/DataViews/Queries.md" sourcestartlinenumber="10" sourceendlinenumber="13">
 <thead>
 <tr>
 <th>Property</th>
@@ -104,9 +104,9 @@
 </tr>
 </tbody>
 </table>
-<h2 id="example"><code>Example</code></h2>
-<p>The first example shows a simple Queries object with a list of queries defined using strings. The second example shows a Queries object with a complex query string. Notice how the OR, AND, and NOT operators can be used to build complex expressions. Queries support all of the operators supported by <a href="https://ocs-docs.osisoft.com/Documentation/SequentialDataStore/Searching.html">Sequential Data Store</a>. This way users can build complex queries with the same search strings used to find a desired set of streams.</p>
-<pre><code class="lang-json">[
+<h2 id="example" sourcefile="Documentation/DataViews/Queries.md" sourcestartlinenumber="15" sourceendlinenumber="15"><code>Example</code></h2>
+<p sourcefile="Documentation/DataViews/Queries.md" sourcestartlinenumber="16" sourceendlinenumber="16">The first example shows a simple Queries object with a list of queries defined using strings. The second example shows a Queries object with a complex query string. Notice how the OR, AND, and NOT operators can be used to build complex expressions. Queries support all of the operators supported by <a href="https://ocs-docs.osisoft.com/Documentation/SequentialDataStore/Searching.html" data-raw-source="[Sequential Data Store](https://ocs-docs.osisoft.com/Documentation/SequentialDataStore/Searching.html)" sourcefile="Documentation/DataViews/Queries.md" sourcestartlinenumber="16" sourceendlinenumber="16">Sequential Data Store</a>. This way users can build complex queries with the same search strings used to find a desired set of streams.</p>
+<pre sourcefile="Documentation/DataViews/Queries.md" sourcestartlinenumber="17" sourceendlinenumber="28"><code class="lang-json">[
   {
     &quot;Id&quot;: &quot;Query1&quot;,
     &quot;Query&quot;: &quot;id:testStream1&quot;
@@ -116,7 +116,7 @@
     &quot;Query&quot;: &quot;id:*testStream2*&quot;
   }
 ]
-</code></pre><pre><code class="lang-json">[
+</code></pre><pre sourcefile="Documentation/DataViews/Queries.md" sourcestartlinenumber="29" sourceendlinenumber="36"><code class="lang-json">[
   {
     &quot;Id&quot;: &quot;QueryWithOperators&quot;,
     &quot;Query&quot;: &quot;(id:*testStream1* and id;*testStream2*) or (not description:*testStream3*)&quot;

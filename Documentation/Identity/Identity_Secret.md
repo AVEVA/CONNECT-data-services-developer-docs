@@ -119,13 +119,13 @@ Success.
 [
   {
     "Id": 0,
-    "Expiration": "2019-07-18T09:00:55.7981782-07:00",
+    "Expiration": "2019-07-19T13:56:29.4014752-07:00",
     "Expires": false,
     "Description": "description"
   },
   {
     "Id": 0,
-    "Expiration": "2019-07-18T09:00:55.7984422-07:00",
+    "Expiration": "2019-07-19T13:56:29.4016962-07:00",
     "Expires": false,
     "Description": "description"
   }
@@ -199,7 +199,7 @@ Success.
 ```json
 {
   "Id": 0,
-  "Expiration": "2019-07-18T09:00:55.8020885-07:00",
+  "Expiration": "2019-07-19T13:56:29.4043046-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -266,7 +266,7 @@ Description | string | No | Description for the client secret. We suggest being 
 
 ```json
 {
-  "Expiration": "2019-07-18T09:00:55.8037697-07:00",
+  "Expiration": "2019-07-19T13:56:29.4053296-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -292,7 +292,7 @@ Created.
 {
   "Secret": "Secret",
   "Id": 0,
-  "Expiration": "2019-07-18T09:00:55.8054211-07:00",
+  "Expiration": "2019-07-19T13:56:29.4066732-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -365,7 +365,7 @@ Description | string | No | Description for the client secret. We suggest being 
 
 ```json
 {
-  "Expiration": "2019-07-18T09:00:55.8082164-07:00",
+  "Expiration": "2019-07-19T13:56:29.4102216-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -390,7 +390,7 @@ Success.
 ```json
 {
   "Id": 0,
-  "Expiration": "2019-07-18T09:00:55.8082798-07:00",
+  "Expiration": "2019-07-19T13:56:29.4103304-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -678,13 +678,13 @@ Success.
 [
   {
     "Id": 0,
-    "Expiration": "2019-07-18T09:00:55.9300123-07:00",
+    "Expiration": "2019-07-19T13:56:29.551583-07:00",
     "Expires": false,
     "Description": "description"
   },
   {
     "Id": 0,
-    "Expiration": "2019-07-18T09:00:55.930029-07:00",
+    "Expiration": "2019-07-19T13:56:29.5515995-07:00",
     "Expires": false,
     "Description": "description"
   }
@@ -758,7 +758,7 @@ Success.
 ```json
 {
   "Id": 0,
-  "Expiration": "2019-07-18T09:00:55.9314472-07:00",
+  "Expiration": "2019-07-19T13:56:29.5525318-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -825,7 +825,7 @@ Description | string | No | Description for the client secret. We suggest being 
 
 ```json
 {
-  "Expiration": "2019-07-18T09:00:55.9327567-07:00",
+  "Expiration": "2019-07-19T13:56:29.5535351-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -851,7 +851,7 @@ Created.
 {
   "Secret": "Secret",
   "Id": 0,
-  "Expiration": "2019-07-18T09:00:55.9328308-07:00",
+  "Expiration": "2019-07-19T13:56:29.5536387-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -929,7 +929,7 @@ Description | string | No | Description for the client secret. We suggest being 
 
 ```json
 {
-  "Expiration": "2019-07-18T09:00:55.9339117-07:00",
+  "Expiration": "2019-07-19T13:56:29.5547514-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -954,7 +954,7 @@ Success.
 ```json
 {
   "Id": 0,
-  "Expiration": "2019-07-18T09:00:55.9339742-07:00",
+  "Expiration": "2019-07-19T13:56:29.5548581-07:00",
   "Expires": false,
   "Description": "description"
 }

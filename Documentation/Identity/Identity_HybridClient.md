@@ -142,7 +142,7 @@ Tags | string[] | No | For OSIsoft internal use only.
 ```json
 {
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-07-18T09:00:55.7324659-07:00",
+  "SecretExpirationDate": "2019-07-19T13:56:29.3231282-07:00",
   "AllowOfflineAccess": false,
   "AllowAccessTokensViaBrowser": false,
   "RedirectUris": [
@@ -187,7 +187,7 @@ Created.
   "Secret": "Secret",
   "Id": 0,
   "Description": "description",
-  "ExpirationDate": "2019-07-18T09:00:55.7439466-07:00",
+  "ExpirationDate": "2019-07-19T13:56:29.3364121-07:00",
   "Client": {
     "AllowOfflineAccess": false,
     "AllowAccessTokensViaBrowser": false,

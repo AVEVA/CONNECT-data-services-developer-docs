@@ -73,7 +73,7 @@ Returns an IdentityProvider object
 
 ```csharp
 [Required]
-string identityProviderId
+Guid identityProviderId
 ```
 
 Id of provider
@@ -611,9 +611,9 @@ Identity Provider already exists in Tenant.
 Internal server error.
 ***
 
-## `Delete IDP From Tenant`
+## `Remove IDP From Tenant`
 
-Delete an Identity Provider from a Tenant. Users provisioned
+Remove an Identity Provider from a Tenant. Users provisioned
             with this Identity Provider will remain in the Tenant, but will
             not be able to authenticate.
 

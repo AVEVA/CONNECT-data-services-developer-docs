@@ -2,7 +2,7 @@
 uid: identityAzureActiveDirectoryTenant
 ---
 
-# Azure Activ Directory (AAD) Tenant
+# AzureActiveDirectoryTenant
 
 An Azure Active Directory (AAD) Tenant is used to map an existing
             [AAD](https://azure.microsoft.com/en-us/services/active-directory/)

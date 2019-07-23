@@ -4,24 +4,33 @@ uid: identityHybridClient
 
 # HybridClient
 
-APIs for creating, getting, updating, and deleting Hybrid Clients
+Hybrid clients are used in typical, thick MVC clients with the presence of a User.
+            These clients are issued an Id and Secret upon creation, which are later used for authentication
+            against OCS. More than one Secret can be created for a Client. You can read more about these clients
+            [here](https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/Authentication#hybrid-flow).
+            Hybrid clients can be issued refresh tokens, if requested, alongside access tokens. Refresh tokens typically
+            have an longer lifetime than access tokens, and are used to request a new access token on behalf of the user
+            without them having to sign-in.
+            It is highly suggested that both the Client Secret and the refresh token be stored
+            in a secure location.
 
 ## Properties
 
 For HTTP requests and responses, the HybridClient object has the following properties and JSON-serialized body: 
 
-Property | Type | Description
- --- | --- | ---
-AllowOfflineAccess | bool | Specifies whether this client can request refresh tokens, by providing the *offline_access* scopes.
+Property | Type | Descriptions
+ --- | --- | --- | ---
+AllowOfflineAccess | bool | Specifies whether this client can request refresh tokens, by providing the *offline_access* scope.
 AllowAccessTokensViaBrowser | bool | Specifies whether this HybridClient is allowed to receive access tokens via the browser. This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow client that is supposed to use code *id_token* to add the *token* response type, thus leaking the token to the browser).
-RedirectUris | string[] | Specifies the allowed URIs to return tokens or authorization codes to.
-PostLogoutRedirectUris | string[] | Specifies allowed URIs to redirect to after logout.
+RedirectUris | string[] | Specifies the allowed URIs to which return tokens or authorization codes can be returned. Wildcards are ignored. URIs must match exactly what you are redirecting to after login. If URIs do not match,, the authentication process will fail with a bad_client error. Maximum 10 per client.
+PostLogoutRedirectUris | string[] | Specifies allowed URIs to redirect to after logout. Wildcards are ignored. URIs must match exactly what you are redirecting after logout. Maximum 10 for client.
 ClientUri | string | URI to a page with information about client (used on consent screen).
 LogoUri | string | URI to client logo (used on consent screen).
-Id | string | Client ID for this Client
+Id | string | Client ID for this client. This ID should be a GUID.
 Name | string | Name of Client.
-Enabled | bool | Is Client Enabled
-Tags | string[] | For OSIsoft internal use only
+Enabled | bool | Determine if client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.
+AccessTokenLifetime | int32 | Lifetime of access token issued for this client after authentication. Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.
+Tags | string[] | For OSIsoft internal use only.
 
 ### Serialized Model
 
@@ -42,6 +51,7 @@ Tags | string[] | For OSIsoft internal use only
   "Id": "Id",
   "Name": "Name",
   "Enabled": false,
+  "AccessTokenLifetime": 0,
   "Tags": [
     "String",
     "String"
@@ -51,9 +61,44 @@ Tags | string[] | For OSIsoft internal use only
 
 ***
 
+## Base URL
+
+All URLs referenced in this section have the following base:
+
+`https://dat-b.osisoft.com/`
+
+## Authentication
+
+All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieve after a successful authentication request.
+
+`Authorization: Bearer <token>`
+
+Requests made without an access token or an invalid/expired token will fail with a 401 Unauthorized response.
+Requests made with an access token which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
+Read [here](https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/Authentication) on how to authenticate against OCS with the various clients and receive an access token in response.
+
+## Error Handling
+
+All responses will have an error message in the body. The exceptions are 200 responses and the 401 Unauthorized response. The error message will look as follows:
+
+```json
+{
+    "OperationId": "1b2af18e-8b27-4f86-93e0-6caa3e59b90c", 
+    "Error": "Error message.", 
+    "Reason": "Reason that caused error.", 
+    "Resolution": "Possible solution for the error." 
+}
+```
+
+If and when contacting OSIsoft support about this error, please provide the OperationId.
+
 ## `Create Hybrid Client`
 
-Create a Hybrid flow Client
+Create a Hybrid Client. A Client Id and Client Secret will be generated to perform
+            authentication. Make sure to store the Secret somewhere safe as we do not store the
+            actual value after the creation step. If you do not have access to the Secret value, we suggest
+            deleting the Secret and adding a new one for this Client. Clients have unique ids in a Tenant.
+            Currently there is a limit of 50000 clients (of all types) per Tenant.
 
 ### Request
 
@@ -66,7 +111,7 @@ Create a Hybrid flow Client
 string tenantId
 ```
 
-Id of tenant
+Id of Tenant.
 
 ```csharp
 [FromBody]
@@ -74,29 +119,30 @@ Id of tenant
 HybridClientCreate hybridClientCreate
 ```
 
-New HybridClientCreate object
+HybridClientCreate object.
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
 SecretDescription | string | No | Description for the initial secret for the client.
-SecretExpirationDate | DateTime | No | Expiration date for the initial secret for the client.
-AllowOfflineAccess | bool | No | Specifies whether this client can request refresh tokens, by providing the *offline_access* scopes.
+SecretExpirationDate | DateTime | No | Expiration date for the initial secret for the client. If set to null the secret will            never expire. We advise against such practice.
+AllowOfflineAccess | bool | No | Specifies whether this client can request refresh tokens, by providing the *offline_access* scope.
 AllowAccessTokensViaBrowser | bool | No | Specifies whether this HybridClient is allowed to receive access tokens via the browser.            This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow            client that is supposed to use code *id_token* to add the *token* response type, thus            leaking the token to the browser).
-RedirectUris | string[] | No | Specifies the allowed URIs to return tokens or authorization codes to.
-PostLogoutRedirectUris | string[] | No | Specifies allowed URIs to redirect to after logout.
+RedirectUris | string[] | No | Specifies the allowed URIs to which return tokens or authorization codes can be returned.            Wildcards are ignored. URIs must match exactly what you are redirecting            to after login. If URIs do not match, the authentication process will fail            with a bad_client error.            Maximum 10 per client.
+PostLogoutRedirectUris | string[] | No | Specifies allowed URIs to redirect to after logout. Wildcards are ignored.            URIs must match exactly what you are redirecting after logout.            Maximum 10 for client.
 ClientUri | string | No | URI to a page with information about client (used on consent screen).
 LogoUri | string | No | URI to client logo (used on consent screen).
-Id | string | No | Client ID for this Client
+Id | string | No | Client ID for this client. This ID should be a GUID.
 Name | string | Yes | Name of Client.
-Enabled | bool | No | Is Client Enabled
-Tags | string[] | No | For OSIsoft internal use only
+Enabled | bool | No | Determine if client is enabled. Client can be used for authentication            if set to true. Client cannot be used for authentication if set to false.
+AccessTokenLifetime | int32 | No | Lifetime of access token issued for this client after authentication.            Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.
+Tags | string[] | No | For OSIsoft internal use only.
 
 
 
 ```json
 {
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-05-31T14:57:08.5227228-07:00",
+  "SecretExpirationDate": "2019-07-19T13:56:29.3231282-07:00",
   "AllowOfflineAccess": false,
   "AllowAccessTokensViaBrowser": false,
   "RedirectUris": [
@@ -112,6 +158,7 @@ Tags | string[] | No | For OSIsoft internal use only
   "Id": "Id",
   "Name": "Name",
   "Enabled": false,
+  "AccessTokenLifetime": 0,
   "Tags": [
     "String",
     "String"
@@ -129,18 +176,18 @@ Allowed for these roles:
 
 #### 201
 
-Created
+Created.
 
 ##### Type:
 
- `ClientResponse<HybridClient>`
+ `ClientResponse`
 
 ```json
 {
   "Secret": "Secret",
   "Id": 0,
   "Description": "description",
-  "ExpirationDate": "2019-05-31T14:57:08.533641-07:00",
+  "ExpirationDate": "2019-07-19T13:56:29.3364121-07:00",
   "Client": {
     "AllowOfflineAccess": false,
     "AllowAccessTokensViaBrowser": false,
@@ -157,6 +204,7 @@ Created
     "Id": "Id",
     "Name": "Name",
     "Enabled": false,
+    "AccessTokenLifetime": 0,
     "Tags": [
       "String",
       "String"
@@ -167,32 +215,33 @@ Created
 
 #### 400
 
-Client Limit exceeded
+Missing or invalid inputs, or Client limit exceeded.
 
 #### 401
 
-Unauthorized
+Unauthorized.
 
 #### 403
 
-Forbidden
+Forbidden.
 
 #### 404
 
-Tenant not found
+Tenant not found.
 
 #### 409
 
-Client Id already exists
+Client Id already exists.
 
 #### 500
 
-Internal server error
+Internal server error.
 ***
 
 ## `Update Hybrid Client`
 
-Update a Hybrid Client
+Update a Hybrid Client. It can take up to one hour
+            for these values to manifest in the authentication process.
 
 ### Request
 
@@ -205,14 +254,14 @@ Update a Hybrid Client
 string tenantId
 ```
 
-Id of tenant
+Id of Tenant.
 
 ```csharp
 [Required]
 string clientId
 ```
 
-Id of client
+Id of Client.
 
 ```csharp
 [FromBody]
@@ -220,20 +269,21 @@ Id of client
 HybridClient hybridClient
 ```
 
-Updated Hybrid Client values
+HybridClient object. Properties that are not set or are null will not be changed.
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-AllowOfflineAccess | bool | No | Specifies whether this client can request refresh tokens, by providing the *offline_access* scopes.
+AllowOfflineAccess | bool | No | Specifies whether this client can request refresh tokens, by providing the *offline_access* scope.
 AllowAccessTokensViaBrowser | bool | No | Specifies whether this HybridClient is allowed to receive access tokens via the browser.            This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow            client that is supposed to use code *id_token* to add the *token* response type, thus            leaking the token to the browser).
-RedirectUris | string[] | No | Specifies the allowed URIs to return tokens or authorization codes to.
-PostLogoutRedirectUris | string[] | No | Specifies allowed URIs to redirect to after logout.
+RedirectUris | string[] | No | Specifies the allowed URIs to which return tokens or authorization codes can be returned.            Wildcards are ignored. URIs must match exactly what you are redirecting            to after login. If URIs do not match, the authentication process will fail            with a bad_client error.            Maximum 10 per client.
+PostLogoutRedirectUris | string[] | No | Specifies allowed URIs to redirect to after logout. Wildcards are ignored.            URIs must match exactly what you are redirecting after logout.            Maximum 10 for client.
 ClientUri | string | No | URI to a page with information about client (used on consent screen).
 LogoUri | string | No | URI to client logo (used on consent screen).
-Id | string | No | Client ID for this Client. Must be same as the one in the route. Must be the same as the Id in the route.
+Id | string | No | Client ID for this client. This ID should be a GUID.
 Name | string | Yes | Name of Client.
-Enabled | bool | No | Is Client Enabled
-Tags | string[] | No | For OSIsoft internal use only
+Enabled | bool | No | Determine if client is enabled. Client can be used for authentication            if set to true. Client cannot be used for authentication if set to false.
+AccessTokenLifetime | int32 | No | Lifetime of access token issued for this client after authentication.            Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.
+Tags | string[] | No | For OSIsoft internal use only.
 
 
 
@@ -254,6 +304,7 @@ Tags | string[] | No | For OSIsoft internal use only
   "Id": "Id",
   "Name": "Name",
   "Enabled": false,
+  "AccessTokenLifetime": 0,
   "Tags": [
     "String",
     "String"
@@ -271,7 +322,7 @@ Allowed for these roles:
 
 #### 200
 
-Success
+Success.
 
 ##### Type:
 
@@ -294,6 +345,7 @@ Success
   "Id": "Id",
   "Name": "Name",
   "Enabled": false,
+  "AccessTokenLifetime": 0,
   "Tags": [
     "String",
     "String"
@@ -303,28 +355,28 @@ Success
 
 #### 401
 
-Unauthorized
+Unauthorized.
 
 #### 403
 
-Forbidden
+Forbidden.
 
 #### 400
 
-Missing or invalid inputs
+Missing or invalid inputs.
 
 #### 404
 
-Client or Tenant not found
+Client or Tenant not found.
 
 #### 500
 
-Internal server error
+Internal server error.
 ***
 
 ## `Get Hybrid Client`
 
-Get a Hybrid Client
+Get a Hybrid Client from a Tenant.
 
 ### Request
 
@@ -337,14 +389,14 @@ Get a Hybrid Client
 string tenantId
 ```
 
-Id of tenant
+Id of Tenant.
 
 ```csharp
 [Required]
 string clientId
 ```
 
-Id of client
+Id of Client.
 
 ### Security
 
@@ -356,7 +408,7 @@ Allowed for these roles:
 
 #### 200
 
-Success
+Success.
 
 ##### Type:
 
@@ -379,6 +431,7 @@ Success
   "Id": "Id",
   "Name": "Name",
   "Enabled": false,
+  "AccessTokenLifetime": 0,
   "Tags": [
     "String",
     "String"
@@ -388,24 +441,26 @@ Success
 
 #### 401
 
-Unauthorized
+Unauthorized.
 
 #### 403
 
-Forbidden
+Forbidden.
 
 #### 404
 
-Client or Tenant not found
+Client or Tenant not found.
 
 #### 500
 
-Internal server error
+Internal server error.
 ***
 
 ## `Get All Hybrid Clients`
 
-Get all Hybrid Clients
+Get a list of Hybrid clients from a Tenant.
+            Optionally, get a list of requested clients. Total number
+            of clients in the Tenant set in the Total-Count header.
 
 ### Request
 
@@ -418,7 +473,16 @@ Get all Hybrid Clients
 string tenantId
 ```
 
-Id of tenant
+Id of Tenant.
+
+```csharp
+[FromQuery]
+[Optional]
+[Default = ""]
+string[] id
+```
+
+Unordered list of Hybrid Client Ids. Empty, whitespace or null Ids will be ignored.
 
 ```csharp
 [FromQuery]
@@ -436,7 +500,7 @@ Only return Clients that have these tags.
 string query
 ```
 
-Query to execute. Currently not supported
+Query to execute. Currently not supported.
 
 ```csharp
 [FromQuery]
@@ -445,7 +509,7 @@ Query to execute. Currently not supported
 int32 skip
 ```
 
-Number of clients to skip. From query.
+Number of clients to skip. Will be ignored if a list of Ids is passed.
 
 ```csharp
 [FromQuery]
@@ -454,7 +518,7 @@ Number of clients to skip. From query.
 int32 count
 ```
 
-Max number of clients to return
+Maximum number of clients to return. Will be ignored if a list of Ids is passed.
 
 ### Security
 
@@ -466,11 +530,11 @@ Allowed for these roles:
 
 #### 200
 
-Success
+Success.
 
 ##### Type:
 
- `List[HybridClient]`
+ `List`
 
 ```json
 [
@@ -490,6 +554,7 @@ Success
     "Id": "Id",
     "Name": "Name",
     "Enabled": false,
+    "AccessTokenLifetime": 0,
     "Tags": [
       "String",
       "String"
@@ -511,6 +576,7 @@ Success
     "Id": "Id",
     "Name": "Name",
     "Enabled": false,
+    "AccessTokenLifetime": 0,
     "Tags": [
       "String",
       "String"
@@ -521,24 +587,27 @@ Success
 
 #### 401
 
-Unauthorized
+Unauthorized.
 
 #### 403
 
-Forbidden
+Forbidden.
 
 #### 404
 
-Tenant not found
+Tenant not found.
 
 #### 500
 
-Internal server error
+Internal server error.
 ***
 
 ## `Delete Hybrid Client`
 
-Delete an Hybrid Client
+Delete a Hybrid Client. It can take up to one hour
+            for deletion to manifest in the authentication process. Access
+            tokens issued to this Client will be valid until their expiration.
+            Refresh tokens issued to this will be valid up to one hour after deletion.
 
 ### Request
 
@@ -551,14 +620,14 @@ Delete an Hybrid Client
 string tenantId
 ```
 
-Id of tenant
+Id of Tenant.
 
 ```csharp
 [Required]
 string clientId
 ```
 
-Id of client
+Id of Client.
 
 ### Security
 
@@ -570,22 +639,153 @@ Allowed for these roles:
 
 #### 204
 
-Deleted
+Deleted.
 
 #### 401
 
-Unauthorized
+Unauthorized.
 
 #### 403
 
-Forbidden
+Forbidden.
 
 #### 404
 
-Client or Tenant not found
+Client or Tenant not found.
 
 #### 500
 
-Internal server error
+Internal server error.
+***
+
+## `Validate Hybrid Client Exists`
+
+Validate that a Hybrid Client exists.
+            This endpoint is identical to the GET one but
+            it does not return any objects in the body.
+
+### Request
+
+`HEAD api/v1/Tenants/{tenantId}/HybridClients/{clientId}`
+
+### Parameters
+
+```csharp
+[Required]
+string tenantId
+```
+
+Id of Tenant.
+
+```csharp
+[Required]
+string clientId
+```
+
+Id of Client.
+
+### Security
+
+Allowed for these roles:
+
+- `Account Administrator`
+
+### Returns
+
+#### 200
+
+Success.
+
+##### Type:
+
+ `Void`
+
+#### 401
+
+Unauthorized.
+
+#### 403
+
+Forbidden.
+
+#### 404
+
+Client or Tenant not found.
+
+#### 500
+
+Internal server error.
+***
+
+## `Get Total Count of Hybrid Clients`
+
+Return total number of Hybrid clients in a Tenant.
+            Optionally, check based on a list of requested clients. The
+            value will be set in the Total-Count header. This endpoint
+            is identical to the GET one but it does not return any objects
+            in the body.
+
+### Request
+
+`HEAD api/v1/Tenants/{tenantId}/HybridClients`
+
+### Parameters
+
+```csharp
+[Required]
+string tenantId
+```
+
+Id of Tenant.
+
+```csharp
+[FromQuery]
+[Optional]
+[Default = ""]
+string[] id
+```
+
+Unordered list of Hybrid Client Ids. Empty, whitespace or null Ids will be ignored.
+
+```csharp
+[FromQuery]
+[Optional]
+[Default = ""]
+string[] tag
+```
+
+Only count clients that have these tags.
+
+### Security
+
+Allowed for these roles:
+
+- `Account Administrator`
+
+### Returns
+
+#### 200
+
+Success.
+
+##### Type:
+
+ `Void`
+
+#### 401
+
+Unauthorized.
+
+#### 403
+
+Forbidden.
+
+#### 404
+
+Client or Tenant not found.
+
+#### 500
+
+Internal server error.
 ***
 

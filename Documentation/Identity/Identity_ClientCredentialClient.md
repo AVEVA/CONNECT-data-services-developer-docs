@@ -2,7 +2,7 @@
 uid: identityClientCredentialClient
 ---
 
-# Client Credential Client
+# ClientCredentialClient
 
 Client Credential clients are used for machine-to-machine communication without
             the presence of a User. These clients are issued an Id and Secret upon creation,
@@ -56,12 +56,12 @@ All URLs referenced in this section have the following base:
 
 ## Authentication
 
-All endpoints referenced in this documentation require authenticated access.Authorization header must be set to the access token you retrieve after a successful authentication request.
+All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieve after a successful authentication request.
 
 `Authorization: Bearer <token>`
 
-Requests made without an access token, or an invalid/expired one will fail with a 401 Unauthorized response.
-Requests made with an access token, which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
+Requests made without an access token or an invalid/expired token will fail with a 401 Unauthorized response.
+Requests made with an access token which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
 Read [here](https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/Authentication) on how to authenticate against OCS with the various clients and receive an access token in response.
 
 ## Error Handling
@@ -110,7 +110,7 @@ ClientCredentialClientCreate object.
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-SecretDescription | string | No | Description for the initial secret for the client. Ensure that this is descriptive enough            as it will be the only way to distinguish between multiple secrets and their usage for a            client.
+SecretDescription | string | No | Description for the initial secret for the client. Ensure that this is descriptive enough,            as it will be the only way to distinguish between multiple secrets and their usage for a            client.
 SecretExpirationDate | DateTime | No | Expiration date for the initial secret for the client. If set to null the secret will            never expire. We advise against such practice.
 RoleIds | Guid[] | No | List of Roles to be assigned to this client. Member role is always required.            For security reasons we advise against assigning Admin roles to a client.
 Id | string | No | Client ID for this client. This ID should be a GUID.

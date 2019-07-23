@@ -37,12 +37,12 @@ All URLs referenced in this section have the following base:
 
 ## Authentication
 
-All endpoints referenced in this documentation require authenticated access.Authorization header must be set to the access token you retrieve after a successful authentication request.
+All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieve after a successful authentication request.
 
 `Authorization: Bearer <token>`
 
-Requests made without an access token, or an invalid/expired one will fail with a 401 Unauthorized response.
-Requests made with an access token, which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
+Requests made without an access token or an invalid/expired token will fail with a 401 Unauthorized response.
+Requests made with an access token which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
 Read [here](https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/Authentication) on how to authenticate against OCS with the various clients and receive an access token in response.
 
 ## Error Handling
@@ -384,7 +384,7 @@ ConsentInformation object.
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-AzureActiveDirectoryConsentEmail | string | Yes | Email to send the consent email to.            Only AAD Admins have permission to consent to OCS            being allowed to interact with the tenant. The email            does not have to be sent to an Admin.
+AzureActiveDirectoryConsentEmail | string | Yes | Address to email consent.            Only AAD Admins have permission to consent to OCS            being allowed to interact with the tenant. The email            does not have to be sent to an Admin.
 AzureActiveDirectoryConsentGivenName | string | Yes | Preferred name to use in the consent email.
 AzureActiveDirectoryConsentSurname | string | Yes | Preferred surname to use in the email.
 AzureActiveDirectoryTenant | string | Yes | AAD Domain Name (e.g. mydomain.onmicrosoft.com)

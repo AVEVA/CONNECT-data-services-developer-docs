@@ -2,7 +2,7 @@
 uid: identityHybridClient
 ---
 
-# Hybrid Client
+# HybridClient
 
 Hybrid clients are used in typical, thick MVC clients with the presence of a User.
             These clients are issued an Id and Secret upon creation, which are later used for authentication
@@ -22,8 +22,8 @@ Property | Type | Descriptions
  --- | --- | --- | ---
 AllowOfflineAccess | bool | Specifies whether this client can request refresh tokens, by providing the *offline_access* scope.
 AllowAccessTokensViaBrowser | bool | Specifies whether this HybridClient is allowed to receive access tokens via the browser. This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow client that is supposed to use code *id_token* to add the *token* response type, thus leaking the token to the browser).
-RedirectUris | string[] | Specifies the allowed URIs to return tokens or authorization codes to. Wildcards are ignored. URIs must match exactly to what you are redirecting to after login. If URIs do not match the authentication process will fail with a bad_client error. Maximum 10 per client.
-PostLogoutRedirectUris | string[] | Specifies allowed URIs to redirect to after logout. Wildcards are ignored. URIs must match exactly to what you are redirecting to after logout. Maximum 10 for client.
+RedirectUris | string[] | Specifies the allowed URIs to which return tokens or authorization codes can be returned. Wildcards are ignored. URIs must match exactly what you are redirecting to after login. If URIs do not match,, the authentication process will fail with a bad_client error. Maximum 10 per client.
+PostLogoutRedirectUris | string[] | Specifies allowed URIs to redirect to after logout. Wildcards are ignored. URIs must match exactly what you are redirecting after logout. Maximum 10 for client.
 ClientUri | string | URI to a page with information about client (used on consent screen).
 LogoUri | string | URI to client logo (used on consent screen).
 Id | string | Client ID for this client. This ID should be a GUID.
@@ -69,12 +69,12 @@ All URLs referenced in this section have the following base:
 
 ## Authentication
 
-All endpoints referenced in this documentation require authenticated access.Authorization header must be set to the access token you retrieve after a successful authentication request.
+All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieve after a successful authentication request.
 
 `Authorization: Bearer <token>`
 
-Requests made without an access token, or an invalid/expired one will fail with a 401 Unauthorized response.
-Requests made with an access token, which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
+Requests made without an access token or an invalid/expired token will fail with a 401 Unauthorized response.
+Requests made with an access token which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
 Read [here](https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/Authentication) on how to authenticate against OCS with the various clients and receive an access token in response.
 
 ## Error Handling
@@ -127,8 +127,8 @@ SecretDescription | string | No | Description for the initial secret for the cli
 SecretExpirationDate | DateTime | No | Expiration date for the initial secret for the client. If set to null the secret will            never expire. We advise against such practice.
 AllowOfflineAccess | bool | No | Specifies whether this client can request refresh tokens, by providing the *offline_access* scope.
 AllowAccessTokensViaBrowser | bool | No | Specifies whether this HybridClient is allowed to receive access tokens via the browser.            This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow            client that is supposed to use code *id_token* to add the *token* response type, thus            leaking the token to the browser).
-RedirectUris | string[] | No | Specifies the allowed URIs to return tokens or authorization codes to.            Wildcards are ignored. URIs must match exactly to what you are redirecting            to after login. If URIs do not match the authentication process will fail            with a bad_client error.            Maximum 10 per client.
-PostLogoutRedirectUris | string[] | No | Specifies allowed URIs to redirect to after logout. Wildcards are ignored.            URIs must match exactly to what you are redirecting to after logout.            Maximum 10 for client.
+RedirectUris | string[] | No | Specifies the allowed URIs to which return tokens or authorization codes can be returned.            Wildcards are ignored. URIs must match exactly what you are redirecting            to after login. If URIs do not match, the authentication process will fail            with a bad_client error.            Maximum 10 per client.
+PostLogoutRedirectUris | string[] | No | Specifies allowed URIs to redirect to after logout. Wildcards are ignored.            URIs must match exactly what you are redirecting after logout.            Maximum 10 for client.
 ClientUri | string | No | URI to a page with information about client (used on consent screen).
 LogoUri | string | No | URI to client logo (used on consent screen).
 Id | string | No | Client ID for this client. This ID should be a GUID.
@@ -275,8 +275,8 @@ Property | Type | Required | Description
  --- | --- | --- | ---
 AllowOfflineAccess | bool | No | Specifies whether this client can request refresh tokens, by providing the *offline_access* scope.
 AllowAccessTokensViaBrowser | bool | No | Specifies whether this HybridClient is allowed to receive access tokens via the browser.            This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow            client that is supposed to use code *id_token* to add the *token* response type, thus            leaking the token to the browser).
-RedirectUris | string[] | No | Specifies the allowed URIs to return tokens or authorization codes to.            Wildcards are ignored. URIs must match exactly to what you are redirecting            to after login. If URIs do not match the authentication process will fail            with a bad_client error.            Maximum 10 per client.
-PostLogoutRedirectUris | string[] | No | Specifies allowed URIs to redirect to after logout. Wildcards are ignored.            URIs must match exactly to what you are redirecting to after logout.            Maximum 10 for client.
+RedirectUris | string[] | No | Specifies the allowed URIs to which return tokens or authorization codes can be returned.            Wildcards are ignored. URIs must match exactly what you are redirecting            to after login. If URIs do not match, the authentication process will fail            with a bad_client error.            Maximum 10 per client.
+PostLogoutRedirectUris | string[] | No | Specifies allowed URIs to redirect to after logout. Wildcards are ignored.            URIs must match exactly what you are redirecting after logout.            Maximum 10 for client.
 ClientUri | string | No | URI to a page with information about client (used on consent screen).
 LogoUri | string | No | URI to client logo (used on consent screen).
 Id | string | No | Client ID for this client. This ID should be a GUID.

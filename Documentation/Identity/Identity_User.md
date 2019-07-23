@@ -67,12 +67,12 @@ All URLs referenced in this section have the following base:
 
 ## Authentication
 
-All endpoints referenced in this documentation require authenticated access.Authorization header must be set to the access token you retrieve after a successful authentication request.
+All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieve after a successful authentication request.
 
 `Authorization: Bearer <token>`
 
-Requests made without an access token, or an invalid/expired one will fail with a 401 Unauthorized response.
-Requests made with an access token, which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
+Requests made without an access token or an invalid/expired token will fail with a 401 Unauthorized response.
+Requests made with an access token which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
 Read [here](https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/Authentication) on how to authenticate against OCS with the various clients and receive an access token in response.
 
 ## Error Handling
@@ -763,10 +763,10 @@ UserCreateOrUpdate object.
 Property | Type | Required | Description 
  --- | --- | --- | ---
 Id | Guid | No | User Id for the user. When creating a user, if User ID is not specified, one will be generated.
-ContactGivenName | string | Yes | Preferred name to be used when contacting user.
-ContactSurname | string | Yes | Preferred surname to be used when contacting user.
-ContactEmail | string | Yes | Preferred contact email to be used. This does not have to be the same as the user's Identity Provider email.
-RoleIds | Guid[] | Yes | List of strings of RoleIds.
+ContactGivenName | string | No | Preferred name to be used when contacting user.
+ContactSurname | string | No | Preferred surname to be used when contacting user.
+ContactEmail | string | No | Preferred contact email to be used. This does not have to be the same as the user's Identity Provider email.
+RoleIds | Guid[] | No | List of strings of RoleIds.
 
 
 

@@ -2,7 +2,7 @@
 uid: identityImplicitClient
 ---
 
-# Implicit Client
+# ImplicitClient
 
 We suggest using a Authorization Code Client instead of an Implicit Client.
             Implicit clients are used in Javascript/Browser (SPA) based applications or native
@@ -18,8 +18,8 @@ For HTTP requests and responses, the ImplicitClient object has the following pro
 Property | Type | Descriptions
  --- | --- | --- | ---
 AllowedCorsOrigins | string[] | If specified, will be used by the default CORS policy service implementations to build a CORS policy for JavaScript clients. Maximum 10 for client.
-RedirectUris | string[] | Specifies the allowed URIs to return tokens or authorization codes to. Wildcards are ignored. URIs must match exactly to what you are redirecting to after login. If URIs do not match the authentication process will fail with a bad_client error. Maximum 10 per client.
-PostLogoutRedirectUris | string[] | Specifies allowed URIs to redirect to after logout. Wildcards are ignored. URIs must match exactly to what you are redirecting to after logout. Maximum 10 for client.
+RedirectUris | string[] | Specifies the allowed URIs to which return tokens or authorization codes can be returned. Wildcards are ignored. URIs must match exactly what you are redirecting to after login. If URIs do not match,, the authentication process will fail with a bad_client error. Maximum 10 per client.
+PostLogoutRedirectUris | string[] | Specifies allowed URIs to redirect to after logout. Wildcards are ignored. URIs must match exactly what you are redirecting after logout. Maximum 10 for client.
 ClientUri | string | URI to a page with information about client (used on consent screen).
 LogoUri | string | URI to client logo (used on consent screen).
 Id | string | Client ID for this client. This ID should be a GUID.
@@ -67,12 +67,12 @@ All URLs referenced in this section have the following base:
 
 ## Authentication
 
-All endpoints referenced in this documentation require authenticated access.Authorization header must be set to the access token you retrieve after a successful authentication request.
+All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieve after a successful authentication request.
 
 `Authorization: Bearer <token>`
 
-Requests made without an access token, or an invalid/expired one will fail with a 401 Unauthorized response.
-Requests made with an access token, which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
+Requests made without an access token or an invalid/expired token will fail with a 401 Unauthorized response.
+Requests made with an access token which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
 Read [here](https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/Authentication) on how to authenticate against OCS with the various clients and receive an access token in response.
 
 ## Error Handling
@@ -119,8 +119,8 @@ New ImplicitClient object.
 Property | Type | Required | Description 
  --- | --- | --- | ---
 AllowedCorsOrigins | string[] | No | If specified, will be used by the default CORS policy service implementations to build a            CORS policy for JavaScript clients.            Maximum 10 for client.
-RedirectUris | string[] | No | Specifies the allowed URIs to return tokens or authorization codes to.            Wildcards are ignored. URIs must match exactly to what you are redirecting            to after login. If URIs do not match the authentication process will fail            with a bad_client error.            Maximum 10 per client.
-PostLogoutRedirectUris | string[] | No | Specifies allowed URIs to redirect to after logout. Wildcards are ignored.            URIs must match exactly to what you are redirecting to after logout.            Maximum 10 for client.
+RedirectUris | string[] | No | Specifies the allowed URIs to which return tokens or authorization codes can be returned.            Wildcards are ignored. URIs must match exactly what you are redirecting            to after login. If URIs do not match, the authentication process will fail            with a bad_client error.            Maximum 10 per client.
+PostLogoutRedirectUris | string[] | No | Specifies allowed URIs to redirect to after logout. Wildcards are ignored.            URIs must match exactly what you are redirecting after logout.            Maximum 10 for client.
 ClientUri | string | No | URI to a page with information about client (used on consent screen).
 LogoUri | string | No | URI to client logo (used on consent screen).
 Id | string | No | Client ID for this client. This ID should be a GUID.
@@ -262,8 +262,8 @@ Updated Implicit Client values. Properties that are not set or are null will not
 Property | Type | Required | Description 
  --- | --- | --- | ---
 AllowedCorsOrigins | string[] | No | If specified, will be used by the default CORS policy service implementations to build a            CORS policy for JavaScript clients.            Maximum 10 for client.
-RedirectUris | string[] | No | Specifies the allowed URIs to return tokens or authorization codes to.            Wildcards are ignored. URIs must match exactly to what you are redirecting            to after login. If URIs do not match the authentication process will fail            with a bad_client error.            Maximum 10 per client.
-PostLogoutRedirectUris | string[] | No | Specifies allowed URIs to redirect to after logout. Wildcards are ignored.            URIs must match exactly to what you are redirecting to after logout.            Maximum 10 for client.
+RedirectUris | string[] | No | Specifies the allowed URIs to which return tokens or authorization codes can be returned.            Wildcards are ignored. URIs must match exactly what you are redirecting            to after login. If URIs do not match, the authentication process will fail            with a bad_client error.            Maximum 10 per client.
+PostLogoutRedirectUris | string[] | No | Specifies allowed URIs to redirect to after logout. Wildcards are ignored.            URIs must match exactly what you are redirecting after logout.            Maximum 10 for client.
 ClientUri | string | No | URI to a page with information about client (used on consent screen).
 LogoUri | string | No | URI to client logo (used on consent screen).
 Id | string | No | Client ID for this client. This ID should be a GUID.

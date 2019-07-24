@@ -78,7 +78,10 @@
             <article class="content wrap" id="_content" data-uid="identityAzureActiveDirectoryTenant">
 <h1 id="azureactivedirectorytenant">AzureActiveDirectoryTenant</h1>
 
-<p>APIs for creating, getting, updating, and deleting Azure Active Directory Tenant for a Tenant</p>
+<p>An Azure Active Directory (AAD) Tenant is used to map an existing
+            <a href="https://azure.microsoft.com/en-us/services/active-directory/">AAD</a>
+            tenant from Azure to OSIsoft Cloud Services (OCS). We only allow one AAD Tenant
+            per OCS Tenant.</p>
 <h2 id="properties">Properties</h2>
 <p>For HTTP requests and responses, the AzureActiveDirectoryTenant object has the following properties and JSON-serialized body: </p>
 <table>
@@ -86,7 +89,7 @@
 <tr>
 <th>Property</th>
 <th>Type</th>
-<th>Description</th>
+<th>Descriptions</th>
 </tr>
 </thead>
 <tbody>
@@ -108,17 +111,35 @@
   &quot;ConsentState&quot;: 0
 }
 </code></pre><hr>
-<h2 id="add-azure-active-directory-tenant"><code>Add Azure Active Directory Tenant</code></h2>
-<p>Add Azure Active Directory Tenant to a Tenant</p>
+<h2 id="base-url">Base URL</h2>
+<p>All URLs referenced in this section have the following base:</p>
+<p><code>https://dat-b.osisoft.com/</code></p>
+<h2 id="authentication">Authentication</h2>
+<p>All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieve after a successful authentication request.</p>
+<p><code>Authorization: Bearer &lt;token&gt;</code></p>
+<p>Requests made without an access token or an invalid/expired token will fail with a 401 Unauthorized response.
+Requests made with an access token which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
+Read <a href="https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/Authentication">here</a> on how to authenticate against OCS with the various clients and receive an access token in response.</p>
+<h2 id="error-handling">Error Handling</h2>
+<p>All responses will have an error message in the body. The exceptions are 200 responses and the 401 Unauthorized response. The error message will look as follows:</p>
+<pre><code class="lang-json">{
+    &quot;OperationId&quot;: &quot;1b2af18e-8b27-4f86-93e0-6caa3e59b90c&quot;, 
+    &quot;Error&quot;: &quot;Error message.&quot;, 
+    &quot;Reason&quot;: &quot;Reason that caused error.&quot;, 
+    &quot;Resolution&quot;: &quot;Possible solution for the error.&quot; 
+}
+</code></pre><p>If and when contacting OSIsoft support about this error, please provide the OperationId.</p>
+<h2 id="add-aad-tenant-to-ocs-tenant"><code>Add AAD Tenant to OCS Tenant</code></h2>
+<p>Add an AAD Tenant to the OCS Tenant.</p>
 <h3 id="request">Request</h3>
 <p><code>POST api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{azureActiveDirectoryTenantId}</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of tenant</p>
+</code></pre><p>Id of OCS Tenant.</p>
 <pre><code class="lang-csharp">[Required]
 string azureActiveDirectoryTenantId
-</code></pre><p>Azure Active Directory Tenant Id or Domain Name to add</p>
+</code></pre><p>Id or Domain Name of AAD Tenant.</p>
 <h3 id="security">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -126,7 +147,7 @@ string azureActiveDirectoryTenantId
 </ul>
 <h3 id="returns">Returns</h3>
 <h4 id="201">201</h4>
-<p>Created</p>
+<p>Created.</p>
 <h5 id="type">Type:</h5>
 <p> <code>AzureActiveDirectoryTenant</code></p>
 <pre><code class="lang-json">{
@@ -134,41 +155,41 @@ string azureActiveDirectoryTenantId
   &quot;ConsentState&quot;: 0
 }
 </code></pre><h4 id="400">400</h4>
-<p>Missing or invalid inputs</p>
+<p>Missing or invalid inputs.</p>
 <h4 id="401">401</h4>
-<p>Unauthorized</p>
+<p>Unauthorized.</p>
 <h4 id="403">403</h4>
-<p>Forbidden</p>
+<p>Forbidden.</p>
 <h4 id="404">404</h4>
-<p>Tenant not found</p>
+<p>OCS Tenant not found.</p>
 <h4 id="409">409</h4>
-<p>Azure Active Directory Tenant Id is already in use on the specified Tenant</p>
+<p>Id of AAD Tenant. is already in use on the specified Tenant.</p>
 <h4 id="500">500</h4>
-<p>Internal server error</p>
+<p>Internal server error.</p>
 <hr>
-<h2 id="get-all-azure-active-directory-tenants"><code>Get All Azure Active Directory Tenants</code></h2>
-<p>Get all Azure Active Directory Tenants for a Tenant</p>
+<h2 id="get-all-aad-tenants-from-ocs-tenant"><code>Get All AAD Tenants from OCS Tenant</code></h2>
+<p>Get all AAD Tenants from an OCS Tenant.</p>
 <h3 id="request-1">Request</h3>
 <p><code>GET api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of tenant</p>
+</code></pre><p>Id of OCS Tenant.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
 [Default = &quot;&quot;]
 string query
-</code></pre><p>Query to execute. Currently not supported</p>
+</code></pre><p>Query to execute. Currently not supported.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
 [Default = 0]
 int32 skip
-</code></pre><p>Number of providers to skip.</p>
+</code></pre><p>Number of AAD tenants to skip.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
 [Default = 100]
 int32 count
-</code></pre><p>Max number of providers to return</p>
+</code></pre><p>Maximum number of AAD tenants to return.</p>
 <h3 id="security-1">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -176,9 +197,9 @@ int32 count
 </ul>
 <h3 id="returns-1">Returns</h3>
 <h4 id="200">200</h4>
-<p>Success</p>
+<p>Success.</p>
 <h5 id="type-1">Type:</h5>
-<p> <code>List[AzureActiveDirectoryTenant]</code></p>
+<p> <code>List</code></p>
 <pre><code class="lang-json">[
   {
     &quot;Id&quot;: &quot;Id&quot;,
@@ -190,25 +211,25 @@ int32 count
   }
 ]
 </code></pre><h4 id="401-1">401</h4>
-<p>Unauthorized</p>
+<p>Unauthorized.</p>
 <h4 id="403-1">403</h4>
-<p>Forbidden</p>
+<p>Forbidden.</p>
 <h4 id="403-2">403</h4>
-<p>Forbidden</p>
+<p>Forbidden.</p>
 <h4 id="500-1">500</h4>
-<p>Internal server error</p>
+<p>Internal server error.</p>
 <hr>
-<h2 id="get-azure-active-directory-tenant"><code>Get Azure Active Directory Tenant</code></h2>
-<p>Get Azure Active Directory Tenant from a tenant</p>
+<h2 id="get-aad-tenant-from-ocs-tenant"><code>Get AAD Tenant from OCS Tenant</code></h2>
+<p>Get AAD Tenant from an OCS Tenant.</p>
 <h3 id="request-2">Request</h3>
 <p><code>GET api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{azureActiveDirectoryTenantId}</code></p>
 <h3 id="parameters-2">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of tenant</p>
+</code></pre><p>Id of OCS Tenant.</p>
 <pre><code class="lang-csharp">[Required]
 string azureActiveDirectoryTenantId
-</code></pre><p>Azure Active Directory Tenant Id</p>
+</code></pre><p>Id of AAD Tenant.</p>
 <h3 id="security-2">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -216,7 +237,7 @@ string azureActiveDirectoryTenantId
 </ul>
 <h3 id="returns-2">Returns</h3>
 <h4 id="200-1">200</h4>
-<p>Success</p>
+<p>Success.</p>
 <h5 id="type-2">Type:</h5>
 <p> <code>AzureActiveDirectoryTenant</code></p>
 <pre><code class="lang-json">{
@@ -224,27 +245,27 @@ string azureActiveDirectoryTenantId
   &quot;ConsentState&quot;: 0
 }
 </code></pre><h4 id="400-1">400</h4>
-<p>Missing or invalid inputs</p>
+<p>Missing or invalid inputs.</p>
 <h4 id="401-2">401</h4>
-<p>Unauthorized</p>
+<p>Unauthorized.</p>
 <h4 id="403-3">403</h4>
-<p>Forbidden</p>
+<p>Forbidden.</p>
 <h4 id="404-1">404</h4>
-<p>Tenant not found</p>
+<p>OCS Tenant not found.</p>
 <h4 id="500-2">500</h4>
-<p>Internal server error</p>
+<p>Internal server error.</p>
 <hr>
-<h2 id="remove-azure-active-directory-tenant-from-tenant"><code>Remove Azure Active Directory Tenant From Tenant</code></h2>
-<p>Remove Azure Active Directory Tenant from a tenant</p>
+<h2 id="remove-aad-tenant-from-ocs-tenant"><code>Remove AAD Tenant from OCS Tenant</code></h2>
+<p>Remove AAD Tenant from an OCS Tenant.</p>
 <h3 id="request-3">Request</h3>
 <p><code>DELETE api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{azureActiveDirectoryTenantId}</code></p>
 <h3 id="parameters-3">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of tenant</p>
+</code></pre><p>Id of OCS Tenant.</p>
 <pre><code class="lang-csharp">[Required]
 string azureActiveDirectoryTenantId
-</code></pre><p>Azure Active Directory Tenant Id to remove</p>
+</code></pre><p>Id of AAD Tenant to remove.</p>
 <h3 id="security-3">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -252,33 +273,36 @@ string azureActiveDirectoryTenantId
 </ul>
 <h3 id="returns-3">Returns</h3>
 <h4 id="204">204</h4>
-<p>Removed</p>
+<p>Removed.</p>
 <h4 id="400-2">400</h4>
-<p>Missing or invalid inputs</p>
+<p>Missing or invalid inputs.</p>
 <h4 id="401-3">401</h4>
-<p>Unauthorized</p>
+<p>Unauthorized.</p>
 <h4 id="403-4">403</h4>
-<p>Forbidden</p>
+<p>Forbidden.</p>
 <h4 id="404-2">404</h4>
-<p>Tenant not found</p>
+<p>OCS Tenant not found.</p>
 <h4 id="500-3">500</h4>
-<p>Internal server error</p>
+<p>Internal server error.</p>
 <hr>
-<h2 id="send-consent-for-azure-active-directory-tenant"><code>Send Consent for Azure Active Directory Tenant</code></h2>
-<p>Send consent for an Azure Active Directory Tenant</p>
+<h2 id="send-consent-email-for-aad-tenant"><code>Send Consent Email for AAD Tenant</code></h2>
+<p>Send consent for an AAD Tenant. OCS needs to be granted
+            permission to interact with the AAD tenant. Otherwise, users from this AAD Tenant
+            cannot accept invitations from OCS and log in. You can read more about this
+            <a href="https://pisquare.osisoft.com/docs/DOC-3986-msa-consent-for-azure-active-directory">here</a></p>
 <h3 id="request-4">Request</h3>
 <p><code>POST api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{azureActiveDirectoryTenantId}/SendConsent</code></p>
 <h3 id="parameters-4">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of tenant</p>
+</code></pre><p>Id of OCS Tenant.</p>
 <pre><code class="lang-csharp">[Required]
 string azureActiveDirectoryTenantId
-</code></pre><p>Azure Active Directory Tenant Id</p>
+</code></pre><p>Id of AAD Tenant.</p>
 <pre><code class="lang-csharp">[FromBody]
 [Required]
 ConsentInformation consentInformation
-</code></pre><p>Consent information used to send</p>
+</code></pre><p>ConsentInformation object.</p>
 <table>
 <thead>
 <tr>
@@ -293,25 +317,25 @@ ConsentInformation consentInformation
 <td>AzureActiveDirectoryConsentEmail</td>
 <td>string</td>
 <td>Yes</td>
-<td>Preferred Azure Active Directory consent email for user.</td>
+<td>Address to email consent.            Only AAD Admins have permission to consent to OCS            being allowed to interact with the tenant. The email            does not have to be sent to an Admin.</td>
 </tr>
 <tr>
 <td>AzureActiveDirectoryConsentGivenName</td>
 <td>string</td>
 <td>Yes</td>
-<td>Preferred Azure Active Directory consent name for user.</td>
+<td>Preferred name to use in the consent email.</td>
 </tr>
 <tr>
 <td>AzureActiveDirectoryConsentSurname</td>
 <td>string</td>
 <td>Yes</td>
-<td>Preferred Azure Active Directory consent surname for user.</td>
+<td>Preferred surname to use in the email.</td>
 </tr>
 <tr>
 <td>AzureActiveDirectoryTenant</td>
 <td>string</td>
 <td>Yes</td>
-<td>Domain Name of Azure Active Directory (e.g. mydomain.onmicrosoft.com)</td>
+<td>AAD Domain Name (e.g. mydomain.onmicrosoft.com)</td>
 </tr>
 </tbody>
 </table>
@@ -328,17 +352,82 @@ ConsentInformation consentInformation
 </ul>
 <h3 id="returns-4">Returns</h3>
 <h4 id="204-1">204</h4>
-<p>Removed</p>
+<p>Removed.</p>
 <h4 id="400-3">400</h4>
-<p>Missing or invalid inputs</p>
+<p>Missing or invalid inputs.</p>
 <h4 id="401-4">401</h4>
-<p>Unauthorized</p>
+<p>Unauthorized.</p>
 <h4 id="403-5">403</h4>
-<p>Forbidden</p>
+<p>Forbidden.</p>
 <h4 id="404-3">404</h4>
-<p>Tenant not found</p>
+<p>OCS Tenant not found.</p>
 <h4 id="500-4">500</h4>
-<p>Internal server error</p>
+<p>Internal server error.</p>
+<hr>
+<h2 id="validate-aad-tenant-in-ocs-tenant"><code>Validate AAD Tenant in OCS Tenant</code></h2>
+<p>Validate that AAD Tenant exists in this OCS Tenant.
+            This endpoint is identical to the GET one but
+            it does not return any objects in the body.</p>
+<h3 id="request-5">Request</h3>
+<p><code>HEAD api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{azureActiveDirectoryTenantId}</code></p>
+<h3 id="parameters-5">Parameters</h3>
+<pre><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p>Id of OCS Tenant.</p>
+<pre><code class="lang-csharp">[Required]
+string azureActiveDirectoryTenantId
+</code></pre><p>Id of AAD Tenant.</p>
+<h3 id="security-5">Security</h3>
+<p>Allowed for these roles:</p>
+<ul>
+<li><code>Account Administrator</code></li>
+</ul>
+<h3 id="returns-5">Returns</h3>
+<h4 id="200-2">200</h4>
+<p>Success.</p>
+<h5 id="type-3">Type:</h5>
+<p> <code>Void</code></p>
+<h4 id="400-4">400</h4>
+<p>Missing or invalid inputs.</p>
+<h4 id="401-5">401</h4>
+<p>Unauthorized.</p>
+<h4 id="403-6">403</h4>
+<p>Forbidden.</p>
+<h4 id="404-4">404</h4>
+<p>OCS Tenant not found.</p>
+<h4 id="500-5">500</h4>
+<p>Internal server error.</p>
+<hr>
+<h2 id="get-total-count-of-aad-tenant-in-ocs-tenant"><code>Get Total Count of AAD Tenant in OCS Tenant</code></h2>
+<p>Return total number of AAD tenants in a OCS Tenant. This endpoint
+            is identical to the GET one but it does not return any objects
+            in the body.</p>
+<h3 id="request-6">Request</h3>
+<p><code>HEAD api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants</code></p>
+<h3 id="parameters-6">Parameters</h3>
+<pre><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p>Id of OCS Tenant.</p>
+<h3 id="security-6">Security</h3>
+<p>Allowed for these roles:</p>
+<ul>
+<li><code>Account Administrator</code></li>
+</ul>
+<h3 id="returns-6">Returns</h3>
+<h4 id="200-3">200</h4>
+<p>Success.</p>
+<h5 id="type-4">Type:</h5>
+<p> <code>Void</code></p>
+<h4 id="400-5">400</h4>
+<p>Missing or invalid inputs.</p>
+<h4 id="401-6">401</h4>
+<p>Unauthorized.</p>
+<h4 id="403-7">403</h4>
+<p>Forbidden.</p>
+<h4 id="404-5">404</h4>
+<p>OCS Tenant not found.</p>
+<h4 id="500-6">500</h4>
+<p>Internal server error.</p>
 <hr>
 </article>
           </div>

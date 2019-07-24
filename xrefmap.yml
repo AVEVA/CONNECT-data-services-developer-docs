@@ -52,6 +52,9 @@ references:
 - uid: GroupRules
   name: GroupRules
   href: Documentation/DataViews/GroupRules.html
+- uid: identityAuthorizationCodeClient
+  name: AuthorizationCodeClient
+  href: Documentation/Identity/Identity_AuthorizationCodeClient.html
 - uid: identityAzureActiveDirectoryTenant
   name: AzureActiveDirectoryTenant
   href: Documentation/Identity/Identity_AzureActiveDirectoryTenant.html
@@ -76,6 +79,9 @@ references:
 - uid: identityOverview
   name: OSIsoft Identity Service
   href: Documentation/Identity/Identity_Overview.html
+- uid: identityPersistedGrant
+  name: PersistedGrant
+  href: Documentation/Identity/Identity_PersistedGrant.html
 - uid: identitySecret
   name: Secret
   href: Documentation/Identity/Identity_Secret.html

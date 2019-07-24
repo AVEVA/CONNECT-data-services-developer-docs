@@ -78,7 +78,12 @@
             <article class="content wrap" id="_content" data-uid="identityImplicitClient">
 <h1 id="implicitclient">ImplicitClient</h1>
 
-<p>APIs for creating, getting, updating, and deleting Implicit Clients</p>
+<p>We suggest using a Authorization Code Client instead of an Implicit Client.
+            Implicit clients are used in Javascript/Browser (SPA) based applications or native
+            mobile applications with the presence of a User.
+            You can read more about these clients
+            <a href="https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/Authentication#implicit-flow-deprecated">here</a>.
+            These clients are not issued secrets or refresh tokens.</p>
 <h2 id="properties">Properties</h2>
 <p>For HTTP requests and responses, the ImplicitClient object has the following properties and JSON-serialized body: </p>
 <table>
@@ -86,24 +91,24 @@
 <tr>
 <th>Property</th>
 <th>Type</th>
-<th>Description</th>
+<th>Descriptions</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>AllowedCorsOrigins</td>
 <td>string[]</td>
-<td>If specified, will be used by the default CORS policy service implementations to build a CORS policy for JavaScript clients.</td>
+<td>If specified, will be used by the default CORS policy service implementations to build a CORS policy for JavaScript clients. Maximum 10 for client.</td>
 </tr>
 <tr>
 <td>RedirectUris</td>
 <td>string[]</td>
-<td>Specifies the allowed URIs to return tokens or authorization codes to.</td>
+<td>Specifies the allowed URIs to which return tokens or authorization codes can be returned. Wildcards are ignored. URIs must match exactly what you are redirecting to after login. If URIs do not match,, the authentication process will fail with a bad_client error. Maximum 10 per client.</td>
 </tr>
 <tr>
 <td>PostLogoutRedirectUris</td>
 <td>string[]</td>
-<td>Specifies allowed URIs to redirect to after logout.</td>
+<td>Specifies allowed URIs to redirect to after logout. Wildcards are ignored. URIs must match exactly what you are redirecting after logout. Maximum 10 for client.</td>
 </tr>
 <tr>
 <td>ClientUri</td>
@@ -118,7 +123,7 @@
 <tr>
 <td>Id</td>
 <td>string</td>
-<td>Client ID for this Client</td>
+<td>Client ID for this client. This ID should be a GUID.</td>
 </tr>
 <tr>
 <td>Name</td>
@@ -128,12 +133,17 @@
 <tr>
 <td>Enabled</td>
 <td>bool</td>
-<td>Is Client Enabled</td>
+<td>Determine if client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.</td>
+</tr>
+<tr>
+<td>AccessTokenLifetime</td>
+<td>int32</td>
+<td>Lifetime of access token issued for this client after authentication. Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.</td>
 </tr>
 <tr>
 <td>Tags</td>
 <td>string[]</td>
-<td>For OSIsoft internal use only</td>
+<td>For OSIsoft internal use only.</td>
 </tr>
 </tbody>
 </table>
@@ -156,24 +166,44 @@
   &quot;Id&quot;: &quot;Id&quot;,
   &quot;Name&quot;: &quot;Name&quot;,
   &quot;Enabled&quot;: false,
+  &quot;AccessTokenLifetime&quot;: 0,
   &quot;Tags&quot;: [
     &quot;String&quot;,
     &quot;String&quot;
   ]
 }
 </code></pre><hr>
-<h2 id="create-implicit-client"><code>Create Implicit Client</code></h2>
-<p>Create an Implicit flow Clients</p>
+<h2 id="base-url">Base URL</h2>
+<p>All URLs referenced in this section have the following base:</p>
+<p><code>https://dat-b.osisoft.com/</code></p>
+<h2 id="authentication">Authentication</h2>
+<p>All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieve after a successful authentication request.</p>
+<p><code>Authorization: Bearer &lt;token&gt;</code></p>
+<p>Requests made without an access token or an invalid/expired token will fail with a 401 Unauthorized response.
+Requests made with an access token which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
+Read <a href="https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/Authentication">here</a> on how to authenticate against OCS with the various clients and receive an access token in response.</p>
+<h2 id="error-handling">Error Handling</h2>
+<p>All responses will have an error message in the body. The exceptions are 200 responses and the 401 Unauthorized response. The error message will look as follows:</p>
+<pre><code class="lang-json">{
+    &quot;OperationId&quot;: &quot;1b2af18e-8b27-4f86-93e0-6caa3e59b90c&quot;, 
+    &quot;Error&quot;: &quot;Error message.&quot;, 
+    &quot;Reason&quot;: &quot;Reason that caused error.&quot;, 
+    &quot;Resolution&quot;: &quot;Possible solution for the error.&quot; 
+}
+</code></pre><p>If and when contacting OSIsoft support about this error, please provide the OperationId.</p>
+<h2 id="create-an-implicit-client"><code>Create an Implicit Client</code></h2>
+<p>Create an Implicit Client in a Tenant. No Secret will be generated for this
+            Client.</p>
 <h3 id="request">Request</h3>
 <p><code>POST api/v1/Tenants/{tenantId}/ImplicitClients</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of tenant</p>
+</code></pre><p>Id of Tenant.</p>
 <pre><code class="lang-csharp">[FromBody]
 [Required]
 ImplicitClient implicitClient
-</code></pre><p>New ImplicitClient object</p>
+</code></pre><p>New ImplicitClient object.</p>
 <table>
 <thead>
 <tr>
@@ -188,19 +218,19 @@ ImplicitClient implicitClient
 <td>AllowedCorsOrigins</td>
 <td>string[]</td>
 <td>No</td>
-<td>If specified, will be used by the default CORS policy service implementations to build a            CORS policy for JavaScript clients.</td>
+<td>If specified, will be used by the default CORS policy service implementations to build a            CORS policy for JavaScript clients.            Maximum 10 for client.</td>
 </tr>
 <tr>
 <td>RedirectUris</td>
 <td>string[]</td>
 <td>No</td>
-<td>Specifies the allowed URIs to return tokens or authorization codes to.</td>
+<td>Specifies the allowed URIs to which return tokens or authorization codes can be returned.            Wildcards are ignored. URIs must match exactly what you are redirecting            to after login. If URIs do not match, the authentication process will fail            with a bad_client error.            Maximum 10 per client.</td>
 </tr>
 <tr>
 <td>PostLogoutRedirectUris</td>
 <td>string[]</td>
 <td>No</td>
-<td>Specifies allowed URIs to redirect to after logout.</td>
+<td>Specifies allowed URIs to redirect to after logout. Wildcards are ignored.            URIs must match exactly what you are redirecting after logout.            Maximum 10 for client.</td>
 </tr>
 <tr>
 <td>ClientUri</td>
@@ -218,7 +248,7 @@ ImplicitClient implicitClient
 <td>Id</td>
 <td>string</td>
 <td>No</td>
-<td>Client ID for this Client</td>
+<td>Client ID for this client. This ID should be a GUID.</td>
 </tr>
 <tr>
 <td>Name</td>
@@ -230,13 +260,19 @@ ImplicitClient implicitClient
 <td>Enabled</td>
 <td>bool</td>
 <td>No</td>
-<td>Is Client Enabled</td>
+<td>Determine if client is enabled. Client can be used for authentication            if set to true. Client cannot be used for authentication if set to false.</td>
+</tr>
+<tr>
+<td>AccessTokenLifetime</td>
+<td>int32</td>
+<td>No</td>
+<td>Lifetime of access token issued for this client after authentication.            Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.</td>
 </tr>
 <tr>
 <td>Tags</td>
 <td>string[]</td>
 <td>No</td>
-<td>For OSIsoft internal use only</td>
+<td>For OSIsoft internal use only.</td>
 </tr>
 </tbody>
 </table>
@@ -258,6 +294,7 @@ ImplicitClient implicitClient
   &quot;Id&quot;: &quot;Id&quot;,
   &quot;Name&quot;: &quot;Name&quot;,
   &quot;Enabled&quot;: false,
+  &quot;AccessTokenLifetime&quot;: 0,
   &quot;Tags&quot;: [
     &quot;String&quot;,
     &quot;String&quot;
@@ -270,7 +307,7 @@ ImplicitClient implicitClient
 </ul>
 <h3 id="returns">Returns</h3>
 <h4 id="201">201</h4>
-<p>Created</p>
+<p>Created.</p>
 <h5 id="type">Type:</h5>
 <p> <code>ImplicitClient</code></p>
 <pre><code class="lang-json">{
@@ -291,39 +328,41 @@ ImplicitClient implicitClient
   &quot;Id&quot;: &quot;Id&quot;,
   &quot;Name&quot;: &quot;Name&quot;,
   &quot;Enabled&quot;: false,
+  &quot;AccessTokenLifetime&quot;: 0,
   &quot;Tags&quot;: [
     &quot;String&quot;,
     &quot;String&quot;
   ]
 }
 </code></pre><h4 id="400">400</h4>
-<p>Client limit exceeded.</p>
+<p>Missing or invalid inputs, or Client limit exceeded.</p>
 <h4 id="401">401</h4>
-<p>Unauthorized</p>
+<p>Unauthorized.</p>
 <h4 id="403">403</h4>
-<p>Forbidden</p>
+<p>Forbidden.</p>
 <h4 id="404">404</h4>
-<p>Tenant not found</p>
+<p>Tenant not found.</p>
 <h4 id="409">409</h4>
 <p>Client Id already exists.</p>
 <h4 id="500">500</h4>
-<p>Internal server error</p>
+<p>Internal server error.</p>
 <hr>
-<h2 id="update-implicit-client"><code>Update Implicit Client</code></h2>
-<p>Update an Implicit Client</p>
+<h2 id="update-an-implicit-client"><code>Update an Implicit Client</code></h2>
+<p>Update an Implicit Client. It can take up to one hour
+            for update to manifest in the authentication process.</p>
 <h3 id="request-1">Request</h3>
 <p><code>PUT api/v1/Tenants/{tenantId}/ImplicitClients/{clientId}</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of tenant</p>
+</code></pre><p>Id of Tenant.</p>
 <pre><code class="lang-csharp">[Required]
 string clientId
-</code></pre><p>Id of client</p>
+</code></pre><p>Id of Client.</p>
 <pre><code class="lang-csharp">[FromBody]
 [Required]
 ImplicitClient implicitClient
-</code></pre><p>Updated Implicit Client values</p>
+</code></pre><p>Updated Implicit Client values. Properties that are not set or are null will not be changed.</p>
 <table>
 <thead>
 <tr>
@@ -338,19 +377,19 @@ ImplicitClient implicitClient
 <td>AllowedCorsOrigins</td>
 <td>string[]</td>
 <td>No</td>
-<td>If specified, will be used by the default CORS policy service implementations to build a            CORS policy for JavaScript clients.</td>
+<td>If specified, will be used by the default CORS policy service implementations to build a            CORS policy for JavaScript clients.            Maximum 10 for client.</td>
 </tr>
 <tr>
 <td>RedirectUris</td>
 <td>string[]</td>
 <td>No</td>
-<td>Specifies the allowed URIs to return tokens or authorization codes to.</td>
+<td>Specifies the allowed URIs to which return tokens or authorization codes can be returned.            Wildcards are ignored. URIs must match exactly what you are redirecting            to after login. If URIs do not match, the authentication process will fail            with a bad_client error.            Maximum 10 per client.</td>
 </tr>
 <tr>
 <td>PostLogoutRedirectUris</td>
 <td>string[]</td>
 <td>No</td>
-<td>Specifies allowed URIs to redirect to after logout.</td>
+<td>Specifies allowed URIs to redirect to after logout. Wildcards are ignored.            URIs must match exactly what you are redirecting after logout.            Maximum 10 for client.</td>
 </tr>
 <tr>
 <td>ClientUri</td>
@@ -368,7 +407,7 @@ ImplicitClient implicitClient
 <td>Id</td>
 <td>string</td>
 <td>No</td>
-<td>Client ID for this Client. Must be the same as the Id in the route.</td>
+<td>Client ID for this client. This ID should be a GUID.</td>
 </tr>
 <tr>
 <td>Name</td>
@@ -380,13 +419,19 @@ ImplicitClient implicitClient
 <td>Enabled</td>
 <td>bool</td>
 <td>No</td>
-<td>Is Client Enabled</td>
+<td>Determine if client is enabled. Client can be used for authentication            if set to true. Client cannot be used for authentication if set to false.</td>
+</tr>
+<tr>
+<td>AccessTokenLifetime</td>
+<td>int32</td>
+<td>No</td>
+<td>Lifetime of access token issued for this client after authentication.            Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.</td>
 </tr>
 <tr>
 <td>Tags</td>
 <td>string[]</td>
 <td>No</td>
-<td>For OSIsoft internal use only</td>
+<td>For OSIsoft internal use only.</td>
 </tr>
 </tbody>
 </table>
@@ -408,6 +453,7 @@ ImplicitClient implicitClient
   &quot;Id&quot;: &quot;Id&quot;,
   &quot;Name&quot;: &quot;Name&quot;,
   &quot;Enabled&quot;: false,
+  &quot;AccessTokenLifetime&quot;: 0,
   &quot;Tags&quot;: [
     &quot;String&quot;,
     &quot;String&quot;
@@ -420,7 +466,7 @@ ImplicitClient implicitClient
 </ul>
 <h3 id="returns-1">Returns</h3>
 <h4 id="200">200</h4>
-<p>Success</p>
+<p>Success.</p>
 <h5 id="type-1">Type:</h5>
 <p> <code>ImplicitClient</code></p>
 <pre><code class="lang-json">{
@@ -441,33 +487,34 @@ ImplicitClient implicitClient
   &quot;Id&quot;: &quot;Id&quot;,
   &quot;Name&quot;: &quot;Name&quot;,
   &quot;Enabled&quot;: false,
+  &quot;AccessTokenLifetime&quot;: 0,
   &quot;Tags&quot;: [
     &quot;String&quot;,
     &quot;String&quot;
   ]
 }
 </code></pre><h4 id="401-1">401</h4>
-<p>Unauthorized</p>
+<p>Unauthorized.</p>
 <h4 id="403-1">403</h4>
-<p>Forbidden</p>
+<p>Forbidden.</p>
 <h4 id="400-1">400</h4>
-<p>Missing or invalid inputs</p>
+<p>Missing or invalid inputs.</p>
 <h4 id="404-1">404</h4>
-<p>Client or Tenant not found</p>
+<p>Client or Tenant not found.</p>
 <h4 id="500-1">500</h4>
-<p>Internal server error</p>
+<p>Internal server error.</p>
 <hr>
-<h2 id="get-implicit-client"><code>Get Implicit Client</code></h2>
-<p>Get an Implicit Client</p>
+<h2 id="get-an-implicit-client"><code>Get an Implicit Client</code></h2>
+<p>Get an Implicit Client from a Tenant.</p>
 <h3 id="request-2">Request</h3>
 <p><code>GET api/v1/Tenants/{tenantId}/ImplicitClients/{clientId}</code></p>
 <h3 id="parameters-2">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of tenant</p>
+</code></pre><p>Id of Tenant.</p>
 <pre><code class="lang-csharp">[Required]
 string clientId
-</code></pre><p>Id of client</p>
+</code></pre><p>Id of Client.</p>
 <h3 id="security-2">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -475,7 +522,7 @@ string clientId
 </ul>
 <h3 id="returns-2">Returns</h3>
 <h4 id="200-1">200</h4>
-<p>Success</p>
+<p>Success.</p>
 <h5 id="type-2">Type:</h5>
 <p> <code>ImplicitClient</code></p>
 <pre><code class="lang-json">{
@@ -496,28 +543,36 @@ string clientId
   &quot;Id&quot;: &quot;Id&quot;,
   &quot;Name&quot;: &quot;Name&quot;,
   &quot;Enabled&quot;: false,
+  &quot;AccessTokenLifetime&quot;: 0,
   &quot;Tags&quot;: [
     &quot;String&quot;,
     &quot;String&quot;
   ]
 }
 </code></pre><h4 id="401-2">401</h4>
-<p>Unauthorized</p>
+<p>Unauthorized.</p>
 <h4 id="403-2">403</h4>
-<p>Forbidden</p>
+<p>Forbidden.</p>
 <h4 id="404-2">404</h4>
-<p>Client or Tenant not found</p>
+<p>Client or Tenant not found.</p>
 <h4 id="500-2">500</h4>
-<p>Internal server error</p>
+<p>Internal server error.</p>
 <hr>
-<h2 id="get-all-implicit-clients"><code>Get All Implicit Clients</code></h2>
-<p>Get all Implicit Clients</p>
+<h2 id="get-all-implicit-clients-from-tenant"><code>Get All Implicit Clients from Tenant</code></h2>
+<p>Get all Implicit clients from a Tenant.
+            Optionally, get a list of requested clients. Total number
+            of clients in the Tenant set in the Total-Count header.</p>
 <h3 id="request-3">Request</h3>
 <p><code>GET api/v1/Tenants/{tenantId}/ImplicitClients</code></p>
 <h3 id="parameters-3">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of tenant</p>
+</code></pre><p>Id of Tenant.</p>
+<pre><code class="lang-csharp">[FromQuery]
+[Optional]
+[Default = &quot;&quot;]
+string[] id
+</code></pre><p>Unordered list of ids for all clients to get. Empty or whitespace Ids will be ignored.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
 [Default = &quot;&quot;]
@@ -527,17 +582,17 @@ string[] tag
 [Optional]
 [Default = &quot;&quot;]
 string query
-</code></pre><p>Query to execute. Currently not supported</p>
+</code></pre><p>Query to execute. Currently not supported.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
 [Default = 0]
 int32 skip
-</code></pre><p>Number of clients to skip. From query.</p>
+</code></pre><p>Number of clients to skip. Will be ignored if a list of Ids is passed.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
 [Default = 100]
 int32 count
-</code></pre><p>Max number of clients to return</p>
+</code></pre><p>Maximum number of clients to return. Will be ignored if a list of Ids is passed.</p>
 <h3 id="security-3">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -545,9 +600,9 @@ int32 count
 </ul>
 <h3 id="returns-3">Returns</h3>
 <h4 id="200-2">200</h4>
-<p>Success</p>
+<p>Success.</p>
 <h5 id="type-3">Type:</h5>
-<p> <code>List[ImplicitClient]</code></p>
+<p> <code>List</code></p>
 <pre><code class="lang-json">[
   {
     &quot;AllowedCorsOrigins&quot;: [
@@ -567,6 +622,7 @@ int32 count
     &quot;Id&quot;: &quot;Id&quot;,
     &quot;Name&quot;: &quot;Name&quot;,
     &quot;Enabled&quot;: false,
+    &quot;AccessTokenLifetime&quot;: 0,
     &quot;Tags&quot;: [
       &quot;String&quot;,
       &quot;String&quot;
@@ -590,6 +646,7 @@ int32 count
     &quot;Id&quot;: &quot;Id&quot;,
     &quot;Name&quot;: &quot;Name&quot;,
     &quot;Enabled&quot;: false,
+    &quot;AccessTokenLifetime&quot;: 0,
     &quot;Tags&quot;: [
       &quot;String&quot;,
       &quot;String&quot;
@@ -597,25 +654,27 @@ int32 count
   }
 ]
 </code></pre><h4 id="401-3">401</h4>
-<p>Unauthorized</p>
+<p>Unauthorized.</p>
 <h4 id="403-3">403</h4>
-<p>Forbidden</p>
+<p>Forbidden.</p>
 <h4 id="404-3">404</h4>
-<p>Tenant not found</p>
+<p>Tenant not found.</p>
 <h4 id="500-3">500</h4>
-<p>Internal server error</p>
+<p>Internal server error.</p>
 <hr>
-<h2 id="delete-implicit-client"><code>Delete Implicit Client</code></h2>
-<p>Delete an Implicit Client</p>
+<h2 id="delete-an-implicit-client"><code>Delete an Implicit Client</code></h2>
+<p>Delete an Implicit Client. It can take up to one hour
+            for deletion to manifest in the authentication process. Access
+            tokens issued to this client will be valid until their expiration.</p>
 <h3 id="request-4">Request</h3>
 <p><code>DELETE api/v1/Tenants/{tenantId}/ImplicitClients/{clientId}</code></p>
 <h3 id="parameters-4">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of tenant</p>
+</code></pre><p>Id of Tenant.</p>
 <pre><code class="lang-csharp">[Required]
 string clientId
-</code></pre><p>Id of client</p>
+</code></pre><p>Id of Client.</p>
 <h3 id="security-4">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -623,15 +682,86 @@ string clientId
 </ul>
 <h3 id="returns-4">Returns</h3>
 <h4 id="204">204</h4>
-<p>Deleted</p>
+<p>Deleted.</p>
 <h4 id="401-4">401</h4>
-<p>Unauthorized</p>
+<p>Unauthorized.</p>
 <h4 id="403-4">403</h4>
-<p>Forbidden</p>
+<p>Forbidden.</p>
 <h4 id="404-4">404</h4>
-<p>Client or Tenant not found</p>
+<p>Client or Tenant not found.</p>
 <h4 id="500-4">500</h4>
-<p>Internal server error</p>
+<p>Internal server error.</p>
+<hr>
+<h2 id="validate-implicit-client-exists"><code>Validate Implicit Client Exists</code></h2>
+<p>Validate that an Implicit Client exists.</p>
+<h3 id="request-5">Request</h3>
+<p><code>HEAD api/v1/Tenants/{tenantId}/ImplicitClients/{clientId}</code></p>
+<h3 id="parameters-5">Parameters</h3>
+<pre><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p>Id of tenant.</p>
+<pre><code class="lang-csharp">[Required]
+string clientId
+</code></pre><p>Id of client.</p>
+<h3 id="security-5">Security</h3>
+<p>Allowed for these roles:</p>
+<ul>
+<li><code>Account Administrator</code></li>
+</ul>
+<h3 id="returns-5">Returns</h3>
+<h4 id="200-3">200</h4>
+<p>Success.</p>
+<h5 id="type-4">Type:</h5>
+<p> <code>Void</code></p>
+<h4 id="401-5">401</h4>
+<p>Unauthorized.</p>
+<h4 id="403-5">403</h4>
+<p>Forbidden.</p>
+<h4 id="404-5">404</h4>
+<p>Client or Tenant not found.</p>
+<h4 id="500-5">500</h4>
+<p>Internal server error.</p>
+<hr>
+<h2 id="get-total-count-of-implicit-clients"><code>Get Total Count of Implicit Clients</code></h2>
+<p>Return total number of Implicit clients in a Tenant.
+            Optionally, check based on a list of requested clients. The
+            value will be set in the Total-Count header. This endpoint
+            is identical to the GET one but it does not return any objects
+            in the body.</p>
+<h3 id="request-6">Request</h3>
+<p><code>HEAD api/v1/Tenants/{tenantId}/ImplicitClients</code></p>
+<h3 id="parameters-6">Parameters</h3>
+<pre><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p>Id of Tenant.</p>
+<pre><code class="lang-csharp">[FromQuery]
+[Optional]
+[Default = &quot;&quot;]
+string[] id
+</code></pre><p>Unordered list of ids for all clients to get. Empty or whitespace Ids will be ignored.</p>
+<pre><code class="lang-csharp">[FromQuery]
+[Optional]
+[Default = &quot;&quot;]
+string[] tag
+</code></pre><p>Only count Clients that have these tags.</p>
+<h3 id="security-6">Security</h3>
+<p>Allowed for these roles:</p>
+<ul>
+<li><code>Account Administrator</code></li>
+</ul>
+<h3 id="returns-6">Returns</h3>
+<h4 id="200-4">200</h4>
+<p>Success.</p>
+<h5 id="type-5">Type:</h5>
+<p> <code>Void</code></p>
+<h4 id="401-6">401</h4>
+<p>Unauthorized.</p>
+<h4 id="403-6">403</h4>
+<p>Forbidden.</p>
+<h4 id="404-6">404</h4>
+<p>Client or Tenant not found.</p>
+<h4 id="500-6">500</h4>
+<p>Internal server error.</p>
 <hr>
 </article>
           </div>

@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>ClientCredentialClient </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="ClientCredentialClient ">
+    <meta name="generator" content="docfx 2.43.3.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../../index.html" width="46">
+                <img id="logo" src="../../Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="identityClientCredentialClient">
+<h1 id="clientcredentialclient" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="5" sourceendlinenumber="5">ClientCredentialClient</h1>
+
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="7" sourceendlinenumber="15">Client Credential clients are used for machine-to-machine communication without
+            the presence of a User. These clients are issued an Id and Secret upon creation,
+            which are later used for authentication against OCS. More than one Secret can be
+            created for a Client. You can read more about these clients
+            <a href="https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/Authentication#client-credential-flow" data-raw-source="[here](https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/Authentication#client-credential-flow)" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="11" sourceendlinenumber="11">here</a>.
+            Because they access resources on OCS, and are not associated to users, these
+            clients can be assigned any of the roles in the Tenant. We suggest following a
+            least privilege strategy when assigning roles to these clients, as they are more
+            likely to operate in remote machines with a wider attack surface.</p>
+<h2 id="properties" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="17" sourceendlinenumber="17">Properties</h2>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="19" sourceendlinenumber="19">For HTTP requests and responses, the ClientCredentialClient object has the following properties and JSON-serialized body: </p>
+<table sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="21" sourceendlinenumber="28">
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Descriptions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RoleIds</td>
+<td>Guid[]</td>
+<td>List of Roles to be assigned to this client. Member role is always required. For security reasons we advise against assigning Admin roles to a client.</td>
+</tr>
+<tr>
+<td>Id</td>
+<td>string</td>
+<td>Client ID for this client. This ID should be a GUID.</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>Name of Client.</td>
+</tr>
+<tr>
+<td>Enabled</td>
+<td>bool</td>
+<td>Determine if client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.</td>
+</tr>
+<tr>
+<td>AccessTokenLifetime</td>
+<td>int32</td>
+<td>Lifetime of access token issued for this client after authentication. Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.</td>
+</tr>
+<tr>
+<td>Tags</td>
+<td>string[]</td>
+<td>For OSIsoft internal use only.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="serialized-model" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="30" sourceendlinenumber="30">Serialized Model</h3>
+<pre sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="32" sourceendlinenumber="47"><code class="lang-json">{
+  &quot;RoleIds&quot;: [
+    &quot;00000000-0000-0000-0000-000000000000&quot;,
+    &quot;00000000-0000-0000-0000-000000000000&quot;
+  ],
+  &quot;Id&quot;: &quot;Id&quot;,
+  &quot;Name&quot;: &quot;Name&quot;,
+  &quot;Enabled&quot;: false,
+  &quot;AccessTokenLifetime&quot;: 0,
+  &quot;Tags&quot;: [
+    &quot;String&quot;,
+    &quot;String&quot;
+  ]
+}
+</code></pre><hr>
+<h2 id="base-url" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="51" sourceendlinenumber="51">Base URL</h2>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="53" sourceendlinenumber="53">All URLs referenced in this section have the following base:</p>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="55" sourceendlinenumber="55"><code>https://dat-b.osisoft.com/</code></p>
+<h2 id="authentication" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="57" sourceendlinenumber="57">Authentication</h2>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="59" sourceendlinenumber="59">All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieve after a successful authentication request.</p>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="61" sourceendlinenumber="61"><code>Authorization: Bearer &lt;token&gt;</code></p>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="63" sourceendlinenumber="65">Requests made without an access token or an invalid/expired token will fail with a 401 Unauthorized response.
+Requests made with an access token which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
+Read <a href="https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/Authentication" data-raw-source="[here](https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/Authentication)" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="65" sourceendlinenumber="65">here</a> on how to authenticate against OCS with the various clients and receive an access token in response.</p>
+<h2 id="error-handling" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="67" sourceendlinenumber="67">Error Handling</h2>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="69" sourceendlinenumber="69">All responses will have an error message in the body. The exceptions are 200 responses and the 401 Unauthorized response. The error message will look as follows:</p>
+<pre sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="71" sourceendlinenumber="78"><code class="lang-json">{
+    &quot;OperationId&quot;: &quot;1b2af18e-8b27-4f86-93e0-6caa3e59b90c&quot;, 
+    &quot;Error&quot;: &quot;Error message.&quot;, 
+    &quot;Reason&quot;: &quot;Reason that caused error.&quot;, 
+    &quot;Resolution&quot;: &quot;Possible solution for the error.&quot; 
+}
+</code></pre><p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="80" sourceendlinenumber="80">If and when contacting OSIsoft support about this error, please provide the OperationId.</p>
+<h2 id="create-client-credential-client" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="82" sourceendlinenumber="82"><code>Create Client Credential Client</code></h2>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="84" sourceendlinenumber="88">Create a Client Credential Client. A Client Id and Client Secret will be generated to perform
+            authentication. Make sure to store the Secret somewhere safe as we do not store the
+            actual value after the creation step. If you do not have access to the Secret value, we suggest
+            deleting the Secret and adding a new one for this Client. Clients have unique Ids in a Tenant.
+            Currently there is a limit of 50000 clients (of all types) per Tenant.</p>
+<h3 id="request" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="90" sourceendlinenumber="90">Request</h3>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="92" sourceendlinenumber="92"><code>POST api/v1/Tenants/{tenantId}/ClientCredentialClients</code></p>
+<h3 id="parameters" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="94" sourceendlinenumber="94">Parameters</h3>
+<pre sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="96" sourceendlinenumber="99"><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="101" sourceendlinenumber="101">Id of Tenant.</p>
+<pre sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="103" sourceendlinenumber="107"><code class="lang-csharp">[FromBody]
+[Required]
+ClientCredentialClientCreate clientCredentialClientCreate
+</code></pre><p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="109" sourceendlinenumber="109">ClientCredentialClientCreate object.</p>
+<table sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="111" sourceendlinenumber="120">
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SecretDescription</td>
+<td>string</td>
+<td>No</td>
+<td>Description for the initial secret for the client. Ensure that this is descriptive enough,            as it will be the only way to distinguish between multiple secrets and their usage for a            client.</td>
+</tr>
+<tr>
+<td>SecretExpirationDate</td>
+<td>DateTime</td>
+<td>No</td>
+<td>Expiration date for the initial secret for the client. If set to null the secret will            never expire. We advise against such practice.</td>
+</tr>
+<tr>
+<td>RoleIds</td>
+<td>Guid[]</td>
+<td>No</td>
+<td>List of Roles to be assigned to this client. Member role is always required.            For security reasons we advise against assigning Admin roles to a client.</td>
+</tr>
+<tr>
+<td>Id</td>
+<td>string</td>
+<td>No</td>
+<td>Client ID for this client. This ID should be a GUID.</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>Yes</td>
+<td>Name of Client.</td>
+</tr>
+<tr>
+<td>Enabled</td>
+<td>bool</td>
+<td>No</td>
+<td>Determine if client is enabled. Client can be used for authentication            if set to true. Client cannot be used for authentication if set to false.</td>
+</tr>
+<tr>
+<td>AccessTokenLifetime</td>
+<td>int32</td>
+<td>No</td>
+<td>Lifetime of access token issued for this client after authentication.            Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.</td>
+</tr>
+<tr>
+<td>Tags</td>
+<td>string[]</td>
+<td>No</td>
+<td>For OSIsoft internal use only.</td>
+</tr>
+</tbody>
+</table>
+<pre sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="124" sourceendlinenumber="141"><code class="lang-json">{
+  &quot;SecretDescription&quot;: &quot;description&quot;,
+  &quot;SecretExpirationDate&quot;: &quot;2019-07-19T13:56:29.4733602-07:00&quot;,
+  &quot;RoleIds&quot;: [
+    &quot;00000000-0000-0000-0000-000000000000&quot;,
+    &quot;00000000-0000-0000-0000-000000000000&quot;
+  ],
+  &quot;Id&quot;: &quot;Id&quot;,
+  &quot;Name&quot;: &quot;Name&quot;,
+  &quot;Enabled&quot;: false,
+  &quot;AccessTokenLifetime&quot;: 0,
+  &quot;Tags&quot;: [
+    &quot;String&quot;,
+    &quot;String&quot;
+  ]
+}
+</code></pre><h3 id="security" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="143" sourceendlinenumber="143">Security</h3>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="145" sourceendlinenumber="145">Allowed for these roles:</p>
+<ul sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="147" sourceendlinenumber="147">
+<li sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="147" sourceendlinenumber="147"><code>Account Administrator</code></li>
+</ul>
+<h3 id="returns" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="149" sourceendlinenumber="149">Returns</h3>
+<h4 id="201" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="151" sourceendlinenumber="151">201</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="153" sourceendlinenumber="153">Created.</p>
+<h5 id="type" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="155" sourceendlinenumber="155">Type:</h5>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="157" sourceendlinenumber="157"> <code>ClientResponse</code></p>
+<pre sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="159" sourceendlinenumber="180"><code class="lang-json">{
+  &quot;Secret&quot;: &quot;Secret&quot;,
+  &quot;Id&quot;: 0,
+  &quot;Description&quot;: &quot;description&quot;,
+  &quot;ExpirationDate&quot;: &quot;2019-07-19T13:56:29.4757641-07:00&quot;,
+  &quot;Client&quot;: {
+    &quot;RoleIds&quot;: [
+      &quot;00000000-0000-0000-0000-000000000000&quot;,
+      &quot;00000000-0000-0000-0000-000000000000&quot;
+    ],
+    &quot;Id&quot;: &quot;Id&quot;,
+    &quot;Name&quot;: &quot;Name&quot;,
+    &quot;Enabled&quot;: false,
+    &quot;AccessTokenLifetime&quot;: 0,
+    &quot;Tags&quot;: [
+      &quot;String&quot;,
+      &quot;String&quot;
+    ]
+  }
+}
+</code></pre><h4 id="400" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="182" sourceendlinenumber="182">400</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="184" sourceendlinenumber="184">Missing or invalid inputs, or Client limit exceeded.</p>
+<h4 id="401" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="186" sourceendlinenumber="186">401</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="188" sourceendlinenumber="188">Unauthorized.</p>
+<h4 id="403" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="190" sourceendlinenumber="190">403</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="192" sourceendlinenumber="192">Forbidden.</p>
+<h4 id="404" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="194" sourceendlinenumber="194">404</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="196" sourceendlinenumber="196">Tenant not found.</p>
+<h4 id="409" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="198" sourceendlinenumber="198">409</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="200" sourceendlinenumber="200">Client Id already exists.</p>
+<h4 id="500" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="202" sourceendlinenumber="202">500</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="204" sourceendlinenumber="204">Internal server error.</p>
+<hr>
+<h2 id="update-client-credential-client" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="207" sourceendlinenumber="207"><code>Update Client Credential Client</code></h2>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="209" sourceendlinenumber="210">Update a Client Credential Client. It can take up to one hour
+            for these values to manifest in the authentication process.</p>
+<h3 id="request-1" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="212" sourceendlinenumber="212">Request</h3>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="214" sourceendlinenumber="214"><code>PUT api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}</code></p>
+<h3 id="parameters-1" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="216" sourceendlinenumber="216">Parameters</h3>
+<pre sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="218" sourceendlinenumber="221"><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="223" sourceendlinenumber="223">Id of Tenant.</p>
+<pre sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="225" sourceendlinenumber="228"><code class="lang-csharp">[Required]
+string clientId
+</code></pre><p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="230" sourceendlinenumber="230">Id of Client.</p>
+<pre sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="232" sourceendlinenumber="236"><code class="lang-csharp">[FromBody]
+[Required]
+ClientCredentialClient updatedClientCredentialClient
+</code></pre><p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="238" sourceendlinenumber="238">ClientCredentialClient object. Properties that are not set or are null will not be changed.</p>
+<table sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="240" sourceendlinenumber="247">
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RoleIds</td>
+<td>Guid[]</td>
+<td>No</td>
+<td>List of Roles to be assigned to this client. Member role is always required.            For security reasons we advise against assigning Admin roles to a client.</td>
+</tr>
+<tr>
+<td>Id</td>
+<td>string</td>
+<td>No</td>
+<td>Client ID for this client. This ID should be a GUID.</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>Yes</td>
+<td>Name of Client.</td>
+</tr>
+<tr>
+<td>Enabled</td>
+<td>bool</td>
+<td>No</td>
+<td>Determine if client is enabled. Client can be used for authentication            if set to true. Client cannot be used for authentication if set to false.</td>
+</tr>
+<tr>
+<td>AccessTokenLifetime</td>
+<td>int32</td>
+<td>No</td>
+<td>Lifetime of access token issued for this client after authentication.            Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.</td>
+</tr>
+<tr>
+<td>Tags</td>
+<td>string[]</td>
+<td>No</td>
+<td>For OSIsoft internal use only.</td>
+</tr>
+</tbody>
+</table>
+<pre sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="251" sourceendlinenumber="266"><code class="lang-json">{
+  &quot;RoleIds&quot;: [
+    &quot;00000000-0000-0000-0000-000000000000&quot;,
+    &quot;00000000-0000-0000-0000-000000000000&quot;
+  ],
+  &quot;Id&quot;: &quot;Id&quot;,
+  &quot;Name&quot;: &quot;Name&quot;,
+  &quot;Enabled&quot;: false,
+  &quot;AccessTokenLifetime&quot;: 0,
+  &quot;Tags&quot;: [
+    &quot;String&quot;,
+    &quot;String&quot;
+  ]
+}
+</code></pre><h3 id="security-1" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="268" sourceendlinenumber="268">Security</h3>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="270" sourceendlinenumber="270">Allowed for these roles:</p>
+<ul sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="272" sourceendlinenumber="272">
+<li sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="272" sourceendlinenumber="272"><code>Account Administrator</code></li>
+</ul>
+<h3 id="returns-1" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="274" sourceendlinenumber="274">Returns</h3>
+<h4 id="200" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="276" sourceendlinenumber="276">200</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="278" sourceendlinenumber="278">Success.</p>
+<h5 id="type-1" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="280" sourceendlinenumber="280">Type:</h5>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="282" sourceendlinenumber="282"> <code>ClientCredentialClient</code></p>
+<pre sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="284" sourceendlinenumber="299"><code class="lang-json">{
+  &quot;RoleIds&quot;: [
+    &quot;00000000-0000-0000-0000-000000000000&quot;,
+    &quot;00000000-0000-0000-0000-000000000000&quot;
+  ],
+  &quot;Id&quot;: &quot;Id&quot;,
+  &quot;Name&quot;: &quot;Name&quot;,
+  &quot;Enabled&quot;: false,
+  &quot;AccessTokenLifetime&quot;: 0,
+  &quot;Tags&quot;: [
+    &quot;String&quot;,
+    &quot;String&quot;
+  ]
+}
+</code></pre><h4 id="401-1" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="301" sourceendlinenumber="301">401</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="303" sourceendlinenumber="303">Unauthorized.</p>
+<h4 id="403-1" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="305" sourceendlinenumber="305">403</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="307" sourceendlinenumber="307">Forbidden.</p>
+<h4 id="400-1" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="309" sourceendlinenumber="309">400</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="311" sourceendlinenumber="311">Missing or invalid inputs.</p>
+<h4 id="404-1" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="313" sourceendlinenumber="313">404</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="315" sourceendlinenumber="315">Client or Tenant not found.</p>
+<h4 id="500-1" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="317" sourceendlinenumber="317">500</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="319" sourceendlinenumber="319">Internal server error.</p>
+<hr>
+<h2 id="get-client-credential-client" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="322" sourceendlinenumber="322"><code>Get Client Credential Client</code></h2>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="324" sourceendlinenumber="324">Get a Client Credential Client.</p>
+<h3 id="request-2" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="326" sourceendlinenumber="326">Request</h3>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="328" sourceendlinenumber="328"><code>GET api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}</code></p>
+<h3 id="parameters-2" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="330" sourceendlinenumber="330">Parameters</h3>
+<pre sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="332" sourceendlinenumber="335"><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="337" sourceendlinenumber="337">Id of Tenant.</p>
+<pre sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="339" sourceendlinenumber="342"><code class="lang-csharp">[Required]
+string clientId
+</code></pre><p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="344" sourceendlinenumber="344">Id of Client.</p>
+<h3 id="security-2" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="346" sourceendlinenumber="346">Security</h3>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="348" sourceendlinenumber="348">Allowed for these roles:</p>
+<ul sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="350" sourceendlinenumber="351">
+<li sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="350" sourceendlinenumber="350"><code>Account Administrator</code></li>
+<li sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="351" sourceendlinenumber="351"><code>Account Member</code></li>
+</ul>
+<h3 id="returns-2" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="353" sourceendlinenumber="353">Returns</h3>
+<h4 id="200-1" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="355" sourceendlinenumber="355">200</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="357" sourceendlinenumber="357">Success.</p>
+<h5 id="type-2" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="359" sourceendlinenumber="359">Type:</h5>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="361" sourceendlinenumber="361"> <code>ClientCredentialClient</code></p>
+<pre sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="363" sourceendlinenumber="378"><code class="lang-json">{
+  &quot;RoleIds&quot;: [
+    &quot;00000000-0000-0000-0000-000000000000&quot;,
+    &quot;00000000-0000-0000-0000-000000000000&quot;
+  ],
+  &quot;Id&quot;: &quot;Id&quot;,
+  &quot;Name&quot;: &quot;Name&quot;,
+  &quot;Enabled&quot;: false,
+  &quot;AccessTokenLifetime&quot;: 0,
+  &quot;Tags&quot;: [
+    &quot;String&quot;,
+    &quot;String&quot;
+  ]
+}
+</code></pre><h4 id="401-2" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="380" sourceendlinenumber="380">401</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="382" sourceendlinenumber="382">Unauthorized.</p>
+<h4 id="403-2" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="384" sourceendlinenumber="384">403</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="386" sourceendlinenumber="386">Forbidden.</p>
+<h4 id="404-2" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="388" sourceendlinenumber="388">404</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="390" sourceendlinenumber="390">Client or Tenant not found.</p>
+<h4 id="500-2" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="392" sourceendlinenumber="392">500</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="394" sourceendlinenumber="394">Internal server error.</p>
+<hr>
+<h2 id="get-all-client-credential-clients" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="397" sourceendlinenumber="397"><code>Get All Client Credential Clients</code></h2>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="399" sourceendlinenumber="401">Get a list of Client Credential clients from a Tenant.
+            Optionally, get a list of requested clients. Total number
+            of clients in the Tenant set in the Total-Count header.</p>
+<h3 id="request-3" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="403" sourceendlinenumber="403">Request</h3>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="405" sourceendlinenumber="405"><code>GET api/v1/Tenants/{tenantId}/ClientCredentialClients</code></p>
+<h3 id="parameters-3" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="407" sourceendlinenumber="407">Parameters</h3>
+<pre sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="409" sourceendlinenumber="412"><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="414" sourceendlinenumber="414">Id of Tenant.</p>
+<pre sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="416" sourceendlinenumber="421"><code class="lang-csharp">[FromQuery]
+[Optional]
+[Default = &quot;&quot;]
+string[] id
+</code></pre><p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="423" sourceendlinenumber="423">Unordered list of Client Credential Client Ids. Empty, whitespace or null Ids will be ignored.</p>
+<pre sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="425" sourceendlinenumber="430"><code class="lang-csharp">[FromQuery]
+[Optional]
+[Default = &quot;&quot;]
+string[] tag
+</code></pre><p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="432" sourceendlinenumber="432">Only return Clients that have these tags.</p>
+<pre sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="434" sourceendlinenumber="439"><code class="lang-csharp">[FromQuery]
+[Optional]
+[Default = &quot;&quot;]
+string query
+</code></pre><p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="441" sourceendlinenumber="441">Query to execute. Currently not supported.</p>
+<pre sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="443" sourceendlinenumber="448"><code class="lang-csharp">[FromQuery]
+[Optional]
+[Default = 0]
+int32 skip
+</code></pre><p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="450" sourceendlinenumber="450">Number of clients to skip. Will be ignored if a list of Ids is passed.</p>
+<pre sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="452" sourceendlinenumber="457"><code class="lang-csharp">[FromQuery]
+[Optional]
+[Default = 100]
+int32 count
+</code></pre><p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="459" sourceendlinenumber="459">Maximum number of clients to return. Will be ignored if a list of Ids is passed.</p>
+<h3 id="security-3" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="461" sourceendlinenumber="461">Security</h3>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="463" sourceendlinenumber="463">Allowed for these roles:</p>
+<ul sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="465" sourceendlinenumber="466">
+<li sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="465" sourceendlinenumber="465"><code>Account Administrator</code></li>
+<li sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="466" sourceendlinenumber="466"><code>Account Member</code></li>
+</ul>
+<h3 id="returns-3" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="468" sourceendlinenumber="468">Returns</h3>
+<h4 id="200-2" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="470" sourceendlinenumber="470">200</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="472" sourceendlinenumber="472">Success.</p>
+<h5 id="type-3" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="474" sourceendlinenumber="474">Type:</h5>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="476" sourceendlinenumber="476"> <code>List</code></p>
+<pre sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="478" sourceendlinenumber="509"><code class="lang-json">[
+  {
+    &quot;RoleIds&quot;: [
+      &quot;00000000-0000-0000-0000-000000000000&quot;,
+      &quot;00000000-0000-0000-0000-000000000000&quot;
+    ],
+    &quot;Id&quot;: &quot;Id&quot;,
+    &quot;Name&quot;: &quot;Name&quot;,
+    &quot;Enabled&quot;: false,
+    &quot;AccessTokenLifetime&quot;: 0,
+    &quot;Tags&quot;: [
+      &quot;String&quot;,
+      &quot;String&quot;
+    ]
+  },
+  {
+    &quot;RoleIds&quot;: [
+      &quot;00000000-0000-0000-0000-000000000000&quot;,
+      &quot;00000000-0000-0000-0000-000000000000&quot;
+    ],
+    &quot;Id&quot;: &quot;Id&quot;,
+    &quot;Name&quot;: &quot;Name&quot;,
+    &quot;Enabled&quot;: false,
+    &quot;AccessTokenLifetime&quot;: 0,
+    &quot;Tags&quot;: [
+      &quot;String&quot;,
+      &quot;String&quot;
+    ]
+  }
+]
+</code></pre><h4 id="207" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="511" sourceendlinenumber="511">207</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="513" sourceendlinenumber="513">Partial success.</p>
+<h5 id="type-4" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="515" sourceendlinenumber="515">Type:</h5>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="517" sourceendlinenumber="517"> <code>MultiStatusResponse</code></p>
+<pre sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="519" sourceendlinenumber="573"><code class="lang-json">{
+  &quot;OperationId&quot;: &quot;OperationId&quot;,
+  &quot;Error&quot;: &quot;Error&quot;,
+  &quot;Reason&quot;: &quot;Reason&quot;,
+  &quot;ChildErrors&quot;: [
+    {
+      &quot;StatusCode&quot;: 0,
+      &quot;ModelId&quot;: &quot;ModelId&quot;,
+      &quot;OperationId&quot;: &quot;OperationId&quot;,
+      &quot;Error&quot;: &quot;Error&quot;,
+      &quot;Reason&quot;: &quot;Reason&quot;,
+      &quot;Resolution&quot;: &quot;Resolution&quot;
+    },
+    {
+      &quot;StatusCode&quot;: 0,
+      &quot;ModelId&quot;: &quot;ModelId&quot;,
+      &quot;OperationId&quot;: &quot;OperationId&quot;,
+      &quot;Error&quot;: &quot;Error&quot;,
+      &quot;Reason&quot;: &quot;Reason&quot;,
+      &quot;Resolution&quot;: &quot;Resolution&quot;
+    }
+  ],
+  &quot;Data&quot;: [
+    {
+      &quot;RoleIds&quot;: [
+        &quot;00000000-0000-0000-0000-000000000000&quot;,
+        &quot;00000000-0000-0000-0000-000000000000&quot;
+      ],
+      &quot;Id&quot;: &quot;Id&quot;,
+      &quot;Name&quot;: &quot;Name&quot;,
+      &quot;Enabled&quot;: false,
+      &quot;AccessTokenLifetime&quot;: 0,
+      &quot;Tags&quot;: [
+        &quot;String&quot;,
+        &quot;String&quot;
+      ]
+    },
+    {
+      &quot;RoleIds&quot;: [
+        &quot;00000000-0000-0000-0000-000000000000&quot;,
+        &quot;00000000-0000-0000-0000-000000000000&quot;
+      ],
+      &quot;Id&quot;: &quot;Id&quot;,
+      &quot;Name&quot;: &quot;Name&quot;,
+      &quot;Enabled&quot;: false,
+      &quot;AccessTokenLifetime&quot;: 0,
+      &quot;Tags&quot;: [
+        &quot;String&quot;,
+        &quot;String&quot;
+      ]
+    }
+  ]
+}
+</code></pre><h4 id="401-3" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="575" sourceendlinenumber="575">401</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="577" sourceendlinenumber="577">Unauthorized.</p>
+<h4 id="403-3" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="579" sourceendlinenumber="579">403</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="581" sourceendlinenumber="581">Forbidden.</p>
+<h4 id="404-3" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="583" sourceendlinenumber="583">404</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="585" sourceendlinenumber="585">Tenant not found.</p>
+<h4 id="500-3" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="587" sourceendlinenumber="587">500</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="589" sourceendlinenumber="589">Internal server error.</p>
+<hr>
+<h2 id="delete-client-credential-client" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="592" sourceendlinenumber="592"><code>Delete Client Credential Client</code></h2>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="594" sourceendlinenumber="596">Delete a Client Credential Client. It can take up to one hour
+            for deletion to manifest in the authentication process. Access
+            tokens issued to this Client will be valid until their expiration.</p>
+<h3 id="request-4" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="598" sourceendlinenumber="598">Request</h3>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="600" sourceendlinenumber="600"><code>DELETE api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}</code></p>
+<h3 id="parameters-4" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="602" sourceendlinenumber="602">Parameters</h3>
+<pre sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="604" sourceendlinenumber="607"><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="609" sourceendlinenumber="609">Id of Tenant.</p>
+<pre sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="611" sourceendlinenumber="614"><code class="lang-csharp">[Required]
+string clientId
+</code></pre><p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="616" sourceendlinenumber="616">Id of Client</p>
+<h3 id="security-4" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="618" sourceendlinenumber="618">Security</h3>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="620" sourceendlinenumber="620">Allowed for these roles:</p>
+<ul sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="622" sourceendlinenumber="622">
+<li sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="622" sourceendlinenumber="622"><code>Account Administrator</code></li>
+</ul>
+<h3 id="returns-4" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="624" sourceendlinenumber="624">Returns</h3>
+<h4 id="204" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="626" sourceendlinenumber="626">204</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="628" sourceendlinenumber="628">Deleted.</p>
+<h4 id="401-4" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="630" sourceendlinenumber="630">401</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="632" sourceendlinenumber="632">Unauthorized.</p>
+<h4 id="403-4" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="634" sourceendlinenumber="634">403</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="636" sourceendlinenumber="636">Forbidden.</p>
+<h4 id="404-4" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="638" sourceendlinenumber="638">404</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="640" sourceendlinenumber="640">Client or Tenant not found.</p>
+<h4 id="500-4" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="642" sourceendlinenumber="642">500</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="644" sourceendlinenumber="644">Internal server error.</p>
+<hr>
+<h2 id="validate-client-exists" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="647" sourceendlinenumber="647"><code>Validate Client Exists</code></h2>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="649" sourceendlinenumber="651">Validate that a Client Credential Client exists.
+            This endpoint is identical to the GET one but
+            it does not return any objects in the body.</p>
+<h3 id="request-5" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="653" sourceendlinenumber="653">Request</h3>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="655" sourceendlinenumber="655"><code>HEAD api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}</code></p>
+<h3 id="parameters-5" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="657" sourceendlinenumber="657">Parameters</h3>
+<pre sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="659" sourceendlinenumber="662"><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="664" sourceendlinenumber="664">Id of Tenant.</p>
+<pre sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="666" sourceendlinenumber="669"><code class="lang-csharp">[Required]
+string clientId
+</code></pre><p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="671" sourceendlinenumber="671">Id of Client</p>
+<h3 id="security-5" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="673" sourceendlinenumber="673">Security</h3>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="675" sourceendlinenumber="675">Allowed for these roles:</p>
+<ul sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="677" sourceendlinenumber="678">
+<li sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="677" sourceendlinenumber="677"><code>Account Administrator</code></li>
+<li sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="678" sourceendlinenumber="678"><code>Account Member</code></li>
+</ul>
+<h3 id="returns-5" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="680" sourceendlinenumber="680">Returns</h3>
+<h4 id="200-3" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="682" sourceendlinenumber="682">200</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="684" sourceendlinenumber="684">Success.</p>
+<h5 id="type-5" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="686" sourceendlinenumber="686">Type:</h5>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="688" sourceendlinenumber="688"> <code>Void</code></p>
+<h4 id="401-5" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="690" sourceendlinenumber="690">401</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="692" sourceendlinenumber="692">Unauthorized.</p>
+<h4 id="403-5" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="694" sourceendlinenumber="694">403</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="696" sourceendlinenumber="696">Forbidden.</p>
+<h4 id="404-5" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="698" sourceendlinenumber="698">404</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="700" sourceendlinenumber="700">Client or Tenant not found.</p>
+<h4 id="500-5" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="702" sourceendlinenumber="702">500</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="704" sourceendlinenumber="704">Internal server error.</p>
+<hr>
+<h2 id="get-total-count-of-clients" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="707" sourceendlinenumber="707"><code>Get Total Count of Clients</code></h2>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="709" sourceendlinenumber="713">Return total number of Client Credential clients in a Tenant.
+            Optionally, check based on a list of requested clients. The
+            value will be set in the Total-Count header. This endpoint
+            is identical to the GET one but it does not return any objects
+            in the body.</p>
+<h3 id="request-6" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="715" sourceendlinenumber="715">Request</h3>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="717" sourceendlinenumber="717"><code>HEAD api/v1/Tenants/{tenantId}/ClientCredentialClients</code></p>
+<h3 id="parameters-6" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="719" sourceendlinenumber="719">Parameters</h3>
+<pre sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="721" sourceendlinenumber="724"><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="726" sourceendlinenumber="726">Id of Tenant.</p>
+<pre sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="728" sourceendlinenumber="733"><code class="lang-csharp">[FromQuery]
+[Optional]
+[Default = &quot;&quot;]
+string[] id
+</code></pre><p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="735" sourceendlinenumber="735">Unordered list of Client Credential Client Ids. Empty, whitespace or null Ids will be ignored.</p>
+<pre sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="737" sourceendlinenumber="742"><code class="lang-csharp">[FromQuery]
+[Optional]
+[Default = &quot;&quot;]
+string[] tag
+</code></pre><p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="744" sourceendlinenumber="744">Only count Clients that have these tags.</p>
+<h3 id="security-6" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="746" sourceendlinenumber="746">Security</h3>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="748" sourceendlinenumber="748">Allowed for these roles:</p>
+<ul sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="750" sourceendlinenumber="751">
+<li sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="750" sourceendlinenumber="750"><code>Account Administrator</code></li>
+<li sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="751" sourceendlinenumber="751"><code>Account Member</code></li>
+</ul>
+<h3 id="returns-6" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="753" sourceendlinenumber="753">Returns</h3>
+<h4 id="200-4" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="755" sourceendlinenumber="755">200</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="757" sourceendlinenumber="757">Success.</p>
+<h5 id="type-6" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="759" sourceendlinenumber="759">Type:</h5>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="761" sourceendlinenumber="761"> <code>Void</code></p>
+<h4 id="401-6" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="763" sourceendlinenumber="763">401</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="765" sourceendlinenumber="765">Unauthorized.</p>
+<h4 id="403-6" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="767" sourceendlinenumber="767">403</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="769" sourceendlinenumber="769">Forbidden.</p>
+<h4 id="404-6" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="771" sourceendlinenumber="771">404</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="773" sourceendlinenumber="773">Client or Tenant not found.</p>
+<h4 id="500-6" sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="775" sourceendlinenumber="775">500</h4>
+<p sourcefile="Documentation/Identity/Identity_ClientCredentialClient.md" sourcestartlinenumber="777" sourceendlinenumber="777">Internal server error.</p>
+<hr>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/Identity/Identity_ClientCredentialClient.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+            <span id='copyright-text'>© 2019 - OSIsoft, LLC.<span>
+        </span></span></div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

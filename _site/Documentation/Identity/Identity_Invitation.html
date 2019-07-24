@@ -78,7 +78,18 @@
             <article class="content wrap" id="_content" data-uid="identityInvitation">
 <h1 id="invitation">Invitation</h1>
 
-<p>APIs for creating, getting, updating, and deleting an Invitation</p>
+<p>Invitations are issued after the creation of a User object in OCS,
+            to begin the provisioning process for a user with one of the Identity
+            Providers in a Tenant.
+            There can only be one Invitation for a User at a time. An invitation
+            can expire, at which time the Admin can either delete it, or extend it.
+            When creating an Invitation an account Admin has the option to resend the
+            Invitation email to the ContactEmail configured for the User the Invitation
+            is attached to. The email can be re-sent by updating the Invitation.
+            When an Invitation expires the User cannot accept it. If the expiration
+            date is extended the User can accept an Invitation.
+            Invitations that are past of their expiration date by more than two weeks will be deleted.
+            The only way to provision a User after this, is to send a new Invitation.</p>
 <h2 id="properties">Properties</h2>
 <p>For HTTP requests and responses, the Invitation object has the following properties and JSON-serialized body: </p>
 <table>
@@ -86,7 +97,7 @@
 <tr>
 <th>Property</th>
 <th>Type</th>
-<th>Description</th>
+<th>Descriptions</th>
 </tr>
 </thead>
 <tbody>
@@ -135,26 +146,44 @@
 <h3 id="serialized-model">Serialized Model</h3>
 <pre><code class="lang-json">{
   &quot;Id&quot;: &quot;Id&quot;,
-  &quot;Issued&quot;: &quot;2019-05-31T14:57:08.818742-07:00&quot;,
-  &quot;Expires&quot;: &quot;2019-05-31T14:57:08.8187457-07:00&quot;,
-  &quot;Accepted&quot;: &quot;2019-05-31T14:57:08.8187487-07:00&quot;,
+  &quot;Issued&quot;: &quot;2019-07-19T13:56:29.6798766-07:00&quot;,
+  &quot;Expires&quot;: &quot;2019-07-19T13:56:29.6798797-07:00&quot;,
+  &quot;Accepted&quot;: &quot;2019-07-19T13:56:29.6798828-07:00&quot;,
   &quot;State&quot;: 0,
   &quot;TenantId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
   &quot;UserId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
   &quot;IdentityProviderId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
 }
 </code></pre><hr>
+<h2 id="base-url">Base URL</h2>
+<p>All URLs referenced in this section have the following base:</p>
+<p><code>https://dat-b.osisoft.com/</code></p>
+<h2 id="authentication">Authentication</h2>
+<p>All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieve after a successful authentication request.</p>
+<p><code>Authorization: Bearer &lt;token&gt;</code></p>
+<p>Requests made without an access token or an invalid/expired token will fail with a 401 Unauthorized response.
+Requests made with an access token which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
+Read <a href="https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/Authentication">here</a> on how to authenticate against OCS with the various clients and receive an access token in response.</p>
+<h2 id="error-handling">Error Handling</h2>
+<p>All responses will have an error message in the body. The exceptions are 200 responses and the 401 Unauthorized response. The error message will look as follows:</p>
+<pre><code class="lang-json">{
+    &quot;OperationId&quot;: &quot;1b2af18e-8b27-4f86-93e0-6caa3e59b90c&quot;, 
+    &quot;Error&quot;: &quot;Error message.&quot;, 
+    &quot;Reason&quot;: &quot;Reason that caused error.&quot;, 
+    &quot;Resolution&quot;: &quot;Possible solution for the error.&quot; 
+}
+</code></pre><p>If and when contacting OSIsoft support about this error, please provide the OperationId.</p>
 <h2 id="get-invitation"><code>Get Invitation</code></h2>
-<p>Get an Invitation using its id in a tenant</p>
+<p>Get an Invitation from Tenant.</p>
 <h3 id="request">Request</h3>
 <p><code>GET api/v1/Tenants/{tenantId}/Invitations/{invitationId}</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of tenant</p>
+</code></pre><p>Id of Tenant.</p>
 <pre><code class="lang-csharp">[Required]
 string invitationId
-</code></pre><p>Id of invitation</p>
+</code></pre><p>Id of Invitation.</p>
 <h3 id="security">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -162,56 +191,56 @@ string invitationId
 </ul>
 <h3 id="returns">Returns</h3>
 <h4 id="200">200</h4>
-<p>Success</p>
+<p>Success.</p>
 <h5 id="type">Type:</h5>
 <p> <code>Invitation</code></p>
 <pre><code class="lang-json">{
   &quot;Id&quot;: &quot;Id&quot;,
-  &quot;Issued&quot;: &quot;2019-05-31T14:57:08.8230985-07:00&quot;,
-  &quot;Expires&quot;: &quot;2019-05-31T14:57:08.8231026-07:00&quot;,
-  &quot;Accepted&quot;: &quot;2019-05-31T14:57:08.823106-07:00&quot;,
+  &quot;Issued&quot;: &quot;2019-07-19T13:56:29.6860834-07:00&quot;,
+  &quot;Expires&quot;: &quot;2019-07-19T13:56:29.6860885-07:00&quot;,
+  &quot;Accepted&quot;: &quot;2019-07-19T13:56:29.6860936-07:00&quot;,
   &quot;State&quot;: 0,
   &quot;TenantId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
   &quot;UserId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
   &quot;IdentityProviderId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
 }
 </code></pre><h4 id="401">401</h4>
-<p>Unauthorized</p>
+<p>Unauthorized.</p>
 <h4 id="403">403</h4>
-<p>Forbidden</p>
+<p>Forbidden.</p>
 <h4 id="404">404</h4>
-<p>Invitation or Tenant not found</p>
+<p>Invitation or Tenant not found.</p>
 <h4 id="500">500</h4>
-<p>Internal server error</p>
+<p>Internal server error.</p>
 <hr>
 <h2 id="get-invitations"><code>Get Invitations</code></h2>
-<p>Get all invitations for a tenant</p>
+<p>Get all non-expired invitations from a Tenant. Optionally include expired invitations.</p>
 <h3 id="request-1">Request</h3>
 <p><code>GET api/v1/Tenants/{tenantId}/Invitations</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of tenant</p>
+</code></pre><p>Id of Tenant.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
 [Default = &quot;&quot;]
 string query
-</code></pre><p>Query to execute. Currently not supported</p>
+</code></pre><p>Query to execute. Currently not supported.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
 [Default = 0]
 int32 skip
-</code></pre><p>Number of invitations to skip</p>
+</code></pre><p>Number of invitations to skip.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
 [Default = 100]
 int32 count
-</code></pre><p>Max number of invitations to return</p>
+</code></pre><p>Maximum number of invitations to return.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
 [Default = False]
 bool includeExpiredInvitations
-</code></pre><p>Specify to return expired invitations</p>
+</code></pre><p>Specify whether to return expired invitations.</p>
 <h3 id="security-1">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -219,15 +248,15 @@ bool includeExpiredInvitations
 </ul>
 <h3 id="returns-1">Returns</h3>
 <h4 id="200-1">200</h4>
-<p>Success</p>
+<p>Success.</p>
 <h5 id="type-1">Type:</h5>
-<p> <code>List[Invitation]</code></p>
+<p> <code>List</code></p>
 <pre><code class="lang-json">[
   {
     &quot;Id&quot;: &quot;Id&quot;,
-    &quot;Issued&quot;: &quot;2019-05-31T14:57:08.8247538-07:00&quot;,
-    &quot;Expires&quot;: &quot;2019-05-31T14:57:08.8247586-07:00&quot;,
-    &quot;Accepted&quot;: &quot;2019-05-31T14:57:08.8247617-07:00&quot;,
+    &quot;Issued&quot;: &quot;2019-07-19T13:56:29.6881037-07:00&quot;,
+    &quot;Expires&quot;: &quot;2019-07-19T13:56:29.6881159-07:00&quot;,
+    &quot;Accepted&quot;: &quot;2019-07-19T13:56:29.6881237-07:00&quot;,
     &quot;State&quot;: 0,
     &quot;TenantId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
     &quot;UserId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
@@ -235,9 +264,9 @@ bool includeExpiredInvitations
   },
   {
     &quot;Id&quot;: &quot;Id&quot;,
-    &quot;Issued&quot;: &quot;2019-05-31T14:57:08.8247759-07:00&quot;,
-    &quot;Expires&quot;: &quot;2019-05-31T14:57:08.8247768-07:00&quot;,
-    &quot;Accepted&quot;: &quot;2019-05-31T14:57:08.8247784-07:00&quot;,
+    &quot;Issued&quot;: &quot;2019-07-19T13:56:29.6881435-07:00&quot;,
+    &quot;Expires&quot;: &quot;2019-07-19T13:56:29.6881451-07:00&quot;,
+    &quot;Accepted&quot;: &quot;2019-07-19T13:56:29.688148-07:00&quot;,
     &quot;State&quot;: 0,
     &quot;TenantId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
     &quot;UserId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
@@ -245,31 +274,32 @@ bool includeExpiredInvitations
   }
 ]
 </code></pre><h4 id="400">400</h4>
-<p>Missing or invalid inputs</p>
+<p>Missing or invalid inputs.</p>
 <h4 id="401-1">401</h4>
-<p>Unauthorized</p>
+<p>Unauthorized.</p>
 <h4 id="403-1">403</h4>
-<p>Forbidden</p>
+<p>Forbidden.</p>
 <h4 id="404-1">404</h4>
-<p>Tenant not found</p>
+<p>Tenant not found.</p>
 <h4 id="500-1">500</h4>
-<p>Internal server error</p>
+<p>Internal server error.</p>
 <hr>
 <h2 id="update-invitation"><code>Update Invitation</code></h2>
-<p>Update an invitation</p>
+<p>Update an Invitation. Expired invitations will not be extended.
+            automatically upon updates.</p>
 <h3 id="request-2">Request</h3>
 <p><code>PUT api/v1/Tenants/{tenantId}/Invitations/{invitationId}</code></p>
 <h3 id="parameters-2">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of tenant</p>
+</code></pre><p>Id of Tenant.</p>
 <pre><code class="lang-csharp">[Required]
 string invitationId
-</code></pre><p>Id of invitation</p>
+</code></pre><p>Id of Invitation.</p>
 <pre><code class="lang-csharp">[FromBody]
 [Required]
 InvitationCreateOrUpdate invitationCreateOrUpdate
-</code></pre><p>New InvitationCreateOrUpdate object</p>
+</code></pre><p>New InvitationCreateOrUpdate object. Properties that are not set or are null will not be changed.</p>
 <table>
 <thead>
 <tr>
@@ -284,30 +314,30 @@ InvitationCreateOrUpdate invitationCreateOrUpdate
 <td>ExpiresDateTime</td>
 <td>DateTime</td>
 <td>No</td>
-<td>Invitation expiration date. Must be in the future.</td>
+<td>Invitation expiration date. Must be in the future.            Maximum allowed is two month in the future.            Defaults to 21 days on creation.            It should be in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> and either            include a <em>Z</em> at the end to represent UTC timezone            or include the offset in hours. If neither is present            time will be treated in the local time zone of the server.</td>
 </tr>
 <tr>
 <td>State</td>
 <td>InvitationStates</td>
 <td>No</td>
-<td>Set the state of invitation.</td>
+<td>Set the state of invitation. For OSISoft internal use only.</td>
 </tr>
 <tr>
 <td>SendInvitation</td>
 <td>bool</td>
 <td>No</td>
-<td>Send the invitation. Default is true.</td>
+<td>Send an invitation email. Invitation will be sent to the            ContactEmail in the User this invitation is attached to.            Default is true.</td>
 </tr>
 <tr>
 <td>IdentityProviderId</td>
 <td>Guid</td>
 <td>No</td>
-<td>Identity Provider to use for accepting this invitation. Null implies invitation can be accepted using any            configured Identity Provider.</td>
+<td>Identity Provider to use for accepting this invitation.            Null implies invitation can be accepted using any            configured Identity Provider.</td>
 </tr>
 </tbody>
 </table>
 <pre><code class="lang-json">{
-  &quot;ExpiresDateTime&quot;: &quot;2019-05-31T14:57:08.8271583-07:00&quot;,
+  &quot;ExpiresDateTime&quot;: &quot;2019-07-19T13:56:29.6937488-07:00&quot;,
   &quot;State&quot;: 0,
   &quot;SendInvitation&quot;: false,
   &quot;IdentityProviderId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
@@ -319,41 +349,42 @@ InvitationCreateOrUpdate invitationCreateOrUpdate
 </ul>
 <h3 id="returns-2">Returns</h3>
 <h4 id="200-2">200</h4>
-<p>Success</p>
+<p>Success.</p>
 <h5 id="type-2">Type:</h5>
 <p> <code>Invitation</code></p>
 <pre><code class="lang-json">{
   &quot;Id&quot;: &quot;Id&quot;,
-  &quot;Issued&quot;: &quot;2019-05-31T14:57:08.829861-07:00&quot;,
-  &quot;Expires&quot;: &quot;2019-05-31T14:57:08.8298663-07:00&quot;,
-  &quot;Accepted&quot;: &quot;2019-05-31T14:57:08.8298719-07:00&quot;,
+  &quot;Issued&quot;: &quot;2019-07-19T13:56:29.6964848-07:00&quot;,
+  &quot;Expires&quot;: &quot;2019-07-19T13:56:29.6964885-07:00&quot;,
+  &quot;Accepted&quot;: &quot;2019-07-19T13:56:29.6964927-07:00&quot;,
   &quot;State&quot;: 0,
   &quot;TenantId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
   &quot;UserId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
   &quot;IdentityProviderId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
 }
 </code></pre><h4 id="400-1">400</h4>
-<p>Missing or invalid inputs</p>
+<p>Missing or invalid inputs.</p>
 <h4 id="401-2">401</h4>
-<p>Unauthorized</p>
+<p>Unauthorized.</p>
 <h4 id="403-2">403</h4>
-<p>Forbidden</p>
+<p>Forbidden.</p>
 <h4 id="404-2">404</h4>
-<p>Invitation or Tenant not found</p>
+<p>Invitation or Tenant not found.</p>
 <h4 id="500-2">500</h4>
-<p>Internal server error</p>
+<p>Internal server error.</p>
 <hr>
 <h2 id="delete-invitation"><code>Delete Invitation</code></h2>
-<p>Delete an invitation</p>
+<p>Delete an Invitation. Users who already have an Invitation email
+            will not be able to sign-up once the Invitation is deleted.</p>
 <h3 id="request-3">Request</h3>
 <p><code>DELETE api/v1/Tenants/{tenantId}/Invitations/{invitationId}</code></p>
 <h3 id="parameters-3">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of tenant</p>
+</code></pre><p>Id of Tenant.</p>
 <pre><code class="lang-csharp">[Required]
 string invitationId
-</code></pre><p>Id of invitation</p>
+</code></pre><p>Id of Invitation.</p>
 <h3 id="security-3">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -361,27 +392,28 @@ string invitationId
 </ul>
 <h3 id="returns-3">Returns</h3>
 <h4 id="204">204</h4>
-<p>Deleted</p>
+<p>Deleted.</p>
 <h4 id="401-3">401</h4>
-<p>Unauthorized</p>
+<p>Unauthorized.</p>
 <h4 id="403-3">403</h4>
-<p>Forbidden</p>
+<p>Forbidden.</p>
 <h4 id="404-3">404</h4>
-<p>Invitation or Tenant not found</p>
+<p>Invitation or Tenant not found.</p>
 <h4 id="500-3">500</h4>
-<p>Internal server error</p>
+<p>Internal server error.</p>
 <hr>
-<h2 id="get-users-invitation"><code>Get User&#39;s Invitation</code></h2>
-<p>Get the invitations for a user</p>
+<h2 id="get-header-for-an-invitation"><code>Get header for an Invitation</code></h2>
+<p>Validate that an Invitation exists. This endpoint is identical to the GET
+            one, but it does not return an object in the body.</p>
 <h3 id="request-4">Request</h3>
-<p><code>GET api/v1/Tenants/{tenantId}/Users/{userId}/Invitation</code></p>
+<p><code>HEAD api/v1/Tenants/{tenantId}/Invitations/{invitationId}</code></p>
 <h3 id="parameters-4">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of tenant</p>
+</code></pre><p>Id of Tenant.</p>
 <pre><code class="lang-csharp">[Required]
-Guid userId
-</code></pre><p>Id of user</p>
+string invitationId
+</code></pre><p>Id of Invitation.</p>
 <h3 id="security-4">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -389,133 +421,110 @@ Guid userId
 </ul>
 <h3 id="returns-4">Returns</h3>
 <h4 id="200-3">200</h4>
-<p>Success</p>
+<p>Success.</p>
 <h5 id="type-3">Type:</h5>
-<p> <code>Invitation</code></p>
-<pre><code class="lang-json">{
-  &quot;Id&quot;: &quot;Id&quot;,
-  &quot;Issued&quot;: &quot;2019-05-31T14:57:08.8742373-07:00&quot;,
-  &quot;Expires&quot;: &quot;2019-05-31T14:57:08.8742414-07:00&quot;,
-  &quot;Accepted&quot;: &quot;2019-05-31T14:57:08.874277-07:00&quot;,
-  &quot;State&quot;: 0,
-  &quot;TenantId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
-  &quot;UserId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
-  &quot;IdentityProviderId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
-}
-</code></pre><h4 id="401-4">401</h4>
-<p>Unauthorized</p>
+<p> <code>Void</code></p>
+<h4 id="401-4">401</h4>
+<p>Unauthorized.</p>
 <h4 id="403-4">403</h4>
-<p>Forbidden</p>
+<p>Forbidden.</p>
 <h4 id="404-4">404</h4>
-<p>Invitation, User, or Tenant not found</p>
+<p>Invitation or Tenant not found.</p>
 <h4 id="500-4">500</h4>
-<p>Internal server error</p>
+<p>Internal server error.</p>
 <hr>
-<h2 id="create-invitation"><code>Create Invitation</code></h2>
-<p>Create an invitation for a user. Should use when no other invitation exists for the user.</p>
+<h2 id="get-header-for-invitations"><code>Get header for Invitations</code></h2>
+<p>Return total number of non-expired Invitations in a Tenant. Optionally include expired invitations.
+            The value will be set in the Total-Count header. This endpoint is identical to the GET one but
+            it does not return any objects in the body.</p>
 <h3 id="request-5">Request</h3>
-<p><code>POST api/v1/Tenants/{tenantId}/Users/{userId}/Invitation</code></p>
+<p><code>HEAD api/v1/Tenants/{tenantId}/Invitations</code></p>
 <h3 id="parameters-5">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of tenant</p>
-<pre><code class="lang-csharp">[Required]
-Guid userId
-</code></pre><p>Id of user</p>
-<pre><code class="lang-csharp">[FromBody]
-[Required]
-InvitationCreateOrUpdate invitationCreateOrUpdate
-</code></pre><p>InvitationCreateOrUpdate object</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ExpiresDateTime</td>
-<td>DateTime</td>
-<td>No</td>
-<td>Invitation expiration date. Must be within 2 months in the future.</td>
-</tr>
-<tr>
-<td>State</td>
-<td>InvitationStates</td>
-<td>No</td>
-<td>Set the state of invitation.</td>
-</tr>
-<tr>
-<td>SendInvitation</td>
-<td>bool</td>
-<td>No</td>
-<td>Send the invitation. Default is true.</td>
-</tr>
-<tr>
-<td>IdentityProviderId</td>
-<td>Guid</td>
-<td>No</td>
-<td>Identity Provider to use for accepting this invitation. Null implies invitation can be accepted using any            configured Identity Provider.</td>
-</tr>
-</tbody>
-</table>
-<pre><code class="lang-json">{
-  &quot;ExpiresDateTime&quot;: &quot;2019-05-31T14:57:08.8763743-07:00&quot;,
-  &quot;State&quot;: 0,
-  &quot;SendInvitation&quot;: false,
-  &quot;IdentityProviderId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
-}
-</code></pre><h3 id="security-5">Security</h3>
+</code></pre><p>Id of Tenant.</p>
+<pre><code class="lang-csharp">[FromQuery]
+[Optional]
+[Default = False]
+bool includeExpiredInvitations
+</code></pre><p>Specify to return expired invitations.</p>
+<h3 id="security-5">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
 <li><code>Account Administrator</code></li>
 </ul>
 <h3 id="returns-5">Returns</h3>
-<h4 id="201">201</h4>
-<p>Created</p>
+<h4 id="200-4">200</h4>
+<p>Success.</p>
 <h5 id="type-4">Type:</h5>
+<p> <code>Void</code></p>
+<h4 id="400-2">400</h4>
+<p>Missing or invalid inputs.</p>
+<h4 id="401-5">401</h4>
+<p>Unauthorized.</p>
+<h4 id="403-5">403</h4>
+<p>Forbidden.</p>
+<h4 id="404-5">404</h4>
+<p>Tenant not found.</p>
+<h4 id="500-5">500</h4>
+<p>Internal server error.</p>
+<hr>
+<h2 id="get-users-invitation"><code>Get User&#39;s Invitation</code></h2>
+<p>Get Invitation for a User.</p>
+<h3 id="request-6">Request</h3>
+<p><code>GET api/v1/Tenants/{tenantId}/Users/{userId}/Invitation</code></p>
+<h3 id="parameters-6">Parameters</h3>
+<pre><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p>Id of Tenant.</p>
+<pre><code class="lang-csharp">[Required]
+Guid userId
+</code></pre><p>Id of User.</p>
+<h3 id="security-6">Security</h3>
+<p>Allowed for these roles:</p>
+<ul>
+<li><code>Account Administrator</code></li>
+<li><code>Account Member</code></li>
+</ul>
+<h3 id="returns-6">Returns</h3>
+<h4 id="200-5">200</h4>
+<p>Success.</p>
+<h5 id="type-5">Type:</h5>
 <p> <code>Invitation</code></p>
 <pre><code class="lang-json">{
   &quot;Id&quot;: &quot;Id&quot;,
-  &quot;Issued&quot;: &quot;2019-05-31T14:57:08.8765326-07:00&quot;,
-  &quot;Expires&quot;: &quot;2019-05-31T14:57:08.8765354-07:00&quot;,
-  &quot;Accepted&quot;: &quot;2019-05-31T14:57:08.8765399-07:00&quot;,
+  &quot;Issued&quot;: &quot;2019-07-19T13:56:29.7669772-07:00&quot;,
+  &quot;Expires&quot;: &quot;2019-07-19T13:56:29.7669819-07:00&quot;,
+  &quot;Accepted&quot;: &quot;2019-07-19T13:56:29.7669868-07:00&quot;,
   &quot;State&quot;: 0,
   &quot;TenantId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
   &quot;UserId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
   &quot;IdentityProviderId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
 }
-</code></pre><h4 id="400-2">400</h4>
-<p>Missing or invalid inputs</p>
-<h4 id="401-5">401</h4>
-<p>Unauthorized</p>
-<h4 id="403-5">403</h4>
-<p>Forbidden</p>
-<h4 id="404-5">404</h4>
-<p>User or Tenant not found</p>
-<h4 id="409">409</h4>
-<p>Invitation already exists</p>
-<h4 id="500-5">500</h4>
-<p>Internal server error</p>
+</code></pre><h4 id="401-6">401</h4>
+<p>Unauthorized.</p>
+<h4 id="403-6">403</h4>
+<p>Forbidden.</p>
+<h4 id="404-6">404</h4>
+<p>Invitation, User, or Tenant not found.</p>
+<h4 id="500-6">500</h4>
+<p>Internal server error.</p>
 <hr>
-<h2 id="create-or-update-invitation"><code>Create or Update Invitation</code></h2>
-<p>Create or update an invitation for a user</p>
-<h3 id="request-6">Request</h3>
-<p><code>PUT api/v1/Tenants/{tenantId}/Users/{userId}/Invitation</code></p>
-<h3 id="parameters-6">Parameters</h3>
+<h2 id="create-invitation"><code>Create Invitation</code></h2>
+<p>Create an Invitation for a User. Should use when no other Invitation exists for the User.</p>
+<h3 id="request-7">Request</h3>
+<p><code>POST api/v1/Tenants/{tenantId}/Users/{userId}/Invitation</code></p>
+<h3 id="parameters-7">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of tenant</p>
+</code></pre><p>Id of Tenant.</p>
 <pre><code class="lang-csharp">[Required]
 Guid userId
-</code></pre><p>Id of user</p>
+</code></pre><p>Id of User.</p>
 <pre><code class="lang-csharp">[FromBody]
 [Required]
 InvitationCreateOrUpdate invitationCreateOrUpdate
-</code></pre><p>InvitationCreateOrUpdate object</p>
+</code></pre><p>InvitationCreateOrUpdate object.</p>
 <table>
 <thead>
 <tr>
@@ -530,106 +539,236 @@ InvitationCreateOrUpdate invitationCreateOrUpdate
 <td>ExpiresDateTime</td>
 <td>DateTime</td>
 <td>No</td>
-<td>Invitation expiration date. Must be within 2 months in the future.</td>
+<td>Invitation expiration date. Must be in the future.            Maximum allowed is two month in the future.            Defaults to 21 days on creation.            It should be in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> and either            include a <em>Z</em> at the end to represent UTC timezone            or include the offset in hours. If neither is present            time will be treated in the local time zone of the server.</td>
 </tr>
 <tr>
 <td>State</td>
 <td>InvitationStates</td>
 <td>No</td>
-<td>Set the state of invitation.</td>
+<td>Set the state of invitation. For OSISoft internal use only.</td>
 </tr>
 <tr>
 <td>SendInvitation</td>
 <td>bool</td>
 <td>No</td>
-<td>Send the invitation. Default is true.</td>
+<td>Send an invitation email. Invitation will be sent to the            ContactEmail in the User this invitation is attached to.            Default is true.</td>
 </tr>
 <tr>
 <td>IdentityProviderId</td>
 <td>Guid</td>
 <td>No</td>
-<td>Identity Provider to use for accepting this invitation. Null implies invitation can be accepted using any            configured Identity Provider.</td>
+<td>Identity Provider to use for accepting this invitation.            Null implies invitation can be accepted using any            configured Identity Provider.</td>
 </tr>
 </tbody>
 </table>
 <pre><code class="lang-json">{
-  &quot;ExpiresDateTime&quot;: &quot;2019-05-31T14:57:08.8782746-07:00&quot;,
+  &quot;ExpiresDateTime&quot;: &quot;2019-07-19T13:56:29.7686102-07:00&quot;,
   &quot;State&quot;: 0,
   &quot;SendInvitation&quot;: false,
   &quot;IdentityProviderId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
 }
-</code></pre><h3 id="security-6">Security</h3>
+</code></pre><h3 id="security-7">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
 <li><code>Account Administrator</code></li>
 </ul>
-<h3 id="returns-6">Returns</h3>
-<h4 id="200-4">200</h4>
-<p>Updated</p>
-<h5 id="type-5">Type:</h5>
-<p> <code>Invitation</code></p>
-<pre><code class="lang-json">{
-  &quot;Id&quot;: &quot;Id&quot;,
-  &quot;Issued&quot;: &quot;2019-05-31T14:57:08.8784046-07:00&quot;,
-  &quot;Expires&quot;: &quot;2019-05-31T14:57:08.8784072-07:00&quot;,
-  &quot;Accepted&quot;: &quot;2019-05-31T14:57:08.8784113-07:00&quot;,
-  &quot;State&quot;: 0,
-  &quot;TenantId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
-  &quot;UserId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
-  &quot;IdentityProviderId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
-}
-</code></pre><h4 id="201-1">201</h4>
-<p>Created</p>
+<h3 id="returns-7">Returns</h3>
+<h4 id="201">201</h4>
+<p>Created.</p>
 <h5 id="type-6">Type:</h5>
 <p> <code>Invitation</code></p>
 <pre><code class="lang-json">{
   &quot;Id&quot;: &quot;Id&quot;,
-  &quot;Issued&quot;: &quot;2019-05-31T14:57:08.8784625-07:00&quot;,
-  &quot;Expires&quot;: &quot;2019-05-31T14:57:08.8784643-07:00&quot;,
-  &quot;Accepted&quot;: &quot;2019-05-31T14:57:08.878468-07:00&quot;,
+  &quot;Issued&quot;: &quot;2019-07-19T13:56:29.7686954-07:00&quot;,
+  &quot;Expires&quot;: &quot;2019-07-19T13:56:29.7686969-07:00&quot;,
+  &quot;Accepted&quot;: &quot;2019-07-19T13:56:29.7686992-07:00&quot;,
   &quot;State&quot;: 0,
   &quot;TenantId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
   &quot;UserId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
   &quot;IdentityProviderId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
 }
 </code></pre><h4 id="400-3">400</h4>
-<p>Missing or invalid inputs</p>
-<h4 id="401-6">401</h4>
-<p>Unauthorized</p>
-<h4 id="403-6">403</h4>
-<p>Forbidden</p>
-<h4 id="404-6">404</h4>
-<p>User or Tenant not found</p>
-<h4 id="500-6">500</h4>
-<p>Internal server error</p>
+<p>Missing or invalid inputs.</p>
+<h4 id="401-7">401</h4>
+<p>Unauthorized.</p>
+<h4 id="403-7">403</h4>
+<p>Forbidden.</p>
+<h4 id="404-7">404</h4>
+<p>User or Tenant not found.</p>
+<h4 id="409">409</h4>
+<p>Invitation already exists.</p>
+<h4 id="500-7">500</h4>
+<p>Internal server error.</p>
 <hr>
-<h2 id="delete-invitation-1"><code>Delete Invitation</code></h2>
-<p>Delete an invitation for a user</p>
-<h3 id="request-7">Request</h3>
-<p><code>DELETE api/v1/Tenants/{tenantId}/Users/{userId}/Invitation</code></p>
-<h3 id="parameters-7">Parameters</h3>
+<h2 id="create-or-update-invitation"><code>Create or Update Invitation</code></h2>
+<p>Create or update an Invitation for a User.</p>
+<h3 id="request-8">Request</h3>
+<p><code>PUT api/v1/Tenants/{tenantId}/Users/{userId}/Invitation</code></p>
+<h3 id="parameters-8">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of tenant</p>
+</code></pre><p>Id of Tenant.</p>
 <pre><code class="lang-csharp">[Required]
 Guid userId
-</code></pre><p>Id of user</p>
-<h3 id="security-7">Security</h3>
+</code></pre><p>Id of User.</p>
+<pre><code class="lang-csharp">[FromBody]
+[Required]
+InvitationCreateOrUpdate invitationCreateOrUpdate
+</code></pre><p>InvitationCreateOrUpdate object.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ExpiresDateTime</td>
+<td>DateTime</td>
+<td>No</td>
+<td>Invitation expiration date. Must be in the future.            Maximum allowed is two month in the future.            Defaults to 21 days on creation.            It should be in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> and either            include a <em>Z</em> at the end to represent UTC timezone            or include the offset in hours. If neither is present            time will be treated in the local time zone of the server.</td>
+</tr>
+<tr>
+<td>State</td>
+<td>InvitationStates</td>
+<td>No</td>
+<td>Set the state of invitation. For OSISoft internal use only.</td>
+</tr>
+<tr>
+<td>SendInvitation</td>
+<td>bool</td>
+<td>No</td>
+<td>Send an invitation email. Invitation will be sent to the            ContactEmail in the User this invitation is attached to.            Default is true.</td>
+</tr>
+<tr>
+<td>IdentityProviderId</td>
+<td>Guid</td>
+<td>No</td>
+<td>Identity Provider to use for accepting this invitation.            Null implies invitation can be accepted using any            configured Identity Provider.</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+  &quot;ExpiresDateTime&quot;: &quot;2019-07-19T13:56:29.7703535-07:00&quot;,
+  &quot;State&quot;: 0,
+  &quot;SendInvitation&quot;: false,
+  &quot;IdentityProviderId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
+}
+</code></pre><h3 id="security-8">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
 <li><code>Account Administrator</code></li>
 </ul>
-<h3 id="returns-7">Returns</h3>
+<h3 id="returns-8">Returns</h3>
+<h4 id="200-6">200</h4>
+<p>Updated.</p>
+<h5 id="type-7">Type:</h5>
+<p> <code>Invitation</code></p>
+<pre><code class="lang-json">{
+  &quot;Id&quot;: &quot;Id&quot;,
+  &quot;Issued&quot;: &quot;2019-07-19T13:56:29.7704833-07:00&quot;,
+  &quot;Expires&quot;: &quot;2019-07-19T13:56:29.7704854-07:00&quot;,
+  &quot;Accepted&quot;: &quot;2019-07-19T13:56:29.7704891-07:00&quot;,
+  &quot;State&quot;: 0,
+  &quot;TenantId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
+  &quot;UserId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
+  &quot;IdentityProviderId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
+}
+</code></pre><h4 id="201-1">201</h4>
+<p>Created.</p>
+<h5 id="type-8">Type:</h5>
+<p> <code>Invitation</code></p>
+<pre><code class="lang-json">{
+  &quot;Id&quot;: &quot;Id&quot;,
+  &quot;Issued&quot;: &quot;2019-07-19T13:56:29.7705274-07:00&quot;,
+  &quot;Expires&quot;: &quot;2019-07-19T13:56:29.7705292-07:00&quot;,
+  &quot;Accepted&quot;: &quot;2019-07-19T13:56:29.7705325-07:00&quot;,
+  &quot;State&quot;: 0,
+  &quot;TenantId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
+  &quot;UserId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
+  &quot;IdentityProviderId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
+}
+</code></pre><h4 id="400-4">400</h4>
+<p>Missing or invalid inputs.</p>
+<h4 id="401-8">401</h4>
+<p>Unauthorized.</p>
+<h4 id="403-8">403</h4>
+<p>Forbidden.</p>
+<h4 id="404-8">404</h4>
+<p>User or Tenant not found.</p>
+<h4 id="500-8">500</h4>
+<p>Internal server error.</p>
+<hr>
+<h2 id="delete-invitation-1"><code>Delete Invitation</code></h2>
+<p>Delete an Invitation for a User.</p>
+<h3 id="request-9">Request</h3>
+<p><code>DELETE api/v1/Tenants/{tenantId}/Users/{userId}/Invitation</code></p>
+<h3 id="parameters-9">Parameters</h3>
+<pre><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p>Id of Tenant.</p>
+<pre><code class="lang-csharp">[Required]
+Guid userId
+</code></pre><p>Id of User.</p>
+<h3 id="security-9">Security</h3>
+<p>Allowed for these roles:</p>
+<ul>
+<li><code>Account Administrator</code></li>
+</ul>
+<h3 id="returns-9">Returns</h3>
 <h4 id="204-1">204</h4>
-<p>Deleted</p>
-<h4 id="401-7">401</h4>
-<p>Unauthorized</p>
-<h4 id="403-7">403</h4>
-<p>Forbidden</p>
-<h4 id="404-7">404</h4>
-<p>Invitation or Tenant not found</p>
-<h4 id="500-7">500</h4>
-<p>Internal server error</p>
+<p>Deleted.</p>
+<h4 id="401-9">401</h4>
+<p>Unauthorized.</p>
+<h4 id="403-9">403</h4>
+<p>Forbidden.</p>
+<h4 id="404-9">404</h4>
+<p>Invitation or Tenant not found.</p>
+<h4 id="500-9">500</h4>
+<p>Internal server error.</p>
+<hr>
+<h2 id="get-header-for-users-invitation"><code>Get header for User&#39;s Invitation</code></h2>
+<p>Validate that Invitation exist for a User. This endpoint
+            is identical to the GET one but it does not return any
+            objects in the body.</p>
+<h3 id="request-10">Request</h3>
+<p><code>HEAD api/v1/Tenants/{tenantId}/Users/{userId}/Invitation</code></p>
+<h3 id="parameters-10">Parameters</h3>
+<pre><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p>Id of Tenant.</p>
+<pre><code class="lang-csharp">[Required]
+Guid userId
+</code></pre><p>Id of User.</p>
+<pre><code class="lang-csharp">[FromQuery]
+[Optional]
+[Default = False]
+bool includeExpiredInvitations
+</code></pre><p>Specify whether to include expired invitations.</p>
+<h3 id="security-10">Security</h3>
+<p>Allowed for these roles:</p>
+<ul>
+<li><code>Account Administrator</code></li>
+<li><code>Account Member</code></li>
+</ul>
+<h3 id="returns-10">Returns</h3>
+<h4 id="200-7">200</h4>
+<p>Success.</p>
+<h5 id="type-9">Type:</h5>
+<p> <code>Void</code></p>
+<h4 id="400-5">400</h4>
+<p>Missing or invalid inputs.</p>
+<h4 id="401-10">401</h4>
+<p>Unauthorized.</p>
+<h4 id="403-10">403</h4>
+<p>Forbidden.</p>
+<h4 id="404-10">404</h4>
+<p>Tenant not found.</p>
+<h4 id="500-10">500</h4>
+<p>Internal server error.</p>
 <hr>
 </article>
           </div>

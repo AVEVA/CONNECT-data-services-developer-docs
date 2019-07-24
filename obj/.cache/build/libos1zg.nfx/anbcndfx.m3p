@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>AzureActiveDirectoryTenant </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="AzureActiveDirectoryTenant ">
+    <meta name="generator" content="docfx 2.43.3.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../../index.html" width="46">
+                <img id="logo" src="../../Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="identityAzureActiveDirectoryTenant">
+<h1 id="azureactivedirectorytenant" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="5" sourceendlinenumber="5">AzureActiveDirectoryTenant</h1>
+
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="7" sourceendlinenumber="10">An Azure Active Directory (AAD) Tenant is used to map an existing
+            <a href="https://azure.microsoft.com/en-us/services/active-directory/" data-raw-source="[AAD](https://azure.microsoft.com/en-us/services/active-directory/)" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="8" sourceendlinenumber="8">AAD</a>
+            tenant from Azure to OSIsoft Cloud Services (OCS). We only allow one AAD Tenant
+            per OCS Tenant.</p>
+<h2 id="properties" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="12" sourceendlinenumber="12">Properties</h2>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="14" sourceendlinenumber="14">For HTTP requests and responses, the AzureActiveDirectoryTenant object has the following properties and JSON-serialized body: </p>
+<table sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="16" sourceendlinenumber="19">
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Descriptions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>string</td>
+<td>Id of an Azure Active Directory Tenant</td>
+</tr>
+<tr>
+<td>ConsentState</td>
+<td>ConsentState</td>
+<td>Consent State of Azure Active Directory Tenant. Can be: NotConsented (0), Consented (1)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="serialized-model" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="21" sourceendlinenumber="21">Serialized Model</h3>
+<pre sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="23" sourceendlinenumber="28"><code class="lang-json">{
+  &quot;Id&quot;: &quot;Id&quot;,
+  &quot;ConsentState&quot;: 0
+}
+</code></pre><hr>
+<h2 id="base-url" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="32" sourceendlinenumber="32">Base URL</h2>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="34" sourceendlinenumber="34">All URLs referenced in this section have the following base:</p>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="36" sourceendlinenumber="36"><code>https://dat-b.osisoft.com/</code></p>
+<h2 id="authentication" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="38" sourceendlinenumber="38">Authentication</h2>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="40" sourceendlinenumber="40">All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieve after a successful authentication request.</p>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="42" sourceendlinenumber="42"><code>Authorization: Bearer &lt;token&gt;</code></p>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="44" sourceendlinenumber="46">Requests made without an access token or an invalid/expired token will fail with a 401 Unauthorized response.
+Requests made with an access token which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
+Read <a href="https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/Authentication" data-raw-source="[here](https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/Authentication)" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="46" sourceendlinenumber="46">here</a> on how to authenticate against OCS with the various clients and receive an access token in response.</p>
+<h2 id="error-handling" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="48" sourceendlinenumber="48">Error Handling</h2>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="50" sourceendlinenumber="50">All responses will have an error message in the body. The exceptions are 200 responses and the 401 Unauthorized response. The error message will look as follows:</p>
+<pre sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="52" sourceendlinenumber="59"><code class="lang-json">{
+    &quot;OperationId&quot;: &quot;1b2af18e-8b27-4f86-93e0-6caa3e59b90c&quot;, 
+    &quot;Error&quot;: &quot;Error message.&quot;, 
+    &quot;Reason&quot;: &quot;Reason that caused error.&quot;, 
+    &quot;Resolution&quot;: &quot;Possible solution for the error.&quot; 
+}
+</code></pre><p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="61" sourceendlinenumber="61">If and when contacting OSIsoft support about this error, please provide the OperationId.</p>
+<h2 id="add-aad-tenant-to-ocs-tenant" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="63" sourceendlinenumber="63"><code>Add AAD Tenant to OCS Tenant</code></h2>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="65" sourceendlinenumber="65">Add an AAD Tenant to the OCS Tenant.</p>
+<h3 id="request" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="67" sourceendlinenumber="67">Request</h3>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="69" sourceendlinenumber="69"><code>POST api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{azureActiveDirectoryTenantId}</code></p>
+<h3 id="parameters" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="71" sourceendlinenumber="71">Parameters</h3>
+<pre sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="73" sourceendlinenumber="76"><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="78" sourceendlinenumber="78">Id of OCS Tenant.</p>
+<pre sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="80" sourceendlinenumber="83"><code class="lang-csharp">[Required]
+string azureActiveDirectoryTenantId
+</code></pre><p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="85" sourceendlinenumber="85">Id or Domain Name of AAD Tenant.</p>
+<h3 id="security" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="87" sourceendlinenumber="87">Security</h3>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="89" sourceendlinenumber="89">Allowed for these roles:</p>
+<ul sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="91" sourceendlinenumber="91">
+<li sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="91" sourceendlinenumber="91"><code>Account Administrator</code></li>
+</ul>
+<h3 id="returns" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="93" sourceendlinenumber="93">Returns</h3>
+<h4 id="201" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="95" sourceendlinenumber="95">201</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="97" sourceendlinenumber="97">Created.</p>
+<h5 id="type" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="99" sourceendlinenumber="99">Type:</h5>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="101" sourceendlinenumber="101"> <code>AzureActiveDirectoryTenant</code></p>
+<pre sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="103" sourceendlinenumber="108"><code class="lang-json">{
+  &quot;Id&quot;: &quot;Id&quot;,
+  &quot;ConsentState&quot;: 0
+}
+</code></pre><h4 id="400" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="110" sourceendlinenumber="110">400</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="112" sourceendlinenumber="112">Missing or invalid inputs.</p>
+<h4 id="401" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="114" sourceendlinenumber="114">401</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="116" sourceendlinenumber="116">Unauthorized.</p>
+<h4 id="403" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="118" sourceendlinenumber="118">403</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="120" sourceendlinenumber="120">Forbidden.</p>
+<h4 id="404" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="122" sourceendlinenumber="122">404</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="124" sourceendlinenumber="124">OCS Tenant not found.</p>
+<h4 id="409" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="126" sourceendlinenumber="126">409</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="128" sourceendlinenumber="128">Id of AAD Tenant. is already in use on the specified Tenant.</p>
+<h4 id="500" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="130" sourceendlinenumber="130">500</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="132" sourceendlinenumber="132">Internal server error.</p>
+<hr>
+<h2 id="get-all-aad-tenants-from-ocs-tenant" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="135" sourceendlinenumber="135"><code>Get All AAD Tenants from OCS Tenant</code></h2>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="137" sourceendlinenumber="137">Get all AAD Tenants from an OCS Tenant.</p>
+<h3 id="request-1" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="139" sourceendlinenumber="139">Request</h3>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="141" sourceendlinenumber="141"><code>GET api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants</code></p>
+<h3 id="parameters-1" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="143" sourceendlinenumber="143">Parameters</h3>
+<pre sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="145" sourceendlinenumber="148"><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="150" sourceendlinenumber="150">Id of OCS Tenant.</p>
+<pre sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="152" sourceendlinenumber="157"><code class="lang-csharp">[FromQuery]
+[Optional]
+[Default = &quot;&quot;]
+string query
+</code></pre><p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="159" sourceendlinenumber="159">Query to execute. Currently not supported.</p>
+<pre sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="161" sourceendlinenumber="166"><code class="lang-csharp">[FromQuery]
+[Optional]
+[Default = 0]
+int32 skip
+</code></pre><p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="168" sourceendlinenumber="168">Number of AAD tenants to skip.</p>
+<pre sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="170" sourceendlinenumber="175"><code class="lang-csharp">[FromQuery]
+[Optional]
+[Default = 100]
+int32 count
+</code></pre><p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="177" sourceendlinenumber="177">Maximum number of AAD tenants to return.</p>
+<h3 id="security-1" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="179" sourceendlinenumber="179">Security</h3>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="181" sourceendlinenumber="181">Allowed for these roles:</p>
+<ul sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="183" sourceendlinenumber="183">
+<li sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="183" sourceendlinenumber="183"><code>Account Administrator</code></li>
+</ul>
+<h3 id="returns-1" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="185" sourceendlinenumber="185">Returns</h3>
+<h4 id="200" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="187" sourceendlinenumber="187">200</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="189" sourceendlinenumber="189">Success.</p>
+<h5 id="type-1" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="191" sourceendlinenumber="191">Type:</h5>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="193" sourceendlinenumber="193"> <code>List</code></p>
+<pre sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="195" sourceendlinenumber="206"><code class="lang-json">[
+  {
+    &quot;Id&quot;: &quot;Id&quot;,
+    &quot;ConsentState&quot;: 0
+  },
+  {
+    &quot;Id&quot;: &quot;Id&quot;,
+    &quot;ConsentState&quot;: 0
+  }
+]
+</code></pre><h4 id="401-1" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="208" sourceendlinenumber="208">401</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="210" sourceendlinenumber="210">Unauthorized.</p>
+<h4 id="403-1" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="212" sourceendlinenumber="212">403</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="214" sourceendlinenumber="214">Forbidden.</p>
+<h4 id="403-2" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="216" sourceendlinenumber="216">403</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="218" sourceendlinenumber="218">Forbidden.</p>
+<h4 id="500-1" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="220" sourceendlinenumber="220">500</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="222" sourceendlinenumber="222">Internal server error.</p>
+<hr>
+<h2 id="get-aad-tenant-from-ocs-tenant" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="225" sourceendlinenumber="225"><code>Get AAD Tenant from OCS Tenant</code></h2>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="227" sourceendlinenumber="227">Get AAD Tenant from an OCS Tenant.</p>
+<h3 id="request-2" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="229" sourceendlinenumber="229">Request</h3>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="231" sourceendlinenumber="231"><code>GET api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{azureActiveDirectoryTenantId}</code></p>
+<h3 id="parameters-2" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="233" sourceendlinenumber="233">Parameters</h3>
+<pre sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="235" sourceendlinenumber="238"><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="240" sourceendlinenumber="240">Id of OCS Tenant.</p>
+<pre sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="242" sourceendlinenumber="245"><code class="lang-csharp">[Required]
+string azureActiveDirectoryTenantId
+</code></pre><p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="247" sourceendlinenumber="247">Id of AAD Tenant.</p>
+<h3 id="security-2" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="249" sourceendlinenumber="249">Security</h3>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="251" sourceendlinenumber="251">Allowed for these roles:</p>
+<ul sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="253" sourceendlinenumber="253">
+<li sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="253" sourceendlinenumber="253"><code>Account Administrator</code></li>
+</ul>
+<h3 id="returns-2" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="255" sourceendlinenumber="255">Returns</h3>
+<h4 id="200-1" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="257" sourceendlinenumber="257">200</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="259" sourceendlinenumber="259">Success.</p>
+<h5 id="type-2" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="261" sourceendlinenumber="261">Type:</h5>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="263" sourceendlinenumber="263"> <code>AzureActiveDirectoryTenant</code></p>
+<pre sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="265" sourceendlinenumber="270"><code class="lang-json">{
+  &quot;Id&quot;: &quot;Id&quot;,
+  &quot;ConsentState&quot;: 0
+}
+</code></pre><h4 id="400-1" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="272" sourceendlinenumber="272">400</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="274" sourceendlinenumber="274">Missing or invalid inputs.</p>
+<h4 id="401-2" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="276" sourceendlinenumber="276">401</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="278" sourceendlinenumber="278">Unauthorized.</p>
+<h4 id="403-3" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="280" sourceendlinenumber="280">403</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="282" sourceendlinenumber="282">Forbidden.</p>
+<h4 id="404-1" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="284" sourceendlinenumber="284">404</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="286" sourceendlinenumber="286">OCS Tenant not found.</p>
+<h4 id="500-2" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="288" sourceendlinenumber="288">500</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="290" sourceendlinenumber="290">Internal server error.</p>
+<hr>
+<h2 id="remove-aad-tenant-from-ocs-tenant" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="293" sourceendlinenumber="293"><code>Remove AAD Tenant from OCS Tenant</code></h2>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="295" sourceendlinenumber="295">Remove AAD Tenant from an OCS Tenant.</p>
+<h3 id="request-3" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="297" sourceendlinenumber="297">Request</h3>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="299" sourceendlinenumber="299"><code>DELETE api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{azureActiveDirectoryTenantId}</code></p>
+<h3 id="parameters-3" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="301" sourceendlinenumber="301">Parameters</h3>
+<pre sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="303" sourceendlinenumber="306"><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="308" sourceendlinenumber="308">Id of OCS Tenant.</p>
+<pre sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="310" sourceendlinenumber="313"><code class="lang-csharp">[Required]
+string azureActiveDirectoryTenantId
+</code></pre><p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="315" sourceendlinenumber="315">Id of AAD Tenant to remove.</p>
+<h3 id="security-3" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="317" sourceendlinenumber="317">Security</h3>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="319" sourceendlinenumber="319">Allowed for these roles:</p>
+<ul sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="321" sourceendlinenumber="321">
+<li sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="321" sourceendlinenumber="321"><code>Account Administrator</code></li>
+</ul>
+<h3 id="returns-3" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="323" sourceendlinenumber="323">Returns</h3>
+<h4 id="204" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="325" sourceendlinenumber="325">204</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="327" sourceendlinenumber="327">Removed.</p>
+<h4 id="400-2" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="329" sourceendlinenumber="329">400</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="331" sourceendlinenumber="331">Missing or invalid inputs.</p>
+<h4 id="401-3" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="333" sourceendlinenumber="333">401</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="335" sourceendlinenumber="335">Unauthorized.</p>
+<h4 id="403-4" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="337" sourceendlinenumber="337">403</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="339" sourceendlinenumber="339">Forbidden.</p>
+<h4 id="404-2" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="341" sourceendlinenumber="341">404</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="343" sourceendlinenumber="343">OCS Tenant not found.</p>
+<h4 id="500-3" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="345" sourceendlinenumber="345">500</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="347" sourceendlinenumber="347">Internal server error.</p>
+<hr>
+<h2 id="send-consent-email-for-aad-tenant" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="350" sourceendlinenumber="350"><code>Send Consent Email for AAD Tenant</code></h2>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="352" sourceendlinenumber="355">Send consent for an AAD Tenant. OCS needs to be granted
+            permission to interact with the AAD tenant. Otherwise, users from this AAD Tenant
+            cannot accept invitations from OCS and log in. You can read more about this
+            <a href="https://pisquare.osisoft.com/docs/DOC-3986-msa-consent-for-azure-active-directory" data-raw-source="[here](https://pisquare.osisoft.com/docs/DOC-3986-msa-consent-for-azure-active-directory)" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="355" sourceendlinenumber="355">here</a></p>
+<h3 id="request-4" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="357" sourceendlinenumber="357">Request</h3>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="359" sourceendlinenumber="359"><code>POST api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{azureActiveDirectoryTenantId}/SendConsent</code></p>
+<h3 id="parameters-4" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="361" sourceendlinenumber="361">Parameters</h3>
+<pre sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="363" sourceendlinenumber="366"><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="368" sourceendlinenumber="368">Id of OCS Tenant.</p>
+<pre sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="370" sourceendlinenumber="373"><code class="lang-csharp">[Required]
+string azureActiveDirectoryTenantId
+</code></pre><p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="375" sourceendlinenumber="375">Id of AAD Tenant.</p>
+<pre sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="377" sourceendlinenumber="381"><code class="lang-csharp">[FromBody]
+[Required]
+ConsentInformation consentInformation
+</code></pre><p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="383" sourceendlinenumber="383">ConsentInformation object.</p>
+<table sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="385" sourceendlinenumber="390">
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AzureActiveDirectoryConsentEmail</td>
+<td>string</td>
+<td>Yes</td>
+<td>Address to email consent.            Only AAD Admins have permission to consent to OCS            being allowed to interact with the tenant. The email            does not have to be sent to an Admin.</td>
+</tr>
+<tr>
+<td>AzureActiveDirectoryConsentGivenName</td>
+<td>string</td>
+<td>Yes</td>
+<td>Preferred name to use in the consent email.</td>
+</tr>
+<tr>
+<td>AzureActiveDirectoryConsentSurname</td>
+<td>string</td>
+<td>Yes</td>
+<td>Preferred surname to use in the email.</td>
+</tr>
+<tr>
+<td>AzureActiveDirectoryTenant</td>
+<td>string</td>
+<td>Yes</td>
+<td>AAD Domain Name (e.g. mydomain.onmicrosoft.com)</td>
+</tr>
+</tbody>
+</table>
+<pre sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="394" sourceendlinenumber="401"><code class="lang-json">{
+  &quot;AzureActiveDirectoryConsentEmail&quot;: &quot;user@company.com&quot;,
+  &quot;AzureActiveDirectoryConsentGivenName&quot;: &quot;Name&quot;,
+  &quot;AzureActiveDirectoryConsentSurname&quot;: &quot;Surname&quot;,
+  &quot;AzureActiveDirectoryTenant&quot;: &quot;AzureActiveDirectoryTenant&quot;
+}
+</code></pre><h3 id="security-4" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="403" sourceendlinenumber="403">Security</h3>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="405" sourceendlinenumber="405">Allowed for these roles:</p>
+<ul sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="407" sourceendlinenumber="407">
+<li sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="407" sourceendlinenumber="407"><code>Account Administrator</code></li>
+</ul>
+<h3 id="returns-4" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="409" sourceendlinenumber="409">Returns</h3>
+<h4 id="204-1" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="411" sourceendlinenumber="411">204</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="413" sourceendlinenumber="413">Removed.</p>
+<h4 id="400-3" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="415" sourceendlinenumber="415">400</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="417" sourceendlinenumber="417">Missing or invalid inputs.</p>
+<h4 id="401-4" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="419" sourceendlinenumber="419">401</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="421" sourceendlinenumber="421">Unauthorized.</p>
+<h4 id="403-5" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="423" sourceendlinenumber="423">403</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="425" sourceendlinenumber="425">Forbidden.</p>
+<h4 id="404-3" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="427" sourceendlinenumber="427">404</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="429" sourceendlinenumber="429">OCS Tenant not found.</p>
+<h4 id="500-4" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="431" sourceendlinenumber="431">500</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="433" sourceendlinenumber="433">Internal server error.</p>
+<hr>
+<h2 id="validate-aad-tenant-in-ocs-tenant" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="436" sourceendlinenumber="436"><code>Validate AAD Tenant in OCS Tenant</code></h2>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="438" sourceendlinenumber="440">Validate that AAD Tenant exists in this OCS Tenant.
+            This endpoint is identical to the GET one but
+            it does not return any objects in the body.</p>
+<h3 id="request-5" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="442" sourceendlinenumber="442">Request</h3>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="444" sourceendlinenumber="444"><code>HEAD api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{azureActiveDirectoryTenantId}</code></p>
+<h3 id="parameters-5" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="446" sourceendlinenumber="446">Parameters</h3>
+<pre sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="448" sourceendlinenumber="451"><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="453" sourceendlinenumber="453">Id of OCS Tenant.</p>
+<pre sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="455" sourceendlinenumber="458"><code class="lang-csharp">[Required]
+string azureActiveDirectoryTenantId
+</code></pre><p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="460" sourceendlinenumber="460">Id of AAD Tenant.</p>
+<h3 id="security-5" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="462" sourceendlinenumber="462">Security</h3>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="464" sourceendlinenumber="464">Allowed for these roles:</p>
+<ul sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="466" sourceendlinenumber="466">
+<li sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="466" sourceendlinenumber="466"><code>Account Administrator</code></li>
+</ul>
+<h3 id="returns-5" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="468" sourceendlinenumber="468">Returns</h3>
+<h4 id="200-2" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="470" sourceendlinenumber="470">200</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="472" sourceendlinenumber="472">Success.</p>
+<h5 id="type-3" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="474" sourceendlinenumber="474">Type:</h5>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="476" sourceendlinenumber="476"> <code>Void</code></p>
+<h4 id="400-4" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="478" sourceendlinenumber="478">400</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="480" sourceendlinenumber="480">Missing or invalid inputs.</p>
+<h4 id="401-5" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="482" sourceendlinenumber="482">401</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="484" sourceendlinenumber="484">Unauthorized.</p>
+<h4 id="403-6" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="486" sourceendlinenumber="486">403</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="488" sourceendlinenumber="488">Forbidden.</p>
+<h4 id="404-4" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="490" sourceendlinenumber="490">404</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="492" sourceendlinenumber="492">OCS Tenant not found.</p>
+<h4 id="500-5" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="494" sourceendlinenumber="494">500</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="496" sourceendlinenumber="496">Internal server error.</p>
+<hr>
+<h2 id="get-total-count-of-aad-tenant-in-ocs-tenant" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="499" sourceendlinenumber="499"><code>Get Total Count of AAD Tenant in OCS Tenant</code></h2>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="501" sourceendlinenumber="503">Return total number of AAD tenants in a OCS Tenant. This endpoint
+            is identical to the GET one but it does not return any objects
+            in the body.</p>
+<h3 id="request-6" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="505" sourceendlinenumber="505">Request</h3>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="507" sourceendlinenumber="507"><code>HEAD api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants</code></p>
+<h3 id="parameters-6" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="509" sourceendlinenumber="509">Parameters</h3>
+<pre sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="511" sourceendlinenumber="514"><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="516" sourceendlinenumber="516">Id of OCS Tenant.</p>
+<h3 id="security-6" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="518" sourceendlinenumber="518">Security</h3>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="520" sourceendlinenumber="520">Allowed for these roles:</p>
+<ul sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="522" sourceendlinenumber="522">
+<li sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="522" sourceendlinenumber="522"><code>Account Administrator</code></li>
+</ul>
+<h3 id="returns-6" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="524" sourceendlinenumber="524">Returns</h3>
+<h4 id="200-3" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="526" sourceendlinenumber="526">200</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="528" sourceendlinenumber="528">Success.</p>
+<h5 id="type-4" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="530" sourceendlinenumber="530">Type:</h5>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="532" sourceendlinenumber="532"> <code>Void</code></p>
+<h4 id="400-5" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="534" sourceendlinenumber="534">400</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="536" sourceendlinenumber="536">Missing or invalid inputs.</p>
+<h4 id="401-6" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="538" sourceendlinenumber="538">401</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="540" sourceendlinenumber="540">Unauthorized.</p>
+<h4 id="403-7" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="542" sourceendlinenumber="542">403</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="544" sourceendlinenumber="544">Forbidden.</p>
+<h4 id="404-5" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="546" sourceendlinenumber="546">404</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="548" sourceendlinenumber="548">OCS Tenant not found.</p>
+<h4 id="500-6" sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="550" sourceendlinenumber="550">500</h4>
+<p sourcefile="Documentation/Identity/Identity_AzureActiveDirectoryTenant.md" sourcestartlinenumber="552" sourceendlinenumber="552">Internal server error.</p>
+<hr>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/Identity/Identity_AzureActiveDirectoryTenant.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+            <span id='copyright-text'>© 2019 - OSIsoft, LLC.<span>
+        </span></span></div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

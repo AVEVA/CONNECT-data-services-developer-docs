@@ -78,7 +78,19 @@
             <article class="content wrap" id="_content" data-uid="identityUser">
 <h1 id="user">User</h1>
 
-<p>APIs for creating, getting, updating, and deleting Users</p>
+<p>Users consume resources in a Tenant. They are invited by the Admin of the
+            Tenant and should already have an account in one of the configured Identity
+            Providers for this Tenant. A User is fully provisioned in OSIsoft Cloud Services
+            (OCS) only after they have accepted the invitation and successfully logged with
+            an Identity Provider. OCS does not maintain User credentials, but it delegates
+            authentication to the Identity Provider the User logged in with at first. Once
+            logged in the User cannot change the Identity Provider it signed up with. A Tenant
+            can only have one User with a given email to an Identity Provider. If a User has
+            multiple aliases in the same Identity Provider, they will not be able to create
+            multiple corresponding OCS users. Users have roles associated with them. These roles
+            determine what a User is authorized to do in the Tenant. Roles are assigned to a User
+            upon creation and can be modified by an Admin. We allow the change of some User fields
+            and the complete deletion of a User.</p>
 <h2 id="properties">Properties</h2>
 <p>For HTTP requests and responses, the User object has the following properties and JSON-serialized body: </p>
 <table>
@@ -86,7 +98,7 @@
 <tr>
 <th>Property</th>
 <th>Type</th>
-<th>Description</th>
+<th>Descriptions</th>
 </tr>
 </thead>
 <tbody>
@@ -118,7 +130,7 @@
 <tr>
 <td>ContactEmail</td>
 <td>string</td>
-<td>Preferred contact email for user.</td>
+<td>Contact email for user. User will only be contacted through this email.</td>
 </tr>
 <tr>
 <td>ContactGivenName</td>
@@ -133,12 +145,12 @@
 <tr>
 <td>ExternalUserId</td>
 <td>string</td>
-<td>Provider id for user.</td>
+<td>Provider id for user. This is the unique ID we get from the Identity Provider.</td>
 </tr>
 <tr>
 <td>IdentityProviderId</td>
 <td>Guid</td>
-<td>Identity Provider Id used to authenticate user.</td>
+<td>Identity Provider Id used to authenticate User. Will be set once the User accepts an invitation. If not specified when sending the invitation to the User, it can be any of the Identity Provider Ids configured for this Tenant.</td>
 </tr>
 <tr>
 <td>RoleIds</td>
@@ -165,29 +177,53 @@
   ]
 }
 </code></pre><hr>
-<h2 id="get-users"><code>Get Users</code></h2>
-<p>Returns a list of User objects for a given tenant</p>
+<h2 id="base-url">Base URL</h2>
+<p>All URLs referenced in this section have the following base:</p>
+<p><code>https://dat-b.osisoft.com/</code></p>
+<h2 id="authentication">Authentication</h2>
+<p>All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieve after a successful authentication request.</p>
+<p><code>Authorization: Bearer &lt;token&gt;</code></p>
+<p>Requests made without an access token or an invalid/expired token will fail with a 401 Unauthorized response.
+Requests made with an access token which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
+Read <a href="https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/Authentication">here</a> on how to authenticate against OCS with the various clients and receive an access token in response.</p>
+<h2 id="error-handling">Error Handling</h2>
+<p>All responses will have an error message in the body. The exceptions are 200 responses and the 401 Unauthorized response. The error message will look as follows:</p>
+<pre><code class="lang-json">{
+    &quot;OperationId&quot;: &quot;1b2af18e-8b27-4f86-93e0-6caa3e59b90c&quot;, 
+    &quot;Error&quot;: &quot;Error message.&quot;, 
+    &quot;Reason&quot;: &quot;Reason that caused error.&quot;, 
+    &quot;Resolution&quot;: &quot;Possible solution for the error.&quot; 
+}
+</code></pre><p>If and when contacting OSIsoft support about this error, please provide the OperationId.</p>
+<h2 id="get-users-from-a-tenant"><code>Get Users from a Tenant</code></h2>
+<p>Get a list of users from a Tenant. Optionally, get a list of requested users.
+            Total number of users in the Tenant set in the Total-Count header.</p>
 <h3 id="request">Request</h3>
 <p><code>GET api/v1/Tenants/{tenantId}/Users</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of tenant</p>
+</code></pre><p>Id of Tenant.</p>
+<pre><code class="lang-csharp">[FromQuery]
+[Optional]
+[Default = &quot;&quot;]
+Guid[] id
+</code></pre><p>Unordered list of User Ids to get.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
 [Default = &quot;&quot;]
 string query
-</code></pre><p>Query to execute. Currently not supported</p>
+</code></pre><p>Query to execute. Currently not supported.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
 [Default = 0]
 int32 skip
-</code></pre><p>Number of users to skip</p>
+</code></pre><p>Number of users to skip. Ignored if a list of Ids is passed.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
 [Default = 100]
 int32 count
-</code></pre><p>Max number of users to return</p>
+</code></pre><p>Maximum number of users to return. Ignored if a list of Ids is passed.</p>
 <h3 id="security">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -198,7 +234,7 @@ int32 count
 <h4 id="200">200</h4>
 <p>Success.</p>
 <h5 id="type">Type:</h5>
-<p> <code>List[User]</code></p>
+<p> <code>List</code></p>
 <pre><code class="lang-json">[
   {
     &quot;Id&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
@@ -234,8 +270,9 @@ int32 count
   }
 ]
 </code></pre><h4 id="207">207</h4>
+<p>Partial success.</p>
 <h5 id="type-1">Type:</h5>
-<p> <code>MultiStatusResponse&lt;User&gt;</code></p>
+<p> <code>MultiStatusResponse</code></p>
 <pre><code class="lang-json">{
   &quot;OperationId&quot;: &quot;OperationId&quot;,
   &quot;Error&quot;: &quot;Error&quot;,
@@ -294,54 +331,63 @@ int32 count
   ]
 }
 </code></pre><h4 id="400">400</h4>
-<p>Missing or invalid inputs</p>
+<p>Missing or invalid inputs.</p>
 <h4 id="401">401</h4>
-<p>Unauthorized</p>
+<p>Unauthorized.</p>
 <h4 id="403">403</h4>
-<p>Forbidden</p>
+<p>Forbidden.</p>
 <h4 id="404">404</h4>
-<p>Tenant not found</p>
+<p>Tenant not found.</p>
 <h4 id="500">500</h4>
-<p>Internal server error</p>
+<p>Internal server error.</p>
 <hr>
-<h2 id="get-users-status"><code>Get Users&#39; Status</code></h2>
-<p>Get User status for multiple users, optionally restrict it to only Users of a specific status.</p>
+<h2 id="get-users-invitation-status"><code>Get Users&#39; Invitation Status</code></h2>
+<p>Get invitation statuses for multiple users. Optionally
+            restrict it only to users of a specific invitation status.
+            The User status can be: InvitationAccepted (0),  NoInvitation (1),
+            InvitationNotSent (2), InvitationSent (3), InvitationExpired (4).</p>
 <h3 id="request-1">Request</h3>
 <p><code>GET api/v1/Tenants/{tenantId}/Users/Status</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of tenant</p>
+</code></pre><p>Id of Tenant.</p>
+<pre><code class="lang-csharp">[FromQuery]
+[Optional]
+[Default = &quot;&quot;]
+Guid[] id
+</code></pre><p>Unordered list of User Ids to get.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
 [Default = &quot;&quot;]
 string query
-</code></pre><p>Query to execute. Currently not supported</p>
+</code></pre><p>Query to execute. Currently not supported.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
 [Default = 0]
 int32 skip
-</code></pre><p>Number of users to skip</p>
+</code></pre><p>Number of users to skip. Ignored if a list of Ids is passed.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
 [Default = 100]
 int32 count
-</code></pre><p>Max number of users to return</p>
+</code></pre><p>Maximum number of users to return. Ignored if a list of Ids is passed.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
 [Default = &quot;&quot;]
 string status
-</code></pre><p>Only return statuses that match this value. Possible values are: InvitationAccepted, NoInvitation, InvitationNotSent, InvitationSent, InvitationExpired.</p>
+</code></pre><p>Only return statuses that match this value. Possible User statuses are: InvitationAccepted, NoInvitation, InvitationNotSent, InvitationSent, InvitationExpired.</p>
 <h3 id="security-1">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
 <li><code>Account Administrator</code></li>
+<li><code>Account Member</code></li>
 </ul>
 <h3 id="returns-1">Returns</h3>
 <h4 id="200-1">200</h4>
 <p>Success.</p>
 <h5 id="type-2">Type:</h5>
-<p> <code>List[User]</code></p>
+<p> <code>List</code></p>
 <pre><code class="lang-json">[
   {
     &quot;InvitationStatus&quot;: 0,
@@ -383,27 +429,27 @@ string status
   }
 ]
 </code></pre><h4 id="400-1">400</h4>
-<p>Missing or invalid inputs</p>
+<p>Missing or invalid inputs.</p>
 <h4 id="401-1">401</h4>
-<p>Unauthorized</p>
+<p>Unauthorized.</p>
 <h4 id="403-1">403</h4>
-<p>Forbidden</p>
+<p>Forbidden.</p>
 <h4 id="500-1">500</h4>
-<p>Internal server error</p>
+<p>Internal server error.</p>
 <h4 id="404-1">404</h4>
-<p>Tenant not found</p>
+<p>Tenant not found.</p>
 <hr>
-<h2 id="get-user"><code>Get User</code></h2>
-<p>Returns a User</p>
+<h2 id="get-user-from-a-tenant"><code>Get User from a Tenant</code></h2>
+<p>Get a User from Tenant.</p>
 <h3 id="request-2">Request</h3>
 <p><code>GET api/v1/Tenants/{tenantId}/Users/{userId}</code></p>
 <h3 id="parameters-2">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant</p>
+</code></pre><p>Id of Tenant.</p>
 <pre><code class="lang-csharp">[Required]
 Guid userId
-</code></pre><p>Id of User</p>
+</code></pre><p>Id of User.</p>
 <h3 id="security-2">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -412,7 +458,7 @@ Guid userId
 </ul>
 <h3 id="returns-2">Returns</h3>
 <h4 id="200-2">200</h4>
-<p>Success</p>
+<p>Success.</p>
 <h5 id="type-3">Type:</h5>
 <p> <code>User</code></p>
 <pre><code class="lang-json">{
@@ -432,25 +478,26 @@ Guid userId
   ]
 }
 </code></pre><h4 id="401-2">401</h4>
-<p>Unauthorized</p>
+<p>Unauthorized.</p>
 <h4 id="403-2">403</h4>
-<p>Forbidden</p>
+<p>Forbidden.</p>
 <h4 id="404-2">404</h4>
-<p>User or Tenant not found</p>
+<p>User or Tenant not found.</p>
 <h4 id="500-2">500</h4>
-<p>Internal server error</p>
+<p>Internal server error.</p>
 <hr>
-<h2 id="get-users-status-1"><code>Get User&#39;s Status</code></h2>
-<p>Returns user invitation status</p>
+<h2 id="get-users-invitation-status-1"><code>Get User&#39;s Invitation Status</code></h2>
+<p>Get invitation status for a User. It can be: InvitationAccepted (0),
+            NoInvitation (1), InvitationNotSent (2), InvitationSent (3), InvitationExpired (4).</p>
 <h3 id="request-3">Request</h3>
 <p><code>GET api/v1/Tenants/{tenantId}/Users/{userId}/Status</code></p>
 <h3 id="parameters-3">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of tenant</p>
+</code></pre><p>Id of Tenant.</p>
 <pre><code class="lang-csharp">[Required]
 Guid userId
-</code></pre><p>Id of user</p>
+</code></pre><p>Id of User.</p>
 <h3 id="security-3">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -459,7 +506,7 @@ Guid userId
 </ul>
 <h3 id="returns-3">Returns</h3>
 <h4 id="200-3">200</h4>
-<p>Success</p>
+<p>Success.</p>
 <h5 id="type-4">Type:</h5>
 <p> <code>UserStatus</code></p>
 <pre><code class="lang-json">{
@@ -482,25 +529,26 @@ Guid userId
   }
 }
 </code></pre><h4 id="401-3">401</h4>
-<p>Unauthorized</p>
+<p>Unauthorized.</p>
 <h4 id="403-3">403</h4>
-<p>Forbidden</p>
+<p>Forbidden.</p>
 <h4 id="404-3">404</h4>
-<p>User or Tenant not found</p>
+<p>User or Tenant not found.</p>
 <h4 id="500-3">500</h4>
-<p>Internal server error</p>
+<p>Internal server error.</p>
 <hr>
 <h2 id="get-users-preferences"><code>Get User&#39;s Preferences</code></h2>
-<p>Returns a user&#39;s preferences</p>
+<p>Get preferences from a User. User preferences can be any valid
+            JSON object. A common use case is to store UI preferences for the User.</p>
 <h3 id="request-4">Request</h3>
 <p><code>GET api/v1/Tenants/{tenantId}/Users/{userId}/Preferences</code></p>
 <h3 id="parameters-4">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant</p>
+</code></pre><p>Id of Tenant.</p>
 <pre><code class="lang-csharp">[Required]
 Guid userId
-</code></pre><p>Id of User</p>
+</code></pre><p>Id of User.</p>
 <h3 id="security-4">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -509,34 +557,34 @@ Guid userId
 </ul>
 <h3 id="returns-4">Returns</h3>
 <h4 id="200-4">200</h4>
-<p>Success</p>
+<p>Success.</p>
 <h5 id="type-5">Type:</h5>
 <p> <code>JObject</code></p>
 <pre><code class="lang-json">{}
 </code></pre><h4 id="401-4">401</h4>
-<p>Unauthorized</p>
+<p>Unauthorized.</p>
 <h4 id="403-4">403</h4>
-<p>Forbidden</p>
+<p>Forbidden.</p>
 <h4 id="404-4">404</h4>
-<p>User or Tenant not found</p>
+<p>User or Tenant not found.</p>
 <h4 id="500-4">500</h4>
-<p>Internal server error</p>
+<p>Internal server error.</p>
 <hr>
 <h2 id="update-users-preferences"><code>Update User&#39;s Preferences</code></h2>
-<p>Put a user&#39;s preferences</p>
+<p>Update preferences for a User.</p>
 <h3 id="request-5">Request</h3>
 <p><code>PUT api/v1/Tenants/{tenantId}/Users/{userId}/Preferences</code></p>
 <h3 id="parameters-5">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant</p>
+</code></pre><p>Id of Tenant.</p>
 <pre><code class="lang-csharp">[Required]
 Guid userId
-</code></pre><p>Id of User</p>
+</code></pre><p>Id of User.</p>
 <pre><code class="lang-csharp">[FromBody]
 [Required]
 JObject preferences
-</code></pre><p>JSON Preferences</p>
+</code></pre><p>JSON object preferences.</p>
 <pre><code class="lang-json">{}
 </code></pre><h3 id="security-5">Security</h3>
 <p>Allowed for these roles:</p>
@@ -546,33 +594,36 @@ JObject preferences
 </ul>
 <h3 id="returns-5">Returns</h3>
 <h4 id="200-5">200</h4>
-<p>Success</p>
+<p>Success.</p>
 <h5 id="type-6">Type:</h5>
 <p> <code>JObject</code></p>
 <pre><code class="lang-json">{}
 </code></pre><h4 id="400-2">400</h4>
-<p>Missing preferences</p>
+<p>Missing preferences.</p>
 <h4 id="401-5">401</h4>
-<p>Unauthorized</p>
+<p>Unauthorized.</p>
 <h4 id="403-5">403</h4>
-<p>Forbidden</p>
+<p>Forbidden.</p>
 <h4 id="404-5">404</h4>
-<p>User or Tenant not found</p>
+<p>User or Tenant not found.</p>
 <h4 id="500-5">500</h4>
-<p>Internal server error</p>
+<p>Internal server error.</p>
 <hr>
 <h2 id="create-user"><code>Create User</code></h2>
-<p>Creates a User</p>
+<p>Create a User in the Tenant. This endpoint does not create an invitation for the User.
+            You will need to create an invitation in the respective endpoint for this User, otherwise
+            they will not be able to finish the sign-up process. Users have unique Ids in a Tenant.
+            Currently there is a limit of 50000 users per Tenant.</p>
 <h3 id="request-6">Request</h3>
 <p><code>POST api/v1/Tenants/{tenantId}/Users</code></p>
 <h3 id="parameters-6">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant</p>
+</code></pre><p>Id of Tenant.</p>
 <pre><code class="lang-csharp">[FromBody]
 [Required]
 UserCreateOrUpdate userCreateOrUpdate
-</code></pre><p>User values to use during creating</p>
+</code></pre><p>UserCreateOrUpdate object.</p>
 <table>
 <thead>
 <tr>
@@ -592,26 +643,26 @@ UserCreateOrUpdate userCreateOrUpdate
 <tr>
 <td>ContactGivenName</td>
 <td>string</td>
-<td>Yes</td>
+<td>No</td>
 <td>Preferred name to be used when contacting user.</td>
 </tr>
 <tr>
 <td>ContactSurname</td>
 <td>string</td>
-<td>Yes</td>
+<td>No</td>
 <td>Preferred surname to be used when contacting user.</td>
 </tr>
 <tr>
 <td>ContactEmail</td>
 <td>string</td>
-<td>Yes</td>
-<td>Preferred contact email to be used.</td>
+<td>No</td>
+<td>Preferred contact email to be used. This does not have to be the same as the user&#39;s Identity Provider email.</td>
 </tr>
 <tr>
 <td>RoleIds</td>
 <td>Guid[]</td>
-<td>Yes</td>
-<td>List of strings of RoleIds. At least one role must be provided.</td>
+<td>No</td>
+<td>List of strings of RoleIds.</td>
 </tr>
 </tbody>
 </table>
@@ -632,7 +683,7 @@ UserCreateOrUpdate userCreateOrUpdate
 </ul>
 <h3 id="returns-6">Returns</h3>
 <h4 id="201">201</h4>
-<p>Created</p>
+<p>Created.</p>
 <h5 id="type-7">Type:</h5>
 <p> <code>User</code></p>
 <pre><code class="lang-json">{
@@ -652,31 +703,31 @@ UserCreateOrUpdate userCreateOrUpdate
   ]
 }
 </code></pre><h4 id="400-3">400</h4>
-<p>Missing or invalid inputs, or User limit exceeded</p>
+<p>Missing or invalid inputs, or the User limit exceeded for Tenant.</p>
 <h4 id="401-6">401</h4>
-<p>Unauthorized</p>
+<p>Unauthorized.</p>
 <h4 id="403-6">403</h4>
-<p>Forbidden</p>
+<p>Forbidden.</p>
 <h4 id="404-6">404</h4>
-<p>Tenant not found</p>
+<p>Tenant not found.</p>
 <h4 id="500-6">500</h4>
-<p>Internal server error</p>
+<p>Internal server error.</p>
 <hr>
-<h2 id="update-user"><code>Update User</code></h2>
-<p>Create or Update a User</p>
+<h2 id="update-user-in-a-tenant"><code>Update User in a Tenant</code></h2>
+<p>Update a User in a Tenant. The Id of a User cannot be changed.</p>
 <h3 id="request-7">Request</h3>
 <p><code>PUT api/v1/Tenants/{tenantId}/Users/{userId}</code></p>
 <h3 id="parameters-7">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of tenant</p>
+</code></pre><p>Id of Tenant.</p>
 <pre><code class="lang-csharp">[Required]
 Guid userId
-</code></pre><p>Id of user</p>
+</code></pre><p>Id of User.</p>
 <pre><code class="lang-csharp">[FromBody]
 [Required]
 UserCreateOrUpdate userCreateOrUpdate
-</code></pre><p>A UserStatus object</p>
+</code></pre><p>UserCreateOrUpdate object. Properties that are not set or are null will not be changed.</p>
 <table>
 <thead>
 <tr>
@@ -691,7 +742,7 @@ UserCreateOrUpdate userCreateOrUpdate
 <td>Id</td>
 <td>Guid</td>
 <td>No</td>
-<td>User Id for the user. When creating a user. Must be the same as the one in the route.</td>
+<td>User Id for the user. When creating a user, if User ID is not specified, one will be generated.</td>
 </tr>
 <tr>
 <td>ContactGivenName</td>
@@ -709,7 +760,7 @@ UserCreateOrUpdate userCreateOrUpdate
 <td>ContactEmail</td>
 <td>string</td>
 <td>No</td>
-<td>Preferred contact email to be used.</td>
+<td>Preferred contact email to be used. This does not have to be the same as the user&#39;s Identity Provider email.</td>
 </tr>
 <tr>
 <td>RoleIds</td>
@@ -737,7 +788,7 @@ UserCreateOrUpdate userCreateOrUpdate
 </ul>
 <h3 id="returns-7">Returns</h3>
 <h4 id="200-6">200</h4>
-<p>Updated</p>
+<p>Updated.</p>
 <h5 id="type-8">Type:</h5>
 <p> <code>User</code></p>
 <pre><code class="lang-json">{
@@ -757,27 +808,34 @@ UserCreateOrUpdate userCreateOrUpdate
   ]
 }
 </code></pre><h4 id="400-4">400</h4>
-<p>Missing or invalid inputs</p>
+<p>Missing or invalid inputs.</p>
 <h4 id="401-7">401</h4>
-<p>Unauthorized</p>
+<p>Unauthorized.</p>
 <h4 id="403-7">403</h4>
-<p>Forbidden</p>
+<p>Forbidden.</p>
 <h4 id="404-7">404</h4>
-<p>User or Tenant not found</p>
+<p>User or Tenant not found.</p>
 <h4 id="500-7">500</h4>
-<p>Internal server error</p>
+<p>Internal server error.</p>
 <hr>
-<h2 id="delete-user"><code>Delete User</code></h2>
-<p>Delete a user</p>
+<h2 id="delete-user-in-a-tenant"><code>Delete User in a Tenant</code></h2>
+<p>Delete a User. Admins cannot delete themselves.
+            Deleting a User does not invalidate any of the
+            existing access tokens, but it prevents this User
+            from being able to authenticate in the future.
+            Existing access tokens for the User will be valid
+            until their expiration date. Refresh tokens on
+            behalf of the ser will no longer be valid after the
+            User has been deleted.</p>
 <h3 id="request-8">Request</h3>
 <p><code>DELETE api/v1/Tenants/{tenantId}/Users/{userId}</code></p>
 <h3 id="parameters-8">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of tenant</p>
+</code></pre><p>Id of Tenant.</p>
 <pre><code class="lang-csharp">[Required]
 Guid userId
-</code></pre><p>Id of user</p>
+</code></pre><p>Id of User.</p>
 <h3 id="security-8">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -785,15 +843,114 @@ Guid userId
 </ul>
 <h3 id="returns-8">Returns</h3>
 <h4 id="204">204</h4>
-<p>Deleted</p>
+<p>Deleted.</p>
 <h4 id="401-8">401</h4>
-<p>Unauthorized</p>
+<p>Unauthorized.</p>
 <h4 id="403-8">403</h4>
-<p>Forbidden</p>
+<p>Forbidden.</p>
 <h4 id="404-8">404</h4>
-<p>User or Tenant not found</p>
+<p>User or Tenant not found.</p>
 <h4 id="500-8">500</h4>
-<p>Internal server error</p>
+<p>Internal server error.</p>
+<hr>
+<h2 id="validate-user-exists"><code>Validate User Exists</code></h2>
+<p>Validate that a User exists. This endpoint is identical to the GET
+            one, but it does not return an object in the body.</p>
+<h3 id="request-9">Request</h3>
+<p><code>HEAD api/v1/Tenants/{tenantId}/Users/{userId}</code></p>
+<h3 id="parameters-9">Parameters</h3>
+<pre><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p>Id of Tenant.</p>
+<pre><code class="lang-csharp">[Required]
+Guid userId
+</code></pre><p>Id of User.</p>
+<h3 id="security-9">Security</h3>
+<p>Allowed for these roles:</p>
+<ul>
+<li><code>Account Administrator</code></li>
+<li><code>Account Member</code></li>
+</ul>
+<h3 id="returns-9">Returns</h3>
+<h4 id="200-7">200</h4>
+<p>User exists.</p>
+<h5 id="type-9">Type:</h5>
+<p> <code>Void</code></p>
+<h4 id="401-9">401</h4>
+<p>Unauthorized.</p>
+<h4 id="403-9">403</h4>
+<p>Forbidden.</p>
+<h4 id="404-9">404</h4>
+<p>User does not exist.</p>
+<h4 id="500-9">500</h4>
+<p>Internal server error.</p>
+<hr>
+<h2 id="get-total-count-of-users"><code>Get Total Count of Users</code></h2>
+<p>Return total number of users in a Tenant. Optionally, check based on a list of requested users.
+            The value will be set in the Total-Count header. This endpoint is identical to the GET one but
+            it does not return any objects in the body.</p>
+<h3 id="request-10">Request</h3>
+<p><code>HEAD api/v1/Tenants/{tenantId}/Users</code></p>
+<h3 id="parameters-10">Parameters</h3>
+<pre><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p>Id of Tenant.</p>
+<pre><code class="lang-csharp">[FromQuery]
+[Optional]
+[Default = &quot;&quot;]
+Guid[] id
+</code></pre><p>Unordered list of User Ids.</p>
+<h3 id="security-10">Security</h3>
+<p>Allowed for these roles:</p>
+<ul>
+<li><code>Account Administrator</code></li>
+<li><code>Account Member</code></li>
+</ul>
+<h3 id="returns-10">Returns</h3>
+<h4 id="200-8">200</h4>
+<p>Success.</p>
+<h5 id="type-10">Type:</h5>
+<p> <code>Void</code></p>
+<h4 id="401-10">401</h4>
+<p>Unauthorized.</p>
+<h4 id="403-10">403</h4>
+<p>Forbidden.</p>
+<h4 id="404-10">404</h4>
+<p>User not found.</p>
+<h4 id="500-10">500</h4>
+<p>Internal server error.</p>
+<hr>
+<h2 id="validate-users-preferences-exist"><code>Validate User&#39;s Preferences Exist</code></h2>
+<p>Validate that there are preferences for a User. This endpoint is identical
+            to the GET one but it does not return any objects in the body.</p>
+<h3 id="request-11">Request</h3>
+<p><code>HEAD api/v1/Tenants/{tenantId}/Users/{userId}/Preferences</code></p>
+<h3 id="parameters-11">Parameters</h3>
+<pre><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p>Id of Tenant.</p>
+<pre><code class="lang-csharp">[Required]
+Guid userId
+</code></pre><p>Id of User.</p>
+<h3 id="security-11">Security</h3>
+<p>Allowed for these roles:</p>
+<ul>
+<li><code>Account Administrator</code></li>
+<li><code>Account Member</code></li>
+</ul>
+<h3 id="returns-11">Returns</h3>
+<h4 id="200-9">200</h4>
+<p>Success.</p>
+<h5 id="type-11">Type:</h5>
+<p> <code>Void</code></p>
+<h4 id="401-11">401</h4>
+<p>Unauthorized.</p>
+<h4 id="403-11">403</h4>
+<p>Forbidden.</p>
+<h4 id="404-11">404</h4>
+<p>User or Tenant not found.</p>
+<h4 id="500-11">500</h4>
+<p>Internal server error.</p>
 <hr>
 </article>
           </div>

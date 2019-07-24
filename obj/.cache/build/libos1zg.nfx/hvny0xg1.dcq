@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>IdentityProvider </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="IdentityProvider ">
+    <meta name="generator" content="docfx 2.43.3.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../../index.html" width="46">
+                <img id="logo" src="../../Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="identityIdentityProvider">
+<h1 id="identityprovider" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="5" sourceendlinenumber="5">IdentityProvider</h1>
+
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="7" sourceendlinenumber="7">APIs for getting a list of all supported Identity Providers</p>
+<h2 id="properties" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="9" sourceendlinenumber="9">Properties</h2>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="11" sourceendlinenumber="11">For HTTP requests and responses, the IdentityProvider object has the following properties and JSON-serialized body: </p>
+<table sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="13" sourceendlinenumber="18">
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Descriptions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Guid</td>
+<td>Id of an identity provider</td>
+</tr>
+<tr>
+<td>DisplayName</td>
+<td>string</td>
+<td>Identity provider display name to use</td>
+</tr>
+<tr>
+<td>Scheme</td>
+<td>string</td>
+<td>Specifies the name of the cookie handler that will temporarily store the outcome of the external authentication.</td>
+</tr>
+<tr>
+<td>UserIdClaimType</td>
+<td>string</td>
+<td>Type of claim</td>
+</tr>
+</tbody>
+</table>
+<h3 id="serialized-model" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="20" sourceendlinenumber="20">Serialized Model</h3>
+<pre sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="22" sourceendlinenumber="29"><code class="lang-json">{
+  &quot;Id&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
+  &quot;DisplayName&quot;: &quot;Name&quot;,
+  &quot;Scheme&quot;: &quot;Scheme&quot;,
+  &quot;UserIdClaimType&quot;: &quot;UserIdClaimType&quot;
+}
+</code></pre><hr>
+<h2 id="base-url" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="33" sourceendlinenumber="33">Base URL</h2>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="35" sourceendlinenumber="35">All URLs referenced in this section have the following base:</p>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="37" sourceendlinenumber="37"><code>https://dat-b.osisoft.com/</code></p>
+<h2 id="authentication" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="39" sourceendlinenumber="39">Authentication</h2>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="41" sourceendlinenumber="41">All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieve after a successful authentication request.</p>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="43" sourceendlinenumber="43"><code>Authorization: Bearer &lt;token&gt;</code></p>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="45" sourceendlinenumber="47">Requests made without an access token or an invalid/expired token will fail with a 401 Unauthorized response.
+Requests made with an access token which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
+Read <a href="https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/Authentication" data-raw-source="[here](https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/Authentication)" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="47" sourceendlinenumber="47">here</a> on how to authenticate against OCS with the various clients and receive an access token in response.</p>
+<h2 id="error-handling" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="49" sourceendlinenumber="49">Error Handling</h2>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="51" sourceendlinenumber="51">All responses will have an error message in the body. The exceptions are 200 responses and the 401 Unauthorized response. The error message will look as follows:</p>
+<pre sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="53" sourceendlinenumber="60"><code class="lang-json">{
+    &quot;OperationId&quot;: &quot;1b2af18e-8b27-4f86-93e0-6caa3e59b90c&quot;, 
+    &quot;Error&quot;: &quot;Error message.&quot;, 
+    &quot;Reason&quot;: &quot;Reason that caused error.&quot;, 
+    &quot;Resolution&quot;: &quot;Possible solution for the error.&quot; 
+}
+</code></pre><p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="62" sourceendlinenumber="62">If and when contacting OSIsoft support about this error, please provide the OperationId.</p>
+<h2 id="get-identity-provider" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="64" sourceendlinenumber="64"><code>Get Identity Provider</code></h2>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="66" sourceendlinenumber="66">Returns an IdentityProvider object</p>
+<h3 id="request" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="68" sourceendlinenumber="68">Request</h3>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="70" sourceendlinenumber="70"><code>GET api/v1/IdentityProviders/{identityProviderId}</code></p>
+<h3 id="parameters" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="72" sourceendlinenumber="72">Parameters</h3>
+<pre sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="74" sourceendlinenumber="77"><code class="lang-csharp">[Required]
+Guid identityProviderId
+</code></pre><p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="79" sourceendlinenumber="79">Id of provider</p>
+<h3 id="security" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="81" sourceendlinenumber="81">Security</h3>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="83" sourceendlinenumber="83">Allowed for these roles:</p>
+<ul sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="85" sourceendlinenumber="85">
+<li sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="85" sourceendlinenumber="85"><code>Account Administrator</code></li>
+</ul>
+<h3 id="returns" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="87" sourceendlinenumber="87">Returns</h3>
+<h4 id="200" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="89" sourceendlinenumber="89">200</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="91" sourceendlinenumber="91">Success.</p>
+<h5 id="type" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="93" sourceendlinenumber="93">Type:</h5>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="95" sourceendlinenumber="95"> <code>IdentityProvider</code></p>
+<pre sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="97" sourceendlinenumber="104"><code class="lang-json">{
+  &quot;Id&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
+  &quot;DisplayName&quot;: &quot;Name&quot;,
+  &quot;Scheme&quot;: &quot;Scheme&quot;,
+  &quot;UserIdClaimType&quot;: &quot;UserIdClaimType&quot;
+}
+</code></pre><h4 id="401" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="106" sourceendlinenumber="106">401</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="108" sourceendlinenumber="108">Unauthorized.</p>
+<h4 id="403" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="110" sourceendlinenumber="110">403</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="112" sourceendlinenumber="112">Forbidden.</p>
+<h4 id="404" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="114" sourceendlinenumber="114">404</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="116" sourceendlinenumber="116">Identity Provider not found.</p>
+<h4 id="500" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="118" sourceendlinenumber="118">500</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="120" sourceendlinenumber="120">Internal server error.</p>
+<hr>
+<h2 id="get-identity-providers" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="123" sourceendlinenumber="123"><code>Get Identity Providers</code></h2>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="125" sourceendlinenumber="125">Returns a list of IdentityProvider objects.</p>
+<h3 id="request-1" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="127" sourceendlinenumber="127">Request</h3>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="129" sourceendlinenumber="129"><code>GET api/v1/IdentityProviders</code></p>
+<h3 id="parameters-1" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="131" sourceendlinenumber="131">Parameters</h3>
+<pre sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="133" sourceendlinenumber="138"><code class="lang-csharp">[FromQuery]
+[Optional]
+[Default = &quot;&quot;]
+string query
+</code></pre><p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="140" sourceendlinenumber="140">Query to execute. Currently not supported</p>
+<pre sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="142" sourceendlinenumber="147"><code class="lang-csharp">[FromQuery]
+[Optional]
+[Default = 0]
+int32 skip
+</code></pre><p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="149" sourceendlinenumber="149">Number of providers to skip.</p>
+<pre sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="151" sourceendlinenumber="156"><code class="lang-csharp">[FromQuery]
+[Optional]
+[Default = 100]
+int32 count
+</code></pre><p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="158" sourceendlinenumber="158">Maximum number of providers to return</p>
+<h3 id="security-1" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="160" sourceendlinenumber="160">Security</h3>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="162" sourceendlinenumber="162">Allowed for these roles:</p>
+<ul sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="164" sourceendlinenumber="164">
+<li sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="164" sourceendlinenumber="164"><code>Account Administrator</code></li>
+</ul>
+<h3 id="returns-1" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="166" sourceendlinenumber="166">Returns</h3>
+<h4 id="200-1" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="168" sourceendlinenumber="168">200</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="170" sourceendlinenumber="170">Success.</p>
+<h5 id="type-1" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="172" sourceendlinenumber="172">Type:</h5>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="174" sourceendlinenumber="174"> <code>List</code></p>
+<pre sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="176" sourceendlinenumber="191"><code class="lang-json">[
+  {
+    &quot;Id&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
+    &quot;DisplayName&quot;: &quot;Name&quot;,
+    &quot;Scheme&quot;: &quot;Scheme&quot;,
+    &quot;UserIdClaimType&quot;: &quot;UserIdClaimType&quot;
+  },
+  {
+    &quot;Id&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
+    &quot;DisplayName&quot;: &quot;Name&quot;,
+    &quot;Scheme&quot;: &quot;Scheme&quot;,
+    &quot;UserIdClaimType&quot;: &quot;UserIdClaimType&quot;
+  }
+]
+</code></pre><h4 id="400" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="193" sourceendlinenumber="193">400</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="195" sourceendlinenumber="195">Missing or invalid inputs.</p>
+<h4 id="401-1" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="197" sourceendlinenumber="197">401</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="199" sourceendlinenumber="199">Unauthorized.</p>
+<h4 id="403-1" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="201" sourceendlinenumber="201">403</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="203" sourceendlinenumber="203">Forbidden.</p>
+<h4 id="500-1" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="205" sourceendlinenumber="205">500</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="207" sourceendlinenumber="207">Internal server error.</p>
+<hr>
+<h2 id="validate-that-idp-exists-based-on-scheme" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="210" sourceendlinenumber="210"><code>Validate that IDP Exists based on scheme</code></h2>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="212" sourceendlinenumber="212">Get header for a scheme to check its validity</p>
+<h3 id="request-2" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="214" sourceendlinenumber="214">Request</h3>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="216" sourceendlinenumber="216"><code>HEAD api/v1/IdentityProviders/schemes/{scheme}</code></p>
+<h3 id="parameters-2" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="218" sourceendlinenumber="218">Parameters</h3>
+<pre sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="220" sourceendlinenumber="223"><code class="lang-csharp">[Required]
+string scheme
+</code></pre><p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="225" sourceendlinenumber="225">Scheme name</p>
+<h3 id="security-2" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="227" sourceendlinenumber="227">Security</h3>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="229" sourceendlinenumber="229">Allowed for these roles:</p>
+<ul sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="231" sourceendlinenumber="231">
+<li sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="231" sourceendlinenumber="231"><code>Account Administrator</code></li>
+</ul>
+<h3 id="returns-2" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="233" sourceendlinenumber="233">Returns</h3>
+<h4 id="200-2" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="235" sourceendlinenumber="235">200</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="237" sourceendlinenumber="237">Success.</p>
+<h5 id="type-2" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="239" sourceendlinenumber="239">Type:</h5>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="241" sourceendlinenumber="241"> <code>Void</code></p>
+<h4 id="401-2" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="243" sourceendlinenumber="243">401</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="245" sourceendlinenumber="245">Unauthorized.</p>
+<h4 id="403-2" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="247" sourceendlinenumber="247">403</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="249" sourceendlinenumber="249">Forbidden.</p>
+<h4 id="404-1" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="251" sourceendlinenumber="251">404</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="253" sourceendlinenumber="253">Identity Provider not found.</p>
+<h4 id="500-2" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="255" sourceendlinenumber="255">500</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="257" sourceendlinenumber="257">Internal server error.</p>
+<hr>
+<h2 id="validate-that-idp-exists-based-on-id" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="260" sourceendlinenumber="260"><code>Validate that IDP exists based on Id</code></h2>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="262" sourceendlinenumber="262">Get header for an identity provider to check if the identity provider exists.</p>
+<h3 id="request-3" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="264" sourceendlinenumber="264">Request</h3>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="266" sourceendlinenumber="266"><code>HEAD api/v1/IdentityProviders/{identityProviderId}</code></p>
+<h3 id="parameters-3" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="268" sourceendlinenumber="268">Parameters</h3>
+<pre sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="270" sourceendlinenumber="273"><code class="lang-csharp">[Required]
+Guid identityProviderId
+</code></pre><p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="275" sourceendlinenumber="275">Id of provider</p>
+<h3 id="security-3" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="277" sourceendlinenumber="277">Security</h3>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="279" sourceendlinenumber="279">Allowed for these roles:</p>
+<ul sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="281" sourceendlinenumber="281">
+<li sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="281" sourceendlinenumber="281"><code>Account Administrator</code></li>
+</ul>
+<h3 id="returns-3" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="283" sourceendlinenumber="283">Returns</h3>
+<h4 id="200-3" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="285" sourceendlinenumber="285">200</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="287" sourceendlinenumber="287">Success.</p>
+<h5 id="type-3" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="289" sourceendlinenumber="289">Type:</h5>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="291" sourceendlinenumber="291"> <code>Void</code></p>
+<h4 id="401-3" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="293" sourceendlinenumber="293">401</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="295" sourceendlinenumber="295">Unauthorized.</p>
+<h4 id="403-3" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="297" sourceendlinenumber="297">403</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="299" sourceendlinenumber="299">Forbidden.</p>
+<h4 id="404-2" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="301" sourceendlinenumber="301">404</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="303" sourceendlinenumber="303">IdentityProvider or Tenant not found.</p>
+<h4 id="500-3" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="305" sourceendlinenumber="305">500</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="307" sourceendlinenumber="307">Internal server error.</p>
+<hr>
+<h2 id="get-total-count-of-idps-in-te" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="310" sourceendlinenumber="310"><code>Get Total Count of IDPs in Te</code></h2>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="312" sourceendlinenumber="312">Get header for Identity Providers to get the total number of Identity Providers.</p>
+<h3 id="request-4" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="314" sourceendlinenumber="314">Request</h3>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="316" sourceendlinenumber="316"><code>HEAD api/v1/IdentityProviders</code></p>
+<h3 id="parameters-4" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="318" sourceendlinenumber="318">Parameters</h3>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="319" sourceendlinenumber="319">This API call does not have any parameters.</p>
+<h3 id="security-4" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="320" sourceendlinenumber="320">Security</h3>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="322" sourceendlinenumber="322">Allowed for these roles:</p>
+<ul sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="324" sourceendlinenumber="324">
+<li sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="324" sourceendlinenumber="324"><code>Account Administrator</code></li>
+</ul>
+<h3 id="returns-4" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="326" sourceendlinenumber="326">Returns</h3>
+<h4 id="200-4" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="328" sourceendlinenumber="328">200</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="330" sourceendlinenumber="330">Success.</p>
+<h5 id="type-4" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="332" sourceendlinenumber="332">Type:</h5>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="334" sourceendlinenumber="334"> <code>Void</code></p>
+<h4 id="401-4" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="336" sourceendlinenumber="336">401</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="338" sourceendlinenumber="338">Unauthorized.</p>
+<h4 id="403-4" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="340" sourceendlinenumber="340">403</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="342" sourceendlinenumber="342">Forbidden.</p>
+<h4 id="404-3" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="344" sourceendlinenumber="344">404</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="346" sourceendlinenumber="346">Tenant not found.</p>
+<h4 id="500-4" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="348" sourceendlinenumber="348">500</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="350" sourceendlinenumber="350">Internal server error.</p>
+<hr>
+<h2 id="get-all-idps-from-tenant" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="353" sourceendlinenumber="353"><code>Get All IDPs from Tenant</code></h2>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="355" sourceendlinenumber="355">Get all Identity Providers from a Tenant.</p>
+<h3 id="request-5" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="357" sourceendlinenumber="357">Request</h3>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="359" sourceendlinenumber="359"><code>GET api/v1/Tenants/{tenantId}/IdentityProviders</code></p>
+<h3 id="parameters-5" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="361" sourceendlinenumber="361">Parameters</h3>
+<pre sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="363" sourceendlinenumber="366"><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="368" sourceendlinenumber="368">Id of Tenant.</p>
+<pre sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="370" sourceendlinenumber="375"><code class="lang-csharp">[FromQuery]
+[Optional]
+[Default = &quot;&quot;]
+string query
+</code></pre><p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="377" sourceendlinenumber="377">Query to execute. Currently not supported</p>
+<pre sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="379" sourceendlinenumber="384"><code class="lang-csharp">[FromQuery]
+[Optional]
+[Default = 0]
+int32 skip
+</code></pre><p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="386" sourceendlinenumber="386">Number of Identity Providers to skip.</p>
+<pre sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="388" sourceendlinenumber="393"><code class="lang-csharp">[FromQuery]
+[Optional]
+[Default = 100]
+int32 count
+</code></pre><p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="395" sourceendlinenumber="395">Maximum number of Identity Providers to return.</p>
+<h3 id="security-5" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="397" sourceendlinenumber="397">Security</h3>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="399" sourceendlinenumber="399">Allowed for these roles:</p>
+<ul sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="401" sourceendlinenumber="402">
+<li sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="401" sourceendlinenumber="401"><code>Account Administrator</code></li>
+<li sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="402" sourceendlinenumber="402"><code>Account Member</code></li>
+</ul>
+<h3 id="returns-5" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="404" sourceendlinenumber="404">Returns</h3>
+<h4 id="200-5" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="406" sourceendlinenumber="406">200</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="408" sourceendlinenumber="408">Success.</p>
+<h5 id="type-5" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="410" sourceendlinenumber="410">Type:</h5>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="412" sourceendlinenumber="412"> <code>List</code></p>
+<pre sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="414" sourceendlinenumber="429"><code class="lang-json">[
+  {
+    &quot;Id&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
+    &quot;DisplayName&quot;: &quot;Name&quot;,
+    &quot;Scheme&quot;: &quot;Scheme&quot;,
+    &quot;UserIdClaimType&quot;: &quot;UserIdClaimType&quot;
+  },
+  {
+    &quot;Id&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
+    &quot;DisplayName&quot;: &quot;Name&quot;,
+    &quot;Scheme&quot;: &quot;Scheme&quot;,
+    &quot;UserIdClaimType&quot;: &quot;UserIdClaimType&quot;
+  }
+]
+</code></pre><h4 id="401-5" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="431" sourceendlinenumber="431">401</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="433" sourceendlinenumber="433">Unauthorized.</p>
+<h4 id="403-5" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="435" sourceendlinenumber="435">403</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="437" sourceendlinenumber="437">Forbidden.</p>
+<h4 id="404-4" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="439" sourceendlinenumber="439">404</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="441" sourceendlinenumber="441">Tenant not found.</p>
+<h4 id="500-5" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="443" sourceendlinenumber="443">500</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="445" sourceendlinenumber="445">Internal server error.</p>
+<hr>
+<h2 id="get-idp-from-tenant" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="448" sourceendlinenumber="448"><code>Get IDP from Tenant</code></h2>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="450" sourceendlinenumber="450">Get an Identity Provider from a Tenant.</p>
+<h3 id="request-6" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="452" sourceendlinenumber="452">Request</h3>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="454" sourceendlinenumber="454"><code>GET api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}</code></p>
+<h3 id="parameters-6" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="456" sourceendlinenumber="456">Parameters</h3>
+<pre sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="458" sourceendlinenumber="461"><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="463" sourceendlinenumber="463">Id of Tenant.</p>
+<pre sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="465" sourceendlinenumber="468"><code class="lang-csharp">[Required]
+Guid identityProviderId
+</code></pre><p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="470" sourceendlinenumber="470">Id of Identity Provider.</p>
+<h3 id="security-6" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="472" sourceendlinenumber="472">Security</h3>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="474" sourceendlinenumber="474">Allowed for these roles:</p>
+<ul sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="476" sourceendlinenumber="477">
+<li sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="476" sourceendlinenumber="476"><code>Account Administrator</code></li>
+<li sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="477" sourceendlinenumber="477"><code>Account Member</code></li>
+</ul>
+<h3 id="returns-6" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="479" sourceendlinenumber="479">Returns</h3>
+<h4 id="200-6" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="481" sourceendlinenumber="481">200</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="483" sourceendlinenumber="483">Success.</p>
+<h5 id="type-6" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="485" sourceendlinenumber="485">Type:</h5>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="487" sourceendlinenumber="487"> <code>IdentityProvider</code></p>
+<pre sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="489" sourceendlinenumber="496"><code class="lang-json">{
+  &quot;Id&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
+  &quot;DisplayName&quot;: &quot;Name&quot;,
+  &quot;Scheme&quot;: &quot;Scheme&quot;,
+  &quot;UserIdClaimType&quot;: &quot;UserIdClaimType&quot;
+}
+</code></pre><h4 id="401-6" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="498" sourceendlinenumber="498">401</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="500" sourceendlinenumber="500">Unauthorized.</p>
+<h4 id="403-6" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="502" sourceendlinenumber="502">403</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="504" sourceendlinenumber="504">Forbidden.</p>
+<h4 id="404-5" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="506" sourceendlinenumber="506">404</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="508" sourceendlinenumber="508">IdentityProvider or Tenant not found.</p>
+<h4 id="500-6" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="510" sourceendlinenumber="510">500</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="512" sourceendlinenumber="512">Internal server error.</p>
+<hr>
+<h2 id="add-idp-to-tenant" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="515" sourceendlinenumber="515"><code>Add IDP to Tenant</code></h2>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="517" sourceendlinenumber="519">Add an existing Identity Provider to a Tenant. This IDP
+            will be available in the Home Realm Discovery Page
+            for users to sign-in or sign-up.</p>
+<h3 id="request-7" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="521" sourceendlinenumber="521">Request</h3>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="523" sourceendlinenumber="523"><code>POST api/v1/Tenants/{tenantId}/IdentityProviders</code></p>
+<h3 id="parameters-7" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="525" sourceendlinenumber="525">Parameters</h3>
+<pre sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="527" sourceendlinenumber="530"><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="532" sourceendlinenumber="532">Id of Tenant.</p>
+<pre sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="534" sourceendlinenumber="538"><code class="lang-csharp">[FromBody]
+[Required]
+IdentityProviderAdd identityProviderAdd
+</code></pre><p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="540" sourceendlinenumber="540">IdentityProviderAdd object.</p>
+<table sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="542" sourceendlinenumber="549">
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IdentityProviderId</td>
+<td>Guid</td>
+<td>Yes</td>
+<td>Identity Provider Id to Add</td>
+</tr>
+<tr>
+<td>AzureActiveDirectorySendConsent</td>
+<td>bool</td>
+<td>No</td>
+<td>Send consent email for Azure Active Directory.</td>
+</tr>
+<tr>
+<td>AzureActiveDirectoryConsentEmail</td>
+<td>string</td>
+<td>Yes</td>
+<td>Address to email consent.            Only AAD Admins have permission to consent to OCS            being allowed to interact with the tenant. The email            does not have to be sent to an Admin.</td>
+</tr>
+<tr>
+<td>AzureActiveDirectoryConsentGivenName</td>
+<td>string</td>
+<td>Yes</td>
+<td>Preferred name to use in the consent email.</td>
+</tr>
+<tr>
+<td>AzureActiveDirectoryConsentSurname</td>
+<td>string</td>
+<td>Yes</td>
+<td>Preferred surname to use in the email.</td>
+</tr>
+<tr>
+<td>AzureActiveDirectoryTenant</td>
+<td>string</td>
+<td>Yes</td>
+<td>AAD Domain Name (e.g. mydomain.onmicrosoft.com)</td>
+</tr>
+</tbody>
+</table>
+<pre sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="553" sourceendlinenumber="562"><code class="lang-json">{
+  &quot;IdentityProviderId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
+  &quot;AzureActiveDirectorySendConsent&quot;: false,
+  &quot;AzureActiveDirectoryConsentEmail&quot;: &quot;user@company.com&quot;,
+  &quot;AzureActiveDirectoryConsentGivenName&quot;: &quot;Name&quot;,
+  &quot;AzureActiveDirectoryConsentSurname&quot;: &quot;Surname&quot;,
+  &quot;AzureActiveDirectoryTenant&quot;: &quot;AzureActiveDirectoryTenant&quot;
+}
+</code></pre><h3 id="security-7" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="564" sourceendlinenumber="564">Security</h3>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="566" sourceendlinenumber="566">Allowed for these roles:</p>
+<ul sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="568" sourceendlinenumber="568">
+<li sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="568" sourceendlinenumber="568"><code>Account Administrator</code></li>
+</ul>
+<h3 id="returns-7" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="570" sourceendlinenumber="570">Returns</h3>
+<h4 id="201" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="572" sourceendlinenumber="572">201</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="574" sourceendlinenumber="574">Created.</p>
+<h5 id="type-7" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="576" sourceendlinenumber="576">Type:</h5>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="578" sourceendlinenumber="578"> <code>IdentityProvider</code></p>
+<pre sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="580" sourceendlinenumber="587"><code class="lang-json">{
+  &quot;Id&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
+  &quot;DisplayName&quot;: &quot;Name&quot;,
+  &quot;Scheme&quot;: &quot;Scheme&quot;,
+  &quot;UserIdClaimType&quot;: &quot;UserIdClaimType&quot;
+}
+</code></pre><h4 id="400-1" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="589" sourceendlinenumber="589">400</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="591" sourceendlinenumber="591">Missing or invalid inputs.</p>
+<h4 id="401-7" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="593" sourceendlinenumber="593">401</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="595" sourceendlinenumber="595">Unauthorized.</p>
+<h4 id="403-7" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="597" sourceendlinenumber="597">403</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="599" sourceendlinenumber="599">Forbidden.</p>
+<h4 id="404-6" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="601" sourceendlinenumber="601">404</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="603" sourceendlinenumber="603">Tenant not found.</p>
+<h4 id="409" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="605" sourceendlinenumber="605">409</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="607" sourceendlinenumber="607">Identity Provider already exists in Tenant.</p>
+<h4 id="500-7" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="609" sourceendlinenumber="609">500</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="611" sourceendlinenumber="611">Internal server error.</p>
+<hr>
+<h2 id="remove-idp-from-tenant" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="614" sourceendlinenumber="614"><code>Remove IDP From Tenant</code></h2>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="616" sourceendlinenumber="618">Remove an Identity Provider from a Tenant. Users provisioned
+            with this Identity Provider will remain in the Tenant, but will
+            not be able to authenticate.</p>
+<h3 id="request-8" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="620" sourceendlinenumber="620">Request</h3>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="622" sourceendlinenumber="622"><code>DELETE api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}</code></p>
+<h3 id="parameters-8" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="624" sourceendlinenumber="624">Parameters</h3>
+<pre sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="626" sourceendlinenumber="629"><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="631" sourceendlinenumber="631">Id of Tenant.</p>
+<pre sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="633" sourceendlinenumber="636"><code class="lang-csharp">[Required]
+Guid identityProviderId
+</code></pre><p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="638" sourceendlinenumber="638">Id of Identity Provider.</p>
+<h3 id="security-8" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="640" sourceendlinenumber="640">Security</h3>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="642" sourceendlinenumber="642">Allowed for these roles:</p>
+<ul sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="644" sourceendlinenumber="644">
+<li sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="644" sourceendlinenumber="644"><code>Account Administrator</code></li>
+</ul>
+<h3 id="returns-8" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="646" sourceendlinenumber="646">Returns</h3>
+<h4 id="204" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="648" sourceendlinenumber="648">204</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="650" sourceendlinenumber="650">Removed.</p>
+<h4 id="401-8" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="652" sourceendlinenumber="652">401</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="654" sourceendlinenumber="654">Unauthorized.</p>
+<h4 id="403-8" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="656" sourceendlinenumber="656">403</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="658" sourceendlinenumber="658">Forbidden.</p>
+<h4 id="404-7" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="660" sourceendlinenumber="660">404</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="662" sourceendlinenumber="662">IdentityProvider or Tenant not found.</p>
+<h4 id="500-8" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="664" sourceendlinenumber="664">500</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="666" sourceendlinenumber="666">Internal server error.</p>
+<hr>
+<h2 id="validate-idp-exists" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="669" sourceendlinenumber="669"><code>Validate IDP Exists</code></h2>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="671" sourceendlinenumber="673">Validate that a Identity Provider exists in the Tenant.
+            This endpoint is identical to the GET one but
+            it does not return any objects in the body.</p>
+<h3 id="request-9" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="675" sourceendlinenumber="675">Request</h3>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="677" sourceendlinenumber="677"><code>HEAD api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}</code></p>
+<h3 id="parameters-9" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="679" sourceendlinenumber="679">Parameters</h3>
+<pre sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="681" sourceendlinenumber="684"><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="686" sourceendlinenumber="686">Id of Tenant.</p>
+<pre sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="688" sourceendlinenumber="691"><code class="lang-csharp">[Required]
+Guid identityProviderId
+</code></pre><p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="693" sourceendlinenumber="693">Id of Identity Provider.</p>
+<h3 id="security-9" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="695" sourceendlinenumber="695">Security</h3>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="697" sourceendlinenumber="697">Allowed for these roles:</p>
+<ul sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="699" sourceendlinenumber="700">
+<li sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="699" sourceendlinenumber="699"><code>Account Administrator</code></li>
+<li sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="700" sourceendlinenumber="700"><code>Account Member</code></li>
+</ul>
+<h3 id="returns-9" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="702" sourceendlinenumber="702">Returns</h3>
+<h4 id="200-7" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="704" sourceendlinenumber="704">200</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="706" sourceendlinenumber="706">Success.</p>
+<h5 id="type-8" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="708" sourceendlinenumber="708">Type:</h5>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="710" sourceendlinenumber="710"> <code>Void</code></p>
+<h4 id="401-9" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="712" sourceendlinenumber="712">401</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="714" sourceendlinenumber="714">Unauthorized.</p>
+<h4 id="403-9" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="716" sourceendlinenumber="716">403</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="718" sourceendlinenumber="718">Forbidden.</p>
+<h4 id="404-8" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="720" sourceendlinenumber="720">404</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="722" sourceendlinenumber="722">IdentityProvider or Tenant not found.</p>
+<h4 id="500-9" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="724" sourceendlinenumber="724">500</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="726" sourceendlinenumber="726">Internal server error.</p>
+<hr>
+<h2 id="get-total-count-of-idps" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="729" sourceendlinenumber="729"><code>Get Total Count of IDPs</code></h2>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="731" sourceendlinenumber="734">Return total number of Identity Providers in a Tenant. The
+            value will be set in the Total-Count header. This endpoint
+            is identical to the GET one but it does not return any objects
+            in the body.</p>
+<h3 id="request-10" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="736" sourceendlinenumber="736">Request</h3>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="738" sourceendlinenumber="738"><code>HEAD api/v1/Tenants/{tenantId}/IdentityProviders</code></p>
+<h3 id="parameters-10" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="740" sourceendlinenumber="740">Parameters</h3>
+<pre sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="742" sourceendlinenumber="745"><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="747" sourceendlinenumber="747">Id of Tenant.</p>
+<h3 id="security-10" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="749" sourceendlinenumber="749">Security</h3>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="751" sourceendlinenumber="751">Allowed for these roles:</p>
+<ul sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="753" sourceendlinenumber="754">
+<li sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="753" sourceendlinenumber="753"><code>Account Administrator</code></li>
+<li sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="754" sourceendlinenumber="754"><code>Account Member</code></li>
+</ul>
+<h3 id="returns-10" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="756" sourceendlinenumber="756">Returns</h3>
+<h4 id="200-8" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="758" sourceendlinenumber="758">200</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="760" sourceendlinenumber="760">Success.</p>
+<h5 id="type-9" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="762" sourceendlinenumber="762">Type:</h5>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="764" sourceendlinenumber="764"> <code>Void</code></p>
+<h4 id="401-10" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="766" sourceendlinenumber="766">401</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="768" sourceendlinenumber="768">Unauthorized.</p>
+<h4 id="403-10" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="770" sourceendlinenumber="770">403</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="772" sourceendlinenumber="772">Forbidden.</p>
+<h4 id="404-9" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="774" sourceendlinenumber="774">404</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="776" sourceendlinenumber="776">Tenant not found.</p>
+<h4 id="500-10" sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="778" sourceendlinenumber="778">500</h4>
+<p sourcefile="Documentation/Identity/Identity_IdentityProvider.md" sourcestartlinenumber="780" sourceendlinenumber="780">Internal server error.</p>
+<hr>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/Identity/Identity_IdentityProvider.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+            <span id='copyright-text'>© 2019 - OSIsoft, LLC.<span>
+        </span></span></div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

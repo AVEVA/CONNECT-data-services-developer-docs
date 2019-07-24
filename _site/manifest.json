@@ -218,11 +218,23 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "Documentation/Identity/Identity_AuthorizationCodeClient.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/Identity/Identity_AuthorizationCodeClient.html",
+          "hash": "HSNmj0WL/6AHqRDbMWX2pQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "Documentation/Identity/Identity_AzureActiveDirectoryTenant.md",
       "output": {
         ".html": {
           "relative_path": "Documentation/Identity/Identity_AzureActiveDirectoryTenant.html",
-          "hash": "8aS+esdGw8kMSYuFM2zz5g=="
+          "hash": "jx3htYqriFLACiMxu4tDmw=="
         }
       },
       "is_incremental": false,
@@ -234,7 +246,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Identity/Identity_ClientCredentialClient.html",
-          "hash": "twRsfelJXj5kRUjTCsmmyw=="
+          "hash": "wiRkY+aSAk6fyjslAiWm4A=="
         }
       },
       "is_incremental": false,
@@ -246,7 +258,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Identity/Identity_HybridClient.html",
-          "hash": "zUBIlawqSBsz+ktv8UDThw=="
+          "hash": "/nOy0pwfXINgKKf3v1Ck6A=="
         }
       },
       "is_incremental": false,
@@ -258,7 +270,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Identity/Identity_IdentityProvider.html",
-          "hash": "IexJ45KmZW/AXA1LIkuhSA=="
+          "hash": "TmUH6QE37v+CCoLVEm76SA=="
         }
       },
       "is_incremental": false,
@@ -270,7 +282,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Identity/Identity_ImplicitClient.html",
-          "hash": "5UF58rBOeOPutOmNVjgRgQ=="
+          "hash": "ucJyDT/5RY1V6hlPRUpTbQ=="
         }
       },
       "is_incremental": false,
@@ -282,7 +294,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Identity/Identity_Invitation.html",
-          "hash": "1qv4feP373qXhADkSAUf9w=="
+          "hash": "zLP2Oe4tFPAs0QTsjNp06Q=="
         }
       },
       "is_incremental": false,
@@ -302,11 +314,23 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "Documentation/Identity/Identity_PersistedGrant.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/Identity/Identity_PersistedGrant.html",
+          "hash": "mcRYiYLKzxI7smYtTHWJbA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "Documentation/Identity/Identity_Secret.md",
       "output": {
         ".html": {
           "relative_path": "Documentation/Identity/Identity_Secret.html",
-          "hash": "xfgjoaqy2ont0BiEAe4RVQ=="
+          "hash": "6sfaD48wdaGiKNr8T6fjcA=="
         }
       },
       "is_incremental": false,
@@ -318,7 +342,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Identity/Identity_User.html",
-          "hash": "DifPfQcWklXBtHSP8s40qg=="
+          "hash": "182qE7dtW+GOuMdpgOKx0Q=="
         }
       },
       "is_incremental": false,
@@ -688,7 +712,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/toc.html",
-          "hash": "kjtdwt8Ub8u+RruuAoK9Ow=="
+          "hash": "DPU8aI3ZvB7vr/4sVZAfog=="
         }
       },
       "is_incremental": false,
@@ -700,7 +724,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "wlWrSc5rNAtFR0w0soKHwA=="
+          "hash": "v8QWWRh/WWtl9xQvINBegA=="
         }
       },
       "is_incremental": false,
@@ -745,8 +769,8 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 55,
-          "skipped_file_count": 55
+          "total_file_count": 57,
+          "skipped_file_count": 45
         }
       }
     },

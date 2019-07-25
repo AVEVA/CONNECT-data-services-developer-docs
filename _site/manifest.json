@@ -770,7 +770,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 57,
-          "skipped_file_count": 45
+          "skipped_file_count": 57
         }
       }
     },

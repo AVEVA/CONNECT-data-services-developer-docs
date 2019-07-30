@@ -38,7 +38,7 @@ Metadata | string | Group on Metadata
 
 
 ## `Example` 
-The following example shows a group rule definition that creates data groups based on state names defined in the stream metadata. It will result in a data group for every state, that will organize the data items accordingly in the result. By using this group rule as a group rule mapping rule (See [mappings](xref:Mappings)), the value of the state can be reflected in its own column in the result. Users can use different stream properties to create group rules, using tokens to define the values that they are interested in.
+The following example shows a group rule definition that creates data groups based on state names defined in the stream metadata. It will result in a data group for every state, that will organize the data items accordingly in the result. By using this group rule as a group rule mapping rule (See [mappings](xref:Mappings)), the value of the state can be reflected in its own column in the result. Users can use different stream properties to create group rules, using values to define the values that they are interested in.
 ```json
 [
   {

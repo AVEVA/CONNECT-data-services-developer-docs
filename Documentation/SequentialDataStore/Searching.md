@@ -172,6 +172,25 @@ The default value for ``orderby`` parameter is ascending order. It can be change
 	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure&orderby=name desc&skip=10&count=20
  ```
 
+**Tokenization**
+---------------
+
+Search tokenizes queries into words. Words are extracted by spaces and trailing punctuation, 
+or puctuation followed by a space. Embedded punctuation, punctuation surrounded by non punctuation 
+charaters without spaces, does not trigger tokenization and is treated as one word, see exmaple below.
+
+Phrase | Tokenized
+----------|-------------------------------------------------------------------
+``Device.1`` | Treated as one word
+``Device!!1`` | Treated as one word
+``Device. ``  | Treated as ``Stream``
+``Device!!`` | Treated as ``Stream``
+
+If your query has a wildcard following trailing punctuation, such as ``Device!*``, only ``Device`` will be tokenized and queried.
+If you want to specifically search on a term that has the trailing punctuation, enclose it in quotation marks, ``"Device!"*``,
+to ensure the punctuation is included as part of your query.
+
+
 Search operators
 =====================
 

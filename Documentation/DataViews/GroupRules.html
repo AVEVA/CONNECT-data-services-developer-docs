@@ -78,7 +78,7 @@
             <article class="content wrap" id="_content" data-uid="GroupRules">
 <h1 id="grouprules">GroupRules</h1>
 
-<p>The GroupRule lets users organize data items in the query, within or across streams, to form data groups in the resulting data set. By specifying the type to group on, users can retrieve organized data items to compare and better examine the results.</p>
+<p>The GroupRule lets users organize data items in the query, within or across streams, to form data groups in the resulting data set. By specifying the resource and field to group on, users can retrieve organized data items to compare and better examine the results.</p>
 <h3 id="properties">Properties</h3>
 <table>
 <thead>
@@ -97,21 +97,27 @@
 <td>Id of the rule</td>
 </tr>
 <tr>
-<td>Type</td>
-<td>GroupRuleType</td>
+<td>Resource</td>
+<td>GroupRuleResource</td>
 <td>True</td>
-<td>Stream property to base grouping on</td>
+<td>Resource to base grouping on</td>
 </tr>
 <tr>
-<td>TokenRules</td>
-<td>TokenRules</td>
+<td>Field</td>
+<td>GroupRuleField</td>
+<td>True</td>
+<td>Field to base grouping on</td>
+</tr>
+<tr>
+<td>Values</td>
+<td>[string]</td>
 <td>False</td>
-<td>Token rules that create patterns to form groups</td>
+<td>Values that form groups</td>
 </tr>
 </tbody>
 </table>
-<h2 id="type"><code>Type</code></h2>
-<p> The Type can have the following values: </p>
+<h2 id="resource"><code>Resource</code></h2>
+<p> The Resource can have the following values: </p>
 <table>
 <thead>
 <tr>
@@ -122,40 +128,57 @@
 </thead>
 <tbody>
 <tr>
-<td>StreamId</td>
+<td>Streams</td>
 <td>string</td>
-<td>Group on Stream ID</td>
+<td>Group on streams resource</td>
+</tr>
+</tbody>
+</table>
+<h2 id="field"><code>Field</code></h2>
+<p> The Field can have the following values: </p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>string</td>
+<td>Group on Id</td>
 </tr>
 <tr>
-<td>StreamName</td>
+<td>Name</td>
 <td>string</td>
-<td>Group on Stream Name</td>
+<td>Group on Name</td>
 </tr>
 <tr>
-<td>StreamTag</td>
+<td>Tag</td>
 <td>string</td>
-<td>Group on Stream Tag</td>
+<td>Group on Tag</td>
 </tr>
 <tr>
-<td>StreamMetadata</td>
+<td>Metadata</td>
 <td>string</td>
-<td>Group on Stream Metadata</td>
+<td>Group on Metadata</td>
 </tr>
 </tbody>
 </table>
 <h2 id="example"><code>Example</code></h2>
-<p>The following example shows a group rule definition that creates data groups based on state names defined in the stream metadata. It will result in a data group for every state, that will organize the data items accordingly in the result. By using this group rule as a group rule mapping rule (See <a class="xref" href="Mappings.html">mappings</a>), the value of the state can be reflected in its own column in the result. Users can use different stream properties to create group rules, using tokens to define the values that they are interested in.</p>
+<p>The following example shows a group rule definition that creates data groups based on state names defined in the stream metadata. It will result in a data group for every state, that will organize the data items accordingly in the result. By using this group rule as a group rule mapping rule (See <a class="xref" href="Mappings.html">mappings</a>), the value of the state can be reflected in its own column in the result. Users can use different stream properties to create group rules, using values to define the values that they are interested in.</p>
 <pre><code class="lang-json">[
   {
     &quot;Id&quot;: &quot;StateGroupRule&quot;,
-    &quot;Type&quot;: &quot;StreamTag&quot;,
-    &quot;TokenRules&quot;: {
-      &quot;Tokens&quot;: [
-        &quot;Arizona&quot;,
-        &quot;Pennsylvania&quot;,
-        &quot;California&quot;
-      ]
-    }
+    &quot;Resource&quot;: &quot;Streams&quot;,
+    &quot;Field&quot;: &quot;Tag&quot;,
+    &quot;Values&quot;: [
+      &quot;Arizona&quot;,
+      &quot;Pennsylvania&quot;,
+      &quot;California&quot;
+    ]
   }
 ]
 </code></pre><pre><code class="lang-json">An example output using this group rule as described above could look like the following:

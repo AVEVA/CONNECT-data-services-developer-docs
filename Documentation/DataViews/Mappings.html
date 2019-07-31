@@ -111,7 +111,7 @@
 </tbody>
 </table>
 <h2 id="sharedmappingrules"><code>SharedMappingRules</code></h2>
-<p> The SharedMappingRule is used to define rules using a token and a pattern that can then be applied to one or many columns that share similar behavior. With the token property, users can specify a certain value that will differentiate the columns that adhere to the defined pattern. See examples below.</p>
+<p> The SharedMappingRule is used to define rules using a value and a pattern that can then be applied to one or many columns that share similar behavior. With the pattern property, users can specify a certain value that will differentiate the columns that adhere to the defined mapping rule pattern. See examples below.</p>
 <h3 id="properties-1">Properties</h3>
 <table>
 <thead>
@@ -130,20 +130,20 @@
 <td>Id of the mapping rule</td>
 </tr>
 <tr>
-<td>Token</td>
+<td>Pattern</td>
 <td>string</td>
 <td>True</td>
-<td>Shared mapping rule token</td>
+<td>Shared mapping rule pattern</td>
 </tr>
 <tr>
-<td>MappingRulePattern</td>
+<td>MappingRule</td>
 <td>PropertyMappingRule</td>
 <td>True</td>
 <td>Data source identifier</td>
 </tr>
 </tbody>
 </table>
-<h2 id="mappingrulepattern"><code>MappingRulePattern</code></h2>
+<h2 id="mappingrule"><code>MappingRule</code></h2>
 <p> The PropertyMappingRule is used to map a column to a data source by defining the paths to the property that the user wants to select, and an identifier to the resource of the property.</p>
 <h3 id="properties-2">Properties</h3>
 <table>
@@ -206,12 +206,6 @@
 <td>string</td>
 <td>True</td>
 <td>Value for field to use in query</td>
-</tr>
-<tr>
-<td>Function</td>
-<td>FilterFunction</td>
-<td>True</td>
-<td>Function to use in query</td>
 </tr>
 </tbody>
 </table>
@@ -281,39 +275,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="function"><code>Function</code></h2>
-<p> The Function can have the following values: </p>
-<table>
-<thead>
-<tr>
-<th>Value</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Contains</td>
-<td>string</td>
-<td>Use Contains as function</td>
-</tr>
-<tr>
-<td>Equals</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>EndsWith</td>
-<td>string</td>
-<td>Use EndsWith as function</td>
-</tr>
-<tr>
-<td>StartsWith</td>
-<td>string</td>
-<td>Use StartsWith as function</td>
-</tr>
-</tbody>
-</table>
 <h2 id="columns"><code>Columns</code></h2>
 <p> The Column lets users specify the name and properties of a column in the resulting data set. Using the mapping rule object, users can decide what type of data mapping the column is using.</p>
 <h3 id="properties-4">Properties</h3>
@@ -353,7 +314,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="mappingrule"><code>MappingRule</code></h2>
+<h2 id="mappingrule-1"><code>MappingRule</code></h2>
 <p> The MappingRule can be used in the following forms </p>
 <div class="tabGroup" id="tabgroup_hqKGg1xKQT">
 <ul role="tablist">
@@ -368,7 +329,7 @@
 </li>
 </ul>
 <section id="tabpanel_hqKGg1xKQT_tabid-1" role="tabpanel" data-tab="tabid-1">
-<p>The GroupMappingRule is used to map a column to a group rule by specifying the Id of the rule and a token defined in the group rule to identify what pattern to use.</p>
+<p>The GroupRuleMappingRule is used to map a column to a group rule by specifying the Id of the rule, and a group rule value defined in the group rule to identify what pattern to use.</p>
 <h3 id="properties-5">Properties</h3>
 <table>
 <thead>
@@ -387,16 +348,16 @@
 <td>Id of the group rule to use as mapping rule</td>
 </tr>
 <tr>
-<td>GroupRuleToken</td>
+<td>GroupRuleValue</td>
 <td>string</td>
 <td>False</td>
-<td>Token to use in the specified group rule</td>
+<td>Group rule value to use in the specified group rule</td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="tabpanel_hqKGg1xKQT_tabid-2" role="tabpanel" data-tab="tabid-2" aria-hidden="true" hidden="hidden">
-<p>The LinkedMappingRule is used when mapping a column to a shared mapping rule, using the token to define the value to be used for the token property of the rule.</p>
+<p>The LinkedMappingRule is used when mapping a column to a shared mapping rule, using the value property to define the value to be used for the pattern property of the rule.</p>
 <h3 id="properties-6">Properties</h3>
 <table>
 <thead>
@@ -415,10 +376,10 @@
 <td>Id of the shared mapping rule to use</td>
 </tr>
 <tr>
-<td>Token</td>
+<td>Value</td>
 <td>string</td>
 <td>True</td>
-<td>Token to use in the specified mapping rule</td>
+<td>Value to use in the specified mapping rule</td>
 </tr>
 </tbody>
 </table>
@@ -453,12 +414,9 @@
 </section>
 </div>
 <h2 id="example"><code>Example</code></h2>
-<p>The following examples show different definitions of the Mappings object. The first example is the simplest way to define mappings by using the default. The second example shows a mapping with one column defined, using a property mapping rule to define the property paths while leaving the item identifier undefined. This is accepted as long as the specified paths do not lead to an ambiguous result, and would in such case require the user to include an item identifier to further specify their rule. Since only one column is defined, it is required to define it as the key column. </p>
-<p>The last example uses a shared mapping rule with a token to match the property path, and the item identifier including every stream with TankStream as its description. It also uses the group rule defined in the <a class="xref" href="Mappings.html">Group Rules</a> page to create data groups based on the states of the data source. The FlowRate and Temperature columns are defined with the shared mapping rule, using the token to specify their property path. The Volume column is an example of explicitly defining the property mapping rule in the column definition. This is done to demonstrate the difference and the result would be identical using the shared rule and a token, as the previous columns do.</p>
+<p>The following examples show different definitions of the Mappings object. The first example shows a mapping with one column defined, using a property mapping rule to define the property paths while leaving the item identifier undefined. This is accepted as long as the specified paths do not lead to an ambiguous result, and would in such case require the user to include an item identifier to further specify their rule. Since only one column is defined, it is required to define it as the key column. </p>
+<p>The second example uses a shared mapping rule with a pattern to match the property path and the item identifier, including every stream with TankStream as its description. It also uses the group rule defined in the <a class="xref" href="Mappings.html">Group Rules</a> page to create data groups based on the states of the data source. The FlowRate and Temperature columns are defined with the shared mapping rule, using the value to specify their property path. The Volume column is an example of explicitly defining the property mapping rule in the column definition. This is done to demonstrate the difference and the result would be identical, using the shared rule and a value as the previous columns do.</p>
 <pre><code class="lang-json">{
-  &quot;IsDefault&quot;: true
-}
-</code></pre><pre><code class="lang-json">{
   &quot;Columns&quot;: [
     {
       &quot;Name&quot;: &quot;column1&quot;,
@@ -475,16 +433,15 @@
   &quot;SharedMappingRules&quot;: [
     {
       &quot;Id&quot;: &quot;shared_mapping_rule&quot;,
-      &quot;Token&quot;: &quot;{type_property}&quot;,
-      &quot;MappingRulePattern&quot;: {
+      &quot;Pattern&quot;: &quot;{type_property}&quot;,
+      &quot;MappingRule&quot;: {
         &quot;PropertyPaths&quot;: [
           &quot;{type_property}&quot;
         ],
         &quot;ItemIdentifier&quot;: {
           &quot;Resource&quot;: &quot;Streams&quot;,
           &quot;Field&quot;: &quot;Description&quot;,
-          &quot;Value&quot;: &quot;TankStream&quot;,
-          &quot;Function&quot;: &quot;Equals&quot;
+          &quot;Value&quot;: &quot;TankStream&quot;
         }
       }
     }
@@ -512,7 +469,7 @@
       &quot;Name&quot;: &quot;FlowRate&quot;,
       &quot;MappingRule&quot;: {
         &quot;SharedMappingRuleId&quot;: &quot;shared_mapping_rule&quot;,
-        &quot;Token&quot;: &quot;{FlowRate}&quot;
+        &quot;Value&quot;: &quot;{FlowRate}&quot;
       },
       &quot;IsKey&quot;: false
     },
@@ -520,7 +477,7 @@
       &quot;Name&quot;: &quot;Temperature&quot;,
       &quot;MappingRule&quot;: {
         &quot;SharedMappingRuleId&quot;: &quot;shared_mapping_rule&quot;,
-        &quot;Token&quot;: &quot;{Temperature}&quot;
+        &quot;Value&quot;: &quot;{Temperature}&quot;
       },
       &quot;IsKey&quot;: false
     },
@@ -533,8 +490,7 @@
         &quot;ItemIdentifier&quot;: {
           &quot;Resource&quot;: &quot;Streams&quot;,
           &quot;Field&quot;: &quot;Description&quot;,
-          &quot;Value&quot;: &quot;TankStream&quot;,
-          &quot;Function&quot;: &quot;Equals&quot;
+          &quot;Value&quot;: &quot;TankStream&quot;
         }
       },
       &quot;IsKey&quot;: false

@@ -78,7 +78,7 @@
             <article class="content wrap" id="_content" data-uid="DataRetrievalApi">
 <h1 id="dataretrieval">DataRetrieval</h1>
 
-<p>APIs for Retrieving Data </p>
+<p>APIs for Retrieving Data</p>
 <hr>
 <h2 id="get-data-view-data"><code>Get Data View Data</code></h2>
 <p>Get data for the provided index parameters with paging</p>
@@ -149,7 +149,7 @@ Time,Temperature,Flowrate,Volume
       &quot;TimeOfResolution&quot;: &quot;DateTimeOffset&quot;,
       &quot;Id&quot;: &quot;Int32&quot;,
       &quot;ItemCount&quot;: &quot;Int32&quot;,
-      &quot;Tokens&quot;: [
+      &quot;Values&quot;: [
         {
           &quot;Chars&quot;: &quot;Char&quot;,
           &quot;Length&quot;: &quot;Int32&quot;
@@ -204,7 +204,7 @@ Time,Temperature,Flowrate,Volume
           ]
         }
       ],
-      &quot;Tokens&quot;: [
+      &quot;Values&quot;: [
         {
           &quot;Chars&quot;: &quot;Char&quot;,
           &quot;Length&quot;: &quot;Int32&quot;
@@ -251,7 +251,7 @@ Time,Temperature,Flowrate,Volume
   &quot;TimeOfResolution&quot;: &quot;DateTimeOffset&quot;,
   &quot;Id&quot;: &quot;Int32&quot;,
   &quot;ItemCount&quot;: &quot;Int32&quot;,
-  &quot;Tokens&quot;: [
+  &quot;Values&quot;: [
     {
       &quot;Chars&quot;: &quot;Char&quot;,
       &quot;Length&quot;: &quot;Int32&quot;
@@ -287,7 +287,7 @@ Time,Temperature,Flowrate,Volume
       ]
     }
   ],
-  &quot;Tokens&quot;: [
+  &quot;Values&quot;: [
     {
       &quot;Chars&quot;: &quot;Char&quot;,
       &quot;Length&quot;: &quot;Int32&quot;
@@ -326,8 +326,8 @@ Time,Temperature,Flowrate,Volume
   &quot;SharedMappingRules&quot;: [
     {
       &quot;Id&quot;: &quot;String&quot;,
-      &quot;Token&quot;: &quot;String&quot;,
-      &quot;MappingRulePattern&quot;: {
+      &quot;Pattern&quot;: &quot;String&quot;,
+      &quot;MappingRule&quot;: {
         &quot;PropertyPaths&quot;: [
           {
             &quot;Chars&quot;: &quot;Char&quot;,
@@ -338,8 +338,7 @@ Time,Temperature,Flowrate,Volume
           &quot;FilterResource&quot;: &quot;FilterResource enumeration&quot;,
           &quot;FilterField&quot;: &quot;FilterField enumeration&quot;,
           &quot;Name&quot;: &quot;String&quot;,
-          &quot;Value&quot;: &quot;String&quot;,
-          &quot;FilterFunction&quot;: &quot;FilterFunction enumeration&quot;
+          &quot;Value&quot;: &quot;String&quot;
         }
       }
     }
@@ -353,8 +352,7 @@ Time,Temperature,Flowrate,Volume
       &quot;DataType&quot;: &quot;String&quot;,
       &quot;UOM&quot;: &quot;String&quot;
     }
-  ],
-  &quot;IsDefault&quot;: &quot;Boolean&quot;
+  ]
 }
 </code></pre><h4 id="403-3">403</h4>
 <p>Unauthorized</p>

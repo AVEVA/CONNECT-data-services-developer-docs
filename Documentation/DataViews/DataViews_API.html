@@ -78,7 +78,7 @@
             <article class="content wrap" id="_content" data-uid="DataViewsApi">
 <h1 id="dataviews">DataViews</h1>
 
-<p>APIs for Working with Data Views </p>
+<p>APIs for Working with Data Views</p>
 <h3 id="properties">Properties</h3>
 <table>
 <thead>
@@ -171,24 +171,24 @@
  ],
  &quot;GroupRules&quot;: [
    {
-     &quot;Id&quot;: &quot;DefaultGroupRule&quot;,
-     &quot;Type&quot;: &quot;StreamName&quot;
+     &quot;Id&quot;: &quot;group by stream name&quot;,
+     &quot;Resource&quot;: &quot;Streams&quot;,
+     &quot;Field&quot;: &quot;Name&quot;
    }
  ],
  &quot;Mappings&quot;: {
    &quot;SharedMappingRules&quot;: [
      {
        &quot;Id&quot;: &quot;shared mapping rule&quot;,
-       &quot;Token&quot;: &quot;{measurement}&quot;,
-       &quot;MappingRulePattern&quot;: {
+       &quot;Pattern&quot;: &quot;{measurement}&quot;,
+       &quot;MappingRule&quot;: {
          &quot;PropertyPaths&quot;: [
            &quot;Value&quot;
          ],
          &quot;ItemIdentifier&quot;: {
            &quot;Resource&quot;: &quot;Streams&quot;,
            &quot;Field&quot;: &quot;Id&quot;,
-           &quot;Value&quot;: &quot;{measurement}&quot;,
-           &quot;Function&quot;: &quot;Equals&quot;
+           &quot;Value&quot;: &quot;{measurement}&quot;
          }
        }
      }
@@ -208,7 +208,7 @@
        &quot;Name&quot;: &quot;group rule&quot;,
        &quot;MappingRule&quot;: {
          &quot;GroupRuleId&quot;: &quot;id&quot;,
-         &quot;GroupRuleToken&quot;: &quot;token&quot;
+         &quot;GroupRuleValue&quot;: &quot;StreamId&quot;
        },
        &quot;IsKey&quot;: false,
        &quot;DataType&quot;: &quot;string&quot;
@@ -231,8 +231,7 @@
          &quot;ItemIdentifier&quot;: {
            &quot;Resource&quot;: &quot;Streams&quot;,
            &quot;Field&quot;: &quot;Id&quot;,
-           &quot;Value&quot;: &quot;test&quot;,
-           &quot;Function&quot;: &quot;Equals&quot;
+           &quot;Value&quot;: &quot;test&quot;
          }
        },
        &quot;IsKey&quot;: false
@@ -241,7 +240,7 @@
        &quot;Name&quot;: &quot;column3&quot;,
        &quot;MappingRule&quot;: {
          &quot;SharedMappingRuleId&quot;: &quot;shared mapping rule&quot;,
-         &quot;Token&quot;: &quot;{measurement}&quot;
+         &quot;Value&quot;: &quot;{measurement}&quot;
        },
        &quot;IsKey&quot;: false
      }
@@ -288,22 +287,14 @@
       &quot;GroupRules&quot;: [
         {
           &quot;Id&quot;: &quot;String&quot;,
-          &quot;GroupRuleType&quot;: &quot;GroupRuleType enumeration&quot;,
-          &quot;TokenRules&quot;: {
-            &quot;Tokens&quot;: [
-              {
-                &quot;Chars&quot;: &quot;Char&quot;,
-                &quot;Length&quot;: &quot;Int32&quot;
-              }
-            ],
-            &quot;Patterns&quot;: [
-              {
-                &quot;QueryId&quot;: &quot;String&quot;,
-                &quot;Name&quot;: &quot;String&quot;,
-                &quot;Value&quot;: &quot;String&quot;
-              }
-            ]
-          }
+          &quot;GroupRuleResource&quot;: &quot;GroupRuleResource enumeration&quot;,
+          &quot;GroupRuleField&quot;: &quot;GroupRuleField enumeration&quot;,
+          &quot;Values&quot;: [
+            {
+              &quot;Chars&quot;: &quot;Char&quot;,
+              &quot;Length&quot;: &quot;Int32&quot;
+            }
+          ]
         }
       ],
       &quot;Mappings&quot;: {
@@ -311,8 +302,8 @@
         &quot;SharedMappingRules&quot;: [
           {
             &quot;Id&quot;: &quot;String&quot;,
-            &quot;Token&quot;: &quot;String&quot;,
-            &quot;MappingRulePattern&quot;: {
+            &quot;Pattern&quot;: &quot;String&quot;,
+            &quot;MappingRule&quot;: {
               &quot;PropertyPaths&quot;: [
                 {
                   &quot;Chars&quot;: &quot;Char&quot;,
@@ -323,8 +314,7 @@
                 &quot;FilterResource&quot;: &quot;FilterResource enumeration&quot;,
                 &quot;FilterField&quot;: &quot;FilterField enumeration&quot;,
                 &quot;Name&quot;: &quot;String&quot;,
-                &quot;Value&quot;: &quot;String&quot;,
-                &quot;FilterFunction&quot;: &quot;FilterFunction enumeration&quot;
+                &quot;Value&quot;: &quot;String&quot;
               }
             }
           }
@@ -336,8 +326,7 @@
             &quot;IsKey&quot;: &quot;Boolean&quot;,
             &quot;DataType&quot;: &quot;String&quot;
           }
-        ],
-        &quot;IsDefault&quot;: &quot;Boolean&quot;
+        ]
       },
       &quot;IndexDataType&quot;: &quot;IndexDataType enumeration&quot;,
       &quot;IndexConfig&quot;: {
@@ -382,22 +371,14 @@
       &quot;GroupRules&quot;: [
         {
           &quot;Id&quot;: &quot;String&quot;,
-          &quot;GroupRuleType&quot;: &quot;GroupRuleType enumeration&quot;,
-          &quot;TokenRules&quot;: {
-            &quot;Tokens&quot;: [
-              {
-                &quot;Chars&quot;: &quot;Char&quot;,
-                &quot;Length&quot;: &quot;Int32&quot;
-              }
-            ],
-            &quot;Patterns&quot;: [
-              {
-                &quot;QueryId&quot;: &quot;String&quot;,
-                &quot;Name&quot;: &quot;String&quot;,
-                &quot;Value&quot;: &quot;String&quot;
-              }
-            ]
-          }
+          &quot;GroupRuleResource&quot;: &quot;GroupRuleResource enumeration&quot;,
+          &quot;GroupRuleField&quot;: &quot;GroupRuleField enumeration&quot;,
+          &quot;Values&quot;: [
+            {
+              &quot;Chars&quot;: &quot;Char&quot;,
+              &quot;Length&quot;: &quot;Int32&quot;
+            }
+          ]
         }
       ],
       &quot;Mappings&quot;: {
@@ -405,8 +386,8 @@
         &quot;SharedMappingRules&quot;: [
           {
             &quot;Id&quot;: &quot;String&quot;,
-            &quot;Token&quot;: &quot;String&quot;,
-            &quot;MappingRulePattern&quot;: {
+            &quot;Pattern&quot;: &quot;String&quot;,
+            &quot;MappingRule&quot;: {
               &quot;PropertyPaths&quot;: [
                 {
                   &quot;Chars&quot;: &quot;Char&quot;,
@@ -417,8 +398,7 @@
                 &quot;FilterResource&quot;: &quot;FilterResource enumeration&quot;,
                 &quot;FilterField&quot;: &quot;FilterField enumeration&quot;,
                 &quot;Name&quot;: &quot;String&quot;,
-                &quot;Value&quot;: &quot;String&quot;,
-                &quot;FilterFunction&quot;: &quot;FilterFunction enumeration&quot;
+                &quot;Value&quot;: &quot;String&quot;
               }
             }
           }
@@ -430,8 +410,7 @@
             &quot;IsKey&quot;: &quot;Boolean&quot;,
             &quot;DataType&quot;: &quot;String&quot;
           }
-        ],
-        &quot;IsDefault&quot;: &quot;Boolean&quot;
+        ]
       },
       &quot;IndexDataType&quot;: &quot;IndexDataType enumeration&quot;,
       &quot;IndexConfig&quot;: {
@@ -476,22 +455,14 @@
   &quot;GroupRules&quot;: [
     {
       &quot;Id&quot;: &quot;String&quot;,
-      &quot;GroupRuleType&quot;: &quot;GroupRuleType enumeration&quot;,
-      &quot;TokenRules&quot;: {
-        &quot;Tokens&quot;: [
-          {
-            &quot;Chars&quot;: &quot;Char&quot;,
-            &quot;Length&quot;: &quot;Int32&quot;
-          }
-        ],
-        &quot;Patterns&quot;: [
-          {
-            &quot;QueryId&quot;: &quot;String&quot;,
-            &quot;Name&quot;: &quot;String&quot;,
-            &quot;Value&quot;: &quot;String&quot;
-          }
-        ]
-      }
+      &quot;GroupRuleResource&quot;: &quot;GroupRuleResource enumeration&quot;,
+      &quot;GroupRuleField&quot;: &quot;GroupRuleField enumeration&quot;,
+      &quot;Values&quot;: [
+        {
+          &quot;Chars&quot;: &quot;Char&quot;,
+          &quot;Length&quot;: &quot;Int32&quot;
+        }
+      ]
     }
   ],
   &quot;Mappings&quot;: {
@@ -499,8 +470,8 @@
     &quot;SharedMappingRules&quot;: [
       {
         &quot;Id&quot;: &quot;String&quot;,
-        &quot;Token&quot;: &quot;String&quot;,
-        &quot;MappingRulePattern&quot;: {
+        &quot;Pattern&quot;: &quot;String&quot;,
+        &quot;MappingRule&quot;: {
           &quot;PropertyPaths&quot;: [
             {
               &quot;Chars&quot;: &quot;Char&quot;,
@@ -511,8 +482,7 @@
             &quot;FilterResource&quot;: &quot;FilterResource enumeration&quot;,
             &quot;FilterField&quot;: &quot;FilterField enumeration&quot;,
             &quot;Name&quot;: &quot;String&quot;,
-            &quot;Value&quot;: &quot;String&quot;,
-            &quot;FilterFunction&quot;: &quot;FilterFunction enumeration&quot;
+            &quot;Value&quot;: &quot;String&quot;
           }
         }
       }
@@ -524,8 +494,7 @@
         &quot;IsKey&quot;: &quot;Boolean&quot;,
         &quot;DataType&quot;: &quot;String&quot;
       }
-    ],
-    &quot;IsDefault&quot;: &quot;Boolean&quot;
+    ]
   },
   &quot;IndexDataType&quot;: &quot;IndexDataType enumeration&quot;,
   &quot;IndexConfig&quot;: {
@@ -567,22 +536,14 @@
   &quot;GroupRules&quot;: [
     {
       &quot;Id&quot;: &quot;String&quot;,
-      &quot;GroupRuleType&quot;: &quot;GroupRuleType enumeration&quot;,
-      &quot;TokenRules&quot;: {
-        &quot;Tokens&quot;: [
-          {
-            &quot;Chars&quot;: &quot;Char&quot;,
-            &quot;Length&quot;: &quot;Int32&quot;
-          }
-        ],
-        &quot;Patterns&quot;: [
-          {
-            &quot;QueryId&quot;: &quot;String&quot;,
-            &quot;Name&quot;: &quot;String&quot;,
-            &quot;Value&quot;: &quot;String&quot;
-          }
-        ]
-      }
+      &quot;GroupRuleResource&quot;: &quot;GroupRuleResource enumeration&quot;,
+      &quot;GroupRuleField&quot;: &quot;GroupRuleField enumeration&quot;,
+      &quot;Values&quot;: [
+        {
+          &quot;Chars&quot;: &quot;Char&quot;,
+          &quot;Length&quot;: &quot;Int32&quot;
+        }
+      ]
     }
   ],
   &quot;Mappings&quot;: {
@@ -590,8 +551,8 @@
     &quot;SharedMappingRules&quot;: [
       {
         &quot;Id&quot;: &quot;String&quot;,
-        &quot;Token&quot;: &quot;String&quot;,
-        &quot;MappingRulePattern&quot;: {
+        &quot;Pattern&quot;: &quot;String&quot;,
+        &quot;MappingRule&quot;: {
           &quot;PropertyPaths&quot;: [
             {
               &quot;Chars&quot;: &quot;Char&quot;,
@@ -602,8 +563,7 @@
             &quot;FilterResource&quot;: &quot;FilterResource enumeration&quot;,
             &quot;FilterField&quot;: &quot;FilterField enumeration&quot;,
             &quot;Name&quot;: &quot;String&quot;,
-            &quot;Value&quot;: &quot;String&quot;,
-            &quot;FilterFunction&quot;: &quot;FilterFunction enumeration&quot;
+            &quot;Value&quot;: &quot;String&quot;
           }
         }
       }
@@ -615,8 +575,7 @@
         &quot;IsKey&quot;: &quot;Boolean&quot;,
         &quot;DataType&quot;: &quot;String&quot;
       }
-    ],
-    &quot;IsDefault&quot;: &quot;Boolean&quot;
+    ]
   },
   &quot;IndexDataType&quot;: &quot;IndexDataType enumeration&quot;,
   &quot;IndexConfig&quot;: {
@@ -626,6 +585,8 @@
     &quot;Interval&quot;: &quot;String&quot;
   }
 }
+</code></pre><p>Automatically generate default mappings</p>
+<pre><code class="lang-csharp">bool defaultMappings [FromQuery] [Optional] [Default = False]
 </code></pre><h3 id="returns-2">Returns</h3>
 <h4 id="201">201</h4>
 <p>Successfully created a Data View Definition</p>
@@ -642,22 +603,14 @@
   &quot;GroupRules&quot;: [
     {
       &quot;Id&quot;: &quot;String&quot;,
-      &quot;GroupRuleType&quot;: &quot;GroupRuleType enumeration&quot;,
-      &quot;TokenRules&quot;: {
-        &quot;Tokens&quot;: [
-          {
-            &quot;Chars&quot;: &quot;Char&quot;,
-            &quot;Length&quot;: &quot;Int32&quot;
-          }
-        ],
-        &quot;Patterns&quot;: [
-          {
-            &quot;QueryId&quot;: &quot;String&quot;,
-            &quot;Name&quot;: &quot;String&quot;,
-            &quot;Value&quot;: &quot;String&quot;
-          }
-        ]
-      }
+      &quot;GroupRuleResource&quot;: &quot;GroupRuleResource enumeration&quot;,
+      &quot;GroupRuleField&quot;: &quot;GroupRuleField enumeration&quot;,
+      &quot;Values&quot;: [
+        {
+          &quot;Chars&quot;: &quot;Char&quot;,
+          &quot;Length&quot;: &quot;Int32&quot;
+        }
+      ]
     }
   ],
   &quot;Mappings&quot;: {
@@ -665,8 +618,8 @@
     &quot;SharedMappingRules&quot;: [
       {
         &quot;Id&quot;: &quot;String&quot;,
-        &quot;Token&quot;: &quot;String&quot;,
-        &quot;MappingRulePattern&quot;: {
+        &quot;Pattern&quot;: &quot;String&quot;,
+        &quot;MappingRule&quot;: {
           &quot;PropertyPaths&quot;: [
             {
               &quot;Chars&quot;: &quot;Char&quot;,
@@ -677,8 +630,7 @@
             &quot;FilterResource&quot;: &quot;FilterResource enumeration&quot;,
             &quot;FilterField&quot;: &quot;FilterField enumeration&quot;,
             &quot;Name&quot;: &quot;String&quot;,
-            &quot;Value&quot;: &quot;String&quot;,
-            &quot;FilterFunction&quot;: &quot;FilterFunction enumeration&quot;
+            &quot;Value&quot;: &quot;String&quot;
           }
         }
       }
@@ -690,8 +642,7 @@
         &quot;IsKey&quot;: &quot;Boolean&quot;,
         &quot;DataType&quot;: &quot;String&quot;
       }
-    ],
-    &quot;IsDefault&quot;: &quot;Boolean&quot;
+    ]
   },
   &quot;IndexDataType&quot;: &quot;IndexDataType enumeration&quot;,
   &quot;IndexConfig&quot;: {
@@ -735,22 +686,14 @@
   &quot;GroupRules&quot;: [
     {
       &quot;Id&quot;: &quot;String&quot;,
-      &quot;GroupRuleType&quot;: &quot;GroupRuleType enumeration&quot;,
-      &quot;TokenRules&quot;: {
-        &quot;Tokens&quot;: [
-          {
-            &quot;Chars&quot;: &quot;Char&quot;,
-            &quot;Length&quot;: &quot;Int32&quot;
-          }
-        ],
-        &quot;Patterns&quot;: [
-          {
-            &quot;QueryId&quot;: &quot;String&quot;,
-            &quot;Name&quot;: &quot;String&quot;,
-            &quot;Value&quot;: &quot;String&quot;
-          }
-        ]
-      }
+      &quot;GroupRuleResource&quot;: &quot;GroupRuleResource enumeration&quot;,
+      &quot;GroupRuleField&quot;: &quot;GroupRuleField enumeration&quot;,
+      &quot;Values&quot;: [
+        {
+          &quot;Chars&quot;: &quot;Char&quot;,
+          &quot;Length&quot;: &quot;Int32&quot;
+        }
+      ]
     }
   ],
   &quot;Mappings&quot;: {
@@ -758,8 +701,8 @@
     &quot;SharedMappingRules&quot;: [
       {
         &quot;Id&quot;: &quot;String&quot;,
-        &quot;Token&quot;: &quot;String&quot;,
-        &quot;MappingRulePattern&quot;: {
+        &quot;Pattern&quot;: &quot;String&quot;,
+        &quot;MappingRule&quot;: {
           &quot;PropertyPaths&quot;: [
             {
               &quot;Chars&quot;: &quot;Char&quot;,
@@ -770,8 +713,7 @@
             &quot;FilterResource&quot;: &quot;FilterResource enumeration&quot;,
             &quot;FilterField&quot;: &quot;FilterField enumeration&quot;,
             &quot;Name&quot;: &quot;String&quot;,
-            &quot;Value&quot;: &quot;String&quot;,
-            &quot;FilterFunction&quot;: &quot;FilterFunction enumeration&quot;
+            &quot;Value&quot;: &quot;String&quot;
           }
         }
       }
@@ -783,8 +725,7 @@
         &quot;IsKey&quot;: &quot;Boolean&quot;,
         &quot;DataType&quot;: &quot;String&quot;
       }
-    ],
-    &quot;IsDefault&quot;: &quot;Boolean&quot;
+    ]
   },
   &quot;IndexDataType&quot;: &quot;IndexDataType enumeration&quot;,
   &quot;IndexConfig&quot;: {
@@ -794,6 +735,8 @@
     &quot;Interval&quot;: &quot;String&quot;
   }
 }
+</code></pre><p>Automatically generate default mappings</p>
+<pre><code class="lang-csharp">bool defaultMappings [FromQuery] [Optional] [Default = False]
 </code></pre><h3 id="returns-3">Returns</h3>
 <h4 id="201-1">201</h4>
 <p>Successfully created a Data View Definition</p>
@@ -810,22 +753,14 @@
   &quot;GroupRules&quot;: [
     {
       &quot;Id&quot;: &quot;String&quot;,
-      &quot;GroupRuleType&quot;: &quot;GroupRuleType enumeration&quot;,
-      &quot;TokenRules&quot;: {
-        &quot;Tokens&quot;: [
-          {
-            &quot;Chars&quot;: &quot;Char&quot;,
-            &quot;Length&quot;: &quot;Int32&quot;
-          }
-        ],
-        &quot;Patterns&quot;: [
-          {
-            &quot;QueryId&quot;: &quot;String&quot;,
-            &quot;Name&quot;: &quot;String&quot;,
-            &quot;Value&quot;: &quot;String&quot;
-          }
-        ]
-      }
+      &quot;GroupRuleResource&quot;: &quot;GroupRuleResource enumeration&quot;,
+      &quot;GroupRuleField&quot;: &quot;GroupRuleField enumeration&quot;,
+      &quot;Values&quot;: [
+        {
+          &quot;Chars&quot;: &quot;Char&quot;,
+          &quot;Length&quot;: &quot;Int32&quot;
+        }
+      ]
     }
   ],
   &quot;Mappings&quot;: {
@@ -833,8 +768,8 @@
     &quot;SharedMappingRules&quot;: [
       {
         &quot;Id&quot;: &quot;String&quot;,
-        &quot;Token&quot;: &quot;String&quot;,
-        &quot;MappingRulePattern&quot;: {
+        &quot;Pattern&quot;: &quot;String&quot;,
+        &quot;MappingRule&quot;: {
           &quot;PropertyPaths&quot;: [
             {
               &quot;Chars&quot;: &quot;Char&quot;,
@@ -845,8 +780,7 @@
             &quot;FilterResource&quot;: &quot;FilterResource enumeration&quot;,
             &quot;FilterField&quot;: &quot;FilterField enumeration&quot;,
             &quot;Name&quot;: &quot;String&quot;,
-            &quot;Value&quot;: &quot;String&quot;,
-            &quot;FilterFunction&quot;: &quot;FilterFunction enumeration&quot;
+            &quot;Value&quot;: &quot;String&quot;
           }
         }
       }
@@ -858,8 +792,7 @@
         &quot;IsKey&quot;: &quot;Boolean&quot;,
         &quot;DataType&quot;: &quot;String&quot;
       }
-    ],
-    &quot;IsDefault&quot;: &quot;Boolean&quot;
+    ]
   },
   &quot;IndexDataType&quot;: &quot;IndexDataType enumeration&quot;,
   &quot;IndexConfig&quot;: {
@@ -905,22 +838,14 @@
   &quot;GroupRules&quot;: [
     {
       &quot;Id&quot;: &quot;String&quot;,
-      &quot;GroupRuleType&quot;: &quot;GroupRuleType enumeration&quot;,
-      &quot;TokenRules&quot;: {
-        &quot;Tokens&quot;: [
-          {
-            &quot;Chars&quot;: &quot;Char&quot;,
-            &quot;Length&quot;: &quot;Int32&quot;
-          }
-        ],
-        &quot;Patterns&quot;: [
-          {
-            &quot;QueryId&quot;: &quot;String&quot;,
-            &quot;Name&quot;: &quot;String&quot;,
-            &quot;Value&quot;: &quot;String&quot;
-          }
-        ]
-      }
+      &quot;GroupRuleResource&quot;: &quot;GroupRuleResource enumeration&quot;,
+      &quot;GroupRuleField&quot;: &quot;GroupRuleField enumeration&quot;,
+      &quot;Values&quot;: [
+        {
+          &quot;Chars&quot;: &quot;Char&quot;,
+          &quot;Length&quot;: &quot;Int32&quot;
+        }
+      ]
     }
   ],
   &quot;Mappings&quot;: {
@@ -928,8 +853,8 @@
     &quot;SharedMappingRules&quot;: [
       {
         &quot;Id&quot;: &quot;String&quot;,
-        &quot;Token&quot;: &quot;String&quot;,
-        &quot;MappingRulePattern&quot;: {
+        &quot;Pattern&quot;: &quot;String&quot;,
+        &quot;MappingRule&quot;: {
           &quot;PropertyPaths&quot;: [
             {
               &quot;Chars&quot;: &quot;Char&quot;,
@@ -940,8 +865,7 @@
             &quot;FilterResource&quot;: &quot;FilterResource enumeration&quot;,
             &quot;FilterField&quot;: &quot;FilterField enumeration&quot;,
             &quot;Name&quot;: &quot;String&quot;,
-            &quot;Value&quot;: &quot;String&quot;,
-            &quot;FilterFunction&quot;: &quot;FilterFunction enumeration&quot;
+            &quot;Value&quot;: &quot;String&quot;
           }
         }
       }
@@ -953,8 +877,7 @@
         &quot;IsKey&quot;: &quot;Boolean&quot;,
         &quot;DataType&quot;: &quot;String&quot;
       }
-    ],
-    &quot;IsDefault&quot;: &quot;Boolean&quot;
+    ]
   },
   &quot;IndexDataType&quot;: &quot;IndexDataType enumeration&quot;,
   &quot;IndexConfig&quot;: {
@@ -964,6 +887,8 @@
     &quot;Interval&quot;: &quot;String&quot;
   }
 }
+</code></pre><p>Automatically generate default mappings</p>
+<pre><code class="lang-csharp">bool defaultMappings [FromQuery] [Optional] [Default = False]
 </code></pre><h3 id="returns-4">Returns</h3>
 <h4 id="204">204</h4>
 <p>Data View successfully created or updated</p>
@@ -1335,22 +1260,14 @@
 <pre><code class="lang-json">[
 {
   &quot;Id&quot;: &quot;String&quot;,
-  &quot;GroupRuleType&quot;: &quot;GroupRuleType enumeration&quot;,
-  &quot;TokenRules&quot;: {
-    &quot;Tokens&quot;: [
-      {
-        &quot;Chars&quot;: &quot;Char&quot;,
-        &quot;Length&quot;: &quot;Int32&quot;
-      }
-    ],
-    &quot;Patterns&quot;: [
-      {
-        &quot;QueryId&quot;: &quot;String&quot;,
-        &quot;Name&quot;: &quot;String&quot;,
-        &quot;Value&quot;: &quot;String&quot;
-      }
-    ]
-  }
+  &quot;GroupRuleResource&quot;: &quot;GroupRuleResource enumeration&quot;,
+  &quot;GroupRuleField&quot;: &quot;GroupRuleField enumeration&quot;,
+  &quot;Values&quot;: [
+    {
+      &quot;Chars&quot;: &quot;Char&quot;,
+      &quot;Length&quot;: &quot;Int32&quot;
+    }
+  ]
 }
 ]
 </code></pre><h4 id="403-16">403</h4>
@@ -1377,22 +1294,14 @@
 </code></pre><pre><code class="lang-json">[
 {
   &quot;Id&quot;: &quot;String&quot;,
-  &quot;GroupRuleType&quot;: &quot;GroupRuleType enumeration&quot;,
-  &quot;TokenRules&quot;: {
-    &quot;Tokens&quot;: [
-      {
-        &quot;Chars&quot;: &quot;Char&quot;,
-        &quot;Length&quot;: &quot;Int32&quot;
-      }
-    ],
-    &quot;Patterns&quot;: [
-      {
-        &quot;QueryId&quot;: &quot;String&quot;,
-        &quot;Name&quot;: &quot;String&quot;,
-        &quot;Value&quot;: &quot;String&quot;
-      }
-    ]
-  }
+  &quot;GroupRuleResource&quot;: &quot;GroupRuleResource enumeration&quot;,
+  &quot;GroupRuleField&quot;: &quot;GroupRuleField enumeration&quot;,
+  &quot;Values&quot;: [
+    {
+      &quot;Chars&quot;: &quot;Char&quot;,
+      &quot;Length&quot;: &quot;Int32&quot;
+    }
+  ]
 }
 ]
 </code></pre><h3 id="returns-18">Returns</h3>
@@ -1447,8 +1356,8 @@
   &quot;SharedMappingRules&quot;: [
     {
       &quot;Id&quot;: &quot;String&quot;,
-      &quot;Token&quot;: &quot;String&quot;,
-      &quot;MappingRulePattern&quot;: {
+      &quot;Pattern&quot;: &quot;String&quot;,
+      &quot;MappingRule&quot;: {
         &quot;PropertyPaths&quot;: [
           {
             &quot;Chars&quot;: &quot;Char&quot;,
@@ -1459,8 +1368,7 @@
           &quot;FilterResource&quot;: &quot;FilterResource enumeration&quot;,
           &quot;FilterField&quot;: &quot;FilterField enumeration&quot;,
           &quot;Name&quot;: &quot;String&quot;,
-          &quot;Value&quot;: &quot;String&quot;,
-          &quot;FilterFunction&quot;: &quot;FilterFunction enumeration&quot;
+          &quot;Value&quot;: &quot;String&quot;
         }
       }
     }
@@ -1472,8 +1380,7 @@
       &quot;IsKey&quot;: &quot;Boolean&quot;,
       &quot;DataType&quot;: &quot;String&quot;
     }
-  ],
-  &quot;IsDefault&quot;: &quot;Boolean&quot;
+  ]
 }
 </code></pre><h4 id="403-19">403</h4>
 <p>Unauthorized</p>
@@ -1501,8 +1408,8 @@
   &quot;SharedMappingRules&quot;: [
     {
       &quot;Id&quot;: &quot;String&quot;,
-      &quot;Token&quot;: &quot;String&quot;,
-      &quot;MappingRulePattern&quot;: {
+      &quot;Pattern&quot;: &quot;String&quot;,
+      &quot;MappingRule&quot;: {
         &quot;PropertyPaths&quot;: [
           {
             &quot;Chars&quot;: &quot;Char&quot;,
@@ -1513,8 +1420,7 @@
           &quot;FilterResource&quot;: &quot;FilterResource enumeration&quot;,
           &quot;FilterField&quot;: &quot;FilterField enumeration&quot;,
           &quot;Name&quot;: &quot;String&quot;,
-          &quot;Value&quot;: &quot;String&quot;,
-          &quot;FilterFunction&quot;: &quot;FilterFunction enumeration&quot;
+          &quot;Value&quot;: &quot;String&quot;
         }
       }
     }
@@ -1526,9 +1432,10 @@
       &quot;IsKey&quot;: &quot;Boolean&quot;,
       &quot;DataType&quot;: &quot;String&quot;
     }
-  ],
-  &quot;IsDefault&quot;: &quot;Boolean&quot;
+  ]
 }
+</code></pre><p>Automatically generate default mappings</p>
+<pre><code class="lang-csharp">bool defaultMappings [FromQuery] [Optional] [Default = False]
 </code></pre><h3 id="returns-21">Returns</h3>
 <h4 id="204-10">204</h4>
 <p>Successfully updated the Data View mappings</p>

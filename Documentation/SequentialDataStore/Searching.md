@@ -175,16 +175,16 @@ The default value for ``orderby`` parameter is ascending order. It can be change
 **Tokenization**
 ---------------
 
-Search tokenizes queries into words. Words are extracted by spaces and trailing punctuation, 
-or puctuation followed by a space. Embedded punctuation, punctuation surrounded by non punctuation 
-charaters without spaces, does not trigger tokenization and is treated as one word, see exmaple below.
+When performing a search, the query is tokenized into words. The rules around how the query string is tokenized can affect the search results. 
+Words are extracted by spaces and trailing punctuation, or puctuation followed by a space. Embedded punctuation, punctuation surrounded by non punctuation 
+characters without spaces, does not trigger tokenization and is treated as one word, see exmaple below.
 
 Phrase | Tokenized
 ----------|-------------------------------------------------------------------
 ``Device.1`` | Treated as one word
 ``Device!!1`` | Treated as one word
-``Device. ``  | Treated as ``Stream``
-``Device!!`` | Treated as ``Stream``
+``Device. ``  | Treated as ``Device``
+``Device!!`` | Treated as ``Device``
 
 If your query has a wildcard following trailing punctuation, such as ``Device!*``, only ``Device`` will be tokenized and queried.
 If you want to specifically search on a term that has the trailing punctuation, enclose it in quotation marks, ``"Device!"*``,

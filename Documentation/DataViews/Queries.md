@@ -10,7 +10,6 @@ A list of queries to select the data items to be displayed in the Data View
 Property | Type | Required | Descriptions
  --- | --- | --- | ---
 Id | string | True | Id of the query
-NamespaceId | string | False | NamespaceId for Query Resource
 Query | string | True | Query to use for data retrieval
 
 ## `Example` 

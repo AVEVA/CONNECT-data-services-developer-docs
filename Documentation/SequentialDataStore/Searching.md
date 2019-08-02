@@ -176,8 +176,8 @@ The default value for ``orderby`` parameter is ascending order. It can be change
 ---------------
 
 When performing a search, the query is tokenized into words. The rules around how the query string is tokenized can affect the search results. 
-Words are extracted by spaces and trailing punctuation, or puctuation followed by a space. Embedded punctuation, punctuation surrounded by non punctuation 
-characters without spaces, does not trigger tokenization and is treated as one word, see exmaple below.
+Words are extracted by spaces and trailing punctuation, or punctuation followed by a space. Embedded punctuation, punctuation surrounded by non punctuation 
+characters without spaces, does not trigger tokenization and is treated as one word. See example below:
 
 Phrase | Tokenized
 ----------|-------------------------------------------------------------------

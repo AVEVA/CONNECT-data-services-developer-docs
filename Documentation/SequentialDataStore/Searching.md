@@ -175,18 +175,17 @@ The default value for ``orderby`` parameter is ascending order. It can be change
 Tokenization
 =====================
 
-When performing a search, the query is tokenized into terms. Tokenization is the process of breaking a string sequence
-into pieces called tokens using specific characters to delimit tokens. 
+Tokenization is the process of breaking a string sequence into pieces called tokens using specific characters to delimit tokens. 
+
+When performing a search, the user specified query is tokenized into search terms. 
 
 The rules around how the query string is tokenized can affect the search results. 
-Terms are extracted by spaces and trailing punctuation. Embedded punctuation does not trigger tokenization and is treated
-as one term. 
+Terms are delimited by spaces or by one or more punctuation characters followed by a space. 
 
-Trailing punctuation is punctuation followed by a space. Embedded punctuation is punctuation surrounded by other
-characters without spaces. 
+Punctuation follwed by other characters without space does not trigger tokenization and is treated
+as part of the term. 
 
-If your query has a wildcard after trailing punctuation, the wildcard and punctuation will not
-be tokenized and queried. To specifically search on a term that has trailing punctuation, enclose it in quotation marks 
+If your query has a wildcard after trailing punctuation, neither is tokenized. To specifically search on a term that has trailing punctuation, enclose it in quotation marks 
 to ensure the punctuation is part of the query. See examples below:
 
  Term | Tokenized Term
@@ -195,7 +194,7 @@ to ensure the punctuation is part of the query. See examples below:
 ``Device!!1`` | ``Device!!1``
 ``Device. ``  | ``Device``
 ``Device!!`` | ``Device``
-``Device!`` | ``Device``
+``Device!*`` | ``Device``
 ``"Device!"*`` | ``Device!``
 
 

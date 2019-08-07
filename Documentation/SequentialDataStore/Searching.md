@@ -172,23 +172,31 @@ The default value for ``orderby`` parameter is ascending order. It can be change
 	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure&orderby=name desc&skip=10&count=20
  ```
 
-**Tokenization**
----------------
+Tokenization
+=====================
 
-When performing a search, the query is tokenized into words. The rules around how the query string is tokenized can affect the search results. 
-Words are extracted by spaces and trailing punctuation, or punctuation followed by a space. Embedded punctuation, punctuation surrounded by non punctuation 
-characters without spaces, does not trigger tokenization and is treated as one word. See example below:
+When performing a search, the query is tokenized into terms. Tokenization is the process of breaking a string sequence
+into pieces called tokens using specific characters to delimit tokens. 
 
-Phrase | Tokenized
+The rules around how the query string is tokenized can affect the search results. 
+Terms are extracted by spaces and trailing punctuation. Embedded punctuation does not trigger tokenization and is treated
+as one term. 
+
+Trailing punctuation is punctuation followed by a space. Embedded punctuation is punctuation surrounded by other
+characters without spaces. 
+
+If your query has a wildcard after trailing punctuation, the wildcard and punctuation will not
+be tokenized and queried. To specifically search on a term that has trailing punctuation, enclose it in quotation marks 
+to ensure the punctuation is part of the query. See examples below:
+
+ Term | Tokenized Term
 ----------|-------------------------------------------------------------------
-``Device.1`` | Treated as one word
-``Device!!1`` | Treated as one word
-``Device. ``  | Treated as ``Device``
-``Device!!`` | Treated as ``Device``
-
-If your query has a wildcard following trailing punctuation, such as ``Device!*``, only ``Device`` will be tokenized and queried.
-If you want to specifically search on a term that has the trailing punctuation, enclose it in quotation marks, ``"Device!"*``,
-to ensure the punctuation is included as part of your query.
+``Device.1`` | ``Device.1``
+``Device!!1`` | ``Device!!1``
+``Device. ``  | ``Device``
+``Device!!`` | ``Device``
+``Device!`` | ``Device``
+``"Device!"*`` | ``Device!``
 
 
 Search operators

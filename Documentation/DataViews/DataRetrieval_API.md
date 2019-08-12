@@ -4,7 +4,7 @@ uid: DataRetrievalApi
 
 # DataRetrieval
 
-APIs for Retrieving Data 
+APIs for Retrieving Data
 
 ***
 
@@ -171,7 +171,7 @@ Successfully retrieved data
       "TimeOfResolution": "DateTimeOffset",
       "Id": "Int32",
       "ItemCount": "Int32",
-      "Tokens": [
+      "Values": [
         {
           "Chars": "Char",
           "Length": "Int32"
@@ -231,7 +231,7 @@ Multi-status. Successfully retrieved data groups along with errors
           ]
         }
       ],
-      "Tokens": [
+      "Values": [
         {
           "Chars": "Char",
           "Length": "Int32"
@@ -317,7 +317,7 @@ Successfully retrieved data group
   "TimeOfResolution": "DateTimeOffset",
   "Id": "Int32",
   "ItemCount": "Int32",
-  "Tokens": [
+  "Values": [
     {
       "Chars": "Char",
       "Length": "Int32"
@@ -358,7 +358,7 @@ Multi-status. Successfully retrieved data groups along with errors
       ]
     }
   ],
-  "Tokens": [
+  "Values": [
     {
       "Chars": "Char",
       "Length": "Int32"
@@ -424,8 +424,8 @@ Successfully retrieved data mappings
   "SharedMappingRules": [
     {
       "Id": "String",
-      "Token": "String",
-      "MappingRulePattern": {
+      "Pattern": "String",
+      "MappingRule": {
         "PropertyPaths": [
           {
             "Chars": "Char",
@@ -436,8 +436,7 @@ Successfully retrieved data mappings
           "FilterResource": "FilterResource enumeration",
           "FilterField": "FilterField enumeration",
           "Name": "String",
-          "Value": "String",
-          "FilterFunction": "FilterFunction enumeration"
+          "Value": "String"
         }
       }
     }
@@ -451,8 +450,7 @@ Successfully retrieved data mappings
       "DataType": "String",
       "UOM": "String"
     }
-  ],
-  "IsDefault": "Boolean"
+  ]
 }
 ```
 

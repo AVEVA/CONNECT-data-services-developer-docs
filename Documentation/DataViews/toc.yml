@@ -10,9 +10,9 @@
   href: IndexConfig.md
 - name: Data Views API
   href: DataViews_API.md
-- name: Data Retrival
+- name: Data Retrieval
   href: DataRetrieval.md
-- name: Data Retrival API
+- name: Data Retrieval API
   href: DataRetrieval_API.md
 - name: DataOutput Formats
   href: DataOutputFormats.md

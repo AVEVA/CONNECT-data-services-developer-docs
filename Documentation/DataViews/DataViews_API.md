@@ -4,7 +4,7 @@ uid: DataViewsApi
 
 # DataViews
 
-APIs for Working with Data Views 
+APIs for Working with Data Views
 
 ### Properties
 
@@ -43,24 +43,24 @@ DateTime | string | Use DateTime as index type
   ],
   "GroupRules": [
     {
-      "Id": "DefaultGroupRule",
-      "Type": "StreamName"
+      "Id": "group by stream name",
+      "Resource": "Streams",
+      "Field": "Name"
     }
   ],
   "Mappings": {
     "SharedMappingRules": [
       {
         "Id": "shared mapping rule",
-        "Token": "{measurement}",
-        "MappingRulePattern": {
+        "Pattern": "{measurement}",
+        "MappingRule": {
           "PropertyPaths": [
             "Value"
           ],
           "ItemIdentifier": {
             "Resource": "Streams",
             "Field": "Id",
-            "Value": "{measurement}",
-            "Function": "Equals"
+            "Value": "{measurement}"
           }
         }
       }
@@ -80,7 +80,7 @@ DateTime | string | Use DateTime as index type
         "Name": "group rule",
         "MappingRule": {
           "GroupRuleId": "id",
-          "GroupRuleToken": "token"
+          "GroupRuleValue": "StreamId"
         },
         "IsKey": false,
         "DataType": "string"
@@ -103,8 +103,7 @@ DateTime | string | Use DateTime as index type
           "ItemIdentifier": {
             "Resource": "Streams",
             "Field": "Id",
-            "Value": "test",
-            "Function": "Equals"
+            "Value": "test"
           }
         },
         "IsKey": false
@@ -113,7 +112,7 @@ DateTime | string | Use DateTime as index type
         "Name": "column3",
         "MappingRule": {
           "SharedMappingRuleId": "shared mapping rule",
-          "Token": "{measurement}"
+          "Value": "{measurement}"
         },
         "IsKey": false
       }
@@ -187,22 +186,14 @@ OK - retrieved the Data Views (could be an empty array)
       "GroupRules": [
         {
           "Id": "String",
-          "GroupRuleType": "GroupRuleType enumeration",
-          "TokenRules": {
-            "Tokens": [
-              {
-                "Chars": "Char",
-                "Length": "Int32"
-              }
-            ],
-            "Patterns": [
-              {
-                "QueryId": "String",
-                "Name": "String",
-                "Value": "String"
-              }
-            ]
-          }
+          "GroupRuleResource": "GroupRuleResource enumeration",
+          "GroupRuleField": "GroupRuleField enumeration",
+          "Values": [
+            {
+              "Chars": "Char",
+              "Length": "Int32"
+            }
+          ]
         }
       ],
       "Mappings": {
@@ -210,8 +201,8 @@ OK - retrieved the Data Views (could be an empty array)
         "SharedMappingRules": [
           {
             "Id": "String",
-            "Token": "String",
-            "MappingRulePattern": {
+            "Pattern": "String",
+            "MappingRule": {
               "PropertyPaths": [
                 {
                   "Chars": "Char",
@@ -222,8 +213,7 @@ OK - retrieved the Data Views (could be an empty array)
                 "FilterResource": "FilterResource enumeration",
                 "FilterField": "FilterField enumeration",
                 "Name": "String",
-                "Value": "String",
-                "FilterFunction": "FilterFunction enumeration"
+                "Value": "String"
               }
             }
           }
@@ -235,8 +225,7 @@ OK - retrieved the Data Views (could be an empty array)
             "IsKey": "Boolean",
             "DataType": "String"
           }
-        ],
-        "IsDefault": "Boolean"
+        ]
       },
       "IndexDataType": "IndexDataType enumeration",
       "IndexConfig": {
@@ -286,22 +275,14 @@ Multi Status - retrieved valid Data Views along with Errors
       "GroupRules": [
         {
           "Id": "String",
-          "GroupRuleType": "GroupRuleType enumeration",
-          "TokenRules": {
-            "Tokens": [
-              {
-                "Chars": "Char",
-                "Length": "Int32"
-              }
-            ],
-            "Patterns": [
-              {
-                "QueryId": "String",
-                "Name": "String",
-                "Value": "String"
-              }
-            ]
-          }
+          "GroupRuleResource": "GroupRuleResource enumeration",
+          "GroupRuleField": "GroupRuleField enumeration",
+          "Values": [
+            {
+              "Chars": "Char",
+              "Length": "Int32"
+            }
+          ]
         }
       ],
       "Mappings": {
@@ -309,8 +290,8 @@ Multi Status - retrieved valid Data Views along with Errors
         "SharedMappingRules": [
           {
             "Id": "String",
-            "Token": "String",
-            "MappingRulePattern": {
+            "Pattern": "String",
+            "MappingRule": {
               "PropertyPaths": [
                 {
                   "Chars": "Char",
@@ -321,8 +302,7 @@ Multi Status - retrieved valid Data Views along with Errors
                 "FilterResource": "FilterResource enumeration",
                 "FilterField": "FilterField enumeration",
                 "Name": "String",
-                "Value": "String",
-                "FilterFunction": "FilterFunction enumeration"
+                "Value": "String"
               }
             }
           }
@@ -334,8 +314,7 @@ Multi Status - retrieved valid Data Views along with Errors
             "IsKey": "Boolean",
             "DataType": "String"
           }
-        ],
-        "IsDefault": "Boolean"
+        ]
       },
       "IndexDataType": "IndexDataType enumeration",
       "IndexConfig": {
@@ -408,22 +387,14 @@ OK - retrieved the Data View
   "GroupRules": [
     {
       "Id": "String",
-      "GroupRuleType": "GroupRuleType enumeration",
-      "TokenRules": {
-        "Tokens": [
-          {
-            "Chars": "Char",
-            "Length": "Int32"
-          }
-        ],
-        "Patterns": [
-          {
-            "QueryId": "String",
-            "Name": "String",
-            "Value": "String"
-          }
-        ]
-      }
+      "GroupRuleResource": "GroupRuleResource enumeration",
+      "GroupRuleField": "GroupRuleField enumeration",
+      "Values": [
+        {
+          "Chars": "Char",
+          "Length": "Int32"
+        }
+      ]
     }
   ],
   "Mappings": {
@@ -431,8 +402,8 @@ OK - retrieved the Data View
     "SharedMappingRules": [
       {
         "Id": "String",
-        "Token": "String",
-        "MappingRulePattern": {
+        "Pattern": "String",
+        "MappingRule": {
           "PropertyPaths": [
             {
               "Chars": "Char",
@@ -443,8 +414,7 @@ OK - retrieved the Data View
             "FilterResource": "FilterResource enumeration",
             "FilterField": "FilterField enumeration",
             "Name": "String",
-            "Value": "String",
-            "FilterFunction": "FilterFunction enumeration"
+            "Value": "String"
           }
         }
       }
@@ -456,8 +426,7 @@ OK - retrieved the Data View
         "IsKey": "Boolean",
         "DataType": "String"
       }
-    ],
-    "IsDefault": "Boolean"
+    ]
   },
   "IndexDataType": "IndexDataType enumeration",
   "IndexConfig": {
@@ -526,22 +495,14 @@ DataViewDefinition dataViewDefinitionDto [FromBody] [Required] [No Default Value
   "GroupRules": [
     {
       "Id": "String",
-      "GroupRuleType": "GroupRuleType enumeration",
-      "TokenRules": {
-        "Tokens": [
-          {
-            "Chars": "Char",
-            "Length": "Int32"
-          }
-        ],
-        "Patterns": [
-          {
-            "QueryId": "String",
-            "Name": "String",
-            "Value": "String"
-          }
-        ]
-      }
+      "GroupRuleResource": "GroupRuleResource enumeration",
+      "GroupRuleField": "GroupRuleField enumeration",
+      "Values": [
+        {
+          "Chars": "Char",
+          "Length": "Int32"
+        }
+      ]
     }
   ],
   "Mappings": {
@@ -549,8 +510,8 @@ DataViewDefinition dataViewDefinitionDto [FromBody] [Required] [No Default Value
     "SharedMappingRules": [
       {
         "Id": "String",
-        "Token": "String",
-        "MappingRulePattern": {
+        "Pattern": "String",
+        "MappingRule": {
           "PropertyPaths": [
             {
               "Chars": "Char",
@@ -561,8 +522,7 @@ DataViewDefinition dataViewDefinitionDto [FromBody] [Required] [No Default Value
             "FilterResource": "FilterResource enumeration",
             "FilterField": "FilterField enumeration",
             "Name": "String",
-            "Value": "String",
-            "FilterFunction": "FilterFunction enumeration"
+            "Value": "String"
           }
         }
       }
@@ -574,8 +534,7 @@ DataViewDefinition dataViewDefinitionDto [FromBody] [Required] [No Default Value
         "IsKey": "Boolean",
         "DataType": "String"
       }
-    ],
-    "IsDefault": "Boolean"
+    ]
   },
   "IndexDataType": "IndexDataType enumeration",
   "IndexConfig": {
@@ -586,6 +545,12 @@ DataViewDefinition dataViewDefinitionDto [FromBody] [Required] [No Default Value
   }
 }
 ```
+
+Automatically generate default mappings
+```csharp
+bool defaultMappings [FromQuery] [Optional] [Default = False]
+```
+
 
 ### Returns
 
@@ -607,22 +572,14 @@ Successfully created a Data View Definition
   "GroupRules": [
     {
       "Id": "String",
-      "GroupRuleType": "GroupRuleType enumeration",
-      "TokenRules": {
-        "Tokens": [
-          {
-            "Chars": "Char",
-            "Length": "Int32"
-          }
-        ],
-        "Patterns": [
-          {
-            "QueryId": "String",
-            "Name": "String",
-            "Value": "String"
-          }
-        ]
-      }
+      "GroupRuleResource": "GroupRuleResource enumeration",
+      "GroupRuleField": "GroupRuleField enumeration",
+      "Values": [
+        {
+          "Chars": "Char",
+          "Length": "Int32"
+        }
+      ]
     }
   ],
   "Mappings": {
@@ -630,8 +587,8 @@ Successfully created a Data View Definition
     "SharedMappingRules": [
       {
         "Id": "String",
-        "Token": "String",
-        "MappingRulePattern": {
+        "Pattern": "String",
+        "MappingRule": {
           "PropertyPaths": [
             {
               "Chars": "Char",
@@ -642,8 +599,7 @@ Successfully created a Data View Definition
             "FilterResource": "FilterResource enumeration",
             "FilterField": "FilterField enumeration",
             "Name": "String",
-            "Value": "String",
-            "FilterFunction": "FilterFunction enumeration"
+            "Value": "String"
           }
         }
       }
@@ -655,8 +611,7 @@ Successfully created a Data View Definition
         "IsKey": "Boolean",
         "DataType": "String"
       }
-    ],
-    "IsDefault": "Boolean"
+    ]
   },
   "IndexDataType": "IndexDataType enumeration",
   "IndexConfig": {
@@ -731,22 +686,14 @@ DataViewDefinition dataViewDefinitionDto [FromBody] [Required] [No Default Value
   "GroupRules": [
     {
       "Id": "String",
-      "GroupRuleType": "GroupRuleType enumeration",
-      "TokenRules": {
-        "Tokens": [
-          {
-            "Chars": "Char",
-            "Length": "Int32"
-          }
-        ],
-        "Patterns": [
-          {
-            "QueryId": "String",
-            "Name": "String",
-            "Value": "String"
-          }
-        ]
-      }
+      "GroupRuleResource": "GroupRuleResource enumeration",
+      "GroupRuleField": "GroupRuleField enumeration",
+      "Values": [
+        {
+          "Chars": "Char",
+          "Length": "Int32"
+        }
+      ]
     }
   ],
   "Mappings": {
@@ -754,8 +701,8 @@ DataViewDefinition dataViewDefinitionDto [FromBody] [Required] [No Default Value
     "SharedMappingRules": [
       {
         "Id": "String",
-        "Token": "String",
-        "MappingRulePattern": {
+        "Pattern": "String",
+        "MappingRule": {
           "PropertyPaths": [
             {
               "Chars": "Char",
@@ -766,8 +713,7 @@ DataViewDefinition dataViewDefinitionDto [FromBody] [Required] [No Default Value
             "FilterResource": "FilterResource enumeration",
             "FilterField": "FilterField enumeration",
             "Name": "String",
-            "Value": "String",
-            "FilterFunction": "FilterFunction enumeration"
+            "Value": "String"
           }
         }
       }
@@ -779,8 +725,7 @@ DataViewDefinition dataViewDefinitionDto [FromBody] [Required] [No Default Value
         "IsKey": "Boolean",
         "DataType": "String"
       }
-    ],
-    "IsDefault": "Boolean"
+    ]
   },
   "IndexDataType": "IndexDataType enumeration",
   "IndexConfig": {
@@ -791,6 +736,12 @@ DataViewDefinition dataViewDefinitionDto [FromBody] [Required] [No Default Value
   }
 }
 ```
+
+Automatically generate default mappings
+```csharp
+bool defaultMappings [FromQuery] [Optional] [Default = False]
+```
+
 
 ### Returns
 
@@ -812,22 +763,14 @@ Successfully created a Data View Definition
   "GroupRules": [
     {
       "Id": "String",
-      "GroupRuleType": "GroupRuleType enumeration",
-      "TokenRules": {
-        "Tokens": [
-          {
-            "Chars": "Char",
-            "Length": "Int32"
-          }
-        ],
-        "Patterns": [
-          {
-            "QueryId": "String",
-            "Name": "String",
-            "Value": "String"
-          }
-        ]
-      }
+      "GroupRuleResource": "GroupRuleResource enumeration",
+      "GroupRuleField": "GroupRuleField enumeration",
+      "Values": [
+        {
+          "Chars": "Char",
+          "Length": "Int32"
+        }
+      ]
     }
   ],
   "Mappings": {
@@ -835,8 +778,8 @@ Successfully created a Data View Definition
     "SharedMappingRules": [
       {
         "Id": "String",
-        "Token": "String",
-        "MappingRulePattern": {
+        "Pattern": "String",
+        "MappingRule": {
           "PropertyPaths": [
             {
               "Chars": "Char",
@@ -847,8 +790,7 @@ Successfully created a Data View Definition
             "FilterResource": "FilterResource enumeration",
             "FilterField": "FilterField enumeration",
             "Name": "String",
-            "Value": "String",
-            "FilterFunction": "FilterFunction enumeration"
+            "Value": "String"
           }
         }
       }
@@ -860,8 +802,7 @@ Successfully created a Data View Definition
         "IsKey": "Boolean",
         "DataType": "String"
       }
-    ],
-    "IsDefault": "Boolean"
+    ]
   },
   "IndexDataType": "IndexDataType enumeration",
   "IndexConfig": {
@@ -941,22 +882,14 @@ DataViewDefinition dataViewDefinitionDto [FromBody] [Required] [No Default Value
   "GroupRules": [
     {
       "Id": "String",
-      "GroupRuleType": "GroupRuleType enumeration",
-      "TokenRules": {
-        "Tokens": [
-          {
-            "Chars": "Char",
-            "Length": "Int32"
-          }
-        ],
-        "Patterns": [
-          {
-            "QueryId": "String",
-            "Name": "String",
-            "Value": "String"
-          }
-        ]
-      }
+      "GroupRuleResource": "GroupRuleResource enumeration",
+      "GroupRuleField": "GroupRuleField enumeration",
+      "Values": [
+        {
+          "Chars": "Char",
+          "Length": "Int32"
+        }
+      ]
     }
   ],
   "Mappings": {
@@ -964,8 +897,8 @@ DataViewDefinition dataViewDefinitionDto [FromBody] [Required] [No Default Value
     "SharedMappingRules": [
       {
         "Id": "String",
-        "Token": "String",
-        "MappingRulePattern": {
+        "Pattern": "String",
+        "MappingRule": {
           "PropertyPaths": [
             {
               "Chars": "Char",
@@ -976,8 +909,7 @@ DataViewDefinition dataViewDefinitionDto [FromBody] [Required] [No Default Value
             "FilterResource": "FilterResource enumeration",
             "FilterField": "FilterField enumeration",
             "Name": "String",
-            "Value": "String",
-            "FilterFunction": "FilterFunction enumeration"
+            "Value": "String"
           }
         }
       }
@@ -989,8 +921,7 @@ DataViewDefinition dataViewDefinitionDto [FromBody] [Required] [No Default Value
         "IsKey": "Boolean",
         "DataType": "String"
       }
-    ],
-    "IsDefault": "Boolean"
+    ]
   },
   "IndexDataType": "IndexDataType enumeration",
   "IndexConfig": {
@@ -1001,6 +932,12 @@ DataViewDefinition dataViewDefinitionDto [FromBody] [Required] [No Default Value
   }
 }
 ```
+
+Automatically generate default mappings
+```csharp
+bool defaultMappings [FromQuery] [Optional] [Default = False]
+```
+
 
 ### Returns
 
@@ -1812,22 +1749,14 @@ OK - retrieved the Data View group rules
 [
 {
   "Id": "String",
-  "GroupRuleType": "GroupRuleType enumeration",
-  "TokenRules": {
-    "Tokens": [
-      {
-        "Chars": "Char",
-        "Length": "Int32"
-      }
-    ],
-    "Patterns": [
-      {
-        "QueryId": "String",
-        "Name": "String",
-        "Value": "String"
-      }
-    ]
-  }
+  "GroupRuleResource": "GroupRuleResource enumeration",
+  "GroupRuleField": "GroupRuleField enumeration",
+  "Values": [
+    {
+      "Chars": "Char",
+      "Length": "Int32"
+    }
+  ]
 }
 ]
 ```
@@ -1885,22 +1814,14 @@ Updated group rules in the request body
 [
 {
   "Id": "String",
-  "GroupRuleType": "GroupRuleType enumeration",
-  "TokenRules": {
-    "Tokens": [
-      {
-        "Chars": "Char",
-        "Length": "Int32"
-      }
-    ],
-    "Patterns": [
-      {
-        "QueryId": "String",
-        "Name": "String",
-        "Value": "String"
-      }
-    ]
-  }
+  "GroupRuleResource": "GroupRuleResource enumeration",
+  "GroupRuleField": "GroupRuleField enumeration",
+  "Values": [
+    {
+      "Chars": "Char",
+      "Length": "Int32"
+    }
+  ]
 }
 ]
 ```
@@ -2022,8 +1943,8 @@ OK - retrieved the Data View mappings
   "SharedMappingRules": [
     {
       "Id": "String",
-      "Token": "String",
-      "MappingRulePattern": {
+      "Pattern": "String",
+      "MappingRule": {
         "PropertyPaths": [
           {
             "Chars": "Char",
@@ -2034,8 +1955,7 @@ OK - retrieved the Data View mappings
           "FilterResource": "FilterResource enumeration",
           "FilterField": "FilterField enumeration",
           "Name": "String",
-          "Value": "String",
-          "FilterFunction": "FilterFunction enumeration"
+          "Value": "String"
         }
       }
     }
@@ -2047,8 +1967,7 @@ OK - retrieved the Data View mappings
       "IsKey": "Boolean",
       "DataType": "String"
     }
-  ],
-  "IsDefault": "Boolean"
+  ]
 }
 ```
 
@@ -2107,8 +2026,8 @@ Mappings mappingsDto [FromBody] [Required] [No Default Value]
   "SharedMappingRules": [
     {
       "Id": "String",
-      "Token": "String",
-      "MappingRulePattern": {
+      "Pattern": "String",
+      "MappingRule": {
         "PropertyPaths": [
           {
             "Chars": "Char",
@@ -2119,8 +2038,7 @@ Mappings mappingsDto [FromBody] [Required] [No Default Value]
           "FilterResource": "FilterResource enumeration",
           "FilterField": "FilterField enumeration",
           "Name": "String",
-          "Value": "String",
-          "FilterFunction": "FilterFunction enumeration"
+          "Value": "String"
         }
       }
     }
@@ -2132,10 +2050,15 @@ Mappings mappingsDto [FromBody] [Required] [No Default Value]
       "IsKey": "Boolean",
       "DataType": "String"
     }
-  ],
-  "IsDefault": "Boolean"
+  ]
 }
 ```
+
+Automatically generate default mappings
+```csharp
+bool defaultMappings [FromQuery] [Optional] [Default = False]
+```
+
 
 ### Returns
 

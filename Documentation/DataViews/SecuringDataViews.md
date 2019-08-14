@@ -13,7 +13,7 @@ The data views collection access control list is used to control which users and
 
 The data views collection access control list also determines the default access control list for individual data views. Note that changing the collection level access control list does not affect existing data views as the collection level access control list is only used when the data view is first created. Once the data view exists, data view level access control is managed independently of collection level access control. See [Data Views Access Control](#Data-Views-Access-Control) for more information on securing individual data views. 
 
-When a namespace is first created, the data views collection access control list will default to the access control list for the entire namespace. Use the API routes in [Access Control API](..\AccessControl_API.md) to view and update the data views collection access control list. Note, only users and clients with ManageAccessControl rights on the data views collection are authorized to view and update the collection level access control list. 
+When a namespace is first created, the data views collection access control list will default to the access control list for the entire namespace. Use the API routes in [Access Control API](AccessControl_API.md) to view and update the data views collection access control list. Note, only users and clients with ManageAccessControl rights on the data views collection are authorized to view and update the collection level access control list. 
 
 ## Data Views Access Control
 Data views are also secured individually on a per data view basis. This allows data views containing sensitive information to be secured more tightly without limiting access to all data views within the collection. 
@@ -29,9 +29,9 @@ The data view owner and access control list control basic authorization to a giv
 | Delete                         | Delete                         |
 | Read access control objects    | ManageAccessControl            |
 | Update access control objects  | ManageAccessControl            |
-| Create                         | Write on data view collection<br> (see [Collection access control](#Collection-Access-Control))  |
+| Create                         | Write on data view collection<br> (see [Collection access control](#Data-Views-Collection-Access-Control))  |
 
-On creation, a data view’s access control list will default to the access control list of the data views collection. The data view owner will default to the user or client that created the data view. Use the API routes in [Access Control API](..\AccessControl_API.md) to view and update the access control list and owner of a given data view. 
+On creation, a data view’s access control list will default to the access control list of the data views collection. The data view owner will default to the user or client that created the data view. Use the API routes in [Access Control API](AccessControl_API.md) to view and update the access control list and owner of a given data view. 
 
 ## Data Access Control
 Data views honor the configured access control rights of streams (see [Streams](..\SequentialDataStore\SDS_Streams.md)). Users and clients with read access on a data view are not automatically granted read access to the data contained within the data view as this authorization is configured at the stream level. 

@@ -16,18 +16,16 @@ Data view resources show the selected subset of data in each data view, as defin
 A data item is an SdsStream. The collection of data items are defined by the [queries](Queries.md)  property in the data view, where the queries define the search criteria and the data items represent results of the search. Each data item can have one or more properties in the data view data.  
 
 #### Data Groups
-Data items can optionally be organized into data groups in order for users to more easily compare similar properties in the same column of a data view. Each data group contains one or more data items. The entire collection of data groups contains all data items.
+Data items can optionally be organized into data groups in order for users to more easily compare similar properties in the same column of a data view. Each data group contains one or more data items. The entire collection of data groups contains all data items. Data groups are defined by the [group rules](GroupRules.md) property in the data view, where the group rules define the grouping criteria and the data groups represent the results of such grouping. Any streams that do not meet grouping criteria are consolidated in a single group with a group rule name of "(NoMatch)". 
 
-
-Data groups are defined by the [group rules](GroupRules.md) property in the data view, where the group rules define the grouping criteria and the data groups represent the results of such grouping. Any streams that do not meet grouping criteria are consolidated in a single group with a group rule name of "(NoMatch)". 
 #### Data Mappings
 Data mappings are identical to the [mappings](Mappings.md) property in the data view if explicitly defined. Otherwise, a default set of data mappings is generated based on all the properties of all data items, after taking grouping into account. 
 
-In each of the Data Items, Data Groups, and Data Mappings, the resource is "resolved" and cached when any of the resources is first accessed on a per data view, per user basis. Subsequent calls to the resources return the cached results, which is evident from the time of resolution property in the returned response. A cache parameter can be included in the request to control whether the resolved resources are to be refreshed. By default, the cache parameter is set to presever the cache for all data view resources endpoints. If there are changes to the underlying streams in SDS, the results will not be updated unless the cache is explicitly refreshed. 
+In each of the data items, data groups, and data mappings, the resource is "resolved" and cached when any of the resources is first accessed on a per data view, per user basis. Subsequent calls to the resources return the cached results, which is evident from the time of resolution property in the returned response. A cache parameter can be included in the request to control whether the resolved resources are to be refreshed. By default, the cache parameter is set to presever the cache for all data view resources endpoints. If there are changes to the underlying streams in SDS, the results will not be updated unless the cache is explicitly refreshed. 
 
 The following APIs are available to retrieve resolved resources of a data view.
 
-[Get data groups](DataRetrieval_API.md)
+[Get data groups](DataRetrieval_API.md#get-data-groups)
 ```csharp
     GET Dataviews/{id}/datagroups
         Query parameters: skip, count, cache
@@ -35,28 +33,28 @@ The following APIs are available to retrieve resolved resources of a data view.
  
 This returns all data items matching the data view query, organized in groups based on the data view group rules. 
 
-[Get data group by id](DataRetrieval_API.md)
+[Get data group by id](DataRetrieval_API.md#get-data-group)
 ```csharp
     GET Dataviews/{id}/datagroup/{datagroupid}
         Query parameters: cache
 ```
 This returns data items from a single data group based on id. 
 
-[Get data items](DataRetrieval_API.md)
+[Get data items](DataRetrieval_API.md#get-dataitems)
 ```csharp
     GET Dataviews/{id}/dataitems
         Query parameters: skip, count, cache
 ```
 This returns all data items matching the data view query in a flat list. 
 
-[Get data mappings](DataRetrieval_API.md)
+[Get data mappings](DataRetrieval_API.md#get-data-mappings)
 ```csharp
     GET Dataviews/{id}/datamappings
         Query parameters: cache
 ```
 This returns the resolved mappings for the data view, defining where each column gets its data value.
 
-[Get statistics](DataRetrieval_API.md)
+[Get statistics](DataRetrieval_API.md#get-statistics)
 ```csharp
     GET Dataviews/{id}/statistics
         Query parameters: cache
@@ -78,7 +76,7 @@ Retrieving data involves retrieving data values from the optionally grouped data
 
 Currently, only datetime interpolated data is supported. 
 
-[Get Data View Data API](DataRetrieval_API.md): 
+[Get Data View Data API](DataRetrieval_API.md#get-data-view-data): 
 ```csharp
     GET Dataviews/{id}/data/interpolated
         Query parameters: startindex, endindex, interval, count, form, continuationToken, cache

@@ -34,7 +34,7 @@ string namespaceId  [Required] [No Default Value]
 #### 200
 
 Successfully retrieved the Data Views collection Access Control List.
-                 See [Access Control Lists](Access_Control.md#AccessControlList) for object structure and more information about ACLs.
+                 See [Access Control Lists](..\Access_Control.md#access-control-lists) for object structure and more information about ACLs.
 
 #### 403
 
@@ -70,7 +70,7 @@ string namespaceId  [Required] [No Default Value]
 ### Parameters from request body: 
 
 Updated Access Control List.
-                 See [Access Control Lists](Access_Control.md#AccessControlList) for object structure and more information about ACLs.
+                 See [Access Control Lists](..\Access_Control.md#access-control-lists) for object structure and more information about ACLs.
 ```csharp
 AccessControlList acl [FromBody] [Required] [No Default Value]
 ```
@@ -131,7 +131,7 @@ string id  [Required] [No Default Value]
 #### 200
 
 OK - retrieved the Data View Access Control List.
-                 See [Access Control Lists](Access_Control.md#AccessControlList) for object structure and more information about ACLs.
+                 See [Access Control Lists](..\Access_Control.md#access-control-lists) for object structure and more information about ACLs.
 
 #### 403
 
@@ -178,7 +178,7 @@ string id  [Required] [No Default Value]
 ### Parameters from request body: 
 
 Updated Access Control List.
-                 See [Access Control Lists](Access_Control.md#AccessControlList) for object structure and more information about ACLs.
+                 See [Access Control Lists](..\Access_Control.md#access-control-lists) for object structure and more information about ACLs.
 ```csharp
 AccessControlList acl [FromBody] [Required] [No Default Value]
 ```
@@ -244,7 +244,7 @@ string id  [Required] [No Default Value]
 #### 200
 
 OK - retrieved the Data View owner.
-                 See [Owner](Access_Control.md#Owner) for object structure more information about Owners.
+                 See [Owner](..\Access_Control.md#owner) for object structure more information about Owners.
 
 #### 403
 
@@ -291,7 +291,7 @@ string id  [Required] [No Default Value]
 ### Parameters from request body: 
 
 Updated owner.
-                 See [Owner](Access_Control.md#Owner) for object structure more information about Owners.
+                 See [Owner](..\Access_Control.md#owner) for object structure more information about Owners.
 ```csharp
 Trustee owner [FromBody] [Required] [No Default Value]
 ```

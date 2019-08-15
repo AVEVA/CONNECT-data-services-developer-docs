@@ -39,7 +39,7 @@ ItemIdentifier | FilterUnit | False | Identifier for the resource that contains 
 
 
  ## `ItemIdentifier` 
- The FilterUnit identifies the property that the user wants to select with a [PropertyMappingRule](#MappingRule).
+ The FilterUnit identifies the property that the user wants to select with a [PropertyMappingRule](#mappingrule).
 ### Properties
 
 Property | Type | Required | Descriptions
@@ -134,7 +134,7 @@ ItemIdentifier | FilterUnit | False | Identifier for the resource that contains 
 ## `Example` 
 The following examples show different definitions of the Mappings object. The first example shows a mapping with one column defined, using a property mapping rule to define the property paths while leaving the item identifier undefined. This is accepted as long as the specified paths do not lead to an ambiguous result, and would in such case require the user to include an item identifier to further specify their rule. Since only one column is defined, it is required to define it as the key column. 
 
-The second example uses a shared mapping rule with a pattern to match the property path and the item identifier, including every stream with TankStream as its description. It also uses the group rule defined in the [Group Rules](xref:Mappings) page to create data groups based on the states of the data source. The FlowRate and Temperature columns are defined with the shared mapping rule, using the value to specify their property path. The Volume column is an example of explicitly defining the property mapping rule in the column definition. This is done to demonstrate the difference and the result would be identical, using the shared rule and a value as the previous columns do.
+The second example uses a shared mapping rule with a pattern to match the property path and the item identifier, including every stream with TankStream as its description. It also uses the group rule defined in the [Group Rules](xref:GroupRules) page to create data groups based on the states of the data source. The FlowRate and Temperature columns are defined with the shared mapping rule, using the value to specify their property path. The Volume column is an example of explicitly defining the property mapping rule in the column definition. This is done to demonstrate the difference and the result would be identical, using the shared rule and a value as the previous columns do.
 ```json
 {
   "Columns": [

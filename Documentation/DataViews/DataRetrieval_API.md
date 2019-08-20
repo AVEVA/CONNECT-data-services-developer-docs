@@ -29,19 +29,19 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview
+Id of the Data View
 ```csharp
 string id  [Required] [No Default Value]
 ```
 
 
-Specifies beginning index. The default value is specified by the [IndexDataType](DataViews_API.md).
+Specifies beginning index. The default value is specified by the [Index Config](IndexConfig.md).
 ```csharp
 string startIndex [FromQuery] [Required] [No Default Value]
 ```
 
 
-Specifies end index. The default value is specified by the [IndexDataType](DataViews_API.md).
+Specifies end index. The default value is specified by the [Index Config](IndexConfig.md).
 ```csharp
 string endIndex [FromQuery] [Required] [No Default Value]
 ```
@@ -133,7 +133,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview
+Id of the Data View
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -217,20 +217,6 @@ Multi-status. Successfully retrieved data groups along with errors
       "TimeOfResolution": "DateTimeOffset",
       "Id": "Int32",
       "ItemCount": "Int32",
-      "Errors": [
-        {
-          "OperationId": "String",
-          "Error": "String",
-          "Reason": "String",
-          "Resolution": "String",
-          "AdditionalParameters": [
-            {
-              "Chars": "Char",
-              "Length": "Int32"
-            }
-          ]
-        }
-      ],
       "Values": [
         {
           "Chars": "Char",
@@ -267,12 +253,12 @@ Internal server error
 
 ***
 
-## `Get Data Group`
+## `Get Data Mappings`
 
-Get a specific Data Group
+Get mappings for a Data View by Id
 
 ### Request
-`GET api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/dataGroups/{dataGroupId}`
+`GET api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/datamappings`
 
 ### Parameters
 
@@ -288,120 +274,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of Data View
-```csharp
-string id  [Required] [No Default Value]
-```
-
-
-Id of the data group
-```csharp
-string dataGroupId  [Required] [No Default Value]
-```
-
-
-Specifies if Data View backing resources are to be refreshed. See [Retrieving Data](DataRetrieval.md)
-```csharp
-string cache  [Optional] [Default = "preserve"]
-```
-
-
-### Returns
-
-#### 200
-
-Successfully retrieved data group
-
-```json
-{
-  "TimeOfResolution": "DateTimeOffset",
-  "Id": "Int32",
-  "ItemCount": "Int32",
-  "Values": [
-    {
-      "Chars": "Char",
-      "Length": "Int32"
-    }
-  ],
-  "DataItems": [
-    {
-      "ItemType": "ItemType enumeration",
-      "Id": "String",
-      "Name": "String",
-      "TenantId": "String",
-      "NamespaceId": "String"
-    }
-  ]
-}
-```
-
-#### 207
-
-Multi-status. Successfully retrieved data groups along with errors
-
-```json
-{
-  "TimeOfResolution": "DateTimeOffset",
-  "Id": "Int32",
-  "ItemCount": "Int32",
-  "Errors": [
-    {
-      "OperationId": "String",
-      "Error": "String",
-      "Reason": "String",
-      "Resolution": "String",
-      "AdditionalParameters": [
-        {
-          "Chars": "Char",
-          "Length": "Int32"
-        }
-      ]
-    }
-  ],
-  "Values": [
-    {
-      "Chars": "Char",
-      "Length": "Int32"
-    }
-  ],
-  "DataItems": [
-    {
-      "ItemType": "ItemType enumeration",
-      "Id": "String",
-      "Name": "String",
-      "TenantId": "String",
-      "NamespaceId": "String"
-    }
-  ]
-}
-```
-
-#### 403
-
-Unauthorized
-
-
-#### 404
-
-Specified Data View Id not found
-
-
-#### 500
-
-Internal server error
-
-***
-
-## `Get Data Mappings`
-
-Get mappings for a dataview by Id
-
-### Request
-`GET api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/datamappings`
-
-### Parameters
-
-Id of the dataview
+Id of the Data View
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -472,14 +345,26 @@ Internal server error
 
 ## `Get DataItems`
 
-Get data items for a dataview by Id
+Get data items for a Data View by Id
 
 ### Request
 `GET api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/dataitems`
 
 ### Parameters
 
-Id of the dataview
+Id of tenant
+```csharp
+string tenantId  [Required] [No Default Value]
+```
+
+
+Id of namespace
+```csharp
+string namespaceId  [Required] [No Default Value]
+```
+
+
+Id of the Data View
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -575,14 +460,26 @@ Internal server error
 
 ## `Get Statistics`
 
-Get statistics for a dataview by Id
+Get statistics for a Data View by Id
 
 ### Request
 `GET api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/statistics`
 
 ### Parameters
 
-Id of the dataview
+Id of tenant
+```csharp
+string tenantId  [Required] [No Default Value]
+```
+
+
+Id of namespace
+```csharp
+string namespaceId  [Required] [No Default Value]
+```
+
+
+Id of the Data View
 ```csharp
 string id  [Required] [No Default Value]
 ```

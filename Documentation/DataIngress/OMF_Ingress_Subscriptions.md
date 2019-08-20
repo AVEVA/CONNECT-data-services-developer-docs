@@ -29,9 +29,9 @@ Subscription information is contained in an object called Subscription which has
 | Name                 | string                  | A friendly name for the Subscription.  |
 | TopicId              | string                  | Unique Id for the Topic we are subscribing to. |
 | TopicTenantId        | string                  | Identifies the owner of the Topic.     |
-| TopicNamespaceId     | string                  | Identifies the Namespace for the Topic |
+| TopicNamespaceId     | string                  | Identifies the namespace for the Topic |
 | TenantId             | string                  | Identifies the owner of the Subscription. |
-| NamespaceId          | string                  | Identifies the Namespace for the Subscription. |
+| NamespaceId          | string                  | Identifies the namespace for the Subscription. |
 | Description          | string                  | Description of the Subscription.       |
 | Type                 | integer                 | An enumeration which describes the type of Subscription where Sds=1 |
 | CreatedDate          | DateTime                | Date and time this Subscription was created. |

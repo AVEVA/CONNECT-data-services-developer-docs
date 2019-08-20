@@ -8,7 +8,7 @@ Topics
 Topic Information 
 -----------------------
 
-A Topic is used to aggregate data received from Clients. The Topic then makes the data available for consumption 
+A Topic aggregates data received from Clients. The Topic then makes the data available for consumption 
 via a Subscription. A Topic must contain at least one Client Id. Clients may be added to or 
 removed from an existing Topic. A given Client may also belong to multiple Topics in separate namespaces. 
 

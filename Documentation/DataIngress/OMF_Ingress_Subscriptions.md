@@ -7,7 +7,9 @@ Subscriptions
 Subscription Information 
 -----------------------
 
-A Subscription is used to consume data from a Topic. Multiple Subscriptions can retrieve data from a single Topic.
+A Subscription consumes data from a Topic. Multiple Subscriptions can retrieve data from a single Topic. 
+
+A Subscription can consume data from a Topic in a different Namespace. However, the Topic's Namespace must be in the same Region as the Subscription's Namespace.
 
 The API calls in this section are used to create and manipulate Subscriptions.
 

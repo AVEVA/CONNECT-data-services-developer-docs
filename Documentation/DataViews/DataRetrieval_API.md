@@ -29,7 +29,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview
+Id of Data View
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -133,7 +133,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview
+Id of Data View
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -255,7 +255,7 @@ Internal server error
 
 ## `Get Data Mappings`
 
-Get mappings for a dataview by Id
+Get mappings for a Data View by Id
 
 ### Request
 `GET api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/datamappings`
@@ -274,7 +274,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of the dataview
+Id of the Data View
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -345,7 +345,7 @@ Internal server error
 
 ## `Get DataItems`
 
-Get data items for a dataview by Id
+Get data items for a Data View by Id
 
 ### Request
 `GET api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/dataitems`
@@ -364,7 +364,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of the dataview
+Id of the Data View
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -460,7 +460,7 @@ Internal server error
 
 ## `Get Statistics`
 
-Get statistics for a dataview by Id
+Get statistics for a Data View by Id
 
 ### Request
 `GET api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/statistics`
@@ -479,7 +479,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of the dataview
+Id of the Data View
 ```csharp
 string id  [Required] [No Default Value]
 ```

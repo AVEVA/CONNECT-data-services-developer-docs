@@ -7,16 +7,16 @@ Subscriptions
 Subscription Information 
 -----------------------
 
-A Subscription consumes data from a Topic. Multiple Subscriptions can retrieve data from a single Topic. 
+A Subscription consumes OMF messages from a Topic and forwards them to a data store. Multiple Subscriptions can retrieve OMF messages from a single Topic. 
 
-A Subscription can consume data from a Topic in a different Namespace. However, the Topic's Namespace must be in the same Region as the Subscription's Namespace.
+A Subscription can consume OMF messages from a Topic in a different Namespace. However, the Topic's Namespace must be in the same Region as the Subscription's Namespace. OMF messages that the Subscription is processing are temporarily stored in the Region of its Namespace.
 
 The API calls in this section are used to create and manipulate Subscriptions.
 
 Sequential Data Store (Sds) Subscription 
 ---------------
 
-A Sequential Data Store Subscription retrieves data from a Topic and writes it directly to a namespace in the Sequential Data Store. Currently only Sds Subscriptions are supported. The documentation uses Sds Subscription and Subscription interchangeably.
+A Sequential Data Store Subscription retrieves OMF messages from a Topic and writes it directly to a Namespace in the Sequential Data Store. Currently only Sds Subscriptions are supported. The documentation uses Sds Subscription and Subscription interchangeably.
 
 Data Models 
 -----------
@@ -29,9 +29,9 @@ Subscription information is contained in an object called Subscription which has
 | Name                 | string                  | A friendly name for the Subscription.  |
 | TopicId              | string                  | Unique Id for the Topic we are subscribing to. |
 | TopicTenantId        | string                  | Identifies the owner of the Topic.     |
-| TopicNamespaceId     | string                  | Identifies the namespace for the Topic |
+| TopicNamespaceId     | string                  | Identifies the Namespace for the Topic |
 | TenantId             | string                  | Identifies the owner of the Subscription. |
-| NamespaceId          | string                  | Identifies the namespace for the Subscription. |
+| NamespaceId          | string                  | Identifies the Namespace for the Subscription. |
 | Description          | string                  | Description of the Subscription.       |
 | Type                 | integer                 | An enumeration which describes the type of Subscription where Sds=1 |
 | CreatedDate          | DateTime                | Date and time this Subscription was created. |

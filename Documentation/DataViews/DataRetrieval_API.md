@@ -29,7 +29,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of Data View
+Id of the Data View
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -133,7 +133,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of Data View
+Id of the Data View
 ```csharp
 string id  [Required] [No Default Value]
 ```

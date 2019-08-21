@@ -16,7 +16,7 @@ The API calls in this section are used to create and manipulate Subscriptions.
 Sequential Data Store (Sds) Subscription 
 ---------------
 
-A Sequential Data Store Subscription retrieves OMF messages from a Topic and writes it directly to a Namespace in the Sequential Data Store. Currently only Sds Subscriptions are supported. The documentation uses Sds Subscription and Subscription interchangeably.
+A Sequential Data Store Subscription retrieves OMF messages from a Topic and writes them directly to a Namespace in the Sequential Data Store. Currently only Sds Subscriptions are supported. The documentation uses Sds Subscription and Subscription interchangeably.
 
 Data Models 
 -----------

@@ -267,131 +267,6 @@ Internal server error
 
 ***
 
-## `Get Data Group`
-
-Get a specific Data Group
-
-### Request
-`GET api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/dataGroups/{dataGroupId}`
-
-### Parameters
-
-Id of tenant
-```csharp
-string tenantId  [Required] [No Default Value]
-```
-
-
-Id of namespace
-```csharp
-string namespaceId  [Required] [No Default Value]
-```
-
-
-Id of Data View
-```csharp
-string id  [Required] [No Default Value]
-```
-
-
-Id of the data group
-```csharp
-string dataGroupId  [Required] [No Default Value]
-```
-
-
-Specifies if Data View backing resources are to be refreshed. See [Retrieving Data](DataRetrieval.md)
-```csharp
-string cache  [Optional] [Default = "preserve"]
-```
-
-
-### Returns
-
-#### 200
-
-Successfully retrieved data group
-
-```json
-{
-  "TimeOfResolution": "DateTimeOffset",
-  "Id": "Int32",
-  "ItemCount": "Int32",
-  "Values": [
-    {
-      "Chars": "Char",
-      "Length": "Int32"
-    }
-  ],
-  "DataItems": [
-    {
-      "ItemType": "ItemType enumeration",
-      "Id": "String",
-      "Name": "String",
-      "TenantId": "String",
-      "NamespaceId": "String"
-    }
-  ]
-}
-```
-
-#### 207
-
-Multi-status. Successfully retrieved data groups along with errors
-
-```json
-{
-  "TimeOfResolution": "DateTimeOffset",
-  "Id": "Int32",
-  "ItemCount": "Int32",
-  "Errors": [
-    {
-      "OperationId": "String",
-      "Error": "String",
-      "Reason": "String",
-      "Resolution": "String",
-      "AdditionalParameters": [
-        {
-          "Chars": "Char",
-          "Length": "Int32"
-        }
-      ]
-    }
-  ],
-  "Values": [
-    {
-      "Chars": "Char",
-      "Length": "Int32"
-    }
-  ],
-  "DataItems": [
-    {
-      "ItemType": "ItemType enumeration",
-      "Id": "String",
-      "Name": "String",
-      "TenantId": "String",
-      "NamespaceId": "String"
-    }
-  ]
-}
-```
-
-#### 403
-
-Unauthorized
-
-
-#### 404
-
-Specified Data View Id not found
-
-
-#### 500
-
-Internal server error
-
-***
-
 ## `Get Data Mappings`
 
 Get mappings for a dataview by Id
@@ -413,7 +288,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of the dataview
+Id of the Data View
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -503,7 +378,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of the dataview
+Id of the Data View
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -618,7 +493,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of the dataview
+Id of the Data View
 ```csharp
 string id  [Required] [No Default Value]
 ```

@@ -29,7 +29,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview
+Id of the Data View
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -133,7 +133,7 @@ string namespaceId  [Required] [No Default Value]
 ```
 
 
-Id of dataview
+Id of the Data View
 ```csharp
 string id  [Required] [No Default Value]
 ```
@@ -217,20 +217,6 @@ Multi-status. Successfully retrieved data groups along with errors
       "TimeOfResolution": "DateTimeOffset",
       "Id": "Int32",
       "ItemCount": "Int32",
-      "Errors": [
-        {
-          "OperationId": "String",
-          "Error": "String",
-          "Reason": "String",
-          "Resolution": "String",
-          "AdditionalParameters": [
-            {
-              "Chars": "Char",
-              "Length": "Int32"
-            }
-          ]
-        }
-      ],
       "Values": [
         {
           "Chars": "Char",
@@ -269,7 +255,7 @@ Internal server error
 
 ## `Get Data Mappings`
 
-Get mappings for a dataview by Id
+Get mappings for a Data View by Id
 
 ### Request
 `GET api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/datamappings`
@@ -359,7 +345,7 @@ Internal server error
 
 ## `Get DataItems`
 
-Get data items for a dataview by Id
+Get data items for a Data View by Id
 
 ### Request
 `GET api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/dataitems`
@@ -474,7 +460,7 @@ Internal server error
 
 ## `Get Statistics`
 
-Get statistics for a dataview by Id
+Get statistics for a Data View by Id
 
 ### Request
 `GET api/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/statistics`

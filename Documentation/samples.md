@@ -5,7 +5,7 @@ uid: samples
 Samples
 =======
 
-The [OCS-Samples](https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples) illustrate several ways for applications to interact with the OCS REST API.
+The [OCS-Samples](https://github.com/osisoft/OSI-Samples-OCS) illustrate several ways for applications to interact with the OCS REST API.
 
 The examples cover the basics of interacting with OCS, such as:
 
@@ -17,11 +17,11 @@ The examples cover the basics of interacting with OCS, such as:
 
 Currently, the samples are available in these languages:
 
-* [.NET](https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/SDS/DotNet) 
-* [Java](https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/SDS/Java)
-* [Python](https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/SDS/Python/SDSPy/)
-* [NodeJs](https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/SDS/JavaScript/NodeJs)
-* [Angular](https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/SDS/JavaScript/Angular)
+* [.NET](https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/SDS/DotNet) 
+* [Java](https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/SDS/Java/sdsjava)
+* [Python](https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/SDS/Python/SDSPy/Python3)
+* [NodeJs](https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/SDS/JavaScript/NodeJs)
+* [Angular](https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/SDS/JavaScript/Angular)
 
 Because the examples are intended for demonstration purposes, they represent some example
 practices. The patterns may change as OCS continues to develop. Be sure

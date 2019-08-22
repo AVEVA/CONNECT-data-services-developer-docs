@@ -527,21 +527,21 @@ For the first request, specify a null or empty string for the `continuationToken
 
 **Requests**
  ```text
-     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data? 
+     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data 
           ?startIndex={startIndex}&endIndex={endIndex}
 
-     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data? 
+     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data 
           ?startIndex={startIndex}&endIndex={endIndex}&boundaryType={boundaryType}
 
-     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data? 
+     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data 
           ?startIndex={startIndex}&startBoundaryType={startBoundaryType} 
           &endIndex={endIndex}&endBoundaryType={endBoundaryType}
 
-     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data? 
+     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data 
           ?startIndex={startIndex}&endIndex={endIndex}
           &count={count}&continuationToken={continuationToken}
 
-     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data? 
+     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data 
           ?startIndex={startIndex}&startBoundaryType={startBoundaryType} 
           &endIndex={endIndex}&endBoundaryType={endBoundaryType}&filter={filter}&count={count} 
           &continuationToken={continuationToken}

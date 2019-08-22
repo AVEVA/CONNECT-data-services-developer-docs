@@ -13,7 +13,7 @@ Id | string | True | Id of the query
 Query | string | True | Query to use for data retrieval
 
 ## `Example` 
-The first example shows a simple Queries object with a list of queries defined using strings. The second example shows a Queries object with a complex query string. Notice how the OR, AND, and NOT operators can be used to build complex expressions. Queries support all of the operators supported by [Sequential Data Store](https://ocs-docs.osisoft.com/Documentation/SequentialDataStore/Searching.html). This way users can build complex queries with the same search strings used to find a desired set of streams.
+The first example shows a simple Queries object with a list of queries defined using strings. The second example shows a Queries object with a complex query string. Notice how the OR, AND, and NOT operators can be used to build complex expressions. Queries support all of the operators supported by [Sequential Data Store](..\SequentialDataStore\Searching.md). This way users can build complex queries with the same search strings used to find a desired set of streams.
 ```json
 [
   {

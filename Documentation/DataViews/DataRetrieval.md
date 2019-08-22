@@ -21,7 +21,7 @@ Data items can optionally be organized into data groups in order for users to mo
 #### Data Mappings
 Data mappings are identical to the [mappings](Mappings.md) property in the data view if explicitly defined. Otherwise, a default set of data mappings is generated based on all the properties of all data items, after taking grouping into account. 
 
-In each of the data items, data groups, and data mappings, the resource is "resolved" and cached when any of the resources is first accessed on a per data view, per user basis. Subsequent calls to the resources return the cached results, which is evident from the time of resolution property in the returned response. A cache parameter can be included in the request to control whether the resolved resources are to be refreshed. By default, the cache parameter is set to preseve the cache for all data view resources endpoints. If there are changes to the underlying streams in SDS, the results will not be updated unless the cache is explicitly refreshed. 
+In each of the data items, data groups, and data mappings, the resource is "resolved" and cached when any of the resources is first accessed on a per data view, per user basis. Subsequent calls to the resources return the cached results, which is evident from the time of resolution property in the returned response. A cache parameter can be included in the request to control whether the resolved resources are to be refreshed. By default, the cache parameter is set to preserve the cache for all data view resources endpoints. If there are changes to the underlying streams in SDS, the results will not be updated unless the cache is explicitly refreshed. 
 
 The following APIs are available to retrieve resolved resources of a data view.
 

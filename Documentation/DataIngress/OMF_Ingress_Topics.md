@@ -8,17 +8,11 @@ Topics
 Topic Information 
 -----------------------
 
-A Topic is used to aggregate data received from Clients. The Topic then makes the data available for consumption 
-via a Subscription. A Topic must contain at least one Client Id. Clients may be added to or 
-removed from an existing Topic. A given Client may also belong to multiple Topics in separate namespaces. 
+A Topic aggregates OMF messages received from one or more Clients and makes them available for consumption by a Subscription.
 
-When a Topic is created, data sent from its associated Clients is routed to a special queue 
-where it can be consumed by a Subscription. This queue provides a buffer of up to one day for 
-Subscriptions, which are temporarily unable to receive data.
+A Topic must contain at least one Client Id. Clients may be added to or removed from an existing Topic. A given Client may belong to multiple Topics in separate Namespaces. 
 
-While OMF messages may be sent to OCS immediately after creating a Topic, the messages 
-cannot be made available for consumption until a Subscription is created. However, some 
-messages are stored for later consumption in OCS databases. See OMF documentation for more information.
+When a Topic is created, OMF messages sent from the Topic's associated Clients are routed to a queue where they can be consumed by a Subscription. This queue makes OMF messages available to Subscriptions for up to seven days. While the OMF messages are in the Topic queue, they are not available for retrieval via an API. They must first be consumed by a Subscription and forwarded to a data store. The Topic queue stores the OMF messages in the Region of its Namespace.
 
 The API calls in this section are used to create and manipulate topics. 
 

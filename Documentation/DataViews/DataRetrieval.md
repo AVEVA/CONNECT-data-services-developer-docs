@@ -35,13 +35,6 @@ The following APIs are available to retrieve resolved resources of a data view.
  
 This returns all data items matching the data view query, organized in groups based on the data view group rules. 
 
-[Get data group by id](DataRetrieval_API.md)
-```csharp
-    GET Dataviews/{id}/datagroup/{datagroupid}
-        Query parameters: cache
-```
-This returns data items from a single data group based on id. 
-
 [Get data items](DataRetrieval_API.md)
 ```csharp
     GET Dataviews/{id}/dataitems

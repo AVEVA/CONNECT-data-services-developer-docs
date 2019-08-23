@@ -4,6 +4,9 @@ references:
 - uid: accessControl
   name: Role-based access control
   href: Documentation/Access_Control.html
+- uid: AccessControlApi
+  name: AccessControl
+  href: Documentation/DataViews/AccessControl_API.html
 - uid: AccountClientRole_1
   name: Client Roles
   href: Documentation/Management/Account_ClientRole_1.html
@@ -62,7 +65,7 @@ references:
   name: ClientCredentialClient
   href: Documentation/Identity/Identity_ClientCredentialClient.html
 - uid: identityConsent
-  name: Consent to OSIsoft Applications
+  name: AAD Consent to OSIsoft Applications
   href: Documentation/Identity/Consent.html
 - uid: identityHybridClient
   name: HybridClient
@@ -166,6 +169,9 @@ references:
 - uid: sdsWritingDataApi
   name: API calls for writing data
   href: Documentation/SequentialDataStore/Writing_Data_API.html
+- uid: SecuringDataViews
+  name: Securing Data Views
+  href: Documentation/DataViews/SecuringDataViews.html
 - uid: support
   name: Getting support
   href: Documentation/support.html

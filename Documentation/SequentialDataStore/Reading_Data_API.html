@@ -422,21 +422,21 @@ be passed for the start and end individually. </p>
 <p>To retrieve the next page of values, include the <code>continuationToken</code> from the results of the previous request. 
 For the first request, specify a null or empty string for the <code>continuationToken</code>.</p>
 <p><strong>Requests</strong></p>
-<pre><code class="lang-text">    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data? 
+<pre><code class="lang-text">    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data 
          ?startIndex={startIndex}&amp;endIndex={endIndex}
 
-    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data? 
+    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data 
          ?startIndex={startIndex}&amp;endIndex={endIndex}&amp;boundaryType={boundaryType}
 
-    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data? 
+    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data 
          ?startIndex={startIndex}&amp;startBoundaryType={startBoundaryType} 
          &amp;endIndex={endIndex}&amp;endBoundaryType={endBoundaryType}
 
-    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data? 
+    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data 
          ?startIndex={startIndex}&amp;endIndex={endIndex}
          &amp;count={count}&amp;continuationToken={continuationToken}
 
-    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data? 
+    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data 
          ?startIndex={startIndex}&amp;startBoundaryType={startBoundaryType} 
          &amp;endIndex={endIndex}&amp;endBoundaryType={endBoundaryType}&amp;filter={filter}&amp;count={count} 
          &amp;continuationToken={continuationToken}

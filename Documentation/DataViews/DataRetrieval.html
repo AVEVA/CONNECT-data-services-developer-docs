@@ -88,25 +88,24 @@
 <h4 id="data-items">Data Items</h4>
 <p>A data item is an SdsStream. The collection of data items are defined by the <a href="Queries.html">queries</a>  property in the data view, where the queries define the search criteria and the data items represent results of the search. Each data item can have one or more properties in the data view data.  </p>
 <h4 id="data-groups">Data Groups</h4>
-<p>Data items can optionally be organized into data groups in order for users to more easily compare similar properties in the same column of a data view. Each data group contains one or more data items. The entire collection of data groups contains all data items.</p>
-<p>Data groups are defined by the <a href="GroupRules.html">group rules</a> property in the data view, where the group rules define the grouping criteria and the data groups represent the results of such grouping. Any streams that do not meet grouping criteria are consolidated in a single group with a group rule name of &quot;(NoMatch)&quot;. </p>
+<p>Data items can optionally be organized into data groups in order for users to more easily compare similar properties in the same column of a data view. Each data group contains one or more data items. The entire collection of data groups contains all data items. Data groups are defined by the <a href="GroupRules.html">group rules</a> property in the data view, where the group rules define the grouping criteria and the data groups represent the results of such grouping. Any streams that do not meet grouping criteria are consolidated in a single group with a group rule name of &quot;(NoMatch)&quot;. </p>
 <h4 id="data-mappings">Data Mappings</h4>
 <p>Data mappings are identical to the <a href="Mappings.html">mappings</a> property in the data view if explicitly defined. Otherwise, a default set of data mappings is generated based on all the properties of all data items, after taking grouping into account. </p>
-<p>In each of the Data Items, Data Groups, and Data Mappings, the resource is &quot;resolved&quot; and cached when any of the resources is first accessed on a per data view, per user basis. Subsequent calls to the resources return the cached results, which is evident from the time of resolution property in the returned response. A cache parameter can be included in the request to control whether the resolved resources are to be refreshed. By default, the cache parameter is set to presever the cache for all data view resources endpoints. If there are changes to the underlying streams in SDS, the results will not be updated unless the cache is explicitly refreshed. </p>
+<p>In each of the data items, data groups, and data mappings, the resource is &quot;resolved&quot; and cached when any of the resources is first accessed on a per data view, per user basis. Subsequent calls to the resources return the cached results, which is evident from the time of resolution property in the returned response. A cache parameter can be included in the request to control whether the resolved resources are to be refreshed. By default, the cache parameter is set to preserve the cache for all data view resources endpoints. If there are changes to the underlying streams in SDS, the results will not be updated unless the cache is explicitly refreshed. </p>
 <p>The following APIs are available to retrieve resolved resources of a data view.</p>
-<p><a href="DataRetrieval_API.html">Get data groups</a></p>
+<p><a href="DataRetrieval_API.html#get-data-groups">Get data groups</a></p>
 <pre><code class="lang-csharp">    GET Dataviews/{id}/datagroups
         Query parameters: skip, count, cache
 </code></pre><p>This returns all data items matching the data view query, organized in groups based on the data view group rules. </p>
-<p><a href="DataRetrieval_API.html">Get data items</a></p>
+<p><a href="DataRetrieval_API.html#get-dataitems">Get data items</a></p>
 <pre><code class="lang-csharp">    GET Dataviews/{id}/dataitems
         Query parameters: skip, count, cache
 </code></pre><p>This returns all data items matching the data view query in a flat list. </p>
-<p><a href="DataRetrieval_API.html">Get data mappings</a></p>
+<p><a href="DataRetrieval_API.html#get-data-mappings">Get data mappings</a></p>
 <pre><code class="lang-csharp">    GET Dataviews/{id}/datamappings
         Query parameters: cache
 </code></pre><p>This returns the resolved mappings for the data view, defining where each column gets its data value.</p>
-<p><a href="DataRetrieval_API.html">Get statistics</a></p>
+<p><a href="DataRetrieval_API.html#get-statistics">Get statistics</a></p>
 <pre><code class="lang-csharp">    GET Dataviews/{id}/statistics
         Query parameters: cache
 </code></pre><p>This returns some statistics for the resolved data view resources, including item count and the shape of the resulting data view table.</p>
@@ -121,7 +120,7 @@
 <h2 id="a-namedatadata-view-data-a"><a name="data"><code>Data View Data</code> </a></h2>
 <p>Retrieving data involves retrieving data values from the optionally grouped data items defined in the data view. The <a href="Mappings.html">mappings</a> in the data view define the sources of data in each column, whereas the <a href="IndexConfig.html">index config</a> and index data type define which data values populate each row. </p>
 <p>Currently, only datetime interpolated data is supported. </p>
-<p><a href="DataRetrieval_API.html">Get Data View Data API</a>: </p>
+<p><a href="DataRetrieval_API.html#get-data-view-data">Get Data View Data API</a>: </p>
 <pre><code class="lang-csharp">    GET Dataviews/{id}/data/interpolated
         Query parameters: startindex, endindex, interval, count, form, continuationToken, cache
 </code></pre><p>This returns the data view data results. Data is interpolated on the index data type based on the start index, end index, and interval. In the first page link the cache parameter controls resolution of the backing data view resources with a default of preserve. All necessary parameters to generate the next page of data are included in the continuationToken.  The user can override the indexconfig, form and count.</p>

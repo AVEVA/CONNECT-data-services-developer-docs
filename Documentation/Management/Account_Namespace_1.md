@@ -34,9 +34,10 @@ For HTTP requests and responses, the Namespace object has the following properti
 	"State": 0,
 }
 ```
-## Region
 
-The following Region are supported by OSIsoft Cloud Services:
+## Region ##
+
+When a Namespace is created, all services are created in the Namespace's region. Consequently, all requests to a Namespace go to the Namespace's region, and all data stored in a Namespace is stored in the Namespace's region. 
 
 | Supported Regions | 
 | --- |

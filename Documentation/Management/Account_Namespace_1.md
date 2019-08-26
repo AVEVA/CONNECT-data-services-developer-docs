@@ -20,7 +20,7 @@ For HTTP requests and responses, the Namespace object has the following properti
 | Property | Type | Description | 
  | --- | --- | ---  | 
 | Id | string | Gets or sets name of this Namespace; unique within a Tenant's Namespaces. | 
-| Region | string | Gets or sets the region that the namespace is provisioned in.  | 
+| Region | string | Gets or sets the region that the namespace is provisioned in. | 
 | Self | string | Gets or sets the namespace's URI. | 
 | Description | string | Gets or sets description of this Namespace. | 
 | State | NamespaceProvisioningState | Gets or sets current state of this Namespace. | 

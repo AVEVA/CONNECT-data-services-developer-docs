@@ -30,8 +30,10 @@ have an account, you can request access to OCS at https://cloud.osisoft.com/?sig
 A Tenant represents a client or organization that owns and manages a collection of OSIsoft Cloud Services.
 
 Tenants are divided into one or more logical units called Namespaces. Each Namespace is distinct and separate from 
-other Namespaces, with its own instances of the various OSIsoft Cloud Services and data stores. 
+other Namespaces, with its own instances of the various OSIsoft Cloud Services and data stores.
 Namespaces provide isolation of resources. 
+
+Namespaces are provisioned within a region. The Namespace's services and data stores all exist in the Namespace's region. Resources isolated to a Namespace are isolated to the Namespace's region. For more information on regions see the [Namespace](xref:AccountNamespace_1) documentation.
 
 Isolation provided by Tenants and Namespaces prevents accidental or malicious data access. 
 

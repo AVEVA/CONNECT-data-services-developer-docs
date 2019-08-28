@@ -7,14 +7,16 @@ Subscriptions
 Subscription Information 
 -----------------------
 
-A Subscription is used to consume data from a Topic. Multiple Subscriptions can retrieve data from a single Topic.
+A Subscription consumes OMF messages from a Topic and forwards them to a data store. Multiple Subscriptions can retrieve OMF messages from a single Topic. 
+
+A Subscription can consume OMF messages from a Topic in a different Namespace. However, the Topic's Namespace must be in the same Region as the Subscription's Namespace. OMF messages that the Subscription is processing are temporarily stored in the Region of its Namespace.
 
 The API calls in this section are used to create and manipulate Subscriptions.
 
 Sequential Data Store (Sds) Subscription 
 ---------------
 
-A Sequential Data Store Subscription retrieves data from a Topic and writes it directly to a namespace in the Sequential Data Store. Currently only Sds Subscriptions are supported. The documentation uses Sds Subscription and Subscription interchangeably.
+A Sequential Data Store Subscription retrieves OMF messages from a Topic and writes them directly to a Namespace in the Sequential Data Store. Currently only Sds Subscriptions are supported. The documentation uses Sds Subscription and Subscription interchangeably.
 
 Data Models 
 -----------
@@ -32,12 +34,12 @@ Subscription information is contained in an object called Subscription which has
 | NamespaceId          | string                  | Identifies the namespace for the Subscription. |
 | Description          | string                  | Description of the Subscription.       |
 | Type                 | integer                 | An enumeration which describes the type of Subscription where Sds=1 |
-| CreatedDate          | string                  | The time that the Subscription was created. The string is formatted using ISO 8601 format. |
+| CreatedDate          | DateTime                | Date and time this Subscription was created. |
 | Enabled              | boolean                 | Whether the Topic exists or not.        |
 
 *****************
 
-``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions?skip={skip}&count={count}``
+``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions``
 ---------------------------------------------
 
 Get all Subscriptions for a tenant. 
@@ -48,10 +50,6 @@ Get all Subscriptions for a tenant.
   Unique Id for the tenant. 
 ``namespaceId``
   Unique Id for the namespace. 
-``skip``
-  An optional parameter representing the zero-based offset of the first Subscription to retrieve. If not specified, a default value of 0 is used. 
-``count``
-  An optional parameter representing the maximum number of Subscriptions to retrieve. If not specified, a default value of 100 is used.
 
 **Returns**
 

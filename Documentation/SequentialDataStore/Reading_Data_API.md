@@ -527,21 +527,21 @@ For the first request, specify a null or empty string for the `continuationToken
 
 **Requests**
  ```text
-     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data? 
+     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data 
           ?startIndex={startIndex}&endIndex={endIndex}
 
-     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data? 
+     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data 
           ?startIndex={startIndex}&endIndex={endIndex}&boundaryType={boundaryType}
 
-     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data? 
+     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data 
           ?startIndex={startIndex}&startBoundaryType={startBoundaryType} 
           &endIndex={endIndex}&endBoundaryType={endBoundaryType}
 
-     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data? 
+     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data 
           ?startIndex={startIndex}&endIndex={endIndex}
           &count={count}&continuationToken={continuationToken}
 
-     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data? 
+     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data 
           ?startIndex={startIndex}&startBoundaryType={startBoundaryType} 
           &endIndex={endIndex}&endBoundaryType={endBoundaryType}&filter={filter}&count={count} 
           &continuationToken={continuationToken}
@@ -567,13 +567,13 @@ Index bounding the end of the series of events to return
 Optional maximum number of events to return. If `count` is specified, a `continuationToken` must also be specified.
 
 ``SdsBoundaryType boundaryType``  
-Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundaryType) specifies handling of events at or near the start and end indexes
+Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundarytype) specifies handling of events at or near the start and end indexes
 
 ``SdsBoundaryType startBoundaryType``  
-Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundaryType) specifies the first value in the result in relation to the start index. If `startBoundaryType` is specified, `endBoundaryType` must be specified.
+Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundarytype) specifies the first value in the result in relation to the start index. If `startBoundaryType` is specified, `endBoundaryType` must be specified.
 
 ``SdsBoundaryType endBoundaryType``  
-Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundaryType) specifies the last value in the result in relation to the end index. If `startBoundaryType` is specified, `endBoundaryType` must be specified.
+Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundarytype) specifies the last value in the result in relation to the end index. If `startBoundaryType` is specified, `endBoundaryType` must be specified.
 
 ``string filter``  
 Optional [filter expression](xref:sdsFilterExpressions)
@@ -1075,12 +1075,12 @@ Summary values supported by `SdsSummaryType` enum:
 | Kurtosis                           | 512               |
 | WeightedMean                       | 1024              |
 | WeightedStandardDeviation          | 2048              |
-| WeightedPopulationStandardDeviatio | 4096              |
+| WeightedPopulationStandardDeviation | 4096              |
 
 **Request**  
  ```text
     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
-        Summaries?startIndex={startIndex}&endIndex={endIndex}&count={count}&filter={filter}
+        Summaries?startIndex={startIndex}&endIndex={endIndex}&count={count}[&filter={filter}]
  ```
 
 **Parameters**  
@@ -1105,9 +1105,6 @@ The number of intervals requested
 ``string filter``  
 Optional filter expression
   
-``string streamViewId``  
-Optional stream view identifier
-
 **Response**  
 The response includes a status code and a response body containing a serialized collection of SdsIntervals.
 
@@ -1278,8 +1275,8 @@ information see [Interpolation.](xref:sdsTypes#interpolation)
  ```text
     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
         Sampled?startIndex={startIndex}&endIndex={endIndex}&intervals={intervals}&sampleBy={sampleBy}
-        &boundaryType={boundaryType}&startBoundaryType={startBoundaryType}
-        &endBoundaryType={endBoundaryType}&filter={filter}&streamViewId={streamViewId}
+        [&sampleBy={sampleBy}&...&boundaryType={boundaryType}&startBoundaryType={startBoundaryType}
+        &endBoundaryType={endBoundaryType}&filter={filter}]
  ```
 
 **Parameters**  
@@ -1633,6 +1630,8 @@ Content-Type: application/json
 **Response**  
 All Measurements from both Streams with missing values interpolated. If the missing values are between valid Measurements within a Stream, they are interpolated. If the missing values are outside of the boundary values, they are extrapolated.
 
+**Note:** The Interpolated SdsJoinMode currently does not support ContinuousNullableTrailing or ContinuousNullableLeading SdsInterpolationModes. All join requests with interpolations involving a Null value will return an interpolated Null result at the index where calculation was required. More information regarding Interpolation can be found [here.](https://github.com/osisoft/OCS-Docs/blob/master/Documentation/SequentialDataStore/SDS_Types.md#interpolation)
+
 **Response body**
 
 ```json
@@ -1735,7 +1734,7 @@ Content-Type: application/json
  ```
 
 **Response**  
-This is similar to [OuterJoin](#outerjoin-request), but value at each index is the first available value at that index when iterating the given list of streams from left to right.
+This is similar to [OuterJoin](#outer-join-example), but value at each index is the first available value at that index when iterating the given list of streams from left to right.
 
 **Response body**
 ```json
@@ -1789,7 +1788,7 @@ Content-Type: application/json
  ```
 
 **Response**  
-This is similar to [OuterJoin](#outerjoin-request), but value at each index is the first available value at that index when iterating the given list of streams from right to left.
+This is similar to [OuterJoin](#outer-join-example), but value at each index is the first available value at that index when iterating the given list of streams from right to left.
 
 **Response body**
 ```json
@@ -1839,8 +1838,8 @@ Content-Type: application/json
 <a name="postjoin"></a>
 ### POST Request
  ```text
-    POST api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
-        ?joinMode={joinMode}
+    POST api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins?
+        joinMode={joinMode}
  ```
 
 **Parameters**

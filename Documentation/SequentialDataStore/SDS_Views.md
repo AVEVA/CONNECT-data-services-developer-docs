@@ -1,4 +1,4 @@
----
+﻿---
 uid: sdsStreamViews
 ---
 
@@ -107,7 +107,7 @@ To update a Stream's Type, define an SdsStreamView and PUT the stream view to th
    PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type?streamViewId={streamViewId}
 ```
 
-For details, see [Update Stream Type](xref:sdsStreams-update-stream-type). 
+For details, see [Update Stream Type](xref:sdsStreams#update-stream-type). 
 
 ## Working with Stream Views when using .NET
 
@@ -768,11 +768,11 @@ The response includes a status code.
 ***********************
 ## `Get Stream Views Access Control List`
 
-Get the default ACL for the Stream Views collection. For more information on ACLs, see [Access Control](xref:accesscontrol).
+Get the default ACL for the Stream Views collection. For more information on ACLs, see [Access Control](xref:accessControl).
 
 **Request**
  ```text
-    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/AccessControl
+    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/StreamViews
  ```
 
 **Parameters**
@@ -797,11 +797,11 @@ The default ACL for Stream Views
 
 ## `Update Stream Views Access Control List`
 
-Update the default ACL for the Stream Views collection. For more information on ACLs, see [Access Control](xref:accesscontrol).
+Update the default ACL for the Stream Views collection. For more information on ACLs, see [Access Control](xref:accessControl).
 
 **Request**
  ```text
-    PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/AccessControl
+    PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/StreamViews
  ```
 
 **Parameters**
@@ -827,7 +827,7 @@ The response includes a status code.
 
 ## `Get Stream View Access Control List`
 
-Get the ACL of the specified stream view. For more information on ACLs, see [Access Control](xref:accesscontrol).
+Get the ACL of the specified stream view. For more information on ACLs, see [Access Control](xref:accessControl).
 
 **Request**
  ```text
@@ -859,7 +859,7 @@ The ACL for the specified stream view
 
 ## `Update Stream View Access Control List`
 
-Update the ACL of the specified stream view. For more information on ACLs, see [Access Control](xref:accesscontrol).
+Update the ACL of the specified stream view. For more information on ACLs, see [Access Control](xref:accessControl).
 
 **Request**
  ```text
@@ -891,7 +891,7 @@ The response includes a status code.
 
 ## `Get Stream View Owner`
 
-Get the Owner of the specified stream view. For more information on Owners, see [Access Control](xref:accesscontrol).
+Get the Owner of the specified stream view. For more information on Owners, see [Access Control](xref:accessControl).
 
 **Request**
  ```text
@@ -923,7 +923,7 @@ The Owner for the specified stream view
 
 ## `Update Stream View Owner`
 
-Update the Owner of the specified stream view. For more information on Owners, see [Access Control](xref:accesscontrol).
+Update the Owner of the specified stream view. For more information on Owners, see [Access Control](xref:accessControl).
 
 **Request**
  ```text

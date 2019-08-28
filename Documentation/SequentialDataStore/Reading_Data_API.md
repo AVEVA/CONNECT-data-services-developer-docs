@@ -1099,6 +1099,7 @@ Currently, these values can only be calculated for properties of the following t
 | TimeSpan       | 21          |
 
 Note that properties marked with an ``InterpolationMode`` of ``Discrete`` do not support summaries.
+Unsupported properties will be excluded from the summaries returned.
 
 **Request**  
  ```text

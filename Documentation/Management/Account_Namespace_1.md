@@ -42,7 +42,9 @@ When a Namespace is created, all services are created in the Namespace's region.
 | Supported Regions | 
 | --- |
 | WestUS | 
-| WestEurope|
+| WestEurope* |
+
+\* WestEurope Namespaces are currently in preview, and are not yet generally available. If you beleive you have a valid use case for a WestEurope Namespace, please contact OSIsoft.
 
 ***
 

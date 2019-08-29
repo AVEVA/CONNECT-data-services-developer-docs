@@ -33,7 +33,7 @@ Tenants are divided into one or more logical units called Namespaces. Each Names
 other Namespaces, with its own instances of the various OSIsoft Cloud Services and data stores. 
 Namespaces provide isolation of resources. 
 
-Namespaces are provisioned within a region. The Namespace's services and data stores all exist in the Namespace's region. Resources isolated to a Namespace are isolated to the Namespace's region. For more information on regions see the [Namespace](xref:AccountNamespace_1) documentation.
+Namespaces are provisioned within a region. The Namespace's services and data stores all exist in the Namespace's region. Resources allocated to a Namespace are isolated to the Namespace's region. For more information on regions see the [Namespace](xref:AccountNamespace_1) documentation.
 
 Isolation provided by Tenants and Namespaces prevents accidental or malicious data access. 
 

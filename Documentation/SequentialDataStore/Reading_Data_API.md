@@ -1630,7 +1630,7 @@ Content-Type: application/json
 **Response**  
 All Measurements from both Streams with missing values interpolated. If the missing values are between valid Measurements within a Stream, they are interpolated. If the missing values are outside of the boundary values, they are extrapolated.
 
-**Note:** The Interpolated SdsJoinMode currently does not support ContinuousNullableTrailing or ContinuousNullableLeading SdsInterpolationModes. All join requests with interpolations involving a Null value will return an interpolated Null result at the index where calculation was required. More information regarding Interpolation can be found [here.](https://github.com/osisoft/OCS-Docs/blob/master/Documentation/SequentialDataStore/SDS_Types.md#interpolation)
+**Note:** The Interpolated SdsJoinMode currently does not support SdsInterpolationModes of the streams. All join requests with interpolations will honor the interpolation mode of the stream type or type property. More information regarding Interpolation can be found [here.](https://github.com/osisoft/OCS-Docs/blob/master/Documentation/SequentialDataStore/SDS_Types.md#interpolation)
 
 **Response body**
 

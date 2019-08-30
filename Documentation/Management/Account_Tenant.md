@@ -4,7 +4,7 @@ uid: AccountTenant
 
 # Tenants
 
-APIs to manage an OCS Customer Tenant Account. Note that unlike Namespaces, Tenants are not scoped to a region. Account level information, such as Users and Clients, are stored in all supported regions.
+APIs to manage an OCS Customer Tenant Account. Unlike Namespaces, Tenants are not scoped to a region. Account level information, such as Users and Clients, are stored in all supported regions.
 
 ## Properties
 

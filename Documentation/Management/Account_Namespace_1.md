@@ -37,7 +37,7 @@ For HTTP requests and responses, the Namespace object has the following properti
 
 ## Region ##
 
-When a Namespace is created, all services are created in the Namespace's region. Consequently, all requests to a Namespace go to the Namespace's region, and all data stored in a Namespace is stored in the Namespace's region. 
+When a Namespace is created, all services are created in the Namespace's region. Resources created in this Namespace (i.e. SDS types, streams, and stream views) will be created in the region of the Namespace, and any data stored in the Namespace will be stored in that region.
 
 | Supported Regions | 
 | --- |

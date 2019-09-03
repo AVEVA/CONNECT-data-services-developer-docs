@@ -1077,6 +1077,30 @@ Summary values supported by `SdsSummaryType` enum:
 | WeightedStandardDeviation          | 2048              |
 | WeightedPopulationStandardDeviation | 4096              |
 
+Currently, these values can only be calculated for properties of the following types:
+
+| Type           | SdsTypeCode |
+|--------------- | ----------- |
+| Boolean        | 3           |
+| Byte           | 6           |
+| Char           | 4           |
+| Decimal        | 15          |
+| Int16          | 7           |
+| Int32          | 9           |
+| Int64          | 11          |
+| SByte          | 5           |
+| Single         | 13          |
+| UInt16         | 8           |
+| UInt32         | 10          |
+| UInt64         | 12          |
+| DateTime       | 16          |
+| Double         | 14          |
+| DateTimeOffset | 20          |
+| TimeSpan       | 21          |
+
+**Note:** Properties marked with an ``InterpolationMode`` of ``Discrete`` do not support summaries.
+Unsupported properties will be excluded from the summaries returned.
+
 **Request**  
  ```text
     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/

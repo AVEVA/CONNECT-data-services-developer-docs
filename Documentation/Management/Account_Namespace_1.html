@@ -132,7 +132,25 @@ for Namespace IDs are the following:</p>
     &quot;Description&quot;: &quot;description&quot;,
     &quot;State&quot;: 0,
 }
-</code></pre><hr>
+</code></pre><h2 id="region">Region</h2>
+<p>When a Namespace is created, all services are created in the Namespace&#39;s region. Resources created in this Namespace (i.e. SDS types, streams, and stream views) will be created in the region of the Namespace, and any data stored in the Namespace will be stored in that region.</p>
+<table>
+<thead>
+<tr>
+<th>Supported Regions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WestUS</td>
+</tr>
+<tr>
+<td>WestEurope*</td>
+</tr>
+</tbody>
+</table>
+<p>* WestEurope Namespaces are currently in preview, and are not yet generally available. If you believe you have a valid use case for a WestEurope Namespace, please contact OSIsoft.</p>
+<hr>
 <h2 id="get-all-namespaces"><code>Get All Namespaces</code></h2>
 <p>Returns all <code>Namespaces</code> owned by the specified <code>Tenant</code> that the caller has access to.</p>
 <h3 id="http">Http</h3>

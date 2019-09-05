@@ -154,7 +154,7 @@ for Namespace IDs are the following:</p>
 <h2 id="get-all-namespaces"><code>Get All Namespaces</code></h2>
 <p>Returns all <code>Namespaces</code> owned by the specified <code>Tenant</code> that the caller has access to.</p>
 <h3 id="http">Http</h3>
-<p><code>GET api/v1/Tenants/{tenantId}/Namespaces</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
@@ -193,7 +193,7 @@ string tenantId
 <h2 id="get-namespace-by-id"><code>Get Namespace By Id</code></h2>
 <p>Returns a <code>Namespace</code> with the specified Id.</p>
 <h3 id="http-1">Http</h3>
-<p><code>GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
@@ -241,7 +241,7 @@ string namespaceId
 <h2 id="create-new-namespace"><code>Create New Namespace</code></h2>
 <p>Creates a new <code>Namespace</code> in the specified <code>Tenant</code>.</p>
 <h3 id="http-2">Http</h3>
-<p><code>POST api/v1/Tenants/{tenantId}/Namespaces/{namespaceId?}</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">POST api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId?}</code></p>
 <h3 id="parameters-2">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
@@ -301,7 +301,7 @@ string namespaceId
 <p>Updates <code>Namespace</code> information: Description and TierId. The <a class="xref" href="../Access_Control.html">AccessControlList</a> and Owner&#39;s <a class="xref" href="../Access_Control.html">Trustee</a> can
             only be updated through their own routes.</p>
 <h3 id="http-3">Http</h3>
-<p><code>PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">PUT api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}</code></p>
 <h3 id="parameters-3">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
@@ -348,7 +348,7 @@ Namespace newProperties
 <h2 id="delete-namespace"><code>Delete Namespace</code></h2>
 <p>Deletes a <code>Namespace</code> in the specified <code>Tenant</code>.</p>
 <h3 id="http-4">Http</h3>
-<p><code>DELETE api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">DELETE api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}</code></p>
 <h3 id="parameters-4">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
@@ -391,7 +391,7 @@ string namespaceId
 <h2 id="get-namespace-accesscontrollist"><code>Get Namespace AccessControlList</code></h2>
 <p>Returns the <a class="xref" href="../Access_Control.html">AccessControlList</a> that is used to authorize access to a <code>Namespace</code>.</p>
 <h3 id="http-5">Http</h3>
-<p><code>GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/accesscontrol</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;accesscontrol</code></p>
 <h3 id="parameters-5">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
@@ -434,7 +434,7 @@ string namespaceId
 <h2 id="set-namespace-accesscontrollist"><code>Set Namespace AccessControlList</code></h2>
 <p>Updates the <a class="xref" href="../Access_Control.html">AccessControlList</a> that is used to authorize access to a <code>Namespace</code>.</p>
 <h3 id="http-6">Http</h3>
-<p><code>PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/accesscontrol</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">PUT api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;accesscontrol</code></p>
 <h3 id="parameters-6">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
@@ -481,7 +481,7 @@ AccessControlList newAccessControlList
 <h2 id="get-namespace-owner"><code>Get Namespace Owner</code></h2>
 <p>Returns the Owner&#39;s <a class="xref" href="../Access_Control.html">Trustee</a> for a given <code>Namespace</code>.</p>
 <h3 id="http-7">Http</h3>
-<p><code>GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/owner</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;owner</code></p>
 <h3 id="parameters-7">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
@@ -524,7 +524,7 @@ string namespaceId
 <h2 id="set-namespace-owner"><code>Set Namespace Owner</code></h2>
 <p>Changes the Owner&#39;s <a class="xref" href="../Access_Control.html">Trustee</a> for a given <code>Namespace</code>.</p>
 <h3 id="http-8">Http</h3>
-<p><code>PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/owner</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">PUT api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;owner</code></p>
 <h3 id="parameters-8">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]

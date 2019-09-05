@@ -122,7 +122,7 @@
 </code></pre><hr>
 <h2 id="base-url">Base URL</h2>
 <p>All URLs referenced in this section have the following base:</p>
-<p><code>https://dat-b.osisoft.com/</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">https:/&#8203;/&#8203;dat-b.osisoft.com/&#8203;</code></p>
 <h2 id="authentication">Authentication</h2>
 <p>All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieve after a successful authentication request.</p>
 <p><code>Authorization: Bearer &lt;token&gt;</code></p>
@@ -141,7 +141,7 @@ Read <a href="https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/bas
 <h2 id="get-identity-provider"><code>Get Identity Provider</code></h2>
 <p>Returns an IdentityProvider object</p>
 <h3 id="request">Request</h3>
-<p><code>GET api/v1/IdentityProviders/{identityProviderId}</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/&#8203;v1/&#8203;IdentityProviders/&#8203;{identityProviderId}</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 Guid identityProviderId
@@ -174,7 +174,7 @@ Guid identityProviderId
 <h2 id="get-identity-providers"><code>Get Identity Providers</code></h2>
 <p>Returns a list of IdentityProvider objects.</p>
 <h3 id="request-1">Request</h3>
-<p><code>GET api/v1/IdentityProviders</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/&#8203;v1/&#8203;IdentityProviders</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
@@ -227,7 +227,7 @@ int32 count
 <h2 id="validate-that-idp-exists-based-on-scheme"><code>Validate that IDP Exists based on scheme</code></h2>
 <p>Get header for a scheme to check its validity</p>
 <h3 id="request-2">Request</h3>
-<p><code>HEAD api/v1/IdentityProviders/schemes/{scheme}</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/&#8203;v1/&#8203;IdentityProviders/&#8203;schemes/&#8203;{scheme}</code></p>
 <h3 id="parameters-2">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string scheme
@@ -254,7 +254,7 @@ string scheme
 <h2 id="validate-that-idp-exists-based-on-id"><code>Validate that IDP exists based on Id</code></h2>
 <p>Get header for an identity provider to check if the identity provider exists.</p>
 <h3 id="request-3">Request</h3>
-<p><code>HEAD api/v1/IdentityProviders/{identityProviderId}</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/&#8203;v1/&#8203;IdentityProviders/&#8203;{identityProviderId}</code></p>
 <h3 id="parameters-3">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 Guid identityProviderId
@@ -281,7 +281,7 @@ Guid identityProviderId
 <h2 id="get-total-count-of-idps-in-te"><code>Get Total Count of IDPs in Te</code></h2>
 <p>Get header for Identity Providers to get the total number of Identity Providers.</p>
 <h3 id="request-4">Request</h3>
-<p><code>HEAD api/v1/IdentityProviders</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/&#8203;v1/&#8203;IdentityProviders</code></p>
 <h3 id="parameters-4">Parameters</h3>
 <p>This API call does not have any parameters.</p>
 <h3 id="security-4">Security</h3>
@@ -306,7 +306,7 @@ Guid identityProviderId
 <h2 id="get-all-idps-from-tenant"><code>Get All IDPs from Tenant</code></h2>
 <p>Get all Identity Providers from a Tenant.</p>
 <h3 id="request-5">Request</h3>
-<p><code>GET api/v1/Tenants/{tenantId}/IdentityProviders</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;IdentityProviders</code></p>
 <h3 id="parameters-5">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -363,7 +363,7 @@ int32 count
 <h2 id="get-idp-from-tenant"><code>Get IDP from Tenant</code></h2>
 <p>Get an Identity Provider from a Tenant.</p>
 <h3 id="request-6">Request</h3>
-<p><code>GET api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;IdentityProviders/&#8203;{identityProviderId}</code></p>
 <h3 id="parameters-6">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -402,7 +402,7 @@ Guid identityProviderId
             will be available in the Home Realm Discovery Page
             for users to sign-in or sign-up.</p>
 <h3 id="request-7">Request</h3>
-<p><code>POST api/v1/Tenants/{tenantId}/IdentityProviders</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">POST api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;IdentityProviders</code></p>
 <h3 id="parameters-7">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -501,7 +501,7 @@ IdentityProviderAdd identityProviderAdd
             with this Identity Provider will remain in the Tenant, but will
             not be able to authenticate.</p>
 <h3 id="request-8">Request</h3>
-<p><code>DELETE api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">DELETE api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;IdentityProviders/&#8203;{identityProviderId}</code></p>
 <h3 id="parameters-8">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -531,7 +531,7 @@ Guid identityProviderId
             This endpoint is identical to the GET one but
             it does not return any objects in the body.</p>
 <h3 id="request-9">Request</h3>
-<p><code>HEAD api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;IdentityProviders/&#8203;{identityProviderId}</code></p>
 <h3 id="parameters-9">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -565,7 +565,7 @@ Guid identityProviderId
             is identical to the GET one but it does not return any objects
             in the body.</p>
 <h3 id="request-10">Request</h3>
-<p><code>HEAD api/v1/Tenants/{tenantId}/IdentityProviders</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;IdentityProviders</code></p>
 <h3 id="parameters-10">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId

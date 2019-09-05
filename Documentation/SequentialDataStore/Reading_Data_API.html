@@ -136,17 +136,17 @@ var SimpleType = function () {
 }
 </code></pre><p><strong>Example Stream</strong><br><code>Simple</code> is an SdsStream of type <code>SimpleType</code>.</p>
 <p><strong>Example Data</strong><br><code>Simple</code> has stored values as follows:</p>
-<pre><code>  11/23/2017 12:00:00 PM: Ok  0
-  11/23/2017  1:00:00 PM: Ok 10
-  11/23/2017  2:00:00 PM: Ok 20
-  11/23/2017  3:00:00 PM: Ok 30
-  11/23/2017  4:00:00 PM: Ok 40
+<pre style="word-break:normal; overflow-wrap:break-word;"><code>  11/&#8203;23/&#8203;2017 12:00:00 PM: Ok  0
+  11/&#8203;23/&#8203;2017  1:00:00 PM: Ok 10
+  11/&#8203;23/&#8203;2017  2:00:00 PM: Ok 20
+  11/&#8203;23/&#8203;2017  3:00:00 PM: Ok 30
+  11/&#8203;23/&#8203;2017  4:00:00 PM: Ok 40
 </code></pre><p>All times are represented at offset 0, GMT.</p>
 <hr>
 <h2 id="get-first-value"><code>Get First Value</code></h2>
 <p>Returns the first value in the stream. If no values exist in the stream, null is returned.</p>
 <p><strong>Request</strong>  </p>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/First
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;{streamId}/&#8203;Data/&#8203;First
 </code></pre><p><strong>Parameters</strong><br><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string streamId</code><br>The stream identifier</p>
@@ -157,7 +157,7 @@ var SimpleType = function () {
 <h2 id="get-last-value"><code>Get Last Value</code></h2>
 <p>Returns the last value in the stream. If no values exist in the stream, null is returned.</p>
 <p><strong>Request</strong>  </p>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Last
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;{streamId}/&#8203;Data/&#8203;Last
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier </p>
@@ -169,7 +169,7 @@ var SimpleType = function () {
 <h2 id="find-distinct-value"><code>Find Distinct Value</code></h2>
 <p>Returns a stored event based on the specified <code>index</code> and <code>searchMode</code>. </p>
 <p><strong>Request</strong>  </p>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;{streamId}/&#8203;Data
        ?index={index}&amp;searchMode={searchMode}
 </code></pre><p><strong>Parameters</strong><br><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -179,7 +179,7 @@ var SimpleType = function () {
 <p><strong>Response</strong><br>The response includes a status code and a response body containing a serialized collection with one event. </p>
 <p>Depending on the request <code>index</code> and <code>searchMode</code>, it is possible to have an empty collection returned.</p>
 <p><strong>Example</strong>  </p>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;Simple/&#8203;Data
        ?index=2017-11-23T13:00:00Z&amp;searchMode=Next
 </code></pre><p>The request has an index that matches the index of an existing event, but since a <code>SdsSearchMode</code> of <code>next</code> was specified, the response contains the next event in the stream after the 
 specified index:</p>
@@ -195,7 +195,7 @@ Content-Type: application/json
     }
 ]
 </code></pre><p><strong>Example</strong>  </p>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data 
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;Simple/&#8203;Data 
        ?index=2017-11-23T13:30:00Z&amp;searchMode=Next
 </code></pre><p>The request specifies an index that does not match an index of an existing event. The next event in the stream is retrieved.</p>
 <p><strong>Response body</strong></p>
@@ -229,7 +229,7 @@ Content-Type: application/json
 <h3 id="filtered"><code>Filtered</code></h3>
 <p>Returns a collection of stored values as determined by a <code>filter</code>. The <code>filter</code> limits results by applying an expression against event fields. Filter expressions are explained in detail in the <a class="xref" href="Filter_Expressions.html">Filter expressions</a> section.</p>
 <p><strong>Request</strong>  </p>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data 
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;{streamId}/&#8203;Data 
        ?filter={filter}
 </code></pre><p><strong>Parameters</strong><br><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -237,7 +237,7 @@ Content-Type: application/json
 <p><code>string filter</code><br>The filter expression (see <a class="xref" href="Filter_Expressions.html">Filter expressions</a>)</p>
 <p><strong>Response</strong><br>The response includes a status code and a response body containing a serialized collection of events.</p>
 <p><strong>Example</strong>  </p>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data 
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;Simple/&#8203;Data 
        ?filter=Measurement gt 10
 </code></pre><p>The events in the stream with <code>Measurement</code> greater than 10 are returned.</p>
 <p><strong>Response body</strong></p>
@@ -266,7 +266,7 @@ Content-Type: application/json
 <h3 id="range"><code>Range</code></h3>
 <p>Returns a collection of stored values as determined by a <code>startIndex</code> and <code>count</code>. Additional optional parameters specify the direction of the range, how to handle events near or at the start index, whether to skip a certain number of events at the start of the range, and how to filter the data.</p>
 <p><strong>Request</strong></p>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;{streamId}/&#8203;Data
        ?startIndex={startIndex}&amp;count={count}[&amp;skip={skip}&amp;reversed={reversed} 
        &amp;boundaryType={boundaryType}&amp;filter={filter}]
 </code></pre><p><strong>Parameters</strong><br><code>string tenantId</code><br>The tenant identifier</p>
@@ -282,7 +282,7 @@ collect events before startIndex from the stream.</p>
 <p><code>string filter</code><br>Optional filter expression</p>
 <p><strong>Response</strong><br>The response includes a status code and a response body containing a serialized collection of events.</p>
 <p><strong>Example</strong>  </p>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data 
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;Simple/&#8203;Data 
        ?startIndex=2017-11-23T13:00:00Z&amp;count=100
 </code></pre><p>This request will return a response with up to 100 events starting at 13:00 and extending forward toward the end of the stream: </p>
 <p><strong>Response body</strong></p>
@@ -310,7 +310,7 @@ Content-Type: application/json
 </code></pre><p>Note that <code>State</code> is not included in the JSON as its value is the default value.</p>
 <p><strong>Example</strong><br>To reverse the direction of the request, set reversed to true. The following request will 
 return up to 100 events starting at 13:00 and extending back toward the start of the stream:</p>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data 
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;Simple/&#8203;Data 
        ?startIndex=2017-11-23T13:00:00Z&amp;count=100&amp;reversed=true
 </code></pre><p><strong>Response body</strong></p>
 <pre><code class="lang-json">HTTP/1.1 200
@@ -332,7 +332,7 @@ The response will contain up to 100 events. The boundary type Outside indicates 
 event outside the boundary will be included in the response. For a reverse direction range request, 
 this means one event forward of the specified start index. In a default direction range request, 
 it would mean one event before the specified start index.</p>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data 
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;Simple/&#8203;Data 
        ?startIndex=2017-11-23T13:00:00Z&amp;count=100&amp;reversed=true 
        &amp;boundaryType=2
 </code></pre><p><strong>Response body</strong></p>
@@ -359,7 +359,7 @@ Content-Type: application/json
 </code></pre><p>The event outside of the index is the next event or the event at 14:00 because the 
 request operates in reverse.</p>
 <p>Adding a filter to the request means only events that meet the filter criteria are returned:</p>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data 
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;Simple/&#8203;Data 
        ?startIndex=2017-11-23T13:00:00Z&amp;count=100&amp;reversed=true 
        &amp;boundaryType=2&amp;filter=Measurement gt 10
 </code></pre><p><strong>Response body</strong></p>
@@ -422,21 +422,21 @@ be passed for the start and end individually. </p>
 <p>To retrieve the next page of values, include the <code>continuationToken</code> from the results of the previous request. 
 For the first request, specify a null or empty string for the <code>continuationToken</code>.</p>
 <p><strong>Requests</strong></p>
-<pre><code class="lang-text">    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data 
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">    GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;{streamId}/&#8203;Data 
          ?startIndex={startIndex}&amp;endIndex={endIndex}
 
-    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data 
+    GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;{streamId}/&#8203;Data 
          ?startIndex={startIndex}&amp;endIndex={endIndex}&amp;boundaryType={boundaryType}
 
-    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data 
+    GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;{streamId}/&#8203;Data 
          ?startIndex={startIndex}&amp;startBoundaryType={startBoundaryType} 
          &amp;endIndex={endIndex}&amp;endBoundaryType={endBoundaryType}
 
-    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data 
+    GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;{streamId}/&#8203;Data 
          ?startIndex={startIndex}&amp;endIndex={endIndex}
          &amp;count={count}&amp;continuationToken={continuationToken}
 
-    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data 
+    GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;{streamId}/&#8203;Data 
          ?startIndex={startIndex}&amp;startBoundaryType={startBoundaryType} 
          &amp;endIndex={endIndex}&amp;endBoundaryType={endBoundaryType}&amp;filter={filter}&amp;count={count} 
          &amp;continuationToken={continuationToken}
@@ -454,7 +454,7 @@ For the first request, specify a null or empty string for the <code>continuation
 <p><strong>Response</strong><br>The response includes a status code and a response body containing a serialized collection of events. </p>
 <p>A continuation token can be returned if specified in the request.</p>
 <p><strong>Example</strong><br>The following requests all stored events between 12:30 and 15:30: </p>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data 
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;Simple/&#8203;Data 
        ?startIndex=2017-11-23T12:30:00Z&amp;endIndex=2017-11-23T15:30:00Z
 </code></pre><p>The response will contain the event stored at the specified index:</p>
 <p><strong>Response body</strong></p>
@@ -478,7 +478,7 @@ Content-Type: application/json
 </code></pre><p>Note that <code>State</code> is not included in the JSON as its value is the default value.</p>
 <p><strong>Example</strong><br>When the request is modified to specify a boundary type of Outside, the value 
 before 13:30 and the value after 15:30 are included:</p>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data 
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;Simple/&#8203;Data 
        ?startIndex=2017-11-23T12:30:00Z&amp;endIndex=2017-11-23T15:30:00Z 
        &amp;boundaryType=2
 </code></pre><p><strong>Response body</strong></p>
@@ -512,7 +512,7 @@ value for numbers.</p>
 <p>If instead a start boundary of Inside, only values inside the start boundary (after 13:30) 
 are included in the result. With an end boundary of Outside one value outside the end index 
 (after 15:30) is included:</p>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data 
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;Simple/&#8203;Data 
        ?startIndex=2017-11-23T12:30:00Z&amp;&amp;startBoundaryType=1 
        &amp;endIndex=2017-11-23T15:30:00Z&amp;endBoundaryType=2
 </code></pre><p><strong>Response body</strong></p>
@@ -544,7 +544,7 @@ Content-Type: application/json
 </code></pre><p>In order to page the results of the request, a continuation token may be specified. 
 This requests the first page of the first two stored events between start index and 
 end index by indicating count is 2 and continuationToken is an empty string:</p>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data 
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;Simple/&#8203;Data 
        ?startIndex=2017-11-23T12:30:00Z&amp;endIndex=2017-11-23T15:30:00Z 
        &amp;count=2&amp;continuationToken=
 </code></pre><p><strong>Response body</strong></p>
@@ -568,7 +568,7 @@ Content-Type: application/json
 }
 </code></pre><p>This request uses the continuation token from the previous 
 page to request the next page of stored events:</p>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}}/Namespaces/{namespaceId}/Streams/Simple/Data 
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;Simple/&#8203;Data 
        ?startIndex=2017-11-23T12:30:00Z&amp;endIndex=2017-11-23T15:30:00Z 
        &amp;count=2&amp;continuationToken=2017-11-23T14:00:00Z
 </code></pre><p><strong>Response body</strong></p>
@@ -683,7 +683,7 @@ are calculated for indexes at which no stored event exists. Interpolation is not
 <h3 id="index-collection"><code>Index Collection</code></h3>
 <p>Returns events at the specified indexes. If no stored event exists at a specified index, the stream&#39;s read characteristics determine how the returned event is calculated.</p>
 <p><strong>Request</strong>  </p>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;{streamId}/&#8203;Data/&#8203;
        Interpolated?index={index}[&amp;index={index}...]
 </code></pre><p><strong>Parameters</strong><br><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -693,7 +693,7 @@ are calculated for indexes at which no stored event exists. Interpolation is not
 <p>Depending on the specified indexes and read characteristics of the stream, it is possible to have less events returned than specified indexes. An empty collection can also be returned.</p>
 <p><strong>Example</strong><br>Consider a stream of type <code>Simple</code> with the default <code>InterpolationMode</code> of <code>Continuous</code> and 
 <code>ExtrapolationMode</code> of <code>All</code>. In the following request, the specified index matches an existing stored event:</p>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data/
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;Simple/&#8203;Data/&#8203;
        Interpolated?index=2017-11-23T13:00:00Z
 </code></pre><p>The response will contain the event stored at the specified index.</p>
 <p><strong>Response body</strong></p>
@@ -708,7 +708,7 @@ Content-Type: application/json
     }
 ]
 </code></pre><p>The following request specifies an index for which no stored event exists:</p>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data/
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;Simple/&#8203;Data/&#8203;
        Interpolated?index=2017-11-23T13:30:00Z
 </code></pre><p>Because the index is a valid type for interpolation and the stream has a <code>InterpolationMode</code> of <code>Continuous</code>, 
 this request receives a response with an event interpolated at the specified index:</p>
@@ -726,7 +726,7 @@ Content-Type: application/json
 </code></pre><p>Consider a stream of type <code>Simple</code> with an <code>InterpolationMode</code> of <code>Discrete</code> and 
 <code>ExtrapolationMode</code> of <code>All</code>. In the following request, the specified indexes only 
 match two existing stored events:</p>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}}/Namespaces/{namespaceId}/Streams/Simple/Data 
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;Simple/&#8203;Data 
        Interpolated?index=2017-11-23T12:30:00Z&amp;index=2017-11-23T13:00:00Z&amp;index=2017-11-23T14:00:00Z
 </code></pre><p>For this request, the response contains events for two of the three specified indexes.</p>
 <p><strong>Response body</strong></p>
@@ -763,7 +763,7 @@ Content-Type: application/json
 <h3 id="interval"><code>Interval</code></h3>
 <p>Returns events at evenly spaced intervals based on the specified start index, end index, and count. If no stored event exists at an index interval, the stream&#39;s read characteristics determine how the returned event is calculated.</p>
 <p><strong>Request</strong>  </p>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;{streamId}/&#8203;Data/&#8203;
        Interpolated?startIndex={startIndex}&amp;endIndex={endIndex}&amp;count={count}
 </code></pre><p><strong>Parameters</strong><br><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -773,7 +773,7 @@ Content-Type: application/json
 <p><code>int count</code><br>The number of events to return. Read characteristics of the stream determine how the events are constructed.</p>
 <p><strong>Response</strong><br>The response includes a status code and a response body containing a serialized collection of events. Depending on the read characteristics and input parameters, it is possible for a collection to be returned with less events than specified in the count.</p>
 <p>For a stream, named Simple, of type <code>Simple</code> for the following request:</p>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}}/Namespaces/{namespaceId}/Streams/Simple/Data/
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;Simple/&#8203;Data/&#8203;
        Interpolated?startIndex=2017-11-23T13:00:00Z&amp;endIndex=2017-11-23T15:00:00Z&amp;count=3
 </code></pre><p>the start and end fall exactly on event indexes, and the number of events from start to end match the count of three (3).</p>
 <p><strong>Response body</strong></p>
@@ -946,7 +946,7 @@ that consist of multiple properties is not defined and results in non-determinan
 <p><strong>Note:</strong> Properties marked with an <code>InterpolationMode</code> of <code>Discrete</code> do not support summaries.
 Unsupported properties will be excluded from the summaries returned.</p>
 <p><strong>Request</strong>  </p>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;{streamId}/&#8203;Data/&#8203;
        Summaries?startIndex={startIndex}&amp;endIndex={endIndex}&amp;count={count}[&amp;filter={filter}]
 </code></pre><p><strong>Parameters</strong><br><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -980,7 +980,7 @@ Unsupported properties will be excluded from the summaries returned.</p>
 </tbody>
 </table>
 <p><strong>Example</strong><br>The following request calculates two summary intervals between the <code>startIndex</code> and <code>endIndex</code>: </p>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data/ 
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;Simple/&#8203;Data/&#8203; 
        Summaries?startIndex=2017-11-23T12:00:00Z&amp;endIndex=2017-11-23T16:00:00Z&amp;count=2
 </code></pre><p><strong>Response body</strong></p>
 <pre><code class="lang-json">HTTP/1.1 200
@@ -1122,7 +1122,7 @@ Content-Type: application/json
 <p>Sampling is driven by a specified property or properties of the stream&#39;s Sds Type. Property types that cannot be interpolated do not support sampling requests. Strings are an example of a property that cannot be interpolated. For more 
 information see <a class="xref" href="SDS_Types.html#interpolation">Interpolation.</a> </p>
 <p><strong>Request</strong>  </p>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;{streamId}/&#8203;Data/&#8203;
        Sampled?startIndex={startIndex}&amp;endIndex={endIndex}&amp;intervals={intervals}&amp;sampleBy={sampleBy}
        [&amp;sampleBy={sampleBy}&amp;...&amp;boundaryType={boundaryType}&amp;startBoundaryType={startBoundaryType}
        &amp;endBoundaryType={endBoundaryType}&amp;filter={filter}]
@@ -1139,7 +1139,7 @@ information see <a class="xref" href="SDS_Types.html#interpolation">Interpolatio
 <p><code>string filter</code><br>Optional filter expression</p>
 <p><strong>Response</strong><br>The response includes a status code and a response body containing a serialized collection of events.</p>
 <p><strong>Example</strong><br>The following request returns two sample intervals between the <code>startIndex</code> and <code>endIndex</code>: </p>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data/
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;Simple/&#8203;Data/&#8203;
        Sampled?startIndex=2019-01-01T00:00:00Z&amp;endIndex=2019-01-02T00:00:00Z&amp;intervals=2&amp;sampleBy=Measurement
 </code></pre><p><strong>Response body</strong></p>
 <pre><code class="lang-json">HTTP/1.1 200
@@ -1254,7 +1254,7 @@ Content-Type: application/json
 </ul>
 <p><a name="getjoin"></a></p>
 <h3 id="get-request"><code>GET Request</code></h3>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Bulk/&#8203;Streams/&#8203;Data/&#8203;Joins
        ?streams={streams}&amp;joinMode={joinMode}
        &amp;startIndex={startIndex}&amp;endIndex={endIndex}
 </code></pre><p><strong>Parameters</strong><br><code>string tenantId</code><br>The tenant identifier</p>
@@ -1319,7 +1319,7 @@ Content-Type: application/json
 ]
 </code></pre><p>The following are responses for various Joins request options:</p>
 <h5 id="inner-join-example">Inner Join Example</h5>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Bulk/&#8203;Streams/&#8203;Data/&#8203;Joins
        ?streams=Simple1,Simple2&amp;joinMode=inner
        &amp;startIndex=0001-01-01T00:00:00.0000000&amp;endIndex=9999-12-31T23:59:59.9999999
 </code></pre><p><strong>Response</strong><br>Measurements from both streams with common indexes.</p>
@@ -1342,7 +1342,7 @@ Content-Type: application/json
     ]
 ]
 </code></pre><h5 id="outer-join-example">Outer Join Example</h5>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Bulk/&#8203;Streams/&#8203;Data/&#8203;Joins
        ?streams=Simple1,Simple2&amp;joinMode=outer
        &amp;startIndex=0001-01-01T00:00:00.0000000&amp;endIndex=9999-12-31T23:59:59.9999999
 </code></pre><p><strong>Response</strong><br>All Measurements from both Streams, with default values at indexes where a Stream does not have a value.</p>
@@ -1413,7 +1413,7 @@ Content-Type: application/json
     ]
 ]
 </code></pre><h5 id="interpolated-join-example">Interpolated Join Example</h5>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Bulk/&#8203;Streams/&#8203;Data/&#8203;Joins
        ?streams=Simple1,Simple2&amp;joinMode=interpolated
        &amp;startIndex=0001-01-01T00:00:00.0000000&amp;endIndex=9999-12-31T23:59:59.9999999
 </code></pre><p><strong>Response</strong><br>All Measurements from both Streams with missing values interpolated. If the missing values are between valid Measurements within a Stream, they are interpolated. If the missing values are outside of the boundary values, they are extrapolated.</p>
@@ -1509,7 +1509,7 @@ Content-Type: application/json
     ]
 ]
 </code></pre><h5 id="mergeleft-join-example">MergeLeft Join Example</h5>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Bulk/&#8203;Streams/&#8203;Data/&#8203;Joins
        ?streams=Simple1,Simple2&amp;joinMode=mergeleft
        &amp;startIndex=0001-01-01T00:00:00.0000000&amp;endIndex=9999-12-31T23:59:59.9999999
 </code></pre><p><strong>Response</strong><br>This is similar to <a href="#outer-join-example">OuterJoin</a>, but value at each index is the first available value at that index when iterating the given list of streams from left to right.</p>
@@ -1555,7 +1555,7 @@ Content-Type: application/json
     }
 ]
 </code></pre><h5 id="mergeright-join-example">MergeRight Join Example</h5>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Bulk/&#8203;Streams/&#8203;Data/&#8203;Joins
        ?streams=Simple1,Simple2&amp;joinMode=mergeright
        &amp;startIndex=0001-01-01T00:00:00.0000000&amp;endIndex=9999-12-31T23:59:59.9999999
 </code></pre><p><strong>Response</strong><br>This is similar to <a href="#outer-join-example">OuterJoin</a>, but value at each index is the first available value at that index when iterating the given list of streams from right to left.</p>
@@ -1602,7 +1602,7 @@ Content-Type: application/json
 ]
 </code></pre><p><a name="postjoin"></a></p>
 <h3 id="post-request">POST Request</h3>
-<pre><code class="lang-text">   POST api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins?
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   POST api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Bulk/&#8203;Streams/&#8203;Data/&#8203;Joins?
        joinMode={joinMode}
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier</p>
@@ -1611,7 +1611,7 @@ Content-Type: application/json
 <p><strong>Request Body</strong><br>Read options specific to each stream.</p>
 <p><strong>Response</strong><br> The response includes a status code and a response body containing multiple serialized events.</p>
 <p>Consider the following outer join request,</p>
-<pre><code class="lang-text">   POST api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   POST api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Bulk/&#8203;Streams/&#8203;Data/&#8203;Joins
        ?joinMode=outer
 </code></pre><p>where in the request body, different start indexes and end indexes are specified per stream,</p>
 <pre><code class="lang-json">[  

@@ -136,17 +136,17 @@ var SimpleType = function () {
 }
 </code></pre><p><strong>Example Stream</strong><br><code>Simple</code> is an SdsStream of type <code>SimpleType</code>.</p>
 <p><strong>Example Data</strong><br><code>Simple</code> has stored values as follows:</p>
-<pre><code>  11/23/2017 12:00:00 PM: Ok  0
-  11/23/2017  1:00:00 PM: Ok 10
-  11/23/2017  2:00:00 PM: Ok 20
-  11/23/2017  3:00:00 PM: Ok 30
-  11/23/2017  4:00:00 PM: Ok 40
+<pre style="word-break:normal; overflow-wrap:break-word;"><code>  11/&#8203;23/&#8203;2017 12:00:00 PM: Ok  0
+  11/&#8203;23/&#8203;2017  1:00:00 PM: Ok 10
+  11/&#8203;23/&#8203;2017  2:00:00 PM: Ok 20
+  11/&#8203;23/&#8203;2017  3:00:00 PM: Ok 30
+  11/&#8203;23/&#8203;2017  4:00:00 PM: Ok 40
 </code></pre><p>All times are represented at offset 0, GMT.</p>
 <hr>
 <h2 id="insert-values"><code>Insert Values</code></h2>
 <p>Inserts data into the specified stream. Returns an error if data is already present at the index of any event.</p>
 <p><strong>Request</strong></p>
-<pre><code class="lang-text">   POST api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   POST api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;{streamId}/&#8203;Data
 </code></pre><p><strong>Parameters</strong><br><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string streamId</code><br>The stream identifier  </p>
@@ -154,7 +154,7 @@ var SimpleType = function () {
 <p><strong>Response</strong><br>The response includes a status code</p>
 <p><strong><em>Notes</em></strong><br>This request will return an error if an event already exists for any index in the request. If any individual index encounters a problem, the entire operation is rolled back and no insertions are made. The <code>streamId</code> and <code>index</code> that caused the issue are included in the error response.</p>
 <p><strong>Example</strong><br>The following request is used to insert events into stream <code>Simple</code> of <code>SimpleType</code>,</p>
-<pre><code class="lang-text">   POST api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   POST api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;{streamId}/&#8203;Data
 </code></pre><p>where the request body specifies the values to insert: </p>
 <pre><code class="lang-json">[
     {
@@ -175,7 +175,7 @@ var SimpleType = function () {
 <h2 id="patch-values"><code>Patch Values</code></h2>
 <p>Modifies the specified stream event(s). Patching affects only the data item parameters that are included in the call.</p>
 <p><strong>Request</strong></p>
-<pre><code class="lang-text">   PATCH api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   PATCH api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;{streamId}/&#8203;Data
         ?select={selectExpression}
 </code></pre><p><strong>Parameters</strong><br><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -184,7 +184,7 @@ var SimpleType = function () {
 <p><strong>Request Body</strong><br>A serialized collection of one or more patch property events</p>
 <p><strong>Response</strong><br>The response includes a status code</p>
 <p>Consider you have a stream <code>Simple</code> of <code>SimpleType</code>, to change one property, <code>Measurement</code>, for one event specify the following request</p>
-<pre><code class="lang-text">   PATCH api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   PATCH api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;Simple/&#8203;Data
        ?select=measurement
 </code></pre><p>With the following request body,</p>
 <pre><code class="lang-json">[
@@ -210,7 +210,7 @@ var SimpleType = function () {
 <h3 id="index-collection"><code>Index Collection</code></h3>
 <p>Removes the event at each index from the specified stream. Different overloads are available to make it easier to indicate the index where you want to remove a data event. </p>
 <p><strong>Request</strong>  </p>
-<pre><code class="lang-text">   DELETE api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   DELETE api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;{streamId}/&#8203;Data
        ?index={index}[&amp;index={index}…]
 </code></pre><p><strong>Parameters</strong><br><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier   </p>
@@ -231,7 +231,7 @@ var SimpleType = function () {
 <h3 id="window"><code>Window</code></h3>
 <p>Removes events at and between the start index and end index.</p>
 <p><strong>Request</strong></p>
-<pre><code class="lang-text">   DELETE api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   DELETE api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;{streamId}/&#8203;Data
        ?startIndex={startIndex}&amp;endIndex={endIndex}
 </code></pre><p><strong>Parameters</strong><br><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier   </p>
@@ -248,7 +248,7 @@ var SimpleType = function () {
 <h2 id="replace-values"><code>Replace Values</code></h2>
 <p>Writes one or more events over existing events in the specified stream.</p>
 <p><strong>Request</strong></p>
-<pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   PUT api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;{streamId}/&#8203;Data
        ?allowCreate=false
 </code></pre><p><strong>Parameters</strong><br><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier   </p>
@@ -264,7 +264,7 @@ A serialized list of one or more events of the stream type</p>
 <h2 id="update-values"><code>Update Values</code></h2>
 <p>Writes one or more events to the specified stream.</p>
 <p><strong>Request</strong></p>
-<pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   PUT api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;{streamId}/&#8203;Data
 </code></pre><p><strong>Parameters</strong><br><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier   </p>
 <p><code>string streamId</code><br>The stream identifier  </p>

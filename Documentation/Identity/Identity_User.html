@@ -179,7 +179,7 @@
 </code></pre><hr>
 <h2 id="base-url">Base URL</h2>
 <p>All URLs referenced in this section have the following base:</p>
-<p><code>https://dat-b.osisoft.com/</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">https:/&#8203;/&#8203;dat-b.osisoft.com/&#8203;</code></p>
 <h2 id="authentication">Authentication</h2>
 <p>All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieve after a successful authentication request.</p>
 <p><code>Authorization: Bearer &lt;token&gt;</code></p>
@@ -199,7 +199,7 @@ Read <a href="https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/bas
 <p>Get a list of users from a Tenant. Optionally, get a list of requested users.
             Total number of users in the Tenant set in the Total-Count header.</p>
 <h3 id="request">Request</h3>
-<p><code>GET api/v1/Tenants/{tenantId}/Users</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Users</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -347,7 +347,7 @@ int32 count
             The User status can be: InvitationAccepted (0),  NoInvitation (1),
             InvitationNotSent (2), InvitationSent (3), InvitationExpired (4).</p>
 <h3 id="request-1">Request</h3>
-<p><code>GET api/v1/Tenants/{tenantId}/Users/Status</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Users/&#8203;Status</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -442,7 +442,7 @@ string status
 <h2 id="get-user-from-a-tenant"><code>Get User from a Tenant</code></h2>
 <p>Get a User from Tenant.</p>
 <h3 id="request-2">Request</h3>
-<p><code>GET api/v1/Tenants/{tenantId}/Users/{userId}</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Users/&#8203;{userId}</code></p>
 <h3 id="parameters-2">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -490,7 +490,7 @@ Guid userId
 <p>Get invitation status for a User. It can be: InvitationAccepted (0),
             NoInvitation (1), InvitationNotSent (2), InvitationSent (3), InvitationExpired (4).</p>
 <h3 id="request-3">Request</h3>
-<p><code>GET api/v1/Tenants/{tenantId}/Users/{userId}/Status</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Users/&#8203;{userId}/&#8203;Status</code></p>
 <h3 id="parameters-3">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -541,7 +541,7 @@ Guid userId
 <p>Get preferences from a User. User preferences can be any valid
             JSON object. A common use case is to store UI preferences for the User.</p>
 <h3 id="request-4">Request</h3>
-<p><code>GET api/v1/Tenants/{tenantId}/Users/{userId}/Preferences</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Users/&#8203;{userId}/&#8203;Preferences</code></p>
 <h3 id="parameters-4">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -573,7 +573,7 @@ Guid userId
 <h2 id="update-users-preferences"><code>Update User&#39;s Preferences</code></h2>
 <p>Update preferences for a User.</p>
 <h3 id="request-5">Request</h3>
-<p><code>PUT api/v1/Tenants/{tenantId}/Users/{userId}/Preferences</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">PUT api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Users/&#8203;{userId}/&#8203;Preferences</code></p>
 <h3 id="parameters-5">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -615,7 +615,7 @@ JObject preferences
             they will not be able to finish the sign-up process. Users have unique Ids in a Tenant.
             Currently there is a limit of 50000 users per Tenant.</p>
 <h3 id="request-6">Request</h3>
-<p><code>POST api/v1/Tenants/{tenantId}/Users</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">POST api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Users</code></p>
 <h3 id="parameters-6">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -716,7 +716,7 @@ UserCreateOrUpdate userCreateOrUpdate
 <h2 id="update-user-in-a-tenant"><code>Update User in a Tenant</code></h2>
 <p>Update a User in a Tenant. The Id of a User cannot be changed.</p>
 <h3 id="request-7">Request</h3>
-<p><code>PUT api/v1/Tenants/{tenantId}/Users/{userId}</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">PUT api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Users/&#8203;{userId}</code></p>
 <h3 id="parameters-7">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -828,7 +828,7 @@ UserCreateOrUpdate userCreateOrUpdate
             behalf of the ser will no longer be valid after the
             User has been deleted.</p>
 <h3 id="request-8">Request</h3>
-<p><code>DELETE api/v1/Tenants/{tenantId}/Users/{userId}</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">DELETE api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Users/&#8203;{userId}</code></p>
 <h3 id="parameters-8">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -857,7 +857,7 @@ Guid userId
 <p>Validate that a User exists. This endpoint is identical to the GET
             one, but it does not return an object in the body.</p>
 <h3 id="request-9">Request</h3>
-<p><code>HEAD api/v1/Tenants/{tenantId}/Users/{userId}</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Users/&#8203;{userId}</code></p>
 <h3 id="parameters-9">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -890,7 +890,7 @@ Guid userId
             The value will be set in the Total-Count header. This endpoint is identical to the GET one but
             it does not return any objects in the body.</p>
 <h3 id="request-10">Request</h3>
-<p><code>HEAD api/v1/Tenants/{tenantId}/Users</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Users</code></p>
 <h3 id="parameters-10">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -924,7 +924,7 @@ Guid[] id
 <p>Validate that there are preferences for a User. This endpoint is identical
             to the GET one but it does not return any objects in the body.</p>
 <h3 id="request-11">Request</h3>
-<p><code>HEAD api/v1/Tenants/{tenantId}/Users/{userId}/Preferences</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Users/&#8203;{userId}/&#8203;Preferences</code></p>
 <h3 id="parameters-11">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId

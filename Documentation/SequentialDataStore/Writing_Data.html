@@ -94,7 +94,7 @@ to the request. All references to indexes are to the primary index.</p>
 <li><a class="xref" href="Writing_Data_API.html#update-values">Update Values</a> add or replaces a collection of events.</li>
 </ul>
 <p>The base URI for writing SDS data to a single stream is:</p>
-<pre><code class="lang-text">     api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data  
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">     api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;{streamId}/&#8203;Data  
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -145,7 +145,7 @@ Default JSON responses do not include any values that are equal to the default v
 <p>Verbose JSON responses include all values in the returned JSON payload, including defaults.
 To specify verbose JSON return, add the header <code>Accept-Verbosity</code> with a value of <code>verbose</code> to the request. </p>
 <p>Verbose has no impact on writes; writes return only error messages.</p>
-<p>To specify SDS format, set the <code>Accept</code> header in the request to <code>application/sds</code>.</p>
+<p>To specify SDS format, set the <code>Accept</code> header in the request to <code style="word-break:normal; overflow-wrap:break-word;">application/&#8203;sds</code>.</p>
 <h3 id="indexes">Indexes</h3>
 <p>SDS writes rely on the primary index for positioning within streams and locating existing events. 
 Most writes use the index as specified by the value. Deletes are the exception to this rule. When deleting, 

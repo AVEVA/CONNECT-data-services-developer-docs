@@ -270,6 +270,24 @@ show how ExtrapolationMode affects returned values for each InterpolationMode va
 | Forward             | 2                   | No event is returned       | Returns last data value   |
 | Backward            | 3                   | Returns first data value   | No event is returned      |
 
+**ExtrapolationMode with InterpolationMode = ContinuousNullableLeading**
+
+| ExtrapolationMode   | Enumeration value   | Index before data          | Index after data          |
+|---------------------|---------------------|----------------------------|---------------------------|
+| All                 | 0                   | Returns null value         | Returns null value   |
+| None                | 1                   | No event is returned       | No event is returned      |
+| Forward             | 2                   | No event is returned       | Returns null value   |
+| Backward            | 3                   | Returns null value         | No event is returned      |
+
+**ExtrapolationMode with InterpolationMode = ContinuousNullableTrailing**
+
+| ExtrapolationMode   | Enumeration value   | Index before data          | Index after data          |
+|---------------------|---------------------|----------------------------|---------------------------|
+| All                 | 0                   | Returns null value         | Returns null value   |
+| None                | 1                   | No event is returned       | No event is returned      |
+| Forward             | 2                   | No event is returned       | Returns null value   |
+| Backward            | 3                   | Returns null value         | No event is returned      |
+
 
 If the ExtrapolationMode is not assigned, the events are extrapolated in the default manner, unless the extrapolation mode is overridden on the SdsStream. For more information on overriding the extrapolation mode on a specific stream see [Sds Streams](xref:sdsStreams).
 

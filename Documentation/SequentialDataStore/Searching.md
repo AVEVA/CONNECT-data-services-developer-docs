@@ -182,14 +182,10 @@ Operators | Description
 ``AND`` | AND operator. For example, ``cat AND dog`` searches for streams containing both "cat" and "dog".  AND must be in all caps.
 ``OR``  | OR operator. For example, ``cat OR dog`` searches for streams containing either "cat" or "dog" or both.  OR must be in all caps.
 ``NOT`` | NOT operator. For example, ``cat NOT dog`` searches for streams that have the "cat" term or do not have "dog".  NOT must be in all caps.
-``*``   | Wildcard operator. For example, ``cat*`` searches for streams that have a term that starts with "cat", ignoring case.
-``:``   | Field-scoped query.  For example, ``id:stream*`` will search for streams where the ``id`` field starts with "stream", but will not search on other fields like ``name`` or ``description``.  *Note that field names are camel case and are case sensitive.*
-``( )`` | Precedence operator. For example, ``motel AND (wifi OR luxury)`` searches for streams containing the motel term and either wifi or luxury (or both).
-
-**Notes regarding wildcard operator ``*``:** The wildcard ``*`` can only be used once for each search term, except for the case of a Contains type query clause. In that case two wildcards are allowed: 
-one as prefix and one as suffix e.g. ``*Tank*`` is valid but ``*Ta*nk``, ``Ta*nk*``, and ``*Ta*nk*`` are currently not supported.
-
-The wildcard ``*`` only works when specifying a single search term. For example, you can search for ``Tank*``, ``*Tank``, ``Ta*nk`` but not ``Tank Meter*``.
+``*``   | Wildcard operator. This matches 0 or more characters in a word.  For example, ``log*`` searches for streams that have a term that starts with "log" (e.g. "log", "logs" or "logger"), ignoring case.
+``:``   | Field-scoped query.  This specifies a particular field to search on.  For example, ``id:stream*`` will search for streams where the ``id`` field starts with "stream", but will not search on other fields like ``name`` or ``description``.
+``" "`` | Quote operator. This searches on an exact sequence of characters rather than searching on words separated by spaces or punctuation.  For example, while ``dog food`` (without quotes) searches for streams containing "dog" or "food" anywhere in any order, ``"dog food"`` (with quotes) will only match streams that contain the whole string together and in that order.
+``( )`` | Precedence operator. For example, ``motel AND (wifi OR luxury)`` searches for streams containing "motel" and either "wifi" and/or "luxury".
 
 **: Operator**
 ---------------
@@ -211,18 +207,18 @@ You can also qualify which fields are searched by using the following syntax:
 **\* Operator**
 -----------------
 
-You can use the ``'*'`` character as a wildcard to specify an incomplete string.
+You can use the ``'*'`` character as a wildcard to specify an incomplete string. A wildcard can only be used once for each search term, except for the case of a Contains type query clause. In that case two wildcards are allowed - one at the beginning and one at the end of the term.  For example, ``*Tank*`` is valid but ``*Ta*nk``, ``Ta*nk*``, and ``*Ta*nk*`` are currently not supported.
 
 **Query string**     | **Matches field value** | **Does not match field value**
 ------------------ | --------------------------------- | -----------------------------
 ``log*`` | log<br>logger | analog
 ``*log`` | analog<br>alog | logg
 ``*log*`` | analog<br>alogger | lop
-``l*g`` | log<br>logg | lop
+``l*g`` | log<br>logg | lake swimming
 
 **Supported**     | **Not Supported**
 ------------------ | ----------------------------------------
-``*``<br>``*log``<br>``l*g``<br>``log*``<br>``*log*``	| ``*l*g*``<br>``*l*g``<br>``l*g*``
+``*``<br>``*log``<br>``l*g``<br>``log*``<br>``*log*`` <br>``"my log"*``	| ``*l*g*``<br>``*l*g``<br>``l*g*`` <br>``"my"*"log"``
 
 **Request**
  ```text
@@ -233,6 +229,34 @@ You can use the ``'*'`` character as a wildcard to specify an incomplete string.
 ```csharp
 	GetStreamsAsync(query:”log*”);
 ```
+
+\"" Operator	
+-------------------	
+
+The search engine automatically searches on strings delimited by whitespace and punctuation.  To search for values that include these delimiters, enclose the value in double quotes.	
+
+When using double quotes, the matching string must include the whole value of the field on the object being searched.  Partial strings will not be matched unless wildcards are used.  For example, if you're searching on a stream that has a description of ``Pump three on unit five``, a query of ``"unit five"`` will not match the description, but a query of ``*"unit five"`` will.
+
+Also, wildcards can be used on the *outside* of the quote operators, but if an asterisk is on the inside of the quotes, it is treated as a string literal rather than a wildcard operator.  For example, you can search for ``"dog food"*`` to find a string that starts with "dog food", but if you search for ``"dog food*"``, it will only match on a value of "dog food*".
+
+ **Query string**     | **Matches field value** | **Does not match field value**	
+------------------ | --------------------------------- | -----------------------------	
+``"pump pressure"`` | pump pressure | pressure <br> pressure pump <br> pump pressure gauge	
+``"pump pressure"*`` | pump pressure <br> pump pressure gauge | pressure <br> pressure pump <br> the pump pressure gauge
+``*"pump pressure"`` | pump pressure <br> the pump pressure | pressure <br> pressure pump <br> the pump pressure gauge
+``*"pump pressure"*`` | pump pressure <br> pump pressure gauge <br> the pump pressure gauge | pressure <br> pressure pump 
+``"pump*pressure"`` | pump\*pressure | pump pressure <br> the pump pressure gauge
+
+ **Request**	
+ ```text	
+	GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=”pump pressure”	
+ ```	
+
+ **.NET Library**	
+```csharp	
+	GetStreamsAsync(query:“\\“pump pressure\\””);	
+```	
+
 
 Other operators examples
 ---------------------

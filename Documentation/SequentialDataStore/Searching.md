@@ -172,6 +172,32 @@ The default value for ``orderby`` parameter is ascending order. It can be change
 	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure&orderby=name desc&skip=10&count=20
  ```
 
+Tokenization
+=====================
+
+Tokenization is the process of breaking a string sequence into pieces called tokens using specific characters to delimit tokens. 
+
+When performing a search, the user specified query is tokenized into search terms. 
+
+The rules around how the query string is tokenized can affect the search results. 
+Terms are delimited by spaces or by one or more punctuation characters followed by a space. 
+
+Punctuation follwed by other characters without space does not trigger tokenization and is treated
+as part of the term. 
+
+If your query has a wildcard after trailing punctuation, neither is tokenized. To specifically search on a term that has trailing punctuation, enclose it in quotation marks 
+to ensure the punctuation is part of the query. See examples below:
+
+ Term | Tokenized Term
+----------|-------------------------------------------------------------------
+``Device.1`` | ``Device.1``
+``Device!!1`` | ``Device!!1``
+``Device. ``  | ``Device``
+``Device!!`` | ``Device``
+``Device!*`` | ``Device``
+``"Device!"*`` | ``Device!``
+
+
 Search operators
 =====================
 

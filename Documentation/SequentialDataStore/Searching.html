@@ -319,7 +319,50 @@ The default value for <code>orderby</code> parameter is ascending order. It can 
    GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams?query=name:pump name:pressure&amp;orderby=name desc
 
    GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams?query=name:pump name:pressure&amp;orderby=name desc&amp;skip=10&amp;count=20
-</code></pre><h1 id="search-operators">Search operators</h1>
+</code></pre><h1 id="tokenization">Tokenization</h1>
+<p>Tokenization is the process of breaking a string sequence into pieces called tokens using specific characters to delimit tokens. </p>
+<p>When performing a search, the user specified query is tokenized into search terms. </p>
+<p>The rules around how the query string is tokenized can affect the search results. 
+Terms are delimited by spaces or by one or more punctuation characters followed by a space. </p>
+<p>Punctuation follwed by other characters without space does not trigger tokenization and is treated
+as part of the term. </p>
+<p>If your query has a wildcard after trailing punctuation, neither is tokenized. To specifically search on a term that has trailing punctuation, enclose it in quotation marks 
+to ensure the punctuation is part of the query. See examples below:</p>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Tokenized Term</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Device.1</code></td>
+<td><code>Device.1</code></td>
+</tr>
+<tr>
+<td><code>Device!!1</code></td>
+<td><code>Device!!1</code></td>
+</tr>
+<tr>
+<td><code>Device.</code></td>
+<td><code>Device</code></td>
+</tr>
+<tr>
+<td><code>Device!!</code></td>
+<td><code>Device</code></td>
+</tr>
+<tr>
+<td><code>Device!*</code></td>
+<td><code>Device</code></td>
+</tr>
+<tr>
+<td><code>&quot;Device!&quot;*</code></td>
+<td><code>Device!</code></td>
+</tr>
+</tbody>
+</table>
+<h1 id="search-operators">Search operators</h1>
 <p>You can specify search operators in the <code>query</code> string to return more specific search results. </p>
 <table>
 <thead>
@@ -343,21 +386,22 @@ The default value for <code>orderby</code> parameter is ascending order. It can 
 </tr>
 <tr>
 <td><code>*</code></td>
-<td>Wildcard operator. For example, <code>cat*</code> searches for streams that have a term that starts with &quot;cat&quot;, ignoring case.</td>
+<td>Wildcard operator. This matches 0 or more characters in a word.  For example, <code>log*</code> searches for streams that have a term that starts with &quot;log&quot; (e.g. &quot;log&quot;, &quot;logs&quot; or &quot;logger&quot;), ignoring case.</td>
 </tr>
 <tr>
 <td><code>:</code></td>
-<td>Field-scoped query.  For example, <code>id:stream*</code> will search for streams where the <code>id</code> field starts with &quot;stream&quot;, but will not search on other fields like <code>name</code> or <code>description</code>.  <em>Note that field names are camel case and are case sensitive.</em></td>
+<td>Field-scoped query.  This specifies a particular field to search on.  For example, <code>id:stream*</code> will search for streams where the <code>id</code> field starts with &quot;stream&quot;, but will not search on other fields like <code>name</code> or <code>description</code>.</td>
+</tr>
+<tr>
+<td><code>&quot; &quot;</code></td>
+<td>Quote operator. This searches on an exact sequence of characters rather than searching on words separated by spaces or punctuation.  For example, while <code>dog food</code> (without quotes) searches for streams containing &quot;dog&quot; or &quot;food&quot; anywhere in any order, <code>&quot;dog food&quot;</code> (with quotes) will only match streams that contain the whole string together and in that order.</td>
 </tr>
 <tr>
 <td><code>( )</code></td>
-<td>Precedence operator. For example, <code>motel AND (wifi OR luxury)</code> searches for streams containing the motel term and either wifi or luxury (or both).</td>
+<td>Precedence operator. For example, <code>motel AND (wifi OR luxury)</code> searches for streams containing &quot;motel&quot; and either &quot;wifi&quot; and/or &quot;luxury&quot;.</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Notes regarding wildcard operator <code>*</code>:</strong> The wildcard <code>*</code> can only be used once for each search term, except for the case of a Contains type query clause. In that case two wildcards are allowed: 
-one as prefix and one as suffix e.g. <code>*Tank*</code> is valid but <code>*Ta*nk</code>, <code>Ta*nk*</code>, and <code>*Ta*nk*</code> are currently not supported.</p>
-<p>The wildcard <code>*</code> only works when specifying a single search term. For example, you can search for <code>Tank*</code>, <code>*Tank</code>, <code>Ta*nk</code> but not <code>Tank Meter*</code>.</p>
 <h2 id="-operator"><strong>: Operator</strong></h2>
 <p>You can also qualify which fields are searched by using the following syntax: </p>
 <pre><code>fieldname:fieldvalue
@@ -366,7 +410,7 @@ one as prefix and one as suffix e.g. <code>*Tank*</code> is valid but <code>*Ta*
 </code></pre><p><strong>.NET Library</strong></p>
 <pre><code class="lang-csharp">    GetStreamsAsync(query:”name:pump name:pressure”);
 </code></pre><h2 id="-operator-1"><strong>* Operator</strong></h2>
-<p>You can use the <code>&#39;*&#39;</code> character as a wildcard to specify an incomplete string.</p>
+<p>You can use the <code>&#39;*&#39;</code> character as a wildcard to specify an incomplete string. A wildcard can only be used once for each search term, except for the case of a Contains type query clause. In that case two wildcards are allowed - one at the beginning and one at the end of the term.  For example, <code>*Tank*</code> is valid but <code>*Ta*nk</code>, <code>Ta*nk*</code>, and <code>*Ta*nk*</code> are currently not supported.</p>
 <table>
 <thead>
 <tr>
@@ -394,7 +438,7 @@ one as prefix and one as suffix e.g. <code>*Tank*</code> is valid but <code>*Ta*
 <tr>
 <td><code>l*g</code></td>
 <td>log<br>logg</td>
-<td>lop</td>
+<td>lake swimming</td>
 </tr>
 </tbody>
 </table>
@@ -407,8 +451,8 @@ one as prefix and one as suffix e.g. <code>*Tank*</code> is valid but <code>*Ta*
 </thead>
 <tbody>
 <tr>
-<td><code>*</code><br><code>*log</code><br><code>l*g</code><br><code>log*</code><br><code>*log*</code></td>
-<td><code>*l*g*</code><br><code>*l*g</code><br><code>l*g*</code></td>
+<td><code>*</code><br><code>*log</code><br><code>l*g</code><br><code>log*</code><br><code>*log*</code> <br><code>&quot;my log&quot;*</code></td>
+<td><code>*l*g*</code><br><code>*l*g</code><br><code>l*g*</code> <br><code>&quot;my&quot;*&quot;log&quot;</code></td>
 </tr>
 </tbody>
 </table>
@@ -416,6 +460,50 @@ one as prefix and one as suffix e.g. <code>*Tank*</code> is valid but <code>*Ta*
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams?query=log*
 </code></pre><p><strong>.NET Library</strong></p>
 <pre><code class="lang-csharp">    GetStreamsAsync(query:”log*”);
+</code></pre><h2 id="-operator----">&quot;&quot; Operator    </h2>
+<p>The search engine automatically searches on strings delimited by whitespace and punctuation.  To search for values that include these delimiters, enclose the value in double quotes.   </p>
+<p>When using double quotes, the matching string must include the whole value of the field on the object being searched.  Partial strings will not be matched unless wildcards are used.  For example, if you&#39;re searching on a stream that has a description of <code>Pump three on unit five</code>, a query of <code>&quot;unit five&quot;</code> will not match the description, but a query of <code>*&quot;unit five&quot;</code> will.</p>
+<p>Also, wildcards can be used on the <em>outside</em> of the quote operators, but if an asterisk is on the inside of the quotes, it is treated as a string literal rather than a wildcard operator.  For example, you can search for <code>&quot;dog food&quot;*</code> to find a string that starts with &quot;dog food&quot;, but if you search for <code>&quot;dog food*&quot;</code>, it will only match on a value of &quot;dog food*&quot;.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Query string</strong></th>
+<th><strong>Matches field value</strong></th>
+<th><strong>Does not match field value</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&quot;pump pressure&quot;</code></td>
+<td>pump pressure</td>
+<td>pressure <br> pressure pump <br> pump pressure gauge</td>
+</tr>
+<tr>
+<td><code>&quot;pump pressure&quot;*</code></td>
+<td>pump pressure <br> pump pressure gauge</td>
+<td>pressure <br> pressure pump <br> the pump pressure gauge</td>
+</tr>
+<tr>
+<td><code>*&quot;pump pressure&quot;</code></td>
+<td>pump pressure <br> the pump pressure</td>
+<td>pressure <br> pressure pump <br> the pump pressure gauge</td>
+</tr>
+<tr>
+<td><code>*&quot;pump pressure&quot;*</code></td>
+<td>pump pressure <br> pump pressure gauge <br> the pump pressure gauge</td>
+<td>pressure <br> pressure pump</td>
+</tr>
+<tr>
+<td><code>&quot;pump*pressure&quot;</code></td>
+<td>pump*pressure</td>
+<td>pump pressure <br> the pump pressure gauge</td>
+</tr>
+</tbody>
+</table>
+<p> <strong>Request</strong>    </p>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/&#8203;v1-preview/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams?query=”pump pressure”    
+</code></pre><p> <strong>.NET Library</strong>   </p>
+<pre><code class="lang-csharp">    GetStreamsAsync(query:“\\“pump pressure\\””);   
 </code></pre><h2 id="other-operators-examples">Other operators examples</h2>
 <table>
 <thead>

@@ -174,7 +174,7 @@
 </code></pre><hr>
 <h2 id="base-url">Base URL</h2>
 <p>All URLs referenced in this section have the following base:</p>
-<p><code style="word-break:normal; overflow-wrap:break-word;">https:/&#8203;/&#8203;dat-b.osisoft.com/&#8203;</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">https:/<wbr>/<wbr>dat-b.osisoft.com/<wbr></code></p>
 <h2 id="authentication">Authentication</h2>
 <p>All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieve after a successful authentication request.</p>
 <p><code>Authorization: Bearer &lt;token&gt;</code></p>
@@ -194,7 +194,7 @@ Read <a href="https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/bas
 <p>Create an Authorization Code flow Client. No Secret will be generated for this
             Client.</p>
 <h3 id="request">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">POST api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;AuthorizationCodeClients</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">POST api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>AuthorizationCodeClients</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -350,7 +350,7 @@ AuthorizationCodeClient authorizationCodeClient
 <p>Update an Authorization Code Client. It can take up to one hour
             for update to manifest in the authentication process.</p>
 <h3 id="request-1">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">PUT api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;AuthorizationCodeClients/&#8203;{clientId}</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>AuthorizationCodeClients/<wbr>{clientId}</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -506,7 +506,7 @@ AuthorizationCodeClient authorizationCodeClient
 <h2 id="get-an-authorization-code-client-from-tenant"><code>Get an Authorization Code Client from Tenant</code></h2>
 <p>Get an Authorization Code Client from Tenant.</p>
 <h3 id="request-2">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;AuthorizationCodeClients/&#8203;{clientId}</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>AuthorizationCodeClients/<wbr>{clientId}</code></p>
 <h3 id="parameters-2">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -562,7 +562,7 @@ string clientId
             Optionally, get a list of requested clients. Total number
             of clients in the Tenant set in the Total-Count header.</p>
 <h3 id="request-3">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;AuthorizationCodeClients</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>AuthorizationCodeClients</code></p>
 <h3 id="parameters-3">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -668,7 +668,7 @@ int32 count
             is identical to the GET one but it does not return any objects
             in the body.</p>
 <h3 id="request-4">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;AuthorizationCodeClients</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>AuthorizationCodeClients</code></p>
 <h3 id="parameters-4">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -707,7 +707,7 @@ string[] tag
             for deletion to manifest in the authentication process. Access
             tokens issued to this client will be valid until their expiration.</p>
 <h3 id="request-5">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">DELETE api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;AuthorizationCodeClients/&#8203;{clientId}</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">DELETE api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>AuthorizationCodeClients/<wbr>{clientId}</code></p>
 <h3 id="parameters-5">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -735,7 +735,7 @@ string clientId
 <h2 id="validate-that-authorization-code-client-exists"><code>Validate that Authorization Code Client Exists</code></h2>
 <p>Validate that an Authorization Code Client exists in Tenant.</p>
 <h3 id="request-6">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;AuthorizationCodeClients/&#8203;{clientId}</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>AuthorizationCodeClients/<wbr>{clientId}</code></p>
 <h3 id="parameters-6">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId

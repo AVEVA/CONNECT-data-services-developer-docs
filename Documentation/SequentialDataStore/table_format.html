@@ -135,21 +135,21 @@ with headers.</p>
     this.Value = null;
   }
   With values as follows:
-  4/&#8203;1/&#8203;2017 7:00:00 AM : Warning  0
-  4/&#8203;1/&#8203;2017 7:01:00 AM : Warning  1
-  4/&#8203;1/&#8203;2017 7:02:00 AM : Warning  2
-  4/&#8203;1/&#8203;2017 7:03:00 AM : Warning  3
-  4/&#8203;1/&#8203;2017 7:04:00 AM : Warning  4
-  4/&#8203;1/&#8203;2017 7:05:00 AM : Warning  5
-  4/&#8203;1/&#8203;2017 7:06:00 AM : Warning  6
-  4/&#8203;1/&#8203;2017 7:07:00 AM : Warning  7
-  4/&#8203;1/&#8203;2017 7:08:00 AM : Warning  8
-  4/&#8203;1/&#8203;2017 7:09:00 AM : Warning  9 
+  4/<wbr>1/<wbr>2017 7:00:00 AM : Warning  0
+  4/<wbr>1/<wbr>2017 7:01:00 AM : Warning  1
+  4/<wbr>1/<wbr>2017 7:02:00 AM : Warning  2
+  4/<wbr>1/<wbr>2017 7:03:00 AM : Warning  3
+  4/<wbr>1/<wbr>2017 7:04:00 AM : Warning  4
+  4/<wbr>1/<wbr>2017 7:05:00 AM : Warning  5
+  4/<wbr>1/<wbr>2017 7:06:00 AM : Warning  6
+  4/<wbr>1/<wbr>2017 7:07:00 AM : Warning  7
+  4/<wbr>1/<wbr>2017 7:08:00 AM : Warning  8
+  4/<wbr>1/<wbr>2017 7:09:00 AM : Warning  9 
 </code></pre><p>The following is a request to retrieve values using the window parameters:</p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">     GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;Simple/&#8203;Data
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">     GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data
      ?startIndex=2017-04-01T07:00:00Z&amp;endIndex=2017-04-01T07:10:00Z
 </code></pre><p>The following response would be returned from the above code:</p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code>  Content-Type: application/&#8203;json
+<pre style="word-break:normal; overflow-wrap:break-word;"><code>  Content-Type: application/<wbr>json
 
   [
      {  
@@ -203,11 +203,11 @@ with headers.</p>
      }
   ]
 </code></pre><p>To retrieve the results in table format, add the form variable and specify table.</p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">     GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;Simple/&#8203;Data
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">     GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data
      ?startIndex=2017-04-01T07:00:00Z&amp;endIndex=2017-04-01T07:10:00Z
      &amp;form=table
 </code></pre><p>Response</p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code>  Content-Type: application/&#8203;json
+<pre style="word-break:normal; overflow-wrap:break-word;"><code>  Content-Type: application/<wbr>json
 
   {  
      &quot;Name&quot;:&quot;Simple&quot;,
@@ -279,11 +279,11 @@ with headers.</p>
      ]
   }
 </code></pre><p>To retrieve the results in table format with column headers, add the form variable and specify <code>tableh</code>.</p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">     GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;Namespaces/&#8203;{namespaceId}/&#8203;Streams/&#8203;Simple/&#8203;Data
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">     GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data
      ?startIndex=2017-04-01T07:00:00Z&amp;endIndex=2017-04-01T07:10:00Z
      &amp;form=tableh
 </code></pre><p>Response</p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code>  Content-Type: application/&#8203;json
+<pre style="word-break:normal; overflow-wrap:break-word;"><code>  Content-Type: application/<wbr>json
 
   {  
      &quot;Name&quot;:&quot;Simple&quot;,

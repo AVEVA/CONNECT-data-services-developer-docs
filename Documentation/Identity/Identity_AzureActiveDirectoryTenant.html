@@ -113,7 +113,7 @@
 </code></pre><hr>
 <h2 id="base-url">Base URL</h2>
 <p>All URLs referenced in this section have the following base:</p>
-<p><code style="word-break:normal; overflow-wrap:break-word;">https:/&#8203;/&#8203;dat-b.osisoft.com/&#8203;</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">https:/<wbr>/<wbr>dat-b.osisoft.com/<wbr></code></p>
 <h2 id="authentication">Authentication</h2>
 <p>All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieve after a successful authentication request.</p>
 <p><code>Authorization: Bearer &lt;token&gt;</code></p>
@@ -132,7 +132,7 @@ Read <a href="https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/bas
 <h2 id="add-aad-tenant-to-ocs-tenant"><code>Add AAD Tenant to OCS Tenant</code></h2>
 <p>Add an AAD Tenant to the OCS Tenant.</p>
 <h3 id="request">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">POST api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;AzureActiveDirectoryTenants/&#8203;{azureActiveDirectoryTenantId}</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">POST api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>AzureActiveDirectoryTenants/<wbr>{azureActiveDirectoryTenantId}</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -170,7 +170,7 @@ string azureActiveDirectoryTenantId
 <h2 id="get-all-aad-tenants-from-ocs-tenant"><code>Get All AAD Tenants from OCS Tenant</code></h2>
 <p>Get all AAD Tenants from an OCS Tenant.</p>
 <h3 id="request-1">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;AzureActiveDirectoryTenants</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>AzureActiveDirectoryTenants</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -222,7 +222,7 @@ int32 count
 <h2 id="get-aad-tenant-from-ocs-tenant"><code>Get AAD Tenant from OCS Tenant</code></h2>
 <p>Get AAD Tenant from an OCS Tenant.</p>
 <h3 id="request-2">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;AzureActiveDirectoryTenants/&#8203;{azureActiveDirectoryTenantId}</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>AzureActiveDirectoryTenants/<wbr>{azureActiveDirectoryTenantId}</code></p>
 <h3 id="parameters-2">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -258,7 +258,7 @@ string azureActiveDirectoryTenantId
 <h2 id="remove-aad-tenant-from-ocs-tenant"><code>Remove AAD Tenant from OCS Tenant</code></h2>
 <p>Remove AAD Tenant from an OCS Tenant.</p>
 <h3 id="request-3">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">DELETE api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;AzureActiveDirectoryTenants/&#8203;{azureActiveDirectoryTenantId}</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">DELETE api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>AzureActiveDirectoryTenants/<wbr>{azureActiveDirectoryTenantId}</code></p>
 <h3 id="parameters-3">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -291,7 +291,7 @@ string azureActiveDirectoryTenantId
             cannot accept invitations from OCS and log in. You can read more about this
             <a href="https://pisquare.osisoft.com/docs/DOC-3986-msa-consent-for-azure-active-directory">here</a></p>
 <h3 id="request-4">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">POST api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;AzureActiveDirectoryTenants/&#8203;{azureActiveDirectoryTenantId}/&#8203;SendConsent</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">POST api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>AzureActiveDirectoryTenants/<wbr>{azureActiveDirectoryTenantId}/<wbr>SendConsent</code></p>
 <h3 id="parameters-4">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -369,7 +369,7 @@ ConsentInformation consentInformation
             This endpoint is identical to the GET one but
             it does not return any objects in the body.</p>
 <h3 id="request-5">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;AzureActiveDirectoryTenants/&#8203;{azureActiveDirectoryTenantId}</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>AzureActiveDirectoryTenants/<wbr>{azureActiveDirectoryTenantId}</code></p>
 <h3 id="parameters-5">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -403,7 +403,7 @@ string azureActiveDirectoryTenantId
             is identical to the GET one but it does not return any objects
             in the body.</p>
 <h3 id="request-6">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/&#8203;v1/&#8203;Tenants/&#8203;{tenantId}/&#8203;AzureActiveDirectoryTenants</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>AzureActiveDirectoryTenants</code></p>
 <h3 id="parameters-6">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId

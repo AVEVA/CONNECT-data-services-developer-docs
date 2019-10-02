@@ -1077,6 +1077,10 @@ Summary values supported by `SdsSummaryType` enum:
 | WeightedStandardDeviation          | 2048              |
 | WeightedPopulationStandardDeviation | 4096              |
 
+Count, Minimum, Maximum, and Range are based only on stored events and do not include interpolated values.
+Mean, Standard Deviation, Skewness, and Kurtosis are event-weighted calculations.
+Total, Weighted Mean, WeightedStandardDeviation, and WeightedPopulationStandardDeviation are index-weighted calculations.
+
 Currently, these values can only be calculated for properties of the following types:
 
 | Type           | SdsTypeCode |
@@ -1166,7 +1170,8 @@ Content-Type: application/json
         },
         "Summaries": {
             "Count": {
-                "Measurement": 2
+                "Time": 3,
+                "Measurement": 3
             },
             "Minimum": {
                 "Measurement": 0
@@ -1222,13 +1227,13 @@ Content-Type: application/json
                 "Measurement": 2
             },
             "Minimum": {
-                "Measurement": 20
+                "Measurement": 30
             },
             "Maximum": {
                 "Measurement": 40
             },
             "Range": {
-                "Measurement": 20
+                "Measurement": 10
             },
             "Total": {
                 "Measurement": 60

@@ -111,7 +111,7 @@ An AccessControlList object.
 ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accessrights/topics``
 -------------------------------------------------------------------------------------
 
-Get the default Access Rights of the requesting identity for new Topics.
+Get the default Access Rights of the requesting identity for any newly created Topics.
 
 **Parameters**
 

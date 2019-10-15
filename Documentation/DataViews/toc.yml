@@ -16,6 +16,9 @@
   href: DataRetrieval_API.md
 - name: DataOutput Formats
   href: DataOutputFormats.md
-
+- name: Securing Data Views
+  href: SecuringDataViews.md
+- name: Access Control API
+  href: AccessControl_API.md
 
   

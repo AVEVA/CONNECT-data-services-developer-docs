@@ -527,21 +527,21 @@ For the first request, specify a null or empty string for the `continuationToken
 
 **Requests**
  ```text
-     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data? 
+     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data 
           ?startIndex={startIndex}&endIndex={endIndex}
 
-     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data? 
+     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data 
           ?startIndex={startIndex}&endIndex={endIndex}&boundaryType={boundaryType}
 
-     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data? 
+     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data 
           ?startIndex={startIndex}&startBoundaryType={startBoundaryType} 
           &endIndex={endIndex}&endBoundaryType={endBoundaryType}
 
-     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data? 
+     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data 
           ?startIndex={startIndex}&endIndex={endIndex}
           &count={count}&continuationToken={continuationToken}
 
-     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data? 
+     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data 
           ?startIndex={startIndex}&startBoundaryType={startBoundaryType} 
           &endIndex={endIndex}&endBoundaryType={endBoundaryType}&filter={filter}&count={count} 
           &continuationToken={continuationToken}
@@ -1076,6 +1076,30 @@ Summary values supported by `SdsSummaryType` enum:
 | WeightedMean                       | 1024              |
 | WeightedStandardDeviation          | 2048              |
 | WeightedPopulationStandardDeviation | 4096              |
+
+Currently, these values can only be calculated for properties of the following types:
+
+| Type           | SdsTypeCode |
+|--------------- | ----------- |
+| Boolean        | 3           |
+| Byte           | 6           |
+| Char           | 4           |
+| Decimal        | 15          |
+| Int16          | 7           |
+| Int32          | 9           |
+| Int64          | 11          |
+| SByte          | 5           |
+| Single         | 13          |
+| UInt16         | 8           |
+| UInt32         | 10          |
+| UInt64         | 12          |
+| DateTime       | 16          |
+| Double         | 14          |
+| DateTimeOffset | 20          |
+| TimeSpan       | 21          |
+
+**Note:** Properties marked with an ``InterpolationMode`` of ``Discrete`` do not support summaries.
+Unsupported properties will be excluded from the summaries returned.
 
 **Request**  
  ```text
@@ -1629,6 +1653,8 @@ Content-Type: application/json
 
 **Response**  
 All Measurements from both Streams with missing values interpolated. If the missing values are between valid Measurements within a Stream, they are interpolated. If the missing values are outside of the boundary values, they are extrapolated.
+
+**Note:** The Interpolated SdsJoinMode currently does not support SdsInterpolationModes of the streams. All join requests with interpolations will honor the interpolation mode of the stream type or type property. More information regarding Interpolation can be found [here.](https://github.com/osisoft/OCS-Docs/blob/master/Documentation/SequentialDataStore/SDS_Types.md#interpolation)
 
 **Response body**
 

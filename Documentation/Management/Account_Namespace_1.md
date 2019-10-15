@@ -34,6 +34,18 @@ For HTTP requests and responses, the Namespace object has the following properti
 	"State": 0,
 }
 ```
+
+## Region ##
+
+When a Namespace is created, all services are created in the Namespace's region. Resources created in this Namespace (i.e. SDS types, streams, and stream views) will be created in the region of the Namespace, and any data stored in the Namespace will be stored in that region.
+
+| Supported Regions | 
+| --- |
+| WestUS | 
+| WestEurope* |
+
+\* WestEurope Namespaces are currently in preview, and are not yet generally available. If you believe you have a valid use case for a WestEurope Namespace, please contact OSIsoft.
+
 ***
 
 ## `Get All Namespaces`

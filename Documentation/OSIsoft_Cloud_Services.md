@@ -6,16 +6,10 @@ uid: osisoftCloudServices
 
 The information in the sections that follow document the APIs and usage for each of the following:
 
-* Management - Use the information in this section to create, manage, and administer your account by assigning users, roles,
-  and namespaces to your tenant.
-* Sequential Data Store (SDS) - Use the information in this section to learn about the OSIsoft Cloud Services Sequential Data
-  Store. The data store is an optimized sequential data store based on the Qi technology.
-* Data ingress and OSIsoft Message Format - You use OSIsoft Message Format (OMF) to achieve high-throughput asynchronous
-  data ingress into the OCS Sequential Data Store.
-* Sequential Data Store (SDS) - Use the information in this section to learn about the OSIsoft Cloud Services Sequential Data 
-  Store. The SDS is optimized for sequential data operations.
-* Data ingress and OSIsoft Message Format - You use OSIsoft Message Format (OMF) to achieve high-throughput asynchronous data ingress into the OCS Sequential Data Store.
+* Management - Use the information in this section to create, manage, and administer your account by assigning users, roles, and namespaces to your tenant.
 * Identity - Use the information in this section to create, manage and administer Users and Clients.
+* Sequential Data Store (SDS) - Use the information in this section to learn about the OSIsoft Cloud Services Sequential Data Store. The SDS is optimized for sequential data operations.
+* Data ingress and OSIsoft Message Format - You use OSIsoft Message Format (OMF) to achieve high-throughput asynchronous data ingress into the OCS Sequential Data Store.
 * Data Views - Use the information in this section to create user-selected subsets of data stored in OSIsoft Cloud Services which are mapped into customizable table formats.
 
 
@@ -32,6 +26,8 @@ A Tenant represents a client or organization that owns and manages a collection 
 Tenants are divided into one or more logical units called Namespaces. Each Namespace is distinct and separate from 
 other Namespaces, with its own instances of the various OSIsoft Cloud Services and data stores. 
 Namespaces provide isolation of resources. 
+
+Namespaces are provisioned within a region. The Namespace's services and data stores all exist in the Namespace's region. Resources allocated to a Namespace are isolated to the Namespace's region. For more information on regions see the [Namespace](xref:AccountNamespace_1) documentation.
 
 Isolation provided by Tenants and Namespaces prevents accidental or malicious data access. 
 

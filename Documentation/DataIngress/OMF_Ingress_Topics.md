@@ -108,6 +108,24 @@ An AccessControlList object.
 
 ***************************
 
+``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accessrights/topics``
+-------------------------------------------------------------------------------------
+
+Get the default Access Rights of the requesting identity for new Topics.
+
+**Parameters**
+
+``tenantId``
+  Unique Id for the tenant. 
+``namespaceId``
+  Unique Id for the namespace. 
+
+**Returns**
+
+An array of Access Rights strings.
+
+***************************
+
 ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/accesscontrol``
 -------------------------------------------------------------------------------------
 
@@ -125,6 +143,26 @@ Get the Access Control List for a particular Topic.
 **Returns**
 
 An AccessControlList object.
+
+***************************
+
+``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/accessrights``
+-------------------------------------------------------------------------------------
+
+Get the Access Rights of the requesting identity for a particular Topic.
+
+**Parameters**
+
+``tenantId``
+  Unique Id for the tenant. 
+``namespaceId``
+  Unique Id for the namespace. 
+``topicId``
+  Unique Id for the Topic. 
+
+**Returns**
+
+An array of Access Rights strings.
 
 ***************************
 

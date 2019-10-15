@@ -93,6 +93,24 @@ Get the default Access Control List for new Subscriptions.
 
 An AccessControlList object.
 
+*****************
+
+``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accessrights/subscriptions``
+--------------------------------------------
+
+Get the default Access Rights of the requesting identity for new Subscriptions.
+
+**Parameters**
+
+``tenantId``
+  Unique Id for the tenant. 
+``namespaceId``
+  Unique Id for the namespace. 
+
+**Returns**
+
+An array of Access Rights strings.
+
 *******************
 
 ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}/accesscontrol``
@@ -112,6 +130,26 @@ Get the Access Control List for a particular Subscription.
 **Returns**
 
 An AccessControlList object.
+
+*******************
+
+``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}/accessrights``
+--------------------------------------------
+
+Get the Access Rights of the requesting identity for a particular Subscription.
+
+**Parameters**
+
+``tenantId``
+  Unique Id for the tenant. 
+``namespaceId``
+  Unique Id for the namespace. 
+``subscriptionId``
+  Unique Id for the Subscription. 
+
+**Returns**
+
+An array of Access Rights strings.
 
 *******************
 

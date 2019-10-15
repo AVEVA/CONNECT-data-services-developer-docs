@@ -98,7 +98,7 @@ An AccessControlList object.
 ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accessrights/subscriptions``
 --------------------------------------------
 
-Get the default Access Rights of the requesting identity for any newly created Subscription.
+Get the default Access Rights of the requesting identity for any newly created Subscriptions.
 
 **Parameters**
 

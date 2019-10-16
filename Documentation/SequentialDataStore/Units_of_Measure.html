@@ -78,8 +78,8 @@
             <article class="content wrap" id="_content" data-uid="unitsOfMeasure">
 <h1 id="units-of-measure">Units of Measure</h1>
 
-<p>The Sequential Data Store (SDS) provides a collection of built-in units of measure (Uom). These units of measure can be <a href="#associating-a-unit-of-measure-with-a-sdstype">associated</a> with SdsStreams and SdsTypes in order to provide unit information for stream data that model measurable quantities. If data has unit information associated with it, SDS is able to support unit conversions when retrieving data. See <a class="xref" href="Reading_Data.html">Reading data</a> for more information.</p>
-<p>Since a unit of measurement (e.g. meter) defines the magnitude of a quantity (e.g. Length), SDS represents this via two objects: SdsUom and SdsUomQuantity. </p>
+<p>The Sequential Data Store (SDS) provides a collection of built-in units of measure (UOM). These units of measure can be <a href="#associating-a-unit-of-measure-with-a-sdstype">associated</a> with SdsStreams and SdsTypes in order to provide unit information for stream data that model measurable quantities. If data has unit information associated with it, SDS is able to support unit conversions when retrieving data. See <a class="xref" href="Reading_Data.html">Reading data</a> for more information.</p>
+<p>Since a unit of measure (meter, for example) defines the magnitude of a quantity (for example, length), SDS represents this by way of two objects: SdsUom and SdsUomQuantity. </p>
 <h2 id="sdsuom">SdsUom</h2>
 <p>A SdsUom represents a single unit of measure, such as &#39;meter&#39;.</p>
 <p>The following table shows the required and optional SdsUom fields.</p>
@@ -146,7 +146,7 @@
 </tbody>
 </table>
 <h2 id="sdsuomquantity">SdsUomQuantity</h2>
-<p>Represents a single measurable quantity (e.g. Length)</p>
+<p>Represents a single measurable quantity (for example, length)</p>
 <p>The following table shows the required and optional SdsUomQuantity fields.</p>
 <table>
 <thead>

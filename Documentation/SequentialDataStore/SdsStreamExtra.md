@@ -109,7 +109,7 @@ Returns the value for the specified key in the metadata dictionary of the specif
       HTTP/1.1 200 
       Content-Type: application/json 
       { 
-          "a metadata value” 
+          "a metadata value"
       } 
 
 
@@ -166,7 +166,46 @@ Overwrites any existing metadata; does not merge.
 
 ***********************
 
+``Patch stream metadata``
+------------------------
 
+Modifies the metadata based on operations specified in the request body. The request body follows
+[JSON Patch format](http://jsonpatch.com/).
+
+**Request**
+ ```text
+      PATCH api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Metadata 
+ ```
+
+**Parameters**
+
+``string tenantId``  
+  The tenant identifier  
+  
+``string namespaceId``  
+  The namespace identifier  
+  
+``string streamId``  
+  The stream identifier  
+
+**Response**
+
+  The response includes a status code and a response body.
+
+**Response body**  
+
+A collection of operations to be applied to the metadata collection as specified by the [JSON Patch format](http://jsonpatch.com/).
+
+**.NET Library**
+```csharp
+      Task<IDictionary<string, string>> PatchStreamMetadataAsync(string streamId, MetadataPatchDocument patchDoc);
+```
+
+**Security**
+
+  Allowed for administrator accounts
+
+***********************
 
 ``Delete stream metadata``
 ------------------------

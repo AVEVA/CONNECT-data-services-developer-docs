@@ -868,6 +868,9 @@ that consist of multiple properties is not defined and results in non-determinan
 </tr>
 </tbody>
 </table>
+<p>Count, Minimum, Maximum, and Range are based only on stored events and do not include interpolated values.
+Mean, Standard Deviation, Skewness, and Kurtosis are event-weighted calculations.
+Total, Weighted Mean, WeightedStandardDeviation, and WeightedPopulationStandardDeviation are index-weighted calculations.</p>
 <p>Currently, these values can only be calculated for properties of the following types:</p>
 <table>
 <thead>
@@ -1000,7 +1003,8 @@ Content-Type: application/json
         },
         &quot;Summaries&quot;: {
             &quot;Count&quot;: {
-                &quot;Measurement&quot;: 2
+                &quot;Time&quot;: 3,
+                &quot;Measurement&quot;: 3
             },
             &quot;Minimum&quot;: {
                 &quot;Measurement&quot;: 0
@@ -1056,13 +1060,13 @@ Content-Type: application/json
                 &quot;Measurement&quot;: 2
             },
             &quot;Minimum&quot;: {
-                &quot;Measurement&quot;: 20
+                &quot;Measurement&quot;: 30
             },
             &quot;Maximum&quot;: {
                 &quot;Measurement&quot;: 40
             },
             &quot;Range&quot;: {
-                &quot;Measurement&quot;: 20
+                &quot;Measurement&quot;: 10
             },
             &quot;Total&quot;: {
                 &quot;Measurement&quot;: 60

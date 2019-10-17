@@ -166,6 +166,16 @@
 <p><strong>Returns</strong></p>
 <p>An AccessControlList object.</p>
 <hr>
+<h2 id="get-apiv1tenantstenantidnamespacesnamespaceidaccessrightstopics"><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>accessrights/<wbr>topics</code></h2>
+<p>Get the default Access Rights of the requesting identity for any newly created Topics.</p>
+<p><strong>Parameters</strong></p>
+<p><code>tenantId</code>
+  Unique Id for the tenant. 
+<code>namespaceId</code>
+  Unique Id for the namespace. </p>
+<p><strong>Returns</strong></p>
+<p>An array of Access Rights strings.</p>
+<hr>
 <h2 id="get-apiv1tenantstenantidnamespacesnamespaceidtopicstopicidaccesscontrol"><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>topics/<wbr>{topicId}/<wbr>accesscontrol</code></h2>
 <p>Get the Access Control List for a particular Topic.</p>
 <p><strong>Parameters</strong></p>
@@ -177,6 +187,18 @@
   Unique Id for the Topic. </p>
 <p><strong>Returns</strong></p>
 <p>An AccessControlList object.</p>
+<hr>
+<h2 id="get-apiv1tenantstenantidnamespacesnamespaceidtopicstopicidaccessrights"><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>topics/<wbr>{topicId}/<wbr>accessrights</code></h2>
+<p>Get the Access Rights of the requesting identity for a particular Topic.</p>
+<p><strong>Parameters</strong></p>
+<p><code>tenantId</code>
+  Unique Id for the tenant. 
+<code>namespaceId</code>
+  Unique Id for the namespace. 
+<code>topicId</code>
+  Unique Id for the Topic. </p>
+<p><strong>Returns</strong></p>
+<p>An array of Access Rights strings.</p>
 <hr>
 <h2 id="get-apiv1tenantstenantidnamespacesnamespaceidtopicstopicidowner"><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>topics/<wbr>{topicId}/<wbr>owner</code></h2>
 <p>Get the Owner for a particular Topic.</p>

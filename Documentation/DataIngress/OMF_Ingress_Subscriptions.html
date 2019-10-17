@@ -185,6 +185,16 @@
 <p><strong>Returns</strong></p>
 <p>An AccessControlList object.</p>
 <hr>
+<h2 id="get-apiv1tenantstenantidnamespacesnamespaceidaccessrightssubscriptions"><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>accessrights/<wbr>subscriptions</code></h2>
+<p>Get the default Access Rights of the requesting identity for any newly created Subscriptions.</p>
+<p><strong>Parameters</strong></p>
+<p><code>tenantId</code>
+  Unique Id for the tenant. 
+<code>namespaceId</code>
+  Unique Id for the namespace. </p>
+<p><strong>Returns</strong></p>
+<p>An array of Access Rights strings.</p>
+<hr>
 <h2 id="get-apiv1tenantstenantidnamespacesnamespaceidsubscriptionssubscriptionidaccesscontrol"><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>subscriptions/<wbr>{subscriptionId}/<wbr>accesscontrol</code></h2>
 <p>Get the Access Control List for a particular Subscription.</p>
 <p><strong>Parameters</strong></p>
@@ -196,6 +206,18 @@
   Unique Id for the Subscription. </p>
 <p><strong>Returns</strong></p>
 <p>An AccessControlList object.</p>
+<hr>
+<h2 id="get-apiv1tenantstenantidnamespacesnamespaceidsubscriptionssubscriptionidaccessrights"><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>subscriptions/<wbr>{subscriptionId}/<wbr>accessrights</code></h2>
+<p>Get the Access Rights of the requesting identity for a particular Subscription.</p>
+<p><strong>Parameters</strong></p>
+<p><code>tenantId</code>
+  Unique Id for the tenant. 
+<code>namespaceId</code>
+  Unique Id for the namespace. 
+<code>subscriptionId</code>
+  Unique Id for the Subscription. </p>
+<p><strong>Returns</strong></p>
+<p>An array of Access Rights strings.</p>
 <hr>
 <h2 id="get-apiv1tenantstenantidnamespacesnamespaceidsubscriptionssubscriptionidowner"><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>subscriptions/<wbr>{subscriptionId}/<wbr>owner</code></h2>
 <p>Get the Owner for a particular Subscription.</p>

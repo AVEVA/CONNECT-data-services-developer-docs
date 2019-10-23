@@ -12,6 +12,8 @@
   href: Identity_ClientCredentialClient.md
 - name: Persisted Grant
   href: Identity_PersistedGrant.md
+- name: Role
+  href: Identity_Role.md
 - name: User
   href: Identity_User.md
 - name: Invitation

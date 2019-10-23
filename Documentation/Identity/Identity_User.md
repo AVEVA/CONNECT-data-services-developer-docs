@@ -24,17 +24,17 @@ For HTTP requests and responses, the User object has the following properties an
 
 Property | Type | Descriptions
  --- | --- | --- | ---
-Id | Guid | Unique User ID.
-GivenName | string | Given name of user.
-Surname | string | Surname of user.
-Name | string | Name of user.
-Email | string | Email of user.
-ContactEmail | string | Contact email for user. User will only be contacted through this email.
-ContactGivenName | string | Preferred contact name for user.
-ContactSurname | string | Preferred contact surname for user.
-ExternalUserId | string | Provider id for user. This is the unique ID we get from the Identity Provider.
-IdentityProviderId | Guid | Identity Provider Id used to authenticate User. Will be set once the User accepts an invitation. If not specified when sending the invitation to the User, it can be any of the Identity Provider Ids configured for this Tenant.
-RoleIds | Guid[] | List of strings of RoleIds.
+Id | Guid | Gets or sets unique User ID.
+GivenName | string | Gets or sets given name of user.
+Surname | string | Gets or sets surname of user.
+Name | string | Gets or sets name of user.
+Email | string | Gets or sets email of user.
+ContactEmail | string | Gets or sets contact email for user. User will only be contacted through this email.
+ContactGivenName | string | Gets or sets preferred contact name for user.
+ContactSurname | string | Gets or sets preferred contact surname for user.
+ExternalUserId | string | Gets or sets provider id for user. This is the unique ID we get from the Identity Provider.
+IdentityProviderId | Guid | Gets or sets identity Provider Id used to authenticate User. Will be set once the User accepts an invitation. If not specified when sending the invitation to the User, it can be any of the Identity Provider Ids configured for this Tenant.
+RoleIds | Guid[] | Gets or sets list of strings of RoleIds.
 
 ### Serialized Model
 
@@ -73,7 +73,7 @@ All endpoints referenced in this documentation require authenticated access. Aut
 
 Requests made without an access token or an invalid/expired token will fail with a 401 Unauthorized response.
 Requests made with an access token which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
-Read [here](https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/Authentication) on how to authenticate against OCS with the various clients and receive an access token in response.
+Read [here](https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/Authentication) on how to authenticate against OCS with the various clients and receive an access token in response.
 
 ## Error Handling
 
@@ -347,10 +347,10 @@ Maximum number of users to return. Ignored if a list of Ids is passed.
 [FromQuery]
 [Optional]
 [Default = ""]
-string status
+string[] status
 ```
 
-Only return statuses that match this value. Possible User statuses are: InvitationAccepted, NoInvitation, InvitationNotSent, InvitationSent, InvitationExpired.
+Only return statuses that match these values. Possible User statuses are: InvitationAccepted, NoInvitation, InvitationNotSent, InvitationSent, InvitationExpired.
 
 ### Security
 
@@ -738,6 +738,7 @@ Create a User in the Tenant. This endpoint does not create an invitation for the
             You will need to create an invitation in the respective endpoint for this User, otherwise
             they will not be able to finish the sign-up process. Users have unique Ids in a Tenant.
             Currently there is a limit of 50000 users per Tenant.
+            For Windows Active Directory users the externalUserId must be specified.
 
 ### Request
 
@@ -762,20 +763,24 @@ UserCreateOrUpdate object.
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-Id | Guid | No | User Id for the user. When creating a user, if User ID is not specified, one will be generated.
-ContactGivenName | string | No | Preferred name to be used when contacting user.
-ContactSurname | string | No | Preferred surname to be used when contacting user.
-ContactEmail | string | No | Preferred contact email to be used. This does not have to be the same as the user's Identity Provider email.
-RoleIds | Guid[] | No | List of strings of RoleIds.
+Id | Guid | No | Gets or sets user Id for the user. When creating a user, if User ID is not specified, one will be generated.
+ExternalUserId | string | No | Gets or sets user ExternalUserId for the user. Must be specified if Identity Provider is Windows Active Directory.
+ContactGivenName | string | No | Gets or sets preferred name to be used when contacting user.
+ContactSurname | string | No | Gets or sets preferred surname to be used when contacting user.
+ContactEmail | string | No | Gets or sets preferred contact email to be used. This does not have to be the same as the user's Identity Provider email.
+IdentityProviderId | Guid | No | Gets or sets identity Provider this user will be required to use to login.  If null, the Identity Provider Id will            be set when creating the Invitation.
+RoleIds | Guid[] | No | Gets or sets list of strings of RoleIds.
 
 
 
 ```json
 {
   "Id": "00000000-0000-0000-0000-000000000000",
+  "ExternalUserId": "ExternalUserId",
   "ContactGivenName": "Name",
   "ContactSurname": "Surname",
   "ContactEmail": "user@company.com",
+  "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
   "RoleIds": [
     "00000000-0000-0000-0000-000000000000",
     "00000000-0000-0000-0000-000000000000"
@@ -873,20 +878,24 @@ UserCreateOrUpdate object. Properties that are not set or are null will not be c
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-Id | Guid | No | User Id for the user. When creating a user, if User ID is not specified, one will be generated.
-ContactGivenName | string | No | Preferred name to be used when contacting user.
-ContactSurname | string | No | Preferred surname to be used when contacting user.
-ContactEmail | string | No | Preferred contact email to be used. This does not have to be the same as the user's Identity Provider email.
-RoleIds | Guid[] | No | List of strings of RoleIds.
+Id | Guid | No | Gets or sets user Id for the user. When creating a user, if User ID is not specified, one will be generated.
+ExternalUserId | string | No | Gets or sets user ExternalUserId for the user. Must be specified if Identity Provider is Windows Active Directory.
+ContactGivenName | string | No | Gets or sets preferred name to be used when contacting user.
+ContactSurname | string | No | Gets or sets preferred surname to be used when contacting user.
+ContactEmail | string | No | Gets or sets preferred contact email to be used. This does not have to be the same as the user's Identity Provider email.
+IdentityProviderId | Guid | No | Gets or sets identity Provider this user will be required to use to login.  If null, the Identity Provider Id will            be set when creating the Invitation.
+RoleIds | Guid[] | No | Gets or sets list of strings of RoleIds.
 
 
 
 ```json
 {
   "Id": "00000000-0000-0000-0000-000000000000",
+  "ExternalUserId": "ExternalUserId",
   "ContactGivenName": "Name",
   "ContactSurname": "Surname",
   "ContactEmail": "user@company.com",
+  "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
   "RoleIds": [
     "00000000-0000-0000-0000-000000000000",
     "00000000-0000-0000-0000-000000000000"
@@ -899,7 +908,6 @@ RoleIds | Guid[] | No | List of strings of RoleIds.
 Allowed for these roles:
 
 - `Account Administrator`
-- `Account Member`
 
 ### Returns
 

@@ -15,8 +15,8 @@ For HTTP requests and responses, the AzureActiveDirectoryTenant object has the f
 
 Property | Type | Descriptions
  --- | --- | --- | ---
-Id | string | Id of an Azure Active Directory Tenant
-ConsentState | ConsentState | Consent State of Azure Active Directory Tenant. Can be: NotConsented (0), Consented (1)
+Id | string | Gets or sets id of an Azure Active Directory Tenant.
+ConsentState | ConsentState | Gets or sets consent State of Azure Active Directory Tenant. Can be: NotConsented (0), Consented (1).
 
 ### Serialized Model
 
@@ -43,7 +43,7 @@ All endpoints referenced in this documentation require authenticated access. Aut
 
 Requests made without an access token or an invalid/expired token will fail with a 401 Unauthorized response.
 Requests made with an access token which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
-Read [here](https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/Authentication) on how to authenticate against OCS with the various clients and receive an access token in response.
+Read [here](https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/Authentication) on how to authenticate against OCS with the various clients and receive an access token in response.
 
 ## Error Handling
 
@@ -352,7 +352,7 @@ Internal server error.
 Send consent for an AAD Tenant. OCS needs to be granted
             permission to interact with the AAD tenant. Otherwise, users from this AAD Tenant
             cannot accept invitations from OCS and log in. You can read more about this
-            [here](https://pisquare.osisoft.com/docs/DOC-3986-msa-consent-for-azure-active-directory)
+            [here](https://pisquare.osisoft.com/docs/DOC-3986-msa-consent-for-azure-active-directory).
 
 ### Request
 
@@ -384,10 +384,10 @@ ConsentInformation object.
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-AzureActiveDirectoryConsentEmail | string | Yes | Address to email consent.            Only AAD Admins have permission to consent to OCS            being allowed to interact with the tenant. The email            does not have to be sent to an Admin.
-AzureActiveDirectoryConsentGivenName | string | Yes | Preferred name to use in the consent email.
-AzureActiveDirectoryConsentSurname | string | Yes | Preferred surname to use in the email.
-AzureActiveDirectoryTenant | string | Yes | AAD Domain Name (e.g. mydomain.onmicrosoft.com)
+AzureActiveDirectoryConsentEmail | string | Yes | Gets or sets address to email consent.            Only AAD Admins have permission to consent to OCS            being allowed to interact with the tenant. The email            does not have to be sent to an Admin.
+AzureActiveDirectoryConsentGivenName | string | Yes | Gets or sets preferred name to use in the consent email.
+AzureActiveDirectoryConsentSurname | string | Yes | Gets or sets preferred surname to use in the consent email.
+AzureActiveDirectoryTenant | string | Yes | Gets or sets aAD Domain Name (e.g. mydomain.onmicrosoft.com).
 
 
 

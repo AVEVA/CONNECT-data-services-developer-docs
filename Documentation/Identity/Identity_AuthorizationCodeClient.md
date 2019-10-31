@@ -16,14 +16,14 @@ For HTTP requests and responses, the AuthorizationCodeClient object has the foll
 
 Property | Type | Descriptions
  --- | --- | --- | ---
-AllowedCorsOrigins | string[] | Gets or sets if specified, will be used by the default CORS policy service implementations to build a CORS policy for JavaScript clients.
-RedirectUris | string[] | Gets or sets specifies the allowed URIs to which return tokens or authorization codes can be returned. Wildcards are ignored. URIs must match exactly to what you are redirecting to after login. If URIs do not match, the authentication process will fail with a bad_client error. Maximum 10 per client.
-PostLogoutRedirectUris | string[] | Gets or sets specifies allowed URIs to redirect to after logout. Wildcards are ignored. URIs must match exactly what you are redirecting after logout. Maximum 10 for client.
-ClientUri | string | Gets or sets uRI to a page with information about client (used on consent screen).
-LogoUri | string | Gets or sets uRI to client logo (used on consent screen).
+AllowedCorsOrigins | string[] | Gets or sets the values used by the default CORS policy service implementations to build a CORS policy for JavaScript clients.
+RedirectUris | string[] | Gets or sets the allowed URIs to which return tokens or authorization codes can be returned. Wildcards are ignored. URIs must match exactly to what you are redirecting after login. If URIs do not match, the authentication process will fail with a bad_client error. Maximum 10 per client.
+PostLogoutRedirectUris | string[] | Gets or sets allowed URIs to redirect to after logout. Wildcards are ignored. URIs must match exactly what you are redirecting to after logout. Maximum 10 for client.
+ClientUri | string | Gets or sets URI to a page with information about client (used on consent screen).
+LogoUri | string | Gets or sets URI to client logo (used on consent screen).
 Id | string | Gets or sets client ID for this client. This ID should be a GUID.
 Name | string | Gets or sets name of Client.
-Enabled | bool | Gets or sets determine if client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.
+Enabled | bool | Gets or sets whether client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.
 AccessTokenLifetime | int32 | Gets or sets lifetime of access token issued for this client after authentication. Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.
 Tags | string[] | Gets or sets for OSIsoft internal use only.
 
@@ -117,14 +117,14 @@ New AuthorizationCodeClient object.
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-AllowedCorsOrigins | string[] | No | Gets or sets if specified, will be used by the default CORS policy service implementations to build a            CORS policy for JavaScript clients.
-RedirectUris | string[] | No | Gets or sets specifies the allowed URIs to which return tokens or authorization codes can be returned.            Wildcards are ignored. URIs must match exactly to what you are redirecting            to after login. If URIs do not match, the authentication process will fail            with a bad_client error.            Maximum 10 per client.
-PostLogoutRedirectUris | string[] | No | Gets or sets specifies allowed URIs to redirect to after logout. Wildcards are ignored.            URIs must match exactly what you are redirecting after logout.            Maximum 10 for client.
-ClientUri | string | No | Gets or sets uRI to a page with information about client (used on consent screen).
-LogoUri | string | No | Gets or sets uRI to client logo (used on consent screen).
+AllowedCorsOrigins | string[] | No | Gets or sets the values used by the default CORS policy service implementations to build a            CORS policy for JavaScript clients.
+RedirectUris | string[] | No | Gets or sets the allowed URIs to which return tokens or authorization codes can be returned.            Wildcards are ignored. URIs must match exactly to what you are redirecting            after login. If URIs do not match, the authentication process will fail            with a bad_client error.            Maximum 10 per client.
+PostLogoutRedirectUris | string[] | No | Gets or sets allowed URIs to redirect to after logout. Wildcards are ignored.            URIs must match exactly what you are redirecting to after logout.            Maximum 10 for client.
+ClientUri | string | No | Gets or sets URI to a page with information about client (used on consent screen).
+LogoUri | string | No | Gets or sets URI to client logo (used on consent screen).
 Id | string | No | Gets or sets client ID for this client. This ID should be a GUID.
 Name | string | Yes | Gets or sets name of Client.
-Enabled | bool | No | Gets or sets determine if client is enabled. Client can be used for authentication            if set to true. Client cannot be used for authentication if set to false.
+Enabled | bool | No | Gets or sets whether client is enabled. Client can be used for authentication            if set to true. Client cannot be used for authentication if set to false.
 AccessTokenLifetime | int32 | No | Gets or sets lifetime of access token issued for this client after authentication.            Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.
 Tags | string[] | No | Gets or sets for OSIsoft internal use only.
 
@@ -260,14 +260,14 @@ Updated Authorization Code Client values. Properties that are not set or are nul
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-AllowedCorsOrigins | string[] | No | Gets or sets if specified, will be used by the default CORS policy service implementations to build a            CORS policy for JavaScript clients.
-RedirectUris | string[] | No | Gets or sets specifies the allowed URIs to which return tokens or authorization codes can be returned.            Wildcards are ignored. URIs must match exactly to what you are redirecting            to after login. If URIs do not match, the authentication process will fail            with a bad_client error.            Maximum 10 per client.
-PostLogoutRedirectUris | string[] | No | Gets or sets specifies allowed URIs to redirect to after logout. Wildcards are ignored.            URIs must match exactly what you are redirecting after logout.            Maximum 10 for client.
-ClientUri | string | No | Gets or sets uRI to a page with information about client (used on consent screen).
-LogoUri | string | No | Gets or sets uRI to client logo (used on consent screen).
+AllowedCorsOrigins | string[] | No | Gets or sets the values used by the default CORS policy service implementations to build a            CORS policy for JavaScript clients.
+RedirectUris | string[] | No | Gets or sets the allowed URIs to which return tokens or authorization codes can be returned.            Wildcards are ignored. URIs must match exactly to what you are redirecting            after login. If URIs do not match, the authentication process will fail            with a bad_client error.            Maximum 10 per client.
+PostLogoutRedirectUris | string[] | No | Gets or sets allowed URIs to redirect to after logout. Wildcards are ignored.            URIs must match exactly what you are redirecting to after logout.            Maximum 10 for client.
+ClientUri | string | No | Gets or sets URI to a page with information about client (used on consent screen).
+LogoUri | string | No | Gets or sets URI to client logo (used on consent screen).
 Id | string | No | Gets or sets client ID for this client. This ID should be a GUID.
 Name | string | Yes | Gets or sets name of Client.
-Enabled | bool | No | Gets or sets determine if client is enabled. Client can be used for authentication            if set to true. Client cannot be used for authentication if set to false.
+Enabled | bool | No | Gets or sets whether client is enabled. Client can be used for authentication            if set to true. Client cannot be used for authentication if set to false.
 AccessTokenLifetime | int32 | No | Gets or sets lifetime of access token issued for this client after authentication.            Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.
 Tags | string[] | No | Gets or sets for OSIsoft internal use only.
 
@@ -725,7 +725,7 @@ Client or Tenant not found.
 Internal server error.
 ***
 
-## `Validate that Authorization Code Client Exists`
+## `Get Header for Authorization Code Client`
 
 Validate that an Authorization Code Client exists in Tenant.
 

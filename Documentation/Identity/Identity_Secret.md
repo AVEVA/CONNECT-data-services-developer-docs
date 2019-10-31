@@ -31,7 +31,7 @@ Type | string | Gets or sets the type of the client secret.
   "Id": 0,
   "Description": "description",
   "Value": "Value",
-  "Expiration": "2019-10-23T15:58:20.5688343-07:00",
+  "Expiration": "2019-10-31T12:08:45.7831922-07:00",
   "Type": "Type"
 }
 ```
@@ -142,13 +142,13 @@ Success.
 [
   {
     "Id": 0,
-    "Expiration": "2019-10-23T15:58:20.5754919-07:00",
+    "Expiration": "2019-10-31T12:08:45.790247-07:00",
     "Expires": false,
     "Description": "description"
   },
   {
     "Id": 0,
-    "Expiration": "2019-10-23T15:58:20.5758698-07:00",
+    "Expiration": "2019-10-31T12:08:45.790702-07:00",
     "Expires": false,
     "Description": "description"
   }
@@ -222,7 +222,7 @@ Success.
 ```json
 {
   "Id": 0,
-  "Expiration": "2019-10-23T15:58:20.580927-07:00",
+  "Expiration": "2019-10-31T12:08:45.7957944-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -289,7 +289,7 @@ Description | string | No | Gets or sets description for the client secret. We s
 
 ```json
 {
-  "Expiration": "2019-10-23T15:58:20.5834913-07:00",
+  "Expiration": "2019-10-31T12:08:45.7982852-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -315,7 +315,7 @@ Created.
 {
   "Secret": "Secret",
   "Id": 0,
-  "Expiration": "2019-10-23T15:58:20.5855911-07:00",
+  "Expiration": "2019-10-31T12:08:45.8002251-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -388,7 +388,7 @@ Description | string | No | Gets or sets description for the client secret. We s
 
 ```json
 {
-  "Expiration": "2019-10-23T15:58:20.5909328-07:00",
+  "Expiration": "2019-10-31T12:08:45.8054403-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -413,7 +413,7 @@ Success.
 ```json
 {
   "Id": 0,
-  "Expiration": "2019-10-23T15:58:20.5910531-07:00",
+  "Expiration": "2019-10-31T12:08:45.8055866-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -502,7 +502,7 @@ Secret, Client, or Tenant not found.
 Internal server error.
 ***
 
-## `Validate Secret Exists`
+## `Get Header for Hybrid Client Secret`
 
 Validate that a Secret with given Id exists in the Client.
             This endpoint is identical to the GET one but it does not
@@ -701,13 +701,13 @@ Success.
 [
   {
     "Id": 0,
-    "Expiration": "2019-10-23T15:58:20.7932549-07:00",
+    "Expiration": "2019-10-31T12:08:46.00434-07:00",
     "Expires": false,
     "Description": "description"
   },
   {
     "Id": 0,
-    "Expiration": "2019-10-23T15:58:20.7932746-07:00",
+    "Expiration": "2019-10-31T12:08:46.0043632-07:00",
     "Expires": false,
     "Description": "description"
   }
@@ -781,7 +781,7 @@ Success.
 ```json
 {
   "Id": 0,
-  "Expiration": "2019-10-23T15:58:20.795829-07:00",
+  "Expiration": "2019-10-31T12:08:46.0066012-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -848,7 +848,7 @@ Description | string | No | Gets or sets description for the client secret. We s
 
 ```json
 {
-  "Expiration": "2019-10-23T15:58:20.7985295-07:00",
+  "Expiration": "2019-10-31T12:08:46.0088741-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -874,7 +874,7 @@ Created.
 {
   "Secret": "Secret",
   "Id": 0,
-  "Expiration": "2019-10-23T15:58:20.7986658-07:00",
+  "Expiration": "2019-10-31T12:08:46.0089941-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -952,7 +952,7 @@ Description | string | No | Gets or sets description for the client secret. We s
 
 ```json
 {
-  "Expiration": "2019-10-23T15:58:20.8018914-07:00",
+  "Expiration": "2019-10-31T12:08:46.0116861-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -977,7 +977,7 @@ Success.
 ```json
 {
   "Id": 0,
-  "Expiration": "2019-10-23T15:58:20.8020401-07:00",
+  "Expiration": "2019-10-31T12:08:46.0117949-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -1067,7 +1067,7 @@ Secret, Client, or Tenant not found.
 Internal server error.
 ***
 
-## `Validate Client Credential Client Exists`
+## `Get Header for Client Credential Client Secret`
 
 Validate that a Secret with given Id exists in the Client.
             This endpoint is identical to the GET one but it does not

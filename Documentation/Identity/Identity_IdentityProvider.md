@@ -14,8 +14,10 @@ Property | Type | Descriptions
  --- | --- | --- | ---
 Id | Guid | Gets or sets id of an identity provider.
 DisplayName | string | Gets or sets identity provider display name to use.
-Scheme | string | Gets or sets specifies the name of the cookie handler that will temporarily store the outcome of the external authentication.
+Scheme | string | Gets or sets the name of the cookie handler that will temporarily store the outcome of the external authentication.
 UserIdClaimType | string | Gets or sets type of claim.
+ClientId | string | Gets or sets the ClientId of the identity provider.
+IsConfigured | bool | Gets or sets a value indicating whether the identity provider has been configured.
 
 ### Serialized Model
 
@@ -24,7 +26,9 @@ UserIdClaimType | string | Gets or sets type of claim.
   "Id": "00000000-0000-0000-0000-000000000000",
   "DisplayName": "Name",
   "Scheme": "Scheme",
-  "UserIdClaimType": "UserIdClaimType"
+  "UserIdClaimType": "UserIdClaimType",
+  "ClientId": "ClientId",
+  "IsConfigured": false
 }
 ```
 
@@ -99,7 +103,70 @@ Success.
   "Id": "00000000-0000-0000-0000-000000000000",
   "DisplayName": "Name",
   "Scheme": "Scheme",
-  "UserIdClaimType": "UserIdClaimType"
+  "UserIdClaimType": "UserIdClaimType",
+  "ClientId": "ClientId",
+  "IsConfigured": false
+}
+```
+
+#### 401
+
+Unauthorized.
+
+#### 403
+
+Forbidden.
+
+#### 404
+
+Identity Provider not found.
+
+#### 500
+
+Internal server error.
+***
+
+## `Get Identity Provider By Scheme`
+
+Returns a list of IdentityProvider objects that follow a scheme.
+
+### Request
+
+`GET api/v1/IdentityProviders/schemes/{scheme}`
+
+### Parameters
+
+```csharp
+[Required]
+string scheme
+```
+
+Scheme name.
+
+### Security
+
+Allowed for these roles:
+
+- `Account Administrator`
+
+### Returns
+
+#### 200
+
+Success.
+
+##### Type:
+
+ `IdentityProvider`
+
+```json
+{
+  "Id": "00000000-0000-0000-0000-000000000000",
+  "DisplayName": "Name",
+  "Scheme": "Scheme",
+  "UserIdClaimType": "UserIdClaimType",
+  "ClientId": "ClientId",
+  "IsConfigured": false
 }
 ```
 
@@ -179,13 +246,17 @@ Success.
     "Id": "00000000-0000-0000-0000-000000000000",
     "DisplayName": "Name",
     "Scheme": "Scheme",
-    "UserIdClaimType": "UserIdClaimType"
+    "UserIdClaimType": "UserIdClaimType",
+    "ClientId": "ClientId",
+    "IsConfigured": false
   },
   {
     "Id": "00000000-0000-0000-0000-000000000000",
     "DisplayName": "Name",
     "Scheme": "Scheme",
-    "UserIdClaimType": "UserIdClaimType"
+    "UserIdClaimType": "UserIdClaimType",
+    "ClientId": "ClientId",
+    "IsConfigured": false
   }
 ]
 ```
@@ -207,7 +278,7 @@ Forbidden.
 Internal server error.
 ***
 
-## `Validate that IDP Exists based on scheme`
+## `Get Identity Provider based on scheme`
 
 Get header for a scheme to check its validity.
 
@@ -257,7 +328,7 @@ Identity Provider not found.
 Internal server error.
 ***
 
-## `Validate that IDP exists based on Id`
+## `Get Identity Provider based on Id`
 
 Get header for an identity provider to check if the identity provider exists.
 
@@ -307,7 +378,7 @@ IdentityProvider or Tenant not found.
 Internal server error.
 ***
 
-## `Get Total Count of IDPs in Te`
+## `Headers for Identity Providers available`
 
 Get header for Identity Providers to get the total number of Identity Providers.
 
@@ -417,13 +488,17 @@ Success.
     "Id": "00000000-0000-0000-0000-000000000000",
     "DisplayName": "Name",
     "Scheme": "Scheme",
-    "UserIdClaimType": "UserIdClaimType"
+    "UserIdClaimType": "UserIdClaimType",
+    "ClientId": "ClientId",
+    "IsConfigured": false
   },
   {
     "Id": "00000000-0000-0000-0000-000000000000",
     "DisplayName": "Name",
     "Scheme": "Scheme",
-    "UserIdClaimType": "UserIdClaimType"
+    "UserIdClaimType": "UserIdClaimType",
+    "ClientId": "ClientId",
+    "IsConfigured": false
   }
 ]
 ```
@@ -491,7 +566,9 @@ Success.
   "Id": "00000000-0000-0000-0000-000000000000",
   "DisplayName": "Name",
   "Scheme": "Scheme",
-  "UserIdClaimType": "UserIdClaimType"
+  "UserIdClaimType": "UserIdClaimType",
+  "ClientId": "ClientId",
+  "IsConfigured": false
 }
 ```
 
@@ -541,12 +618,12 @@ IdentityProviderAdd object.
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-IdentityProviderId | Guid | Yes | Gets or sets identity Provider Id to Add.
+IdentityProviderId | Guid | Yes | Gets or sets Identity Provider Id to Add.
 AzureActiveDirectorySendConsent | bool | No | Gets or sets a value indicating whether send consent email for Azure Active Directory.
-AzureActiveDirectoryConsentEmail | string | Yes | Gets or sets address to email consent.            Only AAD Admins have permission to consent to OCS            being allowed to interact with the tenant. The email            does not have to be sent to an Admin.
+AzureActiveDirectoryConsentEmail | string | Yes | Gets or sets address to email consent.            Only Azure Active Directory Admins have permission to consent to            being allowed to interact with the tenant. The email            does not have to be sent to an Admin.
 AzureActiveDirectoryConsentGivenName | string | Yes | Gets or sets preferred name to use in the consent email.
 AzureActiveDirectoryConsentSurname | string | Yes | Gets or sets preferred surname to use in the consent email.
-AzureActiveDirectoryTenant | string | Yes | Gets or sets aAD Domain Name (e.g. mydomain.onmicrosoft.com).
+AzureActiveDirectoryTenant | string | Yes | Gets or sets Azure Active Directory Domain Name (e.g. mydomain.onmicrosoft.com).
 
 
 
@@ -582,7 +659,9 @@ Created.
   "Id": "00000000-0000-0000-0000-000000000000",
   "DisplayName": "Name",
   "Scheme": "Scheme",
-  "UserIdClaimType": "UserIdClaimType"
+  "UserIdClaimType": "UserIdClaimType",
+  "ClientId": "ClientId",
+  "IsConfigured": false
 }
 ```
 
@@ -667,7 +746,7 @@ IdentityProvider or Tenant not found.
 Internal server error.
 ***
 
-## `Validate Identity Provider Exists`
+## `Get Header for Identity Provider`
 
 Validate that a Identity Provider exists in the Tenant.
             This endpoint is identical to the GET one but

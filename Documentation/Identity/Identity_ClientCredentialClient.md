@@ -6,10 +6,10 @@ uid: identityClientCredentialClient
 
 Client Credential clients are used for machine-to-machine communication without
             the presence of a User. These clients are issued an Id and Secret upon creation,
-            which are later used for authentication against OCS. More than one Secret can be
+            which are later used for authentication against OSIsoft Cloud Services. More than one Secret can be
             created for a Client. You can read more about these clients
             [here](https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/Authentication#client-credential-flow).
-            Because they access resources on OCS, and are not associated to users, these
+            Because they access resources on OSIsoft Cloud Services, and are not associated to users, these
             clients can be assigned any of the roles in the Tenant. We suggest following a
             least privilege strategy when assigning roles to these clients, as they are more
             likely to operate in remote machines with a wider attack surface.
@@ -23,7 +23,7 @@ Property | Type | Descriptions
 RoleIds | Guid[] | Gets or sets list of Roles to be assigned to this client. Member role is always required. For security reasons we advise against assigning Admin roles to a client.
 Id | string | Gets or sets client ID for this client. This ID should be a GUID.
 Name | string | Gets or sets name of Client.
-Enabled | bool | Gets or sets determine if client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.
+Enabled | bool | Gets or sets whether client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.
 AccessTokenLifetime | int32 | Gets or sets lifetime of access token issued for this client after authentication. Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.
 Tags | string[] | Gets or sets for OSIsoft internal use only.
 
@@ -115,7 +115,7 @@ SecretExpirationDate | DateTime | No | Gets or sets expiration date for the init
 RoleIds | Guid[] | No | Gets or sets list of Roles to be assigned to this client. Member role is always required.            For security reasons we advise against assigning Admin roles to a client.
 Id | string | No | Gets or sets client ID for this client. This ID should be a GUID.
 Name | string | Yes | Gets or sets name of Client.
-Enabled | bool | No | Gets or sets determine if client is enabled. Client can be used for authentication            if set to true. Client cannot be used for authentication if set to false.
+Enabled | bool | No | Gets or sets whether client is enabled. Client can be used for authentication            if set to true. Client cannot be used for authentication if set to false.
 AccessTokenLifetime | int32 | No | Gets or sets lifetime of access token issued for this client after authentication.            Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.
 Tags | string[] | No | Gets or sets for OSIsoft internal use only.
 
@@ -124,7 +124,7 @@ Tags | string[] | No | Gets or sets for OSIsoft internal use only.
 ```json
 {
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-10-23T15:58:20.6907806-07:00",
+  "SecretExpirationDate": "2019-10-31T12:08:45.8974615-07:00",
   "RoleIds": [
     "00000000-0000-0000-0000-000000000000",
     "00000000-0000-0000-0000-000000000000"
@@ -161,7 +161,7 @@ Created.
   "Secret": "Secret",
   "Id": 0,
   "Description": "description",
-  "ExpirationDate": "2019-10-23T15:58:20.6960199-07:00",
+  "ExpirationDate": "2019-10-31T12:08:45.9011342-07:00",
   "Client": {
     "RoleIds": [
       "00000000-0000-0000-0000-000000000000",
@@ -242,7 +242,7 @@ Property | Type | Required | Description
 RoleIds | Guid[] | No | Gets or sets list of Roles to be assigned to this client. Member role is always required.            For security reasons we advise against assigning Admin roles to a client.
 Id | string | No | Gets or sets client ID for this client. This ID should be a GUID.
 Name | string | Yes | Gets or sets name of Client.
-Enabled | bool | No | Gets or sets determine if client is enabled. Client can be used for authentication            if set to true. Client cannot be used for authentication if set to false.
+Enabled | bool | No | Gets or sets whether client is enabled. Client can be used for authentication            if set to true. Client cannot be used for authentication if set to false.
 AccessTokenLifetime | int32 | No | Gets or sets lifetime of access token issued for this client after authentication.            Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.
 Tags | string[] | No | Gets or sets for OSIsoft internal use only.
 
@@ -644,7 +644,7 @@ Client or Tenant not found.
 Internal server error.
 ***
 
-## `Validate Client Exists`
+## `Get Header for Client Credential Client`
 
 Validate that a Client Credential Client exists.
             This endpoint is identical to the GET one but

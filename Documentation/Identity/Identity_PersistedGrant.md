@@ -5,7 +5,7 @@ uid: identityPersistedGrant
 # PersistedGrant
 
 Persisted Grants such as refresh tokens or authorization codes are used
-            by OCS to maintain some state about User authentication with regards to
+            by OSIsoft Cloud Services to maintain some state about User authentication with regards to
             a Client. For instance, refresh tokens, which are issued to Hybrid clients,
             make it possible to determine when the Client can be issued a new access token
             on behalf of the User without the users themselves being present.

@@ -7,13 +7,13 @@ uid: identityUser
 Users consume resources in a Tenant. They are invited by the Admin of the
             Tenant and should already have an account in one of the configured Identity
             Providers for this Tenant. A User is fully provisioned in OSIsoft Cloud Services
-            (OCS) only after they have accepted the invitation and successfully logged with
-            an Identity Provider. OCS does not maintain User credentials, but it delegates
+            only after they have accepted the invitation and successfully logged with
+            an Identity Provider. OSIsoft Cloud Services does not maintain User credentials, but it delegates
             authentication to the Identity Provider the User logged in with at first. Once
             logged in the User cannot change the Identity Provider it signed up with. A Tenant
             can only have one User with a given email to an Identity Provider. If a User has
             multiple aliases in the same Identity Provider, they will not be able to create
-            multiple corresponding OCS users. Users have roles associated with them. These roles
+            multiple corresponding OSIsoft Cloud Services users. Users have roles associated with them. These roles
             determine what a User is authorized to do in the Tenant. Roles are assigned to a User
             upon creation and can be modified by an Admin. We allow the change of some User fields
             and the complete deletion of a User.
@@ -33,7 +33,7 @@ ContactEmail | string | Gets or sets contact email for user. User will only be c
 ContactGivenName | string | Gets or sets preferred contact name for user.
 ContactSurname | string | Gets or sets preferred contact surname for user.
 ExternalUserId | string | Gets or sets provider id for user. This is the unique ID we get from the Identity Provider.
-IdentityProviderId | Guid | Gets or sets identity Provider Id used to authenticate User. Will be set once the User accepts an invitation. If not specified when sending the invitation to the User, it can be any of the Identity Provider Ids configured for this Tenant.
+IdentityProviderId | Guid | Gets or sets Identity Provider Id used to authenticate User. Will be set once the User accepts an invitation. If not specified when sending the invitation to the User, it can be any of the Identity Provider Ids configured for this Tenant.
 RoleIds | Guid[] | Gets or sets list of strings of RoleIds.
 
 ### Serialized Model
@@ -738,7 +738,7 @@ Create a User in the Tenant. This endpoint does not create an invitation for the
             You will need to create an invitation in the respective endpoint for this User, otherwise
             they will not be able to finish the sign-up process. Users have unique Ids in a Tenant.
             Currently there is a limit of 50000 users per Tenant.
-            For Windows Active Directory users the externalUserId must be specified.
+            For Windows Active Directory users, the externalUserId must be specified.
 
 ### Request
 
@@ -768,7 +768,7 @@ ExternalUserId | string | No | Gets or sets user ExternalUserId for the user. Mu
 ContactGivenName | string | No | Gets or sets preferred name to be used when contacting user.
 ContactSurname | string | No | Gets or sets preferred surname to be used when contacting user.
 ContactEmail | string | No | Gets or sets preferred contact email to be used. This does not have to be the same as the user's Identity Provider email.
-IdentityProviderId | Guid | No | Gets or sets identity Provider this user will be required to use to login.  If null, the Identity Provider Id will            be set when creating the Invitation.
+IdentityProviderId | Guid | No | Gets or sets Identity Provider this user will be required to use to login.  If null, the Identity Provider Id will            be set when creating the Invitation.
 RoleIds | Guid[] | No | Gets or sets list of strings of RoleIds.
 
 
@@ -883,7 +883,7 @@ ExternalUserId | string | No | Gets or sets user ExternalUserId for the user. Mu
 ContactGivenName | string | No | Gets or sets preferred name to be used when contacting user.
 ContactSurname | string | No | Gets or sets preferred surname to be used when contacting user.
 ContactEmail | string | No | Gets or sets preferred contact email to be used. This does not have to be the same as the user's Identity Provider email.
-IdentityProviderId | Guid | No | Gets or sets identity Provider this user will be required to use to login.  If null, the Identity Provider Id will            be set when creating the Invitation.
+IdentityProviderId | Guid | No | Gets or sets Identity Provider this user will be required to use to login.  If null, the Identity Provider Id will            be set when creating the Invitation.
 RoleIds | Guid[] | No | Gets or sets list of strings of RoleIds.
 
 
@@ -1019,7 +1019,7 @@ User or Tenant not found.
 Internal server error.
 ***
 
-## `Validate User Exists`
+## `Get Header for User`
 
 Validate that a User exists. This endpoint is identical to the GET
             one, but it does not return an object in the body.
@@ -1140,7 +1140,7 @@ User not found.
 Internal server error.
 ***
 
-## `Validate User's Preferences Exist`
+## `Get Header for User's Preferences`
 
 Validate that there are preferences for a User. This endpoint is identical
             to the GET one but it does not return any objects in the body.

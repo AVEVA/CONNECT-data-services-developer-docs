@@ -821,9 +821,9 @@ User or Tenant not found.
 Internal server error.
 ***
 
-## `Get Roles for ClientCredential Client`
+## `Get Roles for Client Credential Client`
 
-Returns a list of Roles for a given ClientCredential Client.
+Returns a list of Roles for a given Client Credential Client.
 
 ### Request
 
@@ -843,7 +843,7 @@ Tenant ID.
 string clientId
 ```
 
-ClientCredential Client ID.
+Client Credential Client ID.
 
 ```csharp
 [FromQuery]
@@ -926,16 +926,16 @@ Forbidden.
 
 #### 404
 
-Tenant or ClientCredential Client not found.
+Tenant or Client Credential Client not found.
 
 #### 500
 
 Internal server error.
 ***
 
-## `Get Roles for ClientCredential Client Header`
+## `Get Roles for Client Credential Client Header`
 
-Head request to get the total number of ClientCredential Client Roles for the specified ClientCredential Client.
+Head request to get the total number of Client Credential Client Roles for the specified Client Credential Client.
 
 ### Request
 
@@ -955,7 +955,7 @@ Tenant ID.
 string clientId
 ```
 
-ClientCredential Client ID.
+Client Credential Client ID.
 
 ### Security
 
@@ -984,16 +984,16 @@ Forbidden.
 
 #### 404
 
-Tenant or ClientCredential Client not found.
+Tenant or Client Credential Client not found.
 
 #### 500
 
 Internal server error.
 ***
 
-## `Replace ClientCredential Client's Roles`
+## `Replace Client Credential Client's Roles`
 
-Replace existing ClientCredential Client Roles.
+Replace existing Client Credential Client Roles.
 
 ### Request
 
@@ -1013,7 +1013,7 @@ Tenant ID.
 string clientId
 ```
 
-ClientCredential Client ID.
+Client Credential Client ID.
 
 ```csharp
 [FromBody]
@@ -1076,16 +1076,16 @@ Forbidden.
 
 #### 404
 
-ClientCredential Client or Tenant not found.
+Client Credential Client or Tenant not found.
 
 #### 500
 
 Internal server error.
 ***
 
-## `Delete Roles From ClientCredential Client`
+## `Delete Roles From Client Credential Client`
 
-Delete all ClientCredential Client's Roles except for Account Member.
+Delete all Client Credential Client's Roles except for Account Member.
 
 ### Request
 
@@ -1105,7 +1105,7 @@ Tenant ID.
 string clientId
 ```
 
-ClientCredential Client ID.
+Client Credential Client ID.
 
 ### Security
 
@@ -1129,7 +1129,7 @@ Forbidden.
 
 #### 404
 
-ClientCredential Client or Tenant not found.
+Client Credential Client or Tenant not found.
 
 #### 500
 

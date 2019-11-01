@@ -25,7 +25,6 @@ centralized environment to aggregate data for reporting, advanced analytics, and
      - [Client Credential Client](xref:identityClientCredentialClient)
      - [Hybrid Client](xref:identityHybridClient)
      - [Persisted Grant](xref:identityPersistedGrant)
-     - [Role](xref:identityRole)
      - [User](xref:identityUser)
      - [Invitation](xref:identityInvitation)
      - [IdentityProvider](xref:identityIdentityProvider)

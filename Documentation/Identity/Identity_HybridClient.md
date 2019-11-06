@@ -22,7 +22,7 @@ Property | Type | Descriptions
  --- | --- | --- | ---
 AllowOfflineAccess | bool | Gets or sets whether this client can request refresh tokens, by providing the *offline_access* scope.
 AllowAccessTokensViaBrowser | bool | Gets or sets whether this HybridClient is allowed to receive access tokens via the browser. This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow client that is supposed to use code *id_token* to add the *token* response type, thus leaking the token to the browser).
-RedirectUris | string[] | Gets or sets the allowed URIs to which return tokens or authorization codes can be returned. Wildcards are ignored. URIs must match exactly to what you are redirecting after login. If URIs do not match, the authentication process will fail with a bad_client error. Maximum 10 per client.
+RedirectUris | string[] | Gets or sets the allowed URIs to which return tokens or authorization codes can be returned. Wildcards are ignored. URIs must match exactly what you are redirecting to after login. If URIs do not match, the authentication process will fail with a bad_client error. Maximum 10 per client.
 PostLogoutRedirectUris | string[] | Gets or sets allowed URIs to redirect to after logout. Wildcards are ignored. URIs must match exactly what you are redirecting to after logout. Maximum 10 for client.
 ClientUri | string | Gets or sets URI to a page with information about client (used on consent screen).
 LogoUri | string | Gets or sets URI to client logo (used on consent screen).
@@ -127,7 +127,7 @@ SecretDescription | string | No | Gets or sets description for the initial secre
 SecretExpirationDate | DateTime | No | Gets or sets expiration date for the initial secret for the client. If set to null the secret will            never expire. We advise against such practice.
 AllowOfflineAccess | bool | No | Gets or sets whether this client can request refresh tokens, by providing the *offline_access* scope.
 AllowAccessTokensViaBrowser | bool | No | Gets or sets whether this HybridClient is allowed to receive access tokens via the browser.            This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow            client that is supposed to use code *id_token* to add the *token* response type, thus            leaking the token to the browser).
-RedirectUris | string[] | No | Gets or sets the allowed URIs to which return tokens or authorization codes can be returned.            Wildcards are ignored. URIs must match exactly to what you are redirecting            after login. If URIs do not match, the authentication process will fail            with a bad_client error.            Maximum 10 per client.
+RedirectUris | string[] | No | Gets or sets the allowed URIs to which return tokens or authorization codes can be returned.            Wildcards are ignored. URIs must match exactly what you are redirecting to            after login. If URIs do not match, the authentication process will fail            with a bad_client error.            Maximum 10 per client.
 PostLogoutRedirectUris | string[] | No | Gets or sets allowed URIs to redirect to after logout. Wildcards are ignored.            URIs must match exactly what you are redirecting to after logout.            Maximum 10 for client.
 ClientUri | string | No | Gets or sets URI to a page with information about client (used on consent screen).
 LogoUri | string | No | Gets or sets URI to client logo (used on consent screen).
@@ -142,7 +142,7 @@ Tags | string[] | No | Gets or sets for OSIsoft internal use only.
 ```json
 {
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-10-31T12:08:45.6730828-07:00",
+  "SecretExpirationDate": "2019-11-05T16:04:19.6060869-08:00",
   "AllowOfflineAccess": false,
   "AllowAccessTokensViaBrowser": false,
   "RedirectUris": [
@@ -187,7 +187,7 @@ Created.
   "Secret": "Secret",
   "Id": 0,
   "Description": "description",
-  "ExpirationDate": "2019-10-31T12:08:45.6877432-07:00",
+  "ExpirationDate": "2019-11-05T16:04:19.6195438-08:00",
   "Client": {
     "AllowOfflineAccess": false,
     "AllowAccessTokensViaBrowser": false,
@@ -275,7 +275,7 @@ Property | Type | Required | Description
  --- | --- | --- | ---
 AllowOfflineAccess | bool | No | Gets or sets whether this client can request refresh tokens, by providing the *offline_access* scope.
 AllowAccessTokensViaBrowser | bool | No | Gets or sets whether this HybridClient is allowed to receive access tokens via the browser.            This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow            client that is supposed to use code *id_token* to add the *token* response type, thus            leaking the token to the browser).
-RedirectUris | string[] | No | Gets or sets the allowed URIs to which return tokens or authorization codes can be returned.            Wildcards are ignored. URIs must match exactly to what you are redirecting            after login. If URIs do not match, the authentication process will fail            with a bad_client error.            Maximum 10 per client.
+RedirectUris | string[] | No | Gets or sets the allowed URIs to which return tokens or authorization codes can be returned.            Wildcards are ignored. URIs must match exactly what you are redirecting to            after login. If URIs do not match, the authentication process will fail            with a bad_client error.            Maximum 10 per client.
 PostLogoutRedirectUris | string[] | No | Gets or sets allowed URIs to redirect to after logout. Wildcards are ignored.            URIs must match exactly what you are redirecting to after logout.            Maximum 10 for client.
 ClientUri | string | No | Gets or sets URI to a page with information about client (used on consent screen).
 LogoUri | string | No | Gets or sets URI to client logo (used on consent screen).

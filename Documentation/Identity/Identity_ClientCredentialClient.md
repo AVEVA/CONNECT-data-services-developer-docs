@@ -124,7 +124,7 @@ Tags | string[] | No | Gets or sets for OSIsoft internal use only.
 ```json
 {
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-10-31T12:08:45.8974615-07:00",
+  "SecretExpirationDate": "2019-11-05T16:04:19.8501844-08:00",
   "RoleIds": [
     "00000000-0000-0000-0000-000000000000",
     "00000000-0000-0000-0000-000000000000"
@@ -161,7 +161,7 @@ Created.
   "Secret": "Secret",
   "Id": 0,
   "Description": "description",
-  "ExpirationDate": "2019-10-31T12:08:45.9011342-07:00",
+  "ExpirationDate": "2019-11-05T16:04:19.8548557-08:00",
   "Client": {
     "RoleIds": [
       "00000000-0000-0000-0000-000000000000",

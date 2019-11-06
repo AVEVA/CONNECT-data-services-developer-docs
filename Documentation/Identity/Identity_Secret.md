@@ -31,7 +31,7 @@ Type | string | Gets or sets the type of the client secret.
   "Id": 0,
   "Description": "description",
   "Value": "Value",
-  "Expiration": "2019-10-31T12:08:45.7831922-07:00",
+  "Expiration": "2019-11-05T16:04:19.7177118-08:00",
   "Type": "Type"
 }
 ```
@@ -142,13 +142,13 @@ Success.
 [
   {
     "Id": 0,
-    "Expiration": "2019-10-31T12:08:45.790247-07:00",
+    "Expiration": "2019-11-05T16:04:19.7304079-08:00",
     "Expires": false,
     "Description": "description"
   },
   {
     "Id": 0,
-    "Expiration": "2019-10-31T12:08:45.790702-07:00",
+    "Expiration": "2019-11-05T16:04:19.7311388-08:00",
     "Expires": false,
     "Description": "description"
   }
@@ -222,7 +222,7 @@ Success.
 ```json
 {
   "Id": 0,
-  "Expiration": "2019-10-31T12:08:45.7957944-07:00",
+  "Expiration": "2019-11-05T16:04:19.7367095-08:00",
   "Expires": false,
   "Description": "description"
 }
@@ -289,7 +289,7 @@ Description | string | No | Gets or sets description for the client secret. We s
 
 ```json
 {
-  "Expiration": "2019-10-31T12:08:45.7982852-07:00",
+  "Expiration": "2019-11-05T16:04:19.7391737-08:00",
   "Expires": false,
   "Description": "description"
 }
@@ -315,7 +315,7 @@ Created.
 {
   "Secret": "Secret",
   "Id": 0,
-  "Expiration": "2019-10-31T12:08:45.8002251-07:00",
+  "Expiration": "2019-11-05T16:04:19.7409266-08:00",
   "Expires": false,
   "Description": "description"
 }
@@ -388,7 +388,7 @@ Description | string | No | Gets or sets description for the client secret. We s
 
 ```json
 {
-  "Expiration": "2019-10-31T12:08:45.8054403-07:00",
+  "Expiration": "2019-11-05T16:04:19.7460177-08:00",
   "Expires": false,
   "Description": "description"
 }
@@ -413,7 +413,7 @@ Success.
 ```json
 {
   "Id": 0,
-  "Expiration": "2019-10-31T12:08:45.8055866-07:00",
+  "Expiration": "2019-11-05T16:04:19.7461298-08:00",
   "Expires": false,
   "Description": "description"
 }
@@ -701,13 +701,13 @@ Success.
 [
   {
     "Id": 0,
-    "Expiration": "2019-10-31T12:08:46.00434-07:00",
+    "Expiration": "2019-11-05T16:04:19.9593562-08:00",
     "Expires": false,
     "Description": "description"
   },
   {
     "Id": 0,
-    "Expiration": "2019-10-31T12:08:46.0043632-07:00",
+    "Expiration": "2019-11-05T16:04:19.959377-08:00",
     "Expires": false,
     "Description": "description"
   }
@@ -781,7 +781,7 @@ Success.
 ```json
 {
   "Id": 0,
-  "Expiration": "2019-10-31T12:08:46.0066012-07:00",
+  "Expiration": "2019-11-05T16:04:19.9615908-08:00",
   "Expires": false,
   "Description": "description"
 }
@@ -848,7 +848,7 @@ Description | string | No | Gets or sets description for the client secret. We s
 
 ```json
 {
-  "Expiration": "2019-10-31T12:08:46.0088741-07:00",
+  "Expiration": "2019-11-05T16:04:19.9640085-08:00",
   "Expires": false,
   "Description": "description"
 }
@@ -874,7 +874,7 @@ Created.
 {
   "Secret": "Secret",
   "Id": 0,
-  "Expiration": "2019-10-31T12:08:46.0089941-07:00",
+  "Expiration": "2019-11-05T16:04:19.9641266-08:00",
   "Expires": false,
   "Description": "description"
 }
@@ -952,7 +952,7 @@ Description | string | No | Gets or sets description for the client secret. We s
 
 ```json
 {
-  "Expiration": "2019-10-31T12:08:46.0116861-07:00",
+  "Expiration": "2019-11-05T16:04:19.9668689-08:00",
   "Expires": false,
   "Description": "description"
 }
@@ -977,7 +977,7 @@ Success.
 ```json
 {
   "Id": 0,
-  "Expiration": "2019-10-31T12:08:46.0117949-07:00",
+  "Expiration": "2019-11-05T16:04:19.9669786-08:00",
   "Expires": false,
   "Description": "description"
 }

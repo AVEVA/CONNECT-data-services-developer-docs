@@ -18,7 +18,7 @@ For HTTP requests and responses, the ImplicitClient object has the following pro
 Property | Type | Descriptions
  --- | --- | --- | ---
 AllowedCorsOrigins | string[] | Gets or sets the values used by the default CORS policy service implementations to build a CORS policy for JavaScript clients. Maximum 10 for client.
-RedirectUris | string[] | Gets or sets the allowed URIs to which return tokens or authorization codes can be returned. Wildcards are ignored. URIs must match exactly to what you are redirecting after login. If URIs do not match, the authentication process will fail with a bad_client error. Maximum 10 per client.
+RedirectUris | string[] | Gets or sets the allowed URIs to which return tokens or authorization codes can be returned. Wildcards are ignored. URIs must match exactly what you are redirecting to after login. If URIs do not match, the authentication process will fail with a bad_client error. Maximum 10 per client.
 PostLogoutRedirectUris | string[] | Gets or sets allowed URIs to redirect to after logout. Wildcards are ignored. URIs must match exactly what you are redirecting to after logout. Maximum 10 for client.
 ClientUri | string | Gets or sets URI to a page with information about client (used on consent screen).
 LogoUri | string | Gets or sets URI to client logo (used on consent screen).
@@ -119,7 +119,7 @@ New ImplicitClient object.
 Property | Type | Required | Description 
  --- | --- | --- | ---
 AllowedCorsOrigins | string[] | No | Gets or sets the values used by the default CORS policy service implementations to build a            CORS policy for JavaScript clients.            Maximum 10 for client.
-RedirectUris | string[] | No | Gets or sets the allowed URIs to which return tokens or authorization codes can be returned.            Wildcards are ignored. URIs must match exactly to what you are redirecting            after login. If URIs do not match, the authentication process will fail            with a bad_client error.            Maximum 10 per client.
+RedirectUris | string[] | No | Gets or sets the allowed URIs to which return tokens or authorization codes can be returned.            Wildcards are ignored. URIs must match exactly what you are redirecting to            after login. If URIs do not match, the authentication process will fail            with a bad_client error.            Maximum 10 per client.
 PostLogoutRedirectUris | string[] | No | Gets or sets allowed URIs to redirect to after logout. Wildcards are ignored.            URIs must match exactly what you are redirecting to after logout.            Maximum 10 for client.
 ClientUri | string | No | Gets or sets URI to a page with information about client (used on consent screen).
 LogoUri | string | No | Gets or sets URI to client logo (used on consent screen).
@@ -262,7 +262,7 @@ Updated Implicit Client values. Properties that are not set or are null will not
 Property | Type | Required | Description 
  --- | --- | --- | ---
 AllowedCorsOrigins | string[] | No | Gets or sets the values used by the default CORS policy service implementations to build a            CORS policy for JavaScript clients.            Maximum 10 for client.
-RedirectUris | string[] | No | Gets or sets the allowed URIs to which return tokens or authorization codes can be returned.            Wildcards are ignored. URIs must match exactly to what you are redirecting            after login. If URIs do not match, the authentication process will fail            with a bad_client error.            Maximum 10 per client.
+RedirectUris | string[] | No | Gets or sets the allowed URIs to which return tokens or authorization codes can be returned.            Wildcards are ignored. URIs must match exactly what you are redirecting to            after login. If URIs do not match, the authentication process will fail            with a bad_client error.            Maximum 10 per client.
 PostLogoutRedirectUris | string[] | No | Gets or sets allowed URIs to redirect to after logout. Wildcards are ignored.            URIs must match exactly what you are redirecting to after logout.            Maximum 10 for client.
 ClientUri | string | No | Gets or sets URI to a page with information about client (used on consent screen).
 LogoUri | string | No | Gets or sets URI to client logo (used on consent screen).

@@ -15,8 +15,8 @@ We suggest using a Authorization Code Client instead of an Implicit Client.
 
 For HTTP requests and responses, the ImplicitClient object has the following properties and JSON-serialized body: 
 
-Property | Type | Descriptions
- --- | --- | --- | ---
+Property | Type | Description
+ --- | --- | ---
 AllowedCorsOrigins | string[] | Gets or sets the values used by the default CORS policy service implementations to build a CORS policy for JavaScript clients. Maximum 10 for client.
 RedirectUris | string[] | Gets or sets the allowed URIs to which return tokens or authorization codes can be returned. Wildcards are ignored. URIs must match exactly what you are redirecting to after login. If URIs do not match, the authentication process will fail with a bad_client error. Maximum 10 per client.
 PostLogoutRedirectUris | string[] | Gets or sets allowed URIs to redirect to after logout. Wildcards are ignored. URIs must match exactly what you are redirecting to after logout. Maximum 10 for client.

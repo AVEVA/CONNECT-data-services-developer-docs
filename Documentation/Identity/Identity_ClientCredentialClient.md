@@ -18,8 +18,8 @@ Client Credential clients are used for machine-to-machine communication without
 
 For HTTP requests and responses, the ClientCredentialClient object has the following properties and JSON-serialized body: 
 
-Property | Type | Descriptions
- --- | --- | --- | ---
+Property | Type | Description
+ --- | --- | ---
 RoleIds | Guid[] | Gets or sets list of Roles to be assigned to this client. Member role is always required. For security reasons we advise against assigning Admin roles to a client.
 Id | string | Gets or sets client ID for this client. This ID should be a GUID.
 Name | string | Gets or sets name of Client.
@@ -124,7 +124,7 @@ Tags | string[] | No | Gets or sets for OSIsoft internal use only.
 ```json
 {
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-11-05T16:04:19.8501844-08:00",
+  "SecretExpirationDate": "2019-11-06T15:51:15.7145137-08:00",
   "RoleIds": [
     "00000000-0000-0000-0000-000000000000",
     "00000000-0000-0000-0000-000000000000"
@@ -161,7 +161,7 @@ Created.
   "Secret": "Secret",
   "Id": 0,
   "Description": "description",
-  "ExpirationDate": "2019-11-05T16:04:19.8548557-08:00",
+  "ExpirationDate": "2019-11-06T15:51:15.7184933-08:00",
   "Client": {
     "RoleIds": [
       "00000000-0000-0000-0000-000000000000",

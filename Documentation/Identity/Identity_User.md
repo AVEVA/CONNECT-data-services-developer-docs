@@ -22,8 +22,8 @@ Users consume resources in a Tenant. They are invited by the Admin of the
 
 For HTTP requests and responses, the User object has the following properties and JSON-serialized body: 
 
-Property | Type | Descriptions
- --- | --- | --- | ---
+Property | Type | Description
+ --- | --- | ---
 Id | Guid | Gets or sets unique User ID.
 GivenName | string | Gets or sets given name of user.
 Surname | string | Gets or sets surname of user.

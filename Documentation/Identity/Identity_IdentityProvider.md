@@ -10,8 +10,8 @@ APIs for getting a list of all supported Identity Providers.
 
 For HTTP requests and responses, the IdentityProvider object has the following properties and JSON-serialized body: 
 
-Property | Type | Descriptions
- --- | --- | --- | ---
+Property | Type | Description
+ --- | --- | ---
 Id | Guid | Gets or sets id of an identity provider.
 DisplayName | string | Gets or sets identity provider display name to use.
 Scheme | string | Gets or sets the name of the cookie handler that will temporarily store the outcome of the external authentication.

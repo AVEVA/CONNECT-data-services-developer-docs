@@ -4,18 +4,20 @@ uid: identityIdentityProvider
 
 # IdentityProvider
 
-APIs for getting a list of all supported Identity Providers
+APIs for getting a list of all supported Identity Providers.
 
 ## Properties
 
 For HTTP requests and responses, the IdentityProvider object has the following properties and JSON-serialized body: 
 
-Property | Type | Descriptions
- --- | --- | --- | ---
-Id | Guid | Id of an identity provider
-DisplayName | string | Identity provider display name to use
-Scheme | string | Specifies the name of the cookie handler that will temporarily store the outcome of the external authentication.
-UserIdClaimType | string | Type of claim
+Property | Type | Description
+ --- | --- | ---
+Id | Guid | Gets or sets id of an identity provider.
+DisplayName | string | Gets or sets identity provider display name to use.
+Scheme | string | Gets or sets the name of the cookie handler that will temporarily store the outcome of the external authentication.
+UserIdClaimType | string | Gets or sets type of claim.
+ClientId | string | Gets or sets the ClientId of the identity provider.
+IsConfigured | bool | Gets or sets a value indicating whether the identity provider has been configured.
 
 ### Serialized Model
 
@@ -24,7 +26,9 @@ UserIdClaimType | string | Type of claim
   "Id": "00000000-0000-0000-0000-000000000000",
   "DisplayName": "Name",
   "Scheme": "Scheme",
-  "UserIdClaimType": "UserIdClaimType"
+  "UserIdClaimType": "UserIdClaimType",
+  "ClientId": "ClientId",
+  "IsConfigured": false
 }
 ```
 
@@ -44,7 +48,7 @@ All endpoints referenced in this documentation require authenticated access. Aut
 
 Requests made without an access token or an invalid/expired token will fail with a 401 Unauthorized response.
 Requests made with an access token which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
-Read [here](https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/Authentication) on how to authenticate against OCS with the various clients and receive an access token in response.
+Read [here](https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/Authentication) on how to authenticate against OCS with the various clients and receive an access token in response.
 
 ## Error Handling
 
@@ -63,7 +67,7 @@ If and when contacting OSIsoft support about this error, please provide the Oper
 
 ## `Get Identity Provider`
 
-Returns an IdentityProvider object
+Returns an IdentityProvider object.
 
 ### Request
 
@@ -76,7 +80,7 @@ Returns an IdentityProvider object
 Guid identityProviderId
 ```
 
-Id of provider
+Id of provider.
 
 ### Security
 
@@ -99,7 +103,70 @@ Success.
   "Id": "00000000-0000-0000-0000-000000000000",
   "DisplayName": "Name",
   "Scheme": "Scheme",
-  "UserIdClaimType": "UserIdClaimType"
+  "UserIdClaimType": "UserIdClaimType",
+  "ClientId": "ClientId",
+  "IsConfigured": false
+}
+```
+
+#### 401
+
+Unauthorized.
+
+#### 403
+
+Forbidden.
+
+#### 404
+
+Identity Provider not found.
+
+#### 500
+
+Internal server error.
+***
+
+## `Get Identity Provider By Scheme`
+
+Returns a list of IdentityProvider objects that follow a scheme.
+
+### Request
+
+`GET api/v1/IdentityProviders/schemes/{scheme}`
+
+### Parameters
+
+```csharp
+[Required]
+string scheme
+```
+
+Scheme name.
+
+### Security
+
+Allowed for these roles:
+
+- `Account Administrator`
+
+### Returns
+
+#### 200
+
+Success.
+
+##### Type:
+
+ `IdentityProvider`
+
+```json
+{
+  "Id": "00000000-0000-0000-0000-000000000000",
+  "DisplayName": "Name",
+  "Scheme": "Scheme",
+  "UserIdClaimType": "UserIdClaimType",
+  "ClientId": "ClientId",
+  "IsConfigured": false
 }
 ```
 
@@ -137,7 +204,7 @@ Returns a list of IdentityProvider objects.
 string query
 ```
 
-Query to execute. Currently not supported
+Query to execute. Currently not supported.
 
 ```csharp
 [FromQuery]
@@ -155,7 +222,7 @@ Number of providers to skip.
 int32 count
 ```
 
-Maximum number of providers to return
+Maximum number of providers to return.
 
 ### Security
 
@@ -179,13 +246,17 @@ Success.
     "Id": "00000000-0000-0000-0000-000000000000",
     "DisplayName": "Name",
     "Scheme": "Scheme",
-    "UserIdClaimType": "UserIdClaimType"
+    "UserIdClaimType": "UserIdClaimType",
+    "ClientId": "ClientId",
+    "IsConfigured": false
   },
   {
     "Id": "00000000-0000-0000-0000-000000000000",
     "DisplayName": "Name",
     "Scheme": "Scheme",
-    "UserIdClaimType": "UserIdClaimType"
+    "UserIdClaimType": "UserIdClaimType",
+    "ClientId": "ClientId",
+    "IsConfigured": false
   }
 ]
 ```
@@ -207,9 +278,9 @@ Forbidden.
 Internal server error.
 ***
 
-## `Validate that IDP Exists based on scheme`
+## `Get Identity Provider based on scheme`
 
-Get header for a scheme to check its validity
+Get header for a scheme to check its validity.
 
 ### Request
 
@@ -222,7 +293,7 @@ Get header for a scheme to check its validity
 string scheme
 ```
 
-Scheme name
+Scheme name.
 
 ### Security
 
@@ -257,7 +328,7 @@ Identity Provider not found.
 Internal server error.
 ***
 
-## `Validate that IDP exists based on Id`
+## `Get Identity Provider based on Id`
 
 Get header for an identity provider to check if the identity provider exists.
 
@@ -272,7 +343,7 @@ Get header for an identity provider to check if the identity provider exists.
 Guid identityProviderId
 ```
 
-Id of provider
+Id of provider.
 
 ### Security
 
@@ -307,7 +378,7 @@ IdentityProvider or Tenant not found.
 Internal server error.
 ***
 
-## `Get Total Count of IDPs in Te`
+## `Headers for Identity Providers available`
 
 Get header for Identity Providers to get the total number of Identity Providers.
 
@@ -350,7 +421,7 @@ Tenant not found.
 Internal server error.
 ***
 
-## `Get All IDPs from Tenant`
+## `Get All Identity Providers from Tenant`
 
 Get all Identity Providers from a Tenant.
 
@@ -374,7 +445,7 @@ Id of Tenant.
 string query
 ```
 
-Query to execute. Currently not supported
+Query to execute. Currently not supported.
 
 ```csharp
 [FromQuery]
@@ -417,13 +488,17 @@ Success.
     "Id": "00000000-0000-0000-0000-000000000000",
     "DisplayName": "Name",
     "Scheme": "Scheme",
-    "UserIdClaimType": "UserIdClaimType"
+    "UserIdClaimType": "UserIdClaimType",
+    "ClientId": "ClientId",
+    "IsConfigured": false
   },
   {
     "Id": "00000000-0000-0000-0000-000000000000",
     "DisplayName": "Name",
     "Scheme": "Scheme",
-    "UserIdClaimType": "UserIdClaimType"
+    "UserIdClaimType": "UserIdClaimType",
+    "ClientId": "ClientId",
+    "IsConfigured": false
   }
 ]
 ```
@@ -445,7 +520,7 @@ Tenant not found.
 Internal server error.
 ***
 
-## `Get IDP from Tenant`
+## `Get Identity Provider from Tenant`
 
 Get an Identity Provider from a Tenant.
 
@@ -491,7 +566,9 @@ Success.
   "Id": "00000000-0000-0000-0000-000000000000",
   "DisplayName": "Name",
   "Scheme": "Scheme",
-  "UserIdClaimType": "UserIdClaimType"
+  "UserIdClaimType": "UserIdClaimType",
+  "ClientId": "ClientId",
+  "IsConfigured": false
 }
 ```
 
@@ -512,9 +589,9 @@ IdentityProvider or Tenant not found.
 Internal server error.
 ***
 
-## `Add IDP to Tenant`
+## `Add Identity Provider to Tenant`
 
-Add an existing Identity Provider to a Tenant. This IDP
+Add an existing Identity Provider to a Tenant. This Identity Provider
             will be available in the Home Realm Discovery Page
             for users to sign-in or sign-up.
 
@@ -541,12 +618,12 @@ IdentityProviderAdd object.
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-IdentityProviderId | Guid | Yes | Identity Provider Id to Add
-AzureActiveDirectorySendConsent | bool | No | Send consent email for Azure Active Directory.
-AzureActiveDirectoryConsentEmail | string | Yes | Address to email consent.            Only AAD Admins have permission to consent to OCS            being allowed to interact with the tenant. The email            does not have to be sent to an Admin.
-AzureActiveDirectoryConsentGivenName | string | Yes | Preferred name to use in the consent email.
-AzureActiveDirectoryConsentSurname | string | Yes | Preferred surname to use in the email.
-AzureActiveDirectoryTenant | string | Yes | AAD Domain Name (e.g. mydomain.onmicrosoft.com)
+IdentityProviderId | Guid | Yes | Gets or sets Identity Provider Id to Add.
+AzureActiveDirectorySendConsent | bool | No | Gets or sets a value indicating whether send consent email for Azure Active Directory.
+AzureActiveDirectoryConsentEmail | string | Yes | Gets or sets address to email consent.            Only Azure Active Directory Admins have permission to consent to            being allowed to interact with the tenant. The email            does not have to be sent to an Admin.
+AzureActiveDirectoryConsentGivenName | string | Yes | Gets or sets preferred name to use in the consent email.
+AzureActiveDirectoryConsentSurname | string | Yes | Gets or sets preferred surname to use in the consent email.
+AzureActiveDirectoryTenant | string | Yes | Gets or sets Azure Active Directory Domain Name (e.g. mydomain.onmicrosoft.com).
 
 
 
@@ -582,7 +659,9 @@ Created.
   "Id": "00000000-0000-0000-0000-000000000000",
   "DisplayName": "Name",
   "Scheme": "Scheme",
-  "UserIdClaimType": "UserIdClaimType"
+  "UserIdClaimType": "UserIdClaimType",
+  "ClientId": "ClientId",
+  "IsConfigured": false
 }
 ```
 
@@ -611,11 +690,12 @@ Identity Provider already exists in Tenant.
 Internal server error.
 ***
 
-## `Remove IDP From Tenant`
+## `Remove Identity Provider From Tenant`
 
 Remove an Identity Provider from a Tenant. Users provisioned
             with this Identity Provider will remain in the Tenant, but will
             not be able to authenticate.
+            An administrator cannot remove the Identity Provider they are signed in with.
 
 ### Request
 
@@ -666,7 +746,7 @@ IdentityProvider or Tenant not found.
 Internal server error.
 ***
 
-## `Validate IDP Exists`
+## `Get Header for Identity Provider`
 
 Validate that a Identity Provider exists in the Tenant.
             This endpoint is identical to the GET one but
@@ -726,7 +806,7 @@ IdentityProvider or Tenant not found.
 Internal server error.
 ***
 
-## `Get Total Count of IDPs`
+## `Get Total Count of Identity Providers`
 
 Return total number of Identity Providers in a Tenant. The
             value will be set in the Total-Count header. This endpoint

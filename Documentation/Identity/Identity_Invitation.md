@@ -21,25 +21,25 @@ Invitations are issued after the creation of a User object in OCS,
 
 For HTTP requests and responses, the Invitation object has the following properties and JSON-serialized body: 
 
-Property | Type | Descriptions
- --- | --- | --- | ---
-Id | string | Unique Invitation Id.
-Issued | DateTime | Invitation issuing timestamp.
-Expires | DateTime | Invitation expiration timestamp.
-Accepted | DateTime | Invitation accepted timestamp.
-State | InvitationStates | Invitation state. Can be None (0), InvitationEmailSent (1), InvitationAccepted (2)
-TenantId | string | ID of the Tenant the invitation belongs to.
-UserId | Guid | ID of the User whom the invitation was issued to.
-IdentityProviderId | Guid | ID of the Identity Provider that must be used to accept the invitation.
+Property | Type | Description
+ --- | --- | ---
+Id | string | Gets or sets unique Invitation Id.
+Issued | DateTime | Gets or sets invitation issuing timestamp.
+Expires | DateTime | Gets or sets invitation expiration timestamp.
+Accepted | DateTime | Gets or sets invitation accepted timestamp.
+State | InvitationStates | Gets or sets invitation state. Can be None (0), InvitationEmailSent (1), InvitationAccepted (2).
+TenantId | string | Gets or sets ID of the Tenant the invitation belongs to.
+UserId | Guid | Gets or sets ID of the User whom the invitation was issued to.
+IdentityProviderId | Guid | Gets or sets ID of the Identity Provider that must be used to accept the invitation.
 
 ### Serialized Model
 
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-07-19T13:56:29.6798766-07:00",
-  "Expires": "2019-07-19T13:56:29.6798797-07:00",
-  "Accepted": "2019-07-19T13:56:29.6798828-07:00",
+  "Issued": "2019-11-06T15:51:16.0647942-08:00",
+  "Expires": "2019-11-06T15:51:16.0648361-08:00",
+  "Accepted": "2019-11-06T15:51:16.0648415-08:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -63,7 +63,7 @@ All endpoints referenced in this documentation require authenticated access. Aut
 
 Requests made without an access token or an invalid/expired token will fail with a 401 Unauthorized response.
 Requests made with an access token which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
-Read [here](https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/Authentication) on how to authenticate against OCS with the various clients and receive an access token in response.
+Read [here](https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/Authentication) on how to authenticate against OCS with the various clients and receive an access token in response.
 
 ## Error Handling
 
@@ -123,9 +123,9 @@ Success.
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-07-19T13:56:29.6860834-07:00",
-  "Expires": "2019-07-19T13:56:29.6860885-07:00",
-  "Accepted": "2019-07-19T13:56:29.6860936-07:00",
+  "Issued": "2019-11-06T15:51:16.0726859-08:00",
+  "Expires": "2019-11-06T15:51:16.0726902-08:00",
+  "Accepted": "2019-11-06T15:51:16.0726948-08:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -223,9 +223,9 @@ Success.
 [
   {
     "Id": "Id",
-    "Issued": "2019-07-19T13:56:29.6881037-07:00",
-    "Expires": "2019-07-19T13:56:29.6881159-07:00",
-    "Accepted": "2019-07-19T13:56:29.6881237-07:00",
+    "Issued": "2019-11-06T15:51:16.0759341-08:00",
+    "Expires": "2019-11-06T15:51:16.0759383-08:00",
+    "Accepted": "2019-11-06T15:51:16.0759422-08:00",
     "State": 0,
     "TenantId": "00000000-0000-0000-0000-000000000000",
     "UserId": "00000000-0000-0000-0000-000000000000",
@@ -233,9 +233,9 @@ Success.
   },
   {
     "Id": "Id",
-    "Issued": "2019-07-19T13:56:29.6881435-07:00",
-    "Expires": "2019-07-19T13:56:29.6881451-07:00",
-    "Accepted": "2019-07-19T13:56:29.688148-07:00",
+    "Issued": "2019-11-06T15:51:16.0759609-08:00",
+    "Expires": "2019-11-06T15:51:16.0759628-08:00",
+    "Accepted": "2019-11-06T15:51:16.075966-08:00",
     "State": 0,
     "TenantId": "00000000-0000-0000-0000-000000000000",
     "UserId": "00000000-0000-0000-0000-000000000000",
@@ -300,16 +300,16 @@ New InvitationCreateOrUpdate object. Properties that are not set or are null wil
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-ExpiresDateTime | DateTime | No | Invitation expiration date. Must be in the future.            Maximum allowed is two month in the future.            Defaults to 21 days on creation.            It should be in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) and either            include a *Z* at the end to represent UTC timezone            or include the offset in hours. If neither is present            time will be treated in the local time zone of the server.
-State | InvitationStates | No | Set the state of invitation. For OSISoft internal use only.
-SendInvitation | bool | No | Send an invitation email. Invitation will be sent to the            ContactEmail in the User this invitation is attached to.            Default is true.
-IdentityProviderId | Guid | No | Identity Provider to use for accepting this invitation.            Null implies invitation can be accepted using any            configured Identity Provider.
+ExpiresDateTime | DateTime | No | Gets or sets invitation expiration date. Must be in the future.            Maximum allowed is two month in the future.            Defaults to 21 days on creation.            It should be in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) and either            include a *Z* at the end to represent UTC timezone            or include the offset in hours. If neither is present            time will be treated in the local time zone of the server.
+State | InvitationStates | No | Gets or sets set the state of invitation. For OSISoft internal use only.
+SendInvitation | bool | No | Gets or sets send an invitation email. Invitation will be sent to the            ContactEmail in the User this invitation is attached to.            Default is true.
+IdentityProviderId | Guid | No | Gets or sets Identity Provider to use for accepting this invitation.            Required when creating an Invitation.
 
 
 
 ```json
 {
-  "ExpiresDateTime": "2019-07-19T13:56:29.6937488-07:00",
+  "ExpiresDateTime": "2019-11-06T15:51:16.0787791-08:00",
   "State": 0,
   "SendInvitation": false,
   "IdentityProviderId": "00000000-0000-0000-0000-000000000000"
@@ -335,9 +335,9 @@ Success.
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-07-19T13:56:29.6964848-07:00",
-  "Expires": "2019-07-19T13:56:29.6964885-07:00",
-  "Accepted": "2019-07-19T13:56:29.6964927-07:00",
+  "Issued": "2019-11-06T15:51:16.0818734-08:00",
+  "Expires": "2019-11-06T15:51:16.0818778-08:00",
+  "Accepted": "2019-11-06T15:51:16.0818825-08:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -587,9 +587,9 @@ Success.
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-07-19T13:56:29.7669772-07:00",
-  "Expires": "2019-07-19T13:56:29.7669819-07:00",
-  "Accepted": "2019-07-19T13:56:29.7669868-07:00",
+  "Issued": "2019-11-06T15:51:16.1700912-08:00",
+  "Expires": "2019-11-06T15:51:16.1701011-08:00",
+  "Accepted": "2019-11-06T15:51:16.1701081-08:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -648,16 +648,16 @@ InvitationCreateOrUpdate object.
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-ExpiresDateTime | DateTime | No | Invitation expiration date. Must be in the future.            Maximum allowed is two month in the future.            Defaults to 21 days on creation.            It should be in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) and either            include a *Z* at the end to represent UTC timezone            or include the offset in hours. If neither is present            time will be treated in the local time zone of the server.
-State | InvitationStates | No | Set the state of invitation. For OSISoft internal use only.
-SendInvitation | bool | No | Send an invitation email. Invitation will be sent to the            ContactEmail in the User this invitation is attached to.            Default is true.
-IdentityProviderId | Guid | No | Identity Provider to use for accepting this invitation.            Null implies invitation can be accepted using any            configured Identity Provider.
+ExpiresDateTime | DateTime | No | Gets or sets invitation expiration date. Must be in the future.            Maximum allowed is two month in the future.            Defaults to 21 days on creation.            It should be in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) and either            include a *Z* at the end to represent UTC timezone            or include the offset in hours. If neither is present            time will be treated in the local time zone of the server.
+State | InvitationStates | No | Gets or sets set the state of invitation. For OSISoft internal use only.
+SendInvitation | bool | No | Gets or sets send an invitation email. Invitation will be sent to the            ContactEmail in the User this invitation is attached to.            Default is true.
+IdentityProviderId | Guid | No | Gets or sets Identity Provider to use for accepting this invitation.            Required when creating an Invitation.
 
 
 
 ```json
 {
-  "ExpiresDateTime": "2019-07-19T13:56:29.7686102-07:00",
+  "ExpiresDateTime": "2019-11-06T15:51:16.1727617-08:00",
   "State": 0,
   "SendInvitation": false,
   "IdentityProviderId": "00000000-0000-0000-0000-000000000000"
@@ -683,9 +683,9 @@ Created.
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-07-19T13:56:29.7686954-07:00",
-  "Expires": "2019-07-19T13:56:29.7686969-07:00",
-  "Accepted": "2019-07-19T13:56:29.7686992-07:00",
+  "Issued": "2019-11-06T15:51:16.1729202-08:00",
+  "Expires": "2019-11-06T15:51:16.1729241-08:00",
+  "Accepted": "2019-11-06T15:51:16.1729289-08:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -752,16 +752,16 @@ InvitationCreateOrUpdate object.
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-ExpiresDateTime | DateTime | No | Invitation expiration date. Must be in the future.            Maximum allowed is two month in the future.            Defaults to 21 days on creation.            It should be in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) and either            include a *Z* at the end to represent UTC timezone            or include the offset in hours. If neither is present            time will be treated in the local time zone of the server.
-State | InvitationStates | No | Set the state of invitation. For OSISoft internal use only.
-SendInvitation | bool | No | Send an invitation email. Invitation will be sent to the            ContactEmail in the User this invitation is attached to.            Default is true.
-IdentityProviderId | Guid | No | Identity Provider to use for accepting this invitation.            Null implies invitation can be accepted using any            configured Identity Provider.
+ExpiresDateTime | DateTime | No | Gets or sets invitation expiration date. Must be in the future.            Maximum allowed is two month in the future.            Defaults to 21 days on creation.            It should be in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) and either            include a *Z* at the end to represent UTC timezone            or include the offset in hours. If neither is present            time will be treated in the local time zone of the server.
+State | InvitationStates | No | Gets or sets set the state of invitation. For OSISoft internal use only.
+SendInvitation | bool | No | Gets or sets send an invitation email. Invitation will be sent to the            ContactEmail in the User this invitation is attached to.            Default is true.
+IdentityProviderId | Guid | No | Gets or sets Identity Provider to use for accepting this invitation.            Required when creating an Invitation.
 
 
 
 ```json
 {
-  "ExpiresDateTime": "2019-07-19T13:56:29.7703535-07:00",
+  "ExpiresDateTime": "2019-11-06T15:51:16.175491-08:00",
   "State": 0,
   "SendInvitation": false,
   "IdentityProviderId": "00000000-0000-0000-0000-000000000000"
@@ -787,9 +787,9 @@ Updated.
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-07-19T13:56:29.7704833-07:00",
-  "Expires": "2019-07-19T13:56:29.7704854-07:00",
-  "Accepted": "2019-07-19T13:56:29.7704891-07:00",
+  "Issued": "2019-11-06T15:51:16.175647-08:00",
+  "Expires": "2019-11-06T15:51:16.175651-08:00",
+  "Accepted": "2019-11-06T15:51:16.1756577-08:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -808,9 +808,9 @@ Created.
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-07-19T13:56:29.7705274-07:00",
-  "Expires": "2019-07-19T13:56:29.7705292-07:00",
-  "Accepted": "2019-07-19T13:56:29.7705325-07:00",
+  "Issued": "2019-11-06T15:51:16.1757153-08:00",
+  "Expires": "2019-11-06T15:51:16.1757182-08:00",
+  "Accepted": "2019-11-06T15:51:16.1757227-08:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",

@@ -80,8 +80,8 @@
 
 <p>Hybrid clients are used in typical, thick MVC clients with the presence of a User.
             These clients are issued an Id and Secret upon creation, which are later used for authentication
-            against OCS. More than one Secret can be created for a Client. You can read more about these clients
-            <a href="https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/Authentication#hybrid-flow">here</a>.
+            against OSIsoft Cloud Services. More than one Secret can be created for a Client. You can read more about these clients
+            <a href="https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/Authentication#hybrid-flow">here</a>.
             Hybrid clients can be issued refresh tokens, if requested, alongside access tokens. Refresh tokens typically
             have an longer lifetime than access tokens, and are used to request a new access token on behalf of the user
             without them having to sign-in.
@@ -94,64 +94,64 @@
 <tr>
 <th>Property</th>
 <th>Type</th>
-<th>Descriptions</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>AllowOfflineAccess</td>
 <td>bool</td>
-<td>Specifies whether this client can request refresh tokens, by providing the <em>offline_access</em> scope.</td>
+<td>Gets or sets whether this client can request refresh tokens, by providing the <em>offline_access</em> scope.</td>
 </tr>
 <tr>
 <td>AllowAccessTokensViaBrowser</td>
 <td>bool</td>
-<td>Specifies whether this HybridClient is allowed to receive access tokens via the browser. This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow client that is supposed to use code <em>id_token</em> to add the <em>token</em> response type, thus leaking the token to the browser).</td>
+<td>Gets or sets whether this HybridClient is allowed to receive access tokens via the browser. This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow client that is supposed to use code <em>id_token</em> to add the <em>token</em> response type, thus leaking the token to the browser).</td>
 </tr>
 <tr>
 <td>RedirectUris</td>
 <td>string[]</td>
-<td>Specifies the allowed URIs to which return tokens or authorization codes can be returned. Wildcards are ignored. URIs must match exactly what you are redirecting to after login. If URIs do not match,, the authentication process will fail with a bad_client error. Maximum 10 per client.</td>
+<td>Gets or sets the allowed URIs to which return tokens or authorization codes can be returned. Wildcards are ignored. URIs must match exactly what you are redirecting to after login. If URIs do not match, the authentication process will fail with a bad_client error. Maximum 10 per client.</td>
 </tr>
 <tr>
 <td>PostLogoutRedirectUris</td>
 <td>string[]</td>
-<td>Specifies allowed URIs to redirect to after logout. Wildcards are ignored. URIs must match exactly what you are redirecting after logout. Maximum 10 for client.</td>
+<td>Gets or sets allowed URIs to redirect to after logout. Wildcards are ignored. URIs must match exactly what you are redirecting to after logout. Maximum 10 for client.</td>
 </tr>
 <tr>
 <td>ClientUri</td>
 <td>string</td>
-<td>URI to a page with information about client (used on consent screen).</td>
+<td>Gets or sets URI to a page with information about client (used on consent screen).</td>
 </tr>
 <tr>
 <td>LogoUri</td>
 <td>string</td>
-<td>URI to client logo (used on consent screen).</td>
+<td>Gets or sets URI to client logo (used on consent screen).</td>
 </tr>
 <tr>
 <td>Id</td>
 <td>string</td>
-<td>Client ID for this client. This ID should be a GUID.</td>
+<td>Gets or sets client ID for this client. This ID should be a GUID.</td>
 </tr>
 <tr>
 <td>Name</td>
 <td>string</td>
-<td>Name of Client.</td>
+<td>Gets or sets name of Client.</td>
 </tr>
 <tr>
 <td>Enabled</td>
 <td>bool</td>
-<td>Determine if client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.</td>
+<td>Gets or sets whether client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.</td>
 </tr>
 <tr>
 <td>AccessTokenLifetime</td>
 <td>int32</td>
-<td>Lifetime of access token issued for this client after authentication. Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.</td>
+<td>Gets or sets lifetime of access token issued for this client after authentication. Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.</td>
 </tr>
 <tr>
 <td>Tags</td>
 <td>string[]</td>
-<td>For OSIsoft internal use only.</td>
+<td>Gets or sets for OSIsoft internal use only.</td>
 </tr>
 </tbody>
 </table>
@@ -187,7 +187,7 @@
 <p><code>Authorization: Bearer &lt;token&gt;</code></p>
 <p>Requests made without an access token or an invalid/expired token will fail with a 401 Unauthorized response.
 Requests made with an access token which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
-Read <a href="https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/Authentication">here</a> on how to authenticate against OCS with the various clients and receive an access token in response.</p>
+Read <a href="https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/Authentication">here</a> on how to authenticate against OCS with the various clients and receive an access token in response.</p>
 <h2 id="error-handling">Error Handling</h2>
 <p>All responses will have an error message in the body. The exceptions are 200 responses and the 401 Unauthorized response. The error message will look as follows:</p>
 <pre><code class="lang-json">{
@@ -227,85 +227,85 @@ HybridClientCreate hybridClientCreate
 <td>SecretDescription</td>
 <td>string</td>
 <td>No</td>
-<td>Description for the initial secret for the client.</td>
+<td>Gets or sets description for the initial secret for the client.</td>
 </tr>
 <tr>
 <td>SecretExpirationDate</td>
 <td>DateTime</td>
 <td>No</td>
-<td>Expiration date for the initial secret for the client. If set to null the secret will            never expire. We advise against such practice.</td>
+<td>Gets or sets expiration date for the initial secret for the client. If set to null the secret will            never expire. We advise against such practice.</td>
 </tr>
 <tr>
 <td>AllowOfflineAccess</td>
 <td>bool</td>
 <td>No</td>
-<td>Specifies whether this client can request refresh tokens, by providing the <em>offline_access</em> scope.</td>
+<td>Gets or sets whether this client can request refresh tokens, by providing the <em>offline_access</em> scope.</td>
 </tr>
 <tr>
 <td>AllowAccessTokensViaBrowser</td>
 <td>bool</td>
 <td>No</td>
-<td>Specifies whether this HybridClient is allowed to receive access tokens via the browser.            This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow            client that is supposed to use code <em>id_token</em> to add the <em>token</em> response type, thus            leaking the token to the browser).</td>
+<td>Gets or sets whether this HybridClient is allowed to receive access tokens via the browser.            This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow            client that is supposed to use code <em>id_token</em> to add the <em>token</em> response type, thus            leaking the token to the browser).</td>
 </tr>
 <tr>
 <td>RedirectUris</td>
 <td>string[]</td>
 <td>No</td>
-<td>Specifies the allowed URIs to which return tokens or authorization codes can be returned.            Wildcards are ignored. URIs must match exactly what you are redirecting            to after login. If URIs do not match, the authentication process will fail            with a bad_client error.            Maximum 10 per client.</td>
+<td>Gets or sets the allowed URIs to which return tokens or authorization codes can be returned.            Wildcards are ignored. URIs must match exactly what you are redirecting to            after login. If URIs do not match, the authentication process will fail            with a bad_client error.            Maximum 10 per client.</td>
 </tr>
 <tr>
 <td>PostLogoutRedirectUris</td>
 <td>string[]</td>
 <td>No</td>
-<td>Specifies allowed URIs to redirect to after logout. Wildcards are ignored.            URIs must match exactly what you are redirecting after logout.            Maximum 10 for client.</td>
+<td>Gets or sets allowed URIs to redirect to after logout. Wildcards are ignored.            URIs must match exactly what you are redirecting to after logout.            Maximum 10 for client.</td>
 </tr>
 <tr>
 <td>ClientUri</td>
 <td>string</td>
 <td>No</td>
-<td>URI to a page with information about client (used on consent screen).</td>
+<td>Gets or sets URI to a page with information about client (used on consent screen).</td>
 </tr>
 <tr>
 <td>LogoUri</td>
 <td>string</td>
 <td>No</td>
-<td>URI to client logo (used on consent screen).</td>
+<td>Gets or sets URI to client logo (used on consent screen).</td>
 </tr>
 <tr>
 <td>Id</td>
 <td>string</td>
 <td>No</td>
-<td>Client ID for this client. This ID should be a GUID.</td>
+<td>Gets or sets client ID for this client. This ID should be a GUID.</td>
 </tr>
 <tr>
 <td>Name</td>
 <td>string</td>
 <td>Yes</td>
-<td>Name of Client.</td>
+<td>Gets or sets name of Client.</td>
 </tr>
 <tr>
 <td>Enabled</td>
 <td>bool</td>
 <td>No</td>
-<td>Determine if client is enabled. Client can be used for authentication            if set to true. Client cannot be used for authentication if set to false.</td>
+<td>Gets or sets whether client is enabled. Client can be used for authentication            if set to true. Client cannot be used for authentication if set to false.</td>
 </tr>
 <tr>
 <td>AccessTokenLifetime</td>
 <td>int32</td>
 <td>No</td>
-<td>Lifetime of access token issued for this client after authentication.            Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.</td>
+<td>Gets or sets lifetime of access token issued for this client after authentication.            Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.</td>
 </tr>
 <tr>
 <td>Tags</td>
 <td>string[]</td>
 <td>No</td>
-<td>For OSIsoft internal use only.</td>
+<td>Gets or sets for OSIsoft internal use only.</td>
 </tr>
 </tbody>
 </table>
 <pre><code class="lang-json">{
   &quot;SecretDescription&quot;: &quot;description&quot;,
-  &quot;SecretExpirationDate&quot;: &quot;2019-07-19T13:56:29.3231282-07:00&quot;,
+  &quot;SecretExpirationDate&quot;: &quot;2019-11-06T15:51:15.4449532-08:00&quot;,
   &quot;AllowOfflineAccess&quot;: false,
   &quot;AllowAccessTokensViaBrowser&quot;: false,
   &quot;RedirectUris&quot;: [
@@ -341,7 +341,7 @@ HybridClientCreate hybridClientCreate
   &quot;Secret&quot;: &quot;Secret&quot;,
   &quot;Id&quot;: 0,
   &quot;Description&quot;: &quot;description&quot;,
-  &quot;ExpirationDate&quot;: &quot;2019-07-19T13:56:29.3364121-07:00&quot;,
+  &quot;ExpirationDate&quot;: &quot;2019-11-06T15:51:15.4586973-08:00&quot;,
   &quot;Client&quot;: {
     &quot;AllowOfflineAccess&quot;: false,
     &quot;AllowAccessTokensViaBrowser&quot;: false,
@@ -408,67 +408,67 @@ HybridClient hybridClient
 <td>AllowOfflineAccess</td>
 <td>bool</td>
 <td>No</td>
-<td>Specifies whether this client can request refresh tokens, by providing the <em>offline_access</em> scope.</td>
+<td>Gets or sets whether this client can request refresh tokens, by providing the <em>offline_access</em> scope.</td>
 </tr>
 <tr>
 <td>AllowAccessTokensViaBrowser</td>
 <td>bool</td>
 <td>No</td>
-<td>Specifies whether this HybridClient is allowed to receive access tokens via the browser.            This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow            client that is supposed to use code <em>id_token</em> to add the <em>token</em> response type, thus            leaking the token to the browser).</td>
+<td>Gets or sets whether this HybridClient is allowed to receive access tokens via the browser.            This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow            client that is supposed to use code <em>id_token</em> to add the <em>token</em> response type, thus            leaking the token to the browser).</td>
 </tr>
 <tr>
 <td>RedirectUris</td>
 <td>string[]</td>
 <td>No</td>
-<td>Specifies the allowed URIs to which return tokens or authorization codes can be returned.            Wildcards are ignored. URIs must match exactly what you are redirecting            to after login. If URIs do not match, the authentication process will fail            with a bad_client error.            Maximum 10 per client.</td>
+<td>Gets or sets the allowed URIs to which return tokens or authorization codes can be returned.            Wildcards are ignored. URIs must match exactly what you are redirecting to            after login. If URIs do not match, the authentication process will fail            with a bad_client error.            Maximum 10 per client.</td>
 </tr>
 <tr>
 <td>PostLogoutRedirectUris</td>
 <td>string[]</td>
 <td>No</td>
-<td>Specifies allowed URIs to redirect to after logout. Wildcards are ignored.            URIs must match exactly what you are redirecting after logout.            Maximum 10 for client.</td>
+<td>Gets or sets allowed URIs to redirect to after logout. Wildcards are ignored.            URIs must match exactly what you are redirecting to after logout.            Maximum 10 for client.</td>
 </tr>
 <tr>
 <td>ClientUri</td>
 <td>string</td>
 <td>No</td>
-<td>URI to a page with information about client (used on consent screen).</td>
+<td>Gets or sets URI to a page with information about client (used on consent screen).</td>
 </tr>
 <tr>
 <td>LogoUri</td>
 <td>string</td>
 <td>No</td>
-<td>URI to client logo (used on consent screen).</td>
+<td>Gets or sets URI to client logo (used on consent screen).</td>
 </tr>
 <tr>
 <td>Id</td>
 <td>string</td>
 <td>No</td>
-<td>Client ID for this client. This ID should be a GUID.</td>
+<td>Gets or sets client ID for this client. This ID should be a GUID.</td>
 </tr>
 <tr>
 <td>Name</td>
 <td>string</td>
 <td>Yes</td>
-<td>Name of Client.</td>
+<td>Gets or sets name of Client.</td>
 </tr>
 <tr>
 <td>Enabled</td>
 <td>bool</td>
 <td>No</td>
-<td>Determine if client is enabled. Client can be used for authentication            if set to true. Client cannot be used for authentication if set to false.</td>
+<td>Gets or sets whether client is enabled. Client can be used for authentication            if set to true. Client cannot be used for authentication if set to false.</td>
 </tr>
 <tr>
 <td>AccessTokenLifetime</td>
 <td>int32</td>
 <td>No</td>
-<td>Lifetime of access token issued for this client after authentication.            Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.</td>
+<td>Gets or sets lifetime of access token issued for this client after authentication.            Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.</td>
 </tr>
 <tr>
 <td>Tags</td>
 <td>string[]</td>
 <td>No</td>
-<td>For OSIsoft internal use only.</td>
+<td>Gets or sets for OSIsoft internal use only.</td>
 </tr>
 </tbody>
 </table>
@@ -720,7 +720,7 @@ string clientId
 <h4 id="500-4">500</h4>
 <p>Internal server error.</p>
 <hr>
-<h2 id="validate-hybrid-client-exists"><code>Validate Hybrid Client Exists</code></h2>
+<h2 id="get-header-for-hybrid-client"><code>Get Header for Hybrid Client</code></h2>
 <p>Validate that a Hybrid Client exists.
             This endpoint is identical to the GET one but
             it does not return any objects in the body.</p>

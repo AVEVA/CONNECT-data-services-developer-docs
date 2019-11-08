@@ -78,10 +78,10 @@
             <article class="content wrap" id="_content" data-uid="identityAzureActiveDirectoryTenant">
 <h1 id="azureactivedirectorytenant">AzureActiveDirectoryTenant</h1>
 
-<p>An Azure Active Directory (AAD) Tenant is used to map an existing
-            <a href="https://azure.microsoft.com/en-us/services/active-directory/">AAD</a>
-            tenant from Azure to OSIsoft Cloud Services (OCS). We only allow one AAD Tenant
-            per OCS Tenant.</p>
+<p>An Azure Active Directory Tenant is used to map an existing
+            <a href="https://azure.microsoft.com/en-us/services/active-directory/">Azure Active Directory</a>
+            Tenant from Azure to OSIsoft Cloud Services. We only allow one Azure Active Directory Tenant
+            per OSIsoft Cloud Services Tenant.</p>
 <h2 id="properties">Properties</h2>
 <p>For HTTP requests and responses, the AzureActiveDirectoryTenant object has the following properties and JSON-serialized body: </p>
 <table>
@@ -89,19 +89,19 @@
 <tr>
 <th>Property</th>
 <th>Type</th>
-<th>Descriptions</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Id</td>
 <td>string</td>
-<td>Id of an Azure Active Directory Tenant</td>
+<td>Gets or sets id of an Azure Active Directory Tenant.</td>
 </tr>
 <tr>
 <td>ConsentState</td>
 <td>ConsentState</td>
-<td>Consent State of Azure Active Directory Tenant. Can be: NotConsented (0), Consented (1)</td>
+<td>Gets or sets Consent State of Azure Active Directory Tenant. Can be: NotConsented (0), Consented (1).</td>
 </tr>
 </tbody>
 </table>
@@ -119,7 +119,7 @@
 <p><code>Authorization: Bearer &lt;token&gt;</code></p>
 <p>Requests made without an access token or an invalid/expired token will fail with a 401 Unauthorized response.
 Requests made with an access token which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
-Read <a href="https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/Authentication">here</a> on how to authenticate against OCS with the various clients and receive an access token in response.</p>
+Read <a href="https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/Authentication">here</a> on how to authenticate against OCS with the various clients and receive an access token in response.</p>
 <h2 id="error-handling">Error Handling</h2>
 <p>All responses will have an error message in the body. The exceptions are 200 responses and the 401 Unauthorized response. The error message will look as follows:</p>
 <pre><code class="lang-json">{
@@ -129,17 +129,17 @@ Read <a href="https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/bas
     &quot;Resolution&quot;: &quot;Possible solution for the error.&quot; 
 }
 </code></pre><p>If and when contacting OSIsoft support about this error, please provide the OperationId.</p>
-<h2 id="add-aad-tenant-to-ocs-tenant"><code>Add AAD Tenant to OCS Tenant</code></h2>
-<p>Add an AAD Tenant to the OCS Tenant.</p>
+<h2 id="add-azure-active-directory-tenant-to-ocs-tenant"><code>Add Azure Active Directory Tenant to OCS Tenant</code></h2>
+<p>Add an Azure Active Directory Tenant to the OSIsoft Cloud Services Tenant.</p>
 <h3 id="request">Request</h3>
 <p><code style="word-break:normal; overflow-wrap:break-word;">POST api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>AzureActiveDirectoryTenants/<wbr>{azureActiveDirectoryTenantId}</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of OCS Tenant.</p>
+</code></pre><p>Id of OSIsoft Cloud Services Tenant.</p>
 <pre><code class="lang-csharp">[Required]
 string azureActiveDirectoryTenantId
-</code></pre><p>Id or Domain Name of AAD Tenant.</p>
+</code></pre><p>Id or Domain Name of Azure Active Directory Tenant.</p>
 <h3 id="security">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -161,20 +161,20 @@ string azureActiveDirectoryTenantId
 <h4 id="403">403</h4>
 <p>Forbidden.</p>
 <h4 id="404">404</h4>
-<p>OCS Tenant not found.</p>
+<p>OSIsoft Cloud Services Tenant not found.</p>
 <h4 id="409">409</h4>
-<p>Id of AAD Tenant. is already in use on the specified Tenant.</p>
+<p>Id of Azure Active Directory Tenant. is already in use on the specified Tenant.</p>
 <h4 id="500">500</h4>
 <p>Internal server error.</p>
 <hr>
-<h2 id="get-all-aad-tenants-from-ocs-tenant"><code>Get All AAD Tenants from OCS Tenant</code></h2>
-<p>Get all AAD Tenants from an OCS Tenant.</p>
+<h2 id="get-all-azure-active-directory-tenants-from-ocs-tenant"><code>Get All Azure Active Directory Tenants from OCS Tenant</code></h2>
+<p>Get all Azure Active Directory Tenants from an OSIsoft Cloud Services Tenant.</p>
 <h3 id="request-1">Request</h3>
 <p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>AzureActiveDirectoryTenants</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of OCS Tenant.</p>
+</code></pre><p>Id of OSIsoft Cloud Services Tenant.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
 [Default = &quot;&quot;]
@@ -184,12 +184,12 @@ string query
 [Optional]
 [Default = 0]
 int32 skip
-</code></pre><p>Number of AAD tenants to skip.</p>
+</code></pre><p>Number of Azure Active Directory tenants to skip.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
 [Default = 100]
 int32 count
-</code></pre><p>Maximum number of AAD tenants to return.</p>
+</code></pre><p>Maximum number of Azure Active Directory tenants to return.</p>
 <h3 id="security-1">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -220,16 +220,16 @@ int32 count
 <p>Internal server error.</p>
 <hr>
 <h2 id="get-aad-tenant-from-ocs-tenant"><code>Get AAD Tenant from OCS Tenant</code></h2>
-<p>Get AAD Tenant from an OCS Tenant.</p>
+<p>Get Azure Active Directory Tenant from an OSIsoft Cloud Services Tenant.</p>
 <h3 id="request-2">Request</h3>
 <p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>AzureActiveDirectoryTenants/<wbr>{azureActiveDirectoryTenantId}</code></p>
 <h3 id="parameters-2">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of OCS Tenant.</p>
+</code></pre><p>Id of OSIsoft Cloud Services Tenant.</p>
 <pre><code class="lang-csharp">[Required]
 string azureActiveDirectoryTenantId
-</code></pre><p>Id of AAD Tenant.</p>
+</code></pre><p>Id of Azure Active Directory Tenant.</p>
 <h3 id="security-2">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -251,21 +251,21 @@ string azureActiveDirectoryTenantId
 <h4 id="403-3">403</h4>
 <p>Forbidden.</p>
 <h4 id="404-1">404</h4>
-<p>OCS Tenant not found.</p>
+<p>OSIsoft Cloud Services Tenant not found.</p>
 <h4 id="500-2">500</h4>
 <p>Internal server error.</p>
 <hr>
 <h2 id="remove-aad-tenant-from-ocs-tenant"><code>Remove AAD Tenant from OCS Tenant</code></h2>
-<p>Remove AAD Tenant from an OCS Tenant.</p>
+<p>Remove Azure Active Directory Tenant from an OSIsoft Cloud Services Tenant.</p>
 <h3 id="request-3">Request</h3>
 <p><code style="word-break:normal; overflow-wrap:break-word;">DELETE api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>AzureActiveDirectoryTenants/<wbr>{azureActiveDirectoryTenantId}</code></p>
 <h3 id="parameters-3">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of OCS Tenant.</p>
+</code></pre><p>Id of OSIsoft Cloud Services Tenant.</p>
 <pre><code class="lang-csharp">[Required]
 string azureActiveDirectoryTenantId
-</code></pre><p>Id of AAD Tenant to remove.</p>
+</code></pre><p>Id of Azure Active Directory Tenant to remove.</p>
 <h3 id="security-3">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -281,24 +281,24 @@ string azureActiveDirectoryTenantId
 <h4 id="403-4">403</h4>
 <p>Forbidden.</p>
 <h4 id="404-2">404</h4>
-<p>OCS Tenant not found.</p>
+<p>OSIsoft Cloud Services Tenant not found.</p>
 <h4 id="500-3">500</h4>
 <p>Internal server error.</p>
 <hr>
 <h2 id="send-consent-email-for-aad-tenant"><code>Send Consent Email for AAD Tenant</code></h2>
-<p>Send consent for an AAD Tenant. OCS needs to be granted
-            permission to interact with the AAD tenant. Otherwise, users from this AAD Tenant
-            cannot accept invitations from OCS and log in. You can read more about this
-            <a href="https://pisquare.osisoft.com/docs/DOC-3986-msa-consent-for-azure-active-directory">here</a></p>
+<p>Send consent for an Azure Active Directory Tenant. OSIsoft Cloud Services needs to be granted
+            permission to interact with the Azure Active Directory tenant. Otherwise, users from this Azure Active Directory Tenant
+            cannot accept invitations from OSIsoft Cloud Services and log in. You can read more about this
+            <a href="https://pisquare.osisoft.com/docs/DOC-3986-msa-consent-for-azure-active-directory">here</a>.</p>
 <h3 id="request-4">Request</h3>
 <p><code style="word-break:normal; overflow-wrap:break-word;">POST api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>AzureActiveDirectoryTenants/<wbr>{azureActiveDirectoryTenantId}/<wbr>SendConsent</code></p>
 <h3 id="parameters-4">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of OCS Tenant.</p>
+</code></pre><p>Id of OSIsoft Cloud Services Tenant.</p>
 <pre><code class="lang-csharp">[Required]
 string azureActiveDirectoryTenantId
-</code></pre><p>Id of AAD Tenant.</p>
+</code></pre><p>Id of Azure Active Directory Tenant.</p>
 <pre><code class="lang-csharp">[FromBody]
 [Required]
 ConsentInformation consentInformation
@@ -317,25 +317,25 @@ ConsentInformation consentInformation
 <td>AzureActiveDirectoryConsentEmail</td>
 <td>string</td>
 <td>Yes</td>
-<td>Address to email consent.            Only AAD Admins have permission to consent to OCS            being allowed to interact with the tenant. The email            does not have to be sent to an Admin.</td>
+<td>Gets or sets address to email consent.            Only Azure Active Directory Admins have permission to consent to            being allowed to interact with the tenant. The email            does not have to be sent to an Admin.</td>
 </tr>
 <tr>
 <td>AzureActiveDirectoryConsentGivenName</td>
 <td>string</td>
 <td>Yes</td>
-<td>Preferred name to use in the consent email.</td>
+<td>Gets or sets preferred name to use in the consent email.</td>
 </tr>
 <tr>
 <td>AzureActiveDirectoryConsentSurname</td>
 <td>string</td>
 <td>Yes</td>
-<td>Preferred surname to use in the email.</td>
+<td>Gets or sets preferred surname to use in the consent email.</td>
 </tr>
 <tr>
 <td>AzureActiveDirectoryTenant</td>
 <td>string</td>
 <td>Yes</td>
-<td>AAD Domain Name (e.g. mydomain.onmicrosoft.com)</td>
+<td>Gets or sets Azure Active Directory Domain Name (e.g. mydomain.onmicrosoft.com).</td>
 </tr>
 </tbody>
 </table>
@@ -360,12 +360,12 @@ ConsentInformation consentInformation
 <h4 id="403-5">403</h4>
 <p>Forbidden.</p>
 <h4 id="404-3">404</h4>
-<p>OCS Tenant not found.</p>
+<p>OSIsoft Cloud Services Tenant not found.</p>
 <h4 id="500-4">500</h4>
 <p>Internal server error.</p>
 <hr>
-<h2 id="validate-aad-tenant-in-ocs-tenant"><code>Validate AAD Tenant in OCS Tenant</code></h2>
-<p>Validate that AAD Tenant exists in this OCS Tenant.
+<h2 id="get-azure-active-directory-tenant-in-tenant"><code>Get Azure Active Directory Tenant in Tenant</code></h2>
+<p>Validate that Azure Active Directory Tenant exists in this OSIsoft Cloud Services Tenant.
             This endpoint is identical to the GET one but
             it does not return any objects in the body.</p>
 <h3 id="request-5">Request</h3>
@@ -373,10 +373,10 @@ ConsentInformation consentInformation
 <h3 id="parameters-5">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of OCS Tenant.</p>
+</code></pre><p>Id of OSIsoft Cloud Services Tenant.</p>
 <pre><code class="lang-csharp">[Required]
 string azureActiveDirectoryTenantId
-</code></pre><p>Id of AAD Tenant.</p>
+</code></pre><p>Id of Azure Active Directory Tenant.</p>
 <h3 id="security-5">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -394,12 +394,12 @@ string azureActiveDirectoryTenantId
 <h4 id="403-6">403</h4>
 <p>Forbidden.</p>
 <h4 id="404-4">404</h4>
-<p>OCS Tenant not found.</p>
+<p>OSIsoft Cloud Services Tenant not found.</p>
 <h4 id="500-5">500</h4>
 <p>Internal server error.</p>
 <hr>
-<h2 id="get-total-count-of-aad-tenant-in-ocs-tenant"><code>Get Total Count of AAD Tenant in OCS Tenant</code></h2>
-<p>Return total number of AAD tenants in a OCS Tenant. This endpoint
+<h2 id="get-total-count-of-azure-active-directory-tenant-in-tenant"><code>Get Total Count of Azure Active Directory Tenant in Tenant</code></h2>
+<p>Return total number of Azure Active Directory tenants in a OSIsoft Cloud Services Tenant. This endpoint
             is identical to the GET one but it does not return any objects
             in the body.</p>
 <h3 id="request-6">Request</h3>
@@ -407,7 +407,7 @@ string azureActiveDirectoryTenantId
 <h3 id="parameters-6">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of OCS Tenant.</p>
+</code></pre><p>Id of OSIsoft Cloud Services Tenant.</p>
 <h3 id="security-6">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -425,7 +425,7 @@ string tenantId
 <h4 id="403-7">403</h4>
 <p>Forbidden.</p>
 <h4 id="404-5">404</h4>
-<p>OCS Tenant not found.</p>
+<p>OSIsoft Cloud Services Tenant not found.</p>
 <h4 id="500-6">500</h4>
 <p>Internal server error.</p>
 <hr>

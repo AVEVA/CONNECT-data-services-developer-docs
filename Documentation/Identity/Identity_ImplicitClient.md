@@ -59,12 +59,6 @@ Tags | string[] | Gets or sets for OSIsoft internal use only.
 
 ***
 
-## Base URL
-
-All URLs referenced in this section have the following base:
-
-`https://dat-b.osisoft.com/`
-
 ## Authentication
 
 All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieve after a successful authentication request.
@@ -217,6 +211,10 @@ Forbidden.
 
 Tenant not found.
 
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
+
 #### 409
 
 Client Id already exists.
@@ -359,6 +357,10 @@ Missing or invalid inputs.
 #### 404
 
 Client or Tenant not found.
+
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
 
 #### 500
 

@@ -29,12 +29,6 @@ ConsentState | ConsentState | Gets or sets Consent State of Azure Active Directo
 
 ***
 
-## Base URL
-
-All URLs referenced in this section have the following base:
-
-`https://dat-b.osisoft.com/`
-
 ## Authentication
 
 All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieve after a successful authentication request.
@@ -122,6 +116,10 @@ Forbidden.
 #### 404
 
 OSIsoft Cloud Services Tenant not found.
+
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
 
 #### 409
 
@@ -427,6 +425,10 @@ Forbidden.
 #### 404
 
 OSIsoft Cloud Services Tenant not found.
+
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
 
 #### 500
 

@@ -37,14 +37,7 @@ For HTTP requests and responses, the Namespace object has the following properti
 
 ## Region ##
 
-When a Namespace is created, all services are created in the Namespace's region. Resources created in this Namespace (i.e. SDS types, streams, and stream views) will be created in the region of the Namespace, and any data stored in the Namespace will be stored in that region.
-
-| Supported Regions | 
-| --- |
-| WestUS | 
-| WestEurope* |
-
-\* WestEurope Namespaces are currently in preview, and are not yet generally available. If you believe you have a valid use case for a WestEurope Namespace, please contact OSIsoft.
+When a namespace is created, all resources are created in the namespace's region. Resources created in this namespace (e.g. SDS types, streams, and stream views) will be created in the region of the namespace, and any data stored in the namespace will be stored in that region. Read and write operations at the namespace level and within a namespace utilize the base URL of the region in which the namespace resides. The ``Self`` property on each namespace provides the complete URL for all operations within that namespace.
 
 ***
 

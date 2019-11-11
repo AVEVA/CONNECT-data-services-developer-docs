@@ -340,6 +340,10 @@ Forbidden.
 
 OSIsoft Cloud Services Tenant not found.
 
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
+
 #### 500
 
 Internal server error.

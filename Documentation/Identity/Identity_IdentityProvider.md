@@ -372,7 +372,7 @@ IdentityProvider or Tenant not found.
 Internal server error.
 ***
 
-## `Headers for Identity Providers available`
+## `Get Header for Identity Providers`
 
 Get header for Identity Providers to get the total number of Identity Providers.
 
@@ -738,6 +738,10 @@ Forbidden.
 #### 404
 
 IdentityProvider or Tenant not found.
+
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
 
 #### 500
 

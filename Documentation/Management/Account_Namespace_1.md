@@ -2,7 +2,7 @@
 uid: AccountNamespace_1
 ---
 
-# Namespaces
+# Namespaces (Version 1)
 
 A `Namespace` is a collection of SDS types, streams, and stream views. Namespace identifiers are unique within an account. Requirements
 for Namespace IDs are the following:
@@ -19,31 +19,35 @@ For HTTP requests and responses, the Namespace object has the following properti
 
 | Property | Type | Description | 
  | --- | --- | ---  | 
-| Id | string | Gets or sets name of this Namespace; unique within a Tenant's Namespaces. | 
+| Id | string |  | 
 | Region | string | Gets or sets the region that the namespace is provisioned in. | 
 | Self | string | Gets or sets the namespace's URI. | 
 | Description | string | Gets or sets description of this Namespace. | 
 | State | NamespaceProvisioningState | Gets or sets current state of this Namespace. | 
+| Owner | Trustee | Gets or sets owner [Trustee](xref:accessControl) of this Namespace. | 
+| AccessControl | AccessControlList | Gets or sets the [AccessControlList](xref:accessControl) that defines Access Control for this `Namespace`. | 
+
 
 ```json
 {
-	"Id": "id",
-	"Region": "region",
-	"Self": "self",
-	"Description": "description",
+	"Id": "ID",
+	"Region": "REGION",
+	"Self": "SELF",
+	"Description": "DESCRIPTION",
 	"State": 0,
+	"Owner": {
+		"Type": 0
+	},
+	"AccessControl": {
+		"RoleTrusteeAccessControlEntries": []
+	}
 }
 ```
-
-## Region ##
-
-When a namespace is created, all resources are created in the namespace's region. Resources created in this namespace (e.g. SDS types, streams, and stream views) will be created in the region of the namespace, and any data stored in the namespace will be stored in that region. Read and write operations at the namespace level and within a namespace utilize the base URL of the region in which the namespace resides. The ``Self`` property on each namespace provides the complete URL for all operations within that namespace.
-
 ***
 
 ## `Get All Namespaces`
 
-Returns all `Namespaces` owned by the specified `Tenant` that the caller has access to.
+Returns all `Namespace` s owned by the specified `Tenant` that the caller has access to.
 
 ### Http
 
@@ -59,6 +63,14 @@ string tenantId
 ```
 
 The identifier of the account to access.
+```csharp
+[Optional]
+[Default = ""]
+[FromRoute]
+string region
+```
+
+The region in which namespaces should be filtered.
 
 
 ### Security
@@ -70,8 +82,8 @@ A `Namespace` can only be retrieved if the current principal has Read access.
 | Status Code | Return Type | Description | 
  | --- | --- | ---  | 
 | 200 | [Namespace] | Returns a list of all `Namespace` objects for the specified tenantId that the caller has access to. | 
-| 400 | Nothing is returned | Could not retrieve `Namespaces` due to missing or invalid input. | 
-| 403 | Nothing is returned | Unauthorized to access the tenant's `Namespaces`. | 
+| 400 | Nothing is returned | Could not retrieve `Namespace` s due to missing or invalid input. | 
+| 403 | Nothing is returned | Unauthorized to access the tenant's `Namespace` s. | 
 
 
 ***
@@ -167,6 +179,7 @@ A `Namespace` can only be created if the current principal has Write access.
 | 302 | Nothing is returned | Returns the location of the existing `Namespace` object. | 
 | 400 | Nothing is returned | Could not create the `Namespace` due to missing or invalid input. | 
 | 403 | Nothing is returned | Unauthorized to create a `Namespace` in this account. | 
+| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. | 
 | 409 | Nothing is returned | A `Namespace` already exists with different values. | 
 
 
@@ -218,6 +231,7 @@ A `Namespace` can only be updated if the current principal has Write access.
 | 200 | Namespace | Returns the updated `Namespace`. | 
 | 400 | Nothing is returned | Could not update the `Namespace` due to missing or invalid input. | 
 | 403 | Nothing is returned | Unauthorized to update the `Namespace`. | 
+| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. | 
 
 
 ***
@@ -260,6 +274,7 @@ A `Namespace` can only be deleted if the current principal has Delete access.
 | 204 | Nothing is returned | The `Namespace` was deleted. | 
 | 400 | Nothing is returned | Could not delete the `Namespace` due to an invalid state. | 
 | 403 | Nothing is returned | Unauthorized to delete the `Namespace`. | 
+| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. | 
 
 
 ***
@@ -351,6 +366,7 @@ An [AccessControlList](xref:accessControl) can only be updated if the current pr
 | 200 | AccessControlList | Returns the updated [AccessControlList](xref:accessControl). | 
 | 400 | Nothing is returned | Could not update the [AccessControlList](xref:accessControl) of the specified `Namespace` due to missing or invalid input. | 
 | 403 | Nothing is returned | Unauthorized to update the [AccessControlList](xref:accessControl) for the specified `Namespace`. | 
+| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. | 
 
 
 ***
@@ -442,6 +458,7 @@ An Owner's [Trustee](xref:accessControl) can only be changed if the current prin
 | 200 | Trustee | Returns the new Owner's [Trustee](xref:accessControl) of the specified `Namespace`. | 
 | 400 | Nothing is returned | Could not change the Owner's [Trustee](xref:accessControl) of the specified `Namespace` due to missing or invalid input. | 
 | 403 | Nothing is returned | Unauthorized to change the Owner's [Trustee](xref:accessControl) of the specified `Namespace`. | 
+| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. | 
 
 
 ***

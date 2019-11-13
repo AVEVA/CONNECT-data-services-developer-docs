@@ -2,10 +2,9 @@
 uid: AccountRole_1
 ---
 
-# Roles (Version 1)
+# Roles
 
-A `Role` is used to manage access within an OSIsoft Cloud Services (OCS) account. By default, users have the Account Member role. There
-are two predefined Roles for OCS accounts. Check the user or client role APIs for more information.
+A `Role` is used to manage access within an OSIsoft Cloud Services (OCS) account. All users are assigned the Account Member role by default. There are two predefined Roles for OCS accounts. Check the user or client role APIs for more information.
 - Account Administrator
 - Account Member
 
@@ -26,12 +25,12 @@ For HTTP requests and responses, the Role object has the following properties an
 
 ```json
 {
-	"Id": "ID",
-	"Name": "NAME",
-	"Description": "DESCRIPTION",
+	"Id": "id",
+	"Name": "name",
+	"Description": "description",
 	"RoleScope": 0,
-	"CommunityId": "COMMUNITYID",
-	"RoleTypeId": "ROLETYPEID"
+	"CommunityId": "communityid",
+	"RoleTypeId": "roletypeid"
 }
 ```
 ***
@@ -75,7 +74,6 @@ Authorized for Account Administrators of the specified account.
 | 302 | Nothing is returned | Returns the location of the existing `Role` object. | 
 | 400 | Nothing is returned | Could not create a new `Role` due to missing or invalid input. | 
 | 403 | Nothing is returned | Unauthorized to create the new `Role` in the specified account. | 
-| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. | 
 | 409 | Nothing is returned | A `Role` already exists with different values. | 
 
 
@@ -119,7 +117,6 @@ Authorized for Account Administrators of the specified account.
 | 204 | Nothing is returned | The `Role` was deleted. | 
 | 400 | Nothing is returned | Could not delete specified `Role` due to missing or invalid input. | 
 | 403 | Nothing is returned | Unauthorized to delete the specified `Role`. | 
-| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. | 
 
 
 ***
@@ -161,14 +158,14 @@ Authorized for Account Administrators of the specified account.
  | --- | --- | ---  | 
 | 200 | Role | Returns the `Role` with with specified Id roleId. | 
 | 400 | Nothing is returned | Could not retrieve the specified `Role` due to missing or invalid input. | 
-| 403 | Nothing is returned | Unauthorized to retrieve account `Role` s from this account. | 
+| 403 | Nothing is returned | Unauthorized to retrieve account `Roles` from this account. | 
 
 
 ***
 
 ## `Get Account Roles`
 
-Retrieves all account `Role` s for the specified Account Id.
+Retrieves all account `Roles` for the specified Account Id.
 
 ### Http
 
@@ -188,18 +185,18 @@ The identifier of the account to access.
 [Optional]
 [Default = "0"]
 [FromQuery]
-INT32 skip
+int32 skip
 ```
 
-Number of `Role` s to ignore.
+Number of `Roles` to ignore.
 ```csharp
 [Optional]
 [Default = "100"]
 [FromQuery]
-INT32 count
+int32 count
 ```
 
-Number of `Role` s to be returned.
+Number of `Roles` to be returned.
 ```csharp
 [Optional]
 [Default = ""]
@@ -218,8 +215,8 @@ Authorized for Account Members of the specified account.
 
 | Status Code | Return Type | Description | 
  | --- | --- | ---  | 
-| 200 | [Role] | Returns a list of `Role` s. | 
-| 400 | Nothing is returned | Could not retrieve account `Role` s due to missing or invalid input. | 
+| 200 | [Role] | Returns a list of `Roles`. | 
+| 400 | Nothing is returned | Could not retrieve account `Roles` due to missing or invalid input. | 
 
 
 ***
@@ -269,7 +266,6 @@ Authorized for Account Administrators of the specified account.
 | 200 | Role | Returns the updated `Role` with Id roleId. | 
 | 400 | Nothing is returned | Could not update specified `Role` due to missing or invalid input. | 
 | 403 | Nothing is returned | Unauthorized to update the `Role` in the specified account. | 
-| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. | 
 
 
 ***

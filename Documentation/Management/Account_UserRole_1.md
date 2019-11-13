@@ -2,19 +2,35 @@
 uid: AccountUserRole_1
 ---
 
-# User Roles (Version 1)
+# User Roles
 
-User `Role` s authorize API requests made by users to various OCS features. Users can be assigned more than one `Role`,
-but all users have the Account Member role. The following are currently available User `Role` s:
+User `Roles` authorize API requests made by users to various OCS features. Users can be assigned more than one `Role`,
+but all users have the Account Member role. The following are currently available User `Roles`:
 - Account Administrator: Can add, edit, and remove users. Can also edit the permissions of existing users.
 - Account Member: Can log in and access the OCS portal.
 
 
+## Properties
+
+For HTTP requests and responses, the UserRole object has the following properties and JSON-serialized body: 
+
+| Property | Type | Description | 
+ | --- | --- | ---  | 
+| UserId | string | User Id. | 
+| RoleId | string | Role Id. | 
+
+
+```json
+{
+	"UserId": "userid",
+	"RoleId": "roleid"
+}
+```
 ***
 
 ## `Get Roles for User`
 
-Retrieves all `Role` s for the specified user.
+Retrieves all `Roles` for the specified user.
 
 ### Http
 
@@ -41,18 +57,18 @@ The identifier of the user whose roles will be retrieved.
 [Optional]
 [Default = "0"]
 [FromQuery]
-INT32 skip
+int32 skip
 ```
 
-Number of `Role` s to ignore.
+Number of `Roles` to ignore.
 ```csharp
 [Optional]
 [Default = "100"]
 [FromQuery]
-INT32 count
+int32 count
 ```
 
-Number of `Role` s to return.
+Number of `Roles` to return.
 ```csharp
 [Optional]
 [Default = ""]
@@ -65,15 +81,15 @@ Unsupported parameter.
 
 ### Security
 
-Authorized for Account Administrators of the specified account and an Account Member's own `Role` s within the specified account.
+Authorized for Account Administrators of the specified account and an Account Member's own `Roles` within the specified account.
 
 ### Returns
 
 | Status Code | Return Type | Description | 
  | --- | --- | ---  | 
 | 200 | [Role] | Returns a list of `Role` objects belonging to the user with the specified userId. | 
-| 400 | Nothing is returned | Could not retrieve `Role` s due to missing or invalid input. | 
-| 403 | Nothing is returned | Unauthorized to get `Role` s for the specified user. | 
+| 400 | Nothing is returned | Could not retrieve `Roles` due to missing or invalid input. | 
+| 403 | Nothing is returned | Unauthorized to get `Roles` for the specified user. | 
 | 404 | Nothing is returned | User not found in the specified `Tenant`. | 
 
 
@@ -81,7 +97,7 @@ Authorized for Account Administrators of the specified account and an Account Me
 
 ## `Replace User Roles`
 
-Replaces the `Role` s of a user with a new list of roles.
+Replaces the `Roles` of a user with a new list of roles.
 
 ### Http
 
@@ -122,10 +138,9 @@ Authorized for Account Administrators of the specified account.
 | Status Code | Return Type | Description | 
  | --- | --- | ---  | 
 | 200 | Nothing is returned | Returns the new list of all `Role` objects assigned to the specified user. | 
-| 400 | Nothing is returned | Could not replace the `Role` s of the specified user due to missing or invalid input. | 
-| 403 | Nothing is returned | Unauthorized to replace the `Role` s of the specified user. | 
+| 400 | Nothing is returned | Could not replace the `Roles` of the specified user due to missing or invalid input. | 
+| 403 | Nothing is returned | Unauthorized to replace the `Roles` of the specified user. | 
 | 404 | Nothing is returned | A user with the specified userId was not found. | 
-| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. | 
 
 
 ***

@@ -1,5 +1,5 @@
 ---
-uid: AccountRootAccessControl
+uid: AccountRootAccessControl_1
 ---
 
 # Root AccessControl
@@ -15,8 +15,6 @@ Retrieves the [AccessControlList](xref:accessControl) that is used to authorize 
 ### Http
 
 `GET api/v1/Tenants/{tenantId}/AccessControl/Namespaces`
-
-`GET api/v1-preview/Tenants/{tenantId}/AccessControl/Namespaces`
 
 
 ### Parameters
@@ -38,9 +36,9 @@ A root [AccessControlList](xref:accessControl) can only be retrieved if the curr
 
 | Status Code | Return Type | Description | 
  | --- | --- | ---  | 
-| 200 | AccessControlList | Returns the root [AccessControlList](xref:accessControl) for `Namespace` s. | 
-| 400 | Nothing is returned | Could not retrieve the root [AccessControlList](xref:accessControl) for `Namespace` s due to missing or invalid input. | 
-| 403 | Nothing is returned | Unauthorized to retrieve the root [AccessControlList](xref:accessControl) for `Namespace` s. | 
+| 200 | AccessControlList | Returns the root [AccessControlList](xref:accessControl) for `Namespaces`. | 
+| 400 | Nothing is returned | Could not retrieve the root [AccessControlList](xref:accessControl) for `Namespaces` due to missing or invalid input. | 
+| 403 | Nothing is returned | Unauthorized to retrieve the root [AccessControlList](xref:accessControl) for `Namespaces`. | 
 
 
 ***
@@ -52,8 +50,6 @@ Modifies the [AccessControlList](xref:accessControl) that is used to authorize a
 ### Http
 
 `PUT api/v1/Tenants/{tenantId}/AccessControl/Namespaces`
-
-`PUT api/v1-preview/Tenants/{tenantId}/AccessControl/Namespaces`
 
 
 ### Parameters
@@ -71,7 +67,7 @@ The identifier of the account to modify.
 AccessControlList newAccessControlList
 ```
 
-The new root [AccessControlList](xref:accessControl) for `Namespace` s.
+The new root [AccessControlList](xref:accessControl) for `Namespaces`.
 
 
 ### Security
@@ -82,10 +78,9 @@ A root [AccessControlList](xref:accessControl) can only be modified if the curre
 
 | Status Code | Return Type | Description | 
  | --- | --- | ---  | 
-| 200 | AccessControlList | Returns the modified root [AccessControlList](xref:accessControl) for `Namespace` s. | 
-| 400 | Nothing is returned | Could not modify the root [AccessControlList](xref:accessControl) for `Namespace` s due to missing or invalid input. | 
-| 403 | Nothing is returned | Unauthorized to change the root [AccessControlList](xref:accessControl) for `Namespace` s. | 
-| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. | 
+| 200 | AccessControlList | Returns the modified root [AccessControlList](xref:accessControl) for `Namespaces`. | 
+| 400 | Nothing is returned | Could not modify the root [AccessControlList](xref:accessControl) for `Namespaces` due to missing or invalid input. | 
+| 403 | Nothing is returned | Unauthorized to change the root [AccessControlList](xref:accessControl) for `Namespaces`. | 
 
 
 ***

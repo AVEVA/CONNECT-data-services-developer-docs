@@ -78,7 +78,7 @@
             <article class="content wrap" id="_content" data-uid="AccountTenant">
 <h1 id="tenants">Tenants</h1>
 
-<p>APIs to manage an OCS Customer Tenant Account. Unlike Namespaces, Tenants are not scoped to a region. Account level information, such as Users and Clients, is stored in all supported regions.</p>
+<p>APIs to manage an OCS Customer Tenant Account. Unlike Namespaces, Tenants are not scoped to a region. Account level information, such as Users and Clients, is stored in all supported regions for read-only purposes. Write operations for account management and identity management are only supported through the global base URL. Unsupported requests return a status of <code>Method Not Allowed</code> (405). The resolution is to utilize the global base URL (<a href="https://dat-b.osisoft.com/">https://dat-b.osisoft.com/</a>) for write operations that are not scoped to a namespace.</p>
 <h2 id="properties">Properties</h2>
 <p>For HTTP requests and responses, the Tenant object has the following properties and JSON-serialized body: </p>
 <table>

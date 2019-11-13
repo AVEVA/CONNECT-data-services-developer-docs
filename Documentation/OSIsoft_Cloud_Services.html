@@ -94,8 +94,30 @@ have an account, you can request access to OCS at <a href="https://cloud.osisoft
 <p>Tenants are divided into one or more logical units called Namespaces. Each Namespace is distinct and separate from 
 other Namespaces, with its own instances of the various OSIsoft Cloud Services and data stores. 
 Namespaces provide isolation of resources. </p>
-<p>Namespaces are provisioned within a region. The Namespace&#39;s services and data stores all exist in the Namespace&#39;s region. Resources allocated to a Namespace are isolated to the Namespace&#39;s region. For more information on regions see the <a class="xref" href="Management/Account_Namespace_1.html">Namespace</a> documentation.</p>
-<p>Isolation provided by Tenants and Namespaces prevents accidental or malicious data access. </p>
+<p>Namespaces are provisioned within a region. The Namespace&#39;s services and data stores all exist in the Namespace&#39;s region. Resources allocated to a Namespace are isolated to the Namespace&#39;s region. For more information on regions see the <a class="xref" href="Management/Account_Namespace_1.html">Namespace</a> documentation.  Isolation provided by Tenants and Namespaces prevents accidental or malicious data access. </p>
+<p>OSIsoft Cloud Services provides data residency via namespaces in the following regions:</p>
+<table>
+<thead>
+<tr>
+<th>Supported Regions</th>
+<th>Geographic Area</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WestUS</td>
+<td>Americas</td>
+<td>California</td>
+</tr>
+<tr>
+<td>WestEurope</td>
+<td>Europe</td>
+<td>Netherlands</td>
+</tr>
+</tbody>
+</table>
+<p>Tenant account information is stored in all regions for read-only purposes. Write operations are only supported through the global base URL. See the <a class="xref" href="Management/Account_Tenant.html">Tenant</a> documentation for information on how to access this data.</p>
 <h2 id="ocs-api-versioning">OCS API Versioning</h2>
 <p>New versions of the API are released when major changes occur in the OCS API. When a newer version of the API is released, 
 the legacy version of the API will only be supported for a period of time. We encourage all users to switch to the 

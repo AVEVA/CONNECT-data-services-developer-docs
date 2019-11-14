@@ -74,6 +74,7 @@ Authorized for Account Administrators of the specified account.
 | 302 | Nothing is returned | Returns the location of the existing `Role` object. | 
 | 400 | Nothing is returned | Could not create a new `Role` due to missing or invalid input. | 
 | 403 | Nothing is returned | Unauthorized to create the new `Role` in the specified account. | 
+| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. | 
 | 409 | Nothing is returned | A `Role` already exists with different values. | 
 
 
@@ -117,7 +118,7 @@ Authorized for Account Administrators of the specified account.
 | 204 | Nothing is returned | The `Role` was deleted. | 
 | 400 | Nothing is returned | Could not delete specified `Role` due to missing or invalid input. | 
 | 403 | Nothing is returned | Unauthorized to delete the specified `Role`. | 
-
+| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. | 
 
 ***
 
@@ -266,6 +267,7 @@ Authorized for Account Administrators of the specified account.
 | 200 | Role | Returns the updated `Role` with Id roleId. | 
 | 400 | Nothing is returned | Could not update specified `Role` due to missing or invalid input. | 
 | 403 | Nothing is returned | Unauthorized to update the `Role` in the specified account. | 
+| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. | 
 
 
 ***

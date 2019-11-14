@@ -139,6 +139,7 @@ Authorized for Account Administrators of the specified `Tenant`.
 | 200 | Tenant | Returns the updated `Tenant`. | 
 | 400 | Nothing is returned | Could not update the `Tenant` due to missing or invalid input. | 
 | 403 | Nothing is returned | Unauthorized to update the specified `Tenant`. | 
+| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. | 
 
 
 ***
@@ -214,6 +215,7 @@ Authorized for Account Administrators of the specified `Tenant`.
 | 200 | string | Returns the new/updated Base64 encoded PNG icon string specified in the request. | 
 | 400 | Nothing is returned | Could not create/update the `Tenant` icon due to missing or invalid input. | 
 | 403 | Nothing is returned | Unauthorized to create/update the specified `Tenant` icon. | 
+| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. | 
 
 
 ***
@@ -248,6 +250,7 @@ Authorized for Account Administrators of the specified `Tenant`.
 | 204 | string | The `Tenant` icon was deleted. | 
 | 400 | Nothing is returned | Could not delete the `Tenant` icon due to missing or invalid input. | 
 | 403 | Nothing is returned | Unauthorized to delete the specified `Tenant` icon. | 
+| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. | 
 
 
 ***

@@ -74,6 +74,7 @@ List of `Role` objects to set as the Roles for the specified client.
 | 400 | Nothing is returned | Could not replace `Roles` due to missing or invalid input. | 
 | 403 | Nothing is returned | Unauthorized to replace `Roles` of this client. | 
 | 404 | Nothing is returned | The client was not found in the specified `Tenant`. | 
+| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. | 
 
 
 ***

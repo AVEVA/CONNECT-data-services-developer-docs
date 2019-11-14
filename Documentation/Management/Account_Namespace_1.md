@@ -167,6 +167,7 @@ A `Namespace` can only be created if the current principal has Write access.
 | 302 | Nothing is returned | Returns the location of the existing `Namespace` object. | 
 | 400 | Nothing is returned | Could not create the `Namespace` due to missing or invalid input. | 
 | 403 | Nothing is returned | Unauthorized to create a `Namespace` in this account. | 
+| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. | 
 | 409 | Nothing is returned | A `Namespace` already exists with different values. | 
 
 
@@ -218,7 +219,7 @@ A `Namespace` can only be updated if the current principal has Write access.
 | 200 | Namespace | Returns the updated `Namespace`. | 
 | 400 | Nothing is returned | Could not update the `Namespace` due to missing or invalid input. | 
 | 403 | Nothing is returned | Unauthorized to update the `Namespace`. | 
-
+| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. | 
 
 ***
 
@@ -260,6 +261,7 @@ A `Namespace` can only be deleted if the current principal has Delete access.
 | 204 | Nothing is returned | The `Namespace` was deleted. | 
 | 400 | Nothing is returned | Could not delete the `Namespace` due to an invalid state. | 
 | 403 | Nothing is returned | Unauthorized to delete the `Namespace`. | 
+| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. | 
 
 
 ***
@@ -351,6 +353,8 @@ An [AccessControlList](xref:accessControl) can only be updated if the current pr
 | 200 | AccessControlList | Returns the updated [AccessControlList](xref:accessControl). | 
 | 400 | Nothing is returned | Could not update the [AccessControlList](xref:accessControl) of the specified `Namespace` due to missing or invalid input. | 
 | 403 | Nothing is returned | Unauthorized to update the [AccessControlList](xref:accessControl) for the specified `Namespace`. | 
+| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. | 
+
 
 
 ***
@@ -442,6 +446,7 @@ An Owner's [Trustee](xref:accessControl) can only be changed if the current prin
 | 200 | Trustee | Returns the new Owner's [Trustee](xref:accessControl) of the specified `Namespace`. | 
 | 400 | Nothing is returned | Could not change the Owner's [Trustee](xref:accessControl) of the specified `Namespace` due to missing or invalid input. | 
 | 403 | Nothing is returned | Unauthorized to change the Owner's [Trustee](xref:accessControl) of the specified `Namespace`. | 
+| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. | 
 
 
 ***

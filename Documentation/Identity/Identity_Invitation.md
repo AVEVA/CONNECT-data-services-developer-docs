@@ -37,9 +37,9 @@ IdentityProviderId | Guid | Gets or sets ID of the Identity Provider that must b
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-11-06T15:51:16.0647942-08:00",
-  "Expires": "2019-11-06T15:51:16.0648361-08:00",
-  "Accepted": "2019-11-06T15:51:16.0648415-08:00",
+  "Issued": "2019-11-11T14:18:38.6161392-08:00",
+  "Expires": "2019-11-11T14:18:38.616173-08:00",
+  "Accepted": "2019-11-11T14:18:38.6161783-08:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -48,12 +48,6 @@ IdentityProviderId | Guid | Gets or sets ID of the Identity Provider that must b
 ```
 
 ***
-
-## Base URL
-
-All URLs referenced in this section have the following base:
-
-`https://dat-b.osisoft.com/`
 
 ## Authentication
 
@@ -123,9 +117,9 @@ Success.
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-11-06T15:51:16.0726859-08:00",
-  "Expires": "2019-11-06T15:51:16.0726902-08:00",
-  "Accepted": "2019-11-06T15:51:16.0726948-08:00",
+  "Issued": "2019-11-11T14:18:38.6245292-08:00",
+  "Expires": "2019-11-11T14:18:38.6245393-08:00",
+  "Accepted": "2019-11-11T14:18:38.624546-08:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -223,9 +217,9 @@ Success.
 [
   {
     "Id": "Id",
-    "Issued": "2019-11-06T15:51:16.0759341-08:00",
-    "Expires": "2019-11-06T15:51:16.0759383-08:00",
-    "Accepted": "2019-11-06T15:51:16.0759422-08:00",
+    "Issued": "2019-11-11T14:18:38.6282448-08:00",
+    "Expires": "2019-11-11T14:18:38.6282685-08:00",
+    "Accepted": "2019-11-11T14:18:38.6282738-08:00",
     "State": 0,
     "TenantId": "00000000-0000-0000-0000-000000000000",
     "UserId": "00000000-0000-0000-0000-000000000000",
@@ -233,9 +227,9 @@ Success.
   },
   {
     "Id": "Id",
-    "Issued": "2019-11-06T15:51:16.0759609-08:00",
-    "Expires": "2019-11-06T15:51:16.0759628-08:00",
-    "Accepted": "2019-11-06T15:51:16.075966-08:00",
+    "Issued": "2019-11-11T14:18:38.6282997-08:00",
+    "Expires": "2019-11-11T14:18:38.628302-08:00",
+    "Accepted": "2019-11-11T14:18:38.6283059-08:00",
     "State": 0,
     "TenantId": "00000000-0000-0000-0000-000000000000",
     "UserId": "00000000-0000-0000-0000-000000000000",
@@ -309,7 +303,7 @@ IdentityProviderId | Guid | No | Gets or sets Identity Provider to use for accep
 
 ```json
 {
-  "ExpiresDateTime": "2019-11-06T15:51:16.0787791-08:00",
+  "ExpiresDateTime": "2019-11-11T14:18:38.6312229-08:00",
   "State": 0,
   "SendInvitation": false,
   "IdentityProviderId": "00000000-0000-0000-0000-000000000000"
@@ -335,9 +329,9 @@ Success.
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-11-06T15:51:16.0818734-08:00",
-  "Expires": "2019-11-06T15:51:16.0818778-08:00",
-  "Accepted": "2019-11-06T15:51:16.0818825-08:00",
+  "Issued": "2019-11-11T14:18:38.633862-08:00",
+  "Expires": "2019-11-11T14:18:38.6338686-08:00",
+  "Accepted": "2019-11-11T14:18:38.6338746-08:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -360,6 +354,10 @@ Forbidden.
 #### 404
 
 Invitation or Tenant not found.
+
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
 
 #### 500
 
@@ -414,6 +412,10 @@ Forbidden.
 #### 404
 
 Invitation or Tenant not found.
+
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
 
 #### 500
 
@@ -587,9 +589,9 @@ Success.
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-11-06T15:51:16.1700912-08:00",
-  "Expires": "2019-11-06T15:51:16.1701011-08:00",
-  "Accepted": "2019-11-06T15:51:16.1701081-08:00",
+  "Issued": "2019-11-11T14:18:38.7640134-08:00",
+  "Expires": "2019-11-11T14:18:38.7640582-08:00",
+  "Accepted": "2019-11-11T14:18:38.7640924-08:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -657,7 +659,7 @@ IdentityProviderId | Guid | No | Gets or sets Identity Provider to use for accep
 
 ```json
 {
-  "ExpiresDateTime": "2019-11-06T15:51:16.1727617-08:00",
+  "ExpiresDateTime": "2019-11-11T14:18:38.7708735-08:00",
   "State": 0,
   "SendInvitation": false,
   "IdentityProviderId": "00000000-0000-0000-0000-000000000000"
@@ -683,9 +685,9 @@ Created.
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-11-06T15:51:16.1729202-08:00",
-  "Expires": "2019-11-06T15:51:16.1729241-08:00",
-  "Accepted": "2019-11-06T15:51:16.1729289-08:00",
+  "Issued": "2019-11-11T14:18:38.7716732-08:00",
+  "Expires": "2019-11-11T14:18:38.771711-08:00",
+  "Accepted": "2019-11-11T14:18:38.7717471-08:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -708,6 +710,10 @@ Forbidden.
 #### 404
 
 User or Tenant not found.
+
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
 
 #### 409
 
@@ -761,7 +767,7 @@ IdentityProviderId | Guid | No | Gets or sets Identity Provider to use for accep
 
 ```json
 {
-  "ExpiresDateTime": "2019-11-06T15:51:16.175491-08:00",
+  "ExpiresDateTime": "2019-11-11T14:18:38.7776948-08:00",
   "State": 0,
   "SendInvitation": false,
   "IdentityProviderId": "00000000-0000-0000-0000-000000000000"
@@ -787,9 +793,9 @@ Updated.
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-11-06T15:51:16.175647-08:00",
-  "Expires": "2019-11-06T15:51:16.175651-08:00",
-  "Accepted": "2019-11-06T15:51:16.1756577-08:00",
+  "Issued": "2019-11-11T14:18:38.7781105-08:00",
+  "Expires": "2019-11-11T14:18:38.778126-08:00",
+  "Accepted": "2019-11-11T14:18:38.7781429-08:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -808,9 +814,9 @@ Created.
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-11-06T15:51:16.1757153-08:00",
-  "Expires": "2019-11-06T15:51:16.1757182-08:00",
-  "Accepted": "2019-11-06T15:51:16.1757227-08:00",
+  "Issued": "2019-11-11T14:18:38.7783963-08:00",
+  "Expires": "2019-11-11T14:18:38.7784086-08:00",
+  "Accepted": "2019-11-11T14:18:38.7784222-08:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -833,6 +839,10 @@ Forbidden.
 #### 404
 
 User or Tenant not found.
+
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
 
 #### 500
 
@@ -886,6 +896,10 @@ Forbidden.
 #### 404
 
 Invitation or Tenant not found.
+
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
 
 #### 500
 

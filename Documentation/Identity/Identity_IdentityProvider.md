@@ -34,12 +34,6 @@ IsConfigured | bool | Gets or sets a value indicating whether the identity provi
 
 ***
 
-## Base URL
-
-All URLs referenced in this section have the following base:
-
-`https://dat-b.osisoft.com/`
-
 ## Authentication
 
 All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieve after a successful authentication request.
@@ -378,7 +372,7 @@ IdentityProvider or Tenant not found.
 Internal server error.
 ***
 
-## `Headers for Identity Providers available`
+## `Get Header for Identity Providers`
 
 Get header for Identity Providers to get the total number of Identity Providers.
 
@@ -681,6 +675,10 @@ Forbidden.
 
 Tenant not found.
 
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
+
 #### 409
 
 Identity Provider already exists in Tenant.
@@ -740,6 +738,10 @@ Forbidden.
 #### 404
 
 IdentityProvider or Tenant not found.
+
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
 
 #### 500
 

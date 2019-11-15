@@ -59,12 +59,6 @@ RoleIds | Guid[] | Gets or sets list of strings of RoleIds.
 
 ***
 
-## Base URL
-
-All URLs referenced in this section have the following base:
-
-`https://dat-b.osisoft.com/`
-
 ## Authentication
 
 All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieve after a successful authentication request.
@@ -727,6 +721,10 @@ Forbidden.
 
 User or Tenant not found.
 
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
+
 #### 500
 
 Internal server error.
@@ -838,6 +836,10 @@ Forbidden.
 #### 404
 
 Tenant not found.
+
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
 
 #### 500
 
@@ -954,6 +956,10 @@ Forbidden.
 
 User or Tenant not found.
 
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
+
 #### 500
 
 Internal server error.
@@ -1013,6 +1019,10 @@ Forbidden.
 #### 404
 
 User or Tenant not found.
+
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
 
 #### 500
 

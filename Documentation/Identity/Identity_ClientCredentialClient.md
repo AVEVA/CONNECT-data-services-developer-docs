@@ -48,12 +48,6 @@ Tags | string[] | Gets or sets for OSIsoft internal use only.
 
 ***
 
-## Base URL
-
-All URLs referenced in this section have the following base:
-
-`https://dat-b.osisoft.com/`
-
 ## Authentication
 
 All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieve after a successful authentication request.
@@ -124,7 +118,7 @@ Tags | string[] | No | Gets or sets for OSIsoft internal use only.
 ```json
 {
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-11-06T15:51:15.7145137-08:00",
+  "SecretExpirationDate": "2019-11-11T14:18:38.1759021-08:00",
   "RoleIds": [
     "00000000-0000-0000-0000-000000000000",
     "00000000-0000-0000-0000-000000000000"
@@ -161,7 +155,7 @@ Created.
   "Secret": "Secret",
   "Id": 0,
   "Description": "description",
-  "ExpirationDate": "2019-11-06T15:51:15.7184933-08:00",
+  "ExpirationDate": "2019-11-11T14:18:38.1787205-08:00",
   "Client": {
     "RoleIds": [
       "00000000-0000-0000-0000-000000000000",
@@ -194,6 +188,10 @@ Forbidden.
 #### 404
 
 Tenant not found.
+
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
 
 #### 409
 
@@ -313,6 +311,10 @@ Missing or invalid inputs.
 #### 404
 
 Client or Tenant not found.
+
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
 
 #### 500
 
@@ -638,6 +640,10 @@ Forbidden.
 #### 404
 
 Client or Tenant not found.
+
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
 
 #### 500
 

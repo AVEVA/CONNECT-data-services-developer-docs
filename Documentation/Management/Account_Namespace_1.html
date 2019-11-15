@@ -274,6 +274,11 @@ string namespaceId
 <td>Unauthorized to create a <code>Namespace</code> in this account.</td>
 </tr>
 <tr>
+<td>405</td>
+<td>Nothing is returned</td>
+<td>Method not allowed at this base URL. Try the request again at the Global base URL.</td>
+</tr>
+<tr>
 <td>409</td>
 <td>Nothing is returned</td>
 <td>A <code>Namespace</code> already exists with different values.</td>
@@ -326,6 +331,11 @@ Namespace newProperties
 <td>Nothing is returned</td>
 <td>Unauthorized to update the <code>Namespace</code>.</td>
 </tr>
+<tr>
+<td>405</td>
+<td>Nothing is returned</td>
+<td>Method not allowed at this base URL. Try the request again at the Global base URL.</td>
+</tr>
 </tbody>
 </table>
 <hr>
@@ -368,6 +378,11 @@ string namespaceId
 <td>403</td>
 <td>Nothing is returned</td>
 <td>Unauthorized to delete the <code>Namespace</code>.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Nothing is returned</td>
+<td>Method not allowed at this base URL. Try the request again at the Global base URL.</td>
 </tr>
 </tbody>
 </table>
@@ -459,6 +474,11 @@ AccessControlList newAccessControlList
 <td>Nothing is returned</td>
 <td>Unauthorized to update the <a class="xref" href="../Access_Control.html">AccessControlList</a> for the specified <code>Namespace</code>.</td>
 </tr>
+<tr>
+<td>405</td>
+<td>Nothing is returned</td>
+<td>Method not allowed at this base URL. Try the request again at the Global base URL.</td>
+</tr>
 </tbody>
 </table>
 <hr>
@@ -548,6 +568,11 @@ Trustee newOwner
 <td>403</td>
 <td>Nothing is returned</td>
 <td>Unauthorized to change the Owner&#39;s <a class="xref" href="../Access_Control.html">Trustee</a> of the specified <code>Namespace</code>.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Nothing is returned</td>
+<td>Method not allowed at this base URL. Try the request again at the Global base URL.</td>
 </tr>
 </tbody>
 </table>

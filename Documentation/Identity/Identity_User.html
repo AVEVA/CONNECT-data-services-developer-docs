@@ -177,9 +177,6 @@
   ]
 }
 </code></pre><hr>
-<h2 id="base-url">Base URL</h2>
-<p>All URLs referenced in this section have the following base:</p>
-<p><code style="word-break:normal; overflow-wrap:break-word;">https:/<wbr>/<wbr>dat-b.osisoft.com/<wbr></code></p>
 <h2 id="authentication">Authentication</h2>
 <p>All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieve after a successful authentication request.</p>
 <p><code>Authorization: Bearer &lt;token&gt;</code></p>
@@ -606,6 +603,8 @@ JObject preferences
 <p>Forbidden.</p>
 <h4 id="404-5">404</h4>
 <p>User or Tenant not found.</p>
+<h4 id="405">405</h4>
+<p>Method not allowed at this base URL. Try the request again at the Global base URL.</p>
 <h4 id="500-5">500</h4>
 <p>Internal server error.</p>
 <hr>
@@ -725,6 +724,8 @@ UserCreateOrUpdate userCreateOrUpdate
 <p>Forbidden.</p>
 <h4 id="404-6">404</h4>
 <p>Tenant not found.</p>
+<h4 id="405-1">405</h4>
+<p>Method not allowed at this base URL. Try the request again at the Global base URL.</p>
 <h4 id="500-6">500</h4>
 <p>Internal server error.</p>
 <hr>
@@ -843,6 +844,8 @@ UserCreateOrUpdate userCreateOrUpdate
 <p>Forbidden.</p>
 <h4 id="404-7">404</h4>
 <p>User or Tenant not found.</p>
+<h4 id="405-2">405</h4>
+<p>Method not allowed at this base URL. Try the request again at the Global base URL.</p>
 <h4 id="500-7">500</h4>
 <p>Internal server error.</p>
 <hr>
@@ -878,6 +881,8 @@ Guid userId
 <p>Forbidden.</p>
 <h4 id="404-8">404</h4>
 <p>User or Tenant not found.</p>
+<h4 id="405-3">405</h4>
+<p>Method not allowed at this base URL. Try the request again at the Global base URL.</p>
 <h4 id="500-8">500</h4>
 <p>Internal server error.</p>
 <hr>

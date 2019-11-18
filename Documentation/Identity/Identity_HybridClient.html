@@ -179,9 +179,6 @@
   ]
 }
 </code></pre><hr>
-<h2 id="base-url">Base URL</h2>
-<p>All URLs referenced in this section have the following base:</p>
-<p><code style="word-break:normal; overflow-wrap:break-word;">https:/<wbr>/<wbr>dat-b.osisoft.com/<wbr></code></p>
 <h2 id="authentication">Authentication</h2>
 <p>All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieve after a successful authentication request.</p>
 <p><code>Authorization: Bearer &lt;token&gt;</code></p>
@@ -305,7 +302,7 @@ HybridClientCreate hybridClientCreate
 </table>
 <pre><code class="lang-json">{
   &quot;SecretDescription&quot;: &quot;description&quot;,
-  &quot;SecretExpirationDate&quot;: &quot;2019-11-06T15:51:15.4449532-08:00&quot;,
+  &quot;SecretExpirationDate&quot;: &quot;2019-11-11T14:18:37.9244194-08:00&quot;,
   &quot;AllowOfflineAccess&quot;: false,
   &quot;AllowAccessTokensViaBrowser&quot;: false,
   &quot;RedirectUris&quot;: [
@@ -341,7 +338,7 @@ HybridClientCreate hybridClientCreate
   &quot;Secret&quot;: &quot;Secret&quot;,
   &quot;Id&quot;: 0,
   &quot;Description&quot;: &quot;description&quot;,
-  &quot;ExpirationDate&quot;: &quot;2019-11-06T15:51:15.4586973-08:00&quot;,
+  &quot;ExpirationDate&quot;: &quot;2019-11-11T14:18:37.9396268-08:00&quot;,
   &quot;Client&quot;: {
     &quot;AllowOfflineAccess&quot;: false,
     &quot;AllowAccessTokensViaBrowser&quot;: false,
@@ -373,6 +370,8 @@ HybridClientCreate hybridClientCreate
 <p>Forbidden.</p>
 <h4 id="404">404</h4>
 <p>Tenant not found.</p>
+<h4 id="405">405</h4>
+<p>Method not allowed at this base URL. Try the request again at the Global base URL.</p>
 <h4 id="409">409</h4>
 <p>Client Id already exists.</p>
 <h4 id="500">500</h4>
@@ -534,6 +533,8 @@ HybridClient hybridClient
 <p>Missing or invalid inputs.</p>
 <h4 id="404-1">404</h4>
 <p>Client or Tenant not found.</p>
+<h4 id="405-1">405</h4>
+<p>Method not allowed at this base URL. Try the request again at the Global base URL.</p>
 <h4 id="500-1">500</h4>
 <p>Internal server error.</p>
 <hr>
@@ -717,6 +718,8 @@ string clientId
 <p>Forbidden.</p>
 <h4 id="404-4">404</h4>
 <p>Client or Tenant not found.</p>
+<h4 id="405-2">405</h4>
+<p>Method not allowed at this base URL. Try the request again at the Global base URL.</p>
 <h4 id="500-4">500</h4>
 <p>Internal server error.</p>
 <hr>

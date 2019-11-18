@@ -84,9 +84,6 @@
             make it possible to determine when the Client can be issued a new access token
             on behalf of the User without the users themselves being present.</p>
 <hr>
-<h2 id="base-url">Base URL</h2>
-<p>All URLs referenced in this section have the following base:</p>
-<p><code style="word-break:normal; overflow-wrap:break-word;">https:/<wbr>/<wbr>dat-b.osisoft.com/<wbr></code></p>
 <h2 id="authentication">Authentication</h2>
 <p>All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieve after a successful authentication request.</p>
 <p><code>Authorization: Bearer &lt;token&gt;</code></p>
@@ -197,6 +194,8 @@ Guid userId
 <p>Forbidden.</p>
 <h4 id="404-2">404</h4>
 <p>User not found.</p>
+<h4 id="405">405</h4>
+<p>Method not allowed at this base URL. Try the request again at the Global base URL.</p>
 <h4 id="500-2">500</h4>
 <p>Internal server error.</p>
 <hr>

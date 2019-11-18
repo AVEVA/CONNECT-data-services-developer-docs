@@ -132,9 +132,6 @@
   &quot;IsConfigured&quot;: false
 }
 </code></pre><hr>
-<h2 id="base-url">Base URL</h2>
-<p>All URLs referenced in this section have the following base:</p>
-<p><code style="word-break:normal; overflow-wrap:break-word;">https:/<wbr>/<wbr>dat-b.osisoft.com/<wbr></code></p>
 <h2 id="authentication">Authentication</h2>
 <p>All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieve after a successful authentication request.</p>
 <p><code>Authorization: Bearer &lt;token&gt;</code></p>
@@ -331,7 +328,7 @@ Guid identityProviderId
 <h4 id="500-4">500</h4>
 <p>Internal server error.</p>
 <hr>
-<h2 id="headers-for-identity-providers-available"><code>Headers for Identity Providers available</code></h2>
+<h2 id="get-header-for-identity-providers"><code>Get Header for Identity Providers</code></h2>
 <p>Get header for Identity Providers to get the total number of Identity Providers.</p>
 <h3 id="request-5">Request</h3>
 <p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/<wbr>v1/<wbr>IdentityProviders</code></p>
@@ -552,6 +549,8 @@ IdentityProviderAdd identityProviderAdd
 <p>Forbidden.</p>
 <h4 id="404-7">404</h4>
 <p>Tenant not found.</p>
+<h4 id="405">405</h4>
+<p>Method not allowed at this base URL. Try the request again at the Global base URL.</p>
 <h4 id="409">409</h4>
 <p>Identity Provider already exists in Tenant.</p>
 <h4 id="500-8">500</h4>
@@ -585,6 +584,8 @@ Guid identityProviderId
 <p>Forbidden.</p>
 <h4 id="404-8">404</h4>
 <p>IdentityProvider or Tenant not found.</p>
+<h4 id="405-1">405</h4>
+<p>Method not allowed at this base URL. Try the request again at the Global base URL.</p>
 <h4 id="500-9">500</h4>
 <p>Internal server error.</p>
 <hr>

@@ -111,9 +111,6 @@
   &quot;ConsentState&quot;: 0
 }
 </code></pre><hr>
-<h2 id="base-url">Base URL</h2>
-<p>All URLs referenced in this section have the following base:</p>
-<p><code style="word-break:normal; overflow-wrap:break-word;">https:/<wbr>/<wbr>dat-b.osisoft.com/<wbr></code></p>
 <h2 id="authentication">Authentication</h2>
 <p>All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieve after a successful authentication request.</p>
 <p><code>Authorization: Bearer &lt;token&gt;</code></p>
@@ -162,6 +159,8 @@ string azureActiveDirectoryTenantId
 <p>Forbidden.</p>
 <h4 id="404">404</h4>
 <p>OSIsoft Cloud Services Tenant not found.</p>
+<h4 id="405">405</h4>
+<p>Method not allowed at this base URL. Try the request again at the Global base URL.</p>
 <h4 id="409">409</h4>
 <p>Id of Azure Active Directory Tenant. is already in use on the specified Tenant.</p>
 <h4 id="500">500</h4>
@@ -282,6 +281,8 @@ string azureActiveDirectoryTenantId
 <p>Forbidden.</p>
 <h4 id="404-2">404</h4>
 <p>OSIsoft Cloud Services Tenant not found.</p>
+<h4 id="405-1">405</h4>
+<p>Method not allowed at this base URL. Try the request again at the Global base URL.</p>
 <h4 id="500-3">500</h4>
 <p>Internal server error.</p>
 <hr>
@@ -361,6 +362,8 @@ ConsentInformation consentInformation
 <p>Forbidden.</p>
 <h4 id="404-3">404</h4>
 <p>OSIsoft Cloud Services Tenant not found.</p>
+<h4 id="405-2">405</h4>
+<p>Method not allowed at this base URL. Try the request again at the Global base URL.</p>
 <h4 id="500-4">500</h4>
 <p>Internal server error.</p>
 <hr>

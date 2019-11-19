@@ -2020,6 +2020,26 @@ The Owner for the specified quantity</p>
 <p><strong>.NET Library</strong></p>
 <pre><code class="lang-csharp">   Task UpdateQuantityOwnerAsync(string quantityId, Trustee quantityOwner);
 </code></pre><hr>
+<h2 id="get-quantity-access-rights"><code>Get Quantity Access Rights</code></h2>
+<p>Gets the Access Rights associated with the specified quantity for the requesting identity.  For 
+more information on Access Rights, see <a class="xref" href="../Access_Control.html#commonaccessrightsenum">Access Control</a>.</p>
+<p><strong>Request</strong></p>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Quantities/<wbr>{quantityId}/<wbr>AccessRights
+</code></pre><p><strong>Parameters</strong></p>
+<p><code>string tenantId</code><br>The tenant identifier  </p>
+<p><code>string namespaceId</code><br>The namespace identifier  </p>
+<p><code>string quantityId</code><br>The quantity identifier  </p>
+<p><strong>Response</strong><br>The response includes a status code and a response body.</p>
+<p><strong>Response body</strong>
+The Access Rights of the specified quantity for the requesting identity.</p>
+<p>Example response body:</p>
+<pre><code class="lang-json">HTTP/1.1 200
+Content-Type: application/json
+
+[&quot;Read&quot;, &quot;Write&quot;]
+</code></pre><p><strong>.NET Library</strong></p>
+<pre><code class="lang-csharp">   Task&lt;string[]&gt; GetQuantityAccessRightsAsync(string quantityId);
+</code></pre><hr>
 <h1 id="sdsuom-api">SdsUom API</h1>
 <p>The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact with SdsUoms. When working in .NET, convenient SDS Client Libraries are available. The <code>ISdsMetadataService</code> interface, accessed using the <code>SdsService.GetMetadataService( )</code> helper, defines the available functions. See <a href="#units-of-measure">Units of Measure</a> for general <a href="#sdsuom">SdsUom</a> information.</p>
 <hr>
@@ -2145,6 +2165,26 @@ Content-Type: application/json
 <p><strong>Response</strong><br>The response includes a status code.</p>
 <p><strong>.NET Library</strong></p>
 <pre><code class="lang-csharp">   Task UpdateQuantityUomOwnerAsync(string quantityId, string uomId, Trustee uomOwner);
+</code></pre><hr>
+<h2 id="get-uom-access-rights"><code>Get Uom Access Rights</code></h2>
+<p>Gets the Access Rights associated with the specified unit of measure for the requesting identity. For 
+more information on Access Rights, see <a class="xref" href="../Access_Control.html#commonaccessrightsenum">Access Control</a>.</p>
+<p><strong>Request</strong></p>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Quantities/<wbr>{quantityId}/<wbr>Units/<wbr>{uomId}/<wbr>AccessRights
+</code></pre><p><strong>Parameters</strong></p>
+<p><code>string tenantId</code><br>The tenant identifier  </p>
+<p><code>string namespaceId</code><br>The namespace identifier  </p>
+<p><code>string quantityId</code><br>The quantity identifier  </p>
+<p><code>string uomId</code><br>The unit of measure identifier</p>
+<p><strong>Response</strong><br>The response includes a status code and a response body.</p>
+<p><strong>Response Body</strong><br>The Access Rights of the specified unit of measure for the requesting identity.</p>
+<p>Example response body:</p>
+<pre><code class="lang-json">HTTP/1.1 200
+Content-Type: application/json
+
+[&quot;Read&quot;, &quot;Write&quot;]
+</code></pre><p><strong>.NET Library</strong></p>
+<pre><code class="lang-csharp">   Task&lt;string[]&gt; GetQuantityUomAccessRightsAsync(string quantityId, string uomId);
 </code></pre><hr>
 <h2 id="associating-a-unit-of-measure-with-a-sdstype">Associating a unit of measure with a SdsType</h2>
 <p>At <a class="xref" href="SDS_Types.html">SdsType</a> creation, a SdsUom can be associated with a <a class="xref" href="SDS_Types.html#sdstypeproperty">SdsTypeProperty</a>. </p>

@@ -870,7 +870,27 @@ The tenant identifier  </p>
 <p><strong>Response</strong><br>The response includes a status code.</p>
 <p><strong>.NET Library</strong></p>
 <pre><code class="lang-csharp">   Task UpdateStreamViewOwnerAsync(string streamViewId, Trustee viewOwner);
-</code></pre></article>
+</code></pre><hr>
+<h2 id="get-stream-view-access-rights"><code>Get Stream View Access Rights</code></h2>
+<p>Gets the Access Rights associated with the specified stream view for the requesting identity. For 
+more information on Access Rights, see <a class="xref" href="../Access_Control.html#commonaccessrightsenum">Access Control</a>.</p>
+<p><strong>Request</strong></p>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>StreamViews/<wbr>{streamViewId}/<wbr>AccessRights
+</code></pre><p><strong>Parameters</strong></p>
+<p><code>string tenantId</code><br>The tenant identifier  </p>
+<p><code>string namespaceId</code><br>The namespace identifier  </p>
+<p><code>string streamViewId</code><br>The stream view identifier  </p>
+<p><strong>Response</strong><br>The response includes a status code and a response body.</p>
+<p><strong>Response Body</strong><br>The Access Rights of the specified stream view for the requesting identity.</p>
+<p>Example response body:</p>
+<pre><code class="lang-json">HTTP/1.1 200
+Content-Type: application/json
+
+[&quot;Read&quot;, &quot;Write&quot;]
+</code></pre><p><strong>.NET Library</strong></p>
+<pre><code class="lang-csharp">   Task&lt;string[]&gt; GetStreamViewAccessRightsAsync(string streamViewId);
+</code></pre><hr>
+</article>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">

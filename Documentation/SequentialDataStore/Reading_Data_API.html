@@ -944,6 +944,70 @@ Total, Weighted Mean, WeightedStandardDeviation, and WeightedPopulationStandardD
 <td>TimeSpan</td>
 <td>21</td>
 </tr>
+<tr>
+<td>NullableBoolean</td>
+<td>103</td>
+</tr>
+<tr>
+<td>NullableByte</td>
+<td>106</td>
+</tr>
+<tr>
+<td>NullableChar</td>
+<td>104</td>
+</tr>
+<tr>
+<td>NullableDecimal</td>
+<td>115</td>
+</tr>
+<tr>
+<td>NullableInt16</td>
+<td>107</td>
+</tr>
+<tr>
+<td>NullableInt32</td>
+<td>109</td>
+</tr>
+<tr>
+<td>NullableInt64</td>
+<td>111</td>
+</tr>
+<tr>
+<td>NullableSByte</td>
+<td>105</td>
+</tr>
+<tr>
+<td>NullableSingle</td>
+<td>113</td>
+</tr>
+<tr>
+<td>NullableUInt16</td>
+<td>108</td>
+</tr>
+<tr>
+<td>NullableUInt32</td>
+<td>110</td>
+</tr>
+<tr>
+<td>NullableUInt64</td>
+<td>112</td>
+</tr>
+<tr>
+<td>NullableDateTime</td>
+<td>116</td>
+</tr>
+<tr>
+<td>NullableDouble</td>
+<td>114</td>
+</tr>
+<tr>
+<td>NullableDateTimeOffset</td>
+<td>120</td>
+</tr>
+<tr>
+<td>NullableTimeSpan</td>
+<td>121</td>
+</tr>
 </tbody>
 </table>
 <p><strong>Note:</strong> Properties marked with an <code>InterpolationMode</code> of <code>Discrete</code> do not support summaries.
@@ -1057,7 +1121,8 @@ Content-Type: application/json
         },
         &quot;Summaries&quot;: {
             &quot;Count&quot;: {
-                &quot;Measurement&quot;: 2
+                &quot;Time&quot;: 3,
+                &quot;Measurement&quot;: 3
             },
             &quot;Minimum&quot;: {
                 &quot;Measurement&quot;: 30
@@ -1098,16 +1163,177 @@ Content-Type: application/json
         }
     }
 ]
+</code></pre><p>SDS also supports summary requests for nullable SdsTypes. It means an SdsType has at least a nullable SdsTypeProperty.</p>
+<p><strong>Example</strong></p>
+<p>The following example contains a nullable double property with interpolation mode set to continuous:</p>
+<h6 id="net-1">.NET</h6>
+<pre><code class="lang-csharp">
+public class SimpleType
+{
+   [SdsMember(IsKey = true, Order = 0) ]
+   public DateTime Time { get; set; }
+   [SdsMember(Uom = &quot;meter&quot;)]
+   public double? Measurement { get; set; }
+}
+</code></pre><p><code>Measurement</code> has stored values as follows:</p>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code>  11/<wbr>23/<wbr>2017 12:00:01 PM: Measurement 2
+  11/<wbr>23/<wbr>2017 12:00:02 PM: Measurement 2
+  11/<wbr>23/<wbr>2017 12:00:03 PM: Measurement null
+  11/<wbr>23/<wbr>2017 12:00:04 PM: Measurement 1
+  11/<wbr>23/<wbr>2017 12:00:05 PM: Measurement 2
+  11/<wbr>23/<wbr>2017 12:00:06 PM: Measurement null
+  11/<wbr>23/<wbr>2017 12:00:07 PM: Measurement null
+  11/<wbr>23/<wbr>2017 12:00:08 PM: Measurement 3
+</code></pre><p>While calculating weighted summaries, if we encounter a null value at a given index then we would consider interpolation mode of property to find the interpolated value of the given interval. See the table below for [12:00:02 PM, 12:00:03 PM] interval. The values are 2 and null at 12:00:02 and 12:00:03 PM respectively. </p>
+<table>
+<thead>
+<tr>
+<th>Interpolation Mode</th>
+<th>Weight in seconds</th>
+<th>Value in meter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Continuous</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ContinuousNullableLeading <br> StepwiseContinuousLeading</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>ContinuousNullableTrailing <br> StepwiseContinuousTrailing</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>Similarly, for intervals [12:00:03 PM, 12:00:04 PM] and [12:00:04 PM, 12:00:05 PM] respectively, the table would look like below:</p>
+<table>
+<thead>
+<tr>
+<th>Interpolation Mode</th>
+<th>Weight in seconds</th>
+<th>Value in meter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Continuous</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ContinuousNullableLeading <br> StepwiseContinuousLeading</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ContinuousNullableTrailing <br> StepwiseContinuousTrailing</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Interpolation Mode</th>
+<th>Weight in seconds</th>
+<th>Value in meter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Continuous</td>
+<td>1</td>
+<td>1.5</td>
+</tr>
+<tr>
+<td>ContinuousNullableLeading <br> StepwiseContinuousLeading</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ContinuousNullableTrailing <br> StepwiseContinuousTrailing</td>
+<td>1</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> Non-weighted summaries disregard null values and treat them as non-existent. 
+In the example above, non-weighted summaries for Measurement would be calculated based on (2,2,1,2,3) whereas weighted summaries for Measurement consider null values for its calculation. </p>
+<p>For more information see <a class="xref" href="SDS_Types.html#interpolation">Interpolation</a>.</p>
+<p>The following request calculates one summary interval between the <code>startIndex</code> and <code>endIndex</code>: </p>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data/<wbr> 
+       Summaries?startIndex=2017-11-23T12:00:01Z&amp;endIndex=2017-11-23T12:00:08Z&amp;count=1
+</code></pre><p><strong>Response body</strong></p>
+<pre><code class="lang-json">HTTP/1.1 200
+Content-Type: application/json
+
+[
+    {
+        &quot;Start&quot;: {
+            &quot;Time&quot;: &quot;2017-11-23T12:00:01Z&quot;,
+            &quot;Measurement&quot;: 2
+        },
+        &quot;End&quot;: {
+            &quot;Time&quot;: &quot;2017-11-23T12:00:08Z&quot;,
+            &quot;Measurement&quot;: 3
+        },
+        &quot;Summaries&quot;: {
+            &quot;Count&quot;: {
+                &quot;Time&quot;: 8,
+                &quot;Measurement&quot;: 5
+            },
+            &quot;Minimum&quot;: {
+                &quot;Measurement&quot;: 1
+            },
+            &quot;Maximum&quot;: {
+                &quot;Measurement&quot;: 3
+            },
+            &quot;Range&quot;: {
+                &quot;Measurement&quot;: 2
+            },
+            &quot;Total&quot;: {
+                &quot;Measurement&quot;: 7.5
+            },
+            &quot;Mean&quot;: {
+                &quot;Measurement&quot;: 1.875
+            },
+            &quot;StandardDeviation&quot;: {
+                &quot;Measurement&quot;: 0.478713553878169
+            },
+            &quot;PopulationStandardDeviation&quot;: {
+                &quot;Measurement&quot;: 0.41457809879442492
+            },
+            &quot;WeightedMean&quot;: {
+                &quot;Measurement&quot;: 1.75
+            },
+            &quot;WeightedStandardDeviation&quot;: {
+                &quot;Measurement&quot;: 0.35355339059327379
+            },
+            &quot;WeightedPopulationStandardDeviation&quot;: {
+                &quot;Measurement&quot;: 0.25
+            },
+            &quot;Skewness&quot;: {
+                &quot;Measurement&quot;: 0.49338220021815865
+            },
+            &quot;Kurtosis&quot;: {
+                &quot;Measurement&quot;: -1.3719008264462809
+            }
+        }
+    }
+]
 </code></pre><p><strong>.NET Library</strong></p>
 <pre><code class="lang-csharp">   Task&lt;IEnumerable&lt;SdsInterval&lt;T&gt;&gt;&gt; GetIntervalsAsync&lt;T&gt;(string streamId, string 
       startIndex, string endIndex, int count, string streamViewId = null);
 
    Task&lt;IEnumerable&lt;SdsInterval&lt;T&gt;&gt;&gt; GetIntervalsAsync&lt;T, T1&gt;(string streamId, T1 
       startIndex, T1 endIndex, int count, string streamViewId = null);
-
-   Task&lt;IEnumerable&lt;SdsInterval&lt;T&gt;&gt;&gt; GetIntervalsAsync&lt;T, T1, T2&gt;(string streamId, 
-      Tuple&lt;T1, T2&gt; startIndex, Tuple&lt;T1, T2&gt; endIndex, int count, 
-      string streamViewId = null);
 
    Task&lt;IEnumerable&lt;SdsInterval&lt;T&gt;&gt;&gt; GetFilteredIntervalsAsync&lt;T&gt;(string streamId, 
       string startIndex, string endIndex, int count, string filter, 
@@ -1116,10 +1342,6 @@ Content-Type: application/json
    Task&lt;IEnumerable&lt;SdsInterval&lt;T&gt;&gt;&gt; GetFilteredIntervalsAsync&lt;T, T1&gt;(string streamId, 
       T1 startIndex, T1 endIndex, int count, string filter, 
       string streamViewId = null);
-
-   Task&lt;IEnumerable&lt;SdsInterval&lt;T&gt;&gt;&gt; GetFilteredIntervalsAsync&lt;T, T1, T2&gt;(string 
-      streamId, Tuple&lt;T1, T2&gt; startIndex, Tuple&lt;T1, T2&gt; endIndex, int count, 
-      string filter, string streamViewId = null);
 </code></pre><hr>
 <h2 id="get-sampled-values"><code>Get Sampled Values</code></h2>
 <p>Returns representative data sampled by intervals between a specified start and end index. </p>
@@ -1259,14 +1481,20 @@ Content-Type: application/json
 <p><a name="getjoin"></a></p>
 <h3 id="get-request"><code>GET Request</code></h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Bulk/<wbr>Streams/<wbr>Data/<wbr>Joins
-       ?streams={streams}&amp;joinMode={joinMode}
-       &amp;startIndex={startIndex}&amp;endIndex={endIndex}
+       ?streams={streams}&amp;joinMode={joinMode}&amp;startIndex={startIndex}&amp;endIndex={endIndex}
+       [&amp;boundaryType={boundaryType}&amp;startBoundaryType={startBoundaryType}
+       &amp;endBoundaryType={endBoundaryType}&amp;filter={filter}&amp;count={count}]
 </code></pre><p><strong>Parameters</strong><br><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string streams</code><br>Commas separated list of stream identifiers</p>
 <p><code>SdsJoinMode joinMode</code><br>Type of join, i.e. inner, outer, etc.</p>
 <p><code>string startIndex</code><br>Index identifying the beginning of the series of events to return</p>
 <p><code>string endIndex</code><br>Index identifying the end of the series of events to return</p>
+<p><code>int count</code><br>Optional maximum number of events to return.</p>
+<p><code>SdsBoundaryType boundaryType</code><br>Optional SdsBoundaryType specifies the handling of events at or near the startIndex and endIndex</p>
+<p><code>SdsBoundaryType startBoundaryType</code><br>Optional SdsBoundaryType specifies the handling of events at or near the startIndex</p>
+<p><code>SdsBoundaryType endBoundaryType</code><br>Optional SdsBoundaryType specifies the handling of events at or near the endIndex</p>
+<p><code>string filter</code><br>Optional filter expression</p>
 <p><strong>Response</strong><br>The response includes a status code and a response body containing multiple serialized events. See examples for specifics.</p>
 <h4 id="examples">Examples</h4>
 <p>To join multiple streams, for example Simple1 and Simple2, assume that Simple1 presents the following data:</p>

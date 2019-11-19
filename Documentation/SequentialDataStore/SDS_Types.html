@@ -2242,7 +2242,27 @@ in the request body, a Conflict error response is returned and the client librar
 <p><strong>Response</strong><br>The response includes a status code.</p>
 <p><strong>.NET Library</strong></p>
 <pre><code class="lang-csharp">   Task UpdateTypeOwnerAsync(string typeId, Trustee typeOwner);
-</code></pre></article>
+</code></pre><hr>
+<h2 id="get-type-access-rights"><code>Get Type Access Rights</code></h2>
+<p>Gets the Access Rights associated with the specified type for the requesting identity. For 
+more information on Access Rights, see <a class="xref" href="../Access_Control.html#commonaccessrightsenum">Access Control</a>.</p>
+<p><strong>Request</strong></p>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Types/<wbr>{typeId}/<wbr>AccessRights
+</code></pre><p><strong>Parameters</strong></p>
+<p><code>string tenantId</code><br>The tenant identifier  </p>
+<p><code>string namespaceId</code><br>The namespace identifier  </p>
+<p><code>string typeId</code><br>The type identifier  </p>
+<p><strong>Response</strong><br>The response includes a status code and a response body.</p>
+<p><strong>Response Body</strong><br>The Access Rights of the specified type for the requesting identity.</p>
+<p>Example response body:</p>
+<pre><code class="lang-json">HTTP/1.1 200
+Content-Type: application/json
+
+[&quot;Read&quot;, &quot;Write&quot;]
+</code></pre><p><strong>.NET Library</strong></p>
+<pre><code class="lang-csharp">   Task&lt;string[]&gt; GetTypeAccessRightsAsync(string typeId);
+</code></pre><hr>
+</article>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">

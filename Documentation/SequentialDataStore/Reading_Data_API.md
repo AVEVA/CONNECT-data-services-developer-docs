@@ -1101,6 +1101,22 @@ Currently, these values can only be calculated for properties of the following t
 | Double         | 14          |
 | DateTimeOffset | 20          |
 | TimeSpan       | 21          |
+| NullableBoolean        | 103           |
+| NullableByte           | 106           |
+| NullableChar           | 104           |
+| NullableDecimal        | 115           |
+| NullableInt16          | 107           |
+| NullableInt32          | 109           |
+| NullableInt64          | 111           |
+| NullableSByte          | 105           |
+| NullableSingle         | 113           |
+| NullableUInt16         | 108           |
+| NullableUInt32         | 110           |
+| NullableUInt64         | 112           |
+| NullableDateTime       | 116           |
+| NullableDouble         | 114           |
+| NullableDateTimeOffset | 120           |
+| NullableTimeSpan       | 121           |
 
 **Note:** Properties marked with an ``InterpolationMode`` of ``Discrete`` do not support summaries.
 Unsupported properties will be excluded from the summaries returned.
@@ -1224,7 +1240,8 @@ Content-Type: application/json
         },
         "Summaries": {
             "Count": {
-                "Measurement": 2
+                "Time": 3,
+                "Measurement": 3
             },
             "Minimum": {
                 "Measurement": 30
@@ -1267,6 +1284,129 @@ Content-Type: application/json
 ]
 ```
 
+SDS also supports summary requests for nullable SdsTypes. It means an SdsType has at least a nullable SdsTypeProperty.
+
+**Example**
+
+The following example contains a nullable double property with interpolation mode set to continuous:
+
+###### .NET
+```csharp
+
+public class SimpleType
+{
+   [SdsMember(IsKey = true, Order = 0) ]
+   public DateTime Time { get; set; }
+   [SdsMember(Uom = "meter")]
+   public double? Measurement { get; set; }
+}
+```
+
+``Measurement`` has stored values as follows:
+
+      11/23/2017 12:00:01 PM: Measurement 2
+      11/23/2017 12:00:02 PM: Measurement 2
+      11/23/2017 12:00:03 PM: Measurement null
+      11/23/2017 12:00:04 PM: Measurement 1
+      11/23/2017 12:00:05 PM: Measurement 2
+      11/23/2017 12:00:06 PM: Measurement null
+      11/23/2017 12:00:07 PM: Measurement null
+      11/23/2017 12:00:08 PM: Measurement 3
+
+While calculating weighted summaries, if we encounter a null value at a given index then we would consider interpolation mode of property to find the interpolated value of the given interval. See the table below for [12:00:02 PM, 12:00:03 PM] interval. The values are 2 and null at 12:00:02 and 12:00:03 PM respectively. 
+
+| Interpolation Mode | Weight in seconds | Value in meter |
+| ---------- | ----------------------- | ------------- |
+| Continuous | 0 | 0 |
+| ContinuousNullableLeading <br> StepwiseContinuousLeading | 1 | 2 | 
+| ContinuousNullableTrailing <br> StepwiseContinuousTrailing | 0 | 0 |
+
+Similarly, for intervals [12:00:03 PM, 12:00:04 PM] and [12:00:04 PM, 12:00:05 PM] respectively, the table would look like below:
+
+| Interpolation Mode | Weight in seconds | Value in meter |
+| ---------- | ----------------------- | ------------- |
+| Continuous | 0 | 0 |
+| ContinuousNullableLeading <br> StepwiseContinuousLeading | 0 | 0 | 
+| ContinuousNullableTrailing <br> StepwiseContinuousTrailing | 1 | 1 |
+
+| Interpolation Mode | Weight in seconds | Value in meter |
+| ---------- | ----------------------- | ------------- |
+| Continuous | 1 | 1.5 |
+| ContinuousNullableLeading <br> StepwiseContinuousLeading | 1 | 1 | 
+| ContinuousNullableTrailing <br> StepwiseContinuousTrailing | 1 | 2 |
+
+**Note:** Non-weighted summaries disregard null values and treat them as non-existent. 
+In the example above, non-weighted summaries for Measurement would be calculated based on (2,2,1,2,3) whereas weighted summaries for Measurement consider null values for its calculation. 
+
+For more information see [Interpolation](xref:sdsTypes#interpolation).
+
+The following request calculates one summary interval between the `startIndex` and `endIndex`: 
+ ```text
+    GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data/ 
+        Summaries?startIndex=2017-11-23T12:00:01Z&endIndex=2017-11-23T12:00:08Z&count=1
+ ```                
+
+**Response body**
+```json
+HTTP/1.1 200
+Content-Type: application/json
+
+[
+    {
+        "Start": {
+            "Time": "2017-11-23T12:00:01Z",
+            "Measurement": 2
+        },
+        "End": {
+            "Time": "2017-11-23T12:00:08Z",
+            "Measurement": 3
+        },
+        "Summaries": {
+            "Count": {
+                "Time": 8,
+                "Measurement": 5
+            },
+            "Minimum": {
+                "Measurement": 1
+            },
+            "Maximum": {
+                "Measurement": 3
+            },
+            "Range": {
+                "Measurement": 2
+            },
+            "Total": {
+                "Measurement": 7.5
+            },
+            "Mean": {
+                "Measurement": 1.875
+            },
+            "StandardDeviation": {
+                "Measurement": 0.478713553878169
+            },
+            "PopulationStandardDeviation": {
+                "Measurement": 0.41457809879442492
+            },
+            "WeightedMean": {
+                "Measurement": 1.75
+            },
+            "WeightedStandardDeviation": {
+                "Measurement": 0.35355339059327379
+            },
+            "WeightedPopulationStandardDeviation": {
+                "Measurement": 0.25
+            },
+            "Skewness": {
+                "Measurement": 0.49338220021815865
+            },
+            "Kurtosis": {
+                "Measurement": -1.3719008264462809
+            }
+        }
+    }
+]
+```
+
 **.NET Library**
 ```csharp
    Task<IEnumerable<SdsInterval<T>>> GetIntervalsAsync<T>(string streamId, string 
@@ -1275,10 +1415,6 @@ Content-Type: application/json
    Task<IEnumerable<SdsInterval<T>>> GetIntervalsAsync<T, T1>(string streamId, T1 
       startIndex, T1 endIndex, int count, string streamViewId = null);
 
-   Task<IEnumerable<SdsInterval<T>>> GetIntervalsAsync<T, T1, T2>(string streamId, 
-      Tuple<T1, T2> startIndex, Tuple<T1, T2> endIndex, int count, 
-      string streamViewId = null);
-
    Task<IEnumerable<SdsInterval<T>>> GetFilteredIntervalsAsync<T>(string streamId, 
       string startIndex, string endIndex, int count, string filter, 
       string streamViewId = null);
@@ -1286,10 +1422,6 @@ Content-Type: application/json
    Task<IEnumerable<SdsInterval<T>>> GetFilteredIntervalsAsync<T, T1>(string streamId, 
       T1 startIndex, T1 endIndex, int count, string filter, 
       string streamViewId = null);
-
-   Task<IEnumerable<SdsInterval<T>>> GetFilteredIntervalsAsync<T, T1, T2>(string 
-      streamId, Tuple<T1, T2> startIndex, Tuple<T1, T2> endIndex, int count, 
-      string filter, string streamViewId = null);
 ```
 ****
 
@@ -1448,8 +1580,9 @@ SDS supports two types of join requests:
 ### `GET Request`
  ```text
     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
-        ?streams={streams}&joinMode={joinMode}
-        &startIndex={startIndex}&endIndex={endIndex}
+        ?streams={streams}&joinMode={joinMode}&startIndex={startIndex}&endIndex={endIndex}
+		[&boundaryType={boundaryType}&startBoundaryType={startBoundaryType}
+        &endBoundaryType={endBoundaryType}&filter={filter}&count={count}]
  ```
 
 **Parameters**  
@@ -1470,6 +1603,21 @@ Index identifying the beginning of the series of events to return
 
 ``string endIndex``  
 Index identifying the end of the series of events to return
+
+``int count``  
+Optional maximum number of events to return.
+
+``SdsBoundaryType boundaryType``  
+Optional SdsBoundaryType specifies the handling of events at or near the startIndex and endIndex
+
+``SdsBoundaryType startBoundaryType``  
+Optional SdsBoundaryType specifies the handling of events at or near the startIndex
+
+``SdsBoundaryType endBoundaryType``  
+Optional SdsBoundaryType specifies the handling of events at or near the endIndex
+
+``string filter``  
+Optional filter expression
 
 **Response**  
 The response includes a status code and a response body containing multiple serialized events. See examples for specifics.

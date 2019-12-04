@@ -78,11 +78,10 @@
             <article class="content wrap" id="_content" data-uid="sds">
 <h1 id="sequential-data-store">Sequential Data Store</h1>
 
-<p>The Sequential Data Store (SDS) is a highly flexible cloud-based sequential data store that you use to store, 
-retrieve, and analyze data. You 
-create and write data to <em>streams</em> using a simple REST (<em>REpresentational State Transfer</em>) API (<em>Application 
+<p>The Sequential Data Store (SDS) is a cloud-based streaming data storage that is optimized for storing sequential data, usually time-series, but anything that is indexed by an ordered sequence. You use SDS to store, retrieve, and analyze data. An <a class="xref" href="SDS_Types.html">SdsType</a> (used interchangeably with <em>type</em> throughout documentation) defines the shape of a single measured event or object. A type gives structure to your data. For example, if you&#39;re measuring three things (longitute, latitude, speed) from a device at the same time, then you want those three properties to be included in your type. An <a class="xref" href="SDS_Streams.html">SdsStream</a> (used interchangeably with <em>stream</em> throughout documentation) is a collection of ordered events, or a series of events, where each event is an instance of the type you have defined. You 
+create and write data to streams using a simple REST (<em>REpresentational State Transfer</em>) API (<em>Application 
 Programming Interface</em>). The streams you create can be used to store simple or complex data types to suit 
-your application needs. You can define simple or complex indexing to arrange and relate your data. An assortment 
+your application needs. You can define simple or complex <a class="xref" href="indexes.html">indexes</a> to arrange and relate your data. An assortment 
 of methods with customizable behaviors are available to read data and easily obtain needed information.</p>
 <h2 id="samples">Samples</h2>
 <p>The best way to get started with SDS is to run one or more of the code samples. Code samples are 

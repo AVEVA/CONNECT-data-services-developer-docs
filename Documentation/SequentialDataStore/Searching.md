@@ -275,7 +275,7 @@ Also, wildcards can be used on the *outside* of the quote operators, but if an a
 
  **Request**	
  ```text	
-	GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=”pump pressure”	
+	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=”pump pressure”	
  ```	
 
  **.NET Library**	

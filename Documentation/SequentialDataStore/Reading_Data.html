@@ -127,8 +127,249 @@ type as a generic argument. Additional details about working with indexes can be
 <p>When data is requested at an index for which no stored event exists, the read characterisitics determine 
 whether the result is an error, no event, interpolated event, or extrapolated event. The combination of 
 the type of the index and the interpolation and extrapolation modes of the SdsType and the SdsStream 
-determine the read characteristics. For more information on read characteristics, 
-see <a class="xref" href="SDS_Types.html">Types</a> and <a class="xref" href="SDS_Streams.html">Streams</a>.</p>
+determine the read characteristics.</p>
+<h3 id="interpolation">Interpolation</h3>
+<p>Interpolation determines how a stream behaves when asked to return an event at an index between 
+two existing events. InterpolationMode determines how the returned event is constructed. SDS provides 
+multiple ways to set the interpolation mode to get the desired behavior. The table 
+below lists InterpolationModes:</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Enumeration value</th>
+<th>Operation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Default</td>
+<td>0</td>
+<td>The default InterpolationMode is Continuous</td>
+</tr>
+<tr>
+<td>Continuous</td>
+<td>0</td>
+<td>Returns interpolated data using previous and next index values</td>
+</tr>
+<tr>
+<td>StepwiseContinuousLeading</td>
+<td>1</td>
+<td>Returns the data from the previous index</td>
+</tr>
+<tr>
+<td>StepwiseContinuousTrailing</td>
+<td>2</td>
+<td>Returns the data from the next index</td>
+</tr>
+<tr>
+<td>Discrete</td>
+<td>3</td>
+<td>No event is returned</td>
+</tr>
+<tr>
+<td>ContinuousNullableLeading</td>
+<td>4</td>
+<td>Returns interpolated data or data from the previous index if either of the surrounding indexes has a null value</td>
+</tr>
+<tr>
+<td>ContinuousNullableTrailing</td>
+<td>5</td>
+<td>Returns interpolated data or data from the trailing index if either of the surrounding indexes has a null value</td>
+</tr>
+</tbody>
+</table>
+<p>Note that <code>Continuous</code> cannot return values for type properties that cannot be interpolated, such as when the type property is not numeric. </p>
+<p>The table below describes how the <strong>Continuous InterpolationMode</strong> affects
+properties that occur between data in a stream:
+<strong>InterpolationMode = Continuous or Default</strong></p>
+<table>
+<thead>
+<tr>
+<th>Property Type</th>
+<th>Result for a property for an index between data in a stream</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Numeric Types</td>
+<td>Interpolated*</td>
+<td>Rounding is done as needed for integer types</td>
+</tr>
+<tr>
+<td>Time related Types</td>
+<td>Interpolated</td>
+<td>DateTime, DateTimeOffset, TimeSpan</td>
+</tr>
+<tr>
+<td>Nullable Types</td>
+<td>Interpolated**</td>
+<td>Limited support for nullable numeric types</td>
+</tr>
+<tr>
+<td>Array and List Types</td>
+<td>Default value</td>
+<td></td>
+</tr>
+<tr>
+<td>String Type</td>
+<td>Default value</td>
+<td></td>
+</tr>
+<tr>
+<td>Boolean Type</td>
+<td>Returns value of nearest index</td>
+<td></td>
+</tr>
+<tr>
+<td>Enumeration Types</td>
+<td>Returns Enum value at 0</td>
+<td>This may have a value for the enumeration</td>
+</tr>
+<tr>
+<td>GUID</td>
+<td>Default value</td>
+<td></td>
+</tr>
+<tr>
+<td>Version</td>
+<td>Default value</td>
+<td></td>
+</tr>
+<tr>
+<td>IDictionary or IEnumerable</td>
+<td>Default value</td>
+<td>Dictionary, Array, List, and so on.</td>
+</tr>
+</tbody>
+</table>
+<p>*When extreme values are involved in an interpolation (for example
+Decimal.MaxValue) the call might result in a BadRequest exception.</p>
+<p>**For the <code>Continuous</code> interpolation mode, Nullable types are interpolated in the same manner as their non-nulllable equivalents as long as the values surrounding the desired interpolation index are non-null. If either of the values are null, the interpolated value will be null.</p>
+<p>If the InterpolationMode is not assigned, the events are interpolated in the default manner, unless the interpolation 
+mode is overridden in the SdsTypeProperty or the SdsStream. For more information on overriding the interpolation mode 
+on a specific type property see <a class="xref" href="SDS_Types.html#sdstypeproperty">SdsTypeProperty</a>. For more information on overriding the interpolation mode for a specific stream see <a class="xref" href="SDS_Streams.html">Sds Streams</a>.</p>
+<h3 id="extrapolation">Extrapolation</h3>
+<p>Extrapolation defines how a stream responds to requests with indexes that precede or follow all 
+data in the steam. ExtrapolationMode acts as a master switch to determine whether extrapolation 
+occurs and at which end of the data. </p>
+<p>ExtrapolationMode works with the InterpolationMode to determine how a stream responds. The following tables 
+show how ExtrapolationMode affects returned values for each InterpolationMode value:</p>
+<p><strong>ExtrapolationMode with InterpolationMode = Default (or Continuous), StepwiseContinuousLeading, and StepwiseContinuousTrailing</strong></p>
+<table>
+<thead>
+<tr>
+<th>ExtrapolationMode</th>
+<th>Enumeration value</th>
+<th>Index before data</th>
+<th>Index after data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>All</td>
+<td>0</td>
+<td>Returns first data value</td>
+<td>Returns last data value</td>
+</tr>
+<tr>
+<td>None</td>
+<td>1</td>
+<td>No event is returned</td>
+<td>No event is returned</td>
+</tr>
+<tr>
+<td>Forward</td>
+<td>2</td>
+<td>No event is returned</td>
+<td>Returns last data value</td>
+</tr>
+<tr>
+<td>Backward</td>
+<td>3</td>
+<td>Returns first data value</td>
+<td>No event is returned</td>
+</tr>
+</tbody>
+</table>
+<p><strong>ExtrapolationMode with InterpolationMode = Discrete</strong></p>
+<table>
+<thead>
+<tr>
+<th>ExtrapolationMode</th>
+<th>Enumeration value</th>
+<th>Index before data</th>
+<th>Index after data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>All</td>
+<td>0</td>
+<td>No event is returned</td>
+<td>No event is returned</td>
+</tr>
+<tr>
+<td>None</td>
+<td>1</td>
+<td>No event is returned</td>
+<td>No event is returned</td>
+</tr>
+<tr>
+<td>Forward</td>
+<td>2</td>
+<td>No event is returned</td>
+<td>No event is returned</td>
+</tr>
+<tr>
+<td>Backward</td>
+<td>3</td>
+<td>No event is returned</td>
+<td>No event is returned</td>
+</tr>
+</tbody>
+</table>
+<p><strong>ExtrapolationMode with InterpolationMode = ContinuousNullableLeading and ContinuousNullableTrailing</strong></p>
+<table>
+<thead>
+<tr>
+<th>ExtrapolationMode</th>
+<th>Enumeration value</th>
+<th>Index before data</th>
+<th>Index after data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>All</td>
+<td>0</td>
+<td>Returns the default value</td>
+<td>Returns the default value</td>
+</tr>
+<tr>
+<td>None</td>
+<td>1</td>
+<td>No event is returned</td>
+<td>No event is returned</td>
+</tr>
+<tr>
+<td>Forward</td>
+<td>2</td>
+<td>No event is returned</td>
+<td>Returns the default value value</td>
+</tr>
+<tr>
+<td>Backward</td>
+<td>3</td>
+<td>Returns the default value</td>
+<td>No event is returned</td>
+</tr>
+</tbody>
+</table>
+<p>For additional information about the effect of read characteristics, see the
+documentation on the <a class="xref" href="Reading_Data_API.html">read method</a>
+you are using.</p>
 <h3 id="filter-expressions">Filter Expressions</h3>
 <p>Filter expressions can be applied to any read that returns multiple values, including Get Values, Get Range Values, 
 Get Window Values, and Get Intervals. The filter expression is applied to the collection events conditionally 

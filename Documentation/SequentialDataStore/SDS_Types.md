@@ -50,8 +50,8 @@ See the [Searching](xref:sdsSearching) topic regarding limitations on search.
 | Name              | String                 | Optional    | Yes | Friendly name |
 | Description       | String                 | Optional    | Yes | Description text |
 | SdsTypeCode       | SdsTypeCode            | Required    | No | Numeric code identifying the base SdsType |
-| InterpolationMode | SdsInterpolationMode   | Optional    | No | Interpolation setting of the type. Default is Continuous. For more information, see [Interpolation](xref:sdsReadingData#interpolation)|
-| ExtrapolationMode | SdsExtrapolationMode   | Optional    | No | Extrapolation setting of the type. For more information, see [Extrapolation](xref:sdsReadingData#extrapolation) |
+| InterpolationMode | SdsInterpolationMode   | Optional    | No | Interpolation setting of the type. Default is Continuous. For more information, see [Interpolation](xref:sdsReadingData#interpolation).|
+| ExtrapolationMode | SdsExtrapolationMode   | Optional    | No | Extrapolation setting of the type. For more information, see [Extrapolation](xref:sdsReadingData#extrapolation). |
 | Properties        | IList\<SdsTypeProperty\> | Required    | Yes, with limitations | List of SdsTypeProperty items |
 
 

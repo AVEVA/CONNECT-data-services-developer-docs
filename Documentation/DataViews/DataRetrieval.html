@@ -125,7 +125,7 @@
         Query parameters: startindex, endindex, interval, count, form, continuationToken, cache
 </code></pre><p>This returns the data view data results. Data is interpolated on the index data type based on the start index, end index, and interval. In the first page link the cache parameter controls resolution of the backing data view resources with a default of preserve. All necessary parameters to generate the next page of data are included in the continuationToken.  The user can override the indexconfig, form and count.</p>
 <h4 id="paging-1">Paging</h4>
-<p>Since each data view can contain a large amount of data, the get data call can easily be paged to get the entire data collection. Each get data call to retrieve data view data results in two links stored in the http response headers that can be used to navigate to the first page or the next page of data.</p>
+<p>Since each data view can contain a large amount of data, the get data call can easily be paged to get the entire data collection. Each get data call to retrieve data view data results in two links stored in the HTTP response headers that can be used to navigate to the first page or the next page of data.</p>
 <ul>
 <li>FirstPage: .../DataViews/DataViewId/Data/Interpolated?count=100&amp;cache=Preserve</li>
 <li>NextPage: ...DataViews/DataViewId/Data/Interpolated?count=100&amp;continuationToken=MjAxOC0wMS0wMVQwMDowMDoxMVo_MD90Yk1OblE_QUxXcEZBP1VEdGxIMWJROG9z</li>

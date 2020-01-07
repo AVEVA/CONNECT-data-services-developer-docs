@@ -111,7 +111,7 @@ For details, see [Update Stream Type](xref:sdsStreams#update-stream-type).
 
 ## Working with Stream Views when using .NET
 
-**Using .Net**
+**Using .NET**
 
 When working in .NET, use the SDS Client libraries’ ISdsMetadataService.
 

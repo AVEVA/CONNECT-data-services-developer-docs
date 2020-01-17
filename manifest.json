@@ -707,6 +707,17 @@
       "version": ""
     },
     {
+      "type": "Resource",
+      "source_relative_path": "Documentation/images/icon_navigation_bigger.png",
+      "output": {
+        "resource": {
+          "relative_path": "Documentation/images/icon_navigation_bigger.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "Documentation/samples.md",
       "output": {

@@ -4,32 +4,43 @@ uid: identityUser
 
 # User
 
-CRUD operations on User
+Users consume resources in a Tenant. They are invited by the Admin of the
+            Tenant and should already have an account in one of the configured Identity
+            Providers for this Tenant. A User is fully provisioned in OSIsoft Cloud Services
+            only after they have accepted the invitation and successfully logged with
+            an Identity Provider. OSIsoft Cloud Services does not maintain User credentials, but it delegates
+            authentication to the Identity Provider the User logged in with at first. Once
+            logged in the User cannot change the Identity Provider it signed up with. A Tenant
+            can only have one User with a given email to an Identity Provider. If a User has
+            multiple aliases in the same Identity Provider, they will not be able to create
+            multiple corresponding OSIsoft Cloud Services users. Users have roles associated with them. These roles
+            determine what a User is authorized to do in the Tenant. Roles are assigned to a User
+            upon creation and can be modified by an Admin. We allow the change of some User fields
+            and the complete deletion of a User.
 
 ## Properties
 
 For HTTP requests and responses, the User object has the following properties and JSON-serialized body: 
 
-Property | Type | Descriptions
+Property | Type | Description
  --- | --- | ---
-string | Id | Unique User ID.
-string | GivenName | Given name of user.
-string | Surname | Surname of user.
-string | Name | Name of user.
-string | Email | Email of user.
-string | ContactEmail | Preferred contact email to be used.
-string | ContactGivenName | Preferred name to be used when contacting user.
-string | ContactSurname | Preferred surname to be used when contacting user.
-string | ExternalUserId | Provider id for user.
-string | Preferences | User preferences.
-Tenant | Tenant | Tenant the user belongs to.
-IdentityProvider | IdentityProvider | Identity provider used to authenticate user.
+Id | Guid | Gets or sets unique User ID.
+GivenName | string | Gets or sets given name of user.
+Surname | string | Gets or sets surname of user.
+Name | string | Gets or sets name of user.
+Email | string | Gets or sets email of user.
+ContactEmail | string | Gets or sets contact email for user. User will only be contacted through this email.
+ContactGivenName | string | Gets or sets preferred contact name for user.
+ContactSurname | string | Gets or sets preferred contact surname for user.
+ExternalUserId | string | Gets or sets provider id for user. This is the unique ID we get from the Identity Provider.
+IdentityProviderId | Guid | Gets or sets Identity Provider Id used to authenticate User. Will be set once the User accepts an invitation. If not specified when sending the invitation to the User, it can be any of the Identity Provider Ids configured for this Tenant.
+RoleIds | Guid[] | Gets or sets list of strings of RoleIds.
 
 ### Serialized Model
 
 ```json
 {
-  "Id": "Id",
+  "Id": "00000000-0000-0000-0000-000000000000",
   "GivenName": "Name",
   "Surname": "Surname",
   "Name": "Name",
@@ -38,65 +49,101 @@ IdentityProvider | IdentityProvider | Identity provider used to authenticate use
   "ContactGivenName": "Name",
   "ContactSurname": "Surname",
   "ExternalUserId": "ExternalUserId",
-  "Preferences": "Preferences",
-  "Tenant": {
-    "Id": "Id",
-    "Alias": "Alias",
-    "State": "State",
-    "IsCloudConnectCustomer": false
-  },
-  "IdentityProvider": {
-    "Id": "Id",
-    "DisplayName": "Name",
-    "Scheme": "Scheme",
-    "UserIdClaimType": "UserIdClaimType"
-  }
+  "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
+  "RoleIds": [
+    "00000000-0000-0000-0000-000000000000",
+    "00000000-0000-0000-0000-000000000000"
+  ]
 }
 ```
 
 ***
 
-## `Get Users`
+## Authentication
 
-Returns a list of User objects for a given tenant
+All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieve after a successful authentication request.
+
+`Authorization: Bearer <token>`
+
+Requests made without an access token or an invalid/expired token will fail with a 401 Unauthorized response.
+Requests made with an access token which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
+Read [here](https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/Authentication) on how to authenticate against OCS with the various clients and receive an access token in response.
+
+## Error Handling
+
+All responses will have an error message in the body. The exceptions are 200 responses and the 401 Unauthorized response. The error message will look as follows:
+
+```json
+{
+    "OperationId": "1b2af18e-8b27-4f86-93e0-6caa3e59b90c", 
+    "Error": "Error message.", 
+    "Reason": "Reason that caused error.", 
+    "Resolution": "Possible solution for the error." 
+}
+```
+
+If and when contacting OSIsoft support about this error, please provide the OperationId.
+
+## `Get Users from a Tenant`
+
+Get a list of users from a Tenant. Optionally, get a list of requested users.
+            Total number of users in the Tenant set in the Total-Count header.
 
 ### Request
 
-`GET api/Tenant/{tenantId}/Users`
+`GET api/v1/Tenants/{tenantId}/Users`
 
 ### Parameters
 
 ```csharp
-string tenantId [FromRoute] [Required] [No-Default]
+[Required]
+string tenantId
 ```
 
-Id of tenant
+Id of Tenant.
 
 ```csharp
-string query [FromQuery] [Optional] [Default = ""]
+[FromQuery]
+[Optional]
+[Default = ""]
+Guid[] id
 ```
 
-Query to execute. Currently not supported
+Unordered list of User Ids to get.
 
 ```csharp
-int32 skip [FromQuery] [Optional] [Default = 0]
+[FromQuery]
+[Optional]
+[Default = ""]
+string query
 ```
 
-Number of users to skip
+Query to execute. Currently not supported.
 
 ```csharp
-int32 count [FromQuery] [Optional] [Default = 100]
+[FromQuery]
+[Optional]
+[Default = 0]
+int32 skip
 ```
 
-Max number of users to return
+Number of users to skip. Ignored if a list of Ids is passed.
+
+```csharp
+[FromQuery]
+[Optional]
+[Default = 100]
+int32 count
+```
+
+Maximum number of users to return. Ignored if a list of Ids is passed.
 
 ### Security
 
 Allowed for these roles:
 
 - `Account Administrator`
-- `Cluster Operator`
-- `Cluster Support`
+- `Account Member`
 
 ### Returns
 
@@ -106,12 +153,12 @@ Success.
 
 ##### Type:
 
- `List[User]`
+ `List`
 
 ```json
 [
   {
-    "Id": "Id",
+    "Id": "00000000-0000-0000-0000-000000000000",
     "GivenName": "Name",
     "Surname": "Surname",
     "Name": "Name",
@@ -120,22 +167,14 @@ Success.
     "ContactGivenName": "Name",
     "ContactSurname": "Surname",
     "ExternalUserId": "ExternalUserId",
-    "Preferences": "Preferences",
-    "Tenant": {
-      "Id": "Id",
-      "Alias": "Alias",
-      "State": "State",
-      "IsCloudConnectCustomer": false
-    },
-    "IdentityProvider": {
-      "Id": "Id",
-      "DisplayName": "Name",
-      "Scheme": "Scheme",
-      "UserIdClaimType": "UserIdClaimType"
-    }
+    "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
+    "RoleIds": [
+      "00000000-0000-0000-0000-000000000000",
+      "00000000-0000-0000-0000-000000000000"
+    ]
   },
   {
-    "Id": "Id",
+    "Id": "00000000-0000-0000-0000-000000000000",
     "GivenName": "Name",
     "Surname": "Surname",
     "Name": "Name",
@@ -144,151 +183,11 @@ Success.
     "ContactGivenName": "Name",
     "ContactSurname": "Surname",
     "ExternalUserId": "ExternalUserId",
-    "Preferences": "Preferences",
-    "Tenant": {
-      "Id": "Id",
-      "Alias": "Alias",
-      "State": "State",
-      "IsCloudConnectCustomer": false
-    },
-    "IdentityProvider": {
-      "Id": "Id",
-      "DisplayName": "Name",
-      "Scheme": "Scheme",
-      "UserIdClaimType": "UserIdClaimType"
-    }
-  }
-]
-```
-
-#### 400
-
-Missing or invalid inputs
-
-#### 401
-
-Unauthorized
-
-#### 403
-
-Forbidden
-
-#### 404
-
-Tenant not found
-
-#### 500
-
-Internal server error
-***
-
-## `Get Users By IDs`
-
-Returns an ordered list of User objects based on userId for a given tenant or a MultiStatusResponseDto with a list of User objects and a list of errors
-
-### Request
-
-`GET api/Tenant/{tenantId}/Users/Ids`
-
-### Parameters
-
-```csharp
-string tenantId [FromRoute] [Required] [No-Default]
-```
-
-Id of tenant
-
-```csharp
-string[] userIds [FromQuery] [Required] [No-Default]
-```
-
-Unordered list of ids for all users to get
-
-```csharp
-string query [FromQuery] [Optional] [Default = ""]
-```
-
-Query to execute. Currently not supported
-
-```csharp
-int32 skip [FromQuery] [Optional] [Default = 0]
-```
-
-Number of users to skip
-
-```csharp
-int32 count [FromQuery] [Optional] [Default = 100]
-```
-
-Max number of users to return
-
-### Security
-
-Allowed for these roles:
-
-- `Account Administrator`
-- `Cluster Operator`
-- `Cluster Support`
-
-### Returns
-
-#### 200
-
-Success.
-
-##### Type:
-
- `IList[User]`
-
-```json
-[
-  {
-    "Id": "Id",
-    "GivenName": "Name",
-    "Surname": "Surname",
-    "Name": "Name",
-    "Email": "user@company.com",
-    "ContactEmail": "user@company.com",
-    "ContactGivenName": "Name",
-    "ContactSurname": "Surname",
-    "ExternalUserId": "ExternalUserId",
-    "Preferences": "Preferences",
-    "Tenant": {
-      "Id": "Id",
-      "Alias": "Alias",
-      "State": "State",
-      "IsCloudConnectCustomer": false
-    },
-    "IdentityProvider": {
-      "Id": "Id",
-      "DisplayName": "Name",
-      "Scheme": "Scheme",
-      "UserIdClaimType": "UserIdClaimType"
-    }
-  },
-  {
-    "Id": "Id",
-    "GivenName": "Name",
-    "Surname": "Surname",
-    "Name": "Name",
-    "Email": "user@company.com",
-    "ContactEmail": "user@company.com",
-    "ContactGivenName": "Name",
-    "ContactSurname": "Surname",
-    "ExternalUserId": "ExternalUserId",
-    "Preferences": "Preferences",
-    "Tenant": {
-      "Id": "Id",
-      "Alias": "Alias",
-      "State": "State",
-      "IsCloudConnectCustomer": false
-    },
-    "IdentityProvider": {
-      "Id": "Id",
-      "DisplayName": "Name",
-      "Scheme": "Scheme",
-      "UserIdClaimType": "UserIdClaimType"
-    }
+    "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
+    "RoleIds": [
+      "00000000-0000-0000-0000-000000000000",
+      "00000000-0000-0000-0000-000000000000"
+    ]
   }
 ]
 ```
@@ -299,7 +198,7 @@ Partial success.
 
 ##### Type:
 
- `MultiStatusResponseDto[IList[User]]`
+ `MultiStatusResponse`
 
 ```json
 {
@@ -308,31 +207,25 @@ Partial success.
   "Reason": "Reason",
   "ChildErrors": [
     {
+      "StatusCode": 0,
+      "ModelId": "ModelId",
       "OperationId": "OperationId",
       "Error": "Error",
       "Reason": "Reason",
-      "Resolution": "Resolution",
-      "StatusCode": 0,
-      "ModelId": {
-        "String": "String"
-      },
-      "TenantId": "TenantId"
+      "Resolution": "Resolution"
     },
     {
+      "StatusCode": 0,
+      "ModelId": "ModelId",
       "OperationId": "OperationId",
       "Error": "Error",
       "Reason": "Reason",
-      "Resolution": "Resolution",
-      "StatusCode": 0,
-      "ModelId": {
-        "String": "String"
-      },
-      "TenantId": "TenantId"
+      "Resolution": "Resolution"
     }
   ],
   "Data": [
     {
-      "Id": "Id",
+      "Id": "00000000-0000-0000-0000-000000000000",
       "GivenName": "Name",
       "Surname": "Surname",
       "Name": "Name",
@@ -341,22 +234,14 @@ Partial success.
       "ContactGivenName": "Name",
       "ContactSurname": "Surname",
       "ExternalUserId": "ExternalUserId",
-      "Preferences": "Preferences",
-      "Tenant": {
-        "Id": "Id",
-        "Alias": "Alias",
-        "State": "State",
-        "IsCloudConnectCustomer": false
-      },
-      "IdentityProvider": {
-        "Id": "Id",
-        "DisplayName": "Name",
-        "Scheme": "Scheme",
-        "UserIdClaimType": "UserIdClaimType"
-      }
+      "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
+      "RoleIds": [
+        "00000000-0000-0000-0000-000000000000",
+        "00000000-0000-0000-0000-000000000000"
+      ]
     },
     {
-      "Id": "Id",
+      "Id": "00000000-0000-0000-0000-000000000000",
       "GivenName": "Name",
       "Surname": "Surname",
       "Name": "Name",
@@ -365,19 +250,11 @@ Partial success.
       "ContactGivenName": "Name",
       "ContactSurname": "Surname",
       "ExternalUserId": "ExternalUserId",
-      "Preferences": "Preferences",
-      "Tenant": {
-        "Id": "Id",
-        "Alias": "Alias",
-        "State": "State",
-        "IsCloudConnectCustomer": false
-      },
-      "IdentityProvider": {
-        "Id": "Id",
-        "DisplayName": "Name",
-        "Scheme": "Scheme",
-        "UserIdClaimType": "UserIdClaimType"
-      }
+      "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
+      "RoleIds": [
+        "00000000-0000-0000-0000-000000000000",
+        "00000000-0000-0000-0000-000000000000"
+      ]
     }
   ]
 }
@@ -385,72 +262,96 @@ Partial success.
 
 #### 400
 
-Missing or invalid inputs
+Missing or invalid inputs.
 
 #### 401
 
-Unauthorized
+Unauthorized.
 
 #### 403
 
-Forbidden
+Forbidden.
 
 #### 404
 
-Tenant not found
+Tenant not found.
 
 #### 500
 
-Internal server error
+Internal server error.
 ***
 
-## `Get Users' Status`
+## `Get Users' Invitation Status`
 
-Get User status for multiple users, optionally restrict it to only Users of a specific status.
+Get invitation statuses for multiple users. Optionally
+            restrict it only to users of a specific invitation status.
+            The User status can be: InvitationAccepted (0),  NoInvitation (1),
+            InvitationNotSent (2), InvitationSent (3), InvitationExpired (4).
 
 ### Request
 
-`GET api/Tenant/{tenantId}/Users/Status`
+`GET api/v1/Tenants/{tenantId}/Users/Status`
 
 ### Parameters
 
 ```csharp
-string tenantId [FromRoute] [Required] [No-Default]
+[Required]
+string tenantId
 ```
 
-Id of tenant
+Id of Tenant.
 
 ```csharp
-string query [FromQuery] [Optional] [Default = ""]
+[FromQuery]
+[Optional]
+[Default = ""]
+Guid[] id
 ```
 
-Query to execute. Currently not supported
+Unordered list of User Ids to get.
 
 ```csharp
-int32 skip [FromQuery] [Optional] [Default = 0]
+[FromQuery]
+[Optional]
+[Default = ""]
+string query
 ```
 
-Number of users to skip
+Query to execute. Currently not supported.
 
 ```csharp
-int32 count [FromQuery] [Optional] [Default = 100]
+[FromQuery]
+[Optional]
+[Default = 0]
+int32 skip
 ```
 
-Max number of users to return
+Number of users to skip. Ignored if a list of Ids is passed.
 
 ```csharp
-string status [FromQuery] [Optional] [Default = ""]
+[FromQuery]
+[Optional]
+[Default = 100]
+int32 count
 ```
 
-Only return statuses that match this value
+Maximum number of users to return. Ignored if a list of Ids is passed.
+
+```csharp
+[FromQuery]
+[Optional]
+[Default = ""]
+string[] status
+```
+
+Only return statuses that match these values. Possible User statuses are: InvitationAccepted, NoInvitation, InvitationNotSent, InvitationSent, InvitationExpired.
 
 ### Security
 
 Allowed for these roles:
 
 - `Account Administrator`
-- `Cluster Operator`
-- `Cluster Support`
+- `Account Member`
 
 ### Returns
 
@@ -460,14 +361,14 @@ Success.
 
 ##### Type:
 
- `List[UserStatusDto]`
+ `List`
 
 ```json
 [
   {
     "InvitationStatus": 0,
     "User": {
-      "Id": "Id",
+      "Id": "00000000-0000-0000-0000-000000000000",
       "GivenName": "Name",
       "Surname": "Surname",
       "Name": "Name",
@@ -476,25 +377,17 @@ Success.
       "ContactGivenName": "Name",
       "ContactSurname": "Surname",
       "ExternalUserId": "ExternalUserId",
-      "Preferences": "Preferences",
-      "Tenant": {
-        "Id": "Id",
-        "Alias": "Alias",
-        "State": "State",
-        "IsCloudConnectCustomer": false
-      },
-      "IdentityProvider": {
-        "Id": "Id",
-        "DisplayName": "Name",
-        "Scheme": "Scheme",
-        "UserIdClaimType": "UserIdClaimType"
-      }
+      "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
+      "RoleIds": [
+        "00000000-0000-0000-0000-000000000000",
+        "00000000-0000-0000-0000-000000000000"
+      ]
     }
   },
   {
     "InvitationStatus": 0,
     "User": {
-      "Id": "Id",
+      "Id": "00000000-0000-0000-0000-000000000000",
       "GivenName": "Name",
       "Surname": "Surname",
       "Name": "Name",
@@ -503,19 +396,11 @@ Success.
       "ContactGivenName": "Name",
       "ContactSurname": "Surname",
       "ExternalUserId": "ExternalUserId",
-      "Preferences": "Preferences",
-      "Tenant": {
-        "Id": "Id",
-        "Alias": "Alias",
-        "State": "State",
-        "IsCloudConnectCustomer": false
-      },
-      "IdentityProvider": {
-        "Id": "Id",
-        "DisplayName": "Name",
-        "Scheme": "Scheme",
-        "UserIdClaimType": "UserIdClaimType"
-      }
+      "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
+      "RoleIds": [
+        "00000000-0000-0000-0000-000000000000",
+        "00000000-0000-0000-0000-000000000000"
+      ]
     }
   }
 ]
@@ -523,46 +408,48 @@ Success.
 
 #### 400
 
-Missing or invalid inputs
+Missing or invalid inputs.
 
 #### 401
 
-Unauthorized
+Unauthorized.
 
 #### 403
 
-Forbidden
+Forbidden.
 
 #### 500
 
-Internal server error
+Internal server error.
 
 #### 404
 
-Tenant not found
+Tenant not found.
 ***
 
-## `Get User`
+## `Get User from a Tenant`
 
-Returns a User
+Get a User from Tenant.
 
 ### Request
 
-`GET api/Tenant/{tenantId}/Users/{userId}`
+`GET api/v1/Tenants/{tenantId}/Users/{userId}`
 
 ### Parameters
 
 ```csharp
-string tenantId [FromRoute] [Required] [No-Default]
+[Required]
+string tenantId
 ```
 
-Id of Tenant
+Id of Tenant.
 
 ```csharp
-string userId [FromRoute] [Required] [No-Default]
+[Required]
+Guid userId
 ```
 
-Id of User
+Id of User.
 
 ### Security
 
@@ -570,14 +457,12 @@ Allowed for these roles:
 
 - `Account Administrator`
 - `Account Member`
-- `Cluster Operator`
-- `Cluster Support`
 
 ### Returns
 
 #### 200
 
-Success
+Success.
 
 ##### Type:
 
@@ -585,7 +470,7 @@ Success
 
 ```json
 {
-  "Id": "Id",
+  "Id": "00000000-0000-0000-0000-000000000000",
   "GivenName": "Name",
   "Surname": "Surname",
   "Name": "Name",
@@ -594,60 +479,55 @@ Success
   "ContactGivenName": "Name",
   "ContactSurname": "Surname",
   "ExternalUserId": "ExternalUserId",
-  "Preferences": "Preferences",
-  "Tenant": {
-    "Id": "Id",
-    "Alias": "Alias",
-    "State": "State",
-    "IsCloudConnectCustomer": false
-  },
-  "IdentityProvider": {
-    "Id": "Id",
-    "DisplayName": "Name",
-    "Scheme": "Scheme",
-    "UserIdClaimType": "UserIdClaimType"
-  }
+  "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
+  "RoleIds": [
+    "00000000-0000-0000-0000-000000000000",
+    "00000000-0000-0000-0000-000000000000"
+  ]
 }
 ```
 
 #### 401
 
-Unauthorized
+Unauthorized.
 
 #### 403
 
-Forbidden
+Forbidden.
 
 #### 404
 
-User or Tenant not found
+User or Tenant not found.
 
 #### 500
 
-Internal server error
+Internal server error.
 ***
 
-## `Get User's Status`
+## `Get User's Invitation Status`
 
-Returns user invitation status
+Get invitation status for a User. It can be: InvitationAccepted (0),
+            NoInvitation (1), InvitationNotSent (2), InvitationSent (3), InvitationExpired (4).
 
 ### Request
 
-`GET api/Tenant/{tenantId}/Users/{userId}/Status`
+`GET api/v1/Tenants/{tenantId}/Users/{userId}/Status`
 
 ### Parameters
 
 ```csharp
-string tenantId [FromRoute] [Required] [No-Default]
+[Required]
+string tenantId
 ```
 
-Id of tenant
+Id of Tenant.
 
 ```csharp
-string userId [FromRoute] [Required] [No-Default]
+[Required]
+Guid userId
 ```
 
-Id of user
+Id of User.
 
 ### Security
 
@@ -655,24 +535,22 @@ Allowed for these roles:
 
 - `Account Administrator`
 - `Account Member`
-- `Cluster Operator`
-- `Cluster Support`
 
 ### Returns
 
 #### 200
 
-Success
+Success.
 
 ##### Type:
 
- `UserStatusDto`
+ `UserStatus`
 
 ```json
 {
   "InvitationStatus": 0,
   "User": {
-    "Id": "Id",
+    "Id": "00000000-0000-0000-0000-000000000000",
     "GivenName": "Name",
     "Surname": "Surname",
     "Name": "Name",
@@ -681,87 +559,63 @@ Success
     "ContactGivenName": "Name",
     "ContactSurname": "Surname",
     "ExternalUserId": "ExternalUserId",
-    "Preferences": "Preferences",
-    "Tenant": {
-      "Id": "Id",
-      "Alias": "Alias",
-      "State": "State",
-      "IsCloudConnectCustomer": false
-    },
-    "IdentityProvider": {
-      "Id": "Id",
-      "DisplayName": "Name",
-      "Scheme": "Scheme",
-      "UserIdClaimType": "UserIdClaimType"
-    }
+    "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
+    "RoleIds": [
+      "00000000-0000-0000-0000-000000000000",
+      "00000000-0000-0000-0000-000000000000"
+    ]
   }
 }
 ```
 
 #### 401
 
-Unauthorized
+Unauthorized.
 
 #### 403
 
-Forbidden
+Forbidden.
 
 #### 404
 
-User or Tenant not found
+User or Tenant not found.
 
 #### 500
 
-Internal server error
+Internal server error.
 ***
 
-## `Get Users' Status By IDs`
+## `Get User's Preferences`
 
-Returns an ordered list of UserStatusDto objects for a given tenant or a MultiStatusDto response with a list of UserStatusDto objects and a list of errors
+Get preferences from a User. User preferences can be any valid
+            JSON object. A common use case is to store UI preferences for the User.
 
 ### Request
 
-`GET api/Tenant/{tenantId}/Users/Status/Ids`
+`GET api/v1/Tenants/{tenantId}/Users/{userId}/Preferences`
 
 ### Parameters
 
 ```csharp
-string tenantId [FromRoute] [Required] [No-Default]
+[Required]
+string tenantId
 ```
 
-Id of tenant
+Id of Tenant.
 
 ```csharp
-string[] userIds [FromQuery] [Required] [No-Default]
+[Required]
+Guid userId
 ```
 
-Unordered list of ids for all users
-
-```csharp
-string query [FromQuery] [Optional] [Default = ""]
-```
-
-Query to execute. Currently not supported
-
-```csharp
-int32 skip [FromQuery] [Optional] [Default = 0]
-```
-
-Number of users to skip
-
-```csharp
-int32 count [FromQuery] [Optional] [Default = 100]
-```
-
-Max number of users to return
+Id of User.
 
 ### Security
 
 Allowed for these roles:
 
 - `Account Administrator`
-- `Cluster Operator`
-- `Cluster Support`
+- `Account Member`
 
 ### Returns
 
@@ -771,267 +625,64 @@ Success.
 
 ##### Type:
 
- `IList[User]`
+ `JObject`
 
 ```json
-[
-  {
-    "Id": "Id",
-    "GivenName": "Name",
-    "Surname": "Surname",
-    "Name": "Name",
-    "Email": "user@company.com",
-    "ContactEmail": "user@company.com",
-    "ContactGivenName": "Name",
-    "ContactSurname": "Surname",
-    "ExternalUserId": "ExternalUserId",
-    "Preferences": "Preferences",
-    "Tenant": {
-      "Id": "Id",
-      "Alias": "Alias",
-      "State": "State",
-      "IsCloudConnectCustomer": false
-    },
-    "IdentityProvider": {
-      "Id": "Id",
-      "DisplayName": "Name",
-      "Scheme": "Scheme",
-      "UserIdClaimType": "UserIdClaimType"
-    }
-  },
-  {
-    "Id": "Id",
-    "GivenName": "Name",
-    "Surname": "Surname",
-    "Name": "Name",
-    "Email": "user@company.com",
-    "ContactEmail": "user@company.com",
-    "ContactGivenName": "Name",
-    "ContactSurname": "Surname",
-    "ExternalUserId": "ExternalUserId",
-    "Preferences": "Preferences",
-    "Tenant": {
-      "Id": "Id",
-      "Alias": "Alias",
-      "State": "State",
-      "IsCloudConnectCustomer": false
-    },
-    "IdentityProvider": {
-      "Id": "Id",
-      "DisplayName": "Name",
-      "Scheme": "Scheme",
-      "UserIdClaimType": "UserIdClaimType"
-    }
-  }
-]
-```
-
-#### 207
-
-Partial success.
-
-##### Type:
-
- `MultiStatusResponseDto[IList[UserStatusDto]]`
-
-```json
-{
-  "OperationId": "OperationId",
-  "Error": "Error",
-  "Reason": "Reason",
-  "ChildErrors": [
-    {
-      "OperationId": "OperationId",
-      "Error": "Error",
-      "Reason": "Reason",
-      "Resolution": "Resolution",
-      "StatusCode": 0,
-      "ModelId": {
-        "String": "String"
-      },
-      "TenantId": "TenantId"
-    },
-    {
-      "OperationId": "OperationId",
-      "Error": "Error",
-      "Reason": "Reason",
-      "Resolution": "Resolution",
-      "StatusCode": 0,
-      "ModelId": {
-        "String": "String"
-      },
-      "TenantId": "TenantId"
-    }
-  ],
-  "Data": [
-    {
-      "InvitationStatus": 0,
-      "User": {
-        "Id": "Id",
-        "GivenName": "Name",
-        "Surname": "Surname",
-        "Name": "Name",
-        "Email": "user@company.com",
-        "ContactEmail": "user@company.com",
-        "ContactGivenName": "Name",
-        "ContactSurname": "Surname",
-        "ExternalUserId": "ExternalUserId",
-        "Preferences": "Preferences",
-        "Tenant": {
-          "Id": "Id",
-          "Alias": "Alias",
-          "State": "State",
-          "IsCloudConnectCustomer": false
-        },
-        "IdentityProvider": {
-          "Id": "Id",
-          "DisplayName": "Name",
-          "Scheme": "Scheme",
-          "UserIdClaimType": "UserIdClaimType"
-        }
-      }
-    },
-    {
-      "InvitationStatus": 0,
-      "User": {
-        "Id": "Id",
-        "GivenName": "Name",
-        "Surname": "Surname",
-        "Name": "Name",
-        "Email": "user@company.com",
-        "ContactEmail": "user@company.com",
-        "ContactGivenName": "Name",
-        "ContactSurname": "Surname",
-        "ExternalUserId": "ExternalUserId",
-        "Preferences": "Preferences",
-        "Tenant": {
-          "Id": "Id",
-          "Alias": "Alias",
-          "State": "State",
-          "IsCloudConnectCustomer": false
-        },
-        "IdentityProvider": {
-          "Id": "Id",
-          "DisplayName": "Name",
-          "Scheme": "Scheme",
-          "UserIdClaimType": "UserIdClaimType"
-        }
-      }
-    }
-  ]
-}
-```
-
-#### 400
-
-Missing or invalid inputs
-
-#### 401
-
-Unauthorized
-
-#### 403
-
-Forbidden
-
-#### 404
-
-Tenant not found
-
-#### 500
-
-Internal server error
-***
-
-## `Get User's Preferences`
-
-Returns a user's preferences
-
-### Request
-
-`GET api/Tenant/{tenantId}/Users/{userId}/Preferences`
-
-### Parameters
-
-```csharp
-string tenantId [FromRoute] [Required] [No-Default]
-```
-
-Id of Tenant
-
-```csharp
-string userId [FromRoute] [Required] [No-Default]
-```
-
-Id of User
-
-### Security
-
-Allowed for these roles:
-
-- `Account Administrator`
-- `Account Member`
-- `Cluster Operator`
-- `Cluster Support`
-
-### Returns
-
-#### 200
-
-Success
-
-##### Type:
-
- `System.String`
-
-```json
-string
+{}
 ```
 
 #### 401
 
-Unauthorized
+Unauthorized.
 
 #### 403
 
-Forbidden
+Forbidden.
 
 #### 404
 
-User or Tenant not found
+User or Tenant not found.
 
 #### 500
 
-Internal server error
+Internal server error.
 ***
 
 ## `Update User's Preferences`
 
-Put a user's preferences
+Update preferences for a User.
 
 ### Request
 
-`PUT api/Tenant/{tenantId}/Users/{userId}/Preferences`
+`PUT api/v1/Tenants/{tenantId}/Users/{userId}/Preferences`
 
 ### Parameters
 
 ```csharp
-string tenantId [FromRoute] [Required] [No-Default]
+[Required]
+string tenantId
 ```
 
-Id of Tenant
+Id of Tenant.
 
 ```csharp
-string userId [FromRoute] [Required] [No-Default]
+[Required]
+Guid userId
 ```
 
-Id of User
+Id of User.
 
 ```csharp
-string preferences [FromQuery] [Required] [No-Default]
+[FromBody]
+[Required]
+JObject preferences
 ```
 
-Preferences
+JSON object preferences.
+
+```json
+{}
+```
 
 ### Security
 
@@ -1039,291 +690,98 @@ Allowed for these roles:
 
 - `Account Administrator`
 - `Account Member`
-- `Cluster Operator`
 
 ### Returns
 
 #### 200
 
-Success
+Success.
 
 ##### Type:
 
- `System.String`
+ `JObject`
 
 ```json
-string
+{}
 ```
 
 #### 400
 
-Missing preferences
+Missing preferences.
 
 #### 401
 
-Unauthorized
+Unauthorized.
 
 #### 403
 
-Forbidden
+Forbidden.
 
 #### 404
 
-User or Tenant not found
+User or Tenant not found.
+
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
 
 #### 500
 
-Internal server error
+Internal server error.
 ***
 
 ## `Create User`
 
-Creates a `User <User>`
+Create a User in the Tenant. This endpoint does not create an invitation for the User.
+            You will need to create an invitation in the respective endpoint for this User, otherwise
+            they will not be able to finish the sign-up process. Users have unique Ids in a Tenant.
+            Currently there is a limit of 50000 users per Tenant.
+            For Windows Active Directory users, the externalUserId must be specified.
 
 ### Request
 
-`POST api/Tenant/{tenantId}/Users`
+`POST api/v1/Tenants/{tenantId}/Users`
 
 ### Parameters
 
 ```csharp
-string tenantId [FromRoute] [Required] [No-Default]
+[Required]
+string tenantId
 ```
 
-Id of Tenant
+Id of Tenant.
 
 ```csharp
-UserCreateDto userCreateDto [FromBody] [Required] [No-Default]
+[FromBody]
+[Required]
+UserCreateOrUpdate userCreateOrUpdate
 ```
 
-User data transfer object
+UserCreateOrUpdate object.
+
+Property | Type | Required | Description 
+ --- | --- | --- | ---
+Id | Guid | No | Gets or sets user Id for the user. When creating a user, if User ID is not specified, one will be generated.
+ExternalUserId | string | No | Gets or sets user ExternalUserId for the user. Must be specified if Identity Provider is Windows Active Directory.
+ContactGivenName | string | No | Gets or sets preferred name to be used when contacting user.
+ContactSurname | string | No | Gets or sets preferred surname to be used when contacting user.
+ContactEmail | string | No | Gets or sets preferred contact email to be used. This does not have to be the same as the user's Identity Provider email.
+IdentityProviderId | Guid | No | Gets or sets Identity Provider this user will be required to use to login.  If null, the Identity Provider Id will            be set when creating the Invitation.
+RoleIds | Guid[] | No | Gets or sets list of strings of RoleIds.
+
+
 
 ```json
 {
-  "ContactGivenName": "Name",
-  "ContactSurname": "Surname",
-  "ContactEmail": "user@company.com",
-  "RoleIds": [
-    "String",
-    "String"
-  ],
-  "CreateInvitation": false,
-  "InvitationExpiresDateTime": "2019-02-06T09:56:10.2713071-08:00"
-}
-```
-
-### Security
-
-Allowed for these roles:
-
-- `Account Administrator`
-- `Cluster Operator`
-
-### Returns
-
-#### 201
-
-Created
-
-##### Type:
-
- `User`
-
-```json
-{
-  "Id": "Id",
-  "GivenName": "Name",
-  "Surname": "Surname",
-  "Name": "Name",
-  "Email": "user@company.com",
-  "ContactEmail": "user@company.com",
-  "ContactGivenName": "Name",
-  "ContactSurname": "Surname",
+  "Id": "00000000-0000-0000-0000-000000000000",
   "ExternalUserId": "ExternalUserId",
-  "Preferences": "Preferences",
-  "Tenant": {
-    "Id": "Id",
-    "Alias": "Alias",
-    "State": "State",
-    "IsCloudConnectCustomer": false
-  },
-  "IdentityProvider": {
-    "Id": "Id",
-    "DisplayName": "Name",
-    "Scheme": "Scheme",
-    "UserIdClaimType": "UserIdClaimType"
-  }
-}
-```
-
-#### 400
-
-Missing or invalid inputs
-
-#### 401
-
-Unauthorized
-
-#### 403
-
-Forbidden
-
-#### 404
-
-Tenant not found
-
-#### 500
-
-Internal server error
-***
-
-## `Create User With ID`
-
-Creates a `User <User>` with an Id
-
-### Request
-
-`POST api/Tenant/{tenantId}/Users/{userId}`
-
-### Parameters
-
-```csharp
-string tenantId [FromRoute] [Required] [No-Default]
-```
-
-Id of Tenant
-
-```csharp
-string userId [FromRoute] [Required] [No-Default]
-```
-
-Id of `User <User>`
-
-```csharp
-UserCreateDto userCreateDto [FromBody] [Required] [No-Default]
-```
-
-User data transfer object
-
-```json
-{
   "ContactGivenName": "Name",
   "ContactSurname": "Surname",
   "ContactEmail": "user@company.com",
+  "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
   "RoleIds": [
-    "String",
-    "String"
-  ],
-  "CreateInvitation": false,
-  "InvitationExpiresDateTime": "2019-02-06T09:56:10.2777685-08:00"
-}
-```
-
-### Security
-
-Allowed for these roles:
-
-- `Account Administrator`
-
-### Returns
-
-#### 201
-
-Created
-
-##### Type:
-
- `User`
-
-```json
-{
-  "Id": "Id",
-  "GivenName": "Name",
-  "Surname": "Surname",
-  "Name": "Name",
-  "Email": "user@company.com",
-  "ContactEmail": "user@company.com",
-  "ContactGivenName": "Name",
-  "ContactSurname": "Surname",
-  "ExternalUserId": "ExternalUserId",
-  "Preferences": "Preferences",
-  "Tenant": {
-    "Id": "Id",
-    "Alias": "Alias",
-    "State": "State",
-    "IsCloudConnectCustomer": false
-  },
-  "IdentityProvider": {
-    "Id": "Id",
-    "DisplayName": "Name",
-    "Scheme": "Scheme",
-    "UserIdClaimType": "UserIdClaimType"
-  }
-}
-```
-
-#### 400
-
-Missing or invalid inputs
-
-#### 401
-
-Unauthorized
-
-#### 403
-
-Forbidden
-
-#### 404
-
-Tenant not found
-
-#### 409
-
-Conflict. Client already exists.
-
-#### 500
-
-Internal server error
-***
-
-## `Update User`
-
-Update a user
-
-### Request
-
-`PUT api/Tenant/{tenantId}/Users/{userId}`
-
-### Parameters
-
-```csharp
-string tenantId [FromRoute] [Required] [No-Default]
-```
-
-Id of tenant
-
-```csharp
-string userId [FromRoute] [Required] [No-Default]
-```
-
-Id of user
-
-```csharp
-UserUpdateDto userUpdateDto [FromBody] [Required] [No-Default]
-```
-
-A UserStatusDto object
-
-```json
-{
-  "ContactGivenName": "Name",
-  "ContactSurname": "Surname",
-  "ContactEmail": "user@company.com",
-  "Preferences": "Preferences",
-  "RoleIds": [
-    "String",
-    "String"
+    "00000000-0000-0000-0000-000000000000",
+    "00000000-0000-0000-0000-000000000000"
   ]
 }
 ```
@@ -1333,13 +791,12 @@ A UserStatusDto object
 Allowed for these roles:
 
 - `Account Administrator`
-- `Account Member`
 
 ### Returns
 
-#### 200
+#### 201
 
-Updated
+Created.
 
 ##### Type:
 
@@ -1347,7 +804,7 @@ Updated
 
 ```json
 {
-  "Id": "Id",
+  "Id": "00000000-0000-0000-0000-000000000000",
   "GivenName": "Name",
   "Surname": "Surname",
   "Name": "Name",
@@ -1356,64 +813,188 @@ Updated
   "ContactGivenName": "Name",
   "ContactSurname": "Surname",
   "ExternalUserId": "ExternalUserId",
-  "Preferences": "Preferences",
-  "Tenant": {
-    "Id": "Id",
-    "Alias": "Alias",
-    "State": "State",
-    "IsCloudConnectCustomer": false
-  },
-  "IdentityProvider": {
-    "Id": "Id",
-    "DisplayName": "Name",
-    "Scheme": "Scheme",
-    "UserIdClaimType": "UserIdClaimType"
-  }
+  "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
+  "RoleIds": [
+    "00000000-0000-0000-0000-000000000000",
+    "00000000-0000-0000-0000-000000000000"
+  ]
 }
 ```
 
 #### 400
 
-Missing or invalid inputs
+Missing or invalid inputs, or the User limit exceeded for Tenant.
 
 #### 401
 
-Unauthorized
+Unauthorized.
 
 #### 403
 
-Forbidden
+Forbidden.
 
 #### 404
 
-User or Tenant not found
+Tenant not found.
+
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
 
 #### 500
 
-Internal server error
+Internal server error.
 ***
 
-## `Delete User`
+## `Update User in a Tenant`
 
-Delete a user
+Update a User in a Tenant. The Id of a User cannot be changed.
 
 ### Request
 
-`DELETE api/Tenant/{tenantId}/Users/{userId}`
+`PUT api/v1/Tenants/{tenantId}/Users/{userId}`
 
 ### Parameters
 
 ```csharp
-string tenantId [FromRoute] [Required] [No-Default]
+[Required]
+string tenantId
 ```
 
-Id of tenant
+Id of Tenant.
 
 ```csharp
-string userId [FromRoute] [Required] [No-Default]
+[Required]
+Guid userId
 ```
 
-Id of user
+Id of User.
+
+```csharp
+[FromBody]
+[Required]
+UserCreateOrUpdate userCreateOrUpdate
+```
+
+UserCreateOrUpdate object. Properties that are not set or are null will not be changed.
+
+Property | Type | Required | Description 
+ --- | --- | --- | ---
+Id | Guid | No | Gets or sets user Id for the user. When creating a user, if User ID is not specified, one will be generated.
+ExternalUserId | string | No | Gets or sets user ExternalUserId for the user. Must be specified if Identity Provider is Windows Active Directory.
+ContactGivenName | string | No | Gets or sets preferred name to be used when contacting user.
+ContactSurname | string | No | Gets or sets preferred surname to be used when contacting user.
+ContactEmail | string | No | Gets or sets preferred contact email to be used. This does not have to be the same as the user's Identity Provider email.
+IdentityProviderId | Guid | No | Gets or sets Identity Provider this user will be required to use to login.  If null, the Identity Provider Id will            be set when creating the Invitation.
+RoleIds | Guid[] | No | Gets or sets list of strings of RoleIds.
+
+
+
+```json
+{
+  "Id": "00000000-0000-0000-0000-000000000000",
+  "ExternalUserId": "ExternalUserId",
+  "ContactGivenName": "Name",
+  "ContactSurname": "Surname",
+  "ContactEmail": "user@company.com",
+  "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
+  "RoleIds": [
+    "00000000-0000-0000-0000-000000000000",
+    "00000000-0000-0000-0000-000000000000"
+  ]
+}
+```
+
+### Security
+
+Allowed for these roles:
+
+- `Account Administrator`
+
+### Returns
+
+#### 200
+
+Updated.
+
+##### Type:
+
+ `User`
+
+```json
+{
+  "Id": "00000000-0000-0000-0000-000000000000",
+  "GivenName": "Name",
+  "Surname": "Surname",
+  "Name": "Name",
+  "Email": "user@company.com",
+  "ContactEmail": "user@company.com",
+  "ContactGivenName": "Name",
+  "ContactSurname": "Surname",
+  "ExternalUserId": "ExternalUserId",
+  "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
+  "RoleIds": [
+    "00000000-0000-0000-0000-000000000000",
+    "00000000-0000-0000-0000-000000000000"
+  ]
+}
+```
+
+#### 400
+
+Missing or invalid inputs.
+
+#### 401
+
+Unauthorized.
+
+#### 403
+
+Forbidden.
+
+#### 404
+
+User or Tenant not found.
+
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
+
+#### 500
+
+Internal server error.
+***
+
+## `Delete User in a Tenant`
+
+Delete a User. Admins cannot delete themselves.
+            Deleting a User does not invalidate any of the
+            existing access tokens, but it prevents this User
+            from being able to authenticate in the future.
+            Existing access tokens for the User will be valid
+            until their expiration date. Refresh tokens on
+            behalf of the ser will no longer be valid after the
+            User has been deleted.
+
+### Request
+
+`DELETE api/v1/Tenants/{tenantId}/Users/{userId}`
+
+### Parameters
+
+```csharp
+[Required]
+string tenantId
+```
+
+Id of Tenant.
+
+```csharp
+[Required]
+Guid userId
+```
+
+Id of User.
 
 ### Security
 
@@ -1425,216 +1006,206 @@ Allowed for these roles:
 
 #### 204
 
-Deleted
+Deleted.
 
 #### 401
 
-Unauthorized
+Unauthorized.
 
 #### 403
 
-Forbidden
+Forbidden.
 
 #### 404
 
-User or Tenant not found
+User or Tenant not found.
+
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
 
 #### 500
 
-Internal server error
+Internal server error.
 ***
 
-## `Get User's Invitation`
+## `Get Header for User`
 
-Get the invitations for a user
+Validate that a User exists. This endpoint is identical to the GET
+            one, but it does not return an object in the body.
 
 ### Request
 
-`GET api/Tenant/{tenantId}/Users/{userId}/Invitation`
+`HEAD api/v1/Tenants/{tenantId}/Users/{userId}`
 
 ### Parameters
 
 ```csharp
-string tenantId [FromRoute] [Required] [No-Default]
+[Required]
+string tenantId
 ```
 
-Id of tenant
+Id of Tenant.
 
 ```csharp
-string userId [FromRoute] [Required] [No-Default]
+[Required]
+Guid userId
 ```
 
-Id of user
-
-```csharp
-bool includeExpiredInvitations [FromQuery] [Optional] [Default = False]
-```
-
-Specify to return expired invitations
+Id of User.
 
 ### Security
 
 Allowed for these roles:
 
 - `Account Administrator`
-- `Cluster Operator`
-- `Cluster Support`
+- `Account Member`
 
 ### Returns
 
 #### 200
 
-Success
+User exists.
 
 ##### Type:
 
- `Invitation`
-
-```json
-{
-  "Id": "Id",
-  "Issued": "2019-02-06T09:56:10.2907473-08:00",
-  "Expires": "2019-02-06T09:56:10.2907519-08:00",
-  "State": 0,
-  "TenantId": "TenantId",
-  "Tenant": {
-    "Id": "Id",
-    "Alias": "Alias",
-    "State": "State",
-    "IsCloudConnectCustomer": false
-  },
-  "UserId": "UserId",
-  "User": {
-    "Id": "Id",
-    "GivenName": "Name",
-    "Surname": "Surname",
-    "Name": "Name",
-    "Email": "user@company.com",
-    "ContactEmail": "user@company.com",
-    "ContactGivenName": "Name",
-    "ContactSurname": "Surname",
-    "ExternalUserId": "ExternalUserId",
-    "Preferences": "Preferences",
-    "Tenant": {
-      "Id": "Id",
-      "Alias": "Alias",
-      "State": "State",
-      "IsCloudConnectCustomer": false
-    },
-    "IdentityProvider": {
-      "Id": "Id",
-      "DisplayName": "Name",
-      "Scheme": "Scheme",
-      "UserIdClaimType": "UserIdClaimType"
-    }
-  }
-}
-```
+ `Void`
 
 #### 401
 
-Unauthorized
+Unauthorized.
 
 #### 403
 
-Forbidden
+Forbidden.
 
 #### 404
 
-Invitation, User, or Tenant not found
+User does not exist.
 
 #### 500
 
-Internal server error
+Internal server error.
 ***
 
-## `Find User By Tenant ID`
+## `Get Total Count of Users`
 
-Search for an external user in a tenant
+Return total number of users in a Tenant. Optionally, check based on a list of requested users.
+            The value will be set in the Total-Count header. This endpoint is identical to the GET one but
+            it does not return any objects in the body.
 
 ### Request
 
-`GET api/Tenant/{tenantId}/Users/Search`
+`HEAD api/v1/Tenants/{tenantId}/Users`
 
 ### Parameters
 
 ```csharp
-string tenantId [FromRoute] [Required] [No-Default]
+[Required]
+string tenantId
 ```
 
-Id of tenant
+Id of Tenant.
 
 ```csharp
-string identityProviderScheme [FromQuery] [Required] [No-Default]
+[FromQuery]
+[Optional]
+[Default = ""]
+Guid[] id
 ```
 
-Identity provider scheme
-
-```csharp
-string externalUserId [FromQuery] [Required] [No-Default]
-```
-
-User external Id
+Unordered list of User Ids.
 
 ### Security
 
 Allowed for these roles:
 
 - `Account Administrator`
-- `Cluster Operator`
-- `Cluster Support`
+- `Account Member`
 
 ### Returns
 
 #### 200
 
-Success
+Success.
 
 ##### Type:
 
- `User`
-
-```json
-{
-  "Id": "Id",
-  "GivenName": "Name",
-  "Surname": "Surname",
-  "Name": "Name",
-  "Email": "user@company.com",
-  "ContactEmail": "user@company.com",
-  "ContactGivenName": "Name",
-  "ContactSurname": "Surname",
-  "ExternalUserId": "ExternalUserId",
-  "Preferences": "Preferences",
-  "Tenant": {
-    "Id": "Id",
-    "Alias": "Alias",
-    "State": "State",
-    "IsCloudConnectCustomer": false
-  },
-  "IdentityProvider": {
-    "Id": "Id",
-    "DisplayName": "Name",
-    "Scheme": "Scheme",
-    "UserIdClaimType": "UserIdClaimType"
-  }
-}
-```
+ `Void`
 
 #### 401
 
-Unauthorized
+Unauthorized.
 
 #### 403
 
-Forbidden
+Forbidden.
 
 #### 404
 
-User or Tenant not found
+User not found.
 
 #### 500
 
-Internal server error
+Internal server error.
+***
+
+## `Get Header for User's Preferences`
+
+Validate that there are preferences for a User. This endpoint is identical
+            to the GET one but it does not return any objects in the body.
+
+### Request
+
+`HEAD api/v1/Tenants/{tenantId}/Users/{userId}/Preferences`
+
+### Parameters
+
+```csharp
+[Required]
+string tenantId
+```
+
+Id of Tenant.
+
+```csharp
+[Required]
+Guid userId
+```
+
+Id of User.
+
+### Security
+
+Allowed for these roles:
+
+- `Account Administrator`
+- `Account Member`
+
+### Returns
+
+#### 200
+
+Success.
+
+##### Type:
+
+ `Void`
+
+#### 401
+
+Unauthorized.
+
+#### 403
+
+Forbidden.
+
+#### 404
+
+User or Tenant not found.
+
+#### 500
+
+Internal server error.
 ***
 

@@ -26,18 +26,19 @@ For HTTP requests and responses, the TenantFeatureState object has the following
 ```
 ***
 
-## `GetAll()`
+## `Get All Tenant Feature States`
 
-Retrieves all `FeatureStates` for the specified `Tenant`.
+Retrieves all instances of `FeatureState` for the specified `Tenant`.
 
 ### Http
 
-`GET api/v1-preview/Tenants/{tenantId}/Features`
+`GET api/v1/Tenants/{tenantId}/Features`
 
 ### Parameters
 
 ```csharp
 [Required]
+[FromRoute]
 string tenantId
 ```
 
@@ -52,30 +53,33 @@ Authorized for Account Members of the specified account.
 
 | Status Code | Return Type | Description | 
  | --- | --- | ---  | 
-| 200 | [FeatureState] | Returns a list of `FeatureStates` for the specified account. | 
-| 400 | Nothing is returned | Unable to retrieve `FeatureStates` due to missing or invalid input. | 
-| 403 | Nothing is returned | Unauthorized to retrieve `FeatureStates` for the specified account. | 
+| 200 | [FeatureState] | Returns a list of `FeatureState` for the specified `Tenant`. | 
+| 400 | Nothing is returned | Unable to retrieve `FeatureState` instances due to missing or invalid input. | 
+| 403 | Nothing is returned | Unauthorized to retrieve `FeatureState` instances for the specified `Tenant`. | 
 
 
 ***
-## `Get()`
+
+## `Get Tenant Feature State`
 
 Retrieves a `FeatureState` with the specified ID from a `Tenant`.
 
 ### Http
 
-`GET api/v1-preview/Tenants/{tenantId}/Features/{id}`
+`GET api/v1/Tenants/{tenantId}/Features/{id}`
 
 ### Parameters
 
 ```csharp
 [Required]
+[FromRoute]
 string tenantId
 ```
 
 The identifier of the account to access.
 ```csharp
 [Required]
+[FromRoute]
 string id
 ```
 
@@ -96,3 +100,4 @@ Authorized for Account Members of the specified account.
 
 
 ***
+

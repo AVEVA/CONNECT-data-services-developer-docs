@@ -1427,11 +1427,11 @@ The namespace identifier
 `string typeId`  
 The type identifier  
 
-**Response**  
-The response includes a status code.
-
 **Request body**  
 Serialized ACL
+
+**Response**  
+The response includes a status code.
 
 **.NET Library**
 ```csharp

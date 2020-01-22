@@ -1,12 +1,12 @@
 - name: Data Views API Overview
   href: Data_Views_API_Overview.md
-- name: Introduction: Define a Data View
+- name: Introduction - Define a Data View
   href: Introduction_Define_a_Data_View.md
-- name: Quick Start: Define a Data View
+- name: Quick Start - Define a Data View
   href: Quick_Start_Define_a_Data_View.md
-- name: Introduction: Get Data View Data
+- name: Introduction - Get Data View Data
   href: Introduction_Get_Data_View_Data.md
-- name: Quick Start: Get Data View Data
+- name: Quick Start - Get Data View Data
   href: Quick_Start_Get_Data_View_Data.md
 - name: Example Scenario
   href: Example_Scenario.md

@@ -4,8 +4,7 @@ uid: sdsSearching
 
 Searching
 =====================
-Search in SDS provides a way to search text, fields, etc. across the Sequential Data Store. This document covers the 
-searching for SdsStreams, SdsTypes, and SdsStreamViews.
+Search in SDS provides a way to search text, fields, etc. across the Sequential Data Store. This document covers the searching for SdsStreams, SdsTypes, and SdsStreamViews.
 
 Searching for Streams
 =====================

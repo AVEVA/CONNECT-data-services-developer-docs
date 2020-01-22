@@ -25,4 +25,3 @@ Each data view can be individually [access-controlled](xref:DataViewsSecuringDat
 [Data view data](xref:DataViewsGettingData) is available via queries to the RESTful data views [data API resource](xref:DataViewsDataAPI). 
 
 To understand the source of each data field, inspect how the data view [resolved](xref:ResolvedDataView).
-

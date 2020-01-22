@@ -15,7 +15,7 @@ Resources for creating, reading, updating, and deleting `/DataViews`
 ## [Resolved Data View API](xref:ResolvedDataViewAPI)
 For each `/DataViews/{dataViewId}`, these resources show how the data view `./Resolved/` for your user context
 
-## [Data API](xref:DataViewDataAPI)
+## [Data API](xref:DataViewsDataAPI)
 For each `/DataViews/{dataViewId}`, resources for getting the `./Data/` for a particular time range
 
 ## [Access Control API](xref:DataViewsAccessControlAPI)

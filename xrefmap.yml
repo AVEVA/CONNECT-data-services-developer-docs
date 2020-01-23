@@ -137,7 +137,7 @@ references:
   name: Indexes
   href: Documentation/SequentialDataStore/indexes.html
 - uid: sdsQuickStart
-  name: Quick Start
+  name: 'Quick Start: Sequential Data Store'
   href: Documentation/SequentialDataStore/Quick_Start.html
 - uid: sdsReadingData
   name: Reading data

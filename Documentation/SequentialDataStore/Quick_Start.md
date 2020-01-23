@@ -341,7 +341,7 @@ Temporary service interruptions are a fact of life in real-world cloud applicati
 If you access SDS with .NET client libraries methods, transient fault handling is built in; 
 the SDS client automatically retries error codes identified as transient.
 
-If you are directly calling into the OCS endpoint through SDS APIs (not using .NET), you should 
+If you are directly calling into the OCS through SDS REST APIs (not using .NET), you should 
 consider creating your own retry logic to handle errors identified as transient.
 In this case, we recommend a logic which returns HTTP status code ``503: Service Unavailable``:
 an immediate first retry followed by an exponential backoff.

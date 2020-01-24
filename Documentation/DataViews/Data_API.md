@@ -6,11 +6,11 @@ uid: DataViewsDataAPI
 The Data API allows users to [retrieve data](xref:DataViewsGettingData) for a specified data view.  This API is one portion of the [data views API](xref:DataViewsAPIOverview).
 
 
-## Get Data View Data
+## `Get Data View Data`
 Get data for the provided index parameters with paging. See [documentation on paging](xref:DataViewsGettingData#paging) for further information.
 
 ### Request
-```
+```text
 GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{dataViewId}/data/interpolated?startIndex={startIndex}&endIndex={endIndex}&interval={interval}&form={form}&continuationToken={continuationToken}&cache={cache}&count={count}
 
 ```
@@ -70,7 +70,7 @@ Successful (200 OK) responses include one or more header values related to pagin
 
 #### Example response body in default format
 An array of json values. Each json property corresponds to a field mapping. Property names are the field mapping `.Id`s.
-```
+```json
 HTTP 200 OK
 [
     {
@@ -94,24 +94,24 @@ HTTP 200 OK
 ]
 ```
 #### Example response body with `form=table`
-```
+```json
 HTTP 200 OK
 {
    "Columns": [
       {
-          "Name": "Time"
+          "Name": "Time",
           "Type": "DateTime"
       },
       {
-          "Name": "Temperature"
+          "Name": "Temperature",
           "Type": "Int32"
       },
       {
-          "Name": "Flowrate"
+          "Name": "Flowrate",
           "Type": "Int32"
       },
       {
-          "Name": "Volume"
+          "Name": "Volume",
           "Type": "Int32"
       }
   ],
@@ -139,24 +139,24 @@ HTTP 200 OK
 ```
 
 #### Example response body with `form=tableh`
-```
+```json
 HTTP 200 OK
 {
   "Columns": [
       {
-          "Name": "Time"
+          "Name": "Time",
           "Type": "DateTime"
       },
       {
-          "Name": "Temperature"
+          "Name": "Temperature",
           "Type": "Int32"
       },
       {
-          "Name": "Flowrate"
+          "Name": "Flowrate",
           "Type": "Int32"
       },
       {
-          "Name": "Volume"
+          "Name": "Volume",
           "Type": "Int32"
       }
   ],
@@ -190,7 +190,7 @@ HTTP 200 OK
 ```
 
 #### Example response body with `form=csv`
-```
+```csv
 HTTP 200 OK
 2018-01-01T00:00:00Z,24,44,245
 2018-01-01T00:00:01Z,24,44,245
@@ -198,7 +198,7 @@ HTTP 200 OK
 ```
 
 #### Example response body with `form=csvh`
-```
+```csv
 HTTP 200 OK
 Time,Temperature,Flowrate,Volume
 2018-01-01T00:00:00Z,24,44,245

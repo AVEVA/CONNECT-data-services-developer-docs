@@ -20,5 +20,5 @@ If data spans into additional page(s), the current page response will include an
 - If the current page of data includes a NextPage hyperlink, keep following the hyperlinks to retrieve the full requested dataset page by page.
 - In rare circumstances it may be necessary to restart the paging operation from the first page. In this case, follow the FirstPage hyperlink.
 
-## (Optional) Investigate the source of the data
+## [Optional] Investigate the source of the data
 - For precise information about the provenance of each field's data, see the data view's resolved field mappings.

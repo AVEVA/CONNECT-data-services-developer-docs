@@ -73,8 +73,6 @@ Holds an item that was resolved at a specific time.
 | TimeOfResolution | DateTimeOffset | The time the item was resolved |
 
 ### DataItem
-
-
 |Property | Type | Details |
 |--|--|--|--|--|
 | Id | string | Unique identifier 

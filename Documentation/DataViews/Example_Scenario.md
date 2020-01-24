@@ -71,7 +71,7 @@ Metadata: {
             "Nominal Power MW": "1.21"
           }
 ```
-## Weather streams
+## Weather Streams
 These streams simulate data collected via OMF from a weather station. There are two "generations" represented: Gen2 adds one property and renames another, as compared to Gen1.
 
 #### Tags and Metadata

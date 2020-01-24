@@ -7,11 +7,11 @@ uid: DataViewsAccessControlAPI
 This portion of the [overall data views API](xref:DataViewsAPIOverview) focuses on [securing data views](xref:DataViewsSecuringDataViews) by setting their ownership and permissions.
 
 
-## Get Data Views Access Control List
+## `Get Data Views Access Control List`
 Get the default [`AccessControlList`](xref:accessControl#access-control-lists) for the DataViews collection.
 
 ### Request
-```
+```text
 GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/DataViews
 ```
 ### Parameters
@@ -31,7 +31,7 @@ The response includes a status code and a body.
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
 
 #### Example response body
-```
+```json
 HTTP 200 OK
 {
   "RoleTrusteeAccessControlEntries": 
@@ -64,10 +64,11 @@ HTTP 200 OK
 }
 ```
 
-## Update Data Views Access Control List
+## `Update Data Views Access Control List`
 Update the default [`AccessControlList`](xref:accessControl#access-control-lists) for the DataViews collection.
+
 ### Request
-```
+```text
 PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/DataViews
 ```
 ### Parameters
@@ -81,7 +82,7 @@ The namespace identifier
 An [`AccessControlList`](xref:accessControl#access-control-lists)
 
 #### Example request body
-```
+```json
 {
   "RoleTrusteeAccessControlEntries": 
   [
@@ -123,11 +124,11 @@ The response includes a status code and, in some cases, a body.
 | 403 Forbidden | error | You are not authorized to update the data views collection's default access control list |
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
 
-## Get Data View Access Control List
+## `Get Data View Access Control List`
 Get the [`AccessControlList`](xref:accessControl#access-control-lists) of the specified data view.
 
 ### Request
-```
+```text
 GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/AccessControl
 ```
 ### Parameters
@@ -151,7 +152,7 @@ The response includes a status code and a body.
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
 
 #### Example response body
-```
+```json
 HTTP 200 OK
 {
   "RoleTrusteeAccessControlEntries": 
@@ -184,11 +185,11 @@ HTTP 200 OK
 }
 ```
 
-## Update Data View Access Control List
+## `Update Data View Access Control List`
 Update the [`AccessControlList`](xref:accessControl#access-control-lists) of the specified data view.
 
 ### Request
-```
+```text
 PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/AccessControl
 ```
 ### Parameters
@@ -205,7 +206,7 @@ The data view identifier
 An [`AccessControlList`](xref:accessControl#access-control-lists)
 
 #### Example request body
-```
+```json
 {
   "RoleTrusteeAccessControlEntries": 
   [
@@ -248,11 +249,11 @@ The response includes a status code and, in some cases, a body.
 | 404 Not Found | error | The requested data view was not found
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
 
-## Get Data View Access Rights
+## `Get Data View Access Rights`
 Get the calling user or client's access rights to the requested data view
 
 ### Request
-```
+```text
 GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/AccessRights
 ```
 ### Parameters
@@ -276,7 +277,7 @@ The response includes a status code and a body.
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
 
 #### Example response body
-```
+```json
 HTTP 200 OK
 [
   "Read",
@@ -287,11 +288,11 @@ HTTP 200 OK
 ]
 ```
 
-## Get Data View Owner
+## `Get Data View Owner`
 Get the owner [`Trustee`](xref:accessControl#owner) of the specified data view.
 
 ### Request
-```
+```text
 GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/owner
 ```
 ### Parameters
@@ -315,7 +316,7 @@ The response includes a status code and a body.
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
 
 #### Example response body
-```
+```json
 HTTP 200 OK
 Content-Type: application/json
 {
@@ -325,11 +326,11 @@ Content-Type: application/json
 }
 ```
 
-## Update Data View Owner
+## `Update Data View Owner`
 Update the owner [`Trustee`](xref:accessControl#owner) of the specified data view.
 
 ### Request
-```
+```text
 PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/owner
 ```
 ### Parameters
@@ -344,8 +345,9 @@ The data view identifier
 
 ### Request body
 A [`Trustee`](xref:accessControl#owner)
+
 #### Example request body
-```
+```json
 {
     "Type": 1,
     "TenantId": "55555555-5555-5555-5555-555555555555",

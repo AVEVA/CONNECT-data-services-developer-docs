@@ -11,11 +11,11 @@ For a description of the `DataView` object type, see that [documentation](xref:D
 Other sections of documentation describe how to [secure data views](xref:DataViewsSecuringDataViews) by setting their ownership and permissions, and the corresponding [API](xref:DataViewsAccessControlAPI).
 
 
-## Get Data View
+## `Get Data View`
 Returns the specified data view.
 
 ### Request
-```
+```text
 GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}
 ```
 ### Parameters
@@ -40,7 +40,7 @@ The response includes a status code and a response body.
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
 
 #### Example response body
-```
+```json
 HTTP 200 OK
 Content-Type: application/json
 {
@@ -60,11 +60,11 @@ Content-Type: application/json
 }
 ```
 
-## Get Data Views
-Get all data views. Paged.
+## `Get Data Views`
+Returns a list of data views.
 
 ### Request
-```
+```text
 GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews?skip={skip}&count={count}
 ```
 ### Parameters
@@ -97,7 +97,7 @@ Successful (200 OK) responses include:
 | Total-Count | The total count of data views visible to the current user |
 
 #### Example response body
-```
+```json
 HTTP 200 OK
 Content-Type: application/json
 [
@@ -112,10 +112,10 @@ Content-Type: application/json
 ]
 ```
 
-## Create Data View
+## `Create Data View`
 Create a new data view with a system-generated identifier.
 ### Request
-```
+```text
 POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews
 ```
 ### Parameters
@@ -129,7 +129,7 @@ The namespace identifier
 A `DataView` object whose `Id` is `null` or unspecified.
 
 #### Example request body
-```
+```json
 {
   "Name": "demo",
   "Description": "demonstration",
@@ -152,7 +152,7 @@ The response includes a status code and a body.
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
 
 #### Example response body
-```
+```json
 HTTP 200 OK
 Content-Type: application/json
 {
@@ -167,11 +167,11 @@ Content-Type: application/json
 }
 ```
 
-## Get or Create Data View
+## `Get or Create Data View`
 Creates the specified data view. If a data view with the same id already exists, the existing data view is compared with the specified data view. If they are identical, a redirect (`302 Found`) is returned with the `Location` response header indicating the URL where the stream may be retrieved using a Get function. If the data views do not match, the request fails with `409 Conflict`.
 
 ### Request
-```
+```text
 POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}
 ```
 ### Parameters
@@ -188,7 +188,7 @@ The data view identifier
 A `DataView` object whose `Id` matches the `dataViewId` in the URL.
 
 #### Example request body
-```
+```json
 {
   "Id": "demo2",
   "Name": "demo2",
@@ -215,7 +215,7 @@ The response includes a status code and, in most cases, a body.
 
 #### Example response body
 
-```
+```json
 HTTP 201 Created
 Content-Type: application/json
 {
@@ -230,11 +230,11 @@ Content-Type: application/json
 }
 ```
 
-## Create or Update Data View
+## `Create or Update Data View`
 If a data view with the same id already exists, it is updated to the specified value. Otherwise, a new data view is created.
 
 ### Request
-```
+```text
 PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}
 ```
 ### Parameters
@@ -251,7 +251,7 @@ The data view identifier
 A `DataView` object whose `Id` matches the `dataViewId` in the URL.
 
 #### Example request body
-```
+```json
 {
   "Id": "demo",
   "Name": "demo",
@@ -274,11 +274,11 @@ The response includes a status code and, in some cases, a body.
 | 403 Forbidden | error | You are not authorized for this operation |
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
 
-## Delete Data View
+## `Delete Data View`
 Delete the data view with the specified id.
 
 ### Request
-```
+```text
 DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}
 ```
 ### Parameters

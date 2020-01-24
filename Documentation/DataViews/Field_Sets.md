@@ -35,7 +35,7 @@ Let us take a subset of the [example scenario](xref:DataViewsExampleScenario)'s 
 
 in a data view sectioned by "Meter", including fields for the sectioner value, and each data item's "Tags" and property "Value":
 
-```
+```json
 {
   "Id": "quickstart",
   "Queries": [
@@ -109,7 +109,7 @@ If the field set resolves to multiple data items in any section (or if sectionin
 
 To the data view from the previous example, we will add a `Field` as the `.Distinguisher` of its field set. In this example, it makes sense to distinguish each data item by its _Measurement_.
 
-```
+```json
 {
   "Id": "quickstart",
   "Queries": [

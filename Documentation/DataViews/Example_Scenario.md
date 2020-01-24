@@ -18,7 +18,7 @@ Data views are made to bring order to a tangle of data streams. Despite appearin
 These streams represent values collected via PI to OCS, originally collected by a PI System. Each stream value contains a timestamp _(Timestamp)_ and a measurement _(Value)_.
 
 #### Type
-```
+```json
   {
     "Id": "docs-pi-inverter",
     "Name": "Inverter",
@@ -40,7 +40,7 @@ These streams represent values collected via PI to OCS, originally collected by 
 ```
 #### Stream IDs
 16 inverter streams are defined:
-```
+```text
 "BILT.Meter.Primary.Inverter.0.PwrIn",
 "BILT.Meter.Primary.Inverter.0.PwrOut",
 "BILT.Meter.Primary.Inverter.1.PwrIn",
@@ -59,9 +59,8 @@ These streams represent values collected via PI to OCS, originally collected by 
 "WINT.Meter.Secondary.Inverter.0.PwrOut",
 ```
 #### Tags and Metadata
-```
 Each inverter stream has some descriptive tags assigned, and metadata key-values describing its function.
-
+```text
 Tags: some subset of [ "Commercial", "Residential", "Critical Asset" ]
 Metadata: { 
             "Site" : one of ( "Biltmore" | "Rosecliff" | "Winterthur" ),
@@ -76,14 +75,14 @@ These streams simulate data collected via OMF from a weather station. There are 
 
 #### Tags and Metadata
 Each weather stream has some descriptive tags assigned, and one metadata key-value indicating its Site. These are the same sites with which the inverters are associated.
-```
+```text
 Tags: some subset of [ "Weather", "Low Resolution", "High Resolution", "Gen1", "Gen2" ]
 Metadata: { "Site" : one of ( "Biltmore" | "Rosecliff" | "Winterthur" ) }
 ```
 
 ### Weather, Generation 1
 #### Type
-```
+```json
   {
     "Id": "docs-omf-weather-gen1",
     "Name": "WeatherGen1",
@@ -110,7 +109,7 @@ Metadata: { "Site" : one of ( "Biltmore" | "Rosecliff" | "Winterthur" ) }
 ```
 #### Stream IDs
 Two streams of this type are defined:
-```
+```text
 "WS_BILT",
 "WS_ROSE",
 ```
@@ -119,7 +118,7 @@ Two streams of this type are defined:
 The latest and greatest Gen2 weather stations report a new property, _Cloud Cover_, but also rename _Temperature_ to _Ambient Temperature_. They are otherwise similar to Gen1.
 
 #### Type
-```
+```json
   {
     "Id": "docs-omf-weather-gen2",
     "Name": "WeatherGen2",
@@ -152,6 +151,6 @@ The latest and greatest Gen2 weather stations report a new property, _Cloud Cove
 
 #### Stream IDs
 One stream of this type is defined:
-```
+```text
 "WS_WINT"
 ```

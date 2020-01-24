@@ -34,7 +34,7 @@ Available fields are organized into field sets according to their sources:
 ### 1. Data View without Sectioners
 
 The example uses the following data view and the streams from the [SDS Example Scenario](xref:DataViewsExampleScenario). Note that the field sets and the sectioners arrays are empty:
-```
+```json
 {
   "Id": "example_without_sectioners",
   "Name": "example_without_sectioners",
@@ -54,7 +54,7 @@ The example uses the following data view and the streams from the [SDS Example S
 
 Accessing the ```Get Available Field Sets``` endpoint will show available fields corresponding to stream id, name, tags, metadata, and each property. Since the index field set is not included in the data view, it is also shown as available.
 
-```
+```json
 HTTP 200 OK
 {
     "TimeOfResolution": "(a timestamp in ISO 8601 format)",
@@ -144,7 +144,7 @@ HTTP 200 OK
 
 ### 2. Data View with Sectioners
 This data view is the same as in the first example, except it also has a `sectioner`, which defines sectioning by the metadata key "Site":
-```
+```json
 {
   "Id": "example_with_sectioners",
   "Name": "example_with_sectioners",
@@ -171,7 +171,7 @@ This data view is the same as in the first example, except it also has a `sectio
 ```
 
 A field set with ```SourceType.SectionValue``` is now shown as one of the available field sets:
-```
+```json
 HTTP 200 OK
 {
     "TimeOfResolution": "2019-11-14T20:31:20.856826+00:00",

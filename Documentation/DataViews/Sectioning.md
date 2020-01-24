@@ -45,7 +45,7 @@ For the following examples, assume a subsection of the [example scenario](xref:D
 #### Example: No sectioning
 Let us start with a simple data view. It queries for the aforementioned streams, and includes the "Value" property of each stream.
 
-```
+```json
 {
   "Id": "quickstart",
   "Queries": [
@@ -89,7 +89,7 @@ A simple way of disambiguating the data items is to section them by data item id
 - Add data item id as a sectioner
 - Include fields for metadata: Site, Meter, Inverter, Measurement.
 
-```
+```json
 {
   "Id": "quickstart",
   "Queries": [
@@ -167,7 +167,7 @@ Instead of sectioning by data item id, let us section by metadata. We will:
 - Include a `FieldSet` of `.SourceType` `FieldSetSourceType.SectionValue`, with a `Field` to show each sectioner's value
 - Use the `Field` for Measurement metadata as the data item `FieldSet`'s `.Distinguisher`
 
-```
+```json
 {
   "Id": "quickstart",
   "Queries": [
@@ -261,7 +261,7 @@ Another use of sectioning is to "join" the data items returned by different quer
 - Add a new `FieldSet` for the data items from the "site weather" query, with `Field`s for "SolarRadiation" and "Temperature"
 - 
 
-```
+```json
 {
   "Id": "quickstart",
   "Queries": [

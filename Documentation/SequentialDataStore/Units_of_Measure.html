@@ -1785,17 +1785,17 @@
 <hr>
 <h2 id="get-quantity"><code>Get Quantity</code></h2>
 <p>Returns the quantity corresponding to the specified quantityId within a given namespace.</p>
-<h4 id="request">Request####</h4>
+<h4 id="request">Request</h4>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Quantities/<wbr>{quantityId}
-</code></pre><h5 id="parameters">Parameters#####</h5>
+</code></pre><h5 id="parameters">Parameters</h5>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string quantityId</code><br>The quantity identifier</p>
-<h4 id="response">Response####</h4>
+<h4 id="response">Response</h4>
 <p>The response includes a status code and a response body.</p>
-<h4 id="response-body">Response body####</h4>
+<h5 id="response-body">Response body</h5>
 <p>The requested SdsUomQuantity.</p>
-<h5 id="example-response-body-when-quantityid--length-is-passed">Example response body when <code>quantityId = &quot;Length&quot;</code> is passed#####</h5>
+<h5 id="example-response-body-when-quantityid--length-is-passed">Example response body when <code>quantityId = &quot;Length&quot;</code> is passed</h5>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -1820,23 +1820,23 @@ Content-Type: application/json
         0
     ]
 }
-</code></pre><h4 id="net-client-libraries-method">.NET client libraries method####</h4>
+</code></pre><h4 id="net-client-libraries-method">.NET client libraries method</h4>
 <pre><code class="lang-csharp">   Task&lt;SdsUomQuantity&gt; GetQuantityAsync(string quantityId);
 </code></pre><hr>
 <h2 id="get-quantities"><code>Get Quantities</code></h2>
 <p>Returns a list of all quantities available within a given namespace.</p>
-<h4 id="request-1">Request####</h4>
+<h4 id="request-1">Request</h4>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Quantities?skip={skip}&amp;count={count}
-</code></pre><h5 id="parameters-1">Parameters#####</h5>
+</code></pre><h5 id="parameters-1">Parameters</h5>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>int skip</code><br>An optional parameter representing the zero-based offset of the first SdsUomQuantity to retrieve. If not specified, a default value of 0 is used.</p>
 <p><code>int count</code><br>An optional parameter representing the maximum number of SdsUomQuantity to retrieve. If not specified, a default value of 100 is used.</p>
-<h4 id="response-1">Response####</h4>
+<h4 id="response-1">Response</h4>
 <p>The response includes a status code and a response body.</p>
-<h4 id="response-body-1">Response body####</h4>
+<h5 id="response-body-1">Response body</h5>
 <p>A list of SdsUomQuantity objects</p>
-<h5 id="example-response-body">Example response body#####</h5>
+<h5 id="example-response-body">Example response body</h5>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -1890,18 +1890,18 @@ Content-Type: application/json
 </code></pre><hr>
 <h2 id="get-quantity-uom"><code>Get Quantity Uom</code></h2>
 <p>Returns the unit of measure associated with the specified uomId belonging to the quantity with the specified quantityId.</p>
-<h4 id="request-2">Request####</h4>
+<h4 id="request-2">Request</h4>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Quantities/<wbr>{quantityId}/<wbr>Units/<wbr>{uomId}
-</code></pre><h5 id="parameters-2">Parameters#####</h5>
+</code></pre><h5 id="parameters-2">Parameters</h5>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string quantityId</code><br>The quantity identifier</p>
 <p><code>string uomId</code><br>The unit of measure identifier</p>
-<h4 id="response-2">Response####</h4>
+<h4 id="response-2">Response</h4>
 <p>The response includes a status code and a response body.</p>
-<h4 id="response-body-2">Response body####</h4>
+<h5 id="response-body-2">Response body</h5>
 <p>The requested SdsUom</p>
-<h5 id="example-response-body-when-quantityid--length-and-uomid-mile-are-passed">Example response body when <code>quantityId = &quot;Length&quot;</code> and <code>uomId =&quot;mile&quot;</code> are passed#####</h5>
+<h5 id="example-response-body-when-quantityid--length-and-uomid-mile-are-passed">Example response body when <code>quantityId = &quot;Length&quot;</code> and <code>uomId =&quot;mile&quot;</code> are passed</h5>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -1913,22 +1913,22 @@ Content-Type: application/json
     &quot;QuantityId&quot;: &quot;Length&quot;,
     &quot;ConversionFactor&quot;: 1609.344
 }
-</code></pre><h4 id="net-client-libraries-method-2">.NET client libraries method####</h4>
+</code></pre><h4 id="net-client-libraries-method-2">.NET client libraries method</h4>
 <pre><code class="lang-csharp">   Task&lt;SdsUom&gt; GetQuantityUomAsync(string quantityId, string uomId);
 </code></pre><hr>
 <h2 id="get-quantity-uoms"><code>Get Quantity Uoms</code></h2>
 <p>Returns the list of units of measure that belongs to the quantity with the specified quantityId.</p>
-<h4 id="request-3">Request####</h4>
+<h4 id="request-3">Request</h4>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Quantities/<wbr>{quantityId}/<wbr>Units
-</code></pre><h5 id="parameters-3">Parameters#####</h5>
+</code></pre><h5 id="parameters-3">Parameters</h5>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string quantityId</code><br>The quantity identifier</p>
-<h4 id="response-3">Response####</h4>
+<h4 id="response-3">Response</h4>
 <p>The response includes a status code and a response body.</p>
-<h4 id="response-body-3">Response body####</h4>
+<h5 id="response-body-3">Response body</h5>
 <p>A collection of SdsUom objects for the specified quantity</p>
-<h5 id="example-response-body-when-quantityid--electric-current-is-passed">Example response body when <code>quantityId = &quot;Electric Current&quot;</code> is passed#####</h5>
+<h5 id="example-response-body-when-quantityid--electric-current-is-passed">Example response body when <code>quantityId = &quot;Electric Current&quot;</code> is passed</h5>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -1950,116 +1950,116 @@ Content-Type: application/json
         &quot;ConversionFactor&quot;: 1
     }
 ]
-</code></pre><h4 id="net-client-libraries-method-3">.NET client libraries method####</h4>
+</code></pre><h4 id="net-client-libraries-method-3">.NET client libraries method</h4>
 <pre><code class="lang-csharp">   Task&lt;IEnumerable&lt;SdsUom&gt;&gt; GetQuantityUomsAsync(string quantityId);
 </code></pre><hr>
 <h2 id="get-quantities-access-control-list"><code>Get Quantities Access Control List</code></h2>
-<p>Get the default ACL for the Quantities collection. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
-<h4 id="request-4">Request####</h4>
+<p>Get the default ACL for the Quantities collection. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Role-based access control</a>.</p>
+<h4 id="request-4">Request</h4>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>AccessControl/<wbr>Quantities
-</code></pre><h5 id="parameters-4">Parameters#####</h5>
+</code></pre><h5 id="parameters-4">Parameters</h5>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
-<h4 id="response-4">Response####</h4>
+<h4 id="response-4">Response</h4>
 <p>The response includes a status code and a response body.</p>
-<h4 id="response-body-4">Response body####</h4>
+<h5 id="response-body-4">Response body</h5>
 <p>The default ACL for Quantities</p>
-<h4 id="net-client-libraries-method-4">.NET client libraries method####</h4>
+<h4 id="net-client-libraries-method-4">.NET client libraries method</h4>
 <pre><code class="lang-csharp">   Task&lt;AccessControlList&gt; GetQuantitiesAccessControlListAsync();
 </code></pre><hr>
 <h2 id="update-quantities-access-control-list"><code>Update Quantities Access Control List</code></h2>
-<p>Update the default ACL for the Quantities collection. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
-<h4 id="request-5">Request####</h4>
+<p>Update the default ACL for the Quantities collection. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Role-based access control</a>.</p>
+<h4 id="request-5">Request</h4>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>AccessControl/<wbr>Quantities
-</code></pre><h5 id="parameters-5">Parameters#####</h5>
+</code></pre><h5 id="parameters-5">Parameters</h5>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
-<h4 id="request-body">Request body####</h4>
+<h5 id="request-body">Request body</h5>
 <p>Serialized ACL</p>
-<h4 id="response-5">Response####</h4>
+<h4 id="response-5">Response</h4>
 <p>The response includes a status code.</p>
-<h4 id="net-client-libraries-method-5">.NET client libraries method####</h4>
+<h4 id="net-client-libraries-method-5">.NET client libraries method</h4>
 <pre><code class="lang-csharp">   Task UpdateQuantitiesAccessControlListAsync(AccessControlList quantitiesAcl);
 </code></pre><hr>
 <h2 id="get-quantity-access-control-list"><code>Get Quantity Access Control List</code></h2>
-<p>Get the ACL of the specified quantity. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
-<h4 id="request-6">Request####</h4>
+<p>Get the ACL of the specified quantity. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Role-based access control</a>.</p>
+<h4 id="request-6">Request</h4>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Quantities/<wbr>{quantityId}/<wbr>AccessControl
-</code></pre><h5 id="parameters-6">Parameters#####</h5>
+</code></pre><h5 id="parameters-6">Parameters</h5>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string quantityId</code><br>The quantity identifier  </p>
-<h4 id="response-6">Response####</h4>
+<h4 id="response-6">Response</h4>
 <p>The response includes a status code and a response body.</p>
-<h4 id="response-body-5">Response body####</h4>
+<h5 id="response-body-5">Response body</h5>
 <p>The ACL for the specified quantity</p>
-<h4 id="net-client-libraries-method-6">.NET client libraries method####</h4>
+<h4 id="net-client-libraries-method-6">.NET client libraries method</h4>
 <pre><code class="lang-csharp">   Task&lt;AccessControlList&gt; GetQuantityAccessControlListAsync(string quantityId);
 </code></pre><hr>
 <h2 id="update-quantity-access-control-list"><code>Update Quantity Access Control List</code></h2>
-<p>Update the ACL of the specified quantity. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
-<h4 id="request-7">Request####</h4>
+<p>Update the ACL of the specified quantity. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Role-based access control</a>.</p>
+<h4 id="request-7">Request</h4>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Quantities/<wbr>{quantityId}/<wbr>AccessControl
-</code></pre><h5 id="parameters-7">Parameters#####</h5>
+</code></pre><h5 id="parameters-7">Parameters</h5>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string quantityId</code><br>The quantity identifier  </p>
-<h4 id="request-body-1">Request body####</h4>
+<h5 id="request-body-1">Request body</h5>
 <p>Serialized ACL</p>
-<h4 id="response-7">Response####</h4>
+<h4 id="response-7">Response</h4>
 <p>The response includes a status code.</p>
-<h4 id="net-client-libraries-method-7">.NET client libraries method####</h4>
+<h4 id="net-client-libraries-method-7">.NET client libraries method</h4>
 <pre><code class="lang-csharp">   Task UpdateQuantityAccessControlListAsync(string quantityId, AccessControlList quantityAcl);
 </code></pre><hr>
 <h2 id="get-quantity-owner"><code>Get Quantity Owner</code></h2>
-<p>Get the Owner of the specified quantity. For more information on Owners, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
-<h4 id="request-8">Request####</h4>
+<p>Get the Owner of the specified quantity. For more information on Owners, see <a class="xref" href="../Access_Control.html">Role-based access control</a>.</p>
+<h4 id="request-8">Request</h4>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Quantities/<wbr>{quantityId}/<wbr>Owner
-</code></pre><h5 id="parameters-8">Parameters#####</h5>
+</code></pre><h5 id="parameters-8">Parameters</h5>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string quantityId</code><br>The quantity identifier  </p>
-<h4 id="response-8">Response####</h4>
+<h4 id="response-8">Response</h4>
 <p>The response includes a status code and a response body.</p>
-<h4 id="response-body-6">Response body####</h4>
+<h5 id="response-body-6">Response body</h5>
 <p>The Owner for the specified quantity</p>
-<h4 id="net-client-libraries-method-8">.NET client libraries method####</h4>
+<h4 id="net-client-libraries-method-8">.NET client libraries method</h4>
 <pre><code class="lang-csharp">   Task&lt;Trustee&gt; GetQuantityOwnerAsync(string quantityId);
 </code></pre><hr>
 <h2 id="update-quantity-owner"><code>Update Quantity Owner</code></h2>
-<p>Update the Owner of the specified quantity. For more information on Owners, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
-<h4 id="request-9">Request####</h4>
+<p>Update the Owner of the specified quantity. For more information on Owners, see <a class="xref" href="../Access_Control.html">Role-based access control</a>.</p>
+<h4 id="request-9">Request</h4>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Quantities/<wbr>{quantityId}/<wbr>Owner
-</code></pre><h5 id="parameters-9">Parameters#####</h5>
+</code></pre><h5 id="parameters-9">Parameters</h5>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string quantityId</code><br>The quantity identifier  </p>
-<h4 id="request-body-2">Request body####</h4>
+<h5 id="request-body-2">Request body</h5>
 <p>Serialized Owner</p>
-<h4 id="response-9">Response####</h4>
+<h4 id="response-9">Response</h4>
 <p>The response includes a status code.</p>
-<h4 id="net-client-libraries-method-9">.NET client libraries method####</h4>
+<h4 id="net-client-libraries-method-9">.NET client libraries method</h4>
 <pre><code class="lang-csharp">   Task UpdateQuantityOwnerAsync(string quantityId, Trustee quantityOwner);
 </code></pre><hr>
 <h2 id="get-quantity-access-rights"><code>Get Quantity Access Rights</code></h2>
 <p>Gets the Access Rights associated with the specified quantity for the requesting identity.  For 
-more information on Access Rights, see <a class="xref" href="../Access_Control.html#commonaccessrightsenum">Access Control</a>.</p>
-<h4 id="request-10">Request####</h4>
+more information on Access Rights, see <a class="xref" href="../Access_Control.html#commonaccessrightsenum">Role-based access control</a>.</p>
+<h4 id="request-10">Request</h4>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Quantities/<wbr>{quantityId}/<wbr>AccessRights
-</code></pre><h5 id="parameters-10">Parameters#####</h5>
+</code></pre><h5 id="parameters-10">Parameters</h5>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string quantityId</code><br>The quantity identifier  </p>
-<h4 id="response-10">Response####</h4>
+<h4 id="response-10">Response</h4>
 <p>The response includes a status code and a response body.</p>
-<h5 id="response-body-7">Response body#####</h5>
+<h5 id="response-body-7">Response body</h5>
 <p>The Access Rights of the specified quantity for the requesting identity.</p>
-<h6 id="example-response-body-1">Example response body######</h6>
+<h5 id="example-response-body-1">Example response body</h5>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
 [&quot;Read&quot;, &quot;Write&quot;]
-</code></pre><h4 id="net-client-libraries-method-10">.NET client libraries method####</h4>
+</code></pre><h4 id="net-client-libraries-method-10">.NET client libraries method</h4>
 <pre><code class="lang-csharp">   Task&lt;string[]&gt; GetQuantityAccessRightsAsync(string quantityId);
 </code></pre><hr>
 <h1 id="sdsuom-api">SdsUom API</h1>
@@ -2067,17 +2067,17 @@ Content-Type: application/json
 <hr>
 <h2 id="get-uom"><code>Get Uom</code></h2>
 <p>Returns the unit of measure corresponding to the specified uomId within a given namespace.</p>
-<h4 id="request-11">Request####</h4>
+<h4 id="request-11">Request</h4>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Units/<wbr>{uomId}
-</code></pre><h5 id="parameters-11">Parameters#####</h5>
+</code></pre><h5 id="parameters-11">Parameters</h5>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string uomId</code><br>The unit of measure identifier</p>
-<h4 id="response-11">Response####</h4>
+<h4 id="response-11">Response</h4>
 <p>The response includes a status code and a response body.</p>
-<h5 id="response-body-8">Response body#####</h5>
+<h5 id="response-body-8">Response body</h5>
 <p>The requested SdsUom</p>
-<h6 id="example-response-body-when-uomid--ounce-is-passed">Example response body when <code>uomId = &quot;ounce&quot;</code> is passed######</h6>
+<h5 id="example-response-body-when-uomid--ounce-is-passed">Example response body when <code>uomId = &quot;ounce&quot;</code> is passed</h5>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -2089,23 +2089,23 @@ Content-Type: application/json
     &quot;QuantityId&quot;: &quot;Mass&quot;,
     &quot;ConversionFactor&quot;: 0.028349523
 }
-</code></pre><h4 id="net-client-libraries-method-11">.NET client libraries method####</h4>
+</code></pre><h4 id="net-client-libraries-method-11">.NET client libraries method</h4>
 <pre><code class="lang-csharp">   Task&lt;SdsUom&gt; GetUomAsync(string uomId);
 </code></pre><hr>
 <h2 id="get-uoms"><code>Get Uoms</code></h2>
 <p>Returns a list of all available units of measure in the system.</p>
-<h4 id="request-12">Request####</h4>
+<h4 id="request-12">Request</h4>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Units?skip={skip}&amp;count={count}
-</code></pre><h5 id="parameters-12">Parameters#####</h5>
+</code></pre><h5 id="parameters-12">Parameters</h5>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>int skip</code><br>An optional parameter representing the zero-based offset of the first SdsUomQuantity to retrieve. If not specified, a default value of 0 is used.</p>
 <p><code>int count</code><br>An optional parameter representing the maximum number of SdsUomQuantity to retrieve. If not specified, a default value of 100 is used.</p>
-<h4 id="response-12">Response####</h4>
+<h4 id="response-12">Response</h4>
 <p>The response includes a status code and a response body.</p>
-<h5 id="response-body-9">Response body####</h5>
+<h5 id="response-body-9">Response body</h5>
 <p>A list of SdsUom objects</p>
-<h6 id="example-response-body-2">Example response body######</h6>
+<h5 id="example-response-body-2">Example response body</h5>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 [
@@ -2135,93 +2135,93 @@ Content-Type: application/json
     }
     ...
 ]
-</code></pre><h4 id="net-client-libraries-method-12">.NET client libraries method####</h4>
+</code></pre><h4 id="net-client-libraries-method-12">.NET client libraries method</h4>
 <pre><code class="lang-csharp">   Task&lt;IEnumerable&lt;SdsUom&gt;&gt; GetUomsAsync(int skip = 0, int count = 100);
 </code></pre><hr>
 <h2 id="get-uom-access-control-list"><code>Get Uom Access Control List</code></h2>
 <p>Get the ACL of the specified unit of measure. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
-<h4 id="request-13">Request####</h4>
+<h4 id="request-13">Request</h4>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Quantities/<wbr>{quantityId}/<wbr>Units/<wbr>{uomId}/<wbr>AccessControl
-</code></pre><h5 id="parameters-13">Parameters#####</h5>
+</code></pre><h5 id="parameters-13">Parameters</h5>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string quantityId</code><br>The quantity identifier  </p>
 <p><code>string uomId</code><br>The unit of measure identifier</p>
-<h4 id="response-13">Response####</h4>
+<h4 id="response-13">Response</h4>
 <p>The response includes a status code and a response body.</p>
-<h5 id="response-body-10">Response body#####</h5>
+<h5 id="response-body-10">Response body</h5>
 <p>The ACL for the specified Uom</p>
-<h4 id="net-client-libraries-method-13">.NET client libraries method####</h4>
+<h4 id="net-client-libraries-method-13">.NET client libraries method</h4>
 <pre><code class="lang-csharp">   Task&lt;AccessControlList&gt; GetQuantityUomAccessControlListAsync(string quantityId, string uomId);
 </code></pre><hr>
 <h2 id="update-uom-access-control-list"><code>Update Uom Access Control List</code></h2>
 <p>Update the ACL of the specified unit of measure. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
-<h4 id="request-14">Request####</h4>
+<h4 id="request-14">Request</h4>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Quantities/<wbr>{quantityId}/<wbr>Units/<wbr>{uomId}/<wbr>AccessControl
-</code></pre><h5 id="parameters-14">Parameters#####</h5>
+</code></pre><h5 id="parameters-14">Parameters</h5>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string quantityId</code><br>The quantity identifier  </p>
 <p><code>string uomId</code><br>The unit of measure identifier</p>
-<h5 id="request-body-3">Request body#####</h5>
+<h5 id="request-body-3">Request body</h5>
 <p>Serialized ACL</p>
-<h4 id="response-14">Response####</h4>
+<h4 id="response-14">Response</h4>
 <p>The response includes a status code.</p>
-<h4 id="net-client-libraries-method-14">.NET client libraries method####</h4>
+<h4 id="net-client-libraries-method-14">.NET client libraries method</h4>
 <pre><code class="lang-csharp">   Task UpdateQuantityUomAccessControlListAsync(string quantityId, string uomId, AccessControlList uomAcl);
 </code></pre><hr>
 <h2 id="get-uom-owner"><code>Get Uom Owner</code></h2>
 <p>Get the Owner of the specified unit of measure. For more information on Owners, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
-<h4 id="request-15">Request####</h4>
+<h4 id="request-15">Request</h4>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Quantities/<wbr>{quantityId}/<wbr>Units/<wbr>{uomId}/<wbr>Owner
-</code></pre><h5 id="parameters-15">Parameters#####</h5>
+</code></pre><h5 id="parameters-15">Parameters</h5>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string quantityId</code><br>The quantity identifier  </p>
 <p><code>string uomId</code><br>The unit of measure identifier</p>
-<h4 id="response-15">Response####</h4>
+<h4 id="response-15">Response</h4>
 <p>The response includes a status code and a response body.</p>
-<h5 id="response-body-11">Response Body#####</h5>
+<h5 id="response-body-11">Response Body</h5>
 <p>The Owner for the specified Uom </p>
-<h4 id="net-client-libraries-method-15">.NET client libraries method####</h4>
+<h4 id="net-client-libraries-method-15">.NET client libraries method</h4>
 <pre><code class="lang-csharp">   Task&lt;Trustee&gt; GetQuantityUomOwnerAsync(string quantityId, string uomId);
 </code></pre><hr>
 <h2 id="update-uom-owner"><code>Update Uom Owner</code></h2>
 <p>Update the Owner of the specified unit of measure. For more information on Owners, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
-<h4 id="request-16">Request####</h4>
+<h4 id="request-16">Request</h4>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Quantities/<wbr>{quantityId}/<wbr>Units/<wbr>{uomId}/<wbr>Owner
-</code></pre><h5 id="parameters-16">Parameters#####</h5>
+</code></pre><h5 id="parameters-16">Parameters</h5>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string quantityId</code><br>The quantity identifier  </p>
 <p><code>string uomId</code><br>The unit of measure identifier</p>
-<h5 id="request-body-4">Request body#####</h5>
+<h5 id="request-body-4">Request body</h5>
 <p>Serialized Owner</p>
-<h4 id="response-16">Response####</h4>
+<h4 id="response-16">Response</h4>
 <p>The response includes a status code.</p>
-<h4 id="net-client-libraries-method-16">.NET client libraries method####</h4>
+<h4 id="net-client-libraries-method-16">.NET client libraries method</h4>
 <pre><code class="lang-csharp">   Task UpdateQuantityUomOwnerAsync(string quantityId, string uomId, Trustee uomOwner);
 </code></pre><hr>
 <h2 id="get-uom-access-rights"><code>Get Uom Access Rights</code></h2>
 <p>Gets the Access Rights associated with the specified unit of measure for the requesting identity. For 
 more information on Access Rights, see <a class="xref" href="../Access_Control.html#commonaccessrightsenum">Access Control</a>.</p>
-<h4 id="request-17">Request####</h4>
+<h4 id="request-17">Request</h4>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Quantities/<wbr>{quantityId}/<wbr>Units/<wbr>{uomId}/<wbr>AccessRights
-</code></pre><h5 id="parameters-17">Parameters#####</h5>
+</code></pre><h5 id="parameters-17">Parameters</h5>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string quantityId</code><br>The quantity identifier  </p>
 <p><code>string uomId</code><br>The unit of measure identifier</p>
-<h4 id="response-17">Response####</h4>
+<h4 id="response-17">Response</h4>
 <p>The response includes a status code and a response body.</p>
-<h5 id="response-body-12">Response Body#####</h5>
+<h5 id="response-body-12">Response Body</h5>
 <p>The Access Rights of the specified unit of measure for the requesting identity.</p>
-<h6 id="example-response-body-3">Example response body######</h6>
+<h5 id="example-response-body-3">Example response body</h5>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
 [&quot;Read&quot;, &quot;Write&quot;]
-</code></pre><h4 id="net-client-libraries-method-17">.NET client libraries method####</h4>
+</code></pre><h4 id="net-client-libraries-method-17">.NET client libraries method</h4>
 <pre><code class="lang-csharp">   Task&lt;string[]&gt; GetQuantityUomAccessRightsAsync(string quantityId, string uomId);
 </code></pre><hr>
 <h2 id="associating-a-unit-of-measure-with-a-sdstype">Associating a unit of measure with a SdsType</h2>

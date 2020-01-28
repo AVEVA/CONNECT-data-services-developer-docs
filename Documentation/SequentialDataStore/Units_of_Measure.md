@@ -428,7 +428,7 @@ Content-Type: application/json
     ...
 ]
 ```
-#### .NET client libraries method####
+#### .NET client libraries method
 ```csharp
     Task<IEnumerable<SdsUomQuantity>> GetQuantitiesAsync(int skip = 0, int count = 100);
 ```

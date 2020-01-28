@@ -13,12 +13,12 @@ The data views collection access control list is used to control which users and
 
 The data views collection access control list also determines the default access control list for individual data views. Note that changing the collection level access control list does not affect existing data views as the collection level access control list is only used when the data view is first created. Once the data view exists, data view level access control is managed independently of collection level access control. See Data Views Access Control for more information on securing individual data views.
 
-When a namespace is first created, the data views collection access control list will default to the access control list for the entire namespace. Use the API routes in [Access Control API](xref:DataViewsAccessControlAPI) to view and update the data views collection access control list. Note: only users and clients with `ManageAccessControl` rights on the data views collection are authorized to view and update the collection-level access control list.
+When a namespace is first created, the data views collection access control list will default to the access control list for the entire namespace. Use the API routes in [Access Control API](xref:DataViewsAccessControlAPI) to view and update the data views collection access control list. Only users and clients with `ManageAccessControl` rights on the data views collection are authorized to view and update the collection-level access control list.
 
 ## Data View Access Control
-Data views are secured individually. This allows granular control over who can see which data view, e.g. to restrict access to sensitive or compartmentalized information.
+Data views are secured individually. This allows granular control over who can see which data view, in order to restrict access to sensitive or compartmentalized information.
 
-Each data view has two child resources that control authorization: the data view access control list and the data view owner. See [Role-based access control](xref:accessControl) for more information about the access control list and owner objects. Note: Owner authorization supersedes access control list authorization. The owner (typically the user or client that created the data view) has full access to the data view regardless of the access control list.
+Each data view has two child resources that control authorization: the data view access control list and the data view owner. See [Role-based access control](xref:accessControl) for more information about the access control list and owner objects. Owner authorization supersedes access control list authorization. The owner (typically the user or client that created the data view) has full access to the data view regardless of the access control list.
 
 The data view owner and access control list control basic authorization to a given data view. See the table below for the required access rights for each operation that can be performed against a data view. For the full list of available access rights, see [CommonAccessRightsEnum](xref:accessControl#commonaccessrightsenum).
 

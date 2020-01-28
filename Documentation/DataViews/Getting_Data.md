@@ -101,7 +101,7 @@ FirstPage: ".../dataViews/{dataViewId}/data/interpolated?cache=Preserve&count=10
 Index parameters, such as Start Index, must remain constant while paging through a range of data. If a different range of data is desired, restart the paging operation.
 
 ### Parallelization
-To parallelize one large data retrieval operation across multiple workers, assign each worker a portion of the desired index range. Each workers should follow standard recommended paging behavior within its assigned range. The client application must then concatenate the portions in correct order.
+To parallelize one large data retrieval operation across multiple workers, assign each worker a portion of the desired index range. Each worker should follow standard recommended paging behavior within its assigned range. The client application must then concatenate the portions in correct order.
 
 It is recommended to suppress [re-resolution](xref:ResolvedDataView#when-is-a-data-view-resolved) of the data view by specifying a cache behavior of "preserve" on each first-page request.
 

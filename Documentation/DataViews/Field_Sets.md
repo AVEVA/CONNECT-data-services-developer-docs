@@ -33,7 +33,7 @@ Let us take a subset of the [example scenario](xref:DataViewsExampleScenario)'s 
 | Winterthur | Secondary | Power In | ROSE.Meter.Secondary.Inverter.0.PwrIn | Low Resolution |
 | Winterthur | Secondary | Power Out | ROSE.Meter.Secondary.Inverter.0.PwrOut | Low Resolution |
 
-in a data view sectioned by "Meter", including fields for the sectioner value, and each data item's "Tags" and property "Value":
+The following represents a data view sectioned by "Meter", including fields for the sectioner value, and each data item's "Tags" and property "Value":
 
 ```json
 {
@@ -96,7 +96,7 @@ The view resolves into two sections of field mappings:
 | - | Primary | ..Primary..PwrIn/PropertyId:Value | ..Primary..PwrIn/Tags |  ..Primary..PwrOut/PropertyId:Value | ..Primary..PwrOut/Tags  | | | | |
 | - | Secondary |  |  |  |  | ..Secondary..PwrIn/PropertyId:Value | ..Secondary..PwrIn/Tags |  ..Secondary..PwrOut/PropertyId:Value | ..Secondary..PwrOut/Tags  |
 
-Two things are clearly undesirable here.
+Two things are clearly undesirable here:
 1. The field identifiers are ambiguous
 2. The result is sparse: the data views engine has not been told how to align the data items across sections, so it has no idea that all "Power In" streams are similar.
 

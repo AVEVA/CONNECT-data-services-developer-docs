@@ -28,7 +28,7 @@ Paged responses include a header called `FirstPage`, linking to the first page o
 Using these hyperlinks is the recommended method of paging. Alternatively, constructing paging links by manually incrementing the `skip` is allowable, though in this case it is recommended to specify cache behavior of "preserve".
 
 ### How is a data view resolved?
-Data views resolve per-user. Data views respect the permissions on underlying objects such as SDS Streams. If a user does not have read access to a particular stream in SDS, then that stream is not visible from data views.
+Data views resolve on a per user basis. Data views respect the permissions on underlying objects such as SDS Streams. If a user does not have read access to a particular stream in SDS, then that stream is not visible from data views.
 
 As a consequence, different users may see different collections of data items resolve for a data view. This is by design.
 
@@ -38,7 +38,7 @@ Each data view is resolved as needed for each user: upon request of any resolved
 This is evident when accessing the resolved information. It is contained in `ResolvedItem<T>/ResolvedItems<T>` container types which have a `.TimeOfResolution` property.
 
 #### Controlling the cache behavior
-By default, 
+By default: 
 - accessing resolved information will retrieve a cached version if available: *preserve* the cache
 - requesting a first page of data will cause the data view to re-resolve: *refresh* the cache
 
@@ -111,7 +111,7 @@ A section of the data view. The overall collection of data items is divided into
 | DataItems | IReadOnlyDictionary<string, IReadOnlyList<DataItem>> | The data items in this section
 
 ### FieldMapping
-Details on the provenance on every field of data
+Details on the provenance on every field of data:
 
 |Property | Type | Details |
 |--|--|--|--|--|
@@ -122,7 +122,7 @@ Details on the provenance on every field of data
 | DataMappings | IReadOnlyList<DataMapping> | Per-section details of what this field resolved to
 
 ### DataMapping
-Per-section details of the data that a `FieldMapping` targets
+Per-section details of the data that a `FieldMapping` targets:
 
 |Property | Type | Details |
 |--|--|--|--|--|
@@ -131,7 +131,7 @@ Per-section details of the data that a `FieldMapping` targets
 | TypeCode | SdsTypeCode | The value type
 
 ### Statistics
-General statistics about how the data view resolved
+General statistics about how the data view resolved:
 
 |Property | Type | Details |
 |--|--|--|--|--|

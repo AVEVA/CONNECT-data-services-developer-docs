@@ -97,7 +97,7 @@ HTTP 204 No Content
 
 ## Step 4: See the items found by the query
 
-Data views resolve per-user, executing the queries you defined. The results are available in several “resolved” resources.
+Data views resolve on a per user basis, executing the queries you defined. The results are available in several “resolved” resources.
 
 ### Action – Page through the data items found by the query
 ```text
@@ -251,7 +251,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
 ### Expected result
 Two field sets:
 -	A field set of type “Index” with one field, representing an interpolated index. Data views only support interpolated index values at this time. In the future, if other retrieval modes are supported, a data item could be mapped here as the master index.
--	A field set if type “DataItem,” pointing to query “weather”. Assuming some data items were retrieved, this field set shows that attributes of the streams (id, name, tags) are available, as well as the values of all metadata keys and properties.
+-	A field set of type “DataItem,” pointing to query “weather”. Assuming some data items were retrieved, this field set shows that attributes of the streams (id, name, tags) are available, as well as the values of all metadata keys and properties.
 
 ```json
 HTTP 200 OK
@@ -348,7 +348,7 @@ At this point, if you query for data, the table is empty – because no fields h
 For ease, grab all of the field sets that are available. 
 
 Set the Data View’s FieldSets property as the content of the AvailableFieldSets response.
-From the `FieldSet` for *weather*’s data items, remove the `Field` for the “Timestamp” property. It would be redundant.
+From the `FieldSet` for *weather* data items, remove the `Field` for the “Timestamp” property. It would be redundant.
 ```json
 PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
 {
@@ -517,7 +517,7 @@ An array of json values similar to:
 
 There was ambiguity in the field mapping identifiers, so the data views engine suffixed each field mapping id ordinally.
 
-Ambiguity is no good. The suffixing (to ensure uniqueness) is done for the sake of client behavior, and it is not expected that ambiguity is an acceptable outcome. The remaining steps show two approaches for disambiguating the content of a data view. 
+The suffixing (to ensure uniqueness) is done for the sake of client behavior, and it is not expected that ambiguity is an acceptable outcome. The remaining steps show two approaches for disambiguating the content of a data view. 
 
 ### Action – Want csv?
 Resubmit the data query with an additional query parameter, `&form=csvh`
@@ -759,7 +759,7 @@ Whatever field you’re using as the sectioner, remove it from the fields includ
 
 ## Step 9: Distinguish the data items
 
-A different – and complementary – way of disambiguating the data items is to “distinguish” them within the field set.
+A different and complementary way of disambiguating the data items is to “distinguish” them within the field set.
 
 This is also useful for aligning data items across sections. Imagine if each site had an additional stream from a backup weather station:
 
@@ -769,7 +769,7 @@ This is also useful for aligning data items across sections. Imagine if each sit
 | | Rosecliff
 | | Winterthur						
 
-The data views engine must be told how – across sites – the streams align. Here, it makes sense to align them by which measurement they represent: _Primary_ or _Backup_.
+The data views engine must be told how the streams align across sites. Here, it makes sense to align them by which measurement they represent: _Primary_ or _Backup_.
 
 ### Action
 Move the field used as Sectioner over to being the “.Distinguisher” of the weather data items `FieldSet`.

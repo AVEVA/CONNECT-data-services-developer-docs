@@ -33,11 +33,11 @@ Data items may be [sectioned](xref:DataViewsSectioning), which amounts to groupi
 ### Organizing the data fields
 Field sets and fields resolve in the order they are defined. They may be re-ordered.
 
-Within each section, a field set may be associated with multiple data items. It is often necessary to disambiguate these items. Items can be disambiguated by specifying a [`.Distinguisher`](xref:DataViewsFieldSets#distinguisher) - a field that tells the data items apart within a section, such as the value of _Measurement_ metadata (i.e., the data items are distinguished by what they measure). Distinguishing data items also allows the data views engine to "align" them across sections, since it is clear that streams measuring, e.g., _Power Out_ are alike, and the streams measuring _Power In_ are alike.
+Within each section, a field set may be associated with multiple data items. It is often necessary to disambiguate these items. Items can be disambiguated by specifying a [`.Distinguisher`](xref:DataViewsFieldSets#distinguisher). A distinguisher is a field that tells the data items apart within a section, such as the value of _Measurement_ metadata (i.e., the data items are distinguished by what they measure). Distinguishing data items also allows the data views engine to "align" them across sections, since it is clear that streams measuring, e.g., _Power Out_ are alike, and the streams measuring _Power In_ are alike.
 
 
 ### Defining index type and default range
-Data views currently operate on timestamped data, i.e. data indexed by a DateTime property. This is reflected by the DataView's `.IndexTypeCode`, whose value must be "DateTime". Default values may be defined for the StartIndex, EndIndex, and/or Interval used when the data view's data is queried. 
+Data views currently operate on timestamped data, which is data indexed by a DateTime property. This is reflected by the DataView's `.IndexTypeCode`, whose value must be "DateTime". Default values may be defined for the StartIndex, EndIndex, and/or Interval used when data view data is queried. 
 
 ## DataView properties
 The following table lists the properties of a DataView:
@@ -63,7 +63,7 @@ The following table lists the properties of a DataView:
 - Can contain a maximum of 100 characters
 
 ## Related object types
-The folllowing classes and enumerations are used when defining data views:
+The following sections describe the classes and enumerations used when defining data views.
 
 ### Query
 A query for SDS Streams to include in the view.
@@ -95,10 +95,10 @@ Individual piece of information, such as a property of an SDS stream, or metadat
 |--|--|--|--|--|
 | Source | FieldSource | Optional | NotApplicable | For fields of a DataItem-sourced FieldSet, identifies the source of the field's values. Some sources are used in conjunction with the Keys property (see below).
 | Keys | String[] | Optional | [ ] | Used for certain FieldSources, e.g. to map to specific stream properties by id. If more than one key is specified, they are matched as exclusive-or.
-| Label | string | Optional | null | Friendly name for the field. Certain tokens have special meaning: one of these, {DistinguisherValue}, is included in the suggested labels of AvailableFieldSets. Tokens that do not resolve are "". Label is trimmed of whitespace when used to identify field mappings.
+| Label | string | Optional | null | Friendly name for the field. Certain tokens have special meaning: one of these, {DistinguisherValue}, is included in the suggested labels of AvailableFieldSets. Tokens that do not resolve are "" (empty string). Label is trimmed of whitespace when used to identify field mappings.
 
 ### FieldSource enumeration
-For fields that derive data from a data item (e.g. an SDS stream), specifies the part of that data item that a Field resolves to. Some sources require one or more `.Keys` to be specified on the field, such as `PropertyId` in which a key is the id of a desired property.
+For fields that derive data from a data item (e.g. an SDS stream), the `FieldSource` enumeration specifies the part of that data item that a Field resolves to. Some sources require one or more `.Keys` to be specified on the field, such as `PropertyId` in which a key is the id of a desired property.
 
 |Name | Keyed | Details
 |--|--|--|
@@ -111,12 +111,12 @@ For fields that derive data from a data item (e.g. an SDS stream), specifies the
 |Metadata | Yes | Value of the data item metadata, found by key
 
 ### SdsTypeCode enumeration
-The name of a data type. Used when defining a data view, where the only supported `.IndexTypeCode` is "DateTime".
+`SdsTypeCode` enumeration is the name of a data type. It is used when defining a data view, where the only supported `.IndexTypeCode` is "DateTime".
 
 See [Sds documentation](xref:sdsTypes#sdstypecode) for details.
 
 ### DataViewShape enumeration
-Describes possible output shapes for a data view.
+`DataViewShape` enumeration describes possible output shapes for a data view.
 |Name| Description  |
 |--|--|
 |Standard | Fields are resolved into a shape similar to how they were defined. This is the recommended shape unless specific needs dictate.

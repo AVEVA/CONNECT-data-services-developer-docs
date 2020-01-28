@@ -6,7 +6,7 @@ uid: DataViewAPI
 
 The `DataView` API provides mechanisms to create, read, update, and delete data views. This is one portion of the whole [data views API](xref:DataViewsAPIOverview).
 
-For a description of the `DataView` object type, see that [documentation](xref:DataView).
+For a description of the `DataView` object type, see the [DataView documentation](xref:DataView).
 
 Other sections of documentation describe how to [secure data views](xref:DataViewsSecuringDataViews) by setting their ownership and permissions, and the corresponding [API](xref:DataViewsAccessControlAPI).
 
@@ -168,7 +168,7 @@ Content-Type: application/json
 ```
 
 ## `Get or Create Data View`
-Creates the specified data view. If a data view with the same id already exists, the existing data view is compared with the specified data view. If they are identical, a redirect (`302 Found`) is returned with the `Location` response header indicating the URL where the stream may be retrieved using a Get function. If the data views do not match, the request fails with `409 Conflict`.
+This call creates the specified data view. If a data view with the same id already exists, the existing data view is compared with the specified data view. If they are identical, a redirect (`302 Found`) is returned with the `Location` response header indicating the URL where the stream may be retrieved using a Get function. If the data views do not match, the request fails with `409 Conflict`.
 
 ### Request
 ```text

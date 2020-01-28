@@ -4,14 +4,14 @@ uid: DataViewsExampleScenario
 
 # Example Scenario
 
-This documentation uses example streams to illustrate data view concepts. The streams are of three types:
+This section uses example streams to illustrate data view concepts. The streams are of three types:
 - docs-pi-inverter | _simulates solar power inverter data collected via PI to OCS_
 - docs-omf-weather-gen1 | _simulates weather data collected from an OMF source_
 - docs-omf-weather-gen2 | _simulates weather data collected from an OMF source, but with some additional/renamed properties_
 
 Each solar inverter is associated with some physical location. There is a weather stream for each location. 
 
-Data views are made to bring order to a tangle of data streams. Despite appearing complex and verbose, this scenario is likely much simpler than your real-world data. A level of richness to the scenario allows us to illustrate how data views make real-world data ready for data science.
+Data views are made to bring order to a tangle of data streams. Despite appearing complex and verbose, this scenario is likely much simpler than your real-world data. This scenario illustrates how data views can render real-world data consumable for data science.
 
 
 ## Solar Inverter streams

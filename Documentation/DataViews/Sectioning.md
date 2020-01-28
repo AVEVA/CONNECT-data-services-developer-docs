@@ -4,7 +4,7 @@ uid: DataViewsSectioning
 
 # Sectioning
 
-The data items of a data view may be organized by grouping them. This is called _sectioning_. It is one is one way of producing a meaningful, consumable shape of data.
+The data items of a data view may be organized by grouping them. This is called _sectioning_. It is one way of producing a meaningful, consumable shape of data.
 
 
 ## Purpose of sectioning

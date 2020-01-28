@@ -4,7 +4,7 @@ uid: DataViewsAvailableFieldSets
 
 # Available Field Sets
 
-Available field sets are [field sets](xref:DataViewsFieldSets) with fields that can be included in the data view, but are not already included. 
+Available [field sets](xref:DataViewsFieldSets) include fields not currently included in the data view, which are available to be added. 
 
 The list of field sets is generated based on the `.Queries`, `.Sectioners`, and `.IndexTypeCode` of the defined data view. These fields and field sets can be readily added to the data view `.FieldSets`. Once the field is added, it is omitted from the list of available field sets. Similarly, if the field is removed from the data view, it is added back to the available field sets. This allows an iterative approach to building the data view by easily adding and removing fields from the data view. 
 

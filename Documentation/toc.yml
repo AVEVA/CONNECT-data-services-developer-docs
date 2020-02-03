@@ -14,7 +14,7 @@
   topicHref: DataIngress/Data_Ingress.md
 - name: Data Views (Preview)
   href: DataViews/toc.yml
-  topicHref: DataViews/DataViews_Overview.md
+  topicHref: DataViews/Data_Views_Overview.md
 - name: Role-Based Access Control
   topicHref: Access_Control.md
 - name: Samples

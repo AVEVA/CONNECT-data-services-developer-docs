@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Field Sets </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Field Sets ">
+    <meta name="generator" content="docfx 2.43.3.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../../index.html" width="46">
+                <img id="logo" src="../../Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="DataViewsFieldSets">
+<h1 id="field-sets">Field Sets</h1>
+
+<p>A data view is likely to include multiple fields of information. One field serves as the index (e.g. Timestamp), and others contain information from or about the data items in the data view. </p>
+<p>Individual fields are organized into <code>FieldSet</code>s. Field sets are collections of fields that share a common role or source type. Each field set performs a specific type of role:</p>
+<ul>
+<li>FieldSetSourceType.<strong>Index</strong> - Provides the index field for the data view. A data view must have exactly one Index field set.</li>
+<li>FieldSetSourceType.<strong>SectionerValue</strong> - Displays values that the view is <a class="xref" href="Sectioning.html">sectioned</a> by.</li>
+<li>FieldSetSourceType.<strong>DataItem</strong> - Resolves for each data item from a particular query.</li>
+</ul>
+<h2 id="using-field-sets">Using field sets</h2>
+<h3 id="available-field-sets">Available field sets</h3>
+<p>The typical workflow for adding field sets, and the fields in them, is to use or adapt the <a class="xref" href="Available_Field_Sets.html">available field sets</a> that resolve for the data view. This workflow is demonstrated in the <a class="xref" href="Quick_Start_Define_a_Data_View.html">Quick Start - Define a Data View</a>.</p>
+<h3 id="index-field-set">Index field set</h3>
+<p>A data view must have exactly one field set serving as its index: a field set whose <code>.SourceType</code> is <code>FieldSetSourceType.Index</code>. Currently, because the supported index type is a non-compound &quot;DateTime&quot;, the index field set may contain only one <code>Field</code>. That <code>Field</code> must be of <code>.Source</code> <code>FieldSource.None</code>, because the data views engine provides interpolated index values.</p>
+<h3 id="data-item-field-sets">Data item field sets</h3>
+<p>Field sets whose source is the <code>DataItem</code>s from a <code>Query</code> will &quot;resolve&quot; into fields for each data item. If the data items have been <a class="xref" href="Sectioning.html">sectioned</a>, then this happens within the context of each section.</p>
+<h4 id="example-defining-field-sets">Example: Defining field sets</h4>
+<p>Let us take a subset of the <a class="xref" href="Example_Scenario.html">example scenario</a>&#39;s power inverter streams, returned by the <code>Query</code> <a class="xref" href="../SequentialDataStore/Searching.html">value</a> <code>&quot;TypeId:docs-pi-inverter AND Site:Winterthur&quot;</code>. </p>
+<table>
+<thead>
+<tr>
+<th>Site</th>
+<th>Meter</th>
+<th>Measurement</th>
+<th>Stream Id</th>
+<th>Tags</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Winterthur</td>
+<td>Primary</td>
+<td>Power In</td>
+<td>WINT.Meter.Primary.Inverter.0.PwrIn</td>
+<td>Low Resolution</td>
+</tr>
+<tr>
+<td>Winterthur</td>
+<td>Primary</td>
+<td>Power Out</td>
+<td>WINT.Meter.Primary.Inverter.0.PwrOut</td>
+<td>Low Resolution</td>
+</tr>
+<tr>
+<td>Winterthur</td>
+<td>Secondary</td>
+<td>Power In</td>
+<td>ROSE.Meter.Secondary.Inverter.0.PwrIn</td>
+<td>Low Resolution</td>
+</tr>
+<tr>
+<td>Winterthur</td>
+<td>Secondary</td>
+<td>Power Out</td>
+<td>ROSE.Meter.Secondary.Inverter.0.PwrOut</td>
+<td>Low Resolution</td>
+</tr>
+</tbody>
+</table>
+<p>The following represents a data view sectioned by &quot;Meter&quot;, including fields for the sectioner value, and each data item&#39;s &quot;Tags&quot; and property &quot;Value&quot;:</p>
+<pre><code class="lang-json">{
+  &quot;Id&quot;: &quot;quickstart&quot;,
+  &quot;Queries&quot;: [
+    { 
+      &quot;Id&quot;: &quot;inverters&quot;,
+      &quot;Value&quot;: &quot;TypeId:docs-pi-inverter AND Site:Winterthur&quot;
+    }
+  ],
+  &quot;Sectioners&quot;: [
+    {
+          &quot;Source&quot;: &quot;Metadata&quot;,
+          &quot;Keys&quot;: [ &quot;Meter&quot; ],
+          &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+    },
+  ],
+  &quot;FieldSets&quot;: [
+    {
+      &quot;SourceType&quot;: &quot;Index&quot;,
+      &quot;Fields&quot;: [
+        {
+          &quot;Label&quot;: &quot;Timestamp&quot;
+        }
+      ]
+    },
+    {
+      &quot;SourceType&quot;: &quot;SectionValue&quot;,
+      &quot;Fields&quot;: [
+        {
+          &quot;Keys&quot;: [ &quot;0&quot; ],
+          &quot;Label&quot;: &quot;{SectionerLabel}&quot;
+        }
+      ],
+    },
+    {
+      &quot;SourceType&quot;: &quot;DataItem&quot;,
+      &quot;QueryId&quot;: &quot;inverters&quot;,
+      &quot;Fields&quot;: [
+        {
+          &quot;Source&quot;: &quot;PropertyId&quot;,
+          &quot;Keys&quot;: [ &quot;Value&quot; ],
+          &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+        },
+        {
+          &quot;Source&quot;: &quot;Tags&quot;,
+          &quot;Keys&quot;: [ &quot;Low Resolution&quot;, &quot;High Resolution&quot; ],
+          &quot;Label&quot;: &quot;{DistinguisherValue} Tags&quot;
+        },
+      ],
+    }
+  ]
+}
+</code></pre><p>The view resolves into two sections of field mappings:</p>
+<table>
+<thead>
+<tr>
+<th>Timestamp.0</th>
+<th>Meter.1</th>
+<th>Value.2</th>
+<th>Tags.3</th>
+<th>Value.4</th>
+<th>Tags.5</th>
+<th>Value.6</th>
+<th>Tags.7</th>
+<th>Value.8</th>
+<th>Tags.9</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-</td>
+<td>Primary</td>
+<td>..Primary..PwrIn/PropertyId:Value</td>
+<td>..Primary..PwrIn/Tags</td>
+<td>..Primary..PwrOut/PropertyId:Value</td>
+<td>..Primary..PwrOut/Tags</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>-</td>
+<td>Secondary</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>..Secondary..PwrIn/PropertyId:Value</td>
+<td>..Secondary..PwrIn/Tags</td>
+<td>..Secondary..PwrOut/PropertyId:Value</td>
+<td>..Secondary..PwrOut/Tags</td>
+</tr>
+</tbody>
+</table>
+<p>Two things are clearly undesirable here:</p>
+<ol>
+<li>The field identifiers are ambiguous</li>
+<li>The result is sparse: the data views engine has not been told how to align the data items across sections, so it has no idea that all &quot;Power In&quot; streams are similar.</li>
+</ol>
+<p>To fix this, we will add a <code>.Distinguisher</code> to the field set.</p>
+<h4 id="distinguisher">Distinguisher</h4>
+<p>If the field set resolves to multiple data items in any section (or if sectioning is not used), then a field should be designated as the field set&#39;s <code>.Distinguisher</code>. If one lone criterion is not a sufficient or useful way of disambiguating the fields, then <a class="xref" href="Sectioning.html">sectioning</a> by additional criteria may be necessary.</p>
+<h4 id="example-adding-a-distinguisher">Example: Adding a distinguisher</h4>
+<p>To the data view from the previous example, we will add a <code>Field</code> as the <code>.Distinguisher</code> of its field set. In this example, it makes sense to distinguish each data item by its <em>Measurement</em>.</p>
+<pre><code class="lang-json">{
+  &quot;Id&quot;: &quot;quickstart&quot;,
+  &quot;Queries&quot;: [
+    { 
+      &quot;Id&quot;: &quot;inverters&quot;,
+      &quot;Value&quot;: &quot;TypeId:docs-pi-inverter AND Site:Winterthur&quot;
+    }
+  ],
+  &quot;Sectioners&quot;: [
+    {
+          &quot;Source&quot;: &quot;Metadata&quot;,
+          &quot;Keys&quot;: [ &quot;Meter&quot; ],
+          &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+    },
+  ],
+  &quot;FieldSets&quot;: [
+    {
+      &quot;SourceType&quot;: &quot;Index&quot;,
+      &quot;Fields&quot;: [
+        {
+          &quot;Label&quot;: &quot;Timestamp&quot;
+        }
+      ]
+    },
+    {
+      &quot;SourceType&quot;: &quot;SectionValue&quot;,
+      &quot;Fields&quot;: [
+        {
+          &quot;Keys&quot;: [ &quot;0&quot; ],
+          &quot;Label&quot;: &quot;{SectionerLabel}&quot;
+        }
+      ],
+    },
+    {
+      &quot;SourceType&quot;: &quot;DataItem&quot;,
+      &quot;QueryId&quot;: &quot;inverters&quot;,
+      &quot;Distinguisher&quot;: {
+        {
+          &quot;Source&quot;: &quot;Metadata&quot;,
+          &quot;Keys&quot;: [ &quot;Measurement&quot; ],
+        },
+      },
+      &quot;Fields&quot;: [
+        {
+          &quot;Source&quot;: &quot;PropertyId&quot;,
+          &quot;Keys&quot;: [ &quot;Value&quot; ],
+          &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+        },
+        {
+          &quot;Source&quot;: &quot;Tags&quot;,
+          &quot;Keys&quot;: [ &quot;Low Resolution&quot;, &quot;High Resolution&quot; ],
+          &quot;Label&quot;: &quot;{DistinguisherValue} Tags&quot;
+        },
+      ],
+    }
+  ]
+}
+</code></pre><p>The result is much more consumable. The field identifiers are no longer ambiguous, and like data items are aligned across sections:</p>
+<table>
+<thead>
+<tr>
+<th>Timestamp</th>
+<th>Meter</th>
+<th>Power In Value</th>
+<th>Power In Tags</th>
+<th>Power Out Value</th>
+<th>Power Out Tags</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-</td>
+<td>Primary</td>
+<td>..Primary..PwrIn/PropertyId:Value</td>
+<td>..Primary..PwrIn/Tags</td>
+<td>..Primary..PwrOut/PropertyId:Value</td>
+<td>..Primary..PwrOut/Tags</td>
+</tr>
+<tr>
+<td>-</td>
+<td>Secondary</td>
+<td>..Secondary..PwrIn/PropertyId:Value</td>
+<td>..Secondary..PwrIn/Tags</td>
+<td>..Secondary..PwrOut/PropertyId:Value</td>
+<td>..Secondary..PwrOut/Tags</td>
+</tr>
+</tbody>
+</table>
+<h2 id="field">Field</h2>
+<p>Each field represents a particular source of information, such as a data item&#39;s <code>.Id</code> or the values from one of its properties.</p>
+<h3 id="label">Label</h3>
+<p>A field&#39;s label is a friendly name. </p>
+<p>When the data view is resolved and fields produce field mappings, labels are trimmed of whitespace and used as the field mappings&#39; identifier. For example:</p>
+<table>
+<thead>
+<tr>
+<th>Timestamp</th>
+<th>Power In Value</th>
+<th>Power Out Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>In cases where the identifiers are unique, the identifier is suffixed with an ordinal number, its position. For example:</p>
+<table>
+<thead>
+<tr>
+<th>Timestamp.0</th>
+<th>Value.1</th>
+<th>Value.2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>There are three special parameters available for use in field labels:</p>
+<ul>
+<li><code>{SectionValue}</code> - the value of the sectioner</li>
+<li><code>{DistinguisherValue}</code> - the value of the distinguisher</li>
+<li><code>{FirstKey}</code> - the value of the first of the <code>&quot;Keys&quot;</code> specified on the field</li>
+</ul>
+<p>If a special parameter fails to resolve, it becomes an empty string, <code>&quot;&quot;</code>.</p>
+<h3 id="source">Source</h3>
+<p>A field&#39;s <a class="xref" href="Data_View.html#fieldsource-enumeration"><code>.Source</code></a> indicates where the field&#39;s values will come from, if applicable.</p>
+<h3 id="keys">Keys</h3>
+<p>In certain cases, a field may need to address data <em>within</em> its data source, such as a particular Metadata value of a data item. This applies to the sources <code>Metadata</code>, <code>PropertyId</code>, and <code>PropertyName</code>.</p>
+<p>Multiple keys may be specified in the field&#39;s <code>.Keys</code>. This is a way to overcome differences in properties or metadata across data items. Keys are evaluated in order specified until a match is found, i.e. first-match-wins.</p>
+<p>For field sources that do not use keys (<code>FieldSource.None</code>, <code>FieldSource.Id</code> and <code>FieldSource.Name</code>), any keys specified are ignored.</p>
+<h4 id="special-case-tags">Special case: Tags</h4>
+<p>The field source <code>FieldSource.Tags</code> is a special case due to the nature of tags.</p>
+<p>On a field of source <code>FieldSource.Tags</code>, its collection of <code>.Keys</code> represents a whitelist.</p>
+<h5 id="example">Example</h5>
+<p>Given a stream with tags <code>[ &quot;Weather&quot;, &quot;Low Resolution&quot;, &quot;Gen2&quot; ]</code>  </p>
+<p>A field of source <code>FieldSource.Tags</code> and <code>.Keys</code> <code>[ &quot;Low Resolution&quot;, &quot;High Resolution&quot;, &quot;Gen1&quot;, &quot;Gen2&quot; ]</code></p>
+<p>The field&#39;s value when resolved will be <code>[ &quot;Low Resolution&quot;, &quot;Gen2&quot; ]</code></p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/DataViews/Field_Sets.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+            <span id='copyright-text'>© 2019 - OSIsoft, LLC.<span>
+        </span></span></div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

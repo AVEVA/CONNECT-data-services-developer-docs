@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Resolved Data View </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Resolved Data View ">
+    <meta name="generator" content="docfx 2.43.3.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../../index.html" width="46">
+                <img id="logo" src="../../Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="ResolvedDataView">
+<h1 id="resolved-data-view">Resolved Data View</h1>
+
+<p>Various information is available about how each data view <em>resolves</em>. This information describes exactly what data will be in the data view, where it comes from, and where it will appear. This is useful when defining a data view and when consuming it.</p>
+<h2 id="general-concepts">General concepts</h2>
+<h3 id="what-does-resolving-mean">What does resolving mean?</h3>
+<p>A data view specifies <code>.Queries</code> to find data items, <code>.Sectioners</code> (optionally) to group those data items into sections, and <code>.FieldSets</code> to include fields of data into the data view. <em>Resolving</em> the data view means the data views engine executes those queries and computes how the resulting data items will form a data view.</p>
+<h3 id="what-resolved-information-is-available">What resolved information is available?</h3>
+<ul>
+<li><a class="xref" href="Data_Items_and_Sections.html">Data items, ineligible data items, and the sections they form</a> - currently, SDS streams are the supported type of data item.</li>
+<li><a class="xref" href="Available_Field_Sets.html">Available field sets</a> - fields which are present on the data items but not included in the data view</li>
+<li><a class="xref" href="Field_Mappings.html">Field mappings</a> - details of the data behind each section of each field</li>
+<li><a class="xref" href="Resolved_Data_View.html#statistics">Statistics</a> about how the view resolved</li>
+</ul>
+<p>These are available via the <a class="xref" href="Resolved_Data_View_API.html">Resolved Data View API</a>. The relevant <a class="xref" href="Resolved_Data_View.html#object-types">object types</a> are described below.</p>
+<h4 id="paged-collections">Paged collections</h4>
+<p>Some of this information is exposed as paged collections, which accept parameters controlling <code>skip</code> and <code>count</code> within the collection. </p>
+<p>Paged responses include a header called <code>FirstPage</code>, linking to the first page of results. If the results extend into an additional page, a <code>NextPage</code> header is included with a hyperlink to the next page.</p>
+<p>Using these hyperlinks is the recommended method of paging. Alternatively, constructing paging links by manually incrementing the <code>skip</code> is allowable, though in this case it is recommended to specify cache behavior of &quot;preserve&quot;.</p>
+<h3 id="how-is-a-data-view-resolved">How is a data view resolved?</h3>
+<p>Data views resolve on a per user basis. Data views respect the permissions on underlying objects such as SDS Streams. If a user does not have read access to a particular stream in SDS, then that stream is not visible from data views.</p>
+<p>As a consequence, different users may see different collections of data items resolve for a data view. This is by design.</p>
+<h3 id="when-is-a-data-view-resolved">When is a data view resolved?</h3>
+<p>Each data view is resolved as needed for each user: upon request of any resolved information or data view data. In certain cases, a cached version is retrieved if available. </p>
+<p>This is evident when accessing the resolved information. It is contained in <code style="word-break:normal; overflow-wrap:break-word;">ResolvedItem&lt;T&gt;/<wbr>ResolvedItems&lt;T&gt;</code> container types which have a <code>.TimeOfResolution</code> property.</p>
+<h4 id="controlling-the-cache-behavior">Controlling the cache behavior</h4>
+<p>By default: </p>
+<ul>
+<li>accessing resolved information will retrieve a cached version if available: <em>preserve</em> the cache</li>
+<li>requesting a first page of data will cause the data view to re-resolve: <em>refresh</em> the cache</li>
+</ul>
+<p>These defaults are overridable on each API call.
+See the <a class="xref" href="Resolved_Data_View_API.html">Resolved Data View API</a> and <a class="xref" href="Getting_Data.html">Getting Data</a> for details.</p>
+<p>The defaults are intended to strike a balance between predictability and freshness. When retrieving the various resolved information that is available, you will not cause regeneration (and possible changes) simply by viewing the resolved information. This is useful when diagnosing a data view that is not returning the data you expect.</p>
+<h4 id="invalidation">Invalidation</h4>
+<p>If the data view is modified, any cached information is reset. The data view will be re-resolved the next time that information is requested.</p>
+<p>No guarantee is made of the durability or lifespan of cached information. It may be reset by the system for maintenance reasons.</p>
+<h4 id="paging-through-data">Paging through data</h4>
+<p>When using the <a class="xref" href="Data_API.html">Data API</a> to page through data view data, the cache is automatically preserved on all pages after the first. This ensures consistency while paging through view data: if the view were re-resolved between pages, it might resolve differently (e.g. new streams just added to SDS) and return unpredictable results. The documentation on <a class="xref" href="Getting_Data.html">Getting Data</a> describes how the paging token helps guarantee consistency.</p>
+<h2 id="object-types">Object types</h2>
+<h3 id="resolveditemst">ResolvedItems<t></t></h3>
+<p>Holds a collection of items that were resolved at a specific time</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Items</td>
+<td>IReadOnlyList<t></t></td>
+<td>A collection of resolved objects</td>
+</tr>
+<tr>
+<td>TimeOfResolution</td>
+<td>DateTimeOffset</td>
+<td>The time the collection of items was resolved</td>
+</tr>
+</tbody>
+</table>
+<h3 id="resolveditemt">ResolvedItem<t></t></h3>
+<p>Holds an item that was resolved at a specific time.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Item</td>
+<td>T</td>
+<td>A resolved object</td>
+</tr>
+<tr>
+<td>TimeOfResolution</td>
+<td>DateTimeOffset</td>
+<td>The time the item was resolved</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dataitem">DataItem</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>string</td>
+<td>Unique identifier</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>Friendly name</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>string</td>
+<td>Extended text description</td>
+</tr>
+<tr>
+<td>TypeId</td>
+<td>string</td>
+<td>The unique identifier of the data item&#39;s type</td>
+</tr>
+<tr>
+<td>ResourceType</td>
+<td>DataItemResourceType</td>
+<td>The resource type. See <code>DataView</code> <a class="xref" href="Data_View.html">documentation</a>. Currently, the supported resource type is <code>.Stream</code></td>
+</tr>
+<tr>
+<td>Tags</td>
+<td>IReadOnlyList<string></string></td>
+<td>Tag strings assigned to the data item</td>
+</tr>
+<tr>
+<td>Metadata</td>
+<td>IReadOnlyDictionary&lt;string, string&gt;</td>
+<td>Metadata key-value pairs assigned to the data item</td>
+</tr>
+<tr>
+<td>DataItemFields</td>
+<td>IReadOnlyList<dataitemfield></dataitemfield></td>
+<td>Data fields</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dataitemresourcetype-enumeration">DataItemResourceType enumeration</h3>
+<p>Describes the resource type of a data item.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stream</td>
+<td>A stream from the Sequential Data Store</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dataitemfield">DataItemField</h3>
+<p>A field of a data item where values come from.<br>Within a data item of resource kind <code>.Stream</code>, this corresponds to a stream property.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>string</td>
+<td>The data item field&#39;s unique identifier</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>The data item field&#39;s friendly name</td>
+</tr>
+<tr>
+<td>TypeCode</td>
+<td>SdsTypeCode</td>
+<td>The name of the field&#39;s data type</td>
+</tr>
+<tr>
+<td>IsKey</td>
+<td>bool</td>
+<td>True if the field is the primary index of the data item. False otherwise.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="section">Section</h3>
+<p>A section of the data view. The overall collection of data items is divided into sections as a result of the <code>.Sectioners</code> fields defined on the <code>DataView</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Values</td>
+<td>IReadOnlyList<string></string></td>
+<td>This section&#39;s value of each <code>.Sectioners</code> field defined on the <code>DataView</code></td>
+</tr>
+<tr>
+<td>DataItems</td>
+<td>IReadOnlyDictionary&lt;string, IReadOnlyList<dataitem>&gt;</dataitem></td>
+<td>The data items in this section</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fieldmapping">FieldMapping</h3>
+<p>Details on the provenance on every field of data:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>string</td>
+<td>Unique identifier</td>
+</tr>
+<tr>
+<td>Label</td>
+<td>string</td>
+<td>Friendly name</td>
+</tr>
+<tr>
+<td>FieldSetIndex</td>
+<td>int</td>
+<td>The position of the corresponding field set within the data view</td>
+</tr>
+<tr>
+<td>FieldIndex</td>
+<td>int</td>
+<td>The position of the corresponding field within its field set</td>
+</tr>
+<tr>
+<td>DataMappings</td>
+<td>IReadOnlyList<datamapping></datamapping></td>
+<td>Per-section details of what this field resolved to</td>
+</tr>
+</tbody>
+</table>
+<h3 id="datamapping">DataMapping</h3>
+<p>Per-section details of the data that a <code>FieldMapping</code> targets:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TargetId</td>
+<td>string</td>
+<td>The unique identifier of the target data item</td>
+</tr>
+<tr>
+<td>TargetFieldKey</td>
+<td>string</td>
+<td>The specific targeted part of the data item, if any.</td>
+</tr>
+<tr>
+<td>TypeCode</td>
+<td>SdsTypeCode</td>
+<td>The value type</td>
+</tr>
+</tbody>
+</table>
+<h3 id="statistics">Statistics</h3>
+<p>General statistics about how the data view resolved:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DataItemCount</td>
+<td>int</td>
+<td>The total count of data items resolved in the data view</td>
+</tr>
+<tr>
+<td>SectionCount</td>
+<td>int</td>
+<td>The total count of sections resolved in the data view</td>
+</tr>
+<tr>
+<td>FieldCount</td>
+<td>int</td>
+<td>The total count of fields resolved in the data view</td>
+</tr>
+</tbody>
+</table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/DataViews/Resolved_Data_View.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+            <span id='copyright-text'>© 2019 - OSIsoft, LLC.<span>
+        </span></span></div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Queries </title>
+    <title>Field Mappings </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Queries ">
+    <meta name="title" content="Field Mappings ">
     <meta name="generator" content="docfx 2.43.3.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -75,65 +75,29 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="DataViewsQueries">
-<h1 id="queries">Queries</h1>
+            <article class="content wrap" id="_content" data-uid="DataViewsFieldMappings">
+<h1 id="field-mappings">Field Mappings</h1>
 
-<p>Queries determine what data items are included in a data view.</p>
-<h2 id="query">Query</h2>
-<p>Each <code>Query</code> must be uniquely identified with an <code>.Id</code>. The identifier should be meaningful. The query&#39;s results will be referenced by this identifier when you include fields in the data view.</p>
-<p>The query text is the same <a class="xref" href="../SequentialDataStore/Searching.html">stream query syntax</a> used by the Sequential Data Store.</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Optionality</th>
-<th>Default</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Id</td>
-<td>string</td>
-<td>Required</td>
-<td></td>
-<td>Unique identifier. Used by <code>FieldSet</code> to link to the query&#39;s results</td>
-</tr>
-<tr>
-<td>Value</td>
-<td>string</td>
-<td>Optional</td>
-<td>null</td>
-<td>A query for streams, in SDS query syntax. A null or empty query will not match any streams.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="using-queries">Using queries</h2>
-<h3 id="querying-streams-of-differing-nature">Querying streams of differing nature</h3>
-<p>To include streams of completely different nature (like power inverters and weather stations), use one query for each. </p>
-<p>For example:</p>
-<pre><code class="lang-json">&quot;Queries&quot;: [
-  {
-    &quot;Id&quot;: &quot;inverter power measurements&quot;,
-    &quot;Value&quot;: &quot;inverter:* AND measurement:power*&quot;
-  },
-  {
-    &quot;Id&quot;: &quot;weather stations&quot;,
-    &quot;Value&quot;: &quot;tags:weather&quot;
-  },
-]
-</code></pre><p>Using separate queries means the streams will be available in separate field sets. This is good, because a power inverter has completely different fields versus a weather station.</p>
-<h3 id="querying-streams-of-a-common-nature">Querying streams of a common nature</h3>
-<p>Streams that originate from an OSIsoft PI System represent only one fundamental measurement (e.g. Power in), unlike the more general case where a stream may represent several measurements (e.g. Temperature, Solar radiation, and Cloud cover). This means that multiple streams refer to the same physical or logical asset. </p>
-<p>In the example scenario, each power inverter is associated with two streams. It makes sense to structure our query around the physical asset, returning all &quot;power*&quot; measurements of all inverters:</p>
-<pre><code class="lang-json">&quot;Queries&quot;: [
-  {
-    &quot;Id&quot;: &quot;inverter power measurements&quot;,
-    &quot;Value&quot;: &quot;inverter:* AND measurement:power*&quot;
-  }
-]
-</code></pre><p>These streams will be available in one single field set. This is good, because our data view can operate in terms of physical assets, and not be bound by how the stream data was recorded.</p>
+<p>A <code>FieldMapping</code> contains information on the source on every field of data in the data view. For each field in the data view, there is a corresponding <code>FieldMapping</code>. Within each field mapping, the list of <code>DataMapping</code>s shows the source of data for each section. There is one <code>DataMapping</code> per section, since the number of distinct data source for each field equals to the number of sections in the resolved data view. Inspecting the field mapping resource after defining the data view is a good way to confirm that the output data view does contain the data-of-interest prior to data generation.</p>
+<h2 id="interpreting-field-mapping">Interpreting Field Mapping</h2>
+<p>The number and order of field mappings is identical to the number and order of the resulting data view fields. </p>
+<h3 id="id-and-label">Id and label</h3>
+<p>The field mapping id represents the json property name (or column name in table or csv format) in the output data view data. The field mapping label represents the data view field label with tokens resolved. If all field mapping labels in a data view are unique, the field mapping id is identical to the label; if not, the id is generated from the label by adding an index number postfix. </p>
+<h3 id="field-set-index-and-field-index">Field set index and field index</h3>
+<p>The field set index and field index represents the zero-based positioning of the corresponding field set and field within the field set, respectively.</p>
+<h3 id="data-mapping">Data Mapping</h3>
+<p>Data mappings represent the data source for each section.  </p>
+<h4 id="index">Index</h4>
+<p><code>TargetId</code> and <code>TargetFieldKey</code> are not used for index fields. <code>TypeCode</code> is equivalent to the <code>IndexTypeCode</code> of the data view. </p>
+<h4 id="sectioner-value">Sectioner Value</h4>
+<p><code>TargetId</code> is the zero-based index of the corresponding sectioner. <code>TypeCode</code> is always <code>string</code>.</p>
+<h4 id="data-item">Data Item</h4>
+<p><code>TargetId</code> represents the data item id. </p>
+<ul>
+<li>Id, name and tags: <code>TargetFieldKey</code> is empty</li>
+<li>Metadata: <code>TargetFieldKey</code> shows the metadata key</li>
+<li>Properties: <code>TargetFieldKey</code> shows the property id or property name path</li>
+</ul>
 </article>
           </div>
           
@@ -142,7 +106,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/DataViews/Queries.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/DataViews/Field_Mappings.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

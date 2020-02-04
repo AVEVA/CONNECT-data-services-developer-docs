@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>GroupRules </title>
+    <title>Introduction - Get Data View Data </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="GroupRules ">
+    <meta name="title" content="Introduction - Get Data View Data ">
     <meta name="generator" content="docfx 2.43.3.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -75,138 +75,29 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="GroupRules">
-<h1 id="grouprules">GroupRules</h1>
+            <article class="content wrap" id="_content" data-uid="DataViewsIntroductionGetData">
+<h1 id="introduction---get-data-view-data">Introduction - Get Data View Data</h1>
 
-<p>The GroupRule lets users organize data items in the query, within or across streams, to form data groups in the resulting data set. By specifying the resource and field to group on, users can retrieve organized data items to compare and better examine the results.</p>
-<h3 id="properties">Properties</h3>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Required</th>
-<th>Descriptions</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Id</td>
-<td>string</td>
-<td>True</td>
-<td>Id of the rule</td>
-</tr>
-<tr>
-<td>Resource</td>
-<td>GroupRuleResource</td>
-<td>True</td>
-<td>Resource to base grouping on</td>
-</tr>
-<tr>
-<td>Field</td>
-<td>GroupRuleField</td>
-<td>True</td>
-<td>Field to base grouping on</td>
-</tr>
-<tr>
-<td>Values</td>
-<td>[string]</td>
-<td>False</td>
-<td>Values that form groups</td>
-</tr>
-</tbody>
-</table>
-<h2 id="resource"><code>Resource</code></h2>
-<p> The Resource can have the following values: </p>
-<table>
-<thead>
-<tr>
-<th>Value</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Streams</td>
-<td>string</td>
-<td>Group on streams resource</td>
-</tr>
-</tbody>
-</table>
-<h2 id="field"><code>Field</code></h2>
-<p> The Field can have the following values: </p>
-<table>
-<thead>
-<tr>
-<th>Value</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Id</td>
-<td>string</td>
-<td>Group on Id</td>
-</tr>
-<tr>
-<td>Name</td>
-<td>string</td>
-<td>Group on Name</td>
-</tr>
-<tr>
-<td>Tag</td>
-<td>string</td>
-<td>Group on Tag</td>
-</tr>
-<tr>
-<td>Metadata</td>
-<td>string</td>
-<td>Group on Metadata</td>
-</tr>
-</tbody>
-</table>
-<h2 id="example"><code>Example</code></h2>
-<p>The following example shows a group rule definition that creates data groups based on state names defined in the stream metadata. It will result in a data group for every state, that will organize the data items accordingly in the result. By using this group rule as a group rule mapping rule (See <a class="xref" href="Mappings.html">mappings</a>), the value of the state can be reflected in its own column in the result. Users can use different stream properties to create group rules, using values to define the values that they are interested in.</p>
-<pre><code class="lang-json">[
-  {
-    &quot;Id&quot;: &quot;StateGroupRule&quot;,
-    &quot;Resource&quot;: &quot;Streams&quot;,
-    &quot;Field&quot;: &quot;Tag&quot;,
-    &quot;Values&quot;: [
-      &quot;Arizona&quot;,
-      &quot;Pennsylvania&quot;,
-      &quot;California&quot;
-    ]
-  }
-]
-</code></pre><pre><code class="lang-json">An example output using this group rule as described above could look like the following:
-</code></pre><pre><code class="lang-json">
-[
-    {
-        &quot;Timestamp&quot;: &quot;2018-10-03T03:00:00Z&quot;,
-        &quot;State&quot;: &quot;Pennsylvania&quot;,
-        &quot;FlowRate&quot;: &quot;2&quot;,
-        &quot;Temperature&quot;: &quot;5&quot;,
-        &quot;Volume&quot;: &quot;100&quot;
-    },
-    {
-        &quot;Timestamp&quot;: &quot;2018-10-03T03:00:00Z&quot;,
-        &quot;State&quot;: &quot;California&quot;,
-        &quot;FlowRate&quot;: &quot;44&quot;,
-        &quot;Temperature&quot;: &quot;24.44&quot;,
-        &quot;Volume&quot;: &quot;245.12&quot;
-    },
-    {
-        &quot;Timestamp&quot;: &quot;2018-10-03T03:00:00Z&quot;,
-        &quot;State&quot;: &quot;Arizona&quot;,
-        &quot;FlowRate&quot;: &quot;42&quot;,
-        &quot;Temperature&quot;: &quot;25.223&quot;,
-        &quot;Volume&quot;: &quot;247.5&quot;
-    },
-]
-</code></pre></article>
+<p>Getting data from a data view is straightforward. If you want to understand more about the source behind each data field, that information is available too.</p>
+<p>This is an introduction to the recommended workflow for getting data. The <a class="xref" href="Quick_Start_Get_Data_View_Data.html">Quick Start - Get Data View Data</a> shows these concepts in action. For detailed information, see <a class="xref" href="Getting_Data.html">Getting Data</a> and <a class="xref" href="Data_API.html">Data API</a>.</p>
+<h2 id="step-1-request-the-first-page">Step 1. Request the first page</h2>
+<p>Specify the following parameters or use the default:</p>
+<ul>
+<li>Index range (start index and end index) and granularity of data to be retrieved. If you do not specify one or more of these parameters, the data view&#39;s corresponding default values will be used if defined.</li>
+<li>Desired response format. The default is object-style json. Other options include csv and table-style json. The latter two are available with or without a header row.</li>
+<li>Page size</li>
+</ul>
+<h2 id="steps-2-request-the-remaining-pages-if-any">Steps 2+. Request the remaining pages, if any</h2>
+<p>If data spans into additional page(s), the current page response will include an HTTP header linking to the next page.</p>
+<ul>
+<li>If the current page of data includes a NextPage hyperlink, keep following the hyperlinks to retrieve the full requested dataset page by page.</li>
+<li>In rare circumstances it may be necessary to restart the paging operation from the first page. In this case, follow the FirstPage hyperlink.</li>
+</ul>
+<h2 id="optional-investigate-the-source-of-the-data">[Optional] Investigate the source of the data</h2>
+<ul>
+<li>For precise information about the source of each field&#39;s data, see the data view&#39;s resolved field mappings.</li>
+</ul>
+</article>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
@@ -214,7 +105,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/DataViews/GroupRules.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/DataViews/Introduction_Get_Data_View_Data.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

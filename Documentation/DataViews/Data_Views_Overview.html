@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Queries </title>
+    <title>Data Views (Preview) </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Queries ">
+    <meta name="title" content="Data Views (Preview) ">
     <meta name="generator" content="docfx 2.43.3.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -75,65 +75,26 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="DataViewsQueries">
-<h1 id="queries">Queries</h1>
+            <article class="content wrap" id="_content" data-uid="DataViewsOverview">
+<h1 id="data-views-preview">Data Views (Preview)</h1>
 
-<p>Queries determine what data items are included in a data view.</p>
-<h2 id="query">Query</h2>
-<p>Each <code>Query</code> must be uniquely identified with an <code>.Id</code>. The identifier should be meaningful. The query&#39;s results will be referenced by this identifier when you include fields in the data view.</p>
-<p>The query text is the same <a class="xref" href="../SequentialDataStore/Searching.html">stream query syntax</a> used by the Sequential Data Store.</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Optionality</th>
-<th>Default</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Id</td>
-<td>string</td>
-<td>Required</td>
-<td></td>
-<td>Unique identifier. Used by <code>FieldSet</code> to link to the query&#39;s results</td>
-</tr>
-<tr>
-<td>Value</td>
-<td>string</td>
-<td>Optional</td>
-<td>null</td>
-<td>A query for streams, in SDS query syntax. A null or empty query will not match any streams.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="using-queries">Using queries</h2>
-<h3 id="querying-streams-of-differing-nature">Querying streams of differing nature</h3>
-<p>To include streams of completely different nature (like power inverters and weather stations), use one query for each. </p>
-<p>For example:</p>
-<pre><code class="lang-json">&quot;Queries&quot;: [
-  {
-    &quot;Id&quot;: &quot;inverter power measurements&quot;,
-    &quot;Value&quot;: &quot;inverter:* AND measurement:power*&quot;
-  },
-  {
-    &quot;Id&quot;: &quot;weather stations&quot;,
-    &quot;Value&quot;: &quot;tags:weather&quot;
-  },
-]
-</code></pre><p>Using separate queries means the streams will be available in separate field sets. This is good, because a power inverter has completely different fields versus a weather station.</p>
-<h3 id="querying-streams-of-a-common-nature">Querying streams of a common nature</h3>
-<p>Streams that originate from an OSIsoft PI System represent only one fundamental measurement (e.g. Power in), unlike the more general case where a stream may represent several measurements (e.g. Temperature, Solar radiation, and Cloud cover). This means that multiple streams refer to the same physical or logical asset. </p>
-<p>In the example scenario, each power inverter is associated with two streams. It makes sense to structure our query around the physical asset, returning all &quot;power*&quot; measurements of all inverters:</p>
-<pre><code class="lang-json">&quot;Queries&quot;: [
-  {
-    &quot;Id&quot;: &quot;inverter power measurements&quot;,
-    &quot;Value&quot;: &quot;inverter:* AND measurement:power*&quot;
-  }
-]
-</code></pre><p>These streams will be available in one single field set. This is good, because our data view can operate in terms of physical assets, and not be bound by how the stream data was recorded.</p>
+<p>Data views are a bridge between raw stream data and data-driven applications. A data view is a declarative query and shape for stream data. The ultimate goal is to deliver shaped data that is ready for consumption because it is normalized, aligned, and interpolated.</p>
+<p>Understanding how the data view resolves into content is important both for the designer and the consumer. Data views provide extensive visibility into what data is included. The concept of &quot;resolving&quot; a data view is when the data view&#39;s queries and logic are executed to determine the data view&#39;s exact schema and content.</p>
+<p>The collection(s) of streams that a data view acts on is the result of one or more queries. Streams (and any future data source types) are collectively known as <em>data items</em>. Values from the data items&#39; properties can be included in the data view as <em>fields</em>, as can information about the data items (such as Id and Metadata). </p>
+<p>There are two primary means of controlling how the data items will be organized. One or more fields may be designated to <em>section</em> the data view, effectively grouping or partitioning the data items on some value. Within a set of fields, one field may be designated to <em>distinguish</em> or align the items.</p>
+<p>Data view data is available in several formats, including JSON and CSV, with a user-specified range and granularity. Data is obtained by querying the REST API.</p>
+<h2 id="defining-and-refining-a-data-view">Defining and refining a data view</h2>
+<p>There are several <a class="xref" href="Data_View.html">concepts and types</a> used when defining data views. This is accomplished via the RESTful <a class="xref" href="Data_Views_API_Overview.html">data views API</a>. See the OCS documentation for greater detail on these concepts:</p>
+<ul>
+<li><a class="xref" href="Queries.html">Queries</a></li>
+<li><a class="xref" href="Field_Sets.html">Field Sets</a></li>
+<li><a class="xref" href="Sectioning.html">Sectioning</a></li>
+</ul>
+<p>Data views are meant to be designed interactively. Each modification you make to a data view is likely to affect how the data view <a class="xref" href="Resolved_Data_View.html">resolves</a> into concrete information. The <a class="xref" href="Resolved_Data_View_API.html">resolved API resources</a> close the loop, showing you exactly what information is in the data view, and why.</p>
+<p>Each data view can be individually <a class="xref" href="Securing_Data_Views.html">access-controlled</a> using the <a class="xref" href="Access_Control_API.html">access control API resources</a>.</p>
+<h2 id="consuming-a-data-view">Consuming a data view</h2>
+<p><a class="xref" href="Getting_Data.html">Data view data</a> is available via queries to the RESTful data views <a class="xref" href="Data_API.html">data API resource</a>. </p>
+<p>To understand the source of each data field, inspect how the data view <a class="xref" href="Resolved_Data_View.html">resolved</a>.</p>
 </article>
           </div>
           
@@ -142,7 +103,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/DataViews/Queries.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/DataViews/Data_Views_Overview.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

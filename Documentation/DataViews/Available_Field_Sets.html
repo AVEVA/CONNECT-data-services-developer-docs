@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Available Field Sets </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Available Field Sets ">
+    <meta name="generator" content="docfx 2.43.3.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../../index.html" width="46">
+                <img id="logo" src="../../Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="DataViewsAvailableFieldSets">
+<h1 id="available-field-sets">Available Field Sets</h1>
+
+<p>Available <a class="xref" href="Field_Sets.html">field sets</a> include fields not currently included in the data view, which are available to be added. </p>
+<p>The list of field sets is generated based on the <code>.Queries</code>, <code>.Sectioners</code>, and <code>.IndexTypeCode</code> of the defined data view. These fields and field sets can be readily added to the data view <code>.FieldSets</code>. Once the field is added, it is omitted from the list of available field sets. Similarly, if the field is removed from the data view, it is added back to the available field sets. This allows an iterative approach to building the data view by easily adding and removing fields from the data view. </p>
+<h2 id="field-set-source">Field Set Source</h2>
+<p>Available fields are organized into field sets according to their sources:</p>
+<ol>
+<li><pre><code class="lang-FieldSetSourceType.Index```">
+ The index field set represents the index field of the data view. Exactly one index field set is available per data view. Currently, this field is not mapped to anything, since interpolation is the only supported index mode.
+</code></pre></li>
+<li><pre><code class="lang-FieldSetSourceType.SectionerValue```">
+ The sectioner value field set represents the matching value for each section. If no sectioners are specified, this field set is not available. Exactly one section value field set is available per data view. The section value field set contains one field per section, with each sectioner referred to by its index: `{ ... Keys: [&quot;0&quot;] }` for the 0th sectioner.
+</code></pre></li>
+<li><pre><code class="lang-FieldSetSourceType.DataItem```">
+ The data item field set contains fields from the data item resulted from the query. For each query, a field set with unused fields will be returned. The available fields for stream data item include:
+ * Id, name
+ * Tags: one field with union of all tags
+ * Metadata, propertyId: one field for each metadata key or property id
+
+</code></pre></li>
+</ol>
+<h2 id="examples">Examples</h2>
+<h3 id="1-data-view-without-sectioners">1. Data View without Sectioners</h3>
+<p>The example uses the following data view and the streams from the <a class="xref" href="Example_Scenario.html">SDS Example Scenario</a>. Note that the field sets and the sectioners arrays are empty:</p>
+<pre><code class="lang-json">{
+  &quot;Id&quot;: &quot;example_without_sectioners&quot;,
+  &quot;Name&quot;: &quot;example_without_sectioners&quot;,
+  &quot;Description&quot;: null,
+  &quot;Queries&quot;: [
+    { 
+      Id: &quot;weather&quot;,
+      Value:&quot;*weather*&quot; 
+    }
+  ],
+  &quot;FieldSets&quot;: [],
+  &quot;Sectioners&quot;: [],
+  &quot;Shape&quot;: &quot;Standard&quot;,
+  &quot;IndexTypeCode&quot;: &quot;DateTime&quot;
+}
+</code></pre><p>Accessing the <code>Get Available Field Sets</code> endpoint will show available fields corresponding to stream id, name, tags, metadata, and each property. Since the index field set is not included in the data view, it is also shown as available.</p>
+<pre><code class="lang-json">HTTP 200 OK
+{
+    &quot;TimeOfResolution&quot;: &quot;(a timestamp in ISO 8601 format)&quot;,
+    &quot;Items&quot;: [
+        {
+            &quot;SourceType&quot;: &quot;Index&quot;,
+            &quot;Fields&quot;: [
+                {
+                    &quot;Source&quot;: &quot;None&quot;,
+                    &quot;Keys&quot;: [],
+                    &quot;Label&quot;: &quot;Timestamp&quot;
+                }
+            ]
+        },
+        {
+            &quot;SourceType&quot;: &quot;DataItem&quot;,
+            &quot;QueryId&quot;: &quot;weather&quot;,
+            &quot;Fields&quot;: [
+                {
+                    &quot;Source&quot;: &quot;Id&quot;,
+                    &quot;Keys&quot;: [],
+                    &quot;Label&quot;: &quot;{DistinguisherValue} Id&quot;
+                },
+                {
+                    &quot;Source&quot;: &quot;Name&quot;,
+                    &quot;Keys&quot;: [],
+                    &quot;Label&quot;: &quot;{DistinguisherValue} Name&quot;
+                },
+                {
+                    &quot;Source&quot;: &quot;Tags&quot;,
+                    &quot;Keys&quot;: [
+                        &quot;Weather&quot;,
+                        &quot;Low Resolution&quot;,
+                        &quot;High Resolution&quot;,
+                        &quot;Gen1&quot;,
+                        &quot;Gen2&quot;,
+                    ],
+                    &quot;Label&quot;: &quot;{DistinguisherValue} Tags&quot;
+                },
+                {
+                    &quot;Source&quot;: &quot;Metadata&quot;,
+                    &quot;Keys&quot;: [
+                        &quot;Site&quot;
+                    ],
+                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                },
+                {
+                    &quot;Source&quot;: &quot;PropertyId&quot;,
+                    &quot;Keys&quot;: [
+                        &quot;Timestamp&quot;
+                    ],
+                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                },
+                {
+                    &quot;Source&quot;: &quot;PropertyId&quot;,
+                    &quot;Keys&quot;: [
+                        &quot;SolarRadiation&quot;
+                    ],
+                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                },
+                {
+                    &quot;Source&quot;: &quot;PropertyId&quot;,
+                    &quot;Keys&quot;: [
+                        &quot;AmbientTemperature&quot;
+                    ],
+                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                },
+                {
+                    &quot;Source&quot;: &quot;PropertyId&quot;,
+                    &quot;Keys&quot;: [
+                        &quot;CloudCover&quot;
+                    ],
+                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                },
+                {
+                    &quot;Source&quot;: &quot;PropertyId&quot;,
+                    &quot;Keys&quot;: [
+                        &quot;Temperature&quot;
+                    ],
+                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                }
+            ]
+        }
+    ]
+}
+</code></pre><h3 id="2-data-view-with-sectioners">2. Data View with Sectioners</h3>
+<p>This data view is the same as in the first example, except it also has a <code>sectioner</code>, which defines sectioning by the metadata key &quot;Site&quot;:</p>
+<pre><code class="lang-json">{
+  &quot;Id&quot;: &quot;example_with_sectioners&quot;,
+  &quot;Name&quot;: &quot;example_with_sectioners&quot;,
+  &quot;Description&quot;: null,
+  &quot;Queries&quot;: [
+    { 
+      Id: &quot;weather&quot;,
+      Value:&quot;*weather*&quot; 
+    }
+  ],
+  &quot;FieldSets&quot;: []
+  &quot;Sectioners&quot;: [
+    {
+      &quot;Source&quot;: &quot;Metadata&quot;,
+      &quot;Keys&quot;: [
+        &quot;Site&quot; 
+      ],
+      &quot;Label&quot;: &quot;{DistinguisherValue} Id&quot;
+    }
+  ],
+  &quot;Shape&quot;: &quot;Standard&quot;,
+  &quot;IndexTypeCode&quot;: &quot;DateTime&quot;
+}
+</code></pre><p>A field set with <code>SourceType.SectionValue</code> is now shown as one of the available field sets:</p>
+<pre><code class="lang-json">HTTP 200 OK
+{
+    &quot;TimeOfResolution&quot;: &quot;2019-11-14T20:31:20.856826+00:00&quot;,
+    &quot;Items&quot;: [
+        {
+            &quot;SourceType&quot;: &quot;Index&quot;,
+            &quot;Fields&quot;: [
+                {
+                    &quot;Source&quot;: &quot;None&quot;,
+                    &quot;Keys&quot;: [],
+                    &quot;Label&quot;: &quot;Timestamp&quot;
+                }
+            ]
+        },
+        {
+            &quot;SourceType&quot;: &quot;SectionValue&quot;,
+            &quot;Fields&quot;: [
+                {
+                    &quot;Source&quot;: &quot;None&quot;,
+                    &quot;Keys&quot;: [
+                        &quot;0&quot;
+                    ],
+                    &quot;Label&quot;: &quot;{SectionerLabel}&quot;
+                }
+            ]
+        },
+        {
+            &quot;SourceType&quot;: &quot;DataItem&quot;,
+            &quot;QueryId&quot;: &quot;weather&quot;,
+            &quot;Fields&quot;: [
+                ...
+            ]
+        }
+    ]
+}
+</code></pre></article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/DataViews/Available_Field_Sets.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+            <span id='copyright-text'>© 2019 - OSIsoft, LLC.<span>
+        </span></span></div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

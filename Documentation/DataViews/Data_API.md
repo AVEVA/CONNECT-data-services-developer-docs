@@ -5,7 +5,6 @@ uid: DataViewsDataAPI
 # Data API
 The Data API allows users to [retrieve data](xref:DataViewsGettingData) for a specified data view.  This API is one portion of the [data views API](xref:DataViewsAPIOverview).
 
-
 ## `Get Data View Data`
 Get data for the provided index parameters with paging. See [documentation on paging](xref:DataViewsGettingData#paging) for further information.
 
@@ -41,6 +40,7 @@ Used only when [paging](xref:DataViewsGettingData#paging). Not specified when re
 
 `[optional] string cache`  
 Controls when the data view backing resources are to be refreshed. Used only when requesting the first page of data. Ignored if used with the continuationToken. Values are:
+
 | Value | Description | 
 |--|--|
 | `Refresh` | Force the resource to re-resolve.  This is the default value for this API route.  
@@ -70,6 +70,7 @@ Successful (200 OK) responses include one or more header values related to pagin
 
 #### Example response body in default format
 An array of json values. Each json property corresponds to a field mapping. Property names are the field mapping `.Id`s.
+
 ```json
 HTTP 200 OK
 [
@@ -93,7 +94,9 @@ HTTP 200 OK
     }
 ]
 ```
+
 #### Example response body with `form=table`
+
 ```json
 HTTP 200 OK
 {
@@ -139,6 +142,7 @@ HTTP 200 OK
 ```
 
 #### Example response body with `form=tableh`
+
 ```json
 HTTP 200 OK
 {
@@ -190,6 +194,7 @@ HTTP 200 OK
 ```
 
 #### Example response body with `form=csv`
+
 ```csv
 HTTP 200 OK
 2018-01-01T00:00:00Z,24,44,245
@@ -198,6 +203,7 @@ HTTP 200 OK
 ```
 
 #### Example response body with `form=csvh`
+
 ```csv
 HTTP 200 OK
 Time,Temperature,Flowrate,Volume

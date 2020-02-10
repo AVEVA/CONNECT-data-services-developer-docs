@@ -8,31 +8,25 @@ Available [field sets](xref:DataViewsFieldSets) include fields not currently inc
 
 The list of field sets is generated based on the `.Queries`, `.Sectioners`, and `.IndexTypeCode` of the defined data view. These fields and field sets can be readily added to the data view `.FieldSets`. Once the field is added, it is omitted from the list of available field sets. Similarly, if the field is removed from the data view, it is added back to the available field sets. This allows an iterative approach to building the data view by easily adding and removing fields from the data view. 
 
-
-
 ## Field Set Source
 Available fields are organized into field sets according to their sources:
 
-1. ```FieldSetSourceType.Index```
+```FieldSetSourceType.Index```
 
-    The index field set represents the index field of the data view. Exactly one index field set is available per data view. Currently, this field is not mapped to anything, since interpolation is the only supported index mode.
+The index field set represents the index field of the data view. Exactly one index field set is available per data view. Currently, this field is not mapped to anything, since interpolation is the only supported index mode.
 
-2. ```FieldSetSourceType.SectionerValue```
+```FieldSetSourceType.SectionerValue```
 
-    The sectioner value field set represents the matching value for each section. If no sectioners are specified, this field set is not available. Exactly one section value field set is available per data view. The section value field set contains one field per section, with each sectioner referred to by its index: `{ ... Keys: ["0"] }` for the 0th sectioner.
+The sectioner value field set represents the matching value for each section. If no sectioners are specified, this field set is not available. Exactly one section value field set is available per data view. The section value field set contains one field per section, with each sectioner referred to by its index: `{ ... Keys: ["0"] }` for the 0th sectioner.
 
-3. ```FieldSetSourceType.DataItem```
+```FieldSetSourceType.DataItem```
 
-    The data item field set contains fields from the data item resulted from the query. For each query, a field set with unused fields will be returned. The available fields for stream data item include:
+The data item field set contains fields from the data item resulted from the query. For each query, a field set with unused fields will be returned. The available fields for stream data item include:
     * Id, name
     * Tags: one field with union of all tags
     * Metadata, propertyId: one field for each metadata key or property id
 
-
-## Examples
-
-### 1. Data View without Sectioners
-
+## Data View without Sectioners
 The example uses the following data view and the streams from the [SDS Example Scenario](xref:DataViewsExampleScenario). Note that the field sets and the sectioners arrays are empty:
 ```json
 {
@@ -142,8 +136,9 @@ HTTP 200 OK
 }
 ```
 
-### 2. Data View with Sectioners
+## Data View with Sectioners
 This data view is the same as in the first example, except it also has a `sectioner`, which defines sectioning by the metadata key "Site":
+
 ```json
 {
   "Id": "example_with_sectioners",

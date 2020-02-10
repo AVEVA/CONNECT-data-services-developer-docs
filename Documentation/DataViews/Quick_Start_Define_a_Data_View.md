@@ -39,7 +39,7 @@ HTTP 201 Created
 
 The `.Queries` property is empty, `[ ]`. We will address that soon. 
 
-## Step 2: Retrieve that data view
+## Retrieve the data view
 
 To access the data view again, it is available via the `GET` verb:
 
@@ -63,7 +63,7 @@ HTTP 200 OK
 }
 ```
 
-## Step 3: Add a query for data items
+## Add a query for data items
 
 Creating a data view begins with including some data items: today, those are SDS Streams.
 
@@ -95,7 +95,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
 HTTP 204 No Content
 ```
 
-## Step 4: See the items found by the query
+## View items found by the query
 
 Data views resolve on a per user basis, executing the queries you defined. The results are available in several “resolved” resources.
 
@@ -241,7 +241,7 @@ HTTP 200 OK
 }
 ```
 
-## Step 5: See the fields available to include in the data view
+## View fields available to include in the data view
 
 ### Action
 ```text
@@ -341,7 +341,7 @@ HTTP 200 OK
 }
 ```
 
-## Step 6: Include some of the available fields
+## Include some of the available fields
 At this point, if you query for data, the table is empty – because no fields have been included in the data view. Including fields is a deliberate action, albeit one that is intended to be easy.
 
 ### Action
@@ -445,7 +445,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
 HTTP 204 No Content
 ```
 
-Now, if we return to the available field sets, only “Timestamp” remains available-but-unused.
+Now, if we return to the available field sets, only “Timestamp” remains available but unused.
 
 ### Action
 ```text
@@ -517,7 +517,7 @@ An array of json values similar to:
 
 There was ambiguity in the field mapping identifiers, so the data views engine suffixed each field mapping id ordinally.
 
-The suffixing (to ensure uniqueness) is done for the sake of client behavior, and it is not expected that ambiguity is an acceptable outcome. The remaining steps show two approaches for disambiguating the content of a data view. 
+The suffixing (to ensure uniqueness) is done for the sake of client behavior, as it is not expected that ambiguity is an acceptable outcome. The remaining steps show two approaches for disambiguating the content of a data view. 
 
 ### Action – Want csv?
 Resubmit the data query with an additional query parameter, `&form=csvh`
@@ -706,7 +706,7 @@ HTTP 200 OK
 
 Note that in the real world, we’re not necessarily aiming for an ultra-skinny output, and the data views product doesn’t make any assumptions there.
 
-## Step 8: Include the sectioner field set
+## Include the sectioner field set
 
 In the case where each section contained multiple data items, having the section value repeated for every data item would be redundant. Return to the Available Field Sets, and now there is a solution for that redundancy
 
@@ -757,7 +757,7 @@ This allows the sectioner value to appear as a single field, versus being repeat
 ### Action
 Whatever field you’re using as the sectioner, remove it from the fields included in the data view, since it’s redundant now.
 
-## Step 9: Distinguish the data items
+## Distinguish data items
 
 A different and complementary way of disambiguating the data items is to “distinguish” them within the field set.
 
@@ -903,7 +903,7 @@ HTTP 200 OK
     ...
 ```
 
-## Step 10: Consolidating fields
+## Consolidate data fields
 
 There is a problem with this data view: the Gen1 Weather streams have a "Temperature" property but the Gen2 Weather streams have  renamed it to "AmbientTemperature". The data view has fields for both, but for each stream "Temperature" or "AmbientTemperature" is null. This is undesirable since the fields are semantically identical and should not be separate fields in the data view.
 
@@ -1027,5 +1027,5 @@ HTTP 200 OK
 ```
 
 
-## Step 11: Further steps
+## Further steps
 The API is designed to encourage trial-and-error. We encourage you to experiment with other ways to represent this data, and to incorporate information about the solar inverters at each site.

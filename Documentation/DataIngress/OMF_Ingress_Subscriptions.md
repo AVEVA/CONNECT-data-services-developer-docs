@@ -67,9 +67,9 @@ Get the default Access Control List for new Subscriptions.
 ### Parameters
 
 ``tenantId``
-  Unique Id for the tenant. 
+  Unique Id for the tenant
 ``namespaceId``
-  Unique Id for the namespace. 
+  Unique Id for the namespace
 
 ### Returns
 An AccessControlList object.

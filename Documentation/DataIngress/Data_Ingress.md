@@ -2,7 +2,7 @@
 uid: dataIngress
 ---
 
-Data Ingress and OSIsoft Message Format
+# Data Ingress and OSIsoft Message Format
 =======================================
 
 You use OSIsoft Message Format (OMF) to achieve high-throughput asynchronous data ingress 

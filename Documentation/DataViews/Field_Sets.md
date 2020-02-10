@@ -11,7 +11,6 @@ Individual fields are organized into `FieldSet`s. Field sets are collections of 
 - FieldSetSourceType.**SectionerValue** - Displays values that the view is [sectioned](xref:DataViewsSectioning) by.
 - FieldSetSourceType.**DataItem** - Resolves for each data item from a particular query.
 
-
 ## Using field sets
 
 ### Available field sets
@@ -106,7 +105,6 @@ To fix this, we will add a `.Distinguisher` to the field set.
 If the field set resolves to multiple data items in any section (or if sectioning is not used), then a field should be designated as the field set's `.Distinguisher`. If one lone criterion is not a sufficient or useful way of disambiguating the fields, then [sectioning](xref:DataViewsSectioning) by additional criteria may be necessary.
 
 #### Example: Adding a distinguisher
-
 To the data view from the previous example, we will add a `Field` as the `.Distinguisher` of its field set. In this example, it makes sense to distinguish each data item by its _Measurement_.
 
 ```json

@@ -2,25 +2,19 @@
 uid: omfIngressTopics
 ---
 
-Topics 
-============
-
-Topic Information 
------------------------
+# Topics 
 
 A Topic aggregates OMF messages received from one or more Clients and makes them available for consumption by a Subscription.
 
+## Topic Information 
 A Topic must contain at least one Client Id. Clients may be added to or removed from an existing Topic. A given Client may belong to multiple Topics in separate Namespaces. 
 
 When a Topic is created, OMF messages sent from the Topic's associated Clients are routed to a queue where they can be consumed by a Subscription. This queue makes OMF messages available to Subscriptions for up to seven days. While the OMF messages are in the Topic queue, they are not available for retrieval via an API. They must first be consumed by a Subscription and forwarded to a data store. The Topic queue stores the OMF messages in the Region of its Namespace.
 
 The API calls in this section are used to create and manipulate topics. 
 
-Data Models 
------------
-
+## Data Models 
 Topic information is contained in an object called ``Topic`` and has the following format: 
-
 
 | Property        | Type                    | Details                                |
 |-----------------|-------------------------|----------------------------------------|

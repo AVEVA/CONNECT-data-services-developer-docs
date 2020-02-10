@@ -38,9 +38,9 @@ Get all Subscriptions for a tenant.
 
 ### Parameters
 
-``tenantId``
+`tenantId`
   Unique Id for the tenant
-``namespaceId``
+`namespaceId`
   Unique Id for the namespace. 
 
 ### Returns

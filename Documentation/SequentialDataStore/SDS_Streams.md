@@ -20,7 +20,7 @@ Create the ISdsMetadataService, using one of the ``SdsService.GetMetadataService
 The following table shows the required and optional SdsStream fields. Fields not listed are reserved
 for internal SDS use.
 
-
+<a name="streampropertiestable"></a>
 | Property          | Type                             | Optionality | Searchable | Details |
 |-------------------|----------------------------------|-------------|------------|---------|
 | Id                | String                           | Required    | Yes		  | An identifier for referencing the stream |

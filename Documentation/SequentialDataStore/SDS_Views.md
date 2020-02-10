@@ -17,8 +17,9 @@ a target property that it cannot map to, the property is added and configured wi
 To map a property that is beyond the ability of SDS to map on its own, you should define an SdsStreamViewProperty 
 and add it to the SdsStreamView’s Properties collection.
 
-The following table shows the required and optional SdsStreamView fields. Fields that are not included are reserved for internal SDS use. See the [Searching](xref:sdsSearching) topic regarding limitations on search.
+The following table shows the required and optional SdsStreamView fields. Fields that are not included are reserved for internal SDS use. See the [Search in SDS](xref:sdsSearching) topic regarding limitations on search.
 
+<a name="streamviewpropertiestable"></a>
 | Property     | Type                   | Optionality | Searchable | Details |
 |--------------|------------------------|-------------|------------|---------|
 | Id           | String                 | Required    | Yes		   |Identifier for referencing the stream view |
@@ -26,8 +27,8 @@ The following table shows the required and optional SdsStreamView fields. Fields
 | Description  | String                 | Optional    | Yes		   |Description text |
 | SourceTypeId | String                 | Required    | Yes		   |Identifier of the SdsType of the SdsStream |
 | TargetTypeId | String                 | Required    | Yes		   |Identifier of the SdsType to convert events to |
-| Properties   | IList\<SdsStreamViewProperty\> | Optional    | Yes, with limitations	  |Property level mapping |
-
+| Properties   | IList\<SdsStreamViewProperty\> | Optional    | Yes, with limitations*	  |Property level mapping |
+**\*Notes on Properties field**: SdsStreamViewProperty objects are not searchable. Only the SdsStreamViewProperty's SdsStreamView is searchable by its Id, SourceTypeId, and TargetTypeId, which are used to return the top level SdsStreamView object when searching. This includes nested SdsStreamViewProperties. For more information, see [search for stream views](xref:sdsSearching#search-for-stream-views).
 
 **Rules for the Stream View Identifier (SdsStreamView.Id)**
 

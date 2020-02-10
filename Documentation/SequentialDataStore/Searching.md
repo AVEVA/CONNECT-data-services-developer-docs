@@ -2,16 +2,69 @@
 uid: sdsSearching
 ---
 
-Searching
-=====================
-Search in SDS provides a way to search text, fields, etc. across the Sequential Data Store. This document covers the searching for SdsStreams, SdsTypes, and SdsStreamViews.
+# Search in SDS
 
-Searching for Streams
-=====================
+You can search for objects using texts, phrases and fields in Sequential Data Store (SDS). The REST APIs (or .NET client libraries methods ``GetStreamsAsync``, ``GetTypesAsync``, and ``GetStreamViewsAsync``) return items that match the search criteria within a given namespace. By default, the ``query`` parameter applies to all searchable object fields.
 
-The search functionality for streams is exposed through the REST API and the client libraries method ``GetStreamsAsync``.
-The searchable properties are below. 
+Let's say a namespace contains the following streams:
 
+**streamId** | **Name**  | **Description**
+------------ | --------- | ----------------
+stream1      | tempA     | Temperature from DeviceA
+stream2      | pressureA | Pressure from DeviceA
+stream3      | calcA     | Calculation from DeviceA values
+
+A ``GetStreamsAsync`` call with different queries will return below:
+
+**Query string**     | **Returns**
+------------------  | ----------------------------------------
+``temperature``  | stream1
+``calc*``        | stream3
+``DeviceA*``     | stream1, stream2, stream3
+``humidity*``    | nothing
+
+#### Requests
+ ```text
+	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure&orderby=name
+
+	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure&orderby=id asc
+
+	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure&orderby=name desc
+
+	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure&orderby=name desc&skip=10&count=20
+ ```
+##### Parameters
+`string query`  
+An optional parameter representing the search criteria. If unspecified, returns all values. Can be used with `skip`, `count` and `orderby`.
+
+`int skip`  
+An optional parameter representing the zero-based offset of the first SdsStream to retrieve. The number of matched items to skip over before returning. If unspecified, a default value of 0 is used. Use when more items match the search criteria than can be returned in a single call.
+
+`int count`  
+An optional parameter representing the maximum number of SdsStreams to retrieve. If unspecified, a default value of 100 is used. The maximum value is 1,000. 
+
+`string orderby`  
+An optional parameter representing the sorted order in which SdsStreams are returned. Requires a field name (``orderby=name``, for example). Default order is ascending (``asc``). Add ``desc`` for descending order (``orderby=name desc``, for example). If unspecified, there is no sorting of results.
+
+#### .NET client libraries method
+If there are 175 streams that match the search criteria "temperature" in a single call for example, below will return the first 100 matches:
+
+```csharp
+    _metadataService.GetStreamsAsync(query:"temperature", skip:0, count:100)
+```
+
+If ``skip`` is set to 100, the following call will return the remaining 75 matches while skipping over the first 100:
+```csharp
+    _metadataService.GetStreamsAsync(query:"temperature", skip:100, count:100)
+```
+
+## Search for streams
+
+Streams search is exposed through the REST API and the client libraries method ``GetStreamsAsync``.
+
+For more information on stream properties, see [Streams](xref:sdsStreams#streampropertiestable).
+
+**Searcheable Properties**
 | Property          | Searchable  |
 |-------------------|-------------|
 | Id                | Yes		  |
@@ -22,31 +75,48 @@ The searchable properties are below.
 | InterpolationMode | No		  |
 | ExtrapolationMode | No		  |
 | PropertyOverrides | No		  |
-| [Tags](xref:sdsStreamExtra)*		| Yes		  |
-| [Metadata](xref:sdsStreamExtra)*	| Yes		  |
 
-``GetStreamsAsync`` is an overloaded method that is used to search for and return streams (also see [Streams](xref:sdsStreams) for information about using ``GetStreamAsync`` to return streams). When you call an overloaded method, the software determines the most appropriate method to use by comparing the argument types specified in the call to the method definition.
+**Searcheable Child Resources**
+| Property          | Searchable  |
+|-------------------|-------------|
+| [Metadata](xref:sdsStreamExtra)*		| Yes		  |
+| [Tags](xref:sdsStreamExtra)*	| Yes		  |
+| ACL | No		  |
+| Owner | No		  |
+**\*Notes on metadata and tags:** You can access stream metadata and tags through Metadata and Tags API respectively. Metadata and tags are associated with SdsStream objects and can be used as search criteria. See [below](#Stream_Metadata_search_topic) for more information.
 
-The syntax of the client libraries method is as follows:
+#### Request
+Search for streams using the REST API and specifying the optional `query` parameter:
+ ```text
+      GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query={query}&skip={skip}&count={count}
+ ```
+##### Parameters
+`string query`  
+An optional parameter representing the search criteria. If unspecified, returns all values. Can be used with `skip`, `count` and `orderby`. 
+
+`int skip`  
+An optional parameter representing the zero-based offset of the first SdsStream to retrieve. If unspecified, a default value of 0 is used. Use when more items match the search criteria than can be returned in a single call.
+
+`int count`  
+An optional parameter representing the maximum number of SdsStreams to retrieve. If unspecified, a default value of 100 is used. The maximum value is 1,000. 
+
+#### .NET client libraries method
+``GetStreamsAsync`` is used to search for and return streams. 
 ```csharp
       _metadataService.GetStreamsAsync(query:"QueryString", skip:0, count:100);
 ```
 
-Searching for streams is also possible using the REST API and specifying the optional `query` parameter, as shown here:
- ```text
-      GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query={query}&skip={skip}&count={count}
- ```
+The Stream fields valid for search are identified in the fields table located on the [Streams](xref:sdsStreams) page.
+Note that Stream Metadata has unique syntax rules.
+See [How Searching Works: Stream Metadata](#Stream_Metadata_search_topic).
 
-The Stream fields valid for search are identified in the fields table located on the [Streams](xref:sdsStreams) page. Note that Stream Metadata has unique 
-syntax rules, see [How Searching Works: Stream Metadata](#Stream_Metadata_search_topic).
+## Search for types
 
-Searching for Types
-=====================
+Types search is exposed through the REST API and the client libraries method ``GetTypesAsync``. 
 
-Similarly, the search functionality for types is also exposed through REST API and the client libraries method ``GetTypesAsync``. The query syntax and the request parameters are the same. 
-The only difference is the resource you're searching on, and you can search on different properties for types than for streams. The searchable properties are below. 
-See [Types](xref:sdsTypes) for more information.
+For more information on type properties, see [Types](xref:sdsTypes#typepropertiestable).
 
+**Searcheable Properties**
 | Property          | Searchable |
 |-------------------|------------|
 | Id                | Yes        |
@@ -55,32 +125,35 @@ See [Types](xref:sdsTypes) for more information.
 | SdsTypeCode       | No         |
 | InterpolationMode | No         |
 | ExtrapolationMode | No         |
-| Properties        | Yes, with limitations |
+| Properties        | Yes, with limitations* |
+**\*Notes on Properties field:** Name and Id of a type are included in its Properties field. Similarly, Name and Id of a nested type are included in its Properties. If there are two types with the same Properties, Name or ID, the search will return both types in the result.
 
-
-``GetTypesAsync`` is an overloaded method that is used to search for and return types. 
-
-The syntax of the client libraries method is as follows:
-```csharp
-      _metadataService.GetTypesAsync(query:"QueryString", skip:0, count:100);
-```
-
-As previously mentioned, searching for types is also possible using the REST API and specifying the optional `query` parameter, as shown here:
+#### Request
+Search for types using the REST API and specifying the optional `query` parameter:
  ```text
       GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types?query={query}&skip={skip}&count={count}
  ```
+##### Parameters
+`string query`  
+An optional parameter representing the search criteria. If unspecified, returns all values. Can be used with `skip`, `count` and `orderby`. 
 
-The Type fields valid for search are identified in the fields table located on the [Types](xref:sdsTypes) page. The Properties field is identified
-as being searchable but with limitations: Each SdsTypeProperty of a given SdsType has its Name and Id included in the Properties field. This includes nested
-SdsTypes of the given SdsType. Therefore, the searching of Properties will distinguish SdsTypes by their respective lists of relevant SdsTypeProperty Ids and Names.
+`int skip`  
+An optional parameter representing the zero-based offset of the first SdsType to retrieve. If unspecified, a default value of 0 is used. Use when more items match the search criteria than can be returned in a single call.
 
-Searching for Stream Views
-=====================
+`int count`  
+An optional parameter representing the maximum number of SdsTypes to retrieve. If unspecified, a default value of 100 is used. The maximum value is 1,000. 
 
-Similarly, the search functionality for stream views is also exposed through REST API and the client libraries method ``GetStreamViewsAsync``. The query syntax and the request parameters are the same. 
-The only difference is the resource you're searching on, and you can match on different properties for stream views than for streams and types. 
-The searchable properties are below. See [Stream Views](xref:sdsStreamViews) for more information.
+#### .NET client libraries method
+``GetTypesAsync`` is used to search for and return types. 
+```csharp
+      _metadataService.GetTypesAsync(query:"QueryString", skip:0, count:100);
+```
+## Search for stream views
 
+Stream views search is exposed through the REST API and the client libraries method ``GetStreamViewsAsync``. 
+For more information on stream view properties, see [Stream Views](xref:sdsStreamViews#streamviewpropertiestable).
+
+**Searcheable Properties**
 | Property     | Searchable |
 |--------------|------------|
 | Id           | Yes		|
@@ -88,181 +161,144 @@ The searchable properties are below. See [Stream Views](xref:sdsStreamViews) for
 | Description  | Yes		|
 | SourceTypeId | Yes		|
 | TargetTypeId | Yes		|
-| Properties   | Yes, with limitations |
+| Properties   | Yes, with limitations* |
+**\*Notes on Properties field:** The Properties collection contains a list of SdsStreamViewProperty objects. The query will attempt to find a match on the SdsStreamViewProperty's Id, SourceTypeId, and TargetTypeId fields. The Properties collection of nested views will also be searched. See example below.  
 
+##### Example
+You can search for ``ComplexView`` using the `Id`("NestedView"), `SourceTypeId`, and `TargetTypeId` of ``NestedView`` but not its `Description`("An example of a nested view").  
+```json
+{ 
+   "Id":"ComplexView",
+   "Name":"ComplexView",
+   "SourceTypeId":"ComplexSourceType",
+   "TargetTypeId":"ComplexTargetType",
+   "Description":null,
+   "Properties":[ 
+      { 
+         "SourceId":"Value",
+         "TargetId":"Value",
+         "SdsStreamView":{ 
+            "Id":"NestedView",
+            "SourceTypeId":"NestedType",
+            "TargetTypeId":"NestedType",
+            "Description":"An example of a nested view",
+            "Properties":[ 
+               { 
+                  "SourceId":"Value",
+                  "TargetId":"Value"
+               }
+            ]
+         }
+      }
+   ]
+}
+```
+#### Request
+Search for stream views using the REST API and specifying the optional `query` parameter:
+ ```text
+    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews?query={query}&skip={skip}&count={count}
+ ```
+##### Parameters
+`string query`  
+An optional parameter representing the search criteria. If unspecified, returns all values. Can be used with `skip`, `count` and `orderby`. 
 
-``GetStreamViewsAsync`` is an overloaded method that is used to search for and return stream views. 
+`int skip`  
+An optional parameter representing the zero-based offset of the first SdsStreamView to retrieve.If unspecified, a default value of 0 is used. Use when more items match the search criteria than can be returned in a single call.
 
-The syntax of the client libraries method is as follows:
+`int count`  
+An optional parameter representing the maximum number of SdsStreamViews to retrieve. If unspecified, a default value of 100 is used. The maximum value is 1,000. 
+
+#### .NET client libraries method
+``GetStreamViewsAsync`` is used to search for and return stream views. 
 ```csharp
     _metadataService.GetStreamViewsAsync(query:"QueryString", skip:0, count:100);
 ```
 
-As previously mentioned, searching for stream views is also possible using the REST API and specifying the optional `query` parameter, as shown here:
- ```text
-    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews?query={query}&skip={skip}&count={count}
- ```
-The Stream View fields valid for search are identified in the fields table located on the [Stream Views](xref:sdsStreamViews) page. The Properties field
-is identified as being searchable but with limitations because SdsStreamViewProperty objects are not searchable. Only the SdsStreamViewProperty's
-SdsStreamView is searchable by its Id, SourceTypeId, and TargetTypeId, which are used to return the top level SdsStreamView object when searching. 
-This includes nested SdsStreamViewProperties.
+## Tokenization
+Tokenization is the process of breaking a string sequence into pieces called tokens using specific characters to delimit tokens. User-specified queries are tokenized into search terms. How the query string is tokenized can affect search results.
 
-How Searching Works
-=====================
+Delimit the terms with 1) a space, or 2) one or more punctuation characters (``*``, ``!``, ``?``, ``.``, for example) and a space. Query string followed without space by other punctuation characters does not trigger tokenization and is treated as part of the term. 
 
-The ``GetStreamsAsync``, ``GetTypesAsync``, and ``GetStreamViewsAsync`` overloads return items that match specific 
-search criteria within a given namespace. 
-The query parameter will be applied across all searchable fields of objects we’re searching on by default.
+If your query has a wildcard (``*``) operator after a punctuation character, neither the punctuation nor the wildcard operator is tokenized. To specifically search for a term that has trailing punctuation, enclose the query in quotation marks to ensure that the punctuation is part of the query. See examples below:
 
-For example, assume that a namespace contains the following Streams:
+ Term | Tokenized Term | Description
+----------|--------------|-----------
+``Device.1`` | ``Device.1``| The token includes ``.1`` because there is no space between it and ``Device``.
+``Device!!1`` | ``Device!!1``| The token includes ``!!1`` because there is no space between it and ``Device``.
+<code>Device.&nbsp;</code>  | ``Device``| ``.`` and the following space demarcates ``Device`` as the token term.
+<code>Device!!&nbsp;</code> | ``Device``| ``!!`` and the following space demarcates ``Device`` as the token term.
+``Device!*`` | ``Device``| The token does not include ``!*`` because neither is tokenized if a wildcard operator follows a punctuation character.
+``"Device!"*`` | ``Device!``| ``Device!`` is the token because the string is enclosed in double quotes.
 
-**streamId** | **Name**  | **Description**
------------- | --------- | ----------------
-stream1      | tempA     | The temperature from DeviceA
-stream2      | pressureA | The pressure from DeviceA
-stream3      | calcA     | calculation from DeviceA values
+## Search operators
+You can use search operators in the ``query`` string to get more refined search results. Use operators ``AND``,``OR``, and ``NOT`` in all caps. 
 
-
-Using the stream data above, the following table shows the results of a ``GetStreamsAsync`` call with different ``Query`` values:
-
-**QueryString**     | **Streams returned**
-------------------  | ----------------------------------------
-``temperature``  | Only stream1 returned.
-``calc*``        | Only stream3 returned.
-``DeviceA*``     | All three streams returned.
-``humidity*``    | No streams returned.
-
-The ``skip`` and ``count`` parameters determine which items are returned when a large number of them match 
-the ``query`` criteria.   
-
-``count`` indicates the maximum number of items returned by the ``GetStreamsAsync()`` or ``GetTypesAsync()`` call. The maximum value of 
-the ``count`` parameter is 1000. 
-
-``skip`` indicates the number of matched items to skip over before returning matching items. You use the 
-skip parameter when more items match the search criteria than can be returned in a single call. 
-
-**.NET Library**
-
-For example, assume there are 175 streams that match the search criteria: “temperature”.
-
-The following call returns the first 100 matches:
-```csharp
-    _metadataService.GetStreamsAsync("temperature", 0, 100)
-```
-
-After the previous call, you can use the following call to return the remaining 75 matches, skipping over the first 
-100 matches because of the skip parameter set at 100):
-```csharp
-    _metadataService.GetStreamsAsync("temperature", 100, 100)
-```
-
-The ``orderby`` parameter is supported for searching both the streams and types. The basic functionality of it is to search the items and then return the result in sorted order.
-The default value for ``orderby`` parameter is ascending order. It can be changed to descending order by specifying ``desc`` alongside the orderby field value. It can be used in conjunction with 
-``query``, ``skip``, and ``count`` parameters.
-
-**Request**
- ```text
-	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure&orderby=name
-
-	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure&orderby=id asc
-
-	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure&orderby=name desc
-
-	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure&orderby=name desc&skip=10&count=20
- ```
-
-Tokenization
-=====================
-
-Tokenization is the process of breaking a string sequence into pieces called tokens using specific characters to delimit tokens. 
-
-When performing a search, the user specified query is tokenized into search terms. 
-
-The rules around how the query string is tokenized can affect the search results. 
-Terms are delimited by spaces or by one or more punctuation characters followed by a space. 
-
-Punctuation followed by other characters without space does not trigger tokenization and is treated
-as part of the term. 
-
-If your query has a wildcard after trailing punctuation, neither is tokenized. To specifically search on a term that has trailing punctuation, enclose it in quotation marks 
-to ensure the punctuation is part of the query. See examples below:
-
- Term | Tokenized Term
+Operator | Description
 ----------|-------------------------------------------------------------------
-``Device.1`` | ``Device.1``
-``Device!!1`` | ``Device!!1``
-``Device. ``  | ``Device``
-``Device!! `` | ``Device``
-``Device!*`` | ``Device``
-``"Device!"*`` | ``Device!``
+``AND`` | AND operator. ``cat AND dog`` searches for both "cat" and "dog".  
+``OR``  | OR operator. ``cat OR dog`` searches for either "cat" or "dog", or both. 
+``NOT`` | NOT operator. ``cat NOT dog`` searches for "cat" or those without "dog".
+``*``   | Wildcard operator. Matches 0 or more characters. ``log*`` searches for those starting with "log" ("log", "logs" or "logger" for example.); ignores case.
+``:``   | Field-scoped query. Specifies a field to search. ``id:stream*`` searches for streams whose ``id`` field starts with "stream", but will not search other fields like ``name`` or ``description``. See [Field-scoping operator](#fieldScoped) below.
+``" "`` | Quote operator. Scopes the search to an exact sequence of characters. While ``dog food`` (without quotes) searches for instances with "dog" or "food" anywhere in any order, ``"dog food"`` (with quotes) will only match instances that contain the whole string together and in that order.
+``( )`` | Precedence operator. ``motel AND (wifi OR luxury)`` searches for either "wifi" or "luxury", or "wifi" and "luxury" at the intersection of "motel".
+
+### Examples
+**Query string**     | **Matches field value** | **Does not match field value**
+------------------ | --------------------------------- | -----------------------------
+``mud AND log`` | log mud<br>mud log | mud<br>log
+``mud OR log`` | log mud<br>mud<br>log | mutt<br>look
+``mud AND (NOT log)`` | mud | mud log
+``mud AND (log OR pump*)`` | mud log<br>mud pumps | mud bath
+``name:stream* AND (description:pressure OR description:pump)`` | The name starts with "stream" and the description has either "pressure" or "pump", or both. | string
 
 
-Search operators
-=====================
-
-You can specify search operators in the ``query`` string to return more specific search results. 
-
-Operators | Description
-----------|-------------------------------------------------------------------
-``AND`` | AND operator. For example, ``cat AND dog`` searches for streams containing both "cat" and "dog".  AND must be in all caps.
-``OR``  | OR operator. For example, ``cat OR dog`` searches for streams containing either "cat" or "dog" or both.  OR must be in all caps.
-``NOT`` | NOT operator. For example, ``cat NOT dog`` searches for streams that have the "cat" term or do not have "dog".  NOT must be in all caps.
-``*``   | Wildcard operator. This matches 0 or more characters in a word.  For example, ``log*`` searches for streams that have a term that starts with "log" (e.g. "log", "logs" or "logger"), ignoring case.
-``:``   | Field-scoped query.  This specifies a particular field to search on.  For example, ``id:stream*`` will search for streams where the ``id`` field starts with "stream", but will not search on other fields like ``name`` or ``description``.
-``" "`` | Quote operator. This searches on an exact sequence of characters rather than searching on words separated by spaces or punctuation.  For example, while ``dog food`` (without quotes) searches for streams containing "dog" or "food" anywhere in any order, ``"dog food"`` (with quotes) will only match streams that contain the whole string together and in that order.
-``( )`` | Precedence operator. For example, ``motel AND (wifi OR luxury)`` searches for streams containing "motel" and either "wifi" and/or "luxury".
-
-**: Operator**
----------------
-
-You can also qualify which fields are searched by using the following syntax: 
+### <a name="fieldScoped">Field-scoping (``:``) operator</a>
+You can qualify the search to a specific field using the ``:`` operator.  
 
 	fieldname:fieldvalue
 
-**Request**
+#### Request
  ```text
 	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure
  ```
 
-**.NET Library**
+#### .NET client libraries method
 ```csharp
-	GetStreamsAsync(query:”name:pump name:pressure”);
+	GetStreamsAsync(query:"name:pump name:pressure");
 ```
 
-**\* Operator**
------------------
-
-You can use the ``'*'`` character as a wildcard to specify an incomplete string. A wildcard can only be used once for each search term, except for the case of a Contains type query clause. In that case two wildcards are allowed - one at the beginning and one at the end of the term.  For example, ``*Tank*`` is valid but ``*Ta*nk``, ``Ta*nk*``, and ``*Ta*nk*`` are currently not supported.
+### Wildcard (``*``) operator
+You can use the wildcard operator (``*``) to complement an incomplete string.
+It can only be used once per token, unless there's one at the beginning and another at the end (``*Tank*`` but not ``*Ta*nk``, ``Ta*nk*`` or ``*Ta*nk*``, for example).  
 
 **Query string**     | **Matches field value** | **Does not match field value**
 ------------------ | --------------------------------- | -----------------------------
 ``log*`` | log<br>logger | analog
 ``*log`` | analog<br>alog | logg
 ``*log*`` | analog<br>alogger | lop
-``l*g`` | log<br>logg | lake swimming
+``l*g`` | log<br>logg | lake swimming (``*`` does not span across two tokens)
 
 **Supported**     | **Not Supported**
 ------------------ | ----------------------------------------
 ``*``<br>``*log``<br>``l*g``<br>``log*``<br>``*log*`` <br>``"my log"*``	| ``*l*g*``<br>``*l*g``<br>``l*g*`` <br>``"my"*"log"``
 
-**Request**
+#### Request
  ```text
 	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=log*
  ```
 
-**.NET Library**
+#### .NET client libraries method
 ```csharp
-	GetStreamsAsync(query:”log*”);
+	GetStreamsAsync(query:"log*");
 ```
 
-\"" Operator	
--------------------	
+### Double quotes (``""``) operator	
+Tokenized search terms are delimited by whitespace and punctuation. To include these delimiters in a search, enclose them in double quotes.	
 
-The search engine automatically searches on strings delimited by whitespace and punctuation.  To search for values that include these delimiters, enclose the value in double quotes.	
+When using double quotes, the matching string must include the whole value of the field on the object being searched. Partial strings will not be matched unless wildcards are used. For example, if you're searching for a stream with description ``Pump three on unit five``, a query ``"unit five"`` will not match the description, but ``*"unit five"`` will.
 
-When using double quotes, the matching string must include the whole value of the field on the object being searched.  Partial strings will not be matched unless wildcards are used.  For example, if you're searching on a stream that has a description of ``Pump three on unit five``, a query of ``"unit five"`` will not match the description, but a query of ``*"unit five"`` will.
-
-Also, wildcards can be used on the *outside* of the quote operators, but if an asterisk is on the inside of the quotes, it is treated as a string literal rather than a wildcard operator.  For example, you can search for ``"dog food"*`` to find a string that starts with "dog food", but if you search for ``"dog food*"``, it will only match on a value of "dog food*".
+Note that while wildcard (``*``) can be used either in or outside of quotes, it is treated as a string literal inside quotes.  For example, you can search for ``"dog food"*`` to find a string that starts with "dog food", but if you search for ``"dog food*"``, it will only match the value of "dog food*".
 
  **Query string**     | **Matches field value** | **Does not match field value**	
 ------------------ | --------------------------------- | -----------------------------	
@@ -272,33 +308,18 @@ Also, wildcards can be used on the *outside* of the quote operators, but if an a
 ``*"pump pressure"*`` | pump pressure <br> pump pressure gauge <br> the pump pressure gauge | pressure <br> pressure pump 
 ``"pump*pressure"`` | pump\*pressure | pump pressure <br> the pump pressure gauge
 
- **Request**	
- ```text	
-	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=”pump pressure”	
- ```	
-
- **.NET Library**	
-```csharp	
-	GetStreamsAsync(query:“\\“pump pressure\\””);	
+#### Request
+```text	
+	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query="pump pressure"	
 ```	
 
+#### .NET client libraries method
+```csharp	
+	GetStreamsAsync(query:"\\"pump pressure\\"");	
+```	
 
-Other operators examples
----------------------
-
-**Query string**     | **Matches field value** | **Does not match field value**
------------------- | --------------------------------- | -----------------------------
-``mud AND log`` | log mud<br>mud log | mud<br>log
-``mud OR log`` | log mud<br>mud<br>log | 
-``mud AND (NOT log)`` | mud | mud log
-``mud AND (log OR pump*)`` | mud log<br>mud pumps | mud bath
-``name:stream* AND (description:pressure OR description:pump)`` | The name starts with "stream" and the description has the either of the terms "pressure" or "pump" | 
-
-
-## <a name="Stream_Metadata_search_topic">How Searching Works: Stream Metadata</a>
-
-[Stream Metadata](xref:sdsStreamExtra) modifies the aforementioned search syntax rules and each operator's behavior is described below. 
-For example, assume that a namespace contains the following Streams and the respective Metadata Key-Value pair(s) for each stream.
+## <a name="Stream_Metadata_search_topic">How search works with stream metadata</a>
+[Stream metadata](xref:sdsStreamExtra) behaves differently with search syntax rules described in the previous sections. Let's say that there's a namespace that has streams below with respective metadata key-value pairs:
 
 **streamId** | **Metadata**
 ------------ | --------- 
@@ -307,55 +328,46 @@ stream2      | { serial, a1 }
 stream3      | { status, active }<br>{ second key, second value }   
  
 
-: Operator
--------------------
-A Stream Metadata key is only searchable in association with a Stream Metadata value. This pairing is defined using the same  field scoping ``':'`` operator. 
+### Field-scoping (``:``) Operator
+A stream metadata key is only searchable in association with its value. This pairing is defined using the field-scoping (``:``) operator. 
 
-	myStreamMetadataKey:streamMetadataValue
+	myStreamMetadataKey:myStreamMetadataValue
 
-If the ``':'`` operator is not used within an individual search clause then Metadata Keys are not searched against but Metadata 
-Values are searched against (along with the other searchable Stream fields).
+Metadata key is not searched if the operator (``:``) is missing in the query string: the search is then limited to metadata values along with other searchable fields in the stream.
 
-**QueryString**     | **Streams returned**
-------------------  | ----------------------------------------
-``manufacturer:company``  | Only stream1 returned.
-``company``  | Only stream1 returned.
-``a*``  | All three streams returned.
+**Query string**            | **Returns** | **Description**
+------------------------   | ------------- |-------------
+``manufacturer:company``  | stream1 | Searches and returns stream1.
+``company``               | stream1      | Searches only the metadata values due to lack of ``:`` operator and returns stream1.
+``a*``  | stream1, stream2, stream3       | Searches the metadata values and returns all three streams.
 
-**Request**
+#### Request
  ```text
 	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=manufacturer:company
  ```
 
-**.NET Library**
+#### .NET client libraries method
 ```csharp
 	GetStreamsAsync(query:"manufacturer:company");
 ```
 
-\* Operator
--------------------
+### Wildcard (``*``) Operator  
+Wildcard (``*``) character can be used both in metadata keys and values with one caveat: wildcard (``*``) used in the field (left of field-scoped operator (``:``)) will only search within stream metadata.
 
-For searching on Metadata values the ``'*'`` character is again used as a wildcard to specify an incomplete string. Additionally,
-this wildcard character can be used with the Metadata key as well. This is not supported for any other "fields", so by including a wildcard in a field
-(defined as a value to the immediate left of a ``':'`` operator) the query will only be valid against Stream Metadata.
+**Query string**     | **Returns** | **Description**
+------------------  | ---------------- | ------------------------
+``manufa*turer:compan*``  | stream1 | Searches and returns stream1.
+``ser*al:a*``  | stream1, stream2 | Searches and returns stream1 and stream2.
+``s*:a*``  | stream1, stream2, stream3 | Searches and returns all three streams. 
+``Id:stream*``  |  stream1, stream2, stream3 | Searches all fields and returns three streams. 
+``Id*:stream*``  | nothing | Wildcard in the field limits the search to metadata. Returns nothing because there is no metadata by that name that meets the criteria.
 
-**QueryString**     | **Streams returned**
-------------------  | ----------------------------------------
-``manufa*turer:compan*``  | Only stream1 returned.
-``ser*al:a*``  | Stream1 and stream2 are returned.
-``s*:a*``  | All three streams returned.
-``Id:stream*``  |  All three streams returned.
-``Id*:stream*``  | Nothing returned.
-
-Note that in the final example nothing matches on a Stream's Id value because including ``'*'`` in a search clause's 
-field prevents non-Stream Metadata fields from being searched.
-
-**Request**
+#### Request
  ```text
 	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=manufa*turer:compan*
  ```
 
-**.NET Library**
+#### .NET client libraries method
 ```csharp
 	GetStreamsAsync(query:"manufa*turer:compan*");
 ```

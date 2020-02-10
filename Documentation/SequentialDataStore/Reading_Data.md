@@ -2,7 +2,7 @@
 uid: sdsReadingData
 ---
 
-# Reading data
+# Read data
 
 The .NET and REST APIs provide programmatic access to read and write data. This section identifies and describes 
 the APIs used to read [Streams](xref:sdsStreams) data. Results are influenced by [Types](xref:sdsTypes), [Stream Views](xref:sdsStreamViews), [Filter expressions](xref:sdsFilterExpressions), and [Table format](xref:sdsTableFormat).

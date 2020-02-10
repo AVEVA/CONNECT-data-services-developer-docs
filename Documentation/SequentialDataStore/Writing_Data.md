@@ -2,7 +2,7 @@
 uid: sdsWritingData
 ---
 
-# Writing data
+# Write data
 
 The SDS REST APIs provide programmatic access to read and write SDS data. This section describes 
 the APIs used to write SdsStream data.

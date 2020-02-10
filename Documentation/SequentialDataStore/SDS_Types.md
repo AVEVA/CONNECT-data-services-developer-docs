@@ -40,10 +40,9 @@ Only SdsTypes used to define SdsStreams or SdsStreamViews are required to be add
 SdsTypes that define Properties or base types are contained within the parent SdsType and are not required
 to be added to the Data Store independently.
 
-The following table shows the required and optional SdsType fields. Fields that are not included are reserved for internal SDS use. 
-See the [Searching](xref:sdsSearching) topic regarding limitations on search.
+The following table shows the required and optional SdsType fields. Fields that are not included are reserved for internal SDS use. See  [Search in SDS](xref:sdsSearching) for limitations on search.
 
-
+<a name="typepropertiestable"></a>
 | Property          | Type                   | Optionality | Searchable | Details |
 |-------------------|------------------------|-------------|---------|---------|
 | Id                | String                 | Required    | Yes | Identifier for referencing the type |

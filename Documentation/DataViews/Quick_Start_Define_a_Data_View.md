@@ -9,7 +9,7 @@ This quick start is a hands-on tour of the main concepts behind creating data vi
 It is assumed that you are working with streams as described in the [Example Scenario](xref:DataViewsExampleScenario). The data views API uses the same authentication scheme as the Sequential Data Store.
 
 
-## Step 1: Create a data view
+## Create a data view
 
 Creating a data view requires only an identifier, `.Id`. The data view does not accomplish anything yet, but it's a starting point.
 

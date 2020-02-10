@@ -40,8 +40,8 @@ Get all Subscriptions for a tenant.
 
 `tenantId`  
 Unique Id for the tenant
-`namespaceId`
- Unique Id for the namespace
+`namespaceId`  
+Unique Id for the namespace
 
 ### Returns
 An array of Subscription objects. 
@@ -51,25 +51,25 @@ Get a specific Subscription.
 
 ### Parameters
 
-``tenantId``
-  Unique Id for the tenant
-``namespaceId``
-  Unique Id for the namespace
-``subscriptionId``
-  Unique Id for the Subscription. 
+`tenantId`  
+Unique Id for the tenant
+`namespaceId`  
+Unique Id for the namespace
+`subscriptionId`  
+Unique Id for the Subscription. 
 
 ### Returns
-A Subscription object. 
+A Subscription object 
 
 ## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/subscriptions``
 Get the default Access Control List for new Subscriptions.
 
 ### Parameters
 
-``tenantId``
-  Unique Id for the tenant
-``namespaceId``
-  Unique Id for the namespace
+`tenantId`  
+Unique Id for the tenant
+`namespaceId`  
+Unique Id for the namespace
 
 ### Returns
 An AccessControlList object.
@@ -79,10 +79,10 @@ Get the default Access Rights of the requesting identity for any newly created S
 
 ### Parameters
 
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace. 
+`tenantId`  
+Unique Id for the tenant
+`namespaceId`  
+Unique Id for the namespace. 
 
 ## Returns
 An array of Access Rights strings.
@@ -92,12 +92,12 @@ Get the Access Control List for a particular Subscription.
 
 ### Parameters
 
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace. 
-``subscriptionId``
-  Unique Id for the Subscription. 
+`tenantId`  
+Unique Id for the tenant. 
+`namespaceId`  
+Unique Id for the namespace. 
+`subscriptionId`  
+Unique Id for the Subscription. 
 
 ### Returns
 An AccessControlList object.
@@ -107,12 +107,12 @@ Get the Access Rights of the requesting identity for a particular Subscription.
 
 ### Parameters
 
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace. 
-``subscriptionId``
-  Unique Id for the Subscription. 
+`tenantId`  
+Unique Id for the tenant. 
+`namespaceId`  
+Unique Id for the namespace. 
+`subscriptionId`  
+Unique Id for the Subscription. 
 
 ### Returns
 An array of Access Rights strings.
@@ -122,12 +122,12 @@ Get the Owner for a particular Subscription.
 
 ### Parameters
 
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace. 
-``subscriptionId``
-  Unique Id for the Subscription. 
+`tenantId`  
+Unique Id for the tenant. 
+`namespaceId`  
+Unique Id for the namespace. 
+`subscriptionId`  
+Unique Id for the Subscription. 
 
 ### Returns
 A Trustee object.
@@ -137,10 +137,10 @@ Create a new Subscription.
 
 ### Parameters
 
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace. 
+`tenantId`  
+Unique Id for the tenant. 
+`namespaceId`  
+Unique Id for the namespace. 
 
 ### Body
 A Subscription object. The ``Id`` property should not be specified, since it will be automatically generated during creation.
@@ -153,12 +153,12 @@ Update an existing Subscription. Only the name and description may be updated.
 
 ### Parameters
 
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace. 
-``subscriptionId``
-  Subscription Id for the Subscription to be updated.
+`tenantId`  
+Unique Id for the tenant
+`namespaceId`  
+Unique Id for the namespace. 
+`subscriptionId`  
+Subscription Id for the Subscription to be updated.
 
 ### Body
 A Subscription object. The ``Id`` property should match the ``subscriptionId`` in the route.
@@ -171,10 +171,10 @@ Update the default Access Control List for new Subscriptions.
 
 ### Parameters
 
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace. 
+`tenantId`  
+Unique Id for the tenant. 
+`namespaceId`  
+Unique Id for the namespace. 
 
 ### Body
 An AccessControlList object.
@@ -184,12 +184,12 @@ Update the Access Control List for a particular Subscription.
 
 ### Parameters
 
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace. 
-``subscriptionId``
-  Unique Id for the Subscription. 
+`tenantId`  
+Unique Id for the tenant
+`namespaceId`  
+Unique Id for the namespace 
+`subscriptionId`  
+Unique Id for the Subscription 
 
 ### Body
 An AccessControlList object.
@@ -199,12 +199,12 @@ Update the Owner for a particular Subscription.
 
 ### Parameters
 
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace. 
-``subscriptionId``
-  Unique Id for the Subscription. 
+`tenantId`  
+Unique Id for the tenant
+`namespaceId`  
+Unique Id for the namespace
+`subscriptionId`  
+Unique Id for the Subscription
 
 ### Body
 A Trustee object.
@@ -214,9 +214,9 @@ Delete a Subscription.
 
 ### Parameters
 
-``tenantId``
-  Unique Id for the tenant.
-``namespaceId``
-  Unique Id for the namespace.   
-``subscriptionId``
-  Unique Id for the Subscription. 
+`tenantId`  
+Unique Id for the tenant
+`namespaceId`  
+Unique Id for the namespace 
+`subscriptionId`  
+Unique Id for the Subscription

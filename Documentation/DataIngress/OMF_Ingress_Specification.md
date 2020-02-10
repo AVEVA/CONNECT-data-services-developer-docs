@@ -18,8 +18,7 @@ Versions 1.0 and 1.1 of the spec are currently supported.
 ## Message Types
 OMF message types fall into three categories: Type, Container, and Data, which are described below. 
 
-* **Type messages**
-
+### Type messages
   A Type message is interpreted by OSIsoft Cloud Services as an SdsType in the Sequential Data Store. 
   Because SdsTypes are immutable, update operations are not supported. The keywords in the 
   Type definition are interpreted as follows:
@@ -40,16 +39,13 @@ OMF message types fall into three categories: Type, Container, and Data, which a
   index property order within the message corresponds to the ``Order`` field of 
   an SdsTypeProperty. The ``isname`` keyword is not supported.
 
-* **Link Type**
-
+### Link Type
   Link Types are not supported in Sequential Data Store.
 
-* **Span Type**
-
+### Span Type
   Span Types are not supported in Sequential Data Store.
 
-* **Property Types and Formats**
-
+### Property Types and Formats
   OMF supports setting the ``format`` keyword to specify how a particular JSON type should 
   be interpreted. The following is a mapping for the Sequential Data Store supported 
   types (see [Types](xref:sdsTypes)):

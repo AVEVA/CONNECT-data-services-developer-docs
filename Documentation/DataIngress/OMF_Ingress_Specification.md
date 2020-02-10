@@ -2,25 +2,20 @@
 uid: omfIngressSpecification
 ---
 
-Using OMF with Cloud Services
-=============================
+# Using OMF with Cloud Services
 
 The OMF specification (located [here](http://omf-docs.osisoft.com)) is generic in that it does
 not specify a particular back-end system. This topic is a companion to the OMF specification which describes how
 OMF is interpreted by OSIsoft Cloud Services back-end system. 
 
-Headers
--------
-
+## Headers
 A description of each of the headers can be found in the [OMF spec](http://omf-docs.osisoft.com). Note that rather than using a ``producertoken``, data ingress calls to OCS require a bearer token to be attached in the header, as documented in the [OCS Quick Start](xref:sdsQuickStart) documentation. The bearer token is used to authenticate 
 the sender and to authorize the sender for use with a particular Tenant. The client Id associated with this token is used to route messages to a particular [Topic](xref:omfIngressTopics) that it is mapped to.
 
 The ``omfversion`` header must match the version of the OMF spec used to construct the message.
 Versions 1.0 and 1.1 of the spec are currently supported. 
 
-Message Types
--------------
-
+## Message Types
 OMF message types fall into three categories: Type, Container, and Data, which are described below. 
 
 * **Type messages**
@@ -78,9 +73,7 @@ string   |          | String
 string   | date-time | DateTime
 
 
-Container messages
-------------------
-
+## Container messages
 A Container message is interpreted as an SdsStream in the Sequential Data Store. The keywords 
 in the Container definition are interpreted as follows:
 
@@ -94,9 +87,7 @@ in the Container definition are interpreted as follows:
 * ``metadata``: Corresponds to the SdsStream Metadata field.        
 
 
-Data messages
--------------
-
+## Data messages
 A Data message is mapped to generic Sds values in the Sequential Data Store. The keywords in the 
 Data definitions are interpreted as follows:
 

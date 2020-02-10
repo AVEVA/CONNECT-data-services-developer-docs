@@ -2,7 +2,7 @@
 uid: DataViewsExampleScenario
 ---
 
-# Example Scenario
+# Example Scenarios
 
 This section uses example streams to illustrate data view concepts. The streams are of three types:
 - docs-pi-inverter | _simulates solar power inverter data collected via PI to OCS_
@@ -13,11 +13,10 @@ Each solar inverter is associated with some physical location. There is a weathe
 
 Data views are made to bring order to a tangle of data streams. Despite appearing complex and verbose, this scenario is likely much simpler than your real-world data. This scenario illustrates how data views can render real-world data consumable for data science.
 
-
 ## Solar Inverter streams
 These streams represent values collected via PI to OCS, originally collected by a PI System. Each stream value contains a timestamp _(Timestamp)_ and a measurement _(Value)_.
 
-#### Type
+### Type
 ```json
   {
     "Id": "docs-pi-inverter",
@@ -38,7 +37,7 @@ These streams represent values collected via PI to OCS, originally collected by 
     ]
   }
 ```
-#### Stream IDs
+### Stream IDs
 16 inverter streams are defined:
 ```text
 "BILT.Meter.Primary.Inverter.0.PwrIn",
@@ -58,7 +57,7 @@ These streams represent values collected via PI to OCS, originally collected by 
 "WINT.Meter.Secondary.Inverter.0.PwrIn",
 "WINT.Meter.Secondary.Inverter.0.PwrOut",
 ```
-#### Tags and Metadata
+### Tags and Metadata
 Each inverter stream has some descriptive tags assigned, and metadata key-values describing its function.
 ```text
 Tags: some subset of [ "Commercial", "Residential", "Critical Asset" ]
@@ -73,7 +72,7 @@ Metadata: {
 ## Weather Streams
 These streams simulate data collected via OMF from a weather station. There are two "generations" represented: Gen2 adds one property and renames another, as compared to Gen1.
 
-#### Tags and Metadata
+### Tags and Metadata
 Each weather stream has some descriptive tags assigned, and one metadata key-value indicating its Site. These are the same sites with which the inverters are associated.
 ```text
 Tags: some subset of [ "Weather", "Low Resolution", "High Resolution", "Gen1", "Gen2" ]

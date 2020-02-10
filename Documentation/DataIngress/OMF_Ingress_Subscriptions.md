@@ -2,25 +2,19 @@
 uid: omfIngressSubsctriptions
 ---
 
-Subscriptions 
-=============
-Subscription Information 
------------------------
+# Subscriptions 
 
 A Subscription consumes OMF messages from a Topic and forwards them to a data store. Multiple Subscriptions can retrieve OMF messages from a single Topic. 
 
+## Subscription Information 
 A Subscription can consume OMF messages from a Topic in a different Namespace. However, the Topic's Namespace must be in the same Region as the Subscription's Namespace. OMF messages that the Subscription is processing are temporarily stored in the Region of its Namespace.
 
 The API calls in this section are used to create and manipulate Subscriptions.
 
-Sequential Data Store (Sds) Subscription 
----------------
-
+## Sequential Data Store (Sds) Subscription 
 A Sequential Data Store Subscription retrieves OMF messages from a Topic and writes them directly to a Namespace in the Sequential Data Store. Currently only Sds Subscriptions are supported. The documentation uses Sds Subscription and Subscription interchangeably.
 
-Data Models 
------------
-
+## Data Models 
 Subscription information is contained in an object called Subscription which has the following format: 
 
 | Property             | Type                    | Details                                |

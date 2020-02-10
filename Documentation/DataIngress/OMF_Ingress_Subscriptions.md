@@ -39,7 +39,7 @@ Get all Subscriptions for a tenant.
 ### Parameters
 
 `tenantId`  
-Unique Id for the tenant
+Unique Id for the tenant  
 `namespaceId`  
 Unique Id for the namespace
 

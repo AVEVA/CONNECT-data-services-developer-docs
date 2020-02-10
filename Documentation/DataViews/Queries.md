@@ -17,9 +17,6 @@ The query text is the same [stream query syntax](xref:sdsSearching) used by the 
 | Id  | string | Required |  | Unique identifier. Used by `FieldSet` to link to the query's results |
 | Value | string | Optional | null | A query for streams, in SDS query syntax. A null or empty query will not match any streams. 
 
-
-
-
 ## Using queries
 
 ### Querying streams of differing nature

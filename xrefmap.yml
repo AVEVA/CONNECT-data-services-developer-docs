@@ -56,7 +56,7 @@ references:
   name: Data Items and Sections
   href: Documentation/DataViews/Data_Items_and_Sections.html
 - uid: DataViewsExampleScenario
-  name: Example Scenario
+  name: Example Scenarios
   href: Documentation/DataViews/Example_Scenario.html
 - uid: DataViewsFieldMappings
   name: Field Mappings
@@ -68,7 +68,7 @@ references:
   name: Getting Data
   href: Documentation/DataViews/Getting_Data.html
 - uid: DataViewsIntroductionDefine
-  name: Introduction - Define a Data View
+  name: Introduction - Define a data view
   href: Documentation/DataViews/Introduction_Define_a_Data_View.html
 - uid: DataViewsIntroductionGetData
   name: Introduction - Get Data View Data
@@ -134,13 +134,13 @@ references:
   name: Using OMF with Cloud Services
   href: Documentation/DataIngress/OMF_Ingress_Specification.html
 - uid: omfIngressSubsctriptions
-  name: 'Subscriptions '
+  name: Subscriptions
   href: Documentation/DataIngress/OMF_Ingress_Subscriptions.html
 - uid: omfIngressToOCS
   name: Data Ingress to Cloud Services using OMF
   href: Documentation/DataIngress/OMF_Ingress_to_OCS.html
 - uid: omfIngressTopics
-  name: 'Topics '
+  name: Topics
   href: Documentation/DataIngress/OMF_Ingress_Topics.html
 - uid: osisoftCloudServices
   name: OSIsoft Cloud Services
@@ -170,13 +170,13 @@ references:
   name: 'Quick Start: Sequential Data Store'
   href: Documentation/SequentialDataStore/Quick_Start.html
 - uid: sdsReadingData
-  name: Reading data
+  name: Read data
   href: Documentation/SequentialDataStore/Reading_Data.html
 - uid: sdsReadingDataApi
   name: API calls for reading data
   href: Documentation/SequentialDataStore/Reading_Data_API.html
 - uid: sdsSearching
-  name: Searching
+  name: Search in SDS
   href: Documentation/SequentialDataStore/Searching.html
 - uid: sdsStreamExtra
   name: Stream Metadata and Tags
@@ -194,7 +194,7 @@ references:
   name: Types
   href: Documentation/SequentialDataStore/SDS_Types.html
 - uid: sdsWritingData
-  name: Writing data
+  name: Write data
   href: Documentation/SequentialDataStore/Writing_Data.html
 - uid: sdsWritingDataApi
   name: API calls for writing data

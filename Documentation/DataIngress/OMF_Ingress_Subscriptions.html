@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Subscriptions  </title>
+    <title>Subscriptions </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Subscriptions  ">
+    <meta name="title" content="Subscriptions ">
     <meta name="generator" content="docfx 2.43.3.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -76,15 +76,15 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="omfIngressSubsctriptions">
-<h1 id="subscriptions-">Subscriptions </h1>
+<h1 id="subscriptions">Subscriptions</h1>
 
-<h2 id="subscription-information-">Subscription Information </h2>
 <p>A Subscription consumes OMF messages from a Topic and forwards them to a data store. Multiple Subscriptions can retrieve OMF messages from a single Topic. </p>
+<h2 id="subscription-information">Subscription Information</h2>
 <p>A Subscription can consume OMF messages from a Topic in a different Namespace. However, the Topic&#39;s Namespace must be in the same Region as the Subscription&#39;s Namespace. OMF messages that the Subscription is processing are temporarily stored in the Region of its Namespace.</p>
 <p>The API calls in this section are used to create and manipulate Subscriptions.</p>
-<h2 id="sequential-data-store-sds-subscription-">Sequential Data Store (Sds) Subscription </h2>
+<h2 id="sequential-data-store-sds-subscription">Sequential Data Store (Sds) Subscription</h2>
 <p>A Sequential Data Store Subscription retrieves OMF messages from a Topic and writes them directly to a Namespace in the Sequential Data Store. Currently only Sds Subscriptions are supported. The documentation uses Sds Subscription and Subscription interchangeably.</p>
-<h2 id="data-models-">Data Models </h2>
+<h2 id="data-models">Data Models</h2>
 <p>Subscription information is contained in an object called Subscription which has the following format: </p>
 <table>
 <thead>
@@ -155,151 +155,104 @@
 <hr>
 <h2 id="get-apiv1tenantstenantidnamespacesnamespaceidsubscriptions"><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>subscriptions</code></h2>
 <p>Get all Subscriptions for a tenant. </p>
-<p><strong>Parameters</strong></p>
-<p><code>tenantId</code>
-  Unique Id for the tenant. 
-<code>namespaceId</code>
-  Unique Id for the namespace. </p>
-<p><strong>Returns</strong></p>
+<h3 id="parameters">Parameters</h3>
+<p><code>tenantId</code><br>Unique Id for the tenant<br><code>namespaceId</code><br>Unique Id for the namespace</p>
+<h3 id="returns">Returns</h3>
 <p>An array of Subscription objects. </p>
-<hr>
-<h2 id="get-apiv1tenantstenantidnamespacesnamespaceidsubscriptionssubscriptionid"><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>subscriptions/<wbr>{subscriptionId}</code></h2>
+<h3 id="get-apiv1tenantstenantidnamespacesnamespaceidsubscriptionssubscriptionid"><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>subscriptions/<wbr>{subscriptionId}</code></h3>
 <p>Get a specific Subscription. </p>
-<p><strong>Parameters</strong></p>
-<p><code>tenantId</code>
-  Unique Id for the tenant. 
-<code>namespaceId</code>
-  Unique Id for the namespace. 
-<code>subscriptionId</code>
-  Unique Id for the Subscription. </p>
-<p><strong>Returns</strong></p>
-<p>A Subscription object. </p>
-<hr>
+<h3 id="parameters-1">Parameters</h3>
+<p><code>tenantId</code><br>Unique Id for the tenant
+<code>namespaceId</code><br>Unique Id for the namespace
+<code>subscriptionId</code><br>Unique Id for the Subscription. </p>
+<h3 id="returns-1">Returns</h3>
+<p>A Subscription object </p>
 <h2 id="get-apiv1tenantstenantidnamespacesnamespaceidaccesscontrolsubscriptions"><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>accesscontrol/<wbr>subscriptions</code></h2>
 <p>Get the default Access Control List for new Subscriptions.</p>
-<p><strong>Parameters</strong></p>
-<p><code>tenantId</code>
-  Unique Id for the tenant. 
-<code>namespaceId</code>
-  Unique Id for the namespace. </p>
-<p><strong>Returns</strong></p>
+<h3 id="parameters-2">Parameters</h3>
+<p><code>tenantId</code><br>Unique Id for the tenant
+<code>namespaceId</code><br>Unique Id for the namespace</p>
+<h3 id="returns-2">Returns</h3>
 <p>An AccessControlList object.</p>
-<hr>
 <h2 id="get-apiv1tenantstenantidnamespacesnamespaceidaccessrightssubscriptions"><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>accessrights/<wbr>subscriptions</code></h2>
 <p>Get the default Access Rights of the requesting identity for any newly created Subscriptions.</p>
-<p><strong>Parameters</strong></p>
-<p><code>tenantId</code>
-  Unique Id for the tenant. 
-<code>namespaceId</code>
-  Unique Id for the namespace. </p>
-<p><strong>Returns</strong></p>
+<h3 id="parameters-3">Parameters</h3>
+<p><code>tenantId</code><br>Unique Id for the tenant
+<code>namespaceId</code><br>Unique Id for the namespace. </p>
+<h2 id="returns-3">Returns</h2>
 <p>An array of Access Rights strings.</p>
-<hr>
 <h2 id="get-apiv1tenantstenantidnamespacesnamespaceidsubscriptionssubscriptionidaccesscontrol"><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>subscriptions/<wbr>{subscriptionId}/<wbr>accesscontrol</code></h2>
 <p>Get the Access Control List for a particular Subscription.</p>
-<p><strong>Parameters</strong></p>
-<p><code>tenantId</code>
-  Unique Id for the tenant. 
-<code>namespaceId</code>
-  Unique Id for the namespace. 
-<code>subscriptionId</code>
-  Unique Id for the Subscription. </p>
-<p><strong>Returns</strong></p>
+<h3 id="parameters-4">Parameters</h3>
+<p><code>tenantId</code><br>Unique Id for the tenant. 
+<code>namespaceId</code><br>Unique Id for the namespace. 
+<code>subscriptionId</code><br>Unique Id for the Subscription. </p>
+<h3 id="returns-4">Returns</h3>
 <p>An AccessControlList object.</p>
-<hr>
 <h2 id="get-apiv1tenantstenantidnamespacesnamespaceidsubscriptionssubscriptionidaccessrights"><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>subscriptions/<wbr>{subscriptionId}/<wbr>accessrights</code></h2>
 <p>Get the Access Rights of the requesting identity for a particular Subscription.</p>
-<p><strong>Parameters</strong></p>
-<p><code>tenantId</code>
-  Unique Id for the tenant. 
-<code>namespaceId</code>
-  Unique Id for the namespace. 
-<code>subscriptionId</code>
-  Unique Id for the Subscription. </p>
-<p><strong>Returns</strong></p>
+<h3 id="parameters-5">Parameters</h3>
+<p><code>tenantId</code><br>Unique Id for the tenant. 
+<code>namespaceId</code><br>Unique Id for the namespace. 
+<code>subscriptionId</code><br>Unique Id for the Subscription. </p>
+<h3 id="returns-5">Returns</h3>
 <p>An array of Access Rights strings.</p>
-<hr>
 <h2 id="get-apiv1tenantstenantidnamespacesnamespaceidsubscriptionssubscriptionidowner"><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>subscriptions/<wbr>{subscriptionId}/<wbr>owner</code></h2>
 <p>Get the Owner for a particular Subscription.</p>
-<p><strong>Parameters</strong></p>
-<p><code>tenantId</code>
-  Unique Id for the tenant. 
-<code>namespaceId</code>
-  Unique Id for the namespace. 
-<code>subscriptionId</code>
-  Unique Id for the Subscription. </p>
-<p><strong>Returns</strong></p>
+<h3 id="parameters-6">Parameters</h3>
+<p><code>tenantId</code><br>Unique Id for the tenant. 
+<code>namespaceId</code><br>Unique Id for the namespace. 
+<code>subscriptionId</code><br>Unique Id for the Subscription. </p>
+<h3 id="returns-6">Returns</h3>
 <p>A Trustee object.</p>
-<hr>
 <h2 id="post-apiv1tenantstenantidnamespacesnamespaceidsubscriptions"><code style="word-break:normal; overflow-wrap:break-word;">POST api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>subscriptions</code></h2>
 <p>Create a new Subscription.</p>
-<p><strong>Parameters</strong></p>
-<p><code>tenantId</code>
-  Unique Id for the tenant. 
-<code>namespaceId</code>
-  Unique Id for the namespace. </p>
-<p><strong>Body</strong></p>
+<h3 id="parameters-7">Parameters</h3>
+<p><code>tenantId</code><br>Unique Id for the tenant. 
+<code>namespaceId</code><br>Unique Id for the namespace. </p>
+<h3 id="body">Body</h3>
 <p>A Subscription object. The <code>Id</code> property should not be specified, since it will be automatically generated during creation.</p>
-<p><strong>Returns</strong></p>
+<h3 id="returns-7">Returns</h3>
 <p>The Subscription object that was created. </p>
-<hr>
 <h2 id="put-apiv1tenantstenantidnamespacesnamespaceidsubscriptionssubscriptionid"><code style="word-break:normal; overflow-wrap:break-word;">PUT api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>subscriptions/<wbr>{subscriptionId}</code></h2>
 <p>Update an existing Subscription. Only the name and description may be updated. </p>
-<p><strong>Parameters</strong></p>
-<p><code>tenantId</code>
-  Unique Id for the tenant. 
-<code>namespaceId</code>
-  Unique Id for the namespace. 
-<code>subscriptionId</code>
-  Subscription Id for the Subscription to be updated.</p>
-<p><strong>Body</strong></p>
+<h3 id="parameters-8">Parameters</h3>
+<p><code>tenantId</code><br>Unique Id for the tenant
+<code>namespaceId</code><br>Unique Id for the namespace. 
+<code>subscriptionId</code><br>Subscription Id for the Subscription to be updated.</p>
+<h3 id="body-1">Body</h3>
 <p>A Subscription object. The <code>Id</code> property should match the <code>subscriptionId</code> in the route.</p>
-<p><strong>Returns</strong></p>
+<h3 id="returns-8">Returns</h3>
 <p>The Subscription object that was updated. </p>
-<hr>
 <h2 id="put-apiv1tenantstenantidnamespacesnamespaceidaccesscontrolsubscriptions"><code style="word-break:normal; overflow-wrap:break-word;">PUT api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>accesscontrol/<wbr>subscriptions</code></h2>
 <p>Update the default Access Control List for new Subscriptions.</p>
-<p><strong>Parameters</strong></p>
-<p><code>tenantId</code>
-  Unique Id for the tenant. 
-<code>namespaceId</code>
-  Unique Id for the namespace. </p>
-<p><strong>Body</strong></p>
+<h3 id="parameters-9">Parameters</h3>
+<p><code>tenantId</code><br>Unique Id for the tenant. 
+<code>namespaceId</code><br>Unique Id for the namespace. </p>
+<h3 id="body-2">Body</h3>
 <p>An AccessControlList object.</p>
-<hr>
 <h2 id="put-apiv1tenantstenantidnamespacesnamespaceidsubscriptionssubscriptionidaccesscontrol"><code style="word-break:normal; overflow-wrap:break-word;">PUT api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>subscriptions/<wbr>{subscriptionId}/<wbr>accesscontrol</code></h2>
 <p>Update the Access Control List for a particular Subscription.</p>
-<p><strong>Parameters</strong></p>
-<p><code>tenantId</code>
-  Unique Id for the tenant. 
-<code>namespaceId</code>
-  Unique Id for the namespace. 
-<code>subscriptionId</code>
-  Unique Id for the Subscription. </p>
-<p><strong>Body</strong></p>
+<h3 id="parameters-10">Parameters</h3>
+<p><code>tenantId</code><br>Unique Id for the tenant
+<code>namespaceId</code><br>Unique Id for the namespace 
+<code>subscriptionId</code><br>Unique Id for the Subscription </p>
+<h3 id="body-3">Body</h3>
 <p>An AccessControlList object.</p>
-<hr>
 <h2 id="put-apiv1tenantstenantidnamespacesnamespaceidsubscriptionssubscriptionidowner"><code style="word-break:normal; overflow-wrap:break-word;">PUT api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>subscriptions/<wbr>{subscriptionId}/<wbr>owner</code></h2>
 <p>Update the Owner for a particular Subscription.</p>
-<p><strong>Parameters</strong></p>
-<p><code>tenantId</code>
-  Unique Id for the tenant. 
-<code>namespaceId</code>
-  Unique Id for the namespace. 
-<code>subscriptionId</code>
-  Unique Id for the Subscription. </p>
-<p><strong>Body</strong></p>
+<h3 id="parameters-11">Parameters</h3>
+<p><code>tenantId</code><br>Unique Id for the tenant
+<code>namespaceId</code><br>Unique Id for the namespace
+<code>subscriptionId</code><br>Unique Id for the Subscription</p>
+<h3 id="body-4">Body</h3>
 <p>A Trustee object.</p>
-<hr>
 <h2 id="delete-apiv1tenantstenantidnamespacesnamespaceidsubscriptionssubscriptionid"><code style="word-break:normal; overflow-wrap:break-word;">DELETE api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>subscriptions/<wbr>{subscriptionId}</code></h2>
 <p>Delete a Subscription. </p>
-<p><strong>Parameters</strong></p>
-<p><code>tenantId</code>
-  Unique Id for the tenant.
-<code>namespaceId</code>
-  Unique Id for the namespace.<br><code>subscriptionId</code>
-  Unique Id for the Subscription. </p>
-<hr>
+<h3 id="parameters-12">Parameters</h3>
+<p><code>tenantId</code><br>Unique Id for the tenant
+<code>namespaceId</code><br>Unique Id for the namespace 
+<code>subscriptionId</code><br>Unique Id for the Subscription</p>
 </article>
           </div>
           

@@ -87,7 +87,8 @@ or when the properties have the same name, SDS will map the properties automatic
 a target property that it cannot map to, the property is added and configured with a default value.</p>
 <p>To map a property that is beyond the ability of SDS to map on its own, you should define an SdsStreamViewProperty 
 and add it to the SdsStreamView’s Properties collection.</p>
-<p>The following table shows the required and optional SdsStreamView fields. Fields that are not included are reserved for internal SDS use. See the <a class="xref" href="Searching.html">Searching</a> topic regarding limitations on search.</p>
+<p>The following table shows the required and optional SdsStreamView fields. Fields that are not included are reserved for internal SDS use. See the <a class="xref" href="Searching.html">Search in SDS</a> topic regarding limitations on search.</p>
+<p><a name="streamviewpropertiestable"></a></p>
 <table>
 <thead>
 <tr>
@@ -138,11 +139,12 @@ and add it to the SdsStreamView’s Properties collection.</p>
 <td>Properties</td>
 <td>IList&lt;SdsStreamViewProperty></td>
 <td>Optional</td>
-<td>Yes, with limitations</td>
+<td>Yes, with limitations*</td>
 <td>Property level mapping</td>
 </tr>
 </tbody>
 </table>
+<p><strong>*Notes on Properties field</strong>: SdsStreamViewProperty objects are not searchable. Only the SdsStreamViewProperty&#39;s SdsStreamView is searchable by its Id, SourceTypeId, and TargetTypeId, which are used to return the top level SdsStreamView object when searching. This includes nested SdsStreamViewProperties. For more information, see <a class="xref" href="Searching.html#search-for-stream-views">search for stream views</a>.</p>
 <p><strong>Rules for the Stream View Identifier (SdsStreamView.Id)</strong></p>
 <ol>
 <li>Is not case sensitive</li>

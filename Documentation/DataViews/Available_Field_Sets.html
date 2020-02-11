@@ -82,25 +82,24 @@
 <p>The list of field sets is generated based on the <code>.Queries</code>, <code>.Sectioners</code>, and <code>.IndexTypeCode</code> of the defined data view. These fields and field sets can be readily added to the data view <code>.FieldSets</code>. Once the field is added, it is omitted from the list of available field sets. Similarly, if the field is removed from the data view, it is added back to the available field sets. This allows an iterative approach to building the data view by easily adding and removing fields from the data view. </p>
 <h2 id="field-set-source">Field Set Source</h2>
 <p>Available fields are organized into field sets according to their sources:</p>
-<ol>
-<li><pre><code class="lang-FieldSetSourceType.Index```">
- The index field set represents the index field of the data view. Exactly one index field set is available per data view. Currently, this field is not mapped to anything, since interpolation is the only supported index mode.
-</code></pre></li>
-<li><pre><code class="lang-FieldSetSourceType.SectionerValue```">
- The sectioner value field set represents the matching value for each section. If no sectioners are specified, this field set is not available. Exactly one section value field set is available per data view. The section value field set contains one field per section, with each sectioner referred to by its index: `{ ... Keys: [&quot;0&quot;] }` for the 0th sectioner.
-</code></pre></li>
-<li><pre><code class="lang-FieldSetSourceType.DataItem```">
- The data item field set contains fields from the data item resulted from the query. For each query, a field set with unused fields will be returned. The available fields for stream data item include:
- * Id, name
- * Tags: one field with union of all tags
- * Metadata, propertyId: one field for each metadata key or property id
+<pre><code class="lang-FieldSetSourceType.Index```">
+The index field set represents the index field of the data view. Exactly one index field set is available per data view. Currently, this field is not mapped to anything, since interpolation is the only supported index mode.
 
-</code></pre></li>
-</ol>
-<h2 id="examples">Examples</h2>
-<h3 id="1-data-view-without-sectioners">1. Data View without Sectioners</h3>
-<p>The example uses the following data view and the streams from the <a class="xref" href="Example_Scenario.html">SDS Example Scenario</a>. Note that the field sets and the sectioners arrays are empty:</p>
-<pre><code class="lang-json">{
+```FieldSetSourceType.SectionerValue```
+
+The sectioner value field set represents the matching value for each section. If no sectioners are specified, this field set is not available. Exactly one section value field set is available per data view. The section value field set contains one field per section, with each sectioner referred to by its index: `{ ... Keys: [&quot;0&quot;] }` for the 0th sectioner.
+
+```FieldSetSourceType.DataItem```
+
+The data item field set contains fields from the data item resulted from the query. For each query, a field set with unused fields will be returned. The available fields for stream data item include:
+    * Id, name
+    * Tags: one field with union of all tags
+    * Metadata, propertyId: one field for each metadata key or property id
+
+## Data View without Sectioners
+The example uses the following data view and the streams from the [SDS Example Scenario](xref:DataViewsExampleScenario). Note that the field sets and the sectioners arrays are empty:
+```json
+{
   &quot;Id&quot;: &quot;example_without_sectioners&quot;,
   &quot;Name&quot;: &quot;example_without_sectioners&quot;,
   &quot;Description&quot;: null,
@@ -201,7 +200,7 @@
         }
     ]
 }
-</code></pre><h3 id="2-data-view-with-sectioners">2. Data View with Sectioners</h3>
+</code></pre><h2 id="data-view-with-sectioners">Data View with Sectioners</h2>
 <p>This data view is the same as in the first example, except it also has a <code>sectioner</code>, which defines sectioning by the metadata key &quot;Site&quot;:</p>
 <pre><code class="lang-json">{
   &quot;Id&quot;: &quot;example_with_sectioners&quot;,

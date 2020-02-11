@@ -80,23 +80,21 @@
 
 <p>Getting data from a data view is straightforward. If you want to understand more about the source behind each data field, that information is available too.</p>
 <p>This is an introduction to the recommended workflow for getting data. The <a class="xref" href="Quick_Start_Get_Data_View_Data.html">Quick Start - Get Data View Data</a> shows these concepts in action. For detailed information, see <a class="xref" href="Getting_Data.html">Getting Data</a> and <a class="xref" href="Data_API.html">Data API</a>.</p>
-<h2 id="step-1-request-the-first-page">Step 1. Request the first page</h2>
-<p>Specify the following parameters or use the default:</p>
-<ul>
-<li>Index range (start index and end index) and granularity of data to be retrieved. If you do not specify one or more of these parameters, the data view&#39;s corresponding default values will be used if defined.</li>
-<li>Desired response format. The default is object-style json. Other options include csv and table-style json. The latter two are available with or without a header row.</li>
-<li>Page size</li>
-</ul>
-<h2 id="steps-2-request-the-remaining-pages-if-any">Steps 2+. Request the remaining pages, if any</h2>
-<p>If data spans into additional page(s), the current page response will include an HTTP header linking to the next page.</p>
-<ul>
-<li>If the current page of data includes a NextPage hyperlink, keep following the hyperlinks to retrieve the full requested dataset page by page.</li>
-<li>In rare circumstances it may be necessary to restart the paging operation from the first page. In this case, follow the FirstPage hyperlink.</li>
-</ul>
+<h2 id="specify-first-page-parameters">Specify first page parameters</h2>
+<p>Complete the following to specify first page parameters:</p>
+<ol>
+<li>Specify the index range (start index and end index) and granularity of data to be retrieved.</li>
+<li>Specify the desired response format as csv, table-style json, or object-style json. The default is object-style json.  Csv and table-style json are available with or without a header row.</li>
+<li>Specify the page size.</li>
+</ol>
+<h2 id="request-any-remaining-pages">Request any remaining pages</h2>
+<p>Complete the following if data spans into additional page(s). The current page response will include an HTTP header linking to the next page.</p>
+<ol>
+<li>Follow the hyperlinks to retrieve the full requested dataset page by page, if the current page includes a NextPage hyperlink.</li>
+<li>Follow the <code>FirstPage</code> hyperlink in the event that it is necessary to restart the paging operation from the first page. </li>
+</ol>
 <h2 id="optional-investigate-the-source-of-the-data">[Optional] Investigate the source of the data</h2>
-<ul>
-<li>For precise information about the source of each field&#39;s data, see the data view&#39;s resolved field mappings.</li>
-</ul>
+<p>For precise information about the source of each field&#39;s data, see the data view&#39;s resolved field mappings.</p>
 </article>
           </div>
           

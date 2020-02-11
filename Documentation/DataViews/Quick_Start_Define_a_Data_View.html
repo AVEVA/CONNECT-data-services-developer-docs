@@ -80,7 +80,7 @@
 
 <p>This quick start is a hands-on tour of the main concepts behind creating data views.</p>
 <p>It is assumed that you are working with streams as described in the <a class="xref" href="Example_Scenario.html">Example Scenario</a>. The data views API uses the same authentication scheme as the Sequential Data Store.</p>
-<h2 id="step-1-create-a-data-view">Step 1: Create a data view</h2>
+<h2 id="create-a-data-view">Create a data view</h2>
 <p>Creating a data view requires only an identifier, <code>.Id</code>. The data view does not accomplish anything yet, but it&#39;s a starting point.</p>
 <h3 id="action">Action</h3>
 <pre><code class="lang-json">POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
@@ -101,7 +101,7 @@
   &quot;IndexTypeCode&quot;: &quot;DateTime&quot;
 }
 </code></pre><p>The <code>.Queries</code> property is empty, <code>[ ]</code>. We will address that soon. </p>
-<h2 id="step-2-retrieve-that-data-view">Step 2: Retrieve that data view</h2>
+<h2 id="retrieve-the-data-view">Retrieve the data view</h2>
 <p>To access the data view again, it is available via the <code>GET</code> verb:</p>
 <h3 id="action-1">Action</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>quickstart
@@ -117,7 +117,7 @@
   &quot;Shape&quot;: &quot;Standard&quot;,
   &quot;IndexTypeCode&quot;: &quot;DateTime&quot;
 }
-</code></pre><h2 id="step-3-add-a-query-for-data-items">Step 3: Add a query for data items</h2>
+</code></pre><h2 id="add-a-query-for-data-items">Add a query for data items</h2>
 <p>Creating a data view begins with including some data items: today, those are SDS Streams.</p>
 <h3 id="action-2">Action</h3>
 <p>Use the result of the previous step as the starting point. All following steps will involve modifying the data view definition, or seeing the effects of those modifications.</p>
@@ -140,7 +140,7 @@
 }
 </code></pre><h3 id="expected-result-2">Expected result</h3>
 <pre><code class="lang-text">HTTP 204 No Content
-</code></pre><h2 id="step-4-see-the-items-found-by-the-query">Step 4: See the items found by the query</h2>
+</code></pre><h2 id="view-items-found-by-the-query">View items found by the query</h2>
 <p>Data views resolve on a per user basis, executing the queries you defined. The results are available in several “resolved” resources.</p>
 <h3 id="action--page-through-the-data-items-found-by-the-query">Action – Page through the data items found by the query</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>quickstart/<wbr>Resolved/<wbr>DataItems/<wbr>weather
@@ -270,7 +270,7 @@
   &quot;TimeOfResolution&quot;: &quot;(a timestamp in ISO 8601 format)&quot;,
   &quot;Items&quot;: []
 }
-</code></pre><h2 id="step-5-see-the-fields-available-to-include-in-the-data-view">Step 5: See the fields available to include in the data view</h2>
+</code></pre><h2 id="view-fields-available-to-include-in-the-data-view">View fields available to include in the data view</h2>
 <h3 id="action-3">Action</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>quickstart/<wbr>Resolved/<wbr>AvailableFieldSets
 </code></pre><h3 id="expected-result-5">Expected result</h3>
@@ -364,7 +364,7 @@
         }
     ]
 }
-</code></pre><h2 id="step-6-include-some-of-the-available-fields">Step 6: Include some of the available fields</h2>
+</code></pre><h2 id="include-some-of-the-available-fields">Include some of the available fields</h2>
 <p>At this point, if you query for data, the table is empty – because no fields have been included in the data view. Including fields is a deliberate action, albeit one that is intended to be easy.</p>
 <h3 id="action-4">Action</h3>
 <p>For ease, grab all of the field sets that are available. </p>
@@ -461,7 +461,7 @@ From the <code>FieldSet</code> for <em>weather</em> data items, remove the <code
 }
 </code></pre><h3 id="expected-result-6">Expected Result</h3>
 <pre><code class="lang-text">HTTP 204 No Content
-</code></pre><p>Now, if we return to the available field sets, only “Timestamp” remains available-but-unused.</p>
+</code></pre><p>Now, if we return to the available field sets, only “Timestamp” remains available but unused.</p>
 <h3 id="action-5">Action</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>quickstart/<wbr>Resolved/<wbr>AvailableFieldSets
 </code></pre><h3 id="expected-result-7">Expected result</h3>
@@ -519,7 +519,7 @@ From the <code>FieldSet</code> for <em>weather</em> data items, remove the <code
     },
     ...
 </code></pre><p>There was ambiguity in the field mapping identifiers, so the data views engine suffixed each field mapping id ordinally.</p>
-<p>The suffixing (to ensure uniqueness) is done for the sake of client behavior, and it is not expected that ambiguity is an acceptable outcome. The remaining steps show two approaches for disambiguating the content of a data view. </p>
+<p>The suffixing (to ensure uniqueness) is done for the sake of client behavior, as it is not expected that ambiguity is an acceptable outcome. The remaining steps show two approaches for disambiguating the content of a data view. </p>
 <h3 id="action--want-csv">Action – Want csv?</h3>
 <p>Resubmit the data query with an additional query parameter, <code>&amp;form=csvh</code></p>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>quickstart/<wbr>Data/<wbr>Interpolated
@@ -684,7 +684,7 @@ From the <code>FieldSet</code> for <em>weather</em> data items, remove the <code
     (rest of the values for Site:Winterthur)
 ]
 </code></pre><p>Note that in the real world, we’re not necessarily aiming for an ultra-skinny output, and the data views product doesn’t make any assumptions there.</p>
-<h2 id="step-8-include-the-sectioner-field-set">Step 8: Include the sectioner field set</h2>
+<h2 id="include-the-sectioner-field-set">Include the sectioner field set</h2>
 <p>In the case where each section contained multiple data items, having the section value repeated for every data item would be redundant. Return to the Available Field Sets, and now there is a solution for that redundancy</p>
 <h3 id="action-9">Action</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>quickstart/<wbr>Resolved/<wbr>AvailableFieldSets
@@ -724,7 +724,7 @@ From the <code>FieldSet</code> for <em>weather</em> data items, remove the <code
 </code></pre><p>This allows the sectioner value to appear as a single field, versus being repeated with every data item “across the table.” Notice that the fields there act as pointers, referring to e.g. <code>DataView.Sectioners[0]</code> and using its label. This indirection avoids confusing mismatches if you decide to try other fields as sectioners.</p>
 <h3 id="action-10">Action</h3>
 <p>Whatever field you’re using as the sectioner, remove it from the fields included in the data view, since it’s redundant now.</p>
-<h2 id="step-9-distinguish-the-data-items">Step 9: Distinguish the data items</h2>
+<h2 id="distinguish-data-items">Distinguish data items</h2>
 <p>A different and complementary way of disambiguating the data items is to “distinguish” them within the field set.</p>
 <p>This is also useful for aligning data items across sections. Imagine if each site had an additional stream from a backup weather station:</p>
 <table>
@@ -885,7 +885,7 @@ From the <code>FieldSet</code> for <em>weather</em> data items, remove the <code
         &quot;Biltmore Temperature&quot;: 33.589619124193831,
     },
     ...
-</code></pre><h2 id="step-10-consolidating-fields">Step 10: Consolidating fields</h2>
+</code></pre><h2 id="consolidate-data-fields">Consolidate data fields</h2>
 <p>There is a problem with this data view: the Gen1 Weather streams have a &quot;Temperature&quot; property but the Gen2 Weather streams have  renamed it to &quot;AmbientTemperature&quot;. The data view has fields for both, but for each stream &quot;Temperature&quot; or &quot;AmbientTemperature&quot; is null. This is undesirable since the fields are semantically identical and should not be separate fields in the data view.</p>
 <p>Find the <code>Field</code> associated with &quot;AmbientTemperature&quot;. To the <code>Field</code>&#39;s <code>.Keys</code> array, add &quot;Temperature&quot;:</p>
 <pre><code class="lang-json">{
@@ -989,7 +989,7 @@ From the <code>FieldSet</code> for <em>weather</em> data items, remove the <code
         &quot;Biltmore CloudCover&quot;: null,
     }
     ...
-</code></pre><h2 id="step-11-further-steps">Step 11: Further steps</h2>
+</code></pre><h2 id="further-steps">Further steps</h2>
 <p>The API is designed to encourage trial-and-error. We encourage you to experiment with other ways to represent this data, and to incorporate information about the solar inverters at each site.</p>
 </article>
           </div>

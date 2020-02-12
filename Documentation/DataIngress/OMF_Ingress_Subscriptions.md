@@ -52,9 +52,9 @@ Get a specific Subscription.
 ### Parameters
 
 `tenantId`  
-Unique Id for the tenant
+Unique Id for the tenant  
 `namespaceId`  
-Unique Id for the namespace
+Unique Id for the namespace  
 `subscriptionId`  
 Unique Id for the Subscription. 
 

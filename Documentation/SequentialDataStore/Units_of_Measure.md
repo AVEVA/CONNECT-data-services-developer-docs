@@ -26,7 +26,7 @@ The following table shows the required and optional SdsUom fields.
 
 ## SdsUomQuantity
 
-Represents a single measurable quantity (for example, length)
+A SdsUomQuantity represents a single measurable quantity (for example, length).
 
 The following table shows the required and optional SdsUomQuantity fields.
 

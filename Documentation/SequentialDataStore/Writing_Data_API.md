@@ -91,12 +91,12 @@ All times are represented at offset 0, GMT.
 
 Inserts data into the specified stream. Returns an error if data is already present at the index of any event.
 
-**Request**
+#### Request
  ```text
     POST api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
  ```
 
-**Parameters**  
+##### Parameters 
 ``string tenantId``  
 The tenant identifier  
   
@@ -106,22 +106,22 @@ The namespace identifier
 ``string streamId``  
 The stream identifier  
 
-**Request Body**  
+##### Request body  
 A serialized list of one or more events of the stream type  
 
-**Response**  
+#### Response  
 The response includes a status code
 
-**_Notes_**  
+#### Notes  
 This request will return an error if an event already exists for any index in the request. If any individual index encounters a problem, the entire operation is rolled back and no insertions are made. The `streamId` and `index` that caused the issue are included in the error response.
 
-**Example**  
-The following request is used to insert events into stream `Simple` of `SimpleType`,
+##### Example request  
+The following request is used to insert events into stream `Simple` of `SimpleType`:
  ```text
     POST api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
  ```
-
-where the request body specifies the values to insert: 
+##### Example request body
+The request body specifies the values to insert. 
 ```json
 [
     {
@@ -137,7 +137,7 @@ where the request body specifies the values to insert:
 ]
 ```
 
-**.NET Library**
+#### .NET libraries client methods
 ```csharp
     Task InsertValueAsync<T>(string streamId, T item);
     Task InsertValuesAsync<T>(string streamId, IList<T> items);
@@ -149,13 +149,13 @@ where the request body specifies the values to insert:
 
 Modifies the specified stream event(s). Patching affects only the data item parameters that are included in the call.
 
-**Request**
+#### Request
  ```text
     PATCH api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 		 ?select={selectExpression}
  ```
 
-**Parameters**  
+##### Parameters 
 ``string tenantId``  
 The tenant identifier
   
@@ -168,19 +168,19 @@ The stream identifier
 ``string selectExpression``  
 Comma separated list of strings that indicates the event fields that will be changed in stream events  
 
-**Request Body**  
+##### Request body  
 A serialized collection of one or more patch property events
 
-**Response**  
+#### Response  
 The response includes a status code
 
-Consider you have a stream `Simple` of `SimpleType`, to change one property, `Measurement`, for one event specify the following request
+##### Example request
+Let's say that you have a stream `Simple` of `SimpleType`. To change one property(`Measurement`) for one event, you can use the request with the body below:
  ```text        
     PATCH api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data
 		?select=measurement
  ```
-
-With the following request body,
+##### Example request body
 ```json
 [
   {  
@@ -192,12 +192,12 @@ With the following request body,
 
 This request will only change the `Measurement` value at the specified event index. 
 
-**_Notes_**  
+#### Notes  
 Patching is used to patch the events of the selected fields for one or more events in the stream. Only the fields indicated in `selectExpression` are modified. The events to be modified are indicated by the index value of each entry in the collection. 
 
 If there is a problem patching any individual event, the entire operation is rolled back and the error will indicate the `streamId` and `index` of the problem.  
 
-**.NET Library**
+#### .NET libraries client methods
 ```csharp
     Task PatchValueAsync(string streamId, string selectExpression, T item);
     Task PatchValuesAsync(string streamId, string selectExpression, IList<T> items);
@@ -216,13 +216,13 @@ There are two options for specifying which events to remove from a stream:
 
 Removes the event at each index from the specified stream. Different overloads are available to make it easier to indicate the index where you want to remove a data event. 
 
-**Request**  
+#### Request  
  ```text
     DELETE api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 		?index={index}[&index={index}…]
  ```
 
-**Parameters**  
+##### Parameters 
 ``string tenantId``  
 The tenant identifier  
   
@@ -235,15 +235,15 @@ The stream identifier
 ``string index``  
 One or more indexes of events to remove
 
-**Response**  
+#### Response  
 The response includes a status code
 
-**_Notes_**  
+#### Notes  
 If any individual event fails to be removed, the entire operation is rolled back and no events are removed. The streamId and index that caused the issue are included in the error response. 
 
 If you attempt to remove events at indexes that have no events, an error is returned. If this occurs, you can use [Window](#removewindow) request format to remove any events from a specified ‘window’ of indexes, which will not return an error if no data is found.
 
-**.NET Library**
+#### .NET libraries client methods
 ```csharp
     Task RemoveValueAsync(string streamId, string index);
     Task RemoveValueAsync<T1>(string streamId, T1 index);
@@ -259,13 +259,13 @@ If you attempt to remove events at indexes that have no events, an error is retu
 
 Removes events at and between the start index and end index.
 
-**Request**
+#### Request
  ```text
     DELETE api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 		?startIndex={startIndex}&endIndex={endIndex}
  ```
 
-**Parameters**  
+##### Parameters 
 ``string tenantId``  
 The tenant identifier  
   
@@ -281,13 +281,13 @@ The index defining the beginning of the window
 ``string endIndex``  
 The index defining the end of the window  
 
-**Response**  
+#### Response  
 The response includes a status code
 
-**_Notes_**  
+#### Notes  
 If any individual event fails to be removed, the entire operation is rolled back and no removes are done.
 
-**.NET Library**
+#### .NET libraries client methods
 ```csharp
     Task RemoveWindowValuesAsync(string streamId, string startIndex, string endIndex);
     Task RemoveWindowValuesAsync<T1>(string streamId, T1 startIndex, T1 endIndex);
@@ -300,13 +300,13 @@ If any individual event fails to be removed, the entire operation is rolled back
 
 Writes one or more events over existing events in the specified stream.
 
-**Request**
+#### Request
  ```text
     PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 		?allowCreate=false
  ```
 
-**Parameters**  
+##### Parameters 
 ``string tenantId``  
 The tenant identifier  
   
@@ -316,16 +316,16 @@ The namespace identifier
 ``string streamId``  
 The stream identifier  
  
-**Request Body**
+##### Request Body
 A serialized list of one or more events of the stream type
 
-**Response**  
+#### Response  
 The response includes a status code
 
-**_Notes_**  
+#### Notes  
 This request returns an error if the stream does not have an event to be replaced at the specified index. If any individual event fails to be replaced, the entire operation is rolled back and no replaces are performed. The index that caused the issue and the streamId are included in the error response.
 
-**.NET Library**
+#### .NET libraries client methods
 ```csharp
     Task ReplaceValueAsync<T>(string streamId, T item);
     Task ReplaceValuesAsync<T>(string streamId, IList<T> items);
@@ -337,12 +337,12 @@ This request returns an error if the stream does not have an event to be replace
 
 Writes one or more events to the specified stream.
 
-**Request**
+#### Request
  ```text
     PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
  ```
 
-**Parameters**  
+##### Parameters 
 ``string tenantId``  
 The tenant identifier  
   
@@ -352,17 +352,17 @@ The namespace identifier
 ``string streamId``  
 The stream identifier  
 
-**Request Body**  
+##### Request body  
 A serialized list of one or more events of the stream type
 
-**Response**  
+#### Response  
 The response includes a status code
 
-**_Notes_**  
+#### Notes  
 This request performs an insert or a replace depending on whether an event already exists at the event indexes. If any item fails to write, the entire operation is rolled back and
 no events are written to the stream. The index that caused the issue is included in the error response.
 
-**.NET Library**
+#### .NET libraries client methods
 ```csharp
     Task UpdateValueAsync<T>(string streamId, T item);
     Task UpdateValuesAsync<T>(string streamId, IList<T> items);

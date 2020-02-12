@@ -49,8 +49,10 @@ Unique Id for the namespace
 ### Returns
 An array of Subscription objects. 
 
-## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}``
-Get a specific Subscription. 
+## Get a specific Subscription.
+
+### Request
+``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}``
 
 ### Parameters
 
@@ -64,8 +66,10 @@ Unique Id for the Subscription.
 ### Returns
 A Subscription object 
 
-## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/subscriptions``
-Get the default Access Control List for new Subscriptions.
+## Get the default Access Control List for new Subscriptions.
+
+### Request
+``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/subscriptions``
 
 ### Parameters
 
@@ -77,8 +81,9 @@ Unique Id for the namespace
 ### Returns
 An AccessControlList object.
 
-## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accessrights/subscriptions``
-Get the default Access Rights of the requesting identity for any newly created Subscriptions.
+## Get the default Access Rights of the requesting identity for any newly created Subscriptions.
+### Request
+``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accessrights/subscriptions``
 
 ### Parameters
 
@@ -90,8 +95,9 @@ Unique Id for the namespace.
 ### Returns
 An array of Access Rights strings.
 
-## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}/accesscontrol``
-Get the Access Control List for a particular Subscription.
+## Get the Access Control List for a particular Subscription.
+### Request
+``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}/accesscontrol``
 
 ### Parameters
 
@@ -105,8 +111,10 @@ Unique Id for the Subscription.
 ### Returns
 An AccessControlList object.
 
-## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}/accessrights``
-Get the Access Rights of the requesting identity for a particular Subscription.
+## Get the Access Rights of the requesting identity for a particular Subscription.
+
+### Request
+``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}/accessrights``
 
 ### Parameters
 
@@ -120,8 +128,10 @@ Unique Id for the Subscription.
 ### Returns
 An array of Access Rights strings.
 
-## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}/owner``
-Get the Owner for a particular Subscription.
+## Get the Owner for a particular Subscription.
+
+### Request
+``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}/owner``
 
 ### Parameters
 
@@ -135,8 +145,10 @@ Unique Id for the Subscription.
 ### Returns
 A Trustee object.
 
-## ``POST api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions``
-Create a new Subscription.
+## Create a new Subscription.
+
+### Request
+``POST api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions``
 
 ### Parameters
 
@@ -151,8 +163,10 @@ A Subscription object. The ``Id`` property should not be specified, since it wil
 ### Returns
 The Subscription object that was created. 
 
-## ``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}``
-Update an existing Subscription. Only the name and description may be updated. 
+## Update an existing Subscription. Only the name and description may be updated. 
+
+### Request
+``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}``
 
 ### Parameters
 
@@ -169,8 +183,10 @@ A Subscription object. The ``Id`` property should match the ``subscriptionId`` i
 ### Returns
 The Subscription object that was updated. 
 
-## ``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/subscriptions``
-Update the default Access Control List for new Subscriptions.
+## Update the default Access Control List for new Subscriptions.
+
+### Request
+``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/subscriptions``
 
 ### Parameters
 
@@ -182,8 +198,10 @@ Unique Id for the namespace.
 ### Body
 An AccessControlList object.
 
-## ``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}/accesscontrol``
-Update the Access Control List for a particular Subscription.
+## Update the Access Control List for a particular Subscription.
+
+### Request
+``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}/accesscontrol``
 
 ### Parameters
 
@@ -197,8 +215,10 @@ Unique Id for the Subscription
 ### Body
 An AccessControlList object.
 
-## ``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}/owner``
-Update the Owner for a particular Subscription.
+## Update the Owner for a particular Subscription.
+
+### Request
+``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}/owner``
 
 ### Parameters
 
@@ -212,8 +232,10 @@ Unique Id for the Subscription
 ### Body
 A Trustee object.
 
-## ``DELETE api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}``
-Delete a Subscription. 
+## Delete a Subscription.
+
+### Request
+``DELETE api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}``
 
 ### Parameters
 

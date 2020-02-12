@@ -11,7 +11,6 @@ Authorization Code clients are used in Javascript/Browser (SPA) based applicatio
             Authorization Code clients are not issued secrets or refresh tokens.
 
 ## Properties
-
 For HTTP requests and responses, the AuthorizationCodeClient object has the following properties and JSON-serialized body: 
 
 Property | Type | Description
@@ -59,7 +58,6 @@ Tags | string[] | Gets or sets for OSIsoft internal use only.
 ***
 
 ## Authentication
-
 All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieve after a successful authentication request.
 
 `Authorization: Bearer <token>`
@@ -69,7 +67,6 @@ Requests made with an access token which does not have the correct permissions (
 Read [here](https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/Authentication) on how to authenticate against OCS with the various clients and receive an access token in response.
 
 ## Error Handling
-
 All responses will have an error message in the body. The exceptions are 200 responses and the 401 Unauthorized response. The error message will look as follows:
 
 ```json
@@ -84,7 +81,6 @@ All responses will have an error message in the body. The exceptions are 200 res
 If and when contacting OSIsoft support about this error, please provide the OperationId.
 
 ## `Create an Authorization Code Client`
-
 Create an Authorization Code flow Client. No Secret will be generated for this
             Client.
 
@@ -107,7 +103,8 @@ Id of Tenant.
 AuthorizationCodeClient authorizationCodeClient
 ```
 
-New AuthorizationCodeClient object.
+### Returns
+A new AuthorizationCodeClient object
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
@@ -121,7 +118,6 @@ Name | string | Yes | Gets or sets name of Client.
 Enabled | bool | No | Gets or sets whether client is enabled. Client can be used for authentication            if set to true. Client cannot be used for authentication if set to false.
 AccessTokenLifetime | int32 | No | Gets or sets lifetime of access token issued for this client after authentication.            Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.
 Tags | string[] | No | Gets or sets for OSIsoft internal use only.
-
 
 
 ```json
@@ -155,13 +151,13 @@ Tags | string[] | No | Gets or sets for OSIsoft internal use only.
 
 Allowed for these roles:
 
-- `Account Administrator`
+`Account Administrator`
 
 ### Returns
 
 #### 201
 
-Created.
+Created
 
 ##### Type:
 

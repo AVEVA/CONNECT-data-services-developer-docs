@@ -67,7 +67,7 @@ Get the default Access Control List for new Subscriptions.
 ### Parameters
 
 `tenantId`  
-Unique Id for the tenant
+Unique Id for the tenant  
 `namespaceId`  
 Unique Id for the namespace
 
@@ -80,7 +80,7 @@ Get the default Access Rights of the requesting identity for any newly created S
 ### Parameters
 
 `tenantId`  
-Unique Id for the tenant
+Unique Id for the tenant  
 `namespaceId`  
 Unique Id for the namespace. 
 
@@ -93,9 +93,9 @@ Get the Access Control List for a particular Subscription.
 ### Parameters
 
 `tenantId`  
-Unique Id for the tenant. 
+Unique Id for the tenant.  
 `namespaceId`  
-Unique Id for the namespace. 
+Unique Id for the namespace.  
 `subscriptionId`  
 Unique Id for the Subscription. 
 
@@ -108,9 +108,9 @@ Get the Access Rights of the requesting identity for a particular Subscription.
 ### Parameters
 
 `tenantId`  
-Unique Id for the tenant. 
+Unique Id for the tenant.  
 `namespaceId`  
-Unique Id for the namespace. 
+Unique Id for the namespace.  
 `subscriptionId`  
 Unique Id for the Subscription. 
 
@@ -123,9 +123,9 @@ Get the Owner for a particular Subscription.
 ### Parameters
 
 `tenantId`  
-Unique Id for the tenant. 
+Unique Id for the tenant.  
 `namespaceId`  
-Unique Id for the namespace. 
+Unique Id for the namespace.  
 `subscriptionId`  
 Unique Id for the Subscription. 
 
@@ -138,7 +138,7 @@ Create a new Subscription.
 ### Parameters
 
 `tenantId`  
-Unique Id for the tenant. 
+Unique Id for the tenant.  
 `namespaceId`  
 Unique Id for the namespace. 
 
@@ -154,9 +154,9 @@ Update an existing Subscription. Only the name and description may be updated.
 ### Parameters
 
 `tenantId`  
-Unique Id for the tenant
+Unique Id for the tenant  
 `namespaceId`  
-Unique Id for the namespace.
+Unique Id for the namespace.  
 `subscriptionId`  
 Subscription Id for the Subscription to be updated.
 
@@ -172,7 +172,7 @@ Update the default Access Control List for new Subscriptions.
 ### Parameters
 
 `tenantId`  
-Unique Id for the tenant. 
+Unique Id for the tenant.  
 `namespaceId`  
 Unique Id for the namespace. 
 
@@ -185,9 +185,9 @@ Update the Access Control List for a particular Subscription.
 ### Parameters
 
 `tenantId`  
-Unique Id for the tenant
+Unique Id for the tenant  
 `namespaceId`  
-Unique Id for the namespace 
+Unique Id for the namespace  
 `subscriptionId`  
 Unique Id for the Subscription 
 
@@ -200,9 +200,9 @@ Update the Owner for a particular Subscription.
 ### Parameters
 
 `tenantId`  
-Unique Id for the tenant
+Unique Id for the tenant  
 `namespaceId`  
-Unique Id for the namespace
+Unique Id for the namespace  
 `subscriptionId`  
 Unique Id for the Subscription
 
@@ -215,8 +215,8 @@ Delete a Subscription.
 ### Parameters
 
 `tenantId`  
-Unique Id for the tenant
+Unique Id for the tenant  
 `namespaceId`  
-Unique Id for the namespace 
+Unique Id for the namespace  
 `subscriptionId`  
 Unique Id for the Subscription

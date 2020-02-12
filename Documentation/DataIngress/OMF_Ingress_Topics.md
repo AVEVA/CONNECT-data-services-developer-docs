@@ -26,276 +26,206 @@ Topic information is contained in an object called ``Topic`` and has the followi
 
 **************************
 
-``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics``
--------------------------------------------
-
+## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics``
 Get all Topics for a tenant. 
 
-**Parameters**
+### Parameters
 
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace.
+``tenantId``  
+Unique Id for the tenant  
+``namespaceId``  
+Unique Id for the namespace.
 
-**Returns**
-
+### Returns
 An array of Topic objects. 
 
-**************************
-
-``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}``
-------------------------------------------------------------
-
+## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}``
 Get a specific Topic. 
 
-**Parameters**
+### Parameters
 
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace.
-``topicId``
-  Unique Id for the Topic.   
+``tenantId``  
+Unique Id for the tenant  
+``namespaceId``  
+Unique Id for the namespace  
+``topicId``  
+Unique Id for the Topic 
 
-**Returns**
+### Returns
+A Topic object
 
-A Topic object. 
-
-************************
-
-``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/subscriptions``
--------------------------------------------
-
+## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/subscriptions``
 Get all Subscriptions across all namespaces mapped to a Topic.
 
-**Parameters**
+### Parameters
 
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace of the Topic.
-``topicId``
-  Unique Id for the Topic.
+``tenantId``  
+Unique Id for the tenant  
+``namespaceId``  
+Unique Id for the namespace of the Topic  
+``topicId``  
+Unique Id for the Topic
 
-**Returns**
-
+### Returns
 An array of Subscription objects. 
 
-***************************
+## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/topics``
+Get the default Access Control List for new Topics
 
-``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/topics``
--------------------------------------------------------------------------------------
+### Parameters
 
-Get the default Access Control List for new Topics.
+``tenantId``  
+Unique Id for the tenant  
+``namespaceId``  
+Unique Id for the namespace
 
-**Parameters**
+### Returns
+An AccessControlList object
 
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace. 
+## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accessrights/topics``
+Get the default Access Rights of the requesting identity for any newly created Topics
 
-**Returns**
+### Parameters
 
-An AccessControlList object.
+``tenantId``  
+Unique Id for the tenant  
+``namespaceId``  
+Unique Id for the namespace 
 
-***************************
+### Returns
+An array of Access Rights strings
 
-``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accessrights/topics``
--------------------------------------------------------------------------------------
+## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/accesscontrol``
+Get the Access Control List for a particular Topic
 
-Get the default Access Rights of the requesting identity for any newly created Topics.
+### Parameters
 
-**Parameters**
+``tenantId``  
+Unique Id for the tenant  
+``namespaceId``  
+Unique Id for the namespace  
+``topicId``  
+Unique Id for the Topic
 
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace. 
+### Returns
+An AccessControlList object
 
-**Returns**
+## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/accessrights``
+Get the Access Rights of the requesting identity for a particular Topic
 
-An array of Access Rights strings.
+### Parameters
 
-***************************
+``tenantId``  
+Unique Id for the tenant  
+``namespaceId``  
+Unique Id for the namespace  
+``topicId``  
+Unique Id for the Topic
 
-``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/accesscontrol``
--------------------------------------------------------------------------------------
+### Returns
+An array of Access Rights strings
 
-Get the Access Control List for a particular Topic.
+## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/owner``
+Get the Owner for a particular Topic
 
-**Parameters**
+### Parameters
 
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace. 
-``topicId``
-  Unique Id for the Topic. 
+``tenantId``  
+Unique Id for the tenant
+``namespaceId``  
+Unique Id for the namespace  
+``topicId``  
+Unique Id for the Topic
 
-**Returns**
+### Returns
+A Trustee object
 
-An AccessControlList object.
+## ``POST api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics``
+Create a new topic
 
-***************************
+### Parameters
 
-``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/accessrights``
--------------------------------------------------------------------------------------
+``tenantId``  
+Unique Id for the tenant  
+``namespaceId``  
+Unique Id for the namespace
 
-Get the Access Rights of the requesting identity for a particular Topic.
-
-**Parameters**
-
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace. 
-``topicId``
-  Unique Id for the Topic. 
-
-**Returns**
-
-An array of Access Rights strings.
-
-***************************
-
-``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/owner``
--------------------------------------------------------------------------------------
-
-Get the Owner for a particular Topic.
-
-**Parameters**
-
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace. 
-``topicId``
-  Unique Id for the Topic. 
-
-**Returns**
-
-A Trustee object.
-
-***************************
-
-``POST api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics``
------------------------------------------
-
-Create a new topic. 
-
-**Parameters**
-
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace. 
-
-**Body**
-
+### Body
 A Topic object. The ``Id`` property should not be specified, since it will be automatically generated during creation.
 
-**Returns**
+### Returns
+The Topic object that was created
 
-The Topic object that was created. 
-
-***********************
-
-``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}``
------------------------------------------
-
+## ``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}``
 Update an existing Topic. Only the name and description can be updated. 
 
-**Parameters**
+### Parameters
 
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace. 
-``topicId``
-  Topic Id for the Topic to be updated.
+``tenantId``  
+Unique Id for the tenant  
+``namespaceId``  
+Unique Id for the namespace  
+``topicId``  
+Topic Id for the Topic to be updated
 
-**Body**
-
+### Body
 A Topic object. The ``Id`` property should match the ``topicId`` in the route.
 
-**Returns**
-
+### Returns
 The Topic object that was updated. 
 
-***********************
-
-``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/topics``
-----------------------------------------------------------
-
+## ``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/topics``
 Update the default Access Control List for new Topics.
 
-**Parameters**
+### Parameters
 
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace. 
+``tenantId``  
+Unique Id for the tenant  
+``namespaceId``  
+Unique Id for the namespace 
 
-**Body**
+### Body
+An AccessControlList object
 
-An AccessControlList object.
+## ``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/accesscontrol``
+Update the Access Control List for a particular Topic
 
-************************
+### Parameters
 
-``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/accesscontrol``
-----------------------------------------------------------
+``tenantId``  
+Unique Id for the tenant  
+``namespaceId``  
+Unique Id for the namespace  
+``topicId``  
+Unique Id for the Topic
 
-Update the Access Control List for a particular Topic.
+### Body
+An AccessControlList object
 
-**Parameters**
+## ``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/owner``
+Update the Owner for a particular Topic
 
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace. 
-``topicId``
-  Unique Id for the Topic. 
+### Parameters
 
-**Body**
+``tenantId``  
+Unique Id for the tenant  
+``namespaceId``  
+Unique Id for the namespace  
+``topicId``  
+Unique Id for the Topic
 
-An AccessControlList object.
-
-************************
-
-``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/owner``
-----------------------------------------------------------
-
-Update the Owner for a particular Topic.
-
-**Parameters**
-
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace. 
-``topicId``
-  Unique Id for the Topic. 
-
-**Body**
-
+### Body
 A Trustee object.
 
-************************
+## ``DELETE api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}``
+Delete a Topic
 
-``DELETE api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}``
-----------------------------------------------------------------
+### Parameters
 
-Delete a Topic. 
+``tenantId``  
+Unique Id for the tenant  
+``namespaceId``  
+Unique Id for the namespace  
+``topicId``  
+Unique Id for the Topic
 
-**Parameters**
-
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace. 
-``topicId``
-  Unique Id for the Topic. 
-
-************************

@@ -24,7 +24,8 @@ Topic information is contained in an object called ``Topic`` and has the followi
 | Description     | string                  | Description of the Topic. |
 | CreatedDate     | DateTime                | Date and time this Topic was created. |
 
-## Get all Topics for a tenant. 
+## `Get Topics`
+Get all Topics for a tenant. 
 
 ### Request
 ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics``

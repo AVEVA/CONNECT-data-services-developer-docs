@@ -24,7 +24,7 @@ If a data view has any sectioners specified, then a special type of field set is
 ## Uses of sectioning
 Sectioning can be used to separate the data items from each other, and to join different types of data items together.
 
-### Separating data items from each other
+### Separating data items
 Separating the data items from each other makes the data view's data records smaller and more granular. It is also possible to produce shapes that mimic physical or logical assets.
 
 #### Example scenario
@@ -85,7 +85,8 @@ Unfortunately, the initial result is not very usable. The fields are ambiguous (
 
 #### Example: Complete uniqueness, sectioning by data item id
 
-A simple way of disambiguating the data items is to section them by data item id. Here, we will do two things:
+A simple way of disambiguating the data items is to section them by data item id. This example includes two actions:
+
 - Add data item id as a sectioner
 - Include fields for metadata: Site, Meter, Inverter, Measurement.
 
@@ -161,11 +162,11 @@ The result is much closer to being usable. The records are no longer ambiguous. 
 | - | "Winterthur" | "Secondary" | "0" | "Power Out" |WINT.Meter.Secondary.Inverter.0.PwrOut/Value |
 
 #### Example: Data records that reflect real-world assets
-Instead of sectioning by data item id, let us section by metadata. We will:
+Instead of sectioning by data item id, let us section by metadata. This example uses:
 
-- Use the `Field`s for Site, Meter, and Inverter metadata as the data view's `.Sectioners`
-- Include a `FieldSet` of `.SourceType` `FieldSetSourceType.SectionValue`, with a `Field` to show each sectioner's value
-- Use the `Field` for Measurement metadata as the data item `FieldSet`'s `.Distinguisher`
+- the `Field`s for Site, Meter, and Inverter metadata as the data view's `.Sectioners`
+- a `FieldSet` of `.SourceType` `FieldSetSourceType.SectionValue`, with a `Field` to show each sectioner's value
+- the `Field` for Measurement metadata as the data item `FieldSet`'s `.Distinguisher`
 
 ```json
 {
@@ -250,16 +251,16 @@ The resulting data mappings reflect the data on a per-inverter basis, mirroring 
 | - | "Winterthur" | "Primary" | "0" | WINT.Meter.Primary.Inverter.0.PwrIn/Value | WINT.Meter.Primary.Inverter.0.PwrOut/Value |
 | - | "Winterthur" | "Secondary" | "0" | WINT.Meter.Secondary.Inverter.0.PwrIn/Value | WINT.Meter.Secondary.Inverter.0.PwrOut/Value |
 
-Note that sectioning by Meter and Inverter overcomes the differences across Sites: not every site has a Secondary meter, and not every Meter has the same number of Inverters. This is not a problem.
+**Note:** Sectioning by Meter and Inverter overcomes the differences across Sites: not every site has a Secondary meter, and not every Meter has the same number of Inverters. This is not a problem.
 
 ### Associating data items with each other
 Another use of sectioning is to "join" the data items returned by different queries, such as adding weather data for each power inverter.
 
 #### Example: Adding weather data to the real-world assets
+This example includes two actions:
 
 - Add a second `Query` for "site weather"
 - Add a new `FieldSet` for the data items from the "site weather" query, with `Field`s for "SolarRadiation" and "Temperature"
-- 
 
 ```json
 {

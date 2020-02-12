@@ -9,7 +9,7 @@ This quick start is a hands-on tour of the main concepts behind consuming data v
 It is assumed that you are working with streams as described in the [Example Scenario](xref:DataViewsExampleScenario). The data views API uses the same authentication scheme as the Sequential Data Store.
 
 
-## Step 1: Get data using defaults
+## Get data using defaults
 
 ### Action
 ```text
@@ -50,7 +50,7 @@ An array of json values similar to:
     ...
 ```
 
-## Step 2: Get data for a custom range
+## Get data for a custom range
 
 ### Action
 ```text
@@ -92,8 +92,7 @@ An array of json values similar to:
     ...
 ```
 
-## Step 3: Get data in a different format
-
+## Get data in a different format
 By default, data is returned in object-style json. Other formats are available: csv and table-style json, each with an optional header row.
 
 ### Action
@@ -105,6 +104,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
 
 ### Expected result
 Rows of CSV values similar to:
+
 ```csv
 Timestamp.0,Id.1,Name.2,Tags.3,Site.4,SolarRadiation.5,AmbientTemperature.6,CloudCover.7,Temperature.8,Id.9,Name.10,Tags.11,Site.12,SolarRadiation.13,AmbientTemperature.14,CloudCover.15,Temperature.16,Id.17,Name.18,Tags.19,Site.20,SolarRadiation.21,AmbientTemperature.22,CloudCover.23,Temperature.24
 2019-10-21T18:00:00.0000000Z,WS_WINT,WS_WINT,"Weather, High Resolution, Gen2",Winterthur,108,1.080551788,2,,WS_ROSE,WS_ROSE,"Weather, Low Resolution, Gen1",Rosecliff,132,,,14.53736919,WS_BILT,WS_BILT,"Weather, High Resolution, Gen1",Biltmore,165,,,33.58961912
@@ -112,7 +112,7 @@ Timestamp.0,Id.1,Name.2,Tags.3,Site.4,SolarRadiation.5,AmbientTemperature.6,Clou
 ...
 ```
 
-## Step 4: Get subsequent pages
+## Get subsequent pages
 By default, each page includes 1000 records. If the requested data spans into another page, the response includes a hyperlink to the next page of data.
 
 ### Action
@@ -124,6 +124,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
 
 ### Expected result
 The next page of data:
+
 ```csv
 Timestamp.0,Id.1,Name.2,Tags.3,Site.4,SolarRadiation.5,AmbientTemperature.6,CloudCover.7,Temperature.8,Id.9,Name.10,Tags.11,Site.12,SolarRadiation.13,AmbientTemperature.14,CloudCover.15,Temperature.16,Id.17,Name.18,Tags.19,Site.20,SolarRadiation.21,AmbientTemperature.22,CloudCover.23,Temperature.24
 2019-10-21T22:00:00.0000000Z,WS_WINT,WS_WINT,"Weather, High Resolution, Gen2",Winterthur,108,1.080551788,2,,WS_ROSE,WS_ROSE,"Weather, Low Resolution, Gen1",Rosecliff,132,,,14.53736919,WS_BILT,WS_BILT,"Weather, High Resolution, Gen1",Biltmore,165,,,33.58961912
@@ -131,11 +132,12 @@ Timestamp.0,Id.1,Name.2,Tags.3,Site.4,SolarRadiation.5,AmbientTemperature.6,Clou
 ...
 ```
 
-## Step 5: Recover from an invalid paging session
+## Recover from an invalid paging session
 It is possible, though unlikely, for the continuation token to become invalid during paging. When this happens, paging must be restarted from the first page.
 
 ### Action
 Use the hyperlink in the FirstPage header to request the first page.
+
 ```text
 GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart/Data/Interpolated
 ?startIndex={your_val_here}&endIndex={your_val_here}&interval={your_val_here}&form=csvh&cache=preserve
@@ -143,6 +145,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
 
 ### Expected result
 The first page of data:
+
 ```csv
 Timestamp.0,Id.1,Name.2,Tags.3,Site.4,SolarRadiation.5,AmbientTemperature.6,CloudCover.7,Temperature.8,Id.9,Name.10,Tags.11,Site.12,SolarRadiation.13,AmbientTemperature.14,CloudCover.15,Temperature.16,Id.17,Name.18,Tags.19,Site.20,SolarRadiation.21,AmbientTemperature.22,CloudCover.23,Temperature.24
 2019-10-21T18:00:00.0000000Z,WS_WINT,WS_WINT,"Weather, High Resolution, Gen2",Winterthur,108,1.080551788,2,,WS_ROSE,WS_ROSE,"Weather, Low Resolution, Gen1",Rosecliff,132,,,14.53736919,WS_BILT,WS_BILT,"Weather, High Resolution, Gen1",Biltmore,165,,,33.58961912
@@ -151,15 +154,17 @@ Timestamp.0,Id.1,Name.2,Tags.3,Site.4,SolarRadiation.5,AmbientTemperature.6,Clou
 ```
 
 
-## Step 6: Explore what each data field maps to
+## Explore what each data field maps to
 
 ### Action
+
 ```text
 GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart/Resolved/FieldMappings
 ```
 
 ### Expected result
 An array of field mappings:
+
 ```json
 {
     "TimeOfResolution": "2019-12-13T01:23:45Z",

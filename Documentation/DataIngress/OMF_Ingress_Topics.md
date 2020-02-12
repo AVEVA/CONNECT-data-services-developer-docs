@@ -24,7 +24,7 @@ Topic information is contained in an object called ``Topic`` and has the followi
 | Description     | string                  | Description of the Topic. |
 | CreatedDate     | DateTime                | Date and time this Topic was created. |
 
-## `Get Topics`
+## `Get Tenant Topics`
 Get all Topics for a tenant. 
 
 ### Request
@@ -40,7 +40,8 @@ Unique Id for the namespace
 ### Returns
 An array of Topic objects. 
 
-## Get a specific Topic. 
+## `Get Topic`
+Get a specific Topic. 
 
 ### Request
 ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}``
@@ -57,7 +58,8 @@ Unique Id for the Topic
 ### Returns
 A Topic object
 
-## Get all Subscriptions across all namespaces mapped to a Topic.
+## `Get Topic Subscriptions`
+Get all Subscriptions across all namespaces mapped to a Topic.
 
 ### Request
 ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/subscriptions``
@@ -74,7 +76,8 @@ Unique Id for the Topic
 ### Returns
 An array of Subscription objects. 
 
-## Get the default Access Control List for new Topics.
+## `Get Topics Access Control List`
+Get the default Access Control List for new Topics.
 
 ### Request
 ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/topics``
@@ -89,7 +92,8 @@ Unique Id for the namespace
 ### Returns
 An AccessControlList object
 
-## Get the default Access Rights of the requesting identity for any newly created Topics.
+## `Get Topics Access Rights`
+Get the default Access Rights of the requesting identity for any newly created Topics.
 
 ### Request
 ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accessrights/topics``
@@ -104,7 +108,8 @@ Unique Id for the namespace
 ### Returns
 An array of Access Rights strings
 
-## Get the Access Control List for a particular Topic.
+## `Get Topic Access Control List`
+Get the Access Control List for a particular Topic.
 
 ### Request
 ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/accesscontrol``
@@ -121,7 +126,8 @@ Unique Id for the Topic
 ### Returns
 An AccessControlList object
 
-## Get the Access Rights of the requesting identity for a particular Topic.
+## `Get Topic Access Rights`
+Get the Access Rights of the requesting identity for a particular Topic.
 
 ### Request
 ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/accessrights``
@@ -138,7 +144,8 @@ Unique Id for the Topic
 ### Returns
 An array of Access Rights strings
 
-## Get the Owner for a particular Topic.
+## `Get Topic Owner`
+Get the Owner for a particular Topic.
 
 ### Request
 ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/owner``
@@ -155,7 +162,8 @@ Unique Id for the Topic
 ### Returns
 A Trustee object
 
-## Create a new topic.
+## `Create Topic`
+Create a new topic.
 
 ### Request
 ``POST api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics``
@@ -173,7 +181,8 @@ A Topic object. The ``Id`` property should not be specified, since it will be au
 ### Returns
 The Topic object that was created
 
-## Update an existing Topic. Only the name and description can be updated. 
+## `Update Topic`
+Update an existing Topic. Only the name and description can be updated. 
 
 ### Request
 ``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}``
@@ -193,7 +202,8 @@ A Topic object. The ``Id`` property should match the ``topicId`` in the route.
 ### Returns
 The Topic object that was updated. 
 
-## Update the default Access Control List for new Topics.
+## `Update Topics Access Control List`
+Update the default Access Control List for new Topics.
 
 ### Request
 ``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/topics``
@@ -208,7 +218,8 @@ Unique Id for the namespace
 ### Body
 An AccessControlList object
 
-## Update the Access Control List for a particular Topic.
+## `Update Topic Access Control List`
+Update the Access Control List for a particular Topic.
 
 ### Request
 ``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/accesscontrol``
@@ -225,7 +236,8 @@ Unique Id for the Topic
 ### Body
 An AccessControlList object
 
-## Update the Owner for a particular Topic.
+## `Update Topic Owner`
+Update the Owner for a particular Topic.
 
 ### Request
 ``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/owner``
@@ -242,7 +254,8 @@ Unique Id for the Topic
 ### Body
 A Trustee object.
 
-## Delete a Topic.
+## `Delete Topic`
+Delete a Topic.
 
 ### Request
 ``DELETE api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}``

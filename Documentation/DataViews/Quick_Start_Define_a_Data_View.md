@@ -534,7 +534,7 @@ Timestamp.0,Id.1,Name.2,Tags.3,Site.4,SolarRadiation.5,AmbientTemperature.6,Clou
 2019-10-21T20:00:00.0000000Z,WS_WINT,WS_WINT,"Weather, High Resolution, Gen2",Winterthur,109,2.501105722,3,,WS_ROSE,WS_ROSE,"Weather, Low Resolution, Gen1",Rosecliff,139,,,14.76498991,WS_BILT,WS_BILT,"Weather, High Resolution, Gen1",Biltmore,157,,,32.41209639
 ```
 
-## Step 7: Section the data view
+## Section the data view
 One way to disambiguate the data items is to “section” them, which amounts to partitioning them based on a value. For example, metadata:Site as the sectioner might yield sections of Biltmore, Rosecliff, and Winterthur, each containing the data items associated with that Site.
 
 You may use multiple sectioners. This is effectively “section by X then Y then Z”
@@ -704,7 +704,7 @@ HTTP 200 OK
 ]
 ```
 
-Note that in the real world, we’re not necessarily aiming for an ultra-skinny output, and the data views product doesn’t make any assumptions there.
+**Note:** The Data Views product does not assume an intention for ultra-skinny output.
 
 ## Include the sectioner field set
 
@@ -922,7 +922,7 @@ Find the `Field` associated with "AmbientTemperature". To the `Field`'s `.Keys` 
 Now that field will match to either "Temperature" or "AmbientTemperature".  
 Remove the `Field` associated only with "Temperature".
 
-While we're at it, we can also remove the `Fields` associated with data item Id and Name. These are not providing any additional useful information.
+You can also remove the `Fields` associated with data item Id and Name. These are not providing any additional useful information.
 
 ```json
 PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart

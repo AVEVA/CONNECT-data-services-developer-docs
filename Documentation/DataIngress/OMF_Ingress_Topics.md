@@ -24,8 +24,6 @@ Topic information is contained in an object called ``Topic`` and has the followi
 | Description     | string                  | Description of the Topic. |
 | CreatedDate     | DateTime                | Date and time this Topic was created. |
 
-**************************
-
 ## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics``
 Get all Topics for a tenant. 
 
@@ -34,7 +32,7 @@ Get all Topics for a tenant.
 ``tenantId``  
 Unique Id for the tenant  
 ``namespaceId``  
-Unique Id for the namespace.
+Unique Id for the namespace
 
 ### Returns
 An array of Topic objects. 
@@ -70,7 +68,7 @@ Unique Id for the Topic
 An array of Subscription objects. 
 
 ## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/topics``
-Get the default Access Control List for new Topics
+Get the default Access Control List for new Topics.
 
 ### Parameters
 
@@ -83,7 +81,7 @@ Unique Id for the namespace
 An AccessControlList object
 
 ## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accessrights/topics``
-Get the default Access Rights of the requesting identity for any newly created Topics
+Get the default Access Rights of the requesting identity for any newly created Topics.
 
 ### Parameters
 
@@ -96,7 +94,7 @@ Unique Id for the namespace
 An array of Access Rights strings
 
 ## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/accesscontrol``
-Get the Access Control List for a particular Topic
+Get the Access Control List for a particular Topic.
 
 ### Parameters
 
@@ -111,7 +109,7 @@ Unique Id for the Topic
 An AccessControlList object
 
 ## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/accessrights``
-Get the Access Rights of the requesting identity for a particular Topic
+Get the Access Rights of the requesting identity for a particular Topic.
 
 ### Parameters
 
@@ -126,7 +124,7 @@ Unique Id for the Topic
 An array of Access Rights strings
 
 ## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/owner``
-Get the Owner for a particular Topic
+Get the Owner for a particular Topic.
 
 ### Parameters
 
@@ -141,7 +139,7 @@ Unique Id for the Topic
 A Trustee object
 
 ## ``POST api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics``
-Create a new topic
+Create a new topic.
 
 ### Parameters
 
@@ -188,7 +186,7 @@ Unique Id for the namespace
 An AccessControlList object
 
 ## ``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/accesscontrol``
-Update the Access Control List for a particular Topic
+Update the Access Control List for a particular Topic.
 
 ### Parameters
 
@@ -203,7 +201,7 @@ Unique Id for the Topic
 An AccessControlList object
 
 ## ``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/owner``
-Update the Owner for a particular Topic
+Update the Owner for a particular Topic.
 
 ### Parameters
 
@@ -218,7 +216,7 @@ Unique Id for the Topic
 A Trustee object.
 
 ## ``DELETE api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}``
-Delete a Topic
+Delete a Topic.
 
 ### Parameters
 

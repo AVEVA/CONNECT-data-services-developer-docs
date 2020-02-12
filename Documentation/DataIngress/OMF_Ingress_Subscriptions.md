@@ -46,7 +46,7 @@ Unique Id for the namespace
 ### Returns
 An array of Subscription objects. 
 
-### ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}``
+## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}``
 Get a specific Subscription. 
 
 ### Parameters
@@ -84,7 +84,7 @@ Unique Id for the tenant
 `namespaceId`  
 Unique Id for the namespace. 
 
-## Returns
+### Returns
 An array of Access Rights strings.
 
 ## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}/accesscontrol``
@@ -156,7 +156,7 @@ Update an existing Subscription. Only the name and description may be updated.
 `tenantId`  
 Unique Id for the tenant
 `namespaceId`  
-Unique Id for the namespace. 
+Unique Id for the namespace.
 `subscriptionId`  
 Subscription Id for the Subscription to be updated.
 

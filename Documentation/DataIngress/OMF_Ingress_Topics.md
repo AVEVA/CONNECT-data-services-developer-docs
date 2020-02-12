@@ -215,8 +215,7 @@ Unique Id for the Topic
 ### Body
 A Trustee object.
 
-## ``DELETE api/v1/tenants/{tenantId}/namespaces/{namespaceId}/
-topics/{topicId}``
+## ``DELETE api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}``
 Delete a Topic.
 
 ### Parameters

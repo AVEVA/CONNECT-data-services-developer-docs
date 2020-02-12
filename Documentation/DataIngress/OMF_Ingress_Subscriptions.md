@@ -33,8 +33,11 @@ Subscription information is contained in an object called Subscription which has
 
 *****************
 
-## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions``
-Get all Subscriptions for a tenant. 
+## Get all Subscriptions for a tenant. 
+
+### Request
+``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions``
+
 
 ### Parameters
 

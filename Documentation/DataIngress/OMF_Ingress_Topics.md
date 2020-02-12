@@ -37,7 +37,8 @@ Unique Id for the namespace
 ### Returns
 An array of Topic objects. 
 
-## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}``
+## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/
+topics/{topicId}``
 Get a specific Topic. 
 
 ### Parameters
@@ -52,7 +53,8 @@ Unique Id for the Topic
 ### Returns
 A Topic object
 
-## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/subscriptions``
+## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/
+topics/{topicId}/subscriptions``
 Get all Subscriptions across all namespaces mapped to a Topic.
 
 ### Parameters
@@ -67,7 +69,8 @@ Unique Id for the Topic
 ### Returns
 An array of Subscription objects. 
 
-## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/topics``
+## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/
+accesscontrol/topics``
 Get the default Access Control List for new Topics.
 
 ### Parameters
@@ -80,7 +83,8 @@ Unique Id for the namespace
 ### Returns
 An AccessControlList object
 
-## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accessrights/topics``
+## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/
+accessrights/topics``
 Get the default Access Rights of the requesting identity for any newly created Topics.
 
 ### Parameters
@@ -93,7 +97,8 @@ Unique Id for the namespace
 ### Returns
 An array of Access Rights strings
 
-## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/accesscontrol``
+## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/
+topics/{topicId}/accesscontrol``
 Get the Access Control List for a particular Topic.
 
 ### Parameters
@@ -108,7 +113,8 @@ Unique Id for the Topic
 ### Returns
 An AccessControlList object
 
-## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/accessrights``
+## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/
+topics/{topicId}/accessrights``
 Get the Access Rights of the requesting identity for a particular Topic.
 
 ### Parameters
@@ -123,7 +129,8 @@ Unique Id for the Topic
 ### Returns
 An array of Access Rights strings
 
-## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/owner``
+## ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/
+topics/{topicId}/owner``
 Get the Owner for a particular Topic.
 
 ### Parameters
@@ -154,7 +161,8 @@ A Topic object. The ``Id`` property should not be specified, since it will be au
 ### Returns
 The Topic object that was created
 
-## ``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}``
+## ``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/
+topics/{topicId}``
 Update an existing Topic. Only the name and description can be updated. 
 
 ### Parameters
@@ -172,7 +180,8 @@ A Topic object. The ``Id`` property should match the ``topicId`` in the route.
 ### Returns
 The Topic object that was updated. 
 
-## ``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/topics``
+## ``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/
+accesscontrol/topics``
 Update the default Access Control List for new Topics.
 
 ### Parameters
@@ -185,7 +194,8 @@ Unique Id for the namespace
 ### Body
 An AccessControlList object
 
-## ``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/accesscontrol``
+## ``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/
+topics/{topicId}/accesscontrol``
 Update the Access Control List for a particular Topic.
 
 ### Parameters
@@ -200,7 +210,8 @@ Unique Id for the Topic
 ### Body
 An AccessControlList object
 
-## ``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/owner``
+## ``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/
+topics/{topicId}/owner``
 Update the Owner for a particular Topic.
 
 ### Parameters
@@ -215,7 +226,8 @@ Unique Id for the Topic
 ### Body
 A Trustee object.
 
-## ``DELETE api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}``
+## ``DELETE api/v1/tenants/{tenantId}/namespaces/{namespaceId}/
+topics/{topicId}``
 Delete a Topic.
 
 ### Parameters

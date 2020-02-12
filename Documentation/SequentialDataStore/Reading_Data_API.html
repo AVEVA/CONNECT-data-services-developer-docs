@@ -145,45 +145,50 @@ var SimpleType = function () {
 <hr>
 <h2 id="get-first-value"><code>Get First Value</code></h2>
 <p>Returns the first value in the stream. If no values exist in the stream, null is returned.</p>
-<p><strong>Request</strong>  </p>
+<h4 id="request">Request</h4>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data/<wbr>First
-</code></pre><p><strong>Parameters</strong><br><code>string tenantId</code><br>The tenant identifier</p>
+</code></pre><h5 id="parameters">Parameters</h5>
+<p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string streamId</code><br>The stream identifier</p>
-<p><strong>Response</strong><br>The response includes a status code and a response body containing a serialized event.</p>
-<p><strong>.NET Library</strong></p>
+<h4 id="response">Response</h4>
+<p>The response includes a status code and a response body containing a serialized event.</p>
+<h4 id="net-client-libraries-method">.NET client libraries method</h4>
 <pre><code class="lang-csharp">   Task&lt;T&gt; GetFirstValueAsync&lt;T&gt;(string streamId, string streamViewId = null);
 </code></pre><hr>
 <h2 id="get-last-value"><code>Get Last Value</code></h2>
 <p>Returns the last value in the stream. If no values exist in the stream, null is returned.</p>
-<p><strong>Request</strong>  </p>
+<h4 id="request-1">Request</h4>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data/<wbr>Last
-</code></pre><p><strong>Parameters</strong></p>
+</code></pre><h5 id="parameters-1">Parameters</h5>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier </p>
 <p><code>string streamId</code><br>The stream identifier</p>
-<p><strong>Response</strong><br>The response includes a status code and a response body containing a serialized event.</p>
-<p><strong>.NET Library</strong></p>
+<h4 id="response-1">Response</h4>
+<p>The response includes a status code and a response body containing a serialized event.</p>
+<h4 id="net-client-libraries-method-1">.NET client libraries method</h4>
 <pre><code class="lang-csharp">   Task&lt;T&gt; GetLastValueAsync&lt;T&gt;(string streamId, string streamViewId = null);
 </code></pre><hr>
 <h2 id="find-distinct-value"><code>Find Distinct Value</code></h2>
 <p>Returns a stored event based on the specified <code>index</code> and <code>searchMode</code>. </p>
-<p><strong>Request</strong>  </p>
+<h4 id="request-2">Request</h4>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data
        ?index={index}&amp;searchMode={searchMode}
-</code></pre><p><strong>Parameters</strong><br><code>string tenantId</code><br>The tenant identifier</p>
+</code></pre><h5 id="parameters-2">Parameters</h5>
+<p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string streamId</code><br>The stream identifier</p>
 <p><code>string index</code><br>The index</p>
 <p><code>string searchMode</code><br>The <a class="xref" href="Reading_Data.html#sdssearchmode">SdsSearchMode</a>, the default is <code>exact</code></p>
-<p><strong>Response</strong><br>The response includes a status code and a response body containing a serialized collection with one event. </p>
+<h4 id="response-2">Response</h4>
+<p>The response includes a status code and a response body containing a serialized collection with one event. </p>
 <p>Depending on the request <code>index</code> and <code>searchMode</code>, it is possible to have an empty collection returned.</p>
-<p><strong>Example</strong>  </p>
+<h5 id="example-request">Example request</h5>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data
        ?index=2017-11-23T13:00:00Z&amp;searchMode=Next
 </code></pre><p>The request has an index that matches the index of an existing event, but since a <code>SdsSearchMode</code> of <code>next</code> was specified, the response contains the next event in the stream after the 
 specified index:</p>
-<p><strong>Response body</strong></p>
+<h5 id="example-response-body">Example response body</h5>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -194,11 +199,11 @@ Content-Type: application/json
         &quot;Measurement&quot;: 20
     }
 ]
-</code></pre><p><strong>Example</strong>  </p>
+</code></pre><h5 id="example-request-1">Example request</h5>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data 
        ?index=2017-11-23T13:30:00Z&amp;searchMode=Next
 </code></pre><p>The request specifies an index that does not match an index of an existing event. The next event in the stream is retrieved.</p>
-<p><strong>Response body</strong></p>
+<h5 id="example-response-body-1">Example response body</h5>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -209,7 +214,7 @@ Content-Type: application/json
         &quot;Measurement&quot;: 20
     }
 ]
-</code></pre><p><strong>.NET Library</strong></p>
+</code></pre><h4 id="net-client-libraries-method-2">.NET client libraries method</h4>
 <pre><code class="lang-csharp">   Task&lt;T&gt; FindDistinctValueAsync&lt;T&gt;(string streamId, string index, 
       SdsSearchMode searchMode = SdsSearchMode.Exact, string streamViewId = null);
    Task&lt;T&gt; FindDistinctValueAsync&lt;T, T1&gt;(string streamId, Tuple&lt;T1&gt; index, 
@@ -228,19 +233,21 @@ Content-Type: application/json
 <p><a name="getvaluesfiltered"></a></p>
 <h3 id="filtered"><code>Filtered</code></h3>
 <p>Returns a collection of stored values as determined by a <code>filter</code>. The <code>filter</code> limits results by applying an expression against event fields. Filter expressions are explained in detail in the <a class="xref" href="Filter_Expressions.html">Filter expressions</a> section.</p>
-<p><strong>Request</strong>  </p>
+<h4 id="request-3">Request</h4>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data 
        ?filter={filter}
-</code></pre><p><strong>Parameters</strong><br><code>string tenantId</code><br>The tenant identifier</p>
+</code></pre><h5 id="parameters-3">Parameters</h5>
+<p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string streamId</code><br>The stream identifier</p>
 <p><code>string filter</code><br>The filter expression (see <a class="xref" href="Filter_Expressions.html">Filter expressions</a>)</p>
-<p><strong>Response</strong><br>The response includes a status code and a response body containing a serialized collection of events.</p>
-<p><strong>Example</strong>  </p>
+<h4 id="response-3">Response</h4>
+<p>The response includes a status code and a response body containing a serialized collection of events.</p>
+<h5 id="example-request-2">Example request</h5>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data 
        ?filter=Measurement gt 10
 </code></pre><p>The events in the stream with <code>Measurement</code> greater than 10 are returned.</p>
-<p><strong>Response body</strong></p>
+<h5 id="example-response-body-2">Example response body</h5>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -259,17 +266,18 @@ Content-Type: application/json
     }
 ]
 </code></pre><p>Note that <code>State</code> is not included in the JSON as its value is the default value.</p>
-<p><strong>.NET Library</strong></p>
+<h4 id="net-client-libraries-method-3">.NET client libraries method</h4>
 <pre><code class="lang-csharp">   Task&lt;IEnumerable&lt;T&gt;&gt; GetFilteredValuesAsync&lt;T&gt;(string streamId, string filter, 
       string streamViewId = null);
 </code></pre><p><a name="getvaluesrange"></a></p>
 <h3 id="range"><code>Range</code></h3>
 <p>Returns a collection of stored values as determined by a <code>startIndex</code> and <code>count</code>. Additional optional parameters specify the direction of the range, how to handle events near or at the start index, whether to skip a certain number of events at the start of the range, and how to filter the data.</p>
-<p><strong>Request</strong></p>
+<h4 id="request-4">Request</h4>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data
        ?startIndex={startIndex}&amp;count={count}[&amp;skip={skip}&amp;reversed={reversed} 
        &amp;boundaryType={boundaryType}&amp;filter={filter}]
-</code></pre><p><strong>Parameters</strong><br><code>string tenantId</code><br>The tenant identifier</p>
+</code></pre><h5 id="parameters-4">Parameters</h5>
+<p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string streamId</code><br>The stream identifier</p>
 <p><code>string startIndex</code><br>Index identifying the beginning of the series of events to return</p>
@@ -280,12 +288,13 @@ from startIndex, collecting events after startIndex from the stream. A reversed 
 collect events before startIndex from the stream.</p>
 <p><code>SdsBoundaryType boundaryType</code><br>Optional SdsBoundaryType specifies the handling of events at or near startIndex</p>
 <p><code>string filter</code><br>Optional filter expression</p>
-<p><strong>Response</strong><br>The response includes a status code and a response body containing a serialized collection of events.</p>
-<p><strong>Example</strong>  </p>
+<h4 id="response-4">Response</h4>
+<p>The response includes a status code and a response body containing a serialized collection of events.</p>
+<h5 id="example-request-3">Example request</h5>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data 
        ?startIndex=2017-11-23T13:00:00Z&amp;count=100
 </code></pre><p>This request will return a response with up to 100 events starting at 13:00 and extending forward toward the end of the stream: </p>
-<p><strong>Response body</strong></p>
+<h5 id="example-response-body-3">Example response body</h5>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -308,11 +317,12 @@ Content-Type: application/json
     }
 ]
 </code></pre><p>Note that <code>State</code> is not included in the JSON as its value is the default value.</p>
-<p><strong>Example</strong><br>To reverse the direction of the request, set reversed to true. The following request will 
+<h5 id="example-request-4">Example request</h5>
+<p>To reverse the direction of the request, set reversed to true. The following request will 
 return up to 100 events starting at 13:00 and extending back toward the start of the stream:</p>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data 
        ?startIndex=2017-11-23T13:00:00Z&amp;count=100&amp;reversed=true
-</code></pre><p><strong>Response body</strong></p>
+</code></pre><h5 id="example-response-body-4">Example response body</h5>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -332,10 +342,11 @@ The response will contain up to 100 events. The boundary type Outside indicates 
 event outside the boundary will be included in the response. For a reverse direction range request, 
 this means one event forward of the specified start index. In a default direction range request, 
 it would mean one event before the specified start index.</p>
+<h5 id="example-request-5">Example request</h5>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data 
        ?startIndex=2017-11-23T13:00:00Z&amp;count=100&amp;reversed=true 
        &amp;boundaryType=2
-</code></pre><p><strong>Response body</strong></p>
+</code></pre><h5 id="example-response-body-5">Example response body</h5>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -358,11 +369,12 @@ Content-Type: application/json
 ]
 </code></pre><p>The event outside of the index is the next event or the event at 14:00 because the 
 request operates in reverse.</p>
+<h5 id="example-request-6">Example request</h5>
 <p>Adding a filter to the request means only events that meet the filter criteria are returned:</p>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data 
        ?startIndex=2017-11-23T13:00:00Z&amp;count=100&amp;reversed=true 
        &amp;boundaryType=2&amp;filter=Measurement gt 10
-</code></pre><p><strong>Response body</strong></p>
+</code></pre><h5 id="example-response-body-6">Example response body</h5>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -373,7 +385,7 @@ Content-Type: application/json
         &quot;Measurement&quot;: 20
     }
 ]
-</code></pre><p><strong>.NET Library</strong></p>
+</code></pre><h4 id="net-client-libraries-methods">.NET client libraries methods</h4>
 <pre><code class="lang-csharp">   Task&lt;IEnumerable&lt;T&gt;&gt; GetRangeValuesAsync&lt;T&gt;(string streamId, string startIndex, 
       int count, string streamViewId = null);
    Task&lt;IEnumerable&lt;T&gt;&gt; GetRangeValuesAsync&lt;T, T1&gt;(string streamId, T1 startIndex, 
@@ -421,7 +433,7 @@ be passed for the start and end individually. </p>
 <p>Paging is supported for window requests with a large number of events. </p>
 <p>To retrieve the next page of values, include the <code>continuationToken</code> from the results of the previous request. 
 For the first request, specify a null or empty string for the <code>continuationToken</code>.</p>
-<p><strong>Requests</strong></p>
+<h4 id="requests">Requests</h4>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">    GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data 
          ?startIndex={startIndex}&amp;endIndex={endIndex}
 
@@ -440,7 +452,8 @@ For the first request, specify a null or empty string for the <code>continuation
          ?startIndex={startIndex}&amp;startBoundaryType={startBoundaryType} 
          &amp;endIndex={endIndex}&amp;endBoundaryType={endBoundaryType}&amp;filter={filter}&amp;count={count} 
          &amp;continuationToken={continuationToken}
-</code></pre><p><strong>Parameters</strong><br><code>string tenantId</code><br>The tenant identifier</p>
+</code></pre><h5 id="parameters-5">Parameters</h5>
+<p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string streamId</code><br>The stream identifier</p>
 <p><code>string startIndex</code><br>Index bounding the beginning of the series of events to return</p>
@@ -451,13 +464,15 @@ For the first request, specify a null or empty string for the <code>continuation
 <p><code>SdsBoundaryType endBoundaryType</code><br>Optional <a class="xref" href="Reading_Data.html#sdsboundarytype">SdsBoundaryType</a> specifies the last value in the result in relation to the end index. If <code>startBoundaryType</code> is specified, <code>endBoundaryType</code> must be specified.</p>
 <p><code>string filter</code><br>Optional <a class="xref" href="Filter_Expressions.html">filter expression</a></p>
 <p><code>string continuationToken</code><br>Optional token used to retrieve the next page of data. If <code>count</code> is specified, a <code>continuationToken</code> must also be specified.</p>
-<p><strong>Response</strong><br>The response includes a status code and a response body containing a serialized collection of events. </p>
+<h4 id="response-5">Response</h4>
+<p>The response includes a status code and a response body containing a serialized collection of events. </p>
 <p>A continuation token can be returned if specified in the request.</p>
-<p><strong>Example</strong><br>The following requests all stored events between 12:30 and 15:30: </p>
+<h5 id="example-request-7">Example request</h5>
+<p>The following requests all stored events between 12:30 and 15:30: </p>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data 
        ?startIndex=2017-11-23T12:30:00Z&amp;endIndex=2017-11-23T15:30:00Z
 </code></pre><p>The response will contain the event stored at the specified index:</p>
-<p><strong>Response body</strong></p>
+<h5 id="example-response-body-7">Example response body</h5>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -476,12 +491,13 @@ Content-Type: application/json
     }
 ]
 </code></pre><p>Note that <code>State</code> is not included in the JSON as its value is the default value.</p>
-<p><strong>Example</strong><br>When the request is modified to specify a boundary type of Outside, the value 
+<h5 id="example-request-8">Example request</h5>
+<p>When the request is modified to specify a boundary type of Outside, the value 
 before 13:30 and the value after 15:30 are included:</p>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data 
        ?startIndex=2017-11-23T12:30:00Z&amp;endIndex=2017-11-23T15:30:00Z 
        &amp;boundaryType=2
-</code></pre><p><strong>Response body</strong></p>
+</code></pre><h5 id="example-response-body-8">Example response body</h5>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -507,15 +523,16 @@ Content-Type: application/json
     }
 ]
 </code></pre><p>Note that <code>State</code> is not included in the JSON as its value is the default value. </p>
-<p>Further, <code>Measurement</code> is not included in the second, 12:00:00, event as zero is the default 
+<p>Further, <code>Measurement</code> is not included in the second event (12:00:00) as zero is the default 
 value for numbers.</p>
-<p>If instead a start boundary of Inside, only values inside the start boundary (after 13:30) 
-are included in the result. With an end boundary of Outside one value outside the end index 
+<h5 id="example-request-9">Example request</h5>
+<p>With a start boundary of Inside, only values inside the start boundary (after 13:30) 
+are included in the result. With an end boundary of Outside, one value outside the end index 
 (after 15:30) is included:</p>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data 
        ?startIndex=2017-11-23T12:30:00Z&amp;&amp;startBoundaryType=1 
        &amp;endIndex=2017-11-23T15:30:00Z&amp;endBoundaryType=2
-</code></pre><p><strong>Response body</strong></p>
+</code></pre><h5 id="example-response-body-9">Example response body</h5>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -541,13 +558,14 @@ Content-Type: application/json
         &quot;Measurement&quot;: 40
     }
 ]
-</code></pre><p>In order to page the results of the request, a continuation token may be specified. 
+</code></pre><h5 id="example-request-10">Example request</h5>
+<p>In order to page the results of the request, a continuation token may be specified. 
 This requests the first page of the first two stored events between start index and 
 end index by indicating count is 2 and continuationToken is an empty string:</p>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data 
        ?startIndex=2017-11-23T12:30:00Z&amp;endIndex=2017-11-23T15:30:00Z 
        &amp;count=2&amp;continuationToken=
-</code></pre><p><strong>Response body</strong></p>
+</code></pre><h6 id="example-response-body-10">Example response body</h6>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -566,12 +584,13 @@ Content-Type: application/json
     ],
     &quot;ContinuationToken&quot;: &quot;2017-11-23T14:00:00.0000000Z&quot;
 }
-</code></pre><p>This request uses the continuation token from the previous 
+</code></pre><h5 id="example-request-11">Example request</h5>
+<p>This request uses the continuation token from the previous 
 page to request the next page of stored events:</p>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data 
        ?startIndex=2017-11-23T12:30:00Z&amp;endIndex=2017-11-23T15:30:00Z 
        &amp;count=2&amp;continuationToken=2017-11-23T14:00:00Z
-</code></pre><p><strong>Response body</strong></p>
+</code></pre><h5 id="example-response-body-11">Example response body</h5>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -586,7 +605,7 @@ Content-Type: application/json
     &quot;ContinuationToken&quot;: null
 }
 </code></pre><p>In this case, the results contain the final event. The returned continuation token is null. </p>
-<p><strong>.NET Library</strong></p>
+<h4 id="net-client-libraries-methods-1">.NET client libraries methods</h4>
 <pre><code class="lang-csharp">   Task&lt;IEnumerable&lt;T&gt;&gt; GetWindowValuesAsync&lt;T&gt;(string streamId, string startIndex, 
       string endIndex, string streamViewId = null);
    Task&lt;IEnumerable&lt;T&gt;&gt; GetWindowValuesAsync&lt;T, T1&gt;(string streamId, T1 startIndex,
@@ -682,21 +701,24 @@ are calculated for indexes at which no stored event exists. Interpolation is not
 <p><a name="getvaluesindexcollection"></a></p>
 <h3 id="index-collection"><code>Index Collection</code></h3>
 <p>Returns events at the specified indexes. If no stored event exists at a specified index, the stream&#39;s read characteristics determine how the returned event is calculated.</p>
-<p><strong>Request</strong>  </p>
+<h4 id="request-5">Request</h4>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data/<wbr>
        Interpolated?index={index}[&amp;index={index}...]
-</code></pre><p><strong>Parameters</strong><br><code>string tenantId</code><br>The tenant identifier</p>
+</code></pre><h5 id="parameters-6">Parameters</h5>
+<p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string streamId</code><br>The stream identifier</p>
 <p><code>string index</code><br>One or more indexes</p>
-<p><strong>Response</strong><br>The response includes a status code and a response body containing a serialized collection of events.</p>
+<h4 id="response-6">Response</h4>
+<p>The response includes a status code and a response body containing a serialized collection of events.</p>
 <p>Depending on the specified indexes and read characteristics of the stream, it is possible to have less events returned than specified indexes. An empty collection can also be returned.</p>
-<p><strong>Example</strong><br>Consider a stream of type <code>Simple</code> with the default <code>InterpolationMode</code> of <code>Continuous</code> and 
+<h5 id="example-request-12">Example request</h5>
+<p>Consider a stream of type <code>Simple</code> with the default <code>InterpolationMode</code> of <code>Continuous</code> and 
 <code>ExtrapolationMode</code> of <code>All</code>. In the following request, the specified index matches an existing stored event:</p>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data/<wbr>
        Interpolated?index=2017-11-23T13:00:00Z
 </code></pre><p>The response will contain the event stored at the specified index.</p>
-<p><strong>Response body</strong></p>
+<h5 id="example-response-body-12">Example response body</h5>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -707,12 +729,13 @@ Content-Type: application/json
         &quot;Measurement&quot;: 10
     }
 ]
-</code></pre><p>The following request specifies an index for which no stored event exists:</p>
+</code></pre><h5 id="example-request-13">Example request</h5>
+<p>The following request specifies an index for which no stored event exists:</p>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data/<wbr>
        Interpolated?index=2017-11-23T13:30:00Z
 </code></pre><p>Because the index is a valid type for interpolation and the stream has a <code>InterpolationMode</code> of <code>Continuous</code>, 
 this request receives a response with an event interpolated at the specified index:</p>
-<p><strong>Response body</strong></p>
+<h5 id="example-response-body-13">Example response body</h5>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -723,13 +746,14 @@ Content-Type: application/json
         &quot;Measurement&quot;: 15
     }
 ]
-</code></pre><p>Consider a stream of type <code>Simple</code> with an <code>InterpolationMode</code> of <code>Discrete</code> and 
+</code></pre><h5 id="example-request-14">Example request</h5>
+<p>Consider a stream of type <code>Simple</code> with an <code>InterpolationMode</code> of <code>Discrete</code> and 
 <code>ExtrapolationMode</code> of <code>All</code>. In the following request, the specified indexes only 
 match two existing stored events:</p>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data 
        Interpolated?index=2017-11-23T12:30:00Z&amp;index=2017-11-23T13:00:00Z&amp;index=2017-11-23T14:00:00Z
 </code></pre><p>For this request, the response contains events for two of the three specified indexes.</p>
-<p><strong>Response body</strong></p>
+<h5 id="example-response-body-14">Example response body</h5>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -745,7 +769,7 @@ Content-Type: application/json
         &quot;Measurement&quot;: 20
     }
 ]
-</code></pre><p><strong>.NET Library</strong></p>
+</code></pre><h4 id="net-client-libraries-methods-2">.NET client libraries methods</h4>
 <pre><code class="lang-csharp">   Task&lt;T&gt; GetValueAsync&lt;T&gt;(string streamId, string index, 
       string streamViewId = null);
    Task&lt;T&gt; GetValueAsync&lt;T, T1&gt;(string streamId, Tuple&lt;T1&gt; index, 
@@ -762,21 +786,24 @@ Content-Type: application/json
 </code></pre><p><a name="getvaluesinterpolatedinterval"></a></p>
 <h3 id="interval"><code>Interval</code></h3>
 <p>Returns events at evenly spaced intervals based on the specified start index, end index, and count. If no stored event exists at an index interval, the stream&#39;s read characteristics determine how the returned event is calculated.</p>
-<p><strong>Request</strong>  </p>
+<h4 id="request-6">Request</h4>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data/<wbr>
        Interpolated?startIndex={startIndex}&amp;endIndex={endIndex}&amp;count={count}
-</code></pre><p><strong>Parameters</strong><br><code>string tenantId</code><br>The tenant identifier</p>
+</code></pre><h5 id="parameters-7">Parameters</h5>
+<p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string streamId</code><br>The stream identifier</p>
 <p><code>string startIndex</code><br>The index defining the beginning of the window</p>
 <p><code>string endIndex</code><br>The index defining the end of the window  </p>
 <p><code>int count</code><br>The number of events to return. Read characteristics of the stream determine how the events are constructed.</p>
-<p><strong>Response</strong><br>The response includes a status code and a response body containing a serialized collection of events. Depending on the read characteristics and input parameters, it is possible for a collection to be returned with less events than specified in the count.</p>
+<h4 id="response-7">Response</h4>
+<p>The response includes a status code and a response body containing a serialized collection of events. Depending on the read characteristics and input parameters, it is possible for a collection to be returned with less events than specified in the count.</p>
+<h5 id="example-request-15">Example request</h5>
 <p>For a stream, named Simple, of type <code>Simple</code> for the following request:</p>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data/<wbr>
        Interpolated?startIndex=2017-11-23T13:00:00Z&amp;endIndex=2017-11-23T15:00:00Z&amp;count=3
 </code></pre><p>the start and end fall exactly on event indexes, and the number of events from start to end match the count of three (3).</p>
-<p><strong>Response body</strong></p>
+<h5 id="example-response-body-15">Example response body</h5>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -797,7 +824,7 @@ Content-Type: application/json
         &quot;Measurement&quot;: 30
     }
 ]
-</code></pre><p><strong>.NET Library</strong></p>
+</code></pre><h4 id="net-client-libraries-methods-3">.NET client libraries methods</h4>
 <pre><code class="lang-csharp">   Task&lt;IEnumerable&lt;T&gt;&gt; GetValuesAsync&lt;T&gt;(string streamId, string startIndex, 
       string endIndex, int count, string streamViewId = null);
    Task&lt;IEnumerable&lt;T&gt;&gt; GetValuesAsync&lt;T, T1&gt;(string streamId, T1 startIndex, 
@@ -1012,17 +1039,19 @@ Total, Weighted Mean, WeightedStandardDeviation, and WeightedPopulationStandardD
 </table>
 <p><strong>Note:</strong> Properties marked with an <code>InterpolationMode</code> of <code>Discrete</code> do not support summaries.
 Unsupported properties will be excluded from the summaries returned.</p>
-<p><strong>Request</strong>  </p>
+<h4 id="request-7">Request</h4>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data/<wbr>
        Summaries?startIndex={startIndex}&amp;endIndex={endIndex}&amp;count={count}[&amp;filter={filter}]
-</code></pre><p><strong>Parameters</strong><br><code>string tenantId</code><br>The tenant identifier</p>
+</code></pre><h5 id="parameters-8">Parameters</h5>
+<p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string streamId</code><br>The stream identifier</p>
 <p><code>string startIndex</code><br>The start index for the intervals</p>
 <p><code>string endIndex</code><br>The end index for the intervals</p>
 <p><code>int count</code><br>The number of intervals requested</p>
 <p><code>string filter</code><br>Optional filter expression</p>
-<p><strong>Response</strong><br>The response includes a status code and a response body containing a serialized collection of SdsIntervals.</p>
+<h4 id="response-8">Response</h4>
+<p>The response includes a status code and a response body containing a serialized collection of SdsIntervals.</p>
 <p>Each SdsInterval has a start, end, and collection of summary values.</p>
 <table>
 <thead>
@@ -1046,10 +1075,11 @@ Unsupported properties will be excluded from the summaries returned.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Example</strong><br>The following request calculates two summary intervals between the <code>startIndex</code> and <code>endIndex</code>: </p>
+<h5 id="example-request-16">Example request</h5>
+<p>The following request calculates two summary intervals between the <code>startIndex</code> and <code>endIndex</code>: </p>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data/<wbr> 
        Summaries?startIndex=2017-11-23T12:00:00Z&amp;endIndex=2017-11-23T16:00:00Z&amp;count=2
-</code></pre><p><strong>Response body</strong></p>
+</code></pre><h5 id="example-response-body-16">Example response body</h5>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -1164,7 +1194,7 @@ Content-Type: application/json
     }
 ]
 </code></pre><p>SDS also supports summary requests for nullable SdsTypes. It means an SdsType has at least a nullable SdsTypeProperty.</p>
-<p><strong>Example</strong></p>
+<h5 id="example">Example</h5>
 <p>The following example contains a nullable double property with interpolation mode set to continuous:</p>
 <h6 id="net-1">.NET</h6>
 <pre><code class="lang-csharp">
@@ -1266,11 +1296,12 @@ public class SimpleType
 </table>
 <p><strong>Note:</strong> Non-weighted summaries disregard null values and treat them as non-existent. 
 In the example above, non-weighted summaries for Measurement would be calculated based on (2,2,1,2,3) whereas weighted summaries for Measurement consider null values for its calculation. </p>
-<p>For more information see <a class="xref" href="SDS_Types.html#interpolation">Interpolation</a>.</p>
+<p>For more information see <a class="xref" href="Reading_Data.html#interpolation">Interpolation</a>.</p>
+<h5 id="example-request-17">Example request</h5>
 <p>The following request calculates one summary interval between the <code>startIndex</code> and <code>endIndex</code>: </p>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data/<wbr> 
        Summaries?startIndex=2017-11-23T12:00:01Z&amp;endIndex=2017-11-23T12:00:08Z&amp;count=1
-</code></pre><p><strong>Response body</strong></p>
+</code></pre><h5 id="example-response-body-17">Example response body</h5>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -1328,7 +1359,7 @@ Content-Type: application/json
         }
     }
 ]
-</code></pre><p><strong>.NET Library</strong></p>
+</code></pre><h4 id="net-client-libraries-methods-4">.NET client libraries methods</h4>
 <pre><code class="lang-csharp">   Task&lt;IEnumerable&lt;SdsInterval&lt;T&gt;&gt;&gt; GetIntervalsAsync&lt;T&gt;(string streamId, string 
       startIndex, string endIndex, int count, string streamViewId = null);
 
@@ -1347,12 +1378,13 @@ Content-Type: application/json
 <p>Returns representative data sampled by intervals between a specified start and end index. </p>
 <p>Sampling is driven by a specified property or properties of the stream&#39;s Sds Type. Property types that cannot be interpolated do not support sampling requests. Strings are an example of a property that cannot be interpolated. For more 
 information see <a class="xref" href="Reading_Data.html#interpolation">Interpolation</a>. </p>
-<p><strong>Request</strong>  </p>
+<h4 id="request-8">Request</h4>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data/<wbr>
        Sampled?startIndex={startIndex}&amp;endIndex={endIndex}&amp;intervals={intervals}&amp;sampleBy={sampleBy}
        [&amp;sampleBy={sampleBy}&amp;...&amp;boundaryType={boundaryType}&amp;startBoundaryType={startBoundaryType}
        &amp;endBoundaryType={endBoundaryType}&amp;filter={filter}]
-</code></pre><p><strong>Parameters</strong><br><code>string tenantId</code><br>The tenant identifier</p>
+</code></pre><h5 id="parameters-9">Parameters</h5>
+<p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string streamId</code><br>The stream identifier</p>
 <p><code>string startIndex</code><br>The start index for the intervals</p>
@@ -1363,11 +1395,13 @@ information see <a class="xref" href="Reading_Data.html#interpolation">Interpola
 <p><code>SdsBoundaryType startBoundaryType</code><br>Optional SdsBoundaryType specifies the handling of events at or near the startIndex</p>
 <p><code>SdsBoundaryType endBoundaryType</code><br>Optional SdsBoundaryType specifies the handling of events at or near the endIndex</p>
 <p><code>string filter</code><br>Optional filter expression</p>
-<p><strong>Response</strong><br>The response includes a status code and a response body containing a serialized collection of events.</p>
-<p><strong>Example</strong><br>The following request returns two sample intervals between the <code>startIndex</code> and <code>endIndex</code>: </p>
+<h4 id="response-9">Response</h4>
+<p>The response includes a status code and a response body containing a serialized collection of events.</p>
+<h5 id="example-request-18">Example request</h5>
+<p>The following request returns two sample intervals between the <code>startIndex</code> and <code>endIndex</code>: </p>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data/<wbr>
        Sampled?startIndex=2019-01-01T00:00:00Z&amp;endIndex=2019-01-02T00:00:00Z&amp;intervals=2&amp;sampleBy=Measurement
-</code></pre><p><strong>Response body</strong></p>
+</code></pre><h5 id="example-response-body-18">Example response body</h5>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -1411,7 +1445,7 @@ Content-Type: application/json
     }
 ]
 </code></pre><p>Note that <code>State</code> is not included in the JSON when its value is the default value.</p>
-<p><strong>.NET Library</strong></p>
+<h4 id="net-client-libraries-methods-5">.NET client libraries methods</h4>
 <pre><code class="lang-csharp">   Task&lt;IEnumerable&lt;T&gt;&gt; GetSampledValuesAsync&lt;T&gt;(string streamId, string startIndex, string endIndex,
       int intervals, IEnumerable&lt;string&gt; sampleBy, string streamViewId = null);  
 
@@ -1484,7 +1518,8 @@ Content-Type: application/json
        ?streams={streams}&amp;joinMode={joinMode}&amp;startIndex={startIndex}&amp;endIndex={endIndex}
        [&amp;boundaryType={boundaryType}&amp;startBoundaryType={startBoundaryType}
        &amp;endBoundaryType={endBoundaryType}&amp;filter={filter}&amp;count={count}]
-</code></pre><p><strong>Parameters</strong><br><code>string tenantId</code><br>The tenant identifier</p>
+</code></pre><h5 id="parameters-10">Parameters</h5>
+<p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string streams</code><br>Commas separated list of stream identifiers</p>
 <p><code>SdsJoinMode joinMode</code><br>Type of join, i.e. inner, outer, etc.</p>
@@ -1495,9 +1530,10 @@ Content-Type: application/json
 <p><code>SdsBoundaryType startBoundaryType</code><br>Optional SdsBoundaryType specifies the handling of events at or near the startIndex</p>
 <p><code>SdsBoundaryType endBoundaryType</code><br>Optional SdsBoundaryType specifies the handling of events at or near the endIndex</p>
 <p><code>string filter</code><br>Optional filter expression</p>
-<p><strong>Response</strong><br>The response includes a status code and a response body containing multiple serialized events. See examples for specifics.</p>
-<h4 id="examples">Examples</h4>
-<p>To join multiple streams, for example Simple1 and Simple2, assume that Simple1 presents the following data:</p>
+<h4 id="response-10">Response</h4>
+<p>The response includes a status code and a response body containing multiple serialized events. See examples for specifics.</p>
+<h5 id="examples">Examples</h5>
+<p>To join multiple streams, for example <code>Simple1</code> and <code>Simple2</code>, assume that <code>Simple1</code> presents the following data:</p>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -1523,7 +1559,7 @@ Content-Type: application/json
         &quot;Measurement&quot;: 40
     }
 ]
-</code></pre><p>And assume that Simple2 presents the following data:</p>
+</code></pre><p>And assume that <code>Simple2</code> presents the following data:</p>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -1550,12 +1586,13 @@ Content-Type: application/json
     }
 ]
 </code></pre><p>The following are responses for various Joins request options:</p>
-<h5 id="inner-join-example">Inner Join Example</h5>
+<h5 id="inner-join-example-request"><code>Inner Join</code> example request</h5>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Bulk/<wbr>Streams/<wbr>Data/<wbr>Joins
        ?streams=Simple1,Simple2&amp;joinMode=inner
        &amp;startIndex=0001-01-01T00:00:00.0000000&amp;endIndex=9999-12-31T23:59:59.9999999
-</code></pre><p><strong>Response</strong><br>Measurements from both streams with common indexes.</p>
-<p><strong>Response body</strong> </p>
+</code></pre><h4 id="response-11">Response</h4>
+<p>Measurements from both streams with common indexes.</p>
+<h5 id="example-response-body-19">Example response body</h5>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -1573,12 +1610,14 @@ Content-Type: application/json
         }
     ]
 ]
-</code></pre><h5 id="outer-join-example">Outer Join Example</h5>
+</code></pre><p><a name="outer"></a></p>
+<h5 id="outer-join-example-request"><code>Outer Join</code> example request</h5>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Bulk/<wbr>Streams/<wbr>Data/<wbr>Joins
        ?streams=Simple1,Simple2&amp;joinMode=outer
        &amp;startIndex=0001-01-01T00:00:00.0000000&amp;endIndex=9999-12-31T23:59:59.9999999
-</code></pre><p><strong>Response</strong><br>All Measurements from both Streams, with default values at indexes where a Stream does not have a value.</p>
-<p><strong>Response body</strong></p>
+</code></pre><h4 id="response-12">Response</h4>
+<p>All Measurements from both Streams, with default values at indexes where a Stream does not have a value.</p>
+<h5 id="example-response-body-20">Example response body</h5>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -1644,13 +1683,14 @@ Content-Type: application/json
         }
     ]
 ]
-</code></pre><h5 id="interpolated-join-example">Interpolated Join Example</h5>
+</code></pre><h5 id="interpolated-join-example-request"><code>Interpolated Join</code> example request</h5>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Bulk/<wbr>Streams/<wbr>Data/<wbr>Joins
        ?streams=Simple1,Simple2&amp;joinMode=interpolated
        &amp;startIndex=0001-01-01T00:00:00.0000000&amp;endIndex=9999-12-31T23:59:59.9999999
-</code></pre><p><strong>Response</strong><br>All Measurements from both Streams with missing values interpolated. If the missing values are between valid Measurements within a Stream, they are interpolated. If the missing values are outside of the boundary values, they are extrapolated.</p>
+</code></pre><h4 id="response-13">Response</h4>
+<p>All Measurements from both Streams with missing values interpolated. If the missing values are between valid Measurements within a Stream, they are interpolated. If the missing values are outside of the boundary values, they are extrapolated.</p>
 <p><strong>Note:</strong> The Interpolated SdsJoinMode currently does not support SdsInterpolationModes of the streams. All join requests with interpolations will honor the interpolation mode of the stream type or type property. For more information, see <a class="xref" href="Reading_Data.html#interpolation">Interpolation</a>.</p>
-<p><strong>Response body</strong></p>
+<h5 id="example-response-body-21">Example response body</h5>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -1740,12 +1780,13 @@ Content-Type: application/json
         }
     ]
 ]
-</code></pre><h5 id="mergeleft-join-example">MergeLeft Join Example</h5>
+</code></pre><h5 id="mergeleft-join-example-request"><code>MergeLeft Join</code> example request</h5>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Bulk/<wbr>Streams/<wbr>Data/<wbr>Joins
        ?streams=Simple1,Simple2&amp;joinMode=mergeleft
        &amp;startIndex=0001-01-01T00:00:00.0000000&amp;endIndex=9999-12-31T23:59:59.9999999
-</code></pre><p><strong>Response</strong><br>This is similar to <a href="#outer-join-example">OuterJoin</a>, but value at each index is the first available value at that index when iterating the given list of streams from left to right.</p>
-<p><strong>Response body</strong></p>
+</code></pre><h4 id="response-14">Response</h4>
+<p>This is similar to <a href="#outer">OuterJoin</a>, but value at each index is the first available value at that index when iterating the given list of streams from left to right.</p>
+<h5 id="example-response-body-22">Example response body</h5>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -1786,12 +1827,13 @@ Content-Type: application/json
         &quot;Measurement&quot;: 80
     }
 ]
-</code></pre><h5 id="mergeright-join-example">MergeRight Join Example</h5>
+</code></pre><h5 id="mergeright-join-example-request"><code>MergeRight Join</code> example request</h5>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Bulk/<wbr>Streams/<wbr>Data/<wbr>Joins
        ?streams=Simple1,Simple2&amp;joinMode=mergeright
        &amp;startIndex=0001-01-01T00:00:00.0000000&amp;endIndex=9999-12-31T23:59:59.9999999
-</code></pre><p><strong>Response</strong><br>This is similar to <a href="#outer-join-example">OuterJoin</a>, but value at each index is the first available value at that index when iterating the given list of streams from right to left.</p>
-<p><strong>Response body</strong></p>
+</code></pre><h4 id="response-15">Response</h4>
+<p>This is similar to <a href="#outer">OuterJoin</a>, but value at each index is the first available value at that index when iterating the given list of streams from right to left.</p>
+<h5 id="example-response-body-23">Example response body</h5>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -1833,15 +1875,17 @@ Content-Type: application/json
     }
 ]
 </code></pre><p><a name="postjoin"></a></p>
-<h3 id="post-request">POST Request</h3>
+<h3 id="post-request"><code>POST Request</code></h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   POST api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Bulk/<wbr>Streams/<wbr>Data/<wbr>Joins?
        joinMode={joinMode}
-</code></pre><p><strong>Parameters</strong></p>
+</code></pre><h5 id="parameters-11">Parameters</h5>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>SdsJoinMode joinMode</code><br>Type of join, i.e. inner, outer, etc.</p>
-<p><strong>Request Body</strong><br>Read options specific to each stream.</p>
-<p><strong>Response</strong><br> The response includes a status code and a response body containing multiple serialized events.</p>
+<h5 id="request-body">Request body</h5>
+<p>Read options specific to each stream.</p>
+<h4 id="response-16">Response</h4>
+<p> The response includes a status code and a response body containing multiple serialized events.</p>
 <p>Consider the following outer join request,</p>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   POST api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Bulk/<wbr>Streams/<wbr>Data/<wbr>Joins
        ?joinMode=outer
@@ -1873,7 +1917,7 @@ Content-Type: application/json
     }
 ] 
 </code></pre><p>Only events within the stream&#39;s specified index boundaries are considered for the outer join operation</p>
-<p><strong>Response body</strong></p>
+<h4 id="response-body">Response body</h4>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -1920,7 +1964,7 @@ Content-Type: application/json
     ]
 ]
 </code></pre><p>Notice that not all the values from Streams were included since they are restricted by individual queries for each Stream.</p>
-<p><strong>.NET Library</strong></p>
+<h4 id="net-client-libraries-methods-6">.NET client libraries methods</h4>
 <pre><code class="lang-csharp">   Task&lt;IEnumerable&lt;IList&lt;T&gt;&gt;&gt; GetJoinValuesAsync&lt;T&gt;(IEnumerable&lt;string&gt; streams, 
       SdsJoinType joinMode, string startIndex, string endIndex);
 

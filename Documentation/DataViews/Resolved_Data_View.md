@@ -6,7 +6,6 @@ uid: ResolvedDataView
 
 Various information is available about how each data view _resolves_. This information describes exactly what data will be in the data view, where it comes from, and where it will appear. This is useful when defining a data view and when consuming it.
 
-
 ## General concepts
 
 ### What does resolving mean?

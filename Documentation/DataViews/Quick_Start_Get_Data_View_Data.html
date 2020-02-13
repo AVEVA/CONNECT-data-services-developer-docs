@@ -80,7 +80,7 @@
 
 <p>This quick start is a hands-on tour of the main concepts behind consuming data view data.</p>
 <p>It is assumed that you are working with streams as described in the <a class="xref" href="Example_Scenario.html">Example Scenario</a>. The data views API uses the same authentication scheme as the Sequential Data Store.</p>
-<h2 id="step-1-get-data-using-defaults">Step 1: Get data using defaults</h2>
+<h2 id="get-data-using-defaults">Get data using defaults</h2>
 <h3 id="action">Action</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>quickstart/<wbr>Data/<wbr>Interpolated
 </code></pre><h3 id="expected-result">Expected result</h3>
@@ -114,7 +114,7 @@
         &quot;Temperature.24&quot;: 33.589619124193831,
     },
     ...
-</code></pre><h2 id="step-2-get-data-for-a-custom-range">Step 2: Get data for a custom range</h2>
+</code></pre><h2 id="get-data-for-a-custom-range">Get data for a custom range</h2>
 <h3 id="action-1">Action</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>quickstart/<wbr>Data/<wbr>Interpolated
 ?startIndex={your_val_here}&amp;endIndex={your_val_here}&amp;interval={your_val_here}
@@ -149,7 +149,7 @@
         &quot;Temperature.24&quot;: 33.589619124193831,
     },
     ...
-</code></pre><h2 id="step-3-get-data-in-a-different-format">Step 3: Get data in a different format</h2>
+</code></pre><h2 id="get-data-in-a-different-format">Get data in a different format</h2>
 <p>By default, data is returned in object-style json. Other formats are available: csv and table-style json, each with an optional header row.</p>
 <h3 id="action-2">Action</h3>
 <p>Resubmit the data query with an additional query parameter, <code>&amp;form=csvh</code> for csv-formatted data with a header row.</p>
@@ -161,7 +161,7 @@
 2019-10-21T18:00:00.0000000Z,WS_WINT,WS_WINT,&quot;Weather, High Resolution, Gen2&quot;,Winterthur,108,1.080551788,2,,WS_ROSE,WS_ROSE,&quot;Weather, Low Resolution, Gen1&quot;,Rosecliff,132,,,14.53736919,WS_BILT,WS_BILT,&quot;Weather, High Resolution, Gen1&quot;,Biltmore,165,,,33.58961912
 2019-10-21T20:00:00.0000000Z,WS_WINT,WS_WINT,&quot;Weather, High Resolution, Gen2&quot;,Winterthur,109,2.501105722,3,,WS_ROSE,WS_ROSE,&quot;Weather, Low Resolution, Gen1&quot;,Rosecliff,139,,,14.76498991,WS_BILT,WS_BILT,&quot;Weather, High Resolution, Gen1&quot;,Biltmore,157,,,32.41209639
 ...
-</code></pre><h2 id="step-4-get-subsequent-pages">Step 4: Get subsequent pages</h2>
+</code></pre><h2 id="get-subsequent-pages">Get subsequent pages</h2>
 <p>By default, each page includes 1000 records. If the requested data spans into another page, the response includes a hyperlink to the next page of data.</p>
 <h3 id="action-3">Action</h3>
 <p>Use the hyperlink in the NextPage header to request the next page.</p>
@@ -173,7 +173,7 @@
 2019-10-21T22:00:00.0000000Z,WS_WINT,WS_WINT,&quot;Weather, High Resolution, Gen2&quot;,Winterthur,108,1.080551788,2,,WS_ROSE,WS_ROSE,&quot;Weather, Low Resolution, Gen1&quot;,Rosecliff,132,,,14.53736919,WS_BILT,WS_BILT,&quot;Weather, High Resolution, Gen1&quot;,Biltmore,165,,,33.58961912
 2019-10-22T00:00:00.0000000Z,WS_WINT,WS_WINT,&quot;Weather, High Resolution, Gen2&quot;,Winterthur,109,2.501105722,3,,WS_ROSE,WS_ROSE,&quot;Weather, Low Resolution, Gen1&quot;,Rosecliff,139,,,14.76498991,WS_BILT,WS_BILT,&quot;Weather, High Resolution, Gen1&quot;,Biltmore,157,,,32.41209639
 ...
-</code></pre><h2 id="step-5-recover-from-an-invalid-paging-session">Step 5: Recover from an invalid paging session</h2>
+</code></pre><h2 id="recover-from-an-invalid-paging-session">Recover from an invalid paging session</h2>
 <p>It is possible, though unlikely, for the continuation token to become invalid during paging. When this happens, paging must be restarted from the first page.</p>
 <h3 id="action-4">Action</h3>
 <p>Use the hyperlink in the FirstPage header to request the first page.</p>
@@ -185,7 +185,7 @@
 2019-10-21T18:00:00.0000000Z,WS_WINT,WS_WINT,&quot;Weather, High Resolution, Gen2&quot;,Winterthur,108,1.080551788,2,,WS_ROSE,WS_ROSE,&quot;Weather, Low Resolution, Gen1&quot;,Rosecliff,132,,,14.53736919,WS_BILT,WS_BILT,&quot;Weather, High Resolution, Gen1&quot;,Biltmore,165,,,33.58961912
 2019-10-21T20:00:00.0000000Z,WS_WINT,WS_WINT,&quot;Weather, High Resolution, Gen2&quot;,Winterthur,109,2.501105722,3,,WS_ROSE,WS_ROSE,&quot;Weather, Low Resolution, Gen1&quot;,Rosecliff,139,,,14.76498991,WS_BILT,WS_BILT,&quot;Weather, High Resolution, Gen1&quot;,Biltmore,157,,,32.41209639
 ...
-</code></pre><h2 id="step-6-explore-what-each-data-field-maps-to">Step 6: Explore what each data field maps to</h2>
+</code></pre><h2 id="explore-what-each-data-field-maps-to">Explore what each data field maps to</h2>
 <h3 id="action-5">Action</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>quickstart/<wbr>Resolved/<wbr>FieldMappings
 </code></pre><h3 id="expected-result-5">Expected result</h3>

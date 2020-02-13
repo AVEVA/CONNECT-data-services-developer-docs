@@ -80,8 +80,7 @@
 
 <p>This portion of the overall <a class="xref" href="Data_Views_API_Overview.html">data views API</a> is the resources that resolve per-user for each data view. For a description of what this information is, and how to use it, see the <a class="xref" href="Resolved_Data_View.html">documentation</a> for resolved data views.</p>
 <h2 id="get-data-items-by-query"><code>Get Data Items by Query</code></h2>
-<p>Gets the paged collection of data items that are the results of an individual query, and which are eligible for use in the current data view.</p>
-<p>A data view has a collection of zero or more queries. Each query has an identifier. Those identifiers are used here as part of the request path.</p>
+<p>Gets the paged collection of data items that are the results of an individual query, and which are eligible for use in the current data view. A data view has a collection of zero or more queries. Each query has an identifier. Those identifiers are used here as part of the request path.</p>
 <h3 id="request">Request</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>Resolved/<wbr>DataItems/<wbr>{queryId}?cache={cache}&amp;skip={skip}&amp;count={count}
 </code></pre><h3 id="request-path-parameters">Request path parameters</h3>
@@ -189,8 +188,7 @@ Content-Type: application/json
   ]
 }
 </code></pre><h2 id="get-ineligible-data-items-by-query"><code>Get Ineligible Data Items by Query</code></h2>
-<p>Gets the paged collection of data items that are the results of an individual query, but which are not eligible for use in the current data view. A common reason for ineligibility is that the item&#39;s index property is of a different type than the data view expects.</p>
-<p>A data view has a collection of zero or more queries. Each query has an identifier. Those identifiers are used here as part of the request path.</p>
+<p>Gets the paged collection of data items that are the results of an individual query, but which are not eligible for use in the current data view. A common reason for ineligibility is that the item&#39;s index property is of a different type than the data view expects. A data view has a collection of zero or more queries. Each query has an identifier. Those identifiers are used here as part of the request path.</p>
 <h3 id="request-1">Request</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>Resolved/<wbr>IneligibleDataItems/<wbr>{queryId}?cache={cache}&amp;skip={skip}&amp;count={count}
 </code></pre><h3 id="request-path-parameters-1">Request path parameters</h3>
@@ -493,8 +491,7 @@ Content-Type: application/json
     ]
 }
 </code></pre><h2 id="get-field-mappings"><code>Get Field Mappings</code></h2>
-<p>Gets the collection of field mappings resolved for the data view.</p>
-<p>These show the exact data behind every field, for each data item, for each section.</p>
+<p>Gets the collection of field mappings resolved for the data view. These show the exact data behind every field, for each data item, for each section.</p>
 <h3 id="request-4">Request</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>Resolved/<wbr>FieldMappings?cache={cache}
 </code></pre><h3 id="request-path-parameters-4">Request path parameters</h3>

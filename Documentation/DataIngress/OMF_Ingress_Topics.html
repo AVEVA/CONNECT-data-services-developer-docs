@@ -121,167 +121,121 @@
 </tr>
 </tbody>
 </table>
-<hr>
-<h2 id="get-apiv1tenantstenantidnamespacesnamespaceidtopics"><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>topics</code></h2>
+<h2 id="get-tenant-topics"><code>Get Tenant Topics</code></h2>
 <p>Get all Topics for a tenant. </p>
-<p><strong>Parameters</strong></p>
-<p><code>tenantId</code>
-  Unique Id for the tenant. 
-<code>namespaceId</code>
-  Unique Id for the namespace.</p>
-<p><strong>Returns</strong></p>
+<h3 id="request">Request</h3>
+<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>topics</code></p>
+<h3 id="parameters">Parameters</h3>
+<p><code>tenantId</code><br>Unique Id for the tenant<br><code>namespaceId</code><br>Unique Id for the namespace</p>
+<h3 id="returns">Returns</h3>
 <p>An array of Topic objects. </p>
-<hr>
-<h2 id="get-apiv1tenantstenantidnamespacesnamespaceidtopicstopicid"><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>topics/<wbr>{topicId}</code></h2>
+<h2 id="get-topic"><code>Get Topic</code></h2>
 <p>Get a specific Topic. </p>
-<p><strong>Parameters</strong></p>
-<p><code>tenantId</code>
-  Unique Id for the tenant. 
-<code>namespaceId</code>
-  Unique Id for the namespace.
-<code>topicId</code>
-  Unique Id for the Topic.   </p>
-<p><strong>Returns</strong></p>
-<p>A Topic object. </p>
-<hr>
-<h2 id="get-apiv1tenantstenantidnamespacesnamespaceidtopicstopicidsubscriptions"><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>topics/<wbr>{topicId}/<wbr>subscriptions</code></h2>
+<h3 id="request-1">Request</h3>
+<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>topics/<wbr>{topicId}</code></p>
+<h3 id="parameters-1">Parameters</h3>
+<p><code>tenantId</code><br>Unique Id for the tenant<br><code>namespaceId</code><br>Unique Id for the namespace<br><code>topicId</code><br>Unique Id for the Topic </p>
+<h3 id="returns-1">Returns</h3>
+<p>A Topic object</p>
+<h2 id="get-topic-subscriptions"><code>Get Topic Subscriptions</code></h2>
 <p>Get all Subscriptions across all namespaces mapped to a Topic.</p>
-<p><strong>Parameters</strong></p>
-<p><code>tenantId</code>
-  Unique Id for the tenant. 
-<code>namespaceId</code>
-  Unique Id for the namespace of the Topic.
-<code>topicId</code>
-  Unique Id for the Topic.</p>
-<p><strong>Returns</strong></p>
+<h3 id="request-2">Request</h3>
+<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>topics/<wbr>{topicId}/<wbr>subscriptions</code></p>
+<h3 id="parameters-2">Parameters</h3>
+<p><code>tenantId</code><br>Unique Id for the tenant<br><code>namespaceId</code><br>Unique Id for the namespace of the Topic<br><code>topicId</code><br>Unique Id for the Topic</p>
+<h3 id="returns-2">Returns</h3>
 <p>An array of Subscription objects. </p>
-<hr>
-<h2 id="get-apiv1tenantstenantidnamespacesnamespaceidaccesscontroltopics"><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>accesscontrol/<wbr>topics</code></h2>
+<h2 id="get-topics-access-control-list"><code>Get Topics Access Control List</code></h2>
 <p>Get the default Access Control List for new Topics.</p>
-<p><strong>Parameters</strong></p>
-<p><code>tenantId</code>
-  Unique Id for the tenant. 
-<code>namespaceId</code>
-  Unique Id for the namespace. </p>
-<p><strong>Returns</strong></p>
-<p>An AccessControlList object.</p>
-<hr>
-<h2 id="get-apiv1tenantstenantidnamespacesnamespaceidaccessrightstopics"><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>accessrights/<wbr>topics</code></h2>
+<h3 id="request-3">Request</h3>
+<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>accesscontrol/<wbr>topics</code></p>
+<h3 id="parameters-3">Parameters</h3>
+<p><code>tenantId</code><br>Unique Id for the tenant<br><code>namespaceId</code><br>Unique Id for the namespace</p>
+<h3 id="returns-3">Returns</h3>
+<p>An AccessControlList object</p>
+<h2 id="get-topics-access-rights"><code>Get Topics Access Rights</code></h2>
 <p>Get the default Access Rights of the requesting identity for any newly created Topics.</p>
-<p><strong>Parameters</strong></p>
-<p><code>tenantId</code>
-  Unique Id for the tenant. 
-<code>namespaceId</code>
-  Unique Id for the namespace. </p>
-<p><strong>Returns</strong></p>
-<p>An array of Access Rights strings.</p>
-<hr>
-<h2 id="get-apiv1tenantstenantidnamespacesnamespaceidtopicstopicidaccesscontrol"><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>topics/<wbr>{topicId}/<wbr>accesscontrol</code></h2>
+<h3 id="request-4">Request</h3>
+<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>accessrights/<wbr>topics</code></p>
+<h3 id="parameters-4">Parameters</h3>
+<p><code>tenantId</code><br>Unique Id for the tenant<br><code>namespaceId</code><br>Unique Id for the namespace </p>
+<h3 id="returns-4">Returns</h3>
+<p>An array of Access Rights strings</p>
+<h2 id="get-topic-access-control-list"><code>Get Topic Access Control List</code></h2>
 <p>Get the Access Control List for a particular Topic.</p>
-<p><strong>Parameters</strong></p>
-<p><code>tenantId</code>
-  Unique Id for the tenant. 
-<code>namespaceId</code>
-  Unique Id for the namespace. 
-<code>topicId</code>
-  Unique Id for the Topic. </p>
-<p><strong>Returns</strong></p>
-<p>An AccessControlList object.</p>
-<hr>
-<h2 id="get-apiv1tenantstenantidnamespacesnamespaceidtopicstopicidaccessrights"><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>topics/<wbr>{topicId}/<wbr>accessrights</code></h2>
+<h3 id="request-5">Request</h3>
+<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>topics/<wbr>{topicId}/<wbr>accesscontrol</code></p>
+<h3 id="parameters-5">Parameters</h3>
+<p><code>tenantId</code><br>Unique Id for the tenant<br><code>namespaceId</code><br>Unique Id for the namespace<br><code>topicId</code><br>Unique Id for the Topic</p>
+<h3 id="returns-5">Returns</h3>
+<p>An AccessControlList object</p>
+<h2 id="get-topic-access-rights"><code>Get Topic Access Rights</code></h2>
 <p>Get the Access Rights of the requesting identity for a particular Topic.</p>
-<p><strong>Parameters</strong></p>
-<p><code>tenantId</code>
-  Unique Id for the tenant. 
-<code>namespaceId</code>
-  Unique Id for the namespace. 
-<code>topicId</code>
-  Unique Id for the Topic. </p>
-<p><strong>Returns</strong></p>
-<p>An array of Access Rights strings.</p>
-<hr>
-<h2 id="get-apiv1tenantstenantidnamespacesnamespaceidtopicstopicidowner"><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>topics/<wbr>{topicId}/<wbr>owner</code></h2>
+<h3 id="request-6">Request</h3>
+<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>topics/<wbr>{topicId}/<wbr>accessrights</code></p>
+<h3 id="parameters-6">Parameters</h3>
+<p><code>tenantId</code><br>Unique Id for the tenant<br><code>namespaceId</code><br>Unique Id for the namespace<br><code>topicId</code><br>Unique Id for the Topic</p>
+<h3 id="returns-6">Returns</h3>
+<p>An array of Access Rights strings</p>
+<h2 id="get-topic-owner"><code>Get Topic Owner</code></h2>
 <p>Get the Owner for a particular Topic.</p>
-<p><strong>Parameters</strong></p>
-<p><code>tenantId</code>
-  Unique Id for the tenant. 
-<code>namespaceId</code>
-  Unique Id for the namespace. 
-<code>topicId</code>
-  Unique Id for the Topic. </p>
-<p><strong>Returns</strong></p>
-<p>A Trustee object.</p>
-<hr>
-<h2 id="post-apiv1tenantstenantidnamespacesnamespaceidtopics"><code style="word-break:normal; overflow-wrap:break-word;">POST api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>topics</code></h2>
-<p>Create a new topic. </p>
-<p><strong>Parameters</strong></p>
-<p><code>tenantId</code>
-  Unique Id for the tenant. 
-<code>namespaceId</code>
-  Unique Id for the namespace. </p>
-<p><strong>Body</strong></p>
+<h3 id="request-7">Request</h3>
+<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>topics/<wbr>{topicId}/<wbr>owner</code></p>
+<h3 id="parameters-7">Parameters</h3>
+<p><code>tenantId</code><br>Unique Id for the tenant
+<code>namespaceId</code><br>Unique Id for the namespace<br><code>topicId</code><br>Unique Id for the Topic</p>
+<h3 id="returns-7">Returns</h3>
+<p>A Trustee object</p>
+<h2 id="create-topic"><code>Create Topic</code></h2>
+<p>Create a new topic.</p>
+<h3 id="request-8">Request</h3>
+<p><code style="word-break:normal; overflow-wrap:break-word;">POST api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>topics</code></p>
+<h3 id="parameters-8">Parameters</h3>
+<p><code>tenantId</code><br>Unique Id for the tenant<br><code>namespaceId</code><br>Unique Id for the namespace</p>
+<h3 id="body">Body</h3>
 <p>A Topic object. The <code>Id</code> property should not be specified, since it will be automatically generated during creation.</p>
-<p><strong>Returns</strong></p>
-<p>The Topic object that was created. </p>
-<hr>
-<h2 id="put-apiv1tenantstenantidnamespacesnamespaceidtopicstopicid"><code style="word-break:normal; overflow-wrap:break-word;">PUT api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>topics/<wbr>{topicId}</code></h2>
+<h3 id="returns-8">Returns</h3>
+<p>The Topic object that was created</p>
+<h2 id="update-topic"><code>Update Topic</code></h2>
 <p>Update an existing Topic. Only the name and description can be updated. </p>
-<p><strong>Parameters</strong></p>
-<p><code>tenantId</code>
-  Unique Id for the tenant. 
-<code>namespaceId</code>
-  Unique Id for the namespace. 
-<code>topicId</code>
-  Topic Id for the Topic to be updated.</p>
-<p><strong>Body</strong></p>
+<h3 id="request-9">Request</h3>
+<p><code style="word-break:normal; overflow-wrap:break-word;">PUT api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>topics/<wbr>{topicId}</code></p>
+<h3 id="parameters-9">Parameters</h3>
+<p><code>tenantId</code><br>Unique Id for the tenant<br><code>namespaceId</code><br>Unique Id for the namespace<br><code>topicId</code><br>Topic Id for the Topic to be updated</p>
+<h3 id="body-1">Body</h3>
 <p>A Topic object. The <code>Id</code> property should match the <code>topicId</code> in the route.</p>
-<p><strong>Returns</strong></p>
+<h3 id="returns-9">Returns</h3>
 <p>The Topic object that was updated. </p>
-<hr>
-<h2 id="put-apiv1tenantstenantidnamespacesnamespaceidaccesscontroltopics"><code style="word-break:normal; overflow-wrap:break-word;">PUT api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>accesscontrol/<wbr>topics</code></h2>
+<h2 id="update-topics-access-control-list"><code>Update Topics Access Control List</code></h2>
 <p>Update the default Access Control List for new Topics.</p>
-<p><strong>Parameters</strong></p>
-<p><code>tenantId</code>
-  Unique Id for the tenant. 
-<code>namespaceId</code>
-  Unique Id for the namespace. </p>
-<p><strong>Body</strong></p>
-<p>An AccessControlList object.</p>
-<hr>
-<h2 id="put-apiv1tenantstenantidnamespacesnamespaceidtopicstopicidaccesscontrol"><code style="word-break:normal; overflow-wrap:break-word;">PUT api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>topics/<wbr>{topicId}/<wbr>accesscontrol</code></h2>
+<h3 id="request-10">Request</h3>
+<p><code style="word-break:normal; overflow-wrap:break-word;">PUT api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>accesscontrol/<wbr>topics</code></p>
+<h3 id="parameters-10">Parameters</h3>
+<p><code>tenantId</code><br>Unique Id for the tenant<br><code>namespaceId</code><br>Unique Id for the namespace </p>
+<h3 id="body-2">Body</h3>
+<p>An AccessControlList object</p>
+<h2 id="update-topic-access-control-list"><code>Update Topic Access Control List</code></h2>
 <p>Update the Access Control List for a particular Topic.</p>
-<p><strong>Parameters</strong></p>
-<p><code>tenantId</code>
-  Unique Id for the tenant. 
-<code>namespaceId</code>
-  Unique Id for the namespace. 
-<code>topicId</code>
-  Unique Id for the Topic. </p>
-<p><strong>Body</strong></p>
-<p>An AccessControlList object.</p>
-<hr>
-<h2 id="put-apiv1tenantstenantidnamespacesnamespaceidtopicstopicidowner"><code style="word-break:normal; overflow-wrap:break-word;">PUT api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>topics/<wbr>{topicId}/<wbr>owner</code></h2>
+<h3 id="request-11">Request</h3>
+<p><code style="word-break:normal; overflow-wrap:break-word;">PUT api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>topics/<wbr>{topicId}/<wbr>accesscontrol</code></p>
+<h3 id="parameters-11">Parameters</h3>
+<p><code>tenantId</code><br>Unique Id for the tenant<br><code>namespaceId</code><br>Unique Id for the namespace<br><code>topicId</code><br>Unique Id for the Topic</p>
+<h3 id="body-3">Body</h3>
+<p>An AccessControlList object</p>
+<h2 id="update-topic-owner"><code>Update Topic Owner</code></h2>
 <p>Update the Owner for a particular Topic.</p>
-<p><strong>Parameters</strong></p>
-<p><code>tenantId</code>
-  Unique Id for the tenant. 
-<code>namespaceId</code>
-  Unique Id for the namespace. 
-<code>topicId</code>
-  Unique Id for the Topic. </p>
-<p><strong>Body</strong></p>
+<h3 id="request-12">Request</h3>
+<p><code style="word-break:normal; overflow-wrap:break-word;">PUT api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>topics/<wbr>{topicId}/<wbr>owner</code></p>
+<h3 id="parameters-12">Parameters</h3>
+<p><code>tenantId</code><br>Unique Id for the tenant<br><code>namespaceId</code><br>Unique Id for the namespace<br><code>topicId</code><br>Unique Id for the Topic</p>
+<h3 id="body-4">Body</h3>
 <p>A Trustee object.</p>
-<hr>
-<h2 id="delete-apiv1tenantstenantidnamespacesnamespaceidtopicstopicid"><code style="word-break:normal; overflow-wrap:break-word;">DELETE api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>topics/<wbr>{topicId}</code></h2>
-<p>Delete a Topic. </p>
-<p><strong>Parameters</strong></p>
-<p><code>tenantId</code>
-  Unique Id for the tenant. 
-<code>namespaceId</code>
-  Unique Id for the namespace. 
-<code>topicId</code>
-  Unique Id for the Topic. </p>
-<hr>
+<h2 id="delete-topic"><code>Delete Topic</code></h2>
+<p>Delete a Topic.</p>
+<h3 id="request-13">Request</h3>
+<p><code style="word-break:normal; overflow-wrap:break-word;">DELETE api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>topics/<wbr>{topicId}</code></p>
+<h3 id="parameters-13">Parameters</h3>
+<p><code>tenantId</code><br>Unique Id for the tenant<br><code>namespaceId</code><br>Unique Id for the namespace<br><code>topicId</code><br>Unique Id for the Topic</p>
 </article>
           </div>
           

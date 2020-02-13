@@ -529,7 +529,7 @@ From the <code>FieldSet</code> for <em>weather</em> data items, remove the <code
 <pre><code class="lang-csv">Timestamp.0,Id.1,Name.2,Tags.3,Site.4,SolarRadiation.5,AmbientTemperature.6,CloudCover.7,Temperature.8,Id.9,Name.10,Tags.11,Site.12,SolarRadiation.13,AmbientTemperature.14,CloudCover.15,Temperature.16,Id.17,Name.18,Tags.19,Site.20,SolarRadiation.21,AmbientTemperature.22,CloudCover.23,Temperature.24
 2019-10-21T18:00:00.0000000Z,WS_WINT,WS_WINT,&quot;Weather, High Resolution, Gen2&quot;,Winterthur,108,1.080551788,2,,WS_ROSE,WS_ROSE,&quot;Weather, Low Resolution, Gen1&quot;,Rosecliff,132,,,14.53736919,WS_BILT,WS_BILT,&quot;Weather, High Resolution, Gen1&quot;,Biltmore,165,,,33.58961912
 2019-10-21T20:00:00.0000000Z,WS_WINT,WS_WINT,&quot;Weather, High Resolution, Gen2&quot;,Winterthur,109,2.501105722,3,,WS_ROSE,WS_ROSE,&quot;Weather, Low Resolution, Gen1&quot;,Rosecliff,139,,,14.76498991,WS_BILT,WS_BILT,&quot;Weather, High Resolution, Gen1&quot;,Biltmore,157,,,32.41209639
-</code></pre><h2 id="step-7-section-the-data-view">Step 7: Section the data view</h2>
+</code></pre><h2 id="section-the-data-view">Section the data view</h2>
 <p>One way to disambiguate the data items is to “section” them, which amounts to partitioning them based on a value. For example, metadata:Site as the sectioner might yield sections of Biltmore, Rosecliff, and Winterthur, each containing the data items associated with that Site.</p>
 <p>You may use multiple sectioners. This is effectively “section by X then Y then Z”</p>
 <p>Sectioners are a property of the data view, and are an array of <code>Field</code> objects. This means the same Field objects contained in the available or included field sets may be reused directly as sectioners.</p>
@@ -683,7 +683,7 @@ From the <code>FieldSet</code> for <em>weather</em> data items, remove the <code
     ... 
     (rest of the values for Site:Winterthur)
 ]
-</code></pre><p>Note that in the real world, we’re not necessarily aiming for an ultra-skinny output, and the data views product doesn’t make any assumptions there.</p>
+</code></pre><p><strong>Note:</strong> The Data Views product does not assume an intention for ultra-skinny output.</p>
 <h2 id="include-the-sectioner-field-set">Include the sectioner field set</h2>
 <p>In the case where each section contained multiple data items, having the section value repeated for every data item would be redundant. Return to the Available Field Sets, and now there is a solution for that redundancy</p>
 <h3 id="action-9">Action</h3>
@@ -897,7 +897,7 @@ From the <code>FieldSet</code> for <em>weather</em> data items, remove the <code
   &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
 },
 </code></pre><p>Now that field will match to either &quot;Temperature&quot; or &quot;AmbientTemperature&quot;.<br>Remove the <code>Field</code> associated only with &quot;Temperature&quot;.</p>
-<p>While we&#39;re at it, we can also remove the <code>Fields</code> associated with data item Id and Name. These are not providing any additional useful information.</p>
+<p>You can also remove the <code>Fields</code> associated with data item Id and Name. These are not providing any additional useful information.</p>
 <pre><code class="lang-json">PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
 {
   &quot;Id&quot;: &quot;quickstart&quot;,

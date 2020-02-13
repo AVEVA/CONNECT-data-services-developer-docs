@@ -90,7 +90,7 @@
 <p>If a data view has any sectioners specified, then a special type of field set is available: <code>FieldSetSourceType.SectionValue</code>. Its fields serve as robust pass-throughs to whatever the data view&#39;s sectioners currently are. It also avoids repetitive inclusion of sectioner values in the case where a section contains multiple data items.</p>
 <h2 id="uses-of-sectioning">Uses of sectioning</h2>
 <p>Sectioning can be used to separate the data items from each other, and to join different types of data items together.</p>
-<h3 id="separating-data-items-from-each-other">Separating data items from each other</h3>
+<h3 id="separating-data-items">Separating data items</h3>
 <p>Separating the data items from each other makes the data view&#39;s data records smaller and more granular. It is also possible to produce shapes that mimic physical or logical assets.</p>
 <h4 id="example-scenario">Example scenario</h4>
 <p>For the following examples, assume a subsection of the <a class="xref" href="Example_Scenario.html">example scenario</a>&#39;s power inverter streams, produced by a <code>Query</code> <a class="xref" href="../SequentialDataStore/Searching.html">value</a> such as <code>&quot;TypeId:docs-pi-inverter AND (Site:Rosemont OR Site:Winterthur)&quot;</code>. This is to keep the example succinct.</p>
@@ -217,7 +217,7 @@
 </tbody>
 </table>
 <h4 id="example-complete-uniqueness-sectioning-by-data-item-id">Example: Complete uniqueness, sectioning by data item id</h4>
-<p>A simple way of disambiguating the data items is to section them by data item id. Here, we will do two things:</p>
+<p>A simple way of disambiguating the data items is to section them by data item id. This example includes two actions:</p>
 <ul>
 <li>Add data item id as a sectioner</li>
 <li>Include fields for metadata: Site, Meter, Inverter, Measurement.</li>
@@ -358,11 +358,11 @@
 </tbody>
 </table>
 <h4 id="example-data-records-that-reflect-real-world-assets">Example: Data records that reflect real-world assets</h4>
-<p>Instead of sectioning by data item id, let us section by metadata. We will:</p>
+<p>Instead of sectioning by data item id, let us section by metadata. This example uses:</p>
 <ul>
-<li>Use the <code>Field</code>s for Site, Meter, and Inverter metadata as the data view&#39;s <code>.Sectioners</code></li>
-<li>Include a <code>FieldSet</code> of <code>.SourceType</code> <code>FieldSetSourceType.SectionValue</code>, with a <code>Field</code> to show each sectioner&#39;s value</li>
-<li>Use the <code>Field</code> for Measurement metadata as the data item <code>FieldSet</code>&#39;s <code>.Distinguisher</code></li>
+<li>the <code>Field</code>s for Site, Meter, and Inverter metadata as the data view&#39;s <code>.Sectioners</code></li>
+<li>a <code>FieldSet</code> of <code>.SourceType</code> <code>FieldSetSourceType.SectionValue</code>, with a <code>Field</code> to show each sectioner&#39;s value</li>
+<li>the <code>Field</code> for Measurement metadata as the data item <code>FieldSet</code>&#39;s <code>.Distinguisher</code></li>
 </ul>
 <pre><code class="lang-json">{
   &quot;Id&quot;: &quot;quickstart&quot;,
@@ -483,14 +483,14 @@
 </tr>
 </tbody>
 </table>
-<p>Note that sectioning by Meter and Inverter overcomes the differences across Sites: not every site has a Secondary meter, and not every Meter has the same number of Inverters. This is not a problem.</p>
+<p><strong>Note:</strong> Sectioning by Meter and Inverter overcomes the differences across Sites: not every site has a Secondary meter, and not every Meter has the same number of Inverters. This is not a problem.</p>
 <h3 id="associating-data-items-with-each-other">Associating data items with each other</h3>
 <p>Another use of sectioning is to &quot;join&quot; the data items returned by different queries, such as adding weather data for each power inverter.</p>
 <h4 id="example-adding-weather-data-to-the-real-world-assets">Example: Adding weather data to the real-world assets</h4>
+<p>This example includes two actions:</p>
 <ul>
 <li>Add a second <code>Query</code> for &quot;site weather&quot;</li>
 <li>Add a new <code>FieldSet</code> for the data items from the &quot;site weather&quot; query, with <code>Field</code>s for &quot;SolarRadiation&quot; and &quot;Temperature&quot;</li>
-<li></li>
 </ul>
 <pre><code class="lang-json">{
   &quot;Id&quot;: &quot;quickstart&quot;,

@@ -6,6 +6,8 @@ uid: DataViewsOverview
 
 Data views are a bridge between raw stream data and data-driven applications. A data view is a declarative query and shape for stream data. The ultimate goal is to deliver shaped data that is ready for consumption because it is normalized, aligned, and interpolated.
 
+A data view is a user selected subset of data from one or more streams. The ability to create data views in the portal will mesh directly with OSIsoft's Data Science Enablement efforts, whereby users will be able to programmatically access Data View content via an API for the purposes of advanced analytics. Within a target namespace, you specify the source stream or streams, and desired data fields.  Data views can also display selected data by specific time period and interpolation interval. 
+
 Understanding how the data view resolves into content is important both for the designer and the consumer. Data views provide extensive visibility into what data is included. The concept of "resolving" a data view is when the data view's queries and logic are executed to determine the data view's exact schema and content.
 
 The collection(s) of streams that a data view acts on is the result of one or more queries. Streams (and any future data source types) are collectively known as *data items*. Values from the data items' properties can be included in the data view as *fields*, as can information about the data items (such as Id and Metadata). 

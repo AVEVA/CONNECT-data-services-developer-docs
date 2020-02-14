@@ -269,7 +269,8 @@ The response includes a status code and, in some cases, a body.
 
 | Status code | Body Type | Description |
 |--|--|--|
-| 204 No Content | (empty) | Successfully created or updated the data view |
+| 201 Created | `DataView` | The data view as persisted, including values for optional parameters that were omitted in the request |
+| 204 No Content | (empty) | Successfully updated the data view |
 | 400 Bad Request | error | The request is not valid. See the response body for details |
 | 403 Forbidden | error | You are not authorized for this operation |
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |

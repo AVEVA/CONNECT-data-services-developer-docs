@@ -130,6 +130,9 @@ references:
 - uid: index
   name: OCS API
   href: index.html
+- uid: MetadataRulesOverview
+  name: Metadata Rules (Preview)
+  href: Documentation/Metadata/Metadata_Rules_Overview.html
 - uid: omfIngressSpecification
   name: Using OMF with Cloud Services
   href: Documentation/DataIngress/OMF_Ingress_Specification.html

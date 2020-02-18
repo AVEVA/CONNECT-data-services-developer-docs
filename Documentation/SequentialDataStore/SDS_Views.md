@@ -4,11 +4,13 @@ uid: sdsStreamViews
 
 # Stream Views
 
-Stream Views provide flexibility in the use of types. While you cannot actually change stream types themselves after you’ve created them, the stream views feature enables you to create a view of a selected stream that appears as if you had changed the type on which it is based. Types themselves cannot actually be changed; the “changing” of a type is described in a stream view. You create a stream view by choosing a source and target type as well as a set of mappings between properties of those two types.  You then execute an API call to substitute the stream view for the actual type of a selected stream.
+Stream Views provide flexibility in the use of types. While you cannot actually change stream types themselves after you’ve created them, the stream views feature enables you to create a view of a selected stream that appears as if you had changed the type on which it is based. Types themselves cannot actually be changed; the “changing” of a type is described in a stream view. You create a stream view by choosing a source and target type as well as a set of mappings between properties of those two types. Using a stream view to leverage existing type properties is preferable to creating an actual new custom type, because the affected stream continues with its previously archived stream data intact.
 
-Using a stream view to leverage existing type properties is preferable to creating an actual new custom type, because the affected stream continues with its previously archived stream data intact.
+You can either view the impact of the stream view on a stream in an ad hoc manner, using a GET call, or you can assign the stream view to a stream in a PUT call.
 
-You can apply a Stream View to any read or GET operation. SdsStreamView is used to specify the mapping between source and target types.
+To view the impact of the stream view on a stream, you can apply a stream view to any read or GET operation. See [API Calls for Reading Data](xref:sdsReadingDataApi) for examples. SdsStreamView is used to specify the mapping between source and target types.
+
+To assign the stream view to a stream, execute an [Update Stream Type](xref:sdsStreams#update-stream-type) call.  By specifying the stream view id in the call, you can effectively assign the target type of the stream view to a specified stream. 
 
 SDS attempts to determine how to map Properties from the source to the destination. When the mapping 
 is straightforward, such as when the properties are in the same position and of the same data type, 

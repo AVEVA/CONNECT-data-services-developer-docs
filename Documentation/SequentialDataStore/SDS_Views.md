@@ -4,7 +4,7 @@ uid: sdsStreamViews
 
 # Stream Views
 
-Stream Views provide flexibility in the use of types. While you cannot actually change stream types themselves after you’ve created them, the stream views feature enables you to create a view of a selected stream that appears as if you had changed the type on which it is based. Types themselves cannot actually be changed; the “changing” of a type is described in a stream view. You create a stream view by choosing a source and target type as well as a set of mappings between properties of those two types. Using a stream view to leverage existing type properties is preferable to creating an actual new custom type, because the affected stream continues with its previously archived stream data intact.
+Stream Views provide flexibility in the use of types. While you cannot actually change the properties of types themselves, the stream views feature enables you to create a view of a selected stream that appears as if you had changed the type on which it is based. Types themselves cannot actually be changed; the “changing” of a type is described in a stream view. You create a stream view by choosing a source and target type as well as a set of mappings between properties of those two types. Using a stream view to leverage existing type properties is preferable to creating an actual new custom type, because the affected stream continues with its previously archived stream data intact.
 
 You can either view the impact of the stream view on a stream in an ad hoc manner, using a GET call, or you can assign the stream view to a stream in a PUT call.
 

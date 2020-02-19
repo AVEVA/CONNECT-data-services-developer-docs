@@ -13,7 +13,7 @@
   href: DataIngress/toc.yml
   topicHref: DataIngress/Data_Ingress.md
 - name: Metadata Rules (Preview)
-  topicHref: Metadata_Rules_Overview.md
+  topicHref: Metadata/Metadata_Rules_Overview.md
 - name: Data Views (Preview)
   href: DataViews/toc.yml
   topicHref: DataViews/Data_Views_Overview.md

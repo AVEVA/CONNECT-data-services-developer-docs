@@ -78,15 +78,9 @@
             <article class="content wrap" id="_content" data-uid="sdsStreams">
 <h1 id="streams">Streams</h1>
 
-<p>SDS stores collections of events and provides convenient ways to find and associating events. Events 
-of consistent structure are stored in streams, called SdsStreams.  An SdsType defines the structure 
-of events in an SdsStream.</p>
-<p>SdsStreams are referenced by their identifier or Id field. SdsStream identifiers must be unique 
-within a Namespace.</p>
-<p>An SdsStream must include a TypeId that references the identifier of an existing SdsType. 
-When an SdsStream contains data, you must use a stream view to update the stream type.</p>
-<p>SdsStream management using the .NET SDS Client Libraries is performed through ISdsMetadataService. 
-Create the ISdsMetadataService, using one of the <code>SdsService.GetMetadataService()</code> factory methods.</p>
+<p>Streams are collections of sequentially occurring values indexed by a single property, typically time series data. You define streams to organize incoming data from another system into OCS.  To define a stream, you must first define a type, which defines the structure of the data you want to stream into a selected namespace. </p>
+<p>SDS stores collections of events and provides convenient ways to find and associate events. Events of consistent structure are stored in streams, called SdsStreams.  SdsStreams are referenced by their identifier or Id field. SdsStream identifiers must be unique within a Namespace.</p>
+<p>An SdsStream must include a TypeId that references the identifier of an existing SdsType. SdsStream management using the .NET SDS Client Libraries is performed through ISdsMetadataService. Create the ISdsMetadataService, using one of the <code>SdsService.GetMetadataService()</code> factory methods.</p>
 <p>The following table shows the required and optional SdsStream fields. Fields not listed are reserved
 for internal SDS use.</p>
 <p><a name="streampropertiestable"></a></p>
@@ -521,7 +515,7 @@ Content-Type: application/json
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
-            <span id='copyright-text'>© 2019 - OSIsoft, LLC.<span>
+            <span id='copyright-text'>© 2020 - OSIsoft, LLC.<span>
         </span></span></div>
       </footer>
     </div>

@@ -16,6 +16,8 @@
   href: Queries.md
 - name: Field Sets
   href: Field_Sets.md
+- name: Shaping Data
+  href: Shaping_Data.md
 - name: Sectioning
   href: Sectioning.md
 - name: Data View API

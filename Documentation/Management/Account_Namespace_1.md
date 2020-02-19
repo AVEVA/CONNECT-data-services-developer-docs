@@ -2,7 +2,7 @@
 uid: AccountNamespace_1
 ---
 
-# Namespaces (Version 1)
+# Namespaces
 
 A `Namespace` is a collection of SDS types, streams, and stream views. Namespace identifiers are unique within an account. Requirements
 for Namespace IDs are the following:
@@ -12,6 +12,7 @@ for Namespace IDs are the following:
 - Must not start or end with a period
 - Must not start with two consecutive underscores
 
+In practice, namespaces may correspond to a specific set of infrastructure assets, but more commonly correspond to virtual partitions within a single set of assets. You can create one or more namespaces within an SDS account. Each namespace is effectively an instance of SDS, within which you create SDS types and streams, stream views, data views, and metadata.
 
 ## Properties
 
@@ -34,6 +35,11 @@ For HTTP requests and responses, the Namespace object has the following properti
 	"State": 0,
 }
 ```
+
+## Region ##
+
+When a namespace is created, all resources are created in the namespace's region. Resources created in this namespace (e.g. SDS types, streams, and stream views) will be created in the region of the namespace, and any data stored in the namespace will be stored in that region. Read and write operations at the namespace level and within a namespace utilize the base URL of the region in which the namespace resides. The ``Self`` property on each namespace provides the complete URL for all operations within that namespace.
+
 ***
 
 ## `Get All Namespaces`
@@ -162,6 +168,7 @@ A `Namespace` can only be created if the current principal has Write access.
 | 302 | Nothing is returned | Returns the location of the existing `Namespace` object. | 
 | 400 | Nothing is returned | Could not create the `Namespace` due to missing or invalid input. | 
 | 403 | Nothing is returned | Unauthorized to create a `Namespace` in this account. | 
+| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. | 
 | 409 | Nothing is returned | A `Namespace` already exists with different values. | 
 
 
@@ -213,7 +220,7 @@ A `Namespace` can only be updated if the current principal has Write access.
 | 200 | Namespace | Returns the updated `Namespace`. | 
 | 400 | Nothing is returned | Could not update the `Namespace` due to missing or invalid input. | 
 | 403 | Nothing is returned | Unauthorized to update the `Namespace`. | 
-
+| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. | 
 
 ***
 
@@ -255,6 +262,7 @@ A `Namespace` can only be deleted if the current principal has Delete access.
 | 204 | Nothing is returned | The `Namespace` was deleted. | 
 | 400 | Nothing is returned | Could not delete the `Namespace` due to an invalid state. | 
 | 403 | Nothing is returned | Unauthorized to delete the `Namespace`. | 
+| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. | 
 
 
 ***
@@ -346,6 +354,8 @@ An [AccessControlList](xref:accessControl) can only be updated if the current pr
 | 200 | AccessControlList | Returns the updated [AccessControlList](xref:accessControl). | 
 | 400 | Nothing is returned | Could not update the [AccessControlList](xref:accessControl) of the specified `Namespace` due to missing or invalid input. | 
 | 403 | Nothing is returned | Unauthorized to update the [AccessControlList](xref:accessControl) for the specified `Namespace`. | 
+| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. | 
+
 
 
 ***
@@ -437,6 +447,7 @@ An Owner's [Trustee](xref:accessControl) can only be changed if the current prin
 | 200 | Trustee | Returns the new Owner's [Trustee](xref:accessControl) of the specified `Namespace`. | 
 | 400 | Nothing is returned | Could not change the Owner's [Trustee](xref:accessControl) of the specified `Namespace` due to missing or invalid input. | 
 | 403 | Nothing is returned | Unauthorized to change the Owner's [Trustee](xref:accessControl) of the specified `Namespace`. | 
+| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. | 
 
 
 ***

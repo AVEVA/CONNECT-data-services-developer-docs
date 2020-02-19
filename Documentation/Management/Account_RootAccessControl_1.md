@@ -2,7 +2,7 @@
 uid: AccountRootAccessControl_1
 ---
 
-# Root AccessControl (Version 1)
+# Root AccessControl
 
 APIs to manage default access to entities governed by an [AccessControlList](xref:accessControl).
 
@@ -12,7 +12,7 @@ APIs to manage default access to entities governed by an [AccessControlList](xre
 
 Retrieves the [AccessControlList](xref:accessControl) that is used to authorize access to a `Namespace` if none is specified during creation.
 
-### Http
+### HTTP
 
 `GET api/v1/Tenants/{tenantId}/AccessControl/Namespaces`
 
@@ -81,6 +81,7 @@ A root [AccessControlList](xref:accessControl) can only be modified if the curre
 | 200 | AccessControlList | Returns the modified root [AccessControlList](xref:accessControl) for `Namespaces`. | 
 | 400 | Nothing is returned | Could not modify the root [AccessControlList](xref:accessControl) for `Namespaces` due to missing or invalid input. | 
 | 403 | Nothing is returned | Unauthorized to change the root [AccessControlList](xref:accessControl) for `Namespaces`. | 
+| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. | 
 
 
 ***

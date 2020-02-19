@@ -1,6 +1,6 @@
 - name: OSIsoft Cloud Services 
   topicHref: OSIsoft_Cloud_Services.md
-- name: Management
+- name: Account Management
   href: Management/toc.yml
   topicHref: Management/Management_Overview.md
 - name: Identity
@@ -14,7 +14,7 @@
   topicHref: DataIngress/Data_Ingress.md
 - name: Data Views (Preview)
   href: DataViews/toc.yml
-  topicHref: DataViews/DataViews_Overview.md
+  topicHref: DataViews/Data_Views_Overview.md
 - name: Role-Based Access Control
   topicHref: Access_Control.md
 - name: Samples

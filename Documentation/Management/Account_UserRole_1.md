@@ -2,7 +2,7 @@
 uid: AccountUserRole_1
 ---
 
-# User Roles (Version 1)
+# User Roles
 
 User `Roles` authorize API requests made by users to various OCS features. Users can be assigned more than one `Role`,
 but all users have the Account Member role. The following are currently available User `Roles`:
@@ -141,6 +141,7 @@ Authorized for Account Administrators of the specified account.
 | 400 | Nothing is returned | Could not replace the `Roles` of the specified user due to missing or invalid input. | 
 | 403 | Nothing is returned | Unauthorized to replace the `Roles` of the specified user. | 
 | 404 | Nothing is returned | A user with the specified userId was not found. | 
+| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. | 
 
 
 ***

@@ -2,7 +2,7 @@
 uid: AccountClientRole_1
 ---
 
-# Client Roles (Version 1)
+# Client Roles
 
 Client `Roles` authorize API requests made by clients to various OCS features. Clients can be assigned more than one
 `Role`, but all clients have the Account Member role. The following are currently available Client `Roles`:
@@ -74,6 +74,7 @@ List of `Role` objects to set as the Roles for the specified client.
 | 400 | Nothing is returned | Could not replace `Roles` due to missing or invalid input. | 
 | 403 | Nothing is returned | Unauthorized to replace `Roles` of this client. | 
 | 404 | Nothing is returned | The client was not found in the specified `Tenant`. | 
+| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. | 
 
 
 ***

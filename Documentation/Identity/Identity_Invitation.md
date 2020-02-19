@@ -4,7 +4,18 @@ uid: identityInvitation
 
 # Invitation
 
-APIs for creating, getting, updating, and deleting an Invitation
+Invitations are issued after the creation of a User object in OCS,
+            to begin the provisioning process for a user with one of the Identity
+            Providers in a Tenant.
+            There can only be one Invitation for a User at a time. An invitation
+            can expire, at which time the Admin can either delete it, or extend it.
+            When creating an Invitation an account Admin has the option to resend the
+            Invitation email to the ContactEmail configured for the User the Invitation
+            is attached to. The email can be re-sent by updating the Invitation.
+            When an Invitation expires the User cannot accept it. If the expiration
+            date is extended the User can accept an Invitation.
+            Invitations that are past of their expiration date by more than two weeks will be deleted.
+            The only way to provision a User after this, is to send a new Invitation.
 
 ## Properties
 
@@ -12,23 +23,23 @@ For HTTP requests and responses, the Invitation object has the following propert
 
 Property | Type | Description
  --- | --- | ---
-Id | string | Unique Invitation Id.
-Issued | DateTime | Invitation issuing timestamp.
-Expires | DateTime | Invitation expiration timestamp.
-Accepted | DateTime | Invitation accepted timestamp.
-State | InvitationStates | Invitation state. Can be None (0), InvitationEmailSent (1), InvitationAccepted (2)
-TenantId | string | ID of the Tenant the invitation belongs to.
-UserId | Guid | ID of the User whom the invitation was issued to.
-IdentityProviderId | Guid | ID of the Identity Provider that must be used to accept the invitation.
+Id | string | Gets or sets unique Invitation Id.
+Issued | DateTime | Gets or sets invitation issuing timestamp.
+Expires | DateTime | Gets or sets invitation expiration timestamp.
+Accepted | DateTime | Gets or sets invitation accepted timestamp.
+State | InvitationStates | Gets or sets invitation state. Can be None (0), InvitationEmailSent (1), InvitationAccepted (2).
+TenantId | string | Gets or sets ID of the Tenant the invitation belongs to.
+UserId | Guid | Gets or sets ID of the User whom the invitation was issued to.
+IdentityProviderId | Guid | Gets or sets ID of the Identity Provider that must be used to accept the invitation.
 
 ### Serialized Model
 
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-05-31T14:57:08.818742-07:00",
-  "Expires": "2019-05-31T14:57:08.8187457-07:00",
-  "Accepted": "2019-05-31T14:57:08.8187487-07:00",
+  "Issued": "2019-11-11T14:18:38.6161392-08:00",
+  "Expires": "2019-11-11T14:18:38.616173-08:00",
+  "Accepted": "2019-11-11T14:18:38.6161783-08:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -38,9 +49,34 @@ IdentityProviderId | Guid | ID of the Identity Provider that must be used to acc
 
 ***
 
+## Authentication
+
+All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieve after a successful authentication request.
+
+`Authorization: Bearer <token>`
+
+Requests made without an access token or an invalid/expired token will fail with a 401 Unauthorized response.
+Requests made with an access token which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
+Read [here](https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/Authentication) on how to authenticate against OCS with the various clients and receive an access token in response.
+
+## Error Handling
+
+All responses will have an error message in the body. The exceptions are 200 responses and the 401 Unauthorized response. The error message will look as follows:
+
+```json
+{
+    "OperationId": "1b2af18e-8b27-4f86-93e0-6caa3e59b90c", 
+    "Error": "Error message.", 
+    "Reason": "Reason that caused error.", 
+    "Resolution": "Possible solution for the error." 
+}
+```
+
+If and when contacting OSIsoft support about this error, please provide the OperationId.
+
 ## `Get Invitation`
 
-Get an Invitation using its id in a tenant
+Get an Invitation from Tenant.
 
 ### Request
 
@@ -53,14 +89,14 @@ Get an Invitation using its id in a tenant
 string tenantId
 ```
 
-Id of tenant
+Id of Tenant.
 
 ```csharp
 [Required]
 string invitationId
 ```
 
-Id of invitation
+Id of Invitation.
 
 ### Security
 
@@ -72,7 +108,7 @@ Allowed for these roles:
 
 #### 200
 
-Success
+Success.
 
 ##### Type:
 
@@ -81,9 +117,9 @@ Success
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-05-31T14:57:08.8230985-07:00",
-  "Expires": "2019-05-31T14:57:08.8231026-07:00",
-  "Accepted": "2019-05-31T14:57:08.823106-07:00",
+  "Issued": "2019-11-11T14:18:38.6245292-08:00",
+  "Expires": "2019-11-11T14:18:38.6245393-08:00",
+  "Accepted": "2019-11-11T14:18:38.624546-08:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -93,24 +129,24 @@ Success
 
 #### 401
 
-Unauthorized
+Unauthorized.
 
 #### 403
 
-Forbidden
+Forbidden.
 
 #### 404
 
-Invitation or Tenant not found
+Invitation or Tenant not found.
 
 #### 500
 
-Internal server error
+Internal server error.
 ***
 
 ## `Get Invitations`
 
-Get all invitations for a tenant
+Get all non-expired invitations from a Tenant. Optionally include expired invitations.
 
 ### Request
 
@@ -123,7 +159,7 @@ Get all invitations for a tenant
 string tenantId
 ```
 
-Id of tenant
+Id of Tenant.
 
 ```csharp
 [FromQuery]
@@ -132,7 +168,7 @@ Id of tenant
 string query
 ```
 
-Query to execute. Currently not supported
+Query to execute. Currently not supported.
 
 ```csharp
 [FromQuery]
@@ -141,7 +177,7 @@ Query to execute. Currently not supported
 int32 skip
 ```
 
-Number of invitations to skip
+Number of invitations to skip.
 
 ```csharp
 [FromQuery]
@@ -150,7 +186,7 @@ Number of invitations to skip
 int32 count
 ```
 
-Max number of invitations to return
+Maximum number of invitations to return.
 
 ```csharp
 [FromQuery]
@@ -159,7 +195,7 @@ Max number of invitations to return
 bool includeExpiredInvitations
 ```
 
-Specify to return expired invitations
+Specify whether to return expired invitations.
 
 ### Security
 
@@ -171,19 +207,19 @@ Allowed for these roles:
 
 #### 200
 
-Success
+Success.
 
 ##### Type:
 
- `List[Invitation]`
+ `List`
 
 ```json
 [
   {
     "Id": "Id",
-    "Issued": "2019-05-31T14:57:08.8247538-07:00",
-    "Expires": "2019-05-31T14:57:08.8247586-07:00",
-    "Accepted": "2019-05-31T14:57:08.8247617-07:00",
+    "Issued": "2019-11-11T14:18:38.6282448-08:00",
+    "Expires": "2019-11-11T14:18:38.6282685-08:00",
+    "Accepted": "2019-11-11T14:18:38.6282738-08:00",
     "State": 0,
     "TenantId": "00000000-0000-0000-0000-000000000000",
     "UserId": "00000000-0000-0000-0000-000000000000",
@@ -191,9 +227,9 @@ Success
   },
   {
     "Id": "Id",
-    "Issued": "2019-05-31T14:57:08.8247759-07:00",
-    "Expires": "2019-05-31T14:57:08.8247768-07:00",
-    "Accepted": "2019-05-31T14:57:08.8247784-07:00",
+    "Issued": "2019-11-11T14:18:38.6282997-08:00",
+    "Expires": "2019-11-11T14:18:38.628302-08:00",
+    "Accepted": "2019-11-11T14:18:38.6283059-08:00",
     "State": 0,
     "TenantId": "00000000-0000-0000-0000-000000000000",
     "UserId": "00000000-0000-0000-0000-000000000000",
@@ -204,28 +240,29 @@ Success
 
 #### 400
 
-Missing or invalid inputs
+Missing or invalid inputs.
 
 #### 401
 
-Unauthorized
+Unauthorized.
 
 #### 403
 
-Forbidden
+Forbidden.
 
 #### 404
 
-Tenant not found
+Tenant not found.
 
 #### 500
 
-Internal server error
+Internal server error.
 ***
 
 ## `Update Invitation`
 
-Update an invitation
+Update an Invitation. Expired invitations will not be extended.
+            automatically upon updates.
 
 ### Request
 
@@ -238,14 +275,14 @@ Update an invitation
 string tenantId
 ```
 
-Id of tenant
+Id of Tenant.
 
 ```csharp
 [Required]
 string invitationId
 ```
 
-Id of invitation
+Id of Invitation.
 
 ```csharp
 [FromBody]
@@ -253,20 +290,20 @@ Id of invitation
 InvitationCreateOrUpdate invitationCreateOrUpdate
 ```
 
-New InvitationCreateOrUpdate object
+New InvitationCreateOrUpdate object. Properties that are not set or are null will not be changed.
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-ExpiresDateTime | DateTime | No | Invitation expiration date. Must be in the future.
-State | InvitationStates | No | Set the state of invitation.
-SendInvitation | bool | No | Send the invitation. Default is true.
-IdentityProviderId | Guid | No | Identity Provider to use for accepting this invitation. Null implies invitation can be accepted using any            configured Identity Provider.
+ExpiresDateTime | DateTime | No | Gets or sets invitation expiration date. Must be in the future.            Maximum allowed is two month in the future.            Defaults to 21 days on creation.            It should be in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) and either            include a *Z* at the end to represent UTC timezone            or include the offset in hours. If neither is present            time will be treated in the local time zone of the server.
+State | InvitationStates | No | Gets or sets set the state of invitation. For OSISoft internal use only.
+SendInvitation | bool | No | Gets or sets send an invitation email. Invitation will be sent to the            ContactEmail in the User this invitation is attached to.            Default is true.
+IdentityProviderId | Guid | No | Gets or sets Identity Provider to use for accepting this invitation.            Required when creating an Invitation.
 
 
 
 ```json
 {
-  "ExpiresDateTime": "2019-05-31T14:57:08.8271583-07:00",
+  "ExpiresDateTime": "2019-11-11T14:18:38.6312229-08:00",
   "State": 0,
   "SendInvitation": false,
   "IdentityProviderId": "00000000-0000-0000-0000-000000000000"
@@ -283,7 +320,7 @@ Allowed for these roles:
 
 #### 200
 
-Success
+Success.
 
 ##### Type:
 
@@ -292,9 +329,9 @@ Success
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-05-31T14:57:08.829861-07:00",
-  "Expires": "2019-05-31T14:57:08.8298663-07:00",
-  "Accepted": "2019-05-31T14:57:08.8298719-07:00",
+  "Issued": "2019-11-11T14:18:38.633862-08:00",
+  "Expires": "2019-11-11T14:18:38.6338686-08:00",
+  "Accepted": "2019-11-11T14:18:38.6338746-08:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -304,28 +341,33 @@ Success
 
 #### 400
 
-Missing or invalid inputs
+Missing or invalid inputs.
 
 #### 401
 
-Unauthorized
+Unauthorized.
 
 #### 403
 
-Forbidden
+Forbidden.
 
 #### 404
 
-Invitation or Tenant not found
+Invitation or Tenant not found.
+
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
 
 #### 500
 
-Internal server error
+Internal server error.
 ***
 
 ## `Delete Invitation`
 
-Delete an invitation
+Delete an Invitation. Users who already have an Invitation email
+            will not be able to sign-up once the Invitation is deleted.
 
 ### Request
 
@@ -338,14 +380,14 @@ Delete an invitation
 string tenantId
 ```
 
-Id of tenant
+Id of Tenant.
 
 ```csharp
 [Required]
 string invitationId
 ```
 
-Id of invitation
+Id of Invitation.
 
 ### Security
 
@@ -357,28 +399,155 @@ Allowed for these roles:
 
 #### 204
 
-Deleted
+Deleted.
 
 #### 401
 
-Unauthorized
+Unauthorized.
 
 #### 403
 
-Forbidden
+Forbidden.
 
 #### 404
 
-Invitation or Tenant not found
+Invitation or Tenant not found.
+
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
 
 #### 500
 
-Internal server error
+Internal server error.
+***
+
+## `Get header for an Invitation`
+
+Validate that an Invitation exists. This endpoint is identical to the GET
+            one, but it does not return an object in the body.
+
+### Request
+
+`HEAD api/v1/Tenants/{tenantId}/Invitations/{invitationId}`
+
+### Parameters
+
+```csharp
+[Required]
+string tenantId
+```
+
+Id of Tenant.
+
+```csharp
+[Required]
+string invitationId
+```
+
+Id of Invitation.
+
+### Security
+
+Allowed for these roles:
+
+- `Account Administrator`
+
+### Returns
+
+#### 200
+
+Success.
+
+##### Type:
+
+ `Void`
+
+#### 401
+
+Unauthorized.
+
+#### 403
+
+Forbidden.
+
+#### 404
+
+Invitation or Tenant not found.
+
+#### 500
+
+Internal server error.
+***
+
+## `Get header for Invitations`
+
+Return total number of non-expired Invitations in a Tenant. Optionally include expired invitations.
+            The value will be set in the Total-Count header. This endpoint is identical to the GET one but
+            it does not return any objects in the body.
+
+### Request
+
+`HEAD api/v1/Tenants/{tenantId}/Invitations`
+
+### Parameters
+
+```csharp
+[Required]
+string tenantId
+```
+
+Id of Tenant.
+
+```csharp
+[FromQuery]
+[Optional]
+[Default = False]
+bool includeExpiredInvitations
+```
+
+Specify to return expired invitations.
+
+### Security
+
+Allowed for these roles:
+
+- `Account Administrator`
+
+### Returns
+
+#### 200
+
+Success.
+
+##### Type:
+
+ `Void`
+
+#### 400
+
+Missing or invalid inputs.
+
+#### 401
+
+Unauthorized.
+
+#### 403
+
+Forbidden.
+
+#### 404
+
+Tenant not found.
+
+#### 500
+
+Internal server error.
 ***
 
 ## `Get User's Invitation`
 
-Get the invitations for a user
+Get Invitation for a User.
 
 ### Request
 
@@ -391,26 +560,27 @@ Get the invitations for a user
 string tenantId
 ```
 
-Id of tenant
+Id of Tenant.
 
 ```csharp
 [Required]
 Guid userId
 ```
 
-Id of user
+Id of User.
 
 ### Security
 
 Allowed for these roles:
 
 - `Account Administrator`
+- `Account Member`
 
 ### Returns
 
 #### 200
 
-Success
+Success.
 
 ##### Type:
 
@@ -419,9 +589,9 @@ Success
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-05-31T14:57:08.8742373-07:00",
-  "Expires": "2019-05-31T14:57:08.8742414-07:00",
-  "Accepted": "2019-05-31T14:57:08.874277-07:00",
+  "Issued": "2019-11-11T14:18:38.7640134-08:00",
+  "Expires": "2019-11-11T14:18:38.7640582-08:00",
+  "Accepted": "2019-11-11T14:18:38.7640924-08:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -431,24 +601,24 @@ Success
 
 #### 401
 
-Unauthorized
+Unauthorized.
 
 #### 403
 
-Forbidden
+Forbidden.
 
 #### 404
 
-Invitation, User, or Tenant not found
+Invitation, User, or Tenant not found.
 
 #### 500
 
-Internal server error
+Internal server error.
 ***
 
 ## `Create Invitation`
 
-Create an invitation for a user. Should use when no other invitation exists for the user.
+Create an Invitation for a User. Should use when no other Invitation exists for the User.
 
 ### Request
 
@@ -461,14 +631,14 @@ Create an invitation for a user. Should use when no other invitation exists for 
 string tenantId
 ```
 
-Id of tenant
+Id of Tenant.
 
 ```csharp
 [Required]
 Guid userId
 ```
 
-Id of user
+Id of User.
 
 ```csharp
 [FromBody]
@@ -476,20 +646,20 @@ Id of user
 InvitationCreateOrUpdate invitationCreateOrUpdate
 ```
 
-InvitationCreateOrUpdate object
+InvitationCreateOrUpdate object.
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-ExpiresDateTime | DateTime | No | Invitation expiration date. Must be within 2 months in the future.
-State | InvitationStates | No | Set the state of invitation.
-SendInvitation | bool | No | Send the invitation. Default is true.
-IdentityProviderId | Guid | No | Identity Provider to use for accepting this invitation. Null implies invitation can be accepted using any            configured Identity Provider.
+ExpiresDateTime | DateTime | No | Gets or sets invitation expiration date. Must be in the future.            Maximum allowed is two month in the future.            Defaults to 21 days on creation.            It should be in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) and either            include a *Z* at the end to represent UTC timezone            or include the offset in hours. If neither is present            time will be treated in the local time zone of the server.
+State | InvitationStates | No | Gets or sets set the state of invitation. For OSISoft internal use only.
+SendInvitation | bool | No | Gets or sets send an invitation email. Invitation will be sent to the            ContactEmail in the User this invitation is attached to.            Default is true.
+IdentityProviderId | Guid | No | Gets or sets Identity Provider to use for accepting this invitation.            Required when creating an Invitation.
 
 
 
 ```json
 {
-  "ExpiresDateTime": "2019-05-31T14:57:08.8763743-07:00",
+  "ExpiresDateTime": "2019-11-11T14:18:38.7708735-08:00",
   "State": 0,
   "SendInvitation": false,
   "IdentityProviderId": "00000000-0000-0000-0000-000000000000"
@@ -506,7 +676,7 @@ Allowed for these roles:
 
 #### 201
 
-Created
+Created.
 
 ##### Type:
 
@@ -515,9 +685,9 @@ Created
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-05-31T14:57:08.8765326-07:00",
-  "Expires": "2019-05-31T14:57:08.8765354-07:00",
-  "Accepted": "2019-05-31T14:57:08.8765399-07:00",
+  "Issued": "2019-11-11T14:18:38.7716732-08:00",
+  "Expires": "2019-11-11T14:18:38.771711-08:00",
+  "Accepted": "2019-11-11T14:18:38.7717471-08:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -527,32 +697,36 @@ Created
 
 #### 400
 
-Missing or invalid inputs
+Missing or invalid inputs.
 
 #### 401
 
-Unauthorized
+Unauthorized.
 
 #### 403
 
-Forbidden
+Forbidden.
 
 #### 404
 
-User or Tenant not found
+User or Tenant not found.
+
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
 
 #### 409
 
-Invitation already exists
+Invitation already exists.
 
 #### 500
 
-Internal server error
+Internal server error.
 ***
 
 ## `Create or Update Invitation`
 
-Create or update an invitation for a user
+Create or update an Invitation for a User.
 
 ### Request
 
@@ -565,14 +739,14 @@ Create or update an invitation for a user
 string tenantId
 ```
 
-Id of tenant
+Id of Tenant.
 
 ```csharp
 [Required]
 Guid userId
 ```
 
-Id of user
+Id of User.
 
 ```csharp
 [FromBody]
@@ -580,20 +754,20 @@ Id of user
 InvitationCreateOrUpdate invitationCreateOrUpdate
 ```
 
-InvitationCreateOrUpdate object
+InvitationCreateOrUpdate object.
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-ExpiresDateTime | DateTime | No | Invitation expiration date. Must be within 2 months in the future.
-State | InvitationStates | No | Set the state of invitation.
-SendInvitation | bool | No | Send the invitation. Default is true.
-IdentityProviderId | Guid | No | Identity Provider to use for accepting this invitation. Null implies invitation can be accepted using any            configured Identity Provider.
+ExpiresDateTime | DateTime | No | Gets or sets invitation expiration date. Must be in the future.            Maximum allowed is two month in the future.            Defaults to 21 days on creation.            It should be in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) and either            include a *Z* at the end to represent UTC timezone            or include the offset in hours. If neither is present            time will be treated in the local time zone of the server.
+State | InvitationStates | No | Gets or sets set the state of invitation. For OSISoft internal use only.
+SendInvitation | bool | No | Gets or sets send an invitation email. Invitation will be sent to the            ContactEmail in the User this invitation is attached to.            Default is true.
+IdentityProviderId | Guid | No | Gets or sets Identity Provider to use for accepting this invitation.            Required when creating an Invitation.
 
 
 
 ```json
 {
-  "ExpiresDateTime": "2019-05-31T14:57:08.8782746-07:00",
+  "ExpiresDateTime": "2019-11-11T14:18:38.7776948-08:00",
   "State": 0,
   "SendInvitation": false,
   "IdentityProviderId": "00000000-0000-0000-0000-000000000000"
@@ -610,7 +784,7 @@ Allowed for these roles:
 
 #### 200
 
-Updated
+Updated.
 
 ##### Type:
 
@@ -619,9 +793,9 @@ Updated
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-05-31T14:57:08.8784046-07:00",
-  "Expires": "2019-05-31T14:57:08.8784072-07:00",
-  "Accepted": "2019-05-31T14:57:08.8784113-07:00",
+  "Issued": "2019-11-11T14:18:38.7781105-08:00",
+  "Expires": "2019-11-11T14:18:38.778126-08:00",
+  "Accepted": "2019-11-11T14:18:38.7781429-08:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -631,7 +805,7 @@ Updated
 
 #### 201
 
-Created
+Created.
 
 ##### Type:
 
@@ -640,9 +814,9 @@ Created
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-05-31T14:57:08.8784625-07:00",
-  "Expires": "2019-05-31T14:57:08.8784643-07:00",
-  "Accepted": "2019-05-31T14:57:08.878468-07:00",
+  "Issued": "2019-11-11T14:18:38.7783963-08:00",
+  "Expires": "2019-11-11T14:18:38.7784086-08:00",
+  "Accepted": "2019-11-11T14:18:38.7784222-08:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -652,28 +826,32 @@ Created
 
 #### 400
 
-Missing or invalid inputs
+Missing or invalid inputs.
 
 #### 401
 
-Unauthorized
+Unauthorized.
 
 #### 403
 
-Forbidden
+Forbidden.
 
 #### 404
 
-User or Tenant not found
+User or Tenant not found.
+
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
 
 #### 500
 
-Internal server error
+Internal server error.
 ***
 
 ## `Delete Invitation`
 
-Delete an invitation for a user
+Delete an Invitation for a User.
 
 ### Request
 
@@ -686,14 +864,14 @@ Delete an invitation for a user
 string tenantId
 ```
 
-Id of tenant
+Id of Tenant.
 
 ```csharp
 [Required]
 Guid userId
 ```
 
-Id of user
+Id of User.
 
 ### Security
 
@@ -705,22 +883,99 @@ Allowed for these roles:
 
 #### 204
 
-Deleted
+Deleted.
 
 #### 401
 
-Unauthorized
+Unauthorized.
 
 #### 403
 
-Forbidden
+Forbidden.
 
 #### 404
 
-Invitation or Tenant not found
+Invitation or Tenant not found.
+
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
 
 #### 500
 
-Internal server error
+Internal server error.
+***
+
+## `Get header for User's Invitation`
+
+Validate that Invitation exist for a User. This endpoint
+            is identical to the GET one but it does not return any
+            objects in the body.
+
+### Request
+
+`HEAD api/v1/Tenants/{tenantId}/Users/{userId}/Invitation`
+
+### Parameters
+
+```csharp
+[Required]
+string tenantId
+```
+
+Id of Tenant.
+
+```csharp
+[Required]
+Guid userId
+```
+
+Id of User.
+
+```csharp
+[FromQuery]
+[Optional]
+[Default = False]
+bool includeExpiredInvitations
+```
+
+Specify whether to include expired invitations.
+
+### Security
+
+Allowed for these roles:
+
+- `Account Administrator`
+- `Account Member`
+
+### Returns
+
+#### 200
+
+Success.
+
+##### Type:
+
+ `Void`
+
+#### 400
+
+Missing or invalid inputs.
+
+#### 401
+
+Unauthorized.
+
+#### 403
+
+Forbidden.
+
+#### 404
+
+Tenant not found.
+
+#### 500
+
+Internal server error.
 ***
 

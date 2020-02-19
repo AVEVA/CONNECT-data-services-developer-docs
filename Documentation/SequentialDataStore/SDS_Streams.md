@@ -4,23 +4,16 @@ uid: sdsStreams
 
 # Streams
 
-SDS stores collections of events and provides convenient ways to find and associating events. Events 
-of consistent structure are stored in streams, called SdsStreams.  An SdsType defines the structure 
-of events in an SdsStream.
+Streams are collections of sequentially occurring values indexed by a single property, typically time series data. You define streams to organize incoming data from another system into OCS.  To define a stream, you must first define a type, which defines the structure of the data you want to stream into a selected namespace. 
 
-SdsStreams are referenced by their identifier or Id field. SdsStream identifiers must be unique 
-within a Namespace.
+SDS stores collections of events and provides convenient ways to find and associate events. Events of consistent structure are stored in streams, called SdsStreams.  SdsStreams are referenced by their identifier or Id field. SdsStream identifiers must be unique within a Namespace.
 
-An SdsStream must include a TypeId that references the identifier of an existing SdsType. 
-When an SdsStream contains data, you must use a stream view to update the stream type.
-
-SdsStream management using the .NET SDS Client Libraries is performed through ISdsMetadataService. 
-Create the ISdsMetadataService, using one of the ``SdsService.GetMetadataService()`` factory methods.
+An SdsStream must include a TypeId that references the identifier of an existing SdsType. SdsStream management using the .NET SDS Client Libraries is performed through ISdsMetadataService. Create the ISdsMetadataService, using one of the ``SdsService.GetMetadataService()`` factory methods.
 
 The following table shows the required and optional SdsStream fields. Fields not listed are reserved
 for internal SDS use.
 
-
+<a name="streampropertiestable"></a>
 | Property          | Type                             | Optionality | Searchable | Details |
 |-------------------|----------------------------------|-------------|------------|---------|
 | Id                | String                           | Required    | Yes		  | An identifier for referencing the stream |
@@ -59,7 +52,7 @@ Indexes are discussed in greater detail here: [Indexes](xref:sdsIndexes)
 
 ## Interpolation and Extrapolation
 
-The InterpolationMode, ExtrapolationMode, and [PropertyOverrides](#propertyoverrides) can be used to determine how a specific stream reads data. These read characteristics are inherited from the type if they are not defined at the stream level. For more information about type read characteristics and how these characteristics dictate how events are read see [Types](xref:sdsTypes).
+The InterpolationMode, ExtrapolationMode, and [PropertyOverrides](#propertyoverrides) can be used to determine how a specific stream reads data. These read characteristics are inherited from the type if they are not defined at the stream level.
 
 
 ## PropertyOverrides
@@ -434,7 +427,7 @@ Get the default ACL for the Streams collection. For more information on ACLs, se
 
 **Request**
  ```text
-    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/AccessControl
+    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Streams
  ```
 
 **Parameters**
@@ -463,7 +456,7 @@ Update the default ACL for the Streams collection. For more information on ACLs,
 
 **Request**
  ```text
-    PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/AccessControl
+    PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Streams
  ```
 
 **Parameters**
@@ -613,3 +606,46 @@ The response includes a status code.
 ```csharp
    Task UpdateStreamOwnerAsync(string streamId, Trustee streamOwner);
 ```
+*** 
+
+## `Get Stream Access Rights`
+
+Gets the Access Rights associated with the specified stream for the requesting identity. For 
+more information on Access Rights, see [Access Control](xref:accessControl#commonaccessrightsenum).
+
+**Request**
+ ```text
+    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/AccessRights
+ ```
+
+**Parameters**
+
+`string tenantId`  
+The tenant identifier  
+  
+`string namespaceId`  
+The namespace identifier  
+  
+`string streamId`  
+The stream identifier  
+
+**Response**  
+The response includes a status code and a response body.
+
+**Response Body**  
+The Access Rights associated with specified stream for the requesting identity.
+
+Example response body:
+```json
+HTTP/1.1 200
+Content-Type: application/json
+
+["Read", "Write"]
+```
+
+**.NET Library**
+```csharp
+   Task<string[]> GetStreamAccessRightsAsync(string streamId);
+```
+***********************
+

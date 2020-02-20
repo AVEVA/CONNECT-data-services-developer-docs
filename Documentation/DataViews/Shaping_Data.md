@@ -1,8 +1,8 @@
 ﻿---
-uid: DataViewsShapingData
+uid: DataViewShape
 ---
 
-# Shaping Data
+# Data View Shape
 
 Data views may be set to resolve as a standard shape or a "narrow" shape. Narrow shape may be used when an invariant output schema is required.
 

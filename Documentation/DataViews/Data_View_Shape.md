@@ -8,12 +8,13 @@ Data views may be set to resolve as a standard shape or a "narrow" shape.
 
 With a standard shape, each row in the resolved data view includes all the data fields for a single event or observation. With a narrow shape, each row in the resolved data view includes only one data field. This results in a narrow output schema where one column contains all the data field values, so the schema remains fixed regardless of changes to the included data fields. Narrow shape may be used when an invariant output schema is required.
 
+The shape concepts presented in this section apply to building all data view output formats; although the terminology used pertains to tabular output with headers (.csvh).
 ## Specify the shape
-Set the `DataView` `Shape` property to either `DataViewShape.Standard` (default) or `DataViewShape.Narrow`.
+Set the `DataView` [`Shape`](xref:DataView#DataViewShape) property to either `DataViewShape.Standard` (default) or `DataViewShape.Narrow`.
 
 #### Standard shape
 
-The standard table column structure is built horizontally from left to right.  The index column is first, followed by the grouping fields, if any exist.  Data field sets come next, in the order they are presented in the data view. Fields are presented in order of appearance within in each data field set for each stream from the associated query.
+The standard table column structure is built horizontally from left to right. The index field is first, followed by the grouping fields, if any exist.  Data field sets come next, in the order they are presented in the data view. Fields are presented in order of appearance within each data field set for each stream from the associated query.
 
 Vertically, the standard structure depends on the inclusion of grouping fields. If grouping fields are not defined, each resultant index appears only once, and all interpolated data is in that row. If grouping fields are defined, then the resultant indexes will repeat vertically for each group. The groups are presented in alphabetical order.
 
@@ -31,7 +32,7 @@ Timestamp.0,Id.1,SolarRadiation.2,Temperature.3,Tags.4,Id.5,SolarRadiation.6,Tem
 
 ##### Example: Get data response body for standard shape with grouping field (Site)
 
-The use of a grouping field will restructure the table vertically.
+The use of a grouping field will restructure the table vertically. See [Grouping documentation](xref:DataViewsSectioning) for details.
 
 ```csv
 Timestamp,Site,Id,SolarRadiation,Temperature,Tags
@@ -56,18 +57,21 @@ Timestamp,Site,Id,SolarRadiation,Temperature,Tags
 
 #### Narrow shape
 
-The narrow table ‘pivots’ the standard table. Each data field becomes a row comprised of the following columns: 
+The narrow table "pivots" the standard table. Each data field becomes a row comprised of the following columns: 
 
-* Timestamp column 
-* Group identifying column(s)
+* Index column 
+* Grouping value column(s)
 * Field column, which holds the resolved column label of the field
-* Value column, which holds the property value or stream related data such as name, id, tags or meta data
+* Value column, which holds the property value or stream related data such as name, id, tags or metadata
 
-The column header of the timestamp and group identifying columns may vary depending on the resolved label. The Field and Value column headers are not modifiable.
+The column header of the index and grouping value columns may vary depending on the resolved label. The Field and Value column headers are not modifiable.
 
-The data view is built veritically by grouping field, if present, then by field.  
+The data view is built veritically by grouping field, if present, then by field. 
 
-##### Example: Get data response body for narrow shape
+Data views resolving into multiple streams that are defined with the same SDS type, should use a grouping field or an identifier in order to differentiate the data rows. 
+
+##### Example: Get data response body for narrow shape with grouping field (Site)
+
 
 ```csv
 Timestamp,Site,Field,Value

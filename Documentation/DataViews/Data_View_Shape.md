@@ -8,7 +8,7 @@ Data views may be set to resolve as a standard shape or a "narrow" shape.
 
 With a standard shape, each row in the resolved data view includes all the data fields for a single event or observation. With a narrow shape, each row in the resolved data view includes only one data field. This results in a narrow output schema where one column contains all the data field values, so the schema remains fixed regardless of changes to the included data fields. Narrow shape may be used when an invariant output schema is required.
 
-The shape concepts presented in this section apply to building all data view output formats; although the terminology used pertains to tabular output with headers (.csvh).
+The shape concepts presented in this section apply to building all data view output formats; although the terminology used pertains to tabular output with headers (form = csvh).
 ## Specify the shape
 Set the `DataView` [`Shape`](xref:DataView#DataViewShape) property to either `DataViewShape.Standard` (default) or `DataViewShape.Narrow`.
 
@@ -21,7 +21,7 @@ Vertically, the standard structure depends on the inclusion of grouping fields. 
 
 ##### Example: Get data response body for standard shape with no grouping field
 
-Note, column headers contain a numerical suffix to ensure that each column header is unique.
+Note, column labels contain a numerical suffix to ensure that each label is unique. Use grouping fields or an identifying field to create unique column labels.
 
 ```csv
 Timestamp.0,Id.1,SolarRadiation.2,Temperature.3,Tags.4,Id.5,SolarRadiation.6,Temperature.7,Tags.8,Id.9,SolarRadiation.10,Temperature.11,Tags.12,Id.13,SolarRadiation.14,Temperature.15,Tags.16
@@ -64,7 +64,7 @@ The narrow table "pivots" the standard table. Each data field becomes a row comp
 * Field column, which holds the resolved column label of the field
 * Value column, which holds the property value or stream related data such as name, id, tags or metadata
 
-The column header of the index and grouping value columns may vary depending on the resolved label. The Field and Value column headers are not modifiable.
+The column label of the index and grouping value columns may vary depending on the resolved label. The Field and Value column labels are not modifiable.
 
 The data view is built veritically by grouping field, if present, then by field. 
 

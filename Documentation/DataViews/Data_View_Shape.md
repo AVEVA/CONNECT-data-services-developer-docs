@@ -4,46 +4,87 @@ uid: DataViewShape
 
 # Data View Shape
 
-Data views may be set to resolve as a standard shape or a "narrow" shape. Narrow shape may be used when an invariant output schema is required.
+Data views may be set to resolve as a standard shape or a "narrow" shape. 
+
+With a standard shape, each row in the resolved data view includes all the data fields for a single event or observation. With a narrow shape, each row in the resolved data view includes only one data field. This results in a narrow output schema where one column contains all the data field values, so the schema remains fixed regardless of changes to the included data fields. Narrow shape may be used when an invariant output schema is required.
 
 ## Specify the shape
-Set the `DataView`'s `Shape` property to either `DataViewShape.Standard` (default) or `DataViewShape.Narrow`.
+Set the `DataView` `Shape` property to either `DataViewShape.Standard` (default) or `DataViewShape.Narrow`.
 
 #### Standard shape
 
-The resultant schema resolves fields into a shape similar to how they are defined in the field sets.  This is the default shape.
+The standard table column structure is built horizontally from left to right.  The index column is first, followed by the grouping fields, if any exist.  Data field sets come next, in the order they are presented in the data view. Fields are presented in order of appearance within in each data field set for each stream from the associated query.
 
-##### Example: Get data response body for standard shape
+Vertically, the standard structure depends on the inclusion of grouping fields. If grouping fields are not defined, each resultant index appears only once, and all interpolated data is in that row. If grouping fields are defined, then the resultant indexes will repeat vertically for each group. The groups are presented in alphabetical order.
 
+
+##### Example: Get data response body for standard shape with no grouping field
+
+Note, column headers contain a numerical suffix to ensure that each column header is unique.
+
+```csv
+Timestamp.0,Id.1,SolarRadiation.2,Temperature.3,Tags.4,Id.5,SolarRadiation.6,Temperature.7,Tags.8,Id.9,SolarRadiation.10,Temperature.11,Tags.12,Id.13,SolarRadiation.14,Temperature.15,Tags.16
+2018-11-13T18:19:00.0000000Z,WS_WINT,184,,"Gen2, High Resolution, Weather",WS_ROSE,31,31.23228568408279,"Gen1, Low Resolution, Weather",WS_BILT,229,28.042327888795327,"Gen1, High Resolution, Weather",WS_HRST,254,4.219790459247207,"Gen1, Low Resolution, Weather"
+2018-11-13T18:20:00.0000000Z,WS_WINT,184,,"Gen2, High Resolution, Weather",WS_ROSE,31,31.23228568408279,"Gen1, Low Resolution, Weather",WS_BILT,229,28.042327888795327,"Gen1, High Resolution, Weather",WS_HRST,254,4.219790459247207,"Gen1, Low Resolution, Weather"
 ```
+<br />
+
+##### Example: Get data response body for standard shape with grouping field (Site)
+
+The use of a grouping field will restructure the table vertically.
+
+```csv
 Timestamp,Site,Id,SolarRadiation,Temperature,Tags
 2018-11-13T18:19:00.0000000Z,Biltmore,WS_BILT,229,28.042327888795327,"Gen1, High Resolution, Weather"
 2018-11-13T18:20:00.0000000Z,Biltmore,WS_BILT,229,28.042327888795327,"Gen1, High Resolution, Weather"
+2018-11-13T18:21:00.0000000Z,Biltmore,WS_BILT,229,28.042327888795327,"Gen1, High Resolution, Weather"
+2018-11-13T18:22:00.0000000Z,Biltmore,WS_BILT,229,28.042327888795327,"Gen1, High Resolution, Weather"
 2018-11-13T18:19:00.0000000Z,Hearst Castle,WS_HRST,254,4.219790459247207,"Gen1, Low Resolution, Weather"
 2018-11-13T18:20:00.0000000Z,Hearst Castle,WS_HRST,254,4.219790459247207,"Gen1, Low Resolution, Weather"
+2018-11-13T18:21:00.0000000Z,Hearst Castle,WS_HRST,254,4.219790459247207,"Gen1, Low Resolution, Weather"
+2018-11-13T18:22:00.0000000Z,Hearst Castle,WS_HRST,254,4.219790459247207,"Gen1, Low Resolution, Weather"
+2018-11-13T18:19:00.0000000Z,Rosecliff,WS_ROSE,31,31.23228568408279,"Gen1, Low Resolution, Weather"
+2018-11-13T18:20:00.0000000Z,Rosecliff,WS_ROSE,31,31.23228568408279,"Gen1, Low Resolution, Weather"
+2018-11-13T18:21:00.0000000Z,Rosecliff,WS_ROSE,31,31.23228568408279,"Gen1, Low Resolution, Weather"
+2018-11-13T18:22:00.0000000Z,Rosecliff,WS_ROSE,31,31.23228568408279,"Gen1, Low Resolution, Weather"
+2018-11-13T18:19:00.0000000Z,Winterthur,WS_WINT,184,,"Gen2, High Resolution, Weather"
+2018-11-13T18:20:00.0000000Z,Winterthur,WS_WINT,184,,"Gen2, High Resolution, Weather"
+2018-11-13T18:21:00.0000000Z,Winterthur,WS_WINT,184,,"Gen2, High Resolution, Weather"
+2018-11-13T18:22:00.0000000Z,Winterthur,WS_WINT,184,,"Gen2, High Resolution, Weather"
 ```
+<br />
+
 #### Narrow shape
 
-The resultant schema resolves fields into a vertical table, essentially pivoting the standard shape table.  Columns included are: __Timestamp__, any group identifying columns, a __Field__ column which holds the property name, and a __Value__ column which holds the property value for the timestamp.
+The narrow table ‘pivots’ the standard table. Each data field becomes a row comprised of the following columns: 
+
+* Timestamp column 
+* Group identifying column(s)
+* Field column, which holds the resolved column label of the field
+* Value column, which holds the property value or stream related data such as name, id, tags or meta data
+
+The column header of the timestamp and group identifying columns may vary depending on the resolved label. The Field and Value column headers are not modifiable.
+
+The data view is built veritically by grouping field, if present, then by field.  
 
 ##### Example: Get data response body for narrow shape
 
-```
+```csv
 Timestamp,Site,Field,Value
 2018-11-13T18:19:00.0000000Z,Biltmore,Id,WS_BILT
-2018-11-13T18:19:00.0000000Z,Biltmore,SolarRadiation,229
-2018-11-13T18:19:00.0000000Z,Biltmore,Temperature,28.042327888795327
-2018-11-13T18:19:00.0000000Z,Biltmore,Tags,"Gen1, High Resolution, Weather"
 2018-11-13T18:20:00.0000000Z,Biltmore,Id,WS_BILT
+2018-11-13T18:19:00.0000000Z,Biltmore,SolarRadiation,229
 2018-11-13T18:20:00.0000000Z,Biltmore,SolarRadiation,229
+2018-11-13T18:19:00.0000000Z,Biltmore,Temperature,28.042327888795327
 2018-11-13T18:20:00.0000000Z,Biltmore,Temperature,28.042327888795327
+2018-11-13T18:19:00.0000000Z,Biltmore,Tags,"Gen1, High Resolution, Weather"
 2018-11-13T18:20:00.0000000Z,Biltmore,Tags,"Gen1, High Resolution, Weather"
 2018-11-13T18:19:00.0000000Z,Hearst Castle,Id,WS_HRST
-2018-11-13T18:19:00.0000000Z,Hearst Castle,SolarRadiation,254
-2018-11-13T18:19:00.0000000Z,Hearst Castle,Temperature,4.219790459247207
-2018-11-13T18:19:00.0000000Z,Hearst Castle,Tags,"Gen1, Low Resolution, Weather"
 2018-11-13T18:20:00.0000000Z,Hearst Castle,Id,WS_HRST
+2018-11-13T18:19:00.0000000Z,Hearst Castle,SolarRadiation,254
 2018-11-13T18:20:00.0000000Z,Hearst Castle,SolarRadiation,254
+2018-11-13T18:19:00.0000000Z,Hearst Castle,Temperature,4.219790459247207
 2018-11-13T18:20:00.0000000Z,Hearst Castle,Temperature,4.219790459247207
+2018-11-13T18:19:00.0000000Z,Hearst Castle,Tags,"Gen1, Low Resolution, Weather"
 2018-11-13T18:20:00.0000000Z,Hearst Castle,Tags,"Gen1, Low Resolution, Weather"
 ```

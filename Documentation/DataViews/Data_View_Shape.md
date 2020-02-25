@@ -4,15 +4,15 @@ uid: DataViewShape
 
 # Data View Shape
 
-Data views may be set to resolve as a standard shape or a "narrow" shape. 
+Data views may be set to resolve as a standard shape or a narrow shape. 
 
 With a standard shape, each row in the resolved data view includes all the data fields for a single event or observation. With a narrow shape, each row in the resolved data view includes only one data field. This results in a narrow output schema where one column contains all the data field values, so the schema remains fixed regardless of changes to the included data fields. Narrow shape may be used when an invariant output schema is required.
 
-The shape concepts presented in this section apply to building all data view output formats; although the terminology used pertains to tabular output with headers (form = csvh).
+The shape concepts presented in this section apply to building all data view output formats; although the terminology used and examples shown, pertain to tabular output with [headers](xref:DataViewsGettingData#Format) (form = csvh).
 ## Specify the shape
 Set the `DataView` [`Shape`](xref:DataView#DataViewShape) property to either `DataViewShape.Standard` (default) or `DataViewShape.Narrow`.
 
-#### Standard shape
+## Standard shape
 
 The standard table column structure is built horizontally from left to right. The index field is first, followed by the grouping fields, if any exist.  Data field sets come next, in the order they are presented in the data view. Fields are presented in order of appearance within each data field set for each stream from the associated query.
 
@@ -55,9 +55,9 @@ Timestamp,Site,Id,SolarRadiation,Temperature,Tags
 ```
 <br />
 
-#### Narrow shape
+## Narrow shape
 
-The narrow table "pivots" the standard table. Each data field becomes a row comprised of the following columns: 
+The narrow table pivots the standard table. Each data field becomes a row comprised of the following columns: 
 
 * Index column 
 * Grouping value column(s)

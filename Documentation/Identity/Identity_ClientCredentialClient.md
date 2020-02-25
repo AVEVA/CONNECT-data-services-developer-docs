@@ -18,14 +18,14 @@ Client Credential clients are used for machine-to-machine communication without
 
 For HTTP requests and responses, the ClientCredentialClient object has the following properties and JSON-serialized body: 
 
-Property | Type | Description
- --- | --- | ---
-RoleIds | Guid[] | Gets or sets list of Roles to be assigned to this client. Member role is always required. For security reasons we advise against assigning Admin roles to a client.
-Id | string | Gets or sets secret Id.
-Name | string | Gets or sets name of Client.
-Enabled | bool | Gets or sets whether client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.
-AccessTokenLifetime | int32 | Gets or sets lifetime of access token issued for this client after authentication. Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.
-Tags | string[] | Gets or sets for OSIsoft internal use only.
+| Property            | Type     | Description                                                                                                                                                         |
+| ------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| RoleIds             | Guid[]   | Gets or sets list of Roles to be assigned to this client. Member role is always required. For security reasons we advise against assigning Admin roles to a client. |
+| Id                  | string   | Gets or sets client ID for this Client..                                                                                                                            |
+| Name                | string   | Gets or sets name of Client.                                                                                                                                        |
+| Enabled             | bool     | Gets or sets whether client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.             |
+| AccessTokenLifetime | int32    | Gets or sets lifetime of access token issued for this client after authentication. Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.              |
+| Tags                | string[] | Gets or sets for OSIsoft internal use only.                                                                                                                         |
 
 ### Serialized Model
 
@@ -102,18 +102,16 @@ ClientCredentialClientCreate clientCredentialClientCreate
 
 ClientCredentialClientCreate object.
 
-Property | Type | Required | Description 
- --- | --- | --- | ---
-SecretDescription | string | No | Gets or sets description for the initial secret for the client. Ensure that this is descriptive enough,            as it will be the only way to distinguish between multiple secrets and their usage for a            client.
-SecretExpirationDate | DateTime | No | Gets or sets expiration date for the initial secret for the client. If set to null the secret will            never expire. We advise against such practice.
-RoleIds | Guid[] | No | Gets or sets list of Roles to be assigned to this client. Member role is always required.            For security reasons we advise against assigning Admin roles to a client.
-Id | string | No | Gets or sets client ID for this client. This ID should be a GUID.
-Name | string | Yes | Gets or sets name of Client.
-Enabled | bool | No | Gets or sets whether client is enabled. Client can be used for authentication            if set to true. Client cannot be used for authentication if set to false.
-AccessTokenLifetime | int32 | No | Gets or sets lifetime of access token issued for this client after authentication.            Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.
-Tags | string[] | No | Gets or sets for OSIsoft internal use only.
-
-
+| Property             | Type     | Required | Description                                                                                                                                                                                                                    |
+| -------------------- | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| SecretDescription    | string   | No       | Gets or sets description for the initial secret for the client. Ensure that this is descriptive enough,            as it will be the only way to distinguish between multiple secrets and their usage for a            client. |
+| SecretExpirationDate | DateTime | No       | Gets or sets expiration date for the initial secret for the client. If set to null the secret will            never expire. We advise against such practice.                                                                   |
+| RoleIds              | Guid[]   | No       | Gets or sets list of Roles to be assigned to this client. Member role is always required.            For security reasons we advise against assigning Admin roles to a client.                                                 |
+| Id                   | string   | No       | Gets or sets client ID for this client. This ID should be a GUID.                                                                                                                                                              |
+| Name                 | string   | Yes      | Gets or sets name of Client.                                                                                                                                                                                                   |
+| Enabled              | bool     | No       | Gets or sets whether client is enabled. Client can be used for authentication            if set to true. Client cannot be used for authentication if set to false.                                                             |
+| AccessTokenLifetime  | int32    | No       | Gets or sets lifetime of access token issued for this client after authentication.            Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.                                                              |
+| Tags                 | string[] | No       | Gets or sets for OSIsoft internal use only.                                                                                                                                                                                    |
 
 ```json
 {
@@ -200,6 +198,7 @@ Client Id already exists.
 #### 500
 
 Internal server error.
+
 ***
 
 ## `Update Client Credential Client`
@@ -235,16 +234,14 @@ ClientCredentialClient updatedClientCredentialClient
 
 ClientCredentialClient object. Properties that are not set or are null will not be changed.
 
-Property | Type | Required | Description 
- --- | --- | --- | ---
-RoleIds | Guid[] | No | Gets or sets list of Roles to be assigned to this client. Member role is always required.            For security reasons we advise against assigning Admin roles to a client.
-Id | string | No | Gets or sets client ID for this client. This ID should be a GUID.
-Name | string | Yes | Gets or sets name of Client.
-Enabled | bool | No | Gets or sets whether client is enabled. Client can be used for authentication            if set to true. Client cannot be used for authentication if set to false.
-AccessTokenLifetime | int32 | No | Gets or sets lifetime of access token issued for this client after authentication.            Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.
-Tags | string[] | No | Gets or sets for OSIsoft internal use only.
-
-
+| Property            | Type     | Required | Description                                                                                                                                                                    |
+| ------------------- | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| RoleIds             | Guid[]   | No       | Gets or sets list of Roles to be assigned to this client. Member role is always required.            For security reasons we advise against assigning Admin roles to a client. |
+| Id                  | string   | No       | Gets or sets client ID for this client. This ID should be a GUID.                                                                                                              |
+| Name                | string   | Yes      | Gets or sets name of Client.                                                                                                                                                   |
+| Enabled             | bool     | No       | Gets or sets whether client is enabled. Client can be used for authentication            if set to true. Client cannot be used for authentication if set to false.             |
+| AccessTokenLifetime | int32    | No       | Gets or sets lifetime of access token issued for this client after authentication.            Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.              |
+| Tags                | string[] | No       | Gets or sets for OSIsoft internal use only.                                                                                                                                    |
 
 ```json
 {
@@ -319,6 +316,7 @@ Method not allowed at this base URL. Try the request again at the Global base UR
 #### 500
 
 Internal server error.
+
 ***
 
 ## `Get Client Credential Client`
@@ -394,6 +392,7 @@ Client or Tenant not found.
 #### 500
 
 Internal server error.
+
 ***
 
 ## `Get All Client Credential Clients`
@@ -589,6 +588,7 @@ Tenant not found.
 #### 500
 
 Internal server error.
+
 ***
 
 ## `Delete Client Credential Client`
@@ -648,6 +648,7 @@ Method not allowed at this base URL. Try the request again at the Global base UR
 #### 500
 
 Internal server error.
+
 ***
 
 ## `Get Header for Client Credential Client`
@@ -708,6 +709,7 @@ Client or Tenant not found.
 #### 500
 
 Internal server error.
+
 ***
 
 ## `Get Total Count of Clients`
@@ -781,5 +783,5 @@ Client or Tenant not found.
 #### 500
 
 Internal server error.
-***
 
+***

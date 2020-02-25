@@ -21,7 +21,7 @@ For HTTP requests and responses, the ClientCredentialClient object has the follo
 Property | Type | Description
  --- | --- | ---
 RoleIds | Guid[] | Gets or sets list of Roles to be assigned to this client. Member role is always required. For security reasons we advise against assigning Admin roles to a client.
-Id | string | Gets or sets client ID for this client. This ID should be a GUID.
+Id | string | Gets or sets secret Id.
 Name | string | Gets or sets name of Client.
 Enabled | bool | Gets or sets whether client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.
 AccessTokenLifetime | int32 | Gets or sets lifetime of access token issued for this client after authentication. Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.
@@ -118,7 +118,7 @@ Tags | string[] | No | Gets or sets for OSIsoft internal use only.
 ```json
 {
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-11-11T14:18:38.1759021-08:00",
+  "SecretExpirationDate": "2020-02-25T14:50:32.2702019-08:00",
   "RoleIds": [
     "00000000-0000-0000-0000-000000000000",
     "00000000-0000-0000-0000-000000000000"
@@ -148,14 +148,14 @@ Created.
 
 ##### Type:
 
- `ClientResponse`
+ `ClientCredentialClientCreateResponse`
 
 ```json
 {
   "Secret": "Secret",
   "Id": 0,
   "Description": "description",
-  "ExpirationDate": "2019-11-11T14:18:38.1787205-08:00",
+  "ExpirationDate": "2020-02-25T14:50:32.2722971-08:00",
   "Client": {
     "RoleIds": [
       "00000000-0000-0000-0000-000000000000",
@@ -516,7 +516,7 @@ Partial success.
 
 ##### Type:
 
- `MultiStatusResponse`
+ `ClientCredentialClientMultiStatusResponse`
 
 ```json
 {

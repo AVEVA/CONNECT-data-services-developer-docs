@@ -198,7 +198,7 @@ Partial success.
 
 ##### Type:
 
- `MultiStatusResponse`
+ `UserMultiStatusResponse`
 
 ```json
 {
@@ -915,7 +915,7 @@ Allowed for these roles:
 
 #### 200
 
-Updated.
+Updated User.
 
 ##### Type:
 
@@ -973,7 +973,7 @@ Delete a User. Admins cannot delete themselves.
             from being able to authenticate in the future.
             Existing access tokens for the User will be valid
             until their expiration date. Refresh tokens on
-            behalf of the ser will no longer be valid after the
+            behalf of the User will no longer be valid after the
             User has been deleted.
 
 ### Request

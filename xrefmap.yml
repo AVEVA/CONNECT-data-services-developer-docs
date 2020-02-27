@@ -67,6 +67,9 @@ references:
 - uid: DataViewsGettingData
   name: Getting Data
   href: Documentation/DataViews/Getting_Data.html
+- uid: DataViewShape
+  name: Data View Shape
+  href: Documentation/DataViews/Data_View_Shape.html
 - uid: DataViewsIntroductionDefine
   name: Introduction - Define a data view
   href: Documentation/DataViews/Introduction_Define_a_Data_View.html

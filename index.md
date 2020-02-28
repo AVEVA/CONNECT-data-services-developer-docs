@@ -43,7 +43,7 @@ centralized environment to aggregate data for reporting, advanced analytics, and
      - [Writing data](xref:sdsWritingData)
      - [API calls for writing data](xref:sdsWritingDataApi)
      - [Compression](xref:sdsCompression)
-     - [Searching](xref:sdsSearching)
+     - [Search in SDS](xref:sdsSearching)
      - [Filter expressions - data](xref:sdsFilterExpressions)
      - [Table format](xref:sdsTableFormat)
    - [Data Ingress and OSIsoft Message Format](xref:dataIngress)

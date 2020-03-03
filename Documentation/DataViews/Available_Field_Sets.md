@@ -70,12 +70,12 @@ HTTP 200 OK
                 {
                     "Source": "Id",
                     "Keys": [],
-                    "Label": "{DistinguisherValue} Id"
+                    "Label": "{IdentifyingValue} Id"
                 },
                 {
                     "Source": "Name",
                     "Keys": [],
-                    "Label": "{DistinguisherValue} Name"
+                    "Label": "{IdentifyingValue} Name"
                 },
                 {
                     "Source": "Tags",
@@ -86,49 +86,49 @@ HTTP 200 OK
                         "Gen1",
                         "Gen2",
                     ],
-                    "Label": "{DistinguisherValue} Tags"
+                    "Label": "{IdentifyingValue} Tags"
                 },
                 {
                     "Source": "Metadata",
                     "Keys": [
                         "Site"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "Timestamp"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "SolarRadiation"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "AmbientTemperature"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "CloudCover"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "Temperature"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 }
             ]
         }
@@ -157,7 +157,7 @@ This data view is the same as in the first example, except it also has a `Groupi
       "Keys": [
         "Site" 
       ],
-      "Label": "{DistinguisherValue} Id"
+      "Label": "{IdentifyingValue} Id"
     }
   ],
   "Shape": "Standard",

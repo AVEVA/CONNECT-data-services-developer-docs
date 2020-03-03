@@ -344,7 +344,7 @@ HTTP 200 OK
                 {
                     "Source": "Id",
                     "Keys": [],
-                    "Label": "{DistinguisherValue} Id"
+                    "Label": "{IdentifyingValue} Id"
                 },
                 {
                     "Source": "Tags",
@@ -355,28 +355,28 @@ HTTP 200 OK
                         "Gen1",
                         "Gen2",
                     ],
-                    "Label": "{DistinguisherValue} Tags"
+                    "Label": "{IdentifyingValue} Tags"
                 },
                 {
                     "Source": "Metadata",
                     "Keys": [
                         "Site"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "Timestamp"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "SolarRadiation"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
             ]
         }

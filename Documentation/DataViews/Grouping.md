@@ -10,7 +10,7 @@ The data items of a data view may be organized by grouping them. This is called 
 ## Purpose of grouping
 Without grouping, all of the data items returned by a `Query` will appear side-by-side. If the view includes many data items, its data records will be enormous. The fields are also likely to be ambiguous.
 
-"[Distinguishing](xref:DataViewsFieldSets)" the items within each field set is one way to disambiguate the fields, but only one `Field` may be a distinguisher. What if multiple metadata `Field`s are required to fully describe each data item? The [example below](xref:DataViewsGrouping#example-scenario) shows exactly that case: power inverters that are described by a Site, Meter, and number. Grouping can organize the data items into shapes that are consumable and/or represent a physical asset.
+"[Identifying](xref:DataViewsFieldSets)" the items within each field set is one way to disambiguate the fields, but only one `Field` may be an identifying field. What if multiple metadata `Field`s are required to fully describe each data item? The [example below](xref:DataViewsGrouping#example-scenario) shows exactly that case: power inverters that are described by a Site, Meter, and number. Grouping can organize the data items into shapes that are consumable and/or represent a physical asset.
 
 ## How it works
 To group a data view, specify one or more `Field` objects as the `DataView`'s `.GroupingFields`. 
@@ -70,7 +70,7 @@ Let us start with a simple data view. It queries for the aforementioned streams,
         {
           "Source": "PropertyId",
           "Keys": [ "Value" ],
-          "Label": "{DistinguisherValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {FirstKey}"
         }
       ],
     }
@@ -102,7 +102,7 @@ A simple way of disambiguating the data items is to group them by data item id. 
   "GroupingFields": [
     {
           "Source": "Id",
-          "Label": "{DistinguisherValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {FirstKey}"
     },
   ],
   "FieldSets": [
@@ -121,27 +121,27 @@ A simple way of disambiguating the data items is to group them by data item id. 
         {
           "Source": "Metadata",
           "Keys": [ "Site" ],
-          "Label": "{DistinguisherValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {FirstKey}"
         },
         {
           "Source": "Metadata",
           "Keys": [ "Meter" ],
-          "Label": "{DistinguisherValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {FirstKey}"
         },
         {
           "Source": "Metadata",
           "Keys": [ "Inverter" ],
-          "Label": "{DistinguisherValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {FirstKey}"
         },
         {
           "Source": "Metadata",
           "Keys": [ "Measurement" ],
-          "Label": "{DistinguisherValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {FirstKey}"
         },
         {
           "Source": "PropertyId",
           "Keys": [ "Value" ],
-          "Label": "{DistinguisherValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {FirstKey}"
         }
       ],
     }
@@ -166,7 +166,7 @@ Instead of grouping by data item id, let us group by metadata. This example uses
 
 - the `Field`s for Site, Meter, and Inverter metadata as the data view's `.GroupingFields`
 - a `FieldSet` of `.SourceType` `FieldSetSourceType.GroupingValue`, with a `Field` to show each grouping fields's value
-- the `Field` for Measurement metadata as the data item `FieldSet`'s `.Distinguisher`
+- the `Field` for Measurement metadata as the data item `FieldSet`'s `.IdentifyingField`
 
 ```json
 {
@@ -181,17 +181,17 @@ Instead of grouping by data item id, let us group by metadata. This example uses
         {
           "Source": "Metadata",
           "Keys": [ "Site" ],
-          "Label": "{DistinguisherValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {FirstKey}"
         },
         {
           "Source": "Metadata",
           "Keys": [ "Meter" ],
-          "Label": "{DistinguisherValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {FirstKey}"
         },
         {
           "Source": "Metadata",
           "Keys": [ "Inverter" ],
-          "Label": "{DistinguisherValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {FirstKey}"
         }
   ],
   "FieldSets": [
@@ -226,16 +226,16 @@ Instead of grouping by data item id, let us group by metadata. This example uses
     {
       "SourceType": "DataItem",
       "QueryId": "inverters",
-      "Distinguisher": {
+      "IdentifyingField": {
           "Source": "Metadata",
           "Keys": [ "Measurement" ],
-          "Label": "{DistinguisherValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {FirstKey}"
         },
       "Fields": [
         {
           "Source": "PropertyId",
           "Keys": [ "Value" ],
-          "Label": "{DistinguisherValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {FirstKey}"
         }
       ],
     }
@@ -279,17 +279,17 @@ This example includes two actions:
         {
           "Source": "Metadata",
           "Keys": [ "Site" ],
-          "Label": "{DistinguisherValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {FirstKey}"
         },
         {
           "Source": "Metadata",
           "Keys": [ "Meter" ],
-          "Label": "{DistinguisherValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {FirstKey}"
         },
         {
           "Source": "Metadata",
           "Keys": [ "Inverter" ],
-          "Label": "{DistinguisherValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {FirstKey}"
         }
   ],
   "FieldSets": [
@@ -321,16 +321,16 @@ This example includes two actions:
     {
       "SourceType": "DataItem",
       "QueryId": "inverters",
-      "Distinguisher": {
+      "IdentifyingField": {
           "Source": "Metadata",
           "Keys": [ "Measurement" ],
-          "Label": "{DistinguisherValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {FirstKey}"
         },
       "Fields": [
         {
           "Source": "PropertyId",
           "Keys": [ "Value" ],
-          "Label": "{DistinguisherValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {FirstKey}"
         }
       ],
     },
@@ -341,12 +341,12 @@ This example includes two actions:
         {
           "Source": "PropertyId",
           "Keys": [ "SolarRadiation" ],
-          "Label": "{DistinguisherValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {FirstKey}"
         },
         {
           "Source": "PropertyId",
           "Keys": [ "Temperature", "AmbientTemperature" ],
-          "Label": "{DistinguisherValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {FirstKey}"
         }
       ]
     }

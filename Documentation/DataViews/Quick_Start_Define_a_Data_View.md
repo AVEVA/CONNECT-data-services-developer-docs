@@ -275,12 +275,12 @@ HTTP 200 OK
                 {
                     "Source": "Id",
                     "Keys": [],
-                    "Label": "{DistinguisherValue} Id"
+                    "Label": "{IdentifyingValue} Id"
                 },
                 {
                     "Source": "Name",
                     "Keys": [],
-                    "Label": "{DistinguisherValue} Name"
+                    "Label": "{IdentifyingValue} Name"
                 },
                 {
                     "Source": "Tags",
@@ -291,49 +291,49 @@ HTTP 200 OK
                         "Gen1",
                         "Gen2",
                     ],
-                    "Label": "{DistinguisherValue} Tags"
+                    "Label": "{IdentifyingValue} Tags"
                 },
                 {
                     "Source": "Metadata",
                     "Keys": [
                         "Site"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "Timestamp"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "SolarRadiation"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "AmbientTemperature"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "CloudCover"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "Temperature"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 }
             ]
         }
@@ -379,12 +379,12 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
                 {
                     "Source": "Id",
                     "Keys": [],
-                    "Label": "{DistinguisherValue} Id"
+                    "Label": "{IdentifyingValue} Id"
                 },
                 {
                     "Source": "Name",
                     "Keys": [],
-                    "Label": "{DistinguisherValue} Name"
+                    "Label": "{IdentifyingValue} Name"
                 },
                 {
                     "Source": "Tags",
@@ -395,42 +395,42 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
                         "Gen1",
                         "Gen2",
                     ],
-                    "Label": "{DistinguisherValue} Tags"
+                    "Label": "{IdentifyingValue} Tags"
                 },
                 {
                     "Source": "Metadata",
                     "Keys": [
                         "Site"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "SolarRadiation"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "AmbientTemperature"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "CloudCover"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "Temperature"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 }
             ],
        },
@@ -467,7 +467,7 @@ One field set with one field: Timestamp, available but not used in the data view
                     "Keys": [
                         "Timestamp"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 }
             ]
         }
@@ -573,12 +573,12 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
                 {
                     "Source": "Id",
                     "Keys": [],
-                    "Label": "{DistinguisherValue} Id"
+                    "Label": "{IdentifyingValue} Id"
                 },
                 {
                     "Source": "Name",
                     "Keys": [],
-                    "Label": "{DistinguisherValue} Name"
+                    "Label": "{IdentifyingValue} Name"
                 },
                 {
                     "Source": "Tags",
@@ -589,42 +589,42 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
                         "Gen1",
                         "Gen2",
                     ],
-                    "Label": "{DistinguisherValue} Tags"
+                    "Label": "{IdentifyingValue} Tags"
                 },
                 {
                     "Source": "Metadata",
                     "Keys": [
                         "Site"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "SolarRadiation"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "AmbientTemperature"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "CloudCover"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "Temperature"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 }
             ],
        },
@@ -635,7 +635,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
       "Keys": [
         "Site" 
       ],
-      "Label": "{DistinguisherValue} Id"
+      "Label": "{IdentifyingValue} Id"
     }
   ],
   "Shape": "Standard",
@@ -744,7 +744,7 @@ HTTP 200 OK
                     "Keys": [
                         "Timestamp"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 }
             ]
         }
@@ -757,7 +757,7 @@ This allows the grouping field value to appear as a single field, versus being r
 ### Action
 Whatever field you’re using as the grouping field, remove it from the fields included in the data view, since it’s redundant now.
 
-## Distinguish data items
+## Identify data items
 
 A different and complementary way of disambiguating the data items is to “distinguish” them within the field set.
 
@@ -772,7 +772,7 @@ This is also useful for aligning data items across groups. Imagine if each site 
 The data views engine must be told how the streams align across sites. Here, it makes sense to align them by which measurement they represent: _Primary_ or _Backup_.
 
 ### Action
-Move the field used as `GroupingField` over to being the “.Distinguisher” of the weather data items `FieldSet`.
+Move the field used as `GroupingField` over to being the “.IdentifyingField” of the weather data items `FieldSet`.
 ```json
 PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
 {
@@ -799,56 +799,56 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
         {
             "SourceType": "DataItem",
             "QueryId": "weather",
-            "Distinguisher": {
+            "IdentifyingField": {
                 "Source": "Metadata",
                 "Keys": [
                     "Site"
                 ],
-                "Label": "{DistinguisherValue} {FirstKey}"
+                "Label": "{IdentifyingValue} {FirstKey}"
             },
             "Fields": [
                 {
                     "Source": "Id",
                     "Keys": [],
-                    "Label": "{DistinguisherValue} Id"
+                    "Label": "{IdentifyingValue} Id"
                 },
                 {
                     "Source": "Name",
                     "Keys": [],
-                    "Label": "{DistinguisherValue} Name"
+                    "Label": "{IdentifyingValue} Name"
                 },
                 {
                     "Source": "Tags",
                     "Keys": [],
-                    "Label": "{DistinguisherValue} Tags"
+                    "Label": "{IdentifyingValue} Tags"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "SolarRadiation"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "AmbientTemperature"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "CloudCover"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "Temperature"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 }
             ],
        },
@@ -871,7 +871,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
 ```
 
 ### Expected result
-We’re back to a wide table, but the field ids are now distinct. The suggested/default values of the Available Fields’ `.Label` property includes {DistinguisherValue}, so if using those defaults, the impact of adding a Distinguisher is immediately clear.
+We’re back to a wide table, but the field ids are now distinct. The suggested/default values of the Available Fields’ `.Label` property includes {IdentifyingValue}, so if using those defaults, the impact of adding an identifying field is immediately clear.
 
 ```json
 HTTP 200 OK
@@ -916,7 +916,7 @@ Find the `Field` associated with "AmbientTemperature". To the `Field`'s `.Keys` 
     "AmbientTemperature",
     "Temperature"
   ],
-  "Label": "{DistinguisherValue} {FirstKey}"
+  "Label": "{IdentifyingValue} {FirstKey}"
 },
 ```
 Now that field will match to either "Temperature" or "AmbientTemperature".  
@@ -950,25 +950,25 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
         {
             "SourceType": "DataItem",
             "QueryId": "weather",
-            "Distinguisher": {
+            "IdentifyingField": {
                 "Source": "Metadata",
                 "Keys": [
                     "Site"
                 ],
-                "Label": "{DistinguisherValue} {FirstKey}"
+                "Label": "{IdentifyingValue} {FirstKey}"
             },
             "Fields": [
                 {
                     "Source": "Tags",
                     "Keys": [],
-                    "Label": "{DistinguisherValue} Tags"
+                    "Label": "{IdentifyingValue} Tags"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "SolarRadiation"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
@@ -976,14 +976,14 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
                         "AmbientTemperature",
                         "Temperature"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "CloudCover"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
             ],
        },

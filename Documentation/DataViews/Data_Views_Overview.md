@@ -12,7 +12,7 @@ Understanding how the data view resolves into content is important both for the 
 
 The collection(s) of streams that a data view acts on is the result of one or more queries. Streams (and any future data source types) are collectively known as *data items*. Values from the data items' properties can be included in the data view as *fields*, as can information about the data items (such as Id and Metadata). 
 
-There are two primary means of controlling how the data items will be organized. One or more fields may be designated to *group* the data view, effectively grouping or partitioning the data items on some value. Within a set of fields, one field may be designated to *distinguish* or align the items.
+There are two primary means of controlling how the data items will be organized. One or more fields may be designated to *group* the data view, effectively grouping or partitioning the data items on some value. Within a set of fields, one field may be designated to *identify* or align the items.
 
 Data view data is available in several formats, including JSON and CSV, with a user-specified range and granularity. Data is obtained by querying the REST API.
 

@@ -47,7 +47,7 @@ The following represents a data view grouped by "Meter", including fields for th
     {
           "Source": "Metadata",
           "Keys": [ "Meter" ],
-          "Label": "{DistinguisherValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {FirstKey}"
     },
   ],
   "FieldSets": [
@@ -75,12 +75,12 @@ The following represents a data view grouped by "Meter", including fields for th
         {
           "Source": "PropertyId",
           "Keys": [ "Value" ],
-          "Label": "{DistinguisherValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {FirstKey}"
         },
         {
           "Source": "Tags",
           "Keys": [ "Low Resolution", "High Resolution" ],
-          "Label": "{DistinguisherValue} Tags"
+          "Label": "{IdentifyingValue} Tags"
         },
       ],
     }
@@ -99,13 +99,13 @@ Two things are clearly undesirable here:
 1. The field identifiers are ambiguous
 2. The result is sparse: the data views engine has not been told how to align the data items across groups, so it has no idea that all "Power In" streams are similar.
 
-To fix this, we will add a `.Distinguisher` to the field set.
+To fix this, we will add a `.IdentifyingField` to the field set.
 
-#### Distinguisher
-If the field set resolves to multiple data items in any group (or if grouping is not used), then a field should be designated as the field set's `.Distinguisher`. If one lone criterion is not a sufficient or useful way of disambiguating the fields, then [grouping](xref:DataViewsGrouping) by additional criteria may be necessary.
+#### Identifying field
+If the field set resolves to multiple data items in any group (or if grouping is not used), then a field should be designated as the field set's `.IdentifyingField`. If one lone criterion is not a sufficient or useful way of disambiguating the fields, then [grouping](xref:DataViewsGrouping) by additional criteria may be necessary.
 
-#### Example: Adding a distinguisher
-To the data view from the previous example, we will add a `Field` as the `.Distinguisher` of its field set. In this example, it makes sense to distinguish each data item by its _Measurement_.
+#### Example: Adding an identifying field
+To the data view from the previous example, we will add a `Field` as the `.IdentifyingField` of its field set. In this example, it makes sense to distinguish each data item by its _Measurement_.
 
 ```json
 {
@@ -120,7 +120,7 @@ To the data view from the previous example, we will add a `Field` as the `.Disti
     {
           "Source": "Metadata",
           "Keys": [ "Meter" ],
-          "Label": "{DistinguisherValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {FirstKey}"
     },
   ],
   "FieldSets": [
@@ -144,7 +144,7 @@ To the data view from the previous example, we will add a `Field` as the `.Disti
     {
       "SourceType": "DataItem",
       "QueryId": "inverters",
-      "Distinguisher": {
+      "IdentifyingField": {
         {
           "Source": "Metadata",
           "Keys": [ "Measurement" ],
@@ -154,12 +154,12 @@ To the data view from the previous example, we will add a `Field` as the `.Disti
         {
           "Source": "PropertyId",
           "Keys": [ "Value" ],
-          "Label": "{DistinguisherValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {FirstKey}"
         },
         {
           "Source": "Tags",
           "Keys": [ "Low Resolution", "High Resolution" ],
-          "Label": "{DistinguisherValue} Tags"
+          "Label": "{IdentifyingValue} Tags"
         },
       ],
     }
@@ -191,7 +191,7 @@ In cases where the identifiers are unique, the identifier is suffixed with an or
 
 There are three special parameters available for use in field labels:
 - `{GroupingFieldLabel}` - the value of the grouping field
-- `{DistinguisherValue}` - the value of the distinguisher
+- `{IdentifyingValue}` - the value of the identifying field
 - `{FirstKey}` - the value of the first of the `"Keys"` specified on the field
 
 If a special parameter fails to resolve, it becomes an empty string, `""`.

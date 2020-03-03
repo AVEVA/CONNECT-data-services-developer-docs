@@ -33,7 +33,7 @@ Data items may be [grouped](xref:DataViewsGrouping, which amounts to grouping or
 ### Organizing the data fields
 Field sets and fields resolve in the order they are defined. They may be re-ordered.
 
-Within each group, a field set may be associated with multiple data items. It is often necessary to disambiguate these items. Items can be disambiguated by specifying a [`.Distinguisher`](xref:DataViewsFieldSets#distinguisher). A distinguisher is a field that tells the data items apart within a group, such as the value of _Measurement_ metadata (i.e., the data items are distinguished by what they measure). Distinguishing data items also allows the data views engine to "align" them across groups, since it is clear that streams measuring, e.g., _Power Out_ are alike, and the streams measuring _Power In_ are alike.
+Within each group, a field set may be associated with multiple data items. It is often necessary to disambiguate these items. Items can be disambiguated by specifying a [`.IdentifyingField`](xref:DataViewsFieldSets#IdentifyingField). An identifying field is a field that tells the data items apart within a group, such as the value of _Measurement_ metadata (i.e., the data items are identified by what they measure). Identifying data items also allows the data views engine to "align" them across groups, since it is clear that streams measuring, e.g., _Power Out_ are alike, and the streams measuring _Power In_ are alike.
 
 
 ### Defining index type and default range
@@ -79,7 +79,7 @@ A set of fields included in the data view, sharing a common role or source (`.So
 | SourceType | FieldSetSourceType | Required |  | The type of role fulfilled by the field set |
 | QueryId | string | Optional/Required | null | Required when SourceType is DataItem. Must correspond to a query defined in this data view. Not applicable to other source types.
 | Fields | Field[] | Optional | [ ] | Data fields to include in the data view. Often copied or adapted from the view's available field sets, which are exposed in a resolved resource.
-| Distinguisher | Field | Optional | null | A field by which to tell the data items apart, within each group.
+| IdentifyingField | Field | Optional | null | A field by which to tell the data items apart, within each group.
 
 ### FieldSetSourceType enumeration
 Defines the role or source type of a field set.
@@ -95,7 +95,7 @@ Individual piece of information, such as a property of an SDS stream, or metadat
 |--|--|--|--|--|
 | Source | FieldSource | Optional | NotApplicable | For fields of a DataItem-sourced FieldSet, identifies the source of the field's values. Some sources are used in conjunction with the Keys property (see below).
 | Keys | String[] | Optional | [ ] | Used for certain FieldSources, e.g. to map to specific stream properties by id. If more than one key is specified, they are matched as exclusive-or.
-| Label | string | Optional | null | Friendly name for the field. Certain tokens have special meaning: one of these, {DistinguisherValue}, is included in the suggested labels of AvailableFieldSets. Tokens that do not resolve are "" (empty string). Label is trimmed of whitespace when used to identify field mappings.
+| Label | string | Optional | null | Friendly name for the field. Certain tokens have special meaning: one of these, {IdentifyingValue}, is included in the suggested labels of AvailableFieldSets. Tokens that do not resolve are "" (empty string). Label is trimmed of whitespace when used to identify field mappings.
 
 ### FieldSource enumeration
 For fields that derive data from a data item (e.g. an SDS stream), the `FieldSource` enumeration specifies the part of that data item that a Field resolves to. Some sources require one or more `.Keys` to be specified on the field, such as `PropertyId` in which a key is the id of a desired property.

@@ -8,7 +8,7 @@ A data view is likely to include multiple fields of information. One field serve
 
 Individual fields are organized into `FieldSet`s. Field sets are collections of fields that share a common role or source type. Each field set performs a specific type of role:
 - FieldSetSourceType.**Index** - Provides the index field for the data view. A data view must have exactly one Index field set.
-- FieldSetSourceType.**SectionerValue** - Displays values that the view is [sectioned](xref:DataViewsSectioning) by.
+- FieldSetSourceType.**GroupingValue** - Displays values that the view is [grouped](xref:DataViewsGrouping) by.
 - FieldSetSourceType.**DataItem** - Resolves for each data item from a particular query.
 
 ## Using field sets
@@ -20,7 +20,7 @@ The typical workflow for adding field sets, and the fields in them, is to use or
 A data view must have exactly one field set serving as its index: a field set whose `.SourceType` is `FieldSetSourceType.Index`. Currently, because the supported index type is a non-compound "DateTime", the index field set may contain only one `Field`. That `Field` must be of `.Source` `FieldSource.None`, because the data views engine provides interpolated index values.
 
 ### Data item field sets
-Field sets whose source is the `DataItem`s from a `Query` will "resolve" into fields for each data item. If the data items have been [sectioned](xref:DataViewsSectioning), then this happens within the context of each section.
+Field sets whose source is the `DataItem`s from a `Query` will "resolve" into fields for each data item. If the data items have been [grouped](xref:DataViewsGrouping), then this happens within the context of each group.
 
 #### Example: Defining field sets
 Let us take a subset of the [example scenario](xref:DataViewsExampleScenario)'s power inverter streams, returned by the `Query` [value](xref:sdsSearching) `"TypeId:docs-pi-inverter AND Site:Winterthur"`. 
@@ -32,7 +32,7 @@ Let us take a subset of the [example scenario](xref:DataViewsExampleScenario)'s 
 | Winterthur | Secondary | Power In | ROSE.Meter.Secondary.Inverter.0.PwrIn | Low Resolution |
 | Winterthur | Secondary | Power Out | ROSE.Meter.Secondary.Inverter.0.PwrOut | Low Resolution |
 
-The following represents a data view sectioned by "Meter", including fields for the sectioner value, and each data item's "Tags" and property "Value":
+The following represents a data view grouped by "Meter", including fields for the grouping value, and each data item's "Tags" and property "Value":
 
 ```json
 {
@@ -43,7 +43,7 @@ The following represents a data view sectioned by "Meter", including fields for 
       "Value": "TypeId:docs-pi-inverter AND Site:Winterthur"
     }
   ],
-  "Sectioners": [
+  "GroupingFields": [
     {
           "Source": "Metadata",
           "Keys": [ "Meter" ],
@@ -60,11 +60,11 @@ The following represents a data view sectioned by "Meter", including fields for 
       ]
     },
     {
-      "SourceType": "SectionValue",
+      "SourceType": "GroupingValue",
       "Fields": [
         {
           "Keys": [ "0" ],
-          "Label": "{SectionerLabel}"
+          "Label": "{GroupingFieldLabel}"
         }
       ],
     },
@@ -88,7 +88,7 @@ The following represents a data view sectioned by "Meter", including fields for 
 }
 ```
 
-The view resolves into two sections of field mappings:
+The view resolves into two groups of field mappings:
 
 | Timestamp.0 | Meter.1 | Value.2 | Tags.3 | Value.4 | Tags.5 | Value.6 | Tags.7 | Value.8 | Tags.9 |
 |--|--|--|--|--|--|--|--|--|--|
@@ -97,12 +97,12 @@ The view resolves into two sections of field mappings:
 
 Two things are clearly undesirable here:
 1. The field identifiers are ambiguous
-2. The result is sparse: the data views engine has not been told how to align the data items across sections, so it has no idea that all "Power In" streams are similar.
+2. The result is sparse: the data views engine has not been told how to align the data items across groups, so it has no idea that all "Power In" streams are similar.
 
 To fix this, we will add a `.Distinguisher` to the field set.
 
 #### Distinguisher
-If the field set resolves to multiple data items in any section (or if sectioning is not used), then a field should be designated as the field set's `.Distinguisher`. If one lone criterion is not a sufficient or useful way of disambiguating the fields, then [sectioning](xref:DataViewsSectioning) by additional criteria may be necessary.
+If the field set resolves to multiple data items in any group (or if grouping is not used), then a field should be designated as the field set's `.Distinguisher`. If one lone criterion is not a sufficient or useful way of disambiguating the fields, then [grouping](xref:DataViewsGrouping) by additional criteria may be necessary.
 
 #### Example: Adding a distinguisher
 To the data view from the previous example, we will add a `Field` as the `.Distinguisher` of its field set. In this example, it makes sense to distinguish each data item by its _Measurement_.
@@ -116,7 +116,7 @@ To the data view from the previous example, we will add a `Field` as the `.Disti
       "Value": "TypeId:docs-pi-inverter AND Site:Winterthur"
     }
   ],
-  "Sectioners": [
+  "GroupingFields": [
     {
           "Source": "Metadata",
           "Keys": [ "Meter" ],
@@ -133,11 +133,11 @@ To the data view from the previous example, we will add a `Field` as the `.Disti
       ]
     },
     {
-      "SourceType": "SectionValue",
+      "SourceType": "GroupingValue",
       "Fields": [
         {
           "Keys": [ "0" ],
-          "Label": "{SectionerLabel}"
+          "Label": "{GroupingFieldLabel}"
         }
       ],
     },
@@ -167,7 +167,7 @@ To the data view from the previous example, we will add a `Field` as the `.Disti
 }
 ```
 
-The result is much more consumable. The field identifiers are no longer ambiguous, and like data items are aligned across sections:
+The result is much more consumable. The field identifiers are no longer ambiguous, and like data items are aligned across groups:
 
 | Timestamp | Meter | Power In Value | Power In Tags | Power Out Value | Power Out Tags |
 |--|--|--|--|--|--|
@@ -190,7 +190,7 @@ In cases where the identifiers are unique, the identifier is suffixed with an or
 |--|--|--|
 
 There are three special parameters available for use in field labels:
-- `{SectionValue}` - the value of the sectioner
+- `{GroupingFieldLabel}` - the value of the grouping field
 - `{DistinguisherValue}` - the value of the distinguisher
 - `{FirstKey}` - the value of the first of the `"Keys"` specified on the field
 

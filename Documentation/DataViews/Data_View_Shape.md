@@ -32,7 +32,7 @@ Timestamp.0,Id.1,SolarRadiation.2,Temperature.3,Tags.4,Id.5,SolarRadiation.6,Tem
 
 ##### Example: Get data response body for standard shape with grouping field (Site)
 
-The use of a grouping field will restructure the table vertically. See [Grouping documentation](xref:DataViewsSectioning) for details.
+The use of a grouping field will restructure the table vertically. See [Grouping documentation](xref:DataViewsGrouping) for details.
 
 ```csv
 Timestamp,Site,Id,SolarRadiation,Temperature,Tags

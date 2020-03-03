@@ -35,4 +35,4 @@ The collection of ineligible data items represents SdsStreams that match the que
 
 ## Groups
 
-[Grouping](xref:DataViewsGrouping) is optional when defining the data view. If the `.grouping field` is not defined on the data view, the resolved data view shows a single group with all eligible data items. If the `.grouping field` is defined, the resolved data view shows multiple groups, each with the list of data items for the group and the `.values` field showing the matching group's value(s). In this case, if a data item does not match any group, it is added to all groups.
+[Grouping](xref:DataViewsGrouping) is optional when defining the data view. If the `.GroupingFields` section is not defined on the data view, the resolved data view shows a single group with all eligible data items. If the `.GroupingFields` is defined, the resolved data view shows multiple groups, each with the list of data items for the group and the `.values` field showing the matching group's value(s). In this case, if a data item does not match any group, it is added to all groups.

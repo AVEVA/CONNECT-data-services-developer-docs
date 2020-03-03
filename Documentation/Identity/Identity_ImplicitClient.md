@@ -2,9 +2,9 @@
 uid: identityImplicitClient
 ---
 
-# ImplicitClient (Obsolete)
+# ImplicitClient (Deprecated)
 
-Implicit Client has been obsoleted. We suggest using a Authorization Code Client instead of an Implicit Client.
+Implicit Client has been deprecated. We suggest using an Authorization Code Client instead of an Implicit Client.
             Implicit clients are used in Javascript/Browser (SPA) based applications or native
             mobile applications with the presence of a User.
             You can read more about these clients
@@ -84,9 +84,9 @@ All responses will have an error message in the body. The exceptions are 200 res
 
 If and when contacting OSIsoft support about this error, please provide the OperationId.
 
-## `Create an Implicit Client (Obsolete)`
+## `Create an Implicit Client (Deprecated)`
 
-Implicit Client has been obsoleted, please use Authorization Code Client instead.
+Implicit Client has been deprecated, please use Authorization Code Client instead.
 
 Create an Implicit Client in a Tenant. No Secret will be generated for this
             Client.
@@ -226,9 +226,9 @@ Client Id already exists.
 Internal server error.
 ***
 
-## `Update an Implicit Client (Obsolete)`
+## `Update an Implicit Client (Deprecated)`
 
-Implicit Client has been obsoleted, please use Authorization Code Client instead.
+Implicit Client has been deprecated, please use Authorization Code Client instead.
 
 Update an Implicit Client. It can take up to one hour
             for update to manifest in the authentication process.
@@ -371,9 +371,9 @@ Method not allowed at this base URL. Try the request again at the Global base UR
 Internal server error.
 ***
 
-## `Get an Implicit Client (Obsolete)`
+## `Get an Implicit Client (Deprecated)`
 
-Implicit Client has been obsoleted, please use Authorization Code Client instead.
+Implicit Client has been deprecated, please use Authorization Code Client instead.
 
 Get an Implicit Client from a Tenant.
 
@@ -457,9 +457,9 @@ Client or Tenant not found.
 Internal server error.
 ***
 
-## `Get All Implicit Clients from Tenant (Obsolete)`
+## `Get All Implicit Clients from Tenant (Deprecated)`
 
-Implicit Client has been obsoleted, please use Authorization Code Client instead.
+Implicit Client has been deprecated, please use Authorization Code Client instead.
 
 Get all Implicit clients from a Tenant.
             Optionally, get a list of requested clients. Total number
@@ -609,9 +609,9 @@ Tenant not found.
 Internal server error.
 ***
 
-## `Delete an Implicit Client (Obsolete)`
+## `Delete an Implicit Client (Deprecated)`
 
-Implicit Client has been obsoleted, please use Authorization Code Client instead.
+Implicit Client has been deprecated, please use Authorization Code Client instead.
 
 Delete an Implicit Client. It can take up to one hour
             for deletion to manifest in the authentication process. Access
@@ -670,9 +670,9 @@ Method not allowed at this base URL. Try the request again at the Global base UR
 Internal server error.
 ***
 
-## `Get Header for Implicit Client (Obsolete)`
+## `Get Header for Implicit Client (Deprecated)`
 
-Implicit Client has been obsoleted, please use Authorization Code Client instead.
+Implicit Client has been deprecated, please use Authorization Code Client instead.
 
 Validate that an Implicit Client exists.
 
@@ -729,9 +729,9 @@ Client or Tenant not found.
 Internal server error.
 ***
 
-## `Get Total Count of Implicit Clients (Obsolete)`
+## `Get Total Count of Implicit Clients (Deprecated)`
 
-Implicit Client has been obsoleted, please use Authorization Code Client instead.
+Implicit Client has been deprecated, please use Authorization Code Client instead.
 
 Return total number of Implicit clients in a Tenant.
             Optionally, check based on a list of requested clients. The

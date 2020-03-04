@@ -33,7 +33,7 @@ Data items may be [grouped](xref:DataViewsGrouping, which amounts to grouping or
 ### Organizing the data fields
 Field sets and fields resolve in the order they are defined. They may be re-ordered.
 
-Within each group, a field set may be associated with multiple data items. It is often necessary to disambiguate these items. Items can be disambiguated by specifying a [`.IdentifyingField`](xref:DataViewsFieldSets#IdentifyingField). An identifying field is a field that tells the data items apart within a group, such as the value of _Measurement_ metadata (i.e., the data items are identified by what they measure). Identifying data items also allows the data views engine to "align" them across groups, since it is clear that streams measuring, e.g., _Power Out_ are alike, and the streams measuring _Power In_ are alike.
+Within each group, a field set may be associated with multiple data items. It is often necessary to disambiguate these items. Items can be disambiguated by specifying a [`.IdentifyingField`](xref:DataViewsFieldSets#identifying-field). An identifying field is a field that tells the data items apart within a group, such as the value of _Measurement_ metadata (i.e., the data items are identified by what they measure). Identifying data items also allows the data views engine to "align" them across groups, since it is clear that streams measuring, e.g., _Power Out_ are alike, and the streams measuring _Power In_ are alike.
 
 
 ### Defining index type and default range

@@ -34,19 +34,19 @@ Complete the following to define data fields to include in a data view:
 
 You can return at any time to adjust which fields are included in the data view.
 
-## Group and identify data items
+## Section and distinguish data items
 
-### Group items globally
-You may wish to globally *group* the data items by some common factor (e.g. site or asset id).  Complete the following to group data items in a data view:
+### Section items globally
+You may wish to globally *section*, or group, the data items by some common factor (e.g. site or asset id).  Complete the following to section data items in a data view:
 
-1. Define one or more fields as `.GroupingFields` of the data view. Data items will be grouped by these fields. The available field sets now include field(s) that link to the grouping field values.
+1. Define one or more fields as `.Sectioners` of the data view. Data items will be grouped by these fields. The available field sets now include field(s) that link to the sectioner values.
 
-2. Include the newly-available grouping value fields in the data view, so those values are included in the data view data.
+2. Include the newly-available sectioner value fields in the data view, so those values are included in the data view data.
 
-### Identifying items locally within a field set
-If a group contains multiple data items from the same query, you may wish to *identify* those data items so that they are not ambiguous and so they will be aligned across groups.  Complete the following to identify data items within a field set:
+### Distinguishing items locally within a field set
+If a section contains multiple data items from the same query, you may wish to *distinguish* those data items so that they are not ambiguous and so they will be aligned across sections.  Complete the following to distinguish data items within a field set:
 
-1. On the field set in question, assign a field as the `.IdentifyingField` to tell the data items apart.
-2. Ensure that each field's label includes the {IdentifyingValue} token so the field labels are unique. The default field labels already include it.
+1. On the field set in question, assign a field as the `.Distinguisher` to tell the data items apart.
+2. Ensure that each field's label includes the {DistinguisherValue} token so the field labels are unique. The default field labels already include it.
 
-You can return at any time to change the grouping fields and identifying fields.
+You can return at any time to change the sectioners and distinguishers.

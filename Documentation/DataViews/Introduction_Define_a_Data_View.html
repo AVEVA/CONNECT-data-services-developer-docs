@@ -103,22 +103,22 @@
 <li>If your streams have slight variations in property naming (e.g. a property called either <code>temperature</code> or <code>ambient_temperature</code>), combine fields so that they can match alternate values.</li>
 </ol>
 <p>You can return at any time to adjust which fields are included in the data view.</p>
-<h2 id="section-and-distinguish-data-items">Section and distinguish data items</h2>
-<h3 id="section-items-globally">Section items globally</h3>
-<p>You may wish to globally <em>section</em>, or group, the data items by some common factor (e.g. site or asset id).  Complete the following to section data items in a data view:</p>
+<h2 id="group-and-identify-data-items">Group and identify data items</h2>
+<h3 id="group-items-globally">Group items globally</h3>
+<p>You may wish to globally <em>group</em> the data items by some common factor (e.g. site or asset id).  Complete the following to group data items in a data view:</p>
 <ol>
-<li><p>Define one or more fields as <code>.Sectioners</code> of the data view. Data items will be grouped by these fields. The available field sets now include field(s) that link to the sectioner values.</p>
+<li><p>Define one or more fields as <code>.GroupingFields</code> of the data view. Data items will be grouped by these fields. The available field sets now include field(s) that link to the grouping field values.</p>
 </li>
-<li><p>Include the newly-available sectioner value fields in the data view, so those values are included in the data view data.</p>
+<li><p>Include the newly-available grouping value fields in the data view, so those values are included in the data view data.</p>
 </li>
 </ol>
-<h3 id="distinguishing-items-locally-within-a-field-set">Distinguishing items locally within a field set</h3>
-<p>If a section contains multiple data items from the same query, you may wish to <em>distinguish</em> those data items so that they are not ambiguous and so they will be aligned across sections.  Complete the following to distinguish data items within a field set:</p>
+<h3 id="identifying-items-locally-within-a-field-set">Identifying items locally within a field set</h3>
+<p>If a group contains multiple data items from the same query, you may wish to <em>identify</em> those data items so that they are not ambiguous and so they will be aligned across groups.  Complete the following to identify data items within a field set:</p>
 <ol>
-<li>On the field set in question, assign a field as the <code>.Distinguisher</code> to tell the data items apart.</li>
-<li>Ensure that each field&#39;s label includes the {DistinguisherValue} token so the field labels are unique. The default field labels already include it.</li>
+<li>On the field set in question, assign a field as the <code>.IdentifyingField</code> to tell the data items apart.</li>
+<li>Ensure that each field&#39;s label includes the {IdentifyingValue} token so the field labels are unique. The default field labels already include it.</li>
 </ol>
-<p>You can return at any time to change the sectioners and distinguishers.</p>
+<p>You can return at any time to change the grouping fields and identifying fields.</p>
 </article>
           </div>
           

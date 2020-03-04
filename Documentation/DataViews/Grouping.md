@@ -4,7 +4,7 @@ uid: DataViewsGrouping
 
 # Grouping
 
-The data items of a data view may be organized by grouping them. This is called _grouping_. It is one way of producing a meaningful, consumable shape of data.
+The data items of a data view may be organized by _grouping_ them. It is one way of producing a meaningful, consumable shape of data.
 
 
 ## Purpose of grouping

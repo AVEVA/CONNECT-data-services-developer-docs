@@ -759,7 +759,7 @@ Whatever field you’re using as the grouping field, remove it from the fields i
 
 ## Identify data items
 
-A different and complementary way of disambiguating the data items is to “distinguish” them within the field set.
+A different and complementary way of disambiguating the data items is to “identify” them within the field set.
 
 This is also useful for aligning data items across groups. Imagine if each site had an additional stream from a backup weather station:
 

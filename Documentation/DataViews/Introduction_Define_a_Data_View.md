@@ -43,7 +43,7 @@ You may wish to globally *group* the data items by some common factor (e.g. site
 
 2. Include the newly-available grouping value fields in the data view, so those values are included in the data view data.
 
-### Distinguishing items locally within a field set
+### Identifying items locally within a field set
 If a group contains multiple data items from the same query, you may wish to *identify* those data items so that they are not ambiguous and so they will be aligned across groups.  Complete the following to identify data items within a field set:
 
 1. On the field set in question, assign a field as the `.IdentifyingField` to tell the data items apart.

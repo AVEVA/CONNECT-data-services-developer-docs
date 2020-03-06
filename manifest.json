@@ -366,7 +366,19 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Identity/Identity_AuthorizationCodeClient.html",
-          "hash": "SvTyUPyMzrTBAQUo1Bno/Q=="
+          "hash": "TMk2LLyiKm+LjVRRuT5rwQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/Identity/Identity_AutomationIdentity.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/Identity/Identity_AutomationIdentity.html",
+          "hash": "TdczW/7FC7yAFdkB5Qb+0g=="
         }
       },
       "is_incremental": false,
@@ -390,7 +402,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Identity/Identity_ClientCredentialClient.html",
-          "hash": "/kEbK4w0EorGo1PcL6hGvQ=="
+          "hash": "XXu799F8oIYhdXc1kPapbw=="
         }
       },
       "is_incremental": false,
@@ -402,7 +414,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Identity/Identity_HybridClient.html",
-          "hash": "rnoAy9Ki9JWnQzDbdwWy7Q=="
+          "hash": "k5iQ+wEaYGAVXr5kdbivjQ=="
         }
       },
       "is_incremental": false,
@@ -426,7 +438,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Identity/Identity_ImplicitClient.html",
-          "hash": "JSaoQJq9hj64FlGWnLs5mQ=="
+          "hash": "jWlUFB45zcqBjIpZy9xmmg=="
         }
       },
       "is_incremental": false,
@@ -438,7 +450,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Identity/Identity_Invitation.html",
-          "hash": "tFlJTtUOLIUInJzes7XGIw=="
+          "hash": "YcmgxCNMEo1oFJ2AroZDNQ=="
         }
       },
       "is_incremental": false,
@@ -474,7 +486,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Identity/Identity_Secret.html",
-          "hash": "s2GFvjb5WfOZN4e/H2nhYQ=="
+          "hash": "tHBfoQwcrwVfyE9+wlOKaQ=="
         }
       },
       "is_incremental": false,
@@ -486,7 +498,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Identity/Identity_User.html",
-          "hash": "qW6P2Pu2VJ1JXaPpaZKe2Q=="
+          "hash": "QJV42I/IexvZzE+MIzMdww=="
         }
       },
       "is_incremental": false,
@@ -921,13 +933,6 @@
         "full_build_reason_code": "NoAvailableBuildCache"
       },
       "processors": {
-        "ResourceDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
-        },
         "TocDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
@@ -938,7 +943,14 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 70,
+          "total_file_count": 71,
+          "skipped_file_count": 0
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
           "skipped_file_count": 0
         }
       }

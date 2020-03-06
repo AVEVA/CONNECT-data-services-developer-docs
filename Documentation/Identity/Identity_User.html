@@ -269,7 +269,7 @@ int32 count
 </code></pre><h4 id="207">207</h4>
 <p>Partial success.</p>
 <h5 id="type-1">Type:</h5>
-<p> <code>MultiStatusResponse</code></p>
+<p> <code>UserMultiStatusResponse</code></p>
 <pre><code class="lang-json">{
   &quot;OperationId&quot;: &quot;OperationId&quot;,
   &quot;Error&quot;: &quot;Error&quot;,
@@ -817,7 +817,7 @@ UserCreateOrUpdate userCreateOrUpdate
 </ul>
 <h3 id="returns-7">Returns</h3>
 <h4 id="200-6">200</h4>
-<p>Updated.</p>
+<p>Updated User.</p>
 <h5 id="type-8">Type:</h5>
 <p> <code>User</code></p>
 <pre><code class="lang-json">{
@@ -856,7 +856,7 @@ UserCreateOrUpdate userCreateOrUpdate
             from being able to authenticate in the future.
             Existing access tokens for the User will be valid
             until their expiration date. Refresh tokens on
-            behalf of the ser will no longer be valid after the
+            behalf of the User will no longer be valid after the
             User has been deleted.</p>
 <h3 id="request-8">Request</h3>
 <p><code style="word-break:normal; overflow-wrap:break-word;">DELETE api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Users/<wbr>{userId}</code></p>

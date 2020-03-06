@@ -97,6 +97,9 @@ references:
 - uid: identityAuthorizationCodeClient
   name: AuthorizationCodeClient
   href: Documentation/Identity/Identity_AuthorizationCodeClient.html
+- uid: identityAutomationIdentity
+  name: AutomationIdentity
+  href: Documentation/Identity/Identity_AutomationIdentity.html
 - uid: identityAzureActiveDirectoryTenant
   name: AzureActiveDirectoryTenant
   href: Documentation/Identity/Identity_AzureActiveDirectoryTenant.html
@@ -113,7 +116,7 @@ references:
   name: IdentityProvider
   href: Documentation/Identity/Identity_IdentityProvider.html
 - uid: identityImplicitClient
-  name: ImplicitClient
+  name: ImplicitClient (Deprecated)
   href: Documentation/Identity/Identity_ImplicitClient.html
 - uid: identityInvitation
   name: Invitation

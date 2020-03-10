@@ -118,7 +118,7 @@ Tags | string[] | No | Gets or sets for OSIsoft internal use only.
 ```json
 {
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-11-11T14:18:38.1759021-08:00",
+  "SecretExpirationDate": "2020-02-25T15:14:48.5916162-08:00",
   "RoleIds": [
     "00000000-0000-0000-0000-000000000000",
     "00000000-0000-0000-0000-000000000000"
@@ -148,14 +148,14 @@ Created.
 
 ##### Type:
 
- `ClientResponse`
+ `ClientCredentialClientCreateResponse`
 
 ```json
 {
   "Secret": "Secret",
   "Id": 0,
   "Description": "description",
-  "ExpirationDate": "2019-11-11T14:18:38.1787205-08:00",
+  "ExpirationDate": "2020-02-25T15:14:48.5936848-08:00",
   "Client": {
     "RoleIds": [
       "00000000-0000-0000-0000-000000000000",
@@ -516,7 +516,7 @@ Partial success.
 
 ##### Type:
 
- `MultiStatusResponse`
+ `ClientCredentialClientMultiStatusResponse`
 
 ```json
 {

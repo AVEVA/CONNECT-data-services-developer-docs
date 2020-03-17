@@ -29,7 +29,7 @@ You can return at any time to modify or add queries.
 ## Include specific data fields
 Complete the following to define data fields to include in a data view:
 
-1. View the information on which data fields resolve as available to include in the data view. Choose the fields you want, and add them to your data view's `.FieldSets`
+1. View the information on which data fields resolve as available to include in the data view. Choose the fields you want, and add them to your data view's `.DataFieldSets`
 2. If your streams have slight variations in property naming (e.g. a property called either `temperature` or `ambient_temperature`), combine fields so that they can match alternate values.
 
 You can return at any time to adjust which fields are included in the data view.
@@ -43,10 +43,10 @@ You may wish to globally *group* the data items by some common factor (e.g. site
 
 2. Include the newly-available grouping value fields in the data view, so those values are included in the data view data.
 
-### Identifying items locally within a field set
-If a group contains multiple data items from the same query, you may wish to *identify* those data items so that they are not ambiguous and so they will be aligned across groups.  Complete the following to identify data items within a field set:
+### Identifying items locally within a data field set
+If a group contains multiple data items from the same query, you may wish to *identify* those data items so that they are not ambiguous and so they will be aligned across groups.  Complete the following to identify data items within a data field set:
 
-1. On the field set in question, assign a field as the `.IdentifyingField` to tell the data items apart.
-2. Ensure that each field's label includes the {IdentifyingValue} token so the field labels are unique. The default field labels already include it.
+1. On the data field set in question, assign a field as the `.IdentifyingField` to tell the data items apart.
+2. Ensure that each data field's label includes the {IdentifyingValue} token so the field labels are unique. The default field labels already include it.
 
 You can return at any time to change the grouping fields and identifying fields.

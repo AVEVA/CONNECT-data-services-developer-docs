@@ -22,7 +22,7 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quick
 ```
 
 ### Expected result
-A data view with very few properties populated: `.Id`, `.Name`, `.IndexTypeCode` (default: `"DateTime"`), Shape (default: `DataViewShape.Standard`, which as a string is `"Standard"`).
+A data view with very few properties populated: `.Id`, `.Name`, `IndexField` (default: { "Label": "Timestamp" }), `.IndexTypeCode` (default: `"DateTime"`), Shape (default: `DataViewShape.Standard`, which as a string is `"Standard"`).
 ```json
 HTTP 201 Created
 {
@@ -30,9 +30,10 @@ HTTP 201 Created
   "Name": "quickstart",
   "Description": null,
   "Queries": [],
-  "FieldSets": [],
+  "DataFieldSets": [],
   "GroupingFields": [],
   "Shape": "Standard",
+  "IndexField": { "Label": "Timestamp" },
   "IndexTypeCode": "DateTime"
 }
 ```
@@ -56,9 +57,10 @@ HTTP 200 OK
   "Name": "quickstart",
   "Description": null,
   "Queries": [],
-  "FieldSets": [],
+  "DataFieldSets": [],
   "GroupingFields": [],
   "Shape": "Standard",
+  "IndexField": { "Label": "Timestamp" },
   "IndexTypeCode": "DateTime"
 }
 ```
@@ -70,7 +72,7 @@ Creating a data view begins with including some data items: today, those are SDS
 ### Action
 Use the result of the previous step as the starting point. All following steps will involve modifying the data view definition, or seeing the effects of those modifications.
 
-Add an item to the array of `.Queries`: `{ Id: "weather", Value:"*weather*" }`
+Add an item to the array of `.Queries`: `{ "Id": "weather", "Value":"*weather*" }`
 ```json
 PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
 {
@@ -79,13 +81,14 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
   "Description": null,
   "Queries": [
     { 
-      Id: "weather",
-      Value:"*weather*" 
+      "Id": "weather",
+      "Value":"*weather*" 
     }
   ],
-  "FieldSets": [],
+  "DataFieldSets": [],
   "GroupingFields": [],
   "Shape": "Standard",
+  "IndexField": { "Label": "Timestamp" },
   "IndexTypeCode": "DateTime"
 }
 ```
@@ -259,19 +262,9 @@ HTTP 200 OK
     "TimeOfResolution": "(a timestamp in ISO 8601 format)",
     "Items": [
         {
-            "SourceType": "Index",
-            "Fields": [
-                {
-                    "Source": "None",
-                    "Keys": [],
-                    "Label": "Timestamp"
-                }
-            ]
-        },
-        {
             "SourceType": "DataItem",
             "QueryId": "weather",
-            "Fields": [
+            "DataFields": [
                 {
                     "Source": "Id",
                     "Keys": [],
@@ -357,25 +350,15 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
   "Description": null,
   "Queries": [
     { 
-      Id: "weather",
-      Value:"*weather*" 
+      "Id": "weather",
+      "Value":"*weather*" 
     }
   ],
-  "FieldSets": [
-        {
-            "SourceType": "Index",
-            "Fields": [
-                {
-                    "Source": "None",
-                    "Keys": [],
-                    "Label": "Timestamp"
-                }
-            ]
-        },
+  "DataFieldSets": [
         {
             "SourceType": "DataItem",
             "QueryId": "weather",
-            "Fields": [
+            "DataFields": [
                 {
                     "Source": "Id",
                     "Keys": [],
@@ -437,6 +420,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
   ],
   "GroupingFields": [],
   "Shape": "Standard",
+  "IndexField": { "Label": "Timestamp" },
   "IndexTypeCode": "DateTime"
 }
 ```
@@ -445,7 +429,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
 HTTP 204 No Content
 ```
 
-Now, if we return to the available field sets, only “Timestamp” remains available but unused.
+Now, if we return to the available field sets all data fields are used so none are available.
 
 ### Action
 ```text
@@ -453,25 +437,11 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
 ```
 
 ### Expected result
-One field set with one field: Timestamp, available but not used in the data view.
+No avaialble data fields.
 ```json
 {
     "TimeOfResolution": "(a timestamp in ISO 8601 format)",
-    "Items": [
-        {
-            "SourceType": "DataItem",
-            "QueryId": "weather",
-            "Fields": [
-                {
-                    "Source": "PropertyId",
-                    "Keys": [
-                        "Timestamp"
-                    ],
-                    "Label": "{IdentifyingValue} {FirstKey}"
-                }
-            ]
-        }
-    ]
+    "Items": []
 }
 ```
 
@@ -551,25 +521,15 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
   "Description": null,
   "Queries": [
     { 
-      Id: "weather",
-      Value:"*weather*" 
+      "Id": "weather",
+      "Value":"*weather*" 
     }
   ],
-  "FieldSets": [
-        {
-            "SourceType": "Index",
-            "Fields": [
-                {
-                    "Source": "None",
-                    "Keys": [],
-                    "Label": "Timestamp"
-                }
-            ]
-        },
+  "DataFieldSets": [
         {
             "SourceType": "DataItem",
             "QueryId": "weather",
-            "Fields": [
+            "DataFields": [
                 {
                     "Source": "Id",
                     "Keys": [],
@@ -590,13 +550,6 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
                         "Gen2",
                     ],
                     "Label": "{IdentifyingValue} Tags"
-                },
-                {
-                    "Source": "Metadata",
-                    "Keys": [
-                        "Site"
-                    ],
-                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
@@ -635,10 +588,11 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
       "Keys": [
         "Site" 
       ],
-      "Label": "{IdentifyingValue} Id"
+      "Label": "{IdentifyingValue} {FirstKey}"
     }
   ],
   "Shape": "Standard",
+  "IndexField": { "Label": "Timestamp" },
   "IndexTypeCode": "DateTime"
 }
 ```
@@ -706,57 +660,6 @@ HTTP 200 OK
 
 **Note:** The Data Views product does not assume an intention for ultra-skinny output.
 
-## Include the grouping field set
-
-In the case where each group contained multiple data items, having the group value repeated for every data item would be redundant. Return to the Available Field Sets, and now there is a solution for that redundancy
-
-### Action
-```text
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart/Resolved/AvailableFieldSets
-```
-
-### Expected result
-A new field set is available, of `SourceType: "GroupingValue"`.
-
-```json
-HTTP 200 OK
-{
-    "TimeOfResolution": "2019-11-14T20:31:20.856826+00:00",
-    "Items": [
-        {
-            "SourceType": "GroupingValue",
-            "Fields": [
-                {
-                    "Source": "None",
-                    "Keys": [
-                        "0"
-                    ],
-                    "Label": "{GroupingFieldLabel}"
-                }
-            ]
-        },
-        {
-            "SourceType": "DataItem",
-            "QueryId": "weather",
-            "Fields": [
-                {
-                    "Source": "PropertyId",
-                    "Keys": [
-                        "Timestamp"
-                    ],
-                    "Label": "{IdentifyingValue} {FirstKey}"
-                }
-            ]
-        }
-    ]
-}
-```
-
-This allows the grouping field value to appear as a single field, versus being repeated with every data item “across the table.” Notice that the fields there act as pointers, referring to e.g. `DataView.GroupingFields[0]` and using its label. This indirection avoids confusing mismatches if you decide to try other fields as grouping fields.
-
-### Action
-Whatever field you’re using as the grouping field, remove it from the fields included in the data view, since it’s redundant now.
-
 ## Identify data items
 
 A different and complementary way of disambiguating the data items is to “identify” them within the field set.
@@ -781,21 +684,11 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
   "Description": null,
   "Queries": [
     { 
-      Id: "weather",
-      Value:"*weather*" 
+      "Id": "weather",
+      "Value":"*weather*" 
     }
   ],
-  "FieldSets": [
-        {
-            "SourceType": "Index",
-            "Fields": [
-                {
-                    "Source": "None",
-                    "Keys": [],
-                    "Label": "Timestamp"
-                }
-            ]
-        },
+  "DataFieldSets": [
         {
             "SourceType": "DataItem",
             "QueryId": "weather",
@@ -806,7 +699,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
                 ],
                 "Label": "{IdentifyingValue} {FirstKey}"
             },
-            "Fields": [
+            "DataFields": [
                 {
                     "Source": "Id",
                     "Keys": [],
@@ -855,6 +748,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
   ],
   "GroupingFields": [],
   "Shape": "Standard",
+  "IndexField": { "Label": "Timestamp" },
   "IndexTypeCode": "DateTime"
 }
 ```
@@ -932,21 +826,11 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
   "Description": null,
   "Queries": [
     { 
-      Id: "weather",
-      Value:"*weather*" 
+      "Id": "weather",
+      "Value":"*weather*" 
     }
   ],
-  "FieldSets": [
-        {
-            "SourceType": "Index",
-            "Fields": [
-                {
-                    "Source": "None",
-                    "Keys": [],
-                    "Label": "Timestamp"
-                }
-            ]
-        },
+  "DataFieldSets": [
         {
             "SourceType": "DataItem",
             "QueryId": "weather",
@@ -957,7 +841,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
                 ],
                 "Label": "{IdentifyingValue} {FirstKey}"
             },
-            "Fields": [
+            "DataFields": [
                 {
                     "Source": "Tags",
                     "Keys": [],
@@ -990,6 +874,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
   ],
   "GroupingFields": [],
   "Shape": "Standard",
+  "IndexField": { "Label": "Timestamp" },
   "IndexTypeCode": "DateTime"
 }
 ```

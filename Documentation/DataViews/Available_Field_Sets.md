@@ -6,7 +6,7 @@ uid: DataViewsAvailableFieldSets
 
 Available [field sets](xref:DataViewsFieldSets) include fields not currently included in the data view, which are available to be added. 
 
-The list of field sets is generated based on the `.Queries`, `.GroupingFields`, and `.IndexTypeCode` of the defined data view. These fields and field sets can be readily added to the data view `.FieldSets`. Once the field is added, it is omitted from the list of available field sets. Similarly, if the field is removed from the data view, it is added back to the available field sets. This allows an iterative approach to building the data view by easily adding and removing fields from the data view. 
+The list of field sets is generated based on the `.Queries`, `.GroupingFields`, and `.IndexTypeCode` of the defined data view. These fields and field sets can be readily added to the data view `.DataFieldSets`. Once the field is added, it is omitted from the list of available field sets. Similarly, if the field is removed from the data view, it is added back to the available field sets. This allows an iterative approach to building the data view by easily adding and removing fields from the data view. 
 
 ## Field Set Source
 Available fields are organized into field sets according to their sources:
@@ -39,7 +39,7 @@ The example uses the following data view and the streams from the [SDS Example S
       Value:"*weather*" 
     }
   ],
-  "FieldSets": [],
+  "DataFieldSets": [],
   "GroupingFields": [],
   "Shape": "Standard",
   "IndexTypeCode": "DateTime"
@@ -54,19 +54,8 @@ HTTP 200 OK
     "TimeOfResolution": "(a timestamp in ISO 8601 format)",
     "Items": [
         {
-            "SourceType": "Index",
-            "Fields": [
-                {
-                    "Source": "None",
-                    "Keys": [],
-                    "Label": "Timestamp"
-                }
-            ]
-        },
-        {
-            "SourceType": "DataItem",
             "QueryId": "weather",
-            "Fields": [
+            "DataFields": [
                 {
                     "Source": "Id",
                     "Keys": [],
@@ -136,71 +125,4 @@ HTTP 200 OK
 }
 ```
 
-## Data View with GroupingFields
-This data view is the same as in the first example, except it also has a `GroupingField`, which defines grouping by the metadata key "Site":
-
-```json
-{
-  "Id": "example_with_grouping_fields",
-  "Name": "example_with_grouping_fields",
-  "Description": null,
-  "Queries": [
-    { 
-      Id: "weather",
-      Value:"*weather*" 
-    }
-  ],
-  "FieldSets": []
-  "GroupingFields": [
-    {
-      "Source": "Metadata",
-      "Keys": [
-        "Site" 
-      ],
-      "Label": "{IdentifyingValue} Id"
-    }
-  ],
-  "Shape": "Standard",
-  "IndexTypeCode": "DateTime"
-}
-```
-
-A field set with ```SourceType.GroupingValue``` is now shown as one of the available field sets:
-```json
-HTTP 200 OK
-{
-    "TimeOfResolution": "2019-11-14T20:31:20.856826+00:00",
-    "Items": [
-        {
-            "SourceType": "Index",
-            "Fields": [
-                {
-                    "Source": "None",
-                    "Keys": [],
-                    "Label": "Timestamp"
-                }
-            ]
-        },
-        {
-            "SourceType": "GroupingValue",
-            "Fields": [
-                {
-                    "Source": "None",
-                    "Keys": [
-                        "0"
-                    ],
-                    "Label": "{GroupingFieldLabel}"
-                }
-            ]
-        },
-        {
-            "SourceType": "DataItem",
-            "QueryId": "weather",
-            "Fields": [
-                ...
-            ]
-        }
-    ]
-}
-```
 

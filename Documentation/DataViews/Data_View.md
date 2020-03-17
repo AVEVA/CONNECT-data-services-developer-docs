@@ -19,12 +19,7 @@ One or more queries determine the set of data items (such as SDS streams) that t
 
 ### Including data fields
 
-Information from, or about, those data items must be included explicitly in the data view as [Field](xref:DataViewsFieldSets)s. By default, a data view includes no fields. The fields that are available for use are exposed as a "resolved" resource (AvailableFieldSets). It is recommended to use or adapt those fields instead of defining fields from scratch.
-
-Individual fields are organized into [FieldSets](xref:DataViewsFieldSets). Each field set has a  `.SourceType` that defines its role:
-- FieldSetSourceType.**Index** - Provides the index field for the data view. A data view may have only one Index field set
-- FieldSetSourceType.**GroupingValue** - Displays values that the view is grouped by
-- FieldSetSourceType.**DataItem** - Resolves for each data item from a particular query
+Information from, or about, those data items must be included explicitly in the data view as [Field](xref:DataViewsFieldSets)s. By default, a data view includes no fields. The fields that are available for use are exposed as a "resolved" resource (AvailableFieldSets). It is recommended to use or adapt those fields instead of defining fields from scratch. Individual fields are organized into [DataFieldSets](xref:DataViewsFieldSets).
 
 ### Organizing the data items
 
@@ -33,8 +28,10 @@ Data items may be [grouped](xref:DataViewsGrouping, which amounts to grouping or
 ### Organizing the data fields
 Field sets and fields resolve in the order they are defined. They may be re-ordered.
 
-Within each group, a field set may be associated with multiple data items. It is often necessary to disambiguate these items. Items can be disambiguated by specifying a [`.IdentifyingField`](xref:DataViewsFieldSets#identifying-field). An identifying field is a field that tells the data items apart within a group, such as the value of _Measurement_ metadata (i.e., the data items are identified by what they measure). Identifying data items also allows the data views engine to "align" them across groups, since it is clear that streams measuring, e.g., _Power Out_ are alike, and the streams measuring _Power In_ are alike.
+Within each group, a field set may be associated with multiple data items. It is often necessary to disambiguate these items. Items can be disambiguated by specifying an [`.IdentifyingField`](xref:DataViewsFieldSets#identifying-field). An identifying field is a field that tells the data items apart within a group, such as the value of _Measurement_ metadata (i.e., the data items are identified by what they measure). Identifying data items also allows the data views engine to "align" them across groups, since it is clear that streams measuring, e.g., _Power Out_ are alike, and the streams measuring _Power In_ are alike.
 
+### Index field
+The field used for indexing.  If not specified, a default value with a label of "Timestamp" is used.
 
 ### Defining index type and default range
 Data views currently operate on timestamped data, which is data indexed by a DateTime property. This is reflected by the DataView's `.IndexTypeCode`, whose value must be "DateTime". Default values may be defined for the StartIndex, EndIndex, and/or Interval used when data view data is queried. 
@@ -48,8 +45,9 @@ The following table lists the properties of a DataView:
 | Name | string | Optional | value of Id | Friendly name
 | Description | string | Optional  | null | Longer description of the view
 | Queries     | Query[] | Optional* | [ ] | Queries for SDS Streams to include in the view. This is the starting point when defining a data view. Each Query should represent a collection of like streams. To include streams that represent very different items (e.g. solar inverters and weather), use separate queries.
-| FieldSets   | FieldSet[] | Optional* | [ ] | The sets of fields included in the data view. Often copied or adapted from the view's available field sets, which are exposed in a resolved resource.
+| DataFieldSets   | FieldSet[] | Optional* | [ ] | The sets of fields included in the data view. Often copied or adapted from the view's available field sets, which are exposed in a resolved resource.
 | GroupingFields  | Field[] | Optional | [ ] | Fields by which the data items are partitioned/grouped.
+| IndexField | Field | Optional | { Label:"Timestamp" } | The field used for indexing.  If unspecified a field labeled "Timestamp" is included.
 | IndexTypeCode | SdsTypeCode | Optional | DateTime | The name of the index data type. DateTime is the currently supported index type.
 | DefaultStartIndex | string | Optional | null | The default value of StartIndex used when querying the data view data, if none is specified then.
 | DefaultEndIndex | string | Optional | null | The default value of EndIndex used when querying the data view data, if none is specified then.
@@ -76,18 +74,9 @@ A query for SDS Streams to include in the view.
 A set of fields included in the data view, sharing a common role or source (`.SourceType`). One `DataView` is likely to include multiple `FieldSet`s.
 |Property | Type | Optionality  | Default  | Details |
 |--|--|--|--|--|
-| SourceType | FieldSetSourceType | Required |  | The type of role fulfilled by the field set |
 | QueryId | string | Optional/Required | null | Required when SourceType is DataItem. Must correspond to a query defined in this data view. Not applicable to other source types.
 | Fields | Field[] | Optional | [ ] | Data fields to include in the data view. Often copied or adapted from the view's available field sets, which are exposed in a resolved resource.
 | IdentifyingField | Field | Optional | null | A field by which to tell the data items apart, within each group.
-
-### FieldSetSourceType enumeration
-Defines the role or source type of a field set.
-|Name| Description  |
-|--|--|
-|Index | Contains the field serving as index/key value of the data view's data |
-|GroupingValue  | Links to the fields defined as grouping fields of the data view, thus staying in sync as grouping fields are changed or shuffled.  |
-|DataItem  | Each data item returned by a particular query |
 
 ### Field
 Individual piece of information, such as a property of an SDS stream, or metadata of that stream.

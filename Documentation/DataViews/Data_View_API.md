@@ -53,7 +53,7 @@ Content-Type: application/json
       "Value":"*weather*" 
     }
   ],
-  "FieldSets": [],
+  "DataFieldSets": [],
   "GroupingFields": [],
   "Shape": "Standard",
   "IndexTypeCode": "DateTime"
@@ -134,7 +134,7 @@ A `DataView` object whose `Id` is `null` or unspecified.
   "Name": "demo",
   "Description": "demonstration",
   "Queries": [],
-  "FieldSets": [],
+  "DataFieldSets": [],
   "GroupingFields": [],
   "Shape": "Standard",
   "IndexTypeCode": "DateTime"
@@ -160,7 +160,7 @@ Content-Type: application/json
   "Name": "demo",
   "Description": "demonstration",
   "Queries": [],
-  "FieldSets": [],
+  "DataFieldSets": [],
   "GroupingFields": [],
   "Shape": "Standard",
   "IndexTypeCode": "DateTime"
@@ -194,7 +194,7 @@ A `DataView` object whose `Id` matches the `dataViewId` in the URL.
   "Name": "demo2",
   "Description": "demonstration 2",
   "Queries": [],
-  "FieldSets": [],
+  "DataFieldSets": [],
   "GroupingFields": [],
   "Shape": "Standard",
   "IndexTypeCode": "DateTime"
@@ -223,7 +223,7 @@ Content-Type: application/json
   "Name": "demo2",
   "Description": "demonstration 2",
   "Queries": [],
-  "FieldSets": [],
+  DataFieldSets": [],
   "GroupingFields": [],
   "Shape": "Standard",
   "IndexTypeCode": "DateTime"
@@ -257,7 +257,7 @@ A `DataView` object whose `Id` matches the `dataViewId` in the URL.
   "Name": "demo",
   "Description": "demonstration",
   "Queries": [],
-  "FieldSets": [],
+  "DataFieldSets": [],
   "GroupingFields": [],
   "Shape": "Standard",
   "IndexTypeCode": "DateTime"

@@ -10,7 +10,7 @@ The data items of a data view may be organized by _grouping_ them. It is one way
 ## Purpose of grouping
 Without grouping, all of the data items returned by a `Query` will appear side-by-side. If the view includes many data items, its data records will be enormous. The fields are also likely to be ambiguous.
 
-"[Identifying](xref:DataViewsFieldSets)" the items within each field set is one way to disambiguate the fields, but only one `Field` may be an identifying field. What if multiple metadata `Field`s are required to fully describe each data item? The [example below](xref:DataViewsGrouping#example-scenario) shows exactly that case: power inverters that are described by a Site, Meter, and number. Grouping can organize the data items into shapes that are consumable and/or represent a physical asset.
+"[Identifying](xref:DataViewsFieldSets#identifying-field)" the items within each field set is one way to disambiguate the fields, but only one `Field` may be an identifying field. What if multiple metadata `Field`s are required to fully describe each data item? The [example below](xref:DataViewsGrouping#example-scenario) shows exactly that case: power inverters that are described by a Site, Meter, and number. Grouping can organize the data items into shapes that are consumable and/or represent a physical asset.
 
 ## How it works
 To group a data view, specify one or more `Field` objects as the `DataView`'s `.GroupingFields`. 
@@ -54,19 +54,10 @@ Let us start with a simple data view. It queries for the aforementioned streams,
       Value: "TypeId:docs-pi-inverter AND (Site:Rosemont OR Site:Winterthur)"
     }
   ],
-  "FieldSets": [
+  "DataFieldSets": [
     {
-      "SourceType": "Index",
-      "Fields": [
-        {
-          "Label": "Timestamp"
-        }
-      ]
-    },
-    {
-      "SourceType": "DataItem",
       "QueryId": "inverters",
-      "Fields": [
+      "DataFields": [
         {
           "Source": "PropertyId",
           "Keys": [ "Value" ],
@@ -77,9 +68,9 @@ Let us start with a simple data view. It queries for the aforementioned streams,
   ]
 }
 ```
-Unfortunately, the initial result is not very usable. The fields are ambiguous (eight fields are simply labelled "Value"), and the size of each data record is tied to the number of inverter streams found by the query.
+Unfortunately, the initial result is not very usable. The fields are ambiguous.  Eight fields are simply labeled "Value" with an index appendended to the end and the size of each data record is tied to the number of inverter streams found by the query.
 
-| Timestamp | Value | Value | Value | ... | 
+| Timestamp.0 | Value.1 | Value.2 | Value.3 | ... | 
 |--|--|--|--|--|--|
 | - | ROSE.Meter.Primary.Inverter.0.PwrIn/Value | ROSE.Meter.Primary.Inverter.0.PwrOut/Value | ROSE.Meter.Primary.Inverter.1.PwrIn/Value | ... |
 
@@ -102,22 +93,13 @@ A simple way of disambiguating the data items is to group them by data item id. 
   "GroupingFields": [
     {
           "Source": "Id",
-          "Label": "{IdentifyingValue} {FirstKey}"
+          "Label": "{IdentifyingValue} Id"
     },
   ],
-  "FieldSets": [
+  "DataFieldSets": [
     {
-      "SourceType": "Index",
-      "Fields": [
-        {
-          "Label": "Timestamp"
-        }
-      ]
-    },
-    {
-      "SourceType": "DataItem",
       "QueryId": "inverters",
-      "Fields": [
+      "DataFields": [
         {
           "Source": "Metadata",
           "Keys": [ "Site" ],
@@ -150,16 +132,16 @@ A simple way of disambiguating the data items is to group them by data item id. 
 ```
 The result is much closer to being usable. The records are no longer ambiguous. However, they do not mirror any physical or logical asset.
 
-| Timestamp | Site | Meter | Inverter | Measurement | Value |
+| Timestamp | Id | Site | Meter | Inverter | Measurement | Value |
 |--|--|--|--|--|--|
-| - | "Rosemont" | "Primary" | "0" | "Power In" |  ROSE.Meter.Primary.Inverter.0.PwrIn/Value |
-| - | "Rosemont" | "Primary" | "0" | "Power Out" |ROSE.Meter.Primary.Inverter.0.PwrOut/Value |
-| - | "Rosemont" | "Primary" | "1" | "Power In" |ROSE.Meter.Primary.Inverter.1.PwrIn/Value |
-| - | "Rosemont" | "Primary" | "1" | "Power Out" |ROSE.Meter.Primary.Inverter.1.PwrOut/Value |
-| - | "Winterthur" | "Primary" | "0" | "Power In" |WINT.Meter.Primary.Inverter.0.PwrIn/Value |
-| - | "Winterthur" | "Primary" | "0" | "Power Out" |WINT.Meter.Primary.Inverter.0.PwrOut/Value |
-| - | "Winterthur" | "Secondary" | "0" | "Power In" |WINT.Meter.Secondary.Inverter.0.PwrIn/Value |
-| - | "Winterthur" | "Secondary" | "0" | "Power Out" |WINT.Meter.Secondary.Inverter.0.PwrOut/Value |
+| - | "ROSE.Meter.Primary.Inverter.0.PwrIn"   | "Rosemont" | "Primary" | "0" | "Power In" |  ROSE.Meter.Primary.Inverter.0.PwrIn/Value |
+| - | "ROSE.Meter.Primary.Inverter.0.PwrOut"  | "Rosemont" | "Primary" | "0" | "Power Out" |ROSE.Meter.Primary.Inverter.0.PwrOut/Value |
+| - | "ROSE.Meter.Primary.Inverter.1.PwrIn"   | "Rosemont" | "Primary" | "1" | "Power In" |ROSE.Meter.Primary.Inverter.1.PwrIn/Value |
+| - | "ROSE.Meter.Primary.Inverter.1.PwrOut"  | "Rosemont" | "Primary" | "1" | "Power Out" |ROSE.Meter.Primary.Inverter.1.PwrOut/Value |
+| - | "WINT.Meter.Primary.Inverter.0.PwrIn"   | "Winterthur" | "Primary" | "0" | "Power In" |WINT.Meter.Primary.Inverter.0.PwrIn/Value |
+| - | "WINT.Meter.Primary.Inverter.0.PwrOut"  | "Winterthur" | "Primary" | "0" | "Power Out" |WINT.Meter.Primary.Inverter.0.PwrOut/Value |
+| - | "WINT.Meter.Secondary.Inverter.0.PwrIn" | "Winterthur" | "Secondary" | "0" | "Power In" |WINT.Meter.Secondary.Inverter.0.PwrIn/Value |
+| - | "|WINT.Meter.Secondary.Inverter.0.PwrOu"| "Winterthur" | "Secondary" | "0" | "Power Out" |WINT.Meter.Secondary.Inverter.0.PwrOut/Value |
 
 #### Example: Data records that reflect real-world assets
 Instead of grouping by data item id, let us group by metadata. This example uses:
@@ -194,44 +176,15 @@ Instead of grouping by data item id, let us group by metadata. This example uses
           "Label": "{IdentifyingValue} {FirstKey}"
         }
   ],
-  "FieldSets": [
+  "DataFieldSets": [
     {
-      "SourceType": "Index",
-      "Fields": [
-        {
-          "Label": "Timestamp"
-        }
-      ]
-    },
-    {
-      "SourceType": "GroupingValue",
-      "Fields": [
-        {
-          "Source": "None",
-          "Keys": [ "0" ],
-          "Label": "{GroupingFieldLabel}"
-        },
-        {
-          "Source": "None",
-          "Keys": [ "1" ],
-          "Label": "{GroupingFieldLabel}"
-        },
-        {
-          "Source": "None",
-          "Keys": [ "2" ],
-          "Label": "{GroupingFieldLabel}"
-        }
-      ]
-    },
-    {
-      "SourceType": "DataItem",
       "QueryId": "inverters",
       "IdentifyingField": {
           "Source": "Metadata",
           "Keys": [ "Measurement" ],
           "Label": "{IdentifyingValue} {FirstKey}"
         },
-      "Fields": [
+      "DataFields": [
         {
           "Source": "PropertyId",
           "Keys": [ "Value" ],
@@ -292,41 +245,15 @@ This example includes two actions:
           "Label": "{IdentifyingValue} {FirstKey}"
         }
   ],
-  "FieldSets": [
+  "DataFieldSets": [
     {
-      "SourceType": "Index",
-      "Fields": [
-        {
-          "Label": "Timestamp"
-        }
-      ]
-    },
-    {
-      "SourceType": "GroupingValue",
-      "Fields": [
-        {
-          "Keys": [ "0" ],
-          "Label": "{GroupingFieldLabel}"
-        },
-        {
-          "Keys": [ "1" ],
-          "Label": "{GroupingFieldLabel}"
-        },
-        {
-          "Keys": [ "2" ],
-          "Label": "{GroupingFieldLabel}"
-        }
-      ]
-    },
-    {
-      "SourceType": "DataItem",
       "QueryId": "inverters",
       "IdentifyingField": {
           "Source": "Metadata",
           "Keys": [ "Measurement" ],
           "Label": "{IdentifyingValue} {FirstKey}"
         },
-      "Fields": [
+      "DataFields": [
         {
           "Source": "PropertyId",
           "Keys": [ "Value" ],
@@ -335,9 +262,8 @@ This example includes two actions:
       ],
     },
     {
-      "SourceType": "DataItem",
       "QueryId": "site weather",
-      "Fields": [
+      "DataFields": [
         {
           "Source": "PropertyId",
           "Keys": [ "SolarRadiation" ],

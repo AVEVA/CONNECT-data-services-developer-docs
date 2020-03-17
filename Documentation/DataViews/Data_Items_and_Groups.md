@@ -14,7 +14,7 @@ The collection of data items in the data view represents all SdsStreams that mat
 Note that each query is executed independently to generate the list of data items. It is thus possible to have duplicate data items resulting from different queries. This can be desirable and undesirable depending the use case.
 
 ### Adding Fields
-Each data item contains information that can be optionally (and explicitly) added to the data view by setting the [`.field sets`](xref:DataViewsFieldSets) field of the data view. Currently, the only supported resource type is `stream` with the following available fields:
+Each data item contains information that can be optionally (and explicitly) added to the data view by setting the [`.data field sets`](xref:DataViewsFieldSets) field of the data view. Currently, the only supported resource type is `stream` with the following available fields:
 * Stream id
 * Stream name
 * Stream tags

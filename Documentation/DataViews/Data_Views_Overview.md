@@ -19,7 +19,7 @@ Data view data is available in several formats, including JSON and CSV, with a u
 ## Defining and refining a data view
 There are several [concepts and types](xref:DataView) used when defining data views. This is accomplished via the RESTful [data views API](xref:DataViewsAPIOverview). See the OCS documentation for greater detail on these concepts:
 * [Queries](xref:DataViewsQueries)
-* [Field Sets](xref:DataViewsFieldSets)
+* [Data Field Sets](xref:DataViewsFieldSets)
 * [Grouping](xref:DataViewsGrouping)
 
 Data views are meant to be designed interactively. Each modification you make to a data view is likely to affect how the data view [resolves](xref:ResolvedDataView) into concrete information. The [resolved API resources](xref:ResolvedDataViewAPI) close the loop, showing you exactly what information is in the data view, and why.

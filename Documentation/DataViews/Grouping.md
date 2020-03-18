@@ -18,9 +18,6 @@ To group a data view, specify one or more `Field` objects as the `DataView`'s `.
 ### Eligible grouping fields
 Fields whose values come from data item `FieldSource.Id`, `FieldSource.Name`, `FieldSource.Metadata`, or `FieldSource.Tags` are eligible to be used as grouping fields. 
 
-### Displaying the grouping values
-If a data view has any grouping fields specified, then a special type of field set is available: `FieldSetSourceType.GroupingValue`. Its fields serve as robust pass-throughs to whatever the data view's grouping fields currently are. It also avoids repetitive inclusion of grouping values in the case where a group contains multiple data items.
-
 ## Uses of grouping
 Grouping can be used to separate the data items from each other, and to join different types of data items together.
 
@@ -133,7 +130,7 @@ A simple way of disambiguating the data items is to group them by data item id. 
 The result is much closer to being usable. The records are no longer ambiguous. However, they do not mirror any physical or logical asset.
 
 | Timestamp | Id | Site | Meter | Inverter | Measurement | Value |
-|--|--|--|--|--|--|
+|--|--|--|--|--|--|--|
 | - | "ROSE.Meter.Primary.Inverter.0.PwrIn"   | "Rosemont" | "Primary" | "0" | "Power In" |  ROSE.Meter.Primary.Inverter.0.PwrIn/Value |
 | - | "ROSE.Meter.Primary.Inverter.0.PwrOut"  | "Rosemont" | "Primary" | "0" | "Power Out" |ROSE.Meter.Primary.Inverter.0.PwrOut/Value |
 | - | "ROSE.Meter.Primary.Inverter.1.PwrIn"   | "Rosemont" | "Primary" | "1" | "Power In" |ROSE.Meter.Primary.Inverter.1.PwrIn/Value |
@@ -141,13 +138,12 @@ The result is much closer to being usable. The records are no longer ambiguous. 
 | - | "WINT.Meter.Primary.Inverter.0.PwrIn"   | "Winterthur" | "Primary" | "0" | "Power In" |WINT.Meter.Primary.Inverter.0.PwrIn/Value |
 | - | "WINT.Meter.Primary.Inverter.0.PwrOut"  | "Winterthur" | "Primary" | "0" | "Power Out" |WINT.Meter.Primary.Inverter.0.PwrOut/Value |
 | - | "WINT.Meter.Secondary.Inverter.0.PwrIn" | "Winterthur" | "Secondary" | "0" | "Power In" |WINT.Meter.Secondary.Inverter.0.PwrIn/Value |
-| - | "|WINT.Meter.Secondary.Inverter.0.PwrOu"| "Winterthur" | "Secondary" | "0" | "Power Out" |WINT.Meter.Secondary.Inverter.0.PwrOut/Value |
+| - | "WINT.Meter.Secondary.Inverter.0.PwrOu" | "Winterthur" | "Secondary" | "0" | "Power Out" |WINT.Meter.Secondary.Inverter.0.PwrOut/Value |
 
 #### Example: Data records that reflect real-world assets
 Instead of grouping by data item id, let us group by metadata. This example uses:
 
 - the `Field`s for Site, Meter, and Inverter metadata as the data view's `.GroupingFields`
-- a `FieldSet` of `.SourceType` `FieldSetSourceType.GroupingValue`, with a `Field` to show each grouping fields's value
 - the `Field` for Measurement metadata as the data item `FieldSet`'s `.IdentifyingField`
 
 ```json

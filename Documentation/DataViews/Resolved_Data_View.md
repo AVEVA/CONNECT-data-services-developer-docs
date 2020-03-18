@@ -116,9 +116,17 @@ Details on the provenance on every field of data:
 |--|--|--|--|--|
 | Id | string | Unique identifier
 | Label | string | Friendly name
+| FieldKind | FieldKind enumeration | Specifies if the mapping is for an index, group or data field.
 | FieldSetIndex | int | The position of the corresponding field set within the data view
 | FieldIndex | int | The position of the corresponding field within its field set
 | DataMappings | IReadOnlyList<DataMapping> | Per-group details of what this field resolved to
+
+### FieldKind enumeration
+|Name| Description  |
+|--|--|
+|IndexField | Maps to an index field.
+|GroupingField | Maps to a grouping field.
+|DataField | Maps to a data field.
 
 ### DataMapping
 Per-group details of the data that a `FieldMapping` targets:

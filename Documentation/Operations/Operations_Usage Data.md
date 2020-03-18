@@ -1,5 +1,5 @@
 ---
-uid: identityUsage Data
+uid: operationsUsage Data
 ---
 
 # Usage Data
@@ -103,7 +103,7 @@ Success
 ```json
 [
   {
-    "Date": "2020-03-18T16:16:42.1179666-07:00",
+    "Date": "2020-03-18T16:25:40.2131413-07:00",
     "TenantId": "00000000-0000-0000-0000-000000000000",
     "NamespaceId": "Name",
     "ClusterRegion": 0,
@@ -113,7 +113,7 @@ Success
     "EgressStreamsAccessed": 0
   },
   {
-    "Date": "2020-03-18T16:16:42.1239136-07:00",
+    "Date": "2020-03-18T16:25:40.2181075-07:00",
     "TenantId": "00000000-0000-0000-0000-000000000000",
     "NamespaceId": "Name",
     "ClusterRegion": 0,
@@ -209,7 +209,7 @@ Success
 ```json
 [
   {
-    "Date": "2020-03-18T16:16:43.1356682-07:00",
+    "Date": "2020-03-18T16:25:40.8374653-07:00",
     "TenantId": "00000000-0000-0000-0000-000000000000",
     "NamespaceId": "Name",
     "ClusterRegion": 0,
@@ -219,7 +219,7 @@ Success
     "EgressStreamsAccessed": 0
   },
   {
-    "Date": "2020-03-18T16:16:43.1356808-07:00",
+    "Date": "2020-03-18T16:25:40.8374769-07:00",
     "TenantId": "00000000-0000-0000-0000-000000000000",
     "NamespaceId": "Name",
     "ClusterRegion": 0,

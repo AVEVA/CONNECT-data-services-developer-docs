@@ -1,5 +1,5 @@
 ---
-uid: identityResource Usage Data
+uid: operationsResource Usage Data
 ---
 
 # Resource Usage Data

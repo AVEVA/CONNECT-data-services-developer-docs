@@ -252,9 +252,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
 ```
 
 ### Expected result
-Two field sets:
--	A field set of type “Index” with one field, representing an interpolated index. Data views only support interpolated index values at this time. In the future, if other retrieval modes are supported, a data item could be mapped here as the master index.
--	A field set of type “DataItem,” pointing to query “weather”. Assuming some data items were retrieved, this field set shows that attributes of the streams (id, name, tags) are available, as well as the values of all metadata keys and properties.
+A field set of type “DataItem,” pointing to query “weather”. Assuming some data items were retrieved, this field set shows that attributes of the streams (id, name, tags) are available, as well as the values of all metadata keys and properties.
 
 ```json
 HTTP 200 OK
@@ -429,7 +427,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
 HTTP 204 No Content
 ```
 
-Now, if we return to the available field sets all data fields are used so none are available.
+Now, if we return to the available field sets, all data fields are used so none are available.
 
 ### Action
 ```text
@@ -437,7 +435,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
 ```
 
 ### Expected result
-No avaialble data fields.
+No available data fields.
 ```json
 {
     "TimeOfResolution": "(a timestamp in ISO 8601 format)",

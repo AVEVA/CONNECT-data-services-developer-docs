@@ -56,6 +56,7 @@ Content-Type: application/json
   "DataFieldSets": [],
   "GroupingFields": [],
   "Shape": "Standard",
+  "IndexField": { "Label": "Timestamp" },
   "IndexTypeCode": "DateTime"
 }
 ```
@@ -137,6 +138,7 @@ A `DataView` object whose `Id` is `null` or unspecified.
   "DataFieldSets": [],
   "GroupingFields": [],
   "Shape": "Standard",
+  "IndexField": { "Label": "Timestamp" },
   "IndexTypeCode": "DateTime"
 }
 ```
@@ -163,6 +165,7 @@ Content-Type: application/json
   "DataFieldSets": [],
   "GroupingFields": [],
   "Shape": "Standard",
+  "IndexField": { "Label": "Timestamp" },
   "IndexTypeCode": "DateTime"
 }
 ```
@@ -197,6 +200,7 @@ A `DataView` object whose `Id` matches the `dataViewId` in the URL.
   "DataFieldSets": [],
   "GroupingFields": [],
   "Shape": "Standard",
+  "IndexField": { "Label": "Timestamp" },
   "IndexTypeCode": "DateTime"
 }
 ```
@@ -223,9 +227,10 @@ Content-Type: application/json
   "Name": "demo2",
   "Description": "demonstration 2",
   "Queries": [],
-  DataFieldSets": [],
+  "DataFieldSets": [],
   "GroupingFields": [],
   "Shape": "Standard",
+  "IndexField": { "Label": "Timestamp" },
   "IndexTypeCode": "DateTime"
 }
 ```
@@ -260,6 +265,7 @@ A `DataView` object whose `Id` matches the `dataViewId` in the URL.
   "DataFieldSets": [],
   "GroupingFields": [],
   "Shape": "Standard",
+  "IndexField": { "Label": "Timestamp" },
   "IndexTypeCode": "DateTime"
 }
 ```

@@ -8,25 +8,7 @@ Available [field sets](xref:DataViewsFieldSets) include fields not currently inc
 
 The list of field sets is generated based on the `.Queries`, `.GroupingFields`, and `.IndexTypeCode` of the defined data view. These fields and field sets can be readily added to the data view `.DataFieldSets`. Once the field is added, it is omitted from the list of available field sets. Similarly, if the field is removed from the data view, it is added back to the available field sets. This allows an iterative approach to building the data view by easily adding and removing fields from the data view. 
 
-## Field Set Source
-Available fields are organized into field sets according to their sources:
-
-```FieldSetSourceType.Index```
-
-The index field set represents the index field of the data view. Exactly one index field set is available per data view. Currently, this field is not mapped to anything, since interpolation is the only supported index mode.
-
-```FieldSetSourceType.GroupingValue```
-
-The grouping value field set represents the matching value for each group. If no grouping fields are specified, this field set is not available. Exactly one group value field set is available per data view. The group value field set contains one field per group, with each grouping field referred to by its index: `{ ... Keys: ["0"] }` for the 0th grouping field.
-
-```FieldSetSourceType.DataItem```
-
-The data item field set contains fields from the data item resulted from the query. For each query, a field set with unused fields will be returned. The available fields for stream data item include:
-    * Id, name
-    * Tags: one field with union of all tags
-    * Metadata, propertyId: one field for each metadata key or property id
-
-## Data View without GroupingFields
+## Example
 The example uses the following data view and the streams from the [SDS Example Scenario](xref:DataViewsExampleScenario). Note that the field sets and the grouping fields arrays are empty:
 ```json
 {
@@ -35,13 +17,14 @@ The example uses the following data view and the streams from the [SDS Example S
   "Description": null,
   "Queries": [
     { 
-      Id: "weather",
-      Value:"*weather*" 
+      "Id": "weather",
+      "Value":"*weather*" 
     }
   ],
   "DataFieldSets": [],
   "GroupingFields": [],
   "Shape": "Standard",
+  "IndexField": { "Label": "Timestamp" },
   "IndexTypeCode": "DateTime"
 }
 ```

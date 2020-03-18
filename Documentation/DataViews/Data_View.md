@@ -19,7 +19,7 @@ One or more queries determine the set of data items (such as SDS streams) that t
 
 ### Including data fields
 
-Information from, or about, those data items must be included explicitly in the data view as [Field](xref:DataViewsFieldSets)s. By default, a data view includes no fields. The fields that are available for use are exposed as a "resolved" resource (AvailableFieldSets). It is recommended to use or adapt those fields instead of defining fields from scratch. Individual fields are organized into [DataFieldSets](xref:DataViewsFieldSets).
+Information from, or about, those data items must be included explicitly in the data view as [Field](xref:DataViewsFieldSets)s. By default, a data view includes no fields, except the default [`.IndexField`](xref:DataView:index_field). The fields that are available for use are exposed as a "resolved" resource (AvailableFieldSets). It is recommended to use or adapt those fields instead of defining fields from scratch. Individual fields are organized into [DataFieldSets](xref:DataViewsFieldSets).
 
 ### Organizing the data items
 
@@ -29,6 +29,9 @@ Data items may be [grouped](xref:DataViewsGrouping, which amounts to grouping or
 Field sets and fields resolve in the order they are defined. They may be re-ordered.
 
 Within each group, a field set may be associated with multiple data items. It is often necessary to disambiguate these items. Items can be disambiguated by specifying an [`.IdentifyingField`](xref:DataViewsFieldSets#identifying-field). An identifying field is a field that tells the data items apart within a group, such as the value of _Measurement_ metadata (i.e., the data items are identified by what they measure). Identifying data items also allows the data views engine to "align" them across groups, since it is clear that streams measuring, e.g., _Power Out_ are alike, and the streams measuring _Power In_ are alike.
+
+### Grouping fields
+Fields which group the data items.
 
 ### Index field
 The field used for indexing.  If not specified, a default value with a label of "Timestamp" is used.

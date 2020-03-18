@@ -47,8 +47,8 @@ Let us start with a simple data view. It queries for the aforementioned streams,
   "Id": "quickstart",
   "Queries": [
     { 
-      Id: "inverters",
-      Value: "TypeId:docs-pi-inverter AND (Site:Rosemont OR Site:Winterthur)"
+      "Id": "inverters",
+      "Value": "TypeId:docs-pi-inverter AND (Site:Rosemont OR Site:Winterthur)"
     }
   ],
   "DataFieldSets": [
@@ -83,8 +83,8 @@ A simple way of disambiguating the data items is to group them by data item id. 
   "Id": "quickstart",
   "Queries": [
     { 
-      Id: "inverters",
-      Value: "TypeId:docs-pi-inverter AND (Site:Rosemont OR Site:Winterthur)"
+      "Id": "inverters",
+      "Value": "TypeId:docs-pi-inverter AND (Site:Rosemont OR Site:Winterthur)"
     }
   ],
   "GroupingFields": [
@@ -151,8 +151,8 @@ Instead of grouping by data item id, let us group by metadata. This example uses
   "Id": "quickstart",
   "Queries": [
     { 
-      Id: "inverters",
-      Value: "TypeId:docs-pi-inverter AND (Site:Rosemont OR Site:Winterthur)"
+      "Id": "inverters",
+      "Value": "TypeId:docs-pi-inverter AND (Site:Rosemont OR Site:Winterthur)"
     }
   ],
   "GroupingFields": [
@@ -216,12 +216,12 @@ This example includes two actions:
   "Id": "quickstart",
   "Queries": [
     { 
-      Id: "inverters",
-      Value: "TypeId:docs-pi-inverter AND (Site:Rosemont OR Site:Winterthur)"
+      "Id": "inverters",
+      "Value": "TypeId:docs-pi-inverter AND (Site:Rosemont OR Site:Winterthur)"
     },
     { 
-      Id: "site weather",
-      Value: "TypeId:docs-omf-weather* AND (Site:Rosemont OR Site:Winterthur)"
+      "Id": "site weather",
+      "Value": "TypeId:docs-omf-weather* AND (Site:Rosemont OR Site:Winterthur)"
     }
   ],
   "GroupingFields": [

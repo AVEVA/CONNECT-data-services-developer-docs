@@ -2,93 +2,63 @@
 uid: DataViewsFieldSets
 ---
 
-# Field Sets
+# Data Field Sets
 
-A data view is likely to include multiple fields of information. One field serves as the index (e.g. Timestamp), and others contain information from or about the data items in the data view. 
-
-Individual fields are organized into `FieldSet`s. Field sets are collections of fields that share a common role or source type. Each field set performs a specific type of role:
-- FieldSetSourceType.**Index** - Provides the index field for the data view. A data view must have exactly one Index field set.
-- FieldSetSourceType.**SectionerValue** - Displays values that the view is [sectioned](xref:DataViewsSectioning) by.
-- FieldSetSourceType.**DataItem** - Resolves for each data item from a particular query.
-
-## Using field sets
+A data view is likely to include multiple fields of information. One field serves as the index (e.g. Timestamp), and others contain information from or about the data items in the data view.
+DataFieldSet`s. Data field sets are collections of fields originating from the same query that share a common role.
 
 ### Available field sets
-The typical workflow for adding field sets, and the fields in them, is to use or adapt the [available field sets](xref:DataViewsAvailableFieldSets) that resolve for the data view. This workflow is demonstrated in the [Quick Start - Define a Data View](xref:DataViewsQuickStartDefine).
+The typical workflow for adding data field sets, and the data fields in them, is to use or adapt the [available field sets](xref:DataViewsAvailableFieldSets) that resolve for the data view. This workflow is demonstrated in the [Quick Start - Define a Data View](xref:DataViewsQuickStartDefine).
 
-### Index field set
-A data view must have exactly one field set serving as its index: a field set whose `.SourceType` is `FieldSetSourceType.Index`. Currently, because the supported index type is a non-compound "DateTime", the index field set may contain only one `Field`. That `Field` must be of `.Source` `FieldSource.None`, because the data views engine provides interpolated index values.
-
-### Data item field sets
-Field sets whose source is the `DataItem`s from a `Query` will "resolve" into fields for each data item. If the data items have been [sectioned](xref:DataViewsSectioning), then this happens within the context of each section.
-
-#### Example: Defining field sets
+#### Example: Defining data field sets
 Let us take a subset of the [example scenario](xref:DataViewsExampleScenario)'s power inverter streams, returned by the `Query` [value](xref:sdsSearching) `"TypeId:docs-pi-inverter AND Site:Winterthur"`. 
 
 | Site | Meter | Measurement | Stream Id | Tags |
-|--|--|--|--|--|--|
+|--|--|--|--|--|
 | Winterthur | Primary | Power In | WINT.Meter.Primary.Inverter.0.PwrIn | Low Resolution |
 | Winterthur | Primary | Power Out | WINT.Meter.Primary.Inverter.0.PwrOut | Low Resolution |
 | Winterthur | Secondary | Power In | ROSE.Meter.Secondary.Inverter.0.PwrIn | Low Resolution |
 | Winterthur | Secondary | Power Out | ROSE.Meter.Secondary.Inverter.0.PwrOut | Low Resolution |
 
-The following represents a data view sectioned by "Meter", including fields for the sectioner value, and each data item's "Tags" and property "Value":
+The following represents a data view grouped by "Meter", including fields for the grouping value, and each data item's "Tags" and property "Value":
 
 ```json
 {
   "Id": "quickstart",
   "Queries": [
-    { 
+    {
       "Id": "inverters",
       "Value": "TypeId:docs-pi-inverter AND Site:Winterthur"
     }
   ],
-  "Sectioners": [
+  "GroupingFields": [
     {
-          "Source": "Metadata",
-          "Keys": [ "Meter" ],
-          "Label": "{DistinguisherValue} {FirstKey}"
-    },
+      "Source": "Metadata",
+      "Keys": [ "Meter" ],
+      "Label": "{IdentifyingValue} {FirstKey}"
+    }
   ],
-  "FieldSets": [
+  "DataFieldSets": [
     {
-      "SourceType": "Index",
-      "Fields": [
-        {
-          "Label": "Timestamp"
-        }
-      ]
-    },
-    {
-      "SourceType": "SectionValue",
-      "Fields": [
-        {
-          "Keys": [ "0" ],
-          "Label": "{SectionerLabel}"
-        }
-      ],
-    },
-    {
-      "SourceType": "DataItem",
       "QueryId": "inverters",
-      "Fields": [
+      "DataFields": [
         {
           "Source": "PropertyId",
           "Keys": [ "Value" ],
-          "Label": "{DistinguisherValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {FirstKey}"
         },
         {
           "Source": "Tags",
           "Keys": [ "Low Resolution", "High Resolution" ],
-          "Label": "{DistinguisherValue} Tags"
-        },
-      ],
+          "Label": "{IdentifyingValue} Tags"
+        }
+      ]
     }
   ]
 }
 ```
 
-The view resolves into two sections of field mappings:
+The view resolves into two groups of field mappings:
 
 | Timestamp.0 | Meter.1 | Value.2 | Tags.3 | Value.4 | Tags.5 | Value.6 | Tags.7 | Value.8 | Tags.9 |
 |--|--|--|--|--|--|--|--|--|--|
@@ -97,77 +67,57 @@ The view resolves into two sections of field mappings:
 
 Two things are clearly undesirable here:
 1. The field identifiers are ambiguous
-2. The result is sparse: the data views engine has not been told how to align the data items across sections, so it has no idea that all "Power In" streams are similar.
+2. The result is sparse: the data views engine has not been told how to align the data items across groups, so it has no idea that all "Power In" streams are similar.
 
-To fix this, we will add a `.Distinguisher` to the field set.
+To fix this, we will add a `.IdentifyingField` to the field set.
 
-#### Distinguisher
-If the field set resolves to multiple data items in any section (or if sectioning is not used), then a field should be designated as the field set's `.Distinguisher`. If one lone criterion is not a sufficient or useful way of disambiguating the fields, then [sectioning](xref:DataViewsSectioning) by additional criteria may be necessary.
+#### Identifying field
+If the field set resolves to multiple data items in any group (or if grouping is not used), then a field should be designated as the field set's `.IdentifyingField`. If one lone criterion is not a sufficient or useful way of disambiguating the fields, then [grouping](xref:DataViewsGrouping) by additional criteria may be necessary.
 
-#### Example: Adding a distinguisher
-To the data view from the previous example, we will add a `Field` as the `.Distinguisher` of its field set. In this example, it makes sense to distinguish each data item by its _Measurement_.
+#### Example: Adding an identifying field
+To the data view from the previous example, we will add a `Field` as the `.IdentifyingField` of its field set. In this example, it makes sense to identify each data item by its _Measurement_.
 
 ```json
 {
   "Id": "quickstart",
   "Queries": [
-    { 
+    {
       "Id": "inverters",
       "Value": "TypeId:docs-pi-inverter AND Site:Winterthur"
     }
   ],
-  "Sectioners": [
+  "GroupingFields": [
     {
-          "Source": "Metadata",
-          "Keys": [ "Meter" ],
-          "Label": "{DistinguisherValue} {FirstKey}"
-    },
+      "Source": "Metadata",
+      "Keys": [ "Meter" ],
+      "Label": "{IdentifyingValue} {FirstKey}"
+    }
   ],
-  "FieldSets": [
+  "DataFieldSets": [
     {
-      "SourceType": "Index",
-      "Fields": [
-        {
-          "Label": "Timestamp"
-        }
-      ]
-    },
-    {
-      "SourceType": "SectionValue",
-      "Fields": [
-        {
-          "Keys": [ "0" ],
-          "Label": "{SectionerLabel}"
-        }
-      ],
-    },
-    {
-      "SourceType": "DataItem",
       "QueryId": "inverters",
-      "Distinguisher": {
-        {
+      "IdentifyingField": {
           "Source": "Metadata",
-          "Keys": [ "Measurement" ],
-        },
+          "Keys": [ "Measurement" ]
       },
-      "Fields": [
+      "DataFields": [
         {
           "Source": "PropertyId",
           "Keys": [ "Value" ],
-          "Label": "{DistinguisherValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {FirstKey}"
         },
         {
           "Source": "Tags",
           "Keys": [ "Low Resolution", "High Resolution" ],
-          "Label": "{DistinguisherValue} Tags"
-        },
-      ],
+          "Label": "{IdentifyingValue} Tags"
+        }
+      ]
     }
   ]
 }
 ```
 
-The result is much more consumable. The field identifiers are no longer ambiguous, and like data items are aligned across sections:
+The result is much more consumable. The data field identifiers are no longer ambiguous, and like data items are aligned across groups:
 
 | Timestamp | Meter | Power In Value | Power In Tags | Power Out Value | Power Out Tags |
 |--|--|--|--|--|--|
@@ -175,12 +125,12 @@ The result is much more consumable. The field identifiers are no longer ambiguou
 | - | Secondary | ..Secondary..PwrIn/PropertyId:Value | ..Secondary..PwrIn/Tags |  ..Secondary..PwrOut/PropertyId:Value | ..Secondary..PwrOut/Tags  |
 
 ## Field
-Each field represents a particular source of information, such as a data item's `.Id` or the values from one of its properties.
+Each data field represents a particular source of information, such as a data item's `.Id` or the values from one of its properties.
 
 ### Label
-A field's label is a friendly name. 
+A data field's label is a friendly name. 
 
-When the data view is resolved and fields produce field mappings, labels are trimmed of whitespace and used as the field mappings' identifier. For example:
+When the data view is resolved and data fields produce field mappings, labels are trimmed of whitespace and used as the field mappings' identifier. For example:
 | Timestamp | Power In Value | Power Out Value |
 |--|--|--|
 
@@ -190,8 +140,8 @@ In cases where the identifiers are unique, the identifier is suffixed with an or
 |--|--|--|
 
 There are three special parameters available for use in field labels:
-- `{SectionValue}` - the value of the sectioner
-- `{DistinguisherValue}` - the value of the distinguisher
+- `{GroupingFieldLabel}` - the value of the grouping field
+- `{IdentifyingValue}` - the value of the identifying field
 - `{FirstKey}` - the value of the first of the `"Keys"` specified on the field
 
 If a special parameter fails to resolve, it becomes an empty string, `""`.

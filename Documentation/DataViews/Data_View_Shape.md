@@ -8,9 +8,9 @@ Data views may be set to resolve as a standard shape or a narrow shape.
 
 With a standard shape, each row in the resolved data view includes all the data fields for a single event or observation. With a narrow shape, each row in the resolved data view includes only one data field. This results in a narrow output schema where one column contains all the data field values, so the schema remains fixed regardless of changes to the included data fields. Narrow shape may be used when an invariant output schema is required.
 
-The shape concepts presented in this section apply to building all data view output formats; although the terminology used and examples shown, pertain to tabular output with [headers](xref:DataViewsGettingData#Format) (form = csvh).
+The shape concepts presented in this section apply to building all data view output formats; although the terminology used and examples shown, pertain to tabular output with [headers](xref:DataViewsGettingData#format) (form = csvh).
 ## Specify the shape
-Set the `DataView` [`Shape`](xref:DataView#DataViewShape) property to either `DataViewShape.Standard` (default) or `DataViewShape.Narrow`.
+Set the `DataView` [`Shape`](xref:DataView#dataview-properties) property to a value of the [`DataViewShape` enumeration](xref:DataView#dataviewshape-enumeration), either `DataViewShape.Standard` (default) or `DataViewShape.Narrow`.
 
 ## Standard shape
 
@@ -32,7 +32,7 @@ Timestamp.0,Id.1,SolarRadiation.2,Temperature.3,Tags.4,Id.5,SolarRadiation.6,Tem
 
 ##### Example: Get data response body for standard shape with grouping field (Site)
 
-The use of a grouping field will restructure the table vertically. See [Grouping documentation](xref:DataViewsSectioning) for details.
+The use of a grouping field will restructure the table vertically. See [Grouping documentation](xref:DataViewsGrouping) for details.
 
 ```csv
 Timestamp,Site,Id,SolarRadiation,Temperature,Tags

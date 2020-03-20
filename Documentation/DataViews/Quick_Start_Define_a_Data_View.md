@@ -22,7 +22,7 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quick
 ```
 
 ### Expected result
-A data view with very few properties populated: `.Id`, `.Name`, `.IndexTypeCode` (default: `"DateTime"`), Shape (default: `DataViewShape.Standard`, which as a string is `"Standard"`).
+A data view with very few properties populated: `.Id`, `.Name`, `IndexField` (default: { "Label": "Timestamp" }), `.IndexTypeCode` (default: `"DateTime"`), Shape (default: `DataViewShape.Standard`, which as a string is `"Standard"`).
 ```json
 HTTP 201 Created
 {
@@ -30,9 +30,10 @@ HTTP 201 Created
   "Name": "quickstart",
   "Description": null,
   "Queries": [],
-  "FieldSets": [],
-  "Sectioners": [],
+  "DataFieldSets": [],
+  "GroupingFields": [],
   "Shape": "Standard",
+  "IndexField": { "Label": "Timestamp" },
   "IndexTypeCode": "DateTime"
 }
 ```
@@ -56,9 +57,10 @@ HTTP 200 OK
   "Name": "quickstart",
   "Description": null,
   "Queries": [],
-  "FieldSets": [],
-  "Sectioners": [],
+  "DataFieldSets": [],
+  "GroupingFields": [],
   "Shape": "Standard",
+  "IndexField": { "Label": "Timestamp" },
   "IndexTypeCode": "DateTime"
 }
 ```
@@ -70,7 +72,7 @@ Creating a data view begins with including some data items: today, those are SDS
 ### Action
 Use the result of the previous step as the starting point. All following steps will involve modifying the data view definition, or seeing the effects of those modifications.
 
-Add an item to the array of `.Queries`: `{ Id: "weather", Value:"*weather*" }`
+Add an item to the array of `.Queries`: `{ "Id": "weather", "Value":"*weather*" }`
 ```json
 PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
 {
@@ -79,13 +81,14 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
   "Description": null,
   "Queries": [
     { 
-      Id: "weather",
-      Value:"*weather*" 
+      "Id": "weather",
+      "Value":"*weather*" 
     }
   ],
-  "FieldSets": [],
-  "Sectioners": [],
+  "DataFieldSets": [],
+  "GroupingFields": [],
   "Shape": "Standard",
+  "IndexField": { "Label": "Timestamp" },
   "IndexTypeCode": "DateTime"
 }
 ```
@@ -230,7 +233,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
 ```
 
 ### Expected result
-An array of the data items matching the query, but whose index type is not "DateTime," and thus not eligible for inclusion in the data view.
+An array of the data items matching the query, but whose index type is not "DateTime" and thus not eligible for inclusion in the data view.
 
 With the example streams, this collection is empty.
 ```json
@@ -249,9 +252,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
 ```
 
 ### Expected result
-Two field sets:
--	A field set of type “Index” with one field, representing an interpolated index. Data views only support interpolated index values at this time. In the future, if other retrieval modes are supported, a data item could be mapped here as the master index.
--	A field set of type “DataItem,” pointing to query “weather”. Assuming some data items were retrieved, this field set shows that attributes of the streams (id, name, tags) are available, as well as the values of all metadata keys and properties.
+A field set with a source type of "DataItem" pointing to the query identified by "weather". Assuming some data items were retrieved, this field set shows that attributes of the streams (id, name, tags) are available, as well as the values of all metadata keys and properties.
 
 ```json
 HTTP 200 OK
@@ -259,28 +260,18 @@ HTTP 200 OK
     "TimeOfResolution": "(a timestamp in ISO 8601 format)",
     "Items": [
         {
-            "SourceType": "Index",
-            "Fields": [
-                {
-                    "Source": "None",
-                    "Keys": [],
-                    "Label": "Timestamp"
-                }
-            ]
-        },
-        {
             "SourceType": "DataItem",
             "QueryId": "weather",
-            "Fields": [
+            "DataFields": [
                 {
                     "Source": "Id",
                     "Keys": [],
-                    "Label": "{DistinguisherValue} Id"
+                    "Label": "{IdentifyingValue} Id"
                 },
                 {
                     "Source": "Name",
                     "Keys": [],
-                    "Label": "{DistinguisherValue} Name"
+                    "Label": "{IdentifyingValue} Name"
                 },
                 {
                     "Source": "Tags",
@@ -291,49 +282,49 @@ HTTP 200 OK
                         "Gen1",
                         "Gen2",
                     ],
-                    "Label": "{DistinguisherValue} Tags"
+                    "Label": "{IdentifyingValue} Tags"
                 },
                 {
                     "Source": "Metadata",
                     "Keys": [
                         "Site"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "Timestamp"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "SolarRadiation"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "AmbientTemperature"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "CloudCover"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "Temperature"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 }
             ]
         }
@@ -342,13 +333,12 @@ HTTP 200 OK
 ```
 
 ## Include some of the available fields
-At this point, if you query for data, the table is empty – because no fields have been included in the data view. Including fields is a deliberate action, albeit one that is intended to be easy.
+At this point, if you query for data, the table only contains the `IndexField` – because no fields have been included in the data view. Including fields is a deliberate action, albeit one that is intended to be easy.
 
 ### Action
 For ease, grab all of the field sets that are available. 
 
-Set the Data View’s FieldSets property as the content of the AvailableFieldSets response.
-From the `FieldSet` for *weather* data items, remove the `Field` for the “Timestamp” property. It would be redundant.
+Set the data view’s `DataFieldSets` property as the contents of the `AvailableFieldSets` response.
 ```json
 PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
 {
@@ -357,34 +347,24 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
   "Description": null,
   "Queries": [
     { 
-      Id: "weather",
-      Value:"*weather*" 
+      "Id": "weather",
+      "Value":"*weather*" 
     }
   ],
-  "FieldSets": [
-        {
-            "SourceType": "Index",
-            "Fields": [
-                {
-                    "Source": "None",
-                    "Keys": [],
-                    "Label": "Timestamp"
-                }
-            ]
-        },
+  "DataFieldSets": [
         {
             "SourceType": "DataItem",
             "QueryId": "weather",
-            "Fields": [
+            "DataFields": [
                 {
                     "Source": "Id",
                     "Keys": [],
-                    "Label": "{DistinguisherValue} Id"
+                    "Label": "{IdentifyingValue} Id"
                 },
                 {
                     "Source": "Name",
                     "Keys": [],
-                    "Label": "{DistinguisherValue} Name"
+                    "Label": "{IdentifyingValue} Name"
                 },
                 {
                     "Source": "Tags",
@@ -395,48 +375,49 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
                         "Gen1",
                         "Gen2",
                     ],
-                    "Label": "{DistinguisherValue} Tags"
+                    "Label": "{IdentifyingValue} Tags"
                 },
                 {
                     "Source": "Metadata",
                     "Keys": [
                         "Site"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "SolarRadiation"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "AmbientTemperature"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "CloudCover"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "Temperature"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 }
             ],
        },
   ],
-  "Sectioners": [],
+  "GroupingFields": [],
   "Shape": "Standard",
+  "IndexField": { "Label": "Timestamp" },
   "IndexTypeCode": "DateTime"
 }
 ```
@@ -445,7 +426,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
 HTTP 204 No Content
 ```
 
-Now, if we return to the available field sets, only “Timestamp” remains available but unused.
+Now, if we return to the available field sets, all data fields are used so none are available.
 
 ### Action
 ```text
@@ -453,25 +434,11 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
 ```
 
 ### Expected result
-One field set with one field: Timestamp, available but not used in the data view.
+No available data fields.
 ```json
 {
     "TimeOfResolution": "(a timestamp in ISO 8601 format)",
-    "Items": [
-        {
-            "SourceType": "DataItem",
-            "QueryId": "weather",
-            "Fields": [
-                {
-                    "Source": "PropertyId",
-                    "Keys": [
-                        "Timestamp"
-                    ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
-                }
-            ]
-        }
-    ]
+    "Items": []
 }
 ```
 
@@ -534,15 +501,15 @@ Timestamp.0,Id.1,Name.2,Tags.3,Site.4,SolarRadiation.5,AmbientTemperature.6,Clou
 2019-10-21T20:00:00.0000000Z,WS_WINT,WS_WINT,"Weather, High Resolution, Gen2",Winterthur,109,2.501105722,3,,WS_ROSE,WS_ROSE,"Weather, Low Resolution, Gen1",Rosecliff,139,,,14.76498991,WS_BILT,WS_BILT,"Weather, High Resolution, Gen1",Biltmore,157,,,32.41209639
 ```
 
-## Section the data view
-One way to disambiguate the data items is to “section” them, which amounts to partitioning them based on a value. For example, metadata:Site as the sectioner might yield sections of Biltmore, Rosecliff, and Winterthur, each containing the data items associated with that Site.
+## Group the data view
+One way to disambiguate the data items is to “group” them, which amounts to partitioning them based on a value. For example, metadata:Site as the grouping field might yield groups of Biltmore, Rosecliff, and Winterthur, each containing the data items associated with that Site.
 
-You may use multiple sectioners. This is effectively “section by X then Y then Z”
+You may use multiple grouping fields. This is effectively “group by X then Y then Z”
 
-Sectioners are a property of the data view, and are an array of `Field` objects. This means the same Field objects contained in the available or included field sets may be reused directly as sectioners.
+Grouping fields are a property of the data view, and are an array of `Field` objects. This means the same Field objects contained in the available or included field sets may be reused directly as grouping fields.
 
 ### Action
-Sectioning by metadata is likely to be most satisfying, but here, start with sectioning by data item id. In the `DataView` object, copy the field with `{ Source: “Metadata”, Keys: [ "Site" ] }`, and add it to the array of `.Sectioners`.
+Grouping by metadata is likely to be most satisfying, but here, start with grouping by data item id. In the `DataView` object, copy the field with `{ Source: “Metadata”, Keys: [ "Site" ] }`, and add it to the array of `.GroupingFields`.
 ```json
 PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
 {
@@ -551,34 +518,24 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
   "Description": null,
   "Queries": [
     { 
-      Id: "weather",
-      Value:"*weather*" 
+      "Id": "weather",
+      "Value":"*weather*" 
     }
   ],
-  "FieldSets": [
-        {
-            "SourceType": "Index",
-            "Fields": [
-                {
-                    "Source": "None",
-                    "Keys": [],
-                    "Label": "Timestamp"
-                }
-            ]
-        },
+  "DataFieldSets": [
         {
             "SourceType": "DataItem",
             "QueryId": "weather",
-            "Fields": [
+            "DataFields": [
                 {
                     "Source": "Id",
                     "Keys": [],
-                    "Label": "{DistinguisherValue} Id"
+                    "Label": "{IdentifyingValue} Id"
                 },
                 {
                     "Source": "Name",
                     "Keys": [],
-                    "Label": "{DistinguisherValue} Name"
+                    "Label": "{IdentifyingValue} Name"
                 },
                 {
                     "Source": "Tags",
@@ -589,56 +546,50 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
                         "Gen1",
                         "Gen2",
                     ],
-                    "Label": "{DistinguisherValue} Tags"
-                },
-                {
-                    "Source": "Metadata",
-                    "Keys": [
-                        "Site"
-                    ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} Tags"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "SolarRadiation"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "AmbientTemperature"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "CloudCover"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "Temperature"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 }
             ],
        },
   ],
-  "Sectioners": [
+  "GroupingFields": [
     {
       "Source": "Metadata",
       "Keys": [
         "Site" 
       ],
-      "Label": "{DistinguisherValue} Id"
+      "Label": "{IdentifyingValue} {FirstKey}"
     }
   ],
   "Shape": "Standard",
+  "IndexField": { "Label": "Timestamp" },
   "IndexTypeCode": "DateTime"
 }
 ```
@@ -706,62 +657,11 @@ HTTP 200 OK
 
 **Note:** The Data Views product does not assume an intention for ultra-skinny output.
 
-## Include the sectioner field set
+## Identify data items
 
-In the case where each section contained multiple data items, having the section value repeated for every data item would be redundant. Return to the Available Field Sets, and now there is a solution for that redundancy
+A different and complementary way of disambiguating the data items is to “identify” them within the field set.
 
-### Action
-```text
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart/Resolved/AvailableFieldSets
-```
-
-### Expected result
-A new field set is available, of `SourceType: "SectionerValue"`.
-
-```json
-HTTP 200 OK
-{
-    "TimeOfResolution": "2019-11-14T20:31:20.856826+00:00",
-    "Items": [
-        {
-            "SourceType": "SectionValue",
-            "Fields": [
-                {
-                    "Source": "None",
-                    "Keys": [
-                        "0"
-                    ],
-                    "Label": "{SectionerLabel}"
-                }
-            ]
-        },
-        {
-            "SourceType": "DataItem",
-            "QueryId": "weather",
-            "Fields": [
-                {
-                    "Source": "PropertyId",
-                    "Keys": [
-                        "Timestamp"
-                    ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
-                }
-            ]
-        }
-    ]
-}
-```
-
-This allows the sectioner value to appear as a single field, versus being repeated with every data item “across the table.” Notice that the fields there act as pointers, referring to e.g. `DataView.Sectioners[0]` and using its label. This indirection avoids confusing mismatches if you decide to try other fields as sectioners.
-
-### Action
-Whatever field you’re using as the sectioner, remove it from the fields included in the data view, since it’s redundant now.
-
-## Distinguish data items
-
-A different and complementary way of disambiguating the data items is to “distinguish” them within the field set.
-
-This is also useful for aligning data items across sections. Imagine if each site had an additional stream from a backup weather station:
+This is also useful for aligning data items across groups. Imagine if each site had an additional stream from a backup weather station:
 
 | Timestamp |	Site |	Primary Temperature | Primary SolarRadiation | Backup Temperature | Backup SolarRadiation
 |--|--|--|--|--|--|
@@ -772,7 +672,7 @@ This is also useful for aligning data items across sections. Imagine if each sit
 The data views engine must be told how the streams align across sites. Here, it makes sense to align them by which measurement they represent: _Primary_ or _Backup_.
 
 ### Action
-Move the field used as Sectioner over to being the “.Distinguisher” of the weather data items `FieldSet`.
+Move the field used as `GroupingField` over to being the “.IdentifyingField” of the weather data items `FieldSet`.
 ```json
 PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
 {
@@ -781,80 +681,71 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
   "Description": null,
   "Queries": [
     { 
-      Id: "weather",
-      Value:"*weather*" 
+      "Id": "weather",
+      "Value":"*weather*" 
     }
   ],
-  "FieldSets": [
-        {
-            "SourceType": "Index",
-            "Fields": [
-                {
-                    "Source": "None",
-                    "Keys": [],
-                    "Label": "Timestamp"
-                }
-            ]
-        },
+  "DataFieldSets": [
         {
             "SourceType": "DataItem",
             "QueryId": "weather",
-            "Distinguisher": {
+            "IdentifyingField": {
                 "Source": "Metadata",
                 "Keys": [
                     "Site"
                 ],
-                "Label": "{DistinguisherValue} {FirstKey}"
+                "Label": "{IdentifyingValue} {FirstKey}"
             },
-            "Fields": [
+            "DataFields": [
                 {
                     "Source": "Id",
                     "Keys": [],
-                    "Label": "{DistinguisherValue} Id"
+                    "Label": "{IdentifyingValue} Id"
                 },
                 {
                     "Source": "Name",
                     "Keys": [],
-                    "Label": "{DistinguisherValue} Name"
+                    "Label": "{IdentifyingValue} Name"
                 },
                 {
                     "Source": "Tags",
                     "Keys": [],
-                    "Label": "{DistinguisherValue} Tags"
+                    "Label": "{IdentifyingValue} Tags"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "SolarRadiation"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "AmbientTemperature"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "CloudCover"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "Temperature"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 }
             ],
        },
   ],
-  "Sectioners": [],
+  "GroupingFields": [],
   "Shape": "Standard",
+  "IndexField": { "Label": "Timestamp" },
   "IndexTypeCode": "DateTime"
 }
 ```
@@ -871,7 +762,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
 ```
 
 ### Expected result
-We’re back to a wide table, but the field ids are now distinct. The suggested/default values of the Available Fields’ `.Label` property includes {DistinguisherValue}, so if using those defaults, the impact of adding a Distinguisher is immediately clear.
+We’re back to a wide table, but the field ids are now distinct. The suggested/default values of the Available Fields’ `.Label` property includes {IdentifyingValue}, so if using those defaults, the impact of adding an identifying field is immediately clear.
 
 ```json
 HTTP 200 OK
@@ -916,7 +807,7 @@ Find the `Field` associated with "AmbientTemperature". To the `Field`'s `.Keys` 
     "AmbientTemperature",
     "Temperature"
   ],
-  "Label": "{DistinguisherValue} {FirstKey}"
+  "Label": "{IdentifyingValue} {FirstKey}"
 },
 ```
 Now that field will match to either "Temperature" or "AmbientTemperature".  
@@ -932,43 +823,33 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
   "Description": null,
   "Queries": [
     { 
-      Id: "weather",
-      Value:"*weather*" 
+      "Id": "weather",
+      "Value":"*weather*" 
     }
   ],
-  "FieldSets": [
-        {
-            "SourceType": "Index",
-            "Fields": [
-                {
-                    "Source": "None",
-                    "Keys": [],
-                    "Label": "Timestamp"
-                }
-            ]
-        },
+  "DataFieldSets": [
         {
             "SourceType": "DataItem",
             "QueryId": "weather",
-            "Distinguisher": {
+            "IdentifyingField": {
                 "Source": "Metadata",
                 "Keys": [
                     "Site"
                 ],
-                "Label": "{DistinguisherValue} {FirstKey}"
+                "Label": "{IdentifyingValue} {FirstKey}"
             },
-            "Fields": [
+            "DataFields": [
                 {
                     "Source": "Tags",
                     "Keys": [],
-                    "Label": "{DistinguisherValue} Tags"
+                    "Label": "{IdentifyingValue} Tags"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "SolarRadiation"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
@@ -976,20 +857,21 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
                         "AmbientTemperature",
                         "Temperature"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "PropertyId",
                     "Keys": [
                         "CloudCover"
                     ],
-                    "Label": "{DistinguisherValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
             ],
        },
   ],
-  "Sectioners": [],
+  "GroupingFields": [],
   "Shape": "Standard",
+  "IndexField": { "Label": "Timestamp" },
   "IndexTypeCode": "DateTime"
 }
 ```

@@ -53,9 +53,10 @@ Content-Type: application/json
       "Value":"*weather*" 
     }
   ],
-  "FieldSets": [],
-  "Sectioners": [],
+  "DataFieldSets": [],
+  "GroupingFields": [],
   "Shape": "Standard",
+  "IndexField": { "Label": "Timestamp" },
   "IndexTypeCode": "DateTime"
 }
 ```
@@ -134,9 +135,10 @@ A `DataView` object whose `Id` is `null` or unspecified.
   "Name": "demo",
   "Description": "demonstration",
   "Queries": [],
-  "FieldSets": [],
-  "Sectioners": [],
+  "DataFieldSets": [],
+  "GroupingFields": [],
   "Shape": "Standard",
+  "IndexField": { "Label": "Timestamp" },
   "IndexTypeCode": "DateTime"
 }
 ```
@@ -160,9 +162,10 @@ Content-Type: application/json
   "Name": "demo",
   "Description": "demonstration",
   "Queries": [],
-  "FieldSets": [],
-  "Sectioners": [],
+  "DataFieldSets": [],
+  "GroupingFields": [],
   "Shape": "Standard",
+  "IndexField": { "Label": "Timestamp" },
   "IndexTypeCode": "DateTime"
 }
 ```
@@ -194,9 +197,10 @@ A `DataView` object whose `Id` matches the `dataViewId` in the URL.
   "Name": "demo2",
   "Description": "demonstration 2",
   "Queries": [],
-  "FieldSets": [],
-  "Sectioners": [],
+  "DataFieldSets": [],
+  "GroupingFields": [],
   "Shape": "Standard",
+  "IndexField": { "Label": "Timestamp" },
   "IndexTypeCode": "DateTime"
 }
 ```
@@ -223,9 +227,10 @@ Content-Type: application/json
   "Name": "demo2",
   "Description": "demonstration 2",
   "Queries": [],
-  "FieldSets": [],
-  "Sectioners": [],
+  "DataFieldSets": [],
+  "GroupingFields": [],
   "Shape": "Standard",
+  "IndexField": { "Label": "Timestamp" },
   "IndexTypeCode": "DateTime"
 }
 ```
@@ -257,9 +262,10 @@ A `DataView` object whose `Id` matches the `dataViewId` in the URL.
   "Name": "demo",
   "Description": "demonstration",
   "Queries": [],
-  "FieldSets": [],
-  "Sectioners": [],
+  "DataFieldSets": [],
+  "GroupingFields": [],
   "Shape": "Standard",
+  "IndexField": { "Label": "Timestamp" },
   "IndexTypeCode": "DateTime"
 }
 ```

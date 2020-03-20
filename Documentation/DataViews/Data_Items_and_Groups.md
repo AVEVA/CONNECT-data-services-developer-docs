@@ -1,8 +1,8 @@
 ---
-uid: DataViewsDataItemsandSections
+uid: DataViewsDataItemsandGroups
 ---
 
-# Data Items and Sections
+# Data Items and Groups
 
 A `DataItem` is an SdsStream included in the data view. The collection of data items is specified by the data view queries, where the queries define the search criteria and the data items represent the results of the search. The data view can include one or more properties from each data item.
 
@@ -14,7 +14,7 @@ The collection of data items in the data view represents all SdsStreams that mat
 Note that each query is executed independently to generate the list of data items. It is thus possible to have duplicate data items resulting from different queries. This can be desirable and undesirable depending the use case.
 
 ### Adding Fields
-Each data item contains information that can be optionally (and explicitly) added to the data view by setting the [`.field sets`](xref:DataViewsFieldSets) field of the data view. Currently, the only supported resource type is `stream` with the following available fields:
+Each data item contains information that can be optionally (and explicitly) added to the data view by setting the [`.data field sets`](xref:DataViewsFieldSets) field of the data view. Currently, the only supported resource type is `stream` with the following available fields:
 * Stream id
 * Stream name
 * Stream tags
@@ -33,6 +33,6 @@ The collection of ineligible data items represents SdsStreams that match the que
 * When the SdsType of the stream contains compound indexes. 
 
 
-## Sections
+## Groups
 
-[Sectioning](xref:DataViewsSectioning) is optional when defining the data view. If the `.sectioners` field is not defined on the data view, the resolved data view shows a single section with all eligible data items. If the `.sectioners` field is defined, the resolved data view shows multiple sections, each with the list of data items for the section and the `.values` field showing the matching section's value(s). In this case, if a data item does not match any section, it is added to all sections.
+[Grouping](xref:DataViewsGrouping) is optional when defining the data view. If the `.GroupingFields` section is not defined on the data view, the resolved data view shows a single group with all eligible data items. If the `.GroupingFields` is defined, the resolved data view shows multiple groups, each with the list of data items for the group and the `.values` field showing the matching group's value(s). In this case, if a data item does not match any group, it is added to all groups.

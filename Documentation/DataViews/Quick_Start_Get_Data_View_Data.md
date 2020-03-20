@@ -167,44 +167,32 @@ An array of field mappings:
 
 ```json
 {
-    "TimeOfResolution": "2019-12-13T01:23:45Z",
+    "TimeOfResolution": "(a timestamp in ISO8601 format)",
     "Items": [
-      {
-        "Id": "Timestamp.0",
-        "Label": "Timestamp",
-        "FieldSetIndex": 0,
-        "FieldIndex": 0,
-        "DataMappings": [
-          {
-            "TargetId": "",
-            "TargetFieldKey": "",
-            "TypeCode": "DateTime"
-          },
-          {
-            "TargetId": "",
-            "TargetFieldKey": "",
-            "TypeCode": "DateTime"
-          }
-        ]
-      },
-      {
-        "Id": "Id.1",
-        "Label": "Id",
-        "FieldSetIndex": 1,
-        "FieldIndex": 0,
-        "DataMappings": [
-          {
-            "TargetId": "WS_WINT",
-            "TargetFieldKey": "",
-            "TypeCode": "String"
-          },
-          {
-            "TargetId": "WS_ROSE",
-            "TargetFieldKey": "",
-            "TypeCode": "String"
-          }
-        ]
-      },
+        {
+            "Id": "Timestamp.0",
+            "Label": "Timestamp",
+            "FieldKind": "IndexField",
+            "DataMappings": [
+                {
+                    "TypeCode": "DateTime"
+                }
+            ]
+        },
+        {
+            "Id": "Id.1",
+            "Label": "Id",
+            "FieldKind": "DataField",
+            "FieldSetIndex": 0,
+            "FieldIndex": 0,
+            "DataMappings": [
+                {
+                    "TargetId": "WS_BILT",
+                    "TargetFieldKey": "WS_BILT",
+                    "TypeCode": "String"
+                }
+            ]
+        },
       ...
     ]
 }

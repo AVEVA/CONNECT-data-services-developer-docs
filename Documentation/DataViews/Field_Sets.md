@@ -14,7 +14,7 @@ The typical workflow for adding data field sets, and the data fields in them, is
 Let us take a subset of the [example scenario](xref:DataViewsExampleScenario)'s power inverter streams, returned by the `Query` [value](xref:sdsSearching) `"TypeId:docs-pi-inverter AND Site:Winterthur"`. 
 
 | Site | Meter | Measurement | Stream Id | Tags |
-|--|--|--|--|--|--|
+|--|--|--|--|--|
 | Winterthur | Primary | Power In | WINT.Meter.Primary.Inverter.0.PwrIn | Low Resolution |
 | Winterthur | Primary | Power Out | WINT.Meter.Primary.Inverter.0.PwrOut | Low Resolution |
 | Winterthur | Secondary | Power In | ROSE.Meter.Secondary.Inverter.0.PwrIn | Low Resolution |

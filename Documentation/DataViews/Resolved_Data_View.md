@@ -73,7 +73,7 @@ Holds an item that was resolved at a specific time.
 
 ### DataItem
 |Property | Type | Details |
-|--|--|--|--|--|
+|--|--|--|
 | Id | string | Unique identifier 
 | Name | string | Friendly name
 | Description | string | Extended text description
@@ -95,7 +95,7 @@ A field of a data item where values come from.
 Within a data item of resource kind `.Stream`, this corresponds to a stream property.
 
 |Property | Type | Details |
-|--|--|--|--|--|
+|--|--|--|
 | Id | string | The data item field's unique identifier 
 | Name | string | The data item field's friendly name
 | TypeCode | SdsTypeCode| The name of the field's data type
@@ -105,7 +105,7 @@ Within a data item of resource kind `.Stream`, this corresponds to a stream prop
 A group of the data view. The overall collection of data items is divided into groups as a result of the `.GroupingFields` defined on the `DataView`.
 
 |Property | Type | Details |
-|--|--|--|--|--|
+|--|--|--|
 | Values | IReadOnlyList<string> | This groups's value of each `.GroupingFields` defined on the `DataView`
 | DataItems | IReadOnlyDictionary<string, IReadOnlyList<DataItem>> | The data items in this group
 
@@ -113,15 +113,17 @@ A group of the data view. The overall collection of data items is divided into g
 Details on the provenance on every field of data:
 
 |Property | Type | Details |
-|--|--|--|--|--|
+|--|--|--|
 | Id | string | Unique identifier
 | Label | string | Friendly name
-| FieldKind | FieldKind enumeration | Specifies if the mapping is for an index, group or data field.
-| FieldSetIndex | int | The position of the corresponding field set within the data view
-| FieldIndex | int | The position of the corresponding field within its field set
+| FieldKind | FieldKind enumeration | Specifies if the mapping is for an index, grouping or data field
+| FieldSetIndex | int? | The position of the corresponding field set within the data view
+| FieldIndex | int? | The position of the corresponding field within its field set
 | DataMappings | IReadOnlyList<DataMapping> | Per-group details of what this field resolved to
 
 ### FieldKind enumeration
+Field type used in the mapping.
+
 |Name| Description  |
 |--|--|
 |IndexField | Maps to an index field.
@@ -132,7 +134,7 @@ Details on the provenance on every field of data:
 Per-group details of the data that a `FieldMapping` targets:
 
 |Property | Type | Details |
-|--|--|--|--|--|
+|--|--|--|
 | TargetId | string | The unique identifier of the target data item
 | TargetFieldKey | string | The specific targeted part of the data item, if any.
 | TypeCode | SdsTypeCode | The value type
@@ -141,7 +143,7 @@ Per-group details of the data that a `FieldMapping` targets:
 General statistics about how the data view resolved:
 
 |Property | Type | Details |
-|--|--|--|--|--|
+|--|--|--|
 | DataItemCount | int | The total count of data items resolved in the data view
 | GroupCount | int | The total count of groups resolved in the data view
 | FieldCount | int | The total count of fields resolved in the data view

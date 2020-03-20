@@ -23,7 +23,7 @@ The `FieldKind` specifies whether the field maps to an index field, grouping fie
 `TargetId`, `TargetFieldKey`, `FieldSetIndex` and `FieldIndex` are not used for index fields. `TypeCode` is equivalent to the `IndexTypeCode` of the data view. 
 
 #### Grouping field
-`FieldSetIndex` and `TargetFieldKey` are not used. `FieldIndex` is the zero-based positioning of field within the grouping field. `TargetId` represents the data item id.
+`FieldSetIndex` and `TargetFieldKey` are not used. `FieldIndex` is the zero-based positioning of field within the grouping field. `TargetId` represents the value of the item in the grouping field.
 
 ### Data field
 `FieldSetIndex` is the zero-based positioning of data field set. `FieldIndex` is the zero-based positioning of data field within the appropriate data field set. `TargetId` represents the data item id.

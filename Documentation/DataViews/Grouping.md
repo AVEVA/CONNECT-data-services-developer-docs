@@ -68,7 +68,7 @@ Let us start with a simple data view. It queries for the aforementioned streams,
 Unfortunately, the initial result is not very usable. The fields are ambiguous.  Eight fields are simply labeled "Value" with an index appendended to the end and the size of each data record is tied to the number of inverter streams found by the query.
 
 | Timestamp.0 | Value.1 | Value.2 | Value.3 | ... | 
-|--|--|--|--|--|--|
+|--|--|--|--|--|
 | - | ROSE.Meter.Primary.Inverter.0.PwrIn/Value | ROSE.Meter.Primary.Inverter.0.PwrOut/Value | ROSE.Meter.Primary.Inverter.1.PwrIn/Value | ... |
 
 #### Example: Complete uniqueness, grouping by data item id

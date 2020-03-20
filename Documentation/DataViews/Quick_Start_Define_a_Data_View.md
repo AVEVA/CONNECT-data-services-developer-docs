@@ -233,7 +233,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
 ```
 
 ### Expected result
-An array of the data items matching the query, but whose index type is not "DateTime," and thus not eligible for inclusion in the data view.
+An array of the data items matching the query, but whose index type is not "DateTime" and thus not eligible for inclusion in the data view.
 
 With the example streams, this collection is empty.
 ```json
@@ -252,7 +252,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quicks
 ```
 
 ### Expected result
-A field set of type “DataItem,” pointing to query “weather”. Assuming some data items were retrieved, this field set shows that attributes of the streams (id, name, tags) are available, as well as the values of all metadata keys and properties.
+A field set with a source type of "DataItem" pointing to the query identified by "weather". Assuming some data items were retrieved, this field set shows that attributes of the streams (id, name, tags) are available, as well as the values of all metadata keys and properties.
 
 ```json
 HTTP 200 OK
@@ -333,13 +333,12 @@ HTTP 200 OK
 ```
 
 ## Include some of the available fields
-At this point, if you query for data, the table is empty – because no fields have been included in the data view. Including fields is a deliberate action, albeit one that is intended to be easy.
+At this point, if you query for data, the table only contains the `IndexField` – because no fields have been included in the data view. Including fields is a deliberate action, albeit one that is intended to be easy.
 
 ### Action
 For ease, grab all of the field sets that are available. 
 
-Set the Data View’s FieldSets property as the content of the AvailableFieldSets response.
-From the `FieldSet` for *weather* data items, remove the `Field` for the “Timestamp” property. It would be redundant.
+Set the data view’s `DataFieldSets` property as the contents of the `AvailableFieldSets` response.
 ```json
 PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
 {

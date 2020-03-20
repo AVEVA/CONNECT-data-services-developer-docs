@@ -117,8 +117,8 @@ Details on the provenance on every field of data:
 | Id | string | Unique identifier
 | Label | string | Friendly name
 | FieldKind | FieldKind enumeration | Specifies if the mapping is for an index, grouping or data field
-| FieldSetIndex | int? | The position of the corresponding field set within the data view
-| FieldIndex | int? | The position of the corresponding field within its field set
+| FieldSetIndex | Nullable<int> | The position of the corresponding field set within the data view
+| FieldIndex | Nullable<int> | The position of the corresponding field within its field set
 | DataMappings | IReadOnlyList<DataMapping> | Per-group details of what this field resolved to
 
 ### FieldKind enumeration

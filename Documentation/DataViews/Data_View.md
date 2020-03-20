@@ -74,8 +74,8 @@ A query for SDS Streams to include in the view.
 A set of fields included in the data view, sharing a common role or source (`.SourceType`). One `DataView` is likely to include multiple `FieldSet`s.
 |Property | Type | Optionality  | Default  | Details |
 |--|--|--|--|--|
-| QueryId | string | Optional/Required | null | Required when SourceType is DataItem. Must correspond to a query defined in this data view. Not applicable to other source types.
-| Fields | Field[] | Optional | [ ] | Data fields to include in the data view. Often copied or adapted from the view's available field sets, which are exposed in a resolved resource.
+| QueryId | string | Required | | Must correspond to a query defined in the data view. 
+| DataFields | Field[] | Optional | [ ] | Data fields to include in the data view. Often copied or adapted from the view's available field sets, which are exposed in a resolved resource.
 | IdentifyingField | Field | Optional | null | A field by which to tell the data items apart, within each group.
 
 ### Field

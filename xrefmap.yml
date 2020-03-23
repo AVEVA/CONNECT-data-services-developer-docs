@@ -52,9 +52,9 @@ references:
 - uid: DataViewsDataAPI
   name: Data API
   href: Documentation/DataViews/Data_API.html
-- uid: DataViewsDataItemsandSections
-  name: Data Items and Sections
-  href: Documentation/DataViews/Data_Items_and_Sections.html
+- uid: DataViewsDataItemsandGroups
+  name: Data Items and Groups
+  href: Documentation/DataViews/Data_Items_and_Groups.html
 - uid: DataViewsExampleScenario
   name: Example Scenarios
   href: Documentation/DataViews/Example_Scenario.html
@@ -62,11 +62,14 @@ references:
   name: Field Mappings
   href: Documentation/DataViews/Field_Mappings.html
 - uid: DataViewsFieldSets
-  name: Field Sets
+  name: Data Field Sets
   href: Documentation/DataViews/Field_Sets.html
 - uid: DataViewsGettingData
   name: Getting Data
   href: Documentation/DataViews/Getting_Data.html
+- uid: DataViewsGrouping
+  name: Grouping
+  href: Documentation/DataViews/Grouping.html
 - uid: DataViewShape
   name: Data View Shape
   href: Documentation/DataViews/Data_View_Shape.html
@@ -88,9 +91,6 @@ references:
 - uid: DataViewsQuickStartGetData
   name: Quick Start - Get Data View Data
   href: Documentation/DataViews/Quick_Start_Get_Data_View_Data.html
-- uid: DataViewsSectioning
-  name: Sectioning
-  href: Documentation/DataViews/Sectioning.html
 - uid: DataViewsSecuringDataViews
   name: Securing Data Views
   href: Documentation/DataViews/Securing_Data_Views.html

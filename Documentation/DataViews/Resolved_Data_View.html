@@ -81,12 +81,12 @@
 <p>Various information is available about how each data view <em>resolves</em>. This information describes exactly what data will be in the data view, where it comes from, and where it will appear. This is useful when defining a data view and when consuming it.</p>
 <h2 id="general-concepts">General concepts</h2>
 <h3 id="what-does-resolving-mean">What does resolving mean?</h3>
-<p>A data view specifies <code>.Queries</code> to find data items, <code>.Sectioners</code> (optionally) to group those data items into sections, and <code>.FieldSets</code> to include fields of data into the data view. <em>Resolving</em> the data view means the data views engine executes those queries and computes how the resulting data items will form a data view.</p>
+<p>A data view specifies <code>.Queries</code> to find data items, <code>.GroupingFields</code> (optionally) to group those data items into groups, and <code>.FieldSets</code> to include fields of data into the data view. <em>Resolving</em> the data view means the data views engine executes those queries and computes how the resulting data items will form a data view.</p>
 <h3 id="what-resolved-information-is-available">What resolved information is available?</h3>
 <ul>
-<li><a class="xref" href="Data_Items_and_Sections.html">Data items, ineligible data items, and the sections they form</a> - currently, SDS streams are the supported type of data item.</li>
+<li><a class="xref" href="Data_Items_and_Groups.html">Data items, ineligible data items, and the groups they form</a> - currently, SDS streams are the supported type of data item.</li>
 <li><a class="xref" href="Available_Field_Sets.html">Available field sets</a> - fields which are present on the data items but not included in the data view</li>
-<li><a class="xref" href="Field_Mappings.html">Field mappings</a> - details of the data behind each section of each field</li>
+<li><a class="xref" href="Field_Mappings.html">Field mappings</a> - details of the data behind each group of each field</li>
 <li><a class="xref" href="Resolved_Data_View.html#statistics">Statistics</a> about how the view resolved</li>
 </ul>
 <p>These are available via the <a class="xref" href="Resolved_Data_View_API.html">Resolved Data View API</a>. The relevant <a class="xref" href="Resolved_Data_View.html#object-types">object types</a> are described below.</p>
@@ -262,8 +262,8 @@ See the <a class="xref" href="Resolved_Data_View_API.html">Resolved Data View AP
 </tr>
 </tbody>
 </table>
-<h3 id="section">Section</h3>
-<p>A section of the data view. The overall collection of data items is divided into sections as a result of the <code>.Sectioners</code> fields defined on the <code>DataView</code>.</p>
+<h3 id="group">Group</h3>
+<p>A group of the data view. The overall collection of data items is divided into groups as a result of the <code>.GroupingFields</code> defined on the <code>DataView</code>.</p>
 <table>
 <thead>
 <tr>
@@ -276,12 +276,12 @@ See the <a class="xref" href="Resolved_Data_View_API.html">Resolved Data View AP
 <tr>
 <td>Values</td>
 <td>IReadOnlyList<string></string></td>
-<td>This section&#39;s value of each <code>.Sectioners</code> field defined on the <code>DataView</code></td>
+<td>This groups&#39;s value of each <code>.GroupingFields</code> defined on the <code>DataView</code></td>
 </tr>
 <tr>
 <td>DataItems</td>
 <td>IReadOnlyDictionary&lt;string, IReadOnlyList<dataitem>&gt;</dataitem></td>
-<td>The data items in this section</td>
+<td>The data items in this group</td>
 </tr>
 </tbody>
 </table>
@@ -307,24 +307,53 @@ See the <a class="xref" href="Resolved_Data_View_API.html">Resolved Data View AP
 <td>Friendly name</td>
 </tr>
 <tr>
+<td>FieldKind</td>
+<td>FieldKind enumeration</td>
+<td>Specifies if the mapping is for an index, grouping or data field</td>
+</tr>
+<tr>
 <td>FieldSetIndex</td>
-<td>int</td>
+<td>Nullable<int></int></td>
 <td>The position of the corresponding field set within the data view</td>
 </tr>
 <tr>
 <td>FieldIndex</td>
-<td>int</td>
+<td>Nullable<int></int></td>
 <td>The position of the corresponding field within its field set</td>
 </tr>
 <tr>
 <td>DataMappings</td>
 <td>IReadOnlyList<datamapping></datamapping></td>
-<td>Per-section details of what this field resolved to</td>
+<td>Per-group details of what this field resolved to</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fieldkind-enumeration">FieldKind enumeration</h3>
+<p>Field type used in the mapping.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IndexField</td>
+<td>Maps to an index field.</td>
+</tr>
+<tr>
+<td>GroupingField</td>
+<td>Maps to a grouping field.</td>
+</tr>
+<tr>
+<td>DataField</td>
+<td>Maps to a data field.</td>
 </tr>
 </tbody>
 </table>
 <h3 id="datamapping">DataMapping</h3>
-<p>Per-section details of the data that a <code>FieldMapping</code> targets:</p>
+<p>Per-group details of the data that a <code>FieldMapping</code> targets:</p>
 <table>
 <thead>
 <tr>
@@ -368,9 +397,9 @@ See the <a class="xref" href="Resolved_Data_View_API.html">Resolved Data View AP
 <td>The total count of data items resolved in the data view</td>
 </tr>
 <tr>
-<td>SectionCount</td>
+<td>GroupCount</td>
 <td>int</td>
-<td>The total count of sections resolved in the data view</td>
+<td>The total count of groups resolved in the data view</td>
 </tr>
 <tr>
 <td>FieldCount</td>

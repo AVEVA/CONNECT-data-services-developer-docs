@@ -78,21 +78,21 @@
             <article class="content wrap" id="_content" data-uid="DataViewsFieldMappings">
 <h1 id="field-mappings">Field Mappings</h1>
 
-<p>A <code>FieldMapping</code> contains information on the source on every field of data in the data view. For each field in the data view, there is a corresponding <code>FieldMapping</code>. Within each field mapping, the list of <code>DataMapping</code>s shows the source of data for each section. There is one <code>DataMapping</code> per section, since the number of distinct data source for each field equals to the number of sections in the resolved data view. Inspecting the field mapping resource after defining the data view is a good way to confirm that the output data view does contain the data-of-interest prior to data generation.</p>
+<p>A <code>FieldMapping</code> contains information on the source on every field of data in the data view. For each field in the data view, there is a corresponding <code>FieldMapping</code>. Within each field mapping, the list of <code>DataMapping</code>s show the source of data for each group. There is one <code>DataMapping</code> per group, since the number of distinct data sources for each field equals the number of groups in the resolved data view. Inspecting the field mapping resource after defining the data view is a good way to confirm that the output data view does contain the data-of-interest prior to data generation.</p>
 <h2 id="interpreting-field-mapping">Interpreting Field Mapping</h2>
 <p>The number and order of field mappings is identical to the number and order of the resulting data view fields. </p>
 <h3 id="id-and-label">Id and label</h3>
 <p>The field mapping id represents the json property name (or column name in table or csv format) in the output data view data. The field mapping label represents the data view field label with tokens resolved. If all field mapping labels in a data view are unique, the field mapping id is identical to the label; if not, the id is generated from the label by adding an index number postfix. </p>
 <h3 id="field-set-index-and-field-index">Field set index and field index</h3>
-<p>The field set index and field index represents the zero-based positioning of the corresponding field set and field within the field set, respectively.</p>
-<h3 id="data-mapping">Data Mapping</h3>
-<p>Data mappings represent the data source for each section.  </p>
-<h4 id="index">Index</h4>
-<p><code>TargetId</code> and <code>TargetFieldKey</code> are not used for index fields. <code>TypeCode</code> is equivalent to the <code>IndexTypeCode</code> of the data view. </p>
-<h4 id="sectioner-value">Sectioner Value</h4>
-<p><code>TargetId</code> is the zero-based index of the corresponding sectioner. <code>TypeCode</code> is always <code>string</code>.</p>
-<h4 id="data-item">Data Item</h4>
-<p><code>TargetId</code> represents the data item id. </p>
+<p>The field set index and field index represents the zero-based positioning of the corresponding field set and field within the field set, respectively. If not necessary the values of field set index and field index are null and not used.</p>
+<h3 id="field-kind">Field kind</h3>
+<p>The <code>FieldKind</code> specifies whether the field maps to an index field, grouping field or data field. </p>
+<h4 id="index-field">Index field</h4>
+<p><code>TargetId</code>, <code>TargetFieldKey</code>, <code>FieldSetIndex</code> and <code>FieldIndex</code> are not used for index fields. <code>TypeCode</code> is equivalent to the <code>IndexTypeCode</code> of the data view. </p>
+<h4 id="grouping-field">Grouping field</h4>
+<p><code>FieldSetIndex</code> and <code>TargetFieldKey</code> are not used. <code>FieldIndex</code> is the zero-based positioning of field within the grouping field. <code>TargetId</code> represents the value of the item in the grouping field.</p>
+<h3 id="data-field">Data field</h3>
+<p><code>FieldSetIndex</code> is the zero-based positioning of data field set. <code>FieldIndex</code> is the zero-based positioning of data field within the appropriate data field set. <code>TargetId</code> represents the data item id.</p>
 <ul>
 <li>Id, name and tags: <code>TargetFieldKey</code> is empty</li>
 <li>Metadata: <code>TargetFieldKey</code> shows the metadata key</li>

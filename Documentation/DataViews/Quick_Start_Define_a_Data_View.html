@@ -88,16 +88,17 @@
   &quot;Id&quot;: &quot;quickstart&quot; 
 }
 </code></pre><h3 id="expected-result">Expected result</h3>
-<p>A data view with very few properties populated: <code>.Id</code>, <code>.Name</code>, <code>.IndexTypeCode</code> (default: <code>&quot;DateTime&quot;</code>), Shape (default: <code>DataViewShape.Standard</code>, which as a string is <code>&quot;Standard&quot;</code>).</p>
+<p>A data view with very few properties populated: <code>.Id</code>, <code>.Name</code>, <code>IndexField</code> (default: { &quot;Label&quot;: &quot;Timestamp&quot; }), <code>.IndexTypeCode</code> (default: <code>&quot;DateTime&quot;</code>), Shape (default: <code>DataViewShape.Standard</code>, which as a string is <code>&quot;Standard&quot;</code>).</p>
 <pre><code class="lang-json">HTTP 201 Created
 {
   &quot;Id&quot;: &quot;quickstart&quot;,
   &quot;Name&quot;: &quot;quickstart&quot;,
   &quot;Description&quot;: null,
   &quot;Queries&quot;: [],
-  &quot;FieldSets&quot;: [],
-  &quot;Sectioners&quot;: [],
+  &quot;DataFieldSets&quot;: [],
+  &quot;GroupingFields&quot;: [],
   &quot;Shape&quot;: &quot;Standard&quot;,
+  &quot;IndexField&quot;: { &quot;Label&quot;: &quot;Timestamp&quot; },
   &quot;IndexTypeCode&quot;: &quot;DateTime&quot;
 }
 </code></pre><p>The <code>.Queries</code> property is empty, <code>[ ]</code>. We will address that soon. </p>
@@ -112,16 +113,17 @@
   &quot;Name&quot;: &quot;quickstart&quot;,
   &quot;Description&quot;: null,
   &quot;Queries&quot;: [],
-  &quot;FieldSets&quot;: [],
-  &quot;Sectioners&quot;: [],
+  &quot;DataFieldSets&quot;: [],
+  &quot;GroupingFields&quot;: [],
   &quot;Shape&quot;: &quot;Standard&quot;,
+  &quot;IndexField&quot;: { &quot;Label&quot;: &quot;Timestamp&quot; },
   &quot;IndexTypeCode&quot;: &quot;DateTime&quot;
 }
 </code></pre><h2 id="add-a-query-for-data-items">Add a query for data items</h2>
 <p>Creating a data view begins with including some data items: today, those are SDS Streams.</p>
 <h3 id="action-2">Action</h3>
 <p>Use the result of the previous step as the starting point. All following steps will involve modifying the data view definition, or seeing the effects of those modifications.</p>
-<p>Add an item to the array of <code>.Queries</code>: <code>{ Id: &quot;weather&quot;, Value:&quot;*weather*&quot; }</code></p>
+<p>Add an item to the array of <code>.Queries</code>: <code>{ &quot;Id&quot;: &quot;weather&quot;, &quot;Value&quot;:&quot;*weather*&quot; }</code></p>
 <pre><code class="lang-json">PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
 {
   &quot;Id&quot;: &quot;quickstart&quot;,
@@ -129,13 +131,14 @@
   &quot;Description&quot;: null,
   &quot;Queries&quot;: [
     { 
-      Id: &quot;weather&quot;,
-      Value:&quot;*weather*&quot; 
+      &quot;Id&quot;: &quot;weather&quot;,
+      &quot;Value&quot;:&quot;*weather*&quot; 
     }
   ],
-  &quot;FieldSets&quot;: [],
-  &quot;Sectioners&quot;: [],
+  &quot;DataFieldSets&quot;: [],
+  &quot;GroupingFields&quot;: [],
   &quot;Shape&quot;: &quot;Standard&quot;,
+  &quot;IndexField&quot;: { &quot;Label&quot;: &quot;Timestamp&quot; },
   &quot;IndexTypeCode&quot;: &quot;DateTime&quot;
 }
 </code></pre><h3 id="expected-result-2">Expected result</h3>
@@ -263,7 +266,7 @@
 </code></pre><h3 id="action--page-through-the-ineligible-data-items-found-by-the-query">Action – Page through the ineligible data items found by the query</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>quickstart/<wbr>Resolved/<wbr>IneligibleDataItems/<wbr>weather
 </code></pre><h3 id="expected-result-4">Expected result</h3>
-<p>An array of the data items matching the query, but whose index type is not &quot;DateTime,&quot; and thus not eligible for inclusion in the data view.</p>
+<p>An array of the data items matching the query, but whose index type is not &quot;DateTime&quot; and thus not eligible for inclusion in the data view.</p>
 <p>With the example streams, this collection is empty.</p>
 <pre><code class="lang-json">HTTP 200 OK
 {
@@ -274,38 +277,24 @@
 <h3 id="action-3">Action</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>quickstart/<wbr>Resolved/<wbr>AvailableFieldSets
 </code></pre><h3 id="expected-result-5">Expected result</h3>
-<p>Two field sets:</p>
-<ul>
-<li>A field set of type “Index” with one field, representing an interpolated index. Data views only support interpolated index values at this time. In the future, if other retrieval modes are supported, a data item could be mapped here as the master index.</li>
-<li>A field set of type “DataItem,” pointing to query “weather”. Assuming some data items were retrieved, this field set shows that attributes of the streams (id, name, tags) are available, as well as the values of all metadata keys and properties.</li>
-</ul>
+<p>A field set with a source type of &quot;DataItem&quot; pointing to the query identified by &quot;weather&quot;. Assuming some data items were retrieved, this field set shows that attributes of the streams (id, name, tags) are available, as well as the values of all metadata keys and properties.</p>
 <pre><code class="lang-json">HTTP 200 OK
 {
     &quot;TimeOfResolution&quot;: &quot;(a timestamp in ISO 8601 format)&quot;,
     &quot;Items&quot;: [
         {
-            &quot;SourceType&quot;: &quot;Index&quot;,
-            &quot;Fields&quot;: [
-                {
-                    &quot;Source&quot;: &quot;None&quot;,
-                    &quot;Keys&quot;: [],
-                    &quot;Label&quot;: &quot;Timestamp&quot;
-                }
-            ]
-        },
-        {
             &quot;SourceType&quot;: &quot;DataItem&quot;,
             &quot;QueryId&quot;: &quot;weather&quot;,
-            &quot;Fields&quot;: [
+            &quot;DataFields&quot;: [
                 {
                     &quot;Source&quot;: &quot;Id&quot;,
                     &quot;Keys&quot;: [],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} Id&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} Id&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;Name&quot;,
                     &quot;Keys&quot;: [],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} Name&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} Name&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;Tags&quot;,
@@ -316,60 +305,59 @@
                         &quot;Gen1&quot;,
                         &quot;Gen2&quot;,
                     ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} Tags&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} Tags&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;Metadata&quot;,
                     &quot;Keys&quot;: [
                         &quot;Site&quot;
                     ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;Timestamp&quot;
                     ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;SolarRadiation&quot;
                     ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;AmbientTemperature&quot;
                     ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;CloudCover&quot;
                     ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;Temperature&quot;
                     ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
                 }
             ]
         }
     ]
 }
 </code></pre><h2 id="include-some-of-the-available-fields">Include some of the available fields</h2>
-<p>At this point, if you query for data, the table is empty – because no fields have been included in the data view. Including fields is a deliberate action, albeit one that is intended to be easy.</p>
+<p>At this point, if you query for data, the table only contains the <code>IndexField</code> – because no fields have been included in the data view. Including fields is a deliberate action, albeit one that is intended to be easy.</p>
 <h3 id="action-4">Action</h3>
 <p>For ease, grab all of the field sets that are available. </p>
-<p>Set the Data View’s FieldSets property as the content of the AvailableFieldSets response.
-From the <code>FieldSet</code> for <em>weather</em> data items, remove the <code>Field</code> for the “Timestamp” property. It would be redundant.</p>
+<p>Set the data view’s <code>DataFieldSets</code> property as the contents of the <code>AvailableFieldSets</code> response.</p>
 <pre><code class="lang-json">PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
 {
   &quot;Id&quot;: &quot;quickstart&quot;,
@@ -377,34 +365,24 @@ From the <code>FieldSet</code> for <em>weather</em> data items, remove the <code
   &quot;Description&quot;: null,
   &quot;Queries&quot;: [
     { 
-      Id: &quot;weather&quot;,
-      Value:&quot;*weather*&quot; 
+      &quot;Id&quot;: &quot;weather&quot;,
+      &quot;Value&quot;:&quot;*weather*&quot; 
     }
   ],
-  &quot;FieldSets&quot;: [
-        {
-            &quot;SourceType&quot;: &quot;Index&quot;,
-            &quot;Fields&quot;: [
-                {
-                    &quot;Source&quot;: &quot;None&quot;,
-                    &quot;Keys&quot;: [],
-                    &quot;Label&quot;: &quot;Timestamp&quot;
-                }
-            ]
-        },
+  &quot;DataFieldSets&quot;: [
         {
             &quot;SourceType&quot;: &quot;DataItem&quot;,
             &quot;QueryId&quot;: &quot;weather&quot;,
-            &quot;Fields&quot;: [
+            &quot;DataFields&quot;: [
                 {
                     &quot;Source&quot;: &quot;Id&quot;,
                     &quot;Keys&quot;: [],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} Id&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} Id&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;Name&quot;,
                     &quot;Keys&quot;: [],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} Name&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} Name&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;Tags&quot;,
@@ -415,74 +393,61 @@ From the <code>FieldSet</code> for <em>weather</em> data items, remove the <code
                         &quot;Gen1&quot;,
                         &quot;Gen2&quot;,
                     ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} Tags&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} Tags&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;Metadata&quot;,
                     &quot;Keys&quot;: [
                         &quot;Site&quot;
                     ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;SolarRadiation&quot;
                     ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;AmbientTemperature&quot;
                     ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;CloudCover&quot;
                     ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;Temperature&quot;
                     ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
                 }
             ],
        },
   ],
-  &quot;Sectioners&quot;: [],
+  &quot;GroupingFields&quot;: [],
   &quot;Shape&quot;: &quot;Standard&quot;,
+  &quot;IndexField&quot;: { &quot;Label&quot;: &quot;Timestamp&quot; },
   &quot;IndexTypeCode&quot;: &quot;DateTime&quot;
 }
 </code></pre><h3 id="expected-result-6">Expected Result</h3>
 <pre><code class="lang-text">HTTP 204 No Content
-</code></pre><p>Now, if we return to the available field sets, only “Timestamp” remains available but unused.</p>
+</code></pre><p>Now, if we return to the available field sets, all data fields are used so none are available.</p>
 <h3 id="action-5">Action</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>quickstart/<wbr>Resolved/<wbr>AvailableFieldSets
 </code></pre><h3 id="expected-result-7">Expected result</h3>
-<p>One field set with one field: Timestamp, available but not used in the data view.</p>
+<p>No available data fields.</p>
 <pre><code class="lang-json">{
     &quot;TimeOfResolution&quot;: &quot;(a timestamp in ISO 8601 format)&quot;,
-    &quot;Items&quot;: [
-        {
-            &quot;SourceType&quot;: &quot;DataItem&quot;,
-            &quot;QueryId&quot;: &quot;weather&quot;,
-            &quot;Fields&quot;: [
-                {
-                    &quot;Source&quot;: &quot;PropertyId&quot;,
-                    &quot;Keys&quot;: [
-                        &quot;Timestamp&quot;
-                    ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
-                }
-            ]
-        }
-    ]
+    &quot;Items&quot;: []
 }
 </code></pre><h3 id="action-6">Action</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>quickstart/<wbr>Data/<wbr>Interpolated
@@ -529,12 +494,12 @@ From the <code>FieldSet</code> for <em>weather</em> data items, remove the <code
 <pre><code class="lang-csv">Timestamp.0,Id.1,Name.2,Tags.3,Site.4,SolarRadiation.5,AmbientTemperature.6,CloudCover.7,Temperature.8,Id.9,Name.10,Tags.11,Site.12,SolarRadiation.13,AmbientTemperature.14,CloudCover.15,Temperature.16,Id.17,Name.18,Tags.19,Site.20,SolarRadiation.21,AmbientTemperature.22,CloudCover.23,Temperature.24
 2019-10-21T18:00:00.0000000Z,WS_WINT,WS_WINT,&quot;Weather, High Resolution, Gen2&quot;,Winterthur,108,1.080551788,2,,WS_ROSE,WS_ROSE,&quot;Weather, Low Resolution, Gen1&quot;,Rosecliff,132,,,14.53736919,WS_BILT,WS_BILT,&quot;Weather, High Resolution, Gen1&quot;,Biltmore,165,,,33.58961912
 2019-10-21T20:00:00.0000000Z,WS_WINT,WS_WINT,&quot;Weather, High Resolution, Gen2&quot;,Winterthur,109,2.501105722,3,,WS_ROSE,WS_ROSE,&quot;Weather, Low Resolution, Gen1&quot;,Rosecliff,139,,,14.76498991,WS_BILT,WS_BILT,&quot;Weather, High Resolution, Gen1&quot;,Biltmore,157,,,32.41209639
-</code></pre><h2 id="section-the-data-view">Section the data view</h2>
-<p>One way to disambiguate the data items is to “section” them, which amounts to partitioning them based on a value. For example, metadata:Site as the sectioner might yield sections of Biltmore, Rosecliff, and Winterthur, each containing the data items associated with that Site.</p>
-<p>You may use multiple sectioners. This is effectively “section by X then Y then Z”</p>
-<p>Sectioners are a property of the data view, and are an array of <code>Field</code> objects. This means the same Field objects contained in the available or included field sets may be reused directly as sectioners.</p>
+</code></pre><h2 id="group-the-data-view">Group the data view</h2>
+<p>One way to disambiguate the data items is to “group” them, which amounts to partitioning them based on a value. For example, metadata:Site as the grouping field might yield groups of Biltmore, Rosecliff, and Winterthur, each containing the data items associated with that Site.</p>
+<p>You may use multiple grouping fields. This is effectively “group by X then Y then Z”</p>
+<p>Grouping fields are a property of the data view, and are an array of <code>Field</code> objects. This means the same Field objects contained in the available or included field sets may be reused directly as grouping fields.</p>
 <h3 id="action-7">Action</h3>
-<p>Sectioning by metadata is likely to be most satisfying, but here, start with sectioning by data item id. In the <code>DataView</code> object, copy the field with <code>{ Source: “Metadata”, Keys: [ &quot;Site&quot; ] }</code>, and add it to the array of <code>.Sectioners</code>.</p>
+<p>Grouping by metadata is likely to be most satisfying, but here, start with grouping by data item id. In the <code>DataView</code> object, copy the field with <code>{ Source: “Metadata”, Keys: [ &quot;Site&quot; ] }</code>, and add it to the array of <code>.GroupingFields</code>.</p>
 <pre><code class="lang-json">PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
 {
   &quot;Id&quot;: &quot;quickstart&quot;,
@@ -542,34 +507,24 @@ From the <code>FieldSet</code> for <em>weather</em> data items, remove the <code
   &quot;Description&quot;: null,
   &quot;Queries&quot;: [
     { 
-      Id: &quot;weather&quot;,
-      Value:&quot;*weather*&quot; 
+      &quot;Id&quot;: &quot;weather&quot;,
+      &quot;Value&quot;:&quot;*weather*&quot; 
     }
   ],
-  &quot;FieldSets&quot;: [
-        {
-            &quot;SourceType&quot;: &quot;Index&quot;,
-            &quot;Fields&quot;: [
-                {
-                    &quot;Source&quot;: &quot;None&quot;,
-                    &quot;Keys&quot;: [],
-                    &quot;Label&quot;: &quot;Timestamp&quot;
-                }
-            ]
-        },
+  &quot;DataFieldSets&quot;: [
         {
             &quot;SourceType&quot;: &quot;DataItem&quot;,
             &quot;QueryId&quot;: &quot;weather&quot;,
-            &quot;Fields&quot;: [
+            &quot;DataFields&quot;: [
                 {
                     &quot;Source&quot;: &quot;Id&quot;,
                     &quot;Keys&quot;: [],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} Id&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} Id&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;Name&quot;,
                     &quot;Keys&quot;: [],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} Name&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} Name&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;Tags&quot;,
@@ -580,56 +535,50 @@ From the <code>FieldSet</code> for <em>weather</em> data items, remove the <code
                         &quot;Gen1&quot;,
                         &quot;Gen2&quot;,
                     ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} Tags&quot;
-                },
-                {
-                    &quot;Source&quot;: &quot;Metadata&quot;,
-                    &quot;Keys&quot;: [
-                        &quot;Site&quot;
-                    ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} Tags&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;SolarRadiation&quot;
                     ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;AmbientTemperature&quot;
                     ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;CloudCover&quot;
                     ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;Temperature&quot;
                     ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
                 }
             ],
        },
   ],
-  &quot;Sectioners&quot;: [
+  &quot;GroupingFields&quot;: [
     {
       &quot;Source&quot;: &quot;Metadata&quot;,
       &quot;Keys&quot;: [
         &quot;Site&quot; 
       ],
-      &quot;Label&quot;: &quot;{DistinguisherValue} Id&quot;
+      &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
     }
   ],
   &quot;Shape&quot;: &quot;Standard&quot;,
+  &quot;IndexField&quot;: { &quot;Label&quot;: &quot;Timestamp&quot; },
   &quot;IndexTypeCode&quot;: &quot;DateTime&quot;
 }
 </code></pre><h3 id="expected-result-10">Expected result</h3>
@@ -684,49 +633,9 @@ From the <code>FieldSet</code> for <em>weather</em> data items, remove the <code
     (rest of the values for Site:Winterthur)
 ]
 </code></pre><p><strong>Note:</strong> The Data Views product does not assume an intention for ultra-skinny output.</p>
-<h2 id="include-the-sectioner-field-set">Include the sectioner field set</h2>
-<p>In the case where each section contained multiple data items, having the section value repeated for every data item would be redundant. Return to the Available Field Sets, and now there is a solution for that redundancy</p>
-<h3 id="action-9">Action</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>quickstart/<wbr>Resolved/<wbr>AvailableFieldSets
-</code></pre><h3 id="expected-result-12">Expected result</h3>
-<p>A new field set is available, of <code>SourceType: &quot;SectionerValue&quot;</code>.</p>
-<pre><code class="lang-json">HTTP 200 OK
-{
-    &quot;TimeOfResolution&quot;: &quot;2019-11-14T20:31:20.856826+00:00&quot;,
-    &quot;Items&quot;: [
-        {
-            &quot;SourceType&quot;: &quot;SectionValue&quot;,
-            &quot;Fields&quot;: [
-                {
-                    &quot;Source&quot;: &quot;None&quot;,
-                    &quot;Keys&quot;: [
-                        &quot;0&quot;
-                    ],
-                    &quot;Label&quot;: &quot;{SectionerLabel}&quot;
-                }
-            ]
-        },
-        {
-            &quot;SourceType&quot;: &quot;DataItem&quot;,
-            &quot;QueryId&quot;: &quot;weather&quot;,
-            &quot;Fields&quot;: [
-                {
-                    &quot;Source&quot;: &quot;PropertyId&quot;,
-                    &quot;Keys&quot;: [
-                        &quot;Timestamp&quot;
-                    ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
-                }
-            ]
-        }
-    ]
-}
-</code></pre><p>This allows the sectioner value to appear as a single field, versus being repeated with every data item “across the table.” Notice that the fields there act as pointers, referring to e.g. <code>DataView.Sectioners[0]</code> and using its label. This indirection avoids confusing mismatches if you decide to try other fields as sectioners.</p>
-<h3 id="action-10">Action</h3>
-<p>Whatever field you’re using as the sectioner, remove it from the fields included in the data view, since it’s redundant now.</p>
-<h2 id="distinguish-data-items">Distinguish data items</h2>
-<p>A different and complementary way of disambiguating the data items is to “distinguish” them within the field set.</p>
-<p>This is also useful for aligning data items across sections. Imagine if each site had an additional stream from a backup weather station:</p>
+<h2 id="identify-data-items">Identify data items</h2>
+<p>A different and complementary way of disambiguating the data items is to “identify” them within the field set.</p>
+<p>This is also useful for aligning data items across groups. Imagine if each site had an additional stream from a backup weather station:</p>
 <table>
 <thead>
 <tr>
@@ -766,8 +675,8 @@ From the <code>FieldSet</code> for <em>weather</em> data items, remove the <code
 </tbody>
 </table>
 <p>The data views engine must be told how the streams align across sites. Here, it makes sense to align them by which measurement they represent: <em>Primary</em> or <em>Backup</em>.</p>
-<h3 id="action-11">Action</h3>
-<p>Move the field used as Sectioner over to being the “.Distinguisher” of the weather data items <code>FieldSet</code>.</p>
+<h3 id="action-9">Action</h3>
+<p>Move the field used as <code>GroupingField</code> over to being the “.IdentifyingField” of the weather data items <code>FieldSet</code>.</p>
 <pre><code class="lang-json">PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
 {
   &quot;Id&quot;: &quot;quickstart&quot;,
@@ -775,89 +684,80 @@ From the <code>FieldSet</code> for <em>weather</em> data items, remove the <code
   &quot;Description&quot;: null,
   &quot;Queries&quot;: [
     { 
-      Id: &quot;weather&quot;,
-      Value:&quot;*weather*&quot; 
+      &quot;Id&quot;: &quot;weather&quot;,
+      &quot;Value&quot;:&quot;*weather*&quot; 
     }
   ],
-  &quot;FieldSets&quot;: [
-        {
-            &quot;SourceType&quot;: &quot;Index&quot;,
-            &quot;Fields&quot;: [
-                {
-                    &quot;Source&quot;: &quot;None&quot;,
-                    &quot;Keys&quot;: [],
-                    &quot;Label&quot;: &quot;Timestamp&quot;
-                }
-            ]
-        },
+  &quot;DataFieldSets&quot;: [
         {
             &quot;SourceType&quot;: &quot;DataItem&quot;,
             &quot;QueryId&quot;: &quot;weather&quot;,
-            &quot;Distinguisher&quot;: {
+            &quot;IdentifyingField&quot;: {
                 &quot;Source&quot;: &quot;Metadata&quot;,
                 &quot;Keys&quot;: [
                     &quot;Site&quot;
                 ],
-                &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
             },
-            &quot;Fields&quot;: [
+            &quot;DataFields&quot;: [
                 {
                     &quot;Source&quot;: &quot;Id&quot;,
                     &quot;Keys&quot;: [],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} Id&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} Id&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;Name&quot;,
                     &quot;Keys&quot;: [],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} Name&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} Name&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;Tags&quot;,
                     &quot;Keys&quot;: [],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} Tags&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} Tags&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;SolarRadiation&quot;
                     ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;AmbientTemperature&quot;
                     ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;CloudCover&quot;
                     ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;Temperature&quot;
                     ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
                 }
             ],
        },
   ],
-  &quot;Sectioners&quot;: [],
+  &quot;GroupingFields&quot;: [],
   &quot;Shape&quot;: &quot;Standard&quot;,
+  &quot;IndexField&quot;: { &quot;Label&quot;: &quot;Timestamp&quot; },
   &quot;IndexTypeCode&quot;: &quot;DateTime&quot;
 }
-</code></pre><h3 id="expected-result-13">Expected result</h3>
+</code></pre><h3 id="expected-result-12">Expected result</h3>
 <pre><code class="lang-text">HTTP 204 No Content
-</code></pre><h3 id="action-12">Action</h3>
+</code></pre><h3 id="action-10">Action</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>quickstart/<wbr>Data/<wbr>Interpolated
 ?startIndex={your_val_here}&amp;endIndex={your_val_here}&amp;interval={your_val_here}
-</code></pre><h3 id="expected-result-14">Expected result</h3>
-<p>We’re back to a wide table, but the field ids are now distinct. The suggested/default values of the Available Fields’ <code>.Label</code> property includes {DistinguisherValue}, so if using those defaults, the impact of adding a Distinguisher is immediately clear.</p>
+</code></pre><h3 id="expected-result-13">Expected result</h3>
+<p>We’re back to a wide table, but the field ids are now distinct. The suggested/default values of the Available Fields’ <code>.Label</code> property includes {IdentifyingValue}, so if using those defaults, the impact of adding an identifying field is immediately clear.</p>
 <pre><code class="lang-json">HTTP 200 OK
 [
     {
@@ -894,7 +794,7 @@ From the <code>FieldSet</code> for <em>weather</em> data items, remove the <code
     &quot;AmbientTemperature&quot;,
     &quot;Temperature&quot;
   ],
-  &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+  &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
 },
 </code></pre><p>Now that field will match to either &quot;Temperature&quot; or &quot;AmbientTemperature&quot;.<br>Remove the <code>Field</code> associated only with &quot;Temperature&quot;.</p>
 <p>You can also remove the <code>Fields</code> associated with data item Id and Name. These are not providing any additional useful information.</p>
@@ -905,43 +805,33 @@ From the <code>FieldSet</code> for <em>weather</em> data items, remove the <code
   &quot;Description&quot;: null,
   &quot;Queries&quot;: [
     { 
-      Id: &quot;weather&quot;,
-      Value:&quot;*weather*&quot; 
+      &quot;Id&quot;: &quot;weather&quot;,
+      &quot;Value&quot;:&quot;*weather*&quot; 
     }
   ],
-  &quot;FieldSets&quot;: [
-        {
-            &quot;SourceType&quot;: &quot;Index&quot;,
-            &quot;Fields&quot;: [
-                {
-                    &quot;Source&quot;: &quot;None&quot;,
-                    &quot;Keys&quot;: [],
-                    &quot;Label&quot;: &quot;Timestamp&quot;
-                }
-            ]
-        },
+  &quot;DataFieldSets&quot;: [
         {
             &quot;SourceType&quot;: &quot;DataItem&quot;,
             &quot;QueryId&quot;: &quot;weather&quot;,
-            &quot;Distinguisher&quot;: {
+            &quot;IdentifyingField&quot;: {
                 &quot;Source&quot;: &quot;Metadata&quot;,
                 &quot;Keys&quot;: [
                     &quot;Site&quot;
                 ],
-                &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
             },
-            &quot;Fields&quot;: [
+            &quot;DataFields&quot;: [
                 {
                     &quot;Source&quot;: &quot;Tags&quot;,
                     &quot;Keys&quot;: [],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} Tags&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} Tags&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;SolarRadiation&quot;
                     ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
@@ -949,28 +839,29 @@ From the <code>FieldSet</code> for <em>weather</em> data items, remove the <code
                         &quot;AmbientTemperature&quot;,
                         &quot;Temperature&quot;
                     ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;CloudCover&quot;
                     ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
                 },
             ],
        },
   ],
-  &quot;Sectioners&quot;: [],
+  &quot;GroupingFields&quot;: [],
   &quot;Shape&quot;: &quot;Standard&quot;,
+  &quot;IndexField&quot;: { &quot;Label&quot;: &quot;Timestamp&quot; },
   &quot;IndexTypeCode&quot;: &quot;DateTime&quot;
 }
-</code></pre><h3 id="expected-result-15">Expected Result</h3>
+</code></pre><h3 id="expected-result-14">Expected Result</h3>
 <pre><code class="lang-text">HTTP 204 No Content
-</code></pre><h3 id="action-13">Action</h3>
+</code></pre><h3 id="action-11">Action</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>quickstart/<wbr>Data/<wbr>Interpolated
 ?startIndex={your_val_here}&amp;endIndex={your_val_here}&amp;interval={your_val_here}
-</code></pre><h3 id="expected-result-16">Expected Result</h3>
+</code></pre><h3 id="expected-result-15">Expected Result</h3>
 <pre><code class="lang-json">HTTP 200 OK
 [
     {

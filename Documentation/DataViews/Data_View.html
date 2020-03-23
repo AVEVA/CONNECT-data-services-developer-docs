@@ -86,18 +86,14 @@
 <h3 id="including-data-items">Including data items</h3>
 <p>One or more queries determine the set of data items (such as SDS streams) that the data view will include. Each <a class="xref" href="Queries.html">Query</a> should represent a collection of like streams. To include streams that represent very different items, such as power inverters and weather stations, use separate queries.</p>
 <h3 id="including-data-fields">Including data fields</h3>
-<p>Information from, or about, those data items must be included explicitly in the data view as <a class="xref" href="Field_Sets.html">Field</a>s. By default, a data view includes no fields. The fields that are available for use are exposed as a &quot;resolved&quot; resource (AvailableFieldSets). It is recommended to use or adapt those fields instead of defining fields from scratch.</p>
-<p>Individual fields are organized into <a class="xref" href="Field_Sets.html">FieldSets</a>. Each field set has a  <code>.SourceType</code> that defines its role:</p>
-<ul>
-<li>FieldSetSourceType.<strong>Index</strong> - Provides the index field for the data view. A data view may have only one Index field set</li>
-<li>FieldSetSourceType.<strong>SectionerValue</strong> - Displays values that the view is sectioned by</li>
-<li>FieldSetSourceType.<strong>DataItem</strong> - Resolves for each data item from a particular query</li>
-</ul>
+<p>Information from, or about, those data items must be included explicitly in the data view as Fields within <a class="xref" href="Field_Sets.html">DataFields</a> or <a class="xref" href="Grouping.html">GroupingFields</a>. By default, a data view includes no fields, except the default <a href="xref:DataView:index_field"><code>.IndexField</code></a>. The fields that are available for use are exposed as a &quot;resolved&quot; resource (AvailableFieldSets). It is recommended to use or adapt those fields instead of defining fields from scratch. Individual fields are organized into <a class="xref" href="Field_Sets.html">DataFieldSets</a> and <a class="xref" href="Grouping.html">GroupingFields</a>.</p>
 <h3 id="organizing-the-data-items">Organizing the data items</h3>
-<p>Data items may be <a class="xref" href="Sectioning.html">sectioned</a>, which amounts to grouping or partitioning them by one or more field values. This is one way of producing a meaningful, consumable shape of data.</p>
+<p>Data items may be [grouped](xref:DataViewsGrouping, which amounts to grouping or partitioning them by one or more field values. This is one way of producing a meaningful, consumable shape of data.</p>
 <h3 id="organizing-the-data-fields">Organizing the data fields</h3>
 <p>Field sets and fields resolve in the order they are defined. They may be re-ordered.</p>
-<p>Within each section, a field set may be associated with multiple data items. It is often necessary to disambiguate these items. Items can be disambiguated by specifying a <a class="xref" href="Field_Sets.html#distinguisher"><code>.Distinguisher</code></a>. A distinguisher is a field that tells the data items apart within a section, such as the value of <em>Measurement</em> metadata (i.e., the data items are distinguished by what they measure). Distinguishing data items also allows the data views engine to &quot;align&quot; them across sections, since it is clear that streams measuring, e.g., <em>Power Out</em> are alike, and the streams measuring <em>Power In</em> are alike.</p>
+<p>Within each group, a field set may be associated with multiple data items. It is often necessary to disambiguate these items. Items can be disambiguated by specifying an <a class="xref" href="Field_Sets.html#identifying-field"><code>.IdentifyingField</code></a>. An identifying field is a field that tells the data items apart within a group, such as the value of <em>Measurement</em> metadata (i.e., the data items are identified by what they measure). Identifying data items also allows the data views engine to &quot;align&quot; them across groups, since it is clear that streams measuring, e.g., <em>Power Out</em> are alike, and the streams measuring <em>Power In</em> are alike.</p>
+<h3 id="index-field">Index field</h3>
+<p>The field used for indexing.  If not specified, a default value with a label of &quot;Timestamp&quot; is used.</p>
 <h3 id="defining-index-type-and-default-range">Defining index type and default range</h3>
 <p>Data views currently operate on timestamped data, which is data indexed by a DateTime property. This is reflected by the DataView&#39;s <code>.IndexTypeCode</code>, whose value must be &quot;DateTime&quot;. Default values may be defined for the StartIndex, EndIndex, and/or Interval used when data view data is queried. </p>
 <h2 id="dataview-properties">DataView properties</h2>
@@ -142,18 +138,25 @@
 <td>Queries for SDS Streams to include in the view. This is the starting point when defining a data view. Each Query should represent a collection of like streams. To include streams that represent very different items (e.g. solar inverters and weather), use separate queries.</td>
 </tr>
 <tr>
-<td>FieldSets</td>
+<td>DataFieldSets</td>
 <td>FieldSet[]</td>
 <td>Optional*</td>
 <td>[ ]</td>
 <td>The sets of fields included in the data view. Often copied or adapted from the view&#39;s available field sets, which are exposed in a resolved resource.</td>
 </tr>
 <tr>
-<td>Sectioners</td>
+<td>GroupingFields</td>
 <td>Field[]</td>
 <td>Optional</td>
 <td>[ ]</td>
 <td>Fields by which the data items are partitioned/grouped.</td>
+</tr>
+<tr>
+<td>IndexField</td>
+<td>Field</td>
+<td>Optional</td>
+<td>{ Label:&quot;Timestamp&quot; }</td>
+<td>The field used for indexing.  If unspecified a field labeled &quot;Timestamp&quot; is included.</td>
 </tr>
 <tr>
 <td>IndexTypeCode</td>
@@ -244,56 +247,25 @@
 </thead>
 <tbody>
 <tr>
-<td>SourceType</td>
-<td>FieldSetSourceType</td>
-<td>Required</td>
-<td></td>
-<td>The type of role fulfilled by the field set</td>
-</tr>
-<tr>
 <td>QueryId</td>
 <td>string</td>
-<td>Optional/Required</td>
-<td>null</td>
-<td>Required when SourceType is DataItem. Must correspond to a query defined in this data view. Not applicable to other source types.</td>
+<td>Required</td>
+<td></td>
+<td>Must correspond to a query defined in the data view.</td>
 </tr>
 <tr>
-<td>Fields</td>
+<td>DataFields</td>
 <td>Field[]</td>
 <td>Optional</td>
 <td>[ ]</td>
 <td>Data fields to include in the data view. Often copied or adapted from the view&#39;s available field sets, which are exposed in a resolved resource.</td>
 </tr>
 <tr>
-<td>Distinguisher</td>
+<td>IdentifyingField</td>
 <td>Field</td>
 <td>Optional</td>
 <td>null</td>
-<td>A field by which to tell the data items apart, within each section.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="fieldsetsourcetype-enumeration">FieldSetSourceType enumeration</h3>
-<p>Defines the role or source type of a field set.</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Index</td>
-<td>Contains the field serving as index/key value of the data view&#39;s data</td>
-</tr>
-<tr>
-<td>SectionerValue</td>
-<td>Links to the fields defined as sectioners of the data view, thus staying in sync as sectioner fields are changed or shuffled.</td>
-</tr>
-<tr>
-<td>DataItem</td>
-<td>Each data item returned by a particular query</td>
+<td>A field by which to tell the data items apart, within each group.</td>
 </tr>
 </tbody>
 </table>
@@ -329,7 +301,7 @@
 <td>string</td>
 <td>Optional</td>
 <td>null</td>
-<td>Friendly name for the field. Certain tokens have special meaning: one of these, {DistinguisherValue}, is included in the suggested labels of AvailableFieldSets. Tokens that do not resolve are &quot;&quot; (empty string). Label is trimmed of whitespace when used to identify field mappings.</td>
+<td>Friendly name for the field. Certain tokens have special meaning: one of these, {IdentifyingValue}, is included in the suggested labels of AvailableFieldSets. Tokens that do not resolve are &quot;&quot; (empty string). Label is trimmed of whitespace when used to identify field mappings.</td>
 </tr>
 </tbody>
 </table>

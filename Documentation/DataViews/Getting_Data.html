@@ -81,7 +81,7 @@
 <p>Data view data is retrieved by using the <a class="xref" href="Data_API.html">Data API</a>. The supported mode of retrieval is interpolated values within a user-specified range. Several formats are available, such as JSON and CSV.</p>
 <h2 id="index">Index</h2>
 <p>All data in a data view is associated with an index value, i.e. a timestamp.
-If there are multiple sections in the data view, the index and sectioner values together form a unique identifier for each data record.</p>
+If there are multiple groups in the data view, the index and grouping field values together form a unique identifier for each data record.</p>
 <h3 id="index-type">Index type</h3>
 <p>The supported index type is <code>DateTime</code>, as noted in the documentation on creating <a class="xref" href="Data_View.html">Data Views</a>.</p>
 <h3 id="index-range">Index range</h3>
@@ -153,8 +153,8 @@ If there are multiple sections in the data view, the index and sectioner values 
 <h2 id="ordering">Ordering</h2>
 <p>Data records are ordered</p>
 <ul>
-<li>first by section, in the order that the sections resolved</li>
-<li>then by index, ascending, within each section</li>
+<li>first by group, in the order that the groups resolved</li>
+<li>then by index, ascending, within each group</li>
 </ul>
 <h2 id="format">Format</h2>
 <p>The view data is available in several formats.</p>

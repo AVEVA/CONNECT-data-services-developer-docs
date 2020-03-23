@@ -80,9 +80,9 @@
 
 <p>Data views may be set to resolve as a standard shape or a narrow shape. </p>
 <p>With a standard shape, each row in the resolved data view includes all the data fields for a single event or observation. With a narrow shape, each row in the resolved data view includes only one data field. This results in a narrow output schema where one column contains all the data field values, so the schema remains fixed regardless of changes to the included data fields. Narrow shape may be used when an invariant output schema is required.</p>
-<p>The shape concepts presented in this section apply to building all data view output formats; although the terminology used and examples shown, pertain to tabular output with <a class="xref" href="Getting_Data.html#Format">headers</a> (form = csvh).</p>
+<p>The shape concepts presented in this section apply to building all data view output formats; although the terminology used and examples shown, pertain to tabular output with <a class="xref" href="Getting_Data.html#format">headers</a> (form = csvh).</p>
 <h2 id="specify-the-shape">Specify the shape</h2>
-<p>Set the <code>DataView</code> <a class="xref" href="Data_View.html#DataViewShape"><code>Shape</code></a> property to either <code>DataViewShape.Standard</code> (default) or <code>DataViewShape.Narrow</code>.</p>
+<p>Set the <code>DataView</code> <a class="xref" href="Data_View.html#dataview-properties"><code>Shape</code></a> property to a value of the <a class="xref" href="Data_View.html#dataviewshape-enumeration"><code>DataViewShape</code> enumeration</a>, either <code>DataViewShape.Standard</code> (default) or <code>DataViewShape.Narrow</code>.</p>
 <h2 id="standard-shape">Standard shape</h2>
 <p>The standard table column structure is built horizontally from left to right. The index field is first, followed by the grouping fields, if any exist.  Data field sets come next, in the order they are presented in the data view. Fields are presented in order of appearance within each data field set for each stream from the associated query.</p>
 <p>Vertically, the standard structure depends on the inclusion of grouping fields. If grouping fields are not defined, each resultant index appears only once, and all interpolated data is in that row. If grouping fields are defined, then the resultant indexes will repeat vertically for each group. The groups are presented in alphabetical order.</p>
@@ -93,7 +93,7 @@
 2018-11-13T18:20:00.0000000Z,WS_WINT,184,,&quot;Gen2, High Resolution, Weather&quot;,WS_ROSE,31,31.23228568408279,&quot;Gen1, Low Resolution, Weather&quot;,WS_BILT,229,28.042327888795327,&quot;Gen1, High Resolution, Weather&quot;,WS_HRST,254,4.219790459247207,&quot;Gen1, Low Resolution, Weather&quot;
 </code></pre><p><br></p>
 <h5 id="example-get-data-response-body-for-standard-shape-with-grouping-field-site">Example: Get data response body for standard shape with grouping field (Site)</h5>
-<p>The use of a grouping field will restructure the table vertically. See <a class="xref" href="Sectioning.html">Grouping documentation</a> for details.</p>
+<p>The use of a grouping field will restructure the table vertically. See <a class="xref" href="Grouping.html">Grouping documentation</a> for details.</p>
 <pre><code class="lang-csv">Timestamp,Site,Id,SolarRadiation,Temperature,Tags
 2018-11-13T18:19:00.0000000Z,Biltmore,WS_BILT,229,28.042327888795327,&quot;Gen1, High Resolution, Weather&quot;
 2018-11-13T18:20:00.0000000Z,Biltmore,WS_BILT,229,28.042327888795327,&quot;Gen1, High Resolution, Weather&quot;

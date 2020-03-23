@@ -191,44 +191,32 @@
 </code></pre><h3 id="expected-result-5">Expected result</h3>
 <p>An array of field mappings:</p>
 <pre><code class="lang-json">{
-    &quot;TimeOfResolution&quot;: &quot;2019-12-13T01:23:45Z&quot;,
+    &quot;TimeOfResolution&quot;: &quot;(a timestamp in ISO8601 format)&quot;,
     &quot;Items&quot;: [
-      {
-        &quot;Id&quot;: &quot;Timestamp.0&quot;,
-        &quot;Label&quot;: &quot;Timestamp&quot;,
-        &quot;FieldSetIndex&quot;: 0,
-        &quot;FieldIndex&quot;: 0,
-        &quot;DataMappings&quot;: [
-          {
-            &quot;TargetId&quot;: &quot;&quot;,
-            &quot;TargetFieldKey&quot;: &quot;&quot;,
-            &quot;TypeCode&quot;: &quot;DateTime&quot;
-          },
-          {
-            &quot;TargetId&quot;: &quot;&quot;,
-            &quot;TargetFieldKey&quot;: &quot;&quot;,
-            &quot;TypeCode&quot;: &quot;DateTime&quot;
-          }
-        ]
-      },
-      {
-        &quot;Id&quot;: &quot;Id.1&quot;,
-        &quot;Label&quot;: &quot;Id&quot;,
-        &quot;FieldSetIndex&quot;: 1,
-        &quot;FieldIndex&quot;: 0,
-        &quot;DataMappings&quot;: [
-          {
-            &quot;TargetId&quot;: &quot;WS_WINT&quot;,
-            &quot;TargetFieldKey&quot;: &quot;&quot;,
-            &quot;TypeCode&quot;: &quot;String&quot;
-          },
-          {
-            &quot;TargetId&quot;: &quot;WS_ROSE&quot;,
-            &quot;TargetFieldKey&quot;: &quot;&quot;,
-            &quot;TypeCode&quot;: &quot;String&quot;
-          }
-        ]
-      },
+        {
+            &quot;Id&quot;: &quot;Timestamp.0&quot;,
+            &quot;Label&quot;: &quot;Timestamp&quot;,
+            &quot;FieldKind&quot;: &quot;IndexField&quot;,
+            &quot;DataMappings&quot;: [
+                {
+                    &quot;TypeCode&quot;: &quot;DateTime&quot;
+                }
+            ]
+        },
+        {
+            &quot;Id&quot;: &quot;Id.1&quot;,
+            &quot;Label&quot;: &quot;Id&quot;,
+            &quot;FieldKind&quot;: &quot;DataField&quot;,
+            &quot;FieldSetIndex&quot;: 0,
+            &quot;FieldIndex&quot;: 0,
+            &quot;DataMappings&quot;: [
+                {
+                    &quot;TargetId&quot;: &quot;WS_BILT&quot;,
+                    &quot;TargetFieldKey&quot;: &quot;WS_BILT&quot;,
+                    &quot;TypeCode&quot;: &quot;String&quot;
+                }
+            ]
+        },
       ...
     ]
 }

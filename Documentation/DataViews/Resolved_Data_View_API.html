@@ -283,10 +283,10 @@ Content-Type: application/json
     }
   ]
 }
-</code></pre><h2 id="get-sections"><code>Get Sections</code></h2>
-<p>Gets the collection of <code>Section</code>s that resolved for a data view.</p>
+</code></pre><h2 id="get-groups"><code>Get Groups</code></h2>
+<p>Gets the collection of <code>Group</code>s that resolved for a data view.</p>
 <h3 id="request-2">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>Resolved/<wbr>Sections?cache={cache}&amp;skip={skip}&amp;count={count}
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>Resolved/<wbr>Groups?cache={cache}&amp;skip={skip}&amp;count={count}
 </code></pre><h3 id="request-path-parameters-2">Request path parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -308,8 +308,8 @@ Content-Type: application/json
 <tbody>
 <tr>
 <td>200 OK</td>
-<td><code>ResolvedItems&lt;Section&gt;</code></td>
-<td>An object with a &quot;TimeOfResolution&quot; and a collection of &quot;Items&quot;, the <code>Section</code>s that resolved.</td>
+<td><code>ResolvedItems&lt;Group&gt;</code></td>
+<td>An object with a &quot;TimeOfResolution&quot; and a collection of &quot;Items&quot;, the <code>Groups</code>s that resolved.</td>
 </tr>
 <tr>
 <td>403 Forbidden</td>
@@ -452,7 +452,7 @@ Content-Type: application/json
                 {
                     &quot;Source&quot;: &quot;Id&quot;,
                     &quot;Keys&quot;: [],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} Id&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} Id&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;Tags&quot;,
@@ -463,35 +463,35 @@ Content-Type: application/json
                         &quot;Gen1&quot;,
                         &quot;Gen2&quot;,
                     ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} Tags&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} Tags&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;Metadata&quot;,
                     &quot;Keys&quot;: [
                         &quot;Site&quot;
                     ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;Timestamp&quot;
                     ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;SolarRadiation&quot;
                     ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
                 },
             ]
         }
     ]
 }
 </code></pre><h2 id="get-field-mappings"><code>Get Field Mappings</code></h2>
-<p>Gets the collection of field mappings resolved for the data view. These show the exact data behind every field, for each data item, for each section.</p>
+<p>Gets the collection of field mappings resolved for the data view. These show the exact data behind every field, for each data item, for each group.</p>
 <h3 id="request-4">Request</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>Resolved/<wbr>FieldMappings?cache={cache}
 </code></pre><h3 id="request-path-parameters-4">Request path parameters</h3>
@@ -654,7 +654,7 @@ Content-Type: application/json
 {
     &quot;TimeOfResolution&quot;: &quot;2019-12-13T01:23:45Z&quot;,
     &quot;DataItemCount&quot;: 24,
-    &quot;SectionCount&quot;: 2,
+    &quot;GroupCount&quot;: 2,
     &quot;FieldCount&quot;: 12
 }
 </code></pre></article>

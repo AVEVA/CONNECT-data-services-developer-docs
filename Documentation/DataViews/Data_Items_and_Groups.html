@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Data Items and Sections </title>
+    <title>Data Items and Groups </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Data Items and Sections ">
+    <meta name="title" content="Data Items and Groups ">
     <meta name="generator" content="docfx 2.43.3.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -75,15 +75,15 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="DataViewsDataItemsandSections">
-<h1 id="data-items-and-sections">Data Items and Sections</h1>
+            <article class="content wrap" id="_content" data-uid="DataViewsDataItemsandGroups">
+<h1 id="data-items-and-groups">Data Items and Groups</h1>
 
 <p>A <code>DataItem</code> is an SdsStream included in the data view. The collection of data items is specified by the data view queries, where the queries define the search criteria and the data items represent the results of the search. The data view can include one or more properties from each data item.</p>
 <h2 id="data-items">Data Items</h2>
 <p>The collection of data items in the data view represents all SdsStreams that match the <a class="xref" href="Queries.html"><code>.queries</code></a> field of the data view, excluding ones that are &quot;ineligible&quot; (see discussion of ineligible data items below). To add data items to a data view, either refine an existing query, or add a new query (refer to <a class="xref" href="Queries.html">queries</a> for which option to choose from). Similarly, to remove data items from a data view, either refine an existing query, or remove a query (this will remove all data items from the query). </p>
 <p>Note that each query is executed independently to generate the list of data items. It is thus possible to have duplicate data items resulting from different queries. This can be desirable and undesirable depending the use case.</p>
 <h3 id="adding-fields">Adding Fields</h3>
-<p>Each data item contains information that can be optionally (and explicitly) added to the data view by setting the <a class="xref" href="Field_Sets.html"><code>.field sets</code></a> field of the data view. Currently, the only supported resource type is <code>stream</code> with the following available fields:</p>
+<p>Each data item contains information that can be optionally (and explicitly) added to the data view by setting the <a class="xref" href="Field_Sets.html"><code>.data field sets</code></a> field of the data view. Currently, the only supported resource type is <code>stream</code> with the following available fields:</p>
 <ul>
 <li>Stream id</li>
 <li>Stream name</li>
@@ -99,8 +99,8 @@
 <li>When the SdsStream&#39;s index type is different than the <code>IndexTypeCode</code> specified in the data view.</li>
 <li>When the SdsType of the stream contains compound indexes. </li>
 </ul>
-<h2 id="sections">Sections</h2>
-<p><a class="xref" href="Sectioning.html">Sectioning</a> is optional when defining the data view. If the <code>.sectioners</code> field is not defined on the data view, the resolved data view shows a single section with all eligible data items. If the <code>.sectioners</code> field is defined, the resolved data view shows multiple sections, each with the list of data items for the section and the <code>.values</code> field showing the matching section&#39;s value(s). In this case, if a data item does not match any section, it is added to all sections.</p>
+<h2 id="groups">Groups</h2>
+<p><a class="xref" href="Grouping.html">Grouping</a> is optional when defining the data view. If the <code>.GroupingFields</code> section is not defined on the data view, the resolved data view shows a single group with all eligible data items. If the <code>.GroupingFields</code> is defined, the resolved data view shows multiple groups, each with the list of data items for the group and the <code>.values</code> field showing the matching group&#39;s value(s). In this case, if a data item does not match any group, it is added to all groups.</p>
 </article>
           </div>
           
@@ -109,7 +109,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/DataViews/Data_Items_and_Sections.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/DataViews/Data_Items_and_Groups.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

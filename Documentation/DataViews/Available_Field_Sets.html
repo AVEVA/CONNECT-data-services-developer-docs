@@ -79,39 +79,23 @@
 <h1 id="available-field-sets">Available Field Sets</h1>
 
 <p>Available <a class="xref" href="Field_Sets.html">field sets</a> include fields not currently included in the data view, which are available to be added. </p>
-<p>The list of field sets is generated based on the <code>.Queries</code>, <code>.Sectioners</code>, and <code>.IndexTypeCode</code> of the defined data view. These fields and field sets can be readily added to the data view <code>.FieldSets</code>. Once the field is added, it is omitted from the list of available field sets. Similarly, if the field is removed from the data view, it is added back to the available field sets. This allows an iterative approach to building the data view by easily adding and removing fields from the data view. </p>
-<h2 id="field-set-source">Field Set Source</h2>
-<p>Available fields are organized into field sets according to their sources:</p>
-<pre><code class="lang-FieldSetSourceType.Index```">
-The index field set represents the index field of the data view. Exactly one index field set is available per data view. Currently, this field is not mapped to anything, since interpolation is the only supported index mode.
-
-```FieldSetSourceType.SectionerValue```
-
-The sectioner value field set represents the matching value for each section. If no sectioners are specified, this field set is not available. Exactly one section value field set is available per data view. The section value field set contains one field per section, with each sectioner referred to by its index: `{ ... Keys: [&quot;0&quot;] }` for the 0th sectioner.
-
-```FieldSetSourceType.DataItem```
-
-The data item field set contains fields from the data item resulted from the query. For each query, a field set with unused fields will be returned. The available fields for stream data item include:
-    * Id, name
-    * Tags: one field with union of all tags
-    * Metadata, propertyId: one field for each metadata key or property id
-
-## Data View without Sectioners
-The example uses the following data view and the streams from the [SDS Example Scenario](xref:DataViewsExampleScenario). Note that the field sets and the sectioners arrays are empty:
-```json
-{
-  &quot;Id&quot;: &quot;example_without_sectioners&quot;,
-  &quot;Name&quot;: &quot;example_without_sectioners&quot;,
+<p>The list of field sets is generated based on the <code>.Queries</code>, <code>.GroupingFields</code>, and <code>.IndexTypeCode</code> of the defined data view. These fields and field sets can be readily added to the data view <code>.DataFieldSets</code>. Once the field is added, it is omitted from the list of available field sets. Similarly, if the field is removed from the data view, it is added back to the available field sets. This allows an iterative approach to building the data view by easily adding and removing fields from the data view. </p>
+<h2 id="example">Example</h2>
+<p>The example uses the following data view and the streams from the <a class="xref" href="Example_Scenario.html">SDS Example Scenario</a>. Note that the field sets and the grouping fields arrays are empty:</p>
+<pre><code class="lang-json">{
+  &quot;Id&quot;: &quot;example_without_grouping_fields&quot;,
+  &quot;Name&quot;: &quot;example_without_grouping_fields&quot;,
   &quot;Description&quot;: null,
   &quot;Queries&quot;: [
     { 
-      Id: &quot;weather&quot;,
-      Value:&quot;*weather*&quot; 
+      &quot;Id&quot;: &quot;weather&quot;,
+      &quot;Value&quot;:&quot;*weather*&quot; 
     }
   ],
-  &quot;FieldSets&quot;: [],
-  &quot;Sectioners&quot;: [],
+  &quot;DataFieldSets&quot;: [],
+  &quot;GroupingFields&quot;: [],
   &quot;Shape&quot;: &quot;Standard&quot;,
+  &quot;IndexField&quot;: { &quot;Label&quot;: &quot;Timestamp&quot; },
   &quot;IndexTypeCode&quot;: &quot;DateTime&quot;
 }
 </code></pre><p>Accessing the <code>Get Available Field Sets</code> endpoint will show available fields corresponding to stream id, name, tags, metadata, and each property. Since the index field set is not included in the data view, it is also shown as available.</p>
@@ -120,28 +104,17 @@ The example uses the following data view and the streams from the [SDS Example S
     &quot;TimeOfResolution&quot;: &quot;(a timestamp in ISO 8601 format)&quot;,
     &quot;Items&quot;: [
         {
-            &quot;SourceType&quot;: &quot;Index&quot;,
-            &quot;Fields&quot;: [
-                {
-                    &quot;Source&quot;: &quot;None&quot;,
-                    &quot;Keys&quot;: [],
-                    &quot;Label&quot;: &quot;Timestamp&quot;
-                }
-            ]
-        },
-        {
-            &quot;SourceType&quot;: &quot;DataItem&quot;,
             &quot;QueryId&quot;: &quot;weather&quot;,
-            &quot;Fields&quot;: [
+            &quot;DataFields&quot;: [
                 {
                     &quot;Source&quot;: &quot;Id&quot;,
                     &quot;Keys&quot;: [],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} Id&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} Id&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;Name&quot;,
                     &quot;Keys&quot;: [],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} Name&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} Name&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;Tags&quot;,
@@ -152,111 +125,50 @@ The example uses the following data view and the streams from the [SDS Example S
                         &quot;Gen1&quot;,
                         &quot;Gen2&quot;,
                     ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} Tags&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} Tags&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;Metadata&quot;,
                     &quot;Keys&quot;: [
                         &quot;Site&quot;
                     ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;Timestamp&quot;
                     ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;SolarRadiation&quot;
                     ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;AmbientTemperature&quot;
                     ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;CloudCover&quot;
                     ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;Temperature&quot;
                     ],
-                    &quot;Label&quot;: &quot;{DistinguisherValue} {FirstKey}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
                 }
-            ]
-        }
-    ]
-}
-</code></pre><h2 id="data-view-with-sectioners">Data View with Sectioners</h2>
-<p>This data view is the same as in the first example, except it also has a <code>sectioner</code>, which defines sectioning by the metadata key &quot;Site&quot;:</p>
-<pre><code class="lang-json">{
-  &quot;Id&quot;: &quot;example_with_sectioners&quot;,
-  &quot;Name&quot;: &quot;example_with_sectioners&quot;,
-  &quot;Description&quot;: null,
-  &quot;Queries&quot;: [
-    { 
-      Id: &quot;weather&quot;,
-      Value:&quot;*weather*&quot; 
-    }
-  ],
-  &quot;FieldSets&quot;: []
-  &quot;Sectioners&quot;: [
-    {
-      &quot;Source&quot;: &quot;Metadata&quot;,
-      &quot;Keys&quot;: [
-        &quot;Site&quot; 
-      ],
-      &quot;Label&quot;: &quot;{DistinguisherValue} Id&quot;
-    }
-  ],
-  &quot;Shape&quot;: &quot;Standard&quot;,
-  &quot;IndexTypeCode&quot;: &quot;DateTime&quot;
-}
-</code></pre><p>A field set with <code>SourceType.SectionValue</code> is now shown as one of the available field sets:</p>
-<pre><code class="lang-json">HTTP 200 OK
-{
-    &quot;TimeOfResolution&quot;: &quot;2019-11-14T20:31:20.856826+00:00&quot;,
-    &quot;Items&quot;: [
-        {
-            &quot;SourceType&quot;: &quot;Index&quot;,
-            &quot;Fields&quot;: [
-                {
-                    &quot;Source&quot;: &quot;None&quot;,
-                    &quot;Keys&quot;: [],
-                    &quot;Label&quot;: &quot;Timestamp&quot;
-                }
-            ]
-        },
-        {
-            &quot;SourceType&quot;: &quot;SectionValue&quot;,
-            &quot;Fields&quot;: [
-                {
-                    &quot;Source&quot;: &quot;None&quot;,
-                    &quot;Keys&quot;: [
-                        &quot;0&quot;
-                    ],
-                    &quot;Label&quot;: &quot;{SectionerLabel}&quot;
-                }
-            ]
-        },
-        {
-            &quot;SourceType&quot;: &quot;DataItem&quot;,
-            &quot;QueryId&quot;: &quot;weather&quot;,
-            &quot;Fields&quot;: [
-                ...
             ]
         }
     ]

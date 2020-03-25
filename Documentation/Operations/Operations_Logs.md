@@ -11,17 +11,17 @@ APIs related to querying logs.
 
 ## Authentication
 
-All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieve after a successful authentication request.
+All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieved after a successful authentication request.
 
 `Authorization: Bearer <token>`
 
 Requests made without an access token or an invalid/expired token will fail with a 401 Unauthorized response.
 Requests made with an access token which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
-Read [here](https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/Authentication) on how to authenticate against OCS with the various clients and receive an access token in response.
+Read [OCS Authentication documentation](https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/Authentication) on how to authenticate against OCS with the various clients and receive an access token in response.
 
 ## Error Handling
 
-All responses will have an error message in the body. The exceptions are 200 responses and the 401 Unauthorized response. The error message will look as follows:
+All responses will have an error message in the body. The exceptions are 200 responses and the 401 Unauthorized response. The error message will appear as follows:
 
 ```json
 {
@@ -36,7 +36,7 @@ If and when contacting OSIsoft support about this error, please provide the Oper
 
 ## `Get Tenant Logs`
 
-Get logs for a **Tenant**.
+Get customer facing logs for a **Tenant**.
 
 ### Request
 
@@ -131,7 +131,7 @@ Success.
 [
   {
     "Message": "Message",
-    "Timestamp": "2020-03-19T08:56:55.0214243-07:00",
+    "Timestamp": "2020-03-25T12:03:15.041014-07:00",
     "Severity": 0,
     "Source": "Source",
     "OperationId": "OperationId",
@@ -139,7 +139,7 @@ Success.
   },
   {
     "Message": "Message",
-    "Timestamp": "2020-03-19T08:56:55.0243783-07:00",
+    "Timestamp": "2020-03-25T12:03:15.0436848-07:00",
     "Severity": 0,
     "Source": "Source",
     "OperationId": "OperationId",
@@ -269,7 +269,7 @@ Success.
 [
   {
     "Message": "Message",
-    "Timestamp": "2020-03-19T08:56:55.394436-07:00",
+    "Timestamp": "2020-03-25T12:03:15.5643366-07:00",
     "Severity": 0,
     "Source": "Source",
     "OperationId": "OperationId",
@@ -277,7 +277,7 @@ Success.
   },
   {
     "Message": "Message",
-    "Timestamp": "2020-03-19T08:56:55.394448-07:00",
+    "Timestamp": "2020-03-25T12:03:15.564347-07:00",
     "Severity": 0,
     "Source": "Source",
     "OperationId": "OperationId",

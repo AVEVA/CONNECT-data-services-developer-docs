@@ -4,8 +4,6 @@
   href: Identity_AzureActiveDirectoryTenant.md
 - name: Authorization Code Client
   href: Identity_AuthorizationCodeClient.md
-- name: Implicit Client
-  href: Identity_ImplicitClient.md
 - name: Hybrid Client
   href: Identity_HybridClient.md
 - name: Client Credential Client

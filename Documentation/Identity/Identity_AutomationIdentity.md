@@ -172,6 +172,10 @@ Not found.
 
 Method not allowed at this base URL. Try the request again at the Global base URL.
 
+#### 408
+
+Operation timed out.
+
 #### 409
 
 Already exists.
@@ -556,6 +560,10 @@ Automation Identity or Tenant not found.
 
 Method not allowed at this base URL. Try the request again at the Global base URL.
 
+#### 408
+
+Operation timed out.
+
 #### 500
 
 Internal server error.
@@ -671,6 +679,10 @@ Automation Identity or Tenant not found.
 #### 405
 
 Method not allowed at this base URL. Try the request again at the Global base URL.
+
+#### 408
+
+Operation timed out.
 
 #### 500
 

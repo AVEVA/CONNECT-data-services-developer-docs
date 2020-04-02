@@ -21,7 +21,7 @@ For HTTP requests and responses, the ClientCredentialClient object has the follo
 Property | Type | Description
  --- | --- | ---
 RoleIds | Guid[] | Gets or sets list of Roles to be assigned to this client. Member role is always required. For security reasons we advise against assigning Admin roles to a client.
-Id | string | Gets or sets secret Id.
+Id | string | Gets or sets client ID for this client. This ID should be a GUID.
 Name | string | Gets or sets name of Client.
 Enabled | bool | Gets or sets whether client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.
 AccessTokenLifetime | int32 | Gets or sets lifetime of access token issued for this client after authentication. Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.

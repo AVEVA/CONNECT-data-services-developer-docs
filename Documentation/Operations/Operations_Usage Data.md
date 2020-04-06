@@ -1,5 +1,5 @@
 ---
-uid: operationsUsage Data
+uid: operationsUsage_Data
 ---
 
 # Usage Data

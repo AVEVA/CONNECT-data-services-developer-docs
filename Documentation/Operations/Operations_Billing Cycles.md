@@ -1,5 +1,5 @@
 ---
-uid: operationsBilling Cycles
+uid: operationsBilling_Cycles
 ---
 
 # Billing Cycles

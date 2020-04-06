@@ -1,5 +1,5 @@
 ---
-uid: operationsResource Usage Data
+uid: operationsResource_Usage_Data
 ---
 
 # Resource Usage Data

@@ -641,6 +641,66 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "Documentation/Operations/Operations_Billing Cycles.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/Operations/Operations_Billing Cycles.html",
+          "hash": "dHflSYls9c5FgAuwPghFaw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/Operations/Operations_Logs.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/Operations/Operations_Logs.html",
+          "hash": "U8L4DYglupTV531bdEHmLw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/Operations/Operations_Overview.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/Operations/Operations_Overview.html",
+          "hash": "e7ILDQ4RDiK8mFB17eGySw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/Operations/Operations_Resource Usage Data.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/Operations/Operations_Resource Usage Data.html",
+          "hash": "O+mYYoRE9mY0Zc497QSY1g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/Operations/Operations_Usage Data.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/Operations/Operations_Usage Data.html",
+          "hash": "soOf4pYppqDt2MOteb5vxw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "Documentation/SequentialDataStore/Compression.md",
       "output": {
         ".html": {
@@ -894,7 +954,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/toc.html",
-          "hash": "kRrrBcPxM6m6qzdlL/Rj/A=="
+          "hash": "grdXvDc87/ChFyjx9EaGgw=="
         }
       },
       "is_incremental": false,
@@ -936,9 +996,9 @@
         "full_build_reason_code": "NoAvailableBuildCache"
       },
       "processors": {
-        "TocDocumentProcessor": {
+        "ResourceDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
           "total_file_count": 0,
           "skipped_file_count": 0
@@ -946,12 +1006,12 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 71,
+          "total_file_count": 76,
           "skipped_file_count": 0
         },
-        "ResourceDocumentProcessor": {
+        "TocDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
           "total_file_count": 0,
           "skipped_file_count": 0

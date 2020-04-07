@@ -55,7 +55,7 @@ Id of the Tenant
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Account Member`
 
 ### Returns
 

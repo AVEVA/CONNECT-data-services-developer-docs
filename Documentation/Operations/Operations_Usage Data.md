@@ -1,5 +1,5 @@
 ---
-uid: operationsUsage Data
+uid: operationsUsage_Data
 ---
 
 # Usage Data
@@ -88,7 +88,7 @@ When **true** the usage data is grouped by namespaces.
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Account Member`
 
 ### Returns
 
@@ -194,7 +194,7 @@ End date of the daily usage data, if there is no end date only one summary is re
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Account Member`
 
 ### Returns
 

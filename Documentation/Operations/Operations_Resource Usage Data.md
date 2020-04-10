@@ -1,5 +1,5 @@
 ---
-uid: operationsResource Usage Data
+uid: operationsResource_Usage_Data
 ---
 
 # Resource Usage Data
@@ -55,7 +55,7 @@ Id of the Tenant
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Account Member`
 
 ### Returns
 

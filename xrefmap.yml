@@ -151,7 +151,7 @@ references:
 - uid: omfIngressTopics
   name: Topics
   href: Documentation/DataIngress/OMF_Ingress_Topics.html
-- uid: operationsBilling Cycles
+- uid: operationsBilling_Cycles
   name: Billing Cycles
   href: Documentation/Operations/Operations_Billing%20Cycles.html
 - uid: operationsLogs
@@ -160,10 +160,10 @@ references:
 - uid: operationsOverview
   name: OSIsoft Operations Service
   href: Documentation/Operations/Operations_Overview.html
-- uid: operationsResource Usage Data
+- uid: operationsResource_Usage_Data
   name: Resource Usage Data
   href: Documentation/Operations/Operations_Resource%20Usage%20Data.html
-- uid: operationsUsage Data
+- uid: operationsUsage_Data
   name: Usage Data
   href: Documentation/Operations/Operations_Usage%20Data.html
 - uid: osisoftCloudServices

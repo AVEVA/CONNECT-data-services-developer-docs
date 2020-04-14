@@ -72,7 +72,7 @@ Two things are clearly undesirable here:
 To fix this, we will add a `.IdentifyingField` to the field set.
 
 #### Identifying field
-If the field set resolves to multiple data items in any group (or if grouping is not used), then a field should be designated as the field set's `.IdentifyingField`. If one lone criterion is not a sufficient or useful way of disambiguating the fields, then [grouping](xref:DataViewsGrouping) by additional criteria may be necessary. Field from field sources `FieldSource.Id`, `FieldSource.Name`, `FieldSource.Metadata`, `FieldSource.Tags` can be used as an identifying field. Keys have to be provided for identifying fields from the source type `FieldSource.Metadata`, `FieldSource.Tags`. Keys are not allowed for identifying fields of source `FieldSource.Id`, `FieldSource.Name`.
+If the field set resolves to multiple data items in any group (or if grouping is not used), then a field should be designated as the `.IdentifyingField` of the field set. If one lone criterion is not a sufficient or useful way of disambiguating the fields, then [grouping](xref:DataViewsGrouping) by additional criteria may be necessary. Field from field sources `FieldSource.Id`, `FieldSource.Name`, `FieldSource.Metadata`, `FieldSource.Tags` can be used as an identifying field. Keys have to be provided for identifying fields from the source type `FieldSource.Metadata`, `FieldSource.Tags`. Keys are not allowed for identifying fields of source `FieldSource.Id`, `FieldSource.Name`.
 
 #### Example: Adding an identifying field
 To the data view from the previous example, we will add a `Field` as the `.IdentifyingField` of its field set. In this example, it makes sense to identify each data item by its _Measurement_.

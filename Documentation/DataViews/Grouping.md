@@ -16,7 +16,7 @@ Without grouping, all of the data items returned by a `Query` will appear side-b
 To group a data view, specify one or more `Field` objects as the `DataView`'s `.GroupingFields`. 
 
 ### Eligible grouping fields
-Fields whose values come from data item `FieldSource.Id`, `FieldSource.Name`, `FieldSource.Metadata`, or `FieldSource.Tags` are eligible to be used as grouping fields. Null, empty or whitespace is not allowed for an grouping field label. Keys have to be provided for the grouping fields from the source type `FieldSource.Metadata`, `FieldSource.Tags`. Keys are not allowed for the grouping fields from the source type `FieldSource.Id`, `FieldSource.Name`.
+Fields whose values come from data item `FieldSource.Id`, `FieldSource.Name`, `FieldSource.Metadata`, or `FieldSource.Tags` are eligible to be used as grouping fields. Null, empty or whitespace is not allowed for a grouping field label. Keys have to be provided for the grouping fields from the source type `FieldSource.Metadata`, `FieldSource.Tags`. Keys are not allowed for the grouping fields from the source type `FieldSource.Id`, `FieldSource.Name`.
 
 ## Uses of grouping
 Grouping can be used to separate the data items from each other, and to join different types of data items together.

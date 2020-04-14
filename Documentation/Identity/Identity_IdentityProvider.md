@@ -435,6 +435,15 @@ Id of Tenant.
 ```csharp
 [FromQuery]
 [Optional]
+[Default = False]
+bool ignoreAadConsentState
+```
+
+Return AAD Identity Provider if at least one AAD tenant exists, regardless of the consent state.
+
+```csharp
+[FromQuery]
+[Optional]
 [Default = ""]
 string query
 ```
@@ -463,8 +472,8 @@ Maximum number of Identity Providers to return.
 
 Allowed for these roles:
 
-- `Account Administrator`
 - `Account Member`
+- `Account Administrator`
 
 ### Returns
 
@@ -542,8 +551,8 @@ Id of Identity Provider.
 
 Allowed for these roles:
 
-- `Account Administrator`
 - `Account Member`
+- `Account Administrator`
 
 ### Returns
 
@@ -679,6 +688,10 @@ Tenant not found.
 
 Method not allowed at this base URL. Try the request again at the Global base URL.
 
+#### 408
+
+Operation timed out.
+
 #### 409
 
 Identity Provider already exists in Tenant.
@@ -743,6 +756,10 @@ IdentityProvider or Tenant not found.
 
 Method not allowed at this base URL. Try the request again at the Global base URL.
 
+#### 408
+
+Operation timed out.
+
 #### 500
 
 Internal server error.
@@ -778,8 +795,8 @@ Id of Identity Provider.
 
 Allowed for these roles:
 
-- `Account Administrator`
 - `Account Member`
+- `Account Administrator`
 
 ### Returns
 
@@ -832,8 +849,8 @@ Id of Tenant.
 
 Allowed for these roles:
 
-- `Account Administrator`
 - `Account Member`
+- `Account Administrator`
 
 ### Returns
 

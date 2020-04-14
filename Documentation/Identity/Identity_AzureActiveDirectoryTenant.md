@@ -121,6 +121,10 @@ OSIsoft Cloud Services Tenant not found.
 
 Method not allowed at this base URL. Try the request again at the Global base URL.
 
+#### 408
+
+Operation timed out.
+
 #### 409
 
 Id of Azure Active Directory Tenant. is already in use on the specified Tenant.
@@ -343,6 +347,10 @@ OSIsoft Cloud Services Tenant not found.
 #### 405
 
 Method not allowed at this base URL. Try the request again at the Global base URL.
+
+#### 408
+
+Operation timed out.
 
 #### 500
 

@@ -31,8 +31,7 @@ Field sets and fields resolve in the order they are defined. They may be re-orde
 Within each group, a field set may be associated with multiple data items. It is often necessary to disambiguate these items. Items can be disambiguated by specifying an [`.IdentifyingField`](xref:DataViewsFieldSets#identifying-field). An identifying field is a field that tells the data items apart within a group, such as the value of _Measurement_ metadata (i.e., the data items are identified by what they measure). Identifying data items also allows the data views engine to "align" them across groups, since it is clear that streams measuring, e.g., _Power Out_ are alike, and the streams measuring _Power In_ are alike.
 
 ### Index field
-The field used for indexing.  If not specified, a default value with a label of "Timestamp" is used. If specified, the index field has to be of source `FieldSource.NotApplicable'. Index field cannot have keys.
-Null, empty or whitespace is not allowed for an index field label.
+The field used for indexing.  If not specified, a default value with a label of "Timestamp" is used. If specified, the index field has to be of source `FieldSource.NotApplicable`. Index field cannot have keys.Null, empty or whitespace is not allowed for an index field label.
 
 ### Defining index type and default range
 Data views currently operate on timestamped data, which is data indexed by a DateTime property. This is reflected by the DataView's `.IndexTypeCode`, whose value must be "DateTime". Default values may be defined for the StartIndex, EndIndex, and/or Interval used when data view data is queried. 
@@ -85,13 +84,12 @@ Individual piece of information, such as a property of an SDS stream, or metadat
 |--|--|--|--|--|
 | Source | FieldSource | Optional | NotApplicable | For fields of a DataItem-sourced FieldSet, identifies the source of the field's values. Some sources are used in conjunction with the Keys property (see below).
 | Keys | String[] | Optional | [ ] | Used for certain FieldSources, e.g. to map to specific stream properties by id. If more than one key is specified, they are matched as exclusive-or.
-| Label | string | Optional | null | Friendly name for the field. Certain tokens have special meaning: one of these, {IdentifyingValue}, is included in the suggested labels of AvailableFieldSets. Tokens that do not resolve are "" (empty string). Label is trimmed of whitespace when used to identify field mappings. A
-label cannot be null, empty or whitespace.
+| Label | string | Optional | null | Friendly name for the field. Certain tokens have special meaning: one of these, {IdentifyingValue}, is included in the suggested labels of AvailableFieldSets. Tokens that do not resolve are "" (empty string). A label cannot be null, empty or whitespace. Label is trimmed of whitespace when used to identify field mappings. 
 
 ### FieldSource enumeration
 For fields that derive data from a data item (e.g. an SDS stream), the `FieldSource` enumeration specifies the part of that data item that a Field resolves to. Some sources require one or more `.Keys` to be specified on the field, such as `PropertyId` in which a key is the id of a desired property.
 
-|Name | Keyed | Details | Allowed for grouping | Allowed for data field |
+|Name | Keyed | Details | Allowed for grouping | Allowed as data field |
 |--|--|--|--|--|
 |NotApplicable | No | FieldSource is only applicable to FieldSets whose source type is DataItem | No | No
 |Id | No | The id of the data item (stream) | Yes | Yes

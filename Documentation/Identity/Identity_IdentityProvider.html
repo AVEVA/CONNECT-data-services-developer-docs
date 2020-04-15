@@ -363,6 +363,11 @@ string tenantId
 </code></pre><p>Id of Tenant.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
+[Default = False]
+bool ignoreAadConsentState
+</code></pre><p>Return AAD Identity Provider if at least one AAD tenant exists, regardless of the consent state.</p>
+<pre><code class="lang-csharp">[FromQuery]
+[Optional]
 [Default = &quot;&quot;]
 string query
 </code></pre><p>Query to execute. Currently not supported.</p>
@@ -379,8 +384,8 @@ int32 count
 <h3 id="security-6">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Administrator</code></li>
 <li><code>Account Member</code></li>
+<li><code>Account Administrator</code></li>
 </ul>
 <h3 id="returns-6">Returns</h3>
 <h4 id="200-6">200</h4>
@@ -428,8 +433,8 @@ Guid identityProviderId
 <h3 id="security-7">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Administrator</code></li>
 <li><code>Account Member</code></li>
+<li><code>Account Administrator</code></li>
 </ul>
 <h3 id="returns-7">Returns</h3>
 <h4 id="200-7">200</h4>
@@ -551,6 +556,8 @@ IdentityProviderAdd identityProviderAdd
 <p>Tenant not found.</p>
 <h4 id="405">405</h4>
 <p>Method not allowed at this base URL. Try the request again at the Global base URL.</p>
+<h4 id="408">408</h4>
+<p>Operation timed out.</p>
 <h4 id="409">409</h4>
 <p>Identity Provider already exists in Tenant.</p>
 <h4 id="500-8">500</h4>
@@ -586,6 +593,8 @@ Guid identityProviderId
 <p>IdentityProvider or Tenant not found.</p>
 <h4 id="405-1">405</h4>
 <p>Method not allowed at this base URL. Try the request again at the Global base URL.</p>
+<h4 id="408-1">408</h4>
+<p>Operation timed out.</p>
 <h4 id="500-9">500</h4>
 <p>Internal server error.</p>
 <hr>
@@ -605,8 +614,8 @@ Guid identityProviderId
 <h3 id="security-10">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Administrator</code></li>
 <li><code>Account Member</code></li>
+<li><code>Account Administrator</code></li>
 </ul>
 <h3 id="returns-10">Returns</h3>
 <h4 id="200-8">200</h4>
@@ -636,8 +645,8 @@ string tenantId
 <h3 id="security-11">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Administrator</code></li>
 <li><code>Account Member</code></li>
+<li><code>Account Administrator</code></li>
 </ul>
 <h3 id="returns-11">Returns</h3>
 <h4 id="200-9">200</h4>

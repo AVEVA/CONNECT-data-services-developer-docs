@@ -131,7 +131,7 @@
 <tr>
 <td>Id</td>
 <td>string</td>
-<td>Gets or sets client ID for this client. This ID should be a GUID.</td>
+<td>Gets or sets secret Id.</td>
 </tr>
 <tr>
 <td>Name</td>
@@ -302,7 +302,7 @@ HybridClientCreate hybridClientCreate
 </table>
 <pre><code class="lang-json">{
   &quot;SecretDescription&quot;: &quot;description&quot;,
-  &quot;SecretExpirationDate&quot;: &quot;2020-02-25T14:50:32.0778876-08:00&quot;,
+  &quot;SecretExpirationDate&quot;: &quot;2020-03-30T15:34:23.0602036-07:00&quot;,
   &quot;AllowOfflineAccess&quot;: false,
   &quot;AllowAccessTokensViaBrowser&quot;: false,
   &quot;RedirectUris&quot;: [
@@ -338,7 +338,7 @@ HybridClientCreate hybridClientCreate
   &quot;Secret&quot;: &quot;Secret&quot;,
   &quot;Id&quot;: 0,
   &quot;Description&quot;: &quot;description&quot;,
-  &quot;ExpirationDate&quot;: &quot;2020-02-25T14:50:32.0862102-08:00&quot;,
+  &quot;ExpirationDate&quot;: &quot;2020-03-30T15:34:23.0724603-07:00&quot;,
   &quot;Client&quot;: {
     &quot;AllowOfflineAccess&quot;: false,
     &quot;AllowAccessTokensViaBrowser&quot;: false,
@@ -372,6 +372,8 @@ HybridClientCreate hybridClientCreate
 <p>Tenant not found.</p>
 <h4 id="405">405</h4>
 <p>Method not allowed at this base URL. Try the request again at the Global base URL.</p>
+<h4 id="408">408</h4>
+<p>Operation timed out.</p>
 <h4 id="409">409</h4>
 <p>Client Id already exists.</p>
 <h4 id="500">500</h4>
@@ -535,6 +537,8 @@ HybridClient hybridClient
 <p>Client or Tenant not found.</p>
 <h4 id="405-1">405</h4>
 <p>Method not allowed at this base URL. Try the request again at the Global base URL.</p>
+<h4 id="408-1">408</h4>
+<p>Operation timed out.</p>
 <h4 id="500-1">500</h4>
 <p>Internal server error.</p>
 <hr>
@@ -720,6 +724,8 @@ string clientId
 <p>Client or Tenant not found.</p>
 <h4 id="405-2">405</h4>
 <p>Method not allowed at this base URL. Try the request again at the Global base URL.</p>
+<h4 id="408-2">408</h4>
+<p>Operation timed out.</p>
 <h4 id="500-4">500</h4>
 <p>Internal server error.</p>
 <hr>

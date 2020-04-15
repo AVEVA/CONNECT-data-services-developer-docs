@@ -369,7 +369,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Identity/Identity_AuthorizationCodeClient.html",
-          "hash": "TMk2LLyiKm+LjVRRuT5rwQ=="
+          "hash": "M4tJW9gM16Oik7ADGVdWPw=="
         }
       },
       "is_incremental": false,
@@ -381,7 +381,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Identity/Identity_AutomationIdentity.html",
-          "hash": "TdczW/7FC7yAFdkB5Qb+0g=="
+          "hash": "VUhb3XCX3OVoCjt7fUUwPw=="
         }
       },
       "is_incremental": false,
@@ -393,7 +393,31 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Identity/Identity_AzureActiveDirectoryTenant.html",
-          "hash": "mDsUw8eX+5Drb0BiBQMdkw=="
+          "hash": "mLhOgDVcXqwdawpysT5S4w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/Identity/Identity_Claim.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/Identity/Identity_Claim.html",
+          "hash": "Pz4BwdaB7xA1jCMu34FdaA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/Identity/Identity_ClaimTypeName.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/Identity/Identity_ClaimTypeName.html",
+          "hash": "FhdG3fOUNCdjP8UT0fLRuw=="
         }
       },
       "is_incremental": false,
@@ -405,7 +429,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Identity/Identity_ClientCredentialClient.html",
-          "hash": "XXu799F8oIYhdXc1kPapbw=="
+          "hash": "DYN0OXTlS1TLqZfFgdNhvg=="
         }
       },
       "is_incremental": false,
@@ -417,7 +441,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Identity/Identity_HybridClient.html",
-          "hash": "k5iQ+wEaYGAVXr5kdbivjQ=="
+          "hash": "VF85fEWlcRNCBhUo2C9W8w=="
         }
       },
       "is_incremental": false,
@@ -429,7 +453,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Identity/Identity_IdentityProvider.html",
-          "hash": "1cqg4jJ2uXTBFtGwrJODpQ=="
+          "hash": "FBqg3wKlXyg3SoE6RW9lpw=="
         }
       },
       "is_incremental": false,
@@ -441,7 +465,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Identity/Identity_ImplicitClient.html",
-          "hash": "jWlUFB45zcqBjIpZy9xmmg=="
+          "hash": "5hfIAuMd52BQ+AZ7YPSnkg=="
         }
       },
       "is_incremental": false,
@@ -453,7 +477,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Identity/Identity_Invitation.html",
-          "hash": "YcmgxCNMEo1oFJ2AroZDNQ=="
+          "hash": "vfCLd7Wnk8sZRTwdMMCwGw=="
         }
       },
       "is_incremental": false,
@@ -477,7 +501,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Identity/Identity_PersistedGrant.html",
-          "hash": "0qzBZUhBgYMADPw4fWKO3g=="
+          "hash": "jpvBPExFpHWHi4nvaoN5UQ=="
         }
       },
       "is_incremental": false,
@@ -489,7 +513,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Identity/Identity_Secret.html",
-          "hash": "tHBfoQwcrwVfyE9+wlOKaQ=="
+          "hash": "rUAWAW6ESs/dc1SwY+mg8w=="
         }
       },
       "is_incremental": false,
@@ -501,7 +525,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/Identity/Identity_User.html",
-          "hash": "QJV42I/IexvZzE+MIzMdww=="
+          "hash": "R+lO5rEQ4wA2Y4T2uH7q2A=="
         }
       },
       "is_incremental": false,
@@ -996,6 +1020,13 @@
         "full_build_reason_code": "NoAvailableBuildCache"
       },
       "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
@@ -1006,14 +1037,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 76,
-          "skipped_file_count": 0
-        },
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
+          "total_file_count": 78,
           "skipped_file_count": 0
         }
       }

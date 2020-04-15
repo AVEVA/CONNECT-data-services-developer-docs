@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>PersistedGrant </title>
+    <title>ClaimTypeName </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="PersistedGrant ">
+    <meta name="title" content="ClaimTypeName ">
     <meta name="generator" content="docfx 2.43.3.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -75,14 +75,11 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="identityPersistedGrant">
-<h1 id="persistedgrant">PersistedGrant</h1>
+            <article class="content wrap" id="_content" data-uid="identityClaimTypeName">
+<h1 id="claimtypename">ClaimTypeName</h1>
 
-<p>Persisted Grants such as refresh tokens or authorization codes are used
-            by OSIsoft Cloud Services to maintain some state about User authentication with regards to
-            a Client. For instance, refresh tokens, which are issued to Hybrid clients,
-            make it possible to determine when the Client can be issued a new access token
-            on behalf of the User without the users themselves being present.</p>
+<p>An Identity Provider Claim Type Name is the field or type name in a claim
+            that will be used to match to a value when creating an Identity Provider Claim.</p>
 <hr>
 <h2 id="authentication">Authentication</h2>
 <p>All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieve after a successful authentication request.</p>
@@ -99,23 +96,35 @@ Read <a href="https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_sampl
     &quot;Resolution&quot;: &quot;Possible solution for the error.&quot; 
 }
 </code></pre><p>If and when contacting OSIsoft support about this error, please provide the OperationId.</p>
-<h2 id="get-client-ids-of-persisted-grants-for-user"><code>Get Client Ids of Persisted Grants for User</code></h2>
-<p>Get enumerable of client IDs that have been issued an
-            Authorization Codes (not the same as the client type)
-            on behalf of a User.</p>
+<h2 id="get-all-identity-provider-claim-type-names"><code>Get All Identity Provider Claim Type Names</code></h2>
+<p>Get all Identity Provider Claim Type Names for an Identity Provider on a Tenant.</p>
 <h3 id="request">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Users/<wbr>{userId}/<wbr>PersistedGrants</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>IdentityProviders/<wbr>{identityProviderId}/<wbr>ClaimTypeNames</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
 </code></pre><p>Id of Tenant.</p>
 <pre><code class="lang-csharp">[Required]
-Guid userId
-</code></pre><p>Id of User.</p>
+Guid identityProviderId
+</code></pre><p>Id of Identity Provider.</p>
+<pre><code class="lang-csharp">[FromQuery]
+[Optional]
+[Default = &quot;&quot;]
+string query
+</code></pre><p>Query to execute. Currently not supported.</p>
+<pre><code class="lang-csharp">[FromQuery]
+[Optional]
+[Default = 0]
+int32 skip
+</code></pre><p>Number of Identity Providers to skip.</p>
+<pre><code class="lang-csharp">[FromQuery]
+[Optional]
+[Default = 100]
+int32 count
+</code></pre><p>Maximum number of Identity Providers to return.</p>
 <h3 id="security">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Member</code></li>
 <li><code>Account Administrator</code></li>
 </ul>
 <h3 id="returns">Returns</h3>
@@ -124,33 +133,40 @@ Guid userId
 <h5 id="type">Type:</h5>
 <p> <code>List</code></p>
 <pre><code class="lang-json">[
-  &quot;String&quot;,
-  &quot;String&quot;
+  {
+    &quot;Id&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
+    &quot;TypeName&quot;: &quot;Name&quot;,
+    &quot;IdentityProviderId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
+  },
+  {
+    &quot;Id&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
+    &quot;TypeName&quot;: &quot;Name&quot;,
+    &quot;IdentityProviderId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
+  }
 ]
 </code></pre><h4 id="401">401</h4>
 <p>Unauthorized.</p>
 <h4 id="403">403</h4>
 <p>Forbidden.</p>
 <h4 id="404">404</h4>
-<p>User not found.</p>
+<p>Tenant or Identity Provider not found.</p>
 <h4 id="500">500</h4>
 <p>Internal server error.</p>
 <hr>
-<h2 id="get-total-count-of-persisted-grants-for-a-user"><code>Get Total Count of Persisted Grants for a User</code></h2>
-<p>Validate whether there are any Authorization Code Persisted Grants for User.</p>
+<h2 id="get-all-identity-provider-claim-type-names-header"><code>Get All Identity Provider Claim Type Names Header</code></h2>
+<p>Get Header for all Identity Provider Claims Type Names for an Identity Provider on a Tenant.</p>
 <h3 id="request-1">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Users/<wbr>{userId}/<wbr>PersistedGrants</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>IdentityProviders/<wbr>{identityProviderId}/<wbr>ClaimTypeNames</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
 </code></pre><p>Id of Tenant.</p>
 <pre><code class="lang-csharp">[Required]
-Guid userId
-</code></pre><p>Id of User.</p>
+Guid identityProviderId
+</code></pre><p>Id of Identity Provider.</p>
 <h3 id="security-1">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Member</code></li>
 <li><code>Account Administrator</code></li>
 </ul>
 <h3 id="returns-1">Returns</h3>
@@ -163,42 +179,83 @@ Guid userId
 <h4 id="403-1">403</h4>
 <p>Forbidden.</p>
 <h4 id="404-1">404</h4>
-<p>User not found.</p>
+<p>Tenant or Identity Provider not found.</p>
 <h4 id="500-1">500</h4>
 <p>Internal server error.</p>
 <hr>
-<h2 id="remove-persisted-grants"><code>Remove Persisted Grants</code></h2>
-<p>Remove Authorization Code Persisted Grants
-            for the User with the specified User Id in the Tenant.</p>
+<h2 id="get-identity-provider-claim-type-name"><code>Get Identity Provider Claim Type Name</code></h2>
+<p>Get an Identity Provider Claim Type Name from an Identity Provider on a Tenant.</p>
 <h3 id="request-2">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">DELETE api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Users/<wbr>{userId}/<wbr>PersistedGrants</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>IdentityProviders/<wbr>{identityProviderId}/<wbr>ClaimTypeNames/<wbr>{identityProviderClaimTypeNameId}</code></p>
 <h3 id="parameters-2">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
 </code></pre><p>Id of Tenant.</p>
 <pre><code class="lang-csharp">[Required]
-Guid userId
-</code></pre><p>Id of User.</p>
+Guid identityProviderId
+</code></pre><p>Id of Identity Provider.</p>
+<pre><code class="lang-csharp">[Required]
+Guid identityProviderClaimTypeNameId
+</code></pre><p>Id of Identity Provider Claim Type Name.</p>
 <h3 id="security-2">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Member</code></li>
 <li><code>Account Administrator</code></li>
 </ul>
 <h3 id="returns-2">Returns</h3>
-<h4 id="204">204</h4>
-<p>Removed.</p>
-<h4 id="401-2">401</h4>
+<h4 id="200-2">200</h4>
+<p>Success.</p>
+<h5 id="type-2">Type:</h5>
+<p> <code>IdentityProviderClaim</code></p>
+<pre><code class="lang-json">{
+  &quot;Id&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
+  &quot;TypeName&quot;: &quot;Name&quot;,
+  &quot;Value&quot;: &quot;Value&quot;,
+  &quot;RoleIds&quot;: [
+    &quot;00000000-0000-0000-0000-000000000000&quot;,
+    &quot;00000000-0000-0000-0000-000000000000&quot;
+  ]
+}
+</code></pre><h4 id="401-2">401</h4>
 <p>Unauthorized.</p>
 <h4 id="403-2">403</h4>
 <p>Forbidden.</p>
 <h4 id="404-2">404</h4>
-<p>User not found.</p>
-<h4 id="405">405</h4>
-<p>Method not allowed at this base URL. Try the request again at the Global base URL.</p>
-<h4 id="408">408</h4>
-<p>Operation timed out.</p>
+<p>Tenant, Identity Provider, or Identity Provider Claim Type Name not found.</p>
 <h4 id="500-2">500</h4>
+<p>Internal server error.</p>
+<hr>
+<h2 id="get-identity-provider-claim-type-name-header"><code>Get Identity Provider Claim Type Name Header</code></h2>
+<p>Get an Identity Provider Claim Type Name Header from an Identity Provider on a Tenant.</p>
+<h3 id="request-3">Request</h3>
+<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>IdentityProviders/<wbr>{identityProviderId}/<wbr>ClaimTypeNames/<wbr>{identityProviderClaimTypeNameId}</code></p>
+<h3 id="parameters-3">Parameters</h3>
+<pre><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p>Id of Tenant.</p>
+<pre><code class="lang-csharp">[Required]
+Guid identityProviderId
+</code></pre><p>Id of Identity Provider.</p>
+<pre><code class="lang-csharp">[Required]
+Guid identityProviderClaimTypeNameId
+</code></pre><p>Id of Identity Provider Claim Type Name.</p>
+<h3 id="security-3">Security</h3>
+<p>Allowed for these roles:</p>
+<ul>
+<li><code>Account Administrator</code></li>
+</ul>
+<h3 id="returns-3">Returns</h3>
+<h4 id="200-3">200</h4>
+<p>Success.</p>
+<h5 id="type-3">Type:</h5>
+<p> <code>Void</code></p>
+<h4 id="401-3">401</h4>
+<p>Unauthorized.</p>
+<h4 id="403-3">403</h4>
+<p>Forbidden.</p>
+<h4 id="404-3">404</h4>
+<p>Tenant, Identity Provider, or Identity Provider Claim Type Name not found.</p>
+<h4 id="500-3">500</h4>
 <p>Internal server error.</p>
 <hr>
 </article>
@@ -209,7 +266,7 @@ Guid userId
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/Identity/Identity_PersistedGrant.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/Identity/Identity_ClaimTypeName.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

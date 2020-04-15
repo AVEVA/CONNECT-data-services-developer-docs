@@ -82,22 +82,22 @@ A set of fields included in the data view, sharing a common role or source (`.So
 Individual piece of information, such as a property of an SDS stream, or metadata of that stream.
 |Property | Type | Optionality  | Default  | Details |
 |--|--|--|--|--|
-| Source | FieldSource | Optional | NotApplicable | For fields of a DataItem-sourced FieldSet, identifies the source of the field's values. Some sources are used in conjunction with the Keys property (see below).
-| Keys | String[] | Optional | [ ] | Used for certain FieldSources, e.g. to map to specific stream properties by id. If more than one key is specified, they are matched as exclusive-or.
+| Source | FieldSource | Optional | NotApplicable | A field's [`.Source`](xref:DataView#fieldsource-enumeration) indicates where the field's values will come from, if applicable. Sources `FieldSource.PropertyId`, `FieldSource.PropertyName`, `FieldSource.Metadata` and `FieldSource.Tags` are used in conjunction with the Keys property (see below). All sources except `FieldSource.NotApplicable` can be used as data fields. Fields from sources `FieldSource.Id`, `FieldSource.Name`, `FieldSource.Metadata` and `FieldSource.Tags` can be used as grouping fields and identifying fields. `FieldSource.NotApplicable` is the only allowed source for an index field.
+| Keys | String[] | Optional | [ ] | Used for sources `FieldSource.PropertyId`, `FieldSource.PropertyName`, `FieldSource.Metadata` and `FieldSource.Tags`, e.g. to map to specific stream properties by id. If more than one key is specified, they are matched as exclusive-or. A key has to be a non-null value.
 | Label | string | Optional | null | Friendly name for the field. Certain tokens have special meaning: one of these, {IdentifyingValue}, is included in the suggested labels of AvailableFieldSets. Tokens that do not resolve are "" (empty string). A label cannot be null, empty or whitespace. Label is trimmed of whitespace when used to identify field mappings. 
 
 ### FieldSource enumeration
 For fields that derive data from a data item (e.g. an SDS stream), the `FieldSource` enumeration specifies the part of that data item that a Field resolves to. Some sources require one or more `.Keys` to be specified on the field, such as `PropertyId` in which a key is the id of a desired property.
 
-|Name | Keyed | Details | Allowed for grouping | Allowed as data field |
-|--|--|--|--|--|
-|NotApplicable | No | FieldSource is only applicable to FieldSets whose source type is DataItem | No | No
-|Id | No | The id of the data item (stream) | Yes | Yes
-|Name | No | The name of the data item (stream) | Yes | Yes
-|PropertyId | Yes | Data from a stream property, found by id | No | Yes
-|PropertyName | Yes | Data from a stream property, found by name | No | Yes
-|Tags | Yes | Data item tags matching the collection provided | Yes | Yes
-|Metadata | Yes | Value of the data item metadata, found by key | Yes | Yes
+|Name | Keyed | Details |
+|--|--|--|
+|NotApplicable | No | FieldSource is only applicable to FieldSets whose source type is DataItem
+|Id | No | The id of the data item (stream)
+|Name | No | The name of the data item (stream)
+|PropertyId | Yes | Data from a stream property, found by id
+|PropertyName | Yes | Data from a stream property, found by name
+|Tags | Yes | Data item tags matching the collection provided
+|Metadata | Yes | Value of the data item metadata, found by key
 
 ### SdsTypeCode enumeration
 `SdsTypeCode` enumeration is the name of a data type. It is used when defining a data view, where the only supported `.IndexTypeCode` is "DateTime".

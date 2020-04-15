@@ -79,4 +79,4 @@ centralized environment to aggregate data for reporting, advanced analytics, and
      - [Billing Cycles](xref:operationsBilling_Cycles)
    - [Role-based Access Control](xref:accessControl)
    - [Samples](xref:samples)
-   - [Getting Support](xref:support)
+   - [Technical Support](xref:support "Technical support and other resources")

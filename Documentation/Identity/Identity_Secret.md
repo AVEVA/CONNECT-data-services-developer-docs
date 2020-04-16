@@ -12,14 +12,31 @@ Secrets are used to authenticate both Client Credential clients and Hybrid clien
             issued to Hybrid clients. Safe storage of secrets is your responsibility. OSIsoft Cloud Services
             does not store secret values, so once lost there is no way to retrieve the value of a Secret.
 
+## Properties
+
+For HTTP requests and responses, the Secret object has the following properties and JSON-serialized body: 
+
+Property | Type | Description
+ --- | --- | ---
+Id | int32 | Gets or sets the Id for the secret. Note: This is currently an auto-incremented integer.
+Description | string | Gets or sets the description.
+Value | string | Gets or sets the value.
+Expiration | DateTime | Gets or sets the expiration.
+Type | string | Gets or sets the type of the client secret.
+
+### Serialized Model
+
+```json
+{
+  "Id": 0,
+  "Description": "description",
+  "Value": "Value",
+  "Expiration": "2020-03-30T15:34:23.1822657-07:00",
+  "Type": "Type"
+}
+```
 
 ***
-
-## Base URL
-
-All URLs referenced in this section have the following base:
-
-`https://dat-b.osisoft.com/`
 
 ## Authentication
 
@@ -29,7 +46,7 @@ All endpoints referenced in this documentation require authenticated access. Aut
 
 Requests made without an access token or an invalid/expired token will fail with a 401 Unauthorized response.
 Requests made with an access token which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
-Read [here](https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/Authentication) on how to authenticate against OCS with the various clients and receive an access token in response.
+Read [here](https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/Authentication) on how to authenticate against OCS with the various clients and receive an access token in response.
 
 ## Error Handling
 
@@ -79,7 +96,7 @@ Id of Client.
 string query
 ```
 
-Query to execute. Currently not supported
+Query to execute. Currently not supported.
 
 ```csharp
 [FromQuery]
@@ -119,13 +136,13 @@ Success.
 [
   {
     "Id": 0,
-    "Expiration": "2019-07-19T13:56:29.4014752-07:00",
+    "Expiration": "2020-03-30T15:34:23.188507-07:00",
     "Expires": false,
     "Description": "description"
   },
   {
     "Id": 0,
-    "Expiration": "2019-07-19T13:56:29.4016962-07:00",
+    "Expiration": "2020-03-30T15:34:23.1888317-07:00",
     "Expires": false,
     "Description": "description"
   }
@@ -199,7 +216,7 @@ Success.
 ```json
 {
   "Id": 0,
-  "Expiration": "2019-07-19T13:56:29.4043046-07:00",
+  "Expiration": "2020-03-30T15:34:23.1933632-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -258,15 +275,15 @@ ClientSecretCreateOrUpdate object.
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-Expiration | DateTime | No | Expiration date for the client secret. Will be null if the secret does not expire.
-Expires | bool | No | Determines if the secret expires. Defaults to true.            If Expires is set to true (or null) and Expiration is not null, expiration of this secret will be enforced.            If Expires is set to true (or null) and Expiration is null, a 400 error will be returned.            If Expires is set to false and Expiration is not null, a 400 error will be returned.            If Expires is set to false and Expiration is null, there will be no expiration of this secret.
-Description | string | No | Description for the client secret. We suggest being as descriptive as possible. This field will make identifying            secrets easier.
+Expiration | DateTime | No | Gets or sets expiration date for the client secret. Will be null if the secret does not expire.
+Expires | bool | No | Gets or sets determines if the secret expires. Defaults to true.            If Expires is set to true (or null) and Expiration is not null, expiration of this secret will be enforced.            If Expires is set to true (or null) and Expiration is null, a 400 error will be returned.            If Expires is set to false and Expiration is not null, a 400 error will be returned.            If Expires is set to false and Expiration is null, there will be no expiration of this secret.
+Description | string | No | Gets or sets description for the client secret. We suggest being as descriptive as possible. This field will make identifying            secrets easier.
 
 
 
 ```json
 {
-  "Expiration": "2019-07-19T13:56:29.4053296-07:00",
+  "Expiration": "2020-03-30T15:34:23.1969711-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -292,7 +309,7 @@ Created.
 {
   "Secret": "Secret",
   "Id": 0,
-  "Expiration": "2019-07-19T13:56:29.4066732-07:00",
+  "Expiration": "2020-03-30T15:34:23.2004265-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -309,6 +326,14 @@ Forbidden.
 #### 404
 
 Client or Tenant not found.
+
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
+
+#### 408
+
+Operation timed out.
 
 #### 500
 
@@ -357,15 +382,15 @@ ClientSecretCreateOrUpdate object. Properties that are not set or are null will 
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-Expiration | DateTime | No | Expiration date for the client secret. Will be null if the secret does not expire.
-Expires | bool | No | Determines if the secret expires. Defaults to true.            If Expires is set to true (or null) and Expiration is not null, expiration of this secret will be enforced.            If Expires is set to true (or null) and Expiration is null, a 400 error will be returned.            If Expires is set to false and Expiration is not null, a 400 error will be returned.            If Expires is set to false and Expiration is null, there will be no expiration of this secret.
-Description | string | No | Description for the client secret. We suggest being as descriptive as possible. This field will make identifying            secrets easier.
+Expiration | DateTime | No | Gets or sets expiration date for the client secret. Will be null if the secret does not expire.
+Expires | bool | No | Gets or sets determines if the secret expires. Defaults to true.            If Expires is set to true (or null) and Expiration is not null, expiration of this secret will be enforced.            If Expires is set to true (or null) and Expiration is null, a 400 error will be returned.            If Expires is set to false and Expiration is not null, a 400 error will be returned.            If Expires is set to false and Expiration is null, there will be no expiration of this secret.
+Description | string | No | Gets or sets description for the client secret. We suggest being as descriptive as possible. This field will make identifying            secrets easier.
 
 
 
 ```json
 {
-  "Expiration": "2019-07-19T13:56:29.4102216-07:00",
+  "Expiration": "2020-03-30T15:34:23.2055482-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -390,7 +415,7 @@ Success.
 ```json
 {
   "Id": 0,
-  "Expiration": "2019-07-19T13:56:29.4103304-07:00",
+  "Expiration": "2020-03-30T15:34:23.2057205-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -411,6 +436,14 @@ Forbidden.
 #### 404
 
 Secret, Client, or Tenant not found.
+
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
+
+#### 408
+
+Operation timed out.
 
 #### 500
 
@@ -474,12 +507,20 @@ Forbidden.
 
 Secret, Client, or Tenant not found.
 
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
+
+#### 408
+
+Operation timed out.
+
 #### 500
 
 Internal server error.
 ***
 
-## `Validate Secret Exists`
+## `Get Header for Hybrid Client Secret`
 
 Validate that a Secret with given Id exists in the Client.
             This endpoint is identical to the GET one but it does not
@@ -678,13 +719,13 @@ Success.
 [
   {
     "Id": 0,
-    "Expiration": "2019-07-19T13:56:29.551583-07:00",
+    "Expiration": "2020-03-30T15:34:23.421257-07:00",
     "Expires": false,
     "Description": "description"
   },
   {
     "Id": 0,
-    "Expiration": "2019-07-19T13:56:29.5515995-07:00",
+    "Expiration": "2020-03-30T15:34:23.421273-07:00",
     "Expires": false,
     "Description": "description"
   }
@@ -758,7 +799,7 @@ Success.
 ```json
 {
   "Id": 0,
-  "Expiration": "2019-07-19T13:56:29.5525318-07:00",
+  "Expiration": "2020-03-30T15:34:23.423542-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -817,15 +858,15 @@ ClientSecretCreateOrUpdate object.
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-Expiration | DateTime | No | Expiration date for the client secret. Will be null if the secret does not expire.
-Expires | bool | No | Determines if the secret expires. Defaults to true.            If Expires is set to true (or null) and Expiration is not null, expiration of this secret will be enforced.            If Expires is set to true (or null) and Expiration is null, a 400 error will be returned.            If Expires is set to false and Expiration is not null, a 400 error will be returned.            If Expires is set to false and Expiration is null, there will be no expiration of this secret.
-Description | string | No | Description for the client secret. We suggest being as descriptive as possible. This field will make identifying            secrets easier.
+Expiration | DateTime | No | Gets or sets expiration date for the client secret. Will be null if the secret does not expire.
+Expires | bool | No | Gets or sets determines if the secret expires. Defaults to true.            If Expires is set to true (or null) and Expiration is not null, expiration of this secret will be enforced.            If Expires is set to true (or null) and Expiration is null, a 400 error will be returned.            If Expires is set to false and Expiration is not null, a 400 error will be returned.            If Expires is set to false and Expiration is null, there will be no expiration of this secret.
+Description | string | No | Gets or sets description for the client secret. We suggest being as descriptive as possible. This field will make identifying            secrets easier.
 
 
 
 ```json
 {
-  "Expiration": "2019-07-19T13:56:29.5535351-07:00",
+  "Expiration": "2020-03-30T15:34:23.4255715-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -851,7 +892,7 @@ Created.
 {
   "Secret": "Secret",
   "Id": 0,
-  "Expiration": "2019-07-19T13:56:29.5536387-07:00",
+  "Expiration": "2020-03-30T15:34:23.4256863-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -872,6 +913,14 @@ Forbidden.
 #### 404
 
 Client or Tenant not found.
+
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
+
+#### 408
+
+Operation timed out.
 
 #### 500
 
@@ -921,15 +970,15 @@ ClientSecretCreateOrUpdate object. Properties that are not set or are null will 
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-Expiration | DateTime | No | Expiration date for the client secret. Will be null if the secret does not expire.
-Expires | bool | No | Determines if the secret expires. Defaults to true.            If Expires is set to true (or null) and Expiration is not null, expiration of this secret will be enforced.            If Expires is set to true (or null) and Expiration is null, a 400 error will be returned.            If Expires is set to false and Expiration is not null, a 400 error will be returned.            If Expires is set to false and Expiration is null, there will be no expiration of this secret.
-Description | string | No | Description for the client secret. We suggest being as descriptive as possible. This field will make identifying            secrets easier.
+Expiration | DateTime | No | Gets or sets expiration date for the client secret. Will be null if the secret does not expire.
+Expires | bool | No | Gets or sets determines if the secret expires. Defaults to true.            If Expires is set to true (or null) and Expiration is not null, expiration of this secret will be enforced.            If Expires is set to true (or null) and Expiration is null, a 400 error will be returned.            If Expires is set to false and Expiration is not null, a 400 error will be returned.            If Expires is set to false and Expiration is null, there will be no expiration of this secret.
+Description | string | No | Gets or sets description for the client secret. We suggest being as descriptive as possible. This field will make identifying            secrets easier.
 
 
 
 ```json
 {
-  "Expiration": "2019-07-19T13:56:29.5547514-07:00",
+  "Expiration": "2020-03-30T15:34:23.4279471-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -954,7 +1003,7 @@ Success.
 ```json
 {
   "Id": 0,
-  "Expiration": "2019-07-19T13:56:29.5548581-07:00",
+  "Expiration": "2020-03-30T15:34:23.4280505-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -975,6 +1024,14 @@ Forbidden.
 #### 404
 
 Secret, Client, or Tenant not found.
+
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
+
+#### 408
+
+Operation timed out.
 
 #### 500
 
@@ -1039,12 +1096,20 @@ Forbidden.
 
 Secret, Client, or Tenant not found.
 
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
+
+#### 408
+
+Operation timed out.
+
 #### 500
 
 Internal server error.
 ***
 
-## `Validate Client Credential Client Exists`
+## `Get Header for Client Credential Client Secret`
 
 Validate that a Secret with given Id exists in the Client.
             This endpoint is identical to the GET one but it does not

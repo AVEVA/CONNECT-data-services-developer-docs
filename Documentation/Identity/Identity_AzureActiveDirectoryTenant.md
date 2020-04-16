@@ -4,19 +4,19 @@ uid: identityAzureActiveDirectoryTenant
 
 # AzureActiveDirectoryTenant
 
-An Azure Active Directory (AAD) Tenant is used to map an existing
-            [AAD](https://azure.microsoft.com/en-us/services/active-directory/)
-            tenant from Azure to OSIsoft Cloud Services (OCS). We only allow one AAD Tenant
-            per OCS Tenant.
+An Azure Active Directory Tenant is used to map an existing
+            [Azure Active Directory](https://azure.microsoft.com/en-us/services/active-directory/)
+            Tenant from Azure to OSIsoft Cloud Services. We only allow one Azure Active Directory Tenant
+            per OSIsoft Cloud Services Tenant.
 
 ## Properties
 
 For HTTP requests and responses, the AzureActiveDirectoryTenant object has the following properties and JSON-serialized body: 
 
-Property | Type | Descriptions
- --- | --- | --- | ---
-Id | string | Id of an Azure Active Directory Tenant
-ConsentState | ConsentState | Consent State of Azure Active Directory Tenant. Can be: NotConsented (0), Consented (1)
+Property | Type | Description
+ --- | --- | ---
+Id | string | Gets or sets id of an Azure Active Directory Tenant.
+ConsentState | ConsentState | Gets or sets Consent State of Azure Active Directory Tenant. Can be: NotConsented (0), Consented (1).
 
 ### Serialized Model
 
@@ -29,12 +29,6 @@ ConsentState | ConsentState | Consent State of Azure Active Directory Tenant. Ca
 
 ***
 
-## Base URL
-
-All URLs referenced in this section have the following base:
-
-`https://dat-b.osisoft.com/`
-
 ## Authentication
 
 All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieve after a successful authentication request.
@@ -43,7 +37,7 @@ All endpoints referenced in this documentation require authenticated access. Aut
 
 Requests made without an access token or an invalid/expired token will fail with a 401 Unauthorized response.
 Requests made with an access token which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
-Read [here](https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/Authentication) on how to authenticate against OCS with the various clients and receive an access token in response.
+Read [here](https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/Authentication) on how to authenticate against OCS with the various clients and receive an access token in response.
 
 ## Error Handling
 
@@ -60,9 +54,9 @@ All responses will have an error message in the body. The exceptions are 200 res
 
 If and when contacting OSIsoft support about this error, please provide the OperationId.
 
-## `Add AAD Tenant to OCS Tenant`
+## `Add Azure Active Directory Tenant to OCS Tenant`
 
-Add an AAD Tenant to the OCS Tenant.
+Add an Azure Active Directory Tenant to the OSIsoft Cloud Services Tenant.
 
 ### Request
 
@@ -75,14 +69,14 @@ Add an AAD Tenant to the OCS Tenant.
 string tenantId
 ```
 
-Id of OCS Tenant.
+Id of OSIsoft Cloud Services Tenant.
 
 ```csharp
 [Required]
 string azureActiveDirectoryTenantId
 ```
 
-Id or Domain Name of AAD Tenant.
+Id or Domain Name of Azure Active Directory Tenant.
 
 ### Security
 
@@ -121,20 +115,28 @@ Forbidden.
 
 #### 404
 
-OCS Tenant not found.
+OSIsoft Cloud Services Tenant not found.
+
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
+
+#### 408
+
+Operation timed out.
 
 #### 409
 
-Id of AAD Tenant. is already in use on the specified Tenant.
+Id of Azure Active Directory Tenant. is already in use on the specified Tenant.
 
 #### 500
 
 Internal server error.
 ***
 
-## `Get All AAD Tenants from OCS Tenant`
+## `Get All Azure Active Directory Tenants from OCS Tenant`
 
-Get all AAD Tenants from an OCS Tenant.
+Get all Azure Active Directory Tenants from an OSIsoft Cloud Services Tenant.
 
 ### Request
 
@@ -147,7 +149,7 @@ Get all AAD Tenants from an OCS Tenant.
 string tenantId
 ```
 
-Id of OCS Tenant.
+Id of OSIsoft Cloud Services Tenant.
 
 ```csharp
 [FromQuery]
@@ -165,7 +167,7 @@ Query to execute. Currently not supported.
 int32 skip
 ```
 
-Number of AAD tenants to skip.
+Number of Azure Active Directory tenants to skip.
 
 ```csharp
 [FromQuery]
@@ -174,7 +176,7 @@ Number of AAD tenants to skip.
 int32 count
 ```
 
-Maximum number of AAD tenants to return.
+Maximum number of Azure Active Directory tenants to return.
 
 ### Security
 
@@ -224,7 +226,7 @@ Internal server error.
 
 ## `Get AAD Tenant from OCS Tenant`
 
-Get AAD Tenant from an OCS Tenant.
+Get Azure Active Directory Tenant from an OSIsoft Cloud Services Tenant.
 
 ### Request
 
@@ -237,14 +239,14 @@ Get AAD Tenant from an OCS Tenant.
 string tenantId
 ```
 
-Id of OCS Tenant.
+Id of OSIsoft Cloud Services Tenant.
 
 ```csharp
 [Required]
 string azureActiveDirectoryTenantId
 ```
 
-Id of AAD Tenant.
+Id of Azure Active Directory Tenant.
 
 ### Security
 
@@ -283,7 +285,7 @@ Forbidden.
 
 #### 404
 
-OCS Tenant not found.
+OSIsoft Cloud Services Tenant not found.
 
 #### 500
 
@@ -292,7 +294,7 @@ Internal server error.
 
 ## `Remove AAD Tenant from OCS Tenant`
 
-Remove AAD Tenant from an OCS Tenant.
+Remove Azure Active Directory Tenant from an OSIsoft Cloud Services Tenant.
 
 ### Request
 
@@ -305,14 +307,14 @@ Remove AAD Tenant from an OCS Tenant.
 string tenantId
 ```
 
-Id of OCS Tenant.
+Id of OSIsoft Cloud Services Tenant.
 
 ```csharp
 [Required]
 string azureActiveDirectoryTenantId
 ```
 
-Id of AAD Tenant to remove.
+Id of Azure Active Directory Tenant to remove.
 
 ### Security
 
@@ -340,7 +342,15 @@ Forbidden.
 
 #### 404
 
-OCS Tenant not found.
+OSIsoft Cloud Services Tenant not found.
+
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
+
+#### 408
+
+Operation timed out.
 
 #### 500
 
@@ -349,10 +359,10 @@ Internal server error.
 
 ## `Send Consent Email for AAD Tenant`
 
-Send consent for an AAD Tenant. OCS needs to be granted
-            permission to interact with the AAD tenant. Otherwise, users from this AAD Tenant
-            cannot accept invitations from OCS and log in. You can read more about this
-            [here](https://pisquare.osisoft.com/docs/DOC-3986-msa-consent-for-azure-active-directory)
+Send consent for an Azure Active Directory Tenant. OSIsoft Cloud Services needs to be granted
+            permission to interact with the Azure Active Directory tenant. Otherwise, users from this Azure Active Directory Tenant
+            cannot accept invitations from OSIsoft Cloud Services and log in. You can read more about this
+            [here](https://pisquare.osisoft.com/docs/DOC-3986-msa-consent-for-azure-active-directory).
 
 ### Request
 
@@ -365,14 +375,14 @@ Send consent for an AAD Tenant. OCS needs to be granted
 string tenantId
 ```
 
-Id of OCS Tenant.
+Id of OSIsoft Cloud Services Tenant.
 
 ```csharp
 [Required]
 string azureActiveDirectoryTenantId
 ```
 
-Id of AAD Tenant.
+Id of Azure Active Directory Tenant.
 
 ```csharp
 [FromBody]
@@ -384,10 +394,10 @@ ConsentInformation object.
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-AzureActiveDirectoryConsentEmail | string | Yes | Address to email consent.            Only AAD Admins have permission to consent to OCS            being allowed to interact with the tenant. The email            does not have to be sent to an Admin.
-AzureActiveDirectoryConsentGivenName | string | Yes | Preferred name to use in the consent email.
-AzureActiveDirectoryConsentSurname | string | Yes | Preferred surname to use in the email.
-AzureActiveDirectoryTenant | string | Yes | AAD Domain Name (e.g. mydomain.onmicrosoft.com)
+AzureActiveDirectoryConsentEmail | string | Yes | Gets or sets address to email consent.            Only Azure Active Directory Admins have permission to consent to            being allowed to interact with the tenant. The email            does not have to be sent to an Admin.
+AzureActiveDirectoryConsentGivenName | string | Yes | Gets or sets preferred name to use in the consent email.
+AzureActiveDirectoryConsentSurname | string | Yes | Gets or sets preferred surname to use in the consent email.
+AzureActiveDirectoryTenant | string | Yes | Gets or sets Azure Active Directory Domain Name (e.g. mydomain.onmicrosoft.com).
 
 
 
@@ -426,16 +436,20 @@ Forbidden.
 
 #### 404
 
-OCS Tenant not found.
+OSIsoft Cloud Services Tenant not found.
+
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
 
 #### 500
 
 Internal server error.
 ***
 
-## `Validate AAD Tenant in OCS Tenant`
+## `Get Azure Active Directory Tenant in Tenant`
 
-Validate that AAD Tenant exists in this OCS Tenant.
+Validate that Azure Active Directory Tenant exists in this OSIsoft Cloud Services Tenant.
             This endpoint is identical to the GET one but
             it does not return any objects in the body.
 
@@ -450,14 +464,14 @@ Validate that AAD Tenant exists in this OCS Tenant.
 string tenantId
 ```
 
-Id of OCS Tenant.
+Id of OSIsoft Cloud Services Tenant.
 
 ```csharp
 [Required]
 string azureActiveDirectoryTenantId
 ```
 
-Id of AAD Tenant.
+Id of Azure Active Directory Tenant.
 
 ### Security
 
@@ -489,16 +503,16 @@ Forbidden.
 
 #### 404
 
-OCS Tenant not found.
+OSIsoft Cloud Services Tenant not found.
 
 #### 500
 
 Internal server error.
 ***
 
-## `Get Total Count of AAD Tenant in OCS Tenant`
+## `Get Total Count of Azure Active Directory Tenant in Tenant`
 
-Return total number of AAD tenants in a OCS Tenant. This endpoint
+Return total number of Azure Active Directory tenants in a OSIsoft Cloud Services Tenant. This endpoint
             is identical to the GET one but it does not return any objects
             in the body.
 
@@ -513,7 +527,7 @@ Return total number of AAD tenants in a OCS Tenant. This endpoint
 string tenantId
 ```
 
-Id of OCS Tenant.
+Id of OSIsoft Cloud Services Tenant.
 
 ### Security
 
@@ -545,7 +559,7 @@ Forbidden.
 
 #### 404
 
-OCS Tenant not found.
+OSIsoft Cloud Services Tenant not found.
 
 #### 500
 

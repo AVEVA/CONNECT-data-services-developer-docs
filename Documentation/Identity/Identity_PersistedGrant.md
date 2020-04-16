@@ -5,19 +5,13 @@ uid: identityPersistedGrant
 # PersistedGrant
 
 Persisted Grants such as refresh tokens or authorization codes are used
-            by OCS to maintain some state about User authentication with regards to
+            by OSIsoft Cloud Services to maintain some state about User authentication with regards to
             a Client. For instance, refresh tokens, which are issued to Hybrid clients,
             make it possible to determine when the Client can be issued a new access token
             on behalf of the User without the users themselves being present.
 
 
 ***
-
-## Base URL
-
-All URLs referenced in this section have the following base:
-
-`https://dat-b.osisoft.com/`
 
 ## Authentication
 
@@ -27,7 +21,7 @@ All endpoints referenced in this documentation require authenticated access. Aut
 
 Requests made without an access token or an invalid/expired token will fail with a 401 Unauthorized response.
 Requests made with an access token which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
-Read [here](https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/Authentication) on how to authenticate against OCS with the various clients and receive an access token in response.
+Read [here](https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/Authentication) on how to authenticate against OCS with the various clients and receive an access token in response.
 
 ## Error Handling
 
@@ -218,6 +212,14 @@ Forbidden.
 #### 404
 
 User not found.
+
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
+
+#### 408
+
+Operation timed out.
 
 #### 500
 

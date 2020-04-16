@@ -6,8 +6,8 @@ uid: identityHybridClient
 
 Hybrid clients are used in typical, thick MVC clients with the presence of a User.
             These clients are issued an Id and Secret upon creation, which are later used for authentication
-            against OCS. More than one Secret can be created for a Client. You can read more about these clients
-            [here](https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/Authentication#hybrid-flow).
+            against OSIsoft Cloud Services. More than one Secret can be created for a Client. You can read more about these clients
+            [here](https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/Authentication#hybrid-flow).
             Hybrid clients can be issued refresh tokens, if requested, alongside access tokens. Refresh tokens typically
             have an longer lifetime than access tokens, and are used to request a new access token on behalf of the user
             without them having to sign-in.
@@ -18,19 +18,19 @@ Hybrid clients are used in typical, thick MVC clients with the presence of a Use
 
 For HTTP requests and responses, the HybridClient object has the following properties and JSON-serialized body: 
 
-Property | Type | Descriptions
- --- | --- | --- | ---
-AllowOfflineAccess | bool | Specifies whether this client can request refresh tokens, by providing the *offline_access* scope.
-AllowAccessTokensViaBrowser | bool | Specifies whether this HybridClient is allowed to receive access tokens via the browser. This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow client that is supposed to use code *id_token* to add the *token* response type, thus leaking the token to the browser).
-RedirectUris | string[] | Specifies the allowed URIs to which return tokens or authorization codes can be returned. Wildcards are ignored. URIs must match exactly what you are redirecting to after login. If URIs do not match,, the authentication process will fail with a bad_client error. Maximum 10 per client.
-PostLogoutRedirectUris | string[] | Specifies allowed URIs to redirect to after logout. Wildcards are ignored. URIs must match exactly what you are redirecting after logout. Maximum 10 for client.
-ClientUri | string | URI to a page with information about client (used on consent screen).
-LogoUri | string | URI to client logo (used on consent screen).
-Id | string | Client ID for this client. This ID should be a GUID.
-Name | string | Name of Client.
-Enabled | bool | Determine if client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.
-AccessTokenLifetime | int32 | Lifetime of access token issued for this client after authentication. Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.
-Tags | string[] | For OSIsoft internal use only.
+Property | Type | Description
+ --- | --- | ---
+AllowOfflineAccess | bool | Gets or sets whether this client can request refresh tokens, by providing the *offline_access* scope.
+AllowAccessTokensViaBrowser | bool | Gets or sets whether this HybridClient is allowed to receive access tokens via the browser. This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow client that is supposed to use code *id_token* to add the *token* response type, thus leaking the token to the browser).
+RedirectUris | string[] | Gets or sets the allowed URIs to which return tokens or authorization codes can be returned. Wildcards are ignored. URIs must match exactly what you are redirecting to after login. If URIs do not match, the authentication process will fail with a bad_client error. Maximum 10 per client.
+PostLogoutRedirectUris | string[] | Gets or sets allowed URIs to redirect to after logout. Wildcards are ignored. URIs must match exactly what you are redirecting to after logout. Maximum 10 for client.
+ClientUri | string | Gets or sets URI to a page with information about client (used on consent screen).
+LogoUri | string | Gets or sets URI to client logo (used on consent screen).
+Id | string | Gets or sets secret Id.
+Name | string | Gets or sets name of Client.
+Enabled | bool | Gets or sets whether client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.
+AccessTokenLifetime | int32 | Gets or sets lifetime of access token issued for this client after authentication. Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.
+Tags | string[] | Gets or sets for OSIsoft internal use only.
 
 ### Serialized Model
 
@@ -61,12 +61,6 @@ Tags | string[] | For OSIsoft internal use only.
 
 ***
 
-## Base URL
-
-All URLs referenced in this section have the following base:
-
-`https://dat-b.osisoft.com/`
-
 ## Authentication
 
 All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieve after a successful authentication request.
@@ -75,7 +69,7 @@ All endpoints referenced in this documentation require authenticated access. Aut
 
 Requests made without an access token or an invalid/expired token will fail with a 401 Unauthorized response.
 Requests made with an access token which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
-Read [here](https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/Authentication) on how to authenticate against OCS with the various clients and receive an access token in response.
+Read [here](https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/Authentication) on how to authenticate against OCS with the various clients and receive an access token in response.
 
 ## Error Handling
 
@@ -123,26 +117,26 @@ HybridClientCreate object.
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-SecretDescription | string | No | Description for the initial secret for the client.
-SecretExpirationDate | DateTime | No | Expiration date for the initial secret for the client. If set to null the secret will            never expire. We advise against such practice.
-AllowOfflineAccess | bool | No | Specifies whether this client can request refresh tokens, by providing the *offline_access* scope.
-AllowAccessTokensViaBrowser | bool | No | Specifies whether this HybridClient is allowed to receive access tokens via the browser.            This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow            client that is supposed to use code *id_token* to add the *token* response type, thus            leaking the token to the browser).
-RedirectUris | string[] | No | Specifies the allowed URIs to which return tokens or authorization codes can be returned.            Wildcards are ignored. URIs must match exactly what you are redirecting            to after login. If URIs do not match, the authentication process will fail            with a bad_client error.            Maximum 10 per client.
-PostLogoutRedirectUris | string[] | No | Specifies allowed URIs to redirect to after logout. Wildcards are ignored.            URIs must match exactly what you are redirecting after logout.            Maximum 10 for client.
-ClientUri | string | No | URI to a page with information about client (used on consent screen).
-LogoUri | string | No | URI to client logo (used on consent screen).
-Id | string | No | Client ID for this client. This ID should be a GUID.
-Name | string | Yes | Name of Client.
-Enabled | bool | No | Determine if client is enabled. Client can be used for authentication            if set to true. Client cannot be used for authentication if set to false.
-AccessTokenLifetime | int32 | No | Lifetime of access token issued for this client after authentication.            Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.
-Tags | string[] | No | For OSIsoft internal use only.
+SecretDescription | string | No | Gets or sets description for the initial secret for the client.
+SecretExpirationDate | DateTime | No | Gets or sets expiration date for the initial secret for the client. If set to null the secret will            never expire. We advise against such practice.
+AllowOfflineAccess | bool | No | Gets or sets whether this client can request refresh tokens, by providing the *offline_access* scope.
+AllowAccessTokensViaBrowser | bool | No | Gets or sets whether this HybridClient is allowed to receive access tokens via the browser.            This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow            client that is supposed to use code *id_token* to add the *token* response type, thus            leaking the token to the browser).
+RedirectUris | string[] | No | Gets or sets the allowed URIs to which return tokens or authorization codes can be returned.            Wildcards are ignored. URIs must match exactly what you are redirecting to            after login. If URIs do not match, the authentication process will fail            with a bad_client error.            Maximum 10 per client.
+PostLogoutRedirectUris | string[] | No | Gets or sets allowed URIs to redirect to after logout. Wildcards are ignored.            URIs must match exactly what you are redirecting to after logout.            Maximum 10 for client.
+ClientUri | string | No | Gets or sets URI to a page with information about client (used on consent screen).
+LogoUri | string | No | Gets or sets URI to client logo (used on consent screen).
+Id | string | No | Gets or sets client ID for this client. This ID should be a GUID.
+Name | string | Yes | Gets or sets name of Client.
+Enabled | bool | No | Gets or sets whether client is enabled. Client can be used for authentication            if set to true. Client cannot be used for authentication if set to false.
+AccessTokenLifetime | int32 | No | Gets or sets lifetime of access token issued for this client after authentication.            Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.
+Tags | string[] | No | Gets or sets for OSIsoft internal use only.
 
 
 
 ```json
 {
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-07-19T13:56:29.3231282-07:00",
+  "SecretExpirationDate": "2020-03-30T15:34:23.0602036-07:00",
   "AllowOfflineAccess": false,
   "AllowAccessTokensViaBrowser": false,
   "RedirectUris": [
@@ -180,14 +174,14 @@ Created.
 
 ##### Type:
 
- `ClientResponse`
+ `HybridClientCreateResponse`
 
 ```json
 {
   "Secret": "Secret",
   "Id": 0,
   "Description": "description",
-  "ExpirationDate": "2019-07-19T13:56:29.3364121-07:00",
+  "ExpirationDate": "2020-03-30T15:34:23.0724603-07:00",
   "Client": {
     "AllowOfflineAccess": false,
     "AllowAccessTokensViaBrowser": false,
@@ -228,6 +222,14 @@ Forbidden.
 #### 404
 
 Tenant not found.
+
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
+
+#### 408
+
+Operation timed out.
 
 #### 409
 
@@ -273,17 +275,17 @@ HybridClient object. Properties that are not set or are null will not be changed
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-AllowOfflineAccess | bool | No | Specifies whether this client can request refresh tokens, by providing the *offline_access* scope.
-AllowAccessTokensViaBrowser | bool | No | Specifies whether this HybridClient is allowed to receive access tokens via the browser.            This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow            client that is supposed to use code *id_token* to add the *token* response type, thus            leaking the token to the browser).
-RedirectUris | string[] | No | Specifies the allowed URIs to which return tokens or authorization codes can be returned.            Wildcards are ignored. URIs must match exactly what you are redirecting            to after login. If URIs do not match, the authentication process will fail            with a bad_client error.            Maximum 10 per client.
-PostLogoutRedirectUris | string[] | No | Specifies allowed URIs to redirect to after logout. Wildcards are ignored.            URIs must match exactly what you are redirecting after logout.            Maximum 10 for client.
-ClientUri | string | No | URI to a page with information about client (used on consent screen).
-LogoUri | string | No | URI to client logo (used on consent screen).
-Id | string | No | Client ID for this client. This ID should be a GUID.
-Name | string | Yes | Name of Client.
-Enabled | bool | No | Determine if client is enabled. Client can be used for authentication            if set to true. Client cannot be used for authentication if set to false.
-AccessTokenLifetime | int32 | No | Lifetime of access token issued for this client after authentication.            Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.
-Tags | string[] | No | For OSIsoft internal use only.
+AllowOfflineAccess | bool | No | Gets or sets whether this client can request refresh tokens, by providing the *offline_access* scope.
+AllowAccessTokensViaBrowser | bool | No | Gets or sets whether this HybridClient is allowed to receive access tokens via the browser.            This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow            client that is supposed to use code *id_token* to add the *token* response type, thus            leaking the token to the browser).
+RedirectUris | string[] | No | Gets or sets the allowed URIs to which return tokens or authorization codes can be returned.            Wildcards are ignored. URIs must match exactly what you are redirecting to            after login. If URIs do not match, the authentication process will fail            with a bad_client error.            Maximum 10 per client.
+PostLogoutRedirectUris | string[] | No | Gets or sets allowed URIs to redirect to after logout. Wildcards are ignored.            URIs must match exactly what you are redirecting to after logout.            Maximum 10 for client.
+ClientUri | string | No | Gets or sets URI to a page with information about client (used on consent screen).
+LogoUri | string | No | Gets or sets URI to client logo (used on consent screen).
+Id | string | No | Gets or sets client ID for this client. This ID should be a GUID.
+Name | string | Yes | Gets or sets name of Client.
+Enabled | bool | No | Gets or sets whether client is enabled. Client can be used for authentication            if set to true. Client cannot be used for authentication if set to false.
+AccessTokenLifetime | int32 | No | Gets or sets lifetime of access token issued for this client after authentication.            Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.
+Tags | string[] | No | Gets or sets for OSIsoft internal use only.
 
 
 
@@ -368,6 +370,14 @@ Missing or invalid inputs.
 #### 404
 
 Client or Tenant not found.
+
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
+
+#### 408
+
+Operation timed out.
 
 #### 500
 
@@ -653,12 +663,20 @@ Forbidden.
 
 Client or Tenant not found.
 
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
+
+#### 408
+
+Operation timed out.
+
 #### 500
 
 Internal server error.
 ***
 
-## `Validate Hybrid Client Exists`
+## `Get Header for Hybrid Client`
 
 Validate that a Hybrid Client exists.
             This endpoint is identical to the GET one but

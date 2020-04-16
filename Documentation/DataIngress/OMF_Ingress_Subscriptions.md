@@ -2,25 +2,19 @@
 uid: omfIngressSubsctriptions
 ---
 
-Subscriptions 
-=============
-Subscription Information 
------------------------
+# Subscriptions 
 
 A Subscription consumes OMF messages from a Topic and forwards them to a data store. Multiple Subscriptions can retrieve OMF messages from a single Topic. 
 
+## Subscription Information 
 A Subscription can consume OMF messages from a Topic in a different Namespace. However, the Topic's Namespace must be in the same Region as the Subscription's Namespace. OMF messages that the Subscription is processing are temporarily stored in the Region of its Namespace.
 
 The API calls in this section are used to create and manipulate Subscriptions.
 
-Sequential Data Store (Sds) Subscription 
----------------
-
+## Sequential Data Store (Sds) Subscription 
 A Sequential Data Store Subscription retrieves OMF messages from a Topic and writes them directly to a Namespace in the Sequential Data Store. Currently only Sds Subscriptions are supported. The documentation uses Sds Subscription and Subscription interchangeably.
 
-Data Models 
------------
-
+## Data Models 
 Subscription information is contained in an object called Subscription which has the following format: 
 
 | Property             | Type                    | Details                                |
@@ -39,217 +33,229 @@ Subscription information is contained in an object called Subscription which has
 
 *****************
 
-``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions``
----------------------------------------------
-
+## `Get Tenant Subscriptions`
 Get all Subscriptions for a tenant. 
 
-**Parameters**
+### Request
+``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions``
 
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace. 
+### Parameters
 
-**Returns**
+`tenantId`  
+Unique Id for the tenant  
+`namespaceId`  
+Unique Id for the namespace
 
+### Returns
 An array of Subscription objects. 
 
-*********************
+## `Get Subscription`
+Get a specific Subscription.
 
+### Request
 ``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}``
----------------------------------------------------------------
 
-Get a specific Subscription. 
+### Parameters
 
-**Parameters**
+`tenantId`  
+Unique Id for the tenant  
+`namespaceId`  
+Unique Id for the namespace  
+`subscriptionId`  
+Unique Id for the Subscription. 
 
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace. 
-``subscriptionId``
-  Unique Id for the Subscription. 
+### Returns
+A Subscription object 
 
-**Returns**
-
-A Subscription object. 
-
-*****************
-
-``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/subscriptions``
---------------------------------------------
-
+## `Get Subscriptions Access Control List`
 Get the default Access Control List for new Subscriptions.
 
-**Parameters**
+### Request
+``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/subscriptions``
 
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace. 
+### Parameters
 
-**Returns**
+`tenantId`  
+Unique Id for the tenant  
+`namespaceId`  
+Unique Id for the namespace
 
+### Returns
 An AccessControlList object.
 
-*******************
+## `Get Subscriptions Access Rights`
+Get the default Access Rights of the requesting identity for any newly created Subscriptions.
 
-``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}/accesscontrol``
---------------------------------------------
+### Request
+``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accessrights/subscriptions``
 
+### Parameters
+
+`tenantId`  
+Unique Id for the tenant  
+`namespaceId`  
+Unique Id for the namespace. 
+
+### Returns
+An array of Access Rights strings.
+
+## Get Subscription Access Control List`
 Get the Access Control List for a particular Subscription.
 
-**Parameters**
+### Request
+``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}/accesscontrol``
 
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace. 
-``subscriptionId``
-  Unique Id for the Subscription. 
+### Parameters
 
-**Returns**
+`tenantId`  
+Unique Id for the tenant.  
+`namespaceId`  
+Unique Id for the namespace.  
+`subscriptionId`  
+Unique Id for the Subscription. 
 
+### Returns
 An AccessControlList object.
 
-*******************
+## `Get Subscription Access Rights`
+Get the Access Rights of the requesting identity for a particular Subscription.
 
-``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}/owner``
---------------------------------------------
+### Request
+``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}/accessrights``
 
+### Parameters
+
+`tenantId`  
+Unique Id for the tenant.  
+`namespaceId`  
+Unique Id for the namespace.  
+`subscriptionId`  
+Unique Id for the Subscription. 
+
+### Returns
+An array of Access Rights strings.
+
+## `Get Subscription Owner`
 Get the Owner for a particular Subscription.
 
-**Parameters**
+### Request
+``GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}/owner``
 
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace. 
-``subscriptionId``
-  Unique Id for the Subscription. 
+### Parameters
 
-**Returns**
+`tenantId`  
+Unique Id for the tenant.  
+`namespaceId`  
+Unique Id for the namespace.  
+`subscriptionId`  
+Unique Id for the Subscription. 
 
+### Returns
 A Trustee object.
 
-*******************
-
-``POST api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions``
---------------------------------------------
-
+## `Create Subscription`
 Create a new Subscription.
 
-**Parameters**
+### Request
+``POST api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions``
 
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace. 
+### Parameters
 
-**Body**
+`tenantId`  
+Unique Id for the tenant.  
+`namespaceId`  
+Unique Id for the namespace. 
 
+### Body
 A Subscription object. The ``Id`` property should not be specified, since it will be automatically generated during creation.
 
-**Returns**
-
+### Returns
 The Subscription object that was created. 
 
-*******************
-
-``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}``
---------------------------------------------
-
+## `Update Subscription`
 Update an existing Subscription. Only the name and description may be updated. 
 
-**Parameters**
+### Request
+``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}``
 
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace. 
-``subscriptionId``
-  Subscription Id for the Subscription to be updated.
+### Parameters
 
-**Body**
+`tenantId`  
+Unique Id for the tenant  
+`namespaceId`  
+Unique Id for the namespace.  
+`subscriptionId`  
+Subscription Id for the Subscription to be updated.
 
+### Body
 A Subscription object. The ``Id`` property should match the ``subscriptionId`` in the route.
 
-**Returns**
-
+### Returns
 The Subscription object that was updated. 
 
-*******************
-
-``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/subscriptions``
---------------------------------------------
-
+## `Update Subscriptions Access Control List`
 Update the default Access Control List for new Subscriptions.
 
-**Parameters**
+### Request
+``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/subscriptions``
 
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace. 
+### Parameters
 
-**Body**
+`tenantId`  
+Unique Id for the tenant.  
+`namespaceId`  
+Unique Id for the namespace. 
 
+### Body
 An AccessControlList object.
 
-*******************
-
-``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}/accesscontrol``
---------------------------------------------
-
+## `Update Subscription Access Control List`
 Update the Access Control List for a particular Subscription.
 
-**Parameters**
+### Request
+``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}/accesscontrol``
 
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace. 
-``subscriptionId``
-  Unique Id for the Subscription. 
+### Parameters
 
-**Body**
+`tenantId`  
+Unique Id for the tenant  
+`namespaceId`  
+Unique Id for the namespace  
+`subscriptionId`  
+Unique Id for the Subscription 
 
+### Body
 An AccessControlList object.
 
-*******************
-
-``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}/owner``
---------------------------------------------
-
+## `Update Subscription Owner`
 Update the Owner for a particular Subscription.
 
-**Parameters**
+### Request
+``PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}/owner``
 
-``tenantId``
-  Unique Id for the tenant. 
-``namespaceId``
-  Unique Id for the namespace. 
-``subscriptionId``
-  Unique Id for the Subscription. 
+### Parameters
 
-**Body**
+`tenantId`  
+Unique Id for the tenant  
+`namespaceId`  
+Unique Id for the namespace  
+`subscriptionId`  
+Unique Id for the Subscription
 
+### Body
 A Trustee object.
 
-*******************
+## `Delete Subscription`
+Delete a Subscription.
 
+### Request
 ``DELETE api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}``
------------------------------------------------------------------
 
-Delete a Subscription. 
+### Parameters
 
-**Parameters**
-
-``tenantId``
-  Unique Id for the tenant.
-``namespaceId``
-  Unique Id for the namespace.   
-``subscriptionId``
-  Unique Id for the Subscription. 
-*******************
+`tenantId`  
+Unique Id for the tenant  
+`namespaceId`  
+Unique Id for the namespace  
+`subscriptionId`  
+Unique Id for the Subscription

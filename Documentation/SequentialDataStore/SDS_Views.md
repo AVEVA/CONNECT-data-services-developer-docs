@@ -4,8 +4,13 @@ uid: sdsStreamViews
 
 # Stream Views
 
-An SdsStreamView provides a way to map Stream data requests from one data type to another. You can apply 
-a Stream View to any read or GET operation. SdsStreamView is used to specify the mapping between source and target types.
+Stream Views provide flexibility in the use of types. While you cannot actually change the properties of types themselves, the stream views feature enables you to create a view of a selected stream that appears as if you had changed the type on which it is based. Types themselves cannot actually be changed; the “changing” of a type is described in a stream view. You create a stream view by choosing a source and target type as well as a set of mappings between properties of those two types. Using a stream view to leverage existing type properties is preferable to creating an actual new custom type, because the affected stream continues with its previously archived stream data intact.
+
+You can either view the impact of the stream view on a stream in an ad hoc manner, using a GET call, or you can assign the stream view to a stream in a PUT call.
+
+To view the impact of the stream view on a stream, you can apply a stream view to any read or GET operation. See [API Calls for Reading Data](xref:sdsReadingDataApi) for examples. SdsStreamView is used to specify the mapping between source and target types.
+
+To assign the stream view to a stream, execute an [Update Stream Type](xref:sdsStreams#update-stream-type) call.  By specifying the stream view id in the call, you can effectively assign the target type of the stream view to a specified stream. 
 
 SDS attempts to determine how to map Properties from the source to the destination. When the mapping 
 is straightforward, such as when the properties are in the same position and of the same data type, 
@@ -17,9 +22,9 @@ a target property that it cannot map to, the property is added and configured wi
 To map a property that is beyond the ability of SDS to map on its own, you should define an SdsStreamViewProperty 
 and add it to the SdsStreamView’s Properties collection.
 
-The following table shows the required and optional SdsStreamView fields. Fields that are not included are reserved for internal SDS use.
-See the [Searching](xref:sdsSearching) topic regarding limitations on search.
+The following table shows the required and optional SdsStreamView fields. Fields that are not included are reserved for internal SDS use. See the [Search in SDS](xref:sdsSearching) topic regarding limitations on search.
 
+<a name="streamviewpropertiestable"></a>
 | Property     | Type                   | Optionality | Searchable | Details |
 |--------------|------------------------|-------------|------------|---------|
 | Id           | String                 | Required    | Yes		   |Identifier for referencing the stream view |
@@ -27,18 +32,19 @@ See the [Searching](xref:sdsSearching) topic regarding limitations on search.
 | Description  | String                 | Optional    | Yes		   |Description text |
 | SourceTypeId | String                 | Required    | Yes		   |Identifier of the SdsType of the SdsStream |
 | TargetTypeId | String                 | Required    | Yes		   |Identifier of the SdsType to convert events to |
-| Properties   | IList\<SdsStreamViewProperty\> | Optional    | Yes, with limitations	  |Property level mapping |
-
+| Properties   | IList\<SdsStreamViewProperty\> | Optional    | Yes, with limitations*	  |Property level mapping |
+**\*Notes on Properties field**: SdsStreamViewProperty objects are not searchable. Only the SdsStreamViewProperty's SdsStreamView is searchable by its Id, SourceTypeId, and TargetTypeId, which are used to return the top level SdsStreamView object when searching. This includes nested SdsStreamViewProperties. For more information, see [search for stream views](xref:sdsSearching#search-for-stream-views).
 
 **Rules for the Stream View Identifier (SdsStreamView.Id)**
 
 1. Is not case sensitive
-2. Can contain spaces
-3. Cannot contain forward slash ("/")
-4. Can contain a maximum of 100 characters
+2. Cannot just be whitespace
+3. Cannot contain leading or trailing whitespace
+4. Cannot contain forward slash ("/")
+5. Can contain a maximum of 100 characters
 
 
-## Properties / SdsStreamViewProperty
+## Properties/ SdsStreamViewProperty
 
 The SdsStreamView Properties collection provides detailed instructions for specifying the mapping of 
 event properties. Each SdsStreamViewProperty in the Properties collection defines the mapping of an 
@@ -70,9 +76,9 @@ so required and optional have no meaning.
 | TargetTypeId | String                   | Required     | Identifier of the SdsType to convert events to |
 | Properties   | IList\<SdsStreamViewMapProperty\>| Optional     | Property level mapping |
 
-### Properties / SdsStreamViewMapProperty
+### Properties/ SdsStreamViewMapProperty
 
-The SdsStreamViewMapProperty is similar an SdsStreamViewProperty but adds a Mode detailing one or more actions taken on 
+The SdsStreamViewMapProperty is similar to SdsStreamViewProperty but adds a Mode detailing one or more actions taken on 
 the Property.
 
 The following table shows the SdsStreamViewMapProperty fields. The SdsStreamViewMap cannot be written; it can only be 
@@ -111,7 +117,7 @@ For details, see [Update Stream Type](xref:sdsStreams#update-stream-type).
 
 ## Working with Stream Views when using .NET
 
-**Using .Net**
+**Using .NET**
 
 When working in .NET, use the SDS Client libraries’ ISdsMetadataService.
 
@@ -951,3 +957,45 @@ The response includes a status code.
 ```csharp
    Task UpdateStreamViewOwnerAsync(string streamViewId, Trustee viewOwner);
 ```
+***
+
+## `Get Stream View Access Rights`
+
+Gets the Access Rights associated with the specified stream view for the requesting identity. For 
+more information on Access Rights, see [Access Control](xref:accessControl#commonaccessrightsenum).
+
+**Request**
+ ```text
+    GET api/v1//Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/AccessRights
+ ```
+
+**Parameters**
+
+`string tenantId`  
+The tenant identifier  
+  
+`string namespaceId`  
+The namespace identifier  
+  
+`string streamViewId`  
+The stream view identifier  
+
+**Response**  
+The response includes a status code and a response body.
+
+**Response Body**  
+The Access Rights of the specified stream view for the requesting identity.
+
+Example response body:
+```json
+HTTP/1.1 200
+Content-Type: application/json
+
+["Read", "Write"]
+```
+
+**.NET Library**
+```csharp
+   Task<string[]> GetStreamViewAccessRightsAsync(string streamViewId);
+```
+***********************

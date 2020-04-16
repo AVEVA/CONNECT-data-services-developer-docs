@@ -2,31 +2,31 @@
 uid: identityImplicitClient
 ---
 
-# ImplicitClient
+# ImplicitClient (Deprecated)
 
-We suggest using a Authorization Code Client instead of an Implicit Client.
+Implicit Client has been deprecated. We suggest using an Authorization Code Client instead of an Implicit Client.
             Implicit clients are used in Javascript/Browser (SPA) based applications or native
             mobile applications with the presence of a User.
             You can read more about these clients
-            [here](https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/Authentication#implicit-flow-deprecated).
+            [here](https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/Authentication#implicit-flow-deprecated).
             These clients are not issued secrets or refresh tokens.
 
 ## Properties
 
 For HTTP requests and responses, the ImplicitClient object has the following properties and JSON-serialized body: 
 
-Property | Type | Descriptions
- --- | --- | --- | ---
-AllowedCorsOrigins | string[] | If specified, will be used by the default CORS policy service implementations to build a CORS policy for JavaScript clients. Maximum 10 for client.
-RedirectUris | string[] | Specifies the allowed URIs to which return tokens or authorization codes can be returned. Wildcards are ignored. URIs must match exactly what you are redirecting to after login. If URIs do not match,, the authentication process will fail with a bad_client error. Maximum 10 per client.
-PostLogoutRedirectUris | string[] | Specifies allowed URIs to redirect to after logout. Wildcards are ignored. URIs must match exactly what you are redirecting after logout. Maximum 10 for client.
-ClientUri | string | URI to a page with information about client (used on consent screen).
-LogoUri | string | URI to client logo (used on consent screen).
-Id | string | Client ID for this client. This ID should be a GUID.
-Name | string | Name of Client.
-Enabled | bool | Determine if client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.
-AccessTokenLifetime | int32 | Lifetime of access token issued for this client after authentication. Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.
-Tags | string[] | For OSIsoft internal use only.
+Property | Type | Description
+ --- | --- | ---
+AllowedCorsOrigins | string[] | Gets or sets the values used by the default CORS policy service implementations to build a CORS policy for JavaScript clients. Maximum 10 for client.
+RedirectUris | string[] | Gets or sets the allowed URIs to which return tokens or authorization codes can be returned. Wildcards are ignored. URIs must match exactly what you are redirecting to after login. If URIs do not match, the authentication process will fail with a bad_client error. Maximum 10 per client.
+PostLogoutRedirectUris | string[] | Gets or sets allowed URIs to redirect to after logout. Wildcards are ignored. URIs must match exactly what you are redirecting to after logout. Maximum 10 for client.
+ClientUri | string | Gets or sets URI to a page with information about client (used on consent screen).
+LogoUri | string | Gets or sets URI to client logo (used on consent screen).
+Id | string | Gets or sets client ID for this client. This ID should be a GUID.
+Name | string | Gets or sets name of Client.
+Enabled | bool | Gets or sets whether client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.
+AccessTokenLifetime | int32 | Gets or sets lifetime of access token issued for this client after authentication. Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.
+Tags | string[] | Gets or sets for OSIsoft internal use only.
 
 ### Serialized Model
 
@@ -59,12 +59,6 @@ Tags | string[] | For OSIsoft internal use only.
 
 ***
 
-## Base URL
-
-All URLs referenced in this section have the following base:
-
-`https://dat-b.osisoft.com/`
-
 ## Authentication
 
 All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieve after a successful authentication request.
@@ -73,7 +67,7 @@ All endpoints referenced in this documentation require authenticated access. Aut
 
 Requests made without an access token or an invalid/expired token will fail with a 401 Unauthorized response.
 Requests made with an access token which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
-Read [here](https://github.com/osisoft/OSI-Samples/tree/master/ocs_samples/basic_samples/Authentication) on how to authenticate against OCS with the various clients and receive an access token in response.
+Read [here](https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/Authentication) on how to authenticate against OCS with the various clients and receive an access token in response.
 
 ## Error Handling
 
@@ -90,7 +84,9 @@ All responses will have an error message in the body. The exceptions are 200 res
 
 If and when contacting OSIsoft support about this error, please provide the OperationId.
 
-## `Create an Implicit Client`
+## `Create an Implicit Client (Deprecated)`
+
+Implicit Client has been deprecated, please use Authorization Code Client instead.
 
 Create an Implicit Client in a Tenant. No Secret will be generated for this
             Client.
@@ -118,16 +114,16 @@ New ImplicitClient object.
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-AllowedCorsOrigins | string[] | No | If specified, will be used by the default CORS policy service implementations to build a            CORS policy for JavaScript clients.            Maximum 10 for client.
-RedirectUris | string[] | No | Specifies the allowed URIs to which return tokens or authorization codes can be returned.            Wildcards are ignored. URIs must match exactly what you are redirecting            to after login. If URIs do not match, the authentication process will fail            with a bad_client error.            Maximum 10 per client.
-PostLogoutRedirectUris | string[] | No | Specifies allowed URIs to redirect to after logout. Wildcards are ignored.            URIs must match exactly what you are redirecting after logout.            Maximum 10 for client.
-ClientUri | string | No | URI to a page with information about client (used on consent screen).
-LogoUri | string | No | URI to client logo (used on consent screen).
-Id | string | No | Client ID for this client. This ID should be a GUID.
-Name | string | Yes | Name of Client.
-Enabled | bool | No | Determine if client is enabled. Client can be used for authentication            if set to true. Client cannot be used for authentication if set to false.
-AccessTokenLifetime | int32 | No | Lifetime of access token issued for this client after authentication.            Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.
-Tags | string[] | No | For OSIsoft internal use only.
+AllowedCorsOrigins | string[] | No | Gets or sets the values used by the default CORS policy service implementations to build a            CORS policy for JavaScript clients.            Maximum 10 for client.
+RedirectUris | string[] | No | Gets or sets the allowed URIs to which return tokens or authorization codes can be returned.            Wildcards are ignored. URIs must match exactly what you are redirecting to            after login. If URIs do not match, the authentication process will fail            with a bad_client error.            Maximum 10 per client.
+PostLogoutRedirectUris | string[] | No | Gets or sets allowed URIs to redirect to after logout. Wildcards are ignored.            URIs must match exactly what you are redirecting to after logout.            Maximum 10 for client.
+ClientUri | string | No | Gets or sets URI to a page with information about client (used on consent screen).
+LogoUri | string | No | Gets or sets URI to client logo (used on consent screen).
+Id | string | No | Gets or sets client ID for this client. This ID should be a GUID.
+Name | string | Yes | Gets or sets name of Client.
+Enabled | bool | No | Gets or sets whether client is enabled. Client can be used for authentication            if set to true. Client cannot be used for authentication if set to false.
+AccessTokenLifetime | int32 | No | Gets or sets lifetime of access token issued for this client after authentication.            Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.
+Tags | string[] | No | Gets or sets for OSIsoft internal use only.
 
 
 
@@ -217,6 +213,14 @@ Forbidden.
 
 Tenant not found.
 
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
+
+#### 408
+
+Operation timed out.
+
 #### 409
 
 Client Id already exists.
@@ -226,7 +230,9 @@ Client Id already exists.
 Internal server error.
 ***
 
-## `Update an Implicit Client`
+## `Update an Implicit Client (Deprecated)`
+
+Implicit Client has been deprecated, please use Authorization Code Client instead.
 
 Update an Implicit Client. It can take up to one hour
             for update to manifest in the authentication process.
@@ -261,16 +267,16 @@ Updated Implicit Client values. Properties that are not set or are null will not
 
 Property | Type | Required | Description 
  --- | --- | --- | ---
-AllowedCorsOrigins | string[] | No | If specified, will be used by the default CORS policy service implementations to build a            CORS policy for JavaScript clients.            Maximum 10 for client.
-RedirectUris | string[] | No | Specifies the allowed URIs to which return tokens or authorization codes can be returned.            Wildcards are ignored. URIs must match exactly what you are redirecting            to after login. If URIs do not match, the authentication process will fail            with a bad_client error.            Maximum 10 per client.
-PostLogoutRedirectUris | string[] | No | Specifies allowed URIs to redirect to after logout. Wildcards are ignored.            URIs must match exactly what you are redirecting after logout.            Maximum 10 for client.
-ClientUri | string | No | URI to a page with information about client (used on consent screen).
-LogoUri | string | No | URI to client logo (used on consent screen).
-Id | string | No | Client ID for this client. This ID should be a GUID.
-Name | string | Yes | Name of Client.
-Enabled | bool | No | Determine if client is enabled. Client can be used for authentication            if set to true. Client cannot be used for authentication if set to false.
-AccessTokenLifetime | int32 | No | Lifetime of access token issued for this client after authentication.            Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.
-Tags | string[] | No | For OSIsoft internal use only.
+AllowedCorsOrigins | string[] | No | Gets or sets the values used by the default CORS policy service implementations to build a            CORS policy for JavaScript clients.            Maximum 10 for client.
+RedirectUris | string[] | No | Gets or sets the allowed URIs to which return tokens or authorization codes can be returned.            Wildcards are ignored. URIs must match exactly what you are redirecting to            after login. If URIs do not match, the authentication process will fail            with a bad_client error.            Maximum 10 per client.
+PostLogoutRedirectUris | string[] | No | Gets or sets allowed URIs to redirect to after logout. Wildcards are ignored.            URIs must match exactly what you are redirecting to after logout.            Maximum 10 for client.
+ClientUri | string | No | Gets or sets URI to a page with information about client (used on consent screen).
+LogoUri | string | No | Gets or sets URI to client logo (used on consent screen).
+Id | string | No | Gets or sets client ID for this client. This ID should be a GUID.
+Name | string | Yes | Gets or sets name of Client.
+Enabled | bool | No | Gets or sets whether client is enabled. Client can be used for authentication            if set to true. Client cannot be used for authentication if set to false.
+AccessTokenLifetime | int32 | No | Gets or sets lifetime of access token issued for this client after authentication.            Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.
+Tags | string[] | No | Gets or sets for OSIsoft internal use only.
 
 
 
@@ -360,12 +366,22 @@ Missing or invalid inputs.
 
 Client or Tenant not found.
 
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
+
+#### 408
+
+Operation timed out.
+
 #### 500
 
 Internal server error.
 ***
 
-## `Get an Implicit Client`
+## `Get an Implicit Client (Deprecated)`
+
+Implicit Client has been deprecated, please use Authorization Code Client instead.
 
 Get an Implicit Client from a Tenant.
 
@@ -449,7 +465,9 @@ Client or Tenant not found.
 Internal server error.
 ***
 
-## `Get All Implicit Clients from Tenant`
+## `Get All Implicit Clients from Tenant (Deprecated)`
+
+Implicit Client has been deprecated, please use Authorization Code Client instead.
 
 Get all Implicit clients from a Tenant.
             Optionally, get a list of requested clients. Total number
@@ -599,7 +617,9 @@ Tenant not found.
 Internal server error.
 ***
 
-## `Delete an Implicit Client`
+## `Delete an Implicit Client (Deprecated)`
+
+Implicit Client has been deprecated, please use Authorization Code Client instead.
 
 Delete an Implicit Client. It can take up to one hour
             for deletion to manifest in the authentication process. Access
@@ -649,12 +669,22 @@ Forbidden.
 
 Client or Tenant not found.
 
+#### 405
+
+Method not allowed at this base URL. Try the request again at the Global base URL.
+
+#### 408
+
+Operation timed out.
+
 #### 500
 
 Internal server error.
 ***
 
-## `Validate Implicit Client Exists`
+## `Get Header for Implicit Client (Deprecated)`
+
+Implicit Client has been deprecated, please use Authorization Code Client instead.
 
 Validate that an Implicit Client exists.
 
@@ -711,7 +741,9 @@ Client or Tenant not found.
 Internal server error.
 ***
 
-## `Get Total Count of Implicit Clients`
+## `Get Total Count of Implicit Clients (Deprecated)`
+
+Implicit Client has been deprecated, please use Authorization Code Client instead.
 
 Return total number of Implicit clients in a Tenant.
             Optionally, check based on a list of requested clients. The

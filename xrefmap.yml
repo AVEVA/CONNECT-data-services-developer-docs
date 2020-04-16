@@ -230,7 +230,7 @@ references:
   name: API calls for writing data
   href: Documentation/SequentialDataStore/Writing_Data_API.html
 - uid: support
-  name: Getting support
+  name: Technical support and other resources
   href: Documentation/support.html
 - uid: unitsOfMeasure
   name: Units of Measure

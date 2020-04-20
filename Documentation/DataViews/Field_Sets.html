@@ -209,7 +209,7 @@ DataFieldSet`s. Data field sets are collections of fields originating from the s
 </ol>
 <p>To fix this, we will add a <code>.IdentifyingField</code> to the field set.</p>
 <h4 id="identifying-field">Identifying field</h4>
-<p>If the field set resolves to multiple data items in any group (or if grouping is not used), then a field should be designated as the field set&#39;s <code>.IdentifyingField</code>. If one lone criterion is not a sufficient or useful way of disambiguating the fields, then <a class="xref" href="Grouping.html">grouping</a> by additional criteria may be necessary.</p>
+<p>If the field set resolves to multiple data items in any group (or if grouping is not used), then a field should be designated as the <code>.IdentifyingField</code> of the field set. If one lone criterion is not a sufficient or useful way of disambiguating the fields, then <a class="xref" href="Grouping.html">grouping</a> by additional criteria may be necessary. Field from field sources <code>FieldSource.Id</code>, <code>FieldSource.Name</code>, <code>FieldSource.Metadata</code>, <code>FieldSource.Tags</code> can be used as an identifying field. Keys are required for identifying fields with the source type of <code>FieldSource.Metadata</code> and <code>FieldSource.Tags</code>. Keys are not applicable for identifying fields with the source type of <code>FieldSource.Id</code> and <code>FieldSource.Name</code>.</p>
 <h4 id="example-adding-an-identifying-field">Example: Adding an identifying field</h4>
 <p>To the data view from the previous example, we will add a <code>Field</code> as the <code>.IdentifyingField</code> of its field set. In this example, it makes sense to identify each data item by its <em>Measurement</em>.</p>
 <pre><code class="lang-json">{
@@ -283,7 +283,7 @@ DataFieldSet`s. Data field sets are collections of fields originating from the s
 <h2 id="field">Field</h2>
 <p>Each data field represents a particular source of information, such as a data item&#39;s <code>.Id</code> or the values from one of its properties.</p>
 <h3 id="label">Label</h3>
-<p>A data field&#39;s label is a friendly name. </p>
+<p>A data field&#39;s label is a friendly name. Null, empty or whitespace is not allowed for a data field label.</p>
 <p>When the data view is resolved and data fields produce field mappings, labels are trimmed of whitespace and used as the field mappings&#39; identifier. For example:</p>
 <table>
 <thead>
@@ -326,7 +326,7 @@ DataFieldSet`s. Data field sets are collections of fields originating from the s
 </ul>
 <p>If a special parameter fails to resolve, it becomes an empty string, <code>&quot;&quot;</code>.</p>
 <h3 id="source">Source</h3>
-<p>A field&#39;s <a class="xref" href="Data_View.html#fieldsource-enumeration"><code>.Source</code></a> indicates where the field&#39;s values will come from, if applicable.</p>
+<p>A field&#39;s <a class="xref" href="Data_View.html#fieldsource-enumeration"><code>.Source</code></a> indicates where the field&#39;s values will come from, if applicable. A field of source type <code>FieldSource.NotApplicable</code> cannot be used as a data field.</p>
 <h3 id="keys">Keys</h3>
 <p>In certain cases, a field may need to address data <em>within</em> its data source, such as a particular Metadata value of a data item. This applies to the sources <code>Metadata</code>, <code>PropertyId</code>, and <code>PropertyName</code>.</p>
 <p>Multiple keys may be specified in the field&#39;s <code>.Keys</code>. This is a way to overcome differences in properties or metadata across data items. Keys are evaluated in order specified until a match is found, i.e. first-match-wins.</p>

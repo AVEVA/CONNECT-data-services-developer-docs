@@ -93,7 +93,7 @@
 <p>Field sets and fields resolve in the order they are defined. They may be re-ordered.</p>
 <p>Within each group, a field set may be associated with multiple data items. It is often necessary to disambiguate these items. Items can be disambiguated by specifying an <a class="xref" href="Field_Sets.html#identifying-field"><code>.IdentifyingField</code></a>. An identifying field is a field that tells the data items apart within a group, such as the value of <em>Measurement</em> metadata (i.e., the data items are identified by what they measure). Identifying data items also allows the data views engine to &quot;align&quot; them across groups, since it is clear that streams measuring, e.g., <em>Power Out</em> are alike, and the streams measuring <em>Power In</em> are alike.</p>
 <h3 id="index-field">Index field</h3>
-<p>The field used for indexing.  If not specified, a default value with a label of &quot;Timestamp&quot; is used.</p>
+<p>The field used for indexing.  If not specified, a default value with a label of &quot;Timestamp&quot; is used. If specified, a label is required. Field source and keys are not applicable for index field.</p>
 <h3 id="defining-index-type-and-default-range">Defining index type and default range</h3>
 <p>Data views currently operate on timestamped data, which is data indexed by a DateTime property. This is reflected by the DataView&#39;s <code>.IndexTypeCode</code>, whose value must be &quot;DateTime&quot;. Default values may be defined for the StartIndex, EndIndex, and/or Interval used when data view data is queried. </p>
 <h2 id="dataview-properties">DataView properties</h2>
@@ -265,7 +265,7 @@
 <td>Field</td>
 <td>Optional</td>
 <td>null</td>
-<td>A field by which to tell the data items apart, within each group.</td>
+<td>A field by which to tell the data items apart, within each group. Any field from field sources <code>FieldSource.Id</code>, <code>FieldSource.Name</code>, <code>FieldSource.Metadata</code> and <code>FieldSource.Tags</code> can be used as an identifying field.</td>
 </tr>
 </tbody>
 </table>
@@ -287,21 +287,21 @@
 <td>FieldSource</td>
 <td>Optional</td>
 <td>NotApplicable</td>
-<td>For fields of a DataItem-sourced FieldSet, identifies the source of the field&#39;s values. Some sources are used in conjunction with the Keys property (see below).</td>
+<td>Identifies the <a class="xref" href="Data_View.html#fieldsource-enumeration"><code>.Source</code></a> of the field&#39;s values (not applicable for an index field). All sources except <code>FieldSource.NotApplicable</code> can be used as data fields. Fields from sources <code>FieldSource.Id</code>, <code>FieldSource.Name</code>, <code>FieldSource.Metadata</code> and <code>FieldSource.Tags</code> can be used as grouping fields and identifying fields. Some sources are used in conjunction with the Keys property (see below).</td>
 </tr>
 <tr>
 <td>Keys</td>
 <td>String[]</td>
 <td>Optional</td>
 <td>[ ]</td>
-<td>Used for certain FieldSources, e.g. to map to specific stream properties by id. If more than one key is specified, they are matched as exclusive-or.</td>
+<td>Used for sources <code>FieldSource.PropertyId</code>, <code>FieldSource.PropertyName</code>, <code>FieldSource.Metadata</code> and <code>FieldSource.Tags</code>, e.g. to map to specific stream properties by id. If more than one key is specified, they are matched as exclusive-or. A key has to be a non-null value.</td>
 </tr>
 <tr>
 <td>Label</td>
 <td>string</td>
 <td>Optional</td>
 <td>null</td>
-<td>Friendly name for the field. Certain tokens have special meaning: one of these, {IdentifyingValue}, is included in the suggested labels of AvailableFieldSets. Tokens that do not resolve are &quot;&quot; (empty string). Label is trimmed of whitespace when used to identify field mappings.</td>
+<td>Friendly name for the field. Certain tokens have special meaning: one of these, {IdentifyingValue}, is included in the suggested labels of AvailableFieldSets. Tokens that do not resolve are &quot;&quot; (empty string). The label is required in a field for all usages except in an identifying field. Label is trimmed of whitespace when used to identify field mappings.</td>
 </tr>
 </tbody>
 </table>
@@ -319,7 +319,7 @@
 <tr>
 <td>NotApplicable</td>
 <td>No</td>
-<td>FieldSource is only applicable to FieldSets whose source type is DataItem</td>
+<td>FieldSource is not applicable for an index field</td>
 </tr>
 <tr>
 <td>Id</td>

@@ -158,7 +158,7 @@ Statistics about how a data field set resolved:
 | UnmappedDataItemCount | int | The total count of data items resolved for the data field set that are not referenced by a field mapping
 | DataFields | IReadOnlyList<DataFieldStatistics> | Statistics about how the data field set data fields resolved
 
-### Statistics
+### DataFieldStatistics
 Statistics about how a data field resolved:
 
 |Property | Type | Details |

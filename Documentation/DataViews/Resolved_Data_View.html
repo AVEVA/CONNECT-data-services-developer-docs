@@ -402,9 +402,70 @@ See the <a class="xref" href="Resolved_Data_View_API.html">Resolved Data View AP
 <td>The total count of groups resolved in the data view</td>
 </tr>
 <tr>
-<td>FieldCount</td>
+<td>FieldMappingCount</td>
 <td>int</td>
-<td>The total count of fields resolved in the data view</td>
+<td>The total count of field mappings resolved by the data view</td>
+</tr>
+<tr>
+<td>DataFieldSets</td>
+<td>IReadOnlyList<datafieldsetstatistics></datafieldsetstatistics></td>
+<td>Statistics about how the data view data field sets resolved</td>
+</tr>
+</tbody>
+</table>
+<h3 id="datafieldsetstatistics">DataFieldSetStatistics</h3>
+<p>Statistics about how a data field set resolved:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DataItemCount</td>
+<td>int</td>
+<td>The total count of data items resolved for the data field set</td>
+</tr>
+<tr>
+<td>UnmappedDataItemCount</td>
+<td>int</td>
+<td>The total count of data items not referenced by a field mapping resolved for the data field set</td>
+</tr>
+<tr>
+<td>DataFields</td>
+<td>IReadOnlyList<datafieldstatistics></datafieldstatistics></td>
+<td>Statistics about how the data field set data fields resolved</td>
+</tr>
+</tbody>
+</table>
+<h3 id="datafieldstatistics">DataFieldStatistics</h3>
+<p>Statistics about how a data field resolved:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FieldMappingCount</td>
+<td>int</td>
+<td>The total count of field mappings associated with the data field</td>
+</tr>
+<tr>
+<td>EmptyFieldMappingCount</td>
+<td>int</td>
+<td>The total count of field mappings associated with the data field that do not map to any data</td>
+</tr>
+<tr>
+<td>UnmappedGroupCount</td>
+<td>int</td>
+<td>The total count of groups that do not map to any field mappings in the data field</td>
 </tr>
 </tbody>
 </table>

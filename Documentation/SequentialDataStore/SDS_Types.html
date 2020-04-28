@@ -1450,7 +1450,7 @@ Content-Type: application/json
         }
     ]
 }
-</code></pre><h4 id="net-libraries-client-methods">.NET libraries client methods</h4>
+</code></pre><h4 id="net-client-libraries-method">.NET client libraries method</h4>
 <pre><code class="lang-csharp">    Task&lt;SdsType&gt; GetTypeAsync(string typeId);
 </code></pre><hr>
 <h2 id="get-type-reference-count"><code>Get Type Reference Count</code></h2>
@@ -1471,7 +1471,7 @@ Content-Type: application/json
         &quot;SdsStreamView&quot;: 2,
         &quot;SdsType&quot;: 1
     }
-</code></pre><h4 id="net-libraries-client-methods-1">.NET libraries client methods</h4>
+</code></pre><h4 id="net-client-libraries-method-1">.NET client libraries method</h4>
 <pre><code class="lang-csharp">    Task&lt;IDictionary&lt;string, int&gt;&gt; GetTypeReferenceCountAsync(string typeId);
 </code></pre><hr>
 <h2 id="get-types"><code>Get Types</code></h2>
@@ -1553,7 +1553,7 @@ Content-Type: application/json
     },
     …
 ]
-</code></pre><h4 id="net-libraries-client-methods-2">.NET libraries client methods</h4>
+</code></pre><h4 id="net-client-libraries-method-2">.NET client libraries method</h4>
 <pre><code class="lang-csharp">    Task&lt;IEnumerable&lt;SdsType&gt;&gt; GetTypesAsync(string query = &quot;&quot;, int skip = 0, int count = 100);
 </code></pre><hr>
 <h2 id="get-or-create-type"><code>Get or Create Type</code></h2>
@@ -1762,7 +1762,7 @@ Content-Type: application/json
     &quot;InterpolationMode&quot;: 0,
     &quot;ExtrapolationMode&quot;: 0
 }
-</code></pre><h4 id="net-libraries-client-methods-3">.NET libraries client methods</h4>
+</code></pre><h4 id="net-client-libraries-method-3">.NET client libraries method</h4>
 <pre><code class="lang-csharp">    Task&lt;SdsType&gt; GetOrCreateTypeAsync(SdsType sdsType)
 </code></pre><p>If a type with a matching identifier already exists and it matches the type in the request body, 
 the client redirects a GET to the Location header. If the existing type does not match the type
@@ -1779,7 +1779,7 @@ in the request body, a Conflict error response is returned and the client librar
 <p><code>string typeId</code><br>The type identifier</p>
 <h4 id="response-4">Response</h4>
 <p>The response includes a status code.</p>
-<h4 id="net-libraries-client-methods-4">.NET libraries client methods</h4>
+<h4 id="net-client-libraries-method-4">.NET client libraries method</h4>
 <pre><code class="lang-csharp">    Task DeleteTypeAsync(string typeId);
 </code></pre><hr>
 <h2 id="get-types-access-control-list"><code>Get Types Access Control List</code></h2>
@@ -1793,7 +1793,7 @@ in the request body, a Conflict error response is returned and the client librar
 <p>The response includes a status code and a response body.</p>
 <h5 id="response-body-4">Response body</h5>
 <p>The default ACL for Types</p>
-<h4 id="net-libraries-client-methods-5">.NET libraries client methods</h4>
+<h4 id="net-client-libraries-method-5">.NET client libraries method</h4>
 <pre><code class="lang-csharp">   Task&lt;AccessControlList&gt; GetTypesAccessControlListAsync();
 </code></pre><hr>
 <h2 id="update-types-access-control-list"><code>Update Types Access Control List</code></h2>
@@ -1807,7 +1807,7 @@ in the request body, a Conflict error response is returned and the client librar
 <p>Serialized ACL</p>
 <h4 id="response-6">Response</h4>
 <p>The response includes a status code.</p>
-<h4 id="net-libraries-client-methods-6">.NET libraries client methods</h4>
+<h4 id="net-client-libraries-method-6">.NET client libraries method</h4>
 <pre><code class="lang-csharp">   Task UpdateTypesAccessControlListAsync(AccessControlList typesAcl);
 </code></pre><hr>
 <h2 id="get-type-access-control-list"><code>Get Type Access Control List</code></h2>
@@ -1822,7 +1822,7 @@ in the request body, a Conflict error response is returned and the client librar
 <p>The response includes a status code and a response body.</p>
 <h5 id="response-body-5">Response body</h5>
 <p>The ACL for the specified type</p>
-<h4 id="net-libraries-client-methods-7">.NET libraries client methods</h4>
+<h4 id="net-client-libraries-method-7">.NET client libraries method</h4>
 <pre><code class="lang-csharp">   Task&lt;AccessControlList&gt; GetTypeAccessControlListAsync(string typeId);
 </code></pre><hr>
 <h2 id="update-type-access-control-list"><code>Update Type Access Control List</code></h2>
@@ -1838,7 +1838,7 @@ in the request body, a Conflict error response is returned and the client librar
 <p>Serialized ACL</p>
 <h4 id="response-8">Response</h4>
 <p>The response includes a status code.</p>
-<h4 id="net-libraries-client-methods-8">.NET libraries client methods</h4>
+<h4 id="net-client-libraries-method-8">.NET client libraries method</h4>
 <pre><code class="lang-csharp">   Task UpdateTypeAccessControlListAsync(string typeId, AccessControlList typeAcl);
 </code></pre><hr>
 <h2 id="get-type-owner"><code>Get Type Owner</code></h2>
@@ -1853,7 +1853,7 @@ in the request body, a Conflict error response is returned and the client librar
 <p>The response includes a status code and a response body.</p>
 <h5 id="response-body-6">Response body</h5>
 <p>The Owner for the specified type </p>
-<h4 id="net-libraries-client-methods-9">.NET libraries client methods</h4>
+<h4 id="net-client-libraries-method-9">.NET client libraries method</h4>
 <pre><code class="lang-csharp">   Task&lt;Trustee&gt; GetTypeOwnerAsync(string typeId);
 </code></pre><hr>
 <h2 id="update-type-owner"><code>Update Type Owner</code></h2>
@@ -1869,7 +1869,7 @@ in the request body, a Conflict error response is returned and the client librar
 <p>Serialized Owner</p>
 <h4 id="response-10">Response</h4>
 <p>The response includes a status code.</p>
-<h4 id="net-libraries-client-methods-10">.NET libraries client methods</h4>
+<h4 id="net-client-libraries-methods">.NET client libraries methods</h4>
 <pre><code class="lang-csharp">   Task UpdateTypeOwnerAsync(string typeId, Trustee typeOwner);
 </code></pre><hr>
 <h2 id="get-type-access-rights"><code>Get Type Access Rights</code></h2>
@@ -1890,7 +1890,7 @@ more information on Access Rights, see <a class="xref" href="../Access_Control.h
 Content-Type: application/json
 
 [&quot;Read&quot;, &quot;Write&quot;]
-</code></pre><h4 id="net-libraries-client-methods-11">.NET libraries client methods</h4>
+</code></pre><h4 id="net-client-libraries-methods-1">.NET client libraries methods</h4>
 <pre><code class="lang-csharp">   Task&lt;string[]&gt; GetTypeAccessRightsAsync(string typeId);
 </code></pre><hr>
 </article>

@@ -104,7 +104,7 @@ SdsStream results with the <a class="xref" href="SDS_Streams.html">Stream</a> AP
       &quot;a metadata key&quot;:&quot;a metadata value&quot;, 
       &quot;another key&quot;:&quot;another value&quot; 
   } 
-</code></pre><p><strong>.NET Library</strong></p>
+</code></pre><p><strong>.NET client libraries method</strong></p>
 <pre><code class="lang-csharp">      Task&lt;IDictionary&lt;string, string&gt;&gt; GetStreamMetadataAsync(string streamId); 
 </code></pre><p><strong>Security</strong></p>
 <p>  Allowed for administrator and user accounts</p>
@@ -128,7 +128,7 @@ SdsStream results with the <a class="xref" href="SDS_Streams.html">Stream</a> AP
   { 
       &quot;a metadata value&quot;
   } 
-</code></pre><p><strong>.NET Library</strong></p>
+</code></pre><p><strong>.NET client libraries method</strong></p>
 <pre><code class="lang-csharp">      Task&lt;string&gt; GetStreamMetadataValueAsync(string streamId, string key); 
 </code></pre><p><strong>Security</strong></p>
 <p>  Allowed for administrator and user accounts</p>
@@ -144,7 +144,7 @@ Overwrites any existing metadata; does not merge. </p>
 <p><code>string streamId</code><br>  The stream identifier  </p>
 <p><strong>Response</strong></p>
 <p>  The response includes a status code.</p>
-<p><strong>.NET Library</strong></p>
+<p><strong>.NET client libraries method</strong></p>
 <pre><code class="lang-csharp">      Task UpdateStreamMetadataAsync(string streamId, IDictionary&lt;string, string&gt; metadata); 
 </code></pre><p><strong>Security</strong></p>
 <p>  Allowed for administrator accounts</p>
@@ -162,7 +162,7 @@ Overwrites any existing metadata; does not merge. </p>
 <p>  The response includes a status code and a response body.</p>
 <p><strong>Response body</strong>  </p>
 <p>A collection of operations to be applied to the metadata collection as specified by the <a href="http://jsonpatch.com/">JSON Patch format</a>.</p>
-<p><strong>.NET Library</strong></p>
+<p><strong>.NET client libraries method</strong></p>
 <pre><code class="lang-csharp">      Task&lt;IDictionary&lt;string, string&gt;&gt; PatchStreamMetadataAsync(string streamId, MetadataPatchDocument patchDoc);
 </code></pre><p><strong>Security</strong></p>
 <p>  Allowed for administrator accounts</p>
@@ -177,7 +177,7 @@ Overwrites any existing metadata; does not merge. </p>
 <p><code>string streamId</code><br>  The stream identifier  </p>
 <p><strong>Response</strong></p>
 <p>  The response includes a status code.</p>
-<p><strong>.NET Library</strong></p>
+<p><strong>.NET client libraries method</strong></p>
 <pre><code class="lang-csharp">      Task DeleteStreamMetadataAsync(string streamId); 
 </code></pre><p><strong>Security</strong></p>
 <p>  Allowed for administrator accounts</p>
@@ -202,7 +202,7 @@ Overwrites any existing metadata; does not merge. </p>
       &quot;a tag&quot;, 
       &quot;another tag&quot; 
   ] 
-</code></pre><p><strong>.NET Library</strong></p>
+</code></pre><p><strong>.NET client libraries method</strong></p>
 <pre><code class="lang-csharp">      Task&lt;IList&lt;string&gt;&gt; GetStreamTagsAsync(string streamId); 
 </code></pre><p><strong>Security</strong></p>
 <p>  Allowed for administrator and user accounts</p>
@@ -218,7 +218,7 @@ Overwrites any existing metadata; does not merge. </p>
 <p>  The request content is the serialized list of tags. </p>
 <p><strong>Response</strong></p>
 <p>  The response includes a status code.</p>
-<p><strong>.NET Library</strong></p>
+<p><strong>.NET client libraries method</strong></p>
 <pre><code class="lang-csharp">      Task UpdateStreamTagsAsync(string streamId, IList&lt;string&gt; tags); 
 </code></pre><p><strong>Security</strong></p>
 <p>  Allowed by administrator accounts.</p>
@@ -233,7 +233,7 @@ Overwrites any existing metadata; does not merge. </p>
 <p><code>string streamId</code><br>  The stream identifier  </p>
 <p><strong>Response</strong></p>
 <p>  The response includes a status code.</p>
-<p><strong>.NET Library</strong></p>
+<p><strong>.NET client libraries method</strong></p>
 <pre><code class="lang-csharp">      Task DeleteStreamTagsAsync(string streamId); 
 </code></pre><p><strong>Security</strong></p>
 <p>  Allowed for administrator accounts.</p>

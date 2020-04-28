@@ -659,7 +659,7 @@ Content-Type: application/json
       }
    ]
 }
-</code></pre><p><strong>.NET Library</strong></p>
+</code></pre><p><strong>.NET client libraries method</strong></p>
 <pre><code class="lang-csharp">   Task&lt;SdsStreamView&gt; GetStreamViewAsync(string streamViewId);
 </code></pre><hr>
 <h2 id="get-stream-view-map"><code>Get Stream View Map</code></h2>
@@ -699,7 +699,7 @@ Content-Type: application/json
       }
    ]
 }
-</code></pre><p><strong>.NET Library</strong></p>
+</code></pre><p><strong>.NET client libraries method</strong></p>
 <pre><code class="lang-csharp">   Task&lt;SdsStreamViewMap&gt; GetStreamViewMapAsync(string streamViewId);
 </code></pre><hr>
 <h2 id="get-stream-views"><code>Get Stream Views</code></h2>
@@ -753,7 +753,7 @@ Content-Type: application/json
      ]
   }
 ]
-</code></pre><p><strong>.NET Library</strong></p>
+</code></pre><p><strong>.NET client libraries method</strong></p>
 <pre><code class="lang-csharp">   Task&lt;IEnumerable&lt;SdsStreamView&gt;&gt; GetStreamViewsAsync(int skip = 0, int count = 100);
 </code></pre><hr>
 <h2 id="get-or-create-stream-view"><code>Get or Create Stream View</code></h2>
@@ -769,7 +769,7 @@ If the stream views are identical, a Found (302) status is returned and the stre
 <p><strong>Request body</strong><br>The request content is the serialized SdsStreamView. If you are not using the SDS client libraries, using JSON is recommended.</p>
 <p><strong>Response</strong><br>The response includes a status code and a response body.</p>
 <p><strong>Response body</strong><br>The newly created or matching SdsStreamView.</p>
-<p><strong>.NET Library</strong></p>
+<p><strong>.NET client libraries method</strong></p>
 <pre><code class="lang-csharp">   Task&lt;SdsStreamView&gt; GetOrCreateStreamViewAsync(SdsStreamView sdsStreamView);
 </code></pre><hr>
 <h2 id="create-or-update-stream-view"><code>Create or Update Stream View</code></h2>
@@ -784,7 +784,7 @@ The tenant identifier  </p>
 <p><strong>Request body</strong><br>The request content is the serialized SdsStreamView.</p>
 <p><strong>Response</strong><br>The response includes a status code and a response body.</p>
 <p><strong>Response body</strong><br>The newly created or updated SdsStreamView.</p>
-<p><strong>.NET Library</strong></p>
+<p><strong>.NET client libraries method</strong></p>
 <pre><code class="lang-csharp">   Task CreateOrUpdateStreamViewAsync(SdsStreamView SdsStreamView);
 </code></pre><hr>
 <h2 id="delete-stream-view"><code>Delete Stream View</code></h2>
@@ -796,7 +796,7 @@ The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string streamViewId</code><br>The stream view identifier  </p>
 <p><strong>Response</strong><br>The response includes a status code.</p>
-<p><strong>.NET Library</strong></p>
+<p><strong>.NET client libraries method</strong></p>
 <pre><code class="lang-csharp">   Task DeleteStreamViewAsync(string streamViewId);
 </code></pre><hr>
 <h2 id="get-stream-views-access-control-list"><code>Get Stream Views Access Control List</code></h2>
@@ -808,7 +808,7 @@ The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><strong>Response</strong><br>The response includes a status code and a response body.</p>
 <p><strong>Response body</strong><br>The default ACL for Stream Views</p>
-<p><strong>.NET Library</strong></p>
+<p><strong>.NET client libraries method</strong></p>
 <pre><code class="lang-csharp">   Task&lt;AccessControlList&gt; GetStreamViewsAccessControlListAsync();
 </code></pre><hr>
 <h2 id="update-stream-views-access-control-list"><code>Update Stream Views Access Control List</code></h2>
@@ -820,7 +820,7 @@ The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><strong>Request body</strong><br>Serialized ACL</p>
 <p><strong>Response</strong><br>The response includes a status code.</p>
-<p><strong>.NET Library</strong></p>
+<p><strong>.NET client libraries method</strong></p>
 <pre><code class="lang-csharp">   Task UpdateStreamViewsAccessControlListAsync(AccessControlList viewsAcl);
 </code></pre><hr>
 <h2 id="get-stream-view-access-control-list"><code>Get Stream View Access Control List</code></h2>
@@ -833,7 +833,7 @@ The tenant identifier  </p>
 <p><code>string streamViewId</code><br>The stream view identifier  </p>
 <p><strong>Response</strong><br>The response includes a status code and a response body.</p>
 <p><strong>Response Body</strong><br>The ACL for the specified stream view</p>
-<p><strong>.NET Library</strong></p>
+<p><strong>.NET client libraries method</strong></p>
 <pre><code class="lang-csharp">   Task&lt;AccessControlList&gt; GetStreamViewAccessControlListAsync(string streamViewId);
 </code></pre><hr>
 <h2 id="update-stream-view-access-control-list"><code>Update Stream View Access Control List</code></h2>
@@ -846,7 +846,7 @@ The tenant identifier  </p>
 <p><code>string streamViewId</code><br>The stream view identifier  </p>
 <p><strong>Request body</strong><br>Serialized ACL</p>
 <p><strong>Response</strong><br>The response includes a status code.</p>
-<p><strong>.NET Library</strong></p>
+<p><strong>.NET client libraries method</strong></p>
 <pre><code class="lang-csharp">   Task UpdateStreamViewAccessControlListAsync(string streamViewId, AccessControlList viewAcl);
 </code></pre><hr>
 <h2 id="get-stream-view-owner"><code>Get Stream View Owner</code></h2>
@@ -859,7 +859,7 @@ The tenant identifier  </p>
 <p><code>string streamViewId</code><br>The stream view identifier  </p>
 <p><strong>Response</strong><br>The response includes a status code and a response body.</p>
 <p><strong>Response Body</strong><br>The Owner for the specified stream view</p>
-<p><strong>.NET Library</strong></p>
+<p><strong>.NET client libraries method</strong></p>
 <pre><code class="lang-csharp">   Task&lt;Trustee&gt; GetStreamViewOwnerAsync(string streamViewId);
 </code></pre><hr>
 <h2 id="update-stream-view-owner"><code>Update Stream View Owner</code></h2>
@@ -872,7 +872,7 @@ The tenant identifier  </p>
 <p><code>string streamViewId</code><br>The stream view identifier  </p>
 <p><strong>Request body</strong><br>Serialized Owner</p>
 <p><strong>Response</strong><br>The response includes a status code.</p>
-<p><strong>.NET Library</strong></p>
+<p><strong>.NET client libraries method</strong></p>
 <pre><code class="lang-csharp">   Task UpdateStreamViewOwnerAsync(string streamViewId, Trustee viewOwner);
 </code></pre><hr>
 <h2 id="get-stream-view-access-rights"><code>Get Stream View Access Rights</code></h2>
@@ -891,7 +891,7 @@ more information on Access Rights, see <a class="xref" href="../Access_Control.h
 Content-Type: application/json
 
 [&quot;Read&quot;, &quot;Write&quot;]
-</code></pre><p><strong>.NET Library</strong></p>
+</code></pre><p><strong>.NET client libraries method</strong></p>
 <pre><code class="lang-csharp">   Task&lt;string[]&gt; GetStreamViewAccessRightsAsync(string streamViewId);
 </code></pre><hr>
 </article>

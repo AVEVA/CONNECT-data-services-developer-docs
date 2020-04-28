@@ -214,7 +214,7 @@ Content-Type: application/json
         &quot;Measurement&quot;: 20
     }
 ]
-</code></pre><h4 id="net-client-libraries-method-2">.NET client libraries method</h4>
+</code></pre><h4 id="net-client-libraries-methods">.NET client libraries methods</h4>
 <pre><code class="lang-csharp">   Task&lt;T&gt; FindDistinctValueAsync&lt;T&gt;(string streamId, string index, 
       SdsSearchMode searchMode = SdsSearchMode.Exact, string streamViewId = null);
    Task&lt;T&gt; FindDistinctValueAsync&lt;T, T1&gt;(string streamId, Tuple&lt;T1&gt; index, 
@@ -266,7 +266,7 @@ Content-Type: application/json
     }
 ]
 </code></pre><p>Note that <code>State</code> is not included in the JSON as its value is the default value.</p>
-<h4 id="net-client-libraries-method-3">.NET client libraries method</h4>
+<h4 id="net-client-libraries-method-2">.NET client libraries method</h4>
 <pre><code class="lang-csharp">   Task&lt;IEnumerable&lt;T&gt;&gt; GetFilteredValuesAsync&lt;T&gt;(string streamId, string filter, 
       string streamViewId = null);
 </code></pre><p><a name="getvaluesrange"></a></p>
@@ -385,7 +385,7 @@ Content-Type: application/json
         &quot;Measurement&quot;: 20
     }
 ]
-</code></pre><h4 id="net-client-libraries-methods">.NET client libraries methods</h4>
+</code></pre><h4 id="net-client-libraries-methods-1">.NET client libraries methods</h4>
 <pre><code class="lang-csharp">   Task&lt;IEnumerable&lt;T&gt;&gt; GetRangeValuesAsync&lt;T&gt;(string streamId, string startIndex, 
       int count, string streamViewId = null);
    Task&lt;IEnumerable&lt;T&gt;&gt; GetRangeValuesAsync&lt;T, T1&gt;(string streamId, T1 startIndex, 
@@ -605,7 +605,7 @@ Content-Type: application/json
     &quot;ContinuationToken&quot;: null
 }
 </code></pre><p>In this case, the results contain the final event. The returned continuation token is null. </p>
-<h4 id="net-client-libraries-methods-1">.NET client libraries methods</h4>
+<h4 id="net-client-libraries-methods-2">.NET client libraries methods</h4>
 <pre><code class="lang-csharp">   Task&lt;IEnumerable&lt;T&gt;&gt; GetWindowValuesAsync&lt;T&gt;(string streamId, string startIndex, 
       string endIndex, string streamViewId = null);
    Task&lt;IEnumerable&lt;T&gt;&gt; GetWindowValuesAsync&lt;T, T1&gt;(string streamId, T1 startIndex,
@@ -769,7 +769,7 @@ Content-Type: application/json
         &quot;Measurement&quot;: 20
     }
 ]
-</code></pre><h4 id="net-client-libraries-methods-2">.NET client libraries methods</h4>
+</code></pre><h4 id="net-client-libraries-methods-3">.NET client libraries methods</h4>
 <pre><code class="lang-csharp">   Task&lt;T&gt; GetValueAsync&lt;T&gt;(string streamId, string index, 
       string streamViewId = null);
    Task&lt;T&gt; GetValueAsync&lt;T, T1&gt;(string streamId, Tuple&lt;T1&gt; index, 
@@ -824,7 +824,7 @@ Content-Type: application/json
         &quot;Measurement&quot;: 30
     }
 ]
-</code></pre><h4 id="net-client-libraries-methods-3">.NET client libraries methods</h4>
+</code></pre><h4 id="net-client-libraries-methods-4">.NET client libraries methods</h4>
 <pre><code class="lang-csharp">   Task&lt;IEnumerable&lt;T&gt;&gt; GetValuesAsync&lt;T&gt;(string streamId, string startIndex, 
       string endIndex, int count, string streamViewId = null);
    Task&lt;IEnumerable&lt;T&gt;&gt; GetValuesAsync&lt;T, T1&gt;(string streamId, T1 startIndex, 
@@ -1359,7 +1359,7 @@ Content-Type: application/json
         }
     }
 ]
-</code></pre><h4 id="net-client-libraries-methods-4">.NET client libraries methods</h4>
+</code></pre><h4 id="net-client-libraries-methods-5">.NET client libraries methods</h4>
 <pre><code class="lang-csharp">   Task&lt;IEnumerable&lt;SdsInterval&lt;T&gt;&gt;&gt; GetIntervalsAsync&lt;T&gt;(string streamId, string 
       startIndex, string endIndex, int count, string streamViewId = null);
 
@@ -1445,7 +1445,7 @@ Content-Type: application/json
     }
 ]
 </code></pre><p>Note that <code>State</code> is not included in the JSON when its value is the default value.</p>
-<h4 id="net-client-libraries-methods-5">.NET client libraries methods</h4>
+<h4 id="net-client-libraries-methods-6">.NET client libraries methods</h4>
 <pre><code class="lang-csharp">   Task&lt;IEnumerable&lt;T&gt;&gt; GetSampledValuesAsync&lt;T&gt;(string streamId, string startIndex, string endIndex,
       int intervals, IEnumerable&lt;string&gt; sampleBy, string streamViewId = null);  
 
@@ -1964,7 +1964,7 @@ Content-Type: application/json
     ]
 ]
 </code></pre><p>Notice that not all the values from Streams were included since they are restricted by individual queries for each Stream.</p>
-<h4 id="net-client-libraries-methods-6">.NET client libraries methods</h4>
+<h4 id="net-client-libraries-methods-7">.NET client libraries methods</h4>
 <pre><code class="lang-csharp">   Task&lt;IEnumerable&lt;IList&lt;T&gt;&gt;&gt; GetJoinValuesAsync&lt;T&gt;(IEnumerable&lt;string&gt; streams, 
       SdsJoinType joinMode, string startIndex, string endIndex);
 

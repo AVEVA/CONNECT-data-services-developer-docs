@@ -146,7 +146,7 @@
 <p><code>int skip</code><br>An optional parameter representing the zero-based offset of the first SdsStream to retrieve. The number of matched items to skip over before returning. If unspecified, a default value of 0 is used. Use when more items match the search criteria than can be returned in a single call.</p>
 <p><code>int count</code><br>An optional parameter representing the maximum number of SdsStreams to retrieve. If unspecified, a default value of 100 is used. The maximum value is 1,000. </p>
 <p><code>string orderby</code><br>An optional parameter representing the sorted order in which SdsStreams are returned. Requires a field name (<code>orderby=name</code>, for example). Default order is ascending (<code>asc</code>). Add <code>desc</code> for descending order (<code>orderby=name desc</code>, for example). If unspecified, there is no sorting of results.</p>
-<h4 id="net-client-libraries-method">.NET client libraries method</h4>
+<h4 id="net-client-libraries-methods">.NET client libraries methods</h4>
 <p>If there are 175 streams that match the search criteria &quot;temperature&quot; in a single call for example, below will return the first 100 matches:</p>
 <pre><code class="lang-csharp">    _metadataService.GetStreamsAsync(query:&quot;temperature&quot;, skip:0, count:100)
 </code></pre><p>If <code>skip</code> is set to 100, the following call will return the remaining 75 matches while skipping over the first 100:</p>
@@ -232,7 +232,7 @@
 <p><code>string query</code><br>An optional parameter representing the search criteria. If unspecified, returns all values. Can be used with <code>skip</code>, <code>count</code> and <code>orderby</code>. </p>
 <p><code>int skip</code><br>An optional parameter representing the zero-based offset of the first SdsStream to retrieve. If unspecified, a default value of 0 is used. Use when more items match the search criteria than can be returned in a single call.</p>
 <p><code>int count</code><br>An optional parameter representing the maximum number of SdsStreams to retrieve. If unspecified, a default value of 100 is used. The maximum value is 1,000. </p>
-<h4 id="net-client-libraries-method-1">.NET client libraries method</h4>
+<h4 id="net-client-libraries-method">.NET client libraries method</h4>
 <p><code>GetStreamsAsync</code> is used to search for and return streams. </p>
 <pre><code class="lang-csharp">      _metadataService.GetStreamsAsync(query:&quot;QueryString&quot;, skip:0, count:100);
 </code></pre><p>The Stream fields valid for search are identified in the fields table located on the <a class="xref" href="SDS_Streams.html">Streams</a> page.
@@ -288,7 +288,7 @@ See <a href="#Stream_Metadata_search_topic">How Searching Works: Stream Metadata
 <p><code>string query</code><br>An optional parameter representing the search criteria. If unspecified, returns all values. Can be used with <code>skip</code>, <code>count</code> and <code>orderby</code>. </p>
 <p><code>int skip</code><br>An optional parameter representing the zero-based offset of the first SdsType to retrieve. If unspecified, a default value of 0 is used. Use when more items match the search criteria than can be returned in a single call.</p>
 <p><code>int count</code><br>An optional parameter representing the maximum number of SdsTypes to retrieve. If unspecified, a default value of 100 is used. The maximum value is 1,000. </p>
-<h4 id="net-client-libraries-method-2">.NET client libraries method</h4>
+<h4 id="net-client-libraries-method-1">.NET client libraries method</h4>
 <p><code>GetTypesAsync</code> is used to search for and return types. </p>
 <pre><code class="lang-csharp">      _metadataService.GetTypesAsync(query:&quot;QueryString&quot;, skip:0, count:100);
 </code></pre><h2 id="search-for-stream-views">Search for stream views</h2>
@@ -364,7 +364,7 @@ For more information on stream view properties, see <a class="xref" href="SDS_Vi
 <p><code>string query</code><br>An optional parameter representing the search criteria. If unspecified, returns all values. Can be used with <code>skip</code>, <code>count</code> and <code>orderby</code>. </p>
 <p><code>int skip</code><br>An optional parameter representing the zero-based offset of the first SdsStreamView to retrieve.If unspecified, a default value of 0 is used. Use when more items match the search criteria than can be returned in a single call.</p>
 <p><code>int count</code><br>An optional parameter representing the maximum number of SdsStreamViews to retrieve. If unspecified, a default value of 100 is used. The maximum value is 1,000. </p>
-<h4 id="net-client-libraries-method-3">.NET client libraries method</h4>
+<h4 id="net-client-libraries-method-2">.NET client libraries method</h4>
 <p><code>GetStreamViewsAsync</code> is used to search for and return stream views. </p>
 <pre><code class="lang-csharp">    _metadataService.GetStreamViewsAsync(query:&quot;QueryString&quot;, skip:0, count:100);
 </code></pre><h2 id="tokenization">Tokenization</h2>
@@ -494,7 +494,7 @@ For more information on stream view properties, see <a class="xref" href="SDS_Vi
 <pre><code>fieldname:fieldvalue
 </code></pre><h4 id="request-3">Request</h4>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams?query=name:pump name:pressure
-</code></pre><h4 id="net-client-libraries-method-4">.NET client libraries method</h4>
+</code></pre><h4 id="net-client-libraries-method-3">.NET client libraries method</h4>
 <pre><code class="lang-csharp">    GetStreamsAsync(query:&quot;name:pump name:pressure&quot;);
 </code></pre><h3 id="wildcard--operator">Wildcard (<code>*</code>) operator</h3>
 <p>You can use the wildcard operator (<code>*</code>) to complement an incomplete string.
@@ -546,7 +546,7 @@ It can only be used once per token, unless there&#39;s one at the beginning and 
 </table>
 <h4 id="request-4">Request</h4>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams?query=log*
-</code></pre><h4 id="net-client-libraries-method-5">.NET client libraries method</h4>
+</code></pre><h4 id="net-client-libraries-method-4">.NET client libraries method</h4>
 <pre><code class="lang-csharp">    GetStreamsAsync(query:&quot;log*&quot;);
 </code></pre><h3 id="double-quotes--operator">Double quotes (<code>&quot;&quot;</code>) operator</h3>
 <p>Tokenized search terms are delimited by whitespace and punctuation. To include these delimiters in a search, enclose them in double quotes. </p>
@@ -590,7 +590,7 @@ It can only be used once per token, unless there&#39;s one at the beginning and 
 </table>
 <h4 id="request-5">Request</h4>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">    GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams?query=&quot;pump pressure&quot;    
-</code></pre><h4 id="net-client-libraries-method-6">.NET client libraries method</h4>
+</code></pre><h4 id="net-client-libraries-method-5">.NET client libraries method</h4>
 <pre><code class="lang-csharp">    GetStreamsAsync(query:&quot;\\&quot;pump pressure\\&quot;&quot;);   
 </code></pre><h2 id="a-namestreammetadatasearchtopichow-search-works-with-stream-metadataa"><a name="Stream_Metadata_search_topic">How search works with stream metadata</a></h2>
 <p><a class="xref" href="SdsStreamExtra.html">Stream metadata</a> behaves differently with search syntax rules described in the previous sections. Let&#39;s say that there&#39;s a namespace that has streams below with respective metadata key-value pairs:</p>
@@ -648,7 +648,7 @@ It can only be used once per token, unless there&#39;s one at the beginning and 
 </table>
 <h4 id="request-6">Request</h4>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams?query=manufacturer:company
-</code></pre><h4 id="net-client-libraries-method-7">.NET client libraries method</h4>
+</code></pre><h4 id="net-client-libraries-method-6">.NET client libraries method</h4>
 <pre><code class="lang-csharp">    GetStreamsAsync(query:&quot;manufacturer:company&quot;);
 </code></pre><h3 id="wildcard--operator-1">Wildcard (<code>*</code>) Operator</h3>
 <p>Wildcard (<code>*</code>) character can be used both in metadata keys and values with one caveat: wildcard (<code>*</code>) used in the field (left of field-scoped operator (<code>:</code>)) will only search within stream metadata.</p>
@@ -690,7 +690,7 @@ It can only be used once per token, unless there&#39;s one at the beginning and 
 </table>
 <h4 id="request-7">Request</h4>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams?query=manufa*turer:compan*
-</code></pre><h4 id="net-client-libraries-method-8">.NET client libraries method</h4>
+</code></pre><h4 id="net-client-libraries-method-7">.NET client libraries method</h4>
 <pre><code class="lang-csharp">    GetStreamsAsync(query:&quot;manufa*turer:compan*&quot;);
 </code></pre></article>
           </div>

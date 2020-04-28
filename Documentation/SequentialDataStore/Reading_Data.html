@@ -510,7 +510,7 @@ determine what is returned. The read characteristics are discussed in the code s
 </tr>
 </tbody>
 </table>
-<p>This is supported in the .NET API via overloads that accept a collection of <code>SdsStreamPropertyOverride</code> objects, and in the REST API via HTTP POST calls with a request body containing a collection of <code>SdsStreamPropertyOverride</code> objects.  </p>
+<p>This is supported in the .NET client libraries methods via overloads that accept a collection of <code>SdsStreamPropertyOverride</code> objects, and in the REST API via HTTP POST calls with a request body containing a collection of <code>SdsStreamPropertyOverride</code> objects.  </p>
 <p>All unit conversions are POST HTTP requests. The unit conversion transformation URI is as follows:</p>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   POST api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data/<wbr>Transform
 </code></pre><p><strong>Request body</strong><br>The Request Body contains a collection of <code>SdsStreamPropertyOverride</code> objects. </p>

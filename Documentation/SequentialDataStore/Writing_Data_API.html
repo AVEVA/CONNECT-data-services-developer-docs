@@ -174,7 +174,7 @@ var SimpleType = function () {
         &quot;Measurement&quot;: 60
     }
 ]
-</code></pre><h4 id="net-libraries-client-methods">.NET libraries client methods</h4>
+</code></pre><h4 id="net-client-libraries-methods">.NET client libraries methods</h4>
 <pre><code class="lang-csharp">    Task InsertValueAsync&lt;T&gt;(string streamId, T item);
     Task InsertValuesAsync&lt;T&gt;(string streamId, IList&lt;T&gt; items);
 </code></pre><hr>
@@ -207,7 +207,7 @@ var SimpleType = function () {
 <h4 id="notes-1">Notes</h4>
 <p>Patching is used to patch the events of the selected fields for one or more events in the stream. Only the fields indicated in <code>selectExpression</code> are modified. The events to be modified are indicated by the index value of each entry in the collection. </p>
 <p>If there is a problem patching any individual event, the entire operation is rolled back and the error will indicate the <code>streamId</code> and <code>index</code> of the problem.  </p>
-<h4 id="net-libraries-client-methods-1">.NET libraries client methods</h4>
+<h4 id="net-client-libraries-methods-1">.NET client libraries methods</h4>
 <pre><code class="lang-csharp">    Task PatchValueAsync(string streamId, string selectExpression, T item);
     Task PatchValuesAsync(string streamId, string selectExpression, IList&lt;T&gt; items);
 </code></pre><hr>
@@ -233,7 +233,7 @@ var SimpleType = function () {
 <h4 id="notes-2">Notes</h4>
 <p>If any individual event fails to be removed, the entire operation is rolled back and no events are removed. The streamId and index that caused the issue are included in the error response. </p>
 <p>If you attempt to remove events at indexes that have no events, an error is returned. If this occurs, you can use <a href="#removewindow">Window</a> request format to remove any events from a specified ‘window’ of indexes, which will not return an error if no data is found.</p>
-<h4 id="net-libraries-client-methods-2">.NET libraries client methods</h4>
+<h4 id="net-client-libraries-methods-2">.NET client libraries methods</h4>
 <pre><code class="lang-csharp">    Task RemoveValueAsync(string streamId, string index);
     Task RemoveValueAsync&lt;T1&gt;(string streamId, T1 index);
     Task RemoveValueAsync&lt;T1, T2&gt;(string streamId, Tuple&lt;T1, T2&gt; index);
@@ -257,7 +257,7 @@ var SimpleType = function () {
 <p>The response includes a status code</p>
 <h4 id="notes-3">Notes</h4>
 <p>If any individual event fails to be removed, the entire operation is rolled back and no removes are done.</p>
-<h4 id="net-libraries-client-methods-3">.NET libraries client methods</h4>
+<h4 id="net-client-libraries-methods-3">.NET client libraries methods</h4>
 <pre><code class="lang-csharp">    Task RemoveWindowValuesAsync(string streamId, string startIndex, string endIndex);
     Task RemoveWindowValuesAsync&lt;T1&gt;(string streamId, T1 startIndex, T1 endIndex);
     Task RemoveWindowValuesAsync&lt;T1, T2&gt;(string streamId, Tuple&lt;T1, T2&gt; startIndex, Tuple&lt;T1, T2&gt; endIndex);
@@ -277,7 +277,7 @@ var SimpleType = function () {
 <p>The response includes a status code</p>
 <h4 id="notes-4">Notes</h4>
 <p>This request returns an error if the stream does not have an event to be replaced at the specified index. If any individual event fails to be replaced, the entire operation is rolled back and no replaces are performed. The index that caused the issue and the streamId are included in the error response.</p>
-<h4 id="net-libraries-client-methods-4">.NET libraries client methods</h4>
+<h4 id="net-client-libraries-methods-4">.NET client libraries methods</h4>
 <pre><code class="lang-csharp">    Task ReplaceValueAsync&lt;T&gt;(string streamId, T item);
     Task ReplaceValuesAsync&lt;T&gt;(string streamId, IList&lt;T&gt; items);
 </code></pre><hr>
@@ -296,7 +296,7 @@ var SimpleType = function () {
 <h4 id="notes-5">Notes</h4>
 <p>This request performs an insert or a replace depending on whether an event already exists at the event indexes. If any item fails to write, the entire operation is rolled back and
 no events are written to the stream. The index that caused the issue is included in the error response.</p>
-<h4 id="net-libraries-client-methods-5">.NET libraries client methods</h4>
+<h4 id="net-client-libraries-methods-5">.NET client libraries methods</h4>
 <pre><code class="lang-csharp">    Task UpdateValueAsync&lt;T&gt;(string streamId, T item);
     Task UpdateValuesAsync&lt;T&gt;(string streamId, IList&lt;T&gt; items);
 </code></pre><hr>

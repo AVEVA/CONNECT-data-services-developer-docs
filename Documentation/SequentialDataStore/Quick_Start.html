@@ -344,7 +344,7 @@ Content-Type: application/json
 The simplest way to supply an index is as a string. A <code>DateTime</code> is used as an index below in .NET:</p>
 <pre><code class="lang-csharp">string index = DateTime.Parse(&quot;2017-08-17T17:21:36.3494129Z&quot;)
                .ToUniversalTime().ToString(&quot;o&quot;); 
-</code></pre><p>To read a value at a distinct index, you can use the .NET SDS libraries method.
+</code></pre><p>To read a value at a distinct index, you can use the SDS .NET client libraries method.
 <code>Time</code> is the index here, which is a property of a type named <code>Simple</code>: </p>
 <pre><code class="lang-csharp">value = await client.GetDistinctValueAsync&lt;Simple&gt;(simpleStream.Id, index); 
 </code></pre><h3 id="handling-transient-service-interruptions">Handling transient service interruptions</h3>
@@ -357,7 +357,7 @@ consider creating your own retry logic to handle errors identified as transient.
 In this case, we recommend a logic which returns HTTP status code <code>503: Service Unavailable</code>:
 an immediate first retry followed by an exponential backoff.</p>
 <h3 id="sds-client-error">SDS client error</h3>
-<p>If you access SDS using the .NET client libraries, note that any non-success
+<p>If you access SDS using the .NET client libraries methods, note that any non-success
 responses returned to the client are packaged in an <code>SdsHttpClientException</code>,
 which is an exception with the following additional properties:</p>
 <pre><code class="lang-csharp">string ReasonPhrase

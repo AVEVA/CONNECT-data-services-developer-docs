@@ -538,14 +538,14 @@ HTTP 200 OK
             "DataFields": [
                 {
                     "FieldMappingCount": 3,
-                    "DataMappingMappingCount": 6,
-                    "EmptyDataMappingMappingCount": 0,
+                    "DataMappingCount": 6,
+                    "EmptyDataMappingCount": 0,
                     "UnmappedGroupCount": 0
                 },
                 {
                     "FieldMappingCount": 3,
-                    "DataMappingMappingCount": 6,
-                    "EmptyDataMappingMappingCount": 2,
+                    "DataMappingCount": 6,
+                    "EmptyDataMappingCount": 2,
                     "UnmappedGroupCount": 1
                 }
             ]
@@ -556,8 +556,8 @@ HTTP 200 OK
             "DataFields": [
                 {
                     "FieldMappingCount": 2,
-                    "DataMappingMappingCount": 4,
-                    "EmptyDataMappingMappingCount": 2,
+                    "DataMappingCount": 4,
+                    "EmptyDataMappingCount": 2,
                     "UnmappedGroupCount": 1
                 }
             ]

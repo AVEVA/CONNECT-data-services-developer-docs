@@ -32,4 +32,4 @@ The `FieldKind` specifies whether the field maps to an index field, grouping fie
 `TargetFieldKey` is not used. `TargetId` represents the data item id, `FieldSetIndex` is the zero-based positioning of data field set, and `FieldIndex` is the zero-based positioning of data field within the appropriate data field set.
 
 ### Type code
-The `TypeCode` the primary data type of the field mapping. This value comes from the field mapping's first non-empty `DataMapping`. The `TypeCode` is informational; it is not enforced.
+The `TypeCode` is the primary data type of the field mapping. This value comes from the field mapping's first non-empty `DataMapping`. The field mapping `TypeCode` is informational; it is not enforced.

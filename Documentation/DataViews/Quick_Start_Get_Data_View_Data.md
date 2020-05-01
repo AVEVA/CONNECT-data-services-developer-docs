@@ -191,7 +191,7 @@ An array of field mappings:
                     "TargetFieldKey": "WS_BILT",
                     "TypeCode": "String",
                     "FieldSetIndex": 0,
-                    "FieldIndex": 0,
+                    "FieldIndex": 0
                 }
             ]
         },

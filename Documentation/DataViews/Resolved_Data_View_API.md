@@ -438,22 +438,16 @@ HTTP 200 OK
       {
         "Id": "Timestamp",
         "Label": "Timestamp",
-        "FieldSetIndex": 0,
-        "FieldIndex": 0,
+        "FieldKind": "IndexField",
+        "TypeCode": "DateTime",
         "DataMappings": [
           {
-            "TargetId": "",
-            "TargetFieldKey": "",
             "TypeCode": "DateTime"
           },
           {
-            "TargetId": "",
-            "TargetFieldKey": "",
             "TypeCode": "DateTime"
           },
           {
-            "TargetId": "",
-            "TargetFieldKey": "",
             "TypeCode": "DateTime"
           }
         ]
@@ -461,23 +455,28 @@ HTTP 200 OK
       {
         "Id": "Temperature",
         "Label": "Temperature",
-        "FieldSetIndex": 1,
-        "FieldIndex": 0,
+        "TypeCode": "Double",
         "DataMappings": [
           {
             "TargetId": "WS_BILT",
             "TargetFieldKey": "Temperature",
-            "TypeCode": "Double"
+            "TypeCode": "Double",
+            "FieldSetIndex": 1,
+            "FieldIndex": 0
           },
           {
             "TargetId": "WS_ROSE",
             "TargetFieldKey": "Temperature",
-            "TypeCode": "Double"
+            "TypeCode": "Double",
+            "FieldSetIndex": 1,
+            "FieldIndex": 0
           },
           {
             "TargetId": "WS_WINT",
             "TargetFieldKey": "AmbientTemperature",
-            "TypeCode": "Double"
+            "TypeCode": "Double",
+            "FieldSetIndex": 1,
+            "FieldIndex": 0
           }
         ]
       },
@@ -539,12 +538,14 @@ HTTP 200 OK
             "DataFields": [
                 {
                     "FieldMappingCount": 3,
-                    "EmptyFieldMappingCount": 0,
+                    "DataMappingMappingCount": 6,
+                    "EmptyDataMappingMappingCount": 0,
                     "UnmappedGroupCount": 0
                 },
                 {
                     "FieldMappingCount": 3,
-                    "EmptyFieldMappingCount": 1,
+                    "DataMappingMappingCount": 6,
+                    "EmptyDataMappingMappingCount": 2,
                     "UnmappedGroupCount": 1
                 }
             ]
@@ -555,7 +556,8 @@ HTTP 200 OK
             "DataFields": [
                 {
                     "FieldMappingCount": 2,
-                    "EmptyFieldMappingCount": 0,
+                    "DataMappingMappingCount": 4,
+                    "EmptyDataMappingMappingCount": 2,
                     "UnmappedGroupCount": 1
                 }
             ]

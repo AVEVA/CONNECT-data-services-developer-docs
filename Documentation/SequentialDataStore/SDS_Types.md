@@ -73,7 +73,8 @@ Atomic types, such as strings, floats and arrays, are defined entirely by the Sd
 Types that require additional definition, such as enums and objects, are identified using a generic 
 SdsTypeCode, such as ByteEnum, Int32Enum, NullableInt32Enum, or Object, plus additional SdsTypeProperty fields.
 
-**Supported Types**
+**Supported Types**  
+
 The following types are supported and defined by the SdsTypeCode:
 
 Type                    | SdsTypeCode
@@ -198,7 +199,7 @@ For more information on interpolation of events, see [Interpolation](xref:sdsRea
 ``Uom`` is the unit of measure for the SdsTypeProperty. The ``Uom`` of the SdsTypeProperty may be specified by the name or the 
 abbreviation. The names and abbreviations of ``Uoms`` are case sensitive. 
 
-The ``InterpolationMode`` and ``Uom`` of the SdsTypeProperty can be overridden on the stream. For more information, see [Streams](xref:sdsStreams#propertyoverrides).
+The ``InterpolationMode`` and ``Uom`` of the SdsTypeProperty can be overridden on the SdsStream. For more information, see [Streams](xref:sdsStreams#propertyoverrides).
 
 ### Supported Units of Measure
 For a list of units of measures that are supported for an SdsTypeProperty, see [Units of Measure](xref:unitsOfMeasure#supported-units-of-measure).
@@ -808,10 +809,10 @@ The type identifier
 #### Response  
 The response includes a status code and a response body.
 
-##### Response body  
+#### Response body  
 The requested SdsType
 
-##### Example response body 
+#### Example response body 
 ```json
 HTTP/1.1 200
 Content-Type: application/json
@@ -897,10 +898,10 @@ The type identifier
 #### Response  
 The response includes a status code and a response body.
 
-##### Response body  
+#### Response body  
 A dictionary mapping object name to number of references.
 
-##### Example response body 
+#### Example response body 
 ```json
     {
         "SdsStream": 3,
@@ -958,10 +959,10 @@ If no value is specified, there is no sorting of results.
 #### Response  
 The response includes a status code and a response body.
 
-##### Response body  
+#### Response body  
 A collection of zero or more SdsTypes
 
-##### Example response body 
+#### Example response body 
 ```json
 HTTP/1.1 200
 Content-Type: application/json
@@ -1122,10 +1123,10 @@ Example SdsType content:
 #### Response  
 The response includes a status code and a response body.
 
-##### Response body  
+#### Response body  
 The request content is the serialized SdsType. If you are not using the SDS Client Libraries, it is recommended that you use JSON.
 
-##### Example response body 
+#### Example response body 
 ```json
 HTTP/1.1 201
 Content-Type: application/json
@@ -1322,7 +1323,7 @@ The namespace identifier
 #### Response  
 The response includes a status code and a response body.
 
-##### Response body  
+#### Response body  
 The default ACL for Types
 
 #### .NET client libraries method
@@ -1348,7 +1349,7 @@ The tenant identifier
 `string namespaceId`  
 The namespace identifier  
 
-##### Request Body 
+#### Request Body 
 Serialized ACL
 
 #### Response  
@@ -1415,7 +1416,7 @@ The namespace identifier
 `string typeId`  
 The type identifier  
 
-##### Request Body 
+#### Request Body 
 Serialized ACL
 
 #### Response  
@@ -1450,7 +1451,7 @@ The type identifier
 #### Response  
 The response includes a status code and a response body.
 
-##### Response body  
+#### Response body  
 The Owner for the specified type 
 
 #### .NET client libraries method
@@ -1481,7 +1482,7 @@ The namespace identifier
 `string typeId`  
 The type identifier  
 
-##### Request Body 
+#### Request Body 
 Serialized Owner
 
 #### Response  
@@ -1517,10 +1518,10 @@ The type identifier
 #### Response  
 The response includes a status code and a response body.
 
-##### Response body  
+#### Response body  
 The Access Rights of the specified type for the requesting identity.
 
-##### Example response body 
+#### Example response body 
 ```json
 HTTP/1.1 200
 Content-Type: application/json

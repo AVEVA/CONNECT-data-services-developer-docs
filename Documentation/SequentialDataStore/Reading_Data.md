@@ -31,7 +31,8 @@ All single stream reads are HTTP GET actions. Reading data involves getting even
 	api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
  ```
 
-**Parameters**
+**Parameters**  
+
 ``string tenantId``  
 The tenant identifier
 
@@ -51,8 +52,7 @@ Multi-stream reads can be HTTP GET or POST actions. The base reading URI for rea
     api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data
  ```
 
-**Parameters**
-
+**Parameters**  
 ``string tenantId``  
 The tenant identifier
 

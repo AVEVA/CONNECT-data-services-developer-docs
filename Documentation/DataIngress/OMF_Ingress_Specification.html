@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Using OMF with Cloud Services </title>
+    <title>Use OSIsoft Message Format with OSIsoft Cloud Services </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Using OMF with Cloud Services ">
+    <meta name="title" content="Use OSIsoft Message Format with OSIsoft Cloud Services ">
     <meta name="generator" content="docfx 2.43.3.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -76,13 +76,13 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="omfIngressSpecification">
-<h1 id="using-omf-with-cloud-services">Using OMF with Cloud Services</h1>
+<h1 id="use-osisoft-message-format-with-osisoft-cloud-services">Use OSIsoft Message Format with OSIsoft Cloud Services</h1>
 
-<p>The OMF specification (located <a href="http://omf-docs.osisoft.com">here</a>) is generic in that it does
+<p><a href="http://omf-docs.osisoft.com">The OSIsoft Message Format (OMF) specification</a> is generic in that it does
 not specify a particular back-end system. This topic is a companion to the OMF specification which describes how
 OMF is interpreted by OSIsoft Cloud Services back-end system. </p>
 <h2 id="headers">Headers</h2>
-<p>A description of each of the headers can be found in the <a href="http://omf-docs.osisoft.com">OMF spec</a>. Note that rather than using a <code>producertoken</code>, data ingress calls to OCS require a bearer token to be attached in the header, as documented in the <a class="xref" href="../SequentialDataStore/Quick_Start.html">OCS Quick Start</a> documentation. The bearer token is used to authenticate 
+<p>For a description of each of the headers, see <a href="http://omf-docs.osisoft.com">OMF specification</a>. Note that rather than using a <code>producertoken</code>, data ingress calls to OCS require a bearer token to be attached in the header, as documented in the <a class="xref" href="../SequentialDataStore/Quick_Start.html">OCS Quick Start</a> documentation. The bearer token is used to authenticate 
 the sender and to authorize the sender for use with a particular Tenant. The client Id associated with this token is used to route messages to a particular <a class="xref" href="OMF_Ingress_Topics.html">Topic</a> that it is mapped to.</p>
 <p>The <code>omfversion</code> header must match the version of the OMF spec used to construct the message.
 Versions 1.0 and 1.1 of the spec are currently supported. </p>

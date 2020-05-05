@@ -628,15 +628,17 @@ See <a href="#stream-views">Stream Views</a> for general SdsStreamView informati
 <hr>
 <h2 id="get-stream-view"><code>Get Stream View</code></h2>
 <p>Returns the stream view corresponding to the specified streamViewId within a given namespace.</p>
-<p><strong>Request</strong></p>
+<h3 id="request">Request</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>StreamViews/<wbr>{streamViewId}
-</code></pre><p><strong>Parameters</strong></p>
+</code></pre><h3 id="parameters">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string streamViewId</code><br>The stream view identifier  </p>
-<p><strong>Response</strong><br>The response includes a status code and a response body.</p>
-<p><strong>Response body</strong><br>The requested SdsStreamView.</p>
-<p>Example response body:</p>
+<h3 id="response">Response</h3>
+<p>The response includes a status code and a response body.</p>
+<h3 id="response-body">Response body</h3>
+<p>The requested SdsStreamView.</p>
+<h4 id="example-response-body">Example response body</h4>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 {  
@@ -659,20 +661,22 @@ Content-Type: application/json
       }
    ]
 }
-</code></pre><p><strong>.NET client libraries method</strong></p>
+</code></pre><h3 id="net-client-libraries-method">.NET client libraries method</h3>
 <pre><code class="lang-csharp">   Task&lt;SdsStreamView&gt; GetStreamViewAsync(string streamViewId);
 </code></pre><hr>
 <h2 id="get-stream-view-map"><code>Get Stream View Map</code></h2>
 <p>Returns the stream view map corresponding to the specified streamViewId within a given namespace.</p>
-<p><strong>Request</strong></p>
+<h3 id="request-1">Request</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>StreamViews/<wbr>{streamViewId}/<wbr>Map
-</code></pre><p><strong>Parameters</strong></p>
+</code></pre><h3 id="parameters-1">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string streamViewId</code><br>The stream view identifier  </p>
-<p><strong>Response</strong><br> The response includes a status code and a response body.</p>
-<p><strong>Response body</strong><br>The requested SdsStreamView.</p>
-<p>Example response body:</p>
+<h3 id="response-1">Response</h3>
+<p> The response includes a status code and a response body.</p>
+<h3 id="response-body-1">Response body</h3>
+<p>The requested SdsStreamView.</p>
+<h4 id="example-response-body-1">Example response body</h4>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -699,30 +703,32 @@ Content-Type: application/json
       }
    ]
 }
-</code></pre><p><strong>.NET client libraries method</strong></p>
+</code></pre><h3 id="net-client-libraries-method-1">.NET client libraries method</h3>
 <pre><code class="lang-csharp">   Task&lt;SdsStreamViewMap&gt; GetStreamViewMapAsync(string streamViewId);
 </code></pre><hr>
 <h2 id="get-stream-views"><code>Get Stream Views</code></h2>
 <p>Returns a list of stream views within a given namespace.</p>
 <p>If specifying the optional search query parameter, the list of stream views returned will match 
 the search criteria. If the search query parameter is not specified, the list will include 
-all stream views in the Namespace. See <a class="xref" href="Searching.html">Searching</a> for information about specifying those respective parameters.</p>
-<p><strong>Request</strong></p>
+all stream views in the namespace. See <a class="xref" href="Searching.html">Searching</a> for information about specifying those respective parameters.</p>
+<h3 id="request-2">Request</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>StreamViews?query={query}&amp;skip={skip}&amp;count={count}&amp;orderby={orderby}
-</code></pre><p><strong>Parameters</strong></p>
+</code></pre><h3 id="parameters-2">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string query</code><br>An optional parameter representing a string search. 
-See <a class="xref" href="Searching.html">Searching</a>
+See <a class="xref" href="Searching.html">Search in SDS</a>
 for information about specifying the search parameter.</p>
 <p><code>int skip</code><br>An optional parameter representing the zero-based offset of the first SdsStreamView to retrieve. 
 If not specified, a default value of 0 is used.</p>
 <p><code>int count</code><br>An optional parameter representing the maximum number of SdsStreamViews to retrieve. 
 If not specified, a default value of 100 is used.</p>
 <p><code>string orderby</code><br>An optional parameter representing sorted order which SdsStreamViews will be returned. A field name is required. The sorting is based   on the stored values for the given field (of type string). For example, <code>orderby=name</code> would sort the returned results by the      <code>name</code> values (ascending by default). Additionally, a value can be provided along with the field name to identify whether to sort       ascending or descending, by using values <code>asc</code> or <code>desc</code>, respectively. For example, <code>orderby=name desc</code> would sort the returned   results by the <code>name</code> values, descending. If no value is specified, there is no sorting of results.</p>
-<p><strong>Response</strong><br>The response includes a status code and a response body.</p>
-<p><strong>Response body</strong><br>A collection of zero or more SdsStreamViews.</p>
-<p>Example response body:</p>
+<h3 id="response-2">Response</h3>
+<p>The response includes a status code and a response body.</p>
+<h3 id="response-body-2">Response body</h3>
+<p>A collection of zero or more SdsStreamViews.</p>
+<h4 id="example-response-body-2">Example response body</h4>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 [  
@@ -753,145 +759,166 @@ Content-Type: application/json
      ]
   }
 ]
-</code></pre><p><strong>.NET client libraries method</strong></p>
+</code></pre><h3 id="net-client-libraries-method-2">.NET client libraries method</h3>
 <pre><code class="lang-csharp">   Task&lt;IEnumerable&lt;SdsStreamView&gt;&gt; GetStreamViewsAsync(int skip = 0, int count = 100);
 </code></pre><hr>
 <h2 id="get-or-create-stream-view"><code>Get or Create Stream View</code></h2>
 <p>If a stream view with a matching identifier already exists, the stream view passed in is compared with the existing stream view.
 If the stream views are identical, a Found (302) status is returned and the stream view. If the stream views are different, the Conflict (409) error is returned.</p>
 <p>If no matching identifier is found, the specified stream view is created.  </p>
-<p><strong>Request</strong></p>
+<h3 id="request-3">Request</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   POST api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>StreamViews/<wbr>{streamViewId}
-</code></pre><p><strong>Parameters</strong></p>
+</code></pre><h3 id="parameters-3">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string streamViewId</code><br>The stream view identifier. The identifier must match the <code>SdsStreamView.Id</code> field.   </p>
-<p><strong>Request body</strong><br>The request content is the serialized SdsStreamView. If you are not using the SDS client libraries, using JSON is recommended.</p>
-<p><strong>Response</strong><br>The response includes a status code and a response body.</p>
-<p><strong>Response body</strong><br>The newly created or matching SdsStreamView.</p>
-<p><strong>.NET client libraries method</strong></p>
+<h4 id="request-body">Request body</h4>
+<p>The request content is the serialized SdsStreamView. If you are not using the SDS client libraries, using JSON is recommended.</p>
+<h3 id="response-3">Response</h3>
+<p>The response includes a status code and a response body.</p>
+<h3 id="response-body-3">Response body</h3>
+<p>The newly created or matching SdsStreamView.</p>
+<h3 id="net-client-libraries-method-3">.NET client libraries method</h3>
 <pre><code class="lang-csharp">   Task&lt;SdsStreamView&gt; GetOrCreateStreamViewAsync(SdsStreamView sdsStreamView);
 </code></pre><hr>
 <h2 id="create-or-update-stream-view"><code>Create or Update Stream View</code></h2>
 <p>Creates or updates the definition of a stream view. </p>
-<p><strong>Request</strong></p>
+<h3 id="request-4">Request</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>StreamViews/<wbr>{streamViewId}
-</code></pre><p><strong>Parameters</strong></p>
+</code></pre><h3 id="parameters-4">Parameters</h3>
 <p><code>string tenantId</code>
 The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string streamViewId</code><br>The stream view identifier  </p>
-<p><strong>Request body</strong><br>The request content is the serialized SdsStreamView.</p>
-<p><strong>Response</strong><br>The response includes a status code and a response body.</p>
-<p><strong>Response body</strong><br>The newly created or updated SdsStreamView.</p>
-<p><strong>.NET client libraries method</strong></p>
+<h4 id="request-body-1">Request body</h4>
+<p>The request content is the serialized SdsStreamView.</p>
+<h3 id="response-4">Response</h3>
+<p>The response includes a status code and a response body.</p>
+<h3 id="response-body-4">Response body</h3>
+<p>The newly created or updated SdsStreamView.</p>
+<h3 id="net-client-libraries-method-4">.NET client libraries method</h3>
 <pre><code class="lang-csharp">   Task CreateOrUpdateStreamViewAsync(SdsStreamView SdsStreamView);
 </code></pre><hr>
 <h2 id="delete-stream-view"><code>Delete Stream View</code></h2>
 <p>Deletes a stream view from the specified tenant and namespace.</p>
-<p><strong>Request</strong></p>
+<h3 id="request-5">Request</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   DELETE api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>StreamViews/<wbr>{streamViewId}
-</code></pre><p><strong>Parameters</strong></p>
+</code></pre><h3 id="parameters-5">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string streamViewId</code><br>The stream view identifier  </p>
-<p><strong>Response</strong><br>The response includes a status code.</p>
-<p><strong>.NET client libraries method</strong></p>
+<h3 id="response-5">Response</h3>
+<p>The response includes a status code.</p>
+<h3 id="net-client-libraries-method-5">.NET client libraries method</h3>
 <pre><code class="lang-csharp">   Task DeleteStreamViewAsync(string streamViewId);
 </code></pre><hr>
 <h2 id="get-stream-views-access-control-list"><code>Get Stream Views Access Control List</code></h2>
 <p>Get the default ACL for the Stream Views collection. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
-<p><strong>Request</strong></p>
+<h3 id="request-6">Request</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>AccessControl/<wbr>StreamViews
-</code></pre><p><strong>Parameters</strong></p>
+</code></pre><h3 id="parameters-6">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
-<p><strong>Response</strong><br>The response includes a status code and a response body.</p>
-<p><strong>Response body</strong><br>The default ACL for Stream Views</p>
-<p><strong>.NET client libraries method</strong></p>
+<h3 id="response-6">Response</h3>
+<p>The response includes a status code and a response body.</p>
+<h3 id="response-body-5">Response body</h3>
+<p>The default ACL for Stream Views</p>
+<h3 id="net-client-libraries-method-6">.NET client libraries method</h3>
 <pre><code class="lang-csharp">   Task&lt;AccessControlList&gt; GetStreamViewsAccessControlListAsync();
 </code></pre><hr>
 <h2 id="update-stream-views-access-control-list"><code>Update Stream Views Access Control List</code></h2>
 <p>Update the default ACL for the Stream Views collection. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
-<p><strong>Request</strong></p>
+<h3 id="request-7">Request</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>AccessControl/<wbr>StreamViews
-</code></pre><p><strong>Parameters</strong></p>
+</code></pre><h3 id="parameters-7">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
-<p><strong>Request body</strong><br>Serialized ACL</p>
-<p><strong>Response</strong><br>The response includes a status code.</p>
-<p><strong>.NET client libraries method</strong></p>
+<h4 id="request-body-2">Request body</h4>
+<p>Serialized ACL</p>
+<h3 id="response-7">Response</h3>
+<p>The response includes a status code.</p>
+<h3 id="net-client-libraries-method-7">.NET client libraries method</h3>
 <pre><code class="lang-csharp">   Task UpdateStreamViewsAccessControlListAsync(AccessControlList viewsAcl);
 </code></pre><hr>
 <h2 id="get-stream-view-access-control-list"><code>Get Stream View Access Control List</code></h2>
 <p>Get the ACL of the specified stream view. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
-<p><strong>Request</strong></p>
+<h3 id="request-8">Request</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>StreamViews/<wbr>{streamViewId}/<wbr>AccessControl
-</code></pre><p><strong>Parameters</strong></p>
+</code></pre><h3 id="parameters-8">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string streamViewId</code><br>The stream view identifier  </p>
-<p><strong>Response</strong><br>The response includes a status code and a response body.</p>
-<p><strong>Response Body</strong><br>The ACL for the specified stream view</p>
-<p><strong>.NET client libraries method</strong></p>
+<h3 id="response-8">Response</h3>
+<p>The response includes a status code and a response body.</p>
+<h4 id="response-body-6">Response body</h4>
+<p>The ACL for the specified stream view</p>
+<h3 id="net-client-libraries-method-8">.NET client libraries method</h3>
 <pre><code class="lang-csharp">   Task&lt;AccessControlList&gt; GetStreamViewAccessControlListAsync(string streamViewId);
 </code></pre><hr>
 <h2 id="update-stream-view-access-control-list"><code>Update Stream View Access Control List</code></h2>
 <p>Update the ACL of the specified stream view. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
-<p><strong>Request</strong></p>
+<h3 id="request-9">Request</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>StreamViews/<wbr>{streamViewId}/<wbr>AccessControl
-</code></pre><p><strong>Parameters</strong></p>
+</code></pre><h3 id="parameters-9">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string streamViewId</code><br>The stream view identifier  </p>
-<p><strong>Request body</strong><br>Serialized ACL</p>
-<p><strong>Response</strong><br>The response includes a status code.</p>
-<p><strong>.NET client libraries method</strong></p>
+<h4 id="request-body-3">Request body</h4>
+<p>Serialized ACL</p>
+<h3 id="response-9">Response</h3>
+<p>The response includes a status code.</p>
+<h3 id="net-client-libraries-method-9">.NET client libraries method</h3>
 <pre><code class="lang-csharp">   Task UpdateStreamViewAccessControlListAsync(string streamViewId, AccessControlList viewAcl);
 </code></pre><hr>
 <h2 id="get-stream-view-owner"><code>Get Stream View Owner</code></h2>
 <p>Get the Owner of the specified stream view. For more information on Owners, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
-<p><strong>Request</strong></p>
+<h3 id="request-10">Request</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>StreamViews/<wbr>{streamViewId}/<wbr>Owner
-</code></pre><p><strong>Parameters</strong></p>
+</code></pre><h3 id="parameters-10">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string streamViewId</code><br>The stream view identifier  </p>
-<p><strong>Response</strong><br>The response includes a status code and a response body.</p>
-<p><strong>Response Body</strong><br>The Owner for the specified stream view</p>
-<p><strong>.NET client libraries method</strong></p>
+<h3 id="response-10">Response</h3>
+<p>The response includes a status code and a response body.</p>
+<h4 id="response-body-7">Response body</h4>
+<p>The Owner for the specified stream view</p>
+<h3 id="net-client-libraries-method-10">.NET client libraries method</h3>
 <pre><code class="lang-csharp">   Task&lt;Trustee&gt; GetStreamViewOwnerAsync(string streamViewId);
 </code></pre><hr>
 <h2 id="update-stream-view-owner"><code>Update Stream View Owner</code></h2>
 <p>Update the Owner of the specified stream view. For more information on Owners, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
-<p><strong>Request</strong></p>
+<h3 id="request-11">Request</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>StreamViews/<wbr>{streamViewId}/<wbr>Owner
-</code></pre><p><strong>Parameters</strong></p>
+</code></pre><h3 id="parameters-11">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string streamViewId</code><br>The stream view identifier  </p>
-<p><strong>Request body</strong><br>Serialized Owner</p>
-<p><strong>Response</strong><br>The response includes a status code.</p>
-<p><strong>.NET client libraries method</strong></p>
+<h4 id="request-body-4">Request body</h4>
+<p>Serialized Owner</p>
+<h3 id="response-11">Response</h3>
+<p>The response includes a status code.</p>
+<h3 id="net-client-libraries-method-11">.NET client libraries method</h3>
 <pre><code class="lang-csharp">   Task UpdateStreamViewOwnerAsync(string streamViewId, Trustee viewOwner);
 </code></pre><hr>
 <h2 id="get-stream-view-access-rights"><code>Get Stream View Access Rights</code></h2>
 <p>Gets the Access Rights associated with the specified stream view for the requesting identity. For 
 more information on Access Rights, see <a class="xref" href="../Access_Control.html#commonaccessrightsenum">Access Control</a>.</p>
-<p><strong>Request</strong></p>
+<h3 id="request-12">Request</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>StreamViews/<wbr>{streamViewId}/<wbr>AccessRights
-</code></pre><p><strong>Parameters</strong></p>
+</code></pre><h3 id="parameters-12">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string streamViewId</code><br>The stream view identifier  </p>
-<p><strong>Response</strong><br>The response includes a status code and a response body.</p>
-<p><strong>Response Body</strong><br>The Access Rights of the specified stream view for the requesting identity.</p>
-<p>Example response body:</p>
+<h3 id="response-12">Response</h3>
+<p>The response includes a status code and a response body.</p>
+<h4 id="response-body-8">Response body</h4>
+<p>The Access Rights of the specified stream view for the requesting identity.</p>
+<h4 id="example-response-body-3">Example response body</h4>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
 [&quot;Read&quot;, &quot;Write&quot;]
-</code></pre><p><strong>.NET client libraries method</strong></p>
+</code></pre><h3 id="net-client-libraries-method-12">.NET client libraries method</h3>
 <pre><code class="lang-csharp">   Task&lt;string[]&gt; GetStreamViewAccessRightsAsync(string streamViewId);
 </code></pre><hr>
 </article>

@@ -246,8 +246,8 @@ SdsStream information. </p>
 <h3 id="response">Response</h3>
 <p>The response includes a status code and a response body.</p>
 <h4 id="response-body">Response body</h4>
-<p>The requested SdsStream.</p>
-<p>Example response body:</p>
+<p>The requested SdsStream</p>
+<h4 id="example-response-body">Example response body</h4>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -258,12 +258,12 @@ Content-Type: application/json
 }
 </code></pre><h3 id="net-client-libraries-method">.NET client libraries method</h3>
 <pre><code class="lang-csharp">   Task&lt;SdsStream&gt; GetStreamAsync(string streamId);
-</code></pre><hr>
-<h2 id="get-streams"><code>Get Streams</code></h2>
+</code></pre><h2 id="get-streams"><code>Get Streams</code></h2>
+<hr>
 <p>Returns a list of streams.</p>
 <p>If specifying the optional search query parameter, the list of streams returned will match 
 the search criteria. If the search query parameter is not specified, the list will include 
-all streams in the Namespace. See <a class="xref" href="Searching.html">Searching</a> 
+all streams in the namespace. See <a class="xref" href="Searching.html">Search in SDS</a> 
 for information about specifying those respective parameters.</p>
 <h3 id="request-1">Request</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams?query={query}&amp;skip={skip}&amp;count={count}&amp;orderby={orderby}
@@ -271,7 +271,7 @@ for information about specifying those respective parameters.</p>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string query</code><br>An optional parameter representing a string search. 
-See <a class="xref" href="Searching.html">Searching</a>
+See <a class="xref" href="Searching.html">Search in SDS</a>
 for information about specifying the search parameter.</p>
 <p><code>int skip</code><br>An optional parameter representing the zero-based offset of the first SdsStream to retrieve. 
 If not specified, a default value of 0 is used.</p>
@@ -311,7 +311,6 @@ Content-Type: application/json
       int count = 100);
 </code></pre><hr>
 <h2 id="get-stream-type"><code>Get Stream Type</code></h2>
-<hr>
 <p>Returns the type definition that is associated with a given stream.</p>
 <h3 id="request-2">Request</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Type

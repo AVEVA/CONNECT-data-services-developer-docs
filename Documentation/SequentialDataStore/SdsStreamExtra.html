@@ -84,8 +84,9 @@ as a list of strings. Tags can be used to categorize or denote special attribute
 The SdsStream Metadata API And SdsStream Tags API do not accept the search query parameter in their respective
 Get calls. However, stream tags and metadata can be used as criteria in search query strings to return 
 SdsStream results with the <a class="xref" href="SDS_Streams.html">Stream</a> API.</p>
-<h2 id="sdsstream-metadata-api-">SdsStream Metadata API </h2>
+<h1 id="sdsstream-metadata-api">SdsStream Metadata API</h1>
 <h2 id="get-stream-metadata"><code>Get stream metadata</code></h2>
+<hr>
 <p>Returns the metadata dictionary for the specified stream. </p>
 <p><strong>Request</strong></p>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">     GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Metadata 
@@ -182,7 +183,7 @@ Overwrites any existing metadata; does not merge. </p>
 </code></pre><p><strong>Security</strong></p>
 <p>  Allowed for administrator accounts</p>
 <hr>
-<h2 id="sdsstream-tags-api-">SdsStream Tags API </h2>
+<h1 id="sdsstream-tags-api">SdsStream Tags API</h1>
 <h2 id="get-stream-tags"><code>Get stream tags</code></h2>
 <p>Returns the tag list for the specified stream. </p>
 <p><strong>Request</strong></p>
@@ -208,14 +209,15 @@ Overwrites any existing metadata; does not merge. </p>
 <p>  Allowed for administrator and user accounts</p>
 <hr>
 <h2 id="update-stream-tags"><code>Update stream tags</code></h2>
-<p>Replaces the tag list for the specified stream with the tags listed in the request body.<br>Overwrites any existing tags; does not merge. </p>
+<p>Replaces the tag list for the specified stream with the tags listed in the request body.
+Overwrites any existing tags; does not merge. </p>
 <p><strong>Request</strong></p>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">     PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Tags 
 </code></pre><p><strong>Parameters</strong></p>
 <p><code>string tenantId</code><br>  The tenant identifier  </p>
 <p><code>string namespaceId</code><br>  The namespace identifier  </p>
 <p><code>string streamId</code><br>  The stream identifier  </p>
-<p>  The request content is the serialized list of tags. </p>
+<p><strong>Request body</strong><br>The request content is the serialized list of tags. </p>
 <p><strong>Response</strong></p>
 <p>  The response includes a status code.</p>
 <p><strong>.NET client libraries method</strong></p>

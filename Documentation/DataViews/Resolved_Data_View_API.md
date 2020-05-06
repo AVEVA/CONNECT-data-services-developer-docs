@@ -106,6 +106,11 @@ Content-Type: application/json
 }
 ```
 
+### .NET client libraries method
+```csharp
+   Task<ResolvedItems<DataItem>> GetDataItemsAsync(string id, string queryId, int skip = DEFAULT_SKIP, int count = DEFAULT_COUNT, CacheBehavior cache = CacheBehavior.Preserve);
+```
+
 ## `Get Ineligible Data Items by Query`
 Gets the paged collection of data items that are the results of an individual query, but which are not eligible for use in the current data view. A common reason for ineligibility is that the item's index property is of a different type than the data view expects. A data view has a collection of zero or more queries. Each query has an identifier. Those identifiers are used here as part of the request path.
 
@@ -191,6 +196,11 @@ Content-Type: application/json
     }
   ]
 }
+```
+
+### .NET client libraries method
+```csharp
+   Task<ResolvedItems<DataItem>> GetIneligibleDataItemsAsync(string id, string queryId, int skip = DEFAULT_SKIP, int count = DEFAULT_COUNT, CacheBehavior cache = CacheBehavior.Preserve);
 ```
 
 ## `Get Groups`
@@ -295,6 +305,11 @@ Content-Type: application/json
 }
 ```
 
+### .NET client libraries method
+```csharp
+   Task<ResolvedItems<Group>> GetGroupsAsync(string id, int skip = DEFAULT_SKIP, int count = DEFAULT_COUNT, CacheBehavior cache = CacheBehavior.Preserve);
+```
+
 ## `Get Available Field Sets`
 Gets the collection of field sets that are available for use in the data view, and which are not already included in the data view.
 
@@ -382,6 +397,11 @@ HTTP 200 OK
         }
     ]
 }
+```
+
+### .NET client libraries method
+```csharp
+   Task<ResolvedItems<FieldSet>> GetAvailableFieldSetsAsync(string id, CacheBehavior cache = CacheBehavior.Preserve);
 ```
 
 ## `Get Field Mappings`
@@ -485,6 +505,10 @@ HTTP 200 OK
 }
 ```
 
+### .NET client libraries method
+```csharp
+   Task<ResolvedItems<FieldMapping>> GetFieldMappingsAsync(string id, int skip = DEFAULT_SKIP, int count = DEFAULT_COUNT, CacheBehavior cache = CacheBehavior.Preserve);
+```
 
 ## `Get Statistics`
 Gets statistics about the size and shape on how the data view resolved. 
@@ -562,4 +586,9 @@ HTTP 200 OK
         }
     ]
 }
+```
+
+### .NET client libraries method
+```csharp
+   Task<ResolvedItem<Statistics>> GetStatisticsAsync(string id, CacheBehavior cache = CacheBehavior.Preserve);
 ```

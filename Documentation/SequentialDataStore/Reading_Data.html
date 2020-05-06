@@ -100,8 +100,8 @@ and specified start and end indexes.</li>
 </ul>
 <p>All single stream reads are HTTP GET actions. Reading data involves getting events from streams. The base reading URI from a single stream is as follows:</p>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data
-</code></pre><p><strong>Parameters</strong>
-<code>string tenantId</code><br>The tenant identifier</p>
+</code></pre><p><strong>Parameters</strong>  </p>
+<p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string streamId</code><br>The stream identifier</p>
 <h3 id="bulk-reads">Bulk Reads</h3>
@@ -111,8 +111,7 @@ and specified start and end indexes.</li>
 </ul>
 <p>Multi-stream reads can be HTTP GET or POST actions. The base reading URI for reading from multiple streams is as follows:</p>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Bulk/<wbr>Streams/<wbr>Data
-</code></pre><p><strong>Parameters</strong></p>
-<p><code>string tenantId</code><br>The tenant identifier</p>
+</code></pre><p><strong>Parameters</strong><br><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <h3 id="response-format">Response Format</h3>
 <p>Supported response formats include JSON, verbose JSON, and SDS. </p>

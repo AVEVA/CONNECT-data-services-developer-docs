@@ -90,7 +90,7 @@ SdsStream results with the <a class="xref" href="SDS_Streams.html">Stream</a> AP
 <p>Returns the metadata dictionary for the specified stream. </p>
 <p><strong>Request</strong></p>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">     GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Metadata 
-</code></pre><p><strong>Parameters</strong></p>
+</code></pre><h3 id="parameters">Parameters</h3>
 <p><code>string tenantId</code><br>  The tenant identifier  </p>
 <p><code>string namespaceId</code><br>  The namespace identifier  </p>
 <p><code>string streamId</code><br>  The stream identifier  </p>
@@ -114,7 +114,7 @@ SdsStream results with the <a class="xref" href="SDS_Streams.html">Stream</a> AP
 <p>Returns the value for the specified key in the metadata dictionary of the specified stream. </p>
 <p><strong>Request</strong></p>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">     GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Metadata/<wbr>{key} 
-</code></pre><p><strong>Parameters</strong></p>
+</code></pre><h3 id="parameters-1">Parameters</h3>
 <p><code>string tenantId</code><br>  The tenant identifier  </p>
 <p><code>string namespaceId</code><br>  The namespace identifier  </p>
 <p><code>string streamId</code><br>  The stream identifier  </p>
@@ -139,7 +139,7 @@ SdsStream results with the <a class="xref" href="SDS_Streams.html">Stream</a> AP
 Overwrites any existing metadata; does not merge. </p>
 <p><strong>Request</strong></p>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">     PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Metadata 
-</code></pre><p><strong>Parameters</strong></p>
+</code></pre><h3 id="parameters-2">Parameters</h3>
 <p><code>string tenantId</code><br>  The tenant identifier  </p>
 <p><code>string namespaceId</code><br>  The namespace identifier  </p>
 <p><code>string streamId</code><br>  The stream identifier  </p>
@@ -155,7 +155,7 @@ Overwrites any existing metadata; does not merge. </p>
 <a href="http://jsonpatch.com/">JSON Patch format</a>.</p>
 <p><strong>Request</strong></p>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">     PATCH api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Metadata 
-</code></pre><p><strong>Parameters</strong></p>
+</code></pre><h3 id="parameters-3">Parameters</h3>
 <p><code>string tenantId</code><br>  The tenant identifier  </p>
 <p><code>string namespaceId</code><br>  The namespace identifier  </p>
 <p><code>string streamId</code><br>  The stream identifier  </p>
@@ -172,7 +172,7 @@ Overwrites any existing metadata; does not merge. </p>
 <p>Deletes the metadata for the specified stream.  </p>
 <p><strong>Request</strong></p>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">     DELETE api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Metadata 
-</code></pre><p><strong>Parameters</strong></p>
+</code></pre><h3 id="parameters-4">Parameters</h3>
 <p><code>string tenantId</code><br>  The tenant identifier  </p>
 <p><code>string namespaceId</code><br>  The namespace identifier  </p>
 <p><code>string streamId</code><br>  The stream identifier  </p>
@@ -188,7 +188,7 @@ Overwrites any existing metadata; does not merge. </p>
 <p>Returns the tag list for the specified stream. </p>
 <p><strong>Request</strong></p>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">     GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Tags 
-</code></pre><p><strong>Parameters</strong></p>
+</code></pre><h3 id="parameters-5">Parameters</h3>
 <p><code>string tenantId</code><br>  The tenant identifier  </p>
 <p><code>string namespaceId</code><br>  The namespace identifier  </p>
 <p><code>string streamId</code><br>  The stream identifier  </p>
@@ -213,7 +213,7 @@ Overwrites any existing metadata; does not merge. </p>
 Overwrites any existing tags; does not merge. </p>
 <p><strong>Request</strong></p>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">     PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Tags 
-</code></pre><p><strong>Parameters</strong></p>
+</code></pre><h3 id="parameters-6">Parameters</h3>
 <p><code>string tenantId</code><br>  The tenant identifier  </p>
 <p><code>string namespaceId</code><br>  The namespace identifier  </p>
 <p><code>string streamId</code><br>  The stream identifier  </p>
@@ -229,7 +229,7 @@ Overwrites any existing tags; does not merge. </p>
 <p>Deletes the tag list for the specified stream. </p>
 <p><strong>Request</strong></p>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">     DELETE api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Tags 
-</code></pre><p><strong>Parameters</strong></p>
+</code></pre><h3 id="parameters-7">Parameters</h3>
 <p><code>string tenantId</code><br>  The tenant identifier  </p>
 <p><code>string namespaceId</code><br>  The namespace identifier  </p>
 <p><code>string streamId</code><br>  The stream identifier  </p>

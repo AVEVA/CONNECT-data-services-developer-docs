@@ -329,7 +329,7 @@ For more information on stream view properties, see <a class="xref" href="SDS_Vi
 </tr>
 </tbody>
 </table>
-<p><strong>*Notes on Properties field:</strong> The Properties collection contains a list of SdsStreamViewProperty objects. The query will attempt to find a match on the SdsStreamViewProperty&#39;s Id, SourceTypeId, and TargetTypeId fields. The Properties collection of nested views will also be searched. See example below.  </p>
+<p><strong>*Notes on <code>Properties</code> field:</strong> The Properties collection contains a list of SdsStreamViewProperty objects. The query will attempt to find a match on the SdsStreamViewProperty&#39;s Id, SourceTypeId, and TargetTypeId fields. The Properties collection of nested views will also be searched. See example below.  </p>
 <h5 id="example">Example</h5>
 <p>You can search for <code>ComplexView</code> using the <code>Id</code>(&quot;NestedView&quot;), <code>SourceTypeId</code>, and <code>TargetTypeId</code> of <code>NestedView</code> but not its <code>Description</code>(&quot;An example of a nested view&quot;).  </p>
 <pre><code class="lang-json">{ 

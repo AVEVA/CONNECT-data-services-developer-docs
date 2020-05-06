@@ -186,8 +186,8 @@ A SdsTypeCode exists for every supported type.</p>
 <p>Atomic types, such as strings, floats and arrays, are defined entirely by the SdsTypeCode and do not need other fields to define the type.</p>
 <p>Types that require additional definition, such as enums and objects, are identified using a generic 
 SdsTypeCode, such as ByteEnum, Int32Enum, NullableInt32Enum, or Object, plus additional SdsTypeProperty fields.</p>
-<p><strong>Supported Types</strong>
-The following types are supported and defined by the SdsTypeCode:</p>
+<p><strong>Supported Types</strong>  </p>
+<p>The following types are supported and defined by the SdsTypeCode:</p>
 <table>
 <thead>
 <tr>
@@ -597,7 +597,7 @@ in the manner defined by the SdsType&#39;s <code>InterpolationMode</code>.</p>
 For more information on interpolation of events, see <a class="xref" href="Reading_Data.html#interpolation">Interpolation</a>.</p>
 <p><code>Uom</code> is the unit of measure for the SdsTypeProperty. The <code>Uom</code> of the SdsTypeProperty may be specified by the name or the 
 abbreviation. The names and abbreviations of <code>Uoms</code> are case sensitive. </p>
-<p>The <code>InterpolationMode</code> and <code>Uom</code> of the SdsTypeProperty can be overridden on the stream. For more information, see <a class="xref" href="SDS_Streams.html#propertyoverrides">Streams</a>.</p>
+<p>The <code>InterpolationMode</code> and <code>Uom</code> of the SdsTypeProperty can be overridden on the SdsStream. For more information, see <a class="xref" href="SDS_Streams.html#propertyoverrides">Streams</a>.</p>
 <h3 id="supported-units-of-measure">Supported Units of Measure</h3>
 <p>For a list of units of measures that are supported for an SdsTypeProperty, see <a class="xref" href="Units_of_Measure.html#supported-units-of-measure">Units of Measure</a>.</p>
 <h2 id="working-with-sdstypes-using-net">Working with SdsTypes using .NET</h2>
@@ -1393,9 +1393,9 @@ defines the available functions. See <a href="#types">Types</a> for general type
 <p><code>string typeId</code><br>The type identifier</p>
 <h4 id="response">Response</h4>
 <p>The response includes a status code and a response body.</p>
-<h5 id="response-body">Response body</h5>
+<h4 id="response-body">Response body</h4>
 <p>The requested SdsType</p>
-<h5 id="example-response-body">Example response body</h5>
+<h4 id="example-response-body">Example response body</h4>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -1461,9 +1461,9 @@ Content-Type: application/json
 <p><code>string typeId</code><br>The type identifier</p>
 <h4 id="response-1">Response</h4>
 <p>The response includes a status code and a response body.</p>
-<h5 id="response-body-1">Response body</h5>
+<h4 id="response-body-1">Response body</h4>
 <p>A dictionary mapping object name to number of references.</p>
-<h5 id="example-response-body-1">Example response body</h5>
+<h4 id="example-response-body-1">Example response body</h4>
 <pre><code class="lang-json">    {
         &quot;SdsStream&quot;: 3,
         &quot;SdsStreamView&quot;: 2,
@@ -1493,9 +1493,9 @@ Additionally, a value can be provided along with the field name to identify whet
 If no value is specified, there is no sorting of results.</p>
 <h4 id="response-2">Response</h4>
 <p>The response includes a status code and a response body.</p>
-<h5 id="response-body-2">Response body</h5>
+<h4 id="response-body-2">Response body</h4>
 <p>A collection of zero or more SdsTypes</p>
-<h5 id="example-response-body-2">Example response body</h5>
+<h4 id="example-response-body-2">Example response body</h4>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -1627,9 +1627,9 @@ redirect with the authorization header, you should disable automatic redirect an
 }
 </code></pre><h4 id="response-3">Response</h4>
 <p>The response includes a status code and a response body.</p>
-<h5 id="response-body-3">Response body</h5>
+<h4 id="response-body-3">Response body</h4>
 <p>The request content is the serialized SdsType. If you are not using the SDS Client Libraries, it is recommended that you use JSON.</p>
-<h5 id="example-response-body-3">Example response body</h5>
+<h4 id="example-response-body-3">Example response body</h4>
 <pre><code class="lang-json">HTTP/1.1 201
 Content-Type: application/json
 
@@ -1789,7 +1789,7 @@ in the request body, a Conflict error response is returned and the client librar
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <h4 id="response-5">Response</h4>
 <p>The response includes a status code and a response body.</p>
-<h5 id="response-body-4">Response body</h5>
+<h4 id="response-body-4">Response body</h4>
 <p>The default ACL for Types</p>
 <h4 id="net-client-libraries-method-5">.NET client libraries method</h4>
 <pre><code class="lang-csharp">   Task&lt;AccessControlList&gt; GetTypesAccessControlListAsync();
@@ -1801,7 +1801,7 @@ in the request body, a Conflict error response is returned and the client librar
 </code></pre><h5 id="parameters-6">Parameters</h5>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
-<h5 id="request-body-1">Request Body</h5>
+<h4 id="request-body-1">Request Body</h4>
 <p>Serialized ACL</p>
 <h4 id="response-6">Response</h4>
 <p>The response includes a status code.</p>
@@ -1832,7 +1832,7 @@ in the request body, a Conflict error response is returned and the client librar
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string typeId</code><br>The type identifier  </p>
-<h5 id="request-body-2">Request Body</h5>
+<h4 id="request-body-2">Request Body</h4>
 <p>Serialized ACL</p>
 <h4 id="response-8">Response</h4>
 <p>The response includes a status code.</p>
@@ -1849,7 +1849,7 @@ in the request body, a Conflict error response is returned and the client librar
 <p><code>string typeId</code><br>The type identifier  </p>
 <h4 id="response-9">Response</h4>
 <p>The response includes a status code and a response body.</p>
-<h5 id="response-body-6">Response body</h5>
+<h4 id="response-body-6">Response body</h4>
 <p>The Owner for the specified type </p>
 <h4 id="net-client-libraries-method-9">.NET client libraries method</h4>
 <pre><code class="lang-csharp">   Task&lt;Trustee&gt; GetTypeOwnerAsync(string typeId);
@@ -1863,7 +1863,7 @@ in the request body, a Conflict error response is returned and the client librar
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string typeId</code><br>The type identifier  </p>
-<h5 id="request-body-3">Request Body</h5>
+<h4 id="request-body-3">Request Body</h4>
 <p>Serialized Owner</p>
 <h4 id="response-10">Response</h4>
 <p>The response includes a status code.</p>
@@ -1881,9 +1881,9 @@ more information on Access Rights, see <a class="xref" href="../Access_Control.h
 <p><code>string typeId</code><br>The type identifier  </p>
 <h4 id="response-11">Response</h4>
 <p>The response includes a status code and a response body.</p>
-<h5 id="response-body-7">Response body</h5>
+<h4 id="response-body-7">Response body</h4>
 <p>The Access Rights of the specified type for the requesting identity.</p>
-<h5 id="example-response-body-4">Example response body</h5>
+<h4 id="example-response-body-4">Example response body</h4>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 

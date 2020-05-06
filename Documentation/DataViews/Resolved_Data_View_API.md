@@ -106,7 +106,7 @@ Content-Type: application/json
 }
 ```
 
-**.NET client libraries method**
+### .NET client libraries method
 ```csharp
    Task<ResolvedItems<DataItem>> GetDataItemsAsync(string id, string queryId, int skip = DEFAULT_SKIP, int count = DEFAULT_COUNT, CacheBehavior cache = CacheBehavior.Preserve);
 ```
@@ -198,7 +198,7 @@ Content-Type: application/json
 }
 ```
 
-**.NET client libraries method**
+### .NET client libraries method
 ```csharp
    Task<ResolvedItems<DataItem>> GetIneligibleDataItemsAsync(string id, string queryId, int skip = DEFAULT_SKIP, int count = DEFAULT_COUNT, CacheBehavior cache = CacheBehavior.Preserve);
 ```
@@ -305,7 +305,7 @@ Content-Type: application/json
 }
 ```
 
-**.NET client libraries method**
+### .NET client libraries method
 ```csharp
    Task<ResolvedItems<Group>> GetGroupsAsync(string id, int skip = DEFAULT_SKIP, int count = DEFAULT_COUNT, CacheBehavior cache = CacheBehavior.Preserve);
 ```
@@ -399,7 +399,7 @@ HTTP 200 OK
 }
 ```
 
-**.NET client libraries method**
+### .NET client libraries method
 ```csharp
    Task<ResolvedItems<FieldSet>> GetAvailableFieldSetsAsync(string id, CacheBehavior cache = CacheBehavior.Preserve);
 ```
@@ -505,7 +505,7 @@ HTTP 200 OK
 }
 ```
 
-**.NET client libraries method**
+### .NET client libraries method
 ```csharp
    Task<ResolvedItems<FieldMapping>> GetFieldMappingsAsync(string id, int skip = DEFAULT_SKIP, int count = DEFAULT_COUNT, CacheBehavior cache = CacheBehavior.Preserve);
 ```
@@ -559,7 +559,7 @@ HTTP 200 OK
 }
 ```
 
-**.NET client libraries method**
+### .NET client libraries method
 ```csharp
    Task<ResolvedItem<Statistics>> GetStatisticsAsync(string id, CacheBehavior cache = CacheBehavior.Preserve);
 ```

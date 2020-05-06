@@ -61,7 +61,7 @@ Content-Type: application/json
 }
 ```
 
-**.NET client libraries method**
+### .NET client libraries method
 ```csharp
    Task<DataView> GetDataViewAsync(string id);
 ```
@@ -120,7 +120,7 @@ Content-Type: application/json
 ]
 ```
 
-**.NET client libraries method**
+### .NET client libraries method
 ```csharp
    Task<IEnumerable<DataView>> GetDataViewsAsync(int skip = DEFAULT_SKIP, int count = DEFAULT_COUNT);
 ```
@@ -182,7 +182,7 @@ Content-Type: application/json
 }
 ```
 
-**.NET client libraries method**
+### .NET client libraries method
 ```csharp
    Task<IEnumerable<DataView>> GetDataViewsAsync(int skip = DEFAULT_SKIP, int count = DEFAULT_COUNT);
 ```
@@ -252,7 +252,7 @@ Content-Type: application/json
 }
 ```
 
-**.NET client libraries method**
+### .NET client libraries method
 ```csharp
    Task<DataView> GetOrCreateDataViewAsync(DataView dataView);
 ```
@@ -303,7 +303,7 @@ The response includes a status code and, in some cases, a body.
 | 403 Forbidden | error | You are not authorized for this operation |
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
 
-**.NET client libraries method**
+### .NET client libraries method
 ```csharp
    Task<DataView> CreateOrUpdateDataViewAsync(DataView dataView);
 ```
@@ -336,7 +336,7 @@ The response includes a status code and, in some cases, a body.
 | 404 Not Found | error | The specified data view identifier is not found |
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
 
-**.NET client libraries method**
+### .NET client libraries method
 ```csharp
    Task DeleteDataViewAsync(string id);
 ```

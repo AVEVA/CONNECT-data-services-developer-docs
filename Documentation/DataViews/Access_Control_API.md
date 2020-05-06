@@ -64,7 +64,7 @@ HTTP 200 OK
 }
 ```
 
-**.NET client libraries method**
+### .NET client libraries method
 ```csharp
    Task<AccessControlList> GetAccessControlListAsync();
 ```
@@ -129,7 +129,7 @@ The response includes a status code and, in some cases, a body.
 | 403 Forbidden | error | You are not authorized to update the data views collection's default access control list |
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
 
-**.NET client libraries method**
+### .NET client libraries method
 ```csharp
    Task UpdateAccessControlListAsync(AccessControlList acl);
 ```
@@ -195,7 +195,7 @@ HTTP 200 OK
 }
 ```
 
-**.NET client libraries method**
+### .NET client libraries method
 ```csharp
    Task<AccessControlList> GetDataViewAccessControlAsync(string id);
 ```
@@ -264,7 +264,7 @@ The response includes a status code and, in some cases, a body.
 | 404 Not Found | error | The requested data view was not found
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
 
-**.NET client libraries method**
+### .NET client libraries method
 ```csharp
    Task UpdateDataViewAccessControlAsync(string id, AccessControlList acl);
 ```
@@ -308,7 +308,7 @@ HTTP 200 OK
 ]
 ```
 
-**.NET client libraries method**
+### .NET client libraries method
 ```csharp
    Task<string[]> GetDataViewAccessRightsAsync(string id);
 ```
@@ -352,7 +352,7 @@ Content-Type: application/json
 }
 ```
 
-**.NET client libraries method**
+### .NET client libraries method
 ```csharp
    Task<Trustee> GetDataViewOwnerAsync(string id);
 ```
@@ -397,7 +397,7 @@ The response includes a status code and, in some cases, a body.
 | 404 Not Found | error | The requested data view was not found
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
 
-**.NET client libraries method**
+### .NET client libraries method
 ```csharp
    Task UpdateDataViewOwnerAsync(string id, Trustee owner);
 ```

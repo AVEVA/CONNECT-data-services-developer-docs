@@ -146,6 +146,8 @@ Content-Type: application/json
   &quot;IndexField&quot;: { &quot;Label&quot;: &quot;Timestamp&quot; },
   &quot;IndexTypeCode&quot;: &quot;DateTime&quot;
 }
+</code></pre><h3 id="net-client-libraries-method">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task&lt;DataView&gt; GetDataViewAsync(string id);
 </code></pre><h2 id="get-data-views"><code>Get Data Views</code></h2>
 <p>Returns a list of data views.</p>
 <h3 id="request-1">Request</h3>
@@ -197,6 +199,14 @@ Content-Type: application/json
 <td>Total-Count</td>
 <td>The total count of data views visible to the current user</td>
 </tr>
+<tr>
+<td>FirstPage</td>
+<td>Hyperlink to the first page of results</td>
+</tr>
+<tr>
+<td>NextPage</td>
+<td>Hyperlink to the next page of results, if the results span into an additional page. Absence of this header indicates that there are no additional pages to be retrieved.</td>
+</tr>
 </tbody>
 </table>
 <h4 id="example-response-body-1">Example response body</h4>
@@ -212,6 +222,8 @@ Content-Type: application/json
     ... etc.
   }
 ]
+</code></pre><h3 id="net-client-libraries-method-1">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task&lt;IEnumerable&lt;DataView&gt;&gt; GetDataViewsAsync(int skip = DEFAULT_SKIP, int count = DEFAULT_COUNT);
 </code></pre><h2 id="create-data-view"><code>Create Data View</code></h2>
 <p>Create a new data view with a system-generated identifier.</p>
 <h3 id="request-2">Request</h3>
@@ -279,6 +291,8 @@ Content-Type: application/json
   &quot;IndexField&quot;: { &quot;Label&quot;: &quot;Timestamp&quot; },
   &quot;IndexTypeCode&quot;: &quot;DateTime&quot;
 }
+</code></pre><h3 id="net-client-libraries-method-2">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task&lt;IEnumerable&lt;DataView&gt;&gt; GetDataViewsAsync(int skip = DEFAULT_SKIP, int count = DEFAULT_COUNT);
 </code></pre><h2 id="get-or-create-data-view"><code>Get or Create Data View</code></h2>
 <p>This call creates the specified data view. If a data view with the same id already exists, the existing data view is compared with the specified data view. If they are identical, a redirect (<code>302 Found</code>) is returned with the <code>Location</code> response header indicating the URL where the stream may be retrieved using a Get function. If the data views do not match, the request fails with <code>409 Conflict</code>.</p>
 <h3 id="request-3">Request</h3>
@@ -358,6 +372,8 @@ Content-Type: application/json
   &quot;IndexField&quot;: { &quot;Label&quot;: &quot;Timestamp&quot; },
   &quot;IndexTypeCode&quot;: &quot;DateTime&quot;
 }
+</code></pre><h3 id="net-client-libraries-method-3">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task&lt;DataView&gt; GetOrCreateDataViewAsync(DataView dataView);
 </code></pre><h2 id="create-or-update-data-view"><code>Create or Update Data View</code></h2>
 <p>If a data view with the same id already exists, it is updated to the specified value. Otherwise, a new data view is created.</p>
 <h3 id="request-4">Request</h3>
@@ -418,7 +434,9 @@ Content-Type: application/json
 </tr>
 </tbody>
 </table>
-<h2 id="delete-data-view"><code>Delete Data View</code></h2>
+<h3 id="net-client-libraries-method-4">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task&lt;DataView&gt; CreateOrUpdateDataViewAsync(DataView dataView);
+</code></pre><h2 id="delete-data-view"><code>Delete Data View</code></h2>
 <p>Delete the data view with the specified id.</p>
 <h3 id="request-5">Request</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">DELETE api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}
@@ -464,7 +482,9 @@ Content-Type: application/json
 </tr>
 </tbody>
 </table>
-</article>
+<h3 id="net-client-libraries-method-5">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task DeleteDataViewAsync(string id);
+</code></pre></article>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">

@@ -145,6 +145,8 @@
     }
   ]
 }
+</code></pre><h3 id="net-client-libraries-method">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task&lt;AccessControlList&gt; GetAccessControlListAsync();
 </code></pre><h2 id="update-data-views-access-control-list"><code>Update Data Views Access Control List</code></h2>
 <p>Update the default <a class="xref" href="../Access_Control.html#access-control-lists"><code>AccessControlList</code></a> for the DataViews collection.</p>
 <h3 id="request-1">Request</h3>
@@ -217,7 +219,9 @@
 </tr>
 </tbody>
 </table>
-<h2 id="get-data-view-access-control-list"><code>Get Data View Access Control List</code></h2>
+<h3 id="net-client-libraries-method-1">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task UpdateAccessControlListAsync(AccessControlList acl);
+</code></pre><h2 id="get-data-view-access-control-list"><code>Get Data View Access Control List</code></h2>
 <p>Get the <a class="xref" href="../Access_Control.html#access-control-lists"><code>AccessControlList</code></a> of the specified data view.</p>
 <h3 id="request-2">Request</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>AccessControl
@@ -289,6 +293,8 @@
     }
   ]
 }
+</code></pre><h3 id="net-client-libraries-method-2">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task&lt;AccessControlList&gt; GetDataViewAccessControlAsync(string id);
 </code></pre><h2 id="update-data-view-access-control-list"><code>Update Data View Access Control List</code></h2>
 <p>Update the <a class="xref" href="../Access_Control.html#access-control-lists"><code>AccessControlList</code></a> of the specified data view.</p>
 <h3 id="request-3">Request</h3>
@@ -367,7 +373,9 @@
 </tr>
 </tbody>
 </table>
-<h2 id="get-data-view-access-rights"><code>Get Data View Access Rights</code></h2>
+<h3 id="net-client-libraries-method-3">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task UpdateDataViewAccessControlAsync(string id, AccessControlList acl);
+</code></pre><h2 id="get-data-view-access-rights"><code>Get Data View Access Rights</code></h2>
 <p>Get the calling user or client&#39;s access rights to the requested data view</p>
 <h3 id="request-4">Request</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>AccessRights
@@ -417,6 +425,8 @@
   &quot;ManageAccessControl&quot;,
   &quot;All&quot;
 ]
+</code></pre><h3 id="net-client-libraries-method-4">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task&lt;string[]&gt; GetDataViewAccessRightsAsync(string id);
 </code></pre><h2 id="get-data-view-owner"><code>Get Data View Owner</code></h2>
 <p>Get the owner <a class="xref" href="../Access_Control.html#owner"><code>Trustee</code></a> of the specified data view.</p>
 <h3 id="request-5">Request</h3>
@@ -466,6 +476,8 @@ Content-Type: application/json
     &quot;TenantId&quot;: &quot;55555555-5555-5555-5555-555555555555&quot;,
     &quot;ObjectId&quot;: &quot;44444444-4444-4444-4444-444444444444&quot;
 }
+</code></pre><h3 id="net-client-libraries-method-5">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task&lt;Trustee&gt; GetDataViewOwnerAsync(string id);
 </code></pre><h2 id="update-data-view-owner"><code>Update Data View Owner</code></h2>
 <p>Update the owner <a class="xref" href="../Access_Control.html#owner"><code>Trustee</code></a> of the specified data view.</p>
 <h3 id="request-6">Request</h3>
@@ -520,7 +532,9 @@ Content-Type: application/json
 </tr>
 </tbody>
 </table>
-</article>
+<h3 id="net-client-libraries-method-6">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task UpdateDataViewOwnerAsync(string id, Trustee owner);
+</code></pre></article>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">

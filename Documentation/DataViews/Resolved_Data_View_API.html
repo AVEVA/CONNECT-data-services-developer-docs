@@ -187,6 +187,8 @@ Content-Type: application/json
     }
   ]
 }
+</code></pre><h3 id="net-client-libraries-method">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task&lt;ResolvedItems&lt;DataItem&gt;&gt; GetDataItemsAsync(string id, string queryId, int skip = DEFAULT_SKIP, int count = DEFAULT_COUNT, CacheBehavior cache = CacheBehavior.Preserve);
 </code></pre><h2 id="get-ineligible-data-items-by-query"><code>Get Ineligible Data Items by Query</code></h2>
 <p>Gets the paged collection of data items that are the results of an individual query, but which are not eligible for use in the current data view. A common reason for ineligibility is that the item&#39;s index property is of a different type than the data view expects. A data view has a collection of zero or more queries. Each query has an identifier. Those identifiers are used here as part of the request path.</p>
 <h3 id="request-1">Request</h3>
@@ -283,6 +285,8 @@ Content-Type: application/json
     }
   ]
 }
+</code></pre><h3 id="net-client-libraries-method-1">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task&lt;ResolvedItems&lt;DataItem&gt;&gt; GetIneligibleDataItemsAsync(string id, string queryId, int skip = DEFAULT_SKIP, int count = DEFAULT_COUNT, CacheBehavior cache = CacheBehavior.Preserve);
 </code></pre><h2 id="get-groups"><code>Get Groups</code></h2>
 <p>Gets the collection of <code>Group</code>s that resolved for a data view.</p>
 <h3 id="request-2">Request</h3>
@@ -397,6 +401,8 @@ Content-Type: application/json
     }
   ]
 }
+</code></pre><h3 id="net-client-libraries-method-2">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task&lt;ResolvedItems&lt;Group&gt;&gt; GetGroupsAsync(string id, int skip = DEFAULT_SKIP, int count = DEFAULT_COUNT, CacheBehavior cache = CacheBehavior.Preserve);
 </code></pre><h2 id="get-available-field-sets"><code>Get Available Field Sets</code></h2>
 <p>Gets the collection of field sets that are available for use in the data view, and which are not already included in the data view.</p>
 <h3 id="request-3">Request</h3>
@@ -490,6 +496,8 @@ Content-Type: application/json
         }
     ]
 }
+</code></pre><h3 id="net-client-libraries-method-3">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task&lt;ResolvedItems&lt;FieldSet&gt;&gt; GetAvailableFieldSetsAsync(string id, CacheBehavior cache = CacheBehavior.Preserve);
 </code></pre><h2 id="get-field-mappings"><code>Get Field Mappings</code></h2>
 <p>Gets the collection of field mappings resolved for the data view. These show the exact data behind every field, for each data item, for each group.</p>
 <h3 id="request-4">Request</h3>
@@ -606,6 +614,8 @@ Content-Type: application/json
       },
     ]
 }
+</code></pre><h3 id="net-client-libraries-method-4">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task&lt;ResolvedItems&lt;FieldMapping&gt;&gt; GetFieldMappingsAsync(string id, int skip = DEFAULT_SKIP, int count = DEFAULT_COUNT, CacheBehavior cache = CacheBehavior.Preserve);
 </code></pre><h2 id="get-statistics"><code>Get Statistics</code></h2>
 <p>Gets statistics about the size and shape on how the data view resolved. </p>
 <h3 id="request-5">Request</h3>
@@ -686,6 +696,8 @@ Content-Type: application/json
         }
     ]
 }
+</code></pre><h3 id="net-client-libraries-method-5">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task&lt;ResolvedItem&lt;Statistics&gt;&gt; GetStatisticsAsync(string id, CacheBehavior cache = CacheBehavior.Preserve);
 </code></pre></article>
           </div>
           

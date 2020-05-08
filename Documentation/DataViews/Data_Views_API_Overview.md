@@ -16,13 +16,13 @@ Resources for creating, reading, updating, and deleting `/DataViews`
 For each `/DataViews/{dataViewId}`, these resources show how the data view `./Resolved/` for your user context
 
 ## [Resolved Data View Preview API](xref:ResolvedDataViewPreviewAPI)
-For each provided `/DataView` request body, these resources show how the data view `./Resolved/` for your user context
+For each `/DataView` provided in request body, these resources show how the data view `./Resolved/` for your user context
 
 ## [Data API](xref:DataViewsDataAPI)
 For each `/DataViews/{dataViewId}`, resources for getting the `./Data/` for a particular time range
 
 ## [Preview Data API](xref:DataViewsPreviewDataAPI)
-For each provided `/DataView` request body, resources for getting the preview `./Data/` for a particular time range
+For each `/DataView` provided in request body, resources for getting the preview `./Data/` for a particular time range
 
 ## [Access Control API](xref:DataViewsAccessControlAPI)
 For the `/DataViews` collection, resources for reading and updating the default `/AccessControl`.  

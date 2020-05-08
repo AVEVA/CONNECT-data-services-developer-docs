@@ -84,8 +84,8 @@ the APIs used to write SdsStream data.</p>
 <code>SdsService.GetDataService()</code> helper, defines the available functions.</p>
 <p>All writes rely on a stream’s key or primary index. The primary index determines the order of events in the stream. Secondary indexes are updated, but they do not contribute 
 to the request. All references to indexes are to the primary index.</p>
-<p><strong>*Notes:</strong> Use the ISO 8601 representation for DateTime in SDS, <code>2020-02-20T08:00:00.000Z</code> for February 20, 2020, for example.
-SDS returns timestamps in UTC if the timestamp is of property <code>DateTime</code> and in local time zone if it is of <code>DateTimeOffset</code>. </p>
+<p><strong>*Notes:</strong> Use the ISO 8601 representation of dates and times in SDS, <code>2020-02-20T08:30:00-08:00</code> for February 20, 2020 at 8:30 AM PST, for example.
+SDS returns timestamps in UTC if the timestamp is of property <code>DateTime</code> and in local time if it is of <code>DateTimeOffset</code>. </p>
 <h3 id="single-stream-writes">Single Stream Writes</h3>
 <p>The following support writing multiple values:</p>
 <ul>

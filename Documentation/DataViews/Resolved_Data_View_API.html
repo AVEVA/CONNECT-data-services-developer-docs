@@ -569,22 +569,16 @@ Content-Type: application/json
       {
         &quot;Id&quot;: &quot;Timestamp&quot;,
         &quot;Label&quot;: &quot;Timestamp&quot;,
-        &quot;FieldSetIndex&quot;: 0,
-        &quot;FieldIndex&quot;: 0,
+        &quot;FieldKind&quot;: &quot;IndexField&quot;,
+        &quot;TypeCode&quot;: &quot;DateTime&quot;,
         &quot;DataMappings&quot;: [
           {
-            &quot;TargetId&quot;: &quot;&quot;,
-            &quot;TargetFieldKey&quot;: &quot;&quot;,
             &quot;TypeCode&quot;: &quot;DateTime&quot;
           },
           {
-            &quot;TargetId&quot;: &quot;&quot;,
-            &quot;TargetFieldKey&quot;: &quot;&quot;,
             &quot;TypeCode&quot;: &quot;DateTime&quot;
           },
           {
-            &quot;TargetId&quot;: &quot;&quot;,
-            &quot;TargetFieldKey&quot;: &quot;&quot;,
             &quot;TypeCode&quot;: &quot;DateTime&quot;
           }
         ]
@@ -592,23 +586,28 @@ Content-Type: application/json
       {
         &quot;Id&quot;: &quot;Temperature&quot;,
         &quot;Label&quot;: &quot;Temperature&quot;,
-        &quot;FieldSetIndex&quot;: 1,
-        &quot;FieldIndex&quot;: 0,
+        &quot;TypeCode&quot;: &quot;Double&quot;,
         &quot;DataMappings&quot;: [
           {
             &quot;TargetId&quot;: &quot;WS_BILT&quot;,
             &quot;TargetFieldKey&quot;: &quot;Temperature&quot;,
-            &quot;TypeCode&quot;: &quot;Double&quot;
+            &quot;TypeCode&quot;: &quot;Double&quot;,
+            &quot;FieldSetIndex&quot;: 1,
+            &quot;FieldIndex&quot;: 0
           },
           {
             &quot;TargetId&quot;: &quot;WS_ROSE&quot;,
             &quot;TargetFieldKey&quot;: &quot;Temperature&quot;,
-            &quot;TypeCode&quot;: &quot;Double&quot;
+            &quot;TypeCode&quot;: &quot;Double&quot;,
+            &quot;FieldSetIndex&quot;: 1,
+            &quot;FieldIndex&quot;: 0
           },
           {
             &quot;TargetId&quot;: &quot;WS_WINT&quot;,
             &quot;TargetFieldKey&quot;: &quot;AmbientTemperature&quot;,
-            &quot;TypeCode&quot;: &quot;Double&quot;
+            &quot;TypeCode&quot;: &quot;Double&quot;,
+            &quot;FieldSetIndex&quot;: 1,
+            &quot;FieldIndex&quot;: 0
           }
         ]
       },
@@ -673,12 +672,14 @@ Content-Type: application/json
             &quot;DataFields&quot;: [
                 {
                     &quot;FieldMappingCount&quot;: 3,
-                    &quot;EmptyFieldMappingCount&quot;: 0,
+                    &quot;DataMappingCount&quot;: 6,
+                    &quot;EmptyDataMappingCount&quot;: 0,
                     &quot;UnmappedGroupCount&quot;: 0
                 },
                 {
                     &quot;FieldMappingCount&quot;: 3,
-                    &quot;EmptyFieldMappingCount&quot;: 1,
+                    &quot;DataMappingCount&quot;: 6,
+                    &quot;EmptyDataMappingCount&quot;: 2,
                     &quot;UnmappedGroupCount&quot;: 1
                 }
             ]
@@ -689,7 +690,8 @@ Content-Type: application/json
             &quot;DataFields&quot;: [
                 {
                     &quot;FieldMappingCount&quot;: 2,
-                    &quot;EmptyFieldMappingCount&quot;: 0,
+                    &quot;DataMappingCount&quot;: 4,
+                    &quot;EmptyDataMappingCount&quot;: 2,
                     &quot;UnmappedGroupCount&quot;: 1
                 }
             ]

@@ -309,17 +309,12 @@ See the <a class="xref" href="Resolved_Data_View_API.html">Resolved Data View AP
 <tr>
 <td>FieldKind</td>
 <td>FieldKind enumeration</td>
-<td>Specifies if the mapping is for an index, grouping or data field</td>
+<td>Specifies if the mapping is for an index, grouping, data, or field id field</td>
 </tr>
 <tr>
-<td>FieldSetIndex</td>
-<td>Nullable<int></int></td>
-<td>The position of the corresponding field set within the data view</td>
-</tr>
-<tr>
-<td>FieldIndex</td>
-<td>Nullable<int></int></td>
-<td>The position of the corresponding field within its field set</td>
+<td>TypeCode</td>
+<td>SdsTypeCode</td>
+<td>The primary data type of the mapping</td>
 </tr>
 <tr>
 <td>DataMappings</td>
@@ -350,6 +345,10 @@ See the <a class="xref" href="Resolved_Data_View_API.html">Resolved Data View AP
 <td>DataField</td>
 <td>Maps to a data field.</td>
 </tr>
+<tr>
+<td>FieldId</td>
+<td>Maps to a field id field for a narrow shape data view.</td>
+</tr>
 </tbody>
 </table>
 <h3 id="datamapping">DataMapping</h3>
@@ -377,6 +376,16 @@ See the <a class="xref" href="Resolved_Data_View_API.html">Resolved Data View AP
 <td>TypeCode</td>
 <td>SdsTypeCode</td>
 <td>The value type</td>
+</tr>
+<tr>
+<td>FieldSetIndex</td>
+<td>Nullable<int></int></td>
+<td>The position of the corresponding field set within the data view</td>
+</tr>
+<tr>
+<td>FieldIndex</td>
+<td>Nullable<int></int></td>
+<td>The position of the corresponding field within its field set</td>
 </tr>
 </tbody>
 </table>
@@ -458,9 +467,14 @@ See the <a class="xref" href="Resolved_Data_View_API.html">Resolved Data View AP
 <td>The total count of field mappings associated with the data field</td>
 </tr>
 <tr>
-<td>EmptyFieldMappingCount</td>
+<td>DataMappingCount</td>
 <td>int</td>
-<td>The total count of field mappings associated with the data field that do not map to any data</td>
+<td>The total count of data mappings associated with the data field</td>
+</tr>
+<tr>
+<td>EmptyDataMappingCount</td>
+<td>int</td>
+<td>The total count of data mappings associated with the data field that do not map to any data</td>
 </tr>
 <tr>
 <td>UnmappedGroupCount</td>

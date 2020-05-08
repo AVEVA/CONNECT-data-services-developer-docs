@@ -186,7 +186,7 @@ Properties.</p>
 <p>Only the primary index (or key) supports compound indexes.</p>
 <p>You can specify a maximum of three Properties to define a compound index.</p>
 <p>The SDS REST API methods that use tuples were created to assist you when using compound indexes.</p>
-<h2 id="indexes-at-work">Indexes at work</h2>
+<h2 id="work-with-indexes">Work with indexes</h2>
 <h3 id="indexes-in-net-framework">Indexes in .NET framework</h3>
 <h4 id="simple-indexes">Simple Indexes</h4>
 <p>When working in .NET, use the SdsTypeBuilder together with either the <code>OSIsoft.Sds.SdsMemberAttribute</code> or the
@@ -217,8 +217,8 @@ and query as follows.</p>
   client.GetWindowValuesAsync&lt;Simple&gt;(simpleStream.Id,
   &quot;2010-01-01T08:00:00.000Z&quot;,&quot;2010-02-01T08:00:00.000Z&quot;);
 </code></pre><p>More information about querying data can be found in <a class="xref" href="Reading_Data.html">Reading data</a>.</p>
-<p><strong>Secondary Indexes</strong></p>
-<p>Secondary indexes are defined at the SdsStream. To add indexes to an SdsStream, you add them to the SdsStream’s Indexes field.</p>
+<h4 id="secondary-indexes">Secondary indexes</h4>
+<p>Secondary indexes are defined at the SdsStream. To add indexes to an SdsStream, you add them to the SdsStream’s <code>Indexes</code> field.</p>
 <p>For example, to add a second index on Measurement, use the following code:</p>
 <pre><code>  SdsStreamIndex measurementIndex = new SdsStreamIndex()
   {
@@ -658,13 +658,13 @@ samples. Samples in other languages can be found <a href="https://github.com/osi
       &quot;SdsTypeCode&quot;: SdsObjects.SdsTypeCodeMap.DateTime
     })
   });
-</code></pre><p>Note that the time.IsKey field is set to true.</p>
+</code></pre><p>Note that the <code>time.IsKey</code> field is set to true.</p>
 <p>To read data using the key, you define a start index and an end index. For DateTime, use 
 ISO 8601 representation of dates and times. To query for a window of values between January 1, 
 2010 and February 1, 2010, you would define indexes as “2010-01-01T08:00:00.000Z” and 
 “2010-02-01T08:00:00.000Z”, respectively.</p>
 <p>Additional information can be found in <a class="xref" href="Reading_Data.html">Reading data</a>.</p>
-<p><strong>Secondary Indexes</strong></p>
+<h4 id="simple-indexes-2">Simple Indexes</h4>
 <p>Secondary Indexes are defined at the SdsStream. To create an SdsStream 
 using the Simple class and add a Secondary index on the Measurement, 
 you use the previously defined SdsType. Then you create a SdsStreamIndex 

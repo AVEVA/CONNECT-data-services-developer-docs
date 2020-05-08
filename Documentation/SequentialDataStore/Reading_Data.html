@@ -127,8 +127,8 @@ type as a generic argument. Additional details about working with indexes can be
 whether the result is an error, no event, interpolated event, or extrapolated event. The combination of 
 the type of the index and the interpolation and extrapolation modes of the SdsType and the SdsStream 
 determine the read characteristics.</p>
-<p><strong>*Notes:</strong> Use the ISO 8601 representation for DateTime in SDS, <code>2020-02-20T08:00:00.000Z</code> for February 20, 2020, for example.
-SDS returns timestamps in UTC if the timestamp is of property <code>DateTime</code> and in local time zone if it is of <code>DateTimeOffset</code>. </p>
+<p><strong>*Notes:</strong> Use the ISO 8601 representation of dates and times in SDS, <code>2020-02-20T08:30:00-08:00</code> for February 20, 2020 at 8:30 AM PST, for example.
+SDS returns timestamps in UTC if the timestamp is of property <code>DateTime</code> and in local time if it is of <code>DateTimeOffset</code>. </p>
 <h3 id="interpolation">Interpolation</h3>
 <p>Interpolation determines how a stream behaves when asked to return an event at an index between 
 two existing events. InterpolationMode determines how the returned event is constructed. SDS provides 

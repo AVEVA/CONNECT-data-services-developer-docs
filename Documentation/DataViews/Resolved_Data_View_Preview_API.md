@@ -5,7 +5,7 @@ uid: ResolvedDataViewPreviewAPI
 # Resolved Data View Preview API
 
 This portion of the overall [data views API](xref:DataViewsAPIOverview) is the resources that resolve per-user for an input data view. 
-The preview API require a data view to be passed in the request body for each request, which provides the user with a flexibility to change the data view without saving/updating it.
+The preview APIs require a data view to be passed in the request body for each request, which provides the user with a flexibility to change the data view on the fly without saving/updating it.
 
 ## `Get Data Items by Query`
 Gets the paged collection of data items that are the results of an individual query, and which are eligible for use in the provided data view. A data view has a collection of zero or more queries. Each query has an identifier. Those identifiers are used here as part of the request path.
@@ -44,7 +44,7 @@ The response includes a status code and, in most cases, a body.
 |--|--|--|
 | 200 OK | `ResolvedItems<DataItem>` | An object with a "TimeOfResolution" and a collection of "Items", the `DataItem`s that resolved. |
 | 403 Forbidden | error | You are not authorized for this operation
-| 404 Not Found | error | The data view or query does not exist
+| 404 Not Found | error | The query does not exist
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
 
 #### Response headers
@@ -144,7 +144,7 @@ The response includes a status code and, in most cases, a body.
 |--|--|--|
 | 200 OK | `ResolvedItems<DataItem>` | An object with a "TimeOfResolution" and a collection of "Items", the `DataItem`s that resolved. |
 | 403 Forbidden | error | You are not authorized for this operation
-| 404 Not Found | error | The data view or query does not exist
+| 404 Not Found | error | The query does not exist
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
 
 #### Response headers
@@ -228,7 +228,6 @@ The response includes a status code and, in most cases, a body.
 |--|--|--|
 | 200 OK | `ResolvedItems<Group>` | An object with a "TimeOfResolution" and a collection of "Items", the `Groups`s that resolved. |
 | 403 Forbidden | error | You are not authorized for this operation
-| 404 Not Found | error | The data view does not exist
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
 
 #### Response headers
@@ -323,7 +322,6 @@ The response includes a status code and, in most cases, a body.
 |--|--|--|
 | 200 OK | `ResolvedItems<FieldSet>` | An object with a "TimeOfResolution" and a collection of "Items", the `FieldSets`s that resolved and which are still available |
 | 403 Forbidden | error | You are not authorized for this operation
-| 404 Not Found | error | The data view does not exist
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
 
 #### Example response body
@@ -413,7 +411,6 @@ The response includes a status code and, in most cases, a body.
 |--|--|--|
 | 200 OK | `ResolvedItems<FieldMapping>` | An object with a "TimeOfResolution" and a collection of "Items", the `FieldMapping`s resolved |
 | 403 Forbidden | error | You are not authorized for this operation
-| 404 Not Found | error | The data view does not exist
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
 
 #### Response headers
@@ -513,7 +510,6 @@ The response includes a status code and, in most cases, a body.
 |--|--|--|
 | 200 OK | `ResolvedItem<Statistics>` | Successfully retrieved data. |
 | 403 Forbidden | error | User is not authorized for this operation.
-| 404 Not Found | error | The specified data view identifier is not found.
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
 
 #### Example response body

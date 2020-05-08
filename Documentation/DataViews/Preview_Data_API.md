@@ -6,7 +6,7 @@ uid: DataViewsPreviewDataAPI
 The Preview Data API allows users to [retrieve data](xref:DataViewsGettingData) for a specified data view.  This API is one portion of the [data views API](xref:DataViewsAPIOverview).
 
 ## `Get Data View Data`
-Get data for the provided index parameters with paging. See [documentation on paging](xref:DataViewsGettingData#paging) for further information.
+Get data for the provided data view and index parameters with paging. See [documentation on paging](xref:DataViewsGettingData#paging) for further information.
 
 ### Request
 ```text
@@ -30,7 +30,7 @@ The requested end index, inclusive. The default value is the `.DefaultEndIndex` 
 The requested interval between index values. The default value is the `.DefaultInterval` of the data view. Optional if a default is specified.
 
 `[optional] int countPerGroup`  
-The requested items per each group. 
+The requested number of data items per each group to get data from. 
 
 `[optional] int groupCount`  
 The requested number of groups.
@@ -52,7 +52,6 @@ The response includes a status code and, in most cases, a body.
 | 200 OK                    | data in the requested format  | Successfully retrieved data.  |
 | 400 Bad Request           | error | The request could not be understood by the server due to malformed syntax.
 | 403 Forbidden             | error | User is not authorized for this operation.
-| 404 Not Found             | error | The specified data view identifier is not found.
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
 
 #### Response headers

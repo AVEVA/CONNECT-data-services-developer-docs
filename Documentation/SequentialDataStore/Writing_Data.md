@@ -13,6 +13,9 @@ When working in .NET, convenient SDS Client libraries are available. The `ISdsDa
 All writes rely on a stream’s key or primary index. The primary index determines the order of events in the stream. Secondary indexes are updated, but they do not contribute 
 to the request. All references to indexes are to the primary index.
 
+**\*Notes:** Use the ISO 8601 representation of dates and times in SDS, `2020-02-20T08:30:00-08:00` for February 20, 2020 at 8:30 AM PST, for example.
+SDS returns timestamps in UTC if the timestamp is of property `DateTime` and in local time if it is of `DateTimeOffset`. 
+
 ### Single Stream Writes   
 
 The following support writing multiple values:
@@ -28,7 +31,6 @@ The base URI for writing SDS data to a single stream is:
  ```
  
 ### Parameters
-
 ``string tenantId``  
 The tenant identifier  
   
@@ -86,7 +88,6 @@ You can serialize your data using one of many available JSON serializers availab
 
 
 ### Response Format
-
 Supported response formats include JSON, verbose JSON, and SDS. 
 
 The default response format for SDS is JSON, which is used in all examples in this document. 
@@ -100,12 +101,11 @@ Verbose has no impact on writes; writes return only error messages.
 To specify SDS format, set the ``Accept`` header in the request to ``application/sds``.
 
 ### Indexes
-
 SDS writes rely on the primary index for positioning within streams and locating existing events. 
 Most writes use the index as specified by the value. Deletes are the exception to this rule. When deleting, 
 indexes are specified as strings in the URI, or, when using the SDS Client Libraries, the index may be 
-passed as-is to delete methods that take the index type as a generic argument. More details about working 
-with indexes can be found on the [Indexes](xref:sdsIndexes) page. 
+passed as-is to delete methods that take the index type as a generic argument. For more information on working 
+with indexes, see [Indexes](xref:sdsIndexes). 
 
 To specify compound indexes in the URI, specify each field that composes the index, in the specified order, 
 separated by the pipe character, ‘|’.

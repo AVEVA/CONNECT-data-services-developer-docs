@@ -2,17 +2,15 @@
 uid: sdsIndexes
 ---
 
-Indexes
-=======
-
+# Indexes
 Indexes speed up and order the results of searches. A key uniquely identifies a record within 
 a collection of records. Keys are unique within the collection.
 
-In Sds, the key of an SdsType is also an index. The key is often referred to as the *primary index,* 
+In SDS, the key of an SdsType is also an index. The key is often referred to as the *primary index,* 
 while all other indexes are referred to as *secondary indexes* or *secondaries*.
 
 An SdsType that is used to define an SdsStream must specify a key. When inserting data into an SdsStream, every 
-key value must be unique. Sds will not store more than a single event for a given key; an event with 
+key value must be unique. SDS will not store more than a single event for a given key; an event with 
 a particular key may be deleted or updated, but two events with the same key cannot exist.
 
 In .NET, the SdsType properties that define the key are identified using an ``OSIsoft.Sds.SdsMemberAttribute`` 
@@ -47,14 +45,12 @@ UInt16                   | 8
 UInt32                   | 10
 UInt64                   | 12
 
-Compound Indexes
-----------------
-
-Often, a single property (such as a DateTime), is adequate for defining an index; however, for more complex 
-scenarios, Sds allows you to define multiple properties. Indexes defined by multiple properties are known as *compound indexes*.
+## Compound Indexes
+Often, a single property (such as a `DateTime`), is adequate for defining an index; however, for more complex 
+scenarios, SDS allows you to define multiple properties. Indexes defined by multiple properties are known as *compound indexes*.
 
 When defining a compound index in .NET, you should apply the ``OSIsoft.Sds.SdsMemberAttribute`` on each of the type’s 
-properties that are combined to define the index. Set the ``IsKey`` property to ``true`` and give ``Orderfield`` a 
+properties that are combined to define the index. Set the ``IsKey`` property to ``true`` and give ``Order`` field a 
 zero-based index value. The ``Order`` field defines the precedence of the property when sorting. A property with 
 an order of 0 has highest precedence.
 
@@ -65,18 +61,12 @@ Only the primary index (or key) supports compound indexes.
 
 You can specify a maximum of three Properties to define a compound index.
 
-The Sds REST API methods that use tuples were created to assist you when using compound indexes.
+The SDS REST API methods that use tuples were created to assist you when using compound indexes.
 
 
-Working with Indexes
---------------------
-
-Using .NET
-----------
-
-
-Simple Indexes
---------------
+## Work with indexes
+### Indexes in .NET framework
+#### Simple Indexes
 
 When working in .NET, use the SdsTypeBuilder together with either the ``OSIsoft.Sds.SdsMemberAttribute`` or the
 ``System.ComponentModel.DataAnnotations.KeyAttribute`` to identify the Property that defines the simple Key. 
@@ -114,9 +104,8 @@ and query as follows.
 More information about querying data can be found in [Reading data](xref:sdsReadingData).
 
 
-**Secondary Indexes**
-
-Secondary indexes are defined at the SdsStream. To add indexes to an SdsStream, you add them to the SdsStream’s Indexes field.
+#### Secondary indexes
+Secondary indexes are defined at the SdsStream. To add indexes to an SdsStream, you add them to the SdsStream’s `Indexes` field.
 
 For example, to add a second index on Measurement, use the following code:
 
@@ -199,10 +188,7 @@ To read data indexed by a secondary Index, use a filtered Get, as in the followi
       // 1/20/2017 12:00:00 PM: 5
 
 
-
-Compound Indexes
-----------------
-
+#### Compound Indexes
 Compound indexes are defined using the SdsMemberAttribute as follows:
 
       public class Simple
@@ -333,15 +319,8 @@ If the Order parameters were swapped, Recorded set to zero, and Time set to one,
 
 Note that the ``GetWindowValuesAsync()`` call specifies an expected return type and the index types as generic parameters.
 
-
-Not Using .NET
---------------
-
-
-Simple Indexes
---------------
-
-
+### Indexes outside of .NET framework
+#### Simple Indexes
 When the .NET SdsTypeBuilder is unavailable, indexes must be built manually.
 
 
@@ -351,7 +330,7 @@ samples. Samples in other languages can be found [here](<https://github.com/osis
 
 To build a SdsType representation of the following sample class, see [Sample](#sample):
 
-*Python*
+**Python**
 
       class State(Enum):
         Ok = 0
@@ -378,7 +357,7 @@ To build a SdsType representation of the following sample class, see [Sample](#s
           self.__measurement = measurement
 
 
-*JavaScript*
+**JavaScript**
 
 
       var State =
@@ -394,11 +373,11 @@ To build a SdsType representation of the following sample class, see [Sample](#s
         this.Value = null;
       }
 
-#### Sample
-
+##### Sample
+-----
 The following code is used to build an SdsType representation of the sample class above:
 
-*Python*
+**Python**
 
 
       # Create the properties
@@ -451,7 +430,7 @@ The following code is used to build an SdsType representation of the sample clas
       simple.Properties = [ time, state, measurement ]
 
 
-*JavaScript*
+**JavaScript**
 
 
       // Time is the primary key
@@ -507,9 +486,9 @@ The following code is used to build an SdsType representation of the sample clas
       });
 
 
-The Time property is identified as the Key by define its SdsTypeProperty as follows:
+The Time property is identified as the key by defining its SdsTypeProperty as follows:
 
-*Python*
+**Python**
 
 
       # Time is the primary key
@@ -522,7 +501,7 @@ The Time property is identified as the Key by define its SdsTypeProperty as foll
       time.SdsType.Name = "DateTime"
       time.SdsType.SdsTypeCode = SdsTypeCode.DateTime
 
-*JavaScript*
+**JavaScript**
 
 
       // Time is the primary key
@@ -537,7 +516,7 @@ The Time property is identified as the Key by define its SdsTypeProperty as foll
 
 
 
-Note that the time.IsKey field is set to true.
+Note that the `time.IsKey` field is set to true.
 
 To read data using the key, you define a start index and an end index. For DateTime, use 
 ISO 8601 representation of dates and times. To query for a window of values between January 1, 
@@ -546,7 +525,7 @@ ISO 8601 representation of dates and times. To query for a window of values betw
 
 Additional information can be found in [Reading data](xref:sdsReadingData).
 
-**Secondary Indexes**
+#### Simple Indexes
 
 Secondary Indexes are defined at the SdsStream. To create an SdsStream 
 using the Simple class and add a Secondary index on the Measurement, 
@@ -555,7 +534,7 @@ specifying the measurement property and define a SdsStream identifying the
 Measurement as a Secondary Index as shown in the following example:
 
 
-*Python*
+**Python**
 
 
       # Create the properties
@@ -572,7 +551,7 @@ Measurement as a Secondary Index as shown in the following example:
 
 
 
-*JavaScript*
+**JavaScript**
 
 
       var measurementIndex = new SdsObjects.SdsStreamIndex({
@@ -588,12 +567,10 @@ Measurement as a Secondary Index as shown in the following example:
       });
 
 
-Compound Indexes
-----------------
-
+#### Compound Indexes
 Consider the following Python and JavaScript types:
 
-*Python*
+**Python**
 
 
       class Simple(object):
@@ -626,7 +603,7 @@ Consider the following Python and JavaScript types:
         self.__recorded = recorded
 
 
-*JavaScript*
+**JavaScript**
 
 
       var Simple = function () {
@@ -645,7 +622,7 @@ To turn the simple SdsType shown in the example into a type supporting the Deriv
 type with a compound index based on the ``Simple.Time`` and ``DerivedCompoundIndex.Recorded``, 
 extend the type as follows:
 
-*Python*
+**Python**
 
 
       # We set the Order for this property. The order of the first property defaulted to 0
@@ -670,8 +647,7 @@ extend the type as follows:
 
 
 
-*JavaScript*
-
+**JavaScript**  
 
       // We set the Order for this property. The order of the first property defaulted to 0
       var recordedProperty = new SdsObjects.SdsTypeProperty({

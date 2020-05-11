@@ -21,6 +21,7 @@ There are several [concepts and types](xref:DataView) used when defining data vi
 * [Queries](xref:DataViewsQueries)
 * [Data Field Sets](xref:DataViewsFieldSets)
 * [Grouping](xref:DataViewsGrouping)
+* [Data View Shape](xref:DataViewsDataViewShape)
 
 Data views are meant to be designed interactively. Each modification you make to a data view is likely to affect how the data view [resolves](xref:ResolvedDataView) into concrete information. The [resolved API resources](xref:ResolvedDataViewAPI) close the loop, showing you exactly what information is in the data view, and why.
 

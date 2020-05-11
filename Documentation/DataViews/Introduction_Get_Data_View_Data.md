@@ -11,7 +11,7 @@ This is an introduction to the recommended workflow for getting data. The [Quick
 ## Specify first page parameters
 Complete the following to specify first page parameters:
 
-1. Specify the index range (start index and end index) and granularity of data to be retrieved.
+1. Specify the index range (start index and end index) and granularity of data to be retrieved (interval).
 2. Specify the desired response format as csv, table-style json, or object-style json. The default is object-style json.  Csv and table-style json are available with or without a header row.
 3. Specify the page size.
 

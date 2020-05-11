@@ -37,6 +37,23 @@ An optional parameter representing the maximum number of data items to retrieve.
 ### Request body
 A `DataView` object to get the results for.
 
+#### Example request body
+```json
+{
+  "Queries": [
+    { 
+      "Id": "weather",
+      "Value":"*WS_BILT*" 
+    }
+  ],
+  "DataFieldSets": [],
+  "GroupingFields": [],
+  "Shape": "Standard",
+  "IndexField": { "Label": "Timestamp" },
+  "IndexTypeCode": "DateTime"
+}
+```
+
 ### Response
 The response includes a status code and, in most cases, a body.
 
@@ -137,6 +154,23 @@ An optional parameter representing the maximum number of data items to retrieve.
 ### Request body
 A `DataView` object to get the results for.
 
+#### Example request body
+```json
+{
+  "Queries": [
+    { 
+      "Id": "weather",
+      "Value":"*weather*" 
+    }
+  ],
+  "DataFieldSets": [],
+  "GroupingFields": [],
+  "Shape": "Standard",
+  "IndexField": { "Label": "Timestamp" },
+  "IndexTypeCode": "DateTime"
+}
+```
+
 ### Response
 The response includes a status code and, in most cases, a body.
 
@@ -220,6 +254,31 @@ An optional parameter representing the maximum number of data items to retrieve.
 
 ### Request body
 A `DataView` object to get the results for.
+
+#### Example request body
+```json
+{
+  "Queries": [
+    { 
+      "Id": "weather",
+      "Value":"*WS_BILT*" 
+    }
+  ],
+  "DataFieldSets": [],
+  "GroupingFields": [
+    {
+      "Source": "Metadata",
+      "Keys": [
+        "Site" 
+      ],
+      "Label": "{IdentifyingValue} {FirstKey}"
+    }
+  ],
+  "Shape": "Standard",
+  "IndexField": { "Label": "Timestamp" },
+  "IndexTypeCode": "DateTime"
+}
+```
 
 ### Response
 The response includes a status code and, in most cases, a body.
@@ -315,6 +374,23 @@ The namespace identifier
 ### Request body
 A `DataView` object to get the results for.
 
+#### Example request body
+```json
+{
+  "Queries": [
+    { 
+      "Id": "weather",
+      "Value":"*weather*" 
+    }
+  ],
+  "DataFieldSets": [],
+  "GroupingFields": [],
+  "Shape": "Standard",
+  "IndexField": { "Label": "Timestamp" },
+  "IndexTypeCode": "DateTime"
+}
+```
+
 ### Response
 The response includes a status code and, in most cases, a body.
 
@@ -383,7 +459,6 @@ HTTP 200 OK
    Task<ResolvedItems<FieldSet>> GetPreviewAvailableFieldSetsAsync(DataView dataView);
 ```
 
-
 ## `Get Field Mappings`
 Gets the collection of field mappings resolved for the provided data view. These show the exact data behind every field, for each data item, for each group.
 
@@ -403,6 +478,46 @@ The namespace identifier
 
 ### Request body
 A `DataView` object to get the results for.
+
+#### Example request body
+```json
+{
+  "Queries": [
+    { 
+      "Id": "weather",
+      "Value":"*weather*" 
+    }
+  ],
+  "DataFieldSets": [
+        {
+            "SourceType": "DataItem",
+            "QueryId": "weather",
+            "DataFields": [
+                {
+                    "Source": "PropertyId",
+                    "Keys": [
+                        "Temperature",
+                        "AmbientTemperature"
+                    ],
+                    "Label": "{IdentifyingValue} {FirstKey}"
+                }
+            ],
+       },
+  ],
+  "GroupingFields": [
+    {
+      "Source": "Metadata",
+      "Keys": [
+        "Site" 
+      ],
+      "Label": "{IdentifyingValue} {FirstKey}"
+    }
+  ],
+  "Shape": "Standard",
+  "IndexField": { "Label": "Timestamp" },
+  "IndexTypeCode": "DateTime"
+}
+```
 
 ### Response
 The response includes a status code and, in most cases, a body.
@@ -503,6 +618,46 @@ The namespace identifier
 ### Request body
 A `DataView` object to get the results for.
 
+#### Example request body
+```json
+{
+  "Queries": [
+    { 
+      "Id": "weather",
+      "Value":"*weather*" 
+    }
+  ],
+  "DataFieldSets": [
+        {
+            "SourceType": "DataItem",
+            "QueryId": "weather",
+            "DataFields": [
+                {
+                    "Source": "PropertyId",
+                    "Keys": [
+                        "Temperature",
+                        "AmbientTemperature"
+                    ],
+                    "Label": "{IdentifyingValue} {FirstKey}"
+                }
+            ],
+       },
+  ],
+  "GroupingFields": [
+    {
+      "Source": "Metadata",
+      "Keys": [
+        "Site" 
+      ],
+      "Label": "{IdentifyingValue} {FirstKey}"
+    }
+  ],
+  "Shape": "Standard",
+  "IndexField": { "Label": "Timestamp" },
+  "IndexTypeCode": "DateTime"
+}
+````
+
 ### Response
 The response includes a status code and, in most cases, a body.
 
@@ -520,7 +675,39 @@ HTTP 200 OK
     "TimeOfResolution": "2019-12-13T01:23:45Z",
     "DataItemCount": 24,
     "GroupCount": 2,
-    "FieldCount": 12
+    "FieldMappingCount": 10,
+    "DataFieldSets": [
+        {
+            "DataItemCount": 18,
+            "UnmappedDataItemCount": 3,
+            "DataFields": [
+                {
+                    "FieldMappingCount": 3,
+                    "DataMappingCount": 6,
+                    "EmptyDataMappingCount": 0,
+                    "UnmappedGroupCount": 0
+                },
+                {
+                    "FieldMappingCount": 3,
+                    "DataMappingCount": 6,
+                    "EmptyDataMappingCount": 2,
+                    "UnmappedGroupCount": 1
+                }
+            ]
+        },
+        {
+            "DataItemCount": 6,
+            "UnmappedDataItemCount": 0,
+            "DataFields": [
+                {
+                    "FieldMappingCount": 2,
+                    "DataMappingCount": 4,
+                    "EmptyDataMappingCount": 2,
+                    "UnmappedGroupCount": 1
+                }
+            ]
+        }
+    ]
 }
 ```
 

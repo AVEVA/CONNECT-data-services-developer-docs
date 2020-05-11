@@ -44,6 +44,51 @@ Used only when [paging](xref:DataViewsGettingData#paging). Not specified when re
 `[optional] int count`  
 The requested page size. The default value is 1000. The maximum is 250,000.
 
+#### Example request body
+```json
+{
+  "Queries": [
+    { 
+      "Id": "weather",
+      "Value":"*weather*" 
+    }
+  ],
+  "DataFieldSets": [
+        {
+            "SourceType": "DataItem",
+            "QueryId": "weather",
+            "DataFields": [
+                {
+                    "Source": "PropertyId",
+                    "Keys": [
+                        "Temperature"
+                    ],
+                    "Label": "{IdentifyingValue} {FirstKey}"
+                },
+                {
+                    "Source": "PropertyId",
+                    "Keys": [
+                        "Flowrate"
+                    ],
+                    "Label": "{IdentifyingValue} {FirstKey}"
+                },
+                {
+                    "Source": "PropertyId",
+                    "Keys": [
+                        "Volume"
+                    ],
+                    "Label": "{IdentifyingValue} {FirstKey}"
+                },
+            ],
+       },
+  ],
+  "GroupingFields": [],
+  "Shape": "Standard",
+  "IndexField": { "Label": "Time" },
+  "IndexTypeCode": "DateTime"
+}
+```
+
 ### Response
 The response includes a status code and, in most cases, a body.
 

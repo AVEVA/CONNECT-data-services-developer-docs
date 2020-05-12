@@ -4,11 +4,11 @@ uid: ResolvedDataViewPreviewAPI
 
 # Resolved Data View Preview API
 
-This portion of the overall [data views API](xref:DataViewsAPIOverview) is the resources that resolve per-user for an input data view. 
-The preview APIs require a data view to be passed in the request body for each request, which provides the user with a flexibility to change the data view on the fly without saving/updating it.
+This portion of the overall [data views API](xref:DataViewsAPIOverview) specifies the resources that resolve per-user for an input data view. 
+The preview APIs require a data view to be passed in the request body for each request, which provides the user the flexibility to change the data view on the fly without saving/updating it.
 
 ## `Get Data Items by Query`
-Gets the paged collection of data items that are the results of an individual query, and which are eligible for use in the provided data view. A data view has a collection of zero or more queries. Each query has an identifier. Those identifiers are used here as part of the request path.
+Gets the paged collection of data items returned by an individual query, and which are eligible for use in the provided data view. A data view has a collection of zero or more queries. Each query has an identifier. Those identifiers are used here as part of the request path.
 
 ### Request
 
@@ -124,7 +124,7 @@ Content-Type: application/json
    Task<ResolvedItems<DataItem>> GetPreviewDataItemsAsync(string queryId, DataView dataView, int skip = DEFAULT_SKIP, int count = DEFAULT_COUNT);
 ```
 ## `Get Ineligible Data Items by Query`
-Gets the paged collection of data items that are the results of an individual query, but which are not eligible for use in the provided data view. A common reason for ineligibility is that the item's index property is of a different type than the data view expects. A data view has a collection of zero or more queries. Each query has an identifier. Those identifiers are used here as part of the request path.
+Gets the paged collection of data items returned by an individual query, but which are not eligible for use in the provided data view. A common reason for ineligibility is that the item's index property is of a different type than the data view expects. A data view has a collection of zero or more queries. Each query has an identifier. Those identifiers are used here as part of the request path.
 
 ### Request
 

@@ -10,13 +10,13 @@ The supported content type of request and response bodies is JSON unless otherwi
 The API is comprised of the following main areas:
 
 ## [Data View API](xref:DataViewAPI)
-Resources for creating, reading, updating, and deleting `/DataViews`
+Resources to create, read, update, and delete `/DataViews`
 
 ## [Resolved Data View API](xref:ResolvedDataViewAPI)
 For each `/DataViews/{dataViewId}`, these resources show how the data view `./Resolved/` for your user context
 
 ## [Resolved Data View Preview API](xref:ResolvedDataViewPreviewAPI)
-For each `/DataView` provided in request body, these resources show how the data view `./Resolved/` for your user context
+For each `/DataView` provided in the request body, resources to show how the data view `./Resolved/` for your user context
 
 ## [Data API](xref:DataViewsDataAPI)
 For each `/DataViews/{dataViewId}`, resources for getting the `./Data/` for a particular time range

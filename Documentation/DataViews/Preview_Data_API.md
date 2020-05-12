@@ -30,7 +30,7 @@ The requested end index, inclusive. The default value is the `.DefaultEndIndex` 
 The requested interval between index values. The default value is the `.DefaultInterval` of the data view. Optional if a default is specified.
 
 `[optional] int countPerGroup`  
-The requested number of data items per each group to get data from. 
+The number of rows per group. It overrides the endIndex.
 
 `[optional] int groupCount`  
 The requested number of groups.
@@ -47,15 +47,16 @@ The requested page size. The default value is 1000. The maximum is 250,000.
 #### Example request body
 ```json
 {
+  "IndexField": { "Label": "Time" },
   "Queries": [
     { 
       "Id": "weather",
+      "Kind": "Stream",
       "Value":"*weather*" 
     }
   ],
   "DataFieldSets": [
         {
-            "SourceType": "DataItem",
             "QueryId": "weather",
             "DataFields": [
                 {
@@ -83,9 +84,8 @@ The requested page size. The default value is 1000. The maximum is 250,000.
        },
   ],
   "GroupingFields": [],
-  "Shape": "Standard",
-  "IndexField": { "Label": "Time" },
-  "IndexTypeCode": "DateTime"
+  "IndexTypeCode": "DateTime",
+  "Shape": "Standard"
 }
 ```
 
@@ -96,7 +96,7 @@ The response includes a status code and, in most cases, a body.
 |--|--|--|
 | 200 OK                    | data in the requested format  | Successfully retrieved data.  |
 | 400 Bad Request           | error | The request could not be understood by the server due to malformed syntax.
-| 403 Forbidden             | error | User is not authorized for this operation.
+| 403 Forbidden             | error | User is not authorized to create a data view.
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
 
 #### Response headers

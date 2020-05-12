@@ -40,17 +40,18 @@ A `DataView` object to get the results for.
 #### Example request body
 ```json
 {
+  "IndexField": { "Label": "Timestamp" },
   "Queries": [
     { 
       "Id": "weather",
+      "Kind": "Stream",
       "Value":"*WS_BILT*" 
     }
   ],
   "DataFieldSets": [],
   "GroupingFields": [],
-  "Shape": "Standard",
-  "IndexField": { "Label": "Timestamp" },
-  "IndexTypeCode": "DateTime"
+  "IndexTypeCode": "DateTime",
+  "Shape": "Standard"
 }
 ```
 
@@ -60,9 +61,10 @@ The response includes a status code and, in most cases, a body.
 | Status code | Body Type | Description |
 |--|--|--|
 | 200 OK | `ResolvedItems<DataItem>` | An object with a "TimeOfResolution" and a collection of "Items", the `DataItem`s that resolved. |
-| 403 Forbidden | error | You are not authorized for this operation
-| 404 Not Found | error | The query does not exist
-| 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
+| 400 Bad Request | error | The data view or the query parameters are not valid. See the response body for details |
+| 403 Forbidden | error | You are not authorized for this operation |
+| 404 Not Found | error | The query does not exist |
+| 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details | 
 
 #### Response headers
 Successful (200 OK) responses include one or more header values related to paging.
@@ -82,10 +84,10 @@ Content-Type: application/json
   "TimeOfResolution": "2019-12-13T01:23:45Z",
   "Items": [
     {
-      "ResourceType": "Stream",
       "Id": "WS_BILT",
       "Name": "WS_BILT",
       "TypeId": "quickstart-omf-weather-gen1",
+      "ResourceType": "Stream",
       "Tags": [
         "Weather",
         "High Resolution",
@@ -157,17 +159,18 @@ A `DataView` object to get the results for.
 #### Example request body
 ```json
 {
+  "IndexField": { "Label": "Timestamp" },
   "Queries": [
     { 
       "Id": "weather",
+      "Kind": "Stream",
       "Value":"*weather*" 
     }
   ],
   "DataFieldSets": [],
   "GroupingFields": [],
-  "Shape": "Standard",
-  "IndexField": { "Label": "Timestamp" },
-  "IndexTypeCode": "DateTime"
+  "IndexTypeCode": "DateTime",
+  "Shape": "Standard"
 }
 ```
 
@@ -177,6 +180,7 @@ The response includes a status code and, in most cases, a body.
 | Status code | Body Type | Description |
 |--|--|--|
 | 200 OK | `ResolvedItems<DataItem>` | An object with a "TimeOfResolution" and a collection of "Items", the `DataItem`s that resolved. |
+| 400 Bad Request | error | The data view or the query parameters are not valid. See the response body for details |
 | 403 Forbidden | error | You are not authorized for this operation
 | 404 Not Found | error | The query does not exist
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
@@ -198,13 +202,13 @@ Content-Type: application/json
   "TimeOfResolution": "2019-12-13T01:23:45Z",
   "Items": [
     {
-      "ResourceType": "Stream",
       "Id": "SOME_INELIGIBLE_STREAM",
       "Name": "Some Ineligible Stream",
       "TypeId": "type-with-different-index",
+      "ResourceType": "Stream",
       "Tags": [],
-       "Metadata": { },
-       "DataItemFields": [
+      "Metadata": { },
+      "DataItemFields": [
          {
            "Id": "Depth",
            "Name": "Depth",
@@ -258,9 +262,11 @@ A `DataView` object to get the results for.
 #### Example request body
 ```json
 {
+  "IndexField": { "Label": "Timestamp" },
   "Queries": [
     { 
       "Id": "weather",
+      "Kind": "Stream",
       "Value":"*WS_BILT*" 
     }
   ],
@@ -274,9 +280,8 @@ A `DataView` object to get the results for.
       "Label": "{IdentifyingValue} {FirstKey}"
     }
   ],
-  "Shape": "Standard",
-  "IndexField": { "Label": "Timestamp" },
-  "IndexTypeCode": "DateTime"
+  "IndexTypeCode": "DateTime",
+  "Shape": "Standard"
 }
 ```
 
@@ -286,6 +291,7 @@ The response includes a status code and, in most cases, a body.
 | Status code | Body Type | Description |
 |--|--|--|
 | 200 OK | `ResolvedItems<Group>` | An object with a "TimeOfResolution" and a collection of "Items", the `Groups`s that resolved. |
+| 400 Bad Request | error | The data view or the query parameters are not valid. See the response body for details |
 | 403 Forbidden | error | You are not authorized for this operation
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
 
@@ -306,14 +312,16 @@ Content-Type: application/json
   "TimeOfResolution": "2019-12-13T01:23:45Z",
   "Items": [
     {
-      "Values": [ "Biltmore" ],
+      "GroupingValues": [ 
+        "Biltmore"
+      ],
       "DataItems": {
         "Query1": [
           {
-            "ResourceType": "Stream",
             "Id": "WS_BILT",
             "Name": "WS_BILT",
             "TypeId": "quickstart-omf-weather-gen1",
+            "ResourceType": "Stream",
             "Tags": [
                 "Weather",
                 "High Resolution",
@@ -377,17 +385,18 @@ A `DataView` object to get the results for.
 #### Example request body
 ```json
 {
+  "IndexField": { "Label": "Timestamp" },
   "Queries": [
     { 
       "Id": "weather",
+      "Kind": "Stream",
       "Value":"*weather*" 
     }
   ],
   "DataFieldSets": [],
   "GroupingFields": [],
-  "Shape": "Standard",
-  "IndexField": { "Label": "Timestamp" },
-  "IndexTypeCode": "DateTime"
+  "IndexTypeCode": "DateTime",
+  "Shape": "Standard"
 }
 ```
 
@@ -397,6 +406,7 @@ The response includes a status code and, in most cases, a body.
 | Status code | Body Type | Description |
 |--|--|--|
 | 200 OK | `ResolvedItems<FieldSet>` | An object with a "TimeOfResolution" and a collection of "Items", the `FieldSets`s that resolved and which are still available |
+| 400 Bad Request | error | The data view or the query parameters are not valid. See the response body for details |
 | 403 Forbidden | error | You are not authorized for this operation
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
 
@@ -408,9 +418,8 @@ HTTP 200 OK
     "TimeOfResolution": "2019-12-13T01:23:45Z",
     "Items": [
         {
-            "SourceType": "DataItem",
             "QueryId": "weather",
-            "Fields": [
+            "DataFields": [
                 {
                     "Source": "Id",
                     "Keys": [],
@@ -482,15 +491,16 @@ A `DataView` object to get the results for.
 #### Example request body
 ```json
 {
+  "IndexField": { "Label": "Timestamp" },
   "Queries": [
     { 
       "Id": "weather",
+      "Kind": "Stream",
       "Value":"*weather*" 
     }
   ],
   "DataFieldSets": [
         {
-            "SourceType": "DataItem",
             "QueryId": "weather",
             "DataFields": [
                 {
@@ -513,9 +523,8 @@ A `DataView` object to get the results for.
       "Label": "{IdentifyingValue} {FirstKey}"
     }
   ],
-  "Shape": "Standard",
-  "IndexField": { "Label": "Timestamp" },
-  "IndexTypeCode": "DateTime"
+  "IndexTypeCode": "DateTime",
+  "Shape": "Standard"
 }
 ```
 
@@ -525,6 +534,7 @@ The response includes a status code and, in most cases, a body.
 | Status code | Body Type | Description |
 |--|--|--|
 | 200 OK | `ResolvedItems<FieldMapping>` | An object with a "TimeOfResolution" and a collection of "Items", the `FieldMapping`s resolved |
+| 400 Bad Request | error | The data view or the query parameters are not valid. See the response body for details |
 | 403 Forbidden | error | You are not authorized for this operation
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
 
@@ -546,22 +556,16 @@ HTTP 200 OK
       {
         "Id": "Timestamp",
         "Label": "Timestamp",
-        "FieldSetIndex": 0,
-        "FieldIndex": 0,
+        "FieldKind": "IndexField",
+        "TypeCode": "DateTime",
         "DataMappings": [
           {
-            "TargetId": "",
-            "TargetFieldKey": "",
             "TypeCode": "DateTime"
           },
           {
-            "TargetId": "",
-            "TargetFieldKey": "",
             "TypeCode": "DateTime"
           },
           {
-            "TargetId": "",
-            "TargetFieldKey": "",
             "TypeCode": "DateTime"
           }
         ]
@@ -569,23 +573,23 @@ HTTP 200 OK
       {
         "Id": "Temperature",
         "Label": "Temperature",
-        "FieldSetIndex": 1,
-        "FieldIndex": 0,
+        "FieldKind": "DataField",
+        "TypeCode": "Double",
         "DataMappings": [
           {
             "TargetId": "WS_BILT",
-            "TargetFieldKey": "Temperature",
-            "TypeCode": "Double"
+            "TypeCode": "Double",
+            "FieldIndex": 0,
           },
           {
             "TargetId": "WS_ROSE",
-            "TargetFieldKey": "Temperature",
-            "TypeCode": "Double"
+            "TypeCode": "Double",
+            "FieldIndex": 0,
           },
           {
             "TargetId": "WS_WINT",
-            "TargetFieldKey": "AmbientTemperature",
-            "TypeCode": "Double"
+            "TypeCode": "Double",
+            "FieldIndex": 0,
           }
         ]
       },
@@ -621,15 +625,16 @@ A `DataView` object to get the results for.
 #### Example request body
 ```json
 {
+  "IndexField": { "Label": "Timestamp" },
   "Queries": [
     { 
       "Id": "weather",
+      "Kind": "Stream",
       "Value":"*weather*" 
     }
   ],
   "DataFieldSets": [
         {
-            "SourceType": "DataItem",
             "QueryId": "weather",
             "DataFields": [
                 {
@@ -652,9 +657,8 @@ A `DataView` object to get the results for.
       "Label": "{IdentifyingValue} {FirstKey}"
     }
   ],
-  "Shape": "Standard",
-  "IndexField": { "Label": "Timestamp" },
-  "IndexTypeCode": "DateTime"
+  "IndexTypeCode": "DateTime",
+  "Shape": "Standard"
 }
 ````
 
@@ -664,6 +668,7 @@ The response includes a status code and, in most cases, a body.
 | Status code | Body Type | Description |
 |--|--|--|
 | 200 OK | `ResolvedItem<Statistics>` | Successfully retrieved data. |
+| 400 Bad Request | error | The data view or the query parameters are not valid. See the response body for details |
 | 403 Forbidden | error | User is not authorized for this operation.
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
 
@@ -673,6 +678,7 @@ The response includes a status code and, in most cases, a body.
 HTTP 200 OK
 {
     "TimeOfResolution": "2019-12-13T01:23:45Z",
+    "Item": {
     "DataItemCount": 24,
     "GroupCount": 2,
     "FieldMappingCount": 10,
@@ -708,6 +714,7 @@ HTTP 200 OK
             ]
         }
     ]
+  }
 }
 ```
 

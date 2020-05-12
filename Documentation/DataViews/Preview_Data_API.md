@@ -84,7 +84,7 @@ The requested page size. The default value is 1000. The maximum is 250,000.
        },
   ],
   "GroupingFields": [],
-  "IndexTypeCode": "DateTime",
+  "IndexTypeCode": "Date Time",
   "Shape": "Standard"
 }
 ```

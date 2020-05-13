@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Preview Data API </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Preview Data API ">
+    <meta name="generator" content="docfx 2.43.3.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../../index.html" width="46">
+                <img id="logo" src="../../Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="DataViewsPreviewDataAPI">
+<h1 id="preview-data-api">Preview Data API</h1>
+
+<p>The Preview Data API allows users to <a class="xref" href="Getting_Data.html">retrieve data</a> for a specified data view.  This API is one portion of the <a class="xref" href="Data_Views_API_Overview.html">data views API</a>.</p>
+<h2 id="get-data-view-data"><code>Get Data View Data</code></h2>
+<p>Get data for the provided data view and index parameters with paging. See <a class="xref" href="Getting_Data.html#paging">documentation on paging</a> for further information.</p>
+<h3 id="request">Request</h3>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1-preview/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>preview/<wbr>dataviews/<wbr>data/<wbr>interpolated?startIndex={startIndex}&amp;endIndex={endIndex}&amp;interval={interval}&amp;form={form}&amp;countPerGroup={countPerGroup}&amp;groupCount={groupCount}&amp;continuationToken={continuationToken}&amp;count={count}
+</code></pre><h3 id="parameters">Parameters</h3>
+<p><code>string tenantId</code><br>The tenant identifier</p>
+<p><code>string namespaceId</code><br>The namespace identifier</p>
+<p><code>[optional] string startIndex</code><br>The requested start index, inclusive. The default value is the <code>.DefaultStartIndex</code> of the data view. Optional if a default value is specified.</p>
+<p><code>[optional] string endIndex</code><br>The requested end index, inclusive. The default value is the <code>.DefaultEndIndex</code> of the data view. Optional if a default value is specified.</p>
+<p><code>[optional] string interval</code><br>The requested interval between index values. The default value is the <code>.DefaultInterval</code> of the data view. Optional if a default is specified.</p>
+<p><code>[optional] int countPerGroup</code><br>The number of rows per group. It overrides the endIndex.</p>
+<p><code>[optional] int groupCount</code><br>The requested number of groups.</p>
+<p><code>[optional] string form</code><br>The requested data <a class="xref" href="Getting_Data.html#format">output format</a>. Output formats: <code>default</code>, <code>table</code>, <code>tableh</code>, <code>csv</code>, <code>csvh</code>.</p>
+<p><code>[optional] string continuationToken</code><br>Used only when <a class="xref" href="Getting_Data.html#paging">paging</a>. Not specified when requesting the first page of data.</p>
+<p><code>[optional] int count</code><br>The requested page size. The default value is 1000. The maximum is 250,000.</p>
+<h4 id="example-request-body">Example request body</h4>
+<pre><code class="lang-json">{
+  &quot;IndexField&quot;: { &quot;Label&quot;: &quot;Time&quot; },
+  &quot;Queries&quot;: [
+    { 
+      &quot;Id&quot;: &quot;weather&quot;,
+      &quot;Kind&quot;: &quot;Stream&quot;,
+      &quot;Value&quot;:&quot;*weather*&quot; 
+    }
+  ],
+  &quot;DataFieldSets&quot;: [
+        {
+            &quot;QueryId&quot;: &quot;weather&quot;,
+            &quot;DataFields&quot;: [
+                {
+                    &quot;Source&quot;: &quot;PropertyId&quot;,
+                    &quot;Keys&quot;: [
+                        &quot;Temperature&quot;
+                    ],
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
+                },
+                {
+                    &quot;Source&quot;: &quot;PropertyId&quot;,
+                    &quot;Keys&quot;: [
+                        &quot;Flowrate&quot;
+                    ],
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
+                },
+                {
+                    &quot;Source&quot;: &quot;PropertyId&quot;,
+                    &quot;Keys&quot;: [
+                        &quot;Volume&quot;
+                    ],
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
+                },
+            ],
+       },
+  ],
+  &quot;GroupingFields&quot;: [],
+  &quot;IndexTypeCode&quot;: &quot;DateTime&quot;,
+  &quot;Shape&quot;: &quot;Standard&quot;
+}
+</code></pre><h3 id="response">Response</h3>
+<p>The response includes a status code and, in most cases, a body.</p>
+<table>
+<thead>
+<tr>
+<th>Status code</th>
+<th>Body Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OK</td>
+<td>data in the requested format</td>
+<td>Successfully retrieved data.</td>
+</tr>
+<tr>
+<td>400 Bad Request</td>
+<td>error</td>
+<td>The data view or the query parameters are not valid. See the response body for details.</td>
+</tr>
+<tr>
+<td>403 Forbidden</td>
+<td>error</td>
+<td>User is not authorized to create a data view.</td>
+</tr>
+<tr>
+<td>500 Internal Server Error</td>
+<td>error</td>
+<td>An error occurred while processing the request. See the response body for details</td>
+</tr>
+</tbody>
+</table>
+<h4 id="response-headers">Response headers</h4>
+<p>Successful (200 OK) responses include one or more header values related to paging.</p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FirstPage</td>
+<td>Hyperlink to the first page of data</td>
+</tr>
+<tr>
+<td>NextPage</td>
+<td>Hyperlink to the next page of data, if the data spans into an additional page. Absence of this header indicates that there are no additional pages to be retrieved.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-response-body-in-default-format">Example response body in default format</h4>
+<p>An array of json values. Each json property corresponds to a field mapping. Property names are the field mapping <code>.Id</code>s.</p>
+<pre><code class="lang-json">HTTP 200 OK
+[
+    {
+        &quot;Time&quot;: &quot;2018-01-01T00:00:00Z&quot;,
+        &quot;Temperature&quot;: 24,
+        &quot;Flowrate&quot;: 44,
+        &quot;Volume&quot;: 245
+    },
+    {
+        &quot;Time&quot;: &quot;2018-01-01T00:00:01Z&quot;,
+        &quot;Temperature&quot;: 24,
+        &quot;Flowrate&quot;: 44,
+        &quot;Volume&quot;: 245
+    },
+    {
+        &quot;Time&quot;: &quot;2018-01-01T00:00:02Z&quot;,
+        &quot;Temperature&quot;: 24,
+        &quot;Flowrate&quot;: 44,
+        &quot;Volume&quot;: 245
+    }
+]
+</code></pre><h4 id="example-response-body-with-formtable">Example response body with <code>form=table</code></h4>
+<pre><code class="lang-json">HTTP 200 OK
+{
+   &quot;Columns&quot;: [
+      {
+          &quot;Name&quot;: &quot;Time&quot;,
+          &quot;Type&quot;: &quot;DateTime&quot;
+      },
+      {
+          &quot;Name&quot;: &quot;Temperature&quot;,
+          &quot;Type&quot;: &quot;Int32&quot;
+      },
+      {
+          &quot;Name&quot;: &quot;Flowrate&quot;,
+          &quot;Type&quot;: &quot;Int32&quot;
+      },
+      {
+          &quot;Name&quot;: &quot;Volume&quot;,
+          &quot;Type&quot;: &quot;Int32&quot;
+      }
+  ],
+  &quot;Rows&quot;: [
+    [
+      &quot;2018-01-01T00:00:00Z&quot;,
+      24,
+      44,
+      245
+    ],
+    [
+      &quot;2018-01-01T00:00:01Z&quot;,
+      24,
+      44,
+      245
+    ],
+    [
+      &quot;2018-01-01T00:00:02Z&quot;,
+      24,
+      44,
+      245
+    ]
+  ]
+}
+</code></pre><h4 id="example-response-body-with-formtableh">Example response body with <code>form=tableh</code></h4>
+<pre><code class="lang-json">HTTP 200 OK
+{
+  &quot;Columns&quot;: [
+      {
+          &quot;Name&quot;: &quot;Time&quot;,
+          &quot;Type&quot;: &quot;DateTime&quot;
+      },
+      {
+          &quot;Name&quot;: &quot;Temperature&quot;,
+          &quot;Type&quot;: &quot;Int32&quot;
+      },
+      {
+          &quot;Name&quot;: &quot;Flowrate&quot;,
+          &quot;Type&quot;: &quot;Int32&quot;
+      },
+      {
+          &quot;Name&quot;: &quot;Volume&quot;,
+          &quot;Type&quot;: &quot;Int32&quot;
+      }
+  ],
+  &quot;Rows&quot;: [
+      [
+          &quot;Time&quot;,
+          &quot;Temperature&quot;,
+          &quot;Flowrate&quot;,
+          &quot;Volume&quot;
+      ],
+      [
+          &quot;2018-01-01T00:00:00Z&quot;,
+          24,
+          44,
+          245
+      ],
+      [
+          &quot;2018-01-01T00:00:01Z&quot;,
+          24,
+          44,
+          245
+      ],
+      [
+          &quot;2018-01-01T00:00:02Z&quot;,
+          24,
+          44,
+          245
+      ]
+   ]
+}
+</code></pre><h4 id="example-response-body-with-formcsv">Example response body with <code>form=csv</code></h4>
+<pre><code class="lang-csv">HTTP 200 OK
+2018-01-01T00:00:00Z,24,44,245
+2018-01-01T00:00:01Z,24,44,245
+2018-01-01T00:00:02Z,24,44,245
+</code></pre><h4 id="example-response-body-with-formcsvh">Example response body with <code>form=csvh</code></h4>
+<pre><code class="lang-csv">HTTP 200 OK
+Time,Temperature,Flowrate,Volume
+2018-01-01T00:00:00Z,24,44,245
+2018-01-01T00:00:01Z,24,44,245
+2018-01-01T00:00:02Z,24,44,245
+</code></pre><h3 id="net-client-libraries-method">.NET client libraries method</h3>
+<pre><code class="lang-csharp">    IAsyncEnumerable&lt;string&gt; GetPreviewDataInterpolatedAsync(
+            DataView dataView,
+            OutputFormat format = OutputFormat.Default,
+            object startIndex = null,
+            object endIndex = null,
+            object interval = null,
+            int? countPerGroup = null,
+            int? groupCount = null,
+            int? backingPageSize = null,
+            CacheBehavior cache = CacheBehavior.Refresh,
+            CancellationToken cancellationToken = default);
+</code></pre></article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/DataViews/Preview_Data_API.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+            <span id='copyright-text'>© 2020 - OSIsoft, LLC.<span>
+        </span></span></div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

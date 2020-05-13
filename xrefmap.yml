@@ -82,6 +82,9 @@ references:
 - uid: DataViewsOverview
   name: Data Views (Preview)
   href: Documentation/DataViews/Data_Views_Overview.html
+- uid: DataViewsPreviewDataAPI
+  name: Preview Data API
+  href: Documentation/DataViews/Preview_Data_API.html
 - uid: DataViewsQueries
   name: Queries
   href: Documentation/DataViews/Queries.html
@@ -175,12 +178,18 @@ references:
 - uid: osisoftCloudServices
   name: OSIsoft Cloud Services
   href: Documentation/OSIsoft_Cloud_Services.html
+- uid: PreviewDataView
+  name: Preview Data View API
+  href: Documentation/DataViews/Preview_Data_View.html
 - uid: ResolvedDataView
   name: Resolved Data View
   href: Documentation/DataViews/Resolved_Data_View.html
 - uid: ResolvedDataViewAPI
   name: Resolved Data View API
   href: Documentation/DataViews/Resolved_Data_View_API.html
+- uid: ResolvedDataViewPreviewAPI
+  name: Resolved Data View Preview API
+  href: Documentation/DataViews/Resolved_Data_View_Preview_API.html
 - uid: samples
   name: Samples
   href: Documentation/samples.html

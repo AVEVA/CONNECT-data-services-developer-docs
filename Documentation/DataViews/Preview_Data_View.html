@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Data Views API Overview </title>
+    <title>Preview Data View API </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Data Views API Overview ">
+    <meta name="title" content="Preview Data View API ">
     <meta name="generator" content="docfx 2.43.3.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -75,24 +75,33 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="DataViewsAPIOverview">
-<h1 id="data-views-api-overview">Data Views API Overview</h1>
+            <article class="content wrap" id="_content" data-uid="PreviewDataView">
+<h1 id="preview-data-view-api">Preview Data View API</h1>
 
-<p>The data views API is a RESTful surface for creating, securing, and consuming data views. 
-The supported content type of request and response bodies is JSON unless otherwise noted.</p>
-<p>The API is comprised of the following main areas:</p>
-<h2 id="data-view-apixrefdataviewapi"><a class="xref" href="Data_View_API.html">Data View API</a></h2>
-<p>Resources to create, read, update, and delete <code style="word-break:normal; overflow-wrap:break-word;">/<wbr>DataViews</code>. For more information, see <a class="xref" href="Data_View.html">Data View</a></p>
-<h2 id="resolved-data-view-apixrefresolveddataviewapi"><a class="xref" href="Resolved_Data_View_API.html">Resolved Data View API</a></h2>
-<p>For each <code style="word-break:normal; overflow-wrap:break-word;">/<wbr>DataViews/<wbr>{dataViewId}</code>, these resources show how the data view <code style="word-break:normal; overflow-wrap:break-word;">./<wbr>Resolved/<wbr></code> for your user context</p>
-<h2 id="resolved-data-view-preview-apixrefresolveddataviewpreviewapi"><a class="xref" href="Resolved_Data_View_Preview_API.html">Resolved Data View Preview API</a></h2>
-<p>For each <code style="word-break:normal; overflow-wrap:break-word;">/<wbr>DataView</code> provided in the request body, resources to show how the data view <code style="word-break:normal; overflow-wrap:break-word;">./<wbr>Resolved/<wbr></code> for your user context</p>
-<h2 id="data-apixrefdataviewsdataapi"><a class="xref" href="Data_API.html">Data API</a></h2>
-<p>For each <code style="word-break:normal; overflow-wrap:break-word;">/<wbr>DataViews/<wbr>{dataViewId}</code>, resources for getting the <code style="word-break:normal; overflow-wrap:break-word;">./<wbr>Data/<wbr></code> for a particular time range</p>
-<h2 id="preview-data-apixrefdataviewspreviewdataapi"><a class="xref" href="Preview_Data_API.html">Preview Data API</a></h2>
-<p>For each <code style="word-break:normal; overflow-wrap:break-word;">/<wbr>DataView</code> provided in request body, resources for getting the preview <code style="word-break:normal; overflow-wrap:break-word;">./<wbr>Data/<wbr></code> for a particular time range</p>
-<h2 id="access-control-apixrefdataviewsaccesscontrolapi"><a class="xref" href="Access_Control_API.html">Access Control API</a></h2>
-<p>For the <code style="word-break:normal; overflow-wrap:break-word;">/<wbr>DataViews</code> collection, resources for reading and updating the default <code style="word-break:normal; overflow-wrap:break-word;">/<wbr>AccessControl</code>.<br>For each <code style="word-break:normal; overflow-wrap:break-word;">/<wbr>DataViews/<wbr>{dataViewId}</code>, resources for reading and updating its <code style="word-break:normal; overflow-wrap:break-word;">/<wbr>Owner</code> and <code style="word-break:normal; overflow-wrap:break-word;">/<wbr>AccessControl</code></p>
+<p>The preview data view APIs provide the users with the flexibility to work and query with the routes and get a response on the fly before saving the data view. All the preview routes expect a data view to be passed in the request body of the call. The user has the flexibility to change the data view any number of times. The syntax of the data view and all other objects for the routes will remain identical to that of the non-preview routes.</p>
+<h2 id="general-concepts">General concepts</h2>
+<h3 id="what-routes-have-a-preview-available">What routes have a preview available?</h3>
+<p>Below data view API routes are available to be used as preview routes:</p>
+<ol>
+<li>Resolved preview routes</li>
+<li><a class="xref" href="Resolved_Data_View_Preview_API.html#GetDataItemsbyQuery">Get Data Items by Query</a></li>
+<li><a class="xref" href="Resolved_Data_View_Preview_API.html#GetIneligibleDataItemsbyQuery">Get Ineligible Data Items by Query</a></li>
+<li><a class="xref" href="Resolved_Data_View_Preview_API.html#GetGroups">Get Groups</a></li>
+<li><a class="xref" href="Resolved_Data_View_Preview_API.html#GetAvailableFieldSets">Get Available Field Sets</a></li>
+<li><a class="xref" href="Resolved_Data_View_Preview_API.html#GetFieldMappings">Get Field Mappings</a></li>
+<li><a class="xref" href="Resolved_Data_View_Preview_API.html#GetStatistics">Get Statistics</a></li>
+<li><a class="xref" href="Preview_Data_API.html#GetDataViewData">Get Data View Data</a></li>
+</ol>
+<h3 id="when-to-use-the-preview-routes">When to use the preview routes?</h3>
+<ul>
+<li>The preview APIs are useful for testing how all resources will resolve for the data view. These include data included in the data view, its source, and its destination. </li>
+<li>The preview data API provides the capability to identify the number of groups from which the <code>groupCount</code> query parameter will get preview data. The preview data API can also be used to identify the number of items per group using the <code>countPerGroup</code> parameter.</li>
+</ul>
+<h3 id="who-can-access-the-data-view-preview-routes">Who can access the data view preview routes?</h3>
+<ul>
+<li>The access rights required for the preview routes are identical to those of the non-preview data view create route.</li>
+<li>Users or clients with &quot;Write&quot; access rights on the Data views collection access control list can access the preview routes.</li>
+</ul>
 </article>
           </div>
           
@@ -101,7 +110,7 @@ The supported content type of request and response bodies is JSON unless otherwi
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/DataViews/Data_Views_API_Overview.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Documentation/DataViews/Preview_Data_View.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

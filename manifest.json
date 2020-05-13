@@ -177,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/DataViews/Data_Views_API_Overview.html",
-          "hash": "Wj6+JAh8O8kIRCY+46v2XQ=="
+          "hash": "k/LAzy4Xy1MhjfSYzwW+tw=="
         }
       },
       "is_incremental": false,
@@ -281,6 +281,30 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "Documentation/DataViews/Preview_Data_API.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/DataViews/Preview_Data_API.html",
+          "hash": "iDa9ysic0L0euWPxZHZx2w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/DataViews/Preview_Data_View.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/DataViews/Preview_Data_View.html",
+          "hash": "b75Fi6pI8TW3unMfTPfJBQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "Documentation/DataViews/Queries.md",
       "output": {
         ".html": {
@@ -334,6 +358,18 @@
         ".html": {
           "relative_path": "Documentation/DataViews/Resolved_Data_View_API.html",
           "hash": "B2hP43dxbvY6rTrV1OYMIA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/DataViews/Resolved_Data_View_Preview_API.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/DataViews/Resolved_Data_View_Preview_API.html",
+          "hash": "SNgJXMO8O9icFtnPEAjTkg=="
         }
       },
       "is_incremental": false,
@@ -978,7 +1014,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/toc.html",
-          "hash": "lv2qsQL6/2GRrQMuMopkcA=="
+          "hash": "tl+6FXrb526kTQ4CbkQlTg=="
         }
       },
       "is_incremental": false,
@@ -990,7 +1026,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "E5j/MpoPmvmilTrUPoMqYw=="
+          "hash": "VcdlB4J02biTAOr6HEGO0g=="
         }
       },
       "is_incremental": false,
@@ -1020,13 +1056,6 @@
         "full_build_reason_code": "NoAvailableBuildCache"
       },
       "processors": {
-        "ResourceDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
-        },
         "TocDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
@@ -1034,10 +1063,17 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 78,
+          "total_file_count": 81,
           "skipped_file_count": 0
         }
       }

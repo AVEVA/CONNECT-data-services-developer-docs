@@ -11,7 +11,6 @@ Get data for the provided data view and index parameters with paging. See [docum
 ### Request
 ```text
 GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/dataviews/data/interpolated?startIndex={startIndex}&endIndex={endIndex}&interval={interval}&form={form}&countPerGroup={countPerGroup}&groupCount={groupCount}&continuationToken={continuationToken}&count={count}
->>>>>>> 0ea044df4a8aa1d048fbf3e34211721dc3ee3d86
 
 ```
 ### Parameters

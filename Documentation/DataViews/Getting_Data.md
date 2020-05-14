@@ -90,7 +90,7 @@ To retrieve the entire requested range of data, clients should continue to follo
 It is possible for the continuation token to become invalid during paging. This is unlikely in ordinary circumstances. However, if an independent operation triggers the data view to re-resolve differently, existing continuation tokens are no longer valid. Data requests with an invalid token are considered bad requests. Paging must be restarted from the first page.
 
 #### FirstPage
-If the continuation token becomes invalid and paging must be restarted, clients may follow the `FirstPage` hyperlink. The hyperlink preserves all request parameters, adding or updating the cache behavior to `Preserve`. This ensures that multiple parallel workers cannot endlessly "trip" each other.
+If the continuation token becomes invalid and paging must be restarted, clients may follow the first page hyperlink included in the `Link` header. The hyperlink preserves all request parameters, adding or updating the cache behavior to `Preserve`. This ensures that multiple parallel workers cannot endlessly "trip" each other.
 
 For example:
 ```

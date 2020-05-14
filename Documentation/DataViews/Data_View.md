@@ -92,15 +92,15 @@ Individual piece of information, such as a property of an SDS stream or metadata
 ### FieldSource enumeration
 For fields that derive data from a data item (e.g. an SDS stream), the `FieldSource` enumeration specifies the part of that data item that a Field resolves to. Some sources require one or more `.Keys` to be specified on the field, such as `PropertyId` in which a key is the id of a desired property.
 
-|Name | Keyed | Details |
-|--|--|--|
-|NotApplicable | No | FieldSource is not applicable for an index field
-|Id | No | The id of the data item (stream)
-|Name | No | The name of the data item (stream)
-|PropertyId | Yes | Data from a stream property, found by id
-|PropertyName | Yes | Data from a stream property, found by name
-|Tags | Yes | Data item tags matching the collection provided
-|Metadata | Yes | Value of the data item metadata, found by key
+|Name | Enumeration Id | Keyed | Details |
+|--|--|--|--|
+|NotApplicable | 0 | No | FieldSource is not applicable for an index field
+|Id | 1 | No | The id of the data item (stream)
+|Name | 2 | No | The name of the data item (stream)
+|PropertyId | 3 | Yes | Data from a stream property, found by id
+|PropertyName | 4 | Yes | Data from a stream property, found by name
+|Metadata | 5 | Yes | Value of the data item metadata, found by key
+|Tags | 6 | Yes | Data item tags matching the collection provided
 
 ### SdsTypeCode enumeration
 `SdsTypeCode` enumeration is the name of a data type. It is used when defining a data view, where the only supported `.IndexTypeCode` is "DateTime".
@@ -109,7 +109,7 @@ See [Sds documentation](xref:sdsTypes#sdstypecode) for details.
 
 ### DataViewShape enumeration
 `DataViewShape` enumeration describes possible output shapes for a data view.
-|Name| Description  |
-|--|--|
-|Standard | Fields are resolved into a shape similar to how they were defined. This is the recommended shape unless specific needs dictate.
-|Narrow  | Fields are pivoted vertically, resulting in a view whose schema is independent of what data items (streams) are resolved by the data view.
+|Name| Enumeration Id | Description  |
+|--|--|--|
+|Standard | 0 | Fields are resolved into a shape similar to how they were defined. This is the recommended shape unless specific needs dictate.
+|Narrow | 1 | Fields are pivoted vertically, resulting in a view whose schema is independent of what data items (streams) are resolved by the data view.

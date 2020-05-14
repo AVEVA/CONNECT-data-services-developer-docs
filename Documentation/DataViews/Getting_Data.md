@@ -58,13 +58,13 @@ Data records are ordered
 ## Format
 The view data is available in several formats.
 
-| Name | Id | Description |
+| Name | Id | Enumeration Id | Description |
 |--|--|--|
-| JSON  | `default` | JSON object representation. An array of objects, each describing one data record. (default) |
-| Table | `table` | JSON row-column representation. Includes an array describing the `.Columns` (corresponding to field mappings of the data view) and an array of data `.Rows`. Each row describes one data record.
-| Table with header | `tableh` | Similar to `table`. The first of the `.Rows` is an array of the field mapping identifiers, information that is also available in the `.Columns` of both table formats. |
-| CSV | `csv` | Comma-separated values. Each row describes one data record. |
-| CSV with header | `csvh` | Similar to `csv`. The first row contains the identifier of its corresponding field mapping. |
+| JSON  | `default` | 0 | JSON object representation. An array of objects, each describing one data record. (default) |
+| Table | `table` | 1 | JSON row-column representation. Includes an array describing the `.Columns` (corresponding to field mappings of the data view) and an array of data `.Rows`. Each row describes one data record.
+| Table with header | `tableh` | 2 | Similar to `table`. The first of the `.Rows` is an array of the field mapping identifiers, information that is also available in the `.Columns` of both table formats. |
+| CSV | `csv` | 3 | Comma-separated values. Each row describes one data record. |
+| CSV with header | `csvh` | 4 | Similar to `csv`. The first row contains the identifier of its corresponding field mapping. |
 
 ## Paging
 Data retrieval operations are paged. Data for a requested index range may span multiple pages.

@@ -71,6 +71,12 @@ Holds an item that was resolved at a specific time.
 | Item | T | A resolved object
 | TimeOfResolution | DateTimeOffset | The time the item was resolved |
 
+### CacheBehavior enumeration
+|Name| Enumeration Id | Description  |
+|--|--|--|
+| Preserve | 1 | Use cached resource values |
+| Refresh | 2 | Re-resolve the resource values |
+
 ### DataItem
 |Property | Type | Details |
 |--|--|--|
@@ -86,9 +92,9 @@ Holds an item that was resolved at a specific time.
 ### DataItemResourceType enumeration
 Describes the resource type of a data item.
 
-|Name| Description  |
-|--|--|
-| Stream | A stream from the Sequential Data Store |
+|Name| Enumeration Id | Description  |
+|--|--|--|
+| Stream | 1 | A stream from the Sequential Data Store |
 
 ### DataItemField
 A field of a data item where values come from.  
@@ -123,12 +129,12 @@ Details on the provenance on every field of data:
 ### FieldKind enumeration
 Field type used in the mapping.
 
-|Name| Description  |
-|--|--|
-|IndexField | Maps to an index field.
-|GroupingField | Maps to a grouping field.
-|DataField | Maps to a data field.
-|FieldId | Maps to a field id field for a narrow shape data view.
+|Name| Enumeration Id | Description  |
+|--|--|--|
+|IndexField | 1 | Maps to an index field.
+|GroupingField | 2 | Maps to a grouping field.
+|DataField | 3 | Maps to a data field.
+|FieldId | 4 | Maps to a field id field for a narrow shape data view.
 
 ### DataMapping
 Per-group details of the data that a `FieldMapping` targets:

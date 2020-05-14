@@ -116,9 +116,8 @@ Details on the provenance on every field of data:
 |--|--|--|
 | Id | string | Unique identifier
 | Label | string | Friendly name
-| FieldKind | FieldKind enumeration | Specifies if the mapping is for an index, grouping or data field
-| FieldSetIndex | Nullable<int> | The position of the corresponding field set within the data view
-| FieldIndex | Nullable<int> | The position of the corresponding field within its field set
+| FieldKind | FieldKind enumeration | Specifies if the mapping is for an index, grouping, data, or field id field
+| TypeCode | SdsTypeCode | The primary data type of the mapping
 | DataMappings | IReadOnlyList<DataMapping> | Per-group details of what this field resolved to
 
 ### FieldKind enumeration
@@ -129,6 +128,7 @@ Field type used in the mapping.
 |IndexField | Maps to an index field.
 |GroupingField | Maps to a grouping field.
 |DataField | Maps to a data field.
+|FieldId | Maps to a field id field for a narrow shape data view.
 
 ### DataMapping
 Per-group details of the data that a `FieldMapping` targets:
@@ -138,6 +138,8 @@ Per-group details of the data that a `FieldMapping` targets:
 | TargetId | string | The unique identifier of the target data item
 | TargetFieldKey | string | The specific targeted part of the data item, if any.
 | TypeCode | SdsTypeCode | The value type
+| FieldSetIndex | Nullable<int> | The position of the corresponding field set within the data view
+| FieldIndex | Nullable<int> | The position of the corresponding field within its field set
 
 ### Statistics
 General statistics about how the data view resolved:
@@ -146,4 +148,24 @@ General statistics about how the data view resolved:
 |--|--|--|
 | DataItemCount | int | The total count of data items resolved in the data view
 | GroupCount | int | The total count of groups resolved in the data view
-| FieldCount | int | The total count of fields resolved in the data view
+| FieldMappingCount | int | The total count of field mappings resolved by the data view
+| DataFieldSets | IReadOnlyList<DataFieldSetStatistics> | Statistics about how the data view data field sets resolved
+
+### DataFieldSetStatistics
+Statistics about how a data field set resolved:
+
+|Property | Type | Details |
+|--|--|--|
+| DataItemCount | int | The total count of data items resolved for the data field set
+| UnmappedDataItemCount | int | The total count of data items not referenced by a field mapping resolved for the data field set
+| DataFields | IReadOnlyList<DataFieldStatistics> | Statistics about how the data field set data fields resolved
+
+### DataFieldStatistics
+Statistics about how a data field resolved:
+
+|Property | Type | Details |
+|--|--|--|
+| FieldMappingCount | int | The total count of field mappings associated with the data field
+| DataMappingCount | int | The total count of data mappings associated with the data field
+| EmptyDataMappingCount | int | The total count of data mappings associated with the data field that do not map to any data
+| UnmappedGroupCount | int | The total count of groups that do not map to any field mappings in the data field

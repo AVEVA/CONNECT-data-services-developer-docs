@@ -458,22 +458,16 @@ HTTP 200 OK
       {
         "Id": "Timestamp",
         "Label": "Timestamp",
-        "FieldSetIndex": 0,
-        "FieldIndex": 0,
+        "FieldKind": "IndexField",
+        "TypeCode": "DateTime",
         "DataMappings": [
           {
-            "TargetId": "",
-            "TargetFieldKey": "",
             "TypeCode": "DateTime"
           },
           {
-            "TargetId": "",
-            "TargetFieldKey": "",
             "TypeCode": "DateTime"
           },
           {
-            "TargetId": "",
-            "TargetFieldKey": "",
             "TypeCode": "DateTime"
           }
         ]
@@ -481,23 +475,28 @@ HTTP 200 OK
       {
         "Id": "Temperature",
         "Label": "Temperature",
-        "FieldSetIndex": 1,
-        "FieldIndex": 0,
+        "TypeCode": "Double",
         "DataMappings": [
           {
             "TargetId": "WS_BILT",
             "TargetFieldKey": "Temperature",
-            "TypeCode": "Double"
+            "TypeCode": "Double",
+            "FieldSetIndex": 1,
+            "FieldIndex": 0
           },
           {
             "TargetId": "WS_ROSE",
             "TargetFieldKey": "Temperature",
-            "TypeCode": "Double"
+            "TypeCode": "Double",
+            "FieldSetIndex": 1,
+            "FieldIndex": 0
           },
           {
             "TargetId": "WS_WINT",
             "TargetFieldKey": "AmbientTemperature",
-            "TypeCode": "Double"
+            "TypeCode": "Double",
+            "FieldSetIndex": 1,
+            "FieldIndex": 0
           }
         ]
       },
@@ -555,7 +554,39 @@ HTTP 200 OK
     "TimeOfResolution": "2019-12-13T01:23:45Z",
     "DataItemCount": 24,
     "GroupCount": 2,
-    "FieldCount": 12
+    "FieldMappingCount": 10,
+    "DataFieldSets": [
+        {
+            "DataItemCount": 18,
+            "UnmappedDataItemCount": 3,
+            "DataFields": [
+                {
+                    "FieldMappingCount": 3,
+                    "DataMappingCount": 6,
+                    "EmptyDataMappingCount": 0,
+                    "UnmappedGroupCount": 0
+                },
+                {
+                    "FieldMappingCount": 3,
+                    "DataMappingCount": 6,
+                    "EmptyDataMappingCount": 2,
+                    "UnmappedGroupCount": 1
+                }
+            ]
+        },
+        {
+            "DataItemCount": 6,
+            "UnmappedDataItemCount": 0,
+            "DataFields": [
+                {
+                    "FieldMappingCount": 2,
+                    "DataMappingCount": 4,
+                    "EmptyDataMappingCount": 2,
+                    "UnmappedGroupCount": 1
+                }
+            ]
+        }
+    ]
 }
 ```
 

@@ -4,27 +4,33 @@ uid: sdsStreamViews
 
 # Stream Views
 
-Stream Views provide flexibility in the use of types. While you cannot actually change the properties of types themselves, the stream views feature enables you to create a view of a selected stream that appears as if you had changed the type on which it is based. Types themselves cannot actually be changed; the “changing” of a type is described in a stream view. You create a stream view by choosing a source and target type as well as a set of mappings between properties of those two types. Using a stream view to leverage existing type properties is preferable to creating an actual new custom type, because the affected stream continues with its previously archived stream data intact.
+SdsStreamViews (or stream views) provide flexibility in the use of SdsTypes.
+While you cannot actually change the properties of SdsTypes themselves,
+the stream views feature enables you to create a view of a selected SdsStream that appears as if you had changed the SdsType on which it is based.
+You create a stream view by choosing a source and target type then a set of mappings between properties of those two types. 
+Using a stream view to leverage existing SdsType properties is preferable to creating a new SdsType, because the SdsStream that is based on the SdsType continues to function with its previously archived stream data intact.
 
-You can either view the impact of the stream view on a stream in an ad hoc manner, using a GET call, or you can assign the stream view to a stream in a PUT call.
+You can either see the impact of the stream view on a stream in an ad hoc manner through a GET method or assign the stream view to a stream with a PUT method.
 
-To view the impact of the stream view on a stream, you can apply a stream view to any read or GET operation. See [API Calls for Reading Data](xref:sdsReadingDataApi) for examples. SdsStreamView is used to specify the mapping between source and target types.
+To see how SdsStreamView impacts a stream, you can apply a stream view to any read or GET operation. For more information, see [API Calls for Reading Data](xref:sdsReadingDataApi).
+SdsStreamView is used to specify the mapping between the source and target types.
 
-To assign the stream view to a stream, execute an [Update Stream Type](xref:sdsStreams#update-stream-type) call.  By specifying the stream view id in the call, you can effectively assign the target type of the stream view to a specified stream. 
+To assign an SdsStreamView to an  SdsStream, execute an [Update Stream Type](xref:sdsStreams#update-stream-type) call.  By specifying the stream view id in the call, you can effectively assign the target type of the stream view to a specified stream. 
 
-SDS attempts to determine how to map Properties from the source to the destination. When the mapping 
-is straightforward, such as when the properties are in the same position and of the same data type, 
-or when the properties have the same name, SDS will map the properties automatically.
+SDS attempts to determine how to map `properties` from the source to the destination. When the mapping 
+is straightforward, such as when the `properties` are in the same position and of the same data type, 
+or when the `properties` have the same name, SDS will map the `properties` automatically.
 
 When SDS is unable to determine how to map a source property, the property is removed. If SDS encounters 
 a target property that it cannot map to, the property is added and configured with a default value.
 
-To map a property that is beyond the ability of SDS to map on its own, you should define an SdsStreamViewProperty 
+To map a property that is beyond the ability of SDS to map on its own, you should define an `SdsStreamViewProperty` 
 and add it to the SdsStreamView’s Properties collection.
 
-The following table shows the required and optional SdsStreamView fields. Fields that are not included are reserved for internal SDS use. See the [Search in SDS](xref:sdsSearching) topic regarding limitations on search.
-
+## SdsStreamView fields and properties table
 <a name="streamviewpropertiestable"></a>
+The following table shows the required and optional SdsStreamView fields. Fields that are not included are reserved for internal SDS use. 
+See the [Search in SDS](xref:sdsSearching) topic for limitations on search.
 | Property     | Type                   | Optionality | Searchable | Details |
 |--------------|------------------------|-------------|------------|---------|
 | Id           | String                 | Required    | Yes		   |Identifier for referencing the stream view |
@@ -33,7 +39,9 @@ The following table shows the required and optional SdsStreamView fields. Fields
 | SourceTypeId | String                 | Required    | Yes		   |Identifier of the SdsType of the SdsStream |
 | TargetTypeId | String                 | Required    | Yes		   |Identifier of the SdsType to convert events to |
 | Properties   | IList\<SdsStreamViewProperty\> | Optional    | Yes, with limitations*	  |Property level mapping |
-**\*Notes on Properties field**: SdsStreamViewProperty objects are not searchable. Only the SdsStreamViewProperty's SdsStreamView is searchable by its Id, SourceTypeId, and TargetTypeId, which are used to return the top level SdsStreamView object when searching. This includes nested SdsStreamViewProperties. For more information, see [search for stream views](xref:sdsSearching#search-for-stream-views).
+**\*Notes on `Properties` field**: SdsStreamViewProperty objects are not searchable.
+Only the SdsStreamViewProperty's SdsStreamView is searchable by its Id, SourceTypeId, and TargetTypeId, which are used to return the top level SdsStreamView object when searching.
+The same is true for nested SdsStreamViewProperties. For more information, see [search for stream views](xref:sdsSearching#search-for-stream-views).
 
 **Rules for the Stream View Identifier (SdsStreamView.Id)**
 
@@ -44,12 +52,11 @@ The following table shows the required and optional SdsStreamView fields. Fields
 5. Can contain a maximum of 100 characters
 
 
-## Properties/ SdsStreamViewProperty
-
+## SdsStreamViewProperty
 The SdsStreamView Properties collection provides detailed instructions for specifying the mapping of 
-event properties. Each SdsStreamViewProperty in the Properties collection defines the mapping of an 
-event’s property. SdsStreamView Properties are required only when property mapping is not straightforward. 
-Additionally, if you do not want a type property mapped, it is not necessary to create an SdsStreamView 
+event `properties`. Each SdsStreamViewProperty in the Properties collection defines the mapping of an 
+event’s `property`. SdsStreamView Properties are required only when property mapping is not straightforward. 
+Additionally, if you do not want a SdsType property mapped, it is not necessary to create an SdsStreamView 
 property for it.
 
 The following table shows the required and optional SdsStreamViewProperty fields.
@@ -60,14 +67,13 @@ The following table shows the required and optional SdsStreamViewProperty fields
 | TargetId | String  | Required    | Identifier of the SdsTypeProperty from the target SdsType Properties list |
 | SdsStreamView  | SdsStreamView | Optional    | Additional mapping instructions for derived types |
 
-The SdsStreamView field supports nested Properties.
+The SdsStreamView field supports nested `properties`.
 
 ## SdsStreamViewMap
-
 When an SdsStreamView is added, SDS defines a plan mapping. Plan details are retrieved as an SdsStreamViewMap. 
 The SdsStreamViewMap provides a detailed Property-by-Property definition of the mapping. 
 
-The following table shows the SdsStreamViewMap fields. The SdsStreamViewMap cannot be written to SDS, 
+The table below shows the SdsStreamViewMap fields. The SdsStreamViewMap cannot be written to SDS, 
 so required and optional have no meaning.
 
 | Property     | Type                     | Optionality  | Details |
@@ -76,12 +82,11 @@ so required and optional have no meaning.
 | TargetTypeId | String                   | Required     | Identifier of the SdsType to convert events to |
 | Properties   | IList\<SdsStreamViewMapProperty\>| Optional     | Property level mapping |
 
-### Properties/ SdsStreamViewMapProperty
-
-The SdsStreamViewMapProperty is similar to SdsStreamViewProperty but adds a Mode detailing one or more actions taken on 
+### SdsStreamViewMapProperty
+The SdsStreamViewMapProperty is similar to SdsStreamViewProperty but adds a `mode` detailing one or more actions taken on 
 the Property.
 
-The following table shows the SdsStreamViewMapProperty fields. The SdsStreamViewMap cannot be written; it can only be 
+The table below shows the SdsStreamViewMapProperty fields. The SdsStreamViewMap cannot be written; it can only be 
 retrieved from SDS, so required and optional have no meaning.
 
 | Property     | Type        | Details |
@@ -91,7 +96,7 @@ retrieved from SDS, so required and optional have no meaning.
 | Mode         | SdsStreamViewMode | Aggregate of actions applied to the properties. SdsStreamViewModes are combined via binary arithmetic |
 | SdsStreamViewMap   | SdsStreamViewMap  | Mapping for derived types |
 
-The available SdsStreamViewModes are shown in the table below.
+The available SdsStreamViewModes are shown in the table below:
 
 | Name                   | Value  | Description |
 |------------------------|--------|-------------|
@@ -105,21 +110,21 @@ The available SdsStreamViewModes are shown in the table below.
 
 ## Changing Stream Type
 
-Stream Views can be used to change the Type defining a Stream. You cannot modify the SdsType; types are immutable. 
-But you can map a stream from its current type to a new type.
+SdsStreamViews are used to change the SdsType defining a SdsStream. You cannot modify the SdsType itself as types are immutable. 
+But you can map an SdsStream from its current SdsType to a new SdsType.
 
-To update a Stream's Type, define an SdsStreamView and PUT the stream view to the following:
+To update an SdsType of an SdsStream, define an SdsStreamView and do the following:
 ```text
    PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type?streamViewId={streamViewId}
 ```
 
-For details, see [Update Stream Type](xref:sdsStreams#update-stream-type). 
+For more information, see [Update Stream Type](xref:sdsStreams#update-stream-type). 
 
 ## Working with Stream Views when using .NET
 
 **Using .NET**
 
-When working in .NET, use the SDS Client libraries’ ISdsMetadataService.
+When working in .NET, use the SDS client libraries method `ISdsMetadataService`.
 
 Given the following:
 ```csharp
@@ -235,11 +240,11 @@ foreach (Simple1 value in simple1Values)
 //  4 / 1 / 2017 7:09:00 AM: Warning, 9
 ```
 
-A quick look at the SdsStreamViewMap shows that SDS was able to determine that mapping from Measurement 
-to Value involved a rename.
+A quick look at the SdsStreamViewMap shows that SDS was able to determine that mapping from `Measurement` 
+to `Value` resulted in renaming.
 
-SDS can also determine mapping of properties of the same name but different type. Note that the 
-location of the Measurement property is also different yet it is still mapped.
+SDS can also determine mapping of `properties` of the same name but different type. Note that the 
+location of the `Measurement` property is also different yet it is still mapped.
 ```csharp
 public class Simple2
 {
@@ -292,9 +297,9 @@ foreach (Simple2 value in simple2Values)
 //    4 / 1 / 2017 7:09:00 AM: Warning, 9
 ```
 
-The SdsStreamViewMap shows that the source, floating point Measurement is converted to the target, integer Measurement.
+The SdsStreamViewMap shows that the source `Measurement` floating point is converted to integer in the target.
 
-When neither the field name nor field type and location match, SDS does not determine mapping. 
+When neither the field name nor the field type or location matches, SDS does not determine mapping. 
 The source is eliminated and target is added and assigned the default value.
 ```csharp
 public class Simple3
@@ -410,10 +415,10 @@ foreach (Simple3 value in simple3Values)
 ## Working with SdsStreamViews when not using .NET
 
 When working with Stream Views and not using .NET, either invoke HTTP directly or use some of 
-the sample code. Both Python and JavaScript samples have SdsStreamView definitions.
+the sample codes. Both Python and JavaScript samples have SdsStreamView definitions.
 
-The JSON for a simple mapping between a source type with identifier Sample and a target 
-type with identifier Sample1 would appear as follows.
+The JSON for a simple mapping between a source type with identifier `Simple` and a target 
+type with identifier `Simple1` would appear as follows:
 ```json
 {  
   "Id":"StreamView",
@@ -423,7 +428,7 @@ type with identifier Sample1 would appear as follows.
 }
 ```
 
-The SdsStreamViewMap would appear as follows.
+The SdsStreamViewMap would appear as follows:
 
 ```json
 {  
@@ -450,7 +455,7 @@ The SdsStreamViewMap would appear as follows.
 # SdsStreamView API
 
 The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact 
-with SdsStreamViews. When working in .NET convenient SDS Client libraries are available. The ISdsMetadataService 
+with SdsStreamViews. When working in .NET, convenient SDS .NET client libraries methods are available. The `ISdsMetadataService` 
 interface, accessed using the ``SdsService.GetMetadataService()`` helper, defines the available functions. 
 See [Stream Views](#stream-views) for general SdsStreamView information.
 
@@ -460,12 +465,12 @@ See [Stream Views](#stream-views) for general SdsStreamView information.
 
 Returns the stream view corresponding to the specified streamViewId within a given namespace.
 
-**Request**
+### Request
  ```text
     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
  ```
 
-**Parameters**
+### Parameters 
 
 `string tenantId`  
 The tenant identifier  
@@ -476,14 +481,14 @@ The namespace identifier
 `string streamViewId`  
 The stream view identifier  
 
-**Response**  
+### Response
 The response includes a status code and a response body.
 
 
-**Response body**  
+### Response body  
 The requested SdsStreamView.
 
-Example response body:
+#### Example response body
 ```json
 HTTP/1.1 200
 Content-Type: application/json
@@ -509,7 +514,7 @@ Content-Type: application/json
 }
 ```
 
-**.NET Library**
+### .NET client libraries method
 ```csharp
    Task<SdsStreamView> GetStreamViewAsync(string streamViewId);
 ```
@@ -520,12 +525,12 @@ Content-Type: application/json
 
 Returns the stream view map corresponding to the specified streamViewId within a given namespace.
 
-**Request**
+### Request
  ```text
     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Map
  ```
 
-**Parameters**
+### Parameters 
 
 `string tenantId`  
 The tenant identifier  
@@ -536,14 +541,14 @@ The namespace identifier
 `string streamViewId`  
 The stream view identifier  
 
-**Response**  
+### Response
  The response includes a status code and a response body.
 
 
-**Response body**  
+### Response body  
 The requested SdsStreamView.
 
-Example response body:
+#### Example response body
 ```json
 HTTP/1.1 200
 Content-Type: application/json
@@ -574,7 +579,7 @@ Content-Type: application/json
 ```
 
 
-**.NET Library**
+### .NET client libraries method
 ```csharp
    Task<SdsStreamViewMap> GetStreamViewMapAsync(string streamViewId);
 ```
@@ -587,15 +592,15 @@ Returns a list of stream views within a given namespace.
 
 If specifying the optional search query parameter, the list of stream views returned will match 
 the search criteria. If the search query parameter is not specified, the list will include 
-all stream views in the Namespace. See [Searching](xref:sdsSearching) for information about specifying those respective parameters.
+all stream views in the namespace. See [Searching](xref:sdsSearching) for information about specifying those respective parameters.
 
 
-**Request**
+### Request
  ```text
     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews?query={query}&skip={skip}&count={count}&orderby={orderby}
  ```
 
-**Parameters**
+### Parameters 
 
 `string tenantId`  
 The tenant identifier
@@ -605,7 +610,7 @@ The namespace identifier
 
 `string query`  
 An optional parameter representing a string search. 
-See [Searching](xref:sdsSearching)
+See [Search in SDS](xref:sdsSearching)
 for information about specifying the search parameter.
 
 `int skip`  
@@ -620,14 +625,14 @@ If not specified, a default value of 100 is used.
 An optional parameter representing sorted order which SdsStreamViews will be returned. A field name is required. The sorting is based   on the stored values for the given field (of type string). For example, ``orderby=name`` would sort the returned results by the      ``name`` values (ascending by default). Additionally, a value can be provided along with the field name to identify whether to sort       ascending or descending, by using values ``asc`` or ``desc``, respectively. For example, ``orderby=name desc`` would sort the returned   results by the ``name`` values, descending. If no value is specified, there is no sorting of results.
 
 
-**Response**  
+### Response
 The response includes a status code and a response body.
 
 
-**Response body**  
+### Response body  
 A collection of zero or more SdsStreamViews.
 
-Example response body:
+#### Example response body
 ```json
 HTTP/1.1 200
 Content-Type: application/json
@@ -661,7 +666,7 @@ Content-Type: application/json
 ]
 ```
                 
-**.NET Library**
+### .NET client libraries method
 ```csharp
    Task<IEnumerable<SdsStreamView>> GetStreamViewsAsync(int skip = 0, int count = 100);
 ```
@@ -675,12 +680,12 @@ If the stream views are identical, a Found (302) status is returned and the stre
 
 If no matching identifier is found, the specified stream view is created.  
 
-**Request**
+### Request
  ```text
     POST api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
  ```
 
-**Parameters**
+### Parameters 
 
 `string tenantId`  
 The tenant identifier  
@@ -691,16 +696,16 @@ The namespace identifier
 `string streamViewId`  
 The stream view identifier. The identifier must match the ``SdsStreamView.Id`` field.   
 
-**Request body**  
+#### Request body  
 The request content is the serialized SdsStreamView. If you are not using the SDS client libraries, using JSON is recommended.
 
-**Response**  
+### Response
 The response includes a status code and a response body.
 
-**Response body**  
+### Response body  
 The newly created or matching SdsStreamView.
 
-**.NET Library**
+### .NET client libraries method
 ```csharp
    Task<SdsStreamView> GetOrCreateStreamViewAsync(SdsStreamView sdsStreamView);
 ```
@@ -711,12 +716,12 @@ The newly created or matching SdsStreamView.
 
 Creates or updates the definition of a stream view. 
 
-**Request**
+### Request
  ```text
     PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
  ```
 
-**Parameters**
+### Parameters 
 
 `string tenantId`
 The tenant identifier  
@@ -727,16 +732,16 @@ The namespace identifier
 `string streamViewId`  
 The stream view identifier  
 
-**Request body**  
+#### Request body  
 The request content is the serialized SdsStreamView.
 
-**Response**  
+### Response
 The response includes a status code and a response body.
 
-**Response body**  
+### Response body  
 The newly created or updated SdsStreamView.
 
-**.NET Library**
+### .NET client libraries method
 ```csharp
    Task CreateOrUpdateStreamViewAsync(SdsStreamView SdsStreamView);
 ```
@@ -747,12 +752,12 @@ The newly created or updated SdsStreamView.
 
 Deletes a stream view from the specified tenant and namespace.
 
-**Request**
+### Request
  ```text
     DELETE api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
  ```
 
-**Parameters**
+### Parameters 
 
 `string tenantId`  
 The tenant identifier  
@@ -763,10 +768,10 @@ The namespace identifier
 `string streamViewId`  
 The stream view identifier  
 
-**Response**  
+### Response
 The response includes a status code.
 
-**.NET Library**
+### .NET client libraries method
 ```csharp
    Task DeleteStreamViewAsync(string streamViewId);
 ```
@@ -776,12 +781,12 @@ The response includes a status code.
 
 Get the default ACL for the Stream Views collection. For more information on ACLs, see [Access Control](xref:accessControl).
 
-**Request**
+### Request
  ```text
     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/StreamViews
  ```
 
-**Parameters**
+### Parameters 
 
 `string tenantId`  
 The tenant identifier  
@@ -789,13 +794,13 @@ The tenant identifier
 `string namespaceId`  
 The namespace identifier  
 
-**Response**  
+### Response
 The response includes a status code and a response body.
 
-**Response body**  
+### Response body  
 The default ACL for Stream Views
 
-**.NET Library**
+### .NET client libraries method
 ```csharp
    Task<AccessControlList> GetStreamViewsAccessControlListAsync();
 ```
@@ -805,12 +810,12 @@ The default ACL for Stream Views
 
 Update the default ACL for the Stream Views collection. For more information on ACLs, see [Access Control](xref:accessControl).
 
-**Request**
+### Request
  ```text
     PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/StreamViews
  ```
 
-**Parameters**
+### Parameters 
 
 `string tenantId`  
 The tenant identifier  
@@ -818,13 +823,13 @@ The tenant identifier
 `string namespaceId`  
 The namespace identifier  
 
-**Request body**  
+#### Request body  
 Serialized ACL
 
-**Response**  
+### Response
 The response includes a status code.
 
-**.NET Library**
+### .NET client libraries method
 ```csharp
    Task UpdateStreamViewsAccessControlListAsync(AccessControlList viewsAcl);
 ```
@@ -835,12 +840,12 @@ The response includes a status code.
 
 Get the ACL of the specified stream view. For more information on ACLs, see [Access Control](xref:accessControl).
 
-**Request**
+### Request
  ```text
     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/AccessControl
  ```
 
-**Parameters**
+### Parameters 
 
 `string tenantId`  
 The tenant identifier  
@@ -851,13 +856,13 @@ The namespace identifier
 `string streamViewId`  
 The stream view identifier  
 
-**Response**  
+### Response
 The response includes a status code and a response body.
 
-**Response Body**  
+#### Response body  
 The ACL for the specified stream view
 
-**.NET Library**
+### .NET client libraries method
 ```csharp
    Task<AccessControlList> GetStreamViewAccessControlListAsync(string streamViewId);
 ```
@@ -867,12 +872,12 @@ The ACL for the specified stream view
 
 Update the ACL of the specified stream view. For more information on ACLs, see [Access Control](xref:accessControl).
 
-**Request**
+### Request
  ```text
     PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/AccessControl
  ```
 
-**Parameters**
+### Parameters 
 
 `string tenantId`  
 The tenant identifier  
@@ -883,13 +888,13 @@ The namespace identifier
 `string streamViewId`  
 The stream view identifier  
 
-**Request body**  
+#### Request body  
 Serialized ACL
 
-**Response**  
+### Response
 The response includes a status code.
 
-**.NET Library**
+### .NET client libraries method
 ```csharp
    Task UpdateStreamViewAccessControlListAsync(string streamViewId, AccessControlList viewAcl);
 ```
@@ -899,12 +904,12 @@ The response includes a status code.
 
 Get the Owner of the specified stream view. For more information on Owners, see [Access Control](xref:accessControl).
 
-**Request**
+### Request
  ```text
     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Owner
  ```
 
-**Parameters**
+### Parameters 
 
 `string tenantId`  
 The tenant identifier  
@@ -915,13 +920,13 @@ The namespace identifier
 `string streamViewId`  
 The stream view identifier  
 
-**Response**  
+### Response
 The response includes a status code and a response body.
 
-**Response Body**  
+#### Response body  
 The Owner for the specified stream view
 
-**.NET Library**
+### .NET client libraries method
 ```csharp
    Task<Trustee> GetStreamViewOwnerAsync(string streamViewId);
 ```
@@ -931,12 +936,12 @@ The Owner for the specified stream view
 
 Update the Owner of the specified stream view. For more information on Owners, see [Access Control](xref:accessControl).
 
-**Request**
+### Request
  ```text
     PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Owner
  ```
 
-**Parameters**
+### Parameters 
 
 `string tenantId`  
 The tenant identifier  
@@ -947,13 +952,13 @@ The namespace identifier
 `string streamViewId`  
 The stream view identifier  
 
-**Request body**  
+#### Request body  
 Serialized Owner
 
-**Response**  
+### Response
 The response includes a status code.
 
-**.NET Library**
+### .NET client libraries method
 ```csharp
    Task UpdateStreamViewOwnerAsync(string streamViewId, Trustee viewOwner);
 ```
@@ -964,12 +969,12 @@ The response includes a status code.
 Gets the Access Rights associated with the specified stream view for the requesting identity. For 
 more information on Access Rights, see [Access Control](xref:accessControl#commonaccessrightsenum).
 
-**Request**
+### Request
  ```text
     GET api/v1//Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/AccessRights
  ```
 
-**Parameters**
+### Parameters 
 
 `string tenantId`  
 The tenant identifier  
@@ -980,13 +985,13 @@ The namespace identifier
 `string streamViewId`  
 The stream view identifier  
 
-**Response**  
+### Response
 The response includes a status code and a response body.
 
-**Response Body**  
+#### Response body  
 The Access Rights of the specified stream view for the requesting identity.
 
-Example response body:
+#### Example response body
 ```json
 HTTP/1.1 200
 Content-Type: application/json
@@ -994,7 +999,7 @@ Content-Type: application/json
 ["Read", "Write"]
 ```
 
-**.NET Library**
+### .NET client libraries method
 ```csharp
    Task<string[]> GetStreamViewAccessRightsAsync(string streamViewId);
 ```

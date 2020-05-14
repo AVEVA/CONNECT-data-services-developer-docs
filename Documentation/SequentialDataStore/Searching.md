@@ -46,7 +46,7 @@ An optional parameter representing the maximum number of SdsStreams to retrieve.
 `string orderby`  
 An optional parameter representing the sorted order in which SdsStreams are returned. Requires a field name (``orderby=name``, for example). Default order is ascending (``asc``). Add ``desc`` for descending order (``orderby=name desc``, for example). If unspecified, there is no sorting of results.
 
-#### .NET client libraries method
+#### .NET client libraries methods
 If there are 175 streams that match the search criteria "temperature" in a single call for example, below will return the first 100 matches:
 
 ```csharp
@@ -162,7 +162,7 @@ For more information on stream view properties, see [Stream Views](xref:sdsStrea
 | SourceTypeId | Yes		|
 | TargetTypeId | Yes		|
 | Properties   | Yes, with limitations* |
-**\*Notes on Properties field:** The Properties collection contains a list of SdsStreamViewProperty objects. The query will attempt to find a match on the SdsStreamViewProperty's Id, SourceTypeId, and TargetTypeId fields. The Properties collection of nested views will also be searched. See example below.  
+**\*Notes on `Properties` field:** The Properties collection contains a list of SdsStreamViewProperty objects. The query will attempt to find a match on the SdsStreamViewProperty's Id, SourceTypeId, and TargetTypeId fields. The Properties collection of nested views will also be searched. See example below.  
 
 ##### Example
 You can search for ``ComplexView`` using the `Id`("NestedView"), `SourceTypeId`, and `TargetTypeId` of ``NestedView`` but not its `Description`("An example of a nested view").  

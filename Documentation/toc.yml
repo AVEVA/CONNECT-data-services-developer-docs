@@ -9,7 +9,7 @@
 - name: Sequential Data Store
   href: SequentialDataStore/toc.yml
   topicHref: SequentialDataStore/Data_Store_and_SDS.md
-- name: Data Ingress and OSIsoft Message Format
+- name: Data Ingress and OMF
   href: DataIngress/toc.yml
   topicHref: DataIngress/Data_Ingress.md
 - name: Metadata Rules (Preview)
@@ -24,5 +24,5 @@
   topicHref: Access_Control.md
 - name: Samples
   topicHref: samples.md
-- name: Getting Support
+- name: Technical Support
   topicHref: support.md

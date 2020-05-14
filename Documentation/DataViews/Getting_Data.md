@@ -19,9 +19,9 @@ Three parameters control the range and granularity of data returned:
 
 | Name | Query-time parameter | Default property | Description |
 |--|--|--|--|
-| Start index | `startIndex` | `defaultStartIndex` | The inclusive start boundary of the data view data
-| End index | `endIndex` | `defaultEndIndex` | The inclusive end boundary of the data view data
-| Interval | `interval` | `defaultInterval` | The interval between index values
+| Start index | `startIndex` | `DefaultStartIndex` | The inclusive start boundary of the data view data
+| End index | `endIndex` | `DefaultEndIndex` | The inclusive end boundary of the data view data
+| Interval | `interval` | `DefaultInterval` | The interval between index values
 
 Default values may, optionally, be defined on the data view itself. It is not necessary to define defaults for all three properties. 
 
@@ -75,17 +75,17 @@ By default, each page includes 1000 records. The maximum page size is 250,000.
 Optimal page size is dependent both on the client and on the shape of the data view. The size of each individual record is proportional to the "width" of the data view, i.e. how many field mappings are resolved. Clients retrieving data views that resolve into few field mappings may wish to use a page size close to the maximum.
 
 ### Hyperlinks
-When paging through data view data via the REST API, hyperlinks to the `FirstPage` and `NextPage` are provided. Proper use of the hyperlinks is recommended.
+When paging through data view data via the REST API, hyperlinks to the first page and next page of data are provided in the `Link` header. The first page header is signified by relation type of first, `rel="first"`. The next page header is signified by `rel="next"`. Proper use of the hyperlinks is recommended.
 
-#### NextPage
-If the requested data spans into another page, the response includes a hyperlink to the next page of data. Absence of a `NextPage` link indicates that the data does not span past the current page.
+#### Next page
+If the requested data spans into another page, the response includes a hyperlink to the next page of data. Absence of a `rel="next"` link indicates that the data does not span past the current page.
 
 The hyperlink preserves all request parameters, while adding or updating a `continuationToken`. For example:
 ```
-NextPage: ".../dataViews/{dataViewId}/data/interpolated?continuationToken=MjAxOC0wMS0wMVQwMDowMDoxMVo_MD90Yk1OblE_QUxXcEZBP1VEdGxIMWJROG9z&count=1000"
+Link: <.../dataViews/{dataViewId}/data/interpolated?continuationToken=MjAxOC0wMS0wMVQwMDowMDoxMVo_MD90Yk1OblE_QUxXcEZBP1VEdGxIMWJROG9z&count=1000>; rel="next"
 ```
 
-To retrieve the entire requested range of data, clients should continue to follow `NextPage` hyperlinks until the response does not include a `NextPage` link. This indicates that the last page has been reached.
+To retrieve the entire requested range of data, clients should continue to follow next page hyperlinks until the response does not include a next page link. This indicates that the last page has been reached.
 
 It is possible for the continuation token to become invalid during paging. This is unlikely in ordinary circumstances. However, if an independent operation triggers the data view to re-resolve differently, existing continuation tokens are no longer valid. Data requests with an invalid token are considered bad requests. Paging must be restarted from the first page.
 
@@ -94,7 +94,7 @@ If the continuation token becomes invalid and paging must be restarted, clients 
 
 For example:
 ```
-FirstPage: ".../dataViews/{dataViewId}/data/interpolated?cache=Preserve&count=1000"
+Link: <.../dataViews/{dataViewId}/data/interpolated?cache=Preserve&count=1000>, rel="first"
 ```
 
 ### Index parameters

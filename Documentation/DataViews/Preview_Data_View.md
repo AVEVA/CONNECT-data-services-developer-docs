@@ -22,9 +22,9 @@ Below data view API routes are available to be used as preview routes:
 
 ### When to use the preview routes?
 * The preview APIs are useful for testing how all resources will resolve for the data view. These include data included in the data view, its source, and its destination. 
-* The preview data API provides the capability to identify the number of groups from which the `groupCount` query parameter will get preview data. The preview data API can also be used to identify the number of items per group using the `countPerGroup` parameter.
+* The preview data API provides the capability to identify the number of groups to retrieve preview data for using the `groupCount` query parameter. The preview data API can also be used to identify the number of items per group using the `countPerGroup` parameter.
 
 ### Who can access the data view preview routes?
 
 * The access rights required for the preview routes are identical to those of the non-preview data view create route.
-* Users or clients with "Write" access rights on the Data views collection access control list can access the preview routes.
+* Users or clients with "Write" access rights on the data views collection access control list can access the preview routes.

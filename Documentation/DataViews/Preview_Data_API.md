@@ -11,6 +11,7 @@ Get data for the provided data view and index parameters with paging. See [docum
 ### Request
 ```text
 GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/dataviews/data/interpolated?startIndex={startIndex}&endIndex={endIndex}&interval={interval}&form={form}&countPerGroup={countPerGroup}&groupCount={groupCount}&continuationToken={continuationToken}&count={count}
+>>>>>>> 0ea044df4a8aa1d048fbf3e34211721dc3ee3d86
 
 ```
 ### Parameters
@@ -84,7 +85,7 @@ The requested page size. The default value is 1000. The maximum is 250,000.
        },
   ],
   "GroupingFields": [],
-  "IndexTypeCode": "Date Time",
+  "IndexTypeCode": "DateTime",
   "Shape": "Standard"
 }
 ```
@@ -95,7 +96,7 @@ The response includes a status code and, in most cases, a body.
 | Status code | Body Type | Description |
 |--|--|--|
 | 200 OK                    | data in the requested format  | Successfully retrieved data.  |
-| 400 Bad Request           | error | The request could not be understood by the server due to malformed syntax.
+| 400 Bad Request           | error | The data view or the query parameters are not valid. See the response body for details. |
 | 403 Forbidden             | error | User is not authorized to create a data view.
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
 

@@ -13,7 +13,7 @@ Gets the paged collection of data items that are the results of an individual qu
 ### Request
 
 ```text
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/Resolved/DataItems/{queryId}?cache={cache}&skip={skip}&count={count}
+GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/Resolved/DataItems/{queryId}?cache={cache}&skip={skip}&count={count}
 ```
 ### Request path parameters
 
@@ -117,7 +117,7 @@ Gets the paged collection of data items that are the results of an individual qu
 ### Request
 
 ```text
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/Resolved/IneligibleDataItems/{queryId}?cache={cache}&skip={skip}&count={count}
+GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/Resolved/IneligibleDataItems/{queryId}?cache={cache}&skip={skip}&count={count}
 ```
 
 ### Request path parameters
@@ -209,7 +209,7 @@ Gets the collection of `Group`s that resolved for a data view.
 ### Request
 
 ```text
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/Resolved/Groups?cache={cache}&skip={skip}&count={count}
+GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/Resolved/Groups?cache={cache}&skip={skip}&count={count}
 ```
 
 ### Request path parameters
@@ -316,7 +316,7 @@ Gets the collection of field sets that are available for use in the data view, a
 ### Request
 
 ```text
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/Resolved/AvailableFieldSets?cache={cache}
+GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/Resolved/AvailableFieldSets?cache={cache}
 ```
 
 ### Request path parameters
@@ -410,7 +410,7 @@ Gets the collection of field mappings resolved for the data view. These show the
 ### Request
 
 ```text
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/Resolved/FieldMappings?cache={cache}
+GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/Resolved/FieldMappings?cache={cache}
 ```
 
 ### Request path parameters
@@ -458,22 +458,16 @@ HTTP 200 OK
       {
         "Id": "Timestamp",
         "Label": "Timestamp",
-        "FieldSetIndex": 0,
-        "FieldIndex": 0,
+        "FieldKind": "IndexField",
+        "TypeCode": "DateTime",
         "DataMappings": [
           {
-            "TargetId": "",
-            "TargetFieldKey": "",
             "TypeCode": "DateTime"
           },
           {
-            "TargetId": "",
-            "TargetFieldKey": "",
             "TypeCode": "DateTime"
           },
           {
-            "TargetId": "",
-            "TargetFieldKey": "",
             "TypeCode": "DateTime"
           }
         ]
@@ -481,23 +475,28 @@ HTTP 200 OK
       {
         "Id": "Temperature",
         "Label": "Temperature",
-        "FieldSetIndex": 1,
-        "FieldIndex": 0,
+        "TypeCode": "Double",
         "DataMappings": [
           {
             "TargetId": "WS_BILT",
             "TargetFieldKey": "Temperature",
-            "TypeCode": "Double"
+            "TypeCode": "Double",
+            "FieldSetIndex": 1,
+            "FieldIndex": 0
           },
           {
             "TargetId": "WS_ROSE",
             "TargetFieldKey": "Temperature",
-            "TypeCode": "Double"
+            "TypeCode": "Double",
+            "FieldSetIndex": 1,
+            "FieldIndex": 0
           },
           {
             "TargetId": "WS_WINT",
             "TargetFieldKey": "AmbientTemperature",
-            "TypeCode": "Double"
+            "TypeCode": "Double",
+            "FieldSetIndex": 1,
+            "FieldIndex": 0
           }
         ]
       },
@@ -516,7 +515,7 @@ Gets statistics about the size and shape on how the data view resolved.
 ### Request
 
 ```text
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/Resolved/Statistics?cache={cache}
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/Resolved/Statistics?cache={cache}
 ```
 
 ### Request path parameters
@@ -555,7 +554,39 @@ HTTP 200 OK
     "TimeOfResolution": "2019-12-13T01:23:45Z",
     "DataItemCount": 24,
     "GroupCount": 2,
-    "FieldCount": 12
+    "FieldMappingCount": 10,
+    "DataFieldSets": [
+        {
+            "DataItemCount": 18,
+            "UnmappedDataItemCount": 3,
+            "DataFields": [
+                {
+                    "FieldMappingCount": 3,
+                    "DataMappingCount": 6,
+                    "EmptyDataMappingCount": 0,
+                    "UnmappedGroupCount": 0
+                },
+                {
+                    "FieldMappingCount": 3,
+                    "DataMappingCount": 6,
+                    "EmptyDataMappingCount": 2,
+                    "UnmappedGroupCount": 1
+                }
+            ]
+        },
+        {
+            "DataItemCount": 6,
+            "UnmappedDataItemCount": 0,
+            "DataFields": [
+                {
+                    "FieldMappingCount": 2,
+                    "DataMappingCount": 4,
+                    "EmptyDataMappingCount": 2,
+                    "UnmappedGroupCount": 1
+                }
+            ]
+        }
+    ]
 }
 ```
 

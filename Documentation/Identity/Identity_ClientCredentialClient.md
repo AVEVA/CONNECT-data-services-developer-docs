@@ -21,7 +21,7 @@ For HTTP requests and responses, the ClientCredentialClient object has the follo
 Property | Type | Description
  --- | --- | ---
 RoleIds | Guid[] | Gets or sets list of Roles to be assigned to this client. Member role is always required. For security reasons we advise against assigning Admin roles to a client.
-Id | string | Gets or sets client ID for this client. This ID should be a GUID.
+Id | string | Gets or sets secret Id.
 Name | string | Gets or sets name of Client.
 Enabled | bool | Gets or sets whether client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.
 AccessTokenLifetime | int32 | Gets or sets lifetime of access token issued for this client after authentication. Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.
@@ -106,7 +106,7 @@ Property | Type | Required | Description
  --- | --- | --- | ---
 SecretDescription | string | No | Gets or sets description for the initial secret for the client. Ensure that this is descriptive enough,            as it will be the only way to distinguish between multiple secrets and their usage for a            client.
 SecretExpirationDate | DateTime | No | Gets or sets expiration date for the initial secret for the client. If set to null the secret will            never expire. We advise against such practice.
-RoleIds | Guid[] | No | Gets or sets list of Roles to be assigned to this client. Member role is always required.            For security reasons we advise against assigning Admin roles to a client.
+RoleIds | Guid[] | Yes | Gets or sets list of Roles to be assigned to this client. Member role is always required.            For security reasons we advise against assigning Admin roles to a client.
 Id | string | No | Gets or sets client ID for this client. This ID should be a GUID.
 Name | string | Yes | Gets or sets name of Client.
 Enabled | bool | No | Gets or sets whether client is enabled. Client can be used for authentication            if set to true. Client cannot be used for authentication if set to false.
@@ -118,7 +118,7 @@ Tags | string[] | No | Gets or sets for OSIsoft internal use only.
 ```json
 {
   "SecretDescription": "description",
-  "SecretExpirationDate": "2020-02-25T15:14:48.5916162-08:00",
+  "SecretExpirationDate": "2020-03-30T15:34:23.2980074-07:00",
   "RoleIds": [
     "00000000-0000-0000-0000-000000000000",
     "00000000-0000-0000-0000-000000000000"
@@ -155,7 +155,7 @@ Created.
   "Secret": "Secret",
   "Id": 0,
   "Description": "description",
-  "ExpirationDate": "2020-02-25T15:14:48.5936848-08:00",
+  "ExpirationDate": "2020-03-30T15:34:23.3017388-07:00",
   "Client": {
     "RoleIds": [
       "00000000-0000-0000-0000-000000000000",
@@ -192,6 +192,10 @@ Tenant not found.
 #### 405
 
 Method not allowed at this base URL. Try the request again at the Global base URL.
+
+#### 408
+
+Operation timed out.
 
 #### 409
 
@@ -316,6 +320,10 @@ Client or Tenant not found.
 
 Method not allowed at this base URL. Try the request again at the Global base URL.
 
+#### 408
+
+Operation timed out.
+
 #### 500
 
 Internal server error.
@@ -349,8 +357,8 @@ Id of Client.
 
 Allowed for these roles:
 
-- `Account Administrator`
 - `Account Member`
+- `Account Administrator`
 
 ### Returns
 
@@ -464,8 +472,8 @@ Maximum number of clients to return. Will be ignored if a list of Ids is passed.
 
 Allowed for these roles:
 
-- `Account Administrator`
 - `Account Member`
+- `Account Administrator`
 
 ### Returns
 
@@ -645,6 +653,10 @@ Client or Tenant not found.
 
 Method not allowed at this base URL. Try the request again at the Global base URL.
 
+#### 408
+
+Operation timed out.
+
 #### 500
 
 Internal server error.
@@ -680,8 +692,8 @@ Id of Client.
 
 Allowed for these roles:
 
-- `Account Administrator`
 - `Account Member`
+- `Account Administrator`
 
 ### Returns
 
@@ -753,8 +765,8 @@ Only count Clients that have these tags.
 
 Allowed for these roles:
 
-- `Account Administrator`
 - `Account Member`
+- `Account Administrator`
 
 ### Returns
 

@@ -22,7 +22,7 @@ These are available via the [Resolved Data View API](xref:ResolvedDataViewAPI). 
 #### Paged collections
 Some of this information is exposed as paged collections, which accept parameters controlling `skip` and `count` within the collection. 
 
-Paged responses include a header called `FirstPage`, linking to the first page of results. If the results extend into an additional page, a `NextPage` header is included with a hyperlink to the next page.
+Paged responses include a `Link` header, with a hyperlink linking to the first page of results. If the results extend into an additional page, a hyperlink to the next page will also be included in the `Link` header.
 
 Using these hyperlinks is the recommended method of paging. Alternatively, constructing paging links by manually incrementing the `skip` is allowable, though in this case it is recommended to specify cache behavior of "preserve".
 
@@ -78,7 +78,7 @@ Holds an item that was resolved at a specific time.
 | Name | string | Friendly name
 | Description | string | Extended text description
 | TypeId | string | The unique identifier of the data item's type
-| ResourceType | DataItemResourceType | The resource type. See `DataView` [documentation](xref:DataView). Currently, the supported resource type is `.Stream`
+| ResourceType | DataItemResourceType | The resource type. See below. Currently, the supported resource type is `.Stream`
 | Tags | IReadOnlyList<string> | Tag strings assigned to the data item
 | Metadata | IReadOnlyDictionary<string, string> | Metadata key-value pairs assigned to the data item
 | DataItemFields | IReadOnlyList<DataItemField> | Data fields
@@ -106,7 +106,7 @@ A group of the data view. The overall collection of data items is divided into g
 
 |Property | Type | Details |
 |--|--|--|
-| Values | IReadOnlyList<string> | This groups's value of each `.GroupingFields` defined on the `DataView`
+| GroupingValues | IReadOnlyList<string> | This groups's value of each `.GroupingFields` defined on the `DataView`
 | DataItems | IReadOnlyDictionary<string, IReadOnlyList<DataItem>> | The data items in this group
 
 ### FieldMapping

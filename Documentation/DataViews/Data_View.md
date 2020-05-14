@@ -12,47 +12,50 @@ At times, this section makes reference to ways the view *resolves* into further 
 ## General concepts
 
 ### Identification
-A DataView must have a unique identifier. It may have a friendly name and description. If a friendly name is not specified, the identifier will be used as the data view's name.
+A data view must have a unique identifier. It may have a friendly name and description. If a friendly name is not specified, the identifier will be used as the data view's name.
 
 ### Including data items
 One or more queries determine the set of data items (such as SDS streams) that the data view will include. Each [Query](xref:DataViewsQueries) should represent a collection of like streams. To include streams that represent very different items, such as power inverters and weather stations, use separate queries.
 
 ### Including data fields
 
-Information from, or about, those data items must be included explicitly in the data view as Fields within [DataFields](xref:DataViewsFieldSets) or [GroupingFields](xref:DataViewsGrouping). By default, a data view includes no fields, except the default [`.IndexField`](xref:DataView:index_field). The fields that are available for use are exposed as a "resolved" resource (AvailableFieldSets). It is recommended to use or adapt those fields instead of defining fields from scratch. Individual fields are organized into [DataFieldSets](xref:DataViewsFieldSets) and [GroupingFields](xref:DataViewsGrouping).
+Information from, or about, those data items must be included explicitly in the data view as Fields within [DataFields](xref:DataViewsFieldSets) or [GroupingFields](xref:DataViewsGrouping). By default, a data view includes no fields, except the default [`.IndexField`](xref:DataView:index_field). The fields that are available for use are exposed as a "resolved" resource [Available Field Sets](xref:DataViewsAvailableFieldSets). It is recommended to use or adapt those fields instead of defining fields from scratch. Individual fields are organized into [DataFieldSets](xref:DataViewsFieldSets) and [GroupingFields](xref:DataViewsGrouping).
 
 ### Organizing the data items
 
-Data items may be [grouped](xref:DataViewsGrouping, which amounts to grouping or partitioning them by one or more field values. This is one way of producing a meaningful, consumable shape of data.
+Data items may be [grouped](xref:DataViewsGrouping), which amounts to grouping or partitioning them by one or more field values. This is one way of producing a meaningful, consumable shape of data.
 
 ### Organizing the data fields
 Field sets and fields resolve in the order they are defined. They may be re-ordered.
 
-Within each group, a field set may be associated with multiple data items. It is often necessary to disambiguate these items. Items can be disambiguated by specifying an [`.IdentifyingField`](xref:DataViewsFieldSets#identifying-field). An identifying field is a field that tells the data items apart within a group, such as the value of _Measurement_ metadata (i.e., the data items are identified by what they measure). Identifying data items also allows the data views engine to "align" them across groups, since it is clear that streams measuring, e.g., _Power Out_ are alike, and the streams measuring _Power In_ are alike.
+Within each group, a field set may be associated with multiple data items. It is often necessary to disambiguate these items. Items can be disambiguated by specifying an [`.IdentifyingField`](xref:DataViewsFieldSets#identifying-field). An identifying field is a field that tells the data items apart within a group, such as the value of _Measurement_ metadata (i.e., the data items are identified by what they measure). Identifying data items also allows the data views engine to "align" them across groups, since it is clear that streams measuring, e.g., _Power Out_, are alike, and the streams measuring _Power In_ are alike.
 
-### Index field
+### Including the index field
 The field used for indexing.  If not specified, a default value with a label of "Timestamp" is used. If specified, a label is required. Field source and keys are not applicable for index field.
 
 ### Defining index type and default range
-Data views currently operate on timestamped data, which is data indexed by a DateTime property. This is reflected by the DataView's `.IndexTypeCode`, whose value must be "DateTime". Default values may be defined for the StartIndex, EndIndex, and/or Interval used when data view data is queried. 
+Data views currently operate on timestamped data, which is data indexed by a DateTime property. This is reflected by the DataView's `.IndexTypeCode`, whose value must be "DateTime". Default values may be defined for the start index, end index, and/or interval used when data view data is queried.
 
-## DataView properties
-The following table lists the properties of a DataView:
+### Defining data view shape
+Data views may be set to resolve as standard shape or narrow shape. Standard shape resolves fields similar to how they are defined. Narrow shape pivots the fields vertically, resulting in a view whose schema is independent of what data items (streams) are resolved by the data view. Narrow shape may be used when an invariant output schema is required.
+
+## Data view properties
+The following table lists the properties of a `DataView`:
 
 | Property |Type    |Optionality  | Default | Details  |
 |----------|--------|-------------|---------|----------|
 | Id       | string | Required |  | Unique indentifier
 | Name | string | Optional | value of Id | Friendly name
 | Description | string | Optional  | null | Longer description of the view
-| Queries     | Query[] | Optional* | [ ] | Queries for SDS Streams to include in the view. This is the starting point when defining a data view. Each Query should represent a collection of like streams. To include streams that represent very different items (e.g. solar inverters and weather), use separate queries.
-| DataFieldSets   | FieldSet[] | Optional* | [ ] | The sets of fields included in the data view. Often copied or adapted from the view's available field sets, which are exposed in a resolved resource.
-| GroupingFields  | Field[] | Optional | [ ] | Fields by which the data items are partitioned/grouped.
 | IndexField | Field | Optional | { Label:"Timestamp" } | The field used for indexing.  If unspecified a field labeled "Timestamp" is included.
+| Queries     | Query[] | Optional | [ ] | Queries for SDS Streams to include in the view. This is the starting point when defining a data view. Each Query should represent a collection of like streams. To include streams that represent very different items (e.g. solar inverters and weather), use separate queries.
+| DataFieldSets   | FieldSet[] | Optional | [ ] | The sets of fields included in the data view. Often copied or adapted from the view's available field sets, which are exposed in a resolved resource.
+| GroupingFields  | Field[] | Optional | [ ] | Fields by which the data items are partitioned/grouped.
+| DefaultStartIndex | string | Optional | null | The default value of StartIndex used when querying the data view data if none is specified.
+| DefaultEndIndex | string | Optional | null | The default value of EndIndex used when querying the data view data if none is specified.
+| DefaultInterval | string | Optional | null | The default value of Interval used when querying the data view data if none is specified.
 | IndexTypeCode | SdsTypeCode | Optional | DateTime | The name of the index data type. DateTime is the currently supported index type.
-| DefaultStartIndex | string | Optional | null | The default value of StartIndex used when querying the data view data, if none is specified then.
-| DefaultEndIndex | string | Optional | null | The default value of EndIndex used when querying the data view data, if none is specified then.
-| DefaultInterval | string | Optional | null | The default value of Interval used when querying the data view data, if none is specified then.
-| Shape | DataViewShape | Optional | Standard | Data views may be set to resolve as standard shape or "narrow" shape. Narrow shape may be used when an invariant output schema is required.
+| Shape | DataViewShape | Optional | Standard | Data views may be set to resolve as standard shape or narrow shape. Narrow shape may be used when an invariant output schema is required.
 
 ### Rules for Id property
 - Is not case sensitive, but case is preserved
@@ -67,11 +70,11 @@ The following sections describe the classes and enumerations used when defining 
 A query for SDS Streams to include in the view.
 |Property| Type | Optionality  | Default  | Details |
 |--|--|--|--|--|
-| Id  | string | Required |  | Unique identifier. Used by FieldSet to link to the query's results |
-| Value | string | Optional | null | A query for streams, in SDS query syntax. A null or empty query will not match any streams. 
+| Id  | string | Required |  | Unique identifier. Used by FieldSet to link to the query's results. |
+| Value | string | Optional | null | A query for streams in SDS query syntax. A null or empty query will not match any streams.
 
 ### FieldSet
-A set of fields included in the data view, sharing a common role or source (`.SourceType`). One `DataView` is likely to include multiple `FieldSet`s.
+A set of fields included in the data view, sharing a common role or source (`.SourceType`). One `DataView` is likely to include one `FieldSet` per query.
 |Property | Type | Optionality  | Default  | Details |
 |--|--|--|--|--|
 | QueryId | string | Required | | Must correspond to a query defined in the data view. 
@@ -79,7 +82,7 @@ A set of fields included in the data view, sharing a common role or source (`.So
 | IdentifyingField | Field | Optional | null | A field by which to tell the data items apart, within each group. Any field from field sources `FieldSource.Id`, `FieldSource.Name`, `FieldSource.Metadata` and `FieldSource.Tags` can be used as an identifying field.
 
 ### Field
-Individual piece of information, such as a property of an SDS stream, or metadata of that stream.
+Individual piece of information, such as a property of an SDS stream or metadata of that stream.
 |Property | Type | Optionality  | Default  | Details |
 |--|--|--|--|--|
 | Source | FieldSource | Optional | NotApplicable | Identifies the [`.Source`](xref:DataView#fieldsource-enumeration) of the field's values (not applicable for an index field). All sources except `FieldSource.NotApplicable` can be used as data fields. Fields from sources `FieldSource.Id`, `FieldSource.Name`, `FieldSource.Metadata` and `FieldSource.Tags` can be used as grouping fields and identifying fields. Some sources are used in conjunction with the Keys property (see below).
@@ -109,4 +112,4 @@ See [Sds documentation](xref:sdsTypes#sdstypecode) for details.
 |Name| Description  |
 |--|--|
 |Standard | Fields are resolved into a shape similar to how they were defined. This is the recommended shape unless specific needs dictate.
-|Narrow  | Fields are "pivoted" vertically, resulting in a view whose schema is independent of what data items (streams) are resolved by the data view.
+|Narrow  | Fields are pivoted vertically, resulting in a view whose schema is independent of what data items (streams) are resolved by the data view.

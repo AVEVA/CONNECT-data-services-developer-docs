@@ -12,7 +12,9 @@ All data in a data view is associated with an index value, i.e. a timestamp.
 If there are multiple groups in the data view, the index and grouping field values together form a unique identifier for each data record.
 
 ### Index type
-The supported index type is `DateTime`, as noted in the documentation on creating [Data Views](xref:DataView).
+The supported index type is `DateTime`, as noted in the documentation on creating [Data Views](xref:DataView). Date times should use ISO 8601 format and can be in either UTC or local time. Data retrieved using the [Data API](xref:DataViewsDataAPI) will be returned in UTC.
+
+Interval timespan values should be formatted using the standard timespan format, ie., d.hh:mm:ss.fffffff.
 
 ### Index range
 Three parameters control the range and granularity of data returned:

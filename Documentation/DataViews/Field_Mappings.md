@@ -11,7 +11,7 @@ Within each field mapping, the list of `DataMapping`s show the source of data fo
 ## Ordering
 The first field mapping contains information for the index field. Next, field mappings are appended for each `GroupingField` in the data view. If there is more than one `GroupingField`, the order of the field mappings reflects the order of the `GroupingField`s in the data view.
 
-Following the index and grouping field mappings are the data field mappings. Data field mappings are different depending on the data view [shape](xref:DataViewsDataViewShape).
+Following the index and grouping field mappings are the data field mappings. Data field mappings are different depending on the data view [shape](xref:DataViewShape).
 
 ### Standard
 For standard shape data views, the order of the field mappings reflects the order of the data fields in the data view. The first data field mappings are created for the first `DataFieldSet` `DataField`. Then field mappings are created for each subsequent `DataField` in the order they appear in the data view. If the data view contains more than one `DataFieldSet`, then the subsequent `DataFieldSet` `DataField`s will be added after the first `DataFieldSet` and following the same pattern.

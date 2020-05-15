@@ -61,7 +61,7 @@ Data records are ordered
 The view data is available in several formats.
 
 | Name | Id | Enumeration Id | Description |
-|--|--|--|
+|--|--|--|--|
 | JSON  | `default` | 0 | JSON object representation. An array of objects, each describing one data record. (default) |
 | Table | `table` | 1 | JSON row-column representation. Includes an array describing the `.Columns` (corresponding to field mappings of the data view) and an array of data `.Rows`. Each row describes one data record.
 | Table with header | `tableh` | 2 | Similar to `table`. The first of the `.Rows` is an array of the field mapping identifiers, information that is also available in the `.Columns` of both table formats. |

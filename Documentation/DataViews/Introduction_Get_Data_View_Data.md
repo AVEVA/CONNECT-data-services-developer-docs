@@ -16,9 +16,9 @@ Complete the following to specify first page parameters:
 3. Specify the page size.
 
 ## Request any remaining pages
-Complete the following if data spans into additional page(s). The current page response will include an HTTP header linking to the next page.
-1. Follow the hyperlinks to retrieve the full requested dataset page by page, if the current page includes a NextPage hyperlink.
-2. Follow the `FirstPage` hyperlink in the event that it is necessary to restart the paging operation from the first page. 
+Complete the following if data spans into additional page(s). The current page response will include an HTTP `Link` header with a hyperlink to the next page of data.
+1. Follow the hyperlinks to retrieve the full requested dataset page by page, if the current page includes a next hyperlink in the `Link` header.
+2. Follow the first page hyperlink in the `Link` header in the event that it is necessary to restart the paging operation from the first page.
 
 ## [Optional] Investigate the source of the data
 For precise information about the source of each field's data, see the data view's resolved field mappings.

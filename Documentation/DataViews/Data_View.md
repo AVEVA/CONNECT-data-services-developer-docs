@@ -11,7 +11,7 @@ At times, this section makes reference to ways the view *resolves* into further 
 
 ## General concepts
 
-### Identification
+### Defining identification
 A data view must have a unique identifier. It may have a friendly name and description. If a friendly name is not specified, the identifier will be used as the data view's name.
 
 ### Including data items

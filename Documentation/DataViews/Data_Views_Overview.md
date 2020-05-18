@@ -2,7 +2,7 @@
 uid: DataViewsOverview
 ---
 
-# Data Views (Preview)
+# Data Views
 
 Data views are subsets of data from one or more streams, which can serve as a bridge between raw stream data and data-driven applications. A data view is a declarative query and shape for stream data. Within a target namespace, you specify the selected data by specific time period and interpolation interval.
 

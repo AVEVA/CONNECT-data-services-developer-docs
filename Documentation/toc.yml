@@ -14,7 +14,7 @@
   topicHref: DataIngress/Data_Ingress.md
 - name: Metadata Rules (Preview)
   topicHref: Metadata/Metadata_Rules_Overview.md
-- name: Data Views (Preview)
+- name: Data Views
   href: DataViews/toc.yml
   topicHref: DataViews/Data_Views_Overview.md
 - name: Operations

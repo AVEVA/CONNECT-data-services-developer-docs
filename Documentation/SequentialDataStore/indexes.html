@@ -85,13 +85,13 @@ while all other indexes are referred to as <em>secondary indexes</em> or <em>sec
 <p>An SdsType that is used to define an SdsStream must specify a key. When inserting data into an SdsStream, every 
 key value must be unique. SDS will not store more than a single event for a given key; an event with 
 a particular key may be deleted or updated, but two events with the same key cannot exist.</p>
-<p>In .NET, the SdsType properties that define the key are identified using an <code>OSIsoft.Sds.SdsMemberAttribute</code> 
+<p>In .NET, the SdsType properties that define the primary index are identified using an <code>OSIsoft.Sds.SdsMemberAttribute</code> 
 and setting its <code>IsKey</code> field to true. If the key consists of only a single property it is permissible to 
 use the <code>System.ComponentModel.DataAnnotations.KeyAttribute</code>. In the SdsType, the Property or Properties 
-representing the key have their <code>SdsTypeProperty.IsKey</code> field set to true.</p>
-<p>Secondary indexes are defined on SdsStreams and are applied to a single property. You can define many 
+representing the primary index have their <code>SdsTypeProperty.IsKey</code> field set to true.</p>
+<p>Secondary indexes are defined on SdsStreams and are applied to a single property. You can define several 
 secondary indexes. Secondary index values need not be unique.</p>
-<p>The following table contains supported index types:</p>
+<h2 id="supported-types-for-an-index">Supported types for an index</h2>
 <table>
 <thead>
 <tr>
@@ -174,25 +174,24 @@ secondary indexes. Secondary index values need not be unique.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="compound-indexes">Compound Indexes</h2>
+<h2 id="compound-indexes">Compound indexes</h2>
 <p>Often, a single property (such as a <code>DateTime</code>), is adequate for defining an index; however, for more complex 
 scenarios, SDS allows you to define multiple properties. Indexes defined by multiple properties are known as <em>compound indexes</em>.</p>
-<p>When defining a compound index in .NET, you should apply the <code>OSIsoft.Sds.SdsMemberAttribute</code> on each of the type’s 
-properties that are combined to define the index. Set the <code>IsKey</code> property to <code>true</code> and give <code>Order</code> field a 
-zero-based index value. The <code>Order</code> field defines the precedence of the property when sorting. A property with 
+<p>When defining a compound index in .NET framework, you should apply the <code>OSIsoft.Sds.SdsMemberAttribute</code> on each Property of the SdsType
+that is combined to define the index. Set the Property <code>IsKey</code> to <code>true</code> and give the <code>Order</code> field a 
+zero-based index value. The <code>Order</code> field defines the precedence of the Property when sorting. A Property with 
 an order of 0 has highest precedence.</p>
-<p>When defining compound indexes outside of .NET, specify the <code>IsKey</code> and <code>Order</code> fields on the <code>SdsTypeProperty</code> of
+<p>When defining compound indexes outside of .NET framework, specify the <code>IsKey</code> and <code>Order</code> fields on the <code>SdsTypeProperty</code> of
 Properties.</p>
 <p>Only the primary index (or key) supports compound indexes.</p>
 <p>You can specify a maximum of three Properties to define a compound index.</p>
-<p>The SDS REST API methods that use tuples were created to assist you when using compound indexes.</p>
+<p>The SDS REST API that uses tuples were created to assist you when using compound indexes.</p>
 <h2 id="work-with-indexes">Work with indexes</h2>
 <h3 id="indexes-in-net-framework">Indexes in .NET framework</h3>
-<h4 id="simple-indexes">Simple Indexes</h4>
-<p>When working in .NET, use the SdsTypeBuilder together with either the <code>OSIsoft.Sds.SdsMemberAttribute</code> or the
-<code>System.ComponentModel.DataAnnotations.KeyAttribute</code> to identify the Property that defines the simple Key. 
-The <code>SdsMemberAttribute</code> is preferred. Using SdsTypeBuilder eliminates potential errors that might occur 
-when working with SdsTypes manually.</p>
+<h4 id="simple-indexes">Simple indexes</h4>
+<p>When working in .NET, use the <code>SdsTypeBuilder</code> together with either the <code>OSIsoft.Sds.SdsMemberAttribute</code> (preferred) or the
+<code>System.ComponentModel.DataAnnotations.KeyAttribute</code> to identify the Property that defines the simple index. 
+Using the <code>SdsTypeBuilder</code> eliminates potential errors that might occur when working with SdsTypes manually.</p>
 <pre><code>  public enum State
   {
     Ok,
@@ -209,17 +208,17 @@ when working with SdsTypes manually.</p>
   }
 
   SdsType simpleType = SdsTypeBuilder.CreateSdsType&lt;Simple&gt;();
-</code></pre><p>To read data that is located between two indexes, ordered by the Key, define both a start index and 
-an end index. For DateTime, use ISO 8601 representation of dates and times. For example, to query 
+</code></pre><p>To read data that is located between two indexes, define both a start index and 
+an end index. For <code>DateTime</code>, use the ISO 8601 representation of dates and times. For example, to query 
 for a window of simple values between January 1, 2010 and February 1, 2010, you can define indexes 
-and query as follows.</p>
+and query as follows:</p>
 <pre><code>  IEnumerable&lt;Simple&gt; values = await
   client.GetWindowValuesAsync&lt;Simple&gt;(simpleStream.Id,
   &quot;2010-01-01T08:00:00.000Z&quot;,&quot;2010-02-01T08:00:00.000Z&quot;);
-</code></pre><p>More information about querying data can be found in <a class="xref" href="Reading_Data.html">Reading data</a>.</p>
+</code></pre><p>For more information about querying data, see <a class="xref" href="Reading_Data.html">Read data</a>.</p>
 <h4 id="secondary-indexes">Secondary indexes</h4>
 <p>Secondary indexes are defined at the SdsStream. To add indexes to an SdsStream, you add them to the SdsStream’s <code>Indexes</code> field.</p>
-<p>For example, to add a second index on Measurement, use the following code:</p>
+<p>For example, to add a second index on <code>Measurement</code>, use the following code:</p>
 <pre><code>  SdsStreamIndex measurementIndex = new SdsStreamIndex()
   {
       SdsTypePropertyId = simpleType.Properties.First(p =&gt; p.Id.Equals(&quot;Measurement&quot;)).Id
@@ -234,7 +233,7 @@ and query as follows.</p>
       }
   };
   secondary = await config.GetOrCreateStreamAsync(secondary);
-</code></pre><p>To read data indexed by a secondary Index, use a filtered Get, as in the following:</p>
+</code></pre><p>To read data indexed by a secondary index, use a filtered <code>Get</code> call, as in the following:</p>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code>  await client.UpdateValuesAsync&lt;Simple&gt;(secondary.Id, new List&lt;Simple&gt;()
     {
         new Simple()
@@ -294,8 +293,8 @@ and query as follows.</p>
   /<wbr>/<wbr> 1/<wbr>20/<wbr>2017 12:00:02 PM: 3
   /<wbr>/<wbr> 1/<wbr>20/<wbr>2017 12:00:01 PM: 4
   /<wbr>/<wbr> 1/<wbr>20/<wbr>2017 12:00:00 PM: 5
-</code></pre><h4 id="compound-indexes-1">Compound Indexes</h4>
-<p>Compound indexes are defined using the SdsMemberAttribute as follows:</p>
+</code></pre><h4 id="compound-indexes-1">Compound indexes</h4>
+<p>Compound indexes are defined using the <code>SdsMemberAttribute</code> as follows:</p>
 <pre><code>  public class Simple
   {
     [SdsMember(IsKey = true, Order = 0)]
@@ -309,7 +308,8 @@ and query as follows.</p>
     [SdsMember(IsKey = true, Order = 1)]
     public DateTime Recorded { get; set; } 
   }
-</code></pre><p>Events of type DerivedCompoundIndex are sorted first by the Time parameter and then by the Recorded parameter. A collection of times would be sorted as follows:</p>
+</code></pre><p>Events of type <code>DerivedCompoundIndex</code> are sorted first by the <code>Time</code> parameter and then by the <code>Recorded</code> parameter.
+A collection of times would be sorted as follows:</p>
 <table>
 <thead>
 <tr>
@@ -356,7 +356,7 @@ and query as follows.</p>
 </tr>
 </tbody>
 </table>
-<p>If the Order parameters were swapped, Recorded set to zero, and Time set to one, the results would sort as follows:</p>
+<p>If the <code>Order</code> parameter was reversed, with <code>Recorded</code> set to 0 and <code>Time</code> set to 1, the results would be sorted as follows:</p>
 <table>
 <thead>
 <tr>
@@ -490,12 +490,12 @@ and query as follows.</p>
   /<wbr>/<wbr> 1/<wbr>20/<wbr>2017 2:00:00 AM:1/<wbr>20/<wbr>2017 2:00:00 PM 6
 </code></pre><p>Note that the <code>GetWindowValuesAsync()</code> call specifies an expected return type and the index types as generic parameters.</p>
 <h3 id="indexes-outside-of-net-framework">Indexes outside of .NET framework</h3>
-<h4 id="simple-indexes-1">Simple Indexes</h4>
-<p>When the .NET SdsTypeBuilder is unavailable, indexes must be built manually.</p>
-<p>The following discusses the types defined in the <a href="https://github.com/osisoft/OCS-Samples/tree/master/basic_samples/SDS/Python/SDSPy">Python</a>
-and <a href="https://github.com/osisoft/OCS-Samples/tree/master/basic_samples/SDS/JavaScript">Java Script</a>
-samples. Samples in other languages can be found <a href="https://github.com/osisoft/OCS-Samples/tree/master/basic_samples/SDS">here</a>.</p>
-<p>To build a SdsType representation of the following sample class, see <a href="#sample">Sample</a>:</p>
+<h4 id="simple-indexes-1">Simple indexes</h4>
+<p>When the .NET <code>SdsTypeBuilder</code> is unavailable, indexes must be built manually.</p>
+<p>Below, SdsTypes defined in the <a href="https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/SDS/Python">Python</a>
+and <a href="https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/SDS/JavaScript">Java Script</a>
+samples are shown. For samples in other languages, go to <a href="https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/SDS">OCS code samples in GitHub</a>.</p>
+<p>To build an SdsType representation of sample classes in Python and Java Script, see <a href="#sample">Sample</a> below:</p>
 <p><strong>Python</strong></p>
 <pre><code>  class State(Enum):
     Ok = 0
@@ -533,13 +533,12 @@ samples. Samples in other languages can be found <a href="https://github.com/osi
     this.State = null;
     this.Value = null;
   }
-</code></pre><h5 id="sample">Sample</h5>
-<hr>
+</code></pre><h5 id="sample"><strong>Sample</strong></h5>
 <p>The following code is used to build an SdsType representation of the sample class above:</p>
 <p><strong>Python</strong></p>
 <pre><code>  # Create the properties
 
-  # Time is the primary key
+  # Time is the primary index
   time = SdsTypeProperty()
   time.Id = &quot;Time&quot;
   time.Name = &quot;Time&quot;
@@ -637,9 +636,9 @@ samples. Samples in other languages can be found <a href="https://github.com/osi
     &quot;SdsTypeCode&quot;: SdsObjects.SdsTypeCodeMap.Object,
     &quot;Properties&quot;: [timeProperty, stateProperty, valueProperty]
   });
-</code></pre><p>The Time property is identified as the key by defining its SdsTypeProperty as follows:</p>
+</code></pre><p>The <code>Time</code> property is identified as the primary index by defining its SdsTypeProperty as follows:</p>
 <p><strong>Python</strong></p>
-<pre><code>  # Time is the primary key
+<pre><code>  # Time is the primary index
   time = SdsTypeProperty()
   time.Id = &quot;Time&quot;
   time.Name = &quot;Time&quot;
@@ -649,7 +648,7 @@ samples. Samples in other languages can be found <a href="https://github.com/osi
   time.SdsType.Name = &quot;DateTime&quot;
   time.SdsType.SdsTypeCode = SdsTypeCode.DateTime
 </code></pre><p><strong>JavaScript</strong></p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code>  /<wbr>/<wbr> Time is the primary key
+<pre style="word-break:normal; overflow-wrap:break-word;"><code>  /<wbr>/<wbr> Time is the primary index
   var timeProperty = new SdsObjects.SdsTypeProperty({
     &quot;Id&quot;: &quot;Time&quot;,
     &quot;IsKey&quot;: true,
@@ -659,17 +658,17 @@ samples. Samples in other languages can be found <a href="https://github.com/osi
     })
   });
 </code></pre><p>Note that the <code>time.IsKey</code> field is set to true.</p>
-<p>To read data using the key, you define a start index and an end index. For DateTime, use 
-ISO 8601 representation of dates and times. To query for a window of values between January 1, 
+<p>To read data using the index, you define a start index and an end index. For <code>DateTime</code>, use 
+the ISO 8601 representation of dates and times. To query for a window of values between January 1, 
 2010 and February 1, 2010, you would define indexes as “2010-01-01T08:00:00.000Z” and 
 “2010-02-01T08:00:00.000Z”, respectively.</p>
-<p>Additional information can be found in <a class="xref" href="Reading_Data.html">Reading data</a>.</p>
-<h4 id="simple-indexes-2">Simple Indexes</h4>
-<p>Secondary Indexes are defined at the SdsStream. To create an SdsStream 
-using the Simple class and add a Secondary index on the Measurement, 
-you use the previously defined SdsType. Then you create a SdsStreamIndex 
-specifying the measurement property and define a SdsStream identifying the 
-Measurement as a Secondary Index as shown in the following example:</p>
+<p>For additional information, see <a class="xref" href="Reading_Data.html">Read data</a>.</p>
+<h4 id="secondary-indexes-1">Secondary indexes</h4>
+<p>Secondary indexes are defined at the SdsStream. To create an SdsStream 
+using the <code>Simple</code> class and adding a secondary index on the <code>Measurement</code>, 
+you use the previously defined SdsType. Then you create <code>SdsStreamIndex</code> 
+specifying the <code>Measurement</code> property and define an SdsStream identifying the 
+<code>Measurement</code> as the secondary index as shown below:</p>
 <p><strong>Python</strong></p>
 <pre><code>  # Create the properties
 
@@ -694,11 +693,11 @@ Measurement as a Secondary Index as shown in the following example:</p>
     &quot;TypeId&quot;: simpleTypeId,
     &quot;Indexes&quot;: [ measurementIndex ]
   });
-</code></pre><h4 id="compound-indexes-2">Compound Indexes</h4>
+</code></pre><h4 id="compound-indexes-2">Compound indexes</h4>
 <p>Consider the following Python and JavaScript types:</p>
 <p><strong>Python</strong></p>
 <pre><code>  class Simple(object):
-  # First-order Key property
+  # First-order index property
   Time = property(getTime, setTime)
   def getTime(self):
     return self.__time
@@ -718,7 +717,7 @@ Measurement as a Secondary Index as shown in the following example:</p>
     self.__measurement = measurement
 
   class DerivedCompoundIndex(Simple):
-  # Second-order Key property
+  # Second-order index property
   @property
   def Recorded(self):
     return self.__recorded
@@ -736,11 +735,11 @@ Measurement as a Secondary Index as shown in the following example:</p>
     Simple.call(this);
     this.Recorded = null;
   }
-</code></pre><p>To turn the simple SdsType shown in the example into a type supporting the DerivedCompoundIndex 
+</code></pre><p>To turn the simple SdsType shown in the example into a type supporting the <code>DerivedCompoundIndex</code> 
 type with a compound index based on the <code>Simple.Time</code> and <code>DerivedCompoundIndex.Recorded</code>, 
-extend the type as follows:</p>
+extend the SdsType as follows:</p>
 <p><strong>Python</strong></p>
-<pre><code>  # We set the Order for this property. The order of the first property defaulted to 0
+<pre><code>  # We set the order for this property. The order of the first property defaulted to 0
   recorded = SdsTypeProperty()
   recorded.Id = &quot;Recorded&quot;
   recorded.Name = &quot;Recorded&quot;
@@ -760,7 +759,7 @@ extend the type as follows:</p>
   derived.SdsTypeCode = SdsTypeCode.Object
   derived.Properties = [ recorded ]
 </code></pre><p><strong>JavaScript</strong>  </p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code>  /<wbr>/<wbr> We set the Order for this property. The order of the first property defaulted to 0
+<pre style="word-break:normal; overflow-wrap:break-word;"><code>  /<wbr>/<wbr> We set the order for this property. The order of the first property defaulted to 0
   var recordedProperty = new SdsObjects.SdsTypeProperty({
     &quot;Id&quot;: &quot;Recorded&quot;,
     &quot;Name&quot;: &quot;Recorded&quot;,
@@ -782,7 +781,7 @@ extend the type as follows:</p>
     &quot;SdsTypeCode&quot;: SdsObjects.SdsTypeCodeMap.Object,
     &quot;Properties&quot;: [recordedProperty]
   });
-</code></pre><p>Data in the stream will be ordered as follows:</p>
+</code></pre><p>Data in the SdsStream will be ordered as follows:</p>
 <table>
 <thead>
 <tr>
@@ -829,8 +828,7 @@ extend the type as follows:</p>
 </tr>
 </tbody>
 </table>
-<p>If the Order was swapped, and Recorded set as zero, the results would sort as
-follows:</p>
+<p>If the <code>Order</code> parameters were reversed with <code>Recorded</code> set to 0 and <code>Time</code> set to 1, the results would be sorted as follows:</p>
 <table>
 <thead>
 <tr>

@@ -85,11 +85,11 @@ event and how to associate events within the stream.</p>
 complex or nested types using the <a href="#sdstypeproperty">Properties collection of SdsTypes</a>. </p>
 <p>An SdsType used to define an SdsStream must have a key. A key is a <a href="#sdstypeproperty">Property, or a combination of Properties</a> 
 that constitutes an ordered, unique identity. If the key is ordered so it functions as an index, it is 
-known as the <em>primary index</em>. While a timestamp (<code>DateTime</code>) is a very common type of key, any type that 
+known as the <em>primary index</em>. While a timestamp (<code>DateTime</code>) is a very common type of index, any type that 
 can be ordered is permitted. Secondary and other indexes are defined in the stream. 
 For more information, see <a class="xref" href="indexes.html">Indexes</a>.</p>
 <p>When defining an SdsType, consider how the events will be represented in an SdsStream as the SdsType defines 
-each event in a SdsStream. An event is a single unit whose properties have values that relate to the 
+each event in an SdsStream. An event is a single unit whose properties have values that relate to the 
 index; that is, each property of a type event is related to the event&#39;s index. Each event is a single unit.</p>
 <p>An SdsType is referenced by its identifier or <code>Id</code> field. SdsType identifiers must be unique within a namespace.</p>
 <p>An SdsType can also refer other SdsTypes by using their identifiers. This enables type re-usability.
@@ -176,13 +176,12 @@ For more information on search including limitations, see <a class="xref" href="
 <li>Cannot contain forward slash (&quot;/&quot;)</li>
 <li>Can contain a maximum of 100 characters  </li>
 </ol>
-<p>Type management using the SDS .NET client libraries methods is performed through <code>ISdsMetadataService</code>. 
+<p>Type management using the .NET SDS client libraries methods is performed through <code>ISdsMetadataService</code>. 
 You can create <code>ISdsMetadataService</code> using one of the <code>SdsService.GetMetadataService()</code> factory methods.
-.NET libraries provide SdsTypeBuilder to help build SdsTypes from .NET types. SdsTypeBuilder is 
-discussed in greater detail below.</p>
+.NET client libraries provide <code>SdsTypeBuilder</code> to help build SdsTypes from .NET types. SdsTypeBuilder is discussed in greater detail below.</p>
 <h2 id="sdstypecode">SdsTypeCode</h2>
 <p>The SdsTypeCode is a numeric identifier used by the SDS to identify SdsTypes.
-A SdsTypeCode exists for every supported type.</p>
+An SdsTypeCode exists for every supported type.</p>
 <p>Atomic types, such as strings, floats and arrays, are defined entirely by the SdsTypeCode and do not need other fields to define the type.</p>
 <p>Types that require additional definition, such as enums and objects, are identified using a generic 
 SdsTypeCode, such as ByteEnum, Int32Enum, NullableInt32Enum, or Object, plus additional SdsTypeProperty fields.</p>
@@ -552,7 +551,7 @@ are not included are reserved for internal SDS use.</p>
 <td>IsKey</td>
 <td>Boolean</td>
 <td>Required</td>
-<td>Identifies the property as the key</td>
+<td>Identifies the property as the index</td>
 </tr>
 <tr>
 <td>Value</td>
@@ -581,13 +580,13 @@ are not included are reserved for internal SDS use.</p>
 </tbody>
 </table>
 <p>The SdsTypeProperty&#39;s identifier follows the same <a href="#typepropertiestable">rules</a> as the SdsType&#39;s identifier.</p>
-<p>Boolean value <code>IsKey</code> identifies the primary index of an SdsType in a single index. A key that is defined by more than one 
-SdsTypeProperty is called a compound key. The maximum number of properties that can define a compound key is three. 
-In a compound key, each SdsTypeProperty that is included in the key is specified as <code>IsKey</code>.
+<p>Boolean value <code>IsKey</code> identifies the primary index of an SdsType in a single index. An index that is defined by more than one 
+SdsTypeProperty is called a compound index. The maximum number of properties that can define a compound index is three. 
+In a compound index, each SdsTypeProperty that is included in the index is specified as <code>IsKey</code>.
 The <code>Order</code> field marks the order of comparison within a compound index.</p>
 <p>The <code>Value</code> field is used for properties that represent a value. An example of a property with a 
-value is an enum&#39;s named constant. When representing an enum in an SdsType, the type&#39;s 
-SdsTypeProperty collection defines the enum&#39;s constant list. The SdsTypeProperty&#39;s <code>Identifier</code> represents 
+value is an enum&#39;s named constant. When representing an enum in an SdsType, the SdsType&#39;s 
+SdsTypeProperty collection defines the enum&#39;s constant list. The SdsTypeProperty&#39;s <code>Id</code> represents 
 the constant&#39;s name and the SdsTypeProperty&#39;s <code>Value</code> represents the constant&#39;s value (see the enum <code>State</code> definitions in the code samples below).</p>
 <p><code>InterpolationMode</code> is assigned when the SdsTypeProperty of the event should be interpolated in a specific way 
 that differs from the interpolation mode of the SdsType. <code>InterpolationMode</code> is only applied to an SdsTypeProperty 
@@ -597,13 +596,13 @@ in the manner defined by the SdsType&#39;s <code>InterpolationMode</code>.</p>
 For more information on interpolation of events, see <a class="xref" href="Reading_Data.html#interpolation">Interpolation</a>.</p>
 <p><code>Uom</code> is the unit of measure for the SdsTypeProperty. The <code>Uom</code> of the SdsTypeProperty may be specified by the name or the 
 abbreviation. The names and abbreviations of <code>Uoms</code> are case sensitive. </p>
-<p>The <code>InterpolationMode</code> and <code>Uom</code> of the SdsTypeProperty can be overridden on the SdsStream. For more information, see <a class="xref" href="SDS_Streams.html#propertyoverrides">Streams</a>.</p>
+<p>The <code>InterpolationMode</code> and <code>Uom</code> of the SdsTypeProperty can be overridden on the SdsStream. For more information, see <a class="xref" href="SDS_Streams.html#sdsstreampropertyoverride-object">Streams</a>.</p>
 <h3 id="supported-units-of-measure">Supported Units of Measure</h3>
-<p>For a list of units of measures that are supported for an SdsTypeProperty, see <a class="xref" href="Units_of_Measure.html#supported-units-of-measure">Units of Measure</a>.</p>
-<h2 id="working-with-sdstypes-using-net">Working with SdsTypes using .NET</h2>
+<p>For a list of units of measures that are supported for an SdsTypeProperty, see <a class="xref" href="Units_of_Measure.html#supported-units-of-measure">Units of measure</a>.</p>
+<h2 id="work-with-sdstypes-in-net-framework">Work with SdsTypes in .NET framework</h2>
 <p>When working in .NET, use the <code>SdsTypeBuilder</code> to create SdsTypes. The <code>SdsTypeBuilder</code> eliminates 
 potential errors that can occur when working with SdsTypes manually.</p>
-<p>There are several ways to work with the <code>SdsTypeBuilder</code>. Use the static methods for convenience:</p>
+<p>There are several ways to work with the <code>SdsTypeBuilder</code>. One is to use the static methods for convenience:</p>
 <pre><code class="lang-csharp">public enum State
 {
     Ok,
@@ -623,10 +622,10 @@ SdsType simpleType = SdsTypeBuilder.CreateSdsType&lt;Simple&gt;();
 simpleType.Id = &quot;Simple&quot;;
 simpleType.Name = &quot;Simple&quot;;
 simpleType.Description = &quot;Basic sample type&quot;;
-</code></pre><p>SdsTypeBuilder recognizes the <code>System.ComponentModel.DataAnnotations.KeyAttribute</code> and 
+</code></pre><p><code>SdsTypeBuilder</code> recognizes the <code>System.ComponentModel.DataAnnotations.KeyAttribute</code> and 
 its own <code>OSIsoft.Sds.SdsMemberAttribute</code>. When using the <code>SdsMemberAttribute</code> to specify 
-the <code>Primary Index</code>, set the <code>IsKey</code> to true.</p>
-<p>The type is created with the following parameters. SdsTypeBuilder automatically generates 
+the primary index, set the <code>IsKey</code> to true.</p>
+<p>The SdsType is created with the following parameters. <code>SdsTypeBuilder</code> automatically generates 
 unique identifiers. Note that the following table contains only a partial list of fields.</p>
 <table>
 <thead>
@@ -953,13 +952,13 @@ unique identifiers. Note that the following table contains only a partial list o
 </tbody>
 </table>
 <p>The <code>SdsTypeBuilder</code> also supports derived types. Note that you need not add the base types to 
-the SDS before using <code>SdsTypeBuilder</code>. Base types are maintained within the type.</p>
-<h2 id="working-with-sdstypes-when-not-using-net">Working with SdsTypes when not using .NET</h2>
+the SDS before using <code>SdsTypeBuilder</code>. Base types are maintained within the SdsType.</p>
+<h2 id="work-with-sdstypes-outside-of-net-framework">Work with SdsTypes outside of .NET framework</h2>
 <p>SdsTypes must be built manually when .NET <code>SdsTypeBuilder</code> is unavailable. Below, you&#39;ll see how types are built and defined in
-<a href="https://github.com/osisoft/OCS-Samples/tree/master/basic_samples/SDS/Python/SDSPy">Python</a> and 
-<a href="https://github.com/osisoft/OCS-Samples/tree/master/basic_samples/SDS/JavaScript">JavaScript</a> samples. 
-Samples in other languages can also be found on <a href="https://github.com/osisoft/OCS-Samples/tree/master/basic_samples">GitHub</a>.</p>
-<p>SdsType, SdsTypeProperty, and SdsTypeCode are defined in the code snippets shown here:</p>
+<a href="https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/SDS/Python">Python</a> and 
+<a href="https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/SDS/JavaScript">JavaScript</a> samples. 
+For samples in other languages, go to <a href="https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/SDS">OCS code samples in GitHub</a>.</p>
+<p>SdsType, SdsTypeProperty, and SdsTypeCode are defined below:</p>
 <p><strong>Python</strong></p>
 <pre><code class="lang-python">class SdsTypeCode(Enum):
     Empty = 0
@@ -1074,7 +1073,7 @@ SdsType: function (SdsType) {
         this.Properties = SdsType.Properties;
     }
 },
-</code></pre><p>These are the types we are working with in Python and JavaScript classes:</p>
+</code></pre><p>These are the SdsTypes we are working with in Python and JavaScript classes:</p>
 <p><strong>Python</strong></p>
 <pre><code class="lang-python">class State(Enum):
     Ok = 0
@@ -1112,11 +1111,11 @@ var Simple = function () {
     this.State = null;
     this.Measurement = null;
 }
-</code></pre><p>These are the types defined in Python and JavaScript:</p>
+</code></pre><p>These are the SdsTypes defined in Python and JavaScript:</p>
 <p><strong>Python</strong></p>
 <pre><code class="lang-python"># Create the properties
 
-# Time is the primary key
+# Time is the primary index
 time = SdsTypeProperty()
 time.Id = &quot;Time&quot;
 time.Name = &quot;Time&quot;
@@ -1164,7 +1163,7 @@ simpleType.Description = &quot;Basic sample type&quot;
 simpleType.SdsTypeCode = SdsTypeCode.Object
 simpleType.Properties = [ time ]
 </code></pre><p><strong>JavaScript</strong></p>
-<pre><code class="lang-javascript">// Time is the primary key
+<pre><code class="lang-javascript">// Time is the primary index
 var timeProperty = new SdsObjects.SdsTypeProperty({
     &quot;Id&quot;: &quot;Time&quot;,
     &quot;IsKey&quot;: true,
@@ -1233,7 +1232,7 @@ observation.SdsType.Id = &quot;String&quot;
 observation.SdsType.Name = &quot;String&quot;
 observation.SdsType.SdsTypeCode = SdsTypeCode.String
 
-# Create the Derived SdsType
+# Create the derived SdsType
 derived = SdsType()
 derived.Id = &quot;Derived&quot;
 derived.Name = &quot;Derived&quot;
@@ -1259,7 +1258,7 @@ var derivedType = new SdsObjects.SdsType({
     &quot;Properties&quot;: [ observationProprety ]
 });
 </code></pre><h2 id="type-reusability">Type Reusability</h2>
-<p>Types can also refer other types by using their identifiers. This enables type re-usability.
+<p>SdsTypes can also refer other types by using their identifiers. This enables type re-usability.
 For example, if there is a common index and value property for a group of types that may have additional properties,
 a base type can be created with those properties.</p>
 <pre><code class="lang-json">{
@@ -1476,7 +1475,7 @@ Content-Type: application/json
 <p>Returns a list of types within a given namespace.</p>
 <p>If specifying the optional search query parameter, the list of types returned will match 
 the search criteria. If the search query parameter is not specified, the list will include 
-all types in the Namespace. See <a class="xref" href="Searching.html">Searching</a> 
+all types in the Namespace. See <a class="xref" href="Searching.html">Search in SDS</a> 
 for information about specifying those respective parameters.</p>
 <p>Note that the results will also include types that were automatically created by SDS as a result of type referencing. For further details about type referencing please see: <a href="#type-reusability">Type Reusability</a></p>
 <h3 id="request-2">Request</h3>
@@ -1484,11 +1483,11 @@ for information about specifying those respective parameters.</p>
 </code></pre><h3 id="parameters-2">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
-<p><code>string query</code><br>An optional query string to match which SdsTypes will be returned.  See the <a class="xref" href="Searching.html">Searching</a> topic for information about specifying the query parameter.</p>
-<p><code>int skip</code><br>An optional value representing the zero-based offset of the first SdsType to retrieve. If not specified, 
+<p><code>string query</code><br>[Optional] Parameter representing a string search. See the <a class="xref" href="Searching.html">Search in SDS</a> topic for information about specifying the query parameter.</p>
+<p><code>int skip</code><br>[Optional] Parameter representing the zero-based offset of the first SdsType to retrieve.  If not specified, 
 a default value of 0 is used.</p>
-<p><code>int count</code><br>An optional value representing the maximum number of SdsTypes to retrieve. If not specified, a default value of 100 is used.</p>
-<p><code>string orderby</code><br>An optional parameter representing sorted order which SdsTypes will be returned. A field name is required. The sorting is based on the stored values for the given field (of type string). For example, <code>orderby=name</code> would sort the returned results by the <code>name</code> values (ascending by default). 
+<p><code>int count</code><br>[Optional] Parameter representing the maximum number of SdsTypes to retrieve. If not specified, a default value of 100 is used.</p>
+<p><code>string orderby</code><br>[Optional] Parameter representing sorted order which SdsTypes will be returned. A field name is required. The sorting is based on the stored values for the given field (of type string). For example, <code>orderby=name</code> would sort the returned results by the <code>name</code> values (ascending by default). 
 Additionally, a value can be provided along with the field name to identify whether to sort ascending or descending, by using values <code>asc</code> or <code>desc</code>, respectively. For example, <code>orderby=name desc</code> would sort the returned results by the <code>name</code> values, descending.
 If no value is specified, there is no sorting of results.</p>
 <h4 id="response-2">Response</h4>

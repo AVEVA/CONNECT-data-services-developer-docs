@@ -22,7 +22,7 @@ These are available via the [Resolved Data View API](xref:ResolvedDataViewAPI). 
 #### Paged collections
 Some of this information is exposed as paged collections, which accept parameters controlling `skip` and `count` within the collection. 
 
-Paged responses include a `Link` header, with a hyperlink linking to the first page of results. If the results extend into an additional page, a hyperlink to the next page will also be included in the `Link` header.
+Paged responses include a `Link` header, with a hyperlink to the first page of results. If the results extend into an additional page, a hyperlink to the next page will also be included in the `Link` header.
 
 Using these hyperlinks is the recommended method of paging. Alternatively, constructing paging links by manually incrementing the `skip` is allowable, though in this case it is recommended to specify cache behavior of "preserve".
 

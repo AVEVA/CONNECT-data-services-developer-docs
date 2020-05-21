@@ -4,7 +4,7 @@ uid: DataViewsFieldSets
 
 # Data Field Sets
 
-A data view is likely to include multiple fields of information. One field serves as the index (e.g. Timestamp), and others contain information from or about the data items in the data view `DataFieldSet`s. Data field sets are collections of fields originating from the same query that share a common role.
+A data view is likely to include multiple fields of information. One field serves as the index (e.g. Timestamp), and others contain information from or about the data items in the data view `DataFieldSet`s. Data field sets are collections of fields originating from the same query.
 
 ### Available field sets
 The typical workflow for adding data field sets, and the data fields in them, is to use or adapt the [available field sets](xref:DataViewsAvailableFieldSets) that resolve for the data view. This workflow is demonstrated in the [Quick Start - Define a Data View](xref:DataViewsQuickStartDefine).

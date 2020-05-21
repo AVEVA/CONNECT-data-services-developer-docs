@@ -91,13 +91,16 @@ To retrieve the entire requested range of data, clients should continue to follo
 
 It is possible for the continuation token to become invalid during paging. This is unlikely in ordinary circumstances. However, if an independent operation triggers the data view to re-resolve differently, existing continuation tokens are no longer valid. Data requests with an invalid token are considered bad requests. Paging must be restarted from the first page.
 
-#### FirstPage
+#### First page
 If the continuation token becomes invalid and paging must be restarted, clients may follow the first page hyperlink included in the `Link` header. The hyperlink preserves all request parameters, adding or updating the cache behavior to `Preserve`. This ensures that multiple parallel workers cannot endlessly "trip" each other.
 
 For example:
 ```
 Link: <.../dataViews/{dataViewId}/data/interpolated?cache=Preserve&count=1000>, rel="first"
 ```
+
+### .NET client library
+Paging is handled automatically when using the .NET client library to retrieve data. Results are returned as an IAsyncEnumerable<string> where each value is one record of data in the requested format. The actual backend page size of the request is configurable using the backingPageSize parameter.
 
 ### Index parameters
 Index parameters, such as Start Index, must remain constant while paging through a range of data. If a different range of data is desired, restart the paging operation.

@@ -10,7 +10,7 @@ With a standard shape, each row in the resolved data view includes all the data 
 
 The shape concepts presented in this section apply to building all data view output formats; although the terminology used and examples shown, pertain to tabular output with [headers](xref:DataViewsGettingData#format) (form = csvh).
 ## Specify the shape
-Set the `DataView` [`Shape`](xref:DataView#dataview-properties) property to a value of the [`DataViewShape` enumeration](xref:DataView#dataviewshape-enumeration), either `DataViewShape.Standard` (default) or `DataViewShape.Narrow`.
+Set the [`DataViewShape`](xref:DataView#dataview-properties) property to a value of the [`DataViewShape` enumeration](xref:DataView#dataviewshape-enumeration), either `DataViewShape.Standard` (default) or `DataViewShape.Narrow`.
 
 ## Standard shape
 
@@ -25,8 +25,8 @@ Note, column labels contain a numerical suffix to ensure that each label is uniq
 
 ```csv
 Timestamp.0,Id.1,SolarRadiation.2,Temperature.3,Tags.4,Id.5,SolarRadiation.6,Temperature.7,Tags.8,Id.9,SolarRadiation.10,Temperature.11,Tags.12,Id.13,SolarRadiation.14,Temperature.15,Tags.16
-2018-11-13T18:19:00.0000000Z,WS_WINT,184,,"Gen2, High Resolution, Weather",WS_ROSE,31,31.23228568408279,"Gen1, Low Resolution, Weather",WS_BILT,229,28.042327888795327,"Gen1, High Resolution, Weather",WS_HRST,254,4.219790459247207,"Gen1, Low Resolution, Weather"
-2018-11-13T18:20:00.0000000Z,WS_WINT,184,,"Gen2, High Resolution, Weather",WS_ROSE,31,31.23228568408279,"Gen1, Low Resolution, Weather",WS_BILT,229,28.042327888795327,"Gen1, High Resolution, Weather",WS_HRST,254,4.219790459247207,"Gen1, Low Resolution, Weather"
+2018-11-13T18:19:00.0000000Z,WS_BILT,229,28.042327888795327,"Gen1, High Resolution, Weather",WS_HRST,254,4.219790459247207,"Gen1, Low Resolution, Weather",WS_ROSE,31,31.23228568408279,"Gen1, Low Resolution, Weather",WS_WINT,184,,"Gen2, High Resolution, Weather"
+2018-11-13T18:20:00.0000000Z,WS_BILT,229,28.042327888795327,"Gen1, High Resolution, Weather",WS_HRST,254,4.219790459247207,"Gen1, Low Resolution, Weather",WS_ROSE,31,31.23228568408279,"Gen1, Low Resolution, Weather",WS_WINT,184,,"Gen2, High Resolution, Weather"
 ```
 <br />
 

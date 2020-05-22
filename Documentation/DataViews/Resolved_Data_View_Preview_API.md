@@ -13,7 +13,7 @@ Gets the paged collection of data items returned by an individual query, and whi
 ### Request
 
 ```text
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Preview/DataViews/Resolved/DataItems/{queryId}?skip={skip}&count={count}
+POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Preview/DataViews/Resolved/DataItems/{queryId}?skip={skip}&count={count}
 ```
 ### Request path parameters
 
@@ -67,12 +67,12 @@ The response includes a status code and, in most cases, a body.
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details | 
 
 #### Response headers
-Successful (200 OK) responses include one or more header values related to paging.
+Successful (200 OK) responses include:
 
 | Header | Description |
 |--|--|
-| FirstPage | Hyperlink to the first page of results |
-| NextPage | Hyperlink to the next page of results, if the results span into an additional page. Absence of this header indicates that there are no additional pages to be retrieved. |
+| Total-Count | The total count of data items visible to the current user |
+| Link | Hyperlinks to the first page and next page of results as applicable |
 
 
 #### Example response body
@@ -123,7 +123,7 @@ Content-Type: application/json
 
 ### .NET client libraries method
 ```csharp
-   Task<ResolvedItems<DataItem>> GetPreviewDataItemsAsync(string queryId, DataView dataView, int skip = DEFAULT_SKIP, int count = DEFAULT_COUNT);
+   Task<ResolvedItems<DataItem>> GetPreviewDataItemsAsync(string queryId, DataView dataView, int skip = 0, int count = 100);
 ```
 ## `Get Ineligible Data Items by Query`
 Gets the paged collection of data items returned by an individual query, but which are not eligible for use in the provided data view. A common reason for ineligibility is that the item's index property is of a different type than the data view expects. A data view has a collection of zero or more queries. Each query has an identifier. Those identifiers are used here as part of the request path.
@@ -131,7 +131,7 @@ Gets the paged collection of data items returned by an individual query, but whi
 ### Request
 
 ```text
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Preview/DataViews/Resolved/IneligibleDataItems/{queryId}?skip={skip}&count={count}
+POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Preview/DataViews/Resolved/IneligibleDataItems/{queryId}?skip={skip}&count={count}
 ```
 
 ### Request path parameters
@@ -186,12 +186,12 @@ The response includes a status code and, in most cases, a body.
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
 
 #### Response headers
-Successful (200 OK) responses include one or more header values related to paging.
+Successful (200 OK) responses include:
 
 | Header | Description |
 |--|--|
-| FirstPage | Hyperlink to the first page of results |
-| NextPage | Hyperlink to the next page of results, if the results span into an additional page. Absence of this header indicates that there are no additional pages to be retrieved. |
+| Total-Count | The total count of data items visible to the current user |
+| Link | Hyperlinks to the first page and next page of results as applicable |
 
 #### Example response body
 
@@ -229,7 +229,7 @@ Content-Type: application/json
 
 ### .NET client libraries method
 ```csharp
-   Task<ResolvedItems<DataItem>> GetPreviewIneligibleDataItemsAsync(string queryId, DataView dataView, int skip = DEFAULT_SKIP, int count = DEFAULT_COUNT);
+   Task<ResolvedItems<DataItem>> GetPreviewIneligibleDataItemsAsync(string queryId, DataView dataView, int skip = 0, int count = 100);
 ```
 
 ## `Get Groups`
@@ -238,7 +238,7 @@ Gets the collection of `Group`s that resolved for the provided data view.
 ### Request
 
 ```text
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Preview/DataViews/Resolved/Groups?skip={skip}&count={count}
+POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Preview/DataViews/Resolved/Groups?skip={skip}&count={count}
 ```
 
 ### Request path parameters
@@ -251,10 +251,10 @@ The namespace identifier
 ### Request query parameters
 
 `[optional] int skip`  
-An optional parameter representing the zero-based offset of the first data item to retrieve. If not specified, a default value of 0 is used.
+An optional parameter representing the zero-based offset of the first group to retrieve. If not specified, a default value of 0 is used.
 
 `[optional] int count`  
-An optional parameter representing the maximum number of data items to retrieve. If not specified, a default value of 100 is used.
+An optional parameter representing the maximum number of groups to retrieve. If not specified, a default value of 100 is used.
 
 ### Request body
 A `DataView` object to get the results for.
@@ -296,12 +296,12 @@ The response includes a status code and, in most cases, a body.
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
 
 #### Response headers
-Successful (200 OK) responses include one or more header values related to paging.
+Successful (200 OK) responses include:
 
 | Header | Description |
 |--|--|
-| FirstPage | Hyperlink to the first page of results |
-| NextPage | Hyperlink to the next page of results, if the results span into an additional page. Absence of this header indicates that there are no additional pages to be retrieved. |
+| Total-Count | The total count of groups |
+| Link | Hyperlinks to the first page and next page of results as applicable |
 
 #### Example response body
 
@@ -360,7 +360,7 @@ Content-Type: application/json
 
 ### .NET client libraries method
 ```csharp
-   Task<ResolvedItems<Group>> GetPreviewGroupsAsync(DataView dataView, int skip = DEFAULT_SKIP, int count = DEFAULT_COUNT);
+   Task<ResolvedItems<Group>> GetPreviewGroupsAsync(DataView dataView, int skip = 0, int count = 100);
 ```
 
 ## `Get Available Field Sets`
@@ -369,7 +369,7 @@ Gets the collection of field sets that are available for use in the provided dat
 ### Request
 
 ```text
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Preview/DataViews/Resolved/AvailableFieldSets
+POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Preview/DataViews/Resolved/AvailableFieldSets
 ```
 
 ### Request path parameters
@@ -426,15 +426,11 @@ HTTP 200 OK
                     "Label": "{IdentifyingValue} Id"
                 },
                 {
-                    "Source": "Tags",
+                    "Source": "PropertyId",
                     "Keys": [
-                        "Weather",
-                        "Low Resolution",
-                        "High Resolution",
-                        "Gen1",
-                        "Gen2",
+                        "SolarRadiation"
                     ],
-                    "Label": "{IdentifyingValue} Tags"
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "Metadata",
@@ -444,19 +440,16 @@ HTTP 200 OK
                     "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
-                    "Source": "PropertyId",
+                    "Source": "Tags",
                     "Keys": [
-                        "Timestamp"
+                        "Weather",
+                        "Low Resolution",
+                        "High Resolution",
+                        "Gen1",
+                        "Gen2",
                     ],
-                    "Label": "{IdentifyingValue} {FirstKey}"
-                },
-                {
-                    "Source": "PropertyId",
-                    "Keys": [
-                        "SolarRadiation"
-                    ],
-                    "Label": "{IdentifyingValue} {FirstKey}"
-                },
+                    "Label": "{IdentifyingValue} Tags"
+                }
             ]
         }
     ]
@@ -474,7 +467,7 @@ Gets the collection of field mappings resolved for the provided data view. These
 ### Request
 
 ```text
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Preview/DataViews/Resolved/FieldMappings
+POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Preview/DataViews/Resolved/FieldMappings?skip={skip}&count={count}
 ```
 
 ### Request path parameters
@@ -484,6 +477,14 @@ The tenant identifier
 
 `string namespaceId`  
 The namespace identifier
+
+### Request query parameters
+
+`[optional] int skip`
+An optional parameter representing the zero-based offset of the first field mapping to retrieve. If not specified, a default value of 0 is used.
+
+`[optional] int count`
+An optional parameter representing the maximum number of field mappings to retrieve. If not specified, a default value of 100 is used.
 
 ### Request body
 A `DataView` object to get the results for.
@@ -539,12 +540,12 @@ The response includes a status code and, in most cases, a body.
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
 
 #### Response headers
-Successful (200 OK) responses include one or more header values related to paging.
+Successful (200 OK) responses include:
 
 | Header | Description |
 |--|--|
-| FirstPage | Hyperlink to the first page of results |
-| NextPage | Hyperlink to the next page of results, if the results span into an additional page. Absence of this header indicates that there are no additional pages to be retrieved. |
+| Total-Count | The total count of field mappings |
+| Link | Hyperlinks to the first page and next page of results as applicable |
 
 #### Example response body
 
@@ -578,18 +579,24 @@ HTTP 200 OK
         "DataMappings": [
           {
             "TargetId": "WS_BILT",
+            "TargetFieldKey": "Temperature",
             "TypeCode": "Double",
-            "FieldIndex": 0,
+            "FieldSetIndex": 1,
+            "FieldIndex": 0
           },
           {
             "TargetId": "WS_ROSE",
+            "TargetFieldKey": "Temperature",
             "TypeCode": "Double",
-            "FieldIndex": 0,
+            "FieldSetIndex": 1,
+            "FieldIndex": 0
           },
           {
             "TargetId": "WS_WINT",
+            "TargetFieldKey": "AmbientTemperature",
             "TypeCode": "Double",
-            "FieldIndex": 0,
+            "FieldSetIndex": 1,
+            "FieldIndex": 0
           }
         ]
       },
@@ -599,7 +606,7 @@ HTTP 200 OK
 
 ### .NET client libraries method
 ```csharp
-   Task<ResolvedItems<FieldMapping>> GetPreviewFieldMappingsAsync(DataView dataView, int skip = DEFAULT_SKIP, int count = DEFAULT_COUNT);
+   Task<ResolvedItems<FieldMapping>> GetPreviewFieldMappingsAsync(DataView dataView, int skip = 0, int count = 100);
 ```
 
 ## `Get Statistics`
@@ -608,7 +615,7 @@ Gets statistics about the size and shape on how the data view resolved.
 ### Request
 
 ```text
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Preview/DataViews/Resolved/Statistics
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Preview/DataViews/Resolved/Statistics
 ```
 
 ### Request path parameters

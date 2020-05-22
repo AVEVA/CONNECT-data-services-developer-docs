@@ -4,8 +4,7 @@ uid: DataViewsFieldSets
 
 # Data Field Sets
 
-A data view is likely to include multiple fields of information. One field serves as the index (e.g. Timestamp), and others contain information from or about the data items in the data view.
-DataFieldSet`s. Data field sets are collections of fields originating from the same query that share a common role.
+A data view is likely to include multiple fields of information. One field serves as the index (e.g. Timestamp), and others contain information from or about the data items in the data view `DataFieldSet`s. Data field sets are collections of fields originating from the same query.
 
 ### Available field sets
 The typical workflow for adding data field sets, and the data fields in them, is to use or adapt the [available field sets](xref:DataViewsAvailableFieldSets) that resolve for the data view. This workflow is demonstrated in the [Quick Start - Define a Data View](xref:DataViewsQuickStartDefine).
@@ -17,8 +16,8 @@ Let us take a subset of the [example scenario](xref:DataViewsExampleScenario)'s 
 |--|--|--|--|--|
 | Winterthur | Primary | Power In | WINT.Meter.Primary.Inverter.0.PwrIn | Low Resolution |
 | Winterthur | Primary | Power Out | WINT.Meter.Primary.Inverter.0.PwrOut | Low Resolution |
-| Winterthur | Secondary | Power In | ROSE.Meter.Secondary.Inverter.0.PwrIn | Low Resolution |
-| Winterthur | Secondary | Power Out | ROSE.Meter.Secondary.Inverter.0.PwrOut | Low Resolution |
+| Winterthur | Secondary | Power In | WINT.Meter.Secondary.Inverter.0.PwrIn | Low Resolution |
+| Winterthur | Secondary | Power Out | WINT.Meter.Secondary.Inverter.0.PwrOut | Low Resolution |
 
 The following represents a data view grouped by "Meter", including fields for the grouping value, and each data item's "Tags" and property "Value":
 
@@ -29,13 +28,6 @@ The following represents a data view grouped by "Meter", including fields for th
     {
       "Id": "inverters",
       "Value": "TypeId:docs-pi-inverter AND Site:Winterthur"
-    }
-  ],
-  "GroupingFields": [
-    {
-      "Source": "Metadata",
-      "Keys": [ "Meter" ],
-      "Label": "{IdentifyingValue} {FirstKey}"
     }
   ],
   "DataFieldSets": [
@@ -53,6 +45,13 @@ The following represents a data view grouped by "Meter", including fields for th
           "Label": "{IdentifyingValue} Tags"
         }
       ]
+    }
+  ],
+   "GroupingFields": [
+    {
+      "Source": "Metadata",
+      "Keys": [ "Meter" ],
+      "Label": "{IdentifyingValue} {FirstKey}"
     }
   ]
 }
@@ -86,20 +85,9 @@ To the data view from the previous example, we will add a `Field` as the `.Ident
       "Value": "TypeId:docs-pi-inverter AND Site:Winterthur"
     }
   ],
-  "GroupingFields": [
-    {
-      "Source": "Metadata",
-      "Keys": [ "Meter" ],
-      "Label": "{IdentifyingValue} {FirstKey}"
-    }
-  ],
   "DataFieldSets": [
     {
       "QueryId": "inverters",
-      "IdentifyingField": {
-          "Source": "Metadata",
-          "Keys": [ "Measurement" ]
-      },
       "DataFields": [
         {
           "Source": "PropertyId",
@@ -111,7 +99,18 @@ To the data view from the previous example, we will add a `Field` as the `.Ident
           "Keys": [ "Low Resolution", "High Resolution" ],
           "Label": "{IdentifyingValue} Tags"
         }
-      ]
+      ],
+      "IdentifyingField": {
+          "Source": "Metadata",
+          "Keys": [ "Measurement" ]
+      }
+    }
+  ],
+  "GroupingFields": [
+    {
+      "Source": "Metadata",
+      "Keys": [ "Meter" ],
+      "Label": "{IdentifyingValue} {FirstKey}"
     }
   ]
 }
@@ -140,7 +139,6 @@ In cases where the identifiers are unique, the identifier is suffixed with an or
 |--|--|--|
 
 There are three special parameters available for use in field labels:
-- `{GroupingFieldLabel}` - the value of the grouping field
 - `{IdentifyingValue}` - the value of the identifying field
 - `{FirstKey}` - the value of the first of the `"Keys"` specified on the field
 
@@ -154,7 +152,7 @@ In certain cases, a field may need to address data _within_ its data source, suc
 
 Multiple keys may be specified in the field's `.Keys`. This is a way to overcome differences in properties or metadata across data items. Keys are evaluated in order specified until a match is found, i.e. first-match-wins.
 
-For field sources that do not use keys (`FieldSource.None`, `FieldSource.Id` and `FieldSource.Name`), any keys specified are ignored.
+For field sources that do not use keys (`FieldSource.NotApplicable`, `FieldSource.Id` and `FieldSource.Name`), any keys specified are ignored.
 
 #### Special case: Tags
 The field source `FieldSource.Tags` is a special case due to the nature of tags.

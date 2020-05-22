@@ -12,16 +12,18 @@ All data in a data view is associated with an index value, i.e. a timestamp.
 If there are multiple groups in the data view, the index and grouping field values together form a unique identifier for each data record.
 
 ### Index type
-The supported index type is `DateTime`, as noted in the documentation on creating [Data Views](xref:DataView).
+The supported index type is `DateTime`, as noted in the documentation on creating [Data Views](xref:DataView). Date times should use ISO 8601 format and can be in either UTC or local time. Data retrieved using the [Data API](xref:DataViewsDataAPI) will be returned in UTC.
+
+Interval timespan values should be formatted using the standard timespan format, ie., d.hh:mm:ss.fffffff.
 
 ### Index range
 Three parameters control the range and granularity of data returned:
 
 | Name | Query-time parameter | Default property | Description |
 |--|--|--|--|
-| Start index | `startIndex` | `defaultStartIndex` | The inclusive start boundary of the data view data
-| End index | `endIndex` | `defaultEndIndex` | The inclusive end boundary of the data view data
-| Interval | `interval` | `defaultInterval` | The interval between index values
+| Start index | `startIndex` | `DefaultStartIndex` | The inclusive start boundary of the data view data
+| End index | `endIndex` | `DefaultEndIndex` | The inclusive end boundary of the data view data
+| Interval | `interval` | `DefaultInterval` | The interval between index values
 
 Default values may, optionally, be defined on the data view itself. It is not necessary to define defaults for all three properties. 
 
@@ -58,13 +60,13 @@ Data records are ordered
 ## Format
 The view data is available in several formats.
 
-| Name | Id | Description |
-|--|--|--|
-| JSON  | `default` | JSON object representation. An array of objects, each describing one data record. (default) |
-| Table | `table` | JSON row-column representation. Includes an array describing the `.Columns` (corresponding to field mappings of the data view) and an array of data `.Rows`. Each row describes one data record.
-| Table with header | `tableh` | Similar to `table`. The first of the `.Rows` is an array of the field mapping identifiers, information that is also available in the `.Columns` of both table formats. |
-| CSV | `csv` | Comma-separated values. Each row describes one data record. |
-| CSV with header | `csvh` | Similar to `csv`. The first row contains the identifier of its corresponding field mapping. |
+| Name | Id | Enumeration Id | Description |
+|--|--|--|--|
+| JSON  | `default` | 0 | JSON object representation. An array of objects, each describing one data record. (default) |
+| Table | `table` | 1 | JSON row-column representation. Includes an array describing the `.Columns` (corresponding to field mappings of the data view) and an array of data `.Rows`. Each row describes one data record.
+| Table with header | `tableh` | 2 | Similar to `table`. The first of the `.Rows` is an array of the field mapping identifiers, information that is also available in the `.Columns` of both table formats. |
+| CSV | `csv` | 3 | Comma-separated values. Each row describes one data record. |
+| CSV with header | `csvh` | 4 | Similar to `csv`. The first row contains the identifier of its corresponding field mapping. |
 
 ## Paging
 Data retrieval operations are paged. Data for a requested index range may span multiple pages.
@@ -75,27 +77,30 @@ By default, each page includes 1000 records. The maximum page size is 250,000.
 Optimal page size is dependent both on the client and on the shape of the data view. The size of each individual record is proportional to the "width" of the data view, i.e. how many field mappings are resolved. Clients retrieving data views that resolve into few field mappings may wish to use a page size close to the maximum.
 
 ### Hyperlinks
-When paging through data view data via the REST API, hyperlinks to the `FirstPage` and `NextPage` are provided. Proper use of the hyperlinks is recommended.
+When paging through data view data via the REST API, hyperlinks to the first page and next page of data are provided in the `Link` header. The first page header is signified by relation type of first, `rel="first"`. The next page header is signified by `rel="next"`. Proper use of the hyperlinks is recommended.
 
-#### NextPage
-If the requested data spans into another page, the response includes a hyperlink to the next page of data. Absence of a `NextPage` link indicates that the data does not span past the current page.
+#### Next page
+If the requested data spans into another page, the response includes a hyperlink to the next page of data. Absence of a `rel="next"` link indicates that the data does not span past the current page.
 
 The hyperlink preserves all request parameters, while adding or updating a `continuationToken`. For example:
 ```
-NextPage: ".../dataViews/{dataViewId}/data/interpolated?continuationToken=MjAxOC0wMS0wMVQwMDowMDoxMVo_MD90Yk1OblE_QUxXcEZBP1VEdGxIMWJROG9z&count=1000"
+Link: <.../dataViews/{dataViewId}/data/interpolated?continuationToken=MjAxOC0wMS0wMVQwMDowMDoxMVo_MD90Yk1OblE_QUxXcEZBP1VEdGxIMWJROG9z&count=1000>; rel="next"
 ```
 
-To retrieve the entire requested range of data, clients should continue to follow `NextPage` hyperlinks until the response does not include a `NextPage` link. This indicates that the last page has been reached.
+To retrieve the entire requested range of data, clients should continue to follow next page hyperlinks until the response does not include a next page link. This indicates that the last page has been reached.
 
 It is possible for the continuation token to become invalid during paging. This is unlikely in ordinary circumstances. However, if an independent operation triggers the data view to re-resolve differently, existing continuation tokens are no longer valid. Data requests with an invalid token are considered bad requests. Paging must be restarted from the first page.
 
-#### FirstPage
-If the continuation token becomes invalid and paging must be restarted, clients may follow the `FirstPage` hyperlink. The hyperlink preserves all request parameters, adding or updating the cache behavior to `Preserve`. This ensures that multiple parallel workers cannot endlessly "trip" each other.
+#### First page
+If the continuation token becomes invalid and paging must be restarted, clients may follow the first page hyperlink included in the `Link` header. The hyperlink preserves all request parameters, adding or updating the cache behavior to `Preserve`. This ensures that multiple parallel workers cannot endlessly "trip" each other.
 
 For example:
 ```
-FirstPage: ".../dataViews/{dataViewId}/data/interpolated?cache=Preserve&count=1000"
+Link: <.../dataViews/{dataViewId}/data/interpolated?cache=Preserve&count=1000>, rel="first"
 ```
+
+### .NET client library
+Paging is handled automatically when using the .NET client library to retrieve data. Results are returned as an IAsyncEnumerable<string> where each value is one record of data in the requested format. The actual backend page size of the request is configurable using the backingPageSize parameter.
 
 ### Index parameters
 Index parameters, such as Start Index, must remain constant while paging through a range of data. If a different range of data is desired, restart the paging operation.

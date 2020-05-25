@@ -82,7 +82,7 @@
 <h2 id="get-data-items-by-query"><code>Get Data Items by Query</code></h2>
 <p>Gets the paged collection of data items that are the results of an individual query, and which are eligible for use in the current data view. A data view has a collection of zero or more queries. Each query has an identifier. Those identifiers are used here as part of the request path.</p>
 <h3 id="request">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>Resolved/<wbr>DataItems/<wbr>{queryId}?cache={cache}&amp;skip={skip}&amp;count={count}
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>Resolved/<wbr>DataItems/<wbr>{queryId}?cache={cache}&amp;skip={skip}&amp;count={count}
 </code></pre><h3 id="request-path-parameters">Request path parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -126,7 +126,7 @@
 </tbody>
 </table>
 <h4 id="response-headers">Response headers</h4>
-<p>Successful (200 OK) responses include one or more header values related to paging.</p>
+<p>Successful (200 OK) responses include:</p>
 <table>
 <thead>
 <tr>
@@ -136,12 +136,12 @@
 </thead>
 <tbody>
 <tr>
-<td>FirstPage</td>
-<td>Hyperlink to the first page of results</td>
+<td>Total-Count</td>
+<td>The total count of data items visible to the current user</td>
 </tr>
 <tr>
-<td>NextPage</td>
-<td>Hyperlink to the next page of results, if the results span into an additional page. Absence of this header indicates that there are no additional pages to be retrieved.</td>
+<td>Link</td>
+<td>Hyperlinks to the first page and next page of results as applicable</td>
 </tr>
 </tbody>
 </table>
@@ -152,10 +152,10 @@ Content-Type: application/json
   &quot;TimeOfResolution&quot;: &quot;2019-12-13T01:23:45Z&quot;,
   &quot;Items&quot;: [
     {
-      &quot;ResourceType&quot;: &quot;Stream&quot;,
       &quot;Id&quot;: &quot;WS_BILT&quot;,
       &quot;Name&quot;: &quot;WS_BILT&quot;,
       &quot;TypeId&quot;: &quot;quickstart-omf-weather-gen1&quot;,
+      &quot;ResourceType&quot;: &quot;Stream&quot;,
       &quot;Tags&quot;: [
         &quot;Weather&quot;,
         &quot;High Resolution&quot;,
@@ -188,11 +188,11 @@ Content-Type: application/json
   ]
 }
 </code></pre><h3 id="net-client-libraries-method">.NET client libraries method</h3>
-<pre><code class="lang-csharp">   Task&lt;ResolvedItems&lt;DataItem&gt;&gt; GetDataItemsAsync(string id, string queryId, int skip = DEFAULT_SKIP, int count = DEFAULT_COUNT, CacheBehavior cache = CacheBehavior.Preserve);
+<pre><code class="lang-csharp">   Task&lt;ResolvedItems&lt;DataItem&gt;&gt; GetDataItemsAsync(string id, string queryId, int skip = 0, int count = 100, CacheBehavior cache = CacheBehavior.Preserve);
 </code></pre><h2 id="get-ineligible-data-items-by-query"><code>Get Ineligible Data Items by Query</code></h2>
 <p>Gets the paged collection of data items that are the results of an individual query, but which are not eligible for use in the current data view. A common reason for ineligibility is that the item&#39;s index property is of a different type than the data view expects. A data view has a collection of zero or more queries. Each query has an identifier. Those identifiers are used here as part of the request path.</p>
 <h3 id="request-1">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>Resolved/<wbr>IneligibleDataItems/<wbr>{queryId}?cache={cache}&amp;skip={skip}&amp;count={count}
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>Resolved/<wbr>IneligibleDataItems/<wbr>{queryId}?cache={cache}&amp;skip={skip}&amp;count={count}
 </code></pre><h3 id="request-path-parameters-1">Request path parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -236,7 +236,7 @@ Content-Type: application/json
 </tbody>
 </table>
 <h4 id="response-headers-1">Response headers</h4>
-<p>Successful (200 OK) responses include one or more header values related to paging.</p>
+<p>Successful (200 OK) responses include:</p>
 <table>
 <thead>
 <tr>
@@ -246,12 +246,12 @@ Content-Type: application/json
 </thead>
 <tbody>
 <tr>
-<td>FirstPage</td>
-<td>Hyperlink to the first page of results</td>
+<td>Total-Count</td>
+<td>The total count of data items visible to the current user</td>
 </tr>
 <tr>
-<td>NextPage</td>
-<td>Hyperlink to the next page of results, if the results span into an additional page. Absence of this header indicates that there are no additional pages to be retrieved.</td>
+<td>Link</td>
+<td>Hyperlinks to the first page and next page of results as applicable</td>
 </tr>
 </tbody>
 </table>
@@ -262,10 +262,10 @@ Content-Type: application/json
   &quot;TimeOfResolution&quot;: &quot;2019-12-13T01:23:45Z&quot;,
   &quot;Items&quot;: [
     {
-      &quot;ResourceType&quot;: &quot;Stream&quot;,
       &quot;Id&quot;: &quot;SOME_INELIGIBLE_STREAM&quot;,
       &quot;Name&quot;: &quot;Some Ineligible Stream&quot;,
       &quot;TypeId&quot;: &quot;type-with-different-index&quot;,
+      &quot;ResourceType&quot;: &quot;Stream&quot;,
       &quot;Tags&quot;: [],
        &quot;Metadata&quot;: { },
        &quot;DataItemFields&quot;: [
@@ -286,19 +286,19 @@ Content-Type: application/json
   ]
 }
 </code></pre><h3 id="net-client-libraries-method-1">.NET client libraries method</h3>
-<pre><code class="lang-csharp">   Task&lt;ResolvedItems&lt;DataItem&gt;&gt; GetIneligibleDataItemsAsync(string id, string queryId, int skip = DEFAULT_SKIP, int count = DEFAULT_COUNT, CacheBehavior cache = CacheBehavior.Preserve);
+<pre><code class="lang-csharp">   Task&lt;ResolvedItems&lt;DataItem&gt;&gt; GetIneligibleDataItemsAsync(string id, string queryId, int skip = 0, int count = 100, CacheBehavior cache = CacheBehavior.Preserve);
 </code></pre><h2 id="get-groups"><code>Get Groups</code></h2>
 <p>Gets the collection of <code>Group</code>s that resolved for a data view.</p>
 <h3 id="request-2">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>Resolved/<wbr>Groups?cache={cache}&amp;skip={skip}&amp;count={count}
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>Resolved/<wbr>Groups?cache={cache}&amp;skip={skip}&amp;count={count}
 </code></pre><h3 id="request-path-parameters-2">Request path parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string dataViewId</code><br>The data view identifier</p>
 <h3 id="request-query-parameters-2">Request query parameters</h3>
 <p><code>[optional] string cache</code><br>&quot;Refresh&quot; to force the resource to re-resolve.<br>&quot;Preserve&quot; to use cached information, if available. This is the default value.</p>
-<p><code>[optional] int skip</code><br>An optional parameter representing the zero-based offset of the first data item to retrieve. If not specified, a default value of 0 is used.</p>
-<p><code>[optional] int count</code><br>An optional parameter representing the maximum number of data items to retrieve. If not specified, a default value of 100 is used.</p>
+<p><code>[optional] int skip</code><br>An optional parameter representing the zero-based offset of the first group to retrieve. If not specified, a default value of 0 is used.</p>
+<p><code>[optional] int count</code><br>An optional parameter representing the maximum number of groups to retrieve. If not specified, a default value of 100 is used.</p>
 <h3 id="response-2">Response</h3>
 <p>The response includes a status code and, in most cases, a body.</p>
 <table>
@@ -333,7 +333,7 @@ Content-Type: application/json
 </tbody>
 </table>
 <h4 id="response-headers-2">Response headers</h4>
-<p>Successful (200 OK) responses include one or more header values related to paging.</p>
+<p>Successful (200 OK) responses include:</p>
 <table>
 <thead>
 <tr>
@@ -343,12 +343,12 @@ Content-Type: application/json
 </thead>
 <tbody>
 <tr>
-<td>FirstPage</td>
-<td>Hyperlink to the first page of results</td>
+<td>Total-Count</td>
+<td>The total count of groups</td>
 </tr>
 <tr>
-<td>NextPage</td>
-<td>Hyperlink to the next page of results, if the results span into an additional page. Absence of this header indicates that there are no additional pages to be retrieved.</td>
+<td>Link</td>
+<td>Hyperlinks to the first page and next page of results as applicable</td>
 </tr>
 </tbody>
 </table>
@@ -359,14 +359,14 @@ Content-Type: application/json
   &quot;TimeOfResolution&quot;: &quot;2019-12-13T01:23:45Z&quot;,
   &quot;Items&quot;: [
     {
-      &quot;Values&quot;: [ &quot;Biltmore&quot; ],
+      &quot;GroupingValues&quot;: [ &quot;Biltmore&quot; ],
       &quot;DataItems&quot;: {
         &quot;Query1&quot;: [
           {
-            &quot;ResourceType&quot;: &quot;Stream&quot;,
             &quot;Id&quot;: &quot;WS_BILT&quot;,
             &quot;Name&quot;: &quot;WS_BILT&quot;,
             &quot;TypeId&quot;: &quot;quickstart-omf-weather-gen1&quot;,
+            &quot;ResourceType&quot;: &quot;Stream&quot;,
             &quot;Tags&quot;: [
                 &quot;Weather&quot;,
                 &quot;High Resolution&quot;,
@@ -402,11 +402,11 @@ Content-Type: application/json
   ]
 }
 </code></pre><h3 id="net-client-libraries-method-2">.NET client libraries method</h3>
-<pre><code class="lang-csharp">   Task&lt;ResolvedItems&lt;Group&gt;&gt; GetGroupsAsync(string id, int skip = DEFAULT_SKIP, int count = DEFAULT_COUNT, CacheBehavior cache = CacheBehavior.Preserve);
+<pre><code class="lang-csharp">   Task&lt;ResolvedItems&lt;Group&gt;&gt; GetGroupsAsync(string id, int skip = 0, int count = 100, CacheBehavior cache = CacheBehavior.Preserve);
 </code></pre><h2 id="get-available-field-sets"><code>Get Available Field Sets</code></h2>
 <p>Gets the collection of field sets that are available for use in the data view, and which are not already included in the data view.</p>
 <h3 id="request-3">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>Resolved/<wbr>AvailableFieldSets?cache={cache}
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>Resolved/<wbr>AvailableFieldSets?cache={cache}
 </code></pre><h3 id="request-path-parameters-3">Request path parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -452,13 +452,26 @@ Content-Type: application/json
     &quot;TimeOfResolution&quot;: &quot;2019-12-13T01:23:45Z&quot;,
     &quot;Items&quot;: [
         {
-            &quot;SourceType&quot;: &quot;DataItem&quot;,
             &quot;QueryId&quot;: &quot;weather&quot;,
-            &quot;Fields&quot;: [
+            &quot;DataFields&quot;: [
                 {
                     &quot;Source&quot;: &quot;Id&quot;,
                     &quot;Keys&quot;: [],
                     &quot;Label&quot;: &quot;{IdentifyingValue} Id&quot;
+                },
+                {
+                    &quot;Source&quot;: &quot;PropertyId&quot;,
+                    &quot;Keys&quot;: [
+                        &quot;SolarRadiation&quot;
+                    ],
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
+                },
+                {
+                    &quot;Source&quot;: &quot;Metadata&quot;,
+                    &quot;Keys&quot;: [
+                        &quot;Site&quot;
+                    ],
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;Tags&quot;,
@@ -470,28 +483,7 @@ Content-Type: application/json
                         &quot;Gen2&quot;,
                     ],
                     &quot;Label&quot;: &quot;{IdentifyingValue} Tags&quot;
-                },
-                {
-                    &quot;Source&quot;: &quot;Metadata&quot;,
-                    &quot;Keys&quot;: [
-                        &quot;Site&quot;
-                    ],
-                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
-                },
-                {
-                    &quot;Source&quot;: &quot;PropertyId&quot;,
-                    &quot;Keys&quot;: [
-                        &quot;Timestamp&quot;
-                    ],
-                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
-                },
-                {
-                    &quot;Source&quot;: &quot;PropertyId&quot;,
-                    &quot;Keys&quot;: [
-                        &quot;SolarRadiation&quot;
-                    ],
-                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
-                },
+                }
             ]
         }
     ]
@@ -501,13 +493,17 @@ Content-Type: application/json
 </code></pre><h2 id="get-field-mappings"><code>Get Field Mappings</code></h2>
 <p>Gets the collection of field mappings resolved for the data view. These show the exact data behind every field, for each data item, for each group.</p>
 <h3 id="request-4">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>Resolved/<wbr>FieldMappings?cache={cache}
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>Resolved/<wbr>FieldMappings?cache={cache}&amp;skip={skip}&amp;count={count}
 </code></pre><h3 id="request-path-parameters-4">Request path parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string dataViewId</code><br>The data view identifier</p>
 <h3 id="request-query-parameters-4">Request query parameters</h3>
 <p><code>[optional] string cache</code><br>&quot;Refresh&quot; to force the resource to re-resolve.<br>&quot;Preserve&quot; to use cached information, if available. This is the default value.</p>
+<p><code>[optional] int skip</code>
+An optional parameter representing the zero-based offset of the first field mapping to retrieve. If not specified, a default value of 0 is used.</p>
+<p><code>[optional] int count</code>
+An optional parameter representing the maximum number of field mappings to retrieve. If not specified, a default value of 100 is used.</p>
 <h3 id="response-4">Response</h3>
 <p>The response includes a status code and, in most cases, a body.</p>
 <table>
@@ -542,7 +538,7 @@ Content-Type: application/json
 </tbody>
 </table>
 <h4 id="response-headers-3">Response headers</h4>
-<p>Successful (200 OK) responses include one or more header values related to paging.</p>
+<p>Successful (200 OK) responses include:</p>
 <table>
 <thead>
 <tr>
@@ -552,12 +548,12 @@ Content-Type: application/json
 </thead>
 <tbody>
 <tr>
-<td>FirstPage</td>
-<td>Hyperlink to the first page of results</td>
+<td>Total-Count</td>
+<td>The total count of field mappings</td>
 </tr>
 <tr>
-<td>NextPage</td>
-<td>Hyperlink to the next page of results, if the results span into an additional page. Absence of this header indicates that there are no additional pages to be retrieved.</td>
+<td>Link</td>
+<td>Hyperlinks to the first page and next page of results as applicable</td>
 </tr>
 </tbody>
 </table>
@@ -586,6 +582,7 @@ Content-Type: application/json
       {
         &quot;Id&quot;: &quot;Temperature&quot;,
         &quot;Label&quot;: &quot;Temperature&quot;,
+        &quot;FieldKind&quot;: &quot;DataField&quot;,
         &quot;TypeCode&quot;: &quot;Double&quot;,
         &quot;DataMappings&quot;: [
           {
@@ -614,11 +611,11 @@ Content-Type: application/json
     ]
 }
 </code></pre><h3 id="net-client-libraries-method-4">.NET client libraries method</h3>
-<pre><code class="lang-csharp">   Task&lt;ResolvedItems&lt;FieldMapping&gt;&gt; GetFieldMappingsAsync(string id, int skip = DEFAULT_SKIP, int count = DEFAULT_COUNT, CacheBehavior cache = CacheBehavior.Preserve);
+<pre><code class="lang-csharp">   Task&lt;ResolvedItems&lt;FieldMapping&gt;&gt; GetFieldMappingsAsync(string id, int skip = 0, int count = 100, CacheBehavior cache = CacheBehavior.Preserve);
 </code></pre><h2 id="get-statistics"><code>Get Statistics</code></h2>
 <p>Gets statistics about the size and shape on how the data view resolved. </p>
 <h3 id="request-5">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>Resolved/<wbr>Statistics?cache={cache}
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>Resolved/<wbr>Statistics?cache={cache}
 </code></pre><h3 id="request-path-parameters-5">Request path parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>

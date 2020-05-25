@@ -83,15 +83,15 @@
 <h2 id="specify-first-page-parameters">Specify first page parameters</h2>
 <p>Complete the following to specify first page parameters:</p>
 <ol>
-<li>Specify the index range (start index and end index) and granularity of data to be retrieved.</li>
+<li>Specify the index range (start index and end index) and granularity of data to be retrieved (interval).</li>
 <li>Specify the desired response format as csv, table-style json, or object-style json. The default is object-style json.  Csv and table-style json are available with or without a header row.</li>
 <li>Specify the page size.</li>
 </ol>
 <h2 id="request-any-remaining-pages">Request any remaining pages</h2>
-<p>Complete the following if data spans into additional page(s). The current page response will include an HTTP header linking to the next page.</p>
+<p>Complete the following if data spans into additional page(s). The current page response will include an HTTP <code>Link</code> header with a hyperlink to the next page of data.</p>
 <ol>
-<li>Follow the hyperlinks to retrieve the full requested dataset page by page, if the current page includes a NextPage hyperlink.</li>
-<li>Follow the <code>FirstPage</code> hyperlink in the event that it is necessary to restart the paging operation from the first page. </li>
+<li>Follow the hyperlinks to retrieve the full requested dataset page by page, if the current page includes a next hyperlink in the <code>Link</code> header.</li>
+<li>Follow the first page hyperlink in the <code>Link</code> header in the event that it is necessary to restart the paging operation from the first page.</li>
 </ol>
 <h2 id="optional-investigate-the-source-of-the-data">[Optional] Investigate the source of the data</h2>
 <p>For precise information about the source of each field&#39;s data, see the data view&#39;s resolved field mappings.</p>

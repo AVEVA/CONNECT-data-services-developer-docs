@@ -81,23 +81,25 @@
 <p>The <code>DataView</code> object is a declarative query and shape for stream data. This section describes the <code>DataView</code> object. For the corresponding API routes, see <a class="xref" href="Data_View_API.html">API documentation</a>.  </p>
 <p>At times, this section makes reference to ways the view <em>resolves</em> into further resources, such as the collection of data items found by each data item query. See the documentation of <a class="xref" href="Resolved_Data_View.html">resolved resources</a> for details.</p>
 <h2 id="general-concepts">General concepts</h2>
-<h3 id="identification">Identification</h3>
-<p>A DataView must have a unique identifier. It may have a friendly name and description. If a friendly name is not specified, the identifier will be used as the data view&#39;s name.</p>
+<h3 id="defining-identification">Defining identification</h3>
+<p>A data view must have a unique identifier. It may have a friendly name and description. If a friendly name is not specified, the identifier will be used as the data view&#39;s name.</p>
 <h3 id="including-data-items">Including data items</h3>
 <p>One or more queries determine the set of data items (such as SDS streams) that the data view will include. Each <a class="xref" href="Queries.html">Query</a> should represent a collection of like streams. To include streams that represent very different items, such as power inverters and weather stations, use separate queries.</p>
 <h3 id="including-data-fields">Including data fields</h3>
-<p>Information from, or about, those data items must be included explicitly in the data view as Fields within <a class="xref" href="Field_Sets.html">DataFields</a> or <a class="xref" href="Grouping.html">GroupingFields</a>. By default, a data view includes no fields, except the default <a href="xref:DataView:index_field"><code>.IndexField</code></a>. The fields that are available for use are exposed as a &quot;resolved&quot; resource (AvailableFieldSets). It is recommended to use or adapt those fields instead of defining fields from scratch. Individual fields are organized into <a class="xref" href="Field_Sets.html">DataFieldSets</a> and <a class="xref" href="Grouping.html">GroupingFields</a>.</p>
+<p>Information from, or about, those data items must be included explicitly in the data view as Fields within <a class="xref" href="Field_Sets.html">DataFields</a> or <a class="xref" href="Grouping.html">GroupingFields</a>. By default, a data view includes no fields, except the default <a href="xref:DataView:index_field"><code>.IndexField</code></a>. The fields that are available for use are exposed as a &quot;resolved&quot; resource, <a class="xref" href="Available_Field_Sets.html">Available Field Sets</a>. It is recommended to use or adapt those fields instead of defining new fields. Individual fields are organized into <a class="xref" href="Field_Sets.html">DataFieldSets</a> and <a class="xref" href="Grouping.html">GroupingFields</a>.</p>
 <h3 id="organizing-the-data-items">Organizing the data items</h3>
-<p>Data items may be [grouped](xref:DataViewsGrouping, which amounts to grouping or partitioning them by one or more field values. This is one way of producing a meaningful, consumable shape of data.</p>
+<p>Data items may be <a class="xref" href="Grouping.html">grouped</a>, which amounts to grouping or partitioning them by one or more field values. This is one way of producing a meaningful, consumable shape of data.</p>
 <h3 id="organizing-the-data-fields">Organizing the data fields</h3>
 <p>Field sets and fields resolve in the order they are defined. They may be re-ordered.</p>
-<p>Within each group, a field set may be associated with multiple data items. It is often necessary to disambiguate these items. Items can be disambiguated by specifying an <a class="xref" href="Field_Sets.html#identifying-field"><code>.IdentifyingField</code></a>. An identifying field is a field that tells the data items apart within a group, such as the value of <em>Measurement</em> metadata (i.e., the data items are identified by what they measure). Identifying data items also allows the data views engine to &quot;align&quot; them across groups, since it is clear that streams measuring, e.g., <em>Power Out</em> are alike, and the streams measuring <em>Power In</em> are alike.</p>
-<h3 id="index-field">Index field</h3>
-<p>The field used for indexing.  If not specified, a default value with a label of &quot;Timestamp&quot; is used. If specified, a label is required. Field source and keys are not applicable for index field.</p>
+<p>Within each group, a field set may be associated with multiple data items. It is often necessary to disambiguate these items. Items can be disambiguated by specifying an <a class="xref" href="Field_Sets.html#identifying-field"><code>.IdentifyingField</code></a>. An identifying field is a field that differentiates the data items within a group, such as the value of <em>Measurement</em> metadata (i.e., the data items are identified by what they measure). Identifying data items also allows the data views engine to &quot;align&quot; them across groups, since it is clear, for example, that streams measuring <em>Power Out</em> and streams measuring <em>Power In</em> are alike.</p>
+<h3 id="including-the-index-field">Including the index field</h3>
+<p>The field used for indexing.  If not specified, a default value with a label of &quot;Timestamp&quot; is applied. If specified, a label is required. Field source and keys are not applicable for index field.</p>
 <h3 id="defining-index-type-and-default-range">Defining index type and default range</h3>
-<p>Data views currently operate on timestamped data, which is data indexed by a DateTime property. This is reflected by the DataView&#39;s <code>.IndexTypeCode</code>, whose value must be &quot;DateTime&quot;. Default values may be defined for the StartIndex, EndIndex, and/or Interval used when data view data is queried. </p>
-<h2 id="dataview-properties">DataView properties</h2>
-<p>The following table lists the properties of a DataView:</p>
+<p>Data views currently operate on timestamped data, which is data indexed by a DateTime property. This is reflected by the <code>.IndexTypeCode</code> of the DataView, whose value must be &quot;DateTime&quot;. Default values may be defined for the start index, end index, and/or interval used when data view data is queried.</p>
+<h3 id="defining-data-view-shape">Defining data view shape</h3>
+<p>Data views may be set to resolve as standard shape or narrow shape. Standard shape resolves fields similar to how they are defined. Narrow shape pivots the fields vertically, resulting in a view whose schema is independent of what data items (streams) are resolved by the data view. Narrow shape may be used when an invariant output schema is required.</p>
+<h2 id="data-view-properties">Data view properties</h2>
+<p>The following table lists the properties of a <code>DataView</code>:</p>
 <table>
 <thead>
 <tr>
@@ -131,16 +133,23 @@
 <td>Longer description of the view</td>
 </tr>
 <tr>
+<td>IndexField</td>
+<td>Field</td>
+<td>Optional</td>
+<td>{ Label:&quot;Timestamp&quot; }</td>
+<td>The field used for indexing.  If unspecified a field labeled &quot;Timestamp&quot; is included.</td>
+</tr>
+<tr>
 <td>Queries</td>
 <td>Query[]</td>
-<td>Optional*</td>
+<td>Optional</td>
 <td>[ ]</td>
 <td>Queries for SDS Streams to include in the view. This is the starting point when defining a data view. Each Query should represent a collection of like streams. To include streams that represent very different items (e.g. solar inverters and weather), use separate queries.</td>
 </tr>
 <tr>
 <td>DataFieldSets</td>
 <td>FieldSet[]</td>
-<td>Optional*</td>
+<td>Optional</td>
 <td>[ ]</td>
 <td>The sets of fields included in the data view. Often copied or adapted from the view&#39;s available field sets, which are exposed in a resolved resource.</td>
 </tr>
@@ -152,11 +161,25 @@
 <td>Fields by which the data items are partitioned/grouped.</td>
 </tr>
 <tr>
-<td>IndexField</td>
-<td>Field</td>
+<td>DefaultStartIndex</td>
+<td>string</td>
 <td>Optional</td>
-<td>{ Label:&quot;Timestamp&quot; }</td>
-<td>The field used for indexing.  If unspecified a field labeled &quot;Timestamp&quot; is included.</td>
+<td>null</td>
+<td>The default value of StartIndex used when querying the data view data if none is specified.</td>
+</tr>
+<tr>
+<td>DefaultEndIndex</td>
+<td>string</td>
+<td>Optional</td>
+<td>null</td>
+<td>The default value of EndIndex used when querying the data view data if none is specified.</td>
+</tr>
+<tr>
+<td>DefaultInterval</td>
+<td>string</td>
+<td>Optional</td>
+<td>null</td>
+<td>The default value of Interval used when querying the data view data if none is specified.</td>
 </tr>
 <tr>
 <td>IndexTypeCode</td>
@@ -166,32 +189,11 @@
 <td>The name of the index data type. DateTime is the currently supported index type.</td>
 </tr>
 <tr>
-<td>DefaultStartIndex</td>
-<td>string</td>
-<td>Optional</td>
-<td>null</td>
-<td>The default value of StartIndex used when querying the data view data, if none is specified then.</td>
-</tr>
-<tr>
-<td>DefaultEndIndex</td>
-<td>string</td>
-<td>Optional</td>
-<td>null</td>
-<td>The default value of EndIndex used when querying the data view data, if none is specified then.</td>
-</tr>
-<tr>
-<td>DefaultInterval</td>
-<td>string</td>
-<td>Optional</td>
-<td>null</td>
-<td>The default value of Interval used when querying the data view data, if none is specified then.</td>
-</tr>
-<tr>
 <td>Shape</td>
 <td>DataViewShape</td>
 <td>Optional</td>
 <td>Standard</td>
-<td>Data views may be set to resolve as standard shape or &quot;narrow&quot; shape. Narrow shape may be used when an invariant output schema is required.</td>
+<td>Data views may be set to resolve as standard shape or narrow shape. Narrow shape may be used when an invariant output schema is required.</td>
 </tr>
 </tbody>
 </table>
@@ -222,19 +224,19 @@
 <td>string</td>
 <td>Required</td>
 <td></td>
-<td>Unique identifier. Used by FieldSet to link to the query&#39;s results</td>
+<td>Unique identifier. Used by FieldSet to link to the query&#39;s results.</td>
 </tr>
 <tr>
 <td>Value</td>
 <td>string</td>
 <td>Optional</td>
 <td>null</td>
-<td>A query for streams, in SDS query syntax. A null or empty query will not match any streams.</td>
+<td>A query for streams in SDS query syntax. A null or empty query will not match any streams.</td>
 </tr>
 </tbody>
 </table>
 <h3 id="fieldset">FieldSet</h3>
-<p>A set of fields included in the data view, sharing a common role or source (<code>.SourceType</code>). One <code>DataView</code> is likely to include multiple <code>FieldSet</code>s.</p>
+<p>A set of fields included in the data view, sharing a common role or source (<code>.SourceType</code>). One <code>DataView</code> is likely to include one <code>FieldSet</code> per query.</p>
 <table>
 <thead>
 <tr>
@@ -270,7 +272,7 @@
 </tbody>
 </table>
 <h3 id="field">Field</h3>
-<p>Individual piece of information, such as a property of an SDS stream, or metadata of that stream.</p>
+<p>Individual piece of information, such as a property of an SDS stream or metadata of that stream.</p>
 <table>
 <thead>
 <tr>
@@ -311,6 +313,7 @@
 <thead>
 <tr>
 <th>Name</th>
+<th>Enumeration Id</th>
 <th>Keyed</th>
 <th>Details</th>
 </tr>
@@ -318,38 +321,45 @@
 <tbody>
 <tr>
 <td>NotApplicable</td>
+<td>0</td>
 <td>No</td>
 <td>FieldSource is not applicable for an index field</td>
 </tr>
 <tr>
 <td>Id</td>
+<td>1</td>
 <td>No</td>
 <td>The id of the data item (stream)</td>
 </tr>
 <tr>
 <td>Name</td>
+<td>2</td>
 <td>No</td>
 <td>The name of the data item (stream)</td>
 </tr>
 <tr>
 <td>PropertyId</td>
+<td>3</td>
 <td>Yes</td>
 <td>Data from a stream property, found by id</td>
 </tr>
 <tr>
 <td>PropertyName</td>
+<td>4</td>
 <td>Yes</td>
 <td>Data from a stream property, found by name</td>
 </tr>
 <tr>
-<td>Tags</td>
-<td>Yes</td>
-<td>Data item tags matching the collection provided</td>
-</tr>
-<tr>
 <td>Metadata</td>
+<td>5</td>
 <td>Yes</td>
 <td>Value of the data item metadata, found by key</td>
+</tr>
+<tr>
+<td>Tags</td>
+<td>6</td>
+<td>Yes</td>
+<td>Data item tags matching the collection provided</td>
 </tr>
 </tbody>
 </table>
@@ -362,17 +372,20 @@
 <thead>
 <tr>
 <th>Name</th>
+<th>Enumeration Id</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Standard</td>
+<td>0</td>
 <td>Fields are resolved into a shape similar to how they were defined. This is the recommended shape unless specific needs dictate.</td>
 </tr>
 <tr>
 <td>Narrow</td>
-<td>Fields are &quot;pivoted&quot; vertically, resulting in a view whose schema is independent of what data items (streams) are resolved by the data view.</td>
+<td>1</td>
+<td>Fields are pivoted vertically, resulting in a view whose schema is independent of what data items (streams) are resolved by the data view.</td>
 </tr>
 </tbody>
 </table>

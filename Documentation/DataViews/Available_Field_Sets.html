@@ -79,13 +79,13 @@
 <h1 id="available-field-sets">Available Field Sets</h1>
 
 <p>Available <a class="xref" href="Field_Sets.html">field sets</a> include fields not currently included in the data view, which are available to be added. </p>
-<p>The list of field sets is generated based on the <code>.Queries</code>, <code>.GroupingFields</code>, and <code>.IndexTypeCode</code> of the defined data view. These fields and field sets can be readily added to the data view <code>.DataFieldSets</code>. Once the field is added, it is omitted from the list of available field sets. Similarly, if the field is removed from the data view, it is added back to the available field sets. This allows an iterative approach to building the data view by easily adding and removing fields from the data view. </p>
+<p>The list of field sets is generated based on the <code>.Queries</code> and <code>.GroupingFields</code> of the defined data view. These fields and field sets can be readily added to the data view <code>.DataFieldSets</code>. Once the field is added, it is omitted from the list of available field sets. Similarly, if the field is removed from the data view, it is added back to the available field sets. This allows an iterative approach to building the data view by easily adding and removing fields from the data view.</p>
 <h2 id="example">Example</h2>
 <p>The example uses the following data view and the streams from the <a class="xref" href="Example_Scenario.html">SDS Example Scenario</a>. Note that the field sets and the grouping fields arrays are empty:</p>
 <pre><code class="lang-json">{
   &quot;Id&quot;: &quot;example_without_grouping_fields&quot;,
   &quot;Name&quot;: &quot;example_without_grouping_fields&quot;,
-  &quot;Description&quot;: null,
+  &quot;IndexField&quot;: { &quot;Label&quot;: &quot;Timestamp&quot; },
   &quot;Queries&quot;: [
     { 
       &quot;Id&quot;: &quot;weather&quot;,
@@ -94,11 +94,10 @@
   ],
   &quot;DataFieldSets&quot;: [],
   &quot;GroupingFields&quot;: [],
-  &quot;Shape&quot;: &quot;Standard&quot;,
-  &quot;IndexField&quot;: { &quot;Label&quot;: &quot;Timestamp&quot; },
-  &quot;IndexTypeCode&quot;: &quot;DateTime&quot;
+  &quot;IndexTypeCode&quot;: &quot;DateTime&quot;,
+  &quot;Shape&quot;: &quot;Standard&quot;
 }
-</code></pre><p>Accessing the <code>Get Available Field Sets</code> endpoint will show available fields corresponding to stream id, name, tags, metadata, and each property. Since the index field set is not included in the data view, it is also shown as available.</p>
+</code></pre><p>Accessing the <code>Get Available Field Sets</code> endpoint will show available fields corresponding to stream id, name, tags, metadata, and each property.</p>
 <pre><code class="lang-json">HTTP 200 OK
 {
     &quot;TimeOfResolution&quot;: &quot;(a timestamp in ISO 8601 format)&quot;,
@@ -117,38 +116,6 @@
                     &quot;Label&quot;: &quot;{IdentifyingValue} Name&quot;
                 },
                 {
-                    &quot;Source&quot;: &quot;Tags&quot;,
-                    &quot;Keys&quot;: [
-                        &quot;Weather&quot;,
-                        &quot;Low Resolution&quot;,
-                        &quot;High Resolution&quot;,
-                        &quot;Gen1&quot;,
-                        &quot;Gen2&quot;,
-                    ],
-                    &quot;Label&quot;: &quot;{IdentifyingValue} Tags&quot;
-                },
-                {
-                    &quot;Source&quot;: &quot;Metadata&quot;,
-                    &quot;Keys&quot;: [
-                        &quot;Site&quot;
-                    ],
-                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
-                },
-                {
-                    &quot;Source&quot;: &quot;PropertyId&quot;,
-                    &quot;Keys&quot;: [
-                        &quot;Timestamp&quot;
-                    ],
-                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
-                },
-                {
-                    &quot;Source&quot;: &quot;PropertyId&quot;,
-                    &quot;Keys&quot;: [
-                        &quot;SolarRadiation&quot;
-                    ],
-                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
-                },
-                {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;AmbientTemperature&quot;
@@ -165,9 +132,34 @@
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
+                        &quot;SolarRadiation&quot;
+                    ],
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
+                },
+                {
+                    &quot;Source&quot;: &quot;PropertyId&quot;,
+                    &quot;Keys&quot;: [
                         &quot;Temperature&quot;
                     ],
                     &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
+                },
+                {
+                    &quot;Source&quot;: &quot;Metadata&quot;,
+                    &quot;Keys&quot;: [
+                        &quot;Site&quot;
+                    ],
+                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
+                },
+                {
+                    &quot;Source&quot;: &quot;Tags&quot;,
+                    &quot;Keys&quot;: [
+                        &quot;Weather&quot;,
+                        &quot;Low Resolution&quot;,
+                        &quot;High Resolution&quot;,
+                        &quot;Gen1&quot;,
+                        &quot;Gen2&quot;,
+                    ],
+                    &quot;Label&quot;: &quot;{IdentifyingValue} Tags&quot;
                 }
             ]
         }

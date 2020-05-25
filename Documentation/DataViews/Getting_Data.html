@@ -83,7 +83,8 @@
 <p>All data in a data view is associated with an index value, i.e. a timestamp.
 If there are multiple groups in the data view, the index and grouping field values together form a unique identifier for each data record.</p>
 <h3 id="index-type">Index type</h3>
-<p>The supported index type is <code>DateTime</code>, as noted in the documentation on creating <a class="xref" href="Data_View.html">Data Views</a>.</p>
+<p>The supported index type is <code>DateTime</code>, as noted in the documentation on creating <a class="xref" href="Data_View.html">Data Views</a>. Date times should use ISO 8601 format and can be in either UTC or local time. Data retrieved using the <a class="xref" href="Data_API.html">Data API</a> will be returned in UTC.</p>
+<p>Interval timespan values should be formatted using the standard timespan format, ie., d.hh:mm:ss.fffffff.</p>
 <h3 id="index-range">Index range</h3>
 <p>Three parameters control the range and granularity of data returned:</p>
 <table>
@@ -99,19 +100,19 @@ If there are multiple groups in the data view, the index and grouping field valu
 <tr>
 <td>Start index</td>
 <td><code>startIndex</code></td>
-<td><code>defaultStartIndex</code></td>
+<td><code>DefaultStartIndex</code></td>
 <td>The inclusive start boundary of the data view data</td>
 </tr>
 <tr>
 <td>End index</td>
 <td><code>endIndex</code></td>
-<td><code>defaultEndIndex</code></td>
+<td><code>DefaultEndIndex</code></td>
 <td>The inclusive end boundary of the data view data</td>
 </tr>
 <tr>
 <td>Interval</td>
 <td><code>interval</code></td>
-<td><code>defaultInterval</code></td>
+<td><code>DefaultInterval</code></td>
 <td>The interval between index values</td>
 </tr>
 </tbody>
@@ -163,6 +164,7 @@ If there are multiple groups in the data view, the index and grouping field valu
 <tr>
 <th>Name</th>
 <th>Id</th>
+<th>Enumeration Id</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -170,26 +172,31 @@ If there are multiple groups in the data view, the index and grouping field valu
 <tr>
 <td>JSON</td>
 <td><code>default</code></td>
+<td>0</td>
 <td>JSON object representation. An array of objects, each describing one data record. (default)</td>
 </tr>
 <tr>
 <td>Table</td>
 <td><code>table</code></td>
+<td>1</td>
 <td>JSON row-column representation. Includes an array describing the <code>.Columns</code> (corresponding to field mappings of the data view) and an array of data <code>.Rows</code>. Each row describes one data record.</td>
 </tr>
 <tr>
 <td>Table with header</td>
 <td><code>tableh</code></td>
+<td>2</td>
 <td>Similar to <code>table</code>. The first of the <code>.Rows</code> is an array of the field mapping identifiers, information that is also available in the <code>.Columns</code> of both table formats.</td>
 </tr>
 <tr>
 <td>CSV</td>
 <td><code>csv</code></td>
+<td>3</td>
 <td>Comma-separated values. Each row describes one data record.</td>
 </tr>
 <tr>
 <td>CSV with header</td>
 <td><code>csvh</code></td>
+<td>4</td>
 <td>Similar to <code>csv</code>. The first row contains the identifier of its corresponding field mapping.</td>
 </tr>
 </tbody>
@@ -200,18 +207,20 @@ If there are multiple groups in the data view, the index and grouping field valu
 <p>By default, each page includes 1000 records. The maximum page size is 250,000. </p>
 <p>Optimal page size is dependent both on the client and on the shape of the data view. The size of each individual record is proportional to the &quot;width&quot; of the data view, i.e. how many field mappings are resolved. Clients retrieving data views that resolve into few field mappings may wish to use a page size close to the maximum.</p>
 <h3 id="hyperlinks">Hyperlinks</h3>
-<p>When paging through data view data via the REST API, hyperlinks to the <code>FirstPage</code> and <code>NextPage</code> are provided. Proper use of the hyperlinks is recommended.</p>
-<h4 id="nextpage">NextPage</h4>
-<p>If the requested data spans into another page, the response includes a hyperlink to the next page of data. Absence of a <code>NextPage</code> link indicates that the data does not span past the current page.</p>
+<p>When paging through data view data via the REST API, hyperlinks to the first page and next page of data are provided in the <code>Link</code> header. The first page header is signified by relation type of first, <code>rel=&quot;first&quot;</code>. The next page header is signified by <code>rel=&quot;next&quot;</code>. Proper use of the hyperlinks is recommended.</p>
+<h4 id="next-page">Next page</h4>
+<p>If the requested data spans into another page, the response includes a hyperlink to the next page of data. Absence of a <code>rel=&quot;next&quot;</code> link indicates that the data does not span past the current page.</p>
 <p>The hyperlink preserves all request parameters, while adding or updating a <code>continuationToken</code>. For example:</p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code>NextPage: &quot;.../<wbr>dataViews/<wbr>{dataViewId}/<wbr>data/<wbr>interpolated?continuationToken=MjAxOC0wMS0wMVQwMDowMDoxMVo_MD90Yk1OblE_QUxXcEZBP1VEdGxIMWJROG9z&amp;count=1000&quot;
-</code></pre><p>To retrieve the entire requested range of data, clients should continue to follow <code>NextPage</code> hyperlinks until the response does not include a <code>NextPage</code> link. This indicates that the last page has been reached.</p>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code>Link: &lt;.../<wbr>dataViews/<wbr>{dataViewId}/<wbr>data/<wbr>interpolated?continuationToken=MjAxOC0wMS0wMVQwMDowMDoxMVo_MD90Yk1OblE_QUxXcEZBP1VEdGxIMWJROG9z&amp;count=1000&gt;; rel=&quot;next&quot;
+</code></pre><p>To retrieve the entire requested range of data, clients should continue to follow next page hyperlinks until the response does not include a next page link. This indicates that the last page has been reached.</p>
 <p>It is possible for the continuation token to become invalid during paging. This is unlikely in ordinary circumstances. However, if an independent operation triggers the data view to re-resolve differently, existing continuation tokens are no longer valid. Data requests with an invalid token are considered bad requests. Paging must be restarted from the first page.</p>
-<h4 id="firstpage">FirstPage</h4>
-<p>If the continuation token becomes invalid and paging must be restarted, clients may follow the <code>FirstPage</code> hyperlink. The hyperlink preserves all request parameters, adding or updating the cache behavior to <code>Preserve</code>. This ensures that multiple parallel workers cannot endlessly &quot;trip&quot; each other.</p>
+<h4 id="first-page">First page</h4>
+<p>If the continuation token becomes invalid and paging must be restarted, clients may follow the first page hyperlink included in the <code>Link</code> header. The hyperlink preserves all request parameters, adding or updating the cache behavior to <code>Preserve</code>. This ensures that multiple parallel workers cannot endlessly &quot;trip&quot; each other.</p>
 <p>For example:</p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code>FirstPage: &quot;.../<wbr>dataViews/<wbr>{dataViewId}/<wbr>data/<wbr>interpolated?cache=Preserve&amp;count=1000&quot;
-</code></pre><h3 id="index-parameters">Index parameters</h3>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code>Link: &lt;.../<wbr>dataViews/<wbr>{dataViewId}/<wbr>data/<wbr>interpolated?cache=Preserve&amp;count=1000&gt;, rel=&quot;first&quot;
+</code></pre><h3 id="net-client-library">.NET client library</h3>
+<p>Paging is handled automatically when using the .NET client library to retrieve data. Results are returned as an IAsyncEnumerable<string> where each value is one record of data in the requested format. The actual backend page size of the request is configurable using the backingPageSize parameter.<p>
+<h3 id="index-parameters">Index parameters</h3>
 <p>Index parameters, such as Start Index, must remain constant while paging through a range of data. If a different range of data is desired, restart the paging operation.</p>
 <h3 id="parallelization">Parallelization</h3>
 <p>To parallelize one large data retrieval operation across multiple workers, assign each worker a portion of the desired index range. Each worker should follow standard recommended paging behavior within its assigned range. The client application must then concatenate the portions in correct order.</p>
@@ -219,7 +228,7 @@ If there are multiple groups in the data view, the index and grouping field valu
 <h2 id="resolution-behavior">Resolution behavior</h2>
 <p>By default, requests for a first page of data will cause the data view to re-resolve. See the documentation on <a class="xref" href="Resolved_Data_View.html#when-is-a-data-view-resolved">resolved data views</a>. This ensures that the data view accounts for any streams that have been added to or removed from SDS. Re-resolution may be suppressed by explicitly specifying a cache behavior of &quot;preserve&quot;.</p>
 <p>Requests for subsequent pages include a <code>continuationToken</code>. This implictly suppresses re-resolution, akin to cache &quot;preserve&quot; behavior.</p>
-</article>
+</string></article>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">

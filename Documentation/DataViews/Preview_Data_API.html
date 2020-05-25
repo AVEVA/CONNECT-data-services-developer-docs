@@ -82,7 +82,7 @@
 <h2 id="get-data-view-data"><code>Get Data View Data</code></h2>
 <p>Get data for the provided data view and index parameters with paging. See <a class="xref" href="Getting_Data.html#paging">documentation on paging</a> for further information.</p>
 <h3 id="request">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1-preview/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>preview/<wbr>dataviews/<wbr>data/<wbr>interpolated?startIndex={startIndex}&amp;endIndex={endIndex}&amp;interval={interval}&amp;form={form}&amp;countPerGroup={countPerGroup}&amp;groupCount={groupCount}&amp;continuationToken={continuationToken}&amp;count={count}
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">POST /<wbr>api/<wbr>v1-preview/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>preview/<wbr>dataviews/<wbr>data/<wbr>interpolated?startIndex={startIndex}&amp;endIndex={endIndex}&amp;interval={interval}&amp;form={form}&amp;countPerGroup={countPerGroup}&amp;groupCount={groupCount}&amp;continuationToken={continuationToken}&amp;count={count}
 </code></pre><h3 id="parameters">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -170,7 +170,7 @@
 </tbody>
 </table>
 <h4 id="response-headers">Response headers</h4>
-<p>Successful (200 OK) responses include one or more header values related to paging.</p>
+<p>Successful (200 OK) responses include:</p>
 <table>
 <thead>
 <tr>
@@ -180,18 +180,15 @@
 </thead>
 <tbody>
 <tr>
-<td>FirstPage</td>
-<td>Hyperlink to the first page of data</td>
-</tr>
-<tr>
-<td>NextPage</td>
-<td>Hyperlink to the next page of data, if the data spans into an additional page. Absence of this header indicates that there are no additional pages to be retrieved.</td>
+<td>Link</td>
+<td>Hyperlinks to the first page and next page of data as applicable. Absence of the next link indicates that there is no additional data to be retrieved.</td>
 </tr>
 </tbody>
 </table>
 <h4 id="example-response-body-in-default-format">Example response body in default format</h4>
 <p>An array of json values. Each json property corresponds to a field mapping. Property names are the field mapping <code>.Id</code>s.</p>
 <pre><code class="lang-json">HTTP 200 OK
+Content-Type: application/json
 [
     {
         &quot;Time&quot;: &quot;2018-01-01T00:00:00Z&quot;,
@@ -214,6 +211,7 @@
 ]
 </code></pre><h4 id="example-response-body-with-formtable">Example response body with <code>form=table</code></h4>
 <pre><code class="lang-json">HTTP 200 OK
+Content-Type: application/json
 {
    &quot;Columns&quot;: [
       {
@@ -256,6 +254,7 @@
 }
 </code></pre><h4 id="example-response-body-with-formtableh">Example response body with <code>form=tableh</code></h4>
 <pre><code class="lang-json">HTTP 200 OK
+Content-Type: application/json
 {
   &quot;Columns&quot;: [
       {
@@ -304,11 +303,13 @@
 }
 </code></pre><h4 id="example-response-body-with-formcsv">Example response body with <code>form=csv</code></h4>
 <pre><code class="lang-csv">HTTP 200 OK
+Content-Type: text/csv
 2018-01-01T00:00:00Z,24,44,245
 2018-01-01T00:00:01Z,24,44,245
 2018-01-01T00:00:02Z,24,44,245
 </code></pre><h4 id="example-response-body-with-formcsvh">Example response body with <code>form=csvh</code></h4>
 <pre><code class="lang-csv">HTTP 200 OK
+Content-Type: text/csv
 Time,Temperature,Flowrate,Volume
 2018-01-01T00:00:00Z,24,44,245
 2018-01-01T00:00:01Z,24,44,245

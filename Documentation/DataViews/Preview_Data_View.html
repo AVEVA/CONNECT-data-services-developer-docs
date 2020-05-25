@@ -78,29 +78,31 @@
             <article class="content wrap" id="_content" data-uid="PreviewDataView">
 <h1 id="preview-data-view-api">Preview Data View API</h1>
 
-<p>The preview data view APIs provide the users with the flexibility to work and query with the routes and get a response on the fly before saving the data view. All the preview routes expect a data view to be passed in the request body of the call. The user has the flexibility to change the data view any number of times. The syntax of the data view and all other objects for the routes will remain identical to that of the non-preview routes.</p>
+<p>The preview data view API provides the users with the flexibility to work and query with the routes and get a response on the fly before saving the data view. All the preview routes expect a data view to be passed in the request body of the call. The user has the flexibility to change the data view any number of times. The syntax of the data view and all other objects for the routes will remain identical to that of the non-preview routes.</p>
 <h2 id="general-concepts">General concepts</h2>
 <h3 id="what-routes-have-a-preview-available">What routes have a preview available?</h3>
 <p>Below data view API routes are available to be used as preview routes:</p>
 <ol>
-<li>Resolved preview routes</li>
-<li><a class="xref" href="Resolved_Data_View_Preview_API.html#GetDataItemsbyQuery">Get Data Items by Query</a></li>
-<li><a class="xref" href="Resolved_Data_View_Preview_API.html#GetIneligibleDataItemsbyQuery">Get Ineligible Data Items by Query</a></li>
-<li><a class="xref" href="Resolved_Data_View_Preview_API.html#GetGroups">Get Groups</a></li>
-<li><a class="xref" href="Resolved_Data_View_Preview_API.html#GetAvailableFieldSets">Get Available Field Sets</a></li>
-<li><a class="xref" href="Resolved_Data_View_Preview_API.html#GetFieldMappings">Get Field Mappings</a></li>
-<li><a class="xref" href="Resolved_Data_View_Preview_API.html#GetStatistics">Get Statistics</a></li>
-<li><a class="xref" href="Preview_Data_API.html#GetDataViewData">Get Data View Data</a></li>
+<li>Resolved preview routes<ul>
+<li><a class="xref" href="Resolved_Data_View_Preview_API.html#Get-Data-Items-by-Query">Get Data Items by Query</a></li>
+<li><a class="xref" href="Resolved_Data_View_Preview_API.html#Get-Ineligible-Data-Items-by-Query">Get Ineligible Data Items by Query</a></li>
+<li><a class="xref" href="Resolved_Data_View_Preview_API.html#Get-Groups">Get Groups</a></li>
+<li><a class="xref" href="Resolved_Data_View_Preview_API.html#Get-Available-Field-Sets">Get Available Field Sets</a></li>
+<li><a class="xref" href="Resolved_Data_View_Preview_API.html#Get-Field-Mappings">Get Field Mappings</a></li>
+<li><a class="xref" href="Resolved_Data_View_Preview_API.html#Get-Statistics">Get Statistics</a></li>
+</ul>
+</li>
+<li><a class="xref" href="Preview_Data_API.html#Get-Data-View-Data">Get Data View Data</a></li>
 </ol>
 <h3 id="when-to-use-the-preview-routes">When to use the preview routes?</h3>
 <ul>
-<li>The preview APIs are useful for testing how all resources will resolve for the data view. These include data included in the data view, its source, and its destination. </li>
+<li>The preview API is useful for testing how all resources will resolve for the data view. These include data included in the data view, its source, and its destination. </li>
 <li>The preview data API provides the capability to identify the number of groups from which the <code>groupCount</code> query parameter will get preview data. The preview data API can also be used to identify the number of items per group using the <code>countPerGroup</code> parameter.</li>
 </ul>
 <h3 id="who-can-access-the-data-view-preview-routes">Who can access the data view preview routes?</h3>
 <ul>
 <li>The access rights required for the preview routes are identical to those of the non-preview data view create route.</li>
-<li>Users or clients with &quot;Write&quot; access rights on the Data views collection access control list can access the preview routes.</li>
+<li>Users or clients with &quot;Write&quot; access rights on the data views collection access control list can access the preview routes.</li>
 </ul>
 </article>
           </div>

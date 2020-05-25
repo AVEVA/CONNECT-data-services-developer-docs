@@ -92,7 +92,7 @@
 <p>These are available via the <a class="xref" href="Resolved_Data_View_API.html">Resolved Data View API</a>. The relevant <a class="xref" href="Resolved_Data_View.html#object-types">object types</a> are described below.</p>
 <h4 id="paged-collections">Paged collections</h4>
 <p>Some of this information is exposed as paged collections, which accept parameters controlling <code>skip</code> and <code>count</code> within the collection. </p>
-<p>Paged responses include a header called <code>FirstPage</code>, linking to the first page of results. If the results extend into an additional page, a <code>NextPage</code> header is included with a hyperlink to the next page.</p>
+<p>Paged responses include a <code>Link</code> header, with a hyperlink to the first page of results. If the results extend into an additional page, a hyperlink to the next page will also be included in the <code>Link</code> header.</p>
 <p>Using these hyperlinks is the recommended method of paging. Alternatively, constructing paging links by manually incrementing the <code>skip</code> is allowable, though in this case it is recommended to specify cache behavior of &quot;preserve&quot;.</p>
 <h3 id="how-is-a-data-view-resolved">How is a data view resolved?</h3>
 <p>Data views resolve on a per user basis. Data views respect the permissions on underlying objects such as SDS Streams. If a user does not have read access to a particular stream in SDS, then that stream is not visible from data views.</p>
@@ -161,6 +161,28 @@ See the <a class="xref" href="Resolved_Data_View_API.html">Resolved Data View AP
 </tr>
 </tbody>
 </table>
+<h3 id="cachebehavior-enumeration">CacheBehavior enumeration</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Enumeration Id</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Preserve</td>
+<td>1</td>
+<td>Use cached resource values</td>
+</tr>
+<tr>
+<td>Refresh</td>
+<td>2</td>
+<td>Re-resolve the resource values</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dataitem">DataItem</h3>
 <table>
 <thead>
@@ -194,7 +216,7 @@ See the <a class="xref" href="Resolved_Data_View_API.html">Resolved Data View AP
 <tr>
 <td>ResourceType</td>
 <td>DataItemResourceType</td>
-<td>The resource type. See <code>DataView</code> <a class="xref" href="Data_View.html">documentation</a>. Currently, the supported resource type is <code>.Stream</code></td>
+<td>The resource type. See below. Currently, the supported resource type is <code>.Stream</code></td>
 </tr>
 <tr>
 <td>Tags</td>
@@ -219,12 +241,14 @@ See the <a class="xref" href="Resolved_Data_View_API.html">Resolved Data View AP
 <thead>
 <tr>
 <th>Name</th>
+<th>Enumeration Id</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Stream</td>
+<td>1</td>
 <td>A stream from the Sequential Data Store</td>
 </tr>
 </tbody>
@@ -274,7 +298,7 @@ See the <a class="xref" href="Resolved_Data_View_API.html">Resolved Data View AP
 </thead>
 <tbody>
 <tr>
-<td>Values</td>
+<td>GroupingValues</td>
 <td>IReadOnlyList<string></string></td>
 <td>This groups&#39;s value of each <code>.GroupingFields</code> defined on the <code>DataView</code></td>
 </tr>
@@ -329,24 +353,29 @@ See the <a class="xref" href="Resolved_Data_View_API.html">Resolved Data View AP
 <thead>
 <tr>
 <th>Name</th>
+<th>Enumeration Id</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>IndexField</td>
+<td>1</td>
 <td>Maps to an index field.</td>
 </tr>
 <tr>
 <td>GroupingField</td>
+<td>2</td>
 <td>Maps to a grouping field.</td>
 </tr>
 <tr>
 <td>DataField</td>
+<td>3</td>
 <td>Maps to a data field.</td>
 </tr>
 <tr>
 <td>FieldId</td>
+<td>4</td>
 <td>Maps to a field id field for a narrow shape data view.</td>
 </tr>
 </tbody>

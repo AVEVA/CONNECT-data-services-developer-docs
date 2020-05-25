@@ -78,8 +78,7 @@
             <article class="content wrap" id="_content" data-uid="DataViewsFieldSets">
 <h1 id="data-field-sets">Data Field Sets</h1>
 
-<p>A data view is likely to include multiple fields of information. One field serves as the index (e.g. Timestamp), and others contain information from or about the data items in the data view.
-DataFieldSet`s. Data field sets are collections of fields originating from the same query that share a common role.</p>
+<p>A data view is likely to include multiple fields of information. One field serves as the index (e.g. Timestamp), and others contain information from or about the data items in the data view <code>DataFieldSet</code>s. Data field sets are collections of fields originating from the same query.</p>
 <h3 id="available-field-sets">Available field sets</h3>
 <p>The typical workflow for adding data field sets, and the data fields in them, is to use or adapt the <a class="xref" href="Available_Field_Sets.html">available field sets</a> that resolve for the data view. This workflow is demonstrated in the <a class="xref" href="Quick_Start_Define_a_Data_View.html">Quick Start - Define a Data View</a>.</p>
 <h4 id="example-defining-data-field-sets">Example: Defining data field sets</h4>
@@ -113,14 +112,14 @@ DataFieldSet`s. Data field sets are collections of fields originating from the s
 <td>Winterthur</td>
 <td>Secondary</td>
 <td>Power In</td>
-<td>ROSE.Meter.Secondary.Inverter.0.PwrIn</td>
+<td>WINT.Meter.Secondary.Inverter.0.PwrIn</td>
 <td>Low Resolution</td>
 </tr>
 <tr>
 <td>Winterthur</td>
 <td>Secondary</td>
 <td>Power Out</td>
-<td>ROSE.Meter.Secondary.Inverter.0.PwrOut</td>
+<td>WINT.Meter.Secondary.Inverter.0.PwrOut</td>
 <td>Low Resolution</td>
 </tr>
 </tbody>
@@ -132,13 +131,6 @@ DataFieldSet`s. Data field sets are collections of fields originating from the s
     {
       &quot;Id&quot;: &quot;inverters&quot;,
       &quot;Value&quot;: &quot;TypeId:docs-pi-inverter AND Site:Winterthur&quot;
-    }
-  ],
-  &quot;GroupingFields&quot;: [
-    {
-      &quot;Source&quot;: &quot;Metadata&quot;,
-      &quot;Keys&quot;: [ &quot;Meter&quot; ],
-      &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
     }
   ],
   &quot;DataFieldSets&quot;: [
@@ -156,6 +148,13 @@ DataFieldSet`s. Data field sets are collections of fields originating from the s
           &quot;Label&quot;: &quot;{IdentifyingValue} Tags&quot;
         }
       ]
+    }
+  ],
+   &quot;GroupingFields&quot;: [
+    {
+      &quot;Source&quot;: &quot;Metadata&quot;,
+      &quot;Keys&quot;: [ &quot;Meter&quot; ],
+      &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
     }
   ]
 }
@@ -220,20 +219,9 @@ DataFieldSet`s. Data field sets are collections of fields originating from the s
       &quot;Value&quot;: &quot;TypeId:docs-pi-inverter AND Site:Winterthur&quot;
     }
   ],
-  &quot;GroupingFields&quot;: [
-    {
-      &quot;Source&quot;: &quot;Metadata&quot;,
-      &quot;Keys&quot;: [ &quot;Meter&quot; ],
-      &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
-    }
-  ],
   &quot;DataFieldSets&quot;: [
     {
       &quot;QueryId&quot;: &quot;inverters&quot;,
-      &quot;IdentifyingField&quot;: {
-          &quot;Source&quot;: &quot;Metadata&quot;,
-          &quot;Keys&quot;: [ &quot;Measurement&quot; ]
-      },
       &quot;DataFields&quot;: [
         {
           &quot;Source&quot;: &quot;PropertyId&quot;,
@@ -245,7 +233,18 @@ DataFieldSet`s. Data field sets are collections of fields originating from the s
           &quot;Keys&quot;: [ &quot;Low Resolution&quot;, &quot;High Resolution&quot; ],
           &quot;Label&quot;: &quot;{IdentifyingValue} Tags&quot;
         }
-      ]
+      ],
+      &quot;IdentifyingField&quot;: {
+          &quot;Source&quot;: &quot;Metadata&quot;,
+          &quot;Keys&quot;: [ &quot;Measurement&quot; ]
+      }
+    }
+  ],
+  &quot;GroupingFields&quot;: [
+    {
+      &quot;Source&quot;: &quot;Metadata&quot;,
+      &quot;Keys&quot;: [ &quot;Meter&quot; ],
+      &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
     }
   ]
 }
@@ -320,7 +319,6 @@ DataFieldSet`s. Data field sets are collections of fields originating from the s
 </table>
 <p>There are three special parameters available for use in field labels:</p>
 <ul>
-<li><code>{GroupingFieldLabel}</code> - the value of the grouping field</li>
 <li><code>{IdentifyingValue}</code> - the value of the identifying field</li>
 <li><code>{FirstKey}</code> - the value of the first of the <code>&quot;Keys&quot;</code> specified on the field</li>
 </ul>
@@ -330,7 +328,7 @@ DataFieldSet`s. Data field sets are collections of fields originating from the s
 <h3 id="keys">Keys</h3>
 <p>In certain cases, a field may need to address data <em>within</em> its data source, such as a particular Metadata value of a data item. This applies to the sources <code>Metadata</code>, <code>PropertyId</code>, and <code>PropertyName</code>.</p>
 <p>Multiple keys may be specified in the field&#39;s <code>.Keys</code>. This is a way to overcome differences in properties or metadata across data items. Keys are evaluated in order specified until a match is found, i.e. first-match-wins.</p>
-<p>For field sources that do not use keys (<code>FieldSource.None</code>, <code>FieldSource.Id</code> and <code>FieldSource.Name</code>), any keys specified are ignored.</p>
+<p>For field sources that do not use keys (<code>FieldSource.NotApplicable</code>, <code>FieldSource.Id</code> and <code>FieldSource.Name</code>), any keys specified are ignored.</p>
 <h4 id="special-case-tags">Special case: Tags</h4>
 <p>The field source <code>FieldSource.Tags</code> is a special case due to the nature of tags.</p>
 <p>On a field of source <code>FieldSource.Tags</code>, its collection of <code>.Keys</code> represents a whitelist.</p>

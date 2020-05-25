@@ -80,7 +80,7 @@ references:
   name: Introduction - Get Data View Data
   href: Documentation/DataViews/Introduction_Get_Data_View_Data.html
 - uid: DataViewsOverview
-  name: Data Views (Preview)
+  name: Data Views
   href: Documentation/DataViews/Data_Views_Overview.html
 - uid: DataViewsPreviewDataAPI
   name: Preview Data API

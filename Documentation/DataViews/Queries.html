@@ -98,7 +98,7 @@
 <td>string</td>
 <td>Required</td>
 <td></td>
-<td>Unique identifier. Used by <code>FieldSet</code> to link to the query&#39;s results</td>
+<td>Unique identifier. Used by <code>FieldSet</code> to link to the query&#39;s results.</td>
 </tr>
 <tr>
 <td>Value</td>
@@ -125,7 +125,7 @@
 ]
 </code></pre><p>Using separate queries means the streams will be available in separate field sets. This is good, because a power inverter has completely different fields versus a weather station.</p>
 <h3 id="querying-streams-of-a-common-nature">Querying streams of a common nature</h3>
-<p>Streams that originate from an OSIsoft PI System represent only one fundamental measurement (e.g. Power in), unlike the more general case where a stream may represent several measurements (e.g. Temperature, Solar radiation, and Cloud cover). This means that multiple streams refer to the same physical or logical asset. </p>
+<p>Streams that originate from an OSIsoft PI System represent only one fundamental measurement (e.g. Power In), unlike the more general case where a stream may represent several measurements (e.g. Temperature, Solar Radiation, and Cloud Cover). This means that multiple streams refer to the same physical or logical asset.</p>
 <p>In the example scenario, each power inverter is associated with two streams. It makes sense to structure our query around the physical asset, returning all &quot;power*&quot; measurements of all inverters:</p>
 <pre><code class="lang-json">&quot;Queries&quot;: [
   {

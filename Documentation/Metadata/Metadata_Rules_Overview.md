@@ -2,7 +2,7 @@
 uid: MetadataRulesOverview
 ---
 
-# Metadata Rules (Preview)
+# Metadata Rules
 
 Metadata, or “data about data,” is information you assign to data objects.  The value of metadata itself lies in its capacity to enrich sequential data, and to facilitate logical segregation and contextualization of data, thus supporting analytical, visualization, organizational and searchability efforts. 
 

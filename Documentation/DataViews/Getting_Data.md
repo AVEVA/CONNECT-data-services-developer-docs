@@ -109,3 +109,6 @@ It is recommended to suppress [re-resolution](xref:ResolvedDataView#when-is-a-da
 By default, requests for a first page of data will cause the data view to re-resolve. See the documentation on [resolved data views](xref:ResolvedDataView#when-is-a-data-view-resolved). This ensures that the data view accounts for any streams that have been added to or removed from SDS. Re-resolution may be suppressed by explicitly specifying a cache behavior of "preserve".
 
 Requests for subsequent pages include a `continuationToken`. This implictly suppresses re-resolution, akin to cache "preserve" behavior.
+
+## Field mapping count limit
+Data views are limited to 1000 field mappings to ensure timely access of data. The field mapping check is made prior to constructing the data set.

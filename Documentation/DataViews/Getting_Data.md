@@ -120,7 +120,7 @@ Shape plays an important role in both the performance and usefulness of a data v
 
 If your data view exceeds this limit, there are several ways to shape the data view to reduce the number of field mappings generated:
 
-- Use grouping fields to pivot data for like-groups into their own rows
-- Use identifying fields to display useful information in headers, rather than as discrete field mappings
-- Deselect any unneeded fields to remove them as field mappings
-- Toggle to the narrow shape option to pivot data fields into individual rows instead of columns
+- Use grouping fields to pivot data for like-groups into their own rows.
+- Use identifying fields to display useful information in headers, rather than as discrete field mappings.
+- Deselect unneeded fields to remove them as field mappings.
+- Toggle to the narrow shape option to pivot data fields into individual rows instead of columns.

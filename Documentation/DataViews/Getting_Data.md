@@ -111,4 +111,4 @@ By default, requests for a first page of data will cause the data view to re-res
 Requests for subsequent pages include a `continuationToken`. This implictly suppresses re-resolution, akin to cache "preserve" behavior.
 
 ## Field mapping count limit
-Data views are limited to 1000 field mappings to ensure timely access of data. The field mapping check is made prior to constructing the data set.
+Data views are limited to 1000 field mappings to ensure timely access of data. OCS checks the field mapping count prior to constructing the data set.

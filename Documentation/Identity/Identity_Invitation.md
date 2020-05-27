@@ -37,9 +37,9 @@ IdentityProviderId | Guid | Gets or sets ID of the Identity Provider that must b
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-11-11T14:18:38.6161392-08:00",
-  "Expires": "2019-11-11T14:18:38.616173-08:00",
-  "Accepted": "2019-11-11T14:18:38.6161783-08:00",
+  "Issued": "2020-03-30T15:34:23.8288839-07:00",
+  "Expires": "2020-03-30T15:34:23.8289157-07:00",
+  "Accepted": "2020-03-30T15:34:23.8289199-07:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -117,9 +117,9 @@ Success.
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-11-11T14:18:38.6245292-08:00",
-  "Expires": "2019-11-11T14:18:38.6245393-08:00",
-  "Accepted": "2019-11-11T14:18:38.624546-08:00",
+  "Issued": "2020-03-30T15:34:23.9320633-07:00",
+  "Expires": "2020-03-30T15:34:23.9320714-07:00",
+  "Accepted": "2020-03-30T15:34:23.9320781-07:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -217,9 +217,9 @@ Success.
 [
   {
     "Id": "Id",
-    "Issued": "2019-11-11T14:18:38.6282448-08:00",
-    "Expires": "2019-11-11T14:18:38.6282685-08:00",
-    "Accepted": "2019-11-11T14:18:38.6282738-08:00",
+    "Issued": "2020-03-30T15:34:23.9353876-07:00",
+    "Expires": "2020-03-30T15:34:23.9353947-07:00",
+    "Accepted": "2020-03-30T15:34:23.9353985-07:00",
     "State": 0,
     "TenantId": "00000000-0000-0000-0000-000000000000",
     "UserId": "00000000-0000-0000-0000-000000000000",
@@ -227,9 +227,9 @@ Success.
   },
   {
     "Id": "Id",
-    "Issued": "2019-11-11T14:18:38.6282997-08:00",
-    "Expires": "2019-11-11T14:18:38.628302-08:00",
-    "Accepted": "2019-11-11T14:18:38.6283059-08:00",
+    "Issued": "2020-03-30T15:34:23.9354121-07:00",
+    "Expires": "2020-03-30T15:34:23.9354132-07:00",
+    "Accepted": "2020-03-30T15:34:23.9354151-07:00",
     "State": 0,
     "TenantId": "00000000-0000-0000-0000-000000000000",
     "UserId": "00000000-0000-0000-0000-000000000000",
@@ -303,7 +303,7 @@ IdentityProviderId | Guid | No | Gets or sets Identity Provider to use for accep
 
 ```json
 {
-  "ExpiresDateTime": "2019-11-11T14:18:38.6312229-08:00",
+  "ExpiresDateTime": "2020-03-30T15:34:23.9384167-07:00",
   "State": 0,
   "SendInvitation": false,
   "IdentityProviderId": "00000000-0000-0000-0000-000000000000"
@@ -329,9 +329,9 @@ Success.
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-11-11T14:18:38.633862-08:00",
-  "Expires": "2019-11-11T14:18:38.6338686-08:00",
-  "Accepted": "2019-11-11T14:18:38.6338746-08:00",
+  "Issued": "2020-03-30T15:34:23.9420124-07:00",
+  "Expires": "2020-03-30T15:34:23.9420203-07:00",
+  "Accepted": "2020-03-30T15:34:23.9420268-07:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -358,6 +358,10 @@ Invitation or Tenant not found.
 #### 405
 
 Method not allowed at this base URL. Try the request again at the Global base URL.
+
+#### 408
+
+Operation timed out.
 
 #### 500
 
@@ -401,6 +405,10 @@ Allowed for these roles:
 
 Deleted.
 
+#### 400
+
+Missing or invalid inputs.
+
 #### 401
 
 Unauthorized.
@@ -416,6 +424,10 @@ Invitation or Tenant not found.
 #### 405
 
 Method not allowed at this base URL. Try the request again at the Global base URL.
+
+#### 408
+
+Operation timed out.
 
 #### 500
 
@@ -573,8 +585,8 @@ Id of User.
 
 Allowed for these roles:
 
-- `Account Administrator`
 - `Account Member`
+- `Account Administrator`
 
 ### Returns
 
@@ -589,9 +601,9 @@ Success.
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-11-11T14:18:38.7640134-08:00",
-  "Expires": "2019-11-11T14:18:38.7640582-08:00",
-  "Accepted": "2019-11-11T14:18:38.7640924-08:00",
+  "Issued": "2020-03-30T15:34:24.0533293-07:00",
+  "Expires": "2020-03-30T15:34:24.0533376-07:00",
+  "Accepted": "2020-03-30T15:34:24.0533445-07:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -659,7 +671,7 @@ IdentityProviderId | Guid | No | Gets or sets Identity Provider to use for accep
 
 ```json
 {
-  "ExpiresDateTime": "2019-11-11T14:18:38.7708735-08:00",
+  "ExpiresDateTime": "2020-03-30T15:34:24.0562697-07:00",
   "State": 0,
   "SendInvitation": false,
   "IdentityProviderId": "00000000-0000-0000-0000-000000000000"
@@ -685,9 +697,9 @@ Created.
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-11-11T14:18:38.7716732-08:00",
-  "Expires": "2019-11-11T14:18:38.771711-08:00",
-  "Accepted": "2019-11-11T14:18:38.7717471-08:00",
+  "Issued": "2020-03-30T15:34:24.0564446-07:00",
+  "Expires": "2020-03-30T15:34:24.0564479-07:00",
+  "Accepted": "2020-03-30T15:34:24.0564518-07:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -714,6 +726,10 @@ User or Tenant not found.
 #### 405
 
 Method not allowed at this base URL. Try the request again at the Global base URL.
+
+#### 408
+
+Operation timed out.
 
 #### 409
 
@@ -767,7 +783,7 @@ IdentityProviderId | Guid | No | Gets or sets Identity Provider to use for accep
 
 ```json
 {
-  "ExpiresDateTime": "2019-11-11T14:18:38.7776948-08:00",
+  "ExpiresDateTime": "2020-03-30T15:34:24.0592464-07:00",
   "State": 0,
   "SendInvitation": false,
   "IdentityProviderId": "00000000-0000-0000-0000-000000000000"
@@ -793,9 +809,9 @@ Updated.
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-11-11T14:18:38.7781105-08:00",
-  "Expires": "2019-11-11T14:18:38.778126-08:00",
-  "Accepted": "2019-11-11T14:18:38.7781429-08:00",
+  "Issued": "2020-03-30T15:34:24.059429-07:00",
+  "Expires": "2020-03-30T15:34:24.0594334-07:00",
+  "Accepted": "2020-03-30T15:34:24.059438-07:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -814,9 +830,9 @@ Created.
 ```json
 {
   "Id": "Id",
-  "Issued": "2019-11-11T14:18:38.7783963-08:00",
-  "Expires": "2019-11-11T14:18:38.7784086-08:00",
-  "Accepted": "2019-11-11T14:18:38.7784222-08:00",
+  "Issued": "2020-03-30T15:34:24.0594899-07:00",
+  "Expires": "2020-03-30T15:34:24.0594924-07:00",
+  "Accepted": "2020-03-30T15:34:24.0594966-07:00",
   "State": 0,
   "TenantId": "00000000-0000-0000-0000-000000000000",
   "UserId": "00000000-0000-0000-0000-000000000000",
@@ -843,6 +859,14 @@ User or Tenant not found.
 #### 405
 
 Method not allowed at this base URL. Try the request again at the Global base URL.
+
+#### 408
+
+Operation timed out.
+
+#### 409
+
+Invitation already exists.
 
 #### 500
 
@@ -901,6 +925,10 @@ Invitation or Tenant not found.
 
 Method not allowed at this base URL. Try the request again at the Global base URL.
 
+#### 408
+
+Operation timed out.
+
 #### 500
 
 Internal server error.
@@ -945,8 +973,8 @@ Specify whether to include expired invitations.
 
 Allowed for these roles:
 
-- `Account Administrator`
 - `Account Member`
+- `Account Administrator`
 
 ### Returns
 

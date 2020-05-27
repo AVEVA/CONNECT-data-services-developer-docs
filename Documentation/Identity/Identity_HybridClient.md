@@ -26,7 +26,7 @@ RedirectUris | string[] | Gets or sets the allowed URIs to which return tokens o
 PostLogoutRedirectUris | string[] | Gets or sets allowed URIs to redirect to after logout. Wildcards are ignored. URIs must match exactly what you are redirecting to after logout. Maximum 10 for client.
 ClientUri | string | Gets or sets URI to a page with information about client (used on consent screen).
 LogoUri | string | Gets or sets URI to client logo (used on consent screen).
-Id | string | Gets or sets client ID for this client. This ID should be a GUID.
+Id | string | Gets or sets secret Id.
 Name | string | Gets or sets name of Client.
 Enabled | bool | Gets or sets whether client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.
 AccessTokenLifetime | int32 | Gets or sets lifetime of access token issued for this client after authentication. Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.
@@ -136,7 +136,7 @@ Tags | string[] | No | Gets or sets for OSIsoft internal use only.
 ```json
 {
   "SecretDescription": "description",
-  "SecretExpirationDate": "2019-11-11T14:18:37.9244194-08:00",
+  "SecretExpirationDate": "2020-03-30T15:34:23.0602036-07:00",
   "AllowOfflineAccess": false,
   "AllowAccessTokensViaBrowser": false,
   "RedirectUris": [
@@ -174,14 +174,14 @@ Created.
 
 ##### Type:
 
- `ClientResponse`
+ `HybridClientCreateResponse`
 
 ```json
 {
   "Secret": "Secret",
   "Id": 0,
   "Description": "description",
-  "ExpirationDate": "2019-11-11T14:18:37.9396268-08:00",
+  "ExpirationDate": "2020-03-30T15:34:23.0724603-07:00",
   "Client": {
     "AllowOfflineAccess": false,
     "AllowAccessTokensViaBrowser": false,
@@ -226,6 +226,10 @@ Tenant not found.
 #### 405
 
 Method not allowed at this base URL. Try the request again at the Global base URL.
+
+#### 408
+
+Operation timed out.
 
 #### 409
 
@@ -370,6 +374,10 @@ Client or Tenant not found.
 #### 405
 
 Method not allowed at this base URL. Try the request again at the Global base URL.
+
+#### 408
+
+Operation timed out.
 
 #### 500
 
@@ -658,6 +666,10 @@ Client or Tenant not found.
 #### 405
 
 Method not allowed at this base URL. Try the request again at the Global base URL.
+
+#### 408
+
+Operation timed out.
 
 #### 500
 

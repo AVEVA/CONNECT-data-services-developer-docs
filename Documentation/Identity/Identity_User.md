@@ -142,8 +142,8 @@ Maximum number of users to return. Ignored if a list of Ids is passed.
 
 Allowed for these roles:
 
-- `Account Administrator`
 - `Account Member`
+- `Account Administrator`
 
 ### Returns
 
@@ -198,7 +198,7 @@ Partial success.
 
 ##### Type:
 
- `MultiStatusResponse`
+ `UserMultiStatusResponse`
 
 ```json
 {
@@ -350,8 +350,8 @@ Only return statuses that match these values. Possible User statuses are: Invita
 
 Allowed for these roles:
 
-- `Account Administrator`
 - `Account Member`
+- `Account Administrator`
 
 ### Returns
 
@@ -455,8 +455,8 @@ Id of User.
 
 Allowed for these roles:
 
-- `Account Administrator`
 - `Account Member`
+- `Account Administrator`
 
 ### Returns
 
@@ -533,8 +533,8 @@ Id of User.
 
 Allowed for these roles:
 
-- `Account Administrator`
 - `Account Member`
+- `Account Administrator`
 
 ### Returns
 
@@ -614,8 +614,8 @@ Id of User.
 
 Allowed for these roles:
 
-- `Account Administrator`
 - `Account Member`
+- `Account Administrator`
 
 ### Returns
 
@@ -688,8 +688,8 @@ JSON object preferences.
 
 Allowed for these roles:
 
-- `Account Administrator`
 - `Account Member`
+- `Account Administrator`
 
 ### Returns
 
@@ -724,6 +724,10 @@ User or Tenant not found.
 #### 405
 
 Method not allowed at this base URL. Try the request again at the Global base URL.
+
+#### 408
+
+Operation timed out.
 
 #### 500
 
@@ -841,6 +845,10 @@ Tenant not found.
 
 Method not allowed at this base URL. Try the request again at the Global base URL.
 
+#### 408
+
+Operation timed out.
+
 #### 500
 
 Internal server error.
@@ -915,7 +923,7 @@ Allowed for these roles:
 
 #### 200
 
-Updated.
+Updated User.
 
 ##### Type:
 
@@ -960,6 +968,10 @@ User or Tenant not found.
 
 Method not allowed at this base URL. Try the request again at the Global base URL.
 
+#### 408
+
+Operation timed out.
+
 #### 500
 
 Internal server error.
@@ -973,7 +985,7 @@ Delete a User. Admins cannot delete themselves.
             from being able to authenticate in the future.
             Existing access tokens for the User will be valid
             until their expiration date. Refresh tokens on
-            behalf of the ser will no longer be valid after the
+            behalf of the User will no longer be valid after the
             User has been deleted.
 
 ### Request
@@ -1024,6 +1036,10 @@ User or Tenant not found.
 
 Method not allowed at this base URL. Try the request again at the Global base URL.
 
+#### 408
+
+Operation timed out.
+
 #### 500
 
 Internal server error.
@@ -1058,8 +1074,8 @@ Id of User.
 
 Allowed for these roles:
 
-- `Account Administrator`
 - `Account Member`
+- `Account Administrator`
 
 ### Returns
 
@@ -1120,8 +1136,8 @@ Unordered list of User Ids.
 
 Allowed for these roles:
 
-- `Account Administrator`
 - `Account Member`
+- `Account Administrator`
 
 ### Returns
 
@@ -1179,8 +1195,8 @@ Id of User.
 
 Allowed for these roles:
 
-- `Account Administrator`
 - `Account Member`
+- `Account Administrator`
 
 ### Returns
 

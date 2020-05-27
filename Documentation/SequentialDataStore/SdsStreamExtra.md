@@ -2,9 +2,7 @@
 uid: sdsStreamExtra
 ---
 
-Stream Metadata and Tags
-========================
-
+# Stream Metadata and Tags
 SdsStream metadata is represented as a dictionary of string keys and associated string values. 
 It can be used to associate additional information with a stream. SdsStream tags are represented 
 as a list of strings. Tags can be used to categorize or denote special attributes of streams. 
@@ -12,10 +10,10 @@ The SdsStream Metadata API And SdsStream Tags API do not accept the search query
 Get calls. However, stream tags and metadata can be used as criteria in search query strings to return 
 SdsStream results with the [Stream](xref:sdsStreams) API.
 
-SdsStream Metadata API 
----------------------
+# SdsStream Metadata API 
 
-``Get stream metadata``
+
+## ``Get stream metadata``
 ----------------------
 
 Returns the metadata dictionary for the specified stream. 
@@ -26,7 +24,7 @@ Returns the metadata dictionary for the specified stream.
       GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Metadata 
  ```
 
-**Parameters**
+### Parameters
 
 ``string tenantId``  
   The tenant identifier  
@@ -56,7 +54,7 @@ Returns the metadata dictionary for the specified stream.
       } 
 
 
-**.NET Library**
+**.NET client libraries method**
 ```csharp
       Task<IDictionary<string, string>> GetStreamMetadataAsync(string streamId); 
 ```
@@ -69,9 +67,7 @@ Returns the metadata dictionary for the specified stream.
 ***********************
 
 
-``Get stream metadata value``
-----------------------
-
+## ``Get stream metadata value``
 Returns the value for the specified key in the metadata dictionary of the specified stream. 
 
 
@@ -80,7 +76,7 @@ Returns the value for the specified key in the metadata dictionary of the specif
       GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Metadata/{key} 
  ```
 
-**Parameters**
+### Parameters
 
 ``string tenantId``  
   The tenant identifier  
@@ -113,7 +109,7 @@ Returns the value for the specified key in the metadata dictionary of the specif
       } 
 
 
-**.NET Library**
+**.NET client libraries method**
 ```csharp
       Task<string> GetStreamMetadataValueAsync(string streamId, string key); 
 ```
@@ -125,9 +121,7 @@ Returns the value for the specified key in the metadata dictionary of the specif
 
 ***********************
 
-``Update stream metadata``
-------------------------
-
+## ``Update stream metadata``
 Replaces the metadata for the specified stream with the metadata in the request body. 
 Overwrites any existing metadata; does not merge. 
 
@@ -137,7 +131,7 @@ Overwrites any existing metadata; does not merge.
       PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Metadata 
  ```
 
-**Parameters**
+### Parameters
 
 ``string tenantId``  
   The tenant identifier  
@@ -154,7 +148,7 @@ Overwrites any existing metadata; does not merge.
   The response includes a status code.
 
 
-**.NET Library**
+**.NET client libraries method**
 ```csharp
       Task UpdateStreamMetadataAsync(string streamId, IDictionary<string, string> metadata); 
 ```
@@ -166,9 +160,7 @@ Overwrites any existing metadata; does not merge.
 
 ***********************
 
-``Patch stream metadata``
-------------------------
-
+## ``Patch stream metadata``
 Modifies the metadata based on operations specified in the request body. The request body follows
 [JSON Patch format](http://jsonpatch.com/).
 
@@ -177,7 +169,7 @@ Modifies the metadata based on operations specified in the request body. The req
       PATCH api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Metadata 
  ```
 
-**Parameters**
+### Parameters
 
 ``string tenantId``  
   The tenant identifier  
@@ -196,7 +188,7 @@ Modifies the metadata based on operations specified in the request body. The req
 
 A collection of operations to be applied to the metadata collection as specified by the [JSON Patch format](http://jsonpatch.com/).
 
-**.NET Library**
+**.NET client libraries method**
 ```csharp
       Task<IDictionary<string, string>> PatchStreamMetadataAsync(string streamId, MetadataPatchDocument patchDoc);
 ```
@@ -207,9 +199,7 @@ A collection of operations to be applied to the metadata collection as specified
 
 ***********************
 
-``Delete stream metadata``
-------------------------
-
+## ``Delete stream metadata``
 Deletes the metadata for the specified stream.  
 
 **Request**
@@ -217,7 +207,7 @@ Deletes the metadata for the specified stream.
       DELETE api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Metadata 
  ```
 
-**Parameters**
+### Parameters
 
 ``string tenantId``  
   The tenant identifier  
@@ -234,7 +224,7 @@ Deletes the metadata for the specified stream.
   The response includes a status code.
 
 
-**.NET Library**
+**.NET client libraries method**
 ```csharp
       Task DeleteStreamMetadataAsync(string streamId); 
 ```
@@ -247,12 +237,9 @@ Deletes the metadata for the specified stream.
 ***********************
 
 
-SdsStream Tags API 
------------------
+# SdsStream Tags API 
+## ``Get stream tags``
 
-
-``Get stream tags``
-----------------------
 
 Returns the tag list for the specified stream. 
 
@@ -262,7 +249,7 @@ Returns the tag list for the specified stream.
       GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Tags 
  ```
 
-**Parameters**
+### Parameters
 
 ``string tenantId``  
   The tenant identifier  
@@ -292,7 +279,7 @@ Returns the tag list for the specified stream.
       ] 
 
 
-**.NET Library**
+**.NET client libraries method**
 ```csharp
       Task<IList<string>> GetStreamTagsAsync(string streamId); 
 ```
@@ -304,10 +291,8 @@ Returns the tag list for the specified stream.
 
 ***********************
 
-``Update stream tags``
----------------------
-
-Replaces the tag list for the specified stream with the tags listed in the request body.  
+## ``Update stream tags``
+Replaces the tag list for the specified stream with the tags listed in the request body.
 Overwrites any existing tags; does not merge. 
 
 
@@ -316,7 +301,7 @@ Overwrites any existing tags; does not merge.
       PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Tags 
  ```
 
-**Parameters**
+### Parameters
 
 ``string tenantId``  
   The tenant identifier  
@@ -327,14 +312,15 @@ Overwrites any existing tags; does not merge.
 ``string streamId``  
   The stream identifier  
 
-  The request content is the serialized list of tags. 
+**Request body**  
+The request content is the serialized list of tags. 
 
 **Response**
 
   The response includes a status code.
 
 
-**.NET Library**
+**.NET client libraries method**
 ```csharp
       Task UpdateStreamTagsAsync(string streamId, IList<string> tags); 
 ```
@@ -347,9 +333,7 @@ Overwrites any existing tags; does not merge.
 ***********************
 
 
-``Delete stream tags``
-------------------------
-
+## ``Delete stream tags``
 Deletes the tag list for the specified stream. 
 
 
@@ -358,7 +342,7 @@ Deletes the tag list for the specified stream.
       DELETE api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Tags 
  ```
 
-**Parameters**
+### Parameters
 
 ``string tenantId``  
   The tenant identifier  
@@ -375,7 +359,7 @@ Deletes the tag list for the specified stream.
   The response includes a status code.
 
 
-**.NET Library**
+**.NET client libraries method**
 ```csharp
       Task DeleteStreamTagsAsync(string streamId); 
 ```

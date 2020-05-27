@@ -5,44 +5,42 @@ uid: sdsTypes
 # Types
 
 The Sequential Data Store (SDS) stores streams of events and provides convenient ways to find and associate 
-events. Events are stored in streams, called SdsStreams. An SdsType defines the shape or structure of the 
-event and how to associate events within the SdsStream.
+events. Events are stored in SdsStreams (or streams). An SdsType (or type) defines the shape or structure of the 
+event and how to associate events within the stream.
 
+Define simple atomic types, such as integers, floats, strings, arrays, and dictionaries, or 
+complex or nested types using the [Properties collection of SdsTypes](#sdstypeproperty). 
 
-SdsTypes can define simple atomic types, such as integers, floats, strings, arrays, and dictionaries, or 
-they can define complex types using SdsTypes. You can define complex, nested types using the Properties 
-collection of an SdsType. 
-
-An SdsType used to define an SdsStream must have a Key. A Key is a Property, or a combination of Properties 
-that constitute an ordered, unique identity. The Key is ordered, so it functions as an index; it is 
-known as the Primary Index. While a timestamp (DateTime) is a very common type of Key, any type that 
-can be ordered is permitted. Other indexes (secondary indexes), are defined in the SdsStream. 
+An SdsType used to define an SdsStream must have a key. A key is a [Property, or a combination of Properties](#sdstypeproperty) 
+that constitutes an ordered, unique identity. If the key is ordered so it functions as an index, it is 
+known as the *primary index*. While a timestamp (``DateTime``) is a very common type of index, any type that 
+can be ordered is permitted. Secondary and other indexes are defined in the stream. 
 For more information, see [Indexes](xref:sdsIndexes).
 
-When defining a type, consider how the events will be represented in a stream. The SdsType defines 
-each event in the stream. An event is a single unit whose properties have values that relate to the 
-index; that is, each property of an SdsType event is related to the event's index. Each event is a single unit.
+When defining an SdsType, consider how the events will be represented in an SdsStream as the SdsType defines 
+each event in an SdsStream. An event is a single unit whose properties have values that relate to the 
+index; that is, each property of a type event is related to the event's index. Each event is a single unit.
 
-An SdsType is referenced by its identifier or Id field. SdsType identifiers must be unique within a Namespace.
+An SdsType is referenced by its identifier or ``Id`` field. SdsType identifiers must be unique within a namespace.
 
 An SdsType can also refer other SdsTypes by using their identifiers. This enables type re-usability.
 Nested types and base types are automatically created as separate types. For more information, see [Type Reusability](#type-reusability).
 
-SdsTypes define how events are associated and read within a collection of events, or SdsStream. The read 
+SdsTypes define how events are read and associated within a collection of SdsStreams. The read 
 characteristics when attempting to read non-existent indexes, indexes that fall between, before or after 
 existing indexes, are determined by the interpolation and extrapolation settings of the SdsType. For more 
-information about read characteristics see [Interpolation](xref:sdsReadingData#interpolation) and [Extrapolation](xref:sdsReadingData#extrapolation).
+information about read characteristics, see [Interpolation](xref:sdsReadingData#interpolation) and [Extrapolation](xref:sdsReadingData#extrapolation).
 
-SdsTypes are immutable. After an SdsType is created, its definition cannot change. An SdsType must be deleted and recreated if the definition is incorrect.
-In addition, the SdsType may be deleted only if no streams, stream views, or types reference it.
+SdsTypes are immutable. After an SdsType is created, its definition cannot be updated. An SdsType must be deleted and recreated if the definition is incorrect.
+In addition, an SdsType may be deleted only if no SdsStreams, SdsStreamViews, or other SdsTypes reference it.
 
-Only SdsTypes used to define SdsStreams or SdsStreamViews are required to be added to the Sequential data store. 
-SdsTypes that define Properties or base types are contained within the parent SdsType and are not required
-to be added to the Data Store independently.
+Only the SdsTypes that are used to define SdsStreams or SdsStreamViews are required to be added to the SDS. 
+SdsTypes that define [Properties](#sdstypeproperty) or base types are contained within the parent type so they don't need to be added to the SDS independently.
 
-The following table shows the required and optional SdsType fields. Fields that are not included are reserved for internal SDS use. See  [Search in SDS](xref:sdsSearching) for limitations on search.
-
+## SdsType fields and properties table
 <a name="typepropertiestable"></a>
+The table below lists required and optional fields in an SdsType. Fields that are not included are reserved for internal SDS use.
+For more information on search including limitations, see [Search in SDS](xref:sdsSearching).
 | Property          | Type                   | Optionality | Searchable | Details |
 |-------------------|------------------------|-------------|---------|---------|
 | Id                | String                 | Required    | Yes | Identifier for referencing the type |
@@ -51,38 +49,31 @@ The following table shows the required and optional SdsType fields. Fields that 
 | SdsTypeCode       | SdsTypeCode            | Required    | No | Numeric code identifying the base SdsType |
 | InterpolationMode | SdsInterpolationMode   | Optional    | No | Interpolation setting of the type. Default is Continuous. For more information, see [Interpolation](xref:sdsReadingData#interpolation).|
 | ExtrapolationMode | SdsExtrapolationMode   | Optional    | No | Extrapolation setting of the type. For more information, see [Extrapolation](xref:sdsReadingData#extrapolation). |
-| Properties        | IList\<SdsTypeProperty\> | Required    | Yes, with limitations | List of SdsTypeProperty items |
+| Properties        | IList\<SdsTypeProperty\> | Required    | Yes, with limitations | List of SdsTypeProperty items. See [SdsTypeProperty](#sdstypeproperty) below.  |
 
-
-**Rules for the Type Identifier (SdsType.Id)**
-
+### Rules for the SdsType Identifier (SdsType.Id)
 1. Is not case sensitive
-2. Can contain spaces
-3. Cannot contain forward slash ("/")
-4. Can contain a maximum of 100 characters  
+2. Cannot just be whitespace
+3. Cannot contain leading or trailing whitespace
+4. Cannot contain forward slash ("/")
+5. Can contain a maximum of 100 characters  
 
-SdsType management using the .NET SDS Client Libraries is performed through the ``ISdsMetadataService``. 
-You can create the ``ISdsMetadataService`` using one of the ``SdsService.GetMetadataService()`` factory methods.
-
-The .NET libraries provide SdsTypeBuilder to help build SdsTypes from .NET types. SdsTypeBuilder is 
-discussed in greater detail below.
-
+Type management using the .NET SDS client libraries methods is performed through ``ISdsMetadataService``. 
+You can create ``ISdsMetadataService`` using one of the ``SdsService.GetMetadataService()`` factory methods.
+.NET client libraries provide `SdsTypeBuilder` to help build SdsTypes from .NET types. SdsTypeBuilder is discussed in greater detail below.
 
 ## SdsTypeCode
+The SdsTypeCode is a numeric identifier used by the SDS to identify SdsTypes.
+An SdsTypeCode exists for every supported type.
 
-The SdsTypeCode is a numeric identifier used by the Data Store to identify SdsTypes. A SdsTypeCode exists for 
-every supported type.
+Atomic types, such as strings, floats and arrays, are defined entirely by the SdsTypeCode and do not need other fields to define the type.
 
-Atomic types, such as strings, floats and arrays, are defined entirely by the SdsTypeCode. Atomic 
-types do not need fields to define the type.
+Types that require additional definition, such as enums and objects, are identified using a generic 
+SdsTypeCode, such as ByteEnum, Int32Enum, NullableInt32Enum, or Object, plus additional SdsTypeProperty fields.
 
-Types requiring additional definition, such as enums and objects, are identified using a generic 
-SdsTypeCode, such as ByteEnum, Int32Enum, NullableInt32Enum, or Object, plus additional SdsProperty fields.
-
-**Supported Types**
+**Supported Types**  
 
 The following types are supported and defined by the SdsTypeCode:
-
 
 Type                    | SdsTypeCode
 ----------------------- | -----
@@ -166,8 +157,7 @@ Version                 | 22
 VersionArray            | 222
 
 ## SdsTypeProperty
-
-The Properties collection define the fields in an SdsType. 
+The Properties collection defines the fields in an SdsType. 
 
 The following table shows the required and optional SdsTypeProperty fields. Fields that 
 are not included are reserved for internal SDS use.
@@ -177,51 +167,47 @@ are not included are reserved for internal SDS use.
 | Id                        | String                  | Required    | Identifier for referencing the type |
 | Name                      | String                  | Optional    | Friendly name |
 | Description               | String                  | Optional    | Description text |
-| SdsType                   | SdsType                 | Required    | Field defining the property's Type |
-| IsKey                     | Boolean                 | Required    | Identifies the property as the Key (Primary Index) |
+| SdsType                   | SdsType                 | Required    | Field defining the property's SdsType |
+| IsKey                     | Boolean                 | Required    | Identifies the property as the index |
 | Value                     | Object                  | Optional    | Value of the property |
 | Order                     | Int                     | Optional    | Order of comparison within a compound index |
 | InterpolationMode         | SdsInterpolationMode    | Optional    | Interpolation setting of the property. Default is null. |
-| Uom                       | String                  | Optional    | Unit of Measure of the property |
+| Uom                       | String                  | Optional    | Unit of measure of the property |
 
+The SdsTypeProperty's identifier follows the same [rules](#typepropertiestable) as the SdsType's identifier.
 
-The SdsTypeProperty's identifier follows the same rules as the SdsType's identifier.
+Boolean value ``IsKey`` identifies the primary index of an SdsType in a single index. An index that is defined by more than one 
+SdsTypeProperty is called a compound index. The maximum number of properties that can define a compound index is three. 
+In a compound index, each SdsTypeProperty that is included in the index is specified as ``IsKey``.
+The ``Order`` field marks the order of comparison within a compound index.
 
-IsKey is a Boolean value used to identify the SdsType's Key. A Key defined by more than one 
-Property is called a compound key. The maximum number of Properties that can define a compound key is three. 
+The ``Value`` field is used for properties that represent a value. An example of a property with a 
+value is an enum's named constant. When representing an enum in an SdsType, the SdsType's 
+SdsTypeProperty collection defines the enum's constant list. The SdsTypeProperty's ``Id`` represents 
+the constant's name and the SdsTypeProperty's ``Value`` represents the constant's value (see the enum ``State`` definitions in the code samples below).
 
-In a compound key, each Property that is included in the 
-Key is specified as IsKey. The Order field defines the precedence of fields applied to the Index.
+``InterpolationMode`` is assigned when the SdsTypeProperty of the event should be interpolated in a specific way 
+that differs from the interpolation mode of the SdsType. ``InterpolationMode`` is only applied to an SdsTypeProperty 
+that is not part of the index. If the ``InterpolationMode`` is not set, the SdsTypeProperty is interpolated 
+in the manner defined by the SdsType's ``InterpolationMode``.
 
-The Value field is used for properties that represent a value. An example of a property with a 
-value is an enum's named constant. When representing an enum in a SdsType, the SdsType's 
-Properties collection defines the enum's constant list. The SdsTypeProperty's Identifier represents 
-the constant's name and the SdsTypeProperty's Value represents the constant's value (see the enum State definitions below).
+An SdsType with the ``InterpolationMode`` set to `Discrete` cannot also have the SdsTypeProperty with ``InteroplationMode``. 
+For more information on interpolation of events, see [Interpolation](xref:sdsReadingData#interpolation).
 
-InterpolationMode is assigned when the Property of the event should be interpolated in a specific way 
-that differs from the InterpolationMode of the SdsType. InterpolationMode is only applied to a Property 
-that is not part of the Index. If the InterpolationMode is not set, the Property is are interpolated 
-in the manner defined by the SdsType's IntepolationMode.
+``Uom`` is the unit of measure for the SdsTypeProperty. The ``Uom`` of the SdsTypeProperty may be specified by the name or the 
+abbreviation. The names and abbreviations of ``Uoms`` are case sensitive. 
 
-An SdsType with the InterpolationMode set to `Discrete` cannot have a Property with an InteroplationMode. 
-For more information on interpolation of events see [Interpolation](xref:sdsReadingData#interpolation).
+The ``InterpolationMode`` and ``Uom`` of the SdsTypeProperty can be overridden on the SdsStream. For more information, see [Streams](xref:sdsStreams#sdsstreampropertyoverride-object).
 
-Uom is the unit of measure for the Property. The Uom of a Property may be specified by the name or the 
-abbreviation. The names and abbreviations of Uoms are case sensitive. 
+### Supported Units of Measure
+For a list of units of measures that are supported for an SdsTypeProperty, see [Units of measure](xref:unitsOfMeasure#supported-units-of-measure).
 
-The InterpolationMode and Uom of a Property can be overridden on the stream. For more information, see [Streams](xref:sdsStreams#propertyoverrides).
+## Work with SdsTypes in .NET framework
 
-## Supported Units of Measure
-
-For a list of units of measures that are supported for an SdsTypeProperty, see [Units of Measure](xref:unitsOfMeasure#supported-units-of-measure).
-
-## Working with SdsTypes using .NET
-
-When working in .NET, use the SdsTypeBuilder to create SdsTypes. The SdsTypeBuilder eliminates 
+When working in .NET, use the `SdsTypeBuilder` to create SdsTypes. The `SdsTypeBuilder` eliminates 
 potential errors that can occur when working with SdsTypes manually.
 
-There are several ways to work with the builder. The most convenient is to use the static 
-methods, as shown here:
+There are several ways to work with the `SdsTypeBuilder`. One is to use the static methods for convenience:
 ```csharp
 public enum State
 {
@@ -244,11 +230,11 @@ simpleType.Name = "Simple";
 simpleType.Description = "Basic sample type";
 ```
 
-SdsTypeBuilder recognizes the ``System.ComponentModel.DataAnnotations.KeyAttribute`` and 
-its own ``OSIsoft.Sds.SdsMemberAttribute``. When using the SdsMemberAttribute to specify 
-the Primary Index, set the IsKey to true.
+`SdsTypeBuilder` recognizes the ``System.ComponentModel.DataAnnotations.KeyAttribute`` and 
+its own ``OSIsoft.Sds.SdsMemberAttribute``. When using the ``SdsMemberAttribute`` to specify 
+the primary index, set the ``IsKey`` to true.
 
-The type is created with the following parameters. SdsTypeBuilder automatically generates 
+The SdsType is created with the following parameters. `SdsTypeBuilder` automatically generates 
 unique identifiers. Note that the following table contains only a partial list of fields.
 
 | Field            | Values                  |             |                                      |
@@ -307,18 +293,16 @@ unique identifiers. Note that the following table contains only a partial list o
 |                  | Value                   | null                                               |
 
 
-The SdsTypeBuilder also supports derived types. Note that you need not add the base types to 
-the Data Store before using SdsTypeBuilder. Base types are maintained within the SdsType.
+The `SdsTypeBuilder` also supports derived types. Note that you need not add the base types to 
+the SDS before using `SdsTypeBuilder`. Base types are maintained within the SdsType.
 
-## Working with SdsTypes when not using .NET
+## Work with SdsTypes outside of .NET framework
+SdsTypes must be built manually when .NET `SdsTypeBuilder` is unavailable. Below, you'll see how types are built and defined in
+[Python](https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/SDS/Python) and 
+[JavaScript](https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/SDS/JavaScript) samples. 
+For samples in other languages, go to [OCS code samples in GitHub](https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/SDS).
 
-SdsTypes must be built manually when .NET SdsTypeBuilder is unavailable. The following discussion 
-refers to the following types and are defined in 
-[Python](https://github.com/osisoft/OCS-Samples/tree/master/basic_samples/SDS/Python/SDSPy) and 
-[JavaScript](https://github.com/osisoft/OCS-Samples/tree/master/basic_samples/SDS/JavaScript) samples. 
-Samples in other languages can be found here: [Samples](https://github.com/osisoft/OCS-Samples/tree/master/basic_samples).
-
-In the sample code, SdsType, SdsTypeProperty, and SdsTypeCode are defined as in the code snippets shown here:
+SdsType, SdsTypeProperty, and SdsTypeCode are defined below:
 
 **Python**
 ```python
@@ -441,9 +425,7 @@ SdsType: function (SdsType) {
 },
 ```
 
-
-Working with the following types (both Python and JavaScript classes are shown):
-
+These are the SdsTypes we are working with in Python and JavaScript classes:
 
 **Python**
 ```python
@@ -488,13 +470,13 @@ var Simple = function () {
 }
 ```
 
-Define the SdsType as follows:
+These are the SdsTypes defined in Python and JavaScript:
 
 **Python**
 ```python
 # Create the properties
 
-# Time is the primary key
+# Time is the primary index
 time = SdsTypeProperty()
 time.Id = "Time"
 time.Name = "Time"
@@ -545,7 +527,7 @@ simpleType.Properties = [ time ]
 
 **JavaScript**
 ```javascript
-// Time is the primary key
+// Time is the primary index
 var timeProperty = new SdsObjects.SdsTypeProperty({
     "Id": "Time",
     "IsKey": true,
@@ -597,7 +579,7 @@ var simpleType = new SdsObjects.SdsType({
 });
 ```
 
-Working with a derived class is easy. For the following derived class:
+Working with a derived class is easy. For example, this is a derived class:
 
 ```javascript
 class Derived(Simple):
@@ -609,7 +591,7 @@ class Derived(Simple):
         self.__observation = observation
 ```
 
-Extend the SdsType as follows:
+Extend the above SdsType as follows:
 
 **Python**
 ```python
@@ -622,7 +604,7 @@ observation.SdsType.Id = "String"
 observation.SdsType.Name = "String"
 observation.SdsType.SdsTypeCode = SdsTypeCode.String
 
-# Create the Derived SdsType
+# Create the derived SdsType
 derived = SdsType()
 derived.Id = "Derived"
 derived.Name = "Derived"
@@ -653,10 +635,9 @@ var derivedType = new SdsObjects.SdsType({
 ```
 
 ## Type Reusability
-
-An SdsType can also refer other SdsTypes by using their identifiers. This enables type re-usability.
-
-For example, if there is a common index and value property for a group of types that may have additional properties, a base type can be created with those properties.
+SdsTypes can also refer other types by using their identifiers. This enables type re-usability.
+For example, if there is a common index and value property for a group of types that may have additional properties,
+a base type can be created with those properties.
 
 ```json
 {
@@ -683,7 +664,8 @@ For example, if there is a common index and value property for a group of types 
 }
 ```
 
-If a new type should be created with properties additional to the ones above, a reference to the base type can be added by simply specifying the base type's Id.
+If a new type should be created with properties in addition to the ones shown above,
+a reference to the base type can be added by simply specifying the base type's ``Id``.
 
 ```json
 {
@@ -705,7 +687,7 @@ If a new type should be created with properties additional to the ones above, a 
 }
 ```
 
-The new type may also include the full type definition of the reference type instead of specifying only the Id. For example,
+The new type may also include the full type definition of the reference type instead of specifying only the ``Id`` as shown below:
 
 ```json
 {
@@ -746,11 +728,18 @@ The new type may also include the full type definition of the reference type ins
 }
 ```
 
-If the full definition is sent, the referenced types (base type "Simple" in the above example) should match the actual type initially created. If the full definition is sent and the referenced types do not exist, they will be created automatically by SDS. Further type creations can reference them as demonstrated above. Note that when trying to get types back from SDS, the results will also include types that were automatically created by SDS.
+If the full definition is sent, the referenced types (base type "Simple" in the above example)
+should match the actual type that was initially created. If the full definition is sent and the referenced types do not exist,
+they will be created automatically by the SDS. Further type creations can reference them as shown above.
+Note that when trying to get types back from the SDS, the results will also include types that were automatically created by the SDS.
 
-Base types and properties of type Object, Enum, user-defined collections, such as, Array, List and Dictionary will be treated as referenced types. Note that streams cannot be created using these referenced types. If a stream of particular type is to be created, the type should contain at least one property with a valid index type as described in this section, [Indexes](xref:sdsIndexes). The index property may also be in the base type as shown in the example above.
+Base types and properties of type Object, Enum, or user-defined collections such as Array, List and Dictionary,
+will be treated as referenced types. Note that streams cannot be created using these referenced types.
+If a stream of particular type is to be created, the type should contain at least one property
+with a valid index type as described in the [Indexes](xref:sdsIndexes) section. 
+The index property may also be in the base type as shown in the example above.
 
-This works seamlessly when using any programming language. For example if you are using .NET,
+This works seamlessly when using any programming language, using .NET for example:
 
 ```csharp
 
@@ -782,29 +771,27 @@ windShieldType.BaseType.Id = "Basic";
 
 ```
 
-Note that the base type's Id can also be changed, if necessary, to be more meaningful.
+Note that if necessary, the base type's Id can also be changed to be more meaningful.
 
 # SdsType API
 
 The REST APIs provide programmatic access to read and write SDS data. The APIs in this section 
 interact with SdsTypes. When working in .NET, convenient SDS Client Libraries are available. 
 The ISdsMetadataService interface, accessed using the `SdsService.GetMetadataService()` helper, 
-defines the available functions. See [Types](#types) for general SdsType information.
-
+defines the available functions. See [Types](#types) for general type-related information.
 
 ***********************
 
 ## `Get Type`
-
 Returns the type corresponding to the specified typeId within a given namespace.
 
-#### Request
+### Request
  ```text
 	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
  ```
 
 
-##### Parameters 
+### Parameters 
 
 `string tenantId`  
 The tenant identifier
@@ -816,13 +803,13 @@ The namespace identifier
 The type identifier
 
 
-#### Response  
+### Response  
 The response includes a status code and a response body.
 
-##### Response body  
+#### Response body  
 The requested SdsType
 
-###### Example response body 
+#### Example response body 
 ```json
 HTTP/1.1 200
 Content-Type: application/json
@@ -878,7 +865,7 @@ Content-Type: application/json
 }
 ```
 
-#### .NET libraries client methods
+### .NET client libraries method
 ```csharp
     Task<SdsType> GetTypeAsync(string typeId);
 ```
@@ -889,12 +876,12 @@ Content-Type: application/json
 
 Returns a dictionary mapping the object name to the number of references held by streams, stream views and parent types for the specified type. See [Streams](xref:sdsStreams) and [Steam Views](xref:sdsStreamViews) for more information on the use of types to define streams and stream views. For further details about type referencing please see: [Type Reusability](#type-reusability).
 
-#### Request
+### Request
  ```text
 	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/ReferenceCount
  ```
 
-##### Parameters   
+### Parameters   
 
 `string tenantId`  
 The tenant identifier
@@ -908,10 +895,10 @@ The type identifier
 #### Response  
 The response includes a status code and a response body.
 
-##### Response body  
+#### Response body  
 A dictionary mapping object name to number of references.
 
-###### Example response body 
+#### Example response body 
 ```json
     {
         "SdsStream": 3,
@@ -920,7 +907,7 @@ A dictionary mapping object name to number of references.
     }
 ```
 
-#### .NET libraries client methods
+### .NET client libraries method
 ```csharp
     Task<IDictionary<string, int>> GetTypeReferenceCountAsync(string typeId);
 ```
@@ -928,22 +915,21 @@ A dictionary mapping object name to number of references.
 ***********************
 
 ## `Get Types`
-
 Returns a list of types within a given namespace.
 
 If specifying the optional search query parameter, the list of types returned will match 
 the search criteria. If the search query parameter is not specified, the list will include 
-all types in the Namespace. See [Searching](xref:sdsSearching) 
+all types in the Namespace. See [Search in SDS](xref:sdsSearching) 
 for information about specifying those respective parameters.
 
 Note that the results will also include types that were automatically created by SDS as a result of type referencing. For further details about type referencing please see: [Type Reusability](#type-reusability)
 
-#### Request
+### Request
  ```text
 	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types?query={query}&skip={skip}&count={count}&orderby={orderby}
  ```
 
-##### Parameters   
+### Parameters   
 
 `string tenantId`  
 The tenant identifier
@@ -952,27 +938,27 @@ The tenant identifier
 The namespace identifier
 
 `string query`  
-An optional query string to match which SdsTypes will be returned.  See the [Searching](xref:sdsSearching) topic for information about specifying the query parameter.
+[Optional] Parameter representing a string search. See the [Search in SDS](xref:sdsSearching) topic for information about specifying the query parameter.
 
 `int skip`  
-An optional value representing the zero-based offset of the first SdsType to retrieve. If not specified, 
+[Optional] Parameter representing the zero-based offset of the first SdsType to retrieve.  If not specified, 
 a default value of 0 is used.
 
 `int count`  
-An optional value representing the maximum number of SdsTypes to retrieve. If not specified, a default value of 100 is used.
+[Optional] Parameter representing the maximum number of SdsTypes to retrieve. If not specified, a default value of 100 is used.
 
 `string orderby`  
-An optional parameter representing sorted order which SdsTypes will be returned. A field name is required. The sorting is based on the stored values for the given field (of type string). For example, ``orderby=name`` would sort the returned results by the ``name`` values (ascending by default). 
+[Optional] Parameter representing sorted order which SdsTypes will be returned. A field name is required. The sorting is based on the stored values for the given field (of type string). For example, ``orderby=name`` would sort the returned results by the ``name`` values (ascending by default). 
 Additionally, a value can be provided along with the field name to identify whether to sort ascending or descending, by using values ``asc`` or ``desc``, respectively. For example, ``orderby=name desc`` would sort the returned results by the ``name`` values, descending.
 If no value is specified, there is no sorting of results.
 
 #### Response  
 The response includes a status code and a response body.
 
-##### Response body  
+#### Response body  
 A collection of zero or more SdsTypes
 
-###### Example response body 
+#### Example response body 
 ```json
 HTTP/1.1 200
 Content-Type: application/json
@@ -1032,7 +1018,7 @@ Content-Type: application/json
 ```
 
 
-#### .NET libraries client methods
+### .NET client libraries method
 ```csharp
     Task<IEnumerable<SdsType>> GetTypesAsync(string query = "", int skip = 0, int count = 100);
 ```
@@ -1058,12 +1044,12 @@ When a client performs a redirect and strips the authorization header, SDS canno
 returns ``Unauthorized`` (401). For this reason, it is recommended that when using clients that do not 
 redirect with the authorization header, you should disable automatic redirect and perform the redirect manually.
 
-#### Request
+### Request
  ```text
 	POST api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
  ```
 
-##### Parameters 
+### Parameters 
 
 `string tenantId`  
 The tenant identifier
@@ -1074,10 +1060,10 @@ The namespace identifier
 `string typeId`  
 The type identifier. The identifier must match the `SdsType.Id` field in the request body. 
 
-##### Request Body 
+#### Request body 
 The request content is the serialized SdsType.
 
-Example SdsType content:
+#### Example request body
 ```json
 {
     "Id": "Simple",
@@ -1130,13 +1116,13 @@ Example SdsType content:
 }
 ```
 
-#### Response  
+### Response  
 The response includes a status code and a response body.
 
-##### Response body  
+#### Response body  
 The request content is the serialized SdsType. If you are not using the SDS Client Libraries, it is recommended that you use JSON.
 
-###### Example response body 
+#### Example response body 
 ```json
 HTTP/1.1 201
 Content-Type: application/json
@@ -1270,7 +1256,7 @@ Content-Type: application/json
 }
 ```
 
-#### .NET libraries client methods
+### .NET client libraries method
 ```csharp
     Task<SdsType> GetOrCreateTypeAsync(SdsType sdsType)
 ```
@@ -1287,12 +1273,12 @@ The .NET SDS Client Libraries manage redirects.
 
 Deletes a type from the specified tenant and namespace. Note that a type cannot be deleted if any streams, stream views, or other types reference it.
 
-#### Request
+### Request
  ```text
 	DELETE api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
  ```
 
-##### Parameters 
+### Parameters 
 
 `string tenantId`  
 The tenant identifier
@@ -1303,10 +1289,10 @@ The namespace identifier
 `string typeId`  
 The type identifier
 
-#### Response  
+### Response  
 The response includes a status code.
 
-#### .NET libraries client methods
+### .NET client libraries method
 ```csharp
     Task DeleteTypeAsync(string typeId);
 ```
@@ -1317,12 +1303,12 @@ The response includes a status code.
 
 Get the default ACL for the Types collection. For more information on ACLs, see [Access Control](xref:accessControl).
 
-#### Request
+### Request
  ```text
 	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Types
  ```
 
-##### Parameters 
+### Parameters 
 
 `string tenantId`  
 The tenant identifier  
@@ -1330,13 +1316,13 @@ The tenant identifier
 `string namespaceId`  
 The namespace identifier  
 
-#### Response  
+### Response  
 The response includes a status code and a response body.
 
-##### Response body  
+#### Response body  
 The default ACL for Types
 
-#### .NET libraries client methods
+### .NET client libraries method
 ```csharp
    Task<AccessControlList> GetTypesAccessControlListAsync();
 ```
@@ -1346,12 +1332,12 @@ The default ACL for Types
 
 Update the default ACL for the Types collection. For more information on ACLs, see [Access Control](xref:accessControl).
 
-#### Request
+### Request
  ```text
 	PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Types
  ```
 
-##### Parameters 
+### Parameters 
 
 `string tenantId`  
 The tenant identifier  
@@ -1359,13 +1345,13 @@ The tenant identifier
 `string namespaceId`  
 The namespace identifier  
 
-##### Request Body 
+#### Request body 
 Serialized ACL
 
-#### Response  
+### Response  
 The response includes a status code.
 
-#### .NET libraries client methods
+### .NET client libraries method
 ```csharp
    Task UpdateTypesAccessControlListAsync(AccessControlList typesAcl);
 ```
@@ -1376,12 +1362,12 @@ The response includes a status code.
 
 Get the ACL of the specified type. For more information on ACLs, see [Access Control](xref:accessControl).
 
-#### Request
+### Request
  ```text
 	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessControl
  ```
 
-##### Parameters 
+### Parameters 
 
 `string tenantId`  
 The tenant identifier  
@@ -1392,13 +1378,13 @@ The namespace identifier
 `string typeId`  
 The type identifier  
 
-#### Response  
+### Response  
 The response includes a status code and a response body.
 
-##### Response body  
+#### Response body  
 The ACL for the specified type
 
-#### .NET libraries client methods
+### .NET client libraries method
 ```csharp
    Task<AccessControlList> GetTypeAccessControlListAsync(string typeId);
 ```
@@ -1410,12 +1396,12 @@ Update the ACL of the specified type. For more information on ACLs, see [Access 
 
 Note that this does not update the ACL for the associated types. For further details about type referencing please see: [Type Reusability](#type-reusability).
 
-#### Request
+### Request
  ```text
 	PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessControl
  ```
 
-##### Parameters 
+### Parameters 
 
 `string tenantId`  
 The tenant identifier  
@@ -1426,13 +1412,13 @@ The namespace identifier
 `string typeId`  
 The type identifier  
 
-##### Request Body 
+#### Request body 
 Serialized ACL
 
-#### Response  
+### Response  
 The response includes a status code.
 
-#### .NET libraries client methods
+### .NET client libraries method
 ```csharp
    Task UpdateTypeAccessControlListAsync(string typeId, AccessControlList typeAcl);
 ```
@@ -1442,12 +1428,12 @@ The response includes a status code.
 
 Get the Owner of the specified type. For more information on Owners, see [Access Control](xref:accessControl).
 
-#### Request
+### Request
  ```text
 	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Owner
  ```
 
-##### Parameters 
+### Parameters 
 
 `string tenantId`  
 The tenant identifier  
@@ -1458,13 +1444,13 @@ The namespace identifier
 `string typeId`  
 The type identifier  
 
-#### Response  
+### Response  
 The response includes a status code and a response body.
 
-##### Response body  
+#### Response body  
 The Owner for the specified type 
 
-#### .NET libraries client methods
+### .NET client libraries method
 ```csharp
    Task<Trustee> GetTypeOwnerAsync(string typeId);
 ```
@@ -1476,12 +1462,12 @@ Update the Owner of the specified type. For more information on Owners, see [Acc
 
 Note that this does not update the Owner for the associated types. For further details about type referencing please see: [Type Reusability](#type-reusability).
 
-#### Request
+### Request
  ```text
 	PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Owner
  ```
 
-##### Parameters 
+### Parameters 
 
 `string tenantId`  
 The tenant identifier  
@@ -1492,13 +1478,13 @@ The namespace identifier
 `string typeId`  
 The type identifier  
 
-##### Request Body 
+#### Request body 
 Serialized Owner
 
-#### Response  
+### Response  
 The response includes a status code.
 
-#### .NET libraries client methods
+#### .NET client libraries methods
 ```csharp
    Task UpdateTypeOwnerAsync(string typeId, Trustee typeOwner);
 ```
@@ -1509,12 +1495,12 @@ The response includes a status code.
 Gets the Access Rights associated with the specified type for the requesting identity. For 
 more information on Access Rights, see [Access Control](xref:accessControl#commonaccessrightsenum).
 
-#### Request
+### Request
  ```text
 	GET api/v1//Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessRights
  ```
 
-##### Parameters 
+### Parameters 
 
 `string tenantId`  
 The tenant identifier  
@@ -1525,13 +1511,13 @@ The namespace identifier
 `string typeId`  
 The type identifier  
 
-#### Response  
+### Response  
 The response includes a status code and a response body.
 
-##### Response body  
+#### Response body  
 The Access Rights of the specified type for the requesting identity.
 
-###### Example response body 
+#### Example response body 
 ```json
 HTTP/1.1 200
 Content-Type: application/json
@@ -1539,7 +1525,7 @@ Content-Type: application/json
 ["Read", "Write"]
 ```
 
-#### .NET libraries client methods
+#### .NET client libraries methods
 ```csharp
    Task<string[]> GetTypeAccessRightsAsync(string typeId);
 ```

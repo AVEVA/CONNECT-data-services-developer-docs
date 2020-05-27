@@ -5,7 +5,7 @@ uid: sdsReadingData
 # Read data
 
 The .NET and REST APIs provide programmatic access to read and write data. This section identifies and describes 
-the APIs used to read [Streams](xref:sdsStreams) data. Results are influenced by [Types](xref:sdsTypes), [Stream Views](xref:sdsStreamViews), [Filter expressions](xref:sdsFilterExpressions), and [Table format](xref:sdsTableFormat).
+the APIs used to read [SdsStreams](xref:sdsStreams) data. Results are influenced by [SdsTypes](xref:sdsTypes), [SdsStreamViews](xref:sdsStreamViews), [filter expressions](xref:sdsFilterExpressions), and [table format](xref:sdsTableFormat).
 
 If you are working in a .NET environment, convenient SDS Client Libraries are available. 
 The `ISdsDataService` interface, which is accessed using the ``SdsService.GetDataService()`` helper, 
@@ -31,7 +31,7 @@ All single stream reads are HTTP GET actions. Reading data involves getting even
 	api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
  ```
 
-**Parameters**
+**Parameters**  
 
 ``string tenantId``  
 The tenant identifier
@@ -52,8 +52,7 @@ Multi-stream reads can be HTTP GET or POST actions. The base reading URI for rea
     api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data
  ```
 
-**Parameters**
-
+**Parameters**  
 ``string tenantId``  
 The tenant identifier
 
@@ -83,6 +82,9 @@ When data is requested at an index for which no stored event exists, the read ch
 whether the result is an error, no event, interpolated event, or extrapolated event. The combination of 
 the type of the index and the interpolation and extrapolation modes of the SdsType and the SdsStream 
 determine the read characteristics.
+
+**\*Notes:** Use the ISO 8601 representation of dates and times in SDS, `2020-02-20T08:30:00-08:00` for February 20, 2020 at 8:30 AM PST, for example.
+SDS returns timestamps in UTC if the timestamp is of property `DateTime` and in local time if it is of `DateTimeOffset`. 
 
 ### Interpolation
 
@@ -260,7 +262,7 @@ SDS supports assigning [Units of Measure](xref:unitsOfMeasure) (UOM) to stream d
 | Uom               | String               | Required    | Target unit of measure                                |
 | InterpolationMode | SdsInterpolationMode | N/A         | Currently not supported in context of data reads      |
 
-This is supported in the .NET API via overloads that accept a collection of `SdsStreamPropertyOverride` objects, and in the REST API via HTTP POST calls with a request body containing a collection of `SdsStreamPropertyOverride` objects.  
+This is supported in the .NET client libraries methods via overloads that accept a collection of `SdsStreamPropertyOverride` objects, and in the REST API via HTTP POST calls with a request body containing a collection of `SdsStreamPropertyOverride` objects.  
 
 All unit conversions are POST HTTP requests. The unit conversion transformation URI is as follows:
  ```text

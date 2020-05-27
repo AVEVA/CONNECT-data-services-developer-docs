@@ -31,7 +31,7 @@ Type | string | Gets or sets the type of the client secret.
   "Id": 0,
   "Description": "description",
   "Value": "Value",
-  "Expiration": "2019-11-11T14:18:38.0371799-08:00",
+  "Expiration": "2020-03-30T15:34:23.1822657-07:00",
   "Type": "Type"
 }
 ```
@@ -136,13 +136,13 @@ Success.
 [
   {
     "Id": 0,
-    "Expiration": "2019-11-11T14:18:38.044144-08:00",
+    "Expiration": "2020-03-30T15:34:23.188507-07:00",
     "Expires": false,
     "Description": "description"
   },
   {
     "Id": 0,
-    "Expiration": "2019-11-11T14:18:38.0445152-08:00",
+    "Expiration": "2020-03-30T15:34:23.1888317-07:00",
     "Expires": false,
     "Description": "description"
   }
@@ -216,7 +216,7 @@ Success.
 ```json
 {
   "Id": 0,
-  "Expiration": "2019-11-11T14:18:38.0495696-08:00",
+  "Expiration": "2020-03-30T15:34:23.1933632-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -283,7 +283,7 @@ Description | string | No | Gets or sets description for the client secret. We s
 
 ```json
 {
-  "Expiration": "2019-11-11T14:18:38.0523153-08:00",
+  "Expiration": "2020-03-30T15:34:23.1969711-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -309,7 +309,7 @@ Created.
 {
   "Secret": "Secret",
   "Id": 0,
-  "Expiration": "2019-11-11T14:18:38.0545323-08:00",
+  "Expiration": "2020-03-30T15:34:23.2004265-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -330,6 +330,10 @@ Client or Tenant not found.
 #### 405
 
 Method not allowed at this base URL. Try the request again at the Global base URL.
+
+#### 408
+
+Operation timed out.
 
 #### 500
 
@@ -386,7 +390,7 @@ Description | string | No | Gets or sets description for the client secret. We s
 
 ```json
 {
-  "Expiration": "2019-11-11T14:18:38.0599545-08:00",
+  "Expiration": "2020-03-30T15:34:23.2055482-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -411,7 +415,7 @@ Success.
 ```json
 {
   "Id": 0,
-  "Expiration": "2019-11-11T14:18:38.0600617-08:00",
+  "Expiration": "2020-03-30T15:34:23.2057205-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -436,6 +440,10 @@ Secret, Client, or Tenant not found.
 #### 405
 
 Method not allowed at this base URL. Try the request again at the Global base URL.
+
+#### 408
+
+Operation timed out.
 
 #### 500
 
@@ -502,6 +510,10 @@ Secret, Client, or Tenant not found.
 #### 405
 
 Method not allowed at this base URL. Try the request again at the Global base URL.
+
+#### 408
+
+Operation timed out.
 
 #### 500
 
@@ -707,13 +719,13 @@ Success.
 [
   {
     "Id": 0,
-    "Expiration": "2019-11-11T14:18:38.2949796-08:00",
+    "Expiration": "2020-03-30T15:34:23.421257-07:00",
     "Expires": false,
     "Description": "description"
   },
   {
     "Id": 0,
-    "Expiration": "2019-11-11T14:18:38.2950189-08:00",
+    "Expiration": "2020-03-30T15:34:23.421273-07:00",
     "Expires": false,
     "Description": "description"
   }
@@ -787,7 +799,7 @@ Success.
 ```json
 {
   "Id": 0,
-  "Expiration": "2019-11-11T14:18:38.3020989-08:00",
+  "Expiration": "2020-03-30T15:34:23.423542-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -854,7 +866,7 @@ Description | string | No | Gets or sets description for the client secret. We s
 
 ```json
 {
-  "Expiration": "2019-11-11T14:18:38.3063305-08:00",
+  "Expiration": "2020-03-30T15:34:23.4255715-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -880,7 +892,7 @@ Created.
 {
   "Secret": "Secret",
   "Id": 0,
-  "Expiration": "2019-11-11T14:18:38.3064988-08:00",
+  "Expiration": "2020-03-30T15:34:23.4256863-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -905,6 +917,10 @@ Client or Tenant not found.
 #### 405
 
 Method not allowed at this base URL. Try the request again at the Global base URL.
+
+#### 408
+
+Operation timed out.
 
 #### 500
 
@@ -962,7 +978,7 @@ Description | string | No | Gets or sets description for the client secret. We s
 
 ```json
 {
-  "Expiration": "2019-11-11T14:18:38.3099049-08:00",
+  "Expiration": "2020-03-30T15:34:23.4279471-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -987,7 +1003,7 @@ Success.
 ```json
 {
   "Id": 0,
-  "Expiration": "2019-11-11T14:18:38.3101142-08:00",
+  "Expiration": "2020-03-30T15:34:23.4280505-07:00",
   "Expires": false,
   "Description": "description"
 }
@@ -1012,6 +1028,10 @@ Secret, Client, or Tenant not found.
 #### 405
 
 Method not allowed at this base URL. Try the request again at the Global base URL.
+
+#### 408
+
+Operation timed out.
 
 #### 500
 
@@ -1079,6 +1099,10 @@ Secret, Client, or Tenant not found.
 #### 405
 
 Method not allowed at this base URL. Try the request again at the Global base URL.
+
+#### 408
+
+Operation timed out.
 
 #### 500
 

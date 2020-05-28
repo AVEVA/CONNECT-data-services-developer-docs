@@ -228,6 +228,8 @@ If there are multiple groups in the data view, the index and grouping field valu
 <h2 id="resolution-behavior">Resolution behavior</h2>
 <p>By default, requests for a first page of data will cause the data view to re-resolve. See the documentation on <a class="xref" href="Resolved_Data_View.html#when-is-a-data-view-resolved">resolved data views</a>. This ensures that the data view accounts for any streams that have been added to or removed from SDS. Re-resolution may be suppressed by explicitly specifying a cache behavior of &quot;preserve&quot;.</p>
 <p>Requests for subsequent pages include a <code>continuationToken</code>. This implictly suppresses re-resolution, akin to cache &quot;preserve&quot; behavior.</p>
+<h2 id="field-mapping-count-limit">Field mapping count limit</h2>
+<p>Data views are limited to 1000 field mappings to ensure timely access of data. OCS checks the field mapping count prior to constructing the data set.</p>
 </string></article>
           </div>
           

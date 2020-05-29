@@ -80,6 +80,8 @@ centralized environment to aggregate data for reporting, advanced analytics, and
      - [Usage Data](xref:operationsUsage_Data)
      - [Resource Usage Data](xref:operationsResource_Usage_Data)
      - [Billing Cycles](xref:operationsBilling_Cycles)
+     - [Health](xref:operationsHealth)
+     - [Metrics](xref:operationsMetrics)
    - [Role-based Access Control](xref:accessControl)
    - [Samples](xref:samples)
    - [Technical Support](xref:support "Technical support and other resources")

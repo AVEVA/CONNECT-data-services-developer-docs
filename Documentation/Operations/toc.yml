@@ -8,3 +8,7 @@
   href: Operations_Resource Usage Data.md
 - name: Billing Cycles
   href: Operations_Billing Cycles.md
+- name: Health
+  href: Operations_Health.md
+- name: Metrics
+  href: Operations_Metrics.md

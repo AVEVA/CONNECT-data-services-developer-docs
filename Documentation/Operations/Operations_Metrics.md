@@ -11,13 +11,13 @@ APIs related to querying tenant metrics.
 
 ## Authentication
 
-All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieved after a successful authentication request.
+All endpoints referenced in this documentation require authenticated access. You must set the Authorization header to the access token you retrieved from a successful authentication request.
 
 `Authorization: Bearer <token>`
 
 Requests made without an access token or an invalid/expired token will fail with a 401 Unauthorized response.
 Requests made with an access token which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
-Read [OCS Authentication documentation](https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/Authentication) on how to authenticate against OCS with the various clients and receive an access token in response.
+Read [OCS Authentication documentation](https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/Authentication) to learn how to authenticate against OCS with the various clients and receive an access token in response.
 
 ## Error Handling
 

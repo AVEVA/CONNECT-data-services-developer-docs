@@ -713,11 +713,35 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "Documentation/Operations/Operations_Health.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/Operations/Operations_Health.html",
+          "hash": "7MG2bPi/cg4KHyMj7kmyAw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "Documentation/Operations/Operations_Logs.md",
       "output": {
         ".html": {
           "relative_path": "Documentation/Operations/Operations_Logs.html",
           "hash": "U8L4DYglupTV531bdEHmLw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation/Operations/Operations_Metrics.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation/Operations/Operations_Metrics.html",
+          "hash": "Mf4faw0CfzfgzAtZRBC3iQ=="
         }
       },
       "is_incremental": false,
@@ -1017,7 +1041,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation/toc.html",
-          "hash": "MzViwA74qQ+TbmYawmPCzA=="
+          "hash": "jRo4sN3yrqD3ioXu5sfuYg=="
         }
       },
       "is_incremental": false,
@@ -1029,7 +1053,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "XfMypRoZg7UU0hOlaabcnQ=="
+          "hash": "6zNcNLI/nzTus6CZWnDmrg=="
         }
       },
       "is_incremental": false,
@@ -1069,7 +1093,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 81,
+          "total_file_count": 83,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

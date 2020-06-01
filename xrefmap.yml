@@ -163,9 +163,15 @@ references:
 - uid: operationsBilling_Cycles
   name: Billing Cycles
   href: Documentation/Operations/Operations_Billing%20Cycles.html
+- uid: operationsHealth
+  name: Health
+  href: Documentation/Operations/Operations_Health.html
 - uid: operationsLogs
   name: Logs
   href: Documentation/Operations/Operations_Logs.html
+- uid: operationsMetrics
+  name: Metrics
+  href: Documentation/Operations/Operations_Metrics.html
 - uid: operationsOverview
   name: OSIsoft Operations Service
   href: Documentation/Operations/Operations_Overview.html

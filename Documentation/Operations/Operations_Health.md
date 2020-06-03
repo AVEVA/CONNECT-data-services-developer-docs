@@ -70,21 +70,28 @@ Success
 
 ```json
 {
-  "Services": [
+  "HealthState": "Ok",
+  "Namespaces": [
     {
-      "Name": "Sequential Data Store",
       "NamespaceId": "MyNamespace",
       "Region": "WestUS",
-      "HealthState": "Ok"
-    },
-    {
-      "Name": "Data Views",
-      "NamespaceId": "MyNamespace",
-      "Region": "WestUS",
-      "HealthState": "Ok"
+      "HealthState": "Ok",
+      "Services": [
+        {
+            "Name": "OMF Ingress",
+            "HealthState": "Ok"
+        },
+        {
+            "Name": "PI to OCS",
+            "HealthState": "Ok"
+        },
+        {
+            "Name": "Sequential Data Store",
+            "HealthState": "Ok"
+        }
+      ]
     }
-  ],
-  "HealthState": "Ok"
+  ]
 }
 ```
 

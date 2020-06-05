@@ -115,21 +115,28 @@ string tenantId
 <h5 id="type">Type:</h5>
 <p> <code>Health</code></p>
 <pre><code class="lang-json">{
-  &quot;Services&quot;: [
+  &quot;HealthState&quot;: &quot;Ok&quot;,
+  &quot;Namespaces&quot;: [
     {
-      &quot;Name&quot;: &quot;Sequential Data Store&quot;,
       &quot;NamespaceId&quot;: &quot;MyNamespace&quot;,
       &quot;Region&quot;: &quot;WestUS&quot;,
-      &quot;HealthState&quot;: &quot;Ok&quot;
-    },
-    {
-      &quot;Name&quot;: &quot;Data Views&quot;,
-      &quot;NamespaceId&quot;: &quot;MyNamespace&quot;,
-      &quot;Region&quot;: &quot;WestUS&quot;,
-      &quot;HealthState&quot;: &quot;Ok&quot;
+      &quot;HealthState&quot;: &quot;Ok&quot;,
+      &quot;Services&quot;: [
+        {
+            &quot;Name&quot;: &quot;OMF Ingress&quot;,
+            &quot;HealthState&quot;: &quot;Ok&quot;
+        },
+        {
+            &quot;Name&quot;: &quot;PI to OCS&quot;,
+            &quot;HealthState&quot;: &quot;Ok&quot;
+        },
+        {
+            &quot;Name&quot;: &quot;Sequential Data Store&quot;,
+            &quot;HealthState&quot;: &quot;Ok&quot;
+        }
+      ]
     }
-  ],
-  &quot;HealthState&quot;: &quot;Ok&quot;
+  ]
 }
 </code></pre><h4 id="400">400</h4>
 <p>Missing or invalid inputs</p>

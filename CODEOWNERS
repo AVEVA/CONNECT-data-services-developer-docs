@@ -4,6 +4,8 @@
 # These owners will be the default owners for everything in the repo.
 *       @GiselleLeeOSI
 Documentation/SequentialDataStore @GiselleLeeOSI @afloresOSI
+Documentation/Identity @digitaljoshua
+Documentation/Management @digitaljoshua
 Documentation/DataViews @osimarkrogers
 Documentation/Metadata @osimarkrogers
 Documentation/Operations @osimarkrogers

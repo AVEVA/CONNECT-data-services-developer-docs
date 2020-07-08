@@ -1,0 +1,6 @@
+- name: Create an authorization code client
+  topicHref: Authorization_Code_Client.md
+- name: Create a client credentials client
+  topicHref: Client_Credentials_Client.md
+- name: Create a hybrid client
+  topicHref: Hybrid_Client.md

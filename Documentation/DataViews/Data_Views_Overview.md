@@ -2,7 +2,7 @@
 uid: DataViewsOverview
 ---
 
-# Data Views (Preview)
+# Data Views
 
 Data views are subsets of data from one or more streams, which can serve as a bridge between raw stream data and data-driven applications. A data view is a declarative query and shape for stream data. Within a target namespace, you specify the selected data by specific time period and interpolation interval.
 
@@ -21,6 +21,7 @@ There are several [concepts and types](xref:DataView) used when defining data vi
 * [Queries](xref:DataViewsQueries)
 * [Data Field Sets](xref:DataViewsFieldSets)
 * [Grouping](xref:DataViewsGrouping)
+* [Data View Shape](xref:DataViewShape)
 
 Data views are meant to be designed interactively. Each modification you make to a data view is likely to affect how the data view [resolves](xref:ResolvedDataView) into concrete information. The [resolved API resources](xref:ResolvedDataViewAPI) close the loop, showing you exactly what information is in the data view, and why.
 

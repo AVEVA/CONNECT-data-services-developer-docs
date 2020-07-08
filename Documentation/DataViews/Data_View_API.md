@@ -34,7 +34,6 @@ The response includes a status code and a response body.
 | Status code | Body Type | Description |
 |--|--|--|
 | 200 OK | `DataView` | The requested data view |
-| 400 Bad Request | error | The request is not valid. See the response body for details |
 | 403 Forbidden | error | You are not authorized to view the requested data view |
 | 404 Not Found | error | The specified data view identifier is not found |
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
@@ -46,7 +45,7 @@ Content-Type: application/json
 {
   "Id": "demo",
   "Name": "demo",
-  "Description": null,
+  "IndexField": { "Label": "Timestamp" },
   "Queries": [
     { 
       "Id": "weather",
@@ -55,9 +54,8 @@ Content-Type: application/json
   ],
   "DataFieldSets": [],
   "GroupingFields": [],
-  "Shape": "Standard",
-  "IndexField": { "Label": "Timestamp" },
-  "IndexTypeCode": "DateTime"
+  "IndexTypeCode": "DateTime",
+  "Shape": "Standard"
 }
 ```
 
@@ -92,7 +90,6 @@ The response includes a status code and a body.
 | Status code | Body Type | Description |
 |--|--|--|
 | 200 OK | `DataView[]` | A page of data views. A response header, `Total-Count`, indicates the total size of the collection. |
-| 400 Bad Request | error | The request is not valid. See the response body for details |
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
 
 #### Response headers
@@ -101,8 +98,7 @@ Successful (200 OK) responses include:
 | Header | Description |
 |--|--|
 | Total-Count | The total count of data views visible to the current user |
-| FirstPage | Hyperlink to the first page of results |
-| NextPage | Hyperlink to the next page of results, if the results span into an additional page. Absence of this header indicates that there are no additional pages to be retrieved. |
+| Link | Hyperlinks to the first page and next page of results as applicable |
 
 #### Example response body
 ```json
@@ -122,7 +118,7 @@ Content-Type: application/json
 
 ### .NET client libraries method
 ```csharp
-   Task<IEnumerable<DataView>> GetDataViewsAsync(int skip = DEFAULT_SKIP, int count = DEFAULT_COUNT);
+   Task<IEnumerable<DataView>> GetDataViewsAsync(int skip = 0, int count = 100);
 ```
 
 ## `Create Data View`
@@ -146,12 +142,12 @@ A `DataView` object whose `Id` is `null` or unspecified.
 {
   "Name": "demo",
   "Description": "demonstration",
+  "IndexField": { "Label": "Timestamp" },
   "Queries": [],
   "DataFieldSets": [],
   "GroupingFields": [],
-  "Shape": "Standard",
-  "IndexField": { "Label": "Timestamp" },
-  "IndexTypeCode": "DateTime"
+  "IndexTypeCode": "DateTime",
+  "Shape": "Standard"
 }
 ```
 
@@ -173,18 +169,18 @@ Content-Type: application/json
   "Id": "c79630cc-21dc-483e-8b37-46880e92c456",
   "Name": "demo",
   "Description": "demonstration",
+  "IndexField": { "Label": "Timestamp" },
   "Queries": [],
   "DataFieldSets": [],
   "GroupingFields": [],
-  "Shape": "Standard",
-  "IndexField": { "Label": "Timestamp" },
-  "IndexTypeCode": "DateTime"
+  "IndexTypeCode": "DateTime",
+  "Shape": "Standard"
 }
 ```
 
 ### .NET client libraries method
 ```csharp
-   Task<IEnumerable<DataView>> GetDataViewsAsync(int skip = DEFAULT_SKIP, int count = DEFAULT_COUNT);
+   Task<DataView> GetOrCreateDataViewAsync(DataView dataView);
 ```
 
 ## `Get or Create Data View`
@@ -213,12 +209,12 @@ A `DataView` object whose `Id` matches the `dataViewId` in the URL.
   "Id": "demo2",
   "Name": "demo2",
   "Description": "demonstration 2",
+  "IndexField": { "Label": "Timestamp" },
   "Queries": [],
   "DataFieldSets": [],
   "GroupingFields": [],
-  "Shape": "Standard",
-  "IndexField": { "Label": "Timestamp" },
-  "IndexTypeCode": "DateTime"
+  "IndexTypeCode": "DateTime",
+  "Shape": "Standard"
 }
 ```
 
@@ -243,12 +239,12 @@ Content-Type: application/json
   "Id": "demo2",
   "Name": "demo2",
   "Description": "demonstration 2",
+  "IndexField": { "Label": "Timestamp" },
   "Queries": [],
   "DataFieldSets": [],
   "GroupingFields": [],
-  "Shape": "Standard",
-  "IndexField": { "Label": "Timestamp" },
-  "IndexTypeCode": "DateTime"
+  "IndexTypeCode": "DateTime",
+  "Shape": "Standard"
 }
 ```
 
@@ -283,12 +279,12 @@ A `DataView` object whose `Id` matches the `dataViewId` in the URL.
   "Id": "demo",
   "Name": "demo",
   "Description": "demonstration",
+  "IndexField": { "Label": "Timestamp" },
   "Queries": [],
   "DataFieldSets": [],
   "GroupingFields": [],
-  "Shape": "Standard",
-  "IndexField": { "Label": "Timestamp" },
-  "IndexTypeCode": "DateTime"
+  "IndexTypeCode": "DateTime",
+  "Shape": "Standard"
 }
 ```
 
@@ -331,7 +327,6 @@ The response includes a status code and, in some cases, a body.
 | Status code | Body Type | Description |
 |--|--|--|
 | 204 No Content | (empty) | Successfully deleted the data view |
-| 400 Bad Request | error | The request is not valid. See the response body for details |
 | 403 Forbidden | error | You are not authorized for this operation |
 | 404 Not Found | error | The specified data view identifier is not found |
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |

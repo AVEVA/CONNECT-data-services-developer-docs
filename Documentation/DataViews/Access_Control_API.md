@@ -38,26 +38,26 @@ HTTP 200 OK
   [
     {
       "Trustee": {
-        "Type": 3,
+        "Type": Role,
         "RoleId": "11111111-1111-1111-1111-111111111111"
       },
-      "AccessType": 0,
+      "AccessType": Allowed,
       "AccessRights": 1
     },
     {
       "Trustee": {
-        "Type": 3,
+        "Type": Role,
         "RoleId": "22222222-2222-2222-2222-222222222222"
       },
-      "AccessType": 0,
+      "AccessType": Allowed,
       "AccessRights": 15
     },
     {
       "Trustee": {
-        "Type": 3,
+        "Type": User,
         "RoleId": "33333333-3333-3333-3333-333333333333"
       },
-      "AccessType": 1,
+      "AccessType": Denied,
       "AccessRights": 8
     }
   ]
@@ -93,26 +93,26 @@ An [`AccessControlList`](xref:accessControl#access-control-lists)
   [
     {
       "Trustee": {
-        "Type": 3,
+        "Type": Role,
         "RoleId": "11111111-1111-1111-1111-111111111111"
       },
-      "AccessType": 0,
+      "AccessType": Allowed,
       "AccessRights": 1
     },
     {
       "Trustee": {
-        "Type": 3,
+        "Type": Role,
         "RoleId": "22222222-2222-2222-2222-222222222222"
       },
-      "AccessType": 0,
+      "AccessType": Allowed,
       "AccessRights": 15
     },
     {
       "Trustee": {
-        "Type": 3,
+        "Type": User,
         "RoleId": "33333333-3333-3333-3333-333333333333"
       },
-      "AccessType": 1,
+      "AccessType": Denied,
       "AccessRights": 8
     }
   ]
@@ -169,26 +169,26 @@ HTTP 200 OK
   [
     {
       "Trustee": {
-        "Type": 3,
+        "Type": Role,
         "RoleId": "11111111-1111-1111-1111-111111111111"
       },
-      "AccessType": 0,
+      "AccessType": Allowed,
       "AccessRights": 1
     },
     {
       "Trustee": {
-        "Type": 3,
+        "Type": Role,
         "RoleId": "22222222-2222-2222-2222-222222222222"
       },
-      "AccessType": 0,
+      "AccessType": Allowed,
       "AccessRights": 15
     },
     {
       "Trustee": {
-        "Type": 3,
+        "Type": User,
         "RoleId": "33333333-3333-3333-3333-333333333333"
       },
-      "AccessType": 1,
+      "AccessType": Denied,
       "AccessRights": 8
     }
   ]
@@ -227,26 +227,26 @@ An [`AccessControlList`](xref:accessControl#access-control-lists)
   [
     {
       "Trustee": {
-        "Type": 3,
+        "Type": Role,
         "RoleId": "11111111-1111-1111-1111-111111111111"
       },
-      "AccessType": 0,
+      "AccessType": Allowed,
       "AccessRights": 1
     },
     {
       "Trustee": {
-        "Type": 3,
+        "Type": Role,
         "RoleId": "22222222-2222-2222-2222-222222222222"
       },
-      "AccessType": 0,
+      "AccessType": Allowed,
       "AccessRights": 15
     },
     {
       "Trustee": {
-        "Type": 3,
+        "Type": User,
         "RoleId": "33333333-3333-3333-3333-333333333333"
       },
-      "AccessType": 1,
+      "AccessType": Denied,
       "AccessRights": 8
     }
   ]
@@ -303,8 +303,7 @@ HTTP 200 OK
   "Read",
   "Write",
   "Delete",
-  "ManageAccessControl",
-  "All"
+  "ManageAccessControl"
 ]
 ```
 
@@ -346,7 +345,7 @@ The response includes a status code and a body.
 HTTP 200 OK
 Content-Type: application/json
 {
-    "Type": 1,
+    "Type": User,
     "TenantId": "55555555-5555-5555-5555-555555555555",
     "ObjectId": "44444444-4444-4444-4444-444444444444"
 }
@@ -380,7 +379,7 @@ A [`Trustee`](xref:accessControl#owner)
 #### Example request body
 ```json
 {
-    "Type": 1,
+    "Type": User,
     "TenantId": "55555555-5555-5555-5555-555555555555",
     "ObjectId": "44444444-4444-4444-4444-444444444444"
 }

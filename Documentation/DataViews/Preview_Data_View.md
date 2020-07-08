@@ -27,4 +27,4 @@ Below data view API routes are available to be used as preview routes:
 ### Who can access the data view preview routes?
 
 * The access rights required for the preview routes are identical to those of the non-preview data view create route.
-* Users or clients with "Write" access rights on the Data views collection access control list can access the preview routes.
+* Users or clients with "Write" access rights on the data views collection access control list can access the preview routes.

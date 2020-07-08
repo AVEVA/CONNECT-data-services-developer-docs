@@ -2,47 +2,37 @@
 uid: MetadataRulesOverview
 ---
 
-# Metadata Rules (Preview)
+# Metadata Rules
+Metadata, or data about data, is descriptive information assigned to data objects. Metadata enriches sequential data in OCS and it logically segregates and contextualizes data. It supports data analysis, visualization, organization, and search capabilities.
 
-Metadata, or “data about data,” is information you assign to data objects.  The value of metadata itself lies in its capacity to enrich sequential data, and to facilitate logical segregation and contextualization of data, thus supporting analytical, visualization, organizational and searchability efforts. 
+A metadata rule is a user-defined stream name pattern in which each part is assigned a metadata type. Metadata rules capture any streams currently stored in an OCS namespace, as well as matching streams that are subsequently added to the namespace.
+
+## The Metadata Rules feature
+The Metadata Rules feature in the OCS Portal simplifies the process of assigning metadata to streams. The user interface guides users through the process of designating  metadata types for a stream name pattern.
+
+## Metadata Rules example
+Users base metadata rules on an existing stream name in the OCS Portal. Stream name parts are “delimited,” or separated, by non-alphanumeric characters placed within the name, typically to separate meaningful sections of the name.
+An example metadata rule stream name pattern follows:
+```
+UFL.DS1:InternalPumpLeakage
+```
+In the above example, a metadata rule is based on the stream name UFL.DS1:InternalPumpLeakage. A period delimits “UFL” and “DS1,” the first two parts of the stream name. A colon delimits “DS1” and “InternalPumpLeakage,” the second and third parts of the stream name.  The three parts of the stream name have the following meanings:
+
+- UFL = facility location
+- DS1 = a specific device
+- InternalPumpLeakage = the data provided by the stream
+
+Each part of the example stream name is assigned a query condition:
+
+- UFL, the facility location, is assigned string literal, which captures only stream names exactly matching “UFL” in the first part of the stream name.
+- DS1, the device identifier, is assigned wildcard, which captures streams with any value in the second part of the stream name.
+- InternalPumpLeakage, the data provided by the example stream, is assigned metadata, expressed as a key-value pair.
+
+This metadata rule identifies all stream names beginning with “UFL,” with any value for the device identifier, and creates a key-value pair for InternalPumpLeakage. This rule provides a way to quickly search for every stream containing Internal Pump Leakage data for every device in the UFL facility location.
+
+The defined metadata is assigned to every stream that matches the stream name pattern.  When users edit a metadata rule, the modified rule may capture a different set of streams.  Users can choose whether to keep or delete metadata previously assigned by the original metadata rule.
 
 Metadata rules enable the bulk creation and maintenance of stream metadata, which can then be used across OSIsoft Cloud Services. Other services and applications, such as OCS data views, leverage stream metadata to simplify finding data and to provide context about stream data.
 
-## The Metadata rules feature
-The metadata rules feature in the OCS Portal simplifies the process of defining metadata and assigning it to streams.  The user interface guides you through the designation of the parts of the selected stream name as metadata, string literals, or wildcards, and prompts you to define key-value pairs for the parts you designate as metadata.
-
-After you save the rule, it assigns the defined metadata to every stream matching the pattern defined in your rule. Changes and deletions of existing metadata rules may cascade through to all affected streams.  A change in the metadata rule definition can result in the rule capturing a different set of streams. When deleting a rule, you have the option of keeping or deleting assigned metadata from all streams captured by the rule.
-
-## Metadata Rules Documentation
-OCS Metadata rules enable you to define and create metadata, which OCS assigns to objects that meet the criteria you specify. Metadata rules help users define patterns in their stream names, using delimited parts of the selected stream name, to quickly extract valuable information as more streams are added. 
-
-You begin by selecting an existing stream name in the OCS Portal, and observing the delimited parts of the stream name.  Name parts can be “delimited,” or separated, by any non-alphanumeric character placed within the name, typically to separate meaningful sections of the name.  
-
-An example stream name follows:
-
-```
-chi.x22.flow
-```
-
-In the above example, “chi” is the location code for a customer facility, “x22” is the device ID for a specific device, and “flow” is the type of data provided by this stream.
-
-You can create a new metadata rule based on stream name chi.x22.flow, where the delimited parts of the stream name have the following meanings:
-
-- chi = facility location
-- x22 = a specific device
-- flow = the data provided by the stream
-
-For each delimited part of a stream name, you assign one of the following part types:
-
-- metadata = key-value pair
-- string literal = accepts only exact match
-- wildcard = accepts any value
-
-If the rule is intended to capture streams from the “chi” facility location only, that part of the stream name should be designated as a string literal.  This is not a variable, and only stream names displaying this literal location code should be captured.
-
-If “x22” is the ID for a specific device, and you want to capture “flow” streams for all devices in the “chi” location, then the “x22” part of the stream name should be designated as metadata, with a key defined as Device ID.  This will allow the rule to capture streams with any value in that part of the stream name, and assign Device ID as its key.
-
-**Note:**	If the rule were intended to capture any type of streams for all devices in the “chi” location, then the “flow” part of the stream name should be designated as a wildcard.  To capture only streams of type "flow," the "flow" stream type should be designated as a string literal.
-
-## Key-Value pairs
-For each part of the stream name that you designate as metadata, you define a key, under which any value that occupies that specific part of the stream name pattern will be categorized. This creates a key-value pair for each value captured by that portion of the rule.  The key-value structure will facilitate analytical processing of the data returned by the rule you create. 
+## Key-value pairs
+Stream name parts designated as metadata are defined as key-value pairs. Each value occupying a part designated as metadata is categorized under a key defined for it. This typically takes the form of values recorded at different timestamp intervals for a particular object or device, or key. The fundamental key-value data structure facilitates analytical processing of stream data returned by a metadata rule. 

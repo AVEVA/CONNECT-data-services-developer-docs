@@ -2,7 +2,7 @@
 uid: DataViewsExampleScenario
 ---
 
-# Example Scenarios
+# Stream examples
 
 This section uses example streams to illustrate data view concepts. The streams are of three types:
 - docs-pi-inverter | _simulates solar power inverter data collected via PI to OCS_

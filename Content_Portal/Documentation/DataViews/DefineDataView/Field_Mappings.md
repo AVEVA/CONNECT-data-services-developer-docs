@@ -2,7 +2,7 @@
 uid: DataViewsFieldMappings
 ---
 
-# Field Mappings
+# View field mappings
 
 A `FieldMapping` contains information on the source on every field of data in the data view. For each field in the data view, there is a corresponding `FieldMapping`. Inspecting the field mapping resource after defining the data view is a good way to confirm that the output data view does contain the data-of-interest prior to data generation.
 
@@ -20,7 +20,7 @@ For standard shape data views, the order of the field mappings reflects the orde
 Narrow shape data views have a fixed field mapping shape. There are only two data field mappings, the Field field mapping, which contains the field identifiers, and the Value field mapping, which contains the field values.
 
 
-## Interpreting Field Mapping
+## Interpreting field mapping
 The number and order of field mappings is identical to the number and order of the resulting data view fields. 
 
 ### Id and label

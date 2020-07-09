@@ -2,7 +2,7 @@
 uid: ResolvedDataViewPreviewAPI
 ---
 
-# Resolved Data View Preview API
+# Resolved data view preview API
 
 This portion of the overall [data views API](xref:DataViewsAPIOverview) specifies the resources that resolve per-user for an input data view. 
 The preview APIs require a data view to be passed in the request body for each request, which provides the user the flexibility to change the data view on the fly without saving/updating it.

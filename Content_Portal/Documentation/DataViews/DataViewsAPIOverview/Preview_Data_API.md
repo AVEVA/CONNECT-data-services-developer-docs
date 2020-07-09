@@ -3,10 +3,10 @@ uid: DataViewsPreviewDataAPI
 ---
 
 # Preview Data API
-The Preview Data API allows users to [retrieve data](xref:DataViewsGettingData) for a specified data view.  This API is one portion of the [data views API](xref:DataViewsAPIOverview).
+The Preview Data API allows users to [retrieve data](xref:DataViewsQuickStartGetData) for a specified data view.  This API is one portion of the [data views API](xref:DataViewsAPIOverview).
 
 ## `Get Data View Data`
-Get data for the provided data view and index parameters with paging. See [documentation on paging](xref:DataViewsGettingData#paging) for further information.
+Get data for the provided data view and index parameters with paging. See [documentation on paging](xref:DataViewsQuickStartGetData#paging) for further information.
 
 ### Request
 ```text
@@ -36,10 +36,10 @@ The number of rows per group. It overrides the endIndex.
 The requested number of groups.
 
 `[optional] string form`  
-The requested data [output format](xref:DataViewsGettingData#format). Output formats: `default`, `table`, `tableh`, `csv`, `csvh`.
+The requested data [output format](xref:DataViewsQuickStartGetData#format). Output formats: `default`, `table`, `tableh`, `csv`, `csvh`.
 
 `[optional] string continuationToken`  
-Used only when [paging](xref:DataViewsGettingData#paging). Not specified when requesting the first page of data.
+Used only when [paging](xref:DataViewsQuickStartGetData#paging). Not specified when requesting the first page of data.
 
 `[optional] int count`  
 The requested page size. The default value is 1000. The maximum is 250,000.

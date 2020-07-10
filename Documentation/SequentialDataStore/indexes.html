@@ -175,18 +175,37 @@ secondary indexes. Secondary index values need not be unique.</p>
 </tbody>
 </table>
 <h2 id="compound-indexes">Compound indexes</h2>
-<p>Often, a single property (such as a <code>DateTime</code>), is adequate for defining an index; however, for more complex 
-scenarios, SDS allows you to define multiple properties. Indexes defined by multiple properties are known as <em>compound indexes</em>.</p>
-<p>When defining a compound index in .NET framework, you should apply the <code>OSIsoft.Sds.SdsMemberAttribute</code> on each Property of the SdsType
-that is combined to define the index. Set the Property <code>IsKey</code> to <code>true</code> and give the <code>Order</code> field a 
-zero-based index value. The <code>Order</code> field defines the precedence of the Property when sorting. A Property with 
-an order of 0 has highest precedence.</p>
-<p>When defining compound indexes outside of .NET framework, specify the <code>IsKey</code> and <code>Order</code> fields on the <code>SdsTypeProperty</code> of
-Properties.</p>
-<p>Only the primary index (or key) supports compound indexes.</p>
-<p>You can specify a maximum of three Properties to define a compound index.</p>
-<p>The SDS REST API that uses tuples were created to assist you when using compound indexes.</p>
-<h2 id="work-with-indexes">Work with indexes</h2>
+<p>A single property (such as a <code>DateTime</code>) is adequate for defining an index most of the time. 
+But for more complex scenarios, SDS allows you to define multiple properties. 
+Indexes defined by multiple properties are known as <em>compound indexes</em>.
+Only the primary index (or key) supports compound indexes.</p>
+<p>When defining a compound index within .NET framework, you should apply the <code>OSIsoft.Sds.SdsMemberAttribute</code> 
+on each property field of the SdsType that is combined to define the index.
+Set the Property <code>IsKey</code> to <code>true</code> and give the <code>Order</code> field a zero-based index value.
+The <code>Order</code> field defines the precedence of the Property when sorting.
+A Property with an order of 0 has highest precedence.</p>
+<p>When defining compound indexes outside of .NET framework, specify the <code>IsKey</code> and <code>Order</code> fields
+on the <code>SdsTypeProperty</code> object.</p>
+<p>You can specify a maximum of three properties to define a compound index.
+In read and write operations, specify compound indexes in the URI by ordering each property that composes the index
+ separated by the pipe character, ‘|’. 
+To help those using compound indexes, .NET client libraries methods also allow the use of tuples for indexes.</p>
+<p><strong>Notes:</strong> The examples below are for compound indexes on SdsTypes and not of secondary indexes on SdsStreams.</p>
+<p><strong>REST API</strong></p>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">/<wbr>/<wbr> Read data located between two compound indexes:
+GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data?startIndex={firstIndex|secondIndex|thirdIndex}&amp;endIndex={firstIndex|secondIndex|thirdIndex}
+GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data?startIndex={firstIndex|secondIndex}&amp;endIndex={firstIndex|secondIndex}
+
+/<wbr>/<wbr> Delete data with a compound index:
+DELETE api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data?index={firstIndex|secondIndex}
+DELETE api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data?startIndex={firstIndex|secondIndex|thirdIndex}&amp;endIndex={firstIndex|secondIndex|thirdIndex}
+</code></pre><p><strong>.NET examples</strong></p>
+<pre><code class="lang-csharp">// Read data located between two compound indexes:
+IEnumerable&lt;DerivedCompoundIndex&gt; compoundValues = await client.GetWindowValuesAsync&lt;DerivedCompoundIndex&gt;(compoundStream.Id, 1/20/2017 01:00|1/20/2017 00:00, 1/20/2017 02:00|1/20/2017 14:00);
+
+// Remove data with a compound index:
+Task RemoveValueAsync(compoundStream.Id, 1/20/2017 01:00|1/20/2017 00:00);
+</code></pre><h2 id="work-with-indexes">Work with indexes</h2>
 <h3 id="indexes-in-net-framework">Indexes in .NET framework</h3>
 <h4 id="simple-indexes">Simple indexes</h4>
 <p>When working in .NET, use the <code>SdsTypeBuilder</code> together with either the <code>OSIsoft.Sds.SdsMemberAttribute</code> (preferred) or the

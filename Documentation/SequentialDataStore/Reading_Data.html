@@ -119,9 +119,9 @@ and specified start and end indexes.</li>
 <p>Verbose JSON responses include all values, including defaults, in the returned JSON payload. To specify verbose JSON return, add the header <code>Accept-Verbosity</code> with a value of <code>verbose</code> to the request.  </p>
 <p>To specify SDS format, set the <code>Accept</code> header in the request to <code style="word-break:normal; overflow-wrap:break-word;">application/<wbr>sds</code>.</p>
 <h3 id="indexes-and-reading-data">Indexes and reading data</h3>
-<p>Most read operations take at least one index as a parameter. Indexes may be specified as strings, or, 
-when using the SDS Client libraries, the index may be passed as-is to read methods that take the index 
-type as a generic argument. Additional details about working with indexes can be found on the <a class="xref" href="indexes.html">Indexes</a> page.</p>
+<p>Most read operations take at least one index as a parameter. Indexes may be specified as strings, or 
+using the SDS Client libraries, the index may be passed as-is to read methods that take the index 
+type as a generic argument. For more information, see <a class="xref" href="indexes.html">Indexes</a>. For information on compound indexes, see <a class="xref" href="indexes.html#compound-indexes">Compound indexes</a>.</p>
 <h3 id="read-characteristics">Read Characteristics</h3>
 <p>When data is requested at an index for which no stored event exists, the read characterisitics determine 
 whether the result is an error, no event, interpolated event, or extrapolated event. The combination of 

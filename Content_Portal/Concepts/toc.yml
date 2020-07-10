@@ -2,5 +2,3 @@
   topicHref: Account_Management_Concepts.md
 - name: Data Storage
   topicHref: Data_Storage_Concepts.md
-- name: Data Ingress
-  topicHref: Data_Ingress_Concepts.md

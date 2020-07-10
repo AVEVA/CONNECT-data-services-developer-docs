@@ -25,7 +25,7 @@ SdsStream objects are scoped within a namespace.
 
 
 #### SDS Stream Views
-Different personas in the customer's organization may be interested in different data contained in the stream. A process engineer and maintenance person rely on different data in the stream to do their job. SdsType and SdsStream objects are immutable, that is, once created, you cannot alter the data captured by them. However, stream views (SdsStreamView) provide greater flexibility and allow different personas to view only the subset of the stream they are interested in. Stream views are a custom view or logical overlay over your stream data. They allow you to scope down the data that is viewed, to change non-intuitive labels to more user-friendly names, and create arbitrary mappings of data within a stream.
+Different personas in the customer's organization may be interested in different data contained in the stream. A process engineer and maintenance person rely on different data in the stream to do their job. SdsType objects are immutable, that is, once created, you cannot alter the data captured by them. However, stream views (SdsStreamView) provide greater flexibility and allow different personas to view only the subset of the stream they are interested in. Stream views are a custom view or logical overlay over your stream data. They allow you to scope down the data that is viewed, to change non-intuitive labels to more user-friendly names, and create arbitrary mappings of data within a stream.
 
 
 

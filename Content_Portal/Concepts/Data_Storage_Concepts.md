@@ -16,9 +16,9 @@ SDS streams (SdsStream) are groupings of sequential values (or events) that are 
 SDS streams are defined to organize incoming data from a device into Osisoft Cloud Services (OCS). Metadata and tags can be used to organize the SDS stream data. Metadata is a key-value pair that allows you to add context to your data. Tags are string values that represent SdsStream attributes, a tag that identifies, for example, the region.
 
 
-[//]: #
+<!---
 (QUESTION: Does this mean that by assigning properties and other things, you are organizing the data? 
-JL: Yes, just like with PI to OCS, you are essentially "shaping" the PI data to the OCS SDS format.)
+JL: Yes, just like with PI to OCS, you are essentially "shaping" the PI data to the OCS SDS format.) --->
 
 
 SdsStream objects are scoped within a namespace. 

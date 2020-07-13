@@ -4,19 +4,15 @@
 
 #### Tenant
 
-A tenant is how OSIsoft Cloud Services (OCS) refers to a customer, client, or organization. Before a customer can use OCS, a tenant must be provisioned for them. A customer has a minimum of one tenant and can have more than one tenant. Each tenant has at least one identity provider associated with it. 
+A tenant is how OSIsoft Cloud Services (OCS) refers to a customer, client, or organization. Before a customer can use OCS, a tenant must be provisioned for them. A customer will have at least one tenant and could have more than one tenant. Each tenant has at least one identity provider associated with it. Tenants also span regions within OCS. For example, OCS currently has services hosted in two regions, West US, and West Europe. If the tenant is authorized to use multiple regions, they can create resources (for example, namespaces) in each region.
 
 #### Namespace
 
-Namespaces are logical organizations of data. A namespace is the target destination for data sent to OCS. Namespaces are used to separate and contain data, configure regions, and creating environments for development and testing.
+A namespace is a logical unit of organization for data within a tenant. Each tenant may contain more than one namespace. Before any data can be put into OCS for a given tenant, a namespace must be created within the scope of that tenant. When a namespace is created, the region where that namespace will reside (for example, West US) needs to be specified. Once the namespace is created and the necessary resources allocated to support it, any data put into the namespace will reside in the selected region.
 
-When a namespace is created, a set of OCS data services (for example, SDS and Asset service) and the storage space allocated to support those services is deployed to the namespace. Each namespace is distinct and separate from other namespaces and, therefore, they isolate the resources contained within it. The resources are scoped to the namespace. Therefore, you can, for example, create an SdsType or an SdsStream object with the same name in two different namespaces.
+When a namespace is created, a set of OSIsoft Cloud Services (OCS) data processing resources (for example, SDS and Asset service), along with the associated storage resources, are allocated to support that namespace. Each namespace is distinct and separate from other namespaces and, therefore, they isolate the resources contained within it. The resources are scoped to the namespace. Therefore, you can create an SdsType or an SdsStream object with the same name in two different namespaces.
 
-Namespaces are provisioned to a particular region and are scoped to that region. 
-
-Data is stored in a namespace. Data cannot be directly copied or moved between namespaces. Nor can it be copied or moved from one region to another. To copy or move data, the data must be copied or exported out of OCS and then imported to the new namespace. 
-
-A tenant is divided into one or more namespaces.
+Any data stored within a namespace is tied to that namespace, along with the region where the namespace was allocated. OCS does not currently provide a mechanism to directly transfer data from one namespace (or region) to any other namespace (or region). To migrate data between namespaces, and thus between namespaces in different regions, the data must be exported from the source namespace in OCS, then imported into the destination namespace.
 
 #### User
 
@@ -36,7 +32,7 @@ Clients are assigned roles that define their access to OCS objects. See [Roles](
 
 #### <a name="roles"></a> Roles
 
-Roles, in combination with Access Control Lists (ACL), determine the level of access to OCS objects. The Account Administrator creates roles for the users and clients that will access OCS. Additionally, the administrator creates an ACL for each OCS object (namespaces, streams, and so on) that defines access permissions for each type of role. Users and clients are granted access permissions to OCS objects based on their assigned roles and the corresponding ACLs. 
+Roles, in combination with Access Control Lists (ACL), determine the level of access to OCS objects. The Account Administrator creates roles for the users and clients that will access OCS and assigns the appropriate roles to them. Additionally, the administrator creates an ACL for each OCS object (namespaces, streams, and so on) that defines access permissions for each type of role. Users and clients are granted access permissions to OCS objects based on their assigned roles and the corresponding ACLs. 
 
 OCS provides two built-in roles:
 

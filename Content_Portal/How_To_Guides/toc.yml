@@ -1,8 +1,5 @@
 - name: Working with Accounts
   href: 
-- name: Controlling Access
-  href: Controlling_Access/toc.yml
-  topicHref: Controlling_Access/Controlling_Access_Overview.md
 - name: Managing Data
   href:
 - name: Moving Data into the Cloud

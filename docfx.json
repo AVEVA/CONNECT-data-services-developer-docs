@@ -52,7 +52,7 @@
     "fileMetadataFiles": [],
     "template": [
       "default",
-      "_exported_templates/default/styles"
+      "_exported_templates/default"
     ],
     "postProcessors": ["OcsVariableProcessor"],
     "noLangKeyword": false,

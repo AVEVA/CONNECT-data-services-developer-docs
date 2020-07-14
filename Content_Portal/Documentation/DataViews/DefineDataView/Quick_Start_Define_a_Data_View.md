@@ -18,7 +18,9 @@ One or more queries determine the set of data items (such as SDS streams) that t
 
 ### Including data fields
 
-Information from, or about, those data items must be included explicitly in the data view as Fields within [data field sets](xref:DataViewsFieldSets) or [groups](xref:DataViewsGrouping). By default, a data view includes no fields, except the default [`.IndexField`](#index_field). The fields that are available for use are exposed as a "resolved" resource, [Available Field Sets](xref:DataViewsAvailableFieldSets). It is recommended to use or adapt those fields instead of defining new fields. Individual fields are organized into [data field sets](xref:DataViewsFieldSets) and [groups](xref:DataViewsGrouping).
+Information from, or about, those data items must be included explicitly in the data view as Fields within [data field sets](xref:DataViewsFieldSets) or [groups](xref:DataViewsGrouping). By default, a data view includes no fields, except the default `.IndexField`. See the Including the index field section in this topic for details. 
+
+The fields that are available for use are exposed as a "resolved" resource, [Available Field Sets](xref:DataViewsAvailableFieldSets). It is recommended to use or adapt those fields instead of defining new fields. Individual fields are organized into [data field sets](xref:DataViewsFieldSets) and [groups](xref:DataViewsGrouping).
 
 ### Organizing the data items
 
@@ -1046,7 +1048,8 @@ A set of fields included in the data view, sharing a common role or source (`.So
 Individual piece of information, such as a property of an SDS stream or metadata of that stream.
 |Property | Type | Optionality  | Default  | Details |
 |--|--|--|--|--|
-| Source | FieldSource | Optional | NotApplicable | Identifies the [`.Source`](xref:DataView#fieldsource-enumeration) of the field's values (not applicable for an index field). All sources except `FieldSource.NotApplicable` can be used as data fields. Fields from sources `FieldSource.Id`, `FieldSource.Name`, `FieldSource.Metadata` and `FieldSource.Tags` can be used as grouping fields and identifying fields. Some sources are used in conjunction with the Keys property (see below).
+| Source | FieldSource | Optional | NotApplicable | Identifies the `.Source` of the field's values (not applicable for an index field). See the FieldSource enumeration section in this topic for details.
+All sources except `FieldSource.NotApplicable` can be used as data fields. Fields from sources `FieldSource.Id`, `FieldSource.Name`, `FieldSource.Metadata` and `FieldSource.Tags` can be used as grouping fields and identifying fields. Some sources are used in conjunction with the Keys property (see below).
 | Keys | String[] | Optional | [ ] | Used for sources `FieldSource.PropertyId`, `FieldSource.PropertyName`, `FieldSource.Metadata` and `FieldSource.Tags`, e.g. to map to specific stream properties by id. If more than one key is specified, they are matched as exclusive-or. A key has to be a non-null value.
 | Label | string | Optional | null | Friendly name for the field. Certain tokens have special meaning: one of these, {IdentifyingValue}, is included in the suggested labels of AvailableFieldSets. Tokens that do not resolve are "" (empty string). The label is required in a field for all usages except in an identifying field. Label is trimmed of whitespace when used to identify field mappings. 
 

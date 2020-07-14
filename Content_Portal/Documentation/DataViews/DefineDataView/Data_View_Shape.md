@@ -10,7 +10,7 @@ With a standard shape, each row in the resolved data view includes all the data 
 
 The shape concepts presented in this section apply to building all data view output formats; although the terminology used and examples shown, pertain to tabular output with [headers](xref:DataViewsQuickStartGetData#format) (form = csvh).
 ## Specify the shape
-Set the `DataView` [`Shape`](xref:DataViewsQuickStartDefine#dataview-properties) property to a value of the [`DataViewShape` enumeration](xref:DataViewsQuickStartDefine#dataviewshape-enumeration), either `DataViewShape.Standard` (default) or `DataViewShape.Narrow`.
+Set the `DataView` Shape property to a value of the [`DataViewShape` enumeration](xref:DataViewsQuickStartDefine#dataviewshape-enumeration), either `DataViewShape.Standard` (default) or `DataViewShape.Narrow`. See the Data view properties table in the [Define a data view](xref:DataViewsQuickStartDefine) topic for details.
 
 ## Standard shape
 

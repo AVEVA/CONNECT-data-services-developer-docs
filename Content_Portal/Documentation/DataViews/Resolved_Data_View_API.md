@@ -2,7 +2,7 @@
 uid: ResolvedDataViewAPI
 ---
 
-# Resolved data view API
+# Resolved Data View API
 
 This portion of the overall [data views API](xref:DataViewsAPIOverview) is the resources that resolve per-user for each data view. For a description of what this information is, and how to use it, see the [documentation](xref:ResolvedDataView) for resolved data views.
 
@@ -13,7 +13,7 @@ Gets the paged collection of data items that are the results of an individual qu
 ### Request
 
 ```text
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/Resolved/DataItems/{queryId}?cache={cache}&skip={skip}&count={count}
+GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/Resolved/DataItems/{queryId}?cache={cache}&skip={skip}&count={count}
 ```
 ### Request path parameters
 
@@ -52,12 +52,12 @@ The response includes a status code and, in most cases, a body.
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
 
 #### Response headers
-Successful (200 OK) responses include one or more header values related to paging.
+Successful (200 OK) responses include:
 
 | Header | Description |
 |--|--|
-| FirstPage | Hyperlink to the first page of results |
-| NextPage | Hyperlink to the next page of results, if the results span into an additional page. Absence of this header indicates that there are no additional pages to be retrieved. |
+| Total-Count | The total count of data items visible to the current user |
+| Link | Hyperlinks to the first page and next page of results as applicable |
 
 
 #### Example response body
@@ -69,10 +69,10 @@ Content-Type: application/json
   "TimeOfResolution": "2019-12-13T01:23:45Z",
   "Items": [
     {
-      "ResourceType": "Stream",
       "Id": "WS_BILT",
       "Name": "WS_BILT",
       "TypeId": "quickstart-omf-weather-gen1",
+      "ResourceType": "Stream",
       "Tags": [
         "Weather",
         "High Resolution",
@@ -106,13 +106,18 @@ Content-Type: application/json
 }
 ```
 
+### .NET client libraries method
+```csharp
+   Task<ResolvedItems<DataItem>> GetDataItemsAsync(string id, string queryId, int skip = 0, int count = 100, CacheBehavior cache = CacheBehavior.Preserve);
+```
+
 ## `Get Ineligible Data Items by Query`
 Gets the paged collection of data items that are the results of an individual query, but which are not eligible for use in the current data view. A common reason for ineligibility is that the item's index property is of a different type than the data view expects. A data view has a collection of zero or more queries. Each query has an identifier. Those identifiers are used here as part of the request path.
 
 ### Request
 
 ```text
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/Resolved/IneligibleDataItems/{queryId}?cache={cache}&skip={skip}&count={count}
+GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/Resolved/IneligibleDataItems/{queryId}?cache={cache}&skip={skip}&count={count}
 ```
 
 ### Request path parameters
@@ -152,12 +157,12 @@ The response includes a status code and, in most cases, a body.
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
 
 #### Response headers
-Successful (200 OK) responses include one or more header values related to paging.
+Successful (200 OK) responses include:
 
 | Header | Description |
 |--|--|
-| FirstPage | Hyperlink to the first page of results |
-| NextPage | Hyperlink to the next page of results, if the results span into an additional page. Absence of this header indicates that there are no additional pages to be retrieved. |
+| Total-Count | The total count of data items visible to the current user |
+| Link | Hyperlinks to the first page and next page of results as applicable |
 
 #### Example response body
 
@@ -168,10 +173,10 @@ Content-Type: application/json
   "TimeOfResolution": "2019-12-13T01:23:45Z",
   "Items": [
     {
-      "ResourceType": "Stream",
       "Id": "SOME_INELIGIBLE_STREAM",
       "Name": "Some Ineligible Stream",
       "TypeId": "type-with-different-index",
+      "ResourceType": "Stream",
       "Tags": [],
        "Metadata": { },
        "DataItemFields": [
@@ -193,13 +198,18 @@ Content-Type: application/json
 }
 ```
 
+### .NET client libraries method
+```csharp
+   Task<ResolvedItems<DataItem>> GetIneligibleDataItemsAsync(string id, string queryId, int skip = 0, int count = 100, CacheBehavior cache = CacheBehavior.Preserve);
+```
+
 ## `Get Groups`
 Gets the collection of `Group`s that resolved for a data view.
 
 ### Request
 
 ```text
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/Resolved/Groups?cache={cache}&skip={skip}&count={count}
+GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/Resolved/Groups?cache={cache}&skip={skip}&count={count}
 ```
 
 ### Request path parameters
@@ -219,10 +229,10 @@ The data view identifier
 "Preserve" to use cached information, if available. This is the default value.
 
 `[optional] int skip`  
-An optional parameter representing the zero-based offset of the first data item to retrieve. If not specified, a default value of 0 is used.
+An optional parameter representing the zero-based offset of the first group to retrieve. If not specified, a default value of 0 is used.
 
 `[optional] int count`  
-An optional parameter representing the maximum number of data items to retrieve. If not specified, a default value of 100 is used.
+An optional parameter representing the maximum number of groups to retrieve. If not specified, a default value of 100 is used.
 
 ### Response
 The response includes a status code and, in most cases, a body.
@@ -235,12 +245,12 @@ The response includes a status code and, in most cases, a body.
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
 
 #### Response headers
-Successful (200 OK) responses include one or more header values related to paging.
+Successful (200 OK) responses include:
 
 | Header | Description |
 |--|--|
-| FirstPage | Hyperlink to the first page of results |
-| NextPage | Hyperlink to the next page of results, if the results span into an additional page. Absence of this header indicates that there are no additional pages to be retrieved. |
+| Total-Count | The total count of groups |
+| Link | Hyperlinks to the first page and next page of results as applicable |
 
 #### Example response body
 
@@ -251,14 +261,14 @@ Content-Type: application/json
   "TimeOfResolution": "2019-12-13T01:23:45Z",
   "Items": [
     {
-      "Values": [ "Biltmore" ],
+      "GroupingValues": [ "Biltmore" ],
       "DataItems": {
         "Query1": [
           {
-            "ResourceType": "Stream",
             "Id": "WS_BILT",
             "Name": "WS_BILT",
             "TypeId": "quickstart-omf-weather-gen1",
+            "ResourceType": "Stream",
             "Tags": [
                 "Weather",
                 "High Resolution",
@@ -295,13 +305,18 @@ Content-Type: application/json
 }
 ```
 
+### .NET client libraries method
+```csharp
+   Task<ResolvedItems<Group>> GetGroupsAsync(string id, int skip = 0, int count = 100, CacheBehavior cache = CacheBehavior.Preserve);
+```
+
 ## `Get Available Field Sets`
 Gets the collection of field sets that are available for use in the data view, and which are not already included in the data view.
 
 ### Request
 
 ```text
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/Resolved/AvailableFieldSets?cache={cache}
+GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/Resolved/AvailableFieldSets?cache={cache}
 ```
 
 ### Request path parameters
@@ -338,13 +353,26 @@ HTTP 200 OK
     "TimeOfResolution": "2019-12-13T01:23:45Z",
     "Items": [
         {
-            "SourceType": "DataItem",
             "QueryId": "weather",
-            "Fields": [
+            "DataFields": [
                 {
                     "Source": "Id",
                     "Keys": [],
                     "Label": "{IdentifyingValue} Id"
+                },
+                {
+                    "Source": "PropertyId",
+                    "Keys": [
+                        "SolarRadiation"
+                    ],
+                    "Label": "{IdentifyingValue} {FirstKey}"
+                },
+                {
+                    "Source": "Metadata",
+                    "Keys": [
+                        "Site"
+                    ],
+                    "Label": "{IdentifyingValue} {FirstKey}"
                 },
                 {
                     "Source": "Tags",
@@ -356,32 +384,16 @@ HTTP 200 OK
                         "Gen2",
                     ],
                     "Label": "{IdentifyingValue} Tags"
-                },
-                {
-                    "Source": "Metadata",
-                    "Keys": [
-                        "Site"
-                    ],
-                    "Label": "{IdentifyingValue} {FirstKey}"
-                },
-                {
-                    "Source": "PropertyId",
-                    "Keys": [
-                        "Timestamp"
-                    ],
-                    "Label": "{IdentifyingValue} {FirstKey}"
-                },
-                {
-                    "Source": "PropertyId",
-                    "Keys": [
-                        "SolarRadiation"
-                    ],
-                    "Label": "{IdentifyingValue} {FirstKey}"
-                },
+                }
             ]
         }
     ]
 }
+```
+
+### .NET client libraries method
+```csharp
+   Task<ResolvedItems<FieldSet>> GetAvailableFieldSetsAsync(string id, CacheBehavior cache = CacheBehavior.Preserve);
 ```
 
 ## `Get Field Mappings`
@@ -390,7 +402,7 @@ Gets the collection of field mappings resolved for the data view. These show the
 ### Request
 
 ```text
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/Resolved/FieldMappings?cache={cache}
+GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/Resolved/FieldMappings?cache={cache}&skip={skip}&count={count}
 ```
 
 ### Request path parameters
@@ -410,6 +422,12 @@ The data view identifier
 "Refresh" to force the resource to re-resolve.  
 "Preserve" to use cached information, if available. This is the default value.
 
+`[optional] int skip`
+An optional parameter representing the zero-based offset of the first field mapping to retrieve. If not specified, a default value of 0 is used.
+
+`[optional] int count`
+An optional parameter representing the maximum number of field mappings to retrieve. If not specified, a default value of 100 is used.
+
 ### Response
 The response includes a status code and, in most cases, a body.
 
@@ -421,12 +439,12 @@ The response includes a status code and, in most cases, a body.
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
 
 #### Response headers
-Successful (200 OK) responses include one or more header values related to paging.
+Successful (200 OK) responses include:
 
 | Header | Description |
 |--|--|
-| FirstPage | Hyperlink to the first page of results |
-| NextPage | Hyperlink to the next page of results, if the results span into an additional page. Absence of this header indicates that there are no additional pages to be retrieved. |
+| Total-Count | The total count of field mappings |
+| Link | Hyperlinks to the first page and next page of results as applicable |
 
 #### Example response body
 
@@ -438,22 +456,16 @@ HTTP 200 OK
       {
         "Id": "Timestamp",
         "Label": "Timestamp",
-        "FieldSetIndex": 0,
-        "FieldIndex": 0,
+        "FieldKind": "IndexField",
+        "TypeCode": "DateTime",
         "DataMappings": [
           {
-            "TargetId": "",
-            "TargetFieldKey": "",
             "TypeCode": "DateTime"
           },
           {
-            "TargetId": "",
-            "TargetFieldKey": "",
             "TypeCode": "DateTime"
           },
           {
-            "TargetId": "",
-            "TargetFieldKey": "",
             "TypeCode": "DateTime"
           }
         ]
@@ -461,23 +473,29 @@ HTTP 200 OK
       {
         "Id": "Temperature",
         "Label": "Temperature",
-        "FieldSetIndex": 1,
-        "FieldIndex": 0,
+        "FieldKind": "DataField",
+        "TypeCode": "Double",
         "DataMappings": [
           {
             "TargetId": "WS_BILT",
             "TargetFieldKey": "Temperature",
-            "TypeCode": "Double"
+            "TypeCode": "Double",
+            "FieldSetIndex": 1,
+            "FieldIndex": 0
           },
           {
             "TargetId": "WS_ROSE",
             "TargetFieldKey": "Temperature",
-            "TypeCode": "Double"
+            "TypeCode": "Double",
+            "FieldSetIndex": 1,
+            "FieldIndex": 0
           },
           {
             "TargetId": "WS_WINT",
             "TargetFieldKey": "AmbientTemperature",
-            "TypeCode": "Double"
+            "TypeCode": "Double",
+            "FieldSetIndex": 1,
+            "FieldIndex": 0
           }
         ]
       },
@@ -485,6 +503,10 @@ HTTP 200 OK
 }
 ```
 
+### .NET client libraries method
+```csharp
+   Task<ResolvedItems<FieldMapping>> GetFieldMappingsAsync(string id, int skip = 0, int count = 100, CacheBehavior cache = CacheBehavior.Preserve);
+```
 
 ## `Get Statistics`
 Gets statistics about the size and shape on how the data view resolved. 
@@ -492,7 +514,7 @@ Gets statistics about the size and shape on how the data view resolved.
 ### Request
 
 ```text
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/Resolved/Statistics?cache={cache}
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/Resolved/Statistics?cache={cache}
 ```
 
 ### Request path parameters
@@ -531,6 +553,43 @@ HTTP 200 OK
     "TimeOfResolution": "2019-12-13T01:23:45Z",
     "DataItemCount": 24,
     "GroupCount": 2,
-    "FieldCount": 12
+    "FieldMappingCount": 10,
+    "DataFieldSets": [
+        {
+            "DataItemCount": 18,
+            "UnmappedDataItemCount": 3,
+            "DataFields": [
+                {
+                    "FieldMappingCount": 3,
+                    "DataMappingCount": 6,
+                    "EmptyDataMappingCount": 0,
+                    "UnmappedGroupCount": 0
+                },
+                {
+                    "FieldMappingCount": 3,
+                    "DataMappingCount": 6,
+                    "EmptyDataMappingCount": 2,
+                    "UnmappedGroupCount": 1
+                }
+            ]
+        },
+        {
+            "DataItemCount": 6,
+            "UnmappedDataItemCount": 0,
+            "DataFields": [
+                {
+                    "FieldMappingCount": 2,
+                    "DataMappingCount": 4,
+                    "EmptyDataMappingCount": 2,
+                    "UnmappedGroupCount": 1
+                }
+            ]
+        }
+    ]
 }
+```
+
+### .NET client libraries method
+```csharp
+   Task<ResolvedItem<Statistics>> GetStatisticsAsync(string id, CacheBehavior cache = CacheBehavior.Preserve);
 ```

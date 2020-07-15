@@ -2,11 +2,11 @@
 uid: DataViewsFieldMappings
 ---
 
-# View field mappings
+# Field Mappings
 
 A `FieldMapping` contains information on the source on every field of data in the data view. For each field in the data view, there is a corresponding `FieldMapping`. Inspecting the field mapping resource after defining the data view is a good way to confirm that the output data view does contain the data-of-interest prior to data generation.
 
-Within each field mapping, the list of `DataMapping`s shows the source of data for each group. There is one `DataMapping` per group, since the number of distinct data sources for each field equals the number of groups in the resolved data view. The order of the data mappings corresponds to the order of the groups. See the Get Groups section in the [Resolved data view API](xref:ResolvedDataViewAPI) topic. If a field does not resolve for a specific group, then the data mapping will be empty. Empty data mappings have a `TypeCode` of `Empty`. See below for more details in `TypeCode`.
+Within each field mapping, the list of `DataMapping`s shows the source of data for each group. There is one `DataMapping` per group, since the number of distinct data sources for each field equals the number of groups in the resolved data view. The order of the data mappings corresponds to the order of the groups as seen from [Get Groups](xref:ResolvedDataViewAPI#GetGroups). If a field does not resolve for a specific group, then the data mapping will be empty. Empty data mappings have a `TypeCode` of `Empty`. See below for more details in `TypeCode`.
 
 ## Ordering
 The first field mapping contains information for the index field. Next, field mappings are appended for each `GroupingField` in the data view. If there is more than one `GroupingField`, the order of the field mappings corresponds to the order of the `GroupingField`s in the data view.
@@ -20,7 +20,7 @@ For standard shape data views, the order of the field mappings reflects the orde
 Narrow shape data views have a fixed field mapping shape. There are only two data field mappings, the Field field mapping, which contains the field identifiers, and the Value field mapping, which contains the field values.
 
 
-## Interpreting field mapping
+## Interpreting Field Mapping
 The number and order of field mappings is identical to the number and order of the resulting data view fields. 
 
 ### Id and label

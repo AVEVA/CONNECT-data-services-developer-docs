@@ -2,15 +2,15 @@
 uid: DataViewsFieldSets
 ---
 
-# Define data field sets
+# Data Field Sets
 
-A data view is likely to include multiple fields of information. One field serves as the index (e.g. Timestamp), and others contain information from or about the data items in the data view. Data field sets are collections of fields originating from the same query that share a common role.
+A data view is likely to include multiple fields of information. One field serves as the index (e.g. Timestamp), and others contain information from or about the data items in the data view `DataFieldSet`s. Data field sets are collections of fields originating from the same query.
 
 ### Available field sets
-The typical workflow for adding data field sets, and the data fields in them, is to use or adapt the [available field sets](xref:DataViewsAvailableFieldSets) that resolve for the data view. This workflow is demonstrated in [Define a data view](xref:DataViewsQuickStartDefine).
+The typical workflow for adding data field sets, and the data fields in them, is to use or adapt the [available field sets](xref:DataViewsAvailableFieldSets) that resolve for the data view. This workflow is demonstrated in the [Quick Start - Define a Data View](xref:DataViewsQuickStartDefine).
 
 #### Example: Defining data field sets
-Let us take a subset of the power inverter streams in the [stream examples](xref:DataViewsExampleScenario), returned by the `Query` [value](xref:sdsSearching) `"TypeId:docs-pi-inverter AND Site:Winterthur"`. 
+Let us take a subset of the [example scenario](xref:DataViewsExampleScenario)'s power inverter streams, returned by the `Query` [value](xref:sdsSearching) `"TypeId:docs-pi-inverter AND Site:Winterthur"`. 
 
 | Site | Meter | Measurement | Stream Id | Tags |
 |--|--|--|--|--|
@@ -145,7 +145,7 @@ There are three special parameters available for use in field labels:
 If a special parameter fails to resolve, it becomes an empty string, `""`.
 
 ### Source
-A field's [`.Source`](xref:DataViewsQuickStartDefine#fieldsource-enumeration) indicates where the field's values will come from, if applicable. A field of source type `FieldSource.NotApplicable` cannot be used as a data field.
+A field's [`.Source`](xref:DataView#fieldsource-enumeration) indicates where the field's values will come from, if applicable. A field of source type `FieldSource.NotApplicable` cannot be used as a data field.
 
 ### Keys
 In certain cases, a field may need to address data _within_ its data source, such as a particular Metadata value of a data item. This applies to the sources `Metadata`, `PropertyId`, and `PropertyName`.

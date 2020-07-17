@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Data View Shape </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Data View Shape ">
+    <meta name="generator" content="docfx 2.43.3.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    <meta property="docfx:rel" content="../../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../../../index.html" width="46">
+                <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="DataViewShape">
+<h1 id="data-view-shape">Data View Shape</h1>
+
+<p>Data views may be set to resolve as a standard shape or a narrow shape. </p>
+<p>With a standard shape, each row in the resolved data view includes all the data fields for a single event or observation. With a narrow shape, each row in the resolved data view includes only one data field. This results in a narrow output schema where one column contains all the data field values, so the schema remains fixed regardless of changes to the included data fields. Narrow shape may be used when an invariant output schema is required.</p>
+<p>The shape concepts presented in this section apply to building all data view output formats; although the terminology used and examples shown, pertain to tabular output with <a class="xref" href="Getting_Data.html#format">headers</a> (form = csvh).</p>
+<h2 id="specify-the-shape">Specify the shape</h2>
+<p>Set the <a class="xref" href="Data_View.html#dataview-properties"><code>DataViewShape</code></a> property to a value of the <a class="xref" href="Data_View.html#dataviewshape-enumeration"><code>DataViewShape</code> enumeration</a>, either <code>DataViewShape.Standard</code> (default) or <code>DataViewShape.Narrow</code>.</p>
+<h2 id="standard-shape">Standard shape</h2>
+<p>The standard table column structure is built horizontally from left to right. The index field is first, followed by the grouping fields, if any exist.  Data field sets come next, in the order they are presented in the data view. Fields are presented in order of appearance within each data field set for each stream from the associated query.</p>
+<p>Vertically, the standard structure depends on the inclusion of grouping fields. If grouping fields are not defined, each resultant index appears only once, and all interpolated data is in that row. If grouping fields are defined, then the resultant indexes will repeat vertically for each group. The groups are presented in alphabetical order.</p>
+<h5 id="example-get-data-response-body-for-standard-shape-with-no-grouping-field">Example: Get data response body for standard shape with no grouping field</h5>
+<p>Note, column labels contain a numerical suffix to ensure that each label is unique. Use grouping fields or an identifying field to create unique column labels.</p>
+<pre><code class="lang-csv">Timestamp.0,Id.1,SolarRadiation.2,Temperature.3,Tags.4,Id.5,SolarRadiation.6,Temperature.7,Tags.8,Id.9,SolarRadiation.10,Temperature.11,Tags.12,Id.13,SolarRadiation.14,Temperature.15,Tags.16
+2018-11-13T18:19:00.0000000Z,WS_BILT,229,28.042327888795327,&quot;Gen1, High Resolution, Weather&quot;,WS_HRST,254,4.219790459247207,&quot;Gen1, Low Resolution, Weather&quot;,WS_ROSE,31,31.23228568408279,&quot;Gen1, Low Resolution, Weather&quot;,WS_WINT,184,,&quot;Gen2, High Resolution, Weather&quot;
+2018-11-13T18:20:00.0000000Z,WS_BILT,229,28.042327888795327,&quot;Gen1, High Resolution, Weather&quot;,WS_HRST,254,4.219790459247207,&quot;Gen1, Low Resolution, Weather&quot;,WS_ROSE,31,31.23228568408279,&quot;Gen1, Low Resolution, Weather&quot;,WS_WINT,184,,&quot;Gen2, High Resolution, Weather&quot;
+</code></pre><p><br></p>
+<h5 id="example-get-data-response-body-for-standard-shape-with-grouping-field-site">Example: Get data response body for standard shape with grouping field (Site)</h5>
+<p>The use of a grouping field will restructure the table vertically. See <a class="xref" href="Grouping.html">Grouping documentation</a> for details.</p>
+<pre><code class="lang-csv">Timestamp,Site,Id,SolarRadiation,Temperature,Tags
+2018-11-13T18:19:00.0000000Z,Biltmore,WS_BILT,229,28.042327888795327,&quot;Gen1, High Resolution, Weather&quot;
+2018-11-13T18:20:00.0000000Z,Biltmore,WS_BILT,229,28.042327888795327,&quot;Gen1, High Resolution, Weather&quot;
+2018-11-13T18:21:00.0000000Z,Biltmore,WS_BILT,229,28.042327888795327,&quot;Gen1, High Resolution, Weather&quot;
+2018-11-13T18:22:00.0000000Z,Biltmore,WS_BILT,229,28.042327888795327,&quot;Gen1, High Resolution, Weather&quot;
+2018-11-13T18:19:00.0000000Z,Hearst Castle,WS_HRST,254,4.219790459247207,&quot;Gen1, Low Resolution, Weather&quot;
+2018-11-13T18:20:00.0000000Z,Hearst Castle,WS_HRST,254,4.219790459247207,&quot;Gen1, Low Resolution, Weather&quot;
+2018-11-13T18:21:00.0000000Z,Hearst Castle,WS_HRST,254,4.219790459247207,&quot;Gen1, Low Resolution, Weather&quot;
+2018-11-13T18:22:00.0000000Z,Hearst Castle,WS_HRST,254,4.219790459247207,&quot;Gen1, Low Resolution, Weather&quot;
+2018-11-13T18:19:00.0000000Z,Rosecliff,WS_ROSE,31,31.23228568408279,&quot;Gen1, Low Resolution, Weather&quot;
+2018-11-13T18:20:00.0000000Z,Rosecliff,WS_ROSE,31,31.23228568408279,&quot;Gen1, Low Resolution, Weather&quot;
+2018-11-13T18:21:00.0000000Z,Rosecliff,WS_ROSE,31,31.23228568408279,&quot;Gen1, Low Resolution, Weather&quot;
+2018-11-13T18:22:00.0000000Z,Rosecliff,WS_ROSE,31,31.23228568408279,&quot;Gen1, Low Resolution, Weather&quot;
+2018-11-13T18:19:00.0000000Z,Winterthur,WS_WINT,184,,&quot;Gen2, High Resolution, Weather&quot;
+2018-11-13T18:20:00.0000000Z,Winterthur,WS_WINT,184,,&quot;Gen2, High Resolution, Weather&quot;
+2018-11-13T18:21:00.0000000Z,Winterthur,WS_WINT,184,,&quot;Gen2, High Resolution, Weather&quot;
+2018-11-13T18:22:00.0000000Z,Winterthur,WS_WINT,184,,&quot;Gen2, High Resolution, Weather&quot;
+</code></pre><p><br></p>
+<h2 id="narrow-shape">Narrow shape</h2>
+<p>The narrow table pivots the standard table. Each data field becomes a row comprised of the following columns: </p>
+<ul>
+<li>Index column </li>
+<li>Grouping value column(s)</li>
+<li>Field column, which holds the resolved column label of the field</li>
+<li>Value column, which holds the property value or stream related data such as name, id, tags or metadata</li>
+</ul>
+<p>The column label of the index and grouping value columns may vary depending on the resolved label. The Field and Value column labels are not modifiable.</p>
+<p>The data view is built veritically by grouping field, if present, then by field. </p>
+<p>Data views resolving into multiple streams that are defined with the same SDS type, should use a grouping field or an identifier in order to differentiate the data rows. </p>
+<h5 id="example-get-data-response-body-for-narrow-shape-with-grouping-field-site">Example: Get data response body for narrow shape with grouping field (Site)</h5>
+<pre><code class="lang-csv">Timestamp,Site,Field,Value
+2018-11-13T18:19:00.0000000Z,Biltmore,Id,WS_BILT
+2018-11-13T18:20:00.0000000Z,Biltmore,Id,WS_BILT
+2018-11-13T18:19:00.0000000Z,Biltmore,SolarRadiation,229
+2018-11-13T18:20:00.0000000Z,Biltmore,SolarRadiation,229
+2018-11-13T18:19:00.0000000Z,Biltmore,Temperature,28.042327888795327
+2018-11-13T18:20:00.0000000Z,Biltmore,Temperature,28.042327888795327
+2018-11-13T18:19:00.0000000Z,Biltmore,Tags,&quot;Gen1, High Resolution, Weather&quot;
+2018-11-13T18:20:00.0000000Z,Biltmore,Tags,&quot;Gen1, High Resolution, Weather&quot;
+2018-11-13T18:19:00.0000000Z,Hearst Castle,Id,WS_HRST
+2018-11-13T18:20:00.0000000Z,Hearst Castle,Id,WS_HRST
+2018-11-13T18:19:00.0000000Z,Hearst Castle,SolarRadiation,254
+2018-11-13T18:20:00.0000000Z,Hearst Castle,SolarRadiation,254
+2018-11-13T18:19:00.0000000Z,Hearst Castle,Temperature,4.219790459247207
+2018-11-13T18:20:00.0000000Z,Hearst Castle,Temperature,4.219790459247207
+2018-11-13T18:19:00.0000000Z,Hearst Castle,Tags,&quot;Gen1, Low Resolution, Weather&quot;
+2018-11-13T18:20:00.0000000Z,Hearst Castle,Tags,&quot;Gen1, Low Resolution, Weather&quot;
+</code></pre></article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/DataViews/Data_View_Shape.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+            <span id='copyright-text'>© 2020 - OSIsoft, LLC.<span>
+        </span></span></div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

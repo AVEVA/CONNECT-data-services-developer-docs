@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Metadata Rules </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Metadata Rules ">
+    <meta name="generator" content="docfx 2.43.3.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    <meta property="docfx:rel" content="../../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../../../index.html" width="46">
+                <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="MetadataRulesOverview">
+<h1 id="metadata-rules">Metadata Rules</h1>
+
+<p>Metadata, or data about data, is descriptive information assigned to data objects. Metadata enriches sequential data in OCS and it logically segregates and contextualizes data. It supports data analysis, visualization, organization, and search capabilities.</p>
+<p>A metadata rule is a user-defined stream name pattern in which each part is assigned a metadata type. Metadata rules capture any streams currently stored in an OCS namespace, as well as matching streams that are subsequently added to the namespace.</p>
+<h2 id="the-metadata-rules-feature">The Metadata Rules feature</h2>
+<p>The Metadata Rules feature in the OCS Portal simplifies the process of assigning metadata to streams. The user interface guides users through the process of designating  metadata types for a stream name pattern.</p>
+<h2 id="metadata-rules-example">Metadata Rules example</h2>
+<p>Users base metadata rules on an existing stream name in the OCS Portal. Stream name parts are “delimited,” or separated, by non-alphanumeric characters placed within the name, typically to separate meaningful sections of the name.
+An example metadata rule stream name pattern follows:</p>
+<pre><code>UFL.DS1:InternalPumpLeakage
+</code></pre><p>In the above example, a metadata rule is based on the stream name UFL.DS1:InternalPumpLeakage. A period delimits “UFL” and “DS1,” the first two parts of the stream name. A colon delimits “DS1” and “InternalPumpLeakage,” the second and third parts of the stream name.  The three parts of the stream name have the following meanings:</p>
+<ul>
+<li>UFL = facility location</li>
+<li>DS1 = a specific device</li>
+<li>InternalPumpLeakage = the data provided by the stream</li>
+</ul>
+<p>Each part of the example stream name is assigned a query condition:</p>
+<ul>
+<li>UFL, the facility location, is assigned string literal, which captures only stream names exactly matching “UFL” in the first part of the stream name.</li>
+<li>DS1, the device identifier, is assigned wildcard, which captures streams with any value in the second part of the stream name.</li>
+<li>InternalPumpLeakage, the data provided by the example stream, is assigned metadata, expressed as a key-value pair.</li>
+</ul>
+<p>This metadata rule identifies all stream names beginning with “UFL,” with any value for the device identifier, and creates a key-value pair for InternalPumpLeakage. This rule provides a way to quickly search for every stream containing Internal Pump Leakage data for every device in the UFL facility location.</p>
+<p>The defined metadata is assigned to every stream that matches the stream name pattern.  When users edit a metadata rule, the modified rule may capture a different set of streams.  Users can choose whether to keep or delete metadata previously assigned by the original metadata rule.</p>
+<p>Metadata rules enable the bulk creation and maintenance of stream metadata, which can then be used across OSIsoft Cloud Services. Other services and applications, such as OCS data views, leverage stream metadata to simplify finding data and to provide context about stream data.</p>
+<h2 id="key-value-pairs">Key-value pairs</h2>
+<p>Stream name parts designated as metadata are defined as key-value pairs. Each value occupying a part designated as metadata is categorized under a key defined for it. This typically takes the form of values recorded at different timestamp intervals for a particular object or device, or key. The fundamental key-value data structure facilitates analytical processing of stream data returned by a metadata rule. </p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/Metadata/Metadata_Rules_Overview.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+            <span id='copyright-text'>© 2020 - OSIsoft, LLC.<span>
+        </span></span></div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

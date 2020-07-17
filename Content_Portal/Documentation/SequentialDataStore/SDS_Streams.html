@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Streams </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Streams ">
+    <meta name="generator" content="docfx 2.43.3.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    <meta property="docfx:rel" content="../../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../../../index.html" width="46">
+                <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="sdsStreams">
+<h1 id="streams">Streams</h1>
+
+<p>SdsStreams are collections of sequentially occurring values indexed by a single property, typically time series data.
+You define SdsStreams to organize incoming data from another system into the OCS.
+To define an SdsStream, you must first define an SdsType, which defines the structure of the data you want to stream into a selected namespace.</p>
+<p>SDS stores collections of events and provides convenient ways to find and associate events.
+Events of consistent structure are stored in SdsStreams. SdsStreams are referenced by their identifier or <code>Id</code> field.
+SdsStream identifiers must be unique within a namespace.</p>
+<p>An SdsStream must include a <code>TypeId</code> that references the identifier of an existing SdsType.
+SdsStream management using the .NET SDS client libraries is performed through <code>ISdsMetadataService</code>.
+Create the <code>ISdsMetadataService</code>, using one of the <code>SdsService.GetMetadataService()</code> factory methods.</p>
+<p>The following table shows the required and optional SdsStream fields. Fields not listed are reserved
+for internal SDS use.</p>
+<p><a name="streampropertiestable"></a></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Optionality</th>
+<th>Searchable</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>String</td>
+<td>Required</td>
+<td>Yes</td>
+<td>An identifier for referencing the stream</td>
+</tr>
+<tr>
+<td>TypeId</td>
+<td>String</td>
+<td>Required</td>
+<td>Yes</td>
+<td>The SdsType identifier of the type to be used for this stream</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>String</td>
+<td>Optional</td>
+<td>Yes</td>
+<td>Friendly name</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>String</td>
+<td>Optional</td>
+<td>Yes</td>
+<td>Description text</td>
+</tr>
+<tr>
+<td>Indexes</td>
+<td>IList&lt;SdsStreamIndex></td>
+<td>Optional</td>
+<td>No</td>
+<td>Used to define secondary indexes for stream</td>
+</tr>
+<tr>
+<td>InterpolationMode</td>
+<td>SdsInterpolationMode</td>
+<td>Optional</td>
+<td>No</td>
+<td>Interpolation setting of the stream. Default is null.</td>
+</tr>
+<tr>
+<td>ExtrapolationMode</td>
+<td>SdsExtrapolationMode</td>
+<td>Optional</td>
+<td>No</td>
+<td>Extrapolation setting of the stream. Default is null.</td>
+</tr>
+<tr>
+<td>PropertyOverrides</td>
+<td>IList&lt;SdsStreamPropertyOverride></td>
+<td>Optional</td>
+<td>No</td>
+<td>Used to define unit of measure and interpolation mode overrides for a stream.</td>
+</tr>
+<tr>
+<td><a class="xref" href="SdsStreamExtra.html">Tags</a>*</td>
+<td>IList&lt;String></td>
+<td>Optional</td>
+<td>Yes</td>
+<td>A list of tags denoting special attributes or categories.</td>
+</tr>
+<tr>
+<td><a class="xref" href="SdsStreamExtra.html">Metadata</a>*</td>
+<td>IDictionary&lt;String, String></td>
+<td>Optional</td>
+<td>Yes</td>
+<td>A dictionary of string keys and associated string values.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>* Notes on SdsStream metadata and tags:</strong> Stream metadata and tags are accessed via the Metadata and Tags API respectively.
+However, they are associated with SdsStream objects and can be used as search criteria.</p>
+<p><strong>Rules for the Stream Identifier (SdsStream.Id)</strong></p>
+<ol>
+<li>Is not case sensitive</li>
+<li>Cannot just be whitespace</li>
+<li>Cannot contain leading or trailing whitespace</li>
+<li>Cannot contain forward slash (&quot;/&quot;)</li>
+<li>Can contain a maximum of 100 characters</li>
+</ol>
+<h2 id="indexes">Indexes</h2>
+<p>While the primary index is defined at the SdsType, secondary
+indexes are defined at the SdsStream.</p>
+<p>Secondary indexes are applied to a single property; there are no
+compound secondary indexes. Only SdsTypeCodes
+that can be ordered are supported for use in a secondary index.</p>
+<p>For more information on indexes, see <a class="xref" href="indexes.html">Indexes</a>.</p>
+<h2 id="interpolation-and-extrapolation">Interpolation and extrapolation</h2>
+<p>The InterpolationMode, ExtrapolationMode, and <a href="#propertyoverrides">PropertyOverrides</a> can be used to determine how a specific SdsStream reads data.
+These read characteristics are inherited from the SdsType if they are not defined at the SdsStream level.</p>
+<h2 id="sdsstreampropertyoverride-object"><code>SdsStreamPropertyOverride</code> object</h2>
+<p>PropertyOverride provides a way to override interpolation behavior and unit of measure for individual 
+SdsType Properties for a specific SdsStream.</p>
+<p>The <code>SdsStreamPropertyOverride</code> object has the following structure:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Optionality</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SdsTypePropertyId</td>
+<td>String</td>
+<td>Required</td>
+<td>SdsTypeProperty identifier</td>
+</tr>
+<tr>
+<td>InterpolationMode</td>
+<td>SdsInterpolationMode</td>
+<td>Optional</td>
+<td>Interpolation setting. Default is null</td>
+</tr>
+<tr>
+<td>Uom</td>
+<td>String</td>
+<td>Optional</td>
+<td>Unit of measure</td>
+</tr>
+</tbody>
+</table>
+<p>The unit of measure can be overridden for any SdsTypeProperty defined by the stream type, including primary 
+and secondary indexes. For more information on SdsTypeProperty <code>Uom</code>, see <a class="xref" href="SDS_Types.html#SdsTypeProperty">Types</a>. </p>
+<p>Read characteristics of the SdsStream are determined by the SdsType and the <code>PropertyOverride</code> of the SdsStream. The 
+interpolation mode for non-index properties can be defined and overridden at the SdsStream level. For more 
+information about type read characteristics see <a class="xref" href="SDS_Types.html#SdsTypeProperty">Types</a>.</p>
+<p>If <code>InterpolationMode</code> of the SdsType is set to <code>Discrete</code>, it cannot be overridden 
+at any level. When <code>InterpolationMode</code> is set to <code>Discrete</code> and an event is not defined for the index,
+a null value is returned for the entire event.</p>
+<h1 id="sdsstream-api">SdsStream API</h1>
+<p>The REST APIs provide programmatic access to read and write SDS data. The API in this 
+section interacts with SdsStreams. When working in .NET framework, convenient SDS client libraries are 
+available. The <code>ISdsMetadataService</code> interface, accessed using the <code>SdsService.GetMetadataService( )</code> helper, 
+defines the available functions. See <a href="#streams">Streams</a> above for general 
+information related to SdsStream. </p>
+<hr>
+<h2 id="get-stream"><code>Get Stream</code></h2>
+<p>Returns the specified stream.</p>
+<h3 id="request">Request</h3>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}
+</code></pre><h3 id="parameters">Parameters</h3>
+<p><code>string tenantId</code><br>The tenant identifier</p>
+<p><code>string namespaceId</code><br>The namespace identifier  </p>
+<p><code>string streamId</code><br>The stream identifier</p>
+<h3 id="response">Response</h3>
+<p>The response includes a status code and a response body.</p>
+<h4 id="response-body">Response body</h4>
+<p>The requested SdsStream</p>
+<h4 id="example-response-body">Example response body</h4>
+<pre><code class="lang-json">HTTP/1.1 200
+Content-Type: application/json
+
+{  
+   &quot;Id&quot;:&quot;Simple&quot;,
+   &quot;Name&quot;:&quot;Simple&quot;,
+   &quot;TypeId&quot;:&quot;Simple&quot;,
+}
+</code></pre><h3 id="net-client-libraries-method">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task&lt;SdsStream&gt; GetStreamAsync(string streamId);
+</code></pre><hr>
+<h2 id="get-streams"><code>Get Streams</code></h2>
+<p>Returns a list of streams.</p>
+<p>If specifying the optional search query parameter, the list of streams returned will match 
+the search criteria. If the search query parameter is not specified, the list will include 
+all streams in the namespace. See <a class="xref" href="Searching.html#search-for-streams">Search in SDS</a> 
+for information about specifying those respective parameters.</p>
+<h3 id="request-1">Request</h3>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams?query={query}&amp;skip={skip}&amp;count={count}&amp;orderby={orderby}
+</code></pre><h3 id="parameters-1">Parameters</h3>
+<p><code>string tenantId</code><br>The tenant identifier</p>
+<p><code>string namespaceId</code><br>The namespace identifier</p>
+<p><code>string query</code><br>[Optional] Parameter representing a string search. 
+See <a class="xref" href="Searching.html">Search in SDS</a> for information about specifying the search parameter.</p>
+<p><code>int skip</code><br>[Optional] Parameter representing the zero-based offset of the first SdsStream to retrieve. 
+If not specified, a default value of 0 is used.</p>
+<p><code>int count</code><br>[Optional] Parameter representing the maximum number of SdsStreams to retrieve. 
+If not specified, a default value of 100 is used.</p>
+<p><code>string orderby</code><br>[Optional] Parameter representing sorted order which SdsStreams will be returned. A field name is required. The sorting is based on the stored values for the given field (of type string). For example, <code>orderby=name</code> would sort the returned results by the <code>name</code> values (ascending by default). Additionally, a value can be provided along with the field name to identify whether to sort ascending or descending, by using values <code>asc</code> or <code>desc</code>, respectively. For example, <code>orderby=name desc</code> would sort the returned results by the <code>name</code> values, descending. If no value is specified, there is no sorting of results.</p>
+<h3 id="response-1">Response</h3>
+<p>The response includes a status code and a response body.</p>
+<h4 id="response-body-1">Response body</h4>
+<p>A collection of zero or more SdsStreams</p>
+<h4 id="example-response-body-1">Example response body</h4>
+<pre><code class="lang-json">HTTP/1.1 200
+Content-Type: application/json
+
+[  
+   {  
+      &quot;Id&quot;:&quot;Simple&quot;,
+      &quot;TypeId&quot;:&quot;Simple&quot;
+   },
+   {  
+      &quot;Id&quot;:&quot;Simple with Secondary&quot;,
+      &quot;TypeId&quot;:&quot;Simple&quot;,
+      &quot;Indexes&quot;:[  
+         {  
+            &quot;SdsTypePropertyId&quot;:&quot;Measurement&quot;
+         }
+      ]
+   },
+   {  
+      &quot;Id&quot;:&quot;Compound&quot;,
+      &quot;TypeId&quot;:&quot;Compound&quot;
+   },
+   ...
+]
+</code></pre><h3 id="net-client-libraries-method-1">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task&lt;IEnumerable&lt;SdsStream&gt;&gt; GetStreamsAsync(string query = &quot;&quot;, int skip = 0, 
+      int count = 100);
+</code></pre><hr>
+<h2 id="get-stream-type"><code>Get Stream Type</code></h2>
+<p>Returns the type definition that is associated with a given stream.</p>
+<h3 id="request-2">Request</h3>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Type
+</code></pre><h3 id="parameters-2">Parameters</h3>
+<p><code>string tenantId</code><br>The tenant identifier  </p>
+<p><code>string namespaceId</code><br>The namespace identifier  </p>
+<p><code>string streamId</code><br>The stream identifier  </p>
+<h3 id="response-2">Response</h3>
+<p>The response includes a status code and a response body.</p>
+<h4 id="response-body-2">Response body</h4>
+<p>The requested SdsType.</p>
+<h3 id="net-client-libraries-method-2">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task&lt;SdsType&gt; GetStreamTypeAsync(string streamId);
+</code></pre><hr>
+<h2 id="get-or-create-stream"><code>Get or Create Stream</code></h2>
+<p>Creates the specified stream. If an SdsStream with a matching identifier already exists, SDS compares the 
+existing stream with the stream that was sent. If the streams are identical, a <code>Found</code> (302) error 
+is returned with the Location header set to the URI where the stream may be retrieved using a Get function. 
+If the streams do not match, a <code>Conflict</code> (409) error is returned.</p>
+<p>For a matching stream (Found), clients that are capable of performing a redirect that includes the 
+authorization header can automatically redirect to retrieve the stream. However, most clients, 
+including the .NET HttpClient, consider redirecting with the authorization token to be a security vulnerability.</p>
+<p>When a client performs a redirect and strips the authorization header, SDS cannot authorize the request and 
+returns <code>Unauthorized</code> (401). For this reason, it is recommended that when using clients that do not 
+redirect with the authorization header, you should disable automatic redirect.</p>
+<h3 id="request-3">Request</h3>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   POST api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}
+</code></pre><h3 id="parameters-3">Parameters</h3>
+<p><code>string tenantId</code><br>The tenant identifier  </p>
+<p><code>string namespaceId</code><br>The namespace identifier  </p>
+<p><code>string streamId</code><br>The stream identifier. The stream identifier must match the identifier in content. </p>
+<h4 id="request-body">Request body</h4>
+<p>The request content is the serialized SdsStream.</p>
+<h3 id="response-3">Response</h3>
+<p>The response includes a status code and a response body.</p>
+<h4 id="response-body-3">Response body</h4>
+<p>The newly created SdsStream.</p>
+<h3 id="net-client-libraries-method-3">.NET client libraries method</h3>
+<pre><code class="lang-csharp">      Task&lt;SdsStream&gt; GetOrCreateStreamAsync(SdsStream SdsStream);
+</code></pre><p>If a stream with a matching identifier already exists and it matches the stream in the request body, 
+the client redirects a GET to the Location header. If the existing stream does not match the stream 
+in the request body, a Conflict error response is returned and the client library method throws an exception. </p>
+<hr>
+<h2 id="create-or-update-stream"><code>Create or Update Stream</code></h2>
+<p>Creates the specified stream. If a stream with the same <code>Id</code> already exists, the definition of the stream is updated. 
+The following changes are permitted:  </p>
+<ul>
+<li>Name  </li>
+<li>Description  </li>
+<li>Indexes  </li>
+<li>InterpolationMode  </li>
+<li>ExtrapolationMode  </li>
+<li>PropertyOverrides  </li>
+</ul>
+<p>Note that modifying indexes will result in re-indexing all of the stream&#39;s data for each additional secondary index.</p>
+<p>For more information on secondary indexes, see <a href="#indexes">Indexes</a>.</p>
+<p>Changes that are not permitted result in an error.</p>
+<h3 id="request-4">Request</h3>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}
+</code></pre><h3 id="parameters-4">Parameters</h3>
+<p><code>string tenantId</code><br>The tenant identifier  </p>
+<p><code>string namespaceId</code><br>The namespace identifier  </p>
+<p><code>string streamId</code><br>The stream identifier  </p>
+<h4 id="request-body-1">Request body</h4>
+<p>The request content is the serialized SdsStream.</p>
+<h3 id="response-4">Response</h3>
+<p>The response includes a status code.</p>
+<h3 id="net-client-libraries-method-4">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task CreateOrUpdateStreamAsync(SdsStream SdsStream);
+</code></pre><hr>
+<h2 id="update-stream-type"><code>Update Stream Type</code></h2>
+<p>Updates a stream’s type. The type is modified to match the specified stream view. 
+Defined Indexes and PropertyOverrides are removed when updating a stream type. </p>
+<h3 id="request-5">Request</h3>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Type?streamViewId={streamViewId}
+</code></pre><h3 id="parameters-5">Parameters</h3>
+<p><code>string tenantId</code><br>The tenant identifier  </p>
+<p><code>string namespaceId</code><br>The namespace identifier  </p>
+<p><code>string streamId</code><br>The stream identifier  </p>
+<p><code>string streamViewId</code><br>The stream view identifier  </p>
+<h4 id="request-body-2">Request body</h4>
+<p>The request content is the serialized SdsStream.</p>
+<h3 id="response-5">Response</h3>
+<p>The response includes a status code.</p>
+<h4 id="response-body-4">Response body</h4>
+<p>On failure, the content contains a message describing the issue.</p>
+<h3 id="net-client-libraries-method-5">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task UpdateStreamTypeAsync(string streamId, string streamViewId);
+</code></pre><hr>
+<h2 id="delete-stream"><code>Delete Stream</code></h2>
+<p>Deletes a stream. </p>
+<h3 id="request-6">Request</h3>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   DELETE api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}
+</code></pre><h3 id="parameters-6">Parameters</h3>
+<p><code>string tenantId</code><br>The tenant identifier  </p>
+<p><code>string namespaceId</code><br>The namespace identifier  </p>
+<p><code>string streamId</code><br>The stream identifier  </p>
+<h3 id="response-6">Response</h3>
+<p>The response includes a status code.</p>
+<h3 id="net-client-libraries-method-6">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task DeleteStreamAsync(string streamId);
+</code></pre><hr>
+<h2 id="get-streams-access-control-list"><code>Get Streams Access Control List</code></h2>
+<p>Get the default ACL for the Streams collection. For more information on ACL, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
+<h3 id="request-7">Request</h3>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>AccessControl/<wbr>Streams
+</code></pre><h3 id="parameters-7">Parameters</h3>
+<p><code>string tenantId</code><br>The tenant identifier  </p>
+<p><code>string namespaceId</code><br>The namespace identifier  </p>
+<h3 id="response-7">Response</h3>
+<p>The response includes a status code and a response body.</p>
+<h4 id="response-body-5">Response body</h4>
+<p>The default ACL for Streams</p>
+<h3 id="net-client-libraries-method-7">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task&lt;AccessControlList&gt; GetStreamsAccessControlListAsync();
+</code></pre><hr>
+<h2 id="update-streams-access-control-list"><code>Update Streams Access Control List</code></h2>
+<p>Update the default ACL for the Streams collection. For more information on ACL, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
+<h3 id="request-8">Request</h3>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>AccessControl/<wbr>Streams
+</code></pre><h3 id="parameters-8">Parameters</h3>
+<p><code>string tenantId</code><br>The tenant identifier  </p>
+<p><code>string namespaceId</code><br>The namespace identifier  </p>
+<h4 id="request-body-3">Request body</h4>
+<p>Serialized ACL</p>
+<h3 id="response-8">Response</h3>
+<p>The response includes a status code.</p>
+<h3 id="net-client-libraries-method-8">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task UpdateStreamsAccessControlListAsync(AccessControlList streamsAcl);
+</code></pre><hr>
+<h2 id="get-stream-access-control-list"><code>Get Stream Access Control List</code></h2>
+<p>Get the ACL of the specified stream. For more information on ACL, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
+<h3 id="request-9">Request</h3>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>AccessControl
+</code></pre><h3 id="parameters-9">Parameters</h3>
+<p><code>string tenantId</code><br>The tenant identifier  </p>
+<p><code>string namespaceId</code><br>The namespace identifier  </p>
+<p><code>string streamId</code><br>The stream identifier  </p>
+<h3 id="response-9">Response</h3>
+<p>The response includes a status code and a response body.</p>
+<h4 id="response-body-6">Response body</h4>
+<p>The ACL for the specified stream </p>
+<h3 id="net-client-libraries-method-9">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task&lt;AccessControlList&gt; GetStreamAccessControlListAsync(string streamId);
+</code></pre><hr>
+<h2 id="update-stream-access-control-list"><code>Update Stream Access Control List</code></h2>
+<p>Update the ACL of the specified stream. For more information on ACL, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
+<h3 id="request-10">Request</h3>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>AccessControl
+</code></pre><h3 id="parameters-10">Parameters</h3>
+<p><code>string tenantId</code><br>The tenant identifier  </p>
+<p><code>string namespaceId</code><br>The namespace identifier  </p>
+<p><code>string streamId</code><br>The stream identifier  </p>
+<h4 id="request-body-4">Request body</h4>
+<p>Serialized ACL</p>
+<h3 id="response-10">Response</h3>
+<p>The response includes a status code.</p>
+<h3 id="net-client-libraries-method-10">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task UpdateStreamAccessControlListAsync(string streamId, AccessControlList streamAcl);
+</code></pre><hr>
+<h2 id="get-stream-owner"><code>Get Stream Owner</code></h2>
+<p>Get the <code>Owner</code> of the specified stream. For more information, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
+<h3 id="request-11">Request</h3>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Owner
+</code></pre><h3 id="parameters-11">Parameters</h3>
+<p><code>string tenantId</code><br>The tenant identifier  </p>
+<p><code>string namespaceId</code><br>The namespace identifier  </p>
+<p><code>string streamId</code><br>The stream identifier  </p>
+<h3 id="response-11">Response</h3>
+<p>The response includes a status code and a response body.</p>
+<h4 id="response-body-7">Response body</h4>
+<p>The <code>Owner</code> for the specified stream </p>
+<h3 id="net-client-libraries-method-11">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task&lt;Trustee&gt; GetStreamOwnerAsync(string streamId);
+</code></pre><hr>
+<h2 id="update-stream-owner"><code>Update Stream Owner</code></h2>
+<p>Update the <code>Owner</code> of the specified stream. For more information, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
+<h3 id="request-12">Request</h3>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Owner
+</code></pre><h3 id="parameters-12">Parameters</h3>
+<p><code>string tenantId</code><br>The tenant identifier  </p>
+<p><code>string namespaceId</code><br>The namespace identifier  </p>
+<p><code>string streamId</code><br>The stream identifier  </p>
+<h4 id="request-body-5">Request body</h4>
+<p>Serialized Owner</p>
+<h3 id="response-12">Response</h3>
+<p>The response includes a status code</p>
+<h3 id="net-client-libraries-method-12">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task UpdateStreamOwnerAsync(string streamId, Trustee streamOwner);
+</code></pre><hr>
+<h2 id="get-stream-access-rights"><code>Get Stream Access Rights</code></h2>
+<p>Gets the access rights associated with the specified stream for the requesting identity. For 
+more information on access rights, see <a class="xref" href="../Access_Control.html#commonaccessrightsenum">Access Control</a>.</p>
+<h3 id="request-13">Request</h3>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>AccessRights
+</code></pre><h3 id="parameters-13">Parameters</h3>
+<p><code>string tenantId</code><br>The tenant identifier  </p>
+<p><code>string namespaceId</code><br>The namespace identifier  </p>
+<p><code>string streamId</code><br>The stream identifier  </p>
+<h3 id="response-13">Response</h3>
+<p>The response includes a status code and a response body</p>
+<h4 id="response-body-8">Response body</h4>
+<p>The Access Rights associated with specified stream for the requesting identity.</p>
+<h4 id="example-response-body-2">Example response body</h4>
+<pre><code class="lang-json">HTTP/1.1 200
+Content-Type: application/json
+
+[&quot;Read&quot;, &quot;Write&quot;]
+</code></pre><h3 id="net-client-libraries-method-13">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task&lt;string[]&gt; GetStreamAccessRightsAsync(string streamId);
+</code></pre><hr>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/SequentialDataStore/SDS_Streams.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+            <span id='copyright-text'>© 2020 - OSIsoft, LLC.<span>
+        </span></span></div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

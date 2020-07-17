@@ -5,19 +5,19 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>OCS Content Portal </title>
+    <title>Data Ingress to Cloud Services using OMF </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="OCS Content Portal ">
+    <meta name="title" content="Data Ingress to Cloud Services using OMF ">
     <meta name="generator" content="docfx 2.43.3.0">
     
-    <link rel="shortcut icon" href="favicon.ico">
-    <link rel="stylesheet" href="styles/docfx.vendor.css">
-    <link rel="stylesheet" href="styles/docfx.css">
-    <link rel="stylesheet" href="styles/main.css">
-    <meta property="docfx:navrel" content="toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
     
-    <meta property="docfx:rel" content="">
+    <meta property="docfx:rel" content="../../../">
     
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
@@ -33,8 +33,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="index.html" width="46">
-                <img id="logo" src="Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              <a class="navbar-brand" href="../../../index.html" width="46">
+                <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -66,13 +66,24 @@
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search">
-        <div class="article row grid">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="index">
-<h1 id="ocs-content-portal">OCS Content Portal</h1>
+            <article class="content wrap" id="_content" data-uid="omfIngressToOCS">
+<h1 id="data-ingress-to-cloud-services-using-omf">Data Ingress to Cloud Services using OMF</h1>
 
-<h2 id="api-documentationxrefosisoftcloudservices"><a class="xref" href="Content_Portal/Documentation/OSIsoft_Cloud_Services.html">API Documentation</a></h2>
-<h2 id="conceptsxrefconceptsoverview"><a class="xref" href="Content_Portal/Concepts/Concepts_Overview.html">Concepts</a></h2>
+<p>You can use OSIsoft Message Format (<a href="http://omf-docs.osisoft.com/">OMF</a>) to achieve high-throughput asynchronous data ingress into the Sequential Data Store. The following terms are useful for understanding the information in this and subsequent sections:</p>
+<ul>
+<li>A producer of OMF messages needs a <em>Client</em> identity to authenticate and send messages.</li>
+<li>Messages are sent to a queue called a <em>Topic</em>. </li>
+<li>A <em>Subscription</em> receives messages from a <em>Topic</em> and writes them to the Sequential Data Store.</li>
+</ul>
 </article>
           </div>
           
@@ -81,7 +92,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/DataIngress/OMF_Ingress_to_OCS.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -101,8 +112,8 @@
       </footer>
     </div>
     
-    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="styles/docfx.js"></script>
-    <script type="text/javascript" src="styles/main.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
   </body>
 </html>

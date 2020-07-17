@@ -14,11 +14,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "Documentation/Access_Control.md",
+      "source_relative_path": "Content_Portal/Concepts/Account_Management_Concepts.md",
       "output": {
         ".html": {
-          "relative_path": "Documentation/Access_Control.html",
-          "hash": "kPPXI5Ha3hLgaqCy/Lgeyw=="
+          "relative_path": "Content_Portal/Concepts/Account_Management_Concepts.html",
+          "hash": "z2QEm5sJrSsDqQIrFWGM3w=="
         }
       },
       "is_incremental": false,
@@ -26,11 +26,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "Documentation/DataIngress/Data_Ingress.md",
+      "source_relative_path": "Content_Portal/Concepts/Concepts_Overview.md",
       "output": {
         ".html": {
-          "relative_path": "Documentation/DataIngress/Data_Ingress.html",
-          "hash": "aNg3lKrtBEsi9aGKOmcXHA=="
+          "relative_path": "Content_Portal/Concepts/Concepts_Overview.html",
+          "hash": "WcslJAMv/jkKY0u1gy2n+g=="
         }
       },
       "is_incremental": false,
@@ -38,11 +38,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "Documentation/DataIngress/OMF_Ingress_Specification.md",
+      "source_relative_path": "Content_Portal/Concepts/Data_Storage_Concepts.md",
       "output": {
         ".html": {
-          "relative_path": "Documentation/DataIngress/OMF_Ingress_Specification.html",
-          "hash": "/58TBdEP+Ol3e05s0V56cQ=="
+          "relative_path": "Content_Portal/Concepts/Data_Storage_Concepts.html",
+          "hash": "xcHbjvi5WkIKnh+uz+a2xw=="
         }
       },
       "is_incremental": false,
@@ -50,83 +50,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "Documentation/DataIngress/OMF_Ingress_Subscriptions.md",
+      "source_relative_path": "Content_Portal/Developer_Guides/Developer_Guides.md",
       "output": {
         ".html": {
-          "relative_path": "Documentation/DataIngress/OMF_Ingress_Subscriptions.html",
-          "hash": "dGt515QrL/+O1oFrW7WcTw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/DataIngress/OMF_Ingress_Topics.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/DataIngress/OMF_Ingress_Topics.html",
-          "hash": "c0cjJzwQLsKdyN28G8vIGQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/DataIngress/OMF_Ingress_to_OCS.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/DataIngress/OMF_Ingress_to_OCS.html",
-          "hash": "wr88U4yUzciemOcfEhuorg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/DataViews/Access_Control_API.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/DataViews/Access_Control_API.html",
-          "hash": "whn/aL51dZ1va8D/AtIXsw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/DataViews/Available_Field_Sets.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/DataViews/Available_Field_Sets.html",
-          "hash": "GH4qiEFVAWHrQujGBf5bqw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/DataViews/Data_API.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/DataViews/Data_API.html",
-          "hash": "z4KWoHi76qgF2lYlWi7Jfg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/DataViews/Data_Items_and_Groups.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/DataViews/Data_Items_and_Groups.html",
-          "hash": "h+xc6rioKNgR35JsI7G79Q=="
+          "relative_path": "Content_Portal/Developer_Guides/Developer_Guides.html",
+          "hash": "jekeG1vqoxwzaqbnrOz/PA=="
         }
       },
       "is_incremental": false,
@@ -134,686 +62,14 @@
     },
     {
       "log_codes": [
-        "UidNotFound"
+        "InvalidFileLink"
       ],
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/DataViews/Data_View.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/DataViews/Data_View.html",
-          "hash": "97ccFg0zeoR8ohkVKwu97A=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/DataViews/Data_View_API.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/DataViews/Data_View_API.html",
-          "hash": "DcXfuPsRdMGeROdu1/PYaQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/DataViews/Data_View_Shape.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/DataViews/Data_View_Shape.html",
-          "hash": "YtcFjvA7nJYL6zbqmOMdbg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/DataViews/Data_Views_API_Overview.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/DataViews/Data_Views_API_Overview.html",
-          "hash": "k/LAzy4Xy1MhjfSYzwW+tw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/DataViews/Data_Views_Overview.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/DataViews/Data_Views_Overview.html",
-          "hash": "UsyVEA5FmjO2ghO3fpdq0g=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/DataViews/Example_Scenario.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/DataViews/Example_Scenario.html",
-          "hash": "yBofMO9+fAGivLCuSee1/Q=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/DataViews/Field_Mappings.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/DataViews/Field_Mappings.html",
-          "hash": "bMVbF7o/waQqzQFL2NiRoA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/DataViews/Field_Sets.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/DataViews/Field_Sets.html",
-          "hash": "1sDz+Yt7a6PiWPPcxsvvtg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/DataViews/Getting_Data.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/DataViews/Getting_Data.html",
-          "hash": "Q6SxRfu7hnaq/M96xyFKBA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/DataViews/Grouping.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/DataViews/Grouping.html",
-          "hash": "vPEFlSVZ0ChY2oBYjUXHeA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/DataViews/Introduction_Define_a_Data_View.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/DataViews/Introduction_Define_a_Data_View.html",
-          "hash": "eoAnMaeAVnqajQqqoyTf5g=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/DataViews/Introduction_Get_Data_View_Data.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/DataViews/Introduction_Get_Data_View_Data.html",
-          "hash": "zV1iaovpUPyYRHr98v9uyQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/DataViews/Preview_Data_API.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/DataViews/Preview_Data_API.html",
-          "hash": "VXgCmJRFkKcjF5iH8Nf1bw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/DataViews/Preview_Data_View.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/DataViews/Preview_Data_View.html",
-          "hash": "PRqPXDIULClAKSzHGXE7DQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/DataViews/Queries.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/DataViews/Queries.html",
-          "hash": "dnGz9ALD28UxjEW0sTzoRQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/DataViews/Quick_Start_Define_a_Data_View.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/DataViews/Quick_Start_Define_a_Data_View.html",
-          "hash": "NcIuX3+ShioLyNx16o7ljw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/DataViews/Quick_Start_Get_Data_View_Data.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/DataViews/Quick_Start_Get_Data_View_Data.html",
-          "hash": "heDqvq9Tfsp3W/GFSgKw0Q=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/DataViews/Resolved_Data_View.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/DataViews/Resolved_Data_View.html",
-          "hash": "kIMl/0OAxw7WAHe6nS+oEg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/DataViews/Resolved_Data_View_API.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/DataViews/Resolved_Data_View_API.html",
-          "hash": "7Au7SS7FzqH1wgM2nVzMvA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/DataViews/Resolved_Data_View_Preview_API.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/DataViews/Resolved_Data_View_Preview_API.html",
-          "hash": "gKQXBHQ/NCAge6q4gJDYfQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/DataViews/Securing_Data_Views.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/DataViews/Securing_Data_Views.html",
-          "hash": "k7VLY1yTb4XP4p20ET1N2A=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/Identity/Consent.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/Identity/Consent.html",
-          "hash": "wpOoHG7YI5waz/rjtJmGYw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/Identity/Identity_AuthorizationCodeClient.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/Identity/Identity_AuthorizationCodeClient.html",
-          "hash": "M4tJW9gM16Oik7ADGVdWPw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/Identity/Identity_AutomationIdentity.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/Identity/Identity_AutomationIdentity.html",
-          "hash": "VUhb3XCX3OVoCjt7fUUwPw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/Identity/Identity_AzureActiveDirectoryTenant.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/Identity/Identity_AzureActiveDirectoryTenant.html",
-          "hash": "mLhOgDVcXqwdawpysT5S4w=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/Identity/Identity_Claim.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/Identity/Identity_Claim.html",
-          "hash": "Pz4BwdaB7xA1jCMu34FdaA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/Identity/Identity_ClaimTypeName.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/Identity/Identity_ClaimTypeName.html",
-          "hash": "FhdG3fOUNCdjP8UT0fLRuw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/Identity/Identity_ClientCredentialClient.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/Identity/Identity_ClientCredentialClient.html",
-          "hash": "IYsfywHPNNdPcVY0zBsxeg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/Identity/Identity_HybridClient.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/Identity/Identity_HybridClient.html",
-          "hash": "VF85fEWlcRNCBhUo2C9W8w=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/Identity/Identity_IdentityProvider.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/Identity/Identity_IdentityProvider.html",
-          "hash": "FBqg3wKlXyg3SoE6RW9lpw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/Identity/Identity_ImplicitClient.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/Identity/Identity_ImplicitClient.html",
-          "hash": "5hfIAuMd52BQ+AZ7YPSnkg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/Identity/Identity_Invitation.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/Identity/Identity_Invitation.html",
-          "hash": "vfCLd7Wnk8sZRTwdMMCwGw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/Identity/Identity_Overview.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/Identity/Identity_Overview.html",
-          "hash": "S/fgLZX0qATJc3ZgFRd3FQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/Identity/Identity_PersistedGrant.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/Identity/Identity_PersistedGrant.html",
-          "hash": "jpvBPExFpHWHi4nvaoN5UQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/Identity/Identity_Secret.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/Identity/Identity_Secret.html",
-          "hash": "rUAWAW6ESs/dc1SwY+mg8w=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/Identity/Identity_User.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/Identity/Identity_User.html",
-          "hash": "R+lO5rEQ4wA2Y4T2uH7q2A=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/Management/Account_ClientRole_1.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/Management/Account_ClientRole_1.html",
-          "hash": "GMBwqBcpjBZwoouqi3x41g=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/Management/Account_Namespace_1.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/Management/Account_Namespace_1.html",
-          "hash": "64xLg+3Acq8e7YMP+/P3Uw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/Management/Account_Role_1.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/Management/Account_Role_1.html",
-          "hash": "curMVl4hiItJZyB9/LjHiQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/Management/Account_RootAccessControl_1.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/Management/Account_RootAccessControl_1.html",
-          "hash": "ptlGzLbA77qpVKuKQdtjew=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/Management/Account_ServiceBlog.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/Management/Account_ServiceBlog.html",
-          "hash": "UUVENh5PqdsQGyop63SXIg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/Management/Account_Tenant.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/Management/Account_Tenant.html",
-          "hash": "vt+TCYBqEcSrQrCJIN/IuA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/Management/Account_TenantFeatureState.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/Management/Account_TenantFeatureState.html",
-          "hash": "4suf1i0UHED/7yVnKfbISg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/Management/Account_UserRole_1.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/Management/Account_UserRole_1.html",
-          "hash": "0XqPEuEpfI9gGQk2SY6HNA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/Management/Management_Overview.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/Management/Management_Overview.html",
-          "hash": "Oro9AqyysKQIXrPznxYEbQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/Metadata/Metadata_Rules_Overview.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/Metadata/Metadata_Rules_Overview.html",
-          "hash": "CBf3PITh015DzgLe4fN34g=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/OSIsoft_Cloud_Services.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/OSIsoft_Cloud_Services.html",
-          "hash": "gq/zq7CD27WLPl0PBBrLMQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/Operations/Operations_Billing Cycles.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/Operations/Operations_Billing Cycles.html",
-          "hash": "znJ+18LDJbPdZM2bO+vEBA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/Operations/Operations_Health.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/Operations/Operations_Health.html",
-          "hash": "489D9lQ90YIamDUM1XRcVA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/Operations/Operations_Logs.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/Operations/Operations_Logs.html",
-          "hash": "U8L4DYglupTV531bdEHmLw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/Operations/Operations_Metrics.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/Operations/Operations_Metrics.html",
-          "hash": "Mf4faw0CfzfgzAtZRBC3iQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/Operations/Operations_Overview.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/Operations/Operations_Overview.html",
-          "hash": "e7ILDQ4RDiK8mFB17eGySw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/Operations/Operations_Resource Usage Data.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/Operations/Operations_Resource Usage Data.html",
-          "hash": "rAIoPO0Fnd/fwNqMhIn27Q=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/Operations/Operations_Usage Data.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/Operations/Operations_Usage Data.html",
-          "hash": "18ruhrleyV9Uqi6HegEqyg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/SequentialDataStore/Compression.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/SequentialDataStore/Compression.html",
-          "hash": "5OwgWGaTzVLKHHZZJ7luhQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/SequentialDataStore/Data_Store_and_SDS.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/SequentialDataStore/Data_Store_and_SDS.html",
-          "hash": "g+Vzj5ueqxcxN4MF/B5yyg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/SequentialDataStore/Filter_Expressions.md",
+      "type": "Toc",
+      "source_relative_path": "Content_Portal/Developer_Guides/toc.yml",
       "output": {
         ".html": {
-          "relative_path": "Documentation/SequentialDataStore/Filter_Expressions.html",
-          "hash": "CYPuaiBKpS3Vr11iJ4hqAA=="
+          "relative_path": "Content_Portal/Developer_Guides/toc.html",
+          "hash": "B/j/VHOze9F2dhQPdE9sLQ=="
         }
       },
       "is_incremental": false,
@@ -821,191 +77,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "Documentation/SequentialDataStore/Quick_Start.md",
+      "source_relative_path": "Content_Portal/Documentation/Access_Control.md",
       "output": {
         ".html": {
-          "relative_path": "Documentation/SequentialDataStore/Quick_Start.html",
-          "hash": "jiwCGvMuBhROc6FQVpuaMQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/SequentialDataStore/Reading_Data.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/SequentialDataStore/Reading_Data.html",
-          "hash": "o0GPPtHuUB53oy7yUu7FJA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/SequentialDataStore/Reading_Data_API.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/SequentialDataStore/Reading_Data_API.html",
-          "hash": "JIkkFSmyN6qG6x+kzs/Caw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/SequentialDataStore/SDS_Streams.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/SequentialDataStore/SDS_Streams.html",
-          "hash": "edrq38bci0rjU+7TvnvjGw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/SequentialDataStore/SDS_Types.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/SequentialDataStore/SDS_Types.html",
-          "hash": "U2b0LHzRk6k6U0S4a4oBNw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "log_codes": [
-        "UidNotFound"
-      ],
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/SequentialDataStore/SDS_Views.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/SequentialDataStore/SDS_Views.html",
-          "hash": "gFtJSVoRzTLwxKUpbEljAg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/SequentialDataStore/SdsStreamExtra.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/SequentialDataStore/SdsStreamExtra.html",
-          "hash": "YadvFsH9+UORXrCe48TxTw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/SequentialDataStore/Searching.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/SequentialDataStore/Searching.html",
-          "hash": "bFG6a/9u2oqM/zXWnIaALg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/SequentialDataStore/Units_of_Measure.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/SequentialDataStore/Units_of_Measure.html",
-          "hash": "BNdOknTX5H5gh2EFymarcg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/SequentialDataStore/Writing_Data.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/SequentialDataStore/Writing_Data.html",
-          "hash": "QUi8VDU9qQHjTgJ28f7Htg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/SequentialDataStore/Writing_Data_API.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/SequentialDataStore/Writing_Data_API.html",
-          "hash": "3zFJZ8swnKeGtu2HurI6Dg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/SequentialDataStore/indexes.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/SequentialDataStore/indexes.html",
-          "hash": "ENHor4cyFE7wpkjzjo0QFw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Documentation/SequentialDataStore/table_format.md",
-      "output": {
-        ".html": {
-          "relative_path": "Documentation/SequentialDataStore/table_format.html",
-          "hash": "pzq2+hpFkJtug+5B2Ux4LA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "Documentation/images/Add_Button.png",
-      "output": {
-        "resource": {
-          "relative_path": "Documentation/images/Add_Button.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "Documentation/images/atlas_icon.png",
-      "output": {
-        "resource": {
-          "relative_path": "Documentation/images/atlas_icon.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "Documentation/images/icon_navigation_bigger.png",
-      "output": {
-        "resource": {
-          "relative_path": "Documentation/images/icon_navigation_bigger.png"
+          "relative_path": "Content_Portal/Documentation/Access_Control.html",
+          "hash": "gbBsIqZA5nxOWe7byKXRkQ=="
         }
       },
       "is_incremental": false,
@@ -1013,11 +89,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "Documentation/samples.md",
+      "source_relative_path": "Content_Portal/Documentation/Assets/Access_Control.md",
       "output": {
         ".html": {
-          "relative_path": "Documentation/samples.html",
-          "hash": "rjiZZPUzL/xEWJYF51C6GA=="
+          "relative_path": "Content_Portal/Documentation/Assets/Access_Control.html",
+          "hash": "muHc9Pmfj/7NJAZaV2Ur7A=="
         }
       },
       "is_incremental": false,
@@ -1025,11 +101,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "Documentation/support.md",
+      "source_relative_path": "Content_Portal/Documentation/Assets/Assets_API.md",
       "output": {
         ".html": {
-          "relative_path": "Documentation/support.html",
-          "hash": "KvuF+wOTIj0WVN4rTkQ9kQ=="
+          "relative_path": "Content_Portal/Documentation/Assets/Assets_API.html",
+          "hash": "g45OgJvULq2URTJCtOl8aw=="
         }
       },
       "is_incremental": false,
@@ -1037,11 +113,1251 @@
     },
     {
       "type": "Toc",
-      "source_relative_path": "Documentation/toc.yml",
+      "source_relative_path": "Content_Portal/Documentation/Assets/toc.yml",
       "output": {
         ".html": {
-          "relative_path": "Documentation/toc.html",
-          "hash": "kw9spa3FPeoiuVdtV5A5iA=="
+          "relative_path": "Content_Portal/Documentation/Assets/toc.html",
+          "hash": "fClXbTf5UU/sF3bcRMyWTg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/DataIngress/Data_Ingress.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/DataIngress/Data_Ingress.html",
+          "hash": "AnlMyd5ela45TXW8vfylbQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/DataIngress/OMF_Ingress_Specification.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/DataIngress/OMF_Ingress_Specification.html",
+          "hash": "Vshgz+hM3Q6CanMwbUKOCw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/DataIngress/OMF_Ingress_Subscriptions.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/DataIngress/OMF_Ingress_Subscriptions.html",
+          "hash": "sOWXRyEKzWOUrCYRm/jGkg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/DataIngress/OMF_Ingress_Topics.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/DataIngress/OMF_Ingress_Topics.html",
+          "hash": "VWY9IEYel2sdIXwHLVTpPw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/DataIngress/OMF_Ingress_to_OCS.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/DataIngress/OMF_Ingress_to_OCS.html",
+          "hash": "xfPox2Qa8lqLYB9wmCsNFw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/DataViews/Access_Control_API.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/DataViews/Access_Control_API.html",
+          "hash": "KAKclHDZAOKQgXVyIkZ+yw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/DataViews/Available_Field_Sets.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/DataViews/Available_Field_Sets.html",
+          "hash": "JS0VN+WbkBEtEdOLlm1jTw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/DataViews/Data_API.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/DataViews/Data_API.html",
+          "hash": "Yrc14l9K/cp6Adizd8sLMw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/DataViews/Data_Items_and_Groups.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/DataViews/Data_Items_and_Groups.html",
+          "hash": "t+jdKesuDE6rLdnPjiMAWw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "UidNotFound"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/DataViews/Data_View.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/DataViews/Data_View.html",
+          "hash": "IHjCJxvDjt2v7HhTGTumRg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/DataViews/Data_View_API.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/DataViews/Data_View_API.html",
+          "hash": "kBhDYGRxECL+ChHp8rJpAQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/DataViews/Data_View_Shape.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/DataViews/Data_View_Shape.html",
+          "hash": "tNiRDnExJLTKZbo3MQUBSg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/DataViews/Data_Views_API_Overview.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/DataViews/Data_Views_API_Overview.html",
+          "hash": "ZwDP0ILl0al+byYAQK4z0w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/DataViews/Data_Views_Overview.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/DataViews/Data_Views_Overview.html",
+          "hash": "aAUoafHW1tlRYVa1TPj4zQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/DataViews/Example_Scenario.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/DataViews/Example_Scenario.html",
+          "hash": "4onjRkZHNs6H7deNCTTxFQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/DataViews/Field_Mappings.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/DataViews/Field_Mappings.html",
+          "hash": "f8MhSod/xV9ePAt189MfWw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/DataViews/Field_Sets.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/DataViews/Field_Sets.html",
+          "hash": "fJlLlv//DD6LO4xm0FQFYg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/DataViews/Getting_Data.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/DataViews/Getting_Data.html",
+          "hash": "q1JIS6N4y9OeWi3xxrOkBA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/DataViews/Grouping.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/DataViews/Grouping.html",
+          "hash": "70DDw33oyZ/S+TTwNf4fBQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/DataViews/Introduction_Define_a_Data_View.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/DataViews/Introduction_Define_a_Data_View.html",
+          "hash": "38Mf0RUc64qmFUayW4hTzg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/DataViews/Introduction_Get_Data_View_Data.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/DataViews/Introduction_Get_Data_View_Data.html",
+          "hash": "uUCvfUihRVHFEmjUgkLqDg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/DataViews/Preview_Data_API.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/DataViews/Preview_Data_API.html",
+          "hash": "f+TMD70vi9H6bjM/qf/N4A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/DataViews/Preview_Data_View.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/DataViews/Preview_Data_View.html",
+          "hash": "F7dx4q933fW19VBE1/q2zw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/DataViews/Queries.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/DataViews/Queries.html",
+          "hash": "brMxPuaRIU1EqK6ziW/gjw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/DataViews/Quick_Start_Define_a_Data_View.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/DataViews/Quick_Start_Define_a_Data_View.html",
+          "hash": "ILSzn05+s08X71Csnzdtdg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/DataViews/Quick_Start_Get_Data_View_Data.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/DataViews/Quick_Start_Get_Data_View_Data.html",
+          "hash": "ypD3LjAdJ9N5d7RozsiKbg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/DataViews/Resolved_Data_View.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/DataViews/Resolved_Data_View.html",
+          "hash": "rrGo8A9r0V4iVPzLZtfNVg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/DataViews/Resolved_Data_View_API.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/DataViews/Resolved_Data_View_API.html",
+          "hash": "TCGX7NMyhFEPJC0lKBTwFw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/DataViews/Resolved_Data_View_Preview_API.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/DataViews/Resolved_Data_View_Preview_API.html",
+          "hash": "k6eVUeGW8FkhTq/6DV6sLA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/DataViews/Securing_Data_Views.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/DataViews/Securing_Data_Views.html",
+          "hash": "ceSe9dZRgQ8r76Mvng1jOg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Identity/Consent.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Identity/Consent.html",
+          "hash": "dFKQniflxmAAOedlLP81sg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Identity/Identity_AuthorizationCodeClient.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Identity/Identity_AuthorizationCodeClient.html",
+          "hash": "SWHvRbBkgpG5M/olwkh+Xw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Identity/Identity_AutomationIdentity.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Identity/Identity_AutomationIdentity.html",
+          "hash": "BSv6pszpubYcPR+OmgGg1w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Identity/Identity_AzureActiveDirectoryTenant.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Identity/Identity_AzureActiveDirectoryTenant.html",
+          "hash": "z6D4lmzGhWC2Nn+logc70g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Identity/Identity_Claim.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Identity/Identity_Claim.html",
+          "hash": "CtOOWrYfxHoi1F6Y/BzZaQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Identity/Identity_ClaimTypeName.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Identity/Identity_ClaimTypeName.html",
+          "hash": "LaqKA98344RcgxfoE1WqGA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Identity/Identity_ClientCredentialClient.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Identity/Identity_ClientCredentialClient.html",
+          "hash": "b5qJCrTLbVQww+O6eZjmvg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Identity/Identity_HybridClient.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Identity/Identity_HybridClient.html",
+          "hash": "eEOBZeJMrRQdZaP+sIjG8A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Identity/Identity_IdentityProvider.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Identity/Identity_IdentityProvider.html",
+          "hash": "6Ho8A3zeZLZ7hgFlyl3DRQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Identity/Identity_ImplicitClient.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Identity/Identity_ImplicitClient.html",
+          "hash": "LdgtDvdTtk//StQiSpjmNw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Identity/Identity_Invitation.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Identity/Identity_Invitation.html",
+          "hash": "xRnKA8F9KUFxS6ea+vvRbQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Identity/Identity_Overview.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Identity/Identity_Overview.html",
+          "hash": "dFugEzAEB+iNLOukSt/NjQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Identity/Identity_PersistedGrant.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Identity/Identity_PersistedGrant.html",
+          "hash": "s8Uet0l2Qa4yaan92CUO2g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Identity/Identity_Secret.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Identity/Identity_Secret.html",
+          "hash": "LiUum+g2Zn9zOtFR7StLhQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Identity/Identity_User.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Identity/Identity_User.html",
+          "hash": "apIjkPcZMGOx+TRSgpuZwQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Management/Account_ClientRole_1.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Management/Account_ClientRole_1.html",
+          "hash": "mLBkTkv0kmf/NEsa4UFQDg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Management/Account_Namespace_1.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Management/Account_Namespace_1.html",
+          "hash": "27+NoY5ihWkWBATsYpRQGg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Management/Account_Role_1.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Management/Account_Role_1.html",
+          "hash": "fvGQTVWFrpov059PCJnQNg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Management/Account_RootAccessControl_1.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Management/Account_RootAccessControl_1.html",
+          "hash": "Ix6LZD3T16IT+ph++qP/Vw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Management/Account_ServiceBlog.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Management/Account_ServiceBlog.html",
+          "hash": "q41ODgFNkd2671FKMpUIcw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Management/Account_Tenant.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Management/Account_Tenant.html",
+          "hash": "9GkyR3+8NlfEW1UgFvtVEw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Management/Account_TenantFeatureState.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Management/Account_TenantFeatureState.html",
+          "hash": "yUkCLgEOIWtJ4diQTf4oCg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Management/Account_UserRole_1.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Management/Account_UserRole_1.html",
+          "hash": "Jijs885ba823WFFhDGKzPA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Management/Management_Overview.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Management/Management_Overview.html",
+          "hash": "PlP+GpCuxM6E5UAvXKyovw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Metadata/Metadata_Rules_Overview.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Metadata/Metadata_Rules_Overview.html",
+          "hash": "um6H8uvg+SufPFYlcfGxZA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/OSIsoft_Cloud_Services.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/OSIsoft_Cloud_Services.html",
+          "hash": "K8FwgcQRnfs0F/H8S4HM/w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Operations/Operations_Billing Cycles.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Operations/Operations_Billing Cycles.html",
+          "hash": "+vZJNsqkkGMr2q39rVXtMg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Operations/Operations_Health.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Operations/Operations_Health.html",
+          "hash": "QLwQa7SBXQXfAi6RIPDoBg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Operations/Operations_Logs.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Operations/Operations_Logs.html",
+          "hash": "oDWwLsyHiHXyD2lhyjbquA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Operations/Operations_Metrics.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Operations/Operations_Metrics.html",
+          "hash": "N6gshz/qHF0zN09xjYcrbA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Operations/Operations_Overview.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Operations/Operations_Overview.html",
+          "hash": "7HYGeQnaHLFd8njB9i09WQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Operations/Operations_Resource Usage Data.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Operations/Operations_Resource Usage Data.html",
+          "hash": "jZau15uMVuoFl5120Im+4A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Operations/Operations_Usage Data.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Operations/Operations_Usage Data.html",
+          "hash": "DbpLVkykSsjgMCkj3dCzzw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/SequentialDataStore/Compression.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/SequentialDataStore/Compression.html",
+          "hash": "VDBSrR442MJ3h91S8U1uWQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/SequentialDataStore/Data_Store_and_SDS.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/SequentialDataStore/Data_Store_and_SDS.html",
+          "hash": "AD5V+nf3tBWSXRDD9F+mHw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/SequentialDataStore/Filter_Expressions.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/SequentialDataStore/Filter_Expressions.html",
+          "hash": "BaMXPeYgN4wOJcZQ+E0RMA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/SequentialDataStore/Quick_Start.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/SequentialDataStore/Quick_Start.html",
+          "hash": "G84zX9t/eXZXKr0kqwrs0A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/SequentialDataStore/Reading_Data.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/SequentialDataStore/Reading_Data.html",
+          "hash": "mSY0TXiC0cauL8IPxVv4tw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/SequentialDataStore/Reading_Data_API.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/SequentialDataStore/Reading_Data_API.html",
+          "hash": "BtWdkdReybu+NWhhPRaTtQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/SequentialDataStore/SDS_Streams.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/SequentialDataStore/SDS_Streams.html",
+          "hash": "RbAsjXoQfIjd7fcc/z4wVA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/SequentialDataStore/SDS_Types.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/SequentialDataStore/SDS_Types.html",
+          "hash": "8zAB0WkWQkzwijDOxpFkNw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "UidNotFound"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/SequentialDataStore/SDS_Views.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/SequentialDataStore/SDS_Views.html",
+          "hash": "8SWWda3kts5gioHp0hJuyQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/SequentialDataStore/SdsStreamExtra.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/SequentialDataStore/SdsStreamExtra.html",
+          "hash": "xnuVoeY1HzqNse6+HbBjpw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/SequentialDataStore/Searching.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/SequentialDataStore/Searching.html",
+          "hash": "rM4stIF3w0fsmH87FpF5nA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/SequentialDataStore/Units_of_Measure.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/SequentialDataStore/Units_of_Measure.html",
+          "hash": "S0hlCoOdr5VWyRwKs9ibwA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/SequentialDataStore/Writing_Data.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/SequentialDataStore/Writing_Data.html",
+          "hash": "e85gXTGIBmoYAvTENU+q1A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/SequentialDataStore/Writing_Data_API.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/SequentialDataStore/Writing_Data_API.html",
+          "hash": "NepFr+/DUMljOGrK6CIDeA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/SequentialDataStore/indexes.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/SequentialDataStore/indexes.html",
+          "hash": "BFrxYRLxiewhQxsMHDhDqQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/SequentialDataStore/table_format.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/SequentialDataStore/table_format.html",
+          "hash": "iFHQR4Yct+rIg2fQiyEMqw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Documentation/images/Add_Button.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Documentation/images/Add_Button.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Documentation/images/atlas_icon.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Documentation/images/atlas_icon.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Documentation/images/icon_navigation_bigger.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Documentation/images/icon_navigation_bigger.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/samples.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/samples.html",
+          "hash": "5/fl9jNmZ8qZFFd6Gp0u8A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/support.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/support.html",
+          "hash": "0CkUTFHcwwwcmbX2/WL1OQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/How_To_Guides.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/How_To_Guides.html",
+          "hash": "OZ0doaAIBwQqDeIWgXx75g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "Content_Portal/How_To_Guides/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/toc.html",
+          "hash": "ljFtdGPE8dvAwnqo7KlSMA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/OCS_Content_Portal_Overview.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/OCS_Content_Portal_Overview.html",
+          "hash": "UCy2T5Uj+HKiEZ1qTwLd+Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Quickstarts/Getting_Started.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Quickstarts/Getting_Started.html",
+          "hash": "30+84cNwn9RkoPmnpZGctQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Quickstarts/images/AssetEditor_icons.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Quickstarts/images/AssetEditor_icons.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Quickstarts/images/Assets.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Quickstarts/images/Assets.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Quickstarts/images/Attributes.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Quickstarts/images/Attributes.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Quickstarts/images/Details_pane.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Quickstarts/images/Details_pane.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Quickstarts/images/Legend_Table_Med.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Quickstarts/images/Legend_Table_Med.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Quickstarts/images/Max_min__cursors.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Quickstarts/images/Max_min__cursors.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Quickstarts/images/Step_back_forward.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Quickstarts/images/Step_back_forward.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Quickstarts/images/Time_Range_options.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Quickstarts/images/Time_Range_options.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Quickstarts/images/Trend_full_display.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Quickstarts/images/Trend_full_display.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Quickstarts/images/Trend_full_page.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Quickstarts/images/Trend_full_page.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Quickstarts/images/Trend_views_icon.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Quickstarts/images/Trend_views_icon.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Quickstarts/images/View_full_trend_icon.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Quickstarts/images/View_full_trend_icon.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Quickstarts/images/copy_url_link.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Quickstarts/images/copy_url_link.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Quickstarts/images/icon_navigation_bigger.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Quickstarts/images/icon_navigation_bigger.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "Content_Portal/Quickstarts/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Quickstarts/toc.html",
+          "hash": "7P5lMJQQFtVPEwqkBO6RqA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "Content_Portal/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/toc.html",
+          "hash": "gEVpb9rA0/CpINvbMc5UWQ=="
         }
       },
       "is_incremental": false,
@@ -1053,7 +1369,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "6zNcNLI/nzTus6CZWnDmrg=="
+          "hash": "K/ZF2KkHUsOsQYPnOGixQA=="
         }
       },
       "is_incremental": false,
@@ -1065,7 +1381,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "crXFTLtj6FStiF2rM/zh1g=="
+          "hash": "U3MJskzoEScQkBLGedw4XQ=="
         }
       },
       "is_incremental": false,
@@ -1090,17 +1406,17 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 92,
+          "skipped_file_count": 0
+        },
         "TocDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
           "total_file_count": 0,
-          "skipped_file_count": 0
-        },
-        "ConceptualDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build",
-          "total_file_count": 83,
           "skipped_file_count": 0
         }
       }

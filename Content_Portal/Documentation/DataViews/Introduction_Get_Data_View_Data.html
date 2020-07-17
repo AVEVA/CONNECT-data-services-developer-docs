@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Introduction - Get Data View Data </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Introduction - Get Data View Data ">
+    <meta name="generator" content="docfx 2.43.3.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    <meta property="docfx:rel" content="../../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../../../index.html" width="46">
+                <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="DataViewsIntroductionGetData">
+<h1 id="introduction---get-data-view-data">Introduction - Get Data View Data</h1>
+
+<p>Getting data from a data view is straightforward. If you want to understand more about the source behind each data field, that information is available too.</p>
+<p>This is an introduction to the recommended workflow for getting data. The <a class="xref" href="Quick_Start_Get_Data_View_Data.html">Quick Start - Get Data View Data</a> shows these concepts in action. For detailed information, see <a class="xref" href="Getting_Data.html">Getting Data</a> and <a class="xref" href="Data_API.html">Data API</a>.</p>
+<h2 id="specify-first-page-parameters">Specify first page parameters</h2>
+<p>Complete the following to specify first page parameters:</p>
+<ol>
+<li>Specify the index range (start index and end index) and granularity of data to be retrieved (interval).</li>
+<li>Specify the desired response format as csv, table-style json, or object-style json. The default is object-style json.  Csv and table-style json are available with or without a header row.</li>
+<li>Specify the page size.</li>
+</ol>
+<h2 id="request-any-remaining-pages">Request any remaining pages</h2>
+<p>Complete the following if data spans into additional page(s). The current page response will include an HTTP <code>Link</code> header with a hyperlink to the next page of data.</p>
+<ol>
+<li>Follow the hyperlinks to retrieve the full requested dataset page by page, if the current page includes a next hyperlink in the <code>Link</code> header.</li>
+<li>Follow the first page hyperlink in the <code>Link</code> header in the event that it is necessary to restart the paging operation from the first page.</li>
+</ol>
+<h2 id="optional-investigate-the-source-of-the-data">[Optional] Investigate the source of the data</h2>
+<p>For precise information about the source of each field&#39;s data, see the data view&#39;s resolved field mappings.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/DataViews/Introduction_Get_Data_View_Data.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+            <span id='copyright-text'>© 2020 - OSIsoft, LLC.<span>
+        </span></span></div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

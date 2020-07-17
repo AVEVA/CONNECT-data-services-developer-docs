@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Assets API </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Assets API ">
+    <meta name="generator" content="docfx 2.43.3.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../../../index.html" width="46">
+                <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="assets-api">Assets API</h1>
+
+<p>The Assets API allows you to create, read, update, and delete assets. 
+See Access Control API, Asset Centric API, and Assets Search API for additional API methods.
+[QUESTION: is &quot;methods&quot; the correct term? I&#39;ll add links to the topics later.]</p>
+<hr>
+<h2 id="get-asset-by-id"><code>Get Asset by Id</code></h2>
+<p>Returns the specified asset</p>
+<h3 id="request">Request</h3>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code>GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets/<wbr>{assetId}  
+</code></pre><h3 id="parameters">Parameters</h3>
+<p><code>string tenantId</code> </p>
+<p>The tenant identifier</p>
+<p><code>string namespaceId</code> </p>
+<p>The namespace identifier</p>
+<p><code>string assetID</code></p>
+<p>The asset identifier</p>
+<h3 id="response">Response</h3>
+<p>The response includes a status code and a response body. </p>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Body Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OK</td>
+<td><code>Asset</code></td>
+<td>The requested asset.</td>
+</tr>
+<tr>
+<td>400 Bad Request</td>
+<td>error</td>
+<td>The request is not valid. See the response body for additional details.</td>
+</tr>
+<tr>
+<td>403 Forbidden</td>
+<td>error</td>
+<td>You are not authorized to view the requested asset.</td>
+</tr>
+<tr>
+<td>404 Not Found</td>
+<td>error</td>
+<td>The asset with the specified identifier is not found.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-response-body">Example response body</h4>
+<pre><code class="lang-json">HTTP 200 OK 
+Content-Type: application/json
+{
+    &quot;Id&quot;: &quot;Heater_01_01_02&quot;,
+    &quot;Name&quot;: &quot;HeaterOnFirstFloor&quot;,
+    &quot;Description&quot;: &quot;This is Asset which represents a heater on the first floor.&quot;,
+    &quot;Attributes&quot;: [
+        {
+            &quot;Name&quot;: &quot;ModelNumber&quot;,
+            &quot;Description&quot;: &quot;This is attribute with double value representing the model number.&quot;,
+            &quot;SdsTypeCode&quot;: 14,
+            &quot;Value&quot;: 1.3
+        }
+    ],
+    &quot;References&quot;: [
+        {
+            &quot;Name&quot;: &quot;Data&quot;,
+            &quot;Description&quot;: &quot;This is reference to a stream. The stream has data coming from a heater.&quot;,
+            &quot;ReferenceType&quot;: &quot;StreamReference&quot;,
+            &quot;Value&quot;: {
+                &quot;StreamId&quot;: &quot;PI_bifrostbigdaddy_1&quot;,
+                &quot;TypeId&quot;: &quot;PI-Float32&quot;
+            }
+        }
+    ]
+}
+</code></pre><hr>
+<h2 id="get-assets"><code>Get Assets</code></h2>
+<p>Returns an array of assets </p>
+<h3 id="request-1">Request</h3>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code>
+GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets?skip={skip}&amp;count={count} 
+</code></pre><h3 id="parameters-1">Parameters</h3>
+<p><code>string tenantId</code> </p>
+<p>The tenant identifier</p>
+<p><code>string namespaceId</code> </p>
+<p>The namespace identifier</p>
+<p><code>[optional] int skip</code> </p>
+<p>An optional parameter representing the zero-based offset of the first retrieved asset. If not specified, a default value of 0 is used.</p>
+<p><code>[optional] int count</code> </p>
+<p>An optional parameter representing the maximum number of retrieved assets. If not specified, a default value of 100 is used. </p>
+<h3 id="response-1">Response</h3>
+<p>Add API method response.  Enter a description and a type, mention body as well. Use a table to present responses.
+Code example can follow. </p>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Body Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OK</td>
+<td><code>Asset[]</code></td>
+<td>A page of assets. A response header, <code>Total-Count</code>, indicates the total size of the collection.</td>
+</tr>
+<tr>
+<td>204 No Content</td>
+<td>none</td>
+<td>No assets were found or the user does not have permission to view assets.</td>
+</tr>
+<tr>
+<td>400 Bad Request</td>
+<td>error</td>
+<td>The request is not valid. See the response body for additional details.</td>
+</tr>
+<tr>
+<td>503 Service Unavailable</td>
+<td>error</td>
+<td>An error occurred while processing the request. See the response body for additional details.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="create-asset"><code>Create Asset</code></h2>
+<p>Create a new asset with a specified ID. </p>
+<h3 id="request-2">Request</h3>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">
+POST api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets/<wbr>{assetId} 
+</code></pre><h3 id="parameters-2">Parameters</h3>
+<p><code>string tenantId</code> </p>
+<p>The tenant identifier</p>
+<p><code>string namespaceId</code> </p>
+<p>The namespace identifier</p>
+<p><code>string assetID</code></p>
+<p>The asset identifier</p>
+<h4 id="request-body">Request body</h4>
+<p>An <code>asset</code> object.</p>
+<h4 id="example-request-body">Example request body</h4>
+<p>NOTE: To create an asset with a specific ID, use the API route with id. If this is used, you must specify a matching ID field for the asset object in the JSON object below. [Can you explain this?]
+[QUESTION: Can you creat an asset without specifying an ID? Why would you want to specify an ID?] </p>
+<pre><code class="lang-json">{
+    &quot;Name&quot;: &quot;HeaterOnFirstFloor&quot;,
+    &quot;Description&quot;: &quot;This is Asset which represents a heater on the first floor.&quot;,
+    &quot;Attributes&quot;: [
+        {
+            &quot;Name&quot;: &quot;ModelNumber&quot;,
+            &quot;Description&quot;: &quot;This is attribute with double value representing the model number.&quot;,
+            &quot;SdsTypeCode&quot;: 14,
+            &quot;Value&quot;: 1.3
+        }
+    ],
+    &quot;References&quot;: [
+        {
+            &quot;Name&quot;: &quot;Data&quot;,
+            &quot;Description&quot;: &quot;This is reference to a stream. The stream has data coming from a heater.&quot;,
+            &quot;ReferenceType&quot;: &quot;StreamReference&quot;,
+            &quot;Value&quot;: {
+                &quot;StreamId&quot;: &quot;heaterData_1&quot;,
+            }
+        },
+        {
+            &quot;Name&quot;: &quot;StreamView&quot;,
+            &quot;Description&quot;: &quot;This is reference to a stream view, the user is only interested in sds stream properties specified in the sds stream view.&quot;,
+            &quot;ReferenceType&quot;: &quot;StreamReference&quot;,
+            &quot;Value&quot;: {
+                &quot;StreamViewId&quot;: &quot;ViewShowOnlyPressure&quot;,
+                &quot;StreamId&quot;: &quot;ComplexSdsStream&quot;
+            }
+        }
+    ]
+}
+</code></pre><h3 id="response-2">Response</h3>
+<p>The response includes a status code and a body. </p>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Body Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OK</td>
+<td><code>Asset</code></td>
+<td>An array of assets as persisted, including values for optional parameters that were omitted in the request.</td>
+</tr>
+<tr>
+<td>400 Bad Request</td>
+<td>error</td>
+<td>The request is not valid. The response will include which asset failed validation checks. See the response body for additional details.</td>
+</tr>
+<tr>
+<td>403 Forbidden</td>
+<td>error</td>
+<td>The user is not authorized to create assets.</td>
+</tr>
+<tr>
+<td>409 Conflict</td>
+<td>error</td>
+<td>The asset update (?) or create has a conflict. See the response body for additional details.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="create-assets-bulk-create"><code>Create Assets (Bulk create)</code></h2>
+<p>Create multiple assets.  </p>
+<h3 id="request-3">Request</h3>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">POST api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets   
+</code></pre><h3 id="parameters-3">Parameters</h3>
+<p><code>string tenantId</code> </p>
+<p>The tenant identifier</p>
+<p><code>string namespaceId</code> </p>
+<p>The namespace identifier</p>
+<h4 id="request-body-1">Request body</h4>
+<p>An array of <code>asset</code> objects.</p>
+<h3 id="response-3">Response</h3>
+<p>The response includes a status code and a body. </p>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Body Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OK</td>
+<td><code>Asset</code></td>
+<td>An array of assets as persisted, including values for optional parameters that were omitted in the request.</td>
+</tr>
+<tr>
+<td>400 Bad Request</td>
+<td>error</td>
+<td>The request is not valid. The response will include which asset failed validation checks. See the response body for additional details.</td>
+</tr>
+<tr>
+<td>403 Forbidden</td>
+<td>error</td>
+<td>The user is not authorized to create assets.</td>
+</tr>
+<tr>
+<td>409 Conflict</td>
+<td>error</td>
+<td>The asset update (?) or create has a conflict. See the response body for additional details.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="create-or-update-asset"><code>Create or Update Asset</code></h2>
+<p>Create or update an asset with a specified ID. 
+[QUESTION: How is this different from Create Asset]</p>
+<h3 id="request-4">Request</h3>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">PUT api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets/<wbr>{assetId} 
+</code></pre><h3 id="parameters-4">Parameters</h3>
+<p>.<code>string tenantId</code> </p>
+<p>The tenant identifier</p>
+<p><code>string namespaceId</code> </p>
+<p>The namespace identifier</p>
+<p><code>string assetID</code></p>
+<p>The asset identifier</p>
+<h4 id="request-body-2">Request body</h4>
+<p>The newly created (?) or updated <code>asset</code> object.</p>
+<h3 id="response-4">Response</h3>
+<p>The response includes a status code and body. </p>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Body Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OK</td>
+<td><code>Asset</code></td>
+<td>The newly created or updated asset as persisted, including values for optional parameters that were omitted in the request.</td>
+</tr>
+<tr>
+<td>400 Bad Request</td>
+<td>error</td>
+<td>The request is not valid. The response will include which asset failed validation checks. See the response body for additional details.</td>
+</tr>
+<tr>
+<td>403 Forbidden</td>
+<td>error</td>
+<td>The user is not authorized to create assets.</td>
+</tr>
+<tr>
+<td>404 Not Found</td>
+<td>error</td>
+<td>The asset, with the specified identifier, was not found.</td>
+</tr>
+<tr>
+<td>409 Conflict</td>
+<td>error</td>
+<td>The asset update or create (?) has a conflict. See the response body for additional details.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="delete-asset"><code>Delete Asset</code></h2>
+<p>Delete an asset with a specified ID.</p>
+<h3 id="request-5">Request</h3>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">DELETE api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets/<wbr>{assetId}   
+</code></pre><h3 id="parameters-5">Parameters</h3>
+<p><code>string tenantId</code> </p>
+<p>The tenant identifier</p>
+<p><code>string namespaceId</code> </p>
+<p>The namespace identifier</p>
+<p><code>string assetID</code></p>
+<p>The asset identifier</p>
+<h4 id="request-body-3">Request body</h4>
+<p>None</p>
+<h3 id="response-5">Response</h3>
+<p>The response includes a status code and a body.</p>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Body Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>204 No Content</td>
+<td>none</td>
+<td>The asset with the specified ID is deleted.</td>
+</tr>
+<tr>
+<td>400 Bad Request</td>
+<td>error</td>
+<td>The request is not valid. The response will include which asset failed validation checks. See the response body for additional details.</td>
+</tr>
+<tr>
+<td>403 Forbidden</td>
+<td>error</td>
+<td>The user is not authorized to delete this asset.</td>
+</tr>
+<tr>
+<td>404 Not Found</td>
+<td>error</td>
+<td>The asset with the specified ID could not be found.</td>
+</tr>
+</tbody>
+</table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/Assets/Assets_API.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+            <span id='copyright-text'>© 2020 - OSIsoft, LLC.<span>
+        </span></span></div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Getting Started with Remote Operations Monitoring </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Getting Started with Remote Operations Monitoring ">
+    <meta name="generator" content="docfx 2.43.3.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../../index.html" width="46">
+                <img id="logo" src="../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="getting-started-with-remote-operations-monitoring">Getting Started with Remote Operations Monitoring</h1>
+
+<p>OSIsoft Cloud Services (OCS) makes it possible to monitor remote assets in real
+time. The immediate access to data about the status of assets gives you the
+ability to anticipate problems and proactively perform preventative maintenance.</p>
+<p>For example, a fleet manager of a mining truck dealer sells trucks to companies
+worldwide. His company provides monitoring and maintenance services to their
+customers. With remote monitoring, he reviews the status of the trucks each day,
+identifies trucks with problems, uses the data collected on different
+measurements to identify possible causes, reviews the history of these
+measurements over time, and shares the information with colleagues in the field
+who can follow up on the problem.</p>
+<p>The following procedure describes how to use the OCS Portal to monitor your assets and quickly identify problems. The screen captures are taken from the scenario described in the example above.</p>
+<h2 id="procedure">Procedure</h2>
+<ol>
+<li><p>Log in to OSIsoft Cloud Services.</p>
+</li>
+<li><p>Click the navigation icon <img src="images/icon_navigation_bigger.png" alt=""> (upper left corner) and click <strong>Asset Explorer</strong> (under Visualization). </p>
+<p>The Asset Explorer displays the available assets. In this example, it provides an overview of the health of the fleet of trucks.</p>
+<p>Tip: Click on the icons (upper right corner) to toggle between the card and table views of the assets.
+<img src="images/AssetEditor_icons.png" alt="Card/Table View"></p>
+</li>
+<li><p>Scan through the assets and identify any assets with a problematic status.</p>
+<p>Tip: Use the Search box to filter the list of assets displayed.</p>
+<p><img src="images/Assets.png" alt=""></p>
+<p>Each asset is identified with one of the following statuses:</p>
+<table>
+<thead>
+<tr>
+<th>Icon</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Green</td>
+<td>Good</td>
+</tr>
+<tr>
+<td>Yellow</td>
+<td>Warning</td>
+</tr>
+<tr>
+<td>Red</td>
+<td>Bad</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Click on an asset to open the Asset Details pane.</p>
+<p> The Asset Details pane provides attribute and measurement data on the asset that you can use to determine the cause of any problems. The <strong>Attributes</strong> tab displays metadata associated with the asset.</p>
+<p> <img src="images/Attributes.png" alt="Asset Attributes"></p>
+</li>
+<li><p>Click the <strong>Measurements</strong> tab.</p>
+<p> The Asset Details pane displays the following:</p>
+<ul>
+<li><p>Data associated with the asset. These values are updated in real time.</p>
+</li>
+<li><p>A trend of the selected measurements.</p>
+<p><img src="images/Details_pane.png" alt="Details pane"></p>
+</li>
+</ul>
+</li>
+<li><p>Select one or more of the measurements that you think might be the cause
+for the warning.</p>
+</li>
+<li><p>Review the history of the selected measurements in the trend to see if the
+data suggests you have identified a potential cause. </p>
+<p>By default, the trend shows the measurements for the last 8-hour period. Click the arrow to pick another time-range option or specify a custom time range.</p>
+<p><img src="images/Time_Range_options.png" alt="Time Range options"></p>
+</li>
+<li><p>To delve further into the details of these measurements, click the <strong>View full trend</strong> <img src="..\images\View_full_trend_icon.png" alt="View full trend icon"> icon to see the Trend page.</p>
+<p><img src="images/Trend_full_display.png" alt="View full trend"></p>
+<p>Note the following:</p>
+<ul>
+<li><p>The Trend page shows the measurements for the same time range shown in the Details pane of the Asset Editor.</p>
+</li>
+<li><p>There are three views of the trend:</p>
+<ul>
+<li><p>Stacked mode – Each trace is displayed in its own trend.</p>
+</li>
+<li><p>Single-scale mode – All measurements are plotted on the same scale.</p>
+</li>
+<li><p>Multi-scale mode – All measurements are plotted on its own scale.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Click on the <img src="images/Trend_views_icon.png" alt="Trend views icon">icon to toggle through the views.</p>
+<p>The Legend table shows the legend for each trace, the last value, minimum, maximum, and average values in the displayed time range.</p>
+<p><img src="images/Legend_Table_Med.png" alt="Legend Table"></p>
+</li>
+<li><p>The error may not have occurred in the time range currently in view. Click <strong>Step backward</strong> or <strong>Step forward</strong> to move the time range backward or forward.</p>
+<p>The trace will move in increments of time that are displayed in the trend. If the trend displays the last 12 hours, <strong>Step backward</strong> shows the previous 12-hour period. If it displays the last 30 days, <strong>Step forward</strong> shows the next 30-day period.</p>
+<p><img src="images/Step_back_forward.png" alt="Step back and step forward"></p>
+</li>
+<li><p>Click on a trace to select it for further analysis.</p>
+<p>The trace is highlighted, and two cursors automatically mark the minimum and maximum values for the displayed time range.</p>
+<p><img src="images/Max_min__cursors.png" alt="Maximum and minimum cursors"></p>
+<p>Click the plus sign (+) above the trace to lock the cursor in place. The “+” turns into an “x.” Click the “x” to unlock the cursor.</p>
+</li>
+<li><p>Add other cursors at data points of interest.</p>
+<p>Note: When two cursors are locked, the Legend table displays summary calculations for the values between the two cursors.</p>
+</li>
+<li><p>Click the link icon <img src="images/copy_url_link.png" alt="Copy link icon"> in the menu bar to copy the URL of the workspace.</p>
+<p>This link, shared with colleagues, gives them the same view of the trend that they can then use to troubleshoot problems.</p>
+</li>
+</ol>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Quickstarts/Getting_Started.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+            <span id='copyright-text'>© 2020 - OSIsoft, LLC.<span>
+        </span></span></div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

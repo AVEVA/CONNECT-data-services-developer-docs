@@ -3,250 +3,256 @@ sorted: true
 references:
 - uid: accessControl
   name: Role-based access control
-  href: Documentation/Access_Control.html
+  href: Content_Portal/Documentation/Access_Control.html
 - uid: AccountClientRole_1
   name: Client Roles
-  href: Documentation/Management/Account_ClientRole_1.html
+  href: Content_Portal/Documentation/Management/Account_ClientRole_1.html
 - uid: AccountManagementOverview
   name: Account Management
-  href: Documentation/Management/Management_Overview.html
+  href: Content_Portal/Documentation/Management/Management_Overview.html
 - uid: AccountNamespace_1
   name: Namespaces
-  href: Documentation/Management/Account_Namespace_1.html
+  href: Content_Portal/Documentation/Management/Account_Namespace_1.html
 - uid: AccountRole_1
   name: Roles
-  href: Documentation/Management/Account_Role_1.html
+  href: Content_Portal/Documentation/Management/Account_Role_1.html
 - uid: AccountRootAccessControl_1
   name: Root AccessControl
-  href: Documentation/Management/Account_RootAccessControl_1.html
+  href: Content_Portal/Documentation/Management/Account_RootAccessControl_1.html
 - uid: AccountServiceBlog
   name: Service Blog
-  href: Documentation/Management/Account_ServiceBlog.html
+  href: Content_Portal/Documentation/Management/Account_ServiceBlog.html
 - uid: AccountTenant
   name: Tenants
-  href: Documentation/Management/Account_Tenant.html
+  href: Content_Portal/Documentation/Management/Account_Tenant.html
 - uid: AccountTenantFeatureState
   name: Tenant Feature States
-  href: Documentation/Management/Account_TenantFeatureState.html
+  href: Content_Portal/Documentation/Management/Account_TenantFeatureState.html
 - uid: AccountUserRole_1
   name: User Roles
-  href: Documentation/Management/Account_UserRole_1.html
+  href: Content_Portal/Documentation/Management/Account_UserRole_1.html
+- uid: ConceptsOverview
+  name: OSIsoft Cloud Services
+  href: Content_Portal/Concepts/Concepts_Overview.html
 - uid: dataIngress
   name: Data Ingress and OSIsoft Message Format
-  href: Documentation/DataIngress/Data_Ingress.html
+  href: Content_Portal/Documentation/DataIngress/Data_Ingress.html
 - uid: DataView
   name: Data View
-  href: Documentation/DataViews/Data_View.html
+  href: Content_Portal/Documentation/DataViews/Data_View.html
 - uid: DataViewAPI
   name: Data View API
-  href: Documentation/DataViews/Data_View_API.html
+  href: Content_Portal/Documentation/DataViews/Data_View_API.html
 - uid: DataViewsAccessControlAPI
   name: Access Control API
-  href: Documentation/DataViews/Access_Control_API.html
+  href: Content_Portal/Documentation/DataViews/Access_Control_API.html
 - uid: DataViewsAPIOverview
   name: Data Views API Overview
-  href: Documentation/DataViews/Data_Views_API_Overview.html
+  href: Content_Portal/Documentation/DataViews/Data_Views_API_Overview.html
 - uid: DataViewsAvailableFieldSets
   name: Available Field Sets
-  href: Documentation/DataViews/Available_Field_Sets.html
+  href: Content_Portal/Documentation/DataViews/Available_Field_Sets.html
 - uid: DataViewsDataAPI
   name: Data API
-  href: Documentation/DataViews/Data_API.html
+  href: Content_Portal/Documentation/DataViews/Data_API.html
 - uid: DataViewsDataItemsandGroups
   name: Data Items and Groups
-  href: Documentation/DataViews/Data_Items_and_Groups.html
+  href: Content_Portal/Documentation/DataViews/Data_Items_and_Groups.html
 - uid: DataViewsExampleScenario
   name: Example Scenarios
-  href: Documentation/DataViews/Example_Scenario.html
+  href: Content_Portal/Documentation/DataViews/Example_Scenario.html
 - uid: DataViewsFieldMappings
   name: Field Mappings
-  href: Documentation/DataViews/Field_Mappings.html
+  href: Content_Portal/Documentation/DataViews/Field_Mappings.html
 - uid: DataViewsFieldSets
   name: Data Field Sets
-  href: Documentation/DataViews/Field_Sets.html
+  href: Content_Portal/Documentation/DataViews/Field_Sets.html
 - uid: DataViewsGettingData
   name: Getting Data
-  href: Documentation/DataViews/Getting_Data.html
+  href: Content_Portal/Documentation/DataViews/Getting_Data.html
 - uid: DataViewsGrouping
   name: Grouping
-  href: Documentation/DataViews/Grouping.html
+  href: Content_Portal/Documentation/DataViews/Grouping.html
 - uid: DataViewShape
   name: Data View Shape
-  href: Documentation/DataViews/Data_View_Shape.html
+  href: Content_Portal/Documentation/DataViews/Data_View_Shape.html
 - uid: DataViewsIntroductionDefine
   name: Introduction - Define a data view
-  href: Documentation/DataViews/Introduction_Define_a_Data_View.html
+  href: Content_Portal/Documentation/DataViews/Introduction_Define_a_Data_View.html
 - uid: DataViewsIntroductionGetData
   name: Introduction - Get Data View Data
-  href: Documentation/DataViews/Introduction_Get_Data_View_Data.html
+  href: Content_Portal/Documentation/DataViews/Introduction_Get_Data_View_Data.html
 - uid: DataViewsOverview
   name: Data Views
-  href: Documentation/DataViews/Data_Views_Overview.html
+  href: Content_Portal/Documentation/DataViews/Data_Views_Overview.html
 - uid: DataViewsPreviewDataAPI
   name: Preview Data API
-  href: Documentation/DataViews/Preview_Data_API.html
+  href: Content_Portal/Documentation/DataViews/Preview_Data_API.html
 - uid: DataViewsQueries
   name: Queries
-  href: Documentation/DataViews/Queries.html
+  href: Content_Portal/Documentation/DataViews/Queries.html
 - uid: DataViewsQuickStartDefine
   name: Quick Start - Define a Data View
-  href: Documentation/DataViews/Quick_Start_Define_a_Data_View.html
+  href: Content_Portal/Documentation/DataViews/Quick_Start_Define_a_Data_View.html
 - uid: DataViewsQuickStartGetData
   name: Quick Start - Get Data View Data
-  href: Documentation/DataViews/Quick_Start_Get_Data_View_Data.html
+  href: Content_Portal/Documentation/DataViews/Quick_Start_Get_Data_View_Data.html
 - uid: DataViewsSecuringDataViews
   name: Securing Data Views
-  href: Documentation/DataViews/Securing_Data_Views.html
+  href: Content_Portal/Documentation/DataViews/Securing_Data_Views.html
 - uid: identityAuthorizationCodeClient
   name: AuthorizationCodeClient
-  href: Documentation/Identity/Identity_AuthorizationCodeClient.html
+  href: Content_Portal/Documentation/Identity/Identity_AuthorizationCodeClient.html
 - uid: identityAutomationIdentity
   name: AutomationIdentity
-  href: Documentation/Identity/Identity_AutomationIdentity.html
+  href: Content_Portal/Documentation/Identity/Identity_AutomationIdentity.html
 - uid: identityAzureActiveDirectoryTenant
   name: AzureActiveDirectoryTenant
-  href: Documentation/Identity/Identity_AzureActiveDirectoryTenant.html
+  href: Content_Portal/Documentation/Identity/Identity_AzureActiveDirectoryTenant.html
 - uid: identityClaim
   name: Claim
-  href: Documentation/Identity/Identity_Claim.html
+  href: Content_Portal/Documentation/Identity/Identity_Claim.html
 - uid: identityClaimTypeName
   name: ClaimTypeName
-  href: Documentation/Identity/Identity_ClaimTypeName.html
+  href: Content_Portal/Documentation/Identity/Identity_ClaimTypeName.html
 - uid: identityClientCredentialClient
   name: ClientCredentialClient
-  href: Documentation/Identity/Identity_ClientCredentialClient.html
+  href: Content_Portal/Documentation/Identity/Identity_ClientCredentialClient.html
 - uid: identityConsent
   name: AAD Consent to OSIsoft Applications
-  href: Documentation/Identity/Consent.html
+  href: Content_Portal/Documentation/Identity/Consent.html
 - uid: identityHybridClient
   name: HybridClient
-  href: Documentation/Identity/Identity_HybridClient.html
+  href: Content_Portal/Documentation/Identity/Identity_HybridClient.html
 - uid: identityIdentityProvider
   name: IdentityProvider
-  href: Documentation/Identity/Identity_IdentityProvider.html
+  href: Content_Portal/Documentation/Identity/Identity_IdentityProvider.html
 - uid: identityImplicitClient
   name: ImplicitClient (Deprecated)
-  href: Documentation/Identity/Identity_ImplicitClient.html
+  href: Content_Portal/Documentation/Identity/Identity_ImplicitClient.html
 - uid: identityInvitation
   name: Invitation
-  href: Documentation/Identity/Identity_Invitation.html
+  href: Content_Portal/Documentation/Identity/Identity_Invitation.html
 - uid: identityOverview
   name: OSIsoft Identity Service
-  href: Documentation/Identity/Identity_Overview.html
+  href: Content_Portal/Documentation/Identity/Identity_Overview.html
 - uid: identityPersistedGrant
   name: PersistedGrant
-  href: Documentation/Identity/Identity_PersistedGrant.html
+  href: Content_Portal/Documentation/Identity/Identity_PersistedGrant.html
 - uid: identitySecret
   name: Secret
-  href: Documentation/Identity/Identity_Secret.html
+  href: Content_Portal/Documentation/Identity/Identity_Secret.html
 - uid: identityUser
   name: User
-  href: Documentation/Identity/Identity_User.html
+  href: Content_Portal/Documentation/Identity/Identity_User.html
 - uid: index
-  name: OCS API
+  name: OCS Content Portal
   href: index.html
 - uid: MetadataRulesOverview
   name: Metadata Rules
-  href: Documentation/Metadata/Metadata_Rules_Overview.html
+  href: Content_Portal/Documentation/Metadata/Metadata_Rules_Overview.html
+- uid: ocs-content-portal-overview
+  name: OSIsoft Cloud Services
+  href: Content_Portal/OCS_Content_Portal_Overview.html
 - uid: omfIngressSpecification
   name: Use OSIsoft Message Format with OSIsoft Cloud Services
-  href: Documentation/DataIngress/OMF_Ingress_Specification.html
+  href: Content_Portal/Documentation/DataIngress/OMF_Ingress_Specification.html
 - uid: omfIngressSubsctriptions
   name: Subscriptions
-  href: Documentation/DataIngress/OMF_Ingress_Subscriptions.html
+  href: Content_Portal/Documentation/DataIngress/OMF_Ingress_Subscriptions.html
 - uid: omfIngressToOCS
   name: Data Ingress to Cloud Services using OMF
-  href: Documentation/DataIngress/OMF_Ingress_to_OCS.html
+  href: Content_Portal/Documentation/DataIngress/OMF_Ingress_to_OCS.html
 - uid: omfIngressTopics
   name: Topics
-  href: Documentation/DataIngress/OMF_Ingress_Topics.html
+  href: Content_Portal/Documentation/DataIngress/OMF_Ingress_Topics.html
 - uid: operationsBilling_Cycles
   name: Billing Cycles
-  href: Documentation/Operations/Operations_Billing%20Cycles.html
+  href: Content_Portal/Documentation/Operations/Operations_Billing%20Cycles.html
 - uid: operationsHealth
   name: Health
-  href: Documentation/Operations/Operations_Health.html
+  href: Content_Portal/Documentation/Operations/Operations_Health.html
 - uid: operationsLogs
   name: Logs
-  href: Documentation/Operations/Operations_Logs.html
+  href: Content_Portal/Documentation/Operations/Operations_Logs.html
 - uid: operationsMetrics
   name: Metrics
-  href: Documentation/Operations/Operations_Metrics.html
+  href: Content_Portal/Documentation/Operations/Operations_Metrics.html
 - uid: operationsOverview
   name: OSIsoft Operations Service
-  href: Documentation/Operations/Operations_Overview.html
+  href: Content_Portal/Documentation/Operations/Operations_Overview.html
 - uid: operationsResource_Usage_Data
   name: Resource Usage Data
-  href: Documentation/Operations/Operations_Resource%20Usage%20Data.html
+  href: Content_Portal/Documentation/Operations/Operations_Resource%20Usage%20Data.html
 - uid: operationsUsage_Data
   name: Usage Data
-  href: Documentation/Operations/Operations_Usage%20Data.html
+  href: Content_Portal/Documentation/Operations/Operations_Usage%20Data.html
 - uid: osisoftCloudServices
   name: OSIsoft Cloud Services
-  href: Documentation/OSIsoft_Cloud_Services.html
+  href: Content_Portal/Documentation/OSIsoft_Cloud_Services.html
 - uid: PreviewDataView
   name: Preview Data View API
-  href: Documentation/DataViews/Preview_Data_View.html
+  href: Content_Portal/Documentation/DataViews/Preview_Data_View.html
 - uid: ResolvedDataView
   name: Resolved Data View
-  href: Documentation/DataViews/Resolved_Data_View.html
+  href: Content_Portal/Documentation/DataViews/Resolved_Data_View.html
 - uid: ResolvedDataViewAPI
   name: Resolved Data View API
-  href: Documentation/DataViews/Resolved_Data_View_API.html
+  href: Content_Portal/Documentation/DataViews/Resolved_Data_View_API.html
 - uid: ResolvedDataViewPreviewAPI
   name: Resolved Data View Preview API
-  href: Documentation/DataViews/Resolved_Data_View_Preview_API.html
+  href: Content_Portal/Documentation/DataViews/Resolved_Data_View_Preview_API.html
 - uid: samples
   name: Samples
-  href: Documentation/samples.html
+  href: Content_Portal/Documentation/samples.html
 - uid: sds
   name: Sequential Data Store
-  href: Documentation/SequentialDataStore/Data_Store_and_SDS.html
+  href: Content_Portal/Documentation/SequentialDataStore/Data_Store_and_SDS.html
 - uid: sdsCompression
   name: Compression
-  href: Documentation/SequentialDataStore/Compression.html
+  href: Content_Portal/Documentation/SequentialDataStore/Compression.html
 - uid: sdsFilterExpressions
   name: Filter expressions for SDS values
-  href: Documentation/SequentialDataStore/Filter_Expressions.html
+  href: Content_Portal/Documentation/SequentialDataStore/Filter_Expressions.html
 - uid: sdsIndexes
   name: Indexes
-  href: Documentation/SequentialDataStore/indexes.html
+  href: Content_Portal/Documentation/SequentialDataStore/indexes.html
 - uid: sdsQuickStart
   name: 'Quick Start: Sequential Data Store'
-  href: Documentation/SequentialDataStore/Quick_Start.html
+  href: Content_Portal/Documentation/SequentialDataStore/Quick_Start.html
 - uid: sdsReadingData
   name: Read data
-  href: Documentation/SequentialDataStore/Reading_Data.html
+  href: Content_Portal/Documentation/SequentialDataStore/Reading_Data.html
 - uid: sdsReadingDataApi
   name: API calls for reading data
-  href: Documentation/SequentialDataStore/Reading_Data_API.html
+  href: Content_Portal/Documentation/SequentialDataStore/Reading_Data_API.html
 - uid: sdsSearching
   name: Search in SDS
-  href: Documentation/SequentialDataStore/Searching.html
+  href: Content_Portal/Documentation/SequentialDataStore/Searching.html
 - uid: sdsStreamExtra
   name: Stream Metadata and Tags
-  href: Documentation/SequentialDataStore/SdsStreamExtra.html
+  href: Content_Portal/Documentation/SequentialDataStore/SdsStreamExtra.html
 - uid: sdsStreams
   name: Streams
-  href: Documentation/SequentialDataStore/SDS_Streams.html
+  href: Content_Portal/Documentation/SequentialDataStore/SDS_Streams.html
 - uid: sdsStreamViews
   name: Stream Views
-  href: Documentation/SequentialDataStore/SDS_Views.html
+  href: Content_Portal/Documentation/SequentialDataStore/SDS_Views.html
 - uid: sdsTableFormat
   name: Table format
-  href: Documentation/SequentialDataStore/table_format.html
+  href: Content_Portal/Documentation/SequentialDataStore/table_format.html
 - uid: sdsTypes
   name: Types
-  href: Documentation/SequentialDataStore/SDS_Types.html
+  href: Content_Portal/Documentation/SequentialDataStore/SDS_Types.html
 - uid: sdsWritingData
   name: Write data
-  href: Documentation/SequentialDataStore/Writing_Data.html
+  href: Content_Portal/Documentation/SequentialDataStore/Writing_Data.html
 - uid: sdsWritingDataApi
   name: API calls for writing data
-  href: Documentation/SequentialDataStore/Writing_Data_API.html
+  href: Content_Portal/Documentation/SequentialDataStore/Writing_Data_API.html
 - uid: support
   name: Technical support and other resources
-  href: Documentation/support.html
+  href: Content_Portal/Documentation/support.html
 - uid: unitsOfMeasure
   name: Units of Measure
-  href: Documentation/SequentialDataStore/Units_of_Measure.html
+  href: Content_Portal/Documentation/SequentialDataStore/Units_of_Measure.html

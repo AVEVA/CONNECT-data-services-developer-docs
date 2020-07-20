@@ -47,7 +47,7 @@ Controls when the data view backing resources are to be refreshed. Used only whe
 | `Preserve`| Use cached information, if available.   
 
 `[optional] int count`  
-The requested page size. The default is calculated as 100,000 / # columns. The maximum is 250,000.
+The requested page size. The maximum is 250,000. The default number of cells per page is 100,000, so the default page size is calculated as 100,000  divided by the number of columns.
 
 ### Response
 The response includes a status code and, in most cases, a body.

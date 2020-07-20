@@ -72,7 +72,7 @@ The view data is available in several formats.
 Data retrieval operations are paged. Data for a requested index range may span multiple pages.
 
 ### Page size
-By default, each page includes 1000 records. The maximum page size is 250,000. 
+The maximum page size is 250,000. If `count` query parameter is not provided, the page size is going to be calculated as 100,000 divided by the number of columns, where 100,000 is the default cell count per data request. Users can see the calculated page size in the first and next page links in the `Link` response header (described below).
 
 Optimal page size is dependent both on the client and on the shape of the data view. The size of each individual record is proportional to the "width" of the data view, i.e. how many field mappings are resolved. Clients retrieving data views that resolve into few field mappings may wish to use a page size close to the maximum.
 

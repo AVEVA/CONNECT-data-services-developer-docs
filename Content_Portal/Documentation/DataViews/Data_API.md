@@ -47,7 +47,7 @@ Controls when the data view backing resources are to be refreshed. Used only whe
 | `Preserve`| Use cached information, if available.   
 
 `[optional] int count`  
-The requested page size. The default value is 1000. The maximum is 250,000.
+The requested page size. The default is calculated as 100,000 / # columns. The maximum is 250,000.
 
 ### Response
 The response includes a status code and, in most cases, a body.

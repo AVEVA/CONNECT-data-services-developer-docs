@@ -42,7 +42,7 @@ The requested data [output format](xref:DataViewsGettingData#format). Output for
 Used only when [paging](xref:DataViewsGettingData#paging). Not specified when requesting the first page of data.
 
 `[optional] int count`  
-The requested page size. The default value is 1000. The maximum is 250,000.
+The requested page size. The default is calculated as 100,000 / # columns. The maximum is 250,000.
 
 #### Example request body
 ```json

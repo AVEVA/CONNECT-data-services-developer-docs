@@ -76,7 +76,7 @@ The maximum page size is 250,000.
 
 Optimal page size is dependent both on the client and on the shape of the data view. The size of each individual record is proportional to the "width" of the data view, i.e. how many field mappings are resolved. Clients retrieving data views that resolve into few field mappings may wish to use a page size close to the maximum.
 
-If `count` query parameter is not provided, the page size will be calculated as 100,000 divided by the number of field mappings, where 100,000 is a number representing the default product of the number of field mappings and the page size. Users can see the calculated page size as a `count` query parameter in the `Link` response header (described below). The calculated count will be included in both the first and the next page links. 
+If `count` query parameter is not provided, the page size will be calculated as 100,000 divided by the number of field mappings, where 100,000 is used as the default product of the number of field mappings and the page size. Users can see the calculated page size as a `count` query parameter in the `Link` response header (described below). The calculated page size will be included in both the first and the next page links. 
 
 ### Hyperlinks
 When paging through data view data via the REST API, hyperlinks to the first page and next page of data are provided in the `Link` header. The first page header is signified by relation type of first, `rel="first"`. The next page header is signified by `rel="next"`. Proper use of the hyperlinks is recommended.

@@ -1,18 +1,31 @@
+[QUESTION: This topic is very inconsistent in its use of plurals. This needs to be cleaned up. ]
 
 
-
-# Access Control API
-The Access Control API is used to secure Assets by setting their ownership and permissions. For more information about OCS access control, see Role-based access control. 
+# Asset or AssetType Access Control API
+The Access Control API is used to secure assets by setting their ownership and permissions. For more information about OCS access control, see Role-based access control. 
 
 ***
-## `Get Assets Access Control List ` 
-Get the default `AccessControlList` for the Assets collection.
-[QUESTION: Is Assets capitalized? Assets collection, not Asset collection]
+## `Get Asset or AssetType Access Control List ` 
+Get the default `AccessControlList` for the assets and AssetType collections.
+[QUESTION: Is Assets capitalized? What is the plural of AssetType? Assets collection, assets collection, asset collections, AssetType collections]
+
+[QUESTION: is it assets or assets collection? Is it AssetType collections?]
 
 ### Request 
+
+Assets
+
 ```text 
 
 GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Assets 
+
+```
+
+AssetType collections
+
+```text 
+
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/AssetTypes 
 
 ```
 
@@ -27,10 +40,12 @@ The namespace identifier
 
 ### Response
 
+The response includes a status code and a body.
+
 | Status Code | Body Type | Description |
 |--|--|--|
-| 200 OK | `AccessControlList` | The default access control list of the Assets collection |
-| 403 Forbidden | error | You are not authorized to view the requested Assets collection's access control list. |
+| 200 OK | `AccessControlList` | The default access control list of the assets or AssetType collections. |
+| 403 Forbidden | error | You are not authorized to view the requested asset or AssetType collection's access control list. |
 
 #### Example response body
 ```json 
@@ -64,14 +79,22 @@ HTTP 200 OK
 
 ***
 
-## `Update Assets Access Control List` 
+## `Update Assets or AssetType Access Control List` 
 
-Update the default `AccessControlList` for the Assets collection 
+Update the default `AccessControlList` for the assets or AssetType collections 
 
 ### Request 
 
+Assets
+
 ```text 
 PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Assets  
+
+```
+
+AssetTypes
+```text 
+PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/AssetTypes  
 
 ```
 
@@ -96,20 +119,27 @@ The response includes a status code and, in some instances, a body.
 
 | Status Code               | Body Type | Description                                     |
 | ------------------------- | --------- | ----------------------------------------------- |
-| 204 No Content                    | (empty)  | Successfully updated the default access control list of the assets collection.                             |
+| 204 No Content                    | (empty)  | Successfully updated the default access control list of the assets or AssetType collections.               |
 | 400 Bad Request             | error     | The request is not valid. See the response body for details.       |
-| 403 Forbidden             | error     | You are not authorized to update the asset collection's default access control list.         |
+| 403 Forbidden             | error     | You are not authorized to update the asset or AssetType collection's default access control list. |
 
 ***
 
-## `Get Asset Access Control List` 
+## `Get Asset or AssetType Access Control List` 
 
-Get the `AssetControlList` of the specified asset 
+Get the `AssetControlList` of the specified asset or AssetType.
 
 ### Request 
 
+Assets
 ```text 
 GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/AcessControl 
+
+```
+
+AssetTypes
+```text 
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetTypeId}/AcessControl 
 
 ```
 
@@ -127,12 +157,19 @@ The namespace identifier
 
 The asset identifier
 
+`string assetTypeId`
+
+The AssetType identifier
+
 ### Response 
+
+The response includes a status code and a body.
+
 | Status Code               | Body Type | Description                                     |
 | ------------------------- | --------- | ----------------------------------------------- |
-| 200 OK                    | `AccessControlList`  | The access control list of the requested asset.                            |
-| 403 Forbidden             | error     | You are not authorized to view the access control list of the requested asset.     |
-| 404 Not Found             | error     | The requested asset with the specified ID was not found.          |
+| 200 OK                    | `AccessControlList`  | The access control list of the requested asset or AssetType.              |
+| 403 Forbidden             | error     | You are not authorized to view the access control list of the requested asset or AssetType. |
+| 404 Not Found             | error     | The requested asset or AssetType with the specified ID was not found. |
 | 500 Internal Server Error             | error     | An error occurred while processing the request. See the response body for details.       |
 
 #### Example request body 
@@ -160,17 +197,26 @@ HTTP 200 OK
 ```
 ***
 
-## `Update Asset Access Control List` 
+## `Update Asset or AssetType Access Control List` 
 
-Update the `AccessControlList` of the specified asset.
+Update the `AccessControlList` of the specified asset or AssetType.
 
 ### Request 
+
+Asset
 
 ```text 
 PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/AccessControl 
 
 ```
 
+
+AssetType
+
+```text 
+PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetTypeId}/AccessControl 
+
+```
 ### Parameters  
 
 `string tenantId` 
@@ -184,6 +230,11 @@ The namespace identifier
 `string assetId`
 
 The asset identifier
+
+`string assetTypeId`
+
+The AssetType identifier
+
 #### Request body 
 
 An `AccessControlList`
@@ -194,18 +245,20 @@ The response includes a status code and, in some instances, a body.
 
 | Status Code               | Body Type | Description                                     |
 | ------------------------- | --------- | ----------------------------------------------- |
-| 204 No Content                    | (empty)  | Successfully updated the access control list of the specified asset.                             |
+| 204 No Content                    | (empty)  | Successfully updated the access control list of the specified asset or AssetType.               |
 | 400 Bad Request             | error     | The request is not valid. See the response body for details.       |
-| 403 Forbidden             | error     | You are not authorized to update the access control list of the requested asset.         |
-| 404 Not Found             | error     | The requested asset with the specified ID was not found.          |
+| 403 Forbidden             | error     | You are not authorized to update the access control list of the requested asset or AssetType. |
+| 404 Not Found             | error     | The requested asset or AssetType with the specified ID was not found. |
 
 ***
 
-## `Get Asset Access Rights` 
+## `Get Asset or AssetType Access Rights` 
 
-Get the calling user or client's access rights to the requested asset
+Get the calling user or client's access rights to the requested asset or AssetType.
 
 ### Request 
+
+Asset
 
 ```text 
 GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/AcessRights                                                                 
@@ -214,6 +267,12 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/
 
 [QUESTION: iT'S **Assets**/{assetId}, not **Asset**/{assetId}, yes?]
 
+AssetType
+
+```text 
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetTypeId}/AcessRights                                                                 
+
+```
 ### Parameters  
 
 `string tenantId` 
@@ -228,16 +287,19 @@ The namespace identifier
 
 The asset identifier
 
+`string assetTypeId`
+
+The AssetType identifier
+
 ### Response 
 
-Add API method response.  Enter a description and a type, mention body as well. Use a table to present responses.
-Code example can follow. 
+The response includes a status code and a body. 
 
-| Status Code               | Body Type | Description                                     |
-| ------------------------- | --------- | ----------------------------------------------- |
-| 200 OK                    | string[]  | A list of access rights to the requested asset.                              |
-| 403 Forbidden             | error     | You are not authorized to request access rights to the specified asset.       |
-| 404 Not Found             | error     | The requested asset with the specified ID was not found.          |
+| Status Code   | Body Type | Description                                                  |
+| ------------- | --------- | ------------------------------------------------------------ |
+| 200 OK        | string[]  | A list of access rights to the requested asset or AssetType. |
+| 403 Forbidden | error     | You are not authorized to make this request.                 |
+| 404 Not Found | error     | The requested asset or AssetType with the specified ID was not found. |
 
 
 #### Example response body
@@ -254,16 +316,26 @@ HTTP 200 OK
 ```
 ***
 
-## `Get Asset Owner` 
+## `Get Asset or AssetType Owner` 
 
-Get the owner `Trustee` of the specified asset
+Get the owner `Trustee` of the specified asset or AssetType.
 
 ### Request 
 
+Asset
 ```text 
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Owner
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/owner
 
 ```
+
+AssetType
+
+```text 
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetTypeId}/owner
+
+```
+
+[QUESTION: Is "owner" meant to be lowercase?]
 
 ### Parameters  
 
@@ -275,9 +347,10 @@ The tenant identifier
 
 The namespace identifier 
 
-`string assetId`
 
-The asset identifier
+`string assetTypeId`
+
+The AssetType identifier
 
 ### Response 
 
@@ -285,9 +358,9 @@ The response includes a status code and a body.
 
 | Status Code               | Body Type | Description                                     |
 | ------------------------- | --------- | ----------------------------------------------- |
-| 200 OK                    | `Trustee`  | The owner of the requested asset.                              |
-| 403 Forbidden             | error     | You are not authorized to view the owner of the requested asset.       |
-| 404 Not Found             | error     | The requested asset with the specified ID was not found.           |
+| 200 OK                    | `Trustee`  | The owner of the requested asset or AssetType.                |
+| 403 Forbidden             | error     | You are not authorized to view the owner of the requested asset or AssetType. |
+| 404 Not Found             | error     | The requested asset or AssetTypewith the specified ID was not found. |
 
 #### Example response body
 
@@ -303,18 +376,27 @@ Content-Type: application/json
 ```
 ***
 
-## `Update Asset Owner` 
+## `Update Asset or AssetType Owner` 
 
-Update the owner `Trustee` of the specified asset.
+Update the owner `Trustee` of the specified asset or AssetType.
 
 ### Request 
+
+Asset
 
 ```text 
 PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Owner
 
 ```
 
-[QUESTION: iT's Assets/{assetId}, not AssetId/{assetId}, yes?]
+[QUESTION: Is it Assets/{assetId} orAsset/{assetId}?]
+
+AssetType
+
+```text 
+PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetTypeId}/Owner
+
+```
 
 ###  Parameters  
 
@@ -329,6 +411,10 @@ The namespace identifier
 `string assetId`
 
 The asset identifier
+
+`string assetTypeId`
+
+The AssetType identifier
 
 #### Request body 
 
@@ -351,7 +437,7 @@ The response includes a status code and, in some instances, a body.
 
 | Status Code               | Body Type | Description                                     |
 | ------------------------- | --------- | ----------------------------------------------- |
-| 204 No Content                    | (empty)  | Successfully updated. the asset owner                              |
+| 204 No Content                    | (empty)  | Successfully updated the asset or AssetType owner.               |
 | 400 Bad Request            | error     | The request is not valid. See the response body for details.      |
-| 403 Forbidden             | error     | You are not authorized to update the owner for the requested asset.           |
-| 404 Not Found | error     | The requested asset with the specified ID was not found. |
+| 403 Forbidden             | error     | You are not authorized to update the owner for the requested asset or AssetType. |
+| 404 Not Found | error     | The requested asset or AssetType with the specified ID was not found. |

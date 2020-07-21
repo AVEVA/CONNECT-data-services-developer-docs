@@ -1,4 +1,8 @@
 - name: Assets API
   href: Assets_API.md
-- name: Access Control API
+- name: Asset and AssetType Access Control API
   href: Access_Control.md
+- name: Asset-Centric Data API
+  href: Asset Centric Data API.md
+- name: Asset Search API
+  href: Asset Search API.md

@@ -42,7 +42,7 @@ The requested data [output format](xref:DataViewsGettingData#format). Output for
 Used only when [paging](xref:DataViewsGettingData#paging). Not specified when requesting the first page of data.
 
 `[optional] int count`  
-The requested page size. The maximum is 250,000. If the parameter is not provided, [a default page size will be calculated](xref:DataViewsGettingData#page-size).
+The requested page size. The maximum is 250,000. If the parameter is not provided, [an optimal page size will be calculated](xref:DataViewsGettingData#page-size).
 
 
 #### Example request body

@@ -18,7 +18,7 @@ SDS returns timestamps in UTC if the timestamp is of property `DateTime` and in 
 
 ### Single Stream Writes   
 
-The following support writing multiple values:
+The following methods support writing a single or multiple values:
 * [Insert Values](xref:sdsWritingDataApi#insert-values) inserts a collection of events.
 * [Patch Values](xref:sdsWritingDataApi#patch-values) updates specific fields for a collection of events.
 * [Replace Values](xref:sdsWritingDataApi#remove-values) replaces a collection of events.

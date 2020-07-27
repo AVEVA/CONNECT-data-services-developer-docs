@@ -2,7 +2,6 @@
   href: OCS_Content_Portal_Overview.md
 - name: Quickstarts
   href: Quickstarts/toc.yml
-  topicHref: Quickstarts-Overview.md
 - name: API Reference
   href: Documentation/toc.yml
   topicHref: Documentation/OSIsoft_Cloud_Services.md

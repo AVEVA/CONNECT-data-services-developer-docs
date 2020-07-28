@@ -93,7 +93,7 @@ or when the properties have the same name, SDS will map the properties automatic
 <p>When SDS is unable to determine how to map a source property, the property is removed. If SDS encounters 
 a target property that it cannot map to, the property is added and configured with a default value.</p>
 <p>To map a property that is beyond the ability of SDS to map on its own, you should define an <code>SdsStreamViewProperty</code> 
-and add it to the SdsStreamView’s <a href="xref:sdsstreamviewproperty"><code>Properties</code> collection</a>.</p>
+and add it to the SdsStreamView’s <a href="#sdsstreamviewproperty"><code>Properties</code> collection</a>.</p>
 <h2 id="sdsstreamview-fields-and-properties-table">SdsStreamView fields and properties table</h2>
 <p><a name="streamviewpropertiestable"></a>
 The following table shows the required and optional SdsStreamView fields. Fields that are not included are reserved for internal SDS use. 
@@ -719,7 +719,7 @@ Content-Type: application/json
 <p>Returns a list of stream views within a given namespace.</p>
 <p>If specifying the optional search query parameter, the list of stream views returned will match 
 the search criteria. If the search query parameter is not specified, the list will include 
-all stream views in the namespace. See <a class="xref" href="Searching.html">Searching</a> for information about specifying those respective parameters.</p>
+all stream views in the namespace. See <a class="xref" href="Searching.html">Search in SDS</a> for information about specifying those respective parameters.</p>
 <h3 id="request-2">Request</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>StreamViews?query={query}&amp;skip={skip}&amp;count={count}&amp;orderby={orderby}
 </code></pre><h3 id="parameters-2">Parameters</h3>

@@ -79,7 +79,7 @@ type as a generic argument. For more information, see [Indexes](xref:sdsIndexes)
 
 ### Read Characteristics
 
-When data is requested at an index for which no stored event exists, the read characterisitics determine 
+When data is requested at an index for which no stored event exists, the read characteristics determine 
 whether the result is an error, no event, interpolated event, or extrapolated event. The combination of 
 the type of the index and the interpolation and extrapolation modes of the SdsType and the SdsStream 
 determine the read characteristics.

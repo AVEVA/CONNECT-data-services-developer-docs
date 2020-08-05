@@ -189,10 +189,10 @@ If the primary index defined on the SdsType is a compound index, secondary index
 <!-- Secondary indexes apply to a single property. In other words, there are no compound secondary indexes.-->
 <p>Note that you can only use the SdsTypeCodes of SdsType properties that can be ordered (<code>DateTime</code> or numbers, for example) as a secondary index.</p>
 <h2 id="interpolation-and-extrapolation">Interpolation and extrapolation</h2>
-<p>The InterpolationMode, ExtrapolationMode, and <a href="#propertyoverrides">PropertyOverrides</a> can be used to determine how a specific SdsStream reads data.
+<p>The InterpolationMode, ExtrapolationMode, and <a href="#sdsstreampropertyoverride">SdsStreamPropertyOverride object</a> can be used to determine how a specific SdsStream reads data.
 These read characteristics are inherited from the SdsType if they are not defined at the SdsStream level.</p>
-<h2 id="sdsstreampropertyoverride-object"><code>SdsStreamPropertyOverride</code> object</h2>
-<p>PropertyOverride provides a way to override interpolation behavior and unit of measure for individual 
+<h2 id="sdsstreampropertyoverride"><code>SdsStreamPropertyOverride</code></h2>
+<p><code>SdsStreamPropertyOverride</code> object provides a way to override interpolation behavior and unit of measure for individual 
 SdsType Properties for a specific SdsStream.</p>
 <p>The <code>SdsStreamPropertyOverride</code> object has the following structure:</p>
 <table>
@@ -226,10 +226,10 @@ SdsType Properties for a specific SdsStream.</p>
 </tbody>
 </table>
 <p>The unit of measure can be overridden for any SdsTypeProperty defined by the stream type, including primary 
-and secondary indexes. For more information on SdsTypeProperty <code>Uom</code>, see <a class="xref" href="SDS_Types.html#SdsTypeProperty">Types</a>. </p>
+and secondary indexes. For more information on SdsTypeProperty <code>Uom</code>, see <a class="xref" href="SDS_Types.html#sdstypeproperty">Types</a>. </p>
 <p>Read characteristics of the SdsStream are determined by the SdsType and the <code>PropertyOverride</code> of the SdsStream. The 
 interpolation mode for non-index properties can be defined and overridden at the SdsStream level. For more 
-information about type read characteristics see <a class="xref" href="SDS_Types.html#SdsTypeProperty">Types</a>.</p>
+information about type read characteristics see <a class="xref" href="SDS_Types.html#sdstypeproperty">Types</a>.</p>
 <p>If <code>InterpolationMode</code> of the SdsType is set to <code>Discrete</code>, it cannot be overridden 
 at any level. When <code>InterpolationMode</code> is set to <code>Discrete</code> and an event is not defined for the index,
 a null value is returned for the entire event.</p>

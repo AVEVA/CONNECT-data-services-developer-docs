@@ -2,7 +2,7 @@
 uid: PreviewDataView
 ---
 
-# Preview Data View API
+# Preview data view API
 
 The preview data view API provides the users with the flexibility to work and query with the routes and get a response on the fly before saving the data view. All the preview routes expect a data view to be passed in the request body of the call. The user has the flexibility to change the data view any number of times. The syntax of the data view and all other objects for the routes will remain identical to that of the non-preview routes.
 
@@ -12,13 +12,13 @@ The preview data view API provides the users with the flexibility to work and qu
 Below data view API routes are available to be used as preview routes:
 
 1. Resolved preview routes
-    - [Get Data Items by Query](xref:ResolvedDataViewPreviewAPI#Get-Data-Items-by-Query)
-    - [Get Ineligible Data Items by Query](xref:ResolvedDataViewPreviewAPI#Get-Ineligible-Data-Items-by-Query)
-    - [Get Groups](xref:ResolvedDataViewPreviewAPI#Get-Groups)
-    - [Get Available Field Sets](xref:ResolvedDataViewPreviewAPI#Get-Available-Field-Sets)
-    - [Get Field Mappings](xref:ResolvedDataViewPreviewAPI#Get-Field-Mappings)
-    - [Get Statistics](xref:ResolvedDataViewPreviewAPI#Get-Statistics)
-2. [Get Data View Data](xref:DataViewsPreviewDataAPI#Get-Data-View-Data)
+    - See [Get Data Items by Query](xref:ResolvedDataViewPreviewAPI#get-data-items-by-query).
+    - See [Get Ineligible Data Items by Query](xref:ResolvedDataViewPreviewAPI#get-ineligible-data-items-by-query).
+    - See [Get Groups](xref:ResolvedDataViewPreviewAPI#get-groups).
+    - See [Get Available Field Sets](xref:ResolvedDataViewPreviewAPI#get-available-field-sets).
+    - See [Get Field Mappings](xref:ResolvedDataViewPreviewAPI#get-field-mappings).
+    - See [Get Statistics](xref:ResolvedDataViewPreviewAPI#get-statistics).
+2. See [Get Data View Data](xref:DataViewsPreviewDataAPI#get-data-view-data).
 
 ### When to use the preview routes?
 * The preview API is useful for testing how all resources will resolve for the data view. These include data included in the data view, its source, and its destination. 

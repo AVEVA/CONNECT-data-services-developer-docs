@@ -2,11 +2,11 @@
 uid: DataViewAPI
 ---
 
-# Data View API
+# Data view API
 
 The `DataView` API provides mechanisms to create, read, update, and delete data views. This is one portion of the whole [data views API](xref:DataViewsAPIOverview).
 
-For a description of the `DataView` object type, see the [DataView documentation](xref:DataView).
+For a description of the `DataView` object type, see the [DataView documentation](xref:DataViewsOverview).
 
 Other sections of documentation describe how to [secure data views](xref:DataViewsSecuringDataViews) by setting their ownership and permissions, and the corresponding [API](xref:DataViewsAccessControlAPI).
 

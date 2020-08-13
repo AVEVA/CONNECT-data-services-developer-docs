@@ -3,10 +3,10 @@ uid: DataViewsDataAPI
 ---
 
 # Data API
-The Data API allows users to [retrieve data](xref:DataViewsGettingData) for a specified data view.  This API is one portion of the [data views API](xref:DataViewsAPIOverview).
+The Data API allows users to [retrieve data](xref:DataViewsQuickStartGetData) for a specified data view.  This API is one portion of the [data views API](xref:DataViewsAPIOverview).
 
 ## `Get Data View Data`
-Get data for the provided index parameters with paging. See [documentation on paging](xref:DataViewsGettingData#paging) for further information.
+Get data for the provided index parameters with paging. See [documentation on paging](xref:DataViewsQuickStartGetData#paging) for further information.
 
 ### Request
 ```text
@@ -33,10 +33,10 @@ The requested end index, inclusive. The default value is the `.DefaultEndIndex` 
 The requested interval between index values. The default value is the `.DefaultInterval` of the data view. Optional if a default is specified.
 
 `[optional] string form`  
-The requested data [output format](xref:DataViewsGettingData#format). Output formats: `default`, `table`, `tableh`, `csv`, `csvh`.
+The requested data [output format](xref:DataViewsQuickStartGetData#format). Output formats: `default`, `table`, `tableh`, `csv`, `csvh`.
 
 `[optional] string continuationToken`  
-Used only when [paging](xref:DataViewsGettingData#paging). Not specified when requesting the first page of data.
+Used only when [paging](xref:DataViewsQuickStartGetData#paging). Not specified when requesting the first page of data.
 
 `[optional] string cache`  
 Controls when the data view backing resources are to be refreshed. Used only when requesting the first page of data. Ignored if used with the continuationToken. Values are:
@@ -47,7 +47,7 @@ Controls when the data view backing resources are to be refreshed. Used only whe
 | `Preserve`| Use cached information, if available.   
 
 `[optional] int count`  
-The requested page size. The maximum is 250,000. If the parameter is not provided, [an optimal page size will be calculated](xref:DataViewsGettingData#page-size).
+The requested page size. The maximum is 250,000. If the parameter is not provided, [an optimal page size will be calculated](xref:DataViewsQuickStartGetData#page-size).
 
 ### Response
 The response includes a status code and, in most cases, a body.

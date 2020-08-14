@@ -63,7 +63,7 @@ The response includes a status code and an array of assets matching the search c
 | Query String                   | Description                                                  |
 | ------------------------------ | ------------------------------------------------------------ |
 | Id:Id1                         | Returns the asset with ID equal to **Id1**.                  |
-| Id:Id*                         | Returns all assets with ID matching **id*** wildcard. [Is search case-sensitive?] |
+| Id:Id*                         | Returns all assets with ID matching **id*** wildcard. [QUESTION: Is search case-sensitive?] |
 | Name:Name1                     | Returns all asset with a friendly name equal to **Name1**. [QUESTION: What is a friendly name?] |
 | Id:Id AND Name:Name1           | Returns all assets with ID matching the **id*** wildcard and with a friendly name equal to **Name1**. |
 | AssetTypeName:AssetType Heater | Returns all assets with an asset type name that is equal to **AssetTypeHeater**. |
@@ -75,6 +75,6 @@ The response includes a status code and an array of assets matching the search c
 | Id:X* AND Attributes/Name:B*   | Returns all assets with ID starting with **X** and containing at least one attribute with a name that starts with a **B**. |
 | References/Name:measurement*   | Returns all assets with an ID starting with the string **measurement**. |
 | References/Description: test*  | Returns all assets with at least one reference description that starts with the string **test**. |
-| References/Value:PI            | Returns all assets with at least one reference vlaue stream ID, stream view ID, or type ID containing the string **PI**. |
+| References/Value:PI            | Returns all assets with at least one reference value stream ID, stream view ID, or type ID containing the string **PI**. |
 | References/Properties:code     | Returns all assets with at least one reference value's stream code object containing with the stream ID contains a stream property contain "code." [QUESTION: I don't understand this one.] |
 

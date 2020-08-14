@@ -4,7 +4,7 @@
 
 The Assets API allows you to create, read, update, and delete assets. 
 See Access Control API, Asset Centric API, and Assets Search API for additional API methods.
-[QUESTION: is "methods" the correct term? I'll add links to the topics later.]
+<!--- QUESTION: is "methods" the correct term? I'll add links to the topics later. --->
 
 ***
 
@@ -139,8 +139,8 @@ The asset identifier
 An `asset` object
 
 #### Example request body 
-NOTE: To create an asset with a specific ID, use the API route with ID. If this is used, you must specify a matching ID field for the asset object in the JSON object below. [Can you explain this?]
-[QUESTION: Can you create an asset without specifying an ID? Why would you want to specify an ID?] 
+NOTE: To create an asset with a specific ID, use the API route with ID. If this is used, you must specify a matching ID field for the asset object in the JSON object below. 
+<!--- QUESTION: Can you create an asset without specifying an ID? Why would you want to specify an ID? --->
 
 ```json 
 {
@@ -184,7 +184,7 @@ The response includes a status code and a body.
 | 200 OK                    | `Asset`  | The asset as persisted, including values for optional parameters that were omitted in the request.                           |
 | 400 Bad Request             | error     | The request is not valid. See the response body for additional details.      |
 | 403 Forbidden            | error     | You are not authorized to create assets.           |
-| 409 Conflict | error     | The asset update (?) or create has a conflict. See the response body for additional details. |
+| 409 Conflict | error     | The asset update (?) or create has a conflict. See the response body for additional details. [WRITER'S NOTE: Should this say: The asset create has a conflict.] |
 
 ***
 
@@ -222,14 +222,14 @@ The response includes a status code and a body.
 | 200 OK                    | `Asset`  | An array of assets as persisted, including values for optional parameters that were omitted in the request.                               |
 | 400 Bad Request             | error     | The request is not valid. The response will include which asset failed validation checks. See the response body for additional details.      |
 | 403 Forbidden            | error     | You are not authorized to create assets.           |
-| 409 Conflict | error     | The asset update (?) or create has a conflict. See the response body for additional details. |
+| 409 Conflict | error     | The asset update (?) or create has a conflict. See the response body for additional details. [WRITER'S NOTE: Should this say: The asset create has a conflict.] |
 
 ***
 
 ## `Create or Update Asset` 
 
 Create or update an asset with a specified ID. 
-[QUESTION: How is this different from Create Asset]
+<!--- QUESTION: How is this different from Create Asset --->
 
 ### Request 
 
@@ -254,7 +254,7 @@ The asset identifier
 
 #### Request body 
 
-The newly created (?) or updated `asset` object.
+The newly created or updated `asset` object.
 
 ### Response 
 
@@ -264,9 +264,9 @@ The response includes a status code and body.
 | ------------------------- | --------- | ----------------------------------------------- |
 | 200 OK                    | `Asset`  | The newly created or updated asset as persisted, including values for optional parameters that were omitted in the request.                               |
 | 400 Bad Request             | error     | The request is not valid. The response will include which asset failed validation checks. See the response body for additional details.      |
-| 403 Forbidden            | error     | You are not authorized to update (?) assets. |
+| 403 Forbidden            | error     | You are not authorized to update (?) assets. [WRITER'S NOTE: Should this be: You are not authorized to create or update assets.] |
 | 404 Not Found            | error     | The asset, with the specified identifier, was not found.            |
-| 409 Conflict | error     | The asset update or create (?) has a conflict. See the response body for additional details. |
+| 409 Conflict | error     | The asset update or create has a conflict. See the response body for additional details. |
 
 ***
 

@@ -67,7 +67,7 @@ Procedure
 
     ![Time Range options](images\Time_Range_options.png)
 
-7.  To delve further into the details of these measurements, click the **View full trend** ![View full trend icon](..\images\View_full_trend_icon.png) icon to see the Trend page.
+7.  To delve further into the details of these measurements, click the **View full trend** ![View full trend icon](images\View_full_trend_icon.png) icon to see the Trend page.
 
     ![View full trend](images\Trend_full_display.png)
 
@@ -99,7 +99,7 @@ Procedure
 
     The trace is highlighted, and two cursors automatically mark the minimum and maximum values for the displayed time range.
 
-    ![Maximum and minimum cursors](images\Max_min__cursors.png)
+    ![Maximum and minimum cursors](images\Max_min_cursors.png)
 
     Click the plus sign (+) above the trace to lock the cursor in place. The “+” turns into an “x.” Click the “x” to unlock the cursor.
 

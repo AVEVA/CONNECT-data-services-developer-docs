@@ -972,7 +972,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/SequentialDataStore/SDS_Types.html",
-          "hash": "8zAB0WkWQkzwijDOxpFkNw=="
+          "hash": "TusEZUuREWxlsbuXfuMw+g=="
         }
       },
       "is_incremental": false,
@@ -1168,15 +1168,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Content_Portal/Quickstarts/Getting_Started.md",
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Quickstarts/Getting_Started.html",
-          "hash": "30+84cNwn9RkoPmnpZGctQ=="
+          "hash": "5jS3f3GYIILOny8GThPuGA=="
         }
       },
       "is_incremental": false,
@@ -1239,10 +1236,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "Content_Portal/Quickstarts/images/Max_min__cursors.png",
+      "source_relative_path": "Content_Portal/Quickstarts/images/Max_min_cursors.png",
       "output": {
         "resource": {
-          "relative_path": "Content_Portal/Quickstarts/images/Max_min__cursors.png"
+          "relative_path": "Content_Portal/Quickstarts/images/Max_min_cursors.png"
         }
       },
       "is_incremental": false,
@@ -1338,23 +1335,11 @@
     },
     {
       "type": "Toc",
-      "source_relative_path": "Content_Portal/Quickstarts/toc.yml",
-      "output": {
-        ".html": {
-          "relative_path": "Content_Portal/Quickstarts/toc.html",
-          "hash": "7P5lMJQQFtVPEwqkBO6RqA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Toc",
       "source_relative_path": "Content_Portal/toc.yml",
       "output": {
         ".html": {
           "relative_path": "Content_Portal/toc.html",
-          "hash": "MXV9eyAmdrV+k+DljAZkXg=="
+          "hash": "za35rYsvPKrHmi4hAMNlGQ=="
         }
       },
       "is_incremental": false,
@@ -1396,9 +1381,9 @@
         "full_build_reason_code": "NoAvailableBuildCache"
       },
       "processors": {
-        "TocDocumentProcessor": {
+        "ResourceDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
           "total_file_count": 0,
           "skipped_file_count": 0
@@ -1409,9 +1394,9 @@
           "total_file_count": 92,
           "skipped_file_count": 0
         },
-        "ResourceDocumentProcessor": {
+        "TocDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
           "total_file_count": 0,
           "skipped_file_count": 0

@@ -2,7 +2,7 @@
 uid: ResolvedDataViewAPI
 ---
 
-# Resolved Data View API
+# Resolved data view API
 
 This portion of the overall [data views API](xref:DataViewsAPIOverview) is the resources that resolve per-user for each data view. For a description of what this information is, and how to use it, see the [documentation](xref:ResolvedDataView) for resolved data views.
 

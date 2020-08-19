@@ -2,7 +2,7 @@
 uid: DataViewsSecuringDataViews
 ---
 
-# Securing Data Views
+# Secure data views
 
 Access rights to data views and their data are configurable in several ways. Permissions to the overall data views collection govern which users may create data views, and are also used as the default permissions for each data view that is created. Access to each data view is independently configurable. Finally, the permissions set on each [Stream](xref:sdsStreams) apply globally within OSIsoft Cloud Services, including within the data views feature.
 

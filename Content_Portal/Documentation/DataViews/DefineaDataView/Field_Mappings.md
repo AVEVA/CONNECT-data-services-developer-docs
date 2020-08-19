@@ -2,7 +2,7 @@
 uid: DataViewsFieldMappings
 ---
 
-# Field Mappings
+# View field mappings
 
 A `FieldMapping` contains information on the source on every field of data in the data view. For each field in the data view, there is a corresponding `FieldMapping`. Inspecting the field mapping resource after defining the data view is a good way to confirm that the output data view does contain the data-of-interest prior to data generation.
 

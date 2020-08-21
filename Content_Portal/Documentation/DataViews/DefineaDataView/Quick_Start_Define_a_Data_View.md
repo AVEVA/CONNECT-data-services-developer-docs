@@ -13,31 +13,31 @@ You define multiple aspects of a data view when you define it, including data it
 ### Define a data view identifier
 A data view must have a unique identifier. It may have a friendly name and description. If a friendly name is not specified, the identifier will be used as the data view's name.
 
-### Including data items
+### Include data items
 One or more queries determine the set of data items (such as SDS streams) that the data view will include. Each [Query](xref:DataViewsQueries) should represent a collection of like streams. To include streams that represent very different items, such as power inverters and weather stations, use separate queries.
 
-### Including data fields
+### Include data fields
 
 Information from, or about, those data items must be included explicitly in the data view as Fields within [DataFields](xref:DataViewsFieldSets) or [GroupingFields](xref:DataViewsGrouping). By default, a data view includes no fields, except the default [IndexField](#including-the-index-field).
 
 The fields that are available for use are exposed as a "resolved" resource, [Available Field Sets](xref:DataViewsAvailableFieldSets). It is recommended to use or adapt those fields instead of defining new fields. Individual fields are organized into [DataFieldSets](xref:DataViewsFieldSets) and [GroupingFields](xref:DataViewsGrouping).
 
-### Organizing the data items
+### Group the data items
 
-Data items may be [grouped](xref:DataViewsGrouping), which amounts to grouping or partitioning them by one or more field values. This is one way of producing a meaningful, consumable shape of data.
+Data items may be [grouped](xref:DataViewsGrouping), which amounts to grouping or partitioning them by one or more field values. To group data items in a data view, define one or more fields as `.GroupingFields` of the data view. This is one way of producing a meaningful, consumable shape of data.
 
-### Organizing the data fields
+### Organize the data fields
 Field sets and fields resolve in the order they are defined. They may be re-ordered.
 
-Within each group, a field set may be associated with multiple data items. It is often necessary to disambiguate these items. Items can be disambiguated by specifying an [`.IdentifyingField`](xref:DataViewsFieldSets#identifying-field). An identifying field is a field that differentiates the data items within a group, such as the value of _Measurement_ metadata (i.e., the data items are identified by what they measure). Identifying data items also allows the data views engine to "align" them across groups, since it is clear, for example, that streams measuring _Power Out_ and streams measuring _Power In_ are alike.
+Within each group, a field set may be associated with multiple data items. It is often necessary to disambiguate these items. If a group contains multiple data items from the same query, you may wish to identify those data items so that they are not ambiguous and so they will be aligned across groups. Items can be disambiguated by specifying an [`.IdentifyingField`](xref:DataViewsFieldSets#identifying-field). An identifying field is a field that differentiates the data items within a group, such as the value of _Measurement_ metadata (i.e., the data items are identified by what they measure). Identifying data items also allows the data views engine to "align" them across groups, since it is clear, for example, that streams measuring _Power Out_ and streams measuring _Power In_ are alike. Ensure that each data field's label includes the {IdentifyingValue} token so the field labels are unique. The default field labels already include it.
 
-### Including the index field
+### Include the index field
 The field used for indexing.  If not specified, a default value with a label of "Timestamp" is applied. If specified, a label is required. Field source and keys are not applicable for index field.
 
-### Defining index type and default range
+### Define index type and default range
 Data views currently operate on timestamped data, which is data indexed by a DateTime property. This is reflected by the `.IndexTypeCode` of the DataView, whose value must be "DateTime". Default values may be defined for the start index, end index, and/or interval used when data view data is queried.
 
-### Defining data view shape
+### Define data view shape
 Data views may be set to resolve as standard shape or narrow shape. Standard shape resolves fields similar to how they are defined. Narrow shape pivots the fields vertically, resulting in a view whose schema is independent of what data items (streams) are resolved by the data view. Narrow shape may be used when an invariant output schema is required.
 
 ## Recommended workflow
@@ -62,6 +62,8 @@ It is assumed that you are working with streams as described in the [Stream exam
 ### Create a data view
 Very little information is required to create a new data view. In fact, if you request that the system generate an identifier for the new data view, no information at all is necessary. However, it is recommended to specify a meaningful `.Id`, because the identifier cannot be changed later without recreating the data view. All other properties are modifiable.
 
+This data view does not accomplish anything yet, but it's a starting point.
+
 #### Action
 ```json
 POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
@@ -71,7 +73,7 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
 ```
 
 #### Expected result
-A data view with very few properties populated: `.Id`, `.Name`, `IndexField` (default: { "Label": "Timestamp" }), `.IndexTypeCode` (default: `"DateTime"`), Shape (default: `DataViewShape.Standard`, which as a string is `"Standard"`).
+A data view with very few properties populated: `.Id`, `.Name`, `IndexField` (default: `{ "Label": "Timestamp" }`), `.IndexTypeCode` (default: `"DateTime"`), Shape (default: `DataViewShape.Standard`, which as a string is `"Standard"`).
 ```json
 HTTP 201 Created
 {
@@ -82,7 +84,7 @@ HTTP 201 Created
   "DataFieldSets": [],
   "GroupingFields": [],
   "IndexTypeCode": "DateTime",
-  "Shape": "Standard"   
+  "Shape": "Standard"
 }
 ```
 
@@ -107,7 +109,7 @@ HTTP 200 OK
   "DataFieldSets": [],
   "GroupingFields": [],
   "IndexTypeCode": "DateTime",
-  "Shape": "Standard"  
+  "Shape": "Standard"
 }
 ```
 
@@ -134,7 +136,7 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
   "DataFieldSets": [],
   "GroupingFields": [],
   "IndexTypeCode": "DateTime",
-  "Shape": "Standard" 
+  "Shape": "Standard"
 }
 ```
 
@@ -191,17 +193,10 @@ HTTP 200 OK
                     "Name": "Temperature",
                     "TypeCode": "Double",
                     "IsKey": false
-                },
-                {
-                    "Id": "CloudCover",
-                    "Name": "CloudCover",
-                    "TypeCode": "Int32",
-                    "IsKey": false
                 }
             ]
         },
         {
-            "ResourceType": "Stream",
             "Id": "WS_ROSE",
             "Name": "WS_ROSE",
             "TypeId": "docs-omf-weather-gen1",
@@ -238,8 +233,8 @@ HTTP 200 OK
         {
             "Id": "WS_WINT",
             "Name": "WS_WINT",
-            "TypeId": "docs-omf-weather-gen2", 
-            "ResourceType": "Stream",           
+            "TypeId": "docs-omf-weather-gen2",
+            "ResourceType": "Stream",
             "Tags": [
                 "Weather",
                 "High Resolution",
@@ -271,7 +266,7 @@ HTTP 200 OK
                     "Id": "CloudCover",
                     "Name": "Cloud Cover",
                     "TypeCode": "Int32",
-                    "IsKey": false                
+                    "IsKey": false
                  }
              ]
          }
@@ -312,7 +307,6 @@ HTTP 200 OK
     "TimeOfResolution": "(a timestamp in ISO 8601 format)",
     "Items": [
         {
-            "SourceType": "DataItem",
             "QueryId": "weather",
             "DataFields": [
                 {
@@ -324,17 +318,6 @@ HTTP 200 OK
                     "Source": "Name",
                     "Keys": [],
                     "Label": "{IdentifyingValue} Name"
-                },
-                {
-                    "Source": "PropertyId",
-                    "Keys": [
-                        "Weather",
-                        "Low Resolution",
-                        "High Resolution",
-                        "Gen1",
-                        "Gen2",
-                    ],
-                    "Label": "{IdentifyingValue} Tags"
                 },
                 {
                     "Source": "Metadata",
@@ -374,13 +357,13 @@ HTTP 200 OK
                 {
                     "Source": "Tags",
                     "Keys": [
-                         "Weather",
+                        "Weather",
                         "Low Resolution",
                         "High Resolution",
                         "Gen1",
                         "Gen2",
                     ],
-                    "Label": "{IdentifyingValue} {Tags}"
+                    "Label": "{IdentifyingValue} Tags"
                 }
             ]
         }
@@ -409,7 +392,6 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
   ],
   "DataFieldSets": [
         {
-            "SourceType": "DataItem",
             "QueryId": "weather",
             "DataFields": [
                 {
@@ -466,7 +448,7 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
                         "Gen1",
                         "Gen2",
                     ],
-                    "Label": "{IdentifyingValue} {Tags}"
+                    "Label": "{IdentifyingValue} Tags"
                 }
             ],
        },
@@ -532,7 +514,7 @@ An array of json values similar to:
         "AmbientTemperature.19": 1.0805517883941373,
         "CloudCover.20": 2,
         "SolarRadiation.21": 108,
-        ""Temperature.22": null,
+        "Temperature.22": null,
         "Site.23": "Winterthur",
         "Tags.24": "Weather, High Resolution, Gen2"
     },
@@ -558,39 +540,6 @@ Timestamp.0,Id.1,Name.2,AmbientTemperature.3,CloudCover.4,SolarRadiation.5,Tempe
 2019-10-21T20:00:00.0000000Z,WS_BILT,WS_BILT,,,157,32.41209639,Biltmore,"Weather, High Resolution, Gen1",WS_ROSE,WS_ROSE,,,139,14.76498991,Rosecliff,"Weather, Low Resolution, Gen1",WS_WINT,WS_WINT,2.501105722,3,109,,Winterthur,"Weather, High Resolution, Gen2"
 ```
 
-### Include data items
-Complete the following to define data items to include in a data view:
-
-1. Define (or modify) `.Queries` for SDS streams to be included as data items in the data view. View the collection data items found by each query.
-2. Use a distinct query for each general type of data item, such as streams about assets and streams about the weather where each asset is located.
-
-You can return at any time to modify or add queries.
-
-### Include specific data fields
-Complete the following to define data fields to include in a data view:
-
-1. View the information on which data fields resolve as available to include in the data view. Choose the fields you want, and add them to your data view's `.DataFieldSets`
-2. If your streams have slight variations in property naming (e.g. a property called either `temperature` or `ambient_temperature`), combine fields so that they can match alternate values.
-
-You can return at any time to adjust which fields are included in the data view.
-
-### Group and identify data items
-
-#### Group items globally
-You may wish to globally *group* the data items by some common factor (e.g. site or asset id).  Complete the following to group data items in a data view:
-
-1. Define one or more fields as `.GroupingFields` of the data view. Data items will be grouped by these fields. The available field sets now include field(s) that link to the grouping field values.
-
-2. Include the newly-available grouping value fields in the data view, so those values are included in the data view data.
-
-#### Identifying items locally within a data field set
-If a group contains multiple data items from the same query, you may wish to *identify* those data items so that they are not ambiguous and so they will be aligned across groups.  Complete the following to identify data items within a data field set:
-
-1. On the data field set in question, assign a field as the `.IdentifyingField` to tell the data items apart.
-2. Ensure that each data field's label includes the {IdentifyingValue} token so the field labels are unique. The default field labels already include it.
-
-You can return at any time to change the grouping fields and identifying fields.
-
 ### Group the data view
 One way to disambiguate the data items is to “group” them, which amounts to partitioning them based on a value. For example, metadata:Site as the grouping field might yield groups of Biltmore, Rosecliff, and Winterthur, each containing the data items associated with that Site.
 
@@ -615,7 +564,6 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
   ],
   "DataFieldSets": [
         {
-            "SourceType": "DataItem",
             "QueryId": "weather",
             "DataFields": [
                 {
@@ -631,7 +579,7 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
                 {
                     "Source": "PropertyId",
                     "Keys": [
-                       "AmbientTemperature"
+                        "AmbientTemperature"
                     ],
                     "Label": "{IdentifyingValue} {FirstKey}"
                 },
@@ -648,7 +596,8 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
                         "SolarRadiation"
                     ],
                     "Label": "{IdentifyingValue} {FirstKey}"
-                },                {
+                },                
+				{
                     "Source": "PropertyId",
                     "Keys": [
                         "Temperature"
@@ -677,7 +626,7 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
       ],
       "Label": "{IdentifyingValue} {FirstKey}"
     }
-  ],  
+  ],
   "IndexTypeCode": "DateTime",
   "Shape": "Standard"
 }
@@ -708,8 +657,8 @@ HTTP 200 OK
         "AmbientTemperature": null,
         "CloudCover": null,
         "SolarRadiation": 165,
-        "Temperature": 33.589619124193831
-        "Tags": "Weather, High Resolution, Gen1",
+        "Temperature": 33.589619124193831,
+        "Tags": "Weather, High Resolution, Gen1"
     },
     ... 
     (rest of the values for Site:Biltmore), then
@@ -736,8 +685,8 @@ HTTP 200 OK
         "AmbientTemperature": 1.0805517883941373,
         "CloudCover": 2,
         "SolarRadiation": 108,
-        "Temperature": null
-        "Tags": "Weather, High Resolution, Gen2",
+        "Temperature": null,
+        "Tags": "Weather, High Resolution, Gen2"
     },
     ... 
     (rest of the values for Site:Winterthur)
@@ -798,13 +747,6 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
                 {
                     "Source": "PropertyId",
                     "Keys": [
-                        "CloudCover"
-                    ],
-                    "Label": "{IdentifyingValue} {FirstKey}"
-                },
-                {
-                    "Source": "PropertyId",
-                    "Keys": [
                         "SolarRadiation"
                     ],
                     "Label": "{IdentifyingValue} {FirstKey}"
@@ -834,7 +776,7 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
                     ],
                     "Label": "{IdentifyingValue} Tags"
             ],
-             "IdentifyingField": {
+            "IdentifyingField": {
                 "Source": "Metadata",
                 "Keys": [
                     "Site"
@@ -845,8 +787,8 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
   ],
   "GroupingFields": [],
   "IndexTypeCode": "DateTime",
-  "Shape": "Standard",
-  }
+  "Shape": "Standard"
+}
 ```
 
 #### Expected result

@@ -16,7 +16,7 @@ Resources to create, read, update, and delete `/DataViews`. For more information
 For each `/DataView` provided in the request body, resources to show how the data view `./Resolved/` for your user context
 
 ## [Resolved data view preview API](xref:ResolvedDataViewPreviewAPI)
-For each `/DataView` provided in the request body, provides the user the flexibility to change the data view on the fly without saving/updating it
+For each `/DataView` provided in the request body, resources to show how the data view `./Resolved/` for your user context. This provides the flexibility to change the data view on the fly without saving/updating it.
 
 ## [Data API](xref:DataViewsDataAPI)
 For each `/DataViews/{dataViewId}`, resources for getting the `./Data/` for a particular time range

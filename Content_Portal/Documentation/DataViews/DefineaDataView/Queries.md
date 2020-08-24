@@ -6,7 +6,7 @@ uid: DataViewsQueries
 
 Queries determine what data items are included in a data view.
 
-## Query ID
+## Query
 
 Each `Query` must be uniquely identified with an `.Id`. The identifier should be meaningful. The query's results will be referenced by this identifier when you include fields in the data view.
 

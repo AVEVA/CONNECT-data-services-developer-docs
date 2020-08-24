@@ -22,7 +22,7 @@ For each `/DataView` provided in the request body, resources to show how the dat
 For each `/DataViews/{dataViewId}`, resources for getting the `./Data/` for a particular time range
 
 ## [Preview data API](xref:DataViewsPreviewDataAPI)
-For each `/DataView` provided in request body, resources for getting the preview `./Data/` for a particular time range
+For each `/DataView` provided in request body, resources for getting the preview `./Data/` for a particular time range. This provides the flexibility to change the data view on the fly without saving/updating it.
 
 ## [Access control API](xref:DataViewsAccessControlAPI)
 For the `/DataViews` collection, resources for reading and updating the default `/AccessControl`.  

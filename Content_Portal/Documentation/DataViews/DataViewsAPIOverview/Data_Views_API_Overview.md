@@ -13,7 +13,7 @@ The API is comprised of the following main areas:
 Resources to create, read, update, and delete `/DataViews`. For more information, see [Data View](xref:DataViewsOverview)
 
 ## [Resolved data view API](xref:ResolvedDataViewAPI)
-For each `/DataView` provided in the request body, resources to show how the data view `./Resolved/` for your user context
+For each `/DataViews/{dataViewId}`, these resources show how the data view `./Resolved/` for your user context.
 
 ## [Resolved data view preview API](xref:ResolvedDataViewPreviewAPI)
 For each `/DataView` provided in the request body, resources to show how the data view `./Resolved/` for your user context. This provides the flexibility to change the data view on the fly without saving/updating it.

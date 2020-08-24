@@ -6,7 +6,7 @@
 - name: Get resolved data view
   topicHref: GetResolvedDataView/Resolved_Data_View.md
 - name: Preview data view API
-  topicHref: DataViewsAPIOverview/Preview_Data_View_API.md
+  topicHref: PreviewDataViewAPI/Preview_Data_View_API.md
 - name: Secure data views
   topicHref: SecureDataViews/Securing_Data_Views.md
 - name: Data views API reference

@@ -3,8 +3,8 @@ uid: ConsolidateDataFields
 ---
 
 # Consolidate data fields
-Data views containing streams that refer to the same property by different names will return a null value for both. This typically arises from a stream used in a data view having an identical property named slightly differently than the corresponding property in the data view, such as "Temperature" vs "AmbientTemperature".
+Streams included in a data view may have slight differences in property naming, despite those properties representing the same logical thing. For example: data from one equipment manufacturer reports "Temperature", while another reports "AmbientTemperature" instead.
 
-When identicial fields are incorrectly designated as separate fields in the data view, consolidate the data fields from the relevant streams to remedy this undesirable condition. See [Consolidate data fields](xref:DataViewsQuickStartDefine#consolidate-data-fields) in the Define a data view topic for details.
+Data views can overcome property naming differences by consolidating these similar properties into a single data field. This applies to stream properties referenced by id (`FieldSource.PropertyId`) or by name (`FieldSource.PropertyName`), and to stream metadata keys (`FieldSource.Metadata`). For those cases, adding multiple match values to the field's `Keys` collection will allow alternate keys to match. See [Consolidate data fields](xref:DataViewsQuickStartDefine#consolidate-data-fields) in the Define a data view topic for details.
 
 

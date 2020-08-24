@@ -3,7 +3,7 @@ uid: DataViewsQuickStartGetData
 ---
 
 # Get data view data
-You retrieve data view data with the [Data API](xref:DataViewsDataAPI). This topic explains parameters, options and items you must define to retrieve data view data.
+You retrieve data view data with the [Data API](xref:DataViewsDataAPI). This topic explains the concepts and workflow to retrieve data view data.
 
 ## General concepts
 The supported mode of retrieval is interpolated values within a user-specified range. Several formats are available, such as JSON and CSV.
@@ -30,10 +30,10 @@ Default values may, optionally, be defined on the data view itself. It is not ne
 
 Index parameters may be specified at query time. These take precedence over any defaults that are set.
 
-## Retrieval mode
+### Retrieval mode
 The supported mode of retrieval is `interpolated`.
 
-### Interpolated retrieval
+#### Interpolated retrieval
 Required index parameters when requesting interpolated data are:
 - Start index
 - End index
@@ -43,7 +43,7 @@ If one or more of these parameters is not specified at query time or as a defaul
 
 Streams in SDS may be configured to have non-default interpolation and extrapolation behavior. These behaviors are observed when stream data is included in data views. Data view data is always treated as dense, even if SDS returns sparse data. See the following section on empty or missing values for details.
 
-### Empty or missing values
+#### Empty or missing values
 SDS stream properties may be of nullable (e.g. `NullableInt32`) or non-nullable (e.g. `Int32`) types. Data views treats all fields as nullable, as is necessary for its fundamental goal of aligning large datasets.
 | SDS property type  | Corresponding data view field type |
 |--|--|
@@ -52,12 +52,12 @@ SDS stream properties may be of nullable (e.g. `NullableInt32`) or non-nullable 
 
 If there is no value in an SDS stream for a requested index, the value of the corresponding data view fields(s) will be `null`.
 
-## Ordering
+### Ordering
 Data records are ordered
 - first by group, in the order that the groups resolved
 - then by index, ascending, within each group
 
-## Format
+### Format
 The view data is available in several formats.
 
 | Name | Id | Enumeration Id | Description |
@@ -68,22 +68,22 @@ The view data is available in several formats.
 | CSV | `csv` | 3 | Comma-separated values. Each row describes one data record. |
 | CSV with header | `csvh` | 4 | Similar to `csv`. The first row contains the identifier of its corresponding field mapping. |
 
-## Paging
+### Paging
 Data retrieval operations are paged. Data for a requested index range may span multiple pages.
 
 Optimal page size is dependent both on the client and on the shape of the data view. The size of each individual record is proportional to the "width" of the data view, i.e. how many field mappings are resolved. Clients retrieving data views that resolve into few field mappings may wish to use a page size close to the maximum.
 
-### Page size
+#### Page size
 Optimal page size is dependent both on the client and on the shape of the data view. The size of each individual record is proportional to the "width" of the data view, i.e. how many field mappings are resolved. Clients retrieving data views that resolve into few field mappings may wish to use a page size close to the maximum.
 
 By default, data views will be returned with an optimized page size based on the size and layout of the data view. Users can see the calculated page size as a `count` query parameter in the `Link` response header (described below). The calculated page size will be included in both the first and the next page links. This default page size can be overridden, however, by providing a `count` query parameter.
 
 The maximum page size is 250,000.
 
-### Hyperlinks
+#### Hyperlinks
 When paging through data view data via the REST API, hyperlinks to the first page and next page of data are provided in the `Link` header. The first page header is signified by relation type of first, `rel="first"`. The next page header is signified by `rel="next"`. Proper use of the hyperlinks is recommended.
 
-#### Next page
+##### Next page
 If the requested data spans into another page, the response includes a hyperlink to the next page of data. Absence of a `rel="next"` link indicates that the data does not span past the current page.
 
 The hyperlink preserves all request parameters, while adding or updating a `continuationToken`. For example:
@@ -95,28 +95,21 @@ To retrieve the entire requested range of data, clients should continue to follo
 
 It is possible for the continuation token to become invalid during paging. This is unlikely in ordinary circumstances. However, if an independent operation triggers the data view to re-resolve differently, existing continuation tokens are no longer valid. Data requests with an invalid token are considered bad requests. Paging must be restarted from the first page.
 
-#### First page
+##### First page
 If the continuation token becomes invalid and paging must be restarted, clients may follow the first page hyperlink included in the `Link` header. The hyperlink preserves all request parameters, adding or updating the cache behavior to `Preserve`. This ensures that multiple parallel workers cannot endlessly "trip" each other.
 
 For example:
 ```
-Link: <.../dataViews/{dataViewId}/data/interpolated?cache=Preserve&count=1000>, rel="first"
+Link: <.../dataViews/{dataViewId}/data/interpolated?cache=Preserve&count=1000>; rel="first"
 ```
 
-### .NET client library
+#### .NET client library
 Paging is handled automatically when using the .NET client library to retrieve data. Results are returned as an IAsyncEnumerable<string> where each value is one record of data in the requested format. The actual backend page size of the request is configurable using the backingPageSize parameter.
  
-### Index parameters
+#### Index parameters
 Index parameters, such as Start Index, must remain constant while paging through a range of data. If a different range of data is desired, restart the paging operation.
 
-By default, requests for a first page of data will cause the data view to re-resolve. See the documentation on [resolved data views](xref:ResolvedDataView#when-is-a-data-view-resolved). This ensures that the data view accounts for any streams that have been added to or removed from SDS. Re-resolution may be suppressed by explicitly specifying a cache behavior of "preserve".
-
-Requests for subsequent pages include a `continuationToken`. This implictly suppresses re-resolution, akin to cache "preserve" behavior.
-
-## Field mapping count limit
-Data views are limited to 1000 field mappings to ensure timely access of data. OCS checks the field mapping count prior to constructing the data set.
-
-### Parallelization
+#### Parallelization
 To parallelize one large data retrieval operation across multiple workers, assign each worker a portion of the desired index range. Each worker should follow standard recommended paging behavior within its assigned range. The client application must then concatenate the portions in correct order.
 
 It is recommended to suppress [re-resolution](xref:ResolvedDataView#when-is-a-data-view-resolved) of the data view by specifying a cache behavior of "preserve" on each first-page request.
@@ -137,9 +130,7 @@ If your data view exceeds this limit, there are several ways to shape the data v
 - Toggle to the narrow shape option to pivot data fields into individual rows instead of columns.
 
 ## Recommended workflow
-Getting data from a data view is straightforward. If you want to understand more about the source behind each data field, that information is available too.
-
-This is an introduction to the recommended workflow for getting data. For detailed information, see the [Data API reference](xref:DataViewsDataAPI).
+Getting data from a data view is straightforward. If you want to understand more about the source behind each data field, that information is available too. For detailed information, see the [Data API reference](xref:DataViewsDataAPI).
 
 ### Specify first page parameters
 Complete the following to specify first page parameters:
@@ -157,8 +148,6 @@ Complete the following if data spans into additional page(s). The current page r
 For precise information about the source of each field's data, see the data view's resolved field mappings.
 
 ## Procedure: Get Data View Data
-
-This section presents the main concepts behind consuming data view data.
 
 It is assumed that you are working with streams as described in the [Stream examples](xref:DataViewsExampleScenario). The data views API uses the same authentication scheme as the Sequential Data Store.
 

@@ -5,19 +5,19 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Data View Shape </title>
+    <title>Data view shape </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Data View Shape ">
+    <meta name="title" content="Data view shape ">
     <meta name="generator" content="docfx 2.43.3.0">
     
-    <link rel="shortcut icon" href="../../../favicon.ico">
-    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../../../styles/docfx.css">
-    <link rel="stylesheet" href="../../../styles/main.css">
-    <meta property="docfx:navrel" content="../../../toc.html">
-    <meta property="docfx:tocrel" content="../../toc.html">
+    <link rel="shortcut icon" href="../../../../favicon.ico">
+    <link rel="stylesheet" href="../../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../../toc.html">
+    <meta property="docfx:tocrel" content="../../../toc.html">
     
-    <meta property="docfx:rel" content="../../../">
+    <meta property="docfx:rel" content="../../../../">
     
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
@@ -33,8 +33,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../../index.html" width="46">
-                <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              <a class="navbar-brand" href="../../../../index.html" width="46">
+                <img id="logo" src="../../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -76,13 +76,13 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="DataViewShape">
-<h1 id="data-view-shape">Data View Shape</h1>
+<h1 id="data-view-shape">Data view shape</h1>
 
 <p>Data views may be set to resolve as a standard shape or a narrow shape. </p>
 <p>With a standard shape, each row in the resolved data view includes all the data fields for a single event or observation. With a narrow shape, each row in the resolved data view includes only one data field. This results in a narrow output schema where one column contains all the data field values, so the schema remains fixed regardless of changes to the included data fields. Narrow shape may be used when an invariant output schema is required.</p>
-<p>The shape concepts presented in this section apply to building all data view output formats; although the terminology used and examples shown, pertain to tabular output with <a class="xref" href="Getting_Data.html#format">headers</a> (form = csvh).</p>
+<p>The shape concepts presented in this section apply to building all data view output formats; although the terminology used and examples shown, pertain to tabular output with <a class="xref" href="../GetDataViewData/Quick_Start_Get_Data_View_Data.html#format">headers</a> (form = csvh).</p>
 <h2 id="specify-the-shape">Specify the shape</h2>
-<p>Set the <a class="xref" href="Data_View.html#dataview-properties"><code>DataViewShape</code></a> property to a value of the <a class="xref" href="Data_View.html#dataviewshape-enumeration"><code>DataViewShape</code> enumeration</a>, either <code>DataViewShape.Standard</code> (default) or <code>DataViewShape.Narrow</code>.</p>
+<p>Set the <a class="xref" href="Quick_Start_Define_a_Data_View.html#data-view-properties"><code>DataViewShape</code></a> property to a value of the <a class="xref" href="Quick_Start_Define_a_Data_View.html#dataviewshape-enumeration"><code>DataViewShape</code> enumeration</a>, either <code>DataViewShape.Standard</code> (default) or <code>DataViewShape.Narrow</code>.</p>
 <h2 id="standard-shape">Standard shape</h2>
 <p>The standard table column structure is built horizontally from left to right. The index field is first, followed by the grouping fields, if any exist.  Data field sets come next, in the order they are presented in the data view. Fields are presented in order of appearance within each data field set for each stream from the associated query.</p>
 <p>Vertically, the standard structure depends on the inclusion of grouping fields. If grouping fields are not defined, each resultant index appears only once, and all interpolated data is in that row. If grouping fields are defined, then the resultant indexes will repeat vertically for each group. The groups are presented in alphabetical order.</p>
@@ -121,7 +121,7 @@
 <li>Value column, which holds the property value or stream related data such as name, id, tags or metadata</li>
 </ul>
 <p>The column label of the index and grouping value columns may vary depending on the resolved label. The Field and Value column labels are not modifiable.</p>
-<p>The data view is built veritically by grouping field, if present, then by field. </p>
+<p>The data view is built vertically by grouping field, if present, then by field. </p>
 <p>Data views resolving into multiple streams that are defined with the same SDS type, should use a grouping field or an identifier in order to differentiate the data rows. </p>
 <h5 id="example-get-data-response-body-for-narrow-shape-with-grouping-field-site">Example: Get data response body for narrow shape with grouping field (Site)</h5>
 <pre><code class="lang-csv">Timestamp,Site,Field,Value
@@ -149,7 +149,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/DataViews/Data_View_Shape.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/DataViews/DefineaDataView/Data_View_Shape.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -169,8 +169,8 @@
       </footer>
     </div>
     
-    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../../styles/main.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
   </body>
 </html>

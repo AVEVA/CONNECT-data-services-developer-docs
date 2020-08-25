@@ -5,19 +5,19 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Field Mappings </title>
+    <title>View field mappings </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Field Mappings ">
+    <meta name="title" content="View field mappings ">
     <meta name="generator" content="docfx 2.43.3.0">
     
-    <link rel="shortcut icon" href="../../../favicon.ico">
-    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../../../styles/docfx.css">
-    <link rel="stylesheet" href="../../../styles/main.css">
-    <meta property="docfx:navrel" content="../../../toc.html">
-    <meta property="docfx:tocrel" content="../../toc.html">
+    <link rel="shortcut icon" href="../../../../favicon.ico">
+    <link rel="stylesheet" href="../../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../../toc.html">
+    <meta property="docfx:tocrel" content="../../../toc.html">
     
-    <meta property="docfx:rel" content="../../../">
+    <meta property="docfx:rel" content="../../../../">
     
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
@@ -33,8 +33,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../../index.html" width="46">
-                <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              <a class="navbar-brand" href="../../../../index.html" width="46">
+                <img id="logo" src="../../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -76,10 +76,10 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="DataViewsFieldMappings">
-<h1 id="field-mappings">Field Mappings</h1>
+<h1 id="view-field-mappings">View field mappings</h1>
 
 <p>A <code>FieldMapping</code> contains information on the source on every field of data in the data view. For each field in the data view, there is a corresponding <code>FieldMapping</code>. Inspecting the field mapping resource after defining the data view is a good way to confirm that the output data view does contain the data-of-interest prior to data generation.</p>
-<p>Within each field mapping, the list of <code>DataMapping</code>s shows the source of data for each group. There is one <code>DataMapping</code> per group, since the number of distinct data sources for each field equals the number of groups in the resolved data view. The order of the data mappings corresponds to the order of the groups as seen from <a class="xref" href="Resolved_Data_View_API.html#GetGroups">Get Groups</a>. If a field does not resolve for a specific group, then the data mapping will be empty. Empty data mappings have a <code>TypeCode</code> of <code>Empty</code>. See below for more details in <code>TypeCode</code>.</p>
+<p>Within each field mapping, the list of <code>DataMapping</code>s shows the source of data for each group. There is one <code>DataMapping</code> per group, since the number of distinct data sources for each field equals the number of groups in the resolved data view. The order of the data mappings corresponds to the order of the groups as seen from <a class="xref" href="../DataViewsAPIOverview/Resolved_Data_View_API.html#get-groups">Get Groups</a>. If a field does not resolve for a specific group, then the data mapping will be empty. Empty data mappings have a <code>TypeCode</code> of <code>Empty</code>. See below for more details in <code>TypeCode</code>.</p>
 <h2 id="ordering">Ordering</h2>
 <p>The first field mapping contains information for the index field. Next, field mappings are appended for each <code>GroupingField</code> in the data view. If there is more than one <code>GroupingField</code>, the order of the field mappings corresponds to the order of the <code>GroupingField</code>s in the data view.</p>
 <p>Following the index and grouping field mappings are the data field mappings. Data field mappings are different depending on the data view <a class="xref" href="Data_View_Shape.html">shape</a>.</p>
@@ -87,7 +87,7 @@
 <p>For standard shape data views, the order of the field mappings reflects the order of the data fields in the data view. The first data field mappings are created for the first <code>DataFieldSet</code> <code>DataField</code>. Then field mappings are created for each subsequent <code>DataField</code> in the order they appear in the data view. If the data view contains more than one <code>DataFieldSet</code>, then the subsequent <code>DataFieldSet</code> <code>DataField</code>s will be added after the first <code>DataFieldSet</code> and following the same pattern.</p>
 <h3 id="narrow">Narrow</h3>
 <p>Narrow shape data views have a fixed field mapping shape. There are only two data field mappings, the Field field mapping, which contains the field identifiers, and the Value field mapping, which contains the field values.</p>
-<h2 id="interpreting-field-mapping">Interpreting Field Mapping</h2>
+<h2 id="interpreting-field-mapping">Interpreting field mapping</h2>
 <p>The number and order of field mappings is identical to the number and order of the resulting data view fields. </p>
 <h3 id="id-and-label">Id and label</h3>
 <p>The field mapping id represents the json property name (or column name in table or csv format) in the output data view data. The field mapping label represents the data view field label with tokens resolved. If all field mapping labels in a data view are unique, the field mapping id is identical to the label; if not, the id is generated from the label by adding an index number postfix. </p>
@@ -116,7 +116,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/DataViews/Field_Mappings.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/DataViews/DefineaDataView/Field_Mappings.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -136,8 +136,8 @@
       </footer>
     </div>
     
-    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../../styles/main.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
   </body>
 </html>

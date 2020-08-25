@@ -10,14 +10,14 @@
     <meta name="title" content="Preview Data API ">
     <meta name="generator" content="docfx 2.43.3.0">
     
-    <link rel="shortcut icon" href="../../../favicon.ico">
-    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../../../styles/docfx.css">
-    <link rel="stylesheet" href="../../../styles/main.css">
-    <meta property="docfx:navrel" content="../../../toc.html">
-    <meta property="docfx:tocrel" content="../../toc.html">
+    <link rel="shortcut icon" href="../../../../favicon.ico">
+    <link rel="stylesheet" href="../../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../../toc.html">
+    <meta property="docfx:tocrel" content="../../../toc.html">
     
-    <meta property="docfx:rel" content="../../../">
+    <meta property="docfx:rel" content="../../../../">
     
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
@@ -33,8 +33,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../../index.html" width="46">
-                <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              <a class="navbar-brand" href="../../../../index.html" width="46">
+                <img id="logo" src="../../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -78,11 +78,11 @@
             <article class="content wrap" id="_content" data-uid="DataViewsPreviewDataAPI">
 <h1 id="preview-data-api">Preview Data API</h1>
 
-<p>The Preview Data API allows users to <a class="xref" href="Getting_Data.html">retrieve data</a> for a specified data view.  This API is one portion of the <a class="xref" href="Data_Views_API_Overview.html">data views API</a>.</p>
+<p>The Preview Data API allows users to <a class="xref" href="../GetDataViewData/Quick_Start_Get_Data_View_Data.html">retrieve data</a> for a specified data view.  This API is one portion of the <a class="xref" href="Data_Views_API_Overview.html">data views API</a>.</p>
 <h2 id="get-data-view-data"><code>Get Data View Data</code></h2>
-<p>Get data for the provided data view and index parameters with paging. See <a class="xref" href="Getting_Data.html#paging">documentation on paging</a> for further information.</p>
+<p>Get data for the provided data view and index parameters with paging. See <a class="xref" href="../GetDataViewData/Quick_Start_Get_Data_View_Data.html#paging">documentation on paging</a> for further information.</p>
 <h3 id="request">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">POST /<wbr>api/<wbr>v1-preview/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>preview/<wbr>dataviews/<wbr>data/<wbr>interpolated?startIndex={startIndex}&amp;endIndex={endIndex}&amp;interval={interval}&amp;form={form}&amp;countPerGroup={countPerGroup}&amp;groupCount={groupCount}&amp;continuationToken={continuationToken}&amp;count={count}
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">POST /<wbr>api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>preview/<wbr>dataviews/<wbr>data/<wbr>interpolated?startIndex={startIndex}&amp;endIndex={endIndex}&amp;interval={interval}&amp;form={form}&amp;countPerGroup={countPerGroup}&amp;groupCount={groupCount}&amp;continuationToken={continuationToken}&amp;count={count}
 </code></pre><h3 id="parameters">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -91,9 +91,9 @@
 <p><code>[optional] string interval</code><br>The requested interval between index values. The default value is the <code>.DefaultInterval</code> of the data view. Optional if a default is specified.</p>
 <p><code>[optional] int countPerGroup</code><br>The number of rows per group. It overrides the endIndex.</p>
 <p><code>[optional] int groupCount</code><br>The requested number of groups.</p>
-<p><code>[optional] string form</code><br>The requested data <a class="xref" href="Getting_Data.html#format">output format</a>. Output formats: <code>default</code>, <code>table</code>, <code>tableh</code>, <code>csv</code>, <code>csvh</code>.</p>
-<p><code>[optional] string continuationToken</code><br>Used only when <a class="xref" href="Getting_Data.html#paging">paging</a>. Not specified when requesting the first page of data.</p>
-<p><code>[optional] int count</code><br>The requested page size. The maximum is 250,000. If the parameter is not provided, <a class="xref" href="Getting_Data.html#page-size">an optimal page size will be calculated</a>.</p>
+<p><code>[optional] string form</code><br>The requested data <a class="xref" href="../GetDataViewData/Quick_Start_Get_Data_View_Data.html#format">output format</a>. Output formats: <code>default</code>, <code>table</code>, <code>tableh</code>, <code>csv</code>, <code>csvh</code>.</p>
+<p><code>[optional] string continuationToken</code><br>Used only when <a class="xref" href="../GetDataViewData/Quick_Start_Get_Data_View_Data.html#paging">paging</a>. Not specified when requesting the first page of data.</p>
+<p><code>[optional] int count</code><br>The requested page size. The maximum is 250,000. If the parameter is not provided, <a class="xref" href="../GetDataViewData/Quick_Start_Get_Data_View_Data.html#page-size">an optimal page size will be calculated</a>.</p>
 <h4 id="example-request-body">Example request body</h4>
 <pre><code class="lang-json">{
   &quot;IndexField&quot;: { &quot;Label&quot;: &quot;Time&quot; },
@@ -334,7 +334,7 @@ Time,Temperature,Flowrate,Volume
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/DataViews/Preview_Data_API.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/DataViews/DataViewsAPIOverview/Preview_Data_API.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -354,8 +354,8 @@ Time,Temperature,Flowrate,Volume
       </footer>
     </div>
     
-    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../../styles/main.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
   </body>
 </html>

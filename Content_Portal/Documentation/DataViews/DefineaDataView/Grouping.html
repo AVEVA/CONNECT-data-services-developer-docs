@@ -5,19 +5,19 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Grouping </title>
+    <title>Group data items </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Grouping ">
+    <meta name="title" content="Group data items ">
     <meta name="generator" content="docfx 2.43.3.0">
     
-    <link rel="shortcut icon" href="../../../favicon.ico">
-    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../../../styles/docfx.css">
-    <link rel="stylesheet" href="../../../styles/main.css">
-    <meta property="docfx:navrel" content="../../../toc.html">
-    <meta property="docfx:tocrel" content="../../toc.html">
+    <link rel="shortcut icon" href="../../../../favicon.ico">
+    <link rel="stylesheet" href="../../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../../toc.html">
+    <meta property="docfx:tocrel" content="../../../toc.html">
     
-    <meta property="docfx:rel" content="../../../">
+    <meta property="docfx:rel" content="../../../../">
     
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
@@ -33,8 +33,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../../index.html" width="46">
-                <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              <a class="navbar-brand" href="../../../../index.html" width="46">
+                <img id="logo" src="../../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -76,9 +76,11 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="DataViewsGrouping">
-<h1 id="grouping">Grouping</h1>
+<h1 id="group-data-items">Group data items</h1>
 
 <p>The data items of a data view may be organized by <em>grouping</em> them. It is one way of producing a meaningful, consumable shape of data.</p>
+<p>Grouping is optional when defining the data view. If the <code>.GroupingFields</code> section is not defined on the data view, the resolved data view shows a single group with all eligible data items. If the <code>.GroupingFields</code> section is defined, the resolved data view shows multiple groups, each with the list of data items for the group and the <code>.GroupingValues</code> field showing the matching group&#39;s value(s). In this case, if a data item does not match any group, it is added to all groups.    </p>
+<p>Groups are ordered alphabetically by the first grouping value for each group. Within each group, data items are ordered alphabetically by data item id.</p>
 <h2 id="purpose-of-grouping">Purpose of grouping</h2>
 <p>Without grouping, all of the data items returned by a <code>Query</code> will appear side-by-side. If the view includes many data items, its data records will be enormous. The fields are also likely to be ambiguous.</p>
 <p><a class="xref" href="Field_Sets.html#identifying-field">Identifying</a> the items within each field set is one way to disambiguate the fields, but only one <code>Field</code> may be an identifying field. What if multiple metadata <code>Field</code>s are required to fully describe each data item? The <a class="xref" href="Grouping.html#example-scenario">example below</a> shows exactly that case: power inverters that are described by a site, meter, and number. Grouping can organize the data items into shapes that are consumable and/or represent a physical asset.</p>
@@ -91,7 +93,7 @@
 <h3 id="separating-data-items">Separating data items</h3>
 <p>Separating the data items from each other makes the data view&#39;s data records smaller and more granular. It is also possible to produce shapes that mimic physical or logical assets.</p>
 <h4 id="example-scenario">Example scenario</h4>
-<p>For the following examples, assume a subgroup of the <a class="xref" href="Example_Scenario.html">example scenario</a>&#39;s power inverter streams, produced by a <code>Query</code> <a class="xref" href="../SequentialDataStore/Searching.html">value</a> such as <code>&quot;TypeId:docs-pi-inverter AND (Site:Rosemont OR Site:Winterthur)&quot;</code>. This is to keep the example succinct.</p>
+<p>For the following examples, assume a subgroup of the <a class="xref" href="../Reference/Example_Scenario.html">stream examples</a> power inverter streams, produced by a <code>Query</code> <a class="xref" href="../../SequentialDataStore/Searching.html">value</a> such as <code>&quot;TypeId:docs-pi-inverter AND (Site:Rosemont OR Site:Winterthur)&quot;</code>. This is to keep the example succinct.</p>
 <table>
 <thead>
 <tr>
@@ -578,7 +580,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/DataViews/Grouping.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/DataViews/DefineaDataView/Grouping.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -598,8 +600,8 @@
       </footer>
     </div>
     
-    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../../styles/main.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
   </body>
 </html>

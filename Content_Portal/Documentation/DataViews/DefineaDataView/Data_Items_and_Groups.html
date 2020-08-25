@@ -5,19 +5,19 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Data Items and Groups </title>
+    <title>Identify data items </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Data Items and Groups ">
+    <meta name="title" content="Identify data items ">
     <meta name="generator" content="docfx 2.43.3.0">
     
-    <link rel="shortcut icon" href="../../../favicon.ico">
-    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../../../styles/docfx.css">
-    <link rel="stylesheet" href="../../../styles/main.css">
-    <meta property="docfx:navrel" content="../../../toc.html">
-    <meta property="docfx:tocrel" content="../../toc.html">
+    <link rel="shortcut icon" href="../../../../favicon.ico">
+    <link rel="stylesheet" href="../../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../../toc.html">
+    <meta property="docfx:tocrel" content="../../../toc.html">
     
-    <meta property="docfx:rel" content="../../../">
+    <meta property="docfx:rel" content="../../../../">
     
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
@@ -33,8 +33,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../../index.html" width="46">
-                <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              <a class="navbar-brand" href="../../../../index.html" width="46">
+                <img id="logo" src="../../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -76,12 +76,12 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="DataViewsDataItemsandGroups">
-<h1 id="data-items-and-groups">Data Items and Groups</h1>
+<h1 id="identify-data-items">Identify data items</h1>
 
 <p>A <code>DataItem</code> is an SdsStream included in the data view. The collection of data items is specified by the data view queries, where the queries define the search criteria and the data items represent the results of the search. The data view can include one or more properties from each data item.</p>
 <h2 id="data-items">Data Items</h2>
 <p>The collection of data items in the data view represents all SDS streams that match the <a class="xref" href="Queries.html"><code>.Queries</code></a> field of the data view, excluding data items that are ineligible (see discussion of ineligible data items below). To add data items to a data view, either refine an existing query, or add a new query (refer to <a class="xref" href="Queries.html">queries</a> for which option to choose from). Similarly, to remove data items from a data view, either refine an existing query, or remove a query (this will remove all data items from the query).</p>
-<p>Note that each query is executed independently to generate the list of data items. It is thus possible to have duplicate data items resulting from different queries. This can be desirable or undesirable depending on the use case.</p>
+<p>Note: Each query is executed independently to generate the list of data items. It is thus possible to have duplicate data items resulting from different queries. This can be desirable or undesirable depending on the use case.</p>
 <p>There is a maximum of 10,000 data items per query. You can add more than 10,000 data items to a data view by adding additional queries. Data items are ordered alphabetically by data item id within the data items collection.</p>
 <h3 id="adding-fields">Adding Fields</h3>
 <p>Each data item contains information that can be optionally (and explicitly) added to the data view by setting the <a class="xref" href="Field_Sets.html"><code>.DataFieldSets</code></a> field of the data view. Currently, the only supported resource type is <code>stream</code> with the following available fields:</p>
@@ -93,16 +93,13 @@
 <li>Data from each stream property</li>
 </ul>
 <h3 id="adding-or-removing-sds-streams">Adding or Removing SDS Streams</h3>
-<p>When requesting for <a class="xref" href="Resolved_Data_View_API.html">resolved data items</a> or when <a class="xref" href="Data_API.html">getting the data view data</a>, the list of data items reflects the list of SDS streams that match one or more queries when the data view was last resolved. This means that if new streams were added or existing streams were removed from the Sequential Data Store, the list of data items will only reflect the latest changes if the data view is re-resolved. For more information, refer to the caching section in the resolved data view resource <a class="xref" href="Resolved_Data_View.html">page</a>.</p>
+<p>When requesting for <a class="xref" href="../DataViewsAPIOverview/Resolved_Data_View_API.html">resolved data items</a> or when <a class="xref" href="../DataViewsAPIOverview/Data_API.html">getting the data view data</a>, the list of data items reflects the list of SDS streams that match one or more queries when the data view was last resolved. This means that if new streams were added or existing streams were removed from the Sequential Data Store, the list of data items will only reflect the latest changes if the data view is re-resolved. For more information, refer to the caching section in the resolved data view resource <a class="xref" href="../GetResolvedDataView/Resolved_Data_View.html">page</a>.</p>
 <h2 id="ineligible-data-items">Ineligible Data Items</h2>
 <p>The collection of ineligible data items represents SDS streams that match the queries but cannot be included in the data view. The criteria for ineligibility are:</p>
 <ul>
 <li>When the SDS stream&#39;s index type is different than the <code>IndexTypeCode</code> specified in the data view.</li>
 <li>When the SDS type of the stream contains compound indexes.</li>
 </ul>
-<h2 id="groups">Groups</h2>
-<p><a class="xref" href="Grouping.html">Grouping</a> is optional when defining the data view. If the <code>.GroupingFields</code> section is not defined on the data view, the resolved data view shows a single group with all eligible data items. If the <code>.GroupingFields</code> section is defined, the resolved data view shows multiple groups, each with the list of data items for the group and the <code>.GroupingValues</code> field showing the matching group&#39;s value(s). In this case, if a data item does not match any group, it is added to all groups.</p>
-<p>Groups are ordered alphabetically by the first grouping value for each group. Within each group, data items are ordered alphabetically by data item id.</p>
 </article>
           </div>
           
@@ -111,7 +108,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/DataViews/Data_Items_and_Groups.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/DataViews/DefineaDataView/Data_Items_and_Groups.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -131,8 +128,8 @@
       </footer>
     </div>
     
-    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../../styles/main.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
   </body>
 </html>

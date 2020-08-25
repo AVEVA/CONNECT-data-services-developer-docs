@@ -5,19 +5,19 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Access Control API </title>
+    <title>Access control API </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Access Control API ">
+    <meta name="title" content="Access control API ">
     <meta name="generator" content="docfx 2.43.3.0">
     
-    <link rel="shortcut icon" href="../../../favicon.ico">
-    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../../../styles/docfx.css">
-    <link rel="stylesheet" href="../../../styles/main.css">
-    <meta property="docfx:navrel" content="../../../toc.html">
-    <meta property="docfx:tocrel" content="../../toc.html">
+    <link rel="shortcut icon" href="../../../../favicon.ico">
+    <link rel="stylesheet" href="../../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../../toc.html">
+    <meta property="docfx:tocrel" content="../../../toc.html">
     
-    <meta property="docfx:rel" content="../../../">
+    <meta property="docfx:rel" content="../../../../">
     
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
@@ -33,8 +33,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../../index.html" width="46">
-                <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              <a class="navbar-brand" href="../../../../index.html" width="46">
+                <img id="logo" src="../../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -76,11 +76,11 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="DataViewsAccessControlAPI">
-<h1 id="access-control-api">Access Control API</h1>
+<h1 id="access-control-api">Access control API</h1>
 
-<p>This portion of the <a class="xref" href="Data_Views_API_Overview.html">overall data views API</a> focuses on <a class="xref" href="Securing_Data_Views.html">securing data views</a> by setting their ownership and permissions.</p>
+<p>This portion of the <a class="xref" href="Data_Views_API_Overview.html">overall data views API</a> focuses on <a class="xref" href="../SecureDataViews/Securing_Data_Views.html">securing data views</a> by setting their ownership and permissions.</p>
 <h2 id="get-data-views-access-control-list"><code>Get Data Views Access Control List</code></h2>
-<p>Get the default <a class="xref" href="../Access_Control.html#access-control-lists"><code>AccessControlList</code></a> for the DataViews collection.</p>
+<p>Get the default <a class="xref" href="../../Access_Control.html#access-control-lists"><code>AccessControlList</code></a> for the DataViews collection.</p>
 <h3 id="request">Request</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>AccessControl/<wbr>DataViews
 </code></pre><h3 id="parameters">Parameters</h3>
@@ -148,14 +148,14 @@
 </code></pre><h3 id="net-client-libraries-method">.NET client libraries method</h3>
 <pre><code class="lang-csharp">   Task&lt;AccessControlList&gt; GetAccessControlListAsync();
 </code></pre><h2 id="update-data-views-access-control-list"><code>Update Data Views Access Control List</code></h2>
-<p>Update the default <a class="xref" href="../Access_Control.html#access-control-lists"><code>AccessControlList</code></a> for the DataViews collection.</p>
+<p>Update the default <a class="xref" href="../../Access_Control.html#access-control-lists"><code>AccessControlList</code></a> for the DataViews collection.</p>
 <h3 id="request-1">Request</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>AccessControl/<wbr>DataViews
 </code></pre><h3 id="parameters-1">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <h3 id="request-body">Request body</h3>
-<p>An <a class="xref" href="../Access_Control.html#access-control-lists"><code>AccessControlList</code></a></p>
+<p>An <a class="xref" href="../../Access_Control.html#access-control-lists"><code>AccessControlList</code></a></p>
 <h4 id="example-request-body">Example request body</h4>
 <pre><code class="lang-json">{
   &quot;RoleTrusteeAccessControlEntries&quot;: 
@@ -222,7 +222,7 @@
 <h3 id="net-client-libraries-method-1">.NET client libraries method</h3>
 <pre><code class="lang-csharp">   Task UpdateAccessControlListAsync(AccessControlList acl);
 </code></pre><h2 id="get-data-view-access-control-list"><code>Get Data View Access Control List</code></h2>
-<p>Get the <a class="xref" href="../Access_Control.html#access-control-lists"><code>AccessControlList</code></a> of the specified data view.</p>
+<p>Get the <a class="xref" href="../../Access_Control.html#access-control-lists"><code>AccessControlList</code></a> of the specified data view.</p>
 <h3 id="request-2">Request</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>AccessControl
 </code></pre><h3 id="parameters-2">Parameters</h3>
@@ -296,7 +296,7 @@
 </code></pre><h3 id="net-client-libraries-method-2">.NET client libraries method</h3>
 <pre><code class="lang-csharp">   Task&lt;AccessControlList&gt; GetDataViewAccessControlAsync(string id);
 </code></pre><h2 id="update-data-view-access-control-list"><code>Update Data View Access Control List</code></h2>
-<p>Update the <a class="xref" href="../Access_Control.html#access-control-lists"><code>AccessControlList</code></a> of the specified data view.</p>
+<p>Update the <a class="xref" href="../../Access_Control.html#access-control-lists"><code>AccessControlList</code></a> of the specified data view.</p>
 <h3 id="request-3">Request</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>AccessControl
 </code></pre><h3 id="parameters-3">Parameters</h3>
@@ -304,7 +304,7 @@
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string dataViewId</code><br>The data view identifier</p>
 <h3 id="request-body-1">Request body</h3>
-<p>An <a class="xref" href="../Access_Control.html#access-control-lists"><code>AccessControlList</code></a></p>
+<p>An <a class="xref" href="../../Access_Control.html#access-control-lists"><code>AccessControlList</code></a></p>
 <h4 id="example-request-body-1">Example request body</h4>
 <pre><code class="lang-json">{
   &quot;RoleTrusteeAccessControlEntries&quot;: 
@@ -427,7 +427,7 @@
 </code></pre><h3 id="net-client-libraries-method-4">.NET client libraries method</h3>
 <pre><code class="lang-csharp">   Task&lt;string[]&gt; GetDataViewAccessRightsAsync(string id);
 </code></pre><h2 id="get-data-view-owner"><code>Get Data View Owner</code></h2>
-<p>Get the owner <a class="xref" href="../Access_Control.html#owner"><code>Trustee</code></a> of the specified data view.</p>
+<p>Get the owner <a class="xref" href="../../Access_Control.html#owner"><code>Trustee</code></a> of the specified data view.</p>
 <h3 id="request-5">Request</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>owner
 </code></pre><h3 id="parameters-5">Parameters</h3>
@@ -478,7 +478,7 @@ Content-Type: application/json
 </code></pre><h3 id="net-client-libraries-method-5">.NET client libraries method</h3>
 <pre><code class="lang-csharp">   Task&lt;Trustee&gt; GetDataViewOwnerAsync(string id);
 </code></pre><h2 id="update-data-view-owner"><code>Update Data View Owner</code></h2>
-<p>Update the owner <a class="xref" href="../Access_Control.html#owner"><code>Trustee</code></a> of the specified data view.</p>
+<p>Update the owner <a class="xref" href="../../Access_Control.html#owner"><code>Trustee</code></a> of the specified data view.</p>
 <h3 id="request-6">Request</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>owner
 </code></pre><h3 id="parameters-6">Parameters</h3>
@@ -486,7 +486,7 @@ Content-Type: application/json
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string dataViewId</code><br>The data view identifier</p>
 <h3 id="request-body-2">Request body</h3>
-<p>A <a class="xref" href="../Access_Control.html#owner"><code>Trustee</code></a></p>
+<p>A <a class="xref" href="../../Access_Control.html#owner"><code>Trustee</code></a></p>
 <h4 id="example-request-body-2">Example request body</h4>
 <pre><code class="lang-json">{
     &quot;Type&quot;: User,
@@ -541,7 +541,7 @@ Content-Type: application/json
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/DataViews/Access_Control_API.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/DataViews/DataViewsAPIOverview/Access_Control_API.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -561,8 +561,8 @@ Content-Type: application/json
       </footer>
     </div>
     
-    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../../styles/main.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
   </body>
 </html>

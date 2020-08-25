@@ -5,19 +5,19 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Resolved Data View </title>
+    <title>Get resolved data view </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Resolved Data View ">
+    <meta name="title" content="Get resolved data view ">
     <meta name="generator" content="docfx 2.43.3.0">
     
-    <link rel="shortcut icon" href="../../../favicon.ico">
-    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../../../styles/docfx.css">
-    <link rel="stylesheet" href="../../../styles/main.css">
-    <meta property="docfx:navrel" content="../../../toc.html">
-    <meta property="docfx:tocrel" content="../../toc.html">
+    <link rel="shortcut icon" href="../../../../favicon.ico">
+    <link rel="stylesheet" href="../../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../../toc.html">
+    <meta property="docfx:tocrel" content="../../../toc.html">
     
-    <meta property="docfx:rel" content="../../../">
+    <meta property="docfx:rel" content="../../../../">
     
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
@@ -33,8 +33,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../../index.html" width="46">
-                <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              <a class="navbar-brand" href="../../../../index.html" width="46">
+                <img id="logo" src="../../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -76,7 +76,7 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="ResolvedDataView">
-<h1 id="resolved-data-view">Resolved Data View</h1>
+<h1 id="get-resolved-data-view">Get resolved data view</h1>
 
 <p>Various information is available about how each data view <em>resolves</em>. This information describes exactly what data will be in the data view, where it comes from, and where it will appear. This is useful when defining a data view and when consuming it.</p>
 <h2 id="general-concepts">General concepts</h2>
@@ -84,12 +84,12 @@
 <p>A data view specifies <code>.Queries</code> to find data items, <code>.GroupingFields</code> (optionally) to group those data items into groups, and <code>.FieldSets</code> to include fields of data into the data view. <em>Resolving</em> the data view means the data views engine executes those queries and computes how the resulting data items will form a data view.</p>
 <h3 id="what-resolved-information-is-available">What resolved information is available?</h3>
 <ul>
-<li><a class="xref" href="Data_Items_and_Groups.html">Data items, ineligible data items, and the groups they form</a> - currently, SDS streams are the supported type of data item.</li>
-<li><a class="xref" href="Available_Field_Sets.html">Available field sets</a> - fields which are present on the data items but not included in the data view</li>
-<li><a class="xref" href="Field_Mappings.html">Field mappings</a> - details of the data behind each group of each field</li>
+<li><a class="xref" href="../DefineaDataView/Data_Items_and_Groups.html">Data items, ineligible data items, and the groups they form</a> - currently, SDS streams are the supported type of data item.</li>
+<li><a class="xref" href="../DefineaDataView/Available_Field_Sets.html">Available field sets</a> - fields which are present on the data items but not included in the data view</li>
+<li><a class="xref" href="../DefineaDataView/Field_Mappings.html">Field mappings</a> - details of the data behind each group of each field</li>
 <li><a class="xref" href="Resolved_Data_View.html#statistics">Statistics</a> about how the view resolved</li>
 </ul>
-<p>These are available via the <a class="xref" href="Resolved_Data_View_API.html">Resolved Data View API</a>. The relevant <a class="xref" href="Resolved_Data_View.html#object-types">object types</a> are described below.</p>
+<p>These are available via the <a class="xref" href="../DataViewsAPIOverview/Resolved_Data_View_API.html">Resolved Data View API</a>. The relevant <a class="xref" href="Resolved_Data_View.html#object-types">object types</a> are described below.</p>
 <h4 id="paged-collections">Paged collections</h4>
 <p>Some of this information is exposed as paged collections, which accept parameters controlling <code>skip</code> and <code>count</code> within the collection. </p>
 <p>Paged responses include a <code>Link</code> header, with a hyperlink to the first page of results. If the results extend into an additional page, a hyperlink to the next page will also be included in the <code>Link</code> header.</p>
@@ -107,13 +107,13 @@
 <li>requesting a first page of data will cause the data view to re-resolve: <em>refresh</em> the cache</li>
 </ul>
 <p>These defaults are overridable on each API call.
-See the <a class="xref" href="Resolved_Data_View_API.html">Resolved Data View API</a> and <a class="xref" href="Getting_Data.html">Getting Data</a> for details.</p>
+See the <a class="xref" href="../DataViewsAPIOverview/Resolved_Data_View_API.html">Resolved Data View API</a> and <a class="xref" href="../GetDataViewData/Quick_Start_Get_Data_View_Data.html">Getting Data</a> for details.</p>
 <p>The defaults are intended to strike a balance between predictability and freshness. When retrieving the various resolved information that is available, you will not cause regeneration (and possible changes) simply by viewing the resolved information. This is useful when diagnosing a data view that is not returning the data you expect.</p>
 <h4 id="invalidation">Invalidation</h4>
 <p>If the data view is modified, any cached information is reset. The data view will be re-resolved the next time that information is requested.</p>
 <p>No guarantee is made of the durability or lifespan of cached information. It may be reset by the system for maintenance reasons.</p>
 <h4 id="paging-through-data">Paging through data</h4>
-<p>When using the <a class="xref" href="Data_API.html">Data API</a> to page through data view data, the cache is automatically preserved on all pages after the first. This ensures consistency while paging through view data: if the view were re-resolved between pages, it might resolve differently (e.g. new streams just added to SDS) and return unpredictable results. The documentation on <a class="xref" href="Getting_Data.html">Getting Data</a> describes how the paging token helps guarantee consistency.</p>
+<p>When using the <a class="xref" href="../DataViewsAPIOverview/Data_API.html">Data API</a> to page through data view data, the cache is automatically preserved on all pages after the first. This ensures consistency while paging through view data: if the view were re-resolved between pages, it might resolve differently (e.g. new streams just added to SDS) and return unpredictable results. The documentation on <a class="xref" href="../GetDataViewData/Quick_Start_Get_Data_View_Data.html">Getting Data</a> describes how the paging token helps guarantee consistency.</p>
 <h2 id="object-types">Object types</h2>
 <h3 id="resolveditemst">ResolvedItems<t></t></h3>
 <p>Holds a collection of items that were resolved at a specific time</p>
@@ -520,7 +520,7 @@ See the <a class="xref" href="Resolved_Data_View_API.html">Resolved Data View AP
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/DataViews/Resolved_Data_View.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/DataViews/GetResolvedDataView/Resolved_Data_View.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -540,8 +540,8 @@ See the <a class="xref" href="Resolved_Data_View_API.html">Resolved Data View AP
       </footer>
     </div>
     
-    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../../styles/main.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
   </body>
 </html>

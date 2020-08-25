@@ -5,19 +5,19 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Example Scenarios </title>
+    <title>Stream examples </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Example Scenarios ">
+    <meta name="title" content="Stream examples ">
     <meta name="generator" content="docfx 2.43.3.0">
     
-    <link rel="shortcut icon" href="../../../favicon.ico">
-    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../../../styles/docfx.css">
-    <link rel="stylesheet" href="../../../styles/main.css">
-    <meta property="docfx:navrel" content="../../../toc.html">
-    <meta property="docfx:tocrel" content="../../toc.html">
+    <link rel="shortcut icon" href="../../../../favicon.ico">
+    <link rel="stylesheet" href="../../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../../toc.html">
+    <meta property="docfx:tocrel" content="../../../toc.html">
     
-    <meta property="docfx:rel" content="../../../">
+    <meta property="docfx:rel" content="../../../../">
     
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
@@ -33,8 +33,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../../index.html" width="46">
-                <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              <a class="navbar-brand" href="../../../../index.html" width="46">
+                <img id="logo" src="../../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -76,7 +76,7 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="DataViewsExampleScenario">
-<h1 id="example-scenarios">Example Scenarios</h1>
+<h1 id="stream-examples">Stream examples</h1>
 
 <p>This section uses example streams to illustrate data view concepts. The streams are of three types:</p>
 <ul>
@@ -85,8 +85,9 @@
 <li>docs-omf-weather-gen2 | <em>simulates weather data collected from an OMF source, but with some additional/renamed properties</em></li>
 </ul>
 <p>Each solar inverter is associated with some physical location. There is a weather stream for each location. </p>
-<p>Data views are made to bring order to a tangle of data streams. Despite appearing complex and verbose, this scenario is likely much simpler than your real-world data. This scenario illustrates how data views can render real-world data consumable for data science.</p>
-<h2 id="solar-inverter-streams">Solar Inverter streams</h2>
+<p>Use the <a href="https://github.com/osisoft/OSI-Samples-OCS/tree/master/advanced_samples/BulkUpload/DotNet">bulk uploader</a> to create the types and streams from the stream examples. See the configuration files specific to the data views stream examples in the <a href="https://github.com/osisoft/OSI-Samples-OCS/tree/master/advanced_samples/BulkUpload/SampleCollections/DataViewQuickStart">sample collections</a>.</p>
+<p>Data views are made to bring order to a tangle of data streams. Despite appearing complex and verbose, this example is likely much simpler than your real-world data. This example illustrates how data views can render real-world data consumable for data science.</p>
+<h2 id="solar-inverter-streams">Solar inverter streams</h2>
 <p>These streams represent values collected via PI to OCS, originally collected by a PI System. Each stream value contains a timestamp <em>(Timestamp)</em> and a measurement <em>(Value)</em>.</p>
 <h3 id="type">Type</h3>
 <pre><code class="lang-json">  {
@@ -125,7 +126,7 @@
 &quot;WINT.Meter.Primary.Inverter.0.PwrOut&quot;,
 &quot;WINT.Meter.Secondary.Inverter.0.PwrIn&quot;,
 &quot;WINT.Meter.Secondary.Inverter.0.PwrOut&quot;,
-</code></pre><h3 id="tags-and-metadata">Tags and Metadata</h3>
+</code></pre><h3 id="tags-and-metadata">Tags and metadata</h3>
 <p>Each inverter stream has some descriptive tags assigned, and metadata key-values describing its function.</p>
 <pre><code class="lang-text">Tags: some subset of [ &quot;Commercial&quot;, &quot;Residential&quot;, &quot;Critical Asset&quot; ]
 Metadata: { 
@@ -135,13 +136,13 @@ Metadata: {
             &quot;Inverter&quot;: one of ( &quot;0&quot;, &quot;1&quot;, &quot;2&quot; )
             &quot;Nominal Power MW&quot;: &quot;1.21&quot;
           }
-</code></pre><h2 id="weather-streams">Weather Streams</h2>
+</code></pre><h2 id="weather-streams">Weather streams</h2>
 <p>These streams simulate data collected via OMF from a weather station. There are two &quot;generations&quot; represented: Gen2 adds one property and renames another, as compared to Gen1.</p>
-<h3 id="tags-and-metadata-1">Tags and Metadata</h3>
+<h3 id="tags-and-metadata-1">Tags and metadata</h3>
 <p>Each weather stream has some descriptive tags assigned, and one metadata key-value indicating its Site. These are the same sites with which the inverters are associated.</p>
 <pre><code class="lang-text">Tags: some subset of [ &quot;Weather&quot;, &quot;Low Resolution&quot;, &quot;High Resolution&quot;, &quot;Gen1&quot;, &quot;Gen2&quot; ]
 Metadata: { &quot;Site&quot; : one of ( &quot;Biltmore&quot; | &quot;Rosecliff&quot; | &quot;Winterthur&quot; ) }
-</code></pre><h3 id="weather-generation-1">Weather, Generation 1</h3>
+</code></pre><h3 id="weather-generation-1">Weather, generation 1</h3>
 <h4 id="type-1">Type</h4>
 <pre><code class="lang-json">  {
     &quot;Id&quot;: &quot;docs-omf-weather-gen1&quot;,
@@ -170,7 +171,7 @@ Metadata: { &quot;Site&quot; : one of ( &quot;Biltmore&quot; | &quot;Rosecliff&q
 <p>Two streams of this type are defined:</p>
 <pre><code class="lang-text">&quot;WS_BILT&quot;,
 &quot;WS_ROSE&quot;,
-</code></pre><h3 id="weather-generation-2">Weather, Generation 2</h3>
+</code></pre><h3 id="weather-generation-2">Weather, generation 2</h3>
 <p>The latest and greatest Gen2 weather stations report a new property, <em>Cloud Cover</em>, but also rename <em>Temperature</em> to <em>Ambient Temperature</em>. They are otherwise similar to Gen1.</p>
 <h4 id="type-2">Type</h4>
 <pre><code class="lang-json">  {
@@ -212,7 +213,7 @@ Metadata: { &quot;Site&quot; : one of ( &quot;Biltmore&quot; | &quot;Rosecliff&q
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/DataViews/Example_Scenario.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/DataViews/Reference/Example_Scenario.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -232,8 +233,8 @@ Metadata: { &quot;Site&quot; : one of ( &quot;Biltmore&quot; | &quot;Rosecliff&q
       </footer>
     </div>
     
-    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../../styles/main.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
   </body>
 </html>

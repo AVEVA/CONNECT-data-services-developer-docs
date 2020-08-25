@@ -31,75 +31,69 @@ references:
 - uid: AccountUserRole_1
   name: User Roles
   href: Content_Portal/Documentation/Management/Account_UserRole_1.html
+- uid: AddIdentifyingField
+  name: Add identifying field
+  href: Content_Portal/Documentation/DataViews/DefineaDataView/Add_Identifying_Field.html
 - uid: ConceptsOverview
   name: OSIsoft Cloud Services
   href: Content_Portal/Concepts/Concepts_Overview.html
+- uid: ConsolidateDataFields
+  name: Consolidate data fields
+  href: Content_Portal/Documentation/DataViews/DefineaDataView/Consolidate_Data_Fields.html
 - uid: dataIngress
   name: Data Ingress and OSIsoft Message Format
   href: Content_Portal/Documentation/DataIngress/Data_Ingress.html
-- uid: DataView
-  name: Data View
-  href: Content_Portal/Documentation/DataViews/Data_View.html
 - uid: DataViewAPI
-  name: Data View API
-  href: Content_Portal/Documentation/DataViews/Data_View_API.html
+  name: Data view API
+  href: Content_Portal/Documentation/DataViews/DataViewsAPIOverview/Data_View_API.html
 - uid: DataViewsAccessControlAPI
-  name: Access Control API
-  href: Content_Portal/Documentation/DataViews/Access_Control_API.html
+  name: Access control API
+  href: Content_Portal/Documentation/DataViews/DataViewsAPIOverview/Access_Control_API.html
 - uid: DataViewsAPIOverview
-  name: Data Views API Overview
-  href: Content_Portal/Documentation/DataViews/Data_Views_API_Overview.html
+  name: Data views API reference
+  href: Content_Portal/Documentation/DataViews/DataViewsAPIOverview/Data_Views_API_Overview.html
 - uid: DataViewsAvailableFieldSets
-  name: Available Field Sets
-  href: Content_Portal/Documentation/DataViews/Available_Field_Sets.html
+  name: Retrieve available field sets
+  href: Content_Portal/Documentation/DataViews/DefineaDataView/Available_Field_Sets.html
 - uid: DataViewsDataAPI
   name: Data API
-  href: Content_Portal/Documentation/DataViews/Data_API.html
+  href: Content_Portal/Documentation/DataViews/DataViewsAPIOverview/Data_API.html
 - uid: DataViewsDataItemsandGroups
-  name: Data Items and Groups
-  href: Content_Portal/Documentation/DataViews/Data_Items_and_Groups.html
+  name: Identify data items
+  href: Content_Portal/Documentation/DataViews/DefineaDataView/Data_Items_and_Groups.html
 - uid: DataViewsExampleScenario
-  name: Example Scenarios
-  href: Content_Portal/Documentation/DataViews/Example_Scenario.html
+  name: Stream examples
+  href: Content_Portal/Documentation/DataViews/Reference/Example_Scenario.html
 - uid: DataViewsFieldMappings
-  name: Field Mappings
-  href: Content_Portal/Documentation/DataViews/Field_Mappings.html
+  name: View field mappings
+  href: Content_Portal/Documentation/DataViews/DefineaDataView/Field_Mappings.html
 - uid: DataViewsFieldSets
-  name: Data Field Sets
-  href: Content_Portal/Documentation/DataViews/Field_Sets.html
-- uid: DataViewsGettingData
-  name: Getting Data
-  href: Content_Portal/Documentation/DataViews/Getting_Data.html
+  name: Define data field sets
+  href: Content_Portal/Documentation/DataViews/DefineaDataView/Field_Sets.html
 - uid: DataViewsGrouping
-  name: Grouping
-  href: Content_Portal/Documentation/DataViews/Grouping.html
+  name: Group data items
+  href: Content_Portal/Documentation/DataViews/DefineaDataView/Grouping.html
 - uid: DataViewShape
-  name: Data View Shape
-  href: Content_Portal/Documentation/DataViews/Data_View_Shape.html
-- uid: DataViewsIntroductionDefine
-  name: Introduction - Define a data view
-  href: Content_Portal/Documentation/DataViews/Introduction_Define_a_Data_View.html
-- uid: DataViewsIntroductionGetData
-  name: Introduction - Get Data View Data
-  href: Content_Portal/Documentation/DataViews/Introduction_Get_Data_View_Data.html
+  name: Data view shape
+  href: Content_Portal/Documentation/DataViews/DefineaDataView/Data_View_Shape.html
 - uid: DataViewsOverview
   name: Data Views
   href: Content_Portal/Documentation/DataViews/Data_Views_Overview.html
 - uid: DataViewsPreviewDataAPI
   name: Preview Data API
-  href: Content_Portal/Documentation/DataViews/Preview_Data_API.html
+  href: Content_Portal/Documentation/DataViews/DataViewsAPIOverview/Preview_Data_API.html
 - uid: DataViewsQueries
-  name: Queries
-  href: Content_Portal/Documentation/DataViews/Queries.html
+  name: Define queries
+  href: Content_Portal/Documentation/DataViews/DefineaDataView/Queries.html
 - uid: DataViewsQuickStartDefine
-  name: Quick Start - Define a Data View
-  href: Content_Portal/Documentation/DataViews/Quick_Start_Define_a_Data_View.html
+  name: Define a data view
+  href: Content_Portal/Documentation/DataViews/DefineaDataView/Quick_Start_Define_a_Data_View.html
 - uid: DataViewsQuickStartGetData
-  name: Quick Start - Get Data View Data
-  href: Content_Portal/Documentation/DataViews/Quick_Start_Get_Data_View_Data.html
+  name: Get data view data
+  href: Content_Portal/Documentation/DataViews/GetDataViewData/Quick_Start_Get_Data_View_Data.html
 - uid: DataViewsSecuringDataViews
-  name: Securing Data Views
-  href: Content_Portal/Documentation/DataViews/Securing_Data_Views.html
+  name: Secure data views
+  href: Content_Portal/Documentation/DataViews/SecureDataViews/Securing_Data_Views.html
 - uid: identityAuthorizationCodeClient
   name: AuthorizationCodeClient
   href: Content_Portal/Documentation/Identity/Identity_AuthorizationCodeClient.html
@@ -194,17 +188,17 @@ references:
   name: OSIsoft Cloud Services
   href: Content_Portal/Documentation/OSIsoft_Cloud_Services.html
 - uid: PreviewDataView
-  name: Preview Data View API
-  href: Content_Portal/Documentation/DataViews/Preview_Data_View.html
+  name: Preview data view API
+  href: Content_Portal/Documentation/DataViews/PreviewDataViewAPI/Preview_Data_View_API.html
 - uid: ResolvedDataView
-  name: Resolved Data View
-  href: Content_Portal/Documentation/DataViews/Resolved_Data_View.html
+  name: Get resolved data view
+  href: Content_Portal/Documentation/DataViews/GetResolvedDataView/Resolved_Data_View.html
 - uid: ResolvedDataViewAPI
-  name: Resolved Data View API
-  href: Content_Portal/Documentation/DataViews/Resolved_Data_View_API.html
+  name: Resolved data view API
+  href: Content_Portal/Documentation/DataViews/DataViewsAPIOverview/Resolved_Data_View_API.html
 - uid: ResolvedDataViewPreviewAPI
-  name: Resolved Data View Preview API
-  href: Content_Portal/Documentation/DataViews/Resolved_Data_View_Preview_API.html
+  name: Resolved data view preview API
+  href: Content_Portal/Documentation/DataViews/DataViewsAPIOverview/Resolved_Data_View_Preview_API.html
 - uid: samples
   name: Samples
   href: Content_Portal/Documentation/samples.html

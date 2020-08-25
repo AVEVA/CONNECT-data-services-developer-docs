@@ -5,19 +5,19 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Resolved Data View Preview API </title>
+    <title>Resolved data view API </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Resolved Data View Preview API ">
+    <meta name="title" content="Resolved data view API ">
     <meta name="generator" content="docfx 2.43.3.0">
     
-    <link rel="shortcut icon" href="../../../favicon.ico">
-    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../../../styles/docfx.css">
-    <link rel="stylesheet" href="../../../styles/main.css">
-    <meta property="docfx:navrel" content="../../../toc.html">
-    <meta property="docfx:tocrel" content="../../toc.html">
+    <link rel="shortcut icon" href="../../../../favicon.ico">
+    <link rel="stylesheet" href="../../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../../toc.html">
+    <meta property="docfx:tocrel" content="../../../toc.html">
     
-    <meta property="docfx:rel" content="../../../">
+    <meta property="docfx:rel" content="../../../../">
     
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
@@ -33,8 +33,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../../index.html" width="46">
-                <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              <a class="navbar-brand" href="../../../../index.html" width="46">
+                <img id="logo" src="../../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -75,40 +75,24 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="ResolvedDataViewPreviewAPI">
-<h1 id="resolved-data-view-preview-api">Resolved Data View Preview API</h1>
+            <article class="content wrap" id="_content" data-uid="ResolvedDataViewAPI">
+<h1 id="resolved-data-view-api">Resolved data view API</h1>
 
-<p>This portion of the overall <a class="xref" href="Data_Views_API_Overview.html">data views API</a> specifies the resources that resolve per-user for an input data view. 
-The preview APIs require a data view to be passed in the request body for each request, which provides the user the flexibility to change the data view on the fly without saving/updating it.</p>
+<p>This portion of the overall <a class="xref" href="Data_Views_API_Overview.html">data views API</a> is the resources that resolve per-user for each data view. For a description of what this information is, and how to use it, see the <a class="xref" href="../GetResolvedDataView/Resolved_Data_View.html">documentation</a> for resolved data views.</p>
 <h2 id="get-data-items-by-query"><code>Get Data Items by Query</code></h2>
-<p>Gets the paged collection of data items returned by an individual query, and which are eligible for use in the provided data view. A data view has a collection of zero or more queries. Each query has an identifier. Those identifiers are used here as part of the request path.</p>
+<p>Gets the paged collection of data items that are the results of an individual query, and which are eligible for use in the current data view. A data view has a collection of zero or more queries. Each query has an identifier. Those identifiers are used here as part of the request path.</p>
 <h3 id="request">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">POST api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Preview/<wbr>DataViews/<wbr>Resolved/<wbr>DataItems/<wbr>{queryId}?skip={skip}&amp;count={count}
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>Resolved/<wbr>DataItems/<wbr>{queryId}?cache={cache}&amp;skip={skip}&amp;count={count}
 </code></pre><h3 id="request-path-parameters">Request path parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
+<p><code>string dataViewId</code><br>The data view identifier</p>
 <p><code>string queryId</code><br>The <code>Query</code> identifier</p>
 <h3 id="request-query-parameters">Request query parameters</h3>
+<p><code>[optional] string cache</code><br>&quot;Refresh&quot; to force the resource to re-resolve.<br>&quot;Preserve&quot; to use cached information, if available. This is the default value.</p>
 <p><code>[optional] int skip</code><br>An optional parameter representing the zero-based offset of the first data item to retrieve. If not specified, a default value of 0 is used.</p>
 <p><code>[optional] int count</code><br>An optional parameter representing the maximum number of data items to retrieve. If not specified, a default value of 100 is used.</p>
-<h3 id="request-body">Request body</h3>
-<p>A <code>DataView</code> object to get the results for.</p>
-<h4 id="example-request-body">Example request body</h4>
-<pre><code class="lang-json">{
-  &quot;IndexField&quot;: { &quot;Label&quot;: &quot;Timestamp&quot; },
-  &quot;Queries&quot;: [
-    { 
-      &quot;Id&quot;: &quot;weather&quot;,
-      &quot;Kind&quot;: &quot;Stream&quot;,
-      &quot;Value&quot;:&quot;*WS_BILT*&quot; 
-    }
-  ],
-  &quot;DataFieldSets&quot;: [],
-  &quot;GroupingFields&quot;: [],
-  &quot;IndexTypeCode&quot;: &quot;DateTime&quot;,
-  &quot;Shape&quot;: &quot;Standard&quot;
-}
-</code></pre><h3 id="response">Response</h3>
+<h3 id="response">Response</h3>
 <p>The response includes a status code and, in most cases, a body.</p>
 <table>
 <thead>
@@ -125,11 +109,6 @@ The preview APIs require a data view to be passed in the request body for each r
 <td>An object with a &quot;TimeOfResolution&quot; and a collection of &quot;Items&quot;, the <code>DataItem</code>s that resolved.</td>
 </tr>
 <tr>
-<td>400 Bad Request</td>
-<td>error</td>
-<td>The data view or the query parameters are not valid. See the response body for details</td>
-</tr>
-<tr>
 <td>403 Forbidden</td>
 <td>error</td>
 <td>You are not authorized for this operation</td>
@@ -137,7 +116,7 @@ The preview APIs require a data view to be passed in the request body for each r
 <tr>
 <td>404 Not Found</td>
 <td>error</td>
-<td>The query does not exist</td>
+<td>The data view or query does not exist</td>
 </tr>
 <tr>
 <td>500 Internal Server Error</td>
@@ -209,36 +188,21 @@ Content-Type: application/json
   ]
 }
 </code></pre><h3 id="net-client-libraries-method">.NET client libraries method</h3>
-<pre><code class="lang-csharp">   Task&lt;ResolvedItems&lt;DataItem&gt;&gt; GetPreviewDataItemsAsync(string queryId, DataView dataView, int skip = 0, int count = 100);
+<pre><code class="lang-csharp">   Task&lt;ResolvedItems&lt;DataItem&gt;&gt; GetDataItemsAsync(string id, string queryId, int skip = 0, int count = 100, CacheBehavior cache = CacheBehavior.Preserve);
 </code></pre><h2 id="get-ineligible-data-items-by-query"><code>Get Ineligible Data Items by Query</code></h2>
-<p>Gets the paged collection of data items returned by an individual query, but which are not eligible for use in the provided data view. A common reason for ineligibility is that the item&#39;s index property is of a different type than the data view expects. A data view has a collection of zero or more queries. Each query has an identifier. Those identifiers are used here as part of the request path.</p>
+<p>Gets the paged collection of data items that are the results of an individual query, but which are not eligible for use in the current data view. A common reason for ineligibility is that the item&#39;s index property is of a different type than the data view expects. A data view has a collection of zero or more queries. Each query has an identifier. Those identifiers are used here as part of the request path.</p>
 <h3 id="request-1">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">POST api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Preview/<wbr>DataViews/<wbr>Resolved/<wbr>IneligibleDataItems/<wbr>{queryId}?skip={skip}&amp;count={count}
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>Resolved/<wbr>IneligibleDataItems/<wbr>{queryId}?cache={cache}&amp;skip={skip}&amp;count={count}
 </code></pre><h3 id="request-path-parameters-1">Request path parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
+<p><code>string dataViewId</code><br>The data view identifier</p>
 <p><code>string queryId</code><br>The <code>Query</code> identifier</p>
 <h3 id="request-query-parameters-1">Request query parameters</h3>
+<p><code>[optional] string cache</code><br>&quot;Refresh&quot; to force the resource to re-resolve.<br>&quot;Preserve&quot; to use cached information, if available. This is the default value.</p>
 <p><code>[optional] int skip</code><br>An optional parameter representing the zero-based offset of the first data item to retrieve. If not specified, a default value of 0 is used.</p>
 <p><code>[optional] int count</code><br>An optional parameter representing the maximum number of data items to retrieve. If not specified, a default value of 100 is used.</p>
-<h3 id="request-body-1">Request body</h3>
-<p>A <code>DataView</code> object to get the results for.</p>
-<h4 id="example-request-body-1">Example request body</h4>
-<pre><code class="lang-json">{
-  &quot;IndexField&quot;: { &quot;Label&quot;: &quot;Timestamp&quot; },
-  &quot;Queries&quot;: [
-    { 
-      &quot;Id&quot;: &quot;weather&quot;,
-      &quot;Kind&quot;: &quot;Stream&quot;,
-      &quot;Value&quot;:&quot;*weather*&quot; 
-    }
-  ],
-  &quot;DataFieldSets&quot;: [],
-  &quot;GroupingFields&quot;: [],
-  &quot;IndexTypeCode&quot;: &quot;DateTime&quot;,
-  &quot;Shape&quot;: &quot;Standard&quot;
-}
-</code></pre><h3 id="response-1">Response</h3>
+<h3 id="response-1">Response</h3>
 <p>The response includes a status code and, in most cases, a body.</p>
 <table>
 <thead>
@@ -255,11 +219,6 @@ Content-Type: application/json
 <td>An object with a &quot;TimeOfResolution&quot; and a collection of &quot;Items&quot;, the <code>DataItem</code>s that resolved.</td>
 </tr>
 <tr>
-<td>400 Bad Request</td>
-<td>error</td>
-<td>The data view or the query parameters are not valid. See the response body for details</td>
-</tr>
-<tr>
 <td>403 Forbidden</td>
 <td>error</td>
 <td>You are not authorized for this operation</td>
@@ -267,7 +226,7 @@ Content-Type: application/json
 <tr>
 <td>404 Not Found</td>
 <td>error</td>
-<td>The query does not exist</td>
+<td>The data view or query does not exist</td>
 </tr>
 <tr>
 <td>500 Internal Server Error</td>
@@ -308,8 +267,8 @@ Content-Type: application/json
       &quot;TypeId&quot;: &quot;type-with-different-index&quot;,
       &quot;ResourceType&quot;: &quot;Stream&quot;,
       &quot;Tags&quot;: [],
-      &quot;Metadata&quot;: { },
-      &quot;DataItemFields&quot;: [
+       &quot;Metadata&quot;: { },
+       &quot;DataItemFields&quot;: [
          {
            &quot;Id&quot;: &quot;Depth&quot;,
            &quot;Name&quot;: &quot;Depth&quot;,
@@ -327,43 +286,20 @@ Content-Type: application/json
   ]
 }
 </code></pre><h3 id="net-client-libraries-method-1">.NET client libraries method</h3>
-<pre><code class="lang-csharp">   Task&lt;ResolvedItems&lt;DataItem&gt;&gt; GetPreviewIneligibleDataItemsAsync(string queryId, DataView dataView, int skip = 0, int count = 100);
+<pre><code class="lang-csharp">   Task&lt;ResolvedItems&lt;DataItem&gt;&gt; GetIneligibleDataItemsAsync(string id, string queryId, int skip = 0, int count = 100, CacheBehavior cache = CacheBehavior.Preserve);
 </code></pre><h2 id="get-groups"><code>Get Groups</code></h2>
-<p>Gets the collection of <code>Group</code>s that resolved for the provided data view.</p>
+<p>Gets the collection of <code>Group</code>s that resolved for a data view.</p>
 <h3 id="request-2">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">POST api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Preview/<wbr>DataViews/<wbr>Resolved/<wbr>Groups?skip={skip}&amp;count={count}
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>Resolved/<wbr>Groups?cache={cache}&amp;skip={skip}&amp;count={count}
 </code></pre><h3 id="request-path-parameters-2">Request path parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
+<p><code>string dataViewId</code><br>The data view identifier</p>
 <h3 id="request-query-parameters-2">Request query parameters</h3>
+<p><code>[optional] string cache</code><br>&quot;Refresh&quot; to force the resource to re-resolve.<br>&quot;Preserve&quot; to use cached information, if available. This is the default value.</p>
 <p><code>[optional] int skip</code><br>An optional parameter representing the zero-based offset of the first group to retrieve. If not specified, a default value of 0 is used.</p>
 <p><code>[optional] int count</code><br>An optional parameter representing the maximum number of groups to retrieve. If not specified, a default value of 100 is used.</p>
-<h3 id="request-body-2">Request body</h3>
-<p>A <code>DataView</code> object to get the results for.</p>
-<h4 id="example-request-body-2">Example request body</h4>
-<pre><code class="lang-json">{
-  &quot;IndexField&quot;: { &quot;Label&quot;: &quot;Timestamp&quot; },
-  &quot;Queries&quot;: [
-    { 
-      &quot;Id&quot;: &quot;weather&quot;,
-      &quot;Kind&quot;: &quot;Stream&quot;,
-      &quot;Value&quot;:&quot;*WS_BILT*&quot; 
-    }
-  ],
-  &quot;DataFieldSets&quot;: [],
-  &quot;GroupingFields&quot;: [
-    {
-      &quot;Source&quot;: &quot;Metadata&quot;,
-      &quot;Keys&quot;: [
-        &quot;Site&quot; 
-      ],
-      &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
-    }
-  ],
-  &quot;IndexTypeCode&quot;: &quot;DateTime&quot;,
-  &quot;Shape&quot;: &quot;Standard&quot;
-}
-</code></pre><h3 id="response-2">Response</h3>
+<h3 id="response-2">Response</h3>
 <p>The response includes a status code and, in most cases, a body.</p>
 <table>
 <thead>
@@ -380,14 +316,14 @@ Content-Type: application/json
 <td>An object with a &quot;TimeOfResolution&quot; and a collection of &quot;Items&quot;, the <code>Groups</code>s that resolved.</td>
 </tr>
 <tr>
-<td>400 Bad Request</td>
-<td>error</td>
-<td>The data view or the query parameters are not valid. See the response body for details</td>
-</tr>
-<tr>
 <td>403 Forbidden</td>
 <td>error</td>
 <td>You are not authorized for this operation</td>
+</tr>
+<tr>
+<td>404 Not Found</td>
+<td>error</td>
+<td>The data view does not exist</td>
 </tr>
 <tr>
 <td>500 Internal Server Error</td>
@@ -423,9 +359,7 @@ Content-Type: application/json
   &quot;TimeOfResolution&quot;: &quot;2019-12-13T01:23:45Z&quot;,
   &quot;Items&quot;: [
     {
-      &quot;GroupingValues&quot;: [ 
-        &quot;Biltmore&quot;
-      ],
+      &quot;GroupingValues&quot;: [ &quot;Biltmore&quot; ],
       &quot;DataItems&quot;: {
         &quot;Query1&quot;: [
           {
@@ -468,32 +402,18 @@ Content-Type: application/json
   ]
 }
 </code></pre><h3 id="net-client-libraries-method-2">.NET client libraries method</h3>
-<pre><code class="lang-csharp">   Task&lt;ResolvedItems&lt;Group&gt;&gt; GetPreviewGroupsAsync(DataView dataView, int skip = 0, int count = 100);
+<pre><code class="lang-csharp">   Task&lt;ResolvedItems&lt;Group&gt;&gt; GetGroupsAsync(string id, int skip = 0, int count = 100, CacheBehavior cache = CacheBehavior.Preserve);
 </code></pre><h2 id="get-available-field-sets"><code>Get Available Field Sets</code></h2>
-<p>Gets the collection of field sets that are available for use in the provided data view, and which are not already included in the data view.</p>
+<p>Gets the collection of field sets that are available for use in the data view, and which are not already included in the data view.</p>
 <h3 id="request-3">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">POST api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Preview/<wbr>DataViews/<wbr>Resolved/<wbr>AvailableFieldSets
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>Resolved/<wbr>AvailableFieldSets?cache={cache}
 </code></pre><h3 id="request-path-parameters-3">Request path parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
-<h3 id="request-body-3">Request body</h3>
-<p>A <code>DataView</code> object to get the results for.</p>
-<h4 id="example-request-body-3">Example request body</h4>
-<pre><code class="lang-json">{
-  &quot;IndexField&quot;: { &quot;Label&quot;: &quot;Timestamp&quot; },
-  &quot;Queries&quot;: [
-    { 
-      &quot;Id&quot;: &quot;weather&quot;,
-      &quot;Kind&quot;: &quot;Stream&quot;,
-      &quot;Value&quot;:&quot;*weather*&quot; 
-    }
-  ],
-  &quot;DataFieldSets&quot;: [],
-  &quot;GroupingFields&quot;: [],
-  &quot;IndexTypeCode&quot;: &quot;DateTime&quot;,
-  &quot;Shape&quot;: &quot;Standard&quot;
-}
-</code></pre><h3 id="response-3">Response</h3>
+<p><code>string dataViewId</code><br>The data view identifier</p>
+<h3 id="request-query-parameters-3">Request query parameters</h3>
+<p><code>[optional] string cache</code><br>&quot;Refresh&quot; to force the resource to re-resolve.<br>&quot;Preserve&quot; to use cached information, if available. This is the default value.</p>
+<h3 id="response-3">Response</h3>
 <p>The response includes a status code and, in most cases, a body.</p>
 <table>
 <thead>
@@ -510,14 +430,14 @@ Content-Type: application/json
 <td>An object with a &quot;TimeOfResolution&quot; and a collection of &quot;Items&quot;, the <code>FieldSets</code>s that resolved and which are still available</td>
 </tr>
 <tr>
-<td>400 Bad Request</td>
-<td>error</td>
-<td>The data view or the query parameters are not valid. See the response body for details</td>
-</tr>
-<tr>
 <td>403 Forbidden</td>
 <td>error</td>
 <td>You are not authorized for this operation</td>
+</tr>
+<tr>
+<td>404 Not Found</td>
+<td>error</td>
+<td>The data view does not exist</td>
 </tr>
 <tr>
 <td>500 Internal Server Error</td>
@@ -569,59 +489,22 @@ Content-Type: application/json
     ]
 }
 </code></pre><h3 id="net-client-libraries-method-3">.NET client libraries method</h3>
-<pre><code class="lang-csharp">   Task&lt;ResolvedItems&lt;FieldSet&gt;&gt; GetPreviewAvailableFieldSetsAsync(DataView dataView);
+<pre><code class="lang-csharp">   Task&lt;ResolvedItems&lt;FieldSet&gt;&gt; GetAvailableFieldSetsAsync(string id, CacheBehavior cache = CacheBehavior.Preserve);
 </code></pre><h2 id="get-field-mappings"><code>Get Field Mappings</code></h2>
-<p>Gets the collection of field mappings resolved for the provided data view. These show the exact data behind every field, for each data item, for each group.</p>
+<p>Gets the collection of field mappings resolved for the data view. These show the exact data behind every field, for each data item, for each group.</p>
 <h3 id="request-4">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">POST api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Preview/<wbr>DataViews/<wbr>Resolved/<wbr>FieldMappings?skip={skip}&amp;count={count}
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>Resolved/<wbr>FieldMappings?cache={cache}&amp;skip={skip}&amp;count={count}
 </code></pre><h3 id="request-path-parameters-4">Request path parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
-<h3 id="request-query-parameters-3">Request query parameters</h3>
+<p><code>string dataViewId</code><br>The data view identifier</p>
+<h3 id="request-query-parameters-4">Request query parameters</h3>
+<p><code>[optional] string cache</code><br>&quot;Refresh&quot; to force the resource to re-resolve.<br>&quot;Preserve&quot; to use cached information, if available. This is the default value.</p>
 <p><code>[optional] int skip</code>
 An optional parameter representing the zero-based offset of the first field mapping to retrieve. If not specified, a default value of 0 is used.</p>
 <p><code>[optional] int count</code>
 An optional parameter representing the maximum number of field mappings to retrieve. If not specified, a default value of 100 is used.</p>
-<h3 id="request-body-4">Request body</h3>
-<p>A <code>DataView</code> object to get the results for.</p>
-<h4 id="example-request-body-4">Example request body</h4>
-<pre><code class="lang-json">{
-  &quot;IndexField&quot;: { &quot;Label&quot;: &quot;Timestamp&quot; },
-  &quot;Queries&quot;: [
-    { 
-      &quot;Id&quot;: &quot;weather&quot;,
-      &quot;Kind&quot;: &quot;Stream&quot;,
-      &quot;Value&quot;:&quot;*weather*&quot; 
-    }
-  ],
-  &quot;DataFieldSets&quot;: [
-        {
-            &quot;QueryId&quot;: &quot;weather&quot;,
-            &quot;DataFields&quot;: [
-                {
-                    &quot;Source&quot;: &quot;PropertyId&quot;,
-                    &quot;Keys&quot;: [
-                        &quot;Temperature&quot;,
-                        &quot;AmbientTemperature&quot;
-                    ],
-                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
-                }
-            ],
-       },
-  ],
-  &quot;GroupingFields&quot;: [
-    {
-      &quot;Source&quot;: &quot;Metadata&quot;,
-      &quot;Keys&quot;: [
-        &quot;Site&quot; 
-      ],
-      &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
-    }
-  ],
-  &quot;IndexTypeCode&quot;: &quot;DateTime&quot;,
-  &quot;Shape&quot;: &quot;Standard&quot;
-}
-</code></pre><h3 id="response-4">Response</h3>
+<h3 id="response-4">Response</h3>
 <p>The response includes a status code and, in most cases, a body.</p>
 <table>
 <thead>
@@ -638,14 +521,14 @@ An optional parameter representing the maximum number of field mappings to retri
 <td>An object with a &quot;TimeOfResolution&quot; and a collection of &quot;Items&quot;, the <code>FieldMapping</code>s resolved</td>
 </tr>
 <tr>
-<td>400 Bad Request</td>
-<td>error</td>
-<td>The data view or the query parameters are not valid. See the response body for details</td>
-</tr>
-<tr>
 <td>403 Forbidden</td>
 <td>error</td>
 <td>You are not authorized for this operation</td>
+</tr>
+<tr>
+<td>404 Not Found</td>
+<td>error</td>
+<td>The data view does not exist</td>
 </tr>
 <tr>
 <td>500 Internal Server Error</td>
@@ -728,54 +611,18 @@ An optional parameter representing the maximum number of field mappings to retri
     ]
 }
 </code></pre><h3 id="net-client-libraries-method-4">.NET client libraries method</h3>
-<pre><code class="lang-csharp">   Task&lt;ResolvedItems&lt;FieldMapping&gt;&gt; GetPreviewFieldMappingsAsync(DataView dataView, int skip = 0, int count = 100);
+<pre><code class="lang-csharp">   Task&lt;ResolvedItems&lt;FieldMapping&gt;&gt; GetFieldMappingsAsync(string id, int skip = 0, int count = 100, CacheBehavior cache = CacheBehavior.Preserve);
 </code></pre><h2 id="get-statistics"><code>Get Statistics</code></h2>
 <p>Gets statistics about the size and shape on how the data view resolved. </p>
 <h3 id="request-5">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">POST /<wbr>api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Preview/<wbr>DataViews/<wbr>Resolved/<wbr>Statistics
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>Resolved/<wbr>Statistics?cache={cache}
 </code></pre><h3 id="request-path-parameters-5">Request path parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
-<h3 id="request-body-5">Request body</h3>
-<p>A <code>DataView</code> object to get the results for.</p>
-<h4 id="example-request-body-5">Example request body</h4>
-<pre><code class="lang-json">{
-  &quot;IndexField&quot;: { &quot;Label&quot;: &quot;Timestamp&quot; },
-  &quot;Queries&quot;: [
-    { 
-      &quot;Id&quot;: &quot;weather&quot;,
-      &quot;Kind&quot;: &quot;Stream&quot;,
-      &quot;Value&quot;:&quot;*weather*&quot; 
-    }
-  ],
-  &quot;DataFieldSets&quot;: [
-        {
-            &quot;QueryId&quot;: &quot;weather&quot;,
-            &quot;DataFields&quot;: [
-                {
-                    &quot;Source&quot;: &quot;PropertyId&quot;,
-                    &quot;Keys&quot;: [
-                        &quot;Temperature&quot;,
-                        &quot;AmbientTemperature&quot;
-                    ],
-                    &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
-                }
-            ],
-       },
-  ],
-  &quot;GroupingFields&quot;: [
-    {
-      &quot;Source&quot;: &quot;Metadata&quot;,
-      &quot;Keys&quot;: [
-        &quot;Site&quot; 
-      ],
-      &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
-    }
-  ],
-  &quot;IndexTypeCode&quot;: &quot;DateTime&quot;,
-  &quot;Shape&quot;: &quot;Standard&quot;
-}
-</code></pre><h3 id="response-5">Response</h3>
+<p><code>string dataViewId</code><br>The data view identifier</p>
+<h3 id="request-query-parameters-5">Request query parameters</h3>
+<p><code>[optional] string cache</code><br>&quot;Refresh&quot; to force the resource to re-resolve.<br>&quot;Preserve&quot; to use cached information, if available. This is the default value.</p>
+<h3 id="response-5">Response</h3>
 <p>The response includes a status code and, in most cases, a body.</p>
 <table>
 <thead>
@@ -792,14 +639,14 @@ An optional parameter representing the maximum number of field mappings to retri
 <td>Successfully retrieved data.</td>
 </tr>
 <tr>
-<td>400 Bad Request</td>
-<td>error</td>
-<td>The data view or the query parameters are not valid. See the response body for details</td>
-</tr>
-<tr>
 <td>403 Forbidden</td>
 <td>error</td>
 <td>User is not authorized for this operation.</td>
+</tr>
+<tr>
+<td>404 Not Found</td>
+<td>error</td>
+<td>The specified data view identifier is not found.</td>
 </tr>
 <tr>
 <td>500 Internal Server Error</td>
@@ -812,7 +659,6 @@ An optional parameter representing the maximum number of field mappings to retri
 <pre><code class="lang-json">HTTP 200 OK
 {
     &quot;TimeOfResolution&quot;: &quot;2019-12-13T01:23:45Z&quot;,
-    &quot;Item&quot;: {
     &quot;DataItemCount&quot;: 24,
     &quot;GroupCount&quot;: 2,
     &quot;FieldMappingCount&quot;: 10,
@@ -848,10 +694,9 @@ An optional parameter representing the maximum number of field mappings to retri
             ]
         }
     ]
-  }
 }
 </code></pre><h3 id="net-client-libraries-method-5">.NET client libraries method</h3>
-<pre><code class="lang-csharp">   Task&lt;ResolvedItem&lt;Statistics&gt;&gt; GetPreviewStatisticsAsync(DataView dataView);
+<pre><code class="lang-csharp">   Task&lt;ResolvedItem&lt;Statistics&gt;&gt; GetStatisticsAsync(string id, CacheBehavior cache = CacheBehavior.Preserve);
 </code></pre></article>
           </div>
           
@@ -860,7 +705,7 @@ An optional parameter representing the maximum number of field mappings to retri
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/DataViews/Resolved_Data_View_Preview_API.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/DataViews/DataViewsAPIOverview/Resolved_Data_View_API.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -880,8 +725,8 @@ An optional parameter representing the maximum number of field mappings to retri
       </footer>
     </div>
     
-    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../../styles/main.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
   </body>
 </html>

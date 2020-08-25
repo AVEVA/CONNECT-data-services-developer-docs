@@ -2,7 +2,7 @@
 uid: DataViewsQueries
 ---
 
-# Queries
+# Define queries
 
 Queries determine what data items are included in a data view.
 
@@ -38,7 +38,7 @@ For example:
 Using separate queries means the streams will be available in separate field sets. This is good, because a power inverter has completely different fields versus a weather station.
 
 ### Querying streams of a common nature
-Streams that originate from an OSIsoft PI System represent only one fundamental measurement (e.g. Power In), unlike the more general case where a stream may represent several measurements (e.g. Temperature, Solar Radiation, and Cloud Cover). This means that multiple streams refer to the same physical or logical asset.
+Streams that originate from an OSIsoft PI System represent only one fundamental measurement (e.g. Power In), unlike the more general case where a stream may represent several measurements (e.g. Temperature, Solar Radiation, and Cloud Cover). This means that multiple streams refer to the same physical or logical asset. 
 
 In the example scenario, each power inverter is associated with two streams. It makes sense to structure our query around the physical asset, returning all "power*" measurements of all inverters:
 ```json

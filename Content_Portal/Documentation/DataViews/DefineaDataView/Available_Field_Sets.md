@@ -2,14 +2,14 @@
 uid: DataViewsAvailableFieldSets
 ---
 
-# Available Field Sets
+# Retrieve available field sets
 
 Available [field sets](xref:DataViewsFieldSets) include fields not currently included in the data view, which are available to be added. 
 
-The list of field sets is generated based on the `.Queries` and `.GroupingFields` of the defined data view. These fields and field sets can be readily added to the data view `.DataFieldSets`. Once the field is added, it is omitted from the list of available field sets. Similarly, if the field is removed from the data view, it is added back to the available field sets. This allows an iterative approach to building the data view by easily adding and removing fields from the data view.
+The list of field sets is generated based on the `.Queries` and `.GroupingFields` of the defined data view. These fields and field sets can be readily added to the data view `.DataFieldSets`. Once the field is added, it is omitted from the list of available field sets. Similarly, if the field is removed from the data view, it is added back to the available field sets. This allows an iterative approach to building the data view by easily adding and removing fields from the data view. 
 
 ## Example
-The example uses the following data view and the streams from the [SDS Example Scenario](xref:DataViewsExampleScenario). Note that the field sets and the grouping fields arrays are empty:
+The example uses the following data view and the streams from the [Stream examples](xref:DataViewsExampleScenario). Note that the field sets and the grouping fields arrays are empty:
 ```json
 {
   "Id": "example_without_grouping_fields",
@@ -28,7 +28,7 @@ The example uses the following data view and the streams from the [SDS Example S
 }
 ```
 
-Accessing the ```Get Available Field Sets``` endpoint will show available fields corresponding to stream id, name, tags, metadata, and each property.
+Accessing the ```Get Available Field Sets``` endpoint will show available fields corresponding to stream id, name, tags, metadata, and each property. 
 
 ```json
 HTTP 200 OK

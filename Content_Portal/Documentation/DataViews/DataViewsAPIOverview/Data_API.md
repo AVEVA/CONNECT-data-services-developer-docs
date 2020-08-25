@@ -1,16 +1,16 @@
 ---
-uid: DataViewsPreviewDataAPI
+uid: DataViewsDataAPI
 ---
 
-# Preview Data API
-The Preview Data API allows users to [retrieve data](xref:DataViewsGettingData) for a specified data view.  This API is one portion of the [data views API](xref:DataViewsAPIOverview).
+# Data API
+The Data API allows users to [retrieve data](xref:DataViewsQuickStartGetData) for a specified data view.  This API is one portion of the [data views API](xref:DataViewsAPIOverview).
 
 ## `Get Data View Data`
-Get data for the provided data view and index parameters with paging. See [documentation on paging](xref:DataViewsGettingData#paging) for further information.
+Get data for the provided index parameters with paging. See [documentation on paging](xref:DataViewsQuickStartGetData#paging) for further information.
 
 ### Request
 ```text
-POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/dataviews/data/interpolated?startIndex={startIndex}&endIndex={endIndex}&interval={interval}&form={form}&countPerGroup={countPerGroup}&groupCount={groupCount}&continuationToken={continuationToken}&count={count}
+GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{dataViewId}/data/interpolated?startIndex={startIndex}&endIndex={endIndex}&interval={interval}&form={form}&continuationToken={continuationToken}&cache={cache}&count={count}
 
 ```
 ### Parameters
@@ -19,6 +19,9 @@ The tenant identifier
 
 `string namespaceId`  
 The namespace identifier
+
+`string dataViewId`  
+The data view identifier
 
 `[optional] string startIndex`  
 The requested start index, inclusive. The default value is the `.DefaultStartIndex` of the data view. Optional if a default value is specified.
@@ -29,66 +32,22 @@ The requested end index, inclusive. The default value is the `.DefaultEndIndex` 
 `[optional] string interval`  
 The requested interval between index values. The default value is the `.DefaultInterval` of the data view. Optional if a default is specified.
 
-`[optional] int countPerGroup`  
-The number of rows per group. It overrides the endIndex.
-
-`[optional] int groupCount`  
-The requested number of groups.
-
 `[optional] string form`  
-The requested data [output format](xref:DataViewsGettingData#format). Output formats: `default`, `table`, `tableh`, `csv`, `csvh`.
+The requested data [output format](xref:DataViewsQuickStartGetData#format). Output formats: `default`, `table`, `tableh`, `csv`, `csvh`.
 
 `[optional] string continuationToken`  
-Used only when [paging](xref:DataViewsGettingData#paging). Not specified when requesting the first page of data.
+Used only when [paging](xref:DataViewsQuickStartGetData#paging). Not specified when requesting the first page of data.
+
+`[optional] string cache`  
+Controls when the data view backing resources are to be refreshed. Used only when requesting the first page of data. Ignored if used with the continuationToken. Values are:
+
+| Value | Description | 
+|--|--|
+| `Refresh` | Force the resource to re-resolve.  This is the default value for this API route.  
+| `Preserve`| Use cached information, if available.   
 
 `[optional] int count`  
-The requested page size. The maximum is 250,000. If the parameter is not provided, [an optimal page size will be calculated](xref:DataViewsGettingData#page-size).
-
-
-#### Example request body
-```json
-{
-  "IndexField": { "Label": "Time" },
-  "Queries": [
-    { 
-      "Id": "weather",
-      "Kind": "Stream",
-      "Value":"*weather*" 
-    }
-  ],
-  "DataFieldSets": [
-        {
-            "QueryId": "weather",
-            "DataFields": [
-                {
-                    "Source": "PropertyId",
-                    "Keys": [
-                        "Temperature"
-                    ],
-                    "Label": "{IdentifyingValue} {FirstKey}"
-                },
-                {
-                    "Source": "PropertyId",
-                    "Keys": [
-                        "Flowrate"
-                    ],
-                    "Label": "{IdentifyingValue} {FirstKey}"
-                },
-                {
-                    "Source": "PropertyId",
-                    "Keys": [
-                        "Volume"
-                    ],
-                    "Label": "{IdentifyingValue} {FirstKey}"
-                },
-            ],
-       },
-  ],
-  "GroupingFields": [],
-  "IndexTypeCode": "DateTime",
-  "Shape": "Standard"
-}
-```
+The requested page size. The maximum is 250,000. If the parameter is not provided, [an optimal page size will be calculated](xref:DataViewsQuickStartGetData#page-size).
 
 ### Response
 The response includes a status code and, in most cases, a body.
@@ -96,8 +55,9 @@ The response includes a status code and, in most cases, a body.
 | Status code | Body Type | Description |
 |--|--|--|
 | 200 OK                    | data in the requested format  | Successfully retrieved data.  |
-| 400 Bad Request           | error | The data view or the query parameters are not valid. See the response body for details. |
-| 403 Forbidden             | error | User is not authorized to create a data view.
+| 400 Bad Request           | error | The request could not be understood by the server due to malformed syntax.
+| 403 Forbidden             | error | User is not authorized for this operation.
+| 404 Not Found             | error | The specified data view identifier is not found.
 | 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
 
 #### Response headers
@@ -258,14 +218,12 @@ Time,Temperature,Flowrate,Volume
 
 ### .NET client libraries method
 ```csharp
-    IAsyncEnumerable<string> GetPreviewDataInterpolatedAsync(
-            DataView dataView,
+   IAsyncEnumerable<string> GetDataInterpolatedAsync(
+            string id,
             OutputFormat format = OutputFormat.Default,
             object startIndex = null,
             object endIndex = null,
             object interval = null,
-            int? countPerGroup = null,
-            int? groupCount = null,
             int? backingPageSize = null,
             CacheBehavior cache = CacheBehavior.Refresh,
             CancellationToken cancellationToken = default);

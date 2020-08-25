@@ -320,7 +320,7 @@ HTTP 200 OK
                     "Label": "{IdentifyingValue} Name"
                 },
                 {
-                    "Source": "Metadata",
+                    "Source": "PropertyId",
                     "Keys": [
                         "AmbientTemperature"
                     ],
@@ -597,7 +597,7 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
                     ],
                     "Label": "{IdentifyingValue} {FirstKey}"
                 },                
-				{
+		{
                     "Source": "PropertyId",
                     "Keys": [
                         "Temperature"

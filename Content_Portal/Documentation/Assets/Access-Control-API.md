@@ -16,7 +16,7 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Ass
 
 ```
 
-Asset type collections
+Asset types collections
 
 ```text 
 
@@ -39,7 +39,7 @@ The response includes a status code and a body.
 
 | Status Code | Body Type | Description |
 |--|--|--|
-| 200 OK | `AccessControlList` | The default access control list of the assets or asset type collections. [WRITER'S NOTE: Should this be singular? asset? asset type collection?] |
+| 200 OK | `AccessControlList` | The default access control list of the assets collection or asset type collection.
 | 403 Forbidden | error | You are not authorized to view the requested asset or asset type collection's access control list. |
 
 #### Example response body
@@ -337,7 +337,7 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetType
 
 ```
 
-<!--- Is "owner" meant to be lowercase? --->
+
 
 ### Parameters  
 

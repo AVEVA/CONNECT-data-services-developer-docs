@@ -50,23 +50,22 @@ Procedure
 
    The Legend table displays the Trace view. It shows the legend for each trace, the last value, minimum, maximum, and average values in the displayed time range.
 
-   ![Legend Table](images\Legend_Table.png)
+    ![Legend Table](images\Legend_Table.png)
 
-7. Click on a trace to select it for further analysis.
+7. Click on a trace to select it for further analysis.<br>The selected trace is highlighted, and two cursors automatically mark the minimum and maximum values for the displayed time range. These cursors, called *easy cursors,* remain as long as the trace is highlighted.<br>
 
-   The selected trace is highlighted, and two cursors automatically mark the minimum and maximum values for the displayed time range. These cursors, called *easy cursors,* remain as long as the trace is highlighted.
-
-   ![Maximum and minimum cursors](images\Max_min_cursors.png)
-
-1. Click the plus sign (+) above the trace to lock the cursors in place.<br>
-The *+* turns into an *x*.  To unlock the cursor, click the *x*.
+    ![Maximum and minimum cursors](images\Max_min_cursors.png)
 <br>
-<br>
-Note: When two cursors are locked, the Legend table displays summary calculations for the values between the two cursors, known as the Cursor view.
 
-   ![Cursor_view](images\Cursor_view.png)
+8. Click the plus sign (+) above the trace to lock the cursors in place.<br>
+    The *+* turns into an *x*.  To unlock the cursor, click the *x*.
+         <br>
+         <br>
+    Note: When two cursors are locked, the Legend table displays summary calculations for the values between the two cursors, known as the Cursor view.
 
-8. Click the link icon ![Copy link icon](images\copy_url_link.png) in the menu bar to copy the URL of the workspace.
+    ![Cursor_view](images\Cursor_view.png)
 
-   This link, when shared with colleagues, gives them the same view of the trend that they can then use to troubleshoot problems.
+9. Click the link icon ![Copy link icon](images\copy_url_link.png) in the menu bar to copy the URL of the workspace.  <br>
+
+    This link, when shared with colleagues, gives them the same view of the trend that they can then use to troubleshoot problems.
 

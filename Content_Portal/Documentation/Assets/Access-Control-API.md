@@ -232,7 +232,7 @@ The asset identifier
 
 `string assetTypeId`
 
-The AssetType identifier
+The asset type identifier
 
 #### Request body 
 
@@ -260,14 +260,13 @@ Get the calling user or client's access rights to the requested asset or asset t
 Asset
 
 ```text 
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/AcessRights                                                                 
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/AccessRights                                                                 
 
 ```
 
-<!--- It's  **Assets**/{assetId}, not **Asset**/{assetId}, yes? --- >
-<!--- I assume AcessRights is a typo? Should be AccessRights? --->
 
-Asset type
+
+AssetType
 
 ```text 
 GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetTypeId}/AcessRights                                                                 

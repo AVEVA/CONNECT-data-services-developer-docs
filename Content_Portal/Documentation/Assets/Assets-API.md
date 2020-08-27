@@ -190,7 +190,7 @@ The response includes a status code and a body.
 
 ## `Create Assets (Bulk create)` 
 
-Create multiple assets at one time.
+Create multiple assets in a single call.
 
 ### Request 
 

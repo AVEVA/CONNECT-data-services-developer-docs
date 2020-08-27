@@ -17,17 +17,17 @@ There are two primary means of controlling how the data items will be organized.
 Data view data is available in several formats, including JSON and CSV, with a user-specified range and granularity. Data is obtained by querying the REST API.
 
 ## Defining and refining a data view
-There are several [concepts and types](xref:DataView) used when defining data views. This is accomplished via the RESTful [data views API](xref:DataViewsAPIOverview). See the OCS documentation for greater detail on these concepts:
-* [Queries](xref:DataViewsQueries)
-* [Data Field Sets](xref:DataViewsFieldSets)
-* [Grouping](xref:DataViewsGrouping)
-* [Data View Shape](xref:DataViewShape)
+There are several concepts and types used when defining data views. This is accomplished via the RESTful [data views API](xref:DataViewsAPIOverview). See the OCS documentation for greater detail on these concepts:
+* [Define queries](xref:DataViewsQueries)
+* [Define data field sets](xref:DataViewsFieldSets)
+* [Group data items](xref:DataViewsGrouping)
+* [Data view shape](xref:DataViewShape)
 
 Data views are meant to be designed interactively. Each modification you make to a data view is likely to affect how the data view [resolves](xref:ResolvedDataView) into concrete information. The [resolved API resources](xref:ResolvedDataViewAPI) close the loop, showing you exactly what information is in the data view, and why.
 
 Each data view can be individually [access-controlled](xref:DataViewsSecuringDataViews) using the [access control API resources](xref:DataViewsAccessControlAPI).
 
 ## Consuming a data view
-[Data view data](xref:DataViewsGettingData) is available via queries to the RESTful data views [data API resource](xref:DataViewsDataAPI). 
+[Data view data](xref:DataViewsQuickStartGetData) is available via queries to the RESTful data views [data API resource](xref:DataViewsDataAPI). 
 
 To understand the source of each data field, inspect how the data view [resolved](xref:ResolvedDataView).

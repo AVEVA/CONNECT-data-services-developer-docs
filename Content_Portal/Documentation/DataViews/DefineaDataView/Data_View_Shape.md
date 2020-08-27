@@ -1,16 +1,16 @@
-﻿---
+---
 uid: DataViewShape
 ---
 
-# Data View Shape
+# Data view shape
 
 Data views may be set to resolve as a standard shape or a narrow shape. 
 
 With a standard shape, each row in the resolved data view includes all the data fields for a single event or observation. With a narrow shape, each row in the resolved data view includes only one data field. This results in a narrow output schema where one column contains all the data field values, so the schema remains fixed regardless of changes to the included data fields. Narrow shape may be used when an invariant output schema is required.
 
-The shape concepts presented in this section apply to building all data view output formats; although the terminology used and examples shown, pertain to tabular output with [headers](xref:DataViewsGettingData#format) (form = csvh).
+The shape concepts presented in this section apply to building all data view output formats; although the terminology used and examples shown, pertain to tabular output with [headers](xref:DataViewsQuickStartGetData#format) (form = csvh).
 ## Specify the shape
-Set the [`DataViewShape`](xref:DataView#dataview-properties) property to a value of the [`DataViewShape` enumeration](xref:DataView#dataviewshape-enumeration), either `DataViewShape.Standard` (default) or `DataViewShape.Narrow`.
+Set the [`DataViewShape`](xref:DataViewsQuickStartDefine#data-view-properties) property to a value of the [`DataViewShape` enumeration](xref:DataViewsQuickStartDefine#dataviewshape-enumeration), either `DataViewShape.Standard` (default) or `DataViewShape.Narrow`.
 
 ## Standard shape
 
@@ -66,7 +66,7 @@ The narrow table pivots the standard table. Each data field becomes a row compri
 
 The column label of the index and grouping value columns may vary depending on the resolved label. The Field and Value column labels are not modifiable.
 
-The data view is built veritically by grouping field, if present, then by field. 
+The data view is built vertically by grouping field, if present, then by field. 
 
 Data views resolving into multiple streams that are defined with the same SDS type, should use a grouping field or an identifier in order to differentiate the data rows. 
 

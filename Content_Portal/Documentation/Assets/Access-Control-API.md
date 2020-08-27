@@ -114,7 +114,7 @@ The response includes a status code and, in some instances, a body.
 
 | Status Code               | Body Type | Description                                     |
 | ------------------------- | --------- | ----------------------------------------------- |
-| 204 No Content                    | (empty)  | Successfully updated the default access control list of the assets or asset type collections. [WRITER'S NOTE: Should this be singular?] |
+| 204 No Content                    | (empty)  | Successfully updated the default access control list of the assets collection or asset type collection. |
 | 400 Bad Request             | error     | The request is not valid. See the response body for details.       |
 | 403 Forbidden             | error     | You are not authorized to update the asset or asset type collection's default access control list. |
 

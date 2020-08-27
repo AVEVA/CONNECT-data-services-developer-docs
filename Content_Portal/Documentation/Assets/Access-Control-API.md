@@ -390,12 +390,12 @@ PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/
 
 ```
 
-<!--- Is it Assets/{assetId} or Asset/{assetId}? --->
+
 
 Asset type
 
 ```text 
-PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetTypeId}/Owner
+PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}/Owner
 
 ```
 

@@ -4,7 +4,7 @@ The Access Control API is used to secure assets by setting their ownership and p
 
 ***
 ## `Get Asset or AssetType Access Control List ` 
-Get the default `AccessControlList` for the assets and asset type collections.
+Get the default `AccessControlList` for the assets collection and asset type collection.
 
 ### Request 
 

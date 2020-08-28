@@ -94,6 +94,9 @@ references:
 - uid: DataViewsSecuringDataViews
   name: Secure data views
   href: Content_Portal/Documentation/DataViews/SecureDataViews/Securing_Data_Views.html
+- uid: GettingStartedWithTrendData
+  name: Getting Started with Trend Data
+  href: Content_Portal/Quickstarts/Getting-Started-Trend.html
 - uid: identityAuthorizationCodeClient
   name: AuthorizationCodeClient
   href: Content_Portal/Documentation/Identity/Identity_AuthorizationCodeClient.html
@@ -250,6 +253,9 @@ references:
 - uid: support
   name: Technical support and other resources
   href: Content_Portal/Documentation/support.html
+- uid: TrendUserInterface
+  name: Trend User Interface
+  href: Content_Portal/Quickstarts/Trend-UI.html
 - uid: unitsOfMeasure
   name: Units of Measure
   href: Content_Portal/Documentation/SequentialDataStore/Units_of_Measure.html

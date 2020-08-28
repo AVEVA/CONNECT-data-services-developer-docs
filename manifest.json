@@ -1151,11 +1151,47 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Quickstarts/Getting-Started-Trend.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Quickstarts/Getting-Started-Trend.html",
+          "hash": "N3W8SxN3qf4SZsqb8KFtHA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "Content_Portal/Quickstarts/Getting_Started.md",
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Quickstarts/Getting_Started.html",
           "hash": "5jS3f3GYIILOny8GThPuGA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Quickstarts/Quickstarts-Overview.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Quickstarts/Quickstarts-Overview.html",
+          "hash": "ZsdzuZQM7P1e+IxAqSJg6w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Quickstarts/Trend-UI.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Quickstarts/Trend-UI.html",
+          "hash": "7hbjlVx4f2SGZXHDWL1d7Q=="
         }
       },
       "is_incremental": false,
@@ -1196,10 +1232,32 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "Content_Portal/Quickstarts/images/Cursor_view.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Quickstarts/images/Cursor_view.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "Content_Portal/Quickstarts/images/Details_pane.png",
       "output": {
         "resource": {
           "relative_path": "Content_Portal/Quickstarts/images/Details_pane.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Quickstarts/images/Legend_Table.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Quickstarts/images/Legend_Table.png"
         }
       },
       "is_incremental": false,
@@ -1229,6 +1287,50 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "Content_Portal/Quickstarts/images/Multiple_mode.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Quickstarts/images/Multiple_mode.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Quickstarts/images/Search_blade_75.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Quickstarts/images/Search_blade_75.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Quickstarts/images/Single_mode.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Quickstarts/images/Single_mode.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Quickstarts/images/Stacked_mode.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Quickstarts/images/Stacked_mode.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "Content_Portal/Quickstarts/images/Step_back_forward.png",
       "output": {
         "resource": {
@@ -1240,10 +1342,32 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "Content_Portal/Quickstarts/images/Time-picker.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Quickstarts/images/Time-picker.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "Content_Portal/Quickstarts/images/Time_Range_options.png",
       "output": {
         "resource": {
           "relative_path": "Content_Portal/Quickstarts/images/Time_Range_options.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Quickstarts/images/Traces_stacked_view.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Quickstarts/images/Traces_stacked_view.png"
         }
       },
       "is_incremental": false,
@@ -1266,6 +1390,17 @@
       "output": {
         "resource": {
           "relative_path": "Content_Portal/Quickstarts/images/Trend_full_page.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Quickstarts/images/Trend_mode_icon.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Quickstarts/images/Trend_mode_icon.png"
         }
       },
       "is_incremental": false,
@@ -1321,7 +1456,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/toc.html",
-          "hash": "9n7jHh16HWXfTAmm0qyOEw=="
+          "hash": "Fev+ttBIYr9+GPo+x0x8Ww=="
         }
       },
       "is_incremental": false,
@@ -1363,13 +1498,6 @@
         "full_build_reason_code": "NoAvailableBuildCache"
       },
       "processors": {
-        "ResourceDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
-        },
         "TocDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
@@ -1380,7 +1508,14 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 91,
+          "total_file_count": 94,
+          "skipped_file_count": 0
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
           "skipped_file_count": 0
         }
       }

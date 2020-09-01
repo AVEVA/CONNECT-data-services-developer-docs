@@ -924,6 +924,9 @@ Success.
  `IdentityProviderConsent`
 
 ```json
+
+Microsoft Accounts and Google
+
 {
   "Scheme": "Scheme",
 }

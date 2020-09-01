@@ -1099,17 +1099,9 @@ Forbidden.
 
 Tenant not found.
 
-#### 405
-
-Method not allowed at this base URL. Try the request again at the Global base URL.
-
 #### 408
 
 Operation timed out.
-
-#### 409
-
-Identity Provider already exists in Tenant.
 
 #### 500
 

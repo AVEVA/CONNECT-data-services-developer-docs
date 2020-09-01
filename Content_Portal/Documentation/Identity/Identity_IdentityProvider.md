@@ -1016,9 +1016,9 @@ IdentityProvider or Tenant not found.
 Internal server error.
 ***
 
-## `Update Identity Provider of a Tenant`
+## `Update Identity Provider Consent of a Tenant`
 
-Update the Identity Provider of a Tenant. Currently only support Azure Active Directory. 
+Update the Identity Provider Consent of a Tenant. Currently only support Azure Active Directory. 
 
 ### Request
 

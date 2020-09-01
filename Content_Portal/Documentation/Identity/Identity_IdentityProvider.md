@@ -18,6 +18,7 @@ Scheme | string | Gets or sets the name of the cookie handler that will temporar
 UserIdClaimType | string | Gets or sets type of claim.
 ClientId | string | Gets or sets the ClientId of the identity provider.
 IsConfigured | bool | Gets or sets a value indicating whether the identity provider has been configured.
+Capabilities | json | Gets or sets a json demonstrating the capabilities of the identity provider. 
 
 ### Serialized Model
 
@@ -29,6 +30,17 @@ IsConfigured | bool | Gets or sets a value indicating whether the identity provi
   "UserIdClaimType": "UserIdClaimType",
   "ClientId": "ClientId",
   "IsConfigured": false
+  "Capabilities": { 
+    "User": { 
+      "SignIn": true, 
+      "Invitation": true, 
+      "Search": false 
+    }, 
+    "Group": { 
+      "Authorize": false, 
+      "Search": false 
+    } 
+  } 
 }
 ```
 
@@ -99,7 +111,8 @@ Success.
   "Scheme": "Scheme",
   "UserIdClaimType": "UserIdClaimType",
   "ClientId": "ClientId",
-  "IsConfigured": false
+  "IsConfigured": false,
+  "Capabilities": null
 }
 ```
 
@@ -160,7 +173,8 @@ Success.
   "Scheme": "Scheme",
   "UserIdClaimType": "UserIdClaimType",
   "ClientId": "ClientId",
-  "IsConfigured": false
+  "IsConfigured": false,
+  "Capabilities": null 
 }
 ```
 
@@ -242,7 +256,8 @@ Success.
     "Scheme": "Scheme",
     "UserIdClaimType": "UserIdClaimType",
     "ClientId": "ClientId",
-    "IsConfigured": false
+    "IsConfigured": false,
+    "Capabilities": null
   },
   {
     "Id": "00000000-0000-0000-0000-000000000000",
@@ -250,7 +265,8 @@ Success.
     "Scheme": "Scheme",
     "UserIdClaimType": "UserIdClaimType",
     "ClientId": "ClientId",
-    "IsConfigured": false
+    "IsConfigured": false,
+    "Capabilities": null
   }
 ]
 ```
@@ -493,7 +509,17 @@ Success.
     "Scheme": "Scheme",
     "UserIdClaimType": "UserIdClaimType",
     "ClientId": "ClientId",
-    "IsConfigured": false
+    "IsConfigured": false,
+    "Capabilities": { 
+      "User": { 
+        "SignIn": true, 
+        "Invitation": true, 
+        "Search": false 
+      }, 
+      "Group": { 
+        "Authorize": false, 
+        "Search": false 
+      } 
   },
   {
     "Id": "00000000-0000-0000-0000-000000000000",
@@ -501,7 +527,17 @@ Success.
     "Scheme": "Scheme",
     "UserIdClaimType": "UserIdClaimType",
     "ClientId": "ClientId",
-    "IsConfigured": false
+    "IsConfigured": false,
+    "Capabilities": { 
+      "User": { 
+        "SignIn": true, 
+        "Invitation": true, 
+        "Search": false 
+      }, 
+      "Group": { 
+        "Authorize": false, 
+        "Search": false 
+      } 
   }
 ]
 ```
@@ -571,7 +607,17 @@ Success.
   "Scheme": "Scheme",
   "UserIdClaimType": "UserIdClaimType",
   "ClientId": "ClientId",
-  "IsConfigured": false
+  "IsConfigured": false,
+  "Capabilities": { 
+      "User": { 
+        "SignIn": true, 
+        "Invitation": true, 
+        "Search": false 
+      }, 
+      "Group": { 
+        "Authorize": false, 
+        "Search": false 
+      } 
 }
 ```
 

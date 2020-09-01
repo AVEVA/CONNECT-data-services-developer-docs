@@ -8,7 +8,7 @@ Get the default `AccessControlList` for the assets collection and asset type col
 
 ### Request 
 
-Assets
+Assets collections
 
 ```text 
 
@@ -269,10 +269,10 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/
 AssetType
 
 ```text 
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetTypeId}/AcessRights                                                                 
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetTypeId}/AccessRights                                                                 
 
 ```
-<!--- I assume AcessRights is a typo? Should be AccessRights? --->
+
 
 ### Parameters  
 
@@ -386,7 +386,7 @@ Update the owner `Trustee` of the specified asset or asset type.
 Asset
 
 ```text 
-PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Owner
+PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/owner
 
 ```
 
@@ -395,7 +395,7 @@ PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/
 Asset type
 
 ```text 
-PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}/Owner
+PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}/owner
 
 ```
 

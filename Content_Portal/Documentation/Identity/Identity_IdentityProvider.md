@@ -639,7 +639,7 @@ AzureActiveDirectoryConsentTypes | string | No | Gets or sets Azure Active Direc
   "AzureActiveDirectoryConsentGivenName": "Name",
   "AzureActiveDirectoryConsentSurname": "Surname",
   "AzureActiveDirectoryTenant": "AzureActiveDirectoryTenant"
-  "AzureActiveDirectoryConsentTypes": " AzureActiveDirectoryConsentTypes"
+  "AzureActiveDirectoryConsentTypes": "AzureActiveDirectoryConsentTypes"
 }
 ```
 

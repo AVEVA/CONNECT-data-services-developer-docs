@@ -15,9 +15,9 @@ Assets can be searched on the following asset properties:
   - Name
   - Description
   - Value
-- References
-  - Name
-  - Description
+- AssetTypeName
+- AssetTypeId
+- Measurement Name
 
 Search criteria can be chained together using an **AND**. See examples below. 
 

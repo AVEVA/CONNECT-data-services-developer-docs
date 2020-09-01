@@ -75,6 +75,6 @@ The response includes a status code and an array of assets matching the search c
 | Id:X* AND Attributes/Name:B*   | Returns all assets with ID starting with **X** and containing at least one attribute with a name that starts with a **B**. |
 | AssetTypeId:HeaterTypeId | Returns all assets with AssetTypeId matching HeaterTypeId |
 | AssetTypeId:HeaterTypeName | Returns all assets whose Name field of the AssetType matches HeaterTypeName |
-| Measurements/Name:WindMeasure | Returns all assets with the measurement name *WindMeasure*. |
+| Measurements/Name:WindMeasure | Returns all assets with the measurement name **WindMeasure**. |
 
 

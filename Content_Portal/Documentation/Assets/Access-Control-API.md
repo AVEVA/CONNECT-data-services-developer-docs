@@ -80,14 +80,14 @@ Update the default `AccessControlList` for the assets or asset type collections
 
 ### Request 
 
-Assets
+Assets collections
 
 ```text 
 PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Assets  
 
 ```
 
-Asset types
+Asset types collections
 ```text 
 PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/AssetTypes  
 

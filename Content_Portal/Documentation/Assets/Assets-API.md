@@ -184,13 +184,13 @@ The response includes a status code and a body.
 | 200 OK                    | `Asset`  | The asset as persisted, including values for optional parameters that were omitted in the request.                           |
 | 400 Bad Request             | error     | The request is not valid. See the response body for additional details.      |
 | 403 Forbidden            | error     | You are not authorized to create assets.           |
-| 409 Conflict | error     | The asset update (?) or create has a conflict. See the response body for additional details. [WRITER'S NOTE: Should this say: The asset create has a conflict.] |
+| 409 Conflict | error     | The asset update or create has a conflict. See the response body for additional details. |
 
 ***
 
 ## `Create Assets (Bulk create)` 
 
-Create multiple assets at one time.
+Create multiple assets in a single call.
 
 ### Request 
 
@@ -264,7 +264,7 @@ The response includes a status code and body.
 | ------------------------- | --------- | ----------------------------------------------- |
 | 200 OK                    | `Asset`  | The newly created or updated asset as persisted, including values for optional parameters that were omitted in the request.                               |
 | 400 Bad Request             | error     | The request is not valid. The response will include which asset failed validation checks. See the response body for additional details.      |
-| 403 Forbidden            | error     | You are not authorized to update (?) assets. [WRITER'S NOTE: Should this be: You are not authorized to create or update assets.] |
+| 403 Forbidden            | error     | You are not authorized to update assets. |
 | 404 Not Found            | error     | The asset, with the specified identifier, was not found.            |
 | 409 Conflict | error     | The asset update or create has a conflict. See the response body for additional details. |
 

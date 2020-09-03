@@ -4,11 +4,11 @@ The Access Control API is used to secure assets by setting their ownership and p
 
 ***
 ## `Get Asset or AssetType Access Control List ` 
-Get the default `AccessControlList` for the assets and asset type collections.
+Get the default `AccessControlList` for the assets collection and asset type collection.
 
 ### Request 
 
-Assets
+Assets collections
 
 ```text 
 
@@ -16,7 +16,7 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Ass
 
 ```
 
-Asset type collections
+Asset types collections
 
 ```text 
 
@@ -39,7 +39,7 @@ The response includes a status code and a body.
 
 | Status Code | Body Type | Description |
 |--|--|--|
-| 200 OK | `AccessControlList` | The default access control list of the assets or asset type collections. [WRITER'S NOTE: Should this be singular? asset? asset type collection?] |
+| 200 OK | `AccessControlList` | The default access control list of the assets collection or asset type collection.
 | 403 Forbidden | error | You are not authorized to view the requested asset or asset type collection's access control list. |
 
 #### Example response body
@@ -80,14 +80,14 @@ Update the default `AccessControlList` for the assets or asset type collections
 
 ### Request 
 
-Assets
+Assets collections
 
 ```text 
 PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Assets  
 
 ```
 
-Asset types
+Asset types collections
 ```text 
 PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/AssetTypes  
 
@@ -114,7 +114,7 @@ The response includes a status code and, in some instances, a body.
 
 | Status Code               | Body Type | Description                                     |
 | ------------------------- | --------- | ----------------------------------------------- |
-| 204 No Content                    | (empty)  | Successfully updated the default access control list of the assets or asset type collections. [WRITER'S NOTE: Should this be singular?] |
+| 204 No Content                    | (empty)  | Successfully updated the default access control list of the assets collection or asset type collection. |
 | 400 Bad Request             | error     | The request is not valid. See the response body for details.       |
 | 403 Forbidden             | error     | You are not authorized to update the asset or asset type collection's default access control list. |
 
@@ -137,10 +137,10 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/
 Asset types
 
 ```text 
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetTypeId}/AcessControl 
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetTypeId}/AccessControl 
 
 ```
-<!--- I assume "AcessControl" should be "AccessControl"? --->
+
 
 ### Parameters  
 
@@ -232,7 +232,7 @@ The asset identifier
 
 `string assetTypeId`
 
-The AssetType identifier
+The asset type identifier
 
 #### Request body 
 
@@ -260,20 +260,19 @@ Get the calling user or client's access rights to the requested asset or asset t
 Asset
 
 ```text 
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/AcessRights                                                                 
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/AccessRights                                                                 
 
 ```
 
-<!--- It's  **Assets**/{assetId}, not **Asset**/{assetId}, yes? --- >
-<!--- I assume AcessRights is a typo? Should be AccessRights? --->
 
-Asset type
+
+AssetType
 
 ```text 
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetTypeId}/AcessRights                                                                 
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetTypeId}/AccessRights                                                                 
 
 ```
-<!--- I assume AcessRights is a typo? Should be AccessRights? --->
+
 
 ### Parameters  
 
@@ -337,7 +336,7 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetType
 
 ```
 
-<!--- Is "owner" meant to be lowercase? --->
+
 
 ### Parameters  
 
@@ -387,16 +386,16 @@ Update the owner `Trustee` of the specified asset or asset type.
 Asset
 
 ```text 
-PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Owner
+PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/owner
 
 ```
 
-<!--- Is it Assets/{assetId} or Asset/{assetId}? --->
+
 
 Asset type
 
 ```text 
-PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetTypeId}/Owner
+PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}/owner
 
 ```
 

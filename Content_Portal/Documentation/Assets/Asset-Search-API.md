@@ -15,9 +15,9 @@ Assets can be searched on the following asset properties:
   - Name
   - Description
   - Value
-- References
-  - Name
-  - Description
+- AssetTypeName
+- AssetTypeId
+- Measurement Name
 
 Search criteria can be chained together using an **AND**. See examples below. 
 
@@ -73,8 +73,8 @@ The response includes a status code and an array of assets matching the search c
 | Attributes/Description:heater* | Returns all assets with at least one attribute description that starts with **heater**. |
 | Attributes/Value:123           | Returns all assets with at least one attribute that equals **123**. |
 | Id:X* AND Attributes/Name:B*   | Returns all assets with ID starting with **X** and containing at least one attribute with a name that starts with a **B**. |
-| References/Name:measurement*   | Returns all assets with an ID starting with the string **measurement**. |
-| References/Description: test*  | Returns all assets with at least one reference description that starts with the string **test**. |
-| References/Value:PI            | Returns all assets with at least one reference value stream ID, stream view ID, or type ID containing the string **PI**. |
-| References/Properties:code     | Returns all assets with at least one reference value's stream code object containing with the stream ID contains a stream property contain "code." [QUESTION: I don't understand this one.] |
+| AssetTypeId:HeaterTypeId | Returns all assets with AssetTypeId matching HeaterTypeId |
+| AssetTypeId:HeaterTypeName | Returns all assets whose Name field of the AssetType matches HeaterTypeName |
+| Measurements/Name:WindMeasure | Returns all assets with the measurement name **WindMeasure**. |
+
 

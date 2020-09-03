@@ -1,4 +1,6 @@
-
+---
+uid: AssetsAPI
+---
 
 # Assets API
 

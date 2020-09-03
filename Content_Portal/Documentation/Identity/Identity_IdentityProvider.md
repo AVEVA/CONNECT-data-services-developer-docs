@@ -627,6 +627,7 @@ AzureActiveDirectoryConsentEmail | string | Yes | Gets or sets address to email 
 AzureActiveDirectoryConsentGivenName | string | Yes | Gets or sets preferred name to use in the consent email.
 AzureActiveDirectoryConsentSurname | string | Yes | Gets or sets preferred surname to use in the consent email.
 AzureActiveDirectoryTenant | string | Yes | Gets or sets Azure Active Directory Domain Name (e.g. mydomain.onmicrosoft.com).
+AzureActiveDirectoryConsentTypes | string | No | Gets or sets Azure Active Directory Consent Types.  If not specified Sign-In only will be requested for consent.
 
 
 
@@ -638,6 +639,7 @@ AzureActiveDirectoryTenant | string | Yes | Gets or sets Azure Active Directory 
   "AzureActiveDirectoryConsentGivenName": "Name",
   "AzureActiveDirectoryConsentSurname": "Surname",
   "AzureActiveDirectoryTenant": "AzureActiveDirectoryTenant"
+  "AzureActiveDirectoryConsentTypes": "AzureActiveDirectoryConsentTypes"
 }
 ```
 
@@ -664,7 +666,8 @@ Created.
   "Scheme": "Scheme",
   "UserIdClaimType": "UserIdClaimType",
   "ClientId": "ClientId",
-  "IsConfigured": false
+  "IsConfigured": false,
+  "Capabilities": null
 }
 ```
 
@@ -879,3 +882,228 @@ Tenant not found.
 Internal server error.
 ***
 
+## `Get an Identity Provider Consent from a Tenant`
+
+Get the consent state for an Identity Provider for a Tenant. This determines whether an Identity Provider consents to sharing access to its directory with the OCS tenant.
+
+### Request
+
+`GET api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Consent`
+
+### Parameters
+
+```csharp
+[Required]
+string tenantId
+```
+
+Id of Tenant.
+
+```csharp
+[Required]
+Guid identityProviderId
+```
+
+Id of Identity Provider to check for consent.
+
+### Security
+
+Allowed for these roles:
+
+- `Account Member`
+- `Account Administrator`
+
+### Returns
+
+#### 200
+
+Success.
+
+##### Type:
+
+ `IdentityProviderConsent`
+
+```json
+
+Microsoft Accounts and Google
+
+{
+  "Scheme": "Scheme",
+}
+
+Azure Active Directory
+
+{
+  "Scheme": "aad",
+  "AadTenantId": "00000000-0000-0000-0000-000000000000",
+  "AadDomain": "AadDomain",
+  "ConsentState": "ConsentState"
+}
+```
+
+#### 401
+
+Unauthorized.
+
+#### 403
+
+Forbidden.
+
+#### 404
+
+IdentityProvider or Tenant not found.
+
+#### 500
+
+Internal server error.
+***
+
+## `Get Header for Identity Provider Consent`
+
+Validate that a Identity Provider Consent exists in the Tenant. This endpoint is identical to the GET one but it does not return any objects in the body.
+
+### Request
+
+`HEAD api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Consent`
+
+### Parameters
+
+```csharp
+[Required]
+string tenantId
+```
+
+Id of Tenant.
+
+```csharp
+[Required]
+Guid identityProviderId
+```
+
+Id of Identity Provider to check for consent.
+
+### Security
+
+Allowed for these roles:
+
+- `Account Member`
+- `Account Administrator`
+
+### Returns
+
+#### 200
+
+Success.
+
+##### Type:
+
+ `Void`
+
+#### 401
+
+Unauthorized.
+
+#### 403
+
+Forbidden.
+
+#### 404
+
+IdentityProvider or Tenant not found.
+
+#### 500
+
+Internal server error.
+***
+
+## `Update Identity Provider Consent of a Tenant`
+
+Update the Identity Provider Consent of a Tenant. Currently only support Azure Active Directory. 
+
+### Request
+
+`POST api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Consent`
+
+### Parameters
+
+```csharp
+[Required]
+string tenantId
+```
+Id of Tenant.
+
+```csharp
+[Required]
+Guid identityProviderId
+```
+
+Id of Identity Provider to activate consent
+
+```csharp
+[FromBody]
+[Required]
+IdentityProviderConsent identityProviderConsent
+```
+
+IdentityProviderConsent object.
+
+Property | Type | Required | Description 
+ --- | --- | --- | ---
+Scheme | string | Yes | Gets or sets the scheme of the Identity Provider.
+AadTenantId | string | No | Gets or sets Azure Active Directory Tenant Id.
+AadDomain | string | No | Gets or sets Azure Active Directory Domain Name (e.g. mydomain.onmicrosoft.com).
+AadConsentTypes | string | Yes | Gets or sets Azure Active Directory Consent Types.
+ConsentEmail | string | Yes | Gets or sets address to email consent. Only Azure Active Directory Admins have permission to consent to being allowed to interact with the tenant. The email does not have to be sent to an Admin.
+ConsentFirstName | string | Yes | Gets or sets preferred name to use in the consent email.
+ConsentOverride | bool | No | Gets or sets a value indicating whether force a consent email to be sent for the specified ConsentTypes.
+
+
+
+```json
+{
+  "Scheme": "aad",
+  "AadTenantId": "00000000-0000-0000-0000-000000000000",
+  "AadDomain": " AadDomain",
+  "AadConsentTypes": "AadConsentTypes",
+  "ConsentFirstName": "Name",
+  "ConsentEmail": "user@company.com",
+  "ConsentOverride": true
+}
+```
+
+### Security
+
+Allowed for these roles:
+
+- `Account Administrator`
+
+### Returns
+
+#### 200
+
+Success.
+
+#### 400
+
+Missing or invalid inputs.
+
+#### 401
+
+Unauthorized.
+
+#### 403
+
+Forbidden.
+
+#### 404
+
+Tenant not found.
+
+#### 408
+
+Operation timed out.
+
+#### 500
+
+Internal server error.
+***

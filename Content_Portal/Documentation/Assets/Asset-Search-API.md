@@ -51,7 +51,7 @@ An optional parameter representing the zero-based offset of the first asset to r
 An optional parameter representing the maximum number of assets to retrieve. If not specified, a default value of 100 is used.
 
 `string queryString`
-The asset query string
+The asset query string.Search strings are not case-sensitive.
 
 ### Response 
 The response includes a status code and an array of assets matching the search criteria.

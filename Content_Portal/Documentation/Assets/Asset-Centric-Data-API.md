@@ -21,10 +21,28 @@ The following asset is used in all of the sample output in this topic.
         }
     ],
     "References": [
-        {
-            "Name": "SampleStream",
+            {
+            "Id": "IDsample",
+            "Name": "SampleForDemo",
+            "Description": "This is a demo asset.",
+            "Metadata": [
+            {
+            "Name": "RoomLocation",
+            "Description": "This is what room number the asset is located.",
+            "SdsTypeCode": 14,
+            "Value": 1.0
+            }
+            ],
+            "StreamReferences": [
+            {
+            {
+            "Id": "StreamRefId",
             "Description": "This is the sample data from the room.",
-            "ReferenceType": "StreamReference",
+            "StreamId": "PI_buildingMachine_1112"
+            }
+            }
+            ]
+            }
             "Value": {
                 "StreamId": "PI_buildingMachine_1112",
                 "TypeId": "PI-Float32"

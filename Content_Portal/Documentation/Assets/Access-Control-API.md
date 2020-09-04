@@ -131,13 +131,11 @@ Get the `AssetControlList` of the specified asset or asset type.
 
 Assets
 ```text 
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/AcessControl 
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/AccessControl 
 
 ```
-<!--- I assume "AcessControl" should be "AccessControl"? --->
 
 
-Asset types
 
 ```text 
 GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetTypeId}/AccessControl 

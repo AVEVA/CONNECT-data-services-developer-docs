@@ -518,6 +518,12 @@ IdentityProviderAdd identityProviderAdd
 <td>Yes</td>
 <td>Gets or sets Azure Active Directory Domain Name (e.g. mydomain.onmicrosoft.com).</td>
 </tr>
+<tr>
+<td>AzureActiveDirectoryConsentTypes</td>
+<td>string</td>
+<td>No</td>
+<td>Gets or sets Azure Active Directory Consent Types.  If not specified Sign-In only will be requested for consent.</td>
+</tr>
 </tbody>
 </table>
 <pre><code class="lang-json">{
@@ -527,6 +533,7 @@ IdentityProviderAdd identityProviderAdd
   &quot;AzureActiveDirectoryConsentGivenName&quot;: &quot;Name&quot;,
   &quot;AzureActiveDirectoryConsentSurname&quot;: &quot;Surname&quot;,
   &quot;AzureActiveDirectoryTenant&quot;: &quot;AzureActiveDirectoryTenant&quot;
+  &quot;AzureActiveDirectoryConsentTypes&quot;: &quot;AzureActiveDirectoryConsentTypes&quot;
 }
 </code></pre><h3 id="security-8">Security</h3>
 <p>Allowed for these roles:</p>
@@ -544,7 +551,8 @@ IdentityProviderAdd identityProviderAdd
   &quot;Scheme&quot;: &quot;Scheme&quot;,
   &quot;UserIdClaimType&quot;: &quot;UserIdClaimType&quot;,
   &quot;ClientId&quot;: &quot;ClientId&quot;,
-  &quot;IsConfigured&quot;: false
+  &quot;IsConfigured&quot;: false,
+  &quot;Capabilities&quot;: null
 }
 </code></pre><h4 id="400-1">400</h4>
 <p>Missing or invalid inputs.</p>
@@ -660,6 +668,182 @@ string tenantId
 <h4 id="404-10">404</h4>
 <p>Tenant not found.</p>
 <h4 id="500-11">500</h4>
+<p>Internal server error.</p>
+<hr>
+<h2 id="get-an-identity-provider-consent-from-a-tenant"><code>Get an Identity Provider Consent from a Tenant</code></h2>
+<p>Get the consent state for an Identity Provider for a Tenant. This determines whether an Identity Provider consents to sharing access to its directory with the OCS tenant.</p>
+<h3 id="request-12">Request</h3>
+<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>IdentityProviders/<wbr>{identityProviderId}/<wbr>Consent</code></p>
+<h3 id="parameters-12">Parameters</h3>
+<pre><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p>Id of Tenant.</p>
+<pre><code class="lang-csharp">[Required]
+Guid identityProviderId
+</code></pre><p>Id of Identity Provider to check for consent.</p>
+<h3 id="security-12">Security</h3>
+<p>Allowed for these roles:</p>
+<ul>
+<li><code>Account Member</code></li>
+<li><code>Account Administrator</code></li>
+</ul>
+<h3 id="returns-12">Returns</h3>
+<h4 id="200-10">200</h4>
+<p>Success.</p>
+<h5 id="type-11">Type:</h5>
+<p> <code>IdentityProviderConsent</code></p>
+<pre><code class="lang-json">
+Microsoft Accounts and Google
+
+{
+  &quot;Scheme&quot;: &quot;Scheme&quot;,
+}
+
+Azure Active Directory
+
+{
+  &quot;Scheme&quot;: &quot;aad&quot;,
+  &quot;AadTenantId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
+  &quot;AadDomain&quot;: &quot;AadDomain&quot;,
+  &quot;ConsentState&quot;: &quot;ConsentState&quot;
+}
+</code></pre><h4 id="401-12">401</h4>
+<p>Unauthorized.</p>
+<h4 id="403-12">403</h4>
+<p>Forbidden.</p>
+<h4 id="404-11">404</h4>
+<p>IdentityProvider or Tenant not found.</p>
+<h4 id="500-12">500</h4>
+<p>Internal server error.</p>
+<hr>
+<h2 id="get-header-for-identity-provider-consent"><code>Get Header for Identity Provider Consent</code></h2>
+<p>Validate that a Identity Provider Consent exists in the Tenant. This endpoint is identical to the GET one but it does not return any objects in the body.</p>
+<h3 id="request-13">Request</h3>
+<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>IdentityProviders/<wbr>{identityProviderId}/<wbr>Consent</code></p>
+<h3 id="parameters-13">Parameters</h3>
+<pre><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p>Id of Tenant.</p>
+<pre><code class="lang-csharp">[Required]
+Guid identityProviderId
+</code></pre><p>Id of Identity Provider to check for consent.</p>
+<h3 id="security-13">Security</h3>
+<p>Allowed for these roles:</p>
+<ul>
+<li><code>Account Member</code></li>
+<li><code>Account Administrator</code></li>
+</ul>
+<h3 id="returns-13">Returns</h3>
+<h4 id="200-11">200</h4>
+<p>Success.</p>
+<h5 id="type-12">Type:</h5>
+<p> <code>Void</code></p>
+<h4 id="401-13">401</h4>
+<p>Unauthorized.</p>
+<h4 id="403-13">403</h4>
+<p>Forbidden.</p>
+<h4 id="404-12">404</h4>
+<p>IdentityProvider or Tenant not found.</p>
+<h4 id="500-13">500</h4>
+<p>Internal server error.</p>
+<hr>
+<h2 id="update-identity-provider-consent-of-a-tenant"><code>Update Identity Provider Consent of a Tenant</code></h2>
+<p>Update the Identity Provider Consent of a Tenant. Currently only support Azure Active Directory. </p>
+<h3 id="request-14">Request</h3>
+<p><code style="word-break:normal; overflow-wrap:break-word;">POST api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>IdentityProviders/<wbr>{identityProviderId}/<wbr>Consent</code></p>
+<h3 id="parameters-14">Parameters</h3>
+<pre><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p>Id of Tenant.</p>
+<pre><code class="lang-csharp">[Required]
+Guid identityProviderId
+</code></pre><p>Id of Identity Provider to activate consent</p>
+<pre><code class="lang-csharp">[FromBody]
+[Required]
+IdentityProviderConsent identityProviderConsent
+</code></pre><p>IdentityProviderConsent object.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scheme</td>
+<td>string</td>
+<td>Yes</td>
+<td>Gets or sets the scheme of the Identity Provider.</td>
+</tr>
+<tr>
+<td>AadTenantId</td>
+<td>string</td>
+<td>No</td>
+<td>Gets or sets Azure Active Directory Tenant Id.</td>
+</tr>
+<tr>
+<td>AadDomain</td>
+<td>string</td>
+<td>No</td>
+<td>Gets or sets Azure Active Directory Domain Name (e.g. mydomain.onmicrosoft.com).</td>
+</tr>
+<tr>
+<td>AadConsentTypes</td>
+<td>string</td>
+<td>Yes</td>
+<td>Gets or sets Azure Active Directory Consent Types.</td>
+</tr>
+<tr>
+<td>ConsentEmail</td>
+<td>string</td>
+<td>Yes</td>
+<td>Gets or sets address to email consent. Only Azure Active Directory Admins have permission to consent to being allowed to interact with the tenant. The email does not have to be sent to an Admin.</td>
+</tr>
+<tr>
+<td>ConsentFirstName</td>
+<td>string</td>
+<td>Yes</td>
+<td>Gets or sets preferred name to use in the consent email.</td>
+</tr>
+<tr>
+<td>ConsentOverride</td>
+<td>bool</td>
+<td>No</td>
+<td>Gets or sets a value indicating whether force a consent email to be sent for the specified ConsentTypes.</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+  &quot;Scheme&quot;: &quot;aad&quot;,
+  &quot;AadTenantId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
+  &quot;AadDomain&quot;: &quot; AadDomain&quot;,
+  &quot;AadConsentTypes&quot;: &quot;AadConsentTypes&quot;,
+  &quot;ConsentFirstName&quot;: &quot;Name&quot;,
+  &quot;ConsentEmail&quot;: &quot;user@company.com&quot;,
+  &quot;ConsentOverride&quot;: true
+}
+</code></pre><h3 id="security-14">Security</h3>
+<p>Allowed for these roles:</p>
+<ul>
+<li><code>Account Administrator</code></li>
+</ul>
+<h3 id="returns-14">Returns</h3>
+<h4 id="200-12">200</h4>
+<p>Success.</p>
+<h4 id="400-2">400</h4>
+<p>Missing or invalid inputs.</p>
+<h4 id="401-14">401</h4>
+<p>Unauthorized.</p>
+<h4 id="403-14">403</h4>
+<p>Forbidden.</p>
+<h4 id="404-13">404</h4>
+<p>Tenant not found.</p>
+<h4 id="408-2">408</h4>
+<p>Operation timed out.</p>
+<h4 id="500-14">500</h4>
 <p>Internal server error.</p>
 <hr>
 </article>

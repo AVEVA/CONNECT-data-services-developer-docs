@@ -692,7 +692,7 @@ Content-Type: application/json
 </code></pre><hr>
 <h2 id="get-interpolated-values"><code>Get Interpolated Values</code></h2>
 <p>Returns a collection of values based on request parameters. The stream&#39;s read characteristics determine how events 
-are calculated for indexes at which no stored event exists. Interpolation is not supported for streams with compound indexes.</p>
+are calculated for indexes at which no stored event exists. For more information, see <a class="xref" href="Reading_Data.html#interpolation">Interpolation</a> and <a class="xref" href="Reading_Data.html#extrapolation">Extrapolation</a>. Interpolation is not supported for streams with compound indexes.</p>
 <p>SDS supports two ways of specifying which interpolated events to return:  </p>
 <ul>
 <li><a href="#getvaluesindexcollection">Index Collection</a>: One or more indexes can be passed to the request in order to retrieve events at specific indexes. </li>
@@ -700,7 +700,7 @@ are calculated for indexes at which no stored event exists. Interpolation is not
 </ul>
 <p><a name="getvaluesindexcollection"></a></p>
 <h3 id="index-collection"><code>Index Collection</code></h3>
-<p>Returns events at the specified indexes. If no stored event exists at a specified index, the stream&#39;s read characteristics determine how the returned event is calculated.</p>
+<p>Returns events at the specified indexes. If no stored event exists at a specified index, the stream&#39;s read characteristics determine how the returned event is calculated. For more information, see <a class="xref" href="Reading_Data.html#interpolation">Interpolation</a> and <a class="xref" href="Reading_Data.html#extrapolation">Extrapolation</a>.</p>
 <h4 id="request-5">Request</h4>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data/<wbr>
        Interpolated?index={index}[&amp;index={index}...]
@@ -785,7 +785,7 @@ Content-Type: application/json
       IEnumerable&lt;Tuple&lt; T1, T2&gt;&gt; index, string streamViewId = null);
 </code></pre><p><a name="getvaluesinterpolatedinterval"></a></p>
 <h3 id="interval"><code>Interval</code></h3>
-<p>Returns events at evenly spaced intervals based on the specified start index, end index, and count. If no stored event exists at an index interval, the stream&#39;s read characteristics determine how the returned event is calculated.</p>
+<p>Returns events at evenly spaced intervals based on the specified start index, end index, and count. If no stored event exists at an index interval, the stream&#39;s read characteristics determine how the returned event is calculated.For more information, see <a class="xref" href="Reading_Data.html#interpolation">Interpolation</a> and <a class="xref" href="Reading_Data.html#extrapolation">Extrapolation</a>.</p>
 <h4 id="request-6">Request</h4>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data/<wbr>
        Interpolated?startIndex={startIndex}&amp;endIndex={endIndex}&amp;count={count}

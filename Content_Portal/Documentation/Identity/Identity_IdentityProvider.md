@@ -29,7 +29,7 @@ Capabilities | json | Gets or sets a json demonstrating the capabilities of the 
   "Scheme": "Scheme",
   "UserIdClaimType": "UserIdClaimType",
   "ClientId": "ClientId",
-  "IsConfigured": false
+  "IsConfigured": false, 
   "Capabilities": { 
     "User": { 
       "SignIn": true, 

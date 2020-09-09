@@ -888,7 +888,7 @@ Get a list of users that matches the query string on an Identity Provider that s
 
 ### Request
 
-`GET api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/{IdpId}/Users?query={user}&skip={skip}&count={count}&timeout={optional}&skipToken={optional}`
+`GET api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/{IdpId}/Users?query={user}&count={count}&skipToken={optional}`
 
 ### Parameters
 
@@ -909,25 +909,8 @@ Id of Identity Provider.
 ```csharp
 [FromQuery]
 [Optional]
-[Default = 0]
-int32 skip
-```
-
-Number of users to skip.
-
-```csharp
-[FromQuery]
-[Optional]
 [Default = 100]
 int32 count
-```
-
-Maximum number of users to return.
-
-```csharp
-[FromQuery]
-[Optional]
-int32 timeout
 ```
 
 Timeout period of search.
@@ -935,7 +918,7 @@ Timeout period of search.
 ```csharp
 [FromQuery]
 [Optional]
-int32 count
+string skiptoken
 ```
 
 Start of returned users after skip count.

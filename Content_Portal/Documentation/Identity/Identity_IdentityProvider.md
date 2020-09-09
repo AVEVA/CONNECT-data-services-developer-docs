@@ -884,7 +884,7 @@ Internal server error.
 
 ## `Get a List of all User on an Identity Provider`
 
-Get a list of all users on an Identity Provider that supports advanced integration, such as Azure Active Directory. The prerequisite is that the identity provider must have already consented to sharing access to its directory with the OCS tenant.
+Get a list of users that matches the query string on an Identity Provider that supports advanced integration, such as Azure Active Directory. The prerequisite is that the identity provider must have already consented to sharing access to its directory with the OCS tenant.
 
 ### Request
 

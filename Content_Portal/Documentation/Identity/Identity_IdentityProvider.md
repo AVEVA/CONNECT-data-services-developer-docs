@@ -913,7 +913,7 @@ Id of Identity Provider.
 int32 count
 ```
 
-Timeout period of search.
+Maximum number of users to return.
 
 ```csharp
 [FromQuery]
@@ -963,7 +963,7 @@ Get a list of all existing groups on an Identity Provider that supports advanced
 
 ### Request
 
-`GET api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/{IdpId}/Groups?query={group}&skip={skip}&count={count}&timeout={optional} &skipToken={optional}`
+`GET api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/{IdpId}/Groups?query={group}&count={count}&skipToken={optional}`
 
 ### Parameters
 
@@ -984,15 +984,6 @@ Id of Identity Provider.
 ```csharp
 [FromQuery]
 [Optional]
-[Default = 0]
-int32 skip
-```
-
-Number of groups to skip.
-
-```csharp
-[FromQuery]
-[Optional]
 [Default = 100]
 int32 count
 ```
@@ -1002,15 +993,7 @@ Maximum number of groups to return.
 ```csharp
 [FromQuery]
 [Optional]
-int32 timeout
-```
-
-Timeout period of search.
-
-```csharp
-[FromQuery]
-[Optional]
-int32 count
+string skiptoken
 ```
 
 Start of returned groups after skip count.
@@ -1019,7 +1002,6 @@ Start of returned groups after skip count.
 
 Allowed for these roles:
 
-- `Account Member`
 - `Account Administrator`
 
 ### Returns
@@ -1069,7 +1051,7 @@ Get a list of all groups that the specified user belongs to on an Identity Provi
 
 ### Request
 
-`GET api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/{IdpId}/Users/{userId}/Groups?skip={skip}&count={count}&timeout={optional} &skipToken={optional}`
+`GET api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/{IdpId}/Users/{userId}/Groups?count={count}&skipToken={optional}`
 
 ### Parameters
 
@@ -1097,15 +1079,6 @@ Id of User.
 ```csharp
 [FromQuery]
 [Optional]
-[Default = 0]
-int32 skip
-```
-
-Number of groups to skip.
-
-```csharp
-[FromQuery]
-[Optional]
 [Default = 100]
 int32 count
 ```
@@ -1115,15 +1088,7 @@ Maximum number of groups to return.
 ```csharp
 [FromQuery]
 [Optional]
-int32 timeout
-```
-
-Timeout period of search.
-
-```csharp
-[FromQuery]
-[Optional]
-int32 count
+string skiptoken
 ```
 
 Start of returned groups after skip count.
@@ -1132,7 +1097,6 @@ Start of returned groups after skip count.
 
 Allowed for these roles:
 
-- `Account Member`
 - `Account Administrator`
 
 ### Returns
@@ -1180,7 +1144,7 @@ Get a list of all users belonging to a specific group on an Identity Provider th
 
 ### Request
 
-`GET api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/{IdpId}/Groups/{GroupId}/Members?skip={skip}&count={count}&skipToken={optional}`
+`GET api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/{IdpId}/Groups/{GroupId}/Members?count={count}&skipToken={optional}`
 
 ### Parameters
 
@@ -1208,15 +1172,6 @@ Id of Group.
 ```csharp
 [FromQuery]
 [Optional]
-[Default = 0]
-int32 skip
-```
-
-Number of users to skip.
-
-```csharp
-[FromQuery]
-[Optional]
 [Default = 100]
 int32 count
 ```
@@ -1226,15 +1181,7 @@ Maximum number of users to return.
 ```csharp
 [FromQuery]
 [Optional]
-int32 timeout
-```
-
-Timeout period of search.
-
-```csharp
-[FromQuery]
-[Optional]
-int32 count
+string skiptoken
 ```
 
 Start of returned users after skip count.
@@ -1243,7 +1190,6 @@ Start of returned users after skip count.
 
 Allowed for these roles:
 
-- `Account Member`
 - `Account Administrator`
 
 ### Returns

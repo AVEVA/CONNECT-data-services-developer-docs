@@ -120,6 +120,11 @@
 <td>bool</td>
 <td>Gets or sets a value indicating whether the identity provider has been configured.</td>
 </tr>
+<tr>
+<td>Capabilities</td>
+<td>json</td>
+<td>Gets or sets a json demonstrating the capabilities of the identity provider.</td>
+</tr>
 </tbody>
 </table>
 <h3 id="serialized-model">Serialized Model</h3>
@@ -129,7 +134,18 @@
   &quot;Scheme&quot;: &quot;Scheme&quot;,
   &quot;UserIdClaimType&quot;: &quot;UserIdClaimType&quot;,
   &quot;ClientId&quot;: &quot;ClientId&quot;,
-  &quot;IsConfigured&quot;: false
+  &quot;IsConfigured&quot;: false, 
+  &quot;Capabilities&quot;: { 
+    &quot;User&quot;: { 
+      &quot;SignIn&quot;: true, 
+      &quot;Invitation&quot;: true, 
+      &quot;Search&quot;: false 
+    }, 
+    &quot;Group&quot;: { 
+      &quot;Authorize&quot;: false, 
+      &quot;Search&quot;: false 
+    } 
+  } 
 }
 </code></pre><hr>
 <h2 id="authentication">Authentication</h2>
@@ -171,7 +187,8 @@ Guid identityProviderId
   &quot;Scheme&quot;: &quot;Scheme&quot;,
   &quot;UserIdClaimType&quot;: &quot;UserIdClaimType&quot;,
   &quot;ClientId&quot;: &quot;ClientId&quot;,
-  &quot;IsConfigured&quot;: false
+  &quot;IsConfigured&quot;: false,
+  &quot;Capabilities&quot;: null
 }
 </code></pre><h4 id="401">401</h4>
 <p>Unauthorized.</p>
@@ -206,7 +223,8 @@ string scheme
   &quot;Scheme&quot;: &quot;Scheme&quot;,
   &quot;UserIdClaimType&quot;: &quot;UserIdClaimType&quot;,
   &quot;ClientId&quot;: &quot;ClientId&quot;,
-  &quot;IsConfigured&quot;: false
+  &quot;IsConfigured&quot;: false,
+  &quot;Capabilities&quot;: null 
 }
 </code></pre><h4 id="401-1">401</h4>
 <p>Unauthorized.</p>
@@ -254,7 +272,8 @@ int32 count
     &quot;Scheme&quot;: &quot;Scheme&quot;,
     &quot;UserIdClaimType&quot;: &quot;UserIdClaimType&quot;,
     &quot;ClientId&quot;: &quot;ClientId&quot;,
-    &quot;IsConfigured&quot;: false
+    &quot;IsConfigured&quot;: false,
+    &quot;Capabilities&quot;: null
   },
   {
     &quot;Id&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
@@ -262,7 +281,8 @@ int32 count
     &quot;Scheme&quot;: &quot;Scheme&quot;,
     &quot;UserIdClaimType&quot;: &quot;UserIdClaimType&quot;,
     &quot;ClientId&quot;: &quot;ClientId&quot;,
-    &quot;IsConfigured&quot;: false
+    &quot;IsConfigured&quot;: false,
+    &quot;Capabilities&quot;: null
   }
 ]
 </code></pre><h4 id="400">400</h4>
@@ -399,7 +419,17 @@ int32 count
     &quot;Scheme&quot;: &quot;Scheme&quot;,
     &quot;UserIdClaimType&quot;: &quot;UserIdClaimType&quot;,
     &quot;ClientId&quot;: &quot;ClientId&quot;,
-    &quot;IsConfigured&quot;: false
+    &quot;IsConfigured&quot;: false,
+    &quot;Capabilities&quot;: { 
+      &quot;User&quot;: { 
+        &quot;SignIn&quot;: true, 
+        &quot;Invitation&quot;: true, 
+        &quot;Search&quot;: false 
+      }, 
+      &quot;Group&quot;: { 
+        &quot;Authorize&quot;: false, 
+        &quot;Search&quot;: false 
+      } 
   },
   {
     &quot;Id&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
@@ -407,7 +437,17 @@ int32 count
     &quot;Scheme&quot;: &quot;Scheme&quot;,
     &quot;UserIdClaimType&quot;: &quot;UserIdClaimType&quot;,
     &quot;ClientId&quot;: &quot;ClientId&quot;,
-    &quot;IsConfigured&quot;: false
+    &quot;IsConfigured&quot;: false,
+    &quot;Capabilities&quot;: { 
+      &quot;User&quot;: { 
+        &quot;SignIn&quot;: true, 
+        &quot;Invitation&quot;: true, 
+        &quot;Search&quot;: false 
+      }, 
+      &quot;Group&quot;: { 
+        &quot;Authorize&quot;: false, 
+        &quot;Search&quot;: false 
+      } 
   }
 ]
 </code></pre><h4 id="401-6">401</h4>
@@ -447,7 +487,17 @@ Guid identityProviderId
   &quot;Scheme&quot;: &quot;Scheme&quot;,
   &quot;UserIdClaimType&quot;: &quot;UserIdClaimType&quot;,
   &quot;ClientId&quot;: &quot;ClientId&quot;,
-  &quot;IsConfigured&quot;: false
+  &quot;IsConfigured&quot;: false,
+  &quot;Capabilities&quot;: { 
+      &quot;User&quot;: { 
+        &quot;SignIn&quot;: true, 
+        &quot;Invitation&quot;: true, 
+        &quot;Search&quot;: false 
+      }, 
+      &quot;Group&quot;: { 
+        &quot;Authorize&quot;: false, 
+        &quot;Search&quot;: false 
+      } 
 }
 </code></pre><h4 id="401-7">401</h4>
 <p>Unauthorized.</p>

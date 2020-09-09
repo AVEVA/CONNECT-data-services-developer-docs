@@ -927,7 +927,6 @@ Start of returned users after skip count.
 
 Allowed for these roles:
 
-- `Account Member`
 - `Account Administrator`
 
 ### Returns

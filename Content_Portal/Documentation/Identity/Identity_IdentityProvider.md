@@ -1276,7 +1276,7 @@ Internal server error.
 
 ## `Get an Identity Provider Consent from a Tenant`
 
-Get the consent state for an Identity Provider for a Tenant. This determines whether an Identity Provider consents to sharing access to its directory with the OCS tenant.
+Get the consent state for an Identity Provider for a Tenant. This determines whether an Identity Provider consents to sharing access to its directory with the OCS tenant. The consent grants User.Read.All and GroupMember.Read.all permissions to the OCS tenant.
 
 ### Request
 
@@ -1410,7 +1410,7 @@ Internal server error.
 
 ## `Update Identity Provider Consent of a Tenant`
 
-Update the Identity Provider Consent of a Tenant. Currently only support Azure Active Directory. 
+Update the Identity Provider Consent of a Tenant. Currently only support Azure Active Directory. The consent grants User.Read.All and GroupMember.Read.all permissions to the OCS tenant.
 
 ### Request
 

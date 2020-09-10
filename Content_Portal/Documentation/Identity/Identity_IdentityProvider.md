@@ -921,7 +921,7 @@ Maximum number of users to return.
 string skiptoken
 ```
 
-Start of returned users after skip count.
+An encoded string that identifies the set of users that was not returned. For example, if you specify a count of the first 50 users matching your query, the skiptoken identifies the 51st user.
 
 ### Security
 
@@ -996,7 +996,7 @@ Maximum number of groups to return.
 string skiptoken
 ```
 
-Start of returned groups after skip count.
+An encoded string that identifies the set of groups that was not returned. For example, if you specify a count of the first 5 groups matching your query, the skiptoken identifies the 6th group.
 
 ### Security
 
@@ -1091,7 +1091,7 @@ Maximum number of groups to return.
 string skiptoken
 ```
 
-Start of returned groups after skip count.
+An encoded string that identifies the set of groups that was not returned. For example, if you request a count of the first 3 groups matching your query, the skiptoken identifies the 4th user.
 
 ### Security
 
@@ -1184,7 +1184,7 @@ Maximum number of users to return.
 string skiptoken
 ```
 
-Start of returned users after skip count.
+An encoded string that identifies the set of users that was not returned. For example, if you request a count of the first 50 users matching your query, the skiptoken identifies the 51st user.
 
 ### Security
 

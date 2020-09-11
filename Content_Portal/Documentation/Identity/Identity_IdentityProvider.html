@@ -582,7 +582,7 @@ IdentityProviderAdd identityProviderAdd
   &quot;AzureActiveDirectoryConsentEmail&quot;: &quot;user@company.com&quot;,
   &quot;AzureActiveDirectoryConsentGivenName&quot;: &quot;Name&quot;,
   &quot;AzureActiveDirectoryConsentSurname&quot;: &quot;Surname&quot;,
-  &quot;AzureActiveDirectoryTenant&quot;: &quot;AzureActiveDirectoryTenant&quot;
+  &quot;AzureActiveDirectoryTenant&quot;: &quot;AzureActiveDirectoryTenant&quot;,
   &quot;AzureActiveDirectoryConsentTypes&quot;: &quot;AzureActiveDirectoryConsentTypes&quot;
 }
 </code></pre><h3 id="security-8">Security</h3>
@@ -720,27 +720,225 @@ string tenantId
 <h4 id="500-11">500</h4>
 <p>Internal server error.</p>
 <hr>
-<h2 id="get-an-identity-provider-consent-from-a-tenant"><code>Get an Identity Provider Consent from a Tenant</code></h2>
-<p>Get the consent state for an Identity Provider for a Tenant. This determines whether an Identity Provider consents to sharing access to its directory with the OCS tenant.</p>
+<h2 id="get-a-list-of-all-user-on-an-identity-provider"><code>Get a List of all User on an Identity Provider</code></h2>
+<p>Get a list of users that matches the query string on an Identity Provider that supports advanced integration, such as Azure Active Directory. The prerequisite is that the identity provider must have already consented to sharing access to its directory with the OCS tenant.</p>
 <h3 id="request-12">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>IdentityProviders/<wbr>{identityProviderId}/<wbr>Consent</code></p>
+<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>IdentityProviders/<wbr>{identityProviderId}/<wbr>{IdpId}/<wbr>Users?query={user}&amp;count={count}&amp;skipToken={optional}</code></p>
 <h3 id="parameters-12">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
 </code></pre><p>Id of Tenant.</p>
 <pre><code class="lang-csharp">[Required]
 Guid identityProviderId
-</code></pre><p>Id of Identity Provider to check for consent.</p>
+</code></pre><p>Id of Identity Provider.</p>
+<pre><code class="lang-csharp">[FromQuery]
+[Optional]
+[Default = 100]
+int32 count
+</code></pre><p>Maximum number of users to return.</p>
+<pre><code class="lang-csharp">[FromQuery]
+[Optional]
+string skiptoken
+</code></pre><p>An encoded string that identifies the set of users that was not returned. For example, if you specify a count of the first 50 users matching your query, the skiptoken identifies the 51st user.</p>
 <h3 id="security-12">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Member</code></li>
 <li><code>Account Administrator</code></li>
 </ul>
 <h3 id="returns-12">Returns</h3>
 <h4 id="200-10">200</h4>
 <p>Success.</p>
 <h5 id="type-11">Type:</h5>
+<pre><code class="lang-json">&quot;Results&quot;: [
+  {
+    &quot;Id&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
+    &quot;GivenName&quot;: &quot;GivenName&quot;,
+    &quot;Surname&quot;: &quot;Surname&quot;,
+    &quot;Name&quot;: &quot;Name&quot;,
+    &quot;Email&quot;: &quot;Email&quot;,
+  },
+  {
+    &quot;Id&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
+    &quot;GivenName&quot;: &quot;GivenName&quot;,
+    &quot;Surname&quot;: &quot;Surname&quot;,
+    &quot;Name&quot;: &quot;Name&quot;,
+    &quot;Email&quot;: &quot;Email&quot;,
+  }
+],
+&quot;SkipToken&quot;: SkipToken
+</code></pre><h2 id="get-a-list-of-all-groups-on-an-identity-provider"><code>Get a List of all Groups on an Identity Provider</code></h2>
+<p>Get a list of groups that matches the query string on an identity provider that supports advanced integration, such as Azure Active Directory. The prerequisite is that the identity provider must have already consented to sharing access to its directory with the OCS tenant. The consent grants User.Read.All and GroupMember.Read.all permissions to the OCS tenant.</p>
+<h3 id="request-13">Request</h3>
+<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>IdentityProviders/<wbr>{identityProviderId}/<wbr>{IdpId}/<wbr>Groups?query={group}&amp;count={count}&amp;skipToken={optional}</code></p>
+<h3 id="parameters-13">Parameters</h3>
+<pre><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p>Id of Tenant.</p>
+<pre><code class="lang-csharp">[Required]
+Guid identityProviderId
+</code></pre><p>Id of Identity Provider.</p>
+<pre><code class="lang-csharp">[FromQuery]
+[Optional]
+[Default = 100]
+int32 count
+</code></pre><p>Maximum number of groups to return.</p>
+<pre><code class="lang-csharp">[FromQuery]
+[Optional]
+string skiptoken
+</code></pre><p>An encoded string that identifies the set of groups that was not returned. For example, if you specify a count of the first 5 groups matching your query, the skiptoken identifies the 6th group.</p>
+<h3 id="security-13">Security</h3>
+<p>Allowed for these roles:</p>
+<ul>
+<li><code>Account Administrator</code></li>
+</ul>
+<h3 id="returns-13">Returns</h3>
+<h4 id="200-11">200</h4>
+<p>Success.</p>
+<h5 id="type-12">Type:</h5>
+<pre><code class="lang-json">&quot;Results&quot;: [
+  {
+    &quot;Id&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
+    &quot;Name&quot;: &quot;Name&quot;,
+    &quot;Email&quot;: &quot;Email&quot;,
+  },
+  {
+    &quot;Id&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
+    &quot;Name&quot;: &quot;Name&quot;,
+    &quot;Email&quot;: &quot;Email&quot;,
+  }
+],
+&quot;SkipToken&quot;: SkipToken
+</code></pre><h4 id="401-12">401</h4>
+<p>Unauthorized.</p>
+<h4 id="403-12">403</h4>
+<p>Forbidden.</p>
+<h4 id="404-11">404</h4>
+<p>IdentityProvider or Tenant not found.</p>
+<h4 id="500-12">500</h4>
+<p>Internal server error.</p>
+<hr>
+<h2 id="get-a-list-of-all-groups-that-a-user-belongs-to-on-an-identity-provider"><code>Get a List of all Groups that a User belongs to on an Identity Provider</code></h2>
+<p>Get a list of all groups that the specified user belongs to on an Identity Provider that supports advanced integration, such as Azure Active Directory. The prerequisite is that the identity provider must have already consented to sharing access to its directory with the OCS tenant. The consent grants User.Read.All and GroupMember.Read.all permissions to the OCS tenant.</p>
+<h3 id="request-14">Request</h3>
+<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>IdentityProviders/<wbr>{identityProviderId}/<wbr>{IdpId}/<wbr>Users/<wbr>{userId}/<wbr>Groups?count={count}&amp;skipToken={optional}</code></p>
+<h3 id="parameters-14">Parameters</h3>
+<pre><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p>Id of Tenant.</p>
+<pre><code class="lang-csharp">[Required]
+Guid identityProviderId
+</code></pre><p>Id of Identity Provider.</p>
+<pre><code class="lang-csharp">[Required]
+Guid userId
+</code></pre><p>Id of User.</p>
+<pre><code class="lang-csharp">[FromQuery]
+[Optional]
+[Default = 100]
+int32 count
+</code></pre><p>Maximum number of groups to return.</p>
+<pre><code class="lang-csharp">[FromQuery]
+[Optional]
+string skiptoken
+</code></pre><p>An encoded string that identifies the set of groups that was not returned. For example, if you request a count of the first 3 groups matching your query, the skiptoken identifies the 4th user.</p>
+<h3 id="security-14">Security</h3>
+<p>Allowed for these roles:</p>
+<ul>
+<li><code>Account Administrator</code></li>
+</ul>
+<h3 id="returns-14">Returns</h3>
+<h4 id="200-12">200</h4>
+<p>Success.</p>
+<h5 id="type-13">Type:</h5>
+<pre><code class="lang-json">&quot;Users&quot;: [
+  {
+    &quot;Id&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
+    &quot;GivenName&quot;: &quot;GivenName&quot;,
+    &quot;Surname&quot;: &quot;Surname&quot;,
+    &quot;Name&quot;: &quot;Name&quot;,
+    &quot;Email&quot;: &quot;Email&quot;,
+  }
+],
+&quot;Groups&quot;: Groups
+&quot;SkipToken&quot;: SkipToken
+</code></pre><h4 id="401-13">401</h4>
+<p>Unauthorized.</p>
+<h4 id="403-13">403</h4>
+<p>Forbidden.</p>
+<h4 id="404-12">404</h4>
+<p>IdentityProvider or Tenant not found.</p>
+<h4 id="500-13">500</h4>
+<p>Internal server error.</p>
+<hr>
+<h2 id="get-a-list-of-all-users-belongs-a-group-on-an-identity-provider"><code>Get a List of all Users belongs a Group on an Identity Provider</code></h2>
+<p>Get a list of all users belonging to a specific group on an Identity Provider that supports advanced integration, such as Azure Active Directory. The prerequisite is that the identity provider must have already consented to sharing access to its directory with the OCS tenant.</p>
+<h3 id="request-15">Request</h3>
+<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>IdentityProviders/<wbr>{identityProviderId}/<wbr>{IdpId}/<wbr>Groups/<wbr>{GroupId}/<wbr>Members?count={count}&amp;skipToken={optional}</code></p>
+<h3 id="parameters-15">Parameters</h3>
+<pre><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p>Id of Tenant.</p>
+<pre><code class="lang-csharp">[Required]
+Guid identityProviderId
+</code></pre><p>Id of Identity Provider.</p>
+<pre><code class="lang-csharp">[Required]
+Guid GroupId
+</code></pre><p>Id of Group.</p>
+<pre><code class="lang-csharp">[FromQuery]
+[Optional]
+[Default = 100]
+int32 count
+</code></pre><p>Maximum number of users to return.</p>
+<pre><code class="lang-csharp">[FromQuery]
+[Optional]
+string skiptoken
+</code></pre><p>An encoded string that identifies the set of users that was not returned. For example, if you request a count of the first 50 users matching your query, the skiptoken identifies the 51st user.</p>
+<h3 id="security-15">Security</h3>
+<p>Allowed for these roles:</p>
+<ul>
+<li><code>Account Administrator</code></li>
+</ul>
+<h3 id="returns-15">Returns</h3>
+<h4 id="200-13">200</h4>
+<p>Success.</p>
+<h5 id="type-14">Type:</h5>
+<pre><code class="lang-json">&quot;Results&quot;: [
+  {
+    &quot;Id&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
+    &quot;Name&quot;: &quot;Name&quot;,
+    &quot;Email&quot;: &quot;Email&quot;,
+  }
+],
+&quot;SkipToken&quot;: SkipToken
+</code></pre><h4 id="401-14">401</h4>
+<p>Unauthorized.</p>
+<h4 id="403-14">403</h4>
+<p>Forbidden.</p>
+<h4 id="404-13">404</h4>
+<p>IdentityProvider or Tenant not found.</p>
+<h4 id="500-14">500</h4>
+<p>Internal server error.</p>
+<hr>
+<h2 id="get-an-identity-provider-consent-from-a-tenant"><code>Get an Identity Provider Consent from a Tenant</code></h2>
+<p>Get the consent state for an Identity Provider for a Tenant. This determines whether an Identity Provider consents to sharing access to its directory with the OCS tenant.</p>
+<h3 id="request-16">Request</h3>
+<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>IdentityProviders/<wbr>{identityProviderId}/<wbr>Consent</code></p>
+<h3 id="parameters-16">Parameters</h3>
+<pre><code class="lang-csharp">[Required]
+string tenantId
+</code></pre><p>Id of Tenant.</p>
+<pre><code class="lang-csharp">[Required]
+Guid identityProviderId
+</code></pre><p>Id of Identity Provider to check for consent.</p>
+<h3 id="security-16">Security</h3>
+<p>Allowed for these roles:</p>
+<ul>
+<li><code>Account Member</code></li>
+<li><code>Account Administrator</code></li>
+</ul>
+<h3 id="returns-16">Returns</h3>
+<h4 id="200-14">200</h4>
+<p>Success.</p>
+<h5 id="type-15">Type:</h5>
 <p> <code>IdentityProviderConsent</code></p>
 <pre><code class="lang-json">
 Microsoft Accounts and Google
@@ -757,51 +955,51 @@ Azure Active Directory
   &quot;AadDomain&quot;: &quot;AadDomain&quot;,
   &quot;ConsentState&quot;: &quot;ConsentState&quot;
 }
-</code></pre><h4 id="401-12">401</h4>
+</code></pre><h4 id="401-15">401</h4>
 <p>Unauthorized.</p>
-<h4 id="403-12">403</h4>
+<h4 id="403-15">403</h4>
 <p>Forbidden.</p>
-<h4 id="404-11">404</h4>
+<h4 id="404-14">404</h4>
 <p>IdentityProvider or Tenant not found.</p>
-<h4 id="500-12">500</h4>
+<h4 id="500-15">500</h4>
 <p>Internal server error.</p>
 <hr>
 <h2 id="get-header-for-identity-provider-consent"><code>Get Header for Identity Provider Consent</code></h2>
 <p>Validate that a Identity Provider Consent exists in the Tenant. This endpoint is identical to the GET one but it does not return any objects in the body.</p>
-<h3 id="request-13">Request</h3>
+<h3 id="request-17">Request</h3>
 <p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>IdentityProviders/<wbr>{identityProviderId}/<wbr>Consent</code></p>
-<h3 id="parameters-13">Parameters</h3>
+<h3 id="parameters-17">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
 </code></pre><p>Id of Tenant.</p>
 <pre><code class="lang-csharp">[Required]
 Guid identityProviderId
 </code></pre><p>Id of Identity Provider to check for consent.</p>
-<h3 id="security-13">Security</h3>
+<h3 id="security-17">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
 <li><code>Account Member</code></li>
 <li><code>Account Administrator</code></li>
 </ul>
-<h3 id="returns-13">Returns</h3>
-<h4 id="200-11">200</h4>
+<h3 id="returns-17">Returns</h3>
+<h4 id="200-15">200</h4>
 <p>Success.</p>
-<h5 id="type-12">Type:</h5>
+<h5 id="type-16">Type:</h5>
 <p> <code>Void</code></p>
-<h4 id="401-13">401</h4>
+<h4 id="401-16">401</h4>
 <p>Unauthorized.</p>
-<h4 id="403-13">403</h4>
+<h4 id="403-16">403</h4>
 <p>Forbidden.</p>
-<h4 id="404-12">404</h4>
+<h4 id="404-15">404</h4>
 <p>IdentityProvider or Tenant not found.</p>
-<h4 id="500-13">500</h4>
+<h4 id="500-16">500</h4>
 <p>Internal server error.</p>
 <hr>
 <h2 id="update-identity-provider-consent-of-a-tenant"><code>Update Identity Provider Consent of a Tenant</code></h2>
 <p>Update the Identity Provider Consent of a Tenant. Currently only support Azure Active Directory. </p>
-<h3 id="request-14">Request</h3>
+<h3 id="request-18">Request</h3>
 <p><code style="word-break:normal; overflow-wrap:break-word;">POST api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>IdentityProviders/<wbr>{identityProviderId}/<wbr>Consent</code></p>
-<h3 id="parameters-14">Parameters</h3>
+<h3 id="parameters-18">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
 </code></pre><p>Id of Tenant.</p>
@@ -875,25 +1073,25 @@ IdentityProviderConsent identityProviderConsent
   &quot;ConsentEmail&quot;: &quot;user@company.com&quot;,
   &quot;ConsentOverride&quot;: true
 }
-</code></pre><h3 id="security-14">Security</h3>
+</code></pre><h3 id="security-18">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
 <li><code>Account Administrator</code></li>
 </ul>
-<h3 id="returns-14">Returns</h3>
-<h4 id="200-12">200</h4>
+<h3 id="returns-18">Returns</h3>
+<h4 id="200-16">200</h4>
 <p>Success.</p>
 <h4 id="400-2">400</h4>
 <p>Missing or invalid inputs.</p>
-<h4 id="401-14">401</h4>
+<h4 id="401-17">401</h4>
 <p>Unauthorized.</p>
-<h4 id="403-14">403</h4>
+<h4 id="403-17">403</h4>
 <p>Forbidden.</p>
-<h4 id="404-13">404</h4>
+<h4 id="404-16">404</h4>
 <p>Tenant not found.</p>
 <h4 id="408-2">408</h4>
 <p>Operation timed out.</p>
-<h4 id="500-14">500</h4>
+<h4 id="500-17">500</h4>
 <p>Internal server error.</p>
 <hr>
 </article>

@@ -785,7 +785,7 @@ Content-Type: application/json
       IEnumerable&lt;Tuple&lt; T1, T2&gt;&gt; index, string streamViewId = null);
 </code></pre><p><a name="getvaluesinterpolatedinterval"></a></p>
 <h3 id="interval"><code>Interval</code></h3>
-<p>Returns events at evenly spaced intervals based on the specified start index, end index, and count. If no stored event exists at an index interval, the stream&#39;s read characteristics determine how the returned event is calculated.For more information, see <a class="xref" href="Reading_Data.html#interpolation">Interpolation</a> and <a class="xref" href="Reading_Data.html#extrapolation">Extrapolation</a>.</p>
+<p>Returns events at evenly spaced intervals based on the specified start index, end index, and count. If no stored event exists at an index interval, the stream&#39;s read characteristics determine how the returned event is calculated. For more information, see <a class="xref" href="Reading_Data.html#interpolation">Interpolation</a> and <a class="xref" href="Reading_Data.html#extrapolation">Extrapolation</a>.</p>
 <h4 id="request-6">Request</h4>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data/<wbr>
        Interpolated?startIndex={startIndex}&amp;endIndex={endIndex}&amp;count={count}

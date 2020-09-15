@@ -99,10 +99,17 @@ The response includes a status code and a response body.
 
 #### Example response body
 ``` 
-HTTP 200 OK
-Content-Type: application/json
-{
-    "SampleStream": {
+[
+    {
+        "Measurement": "Temperature",
+        "Result": [
+            {
+                "Timestamp": "2020-08-12T22:35:44Z",
+                "Value": 73.165016
+            }
+        ]
+    }
+]
         "Timestamp": "2019-07-25T23:38:31Z",
         "Value": 82.63277
     },

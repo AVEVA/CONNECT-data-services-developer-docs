@@ -1,9 +1,7 @@
-- name: Assets Types and Properties
-  href: Assets.md
-- name: Assets API
-  href: Assets-API.md
 - name: AssetType API
   href: Asset-Type.md
+- name: Assets API
+  href: Assets-API.md
 - name: Asset and AssetType Access Control API
   href: Access-Control-API.md
 - name: Asset Measurements and MeasurementsMapping

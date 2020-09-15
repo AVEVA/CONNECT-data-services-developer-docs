@@ -30,7 +30,7 @@ The general structure of an asset is nearly identical to an asset type. It inclu
 
 ### Asset and AssetType Properties
 
-| Property      | Type              | Required? | Searchable? | Description                                                  | Asset | Asset<br />Type |
+| Property      | Type              | Required? | Searchable? | Description                                                  | Asset Property| Asset<br />Type<br />Property |
 | ------------- | ----------------- | --------- | ----------- | ------------------------------------------------------------ | ----- | --------------- |
 | Id            | String            | Required  | Yes         | Identifier for referencing this asset. If you do not provide an ID, then the Name property is required. OCS automatically assigns the Name as the Id. | X     | X               |
 | Name          | String            | Optional  | Yes         | User-friendly name. Required if Id is not provided. If Name is used as the Id, it must be unique within a given namespace. | X     | X               |

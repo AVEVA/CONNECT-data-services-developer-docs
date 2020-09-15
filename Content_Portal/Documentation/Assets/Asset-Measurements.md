@@ -49,7 +49,7 @@ An asset or asset type uses the mapping by assigning the `StreamReferenceId` in 
 
 For stream `pi2ocs_stream1_inputpower`, we are only interested in the Value and Time stream properties as defined by the mapping. 
 
-*** Add a line before each API 
+***
 
 ## `Get MeasurementsMapping` 
 Returns the measurements mapping of an asset or asset type. 
@@ -82,10 +82,6 @@ The asset identifier
 `string assetId`
 The asset type identifier
 
-### Authorization
-Access to the resources/collection is controlled by ACL (Access Control List) and Owner objects.
-For more information, see [Role-based access control](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html).
-
 ### Response 
 Add API method response.  Enter a description and a type, mention body as well. Use a table to present responses.
 Code example can follow. 
@@ -116,9 +112,8 @@ Content-Type: application/json
 } 
 ```
 
-*** Add a line before each API. 
+***
 
-*** Add a line before each API 
 
 ## `Create MeasurementsMapping` 
 
@@ -151,11 +146,6 @@ The asset identifier
 
 `string assetId`
 The asset type identifier
-
-### Authorization
-
-Access to the resources/collection is controlled by ACL (Access Control List) and Owner objects.
-For more information, see [Role-based access control](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html).
 
 ### Response 
 

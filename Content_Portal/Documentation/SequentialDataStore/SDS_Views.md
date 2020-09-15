@@ -9,18 +9,16 @@ the stream views feature enables you to create a view of a selected SdsStream th
 You create a stream view by choosing a source and target type then a set of mappings between properties of those two types. 
 Using a stream view to leverage existing SdsType properties is preferable to creating a new SdsType, because the SdsStream that is based on the SdsType continues to function with its previously archived stream data intact.
 
-Use a PUT method to assign a stream view to a stream, and display the stream data specified for the selected stream view with a GET method.
-For more information, see [Reading with SdsStreamViews](xref:sdsReadingData#reading-with-sdsstreamviews).
 SdsStreamView is used to specify the mapping between the source and target types.
+Use a PUT method to assign a stream view to a stream, and display the stream data specified for the selected stream view with a GET method. For more information, see [Reading with SdsStreamViews](xref:sdsReadingData#reading-with-sdsstreamviews).
 
-To assign an SdsStreamView to an  SdsStream, execute an [Update Stream Type](xref:sdsStreams#update-stream-type) call.  By specifying the stream view ID in the call, you can effectively assign the target type of the stream view to a specified stream. 
+To assign an SdsStreamView to an SdsStream, execute an [Update Stream Type](xref:sdsStreams#update-stream-type) call.  By specifying the stream view ID, you can effectively assign the target type of the stream view to a specified stream. 
 
-SDS attempts to determine how to map properties from the source to the destination. When the mapping 
+SDS attempts to determine how to map properties from the source to the target. When the mapping 
 is straightforward, such as when the properties are in the same position and of the same data type, 
-or when the properties have the same name, SDS will map the properties automatically.
-
-When SDS is unable to determine how to map a source property, the property is removed. If SDS encounters 
+or when the properties have the same name, SDS will map the properties automatically. When SDS is unable to determine how to map a source property, the property is removed. If SDS encounters 
 a target property that it cannot map to, the property is added and configured with a default value.
+For more information, see [Stream views mapping](#stream-views-mapping) below.
 
 To map a property that is beyond the ability of SDS to map on its own, you should define an `SdsStreamViewProperty` 
 and add it to the SdsStreamView’s [`Properties` collection](#sdsstreamviewproperty).
@@ -69,7 +67,7 @@ The SdsStreamView field supports nested properties.
 
 ## SdsStreamViewMap
 When an SdsStreamView is added, SDS defines a plan mapping. Plan details are retrieved as an SdsStreamViewMap. 
-The SdsStreamViewMap provides a detailed Property-by-Property definition of the mapping. 
+The SdsStreamViewMap provides a detailed property-by-property definition of the mapping. 
 
 The table below shows the SdsStreamViewMap fields. The SdsStreamViewMap cannot be written to SDS, 
 so required and optional have no meaning.
@@ -78,11 +76,11 @@ so required and optional have no meaning.
 |--------------|--------------------------|--------------|---------|
 | SourceTypeId | String                   | Required     | Identifier of the SdsType of the SdsStream |
 | TargetTypeId | String                   | Required     | Identifier of the SdsType to convert events to |
-| Properties   | IList\<SdsStreamViewMapProperty\>| Optional     | Property level mapping |
+| Properties   | IList\<SdsStreamViewMapProperty\>| Optional     | Property-level mapping |
 
 ### SdsStreamViewMapProperty
 The SdsStreamViewMapProperty is similar to SdsStreamViewProperty but adds a `mode` detailing one or more actions taken on 
-the Property.
+the property.
 
 The table below shows the SdsStreamViewMapProperty fields. The SdsStreamViewMap cannot be written; it can only be 
 retrieved from SDS, so required and optional have no meaning.
@@ -94,8 +92,7 @@ retrieved from SDS, so required and optional have no meaning.
 | Mode         | SdsStreamViewMode | Aggregate of actions applied to the properties. SdsStreamViewModes are combined via binary arithmetic |
 | SdsStreamViewMap   | SdsStreamViewMap  | Mapping for derived types |
 
-The available SdsStreamViewModes are shown in the table below:
-
+**SdsStreamViewModes**
 | Name                   | Value  | Description |
 |------------------------|--------|-------------|
 | None                   | 0x0000 | No action   |
@@ -103,13 +100,13 @@ The available SdsStreamViewModes are shown in the table below:
 | FieldRemove            | 0x0002 | Remove the property matching the specified SdsTypeProperty |
 | FieldRename            | 0x0004 | Rename the property matching the source SdsTypeProperty to the target SdsTypeProperty |
 | FieldMove              | 0x0008 | Move the property from the location in the source to the location in the target|
-| FieldConversion        | 0x0016 | Converts the source property to the target type |
+| FieldConversion        | 0x0016 | Convert the source property to the target type |
 | InvalidFieldConversion | 0x0032 | Cannot perform the specified mapping |
 
-## Changing Stream Type
+## "Changing" the stream type
 
-SdsStreamViews are used to change the SdsType defining a SdsStream. You cannot modify the SdsType itself as types are immutable. 
-But you can map an SdsStream from its current SdsType to a new SdsType.
+You use SdsStreamViews to change the SdsType that defines an SdsStream. You cannot modify the SdsType itself as types are immutable. 
+But you can map an SdsStream from its current SdsType to a different SdsType by way of stream view.
 
 To update an SdsType of an SdsStream, define an SdsStreamView and do the following:
 ```text
@@ -117,6 +114,29 @@ To update an SdsType of an SdsStream, define an SdsStreamView and do the followi
 ```
 
 For more information, see [Update Stream Type](xref:sdsStreams#update-stream-type). 
+
+### Stream views mapping
+
+SDS automatically maps properties from the source to the target type when it is straightforward:
+ - The properties are in the same position
+ - The properties are of the same data type
+ - The properties are of the same name
+
+See [Work with SdsStreamViews in .NET framework](#work-with-sdsstreamviews-in-net-framework) below for how automatic mapping works.  
+
+If needed, you can specify mapping. SDS largely supports mapping within the same data type. 
+
+**Mapping compatibility chart**
+ 
+| Source type\ Target type    | Numeric types 	| Nullable numeric types 	| Enumeration types 	| Nullable enumeration types 	| Object types    	| 
+|----------------------------	|---------------	|------------------------	|-------------------	|----------------------------	|--------------------|
+| Numeric types              	| Yes           	| Yes                    	| No                	| No                         	| No                 |
+| Nullable numeric types     	| Yes           	| Yes                    	| No                	| No                         	| No                 |
+| Enumeration types          	| No            	| No                     	| Yes               	| Yes                        	| No                 |
+| Nullable enumeration types 	| No            	| No                     	| Yes               	| Yes                        	| No                 | 
+| Object types               	| No            	| No                     	| No                	| No                         	| Yes*               |
+
+\*: Mappable if `typeId` matches between the source and the target type  
 
 ## Work with SdsStreamViews in .NET framework
 
@@ -184,7 +204,7 @@ foreach (Simple value in simpleValues)
 //  4 / 1 / 2017 7:09:00 AM: Warning, 9
 ```
 
-To map the Measurement property to a property in the same location of the same type, allow SDS to 
+To map the ``Measurement`` property to a property in the same location of the same type, allow SDS to 
 automatically determine mapping.
 ```csharp
 public class Simple1
@@ -297,8 +317,8 @@ foreach (Simple2 value in simple2Values)
 
 The SdsStreamViewMap shows that the source `Measurement` floating point is converted to integer in the target.
 
-When neither the field name nor the field type or location matches, SDS does not determine mapping. 
-The source is eliminated and target is added and assigned the default value.
+When neither the field name, the field type or location matches, SDS does not determine mapping. 
+The source is eliminated, target is added and assigned the default value.
 ```csharp
 public class Simple3
 {
@@ -352,7 +372,7 @@ foreach (Simple3 value in simple3Values)
 // 4 / 1 / 2017 7:09:00 AM: Warning, 0
 ```
 
-To map when SDS cannot determine mapping, use SdsStreamView Properties.
+To map when SDS cannot determine mapping, use SdsStreamView `Properties`.
 ```csharp
 SdsStreamView view = new SdsStreamView()
 {
@@ -412,8 +432,7 @@ foreach (Simple3 value in simple3Values)
 
 ## Work with SdsStreamViews outside of .NET framework
 
-When working with SdsStreamViews and not using .NET, either invoke HTTP methods directly or use some of 
-the sample codes. Both Python and JavaScript samples have SdsStreamView definitions.
+When working with SdsStreamViews and not using .NET, either invoke HTTP methods directly or use the code samples. Both Python and JavaScript samples have SdsStreamView definitions.
 
 JSON representation for a simple mapping between a source type with identifier `Simple` and a target 
 type with identifier `Simple1` would appear as follows:

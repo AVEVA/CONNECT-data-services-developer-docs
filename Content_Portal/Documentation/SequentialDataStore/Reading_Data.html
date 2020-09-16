@@ -483,10 +483,9 @@ and around the start and end index for window values. The following are valid va
     api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data/<wbr>Transform/<wbr>Sampled
 </code></pre><h3 id="reading-with-sdsstreamviews">Reading with SdsStreamViews</h3>
 <p>When transforming data with an SdsStreamView, the data read is converted to the <em>target type</em> specified in the SdsStreamView. Working with stream views is covered in detail in the <a class="xref" href="SDS_Views.html">Stream Views</a> section.</p>
-<p>All stream view transformations are GET HTTP requests. The stream view is specified by appending the stream view identifier to requests to the transformation endpoint. For example the following request:</p>
+<p>All stream view transformations are HTTP GET requests. Specify the stream view ID (<code>streamViewId={streamViewId}</code>) at the end of the transformation endpoint in the request as shown below. For example, the following request returns the first event of the stream <em>transformed</em> to the target type (per stream view definition specified by <code>streamViewId</code>):</p>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data/<wbr>Transform/<wbr>First?streamViewId={streamViewId}
-</code></pre><p>would return the first event in the stream as the target type in the stream view specified by the <code>streamViewId</code>.</p>
-<p>All single stream data reads support stream view transformations.</p>
+</code></pre><p>All single stream data reads support stream view transformations.</p>
 <p>When data is requested with an SdsStreamView, the read characteristics defined by the <em>target type</em> of the SdsStreamView 
 determine what is returned. The read characteristics are discussed in the code samples.</p>
 <h3 id="unit-conversion-of-data">Unit conversion of data</h3>

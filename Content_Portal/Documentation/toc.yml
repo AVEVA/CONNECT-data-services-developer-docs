@@ -22,6 +22,8 @@
   topicHref: Operations/Operations_Overview.md
 - name: Role-Based Access Control
   topicHref: Access_Control.md
+- name: HTTP Status Codes
+  topicHref: Status-Codes.md
 - name: Samples
   topicHref: samples.md
 - name: Technical Support

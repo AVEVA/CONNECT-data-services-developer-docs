@@ -1,5 +1,5 @@
 ---
-uid: RecommendedWorkflow
+uid: DefineaDataViewRecommendedWorkflow
 ---
 
 # Recommended workflow

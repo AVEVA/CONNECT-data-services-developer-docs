@@ -1,5 +1,5 @@
 ---
-uid: RecommendedWorkflowGet
+uid: GetDataViewDataRecommendedWorkflow
 ---
 
 # Recommended Workflow

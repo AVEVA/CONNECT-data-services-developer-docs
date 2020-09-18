@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Access Control API </title>
+    <title>Asset and AssetType Access Control API </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Access Control API ">
+    <meta name="title" content="Asset and AssetType Access Control API ">
     <meta name="generator" content="docfx 2.43.3.0">
     
     <link rel="shortcut icon" href="../../../favicon.ico">
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../../../styles/docfx.css">
     <link rel="stylesheet" href="../../../styles/main.css">
     <meta property="docfx:navrel" content="../../../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
     
     <meta property="docfx:rel" content="../../../">
     
@@ -75,23 +75,27 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="">
-<h1 id="access-control-api">Access Control API</h1>
+            <article class="content wrap" id="_content" data-uid="AssetOrAssetTypeAccessControlAPI">
+<h1 id="asset-and-assettype-access-control-api">Asset and AssetType Access Control API</h1>
 
-<p>The Access Control API is used to secure Assets by setting their ownership and permissions. For more information about OCS access control, see Role-based access control. </p>
+<p>The access control API is used to secure assets by setting their ownership and permissions. For more information about OCS access control, see Role-based access control. </p>
 <hr>
-<h2 id="get-assets-access-control-list-"><code>Get Assets Access Control List</code></h2>
-<p>Get the default <code>AccessControlList</code> for the Assets collection.
-[QUESTION: Is Assets capitalized? Assets collection, not Asset collection]</p>
+<h2 id="get-asset-or-assettype-access-control-list-"><code>Get Asset or AssetType Access Control List</code></h2>
+<p>Get the default <code>AccessControlList</code> for the assets collection and asset type collection.</p>
 <h3 id="request">Request</h3>
+<p>Assets collections</p>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">
 GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>AccessControl/<wbr>Assets 
+</code></pre><p>Asset types collections</p>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">
+GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>AccessControl/<wbr>AssetTypes 
 </code></pre><h3 id="parameters">Parameters</h3>
 <p><code>string tenantId</code> </p>
 <p>The tenant identifier </p>
 <p><code>string namespaceId</code> </p>
 <p>The namespace identifier </p>
 <h3 id="response">Response</h3>
+<p>The response includes a status code and a body.</p>
 <table>
 <thead>
 <tr>
@@ -104,12 +108,12 @@ GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{names
 <tr>
 <td>200 OK</td>
 <td><code>AccessControlList</code></td>
-<td>The default access control list of the Assets collection</td>
+<td>The default access control list of the assets collection or asset type collection.</td>
 </tr>
 <tr>
 <td>403 Forbidden</td>
 <td>error</td>
-<td>You are not authorized to view the requested Assets collection&#39;s access control list.</td>
+<td>You are not authorized to view the requested asset or asset type collection&#39;s access control list.</td>
 </tr>
 </tbody>
 </table>
@@ -141,10 +145,13 @@ GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{names
     ]
 } 
 </code></pre><hr>
-<h2 id="update-assets-access-control-list"><code>Update Assets Access Control List</code></h2>
-<p>Update the default <code>AccessControlList</code> for the Assets collection </p>
+<h2 id="update-assets-or-assettype-access-control-list"><code>Update Assets or AssetType Access Control List</code></h2>
+<p>Update the default <code>AccessControlList</code> for the assets or asset type collections </p>
 <h3 id="request-1">Request</h3>
+<p>Assets collections</p>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">PUT api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>AccessControl/<wbr>Assets  
+</code></pre><p>Asset types collections</p>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">PUT api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>AccessControl/<wbr>AssetTypes  
 </code></pre><h3 id="parameters-1">Parameters</h3>
 <p><code>string tenantId</code> </p>
 <p>The tenant identifier </p>
@@ -166,7 +173,7 @@ GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{names
 <tr>
 <td>204 No Content</td>
 <td>(empty)</td>
-<td>Successfully updated the default access control list of the assets collection.</td>
+<td>Successfully updated the default access control list of the assets collection or asset type collection.</td>
 </tr>
 <tr>
 <td>400 Bad Request</td>
@@ -176,15 +183,17 @@ GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{names
 <tr>
 <td>403 Forbidden</td>
 <td>error</td>
-<td>You are not authorized to update the asset collection&#39;s default access control list.</td>
+<td>You are not authorized to update the asset or asset type collection&#39;s default access control list.</td>
 </tr>
 </tbody>
 </table>
 <hr>
-<h2 id="get-asset-access-control-list"><code>Get Asset Access Control List</code></h2>
-<p>Get the <code>AssetControlList</code> of the specified asset </p>
+<h2 id="get-asset-or-assettype-access-control-list"><code>Get Asset or AssetType Access Control List</code></h2>
+<p>Get the <code>AssetControlList</code> of the specified asset or asset type.</p>
 <h3 id="request-2">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets/<wbr>{assetId}/<wbr>AcessControl 
+<p>Assets</p>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets/<wbr>{assetId}/<wbr>AccessControl 
+</code></pre><pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets/<wbr>{assetTypeId}/<wbr>AccessControl 
 </code></pre><h3 id="parameters-2">Parameters</h3>
 <p><code>string tenantId</code> </p>
 <p>The tenant identifier </p>
@@ -192,7 +201,10 @@ GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{names
 <p>The namespace identifier </p>
 <p><code>string assetId</code></p>
 <p>The asset identifier</p>
+<p><code>string assetTypeId</code></p>
+<p>The asset type identifier</p>
 <h3 id="response-2">Response</h3>
+<p>The response includes a status code and a body.</p>
 <table>
 <thead>
 <tr>
@@ -205,17 +217,17 @@ GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{names
 <tr>
 <td>200 OK</td>
 <td><code>AccessControlList</code></td>
-<td>The access control list of the requested asset.</td>
+<td>The access control list of the requested asset or asset type.</td>
 </tr>
 <tr>
 <td>403 Forbidden</td>
 <td>error</td>
-<td>You are not authorized to view the access control list of the requested asset.</td>
+<td>You are not authorized to view the access control list of the requested asset or asset type.</td>
 </tr>
 <tr>
 <td>404 Not Found</td>
 <td>error</td>
-<td>The requested asset with the specified ID was not found.</td>
+<td>The requested asset or asset type with the specified ID was not found.</td>
 </tr>
 <tr>
 <td>500 Internal Server Error</td>
@@ -244,10 +256,13 @@ GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{names
     ]
 }
 </code></pre><hr>
-<h2 id="update-asset-access-control-list"><code>Update Asset Access Control List</code></h2>
-<p>Update the <code>AccessControlList</code> of the specified asset.</p>
+<h2 id="update-asset-or-assettype-access-control-list"><code>Update Asset or AssetType Access Control List</code></h2>
+<p>Update the <code>AccessControlList</code> of the specified asset or asset type.</p>
 <h3 id="request-3">Request</h3>
+<p>Asset</p>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">PUT api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets/<wbr>{assetId}/<wbr>AccessControl 
+</code></pre><p>Asset type</p>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">PUT api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets/<wbr>{assetTypeId}/<wbr>AccessControl 
 </code></pre><h3 id="parameters-3">Parameters</h3>
 <p><code>string tenantId</code> </p>
 <p>The tenant identifier </p>
@@ -255,6 +270,8 @@ GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{names
 <p>The namespace identifier </p>
 <p><code>string assetId</code></p>
 <p>The asset identifier</p>
+<p><code>string assetTypeId</code></p>
+<p>The asset type identifier</p>
 <h4 id="request-body-1">Request body</h4>
 <p>An <code>AccessControlList</code></p>
 <h3 id="response-3">Response</h3>
@@ -271,7 +288,7 @@ GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{names
 <tr>
 <td>204 No Content</td>
 <td>(empty)</td>
-<td>Successfully updated the access control list of the specified asset.</td>
+<td>Successfully updated the access control list of the specified asset or asset type.</td>
 </tr>
 <tr>
 <td>400 Bad Request</td>
@@ -281,31 +298,34 @@ GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{names
 <tr>
 <td>403 Forbidden</td>
 <td>error</td>
-<td>You are not authorized to update the access control list of the requested asset.</td>
+<td>You are not authorized to update the access control list of the requested asset or asset type.</td>
 </tr>
 <tr>
 <td>404 Not Found</td>
 <td>error</td>
-<td>The requested asset with the specified ID was not found.</td>
+<td>The requested asset or asset type with the specified ID was not found.</td>
 </tr>
 </tbody>
 </table>
 <hr>
-<h2 id="get-asset-access-rights"><code>Get Asset Access Rights</code></h2>
-<p>Get the calling user or client&#39;s access rights to the requested asset</p>
+<h2 id="get-asset-or-assettype-access-rights"><code>Get Asset or AssetType Access Rights</code></h2>
+<p>Get the calling user or client&#39;s access rights to the requested asset or asset type.</p>
 <h3 id="request-4">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets/<wbr>{assetId}/<wbr>AcessRights                                                                 
-</code></pre><p>[QUESTION: iT&#39;S <strong>Assets</strong>/{assetId}, not <strong>Asset</strong>/{assetId}, yes?]</p>
-<h3 id="parameters-4">Parameters</h3>
+<p>Asset</p>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets/<wbr>{assetId}/<wbr>AccessRights                                                                 
+</code></pre><p>AssetType</p>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets/<wbr>{assetTypeId}/<wbr>AccessRights                                                                 
+</code></pre><h3 id="parameters-4">Parameters</h3>
 <p><code>string tenantId</code> </p>
 <p>The tenant identifier </p>
 <p><code>string namespaceId</code> </p>
 <p>The namespace identifier </p>
 <p><code>string assetId</code></p>
 <p>The asset identifier</p>
+<p><code>string assetTypeId</code></p>
+<p>The asset type identifier</p>
 <h3 id="response-4">Response</h3>
-<p>Add API method response.  Enter a description and a type, mention body as well. Use a table to present responses.
-Code example can follow. </p>
+<p>The response includes a status code and a body. </p>
 <table>
 <thead>
 <tr>
@@ -318,17 +338,17 @@ Code example can follow. </p>
 <tr>
 <td>200 OK</td>
 <td>string[]</td>
-<td>A list of access rights to the requested asset.</td>
+<td>A list of access rights to the requested asset or asset type.</td>
 </tr>
 <tr>
 <td>403 Forbidden</td>
 <td>error</td>
-<td>You are not authorized to request access rights to the specified asset.</td>
+<td>You are not authorized to make this request.</td>
 </tr>
 <tr>
 <td>404 Not Found</td>
 <td>error</td>
-<td>The requested asset with the specified ID was not found.</td>
+<td>The requested asset or asset type with the specified ID was not found.</td>
 </tr>
 </tbody>
 </table>
@@ -341,17 +361,20 @@ Code example can follow. </p>
     &quot;ManageAccessControl&quot;
 ]
 </code></pre><hr>
-<h2 id="get-asset-owner"><code>Get Asset Owner</code></h2>
-<p>Get the owner <code>Trustee</code> of the specified asset</p>
+<h2 id="get-asset-or-assettype-owner"><code>Get Asset or AssetType Owner</code></h2>
+<p>Get the owner <code>Trustee</code> of the specified asset or asset type.</p>
 <h3 id="request-5">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets/<wbr>{assetId}/<wbr>Owner
+<p>Asset</p>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets/<wbr>{assetId}/<wbr>owner
+</code></pre><p>Asset type</p>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets/<wbr>{assetTypeId}/<wbr>owner
 </code></pre><h3 id="parameters-5">Parameters</h3>
 <p><code>string tenantId</code> </p>
 <p>The tenant identifier </p>
 <p><code>string namespaceId</code> </p>
 <p>The namespace identifier </p>
-<p><code>string assetId</code></p>
-<p>The asset identifier</p>
+<p><code>string assetTypeId</code></p>
+<p>The asset type identifier</p>
 <h3 id="response-5">Response</h3>
 <p>The response includes a status code and a body.</p>
 <table>
@@ -366,17 +389,17 @@ Code example can follow. </p>
 <tr>
 <td>200 OK</td>
 <td><code>Trustee</code></td>
-<td>The owner of the requested asset.</td>
+<td>The owner of the requested asset or asset type.</td>
 </tr>
 <tr>
 <td>403 Forbidden</td>
 <td>error</td>
-<td>You are not authorized to view the owner of the requested asset.</td>
+<td>You are not authorized to view the owner of the requested asset or asset type.</td>
 </tr>
 <tr>
 <td>404 Not Found</td>
 <td>error</td>
-<td>The requested asset with the specified ID was not found.</td>
+<td>The requested asset or asset type with the specified ID was not found.</td>
 </tr>
 </tbody>
 </table>
@@ -389,18 +412,22 @@ Content-Type: application/json
     &quot;ObjectId&quot;: &quot;44444444-4444-4444-4444-444444444444&quot;
 }
 </code></pre><hr>
-<h2 id="update-asset-owner"><code>Update Asset Owner</code></h2>
-<p>Update the owner <code>Trustee</code> of the specified asset.</p>
+<h2 id="update-asset-or-assettype-owner"><code>Update Asset or AssetType Owner</code></h2>
+<p>Update the owner <code>Trustee</code> of the specified asset or asset type.</p>
 <h3 id="request-6">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">PUT api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets/<wbr>{assetId}/<wbr>Owner
-</code></pre><p>[QUESTION: iT&#39;s Assets/{assetId}, not AssetId/{assetId}, yes?]</p>
-<h3 id="parameters-6">Parameters</h3>
+<p>Asset</p>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">PUT api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets/<wbr>{assetId}/<wbr>owner
+</code></pre><p>Asset type</p>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">PUT api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>AssetTypes/<wbr>{assetTypeId}/<wbr>owner
+</code></pre><h3 id="parameters-6">Parameters</h3>
 <p><code>string tenantId</code> </p>
 <p>The tenant identifier </p>
 <p><code>string namespaceId</code> </p>
 <p>The namespace identifier </p>
 <p><code>string assetId</code></p>
 <p>The asset identifier</p>
+<p><code>string assetTypeId</code></p>
+<p>The AssetType identifier</p>
 <h4 id="request-body-2">Request body</h4>
 <p>A <code>Trustee</code></p>
 <h4 id="example-request-body-1">Example request body</h4>
@@ -423,7 +450,7 @@ Content-Type: application/json
 <tr>
 <td>204 No Content</td>
 <td>(empty)</td>
-<td>Successfully updated. the asset owner</td>
+<td>Successfully updated the asset or asset type owner.</td>
 </tr>
 <tr>
 <td>400 Bad Request</td>
@@ -433,12 +460,12 @@ Content-Type: application/json
 <tr>
 <td>403 Forbidden</td>
 <td>error</td>
-<td>You are not authorized to update the owner for the requested asset.</td>
+<td>You are not authorized to update the owner for the requested asset or asset type.</td>
 </tr>
 <tr>
 <td>404 Not Found</td>
 <td>error</td>
-<td>The requested asset with the specified ID was not found.</td>
+<td>The requested asset or asset type with the specified ID was not found.</td>
 </tr>
 </tbody>
 </table>
@@ -450,7 +477,7 @@ Content-Type: application/json
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/Assets/Access_Control.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/Assets/Access-Control-API.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

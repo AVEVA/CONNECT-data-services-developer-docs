@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Assets Search API </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Assets Search API ">
+    <meta name="generator" content="docfx 2.43.3.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    <meta property="docfx:rel" content="../../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../../../index.html" width="46">
+                <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="AssetsSearchAPI">
+<h1 id="assets-search-api">Assets Search API</h1>
+
+<p>The assets search API allows you to search for your assets with search criteria.</p>
+<hr>
+<h2 id="get-assets-by-search-criteria"><code>Get Assets by Search Criteria</code></h2>
+<p>Returns an array of assets that meet the search criteria.</p>
+<h3 id="searchable-properties">Searchable Properties</h3>
+<p>Assets can be searched on the following asset properties:</p>
+<ul>
+<li>Id</li>
+<li>Name</li>
+<li>Description</li>
+<li>Attributes<ul>
+<li>Name</li>
+<li>Description</li>
+<li>Value</li>
+</ul>
+</li>
+<li>AssetTypeName</li>
+<li>AssetTypeId</li>
+<li>Measurement Name</li>
+</ul>
+<p>Search criteria can be chained together using an <strong>AND</strong>. See examples below. </p>
+<h3 id="request">Request</h3>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">
+GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets?skip={skip}&amp;count={count}&amp;query={queryString} 
+</code></pre><h3 id="parameters">Parameters</h3>
+<p><code>string tenantId</code> </p>
+<p>The tenant identifier</p>
+<p><code>string namespaceId</code> </p>
+<p>The namespace identifier</p>
+<p>[Optional] <code>int skip</code> </p>
+<p>An optional parameter representing the zero-based offset of the first asset to retrieve. If not specified, a default value of 0 is used.</p>
+<p>[Optional] <code>int count</code> </p>
+<p>An optional parameter representing the maximum number of assets to retrieve. If not specified, a default value of 100 is used.</p>
+<p><code>string queryString</code>
+The asset query string.Search strings are not case-sensitive.</p>
+<h3 id="response">Response</h3>
+<p>The response includes a status code and an array of assets matching the search criteria.</p>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Body Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OK</td>
+<td><code>Asset[]</code></td>
+<td>An array of assets matching the search criteria. An empty array is returned if there are no matching assets.</td>
+</tr>
+<tr>
+<td>400 Bad Request</td>
+<td>error</td>
+<td>The request is not valid. See the response body for additional details.</td>
+</tr>
+<tr>
+<td>403 Forbidden</td>
+<td>error</td>
+<td>You are not authorized to view the requested asset.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-asset-queries">Example Asset Queries</h3>
+<table>
+<thead>
+<tr>
+<th>Query String</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id:Id1</td>
+<td>Returns the asset with ID equal to <strong>Id1</strong>.</td>
+</tr>
+<tr>
+<td>Id:Id*</td>
+<td>Returns all assets with ID matching <strong>id</strong>* wildcard. [QUESTION: Is search case-sensitive?]</td>
+</tr>
+<tr>
+<td>Name:Name1</td>
+<td>Returns all asset with a friendly name equal to <strong>Name1</strong>. [QUESTION: What is a friendly name?]</td>
+</tr>
+<tr>
+<td>Id:Id AND Name:Name1</td>
+<td>Returns all assets with ID matching the <strong>id</strong>* wildcard and with a friendly name equal to <strong>Name1</strong>.</td>
+</tr>
+<tr>
+<td>AssetTypeName:AssetType Heater</td>
+<td>Returns all assets with an asset type name that is equal to <strong>AssetTypeHeater</strong>.</td>
+</tr>
+<tr>
+<td>Description:floor1*</td>
+<td>Returns all assets with a description that starts with <strong>floor1</strong>.</td>
+</tr>
+<tr>
+<td>floor1*</td>
+<td>Returns all assets with a description that starts with <strong>floor1</strong>.</td>
+</tr>
+<tr>
+<td>Attributes/Name:Building*</td>
+<td>Returns all assets with at least one attribute description that contains the string <strong>Building</strong>.</td>
+</tr>
+<tr>
+<td>Attributes/Description:heater*</td>
+<td>Returns all assets with at least one attribute description that starts with <strong>heater</strong>.</td>
+</tr>
+<tr>
+<td>Attributes/Value:123</td>
+<td>Returns all assets with at least one attribute that equals <strong>123</strong>.</td>
+</tr>
+<tr>
+<td>Id:X* AND Attributes/Name:B*</td>
+<td>Returns all assets with ID starting with <strong>X</strong> and containing at least one attribute with a name that starts with a <strong>B</strong>.</td>
+</tr>
+<tr>
+<td>AssetTypeId:HeaterTypeId</td>
+<td>Returns all assets with AssetTypeId matching HeaterTypeId</td>
+</tr>
+<tr>
+<td>AssetTypeId:HeaterTypeName</td>
+<td>Returns all assets whose Name field of the AssetType matches HeaterTypeName</td>
+</tr>
+<tr>
+<td>Measurements/Name:WindMeasure</td>
+<td>Returns all assets with the measurement name <strong>WindMeasure</strong>.</td>
+</tr>
+</tbody>
+</table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/Assets/Asset-Search-API.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+            <span id='copyright-text'>© 2020 - OSIsoft, LLC.<span>
+        </span></span></div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

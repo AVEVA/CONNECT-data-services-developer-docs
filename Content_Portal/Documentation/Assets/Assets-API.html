@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../../../styles/docfx.css">
     <link rel="stylesheet" href="../../../styles/main.css">
     <meta property="docfx:navrel" content="../../../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
     
     <meta property="docfx:rel" content="../../../">
     
@@ -75,15 +75,15 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="">
+            <article class="content wrap" id="_content" data-uid="AssetsAPI">
 <h1 id="assets-api">Assets API</h1>
 
 <p>The Assets API allows you to create, read, update, and delete assets. 
-See Access Control API, Asset Centric API, and Assets Search API for additional API methods.
-[QUESTION: is &quot;methods&quot; the correct term? I&#39;ll add links to the topics later.]</p>
+See Access Control API, Asset Centric API, and Assets Search API for additional API methods.</p>
+<!--- QUESTION: is "methods" the correct term? I'll add links to the topics later. --->
 <hr>
 <h2 id="get-asset-by-id"><code>Get Asset by Id</code></h2>
-<p>Returns the specified asset</p>
+<p>Returns the specified asset.</p>
 <h3 id="request">Request</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code>GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets/<wbr>{assetId}  
 </code></pre><h3 id="parameters">Parameters</h3>
@@ -155,7 +155,7 @@ Content-Type: application/json
 }
 </code></pre><hr>
 <h2 id="get-assets"><code>Get Assets</code></h2>
-<p>Returns an array of assets </p>
+<p>Returns an array of assets. </p>
 <h3 id="request-1">Request</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code>
 GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets?skip={skip}&amp;count={count} 
@@ -164,13 +164,12 @@ GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{names
 <p>The tenant identifier</p>
 <p><code>string namespaceId</code> </p>
 <p>The namespace identifier</p>
-<p><code>[optional] int skip</code> </p>
-<p>An optional parameter representing the zero-based offset of the first retrieved asset. If not specified, a default value of 0 is used.</p>
-<p><code>[optional] int count</code> </p>
-<p>An optional parameter representing the maximum number of retrieved assets. If not specified, a default value of 100 is used. </p>
+<p>[optional] <code>int skip</code> </p>
+<p>An optional parameter representing the zero-based offset of the first asset to retrieve. If not specified, a default value of 0 is used.</p>
+<p>[optional] <code>int count</code> </p>
+<p>An optional parameter representing the maximum number of assets to retrieve. If not specified, a default value of 100 is used. </p>
 <h3 id="response-1">Response</h3>
-<p>Add API method response.  Enter a description and a type, mention body as well. Use a table to present responses.
-Code example can follow. </p>
+<p>The response includes a status code and a body. </p>
 <table>
 <thead>
 <tr>
@@ -216,10 +215,10 @@ POST api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{name
 <p><code>string assetID</code></p>
 <p>The asset identifier</p>
 <h4 id="request-body">Request body</h4>
-<p>An <code>asset</code> object.</p>
+<p>An <code>asset</code> object</p>
 <h4 id="example-request-body">Example request body</h4>
-<p>NOTE: To create an asset with a specific ID, use the API route with id. If this is used, you must specify a matching ID field for the asset object in the JSON object below. [Can you explain this?]
-[QUESTION: Can you creat an asset without specifying an ID? Why would you want to specify an ID?] </p>
+<p>NOTE: To create an asset with a specific ID, use the API route with ID. If this is used, you must specify a matching ID field for the asset object in the JSON object below. </p>
+<!--- QUESTION: Can you create an asset without specifying an ID? Why would you want to specify an ID? --->
 <pre><code class="lang-json">{
     &quot;Name&quot;: &quot;HeaterOnFirstFloor&quot;,
     &quot;Description&quot;: &quot;This is Asset which represents a heater on the first floor.&quot;,
@@ -265,28 +264,28 @@ POST api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{name
 <tr>
 <td>200 OK</td>
 <td><code>Asset</code></td>
-<td>An array of assets as persisted, including values for optional parameters that were omitted in the request.</td>
+<td>The asset as persisted, including values for optional parameters that were omitted in the request.</td>
 </tr>
 <tr>
 <td>400 Bad Request</td>
 <td>error</td>
-<td>The request is not valid. The response will include which asset failed validation checks. See the response body for additional details.</td>
+<td>The request is not valid. See the response body for additional details.</td>
 </tr>
 <tr>
 <td>403 Forbidden</td>
 <td>error</td>
-<td>The user is not authorized to create assets.</td>
+<td>You are not authorized to create assets.</td>
 </tr>
 <tr>
 <td>409 Conflict</td>
 <td>error</td>
-<td>The asset update (?) or create has a conflict. See the response body for additional details.</td>
+<td>The asset create has a conflict. See the response body for additional details.</td>
 </tr>
 </tbody>
 </table>
 <hr>
 <h2 id="create-assets-bulk-create"><code>Create Assets (Bulk create)</code></h2>
-<p>Create multiple assets.  </p>
+<p>Create multiple assets in a single call.</p>
 <h3 id="request-3">Request</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">POST api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets   
 </code></pre><h3 id="parameters-3">Parameters</h3>
@@ -295,7 +294,7 @@ POST api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{name
 <p><code>string namespaceId</code> </p>
 <p>The namespace identifier</p>
 <h4 id="request-body-1">Request body</h4>
-<p>An array of <code>asset</code> objects.</p>
+<p>An array of <code>asset</code> objects</p>
 <h3 id="response-3">Response</h3>
 <p>The response includes a status code and a body. </p>
 <table>
@@ -320,19 +319,19 @@ POST api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{name
 <tr>
 <td>403 Forbidden</td>
 <td>error</td>
-<td>The user is not authorized to create assets.</td>
+<td>You are not authorized to create assets.</td>
 </tr>
 <tr>
 <td>409 Conflict</td>
 <td>error</td>
-<td>The asset update (?) or create has a conflict. See the response body for additional details.</td>
+<td>The asset create has a conflict. See the response body for additional details.</td>
 </tr>
 </tbody>
 </table>
 <hr>
 <h2 id="create-or-update-asset"><code>Create or Update Asset</code></h2>
-<p>Create or update an asset with a specified ID. 
-[QUESTION: How is this different from Create Asset]</p>
+<p>Create or update an asset with a specified ID. </p>
+<!--- QUESTION: How is this different from Create Asset --->
 <h3 id="request-4">Request</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">PUT api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets/<wbr>{assetId} 
 </code></pre><h3 id="parameters-4">Parameters</h3>
@@ -343,7 +342,7 @@ POST api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{name
 <p><code>string assetID</code></p>
 <p>The asset identifier</p>
 <h4 id="request-body-2">Request body</h4>
-<p>The newly created (?) or updated <code>asset</code> object.</p>
+<p>The newly created or updated <code>asset</code> object.</p>
 <h3 id="response-4">Response</h3>
 <p>The response includes a status code and body. </p>
 <table>
@@ -368,7 +367,7 @@ POST api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{name
 <tr>
 <td>403 Forbidden</td>
 <td>error</td>
-<td>The user is not authorized to create assets.</td>
+<td>You are not authorized to update assets.</td>
 </tr>
 <tr>
 <td>404 Not Found</td>
@@ -378,7 +377,7 @@ POST api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{name
 <tr>
 <td>409 Conflict</td>
 <td>error</td>
-<td>The asset update or create (?) has a conflict. See the response body for additional details.</td>
+<td>The asset update or create has a conflict. See the response body for additional details.</td>
 </tr>
 </tbody>
 </table>
@@ -420,7 +419,7 @@ POST api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{name
 <tr>
 <td>403 Forbidden</td>
 <td>error</td>
-<td>The user is not authorized to delete this asset.</td>
+<td>You are not authorized to delete this asset.</td>
 </tr>
 <tr>
 <td>404 Not Found</td>
@@ -437,7 +436,7 @@ POST api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{name
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/Assets/Assets_API.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/Assets/Assets-API.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

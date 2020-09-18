@@ -86,11 +86,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "Content_Portal/Documentation/Assets/Access_Control.md",
+      "source_relative_path": "Content_Portal/Documentation/Assets/Access-Control-API.md",
       "output": {
         ".html": {
-          "relative_path": "Content_Portal/Documentation/Assets/Access_Control.html",
-          "hash": "muHc9Pmfj/7NJAZaV2Ur7A=="
+          "relative_path": "Content_Portal/Documentation/Assets/Access-Control-API.html",
+          "hash": "Fu3pUj5wj7s1nl2r0CmjEg=="
         }
       },
       "is_incremental": false,
@@ -98,23 +98,71 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "Content_Portal/Documentation/Assets/Assets_API.md",
+      "source_relative_path": "Content_Portal/Documentation/Assets/Asset-Centric-Data-API.md",
       "output": {
         ".html": {
-          "relative_path": "Content_Portal/Documentation/Assets/Assets_API.html",
-          "hash": "g45OgJvULq2URTJCtOl8aw=="
+          "relative_path": "Content_Portal/Documentation/Assets/Asset-Centric-Data-API.html",
+          "hash": "am3dLGqCqYiApc502J1xDg=="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "type": "Toc",
-      "source_relative_path": "Content_Portal/Documentation/Assets/toc.yml",
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Assets/Asset-Measurements.md",
       "output": {
         ".html": {
-          "relative_path": "Content_Portal/Documentation/Assets/toc.html",
-          "hash": "fClXbTf5UU/sF3bcRMyWTg=="
+          "relative_path": "Content_Portal/Documentation/Assets/Asset-Measurements.html",
+          "hash": "CMO7eXJBZo8+WlA0ukRF2Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Assets/Asset-Search-API.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Assets/Asset-Search-API.html",
+          "hash": "QwI98y9mDg31DKNPffZ/+A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Assets/Asset-Type.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Assets/Asset-Type.html",
+          "hash": "3A/5SXgmN2379gAE9V8Lbg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Assets/Assets-API.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Assets/Assets-API.html",
+          "hash": "ETwN5at122McJJp09Eu0Eg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Assets/Assets.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Assets/Assets.html",
+          "hash": "bGq8yTjrgaGWHsH8ihwF1g=="
         }
       },
       "is_incremental": false,
@@ -1456,7 +1504,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/toc.html",
-          "hash": "Fev+ttBIYr9+GPo+x0x8Ww=="
+          "hash": "iOGFJ4LkSsExNpgmtyR/KA=="
         }
       },
       "is_incremental": false,
@@ -1508,7 +1556,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 94,
+          "total_file_count": 99,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

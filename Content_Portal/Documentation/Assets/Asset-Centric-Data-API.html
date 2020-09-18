@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Asset-Centric Data API </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Asset-Centric Data API ">
+    <meta name="generator" content="docfx 2.43.3.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    <meta property="docfx:rel" content="../../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../../../index.html" width="46">
+                <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="AssetCentricDataAPI">
+<h1 id="asset-centric-data-api">Asset-Centric Data API</h1>
+
+<p>The Asset-Centric Data API provides a quick way to take the dynamic data stored in SDS streams and store it as references within a given asset.</p>
+<h3 id="example-asset">Example Asset</h3>
+<p>The following asset is used in all of the sample output in this topic.</p>
+<pre><code>{
+    &quot;Id&quot;: &quot;IDsample&quot;,
+    &quot;Name&quot;: &quot;SampleForDemo&quot;,
+    &quot;Description&quot;: &quot;This is a demo asset.&quot;,
+    &quot;Attributes&quot;: [
+        {
+            &quot;Name&quot;: &quot;RoomLocation&quot;,
+            &quot;Description&quot;: &quot;This is what room number the asset is located.&quot;,
+            &quot;SdsTypeCode&quot;: 14,
+            &quot;Value&quot;: 1.0
+        }
+    ],
+    &quot;References&quot;: [
+            {
+            &quot;Id&quot;: &quot;IDsample&quot;,
+            &quot;Name&quot;: &quot;SampleForDemo&quot;,
+            &quot;Description&quot;: &quot;This is a demo asset.&quot;,
+            &quot;Metadata&quot;: [
+            {
+            &quot;Name&quot;: &quot;RoomLocation&quot;,
+            &quot;Description&quot;: &quot;This is what room number the asset is located.&quot;,
+            &quot;SdsTypeCode&quot;: 14,
+            &quot;Value&quot;: 1.0
+            }
+            ],
+            &quot;StreamReferences&quot;: [
+            {
+            {
+            &quot;Id&quot;: &quot;StreamRefId&quot;,
+            &quot;Description&quot;: &quot;This is the sample data from the room.&quot;,
+            &quot;StreamId&quot;: &quot;PI_buildingMachine_1112&quot;
+            }
+            }
+            ]
+            }
+            &quot;Value&quot;: {
+                &quot;StreamId&quot;: &quot;PI_buildingMachine_1112&quot;,
+                &quot;TypeId&quot;: &quot;PI-Float32&quot;
+            }
+        },
+        {
+            &quot;Name&quot;: &quot;SampleView&quot;,
+            &quot;Description&quot;: &quot;This is a sample view that just exposes a single stream property.&quot;,
+            &quot;ReferenceType&quot;: &quot;StreamViewReference&quot;,
+            &quot;Value&quot;: {
+                &quot;StreamId&quot;: &quot;PI_buildingMachine_165394&quot;,
+                &quot;StreamViewId&quot;: &quot;StreamViewSample&quot;,
+                &quot;TargetTypeId&quot;: &quot;PI-Float64&quot;
+            }
+        }
+    ]
+}
+</code></pre><hr>
+<h2 id="get-asset-last-data"><code>Get Asset Last Data</code></h2>
+<p>Returns the last stored value for all referenced SdsStream objects.</p>
+<h3 id="request">Request</h3>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">
+GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets/<wbr>{assetId}/<wbr>Data/<wbr>Last  
+</code></pre><h3 id="parameters">Parameters</h3>
+<p><code>string tenantId</code> </p>
+<p>The tenant identifier</p>
+<p><code>string namespaceId</code> </p>
+<p>The namespace identifier</p>
+<p><code>string assetId</code></p>
+<p>The asset identifier</p>
+<h3 id="response">Response</h3>
+<p>The response includes a status code and a response body.</p>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Body Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OK</td>
+<td>OK</td>
+<td>Array of last values for all references.</td>
+</tr>
+<tr>
+<td>207 Multi-Status</td>
+<td>partial success</td>
+<td>Array of last values for references. Look at child errors for those that are unsuccessful.</td>
+</tr>
+<tr>
+<td>400 Bad Request</td>
+<td>error</td>
+<td>The request is not valid. See the response body for additional details.</td>
+</tr>
+<tr>
+<td>403 Forbidden</td>
+<td>error</td>
+<td>You are not authorized to view the requested asset.</td>
+</tr>
+<tr>
+<td>404 Not Found</td>
+<td>error</td>
+<td>The specified asset is not found.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-response-body">Example response body</h4>
+<pre><code>[
+    {
+        &quot;Measurement&quot;: &quot;Temperature&quot;,
+        &quot;Result&quot;: [
+            {
+                &quot;Timestamp&quot;: &quot;2020-08-12T22:35:44Z&quot;,
+                &quot;Value&quot;: 73.165016
+            }
+        ]
+    }
+]
+        &quot;Timestamp&quot;: &quot;2019-07-25T23:38:31Z&quot;,
+        &quot;Value&quot;: 82.63277
+    },
+    &quot;SampleView&quot;: {
+        &quot;Timestamp&quot;: &quot;2020-05-22T21:07:30Z&quot;,
+        &quot;Value&quot;: 96.81087493896484
+    }
+} 
+</code></pre><hr>
+<h2 id="get-asset-sampled-data"><code>Get Asset Sampled Data</code></h2>
+<p>Returns sampled data for all referenced SdsStream objects. 
+Note: The inputs to this API matches the SdsStream Get Samples Values data call.  </p>
+<h3 id="request-1">Request</h3>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">
+GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets/<wbr>{assetId}/<wbr>Data/<wbr>Sampled?startIndex={startIndex}&amp;endIndex=(endIndex)&amp;intervals={intervals} 
+</code></pre><h3 id="parameters-1">Parameters</h3>
+<p><code>string tenantId</code> </p>
+<p>The tenant identifier </p>
+<p><code>string namespaceId</code> </p>
+<p>The namespace identifier</p>
+<p><code>string assetId</code></p>
+<p>The asset identifier</p>
+<p><code>string startIndex</code> </p>
+<p>The start index for the intervals</p>
+<p><code>string endIndex</code> </p>
+<p>The number of requested intervals </p>
+<h3 id="response-1">Response</h3>
+<p>The response includes a status code and a response body.</p>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Body Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OK</td>
+<td>OK</td>
+<td>Array of sampled values for all references.</td>
+</tr>
+<tr>
+<td>207 Multi-Status</td>
+<td>partial success</td>
+<td>Array of sampled values for  references. Look at child errors for those that are unsuccessful.</td>
+</tr>
+<tr>
+<td>400 Bad Request</td>
+<td>error</td>
+<td>The request is not valid. See the response body for additional details.</td>
+</tr>
+<tr>
+<td>403 Forbidden</td>
+<td>error</td>
+<td>You are not authorized to view the requested asset.</td>
+</tr>
+<tr>
+<td>404 Not Found</td>
+<td>error</td>
+<td>The specified asset with identifier is not found.</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">HTTP 200 OK
+Content-Type: application/json
+[
+    {
+        &quot;Measurement&quot;: &quot;StreamPressure&quot;,
+        &quot;Result&quot;: [
+            {
+                &quot;Timestamp&quot;: &quot;2019-08-20T19:15:37Z&quot;,
+                &quot;Value&quot;: 218.13373
+            },
+            {
+                &quot;Timestamp&quot;: &quot;2019-08-20T19:37:07Z&quot;,
+                &quot;Value&quot;: 201.36305
+            },
+            {
+                &quot;Timestamp&quot;: &quot;2019-08-20T22:09:07Z&quot;,
+                &quot;Value&quot;: 247.73355
+            },
+            {
+                &quot;Timestamp&quot;: &quot;2019-08-20T22:38:07Z&quot;,
+                &quot;Value&quot;: 216.15732
+            },
+            {
+                &quot;Timestamp&quot;: &quot;2019-08-20T22:38:37Z&quot;,
+                &quot;Value&quot;: 217.88617
+            },
+            {
+                &quot;Timestamp&quot;: &quot;2019-08-21T00:08:07Z&quot;,
+                &quot;Value&quot;: 185.70175
+            },
+            {
+                &quot;Timestamp&quot;: &quot;2019-08-21T03:35:07Z&quot;,
+                &quot;Value&quot;: 249.77954
+            },
+            {
+                &quot;Timestamp&quot;: &quot;2019-08-21T03:53:37Z&quot;,
+                &quot;Value&quot;: 232.56764
+            },
+            {
+                &quot;Timestamp&quot;: &quot;2019-08-21T03:54:07Z&quot;,
+                &quot;Value&quot;: 234.20694
+            },
+            {
+                &quot;Timestamp&quot;: &quot;2019-08-21T07:23:37Z&quot;,
+                &quot;Value&quot;: 249.29556
+            },
+            {
+                &quot;Timestamp&quot;: &quot;2019-08-21T08:36:37Z&quot;,
+                &quot;Value&quot;: 202.4792
+            },
+            {
+                &quot;Timestamp&quot;: &quot;2019-08-21T09:09:07Z&quot;,
+                &quot;Value&quot;: 205.28456
+            },
+            {
+                &quot;Timestamp&quot;: &quot;2019-08-21T09:09:37Z&quot;,
+                &quot;Value&quot;: 203.7544
+            },
+            {
+                &quot;Timestamp&quot;: &quot;2019-08-21T11:02:07Z&quot;,
+                &quot;Value&quot;: 178.63676
+            },
+            {
+                &quot;Timestamp&quot;: &quot;2019-08-21T14:03:37Z&quot;,
+                &quot;Value&quot;: 228.6509
+            },
+            {
+                &quot;Timestamp&quot;: &quot;2019-08-21T14:25:07Z&quot;,
+                &quot;Value&quot;: 209.00409
+            },
+            {
+                &quot;Timestamp&quot;: &quot;2019-08-21T14:25:37Z&quot;,
+                &quot;Value&quot;: 211.80522
+            },
+            {
+                &quot;Timestamp&quot;: &quot;2019-08-21T14:53:37Z&quot;,
+                &quot;Value&quot;: 235.39305
+            },
+            {
+                &quot;Timestamp&quot;: &quot;2019-08-21T18:55:07Z&quot;,
+                &quot;Value&quot;: 147.43044
+            },
+            {
+                &quot;Timestamp&quot;: &quot;2019-08-21T19:40:37Z&quot;,
+                &quot;Value&quot;: 169.46703
+            }
+        ]
+    }
+] 
+</code></pre><hr>
+<h2 id="get-asset-summary-data"><code>Get Asset Summary Data</code></h2>
+<p>Returns summary data for all referenced SdsStream objects. 
+Note: The inputs to this API matches the SdsStream Get Summaries data call.</p>
+<h3 id="request-2">Request</h3>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">
+GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets/<wbr>{assetId}/<wbr>Data/<wbr>Summaries?startIndex={startIndex}&amp;endIndex=(endIndex)&amp;count={count}
+</code></pre><h3 id="parameters-2">Parameters</h3>
+<p><code>string tenantId</code> </p>
+<p>The tenant identifier </p>
+<p><code>string namespaceId</code> </p>
+<p>The namespace identifier</p>
+<p><code>string assetId</code></p>
+<p>The asset identifier</p>
+<p><code>string startIndex</code> </p>
+<p>The start index for the intervals</p>
+<p><code>string endIndex</code> </p>
+<p>The end index for the intervals</p>
+<p><code>int count</code> </p>
+<p>The number of requested intervals</p>
+<h3 id="response-2">Response</h3>
+<p>The response includes a status code and a response body.</p>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Body Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OK</td>
+<td>OK</td>
+<td>Array of summary values for all references.</td>
+</tr>
+<tr>
+<td>207 Multi-Status</td>
+<td>partial success</td>
+<td>Array of summary values for  references. Look at child errors for those that are unsuccessful.</td>
+</tr>
+<tr>
+<td>400 Bad Request</td>
+<td>error</td>
+<td>The request is not valid. See the response body for additional details.</td>
+</tr>
+<tr>
+<td>403 Forbidden</td>
+<td>error</td>
+<td>You are not authorized to view the requested asset.</td>
+</tr>
+<tr>
+<td>404 Not Found</td>
+<td>error</td>
+<td>The specified asset with identifier is not found.</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">HTTP 200 OK
+Content-Type: application/json
+[
+    {
+        &quot;Measurement&quot;: &quot;measurementPressure&quot;,
+        &quot;Result&quot;: [
+            {
+                &quot;Start&quot;: {
+                    &quot;Timestamp&quot;: &quot;2020-01-01T12:00:00Z&quot;,
+                    &quot;Value&quot;: 139.56558
+                },
+                &quot;End&quot;: {
+                    &quot;Timestamp&quot;: &quot;2021-01-01T12:00:00Z&quot;
+                },
+                &quot;Summaries&quot;: {
+                    &quot;Count&quot;: {
+                        &quot;Timestamp&quot;: 211615,
+                        &quot;Value&quot;: 211613
+                    },
+                    &quot;Minimum&quot;: {
+                        &quot;Value&quot;: 47.00091552734375
+                    },
+                    &quot;Maximum&quot;: {
+                        &quot;Value&quot;: 249.99899291992188
+                    },
+                    &quot;Range&quot;: {
+                        &quot;Value&quot;: 202.99807739257812
+                    },
+                    &quot;Mean&quot;: {
+                        &quot;Value&quot;: 136.30853664128998
+                    },
+                    &quot;StandardDeviation&quot;: {
+                        &quot;Value&quot;: 57.04227640108317
+                    },
+                    &quot;PopulationStandardDeviation&quot;: {
+                        &quot;Value&quot;: 57.04214162121664
+                    },
+                    &quot;Total&quot;: {
+                        &quot;Value&quot;: 28844658.36427307
+                    },
+                    &quot;Skewness&quot;: {
+                        &quot;Value&quot;: 0.3037505109882242
+                    },
+                    &quot;Kurtosis&quot;: {
+                        &quot;Value&quot;: -2.7748546694726244
+                    },
+                    &quot;WeightedMean&quot;: {
+                        &quot;Value&quot;: 112.71120677110477
+                    },
+                    &quot;WeightedStandardDeviation&quot;: {
+                        &quot;Value&quot;: 55.216968157263885
+                    },
+                    &quot;WeightedPopulationStandardDeviation&quot;: {
+                        &quot;Value&quot;: 55.21683769086423
+                    }
+                }
+            }
+        ]
+    }
+]
+</code></pre></article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/Assets/Asset-Centric-Data-API.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+            <span id='copyright-text'>© 2020 - OSIsoft, LLC.<span>
+        </span></span></div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

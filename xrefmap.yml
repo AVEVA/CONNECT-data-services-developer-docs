@@ -34,6 +34,27 @@ references:
 - uid: AddIdentifyingField
   name: Add identifying field
   href: Content_Portal/Documentation/DataViews/DefineaDataView/Add_Identifying_Field.html
+- uid: AssetCentricDataAPI
+  name: Asset-Centric Data API
+  href: Content_Portal/Documentation/Assets/Asset-Centric-Data-API.html
+- uid: AssetMeasurementsAndMeasurementsMapping
+  name: Asset Measurements and MeasurementsMapping
+  href: Content_Portal/Documentation/Assets/Asset-Measurements.html
+- uid: AssetOrAssetTypeAccessControlAPI
+  name: Asset and AssetType Access Control API
+  href: Content_Portal/Documentation/Assets/Access-Control-API.html
+- uid: Assets
+  name: Assets
+  href: Content_Portal/Documentation/Assets/Assets.html
+- uid: AssetsAPI
+  name: Assets API
+  href: Content_Portal/Documentation/Assets/Assets-API.html
+- uid: AssetsSearchAPI
+  name: Assets Search API
+  href: Content_Portal/Documentation/Assets/Asset-Search-API.html
+- uid: AssetTypeAPI
+  name: AssetType API
+  href: Content_Portal/Documentation/Assets/Asset-Type.html
 - uid: ConceptsOverview
   name: OSIsoft Cloud Services
   href: Content_Portal/Concepts/Concepts_Overview.html

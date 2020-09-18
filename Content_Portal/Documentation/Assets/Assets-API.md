@@ -1,15 +1,17 @@
-
+---
+uid: AssetsAPI
+---
 
 # Assets API
 
 The Assets API allows you to create, read, update, and delete assets. 
 See Access Control API, Asset Centric API, and Assets Search API for additional API methods.
-[QUESTION: is "methods" the correct term? I'll add links to the topics later.]
+<!--- QUESTION: is "methods" the correct term? I'll add links to the topics later. --->
 
 ***
 
 ## `Get Asset by Id` 
-Returns the specified asset
+Returns the specified asset.
 
 ### Request 
 ``` 
@@ -73,7 +75,7 @@ Content-Type: application/json
 ***
 
 ## `Get Assets` 
-Returns an array of assets 
+Returns an array of assets. 
 
 ### Request 
 ```
@@ -91,17 +93,16 @@ The tenant identifier
 
 The namespace identifier
 
-`[optional] int skip` 
+[optional] `int skip` 
 
-An optional parameter representing the zero-based offset of the first retrieved asset. If not specified, a default value of 0 is used.
+An optional parameter representing the zero-based offset of the first asset to retrieve. If not specified, a default value of 0 is used.
 
-`[optional] int count` 
+[optional] `int count` 
 
-An optional parameter representing the maximum number of retrieved assets. If not specified, a default value of 100 is used. 
+An optional parameter representing the maximum number of assets to retrieve. If not specified, a default value of 100 is used. 
 
 ### Response 
-Add API method response.  Enter a description and a type, mention body as well. Use a table to present responses.
-Code example can follow. 
+The response includes a status code and a body. 
 
 | Status Code | Body Type | Description |
 |--|--|--|
@@ -137,11 +138,12 @@ The asset identifier
 
 
 #### Request body 
-An `asset` object.
+An `asset` object
 
 #### Example request body 
-NOTE: To create an asset with a specific ID, use the API route with id. If this is used, you must specify a matching ID field for the asset object in the JSON object below. [Can you explain this?]
-[QUESTION: Can you creat an asset without specifying an ID? Why would you want to specify an ID?] 
+NOTE: To create an asset with a specific ID, use the API route with ID. If this is used, you must specify a matching ID field for the asset object in the JSON object below. 
+<!--- QUESTION: Can you create an asset without specifying an ID? Why would you want to specify an ID? --->
+
 ```json 
 {
     "Name": "HeaterOnFirstFloor",
@@ -181,16 +183,16 @@ The response includes a status code and a body.
 
 | Status Code               | Body Type | Description                                     |
 | ------------------------- | --------- | ----------------------------------------------- |
-| 200 OK                    | `Asset`  | An array of assets as persisted, including values for optional parameters that were omitted in the request.                               |
-| 400 Bad Request             | error     | The request is not valid. The response will include which asset failed validation checks. See the response body for additional details.      |
-| 403 Forbidden            | error     | The user is not authorized to create assets.           |
-| 409 Conflict | error     | The asset update (?) or create has a conflict. See the response body for additional details. |
+| 200 OK                    | `Asset`  | The asset as persisted, including values for optional parameters that were omitted in the request.                           |
+| 400 Bad Request             | error     | The request is not valid. See the response body for additional details.      |
+| 403 Forbidden            | error     | You are not authorized to create assets.           |
+| 409 Conflict | error     | The asset create has a conflict. See the response body for additional details. |
 
 ***
 
 ## `Create Assets (Bulk create)` 
 
-Create multiple assets.  
+Create multiple assets in a single call.
 
 ### Request 
 
@@ -211,7 +213,7 @@ The namespace identifier
 
 #### Request body 
 
-An array of `asset` objects.
+An array of `asset` objects
 
 ### Response 
 
@@ -221,15 +223,15 @@ The response includes a status code and a body.
 | ------------------------- | --------- | ----------------------------------------------- |
 | 200 OK                    | `Asset`  | An array of assets as persisted, including values for optional parameters that were omitted in the request.                               |
 | 400 Bad Request             | error     | The request is not valid. The response will include which asset failed validation checks. See the response body for additional details.      |
-| 403 Forbidden            | error     | The user is not authorized to create assets.           |
-| 409 Conflict | error     | The asset update (?) or create has a conflict. See the response body for additional details. |
+| 403 Forbidden            | error     | You are not authorized to create assets.           |
+| 409 Conflict | error     | The asset create has a conflict. See the response body for additional details.  |
 
 ***
 
 ## `Create or Update Asset` 
 
 Create or update an asset with a specified ID. 
-[QUESTION: How is this different from Create Asset]
+<!--- QUESTION: How is this different from Create Asset --->
 
 ### Request 
 
@@ -254,7 +256,7 @@ The asset identifier
 
 #### Request body 
 
-The newly created (?) or updated `asset` object.
+The newly created or updated `asset` object.
 
 ### Response 
 
@@ -264,9 +266,9 @@ The response includes a status code and body.
 | ------------------------- | --------- | ----------------------------------------------- |
 | 200 OK                    | `Asset`  | The newly created or updated asset as persisted, including values for optional parameters that were omitted in the request.                               |
 | 400 Bad Request             | error     | The request is not valid. The response will include which asset failed validation checks. See the response body for additional details.      |
-| 403 Forbidden            | error     | The user is not authorized to create assets.           |
+| 403 Forbidden            | error     | You are not authorized to update assets. |
 | 404 Not Found            | error     | The asset, with the specified identifier, was not found.            |
-| 409 Conflict | error     | The asset update or create (?) has a conflict. See the response body for additional details. |
+| 409 Conflict | error     | The asset update or create has a conflict. See the response body for additional details. |
 
 ***
 
@@ -307,5 +309,5 @@ The response includes a status code and a body.
 | ------------------------- | --------- | ----------------------------------------------- |
 | 204 No Content                    | none  | The asset with the specified ID is deleted.                              |
 | 400 Bad Request             | error     | The request is not valid. The response will include which asset failed validation checks. See the response body for additional details.       |
-| 403 Forbidden             | error     | The user is not authorized to delete this asset.       |
+| 403 Forbidden             | error     | You are not authorized to delete this asset.       |
 | 404 Not Found             | error     | The asset with the specified ID could not be found. 

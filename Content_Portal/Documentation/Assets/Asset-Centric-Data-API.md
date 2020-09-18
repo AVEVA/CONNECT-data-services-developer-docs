@@ -168,64 +168,93 @@ The response includes a status code and a response body.
 ```json 
 HTTP 200 OK
 Content-Type: application/json
-{
-    "SampleStream": [
-        {
-            "Timestamp": "2019-07-15T00:00:00Z",
-            "Value": 75.000336
-        },
-        {
-            "Timestamp": "2019-07-15T02:15:56Z",
-            "Value": 19.240202
-        },
-        {
-            "Timestamp": "2019-07-15T02:15:57Z",
-            "Value": 19.234468
-        },
-        {
-            "Timestamp": "2019-07-15T11:54:15Z",
-            "Value": 77.140495
-        },
-        {
-            "Timestamp": "2019-07-15T14:18:48Z",
-            "Value": 18.263603
-        },
-        {
-            "Timestamp": "2019-07-15T14:18:49Z",
-            "Value": 18.257984
-        },
-        {
-            "Timestamp": "2019-07-16T12:00:01Z",
-            "Value": 74.9938
-        }
-    ],
-    "SampleView": [
-        {
-            "Timestamp": "2018-10-03T00:00:00Z",
-            "Value": 24.0
-        },
-        {
-            "Timestamp": "2018-10-03T01:00:00Z",
-            "Value": 25.0
-        },
-        {
-            "Timestamp": "2018-10-03T02:00:00Z",
-            "Value": 23.0
-        },
-        {
-            "Timestamp": "2018-10-03T03:00:00Z",
-            "Value": 26.0
-        },
-        {
-            "Timestamp": "2018-10-03T04:00:00Z",
-            "Value": 22.0
-        },
-        {
-            "Timestamp": "2019-08-20T19:15:37Z",
-            "Value": 229.283447265625
-        }
-    ]
-}
+[
+    {
+        "Measurement": "StreamPressure",
+        "Result": [
+            {
+                "Timestamp": "2019-08-20T19:15:37Z",
+                "Value": 218.13373
+            },
+            {
+                "Timestamp": "2019-08-20T19:37:07Z",
+                "Value": 201.36305
+            },
+            {
+                "Timestamp": "2019-08-20T22:09:07Z",
+                "Value": 247.73355
+            },
+            {
+                "Timestamp": "2019-08-20T22:38:07Z",
+                "Value": 216.15732
+            },
+            {
+                "Timestamp": "2019-08-20T22:38:37Z",
+                "Value": 217.88617
+            },
+            {
+                "Timestamp": "2019-08-21T00:08:07Z",
+                "Value": 185.70175
+            },
+            {
+                "Timestamp": "2019-08-21T03:35:07Z",
+                "Value": 249.77954
+            },
+            {
+                "Timestamp": "2019-08-21T03:53:37Z",
+                "Value": 232.56764
+            },
+            {
+                "Timestamp": "2019-08-21T03:54:07Z",
+                "Value": 234.20694
+            },
+            {
+                "Timestamp": "2019-08-21T07:23:37Z",
+                "Value": 249.29556
+            },
+            {
+                "Timestamp": "2019-08-21T08:36:37Z",
+                "Value": 202.4792
+            },
+            {
+                "Timestamp": "2019-08-21T09:09:07Z",
+                "Value": 205.28456
+            },
+            {
+                "Timestamp": "2019-08-21T09:09:37Z",
+                "Value": 203.7544
+            },
+            {
+                "Timestamp": "2019-08-21T11:02:07Z",
+                "Value": 178.63676
+            },
+            {
+                "Timestamp": "2019-08-21T14:03:37Z",
+                "Value": 228.6509
+            },
+            {
+                "Timestamp": "2019-08-21T14:25:07Z",
+                "Value": 209.00409
+            },
+            {
+                "Timestamp": "2019-08-21T14:25:37Z",
+                "Value": 211.80522
+            },
+            {
+                "Timestamp": "2019-08-21T14:53:37Z",
+                "Value": 235.39305
+            },
+            {
+                "Timestamp": "2019-08-21T18:55:07Z",
+                "Value": 147.43044
+            },
+            {
+                "Timestamp": "2019-08-21T19:40:37Z",
+                "Value": 169.46703
+            }
+        ]
+    }
+] 
 ```
 
 ***
@@ -281,140 +310,62 @@ The response includes a status code and a response body.
 ```json 
 HTTP 200 OK
 Content-Type: application/json
-{
-    "SampleStream": [
-        {
-            "Start": {
-                "Timestamp": "2019-07-15T00:00:00Z",
-                "Value": 75.000336
-            },
-            "End": {
-                "Timestamp": "2019-07-15T12:00:00Z",
-                "Value": 75.0001
-            },
-            "Summaries": {
-                "Count": {
-                    "Timestamp": 43201,
-                    "Value": 43201,
-                    "IsQuestionable": 43201
+[
+    {
+        "Measurement": "measurementPressure",
+        "Result": [
+            {
+                "Start": {
+                    "Timestamp": "2020-01-01T12:00:00Z",
+                    "Value": 139.56558
                 },
-                "Minimum": {
-                    "Value": 2.3134134607971646E-09,
-                    "IsQuestionable": 0.0
+                "End": {
+                    "Timestamp": "2021-01-01T12:00:00Z"
                 },
-                "Maximum": {
-                    "Value": 100.0,
-                    "IsQuestionable": 0.0
-                },
-                "Range": {
-                    "Value": 99.99999999768659,
-                    "IsQuestionable": 0.0
-                },
-                "Total": {
-                    "Value": 2160002.348559387,
-                    "IsQuestionable": 0.0
-                },
-                "Mean": {
-                    "Value": 50.000054364801215,
-                    "IsQuestionable": 0.0
-                },
-                "StandardDeviation": {
-                    "Value": 35.35575171468018,
-                    "IsQuestionable": 0.0
-                },
-                "PopulationStandardDeviation": {
-                    "Value": 35.35534250222275,
-                    "IsQuestionable": 0.0
-                },
-                "WeightedMean": {
-                    "Value": 50.000054364801215,
-                    "IsQuestionable": 0.0
-                },
-                "WeightedStandardDeviation": {
-                    "Value": 35.355751714679954,
-                    "IsQuestionable": 0.0
-                },
-                "WeightedPopulationStandardDeviation": {
-                    "Value": 35.35534250222253,
-                    "IsQuestionable": 0.0
-                },
-                "Skewness": {
-                    "Value": -4.870436631192324E-06,
-                    "IsQuestionable": "NaN"
-                },
-                "Kurtosis": {
-                    "Value": -1.500001916843267,
-                    "IsQuestionable": "NaN"
+                "Summaries": {
+                    "Count": {
+                        "Timestamp": 211615,
+                        "Value": 211613
+                    },
+                    "Minimum": {
+                        "Value": 47.00091552734375
+                    },
+                    "Maximum": {
+                        "Value": 249.99899291992188
+                    },
+                    "Range": {
+                        "Value": 202.99807739257812
+                    },
+                    "Mean": {
+                        "Value": 136.30853664128998
+                    },
+                    "StandardDeviation": {
+                        "Value": 57.04227640108317
+                    },
+                    "PopulationStandardDeviation": {
+                        "Value": 57.04214162121664
+                    },
+                    "Total": {
+                        "Value": 28844658.36427307
+                    },
+                    "Skewness": {
+                        "Value": 0.3037505109882242
+                    },
+                    "Kurtosis": {
+                        "Value": -2.7748546694726244
+                    },
+                    "WeightedMean": {
+                        "Value": 112.71120677110477
+                    },
+                    "WeightedStandardDeviation": {
+                        "Value": 55.216968157263885
+                    },
+                    "WeightedPopulationStandardDeviation": {
+                        "Value": 55.21683769086423
+                    }
                 }
             }
-        }
-    ],
-    "SampleView": [
-        {
-            "Start": {
-                "Timestamp": "2018-10-03T00:00:00Z",
-                "Value": 24.0
-            },
-            "End": {
-                "Timestamp": "2019-07-15T12:00:00Z",
-                "Value": 205.8877037170768
-            },
-            "Summaries": {
-                "Count": {
-                    "Timestamp": 5,
-                    "Value": 5,
-                    "IsQuestionable": 5
-                },
-                "Minimum": {
-                    "Value": 22.0,
-                    "IsQuestionable": 0.0
-                },
-                "Maximum": {
-                    "Value": 26.0,
-                    "IsQuestionable": 0.0
-                },
-                "Range": {
-                    "Value": 4.0,
-                    "IsQuestionable": 0.0
-                },
-                "Total": {
-                    "Value": 120.0,
-                    "IsQuestionable": 0.0
-                },
-                "Mean": {
-                    "Value": 24.0,
-                    "IsQuestionable": 0.0
-                },
-                "StandardDeviation": {
-                    "Value": 1.5811388300841898,
-                    "IsQuestionable": 0.0
-                },
-                "PopulationStandardDeviation": {
-                    "Value": 1.4142135623730951,
-                    "IsQuestionable": 0.0
-                },
-                "WeightedMean": {
-                    "Value": 22.001459427904262,
-                    "IsQuestionable": 0.0
-                },
-                "WeightedStandardDeviation": {
-                    "Value": 0.07396074789184506,
-                    "IsQuestionable": 0.0
-                },
-                "WeightedPopulationStandardDeviation": {
-                    "Value": 0.06615250398115592,
-                    "IsQuestionable": 0.0
-                },
-                "Skewness": {
-                    "Value": 0.0,
-                    "IsQuestionable": "NaN"
-                },
-                "Kurtosis": {
-                    "Value": -1.3,
-                    "IsQuestionable": "NaN"
-                }
-            }
-        }
-    ]
-}
+        ]
+    }
+]
 ```

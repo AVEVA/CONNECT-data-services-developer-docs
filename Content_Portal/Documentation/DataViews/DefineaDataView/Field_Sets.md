@@ -146,7 +146,7 @@ There are three special parameters available for use in field labels:
 If a special parameter fails to resolve, it becomes an empty string, `""`.
 
 ### Source
-A field's [`.Source`](xref:RecommendedWorkflow#fieldsource-enumeration) indicates where the field's values will come from, if applicable. A field of source type `FieldSource.NotApplicable` cannot be used as a data field.
+A field's [`.Source`](xref:DefineaDataViewRecommendedWorkflow#fieldsource-enumeration) indicates where the field's values will come from, if applicable. A field of source type `FieldSource.NotApplicable` cannot be used as a data field.
 
 ### Keys
 In certain cases, a field may need to address data _within_ its data source, such as a particular Metadata value of a data item. This applies to the sources `Metadata`, `PropertyId`, and `PropertyName`.

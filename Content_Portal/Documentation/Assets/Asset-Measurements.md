@@ -156,5 +156,5 @@ The response includes a status code and a response body.
 | 204 OK          | no content    | On successful POST, HTTP Response 204 (no content) is returned. |
 | 400 Bad Request | error         | The request is not valid. See the response body for additional details. |
 | 403 Forbidden   | error         | You are not authorized to view the requested asset or asset type. |
-| 404 Not Found   | error         | The specified asset or asset type is not found.           |
+| 404 Not Found   | error         | The specified asset or asset type is not found.          |
 

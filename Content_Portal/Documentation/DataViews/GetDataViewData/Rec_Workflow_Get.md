@@ -2,7 +2,7 @@
 uid: GetDataViewDataRecommendedWorkflow
 ---
 
-# Recommended Workflow
+# Recommended workflow: Get data view data
 Getting data from a data view is straightforward. If you want to understand more about the source behind each data field, that information is available too. For detailed information, see the [Data API reference](xref:DataViewsDataAPI).
 
 ## Specify first page parameters

@@ -2,7 +2,7 @@
 uid: DefineaDataViewRecommendedWorkflow
 ---
 
-# Recommended workflow
+# Recommended workflow: Define a data view
 This is an introduction to the recommended workflow for defining data views. The following sections show these concepts in action.
 
 Designing and tweaking a data view is expected to be an iterative process. You are not expected to "get it right the first time," nor to be an expert at the streams available in the Sequential Data Store. Data views provide an interactive way to select, identify, and arrange the data you and your applications need.

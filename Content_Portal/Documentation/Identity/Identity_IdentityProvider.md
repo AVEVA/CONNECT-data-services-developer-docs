@@ -18,7 +18,7 @@ Scheme | string | Gets or sets the name of the cookie handler that will temporar
 UserIdClaimType | string | Gets or sets type of claim.
 ClientId | string | Gets or sets the ClientId of the identity provider.
 IsConfigured | bool | Gets or sets a value indicating whether the identity provider has been configured.
-Capabilities | json | Gets or sets a json demonstrating the capabilities of the identity provider. 
+Capabilities | object | Gets or sets the capabilities of the identity provider. 
 
 ### Serialized Model
 
@@ -672,8 +672,8 @@ AzureActiveDirectorySendConsent | bool | No | Gets or sets a value indicating wh
 AzureActiveDirectoryConsentEmail | string | Yes | Gets or sets address to email consent.            Only Azure Active Directory Admins have permission to consent to            being allowed to interact with the tenant. The email            does not have to be sent to an Admin.
 AzureActiveDirectoryConsentGivenName | string | Yes | Gets or sets preferred name to use in the consent email.
 AzureActiveDirectoryConsentSurname | string | Yes | Gets or sets preferred surname to use in the consent email.
-AzureActiveDirectoryTenant | string | Yes | Gets or sets Azure Active Directory Domain Name (e.g. mydomain.onmicrosoft.com).
-AzureActiveDirectoryConsentTypes | string | No | Gets or sets Azure Active Directory Consent Types.  If not specified Sign-In only will be requested for consent.
+AzureActiveDirectoryTenant | string | Yes | Gets or sets Azure Active Directory Domain Name (e.g., mydomain.onmicrosoft.com).
+AzureActiveDirectoryConsentTypes | string | No | Gets or sets Azure Active Directory Consent Types (e.g., SignIn or SignIn;ReadAllUsersGroups).
 
 
 
@@ -1276,7 +1276,7 @@ Internal server error.
 
 ## `Get an Identity Provider Consent from a Tenant`
 
-Get the consent state for an Identity Provider for a Tenant. This determines whether an Identity Provider consents to sharing access to its directory with the OCS tenant.
+Get the consent information for an Identity Provider for a Tenant. The ConsentState property, if returned, determines whether an Identity Provider consents to sharing access to its directory with the OCS tenant. For example, the expected ConsentState's for Azure Active Directory (AAD) include (Pending_)SignIn and (Pending_)ReadAllUsersGroups.
 
 ### Request
 
@@ -1410,7 +1410,7 @@ Internal server error.
 
 ## `Update Identity Provider Consent of a Tenant`
 
-Update the Identity Provider Consent of a Tenant. Currently only support Azure Active Directory. 
+Update the Identity Provider Consent of a Tenant. Currently only support Azure Active Directory. The consent grants User.Read.All and GroupMember.Read.all permissions to the OCS tenant.
 
 ### Request
 
@@ -1443,8 +1443,8 @@ Property | Type | Required | Description
  --- | --- | --- | ---
 Scheme | string | Yes | Gets or sets the scheme of the Identity Provider.
 AadTenantId | string | No | Gets or sets Azure Active Directory Tenant Id.
-AadDomain | string | No | Gets or sets Azure Active Directory Domain Name (e.g. mydomain.onmicrosoft.com).
-AadConsentTypes | string | Yes | Gets or sets Azure Active Directory Consent Types.
+AadDomain | string | No | Gets or sets Azure Active Directory Domain Name (e.g., mydomain.onmicrosoft.com).
+AadConsentTypes | string | Yes | Gets or sets Azure Active Directory Consent Types (e.g., SignIn or SignIn;ReadAllUsersGroups).
 ConsentEmail | string | Yes | Gets or sets address to email consent. Only Azure Active Directory Admins have permission to consent to being allowed to interact with the tenant. The email does not have to be sent to an Admin.
 ConsentFirstName | string | Yes | Gets or sets preferred name to use in the consent email.
 ConsentOverride | bool | No | Gets or sets a value indicating whether force a consent email to be sent for the specified ConsentTypes.

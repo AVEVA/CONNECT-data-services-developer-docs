@@ -18,7 +18,7 @@ Scheme | string | Gets or sets the name of the cookie handler that will temporar
 UserIdClaimType | string | Gets or sets type of claim.
 ClientId | string | Gets or sets the ClientId of the identity provider.
 IsConfigured | bool | Gets or sets a value indicating whether the identity provider has been configured.
-Capabilities | json | Gets or sets a json demonstrating the capabilities of the identity provider. 
+Capabilities | object | Gets or sets the capabilities of the identity provider. 
 
 ### Serialized Model
 

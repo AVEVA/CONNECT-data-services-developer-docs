@@ -21,12 +21,12 @@ This section presents the main concepts behind creating data views.
 
 It is assumed that you are working with streams as described in the [Stream examples](xref:DataViewsExampleScenario). The data views API uses the same authentication scheme as the Sequential Data Store.
 
-## Create a data view
+### Create a data view
 Very little information is required to create a new data view. In fact, if you request that the system generate an identifier for the new data view, no information at all is necessary. However, it is recommended to specify a meaningful `.Id`, because the identifier cannot be changed later without recreating the data view. All other properties are modifiable.
 
 This data view does not accomplish anything yet, but it's a starting point.
 
-### Action
+#### Action
 ```json
 POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
 { 
@@ -34,7 +34,7 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
 }
 ```
 
-### Expected result
+#### Expected result
 A data view with very few properties populated: `.Id`, `.Name`, `IndexField` (default: `{ "Label": "Timestamp" }`), `.IndexTypeCode` (default: `"DateTime"`), Shape (default: `DataViewShape.Standard`, which as a string is `"Standard"`).
 ```json
 HTTP 201 Created
@@ -52,15 +52,15 @@ HTTP 201 Created
 
 The `.Queries` property is empty, `[ ]`. We will address that soon. 
 
-## Retrieve the data view
+### Retrieve the data view
 To access the data view again, it is available via the `GET` verb:
 
-### Action
+#### Action
 ```text
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
 ```
 
-### Expected result
+#### Expected result
 ```json
 HTTP 200 OK
 {
@@ -75,11 +75,11 @@ HTTP 200 OK
 }
 ```
 
-## Add a query for data items
+### Add a query for data items
 
 Creating a data view begins with including some data items: today, those are SDS Streams.
 
-### Action
+#### Action
 Use the result of the previous step as the starting point. All following steps will involve modifying the data view definition, or seeing the effects of those modifications.
 
 Add an item to the array of `.Queries`: `{ "Id": "weather", "Value":"*weather*" }`
@@ -102,21 +102,21 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
 }
 ```
 
-### Expected result
+#### Expected result
 ```text
 HTTP 204 No Content
 ```
 
-## View items found by the query
+### View items found by the query
 
 Data views resolve on a per user basis, executing the queries you defined. The results are available in several “resolved” resources.
 
-### Action – Page through the data items found by the query
+#### Action – Page through the data items found by the query
 ```text
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart/Resolved/DataItems/weather
 ```
 
-### Expected result
+#### Expected result
 An array of the data items matching the query, whose index type is "DateTime" (matching the Data View’s IndexTypeCode)
 
 ```json
@@ -236,12 +236,12 @@ HTTP 200 OK
 }
 ```
 
-### Action – Page through the ineligible data items found by the query
+#### Action – Page through the ineligible data items found by the query
 ```text
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart/Resolved/IneligibleDataItems/weather
 ```
 
-### Expected result
+#### Expected result
 An array of the data items matching the query, but whose index type is not "DateTime" and thus not eligible for inclusion in the data view.
 
 With the example streams, this collection is empty.
@@ -253,14 +253,14 @@ HTTP 200 OK
 }
 ```
 
-## View fields available to include in the data view
+### View fields available to include in the data view
 
-### Action
+#### Action
 ```text
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart/Resolved/AvailableFieldSets
 ```
 
-### Expected result
+#### Expected result
 A field set with a source type of "DataItem" pointing to the query identified by "weather". Assuming some data items were retrieved, this field set shows that attributes of the streams (id, name, tags) are available, as well as the values of all metadata keys and properties.
 
 ```json
@@ -333,10 +333,10 @@ HTTP 200 OK
 }
 ```
 
-## Include some of the available fields
+### Include some of the available fields
 At this point, if you query for data, the table only contains the `IndexField` – because no fields have been included in the data view. Including fields is a deliberate action, albeit one that is intended to be easy.
 
-### Action
+#### Action
 For ease, grab all of the field sets that are available. 
 
 Set the data view’s `DataFieldSets` property as the contents of the `AvailableFieldSets` response.
@@ -420,19 +420,19 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
   "Shape": "Standard"
 }
 ```
-### Expected Result
+#### Expected Result
 ```text
 HTTP 204 No Content
 ```
 
 Now, if we return to the available field sets, all data fields are used so none are available.
 
-### Action
+#### Action
 ```text
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart/Resolved/AvailableFieldSets
 ```
 
-### Expected result
+#### Expected result
 No available data fields.
 
 ```json
@@ -443,13 +443,13 @@ No available data fields.
 ```
 And if we request data, the table contains multiple fields in addition to the `IndexField`.
 
-### Action
+#### Action
 ```text
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart/Data/Interpolated
 ?startIndex={your_val_here}&endIndex={your_val_here}&interval={your_val_here}
 ```
 
-### Expected result
+#### Expected result
 An array of json values similar to:
 ```json
 [
@@ -487,14 +487,14 @@ There was ambiguity in the field mapping identifiers, so the data views engine s
 
 The suffixing (to ensure uniqueness) is done for the sake of client behavior, as it is not expected that ambiguity is an acceptable outcome. The remaining steps show two approaches for disambiguating the content of a data view. 
 
-### Action – Want csv?
+#### Action – Want csv?
 Resubmit the data query with an additional query parameter, `&form=csvh`
 ```text
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart/Data/Interpolated
 ?startIndex={your_val_here}&endIndex={your_val_here}&interval={your_val_here}&form=csvh
 ```
 
-### Expected result
+#### Expected result
 Rows of CSV values similar to:
 ```csv
 Timestamp.0,Id.1,Name.2,AmbientTemperature.3,CloudCover.4,SolarRadiation.5,Temperature.6,Site.7,Tags.8,Id.9,Name.10,AmbientTemperature.11,CloudCover.12,SolarRadiation.13,Temperature.14,Site.15,Tags.16,Id.17,Name.18,AmbientTemperature.19,CloudCover.20,SolarRadiation.21,Temperature.22,Site.23,Tags.24
@@ -502,14 +502,14 @@ Timestamp.0,Id.1,Name.2,AmbientTemperature.3,CloudCover.4,SolarRadiation.5,Tempe
 2019-10-21T20:00:00.0000000Z,WS_BILT,WS_BILT,,,157,32.41209639,Biltmore,"Weather, High Resolution, Gen1",WS_ROSE,WS_ROSE,,,139,14.76498991,Rosecliff,"Weather, Low Resolution, Gen1",WS_WINT,WS_WINT,2.501105722,3,109,,Winterthur,"Weather, High Resolution, Gen2"
 ```
 
-## Group the data view
+### Group the data view
 One way to disambiguate the data items is to “group” them, which amounts to partitioning them based on a value. For example, metadata:Site as the grouping field might yield groups of Biltmore, Rosecliff, and Winterthur, each containing the data items associated with that Site.
 
 You may use multiple grouping fields. This is effectively “group by X then Y then Z”
 
 Grouping fields are a property of the data view, and are an array of `Field` objects. This means the same Field objects contained in the available or included field sets may be reused directly as grouping fields.
 
-### Action
+#### Action
 To group by metadata, copy the field in the `DataView` object with `{ Source: “Metadata”, Keys: [ "Site" ] }`, and add it to the array of `.GroupingFields`.
 
 ```json
@@ -594,19 +594,19 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
 }
 ```
 
-### Expected result
+#### Expected result
 ```text
 HTTP 204 No Content
 ```
 
-### Action
+#### Action
 
 ```text
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart/Data/Interpolated
 ?startIndex={your_val_here}&endIndex={your_val_here}&interval={your_val_here}
 ```
 
-### Expected result
+#### Expected result
 
 Data that looks a bit different now. In table terms, the data table would be ultra-skinny instead of ultra-wide.
 
@@ -659,7 +659,7 @@ HTTP 200 OK
 
 **Note:** The Data Views product does not assume an intention for ultra-skinny output.
 
-## Identify data items
+### Identify data items
 
 A different and complementary way of disambiguating the data items is to “identify” them within the field set.
 
@@ -673,7 +673,7 @@ This is also useful for aligning data items across groups. Imagine if each site 
 
 The data views engine must be told how the streams align across sites. Here, it makes sense to align them by which measurement they represent: _Primary_ or _Backup_.
 
-### Action
+#### Action
 
 Move the field used as `GroupingField` over to being the “.IdentifyingField” of the weather data items `FieldSet`.
 ```json
@@ -756,18 +756,18 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
 }
 ```
 
-### Expected result
+#### Expected result
 ```text
 HTTP 204 No Content
 ```
 
-### Action
+#### Action
 ```text
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart/Data/Interpolated
 ?startIndex={your_val_here}&endIndex={your_val_here}&interval={your_val_here}
 ```
 
-### Expected result
+#### Expected result
 We’re back to a wide table, but the field ids are now distinct. The suggested/default values of the Available Fields’ `.Label` property includes {IdentifyingValue}, so if using those defaults, the impact of adding an identifying field is immediately clear.
 
 ```json
@@ -801,7 +801,7 @@ HTTP 200 OK
 ]
 ```
 
-## Consolidate data fields
+### Consolidate data fields
 
 There is a problem with this data view: the Gen1 Weather streams have a "Temperature" property but the Gen2 Weather streams have  renamed it to "AmbientTemperature". The data view has fields for both, but for each stream "Temperature" or "AmbientTemperature" is null. This is undesirable since the fields are semantically identical and should not be separate fields in the data view.
 
@@ -822,6 +822,7 @@ Remove the `Field` associated only with "Temperature".
 
 You can also remove the `Fields` associated with data item Id and Name. These are not providing any additional useful information.
 
+#### Action
 ```json
 PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
 {
@@ -886,18 +887,18 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
   "Shape": "Standard"
 }
 ```
-### Expected Result
+#### Expected Result
 ```text
 HTTP 204 No Content
 ```
 
-### Action
+#### Action
 ```text
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart/Data/Interpolated
 ?startIndex={your_val_here}&endIndex={your_val_here}&interval={your_val_here}
 ```
 
-### Expected Result
+#### Expected Result
 ```json
 HTTP 200 OK
 [
@@ -919,7 +920,7 @@ HTTP 200 OK
     ...
 ]
 ```
-## Further steps
+### Further steps
 The API is designed to encourage trial-and-error. We encourage you to experiment with other ways to represent this data, and to incorporate information about the solar inverters at each site.
 
 ## Data view properties
@@ -940,7 +941,7 @@ The following table lists the properties of a `DataView`:
 | IndexTypeCode | SdsTypeCode | Optional | DateTime | The name of the index data type. DateTime is the currently supported index type.
 | Shape | DataViewShape | Optional | Standard | Data views may be set to resolve as standard shape or narrow shape. Narrow shape may be used when an invariant output schema is required.
 
-## Rules for Id property
+### Rules for Id property
 - Is not case sensitive, but case is preserved
 - Can contain spaces
 - Cannot contain forward slash ("/")
@@ -949,14 +950,14 @@ The following table lists the properties of a `DataView`:
 ## Related object types
 The following sections describe the classes and enumerations used when defining data views.
 
-## Query
+### Query
 A query for SDS Streams to include in the view.
 |Property| Type | Optionality  | Default  | Details |
 |--|--|--|--|--|
 | Id  | string | Required |  | Unique identifier. Used by FieldSet to link to the query's results. |
 | Value | string | Optional | null | A query for streams in SDS query syntax. A null or empty query will not match any streams.
 
-## FieldSet
+### FieldSet
 A set of fields included in the data view, sharing a common role or source (`.SourceType`). One `DataView` is likely to include one `FieldSet` per query.
 |Property | Type | Optionality  | Default  | Details |
 |--|--|--|--|--|
@@ -964,7 +965,7 @@ A set of fields included in the data view, sharing a common role or source (`.So
 | DataFields | Field[] | Optional | [ ] | Data fields to include in the data view. Often copied or adapted from the view's available field sets, which are exposed in a resolved resource.
 | IdentifyingField | Field | Optional | null | A field by which to tell the data items apart, within each group. Any field from field sources `FieldSource.Id`, `FieldSource.Name`, `FieldSource.Metadata` and `FieldSource.Tags` can be used as an identifying field.
 
-## Field
+### Field
 Individual piece of information, such as a property of an SDS stream or metadata of that stream.
 |Property | Type | Optionality  | Default  | Details |
 |--|--|--|--|--|
@@ -973,7 +974,7 @@ All sources except `FieldSource.NotApplicable` can be used as data fields. Field
 | Keys | String[] | Optional | [ ] | Used for sources `FieldSource.PropertyId`, `FieldSource.PropertyName`, `FieldSource.Metadata` and `FieldSource.Tags`, e.g. to map to specific stream properties by id. If more than one key is specified, they are matched as exclusive-or. A key has to be a non-null value.
 | Label | string | Optional | null | Friendly name for the field. Certain tokens have special meaning: one of these, {IdentifyingValue}, is included in the suggested labels of AvailableFieldSets. Tokens that do not resolve are "" (empty string). The label is required in a field for all usages except in an identifying field. Label is trimmed of whitespace when used to identify field mappings. 
 
-## FieldSource enumeration
+### FieldSource enumeration
 For fields that derive data from a data item (e.g. an SDS stream), the `FieldSource` enumeration specifies the part of that data item that a Field resolves to. Some sources require one or more `.Keys` to be specified on the field, such as `PropertyId`, in which a key is the id of a desired property.
 
 |Name | Enumeration Id | Keyed | Details |
@@ -986,12 +987,12 @@ For fields that derive data from a data item (e.g. an SDS stream), the `FieldSou
 |Metadata | 5 | Yes | Value of the data item metadata, found by key
 |Tags | 6 | Yes | Data item tags matching the collection provided
 
-## SdsTypeCode enumeration
+### SdsTypeCode enumeration
 `SdsTypeCode` enumeration is the name of a data type. It is used when defining a data view, where the only supported `.IndexTypeCode` is "DateTime".
 
 See [Sds documentation](xref:sdsTypes#sdstypecode) for details.
 
-## DataViewShape enumeration
+### DataViewShape enumeration
 `DataViewShape` enumeration describes possible output shapes for a data view.
 |Name| Enumeration Id | Description  |
 |--|--|--|

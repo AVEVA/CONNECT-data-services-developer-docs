@@ -673,7 +673,7 @@ AzureActiveDirectoryConsentEmail | string | Yes | Gets or sets address to email 
 AzureActiveDirectoryConsentGivenName | string | Yes | Gets or sets preferred name to use in the consent email.
 AzureActiveDirectoryConsentSurname | string | Yes | Gets or sets preferred surname to use in the consent email.
 AzureActiveDirectoryTenant | string | Yes | Gets or sets Azure Active Directory Domain Name (e.g., mydomain.onmicrosoft.com).
-AzureActiveDirectoryConsentTypes | string | No | Gets or sets Azure Active Directory Consent Types.  If not specified Sign-In only will be requested for consent.
+AzureActiveDirectoryConsentTypes | string | No | Gets or sets Azure Active Directory Consent Types (e.g., SignIn or SignIn;ReadAllUsersGroups).
 
 
 
@@ -1444,7 +1444,7 @@ Property | Type | Required | Description
 Scheme | string | Yes | Gets or sets the scheme of the Identity Provider.
 AadTenantId | string | No | Gets or sets Azure Active Directory Tenant Id.
 AadDomain | string | No | Gets or sets Azure Active Directory Domain Name (e.g., mydomain.onmicrosoft.com).
-AadConsentTypes | string | Yes | Gets or sets Azure Active Directory Consent Types.
+AadConsentTypes | string | Yes | Gets or sets Azure Active Directory Consent Types (e.g., SignIn or SignIn;ReadAllUsersGroups).
 ConsentEmail | string | Yes | Gets or sets address to email consent. Only Azure Active Directory Admins have permission to consent to being allowed to interact with the tenant. The email does not have to be sent to an Admin.
 ConsentFirstName | string | Yes | Gets or sets preferred name to use in the consent email.
 ConsentOverride | bool | No | Gets or sets a value indicating whether force a consent email to be sent for the specified ConsentTypes.

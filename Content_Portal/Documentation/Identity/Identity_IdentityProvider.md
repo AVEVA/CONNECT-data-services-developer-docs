@@ -1276,7 +1276,7 @@ Internal server error.
 
 ## `Get an Identity Provider Consent from a Tenant`
 
-Get the consent state for an Identity Provider for a Tenant. This determines whether an Identity Provider consents to sharing access to its directory with the OCS tenant. The consent grants User.Read.All and GroupMember.Read.all permissions to the OCS tenant.
+Get the consent information for an Identity Provider for a Tenant. The ConsentState property, if returned, determines whether an Identity Provider consents to sharing access to its directory with the OCS tenant. For example, the expected ConsentState's for Azure Active Directory (AAD) include (Pending_)SignIn and (Pending_)ReadAllUsersGroups.
 
 ### Request
 

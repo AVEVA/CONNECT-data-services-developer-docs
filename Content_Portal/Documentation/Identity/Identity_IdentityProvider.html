@@ -122,8 +122,8 @@
 </tr>
 <tr>
 <td>Capabilities</td>
-<td>json</td>
-<td>Gets or sets a json demonstrating the capabilities of the identity provider.</td>
+<td>object</td>
+<td>Gets or sets the capabilities of the identity provider.</td>
 </tr>
 </tbody>
 </table>
@@ -566,13 +566,13 @@ IdentityProviderAdd identityProviderAdd
 <td>AzureActiveDirectoryTenant</td>
 <td>string</td>
 <td>Yes</td>
-<td>Gets or sets Azure Active Directory Domain Name (e.g. mydomain.onmicrosoft.com).</td>
+<td>Gets or sets Azure Active Directory Domain Name (e.g., mydomain.onmicrosoft.com).</td>
 </tr>
 <tr>
 <td>AzureActiveDirectoryConsentTypes</td>
 <td>string</td>
 <td>No</td>
-<td>Gets or sets Azure Active Directory Consent Types.  If not specified Sign-In only will be requested for consent.</td>
+<td>Gets or sets Azure Active Directory Consent Types (e.g., SignIn or SignIn;ReadAllUsersGroups).</td>
 </tr>
 </tbody>
 </table>
@@ -919,7 +919,7 @@ string skiptoken
 <p>Internal server error.</p>
 <hr>
 <h2 id="get-an-identity-provider-consent-from-a-tenant"><code>Get an Identity Provider Consent from a Tenant</code></h2>
-<p>Get the consent state for an Identity Provider for a Tenant. This determines whether an Identity Provider consents to sharing access to its directory with the OCS tenant.</p>
+<p>Get the consent information for an Identity Provider for a Tenant. The ConsentState property, if returned, determines whether an Identity Provider consents to sharing access to its directory with the OCS tenant. For example, the expected ConsentState&#39;s for Azure Active Directory (AAD) include (Pending_)SignIn and (Pending_)ReadAllUsersGroups.</p>
 <h3 id="request-16">Request</h3>
 <p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>IdentityProviders/<wbr>{identityProviderId}/<wbr>Consent</code></p>
 <h3 id="parameters-16">Parameters</h3>
@@ -996,7 +996,7 @@ Guid identityProviderId
 <p>Internal server error.</p>
 <hr>
 <h2 id="update-identity-provider-consent-of-a-tenant"><code>Update Identity Provider Consent of a Tenant</code></h2>
-<p>Update the Identity Provider Consent of a Tenant. Currently only support Azure Active Directory. </p>
+<p>Update the Identity Provider Consent of a Tenant. Currently only support Azure Active Directory. The consent grants User.Read.All and GroupMember.Read.all permissions to the OCS tenant.</p>
 <h3 id="request-18">Request</h3>
 <p><code style="word-break:normal; overflow-wrap:break-word;">POST api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>IdentityProviders/<wbr>{identityProviderId}/<wbr>Consent</code></p>
 <h3 id="parameters-18">Parameters</h3>
@@ -1036,13 +1036,13 @@ IdentityProviderConsent identityProviderConsent
 <td>AadDomain</td>
 <td>string</td>
 <td>No</td>
-<td>Gets or sets Azure Active Directory Domain Name (e.g. mydomain.onmicrosoft.com).</td>
+<td>Gets or sets Azure Active Directory Domain Name (e.g., mydomain.onmicrosoft.com).</td>
 </tr>
 <tr>
 <td>AadConsentTypes</td>
 <td>string</td>
 <td>Yes</td>
-<td>Gets or sets Azure Active Directory Consent Types.</td>
+<td>Gets or sets Azure Active Directory Consent Types (e.g., SignIn or SignIn;ReadAllUsersGroups).</td>
 </tr>
 <tr>
 <td>ConsentEmail</td>

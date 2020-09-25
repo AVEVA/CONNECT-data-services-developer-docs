@@ -2,7 +2,7 @@
 uid: AssetMeasurementsAndMeasurementsMapping
 ---
 
-# Asset Measurements and MeasurementsMapping
+# Asset Measurements and MeasurementMappings
 
 Measurements mapping is a child resource of an asset or asset type and is used to define specific measurements of interest. 
 

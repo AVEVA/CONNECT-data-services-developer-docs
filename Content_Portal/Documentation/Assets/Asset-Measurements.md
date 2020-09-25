@@ -1,5 +1,5 @@
 ---
-uid: AssetMeasurementsAndMeasurementsMapping
+uid: AssetMeasurementsAndMeasurementMappings
 ---
 
 # Asset Measurements and MeasurementMappings

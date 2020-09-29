@@ -3,25 +3,18 @@ uid: GetDataViewDataRecommendedWorkflow
 ---
 
 # Recommended workflow: Get data view data
-Getting data from a data view is straightforward. If you want to understand more about the source behind each data field, that information is available too. For detailed information, see the [Data API reference](xref:DataViewsDataAPI).
+This is an introduction to the recommended workflow to get data from a data view. The following sections show how to carry out each required step.
+For detailed information about the source behind each data field, see the [Data API reference](xref:DataViewsDataAPI). For detailed information about the source of each field's data, see the data view's resolved field mappings.
 
-## Specify first page parameters
-Complete the following to specify first page parameters:
+To get data view data:
 
-1. Specify the index range (start index and end index) and granularity of data to be retrieved (interval).
-2. Specify the desired response format as csv, table-style json, or object-style json. The default is object-style json.  Csv and table-style json are available with or without a header row.
+1. Unless configured in the `DataView` object, you must include in the get data request the startIndex, endIndex, and interval query parameters.
+2. Specify the desired response format as csv, table-style json, or object-style json.
 3. Specify the page size.
 
-## Request any remaining pages
-Complete the following if data spans into additional page(s). The current page response will include an HTTP `Link` header with a hyperlink to the next page of data.
-1. Follow the hyperlinks to retrieve the full requested dataset page by page, if the current page includes a next hyperlink in the `Link` header.
-2. Follow the first page hyperlink in the `Link` header in the event that it is necessary to restart the paging operation from the first page. 
-
-## [Optional] Investigate the source of the data
-For precise information about the source of each field's data, see the data view's resolved field mappings.
+**Note:** If data spans into additional page(s), follow the hyperlinks in each HTTP `Link` header to retrieve the full requested dataset page by page. 
 
 ## Procedure: Get Data View Data
-
 It is assumed that you are working with streams as described in the [Stream examples](xref:DataViewsExampleScenario). The data views API uses the same authentication scheme as the Sequential Data Store.
 
 ### Get data using defaults

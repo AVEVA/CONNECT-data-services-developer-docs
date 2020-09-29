@@ -2,6 +2,7 @@
   href: DefineaDataView/toc.yml
   topicHref: DefineaDataView/Quick_Start_Define_a_Data_View.md
 - name: Get data view data
+  href: GetDataViewData/toc.yml
   topicHref: GetDataViewData/Quick_Start_Get_Data_View_Data.md
 - name: Get resolved data view
   topicHref: GetResolvedDataView/Resolved_Data_View.md

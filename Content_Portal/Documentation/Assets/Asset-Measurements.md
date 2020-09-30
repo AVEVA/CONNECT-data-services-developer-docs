@@ -12,7 +12,7 @@ Measurements mappings contain a list of items with named references to one or mo
 
 ```text 
 {  
-  "MeasurementsMapping": [{ 
+  "MeasurementMappings": [{ 
       "Name": "Input Power", 
       "StreamReferenceId": "Reference1", 
       "StreamPropertyIds": ["Time", "Value"] 
@@ -25,7 +25,7 @@ Measurements mappings contain a list of items with named references to one or mo
 } 
 ```
 
-An asset or asset type uses the mapping by assigning the `StreamReferenceId` in the mapping to the asset or asset type's stream reference. In the example below, `Reference1` and `Reference2`  map to the `MeasurementsMapping` object above.
+An asset or asset type uses the mapping by assigning the `StreamReferenceId` in the mapping to the asset or asset type's stream reference. In the example below, `Reference1` and `Reference2`  map to the `MeasurementMappings` object above.
 
 ```
 { 
@@ -33,7 +33,7 @@ An asset or asset type uses the mapping by assigning the `StreamReferenceId` in 
   "Name": " ChargingStation1", 
   "Description": "Charging Station", 
   "AssetTypeId": null, 
-  "Attributes": [{ 
+  "Metadata": [{ 
       "Name": "Location",  "Value": "Houston", "SdsTypeCode": 18, "Uom": null 
     }], 
     "StreamReferences": [{ 
@@ -51,8 +51,8 @@ For stream `pi2ocs_stream1_inputpower`, we are only interested in the Value and 
 
 ***
 
-## `Get MeasurementsMapping` 
-Returns the measurements mapping of an asset or asset type. 
+## `Get MeasurementMappings` 
+Returns the measurement mappings of an asset or asset type. 
 
 ### Request 
 
@@ -60,13 +60,13 @@ Asset
 
 ```text 
 
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/MeasurementsMapping
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/MeasurementMappings
 ```
 Asset Type
 
 ```text 
 
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}/MeasurementsMapping
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}/MeasurementMappings
 ```
 
 ### Parameters
@@ -79,7 +79,7 @@ The namespace identifier
 `string assetId`
 The asset identifier
 
-`string assetId`
+`string assetTypeId`
 The asset type identifier
 
 ### Response 
@@ -88,7 +88,7 @@ Code example can follow.
 
 | Status Code | Response Type | Description |
 |--|--|--|
-| 200 OK | `MesurementsMapping` | The requested measurements mapping of a given asset or asset type. |
+| 200 OK | `MesurementsMapping` | The requested measurement mappings of a given asset or asset type. |
 | 400 Bad Request | error | The request is not valid. See the response body for additional details. |
 | 403 Forbidden | error | You are not authorized to view the requested asset or asset type. |
 | 404 Not Found | error | The specified asset or asset type with identifier is not found. |
@@ -99,7 +99,7 @@ Code example can follow.
 HTTP 200 OK
 Content-Type: application/json
 {
-  "MeasurementsMapping": [{ 
+  "MeasurementMappings": [{ 
       "Name": "Input Power", 
       "StreamReferenceId": "Reference1", 
       "StreamPropertyIds": ["Value", "Time"] 
@@ -115,22 +115,22 @@ Content-Type: application/json
 ***
 
 
-## `Create MeasurementsMapping` 
+## `Create MeasurementMappings` 
 
-Creates the measurements mapping for a given asset or asset type. 
+Creates the measurement mappings for a given asset or asset type. 
 
 ### Request 
 
 Asset
 
 ```text 
-POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/MeasurementsMapping
+POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/MeasurementMappings
 ```
 
 Asset Type
 
 ```
-POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}/MeasurementsMapping
+POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}/MeasurementMappings
 ```
 
 ### Parameters

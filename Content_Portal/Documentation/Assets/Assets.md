@@ -60,21 +60,12 @@ An asset reference represents dynamic stream data associated with an asset. The 
 | Description   | String | Optional  | Yes         | Description text                                             |
 | ReferenceType | String | Required  | No          | Specify either StreamReference or StreamViewReference. Refer to [StreamReference ReferenceType](xref:Assets#streamreference-refeencetype) and [StreamViewReference ReferenceType](xref;Assets:#streamviewreference-referencetype) below for the object definitions. |
 
-### StreamReference ReferenceType REMOVE THIS SECTION
+### StreamReference ReferenceType
 
 | Property | Type   | Required? | Searchable? | Description                                                  |
 | -------- | ------ | --------- | ----------- | ------------------------------------------------------------ |
 | StreamID | String | Required  | Yes         | The ID of the SdsStream pertaining to this asset             |
 | TypeID   | String | Optional  | Yes         | The SdsType of the SdsStream pertaining to this asset. If you specify the TypeId, it will be validated to ensure that the specific StreamId is the TypeId you specified. It this is not specified, then the system maps the correct SdsType. |
-
-### StreamViewReference ReferenceType
-
-| Property     | Type   | Required? | Searchable? | Description                                                  |
-| ------------ | ------ | --------- | ----------- | ------------------------------------------------------------ |
-| StreamViewId | String | Required  | Yes         | The ID of the SdsStreamView pertaining to this asset         |
-| StreamId     | String | Requried  | Yes         | The ID of the SdsStream that will be interpreted by the specified StreamViewId. |
-| TypeId       | String | Optional  | Yes         | The SdsType of the SdsStream pertaining to this asset. If you specify the TypeId, it will be validated to ensure that the specific StreamId is the TypeId you specified. It this is not specified, then the system maps the correct SdsType. |
-
 
 
 ## AssetType TypeReferences Properties

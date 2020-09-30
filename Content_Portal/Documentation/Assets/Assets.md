@@ -35,16 +35,16 @@ The general structure of an asset is nearly identical to an asset type. It inclu
 | Id            | String            | Required  | Yes         | Identifier for referencing this asset. If you do not provide an ID, then the Name property is required. OCS automatically assigns the Name as the Id. | X     | X               |
 | Name          | String            | Optional  | Yes         | User-friendly name. Required if Id is not provided. If Name is used as the Id, it must be unique within a given namespace. | X     | X               |
 | Description   | String            | Optional  | Yes         | User-provided description.                                   | X     | X               |
-| Metadata    | Asset Metadata   | Optional  | Yes *       | Asset and Assettype Metadata                               | X     | X               |
+| Metadata    | Asset Metadata   | Optional  | Yes *       | Asset and AssetType Metadata                               | X     | X               |
 | AssetTypeId   | String            | Optional  | No          | Identifier for the asset type that this asset is derived from. To get the merged view of the asset, get the default shape through the /Assets/{assetId}/Shape route. | X     | --              |
 | References    | Reference List    | Optional  | Yes *       | Asset References                                             | X     | --              |
 | TypeRefeences | TypeReferenceList | Optional  | Yes*        | AssetType TypeReferences                                     | --    | X               |
 
 For more information on search syntax, see [Add xref.]
 
-## Asset and AssetType Attribute Properties
+## Asset and AssetType Metadata Properties
 
-An asset or asset type attribute is static metadata associated with a given asset. There are no limitations on the number of attributes contained (?) by an asset. An asset or asset type attribute does not stand alone. It must be specified within an Asset or AssetType object and, therefore, asset or asset type attributes do not have direct API routes. [WRITER'S NOTE: Can we say: ... and, therefore, there are no direct API routes to asset or asset type attributes.] 
+An asset or asset type metadata is static metadata associated with a given asset. There are no limitations on the number of metadata contained (?) by an asset. An asset or asset type metadata does not stand alone. It must be specified within an Asset or AssetType object and, therefore, there are no direct API routes to asset or asset type metadata.
 
 | Property    | Type   | Required? | Searchable? | Description                                                  |
 | ----------- | ------ | --------- | ----------- | ------------------------------------------------------------ |

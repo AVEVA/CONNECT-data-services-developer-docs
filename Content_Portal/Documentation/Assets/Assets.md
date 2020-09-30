@@ -13,20 +13,14 @@ The general structure of an asset type includes the following:
 
 - ID
 - Name
-- Description
-- Metadata
-- TypeReferences
-- Measurements
+
+## Asset
 
 The general structure of an asset is nearly identical to an asset type. It includes all properties of an asset type, plus the addition of an asset type:
 
 - ID
 - Name
 - AssetTypeId
-- Description
-- Metadata
-- References
-- Measurements
 
 ### Asset and AssetType Properties
 
@@ -66,7 +60,7 @@ An asset reference represents dynamic stream data associated with an asset. The 
 | Description   | String | Optional  | Yes         | Description text                                             |
 | ReferenceType | String | Required  | No          | Specify either StreamReference or StreamViewReference. Refer to [StreamReference ReferenceType](xref:Assets#streamreference-refeencetype) and [StreamViewReference ReferenceType](xref;Assets:#streamviewreference-referencetype) below for the object definitions. |
 
-### StreamReference ReferenceType
+### StreamReference ReferenceType REMOVE THIS SECTION
 
 | Property | Type   | Required? | Searchable? | Description                                                  |
 | -------- | ------ | --------- | ----------- | ------------------------------------------------------------ |
@@ -89,6 +83,7 @@ An asset type type reference represents dynamic stream data associated with an a
 
 | Property    | Type   | Required? | Searchable? | Description                                                  |
 | ----------- | ------ | --------- | ----------- | ------------------------------------------------------------ |
+| StreamReferenceID | |  | |The ID for this type reference. If an asset derives from this asset type, this ID must be referenced in the asset reference type object. |
 | Name        | String | Required  | No          | The ID for this type reference. If an asset derives from this asset type, this ID must be referenced in the asset reference type object. |
 | Description | String | Optional  | No          | Description text                                             |
 | TypeID      | String | Required  | No          | This string must be an SDS type ID to which we expect the reference stream to be. |
@@ -129,10 +124,6 @@ Asset Example
       "SdsTypeCode": 18,  
       "Uom": null 
     }],   
-    "StreamReferences": [{ 
-      "Id": "Reference1", 
-      "StreamId": "pi2ocs_stream1_inputpower", 
-      "TypeId": "PI-Float32" 
     }] 
 } 
 ```

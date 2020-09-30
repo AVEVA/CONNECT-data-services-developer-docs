@@ -65,7 +65,7 @@ An asset type type reference represents dynamic stream data associated with an a
 
 | Property    | Type   | Required? | Searchable? | Description                                                  |
 | ----------- | ------ | --------- | ----------- | ------------------------------------------------------------ |
-| StreamReferenceID | |  | |The ID for this type reference. If an asset derives from this asset type, this ID must be referenced in the asset reference type object. |
+| StreamReferenceID | String | Required | No |The ID for this type reference. If an asset derives from this asset type, this ID must be referenced in the asset reference type object. |
 | Name        | String | Required  | No          | The ID for this type reference. If an asset derives from this asset type, this ID must be referenced in the asset reference type object. |
 | Description | String | Optional  | No          | Description text                                             |
 | TypeID      | String | Required  | No          | This string must be an SDS type ID to which we expect the reference stream to be. |

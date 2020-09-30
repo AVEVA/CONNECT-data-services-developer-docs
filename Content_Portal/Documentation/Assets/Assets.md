@@ -59,14 +59,6 @@ An asset reference represents dynamic stream data associated with an asset. The 
 | Name          | String | Required  | Yes         | User-friendly name for the asset reference                   |
 | Description   | String | Optional  | Yes         | Description text                                             |
 
-### StreamReference ReferenceType
-
-| Property | Type   | Required? | Searchable? | Description                                                  |
-| -------- | ------ | --------- | ----------- | ------------------------------------------------------------ |
-| StreamID | String | Required  | Yes         | The ID of the SdsStream pertaining to this asset             |
-| TypeID   | String | Optional  | Yes         | The SdsType of the SdsStream pertaining to this asset. If you specify the TypeId, it will be validated to ensure that the specific StreamId is the TypeId you specified. It this is not specified, then the system maps the correct SdsType. |
-
-
 ## AssetType TypeReferences Properties
 
 An asset type type reference represents dynamic stream data associated with an asset. The references must either be an SDS stream or an SDS stream view. Asset-centric data routes provide direct access to dynamic data for a given asset. There are no limitations on the number of references an asset may contain. However, an asset cannot contain multiple references to the same SDS stream. An asset reference does not stand alone. It must be specified within an asset object and, therefore, asset references do not have direct API routes. 

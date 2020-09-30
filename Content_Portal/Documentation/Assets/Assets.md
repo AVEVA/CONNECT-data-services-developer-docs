@@ -58,7 +58,6 @@ An asset reference represents dynamic stream data associated with an asset. The 
 | ------------- | ------ | --------- | ----------- | ------------------------------------------------------------ |
 | Name          | String | Required  | Yes         | User-friendly name for the asset reference                   |
 | Description   | String | Optional  | Yes         | Description text                                             |
-(xref:Assets#streamreference-refeencetype) and [StreamViewReference ReferenceType](xref;Assets:#streamviewreference-referencetype) below for the object definitions. |
 
 ### StreamReference ReferenceType
 

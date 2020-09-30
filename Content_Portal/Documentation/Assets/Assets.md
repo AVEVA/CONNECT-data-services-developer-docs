@@ -35,7 +35,7 @@ The general structure of an asset is nearly identical to an asset type. It inclu
 | Id            | String            | Required  | Yes         | Identifier for referencing this asset. If you do not provide an ID, then the Name property is required. OCS automatically assigns the Name as the Id. | X     | X               |
 | Name          | String            | Optional  | Yes         | User-friendly name. Required if Id is not provided. If Name is used as the Id, it must be unique within a given namespace. | X     | X               |
 | Description   | String            | Optional  | Yes         | User-provided description.                                   | X     | X               |
-| Attributes    | Asset Attribute   | Optional  | Yes *       | Asset and Assettype Attributes                               | X     | X               |
+| Metadata    | Asset Metadata   | Optional  | Yes *       | Asset and Assettype Metadata                               | X     | X               |
 | AssetTypeId   | String            | Optional  | No          | Identifier for the asset type that this asset is derived from. To get the merged view of the asset, get the default shape through the /Assets/{assetId}/Shape route. | X     | --              |
 | References    | Reference List    | Optional  | Yes *       | Asset References                                             | X     | --              |
 | TypeRefeences | TypeReferenceList | Optional  | Yes*        | AssetType TypeReferences                                     | --    | X               |

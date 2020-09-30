@@ -37,24 +37,15 @@ references:
 - uid: AssetCentricDataAPI
   name: Asset-Centric Data API
   href: Content_Portal/Documentation/Assets/Asset-Centric-Data-API.html
-- uid: AssetMeasurementsAndMeasurementMappings
-  name: Asset Measurements and MeasurementMappings
-  href: Content_Portal/Documentation/Assets/Asset-Measurements.html
 - uid: AssetOrAssetTypeAccessControlAPI
   name: Asset and AssetType Access Control API
   href: Content_Portal/Documentation/Assets/Access-Control-API.html
 - uid: AssetsAPI
   name: Assets API
   href: Content_Portal/Documentation/Assets/Assets-API.html
-- uid: AssetsProperties
-  name: Assets
-  href: Content_Portal/Documentation/Assets/Assets.html
 - uid: AssetsSearchAPI
   name: Assets Search API
   href: Content_Portal/Documentation/Assets/Asset-Search-API.html
-- uid: AssetTypeAPI
-  name: AssetType API
-  href: Content_Portal/Documentation/Assets/Asset-Type.html
 - uid: ConceptsOverview
   name: OSIsoft Cloud Services
   href: Content_Portal/Concepts/Concepts_Overview.html
@@ -115,6 +106,12 @@ references:
 - uid: DataViewsSecuringDataViews
   name: Secure data views
   href: Content_Portal/Documentation/DataViews/SecureDataViews/Securing_Data_Views.html
+- uid: DefineaDataViewRecommendedWorkflow
+  name: 'Recommended workflow: Define a data view'
+  href: Content_Portal/Documentation/DataViews/DefineaDataView/Rec_Workflow.html
+- uid: GetDataViewDataRecommendedWorkflow
+  name: 'Recommended workflow: Get data view data'
+  href: Content_Portal/Documentation/DataViews/GetDataViewData/Rec_Workflow_Get.html
 - uid: GettingStartedWithTrendData
   name: Getting Started with Trend Data
   href: Content_Portal/Quickstarts/Getting-Started-Trend.html

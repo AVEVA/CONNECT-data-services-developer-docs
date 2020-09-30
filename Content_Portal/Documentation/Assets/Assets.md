@@ -14,7 +14,7 @@ The general structure of an asset type includes the following:
 - ID
 - Name
 - Description
-- Attributes
+- Metadata
 - TypeReferences
 - Measurements
 
@@ -24,13 +24,13 @@ The general structure of an asset is nearly identical to an asset type. It inclu
 - Name
 - AssetTypeId
 - Description
-- Attributes
+- Metadata
 - References
 - Measurements
 
 ### Asset and AssetType Properties
 
-| Property      | Type              | Required? | Searchable? | Description                                                  | Asset Property| Asset<br />Type<br />Property |
+| Property      | Type              | Required? | Searchable? | Description                                                  | Asset Metadata| Asset<br />Type<br />Metadata |
 | ------------- | ----------------- | --------- | ----------- | ------------------------------------------------------------ | ----- | --------------- |
 | Id            | String            | Required  | Yes         | Identifier for referencing this asset. If you do not provide an ID, then the Name property is required. OCS automatically assigns the Name as the Id. | X     | X               |
 | Name          | String            | Optional  | Yes         | User-friendly name. Required if Id is not provided. If Name is used as the Id, it must be unique within a given namespace. | X     | X               |

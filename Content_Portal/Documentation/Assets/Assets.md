@@ -37,8 +37,8 @@ The general structure of an asset is nearly identical to an asset type. It inclu
 | Description   | String            | Optional  | Yes         | User-provided description.                                   | X     | X               |
 | Metadata    | Asset Metadata   | Optional  | Yes *       | Asset and AssetType Metadata                               | X     | X               |
 | AssetTypeId   | String            | Optional  | No          | Identifier for the asset type that this asset is derived from. To get the merged view of the asset, get the default shape through the /Assets/{assetId}/Shape route. | X     | --              |
-| References    | Reference List    | Optional  | Yes *       | Asset References                                             | X     | --              |
-| TypeRefeences | TypeReferenceList | Optional  | Yes*        | AssetType TypeReferences                                     | --    | X               |
+| StreamReferences    | Reference List    | Optional  | No *       | Asset References                                             | X     | --              |
+| TypeReferences | TypeReferenceList | Optional  | No*        | AssetType TypeReferences                                     | --    | X               |
 
 For more information on search syntax, see [Add xref.]
 
@@ -46,17 +46,17 @@ For more information on search syntax, see [Add xref.]
 
 An asset or asset type metadata is static metadata associated with a given asset. There are no limitations on the number of metadata contained (?) by an asset. An asset or asset type metadata does not stand alone. It must be specified within an Asset or AssetType object and, therefore, there are no direct API routes to asset or asset type metadata.
 
-| Property    | Type   | Required? | Searchable? | Description                                                  |
-| ----------- | ------ | --------- | ----------- | ------------------------------------------------------------ |
-| Name        | String | Required  | Yes         | User-friendly name for the attribute.                        |
-| Description | String | Required  | Yes         | User-provided description                                    |
-| SdsTypeCode | Int    | Required  | No          | This integer corresponds to the SdsTypeCode. Asset attributes support the following integer values: 11 (Int64), 14 (Double), 16 (DateTime), and 18 (String). |
-| Uom         | String | Optional  | No          | Asset attribute unit of measurement. Select from the list of supported Uom types. |
-| Value       | String | Required  | Yes         | String representation of the attribute.                      |
+| Property    | Type   | Required? |  Description                                                  |
+| ----------- | ------ | --------- |  ------------------------------------------------------------ |
+| Name        | String | Required  |  User-friendly name for the attribute.                        |
+| Description | String | Required  |  User-provided description                                    |
+| SdsTypeCode | Int    | Required  |  This integer corresponds to the SdsTypeCode. Asset attributes support the following integer values: 11 (Int64), 14 (Double), 16 (DateTime), and 18 (String). |
+| Uom         | String | Optional  |  Asset attribute unit of measurement. Select from the list of supported Uom types. |
+| Value       | String | Required  |  String representation of the attribute.                      |
 
 
 
-## Asset References Properties
+## Asset StreamReferences
 
 An asset reference represents dynamic stream data associated with an asset. The references must either be an SDS stream or an SDS stream view. Asset-centric data routes provide direct access to dynamic data for a given asset. There are no limitations on the number of references an asset may contain. However, an asset cannot contain multiple references to the same SDS stream. An asset reference does not stand alone. It must be specified within an asset object and, therefore, asset references do not have direct API routes. 
 

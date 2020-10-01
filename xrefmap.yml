@@ -43,6 +43,9 @@ references:
 - uid: AssetsAPI
   name: Assets API
   href: Content_Portal/Documentation/Assets/Assets-API.html
+- uid: AssetsProperties
+  name: Assets
+  href: Content_Portal/Documentation/Assets/Assets.html
 - uid: AssetsSearchAPI
   name: Assets Search API
   href: Content_Portal/Documentation/Assets/Asset-Search-API.html

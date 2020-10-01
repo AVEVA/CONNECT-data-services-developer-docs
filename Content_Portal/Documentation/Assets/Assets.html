@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Assets </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Assets ">
+    <meta name="generator" content="docfx 2.43.3.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../../../index.html" width="46">
+                <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="AssetsProperties">
+<h1 id="assets">Assets</h1>
+
+<p>The Assets API allows you to programmatically model your on-premises devices in OSIsoft Cloud Services (OCS). A single stream with its metadata can be used to model very simple assets. However, in most instances, an asset relates to dynamic data from several streams and to static information. This is better structured as an asset instead of any single stream. the assets feature is well suited to model these aspects of an asset. It allows users to create an asset, add static metadata, and reference streams in a standard, structured way. The asset API includes search capabilities and features to directly retrieve the values of dynamic data associated with a given asset. It also provides methods to configure determining the asset status and to configure different user views of an asset.</p>
+<h2 id="asset-types">Asset Types</h2>
+<p>In many instances, you will have multiple devices of the same type. In this situation, an asset type can be used to create multiple similar assets. A change to the asset type is reflected in all assets that are derived from the asset type.</p>
+<p>The general structure of an asset type includes the following:</p>
+<ul>
+<li>ID</li>
+<li>Name</li>
+</ul>
+<h2 id="asset">Asset</h2>
+<p>The general structure of an asset is nearly identical to an asset type. It includes all properties of an asset type, plus the addition of an asset type:</p>
+<ul>
+<li>ID</li>
+<li>Name</li>
+<li>AssetTypeId</li>
+</ul>
+<h3 id="asset-and-assettype-properties">Asset and AssetType Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required?</th>
+<th>Searchable?</th>
+<th>Description</th>
+<th>Asset</th>
+<th>Asset Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>String</td>
+<td>Required</td>
+<td>Yes</td>
+<td>Identifier for referencing this asset. If you do not provide an ID, then the Name property is required. OCS automatically assigns the Name as the Id.</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>String</td>
+<td>Optional</td>
+<td>Yes</td>
+<td>User-friendly name. Required if Id is not provided. If Name is used as the Id, it must be unique within a given namespace.</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>String</td>
+<td>Optional</td>
+<td>Yes</td>
+<td>User-provided description.</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr>
+<td>Metadata</td>
+<td>Asset Metadata</td>
+<td>Optional</td>
+<td>Yes *</td>
+<td>Asset and AssetType Metadata</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr>
+<td>AssetTypeId</td>
+<td>String</td>
+<td>Optional</td>
+<td>No</td>
+<td>Identifier for the asset type that this asset is derived from. To get the merged view of the asset, get the default shape through the /Assets/{assetId}/Shape route.</td>
+<td>X</td>
+<td>--</td>
+</tr>
+<tr>
+<td>StreamReferences</td>
+<td>Stream Reference List</td>
+<td>Optional</td>
+<td>No *</td>
+<td>Asset References</td>
+<td>X</td>
+<td>--</td>
+</tr>
+<tr>
+<td>TypeReferences</td>
+<td>TypeReference List</td>
+<td>Optional</td>
+<td>No*</td>
+<td>AssetType TypeReferences</td>
+<td>--</td>
+<td>X</td>
+</tr>
+</tbody>
+</table>
+<p>For more information on search syntax, see [Add xref.]</p>
+<h2 id="asset-and-assettype-metadata-properties">Asset and AssetType Metadata Properties</h2>
+<p>An asset or asset type metadata is static information associated with a given asset. There are no limitations on the number of metadata contained (?) by an asset. An asset or asset type metadata does not stand alone. It must be specified within an Asset or AssetType object and, therefore, there are no direct API routes to asset or asset type metadata.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required?</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>String</td>
+<td>Required</td>
+<td>User-friendly name for the attribute.</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>String</td>
+<td>Required</td>
+<td>User-provided description</td>
+</tr>
+<tr>
+<td>SdsTypeCode</td>
+<td>Int</td>
+<td>Required</td>
+<td>This integer corresponds to the SdsTypeCode. Asset attributes support the following integer values: 11 (Int64), 14 (Double), 16 (DateTime), and 18 (String).</td>
+</tr>
+<tr>
+<td>Uom</td>
+<td>String</td>
+<td>Optional</td>
+<td>Asset attribute unit of measurement. Select from the list of supported Uom types.</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>String</td>
+<td>Required</td>
+<td>String representation of the attribute.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="asset-streamreferences">Asset StreamReferences</h2>
+<p>An asset reference represents dynamic stream data associated with an asset. The references must either be an SDS stream or an SDS stream view. Asset-centric data routes provide direct access to dynamic data for a given asset. There are no limitations on the number of references an asset may contain. However, an asset cannot contain multiple references to the same SDS stream. An asset reference does not stand alone. It must be specified within an asset object and, therefore, asset references do not have direct API routes. </p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required?</th>
+<th>Searchable?</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>String</td>
+<td>Required</td>
+<td>Yes</td>
+<td>User-friendly name for the asset reference</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>String</td>
+<td>Optional</td>
+<td>Yes</td>
+<td>Description text</td>
+</tr>
+</tbody>
+</table>
+<h2 id="assettype-typereferences-properties">AssetType TypeReferences Properties</h2>
+<p>An asset type type reference represents dynamic stream data associated with an asset. The references must either be an SDS stream or an SDS stream view. Asset-centric data routes provide direct access to dynamic data for a given asset. There are no limitations on the number of references an asset may contain. However, an asset cannot contain multiple references to the same SDS stream. An asset reference does not stand alone. It must be specified within an asset object and, therefore, asset references do not have direct API routes. </p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required?</th>
+<th>Searchable?</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>StreamReferenceID</td>
+<td>String</td>
+<td>Required</td>
+<td>No</td>
+<td>The ID for this type reference. If an asset derives from this asset type, this ID must be referenced in the asset reference type object.</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>String</td>
+<td>Required</td>
+<td>No</td>
+<td>The ID for this type reference. If an asset derives from this asset type, this ID must be referenced in the asset reference type object.</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>String</td>
+<td>Optional</td>
+<td>No</td>
+<td>Description text</td>
+</tr>
+<tr>
+<td>TypeID</td>
+<td>String</td>
+<td>Required</td>
+<td>No</td>
+<td>This string must be an SDS type ID to which we expect the reference stream to be.</td>
+</tr>
+</tbody>
+</table>
+<p>The following is an example of an asset derived from an asset type.</p>
+<p>Asset Type Example</p>
+<pre style="word-break:normal; overflow-wrap:break-word;"><code>Content-Type: application/<wbr>json
+{
+  &quot;Id&quot;: &quot;ChargingStationType&quot;, 
+  &quot;Description&quot;: &quot;Charging Station Type&quot;, 
+  &quot;Metadata&quot;: [{ 
+     &quot;Name&quot;: &quot;Location&quot;, 
+     &quot;SdsTypeCode&quot;: 18, 
+     &quot;Value&quot;: null 
+     &quot;Uom&quot;: null 
+   }], 
+  &quot;TypeReferences&quot;: [{ 
+     &quot;StreamReferenceId&quot;: &quot;Reference1&quot;, 
+     &quot;TypeId&quot;: &quot;PI-Float32&quot; 
+   }] 
+}
+</code></pre><p>Asset Example</p>
+<pre><code>{ 
+  &quot;Id&quot;: &quot;ChargingStation1&quot;, 
+  &quot;Name&quot;: &quot; ChargingStation1&quot;, 
+  &quot;Description&quot;: &quot;Charging Station Instance&quot;, 
+  &quot;AssetTypeId&quot;: &quot;ChargingStationType&quot;, 
+  &quot;Metadata&quot;: [{ 
+      &quot;Name&quot;: &quot;Location&quot;,   
+      &quot;Value&quot;: &quot;Houston&quot;,  
+      &quot;SdsTypeCode&quot;: 18,  
+      &quot;Uom&quot;: null 
+    }],   
+    }] 
+} 
+</code></pre></article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/Assets/Assets.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+            <span id='copyright-text'>© 2020 - OSIsoft, LLC.<span>
+        </span></span></div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

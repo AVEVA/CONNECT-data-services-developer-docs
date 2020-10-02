@@ -102,8 +102,8 @@
 <th>Required?</th>
 <th>Searchable?</th>
 <th>Description</th>
-<th>Asset</th>
-<th>Asset Type</th>
+<th>Asset Property?</th>
+<th>Asset Type Property?</th>
 </tr>
 </thead>
 <tbody>
@@ -113,8 +113,8 @@
 <td>Required</td>
 <td>Yes</td>
 <td>Identifier for referencing this asset. If you do not provide an ID, then the Name property is required. OCS automatically assigns the Name as the Id.</td>
-<td>X</td>
-<td>X</td>
+<td>Yes</td>
+<td>Yes</td>
 </tr>
 <tr>
 <td>Name</td>
@@ -122,8 +122,8 @@
 <td>Optional</td>
 <td>Yes</td>
 <td>User-friendly name. Required if Id is not provided. If Name is used as the Id, it must be unique within a given namespace.</td>
-<td>X</td>
-<td>X</td>
+<td>Yes</td>
+<td>Yes</td>
 </tr>
 <tr>
 <td>Description</td>
@@ -131,8 +131,8 @@
 <td>Optional</td>
 <td>Yes</td>
 <td>User-provided description.</td>
-<td>X</td>
-<td>X</td>
+<td>Yes</td>
+<td>Yes</td>
 </tr>
 <tr>
 <td>Metadata</td>
@@ -140,8 +140,8 @@
 <td>Optional</td>
 <td>Yes *</td>
 <td>Asset and AssetType Metadata</td>
-<td>X</td>
-<td>X</td>
+<td>Yes</td>
+<td>Yes</td>
 </tr>
 <tr>
 <td>AssetTypeId</td>
@@ -149,8 +149,8 @@
 <td>Optional</td>
 <td>No</td>
 <td>Identifier for the asset type that this asset is derived from. To get the merged view of the asset, get the default shape through the /Assets/{assetId}/Shape route.</td>
-<td>X</td>
-<td>--</td>
+<td>Yes</td>
+<td>No</td>
 </tr>
 <tr>
 <td>StreamReferences</td>
@@ -158,8 +158,8 @@
 <td>Optional</td>
 <td>No *</td>
 <td>Asset References</td>
-<td>X</td>
-<td>--</td>
+<td>Yes</td>
+<td>No</td>
 </tr>
 <tr>
 <td>TypeReferences</td>
@@ -167,8 +167,8 @@
 <td>Optional</td>
 <td>No*</td>
 <td>AssetType TypeReferences</td>
-<td>--</td>
-<td>X</td>
+<td>Yes</td>
+<td>Yes</td>
 </tr>
 </tbody>
 </table>

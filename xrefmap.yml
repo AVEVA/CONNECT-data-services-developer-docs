@@ -37,6 +37,9 @@ references:
 - uid: AssetCentricDataAPI
   name: Asset-Centric Data API
   href: Content_Portal/Documentation/Assets/Asset-Centric-Data-API.html
+- uid: AssetMeasurementsAndMeasurementMappings
+  name: Asset Measurements and MeasurementMappings
+  href: Content_Portal/Documentation/Assets/Asset-Measurements.html
 - uid: AssetOrAssetTypeAccessControlAPI
   name: Asset and AssetType Access Control API
   href: Content_Portal/Documentation/Assets/Access-Control-API.html

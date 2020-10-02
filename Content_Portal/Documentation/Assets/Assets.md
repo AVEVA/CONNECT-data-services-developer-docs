@@ -24,15 +24,15 @@ The general structure of an asset is nearly identical to an asset type. It inclu
 
 ### Asset and AssetType Properties
 
-| Property      | Type              | Required? | Searchable? | Description                                                  | Asset | Asset Type |
+| Property      | Type              | Required? | Searchable? | Description                                                  | Asset Property? | Asset Type Property? |
 | ------------- | ----------------- | --------- | ----------- | ------------------------------------------------------------ | ----- | --------------- |
-| Id            | String            | Required  | Yes         | Identifier for referencing this asset. If you do not provide an ID, then the Name property is required. OCS automatically assigns the Name as the Id. | X     | X               |
-| Name          | String            | Optional  | Yes         | User-friendly name. Required if Id is not provided. If Name is used as the Id, it must be unique within a given namespace. | X     | X               |
-| Description   | String            | Optional  | Yes         | User-provided description.                                   | X     | X               |
-| Metadata    | Asset Metadata   | Optional  | Yes *       | Asset and AssetType Metadata                               | X     | X               |
-| AssetTypeId   | String            | Optional  | No          | Identifier for the asset type that this asset is derived from. To get the merged view of the asset, get the default shape through the /Assets/{assetId}/Shape route. | X     | --              |
-| StreamReferences    | Stream Reference List    | Optional  | No *       | Asset References                                             | X     | --              |
-| TypeReferences | TypeReference List | Optional  | No*        | AssetType TypeReferences                                     | --    | X               |
+| Id            | String            | Required  | Yes         | Identifier for referencing this asset. If you do not provide an ID, then the Name property is required. OCS automatically assigns the Name as the Id. | Yes  | Yes            |
+| Name          | String            | Optional  | Yes         | User-friendly name. Required if Id is not provided. If Name is used as the Id, it must be unique within a given namespace. | Yes  | Yes            |
+| Description   | String            | Optional  | Yes         | User-provided description.                                   | Yes  | Yes            |
+| Metadata    | Asset Metadata   | Optional  | Yes *       | Asset and AssetType Metadata                               | Yes  | Yes            |
+| AssetTypeId   | String            | Optional  | No          | Identifier for the asset type that this asset is derived from. To get the merged view of the asset, get the default shape through the /Assets/{assetId}/Shape route. | Yes  | No            |
+| StreamReferences    | Stream Reference List    | Optional  | No *       | Asset References                                             | Yes  | No            |
+| TypeReferences | TypeReference List | Optional  | No*        | AssetType TypeReferences                                     | Yes | Yes            |
 
 For more information on search syntax, see [Add xref.]
 

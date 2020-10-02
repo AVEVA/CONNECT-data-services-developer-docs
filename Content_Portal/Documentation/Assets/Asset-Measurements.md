@@ -88,7 +88,7 @@ Code example can follow.
 
 | Status Code | Response Type | Description |
 |--|--|--|
-| 200 OK | `MesurementsMapping` | The requested measurement mappings of a given asset or asset type. |
+| 200 OK | `MeasurementMappings` | The requested measurement mappings of a given asset or asset type. |
 | 400 Bad Request | error | The request is not valid. See the response body for additional details. |
 | 403 Forbidden | error | You are not authorized to view the requested asset or asset type. |
 | 404 Not Found | error | The specified asset or asset type with identifier is not found. |

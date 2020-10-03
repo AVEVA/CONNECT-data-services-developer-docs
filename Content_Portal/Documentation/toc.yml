@@ -1,8 +1,5 @@
 - name: OSIsoft Cloud Services 
   topicHref: OSIsoft_Cloud_Services.md
-- name: Assets
-  href: Assets/toc.yml
-  topicHref: Assets/Assets.md
 - name: Account Management
   href: Management/toc.yml
   topicHref: Management/Management_Overview.md

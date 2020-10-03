@@ -34,14 +34,20 @@ An asset or asset type uses the mapping by assigning the `StreamReferenceId` in 
   "Description": "Charging Station", 
   "AssetTypeId": null, 
   "Metadata": [{ 
-      "Name": "Location",  "Value": "Houston", "SdsTypeCode": 18, "Uom": null 
+      "Id": "a6641797-bbae-4a2b-ad5b-6159d233d565",  
+      "Name": "Location",  
+      "Value": "Houston", 
+      "SdsTypeCode": 18, 
+      "Uom": null 
     }], 
     "StreamReferences": [{ 
       "Id": "Reference1", 
+      "Name": "InputPowerStream1", 
       "StreamId": "pi2ocs_stream1_inputpower", 
     }, 
     { 
      "Id": "Reference2", 
+      "Name": "InputPowerStream2", 
       "StreamId": "pi2ocs_stream2_voltage", 
    }] 
 } 

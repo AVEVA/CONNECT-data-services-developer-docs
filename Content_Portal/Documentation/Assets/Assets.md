@@ -99,7 +99,3 @@ Asset Example
     }] 
 } 
 ```
-
-## Asset to Asset Type Concordance
-TODO ANTHONY, fill out more
-

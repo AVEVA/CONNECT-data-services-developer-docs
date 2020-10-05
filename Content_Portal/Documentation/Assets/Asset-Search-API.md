@@ -20,8 +20,8 @@ Assets can be searched on the following asset properties:
   - Description
   - Value
 - Asset Type Name
-- Asset Type Id
-- Measurement Name
+- AssetTypeId
+- Measurement Mapping Name
 
 Search criteria can be chained together using an **AND**. See examples below. 
 
@@ -59,7 +59,7 @@ The response includes a status code and an array of assets matching the search c
 | Status Code | Body Type | Description |
 |--|--|--|
 | 200 OK | Asset list | A list of assets matching the search criteria. An empty array is returned if there are no matching assets. |
-| 204 OK | empty | No assets matches your search criteria. |
+| 204 OK | empty | No assets match your search criteria. |
 | 400 Bad Request | error | The request is not valid. See the response body for additional details. |
 | 403 Forbidden | error | You are not authorized to view the requested asset. |
 

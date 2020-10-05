@@ -6,9 +6,9 @@ uid: AssetMeasurementsAndMeasurementMappings
 
 Measurements mapping is a child resource of an asset or asset type and is used to define specific measurements of interest. 
 
-Measurements mappings contain a list of items with named references to one or more stream properties and shaped for easy consumption by client applications. A minimum of one index property (iskey=true) and one non-index property (iskey=false) is required. Within the stream property list, it is important to note that the first property must be an index. In the following example, both streams have "Time" as the index property.
+Measurements mappings contain a list of items with named references to one or more stream properties and shaped for easy consumption by client applications. A minimum of one index property (iskey=true) and one non-index property (iskey=false) is required. Within the stream property list, it is important to note that the first property must be an index. In the following example, "Time" as the index property of both streams.
 
-In the cases where you have an asset which references an existing asset type (via the AssetTypeId property), the measurement mappings on the asset is ignored if the asset type has a corresponding type reference. In these cases, the measurement mapping must be configured on the asset type.
+In those instances where an asset references an existing asset type (through the AssetTypeId property), the measurement mappings on the asset are ignored if the asset type has a corresponding type reference. In these instances, the measurement mappings must be configured on the asset type.
 
 ## Example
 

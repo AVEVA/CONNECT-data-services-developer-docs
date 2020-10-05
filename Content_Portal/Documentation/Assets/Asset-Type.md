@@ -10,7 +10,7 @@ The asset type API provides methods to create, read, update, and delete asset ty
 - Maintaining assets is simplified. 
 
 ***
-## Get AssetType by ID
+## `Get AssetType by ID`
 Returns the specified asset type
 
 ### Request 
@@ -70,7 +70,7 @@ Content-Type: application/json
 
 ***
 
-## Get AssetTypes 
+## `Get AssetTypes` 
 
 Returns a list of asset types
 
@@ -218,7 +218,7 @@ The response includes a status code and a body.
 | 409 Conflict    | error         | The asset type update or create has a conflict. See the response body for additional details. |
 
 ***
-## Create or Update AssetType
+## `Create or Update AssetType`
 
 Create or update an asset type with a specified ID.
 

@@ -51,7 +51,7 @@ Content-Type: application/json
 {
     "Id": "HeaterType",
     "Description": "This is the AssetType which represents a common heater device.",
-    "Attributes": [
+    "Metadata": [
         {
             "Name": "ModelNumber",
             "Description": "This attribute indicates the model number of a given Asset.",
@@ -90,6 +90,9 @@ The namespace identifier
 
 [Optional] `int skip`   
 Maximum number of asset types to retrieve. If unspecified, the default (100) is used.
+
+[Optonal] `int count`
+An optional parameter representing the maximum number of assets to retrieve. If not specified, the default value of 100 is used.
 
 ### Authorization
 
@@ -296,3 +299,4 @@ The response includes a status code and a body.
 | 400 Bad Request | error         | The request is not valid. The response will include which items fail validation checks. See the response body for additional details. |
 | 403 Forbidden   | error         | You are not authorized to delete this asset type.            |
 | 404 Not Found   | error         | The specified asset type object with identifier is not found. |
+| 409              | conflict     | See the response body for additional details. This error typically occurs because assets are mapped to this asset type.

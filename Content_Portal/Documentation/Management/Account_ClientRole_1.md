@@ -14,7 +14,7 @@ Client `Roles` authorize API requests made by clients to various OCS features. C
 
 For HTTP requests and responses, the ClientRole object has the following properties and JSON-serialized body: 
 
-| Property | Type | Description | 
+| Property Name | Data Type | Description | 
  | --- | --- | ---  | 
 | ClientId | string | Client Id. | 
 | RoleId | string | Role Id. | 

@@ -35,10 +35,10 @@ references:
   name: Add identifying field
   href: Content_Portal/Documentation/DataViews/DefineaDataView/Add_Identifying_Field.html
 - uid: AssetCentricDataAPI
-  name: Asset-Centric Data API
+  name: Asset-centric Data API
   href: Content_Portal/Documentation/Assets/Asset-Centric-Data-API.html
-- uid: AssetMeasurementsAndMeasurementMappings
-  name: Asset Measurements and MeasurementMappings
+- uid: AssetMeasurementMappings
+  name: Asset Measurement Mappings
   href: Content_Portal/Documentation/Assets/Asset-Measurements.html
 - uid: AssetOrAssetTypeAccessControlAPI
   name: Asset and AssetType Access Control API
@@ -52,6 +52,9 @@ references:
 - uid: AssetsSearchAPI
   name: Assets Search API
   href: Content_Portal/Documentation/Assets/Asset-Search-API.html
+- uid: AssetTypesAPI
+  name: AssetTypes API
+  href: Content_Portal/Documentation/Assets/Asset-Type.html
 - uid: ConceptsOverview
   name: OSIsoft Cloud Services
   href: Content_Portal/Concepts/Concepts_Overview.html

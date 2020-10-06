@@ -19,9 +19,9 @@ Assets can be searched on the following asset properties:
   - Name
   - Description
   - Value
-- AssetTypeName
+- Asset Type Name
 - AssetTypeId
-- Measurement Name
+- Measurement Mapping Name
 
 Search criteria can be chained together using an **AND**. See examples below. 
 
@@ -58,7 +58,8 @@ The response includes a status code and an array of assets matching the search c
 
 | Status Code | Body Type | Description |
 |--|--|--|
-| 200 OK | `Asset[]` | An array of assets matching the search criteria. An empty array is returned if there are no matching assets. |
+| 200 OK | Asset list | A list of assets matching the search criteria. An empty array is returned if there are no matching assets. |
+| 204 OK | empty | No assets match your search criteria. |
 | 400 Bad Request | error | The request is not valid. See the response body for additional details. |
 | 403 Forbidden | error | You are not authorized to view the requested asset. |
 
@@ -67,18 +68,16 @@ The response includes a status code and an array of assets matching the search c
 | Query String                   | Description                                                  |
 | ------------------------------ | ------------------------------------------------------------ |
 | Id:Id1                         | Returns the asset with ID equal to **Id1**.                  |
-| Id:Id*                         | Returns all assets with ID matching **id*** wildcard. [QUESTION: Is search case-sensitive?] |
-| Name:Name1                     | Returns all asset with a friendly name equal to **Name1**. [QUESTION: What is a friendly name?] |
+| Id:Id*                         | Returns all assets with ID matching **id*** wildcard. |
+| Name:Name1                     | Returns all asset with a friendly name equal to **Name1**. |
 | Id:Id AND Name:Name1           | Returns all assets with ID matching the **id*** wildcard and with a friendly name equal to **Name1**. |
-| AssetTypeName:AssetType Heater | Returns all assets with an asset type name that is equal to **AssetTypeHeater**. |
 | Description:floor1*            | Returns all assets with a description that starts with **floor1**. |
-| floor1*                        | Returns all assets with a description that starts with **floor1**. |
-| Attributes/Name:Building*      | Returns all assets with at least one attribute description that contains the string **Building**. |
-| Attributes/Description:heater* | Returns all assets with at least one attribute description that starts with **heater**. |
-| Attributes/Value:123           | Returns all assets with at least one attribute that equals **123**. |
-| Id:X* AND Attributes/Name:B*   | Returns all assets with ID starting with **X** and containing at least one attribute with a name that starts with a **B**. |
+| Metadata/Name:Building*      | Returns all assets with at least one metadatum description that contains the string **Building**. |
+| Metadata/Description:heater* | Returns all assets with at least one metadatum description that starts with **heater**. |
+| Metadata/Value:123           | Returns all assets with at least one metadatum that equals **123**. |
+| Id:X* AND Metadata/Name:B*   | Returns all assets with ID starting with **X** and containing at least one metadatum with a name that starts with a **B**. |
 | AssetTypeId:HeaterTypeId | Returns all assets with AssetTypeId matching HeaterTypeId |
-| AssetTypeId:HeaterTypeName | Returns all assets whose Name field of the AssetType matches HeaterTypeName |
+| AssetTypeName:HeaterTypeName | Returns all assets whose Name field of the AssetType matches HeaterTypeName |
 | Measurements/Name:WindMeasure | Returns all assets with the measurement name **WindMeasure**. |
 
 

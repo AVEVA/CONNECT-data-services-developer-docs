@@ -5,8 +5,10 @@ uid: AssetsAPI
 # Assets API
 
 The Assets API allows you to create, read, update, and delete assets. 
+
 See Access Control API, Asset Centric API, and Assets Search API for additional API methods.
-<!--- QUESTION: is "methods" the correct term? I'll add links to the topics later. --->
+
+QUESTION: is "methods" the correct term? I'll add links to the topics later. 
 
 ***
 
@@ -16,7 +18,6 @@ Returns the specified asset.
 ### Request 
 ``` 
 GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}  
-
 ```
 
 ### Parameters  
@@ -51,23 +52,21 @@ Content-Type: application/json
     "Id": "Heater_01_01_02",
     "Name": "HeaterOnFirstFloor",
     "Description": "This is Asset which represents a heater on the first floor.",
-    "Attributes": [
+    "Metadata": [
         {
+            "Id": "17020d80-1dc8-4690-932f-3421c9cff0d1",
             "Name": "ModelNumber",
             "Description": "This is attribute with double value representing the model number.",
             "SdsTypeCode": 14,
             "Value": 1.3
         }
     ],
-    "References": [
+    "StreamReferences": [
         {
+            "Id": "63c0ba1d-f2db-4b28-b650-7e45afca9ab4",
             "Name": "Data",
             "Description": "This is reference to a stream. The stream has data coming from a heater.",
-            "ReferenceType": "StreamReference",
-            "Value": {
-                "StreamId": "PI_bifrostbigdaddy_1",
-                "TypeId": "PI-Float32"
-            }
+            "StreamId": "PI_bifrostbigdaddy_1"
         }
     ]
 }
@@ -79,9 +78,7 @@ Returns an array of assets.
 
 ### Request 
 ```
-
 GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets?skip={skip}&count={count} 
-
 ```
 
 ### Parameters  
@@ -116,11 +113,11 @@ The response includes a status code and a body.
 ## `Create Asset` 
 Create a new asset with a specified ID. 
 
+If the asset you are trying to create references an asset type (via the AssetTypeId property) and if there is the corresponding asset type has a metadatum with the same id, then the name and sds type code of the metadatum on the asset must be null. If the asset type does not have metadatum with a corresponding id, name and sds type code may not be null.
+
 ### Request 
 ```text 
-
 POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId} 
-
 ```
 
 ### Parameters  
@@ -141,38 +138,27 @@ The asset identifier
 An `asset` object
 
 #### Example request body 
-NOTE: To create an asset with a specific ID, use the API route with ID. If this is used, you must specify a matching ID field for the asset object in the JSON object below. 
-<!--- QUESTION: Can you create an asset without specifying an ID? Why would you want to specify an ID? --->
+NOTE: To create an asset with a specific ID, use the API route with ID. If this is used, you must specify a matching ID field for the asset object in the JSON object below.
 
 ```json 
 {
     "Name": "HeaterOnFirstFloor",
     "Description": "This is Asset which represents a heater on the first floor.",
-    "Attributes": [
+    "Metadata": [
         {
+            "Id": "c0e29698-d157-4288-9dea-db290de1fb35",
             "Name": "ModelNumber",
             "Description": "This is attribute with double value representing the model number.",
             "SdsTypeCode": 14,
             "Value": 1.3
         }
     ],
-    "References": [
+    "StreamReferences": [
         {
+            "Id": "a1b1c2cc-0a1d-4d89-b53e-e7db746bb4d2",
             "Name": "Data",
             "Description": "This is reference to a stream. The stream has data coming from a heater.",
-            "ReferenceType": "StreamReference",
-            "Value": {
-                "StreamId": "heaterData_1",
-            }
-        },
-        {
-            "Name": "StreamView",
-            "Description": "This is reference to a stream view, the user is only interested in sds stream properties specified in the sds stream view.",
-            "ReferenceType": "StreamReference",
-            "Value": {
-                "StreamViewId": "ViewShowOnlyPressure",
-                "StreamId": "ComplexSdsStream"
-            }
+            "StreamId": "heaterData_1"
         }
     ]
 }
@@ -184,7 +170,7 @@ The response includes a status code and a body.
 | Status Code               | Body Type | Description                                     |
 | ------------------------- | --------- | ----------------------------------------------- |
 | 200 OK                    | `Asset`  | The asset as persisted, including values for optional parameters that were omitted in the request.                           |
-| 400 Bad Request             | error     | The request is not valid. See the response body for additional details.      |
+| 400 Bad Request           | error     | The request is not valid. See the response body for additional details.      |
 | 403 Forbidden            | error     | You are not authorized to create assets.           |
 | 409 Conflict | error     | The asset create has a conflict. See the response body for additional details. |
 
@@ -221,7 +207,7 @@ The response includes a status code and a body.
 
 | Status Code               | Body Type | Description                                     |
 | ------------------------- | --------- | ----------------------------------------------- |
-| 200 OK                    | `Asset`  | An array of assets as persisted, including values for optional parameters that were omitted in the request.                               |
+| 200 OK                    | `Asset[]`  | An array of assets as persisted, including values for optional parameters that were omitted in the request.                               |
 | 400 Bad Request             | error     | The request is not valid. The response will include which asset failed validation checks. See the response body for additional details.      |
 | 403 Forbidden            | error     | You are not authorized to create assets.           |
 | 409 Conflict | error     | The asset create has a conflict. See the response body for additional details.  |

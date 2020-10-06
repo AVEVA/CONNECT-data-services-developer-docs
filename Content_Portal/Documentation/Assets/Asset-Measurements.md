@@ -4,9 +4,11 @@ uid: AssetMeasurementMappings
 
 # Asset Measurement Mappings 
 
-Measurements mapping is a child resource of an asset or asset type and is used to define specific measurements of interest. 
+Measurement mappings is a child resource of an asset or asset type and is used to define specific measurements of interest. 
 
-Measurements mappings contain a list of items with named references to one or more stream properties and shaped for easy consumption by client applications. A minimum of one index property (iskey=true) and one non-index property (iskey=false) is required. Within the stream property list, it is important to note that the first property must be an index. In the following example, both streams have "Time" as the index property.
+Measurement mappings contain a list of items with named references to one or more stream properties and shaped for easy consumption by client applications. A minimum of one index property (iskey=true) and one non-index property (iskey=false) is required. Within the stream property list, it is important to note that the first property must be an index. In the following example, "Time" as the index property of both streams.
+
+In those instances where an asset references an existing asset type (through the AssetTypeId property), the measurement mappings on the asset are ignored if the asset type has a corresponding type reference. In these instances, the measurement mappings must be configured on the asset type.
 
 ## Example
 
@@ -34,14 +36,20 @@ An asset or asset type uses the mapping by assigning the `StreamReferenceId` in 
   "Description": "Charging Station", 
   "AssetTypeId": null, 
   "Metadata": [{ 
-      "Name": "Location",  "Value": "Houston", "SdsTypeCode": 18, "Uom": null 
+      "Id": "a6641797-bbae-4a2b-ad5b-6159d233d565",  
+      "Name": "Location",  
+      "Value": "Houston", 
+      "SdsTypeCode": 18, 
+      "Uom": null 
     }], 
     "StreamReferences": [{ 
       "Id": "Reference1", 
+      "Name": "InputPowerStream1", 
       "StreamId": "pi2ocs_stream1_inputpower", 
     }, 
     { 
      "Id": "Reference2", 
+      "Name": "InputPowerStream2", 
       "StreamId": "pi2ocs_stream2_voltage", 
    }] 
 } 

@@ -78,8 +78,9 @@
             <article class="content wrap" id="_content" data-uid="AssetMeasurementMappings">
 <h1 id="asset-measurement-mappings">Asset Measurement Mappings</h1>
 
-<p>Measurements mapping is a child resource of an asset or asset type and is used to define specific measurements of interest. </p>
-<p>Measurements mappings contain a list of items with named references to one or more stream properties and shaped for easy consumption by client applications. A minimum of one index property (iskey=true) and one non-index property (iskey=false) is required. Within the stream property list, it is important to note that the first property must be an index. In the following example, both streams have &quot;Time&quot; as the index property.</p>
+<p>Measurement mappings is a child resource of an asset or asset type and is used to define specific measurements of interest. </p>
+<p>Measurement mappings contain a list of items with named references to one or more stream properties and shaped for easy consumption by client applications. A minimum of one index property (iskey=true) and one non-index property (iskey=false) is required. Within the stream property list, it is important to note that the first property must be an index. In the following example, &quot;Time&quot; as the index property of both streams.</p>
+<p>In those instances where an asset references an existing asset type (through the AssetTypeId property), the measurement mappings on the asset are ignored if the asset type has a corresponding type reference. In these instances, the measurement mappings must be configured on the asset type.</p>
 <h2 id="example">Example</h2>
 <pre><code class="lang-text">{  
   &quot;MeasurementMappings&quot;: [{ 
@@ -100,14 +101,20 @@
   &quot;Description&quot;: &quot;Charging Station&quot;, 
   &quot;AssetTypeId&quot;: null, 
   &quot;Metadata&quot;: [{ 
-      &quot;Name&quot;: &quot;Location&quot;,  &quot;Value&quot;: &quot;Houston&quot;, &quot;SdsTypeCode&quot;: 18, &quot;Uom&quot;: null 
+      &quot;Id&quot;: &quot;a6641797-bbae-4a2b-ad5b-6159d233d565&quot;,  
+      &quot;Name&quot;: &quot;Location&quot;,  
+      &quot;Value&quot;: &quot;Houston&quot;, 
+      &quot;SdsTypeCode&quot;: 18, 
+      &quot;Uom&quot;: null 
     }], 
     &quot;StreamReferences&quot;: [{ 
       &quot;Id&quot;: &quot;Reference1&quot;, 
+      &quot;Name&quot;: &quot;InputPowerStream1&quot;, 
       &quot;StreamId&quot;: &quot;pi2ocs_stream1_inputpower&quot;, 
     }, 
     { 
      &quot;Id&quot;: &quot;Reference2&quot;, 
+      &quot;Name&quot;: &quot;InputPowerStream2&quot;, 
       &quot;StreamId&quot;: &quot;pi2ocs_stream2_voltage&quot;, 
    }] 
 } 

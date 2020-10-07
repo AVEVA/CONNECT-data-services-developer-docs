@@ -312,6 +312,13 @@ For more information, see <a href="https://ocs-docs.osisoft.com/Content_Portal/D
 <hr>
 <h2 id="create-or-update-assettype"><code>Create or Update AssetType</code></h2>
 <p>Create or update an asset type with a specified ID.</p>
+<p>When updating an asset type which is referenced by assets, the following behaviors may apply:</p>
+<ul>
+<li>Deleting metadatum on asset type removes it from metadatum on default shape of referenced asset​s</li>
+<li>Deleting type reference on asset type deletes measurements on default shape of referenced assets​</li>
+<li>Renaming metadatum on asset type renames metadatum on default shape of referenced assets​</li>
+<li>Renaming the stream reference name on the asset type on default shape of referenced assets</li>
+</ul>
 <h3 id="request-4">Request</h3>
 <pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">PUT api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>AssetTypes/<wbr>{assetTypeId} 
 </code></pre><h3 id="parameters-4">Parameters</h3>

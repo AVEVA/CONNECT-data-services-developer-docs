@@ -79,66 +79,46 @@
 <h1 id="asset-centric-data-api">Asset-centric Data API</h1>
 
 <p>The Asset-centric Data API provides a quick way to take the dynamic data stored in SDS streams and store it as references within a given asset.</p>
+<p>In order to retrieve stream data from an asset, you must first set up measurement mappings for a given asset.</p>
 <h3 id="example-asset">Example Asset</h3>
 <p>The following asset is used in all of the sample output in this topic.</p>
 <pre><code>{
     &quot;Id&quot;: &quot;IDsample&quot;,
     &quot;Name&quot;: &quot;SampleForDemo&quot;,
     &quot;Description&quot;: &quot;This is a demo asset.&quot;,
-    &quot;Attributes&quot;: [
+    &quot;Metadata&quot;: [
         {
+            &quot;Id&quot;: &quot;b47c9529-7fbf-4b2d-810b-fe79d7fdb2b0&quot;,
             &quot;Name&quot;: &quot;RoomLocation&quot;,
             &quot;Description&quot;: &quot;This is what room number the asset is located.&quot;,
             &quot;SdsTypeCode&quot;: 14,
             &quot;Value&quot;: 1.0
         }
     ],
-    &quot;References&quot;: [
-            {
-            &quot;Id&quot;: &quot;IDsample&quot;,
-            &quot;Name&quot;: &quot;SampleForDemo&quot;,
-            &quot;Description&quot;: &quot;This is a demo asset.&quot;,
-            &quot;Metadata&quot;: [
-            {
-            &quot;Name&quot;: &quot;RoomLocation&quot;,
-            &quot;Description&quot;: &quot;This is what room number the asset is located.&quot;,
-            &quot;SdsTypeCode&quot;: 14,
-            &quot;Value&quot;: 1.0
-            }
-            ],
-            &quot;StreamReferences&quot;: [
-            {
-            {
-            &quot;Id&quot;: &quot;StreamRefId&quot;,
-            &quot;Description&quot;: &quot;This is the sample data from the room.&quot;,
-            &quot;StreamId&quot;: &quot;PI_buildingMachine_1112&quot;
-            }
-            }
-            ]
-            }
-            &quot;Value&quot;: {
-                &quot;StreamId&quot;: &quot;PI_buildingMachine_1112&quot;,
-                &quot;TypeId&quot;: &quot;PI-Float32&quot;
-            }
-        },
+    &quot;StreamReferences&quot;: 
+    [
         {
-            &quot;Name&quot;: &quot;SampleView&quot;,
-            &quot;Description&quot;: &quot;This is a sample view that just exposes a single stream property.&quot;,
-            &quot;ReferenceType&quot;: &quot;StreamViewReference&quot;,
-            &quot;Value&quot;: {
-                &quot;StreamId&quot;: &quot;PI_buildingMachine_165394&quot;,
-                &quot;StreamViewId&quot;: &quot;StreamViewSample&quot;,
-                &quot;TargetTypeId&quot;: &quot;PI-Float64&quot;
-            }
+            &quot;Id&quot;: &quot;StreamReferenceId1&quot;,
+            &quot;Name&quot;: &quot;StreamReferenceName&quot;
+            &quot;StreamId&quot;: &quot;PI_buildingMachine_1112&quot;
         }
     ]
 }
-</code></pre><hr>
-<h2 id="get-asset-last-data"><code>Get Asset Last Data</code></h2>
-<p>Returns the last stored value for all referenced SdsStream objects.</p>
+</code></pre><p>This is the measurement mappings of asset with id IDsample which is used for all the example output below.</p>
+<pre><code>[
+    {
+        &quot;Name&quot;: &quot;StreamPressure&quot;,
+        &quot;StreamReferenceId&quot;: &quot;StreamReferenceId1&quot;,
+        &quot;StreamPropertyIds&quot;: [
+            &quot;Timestamp&quot;,
+            &quot;Value&quot;
+        ]
+    }
+]
+</code></pre><h2 id="get-asset-last-data"><code>Get Asset Last Data</code></h2>
+<p>Returns the last stored value for all measurements.</p>
 <h3 id="request">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">
-GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets/<wbr>{assetId}/<wbr>Data/<wbr>Last  
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets/<wbr>{assetId}/<wbr>Data/<wbr>Last  
 </code></pre><h3 id="parameters">Parameters</h3>
 <p><code>string tenantId</code> </p>
 <p>The tenant identifier</p>
@@ -187,7 +167,7 @@ GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{names
 <h4 id="example-response-body">Example response body</h4>
 <pre><code>[
     {
-        &quot;Measurement&quot;: &quot;Temperature&quot;,
+        &quot;Measurement&quot;: &quot;StreamPressure&quot;,
         &quot;Result&quot;: [
             {
                 &quot;Timestamp&quot;: &quot;2020-08-12T22:35:44Z&quot;,
@@ -196,21 +176,12 @@ GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{names
         ]
     }
 ]
-        &quot;Timestamp&quot;: &quot;2019-07-25T23:38:31Z&quot;,
-        &quot;Value&quot;: 82.63277
-    },
-    &quot;SampleView&quot;: {
-        &quot;Timestamp&quot;: &quot;2020-05-22T21:07:30Z&quot;,
-        &quot;Value&quot;: 96.81087493896484
-    }
 } 
-</code></pre><hr>
-<h2 id="get-asset-sampled-data"><code>Get Asset Sampled Data</code></h2>
-<p>Returns sampled data for all referenced SdsStream objects. 
-Note: The inputs to this API matches the SdsStream Get Samples Values data call.  </p>
+</code></pre><h2 id="get-asset-sampled-data"><code>Get Asset Sampled Data</code></h2>
+<p>Returns sampled data for all referenced measurements. </p>
+<p>Note: The inputs to this API matches the SdsStream Get Samples Values data call.  </p>
 <h3 id="request-1">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">
-GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets/<wbr>{assetId}/<wbr>Data/<wbr>Sampled?startIndex={startIndex}&amp;endIndex=(endIndex)&amp;intervals={intervals} 
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets/<wbr>{assetId}/<wbr>Data/<wbr>Sampled?startIndex={startIndex}&amp;endIndex=(endIndex)&amp;intervals={intervals} 
 </code></pre><h3 id="parameters-1">Parameters</h3>
 <p><code>string tenantId</code> </p>
 <p>The tenant identifier </p>
@@ -351,11 +322,9 @@ Content-Type: application/json
 ] 
 </code></pre><hr>
 <h2 id="get-asset-summary-data"><code>Get Asset Summary Data</code></h2>
-<p>Returns summary data for all referenced SdsStream objects. 
-Note: The inputs to this API matches the SdsStream Get Summaries data call.</p>
+<p>Returns summary data for all referenced measurements. </p>
 <h3 id="request-2">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">
-GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets/<wbr>{assetId}/<wbr>Data/<wbr>Summaries?startIndex={startIndex}&amp;endIndex=(endIndex)&amp;count={count}
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets/<wbr>{assetId}/<wbr>Data/<wbr>Summaries?startIndex={startIndex}&amp;endIndex=(endIndex)&amp;count={count}
 </code></pre><h3 id="parameters-2">Parameters</h3>
 <p><code>string tenantId</code> </p>
 <p>The tenant identifier </p>
@@ -411,7 +380,7 @@ GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{names
 Content-Type: application/json
 [
     {
-        &quot;Measurement&quot;: &quot;measurementPressure&quot;,
+        &quot;Measurement&quot;: &quot;StreamPressure&quot;,
         &quot;Result&quot;: [
             {
                 &quot;Start&quot;: {

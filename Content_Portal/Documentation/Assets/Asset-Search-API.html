@@ -94,9 +94,9 @@
 <li>Value</li>
 </ul>
 </li>
-<li>AssetTypeName</li>
+<li>Asset Type Name</li>
 <li>AssetTypeId</li>
-<li>Measurement Name</li>
+<li>Measurement Mapping Name</li>
 </ul>
 <p>Search criteria can be chained together using an <strong>AND</strong>. See examples below. </p>
 <h3 id="request">Request</h3>
@@ -126,8 +126,13 @@ The asset query string.Search strings are not case-sensitive.</p>
 <tbody>
 <tr>
 <td>200 OK</td>
-<td><code>Asset[]</code></td>
-<td>An array of assets matching the search criteria. An empty array is returned if there are no matching assets.</td>
+<td>Asset list</td>
+<td>A list of assets matching the search criteria. An empty array is returned if there are no matching assets.</td>
+</tr>
+<tr>
+<td>204 OK</td>
+<td>empty</td>
+<td>No assets match your search criteria.</td>
 </tr>
 <tr>
 <td>400 Bad Request</td>
@@ -156,50 +161,42 @@ The asset query string.Search strings are not case-sensitive.</p>
 </tr>
 <tr>
 <td>Id:Id*</td>
-<td>Returns all assets with ID matching <strong>id</strong>* wildcard. [QUESTION: Is search case-sensitive?]</td>
+<td>Returns all assets with ID matching <strong>id</strong>* wildcard.</td>
 </tr>
 <tr>
 <td>Name:Name1</td>
-<td>Returns all asset with a friendly name equal to <strong>Name1</strong>. [QUESTION: What is a friendly name?]</td>
+<td>Returns all asset with a friendly name equal to <strong>Name1</strong>.</td>
 </tr>
 <tr>
 <td>Id:Id AND Name:Name1</td>
 <td>Returns all assets with ID matching the <strong>id</strong>* wildcard and with a friendly name equal to <strong>Name1</strong>.</td>
 </tr>
 <tr>
-<td>AssetTypeName:AssetType Heater</td>
-<td>Returns all assets with an asset type name that is equal to <strong>AssetTypeHeater</strong>.</td>
-</tr>
-<tr>
 <td>Description:floor1*</td>
 <td>Returns all assets with a description that starts with <strong>floor1</strong>.</td>
 </tr>
 <tr>
-<td>floor1*</td>
-<td>Returns all assets with a description that starts with <strong>floor1</strong>.</td>
+<td>Metadata/Name:Building*</td>
+<td>Returns all assets with at least one metadatum description that contains the string <strong>Building</strong>.</td>
 </tr>
 <tr>
-<td>Attributes/Name:Building*</td>
-<td>Returns all assets with at least one attribute description that contains the string <strong>Building</strong>.</td>
+<td>Metadata/Description:heater*</td>
+<td>Returns all assets with at least one metadatum description that starts with <strong>heater</strong>.</td>
 </tr>
 <tr>
-<td>Attributes/Description:heater*</td>
-<td>Returns all assets with at least one attribute description that starts with <strong>heater</strong>.</td>
+<td>Metadata/Value:123</td>
+<td>Returns all assets with at least one metadatum that equals <strong>123</strong>.</td>
 </tr>
 <tr>
-<td>Attributes/Value:123</td>
-<td>Returns all assets with at least one attribute that equals <strong>123</strong>.</td>
-</tr>
-<tr>
-<td>Id:X* AND Attributes/Name:B*</td>
-<td>Returns all assets with ID starting with <strong>X</strong> and containing at least one attribute with a name that starts with a <strong>B</strong>.</td>
+<td>Id:X* AND Metadata/Name:B*</td>
+<td>Returns all assets with ID starting with <strong>X</strong> and containing at least one metadatum with a name that starts with a <strong>B</strong>.</td>
 </tr>
 <tr>
 <td>AssetTypeId:HeaterTypeId</td>
 <td>Returns all assets with AssetTypeId matching HeaterTypeId</td>
 </tr>
 <tr>
-<td>AssetTypeId:HeaterTypeName</td>
+<td>AssetTypeName:HeaterTypeName</td>
 <td>Returns all assets whose Name field of the AssetType matches HeaterTypeName</td>
 </tr>
 <tr>

@@ -78,9 +78,9 @@
             <article class="content wrap" id="_content" data-uid="AssetsAPI">
 <h1 id="assets-api">Assets API</h1>
 
-<p>The Assets API allows you to create, read, update, and delete assets. 
-See Access Control API, Asset Centric API, and Assets Search API for additional API methods.</p>
-<!--- QUESTION: is "methods" the correct term? I'll add links to the topics later. --->
+<p>The Assets API allows you to create, read, update, and delete assets. </p>
+<p>See Access Control API, Asset Centric API, and Assets Search API for additional API methods.</p>
+<p>QUESTION: is &quot;methods&quot; the correct term? I&#39;ll add links to the topics later. </p>
 <hr>
 <h2 id="get-asset-by-id"><code>Get Asset by Id</code></h2>
 <p>Returns the specified asset.</p>
@@ -133,23 +133,21 @@ Content-Type: application/json
     &quot;Id&quot;: &quot;Heater_01_01_02&quot;,
     &quot;Name&quot;: &quot;HeaterOnFirstFloor&quot;,
     &quot;Description&quot;: &quot;This is Asset which represents a heater on the first floor.&quot;,
-    &quot;Attributes&quot;: [
+    &quot;Metadata&quot;: [
         {
+            &quot;Id&quot;: &quot;17020d80-1dc8-4690-932f-3421c9cff0d1&quot;,
             &quot;Name&quot;: &quot;ModelNumber&quot;,
             &quot;Description&quot;: &quot;This is attribute with double value representing the model number.&quot;,
             &quot;SdsTypeCode&quot;: 14,
             &quot;Value&quot;: 1.3
         }
     ],
-    &quot;References&quot;: [
+    &quot;StreamReferences&quot;: [
         {
+            &quot;Id&quot;: &quot;63c0ba1d-f2db-4b28-b650-7e45afca9ab4&quot;,
             &quot;Name&quot;: &quot;Data&quot;,
             &quot;Description&quot;: &quot;This is reference to a stream. The stream has data coming from a heater.&quot;,
-            &quot;ReferenceType&quot;: &quot;StreamReference&quot;,
-            &quot;Value&quot;: {
-                &quot;StreamId&quot;: &quot;PI_bifrostbigdaddy_1&quot;,
-                &quot;TypeId&quot;: &quot;PI-Float32&quot;
-            }
+            &quot;StreamId&quot;: &quot;PI_bifrostbigdaddy_1&quot;
         }
     ]
 }
@@ -157,8 +155,7 @@ Content-Type: application/json
 <h2 id="get-assets"><code>Get Assets</code></h2>
 <p>Returns an array of assets. </p>
 <h3 id="request-1">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code>
-GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets?skip={skip}&amp;count={count} 
+<pre style="word-break:normal; overflow-wrap:break-word;"><code>GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets?skip={skip}&amp;count={count} 
 </code></pre><h3 id="parameters-1">Parameters</h3>
 <p><code>string tenantId</code> </p>
 <p>The tenant identifier</p>
@@ -204,9 +201,9 @@ GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{names
 <hr>
 <h2 id="create-asset"><code>Create Asset</code></h2>
 <p>Create a new asset with a specified ID. </p>
+<p>If the asset you are trying to create references an asset type (via the AssetTypeId property) and if there is the corresponding asset type has a metadatum with the same id, then the name and sds type code of the metadatum on the asset must be null. If the asset type does not have metadatum with a corresponding id, name and sds type code may not be null.</p>
 <h3 id="request-2">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">
-POST api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets/<wbr>{assetId} 
+<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">POST api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets/<wbr>{assetId} 
 </code></pre><h3 id="parameters-2">Parameters</h3>
 <p><code>string tenantId</code> </p>
 <p>The tenant identifier</p>
@@ -217,36 +214,25 @@ POST api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{name
 <h4 id="request-body">Request body</h4>
 <p>An <code>asset</code> object</p>
 <h4 id="example-request-body">Example request body</h4>
-<p>NOTE: To create an asset with a specific ID, use the API route with ID. If this is used, you must specify a matching ID field for the asset object in the JSON object below. </p>
-<!--- QUESTION: Can you create an asset without specifying an ID? Why would you want to specify an ID? --->
+<p>NOTE: To create an asset with a specific ID, use the API route with ID. If this is used, you must specify a matching ID field for the asset object in the JSON object below.</p>
 <pre><code class="lang-json">{
     &quot;Name&quot;: &quot;HeaterOnFirstFloor&quot;,
     &quot;Description&quot;: &quot;This is Asset which represents a heater on the first floor.&quot;,
-    &quot;Attributes&quot;: [
+    &quot;Metadata&quot;: [
         {
+            &quot;Id&quot;: &quot;c0e29698-d157-4288-9dea-db290de1fb35&quot;,
             &quot;Name&quot;: &quot;ModelNumber&quot;,
             &quot;Description&quot;: &quot;This is attribute with double value representing the model number.&quot;,
             &quot;SdsTypeCode&quot;: 14,
             &quot;Value&quot;: 1.3
         }
     ],
-    &quot;References&quot;: [
+    &quot;StreamReferences&quot;: [
         {
+            &quot;Id&quot;: &quot;a1b1c2cc-0a1d-4d89-b53e-e7db746bb4d2&quot;,
             &quot;Name&quot;: &quot;Data&quot;,
             &quot;Description&quot;: &quot;This is reference to a stream. The stream has data coming from a heater.&quot;,
-            &quot;ReferenceType&quot;: &quot;StreamReference&quot;,
-            &quot;Value&quot;: {
-                &quot;StreamId&quot;: &quot;heaterData_1&quot;,
-            }
-        },
-        {
-            &quot;Name&quot;: &quot;StreamView&quot;,
-            &quot;Description&quot;: &quot;This is reference to a stream view, the user is only interested in sds stream properties specified in the sds stream view.&quot;,
-            &quot;ReferenceType&quot;: &quot;StreamReference&quot;,
-            &quot;Value&quot;: {
-                &quot;StreamViewId&quot;: &quot;ViewShowOnlyPressure&quot;,
-                &quot;StreamId&quot;: &quot;ComplexSdsStream&quot;
-            }
+            &quot;StreamId&quot;: &quot;heaterData_1&quot;
         }
     ]
 }
@@ -308,7 +294,7 @@ POST api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{name
 <tbody>
 <tr>
 <td>200 OK</td>
-<td><code>Asset</code></td>
+<td><code>Asset[]</code></td>
 <td>An array of assets as persisted, including values for optional parameters that were omitted in the request.</td>
 </tr>
 <tr>

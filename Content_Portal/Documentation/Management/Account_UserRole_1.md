@@ -16,8 +16,8 @@ For HTTP requests and responses, the UserRole object has the following propertie
 
 | Property Name | Data Type | Description | 
  | --- | --- | ---  | 
-| UserId | string | User Id. | 
-| RoleId | string | Role Id. | 
+| UserId | string | String value that identifies the user. | 
+| RoleId | string | String value that identifies the role. | 
 
 
 ```json

@@ -25,7 +25,7 @@ Id | string | Secret Id.
 Name | string | Name of Client.
 Enabled | bool | Whether client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.
 AccessTokenLifetime | int32 | Lifetime of access token issued for this client after authentication. Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.
-Tags | string[] | Fof or OSIsoft internal use only.
+Tags | string[] | For or OSIsoft internal use only.
 
 ### Serialized Model
 

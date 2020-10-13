@@ -10,7 +10,7 @@ APIs for managing the feature states of an OCS `Tenant`.
 
 For HTTP requests and responses, the TenantFeatureState object has the following properties and JSON-serialized body: 
 
-| Property | Type | Description | 
+| Property Name | Data Type | Description | 
  | --- | --- | ---  | 
 | TenantId | string | The identifier of the Tenant that the TenantFeatureState corresponds to. | 
 | FeatureId | string | The identifier of the Service that the TenantFeatureState corresponds to. | 

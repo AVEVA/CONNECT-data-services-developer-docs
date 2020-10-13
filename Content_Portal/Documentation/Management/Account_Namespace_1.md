@@ -18,13 +18,13 @@ In practice, namespaces may correspond to a specific set of infrastructure asset
 
 For HTTP requests and responses, the Namespace object has the following properties and JSON-serialized body: 
 
-| Property | Type | Description | 
+| Property Name | Data Type | Description | 
  | --- | --- | ---  | 
-| Id | string | Gets or sets name of this Namespace; unique within a Tenant's Namespaces. | 
-| Region | string | Gets or sets the region that the namespace is provisioned in. | 
-| Self | string | Gets or sets the namespace's URI. | 
-| Description | string | Gets or sets description of this Namespace. | 
-| State | NamespaceProvisioningState | Gets or sets current state of this Namespace. | 
+| Id | string | Nme of this Namespace; unique within a Tenant's Namespaces. | 
+| Region | string | The region that the namespace is provisioned in. | 
+| Self | string | The namespace's URI. | 
+| Description | string | Description of this Namespace. | 
+| State | NamespaceProvisioningState | Current state of this Namespace. | 
 
 ```json
 {
@@ -38,7 +38,7 @@ For HTTP requests and responses, the Namespace object has the following properti
 
 ## Region ##
 
-When a namespace is created, all resources are created in the namespace's region. Resources created in this namespace (e.g. SDS types, streams, and stream views) will be created in the region of the namespace, and any data stored in the namespace will be stored in that region. Read and write operations at the namespace level and within a namespace utilize the base URL of the region in which the namespace resides. The ``Self`` property on each namespace provides the complete URL for all operations within that namespace.
+When a namespace is created, all resources are created in the namespace's region. Resources created in this namespace (for example: SDS types, streams, and stream views) will be created in the region of the namespace, and any data stored in the namespace will be stored in that region. Read and write operations at the namespace level and within a namespace utilize the base URL of the region in which the namespace resides. The ``Self`` property on each namespace provides the complete URL for all operations within that namespace.
 
 ***
 

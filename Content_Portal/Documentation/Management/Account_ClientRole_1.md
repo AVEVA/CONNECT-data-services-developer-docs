@@ -16,8 +16,8 @@ For HTTP requests and responses, the ClientRole object has the following propert
 
 | Property Name | Data Type | Description | 
  | --- | --- | ---  | 
-| ClientId | string | Client Id. | 
-| RoleId | string | Role Id. | 
+| ClientId | string | String value that identifies the client. | 
+| RoleId | string | String value that identifies the role. | 
 
 
 ```json

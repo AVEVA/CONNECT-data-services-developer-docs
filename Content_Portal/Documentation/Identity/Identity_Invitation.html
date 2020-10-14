@@ -95,8 +95,8 @@
 <table>
 <thead>
 <tr>
-<th>Property</th>
-<th>Type</th>
+<th>Property Name</th>
+<th>Data Type</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -104,42 +104,42 @@
 <tr>
 <td>Id</td>
 <td>string</td>
-<td>Gets or sets unique Invitation Id.</td>
+<td>Unique Invitation Id.</td>
 </tr>
 <tr>
 <td>Issued</td>
 <td>DateTime</td>
-<td>Gets or sets invitation issuing timestamp.</td>
+<td>Invitation issuing timestamp.</td>
 </tr>
 <tr>
 <td>Expires</td>
 <td>DateTime</td>
-<td>Gets or sets invitation expiration timestamp.</td>
+<td>Invitation expiration timestamp.</td>
 </tr>
 <tr>
 <td>Accepted</td>
 <td>DateTime</td>
-<td>Gets or sets invitation accepted timestamp.</td>
+<td>Invitation accepted timestamp.</td>
 </tr>
 <tr>
 <td>State</td>
 <td>InvitationStates</td>
-<td>Gets or sets invitation state. Can be None (0), InvitationEmailSent (1), InvitationAccepted (2).</td>
+<td>Invitation state. Can be None (0), InvitationEmailSent (1), InvitationAccepted (2).</td>
 </tr>
 <tr>
 <td>TenantId</td>
 <td>string</td>
-<td>Gets or sets ID of the Tenant the invitation belongs to.</td>
+<td>ID of the Tenant the invitation belongs to.</td>
 </tr>
 <tr>
 <td>UserId</td>
 <td>Guid</td>
-<td>Gets or sets ID of the User whom the invitation was issued to.</td>
+<td>ID of the User whom the invitation was issued to.</td>
 </tr>
 <tr>
 <td>IdentityProviderId</td>
 <td>Guid</td>
-<td>Gets or sets ID of the Identity Provider that must be used to accept the invitation.</td>
+<td>ID of the Identity Provider that must be used to accept the invitation.</td>
 </tr>
 </tbody>
 </table>
@@ -300,8 +300,8 @@ InvitationCreateOrUpdate invitationCreateOrUpdate
 <table>
 <thead>
 <tr>
-<th>Property</th>
-<th>Type</th>
+<th>Property Name</th>
+<th>Data Type</th>
 <th>Required</th>
 <th>Description</th>
 </tr>
@@ -311,25 +311,25 @@ InvitationCreateOrUpdate invitationCreateOrUpdate
 <td>ExpiresDateTime</td>
 <td>DateTime</td>
 <td>No</td>
-<td>Gets or sets invitation expiration date. Must be in the future.            Maximum allowed is two month in the future.            Defaults to 21 days on creation.            It should be in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> and either            include a <em>Z</em> at the end to represent UTC timezone            or include the offset in hours. If neither is present            time will be treated in the local time zone of the server.</td>
+<td>Invitation expiration date. Must be in the future.            Maximum allowed is two month in the future.            Defaults to 21 days on creation.            It should be in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> and either            include a <em>Z</em> at the end to represent UTC timezone            or include the offset in hours. If neither is present            time will be treated in the local time zone of the server.</td>
 </tr>
 <tr>
 <td>State</td>
 <td>InvitationStates</td>
 <td>No</td>
-<td>Gets or sets set the state of invitation. For OSISoft internal use only.</td>
+<td>Set the state of invitation. For OSISoft internal use only.</td>
 </tr>
 <tr>
 <td>SendInvitation</td>
 <td>bool</td>
 <td>No</td>
-<td>Gets or sets send an invitation email. Invitation will be sent to the            ContactEmail in the User this invitation is attached to.            Default is true.</td>
+<td>Send an invitation email. Invitation will be sent to the            ContactEmail in the User this invitation is attached to.            Default is true.</td>
 </tr>
 <tr>
 <td>IdentityProviderId</td>
 <td>Guid</td>
 <td>No</td>
-<td>Gets or sets Identity Provider to use for accepting this invitation.            Required when creating an Invitation.</td>
+<td>Identity Provider to use for accepting this invitation.            Required when creating an Invitation.</td>
 </tr>
 </tbody>
 </table>
@@ -535,8 +535,8 @@ InvitationCreateOrUpdate invitationCreateOrUpdate
 <table>
 <thead>
 <tr>
-<th>Property</th>
-<th>Type</th>
+<th>Property Name</th>
+<th>Data Type</th>
 <th>Required</th>
 <th>Description</th>
 </tr>
@@ -546,25 +546,25 @@ InvitationCreateOrUpdate invitationCreateOrUpdate
 <td>ExpiresDateTime</td>
 <td>DateTime</td>
 <td>No</td>
-<td>Gets or sets invitation expiration date. Must be in the future.            Maximum allowed is two month in the future.            Defaults to 21 days on creation.            It should be in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> and either            include a <em>Z</em> at the end to represent UTC timezone            or include the offset in hours. If neither is present            time will be treated in the local time zone of the server.</td>
+<td>Invitation expiration date. Must be in the future.            Maximum allowed is two month in the future.            Defaults to 21 days on creation.            It should be in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> and either            include a <em>Z</em> at the end to represent UTC timezone            or include the offset in hours. If neither is present            time will be treated in the local time zone of the server.</td>
 </tr>
 <tr>
 <td>State</td>
 <td>InvitationStates</td>
 <td>No</td>
-<td>Gets or sets set the state of invitation. For OSISoft internal use only.</td>
+<td>Set the state of invitation. For OSISoft internal use only.</td>
 </tr>
 <tr>
 <td>SendInvitation</td>
 <td>bool</td>
 <td>No</td>
-<td>Gets or sets send an invitation email. Invitation will be sent to the            ContactEmail in the User this invitation is attached to.            Default is true.</td>
+<td>Send an invitation email. Invitation will be sent to the            ContactEmail in the User this invitation is attached to.            Default is true.</td>
 </tr>
 <tr>
 <td>IdentityProviderId</td>
 <td>Guid</td>
 <td>No</td>
-<td>Gets or sets Identity Provider to use for accepting this invitation.            Required when creating an Invitation.</td>
+<td>Identity Provider to use for accepting this invitation.            Required when creating an Invitation.</td>
 </tr>
 </tbody>
 </table>
@@ -629,8 +629,8 @@ InvitationCreateOrUpdate invitationCreateOrUpdate
 <table>
 <thead>
 <tr>
-<th>Property</th>
-<th>Type</th>
+<th>Property Name</th>
+<th>Data Type</th>
 <th>Required</th>
 <th>Description</th>
 </tr>
@@ -640,25 +640,25 @@ InvitationCreateOrUpdate invitationCreateOrUpdate
 <td>ExpiresDateTime</td>
 <td>DateTime</td>
 <td>No</td>
-<td>Gets or sets invitation expiration date. Must be in the future.            Maximum allowed is two month in the future.            Defaults to 21 days on creation.            It should be in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> and either            include a <em>Z</em> at the end to represent UTC timezone            or include the offset in hours. If neither is present            time will be treated in the local time zone of the server.</td>
+<td>Invitation expiration date. Must be in the future.            Maximum allowed is two month in the future.            Defaults to 21 days on creation.            It should be in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> and either            include a <em>Z</em> at the end to represent UTC timezone            or include the offset in hours. If neither is present            time will be treated in the local time zone of the server.</td>
 </tr>
 <tr>
 <td>State</td>
 <td>InvitationStates</td>
 <td>No</td>
-<td>Gets or sets set the state of invitation. For OSISoft internal use only.</td>
+<td>Set the state of invitation. For OSISoft internal use only.</td>
 </tr>
 <tr>
 <td>SendInvitation</td>
 <td>bool</td>
 <td>No</td>
-<td>Gets or sets send an invitation email. Invitation will be sent to the            ContactEmail in the User this invitation is attached to.            Default is true.</td>
+<td>Send an invitation email. Invitation will be sent to the            ContactEmail in the User this invitation is attached to.            Default is true.</td>
 </tr>
 <tr>
 <td>IdentityProviderId</td>
 <td>Guid</td>
 <td>No</td>
-<td>Gets or sets Identity Provider to use for accepting this invitation.            Required when creating an Invitation.</td>
+<td>Identity Provider to use for accepting this invitation.            Required when creating an Invitation.</td>
 </tr>
 </tbody>
 </table>

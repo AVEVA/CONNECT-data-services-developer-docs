@@ -93,8 +93,8 @@ for Namespace IDs are the following:</p>
 <table>
 <thead>
 <tr>
-<th>Property</th>
-<th>Type</th>
+<th>Property Name</th>
+<th>Data Type</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -102,27 +102,27 @@ for Namespace IDs are the following:</p>
 <tr>
 <td>Id</td>
 <td>string</td>
-<td>Gets or sets name of this Namespace; unique within a Tenant&#39;s Namespaces.</td>
+<td>Nme of this Namespace; unique within a Tenant&#39;s Namespaces.</td>
 </tr>
 <tr>
 <td>Region</td>
 <td>string</td>
-<td>Gets or sets the region that the namespace is provisioned in.</td>
+<td>The region that the namespace is provisioned in.</td>
 </tr>
 <tr>
 <td>Self</td>
 <td>string</td>
-<td>Gets or sets the namespace&#39;s URI.</td>
+<td>The namespace&#39;s URI.</td>
 </tr>
 <tr>
 <td>Description</td>
 <td>string</td>
-<td>Gets or sets description of this Namespace.</td>
+<td>Description of this Namespace.</td>
 </tr>
 <tr>
 <td>State</td>
 <td>NamespaceProvisioningState</td>
-<td>Gets or sets current state of this Namespace.</td>
+<td>Current state of this Namespace.</td>
 </tr>
 </tbody>
 </table>
@@ -134,7 +134,7 @@ for Namespace IDs are the following:</p>
     &quot;State&quot;: 0,
 }
 </code></pre><h2 id="region">Region</h2>
-<p>When a namespace is created, all resources are created in the namespace&#39;s region. Resources created in this namespace (e.g. SDS types, streams, and stream views) will be created in the region of the namespace, and any data stored in the namespace will be stored in that region. Read and write operations at the namespace level and within a namespace utilize the base URL of the region in which the namespace resides. The <code>Self</code> property on each namespace provides the complete URL for all operations within that namespace.</p>
+<p>When a namespace is created, all resources are created in the namespace&#39;s region. Resources created in this namespace (for example: SDS types, streams, and stream views) will be created in the region of the namespace, and any data stored in the namespace will be stored in that region. Read and write operations at the namespace level and within a namespace utilize the base URL of the region in which the namespace resides. The <code>Self</code> property on each namespace provides the complete URL for all operations within that namespace.</p>
 <hr>
 <h2 id="get-all-namespaces"><code>Get All Namespaces</code></h2>
 <p>Returns all <code>Namespaces</code> owned by the specified <code>Tenant</code> that the caller has access to.</p>

@@ -96,8 +96,8 @@
 <table>
 <thead>
 <tr>
-<th>Property</th>
-<th>Type</th>
+<th>Property Name</th>
+<th>Data Type</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -105,57 +105,57 @@
 <tr>
 <td>Id</td>
 <td>Guid</td>
-<td>Gets or sets unique User ID.</td>
+<td>Unique User ID.</td>
 </tr>
 <tr>
 <td>GivenName</td>
 <td>string</td>
-<td>Gets or sets given name of user.</td>
+<td>Given name of user.</td>
 </tr>
 <tr>
 <td>Surname</td>
 <td>string</td>
-<td>Gets or sets surname of user.</td>
+<td>Surname of user.</td>
 </tr>
 <tr>
 <td>Name</td>
 <td>string</td>
-<td>Gets or sets name of user.</td>
+<td>Nname of user.</td>
 </tr>
 <tr>
 <td>Email</td>
 <td>string</td>
-<td>Gets or sets email of user.</td>
+<td>Email of user.</td>
 </tr>
 <tr>
 <td>ContactEmail</td>
 <td>string</td>
-<td>Gets or sets contact email for user. User will only be contacted through this email.</td>
+<td>Contact email for user. User will only be contacted through this email.</td>
 </tr>
 <tr>
 <td>ContactGivenName</td>
 <td>string</td>
-<td>Gets or sets preferred contact name for user.</td>
+<td>Preferred contact name for user.</td>
 </tr>
 <tr>
 <td>ContactSurname</td>
 <td>string</td>
-<td>Gets or sets preferred contact surname for user.</td>
+<td>Preferred contact surname for user.</td>
 </tr>
 <tr>
 <td>ExternalUserId</td>
 <td>string</td>
-<td>Gets or sets provider id for user. This is the unique ID we get from the Identity Provider.</td>
+<td>Provider id for user. This is the unique ID we get from the Identity Provider.</td>
 </tr>
 <tr>
 <td>IdentityProviderId</td>
 <td>Guid</td>
-<td>Gets or sets Identity Provider Id used to authenticate User. Will be set once the User accepts an invitation. If not specified when sending the invitation to the User, it can be any of the Identity Provider Ids configured for this Tenant.</td>
+<td>Identity Provider Id used to authenticate User. Will be set once the User accepts an invitation. If not specified when sending the invitation to the User, it can be any of the Identity Provider Ids configured for this Tenant.</td>
 </tr>
 <tr>
 <td>RoleIds</td>
 <td>Guid[]</td>
-<td>Gets or sets list of strings of RoleIds.</td>
+<td>List of strings of RoleIds.</td>
 </tr>
 </tbody>
 </table>
@@ -629,8 +629,8 @@ UserCreateOrUpdate userCreateOrUpdate
 <table>
 <thead>
 <tr>
-<th>Property</th>
-<th>Type</th>
+<th>Property Name</th>
+<th>Data Type</th>
 <th>Required</th>
 <th>Description</th>
 </tr>
@@ -640,43 +640,43 @@ UserCreateOrUpdate userCreateOrUpdate
 <td>Id</td>
 <td>Guid</td>
 <td>No</td>
-<td>Gets or sets user Id for the user. When creating a user, if User ID is not specified, one will be generated.</td>
+<td>User Id for the user. When creating a user, if User ID is not specified, one will be generated.</td>
 </tr>
 <tr>
 <td>ExternalUserId</td>
 <td>string</td>
 <td>No</td>
-<td>Gets or sets user ExternalUserId for the user. Must be specified if Identity Provider is Windows Active Directory.</td>
+<td>User ExternalUserId for the user. Must be specified if Identity Provider is Windows Active Directory.</td>
 </tr>
 <tr>
 <td>ContactGivenName</td>
 <td>string</td>
 <td>No</td>
-<td>Gets or sets preferred name to be used when contacting user.</td>
+<td>Preferred name to be used when contacting user.</td>
 </tr>
 <tr>
 <td>ContactSurname</td>
 <td>string</td>
 <td>No</td>
-<td>Gets or sets preferred surname to be used when contacting user.</td>
+<td>Preferred surname to be used when contacting user.</td>
 </tr>
 <tr>
 <td>ContactEmail</td>
 <td>string</td>
 <td>No</td>
-<td>Gets or sets preferred contact email to be used. This does not have to be the same as the user&#39;s Identity Provider email.</td>
+<td>Preferred contact email to be used. This does not have to be the same as the user&#39;s Identity Provider email.</td>
 </tr>
 <tr>
 <td>IdentityProviderId</td>
 <td>Guid</td>
 <td>No</td>
-<td>Gets or sets Identity Provider this user will be required to use to login.  If null, the Identity Provider Id will            be set when creating the Invitation.</td>
+<td>Identity Provider this user will be required to use to login.  If null, the Identity Provider Id will            be set when creating the Invitation.</td>
 </tr>
 <tr>
 <td>RoleIds</td>
 <td>Guid[]</td>
 <td>No</td>
-<td>Gets or sets list of strings of RoleIds.</td>
+<td>List of strings of RoleIds.</td>
 </tr>
 </tbody>
 </table>
@@ -751,8 +751,8 @@ UserCreateOrUpdate userCreateOrUpdate
 <table>
 <thead>
 <tr>
-<th>Property</th>
-<th>Type</th>
+<th>Property Name</th>
+<th>Data Type</th>
 <th>Required</th>
 <th>Description</th>
 </tr>
@@ -762,43 +762,43 @@ UserCreateOrUpdate userCreateOrUpdate
 <td>Id</td>
 <td>Guid</td>
 <td>No</td>
-<td>Gets or sets user Id for the user. When creating a user, if User ID is not specified, one will be generated.</td>
+<td>User Id for the user. When creating a user, if User ID is not specified, one will be generated.</td>
 </tr>
 <tr>
 <td>ExternalUserId</td>
 <td>string</td>
 <td>No</td>
-<td>Gets or sets user ExternalUserId for the user. Must be specified if Identity Provider is Windows Active Directory.</td>
+<td>User ExternalUserId for the user. Must be specified if Identity Provider is Windows Active Directory.</td>
 </tr>
 <tr>
 <td>ContactGivenName</td>
 <td>string</td>
 <td>No</td>
-<td>Gets or sets preferred name to be used when contacting user.</td>
+<td>Preferred name to be used when contacting user.</td>
 </tr>
 <tr>
 <td>ContactSurname</td>
 <td>string</td>
 <td>No</td>
-<td>Gets or sets preferred surname to be used when contacting user.</td>
+<td>Preferred surname to be used when contacting user.</td>
 </tr>
 <tr>
 <td>ContactEmail</td>
 <td>string</td>
 <td>No</td>
-<td>Gets or sets preferred contact email to be used. This does not have to be the same as the user&#39;s Identity Provider email.</td>
+<td>Preferred contact email to be used. This does not have to be the same as the user&#39;s Identity Provider email.</td>
 </tr>
 <tr>
 <td>IdentityProviderId</td>
 <td>Guid</td>
 <td>No</td>
-<td>Gets or sets Identity Provider this user will be required to use to login.  If null, the Identity Provider Id will            be set when creating the Invitation.</td>
+<td>Identity Provider this user will be required to use to login.  If null, the Identity Provider Id will            be set when creating the Invitation.</td>
 </tr>
 <tr>
 <td>RoleIds</td>
 <td>Guid[]</td>
 <td>No</td>
-<td>Gets or sets list of strings of RoleIds.</td>
+<td>List of strings of RoleIds.</td>
 </tr>
 </tbody>
 </table>

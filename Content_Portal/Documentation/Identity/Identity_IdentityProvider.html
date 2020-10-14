@@ -84,8 +84,8 @@
 <table>
 <thead>
 <tr>
-<th>Property</th>
-<th>Type</th>
+<th>Property Name</th>
+<th>Data Type</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -93,37 +93,37 @@
 <tr>
 <td>Id</td>
 <td>Guid</td>
-<td>Gets or sets id of an identity provider.</td>
+<td>Id of an identity provider.</td>
 </tr>
 <tr>
 <td>DisplayName</td>
 <td>string</td>
-<td>Gets or sets identity provider display name to use.</td>
+<td>Identity provider display name to use.</td>
 </tr>
 <tr>
 <td>Scheme</td>
 <td>string</td>
-<td>Gets or sets the name of the cookie handler that will temporarily store the outcome of the external authentication.</td>
+<td>The name of the cookie handler that will temporarily store the outcome of the external authentication.</td>
 </tr>
 <tr>
 <td>UserIdClaimType</td>
 <td>string</td>
-<td>Gets or sets type of claim.</td>
+<td>Type of claim.</td>
 </tr>
 <tr>
 <td>ClientId</td>
 <td>string</td>
-<td>Gets or sets the ClientId of the identity provider.</td>
+<td>The ClientId of the identity provider.</td>
 </tr>
 <tr>
 <td>IsConfigured</td>
 <td>bool</td>
-<td>Gets or sets a value indicating whether the identity provider has been configured.</td>
+<td>A value indicating whether the identity provider has been configured.</td>
 </tr>
 <tr>
 <td>Capabilities</td>
 <td>object</td>
-<td>Gets or sets the capabilities of the identity provider.</td>
+<td>The capabilities of the identity provider.</td>
 </tr>
 </tbody>
 </table>
@@ -525,8 +525,8 @@ IdentityProviderAdd identityProviderAdd
 <table>
 <thead>
 <tr>
-<th>Property</th>
-<th>Type</th>
+<th>Property Name</th>
+<th>Data Type</th>
 <th>Required</th>
 <th>Description</th>
 </tr>
@@ -536,43 +536,43 @@ IdentityProviderAdd identityProviderAdd
 <td>IdentityProviderId</td>
 <td>Guid</td>
 <td>Yes</td>
-<td>Gets or sets Identity Provider Id to Add.</td>
+<td>Identity Provider Id to Add.</td>
 </tr>
 <tr>
 <td>AzureActiveDirectorySendConsent</td>
 <td>bool</td>
 <td>No</td>
-<td>Gets or sets a value indicating whether send consent email for Azure Active Directory.</td>
+<td>A value indicating whether send consent email for Azure Active Directory.</td>
 </tr>
 <tr>
 <td>AzureActiveDirectoryConsentEmail</td>
 <td>string</td>
 <td>Yes</td>
-<td>Gets or sets address to email consent.            Only Azure Active Directory Admins have permission to consent to            being allowed to interact with the tenant. The email            does not have to be sent to an Admin.</td>
+<td>Address to email consent.            Only Azure Active Directory Admins have permission to consent to            being allowed to interact with the tenant. The email            does not have to be sent to an Admin.</td>
 </tr>
 <tr>
 <td>AzureActiveDirectoryConsentGivenName</td>
 <td>string</td>
 <td>Yes</td>
-<td>Gets or sets preferred name to use in the consent email.</td>
+<td>Preferred name to use in the consent email.</td>
 </tr>
 <tr>
 <td>AzureActiveDirectoryConsentSurname</td>
 <td>string</td>
 <td>Yes</td>
-<td>Gets or sets preferred surname to use in the consent email.</td>
+<td>Preferred surname to use in the consent email.</td>
 </tr>
 <tr>
 <td>AzureActiveDirectoryTenant</td>
 <td>string</td>
 <td>Yes</td>
-<td>Gets or sets Azure Active Directory Domain Name (e.g., mydomain.onmicrosoft.com).</td>
+<td>Azure Active Directory Domain Name (for example, mydomain.onmicrosoft.com).</td>
 </tr>
 <tr>
 <td>AzureActiveDirectoryConsentTypes</td>
 <td>string</td>
 <td>No</td>
-<td>Gets or sets Azure Active Directory Consent Types (e.g., SignIn or SignIn;ReadAllUsersGroups).</td>
+<td>Azure Active Directory Consent Types (for example, SignIn or SignIn;ReadAllUsersGroups).</td>
 </tr>
 </tbody>
 </table>
@@ -1013,8 +1013,8 @@ IdentityProviderConsent identityProviderConsent
 <table>
 <thead>
 <tr>
-<th>Property</th>
-<th>Type</th>
+<th>Property Name</th>
+<th>Data Type</th>
 <th>Required</th>
 <th>Description</th>
 </tr>
@@ -1024,43 +1024,43 @@ IdentityProviderConsent identityProviderConsent
 <td>Scheme</td>
 <td>string</td>
 <td>Yes</td>
-<td>Gets or sets the scheme of the Identity Provider.</td>
+<td>The scheme of the Identity Provider.</td>
 </tr>
 <tr>
 <td>AadTenantId</td>
 <td>string</td>
 <td>No</td>
-<td>Gets or sets Azure Active Directory Tenant Id.</td>
+<td>Azure Active Directory Tenant Id.</td>
 </tr>
 <tr>
 <td>AadDomain</td>
 <td>string</td>
 <td>No</td>
-<td>Gets or sets Azure Active Directory Domain Name (e.g., mydomain.onmicrosoft.com).</td>
+<td>Azure Active Directory Domain Name (for example, mydomain.onmicrosoft.com).</td>
 </tr>
 <tr>
 <td>AadConsentTypes</td>
 <td>string</td>
 <td>Yes</td>
-<td>Gets or sets Azure Active Directory Consent Types (e.g., SignIn or SignIn;ReadAllUsersGroups).</td>
+<td>Azure Active Directory Consent Types (for example, SignIn or SignIn;ReadAllUsersGroups).</td>
 </tr>
 <tr>
 <td>ConsentEmail</td>
 <td>string</td>
 <td>Yes</td>
-<td>Gets or sets address to email consent. Only Azure Active Directory Admins have permission to consent to being allowed to interact with the tenant. The email does not have to be sent to an Admin.</td>
+<td>Address to email consent. Only Azure Active Directory Admins have permission to consent to being allowed to interact with the tenant. The email does not have to be sent to an Admin.</td>
 </tr>
 <tr>
 <td>ConsentFirstName</td>
 <td>string</td>
 <td>Yes</td>
-<td>Gets or sets preferred name to use in the consent email.</td>
+<td>Preferred name to use in the consent email.</td>
 </tr>
 <tr>
 <td>ConsentOverride</td>
 <td>bool</td>
 <td>No</td>
-<td>Gets or sets a value indicating whether force a consent email to be sent for the specified ConsentTypes.</td>
+<td>A value indicating whether force a consent email to be sent for the specified ConsentTypes.</td>
 </tr>
 </tbody>
 </table>

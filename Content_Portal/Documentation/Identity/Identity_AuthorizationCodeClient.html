@@ -88,8 +88,8 @@
 <table>
 <thead>
 <tr>
-<th>Property</th>
-<th>Type</th>
+<th>Property Name</th>
+<th>Data Type</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -97,52 +97,52 @@
 <tr>
 <td>AllowedCorsOrigins</td>
 <td>string[]</td>
-<td>Gets or sets the values used by the default CORS policy service implementations to build a CORS policy for JavaScript clients.</td>
+<td>The values used by the default CORS policy service implementations to build a CORS policy for JavaScript clients.</td>
 </tr>
 <tr>
 <td>RedirectUris</td>
 <td>string[]</td>
-<td>Gets or sets the allowed URIs to which return tokens or authorization codes can be returned. Wildcards are ignored. URIs must match exactly what you are redirecting to after login. If URIs do not match, the authentication process will fail with a bad_client error. Maximum 10 per client.</td>
+<td>The allowed URIs to which return tokens or authorization codes can be returned. Wildcards are ignored. URIs must match exactly what you are redirecting to after login. If URIs do not match, the authentication process will fail with a bad_client error. Maximum 10 per client.</td>
 </tr>
 <tr>
 <td>PostLogoutRedirectUris</td>
 <td>string[]</td>
-<td>Gets or sets allowed URIs to redirect to after logout. Wildcards are ignored. URIs must match exactly what you are redirecting to after logout. Maximum 10 for client.</td>
+<td>Allowed URIs to redirect to after logout. Wildcards are ignored. URIs must match exactly what you are redirecting to after logout. Maximum 10 for client.</td>
 </tr>
 <tr>
 <td>ClientUri</td>
 <td>string</td>
-<td>Gets or sets URI to a page with information about client (used on consent screen).</td>
+<td>URI to a page with information about client (used on consent screen).</td>
 </tr>
 <tr>
 <td>LogoUri</td>
 <td>string</td>
-<td>Gets or sets URI to client logo (used on consent screen).</td>
+<td>URI to client logo (used on consent screen).</td>
 </tr>
 <tr>
 <td>Id</td>
 <td>string</td>
-<td>Gets or sets client ID for this client. This ID should be a GUID.</td>
+<td>Client ID for this client. This ID should be a GUID.</td>
 </tr>
 <tr>
 <td>Name</td>
 <td>string</td>
-<td>Gets or sets name of Client.</td>
+<td>Name of Client.</td>
 </tr>
 <tr>
 <td>Enabled</td>
 <td>bool</td>
-<td>Gets or sets whether client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.</td>
+<td>Whether client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.</td>
 </tr>
 <tr>
 <td>AccessTokenLifetime</td>
 <td>int32</td>
-<td>Gets or sets lifetime of access token issued for this client after authentication. Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.</td>
+<td>Lifetime of access token issued for this client after authentication. Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.</td>
 </tr>
 <tr>
 <td>Tags</td>
 <td>string[]</td>
-<td>Gets or sets for OSIsoft internal use only.</td>
+<td>For OSIsoft internal use only.</td>
 </tr>
 </tbody>
 </table>
@@ -203,8 +203,8 @@ AuthorizationCodeClient authorizationCodeClient
 <table>
 <thead>
 <tr>
-<th>Property</th>
-<th>Type</th>
+<th>Property Name</th>
+<th>Data Type</th>
 <th>Required</th>
 <th>Description</th>
 </tr>
@@ -214,61 +214,61 @@ AuthorizationCodeClient authorizationCodeClient
 <td>AllowedCorsOrigins</td>
 <td>string[]</td>
 <td>No</td>
-<td>Gets or sets the values used by the default CORS policy service implementations to build a            CORS policy for JavaScript clients.</td>
+<td>The values used by the default CORS policy service implementations to build a            CORS policy for JavaScript clients.</td>
 </tr>
 <tr>
 <td>RedirectUris</td>
 <td>string[]</td>
 <td>No</td>
-<td>Gets or sets the allowed URIs to which return tokens or authorization codes can be returned.            Wildcards are ignored. URIs must match exactly what you are redirecting to            after login. If URIs do not match, the authentication process will fail            with a bad_client error.            Maximum 10 per client.</td>
+<td>The allowed URIs to which return tokens or authorization codes can be returned.            Wildcards are ignored. URIs must match exactly what you are redirecting to            after login. If URIs do not match, the authentication process will fail            with a bad_client error.            Maximum 10 per client.</td>
 </tr>
 <tr>
 <td>PostLogoutRedirectUris</td>
 <td>string[]</td>
 <td>No</td>
-<td>Gets or sets allowed URIs to redirect to after logout. Wildcards are ignored.            URIs must match exactly what you are redirecting to after logout.            Maximum 10 for client.</td>
+<td>Allowed URIs to redirect to after logout. Wildcards are ignored.            URIs must match exactly what you are redirecting to after logout.            Maximum 10 for client.</td>
 </tr>
 <tr>
 <td>ClientUri</td>
 <td>string</td>
 <td>No</td>
-<td>Gets or sets URI to a page with information about client (used on consent screen).</td>
+<td>URI to a page with information about client (used on consent screen).</td>
 </tr>
 <tr>
 <td>LogoUri</td>
 <td>string</td>
 <td>No</td>
-<td>Gets or sets URI to client logo (used on consent screen).</td>
+<td>URI to client logo (used on consent screen).</td>
 </tr>
 <tr>
 <td>Id</td>
 <td>string</td>
 <td>No</td>
-<td>Gets or sets client ID for this client. This ID should be a GUID.</td>
+<td>Client ID for this client. This ID should be a GUID.</td>
 </tr>
 <tr>
 <td>Name</td>
 <td>string</td>
 <td>Yes</td>
-<td>Gets or sets name of Client.</td>
+<td>Name of Client.</td>
 </tr>
 <tr>
 <td>Enabled</td>
 <td>bool</td>
 <td>No</td>
-<td>Gets or sets whether client is enabled. Client can be used for authentication            if set to true. Client cannot be used for authentication if set to false.</td>
+<td>Whether client is enabled. Client can be used for authentication            if set to true. Client cannot be used for authentication if set to false.</td>
 </tr>
 <tr>
 <td>AccessTokenLifetime</td>
 <td>int32</td>
 <td>No</td>
-<td>Gets or sets lifetime of access token issued for this client after authentication.            Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.</td>
+<td>Lifetime of access token issued for this client after authentication.            Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.</td>
 </tr>
 <tr>
 <td>Tags</td>
 <td>string[]</td>
 <td>No</td>
-<td>Gets or sets for OSIsoft internal use only.</td>
+<td>For OSIsoft internal use only.</td>
 </tr>
 </tbody>
 </table>
@@ -366,8 +366,8 @@ AuthorizationCodeClient authorizationCodeClient
 <table>
 <thead>
 <tr>
-<th>Property</th>
-<th>Type</th>
+<th>Property Name</th>
+<th>Data Type</th>
 <th>Required</th>
 <th>Description</th>
 </tr>
@@ -377,61 +377,61 @@ AuthorizationCodeClient authorizationCodeClient
 <td>AllowedCorsOrigins</td>
 <td>string[]</td>
 <td>No</td>
-<td>Gets or sets the values used by the default CORS policy service implementations to build a            CORS policy for JavaScript clients.</td>
+<td>The values used by the default CORS policy service implementations to build a            CORS policy for JavaScript clients.</td>
 </tr>
 <tr>
 <td>RedirectUris</td>
 <td>string[]</td>
 <td>No</td>
-<td>Gets or sets the allowed URIs to which return tokens or authorization codes can be returned.            Wildcards are ignored. URIs must match exactly what you are redirecting to            after login. If URIs do not match, the authentication process will fail            with a bad_client error.            Maximum 10 per client.</td>
+<td>The allowed URIs to which return tokens or authorization codes can be returned.            Wildcards are ignored. URIs must match exactly what you are redirecting to            after login. If URIs do not match, the authentication process will fail            with a bad_client error.            Maximum 10 per client.</td>
 </tr>
 <tr>
 <td>PostLogoutRedirectUris</td>
 <td>string[]</td>
 <td>No</td>
-<td>Gets or sets allowed URIs to redirect to after logout. Wildcards are ignored.            URIs must match exactly what you are redirecting to after logout.            Maximum 10 for client.</td>
+<td>Allowed URIs to redirect to after logout. Wildcards are ignored.            URIs must match exactly what you are redirecting to after logout.            Maximum 10 for client.</td>
 </tr>
 <tr>
 <td>ClientUri</td>
 <td>string</td>
 <td>No</td>
-<td>Gets or sets URI to a page with information about client (used on consent screen).</td>
+<td>URI to a page with information about client (used on consent screen).</td>
 </tr>
 <tr>
 <td>LogoUri</td>
 <td>string</td>
 <td>No</td>
-<td>Gets or sets URI to client logo (used on consent screen).</td>
+<td>URI to client logo (used on consent screen).</td>
 </tr>
 <tr>
 <td>Id</td>
 <td>string</td>
 <td>No</td>
-<td>Gets or sets client ID for this client. This ID should be a GUID.</td>
+<td>Client ID for this client. This ID should be a GUID.</td>
 </tr>
 <tr>
 <td>Name</td>
 <td>string</td>
 <td>Yes</td>
-<td>Gets or sets name of Client.</td>
+<td>Name of Client.</td>
 </tr>
 <tr>
 <td>Enabled</td>
 <td>bool</td>
 <td>No</td>
-<td>Gets or sets whether client is enabled. Client can be used for authentication            if set to true. Client cannot be used for authentication if set to false.</td>
+<td>Whether client is enabled. Client can be used for authentication            if set to true. Client cannot be used for authentication if set to false.</td>
 </tr>
 <tr>
 <td>AccessTokenLifetime</td>
 <td>int32</td>
 <td>No</td>
-<td>Gets or sets lifetime of access token issued for this client after authentication.            Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.</td>
+<td>Lifetime of access token issued for this client after authentication.            Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.</td>
 </tr>
 <tr>
 <td>Tags</td>
 <td>string[]</td>
 <td>No</td>
-<td>Gets or sets for OSIsoft internal use only.</td>
+<td>For OSIsoft internal use only.</td>
 </tr>
 </tbody>
 </table>

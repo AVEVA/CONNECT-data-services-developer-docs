@@ -16,13 +16,13 @@ The following table lists the most common fields in a status mapping.
 | ------------------- | ------------------------ | --------- | ----------- | ------------------------------------------------------------ |
 | Name                | String                   | Required  | No          | Name and ID for this status mapping.                         |
 | Description         | String                   | Required  | No          | Description of the status mapping.                           |
-| StreamReferenceId   | String                   | Required  | No          | The SDS stream reference for this status mapping, the property of this SDS stream is which the status will be derived from. <! -- I'm not sure what this sentence means. --> The stream reference must exist before the status mapping can be created. |
-| StreamPropertyId    | String                   | Required  | No          | The SDS stream property reference contained in the stream reference ID for this status mapping, the data of this SDS stream property is which the status will be derived from. <! -- I'm not sure what this sentence means. --> The SDS stream property (?) must exist before the status mapping can be created. |
+| StreamReferenceId   | String                   | Required  | No          | ID for the asset's StreamReference property. The stream reference must exist before the status mapping can be created. |
+| StreamPropertyId    | String                   | Required  | No          | SDS stream property that status uses for calculations. It must be present on the StreamId property on the asset StreamReference. |
 | ValueStatusMappings | List<ValueStatusMapping> | Required  | No          | The value status mapping maps values to a given status. See [Value status mapping properties table](xref:AssetStatusMapping#value-status-mapping-properties-table) |
 
 ## Value status mapping properties table
 
-The following table lists the most common fields in a value status mapping. A single value status mapping corresponds to a single status. If you want additional statuses in your asset status mapping ....<! -- Sentence not completed. -->
+The following table lists the most common fields in a value status mapping. A single value status mapping corresponds to a single status. If you want additional statuses in your asset status mapping, add additional elements in the ValueStatusMapping list.
 
 | Property    | Type               | Required? | Searchable? | Description                                                  |
 | ----------- | ------------------ | --------- | ----------- | ------------------------------------------------------------ |
@@ -119,7 +119,7 @@ The response includes a status code and a response body.
 
 | Status Code     | Body Type                                                    | Description                                                  |
 | --------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 200 OK          | `MeasurementMapping`<! -- This is MeasurementMapping, not MeasurementsMapping, right? --> | The requested status mapping of the specified asset or asset type. |
+| 200 OK          | `MeasurementMapping` | The requested status mapping of the specified asset or asset type. |
 | 400 Bad Request | error                                                        | The request is not valid. See the response body for additional details. |
 | 403 Forbidden   | error                                                        | You are not authorized to view the requested asset or asset type. |
 | 404 Not Found   | error                                                        | The specified asset or asset type with identifier is not found. |
@@ -306,7 +306,7 @@ The response includes a status code and a response body.
 | Status Code      | Body Type         | Description                                                  |
 | ---------------- | ----------------- | ------------------------------------------------------------ |
 | 200 OK           | Asset status list | On successful POST, returns the status of multiple assets.   |
-| 207 Multi Status | Multi Status      | On POST, returns the status of multiple assets. The asset status in error, look at multi-status response. <! -- I don't understand this sentence. --> |
+| 207 Multi Status | Multi Status      | On POST, returns the status of multiple assets. For error responses, check the multi-status response for the error and cause. |
 
 #### Example response body
 

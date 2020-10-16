@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -33,8 +33,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../../../index.html" width="46">
-                <img id="logo" src="../../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -215,13 +216,13 @@ If there are multiple groups in the data view, the index and grouping field valu
 <h5 id="next-page">Next page</h5>
 <p>If the requested data spans into another page, the response includes a hyperlink to the next page of data. Absence of a <code>rel=&quot;next&quot;</code> link indicates that the data does not span past the current page.</p>
 <p>The hyperlink preserves all request parameters, while adding or updating a <code>continuationToken</code>. For example:</p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code>Link: &lt;.../<wbr>dataViews/<wbr>{dataViewId}/<wbr>data/<wbr>interpolated?continuationToken=MjAxOC0wMS0wMVQwMDowMDoxMVo_MD90Yk1OblE_QUxXcEZBP1VEdGxIMWJROG9z&amp;count=1000&gt;; rel=&quot;next&quot;
+<pre><code>Link: &lt;.../dataViews/{dataViewId}/data/interpolated?continuationToken=MjAxOC0wMS0wMVQwMDowMDoxMVo_MD90Yk1OblE_QUxXcEZBP1VEdGxIMWJROG9z&amp;count=1000&gt;; rel=&quot;next&quot;
 </code></pre><p>To retrieve the entire requested range of data, clients should continue to follow next page hyperlinks until the response does not include a next page link. This indicates that the last page has been reached.</p>
 <p>It is possible for the continuation token to become invalid during paging. This is unlikely in ordinary circumstances. However, if an independent operation triggers the data view to re-resolve differently, existing continuation tokens are no longer valid. Data requests with an invalid token are considered bad requests. Paging must be restarted from the first page.</p>
 <h5 id="first-page">First page</h5>
 <p>If the continuation token becomes invalid and paging must be restarted, clients may follow the first page hyperlink included in the <code>Link</code> header. The hyperlink preserves all request parameters, adding or updating the cache behavior to <code>Preserve</code>. This ensures that multiple parallel workers cannot endlessly &quot;trip&quot; each other.</p>
 <p>For example:</p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code>Link: &lt;.../<wbr>dataViews/<wbr>{dataViewId}/<wbr>data/<wbr>interpolated?cache=Preserve&amp;count=1000&gt;; rel=&quot;first&quot;
+<pre><code>Link: &lt;.../dataViews/{dataViewId}/data/interpolated?cache=Preserve&amp;count=1000&gt;; rel=&quot;first&quot;
 </code></pre><h4 id="net-client-library">.NET client library</h4>
 <p>Paging is handled automatically when using the .NET client library to retrieve data. Results are returned as an IAsyncEnumerable<string> where each value is one record of data in the requested format. The actual backend page size of the request is configurable using the backingPageSize parameter.<p>
 <h4 id="index-parameters">Index parameters</h4>
@@ -264,8 +265,14 @@ If there are multiple groups in the data view, the index and grouping field valu
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
-            <span id='copyright-text'>© 2020 - OSIsoft, LLC.<span>
-        </span></span></div>
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2020 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
       </footer>
     </div>
     

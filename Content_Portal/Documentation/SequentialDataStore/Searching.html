@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -33,8 +33,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../../index.html" width="46">
-                <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -134,13 +135,13 @@
 </tbody>
 </table>
 <h4 id="requests">Requests</h4>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams?query=name:pump name:pressure&amp;orderby=name
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure&amp;orderby=name
 
-   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams?query=name:pump name:pressure&amp;orderby=id asc
+   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure&amp;orderby=id asc
 
-   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams?query=name:pump name:pressure&amp;orderby=name desc
+   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure&amp;orderby=name desc
 
-   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams?query=name:pump name:pressure&amp;orderby=name desc&amp;skip=10&amp;count=20
+   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure&amp;orderby=name desc&amp;skip=10&amp;count=20
 </code></pre><h4 id="parameters">Parameters</h4>
 <p><code>string query</code><br>[Optional] Parameter representing the search criteria. If unspecified, returns all values. Can be used with <code>skip</code>, <code>count</code> and <code>orderby</code>.</p>
 <p><code>int skip</code><br>[Optional] Parameter representing the zero-based offset of the first SdsStream to retrieve. The number of matched items to skip over before returning. If unspecified, a default value of 0 is used. Use when more items match the search criteria than can be returned in a single call.</p>
@@ -227,7 +228,7 @@
 <p><strong>*Notes on metadata and tags:</strong> You can access SdsStream metadata and tags through Metadata and Tags API respectively. Metadata and tags are associated with SdsStream objects and can be used as search criteria. See <a href="#Stream_Metadata_search_topic">below</a> for more information.</p>
 <h4 id="request">Request</h4>
 <p>Search for SdsStreams using the REST API and specifying the optional <code>query</code> parameter:</p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">     GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams?query={query}&amp;skip={skip}&amp;count={count}
+<pre><code class="lang-text">     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query={query}&amp;skip={skip}&amp;count={count}
 </code></pre><h4 id="parameters-1">Parameters</h4>
 <p><code>string query</code><br>[Optional] Parameter representing the search criteria. If unspecified, returns all values. Can be used with <code>skip</code>, <code>count</code> and <code>orderby</code>. </p>
 <p><code>int skip</code><br>[Optional] Parameter representing the zero-based offset of the first SdsStream to retrieve. If unspecified, a default value of 0 is used. Use when more items match the search criteria than can be returned in a single call.</p>
@@ -283,7 +284,7 @@ For more information on type properties, see <a class="xref" href="SDS_Types.htm
 <p><strong>*Notes on <code>Properties</code> field:</strong> <code>Name</code> and <code>Id</code> of an SdsType are included in its <code>Properties</code> field. Similarly, <code>Name</code> and <code>Id</code> of a nested type are included in its <code>Properties</code>. If there are two types with the same <code>Properties</code>, <code>Name</code> or <code>Id</code>, the search will return both types in the result.</p>
 <h4 id="request-1">Request</h4>
 <p>Search for SdsTypes using the REST API and specifying the optional <code>query</code> parameter:</p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">     GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Types?query={query}&amp;skip={skip}&amp;count={count}
+<pre><code class="lang-text">     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types?query={query}&amp;skip={skip}&amp;count={count}
 </code></pre><h4 id="parameters-2">Parameters</h4>
 <p><code>string query</code><br>[Optional] Parameter representing the search criteria. If unspecified, returns all values. Can be used with <code>skip</code>, <code>count</code> and <code>orderby</code>. </p>
 <p><code>int skip</code><br>[Optional] Parameter representing the zero-based offset of the first SdsType to retrieve. If unspecified, a default value of 0 is used. Use when more items match the search criteria than can be returned in a single call.</p>
@@ -359,7 +360,7 @@ For more information on SdsStreamView properties, see <a class="xref" href="SDS_
 }
 </code></pre><h4 id="request-2">Request</h4>
 <p>Search for stream views using the REST API and specifying the optional <code>query</code> parameter:</p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>StreamViews?query={query}&amp;skip={skip}&amp;count={count}
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews?query={query}&amp;skip={skip}&amp;count={count}
 </code></pre><h4 id="parameters-3">Parameters</h4>
 <p><code>string query</code><br>[Optional] Parameter representing the search criteria. If unspecified, returns all values. Can be used with <code>skip</code>, <code>count</code> and <code>orderby</code>. </p>
 <p><code>int skip</code><br>[Optional] Parameter representing the zero-based offset of the first SdsStreamView to retrieve.If unspecified, a default value of 0 is used. Use when more items match the search criteria than can be returned in a single call.</p>
@@ -493,7 +494,7 @@ For more information on SdsStreamView properties, see <a class="xref" href="SDS_
 <p>You can qualify the search to a specific field using the <code>:</code> operator.  </p>
 <pre><code>fieldname:fieldvalue
 </code></pre><h4 id="request-3">Request</h4>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams?query=name:pump name:pressure
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure
 </code></pre><h4 id="net-client-libraries-method-3">.NET client libraries method</h4>
 <pre><code class="lang-csharp">    GetStreamsAsync(query:&quot;name:pump name:pressure&quot;);
 </code></pre><h3 id="wildcard--operator">Wildcard (<code>*</code>) operator</h3>
@@ -545,7 +546,7 @@ It can only be used once per token, unless there&#39;s one at the beginning and 
 </tbody>
 </table>
 <h4 id="request-4">Request</h4>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams?query=log*
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=log*
 </code></pre><h4 id="net-client-libraries-method-4">.NET client libraries method</h4>
 <pre><code class="lang-csharp">    GetStreamsAsync(query:&quot;log*&quot;);
 </code></pre><h3 id="double-quotes--operator">Double quotes (<code>&quot;&quot;</code>) operator</h3>
@@ -589,7 +590,7 @@ It can only be used once per token, unless there&#39;s one at the beginning and 
 </tbody>
 </table>
 <h4 id="request-5">Request</h4>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">    GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams?query=&quot;pump pressure&quot;    
+<pre><code class="lang-text">    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=&quot;pump pressure&quot;    
 </code></pre><h4 id="net-client-libraries-method-5">.NET client libraries method</h4>
 <pre><code class="lang-csharp">    GetStreamsAsync(query:&quot;\\&quot;pump pressure\\&quot;&quot;);   
 </code></pre><h2 id="a-namestreammetadatasearchtopichow-search-works-with-stream-metadataa"><a name="Stream_Metadata_search_topic">How search works with stream metadata</a></h2>
@@ -648,7 +649,7 @@ It can only be used once per token, unless there&#39;s one at the beginning and 
 </tbody>
 </table>
 <h4 id="request-6">Request</h4>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams?query=manufacturer:company
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=manufacturer:company
 </code></pre><h4 id="net-client-libraries-method-6">.NET client libraries method</h4>
 <pre><code class="lang-csharp">    GetStreamsAsync(query:&quot;manufacturer:company&quot;);
 </code></pre><h3 id="wildcard--operator-1">Wildcard (<code>*</code>) Operator</h3>
@@ -690,7 +691,7 @@ It can only be used once per token, unless there&#39;s one at the beginning and 
 </tbody>
 </table>
 <h4 id="request-7">Request</h4>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams?query=manufa*turer:compan*
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=manufa*turer:compan*
 </code></pre><h4 id="net-client-libraries-method-7">.NET client libraries method</h4>
 <pre><code class="lang-csharp">    GetStreamsAsync(query:&quot;manufa*turer:compan*&quot;);
 </code></pre></article>
@@ -716,8 +717,14 @@ It can only be used once per token, unless there&#39;s one at the beginning and 
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
-            <span id='copyright-text'>© 2020 - OSIsoft, LLC.<span>
-        </span></span></div>
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2020 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
       </footer>
     </div>
     

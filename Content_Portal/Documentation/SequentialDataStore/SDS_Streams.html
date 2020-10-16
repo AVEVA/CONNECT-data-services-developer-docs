@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -33,8 +33,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../../index.html" width="46">
-                <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -243,7 +244,7 @@ information related to SdsStream. </p>
 <h2 id="get-stream"><code>Get Stream</code></h2>
 <p>Returns the specified stream.</p>
 <h3 id="request">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
 </code></pre><h3 id="parameters">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -271,7 +272,7 @@ the search criteria. If the search query parameter is not specified, the list wi
 all streams in the namespace. See <a class="xref" href="Searching.html#search-for-streams">Search in SDS</a> 
 for information about specifying those respective parameters.</p>
 <h3 id="request-1">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams?query={query}&amp;skip={skip}&amp;count={count}&amp;orderby={orderby}
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query={query}&amp;skip={skip}&amp;count={count}&amp;orderby={orderby}
 </code></pre><h3 id="parameters-1">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -317,7 +318,7 @@ Content-Type: application/json
 <h2 id="get-stream-type"><code>Get Stream Type</code></h2>
 <p>Returns the type definition that is associated with a given stream.</p>
 <h3 id="request-2">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Type
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type
 </code></pre><h3 id="parameters-2">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -341,7 +342,7 @@ including the .NET HttpClient, consider redirecting with the authorization token
 returns <code>Unauthorized</code> (401). For this reason, it is recommended that when using clients that do not 
 redirect with the authorization header, you should disable automatic redirect.</p>
 <h3 id="request-3">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   POST api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}
+<pre><code class="lang-text">   POST api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
 </code></pre><h3 id="parameters-3">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -373,7 +374,7 @@ The following changes are permitted:  </p>
 <p>For more information on secondary indexes, see <a href="#indexes">Indexes</a>.</p>
 <p>Changes that are not permitted result in an error.</p>
 <h3 id="request-4">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}
+<pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
 </code></pre><h3 id="parameters-4">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -389,7 +390,7 @@ The following changes are permitted:  </p>
 <p>Updates a stream’s type. The type is modified to match the specified stream view. 
 Defined Indexes and PropertyOverrides are removed when updating a stream type. </p>
 <h3 id="request-5">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Type?streamViewId={streamViewId}
+<pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type?streamViewId={streamViewId}
 </code></pre><h3 id="parameters-5">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -407,7 +408,7 @@ Defined Indexes and PropertyOverrides are removed when updating a stream type. <
 <h2 id="delete-stream"><code>Delete Stream</code></h2>
 <p>Deletes a stream. </p>
 <h3 id="request-6">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   DELETE api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}
+<pre><code class="lang-text">   DELETE api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
 </code></pre><h3 id="parameters-6">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -420,7 +421,7 @@ Defined Indexes and PropertyOverrides are removed when updating a stream type. <
 <h2 id="get-streams-access-control-list"><code>Get Streams Access Control List</code></h2>
 <p>Get the default ACL for the Streams collection. For more information on ACL, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <h3 id="request-7">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>AccessControl/<wbr>Streams
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Streams
 </code></pre><h3 id="parameters-7">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -434,7 +435,7 @@ Defined Indexes and PropertyOverrides are removed when updating a stream type. <
 <h2 id="update-streams-access-control-list"><code>Update Streams Access Control List</code></h2>
 <p>Update the default ACL for the Streams collection. For more information on ACL, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <h3 id="request-8">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>AccessControl/<wbr>Streams
+<pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Streams
 </code></pre><h3 id="parameters-8">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -448,7 +449,7 @@ Defined Indexes and PropertyOverrides are removed when updating a stream type. <
 <h2 id="get-stream-access-control-list"><code>Get Stream Access Control List</code></h2>
 <p>Get the ACL of the specified stream. For more information on ACL, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <h3 id="request-9">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>AccessControl
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/AccessControl
 </code></pre><h3 id="parameters-9">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -463,7 +464,7 @@ Defined Indexes and PropertyOverrides are removed when updating a stream type. <
 <h2 id="update-stream-access-control-list"><code>Update Stream Access Control List</code></h2>
 <p>Update the ACL of the specified stream. For more information on ACL, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <h3 id="request-10">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>AccessControl
+<pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/AccessControl
 </code></pre><h3 id="parameters-10">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -478,7 +479,7 @@ Defined Indexes and PropertyOverrides are removed when updating a stream type. <
 <h2 id="get-stream-owner"><code>Get Stream Owner</code></h2>
 <p>Get the <code>Owner</code> of the specified stream. For more information, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <h3 id="request-11">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Owner
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Owner
 </code></pre><h3 id="parameters-11">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -493,7 +494,7 @@ Defined Indexes and PropertyOverrides are removed when updating a stream type. <
 <h2 id="update-stream-owner"><code>Update Stream Owner</code></h2>
 <p>Update the <code>Owner</code> of the specified stream. For more information, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <h3 id="request-12">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Owner
+<pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Owner
 </code></pre><h3 id="parameters-12">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -509,7 +510,7 @@ Defined Indexes and PropertyOverrides are removed when updating a stream type. <
 <p>Gets the access rights associated with the specified stream for the requesting identity. For 
 more information on access rights, see <a class="xref" href="../Access_Control.html#commonaccessrightsenum">Access Control</a>.</p>
 <h3 id="request-13">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>AccessRights
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/AccessRights
 </code></pre><h3 id="parameters-13">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -549,8 +550,14 @@ Content-Type: application/json
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
-            <span id='copyright-text'>© 2020 - OSIsoft, LLC.<span>
-        </span></span></div>
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2020 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
       </footer>
     </div>
     

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -33,8 +33,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../../../index.html" width="46">
-                <img id="logo" src="../../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -82,17 +83,17 @@
 The supported content type of request and response bodies is JSON unless otherwise noted.</p>
 <p>The API is comprised of the following main areas:</p>
 <h2 id="data-view-apixrefdataviewapi"><a class="xref" href="Data_View_API.html">Data view API</a></h2>
-<p>Resources to create, read, update, and delete <code style="word-break:normal; overflow-wrap:break-word;">/<wbr>DataViews</code>. For more information, see <a class="xref" href="../Data_Views_Overview.html">Data View</a></p>
+<p>Resources to create, read, update, and delete <code>/DataViews</code>. For more information, see <a class="xref" href="../Data_Views_Overview.html">Data View</a></p>
 <h2 id="resolved-data-view-apixrefresolveddataviewapi"><a class="xref" href="Resolved_Data_View_API.html">Resolved data view API</a></h2>
-<p>For each <code style="word-break:normal; overflow-wrap:break-word;">/<wbr>DataViews/<wbr>{dataViewId}</code>, these resources show how the data view <code style="word-break:normal; overflow-wrap:break-word;">./<wbr>Resolved/<wbr></code> for your user context.</p>
+<p>For each <code>/DataViews/{dataViewId}</code>, these resources show how the data view <code>./Resolved/</code> for your user context.</p>
 <h2 id="resolved-data-view-preview-apixrefresolveddataviewpreviewapi"><a class="xref" href="Resolved_Data_View_Preview_API.html">Resolved data view preview API</a></h2>
-<p>For each <code style="word-break:normal; overflow-wrap:break-word;">/<wbr>DataView</code> provided in the request body, resources to show how the data view <code style="word-break:normal; overflow-wrap:break-word;">./<wbr>Resolved/<wbr></code> for your user context. This provides the flexibility to change the data view on the fly without saving/updating it.</p>
+<p>For each <code>/DataView</code> provided in the request body, resources to show how the data view <code>./Resolved/</code> for your user context. This provides the flexibility to change the data view on the fly without saving/updating it.</p>
 <h2 id="data-apixrefdataviewsdataapi"><a class="xref" href="Data_API.html">Data API</a></h2>
-<p>For each <code style="word-break:normal; overflow-wrap:break-word;">/<wbr>DataViews/<wbr>{dataViewId}</code>, resources for getting the <code style="word-break:normal; overflow-wrap:break-word;">./<wbr>Data/<wbr></code> for a particular time range</p>
+<p>For each <code>/DataViews/{dataViewId}</code>, resources for getting the <code>./Data/</code> for a particular time range</p>
 <h2 id="preview-data-apixrefdataviewspreviewdataapi"><a class="xref" href="Preview_Data_API.html">Preview data API</a></h2>
-<p>For each <code style="word-break:normal; overflow-wrap:break-word;">/<wbr>DataView</code> provided in request body, resources for getting the preview <code style="word-break:normal; overflow-wrap:break-word;">./<wbr>Data/<wbr></code> for a particular time range. This provides the flexibility to change the data view on the fly without saving/updating it.</p>
+<p>For each <code>/DataView</code> provided in request body, resources for getting the preview <code>./Data/</code> for a particular time range. This provides the flexibility to change the data view on the fly without saving/updating it.</p>
 <h2 id="access-control-apixrefdataviewsaccesscontrolapi"><a class="xref" href="Access_Control_API.html">Access control API</a></h2>
-<p>For the <code style="word-break:normal; overflow-wrap:break-word;">/<wbr>DataViews</code> collection, resources for reading and updating the default <code style="word-break:normal; overflow-wrap:break-word;">/<wbr>AccessControl</code>.<br>For each <code style="word-break:normal; overflow-wrap:break-word;">/<wbr>DataViews/<wbr>{dataViewId}</code>, resources for reading and updating its <code style="word-break:normal; overflow-wrap:break-word;">/<wbr>Owner</code> and <code style="word-break:normal; overflow-wrap:break-word;">/<wbr>AccessControl</code></p>
+<p>For the <code>/DataViews</code> collection, resources for reading and updating the default <code>/AccessControl</code>.<br>For each <code>/DataViews/{dataViewId}</code>, resources for reading and updating its <code>/Owner</code> and <code>/AccessControl</code></p>
 </article>
           </div>
           
@@ -116,8 +117,14 @@ The supported content type of request and response bodies is JSON unless otherwi
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
-            <span id='copyright-text'>© 2020 - OSIsoft, LLC.<span>
-        </span></span></div>
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2020 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
       </footer>
     </div>
     

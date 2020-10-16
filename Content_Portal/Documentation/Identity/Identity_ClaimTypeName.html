@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -33,8 +33,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../../index.html" width="46">
-                <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -99,7 +100,7 @@ Read <a href="https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_sampl
 <h2 id="get-all-identity-provider-claim-type-names"><code>Get All Identity Provider Claim Type Names</code></h2>
 <p>Get all Identity Provider Claim Type Names for an Identity Provider on a Tenant.</p>
 <h3 id="request">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>IdentityProviders/<wbr>{identityProviderId}/<wbr>ClaimTypeNames</code></p>
+<p><code>GET api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/ClaimTypeNames</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -156,7 +157,7 @@ int32 count
 <h2 id="get-all-identity-provider-claim-type-names-header"><code>Get All Identity Provider Claim Type Names Header</code></h2>
 <p>Get Header for all Identity Provider Claims Type Names for an Identity Provider on a Tenant.</p>
 <h3 id="request-1">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>IdentityProviders/<wbr>{identityProviderId}/<wbr>ClaimTypeNames</code></p>
+<p><code>HEAD api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/ClaimTypeNames</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -186,7 +187,7 @@ Guid identityProviderId
 <h2 id="get-identity-provider-claim-type-name"><code>Get Identity Provider Claim Type Name</code></h2>
 <p>Get an Identity Provider Claim Type Name from an Identity Provider on a Tenant.</p>
 <h3 id="request-2">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>IdentityProviders/<wbr>{identityProviderId}/<wbr>ClaimTypeNames/<wbr>{identityProviderClaimTypeNameId}</code></p>
+<p><code>GET api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/ClaimTypeNames/{identityProviderClaimTypeNameId}</code></p>
 <h3 id="parameters-2">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -228,7 +229,7 @@ Guid identityProviderClaimTypeNameId
 <h2 id="get-identity-provider-claim-type-name-header"><code>Get Identity Provider Claim Type Name Header</code></h2>
 <p>Get an Identity Provider Claim Type Name Header from an Identity Provider on a Tenant.</p>
 <h3 id="request-3">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>IdentityProviders/<wbr>{identityProviderId}/<wbr>ClaimTypeNames/<wbr>{identityProviderClaimTypeNameId}</code></p>
+<p><code>HEAD api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/ClaimTypeNames/{identityProviderClaimTypeNameId}</code></p>
 <h3 id="parameters-3">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -281,8 +282,14 @@ Guid identityProviderClaimTypeNameId
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
-            <span id='copyright-text'>© 2020 - OSIsoft, LLC.<span>
-        </span></span></div>
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2020 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
       </footer>
     </div>
     

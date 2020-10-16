@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -33,8 +33,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../../../index.html" width="46">
-                <img id="logo" src="../../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -82,7 +83,7 @@
 <h2 id="get-data-views-access-control-list"><code>Get Data Views Access Control List</code></h2>
 <p>Get the default <a class="xref" href="../../Access_Control.html#access-control-lists"><code>AccessControlList</code></a> for the DataViews collection.</p>
 <h3 id="request">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>AccessControl/<wbr>DataViews
+<pre><code class="lang-text">GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/DataViews
 </code></pre><h3 id="parameters">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -150,7 +151,7 @@
 </code></pre><h2 id="update-data-views-access-control-list"><code>Update Data Views Access Control List</code></h2>
 <p>Update the default <a class="xref" href="../../Access_Control.html#access-control-lists"><code>AccessControlList</code></a> for the DataViews collection.</p>
 <h3 id="request-1">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>AccessControl/<wbr>DataViews
+<pre><code class="lang-text">PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/DataViews
 </code></pre><h3 id="parameters-1">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -224,7 +225,7 @@
 </code></pre><h2 id="get-data-view-access-control-list"><code>Get Data View Access Control List</code></h2>
 <p>Get the <a class="xref" href="../../Access_Control.html#access-control-lists"><code>AccessControlList</code></a> of the specified data view.</p>
 <h3 id="request-2">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>AccessControl
+<pre><code class="lang-text">GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/AccessControl
 </code></pre><h3 id="parameters-2">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -298,7 +299,7 @@
 </code></pre><h2 id="update-data-view-access-control-list"><code>Update Data View Access Control List</code></h2>
 <p>Update the <a class="xref" href="../../Access_Control.html#access-control-lists"><code>AccessControlList</code></a> of the specified data view.</p>
 <h3 id="request-3">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>AccessControl
+<pre><code class="lang-text">PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/AccessControl
 </code></pre><h3 id="parameters-3">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -378,7 +379,7 @@
 </code></pre><h2 id="get-data-view-access-rights"><code>Get Data View Access Rights</code></h2>
 <p>Get the calling user or client&#39;s access rights to the requested data view</p>
 <h3 id="request-4">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>AccessRights
+<pre><code class="lang-text">GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/AccessRights
 </code></pre><h3 id="parameters-4">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -429,7 +430,7 @@
 </code></pre><h2 id="get-data-view-owner"><code>Get Data View Owner</code></h2>
 <p>Get the owner <a class="xref" href="../../Access_Control.html#owner"><code>Trustee</code></a> of the specified data view.</p>
 <h3 id="request-5">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>owner
+<pre><code class="lang-text">GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/owner
 </code></pre><h3 id="parameters-5">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -480,7 +481,7 @@ Content-Type: application/json
 </code></pre><h2 id="update-data-view-owner"><code>Update Data View Owner</code></h2>
 <p>Update the owner <a class="xref" href="../../Access_Control.html#owner"><code>Trustee</code></a> of the specified data view.</p>
 <h3 id="request-6">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>owner
+<pre><code class="lang-text">PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/owner
 </code></pre><h3 id="parameters-6">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -556,8 +557,14 @@ Content-Type: application/json
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
-            <span id='copyright-text'>© 2020 - OSIsoft, LLC.<span>
-        </span></span></div>
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2020 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
       </footer>
     </div>
     

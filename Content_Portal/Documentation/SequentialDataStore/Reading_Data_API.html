@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -33,8 +33,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../../index.html" width="46">
-                <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -136,17 +137,17 @@ var SimpleType = function () {
 }
 </code></pre><p><strong>Example Stream</strong><br><code>Simple</code> is an SdsStream of type <code>SimpleType</code>.</p>
 <p><strong>Example Data</strong><br><code>Simple</code> has stored values as follows:</p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code>  11/<wbr>23/<wbr>2017 12:00:00 PM: Ok  0
-  11/<wbr>23/<wbr>2017  1:00:00 PM: Ok 10
-  11/<wbr>23/<wbr>2017  2:00:00 PM: Ok 20
-  11/<wbr>23/<wbr>2017  3:00:00 PM: Ok 30
-  11/<wbr>23/<wbr>2017  4:00:00 PM: Ok 40
+<pre><code>  11/23/2017 12:00:00 PM: Ok  0
+  11/23/2017  1:00:00 PM: Ok 10
+  11/23/2017  2:00:00 PM: Ok 20
+  11/23/2017  3:00:00 PM: Ok 30
+  11/23/2017  4:00:00 PM: Ok 40
 </code></pre><p>All times are represented at offset 0, GMT.</p>
 <hr>
 <h2 id="get-first-value"><code>Get First Value</code></h2>
 <p>Returns the first value in the stream. If no values exist in the stream, null is returned.</p>
 <h4 id="request">Request</h4>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data/<wbr>First
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/First
 </code></pre><h5 id="parameters">Parameters</h5>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -159,7 +160,7 @@ var SimpleType = function () {
 <h2 id="get-last-value"><code>Get Last Value</code></h2>
 <p>Returns the last value in the stream. If no values exist in the stream, null is returned.</p>
 <h4 id="request-1">Request</h4>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data/<wbr>Last
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Last
 </code></pre><h5 id="parameters-1">Parameters</h5>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier </p>
@@ -172,7 +173,7 @@ var SimpleType = function () {
 <h2 id="find-distinct-value"><code>Find Distinct Value</code></h2>
 <p>Returns a stored event based on the specified <code>index</code> and <code>searchMode</code>. </p>
 <h4 id="request-2">Request</h4>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
        ?index={index}&amp;searchMode={searchMode}
 </code></pre><h5 id="parameters-2">Parameters</h5>
 <p><code>string tenantId</code><br>The tenant identifier</p>
@@ -184,7 +185,7 @@ var SimpleType = function () {
 <p>The response includes a status code and a response body containing a serialized collection with one event. </p>
 <p>Depending on the request <code>index</code> and <code>searchMode</code>, it is possible to have an empty collection returned.</p>
 <h5 id="example-request">Example request</h5>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data
        ?index=2017-11-23T13:00:00Z&amp;searchMode=Next
 </code></pre><p>The request has an index that matches the index of an existing event, but since a <code>SdsSearchMode</code> of <code>next</code> was specified, the response contains the next event in the stream after the 
 specified index:</p>
@@ -200,7 +201,7 @@ Content-Type: application/json
     }
 ]
 </code></pre><h5 id="example-request-1">Example request</h5>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data 
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data 
        ?index=2017-11-23T13:30:00Z&amp;searchMode=Next
 </code></pre><p>The request specifies an index that does not match an index of an existing event. The next event in the stream is retrieved.</p>
 <h5 id="example-response-body-1">Example response body</h5>
@@ -234,7 +235,7 @@ Content-Type: application/json
 <h3 id="filtered"><code>Filtered</code></h3>
 <p>Returns a collection of stored values as determined by a <code>filter</code>. The <code>filter</code> limits results by applying an expression against event fields. Filter expressions are explained in detail in the <a class="xref" href="Filter_Expressions.html">Filter expressions</a> section.</p>
 <h4 id="request-3">Request</h4>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data 
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data 
        ?filter={filter}
 </code></pre><h5 id="parameters-3">Parameters</h5>
 <p><code>string tenantId</code><br>The tenant identifier</p>
@@ -244,7 +245,7 @@ Content-Type: application/json
 <h4 id="response-3">Response</h4>
 <p>The response includes a status code and a response body containing a serialized collection of events.</p>
 <h5 id="example-request-2">Example request</h5>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data 
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data 
        ?filter=Measurement gt 10
 </code></pre><p>The events in the stream with <code>Measurement</code> greater than 10 are returned.</p>
 <h5 id="example-response-body-2">Example response body</h5>
@@ -273,7 +274,7 @@ Content-Type: application/json
 <h3 id="range"><code>Range</code></h3>
 <p>Returns a collection of stored values as determined by a <code>startIndex</code> and <code>count</code>. Additional optional parameters specify the direction of the range, how to handle events near or at the start index, whether to skip a certain number of events at the start of the range, and how to filter the data.</p>
 <h4 id="request-4">Request</h4>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
        ?startIndex={startIndex}&amp;count={count}[&amp;skip={skip}&amp;reversed={reversed} 
        &amp;boundaryType={boundaryType}&amp;filter={filter}]
 </code></pre><h5 id="parameters-4">Parameters</h5>
@@ -291,7 +292,7 @@ collect events before startIndex from the stream.</p>
 <h4 id="response-4">Response</h4>
 <p>The response includes a status code and a response body containing a serialized collection of events.</p>
 <h5 id="example-request-3">Example request</h5>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data 
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data 
        ?startIndex=2017-11-23T13:00:00Z&amp;count=100
 </code></pre><p>This request will return a response with up to 100 events starting at 13:00 and extending forward toward the end of the stream: </p>
 <h5 id="example-response-body-3">Example response body</h5>
@@ -320,7 +321,7 @@ Content-Type: application/json
 <h5 id="example-request-4">Example request</h5>
 <p>To reverse the direction of the request, set reversed to true. The following request will 
 return up to 100 events starting at 13:00 and extending back toward the start of the stream:</p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data 
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data 
        ?startIndex=2017-11-23T13:00:00Z&amp;count=100&amp;reversed=true
 </code></pre><h5 id="example-response-body-4">Example response body</h5>
 <pre><code class="lang-json">HTTP/1.1 200
@@ -343,7 +344,7 @@ event outside the boundary will be included in the response. For a reverse direc
 this means one event forward of the specified start index. In a default direction range request, 
 it would mean one event before the specified start index.</p>
 <h5 id="example-request-5">Example request</h5>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data 
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data 
        ?startIndex=2017-11-23T13:00:00Z&amp;count=100&amp;reversed=true 
        &amp;boundaryType=2
 </code></pre><h5 id="example-response-body-5">Example response body</h5>
@@ -371,7 +372,7 @@ Content-Type: application/json
 request operates in reverse.</p>
 <h5 id="example-request-6">Example request</h5>
 <p>Adding a filter to the request means only events that meet the filter criteria are returned:</p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data 
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data 
        ?startIndex=2017-11-23T13:00:00Z&amp;count=100&amp;reversed=true 
        &amp;boundaryType=2&amp;filter=Measurement gt 10
 </code></pre><h5 id="example-response-body-6">Example response body</h5>
@@ -434,21 +435,21 @@ be passed for the start and end individually. </p>
 <p>To retrieve the next page of values, include the <code>continuationToken</code> from the results of the previous request. 
 For the first request, specify a null or empty string for the <code>continuationToken</code>.</p>
 <h4 id="requests">Requests</h4>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">    GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data 
+<pre><code class="lang-text">    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data 
          ?startIndex={startIndex}&amp;endIndex={endIndex}
 
-    GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data 
+    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data 
          ?startIndex={startIndex}&amp;endIndex={endIndex}&amp;boundaryType={boundaryType}
 
-    GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data 
+    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data 
          ?startIndex={startIndex}&amp;startBoundaryType={startBoundaryType} 
          &amp;endIndex={endIndex}&amp;endBoundaryType={endBoundaryType}
 
-    GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data 
+    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data 
          ?startIndex={startIndex}&amp;endIndex={endIndex}
          &amp;count={count}&amp;continuationToken={continuationToken}
 
-    GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data 
+    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data 
          ?startIndex={startIndex}&amp;startBoundaryType={startBoundaryType} 
          &amp;endIndex={endIndex}&amp;endBoundaryType={endBoundaryType}&amp;filter={filter}&amp;count={count} 
          &amp;continuationToken={continuationToken}
@@ -469,7 +470,7 @@ For the first request, specify a null or empty string for the <code>continuation
 <p>A continuation token can be returned if specified in the request.</p>
 <h5 id="example-request-7">Example request</h5>
 <p>The following requests all stored events between 12:30 and 15:30: </p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data 
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data 
        ?startIndex=2017-11-23T12:30:00Z&amp;endIndex=2017-11-23T15:30:00Z
 </code></pre><p>The response will contain the event stored at the specified index:</p>
 <h5 id="example-response-body-7">Example response body</h5>
@@ -494,7 +495,7 @@ Content-Type: application/json
 <h5 id="example-request-8">Example request</h5>
 <p>When the request is modified to specify a boundary type of Outside, the value 
 before 13:30 and the value after 15:30 are included:</p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data 
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data 
        ?startIndex=2017-11-23T12:30:00Z&amp;endIndex=2017-11-23T15:30:00Z 
        &amp;boundaryType=2
 </code></pre><h5 id="example-response-body-8">Example response body</h5>
@@ -529,7 +530,7 @@ value for numbers.</p>
 <p>With a start boundary of Inside, only values inside the start boundary (after 13:30) 
 are included in the result. With an end boundary of Outside, one value outside the end index 
 (after 15:30) is included:</p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data 
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data 
        ?startIndex=2017-11-23T12:30:00Z&amp;&amp;startBoundaryType=1 
        &amp;endIndex=2017-11-23T15:30:00Z&amp;endBoundaryType=2
 </code></pre><h5 id="example-response-body-9">Example response body</h5>
@@ -562,7 +563,7 @@ Content-Type: application/json
 <p>In order to page the results of the request, a continuation token may be specified. 
 This requests the first page of the first two stored events between start index and 
 end index by indicating count is 2 and continuationToken is an empty string:</p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data 
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data 
        ?startIndex=2017-11-23T12:30:00Z&amp;endIndex=2017-11-23T15:30:00Z 
        &amp;count=2&amp;continuationToken=
 </code></pre><h6 id="example-response-body-10">Example response body</h6>
@@ -587,7 +588,7 @@ Content-Type: application/json
 </code></pre><h5 id="example-request-11">Example request</h5>
 <p>This request uses the continuation token from the previous 
 page to request the next page of stored events:</p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data 
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}}/Namespaces/{namespaceId}/Streams/Simple/Data 
        ?startIndex=2017-11-23T12:30:00Z&amp;endIndex=2017-11-23T15:30:00Z 
        &amp;count=2&amp;continuationToken=2017-11-23T14:00:00Z
 </code></pre><h5 id="example-response-body-11">Example response body</h5>
@@ -702,7 +703,7 @@ are calculated for indexes at which no stored event exists. For more information
 <h3 id="index-collection"><code>Index Collection</code></h3>
 <p>Returns events at the specified indexes. If no stored event exists at a specified index, the stream&#39;s read characteristics determine how the returned event is calculated. For more information, see <a class="xref" href="Reading_Data.html#interpolation">Interpolation</a> and <a class="xref" href="Reading_Data.html#extrapolation">Extrapolation</a>.</p>
 <h4 id="request-5">Request</h4>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data/<wbr>
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
        Interpolated?index={index}[&amp;index={index}...]
 </code></pre><h5 id="parameters-6">Parameters</h5>
 <p><code>string tenantId</code><br>The tenant identifier</p>
@@ -715,7 +716,7 @@ are calculated for indexes at which no stored event exists. For more information
 <h5 id="example-request-12">Example request</h5>
 <p>Consider a stream of type <code>Simple</code> with the default <code>InterpolationMode</code> of <code>Continuous</code> and 
 <code>ExtrapolationMode</code> of <code>All</code>. In the following request, the specified index matches an existing stored event:</p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data/<wbr>
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data/
        Interpolated?index=2017-11-23T13:00:00Z
 </code></pre><p>The response will contain the event stored at the specified index.</p>
 <h5 id="example-response-body-12">Example response body</h5>
@@ -731,7 +732,7 @@ Content-Type: application/json
 ]
 </code></pre><h5 id="example-request-13">Example request</h5>
 <p>The following request specifies an index for which no stored event exists:</p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data/<wbr>
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data/
        Interpolated?index=2017-11-23T13:30:00Z
 </code></pre><p>Because the index is a valid type for interpolation and the stream has a <code>InterpolationMode</code> of <code>Continuous</code>, 
 this request receives a response with an event interpolated at the specified index:</p>
@@ -750,7 +751,7 @@ Content-Type: application/json
 <p>Consider a stream of type <code>Simple</code> with an <code>InterpolationMode</code> of <code>Discrete</code> and 
 <code>ExtrapolationMode</code> of <code>All</code>. In the following request, the specified indexes only 
 match two existing stored events:</p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data 
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}}/Namespaces/{namespaceId}/Streams/Simple/Data 
        Interpolated?index=2017-11-23T12:30:00Z&amp;index=2017-11-23T13:00:00Z&amp;index=2017-11-23T14:00:00Z
 </code></pre><p>For this request, the response contains events for two of the three specified indexes.</p>
 <h5 id="example-response-body-14">Example response body</h5>
@@ -787,7 +788,7 @@ Content-Type: application/json
 <h3 id="interval"><code>Interval</code></h3>
 <p>Returns events at evenly spaced intervals based on the specified start index, end index, and count. If no stored event exists at an index interval, the stream&#39;s read characteristics determine how the returned event is calculated. For more information, see <a class="xref" href="Reading_Data.html#interpolation">Interpolation</a> and <a class="xref" href="Reading_Data.html#extrapolation">Extrapolation</a>.</p>
 <h4 id="request-6">Request</h4>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data/<wbr>
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
        Interpolated?startIndex={startIndex}&amp;endIndex={endIndex}&amp;count={count}
 </code></pre><h5 id="parameters-7">Parameters</h5>
 <p><code>string tenantId</code><br>The tenant identifier</p>
@@ -800,7 +801,7 @@ Content-Type: application/json
 <p>The response includes a status code and a response body containing a serialized collection of events. Depending on the read characteristics and input parameters, it is possible for a collection to be returned with less events than specified in the count.</p>
 <h5 id="example-request-15">Example request</h5>
 <p>For a stream, named Simple, of type <code>Simple</code> for the following request:</p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data/<wbr>
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}}/Namespaces/{namespaceId}/Streams/Simple/Data/
        Interpolated?startIndex=2017-11-23T13:00:00Z&amp;endIndex=2017-11-23T15:00:00Z&amp;count=3
 </code></pre><p>the start and end fall exactly on event indexes, and the number of events from start to end match the count of three (3).</p>
 <h5 id="example-response-body-15">Example response body</h5>
@@ -1040,7 +1041,7 @@ Total, Weighted Mean, WeightedStandardDeviation, and WeightedPopulationStandardD
 <p><strong>Note:</strong> Properties marked with an <code>InterpolationMode</code> of <code>Discrete</code> do not support summaries.
 Unsupported properties will be excluded from the summaries returned.</p>
 <h4 id="request-7">Request</h4>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data/<wbr>
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
        Summaries?startIndex={startIndex}&amp;endIndex={endIndex}&amp;count={count}[&amp;filter={filter}]
 </code></pre><h5 id="parameters-8">Parameters</h5>
 <p><code>string tenantId</code><br>The tenant identifier</p>
@@ -1077,7 +1078,7 @@ Unsupported properties will be excluded from the summaries returned.</p>
 </table>
 <h5 id="example-request-16">Example request</h5>
 <p>The following request calculates two summary intervals between the <code>startIndex</code> and <code>endIndex</code>: </p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data/<wbr> 
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data/ 
        Summaries?startIndex=2017-11-23T12:00:00Z&amp;endIndex=2017-11-23T16:00:00Z&amp;count=2
 </code></pre><h5 id="example-response-body-16">Example response body</h5>
 <pre><code class="lang-json">HTTP/1.1 200
@@ -1206,14 +1207,14 @@ public class SimpleType
    public double? Measurement { get; set; }
 }
 </code></pre><p><code>Measurement</code> has stored values as follows:</p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code>  11/<wbr>23/<wbr>2017 12:00:01 PM: Measurement 2
-  11/<wbr>23/<wbr>2017 12:00:02 PM: Measurement 2
-  11/<wbr>23/<wbr>2017 12:00:03 PM: Measurement null
-  11/<wbr>23/<wbr>2017 12:00:04 PM: Measurement 1
-  11/<wbr>23/<wbr>2017 12:00:05 PM: Measurement 2
-  11/<wbr>23/<wbr>2017 12:00:06 PM: Measurement null
-  11/<wbr>23/<wbr>2017 12:00:07 PM: Measurement null
-  11/<wbr>23/<wbr>2017 12:00:08 PM: Measurement 3
+<pre><code>  11/23/2017 12:00:01 PM: Measurement 2
+  11/23/2017 12:00:02 PM: Measurement 2
+  11/23/2017 12:00:03 PM: Measurement null
+  11/23/2017 12:00:04 PM: Measurement 1
+  11/23/2017 12:00:05 PM: Measurement 2
+  11/23/2017 12:00:06 PM: Measurement null
+  11/23/2017 12:00:07 PM: Measurement null
+  11/23/2017 12:00:08 PM: Measurement 3
 </code></pre><p>While calculating weighted summaries, if we encounter a null value at a given index then we would consider interpolation mode of property to find the interpolated value of the given interval. See the table below for [12:00:02 PM, 12:00:03 PM] interval. The values are 2 and null at 12:00:02 and 12:00:03 PM respectively. </p>
 <table>
 <thead>
@@ -1299,7 +1300,7 @@ In the example above, non-weighted summaries for Measurement would be calculated
 <p>For more information see <a class="xref" href="Reading_Data.html#interpolation">Interpolation</a>.</p>
 <h5 id="example-request-17">Example request</h5>
 <p>The following request calculates one summary interval between the <code>startIndex</code> and <code>endIndex</code>: </p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data/<wbr> 
+<pre><code class="lang-text">   GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data/ 
        Summaries?startIndex=2017-11-23T12:00:01Z&amp;endIndex=2017-11-23T12:00:08Z&amp;count=1
 </code></pre><h5 id="example-response-body-17">Example response body</h5>
 <pre><code class="lang-json">HTTP/1.1 200
@@ -1379,7 +1380,7 @@ Content-Type: application/json
 <p>Sampling is driven by a specified property or properties of the stream&#39;s Sds Type. Property types that cannot be interpolated do not support sampling requests. Strings are an example of a property that cannot be interpolated. For more 
 information see <a class="xref" href="Reading_Data.html#interpolation">Interpolation</a>. </p>
 <h4 id="request-8">Request</h4>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data/<wbr>
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
        Sampled?startIndex={startIndex}&amp;endIndex={endIndex}&amp;intervals={intervals}&amp;sampleBy={sampleBy}
        [&amp;sampleBy={sampleBy}&amp;...&amp;boundaryType={boundaryType}&amp;startBoundaryType={startBoundaryType}
        &amp;endBoundaryType={endBoundaryType}&amp;filter={filter}]
@@ -1399,7 +1400,7 @@ information see <a class="xref" href="Reading_Data.html#interpolation">Interpola
 <p>The response includes a status code and a response body containing a serialized collection of events.</p>
 <h5 id="example-request-18">Example request</h5>
 <p>The following request returns two sample intervals between the <code>startIndex</code> and <code>endIndex</code>: </p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>Simple/<wbr>Data/<wbr>
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data/
        Sampled?startIndex=2019-01-01T00:00:00Z&amp;endIndex=2019-01-02T00:00:00Z&amp;intervals=2&amp;sampleBy=Measurement
 </code></pre><h5 id="example-response-body-18">Example response body</h5>
 <pre><code class="lang-json">HTTP/1.1 200
@@ -1514,7 +1515,7 @@ Content-Type: application/json
 </ul>
 <p><a name="getjoin"></a></p>
 <h3 id="get-request"><code>GET Request</code></h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Bulk/<wbr>Streams/<wbr>Data/<wbr>Joins
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
        ?streams={streams}&amp;joinMode={joinMode}&amp;startIndex={startIndex}&amp;endIndex={endIndex}
        [&amp;boundaryType={boundaryType}&amp;startBoundaryType={startBoundaryType}
        &amp;endBoundaryType={endBoundaryType}&amp;filter={filter}&amp;count={count}]
@@ -1587,7 +1588,7 @@ Content-Type: application/json
 ]
 </code></pre><p>The following are responses for various Joins request options:</p>
 <h5 id="inner-join-example-request"><code>Inner Join</code> example request</h5>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Bulk/<wbr>Streams/<wbr>Data/<wbr>Joins
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
        ?streams=Simple1,Simple2&amp;joinMode=inner
        &amp;startIndex=0001-01-01T00:00:00.0000000&amp;endIndex=9999-12-31T23:59:59.9999999
 </code></pre><h4 id="response-11">Response</h4>
@@ -1612,7 +1613,7 @@ Content-Type: application/json
 ]
 </code></pre><p><a name="outer"></a></p>
 <h5 id="outer-join-example-request"><code>Outer Join</code> example request</h5>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Bulk/<wbr>Streams/<wbr>Data/<wbr>Joins
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
        ?streams=Simple1,Simple2&amp;joinMode=outer
        &amp;startIndex=0001-01-01T00:00:00.0000000&amp;endIndex=9999-12-31T23:59:59.9999999
 </code></pre><h4 id="response-12">Response</h4>
@@ -1684,7 +1685,7 @@ Content-Type: application/json
     ]
 ]
 </code></pre><h5 id="interpolated-join-example-request"><code>Interpolated Join</code> example request</h5>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Bulk/<wbr>Streams/<wbr>Data/<wbr>Joins
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
        ?streams=Simple1,Simple2&amp;joinMode=interpolated
        &amp;startIndex=0001-01-01T00:00:00.0000000&amp;endIndex=9999-12-31T23:59:59.9999999
 </code></pre><h4 id="response-13">Response</h4>
@@ -1781,7 +1782,7 @@ Content-Type: application/json
     ]
 ]
 </code></pre><h5 id="mergeleft-join-example-request"><code>MergeLeft Join</code> example request</h5>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Bulk/<wbr>Streams/<wbr>Data/<wbr>Joins
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
        ?streams=Simple1,Simple2&amp;joinMode=mergeleft
        &amp;startIndex=0001-01-01T00:00:00.0000000&amp;endIndex=9999-12-31T23:59:59.9999999
 </code></pre><h4 id="response-14">Response</h4>
@@ -1828,7 +1829,7 @@ Content-Type: application/json
     }
 ]
 </code></pre><h5 id="mergeright-join-example-request"><code>MergeRight Join</code> example request</h5>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Bulk/<wbr>Streams/<wbr>Data/<wbr>Joins
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
        ?streams=Simple1,Simple2&amp;joinMode=mergeright
        &amp;startIndex=0001-01-01T00:00:00.0000000&amp;endIndex=9999-12-31T23:59:59.9999999
 </code></pre><h4 id="response-15">Response</h4>
@@ -1876,7 +1877,7 @@ Content-Type: application/json
 ]
 </code></pre><p><a name="postjoin"></a></p>
 <h3 id="post-request"><code>POST Request</code></h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   POST api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Bulk/<wbr>Streams/<wbr>Data/<wbr>Joins?
+<pre><code class="lang-text">   POST api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins?
        joinMode={joinMode}
 </code></pre><h5 id="parameters-11">Parameters</h5>
 <p><code>string tenantId</code><br>The tenant identifier</p>
@@ -1887,7 +1888,7 @@ Content-Type: application/json
 <h4 id="response-16">Response</h4>
 <p> The response includes a status code and a response body containing multiple serialized events.</p>
 <p>Consider the following outer join request,</p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">   POST api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Bulk/<wbr>Streams/<wbr>Data/<wbr>Joins
+<pre><code class="lang-text">   POST api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
        ?joinMode=outer
 </code></pre><p>where in the request body, different start indexes and end indexes are specified per stream,</p>
 <pre><code class="lang-json">[  
@@ -2036,8 +2037,14 @@ Content-Type: application/json
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
-            <span id='copyright-text'>© 2020 - OSIsoft, LLC.<span>
-        </span></span></div>
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2020 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
       </footer>
     </div>
     

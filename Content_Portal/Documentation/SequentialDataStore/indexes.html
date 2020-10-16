@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -33,8 +33,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../../index.html" width="46">
-                <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -196,13 +197,13 @@ To help those using compound indexes, .NET client libraries methods also allow t
 <li>The examples below are for compound indexes on SdsTypes and not of secondary indexes on SdsStreams.</li>
 </ul>
 <p><strong>REST API</strong></p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">/<wbr>/<wbr> Read data located between two compound indexes:
-GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data?startIndex={firstIndex|secondIndex|thirdIndex}&amp;endIndex={firstIndex|secondIndex|thirdIndex}
-GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data?startIndex={firstIndex|secondIndex}&amp;endIndex={firstIndex|secondIndex}
+<pre><code class="lang-text">// Read data located between two compound indexes:
+GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data?startIndex={firstIndex|secondIndex|thirdIndex}&amp;endIndex={firstIndex|secondIndex|thirdIndex}
+GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data?startIndex={firstIndex|secondIndex}&amp;endIndex={firstIndex|secondIndex}
 
-/<wbr>/<wbr> Delete data with a compound index:
-DELETE api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data?index={firstIndex|secondIndex}
-DELETE api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data?startIndex={firstIndex|secondIndex|thirdIndex}&amp;endIndex={firstIndex|secondIndex|thirdIndex}
+// Delete data with a compound index:
+DELETE api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data?index={firstIndex|secondIndex}
+DELETE api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data?startIndex={firstIndex|secondIndex|thirdIndex}&amp;endIndex={firstIndex|secondIndex|thirdIndex}
 </code></pre><p><strong>.NET examples</strong></p>
 <pre><code class="lang-csharp">// Read data located between two compound indexes:
 IEnumerable&lt;DerivedCompoundIndex&gt; compoundValues = await client.GetWindowValuesAsync&lt;DerivedCompoundIndex&gt;(compoundStream.Id, 1/20/2017 01:00|1/20/2017 00:00, 1/20/2017 02:00|1/20/2017 14:00);
@@ -257,7 +258,7 @@ and query as follows:</p>
   };
   secondary = await config.GetOrCreateStreamAsync(secondary);
 </code></pre><p>To read data indexed by a secondary index, use a filtered <code>Get</code> call, as in the following:</p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code>  await client.UpdateValuesAsync&lt;Simple&gt;(secondary.Id, new List&lt;Simple&gt;()
+<pre><code>  await client.UpdateValuesAsync&lt;Simple&gt;(secondary.Id, new List&lt;Simple&gt;()
     {
         new Simple()
         {
@@ -304,18 +305,18 @@ and query as follows:</p>
       Console.WriteLine(&quot;{0}: {1}&quot;, value.Time, value.Measurement);
   Console.WriteLine();
 
-  /<wbr>/<wbr> Output:
-  /<wbr>/<wbr> 1/<wbr>20/<wbr>2017 12:00:00 AM: 5
-  /<wbr>/<wbr> 1/<wbr>20/<wbr>2017 12:00:01 AM: 4
-  /<wbr>/<wbr> 1/<wbr>20/<wbr>2017 12:00:02 AM: 3
-  /<wbr>/<wbr> 1/<wbr>20/<wbr>2017 12:00:03 AM: 2
-  /<wbr>/<wbr> 1/<wbr>20/<wbr>2017 12:00:04 AM: 1
-  /<wbr>/<wbr>
-  /<wbr>/<wbr> 1/<wbr>20/<wbr>2017 12:00:04 PM: 1
-  /<wbr>/<wbr> 1/<wbr>20/<wbr>2017 12:00:03 PM: 2
-  /<wbr>/<wbr> 1/<wbr>20/<wbr>2017 12:00:02 PM: 3
-  /<wbr>/<wbr> 1/<wbr>20/<wbr>2017 12:00:01 PM: 4
-  /<wbr>/<wbr> 1/<wbr>20/<wbr>2017 12:00:00 PM: 5
+  // Output:
+  // 1/20/2017 12:00:00 AM: 5
+  // 1/20/2017 12:00:01 AM: 4
+  // 1/20/2017 12:00:02 AM: 3
+  // 1/20/2017 12:00:03 AM: 2
+  // 1/20/2017 12:00:04 AM: 1
+  //
+  // 1/20/2017 12:00:04 PM: 1
+  // 1/20/2017 12:00:03 PM: 2
+  // 1/20/2017 12:00:02 PM: 3
+  // 1/20/2017 12:00:01 PM: 4
+  // 1/20/2017 12:00:00 PM: 5
 </code></pre><h4 id="compound-indexes-1">Compound indexes</h4>
 <p>Compound indexes are defined using the <code>SdsMemberAttribute</code> as follows:</p>
 <pre><code>  public class Simple
@@ -426,91 +427,91 @@ A collection of times would be sorted as follows:</p>
 </tr>
 </tbody>
 </table>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code>  /<wbr>/<wbr> estimates at 1/<wbr>20/<wbr>2017 00:00
+<pre><code>  // estimates at 1/20/2017 00:00
   await client.UpdateValuesAsync(compoundStream.Id, new List&lt;DerivedCompoundIndex&gt;()
     {
         new DerivedCompoundIndex()
         {
-            Time = DateTime.Parse(&quot;1/<wbr>20/<wbr>2017 01:00&quot;),
-            Recorded = DateTime.Parse(&quot;1/<wbr>20/<wbr>2017 00:00&quot;),
+            Time = DateTime.Parse(&quot;1/20/2017 01:00&quot;),
+            Recorded = DateTime.Parse(&quot;1/20/2017 00:00&quot;),
             State = State.Ok,
             Measurement = 0
         },
         new DerivedCompoundIndex()
         {
-            Time = DateTime.Parse(&quot;1/<wbr>20/<wbr>2017 02:00&quot;),
-            Recorded = DateTime.Parse(&quot;1/<wbr>20/<wbr>2017 00:00&quot;),
+            Time = DateTime.Parse(&quot;1/20/2017 02:00&quot;),
+            Recorded = DateTime.Parse(&quot;1/20/2017 00:00&quot;),
             State = State.Ok,
             Measurement = 1
         },
     });
 
-  /<wbr>/<wbr> measure and estimates at 1/<wbr>20/<wbr>2017 01:00
+  // measure and estimates at 1/20/2017 01:00
   await client.UpdateValuesAsync(compoundStream.Id, new List&lt;DerivedCompoundIndex&gt;()
     {
         new DerivedCompoundIndex()
         {
-            Time = DateTime.Parse(&quot;1/<wbr>20/<wbr>2017 01:00&quot;),
-            Recorded = DateTime.Parse(&quot;1/<wbr>20/<wbr>2017 01:00&quot;),
+            Time = DateTime.Parse(&quot;1/20/2017 01:00&quot;),
+            Recorded = DateTime.Parse(&quot;1/20/2017 01:00&quot;),
             State = State.Ok,
             Measurement = 2
         },
         new DerivedCompoundIndex()
         {
-            Time = DateTime.Parse(&quot;1/<wbr>20/<wbr>2017 02:00&quot;),
-            Recorded = DateTime.Parse(&quot;1/<wbr>20/<wbr>2017 01:00&quot;),
+            Time = DateTime.Parse(&quot;1/20/2017 02:00&quot;),
+            Recorded = DateTime.Parse(&quot;1/20/2017 01:00&quot;),
             State = State.Ok,
             Measurement = 3
         },
     });
 
-  /<wbr>/<wbr> measure at 1/<wbr>20/<wbr>2017 02:00
+  // measure at 1/20/2017 02:00
   await client.UpdateValuesAsync(compoundStream.Id, new List&lt;DerivedCompoundIndex&gt;()
     {
         new DerivedCompoundIndex()
         {
-            Time = DateTime.Parse(&quot;1/<wbr>20/<wbr>2017 02:00&quot;),
-            Recorded = DateTime.Parse(&quot;1/<wbr>20/<wbr>2017 02:00&quot;),
+            Time = DateTime.Parse(&quot;1/20/2017 02:00&quot;),
+            Recorded = DateTime.Parse(&quot;1/20/2017 02:00&quot;),
             State = State.Ok,
             Measurement = 4
         },
     });
 
-  /<wbr>/<wbr> adjust earlier values at 1/<wbr>20/<wbr>2017 14:00
+  // adjust earlier values at 1/20/2017 14:00
   await client.UpdateValuesAsync(compoundStream.Id, new List&lt;DerivedCompoundIndex&gt;()
     {
         new DerivedCompoundIndex()
         {
-            Time = DateTime.Parse(&quot;1/<wbr>20/<wbr>2017 01:00&quot;),
-            Recorded = DateTime.Parse(&quot;1/<wbr>20/<wbr>2017 14:00&quot;),
+            Time = DateTime.Parse(&quot;1/20/2017 01:00&quot;),
+            Recorded = DateTime.Parse(&quot;1/20/2017 14:00&quot;),
             State = State.Ok,
             Measurement = 5
         },
         new DerivedCompoundIndex()
         {
-            Time = DateTime.Parse(&quot;1/<wbr>20/<wbr>2017 02:00&quot;),
-            Recorded = DateTime.Parse(&quot;1/<wbr>20/<wbr>2017 14:00&quot;),
+            Time = DateTime.Parse(&quot;1/20/2017 02:00&quot;),
+            Recorded = DateTime.Parse(&quot;1/20/2017 14:00&quot;),
             State = State.Ok,
             Measurement = 6
         },
     });
 
-  var from = new Tuple&lt;DateTime, DateTime&gt;(DateTime.Parse(&quot;1/<wbr>20/<wbr>2017 01:00&quot;), DateTime.Parse(&quot;1/<wbr>20/<wbr>2017 00:00&quot;));
-  var to = new Tuple&lt;DateTime, DateTime&gt;(DateTime.Parse(&quot;1/<wbr>20/<wbr>2017 02:00&quot;), DateTime.Parse(&quot;1/<wbr>20/<wbr>2017 14:00&quot;));
+  var from = new Tuple&lt;DateTime, DateTime&gt;(DateTime.Parse(&quot;1/20/2017 01:00&quot;), DateTime.Parse(&quot;1/20/2017 00:00&quot;));
+  var to = new Tuple&lt;DateTime, DateTime&gt;(DateTime.Parse(&quot;1/20/2017 02:00&quot;), DateTime.Parse(&quot;1/20/2017 14:00&quot;));
 
   var compoundValues = await client.GetWindowValuesAsync&lt;DerivedCompoundIndex, DateTime, DateTime&gt;(compoundStream.Id, from, to);
 
   foreach (DerivedCompoundIndex value in compoundValues)
      Console.WriteLine(&quot;{0}:{1} {2}&quot;, value.Time, value.Recorded, value.Measurement);
 
-  /<wbr>/<wbr> Output:
-  /<wbr>/<wbr> 1/<wbr>20/<wbr>2017 1:00:00 AM:1/<wbr>20/<wbr>2017 12:00:00 AM 0
-  /<wbr>/<wbr> 1/<wbr>20/<wbr>2017 1:00:00 AM:1/<wbr>20/<wbr>2017 1:00:00 AM 2
-  /<wbr>/<wbr> 1/<wbr>20/<wbr>2017 1:00:00 AM:1/<wbr>20/<wbr>2017 2:00:00 PM 5
-  /<wbr>/<wbr> 1/<wbr>20/<wbr>2017 2:00:00 AM:1/<wbr>20/<wbr>2017 12:00:00 AM 1
-  /<wbr>/<wbr> 1/<wbr>20/<wbr>2017 2:00:00 AM:1/<wbr>20/<wbr>2017 1:00:00 AM 3
-  /<wbr>/<wbr> 1/<wbr>20/<wbr>2017 2:00:00 AM:1/<wbr>20/<wbr>2017 2:00:00 AM 4
-  /<wbr>/<wbr> 1/<wbr>20/<wbr>2017 2:00:00 AM:1/<wbr>20/<wbr>2017 2:00:00 PM 6
+  // Output:
+  // 1/20/2017 1:00:00 AM:1/20/2017 12:00:00 AM 0
+  // 1/20/2017 1:00:00 AM:1/20/2017 1:00:00 AM 2
+  // 1/20/2017 1:00:00 AM:1/20/2017 2:00:00 PM 5
+  // 1/20/2017 2:00:00 AM:1/20/2017 12:00:00 AM 1
+  // 1/20/2017 2:00:00 AM:1/20/2017 1:00:00 AM 3
+  // 1/20/2017 2:00:00 AM:1/20/2017 2:00:00 AM 4
+  // 1/20/2017 2:00:00 AM:1/20/2017 2:00:00 PM 6
 </code></pre><p>Note that the <code>GetWindowValuesAsync()</code> call specifies an expected return type and the index types as generic parameters.</p>
 <h3 id="indexes-outside-of-net-framework">Indexes outside of .NET framework</h3>
 <h4 id="simple-indexes-1">Simple indexes</h4>
@@ -608,7 +609,7 @@ samples are shown. For samples in other languages, go to <a href="https://github
   simple.SdsTypeCode = SdsTypeCode.Object
   simple.Properties = [ time, state, measurement ]
 </code></pre><p><strong>JavaScript</strong></p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code>  /<wbr>/<wbr> Time is the primary key
+<pre><code>  // Time is the primary key
   var timeProperty = new SdsObjects.SdsTypeProperty({
     &quot;Id&quot;: &quot;Time&quot;,
     &quot;IsKey&quot;: true,
@@ -618,7 +619,7 @@ samples are shown. For samples in other languages, go to <a href="https://github
     })
   });
 
-  /<wbr>/<wbr> State is not a pre-defined type. A SdsType must be defined to represent the enum
+  // State is not a pre-defined type. A SdsType must be defined to represent the enum
   var stateTypePropertyOk = new SdsObjects.SdsTypeProperty({
     &quot;Id&quot;: &quot;Ok&quot;,
     &quot;Value&quot;: State.Ok
@@ -642,7 +643,7 @@ samples are shown. For samples in other languages, go to <a href="https://github
       stateTypePropertyAlarm, stateTypePropertyRed]
   });
 
-  /<wbr>/<wbr> Value property is a simple non-indexed, pre-defined type
+  // Value property is a simple non-indexed, pre-defined type
   var valueProperty = new SdsObjects.SdsTypeProperty({
     &quot;Id&quot;: &quot;Value&quot;,
     &quot;SdsType&quot;: new SdsObjects.SdsType({
@@ -651,7 +652,7 @@ samples are shown. For samples in other languages, go to <a href="https://github
     })
   });
 
-  /<wbr>/<wbr> Create the Simple SdsType
+  // Create the Simple SdsType
   var simpleType = new SdsObjects.SdsType({
     &quot;Id&quot;: &quot;Simple&quot;,
     &quot;Name&quot;: &quot;Simple&quot;,
@@ -671,7 +672,7 @@ samples are shown. For samples in other languages, go to <a href="https://github
   time.SdsType.Name = &quot;DateTime&quot;
   time.SdsType.SdsTypeCode = SdsTypeCode.DateTime
 </code></pre><p><strong>JavaScript</strong></p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code>  /<wbr>/<wbr> Time is the primary index
+<pre><code>  // Time is the primary index
   var timeProperty = new SdsObjects.SdsTypeProperty({
     &quot;Id&quot;: &quot;Time&quot;,
     &quot;IsKey&quot;: true,
@@ -782,7 +783,7 @@ extend the SdsType as follows:</p>
   derived.SdsTypeCode = SdsTypeCode.Object
   derived.Properties = [ recorded ]
 </code></pre><p><strong>JavaScript</strong>  </p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code>  /<wbr>/<wbr> We set the order for this property. The order of the first property defaulted to 0
+<pre><code>  // We set the order for this property. The order of the first property defaulted to 0
   var recordedProperty = new SdsObjects.SdsTypeProperty({
     &quot;Id&quot;: &quot;Recorded&quot;,
     &quot;Name&quot;: &quot;Recorded&quot;,
@@ -795,7 +796,7 @@ extend the SdsType as follows:</p>
     })
   });
 
-  /<wbr>/<wbr> Create the Derived SdsType
+  // Create the Derived SdsType
   var derivedType = new SdsObjects.SdsTyp({
     &quot;Id&quot;: &quot;Compound&quot;,
     &quot;Name&quot;: &quot;Compound&quot;,
@@ -921,8 +922,14 @@ extend the SdsType as follows:</p>
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
-            <span id='copyright-text'>© 2020 - OSIsoft, LLC.<span>
-        </span></span></div>
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2020 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
       </footer>
     </div>
     

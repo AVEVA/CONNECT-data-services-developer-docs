@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -33,8 +33,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../../../index.html" width="46">
-                <img id="logo" src="../../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -82,7 +83,7 @@
 <h2 id="get-data-view-data"><code>Get Data View Data</code></h2>
 <p>Get data for the provided data view and index parameters with paging. See <a class="xref" href="../GetDataViewData/Quick_Start_Get_Data_View_Data.html#paging">documentation on paging</a> for further information.</p>
 <h3 id="request">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">POST /<wbr>api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>preview/<wbr>dataviews/<wbr>data/<wbr>interpolated?startIndex={startIndex}&amp;endIndex={endIndex}&amp;interval={interval}&amp;form={form}&amp;countPerGroup={countPerGroup}&amp;groupCount={groupCount}&amp;continuationToken={continuationToken}&amp;count={count}
+<pre><code class="lang-text">POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/dataviews/data/interpolated?startIndex={startIndex}&amp;endIndex={endIndex}&amp;interval={interval}&amp;form={form}&amp;countPerGroup={countPerGroup}&amp;groupCount={groupCount}&amp;continuationToken={continuationToken}&amp;count={count}
 </code></pre><h3 id="parameters">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -349,8 +350,14 @@ Time,Temperature,Flowrate,Volume
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
-            <span id='copyright-text'>© 2020 - OSIsoft, LLC.<span>
-        </span></span></div>
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2020 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
       </footer>
     </div>
     

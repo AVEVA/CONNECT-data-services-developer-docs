@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -33,8 +33,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../../index.html" width="46">
-                <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -173,7 +174,7 @@ Read <a href="https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_sampl
 <h2 id="get-invitation"><code>Get Invitation</code></h2>
 <p>Get an Invitation from Tenant.</p>
 <h3 id="request">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Invitations/<wbr>{invitationId}</code></p>
+<p><code>GET api/v1/Tenants/{tenantId}/Invitations/{invitationId}</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -213,7 +214,7 @@ string invitationId
 <h2 id="get-invitations"><code>Get Invitations</code></h2>
 <p>Get all non-expired invitations from a Tenant. Optionally include expired invitations.</p>
 <h3 id="request-1">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Invitations</code></p>
+<p><code>GET api/v1/Tenants/{tenantId}/Invitations</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -285,7 +286,7 @@ bool includeExpiredInvitations
 <p>Update an Invitation. Expired invitations will not be extended.
             automatically upon updates.</p>
 <h3 id="request-2">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Invitations/<wbr>{invitationId}</code></p>
+<p><code>PUT api/v1/Tenants/{tenantId}/Invitations/{invitationId}</code></p>
 <h3 id="parameters-2">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -378,7 +379,7 @@ InvitationCreateOrUpdate invitationCreateOrUpdate
 <p>Delete an Invitation. Users who already have an Invitation email
             will not be able to sign-up once the Invitation is deleted.</p>
 <h3 id="request-3">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">DELETE api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Invitations/<wbr>{invitationId}</code></p>
+<p><code>DELETE api/v1/Tenants/{tenantId}/Invitations/{invitationId}</code></p>
 <h3 id="parameters-3">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -413,7 +414,7 @@ string invitationId
 <p>Validate that an Invitation exists. This endpoint is identical to the GET
             one, but it does not return an object in the body.</p>
 <h3 id="request-4">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Invitations/<wbr>{invitationId}</code></p>
+<p><code>HEAD api/v1/Tenants/{tenantId}/Invitations/{invitationId}</code></p>
 <h3 id="parameters-4">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -445,7 +446,7 @@ string invitationId
             The value will be set in the Total-Count header. This endpoint is identical to the GET one but
             it does not return any objects in the body.</p>
 <h3 id="request-5">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Invitations</code></p>
+<p><code>HEAD api/v1/Tenants/{tenantId}/Invitations</code></p>
 <h3 id="parameters-5">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -479,7 +480,7 @@ bool includeExpiredInvitations
 <h2 id="get-users-invitation"><code>Get User&#39;s Invitation</code></h2>
 <p>Get Invitation for a User.</p>
 <h3 id="request-6">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Users/<wbr>{userId}/<wbr>Invitation</code></p>
+<p><code>GET api/v1/Tenants/{tenantId}/Users/{userId}/Invitation</code></p>
 <h3 id="parameters-6">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -520,7 +521,7 @@ Guid userId
 <h2 id="create-invitation"><code>Create Invitation</code></h2>
 <p>Create an Invitation for a User. Should use when no other Invitation exists for the User.</p>
 <h3 id="request-7">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">POST api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Users/<wbr>{userId}/<wbr>Invitation</code></p>
+<p><code>POST api/v1/Tenants/{tenantId}/Users/{userId}/Invitation</code></p>
 <h3 id="parameters-7">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -614,7 +615,7 @@ InvitationCreateOrUpdate invitationCreateOrUpdate
 <h2 id="create-or-update-invitation"><code>Create or Update Invitation</code></h2>
 <p>Create or update an Invitation for a User.</p>
 <h3 id="request-8">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Users/<wbr>{userId}/<wbr>Invitation</code></p>
+<p><code>PUT api/v1/Tenants/{tenantId}/Users/{userId}/Invitation</code></p>
 <h3 id="parameters-8">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -722,7 +723,7 @@ InvitationCreateOrUpdate invitationCreateOrUpdate
 <h2 id="delete-invitation-1"><code>Delete Invitation</code></h2>
 <p>Delete an Invitation for a User.</p>
 <h3 id="request-9">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">DELETE api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Users/<wbr>{userId}/<wbr>Invitation</code></p>
+<p><code>DELETE api/v1/Tenants/{tenantId}/Users/{userId}/Invitation</code></p>
 <h3 id="parameters-9">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -756,7 +757,7 @@ Guid userId
             is identical to the GET one but it does not return any
             objects in the body.</p>
 <h3 id="request-10">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Users/<wbr>{userId}/<wbr>Invitation</code></p>
+<p><code>HEAD api/v1/Tenants/{tenantId}/Users/{userId}/Invitation</code></p>
 <h3 id="parameters-10">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -814,8 +815,14 @@ bool includeExpiredInvitations
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
-            <span id='copyright-text'>© 2020 - OSIsoft, LLC.<span>
-        </span></span></div>
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2020 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
       </footer>
     </div>
     

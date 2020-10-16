@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -33,8 +33,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../../index.html" width="46">
-                <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -85,7 +86,7 @@
 <h2 id="get-asset-by-id"><code>Get Asset by Id</code></h2>
 <p>Returns the specified asset.</p>
 <h3 id="request">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code>GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets/<wbr>{assetId}  
+<pre><code>GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}  
 </code></pre><h3 id="parameters">Parameters</h3>
 <p><code>string tenantId</code> </p>
 <p>The tenant identifier</p>
@@ -155,7 +156,7 @@ Content-Type: application/json
 <h2 id="get-assets"><code>Get Assets</code></h2>
 <p>Returns an array of assets. </p>
 <h3 id="request-1">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code>GET api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets?skip={skip}&amp;count={count} 
+<pre><code>GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets?skip={skip}&amp;count={count} 
 </code></pre><h3 id="parameters-1">Parameters</h3>
 <p><code>string tenantId</code> </p>
 <p>The tenant identifier</p>
@@ -203,7 +204,7 @@ Content-Type: application/json
 <p>Create a new asset with a specified ID. </p>
 <p>If the asset you are trying to create references an asset type (via the AssetTypeId property) and if there is the corresponding asset type has a metadatum with the same id, then the name and sds type code of the metadatum on the asset must be null. If the asset type does not have metadatum with a corresponding id, name and sds type code may not be null.</p>
 <h3 id="request-2">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">POST api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets/<wbr>{assetId} 
+<pre><code class="lang-text">POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId} 
 </code></pre><h3 id="parameters-2">Parameters</h3>
 <p><code>string tenantId</code> </p>
 <p>The tenant identifier</p>
@@ -273,7 +274,7 @@ Content-Type: application/json
 <h2 id="create-assets-bulk-create"><code>Create Assets (Bulk create)</code></h2>
 <p>Create multiple assets in a single call.</p>
 <h3 id="request-3">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">POST api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets   
+<pre><code class="lang-text">POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets   
 </code></pre><h3 id="parameters-3">Parameters</h3>
 <p><code>string tenantId</code> </p>
 <p>The tenant identifier</p>
@@ -319,7 +320,7 @@ Content-Type: application/json
 <p>Create or update an asset with a specified ID. </p>
 <!--- QUESTION: How is this different from Create Asset --->
 <h3 id="request-4">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">PUT api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets/<wbr>{assetId} 
+<pre><code class="lang-text">PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId} 
 </code></pre><h3 id="parameters-4">Parameters</h3>
 <p>.<code>string tenantId</code> </p>
 <p>The tenant identifier</p>
@@ -371,7 +372,7 @@ Content-Type: application/json
 <h2 id="delete-asset"><code>Delete Asset</code></h2>
 <p>Delete an asset with a specified ID.</p>
 <h3 id="request-5">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">DELETE api/<wbr>v1-preview/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Assets/<wbr>{assetId}   
+<pre><code class="lang-text">DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}   
 </code></pre><h3 id="parameters-5">Parameters</h3>
 <p><code>string tenantId</code> </p>
 <p>The tenant identifier</p>
@@ -437,8 +438,14 @@ Content-Type: application/json
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
-            <span id='copyright-text'>© 2020 - OSIsoft, LLC.<span>
-        </span></span></div>
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2020 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
       </footer>
     </div>
     

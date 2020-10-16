@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -33,8 +33,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../../../index.html" width="46">
-                <img id="logo" src="../../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -82,7 +83,7 @@
 <h2 id="get-data-items-by-query"><code>Get Data Items by Query</code></h2>
 <p>Gets the paged collection of data items that are the results of an individual query, and which are eligible for use in the current data view. A data view has a collection of zero or more queries. Each query has an identifier. Those identifiers are used here as part of the request path.</p>
 <h3 id="request">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>Resolved/<wbr>DataItems/<wbr>{queryId}?cache={cache}&amp;skip={skip}&amp;count={count}
+<pre><code class="lang-text">GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/Resolved/DataItems/{queryId}?cache={cache}&amp;skip={skip}&amp;count={count}
 </code></pre><h3 id="request-path-parameters">Request path parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -192,7 +193,7 @@ Content-Type: application/json
 </code></pre><h2 id="get-ineligible-data-items-by-query"><code>Get Ineligible Data Items by Query</code></h2>
 <p>Gets the paged collection of data items that are the results of an individual query, but which are not eligible for use in the current data view. A common reason for ineligibility is that the item&#39;s index property is of a different type than the data view expects. A data view has a collection of zero or more queries. Each query has an identifier. Those identifiers are used here as part of the request path.</p>
 <h3 id="request-1">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>Resolved/<wbr>IneligibleDataItems/<wbr>{queryId}?cache={cache}&amp;skip={skip}&amp;count={count}
+<pre><code class="lang-text">GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/Resolved/IneligibleDataItems/{queryId}?cache={cache}&amp;skip={skip}&amp;count={count}
 </code></pre><h3 id="request-path-parameters-1">Request path parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -290,7 +291,7 @@ Content-Type: application/json
 </code></pre><h2 id="get-groups"><code>Get Groups</code></h2>
 <p>Gets the collection of <code>Group</code>s that resolved for a data view.</p>
 <h3 id="request-2">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>Resolved/<wbr>Groups?cache={cache}&amp;skip={skip}&amp;count={count}
+<pre><code class="lang-text">GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/Resolved/Groups?cache={cache}&amp;skip={skip}&amp;count={count}
 </code></pre><h3 id="request-path-parameters-2">Request path parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -406,7 +407,7 @@ Content-Type: application/json
 </code></pre><h2 id="get-available-field-sets"><code>Get Available Field Sets</code></h2>
 <p>Gets the collection of field sets that are available for use in the data view, and which are not already included in the data view.</p>
 <h3 id="request-3">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>Resolved/<wbr>AvailableFieldSets?cache={cache}
+<pre><code class="lang-text">GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/Resolved/AvailableFieldSets?cache={cache}
 </code></pre><h3 id="request-path-parameters-3">Request path parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -493,7 +494,7 @@ Content-Type: application/json
 </code></pre><h2 id="get-field-mappings"><code>Get Field Mappings</code></h2>
 <p>Gets the collection of field mappings resolved for the data view. These show the exact data behind every field, for each data item, for each group.</p>
 <h3 id="request-4">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>Resolved/<wbr>FieldMappings?cache={cache}&amp;skip={skip}&amp;count={count}
+<pre><code class="lang-text">GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/Resolved/FieldMappings?cache={cache}&amp;skip={skip}&amp;count={count}
 </code></pre><h3 id="request-path-parameters-4">Request path parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -615,7 +616,7 @@ An optional parameter representing the maximum number of field mappings to retri
 </code></pre><h2 id="get-statistics"><code>Get Statistics</code></h2>
 <p>Gets statistics about the size and shape on how the data view resolved. </p>
 <h3 id="request-5">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>{dataViewId}/<wbr>Resolved/<wbr>Statistics?cache={cache}
+<pre><code class="lang-text">GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/Resolved/Statistics?cache={cache}
 </code></pre><h3 id="request-path-parameters-5">Request path parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -720,8 +721,14 @@ An optional parameter representing the maximum number of field mappings to retri
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
-            <span id='copyright-text'>© 2020 - OSIsoft, LLC.<span>
-        </span></span></div>
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2020 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
       </footer>
     </div>
     

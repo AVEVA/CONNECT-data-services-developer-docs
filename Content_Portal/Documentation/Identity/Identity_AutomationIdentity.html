@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -33,8 +33,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../../index.html" width="46">
-                <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -159,7 +160,7 @@ Read <a href="https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_sampl
 <h2 id="create-an-automation-identity"><code>Create an Automation Identity</code></h2>
 <p>Create an Automation Identity. A non-Administrator caller must have all roles being assigned to the new Automation Identity.</p>
 <h3 id="request">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">POST api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>AutomationIdentities</code></p>
+<p><code>POST api/v1/Tenants/{tenantId}/AutomationIdentities</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -257,7 +258,7 @@ AutomationIdentityCreate automationIdentityCreate
 <h2 id="get-an-automation-identity"><code>Get an Automation Identity</code></h2>
 <p>Returns Automation Identity object.</p>
 <h3 id="request-1">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>AutomationIdentities/<wbr>{automationIdentityId}</code></p>
+<p><code>GET api/v1/Tenants/{tenantId}/AutomationIdentities/{automationIdentityId}</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -305,7 +306,7 @@ Guid automationIdentityId
 <h2 id="get-header-for-automation-identity"><code>Get Header for Automation Identity</code></h2>
 <p>Validate that an Automation Identity exists in Tenant.</p>
 <h3 id="request-2">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>AutomationIdentities/<wbr>{automationIdentityId}</code></p>
+<p><code>HEAD api/v1/Tenants/{tenantId}/AutomationIdentities/{automationIdentityId}</code></p>
 <h3 id="parameters-2">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -336,7 +337,7 @@ Guid automationIdentityId
 <h2 id="get-automation-identities-from-a-tenant"><code>Get Automation Identities from a Tenant</code></h2>
 <p>Returns Automation Identity objects.</p>
 <h3 id="request-3">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>AutomationIdentities</code></p>
+<p><code>GET api/v1/Tenants/{tenantId}/AutomationIdentities</code></p>
 <h3 id="parameters-3">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -420,7 +421,7 @@ int32 count
 <h2 id="get-total-count-of-automation-identities-from-tenant"><code>Get Total Count of Automation Identities from Tenant</code></h2>
 <p>Return total number of Automation Identities in Tenant in the Total-Count header.</p>
 <h3 id="request-4">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>AutomationIdentities</code></p>
+<p><code>HEAD api/v1/Tenants/{tenantId}/AutomationIdentities</code></p>
 <h3 id="parameters-4">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -453,7 +454,7 @@ string[] tag
 <h2 id="delete-an-automation-identity"><code>Delete an Automation Identity</code></h2>
 <p>Delete an Automation Identity. A non-Administrator caller must have all roles belonging to the Automation Identity being deleted.</p>
 <h3 id="request-5">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">DELETE api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>AutomationIdentities/<wbr>{automationIdentityId}</code></p>
+<p><code>DELETE api/v1/Tenants/{tenantId}/AutomationIdentities/{automationIdentityId}</code></p>
 <h3 id="parameters-5">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -486,7 +487,7 @@ Guid automationIdentityId
 <h2 id="update-automation-identity"><code>Update Automation Identity</code></h2>
 <p>Update a Automation Identity. A non-Administrator caller must have all roles belonging to the existing Automation Identity, as well as any roles being added.</p>
 <h3 id="request-6">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>AutomationIdentities/<wbr>{automationIdentityId}</code></p>
+<p><code>PUT api/v1/Tenants/{tenantId}/AutomationIdentities/{automationIdentityId}</code></p>
 <h3 id="parameters-6">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -605,8 +606,14 @@ AutomationIdentityUpdate automationIdentityUpdate
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
-            <span id='copyright-text'>© 2020 - OSIsoft, LLC.<span>
-        </span></span></div>
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2020 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
       </footer>
     </div>
     

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -33,8 +33,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../index.html" width="46">
-                <img id="logo" src="../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -122,7 +123,7 @@ Namespaces provide isolation of resources. </p>
 <p>New versions of the API are released when major changes occur in the OCS API. When a newer version of the API is released, 
 the legacy version of the API will only be supported for a period of time. We encourage all users to switch to the 
 newer version as soon as possible. Versions are inline in the routes, following the host:</p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">    api/<wbr>v{version}/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>...  
+<pre><code class="lang-text">    api/v{version}/Tenants/{tenantId}/Namespaces/{namespaceId}/...  
 </code></pre><p>Where:  </p>
 <ul>
 <li><p>version is an incrementally (singular) increasing integer value </p>
@@ -158,8 +159,14 @@ newer version as soon as possible. Versions are inline in the routes, following 
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
-            <span id='copyright-text'>© 2020 - OSIsoft, LLC.<span>
-        </span></span></div>
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2020 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
       </footer>
     </div>
     

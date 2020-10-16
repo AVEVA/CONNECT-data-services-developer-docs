@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -33,8 +33,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../../index.html" width="46">
-                <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -166,7 +167,7 @@ Read <a href="https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_sampl
 <h2 id="get-identity-provider"><code>Get Identity Provider</code></h2>
 <p>Returns an IdentityProvider object.</p>
 <h3 id="request">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>IdentityProviders/<wbr>{identityProviderId}</code></p>
+<p><code>GET api/v1/IdentityProviders/{identityProviderId}</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 Guid identityProviderId
@@ -202,7 +203,7 @@ Guid identityProviderId
 <h2 id="get-identity-provider-by-scheme"><code>Get Identity Provider By Scheme</code></h2>
 <p>Returns a list of IdentityProvider objects that follow a scheme.</p>
 <h3 id="request-1">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>IdentityProviders/<wbr>schemes/<wbr>{scheme}</code></p>
+<p><code>GET api/v1/IdentityProviders/schemes/{scheme}</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string scheme
@@ -238,7 +239,7 @@ string scheme
 <h2 id="get-identity-providers"><code>Get Identity Providers</code></h2>
 <p>Returns a list of IdentityProvider objects.</p>
 <h3 id="request-2">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>IdentityProviders</code></p>
+<p><code>GET api/v1/IdentityProviders</code></p>
 <h3 id="parameters-2">Parameters</h3>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
@@ -297,7 +298,7 @@ int32 count
 <h2 id="get-identity-provider-based-on-scheme"><code>Get Identity Provider based on scheme</code></h2>
 <p>Get header for a scheme to check its validity.</p>
 <h3 id="request-3">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/<wbr>v1/<wbr>IdentityProviders/<wbr>schemes/<wbr>{scheme}</code></p>
+<p><code>HEAD api/v1/IdentityProviders/schemes/{scheme}</code></p>
 <h3 id="parameters-3">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string scheme
@@ -324,7 +325,7 @@ string scheme
 <h2 id="get-identity-provider-based-on-id"><code>Get Identity Provider based on Id</code></h2>
 <p>Get header for an identity provider to check if the identity provider exists.</p>
 <h3 id="request-4">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/<wbr>v1/<wbr>IdentityProviders/<wbr>{identityProviderId}</code></p>
+<p><code>HEAD api/v1/IdentityProviders/{identityProviderId}</code></p>
 <h3 id="parameters-4">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 Guid identityProviderId
@@ -351,7 +352,7 @@ Guid identityProviderId
 <h2 id="get-header-for-identity-providers"><code>Get Header for Identity Providers</code></h2>
 <p>Get header for Identity Providers to get the total number of Identity Providers.</p>
 <h3 id="request-5">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/<wbr>v1/<wbr>IdentityProviders</code></p>
+<p><code>HEAD api/v1/IdentityProviders</code></p>
 <h3 id="parameters-5">Parameters</h3>
 <p>This API call does not have any parameters.</p>
 <h3 id="security-5">Security</h3>
@@ -376,7 +377,7 @@ Guid identityProviderId
 <h2 id="get-all-identity-providers-from-tenant"><code>Get All Identity Providers from Tenant</code></h2>
 <p>Get all Identity Providers from a Tenant.</p>
 <h3 id="request-6">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>IdentityProviders</code></p>
+<p><code>GET api/v1/Tenants/{tenantId}/IdentityProviders</code></p>
 <h3 id="parameters-6">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -462,7 +463,7 @@ int32 count
 <h2 id="get-identity-provider-from-tenant"><code>Get Identity Provider from Tenant</code></h2>
 <p>Get an Identity Provider from a Tenant.</p>
 <h3 id="request-7">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>IdentityProviders/<wbr>{identityProviderId}</code></p>
+<p><code>GET api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}</code></p>
 <h3 id="parameters-7">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -513,7 +514,7 @@ Guid identityProviderId
             will be available in the Home Realm Discovery Page
             for users to sign-in or sign-up.</p>
 <h3 id="request-8">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">POST api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>IdentityProviders</code></p>
+<p><code>POST api/v1/Tenants/{tenantId}/IdentityProviders</code></p>
 <h3 id="parameters-8">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -627,7 +628,7 @@ IdentityProviderAdd identityProviderAdd
             not be able to authenticate.
             An administrator cannot remove the Identity Provider they are signed in with.</p>
 <h3 id="request-9">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">DELETE api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>IdentityProviders/<wbr>{identityProviderId}</code></p>
+<p><code>DELETE api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}</code></p>
 <h3 id="parameters-9">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -661,7 +662,7 @@ Guid identityProviderId
             This endpoint is identical to the GET one but
             it does not return any objects in the body.</p>
 <h3 id="request-10">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>IdentityProviders/<wbr>{identityProviderId}</code></p>
+<p><code>HEAD api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}</code></p>
 <h3 id="parameters-10">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -695,7 +696,7 @@ Guid identityProviderId
             is identical to the GET one but it does not return any objects
             in the body.</p>
 <h3 id="request-11">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>IdentityProviders</code></p>
+<p><code>HEAD api/v1/Tenants/{tenantId}/IdentityProviders</code></p>
 <h3 id="parameters-11">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -723,7 +724,7 @@ string tenantId
 <h2 id="get-a-list-of-all-user-on-an-identity-provider"><code>Get a List of all User on an Identity Provider</code></h2>
 <p>Get a list of users that matches the query string on an Identity Provider that supports advanced integration, such as Azure Active Directory. The prerequisite is that the identity provider must have already consented to sharing access to its directory with the OCS tenant.</p>
 <h3 id="request-12">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>IdentityProviders/<wbr>{identityProviderId}/<wbr>{IdpId}/<wbr>Users?query={user}&amp;count={count}&amp;skipToken={optional}</code></p>
+<p><code>GET api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/{IdpId}/Users?query={user}&amp;count={count}&amp;skipToken={optional}</code></p>
 <h3 id="parameters-12">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -769,7 +770,7 @@ string skiptoken
 </code></pre><h2 id="get-a-list-of-all-groups-on-an-identity-provider"><code>Get a List of all Groups on an Identity Provider</code></h2>
 <p>Get a list of groups that matches the query string on an identity provider that supports advanced integration, such as Azure Active Directory. The prerequisite is that the identity provider must have already consented to sharing access to its directory with the OCS tenant. The consent grants User.Read.All and GroupMember.Read.all permissions to the OCS tenant.</p>
 <h3 id="request-13">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>IdentityProviders/<wbr>{identityProviderId}/<wbr>{IdpId}/<wbr>Groups?query={group}&amp;count={count}&amp;skipToken={optional}</code></p>
+<p><code>GET api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/{IdpId}/Groups?query={group}&amp;count={count}&amp;skipToken={optional}</code></p>
 <h3 id="parameters-13">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -820,7 +821,7 @@ string skiptoken
 <h2 id="get-a-list-of-all-groups-that-a-user-belongs-to-on-an-identity-provider"><code>Get a List of all Groups that a User belongs to on an Identity Provider</code></h2>
 <p>Get a list of all groups that the specified user belongs to on an Identity Provider that supports advanced integration, such as Azure Active Directory. The prerequisite is that the identity provider must have already consented to sharing access to its directory with the OCS tenant. The consent grants User.Read.All and GroupMember.Read.all permissions to the OCS tenant.</p>
 <h3 id="request-14">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>IdentityProviders/<wbr>{identityProviderId}/<wbr>{IdpId}/<wbr>Users/<wbr>{userId}/<wbr>Groups?count={count}&amp;skipToken={optional}</code></p>
+<p><code>GET api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/{IdpId}/Users/{userId}/Groups?count={count}&amp;skipToken={optional}</code></p>
 <h3 id="parameters-14">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -872,7 +873,7 @@ string skiptoken
 <h2 id="get-a-list-of-all-users-belongs-a-group-on-an-identity-provider"><code>Get a List of all Users belongs a Group on an Identity Provider</code></h2>
 <p>Get a list of all users belonging to a specific group on an Identity Provider that supports advanced integration, such as Azure Active Directory. The prerequisite is that the identity provider must have already consented to sharing access to its directory with the OCS tenant.</p>
 <h3 id="request-15">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>IdentityProviders/<wbr>{identityProviderId}/<wbr>{IdpId}/<wbr>Groups/<wbr>{GroupId}/<wbr>Members?count={count}&amp;skipToken={optional}</code></p>
+<p><code>GET api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/{IdpId}/Groups/{GroupId}/Members?count={count}&amp;skipToken={optional}</code></p>
 <h3 id="parameters-15">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -921,7 +922,7 @@ string skiptoken
 <h2 id="get-an-identity-provider-consent-from-a-tenant"><code>Get an Identity Provider Consent from a Tenant</code></h2>
 <p>Get the consent information for an Identity Provider for a Tenant. The ConsentState property, if returned, determines whether an Identity Provider consents to sharing access to its directory with the OCS tenant. For example, the expected ConsentState&#39;s for Azure Active Directory (AAD) include (Pending_)SignIn and (Pending_)ReadAllUsersGroups.</p>
 <h3 id="request-16">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>IdentityProviders/<wbr>{identityProviderId}/<wbr>Consent</code></p>
+<p><code>GET api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Consent</code></p>
 <h3 id="parameters-16">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -967,7 +968,7 @@ Azure Active Directory
 <h2 id="get-header-for-identity-provider-consent"><code>Get Header for Identity Provider Consent</code></h2>
 <p>Validate that a Identity Provider Consent exists in the Tenant. This endpoint is identical to the GET one but it does not return any objects in the body.</p>
 <h3 id="request-17">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>IdentityProviders/<wbr>{identityProviderId}/<wbr>Consent</code></p>
+<p><code>HEAD api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Consent</code></p>
 <h3 id="parameters-17">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -998,7 +999,7 @@ Guid identityProviderId
 <h2 id="update-identity-provider-consent-of-a-tenant"><code>Update Identity Provider Consent of a Tenant</code></h2>
 <p>Update the Identity Provider Consent of a Tenant. Currently only support Azure Active Directory. The consent grants User.Read.All and GroupMember.Read.all permissions to the OCS tenant.</p>
 <h3 id="request-18">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">POST api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>IdentityProviders/<wbr>{identityProviderId}/<wbr>Consent</code></p>
+<p><code>POST api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Consent</code></p>
 <h3 id="parameters-18">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -1117,8 +1118,14 @@ IdentityProviderConsent identityProviderConsent
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
-            <span id='copyright-text'>© 2020 - OSIsoft, LLC.<span>
-        </span></span></div>
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2020 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
       </footer>
     </div>
     

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -33,8 +33,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../../index.html" width="46">
-                <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -156,7 +157,7 @@
 <h2 id="get-tenant-subscriptions"><code>Get Tenant Subscriptions</code></h2>
 <p>Get all Subscriptions for a tenant. </p>
 <h3 id="request">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>subscriptions</code></p>
+<p><code>GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions</code></p>
 <h3 id="parameters">Parameters</h3>
 <p><code>tenantId</code><br>Unique Id for the tenant<br><code>namespaceId</code><br>Unique Id for the namespace</p>
 <h3 id="returns">Returns</h3>
@@ -164,7 +165,7 @@
 <h2 id="get-subscription"><code>Get Subscription</code></h2>
 <p>Get a specific Subscription.</p>
 <h3 id="request-1">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>subscriptions/<wbr>{subscriptionId}</code></p>
+<p><code>GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <p><code>tenantId</code><br>Unique Id for the tenant<br><code>namespaceId</code><br>Unique Id for the namespace<br><code>subscriptionId</code><br>Unique Id for the Subscription. </p>
 <h3 id="returns-1">Returns</h3>
@@ -172,7 +173,7 @@
 <h2 id="get-subscriptions-access-control-list"><code>Get Subscriptions Access Control List</code></h2>
 <p>Get the default Access Control List for new Subscriptions.</p>
 <h3 id="request-2">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>accesscontrol/<wbr>subscriptions</code></p>
+<p><code>GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/subscriptions</code></p>
 <h3 id="parameters-2">Parameters</h3>
 <p><code>tenantId</code><br>Unique Id for the tenant<br><code>namespaceId</code><br>Unique Id for the namespace</p>
 <h3 id="returns-2">Returns</h3>
@@ -180,7 +181,7 @@
 <h2 id="get-subscriptions-access-rights"><code>Get Subscriptions Access Rights</code></h2>
 <p>Get the default Access Rights of the requesting identity for any newly created Subscriptions.</p>
 <h3 id="request-3">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>accessrights/<wbr>subscriptions</code></p>
+<p><code>GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accessrights/subscriptions</code></p>
 <h3 id="parameters-3">Parameters</h3>
 <p><code>tenantId</code><br>Unique Id for the tenant<br><code>namespaceId</code><br>Unique Id for the namespace. </p>
 <h3 id="returns-3">Returns</h3>
@@ -188,7 +189,7 @@
 <h2 id="get-subscription-access-control-list">Get Subscription Access Control List`</h2>
 <p>Get the Access Control List for a particular Subscription.</p>
 <h3 id="request-4">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>subscriptions/<wbr>{subscriptionId}/<wbr>accesscontrol</code></p>
+<p><code>GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}/accesscontrol</code></p>
 <h3 id="parameters-4">Parameters</h3>
 <p><code>tenantId</code><br>Unique Id for the tenant.<br><code>namespaceId</code><br>Unique Id for the namespace.<br><code>subscriptionId</code><br>Unique Id for the Subscription. </p>
 <h3 id="returns-4">Returns</h3>
@@ -196,7 +197,7 @@
 <h2 id="get-subscription-access-rights"><code>Get Subscription Access Rights</code></h2>
 <p>Get the Access Rights of the requesting identity for a particular Subscription.</p>
 <h3 id="request-5">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>subscriptions/<wbr>{subscriptionId}/<wbr>accessrights</code></p>
+<p><code>GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}/accessrights</code></p>
 <h3 id="parameters-5">Parameters</h3>
 <p><code>tenantId</code><br>Unique Id for the tenant.<br><code>namespaceId</code><br>Unique Id for the namespace.<br><code>subscriptionId</code><br>Unique Id for the Subscription. </p>
 <h3 id="returns-5">Returns</h3>
@@ -204,7 +205,7 @@
 <h2 id="get-subscription-owner"><code>Get Subscription Owner</code></h2>
 <p>Get the Owner for a particular Subscription.</p>
 <h3 id="request-6">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>subscriptions/<wbr>{subscriptionId}/<wbr>owner</code></p>
+<p><code>GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}/owner</code></p>
 <h3 id="parameters-6">Parameters</h3>
 <p><code>tenantId</code><br>Unique Id for the tenant.<br><code>namespaceId</code><br>Unique Id for the namespace.<br><code>subscriptionId</code><br>Unique Id for the Subscription. </p>
 <h3 id="returns-6">Returns</h3>
@@ -212,7 +213,7 @@
 <h2 id="create-subscription"><code>Create Subscription</code></h2>
 <p>Create a new Subscription.</p>
 <h3 id="request-7">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">POST api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>subscriptions</code></p>
+<p><code>POST api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions</code></p>
 <h3 id="parameters-7">Parameters</h3>
 <p><code>tenantId</code><br>Unique Id for the tenant.<br><code>namespaceId</code><br>Unique Id for the namespace. </p>
 <h3 id="body">Body</h3>
@@ -222,7 +223,7 @@
 <h2 id="update-subscription"><code>Update Subscription</code></h2>
 <p>Update an existing Subscription. Only the name and description may be updated. </p>
 <h3 id="request-8">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">PUT api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>subscriptions/<wbr>{subscriptionId}</code></p>
+<p><code>PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}</code></p>
 <h3 id="parameters-8">Parameters</h3>
 <p><code>tenantId</code><br>Unique Id for the tenant<br><code>namespaceId</code><br>Unique Id for the namespace.<br><code>subscriptionId</code><br>Subscription Id for the Subscription to be updated.</p>
 <h3 id="body-1">Body</h3>
@@ -232,7 +233,7 @@
 <h2 id="update-subscriptions-access-control-list"><code>Update Subscriptions Access Control List</code></h2>
 <p>Update the default Access Control List for new Subscriptions.</p>
 <h3 id="request-9">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">PUT api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>accesscontrol/<wbr>subscriptions</code></p>
+<p><code>PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/subscriptions</code></p>
 <h3 id="parameters-9">Parameters</h3>
 <p><code>tenantId</code><br>Unique Id for the tenant.<br><code>namespaceId</code><br>Unique Id for the namespace. </p>
 <h3 id="body-2">Body</h3>
@@ -240,7 +241,7 @@
 <h2 id="update-subscription-access-control-list"><code>Update Subscription Access Control List</code></h2>
 <p>Update the Access Control List for a particular Subscription.</p>
 <h3 id="request-10">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">PUT api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>subscriptions/<wbr>{subscriptionId}/<wbr>accesscontrol</code></p>
+<p><code>PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}/accesscontrol</code></p>
 <h3 id="parameters-10">Parameters</h3>
 <p><code>tenantId</code><br>Unique Id for the tenant<br><code>namespaceId</code><br>Unique Id for the namespace<br><code>subscriptionId</code><br>Unique Id for the Subscription </p>
 <h3 id="body-3">Body</h3>
@@ -248,7 +249,7 @@
 <h2 id="update-subscription-owner"><code>Update Subscription Owner</code></h2>
 <p>Update the Owner for a particular Subscription.</p>
 <h3 id="request-11">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">PUT api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>subscriptions/<wbr>{subscriptionId}/<wbr>owner</code></p>
+<p><code>PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}/owner</code></p>
 <h3 id="parameters-11">Parameters</h3>
 <p><code>tenantId</code><br>Unique Id for the tenant<br><code>namespaceId</code><br>Unique Id for the namespace<br><code>subscriptionId</code><br>Unique Id for the Subscription</p>
 <h3 id="body-4">Body</h3>
@@ -256,7 +257,7 @@
 <h2 id="delete-subscription"><code>Delete Subscription</code></h2>
 <p>Delete a Subscription.</p>
 <h3 id="request-12">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">DELETE api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>subscriptions/<wbr>{subscriptionId}</code></p>
+<p><code>DELETE api/v1/tenants/{tenantId}/namespaces/{namespaceId}/subscriptions/{subscriptionId}</code></p>
 <h3 id="parameters-12">Parameters</h3>
 <p><code>tenantId</code><br>Unique Id for the tenant<br><code>namespaceId</code><br>Unique Id for the namespace<br><code>subscriptionId</code><br>Unique Id for the Subscription</p>
 </article>
@@ -282,8 +283,14 @@
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
-            <span id='copyright-text'>© 2020 - OSIsoft, LLC.<span>
-        </span></span></div>
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2020 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
       </footer>
     </div>
     

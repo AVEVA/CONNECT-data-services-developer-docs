@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -33,8 +33,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../../index.html" width="46">
-                <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -124,7 +125,7 @@
 <h2 id="get-tenant-topics"><code>Get Tenant Topics</code></h2>
 <p>Get all Topics for a tenant. </p>
 <h3 id="request">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>topics</code></p>
+<p><code>GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics</code></p>
 <h3 id="parameters">Parameters</h3>
 <p><code>tenantId</code><br>Unique Id for the tenant<br><code>namespaceId</code><br>Unique Id for the namespace</p>
 <h3 id="returns">Returns</h3>
@@ -132,7 +133,7 @@
 <h2 id="get-topic"><code>Get Topic</code></h2>
 <p>Get a specific Topic. </p>
 <h3 id="request-1">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>topics/<wbr>{topicId}</code></p>
+<p><code>GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <p><code>tenantId</code><br>Unique Id for the tenant<br><code>namespaceId</code><br>Unique Id for the namespace<br><code>topicId</code><br>Unique Id for the Topic </p>
 <h3 id="returns-1">Returns</h3>
@@ -140,7 +141,7 @@
 <h2 id="get-topic-subscriptions"><code>Get Topic Subscriptions</code></h2>
 <p>Get all Subscriptions across all namespaces mapped to a Topic.</p>
 <h3 id="request-2">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>topics/<wbr>{topicId}/<wbr>subscriptions</code></p>
+<p><code>GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/subscriptions</code></p>
 <h3 id="parameters-2">Parameters</h3>
 <p><code>tenantId</code><br>Unique Id for the tenant<br><code>namespaceId</code><br>Unique Id for the namespace of the Topic<br><code>topicId</code><br>Unique Id for the Topic</p>
 <h3 id="returns-2">Returns</h3>
@@ -148,7 +149,7 @@
 <h2 id="get-topics-access-control-list"><code>Get Topics Access Control List</code></h2>
 <p>Get the default Access Control List for new Topics.</p>
 <h3 id="request-3">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>accesscontrol/<wbr>topics</code></p>
+<p><code>GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/topics</code></p>
 <h3 id="parameters-3">Parameters</h3>
 <p><code>tenantId</code><br>Unique Id for the tenant<br><code>namespaceId</code><br>Unique Id for the namespace</p>
 <h3 id="returns-3">Returns</h3>
@@ -156,7 +157,7 @@
 <h2 id="get-topics-access-rights"><code>Get Topics Access Rights</code></h2>
 <p>Get the default Access Rights of the requesting identity for any newly created Topics.</p>
 <h3 id="request-4">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>accessrights/<wbr>topics</code></p>
+<p><code>GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accessrights/topics</code></p>
 <h3 id="parameters-4">Parameters</h3>
 <p><code>tenantId</code><br>Unique Id for the tenant<br><code>namespaceId</code><br>Unique Id for the namespace </p>
 <h3 id="returns-4">Returns</h3>
@@ -164,7 +165,7 @@
 <h2 id="get-topic-access-control-list"><code>Get Topic Access Control List</code></h2>
 <p>Get the Access Control List for a particular Topic.</p>
 <h3 id="request-5">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>topics/<wbr>{topicId}/<wbr>accesscontrol</code></p>
+<p><code>GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/accesscontrol</code></p>
 <h3 id="parameters-5">Parameters</h3>
 <p><code>tenantId</code><br>Unique Id for the tenant<br><code>namespaceId</code><br>Unique Id for the namespace<br><code>topicId</code><br>Unique Id for the Topic</p>
 <h3 id="returns-5">Returns</h3>
@@ -172,7 +173,7 @@
 <h2 id="get-topic-access-rights"><code>Get Topic Access Rights</code></h2>
 <p>Get the Access Rights of the requesting identity for a particular Topic.</p>
 <h3 id="request-6">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>topics/<wbr>{topicId}/<wbr>accessrights</code></p>
+<p><code>GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/accessrights</code></p>
 <h3 id="parameters-6">Parameters</h3>
 <p><code>tenantId</code><br>Unique Id for the tenant<br><code>namespaceId</code><br>Unique Id for the namespace<br><code>topicId</code><br>Unique Id for the Topic</p>
 <h3 id="returns-6">Returns</h3>
@@ -180,7 +181,7 @@
 <h2 id="get-topic-owner"><code>Get Topic Owner</code></h2>
 <p>Get the Owner for a particular Topic.</p>
 <h3 id="request-7">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>topics/<wbr>{topicId}/<wbr>owner</code></p>
+<p><code>GET api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/owner</code></p>
 <h3 id="parameters-7">Parameters</h3>
 <p><code>tenantId</code><br>Unique Id for the tenant
 <code>namespaceId</code><br>Unique Id for the namespace<br><code>topicId</code><br>Unique Id for the Topic</p>
@@ -189,7 +190,7 @@
 <h2 id="create-topic"><code>Create Topic</code></h2>
 <p>Create a new topic.</p>
 <h3 id="request-8">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">POST api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>topics</code></p>
+<p><code>POST api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics</code></p>
 <h3 id="parameters-8">Parameters</h3>
 <p><code>tenantId</code><br>Unique Id for the tenant<br><code>namespaceId</code><br>Unique Id for the namespace</p>
 <h3 id="body">Body</h3>
@@ -199,7 +200,7 @@
 <h2 id="update-topic"><code>Update Topic</code></h2>
 <p>Update an existing Topic. Only the name and description can be updated. </p>
 <h3 id="request-9">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">PUT api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>topics/<wbr>{topicId}</code></p>
+<p><code>PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}</code></p>
 <h3 id="parameters-9">Parameters</h3>
 <p><code>tenantId</code><br>Unique Id for the tenant<br><code>namespaceId</code><br>Unique Id for the namespace<br><code>topicId</code><br>Topic Id for the Topic to be updated</p>
 <h3 id="body-1">Body</h3>
@@ -209,7 +210,7 @@
 <h2 id="update-topics-access-control-list"><code>Update Topics Access Control List</code></h2>
 <p>Update the default Access Control List for new Topics.</p>
 <h3 id="request-10">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">PUT api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>accesscontrol/<wbr>topics</code></p>
+<p><code>PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/topics</code></p>
 <h3 id="parameters-10">Parameters</h3>
 <p><code>tenantId</code><br>Unique Id for the tenant<br><code>namespaceId</code><br>Unique Id for the namespace </p>
 <h3 id="body-2">Body</h3>
@@ -217,7 +218,7 @@
 <h2 id="update-topic-access-control-list"><code>Update Topic Access Control List</code></h2>
 <p>Update the Access Control List for a particular Topic.</p>
 <h3 id="request-11">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">PUT api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>topics/<wbr>{topicId}/<wbr>accesscontrol</code></p>
+<p><code>PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/accesscontrol</code></p>
 <h3 id="parameters-11">Parameters</h3>
 <p><code>tenantId</code><br>Unique Id for the tenant<br><code>namespaceId</code><br>Unique Id for the namespace<br><code>topicId</code><br>Unique Id for the Topic</p>
 <h3 id="body-3">Body</h3>
@@ -225,7 +226,7 @@
 <h2 id="update-topic-owner"><code>Update Topic Owner</code></h2>
 <p>Update the Owner for a particular Topic.</p>
 <h3 id="request-12">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">PUT api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>topics/<wbr>{topicId}/<wbr>owner</code></p>
+<p><code>PUT api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}/owner</code></p>
 <h3 id="parameters-12">Parameters</h3>
 <p><code>tenantId</code><br>Unique Id for the tenant<br><code>namespaceId</code><br>Unique Id for the namespace<br><code>topicId</code><br>Unique Id for the Topic</p>
 <h3 id="body-4">Body</h3>
@@ -233,7 +234,7 @@
 <h2 id="delete-topic"><code>Delete Topic</code></h2>
 <p>Delete a Topic.</p>
 <h3 id="request-13">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">DELETE api/<wbr>v1/<wbr>tenants/<wbr>{tenantId}/<wbr>namespaces/<wbr>{namespaceId}/<wbr>topics/<wbr>{topicId}</code></p>
+<p><code>DELETE api/v1/tenants/{tenantId}/namespaces/{namespaceId}/topics/{topicId}</code></p>
 <h3 id="parameters-13">Parameters</h3>
 <p><code>tenantId</code><br>Unique Id for the tenant<br><code>namespaceId</code><br>Unique Id for the namespace<br><code>topicId</code><br>Unique Id for the Topic</p>
 </article>
@@ -259,8 +260,14 @@
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
-            <span id='copyright-text'>© 2020 - OSIsoft, LLC.<span>
-        </span></span></div>
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2020 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
       </footer>
     </div>
     

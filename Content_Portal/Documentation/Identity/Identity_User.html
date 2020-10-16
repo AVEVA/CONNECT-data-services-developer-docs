@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -33,8 +33,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../../index.html" width="46">
-                <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -196,7 +197,7 @@ Read <a href="https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_sampl
 <p>Get a list of users from a Tenant. Optionally, get a list of requested users.
             Total number of users in the Tenant set in the Total-Count header.</p>
 <h3 id="request">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Users</code></p>
+<p><code>GET api/v1/Tenants/{tenantId}/Users</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -344,7 +345,7 @@ int32 count
             The User status can be: InvitationAccepted (0),  NoInvitation (1),
             InvitationNotSent (2), InvitationSent (3), InvitationExpired (4).</p>
 <h3 id="request-1">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Users/<wbr>Status</code></p>
+<p><code>GET api/v1/Tenants/{tenantId}/Users/Status</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -439,7 +440,7 @@ string[] status
 <h2 id="get-user-from-a-tenant"><code>Get User from a Tenant</code></h2>
 <p>Get a User from Tenant.</p>
 <h3 id="request-2">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Users/<wbr>{userId}</code></p>
+<p><code>GET api/v1/Tenants/{tenantId}/Users/{userId}</code></p>
 <h3 id="parameters-2">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -487,7 +488,7 @@ Guid userId
 <p>Get invitation status for a User. It can be: InvitationAccepted (0),
             NoInvitation (1), InvitationNotSent (2), InvitationSent (3), InvitationExpired (4).</p>
 <h3 id="request-3">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Users/<wbr>{userId}/<wbr>Status</code></p>
+<p><code>GET api/v1/Tenants/{tenantId}/Users/{userId}/Status</code></p>
 <h3 id="parameters-3">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -538,7 +539,7 @@ Guid userId
 <p>Get preferences from a User. User preferences can be any valid
             JSON object. A common use case is to store UI preferences for the User.</p>
 <h3 id="request-4">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Users/<wbr>{userId}/<wbr>Preferences</code></p>
+<p><code>GET api/v1/Tenants/{tenantId}/Users/{userId}/Preferences</code></p>
 <h3 id="parameters-4">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -570,7 +571,7 @@ Guid userId
 <h2 id="update-users-preferences"><code>Update User&#39;s Preferences</code></h2>
 <p>Update preferences for a User.</p>
 <h3 id="request-5">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Users/<wbr>{userId}/<wbr>Preferences</code></p>
+<p><code>PUT api/v1/Tenants/{tenantId}/Users/{userId}/Preferences</code></p>
 <h3 id="parameters-5">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -617,7 +618,7 @@ JObject preferences
             Currently there is a limit of 50000 users per Tenant.
             For Windows Active Directory users, the externalUserId must be specified.</p>
 <h3 id="request-6">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">POST api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Users</code></p>
+<p><code>POST api/v1/Tenants/{tenantId}/Users</code></p>
 <h3 id="parameters-6">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -736,7 +737,7 @@ UserCreateOrUpdate userCreateOrUpdate
 <h2 id="update-user-in-a-tenant"><code>Update User in a Tenant</code></h2>
 <p>Update a User in a Tenant. The Id of a User cannot be changed.</p>
 <h3 id="request-7">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Users/<wbr>{userId}</code></p>
+<p><code>PUT api/v1/Tenants/{tenantId}/Users/{userId}</code></p>
 <h3 id="parameters-7">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -865,7 +866,7 @@ UserCreateOrUpdate userCreateOrUpdate
             behalf of the User will no longer be valid after the
             User has been deleted.</p>
 <h3 id="request-8">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">DELETE api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Users/<wbr>{userId}</code></p>
+<p><code>DELETE api/v1/Tenants/{tenantId}/Users/{userId}</code></p>
 <h3 id="parameters-8">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -898,7 +899,7 @@ Guid userId
 <p>Validate that a User exists. This endpoint is identical to the GET
             one, but it does not return an object in the body.</p>
 <h3 id="request-9">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Users/<wbr>{userId}</code></p>
+<p><code>HEAD api/v1/Tenants/{tenantId}/Users/{userId}</code></p>
 <h3 id="parameters-9">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -931,7 +932,7 @@ Guid userId
             The value will be set in the Total-Count header. This endpoint is identical to the GET one but
             it does not return any objects in the body.</p>
 <h3 id="request-10">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Users</code></p>
+<p><code>HEAD api/v1/Tenants/{tenantId}/Users</code></p>
 <h3 id="parameters-10">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -965,7 +966,7 @@ Guid[] id
 <p>Validate that there are preferences for a User. This endpoint is identical
             to the GET one but it does not return any objects in the body.</p>
 <h3 id="request-11">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Users/<wbr>{userId}/<wbr>Preferences</code></p>
+<p><code>HEAD api/v1/Tenants/{tenantId}/Users/{userId}/Preferences</code></p>
 <h3 id="parameters-11">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -1016,8 +1017,14 @@ Guid userId
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
-            <span id='copyright-text'>© 2020 - OSIsoft, LLC.<span>
-        </span></span></div>
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2020 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
       </footer>
     </div>
     

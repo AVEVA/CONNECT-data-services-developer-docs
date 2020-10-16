@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -33,8 +33,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../../index.html" width="46">
-                <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -201,7 +202,7 @@ Read <a href="https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_sampl
             deleting the Secret and adding a new one for this Client. Clients have unique ids in a Tenant.
             Currently there is a limit of 50000 clients (of all types) per Tenant.</p>
 <h3 id="request">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">POST api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>HybridClients</code></p>
+<p><code>POST api/v1/Tenants/{tenantId}/HybridClients</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -383,7 +384,7 @@ HybridClientCreate hybridClientCreate
 <p>Update a Hybrid Client. It can take up to one hour
             for these values to manifest in the authentication process.</p>
 <h3 id="request-1">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>HybridClients/<wbr>{clientId}</code></p>
+<p><code>PUT api/v1/Tenants/{tenantId}/HybridClients/{clientId}</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -545,7 +546,7 @@ HybridClient hybridClient
 <h2 id="get-hybrid-client"><code>Get Hybrid Client</code></h2>
 <p>Get a Hybrid Client from a Tenant.</p>
 <h3 id="request-2">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>HybridClients/<wbr>{clientId}</code></p>
+<p><code>GET api/v1/Tenants/{tenantId}/HybridClients/{clientId}</code></p>
 <h3 id="parameters-2">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -599,7 +600,7 @@ string clientId
             Optionally, get a list of requested clients. Total number
             of clients in the Tenant set in the Total-Count header.</p>
 <h3 id="request-3">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>HybridClients</code></p>
+<p><code>GET api/v1/Tenants/{tenantId}/HybridClients</code></p>
 <h3 id="parameters-3">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -700,7 +701,7 @@ int32 count
             tokens issued to this Client will be valid until their expiration.
             Refresh tokens issued to this will be valid up to one hour after deletion.</p>
 <h3 id="request-4">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">DELETE api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>HybridClients/<wbr>{clientId}</code></p>
+<p><code>DELETE api/v1/Tenants/{tenantId}/HybridClients/{clientId}</code></p>
 <h3 id="parameters-4">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -734,7 +735,7 @@ string clientId
             This endpoint is identical to the GET one but
             it does not return any objects in the body.</p>
 <h3 id="request-5">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>HybridClients/<wbr>{clientId}</code></p>
+<p><code>HEAD api/v1/Tenants/{tenantId}/HybridClients/{clientId}</code></p>
 <h3 id="parameters-5">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -768,7 +769,7 @@ string clientId
             is identical to the GET one but it does not return any objects
             in the body.</p>
 <h3 id="request-6">Request</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">HEAD api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>HybridClients</code></p>
+<p><code>HEAD api/v1/Tenants/{tenantId}/HybridClients</code></p>
 <h3 id="parameters-6">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
@@ -825,8 +826,14 @@ string[] tag
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
-            <span id='copyright-text'>© 2020 - OSIsoft, LLC.<span>
-        </span></span></div>
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2020 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
       </footer>
     </div>
     

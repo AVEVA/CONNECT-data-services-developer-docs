@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -33,8 +33,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../../index.html" width="46">
-                <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -96,7 +97,7 @@ SDS returns timestamps in UTC if the timestamp is of property <code>DateTime</co
 <li><a class="xref" href="Writing_Data_API.html#update-values">Update Values</a> add or replaces a collection of events.</li>
 </ul>
 <p>The base URI for writing SDS data to a single stream is:</p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">     api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Data  
+<pre><code class="lang-text">     api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data  
 </code></pre><h3 id="parameters">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -147,7 +148,7 @@ Default JSON responses do not include any values that are equal to the default v
 <p>Verbose JSON responses include all values in the returned JSON payload, including defaults.
 To specify verbose JSON return, add the header <code>Accept-Verbosity</code> with a value of <code>verbose</code> to the request. </p>
 <p>Verbose has no impact on writes; writes return only error messages.</p>
-<p>To specify SDS format, set the <code>Accept</code> header in the request to <code style="word-break:normal; overflow-wrap:break-word;">application/<wbr>sds</code>.</p>
+<p>To specify SDS format, set the <code>Accept</code> header in the request to <code>application/sds</code>.</p>
 <h3 id="indexes">Indexes</h3>
 <p>Writing to the SDS relies on the primary index for positioning within the streams and locating existing events. 
 Most writes use the index as specified by the value. Deletes are the exception to this rule. When deleting, 
@@ -178,8 +179,14 @@ with indexes, see <a class="xref" href="indexes.html">Indexes</a>. For informati
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
-            <span id='copyright-text'>© 2020 - OSIsoft, LLC.<span>
-        </span></span></div>
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2020 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
       </footer>
     </div>
     

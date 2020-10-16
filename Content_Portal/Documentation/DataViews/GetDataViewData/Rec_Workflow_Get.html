@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -33,8 +33,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../../../index.html" width="46">
-                <img id="logo" src="../../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -92,7 +93,7 @@ For detailed information about the source behind each data field, see the <a cla
 <h3 id="get-data-using-defaults">Get data using defaults</h3>
 <p>The default start index, end index, and interval are configured in the <code>DataView</code> object. If not null, the get data request must include the startIndex, endIndex, and interval query parameters.</p>
 <h4 id="action">Action</h4>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>quickstart/<wbr>Data/<wbr>Interpolated
+<pre><code class="lang-text">GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart/Data/Interpolated
 </code></pre><h4 id="expected-result">Expected result</h4>
 <p>An array of json values similar to:</p>
 <pre><code class="lang-json">[
@@ -126,7 +127,7 @@ For detailed information about the source behind each data field, see the <a cla
     ...
 </code></pre><h3 id="get-data-for-a-custom-range">Get data for a custom range</h3>
 <h4 id="action-1">Action</h4>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>quickstart/<wbr>Data/<wbr>Interpolated
+<pre><code class="lang-text">GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart/Data/Interpolated
 ?startIndex={your_val_here}&amp;endIndex={your_val_here}&amp;interval={your_val_here}
 </code></pre><h4 id="expected-result-1">Expected result</h4>
 <p>An array of json values similar to:</p>
@@ -163,7 +164,7 @@ For detailed information about the source behind each data field, see the <a cla
 <p>By default, data is returned in object-style json. Other formats are available: csv and table-style json, each with an optional header row.</p>
 <h4 id="action-2">Action</h4>
 <p>Resubmit the data query with an additional query parameter, <code>&amp;form=csvh</code> for csv-formatted data with a header row.</p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>quickstart/<wbr>Data/<wbr>Interpolated
+<pre><code class="lang-text">GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart/Data/Interpolated
 ?startIndex={your_val_here}&amp;endIndex={your_val_here}&amp;interval={your_val_here}&amp;form=csvh
 </code></pre><h4 id="expected-result-2">Expected result</h4>
 <p>Rows of CSV values similar to:</p>
@@ -175,7 +176,7 @@ For detailed information about the source behind each data field, see the <a cla
 <p>By default, each page includes 1000 records. If the requested data spans into another page, the response includes a hyperlink to the next page of data.</p>
 <h4 id="action-3">Action</h4>
 <p>Use the &quot;next&quot; hyperlink from the Link header to request the next page.</p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>quickstart/<wbr>Data/<wbr>Interpolated
+<pre><code class="lang-text">GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart/Data/Interpolated
 ?startIndex={your_val_here}&amp;endIndex={your_val_here}&amp;interval={your_val_here}&amp;form=csvh&amp;continuationToken=MjAxOC0wMS0wMVQwMDowMDoxMVo_MD90Yk1OblE_QUxXcEZBP1VEdGxIMWJROG9z
 </code></pre><h4 id="expected-result-3">Expected result</h4>
 <p>The next page of data:</p>
@@ -187,7 +188,7 @@ For detailed information about the source behind each data field, see the <a cla
 <p>It is possible, though unlikely, for the continuation token to become invalid during paging. When this happens, paging must be restarted from the first page.</p>
 <h4 id="action-4">Action</h4>
 <p>Use the &quot;first&quot; hyperlink from the Link header to request the first page.</p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>quickstart/<wbr>Data/<wbr>Interpolated
+<pre><code class="lang-text">GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart/Data/Interpolated
 ?startIndex={your_val_here}&amp;endIndex={your_val_here}&amp;interval={your_val_here}&amp;form=csvh&amp;cache=preserve
 </code></pre><h4 id="expected-result-4">Expected result</h4>
 <p>The first page of data:</p>
@@ -197,7 +198,7 @@ For detailed information about the source behind each data field, see the <a cla
 ...
 </code></pre><h3 id="explore-what-each-data-field-maps-to">Explore what each data field maps to</h3>
 <h4 id="action-5">Action</h4>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>quickstart/<wbr>Resolved/<wbr>FieldMappings
+<pre><code class="lang-text">GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart/Resolved/FieldMappings
 </code></pre><h4 id="expected-result-5">Expected result</h4>
 <p>An array of field mappings:</p>
 <pre><code class="lang-json">{
@@ -255,8 +256,14 @@ For detailed information about the source behind each data field, see the <a cla
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
-            <span id='copyright-text'>© 2020 - OSIsoft, LLC.<span>
-        </span></span></div>
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2020 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
       </footer>
     </div>
     

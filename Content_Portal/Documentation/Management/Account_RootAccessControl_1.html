@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -33,8 +33,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../../index.html" width="46">
-                <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -83,7 +84,7 @@
 <h2 id="get-root-namespace-accesscontrollist"><code>Get Root Namespace AccessControlList</code></h2>
 <p>Retrieves the <a class="xref" href="../Access_Control.html">AccessControlList</a> that is used to authorize access to a <code>Namespace</code> if none is specified during creation.</p>
 <h3 id="http">HTTP</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>AccessControl/<wbr>Namespaces</code></p>
+<p><code>GET api/v1/Tenants/{tenantId}/AccessControl/Namespaces</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
@@ -122,7 +123,7 @@ string tenantId
 <h2 id="set-root-accesscontrollist"><code>Set Root AccessControlList</code></h2>
 <p>Modifies the <a class="xref" href="../Access_Control.html">AccessControlList</a> that is used to authorize access to a <code>Namespace</code> if none is specified during creation.</p>
 <h3 id="http-1">Http</h3>
-<p><code style="word-break:normal; overflow-wrap:break-word;">PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>AccessControl/<wbr>Namespaces</code></p>
+<p><code>PUT api/v1/Tenants/{tenantId}/AccessControl/Namespaces</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
@@ -190,8 +191,14 @@ AccessControlList newAccessControlList
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
-            <span id='copyright-text'>© 2020 - OSIsoft, LLC.<span>
-        </span></span></div>
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2020 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
       </footer>
     </div>
     

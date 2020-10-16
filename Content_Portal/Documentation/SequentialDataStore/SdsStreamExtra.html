@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -33,8 +33,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../../index.html" width="46">
-                <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -89,7 +90,7 @@ SdsStream results with the <a class="xref" href="SDS_Streams.html">Stream</a> AP
 <h2 id="get-stream-metadata"><code>Get stream metadata</code></h2>
 <p>Returns the metadata dictionary for the specified stream.   </p>
 <h3 id="request">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">     GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Metadata 
+<pre><code class="lang-text">     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Metadata 
 </code></pre><h3 id="parameters">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -114,7 +115,7 @@ Content-Type: application/json
 <h2 id="get-stream-metadata-value"><code>Get stream metadata value</code></h2>
 <p>Returns the value for the specified key in the metadata dictionary of the specified stream.  </p>
 <h3 id="request-1">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">     GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Metadata/<wbr>{key} 
+<pre><code class="lang-text">     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Metadata/{key} 
 </code></pre><h3 id="parameters-1">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier   </p>
@@ -140,7 +141,7 @@ Content-Type: application/json
 <p>Replaces the metadata for the specified stream with the metadata in the request body. 
 Overwrites any existing metadata; does not merge.  </p>
 <h3 id="request-2">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">     PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Metadata 
+<pre><code class="lang-text">     PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Metadata 
 </code></pre><h3 id="parameters-2">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -156,7 +157,7 @@ Overwrites any existing metadata; does not merge.  </p>
 <p>Modifies the metadata based on operations specified in the request body. The request body follows
 <a href="http://jsonpatch.com/">JSON Patch format</a>.</p>
 <h3 id="request-3">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">     PATCH api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Metadata 
+<pre><code class="lang-text">     PATCH api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Metadata 
 </code></pre><h3 id="parameters-3">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier    </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -173,7 +174,7 @@ Overwrites any existing metadata; does not merge.  </p>
 <h2 id="delete-stream-metadata"><code>Delete stream metadata</code></h2>
 <p>Deletes the metadata for the specified stream.  </p>
 <h3 id="request-4">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">     DELETE api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Metadata 
+<pre><code class="lang-text">     DELETE api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Metadata 
 </code></pre><h3 id="parameters-4">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -189,7 +190,7 @@ Overwrites any existing metadata; does not merge.  </p>
 <h2 id="get-stream-tags"><code>Get stream tags</code></h2>
 <p>Returns the tag list for the specified stream. </p>
 <h3 id="request-5">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">     GET api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Tags 
+<pre><code class="lang-text">     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Tags 
 </code></pre><h3 id="parameters-5">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -215,7 +216,7 @@ Content-Type: application/json
 <p>Replaces the tag list for the specified stream with the tags listed in the request body.
 Overwrites any existing tags; does not merge. </p>
 <h3 id="request-6">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">     PUT api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Tags 
+<pre><code class="lang-text">     PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Tags 
 </code></pre><h3 id="parameters-6">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier    </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -232,7 +233,7 @@ Overwrites any existing tags; does not merge. </p>
 <h2 id="delete-stream-tags"><code>Delete stream tags</code></h2>
 <p>Deletes the tag list for the specified stream. </p>
 <h3 id="request-7">Request</h3>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">     DELETE api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>Streams/<wbr>{streamId}/<wbr>Tags 
+<pre><code class="lang-text">     DELETE api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Tags 
 </code></pre><h3 id="parameters-7">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -267,8 +268,14 @@ Overwrites any existing tags; does not merge. </p>
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
-            <span id='copyright-text'>© 2020 - OSIsoft, LLC.<span>
-        </span></span></div>
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2020 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
       </footer>
     </div>
     

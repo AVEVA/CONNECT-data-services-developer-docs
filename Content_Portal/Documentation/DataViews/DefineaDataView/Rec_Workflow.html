@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -33,8 +33,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../../../index.html" width="46">
-                <img id="logo" src="../../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices"> 
+              
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -115,7 +116,7 @@
 <h3 id="retrieve-the-data-view">Retrieve the data view</h3>
 <p>To access the data view again, it is available via the <code>GET</code> verb:</p>
 <h4 id="action-1">Action</h4>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>quickstart
+<pre><code class="lang-text">GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
 </code></pre><h4 id="expected-result-1">Expected result</h4>
 <pre><code class="lang-json">HTTP 200 OK
 {
@@ -154,7 +155,7 @@
 </code></pre><h3 id="view-items-found-by-the-query">View items found by the query</h3>
 <p>Data views resolve on a per user basis, executing the queries you defined. The results are available in several “resolved” resources.</p>
 <h4 id="action--page-through-the-data-items-found-by-the-query">Action – Page through the data items found by the query</h4>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>quickstart/<wbr>Resolved/<wbr>DataItems/<wbr>weather
+<pre><code class="lang-text">GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart/Resolved/DataItems/weather
 </code></pre><h4 id="expected-result-3">Expected result</h4>
 <p>An array of the data items matching the query, whose index type is &quot;DateTime&quot; (matching the Data View’s IndexTypeCode)</p>
 <pre><code class="lang-json">HTTP 200 OK
@@ -272,7 +273,7 @@
      ]
 }
 </code></pre><h4 id="action--page-through-the-ineligible-data-items-found-by-the-query">Action – Page through the ineligible data items found by the query</h4>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>quickstart/<wbr>Resolved/<wbr>IneligibleDataItems/<wbr>weather
+<pre><code class="lang-text">GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart/Resolved/IneligibleDataItems/weather
 </code></pre><h4 id="expected-result-4">Expected result</h4>
 <p>An array of the data items matching the query, but whose index type is not &quot;DateTime&quot; and thus not eligible for inclusion in the data view.</p>
 <p>With the example streams, this collection is empty.</p>
@@ -283,7 +284,7 @@
 }
 </code></pre><h3 id="view-fields-available-to-include-in-the-data-view">View fields available to include in the data view</h3>
 <h4 id="action-3">Action</h4>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>quickstart/<wbr>Resolved/<wbr>AvailableFieldSets
+<pre><code class="lang-text">GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart/Resolved/AvailableFieldSets
 </code></pre><h4 id="expected-result-5">Expected result</h4>
 <p>A field set with a source type of &quot;DataItem&quot; pointing to the query identified by &quot;weather&quot;. Assuming some data items were retrieved, this field set shows that attributes of the streams (id, name, tags) are available, as well as the values of all metadata keys and properties.</p>
 <pre><code class="lang-json">HTTP 200 OK
@@ -440,7 +441,7 @@
 <pre><code class="lang-text">HTTP 204 No Content
 </code></pre><p>Now, if we return to the available field sets, all data fields are used so none are available.</p>
 <h4 id="action-5">Action</h4>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>quickstart/<wbr>Resolved/<wbr>AvailableFieldSets
+<pre><code class="lang-text">GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart/Resolved/AvailableFieldSets
 </code></pre><h4 id="expected-result-7">Expected result</h4>
 <p>No available data fields.</p>
 <pre><code class="lang-json">{
@@ -449,7 +450,7 @@
 }
 </code></pre><p>And if we request data, the table contains multiple fields in addition to the <code>IndexField</code>.</p>
 <h4 id="action-6">Action</h4>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>quickstart/<wbr>Data/<wbr>Interpolated
+<pre><code class="lang-text">GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart/Data/Interpolated
 ?startIndex={your_val_here}&amp;endIndex={your_val_here}&amp;interval={your_val_here}
 </code></pre><h4 id="expected-result-8">Expected result</h4>
 <p>An array of json values similar to:</p>
@@ -486,7 +487,7 @@
 <p>The suffixing (to ensure uniqueness) is done for the sake of client behavior, as it is not expected that ambiguity is an acceptable outcome. The remaining steps show two approaches for disambiguating the content of a data view. </p>
 <h4 id="action--want-csv">Action – Want csv?</h4>
 <p>Resubmit the data query with an additional query parameter, <code>&amp;form=csvh</code></p>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>quickstart/<wbr>Data/<wbr>Interpolated
+<pre><code class="lang-text">GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart/Data/Interpolated
 ?startIndex={your_val_here}&amp;endIndex={your_val_here}&amp;interval={your_val_here}&amp;form=csvh
 </code></pre><h4 id="expected-result-9">Expected result</h4>
 <p>Rows of CSV values similar to:</p>
@@ -581,7 +582,7 @@
 </code></pre><h4 id="expected-result-10">Expected result</h4>
 <pre><code class="lang-text">HTTP 204 No Content
 </code></pre><h4 id="action-8">Action</h4>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>quickstart/<wbr>Data/<wbr>Interpolated
+<pre><code class="lang-text">GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart/Data/Interpolated
 ?startIndex={your_val_here}&amp;endIndex={your_val_here}&amp;interval={your_val_here}
 </code></pre><h4 id="expected-result-11">Expected result</h4>
 <p>Data that looks a bit different now. In table terms, the data table would be ultra-skinny instead of ultra-wide.</p>
@@ -754,7 +755,7 @@
 </code></pre><h4 id="expected-result-12">Expected result</h4>
 <pre><code class="lang-text">HTTP 204 No Content
 </code></pre><h4 id="action-10">Action</h4>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>quickstart/<wbr>Data/<wbr>Interpolated
+<pre><code class="lang-text">GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart/Data/Interpolated
 ?startIndex={your_val_here}&amp;endIndex={your_val_here}&amp;interval={your_val_here}
 </code></pre><h4 id="expected-result-13">Expected result</h4>
 <p>We’re back to a wide table, but the field ids are now distinct. The suggested/default values of the Available Fields’ <code>.Label</code> property includes {IdentifyingValue}, so if using those defaults, the impact of adding an identifying field is immediately clear.</p>
@@ -865,7 +866,7 @@
 </code></pre><h4 id="expected-result-14">Expected Result</h4>
 <pre><code class="lang-text">HTTP 204 No Content
 </code></pre><h4 id="action-12">Action</h4>
-<pre style="word-break:normal; overflow-wrap:break-word;"><code class="lang-text">GET /<wbr>api/<wbr>v1/<wbr>Tenants/<wbr>{tenantId}/<wbr>Namespaces/<wbr>{namespaceId}/<wbr>DataViews/<wbr>quickstart/<wbr>Data/<wbr>Interpolated
+<pre><code class="lang-text">GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart/Data/Interpolated
 ?startIndex={your_val_here}&amp;endIndex={your_val_here}&amp;interval={your_val_here}
 </code></pre><h4 id="expected-result-15">Expected Result</h4>
 <pre><code class="lang-json">HTTP 200 OK
@@ -912,8 +913,14 @@
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
-            <span id='copyright-text'>© 2020 - OSIsoft, LLC.<span>
-        </span></span></div>
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2020 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
       </footer>
     </div>
     

@@ -1,8 +1,5 @@
 - name: OSIsoft Cloud Services 
   topicHref: OSIsoft_Cloud_Services.md
-- name: Assets
-  href: Assets/toc.yml
-  topicHref: Assets/Assets.md
 - name: Account Management
   href: Management/toc.yml
   topicHref: Management/Management_Overview.md
@@ -17,6 +14,9 @@
   topicHref: DataIngress/Data_Ingress.md
 - name: Metadata Rules
   topicHref: Metadata/Metadata_Rules_Overview.md
+- name: Assets (Preview)
+  href: Assets/toc.yml
+  topicHref: Assets/Assets.md
 - name: Data Views
   href: DataViews/toc.yml
   topicHref: DataViews/Data_Views_Overview.md

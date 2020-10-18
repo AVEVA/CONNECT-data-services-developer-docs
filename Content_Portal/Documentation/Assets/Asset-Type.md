@@ -54,7 +54,7 @@ Content-Type: application/json
     "Metadata": [
         {
             "Name": "ModelNumber",
-            "Description": "This attribute indicates the model number of a given Asset.",
+            "Description": "This metadata indicates the model number of a given Asset.",
             "SdsTypeCode": 14,
         }
     ],
@@ -67,7 +67,6 @@ Content-Type: application/json
 }
 
 ```
-<! -- Replace "attribute" with "metadata" in the Description? -->
 
 ***
 
@@ -145,10 +144,10 @@ To create an asset type with a specific ID, use the API route with ID. If this i
  {
     "Id": "HeaterType",
     "Description": "This is the AssetType which represents a common heater device.",
-    "Attributes": [
+    "Metadata": [
         {
             "Name": "ModelNumber",
-            "Description": "This attribute indicates the model number of a given Asset.",
+            "Description": "This metadata indicates the model number of a given Asset.",
             "SdsTypeCode": 14,
         }
     ],
@@ -160,8 +159,6 @@ To create an asset type with a specific ID, use the API route with ID. If this i
     ]
 }
 ```
-
-<! -- Should "Attributes" be changed to "Metadata" above? And should we use "metadata" in the Description?-- as in "This metadata indicates the model number ...." -->
 
 ### Authorization
 

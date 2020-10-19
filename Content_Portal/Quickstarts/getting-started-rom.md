@@ -22,9 +22,9 @@ Procedure
 
 2.  Click the navigation icon ![](images\icon_navigation_bigger.png) (upper left corner) and click **Asset Explorer** (under Visualization). 
     
-    The Asset Explorer displays the available assets. In this example, it provides an overview of the health of the fleet of trucks.
+    The asset explorer displays the available assets. In this example, it provides an overview of the health of the fleet of trucks.
 
-    Tip: Click on the icons (upper right corner) to toggle between the card and table views of the assets.
+    Tip: Click on the icons in the toolbar to toggle between the card and table views of the assets.
     ![Card/Table View](images\AssetEditor_icons.png)
 
 1.  Scan through the assets and identify any assets with a problematic status.
@@ -36,10 +36,10 @@ Procedure
     Each asset is identified with one of the following statuses:
 
     | Icon   | Status  |
-    |--------|---------|
-    | Green  | Good    |
-    | Yellow | Warning |
-    | Red    | Bad     |
+    | ------ | ------- |
+    | ![Okay icon](images\okay-icon.png) | Good    |
+    | ![Warning icon](images\warning-icon.png) | Warning |
+    | ![Alarm icon](images\alarm-icon.png)    | Alarm |
 
 4. Click on an asset to open the Asset Details pane.
 
@@ -47,7 +47,7 @@ Procedure
 
     ![Asset Attributes](images\Attributes.png)
 
-5. Click the **Measurements** tab.
+5. Click the **Metadata** tab.
 
     The Asset Details pane displays the following:
     
@@ -67,7 +67,7 @@ Procedure
 
     ![Time Range options](images\Time_Range_options.png)
 
-7.  To delve further into the details of these measurements, click the **View full trend** ![View full trend icon](images\View_full_trend_icon.png) icon to see the Trend page.
+8. To delve further into the details of these measurements, click the **View full trend** ![View full trend icon](images\View_full_trend_icon.png) icon to see the Trend page.
 
     ![View full trend](images\Trend_full_display.png)
 
@@ -75,13 +75,13 @@ Procedure
 
     -   The Trend page shows the measurements for the same time range shown in the Details pane of the Asset Editor.
 
-    -   There are three views of the trend:
+    - There are three views of the trend:
 
-        -   Stacked mode – Each trace is displayed in its own trend.
-
-        -   Single-scale mode – All measurements are plotted on the same scale.
-
-        -   Multi-scale mode – All measurements are plotted on its own scale.
+      | Trend View | Description |
+      | ---------- | ----------- |
+      |    ![Single mode](images\Single_mode.png)        |       Each trace is displayed in its own trend.       |
+      |          ![](images\Multiple_mode.png)   |    All measurements are plotted on the same scale.         |
+      |    ![Stacked mode](images\Stacked_mode.png)        |       All measurements are plotted on its own scale.      |
 
 9.   Click on the ![Trend views icon](images\Trend_views_icon.png)icon to toggle through the views.
 

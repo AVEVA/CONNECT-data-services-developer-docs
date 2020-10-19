@@ -1,0 +1,4 @@
+- name: Create an asset type with an asset types editor
+  topicHref: create-asset-type-asset-editor.md
+- name: Convert an asset to an asset type
+  topicHref: convert-asset-to-asset-type.md

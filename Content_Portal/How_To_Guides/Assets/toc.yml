@@ -1,0 +1,4 @@
+- name: Create and configure an asset
+  topicHref: create-an-asset.md
+- name: Create an asset from an asset type
+  topicHref: create-asset-from-type.md

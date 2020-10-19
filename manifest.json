@@ -138,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Assets/Asset-Type.html",
-          "hash": "04Alurt0QpB4G5+KoDwrMg=="
+          "hash": "gJagUMYDi91g7QjTTs0c1A=="
         }
       },
       "is_incremental": false,
@@ -169,12 +169,43 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "InvalidYamlHeader"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Assets/asset-default-shape.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Assets/asset-default-shape.html",
+          "hash": "lpsx44g7ufAnLF2VQdasyw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidYamlHeader",
+        "UidNotFound"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Assets/asset-status-mapping.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Assets/asset-status-mapping.html",
+          "hash": "D/xN5rQ9TknIEF1xFC0/qA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Toc",
       "source_relative_path": "Content_Portal/Documentation/Assets/toc.yml",
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Assets/toc.html",
-          "hash": "wa1+v4eD2giMqZfD3OVS+Q=="
+          "hash": "k8QaOSLMGCjSdkPBo/gYUw=="
         }
       },
       "is_incremental": false,
@@ -1592,7 +1623,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 101,
+          "total_file_count": 103,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

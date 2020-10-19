@@ -1,0 +1,517 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>uid:AssetStatusMapping </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="uid:AssetStatusMapping ">
+    <meta name="generator" content="docfx 2.43.3.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+
+<hr>
+<h2 id="uidassetstatusmapping">uid:AssetStatusMapping</h2>
+<h1 id="asset-status-mapping">Asset Status Mapping</h1>
+<p>Status mapping is a child resource of an asset or asset type that defines the simple status of an asset or asset type. There is one status mapping resource for each asset or asset type.</p>
+<p>If an asset references an existing asset type and the asset type has a corresponding type reference, then the status mapping on the asset is ignored. </p>
+<h2 id="status-mapping-properties-table">Status mapping properties table</h2>
+<p>The following table lists the most common fields in a status mapping.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required?</th>
+<th>Searchable?</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>String</td>
+<td>Required</td>
+<td>No</td>
+<td>Name and ID for this status mapping.</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>String</td>
+<td>Required</td>
+<td>No</td>
+<td>Description of the status mapping.</td>
+</tr>
+<tr>
+<td>StreamReferenceId</td>
+<td>String</td>
+<td>Required</td>
+<td>No</td>
+<td>ID for the asset&#39;s StreamReference property. The stream reference must exist before the status mapping can be created.</td>
+</tr>
+<tr>
+<td>StreamPropertyId</td>
+<td>String</td>
+<td>Required</td>
+<td>No</td>
+<td>SDS stream property that status uses for calculations. It must be present on the StreamId property on the asset StreamReference.</td>
+</tr>
+<tr>
+<td>ValueStatusMappings</td>
+<td>List<valuestatusmapping></valuestatusmapping></td>
+<td>Required</td>
+<td>No</td>
+<td>The value status mapping maps values to a given status. See <a href="xref:AssetStatusMapping#value-status-mapping-properties-table">Value status mapping properties table</a></td>
+</tr>
+</tbody>
+</table>
+<!-- Look at StreamPropertyID again. -->
+<h2 id="value-status-mapping-properties-table">Value status mapping properties table</h2>
+<p>The following table lists the most common fields in a value status mapping. A single value status mapping corresponds to a single status. If you want additional statuses in your asset status mapping, add additional elements in the ValueStatusMapping list.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required?</th>
+<th>Searchable?</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Value</td>
+<td>Object</td>
+<td>Required</td>
+<td>No</td>
+<td>Value of the value status mapping. The values in a status mapping should be unique.</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>Status Enumeration</td>
+<td>Required</td>
+<td>No</td>
+<td>Description of the value status mapping.</td>
+</tr>
+<tr>
+<td>DisplayName</td>
+<td>String</td>
+<td>Optional</td>
+<td>No</td>
+<td>Display name for this value status mapping.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="status-enumerations">Status enumerations</h2>
+<p>The following are valid status enumerations: &lt;! -- Is this meant to be an example of a valid status enumeration? --&gt;</p>
+<ul>
+<li>Unknown = 0</li>
+<li>Good = 1</li>
+<li>Warning = 2</li>
+<li>Bad = 3</li>
+</ul>
+<h2 id="example-status-mapping">Example status mapping</h2>
+<p>The following is an example of a status mapping.</p>
+<pre><code>{
+    &quot;Name&quot;: &quot;StatusAlertMapping&quot;,
+    &quot;Description&quot;: &quot;Sample Status Mapping&quot;,
+    &quot;StreamReferenceId&quot;: &quot;AssetStreamReferenceId1&quot;,
+    &quot;StreamPropertyId&quot;: &quot;Value&quot;,
+    &quot;ValueStatusMappings&quot;:[
+        {
+            &quot;Value&quot;: 0,
+            &quot;Status&quot;: &quot;Unknown&quot;,
+            &quot;DisplayName&quot;: &quot;UnknownStatusTroubleshoot&quot;
+        },
+        {
+            &quot;Value&quot;: 1,
+            &quot;Status&quot;: &quot;Good&quot;
+        }
+    ]
+}
+</code></pre><p>The asset or asset type&#39;s  StreamReferences field has an Id property. To assign a status mapping to an asset or asset type, the value assigned to the Id property must match the StreamReferenceId of the status mapping object. Using the status mapping example above, AssetStreamReferenceID is assigned to the asset in the following example. </p>
+<pre><code>{
+  &quot;Id&quot;: &quot;ChargingStationAsset&quot;, 
+   &quot;AssetTypeId&quot;: null,
+  &quot;Metadata&quot;: [{ 
+      &quot;Name&quot;: &quot;Location&quot;,  &quot;Value&quot;: &quot;Houston&quot;, &quot;SdsTypeCode&quot;: 18, &quot;Uom&quot;: null​ 
+    }], 
+    &quot;StreamReferences&quot;: [{ 
+      &quot;Id&quot;: &quot;AssetStreamReferenceId1&quot;, 
+      &quot;StreamId&quot;: &quot;pi2ocs_stream1_inputpower&quot;, 
+    }] 
+} 
+</code></pre><hr>
+<h2 id="get-status-mapping"><code>Get Status Mapping</code></h2>
+<p>Returns the status mapping of the specified asset or asset type.</p>
+<h3 id="request">Request</h3>
+<p>Asset</p>
+<p><code>GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/StatusMapping</code></p>
+<p>Asset Type</p>
+<p><code>GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}/StatusMapping</code></p>
+<h3 id="parameters">Parameters</h3>
+<p><code>string tenantID</code></p>
+<p>The tenant identifier</p>
+<p><code>string namespaceId</code></p>
+<p>The asset identifier</p>
+<p><code>string assetId</code></p>
+<p>The asset identifier</p>
+<p><code>string assetId</code></p>
+<p>The asset type identifier</p>
+<h3 id="response">Response</h3>
+<p>The response includes a status code and a response body.</p>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Body Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OK</td>
+<td><code>MeasurementMapping</code></td>
+<td>The requested status mapping of the specified asset or asset type.</td>
+</tr>
+<tr>
+<td>400 Bad Request</td>
+<td>error</td>
+<td>The request is not valid. See the response body for additional details.</td>
+</tr>
+<tr>
+<td>403 Forbidden</td>
+<td>error</td>
+<td>You are not authorized to view the requested asset or asset type.</td>
+</tr>
+<tr>
+<td>404 Not Found</td>
+<td>error</td>
+<td>The specified asset or asset type with identifier is not found.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-response-body">Example response body</h4>
+<pre><code>{
+    &quot;Name&quot;: &quot;StatusAlertMapping&quot;,
+    &quot;Description&quot;: &quot;Sample Status Mapping&quot;,
+    &quot;StreamReferenceId&quot;: &quot;AssetStreamReferenceId1&quot;,
+    &quot;StreamPropertyId&quot;: &quot;Value&quot;,
+    &quot;ValueStatusMapping&quot;:[
+        {
+            &quot;Value&quot;: 0,
+            &quot;Status&quot;: &quot;Unknown&quot;,
+            &quot;DisplayName&quot;: &quot;UnknownStatusTroubleshoot&quot;
+        },
+        {
+            &quot;Value&quot;: 1,
+            &quot;Status&quot;: &quot;Good&quot;
+        }
+    ]
+}
+</code></pre><hr>
+<h2 id="update-status-mapping"><code>Update Status Mapping</code></h2>
+<p>Update the status mapping for a given asset or asset type.</p>
+<h3 id="request-1">Request</h3>
+<p>Asset</p>
+<p><code>POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/StatusMapping</code></p>
+<p>Asset Type</p>
+<p><code>POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}/StatusMapping</code></p>
+<h3 id="parameters-1">Parameters</h3>
+<p><code>string tenantID</code></p>
+<p>The tenant identifier</p>
+<p><code>string namespaceId</code></p>
+<p>The asset identifier</p>
+<p><code>string assetId</code></p>
+<p>The asset identifier</p>
+<p><code>string assetId</code></p>
+<p>The asset type identifier</p>
+<h4 id="example-post-body">Example POST body</h4>
+<pre><code>{
+    &quot;Name&quot;: &quot;StatusAlertMapping&quot;,
+    &quot;Description&quot;: &quot;Sample Status Mapping&quot;,
+    &quot;StreamReferenceId&quot;: &quot;AssetStreamReferenceId1&quot;,
+    &quot;StreamPropertyId&quot;: &quot;Value&quot;,
+    &quot;ValueStatusMapping&quot;:[
+        {
+            &quot;Value&quot;: 0,
+            &quot;Status&quot;: &quot;Unknown&quot;,
+            &quot;DisplayName&quot;: &quot;UnknownStatusTroubleshoot&quot;
+        },
+        {
+            &quot;Value&quot;: 1,
+            &quot;Status&quot;: &quot;Good&quot;
+        }
+    ]
+}
+</code></pre><h3 id="response-1">Response</h3>
+<p>The response includes a status code and a response body. </p>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Body Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>204 OK</td>
+<td>no-content</td>
+<td>On successful POST, HTTP Response 204 (no content) is returned.</td>
+</tr>
+<tr>
+<td>400 Bad Request</td>
+<td>error</td>
+<td>The request is not valid. See the response body for additional details.</td>
+</tr>
+<tr>
+<td>403 Forbidden</td>
+<td>error</td>
+<td>You are not authorized to view the requested asset or asset type.</td>
+</tr>
+<tr>
+<td>404 Not Found</td>
+<td>error</td>
+<td>The specified asset or asset type with identifier is not found.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="get-asset-status"><code>Get Asset Status</code></h2>
+<p>View the status of an asset</p>
+<h3 id="request-2">Request</h3>
+<p><code>GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/status/last</code></p>
+<h3 id="parameters-2">Parameters</h3>
+<p><code>string tenantID</code></p>
+<p>The tenant identifier</p>
+<p><code>string namespaceId</code></p>
+<p>The namespace identifier</p>
+<p><code>string namespaceId</code></p>
+<p>The asset identifier</p>
+<h3 id="response-2">Response</h3>
+<p>The response includes a status code and a response body.</p>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Body Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OK</td>
+<td>Asset status</td>
+<td>On successful GET, asset status is returned.</td>
+</tr>
+<tr>
+<td>400 Bad Request</td>
+<td>error</td>
+<td>The request is not valid. See the response body for additional details.</td>
+</tr>
+<tr>
+<td>403 Forbidden</td>
+<td>error</td>
+<td>You are not authorized to view the requested asset.</td>
+</tr>
+<tr>
+<td>404 Not Found</td>
+<td>error</td>
+<td>The specified asset with identifier is not found.</td>
+</tr>
+<tr>
+<td>422 Invalid State</td>
+<td>error</td>
+<td>See the response body for details.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-response-body-1">Example response body</h4>
+<pre><code>HTTP 200 OK
+Content-Type: application/json
+{
+   &quot;AssetId&quot;: &quot;TemperatureSensorAsset&quot;,
+   &quot;Status&quot;: 1, 
+   &quot;Value&quot;: &quot;85&quot;,
+   &quot;DisplayName&quot;: &quot;TemperatureSensorBuild1InF&quot;,
+   &quot;DataRetrievalTime&quot;: &quot;2020-05-04T16:55:26.3732693Z&quot;
+}
+</code></pre><hr>
+<h2 id="bulk-asset-status"><code>Bulk Asset Status</code></h2>
+<p>View the status of multiple assets.</p>
+<h3 id="request-3">Request</h3>
+<p><code>POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/assets/status/last</code></p>
+<h3 id="parameters-3">Parameters</h3>
+<p><code>string tenantID</code></p>
+<p>The tenant identifier</p>
+<p><code>string namespaceId</code></p>
+<p>The namespace identifier</p>
+<p><code>string namespaceId</code></p>
+<p>The asset identifier</p>
+<h4 id="example-post-body-1">Example POST body</h4>
+<p>Lists the asset IDs whose status you are interested in.</p>
+<pre><code>Content-Type: application/json
+[
+   &quot;AssetId-1&quot;,
+   &quot;AssetId-2&quot;,
+   &quot;AssetId-3&quot;
+]
+</code></pre><h3 id="response-3">Response</h3>
+<p>The response includes a status code and a response body.</p>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Body Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OK</td>
+<td>Asset status list</td>
+<td>On successful POST, returns the status of multiple assets.</td>
+</tr>
+<tr>
+<td>207 Multi Status</td>
+<td>Multi Status</td>
+<td>On POST, returns the status of multiple assets. For error responses, check the multi-status response for the error and cause.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-response-body-2">Example response body</h4>
+<pre><code>HTTP 200 OK
+Content-Type: application/json
+{
+   [
+      {
+         &quot;AssetId&quot;: &quot;AssetId-1&quot;,
+         &quot;Status&quot;: 1, 
+         &quot;Value&quot;: &quot;85&quot;,
+         &quot;DisplayName&quot;: &quot;TemperatureSensorBuild1InF&quot;,
+         &quot;DataRetrievalTime&quot;: &quot;2020-05-04T16:55:26.3732693Z&quot;
+      },
+      {
+         &quot;AssetId&quot;: &quot;AssetId-2&quot;,
+         &quot;Status&quot;: 2, 
+         &quot;Value&quot;: &quot;185&quot;,
+         &quot;DisplayName&quot;: &quot;DeviceMeasurement&quot;,
+         &quot;DataRetrievalTime&quot;: &quot;2020-05-04T16:55:26.3732693Z&quot;
+      },
+      {
+         &quot;AssetId&quot;: &quot;AssetId-3&quot;,
+         &quot;Status&quot;: 1, 
+         &quot;Value&quot;: &quot;75&quot;,
+         &quot;DisplayName&quot;: &quot;TemperatureSensorBuild5450InF&quot;,
+         &quot;DataRetrievalTime&quot;: &quot;2020-05-04T16:55:26.3732693Z&quot;
+      }
+   ]
+}
+</code></pre></article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/Assets/asset-status-mapping.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2020 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

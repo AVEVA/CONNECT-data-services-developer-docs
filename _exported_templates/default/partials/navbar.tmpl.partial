@@ -9,9 +9,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{{_rel}}index.html" width="46">
-        <img id="logo" src="{{_rel}}Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Serices" > 
-      </a>
+      {{>partials/logo}}
     </div>
     <div class="collapse navbar-collapse" id="navbar">
       <form class="navbar-form navbar-right" role="search" id="search">

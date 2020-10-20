@@ -170,9 +170,9 @@ A field of source `FieldSource.Tags` and `.Keys` `[ "Low Resolution", "High Reso
 
 The field's value when resolved will be `[ "Low Resolution", "Gen2" ]`
 
-#### MeasurementKeys (Coming Soon)
+#### Special Case: Asset measurements (Coming Soon)
 *Note: This section covers features that are not yet generally available. If you are interested in trialing these pre-release features, contact your account team for more details.*
 
-Fields referencing asset measurements must specify an additional piece of data, the measurement name. Measurement name is configured within the MeasurementKeys property. 
+Asset measurements are a special case because they require two pieces of information: the measurement name and the id of the measurement property being referenced in the data field. In order to reference an asset measurement, a field must contain at least one measurement name in the `.MeasurementKeys` collection and at least one property id in the `.Keys` collection.
 
-MeasurementKeys only applies to the `PropertyId` source. Keys must also be included to specify the property id within the measurement that the field will represent.
+`.MeasurementKeys` only applies to fields with source `FieldSource.PropertyId`. Similar to `.Keys`, the first measurement key that matches wins.

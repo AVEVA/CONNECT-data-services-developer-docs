@@ -12,7 +12,7 @@ Various information is available about how each data view _resolves_. This infor
 A data view specifies `.Queries` to find data items, `.GroupingFields` (optionally) to group those data items into groups, and `.FieldSets` to include fields of data into the data view. *Resolving* the data view means the data views engine executes those queries and computes how the resulting data items will form a data view.
 
 ### What resolved information is available?
-- [Data items, ineligible data items, and the groups they form](xref:DataViewsDataItemsandGroups) - currently, SDS streams are the supported type of data item.
+- [Data items, ineligible data items, and the groups they form](xref:DataViewsDataItemsandGroups) - OCS resources retrieved by the data view query
 - [Available field sets](xref:DataViewsAvailableFieldSets) - fields which are present on the data items but not included in the data view
 - [Field mappings](xref:DataViewsFieldMappings) - details of the data behind each group of each field
 - [Statistics](xref:ResolvedDataView#statistics) about how the view resolved
@@ -27,7 +27,7 @@ Paged responses include a `Link` header, with a hyperlink to the first page of r
 Using these hyperlinks is the recommended method of paging. Alternatively, constructing paging links by manually incrementing the `skip` is allowable, though in this case it is recommended to specify cache behavior of "preserve".
 
 ### How is a data view resolved?
-Data views resolve on a per user basis. Data views respect the permissions on underlying objects such as SDS Streams. If a user does not have read access to a particular stream in SDS, then that stream is not visible from data views.
+Data views resolve on a per user basis. Data views respect the permissions on underlying OCS objects such as SDS Streams. If a user does not have read access to a particular stream in SDS, then that stream is not visible from data views.
 
 As a consequence, different users may see different collections of data items resolve for a data view. This is by design.
 
@@ -109,7 +109,7 @@ Describes the resource type of a data item.
 
 ### DataItemField
 A field of a data item where values come from.  
-Within a data item of resource kind `.Stream`, this corresponds to a stream property.
+Within a data item of resource kind `.Stream`, this corresponds to a stream property. For a data item of resource kind `.Asset`, this corresponds to the a stream property associated with an asset measurement.
 
 |Property | Type | Details |
 |--|--|--|

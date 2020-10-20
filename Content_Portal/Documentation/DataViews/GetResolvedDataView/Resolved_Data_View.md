@@ -12,7 +12,7 @@ Various information is available about how each data view _resolves_. This infor
 A data view specifies `.Queries` to find data items, `.GroupingFields` (optionally) to group those data items into groups, and `.FieldSets` to include fields of data into the data view. *Resolving* the data view means the data views engine executes those queries and computes how the resulting data items will form a data view.
 
 ### What resolved information is available?
-- [Data items, ineligible data items, and the groups they form](xref:DataViewsDataItemsandGroups) - OCS resources retrieved by the data view query
+- [Data items, ineligible data items, and the groups they form](xref:DataViewsDataItemsandGroups) - OCS objects retrieved by the data view query
 - [Available field sets](xref:DataViewsAvailableFieldSets) - fields which are present on the data items but not included in the data view
 - [Field mappings](xref:DataViewsFieldMappings) - details of the data behind each group of each field
 - [Statistics](xref:ResolvedDataView#statistics) about how the view resolved
@@ -155,7 +155,7 @@ Per-group details of the data that a `FieldMapping` targets:
 |--|--|--|
 | TargetId | string | The unique identifier of the target data item
 | TargetFieldKey | string | The specific targeted part of the data item, if any.
-| TargetMeasurementKey *(Coming Soon)* | string | The asset measurement name. Only applies to asset measurement based data mappings.
+| TargetMeasurementKey *(Coming Soon)* | string | The asset measurement name. Only applies to asset measurement data mappings.
 | TypeCode | SdsTypeCode | The value type
 | FieldSetIndex | Nullable<int> | The position of the corresponding field set within the data view
 | FieldIndex | Nullable<int> | The position of the corresponding field within its field set

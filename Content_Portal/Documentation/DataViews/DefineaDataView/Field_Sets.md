@@ -173,6 +173,8 @@ The field's value when resolved will be `[ "Low Resolution", "Gen2" ]`
 #### Special Case: Asset measurements (Coming Soon)
 *Note: This section covers features that are not yet generally available. If you are interested in trialing these pre-release features, contact your account team for more details.*
 
-Asset measurements are a special case because they require two pieces of information: the measurement name and the id of the measurement property being referenced in the data field. In order to reference an asset measurement, a field must contain at least one measurement name in the `.MeasurementKeys` collection and at least one property id in the `.Keys` collection.
+Asset measurements are a special case because they require two pieces of information in order to address the data within the measurement: the measurement name and the measurement property id. In order to reference an asset measurement, a field must contain at least one measurement name in the `.MeasurementKeys` collection and at least one property id in the `.Keys` collection.
 
-`.MeasurementKeys` only applies to fields with source `FieldSource.PropertyId`. Similar to `.Keys`, the first measurement key that matches wins.
+`.MeasurementKeys` only applies to fields with source `FieldSource.PropertyId`. For all other field sources, `.MeasurementKeys` are ignored. 
+
+Similar to `.Keys`, `.MeasurementKeys` are evaluated in order specified until a match is found, i.e. first-match-wins.

@@ -49,7 +49,7 @@ The following table lists the properties of a `DataView`:
 | Name | string | Optional | value of Id | Friendly name
 | Description | string | Optional  | null | Longer description of the view
 | IndexField | Field | Optional | { Label:"Timestamp" } | The field used for indexing.  If unspecified a field labeled "Timestamp" is included.
-| Queries     | Query[] | Optional | [ ] | Queries for OCS objects (such as streams) to include in the view. This is the starting point when defining a data view. Each Query should represent a collection of like objects. To include objects that represent very different items (e.g. solar inverters streams and weather streams), use separate queries.
+| Queries     | Query[] | Optional | [ ] | Queries for OCS objects (such as streams) to include in the view. This is the starting point when defining a data view. Each Query should represent a collection of like objects. To include objects that represent very different items (e.g. solar inverters and weather), use separate queries.
 | DataFieldSets   | FieldSet[] | Optional | [ ] | The sets of fields included in the data view. Often copied or adapted from the view's available field sets, which are exposed in a resolved resource.
 | GroupingFields  | Field[] | Optional | [ ] | Fields by which the data items are partitioned/grouped.
 | DefaultStartIndex | string | Optional | null | The default value of StartIndex used when querying the data view data if none is specified.
@@ -81,7 +81,7 @@ The `DataItemResourceType` enumeration specifies the OCS resource type included 
 | Name | Enumeration Id | Description |
 |--|--|--|--|
 | Stream | 1 | [SDS streams](xref:sdsStreams)
-| Asset | 2 | [Assets](xref:AssetsProperties)
+| Asset *(Coming Soon)* | 2 | [Assets](xref:AssetsProperties)
 
 ### FieldSet
 A set of fields included in the data view, sharing a common role and query. One `DataView` is likely to include one `FieldSet` per query.
@@ -98,7 +98,7 @@ All sources except `FieldSource.NotApplicable` can be used as data fields. Field
 |--|--|--|--|--|
 | Source | FieldSource | Optional | NotApplicable | Identifies the `.Source` of the field's values (not applicable for an index field). See the FieldSource enumeration section in this topic for details.
 | Keys | String[] | Optional | [ ] | Used for sources `FieldSource.PropertyId`, `FieldSource.PropertyName`, `FieldSource.Metadata` and `FieldSource.Tags`, e.g. to map to specific stream or object properties by id. If more than one key is specified, they are matched as exclusive-or. A key has to be a non-null value.
-| MeasurementKeys | String[] | Optional | [ ] | Identifies the measurement name when referencing an asset measurement. `MeasurementKeys` only applies to source `FieldSource.PropertyId`. If more than one key is specified, they are matched as exclusive-or. A key has to be a non-null value.
+| MeasurementKeys *(Coming Soon)* | String[] | Optional | [ ] | Identifies the measurement name when referencing an asset measurement. `MeasurementKeys` only applies to source `FieldSource.PropertyId`. If more than one key is specified, they are matched as exclusive-or. A key has to be a non-null value.
 | Label | string | Optional | null | Friendly name for the field. Certain tokens have special meaning: one of these, {IdentifyingValue}, is included in the suggested labels of AvailableFieldSets. Tokens that do not resolve are "" (empty string). The label is required in a field for all usages except in an identifying field. Label is trimmed of whitespace when used to identify field mappings. 
 
 ### FieldSource enumeration
@@ -109,8 +109,8 @@ For fields that derive data from a data item (e.g. an SDS stream), the `FieldSou
 |NotApplicable | 0 | No | FieldSource is not applicable for an index field
 |Id | 1 | No | The id of the data item
 |Name | 2 | No | The name of the data item
-|PropertyId | 3 | Yes | Data from a stream property or measurement, found by id
-|PropertyName | 4 | Yes | Data from a stream property, found by name
+|PropertyId | 3 | Yes | Data from an SDS type property, found by id
+|PropertyName | 4 | Yes | Data from an SDS type property, found by name
 |Metadata | 5 | Yes | Value of the data item metadata, found by key
 |Tags | 6 | Yes | Data item tags matching the collection provided
 

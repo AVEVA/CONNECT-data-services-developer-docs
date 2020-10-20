@@ -180,7 +180,7 @@ Content-Type: application/json
       "ResourceType": "Stream",
       "Tags": [],
       "Metadata": { },
-	  "DataItemFields": []
+	  "DataItemFields": [],
       "IneligibleDataItemFields": [
          {
            "Id": "Depth",

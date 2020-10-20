@@ -10,13 +10,13 @@ Queries determine what data items are included in a data view.
 
 Each `Query` must be uniquely identified with an `.Id`. The identifier should be meaningful. The query's results will be referenced by this identifier when you include fields in the data view.
 
-The query text is the same as the corresponding resource's query syntax. For example, queries of kind Stream use [stream query syntax](xref:sdsSearching).
+The query text is the same as the corresponding OCS object's query syntax. For example, queries of kind Stream use [stream query syntax](xref:sdsSearching).
 
 |Property| Type | Optionality  | Default  | Details |
 |--|--|--|--|--|
 | Id  | string | Required |  | Unique identifier. Used by `FieldSet` to link to the query's results. |
 | Kind  | DataItemResourceType | Optional | Stream | Type of resource to be queried. |
-| Value | string | Optional | null | A query for streams, in SDS query syntax. A null or empty query will not match any streams.
+| Value | string | Optional | null | A query for OCS objects in the corresponding query syntax.
 
 ## Using queries
 
@@ -61,7 +61,7 @@ These streams will be available in one single field set. This is good, because o
 
 Currently, the only supported query kind is Stream meaning only SDS streams can be queried and included in a data view as data items. With the introduction of asset queries, data views will also be able to query and include [assets](xref:AssetsProperties).
 
-An asset query looks identical to a stream query with the exception that query kind (set using the [DataItemResourceType enumeration](xref:DataViewsQuickStartDefine#dataitemresourcetype-enumeration)) is equal to Asset.
+An asset query looks identical to a stream query with the exception that query kind (set using the [DataItemResourceType enumeration](xref:DataViewsQuickStartDefine#dataitemresourcetype-enumeration)) is equal to Asset, and query value uses [asset search syntax](xref:AssetsSearchAPI).
 
 ```json
 "Queries": [

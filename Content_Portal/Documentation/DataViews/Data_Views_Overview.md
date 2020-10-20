@@ -4,7 +4,7 @@ uid: DataViewsOverview
 
 # Data Views
 
-Data views are subsets of data from one or more OCS sources such as streams, which can serve as a bridge between raw OCS data and data-driven applications. A data view is a declarative query and shape for raw OCS data. Within a target namespace, you specify the selected data by specific time period and interpolation interval.
+Data views are subsets of data from one or more OCS sources, such as streams, which can serve as a bridge between raw OCS data and data-driven applications. A data view is a declarative query and shape for raw OCS data. Within a target namespace, you specify the selected data by specific time period and interpolation interval.
 
 The ability to create data views in OCS will mesh directly with OSIsoft's Data Science Enablement efforts, whereby users will be able to programmatically access data view content via an API for the purposes of advanced analytics. The ultimate goal is to deliver shaped data that is ready for consumption because it is normalized, aligned, and interpolated.
 

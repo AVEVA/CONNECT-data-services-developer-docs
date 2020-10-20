@@ -31,3 +31,6 @@ Each data view can be individually [access-controlled](xref:DataViewsSecuringDat
 [Data view data](xref:DataViewsQuickStartGetData) is available via queries to the RESTful data views [data API resource](xref:DataViewsDataAPI). 
 
 To understand the source of each data field, inspect how the data view [resolved](xref:ResolvedDataView).
+
+## Coming Soon
+Some features in this documentation are marked as *Coming Soon*. These features are not yet generally available. If you are interested in trialing these pre-release features, contact your account team for more details.

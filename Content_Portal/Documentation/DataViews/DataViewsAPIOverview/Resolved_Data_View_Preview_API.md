@@ -115,7 +115,8 @@ Content-Type: application/json
            "TypeCode": "Double",
            "IsKey": false
          }
-      ]
+      ],
+	  "IneligibleDataItemFields": []
     }
   ]
 }
@@ -208,7 +209,8 @@ Content-Type: application/json
       "ResourceType": "Stream",
       "Tags": [],
       "Metadata": { },
-      "DataItemFields": [
+	  "DataItemFields": [],
+      "IneligibleDataItemFields": [
          {
            "Id": "Depth",
            "Name": "Depth",
@@ -349,7 +351,8 @@ Content-Type: application/json
                     "TypeCode": "Double",
                     "IsKey": false
                 }
-            ]
+            ],
+			"IneligibleDataItemFields": []
           }
         ]
       }

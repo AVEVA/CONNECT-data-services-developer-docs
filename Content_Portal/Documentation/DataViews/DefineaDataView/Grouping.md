@@ -52,6 +52,7 @@ Let us start with a simple data view. It queries for the aforementioned streams,
   "Queries": [
     { 
       "Id": "inverters",
+	  "Kind": "Stream",
       "Value": "TypeId:docs-pi-inverter AND (Site:Rosemont OR Site:Winterthur)"
     }
   ],
@@ -88,6 +89,7 @@ A simple way of disambiguating the data items is to group them by data item id. 
   "Queries": [
     { 
       "Id": "inverters",
+	  "Kind": "Stream",
       "Value": "TypeId:docs-pi-inverter AND (Site:Rosemont OR Site:Winterthur)"
     }
   ],
@@ -156,6 +158,7 @@ Instead of grouping by data item id, let us group by metadata. This example uses
   "Queries": [
     { 
       "Id": "inverters",
+	  "Kind": "Stream",
       "Value": "TypeId:docs-pi-inverter AND (Site:Rosemont OR Site:Winterthur)"
     }
   ],
@@ -221,10 +224,12 @@ This example includes two actions:
   "Queries": [
     { 
       "Id": "inverters",
+	  "Kind": "Stream",
       "Value": "TypeId:docs-pi-inverter AND (Site:Rosemont OR Site:Winterthur)"
     },
     { 
       "Id": "site weather",
+	  "Kind": "Stream",
       "Value": "TypeId:docs-omf-weather* AND (Site:Rosemont OR Site:Winterthur)"
     }
   ],

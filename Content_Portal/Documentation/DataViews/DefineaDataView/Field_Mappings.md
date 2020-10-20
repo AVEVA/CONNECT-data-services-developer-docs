@@ -39,6 +39,7 @@ The `FieldKind` specifies whether the field maps to an index field, grouping fie
   * Id, name and tags: `TargetFieldKey` is empty
   * Metadata: `TargetFieldKey` shows the metadata key
   * Properties: `TargetFieldKey` shows the property id or property name path
+  * Asset measurements *(Coming Soon)*: `TargetMeasurementKey` shows the measurement name
 
 #### Field id field
 `TargetFieldKey` is not used. `TargetId` represents the data item id, `FieldSetIndex` is the zero-based positioning of the data field set, and `FieldIndex` is the zero-based positioning of the data field within the appropriate data field set.

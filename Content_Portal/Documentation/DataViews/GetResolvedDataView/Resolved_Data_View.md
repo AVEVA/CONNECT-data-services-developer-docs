@@ -86,8 +86,18 @@ Holds an item that was resolved at a specific time.
 | TypeId | string | The unique identifier of the data item's type
 | ResourceType | DataItemResourceType | The resource type. See below. Currently, the supported resource type is `.Stream`
 | Tags | IReadOnlyList<string> | Tag strings assigned to the data item
-| Metadata | IReadOnlyDictionary<string, string> | Metadata key-value pairs assigned to the data item
+| Metadata | IReadOnlyList<MetadataValue> | Metadata values assigned to the data item
 | DataItemFields | IReadOnlyList<DataItemField> | Data fields
+| IneligibleDataItemFields | IReadOnlyList<DataItemField> | Data fields assigned to the data item that are not supported by data views
+
+### MetadataValue
+|Property | Type | Details |
+|--|--|--|
+| Name | string | Unique identifier 
+| Value | string | Static value assigned to the metadata value
+| Description | string | Extended text description
+| TypeCode | SdsTypeCode| The name of the metadata value's data type
+| Uom | string | The name of the metadata value's unit of measurement
 
 ### DataItemResourceType enumeration
 Describes the resource type of a data item.
@@ -95,6 +105,7 @@ Describes the resource type of a data item.
 |Name| Enumeration Id | Description  |
 |--|--|--|
 | Stream | 1 | A stream from the Sequential Data Store |
+| Asset *(Coming Soon)* | 2 | An asset |
 
 ### DataItemField
 A field of a data item where values come from.  
@@ -104,6 +115,7 @@ Within a data item of resource kind `.Stream`, this corresponds to a stream prop
 |--|--|--|
 | Id | string | The data item field's unique identifier 
 | Name | string | The data item field's friendly name
+| MeasurementName *(Coming Soon)* | string | The asset measurement name. Only applies to asset measurement data item fields.
 | TypeCode | SdsTypeCode| The name of the field's data type
 | IsKey | bool | True if the field is the primary index of the data item. False otherwise.
 
@@ -143,6 +155,7 @@ Per-group details of the data that a `FieldMapping` targets:
 |--|--|--|
 | TargetId | string | The unique identifier of the target data item
 | TargetFieldKey | string | The specific targeted part of the data item, if any.
+| TargetMeasurementKey *(Coming Soon)* | string | The asset measurement name. Only applies to asset measurement based data mappings.
 | TypeCode | SdsTypeCode | The value type
 | FieldSetIndex | Nullable<int> | The position of the corresponding field set within the data view
 | FieldIndex | Nullable<int> | The position of the corresponding field within its field set

@@ -28,6 +28,7 @@ The following represents a data view grouped by "Meter", including fields for th
   "Queries": [
     {
       "Id": "inverters",
+	  "Kind": "Stream",
       "Value": "TypeId:docs-pi-inverter AND Site:Winterthur"
     }
   ],
@@ -83,6 +84,7 @@ To the data view from the previous example, we will add a `Field` as the `.Ident
   "Queries": [
     {
       "Id": "inverters",
+	  "Kind": "Stream",
       "Value": "TypeId:docs-pi-inverter AND Site:Winterthur"
     }
   ],
@@ -142,6 +144,7 @@ In cases where the identifiers are unique, the identifier is suffixed with an or
 There are three special parameters available for use in field labels:
 - `{IdentifyingValue}` - the value of the identifying field
 - `{FirstKey}` - the value of the first of the `"Keys"` specified on the field
+- `{MeasurementFirstKey}` *(Coming Soon)* - the value of the first of the `"MeasurementKeys"` specified on the field
 
 If a special parameter fails to resolve, it becomes an empty string, `""`.
 
@@ -167,3 +170,9 @@ A field of source `FieldSource.Tags` and `.Keys` `[ "Low Resolution", "High Reso
 
 The field's value when resolved will be `[ "Low Resolution", "Gen2" ]`
 
+#### MeasurementKeys (Coming Soon)
+*Note: This section covers features that are not yet generally available. If you are interested in trialing these pre-release features, contact your account team for more details.*
+
+Fields referencing asset measurements must specify an additional piece of data, the measurement name. Measurement name is configured within the MeasurementKeys property. 
+
+MeasurementKeys only applies to the `PropertyId` source. Keys must also be included to specify the property id within the measurement that the field will represent.

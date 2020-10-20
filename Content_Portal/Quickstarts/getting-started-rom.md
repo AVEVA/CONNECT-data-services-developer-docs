@@ -69,7 +69,7 @@ Procedure
 
 8. To delve further into the details of these measurements, click the **View full trend** ![View full trend icon](images\View_full_trend_icon.png) icon to see the Trend page.
 
-    ![View full trend](images\Trend_full_display.png)
+    ![View full trend](images\trend-full-display.png)
 
     Note the following:
 

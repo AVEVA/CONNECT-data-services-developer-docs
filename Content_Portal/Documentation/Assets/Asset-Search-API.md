@@ -15,7 +15,7 @@ Assets can be searched on the following asset properties:
 - Id
 - Name
 - Description
-- Attributes
+- Metadata
   - Name
   - Description
   - Value
@@ -29,7 +29,7 @@ Search criteria can be chained together using an **AND**. See examples below.
 ### Request 
 ```text 
 
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets?skip={skip}&count={count}&query={queryString} 
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets?skip={skip}&count={count}&orderby={orderby}&query={queryString} 
 
 ```
 
@@ -50,8 +50,12 @@ An optional parameter representing the zero-based offset of the first asset to r
 
 An optional parameter representing the maximum number of assets to retrieve. If not specified, a default value of 100 is used.
 
+[Optional] `[id|name][asc|desc|] orderby`
+
+An optional parameter which returns assets ordered either by the asset ID or the asset name. In addition to the property, you can optionally specify either `asc` or `desc` to return the results in ascending or descending order. If not specified, the default is ascending order.
+
 `string queryString`
-The asset query string.Search strings are not case-sensitive.
+The asset query string. Search strings are not case-sensitive.
 
 ### Response 
 The response includes a status code and an array of assets matching the search criteria.

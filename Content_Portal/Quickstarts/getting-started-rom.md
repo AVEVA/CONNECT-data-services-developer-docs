@@ -25,6 +25,7 @@ Procedure
     The asset explorer displays the available assets. In this example, it provides an overview of the health of the fleet of trucks.
 
     Tip: Click on the icons in the toolbar to toggle between the card and table views of the assets.
+    
     ![Card/Table View](images\AssetEditor_icons.png)
 
 1.  Scan through the assets and identify any assets with a problematic status.
@@ -43,11 +44,11 @@ Procedure
 
 4. Click on an asset to open the Asset Details pane.
 
-    The Asset Details pane provides attribute and measurement data on the asset that you can use to determine the cause of any problems. The **Attributes** tab displays metadata associated with the asset.
+    The Asset Details pane provides metadata and measurement data on the asset that you can use to determine the cause of any problems. The **Metadata** tab displays metadata associated with the asset.
 
-    ![Asset Attributes](images\Attributes.png)
+    ![Asset Attributes](images\Metadata.png)
 
-5. Click the **Metadata** tab.
+5. Click the **Measurements** tab.
 
     The Asset Details pane displays the following:
     
@@ -57,11 +58,9 @@ Procedure
     
     ![Details pane](images\Details_pane.png)
 
-5.  Select one or more of the measurements that you think might be the cause
-    for the warning.
+5.  Select one or more of the measurements that you think might be the cause for the warning.
 
-6.  Review the history of the selected measurements in the trend to see if the
-    data suggests you have identified a potential cause. 
+6.  Review the history of the selected measurements in the trend to see if the data suggests you have identified a potential cause. 
 
     By default, the trend shows the measurements for the last 8-hour period. Click the arrow to pick another time-range option or specify a custom time range.
 
@@ -83,7 +82,7 @@ Procedure
       |          ![](images\Multiple_mode.png)   |    All measurements are plotted on the same scale.         |
       |    ![Stacked mode](images\Stacked_mode.png)        |       All measurements are plotted on its own scale.      |
 
-9.   Click on the ![Trend views icon](images\Trend_views_icon.png)icon to toggle through the views.
+9.   Click on the ![Trend views icon](images\trend-views-icon.png)icon to toggle through the views.
 
     The Legend table shows the legend for each trace, the last value, minimum, maximum, and average values in the displayed time range.
 

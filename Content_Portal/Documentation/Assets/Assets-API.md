@@ -244,6 +244,12 @@ The asset identifier
 
 The newly created or updated `asset` object.
 
+#### Asset Type Concordance
+
+If an asset type ID is specified for an asset, then the following is true:
+- The stream references name of an asset is set to null if the stream reference ID matches the stream reference ID of the asset type.
+- The name of a metadata value is set to null for those metadata values whose IDs match the asset type metadata value IDs.
+
 ### Response 
 
 The response includes a status code and body. 

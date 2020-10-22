@@ -50,9 +50,11 @@ HTTP 200 OK
 Content-Type: application/json
 {
     "Id": "HeaterType",
+    "Name": "NameOfHeaterType",
     "Description": "This is the AssetType which represents a common heater device.",
     "Metadata": [
         {
+            "Id": "MetadataId1",
             "Name": "ModelNumber",
             "Description": "This metadata indicates the model number of a given Asset.",
             "SdsTypeCode": 14,
@@ -60,6 +62,7 @@ Content-Type: application/json
     ],
     "TypeReferences": [
         {
+            "Id": "TypeReferenceId1",
             "Name": "TemperatureData",
             "TypeId": "PI-Float32"
         }
@@ -143,16 +146,19 @@ To create an asset type with a specific ID, use the API route with ID. If this i
 ```json 
  {
     "Id": "HeaterType",
+    "Name": "NameOfHeaterType",
     "Description": "This is the AssetType which represents a common heater device.",
     "Metadata": [
         {
+            "Id": "MetadataId1",
             "Name": "ModelNumber",
             "Description": "This metadata indicates the model number of a given Asset.",
-            "SdsTypeCode": 14,
+            "SdsTypeCode": 14
         }
     ],
     "TypeReferences": [
         {
+            "Id": "TypeReferenceId1",
             "Name": "TemperatureData",
             "TypeId": "PI-Float32"
         }

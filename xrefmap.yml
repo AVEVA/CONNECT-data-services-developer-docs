@@ -37,6 +37,9 @@ references:
 - uid: AssetCentricDataAPI
   name: Asset-centric Data API
   href: Content_Portal/Documentation/Assets/Asset-Centric-Data-API.html
+- uid: AssetDefaultShape
+  name: Asset Default Shape
+  href: Content_Portal/Documentation/Assets/asset-default-shape.html
 - uid: AssetMeasurementMappings
   name: Asset Measurement Mappings
   href: Content_Portal/Documentation/Assets/Asset-Measurements.html

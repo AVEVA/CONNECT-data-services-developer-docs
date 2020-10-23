@@ -329,6 +329,12 @@ Content-Type: application/json
 <p>The asset identifier</p>
 <h4 id="request-body-2">Request body</h4>
 <p>The newly created or updated <code>asset</code> object.</p>
+<h4 id="asset-type-concordance">Asset Type Concordance</h4>
+<p>If an asset type ID is specified for an asset, then the following is true:</p>
+<ul>
+<li>The stream references name of an asset is set to null if the stream reference ID matches the stream reference ID of the asset type.</li>
+<li>The name of a metadata value is set to null for those metadata values whose IDs match the asset type metadata value IDs.</li>
+</ul>
 <h3 id="response-4">Response</h3>
 <p>The response includes a status code and body. </p>
 <table>

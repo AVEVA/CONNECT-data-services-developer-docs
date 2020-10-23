@@ -88,7 +88,7 @@
 <li>Id</li>
 <li>Name</li>
 <li>Description</li>
-<li>Attributes<ul>
+<li>Metadata<ul>
 <li>Name</li>
 <li>Description</li>
 <li>Value</li>
@@ -101,7 +101,7 @@
 <p>Search criteria can be chained together using an <strong>AND</strong>. See examples below. </p>
 <h3 id="request">Request</h3>
 <pre><code class="lang-text">
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets?skip={skip}&amp;count={count}&amp;query={queryString} 
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets?skip={skip}&amp;count={count}&amp;orderby={orderby}&amp;query={queryString} 
 </code></pre><h3 id="parameters">Parameters</h3>
 <p><code>string tenantId</code> </p>
 <p>The tenant identifier</p>
@@ -111,8 +111,10 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets?skip={skip
 <p>An optional parameter representing the zero-based offset of the first asset to retrieve. If not specified, a default value of 0 is used.</p>
 <p>[Optional] <code>int count</code> </p>
 <p>An optional parameter representing the maximum number of assets to retrieve. If not specified, a default value of 100 is used.</p>
+<p>[Optional] <code>[id|name][asc|desc|] orderby</code></p>
+<p>An optional parameter which returns assets ordered either by the asset ID or the asset name. In addition to the property, you can optionally specify either <code>asc</code> or <code>desc</code> to return the results in ascending or descending order. If not specified, the default is ascending order.</p>
 <p><code>string queryString</code>
-The asset query string.Search strings are not case-sensitive.</p>
+The asset query string. Search strings are not case-sensitive.</p>
 <h3 id="response">Response</h3>
 <p>The response includes a status code and an array of assets matching the search criteria.</p>
 <table>

@@ -135,9 +135,11 @@ For more information, see <a href="https://ocs-docs.osisoft.com/Content_Portal/D
 Content-Type: application/json
 {
     &quot;Id&quot;: &quot;HeaterType&quot;,
+    &quot;Name&quot;: &quot;NameOfHeaterType&quot;,
     &quot;Description&quot;: &quot;This is the AssetType which represents a common heater device.&quot;,
     &quot;Metadata&quot;: [
         {
+            &quot;Id&quot;: &quot;MetadataId1&quot;,
             &quot;Name&quot;: &quot;ModelNumber&quot;,
             &quot;Description&quot;: &quot;This metadata indicates the model number of a given Asset.&quot;,
             &quot;SdsTypeCode&quot;: 14,
@@ -145,6 +147,7 @@ Content-Type: application/json
     ],
     &quot;TypeReferences&quot;: [
         {
+            &quot;Id&quot;: &quot;TypeReferenceId1&quot;,
             &quot;Name&quot;: &quot;TemperatureData&quot;,
             &quot;TypeId&quot;: &quot;PI-Float32&quot;
         }
@@ -212,16 +215,19 @@ For more information, see <a href="https://ocs-docs.osisoft.com/Content_Portal/D
 <p>To create an asset type with a specific ID, use the API route with ID. If this is used, you must specify a  matching ID field for the <code>AssetType</code> object in the JSON object below.</p>
 <pre><code class="lang-json"> {
     &quot;Id&quot;: &quot;HeaterType&quot;,
+    &quot;Name&quot;: &quot;NameOfHeaterType&quot;,
     &quot;Description&quot;: &quot;This is the AssetType which represents a common heater device.&quot;,
     &quot;Metadata&quot;: [
         {
+            &quot;Id&quot;: &quot;MetadataId1&quot;,
             &quot;Name&quot;: &quot;ModelNumber&quot;,
             &quot;Description&quot;: &quot;This metadata indicates the model number of a given Asset.&quot;,
-            &quot;SdsTypeCode&quot;: 14,
+            &quot;SdsTypeCode&quot;: 14
         }
     ],
     &quot;TypeReferences&quot;: [
         {
+            &quot;Id&quot;: &quot;TypeReferenceId1&quot;,
             &quot;Name&quot;: &quot;TemperatureData&quot;,
             &quot;TypeId&quot;: &quot;PI-Float32&quot;
         }

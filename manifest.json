@@ -102,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Assets/Asset-Centric-Data-API.html",
-          "hash": "aZOrnt2OzqGl722hdxPKiA=="
+          "hash": "167bz2hSrhkOVUa9poYo5A=="
         }
       },
       "is_incremental": false,
@@ -126,7 +126,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Assets/Asset-Search-API.html",
-          "hash": "pQ1lcAs+EhufZ3dns9FADA=="
+          "hash": "pB5PYZixFW3+/JylkW8Ipw=="
         }
       },
       "is_incremental": false,
@@ -138,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Assets/Asset-Type.html",
-          "hash": "Mf0/C2yLsLo5ED9RC9IWhg=="
+          "hash": "8v8DFVm+tkKNpjjGfJQR+Q=="
         }
       },
       "is_incremental": false,
@@ -150,7 +150,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Assets/Assets-API.html",
-          "hash": "cp1bk3KuYnhUtShR4xQcBg=="
+          "hash": "qKFJ7KOPWGcjimu1jBuYXg=="
         }
       },
       "is_incremental": false,
@@ -162,22 +162,19 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Assets/Assets.html",
-          "hash": "G5YUHuwrS2xPgmKpnFKiNw=="
+          "hash": "Stka1PfxzmqOErFNSX8pqw=="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidYamlHeader"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Content_Portal/Documentation/Assets/asset-default-shape.md",
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Assets/asset-default-shape.html",
-          "hash": "i8vJU1r2DdHneS0W7CSSpA=="
+          "hash": "Y4YvyCu9XUUhTFqWhqlqbA=="
         }
       },
       "is_incremental": false,
@@ -193,7 +190,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Assets/asset-status-mapping.html",
-          "hash": "V2byt/2hB4qrmj/kUonViA=="
+          "hash": "GDSUF0gxJ8+HQylfYp/+Pg=="
         }
       },
       "is_incremental": false,

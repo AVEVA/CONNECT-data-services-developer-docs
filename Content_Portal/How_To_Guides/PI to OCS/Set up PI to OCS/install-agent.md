@@ -18,7 +18,7 @@ Install the PI to OCS Agent on a host computer separate from your PI Data Archiv
 5. Navigate to the downloaded PI to OCS agent installation file.
 6. Right-click the PI to OCS agent installation file, then click **Run as administrator**.
 7. Click **Yes**.
-![ ](../images/setupkit_welcome.png "The Welcome Screen in the PI to OCS Agent Setup Kit")
+<br>![ ](../images/setupkit_welcome.png "The Welcome Screen in the PI to OCS Agent Setup Kit")
 8. In the **PI to OCS Agent (Administrator)** window, click **Next**.
 9. Enter your OCS account ID or company alias, then click **Next**.
 10. Select or enter the following for your connection:
@@ -26,7 +26,7 @@ Install the PI to OCS Agent on a host computer separate from your PI Data Archiv
     - **Connection:** Select the name of the data transfer connection you created earlier. 
     - **PI Data Archive:** Enter the name of the on-premises PI Data Archive you want to transfer data from.
 11. **Optional:** Click the **Refresh Connection List** button to refresh the list of available connections and select a different PI Data Archive.
-![ ](../images/pi2ocs-cnnxtn.png "The Connection Screen in the PI to OCS Agent Setup Kit")
+<br>![ ](../images/pi2ocs-cnnxtn.png "The Connection Screen in the PI to OCS Agent Setup Kit")
 12. Click **Next**.
 13. Select the service account type for the connection:
     - **NT Service**: Use an NT account to connect to PI Data Archive.

@@ -123,9 +123,11 @@ Content-Type: application/json
 ***
 
 
-## `Create MeasurementMappings` 
+## `Update MeasurementMappings` 
 
-Creates the measurement mappings for a given asset or asset type. 
+Updates the measurement mappings for a given asset or asset type. 
+
+For an asset measurement mappings, you can specify include an If-Match property in the HTTP request header to specify that the asset is modified only if the asset version matches. The If-Match property is not available for asset types.
 
 ### Request 
 
@@ -165,4 +167,4 @@ The response includes a status code and a response body.
 | 400 Bad Request | error         | The request is not valid. See the response body for additional details. |
 | 403 Forbidden   | error         | You are not authorized to view the requested asset or asset type. |
 | 404 Not Found   | error         | The specified asset or asset type is not found.          |
-
+| 412 Pre-Condition Failed | error | The asset failed to update because the If-Match condition failed. |

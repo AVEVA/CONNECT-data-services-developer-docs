@@ -35,27 +35,22 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets?skip={skip
 
 ### Parameters  
 `string tenantId` 
-
 The tenant identifier
 
 `string namespaceId` 
-
 The namespace identifier
-
-[Optional] `int skip` 
-
-An optional parameter representing the zero-based offset of the first asset to retrieve. If not specified, a default value of 0 is used.
-
-[Optional] `int count` 
-
-An optional parameter representing the maximum number of assets to retrieve. If not specified, a default value of 100 is used.
-
-[Optional] `[id|name][asc|desc|] orderby`
-
-An optional parameter which returns assets ordered either by the asset ID or the asset name. In addition to the property, you can optionally specify either `asc` or `desc` to return the results in ascending or descending order. If not specified, the default is ascending order.
 
 `string queryString`
 The asset query string. Search strings are not case-sensitive.
+
+[Optional] `int skip` 
+An optional parameter representing the zero-based offset of the first asset to retrieve. If not specified, a default value of 0 is used.
+
+[Optional] `int count` 
+An optional parameter representing the maximum number of assets to retrieve. If not specified, a default value of 100 is used.
+
+[Optional] `[id|name] [asc|desc|] orderby`
+An optional parameter which returns assets ordered either by the asset `id` or the asset `name`. In addition to the property, you can optionally specify either `asc` or `desc` to return the results in ascending or descending order. If not specified, the default is ascending order.
 
 ### Response 
 The response includes a status code and an array of assets matching the search criteria.
@@ -71,17 +66,18 @@ The response includes a status code and an array of assets matching the search c
 
 | Query String                   | Description                                                  |
 | ------------------------------ | ------------------------------------------------------------ |
-| Id:Id1                         | Returns the asset with ID equal to **Id1**.                  |
-| Id:Id*                         | Returns all assets with ID matching **id*** wildcard. |
+| Id:Id1                         | Returns the asset with `Id` equal to **Id1**.                  |
+| Id:Id1 Name desc               | Returns the return results for asset with `Id` equal to **Id1** in descending order by Name. |
+| Id:Id*                         | Returns all assets with `Id` matching **id*** wildcard. |
 | Name:Name1                     | Returns all asset with a friendly name equal to **Name1**. |
-| Id:Id AND Name:Name1           | Returns all assets with ID matching the **id*** wildcard and with a friendly name equal to **Name1**. |
+| Id:Id AND Name:Name1           | Returns all assets with `Id` matching the **id*** wildcard and with a friendly name equal to **Name1**. |
 | Description:floor1*            | Returns all assets with a description that starts with **floor1**. |
-| Metadata/Name:Building*      | Returns all assets with at least one metadatum description that contains the string **Building**. |
-| Metadata/Description:heater* | Returns all assets with at least one metadatum description that starts with **heater**. |
-| Metadata/Value:123           | Returns all assets with at least one metadatum that equals **123**. |
-| Id:X* AND Metadata/Name:B*   | Returns all assets with ID starting with **X** and containing at least one metadatum with a name that starts with a **B**. |
-| AssetTypeId:HeaterTypeId | Returns all assets with AssetTypeId matching HeaterTypeId |
-| AssetTypeName:HeaterTypeName | Returns all assets whose Name field of the AssetType matches HeaterTypeName |
+| Metadata/Name:Building*      | Returns all assets with at least one metadata value whose description contains the string **Building**. |
+| Metadata/Description:heater* | Returns all assets with at least one metadata value whose description starts with **heater**. |
+| Metadata/Value:123           | Returns all assets with at least one metadata value whose Value property equals **123**. |
+| Id:X* AND Metadata/Name:B*   | Returns all assets with Id starting with **X** and containing at least one metadata value with a name that starts with a **B**. |
+| AssetTypeId:HeaterTypeId | Returns all assets with `AssetTypeId` matching `HeaterTypeId` |
+| AssetTypeName:HeaterTypeName | Returns all assets whose Name field of the AssetType matches `HeaterTypeName` |
 | Measurements/Name:WindMeasure | Returns all assets with the measurement name **WindMeasure**. |
 
 

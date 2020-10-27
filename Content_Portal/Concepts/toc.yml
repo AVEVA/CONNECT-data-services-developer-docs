@@ -4,5 +4,7 @@
   topicHref: Credential_Management.md
 - name: Data Storage
   topicHref: Data_Storage_Concepts.md
+- name: Least Privilege
+  topicHref: Least_Privilege.md
 - name: Token Management
   topicHref: Token_Management.md

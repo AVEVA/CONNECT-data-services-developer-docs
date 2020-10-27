@@ -10,13 +10,13 @@ Queries determine what data items are included in a data view.
 
 Each `Query` must be uniquely identified with an `.Id`. The identifier should be meaningful. The query's results will be referenced by this identifier when you include fields in the data view.
 
-The query text is the same as the corresponding OCS object's query syntax. For example, queries of kind Stream use [stream query syntax](xref:sdsSearching).
+The query text is the same as the corresponding data item's query syntax. For example, queries of kind Stream use [stream query syntax](xref:sdsSearching).
 
 |Property| Type | Optionality  | Default  | Details |
 |--|--|--|--|--|
 | Id  | string | Required |  | Unique identifier. Used by `FieldSet` to link to the query's results. |
 | Kind  | DataItemResourceType | Optional | Stream | Type of resource to be queried. |
-| Value | string | Optional | null | A query for OCS objects in the corresponding query syntax.
+| Value | string | Optional | null | A query for OCS resources in the corresponding query syntax.
 
 ## Using queries
 

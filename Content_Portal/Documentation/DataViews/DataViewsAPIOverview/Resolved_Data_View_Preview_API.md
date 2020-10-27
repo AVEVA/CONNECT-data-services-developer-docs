@@ -93,9 +93,13 @@ Content-Type: application/json
         "High Resolution",
         "Gen1"
        ],
-       "Metadata": {
-         "Site": "Biltmore"
-       },
+       "Metadata": [
+         {
+           "Name": "Site",
+           "Value": "Biltmore",
+           "TypeCode": "String"
+         }
+       ],
        "DataItemFields": [
          {
            "Id": "Timestamp",
@@ -116,7 +120,7 @@ Content-Type: application/json
            "IsKey": false
          }
       ],
-	  "IneligibleDataItemFields": []
+      "IneligibleDataItemFields": []
     }
   ]
 }
@@ -208,8 +212,8 @@ Content-Type: application/json
       "TypeId": "type-with-different-index",
       "ResourceType": "Stream",
       "Tags": [],
-      "Metadata": { },
-	  "DataItemFields": [],
+      "Metadata": [],
+      "DataItemFields": [],
       "IneligibleDataItemFields": [
          {
            "Id": "Depth",
@@ -315,7 +319,10 @@ Content-Type: application/json
   "Items": [
     {
       "GroupingValues": [ 
-        "Biltmore"
+        {
+          "Value": "Biltmore",
+          "TypeCode": "String"
+        }
       ],
       "DataItems": {
         "Query1": [
@@ -329,9 +336,13 @@ Content-Type: application/json
                 "High Resolution",
                 "Gen1"
             ],
-            "Metadata": {
-                "Site": "Biltmore"
-            },
+            "Metadata": [
+              {
+                "Name": "Site",
+                "Value": "Biltmore",
+                "TypeCode": "String"
+              }
+            ],
             "DataItemFields": [
                 {
                     "Id": "Timestamp",
@@ -352,7 +363,7 @@ Content-Type: application/json
                     "IsKey": false
                 }
             ],
-			"IneligibleDataItemFields": []
+            "IneligibleDataItemFields": []
           }
         ]
       }

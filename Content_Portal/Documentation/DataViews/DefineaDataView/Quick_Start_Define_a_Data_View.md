@@ -49,7 +49,7 @@ The following table lists the properties of a `DataView`:
 | Name | string | Optional | value of Id | Friendly name
 | Description | string | Optional  | null | Longer description of the view
 | IndexField | Field | Optional | { Label:"Timestamp" } | The field used for indexing.  If unspecified a field labeled "Timestamp" is included.
-| Queries     | Query[] | Optional | [ ] | Queries for OCS objects (such as streams) to include in the view. This is the starting point when defining a data view. Each Query should represent a collection of like objects. To include objects that represent very different items (e.g. solar inverters and weather), use separate queries.
+| Queries     | Query[] | Optional | [ ] | Queries for OCS resources (such as streams) to include in the view. This is the starting point when defining a data view. Each Query should represent a collection of like data items. To include data items that represent very different items (e.g. solar inverters and weather), use separate queries.
 | DataFieldSets   | FieldSet[] | Optional | [ ] | The sets of fields included in the data view. Often copied or adapted from the view's available field sets, which are exposed in a resolved resource.
 | GroupingFields  | Field[] | Optional | [ ] | Fields by which the data items are partitioned/grouped.
 | DefaultStartIndex | string | Optional | null | The default value of StartIndex used when querying the data view data if none is specified.
@@ -68,20 +68,20 @@ The following table lists the properties of a `DataView`:
 The following sections describe the classes and enumerations used when defining data views.
 
 ### Query
-A query for OCS objects to include in the view.
+A query for OCS resources to include in the view.
 |Property| Type | Optionality  | Default  | Details |
 |--|--|--|--|--|
 | Id  | string | Required |  | Unique identifier. Used by FieldSet to link to the query's results. |
 | Kind  | DataItemResourceType | Optional | Stream | Type of resource to be queried. |
-| Value | string | Optional | null | A query for OCS objects in the corresponding query syntax. For example, a query for streams must be in SDS query syntax. A null or empty query will not match any objects.
+| Value | string | Optional | null | A query for OCS resources in the corresponding query syntax. For example, a query for streams must be in SDS query syntax. A null or empty query will not match any data items.
 
 ### DataItemResourceType enumeration
 The `DataItemResourceType` enumeration specifies the OCS resource type included in the data view query.
 
-| Name | Enumeration Id | Description |
+| Name | Enumeration Id | Details |
 |--|--|--|--|
 | Stream | 1 | [SDS streams](xref:sdsStreams)
-| Asset *(Coming Soon)* | 2 | [Assets](xref:AssetsProperties)
+| Asset *(Coming Soon)* | 2 | Assets
 
 ### FieldSet
 A set of fields included in the data view, sharing a common role and query. One `DataView` is likely to include one `FieldSet` per query.
@@ -97,7 +97,7 @@ All sources except `FieldSource.NotApplicable` can be used as data fields. Field
 |Property | Type | Optionality  | Default  | Details |
 |--|--|--|--|--|
 | Source | FieldSource | Optional | NotApplicable | Identifies the `.Source` of the field's values (not applicable for an index field). See the FieldSource enumeration section in this topic for details.
-| Keys | String[] | Optional | [ ] | Used for sources `FieldSource.PropertyId`, `FieldSource.PropertyName`, `FieldSource.Metadata` and `FieldSource.Tags`, e.g. to map to specific stream or object properties by id. If more than one key is specified, they are matched as exclusive-or. A key has to be a non-null value.
+| Keys | String[] | Optional | [ ] | Used for sources `FieldSource.PropertyId`, `FieldSource.PropertyName`, `FieldSource.Metadata` and `FieldSource.Tags`, e.g. to map to specific data item properties by id. If more than one key is specified, they are matched as exclusive-or. A key has to be a non-null value.
 | MeasurementKeys *(Coming Soon)* | String[] | Optional | [ ] | Identifies the measurement name when referencing an asset measurement. `MeasurementKeys` only applies to source `FieldSource.PropertyId`. If more than one key is specified, they are matched as exclusive-or. A key has to be a non-null value.
 | Label | string | Optional | null | Friendly name for the field. Certain tokens have special meaning: one of these, {IdentifyingValue}, is included in the suggested labels of AvailableFieldSets. Tokens that do not resolve are "" (empty string). The label is required in a field for all usages except in an identifying field. Label is trimmed of whitespace when used to identify field mappings. 
 
@@ -121,7 +121,7 @@ See [Sds documentation](xref:sdsTypes#sdstypecode) for details.
 
 ### DataViewShape enumeration
 `DataViewShape` enumeration describes possible output shapes for a data view.
-|Name| Enumeration Id | Description  |
+|Name| Enumeration Id | Details  |
 |--|--|--|
 |Standard | 0 | Fields are resolved into a shape similar to how they were defined. This is the recommended shape unless specific needs dictate.
 |Narrow | 1 | Fields are pivoted vertically, resulting in a view whose schema is independent of what data items are resolved by the data view.

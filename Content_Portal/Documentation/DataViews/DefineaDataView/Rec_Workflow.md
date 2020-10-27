@@ -92,7 +92,7 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
   "Queries": [
     { 
       "Id": "weather",
-	  "Kind": "Stream",
+      "Kind": "Stream",
       "Value":"*weather*" 
     }
   ],
@@ -350,7 +350,7 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
   "Queries": [
     { 
       "Id": "weather",
-	  "Kind": "Stream",
+      "Kind": "Stream",
       "Value":"*weather*" 
     }
   ],
@@ -523,7 +523,7 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
   "Queries": [
     { 
       "Id": "weather",
-	  "Kind": "Stream",
+      "Kind": "Stream",
       "Value":"*weather*" 
     }
   ],
@@ -562,7 +562,7 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
                     ],
                     "Label": "{IdentifyingValue} {FirstKey}"
                 },                
-		{
+                {
                     "Source": "PropertyId",
                     "Keys": [
                         "Temperature"
@@ -668,11 +668,11 @@ A different and complementary way of disambiguating the data items is to “iden
 
 This is also useful for aligning data items across groups. Imagine if each site had an additional stream from a backup weather station:
 
-| Timestamp |	Site |	Primary Temperature | Primary SolarRadiation | Backup Temperature | Backup SolarRadiation
+| Timestamp | Site | Primary Temperature | Primary SolarRadiation | Backup Temperature | Backup SolarRadiation
 |--|--|--|--|--|--|
-| | Biltmore						
+| | Biltmore
 | | Rosecliff
-| | Winterthur						
+| | Winterthur
 
 The data views engine must be told how the streams align across sites. Here, it makes sense to align them by which measurement they represent: _Primary_ or _Backup_.
 
@@ -688,7 +688,7 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
   "Queries": [
     { 
       "Id": "weather",
-	  "Kind": "Stream",
+      "Kind": "Stream",
       "Value":"*weather*" 
     }
   ],
@@ -836,7 +836,7 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
   "Queries": [
     { 
       "Id": "weather",
-	  "Kind": "Stream",
+      "Kind": "Stream",
       "Value":"*weather*" 
     }
   ],

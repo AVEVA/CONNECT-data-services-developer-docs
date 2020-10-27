@@ -1,5 +1,7 @@
 - name: Account Management 
   topicHref: Account_Management_Concepts.md
+- name: Credential Management 
+  topicHref: Credential_Management.md
 - name: Data Storage
   topicHref: Data_Storage_Concepts.md
 - name: Token Management

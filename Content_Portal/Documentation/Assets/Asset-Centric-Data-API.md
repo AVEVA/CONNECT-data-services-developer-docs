@@ -11,7 +11,7 @@ In order to retrieve stream data from an asset, you must first set up measuremen
 The following asset is used in all of the sample output in this topic.
 ```
 {
-    "Id": "IDsample",
+    "Id": "Idsample",
     "Name": "SampleForDemo",
     "Description": "This is a demo asset.",
     "Metadata": [
@@ -34,7 +34,7 @@ The following asset is used in all of the sample output in this topic.
 }
 ```
 
-This is the measurement mappings of asset with id IDsample which is used for all the example output below.
+This is the measurement mappings of asset with id IdSample which is used for all the example output below.
 ```
 [
     {

@@ -14,9 +14,9 @@ The following table lists the most common fields in a status mapping.
 
 | Property            | Type                     | Required? | Searchable? | Description                                                  |
 | ------------------- | ------------------------ | --------- | ----------- | ------------------------------------------------------------ |
-| Name                | String                   | Required  | No          | Name and ID for this status mapping.                         |
+| Name                | String                   | Required  | No          | Name and `Id` for this status mapping.                         |
 | Description         | String                   | Required  | No          | Description of the status mapping.                           |
-| StreamReferenceId   | String                   | Required  | No          | ID for the asset's StreamReference property. The stream reference must exist before the status mapping can be created. |
+| StreamReferenceId   | String                   | Required  | No          | `Id` for the asset's StreamReference property. The stream reference must exist before the status mapping can be created. |
 | StreamPropertyId    | String                   | Required  | No          | SDS stream property that status uses for calculations. It must be present on the StreamId property on the asset StreamReference. |
 | ValueStatusMappings | List<ValueStatusMapping> | Required  | No          | The value status mapping maps values to a given status. See [Value status mapping properties table](xref:AssetStatusMapping#value-status-mapping-properties-table) |
 <!-- Look at StreamPropertyID again. -->
@@ -150,6 +150,8 @@ The response includes a status code and a response body.
 
 Update the status mapping for a given asset or asset type.
 
+For an asset status mappings, you may specify and If-Match property in the HTTP request header to ensure that the status mappings is updated only if the asset version matches. The If-Match property is not available for asset types. 
+
 ### Request
 
 Asset
@@ -205,6 +207,7 @@ The response includes a status code and a response body.
 | 400 Bad Request | error      | The request is not valid. See the response body for additional details. |
 | 403 Forbidden   | error      | You are not authorized to view the requested asset or asset type. |
 | 404 Not Found   | error      | The specified asset or asset type with identifier is not found. |
+| 412 Pre-Condition Failed | error     | The asset failed to update because the If-Match condition failed. |
 
 ***
 

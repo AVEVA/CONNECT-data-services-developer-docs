@@ -6,14 +6,29 @@ uid: AssetsAPI
 
 The Assets API allows you to create, read, update, and delete assets. 
 
-See Access Control API, Asset Centric API, and Assets Search API for additional API methods.
+The asset feature supports the HTTP entity tag (ETag) and If-Match for conditional requests. When a `GET` call is performed, the HTTP response header will include an Etag which indicates what version of the asset resource will be retrieved.
 
-QUESTION: is "methods" the correct term? I'll add links to the topics later. 
+See [Asset and AssetType Access Control API](xref:AssetOrAssetTypeAccessControlAPI), [Asset Centric API](xref:AssetCentricDataAPI), and [Assets Search API](xref:AssetsSearchAPI) for additional API details.
+
+####Example: This is version 7 of this particular asset.
+```
+Etag: "7"
+```
+
+To edit or delete the asset, specify If-Match in the HTTP request header when calling `DELETE` or `PUT`:
+
+####Example: Modify or delete only if the current asset matches version 7. Otherwise, do not perform this operation. If this condition fails, return a 412. 
+
+```
+If-Match : "7"
+```
+
+Note: If-Match is optional. If you want to delete or modify an asset regardless of the asset version, do not specify an If-Match.
 
 ***
 
 ## `Get Asset by Id` 
-Returns the specified asset.
+Returns the specified asset and the version Etag in the HTTP response header.
 
 ### Request 
 ``` 
@@ -29,7 +44,7 @@ The tenant identifier
 
 The namespace identifier
 
-`string assetID`
+`string assetId`
 
 The asset identifier
 
@@ -111,9 +126,9 @@ The response includes a status code and a body.
 ***
 
 ## `Create Asset` 
-Create a new asset with a specified ID. 
+Create a new asset with a specified `Id`. 
 
-If the asset you are trying to create references an asset type (via the AssetTypeId property) and if there is the corresponding asset type has a metadatum with the same id, then the name and sds type code of the metadatum on the asset must be null. If the asset type does not have metadatum with a corresponding id, name and sds type code may not be null.
+If the asset you are trying to create references an asset type (via the AssetTypeId property) and if there is the corresponding asset type has a metadatum with the same `Id`, then the name and SDS type code of the metadatum on the asset must be null. If the asset type does not have metadatum with a corresponding `Id`, name and SDS type code may not be null.
 
 ### Request 
 ```text 
@@ -165,7 +180,7 @@ NOTE: To create an asset with a specific ID, use the API route with ID. If this 
 ```
 ### Response 
 
-The response includes a status code and a body. 
+The response includes a status code, a body, and the Etag version in the HTTP response header.
 
 | Status Code               | Body Type | Description                                     |
 | ------------------------- | --------- | ----------------------------------------------- |
@@ -216,8 +231,7 @@ The response includes a status code and a body.
 
 ## `Create or Update Asset` 
 
-Create or update an asset with a specified ID. 
-<!--- QUESTION: How is this different from Create Asset --->
+Create or update an asset with a specified `Id`. It the asset already exists, you can specify an If-Match property in the HTTP request header to ensure that the asset is modified only if its version matches.
 
 ### Request 
 
@@ -229,15 +243,12 @@ PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 ### Parameters  
 
 .`string tenantId` 
-
 The tenant identifier
 
 `string namespaceId` 
-
 The namespace identifier
 
-`string assetID`
-
+`string assetId`
 The asset identifier
 
 #### Request body 
@@ -246,27 +257,28 @@ The newly created or updated `asset` object.
 
 #### Asset Type Concordance
 
-If an asset type ID is specified for an asset, then the following is true:
-- The stream references name of an asset is set to null if the stream reference ID matches the stream reference ID of the asset type.
+If an asset type `Id` is specified for an asset, then the following is true:
+- The stream references name of an asset is set to null if the stream reference `Id` matches the stream reference `Id` of the asset type.
 - The name of a metadata value is set to null for those metadata values whose IDs match the asset type metadata value IDs.
 
 ### Response 
 
-The response includes a status code and body. 
+The response includes a status code, body, and Etag version in the HTTP response header. 
 
-| Status Code               | Body Type | Description                                     |
-| ------------------------- | --------- | ----------------------------------------------- |
-| 200 OK                    | `Asset`  | The newly created or updated asset as persisted, including values for optional parameters that were omitted in the request.                               |
-| 400 Bad Request             | error     | The request is not valid. The response will include which asset failed validation checks. See the response body for additional details.      |
+| Status Code              | Body Type | Description                                     |
+| -------------------------| --------- | ----------------------------------------------- |
+| 200 OK                   | `Asset`  | The newly created or updated asset as persisted, including values for optional parameters that were omitted in the request.                               |
+| 400 Bad Request          | error     | The request is not valid. The response will include which asset failed validation checks. See the response body for additional details.      |
 | 403 Forbidden            | error     | You are not authorized to update assets. |
 | 404 Not Found            | error     | The asset, with the specified identifier, was not found.            |
-| 409 Conflict | error     | The asset update or create has a conflict. See the response body for additional details. |
+| 409 Conflict             | error     | The asset update or create has a conflict. See the response body for additional details. |
+| 412 Pre-Condition Failed | error     | The asset failed to update because the If-Match condition failed.  |
 
 ***
 
 ## `Delete Asset` 
 
-Delete an asset with a specified ID.
+Delete an asset with a specified `Id`. You may specify an If-Match property in the HTTP request header to ensure that the asset is deleted only if the version matches.
 
 ### Request 
 
@@ -278,15 +290,12 @@ DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetI
 ### Parameters  
 
 `string tenantId` 
-
 The tenant identifier
 
 `string namespaceId` 
-
 The namespace identifier
 
 `string assetID`
-
 The asset identifier
 
 #### Request body 
@@ -299,7 +308,8 @@ The response includes a status code and a body.
 
 | Status Code               | Body Type | Description                                     |
 | ------------------------- | --------- | ----------------------------------------------- |
-| 204 No Content                    | none  | The asset with the specified ID is deleted.                              |
-| 400 Bad Request             | error     | The request is not valid. The response will include which asset failed validation checks. See the response body for additional details.       |
+| 204 No Content            | none  | The asset with the specified `Id` is deleted.                              |
+| 400 Bad Request           | error     | The request is not valid. The response will include which asset failed validation checks. See the response body for additional details.       |
 | 403 Forbidden             | error     | You are not authorized to delete this asset.       |
-| 404 Not Found             | error     | The asset with the specified ID could not be found. 
+| 404 Not Found             | error     | The asset with the specified `Id` could not be found. 
+| 412 Pre-Condition Failed  | error     | The asset failed to update because the If-Match condition failed.  |

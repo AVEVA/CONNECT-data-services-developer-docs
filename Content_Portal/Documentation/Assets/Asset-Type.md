@@ -10,7 +10,7 @@ The asset type API provides methods to create, read, update, and delete asset ty
 - Maintaining assets is simplified. 
 
 ***
-## `Get AssetType by ID`
+## `Get AssetType by Id`
 Returns the specified asset type
 
 ### Request 
@@ -20,7 +20,7 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asset
 ```
 
 ### Parameters
-`string tenantID`   
+`string tenantId`   
 The tenant identifier
 
 `string namespaceId`   
@@ -85,7 +85,7 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes?skip={
 
 ### Parameters
 
-`string tenantID`   
+`string tenantId`   
 The tenant identifier
 
 `string namespaceId`   
@@ -116,7 +116,7 @@ The response includes a status code and a body.
 
 ## `Create AssetType` 
 
-Create a new asset type with a specified ID.
+Create a new asset type with a specified `Id`.
 
 ### Request 
 
@@ -126,7 +126,7 @@ POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 
 ### Parameters
 
-`string tenantID`   
+`string tenantId`   
 The tenant identifier
 
 `string namespaceId`   
@@ -141,7 +141,7 @@ An `AssetType` object
 
 #### Example request body 
 
-To create an asset type with a specific ID, use the API route with ID. If this is used, you must specify a  matching ID field for the `AssetType` object in the JSON object below.
+To create an asset type with a specific `Id`, use the API route with `Id`. If this is used, you must specify a  matching `Id` field for the `AssetType` object in the JSON object below.
 
 ```json 
  {
@@ -197,7 +197,7 @@ POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes
 
 ### Parameters
 
-`string tenantID`   
+`string tenantId`   
 The tenant identifier
 
 `string namespaceId`   
@@ -226,12 +226,12 @@ The response includes a status code and a body.
 ***
 ## `Create or Update AssetType`
 
-Create or update an asset type with a specified ID.
+Create or update an asset type with a specified `Id`.
 
 When updating an asset type which is referenced by assets, the following behaviors may apply:
-- Deleting metadatum on asset type removes it from metadatum on default shape of referenced asset​s
-- Deleting type reference on asset type deletes measurements on default shape of referenced assets​
-- Renaming metadatum on asset type renames metadatum on default shape of referenced assets​
+- Deleting a metadata value on the asset type removes the metadata value on the default shape of any referenced asset​s.
+- Deleting the type reference on the asset type deletes the measurements on the default shape of any referenced assets​.
+- Renaming a metadata value on the asset type renames the metadata value on the default shape of any referenced assets​.
 - Renaming the stream reference name on the asset type on default shape of referenced assets
 
 ### Request 
@@ -243,7 +243,7 @@ PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asset
 
 ### Parameters
 
-`string tenantID`   
+`string tenantId`   
 The tenant identifier
 
 `string namespaceId`   
@@ -275,7 +275,7 @@ The response includes a status code and a body.
 ***
 ## `Delete AssetType` 
 
-Delete an asset type with a specified ID. Note: An `AssetType` object cannot be deleted if it is referenced by an asset. To delete an `AssetType` object, you must first delete all assets that are mapped to it. 
+Delete an asset type with a specified `Id`. Note: An `AssetType` object cannot be deleted if it is referenced by an asset. To delete an `AssetType` object, you must first delete all assets that are mapped to it. 
 
 ### Request 
 
@@ -307,7 +307,7 @@ The response includes a status code and a body.
 
 | Status Code     | Response Type | Description                                                  |
 | --------------- | ------------- | ------------------------------------------------------------ |
-| 200 No Content  | none          | The `AssetType` object with the specified ID has been deleted. |
+| 200 No Content  | none          | The `AssetType` object with the specified `Id` has been deleted. |
 | 400 Bad Request | error         | The request is not valid. The response will include which items fail validation checks. See the response body for additional details. |
 | 403 Forbidden   | error         | You are not authorized to delete this asset type.            |
 | 404 Not Found   | error         | The specified asset type object with identifier is not found. |

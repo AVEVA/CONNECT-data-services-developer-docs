@@ -6,5 +6,7 @@
   topicHref: Data_Storage_Concepts.md
 - name: Least Privilege
   topicHref: Least_Privilege.md
+- name: Roles
+  topicHref: Roles.md
 - name: Token Management
   topicHref: Token_Management.md

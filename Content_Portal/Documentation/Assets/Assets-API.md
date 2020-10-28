@@ -91,7 +91,7 @@ Content-Type: application/json
 ***
 
 ## `Get Assets` 
-Returns an array of assets. 
+Returns an array of assets and returns the total number of assets returned, specified as Total-Count in the HTTP response heaser. 
 
 ### Request 
 ```
@@ -130,7 +130,7 @@ The response includes a status code and a body.
 ## `Create Asset` 
 Create a new asset with a specified `Id`. 
 
-If the asset you are trying to create references an asset type (via the AssetTypeId property) and if there is the corresponding asset type has a metadatum with the same `Id`, then the name and SDS type code of the metadatum on the asset must be null. If the asset type does not have metadatum with a corresponding `Id`, name and SDS type code may not be null.
+If the asset you are trying to create references an asset type (via the AssetTypeId property) and if there is the corresponding asset type has a metadata value with the same `Id`, then the name and SDS type code of the metadata value on the asset must be null. If the asset type does not have metadatum with a corresponding `Id`, name and SDS type code may not be null.
 
 ### Request 
 ```text 
@@ -139,15 +139,12 @@ POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 ### Parameters  
 `string tenantId` 
-
 The tenant identifier
 
 `string namespaceId` 
-
 The namespace identifier
 
 `string assetId`
-
 The asset identifier
 
 

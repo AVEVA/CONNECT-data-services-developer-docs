@@ -15,10 +15,10 @@ In this situation, an asset type can be used to create multiple similar assets. 
 
 | Property      | Type              | Required? | Searchable? | Description                                                  | Asset Property? | Asset Type Property? |
 | ------------- | ----------------- | --------- | ----------- | ------------------------------------------------------------ | ----- | --------------- |
-| Id            | String            | Required  | Yes         | Identifier for referencing this asset. If you do not provide an identifier, OCS uses the name as the identifier. If you do not provide a name, OCS assigns a random GUID for the Id.| Yes  | Yes            |
-| Name          | String            | Optional  | Yes         | User-friendly name. Required if Id is not provided. If Name is used as the Id, it must be unique within a given namespace. | Yes  | Yes            |
+| Id            | String            | Required  | Yes         | `Id` for referencing this asset. If you do not provide an `Id`, OCS copies the name as the identifier`Id`. If you do not provide a name, OCS assigns a random GUID for the `Id`.| Yes  | Yes            |
+| Name          | String            | Required only if `Id` is not specified  | Yes         | User-friendly name. Required if `Id` is not provided. If Name is used as the `Id`, it must be unique within a given namespace. | Yes  | Yes            |
 | Description   | String            | Optional  | Yes         | User-provided description.                                   | Yes  | Yes            |
-| AssetTypeId   | String            | Optional  | No          | Identifier for the asset type that this asset is derived from. To get the merged view of the asset, get the default shape through the /Assets/{assetId}/Shape route. | Yes  | No            |
+| AssetTypeId   | String            | Optional  | No          | `Id` for the asset type that this asset is derived from. To get the merged view of the asset, get the default shape through the /Assets/{assetId}/Shape route. | Yes  | No            |
 | Metadata      | Metadata List     | Optional  | Yes*       | Asset and AssetType Metadata                               | Yes  | Yes            |
 | StreamReferences   | Stream Reference List | Optional  | No *       | Asset Stream References                                             | Yes  | No            |
 | TypeReferences | Type Reference List | Optional  | No*        | Asset Type Type References                                     | No | Yes            |
@@ -31,7 +31,7 @@ An asset or asset type metadata is static information associated with a given as
 
 | Property    | Type   | Required? |  Description                                                  |
 | ----------- | ------ | --------- |  ------------------------------------------------------------ |
-| Id          | String | Required  |  Identifier for the metadata value.                        |
+| Id          | String | Required  |  `Id` for the metadata value.                        |
 | Name        | String | Required  |  User-friendly name for the metadata value.   If not null, must be unique within an asset or asset type.                     |
 | Description | String | Optional  |  User-provided description                                    |
 | SdsTypeCode | Int    | Required  |  This integer corresponds to the SdsTypeCode. Asset attributes support the following integer values: 11 (Int64), 14 (Double), 16 (DateTime), and 18 (String). |
@@ -44,10 +44,10 @@ An asset reference represents dynamic stream data associated with an asset. The 
 
 | Property      | Type   | Required? | Searchable? | Description                                                  |
 | ------------- | ------ | --------- | ----------- | ------------------------------------------------------------ |
-| Id            | String | Required  | No          | Identifier for this stream reference object.  This identifier must be unique within the asset.                    |
+| Id            | String | Required  | No          | `Id` for this stream reference object.  This identifier must be unique within the asset.                    |
 | Name          | String | Required  | No          | User-friendly name for the stream reference object. If not null, must be unique within an asset. |
 | Description   | String | Optional  | No          | Description text.                                            |
-| StreamId      | String | Required  | No          | The SDS stream Id of this stream reference. This SDS stream must exist at the time the asset is created. |
+| StreamId      | String | Required  | No          | The SDS stream `Id` of this stream reference. This SDS stream must exist at the time the asset is created. |
 
 ## AssetType Type Reference Properties
 
@@ -55,10 +55,10 @@ An asset type type reference represents dynamic stream data associated with an a
 
 | Property    | Type   | Required? | Searchable? | Description                                                  |
 | ----------- | ------ | --------- | ----------- | ------------------------------------------------------------ |
-| StreamReferenceId | String | Required | No |The Id for this type reference. If an asset is derived from this asset type, this Id must be referenced in the asset reference type object. This Id must be unique within the asset type. |
+| StreamReferenceId | String | Required | No |The `Id` for this type reference. If an asset is derived from this asset type, this Id must be referenced in the asset reference type object. This `Id` must be unique within the asset type. |
 | StreamReferenceName  | String | Required  | No          | The user friendly name for this type reference. If not null, must be unique within an asset type.|
 | Description | String | Optional  | No          | Description text                                             |
-| TypeId    | String | Required  | No          | This string must be an SDS stream type Id in the referenced SDS stream. |
+| TypeId    | String | Required  | No          | This string must be an SDS stream type `Id` in the referenced SDS stream. |
 
 The following is an example of an asset derived from an asset type.
 

@@ -49,7 +49,7 @@ Content-Type: application/json
   "Queries": [
     { 
       "Id": "weather",
-	  "Kind": "Stream",
+      "Kind": "Stream",
       "Value":"*weather*" 
     }
   ],

@@ -28,7 +28,7 @@ The following represents a data view grouped by "Meter", including fields for th
   "Queries": [
     {
       "Id": "inverters",
-	  "Kind": "Stream",
+      "Kind": "Stream",
       "Value": "TypeId:docs-pi-inverter AND Site:Winterthur"
     }
   ],
@@ -84,7 +84,7 @@ To the data view from the previous example, we will add a `Field` as the `.Ident
   "Queries": [
     {
       "Id": "inverters",
-	  "Kind": "Stream",
+      "Kind": "Stream",
       "Value": "TypeId:docs-pi-inverter AND Site:Winterthur"
     }
   ],

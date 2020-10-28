@@ -28,12 +28,12 @@ For example:
 "Queries": [
   {
     "Id": "inverter power measurements",
-	"Kind": "Stream",
+    "Kind": "Stream",
     "Value": "inverter:* AND measurement:power*"
   },
   {
     "Id": "weather stations",
-	"Kind": "Stream",
+    "Kind": "Stream",
     "Value": "tags:weather"
   },
 ]
@@ -48,7 +48,7 @@ In the example scenario, each power inverter is associated with two streams. It 
 "Queries": [
   {
     "Id": "inverter power measurements",
-	"Kind": "Stream",
+    "Kind": "Stream",
     "Value": "inverter:* AND measurement:power*"
   }
 ]
@@ -67,7 +67,7 @@ An asset query looks identical to a stream query with the exception that query k
 "Queries": [
     {
         "Id": "trucks",
-		"Kind": "Asset",
+        "Kind": "Asset",
         "Value": "Truck*"
     }
 ]
@@ -79,12 +79,12 @@ Note that query kind defaults to Stream if not included in the query definition.
 "Queries": [
     {
         "Id": "truck assets",
-		"Kind": "Asset",
+        "Kind": "Asset",
         "Value": "Truck*"
     },
     {
         "Id": "truck streams",
-		"Kind": "Stream",
+        "Kind": "Stream",
         "Value": "Truck*"
     }
 ]

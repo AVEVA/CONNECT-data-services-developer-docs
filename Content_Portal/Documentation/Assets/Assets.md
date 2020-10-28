@@ -15,7 +15,7 @@ In this situation, an asset type can be used to create multiple similar assets. 
 
 | Property      | Type              | Required? | Searchable? | Description                                                  | Asset Property? | Asset Type Property? |
 | ------------- | ----------------- | --------- | ----------- | ------------------------------------------------------------ | ----- | --------------- |
-| ID            | String            | Required  | Yes         | Identifier for referencing this asset. If you do not provide an identifier, OCS uses the name as the identifier. If you do not provide a name, OCS assigns a random GUID for the ID.| Yes  | Yes            |
+| Id            | String            | Required  | Yes         | Identifier for referencing this asset. If you do not provide an identifier, OCS uses the name as the identifier. If you do not provide a name, OCS assigns a random GUID for the Id.| Yes  | Yes            |
 | Name          | String            | Optional  | Yes         | User-friendly name. Required if Id is not provided. If Name is used as the Id, it must be unique within a given namespace. | Yes  | Yes            |
 | Description   | String            | Optional  | Yes         | User-provided description.                                   | Yes  | Yes            |
 | AssetTypeId   | String            | Optional  | No          | Identifier for the asset type that this asset is derived from. To get the merged view of the asset, get the default shape through the /Assets/{assetId}/Shape route. | Yes  | No            |
@@ -58,7 +58,7 @@ An asset type type reference represents dynamic stream data associated with an a
 | StreamReferenceId | String | Required | No |The Id for this type reference. If an asset is derived from this asset type, this Id must be referenced in the asset reference type object. This Id must be unique within the asset type. |
 | StreamReferenceName  | String | Required  | No          | The user friendly name for this type reference. If not null, must be unique within an asset type.|
 | Description | String | Optional  | No          | Description text                                             |
-| TypeId    | String | Required  | No          | This string must be an SDS stream type ID in the referenced SDS stream. |
+| TypeId    | String | Required  | No          | This string must be an SDS stream type Id in the referenced SDS stream. |
 
 The following is an example of an asset derived from an asset type.
 

@@ -169,7 +169,7 @@ The response includes a status code and a body.
 | ------------------------- | --------- | ----------------------------------------------- |
 | 200 OK                    | `AccessControlList`  | The access control list of the requested asset or asset type.           |
 | 403 Forbidden             | error     | You are not authorized to view the access control list of the requested asset or asset type. |
-| 404 Not Found             | error     | The requested asset or asset type with the specified ID was not found. |
+| 404 Not Found             | error     | The requested asset or asset type with the specified `Id` was not found. |
 | 500 Internal Server Error             | error     | An error occurred while processing the request. See the response body for details.       |
 
 #### Example request body 
@@ -248,7 +248,7 @@ The response includes a status code and, in some instances, a body.
 | 204 No Content                    | (empty)  | Successfully updated the access control list of the specified asset or asset type.            |
 | 400 Bad Request             | error     | The request is not valid. See the response body for details.       |
 | 403 Forbidden             | error     | You are not authorized to update the access control list of the requested asset or asset type. |
-| 404 Not Found             | error     | The requested asset or asset type with the specified ID was not found. |
+| 404 Not Found             | error     | The requested asset or asset type with the specified `Id` was not found. |
 
 ***
 
@@ -301,7 +301,7 @@ The response includes a status code and a body.
 | ------------- | --------- | ------------------------------------------------------------ |
 | 200 OK        | string[]  | A list of access rights to the requested asset or asset type. |
 | 403 Forbidden | error     | You are not authorized to make this request.                 |
-| 404 Not Found | error     | The requested asset or asset type with the specified ID was not found. |
+| 404 Not Found | error     | The requested asset or asset type with the specified `Id` was not found. |
 
 
 #### Example response body
@@ -362,7 +362,7 @@ The response includes a status code and a body.
 | ------------------------- | --------- | ----------------------------------------------- |
 | 200 OK                    | `Trustee`  | The owner of the requested asset or asset type.             |
 | 403 Forbidden             | error     | You are not authorized to view the owner of the requested asset or asset type. |
-| 404 Not Found             | error     | The requested asset or asset type with the specified ID was not found. |
+| 404 Not Found             | error     | The requested asset or asset type with the specified `Id` was not found. |
 
 #### Example response body
 
@@ -442,4 +442,4 @@ The response includes a status code and, in some instances, a body.
 | 204 No Content                    | (empty)  | Successfully updated the asset or asset type owner.            |
 | 400 Bad Request            | error     | The request is not valid. See the response body for details.      |
 | 403 Forbidden             | error     | You are not authorized to update the owner for the requested asset or asset type. |
-| 404 Not Found | error     | The requested asset or asset type with the specified ID was not found. |
+| 404 Not Found | error     | The requested asset or asset type with the specified `Id` was not found. |

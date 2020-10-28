@@ -10,14 +10,16 @@ The asset feature supports the HTTP entity tag (ETag) and If-Match for condition
 
 See [Asset and AssetType Access Control API](xref:AssetOrAssetTypeAccessControlAPI), [Asset Centric API](xref:AssetCentricDataAPI), and [Assets Search API](xref:AssetsSearchAPI) for additional API details.
 
-####Example: This is version 7 of this particular asset.
+####Example 
+This is version 7 of this particular asset.
 ```
 Etag: "7"
 ```
 
 To edit or delete the asset, specify If-Match in the HTTP request header when calling `DELETE` or `PUT`:
 
-####Example: Modify or delete only if the current asset matches version 7. Otherwise, do not perform this operation. If this condition fails, return a 412. 
+####Example
+Modify or delete only if the current asset matches version 7. Otherwise, do not perform this operation. If this condition fails, return a 412. 
 
 ```
 If-Match : "7"
@@ -144,7 +146,7 @@ The tenant identifier
 
 The namespace identifier
 
-`string assetID`
+`string assetId`
 
 The asset identifier
 
@@ -153,7 +155,7 @@ The asset identifier
 An `asset` object
 
 #### Example request body 
-NOTE: To create an asset with a specific ID, use the API route with ID. If this is used, you must specify a matching ID field for the asset object in the JSON object below.
+NOTE: To create an asset with a specific `Id`, use the API route with `Id`. If this is used, you must specify a matching `Id` field for the asset object in the JSON object below.
 
 ```json 
 {
@@ -259,7 +261,7 @@ The newly created or updated `asset` object.
 
 If an asset type `Id` is specified for an asset, then the following is true:
 - The stream references name of an asset is set to null if the stream reference `Id` matches the stream reference `Id` of the asset type.
-- The name of a metadata value is set to null for those metadata values whose IDs match the asset type metadata value IDs.
+- The name of a metadata value is set to null for those metadata values whose `Id` match the asset type metadata value `Id`s.
 
 ### Response 
 
@@ -295,7 +297,7 @@ The tenant identifier
 `string namespaceId` 
 The namespace identifier
 
-`string assetID`
+`string assetId`
 The asset identifier
 
 #### Request body 

@@ -41,7 +41,7 @@ Fields of kind `IndexField` map to the data view's [index field](xref:DataViewsQ
 | FieldIndex | Not applicable |
 
 #### Grouping field
-Fields of kind `GroupingField` map to a single [grouping field](xref:DataViewsGrouping) on the data view.
+Fields of kind `GroupingField` map to a [grouping field](xref:DataViewsGrouping) on the data view.
 
 | DataMapping Property | Details |
 |--|--|
@@ -53,7 +53,7 @@ Fields of kind `GroupingField` map to a single [grouping field](xref:DataViewsGr
 | FieldIndex | The zero-based positioning of the field within the data view's grouping fields |
 
 #### Data field
-Fields of kind `DataField` map to a single [data field](xref:DataViewsFieldSets) on the data view.
+Fields of kind `DataField` map to a [data field](xref:DataViewsFieldSets) on the data view.
 
 | DataMapping Property | Details |
 |--|--|

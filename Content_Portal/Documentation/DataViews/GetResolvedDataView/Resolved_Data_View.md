@@ -101,7 +101,7 @@ Individual metadata value from the metadata list of a `DataItem`.
 | Value | object | Static value assigned to the metadata value
 | Description | string | Extended text description
 | TypeCode | SdsTypeCode| The name of the metadata value's data type
-| Uom | string | The name of the metadata value's unit of measurement
+| Uom | string | The metadata value's unit of measurement identifier
 
 ### DataItemResourceType enumeration
 Describes the resource type of a data item.
@@ -138,7 +138,7 @@ The individual group value from the list of `Groups`.
 |--|--|--|
 | Value | object | This groups's value of each `.GroupingFields` defined on the `DataView`
 | TypeCode | SdsTypeCode | The name of the group's type code
-| Uom | string | The name of the group's unit of measurement
+| Uom | string | The group's unit of measurement identifier
 
 ### FieldMapping
 Details on the provenance on every field of data:

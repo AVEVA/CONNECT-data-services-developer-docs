@@ -109,8 +109,8 @@ For fields that derive data from a data item (e.g. an SDS stream), the `FieldSou
 |NotApplicable | 0 | No | FieldSource is not applicable for an index field
 |Id | 1 | No | The id of the data item
 |Name | 2 | No | The name of the data item
-|PropertyId | 3 | Yes | Data from an SDS type property, found by id
-|PropertyName | 4 | Yes | Data from an SDS type property, found by name
+|PropertyId | 3 | Yes | Data from a property, found by id
+|PropertyName | 4 | Yes | Data from a property, found by name
 |Metadata | 5 | Yes | Value of the data item metadata, found by key
 |Tags | 6 | Yes | Data item tags matching the collection provided
 

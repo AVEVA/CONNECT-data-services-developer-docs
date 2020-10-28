@@ -103,18 +103,18 @@
 <pre><code class="lang-text">
 GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets?skip={skip}&amp;count={count}&amp;orderby={orderby}&amp;query={queryString} 
 </code></pre><h3 id="parameters">Parameters</h3>
-<p><code>string tenantId</code> </p>
-<p>The tenant identifier</p>
-<p><code>string namespaceId</code> </p>
-<p>The namespace identifier</p>
-<p>[Optional] <code>int skip</code> </p>
-<p>An optional parameter representing the zero-based offset of the first asset to retrieve. If not specified, a default value of 0 is used.</p>
-<p>[Optional] <code>int count</code> </p>
-<p>An optional parameter representing the maximum number of assets to retrieve. If not specified, a default value of 100 is used.</p>
-<p>[Optional] <code>[id|name][asc|desc|] orderby</code></p>
-<p>An optional parameter which returns assets ordered either by the asset ID or the asset name. In addition to the property, you can optionally specify either <code>asc</code> or <code>desc</code> to return the results in ascending or descending order. If not specified, the default is ascending order.</p>
+<p><code>string tenantId</code> 
+The tenant identifier</p>
+<p><code>string namespaceId</code> 
+The namespace identifier</p>
 <p><code>string queryString</code>
 The asset query string. Search strings are not case-sensitive.</p>
+<p>[Optional] <code>int skip</code> 
+An optional parameter representing the zero-based offset of the first asset to retrieve. If not specified, a default value of 0 is used.</p>
+<p>[Optional] <code>int count</code> 
+An optional parameter representing the maximum number of assets to retrieve. If not specified, a default value of 100 is used.</p>
+<p>[Optional] <code>[id|name] [asc|desc|] orderby</code>
+An optional parameter which returns assets ordered either by the asset <code>id</code> or the asset <code>name</code>. In addition to the property, you can optionally specify either <code>asc</code> or <code>desc</code> to return the results in ascending or descending order. If not specified, the default is ascending order.</p>
 <h3 id="response">Response</h3>
 <p>The response includes a status code and an array of assets matching the search criteria.</p>
 <table>
@@ -159,11 +159,15 @@ The asset query string. Search strings are not case-sensitive.</p>
 <tbody>
 <tr>
 <td>Id:Id1</td>
-<td>Returns the asset with ID equal to <strong>Id1</strong>.</td>
+<td>Returns the asset with <code>Id</code> equal to <strong>Id1</strong>.</td>
+</tr>
+<tr>
+<td>Id:Id1 Name desc</td>
+<td>Returns the return results for asset with <code>Id</code> equal to <strong>Id1</strong> in descending order by Name.</td>
 </tr>
 <tr>
 <td>Id:Id*</td>
-<td>Returns all assets with ID matching <strong>id</strong>* wildcard.</td>
+<td>Returns all assets with <code>Id</code> matching <strong>id</strong>* wildcard.</td>
 </tr>
 <tr>
 <td>Name:Name1</td>
@@ -171,7 +175,7 @@ The asset query string. Search strings are not case-sensitive.</p>
 </tr>
 <tr>
 <td>Id:Id AND Name:Name1</td>
-<td>Returns all assets with ID matching the <strong>id</strong>* wildcard and with a friendly name equal to <strong>Name1</strong>.</td>
+<td>Returns all assets with <code>Id</code> matching the <strong>id</strong>* wildcard and with a friendly name equal to <strong>Name1</strong>.</td>
 </tr>
 <tr>
 <td>Description:floor1*</td>
@@ -179,27 +183,27 @@ The asset query string. Search strings are not case-sensitive.</p>
 </tr>
 <tr>
 <td>Metadata/Name:Building*</td>
-<td>Returns all assets with at least one metadatum description that contains the string <strong>Building</strong>.</td>
+<td>Returns all assets with at least one metadata value whose description contains the string <strong>Building</strong>.</td>
 </tr>
 <tr>
 <td>Metadata/Description:heater*</td>
-<td>Returns all assets with at least one metadatum description that starts with <strong>heater</strong>.</td>
+<td>Returns all assets with at least one metadata value whose description starts with <strong>heater</strong>.</td>
 </tr>
 <tr>
 <td>Metadata/Value:123</td>
-<td>Returns all assets with at least one metadatum that equals <strong>123</strong>.</td>
+<td>Returns all assets with at least one metadata value whose Value property equals <strong>123</strong>.</td>
 </tr>
 <tr>
 <td>Id:X* AND Metadata/Name:B*</td>
-<td>Returns all assets with ID starting with <strong>X</strong> and containing at least one metadatum with a name that starts with a <strong>B</strong>.</td>
+<td>Returns all assets with Id starting with <strong>X</strong> and containing at least one metadata value with a name that starts with a <strong>B</strong>.</td>
 </tr>
 <tr>
 <td>AssetTypeId:HeaterTypeId</td>
-<td>Returns all assets with AssetTypeId matching HeaterTypeId</td>
+<td>Returns all assets with <code>AssetTypeId</code> matching <code>HeaterTypeId</code></td>
 </tr>
 <tr>
 <td>AssetTypeName:HeaterTypeName</td>
-<td>Returns all assets whose Name field of the AssetType matches HeaterTypeName</td>
+<td>Returns all assets whose Name field of the AssetType matches <code>HeaterTypeName</code></td>
 </tr>
 <tr>
 <td>Measurements/Name:WindMeasure</td>

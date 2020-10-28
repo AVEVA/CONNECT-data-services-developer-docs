@@ -163,7 +163,7 @@
 </table>
 <p>For more information on search syntax, see [Add xref.]</p>
 <h2 id="asset-and-asset-type-metadata-properties">Asset and Asset Type Metadata Properties</h2>
-<p>An asset or asset type metadata is static information associated with a given asset. There are no limitations on the number of metadata contained (?) by an asset. An asset or asset type metadata does not stand alone. It must be specified within an Asset or AssetType object and, therefore, there are no direct API routes to asset or asset type metadata.</p>
+<p>An asset or asset type metadata is static information associated with a given asset. A given metadata contains a list of individual metadata values. There are no limitations on the number of metadata values defined by an asset. An asset or asset type metadata does not stand alone. It must be specified within an asset or asset type object and, therefore, there are no direct API routes to asset or asset type metadata.</p>
 <table>
 <thead>
 <tr>
@@ -175,16 +175,16 @@
 </thead>
 <tbody>
 <tr>
-<td>ID</td>
+<td>Id</td>
 <td>String</td>
 <td>Required</td>
-<td>Identifier for the metadatum.</td>
+<td>Identifier for the metadata value.</td>
 </tr>
 <tr>
 <td>Name</td>
 <td>String</td>
 <td>Required</td>
-<td>User-friendly name for the metadatum.   If not null, must be unique within an asset or asset type.</td>
+<td>User-friendly name for the metadata value.   If not null, must be unique within an asset or asset type.</td>
 </tr>
 <tr>
 <td>Description</td>
@@ -226,7 +226,7 @@
 </thead>
 <tbody>
 <tr>
-<td>ID</td>
+<td>Id</td>
 <td>String</td>
 <td>Required</td>
 <td>No</td>
@@ -251,7 +251,7 @@
 <td>String</td>
 <td>Required</td>
 <td>No</td>
-<td>The SDS stream ID of this stream reference. This SDS stream must exist at the time the asset is created.</td>
+<td>The SDS stream Id of this stream reference. This SDS stream must exist at the time the asset is created.</td>
 </tr>
 </tbody>
 </table>
@@ -273,7 +273,7 @@
 <td>String</td>
 <td>Required</td>
 <td>No</td>
-<td>The ID for this type reference. If an asset is derived from this asset type, this ID must be referenced in the asset reference type object. This ID must be unique within the asset type.</td>
+<td>The Id for this type reference. If an asset is derived from this asset type, this Id must be referenced in the asset reference type object. This Id must be unique within the asset type.</td>
 </tr>
 <tr>
 <td>StreamReferenceName</td>

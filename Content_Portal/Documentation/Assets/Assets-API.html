@@ -79,11 +79,17 @@
 <h1 id="assets-api">Assets API</h1>
 
 <p>The Assets API allows you to create, read, update, and delete assets. </p>
-<p>See Access Control API, Asset Centric API, and Assets Search API for additional API methods.</p>
-<p>QUESTION: is &quot;methods&quot; the correct term? I&#39;ll add links to the topics later. </p>
+<p>The asset feature supports the HTTP entity tag (ETag) and If-Match for conditional requests. When a <code>GET</code> call is performed, the HTTP response header will include an Etag which indicates what version of the asset resource will be retrieved.</p>
+<p>See <a class="xref" href="Access-Control-API.html">Asset and AssetType Access Control API</a>, <a class="xref" href="Asset-Centric-Data-API.html">Asset Centric API</a>, and <a class="xref" href="Asset-Search-API.html">Assets Search API</a> for additional API details.</p>
+<h4 id="example-this-is-version-7-of-this-particular-asset">Example: This is version 7 of this particular asset.</h4>
+<pre><code>Etag: &quot;7&quot;
+</code></pre><p>To edit or delete the asset, specify If-Match in the HTTP request header when calling <code>DELETE</code> or <code>PUT</code>:</p>
+<h4 id="example-modify-or-delete-only-if-the-current-asset-matches-version-7-otherwise-do-not-perform-this-operation-if-this-condition-fails-return-a-412">Example: Modify or delete only if the current asset matches version 7. Otherwise, do not perform this operation. If this condition fails, return a 412.</h4>
+<pre><code>If-Match : &quot;7&quot;
+</code></pre><p>Note: If-Match is optional. If you want to delete or modify an asset regardless of the asset version, do not specify an If-Match.</p>
 <hr>
 <h2 id="get-asset-by-id"><code>Get Asset by Id</code></h2>
-<p>Returns the specified asset.</p>
+<p>Returns the specified asset and the version Etag in the HTTP response header.</p>
 <h3 id="request">Request</h3>
 <pre><code>GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}  
 </code></pre><h3 id="parameters">Parameters</h3>
@@ -91,7 +97,7 @@
 <p>The tenant identifier</p>
 <p><code>string namespaceId</code> </p>
 <p>The namespace identifier</p>
-<p><code>string assetID</code></p>
+<p><code>string assetId</code></p>
 <p>The asset identifier</p>
 <h3 id="response">Response</h3>
 <p>The response includes a status code and a response body. </p>
@@ -200,8 +206,8 @@ Content-Type: application/json
 </table>
 <hr>
 <h2 id="create-asset"><code>Create Asset</code></h2>
-<p>Create a new asset with a specified ID. </p>
-<p>If the asset you are trying to create references an asset type (via the AssetTypeId property) and if there is the corresponding asset type has a metadatum with the same id, then the name and sds type code of the metadatum on the asset must be null. If the asset type does not have metadatum with a corresponding id, name and sds type code may not be null.</p>
+<p>Create a new asset with a specified <code>Id</code>. </p>
+<p>If the asset you are trying to create references an asset type (via the AssetTypeId property) and if there is the corresponding asset type has a metadatum with the same <code>Id</code>, then the name and SDS type code of the metadatum on the asset must be null. If the asset type does not have metadatum with a corresponding <code>Id</code>, name and SDS type code may not be null.</p>
 <h3 id="request-2">Request</h3>
 <pre><code class="lang-text">POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId} 
 </code></pre><h3 id="parameters-2">Parameters</h3>
@@ -237,7 +243,7 @@ Content-Type: application/json
     ]
 }
 </code></pre><h3 id="response-2">Response</h3>
-<p>The response includes a status code and a body. </p>
+<p>The response includes a status code, a body, and the Etag version in the HTTP response header.</p>
 <table>
 <thead>
 <tr>
@@ -316,27 +322,26 @@ Content-Type: application/json
 </table>
 <hr>
 <h2 id="create-or-update-asset"><code>Create or Update Asset</code></h2>
-<p>Create or update an asset with a specified ID. </p>
-<!--- QUESTION: How is this different from Create Asset --->
+<p>Create or update an asset with a specified <code>Id</code>. It the asset already exists, you can specify an If-Match property in the HTTP request header to ensure that the asset is modified only if its version matches.</p>
 <h3 id="request-4">Request</h3>
 <pre><code class="lang-text">PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId} 
 </code></pre><h3 id="parameters-4">Parameters</h3>
-<p>.<code>string tenantId</code> </p>
-<p>The tenant identifier</p>
-<p><code>string namespaceId</code> </p>
-<p>The namespace identifier</p>
-<p><code>string assetID</code></p>
-<p>The asset identifier</p>
+<p>.<code>string tenantId</code> 
+The tenant identifier</p>
+<p><code>string namespaceId</code> 
+The namespace identifier</p>
+<p><code>string assetId</code>
+The asset identifier</p>
 <h4 id="request-body-2">Request body</h4>
 <p>The newly created or updated <code>asset</code> object.</p>
 <h4 id="asset-type-concordance">Asset Type Concordance</h4>
-<p>If an asset type ID is specified for an asset, then the following is true:</p>
+<p>If an asset type <code>Id</code> is specified for an asset, then the following is true:</p>
 <ul>
-<li>The stream references name of an asset is set to null if the stream reference ID matches the stream reference ID of the asset type.</li>
+<li>The stream references name of an asset is set to null if the stream reference <code>Id</code> matches the stream reference <code>Id</code> of the asset type.</li>
 <li>The name of a metadata value is set to null for those metadata values whose IDs match the asset type metadata value IDs.</li>
 </ul>
 <h3 id="response-4">Response</h3>
-<p>The response includes a status code and body. </p>
+<p>The response includes a status code, body, and Etag version in the HTTP response header. </p>
 <table>
 <thead>
 <tr>
@@ -371,20 +376,25 @@ Content-Type: application/json
 <td>error</td>
 <td>The asset update or create has a conflict. See the response body for additional details.</td>
 </tr>
+<tr>
+<td>412 Pre-Condition Failed</td>
+<td>error</td>
+<td>The asset failed to update because the If-Match condition failed.</td>
+</tr>
 </tbody>
 </table>
 <hr>
 <h2 id="delete-asset"><code>Delete Asset</code></h2>
-<p>Delete an asset with a specified ID.</p>
+<p>Delete an asset with a specified <code>Id</code>. You may specify an If-Match property in the HTTP request header to ensure that the asset is deleted only if the version matches.</p>
 <h3 id="request-5">Request</h3>
 <pre><code class="lang-text">DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}   
 </code></pre><h3 id="parameters-5">Parameters</h3>
-<p><code>string tenantId</code> </p>
-<p>The tenant identifier</p>
-<p><code>string namespaceId</code> </p>
-<p>The namespace identifier</p>
-<p><code>string assetID</code></p>
-<p>The asset identifier</p>
+<p><code>string tenantId</code> 
+The tenant identifier</p>
+<p><code>string namespaceId</code> 
+The namespace identifier</p>
+<p><code>string assetID</code>
+The asset identifier</p>
 <h4 id="request-body-3">Request body</h4>
 <p>None</p>
 <h3 id="response-5">Response</h3>
@@ -401,7 +411,7 @@ Content-Type: application/json
 <tr>
 <td>204 No Content</td>
 <td>none</td>
-<td>The asset with the specified ID is deleted.</td>
+<td>The asset with the specified <code>Id</code> is deleted.</td>
 </tr>
 <tr>
 <td>400 Bad Request</td>
@@ -416,7 +426,12 @@ Content-Type: application/json
 <tr>
 <td>404 Not Found</td>
 <td>error</td>
-<td>The asset with the specified ID could not be found.</td>
+<td>The asset with the specified <code>Id</code> could not be found.</td>
+</tr>
+<tr>
+<td>412 Pre-Condition Failed</td>
+<td>error</td>
+<td>The asset failed to update because the If-Match condition failed.</td>
 </tr>
 </tbody>
 </table>

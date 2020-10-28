@@ -84,13 +84,13 @@
 <li>Maintaining assets is simplified. </li>
 </ul>
 <hr>
-<h2 id="get-assettype-by-id"><code>Get AssetType by ID</code></h2>
+<h2 id="get-assettype-by-id"><code>Get AssetType by Id</code></h2>
 <p>Returns the specified asset type</p>
 <h3 id="request">Request</h3>
 <pre><code class="lang-text">
 GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}
 </code></pre><h3 id="parameters">Parameters</h3>
-<p><code>string tenantID</code><br>The tenant identifier</p>
+<p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string assetTypeId</code></p>
 <p>The asset type identifier</p>
@@ -159,7 +159,7 @@ Content-Type: application/json
 <h3 id="request-1">Request</h3>
 <pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes?skip={skip}&amp;count={count}
 </code></pre><h3 id="parameters-1">Parameters</h3>
-<p><code>string tenantID</code><br>The tenant identifier</p>
+<p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p>[Optional] <code>int skip</code><br>Maximum number of asset types to retrieve. If unspecified, the default (100) is used.</p>
 <p>[Optonal] <code>int count</code>
@@ -202,17 +202,17 @@ For more information, see <a href="https://ocs-docs.osisoft.com/Content_Portal/D
 </table>
 <hr>
 <h2 id="create-assettype"><code>Create AssetType</code></h2>
-<p>Create a new asset type with a specified ID.</p>
+<p>Create a new asset type with a specified <code>Id</code>.</p>
 <h3 id="request-2">Request</h3>
 <pre><code class="lang-text">POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}
 </code></pre><h3 id="parameters-2">Parameters</h3>
-<p><code>string tenantID</code><br>The tenant identifier</p>
+<p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string assetTypeId</code><br>The asset type identifier</p>
 <h4 id="request-body">Request body</h4>
 <p>An <code>AssetType</code> object</p>
 <h4 id="example-request-body">Example request body</h4>
-<p>To create an asset type with a specific ID, use the API route with ID. If this is used, you must specify a  matching ID field for the <code>AssetType</code> object in the JSON object below.</p>
+<p>To create an asset type with a specific <code>Id</code>, use the API route with <code>Id</code>. If this is used, you must specify a  matching <code>Id</code> field for the <code>AssetType</code> object in the JSON object below.</p>
 <pre><code class="lang-json"> {
     &quot;Id&quot;: &quot;HeaterType&quot;,
     &quot;Name&quot;: &quot;NameOfHeaterType&quot;,
@@ -275,7 +275,7 @@ For more information, see <a href="https://ocs-docs.osisoft.com/Content_Portal/D
 <h3 id="request-3">Request</h3>
 <pre><code class="lang-text">POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes
 </code></pre><h3 id="parameters-3">Parameters</h3>
-<p><code>string tenantID</code><br>The tenant identifier</p>
+<p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <h4 id="request-body-1">Request body</h4>
 <p>A list of <code>AssetType</code> objects</p>
@@ -317,18 +317,18 @@ For more information, see <a href="https://ocs-docs.osisoft.com/Content_Portal/D
 </table>
 <hr>
 <h2 id="create-or-update-assettype"><code>Create or Update AssetType</code></h2>
-<p>Create or update an asset type with a specified ID.</p>
+<p>Create or update an asset type with a specified <code>Id</code>.</p>
 <p>When updating an asset type which is referenced by assets, the following behaviors may apply:</p>
 <ul>
-<li>Deleting metadatum on asset type removes it from metadatum on default shape of referenced asset​s</li>
-<li>Deleting type reference on asset type deletes measurements on default shape of referenced assets​</li>
-<li>Renaming metadatum on asset type renames metadatum on default shape of referenced assets​</li>
+<li>Deleting a metadata value on the asset type removes the metadata value on the default shape of any referenced asset​s.</li>
+<li>Deleting the type reference on the asset type deletes the measurements on the default shape of any referenced assets​.</li>
+<li>Renaming a metadata value on the asset type renames the metadata value on the default shape of any referenced assets​.</li>
 <li>Renaming the stream reference name on the asset type on default shape of referenced assets</li>
 </ul>
 <h3 id="request-4">Request</h3>
 <pre><code class="lang-text">PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId} 
 </code></pre><h3 id="parameters-4">Parameters</h3>
-<p><code>string tenantID</code><br>The tenant identifier</p>
+<p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string assetTypeId</code><br>The asset type identifier</p>
 <h4 id="request-body-2">Request body</h4>
@@ -371,7 +371,7 @@ For more information, see <a href="https://ocs-docs.osisoft.com/Content_Portal/D
 </table>
 <hr>
 <h2 id="delete-assettype"><code>Delete AssetType</code></h2>
-<p>Delete an asset type with a specified ID. Note: An <code>AssetType</code> object cannot be deleted if it is referenced by an asset. To delete an <code>AssetType</code> object, you must first delete all assets that are mapped to it. </p>
+<p>Delete an asset type with a specified <code>Id</code>. Note: An <code>AssetType</code> object cannot be deleted if it is referenced by an asset. To delete an <code>AssetType</code> object, you must first delete all assets that are mapped to it. </p>
 <h3 id="request-5">Request</h3>
 <pre><code class="lang-text">DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}
 </code></pre><h3 id="parameters-5">Parameters</h3>
@@ -397,7 +397,7 @@ For more information, see <a href="https://ocs-docs.osisoft.com/Content_Portal/D
 <tr>
 <td>200 No Content</td>
 <td>none</td>
-<td>The <code>AssetType</code> object with the specified ID has been deleted.</td>
+<td>The <code>AssetType</code> object with the specified <code>Id</code> has been deleted.</td>
 </tr>
 <tr>
 <td>400 Bad Request</td>

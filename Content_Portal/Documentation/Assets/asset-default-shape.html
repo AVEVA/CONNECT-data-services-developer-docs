@@ -83,17 +83,20 @@
 <h2 id="get-default-shape-of-an-asset"><code>Get Default Shape of an Asset</code></h2>
 <p>Returns the default shape of an asset.</p>
 <h2 id="default-shape-metadata-value-rules">Default Shape Metadata Value Rules</h2>
-<p>If an asset references an asset type, the following rules and examples apply for a given <strong>metadata value</strong>:</p>
+<p>When an asset references an asset type, the following rules explain how the values are derived for a given <code>Metadata</code> value on the default shape.</p>
 <ul>
-<li>If a metadata value with the same <strong>id</strong> exists on the asset type and asset, the metadata value  <strong>Name</strong>, <strong>UOM</strong>, and <strong>SdsTypeCode</strong> of the asset type take precedence over any values on the asset.</li>
-<li>If the metadata value with the same <strong>id</strong> exists on the asset type and asset, the <strong>value</strong> on the asset is used if it is not null. &lt;! -- What is &quot;it&quot; referring to? The value on the asset type? --&gt; The <strong>value</strong> of the metadata value on the asset will be coerced to the <strong>SdsTypeCode</strong> of the asset type if they do not match. If the <strong>value</strong> of the metadata value on the asset is null, then the <strong>value</strong> of the asset type&#39;s metadata value is used, unless that value is also null. In this instance, the <strong>value</strong> on the default shape is zero for numerical shapes and it is an empty string for strings.</li>
-<li>If the metadata value with the same <strong>id</strong> exists on the asset, but it does not exist on the asset type, then the asset&#39;s metadata value appears on the default shape, unless the <strong>name</strong> is null. In this instance, the metadata value does not appear on the default shape.</li>
+<li>If a <code>Metadata</code> value with the same <code>Id</code> exists on the asset type and asset, the <code>Metadata</code> value properties, <code>Name</code>, <code>UOM</code>, and <code>SdsTypeCode</code>, of the asset type take precedence over the asset properties.</li>
+<li>If the <code>Metadata</code> value with the same <code>Id</code> exists on the asset type and asset, the <code>Value</code> property on the asset takes precedence (Example 3) if its value is not null.  </li>
+<li>If the <code>Value</code> property on the asset is null, then the <code>Value</code> property of the asset type&#39;s <code>Metadata</code> value is used (Example 2) unless that value is also null. In this instance, the <code>Value</code> property on the default shape is zero for shapes whose <code>SdsTypeCode</code> is a numeric type, and it is an empty string for shapes whose <code>SdsTypeCode</code> is string. (Example 1).</li>
+<li>If the <code>SdsTypeCode</code> on the asset and asset type do not match, then the <code>Value</code> property of the <code>Metadata</code> value on the default shape will be coerced to the <code>SdsTypeCode</code> property of the asset type (Examples 7 and 8).</li>
+<li>If the <code>Metadata</code> value with the same <code>Id</code> exists on the asset and the default shape, but the <code>Metadata</code> value does not exist on the asset type, then the asset&#39;s <code>Metadata</code> value appears on the default shape (Example 4), unless the asset&#39;s <code>Name</code> property is null. In this instance, the <code>Metadata</code> value does not appear on the default shape (Example 5).</li>
 </ul>
 <h3 id="examples">Examples</h3>
 <p>The examples in the following table illustrate the default shape metadata value rules.</p>
 <table>
 <thead>
 <tr>
+<th>Example</th>
 <th>Metadata value on asset type</th>
 <th>Metadata value on asset</th>
 <th>Metadata value on default shape</th>
@@ -102,52 +105,60 @@
 </thead>
 <tbody>
 <tr>
-<td>id=&quot;md_id&quot;<br> name=&quot;<strong>m1</strong>&quot;<br>  value=null</td>
-<td>id=&quot;md_id&quot;<br> name=null<br>  value=null</td>
-<td>id=&quot;md_id&quot;<br> name=&quot;<strong>m1</strong>&quot;<br>  value=See Details</td>
-<td style="text-align:left">For numeric SdsTypeCode, the value for <strong>m1</strong> is 0. For string SdsTypeCode, the value for <strong>m1</strong> is an empty string. For both, the metadatum &lt;! -- metadata <strong>value</strong>? --&gt; is returned, along with UOM and SdsTypeCode from the asset type.</td>
+<td>1</td>
+<td><code>Id</code> =&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m1</strong>&quot;<br>  <code>Value</code>=null</td>
+<td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=null<br>  <code>Value</code>=null</td>
+<td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m1</strong>&quot;<br> <code>Value</code>=See Details</td>
+<td style="text-align:left">For a numeric <code>SdsTypeCode</code>, the value of the <code>Value</code> property for <strong>m1</strong> is 0. For a string <code>SdsTypeCode</code>, the value of the <code>Value</code> property for <strong>m1</strong> is an empty string. For both, the <code>Metadata</code> value properties are returned, along with the <code>UOM</code> and <code>SdsTypeCode</code>, for the asset type.</td>
 </tr>
 <tr>
-<td>id=&quot;md_id&quot;<br> name=&quot;<strong>m2</strong>&quot;<br>  value=10</td>
-<td>id=&quot;md_id&quot;<br> name=null<br>  value=null</td>
-<td>id=&quot;md_id&quot;<br> name=&quot;<strong>m2</strong>&quot;<br>  value=10</td>
-<td style="text-align:left">m2 appears on the default shape with value=10, along with UOM and SdsTypeCode from the asset type.</td>
+<td>2</td>
+<td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m2</strong>&quot;<br>  <code>Value</code>=10</td>
+<td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=null<br> <code>Value</code>=null</td>
+<td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m2</strong>&quot;<br>  <code>Value</code>=10</td>
+<td style="text-align:left"><strong>m2</strong> appears on the default shape with <code>Value</code>=10, along with <code>UOM</code> and <code>SdsTypeCode</code> from the asset type.</td>
 </tr>
 <tr>
-<td>id=&quot;md_id&quot;<br> name=&quot;<strong>m3</strong>&quot;<br>  value=10</td>
-<td>id=&quot;md_id&quot;<br> name=null<br>  value=20</td>
-<td>id=&quot;md_id&quot;<br> name=&quot;<strong>m3</strong>&quot;<br>  value=20</td>
-<td style="text-align:left"><strong>m3</strong> appears on the default shape with value=20, along with UOM and SdsTypeCode from the asset type. The value on the asset metadata value always overrides the value on the asset type.</td>
+<td>3</td>
+<td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m3</strong>&quot;<br>  <code>Value</code>=10</td>
+<td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=null<br>  <code>Value</code>=20</td>
+<td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m3</strong>&quot;<br>  <code>Value</code>=20</td>
+<td style="text-align:left"><strong>m3</strong> appears on the default shape with <code>Value</code>=20, along with <code>UOM</code> and <code>SdsTypeCode</code> from the asset type. The <code>Value</code> property on the asset <code>Metadata</code> value always overrides the <code>Value</code> property on the asset type.</td>
 </tr>
 <tr>
+<td>4</td>
 <td>Not present</td>
-<td>id=&quot;md_id&quot;<br> name=&quot;<strong>m5</strong>&quot;<br>  value=30</td>
-<td>id=&quot;md_id&quot;<br> name=&quot;<strong>m5</strong>&quot;<br>  value=30</td>
-<td style="text-align:left">m5 appears on the default shape with value =30, along with UOM and SdsTypeCode from the asset. Since this metadatum &lt;! -- <strong>value</strong>? --&gt; does not exist on the asset type, the metadata value on the default shape takes the value of the asset.</td>
+<td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m5</strong>&quot;<br>  <code>Value</code>=30</td>
+<td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m5</strong>&quot;<br>  <code>Value</code>=30</td>
+<td style="text-align:left">m5 appears on the default shape with value =30, along with <code>UOM</code> and <code>SdsTypeCode</code> from the asset. Because this metadata value does not exist on the asset type, the metadata value on the default shape takes the value of the asset.</td>
 </tr>
 <tr>
+<td>5</td>
 <td>Not present</td>
-<td>id=&quot;md_id&quot;<br> name=null<br>  value=30</td>
+<td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=null<br>  <code>Value</code>=30</td>
 <td>Not present</td>
-<td style="text-align:left">Because there is no metadata value with id = md_id on the asset type and the name of the metadata value on the asset is null, then this metadata value does not appear on the default shape.</td>
+<td style="text-align:left">Because there is no <code>Metadata</code> value with <code>Id</code> = &quot;md_id&quot; on the asset type and the name of the <code>Metadata</code> value on the asset is null, then this <code>Metadata</code> value does not appear on the default shape.</td>
 </tr>
 <tr>
-<td>id=&quot;md_id&quot;<br> name=&quot;<strong>m7</strong>&quot;<br>  value=10</td>
-<td>id=&quot;md_id&quot;<br> name=null<br>  value=&quot;a string value&quot;</td>
-<td>id=&quot;md_id&quot;<br> name=&quot;<strong>m7</strong>&quot;<br>  value=10</td>
-<td style="text-align:left">The metadata value with id &quot;md_id&quot; has different SdsTypeCodes. Therefore, the default shape&#39;s metadata value takes the value of the asset type&#39;s metadata value for id (&quot;md_id&quot;), along with the UOM and SdsTypeCode from the asset type.</td>
+<td>6</td>
+<td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m7</strong>&quot;<br>  <code>Value</code>=10</td>
+<td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=null<br>  <code>Value</code>=&quot;a string value&quot;</td>
+<td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m7</strong>&quot;<br>  <code>Value</code>=10</td>
+<td style="text-align:left">The <code>Metadata</code> value with <code>Id</code>= &quot;md_id&quot; has a different <code>SdsTypeCode</code> on the asset and asset type. Therefore, the default shape&#39;s <code>Metadata</code> value takes the  asset type&#39;s <code>Metadata</code> value for <code>Id</code> (&quot;md_id&quot;). It also takes the asset type&#39;s  <code>Metadata</code> value for <code>UOM</code>, and <code>SdsTypeCode</code>.</td>
 </tr>
 <tr>
-<td>id=&quot;md_id&quot;<br> name=&quot;<strong>m8</strong>&quot;<br>  value=10</td>
-<td>id=&quot;md_id&quot;<br> name=null<br>  value=&quot;a string value&quot;</td>
-<td>id=&quot;md_id&quot;<br> name=&quot;<strong>m8</strong>&quot;<br>  value=0</td>
-<td style="text-align:left">The metadata value with id &quot;md_id&quot; has different SdsTypeCodes. Therefore, the default shape&#39;s metadata value will coerce the overloaded value from the asset to the SdsTypecode on the asset type for the default shape, along with UOM and SdsTypeCode from the asset type.</td>
+<td>7</td>
+<td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m8</strong>&quot;<br>  <code>Value</code>=10</td>
+<td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=null<br>  <code>Value</code>=&quot;a string value&quot;</td>
+<td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m8</strong>&quot;<br> <code>Value</code>=0</td>
+<td style="text-align:left">The <code>Metadata</code> value with <code>Id</code>=&quot;md_id&quot; has different <code>SdsTypeCode</code> on the asset and asset type. Therefore, the default shape&#39;s <code>Metadata</code> value coerces the overloaded <code>Value</code> from the asset to the <code>SdsTypecode</code> on the asset type.  It also takes the  <code>Metadata</code> value for <code>UOM</code> and <code>SdsTypeCode</code> from the asset type.<!-- What's the difference between examples 6 and 7. Why is default shape's Value=10 in example 6 and Value=0 in example 7?--></td>
 </tr>
 <tr>
-<td>id=&quot;md_id&quot;<br> name=&quot;<strong>m9</strong>&quot;<br>  value=10</td>
-<td>id=&quot;md_id&quot;<br> name=null<br>  value=&quot;1.23&quot;</td>
-<td>id=&quot;md_id&quot;<br> name=&quot;<strong>m9</strong>&quot;<br>  value=1</td>
-<td style="text-align:left">The metadata value with id &quot;md_id&quot; has different SdsTypeCodes. Therefore, the default shape&#39;s metadata value will coerce the overloaded value from the asset to the SdsTypecode on the asset type for the default shape, along with UOM and SdsTypeCode from the asset type.</td>
+<td>8</td>
+<td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m9</strong>&quot;<br> <code>Value</code>=10</td>
+<td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=null<br> <code>Value</code>=&quot;1.23&quot;</td>
+<td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m9</strong>&quot;<br>  <code>Value</code>=1</td>
+<td style="text-align:left">The <code>Metadata</code> value with <code>Id</code>=&quot;md_id&quot; has a different <code>SdsTypeCode</code> on the asset and asset type. Therefore, the default shape&#39;s <code>Metadata</code> value coerces the overloaded <code>Value</code> from the asset to the <code>SdsTypecod</code>e on the asset type. It also takes the  <code>Metadata</code> value for <code>UOM</code> and <code>SdsTypeCode</code> from the asset type.</td>
 </tr>
 </tbody>
 </table>
@@ -172,7 +183,7 @@
 <p>The tenant identifier</p>
 <p><code>string namespaceId</code> </p>
 <p>The namespace identifier</p>
-<p><code>string assetID</code></p>
+<p><code>string assetId</code></p>
 <p>The asset identifier</p>
 <h3 id="response">Response</h3>
 <p>The response includes a status code and a response body.</p>

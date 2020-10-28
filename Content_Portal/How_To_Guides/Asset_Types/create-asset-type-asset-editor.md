@@ -27,7 +27,7 @@ uid: CreateAssetType
 
    Note: Metadata is static attributes about assets, for example, model or region.
 
-   <! -- We need a definition for metadata that covers its use in different OCS contexts. --> 
+   <!-- We need a definition for metadata that covers its use in different OCS contexts. --> 
 
 2. Click **Add Metadata**.
 
@@ -40,7 +40,7 @@ uid: CreateAssetType
 5. (Optional) Enter a value for the metadata and select a type. 
    Note: The value must match the selected type. The following date/time format is supported: MM/DD/(YY)YY hh:mm(:ss).
 
-   <--WRITER NOTE: What date/time formats are supported? Is this the same as for PI Server? i.e., Microsoft standard date/time formats? -->
+   <!--WRITER NOTE: What date/time formats are supported? Is this the same as for PI Server? i.e., Microsoft standard date/time formats? -->
 
 6. (Optional) Select a UOM.
 
@@ -77,7 +77,7 @@ uid: CreateAssetType
 2. Click **Add Status Configuration**.
 3. In the Select Measurement window, click the measurement that you want to display status for. Click **Continue**.
 
-    Note: You can only display the status for one measurement. 
+    Note: You can only specify one measurement with enumerated states as the the asset's status.
 
 1. Click the status icons to map the icon for each value.
     ![Mapping status icons](..\images\map-status-values.png)

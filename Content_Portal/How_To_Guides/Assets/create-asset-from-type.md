@@ -8,6 +8,7 @@ uid: CreateAssetFromAssetType
 
 
 2. Click the plus symbol (+) in the toolbar to open the Select Type for New Asset window. 
+
 3. Select the type from the list and click **Continue**.
     The details blade opens on the right side.
 
@@ -45,12 +46,12 @@ uid: CreateAssetFromAssetType
 
 12. Click **Configure UOMs**. 
 
-13. On the Configure UOMs page, make any changes to the property UOMs.
+15. On the Configure UOMs page, make any changes to the property UOMs.
 
-       <!-- WRITER'S NOTE: Which UOMs are configurable and which are not? Booleans are not. -->
+    Note: UOMs can be set only on numeric types.
 
-14. When you are done, click **Save**.
+2. When you are done, click **Save**.
 
-       Note: Once you click **Save**, any changes are immediately made to the UOMs on the stream, regardless of any other actions you take on this asset. For example, the UOM changes to the stream are not reversed if you click **Cancel** on the Measurements tab or if you delete the asset.
+     Note: Once you click **Save**, any changes are immediately made to the UOMs on the stream, regardless of any other actions you take on this asset. For example, the UOM changes to the stream are not reversed if you click **Cancel** on the Measurements tab or if you delete the asset.
 
-15. Click **Save** to save the asset.
+3. Click **Save** to save the asset.

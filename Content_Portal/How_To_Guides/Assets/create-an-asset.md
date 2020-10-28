@@ -77,7 +77,17 @@ Follow the procedures to create an asset, add and configure its metadata and mea
 
 8. Clear the **Include** checkbox to remove any measurements you don't want to include.
 
-9. Click **Preview** to see a simple list of all measurements from all streams associated with this asset.
+8. Click **Configure UOMs**. 
+
+9. On the Configure UOMs page, make any changes to the property UOMs.
+
+    Note: UOMs can be set only on numeric types.
+
+1. When you are done, click **Save**.
+
+    Note: Once you click **Save**, any changes are immediately made to the UOMs on the stream, regardless of any other actions you take on this asset. For example, the UOM changes to the stream are not reversed if you click **Cancel** on the Measurements tab or if you delete the asset.
+
+2. Click **Preview** to see a simple list of all measurements from all streams associated with this asset.
 
 ### Add status tracking to the asset
 
@@ -87,9 +97,9 @@ Follow the procedures to create an asset, add and configure its metadata and mea
 
 3. In the Select Measurement window, click the measurement that you want to display status for. Click **Continue**.
 
-    Note: Status can be displayed only for measurements with enumerated states or string values, and, therefore, only these measurements are displayed. 
+    Note: Only measurements with enumerated states or string values can be selected for the asset status;  therefore, only these measurements are displayed. 
 
-    You can only display the status for one measurement. 
+    You can only specify one measurement as the asset's status. 
 
 1. Click the status icons to map the icon for each value.
     ![Mapping status icons](..\images\map-status-values.png)

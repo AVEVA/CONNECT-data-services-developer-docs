@@ -44,7 +44,7 @@ An asset reference represents dynamic stream data associated with an asset. The 
 
 | Property      | Type   | Required? | Searchable? | Description                                                  |
 | ------------- | ------ | --------- | ----------- | ------------------------------------------------------------ |
-| Id            | String | Required  | No          | `Id` for this stream reference object.  This identifier must be unique within the asset.                    |
+| Id            | String | Required  | No          | `Id` for this stream reference object.  This `Id` must be unique within the asset.                    |
 | Name          | String | Required  | No          | User-friendly name for the stream reference object. If not null, must be unique within an asset. |
 | Description   | String | Optional  | No          | Description text.                                            |
 | StreamId      | String | Required  | No          | The SDS stream `Id` of this stream reference. This SDS stream must exist at the time the asset is created. |

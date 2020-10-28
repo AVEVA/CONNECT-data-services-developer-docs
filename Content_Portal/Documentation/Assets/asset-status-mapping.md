@@ -1,5 +1,5 @@
 ---
-uid:AssetStatusMapping
+uid: AssetStatusMapping
 ---
 
 # Asset Status Mapping
@@ -33,7 +33,7 @@ The following table lists the most common fields in a value status mapping. A si
 
 ## Status enumerations
 
-The following are valid status enumerations: <! -- Is this meant to be an example of a valid status enumeration? -->
+The following are valid status enumerations: <!-- Is this meant to be an example of a valid status enumeration? -->
 
 - Unknown = 0
 - Good = 1
@@ -64,7 +64,7 @@ The following is an example of a status mapping.
 }
 ```
 
-The asset or asset type's  StreamReferences field has an Id property. To assign a status mapping to an asset or asset type, the value assigned to the Id property must match the StreamReferenceId of the status mapping object. Using the status mapping example above, AssetStreamReferenceID is assigned to the asset in the following example. 
+The asset or asset type's  StreamReferences field has an Id property. To assign a status mapping to an asset or asset type, the value assigned to the Id property must match the StreamReferenceId of the status mapping object. Using the status mapping example above, AssetStreamReferenceId is assigned to the asset in the following example. 
 
 ```
 {
@@ -278,7 +278,7 @@ The asset identifier
 
 #### Example POST body
 
-Lists the asset IDs whose status you are interested in.
+Lists the asset `Id`s whose status you are interested in.
 
 ```
 Content-Type: application/json

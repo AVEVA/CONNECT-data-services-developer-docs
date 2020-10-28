@@ -34,7 +34,7 @@ The following asset is used in all of the sample output in this topic.
 }
 ```
 
-This is the measurement mappings of asset with id IdSample which is used for all the example output below.
+This is the measurement mappings of asset with `Id` IdSample which is used for all the example output below.
 ```
 [
     {

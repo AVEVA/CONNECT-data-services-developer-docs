@@ -75,7 +75,7 @@ Content-Type: application/json
 
 ## `Get AssetTypes` 
 
-Returns a list of asset types
+Returns a list of asset types and the total number of returned asset types, specified as Total-Count in the HTTP response header.
 
 ### Request 
 
@@ -141,7 +141,7 @@ An `AssetType` object
 
 #### Example request body 
 
-To create an asset type with a specific `Id`, use the API route with `Id`. If this is used, you must specify a  matching `Id` field for the `AssetType` object in the JSON object below.
+To create an asset type with a specific `Id`, use the API route with `Id`. If this is used, you must specify a matching `Id` field for the `AssetType` object in the JSON object below.
 
 ```json 
  {
@@ -229,9 +229,9 @@ The response includes a status code and a body.
 Create or update an asset type with a specified `Id`.
 
 When updating an asset type which is referenced by assets, the following behaviors may apply:
-- Deleting a metadata value on the asset type removes the metadata value on the default shape of any referenced asset​s.
+- Deleting a metadata value on the asset type removes the metadata value on the default shape of referenced asset​s.
 - Deleting the type reference on the asset type deletes the measurements on the default shape of any referenced assets​.
-- Renaming a metadata value on the asset type renames the metadata value on the default shape of any referenced assets​.
+- Renaming a metadata value on the asset type renames the metadata value on the default shape of referenced assets​.
 - Renaming the stream reference name on the asset type on default shape of referenced assets
 
 ### Request 

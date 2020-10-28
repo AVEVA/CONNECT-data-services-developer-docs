@@ -28,13 +28,13 @@ The examples in the following table illustrate the default shape metadata value 
 
 | Example | Metadata value on asset type                          | Metadata value on asset                                      | Metadata value on default shape                           | Details                                                      |
 | ------- | ----------------------------------------------------- | ------------------------------------------------------------ | --------------------------------------------------------- | :----------------------------------------------------------- |
-| 1       | `Id` ="md_id"<br/> `Name`="**m1**"<br/>  `Value`=null | `Id`="md_id"<br> `Name`=null<br>  `Value`=null               | `Id`="md_id"<br> `Name`="**m1**"<br> ` Value`=See Details | For a numeric `SdsTypeCode`, the value of the `Value` property for **m1** is 0. For a string `SdsTypeCode`, the value of the `Value` property for **m1** is an empty string. For both, the `Metadata` value properties are returned, along with the `UOM` and `SdsTypeCode`, for the asset type. |
+| 1       | `Id` ="md_id"<br/> `Name`="**m1**"<br/>  `Value`=null | `Id`="md_id"<br> `Name`=null<br>  `Value`=null               | `Id`="md_id"<br> `Name`="**m1**"<br> ` Value`=See Details | For a numeric `SdsTypeCode`, the value of the `Value` property for **m1** is 0. For a string `SdsTypeCode`, the value of the `Value` property for **m1** is an empty string. For both, the `Metadata` value is returned, along with the `UOM` and `SdsTypeCode`, for the asset type. |
 | 2       | `Id`="md_id"<br/> `Name`="**m2**"<br/>  `Value`=10    | `Id`="md_id"<br/> `Name`=null<br/> `Value`=null              | `Id`="md_id"<br/> `Name`="**m2**"<br/>  `Value`=10        | **m2** appears on the default shape with `Value`=10, along with `UOM` and `SdsTypeCode` from the asset type. |
 | 3       | `Id`="md_id"<br/> `Name`="**m3**"<br/>  `Value`=10    | `Id`="md_id"<br/> `Name`=null<br/>  `Value`=20               | `Id`="md_id"<br/> `Name`="**m3**"<br/>  `Value`=20        | **m3** appears on the default shape with `Value`=20, along with `UOM` and `SdsTypeCode` from the asset type. The `Value` property on the asset `Metadata` value always overrides the `Value` property on the asset type. |
-| 4       | Not present                                           | `Id`="md_id"<br/> `Name`="**m5**"<br/>  `Value`=30           | `Id`="md_id"<br/> `Name`="**m5**"<br/>  `Value`=30        | m5 appears on the default shape with value =30, along with `UOM` and `SdsTypeCode` from the asset. Because this metadata value does not exist on the asset type, the metadata value on the default shape takes the value of the asset. |
+| 4       | Not present                                           | `Id`="md_id"<br/> `Name`="**m4**"<br/>  `Value`=30           | `Id`="md_id"<br/> `Name`="**m4**"<br/>  `Value`=30        | m4 appears on the default shape with value =30, along with `UOM` and `SdsTypeCode` from the asset. Because this metadata value does not exist on the asset type, the metadata value on the default shape takes the value of the asset. |
 | 5       | Not present                                           | `Id`="md_id"<br/> `Name`=null<br/>  `Value`=30               | Not present                                               | Because there is no `Metadata` value with `Id` = "md_id" on the asset type and the name of the `Metadata` value on the asset is null, then this `Metadata` value does not appear on the default shape. |
-| 6       | `Id`="md_id"<br/> `Name`="**m7**"<br/>  `Value`=10    | `Id`="md_id"<br/> `Name`=null<br/>  `Value`="a string value" | `Id`="md_id"<br/> `Name`="**m7**"<br/>  `Value`=10        | The `Metadata` value with `Id`= "md_id" has a different `SdsTypeCode` on the asset and asset type. Therefore, the default shape's `Metadata` value takes the  asset type's `Metadata` value for `Id` ("md_id"). It also takes the asset type's  `Metadata` value for `UOM`, and `SdsTypeCode`. |
-| 7       | `Id`="md_id"<br/> `Name`="**m8**"<br/>  `Value`=10    | `Id`="md_id"<br/> `Name`=null<br/>  `Value`="a string value" | `Id`="md_id"<br/> `Name`="**m8**"<br/> ` Value`=0         | The `Metadata` value with `Id`="md_id" has different `SdsTypeCode` on the asset and asset type. Therefore, the default shape's `Metadata` value coerces the overloaded `Value` from the asset to the `SdsTypecode` on the asset type.  It also takes the  `Metadata` value for `UOM` and `SdsTypeCode` from the asset type.<!-- What's the difference between examples 6 and 7. Why is default shape's Value=10 in example 6 and Value=0 in example 7?--> |
+| 6       | `Id`="md_id"<br/> `Name`="**m6**"<br/>  `Value`=10    | `Id`="md_id"<br/> `Name`="anotherName"<br/>  `Value`="1234" | `Id`="md_id"<br/> `Name`="**m6**"<br/>  `Value`=10        | The `Metadata` value with `Id`= "md_id" is not null. Therefore, the default shape's `Metadata` value takes the  asset type's `Metadata` value. |
+| 7       | `Id`="md_id"<br/> `Name`="**m7**"<br/>  `Value`=10    | `Id`="md_id"<br/> `Name`=null<br/>  `Value`="a string value" | `Id`="md_id"<br/> `Name`="**m7**"<br/> ` Value`=0         | The `Metadata` value with `Id`="md_id" has different `SdsTypeCode` on the asset and asset type. Therefore, the default shape's `Metadata` value coerces the overloaded `Value` from the asset to the `SdsTypecode` on the asset type.  It also takes the  `Metadata` value for `UOM` and `SdsTypeCode` from the asset type. |
 | 8       | `Id`="md_id"<br/> `Name`="**m9**"<br/> ` Value`=10    | `Id`="md_id"<br/> `Name`=null<br/> ` Value`="1.23"           | `Id`="md_id"<br/> `Name`="**m9**"<br/>  `Value`=1         | The `Metadata` value with `Id`="md_id" has a different `SdsTypeCode` on the asset and asset type. Therefore, the default shape's `Metadata` value coerces the overloaded `Value` from the asset to the `SdsTypecod`e on the asset type. It also takes the  `Metadata` value for `UOM` and `SdsTypeCode` from the asset type. |
 
 ### Default Shape Reference Rules
@@ -62,15 +62,12 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/
 ### Parameters
 
 `string tenantId` 
-
 The tenant identifier
 
 `string namespaceId` 
-
 The namespace identifier
 
 `string assetId`
-
 The asset identifier
 
 ### Response

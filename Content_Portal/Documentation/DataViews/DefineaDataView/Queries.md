@@ -73,7 +73,7 @@ An asset query looks identical to a stream query with the exception that query k
 ]
 ```
 
-Note that query kind defaults to Stream if not included in the query definition. A single query cannot contain both streams and assets. However, a single data view can contain both a stream query and an asset query.
+Note that query kind defaults to Stream if not included in the query definition. A single query cannot contain both streams and assets. However, a single data view can contain both stream queries and asset queries.
 
 ```json
 "Queries": [

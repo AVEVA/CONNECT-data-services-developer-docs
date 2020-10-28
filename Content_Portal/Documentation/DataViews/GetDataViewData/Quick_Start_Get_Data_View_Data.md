@@ -115,7 +115,7 @@ To parallelize one large data retrieval operation across multiple workers, assig
 It is recommended to suppress [re-resolution](xref:ResolvedDataView#when-is-a-data-view-resolved) of the data view by specifying a cache behavior of "preserve" on each first-page request.
 
 ### Resolution behavior
-By default, requests for a first page of data will cause the data view to re-resolve. See the documentation on [resolved data views](xref:ResolvedDataView#when-is-a-data-view-resolved). This ensures that the data view accounts for any data items that have been added to or removed from OCS. Re-resolution may be suppressed by explicitly specifying a cache behavior of "preserve".
+By default, requests for a first page of data will cause the data view to re-resolve. See the documentation on [resolved data views](xref:ResolvedDataView#when-is-a-data-view-resolved). This ensures that the data view accounts for any data items that have been added to or removed from the underlying OCS data store. Re-resolution may be suppressed by explicitly specifying a cache behavior of "preserve".
 
 Requests for subsequent pages include a `continuationToken`. This implictly suppresses re-resolution, akin to cache "preserve" behavior.
 

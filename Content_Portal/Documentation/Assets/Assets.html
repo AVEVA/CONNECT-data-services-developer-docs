@@ -97,20 +97,20 @@
 </thead>
 <tbody>
 <tr>
-<td>ID</td>
+<td>Id</td>
 <td>String</td>
 <td>Required</td>
 <td>Yes</td>
-<td>Identifier for referencing this asset. If you do not provide an identifier, OCS uses the name as the identifier. If you do not provide a name, OCS assigns a random GUID for the ID.</td>
+<td><code>Id</code> for referencing this asset. If you do not provide an <code>Id</code>, OCS copies the name as the identifier<code>Id</code>. If you do not provide a name, OCS assigns a random GUID for the <code>Id</code>.</td>
 <td>Yes</td>
 <td>Yes</td>
 </tr>
 <tr>
 <td>Name</td>
 <td>String</td>
-<td>Optional</td>
+<td>Required only if <code>Id</code> is not specified</td>
 <td>Yes</td>
-<td>User-friendly name. Required if Id is not provided. If Name is used as the Id, it must be unique within a given namespace.</td>
+<td>User-friendly name. Required if <code>Id</code> is not provided. If Name is used as the <code>Id</code>, it must be unique within a given namespace.</td>
 <td>Yes</td>
 <td>Yes</td>
 </tr>
@@ -128,7 +128,7 @@
 <td>String</td>
 <td>Optional</td>
 <td>No</td>
-<td>Identifier for the asset type that this asset is derived from. To get the merged view of the asset, get the default shape through the /Assets/{assetId}/Shape route.</td>
+<td><code>Id</code> for the asset type that this asset is derived from. To get the merged view of the asset, get the default shape through the /Assets/{assetId}/Shape route.</td>
 <td>Yes</td>
 <td>No</td>
 </tr>
@@ -178,7 +178,7 @@
 <td>Id</td>
 <td>String</td>
 <td>Required</td>
-<td>Identifier for the metadata value.</td>
+<td><code>Id</code> for the metadata value.</td>
 </tr>
 <tr>
 <td>Name</td>
@@ -230,7 +230,7 @@
 <td>String</td>
 <td>Required</td>
 <td>No</td>
-<td>Identifier for this stream reference object.  This identifier must be unique within the asset.</td>
+<td><code>Id</code> for this stream reference object.  This <code>Id</code> must be unique within the asset.</td>
 </tr>
 <tr>
 <td>Name</td>
@@ -251,7 +251,7 @@
 <td>String</td>
 <td>Required</td>
 <td>No</td>
-<td>The SDS stream Id of this stream reference. This SDS stream must exist at the time the asset is created.</td>
+<td>The SDS stream <code>Id</code> of this stream reference. This SDS stream must exist at the time the asset is created.</td>
 </tr>
 </tbody>
 </table>
@@ -273,7 +273,7 @@
 <td>String</td>
 <td>Required</td>
 <td>No</td>
-<td>The Id for this type reference. If an asset is derived from this asset type, this Id must be referenced in the asset reference type object. This Id must be unique within the asset type.</td>
+<td>The <code>Id</code> for this type reference. If an asset is derived from this asset type, this Id must be referenced in the asset reference type object. This <code>Id</code> must be unique within the asset type.</td>
 </tr>
 <tr>
 <td>StreamReferenceName</td>
@@ -294,7 +294,7 @@
 <td>String</td>
 <td>Required</td>
 <td>No</td>
-<td>This string must be an SDS stream type ID in the referenced SDS stream.</td>
+<td>This string must be an SDS stream type <code>Id</code> in the referenced SDS stream.</td>
 </tr>
 </tbody>
 </table>

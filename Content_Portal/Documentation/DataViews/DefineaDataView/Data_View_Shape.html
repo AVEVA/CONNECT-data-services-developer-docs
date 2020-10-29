@@ -84,7 +84,7 @@
 <h2 id="specify-the-shape">Specify the shape</h2>
 <p>Set the <a class="xref" href="Quick_Start_Define_a_Data_View.html#data-view-properties"><code>DataViewShape</code></a> property to a value of the <a class="xref" href="Quick_Start_Define_a_Data_View.html#dataviewshape-enumeration"><code>DataViewShape</code> enumeration</a>, either <code>DataViewShape.Standard</code> (default) or <code>DataViewShape.Narrow</code>.</p>
 <h2 id="standard-shape">Standard shape</h2>
-<p>The standard table column structure is built horizontally from left to right. The index field is first, followed by the grouping fields, if any exist.  Data field sets come next, in the order they are presented in the data view. Fields are presented in order of appearance within each data field set for each stream from the associated query.</p>
+<p>The standard table column structure is built horizontally from left to right. The index field is first, followed by the grouping fields, if any exist.  Data field sets come next, in the order they are presented in the data view. Fields are presented in order of appearance within each data field set for each data item from the associated query.</p>
 <p>Vertically, the standard structure depends on the inclusion of grouping fields. If grouping fields are not defined, each resultant index appears only once, and all interpolated data is in that row. If grouping fields are defined, then the resultant indexes will repeat vertically for each group. The groups are presented in alphabetical order.</p>
 <h5 id="example-get-data-response-body-for-standard-shape-with-no-grouping-field">Example: Get data response body for standard shape with no grouping field</h5>
 <p>Note, column labels contain a numerical suffix to ensure that each label is unique. Use grouping fields or an identifying field to create unique column labels.</p>
@@ -118,11 +118,11 @@
 <li>Index column </li>
 <li>Grouping value column(s)</li>
 <li>Field column, which holds the resolved column label of the field</li>
-<li>Value column, which holds the property value or stream related data such as name, id, tags or metadata</li>
+<li>Value column, which holds the field value such as the property or metadata value</li>
 </ul>
 <p>The column label of the index and grouping value columns may vary depending on the resolved label. The Field and Value column labels are not modifiable.</p>
 <p>The data view is built vertically by grouping field, if present, then by field. </p>
-<p>Data views resolving into multiple streams that are defined with the same SDS type, should use a grouping field or an identifier in order to differentiate the data rows. </p>
+<p>Data views resolving into multiple data items with the same property ids or names, should use a grouping field or an identifier in order to differentiate the data rows. </p>
 <h5 id="example-get-data-response-body-for-narrow-shape-with-grouping-field-site">Example: Get data response body for narrow shape with grouping field (Site)</h5>
 <pre><code class="lang-csv">Timestamp,Site,Field,Value
 2018-11-13T18:19:00.0000000Z,Biltmore,Id,WS_BILT

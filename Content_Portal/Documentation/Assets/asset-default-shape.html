@@ -109,7 +109,7 @@
 <td><code>Id</code> =&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m1</strong>&quot;<br>  <code>Value</code>=null</td>
 <td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=null<br>  <code>Value</code>=null</td>
 <td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m1</strong>&quot;<br> <code>Value</code>=See Details</td>
-<td style="text-align:left">For a numeric <code>SdsTypeCode</code>, the value of the <code>Value</code> property for <strong>m1</strong> is 0. For a string <code>SdsTypeCode</code>, the value of the <code>Value</code> property for <strong>m1</strong> is an empty string. For both, the <code>Metadata</code> value properties are returned, along with the <code>UOM</code> and <code>SdsTypeCode</code>, for the asset type.</td>
+<td style="text-align:left">For a numeric <code>SdsTypeCode</code>, the value of the <code>Value</code> property for <strong>m1</strong> is 0. For a string <code>SdsTypeCode</code>, the value of the <code>Value</code> property for <strong>m1</strong> is an empty string. For both, the <code>Metadata</code> value is returned, along with the <code>UOM</code> and <code>SdsTypeCode</code>, for the asset type.</td>
 </tr>
 <tr>
 <td>2</td>
@@ -128,9 +128,9 @@
 <tr>
 <td>4</td>
 <td>Not present</td>
-<td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m5</strong>&quot;<br>  <code>Value</code>=30</td>
-<td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m5</strong>&quot;<br>  <code>Value</code>=30</td>
-<td style="text-align:left">m5 appears on the default shape with value =30, along with <code>UOM</code> and <code>SdsTypeCode</code> from the asset. Because this metadata value does not exist on the asset type, the metadata value on the default shape takes the value of the asset.</td>
+<td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m4</strong>&quot;<br>  <code>Value</code>=30</td>
+<td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m4</strong>&quot;<br>  <code>Value</code>=30</td>
+<td style="text-align:left">m4 appears on the default shape with value =30, along with <code>UOM</code> and <code>SdsTypeCode</code> from the asset. Because this metadata value does not exist on the asset type, the metadata value on the default shape takes the value of the asset.</td>
 </tr>
 <tr>
 <td>5</td>
@@ -141,17 +141,17 @@
 </tr>
 <tr>
 <td>6</td>
-<td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m7</strong>&quot;<br>  <code>Value</code>=10</td>
-<td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=null<br>  <code>Value</code>=&quot;a string value&quot;</td>
-<td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m7</strong>&quot;<br>  <code>Value</code>=10</td>
-<td style="text-align:left">The <code>Metadata</code> value with <code>Id</code>= &quot;md_id&quot; has a different <code>SdsTypeCode</code> on the asset and asset type. Therefore, the default shape&#39;s <code>Metadata</code> value takes the  asset type&#39;s <code>Metadata</code> value for <code>Id</code> (&quot;md_id&quot;). It also takes the asset type&#39;s  <code>Metadata</code> value for <code>UOM</code>, and <code>SdsTypeCode</code>.</td>
+<td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m6</strong>&quot;<br>  <code>Value</code>=10</td>
+<td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;anotherName&quot;<br>  <code>Value</code>=&quot;1234&quot;</td>
+<td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m6</strong>&quot;<br>  <code>Value</code>=10</td>
+<td style="text-align:left">The <code>Metadata</code> value with <code>Id</code>= &quot;md_id&quot; is not null. Therefore, the default shape&#39;s <code>Metadata</code> value takes the  asset type&#39;s <code>Metadata</code> value.</td>
 </tr>
 <tr>
 <td>7</td>
-<td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m8</strong>&quot;<br>  <code>Value</code>=10</td>
+<td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m7</strong>&quot;<br>  <code>Value</code>=10</td>
 <td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=null<br>  <code>Value</code>=&quot;a string value&quot;</td>
-<td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m8</strong>&quot;<br> <code>Value</code>=0</td>
-<td style="text-align:left">The <code>Metadata</code> value with <code>Id</code>=&quot;md_id&quot; has different <code>SdsTypeCode</code> on the asset and asset type. Therefore, the default shape&#39;s <code>Metadata</code> value coerces the overloaded <code>Value</code> from the asset to the <code>SdsTypecode</code> on the asset type.  It also takes the  <code>Metadata</code> value for <code>UOM</code> and <code>SdsTypeCode</code> from the asset type.<!-- What's the difference between examples 6 and 7. Why is default shape's Value=10 in example 6 and Value=0 in example 7?--></td>
+<td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m7</strong>&quot;<br> <code>Value</code>=0</td>
+<td style="text-align:left">The <code>Metadata</code> value with <code>Id</code>=&quot;md_id&quot; has different <code>SdsTypeCode</code> on the asset and asset type. Therefore, the default shape&#39;s <code>Metadata</code> value coerces the overloaded <code>Value</code> from the asset to the <code>SdsTypecode</code> on the asset type.  It also takes the  <code>Metadata</code> value for <code>UOM</code> and <code>SdsTypeCode</code> from the asset type.</td>
 </tr>
 <tr>
 <td>8</td>
@@ -179,12 +179,12 @@
 <h3 id="request">Request</h3>
 <pre><code>GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Shape
 </code></pre><h3 id="parameters">Parameters</h3>
-<p><code>string tenantId</code> </p>
-<p>The tenant identifier</p>
-<p><code>string namespaceId</code> </p>
-<p>The namespace identifier</p>
-<p><code>string assetId</code></p>
-<p>The asset identifier</p>
+<p><code>string tenantId</code> 
+The tenant identifier</p>
+<p><code>string namespaceId</code> 
+The namespace identifier</p>
+<p><code>string assetId</code>
+The asset identifier</p>
 <h3 id="response">Response</h3>
 <p>The response includes a status code and a response body.</p>
 <table>

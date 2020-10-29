@@ -78,9 +78,9 @@
             <article class="content wrap" id="_content" data-uid="DataViewsDataItemsandGroups">
 <h1 id="identify-data-items">Identify data items</h1>
 
-<p>A <code>DataItem</code> is an SdsStream included in the data view. The collection of data items is specified by the data view queries, where the queries define the search criteria and the data items represent the results of the search. The data view can include one or more properties from each data item.</p>
+<p>A <code>DataItem</code> is an OCS resource, such as a stream, included in the data view. The collection of data items is specified by the data view queries, where the queries define the search criteria and the data items represent the results of the search. The data view can include one or more properties from each data item.</p>
 <h2 id="data-items">Data Items</h2>
-<p>The collection of data items in the data view represents all SDS streams that match the <a class="xref" href="Queries.html"><code>.Queries</code></a> field of the data view, excluding data items that are ineligible (see discussion of ineligible data items below). To add data items to a data view, either refine an existing query, or add a new query (refer to <a class="xref" href="Queries.html">queries</a> for which option to choose from). Similarly, to remove data items from a data view, either refine an existing query, or remove a query (this will remove all data items from the query).</p>
+<p>The collection of data items in the data view represents all OCS resources that match the <a class="xref" href="Queries.html"><code>.Queries</code></a> field of the data view, excluding data items that are ineligible (see discussion of ineligible data items below). To add data items to a data view, either refine an existing query, or add a new query (refer to <a class="xref" href="Queries.html">queries</a> for which option to choose from). Similarly, to remove data items from a data view, either refine an existing query, or remove a query (this will remove all data items from the query).</p>
 <p>Note: Each query is executed independently to generate the list of data items. It is thus possible to have duplicate data items resulting from different queries. This can be desirable or undesirable depending on the use case.</p>
 <p>There is a maximum of 10,000 data items per query. You can add more than 10,000 data items to a data view by adding additional queries. Data items are ordered alphabetically by data item id within the data items collection.</p>
 <h3 id="adding-fields">Adding Fields</h3>
@@ -92,13 +92,25 @@
 <li>Stream metadata</li>
 <li>Data from each stream property</li>
 </ul>
-<h3 id="adding-or-removing-sds-streams">Adding or Removing SDS Streams</h3>
-<p>When requesting for <a class="xref" href="../DataViewsAPIOverview/Resolved_Data_View_API.html">resolved data items</a> or when <a class="xref" href="../DataViewsAPIOverview/Data_API.html">getting the data view data</a>, the list of data items reflects the list of SDS streams that match one or more queries when the data view was last resolved. This means that if new streams were added or existing streams were removed from the Sequential Data Store, the list of data items will only reflect the latest changes if the data view is re-resolved. For more information, refer to the caching section in the resolved data view resource <a class="xref" href="../GetResolvedDataView/Resolved_Data_View.html">page</a>.</p>
-<h2 id="ineligible-data-items">Ineligible Data Items</h2>
-<p>The collection of ineligible data items represents SDS streams that match the queries but cannot be included in the data view. The criteria for ineligibility are:</p>
+<h4 id="adding-asset-fields-coming-soon">Adding Asset Fields (Coming Soon)</h4>
+<p><em>Note: This section covers features that are not yet generally available. If you are interested in trialing these pre-release features, contact your account team for more details.</em></p>
+<p>Data views will soon support <code>assets</code> in addition to <code>streams</code>. <code>Assets</code> have the following available fields:</p>
 <ul>
-<li>When the SDS stream&#39;s index type is different than the <code>IndexTypeCode</code> specified in the data view.</li>
-<li>When the SDS type of the stream contains compound indexes.</li>
+<li>Asset id</li>
+<li>Asset name</li>
+<li>Asset metadata</li>
+<li>Data from each asset measurement property</li>
+</ul>
+<h3 id="adding-or-removing-data-items">Adding or Removing Data Items</h3>
+<p>When requesting for <a class="xref" href="../DataViewsAPIOverview/Resolved_Data_View_API.html">resolved data items</a> or when <a class="xref" href="../DataViewsAPIOverview/Data_API.html">getting the data view data</a>, the list of data items reflects the list of OCS resources that match one or more queries when the data view was last resolved. This means that if new data items, such as new SDS streams, were added or existing data items were removed, the list of data items will only reflect the latest changes if the data view is re-resolved. For more information, refer to the caching section in the resolved data view resource <a class="xref" href="../GetResolvedDataView/Resolved_Data_View.html">page</a>.</p>
+<h2 id="ineligible-data-items">Ineligible Data Items</h2>
+<p>The collection of ineligible data items represents OCS resources that match the queries but cannot be included in the data view. A data item is ineligible if it does not contain at least one eligible non-key <a class="xref" href="../GetResolvedDataView/Resolved_Data_View.html#dataitemfield">data item field</a>.</p>
+<p>A data item field is ineligible if:</p>
+<ul>
+<li>The corresponding SDS stream&#39;s index type is different than the IndexTypeCode specified in the data view.</li>
+<li>The SDS type of the corresponding stream contains compound indexes.</li>
+<li>The corresponding SDS type property is nested.</li>
+<li>The corresponding SDS type property is a collection type.</li>
 </ul>
 </article>
           </div>

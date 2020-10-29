@@ -92,20 +92,151 @@
 <h3 id="id-and-label">Id and label</h3>
 <p>The field mapping id represents the json property name (or column name in table or csv format) in the output data view data. The field mapping label represents the data view field label with tokens resolved. If all field mapping labels in a data view are unique, the field mapping id is identical to the label; if not, the id is generated from the label by adding an index number postfix. </p>
 <h3 id="field-kind">Field kind</h3>
-<p>The <code>FieldKind</code> specifies whether the field maps to an index field, grouping field, data field, or field id field.</p>
+<p>The <code>FieldKind</code> specifies whether the field maps to an index field, grouping field, data field, or field id field. Not all <code>DataMapping</code> properties apply to each <code>FieldKind</code>.</p>
 <h4 id="index-field">Index field</h4>
-<p><code>TargetId</code>, <code>TargetFieldKey</code>, <code>FieldSetIndex</code> and <code>FieldIndex</code> are not used for index fields. <code>TypeCode</code> is equivalent to the <code>IndexTypeCode</code> of the data view. </p>
+<p>Fields of kind <code>IndexField</code> map to the data view&#39;s <a class="xref" href="Quick_Start_Define_a_Data_View.html#include-the-index-field">index field</a>.</p>
+<table>
+<thead>
+<tr>
+<th>DataMapping Property</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TargetId</td>
+<td>Not applicable</td>
+</tr>
+<tr>
+<td>TargetMeasurementKey</td>
+<td>Not applicable</td>
+</tr>
+<tr>
+<td>TargetFieldKey</td>
+<td>Not applicable</td>
+</tr>
+<tr>
+<td>TypeCode</td>
+<td>Equivalent to the <code>IndexTypeCode</code> of the data view</td>
+</tr>
+<tr>
+<td>FieldSetIndex</td>
+<td>Not applicable</td>
+</tr>
+<tr>
+<td>FieldIndex</td>
+<td>Not applicable</td>
+</tr>
+</tbody>
+</table>
 <h4 id="grouping-field">Grouping field</h4>
-<p><code>FieldSetIndex</code> and <code>TargetFieldKey</code> are not used. <code>FieldIndex</code> is the zero-based positioning of the field within the grouping field. <code>TargetId</code> represents the value of the item in the grouping field.</p>
+<p>Fields of kind <code>GroupingField</code> map to a <a class="xref" href="Grouping.html">grouping field</a> on the data view.</p>
+<table>
+<thead>
+<tr>
+<th>DataMapping Property</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TargetId</td>
+<td>The group&#39;s value</td>
+</tr>
+<tr>
+<td>TargetMeasurementKey</td>
+<td>Not applicable</td>
+</tr>
+<tr>
+<td>TargetFieldKey</td>
+<td>Not applicable</td>
+</tr>
+<tr>
+<td>TypeCode</td>
+<td>The group&#39;s data type</td>
+</tr>
+<tr>
+<td>FieldSetIndex</td>
+<td>Not applicable</td>
+</tr>
+<tr>
+<td>FieldIndex</td>
+<td>The zero-based positioning of the field within the data view&#39;s grouping fields</td>
+</tr>
+</tbody>
+</table>
 <h4 id="data-field">Data field</h4>
-<p><code>FieldSetIndex</code> is the zero-based positioning of the data field set. <code>FieldIndex</code> is the zero-based positioning of the data field within the appropriate data field set. <code>TargetId</code> represents the data item id.</p>
-<ul>
-<li>Id, name and tags: <code>TargetFieldKey</code> is empty</li>
-<li>Metadata: <code>TargetFieldKey</code> shows the metadata key</li>
-<li>Properties: <code>TargetFieldKey</code> shows the property id or property name path</li>
-</ul>
+<p>Fields of kind <code>DataField</code> map to a <a class="xref" href="Field_Sets.html">data field</a> on the data view.</p>
+<table>
+<thead>
+<tr>
+<th>DataMapping Property</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TargetId</td>
+<td>The data item id</td>
+</tr>
+<tr>
+<td>TargetMeasurementKey <em>(Coming Soon)</em></td>
+<td>The asset measurement&#39;s name. Only applicable to <code>PropertyId</code> fields and when the data field references an asset measurement.</td>
+</tr>
+<tr>
+<td>TargetFieldKey</td>
+<td>The metadata name (<code>Metadata</code> fields), property id (<code>PropertyId</code> fields), or property name (<code>PropertyName</code> fields). Not applicable to <code>Id</code>, <code>Name</code>, or <code>Tags</code> fields.</td>
+</tr>
+<tr>
+<td>TypeCode</td>
+<td>The data item&#39;s data type</td>
+</tr>
+<tr>
+<td>FieldSetIndex</td>
+<td>The zero-based positioning of the data field set</td>
+</tr>
+<tr>
+<td>FieldIndex</td>
+<td>The zero-based positioning of the data field within the appropriate data field set</td>
+</tr>
+</tbody>
+</table>
 <h4 id="field-id-field">Field id field</h4>
-<p><code>TargetFieldKey</code> is not used. <code>TargetId</code> represents the data item id, <code>FieldSetIndex</code> is the zero-based positioning of the data field set, and <code>FieldIndex</code> is the zero-based positioning of the data field within the appropriate data field set.</p>
+<p>The field id field only applies to data views with <a class="xref" href="Data_View_Shape.html#narrow-shape">narrow shape</a>. The <code>FieldId</code> field maps to the field column.</p>
+<table>
+<thead>
+<tr>
+<th>DataMapping Property</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TargetId</td>
+<td>The data item id</td>
+</tr>
+<tr>
+<td>TargetMeasurementKey</td>
+<td>Not applicable</td>
+</tr>
+<tr>
+<td>TargetFieldKey</td>
+<td>Not applicable</td>
+</tr>
+<tr>
+<td>TypeCode</td>
+<td>String</td>
+</tr>
+<tr>
+<td>FieldSetIndex</td>
+<td>The zero-based positioning of the data field set</td>
+</tr>
+<tr>
+<td>FieldIndex</td>
+<td>The zero-based positioning of the data field within the appropriate data field set</td>
+</tr>
+</tbody>
+</table>
 <h3 id="type-code">Type code</h3>
 <p>The <code>TypeCode</code> is the primary data type of the field mapping. This value comes from the field mapping&#39;s first populated <code>DataMapping</code>. The field mapping <code>TypeCode</code> is informational; it is not enforced.</p>
 </article>

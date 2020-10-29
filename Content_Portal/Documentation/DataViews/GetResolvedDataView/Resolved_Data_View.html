@@ -84,7 +84,7 @@
 <p>A data view specifies <code>.Queries</code> to find data items, <code>.GroupingFields</code> (optionally) to group those data items into groups, and <code>.FieldSets</code> to include fields of data into the data view. <em>Resolving</em> the data view means the data views engine executes those queries and computes how the resulting data items will form a data view.</p>
 <h3 id="what-resolved-information-is-available">What resolved information is available?</h3>
 <ul>
-<li><a class="xref" href="../DefineaDataView/Data_Items_and_Groups.html">Data items, ineligible data items, and the groups they form</a> - currently, SDS streams are the supported type of data item.</li>
+<li><a class="xref" href="../DefineaDataView/Data_Items_and_Groups.html">Data items, ineligible data items, and the groups they form</a> - OCS resources retrieved by the data view query</li>
 <li><a class="xref" href="../DefineaDataView/Available_Field_Sets.html">Available field sets</a> - fields which are present on the data items but not included in the data view</li>
 <li><a class="xref" href="../DefineaDataView/Field_Mappings.html">Field mappings</a> - details of the data behind each group of each field</li>
 <li><a class="xref" href="Resolved_Data_View.html#statistics">Statistics</a> about how the view resolved</li>
@@ -95,7 +95,7 @@
 <p>Paged responses include a <code>Link</code> header, with a hyperlink to the first page of results. If the results extend into an additional page, a hyperlink to the next page will also be included in the <code>Link</code> header.</p>
 <p>Using these hyperlinks is the recommended method of paging. Alternatively, constructing paging links by manually incrementing the <code>skip</code> is allowable, though in this case it is recommended to specify cache behavior of &quot;preserve&quot;.</p>
 <h3 id="how-is-a-data-view-resolved">How is a data view resolved?</h3>
-<p>Data views resolve on a per user basis. Data views respect the permissions on underlying objects such as SDS Streams. If a user does not have read access to a particular stream in SDS, then that stream is not visible from data views.</p>
+<p>Data views resolve on a per user basis. Data views respect the permissions on underlying data items such as SDS Streams. If a user does not have read access to a particular stream in SDS, then that stream is not visible from data views.</p>
 <p>As a consequence, different users may see different collections of data items resolve for a data view. This is by design.</p>
 <h3 id="when-is-a-data-view-resolved">When is a data view resolved?</h3>
 <p>Each data view is resolved as needed for each user: upon request of any resolved information or data view data. In certain cases, a cached version is retrieved if available. </p>
@@ -184,6 +184,7 @@ See the <a class="xref" href="../DataViewsAPIOverview/Resolved_Data_View_API.htm
 </tbody>
 </table>
 <h3 id="dataitem">DataItem</h3>
+<p>An OCS resource retrieved by the data view query.</p>
 <table>
 <thead>
 <tr>
@@ -216,7 +217,7 @@ See the <a class="xref" href="../DataViewsAPIOverview/Resolved_Data_View_API.htm
 <tr>
 <td>ResourceType</td>
 <td>DataItemResourceType</td>
-<td>The resource type. See below. Currently, the supported resource type is <code>.Stream</code></td>
+<td>The data item resource type.</td>
 </tr>
 <tr>
 <td>Tags</td>
@@ -225,13 +226,56 @@ See the <a class="xref" href="../DataViewsAPIOverview/Resolved_Data_View_API.htm
 </tr>
 <tr>
 <td>Metadata</td>
-<td>IReadOnlyDictionary&lt;string, string&gt;</td>
-<td>Metadata key-value pairs assigned to the data item</td>
+<td>IReadOnlyList<metadatavalue></metadatavalue></td>
+<td>Metadata values assigned to the data item</td>
 </tr>
 <tr>
 <td>DataItemFields</td>
 <td>IReadOnlyList<dataitemfield></dataitemfield></td>
 <td>Data fields</td>
+</tr>
+<tr>
+<td>IneligibleDataItemFields</td>
+<td>IReadOnlyList<dataitemfield></dataitemfield></td>
+<td>Data fields assigned to the data item that are not supported by data views</td>
+</tr>
+</tbody>
+</table>
+<h3 id="metadatavalue">MetadataValue</h3>
+<p>Individual metadata value from the metadata list of a <code>DataItem</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>Unique identifier</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>object</td>
+<td>Static value assigned to the metadata value</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>string</td>
+<td>Extended text description</td>
+</tr>
+<tr>
+<td>TypeCode</td>
+<td>SdsTypeCode</td>
+<td>The name of the metadata value&#39;s data type</td>
+</tr>
+<tr>
+<td>Uom</td>
+<td>string</td>
+<td>The metadata value&#39;s unit of measurement identifier</td>
 </tr>
 </tbody>
 </table>
@@ -251,10 +295,15 @@ See the <a class="xref" href="../DataViewsAPIOverview/Resolved_Data_View_API.htm
 <td>1</td>
 <td>A stream from the Sequential Data Store</td>
 </tr>
+<tr>
+<td>Asset <em>(Coming Soon)</em></td>
+<td>2</td>
+<td>An asset</td>
+</tr>
 </tbody>
 </table>
 <h3 id="dataitemfield">DataItemField</h3>
-<p>A field of a data item where values come from.<br>Within a data item of resource kind <code>.Stream</code>, this corresponds to a stream property.</p>
+<p>A field of a data item where values come from.<br>Within a data item of resource kind <code>.Stream</code>, this corresponds to a stream property. For a data item of resource kind <code>.Asset</code>, this corresponds to the a stream property associated with an asset measurement.</p>
 <table>
 <thead>
 <tr>
@@ -273,6 +322,11 @@ See the <a class="xref" href="../DataViewsAPIOverview/Resolved_Data_View_API.htm
 <td>Name</td>
 <td>string</td>
 <td>The data item field&#39;s friendly name</td>
+</tr>
+<tr>
+<td>MeasurementName <em>(Coming Soon)</em></td>
+<td>string</td>
+<td>The asset measurement name. Only applies to asset measurement data item fields.</td>
 </tr>
 <tr>
 <td>TypeCode</td>
@@ -299,13 +353,41 @@ See the <a class="xref" href="../DataViewsAPIOverview/Resolved_Data_View_API.htm
 <tbody>
 <tr>
 <td>GroupingValues</td>
-<td>IReadOnlyList<string></string></td>
+<td>IReadOnlyList<groupingvalue></groupingvalue></td>
 <td>This groups&#39;s value of each <code>.GroupingFields</code> defined on the <code>DataView</code></td>
 </tr>
 <tr>
 <td>DataItems</td>
 <td>IReadOnlyDictionary&lt;string, IReadOnlyList<dataitem>&gt;</dataitem></td>
 <td>The data items in this group</td>
+</tr>
+</tbody>
+</table>
+<h3 id="groupingvalue">GroupingValue</h3>
+<p>The individual group value from the list of <code>Groups</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Value</td>
+<td>object</td>
+<td>This groups&#39;s value of each <code>.GroupingFields</code> defined on the <code>DataView</code></td>
+</tr>
+<tr>
+<td>TypeCode</td>
+<td>SdsTypeCode</td>
+<td>The name of the group&#39;s type code</td>
+</tr>
+<tr>
+<td>Uom</td>
+<td>string</td>
+<td>The group&#39;s unit of measurement identifier</td>
 </tr>
 </tbody>
 </table>
@@ -400,6 +482,11 @@ See the <a class="xref" href="../DataViewsAPIOverview/Resolved_Data_View_API.htm
 <td>TargetFieldKey</td>
 <td>string</td>
 <td>The specific targeted part of the data item, if any.</td>
+</tr>
+<tr>
+<td>TargetMeasurementKey <em>(Coming Soon)</em></td>
+<td>string</td>
+<td>The asset measurement name. Only applies to asset measurement data mappings.</td>
 </tr>
 <tr>
 <td>TypeCode</td>

@@ -78,7 +78,7 @@
             <article class="content wrap" id="_content" data-uid="DataViewsSecuringDataViews">
 <h1 id="secure-data-views">Secure data views</h1>
 
-<p>Access rights to data views and their data are configurable in several ways. Permissions to the overall data views collection govern which users may create data views, and are also used as the default permissions for each data view that is created. Access to each data view is independently configurable. Finally, the permissions set on each <a class="xref" href="../../SequentialDataStore/SDS_Streams.html">Stream</a> apply globally within OSIsoft Cloud Services, including within the data views feature.</p>
+<p>Access rights to data views and their data are configurable in several ways. Permissions to the overall data views collection govern which users may create data views, and are also used as the default permissions for each data view that is created. Access to each data view is independently configurable. Finally, the permissions set on each data item, such as a <a class="xref" href="../../SequentialDataStore/SDS_Streams.html">Stream</a>, apply globally within OSIsoft Cloud Services, including within the data views feature.</p>
 <p>This section covers information specific to access control within the data views feature. For background information about access control throughout OSIsoft Cloud Services and how to configure the access control objects, see <a class="xref" href="../../Access_Control.html">Role-based access control</a>.</p>
 <h2 id="data-views-collection-access-control">Data Views Collection Access Control</h2>
 <p>The data views collection access control list is used to control which users and clients are authorized to create data views. Only users and clients with &quot;Write&quot; access rights can create data views. See <a class="xref" href="../../Access_Control.html#commonaccessrightsenum">CommonAccessRightsEnum</a> for a complete list of available access rights.</p>
@@ -123,9 +123,9 @@
 </tbody>
 </table>
 <h2 id="data-access-control">Data Access Control</h2>
-<p>The access control rights of each stream (see <a class="xref" href="../../SequentialDataStore/SDS_Streams.html">Streams</a>) apply globally within OSIsoft Cloud Services, including within data views. When a data view <a class="xref" href="../GetResolvedDataView/Resolved_Data_View.html">resolves</a> per-user, each stream <a class="xref" href="../DefineaDataView/Queries.html"><code>Query</code></a> is executed with the user&#39;s own permissions, honoring the access control configured for each stream. Read access to a data view does not affect the user&#39;s read access to (or even the visibility of!) any streams.</p>
-<p>When you inspect the <em>data items</em> that resolve for a data view, you see only the streams that you have <code>Read</code> access to.</p>
-<p>Configuring access control for streams is similar to data views. See the <a class="xref" href="../../Access_Control.html">Role-based access control</a> and <a class="xref" href="../../SequentialDataStore/SDS_Streams.html">Streams</a> sections for more information.</p>
+<p>The access control rights of each data item, such as a stream (see <a class="xref" href="../../SequentialDataStore/SDS_Streams.html">Streams</a>), apply globally within OSIsoft Cloud Services, including within data views. When a data view <a class="xref" href="../GetResolvedDataView/Resolved_Data_View.html">resolves</a> per-user, each <a class="xref" href="../DefineaDataView/Queries.html"><code>Query</code></a> is executed with the user&#39;s own permissions, honoring the access control configured for each data item. Read access to a data view does not affect the user&#39;s read access to (or even the visibility of!) any streams or other data items.</p>
+<p>When you inspect the <em>data items</em> that resolve for a data view, you see only the data items that you have <code>Read</code> access to.</p>
+<p>Configuring access control for streams and other data items is similar to data views. See the <a class="xref" href="../../Access_Control.html">Role-based access control</a> and <a class="xref" href="../../SequentialDataStore/SDS_Streams.html">Streams</a> sections for more information.</p>
 </article>
           </div>
           

@@ -79,10 +79,10 @@
 <h1 id="recommended-workflow-define-a-data-view">Recommended workflow: Define a data view</h1>
 
 <p>This is an introduction to the recommended workflow for defining data views. The following sections show these concepts in action.</p>
-<p>Designing and tweaking a data view is expected to be an iterative process. You are not expected to &quot;get it right the first time,&quot; nor to be an expert at the streams available in the Sequential Data Store. Data views provide an interactive way to select, identify, and arrange the data you and your applications need.</p>
+<p>Designing and tweaking a data view is expected to be an iterative process. You are not expected to &quot;get it right the first time,&quot; nor to be an expert at your OCS configuration such as the streams available in the Sequential Data Store. Data views provide an interactive way to select, identify, and arrange the data you and your applications need.</p>
 <p>There are three main steps required to define a data view: </p>
 <ol>
-<li>Including data items (streams)</li>
+<li>Including data items (such as streams)</li>
 <li>Including specific data fields</li>
 <li>Arranging them within the data view.</li>
 </ol>
@@ -129,10 +129,10 @@
   &quot;Shape&quot;: &quot;Standard&quot;
 }
 </code></pre><h3 id="add-a-query-for-data-items">Add a query for data items</h3>
-<p>Creating a data view begins with including some data items: today, those are SDS Streams.</p>
+<p>Creating a data view begins with including some data items. This example will use SDS Streams.</p>
 <h4 id="action-2">Action</h4>
 <p>Use the result of the previous step as the starting point. All following steps will involve modifying the data view definition, or seeing the effects of those modifications.</p>
-<p>Add an item to the array of <code>.Queries</code>: <code>{ &quot;Id&quot;: &quot;weather&quot;, &quot;Value&quot;:&quot;*weather*&quot; }</code></p>
+<p>Add an item to the array of <code>.Queries</code>: <code>{ &quot;Id&quot;: &quot;weather&quot;, Kind: &quot;Stream&quot;, &quot;Value&quot;:&quot;*weather*&quot; }</code></p>
 <pre><code class="lang-json">PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
 {
   &quot;Id&quot;: &quot;quickstart&quot;,
@@ -141,6 +141,7 @@
   &quot;Queries&quot;: [
     { 
       &quot;Id&quot;: &quot;weather&quot;,
+      &quot;Kind&quot;: &quot;Stream&quot;,
       &quot;Value&quot;:&quot;*weather*&quot; 
     }
   ],
@@ -285,7 +286,7 @@
 <h4 id="action-3">Action</h4>
 <pre><code class="lang-text">GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart/Resolved/AvailableFieldSets
 </code></pre><h4 id="expected-result-5">Expected result</h4>
-<p>A field set with a source type of &quot;DataItem&quot; pointing to the query identified by &quot;weather&quot;. Assuming some data items were retrieved, this field set shows that attributes of the streams (id, name, tags) are available, as well as the values of all metadata keys and properties.</p>
+<p>A field set pointing to the query identified by &quot;weather&quot;. Assuming some data items were retrieved, this field set shows that attributes of the retrieved data items (id, name, tags) are available, as well as the values of all metadata and properties.</p>
 <pre><code class="lang-json">HTTP 200 OK
 {
     &quot;TimeOfResolution&quot;: &quot;(a timestamp in ISO 8601 format)&quot;,
@@ -366,6 +367,7 @@
   &quot;Queries&quot;: [
     { 
       &quot;Id&quot;: &quot;weather&quot;,
+      &quot;Kind&quot;: &quot;Stream&quot;,
       &quot;Value&quot;:&quot;*weather*&quot; 
     }
   ],
@@ -507,6 +509,7 @@
   &quot;Queries&quot;: [
     { 
       &quot;Id&quot;: &quot;weather&quot;,
+      &quot;Kind&quot;: &quot;Stream&quot;,
       &quot;Value&quot;:&quot;*weather*&quot; 
     }
   ],
@@ -545,7 +548,7 @@
                     ],
                     &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
                 },                
-        {
+                {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;Temperature&quot;
@@ -682,6 +685,7 @@
   &quot;Queries&quot;: [
     { 
       &quot;Id&quot;: &quot;weather&quot;,
+      &quot;Kind&quot;: &quot;Stream&quot;,
       &quot;Value&quot;:&quot;*weather*&quot; 
     }
   ],
@@ -808,6 +812,7 @@
   &quot;Queries&quot;: [
     { 
       &quot;Id&quot;: &quot;weather&quot;,
+      &quot;Kind&quot;: &quot;Stream&quot;,
       &quot;Value&quot;:&quot;*weather*&quot; 
     }
   ],

@@ -55,6 +55,9 @@ references:
 - uid: AssetsSearchAPI
   name: Assets Search API
   href: Content_Portal/Documentation/Assets/Asset-Search-API.html
+- uid: AssetStatusMapping
+  name: Asset Status Mapping
+  href: Content_Portal/Documentation/Assets/asset-status-mapping.html
 - uid: AssetTypesAPI
   name: AssetTypes API
   href: Content_Portal/Documentation/Assets/Asset-Type.html

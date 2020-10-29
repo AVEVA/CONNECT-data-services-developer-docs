@@ -161,9 +161,13 @@ Content-Type: application/json
         &quot;High Resolution&quot;,
         &quot;Gen1&quot;
        ],
-       &quot;Metadata&quot;: {
-         &quot;Site&quot;: &quot;Biltmore&quot;
-       },
+       &quot;Metadata&quot;: [
+         {
+           &quot;Name&quot;: &quot;Site&quot;,
+           &quot;Value&quot;: &quot;Biltmore&quot;,
+           &quot;TypeCode&quot;: &quot;String&quot;
+         }
+       ],
        &quot;DataItemFields&quot;: [
          {
            &quot;Id&quot;: &quot;Timestamp&quot;,
@@ -183,7 +187,8 @@ Content-Type: application/json
            &quot;TypeCode&quot;: &quot;Double&quot;,
            &quot;IsKey&quot;: false
          }
-      ]
+      ],
+      &quot;IneligibleDataItemFields&quot;: []
     }
   ]
 }
@@ -267,8 +272,9 @@ Content-Type: application/json
       &quot;TypeId&quot;: &quot;type-with-different-index&quot;,
       &quot;ResourceType&quot;: &quot;Stream&quot;,
       &quot;Tags&quot;: [],
-       &quot;Metadata&quot;: { },
-       &quot;DataItemFields&quot;: [
+      &quot;Metadata&quot;: [],
+      &quot;DataItemFields&quot;: [],
+      &quot;IneligibleDataItemFields&quot;: [
          {
            &quot;Id&quot;: &quot;Depth&quot;,
            &quot;Name&quot;: &quot;Depth&quot;,
@@ -359,7 +365,12 @@ Content-Type: application/json
   &quot;TimeOfResolution&quot;: &quot;2019-12-13T01:23:45Z&quot;,
   &quot;Items&quot;: [
     {
-      &quot;GroupingValues&quot;: [ &quot;Biltmore&quot; ],
+      &quot;GroupingValues&quot;: [ 
+        {
+          &quot;Value&quot;: &quot;Biltmore&quot;,
+          &quot;TypeCode&quot;: &quot;String&quot;
+        }
+      ],
       &quot;DataItems&quot;: {
         &quot;Query1&quot;: [
           {
@@ -372,9 +383,13 @@ Content-Type: application/json
                 &quot;High Resolution&quot;,
                 &quot;Gen1&quot;
             ],
-            &quot;Metadata&quot;: {
-                &quot;Site&quot;: &quot;Biltmore&quot;
-            },
+            &quot;Metadata&quot;: [
+              {
+                &quot;Name&quot;: &quot;Site&quot;,
+                &quot;Value&quot;: &quot;Biltmore&quot;,
+                &quot;TypeCode&quot;: &quot;String&quot;
+              }
+            ],
             &quot;DataItemFields&quot;: [
                 {
                     &quot;Id&quot;: &quot;Timestamp&quot;,
@@ -394,7 +409,8 @@ Content-Type: application/json
                     &quot;TypeCode&quot;: &quot;Double&quot;,
                     &quot;IsKey&quot;: false
                 }
-            ]
+            ],
+            &quot;IneligibleDataItemFields&quot;: []
           }
         ]
       }

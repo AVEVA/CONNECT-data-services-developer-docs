@@ -155,7 +155,7 @@ Content-Type: application/json
 }
 </code></pre><hr>
 <h2 id="get-assettypes"><code>Get AssetTypes</code></h2>
-<p>Returns a list of asset types</p>
+<p>Returns a list of asset types and the total number of returned asset types, specified as Total-Count in the HTTP response header.</p>
 <h3 id="request-1">Request</h3>
 <pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes?skip={skip}&amp;count={count}
 </code></pre><h3 id="parameters-1">Parameters</h3>
@@ -212,7 +212,7 @@ For more information, see <a href="https://ocs-docs.osisoft.com/Content_Portal/D
 <h4 id="request-body">Request body</h4>
 <p>An <code>AssetType</code> object</p>
 <h4 id="example-request-body">Example request body</h4>
-<p>To create an asset type with a specific <code>Id</code>, use the API route with <code>Id</code>. If this is used, you must specify a  matching <code>Id</code> field for the <code>AssetType</code> object in the JSON object below.</p>
+<p>To create an asset type with a specific <code>Id</code>, use the API route with <code>Id</code>. If this is used, you must specify a matching <code>Id</code> field for the <code>AssetType</code> object in the JSON object below.</p>
 <pre><code class="lang-json"> {
     &quot;Id&quot;: &quot;HeaterType&quot;,
     &quot;Name&quot;: &quot;NameOfHeaterType&quot;,
@@ -320,9 +320,9 @@ For more information, see <a href="https://ocs-docs.osisoft.com/Content_Portal/D
 <p>Create or update an asset type with a specified <code>Id</code>.</p>
 <p>When updating an asset type which is referenced by assets, the following behaviors may apply:</p>
 <ul>
-<li>Deleting a metadata value on the asset type removes the metadata value on the default shape of any referenced asset​s.</li>
+<li>Deleting a metadata value on the asset type removes the metadata value on the default shape of referenced asset​s.</li>
 <li>Deleting the type reference on the asset type deletes the measurements on the default shape of any referenced assets​.</li>
-<li>Renaming a metadata value on the asset type renames the metadata value on the default shape of any referenced assets​.</li>
+<li>Renaming a metadata value on the asset type renames the metadata value on the default shape of referenced assets​.</li>
 <li>Renaming the stream reference name on the asset type on default shape of referenced assets</li>
 </ul>
 <h3 id="request-4">Request</h3>

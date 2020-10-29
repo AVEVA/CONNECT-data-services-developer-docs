@@ -79,7 +79,7 @@
 <h1 id="group-data-items">Group data items</h1>
 
 <p>The data items of a data view may be organized by <em>grouping</em> them. It is one way of producing a meaningful, consumable shape of data.</p>
-<p>Grouping is optional when defining the data view. If the <code>.GroupingFields</code> section is not defined on the data view, the resolved data view shows a single group with all eligible data items. If the <code>.GroupingFields</code> section is defined, the resolved data view shows multiple groups, each with the list of data items for the group and the <code>.GroupingValues</code> field showing the matching group&#39;s value(s). In this case, if a data item does not match any group, it is added to all groups.    </p>
+<p>Grouping is optional when defining the data view. If the <code>.GroupingFields</code> section is not defined on the data view, the resolved data view shows a single group with all eligible data items. If the <code>.GroupingFields</code> section is defined, the resolved data view shows multiple groups, each with the list of data items for the group and the <code>.GroupingValues</code> field showing the matching group&#39;s value(s). In this case, if a data item does not match any group, it is added to all groups.</p>
 <p>Groups are ordered alphabetically by the first grouping value for each group. Within each group, data items are ordered alphabetically by data item id.</p>
 <h2 id="purpose-of-grouping">Purpose of grouping</h2>
 <p>Without grouping, all of the data items returned by a <code>Query</code> will appear side-by-side. If the view includes many data items, its data records will be enormous. The fields are also likely to be ambiguous.</p>
@@ -170,6 +170,7 @@
   &quot;Queries&quot;: [
     { 
       &quot;Id&quot;: &quot;inverters&quot;,
+      &quot;Kind&quot;: &quot;Stream&quot;,
       &quot;Value&quot;: &quot;TypeId:docs-pi-inverter AND (Site:Rosemont OR Site:Winterthur)&quot;
     }
   ],
@@ -218,6 +219,7 @@
   &quot;Queries&quot;: [
     { 
       &quot;Id&quot;: &quot;inverters&quot;,
+      &quot;Kind&quot;: &quot;Stream&quot;,
       &quot;Value&quot;: &quot;TypeId:docs-pi-inverter AND (Site:Rosemont OR Site:Winterthur)&quot;
     }
   ],
@@ -359,6 +361,7 @@
   &quot;Queries&quot;: [
     { 
       &quot;Id&quot;: &quot;inverters&quot;,
+      &quot;Kind&quot;: &quot;Stream&quot;,
       &quot;Value&quot;: &quot;TypeId:docs-pi-inverter AND (Site:Rosemont OR Site:Winterthur)&quot;
     }
   ],
@@ -458,10 +461,12 @@
   &quot;Queries&quot;: [
     { 
       &quot;Id&quot;: &quot;inverters&quot;,
+      &quot;Kind&quot;: &quot;Stream&quot;,
       &quot;Value&quot;: &quot;TypeId:docs-pi-inverter AND (Site:Rosemont OR Site:Winterthur)&quot;
     },
     { 
       &quot;Id&quot;: &quot;site weather&quot;,
+      &quot;Kind&quot;: &quot;Stream&quot;,
       &quot;Value&quot;: &quot;TypeId:docs-omf-weather* AND (Site:Rosemont OR Site:Winterthur)&quot;
     }
   ],

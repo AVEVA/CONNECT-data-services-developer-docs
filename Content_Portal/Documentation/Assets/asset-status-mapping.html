@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>uid:AssetStatusMapping </title>
+    <title>Asset Status Mapping </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="uid:AssetStatusMapping ">
+    <meta name="title" content="Asset Status Mapping ">
     <meta name="generator" content="docfx 2.43.3.0">
     
     <link rel="shortcut icon" href="../../../favicon.ico">
@@ -75,11 +75,9 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="">
-
-<hr>
-<h2 id="uidassetstatusmapping">uid:AssetStatusMapping</h2>
+            <article class="content wrap" id="_content" data-uid="AssetStatusMapping">
 <h1 id="asset-status-mapping">Asset Status Mapping</h1>
+
 <p>Status mapping is a child resource of an asset or asset type that defines the simple status of an asset or asset type. There is one status mapping resource for each asset or asset type.</p>
 <p>If an asset references an existing asset type and the asset type has a corresponding type reference, then the status mapping on the asset is ignored. </p>
 <h2 id="status-mapping-properties-table">Status mapping properties table</h2>
@@ -128,7 +126,7 @@
 <td>List<valuestatusmapping></valuestatusmapping></td>
 <td>Required</td>
 <td>No</td>
-<td>The value status mapping maps values to a given status. See <a href="xref:AssetStatusMapping#value-status-mapping-properties-table">Value status mapping properties table</a></td>
+<td>The value status mapping maps values to a given status. See <a class="xref" href="asset-status-mapping.html#value-status-mapping-properties-table">Value status mapping properties table</a></td>
 </tr>
 </tbody>
 </table>
@@ -170,7 +168,7 @@
 </tbody>
 </table>
 <h2 id="status-enumerations">Status enumerations</h2>
-<p>The following are valid status enumerations: &lt;! -- Is this meant to be an example of a valid status enumeration? --&gt;</p>
+<p>The following are valid status enumerations: <!-- Is this meant to be an example of a valid status enumeration? --></p>
 <ul>
 <li>Unknown = 0</li>
 <li>Good = 1</li>
@@ -196,7 +194,7 @@
         }
     ]
 }
-</code></pre><p>The asset or asset type&#39;s  StreamReferences field has an Id property. To assign a status mapping to an asset or asset type, the value assigned to the Id property must match the StreamReferenceId of the status mapping object. Using the status mapping example above, AssetStreamReferenceID is assigned to the asset in the following example. </p>
+</code></pre><p>The asset or asset type&#39;s  StreamReferences field has an Id property. To assign a status mapping to an asset or asset type, the value assigned to the Id property must match the StreamReferenceId of the status mapping object. Using the status mapping example above, AssetStreamReferenceId is assigned to the asset in the following example. </p>
 <pre><code>{
   &quot;Id&quot;: &quot;ChargingStationAsset&quot;, 
    &quot;AssetTypeId&quot;: null,
@@ -423,7 +421,7 @@ The namespace identifier</p>
 <p><code>string assetId</code>
 The asset identifier</p>
 <h4 id="example-post-body-1">Example POST body</h4>
-<p>Lists the asset IDs whose status you are interested in.</p>
+<p>Lists the asset <code>Id</code>s whose status you are interested in.</p>
 <pre><code>Content-Type: application/json
 [
    &quot;AssetId-1&quot;,

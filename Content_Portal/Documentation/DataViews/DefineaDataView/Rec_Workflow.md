@@ -5,10 +5,10 @@ uid: DefineaDataViewRecommendedWorkflow
 # Recommended workflow: Define a data view
 This is an introduction to the recommended workflow for defining data views. The following sections show these concepts in action.
 
-Designing and tweaking a data view is expected to be an iterative process. You are not expected to "get it right the first time," nor to be an expert at the streams available in the Sequential Data Store. Data views provide an interactive way to select, identify, and arrange the data you and your applications need.
+Designing and tweaking a data view is expected to be an iterative process. You are not expected to "get it right the first time," nor to be an expert at your OCS configuration such as the streams available in the Sequential Data Store. Data views provide an interactive way to select, identify, and arrange the data you and your applications need.
 
 There are three main steps required to define a data view: 
-1. Including data items (streams)
+1. Including data items (such as streams)
 2. Including specific data fields
 3. Arranging them within the data view.
 
@@ -77,12 +77,12 @@ HTTP 200 OK
 
 ### Add a query for data items
 
-Creating a data view begins with including some data items: today, those are SDS Streams.
+Creating a data view begins with including some data items. This example will use SDS Streams.
 
 #### Action
 Use the result of the previous step as the starting point. All following steps will involve modifying the data view definition, or seeing the effects of those modifications.
 
-Add an item to the array of `.Queries`: `{ "Id": "weather", "Value":"*weather*" }`
+Add an item to the array of `.Queries`: `{ "Id": "weather", Kind: "Stream", "Value":"*weather*" }`
 ```json
 PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
 {
@@ -92,6 +92,7 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
   "Queries": [
     { 
       "Id": "weather",
+      "Kind": "Stream",
       "Value":"*weather*" 
     }
   ],
@@ -261,7 +262,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart/Res
 ```
 
 #### Expected result
-A field set with a source type of "DataItem" pointing to the query identified by "weather". Assuming some data items were retrieved, this field set shows that attributes of the streams (id, name, tags) are available, as well as the values of all metadata keys and properties.
+A field set pointing to the query identified by "weather". Assuming some data items were retrieved, this field set shows that attributes of the retrieved data items (id, name, tags) are available, as well as the values of all metadata and properties.
 
 ```json
 HTTP 200 OK
@@ -349,6 +350,7 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
   "Queries": [
     { 
       "Id": "weather",
+      "Kind": "Stream",
       "Value":"*weather*" 
     }
   ],
@@ -521,6 +523,7 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
   "Queries": [
     { 
       "Id": "weather",
+      "Kind": "Stream",
       "Value":"*weather*" 
     }
   ],
@@ -559,7 +562,7 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
                     ],
                     "Label": "{IdentifyingValue} {FirstKey}"
                 },                
-		{
+                {
                     "Source": "PropertyId",
                     "Keys": [
                         "Temperature"
@@ -665,11 +668,11 @@ A different and complementary way of disambiguating the data items is to “iden
 
 This is also useful for aligning data items across groups. Imagine if each site had an additional stream from a backup weather station:
 
-| Timestamp |	Site |	Primary Temperature | Primary SolarRadiation | Backup Temperature | Backup SolarRadiation
+| Timestamp | Site | Primary Temperature | Primary SolarRadiation | Backup Temperature | Backup SolarRadiation
 |--|--|--|--|--|--|
-| | Biltmore						
+| | Biltmore
 | | Rosecliff
-| | Winterthur						
+| | Winterthur
 
 The data views engine must be told how the streams align across sites. Here, it makes sense to align them by which measurement they represent: _Primary_ or _Backup_.
 
@@ -685,6 +688,7 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
   "Queries": [
     { 
       "Id": "weather",
+      "Kind": "Stream",
       "Value":"*weather*" 
     }
   ],
@@ -832,6 +836,7 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
   "Queries": [
     { 
       "Id": "weather",
+      "Kind": "Stream",
       "Value":"*weather*" 
     }
   ],

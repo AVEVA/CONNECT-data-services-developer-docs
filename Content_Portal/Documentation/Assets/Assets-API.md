@@ -6,9 +6,9 @@ uid: AssetsAPI
 
 The Assets API allows you to create, read, update, and delete assets. 
 
-The asset feature supports the HTTP entity tag (ETag) and If-Match for conditional requests. When a `GET` call is performed, the HTTP response header will include an Etag which indicates what version of the asset resource will be retrieved.
+The asset feature supports the HTTP entity tag (ETag) and If-Match for conditional requests. When a `GET` call is performed, the HTTP response header includes an Etag which indicates what version of the asset resource will be retrieved.
 
-See [Asset and AssetType Access Control API](xref:AssetOrAssetTypeAccessControlAPI), [Asset Centric API](xref:AssetCentricDataAPI), and [Assets Search API](xref:AssetsSearchAPI) for additional API details.
+See [Asset and AssetType Access Control API](xref:AssetOrAssetTypeAccessControlAPI), [Asset Centric Data API](xref:AssetCentricDataAPI), and [Assets Search API](xref:AssetsSearchAPI) for additional API details.
 
 ####Example 
 This is version 7 of this particular asset.
@@ -91,7 +91,7 @@ Content-Type: application/json
 ***
 
 ## `Get Assets` 
-Returns an array of assets and returns the total number of assets returned, specified as Total-Count in the HTTP response heaser. 
+Returns an array of assets and returns the total number of assets returned, specified as Total-Count in the HTTP response header. 
 
 ### Request 
 ```
@@ -121,7 +121,7 @@ The response includes a status code and a body.
 | Status Code | Body Type | Description |
 |--|--|--|
 | 200 OK | `Asset[]` | A page of assets. A response header, `Total-Count`, indicates the total size of the collection. |
-| 204 No Content | none | No assets were found or the user does not have permission to view assets. |
+| 204 No Content | none | No assets were found or you do not have permission to view assets. |
 | 400 Bad Request | error | The request is not valid. See the response body for additional details. |
 | 503 Service Unavailable | error | An error occurred while processing the request. See the response body for additional details. |
 
@@ -130,7 +130,7 @@ The response includes a status code and a body.
 ## `Create Asset` 
 Create a new asset with a specified `Id`. 
 
-If the asset you are trying to create references an asset type (via the AssetTypeId property) and if there is the corresponding asset type has a metadata value with the same `Id`, then the name and SDS type code of the metadata value on the asset must be null. If the asset type does not have metadatum with a corresponding `Id`, name and SDS type code may not be null.
+If the asset you are trying to create references an asset type (through the AssetTypeId property) and if the corresponding asset type has a metadata value with the same `Id`, then the name and SDS type code of the metadata value on the asset must be null. If the asset type does not have metadata value with a corresponding `Id`, the name and SDS type code on the asset cannot be null.
 
 ### Request 
 ```text 
@@ -222,7 +222,7 @@ The response includes a status code and a body.
 | Status Code               | Body Type | Description                                     |
 | ------------------------- | --------- | ----------------------------------------------- |
 | 200 OK                    | `Asset[]`  | An array of assets as persisted, including values for optional parameters that were omitted in the request.                               |
-| 400 Bad Request             | error     | The request is not valid. The response will include which asset failed validation checks. See the response body for additional details.      |
+| 400 Bad Request             | error     | The request is not valid. The response includes which asset failed validation checks. See the response body for additional details.     |
 | 403 Forbidden            | error     | You are not authorized to create assets.           |
 | 409 Conflict | error     | The asset create has a conflict. See the response body for additional details.  |
 
@@ -267,7 +267,7 @@ The response includes a status code, body, and Etag version in the HTTP response
 | Status Code              | Body Type | Description                                     |
 | -------------------------| --------- | ----------------------------------------------- |
 | 200 OK                   | `Asset`  | The newly created or updated asset as persisted, including values for optional parameters that were omitted in the request.                               |
-| 400 Bad Request          | error     | The request is not valid. The response will include which asset failed validation checks. See the response body for additional details.      |
+| 400 Bad Request          | error     | The request is not valid. The response includes which asset failed validation checks. See the response body for additional details.    |
 | 403 Forbidden            | error     | You are not authorized to update assets. |
 | 404 Not Found            | error     | The asset, with the specified identifier, was not found.            |
 | 409 Conflict             | error     | The asset update or create has a conflict. See the response body for additional details. |
@@ -277,7 +277,7 @@ The response includes a status code, body, and Etag version in the HTTP response
 
 ## `Delete Asset` 
 
-Delete an asset with a specified `Id`. You may specify an If-Match property in the HTTP request header to ensure that the asset is deleted only if the version matches.
+Delete an asset with a specified `Id`. You can specify an If-Match property in the HTTP request header to ensure that the asset is deleted only if the version matches.
 
 ### Request 
 
@@ -308,7 +308,7 @@ The response includes a status code and a body.
 | Status Code               | Body Type | Description                                     |
 | ------------------------- | --------- | ----------------------------------------------- |
 | 204 No Content            | none  | The asset with the specified `Id` is deleted.                              |
-| 400 Bad Request           | error     | The request is not valid. The response will include which asset failed validation checks. See the response body for additional details.       |
+| 400 Bad Request           | error     | The request is not valid. The response includes which asset failed validation checks. See the response body for additional details.      |
 | 403 Forbidden             | error     | You are not authorized to delete this asset.       |
-| 404 Not Found             | error     | The asset with the specified `Id` could not be found. 
+| 404 Not Found             | error     | The asset with the specified `Id` could not be found.  |
 | 412 Pre-Condition Failed  | error     | The asset failed to update because the If-Match condition failed.  |

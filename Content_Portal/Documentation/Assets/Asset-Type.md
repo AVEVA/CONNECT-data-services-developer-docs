@@ -2,7 +2,7 @@
 uid: AssetTypesAPI
 ---
 
-# AssetTypes API
+# Asset Types API
 
 The asset type API provides methods to create, read, update, and delete asset types. An asset type can be used to build many similar assets. Some of the key benefits of using an asset type as the base model for assets are:
 
@@ -11,7 +11,7 @@ The asset type API provides methods to create, read, update, and delete asset ty
 
 ***
 ## `Get AssetType by Id`
-Returns the specified asset type
+Returns the specified asset type.
 
 ### Request 
 ```text 
@@ -29,10 +29,6 @@ The namespace identifier
 `string assetTypeId`
 
 The asset type identifier
-
-### Authorization
-Access to the resources/collection is controlled by ACL (Access Control List) and owner objects.
-For more information, see [Role-based access control](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html).
 
 ### Response 
 The response includes a status code and a response body.
@@ -96,11 +92,6 @@ Maximum number of asset types to retrieve. If unspecified, the default (100) is 
 
 [Optonal] `int count`
 An optional parameter representing the maximum number of assets to retrieve. If not specified, the default value of 100 is used.
-
-### Authorization
-
-Access to the resources/collection is controlled by ACL (Access Control List) and owner objects.
-For more information, see [Role-based access control](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html).
 
 ### Response 
 

@@ -2,8 +2,8 @@
 uid: AssetCentricDataAPI
 ---
 
-# Asset-centric Data API
-The asset-centric data API provides a quick way to take the dynamic data stored in SDS streams and store it as references within a given asset measurement mappings.
+# Asset Centric Data API
+The asset centric data API provides a quick way to take the dynamic data stored in SDS streams and store it as references within a given asset measurement mappings.
 
 In order to retrieve stream data from an asset, you must first set up measurement mappings for a given asset. The data that is retrieved is based on the default shape of the asset.
 
@@ -121,7 +121,10 @@ The asset identifier
 The start index for the intervals
 
 `string endIndex` 
-The number of requested intervals 
+The end index for the intervals
+
+`int intervals`
+The number of requested intervals <!-- This was my omission. On the Wiki, it says this is string intervals. -- >
 
 (Optional)
 `string[] measurements` measurementNames

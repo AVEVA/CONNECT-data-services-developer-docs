@@ -127,7 +127,7 @@ Content-Type: application/json
 
 Updates the measurement mappings for a given asset or asset type. 
 
-For an asset measurement mappings, you can specify include an If-Match property in the HTTP request header to specify that the asset is modified only if the asset version matches. The If-Match property is not available for asset types.
+For an asset measurement mappings, you can specify an If-Match property in the HTTP request header to specify that the asset is modified only if the asset version matches. The If-Match property is not available for asset types.
 
 ### Request 
 

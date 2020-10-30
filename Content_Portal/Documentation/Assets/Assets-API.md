@@ -16,7 +16,7 @@ This is version 7 of this particular asset.
 Etag: "7"
 ```
 
-To edit or delete the asset, specify If-Match in the HTTP request header when calling `DELETE` or `PUT`:
+To edit or delete the asset, specify If-Match in the HTTP request header when calling `DELETE` or `PUT`.
 
 ####Example
 Modify or delete only if the current asset matches version 7. Otherwise, do not perform this operation. If this condition fails, return a 412. 
@@ -91,7 +91,7 @@ Content-Type: application/json
 ***
 
 ## `Get Assets` 
-Returns an array of assets and returns the total number of assets returned, specified as Total-Count in the HTTP response header. 
+Returns an array of assets and the total number of assets returned, specified as Total-Count in the HTTP response header. 
 
 ### Request 
 ```
@@ -230,7 +230,7 @@ The response includes a status code and a body.
 
 ## `Create or Update Asset` 
 
-Create or update an asset with a specified `Id`. It the asset already exists, you can specify an If-Match property in the HTTP request header to ensure that the asset is modified only if its version matches.
+Create or update an asset with a specified `Id`. If the asset already exists, you can specify an If-Match property in the HTTP request header to ensure that the asset is modified only if its version matches.
 
 ### Request 
 
@@ -277,7 +277,7 @@ The response includes a status code, body, and Etag version in the HTTP response
 
 ## `Delete Asset` 
 
-Delete an asset with a specified `Id`. You can specify an If-Match property in the HTTP request header to ensure that the asset is deleted only if the version matches.
+Delete an asset with a specified `Id`. You can include an If-Match property in the HTTP request header to specify the asset version. The asset is deleted only if the version matches.
 
 ### Request 
 

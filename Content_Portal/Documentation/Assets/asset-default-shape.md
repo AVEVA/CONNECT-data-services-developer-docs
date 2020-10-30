@@ -16,7 +16,7 @@ Returns the default shape of an asset.
 
 When an asset references an asset type, the following rules explain how the values are derived for a given `Metadata` value on the default shape.
 
-- If a `Metadata` value with the same `Id` exists on the asset type and asset, the `Metadata` value properties, `Name`, `UOM`, and `SdsTypeCode`, of the asset type take precedence over the asset properties.
+- If a `Metadata` value with the same `Id` exists on the asset type and asset, the `Metadata` value properties, `Name`, `UOM`, and `SdsTypeCode`, of the asset type take precedence over the asset properties.<!-- Is Example 6 an example of this? -->
 - If the `Metadata` value with the same `Id` exists on the asset type and asset, the `Value` property on the asset takes precedence (Example 3) if its value is not null.  
 - If the `Value` property on the asset is null, then the `Value` property of the asset type's `Metadata` value is used (Example 2) unless that value is also null. In this instance, the `Value` property on the default shape is zero for shapes whose `SdsTypeCode` is a numeric type, and it is an empty string for shapes whose `SdsTypeCode` is string. (Example 1).
 - If the `SdsTypeCode` on the asset and asset type do not match, then the `Value` property of the `Metadata` value on the default shape will be coerced to the `SdsTypeCode` property of the asset type (Examples 7 and 8).

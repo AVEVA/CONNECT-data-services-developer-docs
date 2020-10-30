@@ -67,7 +67,7 @@ The namespace identifier
 The asset identifier
 
 (Optional)
-`string[] measurements` measurementNames
+`string[] measurements` measurementNames <!-- Please check this. -->
 A comma-separated list of measurement names that you want returned for the last data. By default, all measurements are returned.
 
 ### Response 
@@ -124,7 +124,7 @@ The start index for the intervals
 The end index for the intervals
 
 `int intervals`
-The number of requested intervals <!-- This was my omission. On the Wiki, it says this is string intervals. -- >
+The number of requested intervals <!-- This was my omission. On the Wiki, it says this is `**string** intervals`. -- >
 
 (Optional)
 `string[] measurements` measurementNames

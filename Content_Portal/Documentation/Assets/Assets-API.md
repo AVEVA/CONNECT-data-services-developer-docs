@@ -258,7 +258,7 @@ The newly created or updated `asset` object.
 
 If an asset type `Id` is specified for an asset, then the following is true:
 - The stream references name of an asset is set to null if the stream reference `Id` matches the stream reference `Id` of the asset type.
-- The name of a metadata value is set to null for those metadata values whose `Id` match the asset type metadata value `Id`s.
+- The name of a metadata value is set to null for those metadata values whose `Id` match the asset type metadata value `Id`s. <!-- This is confusing to me.Is this saying: If the asset and asset type have a metadata value with the same Id, then the name property on the asset is set to null -->
 
 ### Response 
 

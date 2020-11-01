@@ -213,7 +213,7 @@ When updating an asset type which is referenced by assets, the following behavio
 - Deleting a metadata value on the asset type removes the metadata value on the default shape of referenced asset​s.
 - Deleting the type reference on the asset type deletes the measurements on the default shape of referenced assets​.
 - Renaming a metadata value on the asset type renames the metadata value on the default shape of referenced assets​.
-- Renaming the stream reference name on the asset type on default shape of referenced assets<!-- Is this sentence complete? -->
+- Renaming the stream reference name on the asset type will rename the stream reference on default shape of referenced assets.
 
 ### Request 
 

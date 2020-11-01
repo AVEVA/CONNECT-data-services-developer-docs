@@ -4,6 +4,8 @@ uid: CreateAssetFromAssetType
 
 # Create an asset from an asset type
 
+For more information on asset types, see [Asset types](xref:AssetTypes).
+
 1. Click the menu icon ![menu icon](..\images\icon_navigation_bigger.png) and click **Asset Explorer**.
 
 

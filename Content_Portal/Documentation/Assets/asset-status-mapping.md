@@ -14,10 +14,10 @@ The following table lists the most common fields in a status mapping.
 
 | Property            | Type                     | Required? | Searchable? | Description                                                  |
 | ------------------- | ------------------------ | --------- | ----------- | ------------------------------------------------------------ |
-| Name                | String                   | Required  | No          | Name and `Id` for this status mapping.                         |
-| Description         | String                   | Required  | No          | Description of the status mapping.                           |
+| Name                | String                   | Required  | No          | `Name` and `Id` for this status mapping.                     |
+| Description         | String                   | Required  | No          | `Description` of the status mapping.                         |
 | StreamReferenceId   | String                   | Required  | No          | `Id` for the asset's StreamReference property. The stream reference must exist before the status mapping can be created. |
-| StreamPropertyId    | String                   | Required  | No          | SDS stream property that status uses for calculations. It must be present on the StreamId property on the asset StreamReference. |
+| StreamPropertyId    | String                   | Required  | No          | SDS stream property that status uses for calculations. It must be present on the StreamId property on the asset StreamReference.  The SDS stream property must be a numeric enumeration, character, or string type. |
 | ValueStatusMappings | List<ValueStatusMapping> | Required  | No          | The value status mapping maps values to a given status. See [Value status mapping properties table](xref:AssetStatusMapping#value-status-mapping-properties-table) |
 <!-- Look at StreamPropertyID again. -->
 
@@ -64,7 +64,7 @@ The following is an example of a status mapping.
 }
 ```
 
-The asset or asset type's  StreamReferences field has an Id property. To assign a status mapping to an asset or asset type, the value assigned to the Id property must match the StreamReferenceId of the status mapping object. Using the status mapping example above, AssetStreamReferenceId is assigned to the asset in the following example. 
+The asset or asset type's  StreamReferences field has an Id property. To assign a status mapping to an asset or asset type, the value assigned to the Id property must match the StreamReferenceId of the status mapping object. Using the status mapping example above, AssetStreamReferenceId1 is assigned to the asset in the following example. 
 
 ```
 {
@@ -150,7 +150,7 @@ The response includes a status code and a response body.
 
 Update the status mapping for a given asset or asset type.
 
-For an asset status mappings, you may specify and If-Match property in the HTTP request header to ensure that the status mappings is updated only if the asset version matches. The If-Match property is not available for asset types. 
+For an asset status mappings, you can include an If-Match property in the HTTP request header to specify the asset version. The status mappings is updated only if the asset version matches. The If-Match property is not available for asset types. 
 
 ### Request
 

@@ -2,7 +2,7 @@
 uid: AssetTypesAPI
 ---
 
-# AssetTypes API
+# Asset Types API
 
 The asset type API provides methods to create, read, update, and delete asset types. An asset type can be used to build many similar assets. Some of the key benefits of using an asset type as the base model for assets are:
 
@@ -11,7 +11,7 @@ The asset type API provides methods to create, read, update, and delete asset ty
 
 ***
 ## `Get AssetType by Id`
-Returns the specified asset type
+Returns the specified asset type.
 
 ### Request 
 ```text 
@@ -29,10 +29,6 @@ The namespace identifier
 `string assetTypeId`
 
 The asset type identifier
-
-### Authorization
-Access to the resources/collection is controlled by ACL (Access Control List) and owner objects.
-For more information, see [Role-based access control](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html).
 
 ### Response 
 The response includes a status code and a response body.
@@ -94,13 +90,8 @@ The namespace identifier
 [Optional] `int skip`   
 Maximum number of asset types to retrieve. If unspecified, the default (100) is used.
 
-[Optonal] `int count`
+[Optional] `int count`
 An optional parameter representing the maximum number of assets to retrieve. If not specified, the default value of 100 is used.
-
-### Authorization
-
-Access to the resources/collection is controlled by ACL (Access Control List) and owner objects.
-For more information, see [Role-based access control](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html).
 
 ### Response 
 
@@ -166,11 +157,6 @@ To create an asset type with a specific `Id`, use the API route with `Id`. If th
 }
 ```
 
-### Authorization
-
-Access to the resources/collection is controlled by ACL (Access Control List) and owner objects.
-For more information, see [Role-based access control](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html).
-
 ### Response 
 
 The response includes a status code and a body. 
@@ -207,11 +193,6 @@ The namespace identifier
 
 A list of `AssetType` objects
 
-### Authorization
-
-Access to the resources/collection is controlled by ACL (Access Control List) and owner objects.
-For more information, see [Role-based access control](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html).
-
 ### Response 
 
 The response includes a status code and a body.
@@ -230,9 +211,9 @@ Create or update an asset type with a specified `Id`.
 
 When updating an asset type which is referenced by assets, the following behaviors may apply:
 - Deleting a metadata value on the asset type removes the metadata value on the default shape of referenced asset​s.
-- Deleting the type reference on the asset type deletes the measurements on the default shape of any referenced assets​.
+- Deleting the type reference on the asset type deletes the measurements on the default shape of referenced assets​.
 - Renaming a metadata value on the asset type renames the metadata value on the default shape of referenced assets​.
-- Renaming the stream reference name on the asset type on default shape of referenced assets
+- Renaming the stream reference name on the asset type will rename the stream reference on default shape of referenced assets.
 
 ### Request 
 
@@ -255,11 +236,6 @@ The asset type identifier
 #### Request body 
 
 The newly created or updated `AssetType` object.
-
-### Authorization
-
-Access to the resources/collection is controlled by ACL (Access Control List) and owner objects.
-For more information, see [Role-based access control](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html).
 
 ### Response 
 
@@ -295,11 +271,6 @@ The asset type identifier
 #### Request body 
 
 None
-
-### Authorization
-
-Access to the resources/collection is controlled by ACL (Access Control List) and owner objects.
-For more information, see [Role-based access control](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html).
 
 ### Response 
 

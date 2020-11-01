@@ -64,7 +64,7 @@ The following is an example of a status mapping.
 }
 ```
 
-The asset or asset type's  StreamReferences field has an Id property. To assign a status mapping to an asset or asset type, the value assigned to the Id property must match the StreamReferenceId of the status mapping object. Using the status mapping example above, AssetStreamReferenceId is assigned to the asset in the following example. <!-- Should this be AssetStreamReferenceId1? -->
+The asset or asset type's  StreamReferences field has an Id property. To assign a status mapping to an asset or asset type, the value assigned to the Id property must match the StreamReferenceId of the status mapping object. Using the status mapping example above, AssetStreamReferenceId1 is assigned to the asset in the following example. 
 
 ```
 {

@@ -1,5 +1,2 @@
-- name: Assets
+- name: Assets and Asset Types
   href: Assets/toc.yml
-- name: Asset Types
-  href: Asset_Types/toc.yml
-  topicHref: Asset_Types/asset-type-overview.md

@@ -35,7 +35,7 @@ references:
   name: Add identifying field
   href: Content_Portal/Documentation/DataViews/DefineaDataView/Add_Identifying_Field.html
 - uid: AssetCentricDataAPI
-  name: Asset-centric Data API
+  name: Asset Centric Data API
   href: Content_Portal/Documentation/Assets/Asset-Centric-Data-API.html
 - uid: AssetDefaultShape
   name: Asset Default Shape
@@ -59,7 +59,7 @@ references:
   name: Asset Status Mapping
   href: Content_Portal/Documentation/Assets/asset-status-mapping.html
 - uid: AssetTypesAPI
-  name: AssetTypes API
+  name: Asset Types API
   href: Content_Portal/Documentation/Assets/Asset-Type.html
 - uid: ConceptsOverview
   name: OSIsoft Cloud Services

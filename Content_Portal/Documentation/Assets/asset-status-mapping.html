@@ -98,14 +98,14 @@
 <td>String</td>
 <td>Required</td>
 <td>No</td>
-<td>Name and <code>Id</code> for this status mapping.</td>
+<td><code>Name</code> and <code>Id</code> for this status mapping.</td>
 </tr>
 <tr>
 <td>Description</td>
 <td>String</td>
 <td>Required</td>
 <td>No</td>
-<td>Description of the status mapping.</td>
+<td><code>Description</code> of the status mapping.</td>
 </tr>
 <tr>
 <td>StreamReferenceId</td>
@@ -119,7 +119,7 @@
 <td>String</td>
 <td>Required</td>
 <td>No</td>
-<td>SDS stream property that status uses for calculations. It must be present on the StreamId property on the asset StreamReference.</td>
+<td>SDS stream property that status uses for calculations. It must be present on the StreamId property on the asset StreamReference.  The SDS stream property must be a numeric enumeration, character, or string type.</td>
 </tr>
 <tr>
 <td>ValueStatusMappings</td>
@@ -194,7 +194,7 @@
         }
     ]
 }
-</code></pre><p>The asset or asset type&#39;s  StreamReferences field has an Id property. To assign a status mapping to an asset or asset type, the value assigned to the Id property must match the StreamReferenceId of the status mapping object. Using the status mapping example above, AssetStreamReferenceId is assigned to the asset in the following example. </p>
+</code></pre><p>The asset or asset type&#39;s  StreamReferences field has an Id property. To assign a status mapping to an asset or asset type, the value assigned to the Id property must match the StreamReferenceId of the status mapping object. Using the status mapping example above, AssetStreamReferenceId1 is assigned to the asset in the following example. </p>
 <pre><code>{
   &quot;Id&quot;: &quot;ChargingStationAsset&quot;, 
    &quot;AssetTypeId&quot;: null,
@@ -277,7 +277,7 @@ The asset type identifier</p>
 </code></pre><hr>
 <h2 id="update-status-mapping"><code>Update Status Mapping</code></h2>
 <p>Update the status mapping for a given asset or asset type.</p>
-<p>For an asset status mappings, you may specify and If-Match property in the HTTP request header to ensure that the status mappings is updated only if the asset version matches. The If-Match property is not available for asset types. </p>
+<p>For an asset status mappings, you can include an If-Match property in the HTTP request header to specify the asset version. The status mappings is updated only if the asset version matches. The If-Match property is not available for asset types. </p>
 <h3 id="request-1">Request</h3>
 <p>Asset</p>
 <p><code>POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/StatusMapping</code></p>

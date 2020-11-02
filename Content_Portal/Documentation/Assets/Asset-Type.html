@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>AssetTypes API </title>
+    <title>Asset Types API </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="AssetTypes API ">
+    <meta name="title" content="Asset Types API ">
     <meta name="generator" content="docfx 2.43.3.0">
     
     <link rel="shortcut icon" href="../../../favicon.ico">
@@ -76,7 +76,7 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="AssetTypesAPI">
-<h1 id="assettypes-api">AssetTypes API</h1>
+<h1 id="asset-types-api">Asset Types API</h1>
 
 <p>The asset type API provides methods to create, read, update, and delete asset types. An asset type can be used to build many similar assets. Some of the key benefits of using an asset type as the base model for assets are:</p>
 <ul>
@@ -85,7 +85,7 @@
 </ul>
 <hr>
 <h2 id="get-assettype-by-id"><code>Get AssetType by Id</code></h2>
-<p>Returns the specified asset type</p>
+<p>Returns the specified asset type.</p>
 <h3 id="request">Request</h3>
 <pre><code class="lang-text">
 GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}
@@ -94,9 +94,6 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asset
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string assetTypeId</code></p>
 <p>The asset type identifier</p>
-<h3 id="authorization">Authorization</h3>
-<p>Access to the resources/collection is controlled by ACL (Access Control List) and owner objects.
-For more information, see <a href="https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html">Role-based access control</a>.</p>
 <h3 id="response">Response</h3>
 <p>The response includes a status code and a response body.</p>
 <table>
@@ -162,11 +159,8 @@ Content-Type: application/json
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p>[Optional] <code>int skip</code><br>Maximum number of asset types to retrieve. If unspecified, the default (100) is used.</p>
-<p>[Optonal] <code>int count</code>
+<p>[Optional] <code>int count</code>
 An optional parameter representing the maximum number of assets to retrieve. If not specified, the default value of 100 is used.</p>
-<h3 id="authorization-1">Authorization</h3>
-<p>Access to the resources/collection is controlled by ACL (Access Control List) and owner objects.
-For more information, see <a href="https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html">Role-based access control</a>.</p>
 <h3 id="response-1">Response</h3>
 <p>The response includes a status code and a body.</p>
 <table>
@@ -233,10 +227,7 @@ For more information, see <a href="https://ocs-docs.osisoft.com/Content_Portal/D
         }
     ]
 }
-</code></pre><h3 id="authorization-2">Authorization</h3>
-<p>Access to the resources/collection is controlled by ACL (Access Control List) and owner objects.
-For more information, see <a href="https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html">Role-based access control</a>.</p>
-<h3 id="response-2">Response</h3>
+</code></pre><h3 id="response-2">Response</h3>
 <p>The response includes a status code and a body. </p>
 <table>
 <thead>
@@ -279,9 +270,6 @@ For more information, see <a href="https://ocs-docs.osisoft.com/Content_Portal/D
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <h4 id="request-body-1">Request body</h4>
 <p>A list of <code>AssetType</code> objects</p>
-<h3 id="authorization-3">Authorization</h3>
-<p>Access to the resources/collection is controlled by ACL (Access Control List) and owner objects.
-For more information, see <a href="https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html">Role-based access control</a>.</p>
 <h3 id="response-3">Response</h3>
 <p>The response includes a status code and a body.</p>
 <table>
@@ -321,9 +309,9 @@ For more information, see <a href="https://ocs-docs.osisoft.com/Content_Portal/D
 <p>When updating an asset type which is referenced by assets, the following behaviors may apply:</p>
 <ul>
 <li>Deleting a metadata value on the asset type removes the metadata value on the default shape of referenced asset​s.</li>
-<li>Deleting the type reference on the asset type deletes the measurements on the default shape of any referenced assets​.</li>
+<li>Deleting the type reference on the asset type deletes the measurements on the default shape of referenced assets​.</li>
 <li>Renaming a metadata value on the asset type renames the metadata value on the default shape of referenced assets​.</li>
-<li>Renaming the stream reference name on the asset type on default shape of referenced assets</li>
+<li>Renaming the stream reference name on the asset type will rename the stream reference on default shape of referenced assets.</li>
 </ul>
 <h3 id="request-4">Request</h3>
 <pre><code class="lang-text">PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId} 
@@ -333,9 +321,6 @@ For more information, see <a href="https://ocs-docs.osisoft.com/Content_Portal/D
 <p><code>string assetTypeId</code><br>The asset type identifier</p>
 <h4 id="request-body-2">Request body</h4>
 <p>The newly created or updated <code>AssetType</code> object.</p>
-<h3 id="authorization-4">Authorization</h3>
-<p>Access to the resources/collection is controlled by ACL (Access Control List) and owner objects.
-For more information, see <a href="https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html">Role-based access control</a>.</p>
 <h3 id="response-4">Response</h3>
 <p>The response includes a status code and a body. </p>
 <table>
@@ -380,9 +365,6 @@ For more information, see <a href="https://ocs-docs.osisoft.com/Content_Portal/D
 <p><code>string assetTypeId</code><br>The asset type identifier</p>
 <h4 id="request-body-3">Request body</h4>
 <p>None</p>
-<h3 id="authorization-5">Authorization</h3>
-<p>Access to the resources/collection is controlled by ACL (Access Control List) and owner objects.
-For more information, see <a href="https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html">Role-based access control</a>.</p>
 <h3 id="response-5">Response</h3>
 <p>The response includes a status code and a body.</p>
 <table>

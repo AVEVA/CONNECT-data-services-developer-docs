@@ -114,7 +114,7 @@ An optional parameter representing the zero-based offset of the first asset to r
 <p>[Optional] <code>int count</code> 
 An optional parameter representing the maximum number of assets to retrieve. If not specified, a default value of 100 is used.</p>
 <p>[Optional] <code>[id|name] [asc|desc|] orderby</code>
-An optional parameter which returns assets ordered either by the asset <code>id</code> or the asset <code>name</code>. In addition to the property, you can optionally specify either <code>asc</code> or <code>desc</code> to return the results in ascending or descending order. If not specified, the default is ascending order.</p>
+An optional parameter which returns assets ordered either by the asset <code>Id</code> or the asset <code>name</code>. In addition to the property, you can optionally specify either <code>asc</code> or <code>desc</code> to return the results in ascending or descending order. If not specified, the default is ascending order.</p>
 <h3 id="response">Response</h3>
 <p>The response includes a status code and an array of assets matching the search criteria.</p>
 <table>
@@ -163,7 +163,7 @@ An optional parameter which returns assets ordered either by the asset <code>id<
 </tr>
 <tr>
 <td>Id:Id1 Name desc</td>
-<td>Returns the return results for asset with <code>Id</code> equal to <strong>Id1</strong> in descending order by Name.</td>
+<td>Returns the asset with <code>Id</code> equal to <strong>Id1</strong> return results in descending order by Name.</td>
 </tr>
 <tr>
 <td>Id:Id*</td>
@@ -195,7 +195,7 @@ An optional parameter which returns assets ordered either by the asset <code>id<
 </tr>
 <tr>
 <td>Id:X* AND Metadata/Name:B*</td>
-<td>Returns all assets with Id starting with <strong>X</strong> and containing at least one metadata value with a name that starts with a <strong>B</strong>.</td>
+<td>Returns all assets with <code>Id</code> starting with <strong>X</strong> and containing at least one metadata value with a name that starts with a <strong>B</strong>.</td>
 </tr>
 <tr>
 <td>AssetTypeId:HeaterTypeId</td>

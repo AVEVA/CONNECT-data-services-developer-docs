@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Asset-centric Data API </title>
+    <title>Asset Centric Data API </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Asset-centric Data API ">
+    <meta name="title" content="Asset Centric Data API ">
     <meta name="generator" content="docfx 2.43.3.0">
     
     <link rel="shortcut icon" href="../../../favicon.ico">
@@ -76,9 +76,9 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="AssetCentricDataAPI">
-<h1 id="asset-centric-data-api">Asset-centric Data API</h1>
+<h1 id="asset-centric-data-api">Asset Centric Data API</h1>
 
-<p>The asset-centric data API provides a quick way to take the dynamic data stored in SDS streams and store it as references within a given asset measurement mappings.</p>
+<p>The asset centric data API provides a quick way to take the dynamic data stored in SDS streams and store it as references within a given asset measurement mappings.</p>
 <p>In order to retrieve stream data from an asset, you must first set up measurement mappings for a given asset. The data that is retrieved is based on the default shape of the asset.</p>
 <h3 id="example-asset">Example Asset</h3>
 <p>The following asset is used in all of the sample output in this topic.</p>
@@ -127,7 +127,7 @@ The namespace identifier</p>
 <p><code>string assetId</code>
 The asset identifier</p>
 <p>(Optional)
-<code>string[] measurements</code> measurementNames
+<code>string[] measurements</code> measurementNames <!-- Please check this. -->
 A comma-separated list of measurement names that you want returned for the last data. By default, all measurements are returned.</p>
 <h3 id="response">Response</h3>
 <p>The response includes a status code and a response body.</p>
@@ -195,7 +195,9 @@ The asset identifier</p>
 <p><code>string startIndex</code> 
 The start index for the intervals</p>
 <p><code>string endIndex</code> 
-The number of requested intervals </p>
+The end index for the intervals</p>
+<p><code>int intervals</code>
+The number of requested intervals &lt;!-- This was my omission. On the Wiki, it says this is <code>**string** intervals</code>. -- &gt;</p>
 <p>(Optional)
 <code>string[] measurements</code> measurementNames
 A comma-separated list of measurement names that you want returned for the last data. By default, all measurements are returned.</p>

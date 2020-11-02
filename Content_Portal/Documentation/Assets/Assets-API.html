@@ -79,12 +79,12 @@
 <h1 id="assets-api">Assets API</h1>
 
 <p>The Assets API allows you to create, read, update, and delete assets. </p>
-<p>The asset feature supports the HTTP entity tag (ETag) and If-Match for conditional requests. When a <code>GET</code> call is performed, the HTTP response header will include an Etag which indicates what version of the asset resource will be retrieved.</p>
-<p>See <a class="xref" href="Access-Control-API.html">Asset and AssetType Access Control API</a>, <a class="xref" href="Asset-Centric-Data-API.html">Asset Centric API</a>, and <a class="xref" href="Asset-Search-API.html">Assets Search API</a> for additional API details.</p>
+<p>The asset feature supports the HTTP entity tag (ETag) and If-Match for conditional requests. When a <code>GET</code> call is performed, the HTTP response header includes an Etag which indicates what version of the asset resource will be retrieved.</p>
+<p>See <a class="xref" href="Access-Control-API.html">Asset and AssetType Access Control API</a>, <a class="xref" href="Asset-Centric-Data-API.html">Asset Centric Data API</a>, and <a class="xref" href="Asset-Search-API.html">Assets Search API</a> for additional API details.</p>
 <h4 id="example">Example</h4>
 <p>This is version 7 of this particular asset.</p>
 <pre><code>Etag: &quot;7&quot;
-</code></pre><p>To edit or delete the asset, specify If-Match in the HTTP request header when calling <code>DELETE</code> or <code>PUT</code>:</p>
+</code></pre><p>To edit or delete the asset, specify If-Match in the HTTP request header when calling <code>DELETE</code> or <code>PUT</code>.</p>
 <h4 id="example-1">Example</h4>
 <p>Modify or delete only if the current asset matches version 7. Otherwise, do not perform this operation. If this condition fails, return a 412. </p>
 <pre><code>If-Match : &quot;7&quot;
@@ -161,7 +161,7 @@ Content-Type: application/json
 }
 </code></pre><hr>
 <h2 id="get-assets"><code>Get Assets</code></h2>
-<p>Returns an array of assets and returns the total number of assets returned, specified as Total-Count in the HTTP response heaser. </p>
+<p>Returns an array of assets and the total number of assets returned, specified as Total-Count in the HTTP response header. </p>
 <h3 id="request-1">Request</h3>
 <pre><code>GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets?skip={skip}&amp;count={count} 
 </code></pre><h3 id="parameters-1">Parameters</h3>
@@ -192,7 +192,7 @@ Content-Type: application/json
 <tr>
 <td>204 No Content</td>
 <td>none</td>
-<td>No assets were found or the user does not have permission to view assets.</td>
+<td>No assets were found or you do not have permission to view assets.</td>
 </tr>
 <tr>
 <td>400 Bad Request</td>
@@ -209,7 +209,7 @@ Content-Type: application/json
 <hr>
 <h2 id="create-asset"><code>Create Asset</code></h2>
 <p>Create a new asset with a specified <code>Id</code>. </p>
-<p>If the asset you are trying to create references an asset type (via the AssetTypeId property) and if there is the corresponding asset type has a metadata value with the same <code>Id</code>, then the name and SDS type code of the metadata value on the asset must be null. If the asset type does not have metadatum with a corresponding <code>Id</code>, name and SDS type code may not be null.</p>
+<p>If the asset you are trying to create references an asset type (through the AssetTypeId property) and if the corresponding asset type has a metadata value with the same <code>Id</code>, then the name and SDS type code of the metadata value on the asset must be null. If the asset type does not have metadata value with a corresponding <code>Id</code>, the name and SDS type code on the asset cannot be null.</p>
 <h3 id="request-2">Request</h3>
 <pre><code class="lang-text">POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId} 
 </code></pre><h3 id="parameters-2">Parameters</h3>
@@ -308,7 +308,7 @@ The asset identifier</p>
 <tr>
 <td>400 Bad Request</td>
 <td>error</td>
-<td>The request is not valid. The response will include which asset failed validation checks. See the response body for additional details.</td>
+<td>The request is not valid. The response includes which asset failed validation checks. See the response body for additional details.</td>
 </tr>
 <tr>
 <td>403 Forbidden</td>
@@ -324,7 +324,7 @@ The asset identifier</p>
 </table>
 <hr>
 <h2 id="create-or-update-asset"><code>Create or Update Asset</code></h2>
-<p>Create or update an asset with a specified <code>Id</code>. It the asset already exists, you can specify an If-Match property in the HTTP request header to ensure that the asset is modified only if its version matches.</p>
+<p>Create or update an asset with a specified <code>Id</code>. If the asset already exists, you can specify an If-Match property in the HTTP request header to ensure that the asset is modified only if its version matches.</p>
 <h3 id="request-4">Request</h3>
 <pre><code class="lang-text">PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId} 
 </code></pre><h3 id="parameters-4">Parameters</h3>
@@ -340,7 +340,7 @@ The asset identifier</p>
 <p>If an asset type <code>Id</code> is specified for an asset, then the following is true:</p>
 <ul>
 <li>The stream references name of an asset is set to null if the stream reference <code>Id</code> matches the stream reference <code>Id</code> of the asset type.</li>
-<li>The name of a metadata value is set to null for those metadata values whose <code>Id</code> match the asset type metadata value <code>Id</code>s.</li>
+<li>If the asset and asset type have a metadata value with the same <code>Id</code>, then the name property on the asset is set to null. </li>
 </ul>
 <h3 id="response-4">Response</h3>
 <p>The response includes a status code, body, and Etag version in the HTTP response header. </p>
@@ -361,7 +361,7 @@ The asset identifier</p>
 <tr>
 <td>400 Bad Request</td>
 <td>error</td>
-<td>The request is not valid. The response will include which asset failed validation checks. See the response body for additional details.</td>
+<td>The request is not valid. The response includes which asset failed validation checks. See the response body for additional details.</td>
 </tr>
 <tr>
 <td>403 Forbidden</td>
@@ -387,7 +387,7 @@ The asset identifier</p>
 </table>
 <hr>
 <h2 id="delete-asset"><code>Delete Asset</code></h2>
-<p>Delete an asset with a specified <code>Id</code>. You may specify an If-Match property in the HTTP request header to ensure that the asset is deleted only if the version matches.</p>
+<p>Delete an asset with a specified <code>Id</code>. You can include an If-Match property in the HTTP request header to specify the asset version. The asset is deleted only if the version matches.</p>
 <h3 id="request-5">Request</h3>
 <pre><code class="lang-text">DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}   
 </code></pre><h3 id="parameters-5">Parameters</h3>
@@ -418,7 +418,7 @@ The asset identifier</p>
 <tr>
 <td>400 Bad Request</td>
 <td>error</td>
-<td>The request is not valid. The response will include which asset failed validation checks. See the response body for additional details.</td>
+<td>The request is not valid. The response includes which asset failed validation checks. See the response body for additional details.</td>
 </tr>
 <tr>
 <td>403 Forbidden</td>

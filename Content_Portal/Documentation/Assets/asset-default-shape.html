@@ -144,7 +144,7 @@
 <td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m6</strong>&quot;<br>  <code>Value</code>=10</td>
 <td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;anotherName&quot;<br>  <code>Value</code>=&quot;1234&quot;</td>
 <td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m6</strong>&quot;<br>  <code>Value</code>=10</td>
-<td style="text-align:left">The <code>Metadata</code> value with <code>Id</code>= &quot;md_id&quot; is not null. Therefore, the default shape&#39;s <code>Metadata</code> value takes the  asset type&#39;s <code>Metadata</code> value.</td>
+<td style="text-align:left">The <code>Metadata</code> value <code>Name</code> with <code>Id</code>= &quot;md_id&quot; is not null on the asset. Therefore, the default shape&#39;s <code>Metadata</code> value takes the  asset type&#39;s <code>Metadata</code> value.</td>
 </tr>
 <tr>
 <td>7</td>
@@ -158,23 +158,24 @@
 <td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m9</strong>&quot;<br> <code>Value</code>=10</td>
 <td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=null<br> <code>Value</code>=&quot;1.23&quot;</td>
 <td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m9</strong>&quot;<br>  <code>Value</code>=1</td>
-<td style="text-align:left">The <code>Metadata</code> value with <code>Id</code>=&quot;md_id&quot; has a different <code>SdsTypeCode</code> on the asset and asset type. Therefore, the default shape&#39;s <code>Metadata</code> value coerces the overloaded <code>Value</code> from the asset to the <code>SdsTypecod</code>e on the asset type. It also takes the  <code>Metadata</code> value for <code>UOM</code> and <code>SdsTypeCode</code> from the asset type.</td>
+<td style="text-align:left">The <code>Metadata</code> value with <code>Id</code>=&quot;md_id&quot; has a different <code>SdsTypeCode</code> on the asset and asset type. Therefore, the default shape&#39;s <code>Metadata</code> value coerces the overloaded <code>Value</code> from the asset to the <code>SdsTypecode</code> on the asset type. It also takes the  <code>Metadata</code> value for <code>UOM</code> and <code>SdsTypeCode</code> from the asset type.</td>
 </tr>
 </tbody>
 </table>
 <h3 id="default-shape-reference-rules">Default Shape Reference Rules</h3>
-<p>The following example illustrates the default shape reference rules. If an asset references an asset type, the the following rules apply for a given <strong>Reference</strong>:</p>
+<p>The following example illustrates the default shape reference rules. If an asset references an asset type, the the following rules apply for a given reference:</p>
 <p>Assume that the following is true for the asset and asset type:</p>
 <ul>
-<li>Id=&quot;reference1&quot; is defined for both the asset and the asset type. The asset type has measurement mappings for &quot;Temperature&quot; and &quot;Pressure&quot;. &lt;! -- Is that correct? --&gt;</li>
-<li>Id=&quot;reference2&quot; is defined only on the asset, with one measurement mapping for &quot;Temperature&quot;.</li>
-<li>Id=&quot;reference3&quot; is defined only on the asset, but its <strong>StreamReferenceName</strong> is null, with one measurement mapping for &quot;Pressure&quot;.</li>
+<li><code>Id</code>=&quot;reference1&quot; is defined for both the asset and the asset type. The asset type has measurement mappings for &quot;Temperature&quot; and &quot;Pressure&quot;.</li>
+<li><code>Id</code>=&quot;reference2&quot; is defined only on the asset, with one measurement mapping for &quot;Temperature&quot;.</li>
+<li><code>Id</code>=&quot;reference3&quot; is defined only on the asset, but its <code>StreamReferenceName</code> is null, with one measurement mapping for &quot;Pressure&quot;.</li>
 </ul>
+<!-- Are "Temperature" and "Pressure" fields like "Id" and "Name." If so, then they should be formatted similarly. Is "reference1", "reference2", etc. the value of "Id"? -->
 <p>In this scenario, the default reference rules resolve as follows: </p>
 <ul>
 <li>Measurement mappings for &quot;reference1&quot; are determined by the asset type. Any measurement mappings for &quot;reference1&quot; on the asset are ignored.</li>
 <li>The &quot;Temperature&quot; measurement mapping for &quot;reference2&quot; on the asset overrides the &quot;Temperature&quot; measurement mappings from &quot;reference1&quot;.</li>
-<li>Any measurement mappings for &quot;reference3&quot; are ignored because Name on the asset is null. Note: <strong>StreamReferenceName</strong> on the asset type cannot be null. </li>
+<li>Any measurement mappings for &quot;reference3&quot; are ignored because Name on the asset is null. Note: <code>StreamReferenceName</code> on the asset type cannot be null. </li>
 </ul>
 <h3 id="request">Request</h3>
 <pre><code>GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Shape

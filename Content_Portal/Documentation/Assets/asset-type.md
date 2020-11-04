@@ -26,8 +26,7 @@ The tenant identifier
 `string namespaceId`   
 The namespace identifier
 
-`string assetTypeId`
-
+`string assetTypeId`  
 The asset type identifier
 
 ### Response 
@@ -90,7 +89,7 @@ The namespace identifier
 [Optional] `int skip`   
 Maximum number of asset types to retrieve. If unspecified, the default (100) is used.
 
-[Optional] `int count`
+[Optional] `int count`  
 An optional parameter representing the maximum number of assets to retrieve. If not specified, the default value of 100 is used.
 
 ### Response 
@@ -200,7 +199,7 @@ The response includes a status code and a body.
 | Status Code     | Response Type | Description                                                  |
 | --------------- | ------------- | ------------------------------------------------------------ |
 | 200 OK          | `AssetTypes`  | A list of `AssetType` objects, as persisted, including values for optional parameters that were omitted in the request. |
-| 400 Bad Request | error         | The request is not valid. The response will include which `AssetTyp`s objects fail validation checks. See the response body for additional details. |
+| 400 Bad Request | error         | The request is not valid. The response will include which `AssetType` objects fail validation checks. See the response body for additional details. |
 | 403 Forbidden   | error         | You are not authorized to create `AssetType` objects.        |
 | 409 Conflict    | error         | The asset type update or create has a conflict. See the response body for additional details. |
 
@@ -259,7 +258,9 @@ Delete an asset type with a specified `Id`. Note: An `AssetType` object cannot b
 DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}
 ```
 
-### Parameters   
+### Parameters  
+
+`string tenantId`     
 The tenant identifier
 
 `string namespaceId`   

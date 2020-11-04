@@ -90,24 +90,30 @@ Returns the status mapping of the specified asset or asset type.
 
 Asset
 
-`GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/StatusMapping`
+```text 
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/StatusMapping
+
+```
 
 Asset Type
 
-`GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}/StatusMapping`
+```text 
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}/StatusMapping
+
+```
 
 ### Parameters
 
-`string tenantId`
+`string tenantId`  
 The tenant identifier
 
-`string namespaceId`
+`string namespaceId`  
 The namespace identifier
 
-`string assetId`
+`string assetId`  
 The asset identifier
 
-`string assetTypeId`
+`string assetTypeId`  
 The asset type identifier
 
 ### Response
@@ -156,24 +162,29 @@ For an asset status mappings, you can include an If-Match property in the HTTP r
 
 Asset
 
-`POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/StatusMapping`
+```text 
+POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/StatusMapping
+
+``` 
 
 Asset Type
 
-`POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}/StatusMapping`
+```text 
+POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}/StatusMapping
+```
 
 ### Parameters
 
-`string tenantId`
+`string tenantId`  
 The tenant identifier
 
-`string namespaceId`
+`string namespaceId`  
 The namespace identifier
 
-`string assetId`
+`string assetId`  
 The asset identifier
 
-`string assetTypeId`
+`string assetTypeId`  
 The asset type identifier
 
 #### Example POST body
@@ -217,17 +228,20 @@ View the status of an asset
 
 ### Request
 
-`GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/status/last`
+```text 
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/status/last
+
+```
 
 ### Parameters
 
-`string tenantId`
+`string tenantId`  
 The tenant identifier
 
-`string namespaceId`
+`string namespaceId`  
 The namespace identifier
 
-`string assetId`
+`string assetId`  
 The asset identifier
 
 ### Response
@@ -263,17 +277,20 @@ View the status of multiple assets.
 
 ### Request
 
-`POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/assets/status/last`
+```text 
+POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/assets/status/last
+
+```
 
 ### Parameters
 
-`string tenantId`
+`string tenantId`  
 The tenant identifier
 
-`string namespaceId`
+`string namespaceId`  
 The namespace identifier
 
-`string assetId`
+`string assetId`  
 The asset identifier
 
 #### Example POST body

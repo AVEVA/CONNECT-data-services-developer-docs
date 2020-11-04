@@ -34,22 +34,22 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets?skip={skip
 ```
 
 ### Parameters  
-`string tenantId` 
+`string tenantId`  
 The tenant identifier
 
-`string namespaceId` 
+`string namespaceId`  
 The namespace identifier
 
-`string queryString`
+`string queryString`  
 The asset query string. Search strings are not case-sensitive.
 
-[Optional] `int skip` 
+[Optional] `int skip`   
 An optional parameter representing the zero-based offset of the first asset to retrieve. If not specified, a default value of 0 is used.
 
-[Optional] `int count` 
+[Optional] `int count`   
 An optional parameter representing the maximum number of assets to retrieve. If not specified, a default value of 100 is used.
 
-[Optional] `[id|name] [asc|desc|] orderby`
+[Optional] `[id|name] [asc|desc|] orderby`  
 An optional parameter which returns assets ordered either by the asset `Id` or the asset `name`. In addition to the property, you can optionally specify either `asc` or `desc` to return the results in ascending or descending order. If not specified, the default is ascending order.
 
 ### Response 

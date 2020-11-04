@@ -135,7 +135,7 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/
 
 ```
 
-
+Asset type
 
 ```text 
 GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetTypeId}/AccessControl 
@@ -261,7 +261,7 @@ Get the calling user or client's access rights to the requested asset or asset t
 Asset
 
 ```text 
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/AccessRights                                                                 
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/AccessRights
 
 ```
 
@@ -270,27 +270,23 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/
 Asset type
 
 ```text 
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetTypeId}/AccessRights                                                                 
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetTypeId}/AccessRights
 
 ```
 
 
 ### Parameters  
 
-`string tenantId` 
-
+`string tenantId`  
 The tenant identifier 
 
-`string namespaceId` 
-
+`string namespaceId`  
 The namespace identifier 
 
-`string assetId`
-
+`string assetId`  
 The asset identifier
 
-`string assetTypeId`
-
+`string assetTypeId`  
 The asset type identifier
 
 ### Response 
@@ -341,17 +337,13 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetType
 
 ### Parameters  
 
-`string tenantId` 
-
+`string tenantId`  
 The tenant identifier 
 
-`string namespaceId` 
-
+`string namespaceId`  
 The namespace identifier 
 
-
-`string assetTypeId`
-
+`string assetTypeId`  
 The asset type identifier
 
 ### Response 
@@ -402,20 +394,16 @@ PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asset
 
 ###  Parameters  
 
-`string tenantId` 
-
+`string tenantId`  
 The tenant identifier 
 
-`string namespaceId` 
-
+`string namespaceId`  
 The namespace identifier 
 
-`string assetId`
-
+`string assetId`  
 The asset identifier
 
-`string assetTypeId`
-
+`string assetTypeId`  
 The AssetType identifier
 
 #### Request body 

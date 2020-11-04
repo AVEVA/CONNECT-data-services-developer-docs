@@ -42,7 +42,7 @@ Follow the procedures to create an asset, add and configure its metadata and mea
 
 2. Enter a name for the metadata.
 
-3. (Optional) Enter a value for the metadata and select a type. 
+3. (Optional) Enter a value for the metadata and select a type.  
     Note: The value must match the selected type. The following date/time format is supported: MM/DD/(YY)YY hh:mm(:ss).
 
     <!--WRITER NOTE: What date/time formats are supported? Is this the same as for PI Server? i.e., Microsoft standard date/time formats? -->
@@ -58,10 +58,10 @@ Follow the procedures to create an asset, add and configure its metadata and mea
 
 2. Click **Add Stream References** to add a measurement.
 
-3. In the Select Streams window, select the stream you want.
+3. In the Select Streams window, select the stream you want.  
      Note: Use the search box to find the stream. You can search on the stream name, description, or the type. Use the asterisk (*)  as a wildcard character.
 
-4. Click **Add**.
+4. Click **Add**.  
      The stream reference appears in the right pane. This is the automatically generated user-friendly stream name. You can edit this name.
      ![Stream reference measurements](..\images\stream-reference.png)
      

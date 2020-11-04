@@ -78,16 +78,16 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asset
 ```
 
 ### Parameters
-`string tenantId` 
+`string tenantId`  
 The tenant identifier 
 
-`string namespaceId` 
+`string namespaceId`  
 The namespace identifier
 
-`string assetId`
+`string assetId`  
 The asset identifier
 
-`string assetTypeId`
+`string assetTypeId`  
 The asset type identifier
 
 ### Response 
@@ -145,16 +145,16 @@ POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 
 ### Parameters
 
-`string tenantId` 
+`string tenantId`   
 The tenant identifier 
 
-`string namespaceId` 
+`string namespaceId`   
 The namespace identifier
 
-`string assetId`
+`string assetId`  
 The asset identifier
 
-`string assetId`
+`string assetId`  
 The asset type identifier
 
 ### Response 

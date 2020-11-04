@@ -38,16 +38,13 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 ```
 
 ### Parameters  
-`string tenantId` 
-
+`string tenantId`  
 The tenant identifier
 
-`string namespaceId` 
-
+`string namespaceId`  
 The namespace identifier
 
-`string assetId`
-
+`string assetId`  
 The asset identifier
 
 ### Response 
@@ -99,20 +96,16 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets?skip={skip
 ```
 
 ### Parameters  
-`string tenantId` 
-
+`string tenantId`   
 The tenant identifier
 
-`string namespaceId` 
-
+`string namespaceId`   
 The namespace identifier
 
-[optional] `int skip` 
-
+[optional] `int skip`   
 An optional parameter representing the zero-based offset of the first asset to retrieve. If not specified, a default value of 0 is used.
 
-[optional] `int count` 
-
+[optional] `int count`   
 An optional parameter representing the maximum number of assets to retrieve. If not specified, a default value of 100 is used. 
 
 ### Response 
@@ -138,13 +131,13 @@ POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 ```
 
 ### Parameters  
-`string tenantId` 
+`string tenantId`   
 The tenant identifier
 
-`string namespaceId` 
+`string namespaceId`   
 The namespace identifier
 
-`string assetId`
+`string assetId`  
 The asset identifier
 
 
@@ -203,12 +196,10 @@ POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
 
 ### Parameters  
 
-`string tenantId` 
-
+`string tenantId`   
 The tenant identifier
 
-`string namespaceId` 
-
+`string namespaceId`   
 The namespace identifier
 
 #### Request body 
@@ -241,13 +232,13 @@ PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 ### Parameters  
 
-.`string tenantId` 
+`string tenantId`   
 The tenant identifier
 
-`string namespaceId` 
+`string namespaceId`   
 The namespace identifier
 
-`string assetId`
+`string assetId`  
 The asset identifier
 
 #### Request body 
@@ -288,13 +279,13 @@ DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetI
 
 ### Parameters  
 
-`string tenantId` 
+`string tenantId`   
 The tenant identifier
 
-`string namespaceId` 
+`string namespaceId`   
 The namespace identifier
 
-`string assetId`
+`string assetId`  
 The asset identifier
 
 #### Request body 

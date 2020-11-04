@@ -62,13 +62,13 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/
 
 ### Parameters
 
-`string tenantId` 
+`string tenantId`    
 The tenant identifier
 
-`string namespaceId` 
+`string namespaceId`  
 The namespace identifier
 
-`string assetId`
+`string assetId`  
 The asset identifier
 
 ### Response

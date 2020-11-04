@@ -57,17 +57,16 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/
 ```
 
 ### Parameters  
-`string tenantId` 
+`string tenantId`   
 The tenant identifier
 
-`string namespaceId` 
+`string namespaceId`   
 The namespace identifier
 
-`string assetId`
+`string assetId`  
 The asset identifier
 
-(Optional)
-`string[] measurements` measurementNames <!-- Please check this. -->
+[Optional] `string[] measurement names`  
 A comma-separated list of measurement names that you want returned for the last data. By default, all measurements are returned.
 
 ### Response 
@@ -108,26 +107,25 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/
 ```
 
 ### Parameters  
-`string tenantId` 
+`string tenantId`   
 The tenant identifier 
 
-`string namespaceId` 
+`string namespaceId`   
 The namespace identifier
 
-`string assetId`
+`string assetId`  
 The asset identifier
 
-`string startIndex` 
+`string startIndex`   
 The start index for the intervals
 
-`string endIndex` 
+`string endIndex`   
 The end index for the intervals
 
-`int intervals`
-The number of requested intervals <!-- This was my omission. On the Wiki, it says this is `**string** intervals`. -- >
+`int intervals`  
+The number of requested intervals
 
-(Optional)
-`string[] measurements` measurementNames
+[Optional] `string[] measurement names`  
 A comma-separated list of measurement names that you want returned for the last data. By default, all measurements are returned.
 
 ### Response 
@@ -244,26 +242,25 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/
 ```
 
 ###  Parameters  
-`string tenantId` 
+`string tenantId`   
 The tenant identifier 
 
-`string namespaceId` 
+`string namespaceId`   
 The namespace identifier
 
-`string assetId`
+`string assetId`  
 The asset identifier
 
-`string startIndex` 
+`string startIndex`   
 The start index for the intervals
 
-`string endIndex` 
+`string endIndex`   
 The end index for the intervals
 
-`int count` 
+`int count`   
 The number of requested intervals
 
-(Optional)
-`string[] measurements` measurementNames
+[Optional] `string[] measurements names`  
 A comma-separated list of measurement names that you want returned for the last data. By default, all measurements are returned.
 
 ### Response 
@@ -348,23 +345,22 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/
 ```
 
 ### Parameters
-`string tenantId`
+`string tenantId`  
 The tenant identifier
 
-`string namespaceId` 
+`string namespaceId`   
 The namespace identifier
 
-`string assetId`
+`string assetId`  
 The asset identifier
 
-`string startIndex` 
+`string startIndex`   
 The start index for the intervals
 
-`string endIndex` 
+`string endIndex`   
 The end index for the intervals
 
-(Optional)
-`string[] measurements` measurementNames
+[Optional] `string[] measurement names`  
 A comma-separated list of measurement names that you want returned for the last data. By default, all measurements are returned.
 
 ### Response

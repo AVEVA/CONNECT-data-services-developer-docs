@@ -18,7 +18,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Concepts/Account_Management_Concepts.html",
-          "hash": "ugb54rgDWm4qWK3v3/5OgQ=="
+          "hash": "BwGe90uOuJcxGzgbMLcvMQ=="
         }
       },
       "is_incremental": false,
@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Concepts/Data_Storage_Concepts.html",
-          "hash": "mMEZWWMKR7iQDXNamV7q2g=="
+          "hash": "+a8jLCM47SOG8cbN5xaLqw=="
         }
       },
       "is_incremental": false,
@@ -86,11 +86,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "Content_Portal/Documentation/Assets/Access-Control-API.md",
+      "source_relative_path": "Content_Portal/Documentation/Assets/access-control-api.md",
       "output": {
         ".html": {
-          "relative_path": "Content_Portal/Documentation/Assets/Access-Control-API.html",
-          "hash": "x0H5AUKWddg5MayWZLbe9w=="
+          "relative_path": "Content_Portal/Documentation/Assets/access-control-api.html",
+          "hash": "GOwQDmDhmkYTeXj+kXRVAA=="
         }
       },
       "is_incremental": false,
@@ -98,71 +98,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "Content_Portal/Documentation/Assets/Asset-Centric-Data-API.md",
+      "source_relative_path": "Content_Portal/Documentation/Assets/asset-centric-data-api.md",
       "output": {
         ".html": {
-          "relative_path": "Content_Portal/Documentation/Assets/Asset-Centric-Data-API.html",
-          "hash": "jlLRNhcYN+rV8m4v4WAOqQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Content_Portal/Documentation/Assets/Asset-Measurements.md",
-      "output": {
-        ".html": {
-          "relative_path": "Content_Portal/Documentation/Assets/Asset-Measurements.html",
-          "hash": "zi1rI0ADowwZEsaopANqyQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Content_Portal/Documentation/Assets/Asset-Search-API.md",
-      "output": {
-        ".html": {
-          "relative_path": "Content_Portal/Documentation/Assets/Asset-Search-API.html",
-          "hash": "3SJyPf0urbaAwe64B2NOhg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Content_Portal/Documentation/Assets/Asset-Type.md",
-      "output": {
-        ".html": {
-          "relative_path": "Content_Portal/Documentation/Assets/Asset-Type.html",
-          "hash": "J4hiFmSbiLhMKA45Bah16g=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Content_Portal/Documentation/Assets/Assets-API.md",
-      "output": {
-        ".html": {
-          "relative_path": "Content_Portal/Documentation/Assets/Assets-API.html",
-          "hash": "tI+w2c64x/PaT+IK1vpqSQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Content_Portal/Documentation/Assets/Assets.md",
-      "output": {
-        ".html": {
-          "relative_path": "Content_Portal/Documentation/Assets/Assets.html",
-          "hash": "93SZNfYKJfnSgu+Bu/3lRQ=="
+          "relative_path": "Content_Portal/Documentation/Assets/asset-centric-data-api.html",
+          "hash": "G7VeoiAIJenKrk63w4+4JA=="
         }
       },
       "is_incremental": false,
@@ -174,7 +114,31 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Assets/asset-default-shape.html",
-          "hash": "6ctBYerYvsFDf9sgNFExww=="
+          "hash": "XEHdVlJX7r3Vz7uJcfV9FQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Assets/asset-measurements.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Assets/asset-measurements.html",
+          "hash": "bUfeBJHrpfOPoYvt1zk+vQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Assets/asset-search-api.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Assets/asset-search-api.html",
+          "hash": "CkcYuKKXgeMvmPI3D56AGg=="
         }
       },
       "is_incremental": false,
@@ -186,19 +150,43 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Assets/asset-status-mapping.html",
-          "hash": "+OkKhnhHUlVTb0pnhpW56w=="
+          "hash": "AYKCFe4lspVTo8mJpR1mPA=="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "type": "Toc",
-      "source_relative_path": "Content_Portal/Documentation/Assets/toc.yml",
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Assets/asset-type.md",
       "output": {
         ".html": {
-          "relative_path": "Content_Portal/Documentation/Assets/toc.html",
-          "hash": "JYDotGtZ13CGGEng6GDGLw=="
+          "relative_path": "Content_Portal/Documentation/Assets/asset-type.html",
+          "hash": "Wx4trC+i4Dn4cISYhM+d+w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Assets/assets-api.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Assets/assets-api.html",
+          "hash": "Byq5t5CJFSb2sx4ER5jNsg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Assets/assets.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Assets/assets.html",
+          "hash": "N61kITzuR0SwN/R0rdZZWw=="
         }
       },
       "is_incremental": false,
@@ -462,7 +450,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/DataViews/DefineaDataView/Queries.html",
-          "hash": "eO17NdigiTNTyLr4FaxeqQ=="
+          "hash": "vk+N08Ugcbo1EnN4zmL+fw=="
         }
       },
       "is_incremental": false,
@@ -1223,23 +1211,247 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "Content_Portal/How_To_Guides/How_To_Guides.md",
+      "source_relative_path": "Content_Portal/How_To_Guides/Assets/asset-type-overview.md",
       "output": {
         ".html": {
-          "relative_path": "Content_Portal/How_To_Guides/How_To_Guides.html",
-          "hash": "+2KcxEwjErqiHtSewGg3bg=="
+          "relative_path": "Content_Portal/How_To_Guides/Assets/asset-type-overview.html",
+          "hash": "aJ6JizvmWy//R9lcLNKoAg=="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "type": "Toc",
-      "source_relative_path": "Content_Portal/How_To_Guides/toc.yml",
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/Assets/convert-asset-to-asset-type.md",
       "output": {
         ".html": {
-          "relative_path": "Content_Portal/How_To_Guides/toc.html",
-          "hash": "O6TAzmhStZjf5/4N+7EtiQ=="
+          "relative_path": "Content_Portal/How_To_Guides/Assets/convert-asset-to-asset-type.html",
+          "hash": "fuMpmVuX36deL3ZgR9VPMA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/Assets/create-an-asset.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/Assets/create-an-asset.html",
+          "hash": "RtJErz3DG3d/Rk3pEfbbKA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/Assets/create-asset-from-type.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/Assets/create-asset-from-type.html",
+          "hash": "PE1l+8pKG8i6sHzMeZsd0A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/Assets/create-asset-type-asset-editor.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/Assets/create-asset-type-asset-editor.html",
+          "hash": "LaCRhG00YQhN/TepkVRlZg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/How_To_Guides.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/How_To_Guides.html",
+          "hash": "Uc+tMNGWOk8z4Ga7YxzH3w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/asset-type-picker.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/asset-type-picker.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/change-measurement-icon@50.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/change-measurement-icon@50.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/choose-stream.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/choose-stream.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/edit-metadata-fields.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/edit-metadata-fields.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/icon_navigation_bigger.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/icon_navigation_bigger.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/map-status-values.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/map-status-values.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/mapped-status-values.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/mapped-status-values.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/metadata-fields.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/metadata-fields.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/namespace-icon.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/namespace-icon.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/stream-reference-caret.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/stream-reference-caret.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/stream-reference-measurements.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/stream-reference-measurements.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/stream-reference.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/stream-reference.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/stream-type-reference-caret.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/stream-type-reference-caret.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/stream-type-reference-measurement.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/stream-type-reference-measurement.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/stream-type-reference.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/stream-type-reference.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/type-stream-reference-caret.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/type-stream-reference-caret.png"
         }
       },
       "is_incremental": false,
@@ -1263,19 +1475,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Quickstarts/Getting-Started-Trend.html",
-          "hash": "ZKXAMEmR6Gt3VhikZqme/w=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Content_Portal/Quickstarts/Getting_Started.md",
-      "output": {
-        ".html": {
-          "relative_path": "Content_Portal/Quickstarts/Getting_Started.html",
-          "hash": "Kny85PuxkMsl78F1WqzXeQ=="
+          "hash": "Vsf/GBgZFBcjDSxSKJcJ9Q=="
         }
       },
       "is_incremental": false,
@@ -1306,6 +1506,18 @@
       "version": ""
     },
     {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Quickstarts/getting-started-rom.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Quickstarts/getting-started-rom.html",
+          "hash": "pb6pRynz+oyuq9+mjpYS1Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Resource",
       "source_relative_path": "Content_Portal/Quickstarts/images/AssetEditor_icons.png",
       "output": {
@@ -1322,17 +1534,6 @@
       "output": {
         "resource": {
           "relative_path": "Content_Portal/Quickstarts/images/Assets.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "Content_Portal/Quickstarts/images/Attributes.png",
-      "output": {
-        "resource": {
-          "relative_path": "Content_Portal/Quickstarts/images/Attributes.png"
         }
       },
       "is_incremental": false,
@@ -1388,6 +1589,17 @@
       "output": {
         "resource": {
           "relative_path": "Content_Portal/Quickstarts/images/Max_min_cursors.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Quickstarts/images/Metadata.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Quickstarts/images/Metadata.png"
         }
       },
       "is_incremental": false,
@@ -1483,10 +1695,21 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "Content_Portal/Quickstarts/images/Trend_full_display.png",
+      "source_relative_path": "Content_Portal/Quickstarts/images/Trend__icon.png",
       "output": {
         "resource": {
-          "relative_path": "Content_Portal/Quickstarts/images/Trend_full_display.png"
+          "relative_path": "Content_Portal/Quickstarts/images/Trend__icon.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Quickstarts/images/Trend_full_display_old.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Quickstarts/images/Trend_full_display_old.png"
         }
       },
       "is_incremental": false,
@@ -1505,32 +1728,21 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "Content_Portal/Quickstarts/images/Trend_mode_icon.png",
-      "output": {
-        "resource": {
-          "relative_path": "Content_Portal/Quickstarts/images/Trend_mode_icon.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "Content_Portal/Quickstarts/images/Trend_views_icon.png",
-      "output": {
-        "resource": {
-          "relative_path": "Content_Portal/Quickstarts/images/Trend_views_icon.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
       "source_relative_path": "Content_Portal/Quickstarts/images/View_full_trend_icon.png",
       "output": {
         "resource": {
           "relative_path": "Content_Portal/Quickstarts/images/View_full_trend_icon.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Quickstarts/images/alarm-icon.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Quickstarts/images/alarm-icon.png"
         }
       },
       "is_incremental": false,
@@ -1559,12 +1771,56 @@
       "version": ""
     },
     {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Quickstarts/images/okay-icon.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Quickstarts/images/okay-icon.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Quickstarts/images/trend-full-display.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Quickstarts/images/trend-full-display.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Quickstarts/images/trend-views-icon.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Quickstarts/images/trend-views-icon.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Quickstarts/images/warning-icon.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Quickstarts/images/warning-icon.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Toc",
       "source_relative_path": "Content_Portal/toc.yml",
       "output": {
         ".html": {
           "relative_path": "Content_Portal/toc.html",
-          "hash": "DSTY0m3THv6+qvy7NLF3EA=="
+          "hash": "4InzutZXNxb73reyFti/Sg=="
         }
       },
       "is_incremental": false,
@@ -1609,7 +1865,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 103,
+          "total_file_count": 108,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Create and configure an asset </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Create and configure an asset ">
+    <meta name="generator" content="docfx 2.56.2.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    <meta property="docfx:rel" content="../../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../../../index.html" width="46">
+        <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Services">
+        </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CreateConfigureAsset">
+<h1 id="create-and-configure-an-asset">Create and configure an asset</h1>
+
+<p>Follow the procedures to create an asset, add and configure its metadata and measurements, and select and configure a measurement whose status will be visible in the card or table view.</p>
+<h3 id="create-the-asset">Create the asset</h3>
+<ol>
+<li><p>Click the menu icon <img src="../images/icon_navigation_bigger.png" alt="menu icon"> and click <strong>Asset Explorer</strong>.</p>
+</li>
+<li><p>To change the <a class="xref" href="../../Concepts/Account_Management_Concepts.html#namespace">namespace</a>, click on the namespace to open the Select a Namespace window.</p>
+<p> <img src="../images/namespace-icon.png" alt="Namespace icon"></p>
+</li>
+<li><p>Select the namespace and click <strong>Continue</strong>.</p>
+</li>
+<li><p>Verify that the Asset/Asset Type selector is set to <strong>Assets</strong>.</p>
+</li>
+<li><p>Click the plus symbol (+) in the toolbar to create a new asset.</p>
+<p>  The Select Type for New Asset window opens. By default, the type selected is &lt;None&gt;.</p>
+</li>
+<li><p>Accept the default and click <strong>Continue</strong>.</p>
+<p> The details blade opens on the right side. </p>
+</li>
+<li><p>Enter a name and description for the asset.</p>
+</li>
+</ol>
+<h3 id="add-metadata-to-the-asset">Add metadata to the asset</h3>
+<ol>
+<li><p>Click <strong>Add Metadata</strong> on the Metadata tab.</p>
+<p> Note: Metadata is static attributes about assets, for example, model or region.</p>
+<p> The fields for entering the metadata details appear. </p>
+<p> <img src="../images/metadata-fields.png" alt="Metadata fields"></p>
+ <!-- We need a definition for metadata that covers its use in different OCS contexts. --> 
+</li>
+<li><p>Enter a name for the metadata.</p>
+</li>
+<li><p>(Optional) Enter a value for the metadata and select a type.<br> Note: The value must match the selected type. The following date/time format is supported: MM/DD/(YY)YY hh:mm(:ss).</p>
+ <!--WRITER NOTE: What date/time formats are supported? Is this the same as for PI Server? i.e., Microsoft standard date/time formats? -->
+</li>
+<li><p>(Optional) Select a UOM.</p>
+</li>
+<li><p>Continue adding metadata for the asset. </p>
+</li>
+</ol>
+<h3 id="add-measurements-to-the-asset">Add measurements to the asset</h3>
+<ol>
+<li><p>Click the <strong>Measurements</strong> tab. </p>
+</li>
+<li><p>Click <strong>Add Stream References</strong> to add a measurement.</p>
+</li>
+<li><p>In the Select Streams window, select the stream you want.<br>  Note: Use the search box to find the stream. You can search on the stream name, description, or the type. Use the asterisk (*)  as a wildcard character.</p>
+</li>
+<li><p>Click <strong>Add</strong>.<br>  The stream reference appears in the right pane. This is the automatically generated user-friendly stream name. You can edit this name.
+  <img src="../images/stream-reference.png" alt="Stream reference measurements"></p>
+</li>
+<li><p>Click the caret symbol to display the measurements for the stream reference.
+ <img src="../images/stream-reference-caret.png" alt="Stream reference"></p>
+<p> The measurements associated with the stream are displayed.
+ <img src="../images/stream-reference-measurements.png" alt="Stream reference measurements"></p>
+</li>
+<li><p>Edit the names of the measurements.</p>
+<p>  Tip: By default, the stream reference is appended as a prefix for all measurement names. You can change this prefix and it will automatically get appended to all measurement names. This is useful if you have multiple streams with the same properties. The prefix is an easy way to distinguish between the different streams.</p>
+</li>
+<li><p>Clear the <strong>Include</strong> checkbox to remove any measurements you don&#39;t want to include.</p>
+</li>
+<li><p>Click <strong>Configure UOMs</strong>. </p>
+</li>
+<li><p>On the Configure UOMs page, make any changes to the property UOMs.</p>
+<p> Note: UOMs can be set only on numeric types.</p>
+</li>
+<li><p>When you are done, click <strong>Save</strong>.</p>
+<p> Note: Once you click <strong>Save</strong>, any changes are immediately made to the UOMs on the stream, regardless of any other actions you take on this asset. For example, the UOM changes to the stream are not reversed if you click <strong>Cancel</strong> on the Measurements tab or if you delete the asset.</p>
+</li>
+<li><p>Click <strong>Preview</strong> to see a simple list of all measurements from all streams associated with this asset.</p>
+</li>
+</ol>
+<h3 id="add-status-tracking-to-the-asset">Add status tracking to the asset</h3>
+<ol>
+<li><p>Click the <strong>Status</strong> tab.</p>
+</li>
+<li><p>Click <strong>Add Status Configuration</strong>.</p>
+</li>
+<li><p>In the Select Measurement window, click the measurement that you want to display status for. Click <strong>Continue</strong>.</p>
+<p> Note: Only measurements with enumerated states or string values can be selected for the asset status;  therefore, only these measurements are displayed. </p>
+<p> You can only specify one measurement as the asset&#39;s status. </p>
+</li>
+<li><p>Click the status icons to map the icon for each value.
+ <img src="../images/map-status-values.png" alt="Mapping status icons"></p>
+<p> All the values have been mapped in the following screen capture.
+ <img src="../images/mapped-status-values.png" alt="Mapped status"></p>
+<p> Tip: You can switch to a different measurement by clicking the <img src="../images/change-measurement-icon%4050.png" alt="Change measurement icon"> icon.</p>
+</li>
+</ol>
+<h3 id="save-the-asset">Save the asset</h3>
+<ol>
+<li>Click <strong>Save</strong>. </li>
+</ol>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/How_To_Guides/Assets/create-an-asset.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2020 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

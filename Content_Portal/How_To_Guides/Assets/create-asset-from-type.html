@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Create an asset from an asset type </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Create an asset from an asset type ">
+    <meta name="generator" content="docfx 2.56.2.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    <meta property="docfx:rel" content="../../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../../../index.html" width="46">
+        <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Services">
+        </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CreateAssetFromAssetType">
+<h1 id="create-an-asset-from-an-asset-type">Create an asset from an asset type</h1>
+
+<p>For more information on asset types, see <a class="xref" href="asset-type-overview.html">Asset types</a>.</p>
+<ol>
+<li><p>Click the menu icon <img src="../images/icon_navigation_bigger.png" alt="menu icon"> and click <strong>Asset Explorer</strong>.</p>
+</li>
+<li><p>Click the plus symbol (+) in the toolbar to open the Select Type for New Asset window. </p>
+</li>
+<li><p>Select the type from the list and click <strong>Continue</strong>.
+ The details blade opens on the right side.</p>
+</li>
+<li><p>Click the pencil icon in the toolbar.</p>
+</li>
+<li><p>Enter a name and description for the asset.
+ Note: The asset type on which this asset is based is shown in the Asset Type field.</p>
+</li>
+<li><p>Click the <strong>Metadata</strong> tab. </p>
+</li>
+<li><p>Edit the values for any of the metadata.
+ Note: You can only edit the values. The metadata are derived from an asset type, as indicated by the T and, therefore, you cannot add or delete metadata or change the type.</p>
+<p> <img src="../images/edit-metadata-fields.png" alt="Metadata fields"></p>
+</li>
+<li><p>When you are done, click <strong>Save</strong>.</p>
+</li>
+<li><p>Click the <strong>Measurements</strong> tab.</p>
+</li>
+<li><p>Click the caret symbol for a stream reference. </p>
+<p> <img src="../images/type-stream-reference-caret.png" alt=""></p>
+</li>
+<li><p>Click <strong>Choose a Stream</strong> to open the Select Stream window.</p>
+<p> <img src="../images/choose-stream.png" alt=""></p>
+</li>
+<li><p>Select the stream from the list of streams.</p>
+<p> Note: Only streams of the type specified for the stream reference are displayed. In this example, only streams of type PI-Float32 are displayed.</p>
+<p> Search on the stream name, ID, or description. You can use the asterisk (*) as a wildcard.</p>
+</li>
+<li><p>Click <strong>Add</strong>.</p>
+</li>
+<li><p>Click <strong>Configure UOMs</strong>. </p>
+</li>
+<li><p>On the Configure UOMs page, make any changes to the property UOMs.</p>
+<p>Note: UOMs can be set only on numeric types.</p>
+</li>
+<li><p>When you are done, click <strong>Save</strong>.</p>
+<p>  Note: Once you click <strong>Save</strong>, any changes are immediately made to the UOMs on the stream, regardless of any other actions you take on this asset. For example, the UOM changes to the stream are not reversed if you click <strong>Cancel</strong> on the Measurements tab or if you delete the asset.</p>
+</li>
+<li><p>Click <strong>Save</strong> to save the asset.</p>
+</li>
+</ol>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/How_To_Guides/Assets/create-asset-from-type.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2020 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

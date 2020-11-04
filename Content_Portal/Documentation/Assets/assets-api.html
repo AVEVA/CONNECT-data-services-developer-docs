@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../../../styles/docfx.css">
     <link rel="stylesheet" href="../../../styles/main.css">
     <meta property="docfx:navrel" content="../../../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
     
     <meta property="docfx:rel" content="../../../">
     
@@ -80,7 +80,7 @@
 
 <p>The Assets API allows you to create, read, update, and delete assets. </p>
 <p>The asset feature supports the HTTP entity tag (ETag) and If-Match for conditional requests. When a <code>GET</code> call is performed, the HTTP response header includes an Etag which indicates what version of the asset resource will be retrieved.</p>
-<p>See <a class="xref" href="Access-Control-API.html">Asset and AssetType Access Control API</a>, <a class="xref" href="Asset-Centric-Data-API.html">Asset Centric Data API</a>, and <a class="xref" href="Asset-Search-API.html">Assets Search API</a> for additional API details.</p>
+<p>See <a class="xref" href="access-control-api.html">Asset and AssetType Access Control API</a>, <a class="xref" href="asset-centric-data-api.html">Asset Centric Data API</a>, and <a class="xref" href="asset-search-api.html">Assets Search API</a> for additional API details.</p>
 <h4 id="example">Example</h4>
 <p>This is version 7 of this particular asset.</p>
 <pre><code>Etag: &quot;7&quot;
@@ -95,12 +95,9 @@
 <h3 id="request">Request</h3>
 <pre><code>GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}  
 </code></pre><h3 id="parameters">Parameters</h3>
-<p><code>string tenantId</code> </p>
-<p>The tenant identifier</p>
-<p><code>string namespaceId</code> </p>
-<p>The namespace identifier</p>
-<p><code>string assetId</code></p>
-<p>The asset identifier</p>
+<p><code>string tenantId</code><br>The tenant identifier</p>
+<p><code>string namespaceId</code><br>The namespace identifier</p>
+<p><code>string assetId</code><br>The asset identifier</p>
 <h3 id="response">Response</h3>
 <p>The response includes a status code and a response body. </p>
 <table>
@@ -165,14 +162,10 @@ Content-Type: application/json
 <h3 id="request-1">Request</h3>
 <pre><code>GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets?skip={skip}&amp;count={count} 
 </code></pre><h3 id="parameters-1">Parameters</h3>
-<p><code>string tenantId</code> </p>
-<p>The tenant identifier</p>
-<p><code>string namespaceId</code> </p>
-<p>The namespace identifier</p>
-<p>[optional] <code>int skip</code> </p>
-<p>An optional parameter representing the zero-based offset of the first asset to retrieve. If not specified, a default value of 0 is used.</p>
-<p>[optional] <code>int count</code> </p>
-<p>An optional parameter representing the maximum number of assets to retrieve. If not specified, a default value of 100 is used. </p>
+<p><code>string tenantId</code><br>The tenant identifier</p>
+<p><code>string namespaceId</code><br>The namespace identifier</p>
+<p>[optional] <code>int skip</code><br>An optional parameter representing the zero-based offset of the first asset to retrieve. If not specified, a default value of 0 is used.</p>
+<p>[optional] <code>int count</code><br>An optional parameter representing the maximum number of assets to retrieve. If not specified, a default value of 100 is used. </p>
 <h3 id="response-1">Response</h3>
 <p>The response includes a status code and a body. </p>
 <table>
@@ -213,12 +206,9 @@ Content-Type: application/json
 <h3 id="request-2">Request</h3>
 <pre><code class="lang-text">POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId} 
 </code></pre><h3 id="parameters-2">Parameters</h3>
-<p><code>string tenantId</code> 
-The tenant identifier</p>
-<p><code>string namespaceId</code> 
-The namespace identifier</p>
-<p><code>string assetId</code>
-The asset identifier</p>
+<p><code>string tenantId</code><br>The tenant identifier</p>
+<p><code>string namespaceId</code><br>The namespace identifier</p>
+<p><code>string assetId</code><br>The asset identifier</p>
 <h4 id="request-body">Request body</h4>
 <p>An <code>asset</code> object</p>
 <h4 id="example-request-body">Example request body</h4>
@@ -283,10 +273,8 @@ The asset identifier</p>
 <h3 id="request-3">Request</h3>
 <pre><code class="lang-text">POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets   
 </code></pre><h3 id="parameters-3">Parameters</h3>
-<p><code>string tenantId</code> </p>
-<p>The tenant identifier</p>
-<p><code>string namespaceId</code> </p>
-<p>The namespace identifier</p>
+<p><code>string tenantId</code><br>The tenant identifier</p>
+<p><code>string namespaceId</code><br>The namespace identifier</p>
 <h4 id="request-body-1">Request body</h4>
 <p>An array of <code>asset</code> objects</p>
 <h3 id="response-3">Response</h3>
@@ -328,12 +316,9 @@ The asset identifier</p>
 <h3 id="request-4">Request</h3>
 <pre><code class="lang-text">PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId} 
 </code></pre><h3 id="parameters-4">Parameters</h3>
-<p>.<code>string tenantId</code> 
-The tenant identifier</p>
-<p><code>string namespaceId</code> 
-The namespace identifier</p>
-<p><code>string assetId</code>
-The asset identifier</p>
+<p><code>string tenantId</code><br>The tenant identifier</p>
+<p><code>string namespaceId</code><br>The namespace identifier</p>
+<p><code>string assetId</code><br>The asset identifier</p>
 <h4 id="request-body-2">Request body</h4>
 <p>The newly created or updated <code>asset</code> object.</p>
 <h4 id="asset-type-concordance">Asset Type Concordance</h4>
@@ -391,12 +376,9 @@ The asset identifier</p>
 <h3 id="request-5">Request</h3>
 <pre><code class="lang-text">DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}   
 </code></pre><h3 id="parameters-5">Parameters</h3>
-<p><code>string tenantId</code> 
-The tenant identifier</p>
-<p><code>string namespaceId</code> 
-The namespace identifier</p>
-<p><code>string assetId</code>
-The asset identifier</p>
+<p><code>string tenantId</code><br>The tenant identifier</p>
+<p><code>string namespaceId</code><br>The namespace identifier</p>
+<p><code>string assetId</code><br>The asset identifier</p>
 <h4 id="request-body-3">Request body</h4>
 <p>None</p>
 <h3 id="response-5">Response</h3>
@@ -445,7 +427,7 @@ The asset identifier</p>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/Assets/Assets-API.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/Assets/assets-api.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

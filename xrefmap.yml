@@ -7,6 +7,9 @@ references:
 - uid: AccountClientRole_1
   name: Client Roles
   href: Content_Portal/Documentation/Management/Account_ClientRole_1.html
+- uid: AccountManagementConcepts
+  name: Account Management Concepts
+  href: Content_Portal/Concepts/Account_Management_Concepts.html
 - uid: AccountManagementOverview
   name: Account Management
   href: Content_Portal/Documentation/Management/Management_Overview.html
@@ -36,40 +39,58 @@ references:
   href: Content_Portal/Documentation/DataViews/DefineaDataView/Add_Identifying_Field.html
 - uid: AssetCentricDataAPI
   name: Asset Centric Data API
-  href: Content_Portal/Documentation/Assets/Asset-Centric-Data-API.html
+  href: Content_Portal/Documentation/Assets/asset-centric-data-api.html
 - uid: AssetDefaultShape
   name: Asset Default Shape
   href: Content_Portal/Documentation/Assets/asset-default-shape.html
 - uid: AssetMeasurementMappings
   name: Asset Measurement Mappings
-  href: Content_Portal/Documentation/Assets/Asset-Measurements.html
+  href: Content_Portal/Documentation/Assets/asset-measurements.html
 - uid: AssetOrAssetTypeAccessControlAPI
   name: Asset and AssetType Access Control API
-  href: Content_Portal/Documentation/Assets/Access-Control-API.html
+  href: Content_Portal/Documentation/Assets/access-control-api.html
 - uid: AssetsAPI
   name: Assets API
-  href: Content_Portal/Documentation/Assets/Assets-API.html
+  href: Content_Portal/Documentation/Assets/assets-api.html
 - uid: AssetsProperties
   name: Assets
-  href: Content_Portal/Documentation/Assets/Assets.html
+  href: Content_Portal/Documentation/Assets/assets.html
 - uid: AssetsSearchAPI
   name: Assets Search API
-  href: Content_Portal/Documentation/Assets/Asset-Search-API.html
+  href: Content_Portal/Documentation/Assets/asset-search-api.html
 - uid: AssetStatusMapping
   name: Asset Status Mapping
   href: Content_Portal/Documentation/Assets/asset-status-mapping.html
+- uid: AssetTypes
+  name: Asset types
+  href: Content_Portal/How_To_Guides/Assets/asset-type-overview.html
 - uid: AssetTypesAPI
   name: Asset Types API
-  href: Content_Portal/Documentation/Assets/Asset-Type.html
+  href: Content_Portal/Documentation/Assets/asset-type.html
 - uid: ConceptsOverview
   name: OSIsoft Cloud Services
   href: Content_Portal/Concepts/Concepts_Overview.html
 - uid: ConsolidateDataFields
   name: Consolidate data fields
   href: Content_Portal/Documentation/DataViews/DefineaDataView/Consolidate_Data_Fields.html
+- uid: ConvertAssetToAssetType
+  name: Convert an asset to an asset type
+  href: Content_Portal/How_To_Guides/Assets/convert-asset-to-asset-type.html
+- uid: CreateAssetFromAssetType
+  name: Create an asset from an asset type
+  href: Content_Portal/How_To_Guides/Assets/create-asset-from-type.html
+- uid: CreateAssetType
+  name: Create an asset type with the asset types editor
+  href: Content_Portal/How_To_Guides/Assets/create-asset-type-asset-editor.html
+- uid: CreateConfigureAsset
+  name: Create and configure an asset
+  href: Content_Portal/How_To_Guides/Assets/create-an-asset.html
 - uid: dataIngress
   name: Data Ingress and OSIsoft Message Format
   href: Content_Portal/Documentation/DataIngress/Data_Ingress.html
+- uid: DataStorageConcepts
+  name: Data Storage Concepts
+  href: Content_Portal/Concepts/Data_Storage_Concepts.html
 - uid: DataViewAPI
   name: Data view API
   href: Content_Portal/Documentation/DataViews/DataViewsAPIOverview/Data_View_API.html

@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../../../styles/docfx.css">
     <link rel="stylesheet" href="../../../styles/main.css">
     <meta property="docfx:navrel" content="../../../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
     
     <meta property="docfx:rel" content="../../../">
     
@@ -92,8 +92,7 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asset
 </code></pre><h3 id="parameters">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
-<p><code>string assetTypeId</code></p>
-<p>The asset type identifier</p>
+<p><code>string assetTypeId</code><br>The asset type identifier</p>
 <h3 id="response">Response</h3>
 <p>The response includes a status code and a response body.</p>
 <table>
@@ -159,8 +158,7 @@ Content-Type: application/json
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p>[Optional] <code>int skip</code><br>Maximum number of asset types to retrieve. If unspecified, the default (100) is used.</p>
-<p>[Optional] <code>int count</code>
-An optional parameter representing the maximum number of assets to retrieve. If not specified, the default value of 100 is used.</p>
+<p>[Optional] <code>int count</code><br>An optional parameter representing the maximum number of assets to retrieve. If not specified, the default value of 100 is used.</p>
 <h3 id="response-1">Response</h3>
 <p>The response includes a status code and a body.</p>
 <table>
@@ -289,7 +287,7 @@ An optional parameter representing the maximum number of assets to retrieve. If 
 <tr>
 <td>400 Bad Request</td>
 <td>error</td>
-<td>The request is not valid. The response will include which <code>AssetTyp</code>s objects fail validation checks. See the response body for additional details.</td>
+<td>The request is not valid. The response will include which <code>AssetType</code> objects fail validation checks. See the response body for additional details.</td>
 </tr>
 <tr>
 <td>403 Forbidden</td>
@@ -360,7 +358,7 @@ An optional parameter representing the maximum number of assets to retrieve. If 
 <h3 id="request-5">Request</h3>
 <pre><code class="lang-text">DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}
 </code></pre><h3 id="parameters-5">Parameters</h3>
-<p>The tenant identifier</p>
+<p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string assetTypeId</code><br>The asset type identifier</p>
 <h4 id="request-body-3">Request body</h4>
@@ -411,7 +409,7 @@ An optional parameter representing the maximum number of assets to retrieve. If 
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/Assets/Asset-Type.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/Assets/asset-type.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../../../styles/docfx.css">
     <link rel="stylesheet" href="../../../styles/main.css">
     <meta property="docfx:navrel" content="../../../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
     
     <meta property="docfx:rel" content="../../../">
     
@@ -115,20 +115,16 @@
         ]
     }
 ]
-</code></pre><h2 id="get-asset-last-data"><code>Get Asset Last Data</code></h2>
+</code></pre><hr>
+<h2 id="get-asset-last-data"><code>Get Asset Last Data</code></h2>
 <p>Returns the last stored value for all measurements.</p>
 <h3 id="request">Request</h3>
 <pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/Last&amp;measurement={measurementNames}
 </code></pre><h3 id="parameters">Parameters</h3>
-<p><code>string tenantId</code> 
-The tenant identifier</p>
-<p><code>string namespaceId</code> 
-The namespace identifier</p>
-<p><code>string assetId</code>
-The asset identifier</p>
-<p>(Optional)
-<code>string[] measurements</code> measurementNames <!-- Please check this. -->
-A comma-separated list of measurement names that you want returned for the last data. By default, all measurements are returned.</p>
+<p><code>string tenantId</code><br>The tenant identifier</p>
+<p><code>string namespaceId</code><br>The namespace identifier</p>
+<p><code>string assetId</code><br>The asset identifier</p>
+<p>[optional] <code>string[] measurement names</code><br>A comma-separated list of measurement names that you want returned for the last data. By default, all measurements are returned.</p>
 <h3 id="response">Response</h3>
 <p>The response includes a status code and a response body.</p>
 <table>
@@ -180,27 +176,20 @@ A comma-separated list of measurement names that you want returned for the last 
     }
 ]
 } 
-</code></pre><h2 id="get-asset-sampled-data"><code>Get Asset Sampled Data</code></h2>
+</code></pre><hr>
+<h2 id="get-asset-sampled-data"><code>Get Asset Sampled Data</code></h2>
 <p>Returns sampled data for all referenced measurements. </p>
 <p>Note: The inputs to this API matches the SDS stream Get samples values data call.  </p>
 <h3 id="request-1">Request</h3>
 <pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/Sampled?startIndex={startIndex}&amp;endIndex={endIndex}&amp;intervals={intervals}&amp;measurement={measurementNames} 
 </code></pre><h3 id="parameters-1">Parameters</h3>
-<p><code>string tenantId</code> 
-The tenant identifier </p>
-<p><code>string namespaceId</code> 
-The namespace identifier</p>
-<p><code>string assetId</code>
-The asset identifier</p>
-<p><code>string startIndex</code> 
-The start index for the intervals</p>
-<p><code>string endIndex</code> 
-The end index for the intervals</p>
-<p><code>int intervals</code>
-The number of requested intervals &lt;!-- This was my omission. On the Wiki, it says this is <code>**string** intervals</code>. -- &gt;</p>
-<p>(Optional)
-<code>string[] measurements</code> measurementNames
-A comma-separated list of measurement names that you want returned for the last data. By default, all measurements are returned.</p>
+<p><code>string tenantId</code><br>The tenant identifier </p>
+<p><code>string namespaceId</code><br>The namespace identifier</p>
+<p><code>string assetId</code><br>The asset identifier</p>
+<p><code>string startIndex</code><br>The start index for the intervals</p>
+<p><code>string endIndex</code><br>The end index for the intervals</p>
+<p><code>int intervals</code><br>The number of requested intervals</p>
+<p>[optional] <code>string[] measurement names</code><br>A comma-separated list of measurement names that you want returned for the last data. By default, all measurements are returned.</p>
 <h3 id="response-1">Response</h3>
 <p>The response includes a status code and a response body.</p>
 <table>
@@ -334,21 +323,13 @@ Content-Type: application/json
 <h3 id="request-2">Request</h3>
 <pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/Summaries?startIndex={startIndex}&amp;endIndex={endIndex}&amp;count={count}&amp;measurement={measurement=measurementNames}
 </code></pre><h3 id="parameters-2">Parameters</h3>
-<p><code>string tenantId</code> 
-The tenant identifier </p>
-<p><code>string namespaceId</code> 
-The namespace identifier</p>
-<p><code>string assetId</code>
-The asset identifier</p>
-<p><code>string startIndex</code> 
-The start index for the intervals</p>
-<p><code>string endIndex</code> 
-The end index for the intervals</p>
-<p><code>int count</code> 
-The number of requested intervals</p>
-<p>(Optional)
-<code>string[] measurements</code> measurementNames
-A comma-separated list of measurement names that you want returned for the last data. By default, all measurements are returned.</p>
+<p><code>string tenantId</code><br>The tenant identifier </p>
+<p><code>string namespaceId</code><br>The namespace identifier</p>
+<p><code>string assetId</code><br>The asset identifier</p>
+<p><code>string startIndex</code><br>The start index for the intervals</p>
+<p><code>string endIndex</code><br>The end index for the intervals</p>
+<p><code>int count</code><br>The number of requested intervals</p>
+<p>[optional] <code>string[] measurements names</code><br>A comma-separated list of measurement names that you want returned for the last data. By default, all measurements are returned.</p>
 <h3 id="response-2">Response</h3>
 <p>The response includes a status code and a response body.</p>
 <table>
@@ -447,24 +428,18 @@ Content-Type: application/json
         ]
     }
 ]
-</code></pre><h2 id="get-asset-window-data"><code>Get Asset Window Data</code></h2>
+</code></pre><hr>
+<h2 id="get-asset-window-data"><code>Get Asset Window Data</code></h2>
 <p>Returns window data for all referenced measurements.</p>
 <h3 id="request-3">Request</h3>
 <pre><code>GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data?startIndex={startIndex}&amp;endIndex={endIndex}&amp;measurement={measurementNames}
 </code></pre><h3 id="parameters-3">Parameters</h3>
-<p><code>string tenantId</code>
-The tenant identifier</p>
-<p><code>string namespaceId</code> 
-The namespace identifier</p>
-<p><code>string assetId</code>
-The asset identifier</p>
-<p><code>string startIndex</code> 
-The start index for the intervals</p>
-<p><code>string endIndex</code> 
-The end index for the intervals</p>
-<p>(Optional)
-<code>string[] measurements</code> measurementNames
-A comma-separated list of measurement names that you want returned for the last data. By default, all measurements are returned.</p>
+<p><code>string tenantId</code><br>The tenant identifier</p>
+<p><code>string namespaceId</code><br>The namespace identifier</p>
+<p><code>string assetId</code><br>The asset identifier</p>
+<p><code>string startIndex</code><br>The start index for the intervals</p>
+<p><code>string endIndex</code><br>The end index for the intervals</p>
+<p>[optional] <code>string[] measurement names</code><br>A comma-separated list of measurement names that you want returned for the last data. By default, all measurements are returned.</p>
 <h3 id="response-3">Response</h3>
 <p>The response includes a status code and a response body.</p>
 <table>
@@ -548,7 +523,7 @@ Content-Type: application/json
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/Assets/Asset-Centric-Data-API.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/Assets/asset-centric-data-api.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

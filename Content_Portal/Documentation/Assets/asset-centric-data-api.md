@@ -47,6 +47,7 @@ This is the measurement mappings of asset with `Id` IdSample which is used for a
     }
 ]
 ```
+***
 
 ## `Get Asset Last Data` 
 Returns the last stored value for all measurements.
@@ -66,7 +67,7 @@ The namespace identifier
 `string assetId`  
 The asset identifier
 
-[Optional] `string[] measurement names`  
+[optional] `string[] measurement names`  
 A comma-separated list of measurement names that you want returned for the last data. By default, all measurements are returned.
 
 ### Response 
@@ -95,6 +96,8 @@ The response includes a status code and a response body.
 ]
 } 
 ```
+
+***
 
 ## `Get Asset Sampled Data` 
 Returns sampled data for all referenced measurements. 
@@ -125,7 +128,7 @@ The end index for the intervals
 `int intervals`  
 The number of requested intervals
 
-[Optional] `string[] measurement names`  
+[optional] `string[] measurement names`  
 A comma-separated list of measurement names that you want returned for the last data. By default, all measurements are returned.
 
 ### Response 
@@ -260,7 +263,7 @@ The end index for the intervals
 `int count`   
 The number of requested intervals
 
-[Optional] `string[] measurements names`  
+[optional] `string[] measurements names`  
 A comma-separated list of measurement names that you want returned for the last data. By default, all measurements are returned.
 
 ### Response 
@@ -336,6 +339,9 @@ Content-Type: application/json
     }
 ]
 ```
+
+***
+
 ## `Get Asset Window Data`
 Returns window data for all referenced measurements.
 
@@ -360,7 +366,7 @@ The start index for the intervals
 `string endIndex`   
 The end index for the intervals
 
-[Optional] `string[] measurement names`  
+[optional] `string[] measurement names`  
 A comma-separated list of measurement names that you want returned for the last data. By default, all measurements are returned.
 
 ### Response

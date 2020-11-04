@@ -26,7 +26,7 @@ Procedure
 
     ![Search blade](images\Search_blade_75.png)
    
-4. Click the ![Trend views icon](images\Trend_mode_icon.png)icon to choose one of the three views:
+4. Click the ![Trend views icon](images\trend-views-icon.png)icon to choose one of the three views:
 
    | Trend View                               | Description                                     |
    | ---------------------------------------- | ----------------------------------------------- |

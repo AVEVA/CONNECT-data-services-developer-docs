@@ -15,7 +15,6 @@ Returns the specified asset type.
 
 ### Request 
 ```text 
-
 GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}
 ```
 
@@ -90,7 +89,7 @@ The namespace identifier
 Maximum number of asset types to retrieve. If unspecified, the default (100) is used.
 
 [Optional] `int count`  
-An optional parameter representing the maximum number of assets to retrieve. If not specified, the default value of 100 is used.
+An optional parameter representing the maximum number of assets to retrieve. If not specified, the default value of 100 is used. This value must be between (including) 1 to 1000.
 
 ### Response 
 
@@ -177,7 +176,6 @@ Create a new `AssetTypes` object
 
 ```text 
 POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes
-
 ```
 
 ### Parameters
@@ -218,7 +216,6 @@ When updating an asset type which is referenced by assets, the following behavio
 
 ```text 
 PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId} 
-
 ```
 
 ### Parameters

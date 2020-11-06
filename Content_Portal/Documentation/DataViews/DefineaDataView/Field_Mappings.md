@@ -60,7 +60,7 @@ Fields of kind `DataField` map to a [data field](xref:DataViewsFieldSets) on the
 | DataMapping Property | Details |
 |--|--|
 | TargetId | The data item id |
-| TargetMeasurementKey *(coming soon)* | The asset measurement's name. Only applicable to `PropertyId` fields and when the data field references an asset measurement. |
+| TargetMeasurementKey *(coming soon)* | The name of the asset measurement. Only applicable to `PropertyId` fields and when the data field references an asset measurement. |
 | TargetFieldKey | The metadata name (`Metadata` fields), property id (`PropertyId` fields), or property name (`PropertyName` fields). Not applicable to `Id`, `Name`, or `Tags` fields. |
 | TypeCode | The data item's data type |
 | Uom *(coming soon)*| The unit of measure id for the data field |

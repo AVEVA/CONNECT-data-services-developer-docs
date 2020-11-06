@@ -100,7 +100,7 @@ All sources except `FieldSource.NotApplicable` can be used as data fields. Field
 | Keys | String[] | Optional | [ ] | Used for sources `FieldSource.PropertyId`, `FieldSource.PropertyName`, `FieldSource.Metadata` and `FieldSource.Tags`, e.g. to map to specific data item properties by id. If more than one key is specified, they are matched as exclusive-or. A key has to be a non-null value.
 | MeasurementKeys *(Coming Soon)* | String[] | Optional | [ ] | Identifies the measurement name when referencing an asset measurement. `MeasurementKeys` only applies to source `FieldSource.PropertyId`. If more than one key is specified, they are matched as exclusive-or. A key has to be a non-null value.
 | Label | string | Optional | null | Friendly name for the field. Certain tokens have special meaning: one of these, {IdentifyingValue}, is included in the suggested labels of AvailableFieldSets. Tokens that do not resolve are "" (empty string). The label is required in a field for all usages except in an identifying field. Label is trimmed of whitespace when used to identify field mappings. 
-| IncludeUom *(Coming Soon)*| bool | Optional | false | Specifies whether to include this field's unit of measure as an additional field mapping in the resolved data view.
+| IncludeUom *(Coming Soon)*| bool | Optional | false | Specifies whether to include the unit of measure for this field as an additional field mapping in the resolved data view.
 
 ### FieldSource enumeration
 For fields that derive data from a data item (e.g. an SDS stream), the `FieldSource` enumeration specifies the part of that data item that a Field resolves to. Some sources require one or more `.Keys` to be specified on the field, such as `PropertyId`, in which a key is the id of a desired property.

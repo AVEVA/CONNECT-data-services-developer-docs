@@ -1,3 +1,7 @@
+---
+uid: create-a-data-transfer
+---
+
 # Create a data transfer
 
 A data transfer contains a selection of PI point data you wish to stream from your on-premises PI Data Archive to the desired namespace in OCS. The data transfer process consists of the following steps:

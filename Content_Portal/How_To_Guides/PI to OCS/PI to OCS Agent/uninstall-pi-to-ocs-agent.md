@@ -1,3 +1,7 @@
+---
+uid: uninstall-pi-to-ocs-agent
+---
+
 # Uninstall the PI to OCS Agent
 
 Before you uninstall a PI to OCS Agent, you need to perform the following tasks to ensure the related data transfer, data source, and PI system connection are also removed:

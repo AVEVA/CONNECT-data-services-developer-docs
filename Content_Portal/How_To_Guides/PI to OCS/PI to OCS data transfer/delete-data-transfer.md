@@ -1,3 +1,7 @@
+---
+uid: delete-data-transfer
+---
+
 # Delete a data transfer
 
 You can delete a data transfer for a PI system connection. When you delete a data transfer, it does not remove any data that has already been transferred.  After you have removed a data transfer, you can add a new data transfer to the existing connection.

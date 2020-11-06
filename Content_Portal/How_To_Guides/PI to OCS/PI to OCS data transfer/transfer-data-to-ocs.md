@@ -1,3 +1,7 @@
+---
+uid: transfer-data-to-ocs
+---
+
 # Transfer PI System data to OCS
 
 After PI points have been added to a data transfer, you are ready to stream your PI system data into OCS. Before data is transferred, the SDS streams are created.  Then, both the historical and most current data is transferred to OCS simultaneously. You can view PI points selected for the transfer before or during the data transfer.

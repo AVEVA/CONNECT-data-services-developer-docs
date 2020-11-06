@@ -1,3 +1,7 @@
+---
+uid: disable-ie-security
+---
+
 # Disable IE enhanced security configuration
 
 If Internet Explorer Enhanced Security Configuration (IE ESC) is turned on, you will receive an error message to disable this setting before you can log on to OCS and register the PI to OCS Agent. An alternative is to change your default Web browser to one other than Internet Explorer during installation.

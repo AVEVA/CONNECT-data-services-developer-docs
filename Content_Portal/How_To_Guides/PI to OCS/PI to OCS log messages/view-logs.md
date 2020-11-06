@@ -1,3 +1,7 @@
+---
+uid: view-logs
+---
+
 # View PI to OCS Agent logs
 
 To gain valuable clues about account related activity about on-premises components, you can view the PI to OCS Agent logs in the Windows Event Viewer.

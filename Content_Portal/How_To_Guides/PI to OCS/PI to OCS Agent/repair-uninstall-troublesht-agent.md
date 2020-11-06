@@ -1,3 +1,7 @@
+---
+uid: repair-uninstall-troublesht-agent
+---
+
 # Repair, uninstall or troubleshoot a PI to OCS Agent
 
 Enhancements and bug fixes for PI to OCS may require that you update both the PI to OCS Agent and the PI System connection. Since these components work together, updating one usually requires that you also update the other.

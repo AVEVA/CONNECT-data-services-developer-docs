@@ -1,3 +1,7 @@
+---
+uid: set-up-agent
+---
+
 # Confirm the PI to OCS Agent is running
 
 After installation, check that the PI to OCS Agent Windows service is running on the machine that you installed the agent. You also need to confirm the agent has successfully connected to and registered with your on-premises PI Data Archive.

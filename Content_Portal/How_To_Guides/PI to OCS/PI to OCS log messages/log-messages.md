@@ -1,3 +1,7 @@
+---
+uid: log-messages
+---
+
 # List of common Event Viewer log messages
 
 The table below summarizes the most common messages logged by the Event Viewer.

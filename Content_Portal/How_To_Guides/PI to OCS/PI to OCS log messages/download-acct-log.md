@@ -1,3 +1,7 @@
+---
+uid: download-acct-log
+---
+
 # Download an OCS account log
 
 Troubleshooting information can be found in OCS logs. Logs contain messages about account related activity, errors, as well as system messages. By default, logs contain details about activities that occurred within the past hour.

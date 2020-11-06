@@ -34,9 +34,10 @@ Fields of kind `IndexField` map to the data view's [index field](xref:DataViewsQ
 | DataMapping Property | Details |
 |--|--|
 | TargetId | Not applicable |
-| TargetMeasurementKey | Not applicable |
+| TargetMeasurementKey *(coming soon)* | Not applicable |
 | TargetFieldKey | Not applicable |
 | TypeCode | Equivalent to the `IndexTypeCode` of the data view |
+| Uom *(coming soon)* | Not applicable |
 | FieldSetIndex | Not applicable |
 | FieldIndex | Not applicable |
 
@@ -46,9 +47,10 @@ Fields of kind `GroupingField` map to a [grouping field](xref:DataViewsGrouping)
 | DataMapping Property | Details |
 |--|--|
 | TargetId | The group's value |
-| TargetMeasurementKey | Not applicable |
+| TargetMeasurementKey *(coming soon)* | Not applicable |
 | TargetFieldKey | Not applicable |
 | TypeCode | The group's data type |
+| Uom *(coming soon)* | The unit of measure id for the grouping field |
 | FieldSetIndex | Not applicable |
 | FieldIndex | The zero-based positioning of the field within the data view's grouping fields |
 
@@ -58,9 +60,10 @@ Fields of kind `DataField` map to a [data field](xref:DataViewsFieldSets) on the
 | DataMapping Property | Details |
 |--|--|
 | TargetId | The data item id |
-| TargetMeasurementKey *(Coming Soon)* | The asset measurement's name. Only applicable to `PropertyId` fields and when the data field references an asset measurement. |
+| TargetMeasurementKey *(coming soon)* | The asset measurement's name. Only applicable to `PropertyId` fields and when the data field references an asset measurement. |
 | TargetFieldKey | The metadata name (`Metadata` fields), property id (`PropertyId` fields), or property name (`PropertyName` fields). Not applicable to `Id`, `Name`, or `Tags` fields. |
 | TypeCode | The data item's data type |
+| Uom *(coming soon)*| The unit of measure id for the data field |
 | FieldSetIndex | The zero-based positioning of the data field set |
 | FieldIndex | The zero-based positioning of the data field within the appropriate data field set |
 
@@ -70,9 +73,10 @@ The field id field only applies to data views with [narrow shape](xref:DataViewS
 | DataMapping Property | Details |
 |--|--|
 | TargetId | The data item id |
-| TargetMeasurementKey | Not applicable |
+| TargetMeasurementKey *(coming soon)* | Not applicable |
 | TargetFieldKey | Not applicable |
 | TypeCode | String |
+| Uom *(coming soon)* | Not applicable |
 | FieldSetIndex | The zero-based positioning of the data field set |
 | FieldIndex | The zero-based positioning of the data field within the appropriate data field set |
 

@@ -18,4 +18,6 @@
   topicHref: Consolidate_Data_Fields.md
 - name: View field mappings
   topicHref: Field_Mappings.md
+- name: Display units of measure
+  topicHref: Units_of_Measure.md
 

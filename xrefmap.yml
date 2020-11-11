@@ -142,6 +142,9 @@ references:
 - uid: DataViewsSecuringDataViews
   name: Secure data views
   href: Content_Portal/Documentation/DataViews/SecureDataViews/Securing_Data_Views.html
+- uid: DataViewsUnitsOfMeasure
+  name: Display units of measure (coming soon)
+  href: Content_Portal/Documentation/DataViews/DefineaDataView/Units_of_Measure.html
 - uid: DefineaDataViewRecommendedWorkflow
   name: 'Recommended workflow: Define a data view'
   href: Content_Portal/Documentation/DataViews/DefineaDataView/Rec_Workflow.html

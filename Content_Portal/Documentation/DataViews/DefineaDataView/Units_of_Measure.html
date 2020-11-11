@@ -1,0 +1,250 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Display units of measure (coming soon) </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Display units of measure (coming soon) ">
+    <meta name="generator" content="docfx 2.56.2.0">
+    
+    <link rel="shortcut icon" href="../../../../favicon.ico">
+    <link rel="stylesheet" href="../../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../../toc.html">
+    <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    <meta property="docfx:rel" content="../../../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../../../../index.html" width="46">
+        <img id="logo" src="../../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Services">
+        </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="DataViewsUnitsOfMeasure">
+<h1 id="display-units-of-measure-coming-soon">Display units of measure (coming soon)</h1>
+
+<p><em>Note: This topic covers features that are not yet generally available. If you are interested in trialing these pre-release features, contact your account team for more details.</em></p>
+<p>Data views can be configured to show the units of measure (Uom) from the underlying data source. This topic describes how to see the effective units of measure within a resolved data view, as well as the different options to include them in the data set itself.</p>
+<h2 id="units-of-measure-in-resolved-data-view">Units of measure in resolved data view</h2>
+<p>Units of measure are shown on each <a class="xref" href="../GetResolvedDataView/Resolved_Data_View.html#dataitemfield">data item field</a>, as well as any corresponding <a class="xref" href="../GetResolvedDataView/Resolved_Data_View.html#datamapping">data mappings</a> where that data item field is used in the data view. If a unit of measure is not present in the underying data source, the <code>Uom</code> property is null.</p>
+<p>If the unit of measure is consistent across all groups, then that unit of measure is reported on the <a class="xref" href="../GetResolvedDataView/Resolved_Data_View.html#fieldmapping">field mapping</a> itself. Otherwise, the <code>Uom</code> property of the field mapping is null.</p>
+<p>Note that in the resolved resources, units of measure are referenced by <a class="xref" href="../../SequentialDataStore/Units_of_Measure.html">id</a>.</p>
+<h2 id="units-of-measure-in-data-view">Units of measure in data view</h2>
+<p>Data views can be optionally configured to show units of measure within the data set. Units of measure are then directly visible to consumers of the data set. This is useful for consumers who are unable to examine the resolved data view and rely only on the data set. There are two ways to include units of measure on a per-field basis: as an additional field or within the field&#39;s label.</p>
+<p>Units of measure are abbreviated when they appear in the data set. That is, the <a class="xref" href="../../SequentialDataStore/Units_of_Measure.html">abbreviation of the unit of measure</a> is used: <code>cubic meter per second</code> is shown as a more consumer-friendly <code>m3/s</code>.</p>
+<h3 id="show-units-of-measure-within-the-data-set">Show units of measure within the data set</h3>
+<p>To show the units of measure within the data set, set the <code>IncludeUom</code> property of the field to <code>true</code>. This applies to both data fields and group fields. In this case, the field will resolve an additional, &quot;sister&quot; field mapping whose label is suffixed with the string &quot;Uom&#39;. </p>
+<h4 id="example">Example</h4>
+<p>This simple example shows the <code>IncludeUom</code> property of a data field is set to <code>true</code>.</p>
+<pre><code class="lang-json">{
+  &quot;Id&quot;: &quot;quickstart&quot;,
+  &quot;Queries&quot;: [
+    { 
+      &quot;Id&quot;: &quot;inverters&quot;,
+      &quot;Kind&quot;: &quot;Stream&quot;,
+      &quot;Value&quot;: &quot;id:BILT.Meter.Primary.Inverter.0.PwrIn&quot;
+    }
+  ],
+  &quot;DataFieldSets&quot;: [
+    {
+      &quot;QueryId&quot;: &quot;inverters&quot;,
+      &quot;DataFields&quot;: [
+        {
+          &quot;Source&quot;: &quot;PropertyId&quot;,
+          &quot;Keys&quot;: [ &quot;Value&quot; ],
+          &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;,
+          &quot;IncludeUom&quot;: &quot;true&quot;
+        }
+      ]
+    }
+  ]
+}
+</code></pre><p>The resulting data view in standard mode:</p>
+<table>
+<thead>
+<tr>
+<th>Timestamp</th>
+<th>Value</th>
+<th>Value Uom</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2020-11-06T08:00:00Z</td>
+<td>1.21</td>
+<td>kW</td>
+</tr>
+</tbody>
+</table>
+<p>The resulting data view in narrow mode:</p>
+<table>
+<thead>
+<tr>
+<th>Timestamp</th>
+<th>Field</th>
+<th>Value</th>
+<th>Uom</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2020-11-06T08:00:00Z</td>
+<td>Value</td>
+<td>1.21</td>
+<td>kW</td>
+</tr>
+</tbody>
+</table>
+<h3 id="show-units-of-measure-in-field-labels">Show units of measure in field labels</h3>
+<p>The field label token <code>{Uom}</code> can be used to add field-level unit of measure to field labels. <code>{Uom}</code> is included in the default field label. If the unit of measure is consistent across all groups, <code>{Uom}</code> is resolved to the field-level unit of measure and displayed in the field label. Otherwise, if the unit of measure is not consistent across groups, use the alternative approach of <code>IncludeUom</code>.</p>
+<h4 id="example-1">Example</h4>
+<p>The following example shows how the field label token <code>{Uom}</code> of a data field is resolved.</p>
+<pre><code class="lang-json">{
+  &quot;Id&quot;: &quot;quickstart&quot;,
+  &quot;Queries&quot;: [
+    { 
+      &quot;Id&quot;: &quot;inverters&quot;,
+      &quot;Kind&quot;: &quot;Stream&quot;,
+      &quot;Value&quot;: &quot;id:BILT.Meter.Primary.Inverter.0.PwrIn&quot;
+    }
+  ],
+  &quot;DataFieldSets&quot;: [
+    {
+      &quot;QueryId&quot;: &quot;inverters&quot;,
+      &quot;DataFields&quot;: [
+        {
+          &quot;Source&quot;: &quot;PropertyId&quot;,
+          &quot;Keys&quot;: [ &quot;Value&quot; ],
+          &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey} {Uom}&quot;,
+          &quot;IncludeUom&quot;: &quot;false&quot;
+        }
+      ]
+    }
+  ]
+}
+</code></pre><p>The resulting data view in standard mode:</p>
+<table>
+<thead>
+<tr>
+<th>Timestamp</th>
+<th>Value kW</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2020-11-06T08:00:00Z</td>
+<td>1.21</td>
+</tr>
+</tbody>
+</table>
+<p>The resulting data view in narrow mode:</p>
+<table>
+<thead>
+<tr>
+<th>Timestamp</th>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2020-11-06T08:00:00Z</td>
+<td>Value kW</td>
+<td>1.21</td>
+</tr>
+</tbody>
+</table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/DataViews/DefineaDataView/Units_of_Measure.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2020 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

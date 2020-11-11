@@ -334,6 +334,11 @@ See the <a class="xref" href="../DataViewsAPIOverview/Resolved_Data_View_API.htm
 <td>The name of the field&#39;s data type</td>
 </tr>
 <tr>
+<td>Uom <em>(coming soon)</em></td>
+<td>bool</td>
+<td>The unit of measure id for the data item field</td>
+</tr>
+<tr>
 <td>IsKey</td>
 <td>bool</td>
 <td>True if the field is the primary index of the data item. False otherwise.</td>
@@ -423,6 +428,11 @@ See the <a class="xref" href="../DataViewsAPIOverview/Resolved_Data_View_API.htm
 <td>The primary data type of the mapping</td>
 </tr>
 <tr>
+<td>Uom <em>(coming soon)</em></td>
+<td>string</td>
+<td>The unit of measure id. Null unless all data mappings&#39; unit of measures within the field mapping are identical.</td>
+</tr>
+<tr>
 <td>DataMappings</td>
 <td>IReadOnlyList<datamapping></datamapping></td>
 <td>Per-group details of what this field resolved to</td>
@@ -484,7 +494,7 @@ See the <a class="xref" href="../DataViewsAPIOverview/Resolved_Data_View_API.htm
 <td>The specific targeted part of the data item, if any.</td>
 </tr>
 <tr>
-<td>TargetMeasurementKey <em>(Coming Soon)</em></td>
+<td>TargetMeasurementKey <em>(coming soon)</em></td>
 <td>string</td>
 <td>The asset measurement name. Only applies to asset measurement data mappings.</td>
 </tr>
@@ -492,6 +502,11 @@ See the <a class="xref" href="../DataViewsAPIOverview/Resolved_Data_View_API.htm
 <td>TypeCode</td>
 <td>SdsTypeCode</td>
 <td>The value type</td>
+</tr>
+<tr>
+<td>Uom <em>(coming soon)</em></td>
+<td>string</td>
+<td>The unit of measure id</td>
 </tr>
 <tr>
 <td>FieldSetIndex</td>

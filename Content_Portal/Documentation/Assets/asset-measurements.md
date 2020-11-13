@@ -66,14 +66,12 @@ Returns the measurement mappings of an asset or asset type.
 
 Asset
 
-```text 
-
+```text
 GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/MeasurementMappings
 ```
 Asset Type
 
-```text 
-
+```text
 GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}/MeasurementMappings
 ```
 
@@ -139,7 +137,7 @@ POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 Asset Type
 
-```
+```text
 POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}/MeasurementMappings
 ```
 

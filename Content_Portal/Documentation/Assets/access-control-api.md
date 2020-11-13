@@ -14,7 +14,6 @@ Get the default `AccessControlList` for the assets collection and asset type col
 Assets collections
 
 ```text 
-
 GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Assets 
 
 ```
@@ -22,7 +21,6 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Ass
 Asset types collections
 
 ```text 
-
 GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/AssetTypes 
 
 ```

@@ -14,7 +14,7 @@ OCS offers the following capabilities:
 
 * [Remote monitoring from the network edge](#remote-monitoring-from-the-network-edge) 
 
-* [Easy data import (ingress)](#easy-data-import-(ingress))
+* [Easy data import (ingress)](#easy-data-import)
 
 * [Data aggregation from many sources](#data-aggregation-from-many-sources)  
 
@@ -43,7 +43,7 @@ You can choose the data collection technology that meets your specific needs:
 
 ![Data Collection Methods](images/data-collection.png)
 
-## Easy data import (ingress)
+## Easy data import
 
 **QUESTION: We do need to explain some terms that might not be familiar to those new to the cloud and OCS: ingress, elastic, shape come to mind. There are others…** 
 

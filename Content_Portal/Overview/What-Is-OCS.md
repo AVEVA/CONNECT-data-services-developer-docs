@@ -13,21 +13,13 @@ OCS offers the following capabilities:
 **QUESTION: We ordered these with the ones most relevant and eye-catching to users first. They are all important, we might need additional sections, and/or to re-order these.** 
 
 * [Remote monitoring from the network edge](#remote-monitoring-from-the-network-edge) 
-
 * [Easy data import (ingress)](#easy-data-import)
-
 * [Data aggregation from many sources](#data-aggregation-from-many-sources)  
-
 * [Integration with custom applications and business intelligence tools and new types of data sharing](#integration-with-custom-applications-and-business-intelligence-tools-and-new-types-of-data-sharing) 
-
 * [Management of assets by using the Asset Explorer](#management-of-assets-by-using-asset-explorer) 
-
 * [Secure and robust data infrastructure](#secure-and-robust-data-infrastructure) 
-
 * [Elastic resource allocation](#elastic-resource-allocation) 
-
 * [Interruption resilience](#interruption-resilience) 
-
 * [Easy management and maintenance](#easy-management-and-maintenance )
 
 ## Remote monitoring from the network edge
@@ -38,8 +30,8 @@ Accessing and integrating these “dark” data locations is possible with edge 
 
 You can choose the data collection technology that meets your specific needs: 
 
-- **PI Adapters**: For collecting data from other standard systems and protocols 
-- **Custom OMF applications**: For integrating data collection directly into a device or asset 
+* **PI Adapters**: For collecting data from other standard systems and protocols 
+* **Custom OMF applications**: For integrating data collection directly into a device or asset 
 
 ![Data Collection Methods](images/data-collection.png)
 
@@ -49,11 +41,9 @@ You can choose the data collection technology that meets your specific needs:
 
 OCS provides a variety of methods to ingress and organize (or shape) your data. You can ingress data from an asset, an external application, or from PI Server directly to OCS, by using any or all of the following methods: 
 
-- **PI to OCS**:  The PI to OCS utility transfers PI time-series data from an on-premises PI Server into OCS. PI to OCS maps PI Data Archive data shapes to SDS types and streams. 
-
-- **OSIsoft Message Format (OMF)**: A platform-independent format for passing JSON messages to OCS using an HTTP client. You can use OMF to achieve high-throughput asynchronous data ingress into the Sequential Data Store. 
-
-- **Sequential Data Store (SDS) libraries**: The SDS Libraries are .NET based client libraries which read and write data through REST APIs. SDS supports JSON files as well for platform independence with data ingress and retrieval. 
+* **PI to OCS**:  The PI to OCS utility transfers PI time-series data from an on-premises PI Server into OCS. PI to OCS maps PI Data Archive data shapes to SDS types and streams. 
+* **OSIsoft Message Format (OMF)**: A platform-independent format for passing JSON messages to OCS using an HTTP client. You can use OMF to achieve high-throughput asynchronous data ingress into the Sequential Data Store. 
+* **Sequential Data Store (SDS) libraries**: The SDS Libraries are .NET based client libraries which read and write data through REST APIs. SDS supports JSON files as well for platform independence with data ingress and retrieval. 
 
 ## Data aggregation from many sources
 
@@ -65,19 +55,18 @@ Although OCS is optimized for sequential data that is typically time series data
 
 OCS allows you to export your data to many different partner applications, data pipelines and workflows, collaboration tools, business intelligence and data exploration tools, and custom applications. A few examples include: 
 
-- TrendMiner 
-- Seeq 
-- Power BI 
-
-- Jupyter Notebook 
-- Grafana 
-- Apache Spark 
-- Amazon Web Services (AWS) 
+* TrendMiner 
+* Seeq 
+* Power BI 
+* Jupyter Notebook 
+* Grafana 
+* Apache Spark 
+* Amazon Web Services (AWS) 
 
 You can export and view OCS data in the following ways: 
 
-- By using the Secure Data Store (SDS) REST API libraries 
-- Configuring data views in the OCS Portal 
+* By using the Secure Data Store (SDS) REST API libraries 
+* Configuring data views in the OCS Portal 
 
 OCS also offers opportunities for many new types of data consumers. For example, you could integrate OCS with applications that perform machine learning or AI functions. 
 

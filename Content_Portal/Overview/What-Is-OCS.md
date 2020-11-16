@@ -18,7 +18,7 @@ OCS offers the following capabilities:
 
 * [Data aggregation from many sources](#data-aggregation-from-many-sources)  
 
-* [Integration with custom applications and business intelligence (BI) tools and new types of data sharing](#integration-with-custom-applications-and-business-intelligence-(bi)-tools-and-new-types-of-data-sharing) 
+* [Integration with custom applications and business intelligence tools and new types of data sharing](#integration-with-custom-applications-and-business-intelligence-(bi)-tools-and-new-types-of-data-sharing) 
 
 * [Management of assets by using the Asset Explorer](#management-of-assets-by-using-asset-explorer) 
 
@@ -61,7 +61,7 @@ OCS can function as a centralized location for synthesizing data from multiple p
 
 Although OCS is optimized for sequential data that is typically time series data, it can store any type of data indexed by an ordered sequence, such as by depth or location readings. 
 
-## Integration with custom applications, business intelligence (BI) tools, and new types of data sharing
+## Integration with custom applications, business intelligence tools, and new types of data sharing
 
 OCS allows you to export your data to many different partner applications, data pipelines and workflows, collaboration tools, business intelligence and data exploration tools, and custom applications. A few examples include: 
 

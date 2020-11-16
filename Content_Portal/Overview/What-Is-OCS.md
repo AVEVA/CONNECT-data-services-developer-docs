@@ -12,7 +12,7 @@ OCS offers the following capabilities:
 
 **QUESTION: We ordered these with the ones most relevant and eye-catching to users first. They are all important, we might need additional sections, and/or to re-order these.** 
 
-* [Remote monitoring at the network edge](#remote-monitoring-at-the-network edge) 
+* [Remote monitoring at the network edge](#remote-monitoring-at-the-network-edge) 
 
 * [Easy data import (ingress)](#easy-data-import-(ingress))
 

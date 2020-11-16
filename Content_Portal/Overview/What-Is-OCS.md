@@ -18,7 +18,7 @@ OCS offers the following capabilities:
 
 * [Data aggregation from many sources](#data-aggregation-from-many-sources)  
 
-* [Integration with custom applications and business intelligence tools and new types of data sharing](#integration-with-custom-applications-and-business-intelligence-(bi)-tools-and-new-types-of-data-sharing) 
+* [Integration with custom applications and business intelligence tools and new types of data sharing](#integration-with-custom-applications-and-business-intelligence-tools-and-new-types-of-data-sharing) 
 
 * [Management of assets by using the Asset Explorer](#management-of-assets-by-using-asset-explorer) 
 

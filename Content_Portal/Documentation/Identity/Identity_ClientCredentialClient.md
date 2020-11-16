@@ -5,7 +5,7 @@ uid: identityClientCredentialClient
 # ClientCredentialClient
 
 Client Credential clients are used for machine-to-machine communication without
-            the presence of a User, such as a headless application that does not require User authentication. 
+            the presence of a User. 
             These clients are issued an Id and Secret upon creation,
             which are later used for authentication against OSIsoft Cloud Services. More than one Secret can be
             created for a Client. You can read more about these clients

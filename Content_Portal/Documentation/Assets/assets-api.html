@@ -81,11 +81,11 @@
 <p>The Assets API allows you to create, read, update, and delete assets. </p>
 <p>The asset feature supports the HTTP entity tag (ETag) and If-Match for conditional requests. When a <code>GET</code> call is performed, the HTTP response header includes an Etag which indicates what version of the asset resource will be retrieved.</p>
 <p>See <a class="xref" href="access-control-api.html">Asset and AssetType Access Control API</a>, <a class="xref" href="asset-centric-data-api.html">Asset Centric Data API</a>, and <a class="xref" href="asset-search-api.html">Assets Search API</a> for additional API details.</p>
-<h4 id="example">Example</h4>
+<h4 id="example-etag-response-header">Example Etag Response Header</h4>
 <p>This is version 7 of this particular asset.</p>
 <pre><code>Etag: &quot;7&quot;
 </code></pre><p>To edit or delete the asset, specify If-Match in the HTTP request header when calling <code>DELETE</code> or <code>PUT</code>.</p>
-<h4 id="example-1">Example</h4>
+<h4 id="example-if-match-response-header">Example If-Match Response Header</h4>
 <p>Modify or delete only if the current asset matches version 7. Otherwise, do not perform this operation. If this condition fails, return a 412. </p>
 <pre><code>If-Match : &quot;7&quot;
 </code></pre><p>Note: If-Match is optional. If you want to delete or modify an asset regardless of the asset version, do not specify an If-Match.</p>
@@ -271,7 +271,7 @@ Content-Type: application/json
 <h2 id="create-assets-bulk-create"><code>Create Assets (Bulk create)</code></h2>
 <p>Create multiple assets in a single call.</p>
 <h3 id="request-3">Request</h3>
-<pre><code class="lang-text">POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets   
+<pre><code class="lang-text">POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets 
 </code></pre><h3 id="parameters-3">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>

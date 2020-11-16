@@ -61,7 +61,7 @@ OCS can function as a centralized location for synthesizing data from multiple p
 
 Although OCS is optimized for sequential data that is typically time series data, it can store any type of data indexed by an ordered sequence, such as by depth or location readings. 
 
-## Integration with custom applications, business intelligence tools, and new types of data sharing
+## Integration with custom applications and business intelligence tools and new types of data sharing
 
 OCS allows you to export your data to many different partner applications, data pipelines and workflows, collaboration tools, business intelligence and data exploration tools, and custom applications. A few examples include: 
 

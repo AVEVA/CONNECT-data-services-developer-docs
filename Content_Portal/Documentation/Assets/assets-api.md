@@ -303,12 +303,12 @@ The response includes a status code and a body.
 
 ## `Delete Asset (bulk)`  TODO~ Confirm all this is correct
 
-Delete all assets matching specified `Id`s. This API is used for deleting multiple assets in a given API call.
+Delete all assets matching specified `Id`s. This API is used for deleting multiple assets in a given API call. Note that a maximum of 1000 assets can be deleted in a single call.
 
 ### Request 
 
 ```text 
-DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/assets ?????????? TODO: CONFIRM THIS.   
+DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/assets/delete
 ```
 
 ### Parameters  
@@ -331,4 +331,5 @@ The response includes a status code and a body.
 | ------------------------- | --------- | ----------------------------------------------- |
 | 204 No Content            | none  | The assets with the specified `Id`s are deleted.                              |
 | 207 Multi-Status | partial success | Array of window values for  references. Look at child errors for unsuccessful values. |
+| 209 Conflict | error | See response body for additional details. |
 | 400 Bad Request | error | The request is not valid. See the response body for additional details. |

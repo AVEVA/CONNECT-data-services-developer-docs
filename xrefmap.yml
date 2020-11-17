@@ -85,6 +85,9 @@ references:
 - uid: CreateConfigureAsset
   name: Create and configure an asset
   href: Content_Portal/How_To_Guides/Assets/create-an-asset.html
+- uid: CredentialManagement
+  name: Credential Management
+  href: Content_Portal/Concepts/Credential_Management.html
 - uid: dataIngress
   name: Data Ingress and OSIsoft Message Format
   href: Content_Portal/Documentation/DataIngress/Data_Ingress.html
@@ -202,6 +205,9 @@ references:
 - uid: index
   name: OCS Content Portal
   href: index.html
+- uid: LeastPrivilege
+  name: Least Privilege
+  href: Content_Portal/Concepts/Least_Privilege.html
 - uid: MetadataRulesOverview
   name: Metadata Rules
   href: Content_Portal/Documentation/Metadata/Metadata_Rules_Overview.html
@@ -259,6 +265,9 @@ references:
 - uid: ResolvedDataViewPreviewAPI
   name: Resolved data view preview API
   href: Content_Portal/Documentation/DataViews/DataViewsAPIOverview/Resolved_Data_View_Preview_API.html
+- uid: Roles
+  name: Roles
+  href: Content_Portal/Concepts/Roles.html
 - uid: samples
   name: Samples
   href: Content_Portal/Documentation/samples.html
@@ -310,6 +319,9 @@ references:
 - uid: support
   name: Technical support and other resources
   href: Content_Portal/Documentation/support.html
+- uid: TokenManagement
+  name: Token Management
+  href: Content_Portal/Concepts/Token_Management.html
 - uid: TrendUserInterface
   name: Trend User Interface
   href: Content_Portal/Quickstarts/Trend-UI.html

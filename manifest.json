@@ -38,11 +38,59 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Concepts/Credential_Management.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Concepts/Credential_Management.html",
+          "hash": "cs4nwETOyVoA6BDsiL3Mmg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "Content_Portal/Concepts/Data_Storage_Concepts.md",
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Concepts/Data_Storage_Concepts.html",
           "hash": "+a8jLCM47SOG8cbN5xaLqw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Concepts/Least_Privilege.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Concepts/Least_Privilege.html",
+          "hash": "/g0Wz5DsYECMdX726UysWA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Concepts/Roles.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Concepts/Roles.html",
+          "hash": "zW1jrWFZrsupwWne6uG4Zw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Concepts/Token_Management.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Concepts/Token_Management.html",
+          "hash": "krUG2whdyFO6+Q34BC67sQ=="
         }
       },
       "is_incremental": false,
@@ -426,7 +474,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/DataViews/DefineaDataView/Field_Sets.html",
-          "hash": "/pbjzvWTxMeF0sfOBBtMzw=="
+          "hash": "2B2clHON4PhS394zvWENyg=="
         }
       },
       "is_incremental": false,
@@ -582,7 +630,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Identity/Identity_AuthorizationCodeClient.html",
-          "hash": "Ou89WDaLZdHQxKmOgqVwoQ=="
+          "hash": "WBLImDwkylmQ+FNxIf4AMg=="
         }
       },
       "is_incremental": false,
@@ -642,7 +690,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Identity/Identity_ClientCredentialClient.html",
-          "hash": "13D6gY/mjkWHw8mL+KfR6w=="
+          "hash": "gmHgl0/K5SI0fmAlBuK7JA=="
         }
       },
       "is_incremental": false,
@@ -1832,7 +1880,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/toc.html",
-          "hash": "rPVRZsgAEMTcnE96AFFNug=="
+          "hash": "W5fN7fJMwRavimWIC621RQ=="
         }
       },
       "is_incremental": false,
@@ -1877,7 +1925,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 109,
+          "total_file_count": 113,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

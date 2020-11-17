@@ -10,7 +10,7 @@ The asset feature supports the HTTP entity tag (ETag) and If-Match for condition
 
 See [Asset and AssetType Access Control API](xref:AssetOrAssetTypeAccessControlAPI), [Asset Centric Data API](xref:AssetCentricDataAPI), and [Assets Search API](xref:AssetsSearchAPI) for additional API details.
 
-####Example 
+####Example Etag Response Header
 This is version 7 of this particular asset.
 ```
 Etag: "7"
@@ -18,7 +18,7 @@ Etag: "7"
 
 To edit or delete the asset, specify If-Match in the HTTP request header when calling `DELETE` or `PUT`.
 
-####Example
+####Example If-Match Response Header
 Modify or delete only if the current asset matches version 7. Otherwise, do not perform this operation. If this condition fails, return a 412. 
 
 ```
@@ -190,8 +190,7 @@ Create multiple assets in a single call.
 ### Request 
 
 ```text 
-POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets   
-
+POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets 
 ```
 
 ### Parameters  

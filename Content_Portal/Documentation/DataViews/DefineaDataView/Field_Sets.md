@@ -141,9 +141,10 @@ In cases where the identifiers are unique, the identifier is suffixed with an or
 | Timestamp.0 | Value.1 | Value.2 |
 |--|--|--|
 
-There are three special parameters available for use in field labels:
+There are four special parameters available for use in field labels:
 - `{IdentifyingValue}` - the value of the identifying field
 - `{FirstKey}` - the value of the first of the `"Keys"` specified on the field
+- `{QueryId}` - the id of the query that produced the field
 - `{MeasurementFirstKey}` *(Coming Soon)* - the value of the first of the `"MeasurementKeys"` specified on the field
 
 If a special parameter fails to resolve, it becomes an empty string, `""`.

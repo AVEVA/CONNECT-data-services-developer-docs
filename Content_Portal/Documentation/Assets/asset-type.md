@@ -15,7 +15,6 @@ Returns the specified asset type.
 
 ### Request 
 ```text 
-
 GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}
 ```
 

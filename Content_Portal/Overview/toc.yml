@@ -1,5 +1,5 @@
 - name: What is OSIsoft Cloud Services (OCS)? 
-  topicHref: What-Is-OCS.md
+  href: What-Is-OCS.md
 - name: Who uses OSIsoft Cloud Services (OCS)? 
-  topicHref: Who-Uses-OCS.md
+  href: Who-Uses-OCS.md
 

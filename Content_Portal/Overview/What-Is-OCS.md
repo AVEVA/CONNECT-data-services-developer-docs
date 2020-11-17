@@ -10,8 +10,6 @@ OCS creates a seamless, trustworthy data infrastructure, incorporating informati
 
 OCS offers the following capabilities: 
 
-**QUESTION: We ordered these with the ones most relevant and eye-catching to users first. They are all important, we might need additional sections, and/or to re-order these.** 
-
 * [Remote monitoring from the network edge](#remote-monitoring-from-the-network-edge) 
 * [Easy data import (ingress)](#easy-data-import)
 * [Data aggregation from many sources](#data-aggregation-from-many-sources)  
@@ -36,8 +34,6 @@ You can choose the data collection technology that meets your specific needs:
 ![Data Collection Methods](images/data-collection.png)
 
 ## Easy data import
-
-**QUESTION: We do need to explain some terms that might not be familiar to those new to the cloud and OCS: ingress, elastic, shape come to mind. There are others…** 
 
 OCS provides a variety of methods to ingress and organize (or shape) your data. You can ingress data from an asset, an external application, or from PI Server directly to OCS, by using any or all of the following methods: 
 

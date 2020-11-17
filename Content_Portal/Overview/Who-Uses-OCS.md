@@ -29,7 +29,7 @@ Curating and preparing data is the most time-consuming part of the work for data
 
 #### More data is available to users 
 
-OCS removes the challenges of complicated and overbuilt data solutions (data lakes, relational databases) and provides a direct option **<QUESTION: what does “direct option” mean?>** for extending the data infrastructure. OCS data can be consumed by almost all software applications that data scientists use to perform their analysis because it is compatible with all R and PYTHON applications. 
+OCS removes the challenges of complicated and overbuilt data solutions (data lakes, relational databases) and provides a direct option for extending the data infrastructure. OCS data can be consumed by almost all software applications that data scientists use to perform their analysis because it is compatible with all R and PYTHON applications. 
 
 #### Data is prepared for data science modeling 
 

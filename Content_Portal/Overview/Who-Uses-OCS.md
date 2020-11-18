@@ -59,7 +59,3 @@ OCS provides the ability to integrate the data infrastructure from edge to cloud
 
 As a result of these benefits, OCS provides the ability to monitor remote operations in locations that operate quite differently than traditional plant environments. 
 
-## Data Analysts use OCS to Analyze Operational Data through Built-In Visualization 
-
-Work in progress… 
-

@@ -58,4 +58,3 @@ OCS provides the ability to integrate the data infrastructure from edge to cloud
 - Integration of existing edge and PI System data 
 
 As a result of these benefits, OCS provides the ability to monitor remote operations in locations that operate quite differently than traditional plant environments. 
-

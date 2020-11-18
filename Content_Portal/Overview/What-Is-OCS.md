@@ -66,9 +66,7 @@ OCS also offers opportunities for many new types of data consumers. For example,
 
 ## Management of assets by using Asset Explorer
 
-Asset Explorer allows you to view and create asset definitions and visualize asset information details. 
-
-Asset metadata provides semi-static information about a particular asset, for example the make, model, and location of a truck. This information makes it easy to search through a fleet of assets and identify the assets of interest. 
+Asset Explorer allows you to view and create asset definitions and visualize asset information details. Asset metadata provides semi-static information about a particular asset, for example the make, model, and location of a truck. This information makes it easy to search through a fleet of assets and identify the assets of interest. 
 
 ![Asset Manager](images/asset-manager.png)
 

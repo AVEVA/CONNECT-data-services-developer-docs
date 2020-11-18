@@ -4,9 +4,7 @@ uid: WhatIsOCS
 
 # What is OSIsoft Cloud Services (OCS)?
 
-OSIsoft Cloud Services (OCS) is a cloud data platform for storing, retrieving, and analyzing sequential data. It provides real-time data transfer and easily scales to high data volumes. 
-
-OCS creates a seamless, trustworthy data infrastructure, incorporating information from sensors, assets, plants, enterprises, and communities of interested users. This enables Operational Technology (OT) to be fully utilized across your organization. 
+OSIsoft Cloud Services (OCS) is a cloud data platform for storing, retrieving, and analyzing sequential data. It provides real-time data transfer and easily scales to high data volumes. OCS creates a seamless, trustworthy data infrastructure, incorporating information from sensors, assets, plants, enterprises, and communities of interested users. This enables Operational Technology (OT) to be fully utilized across your organization. 
 
 OCS offers the following capabilities: 
 
@@ -84,9 +82,7 @@ The display of the status of a critical measurement can be used to flag problems
 
 ## Secure and robust data infrastructure
 
-OCS is built from the ground up to ensure security. 
-
-The OCS platform is based on industry standard techniques to ensure the strongest possible data integrity. All users authenticate through trusted identity providers, such as Google, Microsoft Live, and Azure Active Directory. Authenticated users can only perform actions for which their role is authorized. Machine access to OCS is controlled through a variety of defensive strategies. All data in OCS is fully encrypted in transit and at rest. 
+OCS is built from the ground up to ensure security. The OCS platform is based on industry standard techniques to ensure the strongest possible data integrity. All users authenticate through trusted identity providers, such as Google, Microsoft Live, and Azure Active Directory. Authenticated users can only perform actions for which their role is authorized. Machine access to OCS is controlled through a variety of defensive strategies. All data in OCS is fully encrypted in transit and at rest. 
 
 OCS is designed to prevent your data from being accessible to others. Each organization using OCS, known as a tenant, sets up one or more logical units of work called a *namespace*. Each namespace is distinct. When you request a new namespace, OCS automatically allocates the resources needed to support your data infrastructure needs. The storage and computing resources for each namespace are completely separate from all other namespaces. 
 
@@ -98,16 +94,12 @@ When a tenant requests a new namespace, OCS provisions a new set of microservice
 
 ## Interruption resilience
 
-To prevent data interruptions or loss, OCS incorporates many safeguards. 
-
-By design OCS is built for high availability. You are not required to perform any specific actions to ensure continuous access to reliable, distributed data storage. 
+To prevent data interruptions or loss, OCS incorporates many safeguards. By design OCS is built for high availability. You are not required to perform any specific actions to ensure continuous access to reliable, distributed data storage. 
 
 OSIsoft continuously tests OCS to ensure the platform is performing reliably. Both the platform and the underlying operating systems are updated regularly. In addition, OSIsoft conducts frequent threat analyses to thwart potential exploitations. Load balancing precludes distributed denial of service attacks, and a gateway prevents unauthorized access to resources. 
 
 ## Easy management and maintenance
 
-OSIsoft manages, operates, and maintains all aspects of the OCS platform. 
-
-OCS is built and deployed on Microsoft Azure and operates outside the OSIsoft corporate firewall. Currently, OCS runs in two Azure regions: West US and West Europe. By housing the platform in multiple regions, OCS accommodates regulations that mandate where data must be stored. 
+OSIsoft manages, operates, and maintains all aspects of the OCS platform. OCS is built and deployed on Microsoft Azure and operates outside the OSIsoft corporate firewall. Currently, OCS runs in two Azure regions: West US and West Europe. By housing the platform in multiple regions, OCS accommodates regulations that mandate where data must be stored. 
 
 With OCS, you can perform virtually all actions on your data infrastructure by using modern, secure, developer-friendly REST APIs. OCS also provides an easy-to-use user interface. 

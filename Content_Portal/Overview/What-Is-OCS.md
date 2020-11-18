@@ -11,7 +11,7 @@ OCS creates a seamless, trustworthy data infrastructure, incorporating informati
 OCS offers the following capabilities: 
 
 * [Remote monitoring from the network edge](#remote-monitoring-from-the-network-edge) 
-* [Easy data import (ingress)](#easy-data-import)
+* [Easy data import](#easy-data-import)
 * [Data aggregation from many sources](#data-aggregation-from-many-sources)  
 * [Integration with custom applications and business intelligence tools and new types of data sharing](#integration-with-custom-applications-and-business-intelligence-tools-and-new-types-of-data-sharing) 
 * [Management of assets by using the Asset Explorer](#management-of-assets-by-using-asset-explorer) 
@@ -35,7 +35,7 @@ You can choose the data collection technology that meets your specific needs:
 
 ## Easy data import
 
-OCS provides a variety of methods to ingress and organize (or shape) your data. You can ingress data from an asset, an external application, or from PI Server directly to OCS, by using any or all of the following methods: 
+OCS provides a variety of methods to ingress and organize or shape your data. You can ingress data from an asset, an external application, or from PI Server directly to OCS, by using any or all of the following methods: 
 
 * **PI to OCS**:  The PI to OCS utility transfers PI time-series data from an on-premises PI Server into OCS. PI to OCS maps PI Data Archive data shapes to SDS types and streams. 
 * **OSIsoft Message Format (OMF)**: A platform-independent format for passing JSON messages to OCS using an HTTP client. You can use OMF to achieve high-throughput asynchronous data ingress into the Sequential Data Store. 

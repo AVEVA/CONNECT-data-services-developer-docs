@@ -94,8 +94,6 @@ SdsStream results with the <a class="xref" href="SDS_Streams.html">Stream</a> AP
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string streamId</code><br>The stream identifier  </p>
-<h3 id="authorization">Authorization</h3>
-<p>Allowed for administrator and user accounts</p>
 <h3 id="response">Response</h3>
 <p>The response includes a status code and a response body  </p>
 <h4 id="response-body">Response body</h4>
@@ -108,7 +106,9 @@ Content-Type: application/json
    &quot;a metadata key&quot;:&quot;a metadata value&quot;, 
    &quot;another key&quot;:&quot;another value&quot; 
 } 
-</code></pre><h4 id="net-client-libraries-method">.NET client libraries method</h4>
+</code></pre><h3 id="authorization">Authorization</h3>
+<p>Allowed for tenant administrator and tenant members</p>
+<h4 id="net-client-libraries-method">.NET client libraries method</h4>
 <pre><code class="lang-csharp">      Task&lt;IDictionary&lt;string, string&gt;&gt; GetStreamMetadataAsync(string streamId); 
 </code></pre><hr>
 <h2 id="get-stream-metadata-value"><code>Get stream metadata value</code></h2>
@@ -120,8 +120,6 @@ Content-Type: application/json
 <p><code>string namespaceId</code><br>The namespace identifier   </p>
 <p><code>string streamId</code><br>The stream identifier   </p>
 <p><code>string key</code><br>The key specifying the metadata value of interest  </p>
-<h3 id="authorization-1">Authorization</h3>
-<p>Allowed for administrator and user accounts  </p>
 <h3 id="response-1">Response</h3>
 <p>The response includes a status code and a response body  </p>
 <h4 id="response-body-1">Response body</h4>
@@ -133,7 +131,9 @@ Content-Type: application/json
 { 
    &quot;a metadata value&quot;
 } 
-</code></pre><h3 id="net-client-libraries-method-1">.NET client libraries method</h3>
+</code></pre><h3 id="authorization-1">Authorization</h3>
+<p>Allowed for tenant administrator and tenant members</p>
+<h3 id="net-client-libraries-method-1">.NET client libraries method</h3>
 <pre><code class="lang-csharp">      Task&lt;string&gt; GetStreamMetadataValueAsync(string streamId, string key); 
 </code></pre><hr>
 <h2 id="update-stream-metadata"><code>Update stream metadata</code></h2>
@@ -145,10 +145,10 @@ Overwrites any existing metadata; does not merge.  </p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string streamId</code><br>The stream identifier  </p>
-<h3 id="authorization-2">Authorization</h3>
-<p>Allowed for administrator accounts  </p>
 <h3 id="response-2">Response</h3>
 <p>The response includes a status code  </p>
+<h3 id="authorization-2">Authorization</h3>
+<p>Allowed for tenant administrator and tenant members</p>
 <h3 id="net-client-libraries-method-2">.NET client libraries method</h3>
 <pre><code class="lang-csharp">      Task UpdateStreamMetadataAsync(string streamId, IDictionary&lt;string, string&gt; metadata); 
 </code></pre><hr>
@@ -161,12 +161,12 @@ Overwrites any existing metadata; does not merge.  </p>
 <p><code>string tenantId</code><br>The tenant identifier    </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string streamId</code><br>The stream identifier  </p>
-<h3 id="authorization-3">Authorization</h3>
-<p>Allowed for administrator accounts</p>
 <h3 id="response-3">Response</h3>
 <p>The response includes a status code and a response body  </p>
 <h4 id="response-body-2">Response body</h4>
 <p>A collection of operations to be applied to the metadata collection as specified by the <a href="http://jsonpatch.com/">JSON Patch format</a>  </p>
+<h3 id="authorization-3">Authorization</h3>
+<p>Allowed for tenant administrator and tenant members</p>
 <h3 id="net-client-libraries-method-3">.NET client libraries method</h3>
 <pre><code class="lang-csharp">      Task&lt;IDictionary&lt;string, string&gt;&gt; PatchStreamMetadataAsync(string streamId, MetadataPatchDocument patchDoc);
 </code></pre><hr>
@@ -178,10 +178,10 @@ Overwrites any existing metadata; does not merge.  </p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string streamId</code><br>The stream identifier  </p>
-<h3 id="authorization-4">Authorization</h3>
-<p>Allowed for administrator accounts  </p>
 <h3 id="response-4">Response</h3>
 <p>The response includes a status code  </p>
+<h3 id="authorization-4">Authorization</h3>
+<p>Allowed for tenant administrator and tenant members</p>
 <h3 id="net-client-libraries-method-4">.NET client libraries method</h3>
 <pre><code class="lang-csharp">      Task DeleteStreamMetadataAsync(string streamId); 
 </code></pre><hr>
@@ -194,8 +194,6 @@ Overwrites any existing metadata; does not merge.  </p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string streamId</code><br>The stream identifier   </p>
-<h3 id="authorization-5">Authorization</h3>
-<p>Allowed for administrator and user accounts  </p>
 <h3 id="response-5">Response</h3>
 <p>The response includes a status code and a response body</p>
 <h4 id="response-body-3">Response body</h4>
@@ -208,7 +206,9 @@ Content-Type: application/json
     &quot;a tag&quot;, 
     &quot;another tag&quot; 
 ] 
-</code></pre><h3 id="net-client-libraries-method-5">.NET client libraries method</h3>
+</code></pre><h3 id="authorization-5">Authorization</h3>
+<p>Allowed for tenant administrator and tenant members</p>
+<h3 id="net-client-libraries-method-5">.NET client libraries method</h3>
 <pre><code class="lang-csharp">      Task&lt;IList&lt;string&gt;&gt; GetStreamTagsAsync(string streamId); 
 </code></pre><hr>
 <h2 id="update-stream-tags"><code>Update stream tags</code></h2>
@@ -222,10 +222,10 @@ Overwrites any existing tags; does not merge. </p>
 <p><code>string streamId</code><br>The stream identifier  </p>
 <h4 id="request-body">Request body</h4>
 <p>The request content is the serialized list of tags </p>
-<h3 id="authorization-6">Authorization</h3>
-<p>Allowed by administrator accounts  </p>
 <h3 id="response-6">Response</h3>
 <p>The response includes a status code  </p>
+<h3 id="authorization-6">Authorization</h3>
+<p>Allowed for tenant administrator and tenant members</p>
 <h3 id="net-client-libraries-method-6">.NET client libraries method</h3>
 <pre><code class="lang-csharp">      Task UpdateStreamTagsAsync(string streamId, IList&lt;string&gt; tags); 
 </code></pre><hr>
@@ -237,10 +237,10 @@ Overwrites any existing tags; does not merge. </p>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string streamId</code><br>The stream identifier  </p>
-<h3 id="authorization-7">Authorization</h3>
-<p>Allowed for administrator accounts  </p>
 <h3 id="response-7">Response</h3>
 <p>The response includes a status code  </p>
+<h3 id="authorization-7">Authorization</h3>
+<p>Allowed for tenant administrator and tenant members</p>
 <h3 id="net-client-libraries-method-7">.NET client libraries method</h3>
 <pre><code class="lang-csharp">      Task DeleteStreamTagsAsync(string streamId); 
 </code></pre><hr>

@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Account Management Concepts </title>
+    <title>Tenant Management Concepts </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Account Management Concepts ">
+    <meta name="title" content="Tenant Management Concepts ">
     <meta name="generator" content="docfx 2.56.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -76,7 +76,7 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="AccountManagementConcepts">
-<h1 id="account-management-concepts">Account Management Concepts</h1>
+<h1 id="tenant-management-concepts">Tenant Management Concepts</h1>
 
 <h2 id="tenant">Tenant</h2>
 <p>A tenant is how OSIsoft Cloud Services (OCS) refers to a customer, client, or organization. Before a customer can use OCS, a tenant must be provisioned for them. A customer will have at least one tenant and could have more than one tenant. Each tenant has at least one identity provider associated with it. Tenants also span regions within OCS. For example, OCS currently has services hosted in two regions, West US, and West Europe. If the tenant is authorized to use multiple regions, they can create resources (for example, namespaces) in each region.</p>
@@ -96,11 +96,11 @@
 </ul>
 <p>Clients are assigned roles that define their access to OCS objects. See <a href="#roles">Roles</a> for more information. </p>
 <h2 id="roles"> Roles</h2>
-<p>Roles, in combination with Access Control Lists (ACL), determine the level of access to OCS objects. The Account Administrator creates roles for the users and clients that will access OCS and assigns the appropriate roles to them. Additionally, the administrator creates an ACL for each OCS object (namespaces, streams, and so on) that defines access permissions for each type of role. Users and clients are granted access permissions to OCS objects based on their assigned roles and the corresponding ACLs. </p>
+<p>Roles, in combination with Access Control Lists (ACL), determine the level of access to OCS objects. The tenant administrator creates roles for the users and clients that will access OCS and assigns the appropriate roles to them. Additionally, the administrator creates an ACL for each OCS object (namespaces, streams, and so on) that defines access permissions for each type of role. Users and clients are granted access permissions to OCS objects based on their assigned roles and the corresponding ACLs. </p>
 <p>OCS provides two built-in roles:</p>
 <ul>
-<li>Account member &#150; Assigned to every user and client credentials client. Users and clients assigned this role can access objects or information of which they are the owner.</li>
-<li>Account Administrator &#150; Role with the highest privileges, the Account Administrator can create and delete users, clients, and secrets.</li>
+<li>Tenant member &#150; Assigned to every user and client credentials client. Users and clients assigned this role can access objects or information of which they are the owner.</li>
+<li>Tenant administrator &#150; Role with the highest privileges, the tenant Administrator can create and delete users, clients, and secrets.</li>
 </ul>
 </article>
           </div>

@@ -1,4 +1,4 @@
-- name: Account Management 
+- name: Tenant Management 
   topicHref: Account_Management_Concepts.md
 - name: Credential Management 
   topicHref: Credential_Management.md

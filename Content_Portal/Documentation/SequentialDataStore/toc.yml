@@ -6,7 +6,7 @@
   href: SDS_Streams.md
 - name: Stream metadata and tags
   href: SdsStreamExtra.md
-- name: StreamViews
+- name: Stream views
   href: SDS_Views.md
 - name: Indexes
   href: indexes.md

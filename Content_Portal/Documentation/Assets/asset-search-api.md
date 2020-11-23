@@ -81,13 +81,13 @@ The namespace identifier
 `string queryString`  
 The asset query string. Search strings are not case-sensitive.
 
-[Optional] `int skip`   
+[optional] `int skip`   
 An optional parameter representing the zero-based offset of the first asset to retrieve. If not specified, a default value of 0 is used.
 
 [Optional] `int count`   
 An optional parameter representing the maximum number of assets to retrieve. If not specified, a default value of 100 is used. This value must be between (including) 1 to 1000.
 
-[Optional] `[id|name] [asc|desc|] orderby`  
+[optional] `[id|name] [asc|desc|] orderby`  
 An optional parameter which returns assets ordered either by the asset `Id` or the asset `name`. In addition to the property, you can optionally specify either `asc` or `desc` to return the results in ascending or descending order. If not specified, the default is ascending order.
 
 ### Response 

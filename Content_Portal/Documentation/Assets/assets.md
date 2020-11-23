@@ -23,7 +23,7 @@ In this situation, an asset type can be used to create multiple similar assets. 
 | StreamReferences   | Stream Reference List | Optional  | No *       | Asset Stream References                                             | Yes  | No            |
 | TypeReferences | Type Reference List | Optional  | No*        | Asset Type Type References                                     | No | Yes            |
 
-For more information on search syntax, see [Assets Search API][xref:AssetsSearchAPI].
+For more information on search syntax, see [Assets Search API](xref:AssetsSearchAPI).
 
 ## Asset and Asset Type Metadata Properties
 

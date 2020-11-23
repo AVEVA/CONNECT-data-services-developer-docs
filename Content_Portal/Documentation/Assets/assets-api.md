@@ -10,7 +10,7 @@ The asset feature supports the HTTP entity tag (ETag) and If-Match for condition
 
 See [Asset and AssetType Access Control API](xref:AssetOrAssetTypeAccessControlAPI), [Asset Centric Data API](xref:AssetCentricDataAPI), and [Assets Search API](xref:AssetsSearchAPI) for additional API details.
 
-####Example 
+####Example Etag Response Header
 This is version 7 of this particular asset.
 ```
 Etag: "7"
@@ -18,7 +18,7 @@ Etag: "7"
 
 To edit or delete the asset, specify If-Match in the HTTP request header when calling `DELETE` or `PUT`.
 
-####Example
+####Example If-Match Response Header
 Modify or delete only if the current asset matches version 7. Otherwise, do not perform this operation. If this condition fails, return a 412. 
 
 ```
@@ -190,7 +190,7 @@ Create multiple assets in a single call.
 ### Request 
 
 ```text 
-POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets   
+POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets 
 ```
 
 ### Parameters  
@@ -301,7 +301,7 @@ The response includes a status code and a body.
 | 404 Not Found             | error     | The asset with the specified `Id` could not be found.  |
 | 412 Pre-Condition Failed  | error     | The asset failed to update because the If-Match condition failed.  |
 
-## `Delete Asset (bulk)`  TODO~ Confirm all this is correct
+## `Delete Asset (bulk)`
 
 Delete all assets matching specified `Id`s. This API is used for deleting multiple assets in a given API call. Note that a maximum of 1000 assets can be deleted in a single call.
 
@@ -330,6 +330,6 @@ The response includes a status code and a body.
 | Status Code               | Body Type | Description                                     |
 | ------------------------- | --------- | ----------------------------------------------- |
 | 204 No Content            | none  | The assets with the specified `Id`s are deleted.                              |
-| 207 Multi-Status | partial success | Array of window values for  references. Look at child errors for unsuccessful values. |
+| 207 Multi-Status | partial success | Array of errors. Assets that didn't encounter errors would be deleted. |
 | 209 Conflict | error | See response body for additional details. |
 | 400 Bad Request | error | The request is not valid. See the response body for additional details. |

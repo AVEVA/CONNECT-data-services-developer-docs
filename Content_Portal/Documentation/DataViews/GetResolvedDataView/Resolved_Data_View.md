@@ -121,6 +121,7 @@ Within a data item of resource kind `.Stream`, this corresponds to a stream prop
 | Name | string | The data item field's friendly name
 | MeasurementName *(Coming Soon)* | string | The asset measurement name. Only applies to asset measurement data item fields.
 | TypeCode | SdsTypeCode| The name of the field's data type
+| Uom *(coming soon)* | bool | The unit of measure id for the data item field
 | IsKey | bool | True if the field is the primary index of the data item. False otherwise.
 
 ### Group
@@ -149,6 +150,7 @@ Details on the provenance on every field of data:
 | Label | string | Friendly name
 | FieldKind | FieldKind enumeration | Specifies if the mapping is for an index, grouping, data, or field id field
 | TypeCode | SdsTypeCode | The primary data type of the mapping
+| Uom *(coming soon)* | string | The unit of measure id. Null unless all data mappings' unit of measures within the field mapping are identical.
 | DataMappings | IReadOnlyList<DataMapping> | Per-group details of what this field resolved to
 
 ### FieldKind enumeration
@@ -168,8 +170,9 @@ Per-group details of the data that a `FieldMapping` targets:
 |--|--|--|
 | TargetId | string | The unique identifier of the target data item
 | TargetFieldKey | string | The specific targeted part of the data item, if any.
-| TargetMeasurementKey *(Coming Soon)* | string | The asset measurement name. Only applies to asset measurement data mappings.
+| TargetMeasurementKey *(coming soon)* | string | The asset measurement name. Only applies to asset measurement data mappings.
 | TypeCode | SdsTypeCode | The value type
+| Uom *(coming soon)* | string | The unit of measure id
 | FieldSetIndex | Nullable<int> | The position of the corresponding field set within the data view
 | FieldIndex | Nullable<int> | The position of the corresponding field within its field set
 

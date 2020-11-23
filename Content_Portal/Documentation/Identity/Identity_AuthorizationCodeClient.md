@@ -5,8 +5,7 @@ uid: identityAuthorizationCodeClient
 # AuthorizationCodeClient
 
 Authorization Code clients are used in Javascript/Browser (SPA) based applications or native
-            mobile applications with the presence of a User.
-            These clients are issued an ID. You can read more about these clients
+            mobile applications with the presence of a User. You can read more about these clients
             [here](https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/Authentication#authorization-code-flow-with-pkce).
             Authorization Code clients are not issued secrets or refresh tokens.
 

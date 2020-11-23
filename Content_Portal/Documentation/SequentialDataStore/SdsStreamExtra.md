@@ -32,9 +32,6 @@ The namespace identifier
 `string streamId`  
 The stream identifier  
 
-### Authorization
-Allowed for administrator and user accounts
-  
 ### Response  
 The response includes a status code and a response body  
 
@@ -51,6 +48,8 @@ Content-Type: application/json
    "another key":"another value" 
 } 
 ```
+### Authorization
+Allowed for tenant administrator and tenant members
 
 #### .NET client libraries method
 ```csharp
@@ -80,9 +79,6 @@ The stream identifier
 `string key`  
 The key specifying the metadata value of interest  
 
-### Authorization  
-Allowed for administrator and user accounts  
-
 ### Response  
 The response includes a status code and a response body  
 
@@ -98,6 +94,9 @@ Content-Type: application/json
    "a metadata value"
 } 
 ```
+
+### Authorization
+Allowed for tenant administrator and tenant members
 
 ### .NET client libraries method  
 ```csharp
@@ -125,17 +124,16 @@ The namespace identifier
 `string streamId`  
 The stream identifier  
 
-### Authorization  
-Allowed for administrator accounts  
-
 ### Response  
 The response includes a status code  
+
+### Authorization
+Allowed for tenant administrator and tenant members
 
 ### .NET client libraries method  
 ```csharp
       Task UpdateStreamMetadataAsync(string streamId, IDictionary<string, string> metadata); 
 ```
-
 
 
 ***********************
@@ -159,14 +157,14 @@ The namespace identifier
 `string streamId`  
 The stream identifier  
 
-### Authorization  
-Allowed for administrator accounts
-
 ### Response
 The response includes a status code and a response body  
 
 #### Response body  
 A collection of operations to be applied to the metadata collection as specified by the [JSON Patch format](http://jsonpatch.com/)  
+
+### Authorization
+Allowed for tenant administrator and tenant members
 
 ### .NET client libraries method
 ```csharp
@@ -193,12 +191,11 @@ The namespace identifier
 `string streamId`  
 The stream identifier  
   
-### Authorization  
-Allowed for administrator accounts  
-
 ### Response  
 The response includes a status code  
 
+### Authorization
+Allowed for tenant administrator and tenant members
 
 ### .NET client libraries method
 ```csharp
@@ -227,9 +224,6 @@ The namespace identifier
 `string streamId`  
 The stream identifier   
 
-### Authorization  
-Allowed for administrator and user accounts  
-
 ### Response  
 The response includes a status code and a response body
 
@@ -246,6 +240,8 @@ Content-Type: application/json
     "another tag" 
 ] 
 ```  
+### Authorization
+Allowed for tenant administrator and tenant members
 
 ### .NET client libraries method
 ```csharp
@@ -275,11 +271,11 @@ The stream identifier
 #### Request body  
 The request content is the serialized list of tags 
 
-### Authorization  
-Allowed by administrator accounts  
-
 ### Response  
 The response includes a status code  
+
+### Authorization
+Allowed for tenant administrator and tenant members
 
 ### .NET client libraries method
 ```csharp
@@ -305,11 +301,11 @@ The namespace identifier
 `string streamId`  
 The stream identifier  
 
-### Authorization  
-Allowed for administrator accounts  
-
 ### Response  
 The response includes a status code  
+
+### Authorization
+Allowed for tenant administrator and tenant members
 
 ### .NET client libraries method  
 ```csharp

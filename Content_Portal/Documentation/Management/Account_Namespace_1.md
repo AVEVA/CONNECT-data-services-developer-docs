@@ -4,7 +4,7 @@ uid: AccountNamespace_1
 
 # Namespaces
 
-A `Namespace` is a collection of SDS types, streams, and stream views. Namespace identifiers are unique within an account. Requirements
+A `Namespace` is a collection of SDS types, streams, and stream views. Namespace identifiers are unique within an tenant. Requirements
 for Namespace IDs are the following:
 - Must contain 100 characters or fewer
 - Must only contain alphanumeric characters, underscores, dashes, spaces, and periods
@@ -12,7 +12,7 @@ for Namespace IDs are the following:
 - Must not start or end with a period
 - Must not start with two consecutive underscores
 
-In practice, namespaces may correspond to a specific set of infrastructure assets, but more commonly correspond to virtual partitions within a single set of assets. You can create one or more namespaces within an SDS account. Each namespace is effectively an instance of SDS, within which you create SDS types and streams, stream views, data views, and metadata.
+In practice, namespaces may correspond to a specific set of infrastructure assets, but more commonly correspond to virtual partitions within a single set of assets. You can create one or more namespaces within an SDS tenant. Each namespace is effectively an instance of SDS, within which you create SDS types and streams, stream views, data views, and metadata.
 
 ## Properties
 
@@ -59,7 +59,7 @@ Returns all `Namespaces` owned by the specified `Tenant` that the caller has acc
 string tenantId
 ```
 
-The identifier of the account to access.
+The identifier of the tenant to access.
 
 
 ### Security

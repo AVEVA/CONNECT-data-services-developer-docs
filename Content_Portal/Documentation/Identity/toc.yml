@@ -1,5 +1,3 @@
-- name: Identity and Access Management
-  href: Identity_and_Access_Management.md
 - name: AAD Tenant
   href: Identity_AzureActiveDirectoryTenant.md
 - name: Authorization Code Client

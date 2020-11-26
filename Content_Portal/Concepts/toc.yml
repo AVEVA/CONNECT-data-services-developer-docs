@@ -2,6 +2,8 @@
   topicHref: Account_Management_Concepts.md
 - name: Credential Management 
   topicHref: Credential_Management.md
+- name: Consent 
+  topicHref: Consent.md
 - name: Data Storage
   topicHref: Data_Storage_Concepts.md
 - name: Least Privilege

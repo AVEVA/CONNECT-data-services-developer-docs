@@ -78,7 +78,7 @@
             <article class="content wrap" id="_content" data-uid="AccountNamespace_1">
 <h1 id="namespaces">Namespaces</h1>
 
-<p>A <code>Namespace</code> is a collection of SDS types, streams, and stream views. Namespace identifiers are unique within an account. Requirements
+<p>A <code>Namespace</code> is a collection of SDS types, streams, and stream views. Namespace identifiers are unique within an tenant. Requirements
 for Namespace IDs are the following:</p>
 <ul>
 <li>Must contain 100 characters or fewer</li>
@@ -87,7 +87,7 @@ for Namespace IDs are the following:</p>
 <li>Must not start or end with a period</li>
 <li>Must not start with two consecutive underscores</li>
 </ul>
-<p>In practice, namespaces may correspond to a specific set of infrastructure assets, but more commonly correspond to virtual partitions within a single set of assets. You can create one or more namespaces within an SDS account. Each namespace is effectively an instance of SDS, within which you create SDS types and streams, stream views, data views, and metadata.</p>
+<p>In practice, namespaces may correspond to a specific set of infrastructure assets, but more commonly correspond to virtual partitions within a single set of assets. You can create one or more namespaces within an SDS tenant. Each namespace is effectively an instance of SDS, within which you create SDS types and streams, stream views, data views, and metadata.</p>
 <h2 id="properties">Properties</h2>
 <p>For HTTP requests and responses, the Namespace object has the following properties and JSON-serialized body: </p>
 <table>
@@ -144,7 +144,7 @@ for Namespace IDs are the following:</p>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
 string tenantId
-</code></pre><p>The identifier of the account to access.</p>
+</code></pre><p>The identifier of the tenant to access.</p>
 <h3 id="security">Security</h3>
 <p>A <code>Namespace</code> can only be retrieved if the current principal has Read access.</p>
 <h3 id="returns">Returns</h3>

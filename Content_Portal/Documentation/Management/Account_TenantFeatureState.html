@@ -123,7 +123,7 @@
 string tenantId
 </code></pre><p>The identifier of the account to access.</p>
 <h3 id="security">Security</h3>
-<p>Authorized for Account Members of the specified account.</p>
+<p>Authorized for Account Members of the specified tenant.</p>
 <h3 id="returns">Returns</h3>
 <table>
 <thead>
@@ -160,13 +160,13 @@ string tenantId
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
 string tenantId
-</code></pre><p>The identifier of the account to access.</p>
+</code></pre><p>The identifier of the tenant to access.</p>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
 string id
 </code></pre><p>The identifier of the <code>FeatureState</code> to retrieve.</p>
 <h3 id="security-1">Security</h3>
-<p>Authorized for Account Members of the specified account.</p>
+<p>Authorized for Account Members of the specified tenant.</p>
 <h3 id="returns-1">Returns</h3>
 <table>
 <thead>
@@ -180,7 +180,7 @@ string id
 <tr>
 <td>200</td>
 <td>FeatureState</td>
-<td>Returns the <code>FeatureState</code> of the specified account.</td>
+<td>Returns the <code>FeatureState</code> of the specified tenant.</td>
 </tr>
 <tr>
 <td>400</td>
@@ -190,7 +190,7 @@ string id
 <tr>
 <td>403</td>
 <td>Nothing is returned</td>
-<td>Unauthorized to retrieve the <code>FeatureState</code> of the specified account.</td>
+<td>Unauthorized to retrieve the <code>FeatureState</code> of the specified tenant.</td>
 </tr>
 </tbody>
 </table>

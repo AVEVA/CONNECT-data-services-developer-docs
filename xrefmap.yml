@@ -7,12 +7,6 @@ references:
 - uid: AccountClientRole_1
   name: Client Roles
   href: Content_Portal/Documentation/Management/Account_ClientRole_1.html
-- uid: AccountManagementConcepts
-  name: Tenant Management Concepts
-  href: Content_Portal/Concepts/Account_Management_Concepts.html
-- uid: AccountManagementOverview
-  name: Account Management
-  href: Content_Portal/Documentation/Management/Management_Overview.html
 - uid: AccountNamespace_1
   name: Namespaces
   href: Content_Portal/Documentation/Management/Account_Namespace_1.html
@@ -157,6 +151,9 @@ references:
 - uid: GettingStartedWithTrendData
   name: Getting Started with Trend Data
   href: Content_Portal/Quickstarts/Getting-Started-Trend.html
+- uid: identityandaccessmanagement
+  name: OSIsoft Identity Service
+  href: Content_Portal/Documentation/Identity/Identity_and_Access_Management.html
 - uid: identityAuthorizationCodeClient
   name: AuthorizationCodeClient
   href: Content_Portal/Documentation/Identity/Identity_AuthorizationCodeClient.html
@@ -177,7 +174,7 @@ references:
   href: Content_Portal/Documentation/Identity/Identity_ClientCredentialClient.html
 - uid: identityConsent
   name: AAD Consent to OSIsoft Applications
-  href: Content_Portal/Documentation/Identity/Consent.html
+  href: Content_Portal/Concepts/Consent.html
 - uid: identityHybridClient
   name: HybridClient
   href: Content_Portal/Documentation/Identity/Identity_HybridClient.html
@@ -190,9 +187,6 @@ references:
 - uid: identityInvitation
   name: Invitation
   href: Content_Portal/Documentation/Identity/Identity_Invitation.html
-- uid: identityOverview
-  name: OSIsoft Identity Service
-  href: Content_Portal/Documentation/Identity/Identity_Overview.html
 - uid: identityPersistedGrant
   name: PersistedGrant
   href: Content_Portal/Documentation/Identity/Identity_PersistedGrant.html
@@ -319,6 +313,12 @@ references:
 - uid: support
   name: Technical support and other resources
   href: Content_Portal/Documentation/support.html
+- uid: TenantManagementConcepts
+  name: Tenant Management Concepts
+  href: Content_Portal/Concepts/Tenant_Management_Concepts.html
+- uid: TenantManagementOverview
+  name: Tenant Management
+  href: Content_Portal/Documentation/Management/Management_Overview.html
 - uid: TokenManagement
   name: Token Management
   href: Content_Portal/Concepts/Token_Management.html

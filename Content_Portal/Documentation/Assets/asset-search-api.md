@@ -105,7 +105,7 @@ Below is a response when query string is "Name:*Tracer*".
 
 `Count` represents the number of matched assets in the given query.
 
-Also returned is a list of `Results`. Each result contain
+Also returned is a list of `Results`. Each result contains  
     - The `MatchProperties` list contains a list of match property objects. Each match property object contains which field matched as well as the value of that field.
     - `Score` which indicates the relevancy of the match. The higher the score, the more relevant this asset is to your query.
     - `Id` the id of the matching asset.

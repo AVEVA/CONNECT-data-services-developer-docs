@@ -40,8 +40,8 @@ Roles, in combination with Access Control Lists (ACL), determine the level of ac
 
 OCS provides two built-in roles:
 
-- Tenant member &#150; Assigned to every user and client credentials client. Users and clients assigned this role can access objects or information of which they are the owner.
-- Tenant administrator &#150; Role with the highest privileges, the tenant Administrator can create and delete users, clients, and secrets.
+- Account member &#150; Assigned to every user and client credentials client. Users and clients assigned this role can access objects or information of which they are the owner.
+- Account administrator &#150; Role with the highest privileges, the tenant Administrator can create and delete users, clients, and secrets.
 
 
 

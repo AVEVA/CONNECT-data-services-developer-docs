@@ -106,12 +106,12 @@ Below is a response when query string is "Name:*Tracer*".
 `Count` represents the number of matched assets in the given query.
 
 Also returned is a list of `Results`. Each result contains  
-    - The `MatchProperties` list contains a list of match property objects. Each match property object contains which field matched as well as the value of that field.
-    - `Score` which indicates the relevancy of the match. The higher the score, the more relevant this asset is to your query.
-    - `Id` the id of the matching asset.
-    - `TypeId` the asset type id of the asset. This may be null if the asset does not reference an asset type.
-    - `Name` the asset name.
-    - `Description` the asset description.
+- The `MatchProperties` list contains a list of match property objects. Each match property object contains which field matched as well as the value of that field.
+- `Score` which indicates the relevancy of the match. The higher the score, the more relevant this asset is to your query.
+- `Id` the id of the matching asset.
+- `TypeId` the asset type id of the asset. This may be null if the asset does not reference an asset type.
+- `Name` the asset name.
+- `Description` the asset description.
 
 ```json 
 HTTP 200 OK 

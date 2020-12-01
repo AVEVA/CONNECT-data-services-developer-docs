@@ -7,6 +7,9 @@ references:
 - uid: AccountClientRole_1
   name: Client Roles
   href: Content_Portal/Documentation/Management/Account_ClientRole_1.html
+- uid: AccountManagementConcepts
+  name: Tenant Management Concepts
+  href: Content_Portal/Concepts/Account_Management_Concepts.html
 - uid: AccountNamespace_1
   name: Namespaces
   href: Content_Portal/Documentation/Management/Account_Namespace_1.html

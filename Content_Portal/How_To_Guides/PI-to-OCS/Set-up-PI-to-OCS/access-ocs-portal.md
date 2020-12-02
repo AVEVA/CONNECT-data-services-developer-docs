@@ -4,7 +4,7 @@ uid: access-ocs-portal
 
 # Access the OCS customer portal
 
-Log on to the OCS customer portal to access the PI to OCS agent and begin transferring PI system data to OCS.
+Log on to the OCS customer portal to access the PI to OCS agent and then transfer PI system data to OCS.
 
 ## Before you start
 

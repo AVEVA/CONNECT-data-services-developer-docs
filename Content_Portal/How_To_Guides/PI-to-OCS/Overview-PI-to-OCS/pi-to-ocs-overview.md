@@ -15,6 +15,7 @@ Transferring PI System data into OCS allows your organization to have data avail
 PI to OCS has two major components:
 
 1. An on-premises component called the "PI to OCS Agent" that serves as a bridge between the source PI Server and the OCS destination. The agent runs as a service and performs fast, secure data transfers.
+
 2. A cloud component called a "PI System connection" or "PI System connection data source", which resides within OCS and receives data from the on-premises PI to OCS Agent and stores it in SDS.
 
 **Note.** Storage in SDS is partitioned by OCS namespace.

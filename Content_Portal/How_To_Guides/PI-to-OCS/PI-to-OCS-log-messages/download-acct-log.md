@@ -2,12 +2,11 @@
 uid: download-acct-log
 ---
 
-# Download an OCS account log
+# Event Viewer log messages
 
 Troubleshooting information can be found in OCS logs. Logs contain messages about account related activity, errors, as well as system messages. By default, logs contain details about activities that occurred within the past hour.
 
-### Procedure
-
+## Download an OCS account log
 
 1. Click the waffle icon, then click **Logs**.
  

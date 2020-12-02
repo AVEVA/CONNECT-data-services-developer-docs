@@ -1,9 +1,9 @@
 - name: OSIsoft Cloud Services 
   topicHref: OSIsoft_Cloud_Services.md
-- name: Tenant Management
+- name: Account Management
   href: Management/toc.yml
   topicHref: Management/Management_Overview.md
-- name: Identity and Access Management
+- name: Identity
   href: Identity/toc.yml
   topicHref: Identity/Identity_and_Access_Management.md
 - name: Sequential Data Store

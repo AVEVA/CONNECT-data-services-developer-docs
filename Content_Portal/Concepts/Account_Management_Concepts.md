@@ -2,7 +2,7 @@
 uid: AccountManagementConcepts
 ---
 
-# Tenant Management Concepts
+# Account Management Concepts
 
 
 

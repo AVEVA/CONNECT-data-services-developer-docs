@@ -4,7 +4,7 @@ uid: AccountRole_1
 
 # Roles
 
-A `Role` is used to manage access within an OSIsoft Cloud Services (OCS) tenant. All users are assigned the Account Member role by default. There are two predefined Roles for OCS tenants. Check the user or client role APIs for more information.
+A `Role` is used to manage access within an OSIsoft Cloud Services (OCS) account. All users are assigned the Account Member role by default. There are two predefined Roles for OCS accounts. Check the user or client role APIs for more information.
 - Account Administrator
 - Account Member
 
@@ -20,7 +20,7 @@ For HTTP requests and responses, the Role object has the following properties an
 | Description | string | Description of this Role. | 
 | RoleScope | RoleScope | Scope of this Role. | 
 | CommunityId | string | Unique identifier of Community for this Role, if this is a Community Role, null otherwise. | 
-| RoleTypeId | string | Unique identifier of Role Type for this Role, if this is a tenant role and is not a customer defined Role. | 
+| RoleTypeId | string | Unique identifier of Role Type for this Role, if this is an account role and is not a customer defined Role. | 
 
 
 ```json
@@ -35,9 +35,9 @@ For HTTP requests and responses, the Role object has the following properties an
 ```
 ***
 
-## `Create Tenant Role`
+## `Create Account Role`
 
-Creates a new tenant `Role`.
+Creates a new account `Role`.
 
 ### Http
 
@@ -52,7 +52,7 @@ Creates a new tenant `Role`.
 string tenantId
 ```
 
-The identifier of the tenant to access.
+The identifier of the account to access.
 ```csharp
 [Required]
 [FromBody]
@@ -64,7 +64,7 @@ The new `Role` to be created.
 
 ### Security
 
-Authorized for Account Administrators of the specified tenant.
+Authorized for Account Administrators of the specified account.
 
 ### Returns
 
@@ -73,16 +73,16 @@ Authorized for Account Administrators of the specified tenant.
 | 201 | Role | Returns the new `Role`. | 
 | 302 | Nothing is returned | Returns the location of the existing `Role` object. | 
 | 400 | Nothing is returned | Could not create a new `Role` due to missing or invalid input. | 
-| 403 | Nothing is returned | Unauthorized to create the new `Role` in the specified tenant. | 
+| 403 | Nothing is returned | Unauthorized to create the new `Role` in the specified account. | 
 | 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. | 
 | 409 | Nothing is returned | A `Role` already exists with different values. | 
 
 
 ***
 
-## `Delete Tenant Role`
+## `Delete Account Role`
 
-Deletes any tenant scoped, non built-in `Role` by its Role Id.
+Deletes any account scoped, non built-in `Role` by its Role Id.
 
 ### Http
 
@@ -151,7 +151,7 @@ The identifier of the `Role` to return.
 
 ### Security
 
-Authorized for Account Administrators of the specified tenant.
+Authorized for Account Administrators of the specified account.
 
 ### Returns
 
@@ -210,19 +210,19 @@ Unsupported parameter.
 
 ### Security
 
-Authorized for Account Members of the specified tenant.
+Authorized for Account Members of the specified account.
 
 ### Returns
 
 | Status Code | Return Type | Description | 
  | --- | --- | ---  | 
 | 200 | [Role] | Returns a list of `Roles`. | 
-| 400 | Nothing is returned | Could not retrieve tenant `Roles` due to missing or invalid input. | 
+| 400 | Nothing is returned | Could not retrieve account `Roles` due to missing or invalid input. | 
 
 
 ***
 
-## `Update Tenant Role`
+## `Update Account Role`
 
 Updates a `Role` by its Role Id.
 
@@ -239,7 +239,7 @@ Updates a `Role` by its Role Id.
 string tenantId
 ```
 
-The identifier of the tenant to access.
+The identifier of the account to access.
 ```csharp
 [Required]
 [FromRoute]

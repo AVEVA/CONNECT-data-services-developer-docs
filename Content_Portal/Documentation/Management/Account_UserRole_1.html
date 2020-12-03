@@ -120,7 +120,7 @@ but all users have the Account Member role. The following are currently availabl
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
 string tenantId
-</code></pre><p>The identifier of the tenant in which the user belongs.</p>
+</code></pre><p>The identifier of the account in which the user belongs.</p>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
 string userId
@@ -141,7 +141,7 @@ int32 count
 string query
 </code></pre><p>Unsupported parameter.</p>
 <h3 id="security">Security</h3>
-<p>Authorized for Account Administrators of the specified tenant and an Account Member&#39;s own <code>Roles</code> within the specified tenant.</p>
+<p>Authorized for Account Administrators of the specified account and an Account Member&#39;s own <code>Roles</code> within the specified account.</p>
 <h3 id="returns">Returns</h3>
 <table>
 <thead>
@@ -183,7 +183,7 @@ string query
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
 string tenantId
-</code></pre><p>The identifier for the tenant in which the user belongs.</p>
+</code></pre><p>The identifier for the account in which the user belongs.</p>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
 string userId
@@ -193,7 +193,7 @@ string userId
 [Role] roleList
 </code></pre><p>A list of <code>Role</code> objects to set as the Roles for the specified user.</p>
 <h3 id="security-1">Security</h3>
-<p>Authorized for Account Administrators of the specified tenant.</p>
+<p>Authorized for Account Administrators of the specified account.</p>
 <h3 id="returns-1">Returns</h3>
 <table>
 <thead>

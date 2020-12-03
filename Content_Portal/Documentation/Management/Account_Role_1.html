@@ -78,7 +78,7 @@
             <article class="content wrap" id="_content" data-uid="AccountRole_1">
 <h1 id="roles">Roles</h1>
 
-<p>A <code>Role</code> is used to manage access within an OSIsoft Cloud Services (OCS) tenant. All users are assigned the Account Member role by default. There are two predefined Roles for OCS tenants. Check the user or client role APIs for more information.</p>
+<p>A <code>Role</code> is used to manage access within an OSIsoft Cloud Services (OCS) account. All users are assigned the Account Member role by default. There are two predefined Roles for OCS accounts. Check the user or client role APIs for more information.</p>
 <ul>
 <li>Account Administrator</li>
 <li>Account Member</li>
@@ -122,7 +122,7 @@
 <tr>
 <td>RoleTypeId</td>
 <td>string</td>
-<td>Unique identifier of Role Type for this Role, if this is a tenant role and is not a customer defined Role.</td>
+<td>Unique identifier of Role Type for this Role, if this is an account role and is not a customer defined Role.</td>
 </tr>
 </tbody>
 </table>
@@ -135,21 +135,21 @@
     &quot;RoleTypeId&quot;: &quot;roletypeid&quot;
 }
 </code></pre><hr>
-<h2 id="create-tenant-role"><code>Create Tenant Role</code></h2>
-<p>Creates a new tenant <code>Role</code>.</p>
+<h2 id="create-account-role"><code>Create Account Role</code></h2>
+<p>Creates a new account <code>Role</code>.</p>
 <h3 id="http">Http</h3>
 <p><code>POST api/v1/Tenants/{tenantId}/Roles</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
 string tenantId
-</code></pre><p>The identifier of the tenant to access.</p>
+</code></pre><p>The identifier of the account to access.</p>
 <pre><code class="lang-csharp">[Required]
 [FromBody]
 Role role
 </code></pre><p>The new <code>Role</code> to be created.</p>
 <h3 id="security">Security</h3>
-<p>Authorized for Account Administrators of the specified tenant.</p>
+<p>Authorized for Account Administrators of the specified account.</p>
 <h3 id="returns">Returns</h3>
 <table>
 <thead>
@@ -178,7 +178,7 @@ Role role
 <tr>
 <td>403</td>
 <td>Nothing is returned</td>
-<td>Unauthorized to create the new <code>Role</code> in the specified tenant.</td>
+<td>Unauthorized to create the new <code>Role</code> in the specified account.</td>
 </tr>
 <tr>
 <td>405</td>
@@ -193,8 +193,8 @@ Role role
 </tbody>
 </table>
 <hr>
-<h2 id="delete-tenant-role"><code>Delete Tenant Role</code></h2>
-<p>Deletes any tenant scoped, non built-in <code>Role</code> by its Role Id.</p>
+<h2 id="delete-account-role"><code>Delete Account Role</code></h2>
+<p>Deletes any account scoped, non built-in <code>Role</code> by its Role Id.</p>
 <h3 id="http-1">Http</h3>
 <p><code>DELETE api/v1/Tenants/{tenantId}/Roles/{roleId}</code></p>
 <h3 id="parameters-1">Parameters</h3>
@@ -255,7 +255,7 @@ string tenantId
 string roleId
 </code></pre><p>The identifier of the <code>Role</code> to return.</p>
 <h3 id="security-2">Security</h3>
-<p>Authorized for Account Administrators of the specified tenant.</p>
+<p>Authorized for Account Administrators of the specified account.</p>
 <h3 id="returns-2">Returns</h3>
 <table>
 <thead>
@@ -309,7 +309,7 @@ int32 count
 string query
 </code></pre><p>Unsupported parameter.</p>
 <h3 id="security-3">Security</h3>
-<p>Authorized for Account Members of the specified tenant.</p>
+<p>Authorized for Account Members of the specified account.</p>
 <h3 id="returns-3">Returns</h3>
 <table>
 <thead>
@@ -328,12 +328,12 @@ string query
 <tr>
 <td>400</td>
 <td>Nothing is returned</td>
-<td>Could not retrieve tenant <code>Roles</code> due to missing or invalid input.</td>
+<td>Could not retrieve account <code>Roles</code> due to missing or invalid input.</td>
 </tr>
 </tbody>
 </table>
 <hr>
-<h2 id="update-tenant-role"><code>Update Tenant Role</code></h2>
+<h2 id="update-account-role"><code>Update Account Role</code></h2>
 <p>Updates a <code>Role</code> by its Role Id.</p>
 <h3 id="http-4">Http</h3>
 <p><code>PUT api/v1/Tenants/{tenantId}/Roles/{roleId}</code></p>
@@ -341,7 +341,7 @@ string query
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
 string tenantId
-</code></pre><p>The identifier of the tenant to access.</p>
+</code></pre><p>The identifier of the account to access.</p>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
 string roleId

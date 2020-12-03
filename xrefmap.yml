@@ -8,8 +8,11 @@ references:
   name: Client Roles
   href: Content_Portal/Documentation/Management/Account_ClientRole_1.html
 - uid: AccountManagementConcepts
-  name: Tenant Management Concepts
+  name: Account Management Concepts
   href: Content_Portal/Concepts/Account_Management_Concepts.html
+- uid: AccountManagementOverview
+  name: Account Management
+  href: Content_Portal/Documentation/Management/Management_Overview.html
 - uid: AccountNamespace_1
   name: Namespaces
   href: Content_Portal/Documentation/Management/Account_Namespace_1.html
@@ -319,9 +322,6 @@ references:
 - uid: TenantManagementConcepts
   name: Tenant Management Concepts
   href: Content_Portal/Concepts/Tenant_Management_Concepts.html
-- uid: TenantManagementOverview
-  name: Tenant Management
-  href: Content_Portal/Documentation/Management/Management_Overview.html
 - uid: TokenManagement
   name: Token Management
   href: Content_Portal/Concepts/Token_Management.html

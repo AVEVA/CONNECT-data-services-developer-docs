@@ -26,4 +26,3 @@ To see what each code means in context, refer to the API documentation.
 |``500 Internal server error``  |   The server ran into an unexpected condition and failed to complete the request. |
 |``503 Service unavailable``    |   The server cannot handle the request (due to maintenance, being overloaded, or for other reasons). As it is often a temporary state, try again later.                 |
 
-<!-- 405 is not listed in API guidelines but used in Account Management and Identity APIs -->

@@ -26,22 +26,59 @@ The number and order of field mappings is identical to the number and order of t
 The field mapping id represents the json property name (or column name in table or csv format) in the output data view data. The field mapping label represents the data view field label with tokens resolved. If all field mapping labels in a data view are unique, the field mapping id is identical to the label; if not, the id is generated from the label by adding an index number postfix. 
 
 ### Field kind
-The `FieldKind` specifies whether the field maps to an index field, grouping field, data field, or field id field.
+The `FieldKind` specifies whether the field maps to an index field, grouping field, data field, or field id field. Not all `DataMapping` properties apply to each `FieldKind`.
 
 #### Index field
-`TargetId`, `TargetFieldKey`, `FieldSetIndex` and `FieldIndex` are not used for index fields. `TypeCode` is equivalent to the `IndexTypeCode` of the data view. 
+Fields of kind `IndexField` map to the data view's [index field](xref:DataViewsQuickStartDefine#include-the-index-field).
+
+| DataMapping Property | Details |
+|--|--|
+| TargetId | Not applicable |
+| TargetMeasurementKey *(coming soon)* | Not applicable |
+| TargetFieldKey | Not applicable |
+| TypeCode | Equivalent to the `IndexTypeCode` of the data view |
+| Uom *(coming soon)* | Not applicable |
+| FieldSetIndex | Not applicable |
+| FieldIndex | Not applicable |
 
 #### Grouping field
-`FieldSetIndex` and `TargetFieldKey` are not used. `FieldIndex` is the zero-based positioning of the field within the grouping field. `TargetId` represents the value of the item in the grouping field.
+Fields of kind `GroupingField` map to a [grouping field](xref:DataViewsGrouping) on the data view.
+
+| DataMapping Property | Details |
+|--|--|
+| TargetId | The group's value |
+| TargetMeasurementKey *(coming soon)* | Not applicable |
+| TargetFieldKey | Not applicable |
+| TypeCode | The group's data type |
+| Uom *(coming soon)* | The unit of measure id for the grouping field |
+| FieldSetIndex | Not applicable |
+| FieldIndex | The zero-based positioning of the field within the data view's grouping fields |
 
 #### Data field
-`FieldSetIndex` is the zero-based positioning of the data field set. `FieldIndex` is the zero-based positioning of the data field within the appropriate data field set. `TargetId` represents the data item id.
-  * Id, name and tags: `TargetFieldKey` is empty
-  * Metadata: `TargetFieldKey` shows the metadata key
-  * Properties: `TargetFieldKey` shows the property id or property name path
+Fields of kind `DataField` map to a [data field](xref:DataViewsFieldSets) on the data view.
+
+| DataMapping Property | Details |
+|--|--|
+| TargetId | The data item id |
+| TargetMeasurementKey *(coming soon)* | The name of the asset measurement. Only applicable to `PropertyId` fields and when the data field references an asset measurement. |
+| TargetFieldKey | The metadata name (`Metadata` fields), property id (`PropertyId` fields), or property name (`PropertyName` fields). Not applicable to `Id`, `Name`, or `Tags` fields. |
+| TypeCode | The data item's data type |
+| Uom *(coming soon)*| The unit of measure id for the data field |
+| FieldSetIndex | The zero-based positioning of the data field set |
+| FieldIndex | The zero-based positioning of the data field within the appropriate data field set |
 
 #### Field id field
-`TargetFieldKey` is not used. `TargetId` represents the data item id, `FieldSetIndex` is the zero-based positioning of the data field set, and `FieldIndex` is the zero-based positioning of the data field within the appropriate data field set.
+The field id field only applies to data views with [narrow shape](xref:DataViewShape#narrow-shape). The `FieldId` field maps to the field column.
+
+| DataMapping Property | Details |
+|--|--|
+| TargetId | The data item id |
+| TargetMeasurementKey *(coming soon)* | Not applicable |
+| TargetFieldKey | Not applicable |
+| TypeCode | String |
+| Uom *(coming soon)* | Not applicable |
+| FieldSetIndex | The zero-based positioning of the data field set |
+| FieldIndex | The zero-based positioning of the data field within the appropriate data field set |
 
 ### Type code
 The `TypeCode` is the primary data type of the field mapping. This value comes from the field mapping's first populated `DataMapping`. The field mapping `TypeCode` is informational; it is not enforced.

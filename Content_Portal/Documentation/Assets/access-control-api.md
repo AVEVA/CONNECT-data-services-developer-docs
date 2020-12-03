@@ -3,7 +3,7 @@ uid: AssetOrAssetTypeAccessControlAPI
 ---
 
 # Asset and AssetType Access Control API
-The access control API is used to secure assets by setting their ownership and permissions. For more information about OCS access control, see Role-based access control. 
+The access control API is used to secure assets by setting their ownership and permissions. For more information about OCS access control, see [Role-based access control][xref:accessControl].
 
 ***
 ## `Get Asset or AssetType Access Control List ` 
@@ -14,7 +14,6 @@ Get the default `AccessControlList` for the assets collection and asset type col
 Assets collections
 
 ```text 
-
 GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Assets 
 
 ```
@@ -22,7 +21,6 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Ass
 Asset types collections
 
 ```text 
-
 GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/AssetTypes 
 
 ```
@@ -135,7 +133,7 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/
 
 ```
 
-
+Asset type
 
 ```text 
 GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetTypeId}/AccessControl 
@@ -169,7 +167,7 @@ The response includes a status code and a body.
 | ------------------------- | --------- | ----------------------------------------------- |
 | 200 OK                    | `AccessControlList`  | The access control list of the requested asset or asset type.           |
 | 403 Forbidden             | error     | You are not authorized to view the access control list of the requested asset or asset type. |
-| 404 Not Found             | error     | The requested asset or asset type with the specified ID was not found. |
+| 404 Not Found             | error     | The requested asset or asset type with the specified `Id` was not found. |
 | 500 Internal Server Error             | error     | An error occurred while processing the request. See the response body for details.       |
 
 #### Example request body 
@@ -248,7 +246,7 @@ The response includes a status code and, in some instances, a body.
 | 204 No Content                    | (empty)  | Successfully updated the access control list of the specified asset or asset type.            |
 | 400 Bad Request             | error     | The request is not valid. See the response body for details.       |
 | 403 Forbidden             | error     | You are not authorized to update the access control list of the requested asset or asset type. |
-| 404 Not Found             | error     | The requested asset or asset type with the specified ID was not found. |
+| 404 Not Found             | error     | The requested asset or asset type with the specified `Id` was not found. |
 
 ***
 
@@ -261,36 +259,32 @@ Get the calling user or client's access rights to the requested asset or asset t
 Asset
 
 ```text 
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/AccessRights                                                                 
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/AccessRights
 
 ```
 
 
 
-AssetType
+Asset type
 
 ```text 
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetTypeId}/AccessRights                                                                 
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetTypeId}/AccessRights
 
 ```
 
 
 ### Parameters  
 
-`string tenantId` 
-
+`string tenantId`  
 The tenant identifier 
 
-`string namespaceId` 
-
+`string namespaceId`  
 The namespace identifier 
 
-`string assetId`
-
+`string assetId`  
 The asset identifier
 
-`string assetTypeId`
-
+`string assetTypeId`  
 The asset type identifier
 
 ### Response 
@@ -301,7 +295,7 @@ The response includes a status code and a body.
 | ------------- | --------- | ------------------------------------------------------------ |
 | 200 OK        | string[]  | A list of access rights to the requested asset or asset type. |
 | 403 Forbidden | error     | You are not authorized to make this request.                 |
-| 404 Not Found | error     | The requested asset or asset type with the specified ID was not found. |
+| 404 Not Found | error     | The requested asset or asset type with the specified `Id` was not found. |
 
 
 #### Example response body
@@ -341,17 +335,13 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetType
 
 ### Parameters  
 
-`string tenantId` 
-
+`string tenantId`  
 The tenant identifier 
 
-`string namespaceId` 
-
+`string namespaceId`  
 The namespace identifier 
 
-
-`string assetTypeId`
-
+`string assetTypeId`  
 The asset type identifier
 
 ### Response 
@@ -362,7 +352,7 @@ The response includes a status code and a body.
 | ------------------------- | --------- | ----------------------------------------------- |
 | 200 OK                    | `Trustee`  | The owner of the requested asset or asset type.             |
 | 403 Forbidden             | error     | You are not authorized to view the owner of the requested asset or asset type. |
-| 404 Not Found             | error     | The requested asset or asset type with the specified ID was not found. |
+| 404 Not Found             | error     | The requested asset or asset type with the specified `Id` was not found. |
 
 #### Example response body
 
@@ -402,20 +392,16 @@ PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asset
 
 ###  Parameters  
 
-`string tenantId` 
-
+`string tenantId`  
 The tenant identifier 
 
-`string namespaceId` 
-
+`string namespaceId`  
 The namespace identifier 
 
-`string assetId`
-
+`string assetId`  
 The asset identifier
 
-`string assetTypeId`
-
+`string assetTypeId`  
 The AssetType identifier
 
 #### Request body 
@@ -442,4 +428,4 @@ The response includes a status code and, in some instances, a body.
 | 204 No Content                    | (empty)  | Successfully updated the asset or asset type owner.            |
 | 400 Bad Request            | error     | The request is not valid. See the response body for details.      |
 | 403 Forbidden             | error     | You are not authorized to update the owner for the requested asset or asset type. |
-| 404 Not Found | error     | The requested asset or asset type with the specified ID was not found. |
+| 404 Not Found | error     | The requested asset or asset type with the specified `Id` was not found. |

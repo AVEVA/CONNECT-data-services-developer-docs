@@ -12,7 +12,7 @@ Various information is available about how each data view _resolves_. This infor
 A data view specifies `.Queries` to find data items, `.GroupingFields` (optionally) to group those data items into groups, and `.FieldSets` to include fields of data into the data view. *Resolving* the data view means the data views engine executes those queries and computes how the resulting data items will form a data view.
 
 ### What resolved information is available?
-- [Data items, ineligible data items, and the groups they form](xref:DataViewsDataItemsandGroups) - currently, SDS streams are the supported type of data item.
+- [Data items, ineligible data items, and the groups they form](xref:DataViewsDataItemsandGroups) - OCS resources retrieved by the data view query
 - [Available field sets](xref:DataViewsAvailableFieldSets) - fields which are present on the data items but not included in the data view
 - [Field mappings](xref:DataViewsFieldMappings) - details of the data behind each group of each field
 - [Statistics](xref:ResolvedDataView#statistics) about how the view resolved
@@ -27,7 +27,7 @@ Paged responses include a `Link` header, with a hyperlink to the first page of r
 Using these hyperlinks is the recommended method of paging. Alternatively, constructing paging links by manually incrementing the `skip` is allowable, though in this case it is recommended to specify cache behavior of "preserve".
 
 ### How is a data view resolved?
-Data views resolve on a per user basis. Data views respect the permissions on underlying objects such as SDS Streams. If a user does not have read access to a particular stream in SDS, then that stream is not visible from data views.
+Data views resolve on a per user basis. Data views respect the permissions on underlying data items such as SDS Streams. If a user does not have read access to a particular stream in SDS, then that stream is not visible from data views.
 
 As a consequence, different users may see different collections of data items resolve for a data view. This is by design.
 
@@ -78,16 +78,30 @@ Holds an item that was resolved at a specific time.
 | Refresh | 2 | Re-resolve the resource values |
 
 ### DataItem
+An OCS resource retrieved by the data view query.
+
 |Property | Type | Details |
 |--|--|--|
 | Id | string | Unique identifier 
 | Name | string | Friendly name
 | Description | string | Extended text description
 | TypeId | string | The unique identifier of the data item's type
-| ResourceType | DataItemResourceType | The resource type. See below. Currently, the supported resource type is `.Stream`
+| ResourceType | DataItemResourceType | The data item resource type.
 | Tags | IReadOnlyList<string> | Tag strings assigned to the data item
-| Metadata | IReadOnlyDictionary<string, string> | Metadata key-value pairs assigned to the data item
+| Metadata | IReadOnlyList<MetadataValue> | Metadata values assigned to the data item
 | DataItemFields | IReadOnlyList<DataItemField> | Data fields
+| IneligibleDataItemFields | IReadOnlyList<DataItemField> | Data fields assigned to the data item that are not supported by data views
+
+### MetadataValue
+Individual metadata value from the metadata list of a `DataItem`.
+
+|Property | Type | Details |
+|--|--|--|
+| Name | string | Unique identifier 
+| Value | object | Static value assigned to the metadata value
+| Description | string | Extended text description
+| TypeCode | SdsTypeCode| The name of the metadata value's data type
+| Uom | string | The metadata value's unit of measurement identifier
 
 ### DataItemResourceType enumeration
 Describes the resource type of a data item.
@@ -95,16 +109,19 @@ Describes the resource type of a data item.
 |Name| Enumeration Id | Description  |
 |--|--|--|
 | Stream | 1 | A stream from the Sequential Data Store |
+| Asset *(Coming Soon)* | 2 | An asset |
 
 ### DataItemField
 A field of a data item where values come from.  
-Within a data item of resource kind `.Stream`, this corresponds to a stream property.
+Within a data item of resource kind `.Stream`, this corresponds to a stream property. For a data item of resource kind `.Asset`, this corresponds to the a stream property associated with an asset measurement.
 
 |Property | Type | Details |
 |--|--|--|
 | Id | string | The data item field's unique identifier 
 | Name | string | The data item field's friendly name
+| MeasurementName *(Coming Soon)* | string | The asset measurement name. Only applies to asset measurement data item fields.
 | TypeCode | SdsTypeCode| The name of the field's data type
+| Uom *(coming soon)* | bool | The unit of measure id for the data item field
 | IsKey | bool | True if the field is the primary index of the data item. False otherwise.
 
 ### Group
@@ -112,8 +129,17 @@ A group of the data view. The overall collection of data items is divided into g
 
 |Property | Type | Details |
 |--|--|--|
-| GroupingValues | IReadOnlyList<string> | This groups's value of each `.GroupingFields` defined on the `DataView`
+| GroupingValues | IReadOnlyList<GroupingValue> | This groups's value of each `.GroupingFields` defined on the `DataView`
 | DataItems | IReadOnlyDictionary<string, IReadOnlyList<DataItem>> | The data items in this group
+
+### GroupingValue
+The individual group value from the list of `Groups`.
+
+|Property | Type | Details |
+|--|--|--|
+| Value | object | This groups's value of each `.GroupingFields` defined on the `DataView`
+| TypeCode | SdsTypeCode | The name of the group's type code
+| Uom | string | The group's unit of measurement identifier
 
 ### FieldMapping
 Details on the provenance on every field of data:
@@ -124,6 +150,7 @@ Details on the provenance on every field of data:
 | Label | string | Friendly name
 | FieldKind | FieldKind enumeration | Specifies if the mapping is for an index, grouping, data, or field id field
 | TypeCode | SdsTypeCode | The primary data type of the mapping
+| Uom *(coming soon)* | string | The unit of measure id. Null unless all data mappings' unit of measures within the field mapping are identical.
 | DataMappings | IReadOnlyList<DataMapping> | Per-group details of what this field resolved to
 
 ### FieldKind enumeration
@@ -143,7 +170,9 @@ Per-group details of the data that a `FieldMapping` targets:
 |--|--|--|
 | TargetId | string | The unique identifier of the target data item
 | TargetFieldKey | string | The specific targeted part of the data item, if any.
+| TargetMeasurementKey *(coming soon)* | string | The asset measurement name. Only applies to asset measurement data mappings.
 | TypeCode | SdsTypeCode | The value type
+| Uom *(coming soon)* | string | The unit of measure id
 | FieldSetIndex | Nullable<int> | The position of the corresponding field set within the data view
 | FieldIndex | Nullable<int> | The position of the corresponding field within its field set
 

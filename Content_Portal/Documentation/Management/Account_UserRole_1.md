@@ -14,10 +14,10 @@ but all users have the Account Member role. The following are currently availabl
 
 For HTTP requests and responses, the UserRole object has the following properties and JSON-serialized body: 
 
-| Property | Type | Description | 
+| Property Name | Data Type | Description | 
  | --- | --- | ---  | 
-| UserId | string | User Id. | 
-| RoleId | string | Role Id. | 
+| UserId | string | String value that identifies the user. | 
+| RoleId | string | String value that identifies the role. | 
 
 
 ```json

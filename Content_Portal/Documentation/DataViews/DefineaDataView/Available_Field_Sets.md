@@ -18,6 +18,7 @@ The example uses the following data view and the streams from the [Stream exampl
   "Queries": [
     { 
       "Id": "weather",
+      "Kind": "Stream",
       "Value":"*weather*" 
     }
   ],

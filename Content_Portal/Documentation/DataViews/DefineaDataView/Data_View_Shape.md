@@ -14,7 +14,7 @@ Set the [`DataViewShape`](xref:DataViewsQuickStartDefine#data-view-properties) p
 
 ## Standard shape
 
-The standard table column structure is built horizontally from left to right. The index field is first, followed by the grouping fields, if any exist.  Data field sets come next, in the order they are presented in the data view. Fields are presented in order of appearance within each data field set for each stream from the associated query.
+The standard table column structure is built horizontally from left to right. The index field is first, followed by the grouping fields, if any exist.  Data field sets come next, in the order they are presented in the data view. Fields are presented in order of appearance within each data field set for each data item from the associated query.
 
 Vertically, the standard structure depends on the inclusion of grouping fields. If grouping fields are not defined, each resultant index appears only once, and all interpolated data is in that row. If grouping fields are defined, then the resultant indexes will repeat vertically for each group. The groups are presented in alphabetical order.
 
@@ -62,13 +62,13 @@ The narrow table pivots the standard table. Each data field becomes a row compri
 * Index column 
 * Grouping value column(s)
 * Field column, which holds the resolved column label of the field
-* Value column, which holds the property value or stream related data such as name, id, tags or metadata
+* Value column, which holds the field value such as the property or metadata value
 
 The column label of the index and grouping value columns may vary depending on the resolved label. The Field and Value column labels are not modifiable.
 
 The data view is built vertically by grouping field, if present, then by field. 
 
-Data views resolving into multiple streams that are defined with the same SDS type, should use a grouping field or an identifier in order to differentiate the data rows. 
+Data views resolving into multiple data items with the same property ids or names, should use a grouping field or an identifier in order to differentiate the data rows. 
 
 ##### Example: Get data response body for narrow shape with grouping field (Site)
 

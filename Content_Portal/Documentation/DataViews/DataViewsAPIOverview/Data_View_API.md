@@ -49,6 +49,7 @@ Content-Type: application/json
   "Queries": [
     { 
       "Id": "weather",
+      "Kind": "Stream",
       "Value":"*weather*" 
     }
   ],
@@ -184,7 +185,7 @@ Content-Type: application/json
 ```
 
 ## `Get or Create Data View`
-This call creates the specified data view. If a data view with the same id already exists, the existing data view is compared with the specified data view. If they are identical, a redirect (`302 Found`) is returned with the `Location` response header indicating the URL where the stream may be retrieved using a Get function. If the data views do not match, the request fails with `409 Conflict`.
+This call creates the specified data view. If a data view with the same id already exists, the existing data view is compared with the specified data view. If they are identical, a redirect (`302 Found`) is returned with the `Location` response header indicating the URL where the data view may be retrieved using a Get function. If the data views do not match, the request fails with `409 Conflict`.
 
 ### Request
 ```text

@@ -4,13 +4,13 @@ uid: DataViewsOverview
 
 # Data Views
 
-Data views are subsets of data from one or more streams, which can serve as a bridge between raw stream data and data-driven applications. A data view is a declarative query and shape for stream data. Within a target namespace, you specify the selected data by specific time period and interpolation interval.
+Data views are subsets of data from one or more OCS sources, such as streams, which can serve as a bridge between raw OCS data and data-driven applications. A data view is a declarative query and shape for raw OCS data. Within a target namespace, you specify the selected data by specific time period and interpolation interval.
 
 The ability to create data views in OCS will mesh directly with OSIsoft's Data Science Enablement efforts, whereby users will be able to programmatically access data view content via an API for the purposes of advanced analytics. The ultimate goal is to deliver shaped data that is ready for consumption because it is normalized, aligned, and interpolated.
 
 Understanding how the data view resolves into content is important both for the designer and the consumer. Data views provide extensive visibility into what data is included. The concept of "resolving" a data view is when the data view's queries and logic are executed to determine the data view's exact schema and content.
 
-The collection(s) of streams that a data view acts on is the result of one or more queries. Streams (and any future data source types) are collectively known as *data items*. Values from the data items' properties can be included in the data view as *fields*, as can information about the data items (such as Id and Metadata). 
+The collection(s) of OCS resources (such as streams) that a data view acts on is the result of one or more queries. Streams and other OCS resources are collectively known as *data items*. Values from the data items' properties can be included in the data view as *fields*, as well as information about the data items (such as Id and Metadata).
 
 There are two primary means of controlling how the data items will be organized. One or more fields may be designated to *group* the data view, effectively grouping or partitioning the data items on some value. Within a set of fields, one field may be designated to *identify* or align the items.
 
@@ -31,3 +31,6 @@ Each data view can be individually [access-controlled](xref:DataViewsSecuringDat
 [Data view data](xref:DataViewsQuickStartGetData) is available via queries to the RESTful data views [data API resource](xref:DataViewsDataAPI). 
 
 To understand the source of each data field, inspect how the data view [resolved](xref:ResolvedDataView).
+
+## Coming Soon
+Some features in this documentation are marked as *Coming Soon*. These features are not yet generally available. If you are interested in trialing these pre-release features, contact your account team for more details.

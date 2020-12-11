@@ -106,7 +106,7 @@ The namespace identifier
 An optional parameter representing the zero-based offset of the first asset to retrieve. If not specified, a default value of 0 is used.
 
 [optional] `int count`   
-An optional parameter representing the maximum number of assets to retrieve. If not specified, a default value of 100 is used. This value must be between (including) 1 to 100.
+An optional parameter, between 1 and 1000 (inclusive), that represents the maximum number of retrieved assets. If not specified, the default is 100.
 
 ### Response 
 The response includes a status code and a body. 
@@ -303,7 +303,7 @@ The response includes a status code and a body.
 
 ## `Delete Asset (bulk)`
 
-Delete all assets matching specified `Id`s. This API is used for deleting multiple assets in a given API call. Note that a maximum of 1000 assets can be deleted in a single call.
+Delete all assets with the specified Ids. Use this API to delete up to a maximum of 1000 assets in one API call.
 
 ### Request 
 
@@ -330,6 +330,6 @@ The response includes a status code and a body.
 | Status Code               | Body Type | Description                                     |
 | ------------------------- | --------- | ----------------------------------------------- |
 | 204 No Content            | none  | The assets with the specified `Id`s are deleted.                              |
-| 207 Multi-Status | partial success | Array of errors. Assets that didn't encounter errors would be deleted. |
+| 207 Multi-Status | partial success | Array of errors. Assets that did not encounter errors are deleted. |
 | 209 Conflict | error | See response body for additional details. |
 | 400 Bad Request | error | The request is not valid. See the response body for additional details. |

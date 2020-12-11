@@ -47,10 +47,10 @@ The asset query string. Search strings are not case-sensitive.
 An optional parameter representing the zero-based offset of the first asset to retrieve. If not specified, a default value of 0 is used.
 
 [optional] `int count`   
-An optional parameter representing the maximum number of assets to retrieve. If not specified, a default value of 100 is used. This value must be between (including) 1 to 1000.
+An optional parameter, between 1 and 1000 (inclusive), that represents the maximum number of assets to retrieve. If not specified, the default is 100.
 
 [optional] `[id|name] [asc|desc|] orderby`  
-An optional parameter which returns assets ordered either by the asset `Id` or the asset `name`. In addition to the property, you can optionally specify either `asc` or `desc` to return the results in ascending or descending order. If not specified, the default is ascending order.
+An optional parameter which returns assets ordered either by the asset `Id` or the asset `name`. Specify asc or desc to return the results in ascending or descending order. If not specified, the default is ascending order.
 
 ### Response 
 Returns an array of assets matching the search query and the total number of assets returned specified as Total-Count in the HTTP response header. 
@@ -64,7 +64,7 @@ Returns an array of assets matching the search query and the total number of ass
 
 
 ## `Search Matched Fields Asset` 
-This API will search all assets and return to you a list of asset ids with their matched fields indicated in the return. This API can be used for identifying exactly which field in the asset matched your query string.
+Searches all assets and returns a list of asset ids and their matched fields. Use this API to identify the fields in the asset that matches your query string.
 
 ### Request 
 ```text 
@@ -85,13 +85,13 @@ The asset query string. Search strings are not case-sensitive.
 An optional parameter representing the zero-based offset of the first asset to retrieve. If not specified, a default value of 0 is used.
 
 [optional] `int count`   
-An optional parameter representing the maximum number of assets to retrieve. If not specified, a default value of 100 is used. This value must be between (including) 1 to 1000.
+An optional parameter, between 1 and 1000 (inclusive), representing the maximum number of retrieved assets. If not specified, the default is 100.
 
 [optional] `[id|name] [asc|desc|] orderby`  
-An optional parameter which returns assets ordered either by the asset `Id` or the asset `name`. In addition to the property, you can optionally specify either `asc` or `desc` to return the results in ascending or descending order. If not specified, the default is ascending order.
-
+An optional parameter which returns assets ordered either by the asset `Id` or the asset `name`. Specify asc or desc to return the results in ascending or descending order. If not specified, the default is ascending order.
+`
 ### Response 
-A list of asset ids with their matched fields indicated.
+A list of asset Ids and their matched fields.
 
 | Status Code | Body Type | Description |
 |--|--|--|
@@ -107,11 +107,11 @@ Below is a response when query string is "Name:*Tracer*".
 
 Also returned is a list of `Results`. Each result contains  
 - The `MatchProperties` list contains a list of match property objects. Each match property object contains which field matched as well as the value of that field.
-- `Score` which indicates the relevancy of the match. The higher the score, the more relevant this asset is to your query.
-- `Id` the id of the matching asset.
-- `TypeId` the asset type id of the asset. This may be null if the asset does not reference an asset type.
-- `Name` the asset name.
-- `Description` the asset description.
+- `Score` - Number that indicates the relevancy of the match.
+- `Id` - The id of the matching asset.
+- `TypeId` - The asset type id of the asset. This will be null if the asset does not reference an asset type.
+- `Name` - The asset name.
+- `Description` - The asset description.
 
 ```json 
 HTTP 200 OK 

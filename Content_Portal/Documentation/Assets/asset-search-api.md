@@ -64,7 +64,7 @@ Returns an array of assets matching the search query and the total number of ass
 
 
 ## `Search Matched Fields Asset` 
-Searches all assets and returns a list of asset ids and their matched fields. Use this API to identify the fields in the asset that matches your query string.
+Searches all assets and returns a list of asset ids and their matched fields. Use this API to identify the fields in the asset that match your query string.
 
 ### Request 
 ```text 

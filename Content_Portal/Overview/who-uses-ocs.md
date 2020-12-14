@@ -40,11 +40,11 @@ Data scientists need to experiment with and update their models. The REST API gi
 
 #### Data is contextualized
 
-Data scientists need to experiment with and update their models. The REST API gives data scientists freedom to work with many different contemporary data modeling tools and applications. The REST API also provides flexibility as data science technology evolves. 
+Data science models are only as good as the data used in those models. Identifying the data that is relevant is as important as the model used. OCS uses metadata rules to provide the context that makes it easy to search for data. OCS metadata rules parse and store data that match specific patterns. Additionally, OCS parses for user-provided context to identify patterns. When it finds a pattern, it attaches metadata.
 
 #### APIs integrate operational data with applications
 
-OCS supports easy integration with custom applications, extending the enterprise data infrastructure to in-house and partner applications. OCS offers ease of integration with a modern, secure REST API that is compatible with R and PYTHON applications. The REST API allows the application developer to interact with operational data on OCS. 
+OCS supports easy integration with custom applications, extending the enterprise data infrastructure to in-house and partner applications. OCS offers ease of integration with a modern, secure REST API that is compatible with R and Python applications. The REST API allows the application developer to interact with operational data on OCS. 
 
 ## Operations departments use OCS to monitor remote locations  
 
@@ -60,7 +60,6 @@ Seamless integration of data infrastructure offers the following benefits:
 - Data is compatible and native to the infrastructure across the spectrum. 
 - Operational data can be accessed and used anywhere; it is no longer isolated in one facility or system. 
 - New sources of operational data are available by storing the data in the cloud. 
-
 - Existing edge and PI Server data is integrated into OCS. 
 
  

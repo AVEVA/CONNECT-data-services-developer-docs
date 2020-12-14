@@ -426,95 +426,356 @@ Defined Indexes and PropertyOverrides are removed when updating a stream type. <
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <h3 id="response-7">Response</h3>
 <p>The response includes a status code and a response body.</p>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Response Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OK</td>
+<td><code>AccessControlList</code></td>
+<td>See <a class="xref" href="../Access_Control.html">Access Control</a></td>
+</tr>
+<tr>
+<td>403 Forbidden</td>
+<td>error</td>
+<td>You are not authorized for this operation</td>
+</tr>
+<tr>
+<td>404 Not Found</td>
+<td>error</td>
+<td>The data view or query does not exist</td>
+</tr>
+<tr>
+<td>500 Internal Server Error</td>
+<td>error</td>
+<td>An error occurred while processing the request.</td>
+</tr>
+</tbody>
+</table>
 <h4 id="response-body-5">Response body</h4>
 <p>The default ACL for Streams</p>
+<h4 id="response-headers">Response headers</h4>
+<p>Successful (200 OK) responses include an additional response header.</p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ETag</td>
+<td>An entity tag, which can be used to prevent modification of the ACL, during a later call to modify the ACL, if the object has already been modified.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="net-client-libraries-method-7">.NET client libraries method</h3>
 <pre><code class="lang-csharp">   Task&lt;AccessControlList&gt; GetStreamsAccessControlListAsync();
+   Task&lt;SdsETagResult&lt;AccessControlList&gt;&gt; GetStreamsAccessControlListWithETagAsync();
 </code></pre><hr>
-<h2 id="update-streams-access-control-list"><code>Update Streams Access Control List</code></h2>
-<p>Update the default ACL for the Streams collection. For more information on ACL, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
+<h2 id="patch-streams-access-control-list"><code>Patch Streams Access Control List</code></h2>
+<p>Update the default ACL for the Streams collection using an <a href="https://tools.ietf.org/html/rfc6902">RFC 6902</a> compliant JSON Patch document. This allows the ACL to be modified without submitting the entire Access Control List. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <h3 id="request-8">Request</h3>
-<pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Streams
+<pre><code class="lang-text">   PATCH api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Streams
 </code></pre><h3 id="parameters-8">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <h4 id="request-body-3">Request body</h4>
-<p>Serialized ACL</p>
+<p>An <a href="https://tools.ietf.org/html/rfc6902">RFC 6902</a> JSON Patch document that will be applied to the ACL.</p>
+<p>The example below inserts a new <strong>Access Control Entry</strong> into the <strong>Access Control List</strong> giving <strong>Read</strong> and <strong>Write</strong> access to the role with the Id <code>11111111-1111-1111-1111-111111111111</code>. The remainder of the existing ACL remains unmodified.</p>
+<pre><code class="lang-json">[
+    {
+        &quot;op&quot;: &quot;add&quot;,
+        &quot;path&quot;: &quot;/RoleTrusteeAccessControlEntries&quot;,
+        &quot;value&quot;: {
+            &quot;Trustee&quot;: {
+                &quot;Type&quot;: 3,
+                &quot;ObjectId&quot;: &quot;11111111-1111-1111-1111-111111111111&quot;
+            },
+            &quot;AccessType&quot;: 0,
+            &quot;AccessRights&quot;: 3
+        }
+    }
+]
+</code></pre><h4 id="request-headers">Request headers</h4>
+<p>The <strong>If-Match</strong> header can be used to prevent modification of an ACL since it was last read using the <code>ETag</code> header from the response.</p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>If-Match</td>
+<td>The entity tag header from a previous read of the ACL. If provided, the ACL will not be patched unless the current <code>ETag</code> of the ACL, on the server, matches the value passed into the <code>If-Match</code> header.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="response-8">Response</h3>
 <p>The response includes a status code.</p>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Response Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>204 No Content</td>
+<td></td>
+<td>The ACL was successfully patched.</td>
+</tr>
+<tr>
+<td>403 Forbidden</td>
+<td>error</td>
+<td>You are not authorized for this operation</td>
+</tr>
+<tr>
+<td>404 Not Found</td>
+<td>error</td>
+<td>The data view or query does not exist</td>
+</tr>
+<tr>
+<td>412 Precondition Failed</td>
+<td>error</td>
+<td>The <code>If-Match</code> header did not match <code>ETag</code> on the ACL, or a <code>test</code> operation in the JSON Patch document failed to evaluate to <code>true</code>.</td>
+</tr>
+<tr>
+<td>500 Internal Server Error</td>
+<td>error</td>
+<td>An error occurred while processing the request.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="net-client-libraries-method-8">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task PatchStreamsAccessControlListAsync(JsonPatchDocument&lt;AccessControlList&gt; streamsAclPatch);
+   Task PatchStreamsAccessControlListWithETagAsync(string etag, JsonPatchDocument&lt;AccessControlList&gt; streamsAclPatch);
+</code></pre><hr>
+<h2 id="update-streams-access-control-list"><code>Update Streams Access Control List</code></h2>
+<p>Update the default ACL for the Streams collection. For more information on ACL, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
+<h3 id="request-9">Request</h3>
+<pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Streams
+</code></pre><h3 id="parameters-9">Parameters</h3>
+<p><code>string tenantId</code><br>The tenant identifier  </p>
+<p><code>string namespaceId</code><br>The namespace identifier  </p>
+<h4 id="request-body-4">Request body</h4>
+<p>Serialized ACL</p>
+<h3 id="response-9">Response</h3>
+<p>The response includes a status code.</p>
+<h3 id="net-client-libraries-method-9">.NET client libraries method</h3>
 <pre><code class="lang-csharp">   Task UpdateStreamsAccessControlListAsync(AccessControlList streamsAcl);
 </code></pre><hr>
 <h2 id="get-stream-access-control-list"><code>Get Stream Access Control List</code></h2>
 <p>Get the ACL of the specified stream. For more information on ACL, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
-<h3 id="request-9">Request</h3>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/AccessControl
-</code></pre><h3 id="parameters-9">Parameters</h3>
-<p><code>string tenantId</code><br>The tenant identifier  </p>
-<p><code>string namespaceId</code><br>The namespace identifier  </p>
-<p><code>string streamId</code><br>The stream identifier  </p>
-<h3 id="response-9">Response</h3>
-<p>The response includes a status code and a response body.</p>
-<h4 id="response-body-6">Response body</h4>
-<p>The ACL for the specified stream </p>
-<h3 id="net-client-libraries-method-9">.NET client libraries method</h3>
-<pre><code class="lang-csharp">   Task&lt;AccessControlList&gt; GetStreamAccessControlListAsync(string streamId);
-</code></pre><hr>
-<h2 id="update-stream-access-control-list"><code>Update Stream Access Control List</code></h2>
-<p>Update the ACL of the specified stream. For more information on ACL, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <h3 id="request-10">Request</h3>
-<pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/AccessControl
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/AccessControl
 </code></pre><h3 id="parameters-10">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string streamId</code><br>The stream identifier  </p>
-<h4 id="request-body-4">Request body</h4>
-<p>Serialized ACL</p>
 <h3 id="response-10">Response</h3>
-<p>The response includes a status code.</p>
+<p>The response includes a status code and a response body.</p>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Response Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OK</td>
+<td><code>AccessControlList</code></td>
+<td>See <a class="xref" href="../Access_Control.html">Access Control</a></td>
+</tr>
+<tr>
+<td>403 Forbidden</td>
+<td>error</td>
+<td>You are not authorized for this operation</td>
+</tr>
+<tr>
+<td>404 Not Found</td>
+<td>error</td>
+<td>The data view or query does not exist</td>
+</tr>
+<tr>
+<td>500 Internal Server Error</td>
+<td>error</td>
+<td>An error occurred while processing the request.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="response-body-6">Response body</h4>
+<p>The ACL for the specified stream.</p>
+<h4 id="response-headers-1">Response headers</h4>
+<p>Successful (200 OK) responses include an additional response header.</p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ETag</td>
+<td>An entity tag, which can be used to prevent modification of the ACL, during a later call to modify the ACL, if the object has already been modified.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="net-client-libraries-method-10">.NET client libraries method</h3>
-<pre><code class="lang-csharp">   Task UpdateStreamAccessControlListAsync(string streamId, AccessControlList streamAcl);
+<pre><code class="lang-csharp">   Task&lt;AccessControlList&gt; GetStreamAccessControlListAsync(string streamId);
+   Task&lt;SdsETagResult&lt;AccessControlList&gt;&gt; GetStreamAccessControlListWithETagAsync(string streamId);   
 </code></pre><hr>
-<h2 id="get-stream-owner"><code>Get Stream Owner</code></h2>
-<p>Get the <code>Owner</code> of the specified stream. For more information, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
+<h2 id="patch-stream-access-control-list"><code>Patch Stream Access Control List</code></h2>
+<p>Update the ACL of the specified stream using an <a href="https://tools.ietf.org/html/rfc6902">RFC 6902</a> compliant JSON Patch document. This allows the ACL to be modified without submitting the entire Access Control List. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <h3 id="request-11">Request</h3>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Owner
+<pre><code class="lang-text">   PATCH api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/AccessControl
 </code></pre><h3 id="parameters-11">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string streamId</code><br>The stream identifier  </p>
+<h4 id="request-body-5">Request body</h4>
+<p>An <a href="https://tools.ietf.org/html/rfc6902">RFC 6902</a> JSON Patch document that will be applied to the ACL.</p>
+<p>The example below inserts a new <strong>Access Control Entry</strong> into the <strong>Access Control List</strong> giving <strong>Read</strong> and <strong>Write</strong> access to the role with the Id <code>11111111-1111-1111-1111-111111111111</code>. The remainder of the existing ACL remains unmodified.</p>
+<pre><code class="lang-json">[
+    {
+        &quot;op&quot;: &quot;add&quot;,
+        &quot;path&quot;: &quot;/RoleTrusteeAccessControlEntries&quot;,
+        &quot;value&quot;: {
+            &quot;Trustee&quot;: {
+                &quot;Type&quot;: 3,
+                &quot;ObjectId&quot;: &quot;11111111-1111-1111-1111-111111111111&quot;
+            },
+            &quot;AccessType&quot;: 0,
+            &quot;AccessRights&quot;: 3
+        }
+    }
+]
+</code></pre><h4 id="request-headers-1">Request headers</h4>
+<p>The <strong>If-Match</strong> header can be used to prevent modification of an ACL since it was last read using the <code>ETag</code> header from the response.</p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>If-Match</td>
+<td>The entity tag header from a previous read of the ACL. If provided, the ACL will not be patched unless the current <code>ETag</code> of the ACL, on the server, matches the value passed into the <code>If-Match</code> header.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="response-11">Response</h3>
-<p>The response includes a status code and a response body.</p>
-<h4 id="response-body-7">Response body</h4>
-<p>The <code>Owner</code> for the specified stream </p>
+<p>The response includes a status code.</p>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Response Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>204 No Content</td>
+<td></td>
+<td>The ACL was successfully patched.</td>
+</tr>
+<tr>
+<td>403 Forbidden</td>
+<td>error</td>
+<td>You are not authorized for this operation</td>
+</tr>
+<tr>
+<td>404 Not Found</td>
+<td>error</td>
+<td>The data view or query does not exist</td>
+</tr>
+<tr>
+<td>412 Precondition Failed</td>
+<td>error</td>
+<td>The <code>If-Match</code> header did not match <code>ETag</code> on the ACL, or a <code>test</code> operation in the JSON Patch document failed to evaluate to <code>true</code>.</td>
+</tr>
+<tr>
+<td>500 Internal Server Error</td>
+<td>error</td>
+<td>An error occurred while processing the request.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="net-client-libraries-method-11">.NET client libraries method</h3>
-<pre><code class="lang-csharp">   Task&lt;Trustee&gt; GetStreamOwnerAsync(string streamId);
+<pre><code class="lang-csharp">   Task PatchStreamAccessControlListAsync(string streamId, JsonPatchDocument&lt;AccessControlList&gt; streamAclPatch);
+   Task PatchStreamAccessControlListWithETagAsync(string streamId, string etag, JsonPatchDocument&lt;AccessControlList&gt; streamAclPatch);
 </code></pre><hr>
-<h2 id="update-stream-owner"><code>Update Stream Owner</code></h2>
-<p>Update the <code>Owner</code> of the specified stream. For more information, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
+<h2 id="update-stream-access-control-list"><code>Update Stream Access Control List</code></h2>
+<p>Update the ACL of the specified stream. For more information on ACL, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <h3 id="request-12">Request</h3>
-<pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Owner
+<pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/AccessControl
 </code></pre><h3 id="parameters-12">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string streamId</code><br>The stream identifier  </p>
-<h4 id="request-body-5">Request body</h4>
-<p>Serialized Owner</p>
+<h4 id="request-body-6">Request body</h4>
+<p>Serialized ACL</p>
 <h3 id="response-12">Response</h3>
-<p>The response includes a status code</p>
+<p>The response includes a status code.</p>
 <h3 id="net-client-libraries-method-12">.NET client libraries method</h3>
-<pre><code class="lang-csharp">   Task UpdateStreamOwnerAsync(string streamId, Trustee streamOwner);
+<pre><code class="lang-csharp">   Task UpdateStreamAccessControlListAsync(string streamId, AccessControlList streamAcl);
 </code></pre><hr>
-<h2 id="get-stream-access-rights"><code>Get Stream Access Rights</code></h2>
-<p>Gets the access rights associated with the specified stream for the requesting identity. For 
-more information on access rights, see <a class="xref" href="../Access_Control.html#commonaccessrightsenum">Access Control</a>.</p>
+<h2 id="get-stream-owner"><code>Get Stream Owner</code></h2>
+<p>Get the <code>Owner</code> of the specified stream. For more information, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <h3 id="request-13">Request</h3>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/AccessRights
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Owner
 </code></pre><h3 id="parameters-13">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string streamId</code><br>The stream identifier  </p>
 <h3 id="response-13">Response</h3>
+<p>The response includes a status code and a response body.</p>
+<h4 id="response-body-7">Response body</h4>
+<p>The <code>Owner</code> for the specified stream </p>
+<h3 id="net-client-libraries-method-13">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task&lt;Trustee&gt; GetStreamOwnerAsync(string streamId);
+</code></pre><hr>
+<h2 id="update-stream-owner"><code>Update Stream Owner</code></h2>
+<p>Update the <code>Owner</code> of the specified stream. For more information, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
+<h3 id="request-14">Request</h3>
+<pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Owner
+</code></pre><h3 id="parameters-14">Parameters</h3>
+<p><code>string tenantId</code><br>The tenant identifier  </p>
+<p><code>string namespaceId</code><br>The namespace identifier  </p>
+<p><code>string streamId</code><br>The stream identifier  </p>
+<h4 id="request-body-7">Request body</h4>
+<p>Serialized Owner</p>
+<h3 id="response-14">Response</h3>
+<p>The response includes a status code</p>
+<h3 id="net-client-libraries-method-14">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task UpdateStreamOwnerAsync(string streamId, Trustee streamOwner);
+</code></pre><hr>
+<h2 id="get-stream-access-rights"><code>Get Stream Access Rights</code></h2>
+<p>Gets the access rights associated with the specified stream for the requesting identity. For 
+more information on access rights, see <a class="xref" href="../Access_Control.html#commonaccessrightsenum">Access Control</a>.</p>
+<h3 id="request-15">Request</h3>
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/AccessRights
+</code></pre><h3 id="parameters-15">Parameters</h3>
+<p><code>string tenantId</code><br>The tenant identifier  </p>
+<p><code>string namespaceId</code><br>The namespace identifier  </p>
+<p><code>string streamId</code><br>The stream identifier  </p>
+<h3 id="response-15">Response</h3>
 <p>The response includes a status code and a response body</p>
 <h4 id="response-body-8">Response body</h4>
 <p>The Access Rights associated with specified stream for the requesting identity.</p>
@@ -523,7 +784,7 @@ more information on access rights, see <a class="xref" href="../Access_Control.h
 Content-Type: application/json
 
 [&quot;Read&quot;, &quot;Write&quot;]
-</code></pre><h3 id="net-client-libraries-method-13">.NET client libraries method</h3>
+</code></pre><h3 id="net-client-libraries-method-15">.NET client libraries method</h3>
 <pre><code class="lang-csharp">   Task&lt;string[]&gt; GetStreamAccessRightsAsync(string streamId);
 </code></pre><hr>
 </article>

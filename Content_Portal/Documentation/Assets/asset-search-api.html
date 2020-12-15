@@ -99,6 +99,8 @@
 <li>Measurement Mapping Name</li>
 </ul>
 <p>Search criteria can be chained together using an <strong>AND</strong>. See examples below. </p>
+<h2 id="search-assets"><code>Search Assets</code></h2>
+<p>Searches and returns assets matching the search criteria.</p>
 <h3 id="request">Request</h3>
 <pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets?skip={skip}&amp;count={count}&amp;orderby={orderby}&amp;query={queryString} 
 </code></pre><h3 id="parameters">Parameters</h3>
@@ -106,10 +108,10 @@
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string queryString</code><br>The asset query string. Search strings are not case-sensitive.</p>
 <p>[optional] <code>int skip</code><br>An optional parameter representing the zero-based offset of the first asset to retrieve. If not specified, a default value of 0 is used.</p>
-<p>[optional] <code>int count</code><br>An optional parameter representing the maximum number of assets to retrieve. If not specified, a default value of 100 is used.</p>
-<p>[optional] <code>[id|name] [asc|desc|] orderby</code><br>An optional parameter which returns assets ordered either by the asset <code>Id</code> or the asset <code>name</code>. In addition to the property, you can optionally specify either <code>asc</code> or <code>desc</code> to return the results in ascending or descending order. If not specified, the default is ascending order.</p>
+<p>[optional] <code>int count</code><br>An optional parameter, between 1 and 1000 (inclusive), that represents the maximum number of assets to retrieve. If not specified, the default is 100.</p>
+<p>[optional] <code>[id|name] [asc|desc|] orderby</code><br>An optional parameter which returns assets ordered either by the asset <code>Id</code> or the asset <code>name</code>. Specify asc or desc to return the results in ascending or descending order. If not specified, the default is ascending order.</p>
 <h3 id="response">Response</h3>
-<p>The response includes a status code and an array of assets matching the search criteria.</p>
+<p>Returns an array of assets matching the search query and the total number of assets returned specified as Total-Count in the HTTP response header. </p>
 <table>
 <thead>
 <tr>
@@ -141,7 +143,97 @@
 </tr>
 </tbody>
 </table>
-<h3 id="example-asset-queries">Example Asset Queries</h3>
+<h2 id="search-matched-fields-asset"><code>Search Matched Fields Asset</code></h2>
+<p>Searches all assets and returns a list of asset Ids and their matched fields. Use this API to identify the fields in the asset that match your query string.</p>
+<h3 id="request-1">Request</h3>
+<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/search/Assets?skip={skip}&amp;count={count}&amp;orderby={orderby}&amp;query={queryString} 
+</code></pre><h3 id="parameters-1">Parameters</h3>
+<p><code>string tenantId</code><br>The tenant identifier</p>
+<p><code>string namespaceId</code><br>The namespace identifier</p>
+<p><code>string queryString</code><br>The asset query string. Search strings are not case-sensitive.</p>
+<p>[optional] <code>int skip</code><br>An optional parameter representing the zero-based offset of the first asset to retrieve. If not specified, a default value of 0 is used.</p>
+<p>[optional] <code>int count</code><br>An optional parameter, between 1 and 1000 (inclusive), representing the maximum number of retrieved assets. If not specified, the default is 100.</p>
+<p>[optional] <code>[id|name] [asc|desc|] orderby</code><br>An optional parameter which returns assets ordered either by the asset <code>Id</code> or the asset <code>name</code>. Specify asc or desc to return the results in ascending or descending order. If not specified, the default is ascending order.
+`</p>
+<h3 id="response-1">Response</h3>
+<p>A list of asset Ids and their matched fields.</p>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Body Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OK</td>
+<td>Asset list</td>
+<td>A list of assets matching the search criteria. An empty array is returned if there are no matching assets.</td>
+</tr>
+<tr>
+<td>204 OK</td>
+<td>empty</td>
+<td>No assets match your search criteria.</td>
+</tr>
+<tr>
+<td>400 Bad Request</td>
+<td>error</td>
+<td>The request is not valid. See the response body for additional details.</td>
+</tr>
+<tr>
+<td>403 Forbidden</td>
+<td>error</td>
+<td>You are not authorized to view the requested asset.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-response-body">Example response body</h4>
+<p>Below is a response when query string is &quot;Name:<em>Tracer</em>&quot;.</p>
+<p><code>Count</code> represents the number of matched assets in the given query.</p>
+<p>Also returned is a list of <code>Results</code>. Each result contains  </p>
+<ul>
+<li>The <code>MatchProperties</code> - a list of matched property objects. Each <code>MatchProperties</code> object contains the matched fields and their values.</li>
+<li><code>Score</code> - number that indicates the relevancy of the match.</li>
+<li><code>Id</code> - Id of the matched asset.</li>
+<li><code>TypeId</code> - asset type Id of the asset. This is null if the asset does not reference an asset type.</li>
+<li><code>Name</code> - asset name.</li>
+<li><code>Description</code> - asset description.</li>
+</ul>
+<pre><code class="lang-json">HTTP 200 OK 
+Content-Type: application/json
+{
+    &quot;Count&quot;: 2,
+    &quot;Results&quot;: [
+        {
+            &quot;MatchedProperties&quot;: [
+                {
+                    &quot;Field&quot;: &quot;Name&quot;,
+                    &quot;Value&quot;: &quot;Asset Tracer ced7ee16-984d-480f-8338-3055f7f39d8b&quot;
+                }
+            ],
+            &quot;Score&quot;: 1,
+            &quot;Id&quot;: &quot;AssetId2b5f41ae-0929-4977-bfbd-1e046d8a66f4&quot;,
+            &quot;TypeId&quot;: &quot;AssetTracerType&quot;,
+            &quot;Name&quot;: &quot;Asset Tracer ced7ee16-984d-480f-8338-3055f7f39d8b&quot;,
+            &quot;Description&quot;: &quot;First tracer device&quot;
+        },
+        {
+            &quot;MatchedProperties&quot;: [
+                {
+                    &quot;Field&quot;: &quot;Name&quot;,
+                    &quot;Value&quot;: &quot;Asset Tracer d6b984dd-b6da-4225-a2e0-59f781d065a4&quot;
+                }
+            ],
+            &quot;Score&quot;: 1,
+            &quot;Id&quot;: &quot;AssetId3dbfd185-7c62-49ed-b875-7953cba07fc3&quot;,
+            &quot;TypeId&quot;: &quot;AssetTracerType&quot;,
+            &quot;Name&quot;: &quot;Asset Tracer d6b984dd-b6da-4225-a2e0-59f781d065a4&quot;,
+            &quot;Description&quot;: &quot;Another tracer device&quot;
+        }
+    ]
+}
+</code></pre><h3 id="example-asset-query-strings">Example Asset Query Strings</h3>
 <table>
 <thead>
 <tr>
@@ -196,7 +288,7 @@
 </tr>
 <tr>
 <td>AssetTypeName:HeaterTypeName</td>
-<td>Returns all assets whose Name field of the AssetType matches <code>HeaterTypeName</code></td>
+<td>Returns all assets whose Name field of the asset type matches <code>HeaterTypeName</code></td>
 </tr>
 <tr>
 <td>Measurements/Name:WindMeasure</td>

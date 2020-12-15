@@ -165,7 +165,7 @@ Content-Type: application/json
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p>[optional] <code>int skip</code><br>An optional parameter representing the zero-based offset of the first asset to retrieve. If not specified, a default value of 0 is used.</p>
-<p>[optional] <code>int count</code><br>An optional parameter representing the maximum number of assets to retrieve. If not specified, a default value of 100 is used. </p>
+<p>[optional] <code>int count</code><br>An optional parameter, between 1 and 1000 (inclusive), that represents the maximum number of retrieved assets. If not specified, the default is 100.</p>
 <h3 id="response-1">Response</h3>
 <p>The response includes a status code and a body. </p>
 <table>
@@ -416,6 +416,48 @@ Content-Type: application/json
 <td>412 Pre-Condition Failed</td>
 <td>error</td>
 <td>The asset failed to update because the If-Match condition failed.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="delete-asset-bulk"><code>Delete Asset (bulk)</code></h2>
+<p>Delete all assets with the specified Ids. Use this API to delete up to a maximum of 1000 assets in one API call.</p>
+<h3 id="request-6">Request</h3>
+<pre><code class="lang-text">DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/assets/delete
+</code></pre><h3 id="parameters-6">Parameters</h3>
+<p><code>string tenantId</code><br>The tenant identifier</p>
+<p><code>string namespaceId</code><br>The namespace identifier</p>
+<h4 id="request-body-4">Request body</h4>
+<p>A list of asset <code>Id</code>s.</p>
+<h3 id="response-6">Response</h3>
+<p>The response includes a status code and a body.</p>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Body Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>204 No Content</td>
+<td>none</td>
+<td>The assets with the specified <code>Id</code>s are deleted.</td>
+</tr>
+<tr>
+<td>207 Multi-Status</td>
+<td>partial success</td>
+<td>Array of errors. Assets that did not encounter errors are deleted.</td>
+</tr>
+<tr>
+<td>209 Conflict</td>
+<td>error</td>
+<td>See response body for additional details.</td>
+</tr>
+<tr>
+<td>400 Bad Request</td>
+<td>error</td>
+<td>The request is not valid. See the response body for additional details.</td>
 </tr>
 </tbody>
 </table>

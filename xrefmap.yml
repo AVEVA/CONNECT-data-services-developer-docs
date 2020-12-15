@@ -331,3 +331,9 @@ references:
 - uid: unitsOfMeasure
   name: Units of Measure
   href: Content_Portal/Documentation/SequentialDataStore/Units_of_Measure.html
+- uid: WhatIsOCS
+  name: What is OSIsoft Cloud Services?
+  href: Content_Portal/Overview/what-is-ocs.html
+- uid: WhoUsesOCS
+  name: Who uses OSIsoft Cloud Services?
+  href: Content_Portal/Overview/who-uses-ocs.html

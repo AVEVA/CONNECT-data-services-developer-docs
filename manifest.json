@@ -1542,6 +1542,74 @@
       "version": ""
     },
     {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Overview/images/asset-manager.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Overview/images/asset-manager.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Overview/images/data-collection.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Overview/images/data-collection.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Overview/images/measurements.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Overview/images/measurements.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Overview/images/trend.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Overview/images/trend.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Overview/what-is-ocs.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Overview/what-is-ocs.html",
+          "hash": "dD7Pd1lPeLZq0VVQ7FF/PA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Overview/who-uses-ocs.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Overview/who-uses-ocs.html",
+          "hash": "y8As8BWDQzcj2VZ/7fKp5Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "Content_Portal/Quickstarts/Getting-Started-Trend.md",
       "output": {
@@ -1892,7 +1960,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/toc.html",
-          "hash": "d6T69wMNvAHavhLQmWd/IA=="
+          "hash": "cda50vx6URrtfKfutEhTKQ=="
         }
       },
       "is_incremental": false,
@@ -1904,7 +1972,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "BzqgLTJ2SdzTE6bGURapUQ=="
+          "hash": "j3IKqtXmTNoRoavVzP6blw=="
         }
       },
       "is_incremental": false,
@@ -1937,7 +2005,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 114,
+          "total_file_count": 116,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

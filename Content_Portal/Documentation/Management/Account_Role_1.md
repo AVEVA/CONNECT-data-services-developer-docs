@@ -20,7 +20,7 @@ For HTTP requests and responses, the Role object has the following properties an
 | Description | string | Description of this Role. | 
 | RoleScope | RoleScope | Scope of this Role. | 
 | CommunityId | string | Unique identifier of Community for this Role, if this is a Community Role, null otherwise. | 
-| RoleTypeId | string | Unique identifier of Role Type for this Role, if this is a Account Role and is not a customer defined Role. | 
+| RoleTypeId | string | Unique identifier of Role Type for this Role, if this is an account role and is not a customer defined Role. | 
 
 
 ```json
@@ -82,7 +82,7 @@ Authorized for Account Administrators of the specified account.
 
 ## `Delete Account Role`
 
-Deletes any Account scoped, non built-in `Role` by its Role Id.
+Deletes any account scoped, non built-in `Role` by its Role Id.
 
 ### Http
 
@@ -139,7 +139,7 @@ Retrieves an account `Role` based on the specified account Id and role Id.
 string tenantId
 ```
 
-The identifier of the account to access.
+The identifier of the tenant to access.
 ```csharp
 [Required]
 [FromRoute]

@@ -6,7 +6,7 @@ uid: DataViewsGrouping
 
 The data items of a data view may be organized by _grouping_ them. It is one way of producing a meaningful, consumable shape of data.
 
-Grouping is optional when defining the data view. If the `.GroupingFields` section is not defined on the data view, the resolved data view shows a single group with all eligible data items. If the `.GroupingFields` section is defined, the resolved data view shows multiple groups, each with the list of data items for the group and the `.GroupingValues` field showing the matching group's value(s). In this case, if a data item does not match any group, it is added to all groups.	
+Grouping is optional when defining the data view. If the `.GroupingFields` section is not defined on the data view, the resolved data view shows a single group with all eligible data items. If the `.GroupingFields` section is defined, the resolved data view shows multiple groups, each with the list of data items for the group and the `.GroupingValues` field showing the matching group's value(s). In this case, if a data item does not match any group, it is added to all groups.
 
 Groups are ordered alphabetically by the first grouping value for each group. Within each group, data items are ordered alphabetically by data item id.
 
@@ -52,6 +52,7 @@ Let us start with a simple data view. It queries for the aforementioned streams,
   "Queries": [
     { 
       "Id": "inverters",
+      "Kind": "Stream",
       "Value": "TypeId:docs-pi-inverter AND (Site:Rosemont OR Site:Winterthur)"
     }
   ],
@@ -88,6 +89,7 @@ A simple way of disambiguating the data items is to group them by data item id. 
   "Queries": [
     { 
       "Id": "inverters",
+      "Kind": "Stream",
       "Value": "TypeId:docs-pi-inverter AND (Site:Rosemont OR Site:Winterthur)"
     }
   ],
@@ -156,6 +158,7 @@ Instead of grouping by data item id, let us group by metadata. This example uses
   "Queries": [
     { 
       "Id": "inverters",
+      "Kind": "Stream",
       "Value": "TypeId:docs-pi-inverter AND (Site:Rosemont OR Site:Winterthur)"
     }
   ],
@@ -221,10 +224,12 @@ This example includes two actions:
   "Queries": [
     { 
       "Id": "inverters",
+      "Kind": "Stream",
       "Value": "TypeId:docs-pi-inverter AND (Site:Rosemont OR Site:Winterthur)"
     },
     { 
       "Id": "site weather",
+      "Kind": "Stream",
       "Value": "TypeId:docs-omf-weather* AND (Site:Rosemont OR Site:Winterthur)"
     }
   ],

@@ -5,8 +5,8 @@ uid: sdsQuickStart
 # Quick Start: Sequential Data Store
 
 Sequential Data Store (SDS) is a sophisticated data store. The steps described here show a very simple interaction with SDS.
-To follow along with the steps in this section, you will first need an account, tenant and associated security credentials. 
-If you have not already acquired an account, email [OCS support](mailto://cloudservices@osisoft.com) at OSIsoft Cloud Services.
+To follow along with the steps in this section, you will first need a tenant, a user account and associated security credentials. 
+Email [OCS support](mailto://cloudservices@osisoft.com) at OSIsoft Cloud Services to get access.
 
 You will be mainly working on the [OSIsoft Cloud Services portal](https://cloud.osisoft.com/). Sign into the portal using the credentials associated with the tenant. You will also need a namespace and administrative client keys. 
 

@@ -6,14 +6,31 @@ uid: AssetsAPI
 
 The Assets API allows you to create, read, update, and delete assets. 
 
-See Access Control API, Asset Centric API, and Assets Search API for additional API methods.
+The asset feature supports the HTTP entity tag (ETag) and If-Match for conditional requests. When a `GET` call is performed, the HTTP response header includes an Etag which indicates what version of the asset resource will be retrieved.
 
-QUESTION: is "methods" the correct term? I'll add links to the topics later. 
+See [Asset and AssetType Access Control API](xref:AssetOrAssetTypeAccessControlAPI), [Asset Centric Data API](xref:AssetCentricDataAPI), and [Assets Search API](xref:AssetsSearchAPI) for additional API details.
+
+####Example Etag Response Header
+This is version 7 of this particular asset.
+```
+Etag: "7"
+```
+
+To edit or delete the asset, specify If-Match in the HTTP request header when calling `DELETE` or `PUT`.
+
+####Example If-Match Response Header
+Modify or delete only if the current asset matches version 7. Otherwise, do not perform this operation. If this condition fails, return a 412. 
+
+```
+If-Match : "7"
+```
+
+Note: If-Match is optional. If you want to delete or modify an asset regardless of the asset version, do not specify an If-Match.
 
 ***
 
 ## `Get Asset by Id` 
-Returns the specified asset.
+Returns the specified asset and the version Etag in the HTTP response header.
 
 ### Request 
 ``` 
@@ -21,16 +38,13 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 ```
 
 ### Parameters  
-`string tenantId` 
-
+`string tenantId`  
 The tenant identifier
 
-`string namespaceId` 
-
+`string namespaceId`  
 The namespace identifier
 
-`string assetID`
-
+`string assetId`  
 The asset identifier
 
 ### Response 
@@ -74,7 +88,7 @@ Content-Type: application/json
 ***
 
 ## `Get Assets` 
-Returns an array of assets. 
+Returns an array of assets and the total number of assets returned, specified as Total-Count in the HTTP response header. 
 
 ### Request 
 ```
@@ -82,21 +96,17 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets?skip={skip
 ```
 
 ### Parameters  
-`string tenantId` 
-
+`string tenantId`   
 The tenant identifier
 
-`string namespaceId` 
-
+`string namespaceId`   
 The namespace identifier
 
-[optional] `int skip` 
-
+[optional] `int skip`   
 An optional parameter representing the zero-based offset of the first asset to retrieve. If not specified, a default value of 0 is used.
 
-[optional] `int count` 
-
-An optional parameter representing the maximum number of assets to retrieve. If not specified, a default value of 100 is used. 
+[optional] `int count`   
+An optional parameter, between 1 and 1000 (inclusive), that represents the maximum number of retrieved assets. If not specified, the default is 100.
 
 ### Response 
 The response includes a status code and a body. 
@@ -104,16 +114,16 @@ The response includes a status code and a body.
 | Status Code | Body Type | Description |
 |--|--|--|
 | 200 OK | `Asset[]` | A page of assets. A response header, `Total-Count`, indicates the total size of the collection. |
-| 204 No Content | none | No assets were found or the user does not have permission to view assets. |
+| 204 No Content | none | No assets were found or you do not have permission to view assets. |
 | 400 Bad Request | error | The request is not valid. See the response body for additional details. |
 | 503 Service Unavailable | error | An error occurred while processing the request. See the response body for additional details. |
 
 ***
 
 ## `Create Asset` 
-Create a new asset with a specified ID. 
+Create a new asset with a specified `Id`. 
 
-If the asset you are trying to create references an asset type (via the AssetTypeId property) and if there is the corresponding asset type has a metadatum with the same id, then the name and sds type code of the metadatum on the asset must be null. If the asset type does not have metadatum with a corresponding id, name and sds type code may not be null.
+If the asset you are trying to create references an asset type (through the AssetTypeId property) and if the corresponding asset type has a metadata value with the same `Id`, then the name and SDS type code of the metadata value on the asset must be null. If the asset type does not have metadata value with a corresponding `Id`, the name and SDS type code on the asset cannot be null.
 
 ### Request 
 ```text 
@@ -121,16 +131,13 @@ POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 ```
 
 ### Parameters  
-`string tenantId` 
-
+`string tenantId`   
 The tenant identifier
 
-`string namespaceId` 
-
+`string namespaceId`   
 The namespace identifier
 
-`string assetID`
-
+`string assetId`  
 The asset identifier
 
 
@@ -138,7 +145,7 @@ The asset identifier
 An `asset` object
 
 #### Example request body 
-NOTE: To create an asset with a specific ID, use the API route with ID. If this is used, you must specify a matching ID field for the asset object in the JSON object below.
+NOTE: To create an asset with a specific `Id`, use the API route with `Id`. If this is used, you must specify a matching `Id` field for the asset object in the JSON object below.
 
 ```json 
 {
@@ -165,7 +172,7 @@ NOTE: To create an asset with a specific ID, use the API route with ID. If this 
 ```
 ### Response 
 
-The response includes a status code and a body. 
+The response includes a status code, a body, and the Etag version in the HTTP response header.
 
 | Status Code               | Body Type | Description                                     |
 | ------------------------- | --------- | ----------------------------------------------- |
@@ -183,18 +190,15 @@ Create multiple assets in a single call.
 ### Request 
 
 ```text 
-POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets   
-
+POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets 
 ```
 
 ### Parameters  
 
-`string tenantId` 
-
+`string tenantId`   
 The tenant identifier
 
-`string namespaceId` 
-
+`string namespaceId`   
 The namespace identifier
 
 #### Request body 
@@ -208,7 +212,7 @@ The response includes a status code and a body.
 | Status Code               | Body Type | Description                                     |
 | ------------------------- | --------- | ----------------------------------------------- |
 | 200 OK                    | `Asset[]`  | An array of assets as persisted, including values for optional parameters that were omitted in the request.                               |
-| 400 Bad Request             | error     | The request is not valid. The response will include which asset failed validation checks. See the response body for additional details.      |
+| 400 Bad Request             | error     | The request is not valid. The response includes which asset failed validation checks. See the response body for additional details.     |
 | 403 Forbidden            | error     | You are not authorized to create assets.           |
 | 409 Conflict | error     | The asset create has a conflict. See the response body for additional details.  |
 
@@ -216,71 +220,69 @@ The response includes a status code and a body.
 
 ## `Create or Update Asset` 
 
-Create or update an asset with a specified ID. 
-<!--- QUESTION: How is this different from Create Asset --->
+Create or update an asset with a specified `Id`. If the asset already exists, you can specify an If-Match property in the HTTP request header to ensure that the asset is modified only if its version matches.
 
 ### Request 
 
 ```text 
 PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId} 
-
 ```
 
 ### Parameters  
 
-.`string tenantId` 
-
+`string tenantId`   
 The tenant identifier
 
-`string namespaceId` 
-
+`string namespaceId`   
 The namespace identifier
 
-`string assetID`
-
+`string assetId`  
 The asset identifier
 
 #### Request body 
 
 The newly created or updated `asset` object.
 
+#### Asset Type Concordance
+
+If an asset type `Id` is specified for an asset, then the following is true:
+- The stream references name of an asset is set to null if the stream reference `Id` matches the stream reference `Id` of the asset type.
+- If the asset and asset type have a metadata value with the same `Id`, then the name property on the asset is set to null. 
+
 ### Response 
 
-The response includes a status code and body. 
+The response includes a status code, body, and Etag version in the HTTP response header. 
 
-| Status Code               | Body Type | Description                                     |
-| ------------------------- | --------- | ----------------------------------------------- |
-| 200 OK                    | `Asset`  | The newly created or updated asset as persisted, including values for optional parameters that were omitted in the request.                               |
-| 400 Bad Request             | error     | The request is not valid. The response will include which asset failed validation checks. See the response body for additional details.      |
+| Status Code              | Body Type | Description                                     |
+| -------------------------| --------- | ----------------------------------------------- |
+| 200 OK                   | `Asset`  | The newly created or updated asset as persisted, including values for optional parameters that were omitted in the request.                               |
+| 400 Bad Request          | error     | The request is not valid. The response includes which asset failed validation checks. See the response body for additional details.    |
 | 403 Forbidden            | error     | You are not authorized to update assets. |
 | 404 Not Found            | error     | The asset, with the specified identifier, was not found.            |
-| 409 Conflict | error     | The asset update or create has a conflict. See the response body for additional details. |
+| 409 Conflict             | error     | The asset update or create has a conflict. See the response body for additional details. |
+| 412 Pre-Condition Failed | error     | The asset failed to update because the If-Match condition failed.  |
 
 ***
 
 ## `Delete Asset` 
 
-Delete an asset with a specified ID.
+Delete an asset with a specified `Id`. You can include an If-Match property in the HTTP request header to specify the asset version. The asset is deleted only if the version matches.
 
 ### Request 
 
 ```text 
 DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}   
-
 ```
 
 ### Parameters  
 
-`string tenantId` 
-
+`string tenantId`   
 The tenant identifier
 
-`string namespaceId` 
-
+`string namespaceId`   
 The namespace identifier
 
-`string assetID`
-
+`string assetId`  
 The asset identifier
 
 #### Request body 
@@ -293,7 +295,41 @@ The response includes a status code and a body.
 
 | Status Code               | Body Type | Description                                     |
 | ------------------------- | --------- | ----------------------------------------------- |
-| 204 No Content                    | none  | The asset with the specified ID is deleted.                              |
-| 400 Bad Request             | error     | The request is not valid. The response will include which asset failed validation checks. See the response body for additional details.       |
+| 204 No Content            | none  | The asset with the specified `Id` is deleted.                              |
+| 400 Bad Request           | error     | The request is not valid. The response includes which asset failed validation checks. See the response body for additional details.      |
 | 403 Forbidden             | error     | You are not authorized to delete this asset.       |
-| 404 Not Found             | error     | The asset with the specified ID could not be found. 
+| 404 Not Found             | error     | The asset with the specified `Id` could not be found.  |
+| 412 Pre-Condition Failed  | error     | The asset failed to update because the If-Match condition failed.  |
+
+## `Delete Asset (bulk)`
+
+Delete all assets with the specified Ids. Use this API to delete up to a maximum of 1000 assets in one API call.
+
+### Request 
+
+```text 
+DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/assets/delete
+```
+
+### Parameters  
+
+`string tenantId`   
+The tenant identifier
+
+`string namespaceId`   
+The namespace identifier
+
+#### Request body 
+
+A list of asset `Id`s.
+
+### Response 
+
+The response includes a status code and a body.
+
+| Status Code               | Body Type | Description                                     |
+| ------------------------- | --------- | ----------------------------------------------- |
+| 204 No Content            | none  | The assets with the specified `Id`s are deleted.                              |
+| 207 Multi-Status | partial success | Array of errors. Assets that did not encounter errors are deleted. |
+| 209 Conflict | error | See response body for additional details. |
+| 400 Bad Request | error | The request is not valid. See the response body for additional details. |

@@ -28,6 +28,7 @@ The following represents a data view grouped by "Meter", including fields for th
   "Queries": [
     {
       "Id": "inverters",
+      "Kind": "Stream",
       "Value": "TypeId:docs-pi-inverter AND Site:Winterthur"
     }
   ],
@@ -83,6 +84,7 @@ To the data view from the previous example, we will add a `Field` as the `.Ident
   "Queries": [
     {
       "Id": "inverters",
+      "Kind": "Stream",
       "Value": "TypeId:docs-pi-inverter AND Site:Winterthur"
     }
   ],
@@ -139,9 +141,11 @@ In cases where the identifiers are unique, the identifier is suffixed with an or
 | Timestamp.0 | Value.1 | Value.2 |
 |--|--|--|
 
-There are three special parameters available for use in field labels:
+There are four special parameters available for use in field labels:
 - `{IdentifyingValue}` - the value of the identifying field
 - `{FirstKey}` - the value of the first of the `"Keys"` specified on the field
+- `{QueryId}` - the id of the query that produced the field
+- `{MeasurementFirstKey}` *(Coming Soon)* - the value of the first of the `"MeasurementKeys"` specified on the field
 
 If a special parameter fails to resolve, it becomes an empty string, `""`.
 
@@ -167,3 +171,11 @@ A field of source `FieldSource.Tags` and `.Keys` `[ "Low Resolution", "High Reso
 
 The field's value when resolved will be `[ "Low Resolution", "Gen2" ]`
 
+#### Special Case: Asset measurements (Coming Soon)
+*Note: This section covers features that are not yet generally available. If you are interested in trialing these pre-release features, contact your account team for more details.*
+
+Asset measurements are a special case because they require two pieces of information in order to address the data within the measurement: the measurement name and the measurement property id. In order to reference an asset measurement, a field must contain at least one measurement name in the `.MeasurementKeys` collection and at least one property id in the `.Keys` collection.
+
+`.MeasurementKeys` only applies to fields with source `FieldSource.PropertyId`. For all other field sources, `.MeasurementKeys` are ignored. 
+
+Similar to `.Keys`, `.MeasurementKeys` are evaluated in order specified until a match is found, i.e. first-match-wins.

@@ -3,7 +3,7 @@ uid: DataViewsQuickStartDefine
 ---
 
 # Define a data view
-The `DataView` object is a declarative query and shape for stream data. This section describes the `DataView` object. See the [Data View API section](xref:DataViewAPI) for the corresponding API routes.  
+The `DataView` object is a declarative query and shape for OCS data. This section describes the `DataView` object. See the [Data View API section](xref:DataViewAPI) for the corresponding API routes.
 
 At times, this section makes reference to ways the view *resolves* into further resources, such as the collection of data items found by each data item query. See the [Resolved Data View](xref:ResolvedDataView) and [Resolved Data View API](xref:ResolvedDataViewAPI) sections for details.
 
@@ -14,7 +14,7 @@ You define multiple aspects of a data view when you define it, including data it
 A data view must have a unique identifier. It may have a friendly name and description. If a friendly name is not specified, the identifier will be used as the data view's name.
 
 ### Include data items
-One or more queries determine the set of data items (such as SDS streams) that the data view will include. Each [Query](xref:DataViewsQueries) should represent a collection of like streams. To include streams that represent very different items, such as power inverters and weather stations, use separate queries.
+One or more queries determine the set of data items (such as SDS streams) that the data view will include. Each [Query](xref:DataViewsQueries) should represent a collection of like data items. To include data items that represent very different items, such as power inverters and weather stations, use separate queries.
 
 ### Include data fields
 
@@ -38,7 +38,7 @@ The field used for indexing.  If not specified, a default value with a label of 
 Data views currently operate on timestamped data, which is data indexed by a DateTime property. This is reflected by the `.IndexTypeCode` of the DataView, whose value must be "DateTime". Default values may be defined for the start index, end index, and/or interval used when data view data is queried.
 
 ### Define data view shape
-Data views may be set to resolve as standard shape or narrow shape. Standard shape resolves fields similar to how they are defined. Narrow shape pivots the fields vertically, resulting in a view whose schema is independent of what data items (streams) are resolved by the data view. Narrow shape may be used when an invariant output schema is required.
+Data views may be set to resolve as standard shape or narrow shape. Standard shape resolves fields similar to how they are defined. Narrow shape pivots the fields vertically, resulting in a view whose schema is independent of what data items are resolved by the data view. Narrow shape may be used when an invariant output schema is required.
 
 ## Data view properties
 The following table lists the properties of a `DataView`:
@@ -49,7 +49,7 @@ The following table lists the properties of a `DataView`:
 | Name | string | Optional | value of Id | Friendly name
 | Description | string | Optional  | null | Longer description of the view
 | IndexField | Field | Optional | { Label:"Timestamp" } | The field used for indexing.  If unspecified a field labeled "Timestamp" is included.
-| Queries     | Query[] | Optional | [ ] | Queries for SDS Streams to include in the view. This is the starting point when defining a data view. Each Query should represent a collection of like streams. To include streams that represent very different items (e.g. solar inverters and weather), use separate queries.
+| Queries     | Query[] | Optional | [ ] | Queries for OCS resources (such as streams) to include in the view. This is the starting point when defining a data view. Each Query should represent a collection of like data items. To include data items that represent very different items (e.g. solar inverters and weather), use separate queries.
 | DataFieldSets   | FieldSet[] | Optional | [ ] | The sets of fields included in the data view. Often copied or adapted from the view's available field sets, which are exposed in a resolved resource.
 | GroupingFields  | Field[] | Optional | [ ] | Fields by which the data items are partitioned/grouped.
 | DefaultStartIndex | string | Optional | null | The default value of StartIndex used when querying the data view data if none is specified.
@@ -68,14 +68,23 @@ The following table lists the properties of a `DataView`:
 The following sections describe the classes and enumerations used when defining data views.
 
 ### Query
-A query for SDS Streams to include in the view.
+A query for OCS resources to include in the view.
 |Property| Type | Optionality  | Default  | Details |
 |--|--|--|--|--|
 | Id  | string | Required |  | Unique identifier. Used by FieldSet to link to the query's results. |
-| Value | string | Optional | null | A query for streams in SDS query syntax. A null or empty query will not match any streams.
+| Kind  | DataItemResourceType | Optional | Stream | Type of resource to be queried. |
+| Value | string | Optional | null | A query for OCS resources in the corresponding query syntax. For example, a query for streams must be in SDS query syntax. A null or empty query will not match any data items.
+
+### DataItemResourceType enumeration
+The `DataItemResourceType` enumeration specifies the OCS resource type included in the data view query.
+
+| Name | Enumeration Id | Details |
+|--|--|--|--|
+| Stream | 1 | [SDS streams](xref:sdsStreams)
+| Asset *(Coming Soon)* | 2 | Assets
 
 ### FieldSet
-A set of fields included in the data view, sharing a common role or source (`.SourceType`). One `DataView` is likely to include one `FieldSet` per query.
+A set of fields included in the data view, sharing a common role and query. One `DataView` is likely to include one `FieldSet` per query.
 |Property | Type | Optionality  | Default  | Details |
 |--|--|--|--|--|
 | QueryId | string | Required | | Must correspond to a query defined in the data view. 
@@ -84,12 +93,14 @@ A set of fields included in the data view, sharing a common role or source (`.So
 
 ### Field
 Individual piece of information, such as a property of an SDS stream or metadata of that stream.
+All sources except `FieldSource.NotApplicable` can be used as data fields. Fields from sources `FieldSource.Id`, `FieldSource.Name`, `FieldSource.Metadata` and `FieldSource.Tags` can be used as grouping fields and identifying fields. Some sources are used in conjunction with the Keys property (see below).
 |Property | Type | Optionality  | Default  | Details |
 |--|--|--|--|--|
 | Source | FieldSource | Optional | NotApplicable | Identifies the `.Source` of the field's values (not applicable for an index field). See the FieldSource enumeration section in this topic for details.
-All sources except `FieldSource.NotApplicable` can be used as data fields. Fields from sources `FieldSource.Id`, `FieldSource.Name`, `FieldSource.Metadata` and `FieldSource.Tags` can be used as grouping fields and identifying fields. Some sources are used in conjunction with the Keys property (see below).
-| Keys | String[] | Optional | [ ] | Used for sources `FieldSource.PropertyId`, `FieldSource.PropertyName`, `FieldSource.Metadata` and `FieldSource.Tags`, e.g. to map to specific stream properties by id. If more than one key is specified, they are matched as exclusive-or. A key has to be a non-null value.
+| Keys | String[] | Optional | [ ] | Used for sources `FieldSource.PropertyId`, `FieldSource.PropertyName`, `FieldSource.Metadata` and `FieldSource.Tags`, e.g. to map to specific data item properties by id. If more than one key is specified, they are matched as exclusive-or. A key has to be a non-null value.
+| MeasurementKeys *(Coming Soon)* | String[] | Optional | [ ] | Identifies the measurement name when referencing an asset measurement. `MeasurementKeys` only applies to source `FieldSource.PropertyId`. If more than one key is specified, they are matched as exclusive-or. A key has to be a non-null value.
 | Label | string | Optional | null | Friendly name for the field. Certain tokens have special meaning: one of these, {IdentifyingValue}, is included in the suggested labels of AvailableFieldSets. Tokens that do not resolve are "" (empty string). The label is required in a field for all usages except in an identifying field. Label is trimmed of whitespace when used to identify field mappings. 
+| IncludeUom *(Coming Soon)*| bool | Optional | false | Specifies whether to include the unit of measure for this field as an additional field mapping in the resolved data view.
 
 ### FieldSource enumeration
 For fields that derive data from a data item (e.g. an SDS stream), the `FieldSource` enumeration specifies the part of that data item that a Field resolves to. Some sources require one or more `.Keys` to be specified on the field, such as `PropertyId`, in which a key is the id of a desired property.
@@ -97,10 +108,10 @@ For fields that derive data from a data item (e.g. an SDS stream), the `FieldSou
 |Name | Enumeration Id | Keyed | Details |
 |--|--|--|--|
 |NotApplicable | 0 | No | FieldSource is not applicable for an index field
-|Id | 1 | No | The id of the data item (stream)
-|Name | 2 | No | The name of the data item (stream)
-|PropertyId | 3 | Yes | Data from a stream property, found by id
-|PropertyName | 4 | Yes | Data from a stream property, found by name
+|Id | 1 | No | The id of the data item
+|Name | 2 | No | The name of the data item
+|PropertyId | 3 | Yes | Data from a property, found by id
+|PropertyName | 4 | Yes | Data from a property, found by name
 |Metadata | 5 | Yes | Value of the data item metadata, found by key
 |Tags | 6 | Yes | Data item tags matching the collection provided
 
@@ -111,7 +122,7 @@ See [Sds documentation](xref:sdsTypes#sdstypecode) for details.
 
 ### DataViewShape enumeration
 `DataViewShape` enumeration describes possible output shapes for a data view.
-|Name| Enumeration Id | Description  |
+|Name| Enumeration Id | Details  |
 |--|--|--|
 |Standard | 0 | Fields are resolved into a shape similar to how they were defined. This is the recommended shape unless specific needs dictate.
-|Narrow | 1 | Fields are pivoted vertically, resulting in a view whose schema is independent of what data items (streams) are resolved by the data view.
+|Narrow | 1 | Fields are pivoted vertically, resulting in a view whose schema is independent of what data items are resolved by the data view.

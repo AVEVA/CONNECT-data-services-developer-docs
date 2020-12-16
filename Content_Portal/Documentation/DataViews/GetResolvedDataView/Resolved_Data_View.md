@@ -121,8 +121,18 @@ Within a data item of resource kind `.Stream`, this corresponds to a stream prop
 | Name | string | The data item field's friendly name
 | MeasurementName *(Coming Soon)* | string | The asset measurement name. Only applies to asset measurement data item fields.
 | TypeCode | SdsTypeCode| The name of the field's data type
+| SummaryType *(coming soon)* | SdsSummaryType  |The summary type calculation for the data field. |
+| SummaryDirection *(coming soon)* | SummaryDirection Enumeration |The direction of the summary type calculation for the data field. |
 | Uom *(coming soon)* | bool | The unit of measure id for the data item field
 | IsKey | bool | True if the field is the primary index of the data item. False otherwise.
+
+### SummaryDirection enumeration
+Direction used in the summary calculation.
+
+|Name| Enumeration Id | Description  |
+|--|--|--|
+|Forward | 1 | Uses the start index for the summary calculation.
+|Backward | 2 | Uses the end index for the summary calculation.
 
 ### Group
 A group of the data view. The overall collection of data items is divided into groups as a result of the `.GroupingFields` defined on the `DataView`.
@@ -150,6 +160,8 @@ Details on the provenance on every field of data:
 | Label | string | Friendly name
 | FieldKind | FieldKind enumeration | Specifies if the mapping is for an index, grouping, data, or field id field
 | TypeCode | SdsTypeCode | The primary data type of the mapping
+| SummaryType *(coming soon)* | SdsSummaryType  |The summary type calculation. |
+| SummaryDirection *(coming soon)* | SummaryDirection Enumeration |The direction of the summary type calculation. |
 | Uom *(coming soon)* | string | The unit of measure id. Null unless all data mappings' unit of measures within the field mapping are identical.
 | DataMappings | IReadOnlyList<DataMapping> | Per-group details of what this field resolved to
 
@@ -172,6 +184,8 @@ Per-group details of the data that a `FieldMapping` targets:
 | TargetFieldKey | string | The specific targeted part of the data item, if any.
 | TargetMeasurementKey *(coming soon)* | string | The asset measurement name. Only applies to asset measurement data mappings.
 | TypeCode | SdsTypeCode | The value type
+| SummaryType *(coming soon)* | SdsSummaryType  |The summary type calculation for the data field. |
+| SummaryDirection *(coming soon)* | SummaryDirection Enumeration |The direction of the summary type calculation for the data field. |
 | Uom *(coming soon)* | string | The unit of measure id
 | FieldSetIndex | Nullable<int> | The position of the corresponding field set within the data view
 | FieldIndex | Nullable<int> | The position of the corresponding field within its field set

@@ -52,7 +52,7 @@ This simple example shows the inclusion of a summary data field for a SummaryTyp
 }
 ```
 The resulting data view in standard mode:
-| Timestamp            | Value Mean Backward | Mean Backward Uom |
+| Timestamp            | Value Mean Backward | Value Mean Backward Uom |
 |----------------------|-------|-----------|
 | 2020-11-06T08:00:00Z | .899  | kW        |
 

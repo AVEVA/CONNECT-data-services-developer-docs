@@ -7,7 +7,7 @@ uid: DataViewsSummaries
 
 *Note: This topic covers features that are not yet generally available. If you are interested in trialing these pre-release features, contact your account team for more details.*
 
-Data views can be configured to show calculated summaries for streams and assets.  “Calculated summaries” is defined as the summary types enumerated in [SdsSummaryType](https://ocs-docs.osisoft.com/Content_Portal/Documentation/SequentialDataStore/Reading_Data_API.html#get-summaries). This topic describes how to include summaries in a data view. 
+Data views can be configured to show calculated summaries for streams and assets.  “Calculated summaries” is defined as the summary types enumerated in [SdsSummaryType](xref:sdsReadingDataApi#get-summaries#get-summaries). This topic describes how to include summaries in a data view. 
 
 # Available summaries
 Not all SDS properties will have summaries. For example a string property cannot have a Mean. If a data item field requests a summary that is unavailable these values will be null in the view data.  
@@ -60,7 +60,7 @@ The resulting data view in narrow mode:
 
 # Example: Impact of summary direction
 
-This example shows the impact of SummaryDirection, and how changing it will shift the summary value calculation. Three mini data view results are shown, where SummaryType and SummaryDirection are varied.
+This simple example shows the impact of SummaryDirection, and how changing it will shift the summary value calculation. Three mini data view results are shown, where SummaryType and SummaryDirection are varied.
 
 Example #1: SummaryType = "None"
 
@@ -72,6 +72,8 @@ Example #1: SummaryType = "None"
 
 Example #2: SummaryType = "Mean" & SummaryDirection = "Forward"
 
+In the "Forward" direction, the start index anchors the calculation direction. The first mean value of 55, is the mean of all the values between the first and second index. The second mean value of 550 is the mean of all the values between the second and third index.
+
 | Timestamp            | Value Mean Forward |
 |----------------------|-------|
 |2020-11-01T00:01:00Z  | 55    | 
@@ -80,8 +82,10 @@ Example #2: SummaryType = "Mean" & SummaryDirection = "Forward"
 
 Example #3: SummaryType = "Mean" & SummaryDirection = "Backward"
 
+In the "Backward" direction, the last index anchors the calculation direction. The last mean value of 550, is the mean value of all the values between the last and second index. The second mean value of 55 is the mean value of all the values between the second and first index. 
+
 | Timestamp            | Value Mean Backward |
 |----------------------|-------|
 |2020-11-01T00:01:00Z  | 10    | 
 |2020-11-01T00:02:00Z | 55  | 
-|2020-11-01T00:03:00Z | 550  |
+|2020-11-01T00:03:00Z | 550

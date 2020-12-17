@@ -64,7 +64,7 @@ This example shows the impact of SummaryDirection, and how changing it will shif
 
 Example #1: SummaryType = "None"
 
-| Timestamp            | Value 
+| Timestamp            | Value | 
 |----------------------|-------|
 |2020-11-01T00:01:00Z  | 10    | 
 |2020-11-01T00:02:00Z | 100  | 
@@ -72,7 +72,7 @@ Example #1: SummaryType = "None"
 
 Example #2: SummaryType = "Mean" & SummaryDirection = "Forward"
 
-| Timestamp            | Value 
+| Timestamp            | Value Mean Forward |
 |----------------------|-------|
 |2020-11-01T00:01:00Z  | 55    | 
 |2020-11-01T00:02:00Z | 550  | 
@@ -80,7 +80,7 @@ Example #2: SummaryType = "Mean" & SummaryDirection = "Forward"
 
 Example #3: SummaryType = "Mean" & SummaryDirection = "Backward"
 
-| Timestamp            | Value 
+| Timestamp            | Value Mean Backward |
 |----------------------|-------|
 |2020-11-01T00:01:00Z  | 10    | 
 |2020-11-01T00:02:00Z | 55  | 

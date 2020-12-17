@@ -1382,95 +1382,6 @@ interact with SdsTypes. When working in .NET, convenient SDS Client Libraries ar
 The ISdsMetadataService interface, accessed using the <code>SdsService.GetMetadataService()</code> helper, 
 defines the available functions. See <a href="#types">Types</a> for general type-related information.</p>
 <hr>
-<h2 id="get-type"><code>Get Type</code></h2>
-<p>Returns the type corresponding to the specified typeId within a given namespace.</p>
-<h3 id="request">Request</h3>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
-</code></pre><h3 id="parameters">Parameters</h3>
-<p><code>string tenantId</code><br>The tenant identifier</p>
-<p><code>string namespaceId</code><br>The namespace identifier</p>
-<p><code>string typeId</code><br>The type identifier</p>
-<h3 id="response">Response</h3>
-<p>The response includes a status code and a response body.</p>
-<h4 id="response-body">Response body</h4>
-<p>The requested SdsType</p>
-<h4 id="example-response-body">Example response body</h4>
-<pre><code class="lang-json">HTTP/1.1 200
-Content-Type: application/json
-
-{
-    &quot;Id&quot;: &quot;Simple&quot;,
-    &quot;Name&quot;: &quot;Simple&quot;,
-    &quot;SdsTypeCode&quot;: 1,
-    &quot;Properties&quot;: [
-        {
-            &quot;Id&quot;: &quot;Time&quot;,
-            &quot;Name&quot;: &quot;Time&quot;,
-            &quot;IsKey&quot;: true,
-            &quot;SdsType&quot;: {
-                &quot;Id&quot;: &quot;19a87a76-614a-385b-ba48-6f8b30ff6ab2&quot;,
-                &quot;Name&quot;: &quot;DateTime&quot;,
-                &quot;SdsTypeCode&quot;: 16
-            }
-        },
-        {
-            &quot;Id&quot;: &quot;State&quot;,
-            &quot;Name&quot;: &quot;State&quot;,
-            &quot;SdsType&quot;: {
-                &quot;Id&quot;: &quot;e20bdd7e-590b-3372-ab39-ff61950fb4f3&quot;,
-                &quot;Name&quot;: &quot;State&quot;,
-                &quot;SdsTypeCode&quot;: 609,
-                &quot;Properties&quot;: [
-                    {
-                        &quot;Id&quot;: &quot;Ok&quot;,
-                        &quot;Value&quot;: 0
-                    },
-                    {
-                        &quot;Id&quot;: &quot;Warning&quot;,
-                        &quot;Value&quot;: 1
-                    },
-                    {
-                        &quot;Id&quot;: &quot;Alarm&quot;,
-                        &quot;Value&quot;: 2
-                    }
-                ]
-            }
-        },
-        {
-            &quot;Id&quot;: &quot;Measurement&quot;,
-            &quot;Name&quot;: &quot;Measurement&quot;,
-            &quot;SdsType&quot;: {
-                &quot;Id&quot;: &quot;6fecef77-20b1-37ae-aa3b-e6bb838d5a86&quot;,
-                &quot;Name&quot;: &quot;Double&quot;,
-                &quot;SdsTypeCode&quot;: 14
-            }
-        }
-    ]
-}
-</code></pre><h3 id="net-client-libraries-method">.NET client libraries method</h3>
-<pre><code class="lang-csharp">    Task&lt;SdsType&gt; GetTypeAsync(string typeId);
-</code></pre><hr>
-<h2 id="get-type-reference-count"><code>Get Type Reference Count</code></h2>
-<p>Returns a dictionary mapping the object name to the number of references held by streams, stream views and parent types for the specified type. See <a class="xref" href="SDS_Streams.html">Streams</a> and <a class="xref" href="SDS_Views.html">Steam Views</a> for more information on the use of types to define streams and stream views. For further details about type referencing please see: <a href="#type-reusability">Type Reusability</a>.</p>
-<h3 id="request-1">Request</h3>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/ReferenceCount
-</code></pre><h3 id="parameters-1">Parameters</h3>
-<p><code>string tenantId</code><br>The tenant identifier</p>
-<p><code>string namespaceId</code><br>The namespace identifier</p>
-<p><code>string typeId</code><br>The type identifier</p>
-<h4 id="response-1">Response</h4>
-<p>The response includes a status code and a response body.</p>
-<h4 id="response-body-1">Response body</h4>
-<p>A dictionary mapping object name to number of references.</p>
-<h4 id="example-response-body-1">Example response body</h4>
-<pre><code class="lang-json">    {
-        &quot;SdsStream&quot;: 3,
-        &quot;SdsStreamView&quot;: 2,
-        &quot;SdsType&quot;: 1
-    }
-</code></pre><h3 id="net-client-libraries-method-1">.NET client libraries method</h3>
-<pre><code class="lang-csharp">    Task&lt;IDictionary&lt;string, int&gt;&gt; GetTypeReferenceCountAsync(string typeId);
-</code></pre><hr>
 <h2 id="get-types"><code>Get Types</code></h2>
 <p>Returns a list of types within a given namespace.</p>
 <p>If specifying the optional search query parameter, the list of types returned will match 
@@ -1478,9 +1389,9 @@ the search criteria. If the search query parameter is not specified, the list wi
 all types in the Namespace. See <a class="xref" href="Searching.html">Search in SDS</a> 
 for information about specifying those respective parameters.</p>
 <p>Note that the results will also include types that were automatically created by SDS as a result of type referencing. For further details about type referencing please see: <a href="#type-reusability">Type Reusability</a></p>
-<h3 id="request-2">Request</h3>
+<h3 id="request">Request</h3>
 <pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types?query={query}&amp;skip={skip}&amp;count={count}&amp;orderby={orderby}
-</code></pre><h3 id="parameters-2">Parameters</h3>
+</code></pre><h3 id="parameters">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string query</code><br>[Optional] Parameter representing a string search. See the <a class="xref" href="Searching.html">Search in SDS</a> topic for information about specifying the query parameter.</p>
@@ -1490,11 +1401,11 @@ a default value of 0 is used.</p>
 <p><code>string orderby</code><br>[Optional] Parameter representing sorted order which SdsTypes will be returned. A field name is required. The sorting is based on the stored values for the given field (of type string). For example, <code>orderby=name</code> would sort the returned results by the <code>name</code> values (ascending by default). 
 Additionally, a value can be provided along with the field name to identify whether to sort ascending or descending, by using values <code>asc</code> or <code>desc</code>, respectively. For example, <code>orderby=name desc</code> would sort the returned results by the <code>name</code> values, descending.
 If no value is specified, there is no sorting of results.</p>
-<h4 id="response-2">Response</h4>
+<h4 id="response">Response</h4>
 <p>The response includes a status code and a response body.</p>
-<h4 id="response-body-2">Response body</h4>
+<h4 id="response-body">Response body</h4>
 <p>A collection of zero or more SdsTypes</p>
-<h4 id="example-response-body-2">Example response body</h4>
+<h4 id="example-response-body">Example response body</h4>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -1550,8 +1461,97 @@ Content-Type: application/json
     },
     …
 ]
-</code></pre><h3 id="net-client-libraries-method-2">.NET client libraries method</h3>
+</code></pre><h3 id="net-client-libraries-method">.NET client libraries method</h3>
 <pre><code class="lang-csharp">    Task&lt;IEnumerable&lt;SdsType&gt;&gt; GetTypesAsync(string query = &quot;&quot;, int skip = 0, int count = 100);
+</code></pre><hr>
+<h2 id="get-type"><code>Get Type</code></h2>
+<p>Returns the type corresponding to the specified typeId within a given namespace.</p>
+<h3 id="request-1">Request</h3>
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
+</code></pre><h3 id="parameters-1">Parameters</h3>
+<p><code>string tenantId</code><br>The tenant identifier</p>
+<p><code>string namespaceId</code><br>The namespace identifier</p>
+<p><code>string typeId</code><br>The type identifier</p>
+<h3 id="response-1">Response</h3>
+<p>The response includes a status code and a response body.</p>
+<h4 id="response-body-1">Response body</h4>
+<p>The requested SdsType</p>
+<h4 id="example-response-body-1">Example response body</h4>
+<pre><code class="lang-json">HTTP/1.1 200
+Content-Type: application/json
+
+{
+    &quot;Id&quot;: &quot;Simple&quot;,
+    &quot;Name&quot;: &quot;Simple&quot;,
+    &quot;SdsTypeCode&quot;: 1,
+    &quot;Properties&quot;: [
+        {
+            &quot;Id&quot;: &quot;Time&quot;,
+            &quot;Name&quot;: &quot;Time&quot;,
+            &quot;IsKey&quot;: true,
+            &quot;SdsType&quot;: {
+                &quot;Id&quot;: &quot;19a87a76-614a-385b-ba48-6f8b30ff6ab2&quot;,
+                &quot;Name&quot;: &quot;DateTime&quot;,
+                &quot;SdsTypeCode&quot;: 16
+            }
+        },
+        {
+            &quot;Id&quot;: &quot;State&quot;,
+            &quot;Name&quot;: &quot;State&quot;,
+            &quot;SdsType&quot;: {
+                &quot;Id&quot;: &quot;e20bdd7e-590b-3372-ab39-ff61950fb4f3&quot;,
+                &quot;Name&quot;: &quot;State&quot;,
+                &quot;SdsTypeCode&quot;: 609,
+                &quot;Properties&quot;: [
+                    {
+                        &quot;Id&quot;: &quot;Ok&quot;,
+                        &quot;Value&quot;: 0
+                    },
+                    {
+                        &quot;Id&quot;: &quot;Warning&quot;,
+                        &quot;Value&quot;: 1
+                    },
+                    {
+                        &quot;Id&quot;: &quot;Alarm&quot;,
+                        &quot;Value&quot;: 2
+                    }
+                ]
+            }
+        },
+        {
+            &quot;Id&quot;: &quot;Measurement&quot;,
+            &quot;Name&quot;: &quot;Measurement&quot;,
+            &quot;SdsType&quot;: {
+                &quot;Id&quot;: &quot;6fecef77-20b1-37ae-aa3b-e6bb838d5a86&quot;,
+                &quot;Name&quot;: &quot;Double&quot;,
+                &quot;SdsTypeCode&quot;: 14
+            }
+        }
+    ]
+}
+</code></pre><h3 id="net-client-libraries-method-1">.NET client libraries method</h3>
+<pre><code class="lang-csharp">    Task&lt;SdsType&gt; GetTypeAsync(string typeId);
+</code></pre><hr>
+<h2 id="get-type-reference-count"><code>Get Type Reference Count</code></h2>
+<p>Returns a dictionary mapping the object name to the number of references held by streams, stream views and parent types for the specified type. See <a class="xref" href="SDS_Streams.html">Streams</a> and <a class="xref" href="SDS_Views.html">Steam Views</a> for more information on the use of types to define streams and stream views. For further details about type referencing please see: <a href="#type-reusability">Type Reusability</a>.</p>
+<h3 id="request-2">Request</h3>
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/ReferenceCount
+</code></pre><h3 id="parameters-2">Parameters</h3>
+<p><code>string tenantId</code><br>The tenant identifier</p>
+<p><code>string namespaceId</code><br>The namespace identifier</p>
+<p><code>string typeId</code><br>The type identifier</p>
+<h4 id="response-2">Response</h4>
+<p>The response includes a status code and a response body.</p>
+<h4 id="response-body-2">Response body</h4>
+<p>A dictionary mapping object name to number of references.</p>
+<h4 id="example-response-body-2">Example response body</h4>
+<pre><code class="lang-json">    {
+        &quot;SdsStream&quot;: 3,
+        &quot;SdsStreamView&quot;: 2,
+        &quot;SdsType&quot;: 1
+    }
+</code></pre><h3 id="net-client-libraries-method-2">.NET client libraries method</h3>
+<pre><code class="lang-csharp">    Task&lt;IDictionary&lt;string, int&gt;&gt; GetTypeReferenceCountAsync(string typeId);
 </code></pre><hr>
 <h2 id="get-or-create-type"><code>Get or Create Type</code></h2>
 <p>Creates the specified type. If a type with a matching identifier already exists, SDS compares the 
@@ -1780,7 +1780,7 @@ in the request body, a Conflict error response is returned and the client librar
 <pre><code class="lang-csharp">    Task DeleteTypeAsync(string typeId);
 </code></pre><hr>
 <h2 id="get-types-access-control-list"><code>Get Types Access Control List</code></h2>
-<p>Get the default ACL for the Types collection. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
+<p>Gets the default ACL for the Types collection. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <h3 id="request-5">Request</h3>
 <pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Types
 </code></pre><h3 id="parameters-5">Parameters</h3>
@@ -1841,14 +1841,28 @@ in the request body, a Conflict error response is returned and the client librar
 <pre><code class="lang-csharp">   Task&lt;AccessControlList&gt; GetTypesAccessControlListAsync();
    Task&lt;SdsETagResult&lt;AccessControlList&gt;&gt; GetTypesAccessControlListWithETagAsync();
 </code></pre><hr>
-<h2 id="patch-types-access-control-list"><code>Patch Types Access Control List</code></h2>
-<p>Update the default ACL for the Types collection using an <a href="https://tools.ietf.org/html/rfc6902">RFC 6902</a> compliant JSON Patch document. This allows the ACL to be modified without submitting the entire Access Control List. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
+<h2 id="update-types-access-control-list"><code>Update Types Access Control List</code></h2>
+<p>Updates the default ACL for the Types collection. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <h3 id="request-6">Request</h3>
-<pre><code class="lang-text">   PATCH api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Types
+<pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Types
 </code></pre><h3 id="parameters-6">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <h4 id="request-body-1">Request body</h4>
+<p>Serialized ACL</p>
+<h3 id="response-6">Response</h3>
+<p>The response includes a status code.</p>
+<h3 id="net-client-libraries-method-6">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task UpdateTypesAccessControlListAsync(AccessControlList typesAcl);
+</code></pre><hr>
+<h2 id="patch-types-access-control-list"><code>Patch Types Access Control List</code></h2>
+<p>Updates the default ACL for the Types collection using an <a href="https://tools.ietf.org/html/rfc6902">RFC 6902</a> compliant JSON Patch document. This allows the ACL to be modified without submitting the entire Access Control List. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
+<h3 id="request-7">Request</h3>
+<pre><code class="lang-text">   PATCH api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Types
+</code></pre><h3 id="parameters-7">Parameters</h3>
+<p><code>string tenantId</code><br>The tenant identifier  </p>
+<p><code>string namespaceId</code><br>The namespace identifier  </p>
+<h4 id="request-body-2">Request body</h4>
 <p>An <a href="https://tools.ietf.org/html/rfc6902">RFC 6902</a> JSON Patch document that will be applied to the ACL.</p>
 <p>The example below inserts a new <strong>Access Control Entry</strong> into the <strong>Access Control List</strong> giving <strong>Read</strong> and <strong>Write</strong> access to the role with the Id <code>11111111-1111-1111-1111-111111111111</code>. The remainder of the existing ACL remains unmodified.</p>
 <pre><code class="lang-json">[
@@ -1881,7 +1895,7 @@ in the request body, a Conflict error response is returned and the client librar
 </tr>
 </tbody>
 </table>
-<h3 id="response-6">Response</h3>
+<h3 id="response-7">Response</h3>
 <p>The response includes a status code.</p>
 <table>
 <thead>
@@ -1919,26 +1933,12 @@ in the request body, a Conflict error response is returned and the client librar
 </tr>
 </tbody>
 </table>
-<h3 id="net-client-libraries-method-6">.NET client libraries method</h3>
+<h3 id="net-client-libraries-method-7">.NET client libraries method</h3>
 <pre><code class="lang-csharp">   Task PatchTypesAccessControlListAsync(JsonPatchDocument&lt;AccessControlList&gt; typesAclPatch);
    Task PatchTypesAccessControlListWithETagAsync(string etag, JsonPatchDocument&lt;AccessControlList&gt; typesAclPatch);
 </code></pre><hr>
-<h2 id="update-types-access-control-list"><code>Update Types Access Control List</code></h2>
-<p>Update the default ACL for the Types collection. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
-<h3 id="request-7">Request</h3>
-<pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Types
-</code></pre><h3 id="parameters-7">Parameters</h3>
-<p><code>string tenantId</code><br>The tenant identifier  </p>
-<p><code>string namespaceId</code><br>The namespace identifier  </p>
-<h4 id="request-body-2">Request body</h4>
-<p>Serialized ACL</p>
-<h3 id="response-7">Response</h3>
-<p>The response includes a status code.</p>
-<h3 id="net-client-libraries-method-7">.NET client libraries method</h3>
-<pre><code class="lang-csharp">   Task UpdateTypesAccessControlListAsync(AccessControlList typesAcl);
-</code></pre><hr>
 <h2 id="get-type-access-control-list"><code>Get Type Access Control List</code></h2>
-<p>Get the ACL of the specified type. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
+<p>Gets the ACL of the specified type. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <h3 id="request-8">Request</h3>
 <pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessControl
 </code></pre><h3 id="parameters-8">Parameters</h3>
@@ -2000,16 +2000,32 @@ in the request body, a Conflict error response is returned and the client librar
 <pre><code class="lang-csharp">   Task&lt;AccessControlList&gt; GetTypeAccessControlListAsync(string typeId);
    Task&lt;SdsETagResult&lt;AccessControlList&gt;&gt; GetTypeAccessControlListWithETagAsync(string typeId);   
 </code></pre><hr>
-<h2 id="patch-type-access-control-list"><code>Patch Type Access Control List</code></h2>
-<p>Update the ACL of the specified type using an <a href="https://tools.ietf.org/html/rfc6902">RFC 6902</a> compliant JSON Patch document. This allows the ACL to be modified without submitting the entire Access Control List. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
+<h2 id="update-type-access-control-list"><code>Update Type Access Control List</code></h2>
+<p>Updates the ACL of the specified type. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <p>Note that this does not update the ACL for the associated types. For further details about type referencing please see: <a href="#type-reusability">Type Reusability</a>.</p>
 <h3 id="request-9">Request</h3>
-<pre><code class="lang-text">   PATCH api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessControl
+<pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessControl
 </code></pre><h3 id="parameters-9">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string typeId</code><br>The type identifier  </p>
 <h4 id="request-body-3">Request body</h4>
+<p>Serialized ACL</p>
+<h3 id="response-9">Response</h3>
+<p>The response includes a status code.</p>
+<h3 id="net-client-libraries-method-9">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task UpdateTypeAccessControlListAsync(string typeId, AccessControlList typeAcl);
+</code></pre><hr>
+<h2 id="patch-type-access-control-list"><code>Patch Type Access Control List</code></h2>
+<p>Updates the ACL of the specified type using an <a href="https://tools.ietf.org/html/rfc6902">RFC 6902</a> compliant JSON Patch document. This allows the ACL to be modified without submitting the entire Access Control List. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
+<p>Note that this does not update the ACL for the associated types. For further details about type referencing please see: <a href="#type-reusability">Type Reusability</a>.</p>
+<h3 id="request-10">Request</h3>
+<pre><code class="lang-text">   PATCH api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessControl
+</code></pre><h3 id="parameters-10">Parameters</h3>
+<p><code>string tenantId</code><br>The tenant identifier  </p>
+<p><code>string namespaceId</code><br>The namespace identifier  </p>
+<p><code>string typeId</code><br>The type identifier  </p>
+<h4 id="request-body-4">Request body</h4>
 <p>An <a href="https://tools.ietf.org/html/rfc6902">RFC 6902</a> JSON Patch document that will be applied to the ACL.</p>
 <p>The example below inserts a new <strong>Access Control Entry</strong> into the <strong>Access Control List</strong> giving <strong>Read</strong> and <strong>Write</strong> access to the role with the Id <code>11111111-1111-1111-1111-111111111111</code>. The remainder of the existing ACL remains unmodified.</p>
 <pre><code class="lang-json">[
@@ -2042,7 +2058,7 @@ in the request body, a Conflict error response is returned and the client librar
 </tr>
 </tbody>
 </table>
-<h3 id="response-9">Response</h3>
+<h3 id="response-10">Response</h3>
 <p>The response includes a status code.</p>
 <table>
 <thead>
@@ -2080,28 +2096,12 @@ in the request body, a Conflict error response is returned and the client librar
 </tr>
 </tbody>
 </table>
-<h3 id="net-client-libraries-method-9">.NET client libraries method</h3>
+<h3 id="net-client-libraries-method-10">.NET client libraries method</h3>
 <pre><code class="lang-csharp">   Task PatchTypeAccessControlListAsync(string typeId, JsonPatchDocument&lt;AccessControlList&gt; typeAclPatch);
    Task PatchTypeAccessControlListWithETagAsync(string typeId, string etag, JsonPatchDocument&lt;AccessControlList&gt; typeAclPatch);
 </code></pre><hr>
-<h2 id="update-type-access-control-list"><code>Update Type Access Control List</code></h2>
-<p>Update the ACL of the specified type. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
-<p>Note that this does not update the ACL for the associated types. For further details about type referencing please see: <a href="#type-reusability">Type Reusability</a>.</p>
-<h3 id="request-10">Request</h3>
-<pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessControl
-</code></pre><h3 id="parameters-10">Parameters</h3>
-<p><code>string tenantId</code><br>The tenant identifier  </p>
-<p><code>string namespaceId</code><br>The namespace identifier  </p>
-<p><code>string typeId</code><br>The type identifier  </p>
-<h4 id="request-body-4">Request body</h4>
-<p>Serialized ACL</p>
-<h3 id="response-10">Response</h3>
-<p>The response includes a status code.</p>
-<h3 id="net-client-libraries-method-10">.NET client libraries method</h3>
-<pre><code class="lang-csharp">   Task UpdateTypeAccessControlListAsync(string typeId, AccessControlList typeAcl);
-</code></pre><hr>
 <h2 id="get-type-owner"><code>Get Type Owner</code></h2>
-<p>Get the Owner of the specified type. For more information on Owners, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
+<p>Gets the Owner of the specified type. For more information on Owners, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <h3 id="request-11">Request</h3>
 <pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Owner
 </code></pre><h3 id="parameters-11">Parameters</h3>
@@ -2116,7 +2116,7 @@ in the request body, a Conflict error response is returned and the client librar
 <pre><code class="lang-csharp">   Task&lt;Trustee&gt; GetTypeOwnerAsync(string typeId);
 </code></pre><hr>
 <h2 id="update-type-owner"><code>Update Type Owner</code></h2>
-<p>Update the Owner of the specified type. For more information on Owners, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
+<p>Updates the Owner of the specified type. For more information on Owners, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <p>Note that this does not update the Owner for the associated types. For further details about type referencing please see: <a href="#type-reusability">Type Reusability</a>.</p>
 <h3 id="request-12">Request</h3>
 <pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Owner

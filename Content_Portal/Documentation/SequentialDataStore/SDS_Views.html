@@ -703,94 +703,14 @@ with SdsStreamViews. When working in .NET, convenient SDS .NET client libraries 
 interface, accessed using the <code>SdsService.GetMetadataService()</code> helper, defines the available functions. 
 See <a href="#stream-views">Stream Views</a> for general SdsStreamView information.</p>
 <hr>
-<h2 id="get-stream-view"><code>Get Stream View</code></h2>
-<p>Returns the stream view corresponding to the specified streamViewId within a given namespace.</p>
-<h3 id="request">Request</h3>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
-</code></pre><h3 id="parameters">Parameters</h3>
-<p><code>string tenantId</code><br>The tenant identifier  </p>
-<p><code>string namespaceId</code><br>The namespace identifier  </p>
-<p><code>string streamViewId</code><br>The stream view identifier  </p>
-<h3 id="response">Response</h3>
-<p>The response includes a status code and a response body.</p>
-<h3 id="response-body">Response body</h3>
-<p>The requested SdsStreamView.</p>
-<h4 id="example-response-body">Example response body</h4>
-<pre><code class="lang-json">HTTP/1.1 200
-Content-Type: application/json
-{  
-   &quot;Id&quot;:&quot;StreamView&quot;,
-   &quot;Name&quot;:&quot;StreamView&quot;,
-   &quot;SourceTypeId&quot;:&quot;Simple&quot;,
-   &quot;TargetTypeId&quot;:&quot;Simple3&quot;,
-   &quot;Properties&quot;:[  
-      {  
-         &quot;SourceId&quot;:&quot;Time&quot;,
-         &quot;TargetId&quot;:&quot;Time&quot;
-      },
-      {  
-         &quot;SourceId&quot;:&quot;State&quot;,
-         &quot;TargetId&quot;:&quot;State&quot;
-      },
-      {  
-         &quot;SourceId&quot;:&quot;Measurement&quot;,
-         &quot;TargetId&quot;:&quot;Value&quot;
-      }
-   ]
-}
-</code></pre><h3 id="net-client-libraries-method">.NET client libraries method</h3>
-<pre><code class="lang-csharp">   Task&lt;SdsStreamView&gt; GetStreamViewAsync(string streamViewId);
-</code></pre><hr>
-<h2 id="get-stream-view-map"><code>Get Stream View Map</code></h2>
-<p>Returns the stream view map corresponding to the specified streamViewId within a given namespace.</p>
-<h3 id="request-1">Request</h3>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Map
-</code></pre><h3 id="parameters-1">Parameters</h3>
-<p><code>string tenantId</code><br>The tenant identifier  </p>
-<p><code>string namespaceId</code><br>The namespace identifier  </p>
-<p><code>string streamViewId</code><br>The stream view identifier  </p>
-<h3 id="response-1">Response</h3>
-<p> The response includes a status code and a response body.</p>
-<h3 id="response-body-1">Response body</h3>
-<p>The requested SdsStreamView.</p>
-<h4 id="example-response-body-1">Example response body</h4>
-<pre><code class="lang-json">HTTP/1.1 200
-Content-Type: application/json
-
-{  
-   &quot;SourceTypeId&quot;:&quot;Simple&quot;,
-   &quot;TargetTypeId&quot;:&quot;Simple3&quot;,
-   &quot;Properties&quot;:[  
-      {  
-         &quot;SourceId&quot;:&quot;Time&quot;,
-         &quot;TargetId&quot;:&quot;Time&quot;
-      },
-      {  
-         &quot;SourceId&quot;:&quot;Measurement&quot;,
-         &quot;TargetId&quot;:&quot;Value&quot;,
-         &quot;Mode&quot;:20
-      },
-      {  
-         &quot;SourceId&quot;:&quot;State&quot;,
-         &quot;Mode&quot;:2
-      },
-      {  
-         &quot;TargetId&quot;:&quot;State&quot;,
-         &quot;Mode&quot;:1 
-      }
-   ]
-}
-</code></pre><h3 id="net-client-libraries-method-1">.NET client libraries method</h3>
-<pre><code class="lang-csharp">   Task&lt;SdsStreamViewMap&gt; GetStreamViewMapAsync(string streamViewId);
-</code></pre><hr>
 <h2 id="get-stream-views"><code>Get Stream Views</code></h2>
 <p>Returns a list of stream views within a given namespace.</p>
 <p>If specifying the optional search query parameter, the list of stream views returned will match 
 the search criteria. If the search query parameter is not specified, the list will include 
 all stream views in the namespace. See <a class="xref" href="Searching.html">Search in SDS</a> for information about specifying those respective parameters.</p>
-<h3 id="request-2">Request</h3>
+<h3 id="request">Request</h3>
 <pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews?query={query}&amp;skip={skip}&amp;count={count}&amp;orderby={orderby}
-</code></pre><h3 id="parameters-2">Parameters</h3>
+</code></pre><h3 id="parameters">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string query</code><br>An optional parameter representing a string search. 
@@ -801,11 +721,11 @@ If not specified, a default value of 0 is used.</p>
 <p><code>int count</code><br>An optional parameter representing the maximum number of SdsStreamViews to retrieve. 
 If not specified, a default value of 100 is used.</p>
 <p><code>string orderby</code><br>An optional parameter representing sorted order which SdsStreamViews will be returned. A field name is required. The sorting is based   on the stored values for the given field (of type string). For example, <code>orderby=name</code> would sort the returned results by the      <code>name</code> values (ascending by default). Additionally, a value can be provided along with the field name to identify whether to sort       ascending or descending, by using values <code>asc</code> or <code>desc</code>, respectively. For example, <code>orderby=name desc</code> would sort the returned   results by the <code>name</code> values, descending. If no value is specified, there is no sorting of results.</p>
-<h3 id="response-2">Response</h3>
+<h3 id="response">Response</h3>
 <p>The response includes a status code and a response body.</p>
-<h3 id="response-body-2">Response body</h3>
+<h3 id="response-body">Response body</h3>
 <p>A collection of zero or more SdsStreamViews.</p>
-<h4 id="example-response-body-2">Example response body</h4>
+<h4 id="example-response-body">Example response body</h4>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 [  
@@ -836,8 +756,88 @@ Content-Type: application/json
      ]
   }
 ]
-</code></pre><h3 id="net-client-libraries-method-2">.NET client libraries method</h3>
+</code></pre><h3 id="net-client-libraries-method">.NET client libraries method</h3>
 <pre><code class="lang-csharp">   Task&lt;IEnumerable&lt;SdsStreamView&gt;&gt; GetStreamViewsAsync(int skip = 0, int count = 100);
+</code></pre><hr>
+<h2 id="get-stream-view"><code>Get Stream View</code></h2>
+<p>Returns the stream view corresponding to the specified streamViewId within a given namespace.</p>
+<h3 id="request-1">Request</h3>
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
+</code></pre><h3 id="parameters-1">Parameters</h3>
+<p><code>string tenantId</code><br>The tenant identifier  </p>
+<p><code>string namespaceId</code><br>The namespace identifier  </p>
+<p><code>string streamViewId</code><br>The stream view identifier  </p>
+<h3 id="response-1">Response</h3>
+<p>The response includes a status code and a response body.</p>
+<h3 id="response-body-1">Response body</h3>
+<p>The requested SdsStreamView.</p>
+<h4 id="example-response-body-1">Example response body</h4>
+<pre><code class="lang-json">HTTP/1.1 200
+Content-Type: application/json
+{  
+   &quot;Id&quot;:&quot;StreamView&quot;,
+   &quot;Name&quot;:&quot;StreamView&quot;,
+   &quot;SourceTypeId&quot;:&quot;Simple&quot;,
+   &quot;TargetTypeId&quot;:&quot;Simple3&quot;,
+   &quot;Properties&quot;:[  
+      {  
+         &quot;SourceId&quot;:&quot;Time&quot;,
+         &quot;TargetId&quot;:&quot;Time&quot;
+      },
+      {  
+         &quot;SourceId&quot;:&quot;State&quot;,
+         &quot;TargetId&quot;:&quot;State&quot;
+      },
+      {  
+         &quot;SourceId&quot;:&quot;Measurement&quot;,
+         &quot;TargetId&quot;:&quot;Value&quot;
+      }
+   ]
+}
+</code></pre><h3 id="net-client-libraries-method-1">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task&lt;SdsStreamView&gt; GetStreamViewAsync(string streamViewId);
+</code></pre><hr>
+<h2 id="get-stream-view-map"><code>Get Stream View Map</code></h2>
+<p>Returns the stream view map corresponding to the specified streamViewId within a given namespace.</p>
+<h3 id="request-2">Request</h3>
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Map
+</code></pre><h3 id="parameters-2">Parameters</h3>
+<p><code>string tenantId</code><br>The tenant identifier  </p>
+<p><code>string namespaceId</code><br>The namespace identifier  </p>
+<p><code>string streamViewId</code><br>The stream view identifier  </p>
+<h3 id="response-2">Response</h3>
+<p> The response includes a status code and a response body.</p>
+<h3 id="response-body-2">Response body</h3>
+<p>The requested SdsStreamView.</p>
+<h4 id="example-response-body-2">Example response body</h4>
+<pre><code class="lang-json">HTTP/1.1 200
+Content-Type: application/json
+
+{  
+   &quot;SourceTypeId&quot;:&quot;Simple&quot;,
+   &quot;TargetTypeId&quot;:&quot;Simple3&quot;,
+   &quot;Properties&quot;:[  
+      {  
+         &quot;SourceId&quot;:&quot;Time&quot;,
+         &quot;TargetId&quot;:&quot;Time&quot;
+      },
+      {  
+         &quot;SourceId&quot;:&quot;Measurement&quot;,
+         &quot;TargetId&quot;:&quot;Value&quot;,
+         &quot;Mode&quot;:20
+      },
+      {  
+         &quot;SourceId&quot;:&quot;State&quot;,
+         &quot;Mode&quot;:2
+      },
+      {  
+         &quot;TargetId&quot;:&quot;State&quot;,
+         &quot;Mode&quot;:1 
+      }
+   ]
+}
+</code></pre><h3 id="net-client-libraries-method-2">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task&lt;SdsStreamViewMap&gt; GetStreamViewMapAsync(string streamViewId);
 </code></pre><hr>
 <h2 id="get-or-create-stream-view"><code>Get or Create Stream View</code></h2>
 <p>If a stream view with a matching identifier already exists, the stream view passed in is compared with the existing stream view.
@@ -890,7 +890,7 @@ The tenant identifier  </p>
 <pre><code class="lang-csharp">   Task DeleteStreamViewAsync(string streamViewId);
 </code></pre><hr>
 <h2 id="get-stream-views-access-control-list"><code>Get Stream Views Access Control List</code></h2>
-<p>Get the default ACL for the Stream Views collection. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
+<p>Gets the default ACL for the Stream Views collection. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <h3 id="request-6">Request</h3>
 <pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/StreamViews
 </code></pre><h3 id="parameters-6">Parameters</h3>
@@ -951,14 +951,28 @@ The tenant identifier  </p>
 <pre><code class="lang-csharp">   Task&lt;AccessControlList&gt; GetStreamViewsAccessControlListAsync();
    Task&lt;SdsETagResult&lt;AccessControlList&gt;&gt; GetStreamViewsAccessControlListWithETagAsync();
 </code></pre><hr>
-<h2 id="patch-stream-views-access-control-list"><code>Patch Stream Views Access Control List</code></h2>
-<p>Update the default ACL for the Stream Views collection using an <a href="https://tools.ietf.org/html/rfc6902">RFC 6902</a> compliant JSON Patch document. This allows the ACL to be modified without submitting the entire Access Control List. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
+<h2 id="update-stream-views-access-control-list"><code>Update Stream Views Access Control List</code></h2>
+<p>Updates the default ACL for the Stream Views collection. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <h3 id="request-7">Request</h3>
-<pre><code class="lang-text">   PATCH api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/StreamViews
+<pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/StreamViews
 </code></pre><h3 id="parameters-7">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <h4 id="request-body-2">Request body</h4>
+<p>Serialized ACL</p>
+<h3 id="response-7">Response</h3>
+<p>The response includes a status code.</p>
+<h3 id="net-client-libraries-method-7">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task UpdateStreamViewsAccessControlListAsync(AccessControlList viewsAcl);
+</code></pre><hr>
+<h2 id="patch-stream-views-access-control-list"><code>Patch Stream Views Access Control List</code></h2>
+<p>Updates the default ACL for the Stream Views collection using an <a href="https://tools.ietf.org/html/rfc6902">RFC 6902</a> compliant JSON Patch document. This allows the ACL to be modified without submitting the entire Access Control List. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
+<h3 id="request-8">Request</h3>
+<pre><code class="lang-text">   PATCH api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/StreamViews
+</code></pre><h3 id="parameters-8">Parameters</h3>
+<p><code>string tenantId</code><br>The tenant identifier  </p>
+<p><code>string namespaceId</code><br>The namespace identifier  </p>
+<h4 id="request-body-3">Request body</h4>
 <p>An <a href="https://tools.ietf.org/html/rfc6902">RFC 6902</a> JSON Patch document that will be applied to the ACL.</p>
 <p>The example below inserts a new <strong>Access Control Entry</strong> into the <strong>Access Control List</strong> giving <strong>Read</strong> and <strong>Write</strong> access to the role with the Id <code>11111111-1111-1111-1111-111111111111</code>. The remainder of the existing ACL remains unmodified.</p>
 <pre><code class="lang-json">[
@@ -991,7 +1005,7 @@ The tenant identifier  </p>
 </tr>
 </tbody>
 </table>
-<h3 id="response-7">Response</h3>
+<h3 id="response-8">Response</h3>
 <p>The response includes a status code.</p>
 <table>
 <thead>
@@ -1029,26 +1043,12 @@ The tenant identifier  </p>
 </tr>
 </tbody>
 </table>
-<h3 id="net-client-libraries-method-7">.NET client libraries method</h3>
+<h3 id="net-client-libraries-method-8">.NET client libraries method</h3>
 <pre><code class="lang-csharp">   Task PatchStreamViewsAccessControlListAsync(JsonPatchDocument&lt;AccessControlList&gt; streamViewAclPatch);
    Task PatchStreamViewsAccessControlListWithETagAsync(string etag, JsonPatchDocument&lt;AccessControlList&gt; streamViewAclPatch);
 </code></pre><hr>
-<h2 id="update-stream-views-access-control-list"><code>Update Stream Views Access Control List</code></h2>
-<p>Update the default ACL for the Stream Views collection. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
-<h3 id="request-8">Request</h3>
-<pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/StreamViews
-</code></pre><h3 id="parameters-8">Parameters</h3>
-<p><code>string tenantId</code><br>The tenant identifier  </p>
-<p><code>string namespaceId</code><br>The namespace identifier  </p>
-<h4 id="request-body-3">Request body</h4>
-<p>Serialized ACL</p>
-<h3 id="response-8">Response</h3>
-<p>The response includes a status code.</p>
-<h3 id="net-client-libraries-method-8">.NET client libraries method</h3>
-<pre><code class="lang-csharp">   Task UpdateStreamViewsAccessControlListAsync(AccessControlList viewsAcl);
-</code></pre><hr>
 <h2 id="get-stream-view-access-control-list"><code>Get Stream View Access Control List</code></h2>
-<p>Get the ACL of the specified stream view. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
+<p>Gets the ACL of the specified stream view. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <h3 id="request-9">Request</h3>
 <pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/AccessControl
 </code></pre><h3 id="parameters-9">Parameters</h3>
@@ -1110,15 +1110,30 @@ The tenant identifier  </p>
 <pre><code class="lang-csharp">   Task&lt;AccessControlList&gt; GetStreamViewAccessControlListAsync(string streamViewId);
    Task&lt;SdsETagResult&lt;AccessControlList&gt;&gt; GetStreamViewAccessControlListWithETagAsync(string streamViewId);
 </code></pre><hr>
-<h2 id="patch-stream-view-access-control-list"><code>Patch Stream View Access Control List</code></h2>
-<p>Update the ACL of the specified stream view using an <a href="https://tools.ietf.org/html/rfc6902">RFC 6902</a> compliant JSON Patch document. This allows the ACL to be modified without submitting the entire Access Control List. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
+<h2 id="update-stream-view-access-control-list"><code>Update Stream View Access Control List</code></h2>
+<p>Updates the ACL of the specified stream view. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <h3 id="request-10">Request</h3>
-<pre><code class="lang-text">   PATCH api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/AccessControl
+<pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/AccessControl
 </code></pre><h3 id="parameters-10">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string streamViewId</code><br>The stream view identifier  </p>
 <h4 id="request-body-4">Request body</h4>
+<p>Serialized ACL</p>
+<h3 id="response-10">Response</h3>
+<p>The response includes a status code.</p>
+<h3 id="net-client-libraries-method-10">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task UpdateStreamViewAccessControlListAsync(string streamViewId, AccessControlList viewAcl);
+</code></pre><hr>
+<h2 id="patch-stream-view-access-control-list"><code>Patch Stream View Access Control List</code></h2>
+<p>Updates the ACL of the specified stream view using an <a href="https://tools.ietf.org/html/rfc6902">RFC 6902</a> compliant JSON Patch document. This allows the ACL to be modified without submitting the entire Access Control List. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
+<h3 id="request-11">Request</h3>
+<pre><code class="lang-text">   PATCH api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/AccessControl
+</code></pre><h3 id="parameters-11">Parameters</h3>
+<p><code>string tenantId</code><br>The tenant identifier  </p>
+<p><code>string namespaceId</code><br>The namespace identifier  </p>
+<p><code>string streamViewId</code><br>The stream view identifier  </p>
+<h4 id="request-body-5">Request body</h4>
 <p>An <a href="https://tools.ietf.org/html/rfc6902">RFC 6902</a> JSON Patch document that will be applied to the ACL.</p>
 <p>The example below inserts a new <strong>Access Control Entry</strong> into the <strong>Access Control List</strong> giving <strong>Read</strong> and <strong>Write</strong> access to the role with the Id <code>11111111-1111-1111-1111-111111111111</code>. The remainder of the existing ACL remains unmodified.</p>
 <pre><code class="lang-json">[
@@ -1151,7 +1166,7 @@ The tenant identifier  </p>
 </tr>
 </tbody>
 </table>
-<h3 id="response-10">Response</h3>
+<h3 id="response-11">Response</h3>
 <p>The response includes a status code.</p>
 <table>
 <thead>
@@ -1189,27 +1204,12 @@ The tenant identifier  </p>
 </tr>
 </tbody>
 </table>
-<h3 id="net-client-libraries-method-10">.NET client libraries method</h3>
+<h3 id="net-client-libraries-method-11">.NET client libraries method</h3>
 <pre><code class="lang-csharp">   Task PatchStreamViewAccessControlListAsync(string streamViewId, JsonPatchDocument&lt;AccessControlList&gt; streamViewAclPatch);
    Task PatchStreamViewAccessControlListWithETagAsync(string streamViewId, string etag, JsonPatchDocument&lt;AccessControlList&gt; streamViewAclPatch);
 </code></pre><hr>
-<h2 id="update-stream-view-access-control-list"><code>Update Stream View Access Control List</code></h2>
-<p>Update the ACL of the specified stream view. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
-<h3 id="request-11">Request</h3>
-<pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/AccessControl
-</code></pre><h3 id="parameters-11">Parameters</h3>
-<p><code>string tenantId</code><br>The tenant identifier  </p>
-<p><code>string namespaceId</code><br>The namespace identifier  </p>
-<p><code>string streamViewId</code><br>The stream view identifier  </p>
-<h4 id="request-body-5">Request body</h4>
-<p>Serialized ACL</p>
-<h3 id="response-11">Response</h3>
-<p>The response includes a status code.</p>
-<h3 id="net-client-libraries-method-11">.NET client libraries method</h3>
-<pre><code class="lang-csharp">   Task UpdateStreamViewAccessControlListAsync(string streamViewId, AccessControlList viewAcl);
-</code></pre><hr>
 <h2 id="get-stream-view-owner"><code>Get Stream View Owner</code></h2>
-<p>Get the Owner of the specified stream view. For more information on Owners, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
+<p>Gets the Owner of the specified stream view. For more information on Owners, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <h3 id="request-12">Request</h3>
 <pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Owner
 </code></pre><h3 id="parameters-12">Parameters</h3>
@@ -1224,7 +1224,7 @@ The tenant identifier  </p>
 <pre><code class="lang-csharp">   Task&lt;Trustee&gt; GetStreamViewOwnerAsync(string streamViewId);
 </code></pre><hr>
 <h2 id="update-stream-view-owner"><code>Update Stream View Owner</code></h2>
-<p>Update the Owner of the specified stream view. For more information on Owners, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
+<p>Updates the Owner of the specified stream view. For more information on Owners, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <h3 id="request-13">Request</h3>
 <pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Owner
 </code></pre><h3 id="parameters-13">Parameters</h3>

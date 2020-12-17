@@ -240,39 +240,15 @@ available. The <code>ISdsMetadataService</code> interface, accessed using the <c
 defines the available functions. See <a href="#streams">Streams</a> above for general 
 information related to SdsStream. </p>
 <hr>
-<h2 id="get-stream"><code>Get Stream</code></h2>
-<p>Returns the specified stream.</p>
-<h3 id="request">Request</h3>
-<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
-</code></pre><h3 id="parameters">Parameters</h3>
-<p><code>string tenantId</code><br>The tenant identifier</p>
-<p><code>string namespaceId</code><br>The namespace identifier  </p>
-<p><code>string streamId</code><br>The stream identifier</p>
-<h3 id="response">Response</h3>
-<p>The response includes a status code and a response body.</p>
-<h4 id="response-body">Response body</h4>
-<p>The requested SdsStream</p>
-<h4 id="example-response-body">Example response body</h4>
-<pre><code class="lang-json">HTTP/1.1 200
-Content-Type: application/json
-
-{  
-   &quot;Id&quot;:&quot;Simple&quot;,
-   &quot;Name&quot;:&quot;Simple&quot;,
-   &quot;TypeId&quot;:&quot;Simple&quot;,
-}
-</code></pre><h3 id="net-client-libraries-method">.NET client libraries method</h3>
-<pre><code class="lang-csharp">   Task&lt;SdsStream&gt; GetStreamAsync(string streamId);
-</code></pre><hr>
 <h2 id="get-streams"><code>Get Streams</code></h2>
 <p>Returns a list of streams.</p>
 <p>If specifying the optional search query parameter, the list of streams returned will match 
 the search criteria. If the search query parameter is not specified, the list will include 
 all streams in the namespace. See <a class="xref" href="Searching.html#search-for-streams">Search in SDS</a> 
 for information about specifying those respective parameters.</p>
-<h3 id="request-1">Request</h3>
+<h3 id="request">Request</h3>
 <pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query={query}&amp;skip={skip}&amp;count={count}&amp;orderby={orderby}
-</code></pre><h3 id="parameters-1">Parameters</h3>
+</code></pre><h3 id="parameters">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string query</code><br>[Optional] Parameter representing a string search. 
@@ -282,11 +258,11 @@ If not specified, a default value of 0 is used.</p>
 <p><code>int count</code><br>[Optional] Parameter representing the maximum number of SdsStreams to retrieve. 
 If not specified, a default value of 100 is used.</p>
 <p><code>string orderby</code><br>[Optional] Parameter representing sorted order which SdsStreams will be returned. A field name is required. The sorting is based on the stored values for the given field (of type string). For example, <code>orderby=name</code> would sort the returned results by the <code>name</code> values (ascending by default). Additionally, a value can be provided along with the field name to identify whether to sort ascending or descending, by using values <code>asc</code> or <code>desc</code>, respectively. For example, <code>orderby=name desc</code> would sort the returned results by the <code>name</code> values, descending. If no value is specified, there is no sorting of results.</p>
-<h3 id="response-1">Response</h3>
+<h3 id="response">Response</h3>
 <p>The response includes a status code and a response body.</p>
-<h4 id="response-body-1">Response body</h4>
+<h4 id="response-body">Response body</h4>
 <p>A collection of zero or more SdsStreams</p>
-<h4 id="example-response-body-1">Example response body</h4>
+<h4 id="example-response-body">Example response body</h4>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -310,9 +286,33 @@ Content-Type: application/json
    },
    ...
 ]
-</code></pre><h3 id="net-client-libraries-method-1">.NET client libraries method</h3>
+</code></pre><h3 id="net-client-libraries-method">.NET client libraries method</h3>
 <pre><code class="lang-csharp">   Task&lt;IEnumerable&lt;SdsStream&gt;&gt; GetStreamsAsync(string query = &quot;&quot;, int skip = 0, 
       int count = 100);
+</code></pre><hr>
+<h2 id="get-stream"><code>Get Stream</code></h2>
+<p>Returns the specified stream.</p>
+<h3 id="request-1">Request</h3>
+<pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
+</code></pre><h3 id="parameters-1">Parameters</h3>
+<p><code>string tenantId</code><br>The tenant identifier</p>
+<p><code>string namespaceId</code><br>The namespace identifier  </p>
+<p><code>string streamId</code><br>The stream identifier</p>
+<h3 id="response-1">Response</h3>
+<p>The response includes a status code and a response body.</p>
+<h4 id="response-body-1">Response body</h4>
+<p>The requested SdsStream</p>
+<h4 id="example-response-body-1">Example response body</h4>
+<pre><code class="lang-json">HTTP/1.1 200
+Content-Type: application/json
+
+{  
+   &quot;Id&quot;:&quot;Simple&quot;,
+   &quot;Name&quot;:&quot;Simple&quot;,
+   &quot;TypeId&quot;:&quot;Simple&quot;,
+}
+</code></pre><h3 id="net-client-libraries-method-1">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task&lt;SdsStream&gt; GetStreamAsync(string streamId);
 </code></pre><hr>
 <h2 id="get-stream-type"><code>Get Stream Type</code></h2>
 <p>Returns the type definition that is associated with a given stream.</p>
@@ -418,7 +418,7 @@ Defined Indexes and PropertyOverrides are removed when updating a stream type. <
 <pre><code class="lang-csharp">   Task DeleteStreamAsync(string streamId);
 </code></pre><hr>
 <h2 id="get-streams-access-control-list"><code>Get Streams Access Control List</code></h2>
-<p>Get the default ACL for the Streams collection. For more information on ACL, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
+<p>Gets the default ACL for the Streams collection. For more information on ACL, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <h3 id="request-7">Request</h3>
 <pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Streams
 </code></pre><h3 id="parameters-7">Parameters</h3>
@@ -479,14 +479,28 @@ Defined Indexes and PropertyOverrides are removed when updating a stream type. <
 <pre><code class="lang-csharp">   Task&lt;AccessControlList&gt; GetStreamsAccessControlListAsync();
    Task&lt;SdsETagResult&lt;AccessControlList&gt;&gt; GetStreamsAccessControlListWithETagAsync();
 </code></pre><hr>
-<h2 id="patch-streams-access-control-list"><code>Patch Streams Access Control List</code></h2>
-<p>Update the default ACL for the Streams collection using an <a href="https://tools.ietf.org/html/rfc6902">RFC 6902</a> compliant JSON Patch document. This allows the ACL to be modified without submitting the entire Access Control List. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
+<h2 id="update-streams-access-control-list"><code>Update Streams Access Control List</code></h2>
+<p>Updates the default ACL for the Streams collection. For more information on ACL, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <h3 id="request-8">Request</h3>
-<pre><code class="lang-text">   PATCH api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Streams
+<pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Streams
 </code></pre><h3 id="parameters-8">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <h4 id="request-body-3">Request body</h4>
+<p>Serialized ACL</p>
+<h3 id="response-8">Response</h3>
+<p>The response includes a status code.</p>
+<h3 id="net-client-libraries-method-8">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task UpdateStreamsAccessControlListAsync(AccessControlList streamsAcl);
+</code></pre><hr>
+<h2 id="patch-streams-access-control-list"><code>Patch Streams Access Control List</code></h2>
+<p>Updates the default ACL for the Streams collection using an <a href="https://tools.ietf.org/html/rfc6902">RFC 6902</a> compliant JSON Patch document. This allows the ACL to be modified without submitting the entire Access Control List. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
+<h3 id="request-9">Request</h3>
+<pre><code class="lang-text">   PATCH api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Streams
+</code></pre><h3 id="parameters-9">Parameters</h3>
+<p><code>string tenantId</code><br>The tenant identifier  </p>
+<p><code>string namespaceId</code><br>The namespace identifier  </p>
+<h4 id="request-body-4">Request body</h4>
 <p>An <a href="https://tools.ietf.org/html/rfc6902">RFC 6902</a> JSON Patch document that will be applied to the ACL.</p>
 <p>The example below inserts a new <strong>Access Control Entry</strong> into the <strong>Access Control List</strong> giving <strong>Read</strong> and <strong>Write</strong> access to the role with the Id <code>11111111-1111-1111-1111-111111111111</code>. The remainder of the existing ACL remains unmodified.</p>
 <pre><code class="lang-json">[
@@ -519,7 +533,7 @@ Defined Indexes and PropertyOverrides are removed when updating a stream type. <
 </tr>
 </tbody>
 </table>
-<h3 id="response-8">Response</h3>
+<h3 id="response-9">Response</h3>
 <p>The response includes a status code.</p>
 <table>
 <thead>
@@ -557,26 +571,12 @@ Defined Indexes and PropertyOverrides are removed when updating a stream type. <
 </tr>
 </tbody>
 </table>
-<h3 id="net-client-libraries-method-8">.NET client libraries method</h3>
+<h3 id="net-client-libraries-method-9">.NET client libraries method</h3>
 <pre><code class="lang-csharp">   Task PatchStreamsAccessControlListAsync(JsonPatchDocument&lt;AccessControlList&gt; streamsAclPatch);
    Task PatchStreamsAccessControlListWithETagAsync(string etag, JsonPatchDocument&lt;AccessControlList&gt; streamsAclPatch);
 </code></pre><hr>
-<h2 id="update-streams-access-control-list"><code>Update Streams Access Control List</code></h2>
-<p>Update the default ACL for the Streams collection. For more information on ACL, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
-<h3 id="request-9">Request</h3>
-<pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Streams
-</code></pre><h3 id="parameters-9">Parameters</h3>
-<p><code>string tenantId</code><br>The tenant identifier  </p>
-<p><code>string namespaceId</code><br>The namespace identifier  </p>
-<h4 id="request-body-4">Request body</h4>
-<p>Serialized ACL</p>
-<h3 id="response-9">Response</h3>
-<p>The response includes a status code.</p>
-<h3 id="net-client-libraries-method-9">.NET client libraries method</h3>
-<pre><code class="lang-csharp">   Task UpdateStreamsAccessControlListAsync(AccessControlList streamsAcl);
-</code></pre><hr>
 <h2 id="get-stream-access-control-list"><code>Get Stream Access Control List</code></h2>
-<p>Get the ACL of the specified stream. For more information on ACL, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
+<p>Gets the ACL of the specified stream. For more information on ACL, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <h3 id="request-10">Request</h3>
 <pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/AccessControl
 </code></pre><h3 id="parameters-10">Parameters</h3>
@@ -638,15 +638,30 @@ Defined Indexes and PropertyOverrides are removed when updating a stream type. <
 <pre><code class="lang-csharp">   Task&lt;AccessControlList&gt; GetStreamAccessControlListAsync(string streamId);
    Task&lt;SdsETagResult&lt;AccessControlList&gt;&gt; GetStreamAccessControlListWithETagAsync(string streamId);   
 </code></pre><hr>
-<h2 id="patch-stream-access-control-list"><code>Patch Stream Access Control List</code></h2>
-<p>Update the ACL of the specified stream using an <a href="https://tools.ietf.org/html/rfc6902">RFC 6902</a> compliant JSON Patch document. This allows the ACL to be modified without submitting the entire Access Control List. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
+<h2 id="update-stream-access-control-list"><code>Update Stream Access Control List</code></h2>
+<p>Updates the ACL of the specified stream. For more information on ACL, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <h3 id="request-11">Request</h3>
-<pre><code class="lang-text">   PATCH api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/AccessControl
+<pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/AccessControl
 </code></pre><h3 id="parameters-11">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string streamId</code><br>The stream identifier  </p>
 <h4 id="request-body-5">Request body</h4>
+<p>Serialized ACL</p>
+<h3 id="response-11">Response</h3>
+<p>The response includes a status code.</p>
+<h3 id="net-client-libraries-method-11">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task UpdateStreamAccessControlListAsync(string streamId, AccessControlList streamAcl);
+</code></pre><hr>
+<h2 id="patch-stream-access-control-list"><code>Patch Stream Access Control List</code></h2>
+<p>Updates the ACL of the specified stream using an <a href="https://tools.ietf.org/html/rfc6902">RFC 6902</a> compliant JSON Patch document. This allows the ACL to be modified without submitting the entire Access Control List. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
+<h3 id="request-12">Request</h3>
+<pre><code class="lang-text">   PATCH api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/AccessControl
+</code></pre><h3 id="parameters-12">Parameters</h3>
+<p><code>string tenantId</code><br>The tenant identifier  </p>
+<p><code>string namespaceId</code><br>The namespace identifier  </p>
+<p><code>string streamId</code><br>The stream identifier  </p>
+<h4 id="request-body-6">Request body</h4>
 <p>An <a href="https://tools.ietf.org/html/rfc6902">RFC 6902</a> JSON Patch document that will be applied to the ACL.</p>
 <p>The example below inserts a new <strong>Access Control Entry</strong> into the <strong>Access Control List</strong> giving <strong>Read</strong> and <strong>Write</strong> access to the role with the Id <code>11111111-1111-1111-1111-111111111111</code>. The remainder of the existing ACL remains unmodified.</p>
 <pre><code class="lang-json">[
@@ -679,7 +694,7 @@ Defined Indexes and PropertyOverrides are removed when updating a stream type. <
 </tr>
 </tbody>
 </table>
-<h3 id="response-11">Response</h3>
+<h3 id="response-12">Response</h3>
 <p>The response includes a status code.</p>
 <table>
 <thead>
@@ -717,27 +732,12 @@ Defined Indexes and PropertyOverrides are removed when updating a stream type. <
 </tr>
 </tbody>
 </table>
-<h3 id="net-client-libraries-method-11">.NET client libraries method</h3>
+<h3 id="net-client-libraries-method-12">.NET client libraries method</h3>
 <pre><code class="lang-csharp">   Task PatchStreamAccessControlListAsync(string streamId, JsonPatchDocument&lt;AccessControlList&gt; streamAclPatch);
    Task PatchStreamAccessControlListWithETagAsync(string streamId, string etag, JsonPatchDocument&lt;AccessControlList&gt; streamAclPatch);
 </code></pre><hr>
-<h2 id="update-stream-access-control-list"><code>Update Stream Access Control List</code></h2>
-<p>Update the ACL of the specified stream. For more information on ACL, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
-<h3 id="request-12">Request</h3>
-<pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/AccessControl
-</code></pre><h3 id="parameters-12">Parameters</h3>
-<p><code>string tenantId</code><br>The tenant identifier  </p>
-<p><code>string namespaceId</code><br>The namespace identifier  </p>
-<p><code>string streamId</code><br>The stream identifier  </p>
-<h4 id="request-body-6">Request body</h4>
-<p>Serialized ACL</p>
-<h3 id="response-12">Response</h3>
-<p>The response includes a status code.</p>
-<h3 id="net-client-libraries-method-12">.NET client libraries method</h3>
-<pre><code class="lang-csharp">   Task UpdateStreamAccessControlListAsync(string streamId, AccessControlList streamAcl);
-</code></pre><hr>
 <h2 id="get-stream-owner"><code>Get Stream Owner</code></h2>
-<p>Get the <code>Owner</code> of the specified stream. For more information, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
+<p>Gets the <code>Owner</code> of the specified stream. For more information, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <h3 id="request-13">Request</h3>
 <pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Owner
 </code></pre><h3 id="parameters-13">Parameters</h3>
@@ -752,7 +752,7 @@ Defined Indexes and PropertyOverrides are removed when updating a stream type. <
 <pre><code class="lang-csharp">   Task&lt;Trustee&gt; GetStreamOwnerAsync(string streamId);
 </code></pre><hr>
 <h2 id="update-stream-owner"><code>Update Stream Owner</code></h2>
-<p>Update the <code>Owner</code> of the specified stream. For more information, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
+<p>Updates the <code>Owner</code> of the specified stream. For more information, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <h3 id="request-14">Request</h3>
 <pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Owner
 </code></pre><h3 id="parameters-14">Parameters</h3>

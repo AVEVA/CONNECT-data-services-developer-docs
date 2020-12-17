@@ -8,10 +8,10 @@ references:
   name: Client Roles
   href: Content_Portal/Documentation/Management/Account_ClientRole_1.html
 - uid: AccountManagementConcepts
-  name: Account Management Concepts
+  name: Tenant Management Concepts
   href: Content_Portal/Concepts/Account_Management_Concepts.html
 - uid: AccountManagementOverview
-  name: Account Management
+  name: Tenant Management
   href: Content_Portal/Documentation/Management/Management_Overview.html
 - uid: AccountNamespace_1
   name: Namespaces
@@ -87,7 +87,7 @@ references:
   href: Content_Portal/How_To_Guides/Assets/create-an-asset.html
 - uid: CredentialManagement
   name: Credential Management
-  href: Content_Portal/Concepts/Credential_Management.html
+  href: Content_Portal/Concepts/credential-management.html
 - uid: dataIngress
   name: Data Ingress and OSIsoft Message Format
   href: Content_Portal/Documentation/DataIngress/Data_Ingress.html
@@ -207,7 +207,7 @@ references:
   href: index.html
 - uid: LeastPrivilege
   name: Least Privilege
-  href: Content_Portal/Concepts/Least_Privilege.html
+  href: Content_Portal/Concepts/least-privilege.html
 - uid: MetadataRulesOverview
   name: Metadata Rules
   href: Content_Portal/Documentation/Metadata/Metadata_Rules_Overview.html
@@ -324,7 +324,7 @@ references:
   href: Content_Portal/Concepts/Tenant_Management_Concepts.html
 - uid: TokenManagement
   name: Token Management
-  href: Content_Portal/Concepts/Token_Management.html
+  href: Content_Portal/Concepts/token-management.html
 - uid: TrendUserInterface
   name: Trend User Interface
   href: Content_Portal/Quickstarts/Trend-UI.html

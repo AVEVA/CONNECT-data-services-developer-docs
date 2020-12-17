@@ -88,7 +88,7 @@
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
 string tenantId
-</code></pre><p>The identifier of the account to access.</p>
+</code></pre><p>The identifier of the tenant to access.</p>
 <h3 id="security">Security</h3>
 <p>A root <a class="xref" href="../Access_Control.html">AccessControlList</a> can only be retrieved if the current principal has Read access.</p>
 <h3 id="returns">Returns</h3>
@@ -127,7 +127,7 @@ string tenantId
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
 string tenantId
-</code></pre><p>The identifier of the account to modify.</p>
+</code></pre><p>The identifier of the tenant to modify.</p>
 <pre><code class="lang-csharp">[Required]
 [FromBody]
 AccessControlList newAccessControlList

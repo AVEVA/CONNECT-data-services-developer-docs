@@ -78,7 +78,7 @@
             <article class="content wrap" id="_content" data-uid="AccountNamespace_1">
 <h1 id="namespaces">Namespaces</h1>
 
-<p>A <code>Namespace</code> is a collection of SDS types, streams, and stream views. Namespace identifiers are unique within an account. Requirements
+<p>A <code>Namespace</code> is a collection of SDS types, streams, and stream views. Namespace identifiers are unique within a tenant. Requirements
 for Namespace IDs are the following:</p>
 <ul>
 <li>Must contain 100 characters or fewer</li>
@@ -87,7 +87,7 @@ for Namespace IDs are the following:</p>
 <li>Must not start or end with a period</li>
 <li>Must not start with two consecutive underscores</li>
 </ul>
-<p>In practice, namespaces may correspond to a specific set of infrastructure assets, but more commonly correspond to virtual partitions within a single set of assets. You can create one or more namespaces within an SDS account. Each namespace is effectively an instance of SDS, within which you create SDS types and streams, stream views, data views, and metadata.</p>
+<p>In practice, namespaces may correspond to a specific set of infrastructure assets, but more commonly correspond to virtual partitions within a single set of assets. You can create one or more namespaces within an SDS tenant. Each namespace is effectively an instance of SDS, within which you create SDS types and streams, stream views, data views, and metadata.</p>
 <h2 id="properties">Properties</h2>
 <p>For HTTP requests and responses, the Namespace object has the following properties and JSON-serialized body: </p>
 <table>
@@ -144,7 +144,7 @@ for Namespace IDs are the following:</p>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
 string tenantId
-</code></pre><p>The identifier of the account to access.</p>
+</code></pre><p>The identifier of the tenant to access.</p>
 <h3 id="security">Security</h3>
 <p>A <code>Namespace</code> can only be retrieved if the current principal has Read access.</p>
 <h3 id="returns">Returns</h3>
@@ -183,7 +183,7 @@ string tenantId
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
 string tenantId
-</code></pre><p>The identifier of the account to access.</p>
+</code></pre><p>The identifier of the tenant to access.</p>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
 string namespaceId
@@ -218,7 +218,7 @@ string namespaceId
 <tr>
 <td>404</td>
 <td>Nothing is returned</td>
-<td><code>Namespace</code> not found in the specified account.</td>
+<td><code>Namespace</code> not found in the specified tenant.</td>
 </tr>
 </tbody>
 </table>
@@ -231,7 +231,7 @@ string namespaceId
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
 string tenantId
-</code></pre><p>The account identifier where the <code>Namespace</code> will be created.</p>
+</code></pre><p>The tenant identifier where the <code>Namespace</code> will be created.</p>
 <pre><code class="lang-csharp">[Required]
 [FromBody]
 Namespace namespaceToCreate
@@ -272,7 +272,7 @@ string namespaceId
 <tr>
 <td>403</td>
 <td>Nothing is returned</td>
-<td>Unauthorized to create a <code>Namespace</code> in this account.</td>
+<td>Unauthorized to create a <code>Namespace</code> in this tenant.</td>
 </tr>
 <tr>
 <td>405</td>
@@ -296,7 +296,7 @@ string namespaceId
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
 string tenantId
-</code></pre><p>The identifier of the account to access.</p>
+</code></pre><p>The identifier of the tenant to access.</p>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
 string namespaceId
@@ -348,7 +348,7 @@ Namespace newProperties
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
 string tenantId
-</code></pre><p>The identifier of the account to access.</p>
+</code></pre><p>The identifier of the tenant to access.</p>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
 string namespaceId
@@ -396,7 +396,7 @@ string namespaceId
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
 string tenantId
-</code></pre><p>The identifier of the account to access.</p>
+</code></pre><p>The identifier of the tenant to access.</p>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
 string namespaceId
@@ -439,7 +439,7 @@ string namespaceId
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
 string tenantId
-</code></pre><p>The identifier of the account to access.</p>
+</code></pre><p>The identifier of the tenant to access.</p>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
 string namespaceId
@@ -491,7 +491,7 @@ AccessControlList newAccessControlList
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
 string tenantId
-</code></pre><p>The identifier of the account to access.</p>
+</code></pre><p>The identifier of the tenant to access.</p>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
 string namespaceId
@@ -534,7 +534,7 @@ string namespaceId
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
 string tenantId
-</code></pre><p>The identifier of the account to access.</p>
+</code></pre><p>The identifier of the tenant to access.</p>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
 string namespaceId

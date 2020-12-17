@@ -160,8 +160,8 @@ Details on the provenance on every field of data:
 | Label | string | Friendly name
 | FieldKind | FieldKind enumeration | Specifies if the mapping is for an index, grouping, data, or field id field
 | TypeCode | SdsTypeCode | The primary data type of the mapping
-| SummaryType *(coming soon)* | SdsSummaryType  |The summary type calculation. |
-| SummaryDirection *(coming soon)* | SummaryDirection Enumeration |The direction of the summary type calculation. |
+| SummaryType *(coming soon)* | SdsSummaryType  |The summary type calculation. Null unless all data mappings' SummaryType within the field mappings are identical. |
+| SummaryDirection *(coming soon)* | SummaryDirection Enumeration |The direction of the summary type calculation. Null unless all data mappings' SummaryDirection within the field mappings are identical. |
 | Uom *(coming soon)* | string | The unit of measure id. Null unless all data mappings' unit of measures within the field mapping are identical.
 | DataMappings | IReadOnlyList<DataMapping> | Per-group details of what this field resolved to
 

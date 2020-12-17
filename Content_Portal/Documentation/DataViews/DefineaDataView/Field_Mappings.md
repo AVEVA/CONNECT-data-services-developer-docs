@@ -65,7 +65,7 @@ Fields of kind `DataField` map to a [data field](xref:DataViewsFieldSets) on the
 | TargetMeasurementKey *(coming soon)* | The name of the asset measurement. Only applicable to `PropertyId` fields and when the data field references an asset measurement. |
 | TargetFieldKey | The metadata name (`Metadata` fields), property id (`PropertyId` fields), or property name (`PropertyName` fields). Not applicable to `Id`, `Name`, or `Tags` fields. |
 | TypeCode | The data item's data type |
-| SummaryType *(coming soon)* | The summary type calculation for the data field. Not applicable to `Id`, `Name`,`Metadata` or `Tags` fields. |
+| SummaryType *(coming soon)* | The summary type calculation for the data field. Only applicable to 'PropertyId' and 'PropertyName' fields. |
 | SummaryDirection *(coming soon)* | The direction of the summary type calculation for the data field. |
 | Uom *(coming soon)*| The unit of measure id for the data field |
 | FieldSetIndex | The zero-based positioning of the data field set |

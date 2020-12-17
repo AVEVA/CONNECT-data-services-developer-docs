@@ -10,20 +10,18 @@ uid: DataViewsSummaries
 Data views can be configured to show calculated summaries for streams and assets.  “Calculated summaries” is defined as the summary types enumerated in [SdsSummaryType](https://ocs-docs.osisoft.com/Content_Portal/Documentation/SequentialDataStore/Reading_Data_API.html#get-summaries). This topic describes how to include summaries in a data view. 
 
 # Available summaries
-Summary types are treated as a platform intrinsic, as is done by Sds and Assets. A stream and its properties provide no information about what summaries are available for each property; 
-for example the caller simply requests summary data and is given whatever summaries are available.  Unavailable summaries are simply excluded from the result set. If a data item field requests a summary that is unavailable (e.g. Mean of a string property), 
-the Mean summary values  in the data view data will be null.  
+Not all SDS properties will have summaries. For example a string property cannot have a Mean. If a data item field requests a summary that is unavailable these values will be null in the view data.  
 
 # Including summaries in a dataview
-Users may include any mix of interpolated or summary data fields in a data view. Multiple summary types for a stream property or an asset are requested by defining a field for each desired summary type. Units of measure can also be included for a summary.
+Users may include any mix of interpolated or summary data fields in a data view. Multiple summary types for a stream property or an asset are requested by defining a field for each desired summary type. Units of measure can also be included for a summary, if applicable, not all summaries do (e.g. Kurtosis and Skewness).
 
-In the data view a field defines the type of summary with the SummaryType property as [SdsSummaryType](https://ocs-docs.osisoft.com/Content_Portal/Documentation/SequentialDataStore/Reading_Data_API.html#get-summaries). Another property, SummaryDirection, allows the “summary’s direction” to be defined as [SummaryDirection](xref:ResolvedDataView#SummaryDirection-enumeration). SummaryDirection controls whether the start or end index of the summary is used by the data view to calculate the summary values.
+In the data view a data field defines the type of summary with the SummaryType property as [SdsSummaryType](xref:sdsReadingDataApi#get-summaries#get-summaries). Another property, SummaryDirection, allows the “summary’s direction” to be defined as [SummaryDirection](xref:ResolvedDataView#SummaryDirection-enumeration). SummaryDirection controls whether the start or end index of the summary is used by the data view to calculate the summary values.
 If the SummaryType is "None", the SummaryDirection (if specified) will be accepted but ignored. If the SummaryType is not "None", and SummaryDirection is not specified, it will be initialized to "Forward". 
 
 The label tokens: \{SummaryType\} and \{SummaryDirection\} will resolve in the field mappings and show in dataview table header columns for a summary field.
 
-# Example
-This simple example shows the inclusion of a summary data field for a SummaryType set to "Mean", SummaryDirection set to "Backward" and "IncludeUom" is set to "true". The label includes two summary tokens that will resolve to the summary type and direction in the data view header.
+# Example: Include summary in data view
+This simple example shows the inclusion of a summary data field for a SummaryType set to "Mean" and "IncludeUom" is set to "true". Since the SummaryDirection is not set, the default value of "Forward" is used. The label includes two summary tokens that will resolve to the summary type and direction in the data view header
 ```json
 {
   "Id": "quickstart",
@@ -43,7 +41,6 @@ This simple example shows the inclusion of a summary data field for a SummaryTyp
           "Keys": [ "Value" ],
           "Label": "{IdentifyingValue} {FirstKey} {SummaryType} {SummaryDirection}",
           "SummaryType": "Mean",
-          "SummaryDirection": "Backward",
           "IncludeUom": "true"
         }
       ]
@@ -52,12 +49,39 @@ This simple example shows the inclusion of a summary data field for a SummaryTyp
 }
 ```
 The resulting data view in standard mode:
-| Timestamp            | Value Mean Backward | Value Mean Backward Uom |
+| Timestamp            | Value Mean Forward | Value Mean Forward Uom |
 |----------------------|-------|-----------|
 | 2020-11-06T08:00:00Z | .899  | kW        |
 
 The resulting data view in narrow mode:
 | Timestamp            | Field | Value | Uom |
 |----------------------|-------|-------|-----|
-| 2020-11-06T08:00:00Z |  Value Mean Backward | .899  | kW  |
+| 2020-11-06T08:00:00Z |  Value Mean Forward | .899  | kW  |
 
+# Example: Impact of summary direction
+
+This example shows the impact of SummaryDirection, and how changing it will shift the summary value calculation. Three mini data view results are shown, where SummaryType and SummaryDirection are varied.
+
+Example #1: SummaryType = "None"
+
+| Timestamp            | Value 
+|----------------------|-------|
+|2020-11-01T00:01:00Z  | 10    | 
+|2020-11-01T00:02:00Z | 100  | 
+|2020-11-01T00:03:00Z | 1000  |
+
+Example #2: SummaryType = "Mean" & SummaryDirection = "Forward"
+
+| Timestamp            | Value 
+|----------------------|-------|
+|2020-11-01T00:01:00Z  | 55    | 
+|2020-11-01T00:02:00Z | 550  | 
+|2020-11-01T00:03:00Z | 1000  |
+
+Example #3: SummaryType = "Mean" & SummaryDirection = "Backward"
+
+| Timestamp            | Value 
+|----------------------|-------|
+|2020-11-01T00:01:00Z  | 10    | 
+|2020-11-01T00:02:00Z | 55  | 
+|2020-11-01T00:03:00Z | 550  |

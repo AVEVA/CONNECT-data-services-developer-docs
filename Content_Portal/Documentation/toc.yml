@@ -14,7 +14,7 @@
   topicHref: DataIngress/Data_Ingress.md
 - name: Metadata Rules
   topicHref: Metadata/Metadata_Rules_Overview.md
-- name: Assets (Preview)
+- name: Asset Store (Preview)
   href: Assets/toc.yml
   topicHref: Assets/assets.md
 - name: Data Views

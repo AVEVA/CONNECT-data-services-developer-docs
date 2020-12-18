@@ -49,7 +49,7 @@ Clients are applications and adapters that act on behalf of users and allow prog
 
 ### Roles 
 
-A role is a representation of a user’s job or function within the organization that determines whether the user should have access to resources needed to accomplish a job. You can assign multiple roles to a user or client. The role assigned to a user or client, in combination with the ACL for a resource or service, determines access permissions to that resource or service. The Account Administrator creates roles and assigns users and clients to those roles. 
+A role is a representation of a user’s job or function within the organization that determines whether the user should have access to resources needed to accomplish a job. You can assign multiple roles to a user or client-credential client. The role assigned to a user or client, in combination with the ACL for a resource or service, determines access permissions to that resource or service. The Account Administrator creates roles and assigns users and clients to those roles. 
 
 For both users and clients, roles authorize API requests for access, such as access to data streams. All clients have the Access Member role, which gives read access to resources. 
 

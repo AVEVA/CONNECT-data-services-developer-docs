@@ -32,7 +32,6 @@ The concept of identity is the key to how OCS limits and protects services and r
 - Authenticate users using a local account store or via an external identity provider 
 - Provide session management and single sign-on 
 - Manage and authenticate client applications 
-
 - Issue identity and access tokens to client applications and users 
 - Validate access tokens 
 
@@ -179,7 +178,6 @@ After setting up data collection, you can use the Sequential Data Store (SDS) to
 To organize the data in the SDS and make it useful, you must understand the basic features of the system: 
 
 - Types 
-
 - Streams 
 - Stream views 
 
@@ -238,7 +236,6 @@ Three analytical methods are available in OCS, each of which works dynamically, 
 
 - **Metadata rules** 
   Metadata rules greatly simplify the task of collecting and retrieving data streams based on user defined criteria. 
-
 - **Data views** 
   Data views facilitate the ordering, indexing, and organization of data from multiple streams. 
 - **Visualization** 

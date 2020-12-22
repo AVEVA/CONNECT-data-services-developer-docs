@@ -168,9 +168,7 @@ After setting up data collection, you can use the Sequential Data Store (SDS) to
 To organize and use the data in the SDS, you need to understand the basic features of the system: 
 
 * Types 
-
 * Streams 
-
 * Stream views 
 
 ### Types 

@@ -4,10 +4,10 @@
 
 OSIsoft Cloud Services (OCS) consists of several different areas of core functionality:
 
-* [**Tenant management**](#tenant-management) - Explains basic concepts in managing OCS, including clients, roles and metadata and discusses how administrators can customize OCS based on organizational requirements 
-* **Data collection** - Summarizes techniques to collect and feed data from multiple sources across your organization into a namespace within OCS 
-* **Data organization** - Provides a high-level description of how OCS stores and retrieves operational data 
-* **Data analysis** - Highlights some of the capabilities of using OCS for data analysis, which enables informed planning, predictive maintenance, and operational optimization
+* [Tenant management](#tenant-management) - Explains basic concepts in managing OCS, including clients, roles and metadata and discusses how administrators can customize OCS based on organizational requirements 
+* [Data collection](#data-collection) - Summarizes techniques to collect and feed data from multiple sources across your organization into a namespace within OCS 
+* [Data organization](#data-organization) - Provides a high-level description of how OCS stores and retrieves operational data 
+* [Data analysis](#data-analysis) - Highlights some of the capabilities of using OCS for data analysis, which enables informed planning, predictive maintenance, and operational optimization
 
 The flow of this document is modeled after the steps that you take to configure OCS to collect data from various sources and organize it for analysis within the platform or third-party BI tools.
 

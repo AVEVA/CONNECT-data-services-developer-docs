@@ -104,7 +104,7 @@ The type of data, the location of that data, and the way that a particular sourc
 
 #### PI to OCS 
 
-The PI to OCS collection method transfers PI time series data from a local PI Server to OCS.PI to OCS is installed and configured directly on your on-premises PI Server. PI to OCS creates pre-defined types and streams that are mapped from PI Data Archive data shapes. 
+The PI to OCS collection method transfers PI time series data from a local PI Server to OCS. PI to OCS is installed and configured directly on your on-premises PI Server. PI to OCS creates pre-defined types and streams that are mapped from PI Data Archive data shapes. 
 In the diagram below, PI to OCS collects data after authorization with the following steps: 
 1.	Gateway passes request to proper partition of PI to OCS based on tenant ID in the token. Roles associated with the client are included in the request header.
 2.	PI to OCS deserializes events from the payload, which may contain events for multiple streams. 
@@ -167,9 +167,9 @@ After setting up data collection, you can use the Sequential Data Store (SDS) to
 
 To organize and use the data in the SDS, you need to understand the basic features of the system: 
 
-* Types 
-* Streams 
-* Stream views 
+* [Types](#types) 
+* [Streams](#streams) 
+* [Stream views](#stream-views) 
 
 ### Types 
 

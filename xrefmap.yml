@@ -179,7 +179,7 @@ references:
   name: ClientCredentialClient
   href: Content_Portal/Documentation/Identity/Identity_ClientCredentialClient.html
 - uid: identityConsent
-  name: AAD Consent to OSIsoft Applications
+  name: Consent to Add AAD or AAD with Advanced Integration as an Identity Provider to your OCS Tenant
   href: Content_Portal/Concepts/Consent.html
 - uid: identityHybridClient
   name: HybridClient

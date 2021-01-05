@@ -96,8 +96,6 @@ A group is a logical collection of identities for which access rights can be man
 
 After defining tenants, setting permissions and access levels for users, and creating clients for programmatic access, you can begin to configure OCS for data collection. Data collection allows you to bring data from multiple sources and systems scattered across your organization into a namespace within OCS.
 
-Tenants may contain data across multiple geographic locations; however, in order to remain compliant with local laws and regulation, a namespace can contain or collect data for a specific region only. 
-
 ### Collection methods 
 
 The type of data, the location of that data, and the way that a particular source sends data all affect how you can collect that data in OCS. You can choose the data collection technology that best meets your specific needs. These technologies include: 
@@ -105,25 +103,16 @@ The type of data, the location of that data, and the way that a particular sourc
 #### PI to OCS 
 
 The PI to OCS collection method transfers PI time series data from a local PI Server to OCS. PI to OCS is installed and configured directly on your on-premises PI Server. PI to OCS creates pre-defined types and streams that are mapped from PI Data Archive data shapes. 
-In the diagram below, PI to OCS collects data after authorization with the following steps: 
-1.	Gateway passes request to proper partition of PI to OCS based on tenant ID in the token. Roles associated with the client are included in the request header.
-2.	PI to OCS deserializes events from the payload, which may contain events for multiple streams. 
-3.	For each stream, PI to OCS passes the events to the Sequential Date Store (SDS) in OCS. ![OCS](images/how-does-ocs-work/pi_to_ocs.png)
 
 #### Custom OMF applications
 
-OSIsoft Message Format (OMF) is a platform-independent format for passing JSON messages to OCS using an HTTP client. 
+OSIsoft Message Format (OMF) is a platform-independent format for passing JSON messages to OCS over HTTP. 
+
 For programmatic access to data, you can use OMF to develop data acquisition applications on platforms and in languages for which there is no native support. This allows you to integrate data collection directly into a device or asset. 
-OMF topics aggregate OMF messages received from one or more clients and make them available for consumption by a subscription. An OMF subscription consumes OMF messages from a topic and forwards them to a data store. Multiple subscriptions can retrieve OMF messages from a single topic. Together, these two components make up an OMF connection, which allows collection from a client into an OCS namespace. 
 
-OMF itself does not define or depend on any binary message protocol, such as HTTP, AMQP, or Kafka. Instead, it is based on an abstract message type, where a message consists of a set of key/value pairs and a binary payload, which may consist of a set of binary files, configuration files, and batch or Shell scripts. You can construct OMF messages using any message protocol that defines headers and bodies. 
-In the diagram below, OMF sends data to OCS after authorization with the following steps: 
+OMF topics aggregate OMF messages received from one or more clients and make them available for consumption. An OMF subscription consumes OMF messages from a topic and forwards them to a data store. Multiple subscriptions can retrieve OMF messages from a single topic. Together, these two components make up an OMF connection, which allows collection from a client into an OCS namespace. 
 
-1.	A gateway passes the request to the proper partition of OMF collection based on a tenant ID in the token. Roles associated with the client are included in the request header. 
-2.	OMF collection serializes events from the payload, which may contain events for multiple streams. 
-3.	For each stream, OMF sends the events to the Sequential Date Store. 
-
-![OCS](images/how-does-ocs-work/omf.png)
+OMF itself does not define or depend on any binary message protocol, such as HTTP, AMQP, or Kafka. Instead, it is based on an abstract message type, where a message consists of a set of key/value pairs, which may consist of a set of binary files, configuration files, and batch or Shell scripts. You can construct OMF messages using any message protocol that defines headers and bodies. 
 
 Refer to [OMF Message Format](https://omf-docs.osisoft.com/) for additional information about the OMF specification. 
 
@@ -131,35 +120,14 @@ Refer to [OMF Message Format](https://omf-docs.osisoft.com/) for additional info
 
 The Edge Data Store (EDS) is a software component similar to a PI Adapter. It enables you to store data from a device locally and make the data available for local querying. This is useful for displaying trending on an edge device.
  OCS can collect data from EDS via the OSIsoft Message Format (OMF). Edge Data Store currently includes two built-in protocol adapter components, Modbus and OPC UA, and a storage component that also collects and sends OMF. Multiple data sources, referred to as adapter component instances, are supported in protocol components. See the Custom OMF Applications section above for additional information about data collection from EDS. 
-The diagram below demonstrates the process for configuring data egress from EDS to OCS: 
-
-1.	Configure OCS collection 
-   1.	Register client. 
-2.	[OCS] Tenant identity management (profile/users/roles/client) 
-   1.	[OCS] Collection management (topics/subscriptions) 
-3.	Configure client egress: destination location, client credentials, prefix, and rate via on box REST or *edgecmd* tool 
-
-![OCS](images/how-does-ocs-work/eds.png)
 
 #### PI Adapters 
 
 PI Adapters are software components that collect sequential data from edge data sources and send it to OCS or PI Server or both. Use PI Adapters for collecting data from standard systems and protocols. 
-In the diagram below, the PI Adapters egress data to OCS using the following steps: 
-
-1.	Get access token with configured client ID and secret 
-2.	Call OMF endpoint using token 
-3.	OCS Data collection via OMF 
-
-![OCS](images/how-does-ocs-work/adapter.png)
 
 #### Programmatic REST API 
 
-The OCS programmatic REST API reads and writes data. It supports JSON files and platform independence with platform-independent data and retrieval. 
-In the diagram below, OCS collects data from the REST API after authorization with the following steps: 
-
-1.	A gateway passes the request to the Sequential Data Store. 
-
-![OCS](images/how-does-ocs-work/api.png)
+The OCS programmatic REST API reads and writes data. It supports JSON format and platform-independent data and retrieval. 
 
 ## Data organization 
 

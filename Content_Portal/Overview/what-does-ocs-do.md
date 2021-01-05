@@ -163,7 +163,7 @@ In the diagram below, OCS collects data from the REST API after authorization wi
 
 ## Data organization 
 
-After setting up data collection, you can use the Sequential Data Store (SDS) to store, retrieve, and analyze any type of streaming data. Typically, developers use the SDS to create customized applications. 
+After setting up data collection, you can use the Sequential Data Store (SDS) to store, retrieve, and analyze any type of streaming data. Typically, developers use the SDS as part of their customized applications. 
 
 To organize and use the data in the SDS, you need to understand the basic features of the system: 
 

@@ -145,9 +145,9 @@ A type, also called an SDS type, defines the structure of data to be collected i
 
 For example, if you want to collect three measurements streamed from a device (longitude, latitude, and speed) and you want to collect those measurements over a period of time, you can define a type to include properties for longitude, latitude, speed and a timestamp. Collectively, these properties define the structure of the data you are storing. While this is a simple example, OCS lets you create much more complex types. 
 
-A type can consist of many properties, but one property must function as the primary index. Time is frequently used as the primary index, effectively time-stamping all corresponding properties in each data instance. However, the primary key is not limited to time stamps; it can be any sequential data, such depth or movement. You can also designate other properties as secondary indexes. 
+A type can consist of many properties, but one property must function as the primary index. Time is frequently used as the primary index, effectively time-stamping all corresponding properties in each data instance. However, the primary key is not limited to time stamps; it can be any type of sequential data such as depth. 
 
-After you create a type, you cannot change it. If you want to change a type, you must delete the existing type and create a new one. However, you can only delete a type if no other streams, views, or other types reference it. 
+After you create a type, you cannot change it. If you want to change a type, you must delete the existing type and create a new one to ensure that no stored data is invalidated. However, you can only delete a type if no streams, views, or other types reference it. 
 
 OCS provides a simple user interface for creating types. Alternatively, you can create types using programming tools provided by OSIsoft. For an automated programmatic approach, OSIsoft offers .NET client libraries available in NuGet packages. For a manual approach, OSIsoft provides code samples in different programming languages, including Python, Java, and JavaScript. The JSON file format is used to specify the properties and related information in each type. 
 
@@ -157,14 +157,9 @@ A stream, also called an SDS stream, is a series of ordered events. Each event i
 
 Streams organize data brought from another system into OCS. To define a stream, you must first define a type, which specifies the structure of the data you want to stream into an OCS namespace. Every stream has a unique identifier. You can have many streams based on the same type, but each stream must have its own unique identifier. 
 
-There are two sources of data for streams: 
-
-* Data already stored for a type - In OCS, information for a stream is stored together in an ordered sequence so it is extremely fast to store new values or retrieve existing data from the sequence. 
-* Data sent to OCS - The type associated with a stream defines the structure of data being sent to OCS. 
-
 There are multiple techniques for sending data to OCS. See [Data Collection](#data-collection). 
 
-Each stream is associated with a namespace. You can associate one or more streams with the same namespace. However, to move data between namespaces, you must read data out from one namespace and read it back into another namespace. 
+Each stream is associated with a namespace. You can associate one or more streams with the same namespace. However, to move data between namespaces, you must read data out from one namespace and write it into another namespace. 
 You can categorize streams using metadata, which is a dictionary of key value pairs used to store additional information. Metadata is not real-time information, and it is not updated at high frequency. Typically, metadata is static information that provides context for a stream. 
 
 You can also use tags to assign information to a stream. A tag is a string value. For example, a tag might identify a region. 
@@ -176,7 +171,7 @@ Because types cannot be modified, OCS provides a flexible mechanism for viewing 
 
 For example, a process engineer and a maintenance technician, might want to see different data from the same stream. Because you cannot change the data sent to a stream, a stream view allows you to see a subset of the data in a stream. In this way the process engineer can see one subset of data in one stream view while the maintenance technician can see a different subset in a second stream view. 
 
-Stream views can perform additional functions, such as to implement data conversions and change names so the terminology that is displayed is more appropriate for a particular persona. 
+Stream views can perform additional functions, such as convert units of measure and change names so the terminology that is displayed is more appropriate for a particular persona. 
 
 To create a stream view, you create a target type that defines the properties to be made available. Then you map the properties in one or more source types to the target type. The source types and the target type must be in the same namespace, and they must exist before you define the stream view. When mapping between source and target properties, both properties must be of the same data type. 
 

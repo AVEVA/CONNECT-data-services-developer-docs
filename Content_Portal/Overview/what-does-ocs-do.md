@@ -4,7 +4,7 @@
 
 OSIsoft Cloud Services (OCS) consists of several different areas of core functionality:
 
-* [Tenant management](#tenant-management) - Explains basic concepts in managing OCS, including clients, roles and metadata and discusses how administrators can customize OCS based on organizational requirements 
+* [Tenant management](#tenant-management) - Explains basic concepts in managing OCS, including clients, users, roles, roles-based access control and discusses how administrators can customize OCS based on organizational requirements 
 * [Data collection](#data-collection) - Summarizes techniques to collect and feed data from multiple sources across your organization into a namespace within OCS 
 * [Data organization](#data-organization) - Provides a high-level description of how OCS stores and retrieves operational data 
 * [Data analysis](#data-analysis) - Highlights some of the capabilities of using OCS for data analysis, which enables informed planning, predictive maintenance, and operational optimization
@@ -13,7 +13,7 @@ The flow of this document is modeled after the steps that you take to configure 
 
 ## Tenant management    
 
-OCS provides many configuration and control options that allow administrators to customize interactions with the platform based on organizational requirements. Administrators can create users and clients, define and assign roles, and manage namespaces for their tenant. They can control access to data and resources ensuring that only authorized entities can gain access to resources (such as, data collection, namespaces, streams, analytics, visualization, and metadata).
+OCS provides many configuration and control options that allow administrators to customize interactions with the platform based on organizational requirements. Administrators can create users and clients, define and assign roles, and manage namespaces for their tenant. They can control access to data and resources ensuring that only authorized entities can gain access to resources (such as, data collection, namespaces, streams, analytics, visualization).
 
 Using access control lists (ACLs), administrators can also limit permissions to a resource. Generally, only administrators should have access to tenant management features. Administrators can perform tenant management and configuration using a REST API or the OCS portal, a web-based user-interface for managing and monitoring tenant resources.
 
@@ -32,17 +32,17 @@ The concept of identity is the key to how OCS limits and protects services and r
 * Protect data resources 
 * Authenticate users using a local account store or through an external identity provider 
 * Provide session management and single sign-on 
-* Manage and authenticate client applications 
+* Authenticate client applications 
 * Issue identity and access tokens to client applications and users 
 * Validate access tokens 
 
 ### User 
 
-A user is an individual identity that represents a person using OCS. When users log in to OCS, they authenticate through an identity provider such as Google or Azure Active Directory. The identity provider authenticates the user against credentials stored in its database. After successful authentication, the identity provider passes a token back to OCS granting the user access for a specific time period. 
+A user is an individual identity that represents a person using OCS. When users log in to OCS, they authenticate through an identity provider such as Google or Azure Active Directory. The identity provider authenticates the user against credentials stored in its database. After successful authentication, the identity provider passes a token back to OCS containing the verified identity of the user. This identity information is used by OCS to grant access for a specific time period. 
 
 ### Clients 
 
-Clients are applications and PI Adapters that act on behalf of users and have programmatic access by using OCS APIs. OCS supports the following client types: 
+Clients are applications that act on behalf of users and have programmatic access by using OCS APIs. OCS supports the following client types: 
 
 * **Authorization code clients** – Used by web-based, mobile, and desktop applications, this client type requires user interaction. Users authenticate with an identity provider. Authorization code clients support silent refresh, which allows the user to automatically receive a new access token, providing for uninterrupted access to the application. 
 * **Client credential clients** – Used for server-to-server communication without the presence or intervention of a user. Examples include PI Adapters or the Edge Data Store sending data to OCS. This type of client is issued a client ID and secret. After authentication, the client is granted an access token with a defined lifetime. 
@@ -50,17 +50,17 @@ Clients are applications and PI Adapters that act on behalf of users and have pr
 
 ### Roles 
 
-A role is a representation of a user’s job function that determines whether the user can have access to resources needed to accomplish a job. You can assign multiple roles to a user or client-credential client. The user or client’s role, in combination with the access control list (ACL) for a resource or service, determines access permissions to that resource or service. The tenant Administrator creates roles and assigns users and clients to those roles. 
+A role is a representation of a identity’s job function that determines whether the user can have access to resources needed to accomplish a job. You can assign multiple roles to a user or client-credential client. The user or client’s role, in combination with the access control list (ACL) for a resource or service, determines access permissions to that resource or service. The Tenant Administrator creates roles and assigns those roles to users and clients. 
 
-For both users and clients, roles authorize API requests for access, such as access to data streams. All clients have the Access Member role, which provides read access to resources. 
+For both users and clients, roles authorize API requests for access, such as access to data streams. All clients have the Tenant Member role, which provides read access to resources. 
 
 ### Identity provider 
 
-Identity providers manage databases of user records and authenticate users against the credentials in their databases. This allows users to be granted access to the service provider using the credentials the identity provider manages, but without sharing actual login details.  
+Identity providers manage databases of user records and authenticate users against the credentials in their databases. This allows users to be granted access to the service provider using the credentials the identity provider manages, but without sharing actual login details with OCS.  
 
 ### Authentication 
 
-Authentication is the process of verifying the identity of a user or client and confirming that the requestor is an approved entity for OCS. This verification process is performed by the identity provider. After successful authentication, the identity provider passes an access token back to OCS granting the user or client access for a specific time period. 
+Authentication is the process of verifying the identity of a requestor and confirming that the requestor is an approved entity for OCS. This verification process is performed by the identity provider. After successful authentication, the identity provider passes an access token back to OCS granting the requestor access for a specific time period. 
 Authentication consists of the following steps: 
 
 1.	A requestor makes a request to access an OCS resource. 

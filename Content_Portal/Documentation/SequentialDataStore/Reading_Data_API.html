@@ -1469,7 +1469,7 @@ Content-Type: application/json
       SdsBoundaryType endBoundaryType, string filter, string streamViewId = null);
 </code></pre><hr>
 <h2 id="join-values"><code>Join Values</code></h2>
-<p>Returns data from multiple streams, which are joined based on the request specifications. The streams must be of the same SdsType.</p>
+<p>Returns data from multiple streams, which are joined based on the request specifications. The streams must be of the same type.</p>
 <p>SDS supports the following types of joins:</p>
 <table>
 <thead>
@@ -1498,19 +1498,19 @@ Content-Type: application/json
 <tr>
 <td>MergeLeft</td>
 <td>3</td>
-<td>Results include events for each index across all streams selecting events at the indexes based on left to right order of the streams.</td>
+<td>Results include one event for each index across all streams selecting events at the indexes based on left to right order of the streams.</td>
 </tr>
 <tr>
 <td>MergeRight</td>
 <td>4</td>
-<td>Results include events for each index across all streams selecting events at the indexes based on right to left order of the streams.</td>
+<td>Results include one event for each index across all streams selecting events at the indexes based on right to left order of the streams.</td>
 </tr>
 </tbody>
 </table>
-<p>SDS supports two types of join requests:</p>
+<p>SDS supports GET and POST join requests:</p>
 <ul>
 <li><a href="#getjoin">GET</a>: The stream, joinMode, start index, and end index are specified in the request URI path.</li>
-<li><a href="#postjoin">POST</a>: Only the SdsJoinMode is specified in the URI. The streams and read specification for each stream are specified in the body of the request.</li>
+<li><a href="#postjoin">POST</a>: Only the joinMode is specified in the URI. The streams and read specification for each stream are specified in the body of the request.</li>
 </ul>
 <p><a name="getjoin"></a></p>
 <h3 id="get-request"><code>GET Request</code></h3>
@@ -1522,75 +1522,119 @@ Content-Type: application/json
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string streams</code><br>Commas separated list of stream identifiers</p>
-<p><code>SdsJoinMode joinMode</code><br>Type of join, i.e. inner, outer, etc.</p>
+<p><code>SdsJoinMode joinMode</code><br>Type of join: inner, outer, interpolated, merge left or merge right</p>
 <p><code>string startIndex</code><br>Index identifying the beginning of the series of events to return</p>
 <p><code>string endIndex</code><br>Index identifying the end of the series of events to return</p>
-<p><code>int count</code><br>Optional maximum number of events to return.</p>
-<p><code>SdsBoundaryType boundaryType</code><br>Optional SdsBoundaryType specifies the handling of events at or near the startIndex and endIndex</p>
-<p><code>SdsBoundaryType startBoundaryType</code><br>Optional SdsBoundaryType specifies the handling of events at or near the startIndex</p>
-<p><code>SdsBoundaryType endBoundaryType</code><br>Optional SdsBoundaryType specifies the handling of events at or near the endIndex</p>
-<p><code>string filter</code><br>Optional filter expression</p>
-<h4 id="response-10">Response</h4>
-<p>The response includes a status code and a response body containing multiple serialized events. See examples for specifics.</p>
+<p>[Optional] <code>int count</code><br>[Optional] Maximum number of events to return.</p>
+<p>[Optional] <code>SdsBoundaryType boundaryType</code><br>[Optional] SdsBoundaryType specifies the handling of events at or near the startIndex and endIndex</p>
+<p>[Optional] <code>SdsBoundaryType startBoundaryType</code><br>[Optional] SdsBoundaryType specifies the handling of events at or near the startIndex</p>
+<p>[Optional] <code>SdsBoundaryType endBoundaryType</code><br>[Optional] SdsBoundaryType specifies the handling of events at or near the endIndex</p>
+<p>[Optional] <code>string filter</code><br>[Optional] Filter expression</p>
+<h5 id="response-10">Response</h5>
+<p>The response includes a status code and a response body containing multiple serialized events. </p>
 <h5 id="examples">Examples</h5>
-<p>To join multiple streams, for example <code>Simple1</code> and <code>Simple2</code>, assume that <code>Simple1</code> presents the following data:</p>
+<p>Data from streams <code>Simple1</code> and <code>Simple2</code> will be used to illustrate how each join operation works.</p>
+<h6 id="stream-data-simple1">Stream data <code>Simple1</code></h6>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
 [
     {
         &quot;Time&quot;: &quot;2017-11-23T11:00:00Z&quot;,
-        &quot;State&quot;: 0,
         &quot;Measurement&quot;: 10
     },
     {
         &quot;Time&quot;: &quot;2017-11-23T13:00:00Z&quot;,
-        &quot;State&quot;: 0,
         &quot;Measurement&quot;: 20
     },
     {
         &quot;Time&quot;: &quot;2017-11-23T14:00:00Z&quot;,
-        &quot;State&quot;: 0,
         &quot;Measurement&quot;: 30
     },
     {
         &quot;Time&quot;: &quot;2017-11-23T16:00:00Z&quot;,
-        &quot;State&quot;: 0,
         &quot;Measurement&quot;: 40
     }
 ]
-</code></pre><p>And assume that <code>Simple2</code> presents the following data:</p>
+</code></pre><table>
+<thead>
+<tr>
+<th>Time</th>
+<th>Measurement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017-11-23T11:00:00Z</td>
+<td>10</td>
+</tr>
+<tr>
+<td>2017-11-23T13:00:00Z</td>
+<td>20</td>
+</tr>
+<tr>
+<td>2017-11-23T14:00:00Z</td>
+<td>30</td>
+</tr>
+<tr>
+<td>2017-11-23T16:00:00Z</td>
+<td>40</td>
+</tr>
+</tbody>
+</table>
+<h6 id="stream-data-simple2">Stream data <code>Simple2</code></h6>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
 [
     {
         &quot;Time&quot;: &quot;2017-11-23T12:00:00Z&quot;,
-        &quot;State&quot;: 0,
         &quot;Measurement&quot;: 50
     },
     {
         &quot;Time&quot;: &quot;2017-11-23T14:00:00Z&quot;,
-        &quot;State&quot;: 0,
         &quot;Measurement&quot;: 60
     },
     {
         &quot;Time&quot;: &quot;2017-11-23T15:00:00Z&quot;,
-        &quot;State&quot;: 0,
         &quot;Measurement&quot;: 70
     },
     {
         &quot;Time&quot;: &quot;2017-11-23T17:00:00Z&quot;,
-        &quot;State&quot;: 0,
         &quot;Measurement&quot;: 80
     }
 ]
-</code></pre><p>The following are responses for various Joins request options:</p>
-<h5 id="inner-join-example-request"><code>Inner Join</code> example request</h5>
+</code></pre><table>
+<thead>
+<tr>
+<th>Time</th>
+<th>Measurement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017-11-23T12:00:00Z</td>
+<td>50</td>
+</tr>
+<tr>
+<td>2017-11-23T14:00:00Z</td>
+<td>60</td>
+</tr>
+<tr>
+<td>2017-11-23T15:00:00Z</td>
+<td>70</td>
+</tr>
+<tr>
+<td>2017-11-23T17:00:00Z</td>
+<td>80</td>
+</tr>
+</tbody>
+</table>
+<h4 id="inner-join-example-request"><code>Inner Join</code> example request</h4>
 <pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
        ?streams=Simple1,Simple2&amp;joinMode=inner
        &amp;startIndex=0001-01-01T00:00:00.0000000&amp;endIndex=9999-12-31T23:59:59.9999999
-</code></pre><h4 id="response-11">Response</h4>
+</code></pre><h5 id="response-11">Response</h5>
 <p>Measurements from both streams with common indexes.</p>
 <h5 id="example-response-body-19">Example response body</h5>
 <pre><code class="lang-json">HTTP/1.1 200
@@ -1600,23 +1644,37 @@ Content-Type: application/json
     [
         {
             &quot;Time&quot;: &quot;2017-11-23T14:00:00Z&quot;,
-            &quot;State&quot;: 0,
             &quot;Measurement&quot;: 30
         },
         {
             &quot;Time&quot;: &quot;2017-11-23T14:00:00Z&quot;,
-            &quot;State&quot;: 0,
             &quot;Measurement&quot;: 60
         }
     ]
 ]
-</code></pre><p><a name="outer"></a></p>
-<h5 id="outer-join-example-request"><code>Outer Join</code> example request</h5>
+</code></pre><table>
+<thead>
+<tr>
+<th>Time</th>
+<th><code>Simple 1</code> Measurement</th>
+<th><code>Simple 2</code> Measurement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017-11-23T14:00:00Z</td>
+<td>30</td>
+<td>60</td>
+</tr>
+</tbody>
+</table>
+<p><a name="outer"></a></p>
+<h4 id="outer-join-example-request"><code>Outer Join</code> example request</h4>
 <pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
        ?streams=Simple1,Simple2&amp;joinMode=outer
        &amp;startIndex=0001-01-01T00:00:00.0000000&amp;endIndex=9999-12-31T23:59:59.9999999
-</code></pre><h4 id="response-12">Response</h4>
-<p>All Measurements from both Streams, with default values at indexes where a Stream does not have a value.</p>
+</code></pre><h5 id="response-12">Response</h5>
+<p>All Measurements from both streams, with default values at indexes where a stream does not have a value.</p>
 <h5 id="example-response-body-20">Example response body</h5>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
@@ -1625,7 +1683,6 @@ Content-Type: application/json
     [
         {
             &quot;Time&quot;: &quot;2017-11-23T11:00:00Z&quot;,
-            &quot;State&quot;: 0,
             &quot;Measurement&quot;: 10
         },
         null
@@ -1634,14 +1691,12 @@ Content-Type: application/json
         null,
         {
             &quot;Time&quot;: &quot;2017-11-23T12:00:00Z&quot;,
-            &quot;State&quot;: 0,
             &quot;Measurement&quot;: 50
         }
     ],
     [
         {
             &quot;Time&quot;: &quot;2017-11-23T13:00:00Z&quot;,
-            &quot;State&quot;: 0,
             &quot;Measurement&quot;: 20
         },
         null
@@ -1649,12 +1704,10 @@ Content-Type: application/json
     [
         {
             &quot;Time&quot;: &quot;2017-11-23T14:00:00Z&quot;,
-            &quot;State&quot;: 0,
             &quot;Measurement&quot;: 30
         },
         {
             &quot;Time&quot;: &quot;2017-11-23T14:00:00Z&quot;,
-            &quot;State&quot;: 0,
             &quot;Measurement&quot;: 60
         }
     ],
@@ -1662,14 +1715,12 @@ Content-Type: application/json
         null,
         {
             &quot;Time&quot;: &quot;2017-11-23T15:00:00Z&quot;,
-            &quot;State&quot;: 0,
             &quot;Measurement&quot;: 70
         }
     ],
     [
         {
             &quot;Time&quot;: &quot;2017-11-23T16:00:00Z&quot;,
-            &quot;State&quot;: 0,
             &quot;Measurement&quot;: 40
         },
         null
@@ -1678,18 +1729,68 @@ Content-Type: application/json
         null,
         {
             &quot;Time&quot;: &quot;2017-11-23T17:00:00Z&quot;,
-            &quot;State&quot;: 0,
             &quot;Measurement&quot;: 80
         }
     ]
 ]
-</code></pre><h5 id="interpolated-join-example-request"><code>Interpolated Join</code> example request</h5>
+</code></pre><table>
+<thead>
+<tr>
+<th>Index</th>
+<th><code>Simple 1</code> Measurement</th>
+<th><code>Simple 2</code> Measurement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017-11-23T11:00:00Z</td>
+<td>10</td>
+<td>null</td>
+</tr>
+<tr>
+<td>2017-11-23T12:00:00Z</td>
+<td>null</td>
+<td>50</td>
+</tr>
+<tr>
+<td>2017-11-23T13:00:00Z</td>
+<td>20</td>
+<td>null</td>
+</tr>
+<tr>
+<td>2017-11-23T14:00:00Z</td>
+<td>30</td>
+<td>60</td>
+</tr>
+<tr>
+<td>2017-11-23T15:00:00Z</td>
+<td>null</td>
+<td>70</td>
+</tr>
+<tr>
+<td>2017-11-23T16:00:00Z</td>
+<td>40</td>
+<td>null</td>
+</tr>
+<tr>
+<td>2017-11-23T17:00:00Z</td>
+<td>null</td>
+<td>80</td>
+</tr>
+</tbody>
+</table>
+<p>Default value is <code>null</code> for SdsTypes. </p>
+<h4 id="interpolated-join-example-request"><code>Interpolated Join</code> example request</h4>
 <pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
        ?streams=Simple1,Simple2&amp;joinMode=interpolated
        &amp;startIndex=0001-01-01T00:00:00.0000000&amp;endIndex=9999-12-31T23:59:59.9999999
-</code></pre><h4 id="response-13">Response</h4>
-<p>All Measurements from both Streams with missing values interpolated. If the missing values are between valid Measurements within a Stream, they are interpolated. If the missing values are outside of the boundary values, they are extrapolated.</p>
-<p><strong>Note:</strong> The Interpolated SdsJoinMode currently does not support SdsInterpolationModes of the streams. All join requests with interpolations will honor the interpolation mode of the stream type or type property. For more information, see <a class="xref" href="Reading_Data.html#interpolation">Interpolation</a>.</p>
+</code></pre><h5 id="response-13">Response</h5>
+<p>All Measurements from both streams with missing values interpolated. 
+If the missing values are between valid measurements within a stream, they are interpolated.
+For more information, see <a class="xref" href="Reading_Data.html#interpolation">Interpolation</a>.
+If the missing values are outside of the boundary values, they are extrapolated.
+For more information, see <a class="xref" href="Reading_Data.html#extrapolation">Extrapolation</a>.</p>
+<p><strong>Note:</strong> The Interpolated SdsJoinMode currently does not support SdsInterpolationModes of the streams. All join requests with interpolations will honor the interpolation mode of the stream type or type property. </p>
 <h5 id="example-response-body-21">Example response body</h5>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
@@ -1698,94 +1799,127 @@ Content-Type: application/json
     [
         {
             &quot;Time&quot;: &quot;2017-11-23T11:00:00Z&quot;,
-            &quot;State&quot;: 0,
             &quot;Measurement&quot;: 10
         },
         {
             &quot;Time&quot;: &quot;2017-11-23T11:00:00Z&quot;,
-            &quot;State&quot;: 0,
             &quot;Measurement&quot;: 50
         }
     ],
     [
         {
             &quot;Time&quot;: &quot;2017-11-23T12:00:00Z&quot;,
-            &quot;State&quot;: 0,
             &quot;Measurement&quot;: 15
         },
         {
             &quot;Time&quot;: &quot;2017-11-23T12:00:00Z&quot;,
-            &quot;State&quot;: 0,
             &quot;Measurement&quot;: 50
         }
     ],
     [
         {
             &quot;Time&quot;: &quot;2017-11-23T13:00:00Z&quot;,
-            &quot;State&quot;: 0,
             &quot;Measurement&quot;: 20
         },
         {
             &quot;Time&quot;: &quot;2017-11-23T13:00:00Z&quot;,
-            &quot;State&quot;: 0,
             &quot;Measurement&quot;: 55
         }
     ],
     [
         {
             &quot;Time&quot;: &quot;2017-11-23T14:00:00Z&quot;,
-            &quot;State&quot;: 0,
             &quot;Measurement&quot;: 30
         },
         {
             &quot;Time&quot;: &quot;2017-11-23T14:00:00Z&quot;,
-            &quot;State&quot;: 0,
             &quot;Measurement&quot;: 60
         }
     ],
     [
         {
             &quot;Time&quot;: &quot;2017-11-23T15:00:00Z&quot;,
-            &quot;State&quot;: 0,
             &quot;Measurement&quot;: 35
         },
         {
             &quot;Time&quot;: &quot;2017-11-23T15:00:00Z&quot;,
-            &quot;State&quot;: 0,
             &quot;Measurement&quot;: 70
         }
     ],
     [
         {
             &quot;Time&quot;: &quot;2017-11-23T16:00:00Z&quot;,
-            &quot;State&quot;: 0,
             &quot;Measurement&quot;: 40
         },
         {
             &quot;Time&quot;: &quot;2017-11-23T16:00:00Z&quot;,
-            &quot;State&quot;: 0,
             &quot;Measurement&quot;: 75
         }
     ],
     [
         {
             &quot;Time&quot;: &quot;2017-11-23T17:00:00Z&quot;,
-            &quot;State&quot;: 0,
             &quot;Measurement&quot;: 40
         },
         {
             &quot;Time&quot;: &quot;2017-11-23T17:00:00Z&quot;,
-            &quot;State&quot;: 0,
             &quot;Measurement&quot;: 80
         }
     ]
 ]
-</code></pre><h5 id="mergeleft-join-example-request"><code>MergeLeft Join</code> example request</h5>
+</code></pre><table>
+<thead>
+<tr>
+<th>Index</th>
+<th><code>Simple 1</code> Measurement</th>
+<th><code>Simple 2</code> Measurement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017-11-23T11:00:00Z</td>
+<td>10</td>
+<td><em>50</em></td>
+</tr>
+<tr>
+<td>2017-11-23T12:00:00Z</td>
+<td><strong>15</strong></td>
+<td>50</td>
+</tr>
+<tr>
+<td>2017-11-23T13:00:00Z</td>
+<td>20</td>
+<td><strong>55</strong></td>
+</tr>
+<tr>
+<td>2017-11-23T14:00:00Z</td>
+<td>30</td>
+<td>60</td>
+</tr>
+<tr>
+<td>2017-11-23T15:00:00Z</td>
+<td><strong>35</strong></td>
+<td>70</td>
+</tr>
+<tr>
+<td>2017-11-23T16:00:00Z</td>
+<td>40</td>
+<td><strong>75</strong></td>
+</tr>
+<tr>
+<td>2017-11-23T17:00:00Z</td>
+<td><em>40</em></td>
+<td>80</td>
+</tr>
+</tbody>
+</table>
+<p>Interpolated values are in bold. Extrapolated values are in italics. </p>
+<h4 id="mergeleft-join-example-request"><code>MergeLeft Join</code> example request</h4>
 <pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
        ?streams=Simple1,Simple2&amp;joinMode=mergeleft
        &amp;startIndex=0001-01-01T00:00:00.0000000&amp;endIndex=9999-12-31T23:59:59.9999999
-</code></pre><h4 id="response-14">Response</h4>
-<p>This is similar to <a href="#outer">OuterJoin</a>, but value at each index is the first available value at that index when iterating the given list of streams from left to right.</p>
+</code></pre><h5 id="response-14">Response</h5>
+<p>Similar to <a href="#outer">OuterJoin</a>, but value at each index is the first available value at that index when iterating the given list of streams from left to right.</p>
 <h5 id="example-response-body-22">Example response body</h5>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
@@ -1793,46 +1927,94 @@ Content-Type: application/json
 [
     {
         &quot;Time&quot;: &quot;2017-11-23T11:00:00Z&quot;,
-        &quot;State&quot;: 0,
         &quot;Measurement&quot;: 10
     },
     {
         &quot;Time&quot;: &quot;2017-11-23T12:00:00Z&quot;,
-        &quot;State&quot;: 0,
         &quot;Measurement&quot;: 50
     },
     {
         &quot;Time&quot;: &quot;2017-11-23T13:00:00Z&quot;,
-        &quot;State&quot;: 0,
         &quot;Measurement&quot;: 20
     },
     {
         &quot;Time&quot;: &quot;2017-11-23T14:00:00Z&quot;,
-        &quot;State&quot;: 0,
         &quot;Measurement&quot;: 30
     },
     {
         &quot;Time&quot;: &quot;2017-11-23T15:00:00Z&quot;,
-        &quot;State&quot;: 0,
         &quot;Measurement&quot;: 70
     },
     {
         &quot;Time&quot;: &quot;2017-11-23T16:00:00Z&quot;,
-        &quot;State&quot;: 0,
         &quot;Measurement&quot;: 40
     },
     {
         &quot;Time&quot;: &quot;2017-11-23T17:00:00Z&quot;,
-        &quot;State&quot;: 0,
         &quot;Measurement&quot;: 80
     }
 ]
-</code></pre><h5 id="mergeright-join-example-request"><code>MergeRight Join</code> example request</h5>
+</code></pre><table>
+<thead>
+<tr>
+<th>Index</th>
+<th><code>Simple1</code></th>
+<th><code>Simple2</code></th>
+<th>Returned <code>MergeLeft Join</code> Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017-11-23T11:00:00Z</td>
+<td>10</td>
+<td></td>
+<td>10</td>
+</tr>
+<tr>
+<td>2017-11-23T12:00:00Z</td>
+<td></td>
+<td>50</td>
+<td>50</td>
+</tr>
+<tr>
+<td>2017-11-23T13:00:00Z</td>
+<td>20</td>
+<td></td>
+<td>20</td>
+</tr>
+<tr>
+<td>2017-11-23T14:00:00Z</td>
+<td><em>30</em></td>
+<td>60</td>
+<td>30</td>
+</tr>
+<tr>
+<td>2017-11-23T15:00:00Z</td>
+<td></td>
+<td>70</td>
+<td>70</td>
+</tr>
+<tr>
+<td>2017-11-23T16:00:00Z</td>
+<td>40</td>
+<td></td>
+<td>40</td>
+</tr>
+<tr>
+<td>2017-11-23T17:00:00Z</td>
+<td></td>
+<td>80</td>
+<td>80</td>
+</tr>
+</tbody>
+</table>
+<p>Takes the value from the stream on the left (<code>Simple1</code>) at &quot;2017-11-23T14:00:00Z&quot;. </p>
+<h4 id="mergeright-join-example-request"><code>MergeRight Join</code> example request</h4>
 <pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
        ?streams=Simple1,Simple2&amp;joinMode=mergeright
        &amp;startIndex=0001-01-01T00:00:00.0000000&amp;endIndex=9999-12-31T23:59:59.9999999
-</code></pre><h4 id="response-15">Response</h4>
-<p>This is similar to <a href="#outer">OuterJoin</a>, but value at each index is the first available value at that index when iterating the given list of streams from right to left.</p>
+</code></pre><h5 id="response-15">Response</h5>
+<p>Similar to <a href="#outer">OuterJoin</a>, but value at each index is the first available value at that index when iterating the given list of streams from right to left.</p>
 <h5 id="example-response-body-23">Example response body</h5>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
@@ -1840,56 +2022,105 @@ Content-Type: application/json
 [
     {
         &quot;Time&quot;: &quot;2017-11-23T11:00:00Z&quot;,
-        &quot;State&quot;: 0,
         &quot;Measurement&quot;: 10
     },
     {
         &quot;Time&quot;: &quot;2017-11-23T12:00:00Z&quot;,
-        &quot;State&quot;: 0,
         &quot;Measurement&quot;: 50
     },
     {
         &quot;Time&quot;: &quot;2017-11-23T13:00:00Z&quot;,
-        &quot;State&quot;: 0,
         &quot;Measurement&quot;: 20
     },
     {
         &quot;Time&quot;: &quot;2017-11-23T14:00:00Z&quot;,
-        &quot;State&quot;: 0,
         &quot;Measurement&quot;: 60
     },
     {
         &quot;Time&quot;: &quot;2017-11-23T15:00:00Z&quot;,
-        &quot;State&quot;: 0,
         &quot;Measurement&quot;: 70
     },
     {
         &quot;Time&quot;: &quot;2017-11-23T16:00:00Z&quot;,
-        &quot;State&quot;: 0,
         &quot;Measurement&quot;: 40
     },
     {
         &quot;Time&quot;: &quot;2017-11-23T17:00:00Z&quot;,
-        &quot;State&quot;: 0,
         &quot;Measurement&quot;: 80
     }
 ]
-</code></pre><p><a name="postjoin"></a></p>
+</code></pre><table>
+<thead>
+<tr>
+<th>Index</th>
+<th><code>Simple1</code></th>
+<th><code>Simple2</code></th>
+<th>Returned <code>MergeRight Join</code> Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017-11-23T11:00:00Z</td>
+<td>10</td>
+<td></td>
+<td>10</td>
+</tr>
+<tr>
+<td>2017-11-23T12:00:00Z</td>
+<td></td>
+<td>50</td>
+<td>50</td>
+</tr>
+<tr>
+<td>2017-11-23T13:00:00Z</td>
+<td>20</td>
+<td></td>
+<td>20</td>
+</tr>
+<tr>
+<td>2017-11-23T14:00:00Z</td>
+<td>30</td>
+<td><em>60</em></td>
+<td>60</td>
+</tr>
+<tr>
+<td>2017-11-23T15:00:00Z</td>
+<td></td>
+<td>70</td>
+<td>70</td>
+</tr>
+<tr>
+<td>2017-11-23T16:00:00Z</td>
+<td>40</td>
+<td></td>
+<td>40</td>
+</tr>
+<tr>
+<td>2017-11-23T17:00:00Z</td>
+<td></td>
+<td>80</td>
+<td>80</td>
+</tr>
+</tbody>
+</table>
+<p>Takes the value from the stream on the right (<code>Simple2</code>) at &quot;2017-11-23T14:00:00Z&quot;. </p>
+<p><a name="postjoin"></a></p>
 <h3 id="post-request"><code>POST Request</code></h3>
 <pre><code class="lang-text">   POST api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins?
        joinMode={joinMode}
 </code></pre><h5 id="parameters-11">Parameters</h5>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
-<p><code>SdsJoinMode joinMode</code><br>Type of join, i.e. inner, outer, etc.</p>
+<p><code>SdsJoinMode joinMode</code><br>Type of join: inner, outer, interpolated, merge left or merge right</p>
 <h5 id="request-body">Request body</h5>
-<p>Read options specific to each stream.</p>
-<h4 id="response-16">Response</h4>
-<p> The response includes a status code and a response body containing multiple serialized events.</p>
-<p>Consider the following outer join request,</p>
+<p>Read option specific to each stream</p>
+<h5 id="response-16">Response</h5>
+<p>The response includes a status code and a response body containing multiple serialized events.</p>
+<h4 id="outer-join-example-request-1"><code>Outer Join</code> example request</h4>
 <pre><code class="lang-text">   POST api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
        ?joinMode=outer
-</code></pre><p>where in the request body, different start indexes and end indexes are specified per stream,</p>
+</code></pre><h5 id="outer-join-example-request-body"><code>Outer Join</code> example request body</h5>
+<p>Different start indexes and end indexes are specified per stream.</p>
 <pre><code class="lang-json">[  
     {  
         &quot;StreamId&quot;: &quot;Simple1&quot;,
@@ -1916,8 +2147,8 @@ Content-Type: application/json
         }
     }
 ] 
-</code></pre><p>Only events within the stream&#39;s specified index boundaries are considered for the outer join operation</p>
-<h4 id="response-body">Response body</h4>
+</code></pre><h5 id="outer-join-example-response-body"><code>Outer Join</code> example response body</h5>
+<p>Only events within the two streams&#39; specified index boundaries are considered for the outer join operation.</p>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 
@@ -1925,7 +2156,6 @@ Content-Type: application/json
     [
         {
             &quot;Time&quot;: &quot;2017-11-23T11:00:00Z&quot;,
-            &quot;State&quot;: 0,
             &quot;Measurement&quot;: 10
         },
         null
@@ -1933,7 +2163,6 @@ Content-Type: application/json
     [
         {
             &quot;Time&quot;: &quot;2017-11-23T13:00:00Z&quot;,
-            &quot;State&quot;: 0,
             &quot;Measurement&quot;: 20
         },
         null
@@ -1941,7 +2170,6 @@ Content-Type: application/json
     [
         {
             &quot;Time&quot;: &quot;2017-11-23T14:00:00Z&quot;,
-            &quot;State&quot;: 0,
             &quot;Measurement&quot;: 30
         },
         null
@@ -1950,7 +2178,6 @@ Content-Type: application/json
         null,
         {
             &quot;Time&quot;: &quot;2017-11-23T15:00:00Z&quot;,
-            &quot;State&quot;: 0,
             &quot;Measurement&quot;: 70
         }
     ],
@@ -1958,13 +2185,49 @@ Content-Type: application/json
         null,
         {
             &quot;Time&quot;: &quot;2017-11-23T17:00:00Z&quot;,
-            &quot;State&quot;: 0,
             &quot;Measurement&quot;: 80
         }
     ]
 ]
-</code></pre><p>Notice that not all the values from Streams were included since they are restricted by individual queries for each Stream.</p>
-<h4 id="net-client-libraries-methods-7">.NET client libraries methods</h4>
+</code></pre><table>
+<thead>
+<tr>
+<th>Index</th>
+<th><code>Simple 1</code> Measurement</th>
+<th><code>Simple 2</code> Measurement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017-11-23T11:00:00Z</td>
+<td>10</td>
+<td>null</td>
+</tr>
+<tr>
+<td>2017-11-23T13:00:00Z</td>
+<td>20</td>
+<td>null</td>
+</tr>
+<tr>
+<td>2017-11-23T14:00:00Z</td>
+<td>30</td>
+<td>null</td>
+</tr>
+<tr>
+<td>2017-11-23T15:00:00Z</td>
+<td>null</td>
+<td>70</td>
+</tr>
+<tr>
+<td>2017-11-23T17:00:00Z</td>
+<td>null</td>
+<td>80</td>
+</tr>
+</tbody>
+</table>
+<p>Not all values from both streams are included because the query restricts each stream.
+See <code>Outer Join</code> <a href="#outer-join-example-request">GET request</a> above to compare.   </p>
+<h3 id="net-client-libraries-methods-7">.NET client libraries methods</h3>
 <pre><code class="lang-csharp">   Task&lt;IEnumerable&lt;IList&lt;T&gt;&gt;&gt; GetJoinValuesAsync&lt;T&gt;(IEnumerable&lt;string&gt; streams, 
       SdsJoinType joinMode, string startIndex, string endIndex);
 

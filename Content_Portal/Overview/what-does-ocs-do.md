@@ -2,7 +2,7 @@
 
 ![OCS](images/how-does-ocs-work/ocs_intro.png)
 
-OSIsoft Cloud Services (OCS) consists of several different areas of core functionality:
+OSIsoft Cloud Services (OCS) consists of several different areas of core functionality: Tenant management, data collection, data organization, and data analysis. The following sections discuss each in detail, as listed:
 
 * [Tenant management](#tenant-management) - Explains basic concepts in managing OCS, including clients, users, roles, roles-based access control and discusses how administrators can customize OCS based on organizational requirements 
 * [Data collection](#data-collection) - Summarizes techniques to collect and feed data from multiple sources across your organization into a namespace within OCS 
@@ -19,17 +19,16 @@ Using access control lists (ACLs), administrators can also limit permissions to 
 
 ### Tenant 
 
-A tenant represents a set of services, applications, data, and available configuration states. You can authenticate users for a tenant by using one or more identity providers. You can manage user access to resources by assigning roles. Data and services provided by a tenant can span geographical regions. 
+A tenant is the root-level resource in OCS; all other resources are scoped to a tenant. Tenant-level resources deal with identity and access control. You can add users to a tenant using one or more identity providers. Roles are defined for a tenant and can be assigned to users or clients to manage access to resources. A tenant contains namespaces where data is managed.
 
 ### Namespace 
 
-A namespace is a logical unit of organization for data within a tenant. Before any data can be collected in OCS, you must create a namespace for that tenant. Each tenant can contain more than one namespace. Namespaces help you create separate instances of your data and resources in OCS so one tenant does not affect other tenants. In practice, namespaces may correspond to a specific set of infrastructure assets, but commonly they correspond to virtual partitions within a single set of assets dedicated to a specific tenant.
+A namespace is a logical unit of organization for data within a tenant. Before any data can be collected in OCS, you must create a namespace for that tenant. Each tenant can contain more than one namespace. Namespaces help you create separate instances of your data and resources within a tenant, and resources within a namespace do not affect other namespaces within that tenant. In practice, namespaces may correspond to a specific set of infrastructure assets, but commonly they correspond to virtual partitions within a single set of assets dedicated to a specific tenant.
 
 ### Identity 
 
-The concept of identity is the key to how OCS limits and protects services and resources available to an entity. An entity’s identity allows OCS to know how much access to grant to that entity. OCS identity services provide the following functions: 
+The concept of identity is the key to how OCS limits access to services and resources available to an entity. An entity’s identity allows OCS to know how much access to grant to that entity. OCS identity services provide the following functions: 
 
-* Protect data resources 
 * Authenticate users using a local account store or through an external identity provider 
 * Provide session management and single sign-on 
 * Authenticate client applications 
@@ -38,15 +37,15 @@ The concept of identity is the key to how OCS limits and protects services and r
 
 ### User 
 
-A user is an individual identity that represents a person using OCS. When users log in to OCS, they authenticate through an identity provider such as Google or Azure Active Directory. The identity provider authenticates the user against credentials stored in its database. After successful authentication, the identity provider passes a token back to OCS containing the verified identity of the user. This identity information is used by OCS to grant access for a specific time period. 
+A user is an individual identity that represents a person using OCS. When users log in to OCS, they authenticate through an identity provider such as Google or Azure Active Directory. The identity provider authenticates the user, and upon successful authentication, the identity provider passes a token back to OCS containing the verified identity of the user. This identity information is used by OCS to grant access for a specific time period. 
 
 ### Clients 
 
-Clients are applications that act on behalf of users and have programmatic access by using OCS APIs. OCS supports the following client types: 
+Clients have programmatic access to OCS resources through using OCS APIs. There are two primary client types: 
+
+* **Client credential clients** – Used for server-to-server communication without the presence or intervention of a user. Examples include PI Adapters or the Edge Data Store sending data to OCS. This type of client is issued a client ID and secret. After authentication, the client is granted an access token with a defined lifetime. 
 
 * **Authorization code clients** – Used by web-based, mobile, and desktop applications, this client type requires user interaction. Users authenticate with an identity provider. Authorization code clients support silent refresh, which allows the user to automatically receive a new access token, providing for uninterrupted access to the application. 
-* **Client credential clients** – Used for server-to-server communication without the presence or intervention of a user. Examples include PI Adapters or the Edge Data Store sending data to OCS. This type of client is issued a client ID and secret. After authentication, the client is granted an access token with a defined lifetime. 
-* **Hybrid clients** – Used by thick client applications, this type of client requires user interaction. The user authenticates with an identity provider. After the user authenticates, the server-side client steps in and server-to-server communication commences. 
 
 ### Roles 
 
@@ -64,10 +63,9 @@ Authentication is the process of verifying the identity of a requestor and confi
 Authentication consists of the following steps: 
 
 1.	A requestor makes a request to access an OCS resource. 
-2.	OCS does not recognize the requestor and routes the request to a gateway. 
-3.	The gateway routes the authentication call to an identity service. 
-4.	The identity service asks the user which account/credentials should be used to connect. This determines which identity provider should be used for authentication. 
-5.	The identity service sends an authentication request to a third-party identity provider along with the user credentials. 
+2.	OCS does not recognize the requestor and makes a request to an identity provider.
+4.	The identity provider asks the user which account/credentials should be used to connect. 
+5.	The authentication request along with the user credentials is received by the identity provider. 
 6.	The identity provider verifies the user credentials with its corresponding database. 
 7.	After successful verification, the identity provider passes an access token for the user back to the identity service. This access token grants the user a limited period of access. 
 
@@ -77,9 +75,8 @@ Authorization is the process of determining the appropriate access level for a u
 Authorization consists of the following steps: 
 
 1.	The requestor sends a request to an OCS resource. 
-2.	A gateway service examines the access token of the requestor to validate the token. 
-3.	The gateway service routes the request to the appropriate OCS resource. 
-4.	The resource examines the user’s assigned role and correlates the role against its access control list. The ACL defines an access level to the resource for each role. 
+2.	OCS examines the access token of the requestor to validate the token and routes the request to the appropriate OCS service.
+4.	The service responsible for the OCS resource examines the user’s assigned role and correlates the role against its access control list. The ACL defines an access level to the resource for each role. 
 5.	The resource grants that level of access to the user. 
 
 ![OCS](images/how-does-ocs-work/authorization.png)
@@ -88,9 +85,12 @@ Authorization consists of the following steps:
 
 Each OCS service and resource has an access control list (ACL) that defines how much access is granted to assigned roles. The OCS Administrator configures each ACL. When a request is made to a specific OCS resource, the role assigned to the requestor (whether a user or client) is compared to the ACL for that resource to determine whether the request should be authorized. 
 
-### Group 
-
-A group is a logical collection of identities for which access rights can be managed as a whole.
+The types of permissions granted to roles are as follows:
+* Read
+* Write
+* Delete
+* Manage Access Control: Ability to modify the access control list of the resource.
+* Owner: An identity that has full permission level.
 
 ## Data Collection
 

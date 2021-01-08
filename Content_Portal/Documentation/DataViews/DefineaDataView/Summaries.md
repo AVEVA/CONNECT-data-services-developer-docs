@@ -21,7 +21,7 @@ If the SummaryType is "None", the SummaryDirection (if specified) will be accept
 The label tokens: \{SummaryType\} and \{SummaryDirection\} will resolve in the field mappings and show in dataview table header columns for a summary field.
 
 # Example: Include summary in data view
-This simple example shows the inclusion of a summary data field for a SummaryType set to "Mean" with "IncludeUom" set to "true". Since the SummaryDirection is not set, the default value of "Forward" is used. The label includes two summary tokens that will resolve to the summary type and direction in the data view header.
+This simple example shows the inclusion of a summary data field for a SummaryType set to "Mean" with "IncludeUom" set to "true". Since the SummaryDirection is not specified, the default value of "Forward" is used. The label includes two summary tokens that will resolve to the summary type and direction in the data view header.
 ```json
 {
   "Id": "quickstart",

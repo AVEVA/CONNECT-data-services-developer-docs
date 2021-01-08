@@ -169,7 +169,7 @@ REST APIs give you the ability to read and write streams data programmatically. 
 
 Because types cannot be modified, OCS provides a flexible mechanism for viewing data in a stream view. A stream view is a logical overlay for stream data. 
 
-For example, a process engineer and a maintenance technician, might want to see different data from the same stream. Because you cannot change the data sent to a stream, a stream view allows you to see a subset of the data in a stream. In this way the process engineer can see one subset of data in one stream view while the maintenance technician can see a different subset in a second stream view. 
+For example, a process engineer and a maintenance technician, might want to see different data from the same stream. Because you cannot change the shape of data belonging to a stream, a stream view allows you to see a subset of the data in a stream. In this way the process engineer can see one subset of data in one stream view while the maintenance technician can see a different subset in a second stream view. 
 
 Stream views can perform additional functions, such as convert units of measure and change names so the terminology that is displayed is more appropriate for a particular persona. 
 

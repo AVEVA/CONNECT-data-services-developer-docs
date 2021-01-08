@@ -194,7 +194,9 @@ Three analytical methods are available in OCS, each of which works dynamically, 
 
 #### Metadata rules 
 
-Metadata rules provide meaningful contextual information to stream data.  A metadata rule defines the patterns in the stream name. Therefore, stream names that follow a standard naming pattern, including items such as location, asset class, and asset ID, allow users to create rules based on this naming pattern. The application of the metadata to streams makes it easier for users to understand the data contained in the stream. 
+Metadata rules enable users to capture data streams based on specific data items, such as a plant location or device category.  You create a metadata rule by defining a stream name pattern based on a selected stream name.  The metadata rule captures all streams in a given namespace that match the stream name pattern defined in the rule. 
+
+Stream names that follow a standard naming pattern, including items such as location, asset class, and asset ID, allow users to create rules based on this naming pattern. The application of the metadata to streams enables users to capture data from matching data streams for display and analysis. 
 
 The following diagram shows metadata in the context of several different but similar data streams: 
 
@@ -229,9 +231,9 @@ In addition to being applied to any existing streams, a metadata rule captures a
 
 #### Data views 
 
-Data views are subsets of data from one or more streams. Data scientists typically query large datasets, and need to index, sort, and organize data into a consumable format for data science applications. In data views, data items can be ordered. Time indices, data presentation format, and fields used to group the included data are also configurable.
+Data views are subsets of data from one or more streams. Data scientists typically query large datasets, and need to index, sort, and organize data into a consumable format for data science applications. In data views, data items can be selected, ordered, and grouped by field. Time indices and time intervals are also configurable for display and analysis.
 
-Data views serve as a bridge between raw OCS data and data science applications. Users use an API to programmatically access normalized, aligned, and interpolated data in data views for the purpose of doing advanced analytics. Data views mesh neatly with OSIsoft’s larger data science enablement efforts. 
+Data views serve as a bridge between raw OCS data and data science applications. Users can use an API to programmatically align and interpolate data in data views for the purpose of doing advanced analytics. Users can also use a wizard provided in the OCS portal to facilitate creating data views. Data views mesh neatly with OSIsoft’s larger data science enablement efforts. 
 
 ![OCS](images/how-does-ocs-work/dataviews.jpg)
 
@@ -240,17 +242,17 @@ The diagram above depicts multiple streams captured by a metadata rule and organ
 2.	A user creates a data view in OCS based on the streams captured by the rule, selects specific data elements from the streams, and orders and indexes them as needed. 
 3.	Ordered and normalized data is then consumable by data science applications for in-depth analysis. 
 
-The OCS portal provides a wizard to facilitate creating data views. You create a query in the form of a stream name pattern. The query is typically part of a stream name followed by the wildcard asterisk character (*). You can also reference a metadata rule by entering a metadata key from the rule in the query criteria. By doing so, the data view includes all the streams captured by the referenced metadata rule. 
+You create a query in the form of a stream name pattern. The query is typically part of a stream name followed by the wildcard asterisk character (*). You can also reference a metadata rule by entering a metadata key from the rule in the query criteria. By doing so, the data view includes all the streams captured by the referenced metadata rule. 
 
 ![OCS](images/how-does-ocs-work/dataview.jpg)
 
 You can specify the time range for the data and the time intervals in which data values are displayed. You can configure which data fields from the streams to include, the order in which data fields appear, and the data field by which other fields are grouped. 
 
-Data views allow you to arrange data fields in a way that they can be consumed by a third-party data science application. You can specify the time intervals for display and analysis. 
+Data views allow you to arrange data fields in a way that they can be consumed by a third-party data science application.  
 
 #### Visualization
 
-Visualization enables you to select one or more data streams in a selected namespace, specify a preset or custom time range, and then render a graphical depiction of those data values. 
+Visualization enables you to select one or more data streams in a selected namespace, specify a preset or custom time range, and then render a graphical depiction of those data values. As with data views, you can reference a metadata rule to apply visualization to its matching streams.
 
 ![OCS](images/how-does-ocs-work/trend.jpg)
 

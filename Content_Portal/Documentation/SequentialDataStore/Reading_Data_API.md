@@ -1917,7 +1917,7 @@ Content-Type: application/json
 | 2017-11-23T16:00:00Z 	| 40                     	| **75**                      	|
 | 2017-11-23T17:00:00Z 	| _40_                     	| 80                      	|
 
-Interpolated values are in bold. Extrapolated values are in italics. 
+Interpolated values are in **bold**. Extrapolated values are in *italics*. 
 
 #### `MergeLeft Join` example request
  ```text

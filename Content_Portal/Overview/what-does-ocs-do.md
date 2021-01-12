@@ -37,13 +37,13 @@ The concept of identity is the key to how OCS limits access to services and reso
 
 ### User 
 
-A user is an individual identity that represents a person using OCS. When users log in to OCS, they authenticate through an identity provider such as Google or Azure Active Directory. The identity provider authenticates the user, and upon successful authentication, the identity provider passes a token back to OCS containing the verified identity of the user. This identity information is used by OCS to grant access for a specific time period. 
+A user is an individual identity that represents a person using OCS. When users log in to OCS, they authenticate through an identity provider such as Google or Azure Active Directory. The identity provider authenticates the user, and upon successful authentication, passes a token back to OCS verifying the identity of the user. This identity is used by OCS to grant access for a specific time period. 
 
 ### Clients 
 
 Clients have programmatic access to OCS resources through using OCS APIs. There are two primary client types: 
 
-* **Client credential clients** – Used for server-to-server communication without the presence or intervention of a user. Examples include PI Adapters or the Edge Data Store sending data to OCS. This type of client is issued a client ID and secret. After authentication, the client is granted an access token with a defined lifetime. 
+* **Client credential clients** – The most common type of OCS client, used for server-to-server communication without the presence or intervention of a user. Examples include PI Adapters or the Edge Data Store sending data to OCS. This type of client is issued a client ID and secret. After authentication, the client is granted an access token with a defined lifetime. 
 
 * **Authorization code clients** – Used by web-based, mobile, and desktop applications, this client type requires user interaction. Users authenticate with an identity provider. Authorization code clients support silent refresh, which allows the user to automatically receive a new access token, providing for uninterrupted access to the application. 
 
@@ -59,31 +59,15 @@ Identity providers manage databases of user records and authenticate users again
 
 ### Authentication 
 
-Authentication is the process of verifying the identity of a requestor and confirming that the requestor is an approved entity for OCS. This verification process is performed by the identity provider. After successful authentication, the identity provider passes an access token back to OCS granting the requestor access for a specific time period. 
-Authentication consists of the following steps: 
-
-1.	A requestor makes a request to access an OCS resource. 
-2.	OCS does not recognize the requestor and makes a request to an identity provider.
-4.	The identity provider asks the user which account/credentials should be used to connect. 
-5.	The authentication request along with the user credentials is received by the identity provider. 
-6.	The identity provider verifies the user credentials with its corresponding database. 
-7.	After successful verification, the identity provider passes an access token for the user back to the identity service. This access token grants the user a limited period of access. 
+Authentication is the process of verifying the identity of a user and confirming that the user is an approved entity for OCS. This verification process is performed by the identity provider.  
 
 ### Authorization 
 
 Authorization is the process of determining the appropriate access level for a user or client for each OCS resource and service. Two factors determine the level of access: the role that the user or client is assigned at authentication and the corresponding access control list that grants a level of access to a role for each resource and service. 
-Authorization consists of the following steps: 
-
-1.	The requestor sends a request to an OCS resource. 
-2.	OCS examines the access token of the requestor to validate the token and routes the request to the appropriate OCS service.
-4.	The service responsible for the OCS resource examines the user’s assigned role and correlates the role against its access control list. The ACL defines an access level to the resource for each role. 
-5.	The resource grants that level of access to the user. 
-
-![OCS](images/how-does-ocs-work/authorization.png)
 
 ### Access control list 
 
-Each OCS service and resource has an access control list (ACL) that defines how much access is granted to assigned roles. The OCS Administrator configures each ACL. When a request is made to a specific OCS resource, the role assigned to the requestor (whether a user or client) is compared to the ACL for that resource to determine whether the request should be authorized. 
+Each OCS service and resource has an access control list (ACL) that defines how much access is granted to assigned roles. The OCS Administrator configures each ACLs, specifying types of permissions with each role. When a request is made to a specific OCS resource, the role assigned to the requestor (whether a user or client) is compared to the ACL for that resource to determine whether the request should be authorized. 
 
 The types of permissions granted to roles are as follows:
 * Read

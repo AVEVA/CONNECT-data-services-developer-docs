@@ -232,4 +232,4 @@ Visualization enables you to select one or more data streams in a selected names
 
 The example above shows stream data for two streams over a selected period of several days. 
 
-The ability to observe stream data graphically can unlock trends, high points, or trouble spots. Combined with metadata rules and data views, visualization rounds out a powerful set of OCS analytical tools. 
+The ability to observe stream data graphically can unlock trends, high points, or trouble spots. Combined with metadata rules and data views, visualization rounds out a powerful set of OCS data tools. 

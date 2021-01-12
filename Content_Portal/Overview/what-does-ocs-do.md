@@ -6,7 +6,8 @@ OSIsoft Cloud Services (OCS) consists of several different areas of core functio
 
 * [Tenant management](#tenant-management) - Explains basic concepts in managing OCS, including clients, users, roles, roles-based access control and discusses how administrators can customize OCS based on organizational requirements 
 * [Data collection](#data-collection) - Summarizes techniques to collect and feed data from multiple sources across your organization into a namespace within OCS 
-* [Data organization](#data-organization) - Provides a high-level description of how OCS stores and retrieves operational data 
+* [Data organization](#data-organization) - Provides a high-level description of how OCS stores and retrieves operational data
+* [Visualization](#visualization) - Enables users to render a graphical depiction of selected OCS stream data values
 * [Data science enablement](#data-science-enablement) - Highlights the capabilities of OCS tools for data grouping and organization to enable the use of third-party data science applications
 
 The flow of this document is modeled after the steps that you take to configure OCS to collect data from various sources and organize it for analysis within the platform or third-party data science applications.
@@ -161,7 +162,19 @@ To create a stream view, you create a target type that defines the properties to
 
 OCS provides a graphical interface for setting up stream views or you can use REST APIs to define stream views programmatically. If you are using the .NET framework, OSIsoft also offers client libraries to help you create and use stream views. 
 
-## Data science enablement 
+## Visualization
+
+OCS visualization tools provide multiple options for viewing selected OCS stream data. The ability to observe stream data graphically can unlock trends, high points, or trouble spots. 
+
+### Trend
+
+The Visualization Trend feature converts data from one or more streams into graphical representations of data values collected over a custom-defined time period. Trend enables you to select one or more data streams in a selected namespace, specify a preset or custom time range, and then render a graphical depiction of those data value.
+
+![OCS](images/how-does-ocs-work/trend.jpg)
+
+The example above shows stream data for two streams over a selected period of several days. 
+
+## Data science enablement
 
 OCS provides capabilities that allow you to group and organize operational PI, IoT, and OCS data. By arranging data into forms that can be consumed by third party data science applications, data scientists can conduct deep analysis to detect unrealized patterns and insights. OSIsoft data science enablement efforts allow for better informed planning, predictive maintenance, and operational optimization. 
 
@@ -173,8 +186,6 @@ Three methods are available in OCS, each of which works dynamically, continuing 
   Metadata rules simplify the task of collecting and retrieving data streams. 
 * [Data views ](#data-views)
   Data views facilitate the ordering, indexing, and organization of data from multiple streams. 
-* [Visualization ](#visualization)
-  Visualization converts data from one or more streams into graphical representations of data values collected over a custom-defined time period. 
 
 #### Metadata rules 
 
@@ -208,12 +219,3 @@ The diagram above depicts multiple streams captured by a metadata rule and organ
 
 Data views allow you to arrange data fields in a way that they can be consumed by a third-party data science application.  
 
-#### Visualization
-
-Visualization enables you to select one or more data streams in a selected namespace, specify a preset or custom time range, and then render a graphical depiction of those data values. As with data views, you can reference a metadata rule to apply visualization to its matching streams.
-
-![OCS](images/how-does-ocs-work/trend.jpg)
-
-The example above shows stream data for two streams over a selected period of several days. 
-
-The ability to observe stream data graphically can unlock trends, high points, or trouble spots. Combined with metadata rules and data views, visualization rounds out a powerful set of OCS data tools. 

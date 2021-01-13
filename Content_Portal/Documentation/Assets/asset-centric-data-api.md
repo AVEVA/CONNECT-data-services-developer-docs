@@ -3,7 +3,7 @@ uid: AssetCentricDataAPI
 ---
 
 # Asset Centric Data API
-The asset centric data API provides a quick way to take the dynamic data stored in SDS streams.
+The asset centric data API provides a quick way to retrieve data stored in an asset's referenced streams.
 
 In order to retrieve stream data from an asset, you must first set up stream references for a given asset. The data that is retrieved is based on the resolved asset.
 

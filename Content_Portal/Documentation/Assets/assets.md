@@ -21,7 +21,7 @@ In this situation, an asset type can be used to create multiple similar assets. 
 | AssetTypeId   | String            | Optional  | No          | `Id` for the asset type that this asset is derived from. To get the merged view of the asset, get the resolved asset through the /Assets/{assetId}/Resolved route. | Yes  | No            |
 | Metadata      | Metadata List     | Optional  | Yes*       | Asset and asset type metadata                               | Yes  | Yes            |
 | StreamReferences   | Stream Reference List | Optional  | No *       | Asset stream references                                             | Yes  | No            |
-| TypeReferences | Type Reference List | Optional  | No*        | Asset type type References                                     | No | Yes            |
+| TypeReferences | Type Reference List | Optional  | No*        | Asset type type references                                     | No | Yes            |
 | StatusMapping | Status Mapping | Optional  | No*        | Asset and asset type status mapping | Yes | Yes            |
 
 For more information on search syntax, see [Assets Search API](xref:AssetsSearchAPI).
@@ -62,7 +62,7 @@ An asset type type reference represents dynamic stream data associated with an a
 | TypeId    | String | Required  | No          | This string must be an SDS stream type `Id` in the referenced SDS stream. |
 
 ## Asset and asset type status mapping properties
-For information about asset and asset type status mapping, please refer to status mapping for more details. TODO: Add link to asset status mapping.  
+For information about asset and asset type status mapping, please refer to [Asset Status](xref:AssetStatusMapping) for more details.  
 
 The following is an example of an asset derived from an asset type.
 

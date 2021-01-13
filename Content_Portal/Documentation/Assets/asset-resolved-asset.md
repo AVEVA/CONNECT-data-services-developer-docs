@@ -2,9 +2,9 @@
 uid: AssetResolvedAsset
 ---
 
-# Asset
+# Resolved Asset
 
-The resolved describes the consumption-oriented aspects of an OCS resource, rather than describing how the resource is configured. 
+The resolved asset describes the consumption-oriented aspects of an OCS resource rather than describing how the resource is configured. 
 
 The resolved asset corresponds to its metadata and referenced stream which define how the data is interpreted (that is, SdsTypeCode, InterpolationMode, and UOM).
 
@@ -35,7 +35,7 @@ The examples in the following table illustrate the resolved asset metadata value
 | 3       | `Id`="md_id"<br/> `Name`="**m3**"<br/>  `Value`=10    | `Id`="md_id"<br/> `Name`=null<br/>  `Value`=20               | `Id`="md_id"<br/> `Name`="**m3**"<br/>  `Value`=20        | **m3** appears on the resolved asset with `Value`=20, along with `UOM` and `SdsTypeCode` from the asset type. The `Value` property on the asset `Metadata` value always overrides the `Value` property on the asset type. |
 | 4       | Not present                                           | `Id`="md_id"<br/> `Name`="**m4**"<br/>  `Value`=30           | `Id`="md_id"<br/> `Name`="**m4**"<br/>  `Value`=30        | m4 appears on the resolved asset with value =30, along with `UOM` and `SdsTypeCode` from the asset. Because this metadata value does not exist on the asset type, the metadata value on the resolved asset takes the value of the asset. |
 | 5       | Not present                                           | `Id`="md_id"<br/> `Name`=null<br/>  `Value`=30               | Not present                                               | Because there is no `Metadata` value with `Id` = "md_id" on the asset type and the name of the `Metadata` value on the asset is null, then this `Metadata` value does not appear on the resolved asset. |
-| 6       | `Id`="md_id"<br/> `Name`="**m6**"<br/>  `Value`=10    | `Id`="md_id"<br/> `Name`="anotherName"<br/>  `Value`="1234"  | `Id`="md_id"<br/> `Name`="**m6**"<br/>  `Value`=10        | The `Metadata` value `Name` with `Id`= "md_id" is not null on the asset. Therefore, the dresolved asset's `Metadata` value takes the  asset type's `Metadata` value. |
+| 6       | `Id`="md_id"<br/> `Name`="**m6**"<br/>  `Value`=10    | `Id`="md_id"<br/> `Name`="anotherName"<br/>  `Value`="1234"  | `Id`="md_id"<br/> `Name`="**m6**"<br/>  `Value`=10        | The `Metadata` value `Name` with `Id`= "md_id" is not null on the asset. Therefore, the resolved asset's `Metadata` value takes the  asset type's `Metadata` value. |
 | 7       | `Id`="md_id"<br/> `Name`="**m7**"<br/>  `Value`=10    | `Id`="md_id"<br/> `Name`=null<br/>  `Value`="a string value" | `Id`="md_id"<br/> `Name`="**m7**"<br/> ` Value`=0         | The `Metadata` value with `Id`="md_id" has different `SdsTypeCode` on the asset and asset type. Therefore, the resolved asset's `Metadata` value coerces the overloaded `Value` from the asset to the `SdsTypecode` on the asset type.  It also takes the  `Metadata` value for `UOM` and `SdsTypeCode` from the asset type. |
 | 8       | `Id`="md_id"<br/> `Name`="**m9**"<br/> ` Value`=10    | `Id`="md_id"<br/> `Name`=null<br/> ` Value`="1.23"           | `Id`="md_id"<br/> `Name`="**m9**"<br/>  `Value`=1         | The `Metadata` value with `Id`="md_id" has a different `SdsTypeCode` on the asset and asset type. Therefore, the resolved asset's `Metadata` value coerces the overloaded `Value` from the asset to the `SdsTypecode` on the asset type. It also takes the  `Metadata` value for `UOM` and `SdsTypeCode` from the asset type. |
 

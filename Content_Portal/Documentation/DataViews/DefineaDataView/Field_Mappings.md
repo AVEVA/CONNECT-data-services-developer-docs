@@ -66,7 +66,7 @@ Fields of kind `DataField` map to a [data field](xref:DataViewsFieldSets) on the
 | TargetFieldKey | The metadata name (`Metadata` fields), property id (`PropertyId` fields), or property name (`PropertyName` fields). Not applicable to `Id`, `Name`, or `Tags` fields. |
 | TypeCode | The data item's data type |
 | SummaryType *(coming soon)* | The summary type calculation for the data field. Applicable to 'PropertyId' and 'PropertyName' fields only. |
-| SummaryDirection *(coming soon)* | The direction of the summary type calculation for the data field. |
+| SummaryDirection *(coming soon)* | SummaryDirection controls whether the start or end index of the summary is used by the data view to calculate the summary values. |
 | Uom *(coming soon)*| The unit of measure id for the data field |
 | FieldSetIndex | The zero-based positioning of the data field set |
 | FieldIndex | The zero-based positioning of the data field within the appropriate data field set |

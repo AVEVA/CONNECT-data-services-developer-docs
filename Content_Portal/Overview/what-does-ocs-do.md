@@ -180,16 +180,16 @@ OCS provides capabilities that allow you to group and organize operational PI, I
 
 ### Grouping and organization methods 
 
-Three methods are available in OCS, each of which works dynamically, continuing to filter and order data after they are in place. These methods include the following: 
+Two methods are available in OCS, each of which works dynamically, continuing to filter and order data after they are in place. These methods include the following: 
 
 * [Metadata rules ](#metadata-rules)
-  Metadata rules simplify the task of collecting and retrieving data streams. 
+  Metadata rules enable users to assign metadata to selected parts of defined stream name patterns.
 * [Data views ](#data-views)
   Data views facilitate the ordering, indexing, and organization of data from multiple streams. 
 
 #### Metadata rules 
 
-Metadata rules enable users to capture data streams based on specific stream name parts, such as a plant location or device category.  A metadata rule captures all streams in a given namespace that match the stream name pattern defined in the rule. 
+Metadata rules enable users to assign metadata to specific stream name parts, such as a plant location or device category.  A metadata rule assigns metadata defined in the rule to all streams in a given namespace that match the stream name pattern. 
 
 The following diagram shows metadata in the context of several different but similar data streams: 
 
@@ -198,9 +198,9 @@ The following diagram shows metadata in the context of several different but sim
 The diagram above shows three data streams for turbines named GEO1 and GEO2. 
 1.	The color-coded data streams show the specific data each stream is tracking, detailed in the Stream Metadata column. 
 2.	The basic description of the stream data is encoded in the stream name. For example, looking at the first stream in the table, the metadata rule takes what might have been meaningless to a user, *GEO1_P.ACT_PV*, and translates this.  The user sees that GEO1 is the name of the turbine and ACT_PV  or Active Power is the measurement in this stream.  
-3.	A metadata rule based on this stream naming pattern can capture active power values for all turbines in each wind farm. 
+3.	A metadata rule based on this stream naming pattern can assign metadata for all turbines in each matching stream. 
 
-In addition to being applied to any existing streams, a metadata rule captures any matching streams that are subsequently added to the selected namespace. You can edit a metadata rule. The modified rule may then capture a different set of streams.
+In addition to being applied to any existing streams, a metadata rule assigns the defined metadata to any matching streams that are subsequently added to the selected namespace. You can edit a metadata rule, and the modified rule may then assign metadata to a different set of streams.
 
 #### Data views 
 
@@ -210,12 +210,12 @@ Data views serve as a bridge between raw OCS data and data science applications.
 
 ![OCS](images/how-does-ocs-work/dataviews.jpg)
 
-The diagram above depicts multiple streams captured by a metadata rule and organized into a data view that a third-party data science application can consume: 
-1.	Data streams from three wind turbines are captured by a metadata rule. 
-2.	A user creates a data view in OCS based on the streams captured by the rule, selects specific data elements from the streams, and orders and indexes them as needed. 
+The diagram above depicts multiple streams organized into a data view that a third-party data science application can consume: 
+1.	Data streams from three wind turbines contain metadata assigned by a metadata rule. 
+2.	A user creates a data view in OCS based on streams containing the specified metadata, selects specific data elements from the streams, and orders and indexes them as needed. 
 3.	Ordered and normalized data is then consumable by data science applications for in-depth analysis. 
 
-  **Note: You can reference a metadata rule to create a data view. By doing so, the data view includes all the streams captured by the referenced metadata rule. 
+  **Note: You can reference metadata defined in a metadata rule when creating a data view. This action will include all streams containing the specified metadata.
 
 Data views allow you to arrange data fields in a way that they can be consumed by a third-party data science application.  
 

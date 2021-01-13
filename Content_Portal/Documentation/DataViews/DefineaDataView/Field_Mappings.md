@@ -37,6 +37,7 @@ Fields of kind `IndexField` map to the data view's [index field](xref:DataViewsQ
 | TargetMeasurementKey *(coming soon)* | Not applicable |
 | TargetFieldKey | Not applicable |
 | TypeCode | Equivalent to the `IndexTypeCode` of the data view |
+| SummaryType *(coming soon)* | Not applicable|
 | Uom *(coming soon)* | Not applicable |
 | FieldSetIndex | Not applicable |
 | FieldIndex | Not applicable |
@@ -50,6 +51,7 @@ Fields of kind `GroupingField` map to a [grouping field](xref:DataViewsGrouping)
 | TargetMeasurementKey *(coming soon)* | Not applicable |
 | TargetFieldKey | Not applicable |
 | TypeCode | The group's data type |
+| SummaryType *(coming soon)* | Not applicable|
 | Uom *(coming soon)* | The unit of measure id for the grouping field |
 | FieldSetIndex | Not applicable |
 | FieldIndex | The zero-based positioning of the field within the data view's grouping fields |
@@ -63,6 +65,8 @@ Fields of kind `DataField` map to a [data field](xref:DataViewsFieldSets) on the
 | TargetMeasurementKey *(coming soon)* | The name of the asset measurement. Only applicable to `PropertyId` fields and when the data field references an asset measurement. |
 | TargetFieldKey | The metadata name (`Metadata` fields), property id (`PropertyId` fields), or property name (`PropertyName` fields). Not applicable to `Id`, `Name`, or `Tags` fields. |
 | TypeCode | The data item's data type |
+| SummaryType *(coming soon)* | The summary type calculation for the data field. Applicable to 'PropertyId' and 'PropertyName' fields only. |
+| SummaryDirection *(coming soon)* | SummaryDirection controls whether the start or end index of the summary is used by the data view to calculate the summary values. |
 | Uom *(coming soon)*| The unit of measure id for the data field |
 | FieldSetIndex | The zero-based positioning of the data field set |
 | FieldIndex | The zero-based positioning of the data field within the appropriate data field set |
@@ -76,6 +80,7 @@ The field id field only applies to data views with [narrow shape](xref:DataViewS
 | TargetMeasurementKey *(coming soon)* | Not applicable |
 | TargetFieldKey | Not applicable |
 | TypeCode | String |
+| SummaryType *(coming soon)* | Not applicable|
 | Uom *(coming soon)* | Not applicable |
 | FieldSetIndex | The zero-based positioning of the data field set |
 | FieldIndex | The zero-based positioning of the data field within the appropriate data field set |

@@ -206,7 +206,7 @@ In addition to being applied to any existing streams, a metadata rule captures a
 
 Data views are subsets of data from one or more streams. Data scientists typically query large datasets, and need to index, sort, and organize data into specific subsets. With data views, data items can be selected, ordered, and grouped by field. Time indices and time intervals are also configurable for display and analysis.
 
-Data views serve as a bridge between raw OCS data and data science applications. Users can use an API to programmatically align and interpolate data in data views for the purpose of doing advanced analytics. Users can also use a wizard provided in the OCS portal to facilitate creating data views. Data views mesh neatly with OSIsoft’s larger data science enablement efforts. 
+Data views serve as a bridge between raw OCS data and data science applications. Users can use an API to programmatically align and interpolate data in data views for the purpose of doing advanced analytics. Users can also use a wizard provided in the OCS portal to facilitate creating data views. 
 
 ![OCS](images/how-does-ocs-work/dataviews.jpg)
 

@@ -145,6 +145,9 @@ references:
 - uid: DataViewsSecuringDataViews
   name: Secure data views
   href: Content_Portal/Documentation/DataViews/SecureDataViews/Securing_Data_Views.html
+- uid: DataViewsSummaries
+  name: Display calculated summaries (coming soon)
+  href: Content_Portal/Documentation/DataViews/DefineaDataView/Summaries.html
 - uid: DataViewsUnitsOfMeasure
   name: Display units of measure (coming soon)
   href: Content_Portal/Documentation/DataViews/DefineaDataView/Units_of_Measure.html

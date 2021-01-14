@@ -486,7 +486,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/DataViews/DefineaDataView/Field_Mappings.html",
-          "hash": "pK4I51jhbFmI3A70M7H4Bg=="
+          "hash": "HYy+zHyO3vbrw07gzQ0Eew=="
         }
       },
       "is_incremental": false,
@@ -554,6 +554,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/DataViews/DefineaDataView/Summaries.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/DataViews/DefineaDataView/Summaries.html",
+          "hash": "OPxUIVXe0yU6foiabA2RKQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "Content_Portal/Documentation/DataViews/DefineaDataView/Units_of_Measure.md",
       "output": {
         ".html": {
@@ -594,7 +606,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/DataViews/GetResolvedDataView/Resolved_Data_View.html",
-          "hash": "XPPIpfzSn6Zz6jRv+6l2UQ=="
+          "hash": "txu/v8HaJNhfjycRX5iUgQ=="
         }
       },
       "is_incremental": false,
@@ -1263,7 +1275,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/samples.html",
-          "hash": "WypVjiPj4I4yPmv4sppxsw=="
+          "hash": "ZlCsBBqyi9txZ60Sp1h31A=="
         }
       },
       "is_incremental": false,
@@ -1960,7 +1972,19 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/toc.html",
-          "hash": "eMxYeYwp/Zz/S/MufQIAtw=="
+          "hash": "AUlJxklBcY+L0Sam7TpVBg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "README.md",
+      "output": {
+        ".html": {
+          "relative_path": "README.html",
+          "hash": "7urGEbSoLyTBcZM6i2G90w=="
         }
       },
       "is_incremental": false,
@@ -2005,7 +2029,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 116,
+          "total_file_count": 118,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

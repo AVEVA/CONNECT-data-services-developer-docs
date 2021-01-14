@@ -334,6 +334,16 @@ See the <a class="xref" href="../DataViewsAPIOverview/Resolved_Data_View_API.htm
 <td>The name of the field&#39;s data type</td>
 </tr>
 <tr>
+<td>SummaryType <em>(coming soon)</em></td>
+<td>SdsSummaryType</td>
+<td>The summary type calculation for the data field.</td>
+</tr>
+<tr>
+<td>SummaryDirection <em>(coming soon)</em></td>
+<td>SummaryDirection Enumeration</td>
+<td>The direction of the summary type calculation for the data field.</td>
+</tr>
+<tr>
 <td>Uom <em>(coming soon)</em></td>
 <td>bool</td>
 <td>The unit of measure id for the data item field</td>
@@ -342,6 +352,29 @@ See the <a class="xref" href="../DataViewsAPIOverview/Resolved_Data_View_API.htm
 <td>IsKey</td>
 <td>bool</td>
 <td>True if the field is the primary index of the data item. False otherwise.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="summarydirection-enumeration">SummaryDirection enumeration</h3>
+<p>Direction used in the summary calculation.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Enumeration Id</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Forward</td>
+<td>1</td>
+<td>Uses the start index for the summary calculation.</td>
+</tr>
+<tr>
+<td>Backward</td>
+<td>2</td>
+<td>Uses the end index for the summary calculation.</td>
 </tr>
 </tbody>
 </table>
@@ -428,6 +461,16 @@ See the <a class="xref" href="../DataViewsAPIOverview/Resolved_Data_View_API.htm
 <td>The primary data type of the mapping</td>
 </tr>
 <tr>
+<td>SummaryType <em>(coming soon)</em></td>
+<td>SdsSummaryType</td>
+<td>The summary type calculation. Null unless all data mappings&#39; SummaryType within the field mappings are identical.</td>
+</tr>
+<tr>
+<td>SummaryDirection <em>(coming soon)</em></td>
+<td>SummaryDirection Enumeration</td>
+<td>SummaryDirection controls whether the start or end index of the summary is used by the data view to calculate the summary values. Null unless all data mappings&#39; SummaryDirection within the field mappings are identical.</td>
+</tr>
+<tr>
 <td>Uom <em>(coming soon)</em></td>
 <td>string</td>
 <td>The unit of measure id. Null unless all data mappings&#39; unit of measures within the field mapping are identical.</td>
@@ -502,6 +545,16 @@ See the <a class="xref" href="../DataViewsAPIOverview/Resolved_Data_View_API.htm
 <td>TypeCode</td>
 <td>SdsTypeCode</td>
 <td>The value type</td>
+</tr>
+<tr>
+<td>SummaryType <em>(coming soon)</em></td>
+<td>SdsSummaryType</td>
+<td>The summary type calculation for the data field.</td>
+</tr>
+<tr>
+<td>SummaryDirection <em>(coming soon)</em></td>
+<td>SummaryDirection Enumeration</td>
+<td>SummaryDirection controls whether the start or end index of the summary is used by the data view to calculate the summary values.</td>
 </tr>
 <tr>
 <td>Uom <em>(coming soon)</em></td>

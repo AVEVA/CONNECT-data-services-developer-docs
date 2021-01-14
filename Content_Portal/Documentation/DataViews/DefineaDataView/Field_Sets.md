@@ -171,10 +171,10 @@ A field of source `FieldSource.Tags` and `.Keys` `[ "Low Resolution", "High Reso
 
 The field's value when resolved will be `[ "Low Resolution", "Gen2" ]`
 
-#### Special Case: Assets (Coming Soon)
+#### Special Case: Asset properties (Coming Soon)
 *Note: This section covers features that are not yet generally available. If you are interested in trialing these pre-release features, contact your account team for more details.*
 
-Assets are a special case because they require two pieces of information in order to address the data within the asset property: the stream reference name and the property id. In order to reference an asset property, a field must contain at least one stream reference name in the `.StreamReferenceNames` collection and at least one property id in the `.Keys` collection.
+Asset properties are a special case because they require two pieces of information in order to address the data within the asset property: the stream reference name and the property id. In order to reference an asset property, a field must contain at least one stream reference name in the `.StreamReferenceNames` collection and at least one property id in the `.Keys` collection.
 
 `.StreamReferenceNames` only applies to fields with source `FieldSource.PropertyId`. For all other field sources, `.StreamReferenceNames` are ignored. 
 

@@ -113,7 +113,7 @@ Describes the resource type of a data item.
 
 ### DataItemField
 A field of a data item where values come from.  
-Within a data item of resource kind `.Stream`, this corresponds to a stream property. For a data item of resource kind `.Asset`, this corresponds to the a property associated with an asset stream reference.
+Within a data item of resource kind `.Stream`, this corresponds to a stream property. For a data item of resource kind `.Asset`, this corresponds to a property associated with an asset stream reference.
 
 |Property | Type | Details |
 |--|--|--|

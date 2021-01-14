@@ -298,9 +298,8 @@ the SDS before using `SdsTypeBuilder`. Base types are maintained within the SdsT
 
 ## Work with SdsTypes outside of .NET framework
 SdsTypes must be built manually when .NET `SdsTypeBuilder` is unavailable. Below, you'll see how types are built and defined in
-[Python](https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/SDS/Python) and 
-[JavaScript](https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/SDS/JavaScript) samples. 
-For samples in other languages, go to [OCS code samples in GitHub](https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/SDS).
+[Python](https://github.com/osisoft/sample-ocs-waveform-python) and JavaScript samples. 
+For samples in other languages, go to [OCS code samples in GitHub](https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/SDS_WAVEFORM_README.md).
 
 SdsType, SdsTypeProperty, and SdsTypeCode are defined below:
 

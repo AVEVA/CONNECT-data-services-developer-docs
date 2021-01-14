@@ -88,49 +88,6 @@ defines the available functions. See [Streams](#streams) above for general
 information related to SdsStream. 
 
 **********************
-## `Get Stream`
-Returns the specified stream.
-
-### Request
- ```text
-	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
- ```
-
-### Parameters
-`string tenantId`  
-The tenant identifier
-
-`string namespaceId`  
-The namespace identifier  
-  
-`string streamId`  
-The stream identifier
-
-
-### Response
-The response includes a status code and a response body.
-
-#### Response body 
-The requested SdsStream
-
-#### Example response body
-```json
-HTTP/1.1 200
-Content-Type: application/json
-
-{  
-   "Id":"Simple",
-   "Name":"Simple",
-   "TypeId":"Simple",
-}
-```
-
-### .NET client libraries method
-```csharp
-   Task<SdsStream> GetStreamAsync(string streamId);
-```
-
-***********************
 ## `Get Streams` 
 Returns a list of streams.
 
@@ -205,6 +162,50 @@ Content-Type: application/json
 ```csharp
    Task<IEnumerable<SdsStream>> GetStreamsAsync(string query = "", int skip = 0, 
       int count = 100);
+```
+
+***********************
+
+## `Get Stream`
+Returns the specified stream.
+
+### Request
+ ```text
+	GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
+ ```
+
+### Parameters
+`string tenantId`  
+The tenant identifier
+
+`string namespaceId`  
+The namespace identifier  
+  
+`string streamId`  
+The stream identifier
+
+
+### Response
+The response includes a status code and a response body.
+
+#### Response body 
+The requested SdsStream
+
+#### Example response body
+```json
+HTTP/1.1 200
+Content-Type: application/json
+
+{  
+   "Id":"Simple",
+   "Name":"Simple",
+   "TypeId":"Simple",
+}
+```
+
+### .NET client libraries method
+```csharp
+   Task<SdsStream> GetStreamAsync(string streamId);
 ```
 
 ***********************
@@ -411,7 +412,7 @@ The response includes a status code.
 
 ## `Get Streams Access Control List`
 
-Get the default ACL for the Streams collection. For more information on ACL, see [Access Control](xref:accessControl).
+Gets the default ACL for the Streams collection. For more information on ACL, see [Access Control](xref:accessControl).
 
 ### Request
  ```text
@@ -455,9 +456,40 @@ Successful (200 OK) responses include an additional response header.
 
 ***********************
 
+## `Update Streams Access Control List`
+
+Updates the default ACL for the Streams collection. For more information on ACL, see [Access Control](xref:accessControl).
+
+### Request
+ ```text
+    PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Streams
+ ```
+
+### Parameters
+
+`string tenantId`  
+The tenant identifier  
+  
+`string namespaceId`  
+The namespace identifier  
+
+#### Request body  
+Serialized ACL
+
+### Response
+The response includes a status code.
+
+### .NET client libraries method
+```csharp
+   Task UpdateStreamsAccessControlListAsync(AccessControlList streamsAcl);
+```
+
+
+***********************
+
 ## `Patch Streams Access Control List`
 
-Update the default ACL for the Streams collection using an [RFC 6902](https://tools.ietf.org/html/rfc6902) compliant JSON Patch document. This allows the ACL to be modified without submitting the entire Access Control List. For more information on ACLs, see [Access Control](xref:accessControl).
+Updates the default ACL for the Streams collection using an [RFC 6902](https://tools.ietf.org/html/rfc6902) compliant JSON Patch document. This allows the ACL to be modified without submitting the entire Access Control List. For more information on ACLs, see [Access Control](xref:accessControl).
 
 ### Request
  ```text
@@ -521,39 +553,9 @@ The response includes a status code.
 
 ***********************
 
-## `Update Streams Access Control List`
-
-Update the default ACL for the Streams collection. For more information on ACL, see [Access Control](xref:accessControl).
-
-### Request
- ```text
-    PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Streams
- ```
-
-### Parameters
-
-`string tenantId`  
-The tenant identifier  
-  
-`string namespaceId`  
-The namespace identifier  
-
-#### Request body  
-Serialized ACL
-
-### Response
-The response includes a status code.
-
-### .NET client libraries method
-```csharp
-   Task UpdateStreamsAccessControlListAsync(AccessControlList streamsAcl);
-```
-
-***********************
-
 ## `Get Stream Access Control List`
 
-Get the ACL of the specified stream. For more information on ACL, see [Access Control](xref:accessControl).
+Gets the ACL of the specified stream. For more information on ACL, see [Access Control](xref:accessControl).
 
 ### Request
  ```text
@@ -598,11 +600,45 @@ Successful (200 OK) responses include an additional response header.
    Task<AccessControlList> GetStreamAccessControlListAsync(string streamId);
    Task<SdsETagResult<AccessControlList>> GetStreamAccessControlListWithETagAsync(string streamId);   
 ```
+
+***********************
+
+## `Update Stream Access Control List`
+
+Updates the ACL of the specified stream. For more information on ACL, see [Access Control](xref:accessControl).
+
+### Request
+ ```text
+    PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/AccessControl
+ ```
+
+### Parameters
+
+`string tenantId`  
+The tenant identifier  
+  
+`string namespaceId`  
+The namespace identifier  
+  
+`string streamId`  
+The stream identifier  
+
+#### Request body  
+Serialized ACL
+
+### Response
+The response includes a status code.
+
+### .NET client libraries method
+```csharp
+   Task UpdateStreamAccessControlListAsync(string streamId, AccessControlList streamAcl);
+```
+
 ***********************
 
 ## `Patch Stream Access Control List`
 
-Update the ACL of the specified stream using an [RFC 6902](https://tools.ietf.org/html/rfc6902) compliant JSON Patch document. This allows the ACL to be modified without submitting the entire Access Control List. For more information on ACLs, see [Access Control](xref:accessControl).
+Updates the ACL of the specified stream using an [RFC 6902](https://tools.ietf.org/html/rfc6902) compliant JSON Patch document. This allows the ACL to be modified without submitting the entire Access Control List. For more information on ACLs, see [Access Control](xref:accessControl).
 
 ### Request
  ```text
@@ -667,44 +703,12 @@ The response includes a status code.
 ```
 
 
-***********************
-
-## `Update Stream Access Control List`
-
-Update the ACL of the specified stream. For more information on ACL, see [Access Control](xref:accessControl).
-
-### Request
- ```text
-    PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/AccessControl
- ```
-
-### Parameters
-
-`string tenantId`  
-The tenant identifier  
-  
-`string namespaceId`  
-The namespace identifier  
-  
-`string streamId`  
-The stream identifier  
-
-#### Request body  
-Serialized ACL
-
-### Response
-The response includes a status code.
-
-### .NET client libraries method
-```csharp
-   Task UpdateStreamAccessControlListAsync(string streamId, AccessControlList streamAcl);
-```
 
 *** 
 
 ## `Get Stream Owner`
 
-Get the `Owner` of the specified stream. For more information, see [Access Control](xref:accessControl).
+Gets the `Owner` of the specified stream. For more information, see [Access Control](xref:accessControl).
 
 ### Request
  ```text
@@ -736,7 +740,7 @@ The `Owner` for the specified stream
 
 ## `Update Stream Owner`
 
-Update the `Owner` of the specified stream. For more information, see [Access Control](xref:accessControl).
+Updates the `Owner` of the specified stream. For more information, see [Access Control](xref:accessControl).
 
 ### Request
  ```text

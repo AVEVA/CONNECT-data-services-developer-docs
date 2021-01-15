@@ -303,7 +303,7 @@ See the <a class="xref" href="../DataViewsAPIOverview/Resolved_Data_View_API.htm
 </tbody>
 </table>
 <h3 id="dataitemfield">DataItemField</h3>
-<p>A field of a data item where values come from.<br>Within a data item of resource kind <code>.Stream</code>, this corresponds to a stream property. For a data item of resource kind <code>.Asset</code>, this corresponds to the a stream property associated with an asset measurement.</p>
+<p>A field of a data item where values come from.<br>Within a data item of resource kind <code>.Stream</code>, this corresponds to a stream property. For a data item of resource kind <code>.Asset</code>, this corresponds to a property associated with an asset stream reference.</p>
 <table>
 <thead>
 <tr>
@@ -324,9 +324,9 @@ See the <a class="xref" href="../DataViewsAPIOverview/Resolved_Data_View_API.htm
 <td>The data item field&#39;s friendly name</td>
 </tr>
 <tr>
-<td>MeasurementName <em>(Coming Soon)</em></td>
+<td>StreamReferenceName <em>(Coming Soon)</em></td>
 <td>string</td>
-<td>The asset measurement name. Only applies to asset measurement data item fields.</td>
+<td>The asset stream reference name. Only applies to asset property data item fields.</td>
 </tr>
 <tr>
 <td>TypeCode</td>
@@ -537,9 +537,9 @@ See the <a class="xref" href="../DataViewsAPIOverview/Resolved_Data_View_API.htm
 <td>The specific targeted part of the data item, if any.</td>
 </tr>
 <tr>
-<td>TargetMeasurementKey <em>(coming soon)</em></td>
+<td>TargetStreamReferenceName <em>(coming soon)</em></td>
 <td>string</td>
-<td>The asset measurement name. Only applies to asset measurement data mappings.</td>
+<td>The asset stream reference name. Only applies to asset property data mappings.</td>
 </tr>
 <tr>
 <td>TypeCode</td>

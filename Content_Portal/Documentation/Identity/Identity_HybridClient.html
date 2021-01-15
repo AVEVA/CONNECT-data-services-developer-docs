@@ -81,7 +81,7 @@
 <p>Hybrid clients are used in typical, thick MVC clients with the presence of a User.
             These clients are issued an Id and Secret upon creation, which are later used for authentication
             against OSIsoft Cloud Services. More than one Secret can be created for a Client. You can read more about these clients
-            <a href="https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/Authentication#hybrid-flow">here</a>.
+            <a href="https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/AUTHENTICATION_README.md#hybrid-flow">here</a>.
             Hybrid clients can be issued refresh tokens, if requested, alongside access tokens. Refresh tokens typically
             have an longer lifetime than access tokens, and are used to request a new access token on behalf of the user
             without them having to sign-in.
@@ -184,7 +184,7 @@
 <p><code>Authorization: Bearer &lt;token&gt;</code></p>
 <p>Requests made without an access token or an invalid/expired token will fail with a 401 Unauthorized response.
 Requests made with an access token which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
-Read <a href="https://github.com/osisoft/OSI-Samples-OCS/tree/master/basic_samples/Authentication">here</a> on how to authenticate against OCS with the various clients and receive an access token in response.</p>
+Read <a href="https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/AUTHENTICATION_README.md">here</a> on how to authenticate against OCS with the various clients and receive an access token in response.</p>
 <h2 id="error-handling">Error Handling</h2>
 <p>All responses will have an error message in the body. The exceptions are 200 responses and the 401 Unauthorized response. The error message will look as follows:</p>
 <pre><code class="lang-json">{

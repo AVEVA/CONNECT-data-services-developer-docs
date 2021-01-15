@@ -324,7 +324,7 @@
 <li><code>{IdentifyingValue}</code> - the value of the identifying field</li>
 <li><code>{FirstKey}</code> - the value of the first of the <code>&quot;Keys&quot;</code> specified on the field</li>
 <li><code>{QueryId}</code> - the id of the query that produced the field</li>
-<li><code>{MeasurementFirstKey}</code> <em>(Coming Soon)</em> - the value of the first of the <code>&quot;MeasurementKeys&quot;</code> specified on the field</li>
+<li><code>{FirstStreamReferenceName}</code> <em>(Coming Soon)</em> - the value of the first of the <code>&quot;StreamReferenceNames&quot;</code> specified on the field</li>
 </ul>
 <p>If a special parameter fails to resolve, it becomes an empty string, <code>&quot;&quot;</code>.</p>
 <h3 id="source">Source</h3>
@@ -340,11 +340,11 @@
 <p>Given a stream with tags <code>[ &quot;Weather&quot;, &quot;Low Resolution&quot;, &quot;Gen2&quot; ]</code>  </p>
 <p>A field of source <code>FieldSource.Tags</code> and <code>.Keys</code> <code>[ &quot;Low Resolution&quot;, &quot;High Resolution&quot;, &quot;Gen1&quot;, &quot;Gen2&quot; ]</code></p>
 <p>The field&#39;s value when resolved will be <code>[ &quot;Low Resolution&quot;, &quot;Gen2&quot; ]</code></p>
-<h4 id="special-case-asset-measurements-coming-soon">Special Case: Asset measurements (Coming Soon)</h4>
+<h4 id="special-case-asset-properties-coming-soon">Special Case: Asset properties (Coming Soon)</h4>
 <p><em>Note: This section covers features that are not yet generally available. If you are interested in trialing these pre-release features, contact your account team for more details.</em></p>
-<p>Asset measurements are a special case because they require two pieces of information in order to address the data within the measurement: the measurement name and the measurement property id. In order to reference an asset measurement, a field must contain at least one measurement name in the <code>.MeasurementKeys</code> collection and at least one property id in the <code>.Keys</code> collection.</p>
-<p><code>.MeasurementKeys</code> only applies to fields with source <code>FieldSource.PropertyId</code>. For all other field sources, <code>.MeasurementKeys</code> are ignored. </p>
-<p>Similar to <code>.Keys</code>, <code>.MeasurementKeys</code> are evaluated in order specified until a match is found, i.e. first-match-wins.</p>
+<p>Asset properties are a special case because they require two pieces of information in order to address the data within the asset property: the stream reference name and the property id. In order to reference an asset property, a field must contain at least one stream reference name in the <code>.StreamReferenceNames</code> collection and at least one property id in the <code>.Keys</code> collection.</p>
+<p><code>.StreamReferenceNames</code> only applies to fields with source <code>FieldSource.PropertyId</code>. For all other field sources, <code>.StreamReferenceNames</code> are ignored. </p>
+<p>Similar to <code>.Keys</code>, <code>.StreamReferenceNames</code> are evaluated in order specified until a match is found, i.e. first-match-wins.</p>
 </article>
           </div>
           

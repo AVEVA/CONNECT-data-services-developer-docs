@@ -6,7 +6,7 @@
   href: asset-resolved-asset.md
 - name: Asset Centric Data API
   href: asset-centric-data-api.md
-- name: Asset Status Mapping
+- name: Asset Status
   href: asset-status-mapping.md
 - name: Assets Search API
   href: asset-search-api.md

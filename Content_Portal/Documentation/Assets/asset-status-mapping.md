@@ -1,5 +1,5 @@
 ---
-uid: AssetStatusMapping
+uid: AssetStatus
 ---
 
 # Asset Status

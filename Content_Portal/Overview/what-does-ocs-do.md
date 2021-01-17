@@ -176,14 +176,12 @@ OCS allows you to group and organize operational PI, IoT, and OCS data. By arran
 
 Two methods are available in OCS, each of which works dynamically, continuing to filter and order data after they are in place. These methods include the following: 
 
-* [Metadata rules ](#metadata-rules)
-  Metadata rules enable users to assign metadata to selected parts of defined stream name patterns.
-* [Data views ](#data-views)
-  Data views facilitate the ordering, indexing, and organization of data from multiple streams. 
+* [Metadata rules ](#metadata-rules) - Metadata rules enable users to assign metadata to selected parts of defined stream name patterns.
+* [Data views ](#data-views) - Data views facilitate the ordering, indexing, and organization of data from multiple streams. 
 
 ### Metadata rules 
 
-Metadata rules enable users to assign metadata to specific stream name parts, such as a plant location or device category.  A metadata rule assigns metadata defined in the rule to all streams in a given namespace that match the stream name pattern. 
+Users select a stream name to use as a name pattern, and assign metadata to selected stream name parts, such as a plant location or device category. The resulting stream name pattern with assigned metadata parts defines a metadata rule.  The metadata rule assigns the defined metadata to all streams in a given namespace that match the stream name pattern. 
 
 The following diagram shows metadata in the context of several different but similar data streams: 
 

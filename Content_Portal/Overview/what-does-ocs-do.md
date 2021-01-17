@@ -174,8 +174,6 @@ The following example shows stream data for two streams over a selected period o
 
 OCS allows you to group and organize operational PI, IoT, and OCS data. By arranging data into forms that can be consumed by third-party data science applications, data scientists can conduct deep analysis to detect unrealized patterns and insights. OSIsoft data science enablement efforts allow for better informed planning, predictive maintenance, and operational optimization. 
 
-### Grouping and organization methods 
-
 Two methods are available in OCS, each of which works dynamically, continuing to filter and order data after they are in place. These methods include the following: 
 
 * [Metadata rules ](#metadata-rules)
@@ -183,7 +181,7 @@ Two methods are available in OCS, each of which works dynamically, continuing to
 * [Data views ](#data-views)
   Data views facilitate the ordering, indexing, and organization of data from multiple streams. 
 
-#### Metadata rules 
+### Metadata rules 
 
 Metadata rules enable users to assign metadata to specific stream name parts, such as a plant location or device category.  A metadata rule assigns metadata defined in the rule to all streams in a given namespace that match the stream name pattern. 
 
@@ -198,7 +196,7 @@ The diagram above shows three data streams for turbines named GEO1 and GEO2.
 
 In addition to being applied to any existing streams, a metadata rule assigns the defined metadata to any matching streams that are subsequently added to the selected namespace. You can edit a metadata rule, and the modified rule may then assign metadata to a different set of streams.
 
-#### Data views 
+### Data views 
 
 Data views are subsets of data from one or more streams. Data scientists typically query large datasets, and need to index, sort, and organize data into specific subsets. With data views, data items can be selected, ordered, and grouped by field. Time indices and time intervals are also configurable for display and analysis.
 

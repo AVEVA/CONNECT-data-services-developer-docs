@@ -166,13 +166,13 @@ OCS provides a graphical interface for setting up stream views or you can use RE
 
 The Visualization Trend feature converts stream data to a graphic view, which can reveal trends, high points, or trouble spots. Use Trend to select data streams in a namespace, specify a time range, and then render a graph of those data values.
 
-![OCS](images/how-does-ocs-work/trend.jpg)
+The following example shows stream data for two streams over a selected period of several days:
 
-The example above shows stream data for two streams over a selected period of several days. 
+![OCS](images/how-does-ocs-work/trend.jpg)
 
 ## Data science enablement
 
-OCS provides capabilities that allow you to group and organize operational PI, IoT, and OCS data. By arranging data into forms that can be consumed by third party data science applications, data scientists can conduct deep analysis to detect unrealized patterns and insights. OSIsoft data science enablement efforts allow for better informed planning, predictive maintenance, and operational optimization. 
+OCS allows you to group and organize operational PI, IoT, and OCS data. By arranging data into forms that can be consumed by third-party data science applications, data scientists can conduct deep analysis to detect unrealized patterns and insights. OSIsoft data science enablement efforts allow for better informed planning, predictive maintenance, and operational optimization. 
 
 ### Grouping and organization methods 
 

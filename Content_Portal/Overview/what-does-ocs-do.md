@@ -176,8 +176,8 @@ OCS allows you to group and organize operational PI, IoT, and OCS data. By arran
 
 Two methods are available in OCS, each of which works dynamically, continuing to filter and order data after they are in place. These methods include the following: 
 
-* [Metadata rules ](#metadata-rules) - Metadata rules enable users to assign metadata to selected parts of defined stream name patterns.
-* [Data views ](#data-views) - Data views facilitate the ordering, indexing, and organization of data from multiple streams. 
+* [Metadata rules](#metadata-rules) - Metadata rules assign metadata to streams matching defined stream name patterns.
+* [Data views](#data-views) - Data views order, index, and organize data from multiple streams. 
 
 ### Metadata rules 
 
@@ -188,26 +188,26 @@ The following diagram shows metadata in the context of several different but sim
 ![OCS](images/how-does-ocs-work/streams.jpg)
 
 The diagram above shows three data streams for turbines named GEO1 and GEO2. 
-1.	The color-coded data streams show the specific data each stream is tracking, detailed in the Stream Metadata column. 
-2.	The basic description of the stream data is encoded in the stream name. For example, looking at the first stream in the table, the metadata rule takes what might have been meaningless to a user, *GEO1_P.ACT_PV*, and translates this.  The user sees that GEO1 is the name of the turbine and ACT_PV  or Active Power is the measurement in this stream.  
+1.	The data in each stream is color-coded, and streams with matching naming patterns are the same color. 
+2.	The basic description of the stream data is encoded in the stream name, but it can be difficult to understand. Use metadata rules to decode this information. For example, the metadata rule delineates the stream name, GEO1_P.ACT_PV, as GEO1, *Turbine*, and ACT_PV, *Active Power*.
 3.	A metadata rule based on this stream naming pattern can assign metadata for all turbines in each matching stream. 
 
-In addition to being applied to any existing streams, a metadata rule assigns the defined metadata to any matching streams that are subsequently added to the selected namespace. You can edit a metadata rule, and the modified rule may then assign metadata to a different set of streams.
+A metadata rule assigns the defined metadata to any matching streams in the selected namespace, as well as matching streams that are subsequently added to the namespace.
 
 ### Data views 
 
 Data views are subsets of data from one or more streams. Data scientists typically query large datasets, and need to index, sort, and organize data into specific subsets. With data views, data items can be selected, ordered, and grouped by field. Time indices and time intervals are also configurable for display and analysis.
 
-Data views serve as a bridge between raw OCS data and data science applications. Users can use an API to programmatically align and interpolate data in data views for the purpose of doing advanced analytics. Users can also use a wizard provided in the OCS portal to facilitate creating data views. 
+Data views serve as a bridge between raw OCS data and data science applications. Use an API or the OCS portal to create data views to arrange data for consumption by a third-party data science applications.
+
+The following diagram depicts multiple streams organized into a data view that a third-party data science application can consume: 
+
+1.	Data streams from three wind turbines contain metadata assigned by a metadata rule. 
+2.	Create a data view in OCS based on streams containing the specified metadata, select specific data elements from the streams, and order and index them as needed. 
+3.	Ordered and normalized data is then consumable by data science applications for in-depth analysis. 
 
 ![OCS](images/how-does-ocs-work/dataviews.jpg)
 
-The diagram above depicts multiple streams organized into a data view that a third-party data science application can consume: 
-1.	Data streams from three wind turbines contain metadata assigned by a metadata rule. 
-2.	A user creates a data view in OCS based on streams containing the specified metadata, selects specific data elements from the streams, and orders and indexes them as needed. 
-3.	Ordered and normalized data is then consumable by data science applications for in-depth analysis. 
-
   **Note: You can reference metadata defined in a metadata rule when creating a data view. This action will include all streams containing the specified metadata.
 
-Data views allow you to arrange data fields in a way that they can be consumed by a third-party data science application.  
 

@@ -162,13 +162,9 @@ To create a stream view, you create a target type that defines the properties to
 
 OCS provides a graphical interface for setting up stream views or you can use REST APIs to define stream views programmatically. If you are using the .NET framework, OSIsoft also offers client libraries to help you create and use stream views. 
 
-## Visualization
+## Visualization Trend
 
-OCS visualization tools provide multiple options for viewing selected OCS stream data. 
-
-### Trend
-
-The Visualization Trend feature converts data from one or more streams into graphical representations of data values collected over a custom-defined time period. Trend enables you to select one or more data streams in a selected namespace, specify a preset or custom time range, and then render a graphical depiction of those data value. The ability to observe stream data graphically can reveal trends, high points, or trouble spots. 
+The Visualization Trend feature converts stream data to a graphic view, which can reveal trends, high points, or trouble spots. Use Trend to select data streams in a namespace, specify a time range, and then render a graph of those data values.
 
 ![OCS](images/how-does-ocs-work/trend.jpg)
 

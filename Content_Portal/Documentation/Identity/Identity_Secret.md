@@ -11,6 +11,7 @@ Secrets are used to authenticate both Client Credential clients and Hybrid clien
             be active until the token itself expires. The same applies to refresh tokens, which are
             issued to Hybrid clients. Safe storage of secrets is your responsibility. OSIsoft Cloud Services
             does not store secret values, so once lost there is no way to retrieve the value of a Secret.
+            For some guidelines on use of secrets, refer to the [Credential Management](xref:CredentialManagement) topic.
 
 ## Properties
 

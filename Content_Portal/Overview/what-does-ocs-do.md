@@ -10,8 +10,6 @@ OSIsoft Cloud Services (OCS) consists of several different areas of core functio
 * [Visualization](#visualization) - Enables users to render a graphical depiction of selected OCS stream data values
 * [Data science enablement](#data-science-enablement) - Highlights the capabilities of OCS tools for data grouping and organization to enable the use of third-party data science applications
 
-The flow of this document is modeled after the steps that you take to configure OCS to collect data from various sources and organize it for analysis within the platform or third-party data science applications.
-
 ## Tenant management    
 
 OCS provides many configuration and control options that allow administrators to customize interactions with the platform based on organizational requirements. Administrators can create users and clients, define and assign roles, and manage namespaces for their tenant. They can control access to data and resources ensuring that only authorized entities can gain access to resources (such as, data collection, namespaces, streams, analytics, visualization).
@@ -79,11 +77,17 @@ The types of permissions granted to roles are as follows:
 
 ## Data Collection
 
-After defining tenants, setting permissions and access levels for users, and creating clients for programmatic access, you can begin to configure OCS for data collection. Data collection allows you to bring data from multiple sources and systems scattered across your organization into a namespace within OCS.
+After defining tenants, setting permissions and access levels for users, and creating clients for programmatic access, you can configure OCS for data collection. Data collection allows you to bring data from multiple sources and systems scattered across your organization into a namespace within OCS.
 
 ### Collection methods 
 
 The type of data, the location of that data, and the way that a particular source sends data all affect how you can collect that data in OCS. You can choose the data collection technology that best meets your specific needs. These technologies include: 
+
+* [PI to OCS](#pi-to-ocs)
+* [Custom OMF applications](#customer-omf-applications)
+* [Edge Data Store](#edge-data-store)
+* [PI Adapters](#pi-adapters)
+* [Programmatic REST API](#programmatic-rest-api) 
 
 #### PI to OCS 
 

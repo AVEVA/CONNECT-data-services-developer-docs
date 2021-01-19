@@ -150,11 +150,12 @@ Streams organize data brought from another system into OCS. To define a stream, 
 There are multiple techniques for sending data to OCS. See [Data Collection](#data-collection). 
 
 Each stream is associated with a namespace. You can associate one or more streams with the same namespace. However, to move data between namespaces, you must read data out from one namespace and write it into another namespace. 
+
 You can categorize streams using metadata, which is a dictionary of key value pairs used to store additional information. Metadata is not real-time information, and it is not updated at high frequency. Typically, metadata is static information that provides context for a stream. 
 
 You can also use tags to assign information to a stream. A tag is a string value. For example, a tag might identify a region. 
 
-REST APIs give you the ability to read and write streams data programmatically. In addition, if you are using the .NET framework, OSIsoft offers client libraries to help you create and use streams.
+REST APIs give you the ability to read and write stream data programmatically. In addition, if you are using the .NET framework, OSIsoft offers client libraries to help you create and use streams.
 
 ### Stream views 
 

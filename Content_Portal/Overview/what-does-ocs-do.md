@@ -105,7 +105,7 @@ Refer to [OMF Message Format](https://omf-docs.osisoft.com/) for additional info
 
 #### Edge Data Store
 
-The Edge Data Store (EDS) is a software component that collects sequential data from edge data sources and stores it locally until it can be transferred to permanent storage. It enables you to store data from a device locally and make the data available for local querying. This is useful for displaying trending on an edge device.
+The Edge Data Store (EDS) is a software component that collects sequential data from data sources and stores it locally until it can be transferred to permanent storage. It enables you to store data from a device locally and make the data available for local querying. This is useful for displaying trending on an edge device.
 
 OCS can collect data from EDS via the OSIsoft Message Format (OMF). Edge Data Store currently includes two built-in protocol adapter components, Modbus and OPC UA, and a storage component that also collects and sends OMF. Multiple data sources, referred to as adapter component instances, are supported in protocol components. 
 

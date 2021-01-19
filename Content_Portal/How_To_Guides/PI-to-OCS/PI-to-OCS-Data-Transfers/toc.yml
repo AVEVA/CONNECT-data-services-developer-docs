@@ -11,6 +11,4 @@
 - name: Confirm data retrieval
   href: confirm-data-retrieval.md
 - name: Delete a data transfer
-  href: delete-data-transfers.md
-- name: What AF data gets transferred?
-  href: af-objects-transfers.md
+  href: delete-data-transfer.md

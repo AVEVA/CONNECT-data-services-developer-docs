@@ -13,7 +13,7 @@ Sign in to the OCS portal.
 
 1. Click the navigator menu icon, then click **Sequential Data Store**.
 
-   ![ ](../images/sds-page.png "Sequential Data Store page")
+   ![ ](/images/sds-page.png "Sequential Data Store page")
 
    _Sequential Data Store page_
 
@@ -25,7 +25,8 @@ Sign in to the OCS portal.
 
     **Note:** The grid lists the first 50 SDS streams in alphabetical order. You can change how many streams are displayed per page (50, 100, 200).
 
-4.	**Optional:** Enter search criteria to locate specific streams in the **Search** text box, then press [ENTER]. 
-**Result:** If there are matches, matching streams are shown.
+4.	**Optional:** Enter search criteria to locate specific streams in the **Search** text box, then press [ENTER].
+
+   **Result:** If there are matches, matching streams are shown.
 
 5.	**Optional:** Select a stream, then click **Manage Data** to query SDS for information about that stream.

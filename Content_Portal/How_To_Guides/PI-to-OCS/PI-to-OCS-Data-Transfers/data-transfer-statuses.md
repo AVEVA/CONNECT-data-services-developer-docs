@@ -4,7 +4,7 @@ uid: data-transfer-statuses
 
 # Data transfer statuses
 
-The **Current Activity** field displays information about the current status of a data transfer.
+The **Current Activity** field displays details about the status of a data transfer.
 
 
 Data status | Meaning
@@ -18,6 +18,6 @@ Data status | Meaning
  Streaming Error Signup Dropped | Agent not receiving streaming data from PI Data Archive.
  Streaming Error Producer Removed | Agent not receiving streaming data from PI Data Archive.
  Streaming Error Unknown | An unknown error occurred during data streaming.
- PI Point Type Change Detected | PI point type change was detected during data transfer.
+ PI Point Type Change Detected | PI point type change was detected during data transfer. See [Point type change](xref:pi-point-change) for more information.
  Creating Streams | Streams are in the process of being created.
  Done | Data transfer is complete. Streams have been created.

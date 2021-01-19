@@ -2,25 +2,23 @@
 uid: set-up-agent
 ---
 
-# Confirm the PI to OCS Agent is running
+# Confirm the agent is running
 
-After installation, check that the PI to OCS Agent Windows service is running on the machine that you installed the agent. You also need to confirm the agent has successfully connected to and registered with your on-premises PI Data Archive.
+After installation, confirm your PI to OCS Agent is running on the machine it was installed. You also need to confirm the agent has successfully connected to and registered with your on-premises PI Data Archive.
 
 ## Procedure
 1. Type `services.msc` in the text box next to the **Windows** menu button, then press [ENTER].
 2. In the **Services** window, verify that that the PI to OCS Agent’s status is running.
 
-![ ](../images/services-window.png "Services window")
-
-_Services window – PI to OCS Agent service_
+    ![ ](/images/services-window.png)
+    _Services window_
 
 3. Navigate to the Connections page, then select the connection you just created.
 4. On the Details tab, view the Data Source Status field.
-5. Verify that Registered appears next to the Data Source Status field.
+5. Verify that Registered appears next to the **Data Source Status** field.
 
-![ ](../images/regstrd-data-source.png "Registered data source")
-
-_Registered data source_
+    ![ ](/images/regstrd-data-source.png)
+    _Registered data source_
 
 **NOTE:** It may take a few minutes for your PI System to be registered. The following states may also appear next to the Data Source Status field to indicate a connection issue:
 

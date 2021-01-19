@@ -11,6 +11,6 @@ To gain valuable clues about account related activity for on-premises components
 3. Click **PI to OCS**.
 4. In the PI to OCS pane, scroll through and select an event to view related details.
 
-    ![ ](../images/event-viewer.png "PI to OCS log messages in the Event Viewer")
+    ![ ](/images/event-viewer.png)
 
     _PI to OCS log messages in the Event Viewer_

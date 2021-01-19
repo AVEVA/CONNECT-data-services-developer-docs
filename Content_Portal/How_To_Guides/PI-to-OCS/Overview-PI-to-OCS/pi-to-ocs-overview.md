@@ -22,4 +22,4 @@ PI to OCS has two major components:
 
 The deployment of a PI to OCS Agent establishes a one-to-one connection from an on-premises source PI Server to an OCS PI System connection.
 
-![ ](../images/ocs-diagram.png)
+![PI to OCS](/images/ocs-diagram.png)

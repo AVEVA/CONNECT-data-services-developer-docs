@@ -21,19 +21,19 @@ Create a PI System connection, install the PI to OCS agent, and then confirm you
 
     **Result:** The **Add PI Point Transfer** window opens.
 
-    ![ ](../images/add-pps-transfer-window.png "The Add PI Point Transfer window")
+    ![ ](/images/add-pps-transfer-window.png) 
 
     _The Add PI Point Transfer window_
 
 3.	**Optional:** Click the **Advanced** button to display more search fields.
  
-    ![ ](../images/add-pps-transfer-advanced.png "Advanced search fields")
+    ![ ](/images/add-pps-transfer-advanced.png)
 
     _Advanced search fields_
 
 4.	To build a search query, choose from the following actions:
 
-    ![ ](../images/query-table.png)
+    ![ ](/images/query-table.png)
 
 5.	**Optional:** Click the **Basic** button to hide the extra search fields.
 6.	**Optional:** To remove advanced filters from your search criteria, click the **x** on the field label.
@@ -42,9 +42,9 @@ Create a PI System connection, install the PI to OCS agent, and then confirm you
 
 7.	Click **Search** to execute your query and retrieve a list of matching PI points from your data source.
  
-    ![ ](../images/add-pp-transfer.png "Query results in the PI Points Found list box")
+    ![ ](/images/add-pp-transfer.png)
 
-    _Query results in the PI Points Found list_
+    _Query results in the PI Points Found list box_
 
 8.	Scroll through the **PI Points Found** list box and click each PI point you want added to the data transfer.
 
@@ -73,6 +73,6 @@ The transfer is saved and displayed in the **Data Transfer** section of the **De
 
     **Note:** If you make multiple PI point selections across pages in a query result, these selections are preserved.
 
-    ![ ](../images/data-transfer.png "Data transfer details")
+    ![ ](/images/data-transfer.png)
 
     _Data Transfer details_

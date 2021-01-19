@@ -12,7 +12,7 @@ OSIsoft Cloud Services (OCS) consists of several different areas of core functio
 
 ## Tenant management    
 
-OCS provides many configuration and control options that allow administrators to customize interactions with the platform based on organizational requirements. Administrators can create users and clients, define and assign roles, and manage namespaces for their tenant. They can control access to data and resources ensuring that only authorized entities can gain access to resources (such as, data collection, namespaces, streams, analytics, visualization).
+OCS can be customized based on your organization's requirements and needs. Administrators can create users and clients, define and assign roles, and manage namespaces for their tenant. They can control access to data and resources ensuring that only authorized users and client can gain access to resources (such as, data collection, namespaces, streams, analytics, visualization).
 
 Using access control lists (ACLs), administrators can also limit permissions to a resource. Generally, only administrators should have access to tenant management features. Administrators can perform tenant management and configuration using a REST API or the OCS portal, a web-based user-interface for managing and monitoring tenant resources.
 
@@ -26,7 +26,7 @@ A namespace is a logical unit of organization for data within a tenant. Before a
 
 ### Identity 
 
-The concept of identity is the key to how OCS limits access to services and resources available to an entity. An entity’s identity allows OCS to know how much access to grant to that entity. OCS identity services provide the following functions: 
+Identity is the authentication factor of a user or client requesting access to OCS. Identities can be verified. OCS identity services provide the following functions: 
 
 * Authenticate users using a local account store or through an external identity provider 
 * Provide session management and single sign-on 

@@ -85,7 +85,7 @@ The type of data, the location of that data, and the way that a particular sourc
 
 * [PI to OCS](#pi-to-ocs)
 * [Custom OMF applications](#customer-omf-applications)
-* [Edge Data Store](#edge-data-store)
+* [Edge Data Store (EDS)](#edge-data-store-(eds))
 * [PI Adapters](#pi-adapters)
 * [Programmatic REST API](#programmatic-rest-api) 
 
@@ -107,8 +107,9 @@ Refer to [OMF Message Format](https://omf-docs.osisoft.com/) for additional info
 
 #### Edge Data Store (EDS)
 
-The Edge Data Store (EDS) is a software component similar to a PI Adapter. It enables you to store data from a device locally and make the data available for local querying. This is useful for displaying trending on an edge device.
- OCS can collect data from EDS via the OSIsoft Message Format (OMF). Edge Data Store currently includes two built-in protocol adapter components, Modbus and OPC UA, and a storage component that also collects and sends OMF. Multiple data sources, referred to as adapter component instances, are supported in protocol components. See the Custom OMF Applications section above for additional information about data collection from EDS. 
+The Edge Data Store (EDS) is a software component that collects sequential data from edge data sources and stores it locally until it can be transferred to permanent storage. It enables you to store data from a device locally and make the data available for local querying. This is useful for displaying trending on an edge device.
+
+OCS can collect data from EDS via the OSIsoft Message Format (OMF). Edge Data Store currently includes two built-in protocol adapter components, Modbus and OPC UA, and a storage component that also collects and sends OMF. Multiple data sources, referred to as adapter component instances, are supported in protocol components. 
 
 #### PI Adapters 
 

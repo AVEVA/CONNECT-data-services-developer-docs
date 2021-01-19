@@ -135,7 +135,7 @@ A type, also called an SDS type, defines the structure of data to be collected i
 
 For example, if you want to collect three measurements streamed from a device (longitude, latitude, and speed) and you want to collect those measurements over a period of time, you can define a type to include properties for longitude, latitude, speed and a timestamp. Collectively, these properties define the structure of the data you are storing. While this is a simple example, OCS lets you create much more complex types. 
 
-A type can consist of many properties, but one property must function as the primary index. Time is frequently used as the primary index, effectively time-stamping all corresponding properties in each data instance. However, the primary key is not limited to time stamps; it can be any type of sequential data such as depth. 
+A type can consist of many properties, but one property must function as the primary index. Time is frequently used as the primary index, effectively time-stamping all corresponding properties in each data instance. However, the primary index is not limited to time stamps; it can be any type of sequential data such as depth. 
 
 After you create a type, you cannot change it. If you want to change a type, you must delete the existing type and create a new one to ensure that no stored data is invalidated. However, you can only delete a type if no streams, views, or other types reference it. 
 
@@ -159,13 +159,13 @@ REST APIs give you the ability to read and write streams data programmatically. 
 
 Because types cannot be modified, OCS provides a flexible mechanism for viewing data in a stream view. A stream view is a logical overlay for stream data. 
 
-For example, a process engineer and a maintenance technician, might want to see different data from the same stream. Because you cannot change the shape of data belonging to a stream, a stream view allows you to see a subset of the data in a stream. In this way the process engineer can see one subset of data in one stream view while the maintenance technician can see a different subset in a second stream view. 
+For example, a process engineer and a maintenance technician might want to see different data that exists in the same stream. You cannot change the structure of data in a stream, but a stream view allows you to see a subset of the data in a stream. Using stream views, you can change the appearance of the data stream to meet the needs of both users without changing the original data. 
 
-Stream views can perform additional functions, such as convert units of measure and change names so the terminology that is displayed is more appropriate for a particular persona. 
+Stream views can perform additional functions, such as convert units of measure and change names so the terminology that is displayed is more appropriate for a particular individual. 
 
-To create a stream view, you create a target type that defines the properties to be made available. Then you map the properties in one or more source types to the target type. The source types and the target type must be in the same namespace, and they must exist before you define the stream view. When mapping between source and target properties, both properties must be of the same data type. 
+To create a stream view, you create a target type that defines the properties to be made available. Then map properties in the source types to properties in the target type. Properties must have the same data type to be mapped. The source types and the target type must be in the same namespace, and they must exist before you define the stream view. 
 
-OCS provides a graphical interface for setting up stream views or you can use REST APIs to define stream views programmatically. If you are using the .NET framework, OSIsoft also offers client libraries to help you create and use stream views. 
+CS provides a graphical interface for setting up stream views or you can use REST APIs to define stream views programmatically. If you are using the .NET framework, OSIsoft also offers client libraries to help you create and use stream views. 
 
 ## Visualization Trend
 

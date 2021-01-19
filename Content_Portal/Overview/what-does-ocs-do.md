@@ -89,7 +89,11 @@ The type of data, the location of that data, and the way that a particular sourc
 
 #### PI to OCS 
 
-The PI to OCS collection method transfers PI time series data from a local PI Server to OCS. The PI to OCS Agent is installed and configured directly on your on-premises PI Server. PI to OCS creates pre-defined types and streams that are mapped from PI Data Archive data shapes. 
+The PI to OCS collection method transfers PI time series data from a local PI Server to OCS. The PI to OCS Agent is installed and configured directly on a designated device. 
+
+**Note**: OSIsoft recommends installing the PI to OCS Agent and PI Server on seperate devices to avoid the two systems competing for resources.
+
+The PI to OCS Agent creates types and streams in OCS based on the PI Tags mapped from PI Data Archive. 
 
 #### Custom OMF applications
 
@@ -111,7 +115,7 @@ OCS can collect data from EDS via the OSIsoft Message Format (OMF). Edge Data St
 
 #### PI Adapters 
 
-PI Adapters are software components that collect sequential data from edge data sources and send it to OCS or PI Server or both. Use PI Adapters for collecting data from standard systems and protocols. 
+PI Adapters are software components that collect sequential data from data sources and send it to OCS or PI Server or both. Use PI Adapters for collecting data from standard systems and protocols. 
 
 #### Programmatic REST API 
 
@@ -119,7 +123,7 @@ The OCS programmatic REST API reads and writes data. It supports JSON format and
 
 ## Data organization 
 
-After setting up data collection, you can use the Sequential Data Store (SDS) to store, retrieve, and analyze any type of streaming data. Typically, developers use the SDS as part of their customized applications. 
+After setting up data collection, you can use the Sequential Data Store (SDS) to store, retrieve, and organize any type of streaming data. Typically, developers use the SDS as part of their customized applications. 
 
 To organize and use the data in the SDS, you need to understand the basic features of the system: 
 
@@ -161,15 +165,15 @@ Because types cannot be modified, OCS provides a flexible mechanism for viewing 
 
 For example, a process engineer and a maintenance technician might want to see different data that exists in the same stream. You cannot change the structure of data in a stream, but a stream view allows you to see a subset of the data in a stream. Using stream views, you can change the appearance of the data stream to meet the needs of both users without changing the original data. 
 
-Stream views can perform additional functions, such as convert units of measure and change names so the terminology that is displayed is more appropriate for a particular individual. 
+Stream views can perform additional functions, such as convert units of measure and change names so the terminology that is displayed is more appropriate for a particular audience. 
 
-To create a stream view, you create a target type that defines the properties to be made available. Then map properties in the source types to properties in the target type. Properties must have the same data type to be mapped. The source types and the target type must be in the same namespace, and they must exist before you define the stream view. 
+To create a stream view, designate a souce type that contains the desired properties. Then, map properties in the source type to properties in the target type. Properties must have the same data type to be mapped. The source type and the target type must be in the same namespace, and they must exist before you define the stream view. 
 
 OCS provides a graphical interface for setting up stream views or you can use REST APIs to define stream views programmatically. If you are using the .NET framework, OSIsoft also offers client libraries to help you create and use stream views. 
 
-## Visualization Trend
+## Visualization-Trend
 
-The Visualization Trend feature converts stream data to a graphic view, which can reveal trends, high points, or trouble spots. Use Trend to select data streams in a namespace, specify a time range, and then render a graph of those data values.
+The Visualization-Trend feature converts stream data to a graphic view, which can reveal trends, high points, or trouble spots. Use Trend to select data streams in a namespace, specify a time range, and then render a graph of those data values.
 
 The following example shows stream data for two streams over a selected period of several days:
 
@@ -186,7 +190,7 @@ Two methods are available in OCS, each of which works dynamically, continuing to
 
 ### Metadata rules 
 
-You select a stream name to use as a name pattern, and assign metadata to selected stream name parts, such as a plant location or device category. The resulting stream name pattern with assigned metadata parts defines a metadata rule.  The metadata rule assigns the defined metadata to all streams in a given namespace that match the stream name pattern. 
+You select a stream name to use as a name pattern and assign metadata to selected stream name parts, such as a plant location or device category. The resulting stream name pattern with assigned metadata parts defines a metadata rule. The metadata rule assigns the defined metadata to all streams in a given namespace that match the stream name pattern. 
 
 The following diagram shows metadata in the context of several different but similar data streams: 
 
@@ -201,7 +205,7 @@ A metadata rule assigns the defined metadata to any matching streams in the sele
 
 ### Data views 
 
-Data views are subsets of data from one or more streams. Data scientists typically query large datasets, and need to index, sort, and organize data into specific subsets. With data views, data items can be selected, ordered, and grouped by field. Time indices and time intervals are also configurable for display and analysis.
+Data views are subsets of data from one or more streams. Data scientists typically query large datasets and need to index, sort, and organize data into specific subsets. With data views, data items can be selected, ordered, and grouped by field. Time indices and time intervals are also configurable for display and analysis.
 
 Data views serve as a bridge between raw OCS data and data science applications. Use an API or the OCS portal to create data views to arrange data for consumption by a third-party data science applications.
 
@@ -213,6 +217,6 @@ The following diagram depicts multiple streams organized into a data view that a
 
 ![OCS](images/how-does-ocs-work/dataviews.jpg)
 
-  **Note: You can reference metadata defined in a metadata rule when creating a data view. This action will include all streams containing the specified metadata.
+**Note**: You can reference metadata defined in a metadata rule when creating a data view. This action will include all streams containing the specified metadata.
 
 

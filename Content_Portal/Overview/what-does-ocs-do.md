@@ -166,7 +166,7 @@ Stream views can perform additional functions, such as convert units of measure 
 
 To create a stream view, you create a target type that defines the properties to be made available. Then map properties in the source types to properties in the target type. Properties must have the same data type to be mapped. The source types and the target type must be in the same namespace, and they must exist before you define the stream view. 
 
-CS provides a graphical interface for setting up stream views or you can use REST APIs to define stream views programmatically. If you are using the .NET framework, OSIsoft also offers client libraries to help you create and use stream views. 
+OCS provides a graphical interface for setting up stream views or you can use REST APIs to define stream views programmatically. If you are using the .NET framework, OSIsoft also offers client libraries to help you create and use stream views. 
 
 ## Visualization Trend
 

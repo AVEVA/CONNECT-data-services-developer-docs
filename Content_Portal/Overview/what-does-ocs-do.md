@@ -12,21 +12,21 @@ OSIsoft Cloud Services (OCS) consists of several different areas of core functio
 
 ## Tenant management    
 
-OCS can be customized to meet your organization's requirements and needs. Administrators can create users and clients, define and assign roles, and manage namespaces for their tenant. Authentication and authorization are also customizable on OCS. Configuring the access control list (ACL) for an OCS resources, administrators can define the permissions to a resource. Generally, only administrators should have access to tenant management features. Administrators can perform tenant management using the OCS REST API or the OCS portal. The OCS portal is a web-based user-interface for managing and monitoring your tenant, as well as for namespace resources, streams and assets.
+You can customize OCS to meet your organization's requirements and needs. Administrators can create users and clients, define and assign roles, and manage namespaces for their tenant. Authentication and authorization are also customizable on OCS. Configuring the access control list (ACL) for an OCS resources, administrators can define the permissions to a resource. Generally, only administrators should have access to tenant management features. Administrators can perform tenant management using the OCS REST API or the OCS portal. The OCS portal is a web-based user-interface for managing and monitoring your tenant as well as for namespace resources, streams and assets.
 
 ### Tenant 
 
-A tenant is the root-level resource in OCS; all other resources are scoped to a tenant. Tenant-level resources deal with identity and access control. You can add users to a tenant using one or more identity providers. Roles are defined for a tenant and can be assigned to users or clients to manage access to resources. A tenant contains namespaces where data is managed.
+A tenant is the root-level resource in OCS; all other resources are scoped to a tenant. Tenant-level resources deal with identity and access control. You can add users to a tenant with one or more identity providers. Roles are defined for a tenant and can be assigned to users or clients to manage access to resources. A tenant contains namespaces where data is managed.
 
 ### Namespace 
 
-A namespace is a logical unit of organization for data within a tenant. Before any data can be collected in OCS, you must create a namespace for that tenant. Each tenant can contain more than one namespace. Namespaces help you create separate instances of your data and resources within a tenant, and resources within a namespace do not affect other namespaces within that tenant. In practice, namespaces may correspond to a specific set of infrastructure assets, but commonly they correspond to virtual partitions within a single set of assets dedicated to a specific tenant.
+A namespace is a logical unit of organization for data within a tenant. Before any data can be collected in OCS, you must create a namespace for that tenant. Each tenant can contain more than one namespace. Namespaces help you create separate instances of your data and resources within a tenant. Resources within a namespace do not affect other namespaces within that tenant. In practice, namespaces may correspond to a specific set of infrastructure assets, but they commonly correspond to virtual partitions within a single set of assets dedicated to a specific tenant.
 
 ### Identity 
 
-Identity is the authentication factor of a user or client requesting access to OCS. Identities can be verified. OCS identity services provide the following functions: 
+Identity is the authentication factor used to verify a user or client that requests access to OCS. OCS identity services provide the following functions: 
 
-* Authenticate users using a local account store or through an external identity provider 
+* Authenticate users with a local account store or through an external identity provider 
 * Provide session management and single sign-on 
 * Authenticate client applications 
 * Issue identity and access tokens to client applications and users 
@@ -34,11 +34,11 @@ Identity is the authentication factor of a user or client requesting access to O
 
 ### User 
 
-A user is an individual identity that represents a person using OCS. When users log in to OCS, they authenticate through an identity provider such as Google or Azure Active Directory. The identity provider authenticates the user, and upon successful authentication, passes a token back to OCS verifying the identity of the user. This identity is used by OCS to grant access for a specific time period. 
+A user is an individual identity that represents a person using OCS. When users log in to OCS, they authenticate through an identity provider, such as Google or Azure Active Directory. The identity provider authenticates the user, and upon successful authentication, passes a token back to OCS verifying the identity of the user. This identity is used by OCS to grant access for a specific time period. 
 
 ### Clients 
 
-Clients have programmatic access to OCS resources through using OCS APIs. There are two primary client types: 
+Clients have programmatic access to OCS resources through OCS APIs. There are two primary client types: 
 
 * **Client credential clients** – The most common type of OCS client, used for server-to-server communication without the presence or intervention of a user. Examples include PI Adapters or the Edge Data Store sending data to OCS. This type of client is issued a client ID and secret. After authentication, the client is granted an access token with a defined lifetime. 
 
@@ -46,13 +46,13 @@ Clients have programmatic access to OCS resources through using OCS APIs. There 
 
 ### Roles 
 
-A role is a representation of a identity’s job function that determines whether the user can have access to resources needed to accomplish a job. You can assign multiple roles to a user or client-credential client. The user or client’s role, in combination with the access control list (ACL) for a resource or service, determines access permissions to that resource or service. The Tenant Administrator creates roles and assigns those roles to users and clients. 
+A role is a representation of an identity’s job function that determines whether the user can have access to resources needed to accomplish a job. You can assign multiple roles to a user or client-credential client. The user or client’s role, in combination with the access control list (ACL) for a resource or service, determines access permissions to that resource or service. The Tenant Administrator creates roles and assigns those roles to users and clients. 
 
-For both users and clients, roles authorize API requests for access, such as access to data streams. All clients have the Tenant Member role, which provides read access to resources. 
+For both users and clients, roles authorize API requests for access, such as access to data streams. All clients have the Tenant Member role, which provides Read access to resources. 
 
 ### Identity provider 
 
-Identity providers manage databases of user records and authenticate users against the credentials in their databases. This allows users to be granted access to the service provider using the credentials the identity provider manages, but without sharing actual login details with OCS.  
+Identity providers manage databases of user records and authenticate users against the authentication factors in their databases. This allows users to be granted access to the service provider using the credentials the identity provider manages but without sharing actual login details with OCS.  
 
 ### Authentication 
 
@@ -64,32 +64,32 @@ Authorization is the process of determining the appropriate access level for a u
 
 ### Access control list 
 
-Each OCS service and resource has an access control list (ACL) that defines how much access is granted to assigned roles. The OCS Administrator configures each ACLs, specifying types of permissions with each role. When a request is made to a specific OCS resource, the role assigned to the requestor (whether a user or client) is compared to the ACL for that resource to determine whether the request should be authorized. 
+Each OCS service and resource has an access control list (ACL) that defines how much access is granted to assigned roles. The OCS Administrator configures each ACL and specifies types of permissions for each role. When a request is made to a specific OCS resource, the role assigned to the requestor (whether a user or client) is compared to the ACL for that resource to determine whether the request should be authorized. 
 
 The types of permissions granted to roles are as follows:
 * Read
 * Write
 * Delete
-* Manage Access Control: Ability to modify the access control list of the resource.
-* Owner: An identity that has full permission level.
+* Manage Access Control: Ability to modify the access control list of the resource
+* Owner: An identity that has full permission level
 
 ## Data Collection
 
-After defining tenants, setting permissions and access levels for users, and creating clients for programmatic access, you can configure OCS for data collection. Data collection allows you to bring data from multiple sources and systems scattered across your organization into a namespace within OCS.
+After defining tenants, setting permissions and access levels for users, and creating clients for programmatic access, you can configure OCS for data collection. Data collection allows you to bring data from multiple sources and systems across your organization into a namespace within OCS.
 
 ### Collection methods 
 
 The type of data, the location of that data, and the way that a particular source sends data all affect how you can collect that data in OCS. You can choose the data collection technology that best meets your specific needs. These technologies include: 
 
 * [PI to OCS](#pi-to-ocs)
-* [Custom OMF applications](#customer-omf-applications)
+* [Custom OMF applications](#custom-omf-applications)
 * [Edge Data Store](#edge-data-store)
 * [PI Adapters](#pi-adapters)
 * [Programmatic REST API](#programmatic-rest-api) 
 
 #### PI to OCS 
 
-The PI to OCS collection method transfers PI time series data from a local PI Server to OCS. PI to OCS is installed and configured directly on your on-premises PI Server. PI to OCS creates pre-defined types and streams that are mapped from PI Data Archive data shapes. 
+The PI to OCS collection method transfers PI time series data from a local PI Server to OCS. The PI to OCS Agent is installed and configured directly on your on-premises PI Server. PI to OCS creates pre-defined types and streams that are mapped from PI Data Archive data shapes. 
 
 #### Custom OMF applications
 
@@ -99,13 +99,13 @@ For programmatic access to data, you can use OMF to develop data acquisition app
 
 OMF topics aggregate OMF messages received from one or more clients and make them available for consumption. An OMF subscription consumes OMF messages from a topic and forwards them to a data store. Multiple subscriptions can retrieve OMF messages from a single topic. Together, these two components make up an OMF connection, which allows collection from a client into an OCS namespace. 
 
-OMF itself does not define or depend on any binary message protocol, such as HTTP, AMQP, or Kafka. Instead, it is based on an abstract message type, where a message consists of a set of key/value pairs, which may consist of a set of binary files, configuration files, and batch or Shell scripts. You can construct OMF messages using any message protocol that defines headers and bodies. 
+OMF itself does not define or depend on any binary message protocol, such as HTTP, AMQP, or Kafka. Instead, it is based on an abstract message type, where a message consists of a set of key/value pairs, which may include binary files, configuration files, and batch or Shell scripts. You can construct OMF messages using any message protocol that defines headers and bodies. 
 
 Refer to [OMF Message Format](https://omf-docs.osisoft.com/) for additional information about the OMF specification. 
 
 #### Edge Data Store
 
-The Edge Data Store (EDS) is a software component that collects sequential data from data sources and stores it locally until it can be transferred to permanent storage. It enables you to store data from a device locally and make the data available for local querying. This is useful for displaying trending on an edge device.
+The Edge Data Store (EDS) is a software component that collects sequential data from data sources and stores it locally until it can be transferred to permanent storage. It enables you to store data from a device locally and make the data available for local querying. This is useful for displaying data trends on an edge device.
 
 OCS can collect data from EDS via the OSIsoft Message Format (OMF). Edge Data Store currently includes two built-in protocol adapter components, Modbus and OPC UA, and a storage component that also collects and sends OMF. Multiple data sources, referred to as adapter component instances, are supported in protocol components. 
 

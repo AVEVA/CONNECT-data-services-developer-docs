@@ -14,6 +14,9 @@ Client Credential clients are used for machine-to-machine communication without
             clients can be assigned any of the roles in the Tenant. We suggest following a
             least privilege strategy when assigning roles to these clients, as they are more
             likely to operate in remote machines with a wider attack surface.
+            For some guidelines for managing tokens, refer to the [Token Management](xref:TokenManagement) topic.
+            For some guidelines on use of secrets, refer to the [Credential Management](xref:CredentialManagement) topic.
+            For some recommendations on least privilege for users and clients, refer to the [Least Privilege](xref:LeastPrivilege) topic.
 
 ## Properties
 

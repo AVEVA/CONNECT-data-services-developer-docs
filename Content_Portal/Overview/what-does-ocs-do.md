@@ -85,7 +85,7 @@ The type of data, the location of that data, and the way that a particular sourc
 
 * [PI to OCS](#pi-to-ocs)
 * [Custom OMF applications](#customer-omf-applications)
-* [Edge Data Store (EDS)](#edge-data-store-(eds))
+* [Edge Data Store](#edge-data-store)
 * [PI Adapters](#pi-adapters)
 * [Programmatic REST API](#programmatic-rest-api) 
 
@@ -105,7 +105,7 @@ OMF itself does not define or depend on any binary message protocol, such as HTT
 
 Refer to [OMF Message Format](https://omf-docs.osisoft.com/) for additional information about the OMF specification. 
 
-#### Edge Data Store (EDS)
+#### Edge Data Store
 
 The Edge Data Store (EDS) is a software component that collects sequential data from edge data sources and stores it locally until it can be transferred to permanent storage. It enables you to store data from a device locally and make the data available for local querying. This is useful for displaying trending on an edge device.
 

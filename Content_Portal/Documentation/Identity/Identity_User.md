@@ -17,6 +17,7 @@ Users consume resources in a Tenant. They are invited by the Admin of the
             determine what a User is authorized to do in the Tenant. Roles are assigned to a User
             upon creation and can be modified by an Admin. We allow the change of some User fields
             and the complete deletion of a User.
+            For some recommendations on least privilege for users and clients, refer to the [Least Privilege](xref:LeastPrivilege) topic.
 
 ## Properties
 

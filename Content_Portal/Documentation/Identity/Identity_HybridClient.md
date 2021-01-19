@@ -13,6 +13,7 @@ Hybrid clients are used in typical, thick MVC clients with the presence of a Use
             without them having to sign-in.
             It is highly suggested that both the Client Secret and the refresh token be stored
             in a secure location.
+            For some recommendations on least privilege for users and clients, refer to the [Least Privilege](xref:LeastPrivilege) topic.
 
 ## Properties
 

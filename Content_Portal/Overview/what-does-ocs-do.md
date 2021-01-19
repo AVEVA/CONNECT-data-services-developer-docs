@@ -153,6 +153,7 @@ Each stream is associated with a namespace. You can associate one or more stream
 You can categorize streams using metadata, which is a dictionary of key value pairs used to store additional information. Metadata is not real-time information, and it is not updated at high frequency. Typically, metadata is static information that provides context for a stream. 
 
 You can also use tags to assign information to a stream. A tag is a string value. For example, a tag might identify a region. 
+
 REST APIs give you the ability to read and write streams data programmatically. In addition, if you are using the .NET framework, OSIsoft offers client libraries to help you create and use streams.
 
 ### Stream views 

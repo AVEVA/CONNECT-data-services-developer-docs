@@ -2,7 +2,7 @@
 uid: overview-data-transfers
 ---
 
-# Transfer PI System data to OCS
+# Overview of data transfers
 
 To transfer PI System data to OCS, you must first create a data transfer by setting filter criteria and choosing PI points for the transfer. After, you will stream the selected PI points from your on-premises PI System to OCS.
 

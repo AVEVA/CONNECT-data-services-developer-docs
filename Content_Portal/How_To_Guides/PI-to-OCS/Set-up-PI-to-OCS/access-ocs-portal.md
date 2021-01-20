@@ -22,5 +22,5 @@ Make sure to have your OCS account log on credentials, your company alias or acc
 
 <br>**Note.** In the screenshot below, the OCS account is configured to use both a Microsoft Account (MSA) and Google to sign in again.  Be sure to sign in to the OCS portal with an account assigned to the Account Administrator role.<br>
 
-![ ](/images/sign-in-screen.png)
+![ ](../../images/sign-in-screen.png)
 _Sign in window_

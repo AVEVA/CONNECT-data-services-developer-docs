@@ -8,7 +8,7 @@ Enhancements and bug fixes for PI to OCS may require you to update both the PI t
 
 The **Details** pane displays the currently installed version of the PI to OCS Agent, and also indicates if you need to update it to the latest version. 
  
-![ ](/images/agent-update-message.png)
+![ ](../../images/agent-update-message.png)
 
 _Agent version update message_
 

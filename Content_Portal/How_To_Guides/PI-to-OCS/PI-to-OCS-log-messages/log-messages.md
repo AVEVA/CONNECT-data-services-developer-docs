@@ -7,7 +7,7 @@ uid: log-messages
 The table below summarizes the most common messages logged by the Event Viewer.
 
 
-Enumeration | ID   | Description
+Message | ID   | Description
 ---------|----------|---------
  Started Agent | 0 | The PI to OCS Agent has been started.
  Stopped Agent | 2 | The PI to OCS Agent has been stopped.
@@ -25,4 +25,4 @@ Done Transferring Data To OCS For Transfer Job | 70 | The PI to OCS Agent has co
 Error Reading From Data Archive | 90 | The PI to OCS Agent was unable to read data from PI Data Archive. The event will contain the exception message.
 Failed To Get Streaming Updates From Data Archive | 96 | The PI to OCS Agent was not unable to get streaming data from PI Data Archive. The message will contain the exception message.
 
-If you have any issues, questions, or comments about deploying or using PI to OCS, please visit my.osisoft.com to open a new technical support case.
+If you have any issues, questions, or comments about deploying or using PI to OCS, please visit [my.osisoft.com](https://my.osisoft.com/) to open a new technical support case.

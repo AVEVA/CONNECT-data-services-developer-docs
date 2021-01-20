@@ -10,30 +10,33 @@ A data transfer contains a selection of PI point data you wish to stream from yo
 3.	Select the PI points you wish to transfer.
 4.	Transfer the data to OCS.
  
+
 ## Before you start
 
 Create a PI System connection, install the PI to OCS agent, and then confirm your data source has been registered in OCS.  
 
 ## Procedure
 
-1.	On the **Connections** page, select the PI System connection you want to use for the data transfer.
-2.	In the right pane, click **Add PI Point Transfer**.
+1. Sign in to the [OCS portal](https://cloud.osisoft.com/).
+1. In the OCS portal, open the **Connections** page.	
+1. On the **Connections** page, select the PI System connection you want to use for the data transfer.
+2. In the right pane, click **Add PI Point Transfer**.
 
     **Result:** The **Add PI Point Transfer** window opens.
 
-    ![ ](/images/add-pps-transfer-window.png) 
+    ![ ](../../images/add-pps-transfer-window.png) 
 
     _The Add PI Point Transfer window_
 
 3.	**Optional:** Click the **Advanced** button to display more search fields.
  
-    ![ ](/images/add-pps-transfer-advanced.png)
+    ![ ](../../images/add-pps-transfer-advanced.png)
 
     _Advanced search fields_
 
 4.	To build a search query, choose from the following actions:
 
-    ![ ](/images/query-table.png)
+    ![ ](../../images/query-table.png)
 
 5.	**Optional:** Click the **Basic** button to hide the extra search fields.
 6.	**Optional:** To remove advanced filters from your search criteria, click the **x** on the field label.
@@ -42,7 +45,7 @@ Create a PI System connection, install the PI to OCS agent, and then confirm you
 
 7.	Click **Search** to execute your query and retrieve a list of matching PI points from your data source.
  
-    ![ ](/images/add-pp-transfer.png)
+    ![ ](../../images/add-pp-transfer.png)
 
     _Query results in the PI Points Found list box_
 
@@ -73,6 +76,6 @@ The transfer is saved and displayed in the **Data Transfer** section of the **De
 
     **Note:** If you make multiple PI point selections across pages in a query result, these selections are preserved.
 
-    ![ ](/images/data-transfer.png)
+    ![ ](../../images/data-transfer.png)
 
     _Data Transfer details_

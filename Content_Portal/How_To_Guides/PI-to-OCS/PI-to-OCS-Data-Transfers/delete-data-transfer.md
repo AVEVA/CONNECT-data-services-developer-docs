@@ -6,11 +6,9 @@ uid: delete-data-transfer
 
 You can delete a data transfer for a PI system connection. When you delete a data transfer, it does not remove any data that has already been transferred.  After you have removed a data transfer, you can add a new data transfer to the existing connection.
 
-## Before you begin
-Sign in to the [OCS portal](https://cloud.osisoft.com/).
-
 ## Procedure
 
+1. Sign in to the [OCS portal](https://cloud.osisoft.com/).
 1. In the OCS portal, open the **Connections** page.
 2. Select the PI System connection that contains the data transfer you want to delete.
 3. **Optional:** If the data transfer has been started, click the **Stop** button in the **Details** pane, then click **Stop again**.

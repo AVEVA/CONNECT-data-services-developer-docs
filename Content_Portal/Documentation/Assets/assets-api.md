@@ -212,9 +212,10 @@ The response includes a status code and a body.
 | Status Code               | Body Type | Description                                     |
 | ------------------------- | --------- | ----------------------------------------------- |
 | 200 OK                    | `Asset[]`  | An array of assets as persisted, including values for optional parameters that were omitted in the request.                               |
-| 400 Bad Request             | error     | The request is not valid. The response includes which asset failed validation checks. See the response body for additional details.     |
-| 403 Forbidden            | error     | You are not authorized to create assets.           |
-| 409 Conflict | error     | The asset create has a conflict. See the response body for additional details.  |
+| 207 Multi-Status          | partial success | Array of errors. Assets that did not encounter errors are created. |
+| 400 Bad Request           | error     | The request is not valid. The response includes which asset failed validation checks. See the response body for additional details.     |
+| 403 Forbidden             | error     | You are not authorized to create assets.           |
+| 409 Conflict              | error      | The asset create has a conflict. See the response body for additional details.  |
 
 ***
 

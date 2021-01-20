@@ -294,6 +294,11 @@ Content-Type: application/json
 <td>An array of assets as persisted, including values for optional parameters that were omitted in the request.</td>
 </tr>
 <tr>
+<td>207 Multi-Status</td>
+<td>partial success</td>
+<td>Array of errors. Assets that did not encounter errors are created.</td>
+</tr>
+<tr>
 <td>400 Bad Request</td>
 <td>error</td>
 <td>The request is not valid. The response includes which asset failed validation checks. See the response body for additional details.</td>

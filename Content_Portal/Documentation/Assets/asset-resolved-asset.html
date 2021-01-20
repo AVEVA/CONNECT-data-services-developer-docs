@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Asset Default Shape </title>
+    <title>Resolved Asset </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Asset Default Shape ">
+    <meta name="title" content="Resolved Asset ">
     <meta name="generator" content="docfx 2.56.5.0">
     
     <link rel="shortcut icon" href="../../../favicon.ico">
@@ -75,31 +75,32 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="AssetDefaultShape">
-<h1 id="asset-default-shape">Asset Default Shape</h1>
+            <article class="content wrap" id="_content" data-uid="AssetResolvedAsset">
+<h1 id="resolved-asset">Resolved Asset</h1>
 
-<p>A shape describes the consumption-oriented aspects of an OCS resource, rather than describing how the resource is configured. For example, the shape of an asset corresponds to its metadata and measurements which define how the data is interpreted (that is, SdsTypeCode, InterpolationMode, UOM, and names that are meaningful in the context of an asset) rather than how the data is retrieved from the Sequential Data Store (that is, configuration information such as StreamId and TypeId).</p>
+<p>The resolved asset describes the consumption-oriented aspects of an OCS resource rather than describing how the resource is configured. </p>
+<p>The resolved asset corresponds to its metadata and referenced stream which define how the data is interpreted (that is, SdsTypeCode, InterpolationMode, and UOM).</p>
 <hr>
-<h2 id="get-default-shape-of-an-asset"><code>Get Default Shape of an Asset</code></h2>
-<p>Returns the default shape of an asset.</p>
-<h2 id="default-shape-metadata-value-rules">Default Shape Metadata Value Rules</h2>
-<p>When an asset references an asset type, the following rules explain how the values are derived for a given <code>Metadata</code> value on the default shape.</p>
+<h2 id="get-resolved-asset"><code>Get Resolved Asset</code></h2>
+<p>Returns the resolved asset.</p>
+<h2 id="resolved-asset-metadata-value-rules">Resolved Asset Metadata Value Rules</h2>
+<p>When an asset references an asset type, the following rules explain how the values are derived for a given <code>Metadata</code> value on the resolved asset.</p>
 <ul>
 <li>If a <code>Metadata</code> value with the same <code>Id</code> exists on the asset type and asset, the <code>Metadata</code> value properties, <code>Name</code>, <code>UOM</code>, and <code>SdsTypeCode</code>, of the asset type take precedence over the asset properties.</li>
 <li>If the <code>Metadata</code> value with the same <code>Id</code> exists on the asset type and asset, the <code>Value</code> property on the asset takes precedence (Example 3) if its value is not null.  </li>
-<li>If the <code>Value</code> property on the asset is null, then the <code>Value</code> property of the asset type&#39;s <code>Metadata</code> value is used (Example 2) unless that value is also null. In this instance, the <code>Value</code> property on the default shape is zero for shapes whose <code>SdsTypeCode</code> is a numeric type, and it is an empty string for shapes whose <code>SdsTypeCode</code> is string. (Example 1).</li>
-<li>If the <code>SdsTypeCode</code> on the asset and asset type do not match, then the <code>Value</code> property of the <code>Metadata</code> value on the default shape will be coerced to the <code>SdsTypeCode</code> property of the asset type (Examples 7 and 8).</li>
-<li>If the <code>Metadata</code> value with the same <code>Id</code> exists on the asset and the default shape, but the <code>Metadata</code> value does not exist on the asset type, then the asset&#39;s <code>Metadata</code> value appears on the default shape (Example 4), unless the asset&#39;s <code>Name</code> property is null. In this instance, the <code>Metadata</code> value does not appear on the default shape (Example 5).</li>
+<li>If the <code>Value</code> property on the asset is null, then the <code>Value</code> property of the asset type&#39;s <code>Metadata</code> value is used (Example 2) unless that value is also null. In this instance, the <code>Value</code> property on the resolved asset is zero for metadata whose <code>SdsTypeCode</code> is a numeric type, and it is an empty string for metadata whose <code>SdsTypeCode</code> is string. (Example 1).</li>
+<li>If the <code>SdsTypeCode</code> on the asset and asset type do not match, then the <code>Value</code> property of the <code>Metadata</code> value on the resolved asset will be coerced to the <code>SdsTypeCode</code> property of the asset type (Examples 7 and 8).</li>
+<li>If the <code>Metadata</code> value with the same <code>Id</code> exists on the asset and the resolved asset, but the <code>Metadata</code> value does not exist on the asset type, then the asset&#39;s <code>Metadata</code> value appears on the resolved asset (Example 4), unless the asset&#39;s <code>Name</code> property is null. In this instance, the <code>Metadata</code> value does not appear on the resolved asset (Example 5).</li>
 </ul>
 <h3 id="examples">Examples</h3>
-<p>The examples in the following table illustrate the default shape metadata value rules.</p>
+<p>The examples in the following table illustrate the resolved asset metadata value rules.</p>
 <table>
 <thead>
 <tr>
 <th>Example</th>
 <th>Metadata value on asset type</th>
 <th>Metadata value on asset</th>
-<th>Metadata value on default shape</th>
+<th>Metadata value on resolved asset</th>
 <th style="text-align:left">Details</th>
 </tr>
 </thead>
@@ -116,54 +117,54 @@
 <td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m2</strong>&quot;<br>  <code>Value</code>=10</td>
 <td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=null<br> <code>Value</code>=null</td>
 <td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m2</strong>&quot;<br>  <code>Value</code>=10</td>
-<td style="text-align:left"><strong>m2</strong> appears on the default shape with <code>Value</code>=10, along with <code>UOM</code> and <code>SdsTypeCode</code> from the asset type.</td>
+<td style="text-align:left"><strong>m2</strong> appears on the resolved asset with <code>Value</code>=10, along with <code>UOM</code> and <code>SdsTypeCode</code> from the asset type.</td>
 </tr>
 <tr>
 <td>3</td>
 <td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m3</strong>&quot;<br>  <code>Value</code>=10</td>
 <td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=null<br>  <code>Value</code>=20</td>
 <td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m3</strong>&quot;<br>  <code>Value</code>=20</td>
-<td style="text-align:left"><strong>m3</strong> appears on the default shape with <code>Value</code>=20, along with <code>UOM</code> and <code>SdsTypeCode</code> from the asset type. The <code>Value</code> property on the asset <code>Metadata</code> value always overrides the <code>Value</code> property on the asset type.</td>
+<td style="text-align:left"><strong>m3</strong> appears on the resolved asset with <code>Value</code>=20, along with <code>UOM</code> and <code>SdsTypeCode</code> from the asset type. The <code>Value</code> property on the asset <code>Metadata</code> value always overrides the <code>Value</code> property on the asset type.</td>
 </tr>
 <tr>
 <td>4</td>
 <td>Not present</td>
 <td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m4</strong>&quot;<br>  <code>Value</code>=30</td>
 <td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m4</strong>&quot;<br>  <code>Value</code>=30</td>
-<td style="text-align:left">m4 appears on the default shape with value =30, along with <code>UOM</code> and <code>SdsTypeCode</code> from the asset. Because this metadata value does not exist on the asset type, the metadata value on the default shape takes the value of the asset.</td>
+<td style="text-align:left">m4 appears on the resolved asset with value =30, along with <code>UOM</code> and <code>SdsTypeCode</code> from the asset. Because this metadata value does not exist on the asset type, the metadata value on the resolved asset takes the value of the asset.</td>
 </tr>
 <tr>
 <td>5</td>
 <td>Not present</td>
 <td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=null<br>  <code>Value</code>=30</td>
 <td>Not present</td>
-<td style="text-align:left">Because there is no <code>Metadata</code> value with <code>Id</code> = &quot;md_id&quot; on the asset type and the name of the <code>Metadata</code> value on the asset is null, then this <code>Metadata</code> value does not appear on the default shape.</td>
+<td style="text-align:left">Because there is no <code>Metadata</code> value with <code>Id</code> = &quot;md_id&quot; on the asset type and the name of the <code>Metadata</code> value on the asset is null, then this <code>Metadata</code> value does not appear on the resolved asset.</td>
 </tr>
 <tr>
 <td>6</td>
 <td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m6</strong>&quot;<br>  <code>Value</code>=10</td>
 <td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;anotherName&quot;<br>  <code>Value</code>=&quot;1234&quot;</td>
 <td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m6</strong>&quot;<br>  <code>Value</code>=10</td>
-<td style="text-align:left">The <code>Metadata</code> value <code>Name</code> with <code>Id</code>= &quot;md_id&quot; is not null on the asset. Therefore, the default shape&#39;s <code>Metadata</code> value takes the  asset type&#39;s <code>Metadata</code> value.</td>
+<td style="text-align:left">The <code>Metadata</code> value <code>Name</code> with <code>Id</code>= &quot;md_id&quot; is not null on the asset. Therefore, the resolved asset&#39;s <code>Metadata</code> value takes the  asset type&#39;s <code>Metadata</code> value.</td>
 </tr>
 <tr>
 <td>7</td>
 <td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m7</strong>&quot;<br>  <code>Value</code>=10</td>
 <td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=null<br>  <code>Value</code>=&quot;a string value&quot;</td>
 <td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m7</strong>&quot;<br> <code>Value</code>=0</td>
-<td style="text-align:left">The <code>Metadata</code> value with <code>Id</code>=&quot;md_id&quot; has different <code>SdsTypeCode</code> on the asset and asset type. Therefore, the default shape&#39;s <code>Metadata</code> value coerces the overloaded <code>Value</code> from the asset to the <code>SdsTypecode</code> on the asset type.  It also takes the  <code>Metadata</code> value for <code>UOM</code> and <code>SdsTypeCode</code> from the asset type.</td>
+<td style="text-align:left">The <code>Metadata</code> value with <code>Id</code>=&quot;md_id&quot; has different <code>SdsTypeCode</code> on the asset and asset type. Therefore, the resolved asset&#39;s <code>Metadata</code> value coerces the overloaded <code>Value</code> from the asset to the <code>SdsTypecode</code> on the asset type.  It also takes the  <code>Metadata</code> value for <code>UOM</code> and <code>SdsTypeCode</code> from the asset type.</td>
 </tr>
 <tr>
 <td>8</td>
 <td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m9</strong>&quot;<br> <code>Value</code>=10</td>
 <td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=null<br> <code>Value</code>=&quot;1.23&quot;</td>
 <td><code>Id</code>=&quot;md_id&quot;<br> <code>Name</code>=&quot;<strong>m9</strong>&quot;<br>  <code>Value</code>=1</td>
-<td style="text-align:left">The <code>Metadata</code> value with <code>Id</code>=&quot;md_id&quot; has a different <code>SdsTypeCode</code> on the asset and asset type. Therefore, the default shape&#39;s <code>Metadata</code> value coerces the overloaded <code>Value</code> from the asset to the <code>SdsTypecode</code> on the asset type. It also takes the  <code>Metadata</code> value for <code>UOM</code> and <code>SdsTypeCode</code> from the asset type.</td>
+<td style="text-align:left">The <code>Metadata</code> value with <code>Id</code>=&quot;md_id&quot; has a different <code>SdsTypeCode</code> on the asset and asset type. Therefore, the resolved asset&#39;s <code>Metadata</code> value coerces the overloaded <code>Value</code> from the asset to the <code>SdsTypecode</code> on the asset type. It also takes the  <code>Metadata</code> value for <code>UOM</code> and <code>SdsTypeCode</code> from the asset type.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="default-shape-reference-rules">Default Shape Reference Rules</h3>
-<p>The following example illustrates the default shape reference rules. If an asset references an asset type, the the following rules apply for a given reference:</p>
+<h3 id="resolved-asset-stream-reference-rules">Resolved Asset Stream Reference Rules</h3>
+<p>The following example illustrates the resolved asset reference rules. If an asset references an asset type, the the following rules apply for a given reference:</p>
 <p>Assume that the following is true for the asset and asset type:</p>
 <ul>
 <li><code>Id</code>=&quot;reference1&quot; is defined for both the asset and the asset type. The asset type has measurement mappings for &quot;Temperature&quot; and &quot;Pressure&quot;.</li>
@@ -178,7 +179,7 @@
 <li>Any measurement mappings for &quot;reference3&quot; are ignored because Name on the asset is null. Note: <code>StreamReferenceName</code> on the asset type cannot be null. </li>
 </ul>
 <h3 id="request">Request</h3>
-<pre><code>GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Shape
+<pre><code>GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Resolved
 </code></pre><h3 id="parameters">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -196,8 +197,8 @@
 <tbody>
 <tr>
 <td>200 OK</td>
-<td><code>Shape</code></td>
-<td>The default shape of an asset</td>
+<td><code>Resolved Asset</code></td>
+<td>The resolved asset</td>
 </tr>
 <tr>
 <td>400 Bad Request</td>
@@ -230,29 +231,49 @@ Content-Type: application/json
             &quot;Value&quot;: &quot;0001-01-01T00:00:00Z&quot;
         }
     ],
-    &quot;Measurements&quot;: [
+    &quot;Stream&quot;: [
         {
-            &quot;Id&quot;: &quot;3509f11f-8b51-4555-acca-8c7c7c8192c2&quot;,
-            &quot;Name&quot;: &quot;measurementTemperature&quot;,
-            &quot;StreamId&quot;: &quot;theSdsStreamId&quot;,
+            &quot;Name&quot;: &quot;Temperature&quot;,
             &quot;Properties&quot;: [
                 {
                     &quot;Id&quot;: &quot;Timestamp&quot;,
                     &quot;IsKey&quot;: true,
-                    &quot;ExtrapolationMode&quot;: 2,
+                    &quot;Uom&quot;: null,
+                    &quot;Order&quot;: 0,
+                    &quot;InterpolationMode&quot;: &quot;Continuous&quot;,
+                    &quot;ExtrapolationMode&quot;: &quot;All&quot;,
                     &quot;SdsType&quot;: {
-                        &quot;SdsTypeCode&quot;: 16
+                        &quot;SdsTypeCode&quot;: &quot;DateTime&quot;,
+                        &quot;Properties&quot;: null
+                    },
+                    &quot;Source&quot;: {
+                        &quot;StreamId&quot;: &quot;SourceSdsStreamId&quot;,
+                        &quot;PropertyId&quot;: &quot;Timestamp&quot;
                     }
                 },
                 {
-                    &quot;Id&quot;: &quot;Value&quot;,
-                    &quot;InterpolationMode&quot;: 4,
-                    &quot;ExtrapolationMode&quot;: 2,
+                    &quot;Id&quot;: &quot;Temp&quot;,
+                    &quot;IsKey&quot;: false,
+                    &quot;Uom&quot;: null,
+                    &quot;Order&quot;: 0,
+                    &quot;InterpolationMode&quot;: &quot;Continuous&quot;,
+                    &quot;ExtrapolationMode&quot;: &quot;All&quot;,
                     &quot;SdsType&quot;: {
-                        &quot;SdsTypeCode&quot;: 113
+                        &quot;SdsTypeCode&quot;: &quot;Double&quot;,
+                        &quot;Properties&quot;: null
+                    },
+                    &quot;Source&quot;: {
+                        &quot;StreamId&quot;: &quot;SourceSdsStreamId&quot;,
+                        &quot;PropertyId&quot;: &quot;Temp&quot;
                     }
-                }
+                },
             ]
+        },
+    ], 
+    &quot;UnresolvedStreams&quot;: [ 
+        { 
+            &quot;Name&quot;: &quot;OutputFlow&quot;,
+            &quot;Reason&quot;: &quot;SDS Stream &#39;PI_Outflow&#39; not found&quot;
         }
     ]
 }
@@ -264,7 +285,7 @@ Content-Type: application/json
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/Assets/asset-default-shape.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/Assets/asset-resolved-asset.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

@@ -128,7 +128,7 @@
 <td>String</td>
 <td>Optional</td>
 <td>No</td>
-<td><code>Id</code> for the asset type that this asset is derived from. To get the merged view of the asset, get the default shape through the /Assets/{assetId}/Shape route.</td>
+<td><code>Id</code> for the asset type that this asset is derived from. To get the merged view of the asset, get the resolved asset through the /Assets/{assetId}/Resolved route.</td>
 <td>Yes</td>
 <td>No</td>
 </tr>
@@ -137,7 +137,7 @@
 <td>Metadata List</td>
 <td>Optional</td>
 <td>Yes*</td>
-<td>Asset and AssetType Metadata</td>
+<td>Asset and asset type metadata</td>
 <td>Yes</td>
 <td>Yes</td>
 </tr>
@@ -146,7 +146,7 @@
 <td>Stream Reference List</td>
 <td>Optional</td>
 <td>No *</td>
-<td>Asset Stream References</td>
+<td>Asset stream references</td>
 <td>Yes</td>
 <td>No</td>
 </tr>
@@ -155,8 +155,17 @@
 <td>Type Reference List</td>
 <td>Optional</td>
 <td>No*</td>
-<td>Asset Type Type References</td>
+<td>Asset type type references</td>
 <td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>StatusMapping</td>
+<td>Status Mapping</td>
+<td>Optional</td>
+<td>No*</td>
+<td>Asset and asset type status mapping</td>
+<td>Yes</td>
 <td>Yes</td>
 </tr>
 </tbody>
@@ -255,7 +264,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="assettype-type-reference-properties">AssetType type reference properties</h2>
+<h2 id="asset-type-type-reference-properties">Asset type type reference properties</h2>
 <p>An asset type type reference represents dynamic stream data associated with an asset. The references must either be an SDS stream or an SDS stream view. Asset-centric data routes provide direct access to dynamic data for a given asset. There are no limitations on the number of references an asset may contain. However, an asset cannot contain multiple references to the same SDS stream. An asset reference does not stand alone. It must be specified within an asset object and, therefore, asset references do not have direct API routes. </p>
 <table>
 <thead>
@@ -298,6 +307,8 @@
 </tr>
 </tbody>
 </table>
+<h2 id="asset-and-asset-type-status-mapping-properties">Asset and asset type status mapping properties</h2>
+<p>For information about asset and asset type status mapping, please refer to <a href="xref:AssetStatusMapping">Asset Status</a> for more details.  </p>
 <p>The following is an example of an asset derived from an asset type.</p>
 <p>Asset type example</p>
 <pre><code>Content-Type: application/json
@@ -310,7 +321,7 @@
      &quot;SdsTypeCode&quot;: 18, 
      &quot;Value&quot;: null 
      &quot;Uom&quot;: null 
-   }], 
+  }], 
   &quot;TypeReferences&quot;: [{ 
      &quot;StreamReferenceId&quot;: &quot;Reference1&quot;, 
      &quot;StreamReferenceName&quot;: &quot;ReferenceName&quot;, 
@@ -328,7 +339,30 @@
       &quot;Name&quot;: null,   
       &quot;Value&quot;: &quot;Houston&quot;,  
       &quot;SdsTypeCode&quot;: 18,  
-    }] 
+   }],
+   &quot;StreamReferences&quot;: [
+        {
+            &quot;Id&quot;: &quot;Reference1&quot;,
+            &quot;Name&quot;: &quot;ReferenceName&quot;,
+            &quot;StreamId&quot;: &quot;PI_StreamReference_1010&quot;
+   }],
+   &quot;Status&quot;: {
+        &quot;Name&quot;: &quot;ChargingStationStatus&quot;,
+        &quot;StreamReferenceId&quot;: &quot;Reference1&quot;,
+        &quot;StreamPropertyId&quot;: &quot;Value&quot;,
+        &quot;ValueStatusMappings&quot;: [
+            {
+                &quot;Value&quot;: 0,
+                &quot;Status&quot;: 0,
+                &quot;DisplayName&quot;: &quot;Bad&quot;
+            }
+            {
+                &quot;Value&quot;: 1,
+                &quot;Status&quot;: 1,
+                &quot;DisplayName&quot;: &quot;Good&quot;
+            }
+        ]
+    }
 } 
 </code></pre></article>
           </div>

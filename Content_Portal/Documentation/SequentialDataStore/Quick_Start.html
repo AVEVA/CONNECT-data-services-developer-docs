@@ -82,10 +82,10 @@
 To follow along with the steps in this section, you will first need a tenant, a user account and associated security credentials. 
 Email <a href="mailto://cloudservices@osisoft.com">OCS support</a> at OSIsoft Cloud Services to get access.</p>
 <p>You will be mainly working on the <a href="https://cloud.osisoft.com/">OSIsoft Cloud Services portal</a>. Sign into the portal using the credentials associated with the tenant. You will also need a namespace and administrative client keys. </p>
-<h4 id="step-1-acquire-a-namespace">Step 1: Acquire a Namespace</h4>
+<h4 id="step-1-acquire-a-namespace">Step 1: Acquire a namespace</h4>
 <p>In the portal, open the navigation menu <img src="../images/icon_navigation_bigger.png" alt="navigation menu"> and select <strong>Data Management</strong> &gt; <strong>Namespaces</strong>.
 You can use an existing namespace or create a new one.</p>
-<h4 id="step-2-acquire-a-client-identity-and-secret">Step 2: Acquire a Client Identity and Secret</h4>
+<h4 id="step-2-acquire-a-client-identity-and-secret">Step 2: Acquire a client identity and secret</h4>
 <p>The application acts as a confidential client – an application that is capable of securely maintaining a secret.
 In Azure Active Directory, the confidential client authentication flow is accomplished using an Application Identity.
 OSIsoft Cloud Services supports this authentication with a Client Identity (Client Id) and a Client Secret.</p>
@@ -371,7 +371,7 @@ You should always evaluate the <code>ReasonPhrase</code> in addition to the <cod
 if an <code>InsertValues</code> call failed because it conflicted with an existing event in the stream, the index of the 
 conflicting event will be included in this dictionary.</li>
 </ul>
-<h3 id="sds-timeout-request-header">SDS Timeout Request Header</h3>
+<h3 id="sds-timeout-request-header">SDS Timeout request header</h3>
 <p>Handling timeout issues can be difficult and confusing in a distributed programming environment. When a client 
 times out, for example, the request is terminated before the client receives a response from the server. Meanwhile, the application is
 unaware of the state of the server.</p>

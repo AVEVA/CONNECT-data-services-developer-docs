@@ -40,15 +40,12 @@ references:
 - uid: AssetCentricDataAPI
   name: Asset Centric Data API
   href: Content_Portal/Documentation/Assets/asset-centric-data-api.html
-- uid: AssetDefaultShape
-  name: Asset Default Shape
-  href: Content_Portal/Documentation/Assets/asset-default-shape.html
-- uid: AssetMeasurementMappings
-  name: Asset Measurement Mappings
-  href: Content_Portal/Documentation/Assets/asset-measurements.html
 - uid: AssetOrAssetTypeAccessControlAPI
   name: Asset and AssetType Access Control API
   href: Content_Portal/Documentation/Assets/access-control-api.html
+- uid: AssetResolvedAsset
+  name: Resolved Asset
+  href: Content_Portal/Documentation/Assets/asset-resolved-asset.html
 - uid: AssetsAPI
   name: Assets API
   href: Content_Portal/Documentation/Assets/assets-api.html
@@ -58,9 +55,9 @@ references:
 - uid: AssetsSearchAPI
   name: Assets Search API
   href: Content_Portal/Documentation/Assets/asset-search-api.html
-- uid: AssetStatusMapping
-  name: Asset Status Mapping
-  href: Content_Portal/Documentation/Assets/asset-status-mapping.html
+- uid: AssetStatus
+  name: Asset Status
+  href: Content_Portal/Documentation/Assets/asset-status.html
 - uid: AssetTypes
   name: Asset types
   href: Content_Portal/How_To_Guides/Assets/asset-type-overview.html

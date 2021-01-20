@@ -174,7 +174,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Assets/asset-centric-data-api.html",
-          "hash": "q0pG5KR68wCv2YmSmESjYg=="
+          "hash": "hswtIh60T8Yg4Iv0HThgYw=="
         }
       },
       "is_incremental": false,
@@ -182,23 +182,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "Content_Portal/Documentation/Assets/asset-default-shape.md",
+      "source_relative_path": "Content_Portal/Documentation/Assets/asset-resolved-asset.md",
       "output": {
         ".html": {
-          "relative_path": "Content_Portal/Documentation/Assets/asset-default-shape.html",
-          "hash": "aPKTpI9lT0fPGN4xVfK7FQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Content_Portal/Documentation/Assets/asset-measurements.md",
-      "output": {
-        ".html": {
-          "relative_path": "Content_Portal/Documentation/Assets/asset-measurements.html",
-          "hash": "QYcbpR2zbpMazTo/g4bvMQ=="
+          "relative_path": "Content_Portal/Documentation/Assets/asset-resolved-asset.html",
+          "hash": "TNOf7STj4buX4gFZyJ3UQA=="
         }
       },
       "is_incremental": false,
@@ -210,19 +198,22 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Assets/asset-search-api.html",
-          "hash": "p1ZkK9AjoQJuJBJuqon48w=="
+          "hash": "fO9O2A2NCQOUmlht9rmcZA=="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
+      "log_codes": [
+        "UidNotFound"
+      ],
       "type": "Conceptual",
-      "source_relative_path": "Content_Portal/Documentation/Assets/asset-status-mapping.md",
+      "source_relative_path": "Content_Portal/Documentation/Assets/asset-status.md",
       "output": {
         ".html": {
-          "relative_path": "Content_Portal/Documentation/Assets/asset-status-mapping.html",
-          "hash": "2WNUAog81tsrMpTPS4lDiA=="
+          "relative_path": "Content_Portal/Documentation/Assets/asset-status.html",
+          "hash": "1r3AR4dkS5cWbIgIV0HaKA=="
         }
       },
       "is_incremental": false,
@@ -234,7 +225,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Assets/asset-type.html",
-          "hash": "DfDzOsI9Ilu88jt4nwC/dA=="
+          "hash": "nMPgU9amhD3h78rqrbFy9Q=="
         }
       },
       "is_incremental": false,
@@ -246,19 +237,22 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Assets/assets-api.html",
-          "hash": "lrHN4uVe6Oac8xwsFdpwDA=="
+          "hash": "6xLLelpf1XtvxY1ahem5yg=="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
+      "log_codes": [
+        "UidNotFound"
+      ],
       "type": "Conceptual",
       "source_relative_path": "Content_Portal/Documentation/Assets/assets.md",
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Assets/assets.html",
-          "hash": "ZrmDMUGGC9JvlpB416x+pQ=="
+          "hash": "fhi9M3LQnxh5vdv7ay8qcA=="
         }
       },
       "is_incremental": false,
@@ -654,7 +648,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Identity/Identity_AuthorizationCodeClient.html",
-          "hash": "e/MacXhQW/BycoAd+P7hlA=="
+          "hash": "rLQiltl0GiHFPqN9xK4aKw=="
         }
       },
       "is_incremental": false,
@@ -714,7 +708,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Identity/Identity_ClientCredentialClient.html",
-          "hash": "Wzf2tK3sjssX6Vx6g5YQxw=="
+          "hash": "PJNs+OGmkHmZ2QDN8HG46w=="
         }
       },
       "is_incremental": false,
@@ -726,7 +720,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Identity/Identity_HybridClient.html",
-          "hash": "ngPVP/QJgqoXMf4Yu703EA=="
+          "hash": "XQhMMRv1US/G/xHnXI8Kkw=="
         }
       },
       "is_incremental": false,
@@ -786,7 +780,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Identity/Identity_Secret.html",
-          "hash": "FO4GNblHVuu5PXDrLeghnA=="
+          "hash": "B91/rqHfEL0J6ly+fu1JjA=="
         }
       },
       "is_incremental": false,
@@ -798,7 +792,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Identity/Identity_User.html",
-          "hash": "WQJu84hZdDl1dhKxE22x+w=="
+          "hash": "FAyiGDM4SOkONY7zhLOzCA=="
         }
       },
       "is_incremental": false,
@@ -1074,7 +1068,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/SequentialDataStore/Quick_Start.html",
-          "hash": "0zlqLsuNAhGfFkkJspiqzg=="
+          "hash": "pGqyWVbMOWkPgSGBoXo1Hg=="
         }
       },
       "is_incremental": false,
@@ -1972,7 +1966,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/toc.html",
-          "hash": "AUlJxklBcY+L0Sam7TpVBg=="
+          "hash": "nSgKpanDNyu/FQAsbBHF+Q=="
         }
       },
       "is_incremental": false,
@@ -2029,7 +2023,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 118,
+          "total_file_count": 117,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

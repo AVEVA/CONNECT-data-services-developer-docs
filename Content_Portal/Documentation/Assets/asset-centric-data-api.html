@@ -78,8 +78,8 @@
             <article class="content wrap" id="_content" data-uid="AssetCentricDataAPI">
 <h1 id="asset-centric-data-api">Asset Centric Data API</h1>
 
-<p>The asset centric data API provides a quick way to take the dynamic data stored in SDS streams and store it as references within a given asset measurement mappings.</p>
-<p>In order to retrieve stream data from an asset, you must first set up measurement mappings for a given asset. The data that is retrieved is based on the default shape of the asset.</p>
+<p>The asset centric data API provides a quick way to retrieve data stored in an asset&#39;s referenced streams.</p>
+<p>In order to retrieve stream data from an asset, you must first set up stream references for a given asset. The data that is retrieved is based on the resolved asset.</p>
 <h3 id="example-asset">Example Asset</h3>
 <p>The following asset is used in all of the sample output in this topic.</p>
 <pre><code>{
@@ -99,32 +99,20 @@
     [
         {
             &quot;Id&quot;: &quot;StreamReferenceId1&quot;,
-            &quot;Name&quot;: &quot;StreamReferenceName&quot;
+            &quot;Name&quot;: &quot;StreamReferenceWithEventsName&quot;
             &quot;StreamId&quot;: &quot;PI_buildingMachine_1112&quot;
         }
     ]
 }
-</code></pre><p>This is the measurement mappings of asset with <code>Id</code> IdSample which is used for all the example output below.</p>
-<pre><code>[
-    {
-        &quot;Name&quot;: &quot;StreamPressure&quot;,
-        &quot;StreamReferenceId&quot;: &quot;StreamReferenceId1&quot;,
-        &quot;StreamPropertyIds&quot;: [
-            &quot;Timestamp&quot;,
-            &quot;Value&quot;
-        ]
-    }
-]
 </code></pre><hr>
 <h2 id="get-asset-last-data"><code>Get Asset Last Data</code></h2>
-<p>Returns the last stored value for all measurements.</p>
+<p>Returns the last stored value for all SDS streams in the resolved asset.</p>
 <h3 id="request">Request</h3>
-<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/Last&amp;measurement={measurementNames}
+<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/Last
 </code></pre><h3 id="parameters">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string assetId</code><br>The asset identifier</p>
-<p>[optional] <code>string[] measurement names</code><br>A comma-separated list of measurement names that you want returned for the last data. By default, all measurements are returned.</p>
 <h3 id="response">Response</h3>
 <p>The response includes a status code and a response body.</p>
 <table>
@@ -164,24 +152,26 @@
 </tbody>
 </table>
 <h4 id="example-response-body">Example response body</h4>
-<pre><code>[
-    {
-        &quot;Measurement&quot;: &quot;StreamPressure&quot;,
-        &quot;Result&quot;: [
+<pre><code class="lang-json">HTTP 200 OK
+Content-Type: application/json
+{
+    &quot;Results&quot;: {
+        &quot;StreamReferenceWithEventsName&quot;: [
             {
-                &quot;Timestamp&quot;: &quot;2020-08-12T22:35:44Z&quot;,
-                &quot;Value&quot;: 73.165016
+                &quot;Timestamp&quot;: &quot;2019-01-02T01:00:00Z&quot;,
+                &quot;Temp&quot;: 155.5,
+                &quot;Pres&quot;: 1
             }
-        ]
-    }
-]
-} 
+        ],
+    },
+    &quot;Errors&quot;: null
+}
 </code></pre><hr>
 <h2 id="get-asset-sampled-data"><code>Get Asset Sampled Data</code></h2>
 <p>Returns sampled data for all referenced measurements. </p>
 <p>Note: The inputs to this API matches the SDS stream Get samples values data call.  </p>
 <h3 id="request-1">Request</h3>
-<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/Sampled?startIndex={startIndex}&amp;endIndex={endIndex}&amp;intervals={intervals}&amp;measurement={measurementNames} 
+<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/Sampled?startIndex={startIndex}&amp;endIndex={endIndex}&amp;intervals={intervals}
 </code></pre><h3 id="parameters-1">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier </p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -189,7 +179,6 @@
 <p><code>string startIndex</code><br>The start index for the intervals</p>
 <p><code>string endIndex</code><br>The end index for the intervals</p>
 <p><code>int intervals</code><br>The number of requested intervals</p>
-<p>[optional] <code>string[] measurement names</code><br>A comma-separated list of measurement names that you want returned for the last data. By default, all measurements are returned.</p>
 <h3 id="response-1">Response</h3>
 <p>The response includes a status code and a response body.</p>
 <table>
@@ -230,98 +219,33 @@
 </table>
 <pre><code class="lang-json">HTTP 200 OK
 Content-Type: application/json
-[
-    {
-        &quot;Measurement&quot;: &quot;StreamPressure&quot;,
-        &quot;Result&quot;: [
+{
+    &quot;Results&quot;: {
+        &quot;StreamReferenceWithEventsName&quot;: [
             {
-                &quot;Timestamp&quot;: &quot;2019-08-20T19:15:37Z&quot;,
-                &quot;Value&quot;: 218.13373
+                &quot;Timestamp&quot;: &quot;2019-01-02T00:00:00Z&quot;,
+                &quot;Temp&quot;: 0.044,
+                &quot;Pres&quot;: 1
             },
             {
-                &quot;Timestamp&quot;: &quot;2019-08-20T19:37:07Z&quot;,
-                &quot;Value&quot;: 201.36305
+                &quot;Timestamp&quot;: &quot;2019-01-02T00:16:38Z&quot;,
+                &quot;Temp&quot;: 998.046,
+                &quot;Pres&quot;: 1
             },
             {
-                &quot;Timestamp&quot;: &quot;2019-08-20T22:09:07Z&quot;,
-                &quot;Value&quot;: 247.73355
-            },
-            {
-                &quot;Timestamp&quot;: &quot;2019-08-20T22:38:07Z&quot;,
-                &quot;Value&quot;: 216.15732
-            },
-            {
-                &quot;Timestamp&quot;: &quot;2019-08-20T22:38:37Z&quot;,
-                &quot;Value&quot;: 217.88617
-            },
-            {
-                &quot;Timestamp&quot;: &quot;2019-08-21T00:08:07Z&quot;,
-                &quot;Value&quot;: 185.70175
-            },
-            {
-                &quot;Timestamp&quot;: &quot;2019-08-21T03:35:07Z&quot;,
-                &quot;Value&quot;: 249.77954
-            },
-            {
-                &quot;Timestamp&quot;: &quot;2019-08-21T03:53:37Z&quot;,
-                &quot;Value&quot;: 232.56764
-            },
-            {
-                &quot;Timestamp&quot;: &quot;2019-08-21T03:54:07Z&quot;,
-                &quot;Value&quot;: 234.20694
-            },
-            {
-                &quot;Timestamp&quot;: &quot;2019-08-21T07:23:37Z&quot;,
-                &quot;Value&quot;: 249.29556
-            },
-            {
-                &quot;Timestamp&quot;: &quot;2019-08-21T08:36:37Z&quot;,
-                &quot;Value&quot;: 202.4792
-            },
-            {
-                &quot;Timestamp&quot;: &quot;2019-08-21T09:09:07Z&quot;,
-                &quot;Value&quot;: 205.28456
-            },
-            {
-                &quot;Timestamp&quot;: &quot;2019-08-21T09:09:37Z&quot;,
-                &quot;Value&quot;: 203.7544
-            },
-            {
-                &quot;Timestamp&quot;: &quot;2019-08-21T11:02:07Z&quot;,
-                &quot;Value&quot;: 178.63676
-            },
-            {
-                &quot;Timestamp&quot;: &quot;2019-08-21T14:03:37Z&quot;,
-                &quot;Value&quot;: 228.6509
-            },
-            {
-                &quot;Timestamp&quot;: &quot;2019-08-21T14:25:07Z&quot;,
-                &quot;Value&quot;: 209.00409
-            },
-            {
-                &quot;Timestamp&quot;: &quot;2019-08-21T14:25:37Z&quot;,
-                &quot;Value&quot;: 211.80522
-            },
-            {
-                &quot;Timestamp&quot;: &quot;2019-08-21T14:53:37Z&quot;,
-                &quot;Value&quot;: 235.39305
-            },
-            {
-                &quot;Timestamp&quot;: &quot;2019-08-21T18:55:07Z&quot;,
-                &quot;Value&quot;: 147.43044
-            },
-            {
-                &quot;Timestamp&quot;: &quot;2019-08-21T19:40:37Z&quot;,
-                &quot;Value&quot;: 169.46703
+                &quot;Timestamp&quot;: &quot;2019-01-02T01:00:00Z&quot;,
+                &quot;Temp&quot;: 155.5,
+                &quot;Pres&quot;: 1
             }
-        ]
-    }
-] 
+        ],
+    },
+    &quot;Errors&quot;: null
+}
 </code></pre><hr>
 <h2 id="get-asset-summary-data"><code>Get Asset Summary Data</code></h2>
-<p>Returns summary data for all referenced measurements. </p>
+<p>Returns summary data for all referenced SDS streams. </p>
 <h3 id="request-2">Request</h3>
-<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/Summaries?startIndex={startIndex}&amp;endIndex={endIndex}&amp;count={count}&amp;measurement={measurement=measurementNames}
+<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/Summaries?startIndex={startIndex}&amp;endIndex={endIndex}&amp;count={count}
 </code></pre><h3 id="parameters-2">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier </p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -329,7 +253,6 @@ Content-Type: application/json
 <p><code>string startIndex</code><br>The start index for the intervals</p>
 <p><code>string endIndex</code><br>The end index for the intervals</p>
 <p><code>int count</code><br>The number of requested intervals</p>
-<p>[optional] <code>string[] measurements names</code><br>A comma-separated list of measurement names that you want returned for the last data. By default, all measurements are returned.</p>
 <h3 id="response-2">Response</h3>
 <p>The response includes a status code and a response body.</p>
 <table>
@@ -370,151 +293,236 @@ Content-Type: application/json
 </table>
 <pre><code class="lang-json">HTTP 200 OK
 Content-Type: application/json
-[
-    {
-        &quot;Measurement&quot;: &quot;StreamPressure&quot;,
-        &quot;Result&quot;: [
+{
+    &quot;Results&quot;: {
+        &quot;StreamReferenceWithEventsName&quot;: [
             {
                 &quot;Start&quot;: {
-                    &quot;Timestamp&quot;: &quot;2020-01-01T12:00:00Z&quot;,
-                    &quot;Value&quot;: 139.56558
+                    &quot;Timestamp&quot;: &quot;2019-01-01T08:00:00Z&quot;,
+                    &quot;Temp&quot;: 0.044,
+                    &quot;Pres&quot;: 1
                 },
                 &quot;End&quot;: {
-                    &quot;Timestamp&quot;: &quot;2021-01-01T12:00:00Z&quot;
+                    &quot;Timestamp&quot;: &quot;2019-02-06T20:00:00Z&quot;,
+                    &quot;Temp&quot;: 155.5,
+                    &quot;Pres&quot;: 1
                 },
                 &quot;Summaries&quot;: {
                     &quot;Count&quot;: {
-                        &quot;Timestamp&quot;: 211615,
-                        &quot;Value&quot;: 211613
+                        &quot;Timestamp&quot;: 1000,
+                        &quot;Temp&quot;: 1000,
+                        &quot;Pres&quot;: 1000
                     },
                     &quot;Minimum&quot;: {
-                        &quot;Value&quot;: 47.00091552734375
+                        &quot;Temp&quot;: 0.044,
+                        &quot;Pres&quot;: 1.0
                     },
                     &quot;Maximum&quot;: {
-                        &quot;Value&quot;: 249.99899291992188
+                        &quot;Temp&quot;: 998.046,
+                        &quot;Pres&quot;: 1.0
                     },
                     &quot;Range&quot;: {
-                        &quot;Value&quot;: 202.99807739257812
-                    },
-                    &quot;Mean&quot;: {
-                        &quot;Value&quot;: 136.30853664128998
-                    },
-                    &quot;StandardDeviation&quot;: {
-                        &quot;Value&quot;: 57.04227640108317
-                    },
-                    &quot;PopulationStandardDeviation&quot;: {
-                        &quot;Value&quot;: 57.04214162121664
+                        &quot;Temp&quot;: 998.0020000000001,
+                        &quot;Pres&quot;: 0.0
                     },
                     &quot;Total&quot;: {
-                        &quot;Value&quot;: 28844658.36427307
+                        &quot;Temp&quot;: 498779.61199999356,
+                        &quot;Pres&quot;: 1001.0
                     },
-                    &quot;Skewness&quot;: {
-                        &quot;Value&quot;: 0.3037505109882242
+                    &quot;Mean&quot;: {
+                        &quot;Temp&quot;: 498.28133066933077,
+                        &quot;Pres&quot;: 1.0
                     },
-                    &quot;Kurtosis&quot;: {
-                        &quot;Value&quot;: -2.7748546694726244
+                    &quot;StandardDeviation&quot;: {
+                        &quot;Temp&quot;: 288.4561823749973,
+                        &quot;Pres&quot;: 0.0
+                    },
+                    &quot;PopulationStandardDeviation&quot;: {
+                        &quot;Temp&quot;: 288.31206236481444,
+                        &quot;Pres&quot;: 0.0
                     },
                     &quot;WeightedMean&quot;: {
-                        &quot;Value&quot;: 112.71120677110477
+                        &quot;Temp&quot;: 153.11692828545156,
+                        &quot;Pres&quot;: 1.0
                     },
                     &quot;WeightedStandardDeviation&quot;: {
-                        &quot;Value&quot;: 55.216968157263885
+                        &quot;Temp&quot;: 25.424619899757136,
+                        &quot;Pres&quot;: 0.0
                     },
                     &quot;WeightedPopulationStandardDeviation&quot;: {
-                        &quot;Value&quot;: 55.21683769086423
+                        &quot;Temp&quot;: 25.411917116101474,
+                        &quot;Pres&quot;: 0.0
+                    },
+                    &quot;Skewness&quot;: {
+                        &quot;Temp&quot;: 0.0011013861675857883,
+                        &quot;Pres&quot;: &quot;NaN&quot;
+                    },
+                    &quot;Kurtosis&quot;: {
+                        &quot;Temp&quot;: -1.19976760290962,
+                        &quot;Pres&quot;: &quot;NaN&quot;
+                    }
+                }
+            },
+            {
+                &quot;Start&quot;: {
+                    &quot;Timestamp&quot;: &quot;2019-03-15T08:00:00Z&quot;,
+                    &quot;Temp&quot;: 155.5,
+                    &quot;Pres&quot;: 1
+                },
+                &quot;End&quot;: {
+                    &quot;Timestamp&quot;: &quot;2019-04-20T20:00:00Z&quot;,
+                    &quot;Temp&quot;: 155.5,
+                    &quot;Pres&quot;: 1
+                },
+                &quot;Summaries&quot;: {
+                    &quot;Count&quot;: {
+                        &quot;Timestamp&quot;: 0,
+                        &quot;Temp&quot;: 0,
+                        &quot;Pres&quot;: 0
+                    },
+                    &quot;Minimum&quot;: {
+                        &quot;Temp&quot;: 155.5,
+                        &quot;Pres&quot;: 1.0
+                    },
+                    &quot;Maximum&quot;: {
+                        &quot;Temp&quot;: 155.5,
+                        &quot;Pres&quot;: 1.0
+                    },
+                    &quot;Range&quot;: {
+                        &quot;Temp&quot;: 0.0,
+                        &quot;Pres&quot;: 0.0
+                    },
+                    &quot;Total&quot;: {
+                        &quot;Temp&quot;: 155.5,
+                        &quot;Pres&quot;: 1.0
+                    },
+                    &quot;Mean&quot;: {
+                        &quot;Temp&quot;: 155.5,
+                        &quot;Pres&quot;: 1.0
+                    },
+                    &quot;StandardDeviation&quot;: {
+                        &quot;Temp&quot;: &quot;NaN&quot;,
+                        &quot;Pres&quot;: &quot;NaN&quot;
+                    },
+                    &quot;PopulationStandardDeviation&quot;: {
+                        &quot;Temp&quot;: 0.0,
+                        &quot;Pres&quot;: 0.0
+                    },
+                    &quot;WeightedMean&quot;: {
+                        &quot;Temp&quot;: 155.5,
+                        &quot;Pres&quot;: 1.0
+                    },
+                    &quot;WeightedStandardDeviation&quot;: {
+                        &quot;Temp&quot;: &quot;NaN&quot;,
+                        &quot;Pres&quot;: &quot;NaN&quot;
+                    },
+                    &quot;WeightedPopulationStandardDeviation&quot;: {
+                        &quot;Temp&quot;: 0.0,
+                        &quot;Pres&quot;: 0.0
+                    },
+                    &quot;Skewness&quot;: {
+                        &quot;Temp&quot;: &quot;NaN&quot;,
+                        &quot;Pres&quot;: &quot;NaN&quot;
+                    },
+                    &quot;Kurtosis&quot;: {
+                        &quot;Temp&quot;: &quot;NaN&quot;,
+                        &quot;Pres&quot;: &quot;NaN&quot;
                     }
                 }
             }
-        ]
-    }
-]
-</code></pre><hr>
-<h2 id="get-asset-window-data"><code>Get Asset Window Data</code></h2>
-<p>Returns window data for all referenced measurements.</p>
-<h3 id="request-3">Request</h3>
-<pre><code>GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data?startIndex={startIndex}&amp;endIndex={endIndex}&amp;measurement={measurementNames}
-</code></pre><h3 id="parameters-3">Parameters</h3>
-<p><code>string tenantId</code><br>The tenant identifier</p>
-<p><code>string namespaceId</code><br>The namespace identifier</p>
-<p><code>string assetId</code><br>The asset identifier</p>
-<p><code>string startIndex</code><br>The start index for the intervals</p>
-<p><code>string endIndex</code><br>The end index for the intervals</p>
-<p>[optional] <code>string[] measurement names</code><br>A comma-separated list of measurement names that you want returned for the last data. By default, all measurements are returned.</p>
-<h3 id="response-3">Response</h3>
-<p>The response includes a status code and a response body.</p>
-<table>
-<thead>
-<tr>
-<th>Status Code</th>
-<th>Body Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>200 OK</td>
-<td>OK</td>
-<td>Array of window values for all references.</td>
-</tr>
-<tr>
-<td>207 Multi-Status</td>
-<td>partial success</td>
-<td>Array of window values for  references. Look at child errors for unsuccessful values.</td>
-</tr>
-<tr>
-<td>400 Bad Request</td>
-<td>error</td>
-<td>The request is not valid. See the response body for additional details.</td>
-</tr>
-<tr>
-<td>403 Forbidden</td>
-<td>error</td>
-<td>You are not authorized to view the requested asset.</td>
-</tr>
-<tr>
-<td>404 Not Found</td>
-<td>error</td>
-<td>The specified asset with identifier is not found.</td>
-</tr>
-</tbody>
-</table>
-<pre><code class="lang-json">HTTP 200 OK
+        ],
+    &quot;Errors&quot;: null
+}
+
+***
+
+## `Get Asset Window Data`
+Returns window data for all referenced SDS streams.
+
+### Request
+</code></pre><p>GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data?startIndex={startIndex}&amp;endIndex={endIndex}</p>
+<pre><code>
+### Parameters
+`string tenantId`  
+The tenant identifier
+
+`string namespaceId`   
+The namespace identifier
+
+`string assetId`  
+The asset identifier
+
+`string startIndex`   
+The start index for the intervals
+
+`string endIndex`   
+The end index for the intervals
+
+### Response
+The response includes a status code and a response body.
+
+| Status Code | Body Type | Description |
+|--|--|--|
+| 200 OK | OK | Array of window values for all references. |
+| 207 Multi-Status | partial success | Array of window values for  references. Look at child errors for unsuccessful values. |
+| 400 Bad Request | error | The request is not valid. See the response body for additional details. |
+| 403 Forbidden | error | You are not authorized to view the requested asset. |
+| 404 Not Found | error | The specified asset with identifier is not found. |
+
+```json 
+HTTP 200 OK
 Content-Type: application/json
-[
-    {
-        &quot;Measurement&quot;: &quot;StreamPressure&quot;,
-          &quot;Result&quot;: [
+{
+    &quot;Results&quot;: {
+        &quot;StreamReferenceWithEventsName&quot;: [
             {
-                &quot;Timestamp&quot;: &quot;2020-01-01T12:00:11Z&quot;,
-                &quot;Value&quot;: 107.64254
+                &quot;Timestamp&quot;: &quot;2019-01-02T00:00:00Z&quot;,
+                &quot;Temp&quot;: 0.044,
+                &quot;Pres&quot;: 1
             },
             {
-                &quot;Timestamp&quot;: &quot;2020-01-01T12:00:41Z&quot;,
-                &quot;Value&quot;: 106.129585
+                &quot;Timestamp&quot;: &quot;2019-01-02T00:00:01Z&quot;,
+                &quot;Temp&quot;: 1.045,
+                &quot;Pres&quot;: 1
             },
             {
-                &quot;Timestamp&quot;: &quot;2020-01-01T12:01:11Z&quot;,
-                &quot;Value&quot;: 109.109985
+                &quot;Timestamp&quot;: &quot;2019-01-02T00:00:02Z&quot;,
+                &quot;Temp&quot;: 2.045,
+                &quot;Pres&quot;: 1
             },
             {
-                &quot;Timestamp&quot;: &quot;2020-01-01T12:01:41Z&quot;,
-                &quot;Value&quot;: 108.936676
+                &quot;Timestamp&quot;: &quot;2019-01-02T00:00:03Z&quot;,
+                &quot;Temp&quot;: 3.045,
+                &quot;Pres&quot;: 1
             },
             {
-                &quot;Timestamp&quot;: &quot;2020-01-01T12:02:11Z&quot;,
-                &quot;Value&quot;: 110.982666
+                &quot;Timestamp&quot;: &quot;2019-01-02T00:00:04Z&quot;,
+                &quot;Temp&quot;: 4.045,
+                &quot;Pres&quot;: 1
             },
             {
-                &quot;Timestamp&quot;: &quot;2020-01-01T12:02:41Z&quot;,
-                &quot;Value&quot;: 109.05698
+                &quot;Timestamp&quot;: &quot;2019-01-02T00:00:05Z&quot;,
+                &quot;Temp&quot;: 5.045,
+                &quot;Pres&quot;: 1
             },
             {
-                &quot;Timestamp&quot;: &quot;2020-01-01T12:03:11Z&quot;,
-                &quot;Value&quot;: 110.33701
-            }
-        ]
-    }
-]
+                &quot;Timestamp&quot;: &quot;2019-01-02T00:00:06Z&quot;,
+                &quot;Temp&quot;: 6.045,
+                &quot;Pres&quot;: 1
+            },
+            {
+                &quot;Timestamp&quot;: &quot;2019-01-02T00:00:07Z&quot;,
+                &quot;Temp&quot;: 7.045,
+                &quot;Pres&quot;: 1
+            },
+            {
+                &quot;Timestamp&quot;: &quot;2019-01-02T00:00:08Z&quot;,
+                &quot;Temp&quot;: 8.045,
+                &quot;Pres&quot;: 1
+            },       ],
+    },
+    &quot;Errors&quot;: null
+}
 </code></pre></article>
           </div>
           

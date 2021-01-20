@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Asset Status Mapping </title>
+    <title>Asset Status </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Asset Status Mapping ">
+    <meta name="title" content="Asset Status ">
     <meta name="generator" content="docfx 2.56.5.0">
     
     <link rel="shortcut icon" href="../../../favicon.ico">
@@ -75,11 +75,12 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="AssetStatusMapping">
-<h1 id="asset-status-mapping">Asset Status Mapping</h1>
+            <article class="content wrap" id="_content" data-uid="AssetStatus">
+<h1 id="asset-status">Asset Status</h1>
 
-<p>Status mapping is a child resource of an asset or asset type that defines the simple status of an asset or asset type. There is one status mapping resource for each asset or asset type.</p>
-<p>If an asset references an existing asset type and the asset type has a corresponding type reference, then the status mapping on the asset is ignored. </p>
+<p>Status is a property of an asset or asset type that defines the simple status of an asset or asset type. There is one status property for each asset or asset type.</p>
+<p>If an asset references an existing asset type and the asset type has a corresponding type reference, then the status mapping on the asset is ignored.</p>
+<p>Create, read, update, and delete of an asset status mapping is done through the asset or asset type itself.</p>
 <h2 id="status-mapping-properties-table">Status mapping properties table</h2>
 <p>The following table lists the most common fields in a status mapping.</p>
 <table>
@@ -126,7 +127,7 @@
 <td>List<valuestatusmapping></valuestatusmapping></td>
 <td>Required</td>
 <td>No</td>
-<td>The value status mapping maps values to a given status. See <a class="xref" href="asset-status-mapping.html#value-status-mapping-properties-table">Value status mapping properties table</a></td>
+<td>The value status mapping maps values to a given status. See <a href="xref:AssetStatusMapping#value-status-mapping-properties-table">Value status mapping properties table</a></td>
 </tr>
 </tbody>
 </table>
@@ -176,25 +177,25 @@
 <li>Bad = 3</li>
 </ul>
 <h2 id="example-status-mapping">Example status mapping</h2>
-<p>The following is an example of a status mapping.</p>
-<pre><code>{
-    &quot;Name&quot;: &quot;StatusAlertMapping&quot;,
-    &quot;Description&quot;: &quot;Sample Status Mapping&quot;,
-    &quot;StreamReferenceId&quot;: &quot;AssetStreamReferenceId1&quot;,
+<p>The following is an example of a status property which is on the asset or asset type.</p>
+<pre><code>&quot;Status&quot;: {
+    &quot;Name&quot;: &quot;ChargingStationStatus&quot;,
+    &quot;StreamReferenceId&quot;: &quot;Reference1&quot;,
     &quot;StreamPropertyId&quot;: &quot;Value&quot;,
-    &quot;ValueStatusMappings&quot;:[
+    &quot;ValueStatusMappings&quot;: [
         {
             &quot;Value&quot;: 0,
-            &quot;Status&quot;: &quot;Unknown&quot;,
-            &quot;DisplayName&quot;: &quot;UnknownStatusTroubleshoot&quot;
-        },
+            &quot;Status&quot;: 0,
+            &quot;DisplayName&quot;: &quot;Bad&quot;
+        }
         {
             &quot;Value&quot;: 1,
-            &quot;Status&quot;: &quot;Good&quot;
+            &quot;Status&quot;: 1,
+            &quot;DisplayName&quot;: &quot;Good&quot;
         }
     ]
 }
-</code></pre><p>The asset or asset type&#39;s  StreamReferences field has an Id property. To assign a status mapping to an asset or asset type, the value assigned to the Id property must match the StreamReferenceId of the status mapping object. Using the status mapping example above, AssetStreamReferenceId1 is assigned to the asset in the following example. </p>
+</code></pre><p>The asset or asset type&#39;s &#39;StreamReferences&#39; field has an &#39;Id&#39; property. To assign a status mapping to an asset or asset type, the value assigned to the Id property must match the StreamReferenceId of the status mapping object. Using the status mapping example above, AssetStreamReferenceId1 is assigned to the asset in the following example. </p>
 <pre><code>{
   &quot;Id&quot;: &quot;ChargingStationAsset&quot;, 
    &quot;AssetTypeId&quot;: null,
@@ -206,150 +207,15 @@
       &quot;StreamId&quot;: &quot;pi2ocs_stream1_inputpower&quot;, 
     }] 
 } 
-</code></pre><hr>
-<h2 id="get-status-mapping"><code>Get Status Mapping</code></h2>
-<p>Returns the status mapping of the specified asset or asset type.</p>
+</code></pre><h2 id="get-asset-status"><code>Get Asset Status</code></h2>
+<p>View the status of an asset</p>
 <h3 id="request">Request</h3>
-<p>Asset</p>
-<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/StatusMapping
-</code></pre><p>Asset Type</p>
-<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}/StatusMapping
+<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/status/last
 </code></pre><h3 id="parameters">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string assetId</code><br>The asset identifier</p>
-<p><code>string assetTypeId</code><br>The asset type identifier</p>
 <h3 id="response">Response</h3>
-<p>The response includes a status code and a response body.</p>
-<table>
-<thead>
-<tr>
-<th>Status Code</th>
-<th>Body Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>200 OK</td>
-<td><code>MeasurementMapping</code></td>
-<td>The requested status mapping of the specified asset or asset type.</td>
-</tr>
-<tr>
-<td>400 Bad Request</td>
-<td>error</td>
-<td>The request is not valid. See the response body for additional details.</td>
-</tr>
-<tr>
-<td>403 Forbidden</td>
-<td>error</td>
-<td>You are not authorized to view the requested asset or asset type.</td>
-</tr>
-<tr>
-<td>404 Not Found</td>
-<td>error</td>
-<td>The specified asset or asset type with identifier is not found.</td>
-</tr>
-</tbody>
-</table>
-<h4 id="example-response-body">Example response body</h4>
-<pre><code>{
-    &quot;Name&quot;: &quot;StatusAlertMapping&quot;,
-    &quot;Description&quot;: &quot;Sample Status Mapping&quot;,
-    &quot;StreamReferenceId&quot;: &quot;AssetStreamReferenceId1&quot;,
-    &quot;StreamPropertyId&quot;: &quot;Value&quot;,
-    &quot;ValueStatusMapping&quot;:[
-        {
-            &quot;Value&quot;: 0,
-            &quot;Status&quot;: &quot;Unknown&quot;,
-            &quot;DisplayName&quot;: &quot;UnknownStatusTroubleshoot&quot;
-        },
-        {
-            &quot;Value&quot;: 1,
-            &quot;Status&quot;: &quot;Good&quot;
-        }
-    ]
-}
-</code></pre><hr>
-<h2 id="update-status-mapping"><code>Update Status Mapping</code></h2>
-<p>Update the status mapping for a given asset or asset type.</p>
-<p>For an asset status mappings, you can include an If-Match property in the HTTP request header to specify the asset version. The status mappings is updated only if the asset version matches. The If-Match property is not available for asset types. </p>
-<h3 id="request-1">Request</h3>
-<p>Asset</p>
-<pre><code class="lang-text">POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/StatusMapping
-</code></pre><p>Asset Type</p>
-<pre><code class="lang-text">POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}/StatusMapping
-</code></pre><h3 id="parameters-1">Parameters</h3>
-<p><code>string tenantId</code><br>The tenant identifier</p>
-<p><code>string namespaceId</code><br>The namespace identifier</p>
-<p><code>string assetId</code><br>The asset identifier</p>
-<p><code>string assetTypeId</code><br>The asset type identifier</p>
-<h4 id="example-post-body">Example POST body</h4>
-<pre><code>{
-    &quot;Name&quot;: &quot;StatusAlertMapping&quot;,
-    &quot;Description&quot;: &quot;Sample Status Mapping&quot;,
-    &quot;StreamReferenceId&quot;: &quot;AssetStreamReferenceId1&quot;,
-    &quot;StreamPropertyId&quot;: &quot;Value&quot;,
-    &quot;ValueStatusMapping&quot;:[
-        {
-            &quot;Value&quot;: 0,
-            &quot;Status&quot;: &quot;Unknown&quot;,
-            &quot;DisplayName&quot;: &quot;UnknownStatusTroubleshoot&quot;
-        },
-        {
-            &quot;Value&quot;: 1,
-            &quot;Status&quot;: &quot;Good&quot;
-        }
-    ]
-}
-</code></pre><h3 id="response-1">Response</h3>
-<p>The response includes a status code and a response body. </p>
-<table>
-<thead>
-<tr>
-<th>Status Code</th>
-<th>Body Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>204 OK</td>
-<td>no-content</td>
-<td>On successful POST, HTTP Response 204 (no content) is returned.</td>
-</tr>
-<tr>
-<td>400 Bad Request</td>
-<td>error</td>
-<td>The request is not valid. See the response body for additional details.</td>
-</tr>
-<tr>
-<td>403 Forbidden</td>
-<td>error</td>
-<td>You are not authorized to view the requested asset or asset type.</td>
-</tr>
-<tr>
-<td>404 Not Found</td>
-<td>error</td>
-<td>The specified asset or asset type with identifier is not found.</td>
-</tr>
-<tr>
-<td>412 Pre-Condition Failed</td>
-<td>error</td>
-<td>The asset failed to update because the If-Match condition failed.</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h2 id="get-asset-status"><code>Get Asset Status</code></h2>
-<p>View the status of an asset</p>
-<h3 id="request-2">Request</h3>
-<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/status/last
-</code></pre><h3 id="parameters-2">Parameters</h3>
-<p><code>string tenantId</code><br>The tenant identifier</p>
-<p><code>string namespaceId</code><br>The namespace identifier</p>
-<p><code>string assetId</code><br>The asset identifier</p>
-<h3 id="response-2">Response</h3>
 <p>The response includes a status code and a response body.</p>
 <table>
 <thead>
@@ -387,7 +253,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="example-response-body-1">Example response body</h4>
+<h4 id="example-response-body">Example response body</h4>
 <pre><code>HTTP 200 OK
 Content-Type: application/json
 {
@@ -400,13 +266,13 @@ Content-Type: application/json
 </code></pre><hr>
 <h2 id="bulk-asset-status"><code>Bulk Asset Status</code></h2>
 <p>View the status of multiple assets.</p>
-<h3 id="request-3">Request</h3>
+<h3 id="request-1">Request</h3>
 <pre><code class="lang-text">POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/assets/status/last
-</code></pre><h3 id="parameters-3">Parameters</h3>
+</code></pre><h3 id="parameters-1">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string assetId</code><br>The asset identifier</p>
-<h4 id="example-post-body-1">Example POST body</h4>
+<h4 id="example-post-body">Example POST body</h4>
 <p>Lists the asset <code>Id</code>s whose status you are interested in.</p>
 <pre><code>Content-Type: application/json
 [
@@ -414,7 +280,7 @@ Content-Type: application/json
    &quot;AssetId-2&quot;,
    &quot;AssetId-3&quot;
 ]
-</code></pre><h3 id="response-3">Response</h3>
+</code></pre><h3 id="response-1">Response</h3>
 <p>The response includes a status code and a response body.</p>
 <table>
 <thead>
@@ -437,7 +303,7 @@ Content-Type: application/json
 </tr>
 </tbody>
 </table>
-<h4 id="example-response-body-2">Example response body</h4>
+<h4 id="example-response-body-1">Example response body</h4>
 <pre><code>HTTP 200 OK
 Content-Type: application/json
 {
@@ -473,7 +339,7 @@ Content-Type: application/json
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/Assets/asset-status-mapping.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/Assets/asset-status.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

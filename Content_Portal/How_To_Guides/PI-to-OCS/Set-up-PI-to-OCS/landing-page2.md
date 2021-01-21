@@ -3,7 +3,7 @@ uid: landing-page2
 ---
 
 
-## Setup PI to OCS
+## Set up PI to OCS
 <br>
 
 This section contains the following topics:

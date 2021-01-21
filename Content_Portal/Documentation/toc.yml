@@ -15,7 +15,7 @@
 - name: Asset Store (Preview)
   href: Assets/toc.yml
   topicHref: Assets/assets.md
-- name: Asset Rules
+- name: Asset Rules (Preview)
   href: Asset Rules/toc.yml
   topicHref: Asset Rules/asset-rules.md  
 - name: Data Views

@@ -26,7 +26,7 @@ The PI to OCS Agent must be installed on a host computer, separate from your PI 
 
     _The Welcome Screen in the PI to OCS Agent Setup Kit_
 8. In the **PI to OCS Agent (Administrator)** window, click **Next**.
-9. Enter your OCS Tenant ID or company alias, then click **Next**.
+9. Enter your OCS tenant ID or company alias, then click **Next**.
 10. Select or enter the following for your connection:
     - **Namespace:** Select the location where data will be stored after the data transfer. The region indicates where the namespace resides. Streaming data sent by the PI to OCS Agent will only go to the selected namespace’s region.
     - **Connection:** Select the name of the data transfer connection you created earlier. 

@@ -14,14 +14,14 @@ The following system requirements are needed to transfer data from your on-premi
 
 ## Administrative privileges
 
-The PI to OCS Agent must be installed on a local machine by a user who has the following permissions: 
+The PI to OCS Agent must be installed on a local machine by a user with the following permissions: 
 
 1.	Administrative privileges on the local machine
-2.	OCS Account Administrator role privileges 
+2.	Assigned to the OCS Account Administrator role
 
 During the PI to OCS Agent installation, you will be prompted to log on to the OCS portal. 
 
-**Note:** You must log on to the OCS portal with an account assigned to the Account Administrator role. 
+**Note:** Make sure to log on to OCS with the correct Account Administrator credentials. 
 
 
 The PI to OCS Agent requires the Windows service to "run as user". You must have read access to the following data on PI Data Archive:

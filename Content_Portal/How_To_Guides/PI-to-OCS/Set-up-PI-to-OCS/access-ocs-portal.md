@@ -8,7 +8,7 @@ Log on to the OCS customer portal to access and install the PI to OCS agent and 
 
 ## Before you start
 
-Make sure to have your OCS account log on credentials, your company alias or account ID, and your account’s namespace for the data transfer. <!-- I want to make a link to Account_Management_Concepts.md and then to the Namespace section within, but there's no UID for that topic -->
+Make sure to have your OCS account log on credentials, your company alias or Tenant ID, and your Tenant's namespace for the data transfer. <!-- I want to make a link to Account_Management_Concepts.md and then to the Namespace section within, but there's no UID for that topic -->
 
 **Note.** If you encounter any issues, please refer to your initial OCS activation email or [https://cloud.osisoft.com/account](https://cloud.osisoft.com/account) for help.
 
@@ -16,11 +16,11 @@ Make sure to have your OCS account log on credentials, your company alias or acc
 
 1. Navigate to the [OCS customer portal](https://cloud.osisoft.com).
 2. In the upper-right corner of the OCS portal window, click **Sign In**.
-3. In the **Specify Account ID or Company Alias** window, enter your account ID or company alias.
+3. In the **Specify Tenant ID or Company Alias** window, enter your Tenant ID or company alias.
 4. Click **Continue**.
-5. At the sign in window, sign in to OCS using an account assigned to the Account Administrator role.
+5. At the sign in window, sign in to your OCS Tenant using a user account that has Account Administrator privileges.
 
-<br>**Note.** In the screenshot below, the OCS account is configured to use both a Microsoft Account (MSA) and Google to sign in again.  Be sure to sign in to the OCS portal with an account assigned to the Account Administrator role.<br>
+<br>**Note.** In the screenshot below, the OCS user is configured to use both a Microsoft Account (MSA) and Google to sign in again.  Be sure to sign in to the OCS portal with an account assigned to the Account Administrator role.<br>
 
 ![ ](../../images/sign-in-screen.png)
 _Sign in window_

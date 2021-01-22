@@ -4,7 +4,7 @@ uid: install-pi-to-ocs-agent
 
 # Install the PI to OCS Agent
 
-The PI to OCS Agent must be installed on a host computer that is separate from your PI Data Archive deployment. The account used to install the agent must be assigned to the OCS Administrative Account role. You can download the PI to OCS Agent Installation kit and then transfer it to the computer that will host the agent.
+The PI to OCS Agent must be installed on a host computer, separate from your PI Data Archive deployment, using a Windows account with local Administrative privileges. You can download the PI to OCS Agent Installation kit and then transfer it to the computer that will host the agent.
 
 **Note.** The PI to OCS Agent installation cannot be completed if the system time is not correct. Additionally, you will not be able to complete the PI to OCS Agent installation if Internet Explorer Enhanced Security configuration is enabled.  See [Disable Internet Explorer Enhanced Security Configuration](xref:disable-ie-security) for details.
 
@@ -26,7 +26,7 @@ The PI to OCS Agent must be installed on a host computer that is separate from y
 
     _The Welcome Screen in the PI to OCS Agent Setup Kit_
 8. In the **PI to OCS Agent (Administrator)** window, click **Next**.
-9. Enter your OCS account ID or company alias, then click **Next**.
+9. Enter your OCS Tenant ID or company alias, then click **Next**.
 10. Select or enter the following for your connection:
     - **Namespace:** Select the location where data will be stored after the data transfer. The region indicates where the namespace resides. Streaming data sent by the PI to OCS Agent will only go to the selected namespace’s region.
     - **Connection:** Select the name of the data transfer connection you created earlier. 
@@ -39,9 +39,9 @@ The PI to OCS Agent must be installed on a host computer that is separate from y
 
 12. Click **Next**.
 13. Select the service account type for the connection:
-    - **NT Service**: Use an NT account to connect to PI Data Archive.
+    - **NT Service**: Use a Network Service account to connect to PI Data Archive.
     - **This account**: Specify a user name and password (domain\account) to connect to PI Data Archive.
-**Note.** The service account must have Administrative privileges <Need link> and read access to certain data on PI Data Archive.
+**Note.** The service account must have Administrative privileges and read access to certain data on PI Data Archive.
     ![ ](../../images/pi2ocs-serv-acct.png)
 _The Service Account screen in the PI to OCS Agent Setup Kit_
 

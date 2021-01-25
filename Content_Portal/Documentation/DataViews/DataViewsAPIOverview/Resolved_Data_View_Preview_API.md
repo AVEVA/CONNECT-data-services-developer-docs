@@ -283,7 +283,7 @@ A `DataView` object to get the results for.
       "Keys": [
         "Site" 
       ],
-      "Label": "{IdentifyingValue} {FirstKey}"
+      "Label": "{IdentifyingValue} {Key}"
     }
   ],
   "IndexTypeCode": "DateTime",
@@ -444,14 +444,14 @@ HTTP 200 OK
                     "Keys": [
                         "SolarRadiation"
                     ],
-                    "Label": "{IdentifyingValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {Key}"
                 },
                 {
                     "Source": "Metadata",
                     "Keys": [
                         "Site"
                     ],
-                    "Label": "{IdentifyingValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {Key}"
                 },
                 {
                     "Source": "Tags",
@@ -524,7 +524,7 @@ A `DataView` object to get the results for.
                         "Temperature",
                         "AmbientTemperature"
                     ],
-                    "Label": "{IdentifyingValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {Key}"
                 }
             ],
        },
@@ -535,7 +535,7 @@ A `DataView` object to get the results for.
       "Keys": [
         "Site" 
       ],
-      "Label": "{IdentifyingValue} {FirstKey}"
+      "Label": "{IdentifyingValue} {Key}"
     }
   ],
   "IndexTypeCode": "DateTime",
@@ -664,7 +664,7 @@ A `DataView` object to get the results for.
                         "Temperature",
                         "AmbientTemperature"
                     ],
-                    "Label": "{IdentifyingValue} {FirstKey}"
+                    "Label": "{IdentifyingValue} {Key}"
                 }
             ],
        },
@@ -675,7 +675,7 @@ A `DataView` object to get the results for.
       "Keys": [
         "Site" 
       ],
-      "Label": "{IdentifyingValue} {FirstKey}"
+      "Label": "{IdentifyingValue} {Key}"
     }
   ],
   "IndexTypeCode": "DateTime",

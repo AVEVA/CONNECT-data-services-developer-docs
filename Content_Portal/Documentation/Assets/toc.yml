@@ -7,7 +7,7 @@
 - name: Asset Centric Data API
   href: asset-centric-data-api.md
 - name: Asset Status
-  href: asset-status-mapping.md
+  href: asset-status.md
 - name: Assets Search API
   href: asset-search-api.md
 - name: Asset and AssetType Access Control API

@@ -36,6 +36,6 @@ After PI points have been added to a data transfer, you are ready to stream your
 
     _Data Transfer details_
 
-**Note:** The **Data Transfer** section provides details on the streaming status of a data transfer. Since it reports on how much historical data has been transferred for a given time period, the rate of progress varies depending on the density of data in the PI Data Archive.
+**Note:** The **Data Transfer** section provides details on the streaming status of a data transfer. Since it reports on how much historical data has been transferred for a given time period, the rate of progress varies depending on the density of data in the PI Data Archive. See [Data transfer statuses] (xref:data-transfer-statuses) for status descriptions. 
 
 The **Events per second field** shows the progress of your transfer as data is streamed into OCS. Historical data is transferred first and then streaming data can be viewed. The number of incoming events successfully transferred over to OCS is shown in the Streaming field. Historical data is the number of incoming events per second that are not able to be transferred as “real-time,” but instead come from a backlog of events for the PI points associated with the transfer.

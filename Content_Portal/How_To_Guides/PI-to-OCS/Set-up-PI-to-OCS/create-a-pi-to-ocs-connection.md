@@ -25,5 +25,5 @@ _PI System Connection window_
 6. Click **Save**.
 <br>The **Download Installation Kit** window opens.
 
-Next, [install the PI to OCS Agent](xref:install-pi-to-ocs-agent).
+Next, [Install the PI to OCS Agent](xref:install-pi-to-ocs-agent).
 

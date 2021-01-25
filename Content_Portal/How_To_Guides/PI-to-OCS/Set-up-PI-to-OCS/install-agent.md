@@ -4,7 +4,7 @@ uid: install-pi-to-ocs-agent
 
 # Install the PI to OCS Agent
 
-The PI to OCS Agent must be installed on a host computer, separate from your PI Data Archive deployment, using a Windows account with local Administrative privileges. You can download the PI to OCS Agent Installation kit and then transfer it to the computer that will host the agent.
+The PI to OCS Agent must be installed on a host computer, separate from your PI Data Archive deployment, by a Windows user with local Administrative privileges. You can download the PI to OCS Agent Installation kit and then transfer it to the computer that will host the agent.
 
 **Note.** The PI to OCS Agent installation cannot be completed if the system time is not correct. Additionally, you will not be able to complete the PI to OCS Agent installation if Internet Explorer Enhanced Security configuration is enabled.  See [Disable Internet Explorer Enhanced Security Configuration](xref:disable-ie-security) for details.
 

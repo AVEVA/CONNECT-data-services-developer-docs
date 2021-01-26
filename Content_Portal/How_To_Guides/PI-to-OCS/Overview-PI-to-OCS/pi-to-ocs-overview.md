@@ -2,7 +2,7 @@
 uid: pi-to-ocs-overview
 ---
 
-# PI to OCS overview
+# Overview of PI to OCS
 
 PI to OCS enables data transfer from your on-premises PI Server(s) to OSIsoft Cloud Services (OCS). PI to OCS supports the following features:
 

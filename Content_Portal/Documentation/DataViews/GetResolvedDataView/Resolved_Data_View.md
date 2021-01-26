@@ -113,13 +113,13 @@ Describes the resource type of a data item.
 
 ### DataItemField
 A field of a data item where values come from.  
-Within a data item of resource kind `.Stream`, this corresponds to a stream property. For a data item of resource kind `.Asset`, this corresponds to the a stream property associated with an asset measurement.
+Within a data item of resource kind `.Stream`, this corresponds to a stream property. For a data item of resource kind `.Asset`, this corresponds to a property associated with an asset stream reference.
 
 |Property | Type | Details |
 |--|--|--|
 | Id | string | The data item field's unique identifier 
 | Name | string | The data item field's friendly name
-| MeasurementName *(Coming Soon)* | string | The asset measurement name. Only applies to asset measurement data item fields.
+| StreamReferenceName *(Coming Soon)* | string | The asset stream reference name. Only applies to asset property data item fields.
 | TypeCode | SdsTypeCode| The name of the field's data type
 | SummaryType *(coming soon)* | SdsSummaryType  |The summary type calculation for the data field. |
 | SummaryDirection *(coming soon)* | SummaryDirection Enumeration |The direction of the summary type calculation for the data field. |
@@ -182,7 +182,7 @@ Per-group details of the data that a `FieldMapping` targets:
 |--|--|--|
 | TargetId | string | The unique identifier of the target data item
 | TargetFieldKey | string | The specific targeted part of the data item, if any.
-| TargetMeasurementKey *(coming soon)* | string | The asset measurement name. Only applies to asset measurement data mappings.
+| TargetStreamReferenceName *(coming soon)* | string | The asset stream reference name. Only applies to asset property data mappings.
 | TypeCode | SdsTypeCode | The value type
 | SummaryType *(coming soon)* | SdsSummaryType  |The summary type calculation for the data field. |
 | SummaryDirection *(coming soon)* | SummaryDirection Enumeration |SummaryDirection controls whether the start or end index of the summary is used by the data view to calculate the summary values. |

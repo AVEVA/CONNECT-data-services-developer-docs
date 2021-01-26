@@ -21,7 +21,6 @@ Assets can be searched on the following asset properties:
   - Value
 - Asset Type Name
 - AssetTypeId
-- Measurement Mapping Name
 
 Search criteria can be chained together using an **AND**. See examples below. 
 
@@ -165,6 +164,5 @@ Content-Type: application/json
 | Id:X* AND Metadata/Name:B*   | Returns all assets with `Id` starting with **X** and containing at least one metadata value with a name that starts with a **B**. |
 | AssetTypeId:HeaterTypeId | Returns all assets with `AssetTypeId` matching `HeaterTypeId` |
 | AssetTypeName:HeaterTypeName | Returns all assets whose Name field of the asset type matches `HeaterTypeName` |
-| Measurements/Name:WindMeasure | Returns all assets with the measurement name **WindMeasure**. |
 
 

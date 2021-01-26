@@ -34,7 +34,7 @@ Fields of kind `IndexField` map to the data view's [index field](xref:DataViewsQ
 | DataMapping Property | Details |
 |--|--|
 | TargetId | Not applicable |
-| TargetMeasurementKey *(coming soon)* | Not applicable |
+| TargetStreamReferenceName *(coming soon)* | Not applicable |
 | TargetFieldKey | Not applicable |
 | TypeCode | Equivalent to the `IndexTypeCode` of the data view |
 | SummaryType *(coming soon)* | Not applicable|
@@ -48,7 +48,7 @@ Fields of kind `GroupingField` map to a [grouping field](xref:DataViewsGrouping)
 | DataMapping Property | Details |
 |--|--|
 | TargetId | The group's value |
-| TargetMeasurementKey *(coming soon)* | Not applicable |
+| TargetStreamReferenceName *(coming soon)* | Not applicable |
 | TargetFieldKey | Not applicable |
 | TypeCode | The group's data type |
 | SummaryType *(coming soon)* | Not applicable|
@@ -62,7 +62,7 @@ Fields of kind `DataField` map to a [data field](xref:DataViewsFieldSets) on the
 | DataMapping Property | Details |
 |--|--|
 | TargetId | The data item id |
-| TargetMeasurementKey *(coming soon)* | The name of the asset measurement. Only applicable to `PropertyId` fields and when the data field references an asset measurement. |
+| TargetStreamReferenceName *(coming soon)* | The name of the asset stream reference. Only applicable to `PropertyId` fields and when the data field references an asset property. |
 | TargetFieldKey | The metadata name (`Metadata` fields), property id (`PropertyId` fields), or property name (`PropertyName` fields). Not applicable to `Id`, `Name`, or `Tags` fields. |
 | TypeCode | The data item's data type |
 | SummaryType *(coming soon)* | The summary type calculation for the data field. Applicable to 'PropertyId' and 'PropertyName' fields only. |
@@ -77,7 +77,7 @@ The field id field only applies to data views with [narrow shape](xref:DataViewS
 | DataMapping Property | Details |
 |--|--|
 | TargetId | The data item id |
-| TargetMeasurementKey *(coming soon)* | Not applicable |
+| TargetStreamReferenceName *(coming soon)* | Not applicable |
 | TargetFieldKey | Not applicable |
 | TypeCode | String |
 | SummaryType *(coming soon)* | Not applicable|

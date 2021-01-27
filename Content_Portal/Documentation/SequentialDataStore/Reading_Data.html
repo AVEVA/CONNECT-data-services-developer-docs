@@ -83,7 +83,7 @@ the APIs used to read <a class="xref" href="SDS_Streams.html">SdsStreams</a> dat
 <p>If you are working in a .NET environment, convenient SDS Client Libraries are available. 
 The <code>ISdsDataService</code> interface, which is accessed using the <code>SdsService.GetDataService()</code> helper, 
 defines the functions that are available.</p>
-<h3 id="single-stream-reads">Single Stream Reads</h3>
+<h3 id="single-stream-reads">Single stream reads</h3>
 <p>The following methods for reading a single value are available:</p>
 <ul>
 <li><a class="xref" href="Reading_Data_API.html#get-first-value">Get First Value</a> returns the first value in the stream.</li>
@@ -104,7 +104,7 @@ and specified start and end indexes.</li>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string streamId</code><br>The stream identifier</p>
-<h3 id="bulk-reads">Bulk Reads</h3>
+<h3 id="bulk-reads">Bulk reads</h3>
 <p>SDS supports reading from multiple streams in one request. The following method for reading data from multiple streams is available:</p>
 <ul>
 <li><a class="xref" href="Reading_Data_API.html#join-values">Join Values</a> retrieves a collection of events across multiple streams and joins the results based on the request parameters.</li>
@@ -113,7 +113,7 @@ and specified start and end indexes.</li>
 <pre><code class="lang-text">   api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data
 </code></pre><p><strong>Parameters</strong><br><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
-<h3 id="response-format">Response Format</h3>
+<h3 id="response-format">Response format</h3>
 <p>Supported response formats include JSON, verbose JSON, and SDS. </p>
 <p>The default response format for SDS is JSON, which is used in all examples in this document. Default JSON responses do not include any values that are equal to the default value for their type.</p>
 <p>Verbose JSON responses include all values, including defaults, in the returned JSON payload. To specify verbose JSON return, add the header <code>Accept-Verbosity</code> with a value of <code>verbose</code> to the request.  </p>
@@ -122,7 +122,7 @@ and specified start and end indexes.</li>
 <p>Most read operations take at least one index as a parameter. Indexes may be specified as strings, or 
 using the SDS Client libraries, the index may be passed as-is to read methods that take the index 
 type as a generic argument. For more information, see <a class="xref" href="indexes.html">Indexes</a>. For information on compound indexes, see <a class="xref" href="indexes.html#compound-indexes">Compound indexes</a>.</p>
-<h3 id="read-characteristics">Read Characteristics</h3>
+<h3 id="read-characteristics">Read characteristics</h3>
 <p>When data is requested at an index for which no stored event exists, the read characteristics determine 
 whether the result is an error, no event, interpolated event, or extrapolated event. The combination of 
 the type of the index and the interpolation and extrapolation modes of the SdsType and the SdsStream 
@@ -381,12 +381,12 @@ show how ExtrapolationMode affects returned values for each InterpolationMode va
 <p>For additional information about the effect of read characteristics, see the
 documentation on the <a class="xref" href="Reading_Data_API.html">read method</a>
 you are using.</p>
-<h3 id="filter-expressions">Filter Expressions</h3>
+<h3 id="filter-expressions">Filter expressions</h3>
 <p>Filter expressions can be applied to any read that returns multiple values, including Get Values, Get Range Values, 
 Get Window Values, and Get Intervals. The filter expression is applied to the collection events conditionally 
 filtering events that do not meet the filter conditions.</p>
 <p>Filter expressions are covered in detail in the <a class="xref" href="Filter_Expressions.html">Filter expressions</a> section.</p>
-<h3 id="table-format">Table Format</h3>
+<h3 id="table-format">Table format</h3>
 <p>Results of a query can be organized into tables by directing the form parameter to return a table. 
 Two forms of table are available: table and header table.</p>
 <p>When the form parameter is specified as table, <code>?form=table</code>, events are returned in row column form. 
@@ -468,7 +468,7 @@ and around the start and end index for window values. The following are valid va
 </tbody>
 </table>
 <hr>
-<h2 id="transforming-data">Transforming Data</h2>
+<h2 id="transforming-data">Transforming data</h2>
 <p>SDS provides the ability to transform data upon reads. The supported data transformations are:</p>
 <ul>
 <li><a href="#reading-with-sdsstreamviews">Reading with SdsStreamViews</a>: Changing the shape of the returned data</li>

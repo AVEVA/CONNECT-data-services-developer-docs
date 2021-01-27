@@ -78,7 +78,7 @@
             <article class="content wrap" id="_content" data-uid="identityAutomationIdentity">
 <h1 id="automationidentity">AutomationIdentity</h1>
 
-<p>APIs for Automation Identities.</p>
+<p>APIs for automation identities.</p>
 <h2 id="properties">Properties</h2>
 <p>For HTTP requests and responses, the AutomationIdentity object has the following properties and JSON-serialized body: </p>
 <table>
@@ -93,36 +93,36 @@
 <tr>
 <td>Id</td>
 <td>Guid</td>
-<td>Automation Identity id.</td>
+<td>Automation identity id.</td>
 </tr>
 <tr>
 <td>Name</td>
 <td>string</td>
-<td>The Automation Identity name.</td>
+<td>The automation identity name.</td>
 </tr>
 <tr>
 <td>TenantId</td>
 <td>string</td>
-<td>The Automation Identity Tenant id.</td>
+<td>The automation identity tenant id.</td>
 </tr>
 <tr>
 <td>RoleIds</td>
 <td>Guid[]</td>
-<td>Role ids associated with this Automation Identity.</td>
+<td>Role ids associated with this automation identity.</td>
 </tr>
 <tr>
 <td>RoleTypeIds</td>
 <td>Guid[]</td>
-<td>Role type ids associated with this Automation Identity.</td>
+<td>Role type ids associated with this automation identity.</td>
 </tr>
 <tr>
 <td>Tags</td>
 <td>string[]</td>
-<td>Tags associated with this Automation Identity.</td>
+<td>Tags associated with this automation identity.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="serialized-model">Serialized Model</h3>
+<h3 id="serialized-model">Serialized model</h3>
 <pre><code class="lang-json">{
   &quot;Id&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
   &quot;Name&quot;: &quot;Name&quot;,
@@ -147,7 +147,7 @@
 <p>Requests made without an access token or an invalid/expired token will fail with a 401 Unauthorized response.
 Requests made with an access token which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
 Read <a href="https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/AUTHENTICATION_README.md">here</a> on how to authenticate against OCS with the various clients and receive an access token in response.</p>
-<h2 id="error-handling">Error Handling</h2>
+<h2 id="error-handling">Error handling</h2>
 <p>All responses will have an error message in the body. The exceptions are 200 responses and the 401 Unauthorized response. The error message will look as follows:</p>
 <pre><code class="lang-json">{
     &quot;OperationId&quot;: &quot;1b2af18e-8b27-4f86-93e0-6caa3e59b90c&quot;, 
@@ -157,13 +157,13 @@ Read <a href="https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/AUTHEN
 }
 </code></pre><p>If and when contacting OSIsoft support about this error, please provide the OperationId.</p>
 <h2 id="create-an-automation-identity"><code>Create an Automation Identity</code></h2>
-<p>Create an Automation Identity. A non-Administrator caller must have all roles being assigned to the new Automation Identity.</p>
+<p>Create an automation identity. A non-Administrator caller must have all roles being assigned to the new automation adentity.</p>
 <h3 id="request">Request</h3>
 <p><code>POST api/v1/Tenants/{tenantId}/AutomationIdentities</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant.</p>
+</code></pre><p>Id of tenant.</p>
 <pre><code class="lang-csharp">[FromBody]
 [Required]
 AutomationIdentityCreate automationIdentityCreate
@@ -182,19 +182,19 @@ AutomationIdentityCreate automationIdentityCreate
 <td>Name</td>
 <td>string</td>
 <td>Yes</td>
-<td>The Automation Identity name.</td>
+<td>The automation identity name.</td>
 </tr>
 <tr>
 <td>RoleIds</td>
 <td>Guid[]</td>
 <td>Yes</td>
-<td>Role ids associated with this Automation Identity.</td>
+<td>Role ids associated with this automation identity.</td>
 </tr>
 <tr>
 <td>Tags</td>
 <td>string[]</td>
 <td>No</td>
-<td>Tags associated with this Automation Identity.</td>
+<td>Tags associated with this automation identity.</td>
 </tr>
 </tbody>
 </table>
@@ -242,7 +242,7 @@ AutomationIdentityCreate automationIdentityCreate
 <h4 id="401">401</h4>
 <p>Unauthorized.</p>
 <h4 id="403">403</h4>
-<p>Forbidden. A non-Administrator caller must have all roles being assigned to the new Automation Identity.</p>
+<p>Forbidden. A non-Administrator caller must have all roles being assigned to the new automation identity.</p>
 <h4 id="404">404</h4>
 <p>Not found.</p>
 <h4 id="405">405</h4>
@@ -255,16 +255,16 @@ AutomationIdentityCreate automationIdentityCreate
 <p>Internal server error.</p>
 <hr>
 <h2 id="get-an-automation-identity"><code>Get an Automation Identity</code></h2>
-<p>Returns Automation Identity object.</p>
+<p>Returns automation identity object.</p>
 <h3 id="request-1">Request</h3>
 <p><code>GET api/v1/Tenants/{tenantId}/AutomationIdentities/{automationIdentityId}</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant.</p>
+</code></pre><p>Id of tenant.</p>
 <pre><code class="lang-csharp">[Required]
 Guid automationIdentityId
-</code></pre><p>Id of Automation Identity.</p>
+</code></pre><p>Id of automation identity.</p>
 <h3 id="security-1">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -303,16 +303,16 @@ Guid automationIdentityId
 <p>Internal server error.</p>
 <hr>
 <h2 id="get-header-for-automation-identity"><code>Get Header for Automation Identity</code></h2>
-<p>Validate that an Automation Identity exists in Tenant.</p>
+<p>Validate that an automation identity exists in tenant.</p>
 <h3 id="request-2">Request</h3>
 <p><code>HEAD api/v1/Tenants/{tenantId}/AutomationIdentities/{automationIdentityId}</code></p>
 <h3 id="parameters-2">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant.</p>
+</code></pre><p>Id of tenant.</p>
 <pre><code class="lang-csharp">[Required]
 Guid automationIdentityId
-</code></pre><p>Id of Automation Identity.</p>
+</code></pre><p>Id of automation identity.</p>
 <h3 id="security-2">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -329,23 +329,23 @@ Guid automationIdentityId
 <h4 id="403-2">403</h4>
 <p>Forbidden.</p>
 <h4 id="404-2">404</h4>
-<p>Automation Identity or Tenant not found.</p>
+<p>Automation identity or tenant not found.</p>
 <h4 id="500-2">500</h4>
 <p>Internal server error.</p>
 <hr>
 <h2 id="get-automation-identities-from-a-tenant"><code>Get Automation Identities from a Tenant</code></h2>
-<p>Returns Automation Identity objects.</p>
+<p>Returns automation identity objects.</p>
 <h3 id="request-3">Request</h3>
 <p><code>GET api/v1/Tenants/{tenantId}/AutomationIdentities</code></p>
 <h3 id="parameters-3">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant.</p>
+</code></pre><p>Id of tenant.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
 [Default = &quot;&quot;]
 string[] tag
-</code></pre><p>Only return Automation Identities that have at least one of these tags.</p>
+</code></pre><p>Only return automation identities that have at least one of these tags.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
 [Default = &quot;&quot;]
@@ -355,12 +355,12 @@ string query
 [Optional]
 [Default = 0]
 int32 skip
-</code></pre><p>Number of Automation Identities to skip. Ignored if a list of ids is passed.</p>
+</code></pre><p>Number of automation identities to skip. Ignored if a list of ids is passed.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
 [Default = 100]
 int32 count
-</code></pre><p>Maximum number of Automation Identities to return. Ignored if a list of ids is passed.</p>
+</code></pre><p>Maximum number of automation identities to return. Ignored if a list of ids is passed.</p>
 <h3 id="security-3">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -418,18 +418,18 @@ int32 count
 <p>Internal server error.</p>
 <hr>
 <h2 id="get-total-count-of-automation-identities-from-tenant"><code>Get Total Count of Automation Identities from Tenant</code></h2>
-<p>Return total number of Automation Identities in Tenant in the Total-Count header.</p>
+<p>Return total number of automation identities in tenant in the Total-Count header.</p>
 <h3 id="request-4">Request</h3>
 <p><code>HEAD api/v1/Tenants/{tenantId}/AutomationIdentities</code></p>
 <h3 id="parameters-4">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant.</p>
+</code></pre><p>Id of tenant.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
 [Default = &quot;&quot;]
 string[] tag
-</code></pre><p>Only count Automation Identities that have at least one of these tags.</p>
+</code></pre><p>Only count automation identities that have at least one of these tags.</p>
 <h3 id="security-4">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -446,21 +446,21 @@ string[] tag
 <h4 id="403-4">403</h4>
 <p>Forbidden.</p>
 <h4 id="404-4">404</h4>
-<p>Automation Identity or Tenant not found.</p>
+<p>Automation identity or tenant not found.</p>
 <h4 id="500-4">500</h4>
 <p>Internal server error.</p>
 <hr>
 <h2 id="delete-an-automation-identity"><code>Delete an Automation Identity</code></h2>
-<p>Delete an Automation Identity. A non-Administrator caller must have all roles belonging to the Automation Identity being deleted.</p>
+<p>Delete an automation identity. A non-Administrator caller must have all roles belonging to the automation identity being deleted.</p>
 <h3 id="request-5">Request</h3>
 <p><code>DELETE api/v1/Tenants/{tenantId}/AutomationIdentities/{automationIdentityId}</code></p>
 <h3 id="parameters-5">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant.</p>
+</code></pre><p>Id of tenant.</p>
 <pre><code class="lang-csharp">[Required]
 Guid automationIdentityId
-</code></pre><p>Id of Automation Identity.</p>
+</code></pre><p>Id of automation identity.</p>
 <h3 id="security-5">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -473,9 +473,9 @@ Guid automationIdentityId
 <h4 id="401-5">401</h4>
 <p>Unauthorized.</p>
 <h4 id="403-5">403</h4>
-<p>Forbidden. A non-Administrator caller must have all roles belonging to the Automation Identity being deleted.</p>
+<p>Forbidden. A non-Administrator caller must have all roles belonging to the automation identity being deleted.</p>
 <h4 id="404-5">404</h4>
-<p>Automation Identity or Tenant not found.</p>
+<p>Automation identity or tenant not found.</p>
 <h4 id="405-1">405</h4>
 <p>Method not allowed at this base URL. Try the request again at the Global base URL.</p>
 <h4 id="408-1">408</h4>
@@ -484,20 +484,20 @@ Guid automationIdentityId
 <p>Internal server error.</p>
 <hr>
 <h2 id="update-automation-identity"><code>Update Automation Identity</code></h2>
-<p>Update a Automation Identity. A non-Administrator caller must have all roles belonging to the existing Automation Identity, as well as any roles being added.</p>
+<p>Update a automation identity. A non-Administrator caller must have all roles belonging to the existing automation identity, as well as any roles being added.</p>
 <h3 id="request-6">Request</h3>
 <p><code>PUT api/v1/Tenants/{tenantId}/AutomationIdentities/{automationIdentityId}</code></p>
 <h3 id="parameters-6">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant.</p>
+</code></pre><p>Id of tenant.</p>
 <pre><code class="lang-csharp">[Required]
 Guid automationIdentityId
-</code></pre><p>Id of Automation Identity.</p>
+</code></pre><p>Id of automation identity.</p>
 <pre><code class="lang-csharp">[FromBody]
 [Required]
 AutomationIdentityUpdate automationIdentityUpdate
-</code></pre><p>Automation Identity object. Properties that are not set or are null will not be changed.</p>
+</code></pre><p>Automation identity object. Properties that are not set or are null will not be changed.</p>
 <table>
 <thead>
 <tr>
@@ -512,19 +512,19 @@ AutomationIdentityUpdate automationIdentityUpdate
 <td>Name</td>
 <td>string</td>
 <td>No</td>
-<td>The Automation Identity name.</td>
+<td>The automation identity name.</td>
 </tr>
 <tr>
 <td>RoleIds</td>
 <td>Guid[]</td>
 <td>No</td>
-<td>Role ids associated with this Automation Identity.</td>
+<td>Role ids associated with this automation identity.</td>
 </tr>
 <tr>
 <td>Tags</td>
 <td>string[]</td>
 <td>No</td>
-<td>Tags associated with this Automation Identity.</td>
+<td>Tags associated with this automation identity.</td>
 </tr>
 </tbody>
 </table>
@@ -570,11 +570,11 @@ AutomationIdentityUpdate automationIdentityUpdate
 </code></pre><h4 id="401-6">401</h4>
 <p>Unauthorized.</p>
 <h4 id="403-6">403</h4>
-<p>Forbidden. A non-Administrator caller must have all roles belonging to the existing Automation Identity, as well as any roles being added.</p>
+<p>Forbidden. A non-Administrator caller must have all roles belonging to the existing automation identity, as well as any roles being added.</p>
 <h4 id="400-1">400</h4>
 <p>Missing or invalid inputs.</p>
 <h4 id="404-6">404</h4>
-<p>Automation Identity or Tenant not found.</p>
+<p>Automation identity or tenant not found.</p>
 <h4 id="405-2">405</h4>
 <p>Method not allowed at this base URL. Try the request again at the Global base URL.</p>
 <h4 id="408-2">408</h4>

@@ -87,13 +87,11 @@
 <li>Data Views - Use the information in this section to create user-selected subsets of data stored in OSIsoft Cloud Services which are mapped into customizable table formats.</li>
 </ul>
 <h2 id="access-to-ocs">Access to OCS</h2>
-<p>You must acquire an account before interacting with OCS. If you do not 
-have an account, you can request access to OCS at <a href="https://cloud.osisoft.com/?signup">https://cloud.osisoft.com/?signup</a>.</p>
+<p>You must acquire an account before interacting with OCS. If you do not have an account, you can request access to OCS at <a href="https://cloud.osisoft.com/?signup">https://cloud.osisoft.com/?signup</a>.</p>
 <h2 id="architecture">Architecture</h2>
-<p>A Tenant represents a client or organization that owns and manages a collection of OSIsoft Cloud Services.</p>
+<p>A tenant represents the set of services, applications, data, and configuration states available to a customer in OSIsoft Cloud Services (OCS). Users are associated with a tenant via at least one configured identity provider, a database of user records that allows for authentication, and access to resources can be managed for those users via the assignment of roles. </p>
 <p>Tenants are divided into one or more logical units called Namespaces. Each Namespace is distinct and separate from 
-other Namespaces, with its own instances of the various OSIsoft Cloud Services and data stores. 
-Namespaces provide isolation of resources. </p>
+other Namespaces with its own instances of the various OSIsoft Cloud Services and data stores. Namespaces provide isolation of resources. </p>
 <p>Namespaces are provisioned within a region. The Namespace&#39;s services and data stores all exist in the Namespace&#39;s region. Resources allocated to a Namespace are isolated to the Namespace&#39;s region. For more information on regions see the <a class="xref" href="Management/Account_Namespace_1.html">Namespace</a> documentation.  Isolation provided by Tenants and Namespaces prevents accidental or malicious data access. </p>
 <p>OSIsoft Cloud Services provides data residency via namespaces in the following regions:</p>
 <table>

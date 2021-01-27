@@ -78,7 +78,7 @@
             <article class="content wrap" id="_content" data-uid="DataViewsGrouping">
 <h1 id="group-data-items">Group data items</h1>
 
-<p>The data items of a data view may be organized by <em>grouping</em> them. It is one way of producing a meaningful, consumable shape of data.</p>
+<p>A group can be returned from a resolved data view that describes how data view results will be grouped. The data items of a data view may be organized by <em>grouping</em> them. It is one way of producing a meaningful, consumable shape of data.</p>
 <p>Grouping is optional when defining the data view. If the <code>.GroupingFields</code> section is not defined on the data view, the resolved data view shows a single group with all eligible data items. If the <code>.GroupingFields</code> section is defined, the resolved data view shows multiple groups, each with the list of data items for the group and the <code>.GroupingValues</code> field showing the matching group&#39;s value(s). In this case, if a data item does not match any group, it is added to all groups.</p>
 <p>Groups are ordered alphabetically by the first grouping value for each group. Within each group, data items are ordered alphabetically by data item id.</p>
 <h2 id="purpose-of-grouping">Purpose of grouping</h2>

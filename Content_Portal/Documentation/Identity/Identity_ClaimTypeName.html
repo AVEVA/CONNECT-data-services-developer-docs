@@ -78,8 +78,7 @@
             <article class="content wrap" id="_content" data-uid="identityClaimTypeName">
 <h1 id="claimtypename">ClaimTypeName</h1>
 
-<p>An Identity Provider Claim Type Name is the field or type name in a claim
-            that will be used to match to a value when creating an Identity Provider Claim.</p>
+<p>An Identity Provider Claim Type Name is the field or type name in a claim that will be used to match to a value when creating an identity provider claim.</p>
 <hr>
 <h2 id="authentication">Authentication</h2>
 <p>All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieve after a successful authentication request.</p>
@@ -87,7 +86,7 @@
 <p>Requests made without an access token or an invalid/expired token will fail with a 401 Unauthorized response.
 Requests made with an access token which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
 Read <a href="https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/AUTHENTICATION_README.md">here</a> on how to authenticate against OCS with the various clients and receive an access token in response.</p>
-<h2 id="error-handling">Error Handling</h2>
+<h2 id="error-handling">Error handling</h2>
 <p>All responses will have an error message in the body. The exceptions are 200 responses and the 401 Unauthorized response. The error message will look as follows:</p>
 <pre><code class="lang-json">{
     &quot;OperationId&quot;: &quot;1b2af18e-8b27-4f86-93e0-6caa3e59b90c&quot;, 
@@ -97,16 +96,16 @@ Read <a href="https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/AUTHEN
 }
 </code></pre><p>If and when contacting OSIsoft support about this error, please provide the OperationId.</p>
 <h2 id="get-all-identity-provider-claim-type-names"><code>Get All Identity Provider Claim Type Names</code></h2>
-<p>Get all Identity Provider Claim Type Names for an Identity Provider on a Tenant.</p>
+<p>Get all Identity Provider Claim Type Names for an identity provider on a tenant.</p>
 <h3 id="request">Request</h3>
 <p><code>GET api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/ClaimTypeNames</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant.</p>
+</code></pre><p>Id of tenant.</p>
 <pre><code class="lang-csharp">[Required]
 Guid identityProviderId
-</code></pre><p>Id of Identity Provider.</p>
+</code></pre><p>Id of identity provider.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
 [Default = &quot;&quot;]
@@ -116,12 +115,12 @@ string query
 [Optional]
 [Default = 0]
 int32 skip
-</code></pre><p>Number of Identity Providers to skip.</p>
+</code></pre><p>Number of identity providers to skip.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
 [Default = 100]
 int32 count
-</code></pre><p>Maximum number of Identity Providers to return.</p>
+</code></pre><p>Maximum number of identity providers to return.</p>
 <h3 id="security">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -149,21 +148,21 @@ int32 count
 <h4 id="403">403</h4>
 <p>Forbidden.</p>
 <h4 id="404">404</h4>
-<p>Tenant or Identity Provider not found.</p>
+<p>Tenant or identity provider not found.</p>
 <h4 id="500">500</h4>
 <p>Internal server error.</p>
 <hr>
 <h2 id="get-all-identity-provider-claim-type-names-header"><code>Get All Identity Provider Claim Type Names Header</code></h2>
-<p>Get Header for all Identity Provider Claims Type Names for an Identity Provider on a Tenant.</p>
+<p>Get Header for all Identity Provider Claims Type Names for an identity provider on a tenant.</p>
 <h3 id="request-1">Request</h3>
 <p><code>HEAD api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/ClaimTypeNames</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant.</p>
+</code></pre><p>Id of tenant.</p>
 <pre><code class="lang-csharp">[Required]
 Guid identityProviderId
-</code></pre><p>Id of Identity Provider.</p>
+</code></pre><p>Id of identity provider.</p>
 <h3 id="security-1">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -179,21 +178,21 @@ Guid identityProviderId
 <h4 id="403-1">403</h4>
 <p>Forbidden.</p>
 <h4 id="404-1">404</h4>
-<p>Tenant or Identity Provider not found.</p>
+<p>Tenant or identity provider not found.</p>
 <h4 id="500-1">500</h4>
 <p>Internal server error.</p>
 <hr>
 <h2 id="get-identity-provider-claim-type-name"><code>Get Identity Provider Claim Type Name</code></h2>
-<p>Get an Identity Provider Claim Type Name from an Identity Provider on a Tenant.</p>
+<p>Get an Identity Provider Claim Type Name from an identity provider on a tenant.</p>
 <h3 id="request-2">Request</h3>
 <p><code>GET api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/ClaimTypeNames/{identityProviderClaimTypeNameId}</code></p>
 <h3 id="parameters-2">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant.</p>
+</code></pre><p>Id of tenant.</p>
 <pre><code class="lang-csharp">[Required]
 Guid identityProviderId
-</code></pre><p>Id of Identity Provider.</p>
+</code></pre><p>Id of identity provider.</p>
 <pre><code class="lang-csharp">[Required]
 Guid identityProviderClaimTypeNameId
 </code></pre><p>Id of Identity Provider Claim Type Name.</p>
@@ -221,21 +220,21 @@ Guid identityProviderClaimTypeNameId
 <h4 id="403-2">403</h4>
 <p>Forbidden.</p>
 <h4 id="404-2">404</h4>
-<p>Tenant, Identity Provider, or Identity Provider Claim Type Name not found.</p>
+<p>Tenant, identity provider, or Identity Provider Claim Type Name not found.</p>
 <h4 id="500-2">500</h4>
 <p>Internal server error.</p>
 <hr>
 <h2 id="get-identity-provider-claim-type-name-header"><code>Get Identity Provider Claim Type Name Header</code></h2>
-<p>Get an Identity Provider Claim Type Name Header from an Identity Provider on a Tenant.</p>
+<p>Get an Identity Provider Claim Type Name Header from an identity provider on a tenant.</p>
 <h3 id="request-3">Request</h3>
 <p><code>HEAD api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/ClaimTypeNames/{identityProviderClaimTypeNameId}</code></p>
 <h3 id="parameters-3">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant.</p>
+</code></pre><p>Id of tenant.</p>
 <pre><code class="lang-csharp">[Required]
 Guid identityProviderId
-</code></pre><p>Id of Identity Provider.</p>
+</code></pre><p>Id of identity provider.</p>
 <pre><code class="lang-csharp">[Required]
 Guid identityProviderClaimTypeNameId
 </code></pre><p>Id of Identity Provider Claim Type Name.</p>
@@ -254,7 +253,7 @@ Guid identityProviderClaimTypeNameId
 <h4 id="403-3">403</h4>
 <p>Forbidden.</p>
 <h4 id="404-3">404</h4>
-<p>Tenant, Identity Provider, or Identity Provider Claim Type Name not found.</p>
+<p>Tenant, identity provider, or Identity Provider Claim Type Name not found.</p>
 <h4 id="500-3">500</h4>
 <p>Internal server error.</p>
 <hr>

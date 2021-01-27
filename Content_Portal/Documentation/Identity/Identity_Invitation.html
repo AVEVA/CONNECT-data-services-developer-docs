@@ -79,17 +79,18 @@
 <h1 id="invitation">Invitation</h1>
 
 <p>Invitations are issued after the creation of a User object in OCS,
-            to begin the provisioning process for a user with one of the Identity
-            Providers in a tenant.
-            There can only be one Invitation for a User at a time. An invitation
+            to begin the provisioning process for a user with one of the identity
+            providers in a tenant.
+            There can only be one invitation for a User at a time. An invitation
             can expire, at which time the Admin can either delete it, or extend it.
-            When creating an Invitation an Account Administrator has the option to resend the
-            Invitation email to the ContactEmail configured for the User the Invitation
-            is attached to. The email can be re-sent by updating the Invitation.
-            When an Invitation expires the User cannot accept it. If the expiration
-            date is extended the User can accept an Invitation.
+            When creating an invitation an Account Administrator has the option to resend the
+            invitation email to the ContactEmail configured for the user the invitation
+            is attached to. The email can be re-sent by updating the invitation.
+            When an invitation expires the User cannot accept it. If the expiration
+            date is extended the User can accept an invitation.
             Invitations that are past of their expiration date by more than two weeks will be deleted.
-            The only way to provision a User after this, is to send a new Invitation.</p>
+            The only way to provision a User after this, is to send a new invitation.
+Invitations are issued after the creation of a User object in OCS, to begin the provisioning process for a user with one of the identity providers in a tenant. There can only be one invitation for a user at a time. An invitation can expire, at which time the admin can either delete it, or extend it. When creating an invitation an account admin has the option to resend the invitation email to the ContactEmail configured for the user the invitation is attached to. The email can be re-sent by updating the invitation. When an invitation expires the user cannot accept it. If the expiration date is extended the User can accept an invitation. Invitations that are past of their expiration date by more than two weeks will be deleted. The only way to provision a user after this, is to send a new invitation.</p>
 <h2 id="properties">Properties</h2>
 <p>For HTTP requests and responses, the Invitation object has the following properties and JSON-serialized body: </p>
 <table>
@@ -139,11 +140,11 @@
 <tr>
 <td>IdentityProviderId</td>
 <td>Guid</td>
-<td>ID of the Identity Provider that must be used to accept the invitation.</td>
+<td>ID of the identity provider that must be used to accept the invitation.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="serialized-model">Serialized Model</h3>
+<h3 id="serialized-model">Serialized model</h3>
 <pre><code class="lang-json">{
   &quot;Id&quot;: &quot;Id&quot;,
   &quot;Issued&quot;: &quot;2020-03-30T15:34:23.8288839-07:00&quot;,
@@ -161,7 +162,7 @@
 <p>Requests made without an access token or an invalid/expired token will fail with a 401 Unauthorized response.
 Requests made with an access token which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
 Read <a href="https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/AUTHENTICATION_README.md">here</a> on how to authenticate against OCS with the various clients and receive an access token in response.</p>
-<h2 id="error-handling">Error Handling</h2>
+<h2 id="error-handling">Error handling</h2>
 <p>All responses will have an error message in the body. The exceptions are 200 responses and the 401 Unauthorized response. The error message will look as follows:</p>
 <pre><code class="lang-json">{
     &quot;OperationId&quot;: &quot;1b2af18e-8b27-4f86-93e0-6caa3e59b90c&quot;, 
@@ -171,16 +172,16 @@ Read <a href="https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/AUTHEN
 }
 </code></pre><p>If and when contacting OSIsoft support about this error, please provide the OperationId.</p>
 <h2 id="get-invitation"><code>Get Invitation</code></h2>
-<p>Get an Invitation from Tenant.</p>
+<p>Get an Invitation from tenant.</p>
 <h3 id="request">Request</h3>
 <p><code>GET api/v1/Tenants/{tenantId}/Invitations/{invitationId}</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant.</p>
+</code></pre><p>Id of tenant.</p>
 <pre><code class="lang-csharp">[Required]
 string invitationId
-</code></pre><p>Id of Invitation.</p>
+</code></pre><p>Id of invitation.</p>
 <h3 id="security">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -206,7 +207,7 @@ string invitationId
 <h4 id="403">403</h4>
 <p>Forbidden.</p>
 <h4 id="404">404</h4>
-<p>Invitation or Tenant not found.</p>
+<p>Invitation or tenant not found.</p>
 <h4 id="500">500</h4>
 <p>Internal server error.</p>
 <hr>
@@ -217,7 +218,7 @@ string invitationId
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant.</p>
+</code></pre><p>Id of tenant.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
 [Default = &quot;&quot;]
@@ -289,10 +290,10 @@ bool includeExpiredInvitations
 <h3 id="parameters-2">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant.</p>
+</code></pre><p>Id of tenant.</p>
 <pre><code class="lang-csharp">[Required]
 string invitationId
-</code></pre><p>Id of Invitation.</p>
+</code></pre><p>Id of invitation.</p>
 <pre><code class="lang-csharp">[FromBody]
 [Required]
 InvitationCreateOrUpdate invitationCreateOrUpdate
@@ -329,7 +330,7 @@ InvitationCreateOrUpdate invitationCreateOrUpdate
 <td>IdentityProviderId</td>
 <td>Guid</td>
 <td>No</td>
-<td>Identity Provider to use for accepting this invitation.            Required when creating an Invitation.</td>
+<td>Identity provider to use for accepting this invitation.            Required when creating an invitation.</td>
 </tr>
 </tbody>
 </table>
@@ -366,7 +367,7 @@ InvitationCreateOrUpdate invitationCreateOrUpdate
 <h4 id="403-2">403</h4>
 <p>Forbidden.</p>
 <h4 id="404-2">404</h4>
-<p>Invitation or Tenant not found.</p>
+<p>Invitation or tenant not found.</p>
 <h4 id="405">405</h4>
 <p>Method not allowed at this base URL. Try the request again at the Global base URL.</p>
 <h4 id="408">408</h4>
@@ -375,17 +376,17 @@ InvitationCreateOrUpdate invitationCreateOrUpdate
 <p>Internal server error.</p>
 <hr>
 <h2 id="delete-invitation"><code>Delete Invitation</code></h2>
-<p>Delete an Invitation. Users who already have an Invitation email
-            will not be able to sign-up once the Invitation is deleted.</p>
+<p>Delete an Invitation. Users who already have an invitation email
+            will not be able to sign-up once the invitation is deleted.</p>
 <h3 id="request-3">Request</h3>
 <p><code>DELETE api/v1/Tenants/{tenantId}/Invitations/{invitationId}</code></p>
 <h3 id="parameters-3">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant.</p>
+</code></pre><p>Id of tenant.</p>
 <pre><code class="lang-csharp">[Required]
 string invitationId
-</code></pre><p>Id of Invitation.</p>
+</code></pre><p>Id of invitation.</p>
 <h3 id="security-3">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -401,7 +402,7 @@ string invitationId
 <h4 id="403-3">403</h4>
 <p>Forbidden.</p>
 <h4 id="404-3">404</h4>
-<p>Invitation or Tenant not found.</p>
+<p>Invitation or tenant not found.</p>
 <h4 id="405-1">405</h4>
 <p>Method not allowed at this base URL. Try the request again at the Global base URL.</p>
 <h4 id="408-1">408</h4>
@@ -409,18 +410,18 @@ string invitationId
 <h4 id="500-3">500</h4>
 <p>Internal server error.</p>
 <hr>
-<h2 id="get-header-for-an-invitation"><code>Get header for an Invitation</code></h2>
-<p>Validate that an Invitation exists. This endpoint is identical to the GET
+<h2 id="get-header-for-an-invitation"><code>Get Header for an Invitation</code></h2>
+<p>Validate that an invitation exists. This endpoint is identical to the GET
             one, but it does not return an object in the body.</p>
 <h3 id="request-4">Request</h3>
 <p><code>HEAD api/v1/Tenants/{tenantId}/Invitations/{invitationId}</code></p>
 <h3 id="parameters-4">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant.</p>
+</code></pre><p>Id of tenant.</p>
 <pre><code class="lang-csharp">[Required]
 string invitationId
-</code></pre><p>Id of Invitation.</p>
+</code></pre><p>Id of invitation.</p>
 <h3 id="security-4">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -436,12 +437,12 @@ string invitationId
 <h4 id="403-4">403</h4>
 <p>Forbidden.</p>
 <h4 id="404-4">404</h4>
-<p>Invitation or Tenant not found.</p>
+<p>Invitation or tenant not found.</p>
 <h4 id="500-4">500</h4>
 <p>Internal server error.</p>
 <hr>
-<h2 id="get-header-for-invitations"><code>Get header for Invitations</code></h2>
-<p>Return total number of non-expired Invitations in a Tenant. Optionally include expired invitations.
+<h2 id="get-header-for-invitations"><code>Get Header for Invitations</code></h2>
+<p>Return total number of non-expired Invitations in a tenant. Optionally include expired invitations.
             The value will be set in the Total-Count header. This endpoint is identical to the GET one but
             it does not return any objects in the body.</p>
 <h3 id="request-5">Request</h3>
@@ -477,16 +478,16 @@ bool includeExpiredInvitations
 <p>Internal server error.</p>
 <hr>
 <h2 id="get-users-invitation"><code>Get User&#39;s Invitation</code></h2>
-<p>Get Invitation for a User.</p>
+<p>Get Invitation for a user.</p>
 <h3 id="request-6">Request</h3>
 <p><code>GET api/v1/Tenants/{tenantId}/Users/{userId}/Invitation</code></p>
 <h3 id="parameters-6">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant.</p>
+</code></pre><p>Id of tenant.</p>
 <pre><code class="lang-csharp">[Required]
 Guid userId
-</code></pre><p>Id of User.</p>
+</code></pre><p>Id of user.</p>
 <h3 id="security-6">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -513,21 +514,21 @@ Guid userId
 <h4 id="403-6">403</h4>
 <p>Forbidden.</p>
 <h4 id="404-6">404</h4>
-<p>Invitation, User, or Tenant not found.</p>
+<p>Invitation, user, or tenant not found.</p>
 <h4 id="500-6">500</h4>
 <p>Internal server error.</p>
 <hr>
 <h2 id="create-invitation"><code>Create Invitation</code></h2>
-<p>Create an Invitation for a User. Should use when no other Invitation exists for the User.</p>
+<p>Create an invitation for a User. Should use when no other invitation exists for the user.</p>
 <h3 id="request-7">Request</h3>
 <p><code>POST api/v1/Tenants/{tenantId}/Users/{userId}/Invitation</code></p>
 <h3 id="parameters-7">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant.</p>
+</code></pre><p>Id of tenant.</p>
 <pre><code class="lang-csharp">[Required]
 Guid userId
-</code></pre><p>Id of User.</p>
+</code></pre><p>Id of user.</p>
 <pre><code class="lang-csharp">[FromBody]
 [Required]
 InvitationCreateOrUpdate invitationCreateOrUpdate
@@ -558,13 +559,13 @@ InvitationCreateOrUpdate invitationCreateOrUpdate
 <td>SendInvitation</td>
 <td>bool</td>
 <td>No</td>
-<td>Send an invitation email. Invitation will be sent to the            ContactEmail in the User this invitation is attached to.            Default is true.</td>
+<td>Send an invitation email. Invitation will be sent to the            ContactEmail in the user this invitation is attached to.            Default is true.</td>
 </tr>
 <tr>
 <td>IdentityProviderId</td>
 <td>Guid</td>
 <td>No</td>
-<td>Identity Provider to use for accepting this invitation.            Required when creating an Invitation.</td>
+<td>Identity provider to use for accepting this invitation.            Required when creating an invitation.</td>
 </tr>
 </tbody>
 </table>
@@ -601,7 +602,7 @@ InvitationCreateOrUpdate invitationCreateOrUpdate
 <h4 id="403-7">403</h4>
 <p>Forbidden.</p>
 <h4 id="404-7">404</h4>
-<p>User or Tenant not found.</p>
+<p>User or tenant not found.</p>
 <h4 id="405-2">405</h4>
 <p>Method not allowed at this base URL. Try the request again at the Global base URL.</p>
 <h4 id="408-2">408</h4>
@@ -612,7 +613,7 @@ InvitationCreateOrUpdate invitationCreateOrUpdate
 <p>Internal server error.</p>
 <hr>
 <h2 id="create-or-update-invitation"><code>Create or Update Invitation</code></h2>
-<p>Create or update an Invitation for a User.</p>
+<p>Create or update an invitation for a User.</p>
 <h3 id="request-8">Request</h3>
 <p><code>PUT api/v1/Tenants/{tenantId}/Users/{userId}/Invitation</code></p>
 <h3 id="parameters-8">Parameters</h3>
@@ -658,7 +659,7 @@ InvitationCreateOrUpdate invitationCreateOrUpdate
 <td>IdentityProviderId</td>
 <td>Guid</td>
 <td>No</td>
-<td>Identity Provider to use for accepting this invitation.            Required when creating an Invitation.</td>
+<td>Identity provider to use for accepting this invitation.            Required when creating an invitation.</td>
 </tr>
 </tbody>
 </table>
@@ -709,7 +710,7 @@ InvitationCreateOrUpdate invitationCreateOrUpdate
 <h4 id="403-8">403</h4>
 <p>Forbidden.</p>
 <h4 id="404-8">404</h4>
-<p>User or Tenant not found.</p>
+<p>User or tenant not found.</p>
 <h4 id="405-3">405</h4>
 <p>Method not allowed at this base URL. Try the request again at the Global base URL.</p>
 <h4 id="408-3">408</h4>
@@ -720,16 +721,16 @@ InvitationCreateOrUpdate invitationCreateOrUpdate
 <p>Internal server error.</p>
 <hr>
 <h2 id="delete-invitation-1"><code>Delete Invitation</code></h2>
-<p>Delete an Invitation for a User.</p>
+<p>Delete an invitation for a user.</p>
 <h3 id="request-9">Request</h3>
 <p><code>DELETE api/v1/Tenants/{tenantId}/Users/{userId}/Invitation</code></p>
 <h3 id="parameters-9">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant.</p>
+</code></pre><p>Id of tenant.</p>
 <pre><code class="lang-csharp">[Required]
 Guid userId
-</code></pre><p>Id of User.</p>
+</code></pre><p>Id of user.</p>
 <h3 id="security-9">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -743,7 +744,7 @@ Guid userId
 <h4 id="403-9">403</h4>
 <p>Forbidden.</p>
 <h4 id="404-9">404</h4>
-<p>Invitation or Tenant not found.</p>
+<p>Invitation or tenant not found.</p>
 <h4 id="405-4">405</h4>
 <p>Method not allowed at this base URL. Try the request again at the Global base URL.</p>
 <h4 id="408-4">408</h4>
@@ -751,8 +752,8 @@ Guid userId
 <h4 id="500-9">500</h4>
 <p>Internal server error.</p>
 <hr>
-<h2 id="get-header-for-users-invitation"><code>Get header for User&#39;s Invitation</code></h2>
-<p>Validate that Invitation exist for a User. This endpoint
+<h2 id="get-header-for-users-invitation"><code>Get Header for User&#39;s Invitation</code></h2>
+<p>Validate that Invitation exist for a user. This endpoint
             is identical to the GET one but it does not return any
             objects in the body.</p>
 <h3 id="request-10">Request</h3>
@@ -760,10 +761,10 @@ Guid userId
 <h3 id="parameters-10">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant.</p>
+</code></pre><p>Id of tenant.</p>
 <pre><code class="lang-csharp">[Required]
 Guid userId
-</code></pre><p>Id of User.</p>
+</code></pre><p>Id of user.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
 [Default = False]

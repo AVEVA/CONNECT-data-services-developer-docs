@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Data Ingress and OSIsoft Message Format </title>
+    <title>Data collection and OSIsoft Message Format </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Data Ingress and OSIsoft Message Format ">
+    <meta name="title" content="Data collection and OSIsoft Message Format ">
     <meta name="generator" content="docfx 2.56.5.0">
     
     <link rel="shortcut icon" href="../../../favicon.ico">
@@ -76,15 +76,15 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="dataIngress">
-<h1 id="data-ingress-and-osisoft-message-format">Data Ingress and OSIsoft Message Format</h1>
+<h1 id="data-collection-and-osisoft-message-format">Data collection and OSIsoft Message Format</h1>
 
-<p>You use OSIsoft Message Format (OMF) to achieve high-throughput asynchronous data ingress 
+<p>You use OSIsoft Message Format (OMF) to achieve high-throughput asynchronous data collection
 into the Sequential Data Store. The following terms are useful for understanding the information
 in this and subsequent sections:</p>
 <ul>
-<li>A producer of OMF messages needs a <em>Client</em> identity to authenticate and send messages.</li>
-<li>Messages are sent to a queue called a <em>Topic</em>. </li>
-<li>A <em>Subscription</em> receives messages from a Topic and writes them to the Sequential Data Store.</li>
+<li>A producer of OMF messages needs a <em>client</em> identity to authenticate and send messages.</li>
+<li><em>OMF topics</em> aggregate OMF messages received from one or more <em>clients</em> and makes them available for consumption by a <em>subscription</em>.</li>
+<li>An <em>OMF subscription</em>  consumes OMF messages from a <em>topic</em> and forwards them to a data store. Multiple <em>subscriptions</em> can retrieve OMF messages from a single <em>topic</em>.</li>
 </ul>
 </article>
           </div>

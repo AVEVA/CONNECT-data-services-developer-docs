@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Units of Measure </title>
+    <title>Units of measure </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Units of Measure ">
+    <meta name="title" content="Units of measure ">
     <meta name="generator" content="docfx 2.56.5.0">
     
     <link rel="shortcut icon" href="../../../favicon.ico">
@@ -76,7 +76,7 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="unitsOfMeasure">
-<h1 id="units-of-measure">Units of Measure</h1>
+<h1 id="units-of-measure">Units of measure</h1>
 
 <p>The Sequential Data Store (SDS) provides a collection of built-in units of measure (UOM). These units of measure can be <a href="#associating-a-unit-of-measure-with-a-sdstype">associated</a> with SdsStreams and SdsTypes in order to provide unit information for stream data that model measurable quantities. If data has unit information associated with it, SDS is able to support unit conversions when retrieving data. See <a class="xref" href="Reading_Data.html">Reading data</a> for more information.</p>
 <p>Since a unit of measure (meter, for example) defines the magnitude of a quantity (for example, length), SDS represents this by way of two objects: SdsUom and SdsUomQuantity. </p>
@@ -189,7 +189,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="supported-quantities">Supported Quantities</h2>
+<h2 id="supported-quantities">Supported quantities</h2>
 <p>A list of the supported quantities and their base unit of measures is below. Supported quantities are read-only.</p>
 <table>
 <thead>
@@ -337,7 +337,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="supported-units-of-measure">Supported Units of Measure</h2>
+<h2 id="supported-units-of-measure">Supported units of measure</h2>
 <p>A list of the supported units of measure is below. Supported units of measure are read-only.</p>
 <table>
 <thead>
@@ -1888,7 +1888,7 @@ Content-Type: application/json
 </code></pre><h4 id="net-client-libraries-method-1">.NET client libraries method</h4>
 <pre><code class="lang-csharp">   Task&lt;SdsUomQuantity&gt; GetQuantityAsync(string quantityId);
 </code></pre><hr>
-<h2 id="get-quantity-uoms"><code>Get Quantity Uoms</code></h2>
+<h2 id="get-quantity-uoms"><code>Get Quantity UOMs</code></h2>
 <p>Returns the list of units of measure that belongs to the quantity with the specified quantityId.</p>
 <h4 id="request-2">Request</h4>
 <pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units
@@ -1925,7 +1925,7 @@ Content-Type: application/json
 </code></pre><h4 id="net-client-libraries-method-2">.NET client libraries method</h4>
 <pre><code class="lang-csharp">   Task&lt;IEnumerable&lt;SdsUom&gt;&gt; GetQuantityUomsAsync(string quantityId);
 </code></pre><hr>
-<h2 id="get-quantity-uom"><code>Get Quantity Uom</code></h2>
+<h2 id="get-quantity-uom"><code>Get Quantity UOM</code></h2>
 <p>Returns the unit of measure associated with the specified uomId belonging to the quantity with the specified quantityId.</p>
 <h4 id="request-3">Request</h4>
 <pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}
@@ -2326,7 +2326,7 @@ Content-Type: application/json
 <h1 id="sdsuom-api">SdsUom API</h1>
 <p>The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact with SdsUoms. When working in .NET, convenient SDS Client Libraries are available. The <code>ISdsMetadataService</code> interface, accessed using the <code>SdsService.GetMetadataService( )</code> helper, defines the available functions. See <a href="#units-of-measure">Units of Measure</a> for general <a href="#sdsuom">SdsUom</a> information.</p>
 <hr>
-<h2 id="get-uoms"><code>Get Uoms</code></h2>
+<h2 id="get-uoms"><code>Get UOMs</code></h2>
 <p>Returns a list of all available units of measure in the system.</p>
 <h4 id="request-13">Request</h4>
 <pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Units?skip={skip}&amp;count={count}
@@ -2399,7 +2399,7 @@ Content-Type: application/json
 </code></pre><h4 id="net-client-libraries-method-14">.NET client libraries method</h4>
 <pre><code class="lang-csharp">   Task&lt;SdsUom&gt; GetUomAsync(string uomId);
 </code></pre><hr>
-<h2 id="get-uom-access-control-list"><code>Get Uom Access Control List</code></h2>
+<h2 id="get-uom-access-control-list"><code>Get UOM Access Control List</code></h2>
 <p>Gets the ACL of the specified unit of measure. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <h4 id="request-15">Request</h4>
 <pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/AccessControl
@@ -2463,10 +2463,10 @@ Content-Type: application/json
 <pre><code class="lang-csharp">   Task&lt;AccessControlList&gt; GetQuantityUomAccessControlListAsync(string quantityId, string uomId);
    Task&lt;SdsETagResult&lt;AccessControlList&gt;&gt; GetQuantityUomAccessControlListWithETagAsync(string quantityId, string uomId);
 </code></pre><hr>
-<h2 id="update-uom-access-control-list"><code>Update Uom Access Control List</code></h2>
+<h2 id="update-uom-access-control-list"><code>Update UOM Access Control List</code></h2>
 <p>Updates the ACL of the specified unit of measure. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <h4 id="request-16">Request</h4>
-<pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/AccessControl
+<pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{UOMId}/AccessControl
 </code></pre><h5 id="parameters-16">Parameters</h5>
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
@@ -2477,9 +2477,9 @@ Content-Type: application/json
 <h4 id="response-16">Response</h4>
 <p>The response includes a status code.</p>
 <h4 id="net-client-libraries-method-16">.NET client libraries method</h4>
-<pre><code class="lang-csharp">   Task UpdateQuantityUomAccessControlListAsync(string quantityId, string uomId, AccessControlList uomAcl);
+<pre><code class="lang-csharp">   Task UpdateQuantityUomAccessControlListAsync(string quantityId, string UOMId, AccessControlList uomAcl);
 </code></pre><hr>
-<h2 id="patch-uom-access-control-list"><code>Patch Uom Access Control List</code></h2>
+<h2 id="patch-uom-access-control-list"><code>Patch UOM Access Control List</code></h2>
 <p>Updates the ACL of the specified unit of measure using an <a href="https://tools.ietf.org/html/rfc6902">RFC 6902</a> compliant JSON Patch document. This allows the ACL to be modified without submitting the entire Access Control List. For more information on ACLs, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <h4 id="request-17">Request</h4>
 <pre><code class="lang-text">   PATCH api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/AccessControl
@@ -2563,7 +2563,7 @@ Content-Type: application/json
 <pre><code class="lang-csharp">   Task PatchQuantityUomAccessControlListAsync(string quantityId, string uomId, JsonPatchDocument&lt;AccessControlList&gt; uomAclPatch);
    Task PatchQuantityUomAccessControlListWithETagAsync(string quantityId, string uomId, string etag, JsonPatchDocument&lt;AccessControlList&gt; uomAclPatch);
 </code></pre><hr>
-<h2 id="get-uom-owner"><code>Get Uom Owner</code></h2>
+<h2 id="get-uom-owner"><code>Get UOM Owner</code></h2>
 <p>Gets the Owner of the specified unit of measure. For more information on Owners, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <h4 id="request-18">Request</h4>
 <pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/Owner
@@ -2579,7 +2579,7 @@ Content-Type: application/json
 <h4 id="net-client-libraries-method-18">.NET client libraries method</h4>
 <pre><code class="lang-csharp">   Task&lt;Trustee&gt; GetQuantityUomOwnerAsync(string quantityId, string uomId);
 </code></pre><hr>
-<h2 id="update-uom-owner"><code>Update Uom Owner</code></h2>
+<h2 id="update-uom-owner"><code>Update UOM Owner</code></h2>
 <p>Updates the Owner of the specified unit of measure. For more information on Owners, see <a class="xref" href="../Access_Control.html">Access Control</a>.</p>
 <h4 id="request-19">Request</h4>
 <pre><code class="lang-text">   PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/Owner
@@ -2595,7 +2595,7 @@ Content-Type: application/json
 <h4 id="net-client-libraries-method-19">.NET client libraries method</h4>
 <pre><code class="lang-csharp">   Task UpdateQuantityUomOwnerAsync(string quantityId, string uomId, Trustee uomOwner);
 </code></pre><hr>
-<h2 id="get-uom-access-rights"><code>Get Uom Access Rights</code></h2>
+<h2 id="get-uom-access-rights"><code>Get UOM Access Rights</code></h2>
 <p>Gets the Access Rights associated with the specified unit of measure for the requesting identity. For 
 more information on Access Rights, see <a class="xref" href="../Access_Control.html#commonaccessrightsenum">Access Control</a>.</p>
 <h4 id="request-20">Request</h4>
@@ -2618,9 +2618,9 @@ Content-Type: application/json
 <pre><code class="lang-csharp">   Task&lt;string[]&gt; GetQuantityUomAccessRightsAsync(string quantityId, string uomId);
 </code></pre><hr>
 <h2 id="associating-a-unit-of-measure-with-a-sdstype">Associating a unit of measure with a SdsType</h2>
-<p>At <a class="xref" href="SDS_Types.html">SdsType</a> creation, a SdsUom can be associated with a <a class="xref" href="SDS_Types.html#sdstypeproperty">SdsTypeProperty</a>. </p>
+<p>At <a class="xref" href="SDS_Types.html">type</a> creation, SdsUom can be associated with a <a class="xref" href="SDS_Types.html#sdstypeproperty">SdsTypeProperty</a>. </p>
 <h2 id="associating-a-unit-of-measure-with-a-sdsstream">Associating a unit of measure with a SdsStream</h2>
-<p>At <a class="xref" href="SDS_Streams.html">SdsStream</a> creation, you can override any unit of measure associated with a SdsTypeProperty belonging to the SdsType of the stream. This enables the reuse of a SdsType that may have default unit information associated with it already.</p>
+<p>At <a class="xref" href="SDS_Streams.html">stream</a> creation, you can override any unit of measure associated with a SdsTypeProperty belonging to the SdsType of the stream. This enables the reuse of a SdsType that may have default unit information associated with it already.</p>
 </article>
           </div>
           

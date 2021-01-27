@@ -79,8 +79,8 @@
 <h1 id="types">Types</h1>
 
 <p>The Sequential Data Store (SDS) stores streams of events and provides convenient ways to find and associate 
-events. Events are stored in SdsStreams (or streams). An SdsType (or type) defines the shape or structure of the 
-event and how to associate events within the stream.</p>
+events. Events are stored in SdsStreams (or streams).
+An SdsType is a primitive type available in OCS used within the API and REST definitions to identify a stream type.</p>
 <p>Define simple atomic types, such as integers, floats, strings, arrays, and dictionaries, or 
 complex or nested types using the <a href="#sdstypeproperty">Properties collection of SdsTypes</a>. </p>
 <p>An SdsType used to define an SdsStream must have a key. A key is a <a href="#sdstypeproperty">Property, or a combination of Properties</a> 
@@ -510,7 +510,7 @@ SdsTypeCode, such as ByteEnum, Int32Enum, NullableInt32Enum, or Object, plus add
 </tbody>
 </table>
 <h2 id="sdstypeproperty">SdsTypeProperty</h2>
-<p>The Properties collection defines the fields in an SdsType. </p>
+<p>The Properties collection defines the fields in an SdsType. Stream properties are a field expected to appear in every stream created from a given type.</p>
 <p>The following table shows the required and optional SdsTypeProperty fields. Fields that 
 are not included are reserved for internal SDS use.</p>
 <table>
@@ -1256,7 +1256,7 @@ var derivedType = new SdsObjects.SdsType({
     &quot;SdsTypeCode&quot;: SdsObjects.SdsTypeCodeMap.Object,
     &quot;Properties&quot;: [ observationProprety ]
 });
-</code></pre><h2 id="type-reusability">Type Reusability</h2>
+</code></pre><h2 id="type-reusability">Type reusability</h2>
 <p>SdsTypes can also refer other types by using their identifiers. This enables type re-usability.
 For example, if there is a common index and value property for a group of types that may have additional properties,
 a base type can be created with those properties.</p>

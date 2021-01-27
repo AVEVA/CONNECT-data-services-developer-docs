@@ -79,7 +79,7 @@
 <h1 id="retrieve-available-field-sets">Retrieve available field sets</h1>
 
 <p>Available <a class="xref" href="Field_Sets.html">field sets</a> include fields not currently included in the data view, which are available to be added. </p>
-<p>The list of field sets is generated based on the <code>.Queries</code> and <code>.GroupingFields</code> of the defined data view. These fields and field sets can be readily added to the data view <code>.DataFieldSets</code>. Once the field is added, it is omitted from the list of available field sets. Similarly, if the field is removed from the data view, it is added back to the available field sets. This allows an iterative approach to building the data view by easily adding and removing fields from the data view. </p>
+<p>The list of field sets is generated based on the <code>.Queries</code> and <code>.GroupingFields</code> of the defined data view. A grouping field is part of a data view definition that identifies a data item which is used to group related data items together. These fields and field sets can be readily added to the data view <code>.DataFieldSets</code>. Once the field is added, it is omitted from the list of available field sets. Similarly, if the field is removed from the data view, it is added back to the available field sets. This allows an iterative approach to building the data view by easily adding and removing fields from the data view. </p>
 <h2 id="example">Example</h2>
 <p>The example uses the following data view and the streams from the <a class="xref" href="../Reference/Example_Scenario.html">Stream examples</a>. Note that the field sets and the grouping fields arrays are empty:</p>
 <pre><code class="lang-json">{

@@ -78,12 +78,12 @@
             <article class="content wrap" id="_content" data-uid="identityAuthorizationCodeClient">
 <h1 id="authorizationcodeclient">AuthorizationCodeClient</h1>
 
-<p>Authorization Code clients are used in Javascript/Browser (SPA) based applications or native
+<p>Authorization code clients are used in Javascript/Browser (SPA) based applications or native
             mobile applications with the presence of a User. You can read more about these clients
             <a href="https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/AUTHENTICATION_README.md#authorization-code-flow-with-pkce">here</a>.
-            Authorization Code clients are not issued secrets or refresh tokens.
-            For some guidelines on use of secrets, refer to the <a class="xref" href="../../Concepts/credential-management.html">Credential Management</a> topic.
-            For some recommendations on least privilege for users and clients, refer to the <a class="xref" href="../../Concepts/least-privilege.html">Least Privilege</a> topic.</p>
+            Authorization code clients are not issued secrets or refresh tokens.
+            For some guidelines on use of secrets, refer to the <a class="xref" href="../../Concepts/credential-management.html">Credential management</a> topic.
+            For some recommendations on least privilege for users and clients, refer to the <a class="xref" href="../../Concepts/least-privilege.html">Least privilege</a> topic.</p>
 <h2 id="properties">Properties</h2>
 <p>For HTTP requests and responses, the AuthorizationCodeClient object has the following properties and JSON-serialized body: </p>
 <table>
@@ -189,14 +189,13 @@ Read <a href="https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/AUTHEN
 }
 </code></pre><p>If and when contacting OSIsoft support about this error, please provide the OperationId.</p>
 <h2 id="create-an-authorization-code-client"><code>Create an Authorization Code Client</code></h2>
-<p>Create an Authorization Code flow Client. No Secret will be generated for this
-            Client.</p>
+<p>Create an authorization code client. No secret will be generated for this client.</p>
 <h3 id="request">Request</h3>
 <p><code>POST api/v1/Tenants/{tenantId}/AuthorizationCodeClients</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant.</p>
+</code></pre><p>Id of tenant.</p>
 <pre><code class="lang-csharp">[FromBody]
 [Required]
 AuthorizationCodeClient authorizationCodeClient
@@ -332,7 +331,7 @@ AuthorizationCodeClient authorizationCodeClient
   ]
 }
 </code></pre><h4 id="400">400</h4>
-<p>Missing or invalid inputs, or Client limit exceeded.</p>
+<p>Missing or invalid inputs or client limit exceeded.</p>
 <h4 id="401">401</h4>
 <p>Unauthorized.</p>
 <h4 id="403">403</h4>
@@ -349,8 +348,7 @@ AuthorizationCodeClient authorizationCodeClient
 <p>Internal server error.</p>
 <hr>
 <h2 id="update-an-authorization-code-client"><code>Update an Authorization Code Client</code></h2>
-<p>Update an Authorization Code Client. It can take up to one hour
-            for update to manifest in the authentication process.</p>
+<p>Update an authorization code client. It can take up to one hour for update to manifest in the authentication process.</p>
 <h3 id="request-1">Request</h3>
 <p><code>PUT api/v1/Tenants/{tenantId}/AuthorizationCodeClients/{clientId}</code></p>
 <h3 id="parameters-1">Parameters</h3>
@@ -363,7 +361,7 @@ string clientId
 <pre><code class="lang-csharp">[FromBody]
 [Required]
 AuthorizationCodeClient authorizationCodeClient
-</code></pre><p>Updated Authorization Code Client values. Properties that are not set or are null will not be changed.</p>
+</code></pre><p>Updated authorization code client values. Properties that are not set or are null will not be changed.</p>
 <table>
 <thead>
 <tr>
@@ -510,13 +508,13 @@ AuthorizationCodeClient authorizationCodeClient
 <p>Internal server error.</p>
 <hr>
 <h2 id="get-an-authorization-code-client-from-tenant"><code>Get an Authorization Code Client from Tenant</code></h2>
-<p>Get an Authorization Code Client from Tenant.</p>
+<p>Get an authorization code client from tenant.</p>
 <h3 id="request-2">Request</h3>
 <p><code>GET api/v1/Tenants/{tenantId}/AuthorizationCodeClients/{clientId}</code></p>
 <h3 id="parameters-2">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant.</p>
+</code></pre><p>Id of tenant.</p>
 <pre><code class="lang-csharp">[Required]
 string clientId
 </code></pre><p>Id of Client.</p>
@@ -564,15 +562,13 @@ string clientId
 <p>Internal server error.</p>
 <hr>
 <h2 id="get-all-authorization-code-clients-from-tenant"><code>Get All Authorization Code Clients from Tenant</code></h2>
-<p>Get all Authorization Code clients from a Tenant.
-            Optionally, get a list of requested clients. Total number
-            of clients in the Tenant set in the Total-Count header.</p>
+<p>Get all authorization code clients from a tenant. Optionally, get a list of requested clients. Total number of clients in the Tenant set in the Total-Count header.</p>
 <h3 id="request-3">Request</h3>
 <p><code>GET api/v1/Tenants/{tenantId}/AuthorizationCodeClients</code></p>
 <h3 id="parameters-3">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant.</p>
+</code></pre><p>Id of tenant.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
 [Default = &quot;&quot;]
@@ -582,7 +578,7 @@ string[] id
 [Optional]
 [Default = &quot;&quot;]
 string[] tag
-</code></pre><p>Only return Clients that have these tags.</p>
+</code></pre><p>Only return clients that have these tags.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
 [Default = &quot;&quot;]
@@ -668,17 +664,13 @@ int32 count
 <p>Internal server error.</p>
 <hr>
 <h2 id="get-total-count-authorization-code-clients-from-tenant"><code>Get Total Count Authorization Code Clients from Tenant</code></h2>
-<p>Return total number of Authorization Code clients in a Tenant.
-            Optionally, check based on a list of requested clients. The
-            value will be set in the Total-Count header. This endpoint
-            is identical to the GET one but it does not return any objects
-            in the body.</p>
+<p>Return total number of authorization code clients in a Tenant. Optionally, check based on a list of requested clients. The value will be set in the Total-Count header. This endpoint is identical to the GET one but it does not return any objects in the body.</p>
 <h3 id="request-4">Request</h3>
 <p><code>HEAD api/v1/Tenants/{tenantId}/AuthorizationCodeClients</code></p>
 <h3 id="parameters-4">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant.</p>
+</code></pre><p>Id of tenant.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
 [Default = &quot;&quot;]
@@ -688,7 +680,7 @@ string[] id
 [Optional]
 [Default = &quot;&quot;]
 string[] tag
-</code></pre><p>Only count Clients that have these tags.</p>
+</code></pre><p>Only count clients that have these tags.</p>
 <h3 id="security-4">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -709,18 +701,16 @@ string[] tag
 <p>Internal server error.</p>
 <hr>
 <h2 id="delete-an-authorization-code-client"><code>Delete an Authorization Code Client</code></h2>
-<p>Delete an Authorization Code Client. It can take up to one hour
-            for deletion to manifest in the authentication process. Access
-            tokens issued to this client will be valid until their expiration.</p>
+<p>Delete an Authorization Code Client. It can take up to one hour for deletion to manifest in the authentication process. Access tokens issued to this client will be valid until their expiration.</p>
 <h3 id="request-5">Request</h3>
 <p><code>DELETE api/v1/Tenants/{tenantId}/AuthorizationCodeClients/{clientId}</code></p>
 <h3 id="parameters-5">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant.</p>
+</code></pre><p>Id of tenant.</p>
 <pre><code class="lang-csharp">[Required]
 string clientId
-</code></pre><p>Id of Client.</p>
+</code></pre><p>Id of client.</p>
 <h3 id="security-5">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -743,16 +733,16 @@ string clientId
 <p>Internal server error.</p>
 <hr>
 <h2 id="get-header-for-authorization-code-client"><code>Get Header for Authorization Code Client</code></h2>
-<p>Validate that an Authorization Code Client exists in Tenant.</p>
+<p>Validate that an authorization code client exists in Tenant.</p>
 <h3 id="request-6">Request</h3>
 <p><code>HEAD api/v1/Tenants/{tenantId}/AuthorizationCodeClients/{clientId}</code></p>
 <h3 id="parameters-6">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant.</p>
+</code></pre><p>Id of tenant.</p>
 <pre><code class="lang-csharp">[Required]
 string clientId
-</code></pre><p>Id of Client.</p>
+</code></pre><p>Id of client.</p>
 <h3 id="security-6">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>

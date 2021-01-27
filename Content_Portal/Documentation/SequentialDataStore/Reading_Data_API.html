@@ -78,9 +78,9 @@
             <article class="content wrap" id="_content" data-uid="sdsReadingDataApi">
 <h1 id="api-calls-for-reading-data">API calls for reading data</h1>
 
-<h4 id="example-type-stream-and-data">Example Type, Stream, and Data</h4>
+<h4 id="example-type-stream-and-data">Example type, stream, and data</h4>
 <p>Many of the API methods described below contain example requests and responses in JSON to highlight usage and specific behaviors. The following type, stream, and data are used in the examples.</p>
-<p><strong>Example Type</strong><br><code>SimpleType</code> is an SdsType with a single index. This type is defined below in .NET, Python, and Javascript:</p>
+<p><strong>Example type</strong><br><code>SimpleType</code> is an SdsType with a single index. This type is defined below in .NET, Python, and Javascript:</p>
 <h6 id="net">.NET</h6>
 <pre><code class="lang-csharp">public enum State
 {
@@ -699,7 +699,7 @@ are calculated for indexes at which no stored event exists. For more information
 <li><a href="#getvaluesinterpolatedinterval">Interval</a>: An interval can be specified with a start index, end index, and count. This will return the specified count of events evenly spaced from start index to end index.</li>
 </ul>
 <p><a name="getvaluesindexcollection"></a></p>
-<h3 id="index-collection"><code>Index Collection</code></h3>
+<h3 id="index-collection"><code>Index collection</code></h3>
 <p>Returns events at the specified indexes. If no stored event exists at a specified index, the stream&#39;s read characteristics determine how the returned event is calculated. For more information, see <a class="xref" href="Reading_Data.html#interpolation">Interpolation</a> and <a class="xref" href="Reading_Data.html#extrapolation">Extrapolation</a>.</p>
 <h4 id="request-5">Request</h4>
 <pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
@@ -1513,7 +1513,7 @@ Content-Type: application/json
 <li><a href="#postjoin">POST</a>: Only the joinMode is specified in the URI. The streams and read specification for each stream are specified in the body of the request.</li>
 </ul>
 <p><a name="getjoin"></a></p>
-<h3 id="get-request"><code>GET Request</code></h3>
+<h3 id="get-request"><code>GET request</code></h3>
 <pre><code class="lang-text">   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
        ?streams={streams}&amp;joinMode={joinMode}&amp;startIndex={startIndex}&amp;endIndex={endIndex}
        [&amp;boundaryType={boundaryType}&amp;startBoundaryType={startBoundaryType}
@@ -2105,7 +2105,7 @@ Content-Type: application/json
 </table>
 <p>Takes the value from the stream on the right (<code>Simple2</code>) at &quot;2017-11-23T14:00:00Z&quot;. </p>
 <p><a name="postjoin"></a></p>
-<h3 id="post-request"><code>POST Request</code></h3>
+<h3 id="post-request"><code>POST request</code></h3>
 <pre><code class="lang-text">   POST api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins?
        joinMode={joinMode}
 </code></pre><h5 id="parameters-11">Parameters</h5>

@@ -78,10 +78,7 @@
             <article class="content wrap" id="_content" data-uid="identityAzureActiveDirectoryTenant">
 <h1 id="azureactivedirectorytenant">AzureActiveDirectoryTenant</h1>
 
-<p>An Azure Active Directory Tenant is used to map an existing
-            <a href="https://azure.microsoft.com/en-us/services/active-directory/">Azure Active Directory</a>
-            Tenant from Azure to OSIsoft Cloud Services. We only allow one Azure Active Directory Tenant
-            per OSIsoft Cloud Services Tenant.</p>
+<p>An Azure Active Directory tenant is used to map an existing <a href="https://azure.microsoft.com/en-us/services/active-directory/">Azure Active Directory</a>. Tenant from Azure to OSIsoft Cloud Services. We only allow one Azure Active Directory tenant per OSIsoft Cloud Services tenant.</p>
 <h2 id="properties">Properties</h2>
 <p>For HTTP requests and responses, the AzureActiveDirectoryTenant object has the following properties and JSON-serialized body: </p>
 <table>
@@ -96,12 +93,12 @@
 <tr>
 <td>Id</td>
 <td>string</td>
-<td>Id of an Azure Active Directory Tenant.</td>
+<td>Id of an Azure Active Directory tenant.</td>
 </tr>
 <tr>
 <td>ConsentState</td>
 <td>ConsentState</td>
-<td>Consent State of Azure Active Directory Tenant. Can be: NotConsented (0), Consented (1).</td>
+<td>Consent State of Azure Active Directory tenant. Can be: NotConsented (0), Consented (1).</td>
 </tr>
 </tbody>
 </table>
@@ -117,7 +114,7 @@
 <p>Requests made without an access token or an invalid/expired token will fail with a 401 Unauthorized response.
 Requests made with an access token which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
 Read <a href="https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/AUTHENTICATION_README.md">here</a> on how to authenticate against OCS with the various clients and receive an access token in response.</p>
-<h2 id="error-handling">Error Handling</h2>
+<h2 id="error-handling">Error handling</h2>
 <p>All responses will have an error message in the body. The exceptions are 200 responses and the 401 Unauthorized response. The error message will look as follows:</p>
 <pre><code class="lang-json">{
     &quot;OperationId&quot;: &quot;1b2af18e-8b27-4f86-93e0-6caa3e59b90c&quot;, 
@@ -127,16 +124,16 @@ Read <a href="https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/AUTHEN
 }
 </code></pre><p>If and when contacting OSIsoft support about this error, please provide the OperationId.</p>
 <h2 id="add-azure-active-directory-tenant-to-ocs-tenant"><code>Add Azure Active Directory Tenant to OCS Tenant</code></h2>
-<p>Add an Azure Active Directory Tenant to the OSIsoft Cloud Services Tenant.</p>
+<p>Add an Azure Active Directory tenant to the OSIsoft Cloud Services tenant.</p>
 <h3 id="request">Request</h3>
 <p><code>POST api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{azureActiveDirectoryTenantId}</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of OSIsoft Cloud Services Tenant.</p>
+</code></pre><p>Id of OSIsoft Cloud Services tenant.</p>
 <pre><code class="lang-csharp">[Required]
 string azureActiveDirectoryTenantId
-</code></pre><p>Id or Domain Name of Azure Active Directory Tenant.</p>
+</code></pre><p>Id or Domain Name of Azure Active Directory tenant.</p>
 <h3 id="security">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -158,24 +155,24 @@ string azureActiveDirectoryTenantId
 <h4 id="403">403</h4>
 <p>Forbidden.</p>
 <h4 id="404">404</h4>
-<p>OSIsoft Cloud Services Tenant not found.</p>
+<p>OSIsoft Cloud Services tenant not found.</p>
 <h4 id="405">405</h4>
 <p>Method not allowed at this base URL. Try the request again at the Global base URL.</p>
 <h4 id="408">408</h4>
 <p>Operation timed out.</p>
 <h4 id="409">409</h4>
-<p>Id of Azure Active Directory Tenant. is already in use on the specified Tenant.</p>
+<p>Id of Azure Active Directory tenant. is already in use on the specified tenant.</p>
 <h4 id="500">500</h4>
 <p>Internal server error.</p>
 <hr>
-<h2 id="get-all-azure-active-directory-tenants-from-ocs-tenant"><code>Get All Azure Active Directory Tenants from OCS Tenant</code></h2>
-<p>Get all Azure Active Directory Tenants from an OSIsoft Cloud Services Tenant.</p>
+<h2 id="get-all-azure-active-directory-tenants-from-ocs-tenant"><code>Get all Azure Active Directory Tenants from OCS Tenant</code></h2>
+<p>Get all Azure Active Directory tenants from an OSIsoft Cloud Services tenant.</p>
 <h3 id="request-1">Request</h3>
 <p><code>GET api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of OSIsoft Cloud Services Tenant.</p>
+</code></pre><p>Id of OSIsoft Cloud Services tenant.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
 [Default = &quot;&quot;]
@@ -220,17 +217,17 @@ int32 count
 <h4 id="500-1">500</h4>
 <p>Internal server error.</p>
 <hr>
-<h2 id="get-aad-tenant-from-ocs-tenant"><code>Get AAD Tenant from OCS Tenant</code></h2>
-<p>Get Azure Active Directory Tenant from an OSIsoft Cloud Services Tenant.</p>
+<h2 id="get-azure-active-directory-tenant-from-ocs-tenant"><code>Get Azure Active Directory Tenant from OCS Tenant</code></h2>
+<p>Get Azure Active Directory tenant from an OSIsoft Cloud Services tenant.</p>
 <h3 id="request-2">Request</h3>
 <p><code>GET api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{azureActiveDirectoryTenantId}</code></p>
 <h3 id="parameters-2">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of OSIsoft Cloud Services Tenant.</p>
+</code></pre><p>Id of OSIsoft Cloud Services tenant.</p>
 <pre><code class="lang-csharp">[Required]
 string azureActiveDirectoryTenantId
-</code></pre><p>Id of Azure Active Directory Tenant.</p>
+</code></pre><p>Id of Azure Active Directory tenant.</p>
 <h3 id="security-2">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -252,21 +249,21 @@ string azureActiveDirectoryTenantId
 <h4 id="403-3">403</h4>
 <p>Forbidden.</p>
 <h4 id="404-1">404</h4>
-<p>OSIsoft Cloud Services Tenant not found.</p>
+<p>OSIsoft Cloud Services tenant not found.</p>
 <h4 id="500-2">500</h4>
 <p>Internal server error.</p>
 <hr>
-<h2 id="remove-aad-tenant-from-ocs-tenant"><code>Remove AAD Tenant from OCS Tenant</code></h2>
-<p>Remove Azure Active Directory Tenant from an OSIsoft Cloud Services Tenant.</p>
+<h2 id="remove-azure-active-directory-tenant-from-ocs-tenant"><code>Remove Azure Active Directory Tenant from OCS Tenant</code></h2>
+<p>Remove Azure Active Directory tenant from an OSIsoft Cloud Services tenant.</p>
 <h3 id="request-3">Request</h3>
 <p><code>DELETE api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{azureActiveDirectoryTenantId}</code></p>
 <h3 id="parameters-3">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of OSIsoft Cloud Services Tenant.</p>
+</code></pre><p>Id of OSIsoft Cloud Services tenant.</p>
 <pre><code class="lang-csharp">[Required]
 string azureActiveDirectoryTenantId
-</code></pre><p>Id of Azure Active Directory Tenant to remove.</p>
+</code></pre><p>Id of Azure Active Directory tenant to remove.</p>
 <h3 id="security-3">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -282,7 +279,7 @@ string azureActiveDirectoryTenantId
 <h4 id="403-4">403</h4>
 <p>Forbidden.</p>
 <h4 id="404-2">404</h4>
-<p>OSIsoft Cloud Services Tenant not found.</p>
+<p>OSIsoft Cloud Services tenant not found.</p>
 <h4 id="405-1">405</h4>
 <p>Method not allowed at this base URL. Try the request again at the Global base URL.</p>
 <h4 id="408-1">408</h4>
@@ -290,9 +287,9 @@ string azureActiveDirectoryTenantId
 <h4 id="500-3">500</h4>
 <p>Internal server error.</p>
 <hr>
-<h2 id="send-consent-email-for-aad-tenant"><code>Send Consent Email for AAD Tenant</code></h2>
-<p>Send consent for an Azure Active Directory Tenant. OSIsoft Cloud Services needs to be granted
-            permission to interact with the Azure Active Directory tenant. Otherwise, users from this Azure Active Directory Tenant
+<h2 id="send-consent-email-for-azure-active-directory-tenant"><code>Send Consent Email for Azure Active Directory Tenant</code></h2>
+<p>Send consent for an Azure Active Directory tenant. OSIsoft Cloud Services needs to be granted
+            permission to interact with the Azure Active Directory tenant. Otherwise, users from this Azure Active Directory tenant
             cannot accept invitations from OSIsoft Cloud Services and log in. You can read more about this
             <a href="https://pisquare.osisoft.com/docs/DOC-3986-msa-consent-for-azure-active-directory">here</a>.</p>
 <h3 id="request-4">Request</h3>
@@ -300,10 +297,10 @@ string azureActiveDirectoryTenantId
 <h3 id="parameters-4">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of OSIsoft Cloud Services Tenant.</p>
+</code></pre><p>Id of OSIsoft Cloud Services tenant.</p>
 <pre><code class="lang-csharp">[Required]
 string azureActiveDirectoryTenantId
-</code></pre><p>Id of Azure Active Directory Tenant.</p>
+</code></pre><p>Id of Azure Active Directory tenant.</p>
 <pre><code class="lang-csharp">[FromBody]
 [Required]
 ConsentInformation consentInformation
@@ -365,14 +362,14 @@ ConsentInformation consentInformation
 <h4 id="403-5">403</h4>
 <p>Forbidden.</p>
 <h4 id="404-3">404</h4>
-<p>OSIsoft Cloud Services Tenant not found.</p>
+<p>OSIsoft Cloud Services tenant not found.</p>
 <h4 id="405-2">405</h4>
 <p>Method not allowed at this base URL. Try the request again at the Global base URL.</p>
 <h4 id="500-4">500</h4>
 <p>Internal server error.</p>
 <hr>
 <h2 id="get-azure-active-directory-tenant-in-tenant"><code>Get Azure Active Directory Tenant in Tenant</code></h2>
-<p>Validate that Azure Active Directory Tenant exists in this OSIsoft Cloud Services Tenant.
+<p>Validate that Azure Active Directory tenant exists in this OSIsoft Cloud Services tenant.
             This endpoint is identical to the GET one but
             it does not return any objects in the body.</p>
 <h3 id="request-5">Request</h3>
@@ -380,10 +377,10 @@ ConsentInformation consentInformation
 <h3 id="parameters-5">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of OSIsoft Cloud Services Tenant.</p>
+</code></pre><p>Id of OSIsoft Cloud Services tenant.</p>
 <pre><code class="lang-csharp">[Required]
 string azureActiveDirectoryTenantId
-</code></pre><p>Id of Azure Active Directory Tenant.</p>
+</code></pre><p>Id of Azure Active Directory tenant.</p>
 <h3 id="security-5">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -401,20 +398,18 @@ string azureActiveDirectoryTenantId
 <h4 id="403-6">403</h4>
 <p>Forbidden.</p>
 <h4 id="404-4">404</h4>
-<p>OSIsoft Cloud Services Tenant not found.</p>
+<p>OSIsoft Cloud Services tenant not found.</p>
 <h4 id="500-5">500</h4>
 <p>Internal server error.</p>
 <hr>
 <h2 id="get-total-count-of-azure-active-directory-tenant-in-tenant"><code>Get Total Count of Azure Active Directory Tenant in Tenant</code></h2>
-<p>Return total number of Azure Active Directory tenants in a OSIsoft Cloud Services Tenant. This endpoint
-            is identical to the GET one but it does not return any objects
-            in the body.</p>
+<p>Return total number of Azure Active Directory tenants in a OSIsoft Cloud Services tenant. This endpoint is identical to the GET one but it does not return any objects in the body.</p>
 <h3 id="request-6">Request</h3>
 <p><code>HEAD api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants</code></p>
 <h3 id="parameters-6">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of OSIsoft Cloud Services Tenant.</p>
+</code></pre><p>Id of OSIsoft Cloud Services tenant.</p>
 <h3 id="security-6">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -432,7 +427,7 @@ string tenantId
 <h4 id="403-7">403</h4>
 <p>Forbidden.</p>
 <h4 id="404-5">404</h4>
-<p>OSIsoft Cloud Services Tenant not found.</p>
+<p>OSIsoft Cloud Services tenant not found.</p>
 <h4 id="500-6">500</h4>
 <p>Internal server error.</p>
 <hr>

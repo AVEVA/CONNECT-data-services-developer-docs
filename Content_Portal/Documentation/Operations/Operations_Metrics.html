@@ -86,7 +86,7 @@
 <p>Requests made without an access token or an invalid/expired token will fail with a 401 Unauthorized response.
 Requests made with an access token which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
 Read <a href="https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/AUTHENTICATION_README.md">OCS Authentication documentation</a> to learn how to authenticate against OCS with the various clients and receive an access token in response.</p>
-<h2 id="error-handling">Error Handling</h2>
+<h2 id="error-handling">Error handling</h2>
 <p>All responses will have an error message in the body. The exceptions are 200 responses and the 401 Unauthorized response. The error message will appear as follows:</p>
 <pre><code class="lang-json">{
     &quot;OperationId&quot;: &quot;1b2af18e-8b27-4f86-93e0-6caa3e59b90c&quot;, 

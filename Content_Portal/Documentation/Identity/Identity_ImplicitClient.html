@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>ImplicitClient (Deprecated) </title>
+    <title>ImplicitClient (deprecated) </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="ImplicitClient (Deprecated) ">
+    <meta name="title" content="ImplicitClient (deprecated) ">
     <meta name="generator" content="docfx 2.56.5.0">
     
     <link rel="shortcut icon" href="../../../favicon.ico">
@@ -76,7 +76,7 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="identityImplicitClient">
-<h1 id="implicitclient-deprecated">ImplicitClient (Deprecated)</h1>
+<h1 id="implicitclient-deprecated">ImplicitClient (deprecated)</h1>
 
 <p>Implicit Client has been deprecated. We suggest using an Authorization Code Client instead of an Implicit Client.
             Implicit clients are used in Javascript/Browser (SPA) based applications or native
@@ -147,7 +147,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="serialized-model">Serialized Model</h3>
+<h3 id="serialized-model">Serialized model</h3>
 <pre><code class="lang-json">{
   &quot;AllowedCorsOrigins&quot;: [
     &quot;String&quot;,
@@ -179,7 +179,7 @@
 <p>Requests made without an access token or an invalid/expired token will fail with a 401 Unauthorized response.
 Requests made with an access token which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
 Read <a href="https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/AUTHENTICATION_README.md">here</a> on how to authenticate against OCS with the various clients and receive an access token in response.</p>
-<h2 id="error-handling">Error Handling</h2>
+<h2 id="error-handling">Error handling</h2>
 <p>All responses will have an error message in the body. The exceptions are 200 responses and the 401 Unauthorized response. The error message will look as follows:</p>
 <pre><code class="lang-json">{
     &quot;OperationId&quot;: &quot;1b2af18e-8b27-4f86-93e0-6caa3e59b90c&quot;, 
@@ -188,7 +188,7 @@ Read <a href="https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/AUTHEN
     &quot;Resolution&quot;: &quot;Possible solution for the error.&quot; 
 }
 </code></pre><p>If and when contacting OSIsoft support about this error, please provide the OperationId.</p>
-<h2 id="create-an-implicit-client-deprecated"><code>Create an Implicit Client (Deprecated)</code></h2>
+<h2 id="create-an-implicit-client-deprecated"><code>Create an implicit client (deprecated)</code></h2>
 <p>Implicit Client has been deprecated, please use Authorization Code Client instead.</p>
 <p>Create an Implicit Client in a Tenant. No Secret will be generated for this
             Client.</p>
@@ -349,10 +349,9 @@ ImplicitClient implicitClient
 <h4 id="500">500</h4>
 <p>Internal server error.</p>
 <hr>
-<h2 id="update-an-implicit-client-deprecated"><code>Update an Implicit Client (Deprecated)</code></h2>
+<h2 id="update-an-implicit-client-deprecated"><code>Update an implicit client (deprecated)</code></h2>
 <p>Implicit Client has been deprecated, please use Authorization Code Client instead.</p>
-<p>Update an Implicit Client. It can take up to one hour
-            for update to manifest in the authentication process.</p>
+<p>Update an Implicit Client. It can take up to one hour for an update to manifest in the authentication process.</p>
 <h3 id="request-1">Request</h3>
 <p><code>PUT api/v1/Tenants/{tenantId}/ImplicitClients/{clientId}</code></p>
 <h3 id="parameters-1">Parameters</h3>
@@ -511,7 +510,7 @@ ImplicitClient implicitClient
 <h4 id="500-1">500</h4>
 <p>Internal server error.</p>
 <hr>
-<h2 id="get-an-implicit-client-deprecated"><code>Get an Implicit Client (Deprecated)</code></h2>
+<h2 id="get-an-implicit-client-deprecated"><code>Get an implicit client (deprecated)</code></h2>
 <p>Implicit Client has been deprecated, please use Authorization Code Client instead.</p>
 <p>Get an Implicit Client from a Tenant.</p>
 <h3 id="request-2">Request</h3>
@@ -566,7 +565,7 @@ string clientId
 <h4 id="500-2">500</h4>
 <p>Internal server error.</p>
 <hr>
-<h2 id="get-all-implicit-clients-from-tenant-deprecated"><code>Get All Implicit Clients from Tenant (Deprecated)</code></h2>
+<h2 id="get-all-implicit-clients-from-tenant-deprecated"><code>Get all implicit clients from tenant (deprecated)</code></h2>
 <p>Implicit Client has been deprecated, please use Authorization Code Client instead.</p>
 <p>Get all Implicit clients from a Tenant.
             Optionally, get a list of requested clients. Total number
@@ -671,7 +670,7 @@ int32 count
 <h4 id="500-3">500</h4>
 <p>Internal server error.</p>
 <hr>
-<h2 id="delete-an-implicit-client-deprecated"><code>Delete an Implicit Client (Deprecated)</code></h2>
+<h2 id="delete-an-implicit-client-deprecated"><code>Delete an implicit client (deprecated)</code></h2>
 <p>Implicit Client has been deprecated, please use Authorization Code Client instead.</p>
 <p>Delete an Implicit Client. It can take up to one hour
             for deletion to manifest in the authentication process. Access
@@ -706,7 +705,7 @@ string clientId
 <h4 id="500-4">500</h4>
 <p>Internal server error.</p>
 <hr>
-<h2 id="get-header-for-implicit-client-deprecated"><code>Get Header for Implicit Client (Deprecated)</code></h2>
+<h2 id="get-header-for-implicit-client-deprecated"><code>Get header for implicit client (deprecated)</code></h2>
 <p>Implicit Client has been deprecated, please use Authorization Code Client instead.</p>
 <p>Validate that an Implicit Client exists.</p>
 <h3 id="request-5">Request</h3>
@@ -737,7 +736,7 @@ string clientId
 <h4 id="500-5">500</h4>
 <p>Internal server error.</p>
 <hr>
-<h2 id="get-total-count-of-implicit-clients-deprecated"><code>Get Total Count of Implicit Clients (Deprecated)</code></h2>
+<h2 id="get-total-count-of-implicit-clients-deprecated"><code>Get total count of implicit clients (deprecated)</code></h2>
 <p>Implicit Client has been deprecated, please use Authorization Code Client instead.</p>
 <p>Return total number of Implicit clients in a Tenant.
             Optionally, check based on a list of requested clients. The

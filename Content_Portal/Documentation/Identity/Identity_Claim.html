@@ -78,10 +78,9 @@
             <article class="content wrap" id="_content" data-uid="identityClaim">
 <h1 id="claim">Claim</h1>
 
-<p>An Identity Provider Claim provides a mechanism to map a Claim
-            from an Identity Provider to one or more Roles.</p>
+<p>An identity provider claim provides a mechanism to map a claim from an identity provider to one or more Roles.</p>
 <h2 id="properties">Properties</h2>
-<p>For HTTP requests and responses, the Claim object has the following properties and JSON-serialized body: </p>
+<p>For HTTP requests and responses, the claim object has the following properties and JSON-serialized body: </p>
 <table>
 <thead>
 <tr>
@@ -123,7 +122,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="serialized-model">Serialized Model</h3>
+<h3 id="serialized-model">Serialized model</h3>
 <pre><code class="lang-json">{
   &quot;Issuer&quot;: &quot;Issuer&quot;,
   &quot;OriginalIssuer&quot;: &quot;OriginalIssuer&quot;,
@@ -140,7 +139,7 @@
 <p>Requests made without an access token or an invalid/expired token will fail with a 401 Unauthorized response.
 Requests made with an access token which does not have the correct permissions (see security subsection on every endpoint) will fail with a 403 Forbidden.
 Read <a href="https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/AUTHENTICATION_README.md">here</a> on how to authenticate against OCS with the various clients and receive an access token in response.</p>
-<h2 id="error-handling">Error Handling</h2>
+<h2 id="error-handling">Error handling</h2>
 <p>All responses will have an error message in the body. The exceptions are 200 responses and the 401 Unauthorized response. The error message will look as follows:</p>
 <pre><code class="lang-json">{
     &quot;OperationId&quot;: &quot;1b2af18e-8b27-4f86-93e0-6caa3e59b90c&quot;, 
@@ -149,17 +148,17 @@ Read <a href="https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/AUTHEN
     &quot;Resolution&quot;: &quot;Possible solution for the error.&quot; 
 }
 </code></pre><p>If and when contacting OSIsoft support about this error, please provide the OperationId.</p>
-<h2 id="get-all-identity-provider-claims"><code>Get All Identity Provider Claims</code></h2>
-<p>Get all Identity Provider Claims for an Identity Provider on a Tenant.</p>
+<h2 id="get-all-identity-provider-claims"><code>Get all Identity Provider Claims</code></h2>
+<p>Get all identity provider claims for an identity provider on a tenant.</p>
 <h3 id="request">Request</h3>
 <p><code>GET api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant.</p>
+</code></pre><p>Id of tenant.</p>
 <pre><code class="lang-csharp">[Required]
 Guid identityProviderId
-</code></pre><p>Id of Identity Provider.</p>
+</code></pre><p>Id of identity provider.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
 [Default = &quot;&quot;]
@@ -169,12 +168,12 @@ string query
 [Optional]
 [Default = 0]
 int32 skip
-</code></pre><p>Number of Identity Providers to skip.</p>
+</code></pre><p>Number of identity providers to skip.</p>
 <pre><code class="lang-csharp">[FromQuery]
 [Optional]
 [Default = 100]
 int32 count
-</code></pre><p>Maximum number of Identity Providers to return.</p>
+</code></pre><p>Maximum number of identity providers to return.</p>
 <h3 id="security">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -210,21 +209,21 @@ int32 count
 <h4 id="403">403</h4>
 <p>Forbidden.</p>
 <h4 id="404">404</h4>
-<p>Tenant or Identity Provider not found.</p>
+<p>Tenant or identity provider not found.</p>
 <h4 id="500">500</h4>
 <p>Internal server error.</p>
 <hr>
-<h2 id="get-all-identity-provider-claims-header"><code>Get All Identity Provider Claims Header</code></h2>
-<p>Get Header for all Identity Provider Claims for an Identity Provider on a Tenant.</p>
+<h2 id="get-all-identity-provider-claims-header"><code>Get all Identity Provider Claims Header</code></h2>
+<p>Get Header for all identity provider claims for an identity provider on a tenant.</p>
 <h3 id="request-1">Request</h3>
 <p><code>HEAD api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant.</p>
+</code></pre><p>Id of tenant.</p>
 <pre><code class="lang-csharp">[Required]
 Guid identityProviderId
-</code></pre><p>Id of Identity Provider.</p>
+</code></pre><p>Id of identity provider.</p>
 <h3 id="security-1">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -240,24 +239,24 @@ Guid identityProviderId
 <h4 id="403-1">403</h4>
 <p>Forbidden.</p>
 <h4 id="404-1">404</h4>
-<p>Tenant or Identity Provider not found.</p>
+<p>Tenant or identity provider not found.</p>
 <h4 id="500-1">500</h4>
 <p>Internal server error.</p>
 <hr>
 <h2 id="get-identity-provider-claim"><code>Get Identity Provider Claim</code></h2>
-<p>Get an Identity Provider Claim from an Identity Provider on a Tenant.</p>
+<p>Get an identity provider claim from an identity provider on a tenant.</p>
 <h3 id="request-2">Request</h3>
 <p><code>GET api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims/{identityProviderClaimId}</code></p>
 <h3 id="parameters-2">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant.</p>
+</code></pre><p>Id of tenant.</p>
 <pre><code class="lang-csharp">[Required]
 Guid identityProviderId
-</code></pre><p>Id of Identity Provider.</p>
+</code></pre><p>Id of identity provider.</p>
 <pre><code class="lang-csharp">[Required]
 Guid identityProviderClaimId
-</code></pre><p>Id of Identity Provider Claim.</p>
+</code></pre><p>Id of identity provider claim.</p>
 <h3 id="security-2">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -282,24 +281,24 @@ Guid identityProviderClaimId
 <h4 id="403-2">403</h4>
 <p>Forbidden.</p>
 <h4 id="404-2">404</h4>
-<p>Tenant, Identity Provider, or Identity Provider Claim not found.</p>
+<p>Tenant, identity provider, or identity provider claim not found.</p>
 <h4 id="500-2">500</h4>
 <p>Internal server error.</p>
 <hr>
 <h2 id="get-identity-provider-claim-header"><code>Get Identity Provider Claim Header</code></h2>
-<p>Get an Identity Provider Claim Header from an Identity Provider on a Tenant.</p>
+<p>Get an identity provider claim Header from an identity provider on a tenant.</p>
 <h3 id="request-3">Request</h3>
 <p><code>HEAD api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims/{identityProviderClaimId}</code></p>
 <h3 id="parameters-3">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant.</p>
+</code></pre><p>Id of tenant.</p>
 <pre><code class="lang-csharp">[Required]
 Guid identityProviderId
-</code></pre><p>Id of Identity Provider.</p>
+</code></pre><p>Id of identity provider.</p>
 <pre><code class="lang-csharp">[Required]
 Guid identityProviderClaimId
-</code></pre><p>Id of Identity Provider Claim.</p>
+</code></pre><p>Id of identity provider claim.</p>
 <h3 id="security-3">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -315,25 +314,25 @@ Guid identityProviderClaimId
 <h4 id="403-3">403</h4>
 <p>Forbidden.</p>
 <h4 id="404-3">404</h4>
-<p>Tenant, Identity Provider, or Identity Provider Claim not found.</p>
+<p>Tenant, identity provider, or identity provider claim not found.</p>
 <h4 id="500-3">500</h4>
 <p>Internal server error.</p>
 <hr>
 <h2 id="create-new-identity-provider-claim"><code>Create New Identity Provider Claim</code></h2>
-<p>Create a new Identity Provider Claim for an Identity Provider on a Tenant.</p>
+<p>Create a new identity provider claim for an identity provider on a tenant.</p>
 <h3 id="request-4">Request</h3>
 <p><code>POST api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims</code></p>
 <h3 id="parameters-4">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant.</p>
+</code></pre><p>Id of tenant.</p>
 <pre><code class="lang-csharp">[Required]
 Guid identityProviderId
-</code></pre><p>Id of Identity Provider.</p>
+</code></pre><p>Id of identity provider.</p>
 <pre><code class="lang-csharp">[FromBody]
 [Required]
 IdentityProviderClaimCreate identityProviderClaimCreate
-</code></pre><p>Identity Provider Claim to create.</p>
+</code></pre><p>Identity provider claim to create.</p>
 <table>
 <thead>
 <tr>
@@ -348,13 +347,13 @@ IdentityProviderClaimCreate identityProviderClaimCreate
 <td>Value</td>
 <td>string</td>
 <td>Yes</td>
-<td>The value for this IdentityProvider Claim.</td>
+<td>The value for this identity provider claim.</td>
 </tr>
 <tr>
 <td>IdentityProviderClaimTypeNameId</td>
 <td>Guid</td>
 <td>Yes</td>
-<td>The Identity Provider Claim Type Name Id for this IdentityProvider Claim.</td>
+<td>The identity provider Claim Type Name Id for this IdentityProvider claim.</td>
 </tr>
 <tr>
 <td>RoleIds</td>
@@ -398,34 +397,34 @@ IdentityProviderClaimCreate identityProviderClaimCreate
 <h4 id="403-4">403</h4>
 <p>Forbidden.</p>
 <h4 id="404-4">404</h4>
-<p>Tenant, Identity Provider, or Roles not found.</p>
+<p>Tenant, identity provider, or Roles not found.</p>
 <h4 id="405">405</h4>
 <p>Method not allowed at this base URL. Try the request again at the Global base URL.</p>
 <h4 id="408">408</h4>
 <p>Operation timed out.</p>
 <h4 id="409">409</h4>
-<p>Identity Provider Claim configuration already exists.</p>
+<p>Identity provider claim configuration already exists.</p>
 <h4 id="500-4">500</h4>
 <p>Internal server error.</p>
 <hr>
-<h2 id="update-an-existing-identity-provider-claim"><code>Update an existing Identity Provider Claim</code></h2>
-<p>Create a new Identity Provider Claim for an Identity Provider on a Tenant.</p>
+<h2 id="update-an-existing-identity-provider-claim"><code>Update an Existing Identity Provider Claim</code></h2>
+<p>Create a new identity provider claim for an identity provider on a tenant.</p>
 <h3 id="request-5">Request</h3>
 <p><code>PUT api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims/{identityProviderClaimId}</code></p>
 <h3 id="parameters-5">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant.</p>
+</code></pre><p>Id of tenant.</p>
 <pre><code class="lang-csharp">[Required]
 Guid identityProviderId
-</code></pre><p>Id of Identity Provider.</p>
+</code></pre><p>Id of identity provider.</p>
 <pre><code class="lang-csharp">[Required]
 Guid identityProviderClaimId
-</code></pre><p>Id of Identity Provider Claim.</p>
+</code></pre><p>Id of identity provider claim.</p>
 <pre><code class="lang-csharp">[FromBody]
 [Required]
 IdentityProviderClaimUpdate identityProviderClaimUpdate
-</code></pre><p>Updated Identity Provider Claim values.</p>
+</code></pre><p>Updated identity provider claim values.</p>
 <table>
 <thead>
 <tr>
@@ -440,7 +439,7 @@ IdentityProviderClaimUpdate identityProviderClaimUpdate
 <td>Value</td>
 <td>string</td>
 <td>No</td>
-<td>The value for this IdentityProvider Claim.</td>
+<td>The value for this IdentityProvider claim.</td>
 </tr>
 <tr>
 <td>RoleIds</td>
@@ -481,30 +480,30 @@ IdentityProviderClaimUpdate identityProviderClaimUpdate
 <h4 id="403-5">403</h4>
 <p>Forbidden.</p>
 <h4 id="404-5">404</h4>
-<p>Tenant, Identity Provider, Identity Provider Claim, or Roles not found.</p>
+<p>Tenant, identity provider, identity provider claim, or roles not found.</p>
 <h4 id="405-1">405</h4>
 <p>Method not allowed at this base URL. Try the request again at the Global base URL.</p>
 <h4 id="408-1">408</h4>
 <p>Operation timed out.</p>
 <h4 id="409-1">409</h4>
-<p>Identity Provider Claim configuration already exists.</p>
+<p>identity provider claim configuration already exists.</p>
 <h4 id="500-5">500</h4>
 <p>Internal server error.</p>
 <hr>
-<h2 id="delete-an-existing-identity-provider-claim"><code>Delete an existing Identity Provider Claim</code></h2>
-<p>Delete an Identity Provider Claim for an Identity Provider on a Tenant.</p>
+<h2 id="delete-an-existing-identity-provider-claim"><code>Delete an Existing Identity Provider Claim</code></h2>
+<p>Delete an identity provider claim for an identity provider on a tenant.</p>
 <h3 id="request-6">Request</h3>
 <p><code>DELETE api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims/{identityProviderClaimId}</code></p>
 <h3 id="parameters-6">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 string tenantId
-</code></pre><p>Id of Tenant.</p>
+</code></pre><p>Id of tenant.</p>
 <pre><code class="lang-csharp">[Required]
 Guid identityProviderId
-</code></pre><p>Id of Identity Provider.</p>
+</code></pre><p>Id of identity provider.</p>
 <pre><code class="lang-csharp">[Required]
 Guid identityProviderClaimId
-</code></pre><p>Id of Identity Provider Claim.</p>
+</code></pre><p>Id of identity provider claim.</p>
 <h3 id="security-6">Security</h3>
 <p>Allowed for these roles:</p>
 <ul>
@@ -518,7 +517,7 @@ Guid identityProviderClaimId
 <h4 id="403-6">403</h4>
 <p>Forbidden.</p>
 <h4 id="404-6">404</h4>
-<p>Tenant, Identity Provider, or Identity Provider Claim not found.</p>
+<p>Tenant, identity provider, or identity provider claim not found.</p>
 <h4 id="405-2">405</h4>
 <p>Method not allowed at this base URL. Try the request again at the Global base URL.</p>
 <h4 id="408-2">408</h4>

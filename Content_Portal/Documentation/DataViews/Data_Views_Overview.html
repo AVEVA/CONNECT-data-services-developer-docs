@@ -78,7 +78,17 @@
             <article class="content wrap" id="_content" data-uid="DataViewsOverview">
 <h1 id="data-views">Data Views</h1>
 
-<p>Data views are subsets of data from one or more OCS sources, such as streams, which can serve as a bridge between raw OCS data and data-driven applications. A data view is a declarative query and shape for raw OCS data. Within a target namespace, you specify the selected data by specific time period and interpolation interval.</p>
+<p>Data views are subsets of data from one or more OCS sources, such as streams, which can serve as a bridge between raw OCS data and data-driven applications. A data view is a declarative query and shape for OCS data. It is composed of an index field, a set of queries, sets of data field definitions, grouping instructions, and default data range and interval. A data view contains the following:</p>
+<ul>
+<li><p>Index field - Specifies the primary index type and label of the index. The index must be a timestamp and will be the first column of the data view</p>
+</li>
+<li><p>Query – Part of the definition of a data view which determines what data items are available for a data view. Queries can be made against streams or assets. A data view can have multiple queries</p>
+</li>
+<li><p>Data field set – Collections of fields originating from the same query</p>
+</li>
+<li><p>Data view shape – A portion of a data view definition that determines if the data should be returned in the standard grouped row format or a narrow view which is a pivot of the standard table</p>
+</li>
+</ul>
 <p>The ability to create data views in OCS will mesh directly with OSIsoft&#39;s Data Science Enablement efforts, whereby users will be able to programmatically access data view content via an API for the purposes of advanced analytics. The ultimate goal is to deliver shaped data that is ready for consumption because it is normalized, aligned, and interpolated.</p>
 <p>Understanding how the data view resolves into content is important both for the designer and the consumer. Data views provide extensive visibility into what data is included. The concept of &quot;resolving&quot; a data view is when the data view&#39;s queries and logic are executed to determine the data view&#39;s exact schema and content.</p>
 <p>The collection(s) of OCS resources (such as streams) that a data view acts on is the result of one or more queries. Streams and other OCS resources are collectively known as <em>data items</em>. Values from the data items&#39; properties can be included in the data view as <em>fields</em>, as well as information about the data items (such as Id and Metadata).</p>

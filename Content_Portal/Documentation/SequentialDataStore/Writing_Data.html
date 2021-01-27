@@ -86,7 +86,7 @@ things to note when writing to an SdsStream.</p>
 to the request. All references to indexes are to the primary index.</p>
 <p><strong>*Notes:</strong> Use the ISO 8601 representation of dates and times in SDS, <code>2020-02-20T08:30:00-08:00</code> for February 20, 2020 at 8:30 AM PST, for example.
 SDS returns timestamps in UTC if the timestamp is of property <code>DateTime</code> and in local time if it is of <code>DateTimeOffset</code>. </p>
-<h3 id="single-stream-writes">Single Stream Writes</h3>
+<h3 id="single-stream-writes">Single stream writes</h3>
 <p>The following methods support writing a single or multiple values:</p>
 <ul>
 <li><a class="xref" href="Writing_Data_API.html#insert-values">Insert Values</a> inserts a collection of events.</li>
@@ -101,7 +101,7 @@ SDS returns timestamps in UTC if the timestamp is of property <code>DateTime</co
 <p><code>string tenantId</code><br>The tenant identifier  </p>
 <p><code>string namespaceId</code><br>The namespace identifier  </p>
 <p><code>string streamId</code><br>The stream identifier  </p>
-<h3 id="request-body-format">Request Body Format</h3>
+<h3 id="request-body-format">Request body format</h3>
 <p>With the exception of Remove Values, all single stream write calls require a request body containing the events to insert or modify.</p>
 <p>The events must be formatted as a serialized JSON array of the stream&#39;s type. JSON arrays are comma-delimited lists of a type enclosed within square brackets. The following code shows a list of three WaveData events that are properly formatted for insertion. See the <a href="https://github.com/osisoft/OCS-Samples">OCS-Samples</a> for the complete example.</p>
 <pre><code class="lang-json">[
@@ -140,7 +140,7 @@ SDS returns timestamps in UTC if the timestamp is of property <code>DateTime</co
     }
 ]
 </code></pre><p>You can serialize your data using one of many available JSON serializers available at <a href="http://json.org/index.html">Introducing JSON</a>. </p>
-<h3 id="response-format">Response Format</h3>
+<h3 id="response-format">Response format</h3>
 <p>Supported response formats include JSON, verbose JSON, and SDS. </p>
 <p>The default response format for SDS is JSON, which is used in all examples in this document. 
 Default JSON responses do not include any values that are equal to the default value for their type.</p>

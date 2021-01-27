@@ -5,13 +5,13 @@ references:
   name: Role-based access control
   href: Content_Portal/Documentation/Access_Control.html
 - uid: AccountClientRole_1
-  name: Client Roles
+  name: Client roles
   href: Content_Portal/Documentation/Management/Account_ClientRole_1.html
 - uid: AccountManagementConcepts
   name: Tenant Management Concepts
   href: Content_Portal/Concepts/Account_Management_Concepts.html
 - uid: AccountManagementOverview
-  name: Tenant Management
+  name: Tenant management
   href: Content_Portal/Documentation/Management/Management_Overview.html
 - uid: AccountNamespace_1
   name: Namespaces
@@ -29,7 +29,7 @@ references:
   name: Tenants
   href: Content_Portal/Documentation/Management/Account_Tenant.html
 - uid: AccountTenantFeatureState
-  name: Tenant Feature States
+  name: Tenant feature states
   href: Content_Portal/Documentation/Management/Account_TenantFeatureState.html
 - uid: AccountUserRole_1
   name: User Roles
@@ -83,10 +83,10 @@ references:
   name: Create and configure an asset
   href: Content_Portal/How_To_Guides/Assets/create-an-asset.html
 - uid: CredentialManagement
-  name: Credential Management
+  name: Credential management
   href: Content_Portal/Concepts/credential-management.html
 - uid: dataIngress
-  name: Data Ingress and OSIsoft Message Format
+  name: Data collection and OSIsoft Message Format
   href: Content_Portal/Documentation/DataIngress/Data_Ingress.html
 - uid: DataStorageConcepts
   name: Data Storage Concepts
@@ -155,7 +155,7 @@ references:
   name: 'Recommended workflow: Get data view data'
   href: Content_Portal/Documentation/DataViews/GetDataViewData/Rec_Workflow_Get.html
 - uid: GettingStartedWithTrendData
-  name: Getting Started with Trend Data
+  name: Getting started with trend data
   href: Content_Portal/Quickstarts/Getting-Started-Trend.html
 - uid: identityandaccessmanagement
   name: OSIsoft Identity Service
@@ -188,7 +188,7 @@ references:
   name: IdentityProvider
   href: Content_Portal/Documentation/Identity/Identity_IdentityProvider.html
 - uid: identityImplicitClient
-  name: ImplicitClient (Deprecated)
+  name: ImplicitClient (deprecated)
   href: Content_Portal/Documentation/Identity/Identity_ImplicitClient.html
 - uid: identityInvitation
   name: Invitation
@@ -206,10 +206,10 @@ references:
   name: OCS Content Portal
   href: index.html
 - uid: LeastPrivilege
-  name: Least Privilege
+  name: Least privilege
   href: Content_Portal/Concepts/least-privilege.html
 - uid: MetadataRulesOverview
-  name: Metadata Rules
+  name: Metadata rules
   href: Content_Portal/Documentation/Metadata/Metadata_Rules_Overview.html
 - uid: ocs-content-portal-overview
   name: OSIsoft Cloud Services
@@ -224,7 +224,7 @@ references:
   name: Subscriptions
   href: Content_Portal/Documentation/DataIngress/OMF_Ingress_Subscriptions.html
 - uid: omfIngressToOCS
-  name: Data Ingress to Cloud Services using OMF
+  name: Data collection using OMF
   href: Content_Portal/Documentation/DataIngress/OMF_Ingress_to_OCS.html
 - uid: omfIngressTopics
   name: Topics
@@ -296,7 +296,7 @@ references:
   name: Search in SDS
   href: Content_Portal/Documentation/SequentialDataStore/Searching.html
 - uid: sdsStreamExtra
-  name: Stream Metadata and Tags
+  name: Stream metadata and tags
   href: Content_Portal/Documentation/SequentialDataStore/SdsStreamExtra.html
 - uid: sdsStreams
   name: Streams
@@ -323,13 +323,13 @@ references:
   name: Tenant Management Concepts
   href: Content_Portal/Concepts/Tenant_Management_Concepts.html
 - uid: TokenManagement
-  name: Token Management
+  name: Token management
   href: Content_Portal/Concepts/token-management.html
 - uid: TrendUserInterface
   name: Trend User Interface
   href: Content_Portal/Quickstarts/Trend-UI.html
 - uid: unitsOfMeasure
-  name: Units of Measure
+  name: Units of measure
   href: Content_Portal/Documentation/SequentialDataStore/Units_of_Measure.html
 - uid: WhatIsOCS
   name: What is OSIsoft Cloud Services?

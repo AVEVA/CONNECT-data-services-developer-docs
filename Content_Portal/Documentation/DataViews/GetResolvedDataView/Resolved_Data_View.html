@@ -78,7 +78,7 @@
             <article class="content wrap" id="_content" data-uid="ResolvedDataView">
 <h1 id="get-resolved-data-view">Get resolved data view</h1>
 
-<p>Various information is available about how each data view <em>resolves</em>. This information describes exactly what data will be in the data view, where it comes from, and where it will appear. This is useful when defining a data view and when consuming it.</p>
+<p>A resolved data view is used to describe the output of a data view at the time it was resolved and for the authorized user. It can provide information on what items will be in the results, how they will be grouped, what items are mapped to a particular field, what additional fields are available to be included in the data view, and data items which are ineligible for mapping. Resolved Data Views do not query or return event data. This is useful when defining a data view and when consuming it.</p>
 <h2 id="general-concepts">General concepts</h2>
 <h3 id="what-does-resolving-mean">What does resolving mean?</h3>
 <p>A data view specifies <code>.Queries</code> to find data items, <code>.GroupingFields</code> (optionally) to group those data items into groups, and <code>.FieldSets</code> to include fields of data into the data view. <em>Resolving</em> the data view means the data views engine executes those queries and computes how the resulting data items will form a data view.</p>

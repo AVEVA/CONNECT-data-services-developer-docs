@@ -4,6 +4,9 @@ references:
 - uid: accessControl
   name: Role-based access control
   href: Content_Portal/Documentation/Access_Control.html
+- uid: access-ocs-portal
+  name: Access the OCS customer portal
+  href: Content_Portal/How_To_Guides/PI-to-OCS/Set-up-PI-to-OCS/access-ocs-portal.html
 - uid: AccountClientRole_1
   name: Client roles
   href: Content_Portal/Documentation/Management/Account_ClientRole_1.html
@@ -37,6 +40,9 @@ references:
 - uid: AddIdentifyingField
   name: Add identifying field
   href: Content_Portal/Documentation/DataViews/DefineaDataView/Add_Identifying_Field.html
+- uid: agent-maintenance
+  name: PI to OCS Agent maintenance
+  href: Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Agent/update-agent.html
 - uid: AssetCentricDataAPI
   name: Asset Centric Data API
   href: Content_Portal/Documentation/Assets/asset-centric-data-api.html
@@ -67,12 +73,18 @@ references:
 - uid: ConceptsOverview
   name: OSIsoft Cloud Services
   href: Content_Portal/Concepts/Concepts_Overview.html
+- uid: confirm-data-retrieval
+  name: Confirm data retrieval
+  href: Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Data-Transfers/confirm-data-retrieval.html
 - uid: ConsolidateDataFields
   name: Consolidate data fields
   href: Content_Portal/Documentation/DataViews/DefineaDataView/Consolidate_Data_Fields.html
 - uid: ConvertAssetToAssetType
   name: Convert an asset to an asset type
   href: Content_Portal/How_To_Guides/Assets/convert-asset-to-asset-type.html
+- uid: create-a-data-transfer
+  name: Create a data transfer
+  href: Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Data-Transfers/create-a-data-transfer.html
 - uid: CreateAssetFromAssetType
   name: Create an asset from an asset type
   href: Content_Portal/How_To_Guides/Assets/create-asset-from-type.html
@@ -82,6 +94,9 @@ references:
 - uid: CreateConfigureAsset
   name: Create and configure an asset
   href: Content_Portal/How_To_Guides/Assets/create-an-asset.html
+- uid: create-pi-to-ocs-connection
+  name: Create a PI System connection
+  href: Content_Portal/How_To_Guides/PI-to-OCS/Set-up-PI-to-OCS/create-a-pi-to-ocs-connection.html
 - uid: CredentialManagement
   name: Credential management
   href: Content_Portal/Concepts/credential-management.html
@@ -91,6 +106,9 @@ references:
 - uid: DataStorageConcepts
   name: Data Storage Concepts
   href: Content_Portal/Concepts/Data_Storage_Concepts.html
+- uid: data-transfer-statuses
+  name: Data transfer statuses
+  href: Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Data-Transfers/data-transfer-statuses.html
 - uid: DataViewAPI
   name: Data view API
   href: Content_Portal/Documentation/DataViews/DataViewsAPIOverview/Data_View_API.html
@@ -151,6 +169,15 @@ references:
 - uid: DefineaDataViewRecommendedWorkflow
   name: 'Recommended workflow: Define a data view'
   href: Content_Portal/Documentation/DataViews/DefineaDataView/Rec_Workflow.html
+- uid: delete-data-transfer
+  name: Delete a data transfer
+  href: Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Data-Transfers/delete-data-transfer.html
+- uid: disable-ie-security
+  name: Disable IE enhanced security
+  href: Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Agent/disable-ie-security.html
+- uid: download-tenant-log
+  name: Tenant log messages
+  href: Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-log-messages/download-tenant-log.html
 - uid: GetDataViewDataRecommendedWorkflow
   name: 'Recommended workflow: Get data view data'
   href: Content_Portal/Documentation/DataViews/GetDataViewData/Rec_Workflow_Get.html
@@ -205,12 +232,39 @@ references:
 - uid: index
   name: OCS Content Portal
   href: index.html
+- uid: install-pi-to-ocs-agent
+  name: Install the PI to OCS Agent
+  href: Content_Portal/How_To_Guides/PI-to-OCS/Set-up-PI-to-OCS/install-agent.html
+- uid: landing-page1
+  name: PI to OCS Introduction
+  href: Content_Portal/How_To_Guides/PI-to-OCS/Overview-PI-to-OCS/landing-page1.html
+- uid: landing-page2
+  name: Set up PI to OCS
+  href: Content_Portal/How_To_Guides/PI-to-OCS/Set-up-PI-to-OCS/landing-page2.html
+- uid: landing-page3
+  name: Transfer PI System data to OCS
+  href: Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Data-Transfers/landing-page3.html
+- uid: landing-page4
+  name: PI to OCS Agent
+  href: Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Agent/landing-page4.html
+- uid: landing-page5
+  name: View PI to OCS logs
+  href: Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-log-messages/landing-page5.html
 - uid: LeastPrivilege
   name: Least privilege
   href: Content_Portal/Concepts/least-privilege.html
+- uid: log-messages
+  name: Common Event Viewer log messages
+  href: Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-log-messages/log-messages.html
+- uid: main-landing-page
+  name: PI to OCS
+  href: Content_Portal/How_To_Guides/PI-to-OCS/main-landing-page.html
 - uid: MetadataRulesOverview
   name: Metadata rules
   href: Content_Portal/Documentation/Metadata/Metadata_Rules_Overview.html
+- uid: min-sys-reqmnts
+  name: Minimum system requirements
+  href: Content_Portal/How_To_Guides/PI-to-OCS/Overview-PI-to-OCS/min-sys-reqmnts.html
 - uid: ocs-content-portal-overview
   name: OSIsoft Cloud Services
   href: Content_Portal/OCS_Content_Portal_Overview.html
@@ -253,9 +307,21 @@ references:
 - uid: osisoftCloudServices
   name: OSIsoft Cloud Services
   href: Content_Portal/Documentation/OSIsoft_Cloud_Services.html
+- uid: overview-data-transfers
+  name: Overview of data transfers
+  href: Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Data-Transfers/overview-data-transfers.html
+- uid: pi-to-ocs-limitations
+  name: Limitations of PI to OCS
+  href: Content_Portal/How_To_Guides/PI-to-OCS/Overview-PI-to-OCS/pi-to-ocs-limitations.html
+- uid: pi-to-ocs-overview
+  name: Overview of PI to OCS
+  href: Content_Portal/How_To_Guides/PI-to-OCS/Overview-PI-to-OCS/pi-to-ocs-overview.html
 - uid: PreviewDataView
   name: Preview data view API
   href: Content_Portal/Documentation/DataViews/PreviewDataViewAPI/Preview_Data_View_API.html
+- uid: repair-pi-to-ocs-agent
+  name: Repair an agent
+  href: Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Agent/repair-pi-to-ocs-agent.html
 - uid: ResolvedDataView
   name: Get resolved data view
   href: Content_Portal/Documentation/DataViews/GetResolvedDataView/Resolved_Data_View.html
@@ -316,6 +382,9 @@ references:
 - uid: sdsWritingDataApi
   name: API calls for writing data
   href: Content_Portal/Documentation/SequentialDataStore/Writing_Data_API.html
+- uid: set-up-agent
+  name: Confirm your agent is running
+  href: Content_Portal/How_To_Guides/PI-to-OCS/Set-up-PI-to-OCS/set-up-agent.html
 - uid: support
   name: Technical support and other resources
   href: Content_Portal/Documentation/support.html
@@ -325,12 +394,21 @@ references:
 - uid: TokenManagement
   name: Token management
   href: Content_Portal/Concepts/token-management.html
+- uid: transfer-data-to-ocs
+  name: Transfer PI System data to OCS
+  href: Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Data-Transfers/transfer-data-to-ocs.html
 - uid: TrendUserInterface
   name: Trend User Interface
   href: Content_Portal/Quickstarts/Trend-UI.html
+- uid: uninstall-pi-to-ocs-agent
+  name: Uninstall an agent
+  href: Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Agent/uninstall-pi-to-ocs-agent.html
 - uid: unitsOfMeasure
   name: Units of measure
   href: Content_Portal/Documentation/SequentialDataStore/Units_of_Measure.html
+- uid: view-logs
+  name: View PI to OCS Agent logs
+  href: Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-log-messages/view-logs.html
 - uid: WhatIsOCS
   name: What is OSIsoft Cloud Services?
   href: Content_Portal/Overview/what-is-ocs.html

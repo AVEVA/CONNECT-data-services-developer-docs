@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Overview of PI to OCS </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Overview of PI to OCS ">
+    <meta name="generator" content="docfx 2.56.5.0">
+    
+    <link rel="shortcut icon" href="../../../../favicon.ico">
+    <link rel="stylesheet" href="../../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../../toc.html">
+    <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    <meta property="docfx:rel" content="../../../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../../../../index.html" width="46">
+        <img id="logo" src="../../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Services">
+        </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="pi-to-ocs-overview">
+<h1 id="overview-of-pi-to-ocs">Overview of PI to OCS</h1>
+
+<p>PI to OCS enables data transfer from your on-premises PI Server(s) to OSIsoft Cloud Services (OCS). PI to OCS supports the following features:</p>
+<ul>
+<li>Transfer of a selection of PI Data Archive PI points from PI Servers to OCS Sequential Data Store (SDS) <a class="xref" href="../../../Documentation/SequentialDataStore/SDS_Streams.html">streams</a>. Some of the PI point attributes information is transferred as SDS stream <a class="xref" href="../../../Documentation/SequentialDataStore/SdsStreamExtra.html">metadata</a> and properties.</li>
+<li>Simultaneous transfer of both historical and streaming data from PI Data Archive to SDS for a selection of PI points</li>
+<li>Configuration of a PI points selection and data transfer management via the OCS customer portal</li>
+</ul>
+<p>Transferring PI System data into OCS allows your organization to have data available wherever you go, so users can connect with the best in-class analytics, and with your community of vendors, service providers, and business partners.</p>
+<p>PI to OCS has two major components:</p>
+<ol>
+<li><p>An on-premises component called the &quot;PI to OCS Agent&quot; that serves as a bridge between the source PI Server and the OCS destination. The agent runs as a service and performs fast, secure data transfers.</p>
+</li>
+<li><p>A cloud component called a &quot;PI System connection&quot; or &quot;PI System connection data source&quot;, which resides within OCS and receives data from the on-premises PI to OCS Agent and stores it in SDS.</p>
+</li>
+</ol>
+<p><strong>Note.</strong> Storage in SDS is partitioned by OCS namespace.</p>
+<p>The deployment of a PI to OCS Agent establishes a one-to-one connection from an on-premises source PI Server to an OCS PI System connection.</p>
+<p><img src="../../images/ocs-diagram.png" alt="PI to OCS"></p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/How_To_Guides/PI-to-OCS/Overview-PI-to-OCS/pi-to-ocs-overview.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2021 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

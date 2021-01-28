@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Common Event Viewer log messages </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Common Event Viewer log messages ">
+    <meta name="generator" content="docfx 2.56.5.0">
+    
+    <link rel="shortcut icon" href="../../../../favicon.ico">
+    <link rel="stylesheet" href="../../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../../toc.html">
+    <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    <meta property="docfx:rel" content="../../../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../../../../index.html" width="46">
+        <img id="logo" src="../../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Services">
+        </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="log-messages">
+<h1 id="common-event-viewer-log-messages">Common Event Viewer log messages</h1>
+
+<p>The table below summarizes the most common messages logged by the Event Viewer.</p>
+<table>
+<thead>
+<tr>
+<th>Message</th>
+<th>ID</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Started Agent</td>
+<td>0</td>
+<td>The PI to OCS Agent has been started.</td>
+</tr>
+<tr>
+<td> Stopped Agent</td>
+<td>2</td>
+<td>The PI to OCS Agent has been stopped.</td>
+</tr>
+<tr>
+<td> Connected To Data Archive</td>
+<td>18</td>
+<td>The PI to OCS Agent has connected to source PI Data Archive. PI Data Archive information will be printed in the message.</td>
+</tr>
+<tr>
+<td> Error Performing Point Query</td>
+<td>19</td>
+<td>The PI to OCS Agent has encountered an error querying for PI points in the source PI Data Archive. The exception reason and the query ID will be displayed.</td>
+</tr>
+<tr>
+<td>Failed To Get Data Archive Info</td>
+<td>21</td>
+<td>The PI to OCS Agent has encountered an error while trying to get archive file information from the source PI Data Archive. The exception reason will be displayed. Depending on the exception, this call may or may not be automatically retried.</td>
+</tr>
+<tr>
+<td>Data Archive Version Not Supported</td>
+<td>24</td>
+<td>The source PI Data Archive version is not supported. Currently, the PI to OCS Agent only supports PI Data Archive 2016 R2 (3.4.415.1188) and above. Please upgrade your PI Data Archive if you wish to use PI to OCS.</td>
+</tr>
+<tr>
+<td>Failed To Perform Point Query - Element Invalid</td>
+<td>27</td>
+<td>One or more the query objects (Point Mask and/or Point Source Mask) is invalid. If this query is made via the OCS Portal, users should not get this error.</td>
+</tr>
+<tr>
+<td>Agent Registration Completed</td>
+<td>30</td>
+<td>The PI to OCS Agent registration was successful</td>
+</tr>
+<tr>
+<td>Agent Registration Failed</td>
+<td>33</td>
+<td>The PI to OCS Agent registration was not successful. The most frequent reasons why this would occur are as follows: 1) The source PI Data Archive was already tied to an existing Connection; and, 2)  The Connection is already tied to another PI to OCS Agent.</td>
+</tr>
+<tr>
+<td>Agent Received Unregister Request</td>
+<td>60</td>
+<td>The PI to OCS Agent received an unregister request from the OCS Portal. As a result, the PI to OCS Agent will unregister and shutdown.</td>
+</tr>
+<tr>
+<td>Agent Unregistered</td>
+<td>62</td>
+<td>Confirmation message that the PI to OCS Agent is unregistered after receiving event ID 60.</td>
+</tr>
+<tr>
+<td>Processing Transfer Job Request</td>
+<td>65</td>
+<td>The PI to OCS Agent has received the new transfer request. The message will contain information about the contents of the transfer such as the transfer historical start time and the number of involved points.</td>
+</tr>
+<tr>
+<td>Done Transferring Data To OCS For Transfer Job</td>
+<td>70</td>
+<td>The PI to OCS Agent has completed the given transfer job. At this moment, the only transfer jobs which will complete are the historical and backfilling transfer jobs. By the very nature of streaming data, streaming transfer job will never complete.</td>
+</tr>
+<tr>
+<td>Error Reading From Data Archive</td>
+<td>90</td>
+<td>The PI to OCS Agent was unable to read data from PI Data Archive. The event will contain the exception message.</td>
+</tr>
+<tr>
+<td>Failed To Get Streaming Updates From Data Archive</td>
+<td>96</td>
+<td>The PI to OCS Agent was not unable to get streaming data from PI Data Archive. The message will contain the exception message.</td>
+</tr>
+</tbody>
+</table>
+<p>If you have any issues, questions, or comments about deploying or using PI to OCS, please visit <a href="https://my.osisoft.com/">my.osisoft.com</a> to open a new technical support case.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-log-messages/log-messages.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2021 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Confirm your agent is running </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Confirm your agent is running ">
+    <meta name="generator" content="docfx 2.56.5.0">
+    
+    <link rel="shortcut icon" href="../../../../favicon.ico">
+    <link rel="stylesheet" href="../../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../../toc.html">
+    <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    <meta property="docfx:rel" content="../../../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../../../../index.html" width="46">
+        <img id="logo" src="../../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Services">
+        </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="set-up-agent">
+<h1 id="confirm-your-agent-is-running">Confirm your agent is running</h1>
+
+<p>After installation, confirm your PI to OCS Agent is running on the machine it was installed. You also need to confirm the agent has successfully connected to and registered with your on-premises PI Data Archive.</p>
+<h2 id="procedure">Procedure</h2>
+<ol>
+<li>Type <code>services.msc</code> in the text box next to the <strong>Windows</strong> menu button, then press [ENTER].</li>
+<li><p>In the <strong>Services</strong> window, scroll down to <strong>PI to OCS Agent</strong> and verify that that the <strong>Status</strong> field shows <strong>Running</strong>.</p>
+<p> <img src="../../images/services-window.png" alt=" ">
+ <em>Services window</em></p>
+</li>
+<li><p>Navigate to the Connections page, then select the connection you just created.</p>
+</li>
+<li>On the Details tab, view the Data Source Status field.</li>
+<li><p>Verify that Registered appears next to the <strong>Data Source Status</strong> field.</p>
+<p> <img src="../../images/regstrd-data-source.png" alt=" ">
+ <em>Registered data source</em></p>
+</li>
+</ol>
+<p><strong>NOTE:</strong> It may take a few minutes for your PI System to be registered. The following states may also appear next to the Data Source Status field to indicate a connection issue:</p>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Data Source Connection Issue</td>
+<td>Indicates the PI To OCS Agent isn’t able to connect to the PI Data Archive. Some reasons for this status include the PI Data Archive is turned off, a firewall issue is preventing connections or an incorrect name is configured for the Data Archive (for example, trying to connect to a machine that doesn’t exist/was renamed). There may be additional reasons for this status.</td>
+</tr>
+<tr>
+<td> Data Source Security Issue</td>
+<td>Indicates the PI Data Archive connection is unsecure and security settings need to be addressed.</td>
+</tr>
+<tr>
+<td> Not Registered</td>
+<td>You need to troubleshoot your PI System connection. Contact OSIsoft Technical Support at +1 510-297-5828 or through the <a href="https://ssoadfsbe.osisoft.com/adfs/ls/idpinitiatedsignon.aspx?SAMLRequest=fZJdb6pAEIb%2FCtl7FBGIJcVGRVuq%2BIFgkZtm%2BbIrsIvMosVff6ieJu1NJ9mL2XfmncnkeXz6LHLhnFRAGDVQryMhIaERiwk9GMhzZ%2BIAPQ0fARd5qY9q%2FkGd5FQnwIW2j4J%2BEwxUV1RnGAjoFBcJ6DzStyN7ocsdSS8rxlnEciSMAJKKt4MmjEJdJNU2qc4kSjxnYaAPzkvQu92oBs5aDTqs9WMp70Ss6ObsQOgTMEOSzJ4l3UKeKQoSzHYZQjG%2F7f9tAsBwnEKY%2FDL5%2Burm0CVxSSjhBPMkBnKgjHYwlJ9IsEwDvcuTURt%2BctG8uWJPBxfbyy62Ofp60uaaXb9k1T5e3X1qp4tp%2BZlvx6EZbdy5CQcx5ctjqZ5Ie45pENZncV4fT4PTznJEtdrKezHZYSe9zLSmGRTv0WsWSNlk47yGTVD58UGVrfGGX8V97i52wVKdibI3zpWLBMeBp%2B0jtQqjVa6wJttng4ZdFl6B%2B3PfIlq8El28NBk9u0tLnazE%2FkN8pMpM8YHTl7mdr8vQGfXf4Ip5owR5wHFwdGC2j0iRBfK6WdfVm48z9Xl88MXBfHJ619zMn8bLpfxQyTNNs5z0rJyfpWqxWo3aawHUiUWBY8oNJEtyT5R6oiy5PU1X%2B3q%2F3%2Bk9KAES1v8BGBN6x%2BovWsJ7EegvrrsW16uti4TdN55tAbrDqN%2BGVz8o%2FNsWf6OHhn%2BC9tj94T68Z7%2FBH%2F4D&amp;RelayState=%2Fs%2F&amp;SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256&amp;Signature=cEXMU%2FcKNyUJwG7OtFpybbv8R1iC%2BLdv4W%2FG3kAX0HQlcNYDwqnaYdBf6pedIux3Eb8hZZH09bzV7mn5iorb0ZQz6C4i%2F838Cj8rHmKiM0V2jWE2Ij3JqqlHiE4CRZqK04sGopvso1TBesyrHrvhhwzLmBN3%2FJfKaYE3PDFzrFpJCmkdrBw2IPlJ%2BEgD87%2BcUxzKqWC4cViqeNvLydst%2FMXuDjhbHrWYrFoFXexOHttyRDO%2BWl5m2pg8l5gzr43WTBbNPm1VFjoR6tJ3Z3%2BGphXpOgErCG41MAAOFH0qO8%2BWwjDVZgNX5KXVaIXbjISFb8jXccMQ9NhPfvfRSbwMgg%3D%3D">OSIsoft Customer Portal</a>.</td>
+</tr>
+</tbody>
+</table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/How_To_Guides/PI-to-OCS/Set-up-PI-to-OCS/set-up-agent.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2021 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

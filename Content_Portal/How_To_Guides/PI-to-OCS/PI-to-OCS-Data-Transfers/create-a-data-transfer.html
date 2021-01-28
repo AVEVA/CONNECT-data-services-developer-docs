@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Create a data transfer </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Create a data transfer ">
+    <meta name="generator" content="docfx 2.56.5.0">
+    
+    <link rel="shortcut icon" href="../../../../favicon.ico">
+    <link rel="stylesheet" href="../../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../../toc.html">
+    <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    <meta property="docfx:rel" content="../../../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../../../../index.html" width="46">
+        <img id="logo" src="../../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Services">
+        </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="create-a-data-transfer">
+<h1 id="create-a-data-transfer">Create a data transfer</h1>
+
+<p>A data transfer contains a selection of PI point data you wish to stream from your on-premises PI Data Archive to the desired namespace in OCS. The data transfer process consists of the following steps:</p>
+<ol>
+<li>Select the PI System connection for the data transfer.</li>
+<li>Create multiple search queries for PI points.</li>
+<li>Select the PI points you wish to transfer.</li>
+<li>Transfer the data to OCS.
+ </li>
+</ol>
+<h2 id="before-you-start">Before you start</h2>
+<p>Create a PI System connection, install the PI to OCS agent, and then confirm your data source has been registered in OCS.  </p>
+<h2 id="procedure">Procedure</h2>
+<ol>
+<li>Sign in to the <a href="https://cloud.osisoft.com/">OCS portal</a>.</li>
+<li>In the OCS portal, open the <strong>Connections</strong> page.    </li>
+<li>On the <strong>Connections</strong> page, select the PI System connection you want to use for the data transfer.</li>
+<li><p>In the right pane, click <strong>Add PI Point Transfer</strong>.</p>
+<p> <strong>Result:</strong> The <strong>Add PI Point Transfer</strong> window opens.</p>
+<p> <img src="../../images/add-pps-transfer-window.png" alt=" "> </p>
+<p> <em>The Add PI Point Transfer window</em></p>
+</li>
+<li><p><strong>Optional:</strong> Click the <strong>Advanced</strong> button to display more search fields.</p>
+<p><img src="../../images/add-pps-transfer-advanced.png" alt=" "></p>
+<p><em>Advanced search fields</em></p>
+</li>
+<li><p>To build a search query, choose from the following actions:</p>
+<p><img src="../../images/query-table.png" alt=" "></p>
+</li>
+<li><p><strong>Optional:</strong> Click the <strong>Basic</strong> button to hide the extra search fields.</p>
+</li>
+<li><p><strong>Optional:</strong> To remove advanced filters from your search criteria, click the <strong>x</strong> on the field label.</p>
+<p><strong>Note:</strong> If you do not specify filter criteria, all PI points will be returned in your query results.</p>
+</li>
+<li><p>Click <strong>Search</strong> to execute your query and retrieve a list of matching PI points from your data source.</p>
+<p><img src="../../images/add-pp-transfer.png" alt=" "></p>
+<p><em>Query results in the PI Points Found list box</em></p>
+</li>
+<li><p>Scroll through the <strong>PI Points Found</strong> list box and click each PI point you want added to the data transfer.</p>
+<p><strong>Tip:</strong> To select a range of PI points, [SHIFT+Click] a non-adjacent PI point in the list after selecting a point.</p>
+</li>
+<li><p><strong>Optional:</strong> To advance through multiple-paged query results, click the back and forward arrows OR enter a page number in the Page text box.</p>
+<p> <strong>Note:</strong> The total number of PI points in the query results is listed in “(  )” to the right of the <strong>PI Points Found</strong> check box. For multiple paged results, PI points are sorted in ascending order. Each page can display up to 200 PI points (this feature is only available with version 1.4.0.0 and later of the Agent).</p>
+</li>
+<li><p><strong>Optional:</strong> Click the PI Points Found check box to select all PI points on a page.</p>
+</li>
+<li><p>After you have finished selecting PI points, click <strong>Add</strong>.</p>
+<p><strong>NOTE:</strong> PI points that have already been selected for a data transfer appear grey in the <strong>PI Points Found</strong> list box to ensure duplicate points are not added.</p>
+</li>
+<li><p><strong>Optional:</strong> Click <strong>Clear All</strong> to remove selected PI points from the PI Points to Transfer list.</p>
+</li>
+<li><p>To run a new query and add additional PI points to your data transfer, repeat steps 4-12 as many times as needed.</p>
+<p><strong>TIP:</strong> To prevent duplicate query results, be sure to replace existing search criteria.</p>
+</li>
+<li><p><strong>Optional:</strong> Enter a historical time context for data retrieval using the <strong>Historical Start Time</strong> fields.</p>
+<p><strong>NOTE:</strong> OCS supports out of order events and stores data in chronological order by timestamp.  PI Data Archive 2017 SP2 or higher is required for this feature. Be sure to enter the historical start date and time correctly to ensure all data is included in the transfer.  No data before the historical start time will be captured and stored in SDS.
+ </p>
+</li>
+<li><p>Once you have finished selecting PI points, click <strong>Add Transfer</strong>.
+The transfer is saved and displayed in the <strong>Data Transfer</strong> section of the <strong>Details</strong> pane.</p>
+<p><strong>Note:</strong> If you make multiple PI point selections across pages in a query result, these selections are preserved.</p>
+<p><img src="../../images/data-transfer.png" alt=" "></p>
+<p><em>Data Transfer details</em></p>
+</li>
+</ol>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Data-Transfers/create-a-data-transfer.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2021 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

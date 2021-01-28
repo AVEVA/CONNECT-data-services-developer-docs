@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Limitations of PI to OCS </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Limitations of PI to OCS ">
+    <meta name="generator" content="docfx 2.56.5.0">
+    
+    <link rel="shortcut icon" href="../../../../favicon.ico">
+    <link rel="stylesheet" href="../../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../../toc.html">
+    <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    <meta property="docfx:rel" content="../../../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../../../../index.html" width="46">
+        <img id="logo" src="../../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Services">
+        </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="pi-to-ocs-limitations">
+<h1 id="limitations-of-pi-to-ocs">Limitations of PI to OCS</h1>
+
+<p>Here is a list of currently known limitations for PI to OCS:</p>
+<table>
+<thead>
+<tr>
+<th>Issue</th>
+<th>Restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Restrictions for PI point transfers</td>
+<td><ul><li>Point must belong to the classic or base point class.</li><li>Point type must be Float32, Float64, Int16, Int32, Digital, Timestamp or String.</li><li>Must not be a future PI data tag.</li><li>Transfer only transfers PI point attributes: descriptor, extended descriptor, point source, engineering units, name, instrument tag, and PI point ID.</li></ul></td>
+</tr>
+<tr>
+<td>Data transfers</td>
+<td><ul><li>PI to OCS does not transfer any data from PI Asset Framework.</li></ul></td>
+</tr>
+<tr>
+<td>PI to OCS Agent registration</td>
+<td><ul><li>Once a PI to OCS Agent is registered to an OCS PI data source, no other PI to OCS Agent can connect to that same OCS PI data source.</li></ul></td>
+</tr>
+<tr>
+<td>PI to OCS does not automatically transfer PI Point attribute changes.</td>
+<td><ul><li>Any modification of PI point information after transfer has initiated will not be propagated to OCS.</li><li>The PI to OCS Agent must be restarted to recognize these configuration changes.</li><li>If there is a point type change on PI Data Archive, see <a href="/PI-to-OCS-Data-Transfers/pi-point-change.md">PI point change</a> for more information.</li></ul></td>
+</tr>
+<tr>
+<td>PI Data Archive</td>
+<td><ul><li>PI to OCS does not write events back to PI Data Archive from OCS.</li><li>PI to OCS does not handle scenarios where PI Data Archives have been taken offline.</li></ul></td>
+</tr>
+<tr>
+<td>SDS streams indexes</td>
+<td><ul><li>Does not support multiple values at a given index.</li><li>If a PI Data Archive tag has multiple values at a given timestamp, OCS will only store one of those values.</li></ul></td>
+</tr>
+<tr>
+<td>Service account used for PI to OCS Agent</td>
+<td><ul><li>Once installed, the service account cannot be changed to another account.</li><li>To change a service account, you need to perform the following tasks:<ol><li>Uninstall the PI to OCS Agent.</li><li>Delete the old connection.</li><li>Create a new connection.</li><li>Reinstall the PI to OCS Agent.</li></ol></li></ul></td>
+</tr>
+</tbody>
+</table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/How_To_Guides/PI-to-OCS/Overview-PI-to-OCS/pi-to-ocs-limitations.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2021 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

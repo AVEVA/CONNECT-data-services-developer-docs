@@ -1104,7 +1104,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/SequentialDataStore/SDS_Streams.html",
-          "hash": "YPe07H5W+Av38hSFM5RZBQ=="
+          "hash": "WcBz//oVLwA6zahdnUhXXQ=="
         }
       },
       "is_incremental": false,
@@ -1116,7 +1116,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/SequentialDataStore/SDS_Types.html",
-          "hash": "Eh5T8e8om8dWjiyO1uzZ2g=="
+          "hash": "Z2nn0tDMoGN8yOQj8MYTsA=="
         }
       },
       "is_incremental": false,
@@ -1128,7 +1128,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/SequentialDataStore/SDS_Views.html",
-          "hash": "P1fSah0dqB4+pfWt1KhBrg=="
+          "hash": "wq15HH0OB1NLxDZuGVNVpg=="
         }
       },
       "is_incremental": false,
@@ -1164,7 +1164,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/SequentialDataStore/Units_of_Measure.html",
-          "hash": "YFYyPvfZRKG1mxbRrOcKRg=="
+          "hash": "fa3jY89uydc+ENYixdeP7w=="
         }
       },
       "is_incremental": false,
@@ -1360,6 +1360,380 @@
       "version": ""
     },
     {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/Overview-PI-to-OCS/landing-page1.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/Overview-PI-to-OCS/landing-page1.html",
+          "hash": "N0Lghe+TTCR6MCxxxqoELw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/Overview-PI-to-OCS/min-sys-reqmnts.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/Overview-PI-to-OCS/min-sys-reqmnts.html",
+          "hash": "qH7tHXECbeCM9ETYCX21Ww=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/Overview-PI-to-OCS/pi-to-ocs-limitations.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/Overview-PI-to-OCS/pi-to-ocs-limitations.html",
+          "hash": "qHzqIWu7xq3Z1zm1F7yMBg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/Overview-PI-to-OCS/pi-to-ocs-overview.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/Overview-PI-to-OCS/pi-to-ocs-overview.html",
+          "hash": "VwayQDamjUmaoTxceJkVNQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Agent/disable-ie-security.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Agent/disable-ie-security.html",
+          "hash": "mueca2HuuIwFEZThhTJXpA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Agent/landing-page4.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Agent/landing-page4.html",
+          "hash": "ZQt5s1zuE8iGsBVokxpjsw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Agent/repair-pi-to-ocs-agent.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Agent/repair-pi-to-ocs-agent.html",
+          "hash": "tgQvMhmG8zsWR5p6fP5k0A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Agent/uninstall-pi-to-ocs-agent.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Agent/uninstall-pi-to-ocs-agent.html",
+          "hash": "hbjz6HdMXaf44Nr5aYA8EA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Agent/update-agent.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Agent/update-agent.html",
+          "hash": "kEcZtbjARMjhiGAqKz5Osw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Data-Transfers/confirm-data-retrieval.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Data-Transfers/confirm-data-retrieval.html",
+          "hash": "U5WBkvfWLZXVISvzMhaKrg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Data-Transfers/create-a-data-transfer.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Data-Transfers/create-a-data-transfer.html",
+          "hash": "LmZx54BfzaOQ6xe7nfFj7Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "UidNotFound"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Data-Transfers/data-transfer-statuses.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Data-Transfers/data-transfer-statuses.html",
+          "hash": "+75HvXiodG85xS5JFriZlQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Data-Transfers/delete-data-transfer.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Data-Transfers/delete-data-transfer.html",
+          "hash": "1eje4AVM/diayEoUWyElUg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "UidNotFound"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Data-Transfers/landing-page3.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Data-Transfers/landing-page3.html",
+          "hash": "4sGATMpCwLBqrmpabyo+/A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Data-Transfers/overview-data-transfers.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Data-Transfers/overview-data-transfers.html",
+          "hash": "ZQEYSp8YW90GqvQJ7qQKbw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Data-Transfers/pi-point-change.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Data-Transfers/pi-point-change.html",
+          "hash": "pst+h3pt+wDJ8BRMt4JWTw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Data-Transfers/transfer-data-to-ocs.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Data-Transfers/transfer-data-to-ocs.html",
+          "hash": "xnGYIoIoAdcPaNNQlQp2gw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-log-messages/download-tenant-log.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-log-messages/download-tenant-log.html",
+          "hash": "fpC0z7oBnVQtC4T1s5ZQjg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-log-messages/landing-page5.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-log-messages/landing-page5.html",
+          "hash": "rPXqEef7wWzeAwaiVXKbZw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-log-messages/log-messages.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-log-messages/log-messages.html",
+          "hash": "0ef2zgngU+vvBT9m3kACJA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-log-messages/view-logs.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-log-messages/view-logs.html",
+          "hash": "IIGZkef5o5THPmMkVw3HfQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/Set-up-PI-to-OCS/access-ocs-portal.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/Set-up-PI-to-OCS/access-ocs-portal.html",
+          "hash": "sycobjEWdBPMPYf7bLzI1w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/Set-up-PI-to-OCS/create-a-pi-to-ocs-connection.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/Set-up-PI-to-OCS/create-a-pi-to-ocs-connection.html",
+          "hash": "VJI4FbnUNmEpVU5/5B+RVg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/Set-up-PI-to-OCS/install-agent.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/Set-up-PI-to-OCS/install-agent.html",
+          "hash": "Mnh5SA+eLaR7DFiGOY8Fiw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/Set-up-PI-to-OCS/landing-page2.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/Set-up-PI-to-OCS/landing-page2.html",
+          "hash": "DQk6vznZPMTPl1ZF9ok9AQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/Set-up-PI-to-OCS/set-up-agent.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/Set-up-PI-to-OCS/set-up-agent.html",
+          "hash": "y/Nru5So9DuoQYnYqj4iOg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/main-landing-page.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/main-landing-page.html",
+          "hash": "ZMCfOwD5oMDnR/AycuCqRA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/add-pp-transfer.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/add-pp-transfer.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/add-pps-transfer-advanced.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/add-pps-transfer-advanced.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/add-pps-transfer-window.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/add-pps-transfer-window.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/agent-update-message.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/agent-update-message.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Resource",
       "source_relative_path": "Content_Portal/How_To_Guides/images/asset-type-picker.png",
       "output": {
@@ -1394,6 +1768,28 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/data-transfer-started.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/data-transfer-started.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/data-transfer.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/data-transfer.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "Content_Portal/How_To_Guides/images/edit-metadata-fields.png",
       "output": {
         "resource": {
@@ -1405,10 +1801,32 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/event-viewer.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/event-viewer.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "Content_Portal/How_To_Guides/images/icon_navigation_bigger.png",
       "output": {
         "resource": {
           "relative_path": "Content_Portal/How_To_Guides/images/icon_navigation_bigger.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/ie-security-config-window.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/ie-security-config-window.png"
         }
       },
       "is_incremental": false,
@@ -1449,10 +1867,153 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/namespace-field.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/namespace-field.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "Content_Portal/How_To_Guides/images/namespace-icon.png",
       "output": {
         "resource": {
           "relative_path": "Content_Portal/How_To_Guides/images/namespace-icon.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/ocs-diagram.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/ocs-diagram.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/pi2ocs-cnnxtn.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/pi2ocs-cnnxtn.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/pi2ocs-dwnld-icon.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/pi2ocs-dwnld-icon.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/pi2ocs-serv-acct.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/pi2ocs-serv-acct.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/pi2ocs-uninstall.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/pi2ocs-uninstall.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/pisys-cnxtn.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/pisys-cnxtn.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/query-table.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/query-table.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/regstrd-data-source.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/regstrd-data-source.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/sds-page.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/sds-page.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/services-window.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/services-window.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/setupkit_welcome.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/setupkit_welcome.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/sign-in-screen.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/sign-in-screen.png"
         }
       },
       "is_incremental": false,
@@ -1526,10 +2087,54 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/support-menu.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/support-menu.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/transfer-config-filtered.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/transfer-config-filtered.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/transfer-config-window.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/transfer-config-window.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "Content_Portal/How_To_Guides/images/type-stream-reference-caret.png",
       "output": {
         "resource": {
           "relative_path": "Content_Portal/How_To_Guides/images/type-stream-reference-caret.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/waffle_button.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/waffle_button.png"
         }
       },
       "is_incremental": false,
@@ -1966,7 +2571,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/toc.html",
-          "hash": "4eDlJM0d/S758ya4RxS0gQ=="
+          "hash": "V/uRuib/epFMHKQ0Gz7q1w=="
         }
       },
       "is_incremental": false,
@@ -2023,7 +2628,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 117,
+          "total_file_count": 144,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

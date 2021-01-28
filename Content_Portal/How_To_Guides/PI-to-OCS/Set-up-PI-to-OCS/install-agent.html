@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Install the PI to OCS Agent </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Install the PI to OCS Agent ">
+    <meta name="generator" content="docfx 2.56.5.0">
+    
+    <link rel="shortcut icon" href="../../../../favicon.ico">
+    <link rel="stylesheet" href="../../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../../toc.html">
+    <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    <meta property="docfx:rel" content="../../../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../../../../index.html" width="46">
+        <img id="logo" src="../../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Services">
+        </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="install-pi-to-ocs-agent">
+<h1 id="install-the-pi-to-ocs-agent">Install the PI to OCS Agent</h1>
+
+<p>The PI to OCS Agent must be installed on a host computer, separate from your PI Data Archive deployment, by a Windows user with local Administrative privileges. You can download the PI to OCS Agent Installation kit and then transfer it to the computer that will host the agent.</p>
+<p><strong>Note.</strong> The PI to OCS Agent installation cannot be completed if the system time is not correct. Additionally, you will not be able to complete the PI to OCS Agent installation if Internet Explorer Enhanced Security configuration is enabled.  See <a class="xref" href="../PI-to-OCS-Agent/disable-ie-security.html">Disable Internet Explorer Enhanced Security Configuration</a> for details.</p>
+<h2 id="procedure">Procedure</h2>
+<ol>
+<li><strong>Optional:</strong> Navigate to the <strong>Connections</strong> page.</li>
+<li><p>Click the <strong>Download the PI to OCS Agent Installation Kit</strong> icon.</p>
+<p> <img src="../../images/pi2ocs-dwnld-icon.png" alt=" "></p>
+<p> <em>PI to OCS Agent Download Installation Kit page</em></p>
+</li>
+<li>Download the PI to OCS agent to the desired location.</li>
+<li>Close the <strong>Download Installation Kit</strong> window.</li>
+<li>Navigate to the downloaded PI to OCS agent installation file.</li>
+<li>Right-click the PI to OCS agent installation file, then click <strong>Run as administrator</strong>.</li>
+<li><p>Click <strong>Yes</strong>.</p>
+<p> <br><img src="../../images/setupkit_welcome.png" alt=" "></p>
+<p> <em>The Welcome Screen in the PI to OCS Agent Setup Kit</em></p>
+</li>
+<li>In the <strong>PI to OCS Agent (Administrator)</strong> window, click <strong>Next</strong>.</li>
+<li>Enter your OCS tenant ID or company alias, then click <strong>Next</strong>.</li>
+<li>Select or enter the following for your connection:<ul>
+<li><strong>Namespace:</strong> Select the location where data will be stored after the data transfer. The region indicates where the namespace resides. Streaming data sent by the PI to OCS Agent will only go to the selected namespace’s region.</li>
+<li><strong>Connection:</strong> Select the name of the data transfer connection you created earlier. </li>
+<li><strong>PI Data Archive:</strong> Enter the name of the on-premises PI Data Archive you want to transfer data from.</li>
+</ul>
+</li>
+<li><p><strong>Optional:</strong> Click the <strong>Refresh Connection List</strong> button to refresh the list of available connections and select a different PI Data Archive.</p>
+<p><br>    <img src="../../images/pi2ocs-cnnxtn.png" alt=" "></p>
+<p><em>The Connection Screen in the PI to OCS Agent Setup Kit</em></p>
+</li>
+<li><p>Click <strong>Next</strong>.</p>
+</li>
+<li><p>Select the service account type for the connection:</p>
+<ul>
+<li><strong>NT Service</strong>: Use a Network Service account to connect to PI Data Archive.</li>
+<li><strong>This account</strong>: Specify a user name and password (domain\account) to connect to PI Data Archive.
+<strong>Note.</strong> The service account must have Administrative privileges and read access to certain data on PI Data Archive.
+<img src="../../images/pi2ocs-serv-acct.png" alt=" ">
+<em>The Service Account screen in the PI to OCS Agent Setup Kit</em></li>
+</ul>
+</li>
+<li><p>Click <strong>Install</strong>, then click <strong>Close</strong>.
+<br><strong>Result:</strong> The PI to OCS Agent is installed and registered to the PI System data source in OCS. The registration process can take a few minutes.</p>
+</li>
+</ol>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/How_To_Guides/PI-to-OCS/Set-up-PI-to-OCS/install-agent.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2021 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

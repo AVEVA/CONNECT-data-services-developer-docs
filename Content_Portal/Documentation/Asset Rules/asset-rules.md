@@ -22,7 +22,6 @@ The asset rules API allows you to programmatically create, read, update, and del
 	[ 
 		{
 			"Field": "Id",
-			"Pattern": "{streamId}",
             "Specifications": 
             [
                 {
@@ -33,7 +32,6 @@ The asset rules API allows you to programmatically create, read, update, and del
 		},
 		{
 			"Field": "Name",
-			"Pattern": "{location}.test",
             "Specifications": [
                 {
                     "Type": "Group",
@@ -83,14 +81,6 @@ The asset rules API allows you to programmatically create, read, update, and del
 			}
 		}	
 	],
-	"ValueMappings": 
-	{
-		"{location}": 
-		{
-			"SL": "San leandro",
-			"AUS": "Austin"
-		}	
-	}
 }
 
 ```
@@ -143,13 +133,20 @@ Rule expressions are objects used to define how stream properties are parsed to 
 ## JSON Paths
 
 JSON paths can be used to retrieve stream metadata and stream type properties. The following are examples of JSON paths.
+Note: RegEx in JSON path is not supported in the `Field` specification.
 
 Retrieve stream metadata values 
 
 ```
 {
     "Field": "Metadata['key']",
-    "Pattern": "{value}"
+    "Specifications": 
+            [
+                {
+                    "Type": "Group",
+                    "Name": "value"
+                }
+            ]
 }
 ```
 
@@ -158,6 +155,12 @@ Retrieve UoM of the stream property type
 ```
 {
     "Field": "Type.Properties[?(@.Id == 'Value')].Uom",
-    "Pattern": "{valueUom}"
+    "Specifications": 
+            [
+                {
+                    "Type": "Group",
+                    "Name": "valueUom"
+                }
+            ]
 }
 ```

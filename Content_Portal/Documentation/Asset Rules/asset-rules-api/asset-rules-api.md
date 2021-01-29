@@ -56,8 +56,7 @@ The requested asset rule.
     "Expressions": [
         {
             "Field": "Id",
-            "Pattern": "{streamId}",
-            "Specifications": []
+            "Specifications": [ { "Type": "Group", "Name": "streamId" } ]
         },
     ],
     "Outputs": [

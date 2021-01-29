@@ -1,3 +1,7 @@
+---
+uid: pi-point-change
+---
+
 # Point type change
 
 When the source PI Data Archive tag(s) changes point type, PI to OCS Services will detect this change and present the transfer status as “PI Point Type Change Detected”.

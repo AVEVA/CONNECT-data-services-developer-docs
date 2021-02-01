@@ -310,6 +310,9 @@ references:
 - uid: overview-data-transfers
   name: Overview of data transfers
   href: Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Data-Transfers/overview-data-transfers.html
+- uid: pi-point-change
+  name: Point type change
+  href: Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Data-Transfers/pi-point-change.html
 - uid: pi-to-ocs-limitations
   name: Limitations of PI to OCS
   href: Content_Portal/How_To_Guides/PI-to-OCS/Overview-PI-to-OCS/pi-to-ocs-limitations.html

@@ -135,7 +135,7 @@ The response includes a status code and, in some cases, a body.
 ```
 
 ## `Get Data Views Access Rights`
-Get the calling user or client's access rights to the data views collection.
+Get access rights to the data views collection for the calling user or client.
 
 ### Request
 ```text
@@ -309,7 +309,7 @@ The response includes a status code and, in some cases, a body.
 ```
 
 ## `Get Data View Access Rights`
-Get the calling user or client's access rights to the requested data view
+Get access rights to the requested data view for the calling user or client.
 
 ### Request
 ```text

@@ -39,7 +39,7 @@ The following represents a data view grouped by "Meter", including fields for th
         {
           "Source": "PropertyId",
           "Keys": [ "Value" ],
-          "Label": "{IdentifyingValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {Key}"
         },
         {
           "Source": "Tags",
@@ -53,7 +53,7 @@ The following represents a data view grouped by "Meter", including fields for th
     {
       "Source": "Metadata",
       "Keys": [ "Meter" ],
-      "Label": "{IdentifyingValue} {FirstKey}"
+      "Label": "{IdentifyingValue} {Key}"
     }
   ]
 }
@@ -95,7 +95,7 @@ To the data view from the previous example, we will add a `Field` as the `.Ident
         {
           "Source": "PropertyId",
           "Keys": [ "Value" ],
-          "Label": "{IdentifyingValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {Key}"
         },
         {
           "Source": "Tags",
@@ -113,7 +113,7 @@ To the data view from the previous example, we will add a `Field` as the `.Ident
     {
       "Source": "Metadata",
       "Keys": [ "Meter" ],
-      "Label": "{IdentifyingValue} {FirstKey}"
+      "Label": "{IdentifyingValue} {Key}"
     }
   ]
 }
@@ -143,9 +143,9 @@ In cases where the identifiers are unique, the identifier is suffixed with an or
 
 There are four special parameters available for use in field labels:
 - `{IdentifyingValue}` - the value of the identifying field
-- `{FirstKey}` - the value of the first of the `"Keys"` specified on the field
+- `{Key}` - the value of the first of the `"Keys"` specified on the field
 - `{QueryId}` - the id of the query that produced the field
-- `{FirstStreamReferenceName}` *(Coming Soon)* - the value of the first of the `"StreamReferenceNames"` specified on the field
+- `{StreamReferenceName}` *(Coming Soon)* - the value of the first of the `"StreamReferenceNames"` specified on the field
 
 If a special parameter fails to resolve, it becomes an empty string, `""`.
 

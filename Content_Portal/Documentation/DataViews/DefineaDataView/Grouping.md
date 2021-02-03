@@ -63,7 +63,7 @@ Let us start with a simple data view. It queries for the aforementioned streams,
         {
           "Source": "PropertyId",
           "Keys": [ "Value" ],
-          "Label": "{IdentifyingValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {Key}"
         }
       ],
     }
@@ -100,27 +100,27 @@ A simple way of disambiguating the data items is to group them by data item id. 
         {
           "Source": "Metadata",
           "Keys": [ "Site" ],
-          "Label": "{IdentifyingValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {Key}"
         },
         {
           "Source": "Metadata",
           "Keys": [ "Meter" ],
-          "Label": "{IdentifyingValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {Key}"
         },
         {
           "Source": "Metadata",
           "Keys": [ "Inverter" ],
-          "Label": "{IdentifyingValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {Key}"
         },
         {
           "Source": "Metadata",
           "Keys": [ "Measurement" ],
-          "Label": "{IdentifyingValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {Key}"
         },
         {
           "Source": "PropertyId",
           "Keys": [ "Value" ],
-          "Label": "{IdentifyingValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {Key}"
         }
       ],
     }
@@ -169,13 +169,13 @@ Instead of grouping by data item id, let us group by metadata. This example uses
         {
           "Source": "PropertyId",
           "Keys": [ "Value" ],
-          "Label": "{IdentifyingValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {Key}"
         }
       ],
       "IdentifyingField": {
           "Source": "Metadata",
           "Keys": [ "Measurement" ],
-          "Label": "{IdentifyingValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {Key}"
         }
     }
   ],
@@ -183,17 +183,17 @@ Instead of grouping by data item id, let us group by metadata. This example uses
         {
           "Source": "Metadata",
           "Keys": [ "Site" ],
-          "Label": "{IdentifyingValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {Key}"
         },
         {
           "Source": "Metadata",
           "Keys": [ "Meter" ],
-          "Label": "{IdentifyingValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {Key}"
         },
         {
           "Source": "Metadata",
           "Keys": [ "Inverter" ],
-          "Label": "{IdentifyingValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {Key}"
         }
   ]
 }
@@ -240,13 +240,13 @@ This example includes two actions:
         {
           "Source": "PropertyId",
           "Keys": [ "Value" ],
-          "Label": "{IdentifyingValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {Key}"
         }
       ],
       "IdentifyingField": {
           "Source": "Metadata",
           "Keys": [ "Measurement" ],
-          "Label": "{IdentifyingValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {Key}"
         }
     },
     {
@@ -255,12 +255,12 @@ This example includes two actions:
         {
           "Source": "PropertyId",
           "Keys": [ "SolarRadiation" ],
-          "Label": "{IdentifyingValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {Key}"
         },
         {
           "Source": "PropertyId",
           "Keys": [ "Temperature", "AmbientTemperature" ],
-          "Label": "{IdentifyingValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {Key}"
         }
       ]
     }
@@ -269,17 +269,17 @@ This example includes two actions:
         {
           "Source": "Metadata",
           "Keys": [ "Site" ],
-          "Label": "{IdentifyingValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {Key}"
         },
         {
           "Source": "Metadata",
           "Keys": [ "Meter" ],
-          "Label": "{IdentifyingValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {Key}"
         },
         {
           "Source": "Metadata",
           "Keys": [ "Inverter" ],
-          "Label": "{IdentifyingValue} {FirstKey}"
+          "Label": "{IdentifyingValue} {Key}"
         }
   ]
 }

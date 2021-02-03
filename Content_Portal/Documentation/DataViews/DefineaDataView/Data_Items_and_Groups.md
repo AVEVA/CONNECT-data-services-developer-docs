@@ -39,12 +39,15 @@ When requesting for [resolved data items](xref:ResolvedDataViewAPI) or when [get
 ## Ineligible Data Items
 The collection of ineligible data items represents OCS resources that match the queries but cannot be included in the data view. A data item is ineligible if it does not contain at least one eligible non-key [data item field](xref:ResolvedDataView#dataitemfield).
 
-A data item field is ineligible if:
-* The corresponding SDS stream's index is
-  * Of a different type than the IndexTypeCode specified in the data view, or
-  * Compound.
-* The corresponding SDS property type is
-  * Complex (e.g. Object), or
-  * A collection (e.g. Array), or
-  * A timespan (TimeSpan or NullableTimeSpan)
+A data item field is ineligible if its index is not appropriate for the data view, or if the field has an SdsTypeCode that may not be included in data views.
 
+#### Examples of ineligible index:
+
+* The index is compound (multiple properties)
+* The index property's SdsTypeCode differs from the IndexTypeCode of the data view
+
+#### Examples of ineligible field types:
+
+* SdsTypeCode.Object (nested type)
+* SdsTypeCode.Array (collection type)
+* SdsTypeCode.TimeSpan (time spans and nullable time spans are currently unsupported)

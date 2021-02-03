@@ -41,12 +41,12 @@ The collection of ineligible data items represents OCS resources that match the 
 
 A data item field is ineligible if its index is not appropriate for the data view, or if the field has an SdsTypeCode that may not be included in data views.
 
-#### Examples of ineligible index:
+The following are examples of ineligible index:
 
 * The index is compound (multiple properties)
 * The index property's SdsTypeCode differs from the IndexTypeCode of the data view
 
-#### Examples of ineligible field types:
+The following are examples of ineligible field types:
 
 * SdsTypeCode.Object (nested type)
 * SdsTypeCode.Array (collection type)

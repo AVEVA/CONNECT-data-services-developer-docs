@@ -52,6 +52,12 @@ references:
 - uid: AssetResolvedAsset
   name: Resolved Asset
   href: Content_Portal/Documentation/Assets/asset-resolved-asset.html
+- uid: AssetRules
+  name: Asset Rules
+  href: Content_Portal/Documentation/Asset%20Rules/asset-rules.html
+- uid: AssetRulesAPI
+  name: Asset Rules API
+  href: Content_Portal/Documentation/Asset%20Rules/asset-rules-api/asset-rules-api.html
 - uid: AssetsAPI
   name: Assets API
   href: Content_Portal/Documentation/Assets/assets-api.html

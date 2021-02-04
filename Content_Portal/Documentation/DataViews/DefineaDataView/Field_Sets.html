@@ -141,7 +141,7 @@
         {
           &quot;Source&quot;: &quot;PropertyId&quot;,
           &quot;Keys&quot;: [ &quot;Value&quot; ],
-          &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
+          &quot;Label&quot;: &quot;{IdentifyingValue} {Key}&quot;
         },
         {
           &quot;Source&quot;: &quot;Tags&quot;,
@@ -155,7 +155,7 @@
     {
       &quot;Source&quot;: &quot;Metadata&quot;,
       &quot;Keys&quot;: [ &quot;Meter&quot; ],
-      &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
+      &quot;Label&quot;: &quot;{IdentifyingValue} {Key}&quot;
     }
   ]
 }
@@ -228,7 +228,7 @@
         {
           &quot;Source&quot;: &quot;PropertyId&quot;,
           &quot;Keys&quot;: [ &quot;Value&quot; ],
-          &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
+          &quot;Label&quot;: &quot;{IdentifyingValue} {Key}&quot;
         },
         {
           &quot;Source&quot;: &quot;Tags&quot;,
@@ -246,7 +246,7 @@
     {
       &quot;Source&quot;: &quot;Metadata&quot;,
       &quot;Keys&quot;: [ &quot;Meter&quot; ],
-      &quot;Label&quot;: &quot;{IdentifyingValue} {FirstKey}&quot;
+      &quot;Label&quot;: &quot;{IdentifyingValue} {Key}&quot;
     }
   ]
 }
@@ -322,9 +322,9 @@
 <p>There are four special parameters available for use in field labels:</p>
 <ul>
 <li><code>{IdentifyingValue}</code> - the value of the identifying field</li>
-<li><code>{FirstKey}</code> - the value of the first of the <code>&quot;Keys&quot;</code> specified on the field</li>
+<li><code>{Key}</code> - the value of the first of the <code>&quot;Keys&quot;</code> specified on the field</li>
 <li><code>{QueryId}</code> - the id of the query that produced the field</li>
-<li><code>{FirstStreamReferenceName}</code> <em>(Coming Soon)</em> - the value of the first of the <code>&quot;StreamReferenceNames&quot;</code> specified on the field</li>
+<li><code>{StreamReferenceName}</code> <em>(Coming Soon)</em> - the value of the first of the <code>&quot;StreamReferenceNames&quot;</code> specified on the field</li>
 </ul>
 <p>If a special parameter fails to resolve, it becomes an empty string, <code>&quot;&quot;</code>.</p>
 <h3 id="source">Source</h3>

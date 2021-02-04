@@ -1,0 +1,694 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Asset Rules API </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Asset Rules API ">
+    <meta name="generator" content="docfx 2.56.5.0">
+    
+    <link rel="shortcut icon" href="../../../../favicon.ico">
+    <link rel="stylesheet" href="../../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../../toc.html">
+    <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    <meta property="docfx:rel" content="../../../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../../../../index.html" width="46">
+        <img id="logo" src="../../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Services">
+        </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="AssetRulesAPI">
+<h1 id="asset-rules-api">Asset Rules API</h1>
+
+<h2 id="get-rule">Get Rule</h2>
+<p>Gets the specified rule</p>
+<h3 id="request">Request</h3>
+<pre><code>GET api/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
+</code></pre><h3 id="parameters">Parameters</h3>
+<p><code>tenantID</code></p>
+<p>The tenant identifier</p>
+<p><code>namespaceId</code></p>
+<p>The namespace identifier</p>
+<p><code>ruleId</code></p>
+<p>The rule identifier</p>
+<h3 id="response">Response</h3>
+<p>The response includes a status code and a response body.</p>
+<h3 id="response-body">Response body</h3>
+<p>The requested asset rule.</p>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Body Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OK</td>
+<td>Asset Rule</td>
+<td>The asset rule with the requested identifier</td>
+</tr>
+<tr>
+<td>403 Forbidden</td>
+<td>Error</td>
+<td>You are not authorized to retrieve the asset rule.</td>
+</tr>
+<tr>
+<td>404 Not Found</td>
+<td>Error</td>
+<td>The asset rule with the requested identifier was not found.</td>
+</tr>
+<tr>
+<td>500 Internal Server Error</td>
+<td>Error</td>
+<td>Internal server error.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-response-body">Example response body</h3>
+<pre><code>{
+    &quot;Id&quot;: &quot;id&quot;,
+    &quot;Name&quot;: &quot;name&quot;,
+    &quot;Description&quot;: &quot;description&quot;,
+    &quot;AutomationId&quot;: &quot;automationId&quot;,
+    &quot;Expressions&quot;: [
+        {
+            &quot;Field&quot;: &quot;Id&quot;,
+            &quot;Specifications&quot;: [ { &quot;Type&quot;: &quot;Group&quot;, &quot;Name&quot;: &quot;streamId&quot; } ]
+        },
+    ],
+    &quot;Outputs&quot;: [
+        {
+            &quot;Field&quot;: &quot;Asset&quot;,
+            &quot;Value&quot;: {
+                &quot;Id&quot;: &quot;assetId&quot;,
+                &quot;Name&quot;: &quot;assetName&quot;,
+                &quot;Description&quot;: &quot;this is an asset generated by an asset rule&quot;,
+                &quot;Metadata&quot;: [],
+                &quot;StreamReferences&quot;: [],
+                &quot;MeasurementMappings&quot;: []
+            }
+        }
+    ],
+    &quot;ValueMappings&quot;: {},
+    &quot;CreationTime&quot;: &quot;2020-11-02T04:42:14.2727061&quot;,
+    &quot;ModifiedTime&quot;: &quot;2020-11-02T04:42:14.2727061&quot;
+}
+</code></pre><hr>
+<h2 id="create-rule">Create Rule</h2>
+<p>Gets or creates a rule with the specified ID.</p>
+<pre><code>POST api/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
+</code></pre><h3 id="parameters-1">Parameters</h3>
+<p><code>tenantID</code></p>
+<p>The tenant identifier</p>
+<p><code>namespaceId</code></p>
+<p>The namespace identifier</p>
+<p><code>ruleId</code></p>
+<p>The rule identifier</p>
+<h3 id="request-body">Request body</h3>
+<p>A serialized request body</p>
+<h3 id="response-1">Response</h3>
+<p>The response includes a status code and response body.</p>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Body Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OK</td>
+<td>Asset Rule</td>
+<td>The existing asset rule with the specified identifier.</td>
+</tr>
+<tr>
+<td>201 Created</td>
+<td>Asset Rule</td>
+<td>The created asset rule with the specified identifier.</td>
+</tr>
+<tr>
+<td>400 Bad Request</td>
+<td>Error</td>
+<td>Request is not valid.</td>
+</tr>
+<tr>
+<td>403 Forbidden</td>
+<td>Error</td>
+<td>You are not authorized to retrieve the asset rule.</td>
+</tr>
+<tr>
+<td>409 Conflict</td>
+<td>Error</td>
+<td>Another asset rule with the specified ID.</td>
+</tr>
+<tr>
+<td>500 Internal Server Error</td>
+<td>Error</td>
+<td>Internal server error.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="create-or-update-rule">Create or Update Rule</h2>
+<p>Creates the specified rule. If a rule with the specified rule ID already exists, the rule definition is updated. </p>
+<h3 id="request-1">Request</h3>
+<pre><code>PUT api/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
+</code></pre><h3 id="parameters-2">Parameters</h3>
+<p><code>tenantID</code></p>
+<p>The tenant identifier</p>
+<p><code>namespaceId</code></p>
+<p>The namespace identifier</p>
+<p><code>ruleId</code></p>
+<p>The rule identifier</p>
+<h3 id="request-body-1">Request body</h3>
+<p>The serialized version of the created or updated asset rule.</p>
+<h3 id="response-2">Response</h3>
+<p>The response includes a status code and a response body.</p>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Body Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OK</td>
+<td>Asset Rule</td>
+<td>The updated asset rule with the specified identifier.</td>
+</tr>
+<tr>
+<td>201 Created</td>
+<td>Asset Rule</td>
+<td>The created asset rule with the specified identifier.</td>
+</tr>
+<tr>
+<td>400 Bad Request</td>
+<td>Error</td>
+<td>Request is not valid.</td>
+</tr>
+<tr>
+<td>403 Forbidden</td>
+<td>Error</td>
+<td>You are not authorized to retrieve the asset rule.</td>
+</tr>
+<tr>
+<td>500 Internal Server Error</td>
+<td>Error</td>
+<td>Internal server error.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="delete-rule">Delete Rule</h2>
+<p>Deletes the specified rule</p>
+<h3 id="request-2">Request</h3>
+<pre><code>DELETE api/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
+</code></pre><h3 id="parameters-3">Parameters</h3>
+<p><code>tenantID</code></p>
+<p>The tenant identifier</p>
+<p><code>namespaceId</code></p>
+<p>The namespace identifier</p>
+<p><code>ruleId</code></p>
+<p>The rule identifier</p>
+<h3 id="response-3">Response</h3>
+<p>The response includes a status code. </p>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Body Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>204 No Content</td>
+<td>null</td>
+<td>The specified rule was deleted</td>
+</tr>
+<tr>
+<td>404 Not Found</td>
+<td>Error</td>
+<td>The specified rule was not found.</td>
+</tr>
+<tr>
+<td>403 Forbidden</td>
+<td>Error</td>
+<td>You are not authorized to delete the asset rule.</td>
+</tr>
+<tr>
+<td>500 Internal Server Error</td>
+<td>Error</td>
+<td>Internal server error.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="execute-rule">Execute Rule</h2>
+<p>Executes the specified rule</p>
+<h3 id="request-3">Request</h3>
+<pre><code>POST api/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/execute
+</code></pre><h3 id="parameters-4">Parameters</h3>
+<p><code>tenantID</code></p>
+<p>The tenant identifier</p>
+<p><code>namespaceId</code></p>
+<p>The namespace identifier</p>
+<p><code>ruleId</code></p>
+<p>The rule identifier</p>
+<h3 id="response-4">Response</h3>
+<p>The response includes a status code. </p>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Body Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>204 No Content</td>
+<td>null</td>
+<td>The specified rule was executed</td>
+</tr>
+<tr>
+<td>404 Not Found</td>
+<td>Error</td>
+<td>The specified rule was not found.</td>
+</tr>
+<tr>
+<td>403 Forbidden</td>
+<td>Error</td>
+<td>You are not authorized to delete the asset rule.</td>
+</tr>
+<tr>
+<td>409 Conflict</td>
+<td>Error</td>
+<td>The automation id associated with the rule was invalid.</td>
+</tr>
+<tr>
+<td>500 Internal Server Error</td>
+<td>Error</td>
+<td>Internal server error.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="search-rules">Search Rules</h2>
+<p>Gets all asset rules that the requesting identity has access to</p>
+<h3 id="request-4">Request</h3>
+<pre><code>GET api/tenants/{tenantId}/namespaces/{namespaceId}/assetrules
+</code></pre><h3 id="parameters-5">Parameters</h3>
+<p><code>tenantID</code></p>
+<p>The tenant identifier</p>
+<p><code>namespaceId</code></p>
+<p>The namespace identifier</p>
+<h3 id="response-5">Response</h3>
+<p>The response includes a status code and response body.</p>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Body Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OK</td>
+<td>Rule List</td>
+<td>List of rules that the requesting identity has access to.</td>
+</tr>
+<tr>
+<td>400 Bad Request</td>
+<td>Error</td>
+<td>Invalid query parameters.</td>
+</tr>
+<tr>
+<td>403 Forbidden</td>
+<td>Error</td>
+<td>You are not authorized to retrieve rules.</td>
+</tr>
+<tr>
+<td>500 Internal Server Error</td>
+<td>Error</td>
+<td>Internal server error.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="get-rule-acl">Get Rule ACL</h2>
+<p>Gets the Access Control List (ACL) of the specified rule.</p>
+<h3 id="request-5">Request</h3>
+<pre><code>GET api/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/accesscontrol
+</code></pre><h3 id="parameters-6">Parameters</h3>
+<p><code>tenantID</code></p>
+<p>The tenant identifier</p>
+<p><code>namespaceId</code></p>
+<p>The namespace identifier</p>
+<p><code>ruleId</code></p>
+<p>The rule identifier</p>
+<h3 id="response-6">Response</h3>
+<p>The response includes a status code and a response body.</p>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Body Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OK</td>
+<td>AccessControlList</td>
+<td>The Access Control List of the specified rule.</td>
+</tr>
+<tr>
+<td>403 Forbidden</td>
+<td>Error</td>
+<td>You are not authorized to retrieve the ACL.</td>
+</tr>
+<tr>
+<td>404 Not Found</td>
+<td>Error</td>
+<td>The specified rule ID was not found.</td>
+</tr>
+<tr>
+<td>500 Internal Server Error</td>
+<td>Error</td>
+<td>Internal server error.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="set-rule-acl">Set Rule ACL</h2>
+<p>Sets the Access Control List (ACL) of the specified rule</p>
+<h3 id="request-6">Request</h3>
+<pre><code>PUT api/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/accesscontrol
+</code></pre><h3 id="parameters-7">Parameters</h3>
+<p><code>tenantID</code></p>
+<p>The tenant identifier</p>
+<p><code>namespaceId</code></p>
+<p>The namespace identifier</p>
+<p><code>ruleId</code></p>
+<p>The rule identifier</p>
+<h3 id="request-body-2">Request Body</h3>
+<pre><code>{   &quot;RoleTrusteeAccessControlEntries&quot;: [
+     {
+         &quot;Trustee&quot;: {
+             &quot;Type&quot;: 3,
+             &quot;ObjectId&quot;: &quot;sampleObjectId&quot;
+         },
+         &quot;AccessType: 0,
+         &quot;AccessRights&quot;: 15
+     }
+]}
+</code></pre><h3 id="response-7">Response</h3>
+<p>The response includes a status code and a response body.</p>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Body Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OK</td>
+<td>AccessControlList</td>
+<td>The Access Control List of the specified rule.</td>
+</tr>
+<tr>
+<td>400 Bad Request</td>
+<td>Error</td>
+<td>Specified ACL is invalid.</td>
+</tr>
+<tr>
+<td>403 Forbidden</td>
+<td>Error</td>
+<td>You are not authorized to set the ACL.</td>
+</tr>
+<tr>
+<td>404 Not Found</td>
+<td>Error</td>
+<td>The specified rule ID was not found.</td>
+</tr>
+<tr>
+<td>500 Internal Server Error</td>
+<td>Error</td>
+<td>Internal server error.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="get-access-rights">Get Access Rights</h2>
+<p>Gets a list of the common access rights that the identity, who is making the request, has on the specified rule </p>
+<h3 id="request-7">Request</h3>
+<pre><code>GET api/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/accessrights
+</code></pre><h3 id="parameters-8">Parameters</h3>
+<p><code>tenantID</code></p>
+<p>The tenant identifier</p>
+<p><code>namespaceId</code></p>
+<p>The namespace identifier</p>
+<p><code>ruleId</code></p>
+<p>The rule identifier</p>
+<h3 id="response-8">Response</h3>
+<p>The response includes a status code and a response body.</p>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Body Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OK</td>
+<td>String List</td>
+<td>Access rights on the specified rule for the requesting identity.</td>
+</tr>
+<tr>
+<td>403 Forbidden</td>
+<td>Error</td>
+<td>You are not authorized to get the access rights.</td>
+</tr>
+<tr>
+<td>404 Not Found</td>
+<td>Error</td>
+<td>The specified rule ID was not found.</td>
+</tr>
+<tr>
+<td>500 Internal Server Error</td>
+<td>Error</td>
+<td>Internal server error.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="get-rule-owner">Get Rule Owner</h2>
+<p>Gets the owner of the specified rule</p>
+<h3 id="request-8">Request</h3>
+<pre><code>GET api/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/owner
+</code></pre><h3 id="parameters-9">Parameters</h3>
+<p><code>tenantID</code></p>
+<p>The tenant identifier</p>
+<p><code>namespaceId</code></p>
+<p>The namespace identifier</p>
+<p><code>ruleId</code></p>
+<p>The rule identifier</p>
+<h3 id="response-9">Response</h3>
+<p>The response includes a status code and a response body.</p>
+<h3 id="response-body-1">Response body</h3>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Body Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OK</td>
+<td>Trustee</td>
+<td>The owner of the specified rule.</td>
+</tr>
+<tr>
+<td>403 Forbidden</td>
+<td>Error</td>
+<td>You are not authorized to get the rule owner.</td>
+</tr>
+<tr>
+<td>404 Not Found</td>
+<td>Error</td>
+<td>The specified rule ID was not found.</td>
+</tr>
+<tr>
+<td>500 Internal Server Error</td>
+<td>Error</td>
+<td>Internal server error.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="set-rule-owner">Set Rule Owner</h2>
+<p>Changes the owner of the specified rule</p>
+<h3 id="request-9">Request</h3>
+<pre><code>PUT api/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/owner
+</code></pre><h3 id="parameters-10">Parameters</h3>
+<p><code>tenantID</code></p>
+<p>The tenant identifier</p>
+<p><code>namespaceId</code></p>
+<p>The namespace identifier</p>
+<p><code>ruleId</code></p>
+<p>The rule identifier</p>
+<h3 id="request-body-3">Request body</h3>
+<p>The serialized Access Control List.</p>
+<pre><code>{
+   &quot;Type&quot;: 2,
+   &quot;TenantId&quot;: &quot;tenantIdGuid&quot;,
+   &quot;ObjectId&quot;: &quot;objectIdGuid&quot;
+}
+</code></pre><h3 id="response-10">Response</h3>
+<p>The response includes a status code and a response body. </p>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Body Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OK</td>
+<td>Trustee</td>
+<td>The new owner of the specified rule.</td>
+</tr>
+<tr>
+<td>400 Bad Request</td>
+<td>Error</td>
+<td>Specified owner is invalid.</td>
+</tr>
+<tr>
+<td>403 Forbidden</td>
+<td>Error</td>
+<td>You are not authorized to set the owner of the rule.</td>
+</tr>
+<tr>
+<td>404 Not Found</td>
+<td>Error</td>
+<td>The specified rule ID was not found.</td>
+</tr>
+<tr>
+<td>500 Internal Server Error</td>
+<td>Error</td>
+<td>Internal server error.</td>
+</tr>
+</tbody>
+</table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/Asset Rules/asset-rules-api/asset-rules-api.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2021 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

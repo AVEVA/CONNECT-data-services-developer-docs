@@ -105,12 +105,17 @@
 <p>When requesting for <a class="xref" href="../DataViewsAPIOverview/Resolved_Data_View_API.html">resolved data items</a> or when <a class="xref" href="../DataViewsAPIOverview/Data_API.html">getting the data view data</a>, the list of data items reflects the list of OCS resources that match one or more queries when the data view was last resolved. This means that if new data items, such as new SDS streams, were added or existing data items were removed, the list of data items will only reflect the latest changes if the data view is re-resolved. For more information, refer to the caching section in the resolved data view resource <a class="xref" href="../GetResolvedDataView/Resolved_Data_View.html">page</a>.</p>
 <h2 id="ineligible-data-items">Ineligible data items</h2>
 <p>The collection of ineligible data items represents OCS resources that match the queries but cannot be included in the data view. A data item is ineligible if it does not contain at least one eligible non-key <a class="xref" href="../GetResolvedDataView/Resolved_Data_View.html#dataitemfield">data item field</a>.</p>
-<p>A data item field is ineligible if:</p>
+<p>A data item field is ineligible if its index is not appropriate for the data view, or if the field has an SdsTypeCode that may not be included in data views.</p>
+<p>The following are examples of ineligible index:</p>
 <ul>
-<li>The corresponding SDS stream&#39;s index type is different than the IndexTypeCode specified in the data view.</li>
-<li>The SDS type of the corresponding stream contains compound indexes.</li>
-<li>The corresponding SDS type property is nested.</li>
-<li>The corresponding SDS type property is a collection type.</li>
+<li>The index is compound (multiple properties)</li>
+<li>The index property&#39;s SdsTypeCode differs from the IndexTypeCode of the data view</li>
+</ul>
+<p>The following are examples of ineligible field types:</p>
+<ul>
+<li>SdsTypeCode.Object (nested type)</li>
+<li>SdsTypeCode.Array (collection type)</li>
+<li>SdsTypeCode.TimeSpan (time spans and nullable time spans are currently unsupported)</li>
 </ul>
 </article>
           </div>

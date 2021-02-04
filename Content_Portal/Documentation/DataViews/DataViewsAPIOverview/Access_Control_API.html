@@ -221,15 +221,62 @@
 </table>
 <h3 id="net-client-libraries-method-1">.NET client libraries method</h3>
 <pre><code class="lang-csharp">   Task UpdateAccessControlListAsync(AccessControlList acl);
+</code></pre><h2 id="get-data-views-access-rights"><code>Get Data Views Access Rights</code></h2>
+<p>Get access rights to the data views collection for the calling user or client.</p>
+<h3 id="request-2">Request</h3>
+<pre><code class="lang-text">GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessRights/DataViews
+</code></pre><h3 id="parameters-2">Parameters</h3>
+<p><code>string tenantId</code>
+The tenant identifier</p>
+<p><code>string namespaceId</code>
+The namespace identifier</p>
+<h3 id="response-2">Response</h3>
+<p>The response includes a status code and a body.</p>
+<table>
+<thead>
+<tr>
+<th>Status code</th>
+<th>Body Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OK</td>
+<td><code>string[]</code></td>
+<td>A list of access rights to the data views collection</td>
+</tr>
+<tr>
+<td>403 Forbidden</td>
+<td>error</td>
+<td>You are not authorized to view the requested data view collection&#39;s access control list</td>
+</tr>
+<tr>
+<td>500 Internal Server Error</td>
+<td>error</td>
+<td>An error occurred while processing the request. See the response body for details.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-response-body-1">Example response body</h4>
+<pre><code class="lang-json">HTTP 200 OK
+[
+  &quot;Read&quot;,
+  &quot;Write&quot;,
+  &quot;Delete&quot;,
+  &quot;ManageAccessControl&quot;
+]
+</code></pre><h3 id="net-client-libraries-method-2">.NET client libraries method</h3>
+<pre><code class="lang-csharp">   Task&lt;string[]&gt; GetAccessRightsAsync();
 </code></pre><h2 id="get-data-view-access-control-list"><code>Get Data View Access Control List</code></h2>
 <p>Get the <a class="xref" href="../../Access_Control.html#access-control-lists"><code>AccessControlList</code></a> of the specified data view.</p>
-<h3 id="request-2">Request</h3>
+<h3 id="request-3">Request</h3>
 <pre><code class="lang-text">GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/AccessControl
-</code></pre><h3 id="parameters-2">Parameters</h3>
+</code></pre><h3 id="parameters-3">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string dataViewId</code><br>The data view identifier</p>
-<h3 id="response-2">Response</h3>
+<h3 id="response-3">Response</h3>
 <p>The response includes a status code and a body.</p>
 <table>
 <thead>
@@ -262,7 +309,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="example-response-body-1">Example response body</h4>
+<h4 id="example-response-body-2">Example response body</h4>
 <pre><code class="lang-json">HTTP 200 OK
 {
   &quot;RoleTrusteeAccessControlEntries&quot;: 
@@ -293,13 +340,13 @@
     }
   ]
 }
-</code></pre><h3 id="net-client-libraries-method-2">.NET client libraries method</h3>
+</code></pre><h3 id="net-client-libraries-method-3">.NET client libraries method</h3>
 <pre><code class="lang-csharp">   Task&lt;AccessControlList&gt; GetDataViewAccessControlAsync(string id);
 </code></pre><h2 id="update-data-view-access-control-list"><code>Update Data View Access Control List</code></h2>
 <p>Update the <a class="xref" href="../../Access_Control.html#access-control-lists"><code>AccessControlList</code></a> of the specified data view.</p>
-<h3 id="request-3">Request</h3>
+<h3 id="request-4">Request</h3>
 <pre><code class="lang-text">PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/AccessControl
-</code></pre><h3 id="parameters-3">Parameters</h3>
+</code></pre><h3 id="parameters-4">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string dataViewId</code><br>The data view identifier</p>
@@ -335,7 +382,7 @@
     }
   ]
 }
-</code></pre><h3 id="response-3">Response</h3>
+</code></pre><h3 id="response-4">Response</h3>
 <p>The response includes a status code and, in some cases, a body.</p>
 <table>
 <thead>
@@ -373,17 +420,17 @@
 </tr>
 </tbody>
 </table>
-<h3 id="net-client-libraries-method-3">.NET client libraries method</h3>
+<h3 id="net-client-libraries-method-4">.NET client libraries method</h3>
 <pre><code class="lang-csharp">   Task UpdateDataViewAccessControlAsync(string id, AccessControlList acl);
 </code></pre><h2 id="get-data-view-access-rights"><code>Get Data View Access Rights</code></h2>
-<p>Get the calling user or client&#39;s access rights to the requested data view</p>
-<h3 id="request-4">Request</h3>
+<p>Get access rights to the requested data view for the calling user or client.</p>
+<h3 id="request-5">Request</h3>
 <pre><code class="lang-text">GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/AccessRights
-</code></pre><h3 id="parameters-4">Parameters</h3>
+</code></pre><h3 id="parameters-5">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string dataViewId</code><br>The data view identifier</p>
-<h3 id="response-4">Response</h3>
+<h3 id="response-5">Response</h3>
 <p>The response includes a status code and a body.</p>
 <table>
 <thead>
@@ -416,7 +463,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="example-response-body-2">Example response body</h4>
+<h4 id="example-response-body-3">Example response body</h4>
 <pre><code class="lang-json">HTTP 200 OK
 [
   &quot;Read&quot;,
@@ -424,17 +471,17 @@
   &quot;Delete&quot;,
   &quot;ManageAccessControl&quot;
 ]
-</code></pre><h3 id="net-client-libraries-method-4">.NET client libraries method</h3>
+</code></pre><h3 id="net-client-libraries-method-5">.NET client libraries method</h3>
 <pre><code class="lang-csharp">   Task&lt;string[]&gt; GetDataViewAccessRightsAsync(string id);
 </code></pre><h2 id="get-data-view-owner"><code>Get Data View Owner</code></h2>
 <p>Get the owner <a class="xref" href="../../Access_Control.html#owner"><code>Trustee</code></a> of the specified data view.</p>
-<h3 id="request-5">Request</h3>
+<h3 id="request-6">Request</h3>
 <pre><code class="lang-text">GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/owner
-</code></pre><h3 id="parameters-5">Parameters</h3>
+</code></pre><h3 id="parameters-6">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string dataViewId</code><br>The data view identifier</p>
-<h3 id="response-5">Response</h3>
+<h3 id="response-6">Response</h3>
 <p>The response includes a status code and a body.</p>
 <table>
 <thead>
@@ -467,7 +514,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="example-response-body-3">Example response body</h4>
+<h4 id="example-response-body-4">Example response body</h4>
 <pre><code class="lang-json">HTTP 200 OK
 Content-Type: application/json
 {
@@ -475,13 +522,13 @@ Content-Type: application/json
     &quot;TenantId&quot;: &quot;55555555-5555-5555-5555-555555555555&quot;,
     &quot;ObjectId&quot;: &quot;44444444-4444-4444-4444-444444444444&quot;
 }
-</code></pre><h3 id="net-client-libraries-method-5">.NET client libraries method</h3>
+</code></pre><h3 id="net-client-libraries-method-6">.NET client libraries method</h3>
 <pre><code class="lang-csharp">   Task&lt;Trustee&gt; GetDataViewOwnerAsync(string id);
 </code></pre><h2 id="update-data-view-owner"><code>Update Data View Owner</code></h2>
 <p>Update the owner <a class="xref" href="../../Access_Control.html#owner"><code>Trustee</code></a> of the specified data view.</p>
-<h3 id="request-6">Request</h3>
+<h3 id="request-7">Request</h3>
 <pre><code class="lang-text">PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/{dataViewId}/owner
-</code></pre><h3 id="parameters-6">Parameters</h3>
+</code></pre><h3 id="parameters-7">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string dataViewId</code><br>The data view identifier</p>
@@ -493,7 +540,7 @@ Content-Type: application/json
     &quot;TenantId&quot;: &quot;55555555-5555-5555-5555-555555555555&quot;,
     &quot;ObjectId&quot;: &quot;44444444-4444-4444-4444-444444444444&quot;
 }
-</code></pre><h3 id="response-6">Response</h3>
+</code></pre><h3 id="response-7">Response</h3>
 <p>The response includes a status code and, in some cases, a body.</p>
 <table>
 <thead>
@@ -531,7 +578,7 @@ Content-Type: application/json
 </tr>
 </tbody>
 </table>
-<h3 id="net-client-libraries-method-6">.NET client libraries method</h3>
+<h3 id="net-client-libraries-method-7">.NET client libraries method</h3>
 <pre><code class="lang-csharp">   Task UpdateDataViewOwnerAsync(string id, Trustee owner);
 </code></pre></article>
           </div>

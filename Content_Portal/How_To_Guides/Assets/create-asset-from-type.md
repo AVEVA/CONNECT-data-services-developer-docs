@@ -10,7 +10,7 @@ For more information on asset types, see [Asset types](xref:AssetTypes).
 
 2. To change the [namespace](xref:AccountManagementConcepts#namespace), click on the namespace to open the Select a Namespace window.
 
-    ![Namespace icon](C:/Users/lasato/source/repos/OCS-DOCS/lasato-ocs-trend-doc/Content_Portal/How_To_Guides/images/namespace-icon.png)
+    ![Namespace icon](../images/namespace-icon.png)
 
 3. Select the namespace and click **Continue**.
 

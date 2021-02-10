@@ -2,7 +2,7 @@
 uid: identityAuthorizationCodeClient
 ---
 
-# AuthorizationCodeClient
+# Authorization Code Client
 
 Authorization code clients are used in Javascript/Browser (SPA) based applications or native
             mobile applications with the presence of a User. You can read more about these clients

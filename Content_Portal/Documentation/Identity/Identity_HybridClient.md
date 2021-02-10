@@ -2,7 +2,7 @@
 uid: identityHybridClient
 ---
 
-# HybridClient
+# Hybrid Client
 
 Hybrid clients are used in typical, thick MVC clients with the presence of a User.
             These clients are issued an Id and secret upon creation, which are later used for authentication

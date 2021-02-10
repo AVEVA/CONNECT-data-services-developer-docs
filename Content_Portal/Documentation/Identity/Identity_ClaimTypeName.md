@@ -2,7 +2,7 @@
 uid: identityClaimTypeName
 ---
 
-# ClaimTypeName
+# Claim Type Name
 
 An Identity Provider Claim Type Name is the field or type name in a claim that will be used to match to a value when creating an identity provider claim.
 

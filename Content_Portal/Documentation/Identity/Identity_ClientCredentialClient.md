@@ -2,7 +2,7 @@
 uid: identityClientCredentialClient
 ---
 
-# ClientCredentialClient
+# Client Credential Client
 
 Client credential clients are used for machine-to-machine communication without
             the presence of a User. 

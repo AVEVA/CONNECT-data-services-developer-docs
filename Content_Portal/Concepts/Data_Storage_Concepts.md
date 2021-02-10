@@ -11,8 +11,8 @@ Sequential Data Store (SDS) is a streaming database optimized for storing sequen
 It can store any data that is indexed by an ordered sequence. For each namespace that is created, an SDS instance or SDS resources, is created.
 The services and storage are scoped to a particular region. Data is written into the SDS using REST APIs. 
 
-## Introduction to types
-Types define the datum stored by OCS. It is comparable to a type (class) in programming or a table definition in a database. 
+## Types define your data
+Types define the data stored by OCS, comparable to types (classes) in programming languages or a table definition in a database.
 
 Types contain a list of named properties which specifies their type and optional unit of measure. 
 Each property may be of a primitive type, another type, or an array of types.
@@ -20,7 +20,7 @@ A property may be designated as an index to the sequential data.
 
 The term "stream type" is used when additional context is needed. Within the API itself, this type is frequently referred to as `SdsType`.
 
-## Introduction to streams
+## Streams contain your sequential data
 Streams are containers for sequential data of some **type**.
 Streams are either a collection of ordered events stored in SDS or a series of events (instances of the defined type) indexed by one or more properties.
 Streams are defined to organize incoming data from a device into OSIsoft Cloud Services (OCS).

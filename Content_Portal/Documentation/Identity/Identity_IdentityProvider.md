@@ -2,7 +2,7 @@
 uid: identityIdentityProvider
 ---
 
-# IdentityProvider
+# Identity Provider
 
 APIs for getting a list of all supported identity providers.
 

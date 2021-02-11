@@ -18,7 +18,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Concepts/Account_Management_Concepts.html",
-          "hash": "lT2sCF88qJc3r3pj40XO9A=="
+          "hash": "gBJRYx1YlgqJBI5TUjW3Fw=="
         }
       },
       "is_incremental": false,
@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Concepts/Data_Storage_Concepts.html",
-          "hash": "hW7J8Hi5UKOTlttYB1pxDA=="
+          "hash": "PjAdMEdo/ycytAEyGK5RSA=="
         }
       },
       "is_incremental": false,
@@ -66,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Concepts/Roles.html",
-          "hash": "31cLqa7z2t1e79I/BhzhFg=="
+          "hash": "z2rlsV4vOyzHxU4N4JHuRQ=="
         }
       },
       "is_incremental": false,
@@ -90,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Concepts/credential-management.html",
-          "hash": "ZJXtGl4w+U2WAPaJM81SsQ=="
+          "hash": "W9ipMyj2zdkhWjWiZ9a93g=="
         }
       },
       "is_incremental": false,
@@ -102,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Concepts/least-privilege.html",
-          "hash": "DCedQdAy/2CGL5GIwtSnZA=="
+          "hash": "yWj6GSnnl06ah+iASOnQkg=="
         }
       },
       "is_incremental": false,
@@ -114,7 +114,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Concepts/token-management.html",
-          "hash": "/nFHzMYJCYapwwVzWqMtpA=="
+          "hash": "MeQQA8517rMNEHK5CawIVQ=="
         }
       },
       "is_incremental": false,
@@ -672,7 +672,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Identity/Identity_AuthorizationCodeClient.html",
-          "hash": "/gXC1apK4uWWyG6m1Z0TlQ=="
+          "hash": "C+ow/3A1T/vlTXAPhpPpOg=="
         }
       },
       "is_incremental": false,
@@ -684,7 +684,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Identity/Identity_AutomationIdentity.html",
-          "hash": "Ndi8p6i9Zk+XHZkpLmpI9Q=="
+          "hash": "GgTvrngtQlHcVN/ZN2wzCw=="
         }
       },
       "is_incremental": false,
@@ -696,7 +696,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Identity/Identity_AzureActiveDirectoryTenant.html",
-          "hash": "VssTZIRXvjOLPIGr6r98sQ=="
+          "hash": "/ATxFUcFJ882rkyzMliZ4A=="
         }
       },
       "is_incremental": false,
@@ -720,7 +720,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Identity/Identity_ClaimTypeName.html",
-          "hash": "KOOKRUJiw+K3aFml4gnAyw=="
+          "hash": "kAU/1sSZPh/ROgPJ+1nZhA=="
         }
       },
       "is_incremental": false,
@@ -732,7 +732,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Identity/Identity_ClientCredentialClient.html",
-          "hash": "S0RB36QwxZQXIc7LSFQfxQ=="
+          "hash": "7bUO4QTYIzFUnvEzZCg1yA=="
         }
       },
       "is_incremental": false,
@@ -744,7 +744,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Identity/Identity_HybridClient.html",
-          "hash": "INGTJEkZkrKxD9MITXoqPA=="
+          "hash": "271How5BsqzMI1I/Gft87Q=="
         }
       },
       "is_incremental": false,
@@ -756,7 +756,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Identity/Identity_IdentityProvider.html",
-          "hash": "SApggX7R9O9XM7gDosu0jQ=="
+          "hash": "pDjhT/1xgMn9MJldr0jXaQ=="
         }
       },
       "is_incremental": false,
@@ -768,7 +768,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Identity/Identity_ImplicitClient.html",
-          "hash": "y7RbAYAs03fsQnKwhawjZQ=="
+          "hash": "2W5DtZyqZ2rNhUA2hkuREA=="
         }
       },
       "is_incremental": false,
@@ -792,7 +792,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Identity/Identity_PersistedGrant.html",
-          "hash": "9jfQXRSUU0uCvP9mzoCL8g=="
+          "hash": "+IsTJaKCukfK3wLvZlueqQ=="
         }
       },
       "is_incremental": false,
@@ -876,7 +876,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Management/Account_RootAccessControl_1.html",
-          "hash": "qwSsmCWTNIgWkf25OtNaOQ=="
+          "hash": "yCk3ugjzYlGGRZm8jMjZFA=="
         }
       },
       "is_incremental": false,
@@ -2194,6 +2194,149 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "Content_Portal/Overview/images/how-does-ocs-work/adapter.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Overview/images/how-does-ocs-work/adapter.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Overview/images/how-does-ocs-work/api.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Overview/images/how-does-ocs-work/api.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Overview/images/how-does-ocs-work/authorization.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Overview/images/how-does-ocs-work/authorization.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Overview/images/how-does-ocs-work/dataview.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Overview/images/how-does-ocs-work/dataview.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Overview/images/how-does-ocs-work/dataviews.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Overview/images/how-does-ocs-work/dataviews.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Overview/images/how-does-ocs-work/eds.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Overview/images/how-does-ocs-work/eds.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Overview/images/how-does-ocs-work/metadata1.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Overview/images/how-does-ocs-work/metadata1.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Overview/images/how-does-ocs-work/metadata2.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Overview/images/how-does-ocs-work/metadata2.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Overview/images/how-does-ocs-work/ocs_intro.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Overview/images/how-does-ocs-work/ocs_intro.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Overview/images/how-does-ocs-work/omf.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Overview/images/how-does-ocs-work/omf.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Overview/images/how-does-ocs-work/pi_to_ocs.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Overview/images/how-does-ocs-work/pi_to_ocs.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Overview/images/how-does-ocs-work/streams.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Overview/images/how-does-ocs-work/streams.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Overview/images/how-does-ocs-work/trend.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Overview/images/how-does-ocs-work/trend.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "Content_Portal/Overview/images/measurements.png",
       "output": {
         "resource": {
@@ -2209,6 +2352,18 @@
       "output": {
         "resource": {
           "relative_path": "Content_Portal/Overview/images/trend.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Overview/what-does-ocs-do.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Overview/what-does-ocs-do.html",
+          "hash": "tQ8qoNE7ctOQov4gezFVNA=="
         }
       },
       "is_incremental": false,
@@ -2589,7 +2744,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/toc.html",
-          "hash": "GCF+XpUqKE5UIyg9Ej+Xkw=="
+          "hash": "OhpYr7tgV4dD2o7heY4u1Q=="
         }
       },
       "is_incremental": false,
@@ -2646,7 +2801,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 146,
+          "total_file_count": 147,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

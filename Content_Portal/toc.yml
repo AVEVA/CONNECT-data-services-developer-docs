@@ -4,8 +4,13 @@
   href: Overview/toc.yml
 - name: Add and Organize Data
   href: add-organize-data/toc.yml
+  topicHref: add-organize-data/add-org-data-overview.md
+- name: Visualize Data
+  href: visualize-data/toc.yml
+  topicHref: visualize-data/visualize-data-overview.md
 - name: Remote Operations Monitoring
   href: rom/toc.yml
+  topicHref: rom/rom-overview.md
 - name: API Reference
   href: Documentation/toc.yml
   topicHref: Documentation/OSIsoft_Cloud_Services.md

@@ -2,7 +2,7 @@
 uid: gsConnections
 ---
 
-# Connections
+# Get started with connections
 
 There are two types of OSIsoft Cloud Services (OCS) connections that allow you to transfer data from external sources into OSIsoft Cloud Services:
 
@@ -15,6 +15,6 @@ Connections do not have a direct equivalent in PI Core services, but they are si
 
 PI to OCS Agent uses PI System connections that behave much like a PI-to-PI interface, in that they send PI data from one system to another.
 
-To get started with PI to OCS Agent, see [PI System Connections](xref:piSystemConnection).
+To get started with PI to OCS Agent, see [PI System Connections](xref:gsPISystemConnection).
 
-To get started with OSIsoft Messaging Format (OMF), see [OSIsoft Messaging Format](xref:omfConnection).
+To get started with OSIsoft Messaging Format (OMF), see [OSIsoft Messaging Format](xref:gsOMFConnection).

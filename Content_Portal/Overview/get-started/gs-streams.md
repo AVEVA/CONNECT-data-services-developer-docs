@@ -2,7 +2,7 @@
 uid: gsStreams
 ---
 
-# Get Started with Streams
+# Get started with streams
 
 Find the Streams page in the OSIsoft Cloud Services portal [here](https://cloud.osisoft.com/data/streams). <!-- FYI: looks like the UI might be changing. Refer to cloud.osisoft.com main page-->
 

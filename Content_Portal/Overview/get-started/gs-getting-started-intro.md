@@ -1,8 +1,8 @@
 ---
-uid: gsGettingStartedOCS
+uid: gsGetStartedOCS
 ---
 
-# Getting Started with OSIsoft Cloud Services 
+# Get started with OSIsoft Cloud Services 
 
 This is an introduction to the main features of OSIsoft Cloud Services (OCS) using the OCS portal.
 

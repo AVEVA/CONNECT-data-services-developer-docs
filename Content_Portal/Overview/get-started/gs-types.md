@@ -2,7 +2,7 @@
 uid: gsTypes
 ---
 
-# Get Started with Types
+# Get started with types
 
 
 

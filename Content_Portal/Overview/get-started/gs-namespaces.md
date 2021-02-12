@@ -3,7 +3,7 @@ uid: gsNamespaces
 ---
 
 
-# Get Started with Namespaces
+# Get started with namespaces
 
 The first task is to create a namespace, a logical unit of organization for data within a tenant. For more information on namespaces, see the following:
 

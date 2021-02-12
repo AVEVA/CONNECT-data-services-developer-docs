@@ -57,12 +57,10 @@ Procedure
 
 8. Click the plus sign (+) above the trace to lock the cursors in place.<br>
     The *+* turns into an *x*.  To unlock the cursor, click the *x*.
-         <br>
-         <br>
-    Note: When two cursors are locked, the Legend table displays summary calculations for the values between the two cursors, known as the Cursor view.
+    
 
-    ![Cursor_view](images\Cursor_view.png)
-
+Note: When two cursors are locked, the Legend table displays summary calculations for the values between the two cursors, known as the Cursor view.
+    ![Cursor_view](images\Cursor_view.png)  
 9. Click the link icon ![Copy link icon](images\copy_url_link.png) in the menu bar to copy the URL of the workspace.  <br>
 
     This link, when shared with colleagues, gives them the same view of the trend that they can then use to troubleshoot problems.

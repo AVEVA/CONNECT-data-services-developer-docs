@@ -1,0 +1,4 @@
+- name: Getting started with trend data 
+  topicHref: Getting-Started-Trend.md
+- name: Trend user interface
+  topicHref: Trend-UI.md

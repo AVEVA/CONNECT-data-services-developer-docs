@@ -2,10 +2,18 @@
   href: OCS_Content_Portal_Overview.md
 - name: Overview
   href: Overview/toc.yml
-- name: Quickstarts
-  href: Quickstarts/toc.yml
-- name: How-To Guides
-  href: How_To_Guides/toc.yml
+- name: Set up the Environment
+  href: set-up/toc.yml
+  topicHref: set-up/set-up-overview.md
+- name: Add and Organize Data
+  href: add-organize-data/toc.yml
+  topicHref: add-organize-data/add-org-data-overview.md
+- name: Visualize Data
+  href: visualize-data/toc.yml
+  topicHref: visualize-data/visualize-data-overview.md
+- name: Remote Operations Monitoring
+  href: rom/toc.yml
+  topicHref: rom/rom-overview.md
 - name: API Reference
   href: Documentation/toc.yml
   topicHref: Documentation/OSIsoft_Cloud_Services.md

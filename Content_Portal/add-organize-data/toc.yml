@@ -1,0 +1,9 @@
+- name: Collect data
+  href: collect-data/toc.yml
+  topicHref: collect-data/data-collection-overview.md
+- name: Store data
+  href: store-data/toc.yml
+  topicHref: store-data/store-data-overview.md
+- name: Attach meaning to data
+  href: attach-meaning/toc.yml
+  topicHref: attach-meaning/data-context-overview.md

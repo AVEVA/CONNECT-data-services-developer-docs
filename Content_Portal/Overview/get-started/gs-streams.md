@@ -4,7 +4,14 @@ uid: gsStreams
 
 # Get started with streams
 
-Find the Streams page in the OSIsoft Cloud Services portal [here](https://cloud.osisoft.com/data/streams). <!-- FYI: looks like the UI might be changing. Refer to cloud.osisoft.com main page-->
+Draft in progress.
+
+After creating your types, you can add streams and associate a type with the stream. For more information on streams, see the following:
+
+- [About streams](xref:ccStreams)
+- [Streams best practices](xref:bpStreams)
+
+## Procedure
 
 1. Click the menu icon and click **Sequential Data Store** (under Data Management).
 

@@ -2,9 +2,11 @@
 uid: gsOMFConnection
 ---
 
-# Get Started with OMF Connections
+# Get started with OMF connections
 
-To send OSIsoft Message Format (OMF) data to OCS, you must first configure an OMF connection. Use this getting started procedure to become familiar with OMF connections.
+To send OSIsoft Message Format (OMF) data to OCS, you must first configure an OMF connection. For more information about OMF connections, see [OMF best practices](xref:bpOMFConnection).
+
+Use this getting started procedure to become familiar with OMF connections.
 
 1. Click the ![Menu icon](images\menu-icon.png) icon and click **Clients** (below Security) to open the Manage Clients page.
 

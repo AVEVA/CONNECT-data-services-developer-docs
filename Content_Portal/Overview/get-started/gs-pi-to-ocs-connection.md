@@ -4,6 +4,8 @@ uid: gsPISystemConnection
 
 # Get Started with PI to OCS Connections
 
+<!-- Talk to Vicki about where to put PI System best practices and link to it. -->
+
 To use PI to OCS to transfer data from your PI System to OCS, you must complete the following:
 
 - Create and set up a PI System connection.

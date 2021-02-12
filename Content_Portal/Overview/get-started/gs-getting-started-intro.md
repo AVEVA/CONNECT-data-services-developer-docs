@@ -8,7 +8,7 @@ This is an introduction to the main features of OSIsoft Cloud Services (OCS) usi
 
 
 
-## Before You Begin
+## Before you begin
 
 You will need to obtain the following before you start the getting started exercises:
 
@@ -47,7 +47,7 @@ When you click on one of the menu items, it takes you to the page for that resou
 
 Each exercise is built on the previous exercises. Therefore, complete the exercises in the order shown. 
 
-## Getting Started Goals
+## Getting started goals
 
 In this Getting Started exercise, you will do the following:
 

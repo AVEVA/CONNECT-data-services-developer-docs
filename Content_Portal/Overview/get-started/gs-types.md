@@ -4,7 +4,10 @@ uid: gsTypes
 
 # Get started with types
 
+After creating the namespace, the next step is to add one or more types. For more information about types, see the following:
 
+- [About types](xref:ccTypes)
+- [Types best practices](xref:bpTypes)
 
 ## Procedure
 

@@ -2,6 +2,9 @@
   href: OCS_Content_Portal_Overview.md
 - name: Overview
   href: Overview/toc.yml
+- name: Set up the Environment
+  href: set-up/toc.yml
+  topicHref: set-up/set-up-overview.md
 - name: Add and Organize Data
   href: add-organize-data/toc.yml
   topicHref: add-organize-data/add-org-data-overview.md

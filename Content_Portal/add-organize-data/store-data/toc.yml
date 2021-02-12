@@ -1,0 +1,12 @@
+- name: About types
+  topicHref: types-concept.md
+- name: Types best practices
+  topicHref: types-best-practices.md
+- name: Add a type
+  topicHref: types-procedure.md
+- name: About streams
+  topicHref: streams-concept.md
+- name: Streams best practices
+  topicHref: streams-best-practices.md
+- name: Add a stream
+  topicHref: streams-procedure.md

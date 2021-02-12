@@ -15,8 +15,6 @@ Client credential clients are used for machine-to-machine communication without
             least privilege strategy when assigning roles to these clients, as they are more
             likely to operate in remote machines with a wider attack surface.
 
-Because they access resources on OSIsoft Cloud Services and are not associated to users, these clients can be assigned any of the roles in the tenant. We suggest following a least privilege strategy when assigning roles to these clients, as they are more likely to operate in remote machines with a wider attack surface.
-
 ## Properties
 
 For HTTP requests and responses, the ClientCredentialClient object has the following properties and JSON-serialized body: 

@@ -1,5 +1,6 @@
-- name: Assets and Asset Types
-  href: Assets/toc.yml
 - name: Collect data
   href: collect-data/toc.yml
   topicHref: collect-data/data-collection-overview.md
+- name: Attach meaning to data
+  href: attach-meaning/toc.yml
+  topicHref: attach-meaning/data-context-overview.md

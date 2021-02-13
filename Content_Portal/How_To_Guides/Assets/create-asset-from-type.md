@@ -33,7 +33,7 @@ For more information on asset types, see [Asset types](xref:AssetTypes).
 
 7. Click the **Properties** tab.
 
-8. Click the caret symbol for a stream reference. 
+8. Click the caret symbol to open the stream reference configuration pane. 
 
     ![](..\images\type-stream-reference-caret.png)
 

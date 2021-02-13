@@ -15,14 +15,16 @@ In this situation, an asset type can be used to create multiple similar assets. 
 
 | Property      | Type              | Required? | Searchable? | Description                                                  | Asset Property? | Asset Type Property? |
 | ------------- | ----------------- | --------- | ----------- | ------------------------------------------------------------ | ----- | --------------- |
-| Id            | String            | Required  | Yes         | `Id` for referencing this asset. If you do not provide an `Id`, OCS copies the name as the identifier`Id`. If you do not provide a name, OCS assigns a random GUID for the `Id`.| Yes  | Yes            |
+| Id*           | String            | Required  | Yes         | `Id` for referencing this asset. If you do not provide an `Id`, OCS copies the name as the identifier`Id`. If you do not provide a name, OCS assigns a random GUID for the `Id`.| Yes  | Yes            |
 | Name          | String            | Required only if `Id` is not specified  | Yes         | User-friendly name. Required if `Id` is not provided. If Name is used as the `Id`, it must be unique within a given namespace. | Yes  | Yes            |
 | Description   | String            | Optional  | Yes         | User-provided description.                                   | Yes  | Yes            |
 | AssetTypeId   | String            | Optional  | No          | `Id` for the asset type that this asset is derived from. To get the merged view of the asset, get the resolved asset through the /Assets/{assetId}/Resolved route. | Yes  | No            |
-| Metadata      | Metadata List     | Optional  | Yes*       | Asset and asset type metadata                               | Yes  | Yes            |
-| StreamReferences   | Stream Reference List | Optional  | No *       | Asset stream references                                             | Yes  | No            |
-| TypeReferences | Type Reference List | Optional  | No*        | Asset type type references                                     | No | Yes            |
-| StatusMapping | Status Mapping | Optional  | No*        | Asset and asset type status mapping | Yes | Yes            |
+| Metadata      | Metadata List     | Optional  | Yes       | Asset and asset type metadata                               | Yes  | Yes            |
+| StreamReferences   | Stream Reference List | Optional  | No       | Asset stream references                                             | Yes  | No            |
+| TypeReferences | Type Reference List | Optional  | No        | Asset type type references                                     | No | Yes            |
+| StatusMapping | Status Mapping | Optional  | No        | Asset and asset type status mapping | Yes | Yes            |
+
+* `Id` is not required on property if the `Name` matches a `Name` on the Asset Type property. In this case, the `Id` of the property on the Asset will be set as the property `Id` of the Asset Type. This also applies when an Asset is updated.
 
 For more information on search syntax, see [Assets Search API](xref:AssetsSearchAPI).
 

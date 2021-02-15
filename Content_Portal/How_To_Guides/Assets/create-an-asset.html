@@ -78,7 +78,7 @@
             <article class="content wrap" id="_content" data-uid="CreateConfigureAsset">
 <h1 id="create-and-configure-an-asset">Create and configure an asset</h1>
 
-<p>Follow the procedures to create an asset, add and configure its metadata and measurements, and select and configure a measurement whose status will be visible in the card or table view.</p>
+<p>Follow the procedures to create an asset, add and configure its metadata and properties, and select and configure a property whose status will be visible in the card or table view.</p>
 <h3 id="create-the-asset">Create the asset</h3>
 <ol>
 <li><p>Click the menu icon <img src="../images/icon_navigation_bigger.png" alt="menu icon"> and click <strong>Asset Explorer</strong>.</p>
@@ -88,7 +88,7 @@
 </li>
 <li><p>Select the namespace and click <strong>Continue</strong>.</p>
 </li>
-<li><p>Verify that the Asset/Asset Type selector is set to <strong>Assets</strong>.</p>
+<li><p>Verify that the Assets/Asset Type selector is set to <strong>Assets</strong>.</p>
 </li>
 <li><p>Click the plus symbol (+) in the toolbar to create a new asset.</p>
 <p>  The Select Type for New Asset window opens. By default, the type selected is &lt;None&gt;.</p>
@@ -101,7 +101,7 @@
 </ol>
 <h3 id="add-metadata-to-the-asset">Add metadata to the asset</h3>
 <ol>
-<li><p>Click <strong>Add Metadata</strong> on the Metadata tab.</p>
+<li><p>Click the <strong>Metadata</strong> tab and click <strong>Add Metadata</strong>.</p>
 <p> Note: Metadata is static attributes about assets, for example, model or region.</p>
 <p> The fields for entering the metadata details appear. </p>
 <p> <img src="../images/metadata-fields.png" alt="Metadata fields"></p>
@@ -117,26 +117,19 @@
 <li><p>Continue adding metadata for the asset. </p>
 </li>
 </ol>
-<h3 id="add-measurements-to-the-asset">Add measurements to the asset</h3>
+<h3 id="add-properties-to-the-asset">Add properties to the asset</h3>
 <ol>
-<li><p>Click the <strong>Measurements</strong> tab. </p>
+<li><p>Click the <strong>Properties</strong> tab. </p>
 </li>
-<li><p>Click <strong>Add Stream References</strong> to add a measurement.</p>
+<li><p>Click <strong>Add Stream References</strong> to add a property.</p>
 </li>
 <li><p>In the Select Streams window, select the stream you want.<br>  Note: Use the search box to find the stream. You can search on the stream name, description, or the type. Use the asterisk (*)  as a wildcard character.</p>
 </li>
 <li><p>Click <strong>Add</strong>.<br>  The stream reference appears in the right pane. This is the automatically generated user-friendly stream name. You can edit this name.
-  <img src="../images/stream-reference.png" alt="Stream reference measurements"></p>
+  <img src="../images/stream-reference.png" alt="Stream reference properties"></p>
 </li>
-<li><p>Click the caret symbol to display the measurements for the stream reference.
- <img src="../images/stream-reference-caret.png" alt="Stream reference"></p>
-<p> The measurements associated with the stream are displayed.
- <img src="../images/stream-reference-measurements.png" alt="Stream reference measurements"></p>
-</li>
-<li><p>Edit the names of the measurements.</p>
-<p>  Tip: By default, the stream reference is appended as a prefix for all measurement names. You can change this prefix and it will automatically get appended to all measurement names. This is useful if you have multiple streams with the same properties. The prefix is an easy way to distinguish between the different streams.</p>
-</li>
-<li><p>Clear the <strong>Include</strong> checkbox to remove any measurements you don&#39;t want to include.</p>
+<li><p>Click the scroll bar to display the properties for the stream reference.</p>
+<p> <img src="../images/stream-reference-properties.png" alt="Stream reference properties"></p>
 </li>
 <li><p>Click <strong>Configure UOMs</strong>. </p>
 </li>
@@ -144,9 +137,7 @@
 <p> Note: UOMs can be set only on numeric types.</p>
 </li>
 <li><p>When you are done, click <strong>Save</strong>.</p>
-<p> Note: Once you click <strong>Save</strong>, any changes are immediately made to the UOMs on the stream, regardless of any other actions you take on this asset. For example, the UOM changes to the stream are not reversed if you click <strong>Cancel</strong> on the Measurements tab or if you delete the asset.</p>
-</li>
-<li><p>Click <strong>Preview</strong> to see a simple list of all measurements from all streams associated with this asset.</p>
+<p> Note: Once you click <strong>Save</strong>, any changes are immediately made to the UOMs on the stream, regardless of any other actions you take on this asset. For example, the UOM changes to the stream are not reversed if you click <strong>Cancel</strong> on the Properties tab or if you delete the asset.</p>
 </li>
 </ol>
 <h3 id="add-status-tracking-to-the-asset">Add status tracking to the asset</h3>
@@ -155,15 +146,15 @@
 </li>
 <li><p>Click <strong>Add Status Configuration</strong>.</p>
 </li>
-<li><p>In the Select Measurement window, click the measurement that you want to display status for. Click <strong>Continue</strong>.</p>
-<p> Note: Only measurements with enumerated states or string values can be selected for the asset status;  therefore, only these measurements are displayed. </p>
-<p> You can only specify one measurement as the asset&#39;s status. </p>
+<li><p>In the Select Property window, click the property that you want to display status for. Click <strong>Continue</strong>.</p>
+<p> Note: Only properties with enumerated states or string values can be selected for the asset status;  therefore, only these properties are displayed. </p>
+<p> You can only specify one property as the asset&#39;s status. </p>
 </li>
 <li><p>Click the status icons to map the icon for each value.
  <img src="../images/map-status-values.png" alt="Mapping status icons"></p>
 <p> All the values have been mapped in the following screen capture.
  <img src="../images/mapped-status-values.png" alt="Mapped status"></p>
-<p> Tip: You can switch to a different measurement by clicking the <img src="../images/change-measurement-icon%4050.png" alt="Change measurement icon"> icon.</p>
+<p> Tip: You can switch to a different property by clicking the <img src="../images/change-property-icon.png" alt="Change property icon"> icon.</p>
 </li>
 </ol>
 <h3 id="save-the-asset">Save the asset</h3>

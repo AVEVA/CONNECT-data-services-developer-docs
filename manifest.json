@@ -732,7 +732,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Identity/Identity_ClientCredentialClient.html",
-          "hash": "7bUO4QTYIzFUnvEzZCg1yA=="
+          "hash": "ll/8aemh8aOQZRNsjICVEA=="
         }
       },
       "is_incremental": false,
@@ -1313,6 +1313,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/Assets/Untitled.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/Assets/Untitled.html",
+          "hash": "+FPPGfah0DRjiPrRV3wyHg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "Content_Portal/How_To_Guides/Assets/asset-type-overview.md",
       "output": {
         ".html": {
@@ -1341,7 +1353,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/How_To_Guides/Assets/create-an-asset.html",
-          "hash": "xxnMxrlT31WukcEe6BpqwQ=="
+          "hash": "y44BcX4GoNOXPJabl1ffPQ=="
         }
       },
       "is_incremental": false,
@@ -1353,7 +1365,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/How_To_Guides/Assets/create-asset-from-type.html",
-          "hash": "TFRVI4rWAOgAITnBcpFslw=="
+          "hash": "g66Ds36OsaIml6I6+wdpRw=="
         }
       },
       "is_incremental": false,
@@ -1365,7 +1377,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/How_To_Guides/Assets/create-asset-type-asset-editor.html",
-          "hash": "+fx4Qy8o5R5trO4/MuvO7A=="
+          "hash": "OqqwV4ZG4e9J6VO+y6HOrA=="
         }
       },
       "is_incremental": false,
@@ -1764,10 +1776,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "Content_Portal/How_To_Guides/images/change-measurement-icon@50.png",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/change-property-icon.png",
       "output": {
         "resource": {
-          "relative_path": "Content_Portal/How_To_Guides/images/change-measurement-icon@50.png"
+          "relative_path": "Content_Portal/How_To_Guides/images/change-property-icon.png"
         }
       },
       "is_incremental": false,
@@ -2050,10 +2062,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "Content_Portal/How_To_Guides/images/stream-reference-measurements.png",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/stream-reference-properties.png",
       "output": {
         "resource": {
-          "relative_path": "Content_Portal/How_To_Guides/images/stream-reference-measurements.png"
+          "relative_path": "Content_Portal/How_To_Guides/images/stream-reference-properties.png"
         }
       },
       "is_incremental": false,
@@ -2083,10 +2095,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "Content_Portal/How_To_Guides/images/stream-type-reference-measurement.png",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/stream-type-reference-properties.png",
       "output": {
         "resource": {
-          "relative_path": "Content_Portal/How_To_Guides/images/stream-type-reference-measurement.png"
+          "relative_path": "Content_Portal/How_To_Guides/images/stream-type-reference-properties.png"
         }
       },
       "is_incremental": false,
@@ -2435,7 +2447,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Quickstarts/getting-started-rom.html",
-          "hash": "jK+FfrSTDwuftYa6KGtirg=="
+          "hash": "IBOD/9f6LE5zED8maEuIhA=="
         }
       },
       "is_incremental": false,
@@ -2447,6 +2459,17 @@
       "output": {
         "resource": {
           "relative_path": "Content_Portal/Quickstarts/images/AssetEditor_icons.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Quickstarts/images/Assets..png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Quickstarts/images/Assets..png"
         }
       },
       "is_incremental": false,
@@ -2801,7 +2824,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 147,
+          "total_file_count": 148,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

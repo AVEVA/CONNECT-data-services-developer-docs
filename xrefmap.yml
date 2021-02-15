@@ -91,9 +91,6 @@ references:
 - uid: create-a-data-transfer
   name: Create a data transfer
   href: Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Data-Transfers/create-a-data-transfer.html
-- uid: CreateAssetFromAssetType
-  name: Create an asset from an asset type
-  href: Content_Portal/How_To_Guides/Assets/create-asset-from-type.html
 - uid: CreateAssetType
   name: Create an asset type with the asset types editor
   href: Content_Portal/How_To_Guides/Assets/create-asset-type-asset-editor.html

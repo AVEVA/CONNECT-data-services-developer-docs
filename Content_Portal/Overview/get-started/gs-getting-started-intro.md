@@ -56,6 +56,7 @@ In this Getting Started exercise, you will do the following:
 * Create a type that defines the data you want to store.
 
 * Create a stream container to store that data.
+* Create users, clients, and roles. 
 
 <<WRITER's COMMENT: More topics to be added.>>
 

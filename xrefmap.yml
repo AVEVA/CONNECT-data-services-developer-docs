@@ -188,7 +188,7 @@ references:
   name: Getting started with trend data
   href: Content_Portal/Quickstarts/Getting-Started-Trend.html
 - uid: identityandaccessmanagement
-  name: OSIsoft Identity Service
+  name: Identity and Access Management
   href: Content_Portal/Documentation/Identity/Identity_and_Access_Management.html
 - uid: identityAuthorizationCodeClient
   name: Authorization Code Client

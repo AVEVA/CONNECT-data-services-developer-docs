@@ -164,5 +164,5 @@ Content-Type: application/json
 | Id:X* AND Metadata/Name:B*   | Returns all assets with `Id` starting with **X** and containing at least one metadata value with a name that starts with a **B**. |
 | AssetTypeId:HeaterTypeId | Returns all assets with `AssetTypeId` matching `HeaterTypeId` |
 | AssetTypeName:HeaterTypeName | Returns all assets whose `Name` field of the asset type matches **HeaterTypeName** |
-| StreamProperties:Pressure | Returns all assets whose stream reference has a stream property id of **Pressure**. Note that search for Sds stream property id will only search for non-key stream properties. |
+| StreamProperties:Pressure | Returns all assets that have one or more stream references with the stream property ID **Pressure**. Note: This search only searches non-key Sds stream properties. |
 | StreamReferences:Name1| Returns all assets whose stream references contain a stream reference name matching **Name1**. |

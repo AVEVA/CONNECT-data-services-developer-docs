@@ -168,7 +168,7 @@ The namespace identifier
 A list of asset `Id`s.
 
 #### Example request body 
-Requesting resolved assets for assets with id, "Asset1", "Asset2", and "Asset3".
+Requesting resolved assets for assets with the following `Id`s: "Asset1", "Asset2", and "Asset3".
 
 ```json
 [

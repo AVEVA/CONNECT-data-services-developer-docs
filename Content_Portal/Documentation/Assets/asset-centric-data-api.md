@@ -54,7 +54,7 @@ The namespace identifier
 The asset identifier
 
 [optional] `string[] streams`   
-An optional parameter representing a comma separated list of streams which you are interested in. By default, all data calls return data for all stream references.
+An optional parameter consisting of a comma-separated list of stream reference names that you are interested in. By default, all data calls return data for all stream references.
 
 ### Response 
 The response includes a status code and a response body.
@@ -117,7 +117,7 @@ The end index for the intervals
 The number of requested intervals
 
 [optional] `string[] streams`   
-An optional parameter representing a comma separated list of streams which you are interested in. By default, all data calls return data for all stream references.
+An optional parameter consisting of a comma-separated list of stream reference names that you are interested in. By default, all data calls return data for all stream references.
 
 ### Response 
 The response includes a status code and a response body.
@@ -187,7 +187,7 @@ The end index for the intervals
 The number of requested intervals
 
 [optional] `string[] streams`   
-An optional parameter representing a comma separated list of streams which you are interested in. By default, all data calls return data for all stream references.
+An optional parameter consisting of a comma-separated list of stream reference names that you are interested in. By default, all data calls return data for all stream references.
 
 ### Response 
 The response includes a status code and a response body.
@@ -374,7 +374,7 @@ The start index for the intervals
 The end index for the intervals
 
 [optional] `string[] streams`   
-An optional parameter representing a comma separated list of streams which you are interested in. By default, all data calls return data for all stream references.
+An optional parameter consisting of a comma-separated list of stream reference names that you are interested in. By default, all data calls return data for all stream references.
 
 ### Response
 The response includes a status code and a response body.
@@ -473,7 +473,7 @@ The end index for the intervals
 The number of requested intervals
 
 [optional] `string[] streams`   
-An optional parameter representing a comma separated list of streams which you are interested in. By default, all data calls return data for all stream references.
+An optional parameter consisting of a comma-separated list of stream reference names that you are interested in. By default, all data calls return data for all stream references.
 
 ### Response 
 The response includes a status code and a response body.

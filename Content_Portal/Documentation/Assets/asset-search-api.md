@@ -12,15 +12,15 @@ Returns an array of assets that meet the search criteria.
 ### Searchable Properties
 Assets can be searched on the following asset properties:
 
-Asset Top Level Fields
-- Id, Name, Description, AssetTypeId, AssetTypeName
+- Asset Top-level Fields
+  - Id, Name, Description, AssetTypeId, AssetTypeName
 
-Metadata Fields
-- Name, Description. Value
+- Metadata Fields
+  - Name, Description. Value
 
-Stream Reference Fields
-- StreamReferences - Stream Reference Name
-- StreamProperties - Sds Stream Property Ids, not including indices
+- Stream Reference Fields
+  - StreamReferences - Stream Reference Name
+  - StreamProperties - Sds Stream Property Ids, not including indices
 
 Search criteria can be chained together using an **AND**. See examples below. 
 

@@ -83,7 +83,7 @@ The asset or asset type's 'StreamReferences' field has an 'Id' property. To assi
 
 View the status of an asset. 
 
-The status of an asset is determined by exact match of the Sds stream property value to the value of the ValueStatusMapping. If there are no exact matches, the status is assigned a 0, or "Unknown".
+The status of an asset is determined by an exact match of the Sds stream property value to the value of the ValueStatusMapping. If there are no exact matches, the status is a 0 (Unknown).
 
 ### Request
 

@@ -449,7 +449,7 @@ Content-Type: application/json
 Returns interpolated data for referenced SDS streams. 
 
 ### Request 
-```text 
+``` 
 GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/Interpolated?startIndex={startIndex}&endIndex={endIndex}&count={count}&Stream={streams}
 ```
 

@@ -217,9 +217,6 @@ references:
 - uid: identityIdentityProvider
   name: Identity Provider
   href: Content_Portal/Documentation/Identity/Identity_IdentityProvider.html
-- uid: identityImplicitClient
-  name: Implicit Client (deprecated)
-  href: Content_Portal/Documentation/Identity/Identity_ImplicitClient.html
 - uid: identityInvitation
   name: Invitation
   href: Content_Portal/Documentation/Identity/Identity_Invitation.html

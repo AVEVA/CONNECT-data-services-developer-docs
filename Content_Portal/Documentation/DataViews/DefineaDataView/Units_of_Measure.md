@@ -2,9 +2,7 @@
 uid: DataViewsUnitsOfMeasure
 ---
 
-# Display units of measure (coming soon)
-
-*Note: This topic covers features that are not yet generally available. If you are interested in trialing these pre-release features, contact your account team for more details.*
+# Display units of measure
 
 Data views can be configured to show the units of measure (Uom) from the underlying data source. This topic describes how to see the effective units of measure within a resolved data view, as well as the different options to include them in the data set itself.
 

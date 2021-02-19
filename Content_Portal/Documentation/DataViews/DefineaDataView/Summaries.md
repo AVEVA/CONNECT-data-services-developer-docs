@@ -2,10 +2,7 @@
 uid: DataViewsSummaries
 ---
 
-# Display calculated summaries (coming soon)
-
-
-*Note: This topic covers features that are not yet generally available. If you are interested in trialing these pre-release features, contact your account team for more details.*
+# Display calculated summaries
 
 Data views can be configured to show summary calculations for streams and assets.  Summary calculations are defined as the summary types enumerated in [SdsSummaryType](xref:sdsReadingDataApi#get-summaries). This topic describes how to include summaries in a data view. 
 

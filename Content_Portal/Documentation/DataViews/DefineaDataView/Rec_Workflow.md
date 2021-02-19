@@ -8,7 +8,7 @@ This is an introduction to the recommended workflow for defining data views. The
 Designing and tweaking a data view is expected to be an iterative process. You are not expected to "get it right the first time," nor to be an expert at your OCS configuration such as the streams available in the Sequential Data Store. Data views provide an interactive way to select, identify, and arrange the data you and your applications need.
 
 There are three main steps required to define a data view: 
-1. Including data items (such as streams)
+1. Including data items (such as streams and assets)
 2. Including specific data fields
 3. Arranging them within the data view.
 
@@ -90,7 +90,7 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart
   "Name": "quickstart",
   "IndexField": { "Label": "Timestamp" },
   "Queries": [
-    { 
+    {
       "Id": "weather",
       "Kind": "Stream",
       "Value":"*weather*" 

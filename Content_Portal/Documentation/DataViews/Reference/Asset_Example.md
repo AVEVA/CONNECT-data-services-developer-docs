@@ -4,260 +4,109 @@ uid: DataViewsAssetExamples
 
 # Asset examples
 
-This section defines an asset example including the streams, assets, and data view for illustrating how assets can be used within a data view.
+This section defines some example assets that add context around the streams and types defined in [stream examples](xref:DataViewsExampleScenario) in order to illustrate how assets can be used within a data view.
 
-This example creates haul truck assets and the underlying types and streams containing data such as engine oil pressure and engine temperature.
+## Solar inverter assets
+Each solar inverter assets contain 2 stream references: power in and power out for the corresponding inverter stream. 
 
-## Sequential Data Store artifacts
-
-### Type
-```json
-{
-    "Id": "docs-sds-truck-type",
-    "Name": "TruckType",
-    "SdsTypeCode": 1,
-    "Properties": [
-        {
-            "Id": "Timestamp",
-            "Name": "Timestamp",
-            "IsKey": true,
-            "SdsType": {
-                "SdsTypeCode": "DateTime"
-            }
-        },
-        {
-            "Id": "EngineOilPressure",
-            "Name": "EngineOilPressure",
-            "SdsType": {
-                "SdsTypeCode": "Double"
-            },
-            "Uom": "psi"
-        },
-        {
-            "Id": "EngineTemperature",
-            "Name": "EngineTemperature",
-            "SdsType": {
-                "SdsTypeCode": "Double"
-            },
-            "Uom": "°F"
-        },
-        {
-            "Id": "Latitude",
-            "Name": "Latitude",
-            "SdsType": {
-                "SdsTypeCode": "Double"
-            }
-        },
-        {
-            "Id": "Longitude",
-            "Name": "Longitude",
-            "SdsType": {
-                "SdsTypeCode": "Double"
-            }
-        }
-    ]
-}
-```
-### Stream IDs
-10 truck streams are defined:
+### Asset IDs
+8 inverter assets are defined:
 ```text
-"Truck102",
-"Truck202",
-"Truck273",
-"Truck421",
-"Truck474",
-"Truck641",
-"Truck745",
-"Truck788",
-"Truck820",
-"Truck834",
+"Biltmore Primary Inverter 0",
+"Biltmore Primary Inverter 1",
+"Biltmore Primary Inverter 2",
+"Biltmore Secondary Inverter 0",
+"Rosecliff Primary Inverter 0",
+"Rosecliff Primary Inverter 1",
+"Winterthur Primary Inverter 0",
+"Winterthur Secondary Inverter 0",
 ```
 
-## Asset artifacts
-
-### Asset type
-```json
-{
-    "Id": "docs-truck-type",
-    "Name": "TruckAssetType",
-    "Metadata": [
-        {
-            "Id": "Target Differential",
-            "Name": "Target Differential",
-            "Description": "Target engine pressure differential",
-            "SdsTypeCode": "Double",
-            "Value": 0.1,
-            "Uom": "psi"
-        }
-    ],
-    "TypeReferences": [
-        {
-            "StreamReferenceId": "truck-streams",
-            "StreamReferenceName": "truck-streams",
-            "TypeId": "docs-sds-truck-type"
-        }
-    ]
-}
-```
-
-### Assets
-(one to one match with streams)
-
-Asset IDs:
-```text
-"Truck102",
-"Truck202",
-"Truck273",
-"Truck421",
-"Truck474",
-"Truck641",
-"Truck745",
-"Truck788",
-"Truck820",
-"Truck834",
-```
-
-#### Asset metadata
-Each truck asset contains metadata for the truck Model and Last Maintenance Date.
+### Asset metadata
+Each solar inverter asset contains metadata for site, meter, and inverter.
 
 ```json
 "Metadata": [
     {
-        "Id": "Model",
-        "Name": "Model",
+        "Id": "Site",
+        "Name": "Site",
         "SdsTypeCode": "String",
-        "Value": one of ("CAT 797", "960E-1", "Titan")
+        "Value": one of ( "Biltmore" | "Rosecliff" | "Winterthur" )
     },
     {
-        "Id": "Last Maintenance Date",
-        "Name": "Last Maintenance Date",
-        "SdsTypeCode": "DateTime",
-        "Value": past date
+        "Id": "Meter",
+        "Name": "Meter",
+        "SdsTypeCode": "String",
+        "Value": one of ( "Primary" | "Secondary" )
+    },
+    {
+        "Id": "Inverter",
+        "Name": "Inverter",
+        "SdsTypeCode": "Int32",
+        "Value": one of ( 0 | 1 | 2 )
     }
 ]
 ```
 
-#### Asset stream references
-Each truck asset contains a stream reference to the SDS stream with the same name.
+### Asset stream references
+Each solar inverter asset contains 2 stream references to the correspnding SDS streams for the solar inverter.
 
 ```json
 "StreamReferences": [
     {
-        "Id": "Truck",
-        "Name": "Truck",
-        "StreamId": one of ("Truck102", "Truck202", "Truck273", "Truck421", "Truck474", "Truck641", "Truck745", "Truck788", "Truck820", "Truck834")
+        "Id": "Power In",
+        "Name": "Power In",
+        "StreamId": one of ( "BILT.Meter.Primary.Inverter.0.PwrIn" | "BILT.Meter.Primary.Inverter.1.PwrIn" | "BILT.Meter.Primary.Inverter.2.PwrIn" | "BILT.Meter.Secondary.Inverter.0.PwrIn" | "ROSE.Meter.Primary.Inverter.0.PwrIn" | "ROSE.Meter.Primary.Inverter.1.PwrIn" | "WINT.Meter.Primary.Inverter.0.PwrIn" | "WINT.Meter.Secondary.Inverter.0.PwrIn" )
+    },
+    {
+        "Id": "Power Out",
+        "Name": "Power Out", 
+        "StreamId": one of ( "BILT.Meter.Primary.Inverter.0.PwrOut" | "BILT.Meter.Primary.Inverter.1.PwrOut" | "BILT.Meter.Primary.Inverter.2.PwrOut" | "BILT.Meter.Secondary.Inverter.0.PwrOut" | "ROSE.Meter.Primary.Inverter.0.PwrOut" | "ROSE.Meter.Primary.Inverter.1.PwrOut" | "WINT.Meter.Primary.Inverter.0.PwrOut" | "WINT.Meter.Secondary.Inverter.0.PwrOut" )
     }
 ]
 ```
 
-## Sample data view
+### An example asset
 ```json
 {
-    "Id": "asset-quickstart",
-    "Name": "asset-quickstart",
-    "Queries": [
+    "Id": "Biltmore Primary Inverter 0",
+    "Name": "Biltmore Primary Inverter 0",
+    "Metadata": [
         {
-            "Id": "trucks",
-            "Kind": "Asset",
-            "Value": "Truck*"
+            "Id": "Site",
+            "Name": "Site",
+            "SdsTypeCode": "String",
+            "Value": "Biltmore"
+        },
+        {
+            "Id": "Meter",
+            "Name": "Meter",
+            "SdsTypeCode": "String",
+            "Value": "Primary"
+        },
+        {
+            "Id": "Inverter",
+            "Name": "Inverter",
+            "SdsTypeCode": "Int64",
+            "Value": 0
+        },
+        {
+            "Id": "Nominal Power",
+            "Name": "Nominal Power",
+            "SdsTypeCode": "Dboule",
+            "Value": 1.21
         }
     ],
-    "DataFieldSets": [
+    "StreamReferences": [
         {
-            "QueryId": "trucks",
-            "DataFields": [
-                {
-                    "Source": "PropertyId",
-                    "Keys": [
-                        "EngineOilPressure"
-                    ],
-                    "StreamReferenceNames": [
-                        "Truck"
-                    ],
-                    "Label": "{IdentifyingValue} Truck EngineOilPressure {SummaryType} {Uom}",
-                    "SummaryType": "None",
-                    "IncludeUom": false
-                },
-                {
-                    "Source": "PropertyId",
-                    "Keys": [
-                        "EngineTemperature"
-                    ],
-                    "StreamReferenceNames": [
-                        "Truck"
-                    ],
-                    "Label": "{IdentifyingValue} Truck EngineTemperature {SummaryType} {Uom}",
-                    "SummaryType": "None",
-                    "IncludeUom": false
-                },
-                {
-                    "Source": "PropertyId",
-                    "Keys": [
-                        "Latitude"
-                    ],
-                    "StreamReferenceNames": [
-                        "Truck"
-                    ],
-                    "Label": "{IdentifyingValue} Truck Latitude {SummaryType} {Uom}",
-                    "SummaryType": "None",
-                    "IncludeUom": false
-                },
-                {
-                    "Source": "PropertyId",
-                    "Keys": [
-                        "Longitude"
-                    ],
-                    "StreamReferenceNames": [
-                        "Truck"
-                    ],
-                    "Label": "{IdentifyingValue} Truck Longitude {SummaryType} {Uom}",
-                    "SummaryType": "None",
-                    "IncludeUom": false
-                },
-                {
-                    "Source": "Metadata",
-                    "Keys": [
-                        "Last Maintenance Date"
-                    ],
-                    "StreamReferenceNames": [],
-                    "Label": "{IdentifyingValue} Last Maintenance Date {Uom}",
-                    "SummaryType": "None",
-                    "IncludeUom": false
-                },
-                {
-                    "Source": "Metadata",
-                    "Keys": [
-                        "Model"
-                    ],
-                    "StreamReferenceNames": [],
-                    "Label": "{IdentifyingValue} Model {Uom}",
-                    "SummaryType": "None",
-                    "IncludeUom": false
-                },
-                {
-                    "Source": "Metadata",
-                    "Keys": [
-                        "Target Differential"
-                    ],
-                    "MeasurementKeys": [],
-                    "Label": "{IdentifyingValue} Target Differential {Uom}",
-                    "SummaryType": "None",
-                    "IncludeUom": false
-                }
-            ]
-        }
-    ],
-    "GroupingFields": [
+            "Id": "Power In",
+            "Name": "Power In",
+            "StreamId": "BILT.Meter.Primary.Inverter.0.PwrIn"
+        },
         {
-            "Source": "Id",
-            "Keys": [],
-            "StreamReferenceNames": [],
-            "Label": "{IdentifyingValue} Id",
-            "SummaryType": "None",
-            "IncludeUom": false
+            "Id": "Power Out",
+            "Name": "Power Out", 
+            "StreamId": "BILT.Meter.Primary.Inverter.0.PwrOut"
         }
-    ],
-    "IndexTypeCode": "DateTime",
-    "Shape": "Standard"
+    ]
 }
-```

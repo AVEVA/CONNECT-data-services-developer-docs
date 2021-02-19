@@ -6,7 +6,7 @@ uid: CreateAssetFromAssetType
 
 For more information on asset types, see [Asset types](xref:AssetTypes).
 
-1. Click the menu icon ![menu icon](..\images\icon_navigation_bigger.png) and click **Asset Explorer**.
+1. Click the menu icon ![menu icon](images\icon_navigation_bigger.png) and click **Asset Explorer**.
 
 
 2. Click the plus symbol (+) in the toolbar to open the Select Type for New Asset window. 
@@ -23,20 +23,18 @@ For more information on asset types, see [Asset types](xref:AssetTypes).
 
 5. Edit the values for any of the metadata.
     Note: You can only edit the values. The metadata are derived from an asset type, as indicated by the T and, therefore, you cannot add or delete metadata or change the type.
-
-    ![Metadata fields](..\images\edit-metadata-fields.png)
-
+    ![](images\metadata-fields2.png)
 6. When you are done, click **Save**.
 
 7. Click the **Measurements** tab.
 
 8. Click the caret symbol for a stream reference. 
 
-    ![](..\images\type-stream-reference-caret.png)
+    ![](images\stream-reference-caret2.png)
 
 9. Click **Choose a Stream** to open the Select Stream window.
 
-    ![](..\images\choose-stream.png)
+    ![](images\choose-stream.png)
 
 10. Select the stream from the list of streams.
 

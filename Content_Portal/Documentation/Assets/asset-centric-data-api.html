@@ -78,7 +78,7 @@
             <article class="content wrap" id="_content" data-uid="AssetCentricDataAPI">
 <h1 id="asset-centric-data-api">Asset Centric Data API</h1>
 
-<p>The asset centric data API provides a quick way to retrieve data stored in an asset&#39;s referenced streams.</p>
+<p>The asset centric data API provides a quick way to retrieve data stored in an asset&#39;s referenced streams. </p>
 <p>In order to retrieve stream data from an asset, you must first set up stream references for a given asset. The data that is retrieved is based on the resolved asset.</p>
 <h3 id="example-asset">Example Asset</h3>
 <p>The following asset is used in all of the sample output in this topic.</p>
@@ -106,13 +106,14 @@
 }
 </code></pre><hr>
 <h2 id="get-asset-last-data"><code>Get Asset Last Data</code></h2>
-<p>Returns the last stored value for all SDS streams in the resolved asset.</p>
+<p>Returns the last stored value for SDS streams in the resolved asset.</p>
 <h3 id="request">Request</h3>
-<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/Last
+<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/Last?Stream={streams}
 </code></pre><h3 id="parameters">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string assetId</code><br>The asset identifier</p>
+<p>[optional] <code>string[] streams</code><br>An optional parameter consisting of a comma-separated list of stream reference names that you are interested in. By default, all data calls return data for all stream references.</p>
 <h3 id="response">Response</h3>
 <p>The response includes a status code and a response body.</p>
 <table>
@@ -168,10 +169,10 @@ Content-Type: application/json
 }
 </code></pre><hr>
 <h2 id="get-asset-sampled-data"><code>Get Asset Sampled Data</code></h2>
-<p>Returns sampled data for all referenced measurements. </p>
+<p>Returns sampled data for referenced Sds streams. </p>
 <p>Note: The inputs to this API matches the SDS stream Get samples values data call.  </p>
 <h3 id="request-1">Request</h3>
-<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/Sampled?startIndex={startIndex}&amp;endIndex={endIndex}&amp;intervals={intervals}
+<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/Sampled?startIndex={startIndex}&amp;endIndex={endIndex}&amp;intervals={intervals}&amp;Stream={streams}
 </code></pre><h3 id="parameters-1">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier </p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -179,6 +180,7 @@ Content-Type: application/json
 <p><code>string startIndex</code><br>The start index for the intervals</p>
 <p><code>string endIndex</code><br>The end index for the intervals</p>
 <p><code>int intervals</code><br>The number of requested intervals</p>
+<p>[optional] <code>string[] streams</code><br>An optional parameter consisting of a comma-separated list of stream reference names that you are interested in. By default, all data calls return data for all stream references.</p>
 <h3 id="response-1">Response</h3>
 <p>The response includes a status code and a response body.</p>
 <table>
@@ -243,9 +245,9 @@ Content-Type: application/json
 }
 </code></pre><hr>
 <h2 id="get-asset-summary-data"><code>Get Asset Summary Data</code></h2>
-<p>Returns summary data for all referenced SDS streams. </p>
+<p>Returns summary data for referenced SDS streams. </p>
 <h3 id="request-2">Request</h3>
-<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/Summaries?startIndex={startIndex}&amp;endIndex={endIndex}&amp;count={count}
+<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/Summaries?startIndex={startIndex}&amp;endIndex={endIndex}&amp;count={count}&amp;Stream={streams}
 </code></pre><h3 id="parameters-2">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier </p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -253,6 +255,7 @@ Content-Type: application/json
 <p><code>string startIndex</code><br>The start index for the intervals</p>
 <p><code>string endIndex</code><br>The end index for the intervals</p>
 <p><code>int count</code><br>The number of requested intervals</p>
+<p>[optional] <code>string[] streams</code><br>An optional parameter consisting of a comma-separated list of stream reference names that you are interested in. By default, all data calls return data for all stream references.</p>
 <h3 id="response-2">Response</h3>
 <p>The response includes a status code and a response body.</p>
 <table>
@@ -432,45 +435,59 @@ Content-Type: application/json
             }
         ],
     &quot;Errors&quot;: null
+   }
 }
-
-***
-
-## `Get Asset Window Data`
-Returns window data for all referenced SDS streams.
-
-### Request
-</code></pre><p>GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data?startIndex={startIndex}&amp;endIndex={endIndex}</p>
-<pre><code>
-### Parameters
-`string tenantId`  
-The tenant identifier
-
-`string namespaceId`   
-The namespace identifier
-
-`string assetId`  
-The asset identifier
-
-`string startIndex`   
-The start index for the intervals
-
-`string endIndex`   
-The end index for the intervals
-
-### Response
-The response includes a status code and a response body.
-
-| Status Code | Body Type | Description |
-|--|--|--|
-| 200 OK | OK | Array of window values for all references. |
-| 207 Multi-Status | partial success | Array of window values for  references. Look at child errors for unsuccessful values. |
-| 400 Bad Request | error | The request is not valid. See the response body for additional details. |
-| 403 Forbidden | error | You are not authorized to view the requested asset. |
-| 404 Not Found | error | The specified asset with identifier is not found. |
-
-```json 
-HTTP 200 OK
+</code></pre><hr>
+<h2 id="get-asset-window-data"><code>Get Asset Window Data</code></h2>
+<p>Returns window data for referenced SDS streams.</p>
+<h3 id="request-3">Request</h3>
+<pre><code>GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data?startIndex={startIndex}&amp;endIndex={endIndex}&amp;Stream={streams}
+</code></pre><h3 id="parameters-3">Parameters</h3>
+<p><code>string tenantId</code><br>The tenant identifier</p>
+<p><code>string namespaceId</code><br>The namespace identifier</p>
+<p><code>string assetId</code><br>The asset identifier</p>
+<p><code>string startIndex</code><br>The start index for the intervals</p>
+<p><code>string endIndex</code><br>The end index for the intervals</p>
+<p>[optional] <code>string[] streams</code><br>An optional parameter consisting of a comma-separated list of stream reference names that you are interested in. By default, all data calls return data for all stream references.</p>
+<h3 id="response-3">Response</h3>
+<p>The response includes a status code and a response body.</p>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Body Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OK</td>
+<td>OK</td>
+<td>Array of window values for all references.</td>
+</tr>
+<tr>
+<td>207 Multi-Status</td>
+<td>partial success</td>
+<td>Array of window values for  references. Look at child errors for unsuccessful values.</td>
+</tr>
+<tr>
+<td>400 Bad Request</td>
+<td>error</td>
+<td>The request is not valid. See the response body for additional details.</td>
+</tr>
+<tr>
+<td>403 Forbidden</td>
+<td>error</td>
+<td>You are not authorized to view the requested asset.</td>
+</tr>
+<tr>
+<td>404 Not Found</td>
+<td>error</td>
+<td>The specified asset with identifier is not found.</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">HTTP 200 OK
 Content-Type: application/json
 {
     &quot;Results&quot;: {
@@ -520,6 +537,73 @@ Content-Type: application/json
                 &quot;Temp&quot;: 8.045,
                 &quot;Pres&quot;: 1
             },       ],
+    },
+    &quot;Errors&quot;: null
+}
+
+
+***
+
+## `Get Asset Interpolated Data` 
+Returns interpolated data for referenced SDS streams. 
+
+### Request 
+</code></pre><p>GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/Interpolated?startIndex={startIndex}&amp;endIndex={endIndex}&amp;count={count}&amp;Stream={streams}</p>
+<pre><code>
+###  Parameters  
+`string tenantId`   
+The tenant identifier 
+
+`string namespaceId`   
+The namespace identifier
+
+`string assetId`  
+The asset identifier
+
+`string startIndex`   
+The start index for the intervals
+
+`string endIndex`   
+The end index for the intervals
+
+`int count`   
+The number of requested intervals
+
+[optional] `string[] streams`   
+An optional parameter consisting of a comma-separated list of stream reference names that you are interested in. By default, all data calls return data for all stream references.
+
+### Response 
+The response includes a status code and a response body.
+
+| Status Code | Body Type | Description |
+|--|--|--|
+| 200 OK | OK | Array of summary values for all references. |
+| 207 Multi-Status | partial success | Array of summary values for  references. Look at child errors for those that are unsuccessful. |
+| 400 Bad Request | error | The request is not valid. See the response body for additional details. |
+| 403 Forbidden | error | You are not authorized to view the requested asset. |
+| 404 Not Found | error | The specified asset with identifier is not found. |
+
+```json 
+HTTP 200 OK
+Content-Type: application/json
+{
+    &quot;Results&quot;: {
+        &quot;StreamReferenceWithEventsName&quot;: [
+            {
+                &quot;Timestamp&quot;: &quot;2019-01-02T00:00:05Z&quot;,
+                &quot;Temp&quot;: 5.045,
+                &quot;Pres&quot;: 1
+            },
+            {
+                &quot;Timestamp&quot;: &quot;2020-04-12T08:00:00Z&quot;,
+                &quot;Temp&quot;: 3.045,
+                &quot;Pres&quot;: 11
+            },
+            {
+                &quot;Timestamp&quot;: &quot;2020-06-29T05:20:00Z&quot;,
+                &quot;Temp&quot;: 54.045,
+                &quot;Pres&quot;: 11
+            }]
     },
     &quot;Errors&quot;: null
 }

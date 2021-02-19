@@ -79,39 +79,42 @@
 <h1 id="types">Types</h1>
 
 <p>The Sequential Data Store (SDS) stores streams of events and provides convenient ways to find and associate 
-events. Events are stored in SdsStreams (or streams).
-An SdsType is a primitive type available in OCS used within the API and REST definitions to identify a stream type.</p>
-<p>Define simple atomic types, such as integers, floats, strings, arrays, and dictionaries, or 
+events. Events are stored in streams.
+A primitive type is available in the OCS and is used within the API and REST definitions to identify a stream type.</p>
+<p>You can define simple atomic types, such as integers, floats, strings, arrays, and dictionaries, or 
 complex or nested types using the <a href="#sdstypeproperty">Properties collection of SdsTypes</a>. </p>
-<p>An SdsType used to define an SdsStream must have a key. A key is a <a href="#sdstypeproperty">Property, or a combination of Properties</a> 
+<p>A type that is used to define a stream must have a key. A key is a <a href="#sdstypeproperty">Property, or a combination of Properties</a> 
 that constitutes an ordered, unique identity. If the key is ordered so it functions as an index, it is 
 known as the <em>primary index</em>. While a timestamp (<code>DateTime</code>) is a very common type of index, any type that 
 can be ordered is permitted. Secondary and other indexes are defined in the stream. 
 For more information, see <a class="xref" href="indexes.html">Indexes</a>.</p>
-<p>When defining an SdsType, consider how the events will be represented in an SdsStream as the SdsType defines 
-each event in an SdsStream. An event is a single unit whose properties have values that relate to the 
+<p>Consider how the events will be represented in a stream as the type defines 
+each event in a stream. An event is a single unit whose properties have values that relate to the 
 index; that is, each property of a type event is related to the event&#39;s index. Each event is a single unit.</p>
-<p>An SdsType is referenced by its identifier or <code>Id</code> field. SdsType identifiers must be unique within a namespace.</p>
-<p>An SdsType can also refer other SdsTypes by using their identifiers. This enables type re-usability.
-Nested types and base types are automatically created as separate types. For more information, see <a href="#type-reusability">Type Reusability</a>.</p>
-<p>SdsTypes define how events are read and associated within a collection of SdsStreams. The read 
+<p>A type is referenced by its identifier or <code>Id</code> field.
+Type identifiers must be unique within a namespace.</p>
+<p>A type can also refer to other types by using their identifiers. This enables type re-usability.
+Nested types and base types are automatically created as separate types.
+For more information, see <a href="#type-reusability">Type Reusability</a>.</p>
+<p>Types define how events are read and associated within a collection of streams. The read 
 characteristics when attempting to read non-existent indexes, indexes that fall between, before or after 
-existing indexes, are determined by the interpolation and extrapolation settings of the SdsType. For more 
+existing indexes, are determined by the interpolation and extrapolation settings of the type. For more 
 information about read characteristics, see <a class="xref" href="Reading_Data.html#interpolation">Interpolation</a> and <a class="xref" href="Reading_Data.html#extrapolation">Extrapolation</a>.</p>
-<p>SdsTypes are immutable. After an SdsType is created, its definition cannot be updated. An SdsType must be deleted and recreated if the definition is incorrect.
-In addition, an SdsType may be deleted only if no SdsStreams, SdsStreamViews, or other SdsTypes reference it.</p>
-<p>Only the SdsTypes that are used to define SdsStreams or SdsStreamViews are required to be added to the SDS. 
-SdsTypes that define <a href="#sdstypeproperty">Properties</a> or base types are contained within the parent type so they don&#39;t need to be added to the SDS independently.</p>
+<p>Types are immutable. After a type is created, its definition cannot be updated.
+A type must be deleted and recreated if the definition is incorrect.
+You can delete a type only if no streams, stream views, or other types reference it.</p>
+<p>Only the types that are used to define streams or stream views are required to be added to the SDS. 
+Types that define <a href="#sdstypeproperty">properties</a> or base types are contained within the parent type so they don&#39;t need to be added to the SDS independently.</p>
 <h2 id="sdstype-fields-and-properties-table">SdsType fields and properties table</h2>
 <p><a name="typepropertiestable"></a>
-The table below lists required and optional fields in an SdsType. Fields that are not included are reserved for internal SDS use.
+The table below lists required and optional fields in a type. Fields that are not included are reserved for internal SDS use.
 For more information on search including limitations, see <a class="xref" href="Searching.html">Search in SDS</a>.</p>
 <table>
 <thead>
 <tr>
-<th>Property</th>
-<th>Type</th>
-<th>Optionality</th>
+<th>Property Name</th>
+<th>Data Type</th>
+<th>Required</th>
 <th>Searchable</th>
 <th>Details</th>
 </tr>
@@ -120,55 +123,55 @@ For more information on search including limitations, see <a class="xref" href="
 <tr>
 <td>Id</td>
 <td>String</td>
-<td>Required</td>
+<td>Yes</td>
 <td>Yes</td>
 <td>Identifier for referencing the type</td>
 </tr>
 <tr>
 <td>Name</td>
 <td>String</td>
-<td>Optional</td>
+<td>No</td>
 <td>Yes</td>
 <td>Friendly name</td>
 </tr>
 <tr>
 <td>Description</td>
 <td>String</td>
-<td>Optional</td>
+<td>No</td>
 <td>Yes</td>
 <td>Description text</td>
 </tr>
 <tr>
 <td>SdsTypeCode</td>
 <td>SdsTypeCode</td>
-<td>Required</td>
+<td>Yes</td>
 <td>No</td>
 <td>Numeric code identifying the base SdsType</td>
 </tr>
 <tr>
 <td>InterpolationMode</td>
 <td>SdsInterpolationMode</td>
-<td>Optional</td>
+<td>No</td>
 <td>No</td>
 <td>Interpolation setting of the type. Default is Continuous. For more information, see <a class="xref" href="Reading_Data.html#interpolation">Interpolation</a>.</td>
 </tr>
 <tr>
 <td>ExtrapolationMode</td>
 <td>SdsExtrapolationMode</td>
-<td>Optional</td>
+<td>No</td>
 <td>No</td>
 <td>Extrapolation setting of the type. For more information, see <a class="xref" href="Reading_Data.html#extrapolation">Extrapolation</a>.</td>
 </tr>
 <tr>
 <td>Properties</td>
 <td>IList&lt;SdsTypeProperty></td>
-<td>Required</td>
+<td>Yes</td>
 <td>Yes, with limitations</td>
 <td>List of SdsTypeProperty items. See <a href="#sdstypeproperty">SdsTypeProperty</a> below.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="rules-for-the-sdstype-identifier-sdstypeid">Rules for the SdsType Identifier (SdsType.Id)</h3>
+<h3 id="rules-for-the-type-identifier-sdstypeid">Rules for the type identifier (SdsType.Id)</h3>
 <ol>
 <li>Is not case sensitive</li>
 <li>Cannot just be whitespace</li>
@@ -183,8 +186,8 @@ You can create <code>ISdsMetadataService</code> using one of the <code>SdsServic
 <p>The SdsTypeCode is a numeric identifier used by the SDS to identify SdsTypes.
 An SdsTypeCode exists for every supported type.</p>
 <p>Atomic types, such as strings, floats and arrays, are defined entirely by the SdsTypeCode and do not need other fields to define the type.</p>
-<p>Types that require additional definition, such as enums and objects, are identified using a generic 
-SdsTypeCode, such as ByteEnum, Int32Enum, NullableInt32Enum, or Object, plus additional SdsTypeProperty fields.</p>
+<p>Types that require additional definition (enumerations and objects, for example) are identified with a generic 
+SdsTypeCode (<code>ByteEnum</code>, <code>Int32Enum</code>, <code>NullableInt32withEnum</code>, or <code>Object</code>, for example) <em>and</em> additional SdsTypeProperty fields.</p>
 <p><strong>Supported Types</strong>  </p>
 <p>The following types are supported and defined by the SdsTypeCode:</p>
 <table>
@@ -510,15 +513,16 @@ SdsTypeCode, such as ByteEnum, Int32Enum, NullableInt32Enum, or Object, plus add
 </tbody>
 </table>
 <h2 id="sdstypeproperty">SdsTypeProperty</h2>
-<p>The Properties collection defines the fields in an SdsType. Stream properties are a field expected to appear in every stream created from a given type.</p>
-<p>The following table shows the required and optional SdsTypeProperty fields. Fields that 
-are not included are reserved for internal SDS use.</p>
+<p>The <code>Properties</code> collection defines the fields in a type. 
+Type properties will appear in every stream that is created from a given type.</p>
+<p>The following table shows the required and optional <code>SdsTypeProperty</code> fields.
+Fields that are not included are reserved for internal SDS use.</p>
 <table>
 <thead>
 <tr>
-<th>Property</th>
-<th>Type</th>
-<th>Optionality</th>
+<th>Property Name</th>
+<th>Data Type</th>
+<th>Required</th>
 <th>Details</th>
 </tr>
 </thead>
@@ -526,80 +530,82 @@ are not included are reserved for internal SDS use.</p>
 <tr>
 <td>Id</td>
 <td>String</td>
-<td>Required</td>
+<td>Yes</td>
 <td>Identifier for referencing the type</td>
 </tr>
 <tr>
 <td>Name</td>
 <td>String</td>
-<td>Optional</td>
+<td>No</td>
 <td>Friendly name</td>
 </tr>
 <tr>
 <td>Description</td>
 <td>String</td>
-<td>Optional</td>
+<td>No</td>
 <td>Description text</td>
 </tr>
 <tr>
 <td>SdsType</td>
 <td>SdsType</td>
-<td>Required</td>
+<td>Yes</td>
 <td>Field defining the property&#39;s SdsType</td>
 </tr>
 <tr>
 <td>IsKey</td>
 <td>Boolean</td>
-<td>Required</td>
+<td>Yes</td>
 <td>Identifies the property as the index</td>
 </tr>
 <tr>
 <td>Value</td>
 <td>Object</td>
-<td>Optional</td>
+<td>No</td>
 <td>Value of the property</td>
 </tr>
 <tr>
 <td>Order</td>
 <td>Int</td>
-<td>Optional</td>
+<td>No</td>
 <td>Order of comparison within a compound index</td>
 </tr>
 <tr>
 <td>InterpolationMode</td>
 <td>SdsInterpolationMode</td>
-<td>Optional</td>
+<td>No</td>
 <td>Interpolation setting of the property. Default is null.</td>
 </tr>
 <tr>
 <td>Uom</td>
 <td>String</td>
-<td>Optional</td>
+<td>No</td>
 <td>Unit of measure of the property</td>
 </tr>
 </tbody>
 </table>
-<p>The SdsTypeProperty&#39;s identifier follows the same <a href="#typepropertiestable">rules</a> as the SdsType&#39;s identifier.</p>
-<p>Boolean value <code>IsKey</code> identifies the primary index of an SdsType in a single index. An index that is defined by more than one 
+<p><strong>ID rule</strong>
+The SdsTypeProperty ID follows the same <a href="#typepropertiestable">rules</a> as the type identifier.</p>
+<p><strong><code>IsKey</code></strong><br>Boolean value <code>IsKey</code> identifies the primary index of a type in a single index. An index that is defined by more than one 
 SdsTypeProperty is called a compound index. The maximum number of properties that can define a compound index is three. 
-In a compound index, each SdsTypeProperty that is included in the index is specified as <code>IsKey</code>.
+In a compound index, each <code>SdsTypeProperty</code> that is included in the index is specified as <code>IsKey</code>.
 The <code>Order</code> field marks the order of comparison within a compound index.</p>
-<p>The <code>Value</code> field is used for properties that represent a value. An example of a property with a 
-value is an enum&#39;s named constant. When representing an enum in an SdsType, the SdsType&#39;s 
-SdsTypeProperty collection defines the enum&#39;s constant list. The SdsTypeProperty&#39;s <code>Id</code> represents 
-the constant&#39;s name and the SdsTypeProperty&#39;s <code>Value</code> represents the constant&#39;s value (see the enum <code>State</code> definitions in the code samples below).</p>
-<p><code>InterpolationMode</code> is assigned when the SdsTypeProperty of the event should be interpolated in a specific way 
+<p><strong><code>Value</code></strong><br>The <code>Value</code> field is used for the properties of enumeration types.
+An enumeration is a collection of named constants with associated constant values.
+Each named constant is defined by the <code>Id</code> of the SdsTypeProperty.
+The associated constant value is defined by the <code>Value</code> of the SdsTypeProperty.
+For more information, see the enumeration <code>State</code> definitions in the sample code below.</p>
+<p><strong><code>InterpolationMode</code></strong><br><code>InterpolationMode</code> is assigned when the SdsTypeProperty of the event should be interpolated in a specific way 
 that differs from the interpolation mode of the SdsType. <code>InterpolationMode</code> is only applied to an SdsTypeProperty 
 that is not part of the index. If the <code>InterpolationMode</code> is not set, the SdsTypeProperty is interpolated 
 in the manner defined by the SdsType&#39;s <code>InterpolationMode</code>.</p>
 <p>An SdsType with the <code>InterpolationMode</code> set to <code>Discrete</code> cannot also have the SdsTypeProperty with <code>InteroplationMode</code>. 
 For more information on interpolation of events, see <a class="xref" href="Reading_Data.html#interpolation">Interpolation</a>.</p>
-<p><code>Uom</code> is the unit of measure for the SdsTypeProperty. The <code>Uom</code> of the SdsTypeProperty may be specified by the name or the 
+<p><strong><code>Uom</code></strong><br><code>Uom</code> is the unit of measure for the SdsTypeProperty. The <code>Uom</code> of the SdsTypeProperty may be specified by the name or the 
 abbreviation. The names and abbreviations of <code>Uoms</code> are case sensitive. </p>
 <p>The <code>InterpolationMode</code> and <code>Uom</code> of the SdsTypeProperty can be overridden on the SdsStream. For more information, see <a class="xref" href="SDS_Streams.html#sdsstreampropertyoverride">Streams</a>.</p>
-<h3 id="supported-units-of-measure">Supported Units of Measure</h3>
+<h3 id="supported-units-of-measure">Supported units of measure</h3>
 <p>For a list of units of measures that are supported for an SdsTypeProperty, see <a class="xref" href="Units_of_Measure.html#supported-units-of-measure">Units of measure</a>.</p>
-<h2 id="work-with-sdstypes-in-net-framework">Work with SdsTypes in .NET framework</h2>
+<h2 id="sdstypes-in-net-framework">SdsTypes in .NET framework</h2>
 <p>When working in .NET, use the <code>SdsTypeBuilder</code> to create SdsTypes. The <code>SdsTypeBuilder</code> eliminates 
 potential errors that can occur when working with SdsTypes manually.</p>
 <p>There are several ways to work with the <code>SdsTypeBuilder</code>. One is to use the static methods for convenience:</p>
@@ -953,8 +959,8 @@ unique identifiers. Note that the following table contains only a partial list o
 </table>
 <p>The <code>SdsTypeBuilder</code> also supports derived types. Note that you need not add the base types to 
 the SDS before using <code>SdsTypeBuilder</code>. Base types are maintained within the SdsType.</p>
-<h2 id="work-with-sdstypes-outside-of-net-framework">Work with SdsTypes outside of .NET framework</h2>
-<p>SdsTypes must be built manually when .NET <code>SdsTypeBuilder</code> is unavailable. Below, you&#39;ll see how types are built and defined in
+<h2 id="sdstypes-outside-of-net-framework">SdsTypes outside of .NET framework</h2>
+<p>You can manually build types when .NET <code>SdsTypeBuilder</code> is unavailable. Below, you&#39;ll see how types are built and defined in
 <a href="https://github.com/osisoft/sample-ocs-waveform-python">Python</a> and <a href="https://github.com/osisoft/sample-ocs-waveform-nodejs">JavaScript</a> samples. 
 For samples in other languages, go to <a href="https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/SDS_WAVEFORM_README.md">OCS code samples in GitHub</a>.</p>
 <p>SdsType, SdsTypeProperty, and SdsTypeCode are defined below:</p>
@@ -1072,7 +1078,7 @@ SdsType: function (SdsType) {
         this.Properties = SdsType.Properties;
     }
 },
-</code></pre><p>These are the SdsTypes we are working with in Python and JavaScript classes:</p>
+</code></pre><p>These are the types we are working with in Python and JavaScript classes:</p>
 <p><strong>Python</strong></p>
 <pre><code class="lang-python">class State(Enum):
     Ok = 0
@@ -1110,7 +1116,7 @@ var Simple = function () {
     this.State = null;
     this.Measurement = null;
 }
-</code></pre><p>These are the SdsTypes defined in Python and JavaScript:</p>
+</code></pre><p>These are the types defined in Python and JavaScript:</p>
 <p><strong>Python</strong></p>
 <pre><code class="lang-python"># Create the properties
 
@@ -1220,7 +1226,7 @@ var simpleType = new SdsObjects.SdsType({
     @Observation.setter
     def Observation(self, observation):
         self.__observation = observation
-</code></pre><p>Extend the above SdsType as follows:</p>
+</code></pre><p>You can extend the above type as follows:</p>
 <p><strong>Python</strong></p>
 <pre><code class="lang-python"># Observation property is a simple non-indexed, standard data type
 observation = SdsTypeProperty()
@@ -1257,9 +1263,9 @@ var derivedType = new SdsObjects.SdsType({
     &quot;Properties&quot;: [ observationProprety ]
 });
 </code></pre><h2 id="type-reusability">Type reusability</h2>
-<p>SdsTypes can also refer other types by using their identifiers. This enables type re-usability.
-For example, if there is a common index and value property for a group of types that may have additional properties,
-a base type can be created with those properties.</p>
+<p>Types can refer to other types by using their identifiers, which enables type reusability.
+For example, if there is a common index and value property for a group of types that 
+may have additional properties, a base type can be created with those properties.</p>
 <pre><code class="lang-json">{
     &quot;Id&quot;: &quot;Simple&quot;,
     &quot;Name&quot;: &quot;Simple&quot;,
@@ -1282,7 +1288,7 @@ a base type can be created with those properties.</p>
         }
     ]
 }
-</code></pre><p>If a new type should be created with properties in addition to the ones shown above,
+</code></pre><p>If you need to create a new type with properties in addition to the ones shown above,
 a reference to the base type can be added by simply specifying the base type&#39;s <code>Id</code>.</p>
 <pre><code class="lang-json">{
     &quot;Id&quot;: &quot;Complex&quot;,
@@ -1339,15 +1345,17 @@ a reference to the base type can be added by simply specifying the base type&#39
     ]
 }
 </code></pre><p>If the full definition is sent, the referenced types (base type &quot;Simple&quot; in the above example)
-should match the actual type that was initially created. If the full definition is sent and the referenced types do not exist,
-they will be created automatically by the SDS. Further type creations can reference them as shown above.
+should match the actual type that was initially created. 
+If the full definition is sent and the referenced types do not exist,
+a new type will be created automatically by the SDS. 
+Further type creations can reference them as shown above.
 Note that when trying to get types back from the SDS, the results will also include types that were automatically created by the SDS.</p>
-<p>Base types and properties of type Object, Enum, or user-defined collections such as Array, List and Dictionary,
+<p>Base types and properties of type <code>object</code>, <code>enum</code>, or user-defined collections such as <code>array</code>, <code>list</code> and <code>dictionary</code>,
 will be treated as referenced types. Note that streams cannot be created using these referenced types.
-If a stream of particular type is to be created, the type should contain at least one property
+If a stream of a particular type is to be created, the type should contain at least one property
 with a valid index type as described in the <a class="xref" href="indexes.html">Indexes</a> section. 
 The index property may also be in the base type as shown in the example above.</p>
-<p>This works seamlessly when using any programming language, using .NET for example:</p>
+<p>You can do this using any programming languages. Here&#39;s an example in .NET:</p>
 <pre><code class="lang-csharp">
 public class Basic
 {
@@ -1374,10 +1382,10 @@ engineType.BaseType.Id = &quot;Basic&quot;;
 SdsType windShieldType = SdsTypeBuilder.CreateSdsType&lt;WindShieldMonitor&gt;();
 windShieldType.Id = &quot;WindShield&quot;;
 windShieldType.BaseType.Id = &quot;Basic&quot;;
-</code></pre><p>Note that if necessary, the base type&#39;s Id can also be changed to be more meaningful.</p>
+</code></pre><p>If needed, the base type&#39;s ID can also be changed to be more meaningful.</p>
 <h1 id="sdstype-api">SdsType API</h1>
 <p>The REST APIs provide programmatic access to read and write SDS data. The APIs in this section 
-interact with SdsTypes. When working in .NET, convenient SDS Client Libraries are available. 
+interact with types. When working in .NET, convenient SDS Client Libraries are available. 
 The ISdsMetadataService interface, accessed using the <code>SdsService.GetMetadataService()</code> helper, 
 defines the available functions. See <a href="#types">Types</a> for general type-related information.</p>
 <hr>

@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Asset Status </title>
+    <title>Asset and Asset Type Status </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Asset Status ">
+    <meta name="title" content="Asset and Asset Type Status ">
     <meta name="generator" content="docfx 2.56.5.0">
     
     <link rel="shortcut icon" href="../../../favicon.ico">
@@ -76,7 +76,7 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="AssetStatus">
-<h1 id="asset-status">Asset Status</h1>
+<h1 id="asset-and-asset-type-status">Asset and Asset Type Status</h1>
 
 <p>Status is a property of an asset or asset type that defines the simple status of an asset or asset type. There is one status property for each asset or asset type.</p>
 <p>If an asset references an existing asset type and the asset type has a corresponding type reference, then the status mapping on the asset is ignored.</p>
@@ -97,16 +97,9 @@
 <tr>
 <td>Name</td>
 <td>String</td>
-<td>Required</td>
+<td>Optional</td>
 <td>No</td>
 <td><code>Name</code> and <code>Id</code> for this status mapping.</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>String</td>
-<td>Required</td>
-<td>No</td>
-<td><code>Description</code> of the status mapping.</td>
 </tr>
 <tr>
 <td>StreamReferenceId</td>
@@ -169,7 +162,7 @@
 </tbody>
 </table>
 <h2 id="status-enumerations">Status enumerations</h2>
-<p>The following are valid status enumerations: <!-- Is this meant to be an example of a valid status enumeration? --></p>
+<p>The following are valid status enumerations: </p>
 <ul>
 <li>Unknown = 0</li>
 <li>Good = 1</li>
@@ -208,7 +201,8 @@
     }] 
 } 
 </code></pre><h2 id="get-asset-status"><code>Get Asset Status</code></h2>
-<p>View the status of an asset</p>
+<p>View the status of an asset. </p>
+<p>The status of an asset is determined by an exact match of the Sds stream property value to the value of the ValueStatusMapping. If there are no exact matches, the status is a 0 (Unknown).</p>
 <h3 id="request">Request</h3>
 <pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/status/last
 </code></pre><h3 id="parameters">Parameters</h3>

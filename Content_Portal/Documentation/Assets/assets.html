@@ -136,7 +136,7 @@
 <td>Metadata</td>
 <td>Metadata List</td>
 <td>Optional</td>
-<td>Yes*</td>
+<td>Yes</td>
 <td>Asset and asset type metadata</td>
 <td>Yes</td>
 <td>Yes</td>
@@ -145,7 +145,7 @@
 <td>StreamReferences</td>
 <td>Stream Reference List</td>
 <td>Optional</td>
-<td>No *</td>
+<td>No</td>
 <td>Asset stream references</td>
 <td>Yes</td>
 <td>No</td>
@@ -154,7 +154,7 @@
 <td>TypeReferences</td>
 <td>Type Reference List</td>
 <td>Optional</td>
-<td>No*</td>
+<td>No</td>
 <td>Asset type type references</td>
 <td>No</td>
 <td>Yes</td>
@@ -163,7 +163,7 @@
 <td>StatusMapping</td>
 <td>Status Mapping</td>
 <td>Optional</td>
-<td>No*</td>
+<td>No</td>
 <td>Asset and asset type status mapping</td>
 <td>Yes</td>
 <td>Yes</td>
@@ -186,7 +186,7 @@
 <tr>
 <td>Id</td>
 <td>String</td>
-<td>Required</td>
+<td>Required*</td>
 <td><code>Id</code> for the metadata value.</td>
 </tr>
 <tr>
@@ -221,6 +221,7 @@
 </tr>
 </tbody>
 </table>
+<p>* <code>Id</code> is not required on property if the <code>Name</code> matches a <code>Name</code> on the Asset Type metadata. In this case, the <code>Id</code> of the metadata on the Asset will be set as the metadata <code>Id</code> of the Asset Type. This also applies when an Asset is updated.</p>
 <h2 id="asset-stream-reference-properties">Asset stream reference properties</h2>
 <p>An asset stream reference represents dynamic stream data associated with an asset. The references must either be an SDS stream or an SDS stream view. Asset-centric data routes provide direct access to dynamic data for a given asset. There are no limitations on the number of references an asset may contain. However, an asset cannot contain multiple references to the same SDS stream. An asset stream reference does not stand alone. It must be specified within an asset object and, therefore, asset references do not have direct API routes. </p>
 <table>
@@ -237,7 +238,7 @@
 <tr>
 <td>Id</td>
 <td>String</td>
-<td>Required</td>
+<td>Required*</td>
 <td>No</td>
 <td><code>Id</code> for this stream reference object.  This <code>Id</code> must be unique within the asset.</td>
 </tr>
@@ -264,6 +265,7 @@
 </tr>
 </tbody>
 </table>
+<p>* <code>Id</code> is not required on property if the <code>Name</code> matches a <code>Name</code> on the Asset Type type reference. In this case, the <code>Id</code> of the stream reference on the Asset will be set as the type reference <code>Id</code> of the Asset Type. This also applies when an Asset is updated.</p>
 <h2 id="asset-type-type-reference-properties">Asset type type reference properties</h2>
 <p>An asset type type reference represents dynamic stream data associated with an asset. The references must either be an SDS stream or an SDS stream view. Asset-centric data routes provide direct access to dynamic data for a given asset. There are no limitations on the number of references an asset may contain. However, an asset cannot contain multiple references to the same SDS stream. An asset reference does not stand alone. It must be specified within an asset object and, therefore, asset references do not have direct API routes. </p>
 <table>

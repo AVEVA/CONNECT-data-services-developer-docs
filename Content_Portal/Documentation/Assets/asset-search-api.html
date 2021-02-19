@@ -85,17 +85,22 @@
 <h3 id="searchable-properties">Searchable Properties</h3>
 <p>Assets can be searched on the following asset properties:</p>
 <ul>
-<li>Id</li>
-<li>Name</li>
-<li>Description</li>
-<li>Metadata<ul>
-<li>Name</li>
-<li>Description</li>
-<li>Value</li>
+<li><p>Asset Top-level Fields</p>
+<ul>
+<li>Id, Name, Description, AssetTypeId, AssetTypeName</li>
 </ul>
 </li>
-<li>Asset Type Name</li>
-<li>AssetTypeId</li>
+<li><p>Metadata Fields</p>
+<ul>
+<li>Name, Description. Value</li>
+</ul>
+</li>
+<li><p>Stream Reference Fields</p>
+<ul>
+<li>StreamReferences - Stream Reference Name</li>
+<li>StreamProperties - Sds Stream Property Ids, not including indices</li>
+</ul>
+</li>
 </ul>
 <p>Search criteria can be chained together using an <strong>AND</strong>. See examples below. </p>
 <h2 id="search-assets"><code>Search Assets</code></h2>
@@ -259,7 +264,7 @@ Content-Type: application/json
 </tr>
 <tr>
 <td>Id:Id AND Name:Name1</td>
-<td>Returns all assets with <code>Id</code> matching the <strong>id</strong>* wildcard and with a friendly name equal to <strong>Name1</strong>.</td>
+<td>Returns all assets with <code>Id</code> matching the <strong>id</strong> and with a friendly name equal to <strong>Name1</strong>.</td>
 </tr>
 <tr>
 <td>Description:floor1*</td>
@@ -267,15 +272,15 @@ Content-Type: application/json
 </tr>
 <tr>
 <td>Metadata/Name:Building*</td>
-<td>Returns all assets with at least one metadata value whose description contains the string <strong>Building</strong>.</td>
+<td>Returns all assets with at least one metadata name whose description contains the string <strong>Building</strong>.</td>
 </tr>
 <tr>
 <td>Metadata/Description:heater*</td>
-<td>Returns all assets with at least one metadata value whose description starts with <strong>heater</strong>.</td>
+<td>Returns all assets with at least one metadata whose description starts with <strong>heater</strong>.</td>
 </tr>
 <tr>
 <td>Metadata/Value:123</td>
-<td>Returns all assets with at least one metadata value whose Value property equals <strong>123</strong>.</td>
+<td>Returns all assets with at least one metadata whose Value property equals <strong>123</strong>.</td>
 </tr>
 <tr>
 <td>Id:X* AND Metadata/Name:B*</td>
@@ -287,7 +292,15 @@ Content-Type: application/json
 </tr>
 <tr>
 <td>AssetTypeName:HeaterTypeName</td>
-<td>Returns all assets whose Name field of the asset type matches <code>HeaterTypeName</code></td>
+<td>Returns all assets whose <code>Name</code> field of the asset type matches <strong>HeaterTypeName</strong></td>
+</tr>
+<tr>
+<td>StreamProperties:Pressure</td>
+<td>Returns all assets that have one or more stream references with the stream property ID <strong>Pressure</strong>. Note: This search only searches non-key Sds stream properties.</td>
+</tr>
+<tr>
+<td>StreamReferences:Name1</td>
+<td>Returns all assets whose stream references contain a stream reference name that matches <strong>Name1</strong>.</td>
 </tr>
 </tbody>
 </table>

@@ -179,7 +179,7 @@
 <li>Any measurement mappings for &quot;reference3&quot; are ignored because Name on the asset is null. Note: <code>StreamReferenceName</code> on the asset type cannot be null. </li>
 </ul>
 <h3 id="request">Request</h3>
-<pre><code>GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Resolved
+<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Resolved
 </code></pre><h3 id="parameters">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -277,7 +277,50 @@ Content-Type: application/json
         }
     ]
 }
-</code></pre></article>
+</code></pre><h2 id="get-resolved-asset-bulk"><code>Get Resolved Asset (Bulk)</code></h2>
+<h3 id="request-1">Request</h3>
+<pre><code class="lang-text">POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets/Resolved
+</code></pre><h3 id="parameters-1">Parameters</h3>
+<p><code>string tenantId</code><br>The tenant identifier</p>
+<p><code>string namespaceId</code><br>The namespace identifier</p>
+<h4 id="request-body">Request body</h4>
+<p>A list of asset <code>Id</code>s.</p>
+<h4 id="example-request-body">Example request body</h4>
+<p>Requesting resolved assets for assets with the following <code>Id</code>s: &quot;Asset1&quot;, &quot;Asset2&quot;, and &quot;Asset3&quot;.</p>
+<pre><code class="lang-json">[
+   &quot;Asset1&quot;,
+   &quot;Asset2&quot;,
+   &quot;Asset3&quot;
+]
+</code></pre><h3 id="response-1">Response</h3>
+<p>The response includes a list of resolved assets, a status code and a response body.</p>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Body Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OK</td>
+<td><code>Resolved Asset</code> List</td>
+<td>The resolved assets</td>
+</tr>
+<tr>
+<td>207 Multi-status</td>
+<td><code>Resolved Asset</code> List and Error List</td>
+<td>The resolved assets and errors for assets which could not be resolved.</td>
+</tr>
+<tr>
+<td>400 Bad Request</td>
+<td>error</td>
+<td>The request is not valid. See the response body for additional details.</td>
+</tr>
+</tbody>
+</table>
+</article>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">

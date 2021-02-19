@@ -78,12 +78,12 @@
             <article class="content wrap" id="_content" data-uid="sdsStreamExtra">
 <h1 id="stream-metadata-and-tags">Stream metadata and tags</h1>
 
-<p>SdsStream metadata is represented as a dictionary of string keys and associated string values. 
-It can be used to associate additional information with a stream. SdsStream tags are represented 
+<p>Stream metadata is represented as a dictionary of string keys and associated string values. 
+It can be used to associate additional information with a stream. Stream tags are represented 
 as a list of strings. Tags can be used to categorize or denote special attributes of streams. 
-The SdsStream Metadata API And SdsStream Tags API do not accept the search query parameter in their respective
-Get calls. However, stream tags and metadata can be used as criteria in search query strings to return 
-SdsStream results with the <a class="xref" href="SDS_Streams.html">Stream</a> API.</p>
+The Stream Metadata API And Stream Tags API do not accept the search query parameter in their respective
+GET calls. However, stream tags and metadata can be used as criteria in search query strings to return 
+stream results with the <a class="xref" href="SDS_Streams.html">Stream</a> API.</p>
 <h1 id="sdsstream-metadata-api">SdsStream Metadata API</h1>
 <hr>
 <h2 id="get-stream-metadata"><code>Get Stream Metadata</code></h2>
@@ -97,7 +97,7 @@ SdsStream results with the <a class="xref" href="SDS_Streams.html">Stream</a> AP
 <h3 id="response">Response</h3>
 <p>The response includes a status code and a response body  </p>
 <h4 id="response-body">Response body</h4>
-<p>The metadata for the specified SdsStream</p>
+<p>The metadata for the specified stream</p>
 <h4 id="example-response-body">Example response body</h4>
 <pre><code class="lang-json">HTTP/1.1 200 
 Content-Type: application/json 
@@ -123,7 +123,7 @@ Content-Type: application/json
 <h3 id="response-1">Response</h3>
 <p>The response includes a status code and a response body  </p>
 <h4 id="response-body-1">Response body</h4>
-<p>The metadata for the specified SdsStream </p>
+<p>The metadata for the specified stream </p>
 <h4 id="example-response-body-1">Example response body</h4>
 <pre><code class="lang-json">HTTP/1.1 200 
 Content-Type: application/json 
@@ -197,7 +197,7 @@ Overwrites any existing metadata; does not merge.  </p>
 <h3 id="response-5">Response</h3>
 <p>The response includes a status code and a response body</p>
 <h4 id="response-body-3">Response body</h4>
-<p>The tags for the specified SdsStream   </p>
+<p>The tags for the specified stream   </p>
 <h4 id="example-response-body-2">Example response body</h4>
 <pre><code class="lang-json">HTTP/1.1 200 
 Content-Type: application/json

@@ -963,8 +963,17 @@ the SDS before using <code>SdsTypeBuilder</code>. Base types are maintained with
 <p>You can manually build types when .NET <code>SdsTypeBuilder</code> is unavailable. Below, you&#39;ll see how types are built and defined in
 <a href="https://github.com/osisoft/sample-ocs-waveform-python">Python</a> and <a href="https://github.com/osisoft/sample-ocs-waveform-nodejs">JavaScript</a> samples. 
 For samples in other languages, go to <a href="https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/SDS_WAVEFORM_README.md">OCS code samples in GitHub</a>.</p>
-<p>SdsType, SdsTypeProperty, and SdsTypeCode are defined below:</p>
-<p><strong>Python</strong></p>
+<h3 id="sdstypecode-sdstypeproperty-and-sdstype">SdsTypeCode, SdsTypeProperty and SdsType</h3>
+<div class="tabGroup" id="tabgroup_xOfEChw6EA">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_xOfEChw6EA_tabid-1" role="tab" aria-controls="tabpanel_xOfEChw6EA_tabid-1" data-tab="tabid-1" tabindex="0" aria-selected="true">Python</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_xOfEChw6EA_tabid-2" role="tab" aria-controls="tabpanel_xOfEChw6EA_tabid-2" data-tab="tabid-2" tabindex="-1">JavaScript</a>
+</li>
+</ul>
+<section id="tabpanel_xOfEChw6EA_tabid-1" role="tabpanel" data-tab="tabid-1">
 <pre><code class="lang-python">class SdsTypeCode(Enum):
     Empty = 0
     Object = 1
@@ -1036,7 +1045,8 @@ class SdsType(object):
     @Properties.setter
     def Properties(self, properties):
         self.__properties = properties
-</code></pre><p><strong>JavaScript</strong></p>
+</code></pre></section>
+<section id="tabpanel_xOfEChw6EA_tabid-2" role="tabpanel" data-tab="tabid-2" aria-hidden="true" hidden="hidden">
 <pre><code class="lang-javascript">SdsTypeCodeMap: {
     Empty: 0,
     &quot;Object&quot;: 1,
@@ -1078,8 +1088,19 @@ SdsType: function (SdsType) {
         this.Properties = SdsType.Properties;
     }
 },
-</code></pre><p>These are the types we are working with in Python and JavaScript classes:</p>
-<p><strong>Python</strong></p>
+</code></pre></section>
+</div>
+<h3 id="enum-state-and-type-simple">Enum <code>State</code> and type <code>Simple</code></h3>
+<div class="tabGroup" id="tabgroup_xOfEChw6EA-1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_xOfEChw6EA-1_tabid-a" role="tab" aria-controls="tabpanel_xOfEChw6EA-1_tabid-a" data-tab="tabid-a" tabindex="0" aria-selected="true">Python</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_xOfEChw6EA-1_tabid-b" role="tab" aria-controls="tabpanel_xOfEChw6EA-1_tabid-b" data-tab="tabid-b" tabindex="-1">JavaScript</a>
+</li>
+</ul>
+<section id="tabpanel_xOfEChw6EA-1_tabid-a" role="tabpanel" data-tab="tabid-a">
 <pre><code class="lang-python">class State(Enum):
     Ok = 0
     Warning = 1
@@ -1103,7 +1124,8 @@ class Simple(object):
         return self.__measurement
     def setMeasurement(self, measurement):
         self.__measurement = measurement
-</code></pre><p><strong>JavaScript</strong></p>
+</code></pre></section>
+<section id="tabpanel_xOfEChw6EA-1_tabid-b" role="tabpanel" data-tab="tabid-b" aria-hidden="true" hidden="hidden">
 <pre><code class="lang-javascript">var State =
 {
     Ok: 0,
@@ -1116,8 +1138,19 @@ var Simple = function () {
     this.State = null;
     this.Measurement = null;
 }
-</code></pre><p>These are the types defined in Python and JavaScript:</p>
-<p><strong>Python</strong></p>
+</code></pre></section>
+</div>
+<h3 id="defining-and-creating-types">Defining and creating types</h3>
+<div class="tabGroup" id="tabgroup_xOfEChw6EA-2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_xOfEChw6EA-2_tabid-c" role="tab" aria-controls="tabpanel_xOfEChw6EA-2_tabid-c" data-tab="tabid-c" tabindex="0" aria-selected="true">Python</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_xOfEChw6EA-2_tabid-d" role="tab" aria-controls="tabpanel_xOfEChw6EA-2_tabid-d" data-tab="tabid-d" tabindex="-1">JavaScript</a>
+</li>
+</ul>
+<section id="tabpanel_xOfEChw6EA-2_tabid-c" role="tabpanel" data-tab="tabid-c">
 <pre><code class="lang-python"># Create the properties
 
 # Time is the primary index
@@ -1167,7 +1200,8 @@ simpleType.Name = &quot;Simple&quot;
 simpleType.Description = &quot;Basic sample type&quot;
 simpleType.SdsTypeCode = SdsTypeCode.Object
 simpleType.Properties = [ time ]
-</code></pre><p><strong>JavaScript</strong></p>
+</code></pre></section>
+<section id="tabpanel_xOfEChw6EA-2_tabid-d" role="tabpanel" data-tab="tabid-d" aria-hidden="true" hidden="hidden">
 <pre><code class="lang-javascript">// Time is the primary index
 var timeProperty = new SdsObjects.SdsTypeProperty({
     &quot;Id&quot;: &quot;Time&quot;,
@@ -1226,8 +1260,19 @@ var simpleType = new SdsObjects.SdsType({
     @Observation.setter
     def Observation(self, observation):
         self.__observation = observation
-</code></pre><p>You can extend the above type as follows:</p>
-<p><strong>Python</strong></p>
+</code></pre></section>
+</div>
+<h3 id="extending-the-types">Extending the types</h3>
+<div class="tabGroup" id="tabgroup_xOfEChw6EA-3">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_xOfEChw6EA-3_tabid-e" role="tab" aria-controls="tabpanel_xOfEChw6EA-3_tabid-e" data-tab="tabid-e" tabindex="0" aria-selected="true">Python</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_xOfEChw6EA-3_tabid-f" role="tab" aria-controls="tabpanel_xOfEChw6EA-3_tabid-f" data-tab="tabid-f" tabindex="-1">JavaScript</a>
+</li>
+</ul>
+<section id="tabpanel_xOfEChw6EA-3_tabid-e" role="tabpanel" data-tab="tabid-e">
 <pre><code class="lang-python"># Observation property is a simple non-indexed, standard data type
 observation = SdsTypeProperty()
 observation.Id = &quot;Observation&quot;
@@ -1245,7 +1290,8 @@ derived.Description = &quot;Derived sample type&quot;
 derived.BaseType = simpleType # Set the base type to the derived type
 derived.SdsTypeCode = SdsTypeCode.Object
 derived.Properties = [ observation ]
-</code></pre><p><strong>JavaScript</strong></p>
+</code></pre></section>
+<section id="tabpanel_xOfEChw6EA-3_tabid-f" role="tabpanel" data-tab="tabid-f" aria-hidden="true" hidden="hidden">
 <pre><code class="lang-javascript">var observationProprety = new SdsObjects.SdsTypeProperty({
     &quot;Id&quot;: &quot;Observation&quot;,
     &quot;SdsType&quot;: new SdsObjects.SdsType({
@@ -1262,7 +1308,9 @@ var derivedType = new SdsObjects.SdsType({
     &quot;SdsTypeCode&quot;: SdsObjects.SdsTypeCodeMap.Object,
     &quot;Properties&quot;: [ observationProprety ]
 });
-</code></pre><h2 id="type-reusability">Type reusability</h2>
+</code></pre></section>
+</div>
+<h2 id="type-reusability">Type reusability</h2>
 <p>Types can refer to other types by using their identifiers, which enables type reusability.
 For example, if there is a common index and value property for a group of types that 
 may have additional properties, a base type can be created with those properties.</p>

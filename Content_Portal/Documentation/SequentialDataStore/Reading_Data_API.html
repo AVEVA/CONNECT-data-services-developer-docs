@@ -81,7 +81,19 @@
 <h4 id="example-type-stream-and-data">Example type, stream, and data</h4>
 <p>Many of the API methods described below contain example requests and responses in JSON to highlight usage and specific behaviors. The following type, stream, and data are used in the examples.</p>
 <p><strong>Example type</strong><br><code>SimpleType</code> is an SdsType with a single index. This type is defined below in .NET, Python, and Javascript:</p>
-<h6 id="net">.NET</h6>
+<div class="tabGroup" id="tabgroup_ArhxxNT8GR">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_ArhxxNT8GR_tabid-1" role="tab" aria-controls="tabpanel_ArhxxNT8GR_tabid-1" data-tab="tabid-1" tabindex="0" aria-selected="true">.NET</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_ArhxxNT8GR_tabid-2" role="tab" aria-controls="tabpanel_ArhxxNT8GR_tabid-2" data-tab="tabid-2" tabindex="-1">Python</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_ArhxxNT8GR_tabid-3" role="tab" aria-controls="tabpanel_ArhxxNT8GR_tabid-3" data-tab="tabid-3" tabindex="-1">JavaScript</a>
+</li>
+</ul>
+<section id="tabpanel_ArhxxNT8GR_tabid-1" role="tabpanel" data-tab="tabid-1">
 <pre><code class="lang-csharp">public enum State
 {
    Ok,
@@ -97,7 +109,8 @@ public class SimpleType
    [SdsMember(Uom = &quot;meter&quot;)]
    public Double Measurement { get; set; }
 }
-</code></pre><h6 id="python">Python</h6>
+</code></pre></section>
+<section id="tabpanel_ArhxxNT8GR_tabid-2" role="tabpanel" data-tab="tabid-2" aria-hidden="true" hidden="hidden">
 <pre><code class="lang-python">class State(Enum):
   Ok = 0
   Warning = 1
@@ -121,7 +134,8 @@ class SimpleType(object):
     return self.__measurement
   def setValue(self, measurement):
     self.__measurement = measurement
-</code></pre><h6 id="javascript">JavaScript</h6>
+</code></pre></section>
+<section id="tabpanel_ArhxxNT8GR_tabid-3" role="tabpanel" data-tab="tabid-3" aria-hidden="true" hidden="hidden">
 <pre><code class="lang-javascript">var State =
 {
   Ok: 0,
@@ -134,7 +148,9 @@ var SimpleType = function () {
   this.State = null;
   this.Value = null;
 }
-</code></pre><p><strong>Example Stream</strong><br><code>Simple</code> is an SdsStream of type <code>SimpleType</code>.</p>
+</code></pre></section>
+</div>
+<p><strong>Example Stream</strong><br><code>Simple</code> is an SdsStream of type <code>SimpleType</code>.</p>
 <p><strong>Example Data</strong><br><code>Simple</code> has stored values as follows:</p>
 <pre><code>  11/23/2017 12:00:00 PM: Ok  0
   11/23/2017  1:00:00 PM: Ok 10
@@ -1196,7 +1212,7 @@ Content-Type: application/json
 </code></pre><p>SDS also supports summary requests for nullable SdsTypes. It means an SdsType has at least a nullable SdsTypeProperty.</p>
 <h5 id="example">Example</h5>
 <p>The following example contains a nullable double property with interpolation mode set to continuous:</p>
-<h6 id="net-1">.NET</h6>
+<h6 id="net">.NET</h6>
 <pre><code class="lang-csharp">
 public class SimpleType
 {

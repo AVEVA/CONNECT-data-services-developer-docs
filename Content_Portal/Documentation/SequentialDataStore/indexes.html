@@ -517,168 +517,206 @@ A collection of times would be sorted as follows:</p>
 <p>Below, SdsTypes defined in the <a href="https://github.com/osisoft/sample-ocs-waveform-python">Python</a>
 and <a href="https://github.com/osisoft/sample-ocs-waveform-nodejs">Java Script</a> samples are shown. For samples in other languages, go to <a href="https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/SDS_WAVEFORM_README.md">OCS code samples in GitHub</a>.</p>
 <p>To build an SdsType representation of sample classes in Python and Java Script, see <a href="#sample">Sample</a> below:</p>
-<p><strong>Python</strong></p>
-<pre><code>  class State(Enum):
-    Ok = 0
-    Warning = 1
-    Alarm = 2
+<div class="tabGroup" id="tabgroup_J6ECPX6Pme">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_J6ECPX6Pme_tabid-1" role="tab" aria-controls="tabpanel_J6ECPX6Pme_tabid-1" data-tab="tabid-1" tabindex="0" aria-selected="true">Python</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_J6ECPX6Pme_tabid-2" role="tab" aria-controls="tabpanel_J6ECPX6Pme_tabid-2" data-tab="tabid-2" tabindex="-1">JavaScript</a>
+</li>
+</ul>
+<section id="tabpanel_J6ECPX6Pme_tabid-1" role="tabpanel" data-tab="tabid-1">
+<pre><code class="lang-python">      class State(Enum):
+        Ok = 0
+        Warning = 1
+        Alarm = 2
 
-  class Simple(object):
-    Time = property(getTime, setTime)
-    def getTime(self):
-      return self.__time
-    def setTime(self, time):
-      self.__time = time
+      class Simple(object):
+        Time = property(getTime, setTime)
+        def getTime(self):
+          return self.__time
+        def setTime(self, time):
+          self.__time = time
 
-    State = property(getState, setState)
-    def getState(self):
-      return self.__state
-    def setState(self, state):
-      self.__state = state
+        State = property(getState, setState)
+        def getState(self):
+          return self.__state
+        def setState(self, state):
+          self.__state = state
 
-    Measurement = property(getValue, setValue)
-    def getValue(self):
-      return self.__measurement
-    def setValue(self, measurement):
-      self.__measurement = measurement
-</code></pre><p><strong>JavaScript</strong></p>
-<pre><code>  var State =
-  {
-    Ok: 0,
-    Warning: 1,
-    Alarm: 2
-  }
+        Measurement = property(getValue, setValue)
+        def getValue(self):
+          return self.__measurement
+        def setValue(self, measurement):
+          self.__measurement = measurement
+</code></pre></section>
+<section id="tabpanel_J6ECPX6Pme_tabid-2" role="tabpanel" data-tab="tabid-2" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-javascript">
+      var State =
+      {
+        Ok: 0,
+        Warning: 1,
+        Alarm: 2
+      }
 
-  var Simple = function () {
-    this.Time = null;
-    this.State = null;
-    this.Value = null;
-  }
-</code></pre><h5 id="sample"><strong>Sample</strong></h5>
+      var Simple = function () {
+        this.Time = null;
+        this.State = null;
+        this.Value = null;
+      }
+</code></pre></section>
+</div>
+<h5 id="sample"><strong>Sample</strong></h5>
 <p>The following code is used to build an SdsType representation of the sample class above:</p>
-<p><strong>Python</strong></p>
-<pre><code>  # Create the properties
+<div class="tabGroup" id="tabgroup_J6ECPX6Pme-1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_J6ECPX6Pme-1_tabid-3" role="tab" aria-controls="tabpanel_J6ECPX6Pme-1_tabid-3" data-tab="tabid-3" tabindex="0" aria-selected="true">Python</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_J6ECPX6Pme-1_tabid-4" role="tab" aria-controls="tabpanel_J6ECPX6Pme-1_tabid-4" data-tab="tabid-4" tabindex="-1">JavaScript</a>
+</li>
+</ul>
+<section id="tabpanel_J6ECPX6Pme-1_tabid-3" role="tabpanel" data-tab="tabid-3">
+<pre><code class="lang-python">      # Create the properties
 
-  # Time is the primary index
-  time = SdsTypeProperty()
-  time.Id = &quot;Time&quot;
-  time.Name = &quot;Time&quot;
-  time.IsKey = True
-  time.SdsType = SdsType()
-  time.SdsType.Id = &quot;DateTime&quot;
-  time.SdsType.Name = &quot;DateTime&quot;
-  time.SdsType.SdsTypeCode = SdsTypeCode.DateTime
+      # Time is the primary index
+      time = SdsTypeProperty()
+      time.Id = &quot;Time&quot;
+      time.Name = &quot;Time&quot;
+      time.IsKey = True
+      time.SdsType = SdsType()
+      time.SdsType.Id = &quot;DateTime&quot;
+      time.SdsType.Name = &quot;DateTime&quot;
+      time.SdsType.SdsTypeCode = SdsTypeCode.DateTime
 
-  # State is not a pre-defined type. An SdsType must be defined to represent the enum
-  stateTypePropertyOk = SdsTypeProperty()
-  stateTypePropertyOk.Id = &quot;Ok&quot;
-  stateTypePropertyOk.Measurement = State.Ok
-  stateTypePropertyWarning = SdsTypeProperty()
-  stateTypePropertyWarning.Id = &quot;Warning&quot;
-  stateTypePropertyWarning.Measurement = State.Warning
-  stateTypePropertyAlarm = SdsTypeProperty()
-  stateTypePropertyAlarm.Id = &quot;Alarm&quot;
-  stateTypePropertyAlarm.Measurement = State.Alarm
+      # State is not a pre-defined type. An SdsType must be defined to represent the enum
+      stateTypePropertyOk = SdsTypeProperty()
+      stateTypePropertyOk.Id = &quot;Ok&quot;
+      stateTypePropertyOk.Measurement = State.Ok
+      stateTypePropertyWarning = SdsTypeProperty()
+      stateTypePropertyWarning.Id = &quot;Warning&quot;
+      stateTypePropertyWarning.Measurement = State.Warning
+      stateTypePropertyAlarm = SdsTypeProperty()
+      stateTypePropertyAlarm.Id = &quot;Alarm&quot;
+      stateTypePropertyAlarm.Measurement = State.Alarm
 
-  stateType = SdsType()
-  stateType.Id = &quot;State&quot;
-  stateType.Name = &quot;State&quot;
-  stateType.Properties = [ stateTypePropertyOk, stateTypePropertyWarning,\
-                         stateTypePropertyAlarm ]
-  state = SdsTypeProperty()
-  state.Id = &quot;State&quot;
-  state.Name = &quot;State&quot;
-  state.SdsType = stateType
+      stateType = SdsType()
+      stateType.Id = &quot;State&quot;
+      stateType.Name = &quot;State&quot;
+      stateType.Properties = [ stateTypePropertyOk, stateTypePropertyWarning,\
+                             stateTypePropertyAlarm ]
+      state = SdsTypeProperty()
+      state.Id = &quot;State&quot;
+      state.Name = &quot;State&quot;
+      state.SdsType = stateType
 
-  # Measurement property is a simple non-indexed, pre-defined type
-  measurement = SdsTypeProperty()
-  measurement.Id = &quot;Measurement&quot;
-  measurement.Name = &quot;Measurement&quot;
-  measurement.SdsType = SdsType()
-  measurement.SdsType.Id = &quot;Double&quot;
-  measurement.SdsType.Name = &quot;Double&quot;
+      # Measurement property is a simple non-indexed, pre-defined type
+      measurement = SdsTypeProperty()
+      measurement.Id = &quot;Measurement&quot;
+      measurement.Name = &quot;Measurement&quot;
+      measurement.SdsType = SdsType()
+      measurement.SdsType.Id = &quot;Double&quot;
+      measurement.SdsType.Name = &quot;Double&quot;
 
-  # Create the Simple SdsType
-  simple = SdsType()
-  simple.Id = str(uuid.uuid4())
-  simple.Name = &quot;Simple&quot;
-  simple.Description = &quot;Basic sample type&quot;
-  simple.SdsTypeCode = SdsTypeCode.Object
-  simple.Properties = [ time, state, measurement ]
-</code></pre><p><strong>JavaScript</strong></p>
-<pre><code>  // Time is the primary key
-  var timeProperty = new SdsObjects.SdsTypeProperty({
-    &quot;Id&quot;: &quot;Time&quot;,
-    &quot;IsKey&quot;: true,
-    &quot;SdsType&quot;: new SdsObjects.SdsType({
-      &quot;Id&quot;: &quot;dateType&quot;,
-      &quot;SdsTypeCode&quot;: SdsObjects.SdsTypeCodeMap.DateTime
-    })
-  });
+      # Create the Simple SdsType
+      simple = SdsType()
+      simple.Id = str(uuid.uuid4())
+      simple.Name = &quot;Simple&quot;
+      simple.Description = &quot;Basic sample type&quot;
+      simple.SdsTypeCode = SdsTypeCode.Object
+      simple.Properties = [ time, state, measurement ]
+</code></pre></section>
+<section id="tabpanel_J6ECPX6Pme-1_tabid-4" role="tabpanel" data-tab="tabid-4" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-javascript">
+      // Time is the primary key
+      var timeProperty = new SdsObjects.SdsTypeProperty({
+        &quot;Id&quot;: &quot;Time&quot;,
+        &quot;IsKey&quot;: true,
+        &quot;SdsType&quot;: new SdsObjects.SdsType({
+          &quot;Id&quot;: &quot;dateType&quot;,
+          &quot;SdsTypeCode&quot;: SdsObjects.SdsTypeCodeMap.DateTime
+        })
+      });
 
-  // State is not a pre-defined type. A SdsType must be defined to represent the enum
-  var stateTypePropertyOk = new SdsObjects.SdsTypeProperty({
-    &quot;Id&quot;: &quot;Ok&quot;,
-    &quot;Value&quot;: State.Ok
-  });
+      // State is not a pre-defined type. A SdsType must be defined to represent the enum
+      var stateTypePropertyOk = new SdsObjects.SdsTypeProperty({
+        &quot;Id&quot;: &quot;Ok&quot;,
+        &quot;Value&quot;: State.Ok
+      });
 
-  var stateTypePropertyWarning = new SdsObjects.SdsTypeProperty({
-    &quot;Id&quot;: &quot;Warning&quot;,
-    &quot;Value&quot;: State.Warning
-  });
+      var stateTypePropertyWarning = new SdsObjects.SdsTypeProperty({
+        &quot;Id&quot;: &quot;Warning&quot;,
+        &quot;Value&quot;: State.Warning
+      });
 
-  var stateTypePropertyAlarm = new SdsObjects.SdsTypeProperty({
-    &quot;Id&quot;: &quot;Alarm&quot;,
-    &quot;Value&quot;: State.Alarm
-  });
+      var stateTypePropertyAlarm = new SdsObjects.SdsTypeProperty({
+        &quot;Id&quot;: &quot;Alarm&quot;,
+        &quot;Value&quot;: State.Alarm
+      });
 
-  var stateType = new SdsObjects.SdsType({
-    &quot;Id&quot;: &quot;State&quot;,
-    &quot;Name&quot;: &quot;State&quot;,
-    &quot;SdsTypeCode&quot;: SdsObjects.SdsTypeCodeMap.Int32Enum,
-    &quot;Properties&quot;: [stateTypePropertyOk, stateTypePropertyWarning,
-      stateTypePropertyAlarm, stateTypePropertyRed]
-  });
+      var stateType = new SdsObjects.SdsType({
+        &quot;Id&quot;: &quot;State&quot;,
+        &quot;Name&quot;: &quot;State&quot;,
+        &quot;SdsTypeCode&quot;: SdsObjects.SdsTypeCodeMap.Int32Enum,
+        &quot;Properties&quot;: [stateTypePropertyOk, stateTypePropertyWarning,
+          stateTypePropertyAlarm, stateTypePropertyRed]
+      });
 
-  // Value property is a simple non-indexed, pre-defined type
-  var valueProperty = new SdsObjects.SdsTypeProperty({
-    &quot;Id&quot;: &quot;Value&quot;,
-    &quot;SdsType&quot;: new SdsObjects.SdsType({
-      &quot;Id&quot;: &quot;doubleType&quot;,
-      &quot;SdsTypeCode&quot;: SdsObjects.SdsTypeCodeMap.Double
-    })
-  });
+      // Value property is a simple non-indexed, pre-defined type
+      var valueProperty = new SdsObjects.SdsTypeProperty({
+        &quot;Id&quot;: &quot;Value&quot;,
+        &quot;SdsType&quot;: new SdsObjects.SdsType({
+          &quot;Id&quot;: &quot;doubleType&quot;,
+          &quot;SdsTypeCode&quot;: SdsObjects.SdsTypeCodeMap.Double
+        })
+      });
 
-  // Create the Simple SdsType
-  var simpleType = new SdsObjects.SdsType({
-    &quot;Id&quot;: &quot;Simple&quot;,
-    &quot;Name&quot;: &quot;Simple&quot;,
-    &quot;Description&quot;: &quot;This is a simple Sds type&quot;,
-    &quot;SdsTypeCode&quot;: SdsObjects.SdsTypeCodeMap.Object,
-    &quot;Properties&quot;: [timeProperty, stateProperty, valueProperty]
-  });
-</code></pre><p>The <code>Time</code> property is identified as the primary index by defining its SdsTypeProperty as follows:</p>
-<p><strong>Python</strong></p>
-<pre><code>  # Time is the primary index
-  time = SdsTypeProperty()
-  time.Id = &quot;Time&quot;
-  time.Name = &quot;Time&quot;
-  time.IsKey = True
-  time.SdsType = SdsType()
-  time.SdsType.Id = &quot;DateTime&quot;
-  time.SdsType.Name = &quot;DateTime&quot;
-  time.SdsType.SdsTypeCode = SdsTypeCode.DateTime
-</code></pre><p><strong>JavaScript</strong></p>
-<pre><code>  // Time is the primary index
-  var timeProperty = new SdsObjects.SdsTypeProperty({
-    &quot;Id&quot;: &quot;Time&quot;,
-    &quot;IsKey&quot;: true,
-    &quot;SdsType&quot;: new SdsObjects.SdsType({
-      &quot;Id&quot;: &quot;dateType&quot;,
-      &quot;SdsTypeCode&quot;: SdsObjects.SdsTypeCodeMap.DateTime
-    })
-  });
-</code></pre><p>Note that the <code>time.IsKey</code> field is set to true.</p>
+      // Create the Simple SdsType
+      var simpleType = new SdsObjects.SdsType({
+        &quot;Id&quot;: &quot;Simple&quot;,
+        &quot;Name&quot;: &quot;Simple&quot;,
+        &quot;Description&quot;: &quot;This is a simple Sds type&quot;,
+        &quot;SdsTypeCode&quot;: SdsObjects.SdsTypeCodeMap.Object,
+        &quot;Properties&quot;: [timeProperty, stateProperty, valueProperty]
+      });
+</code></pre></section>
+</div>
+<p>The <code>Time</code> property is identified as the primary index by defining its SdsTypeProperty as follows:</p>
+<div class="tabGroup" id="tabgroup_J6ECPX6Pme-2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_J6ECPX6Pme-2_tabid-5" role="tab" aria-controls="tabpanel_J6ECPX6Pme-2_tabid-5" data-tab="tabid-5" tabindex="0" aria-selected="true">Python</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_J6ECPX6Pme-2_tabid-6" role="tab" aria-controls="tabpanel_J6ECPX6Pme-2_tabid-6" data-tab="tabid-6" tabindex="-1">JavaScript</a>
+</li>
+</ul>
+<section id="tabpanel_J6ECPX6Pme-2_tabid-5" role="tabpanel" data-tab="tabid-5">
+<pre><code class="lang-python">      # Time is the primary index
+      time = SdsTypeProperty()
+      time.Id = &quot;Time&quot;
+      time.Name = &quot;Time&quot;
+      time.IsKey = True
+      time.SdsType = SdsType()
+      time.SdsType.Id = &quot;DateTime&quot;
+      time.SdsType.Name = &quot;DateTime&quot;
+      time.SdsType.SdsTypeCode = SdsTypeCode.DateTime
+</code></pre></section>
+<section id="tabpanel_J6ECPX6Pme-2_tabid-6" role="tabpanel" data-tab="tabid-6" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-javascript">      // Time is the primary index
+      var timeProperty = new SdsObjects.SdsTypeProperty({
+        &quot;Id&quot;: &quot;Time&quot;,
+        &quot;IsKey&quot;: true,
+        &quot;SdsType&quot;: new SdsObjects.SdsType({
+          &quot;Id&quot;: &quot;dateType&quot;,
+          &quot;SdsTypeCode&quot;: SdsObjects.SdsTypeCodeMap.DateTime
+        })
+      });
+</code></pre></section>
+</div>
+<p>Note that the <code>time.IsKey</code> field is set to true.</p>
 <p>To read data using the index, you define a start index and an end index. For <code>DateTime</code>, use 
 the ISO 8601 representation of dates and times. To query for a window of values between January 1, 
 2010 and February 1, 2010, you would define indexes as “2010-01-01T08:00:00.000Z” and 
@@ -690,119 +728,155 @@ using the <code>Simple</code> class and adding a secondary index on the <code>Me
 you use the previously defined SdsType. Then you create <code>SdsStreamIndex</code> 
 specifying the <code>Measurement</code> property and define an SdsStream identifying the 
 <code>Measurement</code> as the secondary index as shown below:</p>
-<p><strong>Python</strong></p>
-<pre><code>  # Create the properties
+<div class="tabGroup" id="tabgroup_J6ECPX6Pme-3">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_J6ECPX6Pme-3_tabid-a" role="tab" aria-controls="tabpanel_J6ECPX6Pme-3_tabid-a" data-tab="tabid-a" tabindex="0" aria-selected="true">Python</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_J6ECPX6Pme-3_tabid-b" role="tab" aria-controls="tabpanel_J6ECPX6Pme-3_tabid-b" data-tab="tabid-b" tabindex="-1">JavaScript</a>
+</li>
+</ul>
+<section id="tabpanel_J6ECPX6Pme-3_tabid-a" role="tabpanel" data-tab="tabid-a">
+<pre><code class="lang-python">      # Create the properties
 
-  measurementIndex = SdsStreamIndex()
-  measurementIndex.SdsTypePropertyId = measurement.Id
+      measurementIndex = SdsStreamIndex()
+      measurementIndex.SdsTypePropertyId = measurement.Id
 
-  stream = SdsStream()
-  stream.Id = str(uuid.uuid4())
-  stream.Name = &quot;SimpleWithSecond&quot;
-  stream.Description = &quot;Simple with secondary index&quot;
-  stream.TypeId = simple.Id
-  stream.Indexes = [ measurementIndex ]
-</code></pre><p><strong>JavaScript</strong></p>
-<pre><code>  var measurementIndex = new SdsObjects.SdsStreamIndex({
-    &quot;SdsTypePropertyId&quot;: valueProperty.Id
-  });
+      stream = SdsStream()
+      stream.Id = str(uuid.uuid4())
+      stream.Name = &quot;SimpleWithSecond&quot;
+      stream.Description = &quot;Simple with secondary index&quot;
+      stream.TypeId = simple.Id
+      stream.Indexes = [ measurementIndex ]
+</code></pre></section>
+<section id="tabpanel_J6ECPX6Pme-3_tabid-b" role="tabpanel" data-tab="tabid-b" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-javascript">      var measurementIndex = new SdsObjects.SdsStreamIndex({
+        &quot;SdsTypePropertyId&quot;: valueProperty.Id
+      });
 
-  var stream = new SdsObjects.SdsStream({
-    &quot;Id&quot;: &quot;SimpleWithSecond&quot;,
-    &quot;Name&quot;: &quot;SimpleWithSecond&quot;,
-    &quot;Description&quot;: &quot;Simple with secondary index&quot;,
-    &quot;TypeId&quot;: simpleTypeId,
-    &quot;Indexes&quot;: [ measurementIndex ]
-  });
-</code></pre><h4 id="compound-indexes-2">Compound indexes</h4>
+      var stream = new SdsObjects.SdsStream({
+        &quot;Id&quot;: &quot;SimpleWithSecond&quot;,
+        &quot;Name&quot;: &quot;SimpleWithSecond&quot;,
+        &quot;Description&quot;: &quot;Simple with secondary index&quot;,
+        &quot;TypeId&quot;: simpleTypeId,
+        &quot;Indexes&quot;: [ measurementIndex ]
+      });
+</code></pre></section>
+</div>
+<h4 id="compound-indexes-2">Compound indexes</h4>
 <p>Consider the following Python and JavaScript types:</p>
-<p><strong>Python</strong></p>
-<pre><code>  class Simple(object):
-  # First-order index property
-  Time = property(getTime, setTime)
-  def getTime(self):
-    return self.__time
-  def setTime(self, time):
-    self.__time = time
+<div class="tabGroup" id="tabgroup_J6ECPX6Pme-4">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_J6ECPX6Pme-4_tabid-c" role="tab" aria-controls="tabpanel_J6ECPX6Pme-4_tabid-c" data-tab="tabid-c" tabindex="0" aria-selected="true">Python</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_J6ECPX6Pme-4_tabid-d" role="tab" aria-controls="tabpanel_J6ECPX6Pme-4_tabid-d" data-tab="tabid-d" tabindex="-1">JavaScript</a>
+</li>
+</ul>
+<section id="tabpanel_J6ECPX6Pme-4_tabid-c" role="tabpanel" data-tab="tabid-c">
+<pre><code class="lang-python">      class Simple(object):
+      # First-order index property
+      Time = property(getTime, setTime)
+      def getTime(self):
+        return self.__time
+      def setTime(self, time):
+        self.__time = time
 
-  State = property(getState, setState)
-  def getState(self):
-    return self.__state
-  def setState(self, state):
-    self.__state = state
+      State = property(getState, setState)
+      def getState(self):
+        return self.__state
+      def setState(self, state):
+        self.__state = state
 
-  Measurement = property(getValue, setValue)
-  def getValue(self):
-    return self.__measurement
-  def setValue(self, measurement):
-    self.__measurement = measurement
+      Measurement = property(getValue, setValue)
+      def getValue(self):
+        return self.__measurement
+      def setValue(self, measurement):
+        self.__measurement = measurement
 
-  class DerivedCompoundIndex(Simple):
-  # Second-order index property
-  @property
-  def Recorded(self):
-    return self.__recorded
-  @Recorded.setter
-  def Recorded(self, recorded):
-    self.__recorded = recorded
-</code></pre><p><strong>JavaScript</strong></p>
-<pre><code>  var Simple = function () {
-    this.Time = null;
-    this.State = null;
-    this.Value = null;
-  }
+      class DerivedCompoundIndex(Simple):
+      # Second-order index property
+      @property
+      def Recorded(self):
+        return self.__recorded
+      @Recorded.setter
+      def Recorded(self, recorded):
+        self.__recorded = recorded
+</code></pre></section>
+<section id="tabpanel_J6ECPX6Pme-4_tabid-d" role="tabpanel" data-tab="tabid-d" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-javascript">      var Simple = function () {
+        this.Time = null;
+        this.State = null;
+        this.Value = null;
+      }
 
-  var DerivedCompoundIndex = function() {
-    Simple.call(this);
-    this.Recorded = null;
-  }
-</code></pre><p>To turn the simple SdsType shown in the example into a type supporting the <code>DerivedCompoundIndex</code> 
+      var DerivedCompoundIndex = function() {
+        Simple.call(this);
+        this.Recorded = null;
+      }
+</code></pre></section>
+</div>
+<p>To turn the simple SdsType shown in the example into a type supporting the <code>DerivedCompoundIndex</code> 
 type with a compound index based on the <code>Simple.Time</code> and <code>DerivedCompoundIndex.Recorded</code>, 
 extend the SdsType as follows:</p>
-<p><strong>Python</strong></p>
-<pre><code>  # We set the order for this property. The order of the first property defaulted to 0
-  recorded = SdsTypeProperty()
-  recorded.Id = &quot;Recorded&quot;
-  recorded.Name = &quot;Recorded&quot;
-  recorded.IsKey = True
-  recorded.Order = 1
-  recorded.SdsType = SdsType()
-  recorded.SdsType.Id = &quot;DateTime&quot;
-  recorded.SdsType.Name = &quot;DateTime&quot;
-  recorded.SdsType.SdsTypeCode = SdsTypeCode.DateTime
+<div class="tabGroup" id="tabgroup_J6ECPX6Pme-5">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_J6ECPX6Pme-5_tabid-p" role="tab" aria-controls="tabpanel_J6ECPX6Pme-5_tabid-p" data-tab="tabid-p" tabindex="0" aria-selected="true">Python</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_J6ECPX6Pme-5_tabid-j" role="tab" aria-controls="tabpanel_J6ECPX6Pme-5_tabid-j" data-tab="tabid-j" tabindex="-1">JavaScript</a>
+</li>
+</ul>
+<section id="tabpanel_J6ECPX6Pme-5_tabid-p" role="tabpanel" data-tab="tabid-p">
+<pre><code class="lang-python">      # We set the order for this property. The order of the first property defaulted to 0
+      recorded = SdsTypeProperty()
+      recorded.Id = &quot;Recorded&quot;
+      recorded.Name = &quot;Recorded&quot;
+      recorded.IsKey = True
+      recorded.Order = 1
+      recorded.SdsType = SdsType()
+      recorded.SdsType.Id = &quot;DateTime&quot;
+      recorded.SdsType.Name = &quot;DateTime&quot;
+      recorded.SdsType.SdsTypeCode = SdsTypeCode.DateTime
 
-  # Create the Derived SdsType
-  derived = SdsType()
-  derived.Id = str(uuid.uuid4())
-  derived.Name = &quot;Compound&quot;
-  derived.Description = &quot;Derived compound index sample type&quot;
-  derived.BaseType = simple
-  derived.SdsTypeCode = SdsTypeCode.Object
-  derived.Properties = [ recorded ]
-</code></pre><p><strong>JavaScript</strong>  </p>
-<pre><code>  // We set the order for this property. The order of the first property defaulted to 0
-  var recordedProperty = new SdsObjects.SdsTypeProperty({
-    &quot;Id&quot;: &quot;Recorded&quot;,
-    &quot;Name&quot;: &quot;Recorded&quot;,
-    &quot;IsKey&quot;: true,
-    &quot;Order&quot;: 1,
-    &quot;SdsType&quot;: new SdsObjects.SdsType({
-      &quot;Id&quot;: &quot;DateTime&quot;,
-      &quot;Name&quot;: &quot;DateTime&quot;,
-      &quot;SdsTypeCode&quot;: SdsObjects.SdsTypeCodeMap.DateTime
-    })
-  });
+      # Create the Derived SdsType
+      derived = SdsType()
+      derived.Id = str(uuid.uuid4())
+      derived.Name = &quot;Compound&quot;
+      derived.Description = &quot;Derived compound index sample type&quot;
+      derived.BaseType = simple
+      derived.SdsTypeCode = SdsTypeCode.Object
+      derived.Properties = [ recorded ]
+</code></pre></section>
+<section id="tabpanel_J6ECPX6Pme-5_tabid-j" role="tabpanel" data-tab="tabid-j" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-javascript">      // We set the order for this property. The order of the first property defaulted to 0
+      var recordedProperty = new SdsObjects.SdsTypeProperty({
+        &quot;Id&quot;: &quot;Recorded&quot;,
+        &quot;Name&quot;: &quot;Recorded&quot;,
+        &quot;IsKey&quot;: true,
+        &quot;Order&quot;: 1,
+        &quot;SdsType&quot;: new SdsObjects.SdsType({
+          &quot;Id&quot;: &quot;DateTime&quot;,
+          &quot;Name&quot;: &quot;DateTime&quot;,
+          &quot;SdsTypeCode&quot;: SdsObjects.SdsTypeCodeMap.DateTime
+        })
+      });
 
-  // Create the Derived SdsType
-  var derivedType = new SdsObjects.SdsTyp({
-    &quot;Id&quot;: &quot;Compound&quot;,
-    &quot;Name&quot;: &quot;Compound&quot;,
-    &quot;Description&quot;: &quot;Derived compound index sample type&quot;,
-    &quot;BaseType&quot;: simpleType,
-    &quot;SdsTypeCode&quot;: SdsObjects.SdsTypeCodeMap.Object,
-    &quot;Properties&quot;: [recordedProperty]
-  });
-</code></pre><p>Data in the SdsStream will be ordered as follows:</p>
+      // Create the Derived SdsType
+      var derivedType = new SdsObjects.SdsTyp({
+        &quot;Id&quot;: &quot;Compound&quot;,
+        &quot;Name&quot;: &quot;Compound&quot;,
+        &quot;Description&quot;: &quot;Derived compound index sample type&quot;,
+        &quot;BaseType&quot;: simpleType,
+        &quot;SdsTypeCode&quot;: SdsObjects.SdsTypeCodeMap.Object,
+        &quot;Properties&quot;: [recordedProperty]
+      });
+</code></pre></section>
+</div>
+<p>Data in the SdsStream will be ordered as follows:</p>
 <table>
 <thead>
 <tr>

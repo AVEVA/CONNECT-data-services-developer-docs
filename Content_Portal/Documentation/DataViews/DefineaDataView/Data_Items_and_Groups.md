@@ -25,8 +25,6 @@ The resource type `stream` has the following available fields:
 * Stream metadata
 * Data from each stream property
 
-#### Adding asset fields
-
 The resource type `asset` has the following available fields:
 * Asset id
 * Asset name

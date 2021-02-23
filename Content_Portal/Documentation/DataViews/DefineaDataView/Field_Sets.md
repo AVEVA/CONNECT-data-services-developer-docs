@@ -130,7 +130,7 @@ The result is much more consumable. The data field identifiers are no longer amb
 
 If assets are defined, data field sets can be defined to show the properties from stream references of the assets. 
 
-To define data field sets with asset properties, two pieces of information are required: the stream reference name and the property id. In order to reference an asset property, a field must contain at least one stream reference name in the `.StreamReferenceNames` collection and at least one property id in the `.Keys` collection.
+To define data field sets with asset properties, two pieces of information are required: the stream reference name and the property id. In order to reference an asset property, a field must contain at least one stream reference name included in the `.StreamReferenceNames` collection and at least one property id included in the `.Keys` collection.
 
 `.StreamReferenceNames` only applies to fields with source `FieldSource.PropertyId`. For all other field sources, `.StreamReferenceNames` are ignored. 
 
@@ -138,7 +138,7 @@ Similar to `.Keys`, `.StreamReferenceNames` are evaluated in order specified unt
 
 ### Example: Defining data field sets with assets
 
-Let us take a subset of the power inverter streams in the [asset examples](xref:DataViewsAssetExamples), returned by the `Query` [value](xref:AssetsSearchAPI) `"Id:*Inverter* AND Metadata/Value:Winterthur"`. 
+The following example presents a subset of the power inverter streams in the [asset examples](xref:DataViewsAssetExamples), returned by the `Query` [value](xref:AssetsSearchAPI) `"Id:*Inverter* AND Metadata/Value:Winterthur"`. 
 
 | Site | Meter | Asset Id |
 |--|--|--|
@@ -194,7 +194,7 @@ The view resolves nicely into the following results:
 | - | Primary | ..Primary..PwrIn/PropertyId:Value | ..Primary..PwrOut/PropertyId:Value |
 | - | Secondary | ..Secondary..PwrIn/PropertyId:Value | ..Secondary..PwrOut/PropertyId:Value |
 
-The presence of context allow data view to align the data fields, without the addition of an `.IdentifyingField` as shown in the stream example above.
+The presence of context allows data views to align the data fields, without the addition of an `.IdentifyingField` as shown in the stream example above.
 
 ## Field
 Each data field represents a particular source of information, such as a data item's `.Id` or the values from one of its properties.

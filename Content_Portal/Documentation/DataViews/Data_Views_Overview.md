@@ -18,7 +18,7 @@ The ability to create data views in OCS will mesh directly with OSIsoft's Data S
 
 Understanding how the data view resolves into content is important both for the designer and the consumer. Data views provide extensive visibility into what data is included. The concept of "resolving" a data view is when the data view's queries and logic are executed to determine the data view's exact schema and content.
 
-The collection(s) of OCS resources (such as streams and assets) that a data view acts on is the result of one or more queries. Streams, assets and other OCS resources are collectively known as *data items*. Values from the data items' properties can be included in the data view as *fields*, as well as information about the data items (such as Id and Metadata).
+The collection(s) of OCS resources (such as streams and assets) on which a data view is based is the result of one or more queries. Streams, assets and other OCS resources are collectively known as *data items*. Values from the data items' properties can be included in the data view as *fields*, as well as information about the data items (such as Id and Metadata).
 
 There are two primary means of controlling how the data items will be organized. One or more fields may be designated to *group* the data view, effectively grouping or partitioning the data items on some value. Within a set of fields, one field may be designated to *identify* or align the items.
 

@@ -58,7 +58,7 @@ These streams will be available in one single field set. This is good, because o
 
 ## Asset queries
 
-If assets are defined with stream references, the data view can be created by directly querying for the assets. 
+Users can create a data view by querying directly for assets, as long as the assets have stream references defined.
 
 An asset query looks identical to a stream query with the exception that query kind (set using the [DataItemResourceType enumeration](xref:DataViewsQuickStartDefine#dataitemresourcetype-enumeration)) is equal to Asset, and query value uses [asset search syntax](xref:AssetsSearchAPI).
 

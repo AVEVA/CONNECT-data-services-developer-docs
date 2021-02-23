@@ -14,7 +14,7 @@ You define multiple aspects of a data view when you define it, including data it
 A data view must have a unique identifier. It may have a friendly name and description. If a friendly name is not specified, the identifier will be used as the data view's name.
 
 ### Include data items
-One or more queries determine the set of data items (such as streams and assets) that the data view will include. Each [Query](xref:DataViewsQueries) should represent a collection of like data items. To include data items that represent very different items, such as power inverters and weather stations, use separate queries.
+One or more queries determine the set of data items (such as streams and assets) that the data view will include. Each [Query](xref:DataViewsQueries) should represent a collection of like data items. Use separate queries to include data items that represent very different items, such as power inverters and weather stations.
 
 ### Include data fields
 
@@ -92,7 +92,7 @@ A set of fields included in the data view, sharing a common role and query. One 
 | IdentifyingField | Field | Optional | null | A field by which to tell the data items apart, within each group. Any field from field sources `FieldSource.Id`, `FieldSource.Name`, `FieldSource.Metadata` and `FieldSource.Tags` can be used as an identifying field.
 
 ### Field
-Individual piece of information, such as a property of an SDS stream, an asset stream reference, or metadata of that stream or asset.
+An individual piece of information, such as a property of an SDS stream, an asset stream reference, or metadata of that stream or asset.
 All sources except `FieldSource.NotApplicable` can be used as data fields. Fields from sources `FieldSource.Id`, `FieldSource.Name`, `FieldSource.Metadata` and `FieldSource.Tags` can be used as grouping fields and identifying fields. Some sources are used in conjunction with the Keys property (see below).
 |Property | Type | Optionality  | Default  | Details |
 |--|--|--|--|--|

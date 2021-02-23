@@ -32,8 +32,8 @@ The data view owner and access control list control basic authorization to a giv
 | Update access control | `ManageAccessControl` |
 
 ## Data access control
-The access control rights of each data item, such as a [stream](xref:sdsStreams) or [asset](xref:AssetsProperties), apply globally within OSIsoft Cloud Services, including within data views. When a data view [resolves](xref:ResolvedDataView) per-user, each [`Query`](xref:DataViewsQueries) is executed with the user's own permissions, honoring the access control configured for each data item. Read access to a data view does not affect the user's read access to (or even the visibility of!) any streams or assets.
+The access control rights of each data item, such as a [stream](xref:sdsStreams) or [asset](xref:AssetsProperties), apply globally within OSIsoft Cloud Services, including within data views. When a data view [resolves](xref:ResolvedDataView) per-user, each [`Query`](xref:DataViewsQueries) is executed with the user's own permissions, honoring the access control configured for each data item. Read access to a data view does not affect the user's read access to (or even the visibility of) any streams or assets.
 
 When you inspect the _data items_ that resolve for a data view, you see only the data items that you have `Read` access to.
 
-Configuring access control for streams and assets is similar to data views. See the [Role-based access control](xref:accessControl), [streams](xref:sdsStreams), and [assets](xref:AssetOrAssetTypeAccessControlAPI) sections for more information.
+Configuring access control for streams and assets is similar to configuring data views. See the [Role-based access control](xref:accessControl), [streams](xref:sdsStreams), and [assets](xref:AssetOrAssetTypeAccessControlAPI) sections for more information.

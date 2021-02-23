@@ -44,6 +44,12 @@ Each solar inverter asset contains metadata for site, meter, and inverter.
         "Name": "Inverter",
         "SdsTypeCode": "Int32",
         "Value": one of ( 0 | 1 | 2 )
+    },
+    {
+        "Id": "Nominal Power",
+        "Name": "Nominal Power",
+        "SdsTypeCode": "Double",
+        "Value": 1.21
     }
 ]
 ```
@@ -93,7 +99,7 @@ Each solar inverter asset contains 2 stream references to the correspnding SDS s
         {
             "Id": "Nominal Power",
             "Name": "Nominal Power",
-            "SdsTypeCode": "Dboule",
+            "SdsTypeCode": "Double",
             "Value": 1.21
         }
     ],
@@ -110,3 +116,4 @@ Each solar inverter asset contains 2 stream references to the correspnding SDS s
         }
     ]
 }
+```

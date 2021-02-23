@@ -283,7 +283,7 @@ A `DataView` object to get the results for.
       "Keys": [
         "Site" 
       ],
-      "Label": "{IdentifyingValue} Site"
+      "Label": "{IdentifyingValue} Site {Uom}"
     }
   ],
   "IndexTypeCode": "DateTime",
@@ -675,7 +675,7 @@ A `DataView` object to get the results for.
       "Keys": [
         "Site" 
       ],
-      "Label": "{IdentifyingValue} {Key}"
+      "Label": "{IdentifyingValue} Site {Uom}"
     }
   ],
   "IndexTypeCode": "DateTime",

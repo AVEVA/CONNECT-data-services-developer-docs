@@ -44,7 +44,7 @@ This simple example shows the `IncludeUom` property of a data field is set to `t
           "Source": "PropertyId",
           "Keys": [ "Value" ],
           "Label": "{IdentifyingValue} Value",
-		      "IncludeUom": "true"
+          "IncludeUom": "true"
         }
       ]
     }
@@ -86,7 +86,7 @@ The following example shows how the field label token `{Uom}` of a data field is
           "Source": "PropertyId",
           "Keys": [ "Value" ],
           "Label": "{IdentifyingValue} Value {Uom}",
-		      "IncludeUom": "false"
+          "IncludeUom": "false"
         }
       ]
     }

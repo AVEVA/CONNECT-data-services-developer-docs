@@ -6,11 +6,11 @@ uid: DataViewsFieldSets
 
 A data view is likely to include multiple fields of information. One field serves as the index (e.g. Timestamp), and others contain information from or about the data items in the data view `DataFieldSet`s. Data field sets are collections of fields originating from the same query.
 
-### Available field sets
+## Available field sets
 The typical workflow for adding data field sets, and the data fields in them, is to use or adapt the [available field sets](xref:DataViewsAvailableFieldSets) that resolve for the data view. Available field sets provide the field sets and data fields which are available to a data view based on its query, but not currently included in its definition. This workflow is demonstrated in [Define a Data View](xref:DataViewsQuickStartDefine).
 
 
-#### Example: Defining data field sets
+### Example: Defining data field sets
 Let us take a subset of the power inverter streams in the [stream examples](xref:DataViewsExampleScenario), returned by the `Query` [value](xref:sdsSearching) `"TypeId:docs-pi-inverter AND Site:Winterthur"`. 
 
 | Site | Meter | Measurement | Stream Id | Tags |

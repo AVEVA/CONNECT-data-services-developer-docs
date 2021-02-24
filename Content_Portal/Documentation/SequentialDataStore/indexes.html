@@ -78,18 +78,23 @@
             <article class="content wrap" id="_content" data-uid="sdsIndexes">
 <h1 id="indexes">Indexes</h1>
 
-<p>Indexes speed up and order the results of searches. A key uniquely identifies a record within a collection of records. Keys are unique within the collection.</p>
-<p>In SDS, the key of an SdsType is also an index. The key is often referred to as the <em>primary index,</em> 
+<p>Indexes speed up and order the results of searches. 
+A key uniquely identifies a record within a collection of records.
+Keys are unique within the collection.</p>
+<p>In SDS, the key of type is also an index. The key is often referred to as the <em>primary index,</em> 
 while all other indexes are referred to as <em>secondary indexes</em> or <em>secondaries</em>.</p>
-<p>An SdsType that is used to define an SdsStream must specify a key. When inserting data into an SdsStream, every 
-key value must be unique. SDS will not store more than a single event for a given key; an event with 
-a particular key may be deleted or updated, but two events with the same key cannot exist.</p>
+<p>A type that is used to define a stream must specify a key.
+When you add data to a stream, every key value must be unique.
+SDS will not store more than a single event for a given key;
+an event with a particular key may be deleted or updated, but two events with the same key cannot exist.</p>
 <p>In .NET, the SdsType properties that define the primary index are identified using an <code>OSIsoft.Sds.SdsMemberAttribute</code> 
-and setting its <code>IsKey</code> field to true. If the key consists of only a single property it is permissible to 
-use the <code>System.ComponentModel.DataAnnotations.KeyAttribute</code>. In the SdsType, the Property or Properties 
-representing the primary index have their <code>SdsTypeProperty.IsKey</code> field set to true.</p>
-<p>Secondary indexes are defined on SdsStreams and are applied to a single property. You can define several 
-secondary indexes. Secondary index values need not be unique.</p>
+and setting its <code>IsKey</code> field to true.
+If the key consists of only a single property, you can 
+use the <code>System.ComponentModel.DataAnnotations.KeyAttribute</code>.
+Property or properties representing the primary index of a type have their <code>SdsTypeProperty.IsKey</code> field set to true.</p>
+<p>Secondary indexes are defined on streams and are applied to a single property.
+You can define several secondary indexes.
+Secondary index values need not be unique.</p>
 <h2 id="supported-types-for-an-index">Supported types for an index</h2>
 <table>
 <thead>
@@ -174,25 +179,27 @@ secondary indexes. Secondary index values need not be unique.</p>
 </tbody>
 </table>
 <h2 id="compound-indexes">Compound indexes</h2>
-<p>A single property (such as a <code>DateTime</code>) is adequate for defining an index most of the time. 
+<p>A single property (such as <code>DateTime</code>) is adequate for defining an index most of the time. 
 But for more complex scenarios, SDS allows you to define multiple properties. 
 Indexes defined by multiple properties are known as <em>compound indexes</em>.
 Only the primary index (or key) supports compound indexes.</p>
 <p>When defining a compound index within .NET framework, you should apply the <code>OSIsoft.Sds.SdsMemberAttribute</code> 
 on each property field of the SdsType that is combined to define the index.
-Set the Property <code>IsKey</code> to <code>true</code> and give the <code>Order</code> field a zero-based index value.
-The <code>Order</code> field defines the precedence of the Property when sorting.
-A Property with an order of 0 has highest precedence.</p>
+Set the property <code>IsKey</code> to <code>true</code> and give the <code>Order</code> field a zero-based index value.
+The <code>Order</code> field defines the precedence of the property when sorting.
+A property with an order of 0 has highest precedence.</p>
 <p>When defining compound indexes outside of .NET framework, specify the <code>IsKey</code> and <code>Order</code> fields
 on the <code>SdsTypeProperty</code> object.</p>
 <p>You can specify a maximum of three properties to define a compound index.
-In read and write operations, specify compound indexes in the URI by ordering each property that composes the index
+In read and write data operations, specify compound indexes in the URI by ordering each property that composes the index
  separated by the pipe character, ‘|’. 
 To help those using compound indexes, .NET client libraries methods also allow the use of tuples for indexes.</p>
 <p><strong>Notes:</strong> </p>
 <ul>
-<li>Compound indexing only applies to SdsTypes. In other words, there is no compound indexing for secondary indexes that are on SdsStreams. For more information, see <a class="xref" href="SDS_Streams.html#indexes">SdsStreams</a>.  </li>
-<li>The examples below are for compound indexes on SdsTypes and not of secondary indexes on SdsStreams.</li>
+<li>Compound indexing only applies to types.
+In other words, there is no compound indexing for secondary indexes that are on streams.
+For more information, see <a class="xref" href="SDS_Streams.html#indexes">Streams</a>.  </li>
+<li>The examples below are for compound indexes on types and not of secondary indexes on streams.</li>
 </ul>
 <p><strong>REST API</strong></p>
 <pre><code class="lang-text">// Read data located between two compound indexes:
@@ -212,124 +219,128 @@ Task RemoveValueAsync(compoundStream.Id, 1/20/2017 01:00|1/20/2017 00:00);
 <h3 id="indexes-in-net-framework">Indexes in .NET framework</h3>
 <h4 id="simple-indexes">Simple indexes</h4>
 <p>When working in .NET, use the <code>SdsTypeBuilder</code> together with either the <code>OSIsoft.Sds.SdsMemberAttribute</code> (preferred) or the
-<code>System.ComponentModel.DataAnnotations.KeyAttribute</code> to identify the Property that defines the simple index. 
+<code>System.ComponentModel.DataAnnotations.KeyAttribute</code> to identify the property that defines the simple index. 
 Using the <code>SdsTypeBuilder</code> eliminates potential errors that might occur when working with SdsTypes manually.</p>
-<pre><code>  public enum State
-  {
-    Ok,
-    Warning,
-    Alarm
-  }
+<pre><code class="lang-csharp">      public enum State
+      {
+        Ok,
+        Warning,
+        Alarm
+      }
 
-  public class Simple
-  {
-    [SdsMember(IsKey = true, Order = 0) ]
-    public DateTime Time { get; set; }
-    public State State { get; set; }
-    public Double Measurement { get; set; }
-  }
+      public class Simple
+      {
+        [SdsMember(IsKey = true, Order = 0) ]
+        public DateTime Time { get; set; }
+        public State State { get; set; }
+        public Double Measurement { get; set; }
+      }
 
-  SdsType simpleType = SdsTypeBuilder.CreateSdsType&lt;Simple&gt;();
+      SdsType simpleType = SdsTypeBuilder.CreateSdsType&lt;Simple&gt;();
 </code></pre><p>To read data that is located between two indexes, define both a start index and 
 an end index. For <code>DateTime</code>, use the ISO 8601 representation of dates and times. For example, to query 
 for a window of simple values between January 1, 2010 and February 1, 2010, you can define indexes 
 and query as follows:</p>
-<pre><code>  IEnumerable&lt;Simple&gt; values = await
-  client.GetWindowValuesAsync&lt;Simple&gt;(simpleStream.Id,
-  &quot;2010-01-01T08:00:00.000Z&quot;,&quot;2010-02-01T08:00:00.000Z&quot;);
+<pre><code class="lang-csharp">
+      IEnumerable&lt;Simple&gt; values = await
+      client.GetWindowValuesAsync&lt;Simple&gt;(simpleStream.Id,
+      &quot;2010-01-01T08:00:00.000Z&quot;,&quot;2010-02-01T08:00:00.000Z&quot;);
 </code></pre><p>For more information about querying data, see <a class="xref" href="Reading_Data.html">Read data</a>.</p>
 <h4 id="secondary-indexes">Secondary indexes</h4>
-<p>Secondary indexes are defined at the SdsStream. To add indexes to an SdsStream, you add them to the SdsStream’s <code>Indexes</code> field.</p>
+<p>Secondary indexes are defined at the stream level.
+To add indexes to a stream, you add them to the stream <code>Indexes</code> field.</p>
 <p>For example, to add a second index on <code>Measurement</code>, use the following code:</p>
-<pre><code>  SdsStreamIndex measurementIndex = new SdsStreamIndex()
-  {
-      SdsTypePropertyId = simpleType.Properties.First(p =&gt; p.Id.Equals(&quot;Measurement&quot;)).Id
-  };
-  SdsStream secondary = new SdsStream()
-  {
-      Id = &quot;Simple with Secondary&quot;,
-      TypeId = simpleType.Id,
-      Indexes = new List&lt;SdsStreamIndex&gt;()
+<pre><code class="lang-csharp">
+      SdsStreamIndex measurementIndex = new SdsStreamIndex()
       {
-          measurementIndex
-      }
-  };
-  secondary = await config.GetOrCreateStreamAsync(secondary);
-</code></pre><p>To read data indexed by a secondary index, use a filtered <code>Get</code> call, as in the following:</p>
-<pre><code>  await client.UpdateValuesAsync&lt;Simple&gt;(secondary.Id, new List&lt;Simple&gt;()
-    {
-        new Simple()
+          SdsTypePropertyId = simpleType.Properties.First(p =&gt; p.Id.Equals(&quot;Measurement&quot;)).Id
+      };
+      SdsStream secondary = new SdsStream()
+      {
+          Id = &quot;Simple with Secondary&quot;,
+          TypeId = simpleType.Id,
+          Indexes = new List&lt;SdsStreamIndex&gt;()
+          {
+              measurementIndex
+          }
+      };
+      secondary = await config.GetOrCreateStreamAsync(secondary);
+</code></pre><p>To read data indexed by a secondary index, use a filtered GET method, as in the following:</p>
+<pre><code class="lang-csharp">
+      await client.UpdateValuesAsync&lt;Simple&gt;(secondary.Id, new List&lt;Simple&gt;()
         {
-            Time = time,
-            State = State.Ok,
-            Measurement = 5
-        },
-        new Simple()
-        {
-            Time = time + TimeSpan.FromSeconds(1),
-            State = State.Ok,
-            Measurement = 4
-        },
-        new Simple()
-        {
-            Time = time + TimeSpan.FromSeconds(2),
-            State = State.Ok,
-            Measurement = 3
-        },
-        new Simple()
-        {
-            Time  = time + TimeSpan.FromSeconds(3),
-            State = State.Ok,
-            Measurement = 2
-        },
-        new Simple()
-        {
-            Time = time + TimeSpan.FromSeconds(4),
-            State = State.Ok,
-            Measurement = 1
-        },
-    });
+            new Simple()
+            {
+                Time = time,
+                State = State.Ok,
+                Measurement = 5
+            },
+            new Simple()
+            {
+                Time = time + TimeSpan.FromSeconds(1),
+                State = State.Ok,
+                Measurement = 4
+            },
+            new Simple()
+            {
+                Time = time + TimeSpan.FromSeconds(2),
+                State = State.Ok,
+                Measurement = 3
+            },
+            new Simple()
+            {
+                Time  = time + TimeSpan.FromSeconds(3),
+                State = State.Ok,
+                Measurement = 2
+            },
+            new Simple()
+            {
+                Time = time + TimeSpan.FromSeconds(4),
+                State = State.Ok,
+                Measurement = 1
+            },
+        });
 
-  IEnumerable&lt;Simple&gt; orderedByKey = await client.GetWindowValuesAsync&lt;Simple&gt;(secondary.Id, 
-      time.ToString(&quot;o&quot;), time.AddSeconds(4).ToString(&quot;o&quot;));
-  foreach (Simple value in orderedByKey)
-      Console.WriteLine(&quot;{0}: {1}&quot;, value.Time, value.Measurement);
+      IEnumerable&lt;Simple&gt; orderedByKey = await client.GetWindowValuesAsync&lt;Simple&gt;(secondary.Id, 
+          time.ToString(&quot;o&quot;), time.AddSeconds(4).ToString(&quot;o&quot;));
+      foreach (Simple value in orderedByKey)
+          Console.WriteLine(&quot;{0}: {1}&quot;, value.Time, value.Measurement);
 
-  Console.WriteLine();
+      Console.WriteLine();
 
-  IEnumerable&lt;Simple&gt; orderedBySecondary = await client.GetFilteredValuesAsync&lt;Simple&gt;(secondary.Id, 
-  &quot;Measurement gt 0 and Measurement lt 6&quot;);
-  foreach (Simple value in orderedBySecondary)
-      Console.WriteLine(&quot;{0}: {1}&quot;, value.Time, value.Measurement);
-  Console.WriteLine();
+      IEnumerable&lt;Simple&gt; orderedBySecondary = await client.GetFilteredValuesAsync&lt;Simple&gt;(secondary.Id, 
+      &quot;Measurement gt 0 and Measurement lt 6&quot;);
+      foreach (Simple value in orderedBySecondary)
+          Console.WriteLine(&quot;{0}: {1}&quot;, value.Time, value.Measurement);
+      Console.WriteLine();
 
-  // Output:
-  // 1/20/2017 12:00:00 AM: 5
-  // 1/20/2017 12:00:01 AM: 4
-  // 1/20/2017 12:00:02 AM: 3
-  // 1/20/2017 12:00:03 AM: 2
-  // 1/20/2017 12:00:04 AM: 1
-  //
-  // 1/20/2017 12:00:04 PM: 1
-  // 1/20/2017 12:00:03 PM: 2
-  // 1/20/2017 12:00:02 PM: 3
-  // 1/20/2017 12:00:01 PM: 4
-  // 1/20/2017 12:00:00 PM: 5
+      // Output:
+      // 1/20/2017 12:00:00 AM: 5
+      // 1/20/2017 12:00:01 AM: 4
+      // 1/20/2017 12:00:02 AM: 3
+      // 1/20/2017 12:00:03 AM: 2
+      // 1/20/2017 12:00:04 AM: 1
+      //
+      // 1/20/2017 12:00:04 PM: 1
+      // 1/20/2017 12:00:03 PM: 2
+      // 1/20/2017 12:00:02 PM: 3
+      // 1/20/2017 12:00:01 PM: 4
+      // 1/20/2017 12:00:00 PM: 5
 </code></pre><h4 id="compound-indexes-1">Compound indexes</h4>
 <p>Compound indexes are defined using the <code>SdsMemberAttribute</code> as follows:</p>
-<pre><code>  public class Simple
-  {
-    [SdsMember(IsKey = true, Order = 0)]
-    public DateTime Time { get; set; }
-    public State State { get; set; }
-    public Double Measurement { get; set; }
-  }
+<pre><code class="lang-csharp">      public class Simple
+      {
+        [SdsMember(IsKey = true, Order = 0)]
+        public DateTime Time { get; set; }
+        public State State { get; set; }
+        public Double Measurement { get; set; }
+      }
 
-  public class DerivedCompoundIndex : Simple
-  {
-    [SdsMember(IsKey = true, Order = 1)]
-    public DateTime Recorded { get; set; } 
-  }
+      public class DerivedCompoundIndex : Simple
+      {
+        [SdsMember(IsKey = true, Order = 1)]
+        public DateTime Recorded { get; set; } 
+      }
 </code></pre><p>Events of type <code>DerivedCompoundIndex</code> are sorted first by the <code>Time</code> parameter and then by the <code>Recorded</code> parameter.
 A collection of times would be sorted as follows:</p>
 <table>
@@ -425,91 +436,91 @@ A collection of times would be sorted as follows:</p>
 </tr>
 </tbody>
 </table>
-<pre><code>  // estimates at 1/20/2017 00:00
-  await client.UpdateValuesAsync(compoundStream.Id, new List&lt;DerivedCompoundIndex&gt;()
-    {
-        new DerivedCompoundIndex()
+<pre><code class="lang-csharp">      // estimates at 1/20/2017 00:00
+      await client.UpdateValuesAsync(compoundStream.Id, new List&lt;DerivedCompoundIndex&gt;()
         {
-            Time = DateTime.Parse(&quot;1/20/2017 01:00&quot;),
-            Recorded = DateTime.Parse(&quot;1/20/2017 00:00&quot;),
-            State = State.Ok,
-            Measurement = 0
-        },
-        new DerivedCompoundIndex()
+            new DerivedCompoundIndex()
+            {
+                Time = DateTime.Parse(&quot;1/20/2017 01:00&quot;),
+                Recorded = DateTime.Parse(&quot;1/20/2017 00:00&quot;),
+                State = State.Ok,
+                Measurement = 0
+            },
+            new DerivedCompoundIndex()
+            {
+                Time = DateTime.Parse(&quot;1/20/2017 02:00&quot;),
+                Recorded = DateTime.Parse(&quot;1/20/2017 00:00&quot;),
+                State = State.Ok,
+                Measurement = 1
+            },
+        });
+
+      // measure and estimates at 1/20/2017 01:00
+      await client.UpdateValuesAsync(compoundStream.Id, new List&lt;DerivedCompoundIndex&gt;()
         {
-            Time = DateTime.Parse(&quot;1/20/2017 02:00&quot;),
-            Recorded = DateTime.Parse(&quot;1/20/2017 00:00&quot;),
-            State = State.Ok,
-            Measurement = 1
-        },
-    });
+            new DerivedCompoundIndex()
+            {
+                Time = DateTime.Parse(&quot;1/20/2017 01:00&quot;),
+                Recorded = DateTime.Parse(&quot;1/20/2017 01:00&quot;),
+                State = State.Ok,
+                Measurement = 2
+            },
+            new DerivedCompoundIndex()
+            {
+                Time = DateTime.Parse(&quot;1/20/2017 02:00&quot;),
+                Recorded = DateTime.Parse(&quot;1/20/2017 01:00&quot;),
+                State = State.Ok,
+                Measurement = 3
+            },
+        });
 
-  // measure and estimates at 1/20/2017 01:00
-  await client.UpdateValuesAsync(compoundStream.Id, new List&lt;DerivedCompoundIndex&gt;()
-    {
-        new DerivedCompoundIndex()
+      // measure at 1/20/2017 02:00
+      await client.UpdateValuesAsync(compoundStream.Id, new List&lt;DerivedCompoundIndex&gt;()
         {
-            Time = DateTime.Parse(&quot;1/20/2017 01:00&quot;),
-            Recorded = DateTime.Parse(&quot;1/20/2017 01:00&quot;),
-            State = State.Ok,
-            Measurement = 2
-        },
-        new DerivedCompoundIndex()
+            new DerivedCompoundIndex()
+            {
+                Time = DateTime.Parse(&quot;1/20/2017 02:00&quot;),
+                Recorded = DateTime.Parse(&quot;1/20/2017 02:00&quot;),
+                State = State.Ok,
+                Measurement = 4
+            },
+        });
+
+      // adjust earlier values at 1/20/2017 14:00
+      await client.UpdateValuesAsync(compoundStream.Id, new List&lt;DerivedCompoundIndex&gt;()
         {
-            Time = DateTime.Parse(&quot;1/20/2017 02:00&quot;),
-            Recorded = DateTime.Parse(&quot;1/20/2017 01:00&quot;),
-            State = State.Ok,
-            Measurement = 3
-        },
-    });
+            new DerivedCompoundIndex()
+            {
+                Time = DateTime.Parse(&quot;1/20/2017 01:00&quot;),
+                Recorded = DateTime.Parse(&quot;1/20/2017 14:00&quot;),
+                State = State.Ok,
+                Measurement = 5
+            },
+            new DerivedCompoundIndex()
+            {
+                Time = DateTime.Parse(&quot;1/20/2017 02:00&quot;),
+                Recorded = DateTime.Parse(&quot;1/20/2017 14:00&quot;),
+                State = State.Ok,
+                Measurement = 6
+            },
+        });
 
-  // measure at 1/20/2017 02:00
-  await client.UpdateValuesAsync(compoundStream.Id, new List&lt;DerivedCompoundIndex&gt;()
-    {
-        new DerivedCompoundIndex()
-        {
-            Time = DateTime.Parse(&quot;1/20/2017 02:00&quot;),
-            Recorded = DateTime.Parse(&quot;1/20/2017 02:00&quot;),
-            State = State.Ok,
-            Measurement = 4
-        },
-    });
+      var from = new Tuple&lt;DateTime, DateTime&gt;(DateTime.Parse(&quot;1/20/2017 01:00&quot;), DateTime.Parse(&quot;1/20/2017 00:00&quot;));
+      var to = new Tuple&lt;DateTime, DateTime&gt;(DateTime.Parse(&quot;1/20/2017 02:00&quot;), DateTime.Parse(&quot;1/20/2017 14:00&quot;));
 
-  // adjust earlier values at 1/20/2017 14:00
-  await client.UpdateValuesAsync(compoundStream.Id, new List&lt;DerivedCompoundIndex&gt;()
-    {
-        new DerivedCompoundIndex()
-        {
-            Time = DateTime.Parse(&quot;1/20/2017 01:00&quot;),
-            Recorded = DateTime.Parse(&quot;1/20/2017 14:00&quot;),
-            State = State.Ok,
-            Measurement = 5
-        },
-        new DerivedCompoundIndex()
-        {
-            Time = DateTime.Parse(&quot;1/20/2017 02:00&quot;),
-            Recorded = DateTime.Parse(&quot;1/20/2017 14:00&quot;),
-            State = State.Ok,
-            Measurement = 6
-        },
-    });
+      var compoundValues = await client.GetWindowValuesAsync&lt;DerivedCompoundIndex, DateTime, DateTime&gt;(compoundStream.Id, from, to);
 
-  var from = new Tuple&lt;DateTime, DateTime&gt;(DateTime.Parse(&quot;1/20/2017 01:00&quot;), DateTime.Parse(&quot;1/20/2017 00:00&quot;));
-  var to = new Tuple&lt;DateTime, DateTime&gt;(DateTime.Parse(&quot;1/20/2017 02:00&quot;), DateTime.Parse(&quot;1/20/2017 14:00&quot;));
+      foreach (DerivedCompoundIndex value in compoundValues)
+         Console.WriteLine(&quot;{0}:{1} {2}&quot;, value.Time, value.Recorded, value.Measurement);
 
-  var compoundValues = await client.GetWindowValuesAsync&lt;DerivedCompoundIndex, DateTime, DateTime&gt;(compoundStream.Id, from, to);
-
-  foreach (DerivedCompoundIndex value in compoundValues)
-     Console.WriteLine(&quot;{0}:{1} {2}&quot;, value.Time, value.Recorded, value.Measurement);
-
-  // Output:
-  // 1/20/2017 1:00:00 AM:1/20/2017 12:00:00 AM 0
-  // 1/20/2017 1:00:00 AM:1/20/2017 1:00:00 AM 2
-  // 1/20/2017 1:00:00 AM:1/20/2017 2:00:00 PM 5
-  // 1/20/2017 2:00:00 AM:1/20/2017 12:00:00 AM 1
-  // 1/20/2017 2:00:00 AM:1/20/2017 1:00:00 AM 3
-  // 1/20/2017 2:00:00 AM:1/20/2017 2:00:00 AM 4
-  // 1/20/2017 2:00:00 AM:1/20/2017 2:00:00 PM 6
+      // Output:
+      // 1/20/2017 1:00:00 AM:1/20/2017 12:00:00 AM 0
+      // 1/20/2017 1:00:00 AM:1/20/2017 1:00:00 AM 2
+      // 1/20/2017 1:00:00 AM:1/20/2017 2:00:00 PM 5
+      // 1/20/2017 2:00:00 AM:1/20/2017 12:00:00 AM 1
+      // 1/20/2017 2:00:00 AM:1/20/2017 1:00:00 AM 3
+      // 1/20/2017 2:00:00 AM:1/20/2017 2:00:00 AM 4
+      // 1/20/2017 2:00:00 AM:1/20/2017 2:00:00 PM 6
 </code></pre><p>Note that the <code>GetWindowValuesAsync()</code> call specifies an expected return type and the index types as generic parameters.</p>
 <h3 id="indexes-outside-of-net-framework">Indexes outside of .NET framework</h3>
 <h4 id="simple-indexes-1">Simple indexes</h4>
@@ -640,7 +651,7 @@ and <a href="https://github.com/osisoft/sample-ocs-waveform-nodejs">Java Script<
         })
       });
 
-      // State is not a pre-defined type. A SdsType must be defined to represent the enum
+      // State is not a pre-defined type. SdsType must be defined to represent the enum
       var stateTypePropertyOk = new SdsObjects.SdsTypeProperty({
         &quot;Id&quot;: &quot;Ok&quot;,
         &quot;Value&quot;: State.Ok
@@ -723,10 +734,10 @@ the ISO 8601 representation of dates and times. To query for a window of values 
 “2010-02-01T08:00:00.000Z”, respectively.</p>
 <p>For additional information, see <a class="xref" href="Reading_Data.html">Read data</a>.</p>
 <h4 id="secondary-indexes-1">Secondary indexes</h4>
-<p>Secondary indexes are defined at the SdsStream. To create an SdsStream 
+<p>Secondary indexes are defined at the stream level. To create a stream 
 using the <code>Simple</code> class and adding a secondary index on the <code>Measurement</code>, 
-you use the previously defined SdsType. Then you create <code>SdsStreamIndex</code> 
-specifying the <code>Measurement</code> property and define an SdsStream identifying the 
+you use the previously defined type. Then you create <code>SdsStreamIndex</code> 
+specifying the <code>Measurement</code> property and define a stream identifying the 
 <code>Measurement</code> as the secondary index as shown below:</p>
 <div class="tabGroup" id="tabgroup_J6ECPX6Pme-3">
 <ul role="tablist">
@@ -818,9 +829,9 @@ specifying the <code>Measurement</code> property and define an SdsStream identif
       }
 </code></pre></section>
 </div>
-<p>To turn the simple SdsType shown in the example into a type supporting the <code>DerivedCompoundIndex</code> 
+<p>To turn the simple type shown in the example into a type supporting the <code>DerivedCompoundIndex</code> 
 type with a compound index based on the <code>Simple.Time</code> and <code>DerivedCompoundIndex.Recorded</code>, 
-extend the SdsType as follows:</p>
+extend the type as follows:</p>
 <div class="tabGroup" id="tabgroup_J6ECPX6Pme-5">
 <ul role="tablist">
 <li role="presentation">
@@ -876,7 +887,7 @@ extend the SdsType as follows:</p>
       });
 </code></pre></section>
 </div>
-<p>Data in the SdsStream will be ordered as follows:</p>
+<p>Data in the stream will be ordered as follows:</p>
 <table>
 <thead>
 <tr>

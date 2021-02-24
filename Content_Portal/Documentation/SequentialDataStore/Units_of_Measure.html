@@ -78,10 +78,10 @@
             <article class="content wrap" id="_content" data-uid="unitsOfMeasure">
 <h1 id="units-of-measure">Units of measure</h1>
 
-<p>The Sequential Data Store (SDS) provides a collection of built-in units of measure (UOM). These units of measure can be <a href="#associating-a-unit-of-measure-with-a-sdstype">associated</a> with SdsStreams and SdsTypes in order to provide unit information for stream data that model measurable quantities. If data has unit information associated with it, SDS is able to support unit conversions when retrieving data. See <a class="xref" href="Reading_Data.html">Reading data</a> for more information.</p>
+<p>The Sequential Data Store (SDS) provides a collection of built-in units of measure (UOM). These units of measure can be <a href="#associating-a-unit-of-measure-with-a-sdstype">associated</a> with streams and types in order to provide unit information for stream data that model measurable quantities. If data has unit information associated with it, SDS is able to support unit conversions when retrieving data. See <a class="xref" href="Reading_Data.html">Reading data</a> for more information.</p>
 <p>Since a unit of measure (meter, for example) defines the magnitude of a quantity (for example, length), SDS represents this by way of two objects: SdsUom and SdsUomQuantity. </p>
 <h2 id="sdsuom">SdsUom</h2>
-<p>A SdsUom represents a single unit of measure, such as &#39;meter&#39;.</p>
+<p>SdsUom represents a single unit of measure, such as &#39;meter&#39;.</p>
 <p>The following table shows the required and optional SdsUom fields.</p>
 <table>
 <thead>
@@ -146,7 +146,7 @@
 </tbody>
 </table>
 <h2 id="sdsuomquantity">SdsUomQuantity</h2>
-<p>A SdsUomQuantity represents a single measurable quantity (for example, length).</p>
+<p>SdsUomQuantity represents a single measurable quantity (for example, length).</p>
 <p>The following table shows the required and optional SdsUomQuantity fields.</p>
 <table>
 <thead>
@@ -2617,10 +2617,10 @@ Content-Type: application/json
 </code></pre><h4 id="net-client-libraries-method-20">.NET client libraries method</h4>
 <pre><code class="lang-csharp">   Task&lt;string[]&gt; GetQuantityUomAccessRightsAsync(string quantityId, string uomId);
 </code></pre><hr>
-<h2 id="associating-a-unit-of-measure-with-a-sdstype">Associating a unit of measure with a SdsType</h2>
-<p>At <a class="xref" href="SDS_Types.html">type</a> creation, SdsUom can be associated with a <a class="xref" href="SDS_Types.html#sdstypeproperty">SdsTypeProperty</a>. </p>
-<h2 id="associating-a-unit-of-measure-with-a-sdsstream">Associating a unit of measure with a SdsStream</h2>
-<p>At <a class="xref" href="SDS_Streams.html">stream</a> creation, you can override any unit of measure associated with a SdsTypeProperty belonging to the SdsType of the stream. This enables the reuse of a SdsType that may have default unit information associated with it already.</p>
+<h2 id="associating-a-unit-of-measure-with-a-type">Associating a unit of measure with a type</h2>
+<p>At <a class="xref" href="SDS_Types.html">type</a> creation, SdsUom can be associated with an <a class="xref" href="SDS_Types.html#sdstypeproperty">SdsTypeProperty</a>. </p>
+<h2 id="associating-a-unit-of-measure-with-a-stream">Associating a unit of measure with a stream</h2>
+<p>At <a class="xref" href="SDS_Streams.html">stream</a> creation, you can override any unit of measure associated with an SdsTypeProperty belonging to the type of the stream. This enables the reuse of a type that may have default unit information associated with it already.</p>
 </article>
           </div>
           

@@ -76,6 +76,9 @@ references:
 - uid: AssetTypesAPI
   name: Asset Types API
   href: Content_Portal/Documentation/Assets/asset-type.html
+- uid: bpPISystemConnection
+  name: PI System connections best practices
+  href: Content_Portal/How_To_Guides/PI-to-OCS/Overview-PI-to-OCS/pi-to-ocs-connection-best-practices.html
 - uid: ConceptsOverview
   name: OSIsoft Cloud Services
   href: Content_Portal/Concepts/Concepts_Overview.html

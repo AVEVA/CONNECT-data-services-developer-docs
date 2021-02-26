@@ -173,9 +173,8 @@ Add the backslash escape character ( \ ) before any special characters in search
 
 The following are examples of using the escape character in query strings.
 
-| Search String                          | Query String                               |
+| Example Field Value                          | Query String                               |
 | -------------------------------------- | ------------------------------------------ |
-| Electric Vehicle (EV) Charging Station | Electric Vehicle \\(EV\\) Charging Station |
 | Austin\Dallas\Fort Worth               | Austin\\\Dallas\\\Fort Worth               |
 | 1:100                                  | 1\\:100                                    |
 

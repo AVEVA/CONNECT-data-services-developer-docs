@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Display units of measure (coming soon) </title>
+    <title>Display units of measure </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Display units of measure (coming soon) ">
+    <meta name="title" content="Display units of measure ">
     <meta name="generator" content="docfx 2.56.5.0">
     
     <link rel="shortcut icon" href="../../../../favicon.ico">
@@ -76,9 +76,8 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="DataViewsUnitsOfMeasure">
-<h1 id="display-units-of-measure-coming-soon">Display units of measure (coming soon)</h1>
+<h1 id="display-units-of-measure">Display units of measure</h1>
 
-<p><em>Note: This topic covers features that are not yet generally available. If you are interested in trialing these pre-release features, contact your account team for more details.</em></p>
 <p>Data views can be configured to show the units of measure (Uom) from the underlying data source. This topic describes how to see the effective units of measure within a resolved data view, as well as the different options to include them in the data set itself.</p>
 <h2 id="units-of-measure-in-resolved-data-view">Units of measure in resolved data view</h2>
 <p>Units of measure are shown on each <a class="xref" href="../GetResolvedDataView/Resolved_Data_View.html#dataitemfield">data item field</a>, as well as any corresponding <a class="xref" href="../GetResolvedDataView/Resolved_Data_View.html#datamapping">data mappings</a> where that data item field is used in the data view. If a unit of measure is not present in the underying data source, the <code>Uom</code> property is null.</p>
@@ -107,7 +106,7 @@
         {
           &quot;Source&quot;: &quot;PropertyId&quot;,
           &quot;Keys&quot;: [ &quot;Value&quot; ],
-          &quot;Label&quot;: &quot;{IdentifyingValue} {Key}&quot;,
+          &quot;Label&quot;: &quot;{IdentifyingValue} Value&quot;,
           &quot;IncludeUom&quot;: &quot;true&quot;
         }
       ]
@@ -170,7 +169,7 @@
         {
           &quot;Source&quot;: &quot;PropertyId&quot;,
           &quot;Keys&quot;: [ &quot;Value&quot; ],
-          &quot;Label&quot;: &quot;{IdentifyingValue} {Key} {Uom}&quot;,
+          &quot;Label&quot;: &quot;{IdentifyingValue} Value {Uom}&quot;,
           &quot;IncludeUom&quot;: &quot;false&quot;
         }
       ]

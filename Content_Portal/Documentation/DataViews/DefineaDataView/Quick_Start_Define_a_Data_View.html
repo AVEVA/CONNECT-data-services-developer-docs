@@ -85,7 +85,7 @@
 <h3 id="define-a-data-view-identifier">Define a data view identifier</h3>
 <p>A data view must have a unique identifier. It may have a friendly name and description. If a friendly name is not specified, the identifier will be used as the data view&#39;s name.</p>
 <h3 id="include-data-items">Include data items</h3>
-<p>One or more queries determine the set of data items (such as SDS streams) that the data view will include. Each <a class="xref" href="Queries.html">Query</a> should represent a collection of like data items. To include data items that represent very different items, such as power inverters and weather stations, use separate queries.</p>
+<p>One or more queries determine the set of data items (such as streams and assets) that the data view will include. Each <a class="xref" href="Queries.html">Query</a> should represent a collection of like data items. Use separate queries to include data items that represent very different items, such as power inverters and weather stations.</p>
 <h3 id="include-data-fields">Include data fields</h3>
 <p>Information from, or about, those data items must be included explicitly in the data view as Fields within <a class="xref" href="Field_Sets.html">DataFields</a> or <a class="xref" href="Grouping.html">GroupingFields</a>. By default, a data view includes no fields, except the default <a href="#include-the-index-field">IndexField</a>.</p>
 <p>The fields that are available for use are exposed as a &quot;resolved&quot; resource, <a class="xref" href="Available_Field_Sets.html">Available Field Sets</a>. It is recommended to use or adapt those fields instead of defining new fields. Individual fields are organized into <a class="xref" href="Field_Sets.html">DataFieldSets</a> and <a class="xref" href="Grouping.html">GroupingFields</a>.</p>
@@ -146,7 +146,7 @@
 <td>Query[]</td>
 <td>Optional</td>
 <td>[ ]</td>
-<td>Queries for OCS resources (such as streams) to include in the view. This is the starting point when defining a data view. Each Query should represent a collection of like data items. To include data items that represent very different items (e.g. solar inverters and weather), use separate queries.</td>
+<td>Queries for OCS resources (such as streams and assets) to include in the view. This is the starting point when defining a data view. Each Query should represent a collection of like data items. To include data items that represent very different items (e.g. solar inverters and weather), use separate queries.</td>
 </tr>
 <tr>
 <td>DataFieldSets</td>
@@ -261,9 +261,9 @@
 <td><a class="xref" href="../../SequentialDataStore/SDS_Streams.html">SDS streams</a></td>
 </tr>
 <tr>
-<td>Asset <em>(Coming Soon)</em></td>
+<td>Asset</td>
 <td>2</td>
-<td>Assets</td>
+<td><a class="xref" href="../../Assets/assets.html">Assets</a></td>
 </tr>
 </tbody>
 </table>
@@ -304,7 +304,7 @@
 </tbody>
 </table>
 <h3 id="field">Field</h3>
-<p>Individual piece of information, such as a property of an SDS stream or metadata of that stream.
+<p>An individual piece of information, such as a property of an SDS stream, an asset stream reference, or metadata of that stream or asset.
 All sources except <code>FieldSource.NotApplicable</code> can be used as data fields. Fields from sources <code>FieldSource.Id</code>, <code>FieldSource.Name</code>, <code>FieldSource.Metadata</code> and <code>FieldSource.Tags</code> can be used as grouping fields and identifying fields. Some sources are used in conjunction with the Keys property (see below).</p>
 <table>
 <thead>
@@ -332,7 +332,7 @@ All sources except <code>FieldSource.NotApplicable</code> can be used as data fi
 <td>Used for sources <code>FieldSource.PropertyId</code>, <code>FieldSource.PropertyName</code>, <code>FieldSource.Metadata</code> and <code>FieldSource.Tags</code>, e.g. to map to specific data item properties by id. If more than one key is specified, they are matched as exclusive-or. A key has to be a non-null value.</td>
 </tr>
 <tr>
-<td>StreamReferenceNames <em>(Coming Soon)</em></td>
+<td>StreamReferenceNames</td>
 <td>String[]</td>
 <td>Optional</td>
 <td>[ ]</td>
@@ -346,7 +346,7 @@ All sources except <code>FieldSource.NotApplicable</code> can be used as data fi
 <td>Friendly name for the field. Certain tokens have special meaning: one of these, {IdentifyingValue}, is included in the suggested labels of AvailableFieldSets. Tokens that do not resolve are &quot;&quot; (empty string). The label is required in a field for all usages except in an identifying field. Label is trimmed of whitespace when used to identify field mappings.</td>
 </tr>
 <tr>
-<td>IncludeUom <em>(Coming Soon)</em></td>
+<td>IncludeUom</td>
 <td>bool</td>
 <td>Optional</td>
 <td>false</td>
@@ -355,7 +355,7 @@ All sources except <code>FieldSource.NotApplicable</code> can be used as data fi
 </tbody>
 </table>
 <h3 id="fieldsource-enumeration">FieldSource enumeration</h3>
-<p>For fields that derive data from a data item (e.g. an SDS stream), the <code>FieldSource</code> enumeration specifies the part of that data item that a Field resolves to. Some sources require one or more <code>.Keys</code> to be specified on the field, such as <code>PropertyId</code>, in which a key is the id of a desired property.</p>
+<p>For fields that derive data from a data item (e.g. a stream or asset), the <code>FieldSource</code> enumeration specifies the part of that data item that a Field resolves to. Some sources require one or more <code>.Keys</code> to be specified on the field, such as <code>PropertyId</code>, in which a key is the id of a desired property.</p>
 <table>
 <thead>
 <tr>

@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Display calculated summaries (coming soon) </title>
+    <title>Display calculated summaries </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Display calculated summaries (coming soon) ">
+    <meta name="title" content="Display calculated summaries ">
     <meta name="generator" content="docfx 2.56.5.0">
     
     <link rel="shortcut icon" href="../../../../favicon.ico">
@@ -76,18 +76,17 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="DataViewsSummaries">
-<h1 id="display-calculated-summaries-coming-soon">Display calculated summaries (coming soon)</h1>
+<h1 id="display-calculated-summaries">Display calculated summaries</h1>
 
-<p><em>Note: This topic covers features that are not yet generally available. If you are interested in trialing these pre-release features, contact your account team for more details.</em></p>
 <p>Data views can be configured to show summary calculations for streams and assets.  Summary calculations are defined as the summary types enumerated in <a class="xref" href="../../SequentialDataStore/Reading_Data_API.html#get-summaries">SdsSummaryType</a>. This topic describes how to include summaries in a data view. </p>
-<h1 id="available-summaries">Available summaries</h1>
-<p>Not all SDS properties will have summaries. For example a string property has no Mean value. If a data item field requests a summary that is unavailable these values will be null in the view data.  </p>
-<h1 id="including-summaries-in-a-dataview">Including summaries in a dataview</h1>
+<h2 id="available-summaries">Available summaries</h2>
+<p>Not all properties have summaries. For example, a string property has no Mean value. If a data item field requests a summary that is unavailable these values will be null in the view data.  </p>
+<h2 id="include-summaries-in-a-data-view">Include summaries in a data view</h2>
 <p>Users may include any mix of interpolated or summary data fields in a data view. Multiple summary types for a stream property or an asset are requested by defining a field for each desired summary type. Units of measure can also be included for a summary, if applicable, not all summaries do (e.g. Kurtosis and Skewness).</p>
 <p>In the data view a data field defines the type of summary with the SummaryType property as <a class="xref" href="../../SequentialDataStore/Reading_Data_API.html#get-summaries">SdsSummaryType</a>. Another property, SummaryDirection, allows the direction of the summary to be defined as <a class="xref" href="../GetResolvedDataView/Resolved_Data_View.html#summarydirection-enumeration">SummaryDirection</a>. SummaryDirection controls whether the start or end index of the summary is used by the data view to calculate the summary values.
 If the SummaryType is &quot;None&quot;, the SummaryDirection (if specified) will be accepted but ignored. If the SummaryType is not &quot;None&quot;, and SummaryDirection is not specified, it will be initialized to &quot;Forward&quot;. </p>
 <p>The label tokens: {SummaryType} and {SummaryDirection} will resolve in the field mappings and show in dataview table header columns for a summary field.</p>
-<h1 id="example-include-summary-in-data-view">Example: Include summary in data view</h1>
+<h3 id="example-include-summary-in-data-view">Example: Include summary in data view</h3>
 <p>This simple example shows the inclusion of a summary data field for a SummaryType set to &quot;Mean&quot; with &quot;IncludeUom&quot; set to &quot;true&quot;. Since the SummaryDirection is not specified, the default value of &quot;Forward&quot; is used. The label includes two summary tokens that will resolve to the summary type and direction in the data view header.</p>
 <pre><code class="lang-json">{
   &quot;Id&quot;: &quot;quickstart&quot;,
@@ -105,7 +104,7 @@ If the SummaryType is &quot;None&quot;, the SummaryDirection (if specified) will
         {
           &quot;Source&quot;: &quot;PropertyId&quot;,
           &quot;Keys&quot;: [ &quot;Value&quot; ],
-          &quot;Label&quot;: &quot;{IdentifyingValue} {Key} {SummaryType} {SummaryDirection}&quot;,
+          &quot;Label&quot;: &quot;{IdentifyingValue} Value {SummaryType} {SummaryDirection}&quot;,
           &quot;SummaryType&quot;: &quot;Mean&quot;,
           &quot;IncludeUom&quot;: &quot;true&quot;
         }
@@ -149,7 +148,7 @@ If the SummaryType is &quot;None&quot;, the SummaryDirection (if specified) will
 </tr>
 </tbody>
 </table>
-<h1 id="example-impact-of-summary-direction">Example: Impact of summary direction</h1>
+<h3 id="example-impact-of-summary-direction">Example: Impact of summary direction</h3>
 <p>This simple example shows the impact of SummaryDirection, and how changing it will shift the summary value calculation. Three mini data view results are shown, where SummaryType and SummaryDirection are varied.</p>
 <p>Example #1: SummaryType = &quot;None&quot;</p>
 <table>

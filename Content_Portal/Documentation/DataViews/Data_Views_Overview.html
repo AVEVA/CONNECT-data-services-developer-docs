@@ -78,7 +78,7 @@
             <article class="content wrap" id="_content" data-uid="DataViewsOverview">
 <h1 id="data-views">Data Views</h1>
 
-<p>Data views are subsets of data from one or more OCS sources, such as streams, which can serve as a bridge between raw OCS data and data-driven applications. A data view is a declarative query and shape for OCS data. It is composed of an index field, a set of queries, sets of data field definitions, grouping instructions, and default data range and interval. A data view contains the following:</p>
+<p>Data views are subsets of data from one or more OCS sources, such as streams and assets, which can serve as a bridge between raw OCS data and data-driven applications. A data view is a declarative query and shape for OCS data. It is composed of an index field, a set of queries, sets of data field definitions, grouping instructions, and default data range and interval. A data view contains the following:</p>
 <ul>
 <li><p>Index field - Specifies the primary index type and label of the index. The index must be a timestamp and will be the first column of the data view</p>
 </li>
@@ -91,7 +91,7 @@
 </ul>
 <p>The ability to create data views in OCS will mesh directly with OSIsoft&#39;s Data Science Enablement efforts, whereby users will be able to programmatically access data view content via an API for the purposes of advanced analytics. The ultimate goal is to deliver shaped data that is ready for consumption because it is normalized, aligned, and interpolated.</p>
 <p>Understanding how the data view resolves into content is important both for the designer and the consumer. Data views provide extensive visibility into what data is included. The concept of &quot;resolving&quot; a data view is when the data view&#39;s queries and logic are executed to determine the data view&#39;s exact schema and content.</p>
-<p>The collection(s) of OCS resources (such as streams) that a data view acts on is the result of one or more queries. Streams and other OCS resources are collectively known as <em>data items</em>. Values from the data items&#39; properties can be included in the data view as <em>fields</em>, as well as information about the data items (such as Id and Metadata).</p>
+<p>The collection(s) of OCS resources (such as streams and assets) on which a data view is based is the result of one or more queries. Streams, assets and other OCS resources are collectively known as <em>data items</em>. Values from the data items&#39; properties can be included in the data view as <em>fields</em>, as well as information about the data items (such as Id and Metadata).</p>
 <p>There are two primary means of controlling how the data items will be organized. One or more fields may be designated to <em>group</em> the data view, effectively grouping or partitioning the data items on some value. Within a set of fields, one field may be designated to <em>identify</em> or align the items.</p>
 <p>Data view data is available in several formats, including JSON and CSV, with a user-specified range and granularity. Data is obtained by querying the REST API.</p>
 <h2 id="defining-and-refining-a-data-view">Defining and refining a data view</h2>
@@ -107,8 +107,6 @@
 <h2 id="consuming-a-data-view">Consuming a data view</h2>
 <p><a class="xref" href="GetDataViewData/Quick_Start_Get_Data_View_Data.html">Data view data</a> is available via queries to the RESTful data views <a class="xref" href="DataViewsAPIOverview/Data_API.html">data API resource</a>. </p>
 <p>To understand the source of each data field, inspect how the data view <a class="xref" href="GetResolvedDataView/Resolved_Data_View.html">resolved</a>.</p>
-<h2 id="coming-soon">Coming Soon</h2>
-<p>Some features in this documentation are marked as <em>Coming Soon</em>. These features are not yet generally available. If you are interested in trialing these pre-release features, contact your account team for more details.</p>
 </article>
           </div>
           

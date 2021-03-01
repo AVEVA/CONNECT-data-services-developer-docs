@@ -396,7 +396,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/DataViews/DataViewsAPIOverview/Preview_Data_API.html",
-          "hash": "ipbBTmZMFpcCg1vzSQS+Hg=="
+          "hash": "z29/ZTAHtwQMta/hSgm6eQ=="
         }
       },
       "is_incremental": false,
@@ -408,7 +408,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/DataViews/DataViewsAPIOverview/Resolved_Data_View_API.html",
-          "hash": "LnqY/iGzNxqa1NoYZgOXOA=="
+          "hash": "T14VYdKfkxFOwKLqN+xQ9w=="
         }
       },
       "is_incremental": false,
@@ -420,7 +420,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/DataViews/DataViewsAPIOverview/Resolved_Data_View_Preview_API.html",
-          "hash": "4KcDQ/MguO+pKwxWJ7/edw=="
+          "hash": "xPilaP5E6DHSngD2gTTtiw=="
         }
       },
       "is_incremental": false,
@@ -432,7 +432,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/DataViews/Data_Views_Overview.html",
-          "hash": "tOTjqwyuTMqv4B/I5xrVFA=="
+          "hash": "rGUPw8B+Cqw3qRuXUN8RTg=="
         }
       },
       "is_incremental": false,
@@ -456,7 +456,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/DataViews/DefineaDataView/Available_Field_Sets.html",
-          "hash": "qZDkeeoYwNq6qwgNC2njKg=="
+          "hash": "IcldDFk8ofxv7z4qqlLo0w=="
         }
       },
       "is_incremental": false,
@@ -468,7 +468,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/DataViews/DefineaDataView/Consolidate_Data_Fields.html",
-          "hash": "e8tdi/PlSkVbHMPGusuSUw=="
+          "hash": "5s/bZSmdkuR42EI1/9AUhQ=="
         }
       },
       "is_incremental": false,
@@ -480,7 +480,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/DataViews/DefineaDataView/Data_Items_and_Groups.html",
-          "hash": "qoj/ys2ZRMefna2qMy1uHQ=="
+          "hash": "zLWlQ80nZlDPmu26V7cI6A=="
         }
       },
       "is_incremental": false,
@@ -504,7 +504,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/DataViews/DefineaDataView/Field_Mappings.html",
-          "hash": "5r8pudRhyPThDaCzVYGvFQ=="
+          "hash": "pKrELrVdPfEiMCgHn3avFA=="
         }
       },
       "is_incremental": false,
@@ -516,7 +516,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/DataViews/DefineaDataView/Field_Sets.html",
-          "hash": "HRj5lWrvz1QxdSr8wV0VIw=="
+          "hash": "4H/bR5jKkxl6uQWDmb6fvw=="
         }
       },
       "is_incremental": false,
@@ -540,7 +540,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/DataViews/DefineaDataView/Queries.html",
-          "hash": "aEqZGjM1dDb6rOlG7ZC4ng=="
+          "hash": "nGOOoYOs0ip9sw0fHPf1PQ=="
         }
       },
       "is_incremental": false,
@@ -552,7 +552,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/DataViews/DefineaDataView/Quick_Start_Define_a_Data_View.html",
-          "hash": "VUzq7r1RDRo+960lXlwugw=="
+          "hash": "wzMwidx/pbyppTXju8i8Ag=="
         }
       },
       "is_incremental": false,
@@ -564,7 +564,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/DataViews/DefineaDataView/Rec_Workflow.html",
-          "hash": "tgxaDiEHHdp69JOldBmBow=="
+          "hash": "pi1IApcD3rwLFVzUEC24pA=="
         }
       },
       "is_incremental": false,
@@ -576,7 +576,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/DataViews/DefineaDataView/Summaries.html",
-          "hash": "WA+ExNAVNSNe9Giwr+0r/A=="
+          "hash": "OS9uhRbDibdGHItc8Zb7BQ=="
         }
       },
       "is_incremental": false,
@@ -588,7 +588,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/DataViews/DefineaDataView/Units_of_Measure.html",
-          "hash": "Jx1laZ0fwr4pshN92iqu2A=="
+          "hash": "/hh0HxN3Xf+bKqKuipPrCQ=="
         }
       },
       "is_incremental": false,
@@ -624,7 +624,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/DataViews/GetResolvedDataView/Resolved_Data_View.html",
-          "hash": "+XD+OYi1x5tmu5XMijwhgQ=="
+          "hash": "1ktwz9fCFVJcY4KghosCpw=="
         }
       },
       "is_incremental": false,
@@ -644,11 +644,35 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/DataViews/Reference/Asset_Example.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/DataViews/Reference/Asset_Example.html",
+          "hash": "5Ma6X8KR5lrEDSuLLe3oXA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/DataViews/Reference/Data_Views_Examples.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/DataViews/Reference/Data_Views_Examples.html",
+          "hash": "iEiolqFHUkqO5C8NDg7qCQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "Content_Portal/Documentation/DataViews/Reference/Example_Scenario.md",
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/DataViews/Reference/Example_Scenario.html",
-          "hash": "jUVZnYmPbpnj5HQAuGw/6A=="
+          "hash": "P5oQaNY+5fPoQqdHaVpWNQ=="
         }
       },
       "is_incremental": false,
@@ -660,7 +684,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/DataViews/SecureDataViews/Securing_Data_Views.html",
-          "hash": "FJdvreo0k7s0EIDin2I4yQ=="
+          "hash": "In3BgMu+Gx6h1HYUkyQEzw=="
         }
       },
       "is_incremental": false,
@@ -2767,7 +2791,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/toc.html",
-          "hash": "2MyYVXX/SkD2glmdzMgMnw=="
+          "hash": "C9XPZME83buYLaBnSwfb4g=="
         }
       },
       "is_incremental": false,
@@ -2824,7 +2848,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 148,
+          "total_file_count": 150,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

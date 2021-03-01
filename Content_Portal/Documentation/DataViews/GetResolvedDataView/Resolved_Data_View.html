@@ -95,7 +95,7 @@
 <p>Paged responses include a <code>Link</code> header, with a hyperlink to the first page of results. If the results extend into an additional page, a hyperlink to the next page will also be included in the <code>Link</code> header.</p>
 <p>Using these hyperlinks is the recommended method of paging. Alternatively, constructing paging links by manually incrementing the <code>skip</code> is allowable, though in this case it is recommended to specify cache behavior of &quot;preserve&quot;.</p>
 <h3 id="how-is-a-data-view-resolved">How is a data view resolved?</h3>
-<p>Data views resolve on a per user basis. Data views respect the permissions on underlying data items such as SDS Streams. If a user does not have read access to a particular stream in SDS, then that stream is not visible from data views.</p>
+<p>Data views resolve on a per user basis. Data views respect the permissions on underlying data items such as streams and assets. For example, if a user does not have read access to a particular stream in SDS, then that stream is not visible from data views.</p>
 <p>As a consequence, different users may see different collections of data items resolve for a data view. This is by design.</p>
 <h3 id="when-is-a-data-view-resolved">When is a data view resolved?</h3>
 <p>Each data view is resolved as needed for each user: upon request of any resolved information or data view data. In certain cases, a cached version is retrieved if available. </p>
@@ -296,7 +296,7 @@ See the <a class="xref" href="../DataViewsAPIOverview/Resolved_Data_View_API.htm
 <td>A stream from the Sequential Data Store</td>
 </tr>
 <tr>
-<td>Asset <em>(Coming Soon)</em></td>
+<td>Asset</td>
 <td>2</td>
 <td>An asset</td>
 </tr>
@@ -324,7 +324,7 @@ See the <a class="xref" href="../DataViewsAPIOverview/Resolved_Data_View_API.htm
 <td>The data item field&#39;s friendly name</td>
 </tr>
 <tr>
-<td>StreamReferenceName <em>(Coming Soon)</em></td>
+<td>StreamReferenceName</td>
 <td>string</td>
 <td>The asset stream reference name. Only applies to asset property data item fields.</td>
 </tr>
@@ -334,17 +334,17 @@ See the <a class="xref" href="../DataViewsAPIOverview/Resolved_Data_View_API.htm
 <td>The name of the field&#39;s data type</td>
 </tr>
 <tr>
-<td>SummaryType <em>(coming soon)</em></td>
+<td>SummaryType</td>
 <td>SdsSummaryType</td>
 <td>The summary type calculation for the data field.</td>
 </tr>
 <tr>
-<td>SummaryDirection <em>(coming soon)</em></td>
+<td>SummaryDirection</td>
 <td>SummaryDirection Enumeration</td>
 <td>The direction of the summary type calculation for the data field.</td>
 </tr>
 <tr>
-<td>Uom <em>(coming soon)</em></td>
+<td>Uom</td>
 <td>bool</td>
 <td>The unit of measure id for the data item field</td>
 </tr>
@@ -461,17 +461,17 @@ See the <a class="xref" href="../DataViewsAPIOverview/Resolved_Data_View_API.htm
 <td>The primary data type of the mapping</td>
 </tr>
 <tr>
-<td>SummaryType <em>(coming soon)</em></td>
+<td>SummaryType</td>
 <td>SdsSummaryType</td>
 <td>The summary type calculation. Null unless all data mappings&#39; SummaryType within the field mappings are identical.</td>
 </tr>
 <tr>
-<td>SummaryDirection <em>(coming soon)</em></td>
+<td>SummaryDirection</td>
 <td>SummaryDirection Enumeration</td>
 <td>SummaryDirection controls whether the start or end index of the summary is used by the data view to calculate the summary values. Null unless all data mappings&#39; SummaryDirection within the field mappings are identical.</td>
 </tr>
 <tr>
-<td>Uom <em>(coming soon)</em></td>
+<td>Uom</td>
 <td>string</td>
 <td>The unit of measure id. Null unless all data mappings&#39; unit of measures within the field mapping are identical.</td>
 </tr>
@@ -537,7 +537,7 @@ See the <a class="xref" href="../DataViewsAPIOverview/Resolved_Data_View_API.htm
 <td>The specific targeted part of the data item, if any.</td>
 </tr>
 <tr>
-<td>TargetStreamReferenceName <em>(coming soon)</em></td>
+<td>TargetStreamReferenceName</td>
 <td>string</td>
 <td>The asset stream reference name. Only applies to asset property data mappings.</td>
 </tr>
@@ -547,17 +547,17 @@ See the <a class="xref" href="../DataViewsAPIOverview/Resolved_Data_View_API.htm
 <td>The value type</td>
 </tr>
 <tr>
-<td>SummaryType <em>(coming soon)</em></td>
+<td>SummaryType</td>
 <td>SdsSummaryType</td>
 <td>The summary type calculation for the data field.</td>
 </tr>
 <tr>
-<td>SummaryDirection <em>(coming soon)</em></td>
+<td>SummaryDirection</td>
 <td>SummaryDirection Enumeration</td>
 <td>SummaryDirection controls whether the start or end index of the summary is used by the data view to calculate the summary values.</td>
 </tr>
 <tr>
-<td>Uom <em>(coming soon)</em></td>
+<td>Uom</td>
 <td>string</td>
 <td>The unit of measure id</td>
 </tr>

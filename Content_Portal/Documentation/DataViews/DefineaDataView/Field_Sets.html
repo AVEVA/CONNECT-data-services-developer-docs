@@ -141,7 +141,7 @@
         {
           &quot;Source&quot;: &quot;PropertyId&quot;,
           &quot;Keys&quot;: [ &quot;Value&quot; ],
-          &quot;Label&quot;: &quot;{IdentifyingValue} {Key}&quot;
+          &quot;Label&quot;: &quot;{IdentifyingValue} Value {Uom} {SummaryType}&quot;
         },
         {
           &quot;Source&quot;: &quot;Tags&quot;,
@@ -155,7 +155,7 @@
     {
       &quot;Source&quot;: &quot;Metadata&quot;,
       &quot;Keys&quot;: [ &quot;Meter&quot; ],
-      &quot;Label&quot;: &quot;{IdentifyingValue} {Key}&quot;
+      &quot;Label&quot;: &quot;{IdentifyingValue} Meter {Uom}&quot;
     }
   ]
 }
@@ -208,9 +208,9 @@
 <li>The result is sparse: the data views engine has not been told how to align the data items across groups, so it has no idea that all &quot;Power In&quot; streams are similar.</li>
 </ol>
 <p>To fix this, we will add an <code>.IdentifyingField</code> to the field set.</p>
-<h4 id="identifying-field">Identifying field</h4>
+<h2 id="identifying-field">Identifying field</h2>
 <p>If the field set resolves to multiple data items in any group (or if grouping is not used), then a field should be designated as the <code>.IdentifyingField</code> of the field set. The identifying field of a data field set specifies the primary field to identify multiple items in a group. This allows the identifying field value to be used automatically in field labels of the group. If one lone criterion is not a sufficient or useful way of disambiguating the fields, then <a class="xref" href="Grouping.html">grouping</a> by additional criteria may be necessary. Field from field sources <code>FieldSource.Id</code>, <code>FieldSource.Name</code>, <code>FieldSource.Metadata</code>, <code>FieldSource.Tags</code> can be used as an identifying field. Keys are required for identifying fields with the source type of <code>FieldSource.Metadata</code> and <code>FieldSource.Tags</code>. Keys are not applicable for identifying fields with the source type of <code>FieldSource.Id</code> and <code>FieldSource.Name</code>.</p>
-<h4 id="example-adding-an-identifying-field">Example: Adding an identifying field</h4>
+<h3 id="example-adding-an-identifying-field">Example: Adding an identifying field</h3>
 <p>To the data view from the previous example, we will add a <code>Field</code> as the <code>.IdentifyingField</code> of its field set. In this example, it makes sense to identify each data item by its <em>Measurement</em>.</p>
 <pre><code class="lang-json">{
   &quot;Id&quot;: &quot;quickstart&quot;,
@@ -228,7 +228,7 @@
         {
           &quot;Source&quot;: &quot;PropertyId&quot;,
           &quot;Keys&quot;: [ &quot;Value&quot; ],
-          &quot;Label&quot;: &quot;{IdentifyingValue} {Key}&quot;
+          &quot;Label&quot;: &quot;{IdentifyingValue} Value {Uom} {SummaryType}&quot;
         },
         {
           &quot;Source&quot;: &quot;Tags&quot;,
@@ -246,7 +246,7 @@
     {
       &quot;Source&quot;: &quot;Metadata&quot;,
       &quot;Keys&quot;: [ &quot;Meter&quot; ],
-      &quot;Label&quot;: &quot;{IdentifyingValue} {Key}&quot;
+      &quot;Label&quot;: &quot;{IdentifyingValue} Meter {Uom}&quot;
     }
   ]
 }
@@ -281,6 +281,98 @@
 </tr>
 </tbody>
 </table>
+<h2 id="working-with-assets">Working with assets</h2>
+<p>If assets are defined, data field sets can be defined to show the properties from stream references of the assets. </p>
+<p>To define data field sets with asset properties, two pieces of information are required: the stream reference name and the property id. In order to reference an asset property, a field must contain at least one stream reference name included in the <code>.StreamReferenceNames</code> collection and at least one property id included in the <code>.Keys</code> collection.</p>
+<p><code>.StreamReferenceNames</code> only applies to fields with source <code>FieldSource.PropertyId</code>. For all other field sources, <code>.StreamReferenceNames</code> are ignored. </p>
+<p>Similar to <code>.Keys</code>, <code>.StreamReferenceNames</code> are evaluated in order specified until a match is found, i.e. first-match-wins.</p>
+<h3 id="example-defining-data-field-sets-with-assets">Example: Defining data field sets with assets</h3>
+<p>The following example presents a subset of the power inverter streams in the <a class="xref" href="../Reference/Asset_Example.html">asset examples</a>, returned by the <code>Query</code> <a class="xref" href="../../Assets/asset-search-api.html">value</a> <code>&quot;Id:*Inverter* AND Metadata/Value:Winterthur&quot;</code>. </p>
+<table>
+<thead>
+<tr>
+<th>Site</th>
+<th>Meter</th>
+<th>Asset Id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Winterthur</td>
+<td>Primary</td>
+<td>Winterthur Primary Inverter 0</td>
+</tr>
+<tr>
+<td>Winterthur</td>
+<td>Secondary</td>
+<td>Winterthur Secondary Inverter</td>
+</tr>
+</tbody>
+</table>
+<p>The following represents a data view grouped by &quot;Meter&quot;, including fields for the grouping value, and each data item&#39;s &quot;Tags&quot; and property &quot;Value&quot;:</p>
+<pre><code class="lang-json">{
+  &quot;Id&quot;: &quot;quickstart&quot;,
+  &quot;Queries&quot;: [
+    {
+      &quot;Id&quot;: &quot;inverters&quot;,
+      &quot;Kind&quot;: &quot;Asset&quot;,
+      &quot;Value&quot;: &quot;Id:*Inverter* AND Metadata/Value:Winterthur&quot;
+    }
+  ],
+  &quot;DataFieldSets&quot;: [
+    {
+      &quot;QueryId&quot;: &quot;inverters&quot;,
+      &quot;DataFields&quot;: [
+        {
+          &quot;Source&quot;: &quot;PropertyId&quot;,
+          &quot;Keys&quot;: [ &quot;Value&quot; ],
+          &quot;StreamReferenceNames&quot;: [ &quot;Power In&quot; ],
+          &quot;Label&quot;: &quot;{IdentifyingValue} Power In Value {SummaryType} {Uom}&quot;
+        },
+        {
+          &quot;Source&quot;: &quot;PropertyId&quot;,
+          &quot;Keys&quot;: [ &quot;Value&quot; ],
+          &quot;StreamReferenceNames&quot;: [ &quot;Power Out&quot; ],
+          &quot;Label&quot;: &quot;{IdentifyingValue} Power Out Value {SummaryType} {Uom}&quot;
+        }
+      ]
+    }
+  ],
+   &quot;GroupingFields&quot;: [
+    {
+      &quot;Source&quot;: &quot;Metadata&quot;,
+      &quot;Keys&quot;: [ &quot;Meter&quot; ],
+      &quot;StreamReferenceNames&quot;: [],
+      &quot;Label&quot;: &quot;{IdentifyingValue} Meter {Uom}&quot;
+    }
+  ]
+}
+</code></pre><p>The view resolves nicely into the following results:</p>
+<table>
+<thead>
+<tr>
+<th>Timestamp</th>
+<th>Meter</th>
+<th>Power In Value</th>
+<th>Power Out Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-</td>
+<td>Primary</td>
+<td>..Primary..PwrIn/PropertyId:Value</td>
+<td>..Primary..PwrOut/PropertyId:Value</td>
+</tr>
+<tr>
+<td>-</td>
+<td>Secondary</td>
+<td>..Secondary..PwrIn/PropertyId:Value</td>
+<td>..Secondary..PwrOut/PropertyId:Value</td>
+</tr>
+</tbody>
+</table>
+<p>The presence of context allows data views to align the data fields, without the addition of an <code>.IdentifyingField</code> as shown in the stream example above.</p>
 <h2 id="field">Field</h2>
 <p>Each data field represents a particular source of information, such as a data item&#39;s <code>.Id</code> or the values from one of its properties.</p>
 <h3 id="label">Label</h3>
@@ -319,12 +411,15 @@
 </tr>
 </tbody>
 </table>
-<p>There are four special parameters available for use in field labels:</p>
+<p>There are seven special parameters available for use in field labels:</p>
 <ul>
 <li><code>{IdentifyingValue}</code> - the value of the identifying field</li>
 <li><code>{Key}</code> - the value of the first of the <code>&quot;Keys&quot;</code> specified on the field</li>
+<li><code>{StreamReferenceName}</code> - the value of the first of the <code>&quot;StreamReferenceNames&quot;</code> specified on the field</li>
+<li><code>{Uom}</code> - the value of the unit of measure of the field (if uom is present in the source)</li>
+<li><code>{SummaryType}</code> - the value of the summary type of the field (if defined)</li>
+<li><code>{SummaryDirection}</code> - the value of the summary direction of the field (if summary type is defined)</li>
 <li><code>{QueryId}</code> - the id of the query that produced the field</li>
-<li><code>{StreamReferenceName}</code> <em>(Coming Soon)</em> - the value of the first of the <code>&quot;StreamReferenceNames&quot;</code> specified on the field</li>
 </ul>
 <p>If a special parameter fails to resolve, it becomes an empty string, <code>&quot;&quot;</code>.</p>
 <h3 id="source">Source</h3>
@@ -340,11 +435,6 @@
 <p>Given a stream with tags <code>[ &quot;Weather&quot;, &quot;Low Resolution&quot;, &quot;Gen2&quot; ]</code>  </p>
 <p>A field of source <code>FieldSource.Tags</code> and <code>.Keys</code> <code>[ &quot;Low Resolution&quot;, &quot;High Resolution&quot;, &quot;Gen1&quot;, &quot;Gen2&quot; ]</code></p>
 <p>The field&#39;s value when resolved will be <code>[ &quot;Low Resolution&quot;, &quot;Gen2&quot; ]</code></p>
-<h4 id="special-case-asset-properties-coming-soon">Special Case: Asset properties (Coming Soon)</h4>
-<p><em>Note: This section covers features that are not yet generally available. If you are interested in trialing these pre-release features, contact your account team for more details.</em></p>
-<p>Asset properties are a special case because they require two pieces of information in order to address the data within the asset property: the stream reference name and the property id. In order to reference an asset property, a field must contain at least one stream reference name in the <code>.StreamReferenceNames</code> collection and at least one property id in the <code>.Keys</code> collection.</p>
-<p><code>.StreamReferenceNames</code> only applies to fields with source <code>FieldSource.PropertyId</code>. For all other field sources, <code>.StreamReferenceNames</code> are ignored. </p>
-<p>Similar to <code>.Keys</code>, <code>.StreamReferenceNames</code> are evaluated in order specified until a match is found, i.e. first-match-wins.</p>
 </article>
           </div>
           

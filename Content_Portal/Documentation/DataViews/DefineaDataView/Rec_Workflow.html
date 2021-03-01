@@ -79,17 +79,17 @@
 <h1 id="recommended-workflow-define-a-data-view">Recommended workflow: Define a data view</h1>
 
 <p>This is an introduction to the recommended workflow for defining data views. The following sections show these concepts in action.</p>
-<p>Designing and tweaking a data view is expected to be an iterative process. You are not expected to &quot;get it right the first time,&quot; nor to be an expert at your OCS configuration such as the streams available in the Sequential Data Store. Data views provide an interactive way to select, identify, and arrange the data you and your applications need.</p>
+<p>Designing and tweaking a data view is expected to be an iterative process. You are not expected to &quot;get it right the first time,&quot; nor to be an expert at your OCS configuration such as available streams and assets. Data views provide an interactive way to select, identify, and arrange the data you and your applications need.</p>
 <p>There are three main steps required to define a data view: </p>
 <ol>
-<li>Including data items (such as streams)</li>
+<li>Including data items (such as streams and assets)</li>
 <li>Including specific data fields</li>
 <li>Arranging them within the data view.</li>
 </ol>
 <p>This is not a one-way street. You are likely to keep adjusting the data fields included in the view even after you have begun working on how the fields are arranged in the data view.</p>
 <h2 id="procedure-define-a-data-view">Procedure: Define a data view</h2>
 <p>This section presents the main concepts behind creating data views.</p>
-<p>It is assumed that you are working with streams as described in the <a class="xref" href="../Reference/Example_Scenario.html">Stream examples</a>. The data views API uses the same authentication scheme as the Sequential Data Store.</p>
+<p>It is assumed that you are working with streams and assets as described in the <a class="xref" href="../Reference/Example_Scenario.html">Stream examples</a> and <a class="xref" href="../Reference/Asset_Example.html">Asset examples</a>. The data views API uses the same authentication scheme as the Sequential Data Store.</p>
 <h3 id="create-a-data-view">Create a data view</h3>
 <p>Very little information is required to create a new data view. In fact, if you request that the system generate an identifier for the new data view, no information at all is necessary. However, it is recommended to specify a meaningful <code>.Id</code>, because the identifier cannot be changed later without recreating the data view. All other properties are modifiable.</p>
 <p>This data view does not accomplish anything yet, but it&#39;s a starting point.</p>
@@ -139,7 +139,7 @@
   &quot;Name&quot;: &quot;quickstart&quot;,
   &quot;IndexField&quot;: { &quot;Label&quot;: &quot;Timestamp&quot; },
   &quot;Queries&quot;: [
-    { 
+    {
       &quot;Id&quot;: &quot;weather&quot;,
       &quot;Kind&quot;: &quot;Stream&quot;,
       &quot;Value&quot;:&quot;*weather*&quot; 
@@ -309,35 +309,35 @@
                     &quot;Keys&quot;: [
                         &quot;AmbientTemperature&quot;
                     ],
-                    &quot;Label&quot;: &quot;{IdentifyingValue} {Key}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} AmbientTemperature {Uom} {SummaryType}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;CloudCover&quot;
                     ],
-                    &quot;Label&quot;: &quot;{IdentifyingValue} {Key}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} CloudCover {Uom} {SummaryType}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;SolarRadiation&quot;
                     ],
-                    &quot;Label&quot;: &quot;{IdentifyingValue} {Key}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} SolarRadiation {Uom} {SummaryType}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;Temperature&quot;
                     ],
-                    &quot;Label&quot;: &quot;{IdentifyingValue} {Key}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} Temperature {Uom} {SummaryType}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;Metadata&quot;,
                     &quot;Keys&quot;: [
                         &quot;Site&quot;
                     ],
-                    &quot;Label&quot;: &quot;{IdentifyingValue} {Key}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} Site {Uom}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;Tags&quot;,
@@ -390,35 +390,35 @@
                     &quot;Keys&quot;: [
                         &quot;AmbientTemperature&quot;
                     ],
-                    &quot;Label&quot;: &quot;{IdentifyingValue} {Key}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} AmbientTemperature {Uom} {SummaryType}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;CloudCover&quot;
                     ],
-                    &quot;Label&quot;: &quot;{IdentifyingValue} {Key}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} CloudCover {Uom} {SummaryType}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;SolarRadiation&quot;
                     ],
-                    &quot;Label&quot;: &quot;{IdentifyingValue} {Key}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} SolarRadiation {Uom} {SummaryType}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;Temperature&quot;
                     ],
-                    &quot;Label&quot;: &quot;{IdentifyingValue} {Key}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} Temperature {Uom} {SummaryType}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;Metadata&quot;,
                     &quot;Keys&quot;: [
                         &quot;Site&quot;
                     ],
-                    &quot;Label&quot;: &quot;{IdentifyingValue} {Key}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} Site {Uom}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;Tags&quot;,
@@ -532,28 +532,28 @@
                     &quot;Keys&quot;: [
                         &quot;AmbientTemperature&quot;
                     ],
-                    &quot;Label&quot;: &quot;{IdentifyingValue} {Key}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} AmbientTemperature {Uom} {SummaryType}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;CloudCover&quot;
                     ],
-                    &quot;Label&quot;: &quot;{IdentifyingValue} {Key}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} CloudCover {Uom} {SummaryType}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;SolarRadiation&quot;
                     ],
-                    &quot;Label&quot;: &quot;{IdentifyingValue} {Key}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} SolarRadiation {Uom} {SummaryType}&quot;
                 },                
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;Temperature&quot;
                     ],
-                    &quot;Label&quot;: &quot;{IdentifyingValue} {Key}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} Temperature {Uom} {SummaryType}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;Tags&quot;,
@@ -575,7 +575,7 @@
       &quot;Keys&quot;: [
         &quot;Site&quot; 
       ],
-      &quot;Label&quot;: &quot;{IdentifyingValue} {Key}&quot;
+      &quot;Label&quot;: &quot;{IdentifyingValue} Site {Uom}&quot;
     }
   ],
   &quot;IndexTypeCode&quot;: &quot;DateTime&quot;,
@@ -708,28 +708,28 @@
                     &quot;Keys&quot;: [
                         &quot;AmbientTemperature&quot;
                     ],
-                    &quot;Label&quot;: &quot;{IdentifyingValue} {Key}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} AmbientTemperature {Uom} {SummaryType}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;SolarRadiation&quot;
                     ],
-                    &quot;Label&quot;: &quot;{IdentifyingValue} {Key}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} SolarRadiation {Uom} {SummaryType}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;CloudCover&quot;
                     ],
-                    &quot;Label&quot;: &quot;{IdentifyingValue} {Key}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} CloudCover {Uom} {SummaryType}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;Temperature&quot;
                     ],
-                    &quot;Label&quot;: &quot;{IdentifyingValue} {Key}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} Temperature {Uom} {SummaryType}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;Tags&quot;,
@@ -747,7 +747,7 @@
                 &quot;Keys&quot;: [
                     &quot;Site&quot;
                 ],
-                &quot;Label&quot;: &quot;{IdentifyingValue} {Key}&quot;
+                &quot;Label&quot;: &quot;{IdentifyingValue} Site {Uom}&quot;
             }
        },
   ],
@@ -826,21 +826,21 @@
                         &quot;AmbientTemperature&quot;,
                         &quot;Temperature&quot;
                     ],
-                    &quot;Label&quot;: &quot;{IdentifyingValue} {Key}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} AmbientTemperature {Uom} {SummaryType}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;CloudCover&quot;
                     ],
-                    &quot;Label&quot;: &quot;{IdentifyingValue} {Key}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} CloudCover {Uom} {SummaryType}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;PropertyId&quot;,
                     &quot;Keys&quot;: [
                         &quot;SolarRadiation&quot;
                     ],
-                    &quot;Label&quot;: &quot;{IdentifyingValue} {Key}&quot;
+                    &quot;Label&quot;: &quot;{IdentifyingValue} SolarRadiation {Uom} {SummaryType}&quot;
                 },
                 {
                     &quot;Source&quot;: &quot;Tags&quot;,
@@ -859,7 +859,7 @@
                 &quot;Keys&quot;: [
                     &quot;Site&quot;
                 ],
-                &quot;Label&quot;: &quot;{IdentifyingValue} {Key}&quot;
+                &quot;Label&quot;: &quot;{IdentifyingValue} Site {Uom}&quot;
             }
        },
   ],

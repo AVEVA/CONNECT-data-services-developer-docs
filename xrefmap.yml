@@ -124,6 +124,9 @@ references:
 - uid: DataViewsAPIOverview
   name: Data views API reference
   href: Content_Portal/Documentation/DataViews/DataViewsAPIOverview/Data_Views_API_Overview.html
+- uid: DataViewsAssetExamples
+  name: Asset examples
+  href: Content_Portal/Documentation/DataViews/Reference/Asset_Example.html
 - uid: DataViewsAvailableFieldSets
   name: Retrieve available field sets
   href: Content_Portal/Documentation/DataViews/DefineaDataView/Available_Field_Sets.html
@@ -133,6 +136,9 @@ references:
 - uid: DataViewsDataItemsandGroups
   name: Identify data items
   href: Content_Portal/Documentation/DataViews/DefineaDataView/Data_Items_and_Groups.html
+- uid: DataViewsExamples
+  name: Examples
+  href: Content_Portal/Documentation/DataViews/Reference/Data_Views_Examples.html
 - uid: DataViewsExampleScenario
   name: Stream examples
   href: Content_Portal/Documentation/DataViews/Reference/Example_Scenario.html
@@ -167,10 +173,10 @@ references:
   name: Secure data views
   href: Content_Portal/Documentation/DataViews/SecureDataViews/Securing_Data_Views.html
 - uid: DataViewsSummaries
-  name: Display calculated summaries (coming soon)
+  name: Display calculated summaries
   href: Content_Portal/Documentation/DataViews/DefineaDataView/Summaries.html
 - uid: DataViewsUnitsOfMeasure
-  name: Display units of measure (coming soon)
+  name: Display units of measure
   href: Content_Portal/Documentation/DataViews/DefineaDataView/Units_of_Measure.html
 - uid: DefineaDataViewRecommendedWorkflow
   name: 'Recommended workflow: Define a data view'

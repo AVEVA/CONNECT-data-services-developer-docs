@@ -1,8 +1,8 @@
 ---
-uid: lpaddorgdataoverview
+uid: lpaddorgdata
 ---
 
-# Add and organize data overview
+# Add and organize data
 
 OCS provides a variety of methods to collect and organize data. 
 

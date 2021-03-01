@@ -202,7 +202,7 @@ The assets in the example below represent trucks in a fleet, with multiple data 
 
 Assets are a useful way to organize and contextualize data streams.  With PI to OCS data transfers, for example, you can organize multiple PI tags under a single asset. For example, you could create an asset with streams measuring data for thermostats, ventilation equipment, lighting systems, and security.
 
-To define an asset, you can define an asset type to reuse for other assets, just as you would define a stream type for a stream.  While for stream types, the properties you define are data fields in a stream, the properties you define for asset types are streams to be included in an asset. However, assets can also be non-typed, and created on an ad hoc basis.
+Assets can be created on an ad hoc basis or they can be created from an asset type, a template for creating similar assets. 
 
 Users can also define asset rules, which bulk create or update assets according to matching patterns in stream names and metadata.  Asset rules are applied to existing applicable streams, and whenever a stream is created, updated, or deleted.
 
@@ -245,5 +245,4 @@ The following diagram depicts multiple streams organized into a data view that a
 ![OCS](images/how-does-ocs-work/dataviews.jpg)
 
 **Note**: You can reference metadata defined in a metadata rule when creating a data view. This action will include all streams containing the specified metadata.
-
 

@@ -191,7 +191,7 @@ The following example shows stream data for two streams over a selected period o
 
 ### Assets
 
-Assets are a framework that enables you to model data for different groupings of physical entities. An asset can consist of any number of data streams, and can be thought of as a digital twin for any physical entity. 
+Assets are a digital twin of physical entities in the real world.  An asset can consist of data from one or more streams. 
 
 The assets in the example below each represent trucks in a fleet, with multiple data streams defined for each.  Any selected vehicle asset can be used to display  visualization of selected data streams for review and analysis, as in the following example:
 
@@ -245,7 +245,6 @@ The following diagram depicts multiple streams organized into a data view that a
 ![OCS](images/how-does-ocs-work/dataviews.jpg)
 
 **Note**: You can reference metadata defined in a metadata rule when creating a data view. This action will include all streams containing the specified metadata.
-
 
 
 

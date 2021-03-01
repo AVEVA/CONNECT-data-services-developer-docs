@@ -193,18 +193,18 @@ The following example shows stream data for two streams over a selected period o
 
 Assets are a digital twin of physical entities in the real world.  An asset can consist of data from one or more streams. 
 
-The assets in the example below represent trucks in a fleet, with multiple data streams defined for each.  You can select an asset and display a trend of the data streams which can be used to identify and analyze problems.
+The assets in the example below each represent trucks in a fleet, with multiple data streams defined for each.  Any selected vehicle asset can be used to display  visualization of selected data streams for review and analysis, as in the following example:
 
 ![OCS](images/how-does-ocs-work/assets-example.png)
 
 1. Select each of a truck's four suspension cylinders to display visualization of each cylinder's variation in pressure over time.
 2. Identify cylinders whose pressure is outside the accepted range to troubleshoot suspension issues.
 
-Assets are a useful way to organize and contextualize data streams.  With PI to OCS data transfers, for example, you can organize multiple PI tags under a single asset. For example, you could create an asset with streams measuring data for thermostats, ventilation equipment, lighting systems, and security.
+Assets are a great way to organize and contextualize data streams.  With PI to OCS transfers, for example, they provide a means of organizing multiple PI data tags on the OCS side into multiple streams under a single asset. For example, you could model an arena with streams measuring data for thermostats, ventilation equipment, lighting systems, and security as an asset based on a single entity with streams for multiple devices.
 
-Assets can be created on an ad hoc basis or they can be created from an asset type, a template for creating similar assets. 
+To define an asset, you can define an asset type to reuse for other assets, just as you would define a stream type for a stream.  While for stream types, the properties you define are data fields in a stream, the properties you define for asset types are streams to be included in an asset. However, assets can also be non-typed, and created on an ad hoc basis.
 
-Users can also define asset rules, which bulk create or update assets according to matching patterns in stream names and metadata.  Asset rules are applied to existing applicable streams, and whenever a stream is created, updated, or deleted.
+Users can use API calls to define asset rules, which bulk create or update assets according to matching patterns in stream names and metadata.  Asset rules are applied to existing applicable streams, and whenever a stream is created, updated, or deleted.
 
 ## Data science enablement
 
@@ -245,4 +245,7 @@ The following diagram depicts multiple streams organized into a data view that a
 ![OCS](images/how-does-ocs-work/dataviews.jpg)
 
 **Note**: You can reference metadata defined in a metadata rule when creating a data view. This action will include all streams containing the specified metadata.
+
+
+
 

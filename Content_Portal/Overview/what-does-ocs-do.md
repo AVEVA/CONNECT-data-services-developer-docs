@@ -198,7 +198,6 @@ The assets in the example below each represent trucks in a fleet, with multiple 
 ![OCS](images/how-does-ocs-work/assets-example.png)
 
 You can display the variation in the pressure of the suspension cylinders on each truck over time, identify those trucks whose cylinder pressure is outside the accepted range, and proactively deal with potential problems.
-2. Identify cylinders whose pressure is outside the accepted range to troubleshoot suspension issues.
 
 Assets are a great way to organize and contextualize data streams.  With PI to OCS transfers, for example, they provide a means of organizing multiple PI data tags on the OCS side into multiple streams under a single asset. For example, you could model an arena with streams measuring data for thermostats, ventilation equipment, lighting systems, and security as an asset based on a single entity with streams for multiple devices.
 

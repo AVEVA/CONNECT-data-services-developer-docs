@@ -199,7 +199,7 @@ The assets in the example below represent trucks in a fleet, with multiple data 
 
 You can display the variation in the pressure of the suspension cylinders on each truck over time, identify those trucks whose cylinder pressure is outside the accepted range, and proactively deal with potential problems.
 
-Assets are a useful way to organize and contextualize data streams.  With PI to OCS transfers, for example, they provide a means of organizing multiple PI data tags on the OCS side into multiple streams under a single asset. For example, you could model an arena with streams measuring data for thermostats, ventilation equipment, lighting systems, and security as an asset based on a single entity with streams for multiple devices.
+Assets are a useful way to organize and contextualize data streams.  With PI to OCS data transfers, for example, you can organize multiple PI tags under a single asset. You could create an asset with streams measuring data for thermostats, ventilation equipment, lighting systems, and security.
 
 You can create assets on an ad hoc basis or create them from an asset type, a template for creating similar assets. 
 

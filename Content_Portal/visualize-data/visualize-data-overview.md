@@ -1,3 +1,8 @@
+---
+uid: lpvisualizedataoverview
+---
+
 # Visualize data overview
 
-Content to be developed
+Use the Trend page in OCS to monitor assets, anticipate problems, and proactively perform preventative maintenance.
+On the Trend page, you can convert stream data to a graphic view, which can reveal patterns in your data, high points, or trouble spots. 

@@ -2,9 +2,9 @@
 uid: gsPISystemConnection
 ---
 
-# Get Started with PI to OCS Connections
+# Get started with PI to OCS connections
 
-<!-- Talk to Vicki about where to put PI System best practices and link to it. -->
+Before you set up your PI to OCS connection, see [PI System best practices](xref:bpPISystemConnection) for recommendations regarding the PI OCS Agent.
 
 To use PI to OCS to transfer data from your PI System to OCS, you must complete the following:
 
@@ -12,9 +12,11 @@ To use PI to OCS to transfer data from your PI System to OCS, you must complete 
 - Install the PI to OCS Agent.
 - Create a data transfer.
 
-Prerequisite: Before you begin, verify that your organization has a PI System with default PI points (for example, sinusoid) stored on PI Data Archive.
+For more information about PI to 
 
-#### Create and Set up a PI System Connection
+Prerequisite: The exercise below assumes that your organization has a PI System with default PI points (for example, sinusoid) stored on PI Data Archive.
+
+## Create and Set up a PI System Connection
 
 1.  Click the ![Menu icon](images\menu-icon.png) icon, and then click **Connections** (under Data Management).
 
@@ -46,11 +48,11 @@ The Download Installation Kit window opens. Follow the prompts to download the P
 
     Use this window to edit the name and description of the connection. Enter the new name _QuickStartEdit_ and description _PI System Connection used by OCS Quick Start_. Click **Next**. When you are done, click **Save**.
 
-#### Install the PI to OCS Agent
+## Install the PI to OCS Agent
 
 1. In the Details pane on the right side, click **Getting Started Guide** to open the _PI to OCS User Guide_. Follow the installation instructions in the "Install the PI to OCS Agent" topic.
 
-#### Create a data transfer
+## Create a data transfer
 
 1.  Once the PI to OCS Agent is installed and registered, return to the Connections page of the OCS portal.
 2.  Select the _QuickStart_ connection in the list on the left, and then click **Add PI Point Transfer** in the right pane.
@@ -75,3 +77,7 @@ The Download Installation Kit window opens. Follow the prompts to download the P
 9.  Select _QuickStartEdit_ in the list, and click **Stop** to end the data transfer.
 
     Note: Connections cannot be deleted while a transfer is running.
+
+## Next Step
+
+Continue with [Get started with types](xref:gsTypes).

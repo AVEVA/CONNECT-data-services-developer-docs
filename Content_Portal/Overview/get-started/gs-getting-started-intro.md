@@ -4,13 +4,11 @@ uid: gsGetStartedOCS
 
 # Get started with OSIsoft Cloud Services 
 
-This is an introduction to the main features of OSIsoft Cloud Services (OCS) using the OCS portal.
-
-
+This is an introduction to the main features of OSIsoft Cloud Services (OCS) using the OCS portal. Each section includes a tutorial with step-by- step procedures with links to basic concepts and best practices.
 
 ## Before you begin
 
-You will need to obtain the following before you start the getting started exercises:
+Before you begin the getting started exercises, obtain the following:
 
 - Request a tenant from your OSIsoft account manager. 
 - You must have Tenant Administrator privileges. <!-- Verify that the change from Account Administrator to Tenant Administrator has occurred. -->
@@ -31,6 +29,8 @@ Once you have completed the pre-requisites, log into the OCS portal.
 
 ## Overview of the OCS Portal
 
+<!-- Probably, we will need to modify this, make it shorter,  and point to the longer, yet to be written description. -->
+
 The menu icon opens the menu from which you will navigate to the different OCS features. You always have access to this menu wherever you are in the OCS portal. 
 
 When you click on one of the menu items, it takes you to the page for that resource. On most of the pages, there are two panes:
@@ -45,21 +45,15 @@ When you click on one of the menu items, it takes you to the page for that resou
 
     - Some resources have additional panes for additional configuration tasks.
 
-Each exercise is built on the previous exercises. Therefore, complete the exercises in the order shown. 
-
 ## Getting started goals
 
 In this Getting Started exercise, you will do the following:
 
-* Create a namespace that will contain all of your OCS resources, including an instance of the Sequential Data Store and the data streams.
+1. Create a namespace that will contain all of your OCS resources, including an instance of the Sequential Data Store and the data streams.
 
-* Create a type that defines the data you want to store.
+2. Create a type that defines the data you want to store.
 
-* Create a stream container to store that data.
-* Create users, clients, and roles. 
+3. Create a stream container to store that data.
+4. Create users, clients, and roles. 
 
-<<WRITER's COMMENT: More topics to be added.>>
-
-  <!--  More to be added -->
-
-
+Note: Each exercise is built upon the previous one; therefore, complete the exercises in the order shown. At the end of each exercise, you will be directed to the next one.  

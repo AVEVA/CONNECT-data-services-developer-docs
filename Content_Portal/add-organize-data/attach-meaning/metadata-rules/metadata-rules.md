@@ -17,11 +17,13 @@ To create a new metadata rule, complete the following:
 5. In the **Metadata Management** page, click **Add Metadata Rule*.
 6. In the **Select Stream** pane, select in the **Namespace** droplist the same namespace in which the model stream resides.
 7. Paste the copied steam name into the **Search** field. Click on the row of the selected stream name in the search results and click **Next**.
+
    **Note**: You can also enter the first few characters of a selected stream name followed by * (wild card).
+   
 8. In the **Create Pattern** page, click the **+** sign above the delimiter to separate selected sections of the stream name.
 9. For each section of the stream name you separate, use the droplist to assign a metadata type: **Metadata**, **String Literal**, or **Wildcard**. If you select metadata type **Metadata**, you must also enter a metadata key.
 
-   **Note**: A metadata is the key portion of a key-value pair. The value entered is typically to indicate the type of data provided, such as "Measurement."
+   **Note**: A metadata key is the key portion of a key-value pair. The value entered is typically to indicate the type of data provided, such as "Measurement."
    
    ### Metadata types
 

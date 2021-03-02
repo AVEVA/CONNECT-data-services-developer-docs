@@ -8,7 +8,7 @@ Data views are subsets of data from one or more streams. You create a data view 
 
 ## Create a data view
 
-To create a new data view, complete the following:
+To create a new data view, complete the following steps:
 
 1. In the **Data Views** pane of the OCS Portal, click **Add Data View**.
 2. Enter the data view **Name** and **Description** in the **Data View Information** pane.

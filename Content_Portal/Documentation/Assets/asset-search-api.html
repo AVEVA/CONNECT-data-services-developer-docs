@@ -237,7 +237,7 @@ Content-Type: application/json
         }
     ]
 }
-</code></pre><h3 id="example-asset-query-strings">Example Asset Query Strings</h3>
+</code></pre><h3 id="examples-of-asset-query-strings">Examples of asset query strings</h3>
 <table>
 <thead>
 <tr>
@@ -301,6 +301,27 @@ Content-Type: application/json
 <tr>
 <td>StreamReferences:Name1</td>
 <td>Returns all assets whose stream references contain a stream reference name that matches <strong>Name1</strong>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="special-characters-in-search-queries">Special characters in search queries</h3>
+<p>Add the backslash escape character ( \ ) before any special characters in search queries. The following special characters require an escape character:   &quot; |  /  *  \  ( )  : </p>
+<p>The following are examples of using the escape character in query strings.</p>
+<table>
+<thead>
+<tr>
+<th>Example Field Value</th>
+<th>Query String</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Austin\Dallas\Fort Worth</td>
+<td>Austin\\Dallas\\Fort Worth</td>
+</tr>
+<tr>
+<td>1:100</td>
+<td>1\:100</td>
 </tr>
 </tbody>
 </table>

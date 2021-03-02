@@ -222,7 +222,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Assets/asset-search-api.html",
-          "hash": "N4wlUqWYXz8OO5oUAruwwA=="
+          "hash": "po6cK9QJYTVN3TF0bML6YQ=="
         }
       },
       "is_incremental": false,
@@ -2252,6 +2252,17 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "Content_Portal/Overview/images/how-does-ocs-work/assets-example.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Overview/images/how-does-ocs-work/assets-example.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "Content_Portal/Overview/images/how-does-ocs-work/authorization.png",
       "output": {
         "resource": {
@@ -2399,7 +2410,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Overview/what-does-ocs-do.html",
-          "hash": "tQ8qoNE7ctOQov4gezFVNA=="
+          "hash": "ERipNITdNWP24PcGbSHxJQ=="
         }
       },
       "is_incremental": false,

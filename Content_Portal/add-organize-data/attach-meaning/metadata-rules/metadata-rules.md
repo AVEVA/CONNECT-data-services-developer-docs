@@ -32,10 +32,10 @@ To create a new metadata rule, complete the following:
 | **String Literal**      | Only stream names that start with the specified string will match the name pattern of this metadata rule. |
 | **Wildcard**       | Designates a part of the stream name pattern in which any value will match the name pattern of this metadata rule. |
 
-11. After entering all metadata type entries, click **Next**.
-12. In the **Define Mappings** page, select **Copy Values** under **Mapping Type** to display the raw stream data for the specified metadata key, or select **Map Values** and click **Generate Mappings**.
-13. If you selected **Copy Values**, omit this step.  If you selected **Map Values**, type into the **Map To...** entry field the label you wish to display for each defined metadata key for each matching stream, and click **Next**.
-14. Click **Add Mapping** to define mapping for any other stream name part (optional).
-15. Click **Next**. All matching streams for the rule are displayed.
-16. Enter the metadata rule **Name** and **Description** in the **Preview and Run** page.
-17. Click **Save & Execute**.
+10. After entering all metadata type entries, click **Next**.
+11. In the **Define Mappings** page, select **Copy Values** under **Mapping Type** to display the raw stream data for the specified metadata key, or select **Map Values** and click **Generate Mappings**.
+12. If you selected **Copy Values**, omit this step.  If you selected **Map Values**, type into the **Map To...** entry field the label you wish to display for each defined metadata key for each matching stream, and click **Next**.
+13. Click **Add Mapping** to define mapping for any other stream name part (optional).
+14. Click **Next**. All matching streams for the rule are displayed.
+15. Enter the metadata rule **Name** and **Description** in the **Preview and Run** page.
+16. Click **Save & Execute**.

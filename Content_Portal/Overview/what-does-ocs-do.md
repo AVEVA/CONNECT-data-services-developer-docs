@@ -193,7 +193,7 @@ The following example shows stream data for two streams over a selected period o
 
 Assets are a digital twin of physical entities in the real world.  An asset can consist of data from one or more streams. 
 
-The assets in the example below represent trucks in a fleet, with multiple data streams defined for each.  You can select an asset and display a trend of the data streams which can be used to identify and analyze problems.
+The assets in the example below represent trucks in a fleet, with multiple data streams associated with each.  You can select an asset and display a trend of the data streams which can be used to identify and analyze problems.
 
 ![OCS](images/how-does-ocs-work/assets-example.png)
 

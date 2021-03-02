@@ -23,7 +23,7 @@ Once you have completed the pre-requisites, log into the OCS portal.
 
 3. In the toolbar, click **Sign In**.
 
-4. In the Specify Account Id or Company Alias window, enter the account ID or the company alias for your account, and click **Continue**. <!--Check to see if this has been updated with "Tenant." -->"
+4. In the Specify Tenant Id or Company Alias window, enter the tenant ID or the company alias for your tenant, and click **Continue**. 
 
    <!-- I'm guessing there are additional next steps that depend on the Identity Provider they are using? --> 
 
@@ -47,7 +47,7 @@ When you click on one of the menu items, it takes you to the page for that resou
 
 ## Getting started goals
 
-In this Getting Started exercise, you will do the following:
+In this Getting Started exercise, you will do the following in the order shown:
 
 1. Create a namespace that will contain all of your OCS resources, including an instance of the Sequential Data Store and the data streams.
 
@@ -56,4 +56,4 @@ In this Getting Started exercise, you will do the following:
 3. Create a stream container to store that data.
 4. Create users, clients, and roles. 
 
-Note: Each exercise is built upon the previous one; therefore, complete the exercises in the order shown. At the end of each exercise, you will be directed to the next one.  
+Note: Each exercise is built upon the previous one; therefore, complete the exercises in the order shown. At the end of each exercise, you will be directed to the next exercise.  

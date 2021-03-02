@@ -22,5 +22,4 @@ Text to be added here.
    Note:  Click **Display Details** in the menu bar to see the following information about your namespace:
    
 - The window shows your tenant ID, namespace ID, description, and region of your namespace. It also displays zero (0) in the **Type Count** and **Stream Count** fields.  
-   - The details window shows the **State**, which indicates the status of the namespace. Once the process of creating a namespace and bringing it online is complete, the **State** changes to **Active**. If the status is not yet **Active**, close the window and refresh the page. 
-
+- The details window shows the **State**, which indicates the status of the namespace. Once the process of creating a namespace and bringing it online is complete, the **State** changes to **Active**. If the status is not yet **Active**, close the window and refresh the page. 

@@ -2470,7 +2470,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Quickstarts/Trend-UI.html",
-          "hash": "AvLJt2R/X4qnfAnpySZ0Qg=="
+          "hash": "jmdYbCF/OdwuwRC/GOUaiw=="
         }
       },
       "is_incremental": false,
@@ -2523,6 +2523,17 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "Content_Portal/Quickstarts/images/Cursor_view-1.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Quickstarts/images/Cursor_view-1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "Content_Portal/Quickstarts/images/Cursor_view.png",
       "output": {
         "resource": {
@@ -2545,6 +2556,17 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "Content_Portal/Quickstarts/images/Legend_Table-1.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Quickstarts/images/Legend_Table-1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "Content_Portal/Quickstarts/images/Legend_Table.png",
       "output": {
         "resource": {
@@ -2560,6 +2582,17 @@
       "output": {
         "resource": {
           "relative_path": "Content_Portal/Quickstarts/images/Legend_Table_Med.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Quickstarts/images/Max_min_cursors-1.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Quickstarts/images/Max_min_cursors-1.png"
         }
       },
       "is_incremental": false,
@@ -2593,6 +2626,17 @@
       "output": {
         "resource": {
           "relative_path": "Content_Portal/Quickstarts/images/Multiple_mode.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Quickstarts/images/Search_blade_75-1.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Quickstarts/images/Search_blade_75-1.png"
         }
       },
       "is_incremental": false,
@@ -2659,6 +2703,17 @@
       "output": {
         "resource": {
           "relative_path": "Content_Portal/Quickstarts/images/Time_Range_options.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/Quickstarts/images/Traces_stacked_view-1.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/Quickstarts/images/Traces_stacked_view-1.png"
         }
       },
       "is_incremental": false,

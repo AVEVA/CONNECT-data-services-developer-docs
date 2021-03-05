@@ -22,25 +22,25 @@ To create a new metadata rule, follow these steps:
 
     ![ ](../../images/expand-pane.png)
 
-6. Click the menu icon to display the menu again, and select **Metadata Management** under **Data Management**. The **Metadata Management** page displays.
-7. In the **Metadata Management** page, choose the namespace in which the model stream resides, and the metadata rule is to be created, from the **Namespace** dropdown list.
-8. Click **Add Metadata Rule**. The **Select Stream** page displays.
-9. In the **Select Stream** page, paste the copied steam name into the **Search** field. All streams in the namespace that share the name pattern of the stream you selected display.
-10. Click the row of the stream name to use for the metadata rule and click **Next**.
+5. Click the menu icon to display the menu again, and select **Metadata Management** under **Data Management**. The **Metadata Management** page displays.
+6. In the **Metadata Management** page, choose the namespace in which the model stream resides, and the metadata rule is to be created, from the **Namespace** dropdown list.
+7. Click **Add Metadata Rule**. The **Select Stream** page displays.
+8. In the **Select Stream** page, paste the copied steam name into the **Search** field. All streams in the namespace that share the name pattern of the stream you selected display.
 
     **Note**: You can also search for a stream name by entering into the **Search** field the first few characters of a name followed by the wild card symbol (*).
    
-8. In the **Create Pattern** page, click the **+** sign above the delimiter to separate selected sections of the stream name.
-9. For each delimited section of the stream name you select, use the dropdown list to assign a metadata type: **Metadata**, **String Literal**, or **Wildcard**. See the table following this procedure for a description of these metadata types. 
-10. After entering all metadata type entries, click **Next**.
-11. In the **Define Mappings** page, choose one of the following options:
+9. Click the row of the stream name to use for the metadata rule and click **Next**.
+10. In the **Create Pattern** page, click the **+** sign above the delimiter to separate selected sections of the stream name.
+11. For each delimited section of the stream name you select, use the dropdown list to assign a metadata type: **Metadata**, **String Literal**, or **Wildcard**. See the table following this procedure for a description of these metadata types. 
+12. After entering all metadata type entries, click **Next**.
+13. In the **Define Mappings** page, choose one of the following options:
      - To display the raw stream data for the specified metadata key, select **Copy Values** under **Mapping Type**.
      - To assign a label to data values, select **Map Values** and click **Generate Mappings**.
-12. If you selected **Map Values**, type in the **Map To...** entry field the label you wish to display for each defined metadata key for each matching stream, and click **Next**.
-13. (Optional) Click **Add Mapping** to define mapping for any other stream name part.
-14. Click **Next**. All matching streams for the rule are displayed.
-15. Enter the metadata rule **Name** and **Description** in the **Preview and Run** page.
-16. Click **Save & Execute**.
+14. If you selected **Map Values**, type in the **Map To...** entry field the label you wish to display for each defined metadata key for each matching stream, and click **Next**.
+15. (Optional) Click **Add Mapping** to define mapping for any other stream name part.
+16. Click **Next**. All matching streams for the rule are displayed.
+17. Enter the metadata rule **Name** and **Description** in the **Preview and Run** page.
+18. Click **Save & Execute**.
    
    ### Metadata types
 <!--The description for Metadata type Metadata is rather confusing -can you clarify? And I may have messed up your table formatting ,sorry! This kind of detail is better broken out of the procedure, I think.-->

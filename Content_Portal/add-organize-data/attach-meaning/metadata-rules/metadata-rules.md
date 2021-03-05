@@ -28,7 +28,7 @@ To create a new metadata rule, follow these steps:
 9. In the **Select Stream** page, paste the copied steam name into the **Search** field. All streams in the namespace that share the name pattern of the stream you selected display.
 10. Click the row of the stream name to use for the metadata rule and click **Next**.
 
-   **Note**: You can search for a stream name by entering into the **Search** field the first few characters of a name followed by the wild card symbol (*).
+   **Note**: You can also search for a stream name by entering into the **Search** field the first few characters of a name followed by the wild card symbol (*).
    
 8. In the **Create Pattern** page, click the **+** sign above the delimiter to separate selected sections of the stream name.
 9. For each delimited section of the stream name you select, use the dropdown list to assign a metadata type: **Metadata**, **String Literal**, or **Wildcard**. See the table following this procedure for a description of these metadata types. 

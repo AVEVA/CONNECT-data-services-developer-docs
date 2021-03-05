@@ -17,13 +17,16 @@ To create a new metadata rule, follow these steps:
 
 1. Click **Sequential Data Store** under **Data Management** in the OCS Portal. 
 2. On the **Sequential Data Store** page, click **Streams**.
-3. In the **Namespace** list, select the namespace in which you intend to create the metadata rule.  
-4. Review the streams in the namespace, and copy the stream name that will be the basis for your metadata rule.
-5. Click the menu icon to display the menu, and select **Metadata Management** under **Data Management**.
-6. In the **Metadata Management** page, click **Add Metadata Rule**.
-7. In the **Select Stream** pane,  in the **Namespace** list choose the namespace in which the model stream resides.
-8. Paste the copied steam name into the **Search** field. 
-9. Click the row of the selected stream name in the search results and click **Next**.
+3. In the **Namespace** list, select the namespace in which you intend to create the metadata rule.
+4. Expand the **Streams** pane if necessary to copy the full name of the stream that will be the basis for your metadata rule.
+
+    ![ ](../../images/expand-pane.png)
+
+6. Click the menu icon to display the menu, and select **Metadata Management** under **Data Management**. The **Metadata Management** page displays.
+7. In the **Metadata Management** page, choose the namespace in which the model stream resides, and the metadata rule is to be created, from the **Namespace** dropdown list.
+8. Click **Add Metadata Rule**. The **Select Stream** page displays.
+9. In the **Select Stream** page, paste the copied steam name into the **Search** field. All streams in the namespace that share the name pattern of the stream you selected display.
+10. Click the row of the selected stream name in the search results and click **Next**.
 
    **Note**: You can search for a stream name by entering the first few characters of a name followed by * (wild card).
    

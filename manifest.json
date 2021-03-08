@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/Agent/_work/1/s",
+  "source_base_path": "C:/agent/_work/1/s",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -268,15 +268,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "UidNotFound"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Content_Portal/Documentation/Assets/assets.md",
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Assets/assets.html",
-          "hash": "13q7TrttTSSCkJuoy4RD3A=="
+          "hash": "vo7uW2ecrLffec6sXj0dhQ=="
         }
       },
       "is_incremental": false,
@@ -540,7 +537,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/DataViews/DefineaDataView/Queries.html",
-          "hash": "nGOOoYOs0ip9sw0fHPf1PQ=="
+          "hash": "YaYQ0QoAZLhkHTrOY2SnGg=="
         }
       },
       "is_incremental": false,
@@ -1152,7 +1149,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/SequentialDataStore/SDS_Types.html",
-          "hash": "32OcqDcecrkH9lgdJJti1A=="
+          "hash": "7TiFTIWu1RnnkZK0dtqpXQ=="
         }
       },
       "is_incremental": false,
@@ -1200,7 +1197,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/SequentialDataStore/Units_of_Measure.html",
-          "hash": "d004SffCPvEu8KKz4m2SwQ=="
+          "hash": "WLFe01dXYXELVgzJYoNrXg=="
         }
       },
       "is_incremental": false,
@@ -1377,7 +1374,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/How_To_Guides/Assets/create-asset-from-type.html",
-          "hash": "g66Ds36OsaIml6I6+wdpRw=="
+          "hash": "pb6Iekem0wb3kK4NM9oNtA=="
         }
       },
       "is_incremental": false,
@@ -1389,7 +1386,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/How_To_Guides/Assets/create-asset-type-asset-editor.html",
-          "hash": "OqqwV4ZG4e9J6VO+y6HOrA=="
+          "hash": "Vp+gNu2LGGr6gG4ZSm+ZVw=="
         }
       },
       "is_incremental": false,
@@ -2410,7 +2407,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Overview/what-does-ocs-do.html",
-          "hash": "jnoXhiBy0ILCfDz4RaSMAA=="
+          "hash": "ABIhx4uDtkgmBBXsg+3KgQ=="
         }
       },
       "is_incremental": false,

@@ -8,6 +8,8 @@ To send OSIsoft Message Format (OMF) data to OCS, you must first configure an OM
 
 Use this getting started procedure to become familiar with OMF connections.
 
+## Procedure
+
 1. Click the ![Menu icon](images\menu-icon.png) icon and click **Clients** (below Security) to open the Manage Clients page.
 
 2. Verify that there is at least one client credentials client to use in the OMF connection. If you need to create one, refer to the Clients section.
@@ -45,3 +47,7 @@ Use this getting started procedure to become familiar with OMF connections.
      **Tip:** Click **Edit Connection** to open the Edit window.
 
      Use this window to edit the name and description of the connection. Enter the new name _QuickStartEdit_ and enter the description _OMF Connection used by OCS Quick Start_. Click **Next**, and then click **Save** when you are done.
+
+## Next Step
+
+Continue with [Get started with types](xref:gsTypes).

@@ -7,11 +7,11 @@ uid: gsNamespaces
 
 The first task is to create a namespace, a logical unit of organization for data within a tenant. For more information on namespaces, see the following:
 
-- [About Namespaces](xref:ccNamespaces)
-- [PI Core Counterpart](xref:ccNamespaces#pi-core-counterpart) 
+- [About namespaces](xref:ccNamespaces)
+- [PI Core counterpart](xref:ccNamespaces#pi-core-counterpart) 
 - [Namespace IDs](xref:ccNamespaces#namespace-ids)
-- [Querying Data Across Namespaces](xref:ccNamespaces#querying-data-across-namespaces)
-- [Namespaces Best Practices](xref:bpNamespaces)
+- [Querying data across namespaces](xref:ccNamespaces#querying-data-across-namespaces)
+- [Namespaces best practices](xref:bpNamespaces)
 
 ## Procedure
 
@@ -55,3 +55,7 @@ Note: The remaining steps are optional.
 2. Click the **Selected role** arrow, and select Account Member from the list.
 3. Give the account member write permissions by selecting the **Allow** checkbox for the **Write** access type.
 4. Click **Save**.
+
+## Next Step
+
+Continue with [Get started with connections](xref:gsConnections).

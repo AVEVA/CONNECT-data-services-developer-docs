@@ -64,3 +64,7 @@ After creating the namespace, the next step is to add one or more types. For mor
 
    This takes you to the Streams list and, by default, it uses the _*typeId:QuickStart.PumpState* query to filter for any streams with the QuickStart.PumpState type. The list is empty because no streams have yet been created with this type.
    
+
+## Next Step
+
+Continue with [Get started with streams](xref:gsStreams).

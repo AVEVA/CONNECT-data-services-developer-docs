@@ -4,7 +4,7 @@ uid: gsStreams
 
 # Get started with streams
 
-Draft in progress.
+<!-- Joyce: Do you think this terse intro is sufficient? I am reluctant to get into more detail about streams because we run into the problem of repeating what is covered in the About streams topic. -->
 
 After creating your types, you can add streams and associate a type with the stream. For more information on streams, see the following:
 
@@ -13,7 +13,7 @@ After creating your types, you can add streams and associate a type with the str
 
 ## Procedure
 
-1. Click the menu icon and click **Sequential Data Store** (under Data Management).
+1. Click the ![Menu icon](images\menu-icon.png) and click **Sequential Data Store** (under Data Management).
 
 1. Click **Streams**. From the **Namespace** drop-down list, select QuickStart.
 
@@ -74,3 +74,7 @@ After creating your types, you can add streams and associate a type with the str
 1. Click **Save**. 
 
     The event appears as the latest value in the stream.
+
+## Next step
+
+Continue with <!-- Add link to next topic. -->

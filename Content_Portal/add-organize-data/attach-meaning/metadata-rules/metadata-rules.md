@@ -17,7 +17,7 @@ To create a new metadata rule, follow these steps:
 
 1. Click **Sequential Data Store** under **Data Management** in the OCS Portal. 
 2. On the **Sequential Data Store** page, click **Streams**.
-3. In the **Namespace** list, select the namespace in which you intend to create the metadata rule.
+3. In the **Namespace** dropdown list, select the namespace in which you intend to create the metadata rule.
 4. Expand the **Streams** pane if necessary to copy the full name of the stream that will be the basis for your metadata rule.
 
     ![ ](../../images/expand-pane.png)
@@ -30,22 +30,27 @@ To create a new metadata rule, follow these steps:
     **Note**: You can also search for a stream name by entering into the **Search** field the first few characters of a name followed by the wild card symbol (*).
    
 9. Click the row of the stream name to use for the metadata rule and click **Next**.
-10. In the **Create Pattern** page, click the **+** sign above the delimiter to separate selected sections of the stream name.
+10. In the **Create Pattern** page, click the **+** sign above each selected delimiter to separate sections of the stream name.
 11. For each delimited section of the stream name you select, use the dropdown list to assign a metadata type: **Metadata**, **String Literal**, or **Wildcard**. See the table following this procedure for a description of these metadata types. 
 12. After entering all metadata type entries, click **Next**.
-13. In the **Define Mappings** page, choose one of the following options:
+
+    **Note**: If you select metadata type **Metadata**, you must also enter a metadata key. A metadata key is the key portion of a key-value pair, typically the type of data provided, such as "Measurement." This is helpful when streams that match the rule provide different types of data. Entries in the **Map To...** portion of mapping represent the value part of the key-value pair. For example, "Power" would be the defined key, while different types of data could be "Temperature" or "Pressure," as in the following image:
+    
+    ![ ](../../images/define-mappings.png)
+
+14. In the **Define Mappings** page, choose one of the following options:
      - To display the raw stream data for the specified metadata key, select **Copy Values** under **Mapping Type**.
      - To assign a label to data values, select **Map Values** and click **Generate Mappings**.
-14. If you selected **Map Values**, type in the **Map To...** entry field the label you wish to display for each defined metadata key for each matching stream, and click **Next**.
-15. (Optional) Click **Add Mapping** to define mapping for any other stream name part.
-16. Click **Next**. All matching streams for the rule are displayed.
-17. Enter the metadata rule **Name** and **Description** in the **Preview and Run** page.
-18. Click **Save & Execute**.
+15. If you selected **Map Values**, type in the **Map To...** entry field the label you wish to display for each defined metadata key for matching streams, and click **Next**.
+16. (Optional) Click **Add Mapping** to define mapping for any other stream name part.
+17. Click **Next**. All matching streams for the rule are displayed.
+18. Enter the metadata rule **Name** and **Description** in the **Preview and Run** page.
+19. Click **Save & Execute**.
    
    ### Metadata types
-<!--The description for Metadata type Metadata is rather confusing -can you clarify? And I may have messed up your table formatting ,sorry! This kind of detail is better broken out of the procedure, I think.-->
+
 | Metadata type                       | Description                                        |
 |---------------------------------|------------------------------------------------------------|
-| **Metadata**     | Typically assigned to the data values provided by each stream matching the name pattern of the metadata rule. If you select metadata type **Metadata**, you must also enter a metadata key. A metadata key is the key portion of a key-value pair, typically the type of data provided, such as "Measurement." This is helpful when streams that match the rule provide different types of data. Entries in the **Map To...** portion of mapping represent the value part of the key-value pair. For example, "Measurement" would be the defined key, while different types of data could be "Temperature" or "Pressure".|
+| **Metadata**     | Assigned to the data values provided by each stream matching the name pattern of the metadata rule. |
 | **String Literal**      | Only stream names with the specified string in the part designated will match the name pattern of this metadata rule. |
 | **Wildcard**       | Designates a part of the stream name pattern in which any value is accepted by this metadata rule. |

@@ -23,7 +23,7 @@ To create a new metadata rule, follow these steps:
     ![ ](../../images/expand-pane.png)
 
 5. Click the menu icon to display the menu again, and select **Metadata Management** under **Data Management**. The **Metadata Management** page displays.
-6. In the **Metadata Management** page, choose the namespace in which the model stream resides, and the metadata rule is to be created, from the **Namespace** dropdown list.
+6. In the **Metadata Management** page, click the **Namespace** drop-down list, and choose the namespace in which the model stream resides and where the metadata rule is to be created.
 7. Click **Add Metadata Rule**. The **Select Stream** page displays.
 8. In the **Select Stream** page, paste the copied steam name into the **Search** field. All streams in the namespace that share the name pattern of the stream you selected display.
 

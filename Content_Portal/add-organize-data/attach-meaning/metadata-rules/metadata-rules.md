@@ -46,6 +46,6 @@ To create a new metadata rule, follow these steps:
 <!--The description for Metadata type Metadata is rather confusing -can you clarify? And I may have messed up your table formatting ,sorry! This kind of detail is better broken out of the procedure, I think.-->
 | Metadata type                       | Description                                        |
 |---------------------------------|------------------------------------------------------------|
-| **Metadata**     | Typically assigned to the data values provided by each stream matching the name pattern of the metadata rule. If you select metadata type **Metadata**, you must also enter a metadata key. A metadata key is the key portion of a key-value pair, typically the type of data provided, such as "Measurement."|
-| **String Literal**      | Only stream names that start with the specified string will match the name pattern of this metadata rule. |
-| **Wildcard**       | Designates a part of the stream name pattern in which any value is treated as a match by this metadata rule. |
+| **Metadata**     | Typically assigned to the data values provided by each stream matching the name pattern of the metadata rule. If you select metadata type **Metadata**, you must also enter a metadata key. A metadata key is the key portion of a key-value pair, typically the type of data provided, such as "Measurement." This is helpful when streams that match the rule provide different types of data. Entries in the **Map To...** portion of mapping represent the value part of the key-value pair. For example, "Measurement" would be the defined key, while different types of data could be "Temperature" or "Pressure".|
+| **String Literal**      | Only stream names with the specified string in the part designated will match the name pattern of this metadata rule. |
+| **Wildcard**       | Designates a part of the stream name pattern in which any value is accepted by this metadata rule. |

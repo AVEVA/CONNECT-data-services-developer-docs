@@ -15,7 +15,7 @@ The description for the Metadata type called Metadata was rather confusing - can
  -->
 To create a new metadata rule, follow these steps:
 
-1. Click **Sequential Data Store** under **Data Management** in the OCS Portal. 
+1. Click the menu icon in the OCS portal, and click **Sequential Data Store** under **Data Management**. 
 2. On the **Sequential Data Store** page, click **Streams**.
 3. In the **Namespace** dropdown list, select the namespace in which you intend to create the metadata rule.
 4. Expand the **Streams** pane if necessary to copy the full name of the stream that will be the basis for your metadata rule.

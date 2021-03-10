@@ -38,14 +38,14 @@ To create a new metadata rule, follow these steps:
     
     ![ ](../../images/define-mappings.png)
 
-14. In the **Define Mappings** page, choose one of the following options:
+13. In the **Define Mappings** page, choose one of the following options:
      - To display the raw stream data for the specified metadata key, select **Copy Values** under **Mapping Type**.
      - To assign a label to data values, select **Map Values** and click **Generate Mappings**.
-15. If you selected **Map Values**, type in the **Map To...** entry field the label you wish to display for each defined metadata key for matching streams, and click **Next**.
-16. (Optional) Click **Add Mapping** to define mapping for any other stream name part.
-17. Click **Next**. All matching streams for the rule are displayed.
-18. Enter the metadata rule **Name** and **Description** in the **Preview and Run** page.
-19. Click **Save & Execute**.
+14. If you selected **Map Values**, type in the **Map To...** entry field the label you wish to display for each defined metadata key for matching streams, and click **Next**.
+15. (Optional) Click **Add Mapping** to define mapping for any other stream name part.
+16. Click **Next**. All matching streams for the rule are displayed.
+17. Enter the metadata rule **Name** and **Description** in the **Preview and Run** page.
+18. Click **Save & Execute**.
    
    ### Metadata types
 

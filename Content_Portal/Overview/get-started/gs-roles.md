@@ -5,13 +5,15 @@ uid: gsRoles
 
 Roles are used to manage access to assets, resources, and services in OSIsoft Cloud Services (OCS). Roles are assigned to identities, which includes users, groups, and client-credentials clients. See the following for more information about roles:
 
-- [About roles](#ccRoles)
-- [Roles PI Core counterpart](xref:ccRoles#roles-pi-core)
+- [About roles](xref:ccRoles)
+- [PI Core counterpart](xref:ccRoles#roles-pi-core)
 - [Roles best practices](xref:ccRoles#roles-bp)
 
-## Creating a role
+## Procedure
 
-Find the Roles page in the OSIsoft Cloud Services portal [here](https://cloud.osisoft.com/roles).
+Follow the procedure to create role.
+
+1. Click the ![Menu icon](images/menu-icon.png) icon and click **Roles** (under Security).
 
 1. In the toolbar, click **Add Role**.
 

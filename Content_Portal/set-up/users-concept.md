@@ -9,7 +9,7 @@ A user account is how users log in to the [OCS Portal](https://cloud.osisoft.com
 
 You must have the **Account Administrator** role to add and manage users in a tenant.
 
-## <a name="users-pi-core"></a>Users PI Core counterpart
+## <a name="users-pi-core"></a>PI Core counterpart
 
 An OCS user is comparable to a mapping in the PI Data Archive. For example, in PI Data Archive a mapping may be added from a Microsoft Windows account to a specified PI identity. The user uses their Windows credentials to authenticate against PI Data Archive and gets the permissions specified by the PI identity. In OCS, a user uses Azure Active Directory, Microsoft accounts, or Google credentials to authenticate against OCS, and users get their permissions from the roles that are assigned to them.
 

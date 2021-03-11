@@ -20,7 +20,7 @@ Client-credentials clients are used for server-to-server communication where no 
 
 ### Creating a client-credentials client
 
-1. Click the menu icon and click **Clients** (under Security).
+1. Click the ![Menu icon](images/menu-icon.png) icon and click **Clients** (under Security).
 
 1. From the **Client Type** dropdown list, select **Client-Credentials**. (This is the option that is displayed, by default.)
 
@@ -56,11 +56,11 @@ Authorization code clients are used with customer web applications that use OCS 
 
 - [Introduction to authorization code clients](xref:ccClients#authorization-code-client)
 - [Authorization code client PI Core counterpart](xref:ccClients#authorization-code-pi-core)
-- [Authorization code best prractices](xref:ccClients#authorization-code-bp)
+- [Authorization code best practices](xref:ccClients#authorization-code-bp)
 
 ### Creating an authorization code client
 
-1. Click the menu icon and click **Clients** (under Security).
+1. Click the ![Menu icon](images/menu-icon.png) icon and click **Clients** (under Security).
 
 1. From the **Client Type** dropdown list, select **Authorization Code**.
 
@@ -88,13 +88,13 @@ Authorization code clients are used with customer web applications that use OCS 
 
 Hybrid clients are used by native and server-side web applications. Authentication can be performed using any browser. The server-side code retrieves an access token and a refresh token can also be provided. See the following for more information about hybrid clients:
 
-- [Introduction to hybrid clients](xref;ccClients#hybrid-client)
+- [Introduction to hybrid clients](xref:ccClients#hybrid-client)
 - [Hybrid client PI Core counterpart](xref:ccClients#hybrid-client-pi-core)
 - [Hybrid client best prractices](xref:ccClients#hybrid-client-bp)
 
 ### Creating a hybrid client
 
-1. Click the menu icon and click **Clients** (under Security).
+1. Click the ![Menu icon](images/menu-icon.png) icon and click **Clients** (under Security).
 
 1. From the **Client Type** dropdown list, select **Hybrid**.
 

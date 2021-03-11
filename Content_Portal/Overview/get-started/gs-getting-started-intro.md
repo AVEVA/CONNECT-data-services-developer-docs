@@ -27,33 +27,29 @@ Once you have completed the pre-requisites, log into the OCS portal.
 
    <!-- I'm guessing there are additional next steps that depend on the Identity Provider they are using? --> 
 
-## Overview of the OCS Portal
+## OCS portal
 
-<!-- Probably, we will need to modify this, make it shorter,  and point to the longer, yet to be written description. -->
-
-The menu icon opens the menu from which you will navigate to the different OCS features. You always have access to this menu wherever you are in the OCS portal. 
-
-When you click on one of the menu items, it takes you to the page for that resource. On most of the pages, there are two panes:
-
-- The left pane is where you will be performing the tasks associated with the OCS resource. For example, the left pane is where you add and edit the OCS resource, and manage the permissions for the OCS resource.
-- The right pane has one or more tabs.  
-    - The Details tab contains additional information about your resource. 
-
-    - The Information tab provides documentation on how to perform tasks on the page. 
-
-      This Getting Started Guide provides additional information including explaining OCS concepts, best practices, and a walkthrough of how to set up and use these features.
-
-    - Some resources have additional panes for additional configuration tasks.
-
+The OCS portal is a web-based application through which you can perform many of the tasks you need to perform. Alternatively, you can accomplsih the same tasks through the OCS REST-based API. This introduction to OCS uses the portal functionality. Before you start the exercises, see [Introduction to the portal interface](xref:introPortalInterface) to get an overview of the user interface.
 ## Getting started goals
 
-In this Getting Started exercise, you will do the following in the order shown:
+In this Getting Started exercise, you will do the following:
 
 1. Create a namespace that will contain all of your OCS resources, including an instance of the Sequential Data Store and the data streams.
 
-2. Create a type that defines the data you want to store.
+2. Create two connection types, on that brings in PI Data Archive data and another that brings in data using an OMF application.
+
+3. Create a type that defines the data you want to store.
 
 3. Create a stream container to store that data.
-4. Create users, clients, and roles. 
+
+4. Create clients for different types of applications.
+
+1. Invite a user to your tenant.
+
+7. Create a role that defines permissions for users.
 
 Note: Each exercise is built upon the previous one; therefore, complete the exercises in the order shown. At the end of each exercise, you will be directed to the next exercise.  
+
+## Next Step
+
+Start with [Get started with namespaces](xref:gsNamespaces).

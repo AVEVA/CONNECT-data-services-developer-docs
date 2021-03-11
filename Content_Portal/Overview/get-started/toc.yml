@@ -1,3 +1,5 @@
+- name: Introduction to the portal interface
+  topicHref: introduction-portal-interface.md
 - name: Get started with namespaces
   topicHref: gs-namespaces.md
 - name: Get started with connections

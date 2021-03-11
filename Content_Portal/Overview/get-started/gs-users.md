@@ -3,12 +3,14 @@
 A user is an identity that has access to an OSIsoft Cloud Services (OCS) tenant. Roles assigned to a user determine what permissions the user has on resources in OCS. See the following for more information about users:
 
 - [About users](xref:ccUsers)
-- [Users PI Core counterpart](xref:ccUsers#users-pi-core)
+- [PI Core counterpart](xref:ccUsers#users-pi-core)
 - [Users best practices](xref:ccUsers#users-bp)
 
-## Inviting a user
+## Procedure
 
-1. Click the menu icon and click **Users** (under Security).
+Follow the procedure to invite a user to your tenant.
+
+1. Click the ![Menu icon](images/menu-icon.png) icon and click **Users** (under Security).
 
 1. In the toolbar, click **Add User**.
 

@@ -51,13 +51,13 @@ string tenantId
 
 Id of the Tenant
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Member`
+- `Tenant Member`
 
-### Returns
+### Response
 
 #### 200
 

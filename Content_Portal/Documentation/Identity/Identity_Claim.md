@@ -111,13 +111,13 @@ int32 count
 
 Maximum number of identity providers to return.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -191,13 +191,13 @@ Guid identityProviderId
 
 Id of identity provider.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -255,13 +255,13 @@ Guid identityProviderClaimId
 
 Id of identity provider claim.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -331,13 +331,13 @@ Guid identityProviderClaimId
 
 Id of identity provider claim.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -415,13 +415,13 @@ RoleIds | Guid[] | Yes | The list of Role Ids associated with this IdentityProvi
 }
 ```
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 201
 
@@ -532,13 +532,13 @@ RoleIds | Guid[] | No | The list of Role Ids associated with this IdentityProvid
 }
 ```
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -620,13 +620,13 @@ Guid identityProviderClaimId
 
 Id of identity provider claim.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 204
 

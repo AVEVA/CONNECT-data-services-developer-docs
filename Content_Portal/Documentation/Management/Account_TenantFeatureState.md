@@ -30,7 +30,7 @@ For HTTP requests and responses, the TenantFeatureState object has the following
 
 Retrieves all instances of `FeatureState` for the specified `Tenant`.
 
-### Http
+### Request
 
 `GET api/v1/Tenants/{tenantId}/Features`
 
@@ -45,11 +45,11 @@ string tenantId
 The identifier of the tenant to access.
 
 
-### Security
+### Authorization
 
-Authorized for Account Members of the specified tenant.
+Authorized for Tenant Members of the specified tenant.
 
-### Returns
+### Response
 
 | Status Code | Return Type | Description |
 | --- | --- | ---  |
@@ -64,7 +64,7 @@ Authorized for Account Members of the specified tenant.
 
 Retrieves a `FeatureState` with the specified ID from a `Tenant`.
 
-### Http
+### Request
 
 `GET api/v1/Tenants/{tenantId}/Features/{id}`
 
@@ -86,11 +86,11 @@ string id
 The identifier of the `FeatureState` to retrieve.
 
 
-### Security
+### Authorization
 
-Authorized for Account Members of the specified tenant.
+Authorized for Tenant Members of the specified tenant.
 
-### Returns
+### Response
 
 | Status Code | Return Type | Description | 
  | --- | --- | ---  | 

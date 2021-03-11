@@ -5,9 +5,9 @@ uid: AccountUserRole_1
 # User Roles
 
 User `Roles` authorize API requests made by users to various OCS features. Users can be assigned more than one `Role`,
-but all users have the Account Member role. The following are currently available User `Roles`:
-- Account Administrator: Can add, edit, and remove users. Can also edit the permissions of existing users.
-- Account Member: Can log in and access the OCS portal.
+but all users have the Tenant Member role. The following are currently available User `Roles`:
+- Tenant Administrator: Can add, edit, and remove users. Can also edit the permissions of existing users.
+- Tenant Member: Can log in and access the OCS portal.
 
 
 ## Properties
@@ -32,7 +32,7 @@ For HTTP requests and responses, the UserRole object has the following propertie
 
 Retrieves all `Roles` for the specified user.
 
-### Http
+### Request
 
 `GET api/v1/Tenants/{tenantId}/Users/{userId}/Roles`
 
@@ -79,11 +79,11 @@ string query
 Unsupported parameter.
 
 
-### Security
+### Authorization
 
-Authorized for Account Administrators of the specified tenant and an Account Member's own `Roles` within the specified tenant.
+Authorized for Tenant Administrators of the specified tenant and a Tenant Member's own `Roles` within the specified tenant.
 
-### Returns
+### Response
 
 | Status Code | Return Type | Description |
 | --- | --- | ---  |
@@ -99,7 +99,7 @@ Authorized for Account Administrators of the specified tenant and an Account Mem
 
 Replaces the `Roles` of a user with a new list of roles.
 
-### Http
+### Request
 
 `PUT api/v1/Tenants/{tenantId}/Users/{userId}/Roles`
 
@@ -129,11 +129,11 @@ The identifier of the user whose roles will be replaced.
 A list of `Role` objects to set as the roles for the specified user.
 
 
-### Security
+### Authorization
 
-Authorized for Account Administrators of the specified tenant.
+Authorized for Tenant Administrators of the specified tenant.
 
-### Returns
+### Response
 
 | Status Code | Return Type | Description |
 | --- | --- | ---  |

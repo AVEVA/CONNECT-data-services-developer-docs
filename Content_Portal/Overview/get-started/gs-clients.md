@@ -1,12 +1,15 @@
+---
+uid: gsClients
+---
 # Get started with clients
-
-
 
 Clients provide a way for users or applications to authenticate against OSIsoft Cloud Services (OCS) from applications other than the OCS portal. OCS supports three types of clients, each of which support different types of applications.
 
 You must have the **Account Administrator** role to add and manage clients in a tenant.
 
 ## Client-credentials clients
+
+Client-credentials clients are used for server-to-server communication where no user interaction is required. See the following for more information about client-credentials clients:
 
 - [Introduction to client credentials clients](xref:ccClients#client-credentials-client)
 - [Client-credentials client PI Core counterpart](xref:ccClients#client-credentials-pi-core)
@@ -46,11 +49,11 @@ You must have the **Account Administrator** role to add and manage clients in a 
 
 ## Authorization code clients
 
-Authorization code clients are used with customer web applications that use OCS as their backend. They provide a secure means of authenticating users of the website to view OCS assets. The authorization code client is paired with a client ID. The web application that is using the client to authenticate users must include the client ID in its code.
+Authorization code clients are used with customer web applications that use OCS as their backend. They provide a secure means of authenticating users of the website to view OCS assets. See the following for more information about authorization code clients:
 
-Authorization code clients are used to authenticate using any browser. Upon successful authentication, an authorization code is provided to the client. This authorization code is exchanged for an access token using PKCE (Proof Code for Code Exchange) which is a more secure authentication flow. No refresh token is provided.
-
-
+- [Introduction to authorization code clients](xref:ccClients#authorization-code-client)
+- [Authorization code client PI Core counterpart](xref:ccClients#authorization-code-pi-core)
+- [Authorization code best prractices](xref:ccClients#authorization-code-bp)
 
 ### Creating an authorization code client
 
@@ -80,9 +83,11 @@ Authorization code clients are used to authenticate using any browser. Upon succ
 
 ## Hybrid clients
 
-Hybrid clients are used by native and server-side web applications. Authentication can be performed using any browser. The server-side code retrieves an access token and a refresh token can also be provided.
+Hybrid clients are used by native and server-side web applications. Authentication can be performed using any browser. The server-side code retrieves an access token and a refresh token can also be provided. See the following for more information about hybrid clients:
 
-
+- [Introduction to hybrid clients](xref;ccClients#hybrid-client)
+- [Hybrid client PI Core counterpart](xref:ccClients#hybrid-client-pi-core)
+- [Hybrid client best prractices](xref:ccClients#hybrid-client-bp)
 
 ### Creating a hybrid client
 

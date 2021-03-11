@@ -3,11 +3,14 @@ uid: gsClients
 ---
 # Get started with clients
 
-Clients provide a way for users or applications to authenticate against OSIsoft Cloud Services (OCS) from applications other than the OCS portal. OCS supports three types of clients, each of which support different types of applications.
+Clients provide a way for users or applications to authenticate against OSIsoft Cloud Services (OCS) from applications other than the OCS portal. OCS supports the following client types, each of which support different types of applications:
+- [Client-credentials clients](#gsClient-credentials-clients)
+- [Authorization code clients](#gsAuthorization-code-clients)
+- [Hybrid clients](#gsHybrid-clients)
 
 You must have the **Account Administrator** role to add and manage clients in a tenant.
 
-## Client-credentials clients
+## <a name="gsClient-credentials-clients"></a>Client-credentials clients
 
 Client-credentials clients are used for server-to-server communication where no user interaction is required. See the following for more information about client-credentials clients:
 
@@ -47,7 +50,7 @@ Client-credentials clients are used for server-to-server communication where no 
 1. Click **Close**.  
    Note: In the list of secrets, the **Client Id** is still visible. If you did not save the **Client Secret**, select the client in the list and use the **Details** pane to remove the old secret and add a new secret.
 
-## Authorization code clients
+## <a name="gsAuthorization-code-clients"></a>Authorization code clients
 
 Authorization code clients are used with customer web applications that use OCS as their backend. They provide a secure means of authenticating users of the website to view OCS assets. See the following for more information about authorization code clients:
 
@@ -81,7 +84,7 @@ Authorization code clients are used with customer web applications that use OCS 
 1. Click **Add**.  
    The Client Successfully Created window displays the Client ID for the client. The application must specify this Client ID when it makes an authentication request. After you close this window, you can also retrieve the **Client Id** from the list of clients.
 
-## Hybrid clients
+## <a name="gsHybrid-clients"></a>Hybrid clients
 
 Hybrid clients are used by native and server-side web applications. Authentication can be performed using any browser. The server-side code retrieves an access token and a refresh token can also be provided. See the following for more information about hybrid clients:
 

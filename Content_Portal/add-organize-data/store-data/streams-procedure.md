@@ -1,5 +1,5 @@
 ---
-uid: gsStreams
+uid: gpStreams
 ---
 
 # Add a stream

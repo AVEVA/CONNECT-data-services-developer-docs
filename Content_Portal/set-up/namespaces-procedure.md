@@ -1,5 +1,5 @@
 ---
-uid: GSCreateNamespaces
+uid: gpNamespaces
 ---
 
 # Add a namespace

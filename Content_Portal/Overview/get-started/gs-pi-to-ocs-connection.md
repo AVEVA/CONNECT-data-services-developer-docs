@@ -22,7 +22,7 @@ Prerequisite: The exercise below assumes that your organization has a PI System 
 
     The Connections page opens.
 
-1.  From the **Namespace** drop-down list, click **QuickStart**.
+1.  From the **Namespace** drop-down list, click **MyOCS**.
 
 1.  From the **Type** drop-down list, click **PI System**.
 
@@ -30,15 +30,15 @@ Prerequisite: The exercise below assumes that your organization has a PI System 
 
     The Add PI System Connection window opens.
 
-1.  In the **Name** field, type **QuickStart**. Click **Next.**
+1.  In the **Name** field, type **MyOCS**. Click **Next.**
 
-1.  On the Review tab, verify that **Source** displays _Not Configured_ and **Destination** displays _QuickStart_. Click **Save**.
+1.  On the Review tab, verify that **Source** displays _Not Configured_ and **Destination** displays *MyOCS*. Click **Save**.
 
 The Download Installation Kit window opens. Follow the prompts to download the PI to OCS Agent Installation Kit.
 
 1.  Follow the prompts to download the PI to OCS Agent Installation Kit.
 
-2.  In the Connections page, select the _QuickStart_ connection.
+2.  In the Connections page, select the *MyOCS* connection.
 
     **Tip:** Click **Manage Permissions** to open the Manage Permissions window. When you are done, click **Cancel**.
 
@@ -46,7 +46,7 @@ The Download Installation Kit window opens. Follow the prompts to download the P
 
     **Tip:** Click **Edit Connection** to open the Edit window.
 
-    Use this window to edit the name and description of the connection. Enter the new name _QuickStartEdit_ and description _PI System Connection used by OCS Quick Start_. Click **Next**. When you are done, click **Save**.
+    Use this window to edit the name and description of the connection. Enter the new name _MyOCSEdit_ and description _PI System Connection used by My OCS_. Click **Next**. When you are done, click **Save**.
 
 ## Install the PI to OCS Agent
 
@@ -55,7 +55,7 @@ The Download Installation Kit window opens. Follow the prompts to download the P
 ## Create a data transfer
 
 1.  Once the PI to OCS Agent is installed and registered, return to the Connections page of the OCS portal.
-2.  Select the _QuickStart_ connection in the list on the left, and then click **Add PI Point Transfer** in the right pane.
+2.  Select the *MyOCS* connection in the list on the left, and then click **Add PI Point Transfer** in the right pane.
 3.  In the Add PI Point Transfer window, in the **Name** field, type _sinusoid_. Click **Search**.
 4.  Select the _sinusoid_ PI point from the PI Points Found list, and click **Add**.
 
@@ -74,7 +74,7 @@ The Download Installation Kit window opens. Follow the prompts to download the P
 
 8.  Return to the Connections page.
 
-9.  Select _QuickStartEdit_ in the list, and click **Stop** to end the data transfer.
+9.  Select _MyOCSEdit_ in the list, and click **Stop** to end the data transfer.
 
     Note: Connections cannot be deleted while a transfer is running.
 

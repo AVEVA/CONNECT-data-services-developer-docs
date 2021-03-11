@@ -35,6 +35,7 @@
             "Content_Portal/Documentation/images/**",
             "Content_Portal/add-organize-data/images/**",
             "Content_Portal/add-organize-data/collect-data/connectors/images/**",
+            "Content_Portal/add-organize-data/collect-data/connectors/omf/images/**",
              "Content_Portal/add-organize-data/attach-meaning/assets/images/**",
              "Content_Portal/add-organize-data/store-data/images/**",
              "Content_Portal/set-up/images/**",

@@ -13,7 +13,7 @@ After creating the namespace, the next step is to add one or more types. For mor
 
 1. Click the ![Menu icon](images\menu-icon.png) icon and click **Sequential Data Store** (under Data Management).
 
-1. Click **Types**. From the **Namespace** drop-down list, select QuickStart.
+1. Click **Types**. From the **Namespace** drop-down list, select MyOCS.
 
 1. Click the ![Manage Default Type Permissions icon](images\ManageDefaultIcon.png) icon above the tree on the left. 
    This opens the Manage Default Permissions for New Types window where default permissions for new types are specified. 
@@ -26,9 +26,9 @@ After creating the namespace, the next step is to add one or more types. For mor
 
 1. In the Add Type window, enter the following:
 
-   - Id &ndash; QuickStart.PumpState
-   - Name &ndash; QuickStart.PumpState
-   - Description &ndash; SDS Type used by OCS Quick Start
+   - Id &ndash; MyOCS.PumpState
+   - Name &ndash; MyOCS.PumpState
+   - Description &ndash; SDS Type used by My OCS
 
 1. Click the ![Properties icon](images\PropertiesPlusIcon.png)icon next to **Properties** to add a property.
 
@@ -50,11 +50,11 @@ After creating the namespace, the next step is to add one or more types. For mor
 
 1. Click **Save**.
 
-1. Click the checkbox to select the QuickStart.PumpState type in the list and click the ![Manage Permissions icon](images/manage-permissions-icon.png) icon.
+1. Click the checkbox to select the MyOCS.PumpState type in the list and click the ![Manage Permissions icon](images/manage-permissions-icon.png) icon.
 
-    This opens the Manage Permissions for QuickStart.PumpState window where you can override the default permissions and set permissions for the specific type. By default, you must be assigned the Account Administrator role to configure the type permissions.
+    This opens the Manage Permissions for MyOCS.PumpState window where you can override the default permissions and set permissions for the specific type. By default, you must be assigned the Account Administrator role to configure the type permissions.
 
-    Review the permissions for the QuickStart.PumpState type, and when you are done exploring this window, click **Cancel** to continue. 
+    Review the permissions for the MyOCS.PumpState type, and when you are done exploring this window, click **Cancel** to continue. 
 
 1. Click **View Type**.
 
@@ -62,7 +62,7 @@ After creating the namespace, the next step is to add one or more types. For mor
 
 1. Click **Get Type Streams**.
 
-   This takes you to the Streams list and, by default, it uses the _*typeId:QuickStart.PumpState* query to filter for any streams with the QuickStart.PumpState type. The list is empty because no streams have yet been created with this type.
+   This takes you to the Streams list and, by default, it uses the _*typeId:MyOCS.PumpState* query to filter for any streams with the MyOCS.PumpState type. The list is empty because no streams have yet been created with this type.
    
 
 ## Next Step

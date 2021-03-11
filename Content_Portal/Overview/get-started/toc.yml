@@ -6,3 +6,9 @@
   topicHref: gs-types.md
 - name: Get started with streams
   topicHref: gs-streams.md
+- name: Get started with clients
+  topicHref: gs-clients.md
+- name: Get started with users
+  topicHref: gs-users.md
+- name: Get started with roles
+  topicHref: gs-roles.md

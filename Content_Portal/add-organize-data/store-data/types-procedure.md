@@ -1,5 +1,5 @@
 ---
-uid: gsTypes
+uid: gpTypes
 ---
 
 # Add a type

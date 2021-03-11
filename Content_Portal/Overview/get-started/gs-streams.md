@@ -15,7 +15,7 @@ After creating your types, you can add streams and associate a type with the str
 
 1. Click the ![Menu icon](images\menu-icon.png) and click **Sequential Data Store** (under Data Management).
 
-1. Click **Streams**. From the **Namespace** drop-down list, select QuickStart.
+1. Click **Streams**. From the **Namespace** drop-down list, select MyOCS.
 
 1. Click the **Manage Default Stream Permissions** icon above the tree on the left.  
     This opens the Manage Default Permissions for New Streams window where default permissions for streams created in the selected namespace are configured. 
@@ -27,17 +27,17 @@ After creating your types, you can add streams and associate a type with the str
 
 1. In the Add Stream window, enter the following:
 
-   - Stream Id &ndash; QuickStart.NorthAmerica.SLTC.PumpA
-   - Description &ndash; SDS Stream used by OCS Quick Start
-   - Type ID &ndash; QuickStart.PumpState
+   - Stream Id &ndash; MyOCS.NorthAmerica.SLTC.PumpA
+   - Description &ndash; SDS Stream used by My OCS
+   - Type ID &ndash; MyOCS.PumpState
 
     Note: Leave the Name field blank. By default, it will take the value of the Stream Id.
 
 1. Click **Save**.
 
-1. In the **Search...** field, enter _TypeId:QuickStart.PumpState_. 
+1. In the **Search...** field, enter _TypeId:MyOCS.PumpState_. 
 
-    This searches for streams that use the QuickStart.PumpState type. 
+    This searches for streams that use the MyOCS.PumpState type. 
 
 1. Select the newly created stream in the list and in the right panel, select the **Metadata and Tags** tab.
 
@@ -55,11 +55,11 @@ After creating your types, you can add streams and associate a type with the str
 
 1. In the **Search...** field, enter *Site:SLTC*. 
 
-    This searches for streams that have the metadata key *Site* and the value *SLTC*. This search query returns the QuickStart stream. 
+    This searches for streams that have the metadata key *Site* and the value *SLTC*. This search query returns the MyOCS stream. 
    
     Note: Use quotation marks around the value if there are spaces in the text.
     
-1. Select the QuickStart.NorthAmerica.SLTC.PumpA stream and click **Manage Data**. 
+1. Select the MyOCS.NorthAmerica.SLTC.PumpA stream and click **Manage Data**. 
 
     This allows you to run queries against the data in the stream and to add, edit, and remove events.
 

@@ -4,3 +4,9 @@
   topicHref: namespaces-best-practices.md
 - name: Add a namespace
   topicHref: namespaces-procedure.md
+- name: About clients
+  topicHref: clients-concept.md
+- name: About users
+  topicHref: users-concept.md
+- name: About roles
+  topicHref: roles-concept.md

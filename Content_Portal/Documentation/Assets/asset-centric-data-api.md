@@ -7,7 +7,7 @@ The asset centric data API provides a quick way to retrieve data stored in an as
 
 In order to retrieve stream data from an asset, you must first set up stream references for a given asset. The data that is retrieved is based on the resolved asset. By default, data calls return data for all stream references. 
 
-If you are only interested in data from a subset of streams, you must specify stream filtering as a URL parameter. The format is to add stream={streamName} for each stream you are interested in.
+If you are only interested in data from a subset of streams, you must specify the streams encoded as a URL parameter. The format is to add stream={streamName} for each stream you are interested in.
 
 For example, if a given asset has the following definition and you are only interested in HeaterA and PressureB for the last data call, you would send:
 

@@ -4,7 +4,10 @@ uid: gpTypes
 
 # Add a type
 
-(Draft in progress)
+Sequential Data Store (SDS) types define the shape and structure of events and how to associate events with streams of data. See the following for more information about types:
+
+- [About types](xref:ccTypes)
+- [Types best practices](xref:bpTypes)
 
 ## Procedure
 
@@ -38,3 +41,7 @@ uid: gpTypes
 1. Continue adding properties to the type.
 
 1. When you are done adding properties, click **Save**.
+
+## Related Links
+
+- [Types](xref:sdsTypes) API

@@ -20,17 +20,17 @@ The following are best practices OSIsoft recommends for creating types and strea
 
 ## Property Patterns
 
-When defining what value properties should be added to a type in Sequential Data Store, there are three common patterns that types usually fall into.
+When defining what value properties should be added to a type in Sequential Data Store, these are some common patterns that types fall into:
 
-1. Inextricably linked data
+-  Inextricably linked data
    - The data contains multiple properties that must all be present to interpret the data
    - Examples include: latitude and longitude, value and quality, and X Y and Z coordinates
    - In this case, use a single type with all required properties
-2. Independent data
+-   Independent data
    - The data is not always captured together, rarely used together, or must be independently secured
    - Examples include: existing PI points and separate equipment or assets
    - In this case, use separate types for each property or use a single type with one index and a generic value property
-3. Data is always captured together, but they are not inextricably linked
+-  Data is always captured together, but they are not inextricably linked
    - All of the data is collected by the same equipment at the same time and could be used together
    - An example is multiple measurements taken by different instruments on the same equipment
    - In this case, use a single type if data is likely to be used together, can be secured together, does not exceed 15 properties, and the list of properties is not likely to change.  Otherwise, split the data into multiple types.

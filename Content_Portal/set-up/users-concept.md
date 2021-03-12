@@ -3,11 +3,11 @@ uid: ccUsers
 ---
 # About users
 
-A user is an identity that has access to an OSIsoft Cloud Services (OCS) tenant. Roles assigned to a user determine what permissions the user has on resources in OCS. For more information on Roles see the [Roles](#TODO)[Add this link] documentation. Users must be linked to an account from an enabled identity provider such as Azure Active Directory, Microsoft Accounts, or Google. Users log in to OCS using the credentials from that account.
+A user is an identity that has access to an OSIsoft Cloud Services (OCS) tenant. Roles assigned to a user determine what permissions the user has on resources in OCS. For more information on Roles see the [Roles](#TODO)[Add this link] documentation. Users must be linked to an tenant from an enabled identity provider such as Azure Active Directory, Microsoft Accounts, or Google. Users log in to OCS using the credentials from that account.
 
 A user account is how users log in to the [OCS Portal](https://cloud.osisoft.com), and how users authenticate when using [Hybrid Clients](xref:ccClients#hybrid-client) and [Authorization Code Clients](xref:ccClients#authorization-code-client). Therefore, at least one user should already be added to a tenant when the OCS Portal is first accessed.
 
-You must have the **Account Administrator** role to add and manage users in a tenant.
+You must have the **Tenant Administrator** role to add and manage users in a tenant.
 
 ## <a name="users-pi-core"></a>PI Core counterpart
 
@@ -19,4 +19,4 @@ The following best practices are recommended when you are setting up your users:
 
 - The OCS invitation is sent to the user at the email address specified in the **Contact Email** field. Therefore, verify that it is correct to ensure that your users receive the invitation and ensure that it is not sent to an unintended recipient, giving them access to OCS.
 
-- Before inviting users to OCS, ensure that they have been granted the correct permissions through their roles. In particular, consider the access granted to the Account Member role which, by default, grants read access to everything in the tenant. If a user should not have read access to some resources, the Account Member role can be limited.
+- Before inviting users to OCS, ensure that they have been granted the correct permissions through their roles. In particular, consider the access granted to the Tenant Member role which, by default, grants read access to everything in the tenant. If a user should not have read access to some resources, the Tenant Member role can be limited.

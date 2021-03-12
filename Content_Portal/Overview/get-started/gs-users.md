@@ -20,7 +20,7 @@ Follow the procedure to invite a user to your tenant.
 
 1. Enter the **Contact Email**. The invitation to your OCS tenant is sent to the user at this address. Ensure that it is correct so that the invitation is not sent to an unintended recipient.
 
-1. (Optional) Enable additional roles for the user. By default, the user is assigned the Account Member role which cannot be removed. Roles can be modified after the user is invited.
+1. (Optional) Enable additional roles for the user. By default, the user is assigned the Tenant Member role which cannot be removed. Roles can be modified after the user is invited.
 
 1. Once the information has been entered, click **Invite**. OCS sends the invitation to the email address specified in the **Contact Email** field. The **Status** column lists the new user as **Pending** until the invitation is accepted. If the invitation expires, the status changes to **Expired**. Once expired, the invitation can be resent.
 

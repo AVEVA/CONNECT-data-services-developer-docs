@@ -1,4 +1,4 @@
-# Getting started with users
+# Get started with users
 
 A user is an identity that has access to an OSIsoft Cloud Services (OCS) tenant. Roles assigned to a user determine what permissions the user has on resources in OCS. See the following for more information about users:
 

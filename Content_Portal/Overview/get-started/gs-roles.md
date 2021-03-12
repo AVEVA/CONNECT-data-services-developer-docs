@@ -1,7 +1,7 @@
 ---
 uid: gsRoles
 ---
-# Getting started with roles
+# Get started with roles
 
 Roles are used to manage access to assets, resources, and services in OSIsoft Cloud Services (OCS). Roles are assigned to identities, which includes users, groups, and client-credentials clients. See the following for more information about roles:
 

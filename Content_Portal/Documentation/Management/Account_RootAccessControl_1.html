@@ -89,9 +89,9 @@
 [FromRoute]
 string tenantId
 </code></pre><p>The identifier of the tenant to access.</p>
-<h3 id="security">Security</h3>
+<h3 id="authorization">Authorization</h3>
 <p>A root <a class="xref" href="../Access_Control.html">AccessControlList</a> can only be retrieved if the current principal has Read access.</p>
-<h3 id="returns">Returns</h3>
+<h3 id="response">Response</h3>
 <table>
 <thead>
 <tr>
@@ -121,7 +121,7 @@ string tenantId
 <hr>
 <h2 id="set-root-accesscontrollist"><code>Set Root AccessControlList</code></h2>
 <p>Modifies the <a class="xref" href="../Access_Control.html">AccessControlList</a> that is used to authorize access to a <code>Namespace</code> if none is specified during creation.</p>
-<h3 id="http-1">Http</h3>
+<h3 id="request">Request</h3>
 <p><code>PUT api/v1/Tenants/{tenantId}/AccessControl/Namespaces</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
@@ -132,9 +132,9 @@ string tenantId
 [FromBody]
 AccessControlList newAccessControlList
 </code></pre><p>The new root <a class="xref" href="../Access_Control.html">AccessControlList</a> for <code>Namespaces</code>.</p>
-<h3 id="security-1">Security</h3>
+<h3 id="authorization-1">Authorization</h3>
 <p>A root <a class="xref" href="../Access_Control.html">AccessControlList</a> can only be modified if the current principal has ManageAccessControl access.</p>
-<h3 id="returns-1">Returns</h3>
+<h3 id="response-1">Response</h3>
 <table>
 <thead>
 <tr>

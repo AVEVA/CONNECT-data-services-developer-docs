@@ -224,13 +224,13 @@ int32 skip
 [Default = 100]
 int32 count
 </code></pre><p>Maximum number of users to return. Ignored if a list of Ids is passed.</p>
-<h3 id="security">Security</h3>
+<h3 id="authorization">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Member</code></li>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Member</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns">Returns</h3>
+<h3 id="response">Response</h3>
 <h4 id="200">200</h4>
 <p>Success.</p>
 <h5 id="type">Type:</h5>
@@ -374,13 +374,13 @@ int32 count
 [Default = &quot;&quot;]
 string[] status
 </code></pre><p>Only return statuses that match these values. Possible User statuses are: InvitationAccepted, NoInvitation, InvitationNotSent, InvitationSent, InvitationExpired.</p>
-<h3 id="security-1">Security</h3>
+<h3 id="authorization-1">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Member</code></li>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Member</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-1">Returns</h3>
+<h3 id="response-1">Response</h3>
 <h4 id="200-1">200</h4>
 <p>Success.</p>
 <h5 id="type-2">Type:</h5>
@@ -447,13 +447,13 @@ string tenantId
 <pre><code class="lang-csharp">[Required]
 Guid userId
 </code></pre><p>Id of User.</p>
-<h3 id="security-2">Security</h3>
+<h3 id="authorization-2">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Member</code></li>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Member</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-2">Returns</h3>
+<h3 id="response-2">Response</h3>
 <h4 id="200-2">200</h4>
 <p>Success.</p>
 <h5 id="type-3">Type:</h5>
@@ -495,13 +495,13 @@ string tenantId
 <pre><code class="lang-csharp">[Required]
 Guid userId
 </code></pre><p>Id of user.</p>
-<h3 id="security-3">Security</h3>
+<h3 id="authorization-3">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Member</code></li>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Member</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-3">Returns</h3>
+<h3 id="response-3">Response</h3>
 <h4 id="200-3">200</h4>
 <p>Success.</p>
 <h5 id="type-4">Type:</h5>
@@ -546,13 +546,13 @@ string tenantId
 <pre><code class="lang-csharp">[Required]
 Guid userId
 </code></pre><p>Id of user.</p>
-<h3 id="security-4">Security</h3>
+<h3 id="authorization-4">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Member</code></li>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Member</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-4">Returns</h3>
+<h3 id="response-4">Response</h3>
 <h4 id="200-4">200</h4>
 <p>Success.</p>
 <h5 id="type-5">Type:</h5>
@@ -583,13 +583,13 @@ Guid userId
 JObject preferences
 </code></pre><p>JSON object preferences.</p>
 <pre><code class="lang-json">{}
-</code></pre><h3 id="security-5">Security</h3>
+</code></pre><h3 id="authorization-5">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Member</code></li>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Member</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-5">Returns</h3>
+<h3 id="response-5">Response</h3>
 <h4 id="200-5">200</h4>
 <p>Success.</p>
 <h5 id="type-6">Type:</h5>
@@ -692,12 +692,12 @@ UserCreateOrUpdate userCreateOrUpdate
     &quot;00000000-0000-0000-0000-000000000000&quot;
   ]
 }
-</code></pre><h3 id="security-6">Security</h3>
+</code></pre><h3 id="authorization-6">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-6">Returns</h3>
+<h3 id="response-6">Response</h3>
 <h4 id="201">201</h4>
 <p>Created.</p>
 <h5 id="type-7">Type:</h5>
@@ -814,12 +814,12 @@ UserCreateOrUpdate userCreateOrUpdate
     &quot;00000000-0000-0000-0000-000000000000&quot;
   ]
 }
-</code></pre><h3 id="security-7">Security</h3>
+</code></pre><h3 id="authorization-7">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-7">Returns</h3>
+<h3 id="response-7">Response</h3>
 <h4 id="200-6">200</h4>
 <p>Updated User.</p>
 <h5 id="type-8">Type:</h5>
@@ -873,12 +873,12 @@ string tenantId
 <pre><code class="lang-csharp">[Required]
 Guid userId
 </code></pre><p>Id of user.</p>
-<h3 id="security-8">Security</h3>
+<h3 id="authorization-8">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-8">Returns</h3>
+<h3 id="response-8">Response</h3>
 <h4 id="204">204</h4>
 <p>Deleted.</p>
 <h4 id="401-8">401</h4>
@@ -906,13 +906,13 @@ string tenantId
 <pre><code class="lang-csharp">[Required]
 Guid userId
 </code></pre><p>Id of user.</p>
-<h3 id="security-9">Security</h3>
+<h3 id="authorization-9">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Member</code></li>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Member</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-9">Returns</h3>
+<h3 id="response-9">Response</h3>
 <h4 id="200-7">200</h4>
 <p>User exists.</p>
 <h5 id="type-9">Type:</h5>
@@ -939,13 +939,13 @@ string tenantId
 [Default = &quot;&quot;]
 Guid[] id
 </code></pre><p>Unordered list of User Ids.</p>
-<h3 id="security-10">Security</h3>
+<h3 id="authorization-10">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Member</code></li>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Member</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-10">Returns</h3>
+<h3 id="response-10">Response</h3>
 <h4 id="200-8">200</h4>
 <p>Success.</p>
 <h5 id="type-10">Type:</h5>
@@ -971,13 +971,13 @@ string tenantId
 <pre><code class="lang-csharp">[Required]
 Guid userId
 </code></pre><p>Id of User.</p>
-<h3 id="security-11">Security</h3>
+<h3 id="authorization-11">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Member</code></li>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Member</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-11">Returns</h3>
+<h3 id="response-11">Response</h3>
 <h4 id="200-9">200</h4>
 <p>Success.</p>
 <h5 id="type-11">Type:</h5>

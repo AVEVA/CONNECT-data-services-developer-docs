@@ -107,7 +107,10 @@ Content-Type: application/json
    &quot;another key&quot;:&quot;another value&quot; 
 } 
 </code></pre><h3 id="authorization">Authorization</h3>
-<p>Allowed for account administrator and account members</p>
+<ul>
+<li>Tenant Administrator</li>
+<li>Tenant Members</li>
+</ul>
 <h4 id="net-client-libraries-method">.NET client libraries method</h4>
 <pre><code class="lang-csharp">      Task&lt;IDictionary&lt;string, string&gt;&gt; GetStreamMetadataAsync(string streamId); 
 </code></pre><hr>
@@ -132,7 +135,10 @@ Content-Type: application/json
    &quot;a metadata value&quot;
 } 
 </code></pre><h3 id="authorization-1">Authorization</h3>
-<p>Allowed for account administrator and account members</p>
+<ul>
+<li>Tenant Administrator</li>
+<li>Tenant Members</li>
+</ul>
 <h3 id="net-client-libraries-method-1">.NET client libraries method</h3>
 <pre><code class="lang-csharp">      Task&lt;string&gt; GetStreamMetadataValueAsync(string streamId, string key); 
 </code></pre><hr>
@@ -148,7 +154,10 @@ Overwrites any existing metadata; does not merge.  </p>
 <h3 id="response-2">Response</h3>
 <p>The response includes a status code  </p>
 <h3 id="authorization-2">Authorization</h3>
-<p>Allowed for account administrator and account members</p>
+<ul>
+<li>Tenant Administrator</li>
+<li>Tenant Members</li>
+</ul>
 <h3 id="net-client-libraries-method-2">.NET client libraries method</h3>
 <pre><code class="lang-csharp">      Task UpdateStreamMetadataAsync(string streamId, IDictionary&lt;string, string&gt; metadata); 
 </code></pre><hr>
@@ -166,7 +175,10 @@ Overwrites any existing metadata; does not merge.  </p>
 <h4 id="response-body-2">Response body</h4>
 <p>A collection of operations to be applied to the metadata collection as specified by the <a href="http://jsonpatch.com/">JSON Patch format</a>  </p>
 <h3 id="authorization-3">Authorization</h3>
-<p>Allowed for account administrator and account members</p>
+<ul>
+<li>Tenant Administrator</li>
+<li>Tenant Members</li>
+</ul>
 <h3 id="net-client-libraries-method-3">.NET client libraries method</h3>
 <pre><code class="lang-csharp">      Task&lt;IDictionary&lt;string, string&gt;&gt; PatchStreamMetadataAsync(string streamId, MetadataPatchDocument patchDoc);
 </code></pre><hr>
@@ -181,7 +193,10 @@ Overwrites any existing metadata; does not merge.  </p>
 <h3 id="response-4">Response</h3>
 <p>The response includes a status code  </p>
 <h3 id="authorization-4">Authorization</h3>
-<p>Allowed for account administrator and account members</p>
+<ul>
+<li>Tenant Administrator</li>
+<li>Tenant Members</li>
+</ul>
 <h3 id="net-client-libraries-method-4">.NET client libraries method</h3>
 <pre><code class="lang-csharp">      Task DeleteStreamMetadataAsync(string streamId); 
 </code></pre><hr>
@@ -207,7 +222,10 @@ Content-Type: application/json
     &quot;another tag&quot; 
 ] 
 </code></pre><h3 id="authorization-5">Authorization</h3>
-<p>Allowed for account administrator and account members</p>
+<ul>
+<li>Tenant Administrator</li>
+<li>Tenant Members</li>
+</ul>
 <h3 id="net-client-libraries-method-5">.NET client libraries method</h3>
 <pre><code class="lang-csharp">      Task&lt;IList&lt;string&gt;&gt; GetStreamTagsAsync(string streamId); 
 </code></pre><hr>
@@ -225,7 +243,10 @@ Overwrites any existing tags; does not merge. </p>
 <h3 id="response-6">Response</h3>
 <p>The response includes a status code  </p>
 <h3 id="authorization-6">Authorization</h3>
-<p>Allowed for account administrator and account members</p>
+<ul>
+<li>Tenant Administrator</li>
+<li>Tenant Members</li>
+</ul>
 <h3 id="net-client-libraries-method-6">.NET client libraries method</h3>
 <pre><code class="lang-csharp">      Task UpdateStreamTagsAsync(string streamId, IList&lt;string&gt; tags); 
 </code></pre><hr>
@@ -240,7 +261,10 @@ Overwrites any existing tags; does not merge. </p>
 <h3 id="response-7">Response</h3>
 <p>The response includes a status code  </p>
 <h3 id="authorization-7">Authorization</h3>
-<p>Allowed for account administrator and account members</p>
+<ul>
+<li>Tenant Administrator</li>
+<li>Tenant Members</li>
+</ul>
 <h3 id="net-client-libraries-method-7">.NET client libraries method</h3>
 <pre><code class="lang-csharp">      Task DeleteStreamTagsAsync(string streamId); 
 </code></pre><hr>

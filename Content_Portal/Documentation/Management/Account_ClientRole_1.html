@@ -79,10 +79,10 @@
 <h1 id="client-roles">Client roles</h1>
 
 <p>Client <code>roles</code> authorize API requests made by clients to various OCS features. Clients can be assigned more than one
-<code>role</code>, but all clients have the Account Member role. The following are currently available client <code>Roles</code>:</p>
+<code>role</code>, but all clients have the Tenant Member role. The following are currently available client <code>Roles</code>:</p>
 <ul>
-<li>Account Administrator: Can add, edit, and remove data using APIs.</li>
-<li>Account Member: Can read data using most APIs.</li>
+<li>Tenant Administrator: Can add, edit, and remove data using APIs.</li>
+<li>Tenant Member: Can read data using most APIs.</li>
 </ul>
 <h2 id="properties">Properties</h2>
 <p>For HTTP requests and responses, the ClientRole object has the following properties and JSON-serialized body: </p>
@@ -114,7 +114,7 @@
 </code></pre><hr>
 <h2 id="replace-client-roles"><code>Replace Client Roles</code></h2>
 <p>Replaces the <code>Roles</code> of a client with a new list of roles.</p>
-<h3 id="http">Http</h3>
+<h3 id="request">Request</h3>
 <p><code>PUT api/v1/Tenants/{tenantId}/Clients/{clientId}/Roles</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
@@ -129,9 +129,9 @@ string clientId
 [FromBody]
 [Role] roleList
 </code></pre><p>List of <code>Role</code> objects to set as the Roles for the specified client.</p>
-<h3 id="security">Security</h3>
-<p><code>Roles</code> of a client can only be replaced by an Account Administrator.</p>
-<h3 id="returns">Returns</h3>
+<h3 id="authorization">Authorization</h3>
+<p><code>Roles</code> of a client can only be replaced by a Tenant Administrator.</p>
+<h3 id="response">Response</h3>
 <table>
 <thead>
 <tr>
@@ -171,7 +171,7 @@ string clientId
 <hr>
 <h2 id="find-client-roles"><code>Find Client Roles</code></h2>
 <p>Retrieves all <code>Roles</code> from a client.</p>
-<h3 id="http-1">Http</h3>
+<h3 id="request-1">Request</h3>
 <p><code>GET api/v1/Tenants/{tenantId}/Clients/{clientId}/Roles</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
@@ -197,9 +197,9 @@ int32 count
 [FromRoute]
 string query
 </code></pre><p>Unsupported parameter.</p>
-<h3 id="security-1">Security</h3>
-<p><code>Roles</code> can be retrieved by an Account Administrator.</p>
-<h3 id="returns-1">Returns</h3>
+<h3 id="authorization-1">Authorization</h3>
+<p><code>Roles</code> can be retrieved by a Tenant Administrator.</p>
+<h3 id="response-1">Response</h3>
 <table>
 <thead>
 <tr>

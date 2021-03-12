@@ -171,12 +171,12 @@ Read <a href="https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/AUTHEN
 <pre><code class="lang-csharp">[Required]
 Guid identityProviderId
 </code></pre><p>Id of identity provider.</p>
-<h3 id="security">Security</h3>
+<h3 id="authorization">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns">Returns</h3>
+<h3 id="response">Response</h3>
 <h4 id="200">200</h4>
 <p>Success.</p>
 <h5 id="type">Type:</h5>
@@ -207,12 +207,12 @@ Guid identityProviderId
 <pre><code class="lang-csharp">[Required]
 string scheme
 </code></pre><p>Scheme name.</p>
-<h3 id="security-1">Security</h3>
+<h3 id="authorization-1">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-1">Returns</h3>
+<h3 id="response-1">Response</h3>
 <h4 id="200-1">200</h4>
 <p>Success.</p>
 <h5 id="type-1">Type:</h5>
@@ -255,12 +255,12 @@ int32 skip
 [Default = 100]
 int32 count
 </code></pre><p>Maximum number of identity providers to return.</p>
-<h3 id="security-2">Security</h3>
+<h3 id="authorization-2">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-2">Returns</h3>
+<h3 id="response-2">Response</h3>
 <h4 id="200-2">200</h4>
 <p>Success.</p>
 <h5 id="type-2">Type:</h5>
@@ -302,12 +302,12 @@ int32 count
 <pre><code class="lang-csharp">[Required]
 string scheme
 </code></pre><p>Scheme name.</p>
-<h3 id="security-3">Security</h3>
+<h3 id="authorization-3">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-3">Returns</h3>
+<h3 id="response-3">Response</h3>
 <h4 id="200-3">200</h4>
 <p>Success.</p>
 <h5 id="type-3">Type:</h5>
@@ -329,12 +329,12 @@ string scheme
 <pre><code class="lang-csharp">[Required]
 Guid identityProviderId
 </code></pre><p>Id of identity provider.</p>
-<h3 id="security-4">Security</h3>
+<h3 id="authorization-4">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-4">Returns</h3>
+<h3 id="response-4">Response</h3>
 <h4 id="200-4">200</h4>
 <p>Success.</p>
 <h5 id="type-4">Type:</h5>
@@ -354,12 +354,12 @@ Guid identityProviderId
 <p><code>HEAD api/v1/IdentityProviders</code></p>
 <h3 id="parameters-5">Parameters</h3>
 <p>This API call does not have any parameters.</p>
-<h3 id="security-5">Security</h3>
+<h3 id="authorization-5">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-5">Returns</h3>
+<h3 id="response-5">Response</h3>
 <h4 id="200-5">200</h4>
 <p>Success.</p>
 <h5 id="type-5">Type:</h5>
@@ -401,13 +401,13 @@ int32 skip
 [Default = 100]
 int32 count
 </code></pre><p>Maximum number of identity providers to return.</p>
-<h3 id="security-6">Security</h3>
+<h3 id="authorization-6">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Member</code></li>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Member</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-6">Returns</h3>
+<h3 id="response-6">Response</h3>
 <h4 id="200-6">200</h4>
 <p>Success.</p>
 <h5 id="type-6">Type:</h5>
@@ -470,13 +470,13 @@ string tenantId
 <pre><code class="lang-csharp">[Required]
 Guid identityProviderId
 </code></pre><p>Id of identity provider.</p>
-<h3 id="security-7">Security</h3>
+<h3 id="authorization-7">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Member</code></li>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Member</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-7">Returns</h3>
+<h3 id="response-7">Response</h3>
 <h4 id="200-7">200</h4>
 <p>Success.</p>
 <h5 id="type-7">Type:</h5>
@@ -585,12 +585,12 @@ IdentityProviderAdd identityProviderAdd
   &quot;AzureActiveDirectoryTenant&quot;: &quot;AzureActiveDirectoryTenant&quot;,
   &quot;AzureActiveDirectoryConsentTypes&quot;: &quot;AzureActiveDirectoryConsentTypes&quot;
 }
-</code></pre><h3 id="security-8">Security</h3>
+</code></pre><h3 id="authorization-8">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-8">Returns</h3>
+<h3 id="response-8">Response</h3>
 <h4 id="201">201</h4>
 <p>Created.</p>
 <h5 id="type-8">Type:</h5>
@@ -635,12 +635,12 @@ string tenantId
 <pre><code class="lang-csharp">[Required]
 Guid identityProviderId
 </code></pre><p>Id of identity provider.</p>
-<h3 id="security-9">Security</h3>
+<h3 id="authorization-9">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-9">Returns</h3>
+<h3 id="response-9">Response</h3>
 <h4 id="204">204</h4>
 <p>Removed.</p>
 <h4 id="401-9">401</h4>
@@ -669,13 +669,13 @@ string tenantId
 <pre><code class="lang-csharp">[Required]
 Guid identityProviderId
 </code></pre><p>Id of identity provider.</p>
-<h3 id="security-10">Security</h3>
+<h3 id="authorization-10">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Member</code></li>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Member</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-10">Returns</h3>
+<h3 id="response-10">Response</h3>
 <h4 id="200-8">200</h4>
 <p>Success.</p>
 <h5 id="type-9">Type:</h5>
@@ -700,13 +700,13 @@ Guid identityProviderId
 <pre><code class="lang-csharp">[Required]
 string tenantId
 </code></pre><p>Id of tenant.</p>
-<h3 id="security-11">Security</h3>
+<h3 id="authorization-11">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Member</code></li>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Member</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-11">Returns</h3>
+<h3 id="response-11">Response</h3>
 <h4 id="200-9">200</h4>
 <p>Success.</p>
 <h5 id="type-10">Type:</h5>
@@ -740,12 +740,12 @@ int32 count
 [Optional]
 string skiptoken
 </code></pre><p>An encoded string that identifies the set of users that was not returned. For example, if you specify a count of the first 50 users matching your query, the skiptoken identifies the 51st user.</p>
-<h3 id="security-12">Security</h3>
+<h3 id="authorization-12">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-12">Returns</h3>
+<h3 id="response-12">Response</h3>
 <h4 id="200-10">200</h4>
 <p>Success.</p>
 <h5 id="type-11">Type:</h5>
@@ -786,12 +786,12 @@ int32 count
 [Optional]
 string skiptoken
 </code></pre><p>An encoded string that identifies the set of groups that was not returned. For example, if you specify a count of the first 5 groups matching your query, the skiptoken identifies the 6th group.</p>
-<h3 id="security-13">Security</h3>
+<h3 id="authorization-13">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-13">Returns</h3>
+<h3 id="response-13">Response</h3>
 <h4 id="200-11">200</h4>
 <p>Success.</p>
 <h5 id="type-12">Type:</h5>
@@ -840,12 +840,12 @@ int32 count
 [Optional]
 string skiptoken
 </code></pre><p>An encoded string that identifies the set of groups that was not returned. For example, if you request a count of the first 3 groups matching your query, the skiptoken identifies the 4th user.</p>
-<h3 id="security-14">Security</h3>
+<h3 id="authorization-14">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-14">Returns</h3>
+<h3 id="response-14">Response</h3>
 <h4 id="200-12">200</h4>
 <p>Success.</p>
 <h5 id="type-13">Type:</h5>
@@ -892,12 +892,12 @@ int32 count
 [Optional]
 string skiptoken
 </code></pre><p>An encoded string that identifies the set of users that was not returned. For example, if you request a count of the first 50 users matching your query, the skiptoken identifies the 51st user.</p>
-<h3 id="security-15">Security</h3>
+<h3 id="authorization-15">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-15">Returns</h3>
+<h3 id="response-15">Response</h3>
 <h4 id="200-13">200</h4>
 <p>Success.</p>
 <h5 id="type-14">Type:</h5>
@@ -929,13 +929,13 @@ string tenantId
 <pre><code class="lang-csharp">[Required]
 Guid identityProviderId
 </code></pre><p>Id of identity provider to check for consent.</p>
-<h3 id="security-16">Security</h3>
+<h3 id="authorization-16">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Member</code></li>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Member</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-16">Returns</h3>
+<h3 id="response-16">Response</h3>
 <h4 id="200-14">200</h4>
 <p>Success.</p>
 <h5 id="type-15">Type:</h5>
@@ -975,13 +975,13 @@ string tenantId
 <pre><code class="lang-csharp">[Required]
 Guid identityProviderId
 </code></pre><p>Id of identity provider to check for consent.</p>
-<h3 id="security-17">Security</h3>
+<h3 id="authorization-17">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Member</code></li>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Member</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-17">Returns</h3>
+<h3 id="response-17">Response</h3>
 <h4 id="200-15">200</h4>
 <p>Success.</p>
 <h5 id="type-16">Type:</h5>
@@ -1073,12 +1073,12 @@ IdentityProviderConsent identityProviderConsent
   &quot;ConsentEmail&quot;: &quot;user@company.com&quot;,
   &quot;ConsentOverride&quot;: true
 }
-</code></pre><h3 id="security-18">Security</h3>
+</code></pre><h3 id="authorization-18">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-18">Returns</h3>
+<h3 id="response-18">Response</h3>
 <h4 id="200-16">200</h4>
 <p>Success.</p>
 <h4 id="400-2">400</h4>

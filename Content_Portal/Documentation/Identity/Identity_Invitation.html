@@ -83,7 +83,7 @@
             providers in a tenant.
             There can only be one invitation for a User at a time. An invitation
             can expire, at which time the Admin can either delete it, or extend it.
-            When creating an invitation an Account Administrator has the option to resend the
+            When creating an invitation a Tenant Administrator has the option to resend the
             invitation email to the ContactEmail configured for the user the invitation
             is attached to. The email can be re-sent by updating the invitation.
             When an invitation expires the User cannot accept it. If the expiration
@@ -182,12 +182,12 @@ string tenantId
 <pre><code class="lang-csharp">[Required]
 string invitationId
 </code></pre><p>Id of invitation.</p>
-<h3 id="security">Security</h3>
+<h3 id="authorization">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns">Returns</h3>
+<h3 id="response">Response</h3>
 <h4 id="200">200</h4>
 <p>Success.</p>
 <h5 id="type">Type:</h5>
@@ -239,12 +239,12 @@ int32 count
 [Default = False]
 bool includeExpiredInvitations
 </code></pre><p>Specify whether to return expired invitations.</p>
-<h3 id="security-1">Security</h3>
+<h3 id="authorization-1">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-1">Returns</h3>
+<h3 id="response-1">Response</h3>
 <h4 id="200-1">200</h4>
 <p>Success.</p>
 <h5 id="type-1">Type:</h5>
@@ -340,12 +340,12 @@ InvitationCreateOrUpdate invitationCreateOrUpdate
   &quot;SendInvitation&quot;: false,
   &quot;IdentityProviderId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
 }
-</code></pre><h3 id="security-2">Security</h3>
+</code></pre><h3 id="authorization-2">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-2">Returns</h3>
+<h3 id="response-2">Response</h3>
 <h4 id="200-2">200</h4>
 <p>Success.</p>
 <h5 id="type-2">Type:</h5>
@@ -387,12 +387,12 @@ string tenantId
 <pre><code class="lang-csharp">[Required]
 string invitationId
 </code></pre><p>Id of invitation.</p>
-<h3 id="security-3">Security</h3>
+<h3 id="authorization-3">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-3">Returns</h3>
+<h3 id="response-3">Response</h3>
 <h4 id="204">204</h4>
 <p>Deleted.</p>
 <h4 id="400-2">400</h4>
@@ -422,12 +422,12 @@ string tenantId
 <pre><code class="lang-csharp">[Required]
 string invitationId
 </code></pre><p>Id of invitation.</p>
-<h3 id="security-4">Security</h3>
+<h3 id="authorization-4">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-4">Returns</h3>
+<h3 id="response-4">Response</h3>
 <h4 id="200-3">200</h4>
 <p>Success.</p>
 <h5 id="type-3">Type:</h5>
@@ -456,12 +456,12 @@ string tenantId
 [Default = False]
 bool includeExpiredInvitations
 </code></pre><p>Specify to return expired invitations.</p>
-<h3 id="security-5">Security</h3>
+<h3 id="authorization-5">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-5">Returns</h3>
+<h3 id="response-5">Response</h3>
 <h4 id="200-4">200</h4>
 <p>Success.</p>
 <h5 id="type-4">Type:</h5>
@@ -488,13 +488,13 @@ string tenantId
 <pre><code class="lang-csharp">[Required]
 Guid userId
 </code></pre><p>Id of user.</p>
-<h3 id="security-6">Security</h3>
+<h3 id="authorization-6">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Member</code></li>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Member</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-6">Returns</h3>
+<h3 id="response-6">Response</h3>
 <h4 id="200-5">200</h4>
 <p>Success.</p>
 <h5 id="type-5">Type:</h5>
@@ -575,12 +575,12 @@ InvitationCreateOrUpdate invitationCreateOrUpdate
   &quot;SendInvitation&quot;: false,
   &quot;IdentityProviderId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
 }
-</code></pre><h3 id="security-7">Security</h3>
+</code></pre><h3 id="authorization-7">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-7">Returns</h3>
+<h3 id="response-7">Response</h3>
 <h4 id="201">201</h4>
 <p>Created.</p>
 <h5 id="type-6">Type:</h5>
@@ -669,12 +669,12 @@ InvitationCreateOrUpdate invitationCreateOrUpdate
   &quot;SendInvitation&quot;: false,
   &quot;IdentityProviderId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
 }
-</code></pre><h3 id="security-8">Security</h3>
+</code></pre><h3 id="authorization-8">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-8">Returns</h3>
+<h3 id="response-8">Response</h3>
 <h4 id="200-6">200</h4>
 <p>Updated.</p>
 <h5 id="type-7">Type:</h5>
@@ -731,12 +731,12 @@ string tenantId
 <pre><code class="lang-csharp">[Required]
 Guid userId
 </code></pre><p>Id of user.</p>
-<h3 id="security-9">Security</h3>
+<h3 id="authorization-9">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-9">Returns</h3>
+<h3 id="response-9">Response</h3>
 <h4 id="204-1">204</h4>
 <p>Deleted.</p>
 <h4 id="401-9">401</h4>
@@ -770,13 +770,13 @@ Guid userId
 [Default = False]
 bool includeExpiredInvitations
 </code></pre><p>Specify whether to include expired invitations.</p>
-<h3 id="security-10">Security</h3>
+<h3 id="authorization-10">Authorization</h3>
 <p>Allowed for these roles:</p>
 <ul>
-<li><code>Account Member</code></li>
-<li><code>Account Administrator</code></li>
+<li><code>Tenant Member</code></li>
+<li><code>Tenant Administrator</code></li>
 </ul>
-<h3 id="returns-10">Returns</h3>
+<h3 id="response-10">Response</h3>
 <h4 id="200-7">200</h4>
 <p>Success.</p>
 <h5 id="type-9">Type:</h5>

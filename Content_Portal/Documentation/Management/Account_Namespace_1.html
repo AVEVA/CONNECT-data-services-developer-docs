@@ -137,16 +137,16 @@
 <hr>
 <h2 id="get-all-namespaces"><code>Get All Namespaces</code></h2>
 <p>Returns all <code>Namespaces</code> owned by the specified <code>Tenant</code> that the caller has access to.</p>
-<h3 id="http">Http</h3>
+<h3 id="request">Request</h3>
 <p><code>GET api/v1/Tenants/{tenantId}/Namespaces</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
 string tenantId
 </code></pre><p>The identifier of the tenant to access.</p>
-<h3 id="security">Security</h3>
+<h3 id="authorization">Authorization</h3>
 <p>A <code>Namespace</code> can only be retrieved if the current principal has Read access.</p>
-<h3 id="returns">Returns</h3>
+<h3 id="response">Response</h3>
 <table>
 <thead>
 <tr>
@@ -176,7 +176,7 @@ string tenantId
 <hr>
 <h2 id="get-namespace-by-id"><code>Get Namespace by Id</code></h2>
 <p>Returns a <code>Namespace</code> with the specified Id.</p>
-<h3 id="http-1">Http</h3>
+<h3 id="request-1">Request</h3>
 <p><code>GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
@@ -187,9 +187,9 @@ string tenantId
 [FromRoute]
 string namespaceId
 </code></pre><p>The identifier of the <code>Namespace</code> to return.</p>
-<h3 id="security-1">Security</h3>
+<h3 id="authorization-1">Authorization</h3>
 <p>A <code>Namespace</code> can only be retrieved if the current principal has Read access.</p>
-<h3 id="returns-1">Returns</h3>
+<h3 id="response-1">Response</h3>
 <table>
 <thead>
 <tr>
@@ -224,7 +224,7 @@ string namespaceId
 <hr>
 <h2 id="create-new-namespace"><code>Create New Namespace</code></h2>
 <p>Creates a new <code>Namespace</code> in the specified <code>Tenant</code>.</p>
-<h3 id="http-2">Http</h3>
+<h3 id="request-2">Request</h3>
 <p><code>POST api/v1/Tenants/{tenantId}/Namespaces/{namespaceId?}</code></p>
 <h3 id="parameters-2">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
@@ -241,9 +241,9 @@ Namespace namespaceToCreate
 string namespaceId
 </code></pre><p>The Id of the new <code>Namespace</code>. The Id can also be specified in the namespaceToCreate. If it is omitted in both,
             the Id will be generated.</p>
-<h3 id="security-2">Security</h3>
+<h3 id="authorization-2">Authorization</h3>
 <p>A <code>Namespace</code> can only be created if the current principal has Write access.</p>
-<h3 id="returns-2">Returns</h3>
+<h3 id="response-2">Response</h3>
 <table>
 <thead>
 <tr>
@@ -289,7 +289,7 @@ string namespaceId
 <h2 id="update-namespace"><code>Update Namespace</code></h2>
 <p>Updates <code>Namespace</code> information: Description and TierId. The <a class="xref" href="../Access_Control.html">AccessControlList</a> and Owner&#39;s <a class="xref" href="../Access_Control.html">Trustee</a> can
             only be updated through their own routes.</p>
-<h3 id="http-3">Http</h3>
+<h3 id="request-3">Request</h3>
 <p><code>PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}</code></p>
 <h3 id="parameters-3">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
@@ -304,9 +304,9 @@ string namespaceId
 [FromBody]
 Namespace newProperties
 </code></pre><p>The new details to store for the <code>Namespace</code>.</p>
-<h3 id="security-3">Security</h3>
+<h3 id="authorization-3">Authorization</h3>
 <p>A <code>Namespace</code> can only be updated if the current principal has Write access.</p>
-<h3 id="returns-3">Returns</h3>
+<h3 id="response-3">Response</h3>
 <table>
 <thead>
 <tr>
@@ -341,7 +341,7 @@ Namespace newProperties
 <hr>
 <h2 id="delete-namespace"><code>Delete Namespace</code></h2>
 <p>Deletes a <code>Namespace</code> in the specified <code>Tenant</code>.</p>
-<h3 id="http-4">Http</h3>
+<h3 id="request-4">Request</h3>
 <p><code>DELETE api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}</code></p>
 <h3 id="parameters-4">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
@@ -352,9 +352,9 @@ string tenantId
 [FromRoute]
 string namespaceId
 </code></pre><p>The identifier of the <code>Namespace</code> to delete.</p>
-<h3 id="security-4">Security</h3>
+<h3 id="authorization-4">Authorization</h3>
 <p>A <code>Namespace</code> can only be deleted if the current principal has Delete access.</p>
-<h3 id="returns-4">Returns</h3>
+<h3 id="response-4">Response</h3>
 <table>
 <thead>
 <tr>
@@ -389,7 +389,7 @@ string namespaceId
 <hr>
 <h2 id="get-namespace-accesscontrollist"><code>Get Namespace AccessControlList</code></h2>
 <p>Returns the <a class="xref" href="../Access_Control.html">AccessControlList</a> that is used to authorize access to a <code>Namespace</code>.</p>
-<h3 id="http-5">Http</h3>
+<h3 id="request-5">Request</h3>
 <p><code>GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/accesscontrol</code></p>
 <h3 id="parameters-5">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
@@ -400,9 +400,9 @@ string tenantId
 [FromRoute]
 string namespaceId
 </code></pre><p>The identifier of the <code>Namespace</code> to access.</p>
-<h3 id="security-5">Security</h3>
+<h3 id="authorization-5">Authorization</h3>
 <p>An <a class="xref" href="../Access_Control.html">AccessControlList</a> can only be retrieved if the current principal has Read access.</p>
-<h3 id="returns-5">Returns</h3>
+<h3 id="response-5">Response</h3>
 <table>
 <thead>
 <tr>
@@ -432,7 +432,7 @@ string namespaceId
 <hr>
 <h2 id="set-namespace-accesscontrollist"><code>Set Namespace AccessControlList</code></h2>
 <p>Updates the <a class="xref" href="../Access_Control.html">AccessControlList</a> that is used to authorize access to a <code>Namespace</code>.</p>
-<h3 id="http-6">Http</h3>
+<h3 id="request-6">Request</h3>
 <p><code>PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/accesscontrol</code></p>
 <h3 id="parameters-6">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
@@ -447,9 +447,9 @@ string namespaceId
 [FromBody]
 AccessControlList newAccessControlList
 </code></pre><p>The updated <a class="xref" href="../Access_Control.html">AccessControlList</a> for the <code>Namespace</code>.</p>
-<h3 id="security-6">Security</h3>
+<h3 id="authorization-6">Authorization</h3>
 <p>An <a class="xref" href="../Access_Control.html">AccessControlList</a> can only be updated if the current principal has ManageAccessControl access.</p>
-<h3 id="returns-6">Returns</h3>
+<h3 id="response-6">Response</h3>
 <table>
 <thead>
 <tr>
@@ -484,7 +484,7 @@ AccessControlList newAccessControlList
 <hr>
 <h2 id="get-namespace-owner"><code>Get Namespace Owner</code></h2>
 <p>Returns the Owner&#39;s <a class="xref" href="../Access_Control.html">Trustee</a> for a given <code>Namespace</code>.</p>
-<h3 id="http-7">Http</h3>
+<h3 id="request-7">Request</h3>
 <p><code>GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/owner</code></p>
 <h3 id="parameters-7">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
@@ -495,9 +495,9 @@ string tenantId
 [FromRoute]
 string namespaceId
 </code></pre><p>The identifier of the <code>Namespace</code> to access.</p>
-<h3 id="security-7">Security</h3>
+<h3 id="authorization-7">Authorization</h3>
 <p>An Owner&#39;s <a class="xref" href="../Access_Control.html">Trustee</a> can only be retrieved if the current principal has Read access.</p>
-<h3 id="returns-7">Returns</h3>
+<h3 id="response-7">Response</h3>
 <table>
 <thead>
 <tr>
@@ -527,7 +527,7 @@ string namespaceId
 <hr>
 <h2 id="set-namespace-owner"><code>Set Namespace Owner</code></h2>
 <p>Changes the Owner&#39;s <a class="xref" href="../Access_Control.html">Trustee</a> for a given <code>Namespace</code>.</p>
-<h3 id="http-8">Http</h3>
+<h3 id="request-8">Request</h3>
 <p><code>PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/owner</code></p>
 <h3 id="parameters-8">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
@@ -542,9 +542,9 @@ string namespaceId
 [FromBody]
 Trustee newOwner
 </code></pre><p>The new Owner&#39;s <a class="xref" href="../Access_Control.html">Trustee</a> of the <code>Namespace</code>.</p>
-<h3 id="security-8">Security</h3>
+<h3 id="authorization-8">Authorization</h3>
 <p>An Owner&#39;s <a class="xref" href="../Access_Control.html">Trustee</a> can only be changed if the current principal has ManageAccessControl access.</p>
-<h3 id="returns-8">Returns</h3>
+<h3 id="response-8">Response</h3>
 <table>
 <thead>
 <tr>

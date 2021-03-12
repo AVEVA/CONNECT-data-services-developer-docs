@@ -147,16 +147,16 @@ APIs to manage an OCS customer tenant. Unlike namespaces, tenants are not scoped
 </code></pre><hr>
 <h2 id="get-tenant"><code>Get Tenant</code></h2>
 <p>Retrieves a specific <code>Tenant</code> by ID.</p>
-<h3 id="http">Http</h3>
+<h3 id="request">Request</h3>
 <p><code>GET api/v1/Tenants/{tenantId}</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
 string tenantId
 </code></pre><p>The identifier of the <code>Tenant</code> to retrieve.</p>
-<h3 id="security">Security</h3>
-<p>Authorized for Account Members of the specified <code>Tenant</code>.</p>
-<h3 id="returns">Returns</h3>
+<h3 id="authorization">Authorization</h3>
+<p>Authorized for Tenant Members of the specified <code>Tenant</code>.</p>
+<h3 id="response">Response</h3>
 <table>
 <thead>
 <tr>
@@ -186,16 +186,16 @@ string tenantId
 <hr>
 <h2 id="tenant-exists"><code>Tenant Exists</code></h2>
 <p>Checks if a <code>Tenant</code> with a specific ID exists.</p>
-<h3 id="http-1">Http</h3>
+<h3 id="request-1">Request</h3>
 <p><code>HEAD api/v1/Tenants/{tenantId}</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
 string tenantId
 </code></pre><p>The identifier of the <code>Tenant</code> for this request.</p>
-<h3 id="security-1">Security</h3>
-<p>Authorized for Account Members of the specified <code>Tenant</code>.</p>
-<h3 id="returns-1">Returns</h3>
+<h3 id="authorization-1">Authorization</h3>
+<p>Authorized for Tenant Members of the specified <code>Tenant</code>.</p>
+<h3 id="response-1">Response</h3>
 <table>
 <thead>
 <tr>
@@ -225,7 +225,7 @@ string tenantId
 <hr>
 <h2 id="update-tenant"><code>Update Tenant</code></h2>
 <p>Updates a specified <code>Tenant</code> object.</p>
-<h3 id="http-2">Http</h3>
+<h3 id="request-2">Request</h3>
 <p><code>PUT api/v1/Tenants/{tenantId}</code></p>
 <h3 id="parameters-2">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
@@ -236,9 +236,9 @@ string tenantId
 [FromBody]
 Tenant tenant
 </code></pre><p>The updated details of the <code>Tenant</code>.</p>
-<h3 id="security-2">Security</h3>
-<p>Authorized for Account Administrators of the specified <code>Tenant</code>.</p>
-<h3 id="returns-2">Returns</h3>
+<h3 id="authorization-2">Authorization</h3>
+<p>Authorized for Tenant Administrators of the specified <code>Tenant</code>.</p>
+<h3 id="response-2">Response</h3>
 <table>
 <thead>
 <tr>
@@ -273,16 +273,16 @@ Tenant tenant
 <hr>
 <h2 id="get-tenant-icon"><code>Get Tenant Icon</code></h2>
 <p>Returns an icon specified by its <code>Tenant</code> ID.</p>
-<h3 id="http-3">Http</h3>
+<h3 id="request-3">Request</h3>
 <p><code>GET api/v1/Tenants/{tenantId}/Icon</code></p>
 <h3 id="parameters-3">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
 string tenantId
 </code></pre><p>The identifier of the <code>Tenant</code> for this request.</p>
-<h3 id="security-3">Security</h3>
-<p>Authorized for Account Members of the specified <code>Tenant</code>.</p>
-<h3 id="returns-3">Returns</h3>
+<h3 id="authorization-3">Authorization</h3>
+<p>Authorized for Tenant Members of the specified <code>Tenant</code>.</p>
+<h3 id="response-3">Response</h3>
 <table>
 <thead>
 <tr>
@@ -312,7 +312,7 @@ string tenantId
 <hr>
 <h2 id="create-or-update-tenant-icon"><code>Create or Update Tenant Icon</code></h2>
 <p>Creates or updates the icon for a <code>Tenant</code>. Note that the icon size must be less than 65536 bytes.</p>
-<h3 id="http-4">Http</h3>
+<h3 id="request-4">Request</h3>
 <p><code>PUT api/v1/Tenants/{tenantId}/Icon</code></p>
 <h3 id="parameters-4">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
@@ -323,9 +323,9 @@ string tenantId
 [FromBody]
 string icon
 </code></pre><p>The Base64 encoded PNG icon for the <code>Tenant</code>.</p>
-<h3 id="security-4">Security</h3>
-<p>Authorized for Account Administrators of the specified <code>Tenant</code>.</p>
-<h3 id="returns-4">Returns</h3>
+<h3 id="authorization-4">Authorization</h3>
+<p>Authorized for Tenant Administrators of the specified <code>Tenant</code>.</p>
+<h3 id="response-4">Response</h3>
 <table>
 <thead>
 <tr>
@@ -360,16 +360,16 @@ string icon
 <hr>
 <h2 id="delete-tenant-icon"><code>Delete Tenant Icon</code></h2>
 <p>Deletes the icon for a <code>Tenant</code>.</p>
-<h3 id="http-5">Http</h3>
+<h3 id="request-5">Request</h3>
 <p><code>DELETE api/v1/Tenants/{tenantId}/Icon</code></p>
 <h3 id="parameters-5">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
 string tenantId
 </code></pre><p>The <code>Tenant</code> identifier for this request.</p>
-<h3 id="security-5">Security</h3>
-<p>Authorized for Account Administrators of the specified <code>Tenant</code>.</p>
-<h3 id="returns-5">Returns</h3>
+<h3 id="authorization-5">Authorization</h3>
+<p>Authorized for Tenant Administrators of the specified <code>Tenant</code>.</p>
+<h3 id="response-5">Response</h3>
 <table>
 <thead>
 <tr>

@@ -115,16 +115,16 @@
 </code></pre><hr>
 <h2 id="get-all-tenant-feature-states"><code>Get All Tenant Feature States</code></h2>
 <p>Retrieves all instances of <code>FeatureState</code> for the specified <code>Tenant</code>.</p>
-<h3 id="http">Http</h3>
+<h3 id="request">Request</h3>
 <p><code>GET api/v1/Tenants/{tenantId}/Features</code></p>
 <h3 id="parameters">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
 [FromRoute]
 string tenantId
 </code></pre><p>The identifier of the tenant to access.</p>
-<h3 id="security">Security</h3>
-<p>Authorized for Account Members of the specified tenant.</p>
-<h3 id="returns">Returns</h3>
+<h3 id="authorization">Authorization</h3>
+<p>Authorized for Tenant Members of the specified tenant.</p>
+<h3 id="response">Response</h3>
 <table>
 <thead>
 <tr>
@@ -154,7 +154,7 @@ string tenantId
 <hr>
 <h2 id="get-tenant-feature-state"><code>Get Tenant Feature State</code></h2>
 <p>Retrieves a <code>FeatureState</code> with the specified ID from a <code>Tenant</code>.</p>
-<h3 id="http-1">Http</h3>
+<h3 id="request-1">Request</h3>
 <p><code>GET api/v1/Tenants/{tenantId}/Features/{id}</code></p>
 <h3 id="parameters-1">Parameters</h3>
 <pre><code class="lang-csharp">[Required]
@@ -165,9 +165,9 @@ string tenantId
 [FromRoute]
 string id
 </code></pre><p>The identifier of the <code>FeatureState</code> to retrieve.</p>
-<h3 id="security-1">Security</h3>
-<p>Authorized for Account Members of the specified tenant.</p>
-<h3 id="returns-1">Returns</h3>
+<h3 id="authorization-1">Authorization</h3>
+<p>Authorized for Tenant Members of the specified tenant.</p>
+<h3 id="response-1">Response</h3>
 <table>
 <thead>
 <tr>

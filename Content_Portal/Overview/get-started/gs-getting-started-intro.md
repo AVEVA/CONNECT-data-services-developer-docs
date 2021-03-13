@@ -11,8 +11,7 @@ This is an introduction to the main features of OSIsoft Cloud Services (OCS) usi
 Before you begin the getting started exercises, obtain the following:
 
 - Request a tenant from your OSIsoft account manager. 
-- You must have Tenant Administrator privileges. <!-- Verify that the change from Account Administrator to Tenant Administrator has occurred. -->
-
+- You must have Tenant Administrator privileges. 
 ## Log into the OCS Portal
 
 Once you have completed the pre-requisites, log into the OCS portal. 

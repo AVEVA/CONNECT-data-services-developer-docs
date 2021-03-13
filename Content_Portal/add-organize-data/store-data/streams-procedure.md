@@ -4,7 +4,10 @@ uid: gpStreams
 
 # Add a stream
 
-(Draft in progress)
+Sequential Data Store (SDS) stream data are values or events of the same SDS type. SDS stream data are stored in the Sequential Data Store and indexed by one or more properties defined by the stream's SDS type. See the following for more information about streams:
+
+- [About streams](xref:ccStreams)
+- [Streams best practices](xref:bpStreams)
 
 ## Procedure
 
@@ -67,3 +70,7 @@ uid: gpStreams
 1. Click **Save**. 
 
     The event appears as the latest value in the stream.
+
+## Related Links
+
+- [Streams](xref:sdsStreams) API

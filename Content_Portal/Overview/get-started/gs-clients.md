@@ -8,7 +8,7 @@ Clients provide a way for users or applications to authenticate against OSIsoft 
 - [Authorization code clients](#gsAuthorization-code-clients)
 - [Hybrid clients](#gsHybrid-clients)
 
-You must have the **Account Administrator** role to add and manage clients in a tenant.
+You must have the **Tenant Administrator** role to add and manage clients in a tenant.
 
 ## <a name="gsClient-credentials-clients"></a>Client-credentials clients
 

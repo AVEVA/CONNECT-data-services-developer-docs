@@ -154,13 +154,13 @@ Tags | string[] | No | Gets or sets for OSIsoft internal use only.
 }
 ```
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 201
 
@@ -306,13 +306,13 @@ Tags | string[] | No | Gets or sets for OSIsoft internal use only.
 }
 ```
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -404,13 +404,13 @@ string clientId
 
 Id of Client.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -530,13 +530,13 @@ int32 count
 
 Maximum number of clients to return. Will be ignored if a list of Ids is passed.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -644,13 +644,13 @@ string clientId
 
 Id of Client.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 204
 
@@ -707,13 +707,13 @@ string clientId
 
 Id of client.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -781,13 +781,13 @@ string[] tag
 
 Only count Clients that have these tags.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 

@@ -75,13 +75,13 @@ string azureActiveDirectoryTenantId
 
 Id or Domain Name of Azure Active Directory tenant.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 201
 
@@ -175,13 +175,13 @@ int32 count
 
 Maximum number of Azure Active Directory tenants to return.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -245,13 +245,13 @@ string azureActiveDirectoryTenantId
 
 Id of Azure Active Directory tenant.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -313,13 +313,13 @@ string azureActiveDirectoryTenantId
 
 Id of Azure Active Directory tenant to remove.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 204
 
@@ -407,13 +407,13 @@ AzureActiveDirectoryTenant | string | Yes | Azure Active Directory Domain Name (
 }
 ```
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 204
 
@@ -470,13 +470,13 @@ string azureActiveDirectoryTenantId
 
 Id of Azure Active Directory tenant.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -524,13 +524,13 @@ string tenantId
 
 Id of OSIsoft Cloud Services tenant.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 

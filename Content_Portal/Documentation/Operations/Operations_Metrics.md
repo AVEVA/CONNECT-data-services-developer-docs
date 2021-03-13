@@ -81,14 +81,14 @@ DateTime end
 
 End date of the metric results to return.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Member`
-- `Account Administrator`
+- `Tenant Member`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -180,14 +180,14 @@ DateTime end
 
 End date of the metric results to return.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Member`
-- `Account Administrator`
+- `Tenant Member`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 

@@ -88,13 +88,13 @@ Guid identityProviderId
 
 Id of identity provider.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -150,13 +150,13 @@ string scheme
 
 Scheme name.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -232,13 +232,13 @@ int32 count
 
 Maximum number of identity providers to return.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -305,13 +305,13 @@ string scheme
 
 Scheme name.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -355,13 +355,13 @@ Guid identityProviderId
 
 Id of identity provider.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -398,13 +398,13 @@ Get header for identity providers to get the total number of identity providers.
 
 ### Parameters
 This API call does not have any parameters.
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -484,14 +484,14 @@ int32 count
 
 Maximum number of identity providers to return.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Member`
-- `Account Administrator`
+- `Tenant Member`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -583,14 +583,14 @@ Guid identityProviderId
 
 Id of identity provider.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Member`
-- `Account Administrator`
+- `Tenant Member`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -689,13 +689,13 @@ AzureActiveDirectoryConsentTypes | string | No | Azure Active Directory Consent 
 }
 ```
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 201
 
@@ -777,13 +777,13 @@ Guid identityProviderId
 
 Id of identity provider.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 204
 
@@ -840,14 +840,14 @@ Guid identityProviderId
 
 Id of identity provider.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Member`
-- `Account Administrator`
+- `Tenant Member`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -894,14 +894,14 @@ string tenantId
 
 Id of tenant.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Member`
-- `Account Administrator`
+- `Tenant Member`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -969,13 +969,13 @@ string skiptoken
 
 An encoded string that identifies the set of users that was not returned. For example, if you specify a count of the first 50 users matching your query, the skiptoken identifies the 51st user.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -1044,13 +1044,13 @@ string skiptoken
 
 An encoded string that identifies the set of groups that was not returned. For example, if you specify a count of the first 5 groups matching your query, the skiptoken identifies the 6th group.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -1139,13 +1139,13 @@ string skiptoken
 
 An encoded string that identifies the set of groups that was not returned. For example, if you request a count of the first 3 groups matching your query, the skiptoken identifies the 4th user.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -1232,13 +1232,13 @@ string skiptoken
 
 An encoded string that identifies the set of users that was not returned. For example, if you request a count of the first 50 users matching your query, the skiptoken identifies the 51st user.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -1298,14 +1298,14 @@ Guid identityProviderId
 
 Id of identity provider to check for consent.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Member`
-- `Account Administrator`
+- `Tenant Member`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -1374,14 +1374,14 @@ Guid identityProviderId
 
 Id of identity provider to check for consent.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Member`
-- `Account Administrator`
+- `Tenant Member`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -1463,13 +1463,13 @@ ConsentOverride | bool | No | A value indicating whether force a consent email t
 }
 ```
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 

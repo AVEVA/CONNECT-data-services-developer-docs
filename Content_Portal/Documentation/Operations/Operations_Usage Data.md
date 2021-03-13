@@ -84,13 +84,13 @@ bool groupByNamespace
 
 When **true** the usage data is grouped by namespaces.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Member`
+- `Tenant Member`
 
-### Returns
+### Response
 
 #### 200
 
@@ -184,13 +184,13 @@ DateTime end
 
 End date of the daily usage data, if there is no end date only one summary is returned
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Member`
+- `Tenant Member`
 
-### Returns
+### Response
 
 #### 200
 

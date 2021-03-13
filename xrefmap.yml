@@ -424,6 +424,9 @@ references:
 - uid: WhatIsOCS
   name: What is OSIsoft Cloud Services?
   href: Content_Portal/Overview/what-is-ocs.html
+- uid: whatOCSdoes
+  name: What does OSIsoft Cloud Services do?
+  href: Content_Portal/Overview/what-does-ocs-do.html
 - uid: WhoUsesOCS
   name: Who uses OSIsoft Cloud Services?
   href: Content_Portal/Overview/who-uses-ocs.html

@@ -20,3 +20,5 @@ The following best practices are recommended when you are setting up your users:
 - The OCS invitation is sent to the user at the email address specified in the **Contact Email** field. Therefore, verify that it is correct to ensure that your users receive the invitation and ensure that it is not sent to an unintended recipient, giving them access to OCS.
 
 - Before inviting users to OCS, ensure that they have been granted the correct permissions through their roles. In particular, consider the access granted to the Tenant Member role which, by default, grants read access to everything in the tenant. If a user should not have read access to some resources, the Tenant Member role can be limited.
+
+  

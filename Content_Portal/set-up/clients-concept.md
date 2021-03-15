@@ -64,3 +64,5 @@ The following best practices are recommended when you use a hybrid client:
 - Use hybrid clients in web applications or services where users authenticate against OCS through a web browser, but a secure backend that stores the secrets performs the actual authentication.
 
 - Use caution when deciding whether to allow refresh tokens for your hybrid client. Where possible, it is a more secure practice to use an iframe to request a new token before the old token expires rather than use a refresh token.
+
+  

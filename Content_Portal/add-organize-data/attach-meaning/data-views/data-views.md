@@ -10,11 +10,12 @@ Data views are subsets of data from one or more streams. You create a data view 
 
 To create a new data view, complete the following steps:
 
-1. In the **Data Views** pane of the OCS Portal, click **Add Data View**.
-2. Enter the data view **Name** and **Description** in the **Data View Information** pane.
-3. Click **Standard** or **Narrow** to specify the general shape of the data display.
-4. In the **Query ID** field in the center pane, enter a name for *Query1* in the **Query ID** field, or accept the default name. 
-5. In the **Query Type** section, select **Streams** or **Assets** to indicate which objects you want this query to search.
+1. In the OCS Portal, click the menu icon and select **Data Views** under **Analytics**.
+2. In the **Data Views** pane of the OCS Portal, click **Add Data View**.
+3. Enter the data view **Name** and **Description** in the **Data View Information** pane.
+4. Click **Standard** or **Narrow** to specify the general shape of the data display.
+5. In the **Query ID** field in the center pane, enter a name for *Query1* in the **Query ID** field, or accept the default name. 
+6. In the **Query Type** section, select **Streams** or **Assets** to indicate which objects you want this query to search.
 
    **Note**: Assets are available for use through specific licensing only. If you are interested in using Assets, contact your account team for more details. 
    

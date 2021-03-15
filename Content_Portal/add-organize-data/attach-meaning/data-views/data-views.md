@@ -27,7 +27,7 @@ To create a new data view, complete the following steps:
 8. In the **Index Configuration** pane, select the date and time for the **Start Index** and **End Index** to specify the time period of the data to include in the data view.
 9. In the **Time Interval** field, specify the time interval by which to display data. The **Time Interval** field provides entry spaces for Days, Hours, Minutes, and Seconds.
 10. Select **Save Default with Data View** to save your settings with this data view.
-11. In the **Field Management** pane, click **+ Add** to select available data fields from the query results to include in the data view. Select the data fields you want to add in the **Add Data Fields** dialog and click **Add**.
+11. In the **Field Management** pane, click **Add** to select available data fields from the query results to include in the data view. Select the data fields you want to add in the **Add Data Fields** dialog and click **Add**.
 12. In the **Field Management** pane, use the Up and Down Arrows to move selected data fields up or down in the display, and click **Apply**.
 13. Click **Save**.
 

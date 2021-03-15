@@ -1,5 +1,5 @@
 ---
-uid: gsPISystemConnection
+uid: gsPItoOCS
 ---
 
 # Get started with PI to OCS connections

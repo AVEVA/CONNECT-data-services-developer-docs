@@ -10,7 +10,7 @@ Follow the procedures to create an asset, add and configure its metadata and pro
 
 1. Click the menu icon ![menu icon](images/icon_navigation_bigger.png) and click **Asset Explorer**.
    
-1. To change the [namespace](xref:AccountManagementConcepts#namespace), click on the namespace to open the Select a Namespace window.
+1. To change the [namespace](xref:ccNamespaces), click on the namespace to open the Select a Namespace window.
 
     ![Namespace icon](images/namespace-icon.png)
 

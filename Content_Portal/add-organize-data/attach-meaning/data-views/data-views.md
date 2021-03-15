@@ -24,7 +24,7 @@ To create a new data view, complete the following steps:
    **Note**: If you have created a metadata rule in the same namespace, you can enter a selected metadata key instead of a stream name in the **Search** field to select a more specific set of streams.
    
 7. Click **Save**. The query results populate and the **Index Configuration** pane displays.
-8. In the **Index Configuration** pane, select the date and time for the **Start Index** and **End Index** to specify the time period of the data to be included in the data view.
+8. In the **Index Configuration** pane, select the date and time for the **Start Index** and **End Index** to specify the time period of the data to include in the data view.
 9. Enter a value in the **Time Interval** field to specify the time interval by which to display data. The **Time Interval** field provides entry spaces for Days, Hours, Minutes, and Seconds.
 10. Select **Save Default with Data View** to save your settings with this data view.
 11. In the **Field Management** pane, click **+ Add** to select available data fields from the query results to include in the data view. Select the data fields you want to add in the **Add Data Fields** dialog and click **Add**.

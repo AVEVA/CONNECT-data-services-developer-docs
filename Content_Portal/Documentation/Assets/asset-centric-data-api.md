@@ -15,7 +15,7 @@ For example, if a given asset has the following definition and you are only inte
 GET ...Namespaces/{namespaceId}/Assets/AssetStreamFilter/Data/Last?Stream={HeaterA},Stream={PressureB}
 ```
 
-Note: Asset stream refernces can contain commas. In this case the comma would need to be properly escaped.
+Note: Asset stream references can contain commas. In this case, the comma must be properly escaped.
 
 ```
 {

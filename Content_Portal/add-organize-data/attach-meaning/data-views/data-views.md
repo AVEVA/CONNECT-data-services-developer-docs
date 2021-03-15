@@ -28,7 +28,7 @@ To create a new data view, complete the following steps:
 9. In the **Time Interval** field, specify the time interval by which to display data. The **Time Interval** field provides entry spaces for Days, Hours, Minutes, and Seconds.
 10. Select **Save Default with Data View** to save your settings with this data view.
 11. In the **Field Management** pane, click **Add**. Then in the **Add Data Fields** window, select the data fields from the query results to include in the data view and click **Add**.
-12. In the **Field Management** pane, use the ![Up](up arrow.png "Show Server Properties") Up and Down Arrows to move selected data fields up or down in the display, and click **Apply**.
+12. In the **Field Management** pane, use the ![ ](../../images/up-arrow.png) and  ![ ](../../images/down-arrow.png) buttons to move selected data fields up or down in the display, and click **Apply**.
 13. Click **Save**.
 
 

@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/Agent/_work/1/s",
+  "source_base_path": "C:/agent/_work/1/s",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -1161,7 +1161,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/SequentialDataStore/SDS_Views.html",
-          "hash": "PWhkWtVW7xBsLduugsHO1A=="
+          "hash": "Q0MiBsYlrYeGQb8tkbF1/Q=="
         }
       },
       "is_incremental": false,
@@ -2407,7 +2407,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Overview/what-does-ocs-do.html",
-          "hash": "N9tJiPD8ENj3/AJaoYhCrg=="
+          "hash": "i5VedqwWjnBOpl+5l1Gy7A=="
         }
       },
       "is_incremental": false,

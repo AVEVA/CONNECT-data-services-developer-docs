@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/agent/_work/1/s",
+  "source_base_path": "C:/Agent/_work/1/s",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -198,7 +198,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Assets/asset-centric-data-api.html",
-          "hash": "9zJ7LzHYyknWUkVnPpYl3w=="
+          "hash": "MAIcmyCGlV5fNGyqCLUKtw=="
         }
       },
       "is_incremental": false,

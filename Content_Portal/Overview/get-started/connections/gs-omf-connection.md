@@ -1,5 +1,5 @@
 ---
-uid: gsOMFConnection
+uid: gsOMF
 ---
 
 # Get started with OMF connections

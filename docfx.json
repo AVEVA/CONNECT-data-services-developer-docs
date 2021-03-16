@@ -41,7 +41,9 @@
              "Content_Portal/set-up/images/**",
             "Content_Portal/visualize-data/images/**",
             "Content_Portal/Overview/images/**",
-            "Content_Portal/Overview/get-started/images/**"
+            "Content_Portal/Overview/get-started/images/**",
+            "Content_Portal/Overview/get-started/clients/images/**",
+            "Content_Portal/Overview/get-started/connections/images/**"
         ]
       }
     ],

@@ -78,4 +78,4 @@ After creating your types, you can add streams and associate a type with the str
 
 ## Next step
 
-Continue with <!-- Add link to next topic. -->
+Continue with [Get started with roles](xref:gsRoles).

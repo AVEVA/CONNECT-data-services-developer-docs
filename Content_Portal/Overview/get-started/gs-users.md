@@ -1,3 +1,9 @@
+---
+​---
+uid: gsUsers
+​---
+---
+
 # Get started with users
 
 A user is an identity that has access to an OSIsoft Cloud Services (OCS) tenant. Roles assigned to a user determine what permissions the user has on resources in OCS. See the following for more information about users:
@@ -25,3 +31,7 @@ Follow the procedure to invite a user to your tenant.
 1. Once the information has been entered, click **Invite**. OCS sends the invitation to the email address specified in the **Contact Email** field. The **Status** column lists the new user as **Pending** until the invitation is accepted. If the invitation expires, the status changes to **Expired**. Once expired, the invitation can be resent.
 
 1. Once the user receives the invitation, they should log in using the identity provider you specified. Once they have logged in, the status of their user should be **Active**.
+
+### Next Step
+
+Continue with [Get started with clients](xref:gsClients).

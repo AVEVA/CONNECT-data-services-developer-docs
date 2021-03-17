@@ -1,11 +1,11 @@
 ---
 uid: gsClientCredentialsClients
 ---
-# Get started with client credentials clients
+# Get started with client-credentials clients
 
 Client-credentials clients are used for server-to-server communication where no user interaction is required. See the following for more information about client-credentials clients:
 
-- [Introduction to client credentials clients](xref:ccClients#client-credentials-client)
+- [Introduction to client-credentials clients](xref:ccClients#client-credentials-client)
 - [Client-credentials client PI Core counterpart](xref:ccClients#client-credentials-pi-core)
 - [Client-credentials client best practices](xref:ccClients#client-credentials-bp)
 
@@ -40,3 +40,7 @@ Client-credentials clients are used for server-to-server communication where no 
 
 1. Click **Close**.  
    Note: In the list of secrets, the **Client Id** is still visible. If you did not save the **Client Secret**, select the client in the list and use the **Details** pane to remove the old secret and add a new secret.
+
+## Next Step
+
+Continue with [Get started with authorization code clients](xref:gsAuthorizationCodeClients) or with [Get started with hybrid clients](xref:gsHybridClients).

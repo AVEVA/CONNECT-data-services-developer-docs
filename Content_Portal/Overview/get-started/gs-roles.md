@@ -21,7 +21,7 @@ Follow the procedure to create role.
    - Name  &ndash; MyOCS.Role
    - Description &ndash; Optionally, add a description for this role
    
-1. Click **Add** to create the new role. It will be added to the table of Roles. Note that the Role Type is listed as *Account Custom* <!-- verify that this is still Account -->for all custom (or non-default) roles. You can now specify permissions for this role when managing permissions on assets, resources, and services in OCS.
+1. Click **Add** to create the new role. It will be added to the table of Roles. Note that the Role Type is listed as *Tenant Custom* or all custom (or non-default) roles. You can now specify permissions for this role when managing permissions on assets, resources, and services in OCS.
 
     Note: By default, the new role will not have any access granted or denied in OCS.
     

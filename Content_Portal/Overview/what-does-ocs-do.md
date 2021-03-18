@@ -199,13 +199,13 @@ The following example shows stream data for two streams over a selected period o
 
 Assets are a digital twin of physical entities in the real world.  An asset can consist of data from one or more streams. 
 
-The assets in the example below represent trucks in a fleet, with multiple data streams associated with each.  You can select an asset and display a trend of the data streams which can be used to identify and analyze problems.
+The assets in the example below represent trucks in a fleet, with multiple data streams associated with each.  You can select a vehicle asset to visualize selected data streams and properties for troubleshooting and analysis.
 
 ![OCS](images/how-does-ocs-work/assets-example.png)
 
 You can display the variation in the pressure of the suspension cylinders on each truck over time, identify those trucks whose cylinder pressure is outside the accepted range, and proactively deal with potential problems.
 
-Assets are a useful way to organize and contextualize data streams.  With PI to OCS data transfers, for example, you can organize multiple PI tags under a single asset. You could create an asset with streams measuring data for thermostats, ventilation equipment, lighting systems, and security.
+Assets are a useful way to organize and contextualize data streams.  They provide a means of organizing multiple PI to OCS streams under a single asset. You could create an asset with streams measuring data for thermostats, ventilation equipment, lighting systems, and security.
 
 You can create assets on an ad hoc basis or create them from an asset type, a template for creating similar assets. 
 

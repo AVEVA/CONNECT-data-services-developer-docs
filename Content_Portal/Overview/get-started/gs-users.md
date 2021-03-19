@@ -16,7 +16,7 @@ Follow the procedure to invite a user to your tenant.
 
 1. If multiple identity providers are enabled in your tenant, you are prompted to select an identity provider. Choose the appropriate identity provider for the user you are adding. After you select an option, you can later switch to a different option.
 
-1. Enter a first and last name  for the user.  
+1. Enter a first and last name for the user.  
 
 1. Enter the contact email. The invitation to your OCS tenant is sent to the user at this address. Ensure that it is correct so that the invitation is not sent to an unintended recipient.
 

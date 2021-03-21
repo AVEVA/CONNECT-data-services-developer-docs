@@ -21,7 +21,7 @@ After creating your types, you can add streams and associate a type with the str
 1. Click the **Manage Default Stream Permissions** icon above the tree on the left.  
     This opens the Manage Default Permissions for New Streams window where default permissions for streams created in the selected namespace are configured. 
    
-    Note: Permissions to change the defaults are restricted to Tenant Administrators. Any changes that are made here do not change the permissions on already existing streams.  
+    Note: By default, you must be assigned the Tenant Administrator role to change the default permissions. Any changes only affect new streams. It does not change the permissions on already existing steams.   
     When you are done reviewing the permissions, click **Cancel** to continue.
    
 1. Click **Add Stream**.

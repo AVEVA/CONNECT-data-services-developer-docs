@@ -80,4 +80,4 @@ The Download Installation Kit window opens. Follow the prompts to download the P
 
 ## Next Step
 
-Continue with [Get started with types](xref:gsTypes).
+If you have not already completed [Get started with OMF connections](xref:gsOMF), do this next. Otherwise, continue with [Get started with types](xref:gsTypes).

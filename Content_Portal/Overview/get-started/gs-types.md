@@ -19,7 +19,7 @@ After creating the namespace, the next step is to add one or more types. For mor
 1. Click the ![Manage Default Type Permissions icon](images\ManageDefaultIcon.png) icon above the tree on the left. 
    This opens the Manage Default Permissions for New Types window where default permissions for new types are specified. 
 
-   Note: By default, you must be assigned the Tenant Administrator role to change the default permissions. Any changes only affect new types that are created. It does not change the permissions on already existing types. 
+   Note: By default, you must be assigned the Tenant Administrator role to change the default permissions. Any changes only affect new types. It does not change the permissions on already existing types. 
 
    When you are done reviewing the permissions, click **Cancel** to continue.
 

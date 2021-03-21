@@ -8,4 +8,4 @@ Clients provide a way for users or applications to authenticate against OSIsoft 
 - [Authorization code clients](xref:gsAuthorizationCodeClients)
 - [Hybrid clients](xref:gsHybridClients)
 
-
+You can start with any of the clients and progress to the other two. 

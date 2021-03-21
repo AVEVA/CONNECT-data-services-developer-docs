@@ -28,7 +28,7 @@ Authorization code clients are used with customer web applications that use OCS 
 
 1. (Optional) Enter URLs in the **Allowed CORS Origin(s)** text box.  
    This can be used to designate other URLs from which the application is allowed to make requests against OCS. For example, this may be necessary if the user authenticates from an application running at `https://authenticate.com`, but the result of the authentication is sent to an application running at a different URL, for example, `https://application.com`.
-
+   
 1. (Optional) Set the **Token Lifetime**.  
    Token Lifetime represents the length of time (in seconds) the access token is valid before it expires. The default, 3600 seconds (one hour), is the maximum length of time. The minimum value is 60 seconds.
 

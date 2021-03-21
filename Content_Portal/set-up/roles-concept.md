@@ -3,7 +3,7 @@ uid: ccRoles
 ---
 # About roles
 
-Roles are used to manage access to assets, resources, and services in OSIsoft Cloud Services (OCS). Roles are assigned to identities, which includes users, groups, and client-credentials clients.
+Roles are used to manage access to assets, resources, and services in OSIsoft Cloud Services (OCS). Roles are assigned to identities, which includes users, groups, and client-credentials clients. <!--- Josh Kim Mar19021: Similar to the comment as before where it seemed to me that this sentence implied roles were the primary factor in getting access, when in fact it is the roles of the users compared against the provisioned ACL that grants access. Do we want to communicate this? --->
 
 There are five built-in roles which cannot be removed from a tenant.
 
@@ -16,6 +16,7 @@ There are five built-in roles which cannot be removed from a tenant.
 In addition, you can create custom roles which are not granted any specific permissions, by default. 
 
 Simply assigning a role to a user or client does not determine access. This is defined when a role is explicitly allowed or denied access to OCS resources through an access control list (ACL). An ACL is created for each OCS resource and it defines which roles have access to the resource. <!-- Josh: I think I'd like to keep the discussion about ACLs brief. Can you tell me if what I've said here is correct? -->
+<!--- Josh Kim Mar19021: Perfect! --->
 
 For any resource in OCS, permissions are allowed or denied for specific roles, rather than to specific users or clients. These permissions are managed using the **Manage Permissions** dialog for the given resource. Each role can be allowed or denied access to one or more of the following access types: **Read**, **Write**, **Delete**, and **Manage Permissions**.
 
@@ -35,4 +36,4 @@ The following best practices are recommended when you create and assign roles to
 
 - Ensure that the roles assigned to client-credentials clients only grant the minimum set of permissions required by the application that uses these clients. This minimizes the potential damage in the event a client secret is compromised or a problem arises with the application.
 
-- Use caution when denying permissions because this supersedes any allowed access to a role. For example, if a user is allowed write access through one role but is denied write access through another role, the user will not have write access. Because all users and clients are assigned the Tenant Member role, you cannot deny permissions to the **Tenant Member** role. Doing so would deny the given permission to every user in the tenant.[]
+- Use caution when denying permissions because this supersedes any allowed access to a role. For example, if a user is allowed write access through one role but is denied write access through another role, the user will not have write access. Because all users and clients are assigned the Tenant Member role, you cannot deny permissions to the **Tenant Member** role. Doing so would deny the given permission to every user in the tenant.

@@ -51,7 +51,7 @@ The following best practices are recommended when you use an authorization code 
 
 ## <a name="hybrid-client"></a>Introduction to hybrid clients
 
-Hybrid clients are used by native and server-side web applications. Authentication can be performed using any browser. The server-side code retrieves an access token and a refresh token can also be provided.
+Hybrid clients are used by native and server-side web applications. This client utilizes the user credentials to authenticate with the identity provider. Once the user is authenticated, then the server-side client steps in and server-to-server communication commences. Authentication can be performed using any browser. The server-side code retrieves an access token and a refresh token can also be provided.
 
 ### <a name="hybrid-client-pi-core"></a>Hybrid client PI Core counterpart
 

@@ -35,3 +35,7 @@ Hybrid clients are used by native and server-side web applications. Authenticati
 
 1. Click **Add**.  
    The Client Successfully Created window displays the client ID for the client. The application must specify this client ID when it makes an authentication request. You can copy the client ID by clicking on the **Copy** icon, or after you close this window, you can also retrieve the client ID from the list of clients.
+
+## Next step
+
+Continue with [Get started with client-credentials clients](xref:gsClientCredentialsClients) or [Get started with authorization code clients](xref:gsAuthorizationCodeClients).

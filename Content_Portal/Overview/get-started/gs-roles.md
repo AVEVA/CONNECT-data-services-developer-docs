@@ -32,3 +32,8 @@ Follow the procedure to create role.
     The list displays all users and clients in the tenant. Click the + to add any users or clients to the role.
 
 1. When you are done adding users and clients, click **Save**.
+
+## Next step
+
+Continue with [Get started with users](xref:gsUsers).
+

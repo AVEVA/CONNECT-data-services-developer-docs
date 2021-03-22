@@ -34,3 +34,7 @@ Authorization code clients are used with customer web applications that use OCS 
 
 1. Click **Add**.  
    The Client Successfully Created window displays the client ID for the client. The application must specify this client ID when it makes an authentication request. After you close this window, you can also retrieve the client ID from the list of clients.
+
+## Next step
+
+Continue with [Get started with client-credentials clients](xref:gsClientCredentialsClients) or [Get started with hybrid clients](xref:gsHybridClients).

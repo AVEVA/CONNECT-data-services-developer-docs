@@ -1,4 +1,4 @@
-- name: Get started with client credentials clients
+- name: Get started with client-credentials clients
   topicHref: gs-client-credentials-clients.md
 - name: Get started with client authorization clients
   topicHref: gs-client-authorization-clients.md

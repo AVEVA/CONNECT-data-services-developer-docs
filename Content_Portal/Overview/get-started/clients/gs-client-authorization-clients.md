@@ -37,4 +37,7 @@ Authorization code clients are used with customer web applications that use OCS 
 
 ## Next step
 
-Continue with [Get started with client-credentials clients](xref:gsClientCredentialsClients) or [Get started with hybrid clients](xref:gsHybridClients).
+Continue with either of the following:
+
+- [Get started with client-credentials clients](xref:gsClientCredentialsClients) 
+- [Get started with hybrid clients](xref:gsHybridClients)

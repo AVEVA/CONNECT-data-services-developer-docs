@@ -1,8 +1,8 @@
 ---
-uid: ccIntroMetadataRules
+uid: ccAboutMetadataRules
 ---
 
-# Introduction to metadata rules
+# About metadata rules
 
 Metadata rules enable users to capture data streams based on specific data items, such as a plant location or device category. You create a metadata rule by defining a stream name pattern based on a selected stream name. The metadata rule captures all streams in a given namespace that match the stream name pattern defined in the rule. 
 

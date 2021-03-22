@@ -41,7 +41,7 @@ A user is an individual identity that represents a person using OCS. When users 
 
 Clients have programmatic access to OCS resources through OCS APIs. There are two primary client types: 
 
-* **Client credential clients** – The most common type of OCS client, used for server-to-server communication without the presence or intervention of a user. Examples include PI Adapters or the Edge Data Store sending data to OCS. This type of client is issued a client ID and secret. After authentication, the client is granted an access token with a defined lifetime. The tokens may either be short-lived access tokens or longer-lived refresh tokens that allow the client to request new access tokens.
+* **Client credential clients** – The most common type of OCS client, used for server-to-server communication without the presence or intervention of a user. Examples include PI Adapters or the Edge Data Store sending data to OCS. This type of client is issued a client ID and secret. After authentication, the client is granted an access token with a defined lifetime. 
 
 * **Authorization code clients** – Used by web-based, mobile, and desktop applications, this client type requires user interaction. Users authenticate with an identity provider. Authorization code clients support silent refresh, which allows the user to automatically receive a new access token, providing for uninterrupted access to the application. 
 
@@ -65,7 +65,7 @@ Authorization is the process of determining the appropriate access level for a u
 
 ### Access control list 
 
-Each OCS service and resource has an access control list (ACL) that defines how much access is granted to assigned roles. The OCS Administrator configures each ACL and specifies types of permissions for each role. When a request is made to a specific OCS resource, the role assigned to the requestor (whether a user or client) is compared to the ACL for that resource to determine whether the request should be authorized. Users are granted access permissions to OCS objects based on their assigned roles and the corresponding ACLs.
+Each OCS service and resource has an access control list (ACL) that defines how much access is granted to assigned roles. The OCS Administrator configures each ACL and specifies types of permissions for each role. When a request is made to a specific OCS resource, the role assigned to the requestor (whether a user or client) is compared to the ACL for that resource to determine whether the request should be authorized. Users are allowed or denied access permissions to OCS objects based on their assigned roles and the corresponding ACLs.
 
 The types of permissions granted to roles are as follows:
 * Read

@@ -99,7 +99,9 @@ Successful (200 OK) responses include:
 | Header | Description |
 |--|--|
 | Total-Count | The total count of data views visible to the current user |
-| Link | Hyperlinks to the first page and next page of results as applicable |
+| Link | Hyperlinks to the first page and next page of results as applicable. Absence of the next link indicates that there is no additional data to be retrieved. |
+| Next-Page | Hyperlink to the next page of results. Absence of the Next-Page header indicates that there is no additional data to be retrieved. |
+| First-Page | Hyperlink to the first page of results as applicable. |
 
 #### Example response body
 ```json

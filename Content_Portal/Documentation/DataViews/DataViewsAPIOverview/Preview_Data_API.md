@@ -104,6 +104,8 @@ Successful (200 OK) responses include:
 | Header | Description |
 |--|--|
 | Link | Hyperlinks to the first page and next page of data as applicable. Absence of the next link indicates that there is no additional data to be retrieved. |
+| Next-Page | Hyperlink to the next page of data. Absence of the Next-Page header indicates that there is no additional data to be retrieved. |
+| First-Page | Hyperlink to the first page of data. |
 
 #### Example response body in default format
 An array of json values. Each json property corresponds to a field mapping. Property names are the field mapping `.Id`s.

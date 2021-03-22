@@ -72,7 +72,9 @@ Successful (200 OK) responses include:
 | Header | Description |
 |--|--|
 | Total-Count | The total count of data items visible to the current user |
-| Link | Hyperlinks to the first page and next page of results as applicable |
+| Link | Hyperlinks to the first page and next page of results as applicable. |
+| Next-Page | Hyperlink to the next page of results. Absence of the Next-Page header indicates that there are no additional results to be retrieved. |
+| First-Page | Hyperlink to the first page of results. |
 
 
 #### Example response body
@@ -196,7 +198,9 @@ Successful (200 OK) responses include:
 | Header | Description |
 |--|--|
 | Total-Count | The total count of data items visible to the current user |
-| Link | Hyperlinks to the first page and next page of results as applicable |
+| Link | Hyperlinks to the first page and next page of results as applicable. |
+| Next-Page | Hyperlink to the next page of results. Absence of the Next-Page header indicates that there are no additional results to be retrieved. |
+| First-Page | Hyperlink to the first page of results. |
 
 #### Example response body
 
@@ -307,7 +311,9 @@ Successful (200 OK) responses include:
 | Header | Description |
 |--|--|
 | Total-Count | The total count of groups |
-| Link | Hyperlinks to the first page and next page of results as applicable |
+| Link | Hyperlinks to the first page and next page of results as applicable. |
+| Next-Page | Hyperlink to the next page of results. Absence of the Next-Page header indicates that there are no additional results to be retrieved. |
+| First-Page | Hyperlink to the first page of results. |
 
 #### Example response body
 
@@ -559,7 +565,9 @@ Successful (200 OK) responses include:
 | Header | Description |
 |--|--|
 | Total-Count | The total count of field mappings |
-| Link | Hyperlinks to the first page and next page of results as applicable |
+| Link | Hyperlinks to the first page and next page of results as applicable. |
+| Next-Page | Hyperlink to the next page of results. Absence of the NextPage header indicates that there are no additional results to be retrieved. |
+| First-Page | Hyperlink to the first page of results. |
 
 #### Example response body
 

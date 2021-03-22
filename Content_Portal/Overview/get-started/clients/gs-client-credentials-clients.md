@@ -34,13 +34,15 @@ Client-credentials clients are used for server-to-server communication where no 
    Ensure that the expiration date is valid for the secret. By default, the secret is set to expire one year after creation. You may specify that the secret does not expire by selecting the **Never Expires** checkbox. Secrets can be deleted later, including secrets that are set to never expire.
 
 1. Click **Add**.  
-   A window opens with the Client Id and Client Secret.
-   **IMPORTANT**:  
-   Use the **Copy** buttons to the right of these fields to save the client secret and client ID. You will need to reference these in your applications. Once the window is closed, the client secret cannot be accessed or retrieved.
+    A window opens with the Client Id and Client Secret.
+    **IMPORTANT**:  Use the **Copy** buttons to the right of these fields to save the client secret and client ID. You will need to reference these in your applications. Once the window is closed, the client secret cannot be accessed or retrieved.
 
 1. Click **Close**.  
    Note: In the list of secrets, the Client Id is still visible. If you did not save the client secret, select the client in the list and use the Details pane to remove the old secret and add a new secret.
 
 ## Next step
 
-Continue with [Get started with authorization code clients](xref:gsAuthorizationCodeClients) or [Get started with hybrid clients](xref:gsHybridClients).
+Continue with either of the following:
+
+- [Get started with authorization code clients](xref:gsAuthorizationCodeClients) 
+- [Get started with hybrid clients](xref:gsHybridClients)

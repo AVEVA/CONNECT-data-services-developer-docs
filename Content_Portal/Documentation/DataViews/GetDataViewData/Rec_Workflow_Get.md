@@ -125,13 +125,12 @@ Timestamp.0,Id.1,Name.2,AmbientTemperature.3,CloudCover.4,SolarRadiation.5,Tempe
 By default, each page includes 1000 records. If the requested data spans into another page, the response includes a hyperlink to the next page of data.
 
 #### Action
-Use the "next" hyperlink from the `Link` header to request the next page.
+Use the "next" hyperlink from the Link header to request the next page.
 
 ```text
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart/Data/Interpolated
 ?startIndex={your_val_here}&endIndex={your_val_here}&interval={your_val_here}&form=csvh&continuationToken=MjAxOC0wMS0wMVQwMDowMDoxMVo_MD90Yk1OblE_QUxXcEZBP1VEdGxIMWJROG9z
 ```
-Alternatively, use the value of the `Next-Page` header to request the next page. This will achieve the the same result as the "next" hyperlink from the `Link` header.
 
 #### Expected result
 The next page of data:
@@ -147,13 +146,12 @@ Timestamp.0,Id.1,Name.2,AmbientTemperature.3,CloudCover.4,SolarRadiation.5,Tempe
 It is possible, though unlikely, for the continuation token to become invalid during paging. When this happens, paging must be restarted from the first page.
 
 #### Action
-Use the "first" hyperlink from the `Link` header to request the first page.
+Use the "first" hyperlink from the Link header to request the first page.
 
 ```text
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/DataViews/quickstart/Data/Interpolated
 ?startIndex={your_val_here}&endIndex={your_val_here}&interval={your_val_here}&form=csvh&cache=preserve
 ```
-Alternatively, use the value of the `First-Page` header to request the first page.
 
 #### Expected result
 The first page of data:

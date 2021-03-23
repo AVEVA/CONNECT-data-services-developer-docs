@@ -16,8 +16,7 @@ There are five built-in roles which cannot be removed from a tenant.
 
 In addition, you can create custom roles which are not granted any specific permissions, by default. 
 
-Simply assigning a role to a user or client does not determine access. This is defined when a role is explicitly allowed or denied access to OCS resources through an access control list (ACL). An ACL is created for each OCS resource and it defines which roles have access to the resource. <!-- Josh: I think I'd like to keep the discussion about ACLs brief. Can you tell me if what I've said here is correct? -->
-<!--- Josh Kim Mar19021: Perfect! --->
+Simply assigning a role to a user or client does not determine access. This is defined when a role is explicitly allowed or denied access to OCS resources.
 
 For any resource in OCS, permissions are allowed or denied for specific roles, rather than to specific users or clients. These permissions are managed using the **Manage Permissions** dialog for the given resource. Each role can be allowed or denied access to one or more of the following access types: **Read**, **Write**, **Delete**, and **Manage Permissions**.
 

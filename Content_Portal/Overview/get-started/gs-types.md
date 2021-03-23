@@ -28,26 +28,36 @@ After creating the namespace, the next step is to add one or more types. For mor
 1. In the Add Type window, enter the following:
 
    - Id &ndash; MyOCS.PumpState
+
    - Name &ndash; MyOCS.PumpState
+
    - Description &ndash; SDS Type used by My OCS
+
+    Note: You can use an existing SDS type as the starting point for the new type by selecting an existing SDS type from the Base Type list. Its properties populate the Properties list. You can then proceed to add other properties to the type.
 
 1. Click the ![Properties icon](images\PropertiesPlusIcon.png) icon next to **Properties** to add a property.
 
 1. Complete the following fields for the first property:
    - Id &ndash; Enter **Timestamp**.
+   
    - Type &ndash; Select **DateTime**. 
+   
    - Key &ndash; Select the checkbox.
    
-   Note: The Key field identifies the Timestamp property as the index.
+     Note: The Key field identifies the Timestamp property as the index.
+     
+   - UOM &ndash; Select **hour**.
    
 1. Click the ![Properties icon](images\PropertiesPlusIcon.png) icon to add a second property and complete the fields:
    - Id &ndash; Enter **Temperature**
    - Type &ndash; Select **Double**.
+   - UOM &dash; Select **degree Celsius**.
    
 1. Click the ![Properties icon](images\PropertiesPlusIcon.png) icon to add a third property and complete the fields:
 
    - Id &ndash; Enter **Pressure**.
    - Type &ndash; Select **Double**.
+   - UOM &ndash; Select **kilogram per cubic meter**.
 
 1. Click **Save**.
 

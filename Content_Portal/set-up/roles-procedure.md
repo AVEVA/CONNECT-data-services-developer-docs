@@ -7,7 +7,6 @@ Roles are used to manage access to assets, resources, and services in OSIsoft Cl
 
  <!-- Josh Kim: Roles are assigned to identities. It is the OCS object, specifically the ACL, that determines whether the identity gets access. This is done by comparing the assigned role of the identity to the OCS object's ACL. I wonder if the first sentence gives the impression that Roles is only factor in gaining access? -->
 
-or perhaps this should be our recommended message to customers to simplify access? Could we ask readiness/architects how detailed we want to be about describing access?
 
 - [About roles](xref:ccRoles)
 - [PI Core counterpart](xref:ccRoles#roles-pi-core)

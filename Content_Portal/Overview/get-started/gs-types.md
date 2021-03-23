@@ -33,7 +33,7 @@ After creating the namespace, the next step is to add one or more types. For mor
 
    - Description &ndash; SDS Type used by My OCS
 
-    Note: You can use an existing SDS type as the starting point for the new type by selecting an existing SDS type from the Base Type list. Its properties populate the Properties list. You can then proceed to add other properties to the type.
+    Note: You can use an existing SDS type as the starting point for the new type by selecting an existing SDS type from the Base Type list. When you add a base type, its properties populate the Properties list. You can then proceed and add other properties to the type.
 
 1. Click the ![Properties icon](images\PropertiesPlusIcon.png) icon next to **Properties** to add a property.
 

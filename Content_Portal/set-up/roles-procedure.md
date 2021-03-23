@@ -5,7 +5,6 @@ uid: gpRoles
 
 Roles are used to manage access to assets, resources, and services in OSIsoft Cloud Services (OCS). Roles are assigned to identities, which includes users, groups, and client-credentials clients. See the following for more information about roles:
 
- <!-- Josh Kim: Roles are assigned to identities. It is the OCS object, specifically the ACL, that determines whether the identity gets access. This is done by comparing the assigned role of the identity to the OCS object's ACL. I wonder if the first sentence gives the impression that Roles is only factor in gaining access? -->
 
 
 - [About roles](xref:ccRoles)

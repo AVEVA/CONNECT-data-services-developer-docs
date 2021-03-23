@@ -301,9 +301,14 @@ All stream view transformations are HTTP GET requests. Specify the stream view I
     GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/First?streamViewId={streamViewId}
  ```
 
-
-
 All single stream data reads support stream view transformations.
+```text
+	# Get 100 events from start index 
+ GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform?startIndex={startIndex}&count=100&streamViewId={streamViewId}
+ 	# Get last value
+ GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/Last?streamViewId={streamViewId}
+ 
+```
 
 When data is requested with an SdsStreamView, the read characteristics defined by the *target type* of the SdsStreamView 
 determine what is returned. The read characteristics are discussed in the code samples.

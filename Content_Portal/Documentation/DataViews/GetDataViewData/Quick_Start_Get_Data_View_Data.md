@@ -80,7 +80,7 @@ By default, data views will be returned with an optimized page size based on the
 The maximum page size is 250,000.
 
 #### Hyperlinks
-When paging through data view data via the REST API, hyperlinks to the first page and next page of data are provided in the `Link` header. The first page header is signified by relation type of first, `rel="first"`. The next page header is signified by `rel="next"`. Proper use of the hyperlinks is recommended. You can page through data using the `First-Page` and `Next-Page` headers in applications that do not support the `Link` header.
+When paging through data view data via the REST API, hyperlinks to the first page and next page of data are provided in the `Link` header. The first page header is signified by relation type of first, `rel="first"`. The next page header is signified by `rel="next"`. Proper use of the hyperlinks is recommended.
 
 ##### Next page
 If the requested data spans into another page, the response includes a hyperlink to the next page of data. Absence of a `rel="next"` link indicates that the data does not span past the current page.

@@ -103,7 +103,7 @@ Successful (200 OK) responses include:
 
 | Header | Description |
 |--|--|
-| Link | Hyperlinks to the first page and next page of data as applicable |
+| Link | Hyperlinks to the first page and next page of data as applicable. Absence of the next link indicates that there is no additional data to be retrieved. |
 | Next-Page | Hyperlink to the next page of data |
 | First-Page | Hyperlink to the first page of data |
 

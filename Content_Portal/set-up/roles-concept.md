@@ -3,7 +3,8 @@ uid: ccRoles
 ---
 # About roles
 
-Roles are used to manage access to assets, resources, and services in OSIsoft Cloud Services (OCS). Roles are assigned to identities, which includes users, groups, and client-credentials clients. <!--- Josh Kim Mar19021: Similar to the comment as before where it seemed to me that this sentence implied roles were the primary factor in getting access, when in fact it is the roles of the users compared against the provisioned ACL that grants access. Do we want to communicate this? --->
+Roles are used to manage access to assets, resources, and services in OSIsoft Cloud Services (OCS). Roles are assigned to identities, which includes users, groups, and client-credentials clients. When an identity attempts to access a resource in OCS, the identity's list of roles is compared against the permissions on the resource to determine whether access is allowed.
+
 
 There are five built-in roles which cannot be removed from a tenant.
 
@@ -15,8 +16,7 @@ There are five built-in roles which cannot be removed from a tenant.
 
 In addition, you can create custom roles which are not granted any specific permissions, by default. 
 
-Simply assigning a role to a user or client does not determine access. This is defined when a role is explicitly allowed or denied access to OCS resources through an access control list (ACL). An ACL is created for each OCS resource and it defines which roles have access to the resource. <!-- Josh: I think I'd like to keep the discussion about ACLs brief. Can you tell me if what I've said here is correct? -->
-<!--- Josh Kim Mar19021: Perfect! --->
+Simply assigning a role to a user or client does not determine access. This is defined when a role is explicitly allowed or denied access to OCS resources.
 
 For any resource in OCS, permissions are allowed or denied for specific roles, rather than to specific users or clients. These permissions are managed using the **Manage Permissions** dialog for the given resource. Each role can be allowed or denied access to one or more of the following access types: **Read**, **Write**, **Delete**, and **Manage Permissions**.
 

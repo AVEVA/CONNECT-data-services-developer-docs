@@ -6,8 +6,8 @@ uid: gsConnections
 
 There are two types of OSIsoft Cloud Services (OCS) connections that allow you to transfer data from external sources into OSIsoft Cloud Services:
 
-- The PI to OCS Agent sends PI point data from an on-premises PI Data Archive server to an OCS namespace. To get started with PI to OCS Agent, see [PI System Connections](xref:gsPItoOCS).
-- OSIsoft Message Format (OMF) enables OMF applications to send data to an OCS namespace. To get started with OSIsoft Messaging Format (OMF), see [OSIsoft Messaging Format](xref:gsOMF).
+- The PI to OCS Agent sends PI point data from an on-premises PI Data Archive server to an OCS namespace. See [Get started with PI to OCS connections](xref:gsPItoOCS).
+- OSIsoft Message Format (OMF) enables OMF applications to send data to an OCS namespace. See [Get started with OMF connections](xref:gsOMF).
 
 ### PI System counterpart
 

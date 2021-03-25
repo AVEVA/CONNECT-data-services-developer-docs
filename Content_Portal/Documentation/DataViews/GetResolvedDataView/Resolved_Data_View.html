@@ -93,7 +93,7 @@
 <h4 id="paged-collections">Paged collections</h4>
 <p>Some of this information is exposed as paged collections, which accept parameters controlling <code>skip</code> and <code>count</code> within the collection. </p>
 <p>Paged responses include a <code>Link</code> header, with a hyperlink to the first page of results. If the results extend into an additional page, a hyperlink to the next page will also be included in the <code>Link</code> header.</p>
-<p>Using these hyperlinks is the recommended method of paging. Alternatively, constructing paging links by manually incrementing the <code>skip</code> is allowable, though in this case it is recommended to specify cache behavior of &quot;preserve&quot;.</p>
+<p>Using these hyperlinks is the recommended method of paging. Alternatively, constructing paging links by manually incrementing the <code>skip</code> is allowable, though in this case it is recommended to specify cache behavior of &quot;preserve&quot;. In addition, <code>Next-Page</code> and <code>First-Page</code> headers are provided for applications that do not support the <code>Link</code> header. The values for these headers are identical to the hyperlinks from the <code>Link</code> header.</p>
 <h3 id="how-is-a-data-view-resolved">How is a data view resolved?</h3>
 <p>Data views resolve on a per user basis. Data views respect the permissions on underlying data items such as streams and assets. For example, if a user does not have read access to a particular stream in SDS, then that stream is not visible from data views.</p>
 <p>As a consequence, different users may see different collections of data items resolve for a data view. This is by design.</p>

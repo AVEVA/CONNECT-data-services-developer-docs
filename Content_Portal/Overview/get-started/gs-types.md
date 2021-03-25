@@ -7,14 +7,14 @@ uid: gsTypes
 After creating the namespace, the next step is to add one or more types. For more information about types, see the following:
 
 - [About types](xref:ccTypes)
-- [PI Core counterpart](xref:ccTypes#types-pi-core)
+- [PI Server counterpart](xref:ccTypes#types-pi-server)
 - [Types best practices](xref:bpTypes)
 
 ## Procedure
 
 1. Click the ![Menu icon](images\menu-icon.png) icon and click **Sequential Data Store** (under Data Management).
 
-1. Click **Types**. From the **Namespace** drop-down list, select MyOCS.
+1. Click **Types**. From the Namespace drop-down list, select *MyOCS*.
 
 1. Click the ![Manage Default Type Permissions icon](images\ManageDefaultIcon.png) icon above the tree on the left. 
    This opens the Manage Default Permissions for New Types window where default permissions for new types are specified. 
@@ -27,6 +27,7 @@ After creating the namespace, the next step is to add one or more types. For mor
 
 1. In the Add Type window, enter the following:
 
+<<<<<<< Updated upstream
    - Id &ndash; MyOCS.PumpState
 
    - Name &ndash; MyOCS.PumpState
@@ -36,6 +37,13 @@ After creating the namespace, the next step is to add one or more types. For mor
     Note: You can use an existing SDS type as the starting point for the new type by selecting an existing SDS type from the Base Type list. When you add a base type, its properties populate the Properties list. You can then add other properties to the type.
 
 1. Click the ![Properties icon](images\PropertiesPlusIcon.png) icon next to **Properties** to add a property.
+=======
+   - Id &ndash;  **MyOCS.PumpState**
+   - Name &ndash;  **MyOCS.PumpState**
+   - Description &ndash; **SDS Type used by My OCS**
+
+1. Click the ![Properties icon](images\PropertiesPlusIcon.png) icon next to Properties to add a property.
+>>>>>>> Stashed changes
 
 1. Complete the following fields for the first property:
    - Id &ndash; Enter **Timestamp**.
@@ -73,9 +81,9 @@ After creating the namespace, the next step is to add one or more types. For mor
 
 1. Click **Get Type Streams**.
 
-   This takes you to the Streams list and, by default, it uses the _*typeId:MyOCS.PumpState* query to filter for any streams with the MyOCS.PumpState type. The list is empty because no streams have yet been created with this type.
+   This takes you to the Streams list and, by default, it uses the typeId:MyOCS.PumpState query to filter for any streams with the MyOCS.PumpState type. The list is empty because no streams have yet been created with this type.
    
 
-## Next Step
+## Next step
 
 Continue with [Get started with streams](xref:gsStreams).

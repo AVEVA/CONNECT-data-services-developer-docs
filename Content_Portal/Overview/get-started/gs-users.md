@@ -6,7 +6,7 @@ uid: gsUsers
 A user is an identity that has access to an OSIsoft Cloud Services (OCS) tenant. Roles assigned to a user determine what permissions the user has on resources in OCS. See the following for more information about users:
 
 - [About users](xref:ccUsers)
-- [PI Core counterpart](xref:ccUsers#users-pi-core)
+- [PI Server counterpart](xref:ccUsers#users-pi-server)
 - [Users best practices](xref:ccUsers#users-bp)
 
 ## Procedure
@@ -23,13 +23,13 @@ Follow the procedure to invite a user to your tenant.
 
 1. Enter the contact email. The invitation to your OCS tenant is sent to the user at this address. Ensure that it is correct so that the invitation is not sent to an unintended recipient.
 
-1. (Optional) Select the MyOCS.Role role for the user. 
+1. (Optional) Select the **MyOCS.Role** role for the user.
 
     By default, the user is assigned the Tenant Member role which cannot be removed. Roles can be modified after the user is invited.
 
-1. Once the information has been entered, click **Invite**. OCS sends the invitation to the email address specified in the **Contact Email** field. The **Status** column lists the new user as *Pending* until the invitation is accepted. If the invitation expires, the status changes to *Expired*. Once expired, the invitation can be resent.
+1. Once the information has been entered, click **Invite**. OCS sends the invitation to the email address specified in the Contact Email field. The Status column lists the new user as *Pending* until the invitation is accepted. If the invitation expires, the status changes to *Expired*. Once expired, the invitation can be resent.
 
-1. Once the user receives the invitation, they should log in using the identity provider you specified. Once they have logged in, the status of their user should be *Active*.
+1. Once the user receives the invitation, they should log in using the identity provider you specified. Once they have logged in, the status of their user changes to *Active*.
 
 ## Next step
 

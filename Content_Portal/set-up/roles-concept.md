@@ -20,7 +20,7 @@ Simply assigning a role to a user or client does not determine access. This is d
 
 For any resource in OCS, permissions are allowed or denied for specific roles, rather than to specific users or clients. These permissions are managed using the Manage Permissions for the given resource. Each role can be allowed or denied access to one or more of the following access types: Read, Write Delete, and Manage Permissions.
 
-You must have the **Tenant Administrator** role to add and manage roles in a tenant.
+You must have the Tenant Administrator role to add and manage roles in a tenant.
 
 ## <a name="roles-pi-server"></a>PI Server counterpart
 

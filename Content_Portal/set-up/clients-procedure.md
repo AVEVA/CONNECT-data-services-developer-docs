@@ -8,4 +8,4 @@ Clients provide a way for users or applications to authenticate against OSIsoft 
 - [Authorization code clients](xref:gpAuthorizationCodeClient)
 - [Hybrid clients](xref:gpHybridClient)
 
-You must have the **Tenant Administrator** role to add and manage clients in a tenant.
+You must have the Tenant Administrator role to add and manage clients in a tenant.

@@ -17,7 +17,7 @@ The following clients are described in this topic:
 
 Client-credentials clients are used for server-to-server communication where no user interaction is required. The client typically authenticates with the token endpoint using its client ID and secret. A secret is a unique key generated for each client to connect to OSIsoft assets, resources, and services for a time-limited period.
 
-### <a name="client-credentials-pi-core"></a>Client-credentials client PI Core counterpart
+### <a name="client-credentials-pi-server"></a>Client-credentials client PI Server counterpart
 
 Client-credentials clients are very similar to Microsoft Windows service accounts that might be used to authenticate against PI Data Archive or PI AF server. Therefore, it is very important to keep secrets secure in the same way that it is important to keep service account passwords secure.
 
@@ -37,7 +37,7 @@ Authorization code clients are used with customer web applications that use OCS 
 
 Authorization code clients are used to authenticate using any browser. Upon successful authentication, an authorization code is provided to the client. This authorization code is exchanged for an access token using PKCE (Proof Code for Code Exchange) which is a more secure authentication flow. No refresh token is provided.
 
-### <a name="authorization-code-pi-core"></a>Authorization code client PI Core counterpart
+### <a name="authorization-code-pi-server"></a>Authorization code client PI Server counterpart
 
 Authorization code clients have no direct PI Core equivalent, but they are similar to the combined behavior of a trust and mappings in PI Data Archive. These clients are similar to trusts because they only allow users to access OCS if the application that uses them meets certain criteria, for example, the application must be served at a specific URL. However, like a mapping, authorization code clients require the user to authenticate as a known user account within the tenant.
 
@@ -53,9 +53,9 @@ The following best practices are recommended when you use an authorization code 
 
 Hybrid clients are used by native and server-side web applications. This client utilizes the user credentials to authenticate with the identity provider. Once the user is authenticated, then the server-side client steps in and server-to-server communication commences. Authentication can be performed using any browser. The server-side code retrieves an access token and a refresh token can also be provided.
 
-### <a name="hybrid-client-pi-core"></a>Hybrid client PI Core counterpart
+### <a name="hybrid-client-pi-server"></a>Hybrid client PI Server counterpart
 
-Hybrid clients have no direct PI Core equivalent, but they are similar to the combined behavior of a trust and mappings in PI Data Archive. These clients are similar to trusts because they only allow users to access OCS if the application that uses them meets certain criteria, for example, the application must be served at a specific URL. However, like a mapping, hybrid clients require the user to authenticate as a known user account within the tenant.
+Hybrid clients have no direct PI Server equivalent, but they are similar to the combined behavior of a trust and mappings in PI Data Archive. These clients are similar to trusts because they only allow users to access OCS if the application that uses them meets certain criteria, for example, the application must be served at a specific URL. However, like a mapping, hybrid clients require the user to authenticate as a known user account within the tenant.
 
 ### <a name="hybrid-client-bp"></a>Hybrid client best practices
 

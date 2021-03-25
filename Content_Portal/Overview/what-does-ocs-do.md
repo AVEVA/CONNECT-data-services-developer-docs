@@ -65,7 +65,7 @@ Authorization is the process of determining the appropriate access level for a u
 
 ### Access control list 
 
-Each OCS service and resource has an access control list (ACL) that defines how much access is granted to assigned roles. The OCS Administrator configures each ACL and specifies types of permissions for each role. When a request is made to a specific OCS resource, the role assigned to the requestor (whether a user or client) is compared to the ACL for that resource to determine whether the request should be authorized. 
+Each OCS service and resource has an access control list (ACL) that defines how much access is granted to assigned roles. The OCS Administrator configures each ACL and specifies types of permissions for each role. When a request is made to a specific OCS resource, the role assigned to the requestor (whether a user or client) is compared to the ACL for that resource to determine whether the request should be authorized. Users are allowed or denied access permissions to OCS objects based on their assigned roles and the corresponding ACLs.
 
 The types of permissions granted to roles are as follows:
 * Read

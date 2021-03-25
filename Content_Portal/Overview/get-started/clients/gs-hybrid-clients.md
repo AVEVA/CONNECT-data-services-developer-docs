@@ -38,4 +38,7 @@ Hybrid clients are used by native and server-side web applications. Authenticati
 
 ## Next step
 
-Continue with [Get started with client-credentials clients](xref:gsClientCredentialsClients) or [Get started with authorization code clients](xref:gsAuthorizationCodeClients).
+Continue with either of the following: 
+
+- [Get started with client-credentials clients](xref:gsClientCredentialsClients) 
+- [Get started with authorization code clients](xref:gsAuthorizationCodeClients)

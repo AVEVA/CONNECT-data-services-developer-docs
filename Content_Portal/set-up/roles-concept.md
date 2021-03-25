@@ -8,7 +8,7 @@ Roles are used to manage access to assets, resources, and services in OSIsoft Cl
 
 There are five built-in roles which cannot be removed from a tenant.
 
-- **Tenant Administrator** - OCS Administrator of OCS who is granted full permissions throughout OCS, by default.
+- **Tenant Administrator** - OCS Administrator of OCS who is granted full permissions throughout OCS, by default. This is the highest privilege role, with the ability to create new and remove existing users, clients and secrets. OSIsoft recommends not assigning this role to clients.
 - **Tenant Contributor** - Granted read and write permissions throughout OCS, by default.
 - **Tenant Data Steward** - No specific permissions are granted to this role, by default.
 - **Tenant Viewer** - No specific permissions are granted to this role, by default.

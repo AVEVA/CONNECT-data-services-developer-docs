@@ -20,18 +20,18 @@ Sequential Data Store (SDS) stream data are values or events of the same SDS typ
 1. In the Add Stream window, enter the following:
 
    - Stream Id &ndash;   Identifier for referencing the stream
-   - Description &ndash; SDS Stream used by OCS Quick Start
+   - Description &ndash; User-friendly description of the stream
    - Type ID &ndash; Sds type identifier of the type used in this stream          
 
     Note: Leave the Name field blank. By default, it will take the value of the Stream Id.
 
 1. Click **Save**.
 
-1. In the **Search...** field, enter: TypeId:type_ID, where *type_ID* is the value of the TypeID of the stream.
+1. In the **Search...** field, enter: **TypeId:** *type_ID*, where *type_ID* is the value of the **TypeId** of the stream.
 
     This searches for streams that use the specified type. 
 
-1. In the left panel, select the newly created stream in the list.
+1. In the left panel, select the newly created stream in the list and continue with adding stream tags and metadata.
 
 ## Add stream tags
 
@@ -45,31 +45,10 @@ Sequential Data Store (SDS) stream data are values or events of the same SDS typ
 
 1. Click **Add Metadata**.
 
-1. In **Enter Metadata key...**, type , and in in **Enter Metadata value...**, enter *SLTC*. 
+1. In **Enter Metadata key... ** and **Enter Metadata value...**, enter the key and value of your metadata.
 
-    Note: You can click either of these fields to edit them later, click the *X* to delete it from the stream, or click the *i* <!-- add screen capture here --> to see who last changed this metadata key.
+    Note: You can click either of these fields to edit them later, click the *X* to delete it from the stream, or click the ![Information](images/info.png) to see who last changed this metadata key.
 
-1. In the **Search...** field, enter *Site:SLTC*. 
-
-    This searches for streams that have the metadata key *Site* and the value *SLTC*. This search query returns the QuickStart stream. 
-   
-    Note: Use quotation marks around the value if there are spaces in the text.
-    
-1. Select the QuickStart.NorthAmerica.SLTC.PumpA stream and click **Manage Data**. 
-
-    This allows you to run queries against the data in the stream and to add, edit, and remove events.
-
-1. Click **Add Event**.
-
-1. In the Add Event window, enter the following: 
-
-   - Status &ndash; Running
-   - Value &ndash; 3.14
-   - Timestamp &ndash; Leave at default, which should be current time
-
-1. Click **Save**. 
-
-    The event appears as the latest value in the stream.
 
 ## Related Links
 

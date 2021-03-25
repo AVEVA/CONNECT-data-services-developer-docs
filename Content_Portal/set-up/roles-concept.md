@@ -22,7 +22,7 @@ For any resource in OCS, permissions are allowed or denied for specific roles, r
 
 You must have the **Tenant Administrator** role to add and manage roles in a tenant.
 
-## <a name="roles-pi-core"></a>PI Core counterpart
+## <a name="roles-pi-server"></a>PI Server counterpart
 
 Roles in OCS are comparable to PI identities in PI Data Archive or identities in PI AF server. Throughout OCS, permissions are granted to roles instead of directly to individual users or clients. This is similar to how identities in PI Core are used to assign permissions for a set of users or clients.
 

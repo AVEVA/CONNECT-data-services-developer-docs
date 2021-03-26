@@ -13,7 +13,7 @@ Hybrid clients are used by native and server-side web applications. Authenticati
 
 1. Click the ![Menu icon](images/menu-icon.png) icon and click **Clients** (under Security).
 
-1. From the `Client Type` drop-down list, select **Hybrid**.
+1. From the **Client Type** drop-down list, select **Hybrid**.
 
 1. In the toolbar, click **Add Client**.
 
@@ -22,13 +22,13 @@ Hybrid clients are used by native and server-side web applications. Authenticati
 
 1. (Optional) Select the **Allow Refresh Token** check box if the application uses refresh tokens to keep users logged in to OCS.
 
-1. Enter the URLs in the `Allowed Redirect URL(s)` text box, and click **+** to add it to the list.  
+1. Enter the URLs in the **Allowed Redirect URL(s)** text box, and click **+** to add it to the list.  
    The application specifies one of the URLs in this list when it authenticates against OCS, and the OCS identity server returns the results of the authentication to this URL.
 
-1. (Optional) Enter URLs in the `Allowed Logout Redirect URL(s)` text box, and click **+** to add it to the list.  
-   This is similar to the `Allowed Redirect URL(s)`. The application specifies one of the `Allowed Logout Redirect URL(s)` from this list when it logs a user out of OCS, and the OCS identity server sends the user to that URL after a successful log out.
+1. (Optional) Enter URLs in the **Allowed Logout Redirect URL(s)** text box, and click **+** to add it to the list.  
+   This is similar to the **Allowed Redirect URL(s)**. The application specifies one of the URLs from this list when it logs a user out of OCS, and the OCS identity server sends the user to that URL after a successful log out.
 
-1. (Optional) Set the `Token Lifetime`.  
+1. (Optional) Set the **Token Lifetime**.  
    Token Lifetime represents the length of time (in seconds) the access token is valid before it expires. The default, 3600 seconds (one hour), is the maximum length of time. The minimum value is 60 seconds.
 
 1. Click **Add**.  

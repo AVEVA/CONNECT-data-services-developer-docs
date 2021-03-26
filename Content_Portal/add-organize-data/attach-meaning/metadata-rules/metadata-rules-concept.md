@@ -36,6 +36,6 @@ Each part of the stream name is assigned a metadata type. The screen capture abo
 
    In addition to being applied to any existing streams, a metadata rule captures any matching streams that are subsequently added to the selected namespace. You can edit a metadata rule. The modified rule may then capture a different set of streams.
 
-## Related Links
+## Related links
 
 - [Create a metadata rule](xref:gpMetadataRules)

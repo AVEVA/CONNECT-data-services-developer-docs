@@ -6,7 +6,7 @@ uid: gpClientCredentialsClient
 Client-credentials clients are used for server-to-server communication where no user interaction is required. See the following for more information about client-credentials clients:
 
 - [Introduction to client-credentials clients](xref:ccClients#client-credentials-client)
-- [Client-credentials client PI Core counterpart](xref:ccClients#client-credentials-pi-core)
+- [Client-credentials client PI Server counterpart](xref:ccClients#client-credentials-pi-server)
 - [Client-credentials client best practices](xref:ccClients#client-credentials-bp)
 
 ## Procedure

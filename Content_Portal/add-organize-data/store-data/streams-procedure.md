@@ -13,13 +13,13 @@ Sequential Data Store (SDS) stream data are values or events of the same SDS typ
 
 1. Click the ![Menu icon](images\menu-icon.png) icon and click **Sequential Data Store** (under Data Management).
 
-1. Click **Streams**. From the **Namespace** drop-down list, select the namespace in which you want the stream created.
+1. Click **Streams**. From the Namespace drop-down list, select the namespace in which you want the stream created.
 
 1. Click **Add Stream**.
 
 1. In the Add Stream window, enter the following:
 
-   - Stream Id &ndash;   Identifier for referencing the stream
+   - Stream Id &ndash; Identifier for referencing the stream
    - Description &ndash; User-friendly description of the stream
    - Type ID &ndash; Sds type identifier of the type used in this stream          
 
@@ -27,7 +27,7 @@ Sequential Data Store (SDS) stream data are values or events of the same SDS typ
 
 1. Click **Save**.
 
-1. In the **Search...** field, enter: **TypeId:** *type_ID*, where *type_ID* is the value of the **TypeId** of the stream.
+1. In the Search field, enter: **TypeId:** *type_ID*, where *type_ID* is the value of the TypeId of the stream.
 
     This searches for streams that use the specified type. 
 
@@ -45,11 +45,11 @@ Sequential Data Store (SDS) stream data are values or events of the same SDS typ
 
 1. Click **Add Metadata**.
 
-1. In **Enter Metadata key... ** and **Enter Metadata value...**, enter the key and value of your metadata.
+1. In the Enter Metadata key and Enter Metadata value fields, enter the key and value of your metadata.
 
-    Note: You can click either of these fields to edit them later, click the *X* to delete it from the stream, or click the ![Information](images/info.png) to see who last changed this metadata key.
+    Note: You can click either of these fields to edit them later, click the ***X*** to delete it from the stream, or click the ![Information](images/info.png) to see who last changed this metadata key.
 
 
-## Related Links
+## Related links
 
 - [Streams](xref:sdsStreams) API

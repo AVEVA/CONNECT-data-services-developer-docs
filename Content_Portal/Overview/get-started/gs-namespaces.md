@@ -22,7 +22,7 @@ Creating a namespace is a resource-intensive operation. Therefore, you may prefe
 
 2. In the `Manage Namespaces` pane, click **Add Namespace**. 
 
-3. In the `Namespace Id` field, enter **MyOCS** for your namespace ID, enter a description, and select a region. 
+3. In the `Namespace Id` field, enter **MyOCS** for your namespace Id, enter a description, and select a region. 
 
    **Note:** Once the namespace is created, the `Namespace Id` and `Region` fields cannot be changed.
 
@@ -30,7 +30,7 @@ Creating a namespace is a resource-intensive operation. Therefore, you may prefe
 
 4. Click **Display Details**.  
 
-   - The window shows your tenant ID, namespace ID, description, and region of your namespace. It also displays zero (0) in the `Type Count` and `Stream Count` fields.  
+   - The window shows your tenant Id, namespace Id, description, and region of your namespace. It also displays zero (0) in the `Type Count` and `Stream Count` fields.  
    - The details window shows the `State` field, which indicates the status of the namespace. Once the process of creating a namespace and bringing it online is complete, the value of the `State` field changes to *Active*. If the status does not display as *Active*, close the window and refresh the page. 
 
     **Note:** It will take some time for the namespace to be created. 

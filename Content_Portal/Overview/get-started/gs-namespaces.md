@@ -20,26 +20,26 @@ Creating a namespace is a resource-intensive operation. Therefore, you may prefe
 1. Click the ![Menu icon](images/menu-icon.png) icon and click **Namespaces** (under Data Management).
 
 
-2. In the Manage Namespaces pane, click **Add Namespace**. 
+2. In the `Manage Namespaces` pane, click **Add Namespace**. 
 
-3. In the Namespace Id field, enter **MyOCS** for your namespace ID, enter a description, and select a region. 
+3. In the `Namespace Id` field, enter **MyOCS** for your namespace ID, enter a description, and select a region. 
 
-   Note: Once the namespace is created, the Namespace Id and Region fields cannot be changed.
+   **Note:** Once the namespace is created, the `Namespace Id` and `Region` fields cannot be changed.
 
    When you are done, click **Add**.
 
 4. Click **Display Details**.  
 
-   - The window shows your tenant ID, namespace ID, description, and region of your namespace. It also displays zero (0) in the Type Count and Stream Count fields.  
-   - The details window shows the State field, which indicates the status of the namespace. Once the process of creating a namespace and bringing it online is complete, the value of the State field changes to Active. If the status does not display as Active, close the window and refresh the page. 
+   - The window shows your tenant ID, namespace ID, description, and region of your namespace. It also displays zero (0) in the `Type Count` and `Stream Count` fields.  
+   - The details window shows the `State` field, which indicates the status of the namespace. Once the process of creating a namespace and bringing it online is complete, the value of the `State` field changes to *Active*. If the status does not display as *Active*, close the window and refresh the page. 
 
-    Note: It will take some time for the namespace to be created. 
+    **Note:** It will take some time for the namespace to be created. 
 
    <!-- LA: What is the status while the namespace is being set up? Can we give them an estimate of how long it might take for the namespace status to change to Active? Follow up with Derek. -->
 
 5. Select the namespace in the list, and click **Edit Namespace**.  
 
-   Note: The only field you can edit is the Description field.
+   **Note:** The only field you can edit is the `Description` field.
 
 6. Make any changes to the description and click **Save**.
 
@@ -49,7 +49,7 @@ Creating a namespace is a resource-intensive operation. Therefore, you may prefe
 
 Access control is managed by assigning permissions to roles. Each role is granted (Allow) or denied (Deny) permission to perform an access operation (read, write, delete, or manage permissions). Users are assigned to a role that determines their access to OCS resources. 
 
-Note: The remaining steps are optional. 
+**Note:** The remaining steps are optional. 
 
 1. Click **Manage Permissions**.
 2. Click the **Selected role** arrow, and select **Tenant Member** from the list.

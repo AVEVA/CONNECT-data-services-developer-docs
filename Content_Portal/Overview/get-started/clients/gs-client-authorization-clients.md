@@ -29,11 +29,11 @@ Authorization code clients are used with customer web applications that use OCS 
 1. (Optional) Enter URLs in the Allowed CORS Origin(s) text box, and click the **+**  to add it to the list.  
    This can be used to designate other URLs from which the application is allowed to make requests against OCS. For example, this may be necessary if the user authenticates from an application running at `https://authenticate.com`, but the result of the authentication is sent to an application running at a different URL, for example, `https://application.com`.
    
-1. (Optional) Set the Token Lifetime.  
+1. (Optional) Set the `Token Lifetime`.  
    Token Lifetime represents the length of time (in seconds) the access token is valid before it expires. The default, 3600 seconds (one hour), is the maximum length of time. The minimum value is 60 seconds.
 
 1. Click **Add**.  
-   The Client Successfully Created window displays the client ID for the client. The application must specify this client ID when it makes an authentication request. After you close this window, you can also retrieve the client ID from the list of clients.
+   The `Client Successfully Created` window displays the client ID for the client. The application must specify this client ID when it makes an authentication request. After you close this window, you can also retrieve the client ID from the list of clients.
 
 ## Next step
 

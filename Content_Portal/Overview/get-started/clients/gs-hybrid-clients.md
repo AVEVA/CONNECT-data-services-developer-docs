@@ -28,11 +28,11 @@ Hybrid clients are used by native and server-side web applications. Authenticati
 1. (Optional) Enter URLs in the Allowed Logout Redirect URL(s) text box, and click **+** to add it to the list.  
    This is similar to the Allowed Redirect URL(s). The application specifies one of the Allowed Logout Redirect URL(s) from this list when it logs a user out of OCS, and the OCS identity server sends the user to that URL after a successful log out.
 
-1. (Optional) Set the Token Lifetime.  
+1. (Optional) Set the `Token Lifetime`.  
    Token Lifetime represents the length of time (in seconds) the access token is valid before it expires. The default, 3600 seconds (one hour), is the maximum length of time. The minimum value is 60 seconds.
 
 1. Click **Add**.  
-   The Client Successfully Created window displays the client ID for the client. The application must specify this client ID when it makes an authentication request. You can copy the client ID by clicking the **Copy** icon. Alternatively, after you close the window, you can retrieve the client ID from the list of clients.
+   The `Client Successfully Created` window displays the client ID for the client. The application must specify this client ID when it makes an authentication request. You can copy the client ID by clicking the **Copy** icon. Alternatively, after you close the window, you can retrieve the client ID from the list of clients.
 
 ## Next step
 

@@ -13,26 +13,26 @@ Sequential Data Store (SDS) types define the shape and structure of events and h
 
 1. Click the ![Menu icon](images\menu-icon.png) icon and click **Sequential Data Store** (under Data Management).
 
-1. Click **Types**. From the Namespace drop-down list, select the namespace in which you want the type created.
+1. Click **Types**. From the **Namespace** drop-down list, select the namespace in which you want the type created.
 
 1. Click **Add Type**.
 
-1. In the Add Type window, enter the following:
+1. In the `Add Type` window, enter the following:
 
-   - Id &ndash; Id for referencing the type
-   - Name &ndash; User-friendly name
-   - Description &ndash; Descriptive text that you can use to identify the type
+   - `Id` &ndash; Id for referencing the type
+   - `Name` &ndash; User-friendly name
+   - `Description` &ndash; Descriptive text that you can use to identify the type
 
-1. Click the ![Properties icon](Images\PropertiesPlusIcon.png)icon next to Properties to add a property.
+1. Click the ![Properties icon](Images\PropertiesPlusIcon.png)icon next to **Properties** to add a property.
 
 1. Complete the following fields for the first property:
-   - Id &ndash; Identifier for referencing the property
-   - Type &ndash;  Sds type of the property
-   - Key &ndash;  When selected, identifies the property as the index 
+   - `Id` &ndash; Identifier for referencing the property
+   - `Type` &ndash;  Sds type of the property
+   - `Key` &ndash;  When selected, identifies the property as the index 
    
-   Note:
+   **Note:**
    
-   - The Key field identifies the property as the index.
+   - The `Key` field identifies the property as the index.
    
    - In the OCS portal, only one key can be specified as an index. However, you can specify multiple keys  through the OCS API. For more information, see [Types](xref:sdsTypes).
    

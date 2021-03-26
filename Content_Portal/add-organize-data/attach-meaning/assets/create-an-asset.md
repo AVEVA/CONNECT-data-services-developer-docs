@@ -10,17 +10,17 @@ Follow the procedures to create an asset, add and configure its metadata and pro
 
 1. Click the menu icon ![menu icon](images/icon_navigation_bigger.png) and click **Asset Explorer**.
    
-1. To change the [namespace](xref:ccNamespaces), click on the namespace to open the Select a Namespace window.
+1. To change the [namespace](xref:ccNamespaces), click on the namespace to open the `Select a Namespace` window.
 
     ![Namespace icon](images/namespace-icon.png)
 
 4. Select the namespace and click **Continue**.
 
-5. Verify that the Assets/Asset Type selector is set to **Assets**.
+5. Verify that the **Assets/Asset Type** selector is set to **Assets**.
 
-5. Click the plus symbol (+) in the toolbar to create a new asset.
+5. Click the **+** in the toolbar to create a new asset.
 
-     The Select Type for New Asset window opens. By default, the type selected is \<None>.
+     The `Select Type for New Asset` window opens. By default, the type selected is \*<None>.*
 
 6. Accept the default and click **Continue**.
 
@@ -32,7 +32,7 @@ Follow the procedures to create an asset, add and configure its metadata and pro
 
 1. Click the **Metadata** tab and click **Add Metadata**.
 
-    Note: Metadata is static attributes about assets, for example, model or region.
+    **Note:** Metadata is static attributes about assets, for example, model or region.
 
     The fields for entering the metadata details appear. 
 
@@ -43,7 +43,7 @@ Follow the procedures to create an asset, add and configure its metadata and pro
 2. Enter a name for the metadata.
 
 3. (Optional) Enter a value for the metadata and select a type.  
-    Note: The value must match the selected type. The following date/time format is supported: MM/DD/(YY)YY hh:mm(:ss).
+    **Note:** The value must match the selected type. The following date/time format is supported: MM/DD/(YY)YY hh:mm(:ss).
 
     <!--WRITER NOTE: What date/time formats are supported? Is this the same as for PI Server? i.e., Microsoft standard date/time formats? -->
 
@@ -58,8 +58,8 @@ Follow the procedures to create an asset, add and configure its metadata and pro
 
 2. Click **Add Stream References** to add a property.
 
-3. In the Select Streams window, select the stream you want.  
-     Note: Use the search box to find the stream. You can search on the stream name, description, or the type. Use the asterisk (*)  as a wildcard character.
+3. In the `Select Streams` window, select the stream you want.  
+     **Note:** Use the search box to find the stream. You can search on the stream name, description, or the type. Use the asterisk (*)  as a wildcard character.
 
 4. Click **Add**.  
      The stream reference appears in the right pane. This is the automatically generated user-friendly stream name. You can edit this name.
@@ -71,13 +71,13 @@ Follow the procedures to create an asset, add and configure its metadata and pro
 
 8. Click **Configure UOMs**. 
 
-9. On the Configure UOMs page, make any changes to the property UOMs.
+9. On the `Configure UOMs` page, make any changes to the property UOMs.
 
-    Note: UOMs can be set only on numeric types.
+    **Note:** UOMs can be set only on numeric types.
 
 1. When you are done, click **Save**.
 
-    Note: Once you click **Save**, any changes are immediately made to the UOMs on the stream, regardless of any other actions you take on this asset. For example, the UOM changes to the stream are not reversed if you click **Cancel** on the Properties tab or if you delete the asset.
+    **Note:** Once you click **Save**, any changes are immediately made to the UOMs on the stream, regardless of any other actions you take on this asset. For example, the UOM changes to the stream are not reversed if you click **Cancel** on the **Properties** tab or if you delete the asset.
 
 
 ### Add status tracking to the asset
@@ -86,9 +86,9 @@ Follow the procedures to create an asset, add and configure its metadata and pro
 
 2. Click **Add Status Configuration**.
 
-3. In the Select Property window, click the property that you want to display status for. Click **Continue**.
+3. In the `Select Property` window, click the property that you want to display status for. Click **Continue**.
 
-    Note: Only properties with enumerated states or string values can be selected for the asset status;  therefore, only these properties are displayed. 
+    **Note:** Only properties with enumerated states or string values can be selected for the asset status;  therefore, only these properties are displayed. 
 
     You can only specify one property as the asset's status. 
 
@@ -98,7 +98,7 @@ Follow the procedures to create an asset, add and configure its metadata and pro
     All the values have been mapped in the following screen capture.
     ![Mapped status](images/mapped-status-values.png)
     
-    Tip: You can switch to a different property by clicking the ![Change property icon](images/change-property-icon.png) icon.
+    **Tip:** You can switch to a different property by clicking the ![Change property icon](images/change-property-icon.png) icon.
 
 ### Save the asset
 

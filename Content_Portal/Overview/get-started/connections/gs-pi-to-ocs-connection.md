@@ -28,9 +28,9 @@ Prerequisite: The exercise below assumes that your organization has a PI System 
 
     The `Add PI System Connection` window opens.
 
-1.  In the **Name** field, type **MyOCS**. Click **Next.**
+1.  In the `Name` field, type **MyOCS**. Click **Next.**
 
-1.  On the **Review** tab, verify that the **Source** field displays *Not Configured*, and the **Destination** field displays *MyOCS*. Click **Save**.
+1.  On the **Review** tab, verify that the `Source` field displays *Not Configured*, and the `Destination` field displays *MyOCS*. Click **Save**.
 
 The `Download Installation Kit` window opens. Follow the prompts to download the PI to OCS Agent Installation Kit.
 
@@ -54,14 +54,14 @@ The `Download Installation Kit` window opens. Follow the prompts to download the
 
 1.  Once the PI to OCS Agent is installed and registered, return to the `Connections` page of the OCS portal.
 2.  Select the **MyOCS** connection in the list on the left, and then click **Add PI Point Transfer** in the right pane.
-3.  In the `Add PI Point Transfer`window, in the **Name** field, type **sinusoid**. Click **Search**.
+3.  In the `Add PI Point Transfer`window, in the `Name` field, type **sinusoid**. Click **Search**.
 4.  Select the **sinusoid** PI point from the **PI Points Found** list, and click **Add**.
 
     The sinuisoid PI point appears in the **PI Points to Transfer** list.
 
 5.  Click **Add Transfer** to create the transfer.
 
-    A `Data Transfer` panel appears in the `Details` pane. After some time, the **Historical Transfer** field displays *100%*, and a new stream with sinusoid data is created in the Sequential Data Store.
+    A `Data Transfer` panel appears in the `Details` pane. After some time, the `Historical Transfer` field displays *100%*, and a new stream with sinusoid data is created in the Sequential Data Store.
 
 6.  To verify the result, open the `Sequential Data Store Streams` page in OCS
     [here](https://cloud.osisoft.com/data/streams), and look for the sinusoid stream.

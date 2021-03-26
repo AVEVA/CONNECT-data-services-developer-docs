@@ -19,18 +19,19 @@ After creating your types, you can add streams and associate a type with the str
 1. Click the **Manage Default Stream Permissions** icon above the tree on the left.  
     This opens the `Manage Default Permissions for New Streams` window where default permissions for streams created in the selected namespace are configured. 
    
-    **Note:** By default, you must be assigned the Tenant Administrator role to change the default permissions. Any changes only affect new streams. It does not change the permissions on already existing steams.   
+    **Note:** By default, you must be assigned the Tenant Administrator role to change the default permissions. Any changes only affect new streams. It does not change the permissions on already existing steams. 
+    
     When you are done reviewing the permissions, click **Cancel** to continue.
    
 1. Click **Add Stream**.
 
-1. In the `Add Stream` window, enter the following:
+1. In the `Add Stream` window, enter the following values for these fields:
 
    - `Stream Id` &ndash; **MyOCS.NorthAmerica.SLTC.PumpA**
    - `Description` &ndash; **SDS Stream used by My OCS**
    - `Type ID` &ndash; **MyOCS.PumpState**
 
-    **Note:** Leave the `Name` field blank. By default, it will take the value of the Stream ID.
+    **Note:** Leave the `Name` field blank. By default, it will take the value of the Stream Id.
 
 1. Click **Save**.
 
@@ -50,7 +51,7 @@ After creating your types, you can add streams and associate a type with the str
 
 1. In `Enter Metadata key`, enter **Site**, and in `Enter Metadata value`, enter **SLTC**. 
 
-    **Note:** You can click either of these fields to edit them later, click the ***X*** to delete it from the stream, or click the ![Info icon](images/Info.png)to see who last changed this metadata key.
+    **Note:** You can click either of these fields to edit them later, click the **X** to delete it from the stream, or click the ![Info icon](images/Info.png)to see who last changed this metadata key.
 
 1. In the `Search` field, enter **Site:SLTC**. 
 
@@ -64,11 +65,11 @@ After creating your types, you can add streams and associate a type with the str
 
 1. Click **Add Event**.
 
-1. In the Add Event window, enter the following: 
+1. In the `Add Event` window, complete the following fields: 
 
-   - `Status` &ndash; Enter **Running**
-   - `Value` &ndash; Enter **3.14**
-   - `Timestamp` &ndash; Leave this setting as it appears, displaying the current time
+   - `Status` &ndash; Enter **Running**.
+   - `Value` &ndash; Enter **3.14**.
+   - `Timestamp` &ndash; Leave this setting as it appears, displaying the current time.
 
 1. Click **Save**. 
 

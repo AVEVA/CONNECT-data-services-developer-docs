@@ -17,9 +17,9 @@ Follow the procedure to create role.
 
 1. In the toolbar, click **Add Role**.
 
-1. In the `Add Role` window, enter the following:
-   - `Name`  &ndash; **MyOCS.Role**
-   - `Description` &ndash; Optionally, add a description for this role
+1. In the `Add Role` window, complete the fields:
+   - `Name`  &ndash; Enter **MyOCS.Role**.
+   - `Description` &ndash; Optionally, add a description for this role.
    
 1. Click **Add** to create the new role. 
 
@@ -31,7 +31,7 @@ Follow the procedure to create role.
 
 1. In the `Manage identities for MyOCS.Role` window, click the **Add Identity** drop-down list. 
 
-    The list displays all users and clients in the tenant. Click the **+** to add any users or clients to the role.
+    The list displays all users and clients in the tenant. Click **+** to add any users or clients to the role.
 
 1. When you are done adding users and clients, click **Save**.
 

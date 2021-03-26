@@ -13,7 +13,7 @@ Client-credentials clients are used for server-to-server communication where no 
 
 1. Click the ![Menu icon](images/menu-icon.png) icon and click **Clients** (under Security).
 
-1. From the Client Type drop-down list, select **Client-Credentials**. (This is the option that is displayed by default.)
+1. From the `Client Type` drop-down list, select **Client-Credentials**. (This is the option that is displayed by default.)
 
 1. In the toolbar, click **Add Client**.
 
@@ -35,7 +35,7 @@ Client-credentials clients are used for server-to-server communication where no 
 
 1. Click **Add**.  
     A window opens with the `Client Id` and `Client Secret`.
-    **IMPORTANT**:  Click the **buttons** to the right of these fields and save the client secret and client ID. You will need to reference these in your applications. Once the window is closed, the client secret cannot be accessed or retrieved.
+    **IMPORTANT**:  Click the **buttons** to the right of these fields and save the client secret and client Id. You will need to reference these in your applications. Once the window is closed, the client secret cannot be accessed or retrieved.
 
 1. Click **Close**.  
    Note: In the list of secrets, the `Client Id` is still visible. If you did not save the client secret, select the client in the list and use the `Details`pane to remove the old secret and add a new secret.

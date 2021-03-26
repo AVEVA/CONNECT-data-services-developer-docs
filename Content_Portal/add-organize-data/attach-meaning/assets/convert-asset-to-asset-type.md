@@ -12,7 +12,7 @@ For more information on asset types, see [Asset types](xref:AssetTypes).
 
 3. Click **Save as Asset Type**.
 
-    The Create an Asset Type window opens.
+    The `Create an Asset Type` window opens.
 
 1. Enter the name for the asset type.
 2. (Optional) Enter a description for the asset type.

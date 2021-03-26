@@ -6,6 +6,8 @@ uid: CreateAssetType
 
 For more information on asset types, see [Asset types](xref:AssetTypes).
 
+## Procedure
+
 1. Click the menu icon ![menu icon](images/icon_navigation_bigger.png) and click **Asset Explorer**.
 
 2. To change the [namespace](xref:AccountManagementConcepts#introduction-to-namespaces), click on the namespace to open the Select a Namespace window.

@@ -24,11 +24,13 @@ For more information on asset types, see [Asset types](xref:AssetTypes).
     The details blade opens on the right side.
 
 3. Enter a name and description for the asset.
+
     **Note:** The asset type on which this asset is based is shown in the `Asset Type` field.
 
 4. Click the **Metadata** tab. 
 
 5. Edit the values for any of the metadata.
+
     **Note:** You can only edit the values. The metadata are derived from an asset type, as indicated by the **T** and, therefore, you cannot add or delete metadata or change the type.
 
     ![Metadata fields](images/edit-metadata-fields.png)
@@ -41,7 +43,7 @@ For more information on asset types, see [Asset types](xref:AssetTypes).
 
 9. Click **Choose a Stream** to open the `Select Stream` window.
 
-    ![](images/choose-stream.png)
+    ### ![](images/choose-stream.png)
 
 10. Select the stream from the list of streams.
 
@@ -62,3 +64,8 @@ For more information on asset types, see [Asset types](xref:AssetTypes).
      **Note:** Once you click **Save**, any changes are immediately made to the UOMs on the stream, regardless of any other actions you take on this asset. For example, the UOM changes to the stream are not reversed if you click **Cancel** on the **Properties** tab or if you delete the asset.
 
 3. Click **Save** to save the asset.
+
+## Related links
+
+- [Assets](xref:AssetsProperties) Properties
+- [Asset Types API](xref:AssetTypesAPI)

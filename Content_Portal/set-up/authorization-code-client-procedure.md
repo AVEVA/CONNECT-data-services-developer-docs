@@ -34,3 +34,7 @@ Authorization code clients are used with customer web applications that use OCS 
 
 1. Click **Add**.  
    The `Client Successfully Created` window displays the client Id for the client. The application must specify this client Id when it makes an authentication request. After you close this window, you can also retrieve the client Id from the list of clients.
+
+## Related links
+
+- [Authorization Code Client](xref:identityAuthorizationCodeClient) API

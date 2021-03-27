@@ -29,7 +29,9 @@ Data views are subsets of data from one or more streams. You create a data view 
 12. In the `Field Management` pane, use the **Up** and **Down** Arrow buttons to move selected data fields up or down in the display, and click **Apply**.
 13. Click **Save**.
 
+## Related links
 
+To define a data view using the OCS API, see [Define a data view](xref:DataViewsQuickStartDefine).
 
 
 

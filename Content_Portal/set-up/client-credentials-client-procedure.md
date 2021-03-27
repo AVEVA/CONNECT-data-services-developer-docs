@@ -39,3 +39,7 @@ Client-credentials clients are used for server-to-server communication where no 
    
 1. Click **Close**.  
    **Note:** In the list of secrets, the Client Id is still visible. If you did not save the client secret, select the client in the list and use the `Details` pane to remove the old secret and add a new secret.
+
+## Related links
+
+- [Client Credential Client](xref:identityClientCredentialClient) API

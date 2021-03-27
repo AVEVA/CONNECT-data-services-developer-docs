@@ -22,3 +22,7 @@ Follow the procedure to create role.
 1. Click **Add** to create the new role. It will be added to the table of Roles. Note that Tenant Custom is listed as the Role Type for all custom (or non-default) roles. You can now specify permissions for this role when managing permissions on assets, resources, and services in OCS.
 
 **Note:** By default, the new role will not have any access granted or denied in OCS.
+
+## Related links
+
+- [Roles](xref:AccountRole_1) API

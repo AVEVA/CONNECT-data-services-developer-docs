@@ -20,7 +20,7 @@ Follow the procedures to create an asset, add and configure its metadata and pro
 
 5. Click the **+** in the toolbar to create a new asset.
 
-     The `Select Type for New Asset` window opens. By default, the type selected is \*<None>.*
+     The `Select Type for New Asset` window opens. By default, the type selected is  <None>.
 
 6. Accept the default and click **Continue**.
 
@@ -104,3 +104,7 @@ Follow the procedures to create an asset, add and configure its metadata and pro
 
 1. Click **Save**. 
 
+## Related links
+
+- [Assets](xref:AssetsProperties) Properties
+- [Assets API](xref:AssetsAPI)

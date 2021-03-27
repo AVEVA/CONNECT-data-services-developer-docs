@@ -33,3 +33,7 @@ Hybrid clients are used by native and server-side web applications. Authenticati
 
 1. Click **Add**.  
    The `Client Successfully Created` window displays the client Id for the client. The application must specify this client Id when it makes an authentication request. You can copy the client Id by clicking the **Copy** icon. Alternatively, after you close this window, you can also retrieve the client Id from the list of clients.
+
+## Related links
+
+- [Hybrid Client](xref:identityHybridClient) API

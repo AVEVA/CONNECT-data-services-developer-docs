@@ -1,0 +1,41 @@
+tenant:
+  type: text/plain
+  value: |
+    Tenant identifier
+namespace:
+  type: text/plain
+  value: |
+    Namespace identifier
+stream:
+  type: text/plain
+  value: |
+    Stream identifier
+type:
+  type: text/plain
+  value: |
+    Type identifier
+view:
+  type: text/plain
+  value: |
+    Stream view identifier
+count:
+  type: text/plain
+  value: |
+    Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.
+skip:
+  type: text/plain
+  value: |
+    Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.
+orderby:
+  type: text/plain
+  value: |
+    Parameter representing sorted order of returned objects. A field name is required. The sorting is based on the stored values for the given field.
+    For example, ``orderby=name`` would sort the returned results by the ``name`` values (ascending by default).
+    Additionally, a value can be provided along with the field name to identify whether to sort ascending or descending,
+    by using values ``asc`` or ``desc``, respectively.
+    For example, ``orderby=name desc`` would sort the returned results by the ``name`` values, descending.
+    If no value is specified, there is no sorting of results.
+query:
+  type: markdown
+  value: |
+    Parameter representing a string search. See the [Search in SDS](xref:sdsSearching) topic for information about specifying the query parameter.

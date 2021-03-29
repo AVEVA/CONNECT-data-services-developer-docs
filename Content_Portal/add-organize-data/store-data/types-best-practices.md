@@ -2,7 +2,7 @@
 uid: bpTypes
 ---
 
-# Types Best Practices
+# Types best practices
 
 The following are best practices OSIsoft recommends for creating types and streams.
 
@@ -18,7 +18,7 @@ The following are best practices OSIsoft recommends for creating types and strea
 
 - For custom applications using the SDS client libraries or OSIsoft Messaging Format (OMF), OSIsoft recommends that you use the client libraries to define the type rather than defining them in the OSIsoft portal. This ensures that the type the application expects matches the type in the Sequential Data Store. You can also take advantage of the custom property fields such as UOM when defining a property using the .NET client libraries methods.
 
-## Property Patterns
+## Property patterns
 
 When defining what value properties should be added to a type in Sequential Data Store, these are some common patterns that types fall into:
 

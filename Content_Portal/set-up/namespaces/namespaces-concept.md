@@ -3,7 +3,7 @@ uid: ccNamespaces
 ---
 
 
-# About namespaces
+# Namespaces
 
 A namespace is a logical unit of organization for data within a tenant. Each tenant may contain more than one namespace. Before any data can be put into OSIsoft Cloud Services (OCS) for a given tenant, a namespace must be created within the scope of that tenant. When a namespace is created, the region where that namespace will reside (for example, West US) needs to be specified. Once the namespace is created and the necessary resources allocated to support it, any data put into the namespace will reside in the selected region.
 

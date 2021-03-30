@@ -1,7 +1,7 @@
 ---
 uid: ccRoles
 ---
-# About roles
+# Roles
 
 Roles are used to manage access to assets, resources, and services in OSIsoft Cloud Services (OCS). Roles are assigned to identities, which includes users, groups, and client-credentials clients. When an identity attempts to access a resource in OCS, the identity's list of roles is compared against the permissions on the resource to determine whether access is allowed.
 

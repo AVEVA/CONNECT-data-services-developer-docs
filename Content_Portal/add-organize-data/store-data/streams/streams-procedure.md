@@ -11,7 +11,7 @@ Sequential Data Store (SDS) stream data are values or events of the same SDS typ
 
 ## Procedure
 
-1. Click the ![Menu icon](images\menu-icon.png) icon and click **Sequential Data Store** (under Data Management).
+1. Click the ![Menu icon](../images/menu-icon.png) icon and click **Sequential Data Store** (under Data Management).
 
 1. Click **Streams**. From the **Namespace** drop-down list, select the namespace in which you want the stream created.
 
@@ -47,7 +47,7 @@ Sequential Data Store (SDS) stream data are values or events of the same SDS typ
 
 1. In the `Enter Metadata key` and `Enter Metadata value` fields, enter the key and value of your metadata.
 
-    **Note:** You can click either of these fields to edit them later, click the **X** to delete it from the stream, or click the ![Information](images/info.png) to see who last changed this metadata key.
+    **Note:** You can click either of these fields to edit them later, click the **X** to delete it from the stream, or click the ![Information](../images/info.png) to see who last changed this metadata key.
 
 
 ## Related links

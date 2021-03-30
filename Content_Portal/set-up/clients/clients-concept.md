@@ -1,7 +1,7 @@
 ---
 uid: ccClients
 ---
-# About clients
+# Clients
 
 Clients provide a way for users or applications to authenticate against OSIsoft Cloud Services (OCS) from applications other than the OCS portal. OCS supports three types of clients, each of which support different types of applications.
 

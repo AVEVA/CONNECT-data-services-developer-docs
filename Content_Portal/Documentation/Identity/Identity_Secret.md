@@ -117,13 +117,13 @@ int32 count
 
 Maximum number of clients to return.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -198,13 +198,13 @@ int32 secretId
 
 Id of secret.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -290,13 +290,13 @@ Description | string | No | Description for the client secret. We suggest being 
 }
 ```
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 201
 
@@ -397,13 +397,13 @@ Description | string | No | Description for the client secret. We suggest being 
 }
 ```
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -482,13 +482,13 @@ int32 secretId
 
 Id of secret.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 204
 
@@ -552,13 +552,13 @@ int32 secretId
 
 Id of secret.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -609,13 +609,13 @@ string clientId
 
 Id of client.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -695,13 +695,13 @@ int32 count
 
 Maximum number of clients to return.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -776,13 +776,13 @@ int32 secretId
 
 Id of secret.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -866,13 +866,13 @@ Description | string | No | Description for the client secret. We suggest being 
 }
 ```
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 201
 
@@ -978,13 +978,13 @@ Description | string | No | Description for the client secret. We suggest being 
 }
 ```
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -1066,13 +1066,13 @@ int32 secretId
 
 Id of secret.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 204
 
@@ -1136,13 +1136,13 @@ int32 secretId
 
 Id of secret.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -1196,13 +1196,13 @@ string clientId
 
 Id of client.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 

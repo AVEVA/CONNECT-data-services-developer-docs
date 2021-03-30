@@ -115,14 +115,14 @@ Tags | string[] | No | Tags associated with this automation identity.
 }
 ```
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Member`
-- `Account Administrator`
+- `Tenant Member`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 201
 
@@ -209,14 +209,14 @@ Guid automationIdentityId
 
 Id of automation identity.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Member`
-- `Account Administrator`
+- `Tenant Member`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -287,14 +287,14 @@ Guid automationIdentityId
 
 Id of automation identity.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Member`
-- `Account Administrator`
+- `Tenant Member`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -374,14 +374,14 @@ int32 count
 
 Maximum number of automation identities to return. Ignored if a list of ids is passed.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Member`
-- `Account Administrator`
+- `Tenant Member`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -473,14 +473,14 @@ string[] tag
 
 Only count automation identities that have at least one of these tags.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Member`
-- `Account Administrator`
+- `Tenant Member`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -531,14 +531,14 @@ Guid automationIdentityId
 
 Id of automation identity.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Member`
-- `Account Administrator`
+- `Tenant Member`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 204
 
@@ -623,14 +623,14 @@ Tags | string[] | No | Tags associated with this automation identity.
 }
 ```
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Member`
-- `Account Administrator`
+- `Tenant Member`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 

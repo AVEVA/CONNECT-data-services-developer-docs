@@ -60,14 +60,14 @@ Guid userId
 
 Id of user.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Member`
-- `Account Administrator`
+- `Tenant Member`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -125,14 +125,14 @@ Guid userId
 
 Id of user.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Member`
-- `Account Administrator`
+- `Tenant Member`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -184,14 +184,14 @@ Guid userId
 
 Id of user.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Member`
-- `Account Administrator`
+- `Tenant Member`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 204
 

@@ -24,7 +24,7 @@ Some of this information is exposed as paged collections, which accept parameter
 
 Paged responses include a `Link` header, with a hyperlink to the first page of results. If the results extend into an additional page, a hyperlink to the next page will also be included in the `Link` header.
 
-Using these hyperlinks is the recommended method of paging. Alternatively, constructing paging links by manually incrementing the `skip` is allowable, though in this case it is recommended to specify cache behavior of "preserve".
+Using these hyperlinks is the recommended method of paging. Alternatively, constructing paging links by manually incrementing the `skip` is allowable, though in this case it is recommended to specify cache behavior of "preserve". In addition, `Next-Page` and `First-Page` headers are provided for applications that do not support the `Link` header. The values for these headers are identical to the hyperlinks from the `Link` header.
 
 ### How is a data view resolved?
 Data views resolve on a per user basis. Data views respect the permissions on underlying data items such as streams and assets. For example, if a user does not have read access to a particular stream in SDS, then that stream is not visible from data views.

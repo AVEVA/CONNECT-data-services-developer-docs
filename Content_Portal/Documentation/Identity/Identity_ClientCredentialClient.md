@@ -15,8 +15,6 @@ Client credential clients are used for machine-to-machine communication without
             least privilege strategy when assigning roles to these clients, as they are more
             likely to operate in remote machines with a wider attack surface.
 
-Because they access resources on OSIsoft Cloud Services and are not associated to users, these clients can be assigned any of the roles in the tenant. We suggest following a least privilege strategy when assigning roles to these clients, as they are more likely to operate in remote machines with a wider attack surface.
-
 ## Properties
 
 For HTTP requests and responses, the ClientCredentialClient object has the following properties and JSON-serialized body: 
@@ -137,13 +135,13 @@ Tags | string[] | No | For OSIsoft internal use only.
 }
 ```
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 201
 
@@ -270,13 +268,13 @@ Tags | string[] | No | For OSIsoft internal use only.
 }
 ```
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -356,14 +354,14 @@ string clientId
 
 Id of client.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Member`
-- `Account Administrator`
+- `Tenant Member`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -471,14 +469,14 @@ int32 count
 
 Maximum number of clients to return. Will be ignored if a list of Ids is passed.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Member`
-- `Account Administrator`
+- `Tenant Member`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -628,13 +626,13 @@ string clientId
 
 Id of client.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Administrator`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 204
 
@@ -691,14 +689,14 @@ string clientId
 
 Id of client.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Member`
-- `Account Administrator`
+- `Tenant Member`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 
@@ -760,14 +758,14 @@ string[] tag
 
 Only count clients that have these tags.
 
-### Security
+### Authorization
 
 Allowed for these roles:
 
-- `Account Member`
-- `Account Administrator`
+- `Tenant Member`
+- `Tenant Administrator`
 
-### Returns
+### Response
 
 #### 200
 

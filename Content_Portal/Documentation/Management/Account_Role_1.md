@@ -4,9 +4,9 @@ uid: AccountRole_1
 
 # Roles
 
-A `Role` is a representation of a user’s job that is used to authorize access to resources necessary to accomplish that job. A user may have multiple roles assigned to it. All users are assigned the Account Member role by default. There are two predefined Roles for OCS accounts. Check the user or client role APIs for more information.
-- Account Administrator
-- Account Member
+A `Role` is a representation of a user’s job that is used to authorize access to resources necessary to accomplish that job. A user may have multiple roles assigned to it. All users are assigned the Tenant Member role by default. There are two predefined Roles for OCS accounts. Check the user or client role APIs for more information.
+- Tenant Administrator
+- Tenant Member
 
 
 ## Properties
@@ -39,7 +39,7 @@ For HTTP requests and responses, the Role object has the following properties an
 
 Creates a new tenant `Role`.
 
-### Http
+### Request
 
 `POST api/v1/Tenants/{tenantId}/Roles`
 
@@ -62,11 +62,11 @@ Role role
 The new `Role` to be created.
 
 
-### Security
+### Authorization
 
-Authorized for Account Administrators of the specified tenant.
+Authorized for Tenant Administrators of the specified tenant.
 
-### Returns
+### Response
 
 | Status Code | Return Type | Description | 
  | --- | --- | ---  | 
@@ -83,7 +83,7 @@ Authorized for Account Administrators of the specified tenant.
 ## `Delete Tenant Role`
 
 Deletes any tenant scoped, non built-in `Role` by its Role Id.
-### Http
+### Request
 
 `DELETE api/v1/Tenants/{tenantId}/Roles/{roleId}`
 
@@ -106,11 +106,11 @@ string roleId
 The identifier of the `Role` to delete.
 
 
-### Security
+### Authorization
 
-Authorized for Account Administrators of the specified tenant.
+Authorized for Tenant Administrators of the specified tenant.
 
-### Returns
+### Response
 
 | Status Code | Return Type | Description |
 | --- | --- | ---  |
@@ -125,7 +125,7 @@ Authorized for Account Administrators of the specified tenant.
 
 Retrieves a tenant `Role` based on the specified tenant Id and role Id.
 
-### Http
+### Request
 
 `GET api/v1/Tenants/{tenantId}/Roles/{roleId}`
 
@@ -148,11 +148,11 @@ string roleId
 The identifier of the `Role` to return.
 
 
-### Security
+### Authorization
 
-Authorized for Account Administrators of the specified tenant.
+Authorized for Tenant Administrators of the specified tenant.
 
-### Returns
+### Response
 
 | Status Code | Return Type | Description | 
  | --- | --- | ---  | 
@@ -167,7 +167,7 @@ Authorized for Account Administrators of the specified tenant.
 
 Retrieves all tenant `Roles` for the specified tenant Id.
 
-### Http
+### Request
 
 `GET api/v1/Tenants/{tenantId}/Roles`
 
@@ -207,11 +207,11 @@ string query
 Unsupported parameter.
 
 
-### Security
+### Authorization
 
-Authorized for Account Members of the specified tenant.
+Authorized for Tenant Members of the specified tenant.
 
-### Returns
+### Response
 
 | Status Code | Return Type | Description | 
  | --- | --- | ---  | 
@@ -225,7 +225,7 @@ Authorized for Account Members of the specified tenant.
 
 Updates a `Role` by its Role Id.
 
-### Http
+### Request
 
 `PUT api/v1/Tenants/{tenantId}/Roles/{roleId}`
 
@@ -255,11 +255,11 @@ Role role
 The updated `Role` for this request.
 
 
-### Security
+### Authorization
 
-Authorized for Account Administrators of the specified tenant.
+Authorized for Tenant Administrators of the specified tenant.
 
-### Returns
+### Response
 
 | Status Code | Return Type | Description | 
  | --- | --- | ---  | 

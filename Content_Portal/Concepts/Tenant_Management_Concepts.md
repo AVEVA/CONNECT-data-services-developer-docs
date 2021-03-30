@@ -5,7 +5,6 @@ uid: TenantManagementConcepts
 # Tenant Management Concepts
 
 
-
 ## Tenant
 
 A tenant is how OSIsoft Cloud Services (OCS) refers to a customer, client, or organization. Before a customer can use OCS, a tenant must be provisioned for them. A customer will have at least one tenant and could have more than one tenant. Each tenant has at least one identity provider associated with it. Tenants also span regions within OCS. For example, OCS currently has services hosted in two regions, West US, and West Europe. If the tenant is authorized to use multiple regions, they can create resources (for example, namespaces) in each region.

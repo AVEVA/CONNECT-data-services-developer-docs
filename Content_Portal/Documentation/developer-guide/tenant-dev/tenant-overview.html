@@ -5,19 +5,19 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Introduction to least privilege </title>
+    <title>Tenant management </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Introduction to least privilege ">
+    <meta name="title" content="Tenant management ">
     <meta name="generator" content="docfx 2.56.5.0">
     
-    <link rel="shortcut icon" href="../../favicon.ico">
-    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../../styles/docfx.css">
-    <link rel="stylesheet" href="../../styles/main.css">
-    <meta property="docfx:navrel" content="../../toc.html">
-    <meta property="docfx:tocrel" content="../toc.html">
+    <link rel="shortcut icon" href="../../../../favicon.ico">
+    <link rel="stylesheet" href="../../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../../toc.html">
+    <meta property="docfx:tocrel" content="../../../toc.html">
     
-    <meta property="docfx:rel" content="../../">
+    <meta property="docfx:rel" content="../../../../">
     
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
@@ -33,8 +33,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../index.html" width="46">
-        <img id="logo" src="../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Services">
+              <a class="navbar-brand" href="../../../../index.html" width="46">
+        <img id="logo" src="../../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Services">
         </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -75,14 +75,10 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="LeastPrivilege">
-<h1 id="introduction-to-least-privilege">Introduction to least privilege</h1>
+            <article class="content wrap" id="_content" data-uid="tenant-mgmt">
+<h1 id="tenant-management">Tenant management</h1>
 
-<p>When creating new users or client credential clients, configure them using the principle of <a href="https://us-cert.cisa.gov/bsi/articles/knowledge/principles/least-privilege">Least Privilege</a>. A user or client should be assigned the lowest privileged role necessary to access resources in OSIsoft resources.
-Ensure that clients which are not being used are either deleted or disabled by setting the <strong>Enabled</strong> property to false.
-To limit the potential consequences of client credential theft, OSIsoft advise against assigning client credentials clients the Administrator role. Any actions that require Administrator privileges should be done through the OCS portal, when possible. </p>
-<h2 id="one-client-per-application">One client per application</h2>
-<p>OSIsoft suggests that a client is created in OCS for each instance of a running application. This makes identification easier and decreases the attack surface from a leaked secret. In such an event, only one application needs to be updated.</p>
+<p>The Tenant Management API allows users to create, manage, and administer OSIsoft Cloud Services (OCS) tenants by assigning users, roles, and namespaces to their tenants. Through the API, users can manage access control that is used in the OCS infrastructure. Generally, only administrators should have access to the tenant management features. Administration functionality is also available from the OCS portal.</p>
 </article>
           </div>
           
@@ -91,7 +87,7 @@ To limit the potential consequences of client credential theft, OSIsoft advise a
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Concepts/least-privilege.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/developer-guide/tenant-dev/tenant-overview.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -117,8 +113,8 @@ To limit the potential consequences of client credential theft, OSIsoft advise a
       </footer>
     </div>
     
-    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../styles/main.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
   </body>
 </html>

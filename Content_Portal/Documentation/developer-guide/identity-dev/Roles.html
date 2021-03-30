@@ -5,19 +5,19 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Introduction to token management </title>
+    <title>Preconfigured roles </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Introduction to token management ">
+    <meta name="title" content="Preconfigured roles ">
     <meta name="generator" content="docfx 2.56.5.0">
     
-    <link rel="shortcut icon" href="../../favicon.ico">
-    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../../styles/docfx.css">
-    <link rel="stylesheet" href="../../styles/main.css">
-    <meta property="docfx:navrel" content="../../toc.html">
-    <meta property="docfx:tocrel" content="../toc.html">
+    <link rel="shortcut icon" href="../../../../favicon.ico">
+    <link rel="stylesheet" href="../../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../../toc.html">
+    <meta property="docfx:tocrel" content="../../../toc.html">
     
-    <meta property="docfx:rel" content="../../">
+    <meta property="docfx:rel" content="../../../../">
     
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
@@ -33,8 +33,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../index.html" width="46">
-        <img id="logo" src="../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Services">
+              <a class="navbar-brand" href="../../../../index.html" width="46">
+        <img id="logo" src="../../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Services">
         </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -75,15 +75,18 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="TokenManagement">
-<h1 id="introduction-to-token-management">Introduction to token management</h1>
+            <article class="content wrap" id="_content" data-uid="Roles">
+<h1 id="preconfigured-roles">Preconfigured roles</h1>
 
-<p>The token that results from a successful authentication process and contains some predefined fields. This is sent as part of the Authorization header with all requests to OSIsoft resources and services. Clients can be configured to generate access tokens with varying expiration between 60 seconds and one hour. The default access token lifespan is one hour. There is no limit on the number of access tokens a client can be issued at any given time. </p>
-<h2 id="token-management-with-client-credential-clients">Token management with client credential clients</h2>
-<p>The application must be running in a device/virtual machine that you either own or have provisioned and must be a secure environment (for example, only authorized persons can access the application and its associated Secrets).</p>
-<p>A valid access token grants its possessor access to protected resources. As such, they are as critical as passwords and secrets and should be treated the same way.</p>
-<h2 id="token-management-with-authorization-code-clients">Token management with authorization code clients</h2>
-<p>The application will be running in a browser. The OWASP foundation suggests storing the access token in the browser session Storage container.</p>
+<p>OSIsoft provides two preconfigured roles:</p>
+<ul>
+<li>Tenant Member</li>
+<li>Tenant Administrator</li>
+</ul>
+<h2 id="tenant-member">Tenant Member</h2>
+<p>Tenant Member is assigned to every user and Client Credential Client. Users and Clients issued with this role can generally access information pertaining to themselves.</p>
+<h2 id="tenant-administrator">Tenant Administrator</h2>
+<p>This is the highest privilege role, with the ability to create new and remove existing users, clients and secrets. OSIsoft advises against assigning this role to Client Credential Clients.</p>
 </article>
           </div>
           
@@ -92,7 +95,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Concepts/token-management.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/developer-guide/identity-dev/Roles.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -118,8 +121,8 @@
       </footer>
     </div>
     
-    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../styles/main.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
   </body>
 </html>

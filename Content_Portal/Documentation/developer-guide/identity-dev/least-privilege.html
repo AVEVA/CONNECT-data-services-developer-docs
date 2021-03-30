@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Disable IE enhanced security </title>
+    <title>Introduction to least privilege </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Disable IE enhanced security ">
+    <meta name="title" content="Introduction to least privilege ">
     <meta name="generator" content="docfx 2.56.5.0">
     
     <link rel="shortcut icon" href="../../../../favicon.ico">
@@ -75,20 +75,14 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="disable-ie-security">
-<h1 id="disable-ie-enhanced-security">Disable IE enhanced security</h1>
+            <article class="content wrap" id="_content" data-uid="LeastPrivilege">
+<h1 id="introduction-to-least-privilege">Introduction to least privilege</h1>
 
-<p>If Internet Explorer Enhanced Security Configuration (IE ESC) is turned on, you will receive an error message to disable this setting before you can log on to OCS and register the PI to OCS Agent. To avoid this issue, you can switch to another web browser during agent installation.</p>
-<h3 id="procedure">Procedure</h3>
-<p>Follow these steps to disable Internet Explorer Enhanced Security Configuration:</p>
-<ol>
-<li>On the computer the agent is installed (Windows Server operating system), open Server Manager.</li>
-<li>Navigate to the <strong>Internet Explorer Enhanced Security Configuration</strong> window.</li>
-<li>Select the <strong>Off</strong> option under <strong>Administrators</strong>.</li>
-<li>Click <strong>OK</strong>.</li>
-</ol>
-<p>You can now complete the PI to OCS Agent install and registration.</p>
-<p><strong>Note:</strong> You can turn on IE Enhanced Security Configuration after you complete the PI to OCS Agent installation.</p>
+<p>When creating new users or client credential clients, configure them using the principle of <a href="https://us-cert.cisa.gov/bsi/articles/knowledge/principles/least-privilege">Least Privilege</a>. A user or client should be assigned the lowest privileged role necessary to access resources in OSIsoft resources.
+Ensure that clients which are not being used are either deleted or disabled by setting the <strong>Enabled</strong> property to false.
+To limit the potential consequences of client credential theft, OSIsoft advise against assigning client credentials clients the Administrator role. Any actions that require Administrator privileges should be done through the OCS portal, when possible. </p>
+<h2 id="one-client-per-application">One client per application</h2>
+<p>OSIsoft suggests that a client is created in OCS for each instance of a running application. This makes identification easier and decreases the attack surface from a leaked secret. In such an event, only one application needs to be updated.</p>
 </article>
           </div>
           
@@ -97,7 +91,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Agent/disable-ie-security.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/developer-guide/identity-dev/least-privilege.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

@@ -38,18 +38,6 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "Content_Portal/Concepts/Consent.md",
-      "output": {
-        ".html": {
-          "relative_path": "Content_Portal/Concepts/Consent.html",
-          "hash": "Lgu8fQz+2AvCNWnxFZ7vtw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
       "source_relative_path": "Content_Portal/Concepts/Data_Storage_Concepts.md",
       "output": {
         ".html": {
@@ -62,59 +50,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "Content_Portal/Concepts/Roles.md",
-      "output": {
-        ".html": {
-          "relative_path": "Content_Portal/Concepts/Roles.html",
-          "hash": "V1PT6nJ6PoDuyJRdoG8iiQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
       "source_relative_path": "Content_Portal/Concepts/Tenant_Management_Concepts.md",
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Concepts/Tenant_Management_Concepts.html",
           "hash": "UYwHYudKa1bnrifdx50IXw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Content_Portal/Concepts/credential-management.md",
-      "output": {
-        ".html": {
-          "relative_path": "Content_Portal/Concepts/credential-management.html",
-          "hash": "W9ipMyj2zdkhWjWiZ9a93g=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Content_Portal/Concepts/least-privilege.md",
-      "output": {
-        ".html": {
-          "relative_path": "Content_Portal/Concepts/least-privilege.html",
-          "hash": "yWj6GSnnl06ah+iASOnQkg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Content_Portal/Concepts/token-management.md",
-      "output": {
-        ".html": {
-          "relative_path": "Content_Portal/Concepts/token-management.html",
-          "hash": "MeQQA8517rMNEHK5CawIVQ=="
         }
       },
       "is_incremental": false,
@@ -693,7 +633,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Identity/Identity_AuthorizationCodeClient.html",
-          "hash": "M1K5N6G4L3W6NE9NQLsykQ=="
+          "hash": "KdOx7kUeqf1zDT/Kz7D2GA=="
         }
       },
       "is_incremental": false,
@@ -765,7 +705,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Identity/Identity_HybridClient.html",
-          "hash": "liCMIWqjEEEldYUtxdZx3w=="
+          "hash": "n34F/tOxTTQYgVcM6xlKnA=="
         }
       },
       "is_incremental": false,
@@ -813,7 +753,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Identity/Identity_Secret.html",
-          "hash": "aY7jQoT0o3N60Loh1Q7yJw=="
+          "hash": "TGcojdFPj6Fw4yBNlTkLeg=="
         }
       },
       "is_incremental": false,
@@ -825,7 +765,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Identity/Identity_User.html",
-          "hash": "E9yIQRJ7L5KJETMDyGCrxg=="
+          "hash": "+UB7mNt1JKwF/vteG4rG/A=="
         }
       },
       "is_incremental": false,
@@ -1252,6 +1192,117 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/developer-guide/identity-dev/Access_Control.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/developer-guide/identity-dev/Access_Control.html",
+          "hash": "o4dYYHzpmT51oeBbIshleQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/developer-guide/identity-dev/Roles.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/developer-guide/identity-dev/Roles.html",
+          "hash": "733F4d743k5xmh1wgQiynw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/developer-guide/identity-dev/credential-management.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/developer-guide/identity-dev/credential-management.html",
+          "hash": "z0QCGv81T0q+zQ7xjWVMGw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/developer-guide/identity-dev/identity-access-management.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/developer-guide/identity-dev/identity-access-management.html",
+          "hash": "CnQ720J9Y7sv73Lk3DD1hw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/developer-guide/identity-dev/least-privilege.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/developer-guide/identity-dev/least-privilege.html",
+          "hash": "5mQ8WOXbaPiZrU36GgXs1Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/developer-guide/identity-dev/token-management.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/developer-guide/identity-dev/token-management.html",
+          "hash": "Ey/r9F7rzIyK4ej/ymfJ6A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/developer-guide/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/developer-guide/introduction.html",
+          "hash": "CxVeS0LkjE1t49YoY7b/JQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/developer-guide/tenant-dev/Consent.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/developer-guide/tenant-dev/Consent.html",
+          "hash": "PU3s1GVmWQmsAGOhmEaJpQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/developer-guide/tenant-dev/tenant-overview.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/developer-guide/tenant-dev/tenant-overview.html",
+          "hash": "4eP5t+Nex0JAd+Is0uGOFQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "Content_Portal/Documentation/http-status-codes.md",
       "output": {
@@ -1470,7 +1521,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Agent/disable-ie-security.html",
-          "hash": "mueca2HuuIwFEZThhTJXpA=="
+          "hash": "8IdpiAEdHVZiVOEWaJ164Q=="
         }
       },
       "is_incremental": false,
@@ -2854,7 +2905,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/toc.html",
-          "hash": "C9XPZME83buYLaBnSwfb4g=="
+          "hash": "1FyYtv6SRA/9VT2n4vOqqA=="
         }
       },
       "is_incremental": false,
@@ -2911,7 +2962,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 150,
+          "total_file_count": 154,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

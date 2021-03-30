@@ -105,7 +105,7 @@ references:
   href: Content_Portal/How_To_Guides/PI-to-OCS/Set-up-PI-to-OCS/create-a-pi-to-ocs-connection.html
 - uid: CredentialManagement
   name: Introduction to credential management
-  href: Content_Portal/Concepts/credential-management.html
+  href: Content_Portal/Documentation/developer-guide/identity-dev/credential-management.html
 - uid: dataIngress
   name: Data collection and OSIsoft Message Format
   href: Content_Portal/Documentation/DataIngress/Data_Ingress.html
@@ -196,6 +196,9 @@ references:
 - uid: GettingStartedWithTrendData
   name: Getting started with trend data
   href: Content_Portal/Quickstarts/Getting-Started-Trend.html
+- uid: id-access-mgmt
+  name: Identity and access management
+  href: Content_Portal/Documentation/developer-guide/identity-dev/identity-access-management.html
 - uid: identityandaccessmanagement
   name: Identity and Access Management
   href: Content_Portal/Documentation/Identity/Identity_and_Access_Management.html
@@ -219,7 +222,7 @@ references:
   href: Content_Portal/Documentation/Identity/Identity_ClientCredentialClient.html
 - uid: identityConsent
   name: Consent to Add AAD or AAD with Advanced Integration as an Identity Provider to your OCS Tenant
-  href: Content_Portal/Concepts/Consent.html
+  href: Content_Portal/Documentation/developer-guide/tenant-dev/Consent.html
 - uid: identityHybridClient
   name: Hybrid Client
   href: Content_Portal/Documentation/Identity/Identity_HybridClient.html
@@ -244,6 +247,9 @@ references:
 - uid: install-pi-to-ocs-agent
   name: Install the PI to OCS Agent
   href: Content_Portal/How_To_Guides/PI-to-OCS/Set-up-PI-to-OCS/install-agent.html
+- uid: intro-dev-guide
+  name: OSIsoft Cloud Services developer guide
+  href: Content_Portal/Documentation/developer-guide/introduction.html
 - uid: landing-page1
   name: PI to OCS Introduction
   href: Content_Portal/How_To_Guides/PI-to-OCS/Overview-PI-to-OCS/landing-page1.html
@@ -261,7 +267,7 @@ references:
   href: Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-log-messages/landing-page5.html
 - uid: LeastPrivilege
   name: Introduction to least privilege
-  href: Content_Portal/Concepts/least-privilege.html
+  href: Content_Portal/Documentation/developer-guide/identity-dev/least-privilege.html
 - uid: log-messages
   name: Common Event Viewer log messages
   href: Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-log-messages/log-messages.html
@@ -345,7 +351,7 @@ references:
   href: Content_Portal/Documentation/DataViews/DataViewsAPIOverview/Resolved_Data_View_Preview_API.html
 - uid: Roles
   name: Preconfigured roles
-  href: Content_Portal/Concepts/Roles.html
+  href: Content_Portal/Documentation/developer-guide/identity-dev/Roles.html
 - uid: samples
   name: Samples
   href: Content_Portal/Documentation/samples.html
@@ -403,9 +409,12 @@ references:
 - uid: TenantManagementConcepts
   name: Tenant Management Concepts
   href: Content_Portal/Concepts/Tenant_Management_Concepts.html
+- uid: tenant-mgmt
+  name: Tenant management
+  href: Content_Portal/Documentation/developer-guide/tenant-dev/tenant-overview.html
 - uid: TokenManagement
   name: Introduction to token management
-  href: Content_Portal/Concepts/token-management.html
+  href: Content_Portal/Documentation/developer-guide/identity-dev/token-management.html
 - uid: transfer-data-to-ocs
   name: Transfer PI System data to OCS
   href: Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Data-Transfers/transfer-data-to-ocs.html

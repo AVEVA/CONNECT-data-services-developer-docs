@@ -1,24 +1,12 @@
-- name: About namespaces
-  topicHref: namespaces-concept.md
-- name: Namespaces best practices
-  topicHref: namespaces-best-practices.md
-- name: Add a namespace
-  topicHref: namespaces-procedure.md
-- name: About roles
-  topicHref: roles-concept.md
-- name: Add a role
-  topicHref: roles-procedure.md
-- name: About users
-  topicHref: users-concept.md
-- name: Add a user
-  topicHref: users-procedure.md
-- name: About clients
-  topicHref: clients-concept.md
-- name: Add a client
-  topicHref: clients-procedure.md
-- name: Add a client-credentials client
-  topicHref: client-credentials-client-procedure.md
-- name: Add an authorization code client
-  topicHref: authorization-code-client-procedure.md
-- name: Add a hybrid client
-  topicHref: hybrid-client-procedure.md
+- name: Namespaces
+  topicHref: namespaces/namespaces-concept.md
+  href: namespaces/toc.yml
+- name: Roles
+  topicHref: roles/roles-concept.md
+  href: roles/toc.yml
+- name: Users
+  topicHref: users/users-concept.md
+  href: users/toc.yml
+- name: Clients
+  topicHref: clients/clients-concept.md
+  href: clients/toc.yml

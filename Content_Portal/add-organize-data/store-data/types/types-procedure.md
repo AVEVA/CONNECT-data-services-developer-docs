@@ -11,7 +11,7 @@ Sequential Data Store (SDS) types define the shape and structure of events and h
 
 ## Procedure
 
-1. Click the ![Menu icon](images\menu-icon.png) icon and click **Sequential Data Store** (under Data Management).
+1. Click the ![Menu icon](../images/menu-icon.png) icon and click **Sequential Data Store** (under Data Management).
 
 1. Click **Types**. From the **Namespace** drop-down list, select the namespace in which you want the type created.
 
@@ -23,7 +23,7 @@ Sequential Data Store (SDS) types define the shape and structure of events and h
    - `Name` &ndash; User-friendly name
    - `Description` &ndash; Descriptive text that you can use to identify the type
 
-1. Click the ![Properties icon](Images\PropertiesPlusIcon.png)icon next to **Properties** to add a property.
+1. Click the ![Properties icon](../images/PropertiesPlusIcon.png)icon next to **Properties** to add a property.
 
 1. Complete the following fields for the first property:
    - `Id` &ndash; Identifier for referencing the property

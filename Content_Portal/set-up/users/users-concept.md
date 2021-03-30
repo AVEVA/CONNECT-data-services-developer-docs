@@ -1,7 +1,7 @@
 ---
 uid: ccUsers
 ---
-# About users
+# Users
 
 A user is an identity that has access to an OSIsoft Cloud Services (OCS) tenant. Roles assigned to a user determine what permissions the user has on resources in OCS. For more information on roles, see [About Roles](xref:ccRoles). Users must be linked to a tenant from an enabled identity provider such as Azure Active Directory, Microsoft Accounts, or Google. Users log in to OCS using the credentials from that account.
 

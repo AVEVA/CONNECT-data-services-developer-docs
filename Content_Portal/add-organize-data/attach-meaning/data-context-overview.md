@@ -1,8 +1,8 @@
 ---
-uid: lpattachmeaningtodata
+uid: lporganizedata
 ---
 
-# Attach meaning to data
+# Organize data
 
 You can create asset definitions to help organize and visualize information about a particular asset, such as a truck or a mixing tank. You categorize asset data by specifying:
 

@@ -7,7 +7,7 @@ Hybrid clients are used by native and server-side web applications. Authenticati
 
 - [Introduction to hybrid clients](xref:ccClients#hybrid-client)
 - [Hybrid client PI Server counterpart](xref:ccClients#hybrid-client-pi-server)
-- [Hybrid client best prractices](xref:ccClients#hybrid-client-bp)
+- [Hybrid client best practices](xref:ccClients#hybrid-client-bp)
 
 ## Procedure
 

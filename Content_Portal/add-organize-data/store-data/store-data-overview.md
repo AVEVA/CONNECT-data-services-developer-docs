@@ -2,7 +2,7 @@
 uid: lpstoredata
 ---
 
-# Data storage
+# Store data
 
 You can use the Sequential Data Store (SDS) to store, retrieve, and organize any type of streaming data. 
 

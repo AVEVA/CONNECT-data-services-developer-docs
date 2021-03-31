@@ -1,11 +1,11 @@
 - name: Client roles
-  href: account-client-role-1.md
+  href: account-client-role.md
 - name: Namespaces
-  href: account-namespace-1.md
+  href: account-namespace.md
 - name: Roles
-  href: account-role-1.md
+  href: account-role.md
 - name: Root access control
-  href: account-root-access-control-1.md
+  href: account-root-access-control.md
 - name: Service Blog
   href: account-service-blog.md
 - name: Tenants
@@ -13,5 +13,5 @@
 - name: Tenant feature states
   href: account-tenant-feature-state.md
 - name: User roles
-  href: account-user-role-1.md
+  href: account-user-role.md
   

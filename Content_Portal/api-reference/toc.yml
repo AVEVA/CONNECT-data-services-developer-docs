@@ -25,7 +25,7 @@
   href: operations/toc.yml
   topicHref: operations/operations-overview.md
 - name: Role-based access control
-  topicHref: access-control.md
+  topicHref: ../developer-guide/identity-dev/dev-guide-role-based-access-control.md
 - name: HTTP status codes
   topicHref: http-status-codes.md
 - name: Samples

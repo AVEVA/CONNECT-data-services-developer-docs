@@ -1,10 +1,10 @@
 - name: Credential management
-  topicHref: credential-management.md
+  topicHref: dev-guide-credential-management.md
 - name: Least privileges 
-  topicHref: least-privilege.md
+  topicHref: dev-guide-least-privilege.md
 - name: Roles
-  topicHref: Roles.md
+  topicHref: dev-guide-roles.md
 - name: Role-based access control 
-  topicHref: Access_Control.md
+  topicHref: dev-guide-role-based-access-control.md
 - name: Token management 
-  topicHref: token-management.md
+  topicHref: dev-guide-token-management.md

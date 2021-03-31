@@ -2,7 +2,7 @@
 uid: accessControl
 ---
 
-# Role-based access control 
+# Role-based access control
 
 Within OCS, role-based access control to entities such as Namespaces and Streams, is managed using an Access Control List (ACL) and an Owner identity assigned to each entity. ACLs control access to entities based on their OCS Roles.
 
@@ -17,25 +17,25 @@ A user or application that attempts to read, write, delete, or manage access con
 AccessRights are the bitwise union of all of the access rights they encompass. For example, `AccessRights 3` indicates that Read and Write access is permitted.
 
 ### Notes
+
 - If an operation requires more than one access right then an identity can obtain those rights from multiple ACL entries.
 - `AccessType.Denied` takes precedence over `AccessType.Allowed`.
   - For example, a role that is assigned `AccessType.Denied` for `AccessRights.All` will receive a `forbidden` for all  requests unless they are the owner of the entity.
 - Roles are the only TrusteeType supported for AccessControlList ACEs.
 - At least one role must be given Manage Permission access.
 
-| TrusteeType           | TypeId | 
+| TrusteeType           | TypeId |
 |-----------------------|--------|
 | User                  | 1      |
 | Application           | 2      |
 | Role                  | 3      |
 
-
-| AccessType            | TypeId | 
+| AccessType            | TypeId |
 |-----------------------|--------|
 | Allowed               | 0      |
 | Denied                | 1      |
 
-### CommonAccessRightsEnum 
+### CommonAccessRightsEnum
 
 | AccessRights          | int  | bitwise |
 |-----------------------|------|---------|
@@ -53,6 +53,7 @@ The following code sample shows the structure and format for an ACL that gives R
 **Body**
 
 Sample  body:
+
 ```json
 HTTP/1.1 200
 Content-Type: application/json
@@ -92,6 +93,7 @@ Content-Type: application/json
 Owner objects on OCS entities are used to grant access for all operations on the entity regardless of the entity's AccessControlList's AccessControlEntries. 
 
 ### Note
+
 - Currently, only Users and Applications are valid owners for entities.  
 
 ### Trustee
@@ -99,6 +101,7 @@ Owner objects on OCS entities are used to grant access for all operations on the
 The following code samples shows the format and structure of an owner object:
 
 **User Owner Body**
+
 ```json
 "Owner": {
 	"Type": 1,
@@ -108,6 +111,7 @@ The following code samples shows the format and structure of an owner object:
 ```
 
 **Application Owner Body**
+
 ```json
 "Owner": {
 	"Type": 2,

@@ -2,7 +2,8 @@
 uid: TokenManagement
 ---
 
-# Introduction to token management
+# Token management
+
 The token that results from a successful authentication process and contains some predefined fields. This is sent as part of the Authorization header with all requests to OSIsoft resources and services. Clients can be configured to generate access tokens with varying expiration between 60 seconds and one hour. The default access token lifespan is one hour. There is no limit on the number of access tokens a client can be issued at any given time. 
 
 ## Token management with client credential clients

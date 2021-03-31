@@ -32,7 +32,7 @@
       {
         "files": [
             "Content_Portal/rom/images/**",
-            "Content_Portal/Documentation/images/**",
+            "Content_Portal/api-reference/images/**",
             "Content_Portal/add-organize-data/images/**",
             "Content_Portal/add-organize-data/collect-data/connectors/images/**",
             "Content_Portal/add-organize-data/collect-data/connectors/omf/images/**",
@@ -41,10 +41,11 @@
             "Content_Portal/add-organize-data/store-data/images/**",
             "Content_Portal/set-up/images/**",
             "Content_Portal/visualize-data/images/**",
-            "Content_Portal/Overview/images/**",
-            "Content_Portal/Overview/get-started/images/**",
-            "Content_Portal/Overview/get-started/clients/images/**",
-            "Content_Portal/Overview/get-started/connections/images/**"
+            "Content_Portal/overview/images/**",
+            "Content_Portal/overview/get-started/images/**",
+            "Content_Portal/overview/get-started/clients/images/**",
+            "Content_Portal/overview/get-started/connections/images/**",
+            "Content_Portal/developer-guide/images/**"
         ]
       }
     ],

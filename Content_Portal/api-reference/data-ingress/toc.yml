@@ -1,6 +1,6 @@
 - name: OMF ingress to OCS
   href: omf-ingress-to-ocs.md
-- name: Use OSIsoft Message Format with OSIsoft Cloud Services
+- name: Use OMF with OCS
   href: omf-ingress-specification.md
 - name: OMF ingress topics 
   href: omf-ingress-topics.md

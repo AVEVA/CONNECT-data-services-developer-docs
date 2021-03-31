@@ -2,7 +2,7 @@
 uid: identityConsent
 ---
 
-# Consent to add AAD or AAD with advanced integration as an identity provider to your OCS tenant
+# Consent
 
 There are three possible consent paths when integrating your OCS tenant with your AAD tenant. The different paths depend on if you wish to use Advanced Integration and whether you are provisioning a new OCS tenant or modifying an existing OCS tenant. The consent paths are as follows:
 

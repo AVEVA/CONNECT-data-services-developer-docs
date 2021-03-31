@@ -1,0 +1,84 @@
+namespace:
+  type: text/plain
+  value: |
+    Namespace identifier
+tenant:
+  type: text/plain
+  value: |
+    Tenant identifier
+communities-tenant:
+  type: text/plain
+  value: |
+    Owning tenant identifier
+communities-tenant:
+  type: text/plain
+  value: |
+    Owning tenant identifier
+community:
+  type: text/plain
+  value: |
+    Community identifier
+invitation:
+  type: text/plain
+  value: |
+    Invitation identifier
+community-query:
+  type: text/plain
+  value: |
+    (Not supported) Query identifier. 
+count:
+  type: text/plain
+  value: |
+    Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.
+skip:
+  type: text/plain
+  value: |
+    Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.
+user:
+  type: text/plain
+  value: |
+    User identifier
+datasource:
+  type: text/plain
+  value: |
+    Data source identifier
+agent:
+  type: text/plain
+  value: |
+    On-prem agent identifier
+pi-point-query:
+  type: text/plain
+  value: |
+    Query identifier
+query:
+  type: text/plain
+  value: |
+    Query identifier
+pi-system:
+  type: text/plain
+  value: |
+    PI System identifier
+pi-server:
+  type: text/plain
+  value: |
+    PI Server identifier
+transfer:
+  type: text/plain
+  value: |
+    Transfer identifier
+boundaryType:
+  type: text/plain
+  value: |
+    SdsBoundaryType specifying the handling of events at or near the start and end indexes
+startBoundaryType:
+  type: text/plain
+  value: |
+    SdsBoundaryType specifying the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.
+endBoundaryType:
+  type: text/plain
+  value: |
+    SdsBoundaryType specifies the last value in the result in relation to the end index. If startBoundaryType is specified, endBoundaryType must be specified.
+continuationToken:
+  type: text/plain
+  value: |
+    Token used to retrieve the next page of data. If count is specified, a continuationToken must also be specified.

@@ -10,7 +10,7 @@
       ],
       "dest": "api",
       "disableGitFeatures": false,
-      "_appLogoPath": "./Content_Portal/Documentation/images/atlas_icon.png",
+      "_appLogoPath": "./content/api-reference/images/atlas_icon.png",
       "_appName": "OSIsoft Cloud Services Documentation"
     }
   ],
@@ -21,8 +21,8 @@
     "content": [
       {
         "files": [
-	  "Content_Portal/**/**.md",
-	  "Content_Portal/**/toc.yml",
+	  "content/**/**.md",
+	  "content/**/toc.yml",
           "toc.yml",
           "**.md"
         ]
@@ -31,21 +31,21 @@
     "resource": [
       {
         "files": [
-            "Content_Portal/rom/images/**",
-            "Content_Portal/api-reference/images/**",
-            "Content_Portal/add-organize-data/images/**",
-            "Content_Portal/add-organize-data/collect-data/connectors/images/**",
-            "Content_Portal/add-organize-data/collect-data/connectors/omf/images/**",
-            "Content_Portal/add-organize-data/attach-meaning/assets/images/**",
-            "Content_Portal/add-organize-data/attach-meaning/metadata-rules/images/**",
-            "Content_Portal/add-organize-data/store-data/images/**",
-            "Content_Portal/set-up/images/**",
-            "Content_Portal/visualize-data/images/**",
-            "Content_Portal/overview/images/**",
-            "Content_Portal/overview/get-started/images/**",
-            "Content_Portal/overview/get-started/clients/images/**",
-            "Content_Portal/overview/get-started/connections/images/**",
-            "Content_Portal/developer-guide/images/**"
+            "content/rom/images/**",
+            "content/api-reference/images/**",
+            "content/add-organize-data/images/**",
+            "content/add-organize-data/collect-data/connectors/images/**",
+            "content/add-organize-data/collect-data/connectors/omf/images/**",
+            "content/add-organize-data/attach-meaning/assets/images/**",
+            "content/add-organize-data/attach-meaning/metadata-rules/images/**",
+            "content/add-organize-data/store-data/images/**",
+            "content/set-up/images/**",
+            "content/visualize-data/images/**",
+            "content/overview/images/**",
+            "content/overview/get-started/images/**",
+            "content/overview/get-started/clients/images/**",
+            "content/overview/get-started/connections/images/**",
+            "content/developer-guide/images/**"
         ]
       }
     ],

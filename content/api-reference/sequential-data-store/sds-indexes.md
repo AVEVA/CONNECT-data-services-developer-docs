@@ -3,6 +3,7 @@ uid: sdsIndexes
 ---
 
 # Indexes
+
 Indexes speed up and order the results of searches. 
 A key uniquely identifies a record within a collection of records.
 Keys are unique within the collection.
@@ -391,7 +392,7 @@ To build an SdsType representation of sample classes in Python and Java Script, 
         def setValue(self, measurement):
           self.__measurement = measurement
 ```
-
+***
 ##### [JavaScript](#tab/tabid-2)
 ```javascript
 

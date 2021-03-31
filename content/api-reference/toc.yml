@@ -21,7 +21,7 @@
 - name: Data views
   href: data-views/toc.yml
   topicHref: data-views/data-views-overview.md
-- name: OSIsoft operations service
+- name: Operations
   href: operations/toc.yml
   topicHref: operations/operations-overview.md
 - name: Role-based access control

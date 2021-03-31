@@ -2,7 +2,7 @@
 uid: Roles
 ---
 
-# Preconfigured roles
+# Roles
 
 OSIsoft provides two preconfigured roles:
 

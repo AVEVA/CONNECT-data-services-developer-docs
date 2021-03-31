@@ -2,7 +2,7 @@
 uid: DataViewsAccessControlAPI
 ---
 
-# Access control API
+# Data views ACL API
 
 This portion of the [overall data views API](xref:DataViewsAPIOverview) focuses on [securing data views](xref:DataViewsSecuringDataViews) by setting their ownership and permissions.
 

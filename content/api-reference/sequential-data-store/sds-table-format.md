@@ -2,8 +2,7 @@
 uid: sdsTableFormat
 ---
 
-Table format
-============
+# Table format
 
 A table is a convenient structure for analytics and display. The REST APIs for retrieving multiple events from 
 the data store supports returning results in a table. The form variable can be set to specify a table or a table 
@@ -11,8 +10,8 @@ with headers.
 
 Table format can be applied to any read that returns multiple values and summaries. 
 
-**.NET**
-
+##### [Csharp](#tab/tabid-0)
+```csharp
       public enum State
       {
         Ok,
@@ -27,10 +26,10 @@ Table format can be applied to any read that returns multiple values and summari
         public State State { get; set; }
         public Double Measurement { get; set; }
       }
+```
 
-
-**Python**
-
+##### [Python](#tab/tabid-1)
+```python
       class State(Enum):
         Ok = 0
         Warning = 1
@@ -54,9 +53,11 @@ Table format can be applied to any read that returns multiple values and summari
           return self.__measurement
         def setValue(self, measurement):
           self.__measurement = measurement
+```
 
+##### [JavaScript](#tab/tabid-2)
 
-**JavaScript**
+```javascript
 
       var State =
       {
@@ -81,6 +82,8 @@ Table format can be applied to any read that returns multiple values and summari
       4/1/2017 7:07:00 AM : Warning  7
       4/1/2017 7:08:00 AM : Warning  8
       4/1/2017 7:09:00 AM : Warning  9 
+```
+---
 
 The following is a request to retrieve values using the window parameters:
  ```text

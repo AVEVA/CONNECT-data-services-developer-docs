@@ -8,5 +8,5 @@
   href: data-api.md
 - name: Preview data API
   href: preview-data-api.md
-- name: Access control API
-  href: access-control-api.md
+- name: Data view ACL API
+  href: data-view-acl-api.md

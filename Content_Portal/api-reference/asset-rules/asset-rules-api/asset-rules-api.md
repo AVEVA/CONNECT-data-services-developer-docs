@@ -4,7 +4,7 @@
 uid: AssetRulesAPI
 ---
 
-# Asset Rules API
+# Asset rules API
 
 ## Get Rule
 

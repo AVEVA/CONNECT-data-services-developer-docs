@@ -1,14 +1,14 @@
 - name: Assets API
   href: assets-api.md
-- name: Asset Types API
+- name: Asset types API
   href: asset-type.md
-- name: Resolved Asset
+- name: Resolved asset
   href: asset-resolved-asset.md
-- name: Asset Centric Data API
+- name: Asset centric data API
   href: asset-centric-data-api.md
-- name: Asset and Asset Type Status
+- name: Asset and asset type status
   href: asset-status.md
-- name: Assets Search API
+- name: Assets search API
   href: asset-search-api.md
-- name: Asset and AssetType Access Control API
+- name: Asset and AssetType access control API
   href: access-control-api.md

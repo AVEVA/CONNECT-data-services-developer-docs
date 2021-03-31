@@ -2,7 +2,7 @@
 uid: AssetOrAssetTypeAccessControlAPI
 ---
 
-# Asset and AssetType Access Control API
+# Asset and AssetType access control API
 The access control API is used to secure assets by setting their ownership and permissions. For more information about OCS access control, see [Role-based access control][xref:accessControl].
 
 ***

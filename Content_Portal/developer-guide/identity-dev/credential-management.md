@@ -2,7 +2,7 @@
 uid: CredentialManagement
 ---
 
-# Introduction to credential management
+# Credential management
 
 ## User credentials and authentication
 User authentication and credential management is delegated to the external identity providers.

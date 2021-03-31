@@ -2,7 +2,7 @@
 uid: identityAutomationIdentity
 ---
 
-# Automation Identity
+# Automation identity
 
 APIs for automation identities.
 

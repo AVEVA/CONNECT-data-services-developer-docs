@@ -2,7 +2,7 @@
 uid: AccountServiceBlog
 ---
 
-# Service Blog
+# Service blog
 
 API's for reading entries posted on the Service Blog.
 

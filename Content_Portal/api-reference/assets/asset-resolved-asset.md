@@ -2,7 +2,7 @@
 uid: AssetResolvedAsset
 ---
 
-# Resolved Asset
+# Resolved asset
 
 The resolved asset describes the consumption-oriented aspects of an OCS resource rather than describing how the resource is configured. 
 

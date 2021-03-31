@@ -2,7 +2,7 @@
 uid: identityAzureActiveDirectoryTenant
 ---
 
-# Azure Active Directory Tenant
+# Azure Active Directory tenant
 
 An Azure Active Directory tenant is used to map an existing [Azure Active Directory](https://azure.microsoft.com/en-us/services/active-directory/). Tenant from Azure to OSIsoft Cloud Services. We only allow one Azure Active Directory tenant per OSIsoft Cloud Services tenant.
 

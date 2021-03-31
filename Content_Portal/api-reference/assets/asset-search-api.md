@@ -2,7 +2,7 @@
 uid: AssetsSearchAPI
 ---
 
-# Assets Search API
+# Assets search API
 The assets search API allows you to search for your assets with search criteria.
 
 ***

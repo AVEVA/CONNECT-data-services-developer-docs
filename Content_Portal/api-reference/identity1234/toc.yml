@@ -1,0 +1,19 @@
+- name: Azure Active Directory Tenant
+  href: identity-azure-active-directory-tenant.md
+- name: Authorization Code Client
+  href: identity-authorization-code-client.md
+- name: Client Credential Client
+  href: identity-client-credential-client.md
+- name: Hybrid Client
+  href: identity-hybrid-client.md
+- name: Identity Provider
+  href: identity-identity-provider.md
+- name: Invitation
+  href: identity-invitation.md
+- name: Persisted Grant
+  href: identity-persisted-grant.md
+- name: Secret
+  href: identity-secret.md
+- name: User
+  href: identity-user.md
+  

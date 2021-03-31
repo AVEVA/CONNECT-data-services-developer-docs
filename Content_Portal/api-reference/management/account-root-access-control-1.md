@@ -2,7 +2,7 @@
 uid: AccountRootAccessControl_1
 ---
 
-# Root Access Control
+# Root access control
 
 APIs to manage default access to entities governed by an [AccessControlList](xref:accessControl).
 

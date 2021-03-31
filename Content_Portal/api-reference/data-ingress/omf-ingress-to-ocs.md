@@ -2,7 +2,7 @@
 uid: omfIngressToOCS
 ---
 
-# OMF Ingress to OCS
+# OMF ingress to OCS
 
 You can use OSIsoft Message Format ([OMF](http://omf-docs.osisoft.com/)) to achieve high-throughput asynchronous data collection into the Sequential Data Store. The following terms are useful for understanding the information in this and subsequent sections:
 

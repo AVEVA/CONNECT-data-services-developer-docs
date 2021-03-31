@@ -2,18 +2,15 @@
 uid: identityClientCredentialClient
 ---
 
-# Client Credential Client
+# Client credential client
 
 Client credential clients are used for machine-to-machine communication without
-            the presence of a User. 
-            These clients are issued an Id and secret upon creation,
-            which are later used for authentication against OSIsoft Cloud Services. More than one secret can be
-            created for a client. You can read more about these clients
-            [here](https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/AUTHENTICATION_README.md#client-credential-flow).
-            Because they access resources on OSIsoft Cloud Services, and are not associated to users, these
-            clients can be assigned any of the roles in the tenant. We suggest following a
-            least privilege strategy when assigning roles to these clients, as they are more
-            likely to operate in remote machines with a wider attack surface.
+the presence of a User. These clients are issued an Id and secret upon creation,
+which are later used for authentication against OSIsoft Cloud Services. More than one secret can be created for a client. You can read more about these clients
+[here](https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/AUTHENTICATION_README.md#client-credential-flow). Because they access resources on OSIsoft Cloud Services, and are not associated to users, these
+clients can be assigned any of the roles in the tenant. We suggest following a
+least privilege strategy when assigning roles to these clients, as they are more
+likely to operate in remote machines with a wider attack surface.
 
 ## Properties
 

@@ -2,18 +2,11 @@
 uid: identityHybridClient
 ---
 
-# Hybrid Client
+# Hybrid client
 
 Hybrid clients are used in typical, thick MVC clients with the presence of a User.
-            These clients are issued an Id and secret upon creation, which are later used for authentication
-            against OSIsoft Cloud Services. More than one secret can be created for a client. You can read more about these clients
-            [here](https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/AUTHENTICATION_README.md#hybrid-flow).
-            Hybrid clients can be issued refresh tokens, if requested, alongside access tokens. Refresh tokens typically
-            have an longer lifetime than access tokens, and are used to request a new access token on behalf of the user
-            without them having to sign-in.
-            It is highly suggested that both the Client Secret and the refresh token be stored
-            in a secure location.
-            For some recommendations on least privilege for users and clients, refer to the [Least Privilege](xref:LeastPrivilege) topic.
+These clients are issued an Id and secret upon creation, which are later used for authentication against OSIsoft Cloud Services. More than one secret can be created for a client. You can read more about these clients [here](https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/AUTHENTICATION_README.md#hybrid-flow).
+Hybrid clients can be issued refresh tokens, if requested, alongside access tokens. Refresh tokens typically have an longer lifetime than access tokens, and are used to request a new access token on behalf of the user without them having to sign-in. It is highly suggested that both the Client Secret and the refresh token be stored in a secure location. For some recommendations on least privilege for users and clients, refer to the [Least Privilege](xref:LeastPrivilege) topic.
 
 Hybrid clients can be issued refresh tokens, if requested, alongside access tokens. Refresh tokens typically have an longer lifetime than access tokens, and are used to request a new access token on behalf of the user without them having to sign-in. It is highly suggested that both the client secret and the refresh token be stored in a secure location.
 

@@ -1,7 +1,7 @@
 ---
 uid: AssetRules
 ---
-# Asset Rules
+# Asset rules
 
 Asset rules create assets based on stream properties (such as ID, Name, Description, and stream metadata).  Asset rules are executed on streams in the following ways:
 

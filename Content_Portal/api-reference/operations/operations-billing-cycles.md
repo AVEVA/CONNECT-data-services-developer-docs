@@ -1,10 +1,10 @@
 ---
-uid: operationsResource_Usage_Data
+uid: operationsBilling_Cycles
 ---
 
-# Resource Usage Data
+# Billing cycles
 
-APIs related to querying Resource Usage Data
+APIs related to querying Billing Cycles
 
 
 ***
@@ -34,13 +34,13 @@ All responses will have an error message in the body. The exceptions are 200 res
 
 If and when contacting OSIsoft support about this error, please provide the OperationId.
 
-## `Get Tenant Resource Usage`
+## `Get Tenant Billing Cycles`
 
-Gets the current resource usage vs the entitled resource usage.
+Gets the billing cycles for a tenant inferred from the subscription of the tenant.
 
 ### Request
 
-`GET api/v1/tenants/{tenantId}/resources/usage`
+`GET api/v1/tenants/{tenantId}/subscriptionterm/billingcycles`
 
 ### Parameters
 
@@ -55,7 +55,7 @@ Id of the Tenant
 
 Allowed for these roles:
 
-- `Tenant Member`
+- `Tenant Administrator`
 
 ### Response
 
@@ -65,16 +65,19 @@ Success
 
 ##### Type:
 
- `ResourceUsage`
+ `List`
 
 ```json
-{
-  "StreamCount": 0,
-  "EntitledStreamCount": 0,
-  "NamespaceCount": 0,
-  "EntitledNamespaceCount": 0,
-  "EntitledStreamAccessCount": 0
-}
+[
+  {
+    "StartDate": "2020-03-25T12:06:06.0581584-07:00",
+    "EndDate": "2020-03-25T12:06:06.0582375-07:00"
+  },
+  {
+    "StartDate": "2020-03-25T12:06:06.0583031-07:00",
+    "EndDate": "2020-03-25T12:06:06.0583052-07:00"
+  }
+]
 ```
 
 #### 400

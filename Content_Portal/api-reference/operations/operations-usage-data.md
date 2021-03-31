@@ -2,7 +2,7 @@
 uid: operationsUsage_Data
 ---
 
-# Usage Data
+# Usage data
 
 APIs related to querying Usage data.
 

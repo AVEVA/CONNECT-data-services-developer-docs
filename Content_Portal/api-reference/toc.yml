@@ -1,34 +1,34 @@
 - name: Tenant Management
-  href: Management/toc.yml
+  href: management/toc.yml
   topicHref: Management/Management_Overview.md
 - name: Identity and Access Management
-  href: Identity/toc.yml
-  topicHref: Identity/Identity_and_Access_Management.md
-- name: Sequential Data Store
-  href: SequentialDataStore/toc.yml
-  topicHref: SequentialDataStore/Data_Store_and_SDS.md
-- name: Data Collection and OMF
+  href: identity/toc.yml
+  topicHref: identity/identity-and-access-management.md
+- name: Sequential data store
+  href: sequential-data-store/toc.yml
+  topicHref: sequential-data-store/Data_Store_and_SDS.md
+- name: Data collection and data ingress
   href: data-ingress/toc.yml
-  topicHref: data-ingress/Data_Ingress.md
-- name: Metadata Rules
-  topicHref: Metadata/Metadata_Rules_Overview.md
-- name: Asset Store (Preview)
+  topicHref: data-ingress/data-ingress.md
+- name: Metadata rules
+  topicHref: metadata/metadata-rules-overview.md
+- name: Assets
   href: assets/toc.yml
   topicHref: Assets/assets.md
-- name: Asset Rules (Preview)
+- name: Asset rules
   href: asset-rules/toc.yml
   topicHref: asset-rules/asset-rules.md  
-- name: Data Views
+- name: Data views
   href: data-views/toc.yml
   topicHref: data-views/data-views-overview.md
-- name: Operations
-  href: Operations/toc.yml
-  topicHref: Operations/Operations_Overview.md
-- name: Role-Based Access Control
-  topicHref: Access_Control.md
-- name: HTTP Status Codes
+- name: OSIsoft operations service
+  href: operations/toc.yml
+  topicHref: operations/operations-overview.md
+- name: Role-based access control
+  topicHref: access-control.md
+- name: HTTP status codes
   topicHref: http-status-codes.md
 - name: Samples
   topicHref: samples.md
-- name: Technical Support
+- name: Technical support and other resources
   topicHref: support.md

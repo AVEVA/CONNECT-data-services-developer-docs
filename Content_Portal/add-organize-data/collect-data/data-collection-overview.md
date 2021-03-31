@@ -2,7 +2,7 @@
 uid: lpdatacollection
 ---
 
-# Data collection
+# Collect data
 
 OCS provides the following methods to collect data. You can ingress data from an external application or from PI Server directly to OCS:
 

@@ -10,7 +10,7 @@ For more information on asset types, see [Asset types](xref:AssetTypes).
 
 1. Click the menu icon ![menu icon](images/icon_navigation_bigger.png) and click **Asset Explorer**.
 
-2. To change the [namespace](xref:AccountManagementConcepts#introduction-to-namespaces), click on the namespace to open the `Select a Namespace` window.
+2. To change the [namespace](xref:ccNamespaces), click on the namespace to open the `Select a Namespace` window.
     ![Namespace icon](images/namespace-icon.png)
     
 3. Select the namespace and click **Continue**.

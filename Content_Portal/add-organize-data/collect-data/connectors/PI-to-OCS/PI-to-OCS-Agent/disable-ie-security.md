@@ -16,4 +16,4 @@ Follow these steps to disable Internet Explorer Enhanced Security Configuration:
 
 You can now complete the PI to OCS Agent install and registration.
 
-**Note:** You can turn off IE Enhanced Security Configuration after you complete the PI to OCS Agent installation.
+**Note:** You can turn on IE Enhanced Security Configuration after you complete the PI to OCS Agent installation.

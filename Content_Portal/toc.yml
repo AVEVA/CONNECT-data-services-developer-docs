@@ -13,8 +13,3 @@
 - name: Remote operations monitoring
   href: rom/toc.yml
   topicHref: rom/rom-overview.md
-- name: API reference
-  href: Documentation/toc.yml
-  topicHref: Documentation/OSIsoft_Cloud_Services.md
-- name: Concepts
-  href: Concepts/toc.yml

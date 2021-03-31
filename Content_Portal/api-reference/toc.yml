@@ -8,19 +8,19 @@
   href: SequentialDataStore/toc.yml
   topicHref: SequentialDataStore/Data_Store_and_SDS.md
 - name: Data Collection and OMF
-  href: DataIngress/toc.yml
-  topicHref: DataIngress/Data_Ingress.md
+  href: data-ingress/toc.yml
+  topicHref: data-ingress/Data_Ingress.md
 - name: Metadata Rules
   topicHref: Metadata/Metadata_Rules_Overview.md
 - name: Asset Store (Preview)
-  href: Assets/toc.yml
+  href: assets/toc.yml
   topicHref: Assets/assets.md
 - name: Asset Rules (Preview)
-  href: Asset Rules/toc.yml
-  topicHref: Asset Rules/asset-rules.md  
+  href: asset-rules/toc.yml
+  topicHref: asset-rules/asset-rules.md  
 - name: Data Views
-  href: DataViews/toc.yml
-  topicHref: DataViews/Data_Views_Overview.md
+  href: data-views/toc.yml
+  topicHref: data-views/data-views-overview.md
 - name: Operations
   href: Operations/toc.yml
   topicHref: Operations/Operations_Overview.md

@@ -2,7 +2,7 @@
 uid: omfIngressTopics
 ---
 
-# Topics 
+# OMF ingress topics 
 
 OMF topics aggregate OMF messages received from one or more clients and makes them available for consumption by a subscription.
 

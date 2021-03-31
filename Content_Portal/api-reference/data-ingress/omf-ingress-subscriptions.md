@@ -2,7 +2,7 @@
 uid: omfIngressSubsctriptions
 ---
 
-# Subscriptions 
+# OMF ingress subscriptions 
 
 A subscription consumes OMF messages from a Topic and forwards them to a data store. Multiple subscriptions can retrieve OMF messages from a single *topic*. 
 

@@ -10,10 +10,14 @@ communities-tenant:
   type: text/plain
   value: |
     Owning tenant identifier
-communities-tenant:
+communities-search-query:
   type: text/plain
   value: |
-    Owning tenant identifier
+    Parameter representing a string search
+community-query:
+  type: text/plain
+  value: |
+    (Not supported) Query identifier
 community:
   type: text/plain
   value: |
@@ -22,10 +26,6 @@ invitation:
   type: text/plain
   value: |
     Invitation identifier
-community-query:
-  type: text/plain
-  value: |
-    (Not supported) Query identifier. 
 count:
   type: text/plain
   value: |

@@ -172,15 +172,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "UidNotFound"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Content_Portal/Documentation/Assets/asset-status.md",
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Assets/asset-status.html",
-          "hash": "0hocU7t6ilk8k8IBOYmNww=="
+          "hash": "OpJcpNN5VuP/KQixOj8rAQ=="
         }
       },
       "is_incremental": false,

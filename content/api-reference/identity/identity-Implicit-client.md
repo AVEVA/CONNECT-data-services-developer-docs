@@ -2,7 +2,7 @@
 uid: identityImplicitClient
 ---
 
-# Implicit Client (deprecated)
+# Implicit client (deprecated)
 
 Implicit Client has been deprecated. We suggest using an Authorization Code Client instead of an Implicit Client.
             Implicit clients are used in Javascript/Browser (SPA) based applications or native

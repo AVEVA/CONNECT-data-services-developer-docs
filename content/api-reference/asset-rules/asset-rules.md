@@ -1,7 +1,7 @@
 ---
 uid: AssetRules
 ---
-# Asset rules
+# Asset Rules
 
 Asset rules create assets based on stream properties (such as ID, Name, Description, and stream metadata).  Asset rules are executed on streams in the following ways:
 
@@ -66,7 +66,7 @@ The asset rules API allows you to programmatically create, read, update, and del
                   "Value":"{location}"
                }
             ],
-            "References":[
+            "StreamReferences":[
                {
                   "Id":"streamRefName",
                   "Description":"this is a stream reference",
@@ -123,7 +123,7 @@ Rule expressions are objects used to define how stream properties are parsed to 
 | Property Name | Type         | Required? | Description                                                  |
 | ------------- | ------------ | --------- | ------------------------------------------------------------ |
 | Field         | String       | Required  | The only supported value is *Asset*.                         |
-| Value         | Asset Object | Required  | The definition of the asset that is generated or updated with additional fields when a stream matches the rule criteria. `Asset Id` is required. All other properties supported in an asset  (Name, Description, Metadata, References) are optional. All fields can be specified as a combination of literal values and captured values (for example, Pump{pumpNumber} where {pumpNumber} is defined in a specification). Multiple rules or streams can modify a single asset, with each contributing one or more properties to the rule. During execution, assets are created if they do not exist, and, otherwise, properties are appended to existing assets. |
+| Value         | Asset Object | Required  | The definition of the asset that is generated or updated with additional fields when a stream matches the rule criteria. `Asset Id` is required. All other properties supported in an asset  (Name, Description, Metadata, StreamReferences) are optional. All fields can be specified as a combination of literal values and captured values (for example, Pump{pumpNumber} where {pumpNumber} is defined in a specification). Multiple rules or streams can modify a single asset, with each contributing one or more properties to the rule. During execution, assets are created if they do not exist, and, otherwise, properties are appended to existing assets. |
 
 ## JSON Paths
 

@@ -5,4 +5,4 @@
 - name: Set up the PI to OCS Agent
   href: set-up-agent.md
 - name: Create a PI to OCS connection
-  href: set-up-agent.md  
+  href: create-a-pi-to-ocs-connection.md

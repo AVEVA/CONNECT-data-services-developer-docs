@@ -11,7 +11,7 @@ The following clients are described in this topic:
 
 - [Client-credentials clients](#client-credentials-client)
 - [Authorization code clients](#authorization-code-client)
-- [Hybrid clients](#hybrid-client) <!--- Josh Kim Mar19021: Similar to the comment as before where we should ask if Hybrid Clients are still worth mentioning?. --->
+- [Hybrid clients](#hybrid-client) <!-- Josh Kim Mar19021: Similar to the comment as before where we should ask if Hybrid Clients are still worth mentioning?. -->
 
 ## <a name="client-credentials-client"></a>Introduction to client-credentials clients
 

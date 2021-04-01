@@ -5,5 +5,5 @@
   href: store-data/toc.yml
   topicHref: store-data/store-data-overview.md
 - name: Organize data
-  href: attach-meaning/toc.yml
-  topicHref: attach-meaning/data-context-overview.md
+  href: organize-data/toc.yml
+  topicHref: organize-data/data-context-overview.md

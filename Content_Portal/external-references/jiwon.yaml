@@ -1,21 +1,17 @@
 parameter:
   type: text/plain
   value: |
-        
-        X identifier
-something-parameter:
-  type: text/plain
-  value: |
-    Sample parameter description for demo purpose 
-summary:
+    Y identifier 
+markdown-content:
   type: markdown
   value: |
-        
-     
-    Here's why **I love writing documentation**:
-    1. It's fun.
-    2. I can pass time writing.
-    3. It pays the bill. I need to go [shopping](https://jcrew.com).
+    I love shopping! 
+    It does 
+    - make me happy
+    - give me joy
+    - instill euphoria
+
+    For more information, check out [Jcrew](https://www.jcrew.com/).
 sample-code:
   type: application/json
   value: |

@@ -10,7 +10,8 @@ markdown-content:
     - a
     - b
     - c
-    For more information see [documentation](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Asset%20Rules/asset-rules-api/asset-rules-api.html#get-rule).
+    
+    For more information, see [documentation](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Asset%20Rules/asset-rules-api/asset-rules-api.html#get-rule).
 sample-code:
   type: application/json
   value: |

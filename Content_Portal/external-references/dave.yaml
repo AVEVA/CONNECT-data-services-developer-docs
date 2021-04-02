@@ -1,0 +1,20 @@
+parameter:
+  type: text/plain
+  value: |
+    X identifier 
+markdown-content:
+  type: markdown
+  value: |
+    OCS has wonderful documentation. 
+    It does 
+    - a
+    - b
+    - c
+    For more information see [documentation](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/DataViewsAPIOverview/Preview_Data_API.html#get-data-view-data).
+sample-code:
+  type: application/json
+  value: |
+    {
+      "Item": "string",
+      "Value": 1000
+    } 

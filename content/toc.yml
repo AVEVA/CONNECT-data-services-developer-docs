@@ -1,5 +1,5 @@
 - name: OSIsoft Cloud Services
-  topicHref: ocs-content-portal-overview.md
+  href: ocs-content-portal-overview.md
 - name: Get started
   href: overview/toc.yml
   topicHref: overview/get-started-overview.md

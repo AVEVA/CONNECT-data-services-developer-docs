@@ -1,0 +1,24 @@
+parameter:
+  type: text/plain
+  value: |
+    X identifier
+something-parameter:
+  type: text/plain
+  value: |
+    Sample parameter description for demo purpose 
+help-writers-summary:
+  type: markdown
+  value: |
+    **I love writing documentation!** 
+    Here's why:
+    1.  It's fun.
+    2. I can pass time writing.
+    3. It pays the bill.
+    I need to go [shopping](https://jcrew.com).
+sample-code:
+  type: application/json
+  value: |
+    {
+      "Item": "string",
+      "Value": 1000
+    } 

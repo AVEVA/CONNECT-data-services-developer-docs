@@ -18,3 +18,15 @@ sample-code:
       "Item": "string",
       "Value": 1000
     } 
+community-invite-summary:
+  type: text/plain
+  value: |
+    Defines the public API endpoints that are used to manage community invitations. Using this API you can, for example, create, retrieve, update and process invitations. You can also resend an invitation email.    
+community-invite-process:
+  type: text/plain
+  value: |
+    Processes an action against a particular community invitation. The available actions include accept, decline and resend.
+community-invite-request-body:
+  type: text/plain
+  value: |
+    The invitation action

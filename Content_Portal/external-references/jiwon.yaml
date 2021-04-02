@@ -1,7 +1,8 @@
 parameter:
   type: text/plain
   value: |
-    X identifier
+        
+        X identifier
 something-parameter:
   type: text/plain
   value: |
@@ -9,12 +10,12 @@ something-parameter:
 help-writers-summary:
   type: markdown
   value: |
-    **I love writing documentation!** 
-    Here's why:
-    1.  It's fun.
+        
+     
+    Here's why **I love writing documentation**:
+    1. It's fun.
     2. I can pass time writing.
-    3. It pays the bill.
-    I need to go [shopping](https://jcrew.com).
+    3. It pays the bill. I need to go [shopping](https://jcrew.com).
 sample-code:
   type: application/json
   value: |

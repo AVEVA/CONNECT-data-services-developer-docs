@@ -7,7 +7,7 @@ something-parameter:
   type: text/plain
   value: |
     Sample parameter description for demo purpose 
-help-writers-summary:
+summary:
   type: markdown
   value: |
         

@@ -1,7 +1,7 @@
 parameter:
   type: text/plain
   value: |
-    X identifier 
+    X Mark identifier 
 markdown-content:
   type: markdown
   value: |

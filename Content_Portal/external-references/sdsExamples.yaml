@@ -74,7 +74,7 @@ data-request:
   type: markdown
   value: |
     ```text
-    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data?index=2017-11-23T13:00:00Z&searchMode=Next
+    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data?filter=Measurement gt 10
     ```
 data-response:
   type: application/json

@@ -9,7 +9,6 @@ The asset type API provides methods to create, read, update, and delete asset ty
 - Multiple similar assets can be created more quickly and with less effort.
 - Maintaining assets is simplified. 
 
-***
 ## `Get AssetType by Id`
 Returns the specified asset type.
 
@@ -65,7 +64,6 @@ Content-Type: application/json
 
 ```
 
-***
 
 ## `Get AssetTypes` 
 
@@ -101,7 +99,6 @@ The response includes a status code and a body.
 | 204 No Content          | none          | No asset types found or the user does not have permissions to view  the asset types. |
 | 400 Bad Request         | error         | The request is not valid. See the response body for additional details. |
 | 503 Service Unavailable | error         | An error occurred while processing the request. See the response body for additional details. |
-***
 
 ## `Create AssetType` 
 
@@ -166,7 +163,6 @@ The response includes a status code and a body.
 | 403 Forbidden   | error         | You are not authorized to create an `AssetType` object.      |
 | 409 Conflict    | error         | The `AssetType` update (?) or create has a conflict. See the response body for additional details. |
 
-***
 
 ## `Create AssetTypes (Bulk create)`
 
@@ -201,7 +197,6 @@ The response includes a status code and a body.
 | 403 Forbidden   | error         | You are not authorized to create `AssetType` objects.        |
 | 409 Conflict    | error         | The asset type update or create has a conflict. See the response body for additional details. |
 
-***
 ## `Create or Update AssetType`
 
 Create or update an asset type with a specified `Id`.
@@ -243,7 +238,6 @@ The response includes a status code and a body.
 | 404 Not Found | error         | The specified asset type with identifier is not found.       |
 | 409 Conflict  | error         | The asset type update or create has a conflict. See the response body for additional details. |
 
-***
 ## `Delete AssetType` 
 
 Delete an asset type with a specified `Id`. Note: An `AssetType` object cannot be deleted if it is referenced by an asset. To delete an `AssetType` object, you must first delete all assets that are mapped to it. 

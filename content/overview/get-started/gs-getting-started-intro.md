@@ -19,7 +19,7 @@ Once you have completed the pre-requisites, log into the OCS portal.
 
 1. In the web browser, enter the following URL: https://cloud.osisoft.com to open the OSIsoft Cloud Services web site. 
 
-    Note: The latest versions of Microsoft Edge, Google Chrome, and Firefox are supported.
+   **Note:** The latest versions of Microsoft Edge, Google Chrome, and Firefox are supported.
 
 3. In the toolbar, click **Sign In**.
 
@@ -48,7 +48,7 @@ In this get started exercise, you will do the following:
 
 7. Create a role that defines permissions for users.
 
-Note: Each exercise is built upon the previous one; therefore, complete the exercises in the order shown. At the end of each exercise, you will be directed to the next exercise.  
+   **Note:** Each exercise is built upon the previous one; therefore, complete the exercises in the order shown. At the end of each exercise, you will be directed to the next exercise.  
 
 ## Next step
 

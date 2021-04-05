@@ -28,8 +28,6 @@ If-Match : "7"
 
 Note: If-Match is optional. If you want to delete or modify an asset regardless of the asset version, do not specify an If-Match.
 
-***
-
 ## `Get Asset by Id` 
 Returns the specified asset and the version Etag in the HTTP response header.
 

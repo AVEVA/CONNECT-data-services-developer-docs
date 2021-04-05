@@ -20,7 +20,7 @@ list-values:
     Returns a collection of stored values at indexes based on request parameters.
       
     SDS supports four ways of specifying which stored events to return:
-    - [Find Distinct Value](): Returns a stored event based on the specified index and searchMode. 
+    - [Find Distinct Value](https://ocs-docs.osisoft.com/Content_Portal/Documentation/SequentialDataStore/Reading_Data_API.html#find-distinct-value): Returns a stored event based on the specified index and searchMode. 
         
         **Parameters**: Accepts ``index`` and ``searchMode``.
     - [Filtered](https://ocs-docs.osisoft.com/Content_Portal/Documentation/SequentialDataStore/Reading_Data_API.html#filtered): Returns a collection of stored values as determined by a filter.The filter limits results by applying an expression against event fields. 

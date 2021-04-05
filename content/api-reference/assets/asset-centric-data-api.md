@@ -68,7 +68,6 @@ The following asset is used in all of the sample output in the output below.
     ]
 }
 ```
-***
 
 ## `Get Asset Last Data` 
 Returns the last stored value for SDS streams in the resolved asset.
@@ -120,7 +119,6 @@ Content-Type: application/json
 }
 ```
 
-***
 
 ## `Get Asset Sampled Data` 
 Returns sampled data for referenced Sds streams. 
@@ -192,7 +190,6 @@ Content-Type: application/json
 }
 ```
 
-***
 
 ## `Get Asset Summary Data` 
 Returns summary data for referenced SDS streams. 
@@ -381,8 +378,6 @@ Content-Type: application/json
 }
 ```
 
-***
-
 ## `Get Asset Window Data`
 Returns window data for referenced SDS streams.
 
@@ -478,7 +473,6 @@ Content-Type: application/json
 }
 
 ```
-***
 
 ## `Get Asset Interpolated Data` 
 Returns interpolated data for referenced SDS streams. 

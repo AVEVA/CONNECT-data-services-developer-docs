@@ -1,37 +1,89 @@
 type:
-  type: application/json
+  type: markdown
   value: |
-    {
-      "val": 29,
-      "abc": "asd"
-    } 
+    #### [.NET](#tab/tabid-1)
+```csharp
+public enum State
+{
+   Ok,
+   Warning,
+   Alarm
+}
+
+public class SimpleType
+{
+   [SdsMember(IsKey = true, Order = 0) ]
+   public DateTime Time { get; set; }
+   public State State { get; set; }
+   [SdsMember(Uom = "meter")]
+   public Double Measurement { get; set; }
+}
+```
+#### [Python](#tab/tabid-2)
+
+```python
+class State(Enum):
+  Ok = 0
+  Warning = 1
+  Alarm = 2
+
+class SimpleType(object):
+  Time = property(getTime, setTime)
+  def getTime(self):
+    return self.__time
+  def setTime(self, time):
+    self.__time = time
+
+  State = property(getState, setState)
+  def getState(self):
+    return self.__state
+  def setState(self, state):
+    self.__state = state
+
+  Measurement = property(getValue, setValue)
+  def getValue(self):
+    return self.__measurement
+  def setValue(self, measurement):
+    self.__measurement = measurement
+```
+#### [JavaScript](#tab/tabid-3)
+```javascript
+var State =
+{
+  Ok: 0,
+  Warning: 1,
+  Alarm: 2,
+}
+
+var SimpleType = function () {
+  this.Time = null;
+  this.State = null;
+  this.Value = null;
+}
+```
+***
 stream:
-  type: application/json
+  type: markdown
   value: |
-    {
-      "val": 29,
-      "abc": "asd"
-    }
+   ``Simple`` is an SdsStream of type ``SimpleType``.
 data:
-  type: application/json
+  type: markdown
   value: |
-    {
+    ``Simple`` has stored values as follows:
+
       11/23/2017 12:00:00 PM: Ok  0
       11/23/2017  1:00:00 PM: Ok 10
       11/23/2017  2:00:00 PM: Ok 20
       11/23/2017  3:00:00 PM: Ok 30
       11/23/2017  4:00:00 PM: Ok 40
-    }  
+  
 data-request:
-  type: application/json
+  type: markdown
   value: |
-    {
-      11/23/2017 12:00:00 PM: Ok  0
-      11/23/2017  1:00:00 PM: Ok 10
-      11/23/2017  2:00:00 PM: Ok 20
-      11/23/2017  3:00:00 PM: Ok 30
-      11/23/2017  4:00:00 PM: Ok 40
-    } 
+  ```text
+    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data
+		?index=2017-11-23T13:00:00Z&searchMode=Next
+  ```
 data-response:
   type: application/json
   value: |

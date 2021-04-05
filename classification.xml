@@ -21,10 +21,10 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>17440</WindowHeight>
-  <WindowWidth>28040</WindowWidth>
-  <WindowTopX>15960</WindowTopX>
-  <WindowTopY>7280</WindowTopY>
+  <WindowHeight>3126</WindowHeight>
+  <WindowWidth>8838</WindowWidth>
+  <WindowTopX>32767</WindowTopX>
+  <WindowTopY>32767</WindowTopY>
   <TabRatio>500</TabRatio>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
@@ -62,11 +62,6 @@
   <Style ss:ID="s67">
    <Alignment ss:Horizontal="Left" ss:Vertical="Bottom" ss:Indent="1"/>
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
-  </Style>
-  <Style ss:ID="s68">
-   <Alignment ss:Horizontal="Left" ss:Vertical="Bottom" ss:Indent="1"
-    ss:WrapText="1"/>
-   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
   </Style>
   <Style ss:ID="s69">
    <Alignment ss:Horizontal="Left" ss:Vertical="Bottom"/>
@@ -208,11 +203,11 @@
  </Names>
  <Worksheet ss:Name="classification">
   <Table ss:ExpandedColumnCount="7" ss:ExpandedRowCount="4" x:FullColumns="1"
-   x:FullRows="1" ss:DefaultColumnWidth="69" ss:DefaultRowHeight="13">
-   <Column ss:AutoFitWidth="0" ss:Width="235"/>
-   <Column ss:AutoFitWidth="0" ss:Width="145"/>
+   x:FullRows="1" ss:DefaultColumnWidth="69" ss:DefaultRowHeight="12.975">
+   <Column ss:AutoFitWidth="0" ss:Width="234.9"/>
+   <Column ss:AutoFitWidth="0" ss:Width="144.9"/>
    <Column ss:AutoFitWidth="0" ss:Width="87"/>
-   <Column ss:Width="161"/>
+   <Column ss:Width="161.1"/>
    <Column ss:AutoFitWidth="0" ss:Width="87" ss:Span="2"/>
    <Row ss:AutoFitHeight="0">
     <Cell><Data ss:Type="String">Filename</Data></Cell>
@@ -223,11 +218,11 @@
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="15">
     <Cell><Data ss:Type="String">MAP</Data></Cell>
-    <Cell ss:Index="4" ss:StyleID="s63"><Data ss:Type="String">OSIsoft-Cloud-Services-(OCS)</Data></Cell>
+    <Cell ss:Index="4" ss:StyleID="s63"><Data ss:Type="String">OSIsoft-Cloud-Services</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="15">
     <Cell><Data ss:Type="String">apply-ALL</Data></Cell>
-    <Cell ss:Index="4" ss:StyleID="s63"><Data ss:Type="String">OSIsoft-Cloud-Services-(OCS)</Data></Cell>
+    <Cell ss:Index="4" ss:StyleID="s63"><Data ss:Type="String">OSIsoft-Cloud-Services</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell><Data ss:Type="String">default</Data></Cell>
@@ -254,7 +249,7 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>5</ActiveRow>
+     <ActiveRow>18</ActiveRow>
      <ActiveCol>3</ActiveCol>
     </Pane>
    </Panes>
@@ -264,7 +259,7 @@
  </Worksheet>
  <Worksheet ss:Name="tag index lookup">
   <Table ss:ExpandedColumnCount="11" ss:ExpandedRowCount="141" x:FullColumns="1"
-   x:FullRows="1" ss:DefaultColumnWidth="69" ss:DefaultRowHeight="13">
+   x:FullRows="1" ss:DefaultColumnWidth="69" ss:DefaultRowHeight="12.975">
    <Column ss:AutoFitWidth="0" ss:Width="123"/>
    <Column ss:Width="318"/>
    <Column ss:Index="8" ss:AutoFitWidth="0" ss:Width="87" ss:Span="3"/>
@@ -283,7 +278,7 @@
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="15">
     <Cell><Data ss:Type="String">adapter</Data><NamedCell ss:Name="Product"/></Cell>
-    <Cell ss:StyleID="s63"><Data ss:Type="String">OSIsoft-Cloud-Services-(OCS)</Data><NamedCell
+    <Cell ss:StyleID="s63"><Data ss:Type="String">OSIsoft-Cloud-Services</Data><NamedCell
       ss:Name="Role"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="15">
@@ -391,16 +386,16 @@
     <Cell ss:Index="2" ss:StyleID="s67"><Data ss:Type="String">PI-OPC-DA-Server_2018-Patch-1</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="15">
-    <Cell ss:Index="2" ss:StyleID="s66"><Data ss:Type="String">OSIsoft-Message-Format-(OMF)</Data></Cell>
+    <Cell ss:Index="2"><Data ss:Type="String">OSIsoft-Message-Format</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="15">
-    <Cell ss:Index="2" ss:StyleID="s67"><Data ss:Type="String">OSIsoft-Message-Format-(OMF)_1.2</Data></Cell>
+    <Cell ss:Index="2"><Data ss:Type="String">  OSIsoft-Message-Format-1.2</Data></Cell>
    </Row>
-   <Row ss:AutoFitHeight="0" ss:Height="16">
-    <Cell ss:Index="2" ss:StyleID="s68"><Data ss:Type="String">OSIsoft-Message-Format-(OMF)_1.1</Data></Cell>
+   <Row ss:AutoFitHeight="0" ss:Height="15.975">
+    <Cell ss:Index="2"><Data ss:Type="String">  OSIsoft-Message-Format-1.1</Data></Cell>
    </Row>
-   <Row ss:AutoFitHeight="0" ss:Height="16">
-    <Cell ss:Index="2" ss:StyleID="s68"><Data ss:Type="String">OSIsoft-Message-Format-(OMF)_1.0</Data></Cell>
+   <Row ss:AutoFitHeight="0" ss:Height="15.975">
+    <Cell ss:Index="2"><Data ss:Type="String">  OSIsoft-Message-Format-1.0</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="15">
     <Cell ss:Index="2" ss:StyleID="s66"><Data ss:Type="String">PI-Web-API</Data></Cell>
@@ -603,28 +598,28 @@
    <Row ss:AutoFitHeight="0" ss:Height="15">
     <Cell ss:Index="2" ss:StyleID="s73"><Data ss:Type="String">PI-Interface-for-Werum-PAX-X-Batch_4.0</Data></Cell>
    </Row>
-   <Row ss:AutoFitHeight="0" ss:Height="16">
+   <Row ss:AutoFitHeight="0" ss:Height="15.975">
     <Cell ss:Index="2" ss:StyleID="s74"><Data ss:Type="String">PI-Interface-for-Emerson-DeltaV-Batch</Data></Cell>
    </Row>
-   <Row ss:AutoFitHeight="0" ss:Height="16">
+   <Row ss:AutoFitHeight="0" ss:Height="15.975">
     <Cell ss:Index="2" ss:StyleID="s75"><Data ss:Type="String">PI-Interface-for-Emerson-DeltaV-Batch_4.0</Data></Cell>
    </Row>
-   <Row ss:AutoFitHeight="0" ss:Height="16">
+   <Row ss:AutoFitHeight="0" ss:Height="15.975">
     <Cell ss:Index="2" ss:StyleID="s76"><Data ss:Type="String">PI-Interface-for-Emerson-DeltaV-Syncade-Batch</Data></Cell>
    </Row>
-   <Row ss:AutoFitHeight="0" ss:Height="16">
+   <Row ss:AutoFitHeight="0" ss:Height="15.975">
     <Cell ss:Index="2" ss:StyleID="s77"><Data ss:Type="String">TBD</Data></Cell>
    </Row>
-   <Row ss:AutoFitHeight="0" ss:Height="16">
+   <Row ss:AutoFitHeight="0" ss:Height="15.975">
     <Cell ss:Index="2" ss:StyleID="s76"><Data ss:Type="String">PI-Interface-for-WonderWare-InBatch</Data></Cell>
    </Row>
-   <Row ss:AutoFitHeight="0" ss:Height="16">
+   <Row ss:AutoFitHeight="0" ss:Height="15.975">
     <Cell ss:Index="2" ss:StyleID="s77"><Data ss:Type="String">TBD</Data></Cell>
    </Row>
-   <Row ss:AutoFitHeight="0" ss:Height="16">
+   <Row ss:AutoFitHeight="0" ss:Height="15.975">
     <Cell ss:Index="2" ss:StyleID="s76"><Data ss:Type="String">PI-Interface-for-Rockwell-Factory-Talk-Batch</Data></Cell>
    </Row>
-   <Row ss:AutoFitHeight="0" ss:Height="16">
+   <Row ss:AutoFitHeight="0" ss:Height="15.975">
     <Cell ss:Index="2" ss:StyleID="s77"><Data ss:Type="String">TBD</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="15">
@@ -719,8 +714,8 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>2</ActiveRow>
-     <ActiveCol>4</ActiveCol>
+     <ActiveRow>5</ActiveRow>
+     <ActiveCol>1</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -729,15 +724,15 @@
  </Worksheet>
  <Worksheet ss:Name="tags by publication lookup">
   <Table ss:ExpandedColumnCount="7" ss:ExpandedRowCount="80" x:FullColumns="1"
-   x:FullRows="1" ss:StyleID="s62" ss:DefaultColumnWidth="52"
+   x:FullRows="1" ss:StyleID="s62" ss:DefaultColumnWidth="51.9"
    ss:DefaultRowHeight="15">
-   <Column ss:StyleID="s62" ss:Width="131"/>
-   <Column ss:StyleID="s81" ss:AutoFitWidth="0" ss:Width="131"/>
+   <Column ss:StyleID="s62" ss:Width="131.1"/>
+   <Column ss:StyleID="s81" ss:AutoFitWidth="0" ss:Width="131.1"/>
    <Column ss:StyleID="s62" ss:AutoFitWidth="0" ss:Width="249"/>
-   <Column ss:StyleID="s81" ss:Width="305"/>
-   <Column ss:StyleID="s82" ss:Width="305"/>
+   <Column ss:StyleID="s81" ss:Width="305.09999999999997"/>
+   <Column ss:StyleID="s82" ss:Width="305.09999999999997"/>
    <Column ss:StyleID="s83" ss:Width="48"/>
-   <Column ss:StyleID="s62" ss:AutoFitWidth="0" ss:Width="115"/>
+   <Column ss:StyleID="s62" ss:AutoFitWidth="0" ss:Width="114.9"/>
    <Row ss:AutoFitHeight="0" ss:StyleID="s84">
     <Cell><Data ss:Type="String">Product Family</Data></Cell>
     <Cell ss:StyleID="s85"><Data ss:Type="String">Product Family key</Data></Cell>
@@ -749,7 +744,7 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="3" ss:StyleID="s88"><Data ss:Type="String">OSIsoft Cloud Services (OCS)</Data></Cell>
-    <Cell><Data ss:Type="String">OSIsoft-Cloud-Services-(OCS)</Data></Cell>
+    <Cell><Data ss:Type="String">OSIsoft-Cloud-Services</Data></Cell>
     <Cell><Data ss:Type="String">OSIsoft Cloud Services</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -859,7 +854,7 @@
     <Cell ss:StyleID="s90"><Data ss:Type="String">Developer</Data></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">developer</Data></Cell>
     <Cell><Data ss:Type="String">OSIsoft Message Format (OMF)</Data></Cell>
-    <Cell ss:StyleID="s89"><Data ss:Type="String">OSIsoft-Message-Format-(OMF)</Data></Cell>
+    <Cell ss:StyleID="s89"><Data ss:Type="String">OSIsoft-Message-Format</Data></Cell>
     <Cell><Data ss:Type="String">OSIsoft Message Format (OMF)</Data></Cell>
     <Cell ss:Index="7" ss:StyleID="s91"><Data ss:Type="String">Yes</Data></Cell>
    </Row>
@@ -1142,28 +1137,28 @@
     <Cell ss:StyleID="s94"><Data ss:Type="String">PI-Interface-for-Werum-PAX-X-Batch</Data></Cell>
     <Cell ss:StyleID="s95"><Data ss:Type="String">PI Interface for Werum PAX-X Batch</Data></Cell>
    </Row>
-   <Row ss:AutoFitHeight="0" ss:Height="16">
+   <Row ss:AutoFitHeight="0" ss:Height="15.975">
     <Cell><Data ss:Type="String">PI Interfaces</Data></Cell>
     <Cell ss:StyleID="s92"><Data ss:Type="String">interface</Data></Cell>
     <Cell ss:StyleID="s96"><Data ss:Type="String">PI Interface for Emerson DeltaV Batch</Data></Cell>
     <Cell ss:StyleID="s97"><Data ss:Type="String">PI-Interface-for-Emerson-DeltaV-Batch</Data></Cell>
     <Cell ss:StyleID="s98"><Data ss:Type="String">PI Interface for Emerson DeltaV Batch</Data></Cell>
    </Row>
-   <Row ss:AutoFitHeight="0" ss:Height="16">
+   <Row ss:AutoFitHeight="0" ss:Height="15.975">
     <Cell><Data ss:Type="String">PI Interfaces</Data></Cell>
     <Cell ss:StyleID="s92"><Data ss:Type="String">interface</Data></Cell>
     <Cell ss:StyleID="s96"><Data ss:Type="String">PI Interface for Emerson DeltaV Syncade Batch</Data></Cell>
     <Cell ss:StyleID="s99"><Data ss:Type="String">PI-Interface-for-Emerson-DeltaV-Syncade-Batch</Data></Cell>
     <Cell ss:StyleID="s98"><Data ss:Type="String">PI Interface for Emerson Syncade DeltaV Batch</Data></Cell>
    </Row>
-   <Row ss:AutoFitHeight="0" ss:Height="16">
+   <Row ss:AutoFitHeight="0" ss:Height="15.975">
     <Cell><Data ss:Type="String">PI Interfaces</Data></Cell>
     <Cell ss:StyleID="s92"><Data ss:Type="String">interface</Data></Cell>
     <Cell ss:StyleID="s96"><Data ss:Type="String">PI Interface for WonderWare InBatch</Data></Cell>
     <Cell ss:StyleID="s99"><Data ss:Type="String">PI-Interface-for-WonderWare-InBatch</Data></Cell>
     <Cell ss:StyleID="s98"><Data ss:Type="String">PI Interface for WonderWare InBatch</Data></Cell>
    </Row>
-   <Row ss:AutoFitHeight="0" ss:Height="16">
+   <Row ss:AutoFitHeight="0" ss:Height="15.975">
     <Cell><Data ss:Type="String">PI Interfaces</Data></Cell>
     <Cell ss:StyleID="s92"><Data ss:Type="String">interface</Data></Cell>
     <Cell ss:StyleID="s96"><Data ss:Type="String">PI Interface for FactoryTalk Batch</Data></Cell>
@@ -1279,7 +1274,7 @@
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
-   <TopRowBottomPane>20</TopRowBottomPane>
+   <TopRowBottomPane>1</TopRowBottomPane>
    <ActivePane>2</ActivePane>
    <Panes>
     <Pane>
@@ -1287,8 +1282,8 @@
     </Pane>
     <Pane>
      <Number>2</Number>
-     <ActiveRow>27</ActiveRow>
-     <ActiveCol>7</ActiveCol>
+     <ActiveRow>28</ActiveRow>
+     <ActiveCol>3</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -1297,7 +1292,7 @@
  </Worksheet>
  <Worksheet ss:Name="Sheet1">
   <Table ss:ExpandedColumnCount="1" ss:ExpandedRowCount="1" x:FullColumns="1"
-   x:FullRows="1" ss:DefaultColumnWidth="53" ss:DefaultRowHeight="13">
+   x:FullRows="1" ss:DefaultColumnWidth="53.1" ss:DefaultRowHeight="12.975">
    <Row ss:AutoFitHeight="0"/>
   </Table>
   <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">

@@ -1,27 +1,64 @@
 type:
-  type: markdown
+  type: application/json
   value: |
-    ```csharp
-    public enum State
-    {
-     Ok,
-     Warning,
-     Alarm
-    }
-
-    public class SimpleType
-    {
-     [SdsMember(IsKey = true, Order = 0) ]
-     public DateTime Time { get; set; }
-     public State State { get; set; }
-     [SdsMember(Uom = "meter")]
-     public Double Measurement { get; set; }
-    }
-    ```
+     {
+        "Id": "SimpleType",
+        "Name": "SimpleType",
+        "SdsTypeCode": 1,
+        "Properties": [
+            {
+                "Id": "Time",
+                "Name": "Time",
+                "IsKey": true,
+                "SdsType": {
+                    "Id": "DateTime",
+                    "Name": "DateTime",
+                    "SdsTypeCode": 16
+                }
+            },
+            {
+                "Id": "State",
+                "Name": "State",
+                "SdsType": {
+                    "Id": "State",
+                    "Name": "State",
+                    "SdsTypeCode": 609,
+                    "Properties": [
+                        {
+                            "Id": "Ok",
+                            "Value": 0
+                        },
+                        {
+                            "Id": "Warning",
+                            "Value": 1
+                        },
+                        {
+                            "Id": "Alarm",
+                            "Value": 2
+                        }
+                    ]
+                }
+            },
+            {
+                "Id": "Measurement",
+                "Name": "Measurement",
+                "SdsType": {
+                    "Id": "Double",
+                    "Name": "Double",
+                    "SdsTypeCode": 14
+                },
+                "Uom": "meter"
+            }
+        ]
+      }
 stream:
-  type: markdown
+  type: application/json
   value: |
-   ``Simple`` is an SdsStream of type ``SimpleType``.
+   {
+        "TypeId": "SimpleType",
+        "Id": "SimpleStream",
+        "Name": "SimpleStream"
+    }
 data:
   type: markdown
   value: |

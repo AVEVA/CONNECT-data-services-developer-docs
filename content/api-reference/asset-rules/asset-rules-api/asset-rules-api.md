@@ -78,8 +78,6 @@ The requested asset rule.
 }
 ```
 
-***
-
 ## Create Rule
 
 Gets or creates a rule with the specified ID.
@@ -118,8 +116,6 @@ The response includes a status code and response body.
 | 403 Forbidden             | Error      | You are not authorized to retrieve the asset rule.     |
 | 409 Conflict              | Error      | Another asset rule with the specified ID.              |
 | 500 Internal Server Error | Error      | Internal server error.                                 |
-
-***
 
 ## Create or Update Rule
 
@@ -161,8 +157,6 @@ The response includes a status code and a response body.
 | 403 Forbidden             | Error      | You are not authorized to retrieve the asset rule.    |
 | 500 Internal Server Error | Error      | Internal server error.                                |
 
-***
-
 ## Delete Rule
 
 Deletes the specified rule
@@ -197,8 +191,6 @@ The response includes a status code.
 | 404 Not Found           | Error      | The specified rule was not found.                                |
 | 403 Forbidden             | Error      | You are not authorized to delete the asset rule.    |
 | 500 Internal Server Error | Error      | Internal server error.                                |
-
-***
 
 ## Execute Rule
 
@@ -236,8 +228,6 @@ The response includes a status code.
 | 409 Conflict             | Error      | The automation id associated with the rule was invalid.    |
 | 500 Internal Server Error | Error      | Internal server error.                                |
 
-***
-
 ## Search Rules
 
 Gets all asset rules that the requesting identity has access to
@@ -269,7 +259,6 @@ The response includes a status code and response body.
 | 403 Forbidden             | Error     | You are not authorized to retrieve rules.                 |
 | 500 Internal Server Error | Error     | Internal server error.                                    |
 
-***
 
 ## Get Rule ACL
 
@@ -305,8 +294,6 @@ The response includes a status code and a response body.
 | 403 Forbidden             | Error             | You are not authorized to retrieve the ACL.    |
 | 404 Not Found             | Error             | The specified rule ID was not found.           |
 | 500 Internal Server Error | Error             | Internal server error.                         |
-
-***
 
 ## Set Rule ACL
 
@@ -360,8 +347,6 @@ The response includes a status code and a response body.
 | 404 Not Found             | Error             | The specified rule ID was not found.           |
 | 500 Internal Server Error | Error             | Internal server error.                         |
 
-***
-
 ## Get Access Rights
 
 Gets a list of the common access rights that the identity, who is making the request, has on the specified rule 
@@ -396,8 +381,6 @@ The response includes a status code and a response body.
 | 403 Forbidden             | Error       | You are not authorized to get the access rights.             |
 | 404 Not Found             | Error       | The specified rule ID was not found.                         |
 | 500 Internal Server Error | Error       | Internal server error.                                       |
-
-***
 
 ## Get Rule Owner
 
@@ -436,7 +419,6 @@ The response includes a status code and a response body.
 | 404 Not Found             | Error     | The specified rule ID was not found.          |
 | 500 Internal Server Error | Error     | Internal server error.                        |
 
-***
 
 ## Set Rule Owner 
 

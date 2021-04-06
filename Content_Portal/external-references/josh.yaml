@@ -18,3 +18,39 @@ sample-code:
       "Item": "string",
       "Value": 1000
     } 
+client:
+  type: text/plain
+  value: |
+    The identifier for the client application.
+role:
+  type: text/plain
+  value: |
+    The list of roles for the client.
+namespaceToCreate:
+  type: text/plain
+  value: |
+    Namespace to be created.   
+newProperties:
+  type: text/plain
+  value: |
+    Details for the namespace. 
+newAccessControlList:
+  type: text/plain
+  value: |
+    Updated ACL for the namespace. 
+blog-id:
+  type: text/plain
+  value: |
+    Identifier of the blog entry. 
+newTenant:
+  type: text/plain
+  value: |
+    Updated tenant for the namespace.   
+icon:
+  type: text/plain
+  value: |
+    The Base64 encoded PNG icon for the Tenant.
+feature-state-id:
+  type: text/plain
+  value: |
+    The identifier of the FeatureState to retrieve.

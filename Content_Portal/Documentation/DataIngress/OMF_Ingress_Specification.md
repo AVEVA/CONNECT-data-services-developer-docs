@@ -23,7 +23,7 @@ OMF message types fall into three categories: *type*, *container*, and *data*, w
   + ``id``: Corresponds to the SdsType Id field. It must conform to the rules defined for a 
     typeId specified here: [Types](xref:sdsTypes)
 
-    **Note:** Both forward slashes (`/`) and back slashes (`\`) are supported for this field.
+    **Note:** For this field, both forward slashes (`/`) and back slashes (`\`) are supported. OCS automatically replaces forward slashes with back slashes when it receives a message.
 
   + ``classification``: Only the ``dynamic`` classification is currently supported.
   + ``version``: Versioning of SdsTypes is not supported.
@@ -83,15 +83,14 @@ in the *container* definition are interpreted as follows:
 * ``tags``: Corresponds to the SdsStream Tag field. 
 * ``metadata``: Corresponds to the SdsStream Metadata field.
 
-**Note:** Both forward slashes (`/`) and back slashes (`\`) are supported for the `id` and `typeid` fields.
+**Note:** For the `id` and `typeid` fields, both forward slashes (`/`) and back slashes (`\`) are supported. OCS automatically replaces forward slashes with back slashes when it receives a message.
 
 ## Data messages
-A *data* message is mapped to generic Sds values in the Sequential Data Store. The keywords in the 
-*data* definitions are interpreted as follows:
+A *data* message is mapped to generic Sds values in the Sequential Data Store. The keywords in the *data* definitions are interpreted as follows:
 
 * ``typeid``: Data that is not grouped by containerId is not supported.
 * ``containerid``: Stream Id for the associated Sds Stream.
 * ``typeversion``: Not supported.
 * ``values``: An array of the generic Sds values.
 
-**Note:** Both forward slashes (`/`) and back slashes (`\`) are supported for the `typeid` and `containerid` fields.
+**Note:** For the `typeid` and `containerid` fields, both forward slashes (`/`) and back slashes (`\`) are supported. OCS automatically replaces forward slashes with back slashes when it receives a message.

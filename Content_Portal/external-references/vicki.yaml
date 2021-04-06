@@ -6,6 +6,20 @@ parameter:
 vicki:
   type: markdown
   value: |
+
+For your homework due Tuesday: 
+     
+    - Create more parameters in this file.
+    - Browse through the content in [PItoOCS API documentation](https://dev.azure.com/osieng/engineering/_wiki/wikis/OCS%20Internal%20API%20Documentation/17057/access-control).
+    - I got started with PI to OCS parameters [here](https://raw.githubusercontent.com/osisoft/OCS-Docs/master/Content_Portal/external-references/parameters.yaml), but might not have captured everything. 
+    Ping me Monday if you're unsure. 
+sample-code:
+  type: application/json
+  value: |
+    {
+      "Item": "string",
+      "Value": 1000
+    } 
 count:
   type: text/plain
   value: |
@@ -61,18 +75,6 @@ endBoundaryType:
 continuationToken:
   type: text/plain
   value: |
-    Token used to retrieve the next page of data. If count is specified, a continuationToken must also be specified.    
+    Token used to retrieve the next page of data. If count is specified, a continuationToken must also be specified.
         
-    For your homework due Tuesday: 
-     
-    - Create more parameters in this file.
-    - Browse through the content in [PItoOCS API documentation](https://dev.azure.com/osieng/engineering/_wiki/wikis/OCS%20Internal%20API%20Documentation/17057/access-control).
-    - I got started with PI to OCS parameters [here](https://raw.githubusercontent.com/osisoft/OCS-Docs/master/Content_Portal/external-references/parameters.yaml), but might not have captured everything. 
-    Ping me Monday if you're unsure. 
-sample-code:
-  type: application/json
-  value: |
-    {
-      "Item": "string",
-      "Value": 1000
-    } 
+    

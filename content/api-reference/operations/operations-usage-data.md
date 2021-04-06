@@ -7,8 +7,6 @@ uid: operationsUsage_Data
 APIs related to querying Usage data.
 
 
-***
-
 ## Authentication
 
 All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieved after a successful authentication request.
@@ -140,7 +138,7 @@ Forbidden
 #### 500
 
 Internal server error
-***
+
 
 ## `Get Namespace Usage`
 
@@ -240,5 +238,4 @@ Forbidden
 #### 500
 
 Internal server error
-***
 

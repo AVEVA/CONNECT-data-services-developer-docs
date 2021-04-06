@@ -49,7 +49,7 @@ newTenant:
 icon:
   type: text/plain
   value: |
-    The Base64 encoded PNG icon for the Tenant.
+    The Base64 encoded PNG icon for the tenant.
 feature-state-id:
   type: text/plain
   value: |

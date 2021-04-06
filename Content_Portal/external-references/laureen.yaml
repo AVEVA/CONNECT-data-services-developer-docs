@@ -47,4 +47,23 @@ asset-centric-data-count:
   type: text/plain
   value: |
     The number of requested intervals 
-  
+asset-type-example-code:
+  type: application/json
+  value: |
+    Content-Type: application/json
+    {
+  "Id": "ChargingStationType", 
+  "Description": "Charging Station Type", 
+  "Metadata": [{ 
+     "Id":"d7368dc2-58f0-4669-8e6e-44ac2cc3f47c",
+     "Name": "Location", 
+     "SdsTypeCode": 18, 
+     "Value": null 
+     "Uom": null 
+  }], 
+  "TypeReferences": [{ 
+     "StreamReferenceId": "Reference1", 
+     "StreamReferenceName": "ReferenceName", 
+     "TypeId": "PI-Float32" 
+   }] 
+  }

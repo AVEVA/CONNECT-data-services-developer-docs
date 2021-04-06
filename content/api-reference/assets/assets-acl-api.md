@@ -5,7 +5,6 @@ uid: AssetOrAssetTypeAccessControlAPI
 # Asset and AssetType ACL API
 The access control API is used to secure assets by setting their ownership and permissions. For more information about OCS access control, see [Role-based access control][xref:accessControl].
 
-***
 ## `Get Asset or AssetType Access Control List ` 
 Get the default `AccessControlList` for the assets collection and asset type collection.
 
@@ -119,7 +118,6 @@ The response includes a status code and, in some instances, a body.
 | 400 Bad Request             | error     | The request is not valid. See the response body for details.       |
 | 403 Forbidden             | error     | You are not authorized to update the asset or asset type collection's default access control list. |
 
-***
 
 ## `Get Asset or AssetType Access Control List` 
 
@@ -193,7 +191,6 @@ HTTP 200 OK
 }
 
 ```
-***
 
 ## `Update Asset or AssetType Access Control List` 
 
@@ -248,7 +245,6 @@ The response includes a status code and, in some instances, a body.
 | 403 Forbidden             | error     | You are not authorized to update the access control list of the requested asset or asset type. |
 | 404 Not Found             | error     | The requested asset or asset type with the specified `Id` was not found. |
 
-***
 
 ## `Get Asset or AssetType Access Rights` 
 
@@ -310,7 +306,6 @@ HTTP 200 OK
 ]
 
 ```
-***
 
 ## `Get Asset or AssetType Owner` 
 
@@ -366,7 +361,6 @@ Content-Type: application/json
 }
 
 ```
-***
 
 ## `Update Asset or AssetType Owner` 
 

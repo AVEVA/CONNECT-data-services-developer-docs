@@ -6,9 +6,6 @@ uid: operationsHealth
 
 APIs related to querying OCS Service health states.
 
-
-***
-
 ## Authentication
 
 All endpoints referenced in this documentation require authenticated access. You must set the Authorization header to the access token you retrieved from a successful authentication request.
@@ -110,5 +107,4 @@ Forbidden
 #### 500
 
 Internal server error
-***
 

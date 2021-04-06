@@ -6,9 +6,6 @@ uid: operationsLogs
 
 APIs related to querying logs. A log is a record of events that occur in operation of OCS.
 
-
-***
-
 ## Authentication
 
 All endpoints referenced in this documentation require authenticated access. Authorization header must be set to the access token you retrieved after a successful authentication request.
@@ -163,7 +160,6 @@ Forbidden.
 #### 500
 
 Internal server error.
-***
 
 ## `Get Namespace Logs`
 
@@ -301,5 +297,3 @@ Forbidden.
 #### 500
 
 Internal server error.
-***
-

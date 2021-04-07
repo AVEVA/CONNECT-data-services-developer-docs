@@ -93,3 +93,7 @@ data-response:
       "Measurement":40
     }
     ]
+namespace:
+  type: text/plain
+  value: |
+    Namespace identifier

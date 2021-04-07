@@ -11,7 +11,7 @@ APIs to manage an OCS customer tenant. Unlike namespaces, tenants are not scoped
 
 * Alias (was Company Alias) – used during user sign-in to uniquely identify tenant.
 
-Account level information, such as users and clients, is stored in all supported regions for read-only purposes. 
+Tenant level information, such as users and clients, is stored in all supported regions for read-only purposes. 
 
 ## Properties
 

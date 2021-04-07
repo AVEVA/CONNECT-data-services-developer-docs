@@ -85,7 +85,8 @@ For more information on stream properties, see [Streams](xref:sdsStreams#streamp
 | [Tags](xref:sdsStreamExtra)*	| Yes		  |
 | ACL | No		  |
 | Owner | No		  |
-**\*Notes on metadata and tags:** You can access SdsStream metadata and tags through Metadata and Tags API respectively. Metadata and tags are associated with SdsStream objects and can be used as search criteria. See [below](#Stream_Metadata_search_topic) for more information.
+> [!Note]
+> You can access stream metadata and tags through Metadata API and Tags API respectively. Metadata and tags are associated with streeams and can be used as search criteria. See [below](#Stream_Metadata_search_topic) for more information.
 
 #### Request
 Search for streams using the REST API and specifying the optional `query` parameter:

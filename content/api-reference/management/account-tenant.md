@@ -5,13 +5,13 @@ uid: AccountTenant
 # Tenants
 
 APIs to manage an OCS Customer tenant account. A tenant represents the set of services, applications, data, and configuration state available to a customer. Users are associated with a tenant via at least one configured identity provider and access to resources can be managed for those users via the assignment of roles. Data and services provided by a tenant may also span geographical regions. A tenant has 
-APIs to manage an OCS customer tenant. Unlike namespaces, tenants are not scoped to a region. Tenant level information, such as users and clients, is stored in all supported regions for read-only purposes. Write operations for tenant management and identity and access management are only supported through the global base URL. Unsupported requests return a status of ``Method Not Allowed`` (405). The resolution is to utilize the global base URL (https://dat-b.osisoft.com/) for write operations that are not scoped to a namespace.
+APIs to manage an OCS customer tenant. Unlike namespaces, tenants are not scoped to a region. Tenant level information, such as users and clients, is stored in all supported regions for read-only purposes. Write operations for tenant management and identity and access management are only supported through the global base URL, such as https://dat-b.osisoft.com/Tenants/{tenantId}.  Requests to local URLs will return a status of Method Not Allowed (405). 
 
 * Name (was Company Name) – official customer name. May not be unique.
 
 * Alias (was Company Alias) – used during user sign-in to uniquely identify tenant.
 
-Account level information, such as users and clients, is stored in all supported regions for read-only purposes. Write operations for account management and identity management are only supported through the global base URL. Unsupported requests return a status of ``Method Not Allowed`` (405). The resolution is to utilize the global base URL (https://dat-b.osisoft.com/) for write operations that are not scoped to a namespace.
+Account level information, such as users and clients, is stored in all supported regions for read-only purposes. 
 
 ## Properties
 

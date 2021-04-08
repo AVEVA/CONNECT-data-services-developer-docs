@@ -54,3 +54,14 @@ feature-state-id:
   type: text/plain
   value: |
     The identifier of the FeatureState to retrieve.
+sample-code:
+  type: application/json
+  value: |
+    {
+      "Id": "id",
+      "Name": "name",
+      "Description": "description",
+      "RoleScope": 0,
+      "CommunityId": "communityid",
+      "RoleTypeId": "roletypeid"
+    } 

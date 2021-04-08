@@ -11,15 +11,15 @@ For your homework due Tuesday:
      
     - Create more parameters in this file.
     - Browse through the content in [PItoOCS API documentation](https://dev.azure.com/osieng/engineering/_wiki/wikis/OCS%20Internal%20API%20Documentation/17057/access-control).
-    - I got started with PI to OCS parameters [here](https://raw.githubusercontent.com/osisoft/OCS-Docs/master/Content_Portal/external-references/parameters.yaml), but might not have captured everything. 
-    Ping me Monday if you're unsure. 
+    - I got started with PI to OCS parameters [here](https://raw.githubusercontent.com/osisoft/OCS-Docs/master/Content_Portal/external-references/parameters.yaml), but might not have captured everything. Ping me Monday if you're unsure.
+ 
 sample-code:
   type: application/json
   value: |
-    {
+   {
       "Item": "string",
       "Value": 1000
-    } 
+    }
 count:
   type: text/plain
   value: |
@@ -76,5 +76,69 @@ continuationToken:
   type: text/plain
   value: |
     Token used to retrieve the next page of data. If count is specified, a continuationToken must also be specified.
+type:
+  type: application/json
+  value: |
+     {
+        "Id": "SimpleType",
+        "Name": "SimpleType",
+        "SdsTypeCode": 1,
+        "Properties": [
+            {
+                "Id": "Time",
+                "Name": "Time",
+                "IsKey": true,
+                "SdsType": {
+                    "Id": "DateTime",
+                    "Name": "DateTime",
+                    "SdsTypeCode": 16
+                }
+            },
+            {
+                "Id": "State",
+                "Name": "State",
+                "SdsType": {
+                    "Id": "State",
+                    "Name": "State",
+                    "SdsTypeCode": 609,
+                    "Properties": [
+                        {
+                            "Id": "Ok",
+                            "Value": 0
+                        },
+                        {
+                            "Id": "Warning",
+                            "Value": 1
+                        },
+                        {
+                            "Id": "Alarm",
+                            "Value": 2
+                        }
+                    ]
+                }
+            },
+            {
+                "Id": "Measurement",
+                "Name": "Measurement",
+                "SdsType": {
+                    "Id": "Double",
+                    "Name": "Double",
+                    "SdsTypeCode": 14
+                },
+                "Uom": "meter"
+            }
+        ]
+      }
+data:
+  type: markdown
+  value: |
+    ``Simple`` has stored values as follows:
+    ```text
+      11/23/2017 12:00:00 PM: Ok  0
+      11/23/2017  1:00:00 PM: Ok 10
+      11/23/2017  2:00:00 PM: Ok 20
+      11/23/2017  3:00:00 PM: Ok 30
+      11/23/2017  4:00:00 PM: Ok 40
+    ```
         
     

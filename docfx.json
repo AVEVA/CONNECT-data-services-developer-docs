@@ -27,7 +27,8 @@
          "**.md"
       ],
       "exclude":[
-         "Content_Portal/Documentation/Identity/Identity_ImplicitClient.md"
+         "Content_Portal/Documentation/Identity/Identity_ImplicitClient.md",
+	 "Content_Portal/external-references/**.yaml"     
       ]
    }
 ],

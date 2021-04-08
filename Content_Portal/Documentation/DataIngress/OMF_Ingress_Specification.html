@@ -92,6 +92,7 @@ Versions 1.0 and 1.1 of the spec are currently supported. </p>
 <ul>
 <li><p><code>id</code>: Corresponds to the SdsType Id field. It must conform to the rules defined for a 
 typeId specified here: <a class="xref" href="../SequentialDataStore/SDS_Types.html">Types</a></p>
+<p><strong>Note:</strong> For this field, both forward slashes (<code>/</code>) and back slashes (<code>\</code>) are supported. OCS automatically replaces forward slashes with back slashes when it receives a message.</p>
 </li>
 <li><p><code>classification</code>: Only the <code>dynamic</code> classification is currently supported.</p>
 </li>
@@ -209,17 +210,18 @@ in the <em>container</em> definition are interpreted as follows:</p>
 <li><code>name</code>: Corresponds to the SdsStream Name field. This is a friendly name for the stream.</li>
 <li><code>description</code>: Corresponds to the SdsStream Description field.</li>
 <li><code>tags</code>: Corresponds to the SdsStream Tag field. </li>
-<li><code>metadata</code>: Corresponds to the SdsStream Metadata field.        </li>
+<li><code>metadata</code>: Corresponds to the SdsStream Metadata field.</li>
 </ul>
+<p><strong>Note:</strong> For the <code>id</code> and <code>typeid</code> fields, both forward slashes (<code>/</code>) and back slashes (<code>\</code>) are supported. OCS automatically replaces forward slashes with back slashes when it receives a message.</p>
 <h2 id="data-messages">Data messages</h2>
-<p>A <em>data</em> message is mapped to generic Sds values in the Sequential Data Store. The keywords in the 
-<em>data</em> definitions are interpreted as follows:</p>
+<p>A <em>data</em> message is mapped to generic Sds values in the Sequential Data Store. The keywords in the <em>data</em> definitions are interpreted as follows:</p>
 <ul>
 <li><code>typeid</code>: Data that is not grouped by containerId is not supported.</li>
 <li><code>containerid</code>: Stream Id for the associated Sds Stream.</li>
 <li><code>typeversion</code>: Not supported.</li>
 <li><code>values</code>: An array of the generic Sds values.</li>
 </ul>
+<p><strong>Note:</strong> For the <code>typeid</code> and <code>containerid</code> fields, both forward slashes (<code>/</code>) and back slashes (<code>\</code>) are supported. OCS automatically replaces forward slashes with back slashes when it receives a message.</p>
 </article>
           </div>
           

@@ -6,7 +6,7 @@ tenant:
   type: text/plain
   value: |
     Tenant identifier
-communities-tenant:
+tenant-community:
   type: text/plain
   value: |
     Owning tenant identifier

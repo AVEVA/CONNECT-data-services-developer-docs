@@ -6,9 +6,6 @@ uid: operationsMetrics
 
 APIs related to querying tenant metrics.
 
-
-***
-
 ## Authentication
 
 All endpoints referenced in this documentation require authenticated access. You must set the Authorization header to the access token you retrieved from a successful authentication request.
@@ -130,7 +127,6 @@ Forbidden
 #### 500
 
 Internal server error
-***
 
 ## `Get OMF Connection Metrics`
 <!--Get OMF Metrics-->
@@ -230,4 +226,3 @@ Forbidden
 
 Internal server error
 
-***

@@ -18,7 +18,7 @@ A namespace is a logical unit of organization for data within a tenant. Before a
 
 3. In the `Namespace Id` field, enter your namespace Id, enter a description, and select a region. 
 
-   Note: Once the namespace is created, the `Namespace Id` and `Region` fields cannot be changed.
+   **Note:** Once the namespace is created, the `Namespace Id` and `Region` fields cannot be changed.
 
 4. Click **Add**.
 

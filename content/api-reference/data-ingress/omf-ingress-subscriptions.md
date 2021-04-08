@@ -31,8 +31,6 @@ Subscription information is contained in an object called subscription which has
 | CreatedDate          | DateTime                | Date and time this Subscription was created. |
 | Enabled              | boolean                 | Whether the Topic exists or not.        |
 
-*****************
-
 ## `Get Tenant Subscriptions`
 Get all subscriptions for a tenant. 
 

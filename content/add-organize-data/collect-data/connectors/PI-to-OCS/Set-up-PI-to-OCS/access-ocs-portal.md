@@ -10,7 +10,7 @@ Log on to the OCS customer portal to access and install the PI to OCS agent and 
 
 Make sure to have your OCS account log on credentials, your company alias or tenant ID, and your tenant's namespace for the data transfer. <!-- I want to make a link to Account_Management_Concepts.md and then to the Namespace section within, but there's no UID for that topic -->
 
-**Note.** If you encounter any issues, please refer to your initial OCS activation email or [https://cloud.osisoft.com/account](https://cloud.osisoft.com/account) for help.
+**Note:** If you encounter any issues, please refer to your initial OCS activation email or [https://cloud.osisoft.com/account](https://cloud.osisoft.com/account) for help.
 
 ## Procedure
 
@@ -20,7 +20,7 @@ Make sure to have your OCS account log on credentials, your company alias or ten
 4. Click **Continue**.
 5. At the **PI to OCS Agent Login** window, sign in to your OCS tenant using a user account that has Account Administrator privileges.
 
-<br>**Note.** In the screenshot below, the OCS user is configured to use both a Microsoft Account (MSA) and Google to sign in again.  Be sure to sign in to the OCS portal with an account assigned to the Account Administrator role.<br>
+<br>**Note:** In the screenshot below, the OCS user is configured to use both a Microsoft Account (MSA) and Google to sign in again.  Be sure to sign in to the OCS portal with an account assigned to the Account Administrator role.<br>
 
 ![ ](../../images/sign-in-screen.png)
 _Sign in window_

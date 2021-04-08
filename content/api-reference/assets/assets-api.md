@@ -28,8 +28,6 @@ If-Match : "7"
 
 Note: If-Match is optional. If you want to delete or modify an asset regardless of the asset version, do not specify an If-Match.
 
-***
-
 ## `Get Asset by Id` 
 Returns the specified asset and the version Etag in the HTTP response header.
 
@@ -86,7 +84,6 @@ Content-Type: application/json
     ]
 }
 ```
-***
 
 ## `Get Assets` 
 Returns an array of assets and the total number of assets returned, specified as Total-Count in the HTTP response header. 
@@ -118,8 +115,6 @@ The response includes a status code and a body.
 | 204 No Content | none | No assets were found or you do not have permission to view assets. |
 | 400 Bad Request | error | The request is not valid. See the response body for additional details. |
 | 503 Service Unavailable | error | An error occurred while processing the request. See the response body for additional details. |
-
-***
 
 ## `Create Asset` 
 Create a new asset with a specified `Id`. 
@@ -182,7 +177,6 @@ The response includes a status code, a body, and the Etag version in the HTTP re
 | 403 Forbidden            | error     | You are not authorized to create assets.           |
 | 409 Conflict | error     | The asset create has a conflict. See the response body for additional details. |
 
-***
 
 ## `Create Assets (Bulk create)` 
 
@@ -217,8 +211,6 @@ The response includes a status code and a body.
 | 400 Bad Request           | error     | The request is not valid. The response includes which asset failed validation checks. See the response body for additional details.     |
 | 403 Forbidden             | error     | You are not authorized to create assets.           |
 | 409 Conflict              | error      | The asset create has a conflict. See the response body for additional details.  |
-
-***
 
 ## `Create or Update Asset` 
 
@@ -263,8 +255,6 @@ The response includes a status code, body, and Etag version in the HTTP response
 | 404 Not Found            | error     | The asset, with the specified identifier, was not found.            |
 | 409 Conflict             | error     | The asset update or create has a conflict. See the response body for additional details. |
 | 412 Pre-Condition Failed | error     | The asset failed to update because the If-Match condition failed.  |
-
-***
 
 ## `Delete Asset` 
 

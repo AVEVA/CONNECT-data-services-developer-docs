@@ -1,0 +1,56 @@
+namespaceId:
+  type: text/plain
+  value: |
+    Namespace identifier
+tenantId:
+  type: text/plain
+  value: |
+    Tenant identifier
+query:
+  type: text/plain
+  value: |
+    Query identifier
+count:
+  type: text/plain
+  value: |
+    Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.
+skip:
+  type: text/plain
+  value: |
+    Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.
+streamId:
+  type: text/plain
+  value: |
+    Stream identifier
+key:
+  type: text/plain
+  value: |
+    Key specifying the metadata value of interest
+tenantId-community:
+  type: text/plain
+  value: |
+    Owning tenant identifier
+query-community:
+  type: text/plain
+  value: |
+    (Not supported) Query identifier
+communityId:
+  type: text/plain
+  value: |
+    Community identifier
+invitationId:
+  type: text/plain
+  value: |
+    Invitation identifier
+userId:
+  type: text/plain
+  value: |
+    User identifier
+datasourceId:
+  type: text/plain
+  value: |
+    Data source identifier
+dataViewId:
+  type: text/plain
+  value: |
+    Data view identifier

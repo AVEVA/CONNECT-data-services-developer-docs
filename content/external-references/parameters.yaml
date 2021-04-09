@@ -26,6 +26,10 @@ key:
   type: text/plain
   value: |
     Key specifying the metadata value of interest
+identityProviderId:
+  type: text/plain
+  value: |
+    Identity provider identifier
 tenantId-community:
   type: text/plain
   value: |

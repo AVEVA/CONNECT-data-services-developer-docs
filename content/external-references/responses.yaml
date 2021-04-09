@@ -1,0 +1,24 @@
+200:
+  type: text/plain
+  value: |
+    The request was successful
+400:
+  type: text/plain
+  value: |
+    Due to a client error, the server could not process the request
+401:
+  type: text/plain
+  value: |
+    Authentication has failed or has not been provided
+403:
+  type: text/plain
+  value: |
+    Unauthorized. Make sure the user has the right role to access the resource
+404:
+  type: text/plain
+  value: |
+    The server could not find the requested resource
+500:
+  type: text/plain
+  value: |
+    The server ran into an unexpected condition and failed to complete the request

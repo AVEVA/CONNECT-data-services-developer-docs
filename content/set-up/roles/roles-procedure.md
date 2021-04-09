@@ -11,7 +11,7 @@ Roles are used to manage access to assets, resources, and services in OSIsoft Cl
 
 ## Procedure
 
-Follow the procedure to create role.
+Follow the procedure to create a role.
 
 1. Click the ![Menu icon](../images/menu-icon.png) icon and click **Roles** (under Security).
 

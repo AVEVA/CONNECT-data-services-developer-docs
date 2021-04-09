@@ -35,11 +35,6 @@ After creating the namespace, the next step is to add one or more types. For mor
 
     **Note:** You can use an existing SDS type as the starting point for the new type by selecting an existing SDS type from the **Base Type** list. When you add a base type, its properties populate the **Properties** list. You can then add other properties to the type.
 
-1. Click the ![Properties icon](images\PropertiesPlusIcon.png) icon next to **Properties** to add a property. Enter the following values for these fields:
-   - `Id` &ndash;  **MyOCS.PumpState**
-   - `Name` &ndash;  **MyOCS.PumpState**
-   - `Description` &ndash; **SDS Type used by My OCS**
-   
 1. Click the ![Properties icon](images\PropertiesPlusIcon.png) icon next to **Properties** to add a property.
 
 1. Complete the following fields for the first property:

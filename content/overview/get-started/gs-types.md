@@ -38,14 +38,14 @@ After creating the namespace, the next step is to add one or more types. For mor
 1. Click the ![Properties icon](images\PropertiesPlusIcon.png) icon next to **Properties** to add a property.
 
 1. Complete the following fields for the first property:
+   - `Key` &ndash; Select the checkbox.
+   
+     **Note:** The `Key` field identifies the Timestamp property as the index.
+   
    - `Id` &ndash; Enter **Timestamp**.
    
    - `Type` &ndash; Select **DateTime**. 
    
-   - `Key` &ndash; Select the checkbox.
-   
-     **Note:** The `Key` field identifies the Timestamp property as the index.
-     
    - `UOM` &ndash; Select **hour**.
    
 1. Click the ![Properties icon](images\PropertiesPlusIcon.png) icon to add a second property and complete the fields:

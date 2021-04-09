@@ -9,6 +9,8 @@ Sequential Data Store (SDS) types define the shape and structure of events and h
 - [About types](xref:ccTypes)
 - [Types best practices](xref:bpTypes)
 
+Once a type is created, it cannot be edited. 
+
 ## Procedure
 
 1. Click the ![Menu icon](../images/menu-icon.png) icon and click **Sequential Data Store** (under Data Management).
@@ -22,23 +24,21 @@ Sequential Data Store (SDS) types define the shape and structure of events and h
    - `Id` &ndash; Id for referencing the type
    - `Name` &ndash; User-friendly name
    - `Description` &ndash; Descriptive text that you can use to identify the type
+   - `Base Type` &ndash;  (Optional) Select a previously created type on which the new type will be based. The new type inherits the properties of the base type. Inherited properties are read only and cannot be modified.
 
-1. Click the ![Properties icon](../images/PropertiesPlusIcon.png)icon next to **Properties** to add a property.
+1. Click **Add Property**.
 
 1. Complete the following fields for the first property:
+   - `Key` &ndash;  When selected, identifies the property as the index 
    - `Id` &ndash; Identifier for referencing the property
    - `Type` &ndash;  Sds type of the property
-   - `Key` &ndash;  When selected, identifies the property as the index 
+   - `UOM` &ndash; (Optional) Select a unit of measure from the list. 
    
    **Note:**
    
    - The `Key` field identifies the property as the index.
    
-   - In the OCS portal, only one key can be specified as an index. However, you can specify multiple keys  through the OCS API. For more information, see [Types](xref:sdsTypes).
-   
-   <!-- There may be a better topic to link to. --> 
-   
-   <!-- This is due to a bug in the UI. Check with engineering/product management about how to frame this. It's unclear when this bug will be fixed. -->
+   - You can select multiple properties as indexes. Drag and drop the properties in the list to order the index keys.
    
 1. Continue adding properties to the type.
 

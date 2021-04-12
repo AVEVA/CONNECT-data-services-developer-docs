@@ -70,7 +70,7 @@ The asset or asset type's 'StreamReferences' field has an 'Id' property. To assi
   "Id": "ChargingStationAsset", 
    "AssetTypeId": null,
   "Metadata": [{ 
-      "Name": "Location",  "Value": "Houston", "SdsTypeCode": 18, "Uom": null​ 
+      "Name": "Location",  "Value": "Houston", "SdsTypeCode": "String", "Uom": null​ 
     }], 
     "StreamReferences": [{ 
       "Id": "AssetStreamReferenceId1", 

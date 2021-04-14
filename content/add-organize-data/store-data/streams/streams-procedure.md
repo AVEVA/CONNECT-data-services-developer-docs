@@ -11,43 +11,32 @@ Sequential Data Store (SDS) stream data are values or events of the same SDS typ
 
 ## Procedure
 
-1. Click the ![Menu icon](../images/menu-icon.png) icon and click **Sequential Data Store** (under Data Management).
-
-1. Click **Streams**. From the **Namespace** drop-down list, select the namespace in which you want the stream created.
-
+1. Click the ![Menu icon](C:/Users/lasato/source/repos/OCS-DOCS/sds-new/images/menu-icon.png) and click **Sequential Data Store** (under Data Management).
+1. From the **Namespace** drop-down list, select the namespace in which you want to create the stream.
+   ![Namespace list](../images/sds-namespace.png)
+1. From the **Streams** drop-down list, select **Streams** if it is not already selected.
+    ![Streams list](../images/streams-procedure-streams-list.png)
 1. Click **Add Stream**.
 
 1. In the `Add Stream` window, enter the following:
 
-   - `Stream Id` &ndash; Identifier for referencing the stream
+   - `Id` &ndash; Identifier for referencing the stream
    - `Description` &ndash; User-friendly description of the stream
-   - `Type ID` &ndash; Sds type identifier of the type used in this stream          
+   - `Type` &ndash; Sds type identifier of the type used in this stream          
 
     **Note:** Leave the `Name` field blank. By default, it takes the value of the stream Id.
+   
+1.  Click the **Tags** tab, if it is not already selected.
 
-1. Click **Save**.
-
-1. In the `Search` field, enter: **TypeId:** *type_ID*, where *type_ID* is the value of the type Id of the stream.
-
-    This searches for streams that use the specified type. 
-
-1. In the left panel, select the newly created stream in the list and continue with adding stream tags and metadata.
-
-## Add stream tags
-
-1.  In the right panel, select the **Metadata and Tags** tab, and then click **Add Tag**.
-
-1. In the input field, type the name of the metadata tag and click **Enter**. 
+1. In the `New Tag` field, type the name of the metadata tag and click **+** to add the tag. 
 
     **Note:** You can click the tag to edit it, or click **X** to delete it from the stream.
 
-## Add metadata to the stream
+1. Click the **Metadata** tab and click **Add Metadata**.
 
-1. Click **Add Metadata**.
+1. In the `Metadata Key` and `Metadata Value` fields, enter the key and value of your metadata.
 
-1. In the `Enter Metadata key` and `Enter Metadata value` fields, enter the key and value of your metadata.
-
-    **Note:** You can click either of these fields to edit them later, click the **X** to delete it from the stream, or click the ![Information](../images/info.png) to see who last changed this metadata key.
+    **Note:** You can click either of these fields to edit them later or click the **X** to delete it from the stream.
 
 
 ## Related links

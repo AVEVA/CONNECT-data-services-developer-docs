@@ -17,7 +17,7 @@
   topicHref: rom/rom-overview.md
 - name: API reference
   href: api-reference/toc.yml
-  topicHref: api-reference/osisoft-cloud-services.md
+  topicHref: api-reference/ocs-api-reference.md
 - name: Developer guide
   href: developer-guide/toc.yml
   topicHref: developer-guide/dev-guide-introduction.md

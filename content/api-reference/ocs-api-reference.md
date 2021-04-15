@@ -2,7 +2,7 @@
 uid: osisoftCloudServices
 ---
 
-# OSIsoft Cloud Services
+# OCS API reference
 
 The information in the sections that follow document the APIs and usage for each of the following:
 
@@ -39,7 +39,7 @@ OSIsoft Cloud Services provides data residency via namespaces in the following r
 Tenant account information is stored in all regions for read-only purposes. Write operations are only supported through the global base URL. See the [Tenant](xref:AccountTenant) documentation for information on how to access this data.
 
 
-## OCS API Versioning
+## OCS API versioning
 
 New versions of the API are released when major changes occur in the OCS API. When a newer version of the API is released, 
 the legacy version of the API will only be supported for a period of time. We encourage all users to switch to the 

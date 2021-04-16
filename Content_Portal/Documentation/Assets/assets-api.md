@@ -128,11 +128,11 @@ If the asset you are trying to create references an asset type (through the Asse
 
 To support flexibility on creation and update, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is created from an asset type.
 
-| Example                                             | Metadata value on asset type                          |                                              |
+| Asset values                                             | Metadata values on the asset type                          |                                              |
 | ----------------------------------------------------| ----------------------------------------------------- | ------------------------------------------------- | 
 | Id = "Metadata Id"​ and Name = Not specified         | Id matches the asset type's Metadata Id | Uses the matching asset type's Metadata Name |
-|                                                     | Id does not match any Asset Type Metadata Id | Id is used as Name |
-| Id = Not specified​ and Name = "Metadata Name"       | Name matches Asset Type Metadata Name | Use matching Asset Type Metadata Id |
+|                                                     | Id does not match any asset type Metadata Id | Id is used as Name |
+| Id = Not specified​ and Name = "Metadata Name"       | Name matches asset type Metadata Name | Use matching asset type Metadata Id |
 |                                                     | Name does not match any asset type Metadata Name | GUID is generated for Id |
 | Id = "Metadata Id"​ and Name = "Metadata Name"       | Either Id or Name, but not both, match asset type Metadata Id or Name | Error. |
 
@@ -241,11 +241,11 @@ To support flexibility, on creation and update, the following rules and behavior
 | Id = "Metadata Id"​ and Name = Not specified         | Id matches the asset type's Metadata Id | Uses the matching asset type Metadata Name |
 |                                                     | Id matches the existing asset type's Metadata Id | Uses the existing matching Metadata Name|
 |                                                     | Id does not match any asset type Metadata Id | Id is used as Name |
-| Id = Not specified​ and Name = "Metadata Name"       | Name matches Asset Type Metadata Name | Use matching Asset Type Metadata Id |
-|                                                     | Name matches existing Asset Type Metadata Name | Use matching existing Asset Type Metadata Id |
+| Id = Not specified​ and Name = "Metadata Name"       | Name matches the asset type's Metadata Name | Uses the matching asset type Metadata Id |
+|                                                     | Name matches the existing asset type's Metadata Name | Uses the matching existing asset type Metadata Id |
 |                                                     | Name does not match any asset type Metadata Name | GUID is generated for Id |
-| Id = "Metadata Id"​ and Name = "Metadata Name"       | Only Id or Name (not both) matches Asset Type Metadata Id or Name | Error. |
-|                                                     | Only Id or Name (not both) matches existing Asset Type Metadata Id or Name | The non-matching Id or Name of the existing Metadata is updated |
+| Id = "Metadata Id"​ and Name = "Metadata Name"       | Only Id or Name (not both) matches asset type Metadata Id or Name | Error. |
+|                                                     | Only Id or Name (not both) matches existing asset type Metadata Id or Name | The non-matching Id or Name of the existing Metadata is updated |
 
 ### Request 
 

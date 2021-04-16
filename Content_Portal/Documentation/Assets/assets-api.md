@@ -134,7 +134,7 @@ To support flexibility on creation and update, the following rules and behaviors
 |                                                     | Id does not match any Asset Type Metadata Id | Id is used as Name |
 | Id = Not specified​ and Name = "Metadata Name"       | Name matches Asset Type Metadata Name | Use matching Asset Type Metadata Id |
 |                                                     | Name does not match any asset type Metadata Name | GUID is generated for Id |
-| Id = "Metadata Id"​ and Name = "Metadata Name"       | Only Id or Name (not both) matches Asset Type Metadata Id or Name | Error. |
+| Id = "Metadata Id"​ and Name = "Metadata Name"       | Either Id or Name, but not both, match asset type Metadata Id or Name | Error. |
 
 ### Request 
 ```text 

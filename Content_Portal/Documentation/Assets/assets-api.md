@@ -236,7 +236,7 @@ Create or update an asset with a specified `Id`. If the asset already exists, yo
 
 To support flexibility, on creation and update, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is from an asset type.
 
-| Example                                             | Metadata value on asset type                          |                                              |
+| Asset values                                            | Metadata values on the asset type                          |                                              |
 | ----------------------------------------------------| ----------------------------------------------------- | ------------------------------------------------- | 
 | Id = "Metadata Id"​ and Name = Not specified         | Id matches Asset Type Metadata Id | Uses matching Asset Type Metadata Name |
 |                                                     | Id matches existing Asset Type Metadata Id | Uses existing matching Metadata Name|

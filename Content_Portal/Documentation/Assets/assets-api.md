@@ -127,8 +127,9 @@ Create a new asset with a specified `Id`.
 If the asset you are trying to create references an asset type (through the AssetTypeId property) and if the corresponding asset type has a metadata value with the same `Id`, then the name and SDS type code of the metadata value on the asset must be null. If the asset type does not have metadata value with a corresponding `Id`, the name and SDS type code on the asset cannot be null.
 
 To support flexibility on creation and update, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is created from an asset type.
+## Examples
 
-| Asset values                                             | Metadata values on the asset type                          |                                              |
+| Asset values                                             | Metadata values on the asset type                          | How references are resolved                                             |
 | ----------------------------------------------------| ----------------------------------------------------- | ------------------------------------------------- | 
 | Id = "Metadata Id"​ and Name = Not specified         | Id matches the asset type's Metadata Id | Uses the matching asset type's Metadata Name |
 |                                                     | Id does not match any asset type Metadata Id | Id is used as Name |
@@ -235,8 +236,8 @@ The response includes a status code and a body.
 Create or update an asset with a specified `Id`. If the asset already exists, you can specify an If-Match property in the HTTP request header to ensure that the asset is modified only if its version matches.
 
 To support flexibility, on creation and update, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is from an asset type.
-
-| Asset values                                            | Metadata values on the asset type                          |                                              |
+## Examples
+| Asset values                                            | Metadata values on the asset type                          | How references are resolved                                              |
 | ----------------------------------------------------| ----------------------------------------------------- | ------------------------------------------------- | 
 | Id = "Metadata Id"​ and Name = Not specified         | Id matches the asset type's Metadata Id | Uses the matching asset type Metadata Name |
 |                                                     | Id matches the existing asset type's Metadata Id | Uses the existing matching Metadata Name|

@@ -5,7 +5,7 @@ uid: gpRoles
 
 Roles are used to manage access to assets, resources, and services in OSIsoft Cloud Services (OCS). See the following for more information about roles:
 
-- [About roles](xref:ccRoles)
+- [Roles](xref:ccRoles)
 - [PI Server counterpart](xref:ccRoles#roles-pi-server)
 - [Roles best practices](xref:ccRoles#roles-bp)
 

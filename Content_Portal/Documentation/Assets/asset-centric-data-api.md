@@ -54,7 +54,7 @@ The following asset is used in all of the sample output in the output below.
             "Id": "b47c9529-7fbf-4b2d-810b-fe79d7fdb2b0",
             "Name": "RoomLocation",
             "Description": "This is what room number the asset is located.",
-            "SdsTypeCode": 14,
+            "SdsTypeCode": "Double",
             "Value": 1.0
         }
     ],

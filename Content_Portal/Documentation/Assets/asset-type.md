@@ -51,7 +51,7 @@ Content-Type: application/json
             "Id": "MetadataId1",
             "Name": "ModelNumber",
             "Description": "This metadata indicates the model number of a given Asset.",
-            "SdsTypeCode": 14,
+            "SdsTypeCode": "Double",
         }
     ],
     "TypeReferences": [
@@ -142,7 +142,7 @@ To create an asset type with a specific `Id`, use the API route with `Id`. If th
             "Id": "MetadataId1",
             "Name": "ModelNumber",
             "Description": "This metadata indicates the model number of a given Asset.",
-            "SdsTypeCode": 14
+            "SdsTypeCode": "Double"
         }
     ],
     "TypeReferences": [

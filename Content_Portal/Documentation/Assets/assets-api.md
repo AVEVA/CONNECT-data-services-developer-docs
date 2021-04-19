@@ -72,7 +72,7 @@ Content-Type: application/json
             "Id": "17020d80-1dc8-4690-932f-3421c9cff0d1",
             "Name": "ModelNumber",
             "Description": "This is attribute with double value representing the model number.",
-            "SdsTypeCode": 14,
+            "SdsTypeCode": "Double",
             "Value": 1.3
         }
     ],
@@ -157,7 +157,7 @@ NOTE: To create an asset with a specific `Id`, use the API route with `Id`. If t
             "Id": "c0e29698-d157-4288-9dea-db290de1fb35",
             "Name": "ModelNumber",
             "Description": "This is attribute with double value representing the model number.",
-            "SdsTypeCode": 14,
+            "SdsTypeCode": "Double",
             "Value": 1.3
         }
     ],

@@ -96,7 +96,7 @@ Content-Type: application/json
         {
             "Id": "metadataId_101",
             "Name": "DateTimeAttr",
-            "SdsTypeCode": 16,
+            "SdsTypeCode": "DateTime",
             "Value": "0001-01-01T00:00:00Z"
         }
     ],

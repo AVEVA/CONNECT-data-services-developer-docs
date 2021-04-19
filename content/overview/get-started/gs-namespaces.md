@@ -7,7 +7,7 @@ uid: gsNamespaces
 
 The first task is to create a namespace, a logical unit of organization for data within a tenant. For more information on namespaces, see the following:
 
-- [About namespaces](xref:ccNamespaces)
+- [Namespaces](xref:ccNamespaces)
 - [PI Server counterpart](xref:ccNamespaces#pi-server-counterpart) 
 - [Namespace IDs](xref:ccNamespaces#namespace-ids)
 - [Querying data across namespaces](xref:ccNamespaces#querying-data-across-namespaces)

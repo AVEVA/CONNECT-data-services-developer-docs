@@ -6,7 +6,7 @@ uid: gpNamespaces
 
 A namespace is a logical unit of organization for data within a tenant. Before any data can be put into OCS for a given tenant, a namespace must be created within the scope of the tenant. See the following for more information about namespaces:
 
-- [About namespaces](xref:ccNamespaces)
+- [Namespaces](xref:ccNamespaces)
 - [Namespaces best practices](xref:bpNamespaces)
 
 ## Procedure

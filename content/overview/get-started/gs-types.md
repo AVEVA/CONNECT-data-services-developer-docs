@@ -6,7 +6,7 @@ uid: gsTypes
 
 After creating the namespace, the next step is to add one or more types. For more information about types, see the following:
 
-- [About types](xref:ccTypes)
+- [Types](xref:ccTypes)
 - [PI Server counterpart](xref:ccTypes#types-pi-server)
 - [Types best practices](xref:bpTypes)
 

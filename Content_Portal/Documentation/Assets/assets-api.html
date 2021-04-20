@@ -203,6 +203,44 @@ Content-Type: application/json
 <h2 id="create-asset"><code>Create Asset</code></h2>
 <p>Create a new asset with a specified <code>Id</code>. </p>
 <p>If the asset you are trying to create references an asset type (through the AssetTypeId property) and if the corresponding asset type has a metadata value with the same <code>Id</code>, then the name and SDS type code of the metadata value on the asset must be null. If the asset type does not have metadata value with a corresponding <code>Id</code>, the name and SDS type code on the asset cannot be null.</p>
+<p>To support flexibility on creation and update, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is created from an asset type.</p>
+<h2 id="examples">Examples</h2>
+<table>
+<thead>
+<tr>
+<th>Asset values</th>
+<th>Metadata values on the asset type</th>
+<th>How references are resolved</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id = &quot;Metadata Id&quot;​ and Name = Not specified</td>
+<td>Id matches the asset type&#39;s Metadata Id</td>
+<td>Uses the matching asset type&#39;s Metadata Name</td>
+</tr>
+<tr>
+<td></td>
+<td>Id does not match any asset type Metadata Id</td>
+<td>Id is used as Name</td>
+</tr>
+<tr>
+<td>Id = Not specified​ and Name = &quot;Metadata Name&quot;</td>
+<td>Name matches asset type Metadata Name</td>
+<td>Use matching asset type Metadata Id</td>
+</tr>
+<tr>
+<td></td>
+<td>Name does not match any asset type Metadata Name</td>
+<td>GUID is generated for Id</td>
+</tr>
+<tr>
+<td>Id = &quot;Metadata Id&quot;​ and Name = &quot;Metadata Name&quot;</td>
+<td>Either Id or Name, but not both, match asset type Metadata Id or Name</td>
+<td>Error.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="request-2">Request</h3>
 <pre><code class="lang-text">POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId} 
 </code></pre><h3 id="parameters-2">Parameters</h3>
@@ -318,6 +356,59 @@ Content-Type: application/json
 <hr>
 <h2 id="create-or-update-asset"><code>Create or Update Asset</code></h2>
 <p>Create or update an asset with a specified <code>Id</code>. If the asset already exists, you can specify an If-Match property in the HTTP request header to ensure that the asset is modified only if its version matches.</p>
+<p>To support flexibility, on creation and update, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is from an asset type.</p>
+<h2 id="examples-1">Examples</h2>
+<table>
+<thead>
+<tr>
+<th>Asset values</th>
+<th>Metadata values on the asset type</th>
+<th>How references are resolved</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id = &quot;Metadata Id&quot;​ and Name = Not specified</td>
+<td>Id matches the asset type&#39;s Metadata Id</td>
+<td>Uses the matching asset type Metadata Name</td>
+</tr>
+<tr>
+<td></td>
+<td>Id matches the existing asset type&#39;s Metadata Id</td>
+<td>Uses the existing matching Metadata Name</td>
+</tr>
+<tr>
+<td></td>
+<td>Id does not match any asset type Metadata Id</td>
+<td>Id is used as Name</td>
+</tr>
+<tr>
+<td>Id = Not specified​ and Name = &quot;Metadata Name&quot;</td>
+<td>Name matches the asset type&#39;s Metadata Name</td>
+<td>Uses the matching asset type Metadata Id</td>
+</tr>
+<tr>
+<td></td>
+<td>Name matches the existing asset type&#39;s Metadata Name</td>
+<td>Uses the matching existing asset type Metadata Id</td>
+</tr>
+<tr>
+<td></td>
+<td>Name does not match any asset type Metadata Name</td>
+<td>GUID is generated for Id</td>
+</tr>
+<tr>
+<td>Id = &quot;Metadata Id&quot;​ and Name = &quot;Metadata Name&quot;</td>
+<td>Only Id or Name (not both) matches asset type Metadata Id or Name</td>
+<td>Error.</td>
+</tr>
+<tr>
+<td></td>
+<td>Only Id or Name (not both) matches existing asset type Metadata Id or Name</td>
+<td>The non-matching Id or Name of the existing Metadata is updated</td>
+</tr>
+</tbody>
+</table>
 <h3 id="request-4">Request</h3>
 <pre><code class="lang-text">PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId} 
 </code></pre><h3 id="parameters-4">Parameters</h3>

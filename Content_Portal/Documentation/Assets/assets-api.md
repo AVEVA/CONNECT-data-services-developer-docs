@@ -1,4 +1,4 @@
----
+﻿---
 uid: AssetsAPI
 ---
 
@@ -126,6 +126,17 @@ Create a new asset with a specified `Id`.
 
 If the asset you are trying to create references an asset type (through the AssetTypeId property) and if the corresponding asset type has a metadata value with the same `Id`, then the name and SDS type code of the metadata value on the asset must be null. If the asset type does not have metadata value with a corresponding `Id`, the name and SDS type code on the asset cannot be null.
 
+To support flexibility on creation and update, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is created from an asset type.
+## Examples
+
+| Asset values                                             | Metadata values on the asset type                          | How references are resolved                                             |
+| ----------------------------------------------------| ----------------------------------------------------- | ------------------------------------------------- | 
+| Id = "Metadata Id"​ and Name = Not specified         | Id matches the asset type's Metadata Id | Uses the matching asset type's Metadata Name |
+|                                                     | Id does not match any asset type Metadata Id | Id is used as Name |
+| Id = Not specified​ and Name = "Metadata Name"       | Name matches asset type Metadata Name | Use matching asset type Metadata Id |
+|                                                     | Name does not match any asset type Metadata Name | GUID is generated for Id |
+| Id = "Metadata Id"​ and Name = "Metadata Name"       | Either Id or Name, but not both, match asset type Metadata Id or Name | Error. |
+
 ### Request 
 ```text 
 POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId} 
@@ -223,6 +234,19 @@ The response includes a status code and a body.
 ## `Create or Update Asset` 
 
 Create or update an asset with a specified `Id`. If the asset already exists, you can specify an If-Match property in the HTTP request header to ensure that the asset is modified only if its version matches.
+
+To support flexibility, on creation and update, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is from an asset type.
+## Examples
+| Asset values                                            | Metadata values on the asset type                          | How references are resolved                                              |
+| ----------------------------------------------------| ----------------------------------------------------- | ------------------------------------------------- | 
+| Id = "Metadata Id"​ and Name = Not specified         | Id matches the asset type's Metadata Id | Uses the matching asset type Metadata Name |
+|                                                     | Id matches the existing asset type's Metadata Id | Uses the existing matching Metadata Name|
+|                                                     | Id does not match any asset type Metadata Id | Id is used as Name |
+| Id = Not specified​ and Name = "Metadata Name"       | Name matches the asset type's Metadata Name | Uses the matching asset type Metadata Id |
+|                                                     | Name matches the existing asset type's Metadata Name | Uses the matching existing asset type Metadata Id |
+|                                                     | Name does not match any asset type Metadata Name | GUID is generated for Id |
+| Id = "Metadata Id"​ and Name = "Metadata Name"       | Only Id or Name (not both) matches asset type Metadata Id or Name | Error. |
+|                                                     | Only Id or Name (not both) matches existing asset type Metadata Id or Name | The non-matching Id or Name of the existing Metadata is updated |
 
 ### Request 
 

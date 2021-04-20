@@ -88,7 +88,7 @@ The namespace identifier
 `string assetId`  
 The asset identifier
 
-[optional] string[] streams
+[optional] string[] stream
 An optional parameter consisting of a comma-separated list of stream reference names that you are interested in. By default, all data calls return data for all stream references.
 
 ### Response 
@@ -151,7 +151,7 @@ The end index for the intervals
 `int intervals`  
 The number of requested intervals
 
-[optional] string[] streams
+[optional] string[] stream
 An optional parameter consisting of a comma-separated list of stream reference names that you are interested in. By default, all data calls return data for all stream references.
 
 ### Response 
@@ -221,7 +221,7 @@ The end index for the intervals
 `int count`   
 The number of requested intervals
 
-[optional] string[] streams
+[optional] string[] stream
 An optional parameter consisting of a comma-separated list of stream reference names that you are interested in. By default, all data calls return data for all stream references.
 
 ### Response 
@@ -408,7 +408,7 @@ The start index for the intervals
 `string endIndex`   
 The end index for the intervals
 
-[optional] string[] streams
+[optional] string[] stream
 An optional parameter consisting of a comma-separated list of stream reference names that you are interested in. By default, all data calls return data for all stream references.
 
 ### Response
@@ -507,7 +507,7 @@ The end index for the intervals
 `int count`   
 The number of requested intervals
 
-[optional] string[] streams
+[optional] string[] stream
 An optional parameter consisting of a comma-separated list of stream reference names that you are interested in. By default, all data calls return data for all stream references.
 
 ### Response 

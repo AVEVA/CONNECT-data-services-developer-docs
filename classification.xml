@@ -206,7 +206,7 @@
    x:FullRows="1" ss:DefaultColumnWidth="69" ss:DefaultRowHeight="12.9375">
    <Column ss:AutoFitWidth="0" ss:Width="234.75"/>
    <Column ss:AutoFitWidth="0" ss:Width="144.75"/>
-   <Column ss:AutoFitWidth="0" ss:Width="87"/>
+   <Column ss:Width="106.5"/>
    <Column ss:Width="161.25"/>
    <Column ss:AutoFitWidth="0" ss:Width="87" ss:Span="2"/>
    <Row ss:AutoFitHeight="0">
@@ -218,11 +218,13 @@
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="15">
     <Cell><Data ss:Type="String">MAP</Data></Cell>
-    <Cell ss:Index="4" ss:StyleID="s63"><Data ss:Type="String">OSIsoft-Cloud-Services-(OCS)</Data></Cell>
+    <Cell ss:Index="3"><Data ss:Type="String">OSIsoft-Cloud-Services</Data></Cell>
+    <Cell ss:StyleID="s63"><Data ss:Type="String">OSIsoft-Cloud-Services-(OCS)</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="15">
     <Cell><Data ss:Type="String">apply-ALL</Data></Cell>
-    <Cell ss:Index="4" ss:StyleID="s63"><Data ss:Type="String">OSIsoft-Cloud-Services-(OCS)</Data></Cell>
+    <Cell ss:Index="3"><Data ss:Type="String">OSIsoft-Cloud-Services</Data></Cell>
+    <Cell ss:StyleID="s63"><Data ss:Type="String">OSIsoft-Cloud-Services-(OCS)</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell><Data ss:Type="String">default</Data></Cell>
@@ -250,7 +252,7 @@
     <Pane>
      <Number>3</Number>
      <ActiveRow>2</ActiveRow>
-     <ActiveCol>3</ActiveCol>
+     <ActiveCol>2</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

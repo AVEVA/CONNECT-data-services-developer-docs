@@ -1,7 +1,7 @@
 - name: Tenant management
   href: management/toc.yml
   topicHref: management/management-overview.md
-- name: Identity and access Management
+- name: Identity and access management
   href: identity/toc.yml
   topicHref: identity/identity-and-access-management.md
 - name: Sequential data store

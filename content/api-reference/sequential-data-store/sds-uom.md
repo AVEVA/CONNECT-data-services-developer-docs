@@ -931,7 +931,7 @@ Content-Type: application/json
 ```
 ***********************
 
-# SdsUom API
+## SdsUom API
 The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact with SdsUoms. When working in .NET, convenient SDS Client Libraries are available. The ``ISdsMetadataService`` interface, accessed using the ``SdsService.GetMetadataService( )`` helper, defines the available functions. See [Units of Measure](#units-of-measure) for general [SdsUom](#sdsuom) information.
 
 ***

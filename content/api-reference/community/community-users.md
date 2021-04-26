@@ -1,5 +1,5 @@
 ---
-title: community/community-users v20210426.1
+title: community/community-users v20210426.2
 language_tabs: []
 toc_footers: []
 includes: []
@@ -14,7 +14,7 @@ generator: osisoft.widdershins v1.0.7
 # Users
 APIs for getting, updating, and deleting users from communities
 
-## List Users of a Tenant in a Community
+## `List Users of a Tenant in a Community`
 
 <a id="opIdUsers_List Users of a Tenant in a Community"></a>
 
@@ -79,7 +79,7 @@ Allowed for these roles:
 
 ---
 
-## Get Count of Users of a Tenant in a Community
+## `Get Count of Users of a Tenant in a Community`
 
 <a id="opIdUsers_Get Count of Users of a Tenant in a Community"></a>
 
@@ -130,7 +130,7 @@ Allowed for these roles:
 
 ---
 
-## Add User to a Community
+## `Add User to a Community`
 
 <a id="opIdUsers_Add User to a Community"></a>
 
@@ -201,7 +201,7 @@ Allowed for these roles:
 
 ---
 
-## Remove User from a Community
+## `Remove User from a Community`
 
 <a id="opIdUsers_Remove User from a Community"></a>
 

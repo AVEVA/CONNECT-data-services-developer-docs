@@ -1,5 +1,5 @@
 ---
-title: community/community-tenants v20210426.1
+title: community/community-tenants v20210426.2
 language_tabs: []
 toc_footers: []
 includes: []
@@ -14,7 +14,7 @@ generator: osisoft.widdershins v1.0.7
 # Community Tenants
 APIs for updating and removing community tenant information
 
-## Remove a Community Tenant from a Community
+## `Remove a Community Tenant from a Community`
 
 <a id="opIdCommunityTenants_Remove a Community Tenant from a Community"></a>
 
@@ -67,7 +67,7 @@ Allowed for these roles:
 
 ---
 
-## Update a Community Tenant State (`communitytenants` path)
+## `Update a Community Tenant State (`communitytenants` path)`
 
 <a id="opIdCommunityTenants_Update a Community Tenant State (`communitytenants` path)"></a>
 
@@ -130,7 +130,7 @@ Allowed for these roles:
 
 ---
 
-## Update a Community Tenant State (`membertenants` path)
+## `Update a Community Tenant State (`membertenants` path)`
 
 <a id="opIdCommunityTenants_Update a Community Tenant State (`membertenants` path)"></a>
 

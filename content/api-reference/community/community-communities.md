@@ -1,5 +1,5 @@
 ---
-title: community/community-communities v20210426.1
+title: community/community-communities v20210426.2
 language_tabs: []
 toc_footers: []
 includes: []
@@ -14,7 +14,7 @@ generator: osisoft.widdershins v1.0.7
 # Communities
 A community is an organizational entity that facilitates data sharing across multiple tenants.
 
-## List Communities a Tenant is Joined to
+## `List Communities a Tenant is Joined to`
 
 <a id="opIdCommunities_List Communities a Tenant is Joined to"></a>
 
@@ -82,7 +82,7 @@ Allowed for these roles:
 
 ---
 
-## Create a New Community
+## `Create a New Community`
 
 <a id="opIdCommunities_Create a New Community"></a>
 
@@ -155,7 +155,7 @@ Allowed for these roles:
 
 ---
 
-## Get a Community by Id
+## `Get a Community by Id`
 
 <a id="opIdCommunities_Get a Community by Id"></a>
 
@@ -217,7 +217,7 @@ Allowed for these roles:
 
 ---
 
-## Update Community Info
+## `Update Community Info`
 
 <a id="opIdCommunities_Update Community Info"></a>
 
@@ -283,7 +283,7 @@ Allowed for these roles:
 
 ---
 
-## Delete a Community
+## `Delete a Community`
 
 <a id="opIdCommunities_Delete a Community"></a>
 

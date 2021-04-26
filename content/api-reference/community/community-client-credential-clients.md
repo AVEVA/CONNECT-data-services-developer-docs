@@ -1,5 +1,5 @@
 ---
-title: community/community-client-credential-clients v20210426.1
+title: community/community-client-credential-clients v20210426.2
 language_tabs: []
 toc_footers: []
 includes: []
@@ -14,7 +14,7 @@ generator: osisoft.widdershins v1.0.7
 # Client Credential Clients
 APIs for getting, adding, or removing client credential clients from communities
 
-## List Client Credential Clients for a Community
+## `List Client Credential Clients for a Community`
 
 <a id="opIdClientCredentialClients_List Client Credential Clients for a Community"></a>
 
@@ -76,7 +76,7 @@ Allowed for these roles:
 
 ---
 
-## Get Count of Clients for a Community
+## `Get Count of Clients for a Community`
 
 <a id="opIdClientCredentialClients_Get Count of Clients for a Community"></a>
 
@@ -127,7 +127,7 @@ Allowed for these roles:
 
 ---
 
-## Add Client Credential Client to a Community
+## `Add Client Credential Client to a Community`
 
 <a id="opIdClientCredentialClients_Add Client Credential Client to a Community"></a>
 
@@ -195,7 +195,7 @@ Allowed for these roles:
 
 ---
 
-## Remove Client Credential Client from a Community
+## `Remove Client Credential Client from a Community`
 
 <a id="opIdClientCredentialClients_Remove Client Credential Client from a Community"></a>
 

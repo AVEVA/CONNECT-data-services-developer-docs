@@ -1,5 +1,5 @@
 ---
-title: community/community-invitations v20210426.1
+title: community/community-invitations v20210426.2
 language_tabs: []
 toc_footers: []
 includes: []
@@ -14,7 +14,7 @@ generator: osisoft.widdershins v1.0.7
 # Community Invitations
 Defines the public API methods that are used to manage community invitations. Using this API you can, for example, create, retrieve, update and process invitations. You can also resend an invitation email.
 
-## Process a Community Invitation Based on the Requested Action
+## `Process a Community Invitation Based on the Requested Action`
 
 <a id="opIdCommunityInvitations_Process a Community Invitation Based on the Requested Action"></a>
 
@@ -77,7 +77,7 @@ Allowed for these roles:
 
 ---
 
-## Get details of an Invitation
+## `Get details of an Invitation`
 
 <a id="opIdCommunityInvitations_Get details of an Invitation"></a>
 
@@ -126,7 +126,7 @@ Allowed for these roles:
 
 ---
 
-## List a Community Invitation by Tenant and Community
+## `List a Community Invitation by Tenant and Community`
 
 <a id="opIdCommunityInvitations_List a Community Invitation by Tenant and Community"></a>
 
@@ -189,7 +189,7 @@ Allowed for these roles:
 
 ---
 
-## Create a Community Invitation
+## `Create a Community Invitation`
 
 <a id="opIdCommunityInvitations_Create a Community Invitation"></a>
 
@@ -256,7 +256,7 @@ Allowed for these roles:
 
 ---
 
-## Get a Community Invitation by Tenant, Community, and Id
+## `Get a Community Invitation by Tenant, Community, and Id`
 
 <a id="opIdCommunityInvitations_Get a Community Invitation by Tenant, Community, and Id"></a>
 
@@ -313,7 +313,7 @@ Allowed for these roles:
 
 ---
 
-## Delete a Community Invitation
+## `Delete a Community Invitation`
 
 <a id="opIdCommunityInvitations_Delete a Community Invitation"></a>
 
@@ -366,7 +366,7 @@ Allowed for these roles:
 
 ---
 
-## List Accepted Community Invitations by Tenant
+## `List Accepted Community Invitations by Tenant`
 
 <a id="opIdCommunityInvitations_List Accepted Community Invitations by Tenant"></a>
 

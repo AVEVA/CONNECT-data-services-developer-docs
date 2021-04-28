@@ -1,5 +1,5 @@
 ---
-title: community/community-search v20210427.1
+title: community/community-search v20210427.2
 language_tabs: []
 toc_footers: []
 includes: []
@@ -123,9 +123,9 @@ Allowed for these roles:
 </ul>
 
 ---
-# Definitions
+## Definitions
 
-## StreamSearchResult
+### StreamSearchResult
 
 <a id="schemastreamsearchresult"></a>
 <a id="schema_StreamSearchResult"></a>
@@ -134,7 +134,7 @@ Allowed for these roles:
 
 The StreamSearchResult object. This is the model representation exposed to callers of controller endpoints.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -157,14 +157,14 @@ The StreamSearchResult object. This is the model representation exposed to calle
 
 ---
 
-## ErrorResponse
+### ErrorResponse
 
 <a id="schemaerrorresponse"></a>
 <a id="schema_ErrorResponse"></a>
 <a id="tocSerrorresponse"></a>
 <a id="tocserrorresponse"></a>
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -185,7 +185,7 @@ The StreamSearchResult object. This is the model representation exposed to calle
 
 ---
 
-## CommunitySummaryInformation
+### CommunitySummaryInformation
 
 <a id="schemacommunitysummaryinformation"></a>
 <a id="schema_CommunitySummaryInformation"></a>
@@ -194,7 +194,7 @@ The StreamSearchResult object. This is the model representation exposed to calle
 
 The CommunitySummaryInformation Data Transfer Object. This is the model representation exposed to callers of controller endpoints.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

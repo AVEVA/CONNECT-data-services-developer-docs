@@ -1,15 +1,4 @@
----
-title: identity/identity-claims v20210426.5
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: osisoft.widdershins v1.0.7
 
----
 
 # Claims
 An identity provider claim provides a mechanism to map a claim from an identity provider to one or more roles.
@@ -382,9 +371,9 @@ Allowed for these roles:
 </ul>
 
 ---
-# Definitions
+## Definitions
 
-## IdentityProviderClaim
+### IdentityProviderClaim
 
 <a id="schemaidentityproviderclaim"></a>
 <a id="schema_IdentityProviderClaim"></a>
@@ -393,7 +382,7 @@ Allowed for these roles:
 
 Object representing a claim from an identity provider to map to a role
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -416,7 +405,7 @@ Object representing a claim from an identity provider to map to a role
 
 ---
 
-## ErrorResponse
+### ErrorResponse
 
 <a id="schemaerrorresponse"></a>
 <a id="schema_ErrorResponse"></a>
@@ -425,7 +414,7 @@ Object representing a claim from an identity provider to map to a role
 
 Object returned whenever there is an error TODO: Remove this internal model and re-adopt public model when moving to System.Text.Json in WI 202168.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -448,7 +437,7 @@ Object returned whenever there is an error TODO: Remove this internal model and 
 
 ---
 
-## IdentityProviderClaimCreate
+### IdentityProviderClaimCreate
 
 <a id="schemaidentityproviderclaimcreate"></a>
 <a id="schema_IdentityProviderClaimCreate"></a>
@@ -457,7 +446,7 @@ Object returned whenever there is an error TODO: Remove this internal model and 
 
 Identity provider claim to create
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -478,7 +467,7 @@ Identity provider claim to create
 
 ---
 
-## IdentityProviderClaimUpdate
+### IdentityProviderClaimUpdate
 
 <a id="schemaidentityproviderclaimupdate"></a>
 <a id="schema_IdentityProviderClaimUpdate"></a>
@@ -487,7 +476,7 @@ Identity provider claim to create
 
 Update information for an identity provider claim.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

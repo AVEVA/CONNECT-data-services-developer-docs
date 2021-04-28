@@ -1,16 +1,8 @@
----
-title: identity/identity-authorization-code-clients v20210426.5
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: osisoft.widdershins v1.0.7
-uid: identityAuthorizationCodeClient
 
 ---
+uid: identityAuthorizationCodeClient
+---
+
 
 # Authorization Code Clients
 Authorization code clients are used in JavaScript/Browser (SPA) based applications or native mobile applications with the presence of a user. These clients are issued an unique identifier. Authorization code clients are not issued secrets or refresh tokens.
@@ -480,9 +472,9 @@ Allowed for these roles:
 </ul>
 
 ---
-# Definitions
+## Definitions
 
-## AuthorizationCodeClient
+### AuthorizationCodeClient
 
 <a id="schemaauthorizationcodeclient"></a>
 <a id="schema_AuthorizationCodeClient"></a>
@@ -491,7 +483,7 @@ Allowed for these roles:
 
 Object used during AuthorizationCodeClient creation
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -532,7 +524,7 @@ Object used during AuthorizationCodeClient creation
 
 ---
 
-## ErrorResponse
+### ErrorResponse
 
 <a id="schemaerrorresponse"></a>
 <a id="schema_ErrorResponse"></a>
@@ -541,7 +533,7 @@ Object used during AuthorizationCodeClient creation
 
 Object returned whenever there is an error
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -569,7 +561,7 @@ Object returned whenever there is an error
 
 ---
 
-## ClientCredentialClient
+### ClientCredentialClient
 
 <a id="schemaclientcredentialclient"></a>
 <a id="schema_ClientCredentialClient"></a>
@@ -578,7 +570,7 @@ Object returned whenever there is an error
 
 Object to get or update a ClientCredentialClient
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

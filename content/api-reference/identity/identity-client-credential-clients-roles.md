@@ -1,15 +1,4 @@
----
-title: identity/identity-client-credential-clients-roles v20210426.5
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: osisoft.widdershins v1.0.7
 
----
 
 # Roles
 APIs for getting, updating, and deleting client credential client roles.
@@ -355,9 +344,9 @@ Allowed for these roles:
 </ul>
 
 ---
-# Definitions
+## Definitions
 
-## Role
+### Role
 
 <a id="schemarole"></a>
 <a id="schema_Role"></a>
@@ -366,7 +355,7 @@ Allowed for these roles:
 
 The object for retrieving a role
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -393,7 +382,7 @@ The object for retrieving a role
 
 ---
 
-## RoleScope
+### RoleScope
 
 <a id="schemarolescope"></a>
 <a id="schema_RoleScope"></a>
@@ -413,7 +402,7 @@ The object that represents the scope of a given role
 
 ---
 
-## ErrorResponse
+### ErrorResponse
 
 <a id="schemaerrorresponse"></a>
 <a id="schema_ErrorResponse"></a>
@@ -422,7 +411,7 @@ The object that represents the scope of a given role
 
 Object returned whenever there is an error TODO: Remove this internal model and re-adopt public model when moving to System.Text.Json in WI 202168.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

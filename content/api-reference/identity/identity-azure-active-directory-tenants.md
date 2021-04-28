@@ -1,15 +1,4 @@
----
-title: identity/identity-azure-active-directory-tenants v20210426.5
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: osisoft.widdershins v1.0.7
 
----
 
 # Azure Active Directory Tenants
 An Azure Active Directory (AAD) Tenant is used to map an existing [Azure Active Directory](https://azure.microsoft.com/en-us/services/active-directory/) Tenant from Azure to OSIsoft Cloud Services. We only allow one Azure Active Directory Tenant per OSIsoft Cloud Services Tenant.
@@ -337,9 +326,9 @@ Allowed for these roles:
 </ul>
 
 ---
-# Definitions
+## Definitions
 
-## AzureActiveDirectoryTenant
+### AzureActiveDirectoryTenant
 
 <a id="schemaazureactivedirectorytenant"></a>
 <a id="schema_AzureActiveDirectoryTenant"></a>
@@ -348,7 +337,7 @@ Allowed for these roles:
 
 The AAD tenant object
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -367,7 +356,7 @@ The AAD tenant object
 
 ---
 
-## ConsentState
+### ConsentState
 
 <a id="schemaconsentstate"></a>
 <a id="schema_ConsentState"></a>
@@ -385,7 +374,7 @@ AAD Tenant Consent State.
 
 ---
 
-## ErrorResponse
+### ErrorResponse
 
 <a id="schemaerrorresponse"></a>
 <a id="schema_ErrorResponse"></a>
@@ -394,7 +383,7 @@ AAD Tenant Consent State.
 
 Object returned whenever there is an error
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -422,7 +411,7 @@ Object returned whenever there is an error
 
 ---
 
-## ConsentInformation
+### ConsentInformation
 
 <a id="schemaconsentinformation"></a>
 <a id="schema_ConsentInformation"></a>
@@ -431,7 +420,7 @@ Object returned whenever there is an error
 
 The object that holds the information about the recipient of the Azure Active Directory consent email
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

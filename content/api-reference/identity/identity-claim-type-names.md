@@ -1,15 +1,4 @@
----
-title: identity/identity-claim-type-names v20210426.5
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: osisoft.widdershins v1.0.7
 
----
 
 # Claim Type Names
 An identity provider claim type name is the attribute needed when creating an identity provider claim.
@@ -187,9 +176,9 @@ Allowed for these roles:
 </ul>
 
 ---
-# Definitions
+## Definitions
 
-## IdentityProviderClaimTypeName
+### IdentityProviderClaimTypeName
 
 <a id="schemaidentityproviderclaimtypename"></a>
 <a id="schema_IdentityProviderClaimTypeName"></a>
@@ -198,7 +187,7 @@ Allowed for these roles:
 
 Claim type name associated with an identity provider.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -217,7 +206,7 @@ Claim type name associated with an identity provider.
 
 ---
 
-## ErrorResponse
+### ErrorResponse
 
 <a id="schemaerrorresponse"></a>
 <a id="schema_ErrorResponse"></a>
@@ -226,7 +215,7 @@ Claim type name associated with an identity provider.
 
 Object returned whenever there is an error
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -254,7 +243,7 @@ Object returned whenever there is an error
 
 ---
 
-## IdentityProviderClaim
+### IdentityProviderClaim
 
 <a id="schemaidentityproviderclaim"></a>
 <a id="schema_IdentityProviderClaim"></a>
@@ -263,7 +252,7 @@ Object returned whenever there is an error
 
 Object representing a claim from an identity provider to map to a role
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

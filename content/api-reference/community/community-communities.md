@@ -1,5 +1,5 @@
 ---
-title: community/community-communities v20210426.5
+title: community/community-communities v20210427.1
 language_tabs: []
 toc_footers: []
 includes: []
@@ -338,9 +338,9 @@ Allowed for these roles:
 </ul>
 
 ---
-# Definitions
+## Definitions
 
-## Community
+### Community
 
 <a id="schemacommunity"></a>
 <a id="schema_Community"></a>
@@ -349,7 +349,7 @@ Allowed for these roles:
 
 The Community object
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -387,7 +387,7 @@ The Community object
 
 ---
 
-## CommunityTenant
+### CommunityTenant
 
 <a id="schemacommunitytenant"></a>
 <a id="schema_CommunityTenant"></a>
@@ -396,7 +396,7 @@ The Community object
 
 The CommunityTenant object
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -421,7 +421,7 @@ The CommunityTenant object
 
 ---
 
-## CommunityTenantStatus
+### CommunityTenantStatus
 
 <a id="schemacommunitytenantstatus"></a>
 <a id="schema_CommunityTenantStatus"></a>
@@ -442,7 +442,7 @@ Represents a status of a Community Tenant.
 
 ---
 
-## ErrorResponse
+### ErrorResponse
 
 <a id="schemaerrorresponse"></a>
 <a id="schema_ErrorResponse"></a>
@@ -451,7 +451,7 @@ Represents a status of a Community Tenant.
 
 Object returned whenever there is an error
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -479,7 +479,7 @@ Object returned whenever there is an error
 
 ---
 
-## CreateCommunityInput
+### CreateCommunityInput
 
 <a id="schemacreatecommunityinput"></a>
 <a id="schema_CreateCommunityInput"></a>
@@ -488,7 +488,7 @@ Object returned whenever there is an error
 
 The CreateCommunityInput object. This is the model input for creating a community.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -505,7 +505,7 @@ The CreateCommunityInput object. This is the model input for creating a communit
 
 ---
 
-## UpdateCommunityInput
+### UpdateCommunityInput
 
 <a id="schemaupdatecommunityinput"></a>
 <a id="schema_UpdateCommunityInput"></a>
@@ -514,7 +514,7 @@ The CreateCommunityInput object. This is the model input for creating a communit
 
 The UpdateCommunityInput object
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

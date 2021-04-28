@@ -1,5 +1,5 @@
 ---
-title: community/community-tenants v20210426.5
+title: community/community-tenants v20210427.1
 language_tabs: []
 toc_footers: []
 includes: []
@@ -192,9 +192,9 @@ Allowed for these roles:
 </ul>
 
 ---
-# Definitions
+## Definitions
 
-## ErrorResponse
+### ErrorResponse
 
 <a id="schemaerrorresponse"></a>
 <a id="schema_ErrorResponse"></a>
@@ -203,7 +203,7 @@ Allowed for these roles:
 
 Object returned whenever there is an error TODO: Remove this internal model and re-adopt public model when moving to System.Text.Json in WI 202168.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -226,7 +226,7 @@ Object returned whenever there is an error TODO: Remove this internal model and 
 
 ---
 
-## UpdateCommunityTenantInput
+### UpdateCommunityTenantInput
 
 <a id="schemaupdatecommunitytenantinput"></a>
 <a id="schema_UpdateCommunityTenantInput"></a>
@@ -235,7 +235,7 @@ Object returned whenever there is an error TODO: Remove this internal model and 
 
 The UpdateCommunityTenantInput object
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -250,7 +250,7 @@ The UpdateCommunityTenantInput object
 
 ---
 
-## CommunityTenantStatus
+### CommunityTenantStatus
 
 <a id="schemacommunitytenantstatus"></a>
 <a id="schema_CommunityTenantStatus"></a>

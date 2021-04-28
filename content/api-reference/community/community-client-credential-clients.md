@@ -1,5 +1,5 @@
 ---
-title: community/community-client-credential-clients v20210426.5
+title: community/community-client-credential-clients v20210427.1
 language_tabs: []
 toc_footers: []
 includes: []
@@ -247,9 +247,9 @@ Allowed for these roles:
 </ul>
 
 ---
-# Definitions
+## Definitions
 
-## ErrorResponse
+### ErrorResponse
 
 <a id="schemaerrorresponse"></a>
 <a id="schema_ErrorResponse"></a>
@@ -258,7 +258,7 @@ Allowed for these roles:
 
 Object returned whenever there is an error TODO: Remove this internal model and re-adopt public model when moving to System.Text.Json in WI 202168.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -281,7 +281,7 @@ Object returned whenever there is an error TODO: Remove this internal model and 
 
 ---
 
-## ClientCredentialClient
+### ClientCredentialClient
 
 <a id="schemaclientcredentialclient"></a>
 <a id="schema_ClientCredentialClient"></a>
@@ -290,7 +290,7 @@ Object returned whenever there is an error TODO: Remove this internal model and 
 
 Object to get or update a ClientCredentialClient
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

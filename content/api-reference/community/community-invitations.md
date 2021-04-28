@@ -1,5 +1,5 @@
 ---
-title: community/community-invitations v20210426.5
+title: community/community-invitations v20210427.1
 language_tabs: []
 toc_footers: []
 includes: []
@@ -427,9 +427,9 @@ Allowed for these roles:
 </ul>
 
 ---
-# Definitions
+## Definitions
 
-## CommunityInvitation
+### CommunityInvitation
 
 <a id="schemacommunityinvitation"></a>
 <a id="schema_CommunityInvitation"></a>
@@ -438,7 +438,7 @@ Allowed for these roles:
 
 Representation of the community invitation.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -471,7 +471,7 @@ Representation of the community invitation.
 
 ---
 
-## CommunityInvitationState
+### CommunityInvitationState
 
 <a id="schemacommunityinvitationstate"></a>
 <a id="schema_CommunityInvitationState"></a>
@@ -493,7 +493,7 @@ Enum for Community invitation state.
 
 ---
 
-## ErrorResponse
+### ErrorResponse
 
 <a id="schemaerrorresponse"></a>
 <a id="schema_ErrorResponse"></a>
@@ -502,7 +502,7 @@ Enum for Community invitation state.
 
 Object returned whenever there is an error TODO: Remove this internal model and re-adopt public model when moving to System.Text.Json in WI 202168.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -525,7 +525,7 @@ Object returned whenever there is an error TODO: Remove this internal model and 
 
 ---
 
-## CreateInvitationInput
+### CreateInvitationInput
 
 <a id="schemacreateinvitationinput"></a>
 <a id="schema_CreateInvitationInput"></a>
@@ -534,7 +534,7 @@ Object returned whenever there is an error TODO: Remove this internal model and 
 
 The input object to Create Invitation.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -549,7 +549,7 @@ The input object to Create Invitation.
 
 ---
 
-## CommunityInvitationDetails
+### CommunityInvitationDetails
 
 <a id="schemacommunityinvitationdetails"></a>
 <a id="schema_CommunityInvitationDetails"></a>
@@ -558,7 +558,7 @@ The input object to Create Invitation.
 
 Summary of a community invitation.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -579,7 +579,7 @@ Summary of a community invitation.
 
 ---
 
-## ProcessInvitationInput
+### ProcessInvitationInput
 
 <a id="schemaprocessinvitationinput"></a>
 <a id="schema_ProcessInvitationInput"></a>
@@ -588,7 +588,7 @@ Summary of a community invitation.
 
 The input object to Process Invitation.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -603,7 +603,7 @@ The input object to Process Invitation.
 
 ---
 
-## ProcessInvitationAction
+### ProcessInvitationAction
 
 <a id="schemaprocessinvitationaction"></a>
 <a id="schema_ProcessInvitationAction"></a>

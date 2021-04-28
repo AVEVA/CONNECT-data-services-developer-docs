@@ -1,5 +1,5 @@
 ---
-title: community/community-users v20210426.5
+title: community/community-users v20210427.1
 language_tabs: []
 toc_footers: []
 includes: []
@@ -253,9 +253,9 @@ Allowed for these roles:
 </ul>
 
 ---
-# Definitions
+## Definitions
 
-## User
+### User
 
 <a id="schemauser"></a>
 <a id="schema_User"></a>
@@ -264,7 +264,7 @@ Allowed for these roles:
 
 Object for retrieving a user
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -301,7 +301,7 @@ Object for retrieving a user
 
 ---
 
-## ErrorResponse
+### ErrorResponse
 
 <a id="schemaerrorresponse"></a>
 <a id="schema_ErrorResponse"></a>
@@ -310,7 +310,7 @@ Object for retrieving a user
 
 Object returned whenever there is an error TODO: Remove this internal model and re-adopt public model when moving to System.Text.Json in WI 202168.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

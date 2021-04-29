@@ -392,7 +392,7 @@ To build an SdsType representation of sample classes in Python and Java Script, 
         def setValue(self, measurement):
           self.__measurement = measurement
 ```
-***
+
 ##### [JavaScript](#tab/tabid-2)
 ```javascript
 

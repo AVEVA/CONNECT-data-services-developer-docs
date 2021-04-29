@@ -1,16 +1,4 @@
----
 
-title: community/community-search v20210427.1
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: osisoft.widdershins v1.0.7
-
----
 
 # Community Search
 Defines the public API endpoints that are used to search communities. A community provides a way to share information, such as data streams, between customers.
@@ -124,11 +112,9 @@ Allowed for these roles:
 </ul>
 
 ---
-
 ## Definitions
 
 ### StreamSearchResult
-
 
 <a id="schemastreamsearchresult"></a>
 <a id="schema_StreamSearchResult"></a>
@@ -137,9 +123,7 @@ Allowed for these roles:
 
 The StreamSearchResult object. This is the model representation exposed to callers of controller endpoints.
 
-
 #### Properties
-
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -162,18 +146,14 @@ The StreamSearchResult object. This is the model representation exposed to calle
 
 ---
 
-
 ### ErrorResponse
-
 
 <a id="schemaerrorresponse"></a>
 <a id="schema_ErrorResponse"></a>
 <a id="tocSerrorresponse"></a>
 <a id="tocserrorresponse"></a>
 
-
 #### Properties
-
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -194,25 +174,21 @@ The StreamSearchResult object. This is the model representation exposed to calle
 
 ---
 
-
 ### CommunitySummaryInformation
-
 
 <a id="schemacommunitysummaryinformation"></a>
 <a id="schema_CommunitySummaryInformation"></a>
 <a id="tocScommunitysummaryinformation"></a>
 <a id="tocscommunitysummaryinformation"></a>
 
-The CommunitySummaryInformation Data Transfer Object. This is the model representation exposed to callers of controller endpoints.
-
+The CommunitySummaryInformation object. This is the model representation exposed to callers of controller endpoints.
 
 #### Properties
 
-
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|TotalStreams|int32|false|false|The number of streams that have been contributed to the community by all member tenants including the calling tenant.|
-|StreamsContributed|int32|false|false|The number of streams that have been contributed to the community by the calling tenant.|
+|TotalStreams|int32|false|false|The number of streams that have been contributed to the community by all member tenants, including the calling tenant|
+|StreamsContributed|int32|false|false|The number of streams that have been contributed to the community by the calling tenant|
 
 ```json
 {

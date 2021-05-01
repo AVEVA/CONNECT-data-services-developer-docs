@@ -1,12 +1,20 @@
----
-uid: ccAboutMetadataRules
----
+# Metadata rules
 
-# Add context with metadata rules
+Whenever possible, OSIsoft recommends that metadata be explicitly included in the streams when they are being created. However, there are situations where this is not possible. In these instances you can establish a consistent naming pattern for your streams and embed metadata such as location, asset class, and asset ID in your stream names.  Then you can create metadata rules that define the pattern of the stream name. The metadata rule identifies all streams that match the defined pattern. OSIsoft Cloud Services (OCS) then parses each stream and builds out the metadata following the defined rules. 
 
-Metadata rules enable users to capture data streams based on specific data items, such as a plant location or device category. You create a metadata rule by defining a stream name pattern based on a selected stream name. The metadata rule captures all streams in a given namespace that match the stream name pattern defined in the rule. 
+## PI Server counterpart
 
-Therefore, stream names that follow a standard naming pattern, including items such as location, asset class, and asset ID, allow users to create rules based on this naming pattern. The application of the metadata to streams makes it easier for users to understand the data contained in the stream. 
+Metadata rules do not have a similar counterpart in PI Server because PI points cannot store generic metadata. If a similar feature existed in PI Server, it might be a tool that runs against a list of PI points and fills in their point attributes by parsing out different parts of a structured PI point name.
+
+## Metadata best practices  
+
+The following best practices are recommend to make it easier to add metadata to your streams:
+
+- It is easiest to explicitly add metadata to streams and, whenever possible, OSIsoft recommends you add metadata this way.
+- In situations where streams are created from an external source and you cannot explicitly include metadata fields but you are able to establish a naming pattern for stream names, adopt and apply a naming pattern that can be used with metadata rules. <!-- What are the characteristics of a naming pattern that can be used with metadata rules? -->
+- If possible, manually create a few streams with your proposed stream naming pattern. Then experiment with creating metadata rules to ensure that you can collect all of the metadata that you want from the stream name. Once you have confirmed that all of the metadata is captured in the stream name, then proceed with creating the remainder of your streams.
+
+## Using metadata rules to add metadata to streams
 
 The following diagram shows metadata in the context of several different but similar data streams.![Metadata and streams](images/streams.jpg) 
 

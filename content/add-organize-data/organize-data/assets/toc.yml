@@ -1,3 +1,5 @@
+- name: Assets
+  topicHref: asset-concept.md
 - name: Create and configure an asset
   topicHref: create-an-asset.md
 - name: Asset types

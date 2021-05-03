@@ -45,7 +45,7 @@ After creating the namespace, the next step is to add one or more types. For mor
 
    - `Key` &ndash; Select the checkbox.
 
-     **Note:** The `Key` field identifies the Timestamp property as the index. 
+     **Note:** The `Key` field identifies this property as the index. 
 
    - `Id` &ndash; Enter **Timestamp**.
 
@@ -72,7 +72,7 @@ After creating the namespace, the next step is to add one or more types. For mor
 
       **Note:** You can select up to three properties as indexes. Drag and drop the properties in the list to order the index keys. For this exercise, we will only use the Timestamp property as an index.
 
-1. Click **Save**.
+1. Click **Apply**.
 
 1. Click the checkbox to select the **MyOCS.PumpState** type in the list. Click **More options** and click **Manage Permissions**.
 

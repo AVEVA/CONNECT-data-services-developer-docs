@@ -5,9 +5,9 @@ uid: gpAssetTypes
 
 An asset type is a template for creating asset that share a common structure or type. For more information about asset types, see the following:
 
-- [Asset types](xref:ccAssetTypes)
-- [PI Server counterpart](xref:ccAssetTypes#pi-server-counterpart)
-- [Asset types best practices](xref:ccAssetTypes#asset-types-best-practices)
+- [Asset types](xref:AssetTypes)
+- [PI Server counterpart](xref:AssetTypes#pi-server-counterpart)
+- [Asset types best practices](xref:AssetTypes#asset-types-best-practices)
 
 ## Create an asset type using the Asset Explorer 
 

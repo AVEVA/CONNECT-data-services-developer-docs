@@ -1,3 +1,7 @@
+---
+uid: ccMetadataRules
+---
+
 # Metadata rules
 
 Whenever possible, OSIsoft recommends that metadata be explicitly included in the streams when they are being created. However, there are situations where this is not possible. In these instances you can establish a consistent naming pattern for your streams and embed metadata such as location, asset class, and asset ID in your stream names.  Then you can create metadata rules that define the pattern of the stream name. The metadata rule identifies all streams that match the defined pattern. OSIsoft Cloud Services (OCS) then parses each stream and builds out the metadata following the defined rules. 
@@ -32,15 +36,15 @@ In the screen capture above, the wizard displays the stream name selected by the
 
 Each part of the stream name is assigned a metadata type. The screen capture above shows the different metadata types (wildcard, metadata, and string literal) that can be assigned to each delimited part of a stream name. 
 
-•       In this example, all data is coming from wind turbines on a wind farm, The user knows that the first part of the stream name (GEO1 in the selected stream above) identifies the wind turbine. This rule uses a wildcard to capture streams for all turbines.  
+*       In this example, all data is coming from wind turbines on a wind farm, The user knows that the first part of the stream name (GEO1 in the selected stream above) identifies the wind turbine. This rule uses a wildcard to capture streams for all turbines.  
 
-•       The second part of the stream name (P.ACT in the selected stream above) has been assigned a metadata type of metadata. Metadata is defined as key-value pairs. For example*, P.ACT* is the key for *Active Power*. The user defines all key-value pairs for this part of the stream name. 
+*       The second part of the stream name (P.ACT in the selected stream above) has been assigned a metadata type of metadata. Metadata is defined as key-value pairs. For example*, P.ACT* is the key for *Active Power*. The user defines all key-value pairs for this part of the stream name. 
 
 **Note**: Stream name parts designated as metadata are defined as key-value pairs. Each value occupying a part designated as metadata is categorized under a key defined for it. This typically takes the form of values recorded at different timestamp intervals for a particular object or device, or key. The key-value data structure facilitates analytical processing of stream data returned by a metadata rule. 
 
-•       PV is defined as a string literal. In this example, it refers to the Pine Valley Wind Farm. 
+*       PV is defined as a string literal. In this example, it refers to the Pine Valley Wind Farm. 
 
-•       As defined, this metadata rule captures streams for all turbines for Active Power in the Pine Valley Wind Farm.
+*       As defined, this metadata rule captures streams for all turbines for Active Power in the Pine Valley Wind Farm.
 
    In addition to being applied to any existing streams, a metadata rule captures any matching streams that are subsequently added to the selected namespace. You can edit a metadata rule. The modified rule may then capture a different set of streams.
 

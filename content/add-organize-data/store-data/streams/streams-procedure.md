@@ -11,7 +11,7 @@ Sequential Data Store (SDS) stream data are values or events of the same SDS typ
 
 ## Procedure
 
-1. Click the ![Menu icon](C:/Users/lasato/source/repos/OCS-DOCS/sds-new/images/menu-icon.png) and click **Sequential Data Store** (under Data Management).
+1. Click the ![Menu icon](../images/menu-icon.png) and click **Sequential Data Store** (under Data Management).
 1. From the **Namespace** drop-down list, select the namespace in which you want to create the stream.
    ![Namespace list](../images/sds-namespace.png)
 1. From the **Streams** drop-down list, select **Streams** if it is not already selected.

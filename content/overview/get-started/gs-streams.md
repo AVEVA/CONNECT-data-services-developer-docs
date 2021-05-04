@@ -12,7 +12,7 @@ After creating your types, you can add streams and associate a type with the str
 
 ## Procedure
 
-1. Click the ![Menu icon](images\menu-icon.png) and click **Sequential Data Store** (under Data Management).
+1. Click the ![Menu icon](images/menu-icon.png) and click **Sequential Data Store** (under Data Management).
 
 1. Click the **Namespace** selection button to open the `Select a Namespace` window. Select the namespace in which you want to create the stream. 
     ![Namespace list](images/sds-gs-namespace.png)

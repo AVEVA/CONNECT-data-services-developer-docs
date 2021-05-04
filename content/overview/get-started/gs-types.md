@@ -74,6 +74,7 @@ After creating the namespace, the next step is to add one or more types. For mor
 
 1. Click **Apply**.
 
+
 The following steps explore information about the type you just created.
 
 1. Click the checkbox to select the **MyOCS.PumpState** type in the list. Click **More options** and click **Manage Permissions**.

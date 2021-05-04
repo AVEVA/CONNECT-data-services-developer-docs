@@ -41,7 +41,7 @@ After creating your types, you can add streams and associate a type with the str
 
 1. In the `New Tag` field, type **OSIsoft**, and click **+** to add the tag. 
 
-    **Note:** You can the *X* to delete it from the stream.
+    **Note:** You can click the *X* to delete it from the stream.
 
 1. Click the **Metadata** tab and click **Add Metadata**.
 

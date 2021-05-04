@@ -4,7 +4,8 @@ uid: gsTypes
 
 # Get started with types
 
-After creating the namespace, the next step is to add one or more types. For more information about types, see the following:
+After creating the namespace, the next step is to add one or more types. For more information about types, see the following topics:
+<!--I believe we are not supposed to used "following" on its own, it should be followed by a suitable noun -->
 
 - [Types](xref:ccTypes)
 - [PI Server counterpart](xref:ccTypes#types-pi-server)
@@ -22,10 +23,12 @@ After creating the namespace, the next step is to add one or more types. For mor
 
 1. Click the ![More options](images/more-options.png) icon on the menu bar and click **Manage Default Permissions**.
    This opens the `Manage Default Permissions for New Types` window where default permissions for new types are specified. 
+   <!--Do users specify the default permissions? If yes, make this active instead of passive "where you can specify the default permissions for new types" -->
 
    **Note:** By default, you must be assigned the Tenant Administrator role to change the default permissions. Any changes only affect new types. It does not change the permissions on already existing types. 
+   <!--Spell out what the "It" is. I think probably: Any changes you make affect only new types. The permissions on existing types are not changed. -->
 
-   When you are done reviewing the permissions, click **Cancel** to continue.
+   When you have finished reviewing the permissions, click **Cancel** to continue.
 
 1. Click **Add Type**.
 
@@ -74,19 +77,20 @@ After creating the namespace, the next step is to add one or more types. For mor
 
 1. Click **Apply**.
 
+<!--Since the following two steps are about viewing info rather than doing something, I'd state that up front with something like: This step and the next step allow you to view information about the type you just created -->
 1. Click the checkbox to select the **MyOCS.PumpState** type in the list. Click **More options** and click **Manage Permissions**.
 
-    This opens the `Manage Permissions for MyOCS.PumpState` window where you can override the default permissions and set permissions for the specific type. By default, you must be assigned the Tenant Administrator role to configure the type permissions.
+    This opens the `Manage Permissions for MyOCS.PumpState` window where you can override the default permissions and set permissions for the specific type. By default, you must be assigned the Tenant Administrator role to configure the type permissions.<!--Why "By default"? Not sure that adds anything to this sentence. -->
 
-    Review the permissions for the MyOCS.PumpState type, and when you are done exploring this window, click **Cancel** to continue. 
+    Review the permissions for the MyOCS.PumpState type, and when you have finished exploring this window, click **Cancel** to continue. 
 
 1. Click **More options** and click **View Type**.
 
-   This window shows the type details which you entered in the dialog window when you added the type. Click **Cancel** to continue.
+   This window shows the type details that you entered when you added the type. Click **Cancel** to continue.
 
 1. Click **More options**  and **Get Type Streams**.
 
-   This takes you to the **Streams** list and, by default, it uses the typeId:MyOCS.PumpState query to filter for any streams with the MyOCS.PumpState type. The list is empty because no streams have yet been created with this type.
+   This takes you to the **Streams** list and, by default, OCS uses the typeId:MyOCS.PumpState query to filter for any streams with the MyOCS.PumpState type. The list is currently empty, because no streams have yet been created with this type.
    
 
 ## Next step

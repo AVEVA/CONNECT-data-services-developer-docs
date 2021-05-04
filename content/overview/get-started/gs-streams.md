@@ -25,7 +25,7 @@ After creating your types, you can add streams and associate a type with the str
    
     **Note:** By default, you must be assigned the Tenant Administrator role to change the default permissions. Any changes only affect new streams. It does not change the permissions on already existing streams. 
     
-    When you are done reviewing the permissions, click **Cancel** to continue.
+    When you are done reviewing permissions, click **Cancel** to continue.
    
 1. Click **Add Stream**.
 

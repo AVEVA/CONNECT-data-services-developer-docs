@@ -1,36 +1,72 @@
-array:
-  Type: array
-  Format: |
-    
-  SDSTypeCode: |
-    IENumerable
-boolean:
-  Type: boolean
-  Format: |
-    
-  SDSTypeCode: |
-    boolean
-integer:
-  Type: integer
-  Format: |
-    int64
-  SDSTypeCode: |
-    Int64
-integer:
-  Type: integer
-  Format: |
-    int32
-  SDSTypeCode: |
-    Int32
-integer:
-  Type: integer
-  Format: |
-    int16
-  SDSTypeCode: |
-    Int16
-integer:
-  Type: integer
-  Format: |
-    uint64
-  SDSTypeCode: |
-    Uint64    
+namespaceId:
+  type: text/plain
+  value: |
+    Namespace identifier
+tenantId:
+  type: text/plain
+  value: |
+    Tenant identifier
+query:
+  type: text/plain
+  value: |
+    Query identifier
+count:
+  type: text/plain
+  value: |
+    Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.
+skip:
+  type: text/plain
+  value: |
+    Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.
+streamId:
+  type: text/plain
+  value: |
+    Stream identifier
+key:
+  type: text/plain
+  value: |
+    Key specifying the metadata value of interest
+identityProviderId:
+  type: text/plain
+  value: |
+    Identity provider identifier
+tenantId-community:
+  type: text/plain
+  value: |
+    Owning tenant identifier
+query-community:
+  type: text/plain
+  value: |
+    (Not supported) Query identifier
+communityId:
+  type: text/plain
+  value: |
+    Community identifier
+invitationId:
+  type: text/plain
+  value: |
+    Invitation identifier
+userId:
+  type: text/plain
+  value: |
+    User identifier
+datasourceId:
+  type: text/plain
+  value: |
+    Data source identifier
+dataViewId:
+  type: text/plain
+  value: |
+    Data view identifier
+cancellation-token:
+  type: text/plain
+  value: |
+    Cancellation token
+subscriptionId:
+  type: text/plain
+  value: |
+    Subscription identifier
+topicId:
+  type: text/plain
+  value: |
+    Topic identifier

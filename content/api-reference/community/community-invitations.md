@@ -316,9 +316,9 @@ DELETE /api/v1-preview/tenants/{tenantId}/communities/{communityId}/invitations/
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/>`string communityId`
-<br/>Community identifier<br/><br/>`string invitationId`
-<br/>Invitation identifier<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string communityId`
+<br/>Community identifier.<br/><br/>`string invitationId`
+<br/>Invitation identifie.r<br/><br/>
 
 ### Response
 
@@ -351,6 +351,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/communities/{communityId}/invitations/
 Allowed for these roles: 
 <ul>
 <li>Community Administrator</li>
+<li>Tenant Administrator</li>
 </ul>
 
 ---

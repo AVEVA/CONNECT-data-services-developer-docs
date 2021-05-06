@@ -85,6 +85,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "Content_Portal/Documentation/Access_Control.md",
       "output": {
@@ -1190,8 +1193,134 @@
     },
     {
       "log_codes": [
-        "DuplicateUids"
+        "InvalidYamlHeader"
       ],
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/community/community-client-credential-clients.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/community/community-client-credential-clients.html",
+          "hash": "LqdV9upk16EiTZgR8AbKiw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidYamlHeader"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/community/community-communities.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/community/community-communities.html",
+          "hash": "AiK28ho5pag6DMwNWTIG0A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidYamlHeader"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/community/community-invitations.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/community/community-invitations.html",
+          "hash": "2f/iZH0mHich5hNUVr8GxA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/community/community-overview.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/community/community-overview.html",
+          "hash": "QUq37Ehk+RljXa2HkQV88g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidYamlHeader"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/community/community-roles.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/community/community-roles.html",
+          "hash": "lkQuOOwNdxVgBuSS8EMbqQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidYamlHeader"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/community/community-search.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/community/community-search.html",
+          "hash": "JA4lShDsY8Es9691/3PMcQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/community/community-shared-access.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/community/community-shared-access.html",
+          "hash": "+dmTWnlENyrk3WIkyZ3ZSA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidYamlHeader"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/community/community-tenants.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/community/community-tenants.html",
+          "hash": "redvHLlYuzYfAPGj+IbTKg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidYamlHeader"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/community/community-users.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/community/community-users.html",
+          "hash": "rsdVIebkFEJZPriilnECLQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "Content_Portal/Documentation/developer-guide/identity-dev/Access_Control.md",
       "output": {
@@ -1789,6 +1918,136 @@
       "version": ""
     },
     {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/communities/communities.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/communities/communities.html",
+          "hash": "nXaP4Q6m2++Vx25UhaHZzQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/communities/community-roles.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/communities/community-roles.html",
+          "hash": "xKnBgSo8uld0BDbGzOhudg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/communities/create-a-community.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/communities/create-a-community.html",
+          "hash": "WbW8LEOBGXZlIbTPelFpXw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/communities/delete-a-community.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/communities/delete-a-community.html",
+          "hash": "6LlucWDc+lgfUXyW7/Xj3w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/communities/manage-a-community.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/communities/manage-a-community.html",
+          "hash": "YRiiWisl+7+6qbspPxXqlQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/communities/manage-clients.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/communities/manage-clients.html",
+          "hash": "uIMkCr4GIE+H6HsGW2hxsg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/communities/manage-users.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/communities/manage-users.html",
+          "hash": "Q13QDauIdDa+ah4SoorWyw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/communities/share-unshare-streams.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/communities/share-unshare-streams.html",
+          "hash": "svzQk8oau4pFakbRRlXSWQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Content_Portal/How_To_Guides/communities/shared-access.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/How_To_Guides/communities/shared-access.html",
+          "hash": "xJ80rOeZY2N9DdGF/iC1Gw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/add-button-white-background.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/add-button-white-background.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/add-button.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/add-button.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Resource",
       "source_relative_path": "Content_Portal/How_To_Guides/images/add-pp-transfer.png",
       "output": {
@@ -1838,6 +2097,17 @@
       "output": {
         "resource": {
           "relative_path": "Content_Portal/How_To_Guides/images/asset-type-picker.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/callouts-for-types-streams.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/callouts-for-types-streams.png"
         }
       },
       "is_incremental": false,
@@ -1966,6 +2236,39 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/more-options-blue-background.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/more-options-blue-background.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/more-options-wite-background.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/more-options-wite-background.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/more-options.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/more-options.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "Content_Portal/How_To_Guides/images/namespace-field.png",
       "output": {
         "resource": {
@@ -2080,6 +2383,17 @@
       "output": {
         "resource": {
           "relative_path": "Content_Portal/How_To_Guides/images/sds-page.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Content_Portal/How_To_Guides/images/select-namespace-streams.png",
+      "output": {
+        "resource": {
+          "relative_path": "Content_Portal/How_To_Guides/images/select-namespace-streams.png"
         }
       },
       "is_incremental": false,
@@ -2902,7 +3216,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/toc.html",
-          "hash": "1FyYtv6SRA/9VT2n4vOqqA=="
+          "hash": "EiLqJwVetgc3SIQ25/zwdQ=="
         }
       },
       "is_incremental": false,
@@ -2959,7 +3273,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 154,
+          "total_file_count": 172,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

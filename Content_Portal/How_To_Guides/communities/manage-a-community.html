@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Manage tenants in a community </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Manage tenants in a community ">
+    <meta name="generator" content="docfx 2.56.5.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    <meta property="docfx:rel" content="../../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../../../index.html" width="46">
+        <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Services">
+        </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="managecommunity">
+<h1 id="manage-tenants-in-a-community">Manage tenants in a community</h1>
+
+<p>The <code>Community Details</code> page lets you perform various tasks for managing tenants that already belong to a community. It also lets you add tenants to a community.</p>
+<p>To create a new community, see <a class="xref" href="create-a-community.html">Add a community</a>.</p>
+<h2 id="invite-a-tenant-to-a-community">Invite a tenant to a community</h2>
+<p>OCS lets you invite business partners to join a community so they are enabled to share data. </p>
+<p><strong>Note:</strong> The business partner must already belong to a tenant in OCS.</p>
+<p>Two different users must perform this procedure:</p>
+<ul>
+<li>One user, the &quot;inviter,&quot; issues an invitation to another tenant to join a community. To be an inviter, you must be a <a class="xref" href="community-roles.html#community-administrator">Community Administrator</a>.</li>
+<li>Another user, the &quot;invitee,&quot; accepts the invitation on behalf of their tenant. To be an invitee, you must be a <a class="xref" href="community-roles.html#tenant-administrator">Tenant Administrator</a> of a separate tenant that does not already belong to the community.</li>
+</ul>
+<p>A. <strong>Inviter:</strong> Perform the following steps to issue an invitation:</p>
+<ol>
+<li>On the <code>Communities</code> overview page, find the community you want to share and click <strong>Details</strong>.</li>
+<li>On the <code>Community Details</code> page, on the <strong>Tenants</strong> tab, click <strong>Invite Tenant</strong>.</li>
+<li>Enter the email address of the administrator of the tenant you would like to invite and click <strong>Send</strong>.<br>An email is sent to the invitee.</li>
+</ol>
+<p>B. <strong>Invitee:</strong> Perform the following steps to accept an invitation:</p>
+<ol>
+<li>Open the email from OSIsoft Cloud Services Operations and follow the instructions.<br>OCS opens and displays a login dialog.</li>
+<li>Enter the tenant ID or tenant alias of the tenant from which you want to share data and click <strong>Continue</strong>. You must be a Tenant Administrator for this tenant to accept the invitation.</li>
+<li>On the authentication dialog, verify your identity.<br>OCS displays a page saying that your tenant will be joining the community from which the invite was issued. Membership in the community does not actually begin until the inviter confirms the invitation in the next step.</li>
+<li>Click <strong>Join</strong>.<br>The inviter receives an email asking for confirmation of the pending invitation.</li>
+</ol>
+<p>C. <strong>Inviter:</strong> Perform the following steps to confirm the new tenant:</p>
+<ol>
+<li>Follow the instructions in the email.</li>
+<li>Log into the tenant that owns the community you are sharing.</li>
+<li>On the <code>Communities</code> overview page, find the community to which you have invited another tenant and click <strong>Details</strong>.</li>
+<li>On the <code>Community Details</code> page, click the <strong>Invitations</strong> tab.</li>
+<li>Select an invitation with a status of Invitation Accepted.<br>The Invitation Details pane opens.</li>
+<li>Click <strong>Confirm Tenant</strong>. When prompted for confirmation, click <strong>Confirm Tenant</strong> again.<br>The invitee&#39;s tenant is now part of the community.</li>
+</ol>
+<h2 id="remove-a-tenant-from-a-community">Remove a tenant from a community</h2>
+<p>Use this procedure to remove a tenant from a community. This action might be necessary if a business relationship changes or the tenant&#39;s organization experiences a security breach.</p>
+<p>After removing a tenant, you can re-invite the tenant to the community but all data that was previously shared must be shared again with the returning tenant.</p>
+<p><strong>Note.</strong> Only an OCS user who has a <a class="xref" href="community-roles.html#community-administrator">Community Administrator</a> role can remove a tenant from a community.  </p>
+<ol>
+<li>On the <code>Communities</code> overview page, find the community you want to modify and click <strong>Details</strong>.</li>
+<li>On the <code>Community Details</code> page, click the <strong>Tenants</strong> tab.</li>
+<li>Select the tenant you want to remove from the community. The Tenant Details pane opens. </li>
+<li>On the Tenant Details pane, click <strong>Remove Tenant</strong>. When prompted for confirmation, click <strong>Remove Tenant</strong> again.</li>
+</ol>
+<h2 id="remove-your-own-tenant-from-a-community">Remove your own tenant from a community</h2>
+<p>Use this procedure to remove your own tenant from a community.</p>
+<p>After removing your tenant, you can be re-invited to the community but all data that was previously shared with your tenant must be shared again.</p>
+<p>If your tenant created a community, you cannot remove your own tenant from the community.</p>
+<p><strong>Note.</strong> Only OCS users who have the <a class="xref" href="community-roles.html#community-moderator">Community Moderator</a> role can remove their own tenant from a community.</p>
+<ol>
+<li>On the <code>Communities</code> overview page, find the community you want to leave and click <strong>Details</strong>.</li>
+<li>On the <code>Community Details</code> page, click the <strong>Tenants</strong> tab.</li>
+<li>Select your own tenant.</li>
+<li>Select <strong>More Options</strong> <img src="../images/more-options.png" alt="More Options" title="More Options"> and click <strong>Remove &lt;<em>your tenant</em>></strong>.<br>A confirmation dialog opens.</li>
+<li>Enter the name of your own tenant and click <strong>Remove</strong>.</li>
+</ol>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/How_To_Guides/communities/manage-a-community.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2021 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

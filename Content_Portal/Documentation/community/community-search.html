@@ -1,0 +1,429 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Community Search </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Community Search ">
+    <meta name="generator" content="docfx 2.56.5.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    <meta property="docfx:rel" content="../../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../../../index.html" width="46">
+        <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Services">
+        </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="community-search">Community Search</h1>
+
+<p>Defines the public API endpoints that are used to search communities. A community provides a way to share information, such as data streams, between customers.</p>
+<h2 id="community-summary-information"><code>Community Summary Information</code></h2>
+<p><a id="opIdCommunitySearch_Community Summary Information"></a></p>
+<p>Gets community summary information</p>
+<h3 id="request">Request</h3>
+<pre><code class="lang-text">GET /api/v1-preview/tenants/{tenantId}/communities/{communityId}/summary
+</code></pre><h4 id="parameters">Parameters</h4>
+<p><code>string tenantId</code>
+<br>Calling tenant identifier<br><br><code>string communityId</code>
+<br>Community identifier<br><br></p>
+<h3 id="response">Response</h3>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Body Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="#schemacommunitysummaryinformation">CommunitySummaryInformation</a></td>
+<td>Returns community summary information of type <code>CommunitySummaryInformation</code>.</td>
+</tr>
+<tr>
+<td>400</td>
+<td><a href="#schemaerrorresponse">ErrorResponse</a></td>
+<td>Bad Request. The server could not understand the request.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>None</td>
+<td>Unauthorized. The client has not been authenticated.</td>
+</tr>
+<tr>
+<td>403</td>
+<td><a href="#schemaerrorresponse">ErrorResponse</a></td>
+<td>Forbidden. The client does not have the required permissions to make the request.</td>
+</tr>
+<tr>
+<td>404</td>
+<td><a href="#schemaerrorresponse">ErrorResponse</a></td>
+<td>Not Found. The requested tenant or community was not found.</td>
+</tr>
+<tr>
+<td>408</td>
+<td><a href="#schemaerrorresponse">ErrorResponse</a></td>
+<td>Request Timeout. The request has timed out.</td>
+</tr>
+<tr>
+<td>500</td>
+<td><a href="#schemaerrorresponse">ErrorResponse</a></td>
+<td>Internal Server Error. The server has encountered a situation it doesn&#39;t know how to handle.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-response-body">Example response body</h4>
+<blockquote><p>200 Response</p>
+</blockquote>
+<pre><code class="lang-json">{
+  &quot;TotalStreams&quot;: 0,
+  &quot;StreamsContributed&quot;: 0
+}
+</code></pre><h3 id="authorization">Authorization</h3>
+<p>Allowed for these roles: 
+<ul>
+<li>Community Administrator</li>
+<li>Community Member</li>
+<li>Community Moderator</li>
+<li>Tenant Member</li>
+</ul></p>
+<hr>
+<h2 id="search-streams"><code>Search Streams</code></h2>
+<p><a id="opIdCommunitySearch_Search Streams"></a></p>
+<p>Searches for streams within a community by query</p>
+<h3 id="request-1">Request</h3>
+<pre><code class="lang-text">GET /api/v1-preview/tenants/{tenantId}/search/communities/{communityId}/streams
+?query={query}&amp;count={count}&amp;searchTenantId={searchTenantId}
+</code></pre><h4 id="parameters-1">Parameters</h4>
+<p><code>string tenantId</code>
+<br>Calling tenant identifier<br><br><code>string communityId</code>
+<br>Community identifier<br><br>
+<code>[optional] string query</code>
+<br>Query to execute. The query uses the same format as SDS. See <a class="xref" href="../SequentialDataStore/Searching.html">Search in SDS</a>.<br><br><code>[optional] integer count</code>
+<br>Maximum total results<br><br><code>[optional] string searchTenantId</code>
+<br>The tenant identifier of the streams to be searched. This parameter enables the API to search streams based on tenantID. By default this parameter holds an empty GUID.<br><br></p>
+<h3 id="response-1">Response</h3>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Body Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="#schemastreamsearchresult">StreamSearchResult</a></td>
+<td>Returns the stream information that matches the search criteria. This is a set of objects of type <code>StreamSearchResult</code>.</td>
+</tr>
+<tr>
+<td>400</td>
+<td><a href="#schemaerrorresponse">ErrorResponse</a></td>
+<td>Bad Request. The server could not understand the request due to invalid syntax.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>None</td>
+<td>Unauthorized. The client has not been authenticated.</td>
+</tr>
+<tr>
+<td>403</td>
+<td><a href="#schemaerrorresponse">ErrorResponse</a></td>
+<td>Forbidden. The client does not have the required permissions to make the request.</td>
+</tr>
+<tr>
+<td>404</td>
+<td><a href="#schemaerrorresponse">ErrorResponse</a></td>
+<td>Not Found. The requested community was not found.</td>
+</tr>
+<tr>
+<td>408</td>
+<td><a href="#schemaerrorresponse">ErrorResponse</a></td>
+<td>Request Timeout. The request has timed out.</td>
+</tr>
+<tr>
+<td>500</td>
+<td><a href="#schemaerrorresponse">ErrorResponse</a></td>
+<td>Internal Server Error. The server has encountered a situation it does not know how to handle.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-response-body-1">Example response body</h4>
+<blockquote><p>200 Response</p>
+</blockquote>
+<pre><code class="lang-json">{
+  &quot;Id&quot;: &quot;string&quot;,
+  &quot;Name&quot;: &quot;string&quot;,
+  &quot;TypeId&quot;: &quot;string&quot;,
+  &quot;Description&quot;: &quot;string&quot;,
+  &quot;Self&quot;: &quot;string&quot;
+}
+</code></pre><h3 id="authorization-1">Authorization</h3>
+<p>Allowed for these roles: 
+<ul>
+<li>Community Administrator</li>
+<li>Community Member</li>
+<li>Community Moderator</li>
+<li>Tenant Member</li>
+</ul></p>
+<hr>
+<h2 id="definitions">Definitions</h2>
+<h3 id="streamsearchresult">StreamSearchResult</h3>
+<p><a id="schemastreamsearchresult"></a>
+<a id="schema_StreamSearchResult"></a>
+<a id="tocSstreamsearchresult"></a>
+<a id="tocsstreamsearchresult"></a></p>
+<p>The StreamSearchResult object. This is the model representation exposed to callers of controller endpoints.</p>
+<h4 id="properties">Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>string</td>
+<td>false</td>
+<td>true</td>
+<td>The stream Id</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>false</td>
+<td>true</td>
+<td>The name</td>
+</tr>
+<tr>
+<td>TypeId</td>
+<td>string</td>
+<td>false</td>
+<td>true</td>
+<td>The type Id</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>string</td>
+<td>false</td>
+<td>true</td>
+<td>The description</td>
+</tr>
+<tr>
+<td>Self</td>
+<td>string</td>
+<td>false</td>
+<td>true</td>
+<td>The self link</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+  &quot;Id&quot;: &quot;string&quot;,
+  &quot;Name&quot;: &quot;string&quot;,
+  &quot;TypeId&quot;: &quot;string&quot;,
+  &quot;Description&quot;: &quot;string&quot;,
+  &quot;Self&quot;: &quot;string&quot;
+}
+</code></pre><hr>
+<h3 id="errorresponse">ErrorResponse</h3>
+<p><a id="schemaerrorresponse"></a>
+<a id="schema_ErrorResponse"></a>
+<a id="tocSerrorresponse"></a>
+<a id="tocserrorresponse"></a></p>
+<h4 id="properties-1">Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OperationId</td>
+<td>string</td>
+<td>false</td>
+<td>true</td>
+<td>OperationId of the action that caused the error</td>
+</tr>
+<tr>
+<td>Error</td>
+<td>string</td>
+<td>false</td>
+<td>true</td>
+<td>Error description</td>
+</tr>
+<tr>
+<td>Reason</td>
+<td>string</td>
+<td>false</td>
+<td>true</td>
+<td>Reason for the error</td>
+</tr>
+<tr>
+<td>Resolution</td>
+<td>string</td>
+<td>false</td>
+<td>true</td>
+<td>Resolution for the Error</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+  &quot;OperationId&quot;: &quot;string&quot;,
+  &quot;Error&quot;: &quot;string&quot;,
+  &quot;Reason&quot;: &quot;string&quot;,
+  &quot;Resolution&quot;: &quot;string&quot;
+}
+</code></pre><hr>
+<h3 id="communitysummaryinformation">CommunitySummaryInformation</h3>
+<p><a id="schemacommunitysummaryinformation"></a>
+<a id="schema_CommunitySummaryInformation"></a>
+<a id="tocScommunitysummaryinformation"></a>
+<a id="tocscommunitysummaryinformation"></a></p>
+<p>The CommunitySummaryInformation object. This is the model representation exposed to callers of controller endpoints.</p>
+<h4 id="properties-2">Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TotalStreams</td>
+<td>int32</td>
+<td>false</td>
+<td>false</td>
+<td>The number of streams that have been contributed to the community by all member tenants, including the calling tenant</td>
+</tr>
+<tr>
+<td>StreamsContributed</td>
+<td>int32</td>
+<td>false</td>
+<td>false</td>
+<td>The number of streams that have been contributed to the community by the calling tenant</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+  &quot;TotalStreams&quot;: 0,
+  &quot;StreamsContributed&quot;: 0
+}
+</code></pre><hr>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/community/community-search.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2021 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

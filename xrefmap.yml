@@ -37,6 +37,9 @@ references:
 - uid: AccountUserRole_1
   name: User Roles
   href: Content_Portal/Documentation/Management/Account_UserRole_1.html
+- uid: add-community
+  name: Create a community
+  href: Content_Portal/How_To_Guides/communities/create-a-community.html
 - uid: AddIdentifyingField
   name: Add identifying field
   href: Content_Portal/Documentation/DataViews/DefineaDataView/Add_Identifying_Field.html
@@ -79,6 +82,15 @@ references:
 - uid: bpPISystemConnection
   name: PI System connections best practices
   href: Content_Portal/How_To_Guides/PI-to-OCS/Overview-PI-to-OCS/pi-to-ocs-connection-best-practices.html
+- uid: communities
+  name: Communities
+  href: Content_Portal/How_To_Guides/communities/communities.html
+- uid: communityOverview
+  name: Community
+  href: Content_Portal/Documentation/community/community-overview.html
+- uid: communityroles
+  name: Community roles
+  href: Content_Portal/How_To_Guides/communities/community-roles.html
 - uid: ConceptsOverview
   name: OSIsoft Cloud Services
   href: Content_Portal/Concepts/Concepts_Overview.html
@@ -181,6 +193,9 @@ references:
 - uid: DefineaDataViewRecommendedWorkflow
   name: 'Recommended workflow: Define a data view'
   href: Content_Portal/Documentation/DataViews/DefineaDataView/Rec_Workflow.html
+- uid: delete-community
+  name: Delete a community
+  href: Content_Portal/How_To_Guides/communities/delete-a-community.html
 - uid: delete-data-transfer
   name: Delete a data transfer
   href: Content_Portal/How_To_Guides/PI-to-OCS/PI-to-OCS-Data-Transfers/delete-data-transfer.html
@@ -274,6 +289,15 @@ references:
 - uid: main-landing-page
   name: PI to OCS
   href: Content_Portal/How_To_Guides/PI-to-OCS/main-landing-page.html
+- uid: managecommunity
+  name: Manage tenants in a community
+  href: Content_Portal/How_To_Guides/communities/manage-a-community.html
+- uid: managecommunityclients
+  name: Add and remove community clients
+  href: Content_Portal/How_To_Guides/communities/manage-clients.html
+- uid: managecommunityusers
+  name: Manage users in a community
+  href: Content_Portal/How_To_Guides/communities/manage-users.html
 - uid: MetadataRulesOverview
   name: Metadata rules
   href: Content_Portal/Documentation/Metadata/Metadata_Rules_Overview.html
@@ -403,6 +427,15 @@ references:
 - uid: set-up-agent
   name: Confirm your agent is running
   href: Content_Portal/How_To_Guides/PI-to-OCS/Set-up-PI-to-OCS/set-up-agent.html
+- uid: SharedAccess
+  name: Shared access
+  href: Content_Portal/How_To_Guides/communities/shared-access.html
+- uid: shared-access-routes
+  name: Shared Access
+  href: Content_Portal/Documentation/community/community-shared-access.html
+- uid: ShareStreams
+  name: Share and unshare streams
+  href: Content_Portal/How_To_Guides/communities/share-unshare-streams.html
 - uid: support
   name: Technical support and other resources
   href: Content_Portal/Documentation/support.html

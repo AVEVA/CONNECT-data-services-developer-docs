@@ -1,0 +1,367 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Roles </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Roles ">
+    <meta name="generator" content="docfx 2.56.5.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    <meta property="docfx:rel" content="../../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../../../index.html" width="46">
+        <img id="logo" src="../../../Content_Portal/Documentation/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Cloud Services">
+        </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="roles">Roles</h1>
+
+<p>Cluster APIs for getting community roles</p>
+<h2 id="list-instanced-roles-for-a-community"><code>List instanced Roles for a Community</code></h2>
+<p><a id="opIdRoles_List instanced Roles for a Community"></a></p>
+<p>Gets community roles associated with a specific community</p>
+<h3 id="request">Request</h3>
+<pre><code class="lang-text">GET /api/v1-preview/Communities/{communityId}/Roles
+?query={query}&amp;skip={skip}&amp;count={count}
+</code></pre><h4 id="parameters">Parameters</h4>
+<p><code>string communityId</code>
+<br>Community identifier<br><br>
+<code>[optional] string query</code>
+<br>(not supported) Search string identifier<br><br><code>[optional] integer skip</code>
+<br>Parameter representing the zero-based offset of the first object to retrieve. If unspecified, a default value of 0 is used.<br><br><code>[optional] integer count</code>
+<br>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br><br></p>
+<h3 id="response">Response</h3>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Body Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="#schemarole">Role</a>[]</td>
+<td>Set of community roles (type <code>Role</code>) associated with the community ( <code>communityId</code>)</td>
+</tr>
+<tr>
+<td>400</td>
+<td><a href="#schemaerrorresponse">ErrorResponse</a></td>
+<td>Bad request</td>
+</tr>
+<tr>
+<td>401</td>
+<td><a href="#schemaerrorresponse">ErrorResponse</a></td>
+<td>Unauthorized</td>
+</tr>
+<tr>
+<td>403</td>
+<td><a href="#schemaerrorresponse">ErrorResponse</a></td>
+<td>Forbidden</td>
+</tr>
+<tr>
+<td>404</td>
+<td><a href="#schemaerrorresponse">ErrorResponse</a></td>
+<td>Tenant not found</td>
+</tr>
+<tr>
+<td>500</td>
+<td><a href="#schemaerrorresponse">ErrorResponse</a></td>
+<td>Internal server error</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-response-body">Example response body</h4>
+<blockquote><p>200 Response</p>
+</blockquote>
+<pre><code class="lang-json">[
+  {
+    &quot;Id&quot;: &quot;string&quot;,
+    &quot;Name&quot;: &quot;string&quot;,
+    &quot;Description&quot;: &quot;string&quot;,
+    &quot;RoleScope&quot;: 0,
+    &quot;TenantId&quot;: &quot;string&quot;,
+    &quot;CommunityId&quot;: &quot;string&quot;,
+    &quot;RoleTypeId&quot;: &quot;string&quot;
+  }
+]
+</code></pre><h3 id="authorization">Authorization</h3>
+<p>Allowed for these roles: 
+<ul>
+<li>Community Member</li>
+<li>Tenant Administrator</li>
+</ul></p>
+<hr>
+<h2 id="definitions">Definitions</h2>
+<h3 id="role">Role</h3>
+<p><a id="schemarole"></a>
+<a id="schema_Role"></a>
+<a id="tocSrole"></a>
+<a id="tocsrole"></a></p>
+<p>Identity internal representation of role. Unlike the public role model which uses string identifiers, this internal role model uses GUIDs. The public role model originally comes from infrastructure, which uses and persists only string identifiers. In Identity, the GUID is currently the type used internally for persisting role identifiers.</p>
+<h4 id="properties">Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>guid</td>
+<td>false</td>
+<td>true</td>
+<td>Role unique identifier. Generated by the server upon creation.</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>false</td>
+<td>true</td>
+<td>Role name. This cannot be empty.</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>string</td>
+<td>false</td>
+<td>true</td>
+<td>Role description.</td>
+</tr>
+<tr>
+<td>RoleScope</td>
+<td><a href="#schemarolescope">RoleScope</a></td>
+<td>false</td>
+<td>true</td>
+<td>Role scope.</td>
+</tr>
+<tr>
+<td>TenantId</td>
+<td>guid</td>
+<td>false</td>
+<td>true</td>
+<td>Tenant unique identifier, if this is a tenant role. Otherwise set to null.</td>
+</tr>
+<tr>
+<td>CommunityId</td>
+<td>guid</td>
+<td>false</td>
+<td>true</td>
+<td>Community unique identifier, if this is a community role. Otherwise set to null.</td>
+</tr>
+<tr>
+<td>RoleTypeId</td>
+<td>guid</td>
+<td>false</td>
+<td>true</td>
+<td>Role type unique identifier, if this is a tenant role</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+  &quot;Id&quot;: &quot;string&quot;,
+  &quot;Name&quot;: &quot;string&quot;,
+  &quot;Description&quot;: &quot;string&quot;,
+  &quot;RoleScope&quot;: 0,
+  &quot;TenantId&quot;: &quot;string&quot;,
+  &quot;CommunityId&quot;: &quot;string&quot;,
+  &quot;RoleTypeId&quot;: &quot;string&quot;
+}
+</code></pre><hr>
+<h3 id="rolescope">RoleScope</h3>
+<p><a id="schemarolescope"></a>
+<a id="schema_RoleScope"></a>
+<a id="tocSrolescope"></a>
+<a id="tocsrolescope"></a></p>
+<p>The object that represents the scope of a given role</p>
+<h4 id="enumerated-values">Enumerated Values</h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Tenant</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Community</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Cluster</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="errorresponse">ErrorResponse</h3>
+<p><a id="schemaerrorresponse"></a>
+<a id="schema_ErrorResponse"></a>
+<a id="tocSerrorresponse"></a>
+<a id="tocserrorresponse"></a></p>
+<p>Object returned whenever there is an error </p>
+<h4 id="properties-1">Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OperationId</td>
+<td>string</td>
+<td>true</td>
+<td>false</td>
+<td>OperationId of action that caused the error</td>
+</tr>
+<tr>
+<td>Error</td>
+<td>string</td>
+<td>true</td>
+<td>false</td>
+<td>Error description</td>
+</tr>
+<tr>
+<td>Reason</td>
+<td>string</td>
+<td>true</td>
+<td>false</td>
+<td>Reason for the error</td>
+</tr>
+<tr>
+<td>Resolution</td>
+<td>string</td>
+<td>true</td>
+<td>false</td>
+<td>What can be done to resolve the error</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+  &quot;OperationId&quot;: &quot;string&quot;,
+  &quot;Error&quot;: &quot;string&quot;,
+  &quot;Reason&quot;: &quot;string&quot;,
+  &quot;Resolution&quot;: &quot;string&quot;,
+  &quot;property1&quot;: null,
+  &quot;property2&quot;: null
+}
+</code></pre><hr>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/osisoft/OCS-Docs/blob/master/Content_Portal/Documentation/community/community-roles.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 1995 - 2021 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,15 +1,15 @@
-Container messages
-A container message is interpreted as an SdsStream in the Sequential Data Store. The keywords in the container definition are interpreted as follows:
+# Container messages
+# A container message is interpreted as an SdsStream in the Sequential Data Store. The keywords in the container definition are interpreted as follows:
 
-id:
+tenantId:
   type: text/plain
   value: |
     Data that is not grouped by containerId is not supported.
-typeid:
+namespaceId:
   type: text/plain
   value: |
     Corresponds to the SdsStream TypeId field.
-typeverson:
+topicId:
   type: text/plain
   value: |
     Versioning of SdsTypes is not supported.

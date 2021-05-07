@@ -103,15 +103,11 @@ POST api/v1-preview/communities/{communityId}/tenants/{tenantId}/namespaces/{nam
 </code></pre><pre><code class="lang-text">
 POST api/v1-preview/communities/{communityId}/tenants/{tenantId}/namespaces/{namespaceId}/streams/{streamId}/tags
 </code></pre><h3 id="parameters">Parameters</h3>
-<p><code>string communityId</code>
-Community identifier - validated to be a <code>Guid</code></p>
-<p><code>string tenantId</code>
-Tenant identifier - validated to be a <code>Guid</code></p>
-<p><code>string namespaceId</code>
-Namespace identifier</p>
-<p><code>string streamId</code>
-Stream identifier</p>
-<p>[Optional] <code>string key</code><br>[Optional] The key specifying the metadata value of interest  </p>
+<p><code>string communityId</code><br>Community identifier - validated to be a <code>Guid</code></p>
+<p><code>string tenantId</code><br>Tenant identifier - validated to be a <code>Guid</code></p>
+<p><code>string namespaceId</code><br>Namespace identifier</p>
+<p><code>string streamId</code><br>Stream identifier</p>
+<p><code>[Optional] string key</code><br>The key specifying the metadata value of interest  </p>
 <h2 id="response">Response</h2>
 <div class="IMPORTANT"><h5>Important</h5><p>All routes use the standard SDS service. See <a class="xref" href="../SequentialDataStore/SDS_Streams.html">Streams</a> and <a class="xref" href="../SequentialDataStore/Reading_Data_API.html">API calls for reading data</a> in the <a class="xref" href="../SequentialDataStore/Data_Store_and_SDS.html">Sequential Data Store</a> section for specific request and response information.</p>
 </div>
@@ -162,10 +158,10 @@ Stream identifier</p>
 </div>
 <h2 id="examples">Examples</h2>
 <p>Responses are identical to those from the SDS service. See the following examples (Source:<a class="xref" href="../SequentialDataStore/Reading_Data_API.html">Read data API</a>).</p>
-<h3 id="get-event-example-request">Get Event Example request</h3>
+<h3 id="get-event-example-request">Get <code>Event Example</code> request</h3>
 <pre><code class="lang-text">GET api/v1-preview/communities/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/Tenants/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/Namespaces/MyNamespace/Streams/Simple/Data?index=2017-11-23T13:00:00Z&amp;searchMode=Next
 </code></pre><p>The request has an index that matches the index of an existing event, but because an <code>SdsSearchMode</code> of <code>next</code> was specified, the response contains the next event in the stream after the specified index:</p>
-<h4 id="get-event-example-response-body">Get Event Example response body</h4>
+<h4 id="get-event-example-response-body">Get <code>Event Example</code> response body</h4>
 <pre><code class="lang-text">HTTP/1.1 200
 Content-Type: application/json
 </code></pre><pre><code class="lang-json">[
@@ -175,10 +171,10 @@ Content-Type: application/json
         &quot;Measurement&quot;: 20
     }
 ]
-</code></pre><h3 id="filter-example-request">Filter Example request</h3>
+</code></pre><h3 id="filter-example-request"><code>Filter Example</code> request</h3>
 <pre><code class="lang-text">GET api/v1-preview/communities/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/Tenants/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/Namespaces/MyNamespace/Streams/Simple/Data?filter=Measurement gt 10
 </code></pre><p>The events in the stream with <code>Measurement</code> greater than 10 are returned.</p>
-<h4 id="filter-example-response-body">Filter Example response body</h4>
+<h4 id="filter-example-response-body"><code>Filter Example</code> response body</h4>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
 

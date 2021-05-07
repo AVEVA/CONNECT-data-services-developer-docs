@@ -68,19 +68,19 @@ POST api/v1-preview/communities/{communityId}/tenants/{tenantId}/namespaces/{nam
 
 ### Parameters
 
-`string communityId`
+`string communityId`  
 Community identifier - validated to be a `Guid`
 
-`string tenantId`
+`string tenantId`  
 Tenant identifier - validated to be a `Guid`
 
-`string namespaceId`
+`string namespaceId`  
 Namespace identifier
 
-`string streamId`
+`string streamId`  
 Stream identifier
 
-`[Optional] string key`  
+`[Optional] string key`    
 The key specifying the metadata value of interest  
 
 ## Response

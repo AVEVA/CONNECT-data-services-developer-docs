@@ -83,7 +83,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types
             "SdsType": null,
             "Value": null,
             "Uom": "string",
-            "InterpolationMode": null
+            "InterpolationMode": null,
+            "IsQuality": true
           }
         ],
         "BaseType": {
@@ -150,7 +151,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types
         },
         "Value": null,
         "Uom": "string",
-        "InterpolationMode": 0
+        "InterpolationMode": 0,
+        "IsQuality": true
       }
     ],
     "BaseType": {
@@ -187,7 +189,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types
           "SdsType": null,
           "Value": null,
           "Uom": null,
-          "InterpolationMode": null
+          "InterpolationMode": null,
+          "IsQuality": null
         }
       ],
       "BaseType": {},
@@ -251,7 +254,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types
             "SdsType": null,
             "Value": null,
             "Uom": "string",
-            "InterpolationMode": null
+            "InterpolationMode": null,
+            "IsQuality": true
           }
         ],
         "BaseType": {
@@ -384,7 +388,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
           "SdsType": null,
           "Value": null,
           "Uom": "string",
-          "InterpolationMode": null
+          "InterpolationMode": null,
+          "IsQuality": true
         }
       ],
       "BaseType": {
@@ -463,7 +468,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
       },
       "Value": null,
       "Uom": "string",
-      "InterpolationMode": 0
+      "InterpolationMode": 0,
+      "IsQuality": true
     }
   ],
   "BaseType": {
@@ -506,7 +512,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
         "SdsType": null,
         "Value": null,
         "Uom": "string",
-        "InterpolationMode": null
+        "InterpolationMode": null,
+        "IsQuality": true
       }
     ],
     "BaseType": {
@@ -589,7 +596,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
           "SdsType": null,
           "Value": null,
           "Uom": "string",
-          "InterpolationMode": null
+          "InterpolationMode": null,
+          "IsQuality": true
         }
       ],
       "BaseType": {
@@ -730,7 +738,8 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
           "SdsType": null,
           "Value": null,
           "Uom": "string",
-          "InterpolationMode": null
+          "InterpolationMode": null,
+          "IsQuality": true
         }
       ],
       "BaseType": {
@@ -809,7 +818,8 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
       },
       "Value": null,
       "Uom": "string",
-      "InterpolationMode": 0
+      "InterpolationMode": 0,
+      "IsQuality": true
     }
   ],
   "BaseType": {
@@ -852,7 +862,8 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
         "SdsType": null,
         "Value": null,
         "Uom": "string",
-        "InterpolationMode": null
+        "InterpolationMode": null,
+        "IsQuality": true
       }
     ],
     "BaseType": {
@@ -935,7 +946,8 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
           "SdsType": null,
           "Value": null,
           "Uom": "string",
-          "InterpolationMode": null
+          "InterpolationMode": null,
+          "IsQuality": true
         }
       ],
       "BaseType": {
@@ -1164,7 +1176,8 @@ A contract defining the type of data to read or write in a SdsStream
           "SdsType": null,
           "Value": null,
           "Uom": "string",
-          "InterpolationMode": null
+          "InterpolationMode": null,
+          "IsQuality": true
         }
       ],
       "BaseType": {
@@ -1243,7 +1256,8 @@ A contract defining the type of data to read or write in a SdsStream
       },
       "Value": null,
       "Uom": "string",
-      "InterpolationMode": 0
+      "InterpolationMode": 0,
+      "IsQuality": true
     }
   ],
   "BaseType": {
@@ -1286,7 +1300,8 @@ A contract defining the type of data to read or write in a SdsStream
         "SdsType": null,
         "Value": null,
         "Uom": "string",
-        "InterpolationMode": null
+        "InterpolationMode": null,
+        "IsQuality": true
       }
     ],
     "BaseType": {
@@ -1369,7 +1384,8 @@ A contract defining the type of data to read or write in a SdsStream
           "SdsType": null,
           "Value": null,
           "Uom": "string",
-          "InterpolationMode": null
+          "InterpolationMode": null,
+          "IsQuality": true
         }
       ],
       "BaseType": {
@@ -1552,6 +1568,7 @@ A contract defining a property of a SdsType
 |Value|any|false|true|An enum value of the current SdsTypeProperty. Exclusively used for a of an enum|
 |Uom|string|false|true|Indicates the Unit of Measure of the current SdsTypeProperty|
 |InterpolationMode|[SdsInterpolationMode](#schemasdsinterpolationmode)|false|true|An InterpolationMode that overrides the root SdsType's InterpolationMode for this SdsTypeProperty|
+|IsQuality|boolean|false|false|Indicates whether this property marks data quality|
 
 ```json
 {
@@ -1601,7 +1618,8 @@ A contract defining a property of a SdsType
         "SdsType": null,
         "Value": null,
         "Uom": "string",
-        "InterpolationMode": null
+        "InterpolationMode": null,
+        "IsQuality": true
       }
     ],
     "BaseType": {
@@ -1645,7 +1663,8 @@ A contract defining a property of a SdsType
   },
   "Value": null,
   "Uom": "string",
-  "InterpolationMode": 0
+  "InterpolationMode": 0,
+  "IsQuality": true
 }
 
 ```

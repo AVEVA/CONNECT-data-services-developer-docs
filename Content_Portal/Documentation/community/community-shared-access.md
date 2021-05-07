@@ -80,8 +80,8 @@ Namespace identifier
 `string streamId`
 Stream identifier
 
-[Optional] `string key`  
-[Optional] The key specifying the metadata value of interest  
+`[Optional] string key`  
+The key specifying the metadata value of interest  
 
 ## Response
 
@@ -110,7 +110,7 @@ Allowed for the **Community Member** role in a community where the stream is sha
 
 Responses are identical to those from the SDS service. See the following examples (Source:[Read data API](xref:sdsReadingDataApi)).
 
-### Get Event Example request
+### Get `Event Example` request
 
 ```text
 GET api/v1-preview/communities/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/Tenants/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/Namespaces/MyNamespace/Streams/Simple/Data?index=2017-11-23T13:00:00Z&searchMode=Next
@@ -118,7 +118,7 @@ GET api/v1-preview/communities/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/Tenants/XXXX
 
 The request has an index that matches the index of an existing event, but because an `SdsSearchMode` of ``next`` was specified, the response contains the next event in the stream after the specified index:
 
-#### Get Event Example response body
+#### Get `Event Example` response body
 
 ```text
 HTTP/1.1 200
@@ -135,7 +135,7 @@ Content-Type: application/json
 ]
 ```
 
-### Filter Example request
+### `Filter Example` request
 
 ```text
 GET api/v1-preview/communities/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/Tenants/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/Namespaces/MyNamespace/Streams/Simple/Data?filter=Measurement gt 10
@@ -143,7 +143,7 @@ GET api/v1-preview/communities/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/Tenants/XXXX
 
 The events in the stream with `Measurement` greater than 10 are returned.
 
-#### Filter Example response body
+#### `Filter Example` response body
 
 ```json
 HTTP/1.1 200

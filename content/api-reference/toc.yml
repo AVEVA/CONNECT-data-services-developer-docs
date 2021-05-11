@@ -12,7 +12,7 @@
   topicHref: data-ingress/data-ingress.md
 - name: Metadata rules
   topicHref: metadata/metadata-rules-overview.md
-- name: Assets
+- name: Assets (Preview)
   href: assets/toc.yml
   topicHref: Assets/assets.md
 - name: Asset rules
@@ -26,7 +26,7 @@
   topicHref: operations/operations-overview.md
 - name: Role-based access control
   topicHref: ../developer-guide/identity-dev/dev-guide-role-based-access-control.md
-- name: Community (Preview)
+- name: Communities (Preview)
   href: community/toc.yml
   topicHref: community/community-overview.md
 - name: HTTP status codes

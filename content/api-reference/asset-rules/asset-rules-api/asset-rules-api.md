@@ -12,7 +12,7 @@ Gets the specified rule
 
 ### Request
 
-```
+```text
 GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
 ```
 
@@ -47,7 +47,7 @@ The requested asset rule.
 
 ### Example response body
 
-```
+```json
 {
     "Id": "id",
     "Name": "name",
@@ -82,7 +82,7 @@ The requested asset rule.
 
 Gets or creates a rule with the specified ID.
 
-```
+```text
 POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
 ```
 
@@ -123,7 +123,7 @@ Creates the specified rule. If a rule with the specified rule ID already exists,
 
 ### Request
 
-```
+```text
 PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
 ```
 
@@ -163,7 +163,7 @@ Deletes the specified rule
 
 ### Request
 
-```
+```text
 DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
 ```
 
@@ -198,7 +198,7 @@ Executes the specified rule
 
 ### Request
 
-```
+```text
 POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/execute
 ```
 
@@ -234,7 +234,7 @@ Gets all asset rules that the requesting identity has access to
 
 ### Request
 
-```
+```text
 GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules
 ```
 
@@ -266,7 +266,7 @@ Gets the Access Control List (ACL) of the specified rule.
 
 ### Request
 
-```
+```text
 GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/accesscontrol
 ```
 
@@ -301,7 +301,7 @@ Sets the Access Control List (ACL) of the specified rule
 
 ### Request
 
-```
+```text
 PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/accesscontrol
 ```
 
@@ -321,7 +321,7 @@ The rule identifier
 
 ### Request Body
 
-```
+```json
 {   "RoleTrusteeAccessControlEntries": [
      {
          "Trustee": {
@@ -353,7 +353,7 @@ Gets a list of the common access rights that the identity, who is making the req
 
 ### Request
 
-```
+```text
 GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/accessrights
 ```
 
@@ -388,7 +388,7 @@ Gets the owner of the specified rule
 
 ### Request
 
-```
+```text
 GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/owner
 ```
 
@@ -426,7 +426,7 @@ Changes the owner of the specified rule
 
 ### Request
 
-```
+```text
 PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/owner
 ```
 
@@ -448,7 +448,7 @@ The rule identifier
 
 The serialized Access Control List.
 
-```
+```json
 {
    "Type": 2,
    "TenantId": "tenantIdGuid",

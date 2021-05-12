@@ -1,6 +1,6 @@
 
 
-# Community Search
+# Summary
 API that returns the summary information of the community's stream consumption
 
 ## `Community Summary Information`

@@ -1,6 +1,6 @@
 
 
-# Community Invitations
+# Invitations
 Defines the public API methods that are used to manage community invitations. Using this API you can, for example, create, retrieve, update and process invitations. You can also resend an invitation email.
 
 ## `Process a Community Invitation Based on the Requested Action`

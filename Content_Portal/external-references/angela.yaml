@@ -1,0 +1,27 @@
+edgesys-namespace:
+  type: text/plain
+  value: |
+    The namespace containing the edge system. 
+edgesys-content:
+  type: markdown
+  value: |
+    Find all the edge systems contected to OCS. 
+    From OCS, you can: 
+    - review configurations
+    - see system health
+    - see data flow
+    For more information, see [Edge Data Store](https://docs.osisoft.com/bundle/edge-data-store/page/index.html).
+edgesys-code:
+  type: application/json
+  value: |
+    {
+    "IpAddress": "127.0.0.4",
+    "Port": 502,
+    "StreamIdPrefix": "my.prefix",
+    "ApplyPrefixToStreamId": true,
+    "ConnectTimeout": 5000,
+    "ReconnectInterval": 1000,
+    "RequestTimeout": 10000,
+    "DelayBetweenRequests": 500,
+    "MaxResponseDataLength": 125
+   }

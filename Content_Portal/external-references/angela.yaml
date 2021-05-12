@@ -2,7 +2,7 @@ edgesys-RoleTypeId:
   type: text/plain
   value: |
     The identifier for the owner of the system
-edgeSystemId:
+edgesys-SystemId:
   type: text/plain
   value: |
     The system identifier

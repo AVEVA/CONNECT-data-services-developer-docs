@@ -13,7 +13,7 @@ Gets the specified rule
 ### Request
 
 ```
-GET api/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
+GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
 ```
 
 ### Parameters
@@ -83,7 +83,7 @@ The requested asset rule.
 Gets or creates a rule with the specified ID.
 
 ```
-POST api/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
+POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
 ```
 
 ### Parameters
@@ -124,7 +124,7 @@ Creates the specified rule. If a rule with the specified rule ID already exists,
 ### Request
 
 ```
-PUT api/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
+PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
 ```
 
 ### Parameters
@@ -164,7 +164,7 @@ Deletes the specified rule
 ### Request
 
 ```
-DELETE api/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
+DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
 ```
 
 ### Parameters
@@ -199,7 +199,7 @@ Executes the specified rule
 ### Request
 
 ```
-POST api/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/execute
+POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/execute
 ```
 
 ### Parameters
@@ -235,7 +235,7 @@ Gets all asset rules that the requesting identity has access to
 ### Request
 
 ```
-GET api/tenants/{tenantId}/namespaces/{namespaceId}/assetrules
+GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules
 ```
 
 ### Parameters
@@ -267,7 +267,7 @@ Gets the Access Control List (ACL) of the specified rule.
 ### Request
 
 ```
-GET api/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/accesscontrol
+GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/accesscontrol
 ```
 
 ### Parameters
@@ -302,7 +302,7 @@ Sets the Access Control List (ACL) of the specified rule
 ### Request
 
 ```
-PUT api/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/accesscontrol
+PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/accesscontrol
 ```
 
 ### Parameters
@@ -354,7 +354,7 @@ Gets a list of the common access rights that the identity, who is making the req
 ### Request
 
 ```
-GET api/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/accessrights
+GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/accessrights
 ```
 
 ### Parameters
@@ -389,7 +389,7 @@ Gets the owner of the specified rule
 ### Request
 
 ```
-GET api/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/owner
+GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/owner
 ```
 
 ### Parameters
@@ -427,7 +427,7 @@ Changes the owner of the specified rule
 ### Request
 
 ```
-PUT api/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/owner
+PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/owner
 ```
 
 ### Parameters

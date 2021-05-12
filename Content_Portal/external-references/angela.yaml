@@ -1,8 +1,12 @@
-edgesys-namespace:
+edgesys-RoleTypeId:
   type: text/plain
   value: |
-    The namespace containing the edge system. 
-edgesys-content:
+    The identifier for the owner of the system
+edgeSystemId:
+  type: text/plain
+  value: |
+    The system identifier
+edgesys-content-test:
   type: markdown
   value: |
     Find all the edge systems contected to OCS. 
@@ -11,7 +15,7 @@ edgesys-content:
     - see system health
     - see data flow
     For more information, see [Edge Data Store](https://docs.osisoft.com/bundle/edge-data-store/page/index.html).
-edgesys-code:
+edgesys-code-test:
   type: application/json
   value: |
     {

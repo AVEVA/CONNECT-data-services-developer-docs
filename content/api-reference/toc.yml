@@ -7,7 +7,7 @@
 - name: Sequential Data Store
   href: sequential-data-store/toc.yml
   topicHref: sequential-data-store/sds-lp.md
-- name: Data collection and data ingress
+- name: Data collection
   href: data-ingress/toc.yml
   topicHref: data-ingress/data-ingress.md
 - name: Metadata rules

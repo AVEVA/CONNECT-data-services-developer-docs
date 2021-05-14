@@ -1,4 +1,15 @@
+---
+title: Invitations v20210514.1
+language_tabs: []
+toc_footers: []
+includes: []
+search: true
+code_clipboard: true
+highlight_theme: darkula
+headingLevel: 2
+generator: osisoft.widdershins v1.0.7
 
+---
 
 # Invitations
 Defines the public API methods that are used to manage community invitations. Using this API you can, for example, create, retrieve, update and process invitations. You can also resend an invitation email.

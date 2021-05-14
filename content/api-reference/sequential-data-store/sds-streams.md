@@ -1,6 +1,6 @@
 
 
-# Stream
+# Streams
 Controller for methods hosted at streams/
 
 ## `List Streams`

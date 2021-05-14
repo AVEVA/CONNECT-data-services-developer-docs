@@ -1,6 +1,6 @@
 
 
-# Streams Data
+# Stream Bulk Data
 Controller for methods hosted at {namespaceId}/Bulk/Streams/Data/Joins
 
 ## `List Window Values`

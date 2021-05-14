@@ -1,6 +1,6 @@
 
 
-# View
+# Stream Views
 Controller for methods hosted at /StreamViews
 
 ## `List Stream Views`

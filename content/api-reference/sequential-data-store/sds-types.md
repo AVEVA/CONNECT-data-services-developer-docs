@@ -1,6 +1,6 @@
 
 
-# Type
+# Types
 
 ## `List Types`
 

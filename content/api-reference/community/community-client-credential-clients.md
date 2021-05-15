@@ -1,15 +1,4 @@
----
-title: community/community-client-credential-clients v20210426.5
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: osisoft.widdershins v1.0.7
 
----
 
 # Client Credential Clients
 APIs for getting, adding, or removing client credential clients from communities
@@ -18,7 +7,7 @@ APIs for getting, adding, or removing client credential clients from communities
 
 <a id="opIdClientCredentialClients_List Client Credential Clients for a Community"></a>
 
-Gets clients associated with a specific tenant and community.
+Gets clients associated with a specific tenant and community
 
 ### Request
 ```text 
@@ -40,7 +29,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/ClientCredentia
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[ClientCredentialClient](#schemaclientcredentialclient)[]|Set of Clients ( `ClientCredentialClient`) associated with the Tenant ( `tenantId`) and Community ( `communityId`).|
+|200|[ClientCredentialClient](#schemaclientcredentialclient)[]|Set of clients ( `ClientCredentialClient`) associated with the tenant ( `tenantId`) and community ( `communityId`)|
 |400|[ErrorResponse](#schemaerrorresponse)|Bad request|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
@@ -80,7 +69,7 @@ Allowed for these roles:
 
 <a id="opIdClientCredentialClients_Get Count of Clients for a Community"></a>
 
-Gets a count of client credential client for a community.
+Gets a count of client credential clients for a community
 
 ### Request
 ```text 
@@ -131,7 +120,7 @@ Allowed for these roles:
 
 <a id="opIdClientCredentialClients_Add Client Credential Client to a Community"></a>
 
-Adds a client credential client to a community, providing a list of community roles to be assigned to the client.
+Adds a client credential client to a community, providing a list of community roles to be assigned to the client
 
 ### Request
 ```text 
@@ -199,7 +188,7 @@ Allowed for these roles:
 
 <a id="opIdClientCredentialClients_Remove Client Credential Client from a Community"></a>
 
-Removes a client credential client from a community.
+Removes a client credential client from a community
 
 ### Request
 ```text 
@@ -247,9 +236,9 @@ Allowed for these roles:
 </ul>
 
 ---
-# Definitions
+## Definitions
 
-## ErrorResponse
+### ErrorResponse
 
 <a id="schemaerrorresponse"></a>
 <a id="schema_ErrorResponse"></a>
@@ -258,7 +247,7 @@ Allowed for these roles:
 
 Object returned whenever there is an error TODO: Remove this internal model and re-adopt public model when moving to System.Text.Json in WI 202168.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -281,7 +270,7 @@ Object returned whenever there is an error TODO: Remove this internal model and 
 
 ---
 
-## ClientCredentialClient
+### ClientCredentialClient
 
 <a id="schemaclientcredentialclient"></a>
 <a id="schema_ClientCredentialClient"></a>
@@ -290,7 +279,7 @@ Object returned whenever there is an error TODO: Remove this internal model and 
 
 Object to get or update a ClientCredentialClient
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

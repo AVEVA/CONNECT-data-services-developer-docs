@@ -1,24 +1,13 @@
----
-title: community/community-roles v20210426.5
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: osisoft.widdershins v1.0.7
 
----
 
 # Roles
-Cluster APIs for getting Community Roles.
+Cluster APIs for getting community roles
 
 ## `List instanced Roles for a Community`
 
 <a id="opIdRoles_List instanced Roles for a Community"></a>
 
-Get Community Roles associated with a specific Community.
+Get community roles associated with a specific community
 
 ### Request
 ```text 
@@ -39,7 +28,7 @@ GET /api/v1-preview/Communities/{communityId}/Roles
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Role](#schemarole)[]|Set of Community Roles (Type `Role`) associated with the Community ( `communityId`).|
+|200|[Role](#schemarole)[]|Set of community roles (type `Role`) associated with the community ( `communityId`)|
 |400|[ErrorResponse](#schemaerrorresponse)|Bad request|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
@@ -72,18 +61,18 @@ Allowed for these roles:
 </ul>
 
 ---
-# Definitions
+## Definitions
 
-## Role
+### Role
 
 <a id="schemarole"></a>
 <a id="schema_Role"></a>
 <a id="tocSrole"></a>
 <a id="tocsrole"></a>
 
-Identity internal representation of role. Unlike the public Role model which uses string identifiers, this internal Role model uses Guids. The public Role model originally comes from Infrastructure which uses and persists only string identifiers. In Identity, Guid is currently the type used internally for persisting Role identifiers.
+Identity internal representation of role. Unlike the public role model which uses string identifiers, this internal role model uses GUIDs. The public role model originally comes from infrastructure, which uses and persists only string identifiers. In Identity, the GUID is currently the type used internally for persisting role identifiers.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -92,8 +81,8 @@ Identity internal representation of role. Unlike the public Role model which use
 |Description|string|false|true|Role description.|
 |RoleScope|[RoleScope](#schemarolescope)|false|true|Role scope.|
 |TenantId|guid|false|true|Tenant unique identifier, if this is a tenant role. Otherwise set to null.|
-|CommunityId|guid|false|true|Community unique identifier, if this is a Community role. Otherwise set to null.|
-|RoleTypeId|guid|false|true|Role type unique identifier, if this is a tenant role.|
+|CommunityId|guid|false|true|Community unique identifier, if this is a community role. Otherwise set to null.|
+|RoleTypeId|guid|false|true|Role type unique identifier, if this is a tenant role|
 
 ```json
 {
@@ -110,7 +99,7 @@ Identity internal representation of role. Unlike the public Role model which use
 
 ---
 
-## RoleScope
+### RoleScope
 
 <a id="schemarolescope"></a>
 <a id="schema_RoleScope"></a>
@@ -130,7 +119,7 @@ The object that represents the scope of a given role
 
 ---
 
-## ErrorResponse
+### ErrorResponse
 
 <a id="schemaerrorresponse"></a>
 <a id="schema_ErrorResponse"></a>
@@ -139,7 +128,7 @@ The object that represents the scope of a given role
 
 Object returned whenever there is an error TODO: Remove this internal model and re-adopt public model when moving to System.Text.Json in WI 202168.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

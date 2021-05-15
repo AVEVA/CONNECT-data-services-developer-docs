@@ -1,15 +1,4 @@
----
-title: community/community-users v20210426.5
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: osisoft.widdershins v1.0.7
 
----
 
 # Users
 APIs for getting, updating, and deleting users from communities
@@ -18,7 +7,7 @@ APIs for getting, updating, and deleting users from communities
 
 <a id="opIdUsers_List Users of a Tenant in a Community"></a>
 
-Gets users that are associated with a specific tenant and community.
+Gets users that are associated with a specific tenant and community
 
 ### Request
 ```text 
@@ -40,11 +29,11 @@ GET /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/Users
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[User](#schemauser)[]|Set of users (Type `User`) associated with the tenant ( `tenantId`) and community ( `communityId`).|
+|200|[User](#schemauser)[]|Set of users (type `User`) associated with the tenant ( `tenantId`) and community ( `communityId`)|
 |400|[ErrorResponse](#schemaerrorresponse)|Bad request|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
-|404|[ErrorResponse](#schemaerrorresponse)|Community roles not found.|
+|404|[ErrorResponse](#schemaerrorresponse)|Community roles not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
 #### Example response body
@@ -104,7 +93,7 @@ HEAD /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/Users
 |400|[ErrorResponse](#schemaerrorresponse)|Bad request|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
-|404|[ErrorResponse](#schemaerrorresponse)|Community roles not found.|
+|404|[ErrorResponse](#schemaerrorresponse)|Community roles not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
 #### Example response body
@@ -134,7 +123,7 @@ Allowed for these roles:
 
 <a id="opIdUsers_Add User to a Community"></a>
 
-Adds a user to a community and provides a list of community role identifiers to be assigned to the user.
+Adds a user to a community and provides a list of community role identifiers to be assigned to the user
 
 ### Request
 ```text 
@@ -205,7 +194,7 @@ Allowed for these roles:
 
 <a id="opIdUsers_Remove User from a Community"></a>
 
-Removes a user from a community.
+Removes a user from a community
 
 ### Request
 ```text 
@@ -253,9 +242,9 @@ Allowed for these roles:
 </ul>
 
 ---
-# Definitions
+## Definitions
 
-## User
+### User
 
 <a id="schemauser"></a>
 <a id="schema_User"></a>
@@ -264,7 +253,7 @@ Allowed for these roles:
 
 Object for retrieving a user
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -277,7 +266,7 @@ Object for retrieving a user
 |ContactGivenName|string|false|true|Preferred given name for the user|
 |ContactSurname|string|false|true|Preferred contact surname for the user|
 |ExternalUserId|string|false|true|Provider unique identifier for the user. This is the unique identifier we get from the identity provider.|
-|IdentityProviderId|guid|false|true|Identity provider unique identifier used to authenticate the user. Will be set once the user accepts an invitation. If not specified when sending the invitation to the user, it can be any of the identity provider Ids configured for this tenant.|
+|IdentityProviderId|guid|false|true|Identity provider unique identifier used to authenticate the user. This cannot be set to null and must be set when creating a new User.|
 |RoleIds|string[]|false|true|List of roles to be assigned to this client. Member role is always required. For security reasons we advise against assigning administrator role to a client.|
 
 ```json
@@ -301,7 +290,7 @@ Object for retrieving a user
 
 ---
 
-## ErrorResponse
+### ErrorResponse
 
 <a id="schemaerrorresponse"></a>
 <a id="schema_ErrorResponse"></a>
@@ -310,7 +299,7 @@ Object for retrieving a user
 
 Object returned whenever there is an error TODO: Remove this internal model and re-adopt public model when moving to System.Text.Json in WI 202168.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

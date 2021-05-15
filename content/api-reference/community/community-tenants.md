@@ -1,15 +1,4 @@
----
-title: community/community-tenants v20210426.5
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: osisoft.widdershins v1.0.7
 
----
 
 # Community Tenants
 APIs for updating and removing community tenant information
@@ -18,7 +7,7 @@ APIs for updating and removing community tenant information
 
 <a id="opIdCommunityTenants_Remove a Community Tenant from a Community"></a>
 
-Removes a community tenant from a community.
+Removes a community tenant from a community
 
 ### Request
 ```text 
@@ -41,7 +30,7 @@ DELETE /api/v1-preview/tenants/{callerTenantId}/communities/{communityId}/commun
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized. The client has not been authenticated.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden. The client does not have the required permissions to make the request.|
 |404|[ErrorResponse](#schemaerrorresponse)|Not Found. The requested community tenant was not found.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it doesn't know how to handle.|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it does not know how to handle.|
 
 #### Example response body
 > 400 Response
@@ -105,7 +94,7 @@ CommunityTenant object that contains the attributes to use for the update<br/>
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized. The client has not been authenticated.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden. The client does not have the required permissions to make the request.|
 |404|[ErrorResponse](#schemaerrorresponse)|Not Found. The requested community tenant was not found.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it doesn't know how to handle.|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it does not know how to handle.|
 
 #### Example response body
 > 400 Response
@@ -168,7 +157,7 @@ CommunityTenant object that contains the attributes to use for the update<br/>
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized. The client has not been authenticated.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden. The client does not have the required permissions to make the request.|
 |404|[ErrorResponse](#schemaerrorresponse)|Not Found. The requested community tenant was not found.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it doesn't know how to handle.|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it does not know how to handle.|
 
 #### Example response body
 > 400 Response
@@ -192,9 +181,9 @@ Allowed for these roles:
 </ul>
 
 ---
-# Definitions
+## Definitions
 
-## ErrorResponse
+### ErrorResponse
 
 <a id="schemaerrorresponse"></a>
 <a id="schema_ErrorResponse"></a>
@@ -203,7 +192,7 @@ Allowed for these roles:
 
 Object returned whenever there is an error TODO: Remove this internal model and re-adopt public model when moving to System.Text.Json in WI 202168.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -226,7 +215,7 @@ Object returned whenever there is an error TODO: Remove this internal model and 
 
 ---
 
-## UpdateCommunityTenantInput
+### UpdateCommunityTenantInput
 
 <a id="schemaupdatecommunitytenantinput"></a>
 <a id="schema_UpdateCommunityTenantInput"></a>
@@ -235,7 +224,7 @@ Object returned whenever there is an error TODO: Remove this internal model and 
 
 The UpdateCommunityTenantInput object
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -250,14 +239,14 @@ The UpdateCommunityTenantInput object
 
 ---
 
-## CommunityTenantStatus
+### CommunityTenantStatus
 
 <a id="schemacommunitytenantstatus"></a>
 <a id="schema_CommunityTenantStatus"></a>
 <a id="tocScommunitytenantstatus"></a>
 <a id="tocscommunitytenantstatus"></a>
 
-Represents a status of a Community Tenant.
+Represents a status of a community tenant
 
 #### Enumerated Values
 

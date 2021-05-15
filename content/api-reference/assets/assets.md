@@ -30,14 +30,14 @@ For more information on search syntax, see [Assets Search API](xref:AssetsSearch
 
 An asset or asset type metadata is static information associated with a given asset. A given metadata contains a list of individual metadata values. <!-- I wonder if it's correct to call this a list? "A given metadata contains any number of metadata values." -->There is no limit on the number of metadata values defined by an asset. An asset or asset type metadata does not stand alone. It must be specified within an asset or asset type object and, therefore, there are no direct API routes to asset or asset type metadata.
 
-| Property    | Type   | Required? | Searchable? | Description                                                  |
-| ----------- | ------ | --------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Id          | String | Required*  |   | `Id` for the metadata value.                                 |
-| Name        | String | Required  |   | User-friendly name for the metadata value. If not null, must be unique within an asset or asset type. |
-| Description | String | Optional  |   | User-provided description                                    |
-| SdsTypeCode | Int    | Required  |   | This integer corresponds to the SdsTypeCode. Asset metadata support the following integer values: 11 (Int64), 14 (Double), 16 (DateTime), and 18 (String). |
-| Uom         | String | Optional  |   | Asset metadata unit of measurement. Select from the list of supported Uom types. |
-| Value       | String | Optional  |   | String representation of the metadata.                       |
+| Property    | Type   | Required? | Description                                                  |
+| ----------- | ------ | --------- | ------------------------------------------------------------ |
+| Id          | String | Required*  | `Id` for the metadata value.                                 |
+| Name        | String | Required  | User-friendly name for the metadata value. If not null, must be unique within an asset or asset type. |
+| Description | String | Optional  | User-provided description                                    |
+| SdsTypeCode | Int    | Required  | This integer corresponds to the SdsTypeCode. Asset metadata support the following integer or string values: 11 ("Int64"), 14 ("Double"), 16 ("DateTime"), and 18 ("String"). |
+| Uom         | String | Optional  | Asset metadata unit of measurement. Select from the list of supported Uom types. |
+| Value       | String | Optional  | String representation of the metadata.                       |
 
 \* `Id` is not required on property if the `Name` matches a `Name` on the Asset Type metadata. In this case, the `Id` of the metadata on the Asset will be set as the metadata `Id` of the Asset Type. This also applies when an Asset is updated.
 
@@ -66,7 +66,7 @@ An asset type type reference represents dynamic stream data associated with an a
 | TypeId    | String | Required  | This string must be an SDS stream type `Id` in the referenced SDS stream. |
 
 ## Asset and asset type status mapping properties
-For information about asset and asset type status mapping, please refer to [Asset Status](xref:AssetStatus) for more details.  
+For information about asset and asset type status mapping, please refer to [Asset Status](xref:AssetStatus) for more details.
 
 The following is an example of an asset derived from an asset type.
 
@@ -80,7 +80,7 @@ Content-Type: application/json
   "Metadata": [{ 
      "Id":"d7368dc2-58f0-4669-8e6e-44ac2cc3f47c",
      "Name": "Location", 
-     "SdsTypeCode": 18, 
+     "SdsTypeCode": "String", 
      "Value": null 
      "Uom": null 
   }], 
@@ -100,17 +100,18 @@ Asset example
   "Description": "Charging Station Instance", 
   "AssetTypeId": "ChargingStationType", 
   "Metadata": [{ 
-       "Id": "d7368dc2-58f0-4669-8e6e-44ac2cc3f47c",   
-        "Name": null,   
-        "Value": "Houston",  
-        "SdsTypeCode": 18,  
-   }],
-  "StreamReferences": [{
-      "Id": "Reference1",
-      "Name": "ReferenceName",
-      "StreamId": "PI_StreamReference_1010"
-  }],
-  "Status": {
+      "Id": "d7368dc2-58f0-4669-8e6e-44ac2cc3f47c",   
+      "Name": null,   
+      "Value": "Houston",  
+      "SdsTypeCode": 18,  
+   }],
+   "StreamReferences": [
+        {
+            "Id": "Reference1",
+            "Name": "ReferenceName",
+            "StreamId": "PI_StreamReference_1010"
+   }],
+   "Status": {
         "Name": "ChargingStationStatus",
         "StreamReferenceId": "Reference1",
         "StreamPropertyId": "Value",

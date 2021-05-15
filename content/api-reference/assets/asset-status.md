@@ -89,7 +89,6 @@ The status of an asset is determined by an exact match of the Sds stream propert
 
 ```text 
 GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/status/last
-
 ```
 
 ### Parameters
@@ -121,10 +120,10 @@ HTTP 200 OK
 Content-Type: application/json
 {
    "AssetId": "TemperatureSensorAsset",
-   "Status": 1, 
+    "Status": 1, 
    "Value": "85",
    "DisplayName": "TemperatureSensorBuild1InF",
-   "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z"
+   "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z"
 }
 ```
 
@@ -137,8 +136,7 @@ View the status of multiple assets.
 ### Request
 
 ```text 
-POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/assets/status/last
-
+POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/Assets/status/last
 ```
 
 ### Parameters

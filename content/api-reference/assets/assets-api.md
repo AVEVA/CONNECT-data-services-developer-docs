@@ -71,7 +71,7 @@ Content-Type: application/json
             "Name": "ModelNumber",
             "Description": "This is attribute with double value representing the model number.",
             "SdsTypeCode": 14,
-            "Value": 1.3
+            "Value": 1.3,
         }
     ],
     "StreamReferences": [
@@ -173,9 +173,10 @@ The response includes a status code, a body, and the Etag version in the HTTP re
 | Status Code               | Body Type | Description                                     |
 | ------------------------- | --------- | ----------------------------------------------- |
 | 200 OK                    | `Asset`  | The asset as persisted, including values for optional parameters that were omitted in the request.                           |
+| 302 Found | Redirect | The `Asset` you attempted to create is identical to one that already exists |
 | 400 Bad Request           | error     | The request is not valid. See the response body for additional details.      |
 | 403 Forbidden            | error     | You are not authorized to create assets.           |
-| 409 Conflict | error     | The asset create has a conflict. See the response body for additional details. |
+| 409 Conflict | error     | The asset you attempted to create has a conflict. See the response body for additional details. |
 
 
 ## `Create Assets (Bulk create)` 
@@ -185,7 +186,7 @@ Create multiple assets in a single call.
 ### Request 
 
 ```text 
-POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets 
+POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/Assets 
 ```
 
 ### Parameters  
@@ -300,7 +301,7 @@ Delete all assets with the specified Ids. Use this API to delete up to a maximum
 ### Request 
 
 ```text 
-DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/assets/delete
+DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/Assets?id={assetId_1}[,id={assetId_n}]
 ```
 
 ### Parameters  
@@ -311,9 +312,8 @@ The tenant identifier
 `string namespaceId`   
 The namespace identifier
 
-#### Request body 
-
-A list of asset `Id`s.
+`string[] ids`  
+A parameter consisting of a comma-separated list of asset ids that you want to delete.
 
 ### Response 
 
@@ -322,6 +322,5 @@ The response includes a status code and a body.
 | Status Code               | Body Type | Description                                     |
 | ------------------------- | --------- | ----------------------------------------------- |
 | 204 No Content            | none  | The assets with the specified `Id`s are deleted.                              |
-| 207 Multi-Status | partial success | Array of errors. Assets that did not encounter errors are deleted. |
-| 209 Conflict | error | See response body for additional details. |
+| 207 Multi-Status | partial success | Array of errors. Assets that did not encounter errors are delete |
 | 400 Bad Request | error | The request is not valid. See the response body for additional details. |

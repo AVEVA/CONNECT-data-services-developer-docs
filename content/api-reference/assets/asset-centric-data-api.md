@@ -12,7 +12,7 @@ If you are only interested in data from a subset of streams, you must specify th
 For example, if a given asset has the following definition and you are only interested in HeaterA and PressureB for the last data call, you would send:
 
 ```text 
-GET ...Namespaces/{namespaceId}/Assets/AssetStreamFilter/Data/Last?Stream={HeaterA},Stream={PressureB}
+GET ...Namespaces/{namespaceId}/Assets/AssetStreamFilter/data/last?Stream={HeaterA},Stream={PressureB}
 ```
 
 Note: Asset stream references can contain commas. In this case, the comma must be properly escaped.
@@ -74,7 +74,7 @@ Returns the last stored value for SDS streams in the resolved asset.
 
 ### Request 
 ```text 
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/Last?stream={stream 1}[,stream={stream n}]
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/data/last?stream={stream 1}[,stream={stream n}]
 ```
 
 ### Parameters  
@@ -87,7 +87,7 @@ The namespace identifier
 `string assetId`  
 The asset identifier
 
-[optional] string[] streams
+`[optional] string[] streams`  
 An optional parameter consisting of a comma-separated list of stream reference names that you are interested in. By default, all data calls return data for all stream references.
 
 ### Response 
@@ -127,7 +127,7 @@ Note: The inputs to this API matches the SDS stream Get samples values data call
 
 ### Request 
 ```text 
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/Sampled?startIndex={startIndex}&endIndex={endIndex}&intervals={intervals}&stream={stream 1}[,stream={stream n}]
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/data/sampled?startIndex={startIndex}&endIndex={endIndex}&intervals={intervals}&stream={stream 1}[,stream={stream n}]
 ```
 
 ### Parameters  
@@ -196,7 +196,7 @@ Returns summary data for referenced SDS streams.
 
 ### Request 
 ```text 
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/Summaries?startIndex={startIndex}&endIndex={endIndex}&count={count}&stream={stream 1}[,stream={stream n}]
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/data/summaries?startIndex={startIndex}&endIndex={endIndex}&count={count}&stream={stream 1}[,stream={stream n}]
 ```
 
 ###  Parameters  
@@ -384,7 +384,7 @@ Returns window data for referenced SDS streams.
 ### Request
 
 ```
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data?startIndex={startIndex}&endIndex={endIndex}&stream={stream 1}[,stream={stream n}]
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/data?startIndex={startIndex}&endIndex={endIndex}&stream={stream 1}[,stream={stream n}]
 ```
 
 ### Parameters
@@ -479,7 +479,7 @@ Returns interpolated data for referenced SDS streams.
 
 ### Request 
 ``` 
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/Interpolated?startIndex={startIndex}&endIndex={endIndex}&count={count}&stream={stream 1}[,stream={stream n}]
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/data/interpolated?startIndex={startIndex}&endIndex={endIndex}&count={count}&stream={stream 1}[,stream={stream n}]
 ```
 
 ###  Parameters  

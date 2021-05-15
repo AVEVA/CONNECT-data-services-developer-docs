@@ -12,7 +12,7 @@ The resolved asset corresponds to its metadata and referenced stream which defin
 
 Returns the resolved asset.
 
-## Resolved Asset Metadata Value Rules
+## Resolved Asset Metadata Value Rules (TODO: Update with new rules)
 
 When an asset references an asset type, the following rules explain how the values are derived for a given `Metadata` value on the resolved asset.
 
@@ -37,7 +37,7 @@ The examples in the following table illustrate the resolved asset metadata value
 | 7       | `Id`="md_id"<br/> `Name`="**m7**"<br/>  `Value`=10    | `Id`="md_id"<br/> `Name`=null<br/>  `Value`="a string value" | `Id`="md_id"<br/> `Name`="**m7**"<br/> ` Value`=0         | The `Metadata` value with `Id`="md_id" has different `SdsTypeCode` on the asset and asset type. Therefore, the resolved asset's `Metadata` value coerces the overloaded `Value` from the asset to the `SdsTypecode` on the asset type.  It also takes the  `Metadata` value for `UOM` and `SdsTypeCode` from the asset type. |
 | 8       | `Id`="md_id"<br/> `Name`="**m9**"<br/> ` Value`=10    | `Id`="md_id"<br/> `Name`=null<br/> ` Value`="1.23"           | `Id`="md_id"<br/> `Name`="**m9**"<br/>  `Value`=1         | The `Metadata` value with `Id`="md_id" has a different `SdsTypeCode` on the asset and asset type. Therefore, the resolved asset's `Metadata` value coerces the overloaded `Value` from the asset to the `SdsTypecode` on the asset type. It also takes the  `Metadata` value for `UOM` and `SdsTypeCode` from the asset type. |
 
-### Resolved Asset Stream Reference Rules
+### Resolved Asset Stream Reference Rules: TODO, update with new rules
 
 The following example illustrates the resolved asset reference rules. If an asset references an asset type, the the following rules apply for a given reference:
 
@@ -57,7 +57,7 @@ In this scenario, the default reference rules resolve as follows:
 ### Request
 
 ```text
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Resolved
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/resolved
 ```
 
 ### Parameters
@@ -82,7 +82,7 @@ The response includes a status code and a response body.
 | 403 Forbidden   | error            | You are not authorized to view the requested asset.          |
 | 404 Not Found   | error            | The asset with the specified identifier is not found.        |
 
-#### Example response body
+#### Example response body: TODO DOUBLE CHECK CONTENTS OF THIS.
 
 ```
 HTTP 200 OK
@@ -90,6 +90,8 @@ Content-Type: application/json
 {
     "Id": "AssetTest",
     "Name": "AssetName",
+    "AssetTypeId": "IdOfAssetType",
+    "AssetTypeName": "NameOfAssetType",
     "Metadata": [
         {
             "Id": "metadataId_101",
@@ -150,7 +152,7 @@ Content-Type: application/json
 
 ### Request
 ```text
-POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets/Resolved
+POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/Assets/resolved
 ```
 
 ### Parameters

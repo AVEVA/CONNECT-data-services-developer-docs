@@ -159,9 +159,10 @@ The response includes a status code and a body.
 | Status Code     | Response Type | Description                                                  |
 | --------------- | ------------- | ------------------------------------------------------------ |
 | 200 OK          | `AssetType`   | The `AssetType` as persisted, including values for optional parameters that were omitted in the request. |
+| 302 Found       | Redirect      | The `AssetType` you attempted to create is identical to one that already exists |
 | 400 Bad Request | error         | The request is not valid. See the response body for additional details. |
 | 403 Forbidden   | error         | You are not authorized to create an `AssetType` object.      |
-| 409 Conflict    | error         | The `AssetType` update (?) or create has a conflict. See the response body for additional details. |
+| 409 Conflict    | error         | The `AssetType` create has a conflict. See the response body for additional details. |
 
 
 ## `Create AssetTypes (Bulk create)`
@@ -171,7 +172,7 @@ Create a new `AssetTypes` object
 ### Request 
 
 ```text 
-POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes
+POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/AssetTypes
 ```
 
 ### Parameters
@@ -245,7 +246,7 @@ Delete an asset type with a specified `Id`. Note: An `AssetType` object cannot b
 ### Request 
 
 ```text 
-DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}
+DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}?deleteAssets={true|false}
 ```
 
 ### Parameters  
@@ -258,6 +259,9 @@ The namespace identifier
 
 `string assetTypeId`   
 The asset type identifier
+
+`[optional] bool deleteAssets`   
+By default, this value is false, meaning that a 409 will be returned if there are assets which are from this asset type.  If this value is set to True, then all assets which are from this asset type will also be attempted to be deleted in this single call. **Use caution. This action is not reversible**.  
 
 #### Request body 
 

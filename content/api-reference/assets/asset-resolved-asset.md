@@ -84,7 +84,7 @@ The response includes a status code and a response body.
 | 403 Forbidden   | error            | You are not authorized to view the requested asset.          |
 | 404 Not Found   | error            | The asset with the specified identifier is not found.        |
 
-#### Example response body: TODO DOUBLE CHECK CONTENTS OF THIS.
+#### Example response body
 
 ```
 HTTP 200 OK

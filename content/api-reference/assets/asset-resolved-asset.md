@@ -14,7 +14,7 @@ The resolved asset corresponds to its metadata and referenced stream which defin
 
 Returns the resolved asset.
 
-## Resolved Asset Metadata Value Rules (TODO: Update with new rules)
+## Resolved Asset Metadata Value Rules
 
 When an asset references an asset type, the following rules explain how the values are derived for a given `Metadata` value on the resolved asset.
 
@@ -39,7 +39,7 @@ The examples in the following table illustrate the resolved asset metadata value
 | 7       | `Id`="md_id"<br/> `Name`="**m7**"<br/>  `Value`=10    | `Id`="md_id"<br/> `Name`=null<br/>  `Value`="a string value" | `Id`="md_id"<br/> `Name`="**m7**"<br/> ` Value`=0         | The `Metadata` value with `Id`="md_id" has different `SdsTypeCode` on the asset and asset type. Therefore, the resolved asset's `Metadata` value coerces the overloaded `Value` from the asset to the `SdsTypecode` on the asset type.  It also takes the  `Metadata` value for `UOM` and `SdsTypeCode` from the asset type. |
 | 8       | `Id`="md_id"<br/> `Name`="**m9**"<br/> ` Value`=10    | `Id`="md_id"<br/> `Name`=null<br/> ` Value`="1.23"           | `Id`="md_id"<br/> `Name`="**m9**"<br/>  `Value`=1         | The `Metadata` value with `Id`="md_id" has a different `SdsTypeCode` on the asset and asset type. Therefore, the resolved asset's `Metadata` value coerces the overloaded `Value` from the asset to the `SdsTypecode` on the asset type. It also takes the  `Metadata` value for `UOM` and `SdsTypeCode` from the asset type. |
 
-### Resolved Asset Stream Reference Rules: TODO, update with new rules
+### Resolved Asset Stream Reference Rules
 
 The following example illustrates the resolved asset reference rules. If an asset references an asset type, the the following rules apply for a given reference:
 

@@ -1,5 +1,5 @@
 ---
-uid: ""
+uid: identity-device-code-clients
 
 ---
 

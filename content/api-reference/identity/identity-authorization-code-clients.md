@@ -1,5 +1,6 @@
 ---
-uid: identity-authorization-code-clients
+uid: ""
+
 ---
 
 # Authorization Code Clients

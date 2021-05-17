@@ -1,4 +1,7 @@
+---
+uid: identity-claims
 
+---
 
 # Claims
 An identity provider claim provides a mechanism to map a claim from an identity provider to one or more roles.

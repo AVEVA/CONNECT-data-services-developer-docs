@@ -1,7 +1,7 @@
 ---
 uid: community-communities
----
 
+---
 
 # Communities
 A community is an organizational entity that facilitates data sharing across multiple tenants.

@@ -2,7 +2,7 @@
 uid: create-pi-to-ocs-connection
 ---
 
-# Create a PI System connection
+# Create a PI to OCS connection
 
 Before you can transfer data to OCS, you need to create a PI system connection and install the PI to OCS agent.
 

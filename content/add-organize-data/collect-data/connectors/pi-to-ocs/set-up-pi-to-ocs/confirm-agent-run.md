@@ -1,5 +1,5 @@
 ---
-uid: set-up-agent
+uid: confirm-agent-run
 ---
 
 # Confirm your agent is running
@@ -21,8 +21,6 @@ After installation, confirm your PI to OCS Agent is running on the machine it wa
     _Registered data source_
 
 **NOTE:** It may take a few minutes for your PI System to be registered. The following states may also appear next to the Data Source Status field to indicate a connection issue:
-
-
 
 State | Description
 ---------|----------

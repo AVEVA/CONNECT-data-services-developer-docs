@@ -1,3 +1,6 @@
+---
+uid: community-client-credential-clients
+---
 
 
 # Client Credential Clients

@@ -1,4 +1,6 @@
-
+---
+uid: community-roles
+---
 
 # Roles
 Cluster APIs for getting community roles

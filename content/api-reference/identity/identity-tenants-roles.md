@@ -1,14 +1,5 @@
 ---
-title: identity/identity-tenants-roles v20210426.5
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: osisoft.widdershins v1.0.7
-
+uid: identity-tenants-roles
 ---
 
 # Roles
@@ -570,9 +561,9 @@ Allowed for these roles:
 </ul>
 
 ---
-# Definitions
+## Definitions
 
-## Role
+### Role
 
 <a id="schemarole"></a>
 <a id="schema_Role"></a>
@@ -581,7 +572,7 @@ Allowed for these roles:
 
 The object for retrieving a role
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -608,7 +599,7 @@ The object for retrieving a role
 
 ---
 
-## RoleScope
+### RoleScope
 
 <a id="schemarolescope"></a>
 <a id="schema_RoleScope"></a>
@@ -628,7 +619,7 @@ The object that represents the scope of a given role
 
 ---
 
-## ErrorResponse
+### ErrorResponse
 
 <a id="schemaerrorresponse"></a>
 <a id="schema_ErrorResponse"></a>
@@ -637,7 +628,7 @@ The object that represents the scope of a given role
 
 Object returned whenever there is an error TODO: Remove this internal model and re-adopt public model when moving to System.Text.Json in WI 202168.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -660,7 +651,7 @@ Object returned whenever there is an error TODO: Remove this internal model and 
 
 ---
 
-## User
+### User
 
 <a id="schemauser"></a>
 <a id="schema_User"></a>
@@ -669,7 +660,7 @@ Object returned whenever there is an error TODO: Remove this internal model and 
 
 Object for retrieving a user
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -682,7 +673,7 @@ Object for retrieving a user
 |ContactGivenName|string|false|true|Preferred given name for the user|
 |ContactSurname|string|false|true|Preferred contact surname for the user|
 |ExternalUserId|string|false|true|Provider unique identifier for the user. This is the unique identifier we get from the identity provider.|
-|IdentityProviderId|guid|false|true|Identity provider unique identifier used to authenticate the user. Will be set once the user accepts an invitation. If not specified when sending the invitation to the user, it can be any of the identity provider Ids configured for this tenant.|
+|IdentityProviderId|guid|false|true|Identity provider unique identifier used to authenticate the user. This cannot be set to null and must be set when creating a new User.|
 |RoleIds|string[]|false|true|List of roles to be assigned to this client. Member role is always required. For security reasons we advise against assigning administrator role to a client.|
 
 ```json
@@ -706,7 +697,7 @@ Object for retrieving a user
 
 ---
 
-## ClientCredentialClient
+### ClientCredentialClient
 
 <a id="schemaclientcredentialclient"></a>
 <a id="schema_ClientCredentialClient"></a>
@@ -715,7 +706,7 @@ Object for retrieving a user
 
 Object to get or update a ClientCredentialClient
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

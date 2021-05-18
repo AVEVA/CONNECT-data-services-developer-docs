@@ -1,15 +1,4 @@
----
-title: identity/identity-invitations v20210426.5
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: osisoft.widdershins v1.0.7
 
----
 
 # Invitations
 Invitations are issued after the creation of a user object in OCS, to begin the provisioning process for a user with one of the identity providers in a tenant. There can only be one invitation for a user at a time. An invitation can expire, at which time the administrator can either delete it, or extend it. When creating an invitation a tenant administrator has the option to resend the invitation email to the contact email configured for the user the invitation is attached to. The email can be re-sent by updating the invitation. When an invitation expires the user cannot accept it. If the expiration date is extended the user can accept an invitation. Invitations that are past of their expiration date by more than two weeks will be deleted. The only way to provision a user after this, is to send a new invitation.
@@ -599,9 +588,9 @@ Allowed for these roles:
 </ul>
 
 ---
-# Definitions
+## Definitions
 
-## Invitation
+### Invitation
 
 <a id="schemainvitation"></a>
 <a id="schema_Invitation"></a>
@@ -610,7 +599,7 @@ Allowed for these roles:
 
 Object for an invitation.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -637,7 +626,7 @@ Object for an invitation.
 
 ---
 
-## InvitationStates
+### InvitationStates
 
 <a id="schemainvitationstates"></a>
 <a id="schema_InvitationStates"></a>
@@ -656,7 +645,7 @@ Invitation states.
 
 ---
 
-## ErrorResponse
+### ErrorResponse
 
 <a id="schemaerrorresponse"></a>
 <a id="schema_ErrorResponse"></a>
@@ -665,7 +654,7 @@ Invitation states.
 
 Object returned whenever there is an error
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -693,7 +682,7 @@ Object returned whenever there is an error
 
 ---
 
-## InvitationCreateOrUpdate
+### InvitationCreateOrUpdate
 
 <a id="schemainvitationcreateorupdate"></a>
 <a id="schema_InvitationCreateOrUpdate"></a>
@@ -702,7 +691,7 @@ Object returned whenever there is an error
 
 Object used to create or update an invitation.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -723,7 +712,7 @@ Object used to create or update an invitation.
 
 ---
 
-## ErrorResponse2
+### ErrorResponse2
 
 <a id="schemaerrorresponse2"></a>
 <a id="schema_ErrorResponse2"></a>
@@ -732,7 +721,7 @@ Object used to create or update an invitation.
 
 Object returned whenever there is an error TODO: Remove this internal model and re-adopt public model when moving to System.Text.Json in WI 202168.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

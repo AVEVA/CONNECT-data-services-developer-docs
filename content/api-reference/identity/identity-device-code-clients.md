@@ -1,15 +1,4 @@
----
-title: identity/identity-device-code-clients v20210426.5
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: osisoft.widdershins v1.0.7
 
----
 
 # Device Code Clients
 Device Code clients are used in browserless or input constrained devices. These clients are issued an ID. Device Code clients are not issued secrets.
@@ -431,9 +420,9 @@ Allowed for these roles:
 </ul>
 
 ---
-# Definitions
+## Definitions
 
-## DeviceCodeClient
+### DeviceCodeClient
 
 <a id="schemadevicecodeclient"></a>
 <a id="schema_DeviceCodeClient"></a>
@@ -442,7 +431,7 @@ Allowed for these roles:
 
 Object used for device code clients.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -473,7 +462,7 @@ Object used for device code clients.
 
 ---
 
-## ErrorResponse
+### ErrorResponse
 
 <a id="schemaerrorresponse"></a>
 <a id="schema_ErrorResponse"></a>
@@ -482,7 +471,7 @@ Object used for device code clients.
 
 Object returned whenever there is an error
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -510,7 +499,7 @@ Object returned whenever there is an error
 
 ---
 
-## ClientCredentialClient
+### ClientCredentialClient
 
 <a id="schemaclientcredentialclient"></a>
 <a id="schema_ClientCredentialClient"></a>
@@ -519,7 +508,7 @@ Object returned whenever there is an error
 
 Object to get or update a ClientCredentialClient
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

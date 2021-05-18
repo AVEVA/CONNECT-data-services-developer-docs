@@ -2,7 +2,7 @@
 uid: LeastPrivilege
 ---
 
-# Least privilege
+# Least privileges
 
 When creating new users or client credential clients, configure them using the principle of [Least Privilege](https://us-cert.cisa.gov/bsi/articles/knowledge/principles/least-privilege). A user or client should be assigned the lowest privileged role necessary to access resources in OSIsoft resources.
 Ensure that clients which are not being used are either deleted or disabled by setting the **Enabled** property to false.

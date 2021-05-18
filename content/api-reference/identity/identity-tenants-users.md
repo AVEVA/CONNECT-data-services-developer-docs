@@ -1,16 +1,6 @@
 ---
-title: identity/identity-tenants-users v20210426.5
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: osisoft.widdershins v1.0.7
-uid: identityUser
+uid: identity-tenants-users
 ---
-
 # Users
 Users consume resources in a tenant. They are invited by the administrator of the tenant and should already have a tenant in one of the configured identity providers for this tenant. A user is fully provisioned in OCS only after they have accepted the invitation and successfully logged in with an identity provider. OCS does not maintain user credentials, but it delegates authentication to the identity provider the user logged in with at first. Once logged in the user cannot change the identity provider it signed up with. A tenant can only have one user with a given email to an identity provider. If a user has multiple aliases in the same identity provider, they will not be able to create multiple corresponding OCS. Users have roles associated with them. These roles determine what a user is authorized to do in the tenant. Roles are assigned to a user upon creation and can be modified by an administrator. We allow the change of some user fields and the complete deletion of a user.
 
@@ -978,9 +968,9 @@ Allowed for these roles:
 </ul>
 
 ---
-# Definitions
+## Definitions
 
-## User
+### User
 
 <a id="schemauser"></a>
 <a id="schema_User"></a>
@@ -989,7 +979,7 @@ Allowed for these roles:
 
 Object for retrieving a user
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1002,7 +992,7 @@ Object for retrieving a user
 |ContactGivenName|string|false|true|Preferred given name for the user|
 |ContactSurname|string|false|true|Preferred contact surname for the user|
 |ExternalUserId|string|false|true|Provider unique identifier for the user. This is the unique identifier we get from the identity provider.|
-|IdentityProviderId|guid|false|true|Identity provider unique identifier used to authenticate the user. Will be set once the user accepts an invitation. If not specified when sending the invitation to the user, it can be any of the identity provider Ids configured for this tenant.|
+|IdentityProviderId|guid|false|true|Identity provider unique identifier used to authenticate the user. This cannot be set to null and must be set when creating a new User.|
 |RoleIds|string[]|false|true|List of roles to be assigned to this client. Member role is always required. For security reasons we advise against assigning administrator role to a client.|
 
 ```json
@@ -1026,7 +1016,7 @@ Object for retrieving a user
 
 ---
 
-## UserMultiStatusResponse
+### UserMultiStatusResponse
 
 <a id="schemausermultistatusresponse"></a>
 <a id="schema_UserMultiStatusResponse"></a>
@@ -1035,7 +1025,7 @@ Object for retrieving a user
 
 MultiStatusResponse objects returned in a 207 response. TODO: Remove this internal model and re-adopt public model when moving to System.Text.Json in WI 202168.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1085,7 +1075,7 @@ MultiStatusResponse objects returned in a 207 response. TODO: Remove this intern
 
 ---
 
-## MultiStatusResponseChildError
+### MultiStatusResponseChildError
 
 <a id="schemamultistatusresponsechilderror"></a>
 <a id="schema_MultiStatusResponseChildError"></a>
@@ -1094,7 +1084,7 @@ MultiStatusResponse objects returned in a 207 response. TODO: Remove this intern
 
 ChildError objects returned in a 207 response. TODO: Remove this internal model and re-adopt public model when moving to System.Text.Json in WI 202168.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1121,7 +1111,7 @@ ChildError objects returned in a 207 response. TODO: Remove this internal model 
 
 ---
 
-## ErrorResponse
+### ErrorResponse
 
 <a id="schemaerrorresponse"></a>
 <a id="schema_ErrorResponse"></a>
@@ -1130,7 +1120,7 @@ ChildError objects returned in a 207 response. TODO: Remove this internal model 
 
 Object returned whenever there is an error TODO: Remove this internal model and re-adopt public model when moving to System.Text.Json in WI 202168.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1153,7 +1143,7 @@ Object returned whenever there is an error TODO: Remove this internal model and 
 
 ---
 
-## UserStatus
+### UserStatus
 
 <a id="schemauserstatus"></a>
 <a id="schema_UserStatus"></a>
@@ -1162,7 +1152,7 @@ Object returned whenever there is an error TODO: Remove this internal model and 
 
 Object used when getting user status.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1193,7 +1183,7 @@ Object used when getting user status.
 
 ---
 
-## UserInvitationStatus
+### UserInvitationStatus
 
 <a id="schemauserinvitationstatus"></a>
 <a id="schema_UserInvitationStatus"></a>
@@ -1214,7 +1204,7 @@ User Invitation Status.
 
 ---
 
-## UserCreateOrUpdate
+### UserCreateOrUpdate
 
 <a id="schemausercreateorupdate"></a>
 <a id="schema_UserCreateOrUpdate"></a>
@@ -1223,7 +1213,7 @@ User Invitation Status.
 
 Object when updating a user.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1232,7 +1222,7 @@ Object when updating a user.
 |ContactGivenName|string|false|true|Preferred name to be used when contacting user.|
 |ContactSurname|string|false|true|Preferred surname to be used when contacting user.|
 |ContactEmail|email|false|true|Preferred contact email to be used. This does not have to be the same as the user's identity provider email.|
-|IdentityProviderId|guid|false|true|Identity provider this user will be required to use to log in. If null, the identity provider unique identifier will be set when creating the invitation.|
+|IdentityProviderId|guid|false|true|Identity Provider this user will be required to use to log in. This value cannot be null when creating a new user. When updating, this value must match what is currently assigned to user. This cannot be updated via update user.|
 |IdentityProviderSpecificUserId|string|false|true|Identity provider specific user unique identifier. For example, object Id for AD and AAD.|
 |RoleIds|string[]|false|true|List of strings of role Ids.|
 
@@ -1254,7 +1244,7 @@ Object when updating a user.
 
 ---
 
-## UserStatusMultiStatusResponse
+### UserStatusMultiStatusResponse
 
 <a id="schemauserstatusmultistatusresponse"></a>
 <a id="schema_UserStatusMultiStatusResponse"></a>
@@ -1263,7 +1253,7 @@ Object when updating a user.
 
 MultiStatusResponse objects returned in a 207 response. TODO: Remove this internal model and re-adopt public model when moving to System.Text.Json in WI 202168.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1316,7 +1306,7 @@ MultiStatusResponse objects returned in a 207 response. TODO: Remove this intern
 
 ---
 
-## UserCreateOrUpdate2
+### UserCreateOrUpdate2
 
 <a id="schemausercreateorupdate2"></a>
 <a id="schema_UserCreateOrUpdate2"></a>
@@ -1325,7 +1315,7 @@ MultiStatusResponse objects returned in a 207 response. TODO: Remove this intern
 
 Object when updating an user.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

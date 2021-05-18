@@ -1,15 +1,4 @@
----
-title: identity/identity-implicit-clients v20210426.5
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: osisoft.widdershins v1.0.7
 
----
 
 # Implicit Clients
 Implicit client has been deprecated. We suggest using an authorization code client instead of an implicit client. Implicit clients are used in JavaScript/Browser (SPA) based applications or native mobile applications with the presence of a user. These clients are not issued secrets or refresh tokens.
@@ -774,9 +763,9 @@ Allowed for these roles:
 </ul>
 
 ---
-# Definitions
+## Definitions
 
-## ImplicitClient
+### ImplicitClient
 
 <a id="schemaimplicitclient"></a>
 <a id="schema_ImplicitClient"></a>
@@ -785,7 +774,7 @@ Allowed for these roles:
 
 Object used during implicit client creation.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -826,7 +815,7 @@ Object used during implicit client creation.
 
 ---
 
-## ErrorResponse
+### ErrorResponse
 
 <a id="schemaerrorresponse"></a>
 <a id="schema_ErrorResponse"></a>
@@ -835,7 +824,7 @@ Object used during implicit client creation.
 
 Object returned whenever there is an error
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -863,7 +852,7 @@ Object returned whenever there is an error
 
 ---
 
-## ImplicitClient2
+### ImplicitClient2
 
 <a id="schemaimplicitclient2"></a>
 <a id="schema_ImplicitClient2"></a>
@@ -872,7 +861,7 @@ Object returned whenever there is an error
 
 Object used during implicit client creation.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

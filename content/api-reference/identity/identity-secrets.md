@@ -1,15 +1,4 @@
----
-title: identity/identity-secrets v20210426.5
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: osisoft.widdershins v1.0.7
 
----
 
 # Secrets
 Secrets are used to authenticate both client credential clients and hybrid clients. A secret has an expiration date or can be created to never expire. We advise to avoid creating secrets that do not expire. After a secret expires it can no longer be used to authenticate the client. Any access token issued while a secret is still valid will be active until the token itself expires. The same applies to refresh tokens, which are issued to hybrid clients. Safe storage of secrets is your responsibility. OCS does not store secret values, so once lost there is no way to retrieve the value of a secret.
@@ -1198,9 +1187,9 @@ Allowed for these roles:
 </ul>
 
 ---
-# Definitions
+## Definitions
 
-## ClientSecret
+### ClientSecret
 
 <a id="schemaclientsecret"></a>
 <a id="schema_ClientSecret"></a>
@@ -1209,7 +1198,7 @@ Allowed for these roles:
 
 Client secret object.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1230,7 +1219,7 @@ Client secret object.
 
 ---
 
-## ErrorResponse
+### ErrorResponse
 
 <a id="schemaerrorresponse"></a>
 <a id="schema_ErrorResponse"></a>
@@ -1239,7 +1228,7 @@ Client secret object.
 
 Object returned whenever there is an error
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1267,7 +1256,7 @@ Object returned whenever there is an error
 
 ---
 
-## ClientSecretResponse
+### ClientSecretResponse
 
 <a id="schemaclientsecretresponse"></a>
 <a id="schema_ClientSecretResponse"></a>
@@ -1276,7 +1265,7 @@ Object returned whenever there is an error
 
 Object returned after a client secret is created.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1299,7 +1288,7 @@ Object returned after a client secret is created.
 
 ---
 
-## ClientSecretCreateOrUpdate
+### ClientSecretCreateOrUpdate
 
 <a id="schemaclientsecretcreateorupdate"></a>
 <a id="schema_ClientSecretCreateOrUpdate"></a>
@@ -1308,7 +1297,7 @@ Object returned after a client secret is created.
 
 Object to write a client secret.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1327,7 +1316,7 @@ Object to write a client secret.
 
 ---
 
-## ClientSecret2
+### ClientSecret2
 
 <a id="schemaclientsecret2"></a>
 <a id="schema_ClientSecret2"></a>
@@ -1336,7 +1325,7 @@ Object to write a client secret.
 
 Client secret object
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1359,7 +1348,7 @@ Client secret object
 
 ---
 
-## ClientSecretResponse2
+### ClientSecretResponse2
 
 <a id="schemaclientsecretresponse2"></a>
 <a id="schema_ClientSecretResponse2"></a>
@@ -1368,7 +1357,7 @@ Client secret object
 
 Object returned after a client secret is created.
 
-### Properties
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

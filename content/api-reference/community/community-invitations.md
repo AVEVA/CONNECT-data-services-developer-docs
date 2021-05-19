@@ -104,7 +104,6 @@ GET /api/v1-preview/communityinvitations/{invitationId}/details
 {
   "CommunityName": "string",
   "CommunityId": "string",
-  "TenantAlreadyMemberOfCommunity": true,
   "InvitationState": "None"
 }
 ```
@@ -557,14 +556,12 @@ Summary of a community invitation
 |---|---|---|---|---|
 |CommunityName|string|false|true|Community name|
 |CommunityId|guid|false|false|Community identifier|
-|TenantAlreadyMemberOfCommunity|boolean|false|false|Value indicating whether the invited tenant is already part of the community|
 |InvitationState|[CommunityInvitationState](#schemacommunityinvitationstate)|false|false|Invitation state|
 
 ```json
 {
   "CommunityName": "string",
   "CommunityId": "string",
-  "TenantAlreadyMemberOfCommunity": true,
   "InvitationState": "None"
 }
 

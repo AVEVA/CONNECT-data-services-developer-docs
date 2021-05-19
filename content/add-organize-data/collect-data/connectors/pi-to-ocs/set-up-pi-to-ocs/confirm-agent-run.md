@@ -2,7 +2,7 @@
 uid: confirm-agent-run
 ---
 
-# Confirm your agent is running
+# Confirm PI to OCS Agent is running
 
 After installation, confirm your PI to OCS Agent is running on the machine it was installed. You also need to confirm the agent has successfully connected to and registered with your on-premises PI Data Archive.
 

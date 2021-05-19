@@ -2,7 +2,7 @@
 uid: CreateAssetType
 ---
 
-# Create an asset type with the asset types editor
+# Create an asset type
 
 For more information on asset types, see [Asset types](xref:AssetTypes).
 

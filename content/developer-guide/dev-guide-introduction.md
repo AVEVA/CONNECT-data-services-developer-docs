@@ -1,6 +1,7 @@
 ---
 uid: intro-dev-guide
 --- 
-# OSIsoft Cloud Services developer guide
+
+# Developer guide
 
 OSIsoft Cloud Services developer guide

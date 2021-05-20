@@ -1,7 +1,11 @@
 200:
   type: text/plain
   value: |
-    The request was successful
+    Success
+201:
+  type: text/plain
+  value: |
+    Created
 400:
   type: text/plain
   value: |

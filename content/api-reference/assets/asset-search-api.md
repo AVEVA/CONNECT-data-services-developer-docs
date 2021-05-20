@@ -233,7 +233,7 @@ These links can simply be followed to get the next, previous, first, and last pa
 
 ## `Asset Faceted Search` 
 
-Asset faceted search allows searching by asset facets. At this moment, only asset metadata is facetable.
+Asset faceted search allows searching by asset facets. Asset facets are not case sensitive. At this moment, only asset metadata is facetable.
 
 ### Request 
 

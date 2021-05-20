@@ -15,7 +15,6 @@ The PI to OCS Agent must be installed on a host computer, separate from your PI 
 
     ![ ](../../images/pi2ocs-dwnld-icon.png)
     
-    _PI to OCS Agent Download Installation Kit page_
 3. Download the PI to OCS agent to the desired location.
 4. Close the **Download Installation Kit** window.
 5. Navigate to the downloaded PI to OCS agent installation file.
@@ -43,4 +42,6 @@ The PI to OCS Agent must be installed on a host computer, separate from your PI 
     ![ ](../../images/pi2ocs-serv-acct.png)
 
 14. Click **Install**, then click **Close**.
-<br>**Result:** The PI to OCS Agent is installed and registered to the PI System data source in OCS. The registration process can take a few minutes.
+<br>**Result:** The PI to OCS Agent is installed and registered to the PI System data source in OCS. 
+
+**Note:** The registration process may take a few minutes.

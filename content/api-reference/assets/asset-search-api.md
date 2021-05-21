@@ -214,7 +214,7 @@ Filter strings are not case sensitive. Numeric types must be passed as strings a
 
 ## `Asset Search Pagination` 
 
-Asset search results can be returned in pages through `pageCount` ,`maxPages`, and `continuationToken` query parameters.
+Asset search results can be returned in pages through `pageSize` ,`maxPages`, and `continuationToken` query parameters.
 
 When you want asset search results returned in pages, you first need to make a call using the `pageCount` and `maxPages` parameters. For example:
 

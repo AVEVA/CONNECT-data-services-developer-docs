@@ -1,24 +1,48 @@
 200:
   type: text/plain
   value: |
-    The request was successful
+    Success
+201:
+  type: text/plain
+  value: |
+    Created
+204:
+  type: text/plain
+  value: |
+    Deleted
+207:
+  type: text/plain
+  value: |
+    Partial 
+302:
+  type: text/plain
+  value: |
+    A role with the same unique identifier or name already exists in the tenant
 400:
   type: text/plain
   value: |
-    Due to a client error, the server could not process the request
+    Missing or invalid inputs
 401:
   type: text/plain
   value: |
-    Authentication has failed or has not been provided
+    Unauthorized
 403:
   type: text/plain
   value: |
-    Unauthorized. Make sure the user has the right role to access the resource
+    Forbidden
 404:
   type: text/plain
   value: |
-    The server could not find the requested resource
+    Client or tenant not found
+408:
+  type: text/plain
+  value: |
+    Operation timed out
+409:
+  type: text/plain
+  value: |
+    A role with some matching values already exists in tenant
 500:
   type: text/plain
   value: |
-    The server ran into an unexpected condition and failed to complete the request
+    Internal server error

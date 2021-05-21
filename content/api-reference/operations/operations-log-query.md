@@ -1,4 +1,7 @@
+---
+uid: operations-log-query
 
+---
 
 # Log Query
 APIs related to querying logs.

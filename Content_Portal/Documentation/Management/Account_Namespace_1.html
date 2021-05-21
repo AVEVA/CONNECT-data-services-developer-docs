@@ -86,7 +86,7 @@
 <li>Must not start or end with a period</li>
 <li>Must not start with two consecutive underscores</li>
 </ul>
-<p>In practice, namespaces may correspond to a specific set of infrastructure assets, but more commonly correspond to virtual partitions within a single set of assets. You can create one or more namespaces within an SDS tenant. Each namespace is effectively an instance of SDS, within which you create SDS types and streams, stream views, data views, and metadata.</p>
+<p>In practice, namespaces may correspond to a specific set of infrastructure assets, but more commonly correspond to virtual partitions within a single set of assets. You can create one or more namespaces within a tenant. Each namespace is effectively an instance of SDS, within which you create types and streams, stream views, data views, and metadata.</p>
 <h2 id="properties">Properties</h2>
 <p>For HTTP requests and responses, the Namespace object has the following properties and JSON-serialized body: </p>
 <table>
@@ -133,7 +133,7 @@
     &quot;State&quot;: 0,
 }
 </code></pre><h2 id="region">Region</h2>
-<p>When a namespace is created, all resources are created in the namespace&#39;s region. Resources created in this namespace (for example: SDS types, streams, and stream views) will be created in the region of the namespace, and any data stored in the namespace will be stored in that region. Read and write operations at the namespace level and within a namespace utilize the base URL of the region in which the namespace resides. The <code>Self</code> property on each namespace provides the complete URL for all operations within that namespace.</p>
+<p>When a namespace is created, all resources are created in the namespace&#39;s region. Resources created in this namespace (for example: types, streams, and stream views) will be created in the region of the namespace, and any data stored in the namespace will be stored in that region. Read and write operations at the namespace level and within a namespace utilize the base URL of the region in which the namespace resides. The <code>Self</code> property on each namespace provides the complete URL for all operations within that namespace.</p>
 <hr>
 <h2 id="get-all-namespaces"><code>Get All Namespaces</code></h2>
 <p>Returns all <code>Namespaces</code> owned by the specified <code>Tenant</code> that the caller has access to.</p>

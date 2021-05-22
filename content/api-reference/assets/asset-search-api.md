@@ -61,7 +61,7 @@ Must be used with `maxPages` to configure the pages of the search results. This 
 Used in conjunction with `maxPages` for search result pagination. This parameter defines the max number of pages.
 
 [optional] `string continuationToken`   
-An optional parameter used for search pagination to retrieve a given page in the paged search results.
+Retrieves a specific page of the search results. 
 
 ### Response 
 Returns an array of assets matching the search query and the total number of assets returned specified as Total-Count in the HTTP response header. 

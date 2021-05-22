@@ -37,7 +37,7 @@ query:
 count:
   type: text/plain
   value: |
-    Maximum number of clients to return
+    Maximum number of clients to return. Default value is 100.
 skip:
   type: text/plain
   value: |

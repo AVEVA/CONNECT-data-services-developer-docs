@@ -9,7 +9,7 @@ tenantId:
 aadTenantId:
   type: text/plain
   value: |
-    Active Directory Tenant identifier
+    Azure Active Directory tenant identifier
 aadCount:
   type: text/plain
   value: |
@@ -17,7 +17,11 @@ aadCount:
 aadSkip:
   type: text/plain
   value: |
-   Number of Azure Active Directory tenants to skip
+    Number of Azure Active Directory tenants to skip
+groupId:
+  type: text/plain
+  value: |
+    Group identifier
 clientId:
   type: text/plain
   value: |
@@ -57,11 +61,11 @@ identityProviderId:
 identityProviderClaimId:
   type: text/plain
   value: |
-    Identity provider claim unique identifier
-identityProviderTypeClaimId:
+    Identity provider claim identifier
+identityProviderTypeNameClaimId:
   type: text/plain
   value: |
-    Identity provider claim type name unique identifier
+    Identity provider claim type name identifier
 identityProviderCount:
   type: text/plain
   value: |
@@ -73,7 +77,7 @@ identityProviderSkip:
 clientcredentialclientId:
   type: text/plain
   value: |
-    Client credential client unique identifier
+    Client credential client identifier
 clientcredentialclientCount:
   type: text/plain
   value: |

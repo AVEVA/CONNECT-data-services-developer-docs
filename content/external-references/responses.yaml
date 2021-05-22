@@ -14,10 +14,6 @@
   type: text/plain
   value: |
     Partial 
-302:
-  type: text/plain
-  value: |
-    A role with the same unique identifier or name already exists in the tenant
 400:
   type: text/plain
   value: |
@@ -38,10 +34,6 @@
   type: text/plain
   value: |
     Operation timed out
-409:
-  type: text/plain
-  value: |
-    A role with some matching values already exists in tenant
 500:
   type: text/plain
   value: |

@@ -216,7 +216,7 @@ Filter strings are not case sensitive. Numeric types must be passed as strings a
 
 Asset search results can be returned in pages through `pageSize` ,`maxPages`, and `continuationToken` query parameters.
 
-When you want asset search results returned in pages, you first need to make a call using the `pageCount` and `maxPages` parameters. For example:
+To return search results in pages, first make a call using the `pageSize` and `maxPages` parameters. For example:
 
 `GET search/assets?pageCount=10&maxPages=100` will request search results with a maximum of 10 assets per page and a maximum of 100 pages. 
 

@@ -229,7 +229,7 @@ The HTTP header of this response of this query will include a "Link" section to 
 <https://{clusterName}/api/v1-preview/tenants/{tenantId}/namespaces/{NamespaceId}/Assets?continuationToken={continuationToken}>; rel="last"
 ```
 
-These links can simply be followed to get the next, previous, first, and last page. Pagination search results timeout in 2 minutes if no pages are requested.
+These links can be followed to get the next, previous, first, and last page.  If no pages are requested, the links to the next, previous, first, and last pages time out in 2 minutes.
 
 ## `Asset Faceted Search` 
 

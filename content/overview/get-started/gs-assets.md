@@ -11,7 +11,7 @@ An asset is a container that includes metadata and references to streams related
 
 ## Procedure
 
-Follow the procedure to create RESOURCE.
+Follow the procedure to create an asset.
 
 1. Click the ![Menu icon](images/menu-icon.png) icon and click **Asset Explorer** (under Visualization).
 

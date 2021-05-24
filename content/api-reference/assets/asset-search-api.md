@@ -111,7 +111,7 @@ Must be used with `maxPages` to configure the pages of the search results. This 
 Must be used with `pageSize` to configure the pages of the search results. This parameter defines the maximum number of pages. Search results that exceed maxPages are not returned.
 
 [optional] `string continuationToken`   
-An optional parameter used for search pagination to retrieve a given page in the paged search results.
+Retrieves a specific page of the search results. 
 
 ### Response 
 A list of asset Ids and their matched fields.

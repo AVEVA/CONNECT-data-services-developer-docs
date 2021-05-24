@@ -93,7 +93,7 @@ The namespace identifier
 The asset query string. Search strings are not case-sensitive.
 
 `string filterString`  
-The asset filter string. Filter strings are not case-sensitive. At this moment, only asset AssetTypeName and asset metadata Name to Value can be filtered on.
+String used to filter the asset search results. Filter strings are not case sensitive. The strings on which you can filter results are limited to the asset AssetTypeName property and the asset metadata properties (using the syntax filter[*property_name*]=*property_value*).
 
 [optional] `int skip`   
 An optional parameter representing the zero-based offset of the first asset to retrieve. If not specified, a default value of 0 is used.

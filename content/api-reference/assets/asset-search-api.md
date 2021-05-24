@@ -108,7 +108,7 @@ An optional parameter which returns assets ordered either by the asset `Id` or t
 Must be used with `maxPages` to configure the pages of the search results. This parameter defines the maximum number of assets that are returned on each page. 
 
 [optional] `int maxPages`   
-Used in conjunction with `maxPages` for search result pagination. This parameter defines the max number of pages.
+Must be used with `pageSize` to configure the pages of the search results. This parameter defines the maximum number of pages. Search results that exceed maxPages are not returned.
 
 [optional] `string continuationToken`   
 An optional parameter used for search pagination to retrieve a given page in the paged search results.

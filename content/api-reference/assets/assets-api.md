@@ -347,7 +347,7 @@ The tenant identifier
 The namespace identifier
 
 `string[] ids`  
-A parameter consisting of a comma-separated list of asset ids that you want to delete.
+A parameter consisting of a comma-separated list of asset Ids that you want to delete.
 
 ### Response 
 

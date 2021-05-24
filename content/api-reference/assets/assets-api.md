@@ -356,5 +356,5 @@ The response includes a status code and a body.
 | Status Code               | Body Type | Description                                     |
 | ------------------------- | --------- | ----------------------------------------------- |
 | 204 No Content            | none  | The assets with the specified `Id`s are deleted.                              |
-| 207 Multi-Status | partial success | Array of errors. Assets that did not encounter errors are delete |
+| 207 Multi-Status | partial success | Array of errors. Assets that did not encounter errors are deleted. |
 | 400 Bad Request | error | The request is not valid. See the response body for additional details. |

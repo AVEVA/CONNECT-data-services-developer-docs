@@ -267,7 +267,7 @@ The namespace identifier
 The asset type identifier
 
 `[optional] bool deleteAssets`   
-By default, this value is false, meaning that a 409 will be returned if there are assets which are from this asset type.  If this value is set to True, then all assets which are from this asset type will also be attempted to be deleted in this single call. **Use caution. This action is not reversible**.  
+By default, this value is false and if there are assets based on this asset type, a 409 code is returned.  If this value is set to true, then any assets based on this asset type will be deleted along with the asset type in this one call. **Use caution. This action is not reversible**.  
 
 #### Request body 
 

@@ -39,7 +39,7 @@ Follow the procedure to use the Asset Explorer to create an asset type from the 
 9. In the `Select Stream Type` window, click **MyOCS.PumpState** in the list, and then click **Add**.
 
 1. Click the **Status** tab, and click **Add Status Configuration**.
-    The `Select Property` window opens with a list of properties that can be represented as a status. For a property to be configured as a status, the property must be an enumerated state or a string. Click **Cancel** to exit the window. <!-- Will this example provide any properties that can be displayed as a status? -->
+    The `Select Property` window opens with a list of properties that can be represented as a status. For a property to be configured as a status, the property must be an enumerated state. Click **Cancel** to exit the window.
     
 2. When you are finished adding Metadata, Properties, and Status to the asset type, click **Save**. 
 

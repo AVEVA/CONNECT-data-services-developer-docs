@@ -209,7 +209,7 @@ Filter strings are not case sensitive. Numeric types must be passed as strings a
 | Query String                                 | Description                                                  |
 | -------------------------------------------- | ------------------------------------------------------------ |
 | filter[location]=Earth                       | Returns all assets that contain a metadata name = **location** and value is **Earth**. |
-| filter[location]=Earth&filter[device]=tracer | Returns all assets that contains a metadata name = **location** and value is **Earth** and also contains a metadata with name = **device** and value is **tracer**. |
+| filter[location]=Earth&filter[device]=tracer | Returns all assets that contain a metadata name = **location** and value is **Earth** and also contains a metadata with name = **device** and value is **tracer**. |
 
 
 ## `Asset Search Pagination` 

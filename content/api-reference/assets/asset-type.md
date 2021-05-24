@@ -247,7 +247,7 @@ The response includes a status code and a body.
 ***
 ## `Delete AssetType` 
 
-Delete an asset type with a specified `Id`. Note: An `AssetType` object cannot be deleted if it is referenced by an asset. To delete an `AssetType` object, you must first delete all assets that are mapped to it. 
+Delete an asset type with a specified `Id`. An `AssetType` resource cannot be deleted if it is referenced by any assets unless the `deleteAssets` parameter is explicitly set to true. 
 
 ### Request 
 

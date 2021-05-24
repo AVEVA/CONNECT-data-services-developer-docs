@@ -162,7 +162,7 @@ The response includes a status code and a body.
 | Status Code     | Response Type | Description                                                  |
 | --------------- | ------------- | ------------------------------------------------------------ |
 | 200 OK          | `AssetType`   | The `AssetType` as persisted, including values for optional parameters that were omitted in the request. |
-| 302 Found       | Redirect      | The `AssetType` you attempted to create is identical to one that already exists |
+| 302 Found       | Redirect      | The `AssetType` you attempted to create is identical to one that already exists. |
 | 400 Bad Request | error         | The request is not valid. See the response body for additional details. |
 | 403 Forbidden   | error         | You are not authorized to create an `AssetType` object.      |
 | 409 Conflict    | error         | The `AssetType` create has a conflict. See the response body for additional details. |

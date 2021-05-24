@@ -212,7 +212,7 @@ Filter strings are not case sensitive. Numeric types must be passed as strings a
 | filter[location]=Earth&filter[device]=tracer | Returns all assets that contain a metadata name = **location** and value is **Earth** and also contains a metadata with name = **device** and value is **tracer**. |
 
 
-## `Asset Search Pagination` 
+## `Asset Results by Pages` 
 
 Asset search results can be returned in pages through `pageSize` ,`maxPages`, and `continuationToken` query parameters.
 

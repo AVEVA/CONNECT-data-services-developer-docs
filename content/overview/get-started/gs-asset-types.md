@@ -19,7 +19,7 @@ Follow the procedure to use the Asset Explorer to create an asset type from the 
 
 3. From the **Assets/Asset Types Selector** list, select **Asset Types**.
 
-4. in the menu bar, click **Add Asset Type** to open a panel on the right side.
+4. In the menu bar, click **Add Asset Type** to open a panel on the right side.
 
 1. In the new asset type panel, enter the following:
    - `Asset Type` &ndash; **MyOCS.PumpType**

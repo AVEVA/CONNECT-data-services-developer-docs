@@ -218,7 +218,7 @@ Asset search results can be returned in pages through `pageSize` ,`maxPages`, an
 
 To return search results in pages, first make a call using the `pageSize` and `maxPages` parameters. For example:
 
-`GET search/assets?pageCount=10&maxPages=100` will request search results with a maximum of 10 assets per page and a maximum of 100 pages. 
+`GET search/assets?pageSize=10&maxPages=100` returns search results with a maximum of 10 assets per page and a maximum of 100 pages. 
 
 The HTTP header of this response of this query will include a "Link" section to which will define either first, next, previous, or last pages. These links can be used directly to follow the pages. For example, the links section may contain:
 

@@ -105,7 +105,7 @@ An optional parameter, between 1 and 1000 (inclusive), representing the maximum 
 An optional parameter which returns assets ordered either by the asset `Id` or the asset `name`. Specify asc or desc to return the results in ascending or descending order. If not specified, the default is ascending order.
 
 [optional] `int pageSize`   
-Used in conjunction with `maxPages` for search result pagination. This parameter defines the max number of assets that should be returned per page. 
+Must be used with `maxPages` to configure the pages of the search results. This parameter defines the maximum number of assets that are returned on each page. 
 
 [optional] `int maxPages`   
 Used in conjunction with `maxPages` for search result pagination. This parameter defines the max number of pages.

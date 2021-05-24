@@ -276,7 +276,7 @@ If you have the following assets in your system:
 | "Id": "PhillyAsset",    "Metadata": [      { "Name": "Manufacturer", "Value": "GE", "SdsTypeCode": "String" },      { "Name": "Location", "Value": "Philly", "SdsTypeCode": "String" },    ] |
 
 
-Performing a `GET search/assets/facets?Name=Location` will return the following response. 
+Performing a `GET search/assets/facets?Name=Location` returns the following response. 
 
 
 ```json 

@@ -10,7 +10,7 @@ APIs related to querying OCS Service health states.
 
 <a id="opIdQuery_Get Tenant Health"></a>
 
-Gets **Tenant** health data containing an aggregated health state and a list of services related to the tenant.
+Get **Tenant** health data containing an aggregated health state and a list of services related to the tenant.
 
 ### Request
 ```text 

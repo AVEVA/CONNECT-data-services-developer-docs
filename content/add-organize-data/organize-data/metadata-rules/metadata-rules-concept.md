@@ -15,7 +15,7 @@ Metadata rules do not have a similar counterpart in PI Server because PI points 
 The following best practices are recommended to make it easier to add metadata to your streams:
 
 - The easiest way to explicitly add metadata is at the time that streams are created. Therefore, whenever possible, OSIsoft recommends that metadata be added during stream creation.
-- In situations where streams are created from an external source and you cannot explicitly include metadata fields but you are able to establish a naming pattern for stream names, adopt and apply a naming pattern that can be used with metadata rules. <!-- What are the characteristics of a naming pattern that can be used with metadata rules? -->
+- There may be situations where streams are created from an external source and you cannot explicitly include metadata fields. If possible, establish and apply a naming pattern for stream names that can be used with metadata rules.  An example of a naming pattern is: {Region}.{Site}.{Equipment}.{Measurement}. Use delimiters to separate the parts in the naming pattern. 
 - If possible, manually create a few streams with your proposed stream naming pattern. Then experiment with creating metadata rules to ensure that you can collect all of the metadata that you want from the stream name. Once you have confirmed that all of the metadata is captured in the stream name, then proceed with creating the remainder of your streams.
 
 ## Using metadata rules to add metadata to streams

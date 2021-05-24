@@ -261,7 +261,7 @@ A list of asset Ids and their matched fields.
 
 | Status Code     | Body Type        | Description                                                  |
 | --------------- | ---------------- | ------------------------------------------------------------ |
-| 200 OK          | Asset facet list | A list of assets facet matching the search criteria. An empty array is returned if there are no matching asset metadata with the supplied category. |
+| 200 OK          | Asset facet list | A list of asset facet values that match the search criteria. An empty array is returned if there are no matching asset metadata with the supplied category. |
 | 204 OK          | empty            | No assets match your search criteria.                        |
 | 400 Bad Request | error            | The request is not valid. See the response body for additional details. |
 

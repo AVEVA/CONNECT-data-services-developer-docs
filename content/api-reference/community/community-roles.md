@@ -85,7 +85,7 @@ Identity internal representation of role. Unlike the public role model which use
 |RoleScope|[RoleScope](#schemarolescope)|false|true|Role scope.|
 |TenantId|guid|false|true|Tenant unique identifier, if this is a tenant role. Otherwise set to null.|
 |CommunityId|guid|false|true|Community unique identifier, if this is a community role. Otherwise set to null.|
-|RoleTypeId|guid|false|true|Role type unique identifier, if this is a tenant role|
+|RoleTypeId|guid|false|true|Role type unique identifier.|
 
 ```json
 {

@@ -250,7 +250,7 @@ The tenant identifier
 The namespace identifier
 
 `string category`  
-The asset metadata name you want to get all facets of.[optional] 
+The name of the asset metadata for which you want to retrieve the facet values.
 
 [optional] `int count`   
 An optional parameter, between 1 and 1000 (inclusive), representing the maximum number of retrieved assets. If not specified, the default is 100.

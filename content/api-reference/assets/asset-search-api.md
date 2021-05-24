@@ -233,7 +233,7 @@ These links can be followed to get the next, previous, first, and last page.  If
 
 ## `Asset Faceted Search` 
 
-Asset faceted search allows searching by asset facets. Asset facets are not case sensitive. At this moment, only asset metadata is facetable.
+Asset faceted search allows for searching using asset facets. Asset facets are not case sensitive.  Only asset metadata can be used in asset faceted searches.
 
 ### Request 
 

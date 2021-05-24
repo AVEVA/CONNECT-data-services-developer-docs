@@ -12,7 +12,7 @@ Metadata rules do not have a similar counterpart in PI Server because PI points 
 
 ## Metadata best practices  
 
-The following best practices are recommend to make it easier to add metadata to your streams:
+The following best practices are recommended to make it easier to add metadata to your streams:
 
 - It is easiest to explicitly add metadata to streams and, whenever possible, OSIsoft recommends you add metadata this way.
 - In situations where streams are created from an external source and you cannot explicitly include metadata fields but you are able to establish a naming pattern for stream names, adopt and apply a naming pattern that can be used with metadata rules. <!-- What are the characteristics of a naming pattern that can be used with metadata rules? -->

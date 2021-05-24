@@ -189,7 +189,7 @@ The response includes a status code, a body, and the Etag version in the HTTP re
 | Status Code               | Body Type | Description                                     |
 | ------------------------- | --------- | ----------------------------------------------- |
 | 200 OK                    | `Asset`  | The asset as persisted, including values for optional parameters that were omitted in the request.                           |
-| 302 Found | Redirect | The `Asset` you attempted to create is identical to one that already exists |
+| 302 Found | Redirect | The asset you attempted to create is identical to one that already exists |
 | 400 Bad Request           | error     | The request is not valid. See the response body for additional details.      |
 | 403 Forbidden            | error     | You are not authorized to create assets.           |
 | 409 Conflict | error     | The asset you attempted to create has a conflict. See the response body for additional details. |

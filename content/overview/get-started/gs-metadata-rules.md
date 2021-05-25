@@ -36,7 +36,7 @@ The first step is to identify and select a stream whose name will be the basis f
 
 ## <a name="step-2"><a>Step 2: Create the pattern for the metadata rule
 
-In this step, you identify delimiters in the stream name. Delimiters include periods (.), underscores (_), and hyphens (&ndash;). For each stream name part, you specify the type of data it is, that is, whether it is metadata, string literal, or wildcard. These settings have implications for the search pattern.
+In this step, you identify delimiters in the stream name. Delimiters include periods (.), underscores (_), and hyphens (-). For each stream name part, you specify the type of data it is, that is, whether it is metadata, string literal, or wildcard. These settings have implications for the search pattern.
 
 1. Click the plus sign (**+**) above each of the three delimiters.
 

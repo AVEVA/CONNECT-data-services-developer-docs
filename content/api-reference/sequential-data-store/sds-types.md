@@ -1,4 +1,7 @@
+---
+uid: sds-types
 
+---
 
 # Types
 

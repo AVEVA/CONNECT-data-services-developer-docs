@@ -1,4 +1,7 @@
+---
+uid: sds-stream-data-transform
 
+---
 
 # Stream Data Transform
 Controller for methods hosted at ``{streamId}/Transform/``.

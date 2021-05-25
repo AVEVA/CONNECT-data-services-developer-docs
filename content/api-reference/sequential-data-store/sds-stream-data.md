@@ -1,4 +1,7 @@
+---
+uid: sds-stream-data
 
+---
 
 # Stream Data
 Controller for methods hosted at {streamId}/Data/

@@ -1,4 +1,7 @@
+---
+uid: sds-quantities
 
+---
 
 # Quantities
 Controller handling requests that are routed to {namespaceId}/Quantities/

@@ -1,4 +1,7 @@
+---
+uid: sds-stream-bulk-data
 
+---
 
 # Stream Bulk Data
 Controller for methods hosted at {namespaceId}/Bulk/Streams/Data/Joins

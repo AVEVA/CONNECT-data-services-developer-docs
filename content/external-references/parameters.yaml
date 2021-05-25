@@ -93,7 +93,7 @@ clientcredentialclientId:
 clientcredentialclientCount:
   type: text/plain
   value: |
-    Max number of roles to return
+    Maximum number of roles to return
 clientcredentialclientSkip:
   type: text/plain
   value: |

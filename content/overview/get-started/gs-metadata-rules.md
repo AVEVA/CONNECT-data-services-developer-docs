@@ -42,7 +42,7 @@ In this step, you identify delimiters in the stream name. Delimiters include per
 
    This identifies the different sections of the stream name pattern. A row is added for each part of your stream name. There are four rows as shown below.![Metadata rules](images/metadata-step2.png)
 
-   **Note:** You can click on the minus  sign (&ndash;) to ignore a delimiter.
+   **Note:** You can click on the minus sign (&ndash;) to ignore a delimiter.
 
 2. In the first row ("MyOCS") click the drop-down list and select **String Literal**.
 

@@ -1,6 +1,9 @@
+---
+uid: community-tenants
+---
 
 
-# Community Tenants
+# Tenants
 APIs for updating and removing community tenant information
 
 ## `Remove a Community Tenant from a Community`

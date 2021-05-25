@@ -1,6 +1,9 @@
+---
+uid: community-invitations
+---
 
 
-# Community Invitations
+# Invitations
 Defines the public API methods that are used to manage community invitations. Using this API you can, for example, create, retrieve, update and process invitations. You can also resend an invitation email.
 
 ## `Process a Community Invitation Based on the Requested Action`
@@ -316,9 +319,9 @@ DELETE /api/v1-preview/tenants/{tenantId}/communities/{communityId}/invitations/
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/>`string communityId`
-<br/>Community identifier<br/><br/>`string invitationId`
-<br/>Invitation identifier<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string communityId`
+<br/>Community identifier.<br/><br/>`string invitationId`
+<br/>Invitation identifie.r<br/><br/>
 
 ### Response
 
@@ -351,6 +354,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/communities/{communityId}/invitations/
 Allowed for these roles: 
 <ul>
 <li>Community Administrator</li>
+<li>Tenant Administrator</li>
 </ul>
 
 ---

@@ -50,7 +50,7 @@ In this step, you identify delimiters in the stream name. Delimiters include per
 
 3. In the second row, ("NorthAmerica"), accept the default **Metadata** setting, and enter **Region** as the key.
 
-   **Note:** Metadata keys are mapped to values in  Step 3: Define metadata mappings.
+   **Note:** Metadata keys are mapped to values in Step 3: Define metadata mappings.
 
 4. In the third row, ("SLTC"), accept the default **Metadata** setting, and enter **Site** as the key.
 

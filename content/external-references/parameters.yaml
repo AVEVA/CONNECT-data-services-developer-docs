@@ -37,15 +37,27 @@ tag:
 query:
   type: text/plain
   value: |
-    (Not supported) Query identifier
+    Query identifier
 count:
   type: text/plain
   value: |
-    Maximum number of clients to return. Default value is 100.
+    Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.
 skip:
   type: text/plain
   value: |
-   Number of clients to skip
+    Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.
+query-identity:
+  type: text/plain
+  value: |
+    (Not supported) Query identifier
+count-identity:
+  type: text/plain
+  value: |
+    Maximum number of clients to return. Default value is 100.
+skip-identity:
+  type: text/plain
+  value: |
+    Number of clients to skip
 streamId:
   type: text/plain
   value: |

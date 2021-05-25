@@ -310,13 +310,13 @@ get-uom:
     ```json
     HTTP/1.1 200
     Content-Type: application/json
-     {
-    "Id":"ounce",
-    "Abbreviation":"oz",
-    "Name":"ounce",
-    "DisplayName":"ounce",
-    "QuantityId":"Mass",
-    "ConversionFactor":0.028349523
+    {
+        "Id":"ounce",
+        "Abbreviation":"oz",
+        "Name":"ounce",
+        "DisplayName":"ounce",
+        "QuantityId":"Mass",
+        "ConversionFactor":0.028349523
     }
     ```
 get-quantities:
@@ -430,12 +430,12 @@ get-quantity-uom:
     HTTP/1.1 200
     Content-Type: application/json
     {
-    "Id": "mile",
-    "Abbreviation": "mi",
-    "Name": "mile",
-    "DisplayName": "mile",
-    "QuantityId": "Length",
-    "ConversionFactor": 1609.344
+        "Id": "mile",
+        "Abbreviation": "mi",
+        "Name": "mile",
+        "DisplayName": "mile",
+        "QuantityId": "Length",
+        "ConversionFactor": 1609.344
     }
     ```
 # Stream Views
@@ -703,15 +703,15 @@ get-stream-view:
     HTTP/1.1 200
     Content-Type: application/json
     {
-    "Id":"StreamView",
-    "Name":"StreamView",
-    "SourceTypeId":"Simple",
-    "TargetTypeId":"Simple3",
-    "Properties":[
-        {
-            "SourceId":"Time",
-            "TargetId":"Time"
-        },
+        "Id":"StreamView",
+        "Name":"StreamView",
+        "SourceTypeId":"Simple",
+        "TargetTypeId":"Simple3",
+        "Properties":[
+            {
+                "SourceId":"Time",
+                "TargetId":"Time"
+            },
         {
             "SourceId":"State",
             "TargetId":"State"
@@ -720,7 +720,7 @@ get-stream-view:
             "SourceId":"Measurement",
             "TargetId":"Value"
         }
-    ]
+        ]
     }
     ```
 get-stream-view-map:
@@ -730,26 +730,26 @@ get-stream-view-map:
     HTTP/1.1 200
     Content-Type: application/json
     {
-    "SourceTypeId":"Simple",
-    "TargetTypeId":"Simple3",
-    "Properties":[
-        {
-            "SourceId":"Time",
-            "TargetId":"Time"
-        },
-        {
-            "SourceId":"Measurement",
-            "TargetId":"Value",
-            "Mode":20
-        },
-        {
-            "SourceId":"State",
-            "Mode":2
-        },
-        {
-            "TargetId":"State",
-            "Mode":1
-        }
-    ]
+        "SourceTypeId": "Simple",
+        "TargetTypeId": "Simple3",
+        "Properties": [
+            {
+                "SourceId": "Time",
+                "TargetId": "Time"
+            },
+            {
+                "SourceId": "Measurement",
+                "TargetId": "Value",
+                "Mode": 20
+            },
+            {
+                "SourceId": "State",
+                "Mode": 2
+            },
+            {
+                "TargetId": "State",
+                "Mode": 1
+            }
+        ]
     }
     ```

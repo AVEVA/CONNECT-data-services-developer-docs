@@ -83,6 +83,10 @@ On the Define Mappings page, you see the following. Below the stream pattern are
 4. Select **Map Values** for the **Mapping Type**.
 
    This option allows you to map that part of the stream name to another value. You may either manually enter the mappings or generate the mappings from existing streams. 
+   **Note:** If OCS encounters a value that does not match any of the mappings, it does not create metadata for that stream. This can be useful in the instance where there are two different metadata rules that have a similar naming pattern, for example:
+   - MyOCS.{Region}.{Site}.*
+   - MyOCS.{Location}.{Department}.*
+   A stream (for example, MyOCS.WestCoast.Mfg.Inventory) will match both patterns, but the values ("WestCoast," "Mfg") are only mapped for only one of the metadata rules (MyOCS.{Location}.{Department}.*).
 
 5. To generate mappings from existing streams, click **Generate Mappings**.
 

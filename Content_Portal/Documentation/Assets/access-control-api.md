@@ -2,10 +2,9 @@
 uid: AssetOrAssetTypeAccessControlAPI
 ---
 
-# Asset and AssetType Access Control API
+# Asset and AssetType ACL API
 The access control API is used to secure assets by setting their ownership and permissions. For more information about OCS access control, see [Role-based access control][xref:accessControl].
 
-***
 ## `Get Asset or AssetType Access Control List ` 
 Get the default `AccessControlList` for the assets collection and asset type collection.
 
@@ -14,15 +13,13 @@ Get the default `AccessControlList` for the assets collection and asset type col
 Assets collections
 
 ```text 
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Assets 
-
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/accessControl/Assets
 ```
 
 Asset types collections
 
 ```text 
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/AssetTypes 
-
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/accessControl/AssetTypes
 ```
 
 ### Parameters  
@@ -84,13 +81,13 @@ Update the default `AccessControlList` for the assets or asset type collections
 Assets collections
 
 ```text 
-PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Assets  
+PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/accessControl/Assets  
 
 ```
 
 Asset types collections
 ```text 
-PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/AssetTypes  
+PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/accessControl/AssetTypes  
 
 ```
 
@@ -119,7 +116,6 @@ The response includes a status code and, in some instances, a body.
 | 400 Bad Request             | error     | The request is not valid. See the response body for details.       |
 | 403 Forbidden             | error     | You are not authorized to update the asset or asset type collection's default access control list. |
 
-***
 
 ## `Get Asset or AssetType Access Control List` 
 
@@ -129,14 +125,14 @@ Get the `AssetControlList` of the specified asset or asset type.
 
 Assets
 ```text 
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/AccessControl 
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/accessControl 
 
 ```
 
 Asset type
 
 ```text 
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetTypeId}/AccessControl 
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetTypeId}/accessControl 
 
 ```
 
@@ -193,7 +189,6 @@ HTTP 200 OK
 }
 
 ```
-***
 
 ## `Update Asset or AssetType Access Control List` 
 
@@ -204,16 +199,14 @@ Update the `AccessControlList` of the specified asset or asset type.
 Asset
 
 ```text 
-PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/AccessControl 
-
+PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/accessControl
 ```
 
 
 Asset type
 
 ```text 
-PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetTypeId}/AccessControl 
-
+PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetTypeId}/accessControl
 ```
 ### Parameters  
 
@@ -248,7 +241,6 @@ The response includes a status code and, in some instances, a body.
 | 403 Forbidden             | error     | You are not authorized to update the access control list of the requested asset or asset type. |
 | 404 Not Found             | error     | The requested asset or asset type with the specified `Id` was not found. |
 
-***
 
 ## `Get Asset or AssetType Access Rights` 
 
@@ -259,8 +251,7 @@ Get the calling user or client's access rights to the requested asset or asset t
 Asset
 
 ```text 
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/AccessRights
-
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/accessRights
 ```
 
 
@@ -268,8 +259,7 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/
 Asset type
 
 ```text 
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetTypeId}/AccessRights
-
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetTypeId}/accessRights
 ```
 
 
@@ -308,9 +298,7 @@ HTTP 200 OK
     "Delete",
     "ManageAccessControl"
 ]
-
 ```
-***
 
 ## `Get Asset or AssetType Owner` 
 
@@ -321,14 +309,12 @@ Get the owner `Trustee` of the specified asset or asset type.
 Asset
 ```text 
 GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/owner
-
 ```
 
 Asset type
 
 ```text 
 GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetTypeId}/owner
-
 ```
 
 
@@ -366,7 +352,6 @@ Content-Type: application/json
 }
 
 ```
-***
 
 ## `Update Asset or AssetType Owner` 
 
@@ -378,7 +363,6 @@ Asset
 
 ```text 
 PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/owner
-
 ```
 
 
@@ -387,7 +371,6 @@ Asset type
 
 ```text 
 PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}/owner
-
 ```
 
 ###  Parameters  
@@ -416,7 +399,6 @@ A `Trustee`
     "TenantId": "55555555-5555-5555-5555-555555555555",
     "ObjectId": "44444444-4444-4444-4444-444444444444"
 }
-
 ```
 
 ### Response 

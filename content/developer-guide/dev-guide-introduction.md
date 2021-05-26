@@ -11,7 +11,7 @@ Use the information in this guide as you programmatically access OCS.
 
 ## Access to OCS
 
-You must acquire an OCS account before interacting with the OCS. 
+You must acquire an account before interacting with OCS. 
 Go to the [OCS page on OSIsoft website](https://www.osisoft.com/pi-system/pi-cloud/osisoft-cloud-services), click [Contact Us](https://www.osisoft.com/contact) and request an OCS account.
 
 

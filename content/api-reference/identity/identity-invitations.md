@@ -22,11 +22,16 @@ GET /api/v1/Tenants/{tenantId}/Invitations
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
-`[optional] string query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
-<br/>Number of invitations to skip<br/><br/>`[optional] integer count`
-<br/>Maximum number of invitations to return<br/><br/>`[optional] boolean includeExpiredInvitations`
+`[optional] string query query`
+<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip skip`
+<br/>Number of invitations to skip<br/><br/>`[optional] integer count count`
+<br/>Maximum number of invitations to return<br/><br/>`[optional] boolean includeExpiredInvitations includeExpiredInvitations`
 <br/>Specify whether to return expired invitations<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -81,8 +86,13 @@ HEAD /api/v1/Tenants/{tenantId}/Invitations
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
-`[optional] boolean includeExpiredInvitations`
+`[optional] boolean includeExpiredInvitations includeExpiredInvitations`
 <br/>Specify to return expired invitations<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -120,6 +130,11 @@ GET /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string invitationId`
 <br/>Invitation unique identifier<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -172,6 +187,11 @@ HEAD /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 <br/>Tenant identifier<br/><br/>`string invitationId`
 <br/>Invitation unique identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -207,6 +227,11 @@ PUT /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string invitationId`
 <br/>Invitation unique identifier<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Request Body
 
@@ -274,6 +299,11 @@ DELETE /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 <br/>Tenant identifier<br/><br/>`string invitationId`
 <br/>Invitation unique identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -331,6 +361,11 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 <br/>Tenant identifier<br/><br/>`string userId`
 <br/>User unique identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -382,8 +417,13 @@ HEAD /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string userId`
 <br/>User unique identifier<br/><br/>
-`[optional] boolean includeExpiredInvitations`
+`[optional] boolean includeExpiredInvitations includeExpiredInvitations`
 <br/>Specify whether to include expired invitations.<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -421,6 +461,11 @@ POST /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string userId`
 <br/>User unique identifier<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Request Body
 
@@ -490,6 +535,11 @@ PUT /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 <br/>Tenant identifier<br/><br/>`string userId`
 <br/>User unique identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Request Body
 
 InvitationCreateOrUpdate object<br/>
@@ -557,6 +607,11 @@ DELETE /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string userId`
 <br/>User unique identifier<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 

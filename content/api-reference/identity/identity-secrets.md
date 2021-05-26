@@ -23,10 +23,15 @@ GET /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client identifier<br/><br/>
-`[optional] string query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
-<br/>Number of clients to skip. From query<br/><br/>`[optional] integer count`
+`[optional] string query query`
+<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip skip`
+<br/>Number of clients to skip. From query<br/><br/>`[optional] integer count count`
 <br/>Maximum number of clients to return<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -78,6 +83,11 @@ HEAD /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -113,6 +123,11 @@ POST /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client identifier<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Request Body
 
@@ -178,6 +193,11 @@ GET /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets/{secre
 <br/>Client identifier<br/><br/>`integer secretId`
 <br/>Secret unique identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -227,6 +247,11 @@ HEAD /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets/{secr
 <br/>Client identifier<br/><br/>`integer secretId`
 <br/>Secret unique identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -263,6 +288,11 @@ PUT /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets/{secre
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client identifier<br/><br/>`integer secretId`
 <br/>Secret unique identifier<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Request Body
 
@@ -327,6 +357,11 @@ DELETE /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets/{se
 <br/>Client identifier<br/><br/>`integer secretId`
 <br/>Secret unique identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -382,10 +417,15 @@ GET /api/v1/Tenants/{tenantId}/HybridClients/{clientId}/Secrets
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client identifier<br/><br/>
-`[optional] string query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
-<br/>Number of clients to skip<br/><br/>`[optional] integer count`
+`[optional] string query query`
+<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip skip`
+<br/>Number of clients to skip<br/><br/>`[optional] integer count count`
 <br/>Maximum number of clients to return<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -437,6 +477,11 @@ HEAD /api/v1/Tenants/{tenantId}/HybridClients/{clientId}/Secrets
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -472,6 +517,11 @@ POST /api/v1/Tenants/{tenantId}/HybridClients/{clientId}/Secrets
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client identifier<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Request Body
 
@@ -536,6 +586,11 @@ GET /api/v1/Tenants/{tenantId}/HybridClients/{clientId}/Secrets/{secretId}
 <br/>Client identifier<br/><br/>`integer secretId`
 <br/>Secret unique identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -585,6 +640,11 @@ HEAD /api/v1/Tenants/{tenantId}/HybridClients/{clientId}/Secrets/{secretId}
 <br/>Client identifier<br/><br/>`integer secretId`
 <br/>Secret unique identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -621,6 +681,11 @@ PUT /api/v1/Tenants/{tenantId}/HybridClients/{clientId}/Secrets/{secretId}
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client identifier<br/><br/>`integer secretId`
 <br/>Secret unique identifier<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Request Body
 
@@ -685,6 +750,11 @@ DELETE /api/v1/Tenants/{tenantId}/HybridClients/{clientId}/Secrets/{secretId}
 <br/>Client identifier<br/><br/>`integer secretId`
 <br/>Secret unique identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -740,10 +810,15 @@ GET /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secret
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client identifier<br/><br/>
-`[optional] string query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
-<br/>Number of clients to skip. From query.<br/><br/>`[optional] integer count`
+`[optional] string query query`
+<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip skip`
+<br/>Number of clients to skip. From query.<br/><br/>`[optional] integer count count`
 <br/>Maximum number of clients to return<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -795,6 +870,11 @@ POST /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secre
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client identifier<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Request Body
 
@@ -861,6 +941,11 @@ GET /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secret
 <br/>Client identifier<br/><br/>`integer secretId`
 <br/>Secret unique identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -910,6 +995,11 @@ PUT /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secret
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client identifier<br/><br/>`integer secretId`
 <br/>secretId<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Request Body
 
@@ -974,10 +1064,15 @@ GET /api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}/Secrets
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client identifier<br/><br/>
-`[optional] string query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
-<br/>Number of clients to skip. From query.<br/><br/>`[optional] integer count`
+`[optional] string query query`
+<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip skip`
+<br/>Number of clients to skip. From query.<br/><br/>`[optional] integer count count`
 <br/>Maximum number of clients to return<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -1029,6 +1124,11 @@ POST /api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}/Secrets
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client identifier<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Request Body
 
@@ -1095,6 +1195,11 @@ GET /api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}/Secrets/{secretI
 <br/>Client identifier<br/><br/>`integer secretId`
 <br/>Secret unique identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -1144,6 +1249,11 @@ PUT /api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}/Secrets/{secretI
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client identifier<br/><br/>`integer secretId`
 <br/>secretId<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Request Body
 

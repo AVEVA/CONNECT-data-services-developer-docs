@@ -23,10 +23,15 @@ GET /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Roles
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client credential client unique identifier<br/><br/>
-`[optional] string query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
-<br/>Number of roles to skip<br/><br/>`[optional] integer count`
+`[optional] string query query`
+<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip skip`
+<br/>Number of roles to skip<br/><br/>`[optional] integer count count`
 <br/>Max number of roles to return<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -84,6 +89,11 @@ HEAD /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Roles
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client credential client unique identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -120,6 +130,11 @@ PUT /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Roles
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client credential client unique identifier<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Request Body
 
@@ -194,10 +209,15 @@ GET /api/v1/Tenants/{tenantId}/Clients/{clientId}/Roles
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client credential client unique identifier<br/><br/>
-`[optional] string query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
-<br/>Number of roles to skip<br/><br/>`[optional] integer count`
+`[optional] string query query`
+<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip skip`
+<br/>Number of roles to skip<br/><br/>`[optional] integer count count`
 <br/>Max number of roles to return<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -255,6 +275,11 @@ HEAD /api/v1/Tenants/{tenantId}/Clients/{clientId}/Roles
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client credential client unique identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -291,6 +316,11 @@ PUT /api/v1/Tenants/{tenantId}/Clients/{clientId}/Roles
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client credential client unique identifier<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Request Body
 

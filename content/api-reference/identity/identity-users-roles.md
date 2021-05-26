@@ -23,10 +23,15 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}/Roles
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string userId`
 <br/>User unique identifier<br/><br/>
-`[optional] string query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
-<br/>Number of roles to skip<br/><br/>`[optional] integer count`
+`[optional] string query query`
+<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip skip`
+<br/>Number of roles to skip<br/><br/>`[optional] integer count count`
 <br/>Max number of roles to return<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -83,6 +88,11 @@ HEAD /api/v1/Tenants/{tenantId}/Users/{userId}/Roles
 <br/>Tenant identifier<br/><br/>`string userId`
 <br/>User unique identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -119,6 +129,11 @@ PUT /api/v1/Tenants/{tenantId}/Users/{userId}/Roles
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string userId`
 <br/>User unique identifier<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Request Body
 

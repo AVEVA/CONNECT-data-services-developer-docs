@@ -23,10 +23,15 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string identityProviderId`
 <br/>Identity provider unique identifier<br/><br/>
-`[optional] string query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
-<br/>Number of identity providers to skip<br/><br/>`[optional] integer count`
+`[optional] string query query`
+<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip skip`
+<br/>Number of identity providers to skip<br/><br/>`[optional] integer count count`
 <br/>Maximum number of identity providers to return<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -81,6 +86,11 @@ HEAD /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims
 <br/>Tenant identifier<br/><br/>`string identityProviderId`
 <br/>Identity provider unique identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -116,6 +126,11 @@ POST /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string identityProviderId`
 <br/>Identity provider unique identifier<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Request Body
 
@@ -186,6 +201,11 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims/{id
 <br/>Identity provider unique identifier<br/><br/>`string identityProviderClaimId`
 <br/>Identity provider claim unique identifier.<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -237,6 +257,11 @@ HEAD /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims/{i
 <br/>Identity provider unique identifier<br/><br/>`string identityProviderClaimId`
 <br/>Identity provider claim unique identifier.<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -273,6 +298,11 @@ PUT /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims/{id
 <br/>Tenant identifier<br/><br/>`string identityProviderId`
 <br/>Identity provider unique identifier<br/><br/>`string identityProviderClaimId`
 <br/>Identity provider claim unique identifier.<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Request Body
 
@@ -340,6 +370,11 @@ DELETE /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims/
 <br/>Tenant identifier<br/><br/>`string identityProviderId`
 <br/>Identity provider unique identifier<br/><br/>`string identityProviderClaimId`
 <br/>Identity provider claim unique identifier<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 

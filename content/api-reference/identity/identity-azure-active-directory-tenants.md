@@ -22,10 +22,15 @@ GET /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants
 
 `string tenantId`
 <br/>Id of OSIsoft Cloud Services Tenant.<br/><br/>
-`[optional] string query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
-<br/>Number of Azure Active Directory tenants to skip<br/><br/>`[optional] integer count`
+`[optional] string query query`
+<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip skip`
+<br/>Number of Azure Active Directory tenants to skip<br/><br/>`[optional] integer count count`
 <br/>Maximum number of Azure Active Directory tenants to return<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -74,6 +79,11 @@ HEAD /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants
 `string tenantId`
 <br/>Id of OSIsoft Cloud Services Tenant<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -110,6 +120,11 @@ GET /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{aadTenantId}
 `string tenantId`
 <br/>Id of OSIsoft Cloud Services Tenant<br/><br/>`string aadTenantId`
 <br/>Id of Azure Active Directory Tenant<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -159,6 +174,11 @@ HEAD /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{aadTenantId}
 <br/>Id of OSIsoft Cloud Services Tenant<br/><br/>`string aadTenantId`
 <br/>Id of Azure Active Directory Tenant<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -195,6 +215,11 @@ POST /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{aadTenantId}
 `string tenantId`
 <br/>Id of OSIsoft Cloud Services Tenant<br/><br/>`string aadTenantId`
 <br/>Id or Domain Name of Azure Active Directory Tenant<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -246,6 +271,11 @@ DELETE /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{aadTenantId}
 <br/>Id of OSIsoft Cloud Services Tenant<br/><br/>`string aadTenantId`
 <br/>Id of Azure Active Directory Tenant to remove<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -277,6 +307,11 @@ POST /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{aadTenantId}/SendCo
 `string tenantId`
 <br/>Id of OSIsoft Cloud Services Tenant<br/><br/>`string aadTenantId`
 <br/>Id of Azure Active Directory Tenant<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Request Body
 

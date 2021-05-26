@@ -22,12 +22,17 @@ GET /api/v1/Tenants/{tenantId}/ClientCredentialClients
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
-`[optional] array id`
-<br/>Unordered list of client credential client Ids. Empty, whitespace or null Ids will be ignored.<br/><br/>`[optional] array tag`
-<br/>Only return clients that have these tags.<br/><br/>`[optional] string query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
-<br/>Number of clients to skip. Will be ignored if a list of Ids is passed.<br/><br/>`[optional] integer count`
+`[optional] array id id`
+<br/>Unordered list of client credential client Ids. Empty, whitespace or null Ids will be ignored.<br/><br/>`[optional] array tag tag`
+<br/>Only return clients that have these tags.<br/><br/>`[optional] string query query`
+<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip skip`
+<br/>Number of clients to skip. Will be ignored if a list of Ids is passed.<br/><br/>`[optional] integer count count`
 <br/>Maximum number of clients to return. Will be ignored if a list of Ids is passed.<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -85,9 +90,14 @@ HEAD /api/v1/Tenants/{tenantId}/ClientCredentialClients
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
-`[optional] array id`
-<br/>Unordered list of client credential client Ids. Empty, whitespace or null Ids will be ignored.<br/><br/>`[optional] array tag`
+`[optional] array id id`
+<br/>Unordered list of client credential client Ids. Empty, whitespace or null Ids will be ignored.<br/><br/>`[optional] array tag tag`
 <br/>Only count clients that have these tags<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -123,6 +133,11 @@ POST /api/v1/Tenants/{tenantId}/ClientCredentialClients
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Request Body
 
@@ -208,6 +223,11 @@ GET /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -263,6 +283,11 @@ HEAD /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -299,6 +324,11 @@ PUT /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client identifier<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Request Body
 
@@ -375,6 +405,11 @@ DELETE /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -425,11 +460,16 @@ GET /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
-`[optional] array tag`
-<br/>Only return clients that have these tags<br/><br/>`[optional] string query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
-<br/>Number of clients to skip. From query.<br/><br/>`[optional] integer count`
+`[optional] array tag tag`
+<br/>Only return clients that have these tags<br/><br/>`[optional] string query query`
+<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip skip`
+<br/>Number of clients to skip. From query.<br/><br/>`[optional] integer count count`
 <br/>Maximum number of clients to return<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -486,6 +526,11 @@ POST /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Request Body
 
@@ -568,6 +613,11 @@ GET /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -621,6 +671,11 @@ PUT /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client identifier<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Request Body
 

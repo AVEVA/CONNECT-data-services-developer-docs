@@ -15,17 +15,23 @@ Gets all roles for a tenant including roles for any communities that the tenant 
 ### Request
 ```text 
 GET /api/v1/Tenants/{tenantId}/Roles
-?query={query}&skip={skip}&count={count}
+?query={query}&skip={skip}&count={count}&roleTypeId={roleTypeId}
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
-`[optional] string query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
-<br/>Number of providers to skip<br/><br/>`[optional] integer count`
-<br/>Max number of providers to return<br/><br/>
+`[optional] string query query`
+<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip skip`
+<br/>Number of providers to skip<br/><br/>`[optional] integer count count`
+<br/>Max number of providers to return<br/><br/>`[optional] string roleTypeId roleTypeId`
+<br/>Role type identifier<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -79,6 +85,11 @@ HEAD /api/v1/Tenants/{tenantId}/Roles
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -113,6 +124,11 @@ POST /api/v1/Tenants/{tenantId}/Roles
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Request Body
 
@@ -185,6 +201,11 @@ GET /api/v1/Tenants/{tenantId}/Roles/{roleId}
 <br/>Tenant identifier<br/><br/>`string roleId`
 <br/>Role unique identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -236,6 +257,11 @@ HEAD /api/v1/Tenants/{tenantId}/Roles/{roleId}
 <br/>Tenant identifier<br/><br/>`string roleId`
 <br/>Provider unique identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -271,6 +297,11 @@ PUT /api/v1/Tenants/{tenantId}/Roles/{roleId}
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string roleId`
 <br/>Role unique identifier<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Request Body
 
@@ -341,6 +372,11 @@ DELETE /api/v1/Tenants/{tenantId}/Roles/{roleId}
 <br/>Tenant identifier<br/><br/>`string roleId`
 <br/>Role unique identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -392,6 +428,11 @@ GET /api/v1/Tenants/{tenantId}/Roles/{roleId}/clientcredentialclients
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string roleId`
 <br/>Role unique identifier<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -449,6 +490,11 @@ HEAD /api/v1/Tenants/{tenantId}/Roles/{roleId}/clientcredentialclients
 <br/>Tenant identifier<br/><br/>`string roleId`
 <br/>Role unique identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -484,6 +530,11 @@ GET /api/v1/Tenants/{tenantId}/Roles/{roleId}/users
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string roleId`
 <br/>Role unique identifier<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -543,6 +594,11 @@ HEAD /api/v1/Tenants/{tenantId}/Roles/{roleId}/users
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string roleId`
 <br/>Role unique identifier<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 

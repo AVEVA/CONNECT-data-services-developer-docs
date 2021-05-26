@@ -22,11 +22,16 @@ GET /api/v1/Tenants/{tenantId}/Users
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
-`[optional] array id`
-<br/>Unordered list of user Ids to get<br/><br/>`[optional] string query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
-<br/>Number of users to skip. Ignored if a list of Ids is passed.<br/><br/>`[optional] integer count`
+`[optional] array id id`
+<br/>Unordered list of user Ids to get<br/><br/>`[optional] string query query`
+<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip skip`
+<br/>Number of users to skip. Ignored if a list of Ids is passed.<br/><br/>`[optional] integer count count`
 <br/>Maximum number of users to return. Ignored if a list of Ids is passed.<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -88,8 +93,13 @@ HEAD /api/v1/Tenants/{tenantId}/Users
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
-`[optional] array id`
+`[optional] array id id`
 <br/>Unordered list of user Ids<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -125,6 +135,11 @@ POST /api/v1/Tenants/{tenantId}/Users
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Request Body
 
@@ -204,6 +219,11 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}
 <br/>Tenant identifier<br/><br/>`string userId`
 <br/>User unique identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -262,6 +282,11 @@ HEAD /api/v1/Tenants/{tenantId}/Users/{userId}
 <br/>Tenant identifier<br/><br/>`string userId`
 <br/>User unique identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -298,6 +323,11 @@ PUT /api/v1/Tenants/{tenantId}/Users/{userId}
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string userId`
 <br/>User unique identifier<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Request Body
 
@@ -377,8 +407,13 @@ DELETE /api/v1/Tenants/{tenantId}/Users/{userId}
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string userId`
 <br/>User unique identifier<br/><br/>
-`[optional] boolean force`
+`[optional] boolean force force`
 <br/>Forcibly delete a user that can remain due to claim role mappings.<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -432,6 +467,11 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}/Preferences
 <br/>Tenant identifier<br/><br/>`string userId`
 <br/>User unique identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -483,6 +523,11 @@ HEAD /api/v1/Tenants/{tenantId}/Users/{userId}/Preferences
 <br/>Tenant identifier<br/><br/>`string userId`
 <br/>User unique identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -519,6 +564,11 @@ PUT /api/v1/Tenants/{tenantId}/Users/{userId}/Preferences
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string userId`
 <br/>User unique identifier<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -571,6 +621,11 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}/Status
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string userId`
 <br/>User unique identifier<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -632,12 +687,17 @@ GET /api/v1/Tenants/{tenantId}/Users/Status
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
-`[optional] array id`
-<br/>Unordered list of user Ids to get<br/><br/>`[optional] string query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
-<br/>Number of users to skip. Ignored if a list of Ids is passed<br/><br/>`[optional] integer count`
-<br/>Maximum number of users to return. Ignored if a list of Ids is passed.<br/><br/>`[optional] array status`
+`[optional] array id id`
+<br/>Unordered list of user Ids to get<br/><br/>`[optional] string query query`
+<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip skip`
+<br/>Number of users to skip. Ignored if a list of Ids is passed<br/><br/>`[optional] integer count count`
+<br/>Maximum number of users to return. Ignored if a list of Ids is passed.<br/><br/>`[optional] array status status`
 <br/>Only return statuses that match these values. Possible user statuses are: InvitationAccepted, NoInvitation, InvitationNotSent, InvitationSent, InvitationExpired.<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -700,6 +760,11 @@ POST /api/v1-preview/Tenants/{tenantId}/Users
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Request Body
 
@@ -777,6 +842,11 @@ PUT /api/v1-preview/Tenants/{tenantId}/Users/{userId}
 <br/>Tenant identifier<br/><br/>`string userId`
 <br/>User unique identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Request Body
 
 A UserStatus object<br/>
@@ -852,11 +922,16 @@ GET /api/v1-preview/Tenants/{tenantId}/Users/Ids
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
-`[optional] array userId`
-<br/>Unordered list of Ids for all users to get<br/><br/>`[optional] string query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
-<br/>Items to skip. Currently not supported.<br/><br/>`[optional] integer count`
+`[optional] array userId userId`
+<br/>Unordered list of Ids for all users to get<br/><br/>`[optional] string query query`
+<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip skip`
+<br/>Items to skip. Currently not supported.<br/><br/>`[optional] integer count count`
 <br/>Maximum items to return. Currently not supported.<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -918,11 +993,16 @@ GET /api/v1-preview/Tenants/{tenantId}/Users/Status/Ids
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
-`[optional] array userId`
-<br/>Unordered list of Ids for all users<br/><br/>`[optional] string query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
-<br/>Items to skip. Currently not supported.<br/><br/>`[optional] integer count`
+`[optional] array userId userId`
+<br/>Unordered list of Ids for all users<br/><br/>`[optional] string query query`
+<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip skip`
+<br/>Items to skip. Currently not supported.<br/><br/>`[optional] integer count count`
 <br/>Maximum number of items to retrieve. Currently not supported.<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 

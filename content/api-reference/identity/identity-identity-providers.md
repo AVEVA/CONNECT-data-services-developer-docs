@@ -20,10 +20,15 @@ GET /api/v1/IdentityProviders
 
 #### Parameters
 
-`[optional] string query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
-<br/>Number of identity providers to skip<br/><br/>`[optional] integer count`
+`[optional] string query query`
+<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip skip`
+<br/>Number of identity providers to skip<br/><br/>`[optional] integer count count`
 <br/>Maximum number of identity providers to return.<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -110,6 +115,11 @@ GET /api/v1/IdentityProviders/{identityProviderId}
 `string identityProviderId`
 <br/>Identity provider unique identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -170,6 +180,11 @@ HEAD /api/v1/IdentityProviders/{identityProviderId}
 `string identityProviderId`
 <br/>Identity provider unique identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -204,6 +219,11 @@ GET /api/v1/IdentityProviders/schemes/{scheme}
 
 `string scheme`
 <br/>Scheme name (for example, AAD or Google).<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -265,6 +285,11 @@ HEAD /api/v1/IdentityProviders/schemes/{scheme}
 `string scheme`
 <br/>Scheme name (for example, AAD or Google).<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -300,10 +325,15 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
-`[optional] string query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
-<br/>Number of identity providers to skip<br/><br/>`[optional] integer count`
+`[optional] string query query`
+<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip skip`
+<br/>Number of identity providers to skip<br/><br/>`[optional] integer count count`
 <br/>Maximum number of identity providers to return.<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -360,6 +390,11 @@ HEAD /api/v1/Tenants/{tenantId}/IdentityProviders
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -394,6 +429,11 @@ POST /api/v1/Tenants/{tenantId}/IdentityProviders
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Request Body
 
@@ -476,6 +516,11 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}
 <br/>Tenant identifier<br/><br/>`string identityProviderId`
 <br/>Identity provider unique identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -537,6 +582,11 @@ HEAD /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}
 <br/>Tenant identifier<br/><br/>`string identityProviderId`
 <br/>Identity provider unique identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -572,6 +622,11 @@ DELETE /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string identityProviderId`
 <br/>Identity provider unique identifier<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -624,6 +679,11 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Consent
 <br/>Tenant identifier<br/><br/>`string identityProviderId`
 <br/>Identity provider unique identifier to check for consent<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -670,6 +730,11 @@ HEAD /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Consent
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string identityProviderId`
 <br/>Identity provider unique identifier to check for consent<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -720,6 +785,11 @@ POST /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Consent
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string identityProviderId`
 <br/>Identity provider unique identifier to activate consent<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Request Body
 
@@ -783,9 +853,14 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/groups
 <br/>Tenant identifier<br/><br/>`string identityProviderId`
 <br/>Identity provider unique identifier<br/><br/>`string query`
 <br/>Start of user name or email to search for.<br/><br/>
-`[optional] integer count`
-<br/>Maximum number of groups to return.<br/><br/>`[optional] string skipToken`
+`[optional] integer count count`
+<br/>Maximum number of groups to return.<br/><br/>`[optional] string skipToken skipToken`
 <br/>An encoded string that identifies the set of groups that was not returned. For example, if you specify a count of the first 5 groups matching your query, the skipToken identifies the 6th group.<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -841,6 +916,11 @@ POST /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Groups
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string identityProviderId`
 <br/>Identity provider unique identifier<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Request Body
 
@@ -908,9 +988,14 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/groups/{gr
 <br/>Tenant identifier<br/><br/>`string identityProviderId`
 <br/>Identity provider unique identifier<br/><br/>`string groupId`
 <br/>Group unique identifier<br/><br/>
-`[optional] integer count`
-<br/>Maximum number of users to return<br/><br/>`[optional] string skipToken`
+`[optional] integer count count`
+<br/>Maximum number of users to return<br/><br/>`[optional] string skipToken skipToken`
 <br/>An encoded string that identifies the set of users that was not returned. For example, if you request a count of the first 50 users matching your query, the skipToken identifies the 51st user.<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -977,9 +1062,14 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/users
 <br/>Tenant identifier<br/><br/>`string identityProviderId`
 <br/>Identity provider unique identifier<br/><br/>`string query`
 <br/>Start of user name or email to search for.<br/><br/>
-`[optional] integer count`
-<br/>Maximum number of users to returns.<br/><br/>`[optional] string skipToken`
+`[optional] integer count count`
+<br/>Maximum number of users to returns.<br/><br/>`[optional] string skipToken skipToken`
 <br/>An encoded string that identifies the set of users that was not returned. For example, if you specify a count of the first 50 users matching your query, the skipToken identifies the 51st user.<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -1038,11 +1128,16 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Users/{use
 <br/>Tenant identifier<br/><br/>`string identityProviderId`
 <br/>Identity provider unique identifier<br/><br/>`string userId`
 <br/>User unique identifier<br/><br/>
-`[optional] integer skip`
-<br/>Indexes into a result set<br/><br/>`[optional] integer count`
-<br/>Maximum number of groups to return<br/><br/>`[optional] integer timeout`
-<br/>The maximum time to allow for searching groups before returning the groups.<br/><br/>`[optional] string skipToken`
+`[optional] integer skip skip`
+<br/>Indexes into a result set<br/><br/>`[optional] integer count count`
+<br/>Maximum number of groups to return<br/><br/>`[optional] integer timeout timeout`
+<br/>The maximum time to allow for searching groups before returning the groups.<br/><br/>`[optional] string skipToken skipToken`
 <br/>An encoded string that identifies the set of groups that was not returned. For example, if you request a count of the first 3 groups matching your query, the skipToken identifies the 4th user.<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 

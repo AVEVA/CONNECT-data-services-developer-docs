@@ -58,9 +58,7 @@ GET /api/v1-preview/tenants/{tenantId}/Communities
         "ClientCount": 0
       }
     ],
-    "DateCreated": "2019-08-24T14:15:22Z",
-    "StreamsContributedCount": 0,
-    "TotalStreamsContributedCount": 0
+    "DateCreated": "2019-08-24T14:15:22Z"
   }
 ]
 ```
@@ -132,9 +130,7 @@ Community information to create<br/>
       "ClientCount": 0
     }
   ],
-  "DateCreated": "2019-08-24T14:15:22Z",
-  "StreamsContributedCount": 0,
-  "TotalStreamsContributedCount": 0
+  "DateCreated": "2019-08-24T14:15:22Z"
 }
 ```
 
@@ -194,9 +190,7 @@ GET /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
       "ClientCount": 0
     }
   ],
-  "DateCreated": "2019-08-24T14:15:22Z",
-  "StreamsContributedCount": 0,
-  "TotalStreamsContributedCount": 0
+  "DateCreated": "2019-08-24T14:15:22Z"
 }
 ```
 
@@ -351,8 +345,6 @@ The Community object
 |Description|string|false|true|Community description|
 |Tenants|[[CommunityTenant](#schemacommunitytenant)]|false|true|List of CommunityTenant that are in the community|
 |DateCreated|date-time|false|true|Date community was created|
-|StreamsContributedCount|integer|false|false|Current tenant's view of how many streams it contributed|
-|TotalStreamsContributedCount|integer|false|false|Total streams from all community tenants|
 
 ```json
 {
@@ -370,9 +362,7 @@ The Community object
       "ClientCount": 0
     }
   ],
-  "DateCreated": "2019-08-24T14:15:22Z",
-  "StreamsContributedCount": 0,
-  "TotalStreamsContributedCount": 0
+  "DateCreated": "2019-08-24T14:15:22Z"
 }
 
 ```

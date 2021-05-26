@@ -24,6 +24,11 @@ DELETE /api/v1-preview/tenants/{callerTenantId}/communities/{communityId}/commun
 <br/>Community identifier<br/><br/>`string tenantIdToRemove`
 <br/>CommunityTenant in the community to remove<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -76,6 +81,11 @@ PUT /api/v1-preview/tenants/{callerTenantId}/communities/{communityId}/community
 <br/>Owning tenant identifier<br/><br/>`string communityId`
 <br/>Community identifier<br/><br/>`string tenantIdtoUpdate`
 <br/>CommunityTenant in the community to update<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Request Body
 
@@ -139,6 +149,11 @@ PUT /api/v1-preview/tenants/{callerTenantId}/communities/{communityId}/memberten
 <br/>Owning tenant identifier<br/><br/>`string communityId`
 <br/>Community identifier<br/><br/>`string tenantIdtoUpdate`
 <br/>CommunityTenant in the community to update<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Request Body
 

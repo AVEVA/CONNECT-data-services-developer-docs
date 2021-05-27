@@ -23,9 +23,14 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/usage
 `string tenantId`
 <br/>Id of the Tenant<br/><br/>`string namespaceId`
 <br/>Id of the Namespace<br/><br/>
-`[optional] string start`
-<br/>Start date of the usage for daily usage data.<br/><br/>`[optional] string end`
+`[optional] string start start`
+<br/>Start date of the usage for daily usage data.<br/><br/>`[optional] string end end`
 <br/>End date of the daily usage data, if there is no end date only one summary is returned<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -73,6 +78,11 @@ GET /api/v1/tenants/{tenantId}/resources/usage
 `string tenantId`
 <br/>Id of the Tenant<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -114,6 +124,11 @@ GET /api/v1/tenants/{tenantId}/subscriptionterm/billingcycles
 `string tenantId`
 <br/>Id of the Tenant<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -154,10 +169,15 @@ GET /api/v1/tenants/{tenantId}/usage
 
 `string tenantId`
 <br/>Id of the Tenant<br/><br/>
-`[optional] string start`
-<br/>Start date of the usage for daily usage data.<br/><br/>`[optional] string end`
-<br/>End date of the daily usage data, if there is no end date only one summary is returned<br/><br/>`[optional] boolean groupByNamespace`
+`[optional] string start start`
+<br/>Start date of the usage for daily usage data.<br/><br/>`[optional] string end end`
+<br/>End date of the daily usage data, if there is no end date only one summary is returned<br/><br/>`[optional] boolean groupByNamespace groupByNamespace`
 <br/>When **true** the usage data is grouped by namespaces.<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 

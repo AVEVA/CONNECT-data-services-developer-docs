@@ -14,6 +14,4 @@ Assets are comparable to elements in PI AF server. Similar to elements, OCS asse
 The following best practices are recommended when you create your assets:
 
 - Use OCS assets to bring together in one place the data from multiple streams and the static data associated with a logical asset. OCS assets make it easier to visualize and contextualize the data for a given logical asset.
-- Whenever possible, OSIsoft recommends that you define the UOM on the type. The UOM can also be defined on the stream, but if it is defined in multiple places, ensure that the UOMs match. If a different UOM is configured, there is no conversion between the UOMs. 
-- <!-- Doug said --> Defining a different UOM in the asset does not perform any type of conversion from UOMs defined on the asset type or SDS type, so if the UOM is defined in multiple places, they should always match.
-- <!-- Is this what you mean? --> Specify the UOM that is defined on the stream.  If you define a different UOM on the asset than is defined in the SDS type, there is no data conversion from one UOM to the other. <!-- Does this mean that the value remains the same. For example, if the UOM was "feet" and the value was 12, if you change the UOM to "yards," it will appear as 12 yards, not 4 yards. -->
+- Whenever possible, OSIsoft recommends that you define the UOM on the type. The UOM can also be defined on the stream, but if it is defined in multiple places, ensure that the UOMs match. If a different UOM is configured, there is no conversion between the UOMs.  

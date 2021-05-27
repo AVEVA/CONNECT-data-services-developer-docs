@@ -6,8 +6,9 @@ uid: AssetTypes
 
 Asset types provide a template for assets that share a common structure or type. You can define the expected metadata and stream references for assets that are created with the asset type. This makes it  easier to compare assets of the same type and to ensure consistency across similar assets. Note the following characteristics of an asset created from an asset type:  
 
-- The asset name and description can be configured.
-- The asset type determines the metadata and stream type associated with the asset. Therefore, you cannot add or remove metadata from the asset; however, you can edit the values of the metadata. Stream references must be configured to point to streams of the type defined in the asset type. 
+- The asset name must be configured and, optionally, the description can be configured.
+- The asset type determines the metadata and stream type associated with the asset. Therefore, you cannot add or remove metadata from the asset; however, you can edit the values of the metadata. 
+- Stream references must be configured to point to streams of the type defined in the asset type. 
 - The status mapping is determined by the asset type. You cannot change the mappings or select another measurement.
 - Otherwise, the configuration of the asset is read-only and inherited from the asset type.
 

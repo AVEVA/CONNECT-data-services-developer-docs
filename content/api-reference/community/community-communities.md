@@ -1,3 +1,6 @@
+---
+uid: community-communities
+---
 
 
 # Communities
@@ -417,7 +420,7 @@ The CommunityTenant object
 <a id="tocScommunitytenantstatus"></a>
 <a id="tocscommunitytenantstatus"></a>
 
-Represents a status of a Community Tenant.
+Represents a status of a community tenant
 
 #### Enumerated Values
 

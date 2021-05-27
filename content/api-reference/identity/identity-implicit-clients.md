@@ -1,4 +1,7 @@
+---
+uid: identity-implicit-clients
 
+---
 
 # Implicit Clients
 Implicit client has been deprecated. We suggest using an authorization code client instead of an implicit client. Implicit clients are used in JavaScript/Browser (SPA) based applications or native mobile applications with the presence of a user. These clients are not issued secrets or refresh tokens.

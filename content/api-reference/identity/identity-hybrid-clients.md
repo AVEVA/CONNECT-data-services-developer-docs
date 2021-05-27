@@ -1,5 +1,6 @@
 ---
 uid: identityHybridClient
+
 ---
 
 # Hybrid Clients
@@ -828,7 +829,7 @@ Object used for Hybrid Clients.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|RedirectUris|string[]|false|true|Allowed URIs to which return tokens or authorization codes can be returned. Wildcards are ignored. URIs must match exactly what you are redirecting to after login. If URIs do not match, the authentication process will fail with a bad_client error. Maximum 10 per client.|
+|RedirectUris|string[]|true|true|Allowed URIs to which return tokens or authorization codes can be returned. Wildcards are ignored. URIs must match exactly what you are redirecting to after login. If URIs do not match, the authentication process will fail with a bad_client error. Maximum 10 per client.|
 |PostLogoutRedirectUris|string[]|false|true|Allowed URIs to redirect to after logout. Wildcards are ignored. URIs must match exactly what you are redirecting to after logout. Maximum 10 per client.|
 |ClientUri|string|false|true|URI to a page with information about client (used on consent screen).|
 |LogoUri|string|false|true|URI to client logo (used on consent screen).|

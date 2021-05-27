@@ -7,28 +7,28 @@
 - name: Sequential Data Store
   href: sequential-data-store/toc.yml
   topicHref: sequential-data-store/sds-lp.md
-- name: Data collection and data ingress
+- name: Data collection
   href: data-ingress/toc.yml
   topicHref: data-ingress/data-ingress.md
 - name: Metadata rules
   topicHref: metadata/metadata-rules-overview.md
-- name: Assets
-  href: assets/toc.yml
-  topicHref: Assets/assets.md
-- name: Asset rules
-  href: asset-rules/toc.yml
-  topicHref: asset-rules/asset-rules.md  
 - name: Data views
   href: data-views/toc.yml
   topicHref: data-views/data-views-overview.md
 - name: Operations
   href: operations/toc.yml
   topicHref: operations/operations-overview.md
-- name: Role-based access control
-  topicHref: ../developer-guide/identity-dev/dev-guide-role-based-access-control.md
-- name: Community (Preview)
+- name: Asset store (Preview)
+  href: assets/toc.yml
+  topicHref: Assets/assets.md
+- name: Asset rules (Preview)
+  href: asset-rules/toc.yml
+  topicHref: asset-rules/asset-rules.md  
+- name: Communities (Preview)
   href: community/toc.yml
   topicHref: community/community-overview.md
+- name: Role-based access control
+  topicHref: ../developer-guide/identity-dev/dev-guide-role-based-access-control.md
 - name: HTTP status codes
   topicHref: http-status-codes.md
 - name: Samples

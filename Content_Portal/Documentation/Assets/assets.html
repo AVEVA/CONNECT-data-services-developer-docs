@@ -230,7 +230,6 @@
 <th>Property</th>
 <th>Type</th>
 <th>Required?</th>
-<th>Searchable?</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -239,28 +238,24 @@
 <td>Id</td>
 <td>String</td>
 <td>Required*</td>
-<td>No</td>
 <td><code>Id</code> for this stream reference object.  This <code>Id</code> must be unique within the asset.</td>
 </tr>
 <tr>
 <td>Name</td>
 <td>String</td>
 <td>Required</td>
-<td>No</td>
 <td>User-friendly name for the stream reference object. If not null, must be unique within an asset.</td>
 </tr>
 <tr>
 <td>Description</td>
 <td>String</td>
 <td>Optional</td>
-<td>No</td>
 <td>Description text.</td>
 </tr>
 <tr>
 <td>StreamId</td>
 <td>String</td>
 <td>Required</td>
-<td>No</td>
 <td>The SDS stream <code>Id</code> of this stream reference. This SDS stream must exist at the time the asset is created.</td>
 </tr>
 </tbody>
@@ -274,7 +269,6 @@
 <th>Property</th>
 <th>Type</th>
 <th>Required?</th>
-<th>Searchable?</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -283,28 +277,24 @@
 <td>StreamReferenceId</td>
 <td>String</td>
 <td>Required</td>
-<td>No</td>
 <td>The <code>Id</code> for this type reference. If an asset is derived from this asset type, this Id must be referenced in the asset reference type object. This <code>Id</code> must be unique within the asset type.</td>
 </tr>
 <tr>
 <td>StreamReferenceName</td>
 <td>String</td>
 <td>Required</td>
-<td>No</td>
 <td>The user friendly name for this type reference. If not null, must be unique within an asset type.</td>
 </tr>
 <tr>
 <td>Description</td>
 <td>String</td>
 <td>Optional</td>
-<td>No</td>
 <td>Description text</td>
 </tr>
 <tr>
 <td>TypeId</td>
 <td>String</td>
 <td>Required</td>
-<td>No</td>
 <td>This string must be an SDS stream type <code>Id</code> in the referenced SDS stream.</td>
 </tr>
 </tbody>
@@ -340,7 +330,7 @@
       &quot;Id&quot;: &quot;d7368dc2-58f0-4669-8e6e-44ac2cc3f47c&quot;,   
       &quot;Name&quot;: null,   
       &quot;Value&quot;: &quot;Houston&quot;,  
-      &quot;SdsTypeCode&quot;: &quot;String&quot;,  
+      &quot;SdsTypeCode&quot;: 18,  
    }],
    &quot;StreamReferences&quot;: [
         {
@@ -352,8 +342,7 @@
         &quot;Name&quot;: &quot;ChargingStationStatus&quot;,
         &quot;StreamReferenceId&quot;: &quot;Reference1&quot;,
         &quot;StreamPropertyId&quot;: &quot;Value&quot;,
-        &quot;ValueStatusMappings&quot;: [
-            {
+        &quot;ValueStatusMappings&quot;: [{       
                 &quot;Value&quot;: 0,
                 &quot;Status&quot;: 0,
                 &quot;DisplayName&quot;: &quot;Bad&quot;

@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Asset and AssetType Access Control API </title>
+    <title>Asset and AssetType ACL API </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Asset and AssetType Access Control API ">
+    <meta name="title" content="Asset and AssetType ACL API ">
     <meta name="generator" content="docfx 2.56.5.0">
     
     <link rel="shortcut icon" href="../../../favicon.ico">
@@ -76,17 +76,16 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="AssetOrAssetTypeAccessControlAPI">
-<h1 id="asset-and-assettype-access-control-api">Asset and AssetType Access Control API</h1>
+<h1 id="asset-and-assettype-acl-api">Asset and AssetType ACL API</h1>
 
 <p>The access control API is used to secure assets by setting their ownership and permissions. For more information about OCS access control, see [Role-based access control][xref:accessControl].</p>
-<hr>
 <h2 id="get-asset-or-assettype-access-control-list-"><code>Get Asset or AssetType Access Control List</code></h2>
 <p>Get the default <code>AccessControlList</code> for the assets collection and asset type collection.</p>
 <h3 id="request">Request</h3>
 <p>Assets collections</p>
-<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Assets 
+<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/accessControl/Assets
 </code></pre><p>Asset types collections</p>
-<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/AssetTypes 
+<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/accessControl/AssetTypes
 </code></pre><h3 id="parameters">Parameters</h3>
 <p><code>string tenantId</code> </p>
 <p>The tenant identifier </p>
@@ -147,9 +146,9 @@
 <p>Update the default <code>AccessControlList</code> for the assets or asset type collections </p>
 <h3 id="request-1">Request</h3>
 <p>Assets collections</p>
-<pre><code class="lang-text">PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Assets  
+<pre><code class="lang-text">PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/accessControl/Assets  
 </code></pre><p>Asset types collections</p>
-<pre><code class="lang-text">PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/AssetTypes  
+<pre><code class="lang-text">PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/accessControl/AssetTypes  
 </code></pre><h3 id="parameters-1">Parameters</h3>
 <p><code>string tenantId</code> </p>
 <p>The tenant identifier </p>
@@ -185,14 +184,13 @@
 </tr>
 </tbody>
 </table>
-<hr>
 <h2 id="get-asset-or-assettype-access-control-list"><code>Get Asset or AssetType Access Control List</code></h2>
 <p>Get the <code>AssetControlList</code> of the specified asset or asset type.</p>
 <h3 id="request-2">Request</h3>
 <p>Assets</p>
-<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/AccessControl 
+<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/accessControl 
 </code></pre><p>Asset type</p>
-<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetTypeId}/AccessControl 
+<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetTypeId}/accessControl 
 </code></pre><h3 id="parameters-2">Parameters</h3>
 <p><code>string tenantId</code> </p>
 <p>The tenant identifier </p>
@@ -254,14 +252,13 @@
         }
     ]
 }
-</code></pre><hr>
-<h2 id="update-asset-or-assettype-access-control-list"><code>Update Asset or AssetType Access Control List</code></h2>
+</code></pre><h2 id="update-asset-or-assettype-access-control-list"><code>Update Asset or AssetType Access Control List</code></h2>
 <p>Update the <code>AccessControlList</code> of the specified asset or asset type.</p>
 <h3 id="request-3">Request</h3>
 <p>Asset</p>
-<pre><code class="lang-text">PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/AccessControl 
+<pre><code class="lang-text">PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/accessControl
 </code></pre><p>Asset type</p>
-<pre><code class="lang-text">PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetTypeId}/AccessControl 
+<pre><code class="lang-text">PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetTypeId}/accessControl
 </code></pre><h3 id="parameters-3">Parameters</h3>
 <p><code>string tenantId</code> </p>
 <p>The tenant identifier </p>
@@ -306,14 +303,13 @@
 </tr>
 </tbody>
 </table>
-<hr>
 <h2 id="get-asset-or-assettype-access-rights"><code>Get Asset or AssetType Access Rights</code></h2>
 <p>Get the calling user or client&#39;s access rights to the requested asset or asset type.</p>
 <h3 id="request-4">Request</h3>
 <p>Asset</p>
-<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/AccessRights
+<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/accessRights
 </code></pre><p>Asset type</p>
-<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetTypeId}/AccessRights
+<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetTypeId}/accessRights
 </code></pre><h3 id="parameters-4">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier </p>
 <p><code>string namespaceId</code><br>The namespace identifier </p>
@@ -355,8 +351,7 @@
     &quot;Delete&quot;,
     &quot;ManageAccessControl&quot;
 ]
-</code></pre><hr>
-<h2 id="get-asset-or-assettype-owner"><code>Get Asset or AssetType Owner</code></h2>
+</code></pre><h2 id="get-asset-or-assettype-owner"><code>Get Asset or AssetType Owner</code></h2>
 <p>Get the owner <code>Trustee</code> of the specified asset or asset type.</p>
 <h3 id="request-5">Request</h3>
 <p>Asset</p>
@@ -403,8 +398,7 @@ Content-Type: application/json
     &quot;TenantId&quot;: &quot;55555555-5555-5555-5555-555555555555&quot;,
     &quot;ObjectId&quot;: &quot;44444444-4444-4444-4444-444444444444&quot;
 }
-</code></pre><hr>
-<h2 id="update-asset-or-assettype-owner"><code>Update Asset or AssetType Owner</code></h2>
+</code></pre><h2 id="update-asset-or-assettype-owner"><code>Update Asset or AssetType Owner</code></h2>
 <p>Update the owner <code>Trustee</code> of the specified asset or asset type.</p>
 <h3 id="request-6">Request</h3>
 <p>Asset</p>

@@ -241,6 +241,11 @@ Content-Type: application/json
 <td>The <code>AssetType</code> as persisted, including values for optional parameters that were omitted in the request.</td>
 </tr>
 <tr>
+<td>302 Found</td>
+<td>Redirect</td>
+<td>The <code>AssetType</code> you attempted to create is identical to one that already exists.</td>
+</tr>
+<tr>
 <td>400 Bad Request</td>
 <td>error</td>
 <td>The request is not valid. See the response body for additional details.</td>
@@ -253,7 +258,7 @@ Content-Type: application/json
 <tr>
 <td>409 Conflict</td>
 <td>error</td>
-<td>The <code>AssetType</code> update (?) or create has a conflict. See the response body for additional details.</td>
+<td>The <code>AssetType</code> create has a conflict. See the response body for additional details.</td>
 </tr>
 </tbody>
 </table>
@@ -261,7 +266,7 @@ Content-Type: application/json
 <h2 id="create-assettypes-bulk-create"><code>Create AssetTypes (Bulk create)</code></h2>
 <p>Create a new <code>AssetTypes</code> object</p>
 <h3 id="request-3">Request</h3>
-<pre><code class="lang-text">POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes
+<pre><code class="lang-text">POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/AssetTypes
 </code></pre><h3 id="parameters-3">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -352,13 +357,14 @@ Content-Type: application/json
 </table>
 <hr>
 <h2 id="delete-assettype"><code>Delete AssetType</code></h2>
-<p>Delete an asset type with a specified <code>Id</code>. Note: An <code>AssetType</code> object cannot be deleted if it is referenced by an asset. To delete an <code>AssetType</code> object, you must first delete all assets that are mapped to it. </p>
+<p>Delete an asset type with a specified <code>Id</code>. An <code>AssetType</code> resource cannot be deleted if it is referenced by any assets unless the <code>deleteAssets</code> parameter is explicitly set to true. </p>
 <h3 id="request-5">Request</h3>
-<pre><code class="lang-text">DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}
+<pre><code class="lang-text">DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}?deleteAssets={true|false}
 </code></pre><h3 id="parameters-5">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string assetTypeId</code><br>The asset type identifier</p>
+<p><code>[optional] bool deleteAssets</code><br>By default, this value is false and if there are assets based on this asset type, a 409 code is returned.  If this value is set to true, then any assets based on this asset type will be deleted along with the asset type in this one call. <strong>Use caution. This action is not reversible</strong>.  </p>
 <h4 id="request-body-3">Request body</h4>
 <p>None</p>
 <h3 id="response-5">Response</h3>

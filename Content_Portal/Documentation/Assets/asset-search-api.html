@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Assets Search API </title>
+    <title>Assets search API </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Assets Search API ">
+    <meta name="title" content="Assets search API ">
     <meta name="generator" content="docfx 2.56.5.0">
     
     <link rel="shortcut icon" href="../../../favicon.ico">
@@ -76,7 +76,7 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="AssetsSearchAPI">
-<h1 id="assets-search-api">Assets Search API</h1>
+<h1 id="assets-search-api">Assets search API</h1>
 
 <p>The assets search API allows you to search for your assets with search criteria.</p>
 <hr>
@@ -106,14 +106,18 @@
 <h2 id="search-assets"><code>Search Assets</code></h2>
 <p>Searches and returns assets matching the search criteria.</p>
 <h3 id="request">Request</h3>
-<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets?skip={skip}&amp;count={count}&amp;orderby={orderby}&amp;query={queryString} 
+<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets?skip={skip}&amp;count={count}&amp;orderby={orderby}&amp;query={queryString}&amp;filter={filterString}&amp;pageSize={pageSize}&amp;maxPages={maxPages}&amp;continuationToken={continuationToken}
 </code></pre><h3 id="parameters">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string queryString</code><br>The asset query string. Search strings are not case-sensitive.</p>
+<p><code>string filterString</code><br>String used to filter the asset search results. Filter strings are not case sensitive. The strings on which you can filter results are limited to the asset AssetTypeName property and the asset metadata properties (using the syntax filter[<em>property_name</em>]=<em>property_value</em>).</p>
 <p>[optional] <code>int skip</code><br>An optional parameter representing the zero-based offset of the first asset to retrieve. If not specified, a default value of 0 is used.</p>
 <p>[optional] <code>int count</code><br>An optional parameter, between 1 and 1000 (inclusive), that represents the maximum number of assets to retrieve. If not specified, the default is 100.</p>
 <p>[optional] <code>[id|name] [asc|desc|] orderby</code><br>An optional parameter which returns assets ordered either by the asset <code>Id</code> or the asset <code>name</code>. Specify asc or desc to return the results in ascending or descending order. If not specified, the default is ascending order.</p>
+<p>[optional] <code>int pageSize</code><br>Must be used with <code>maxPages</code> to configure the pages of the search results. This parameter defines the maximum number of assets that are returned on each page. </p>
+<p>[optional] <code>int maxPages</code><br>Must be used with <code>pageSize</code> to configure the pages of the search results. This parameter defines the maximum number of pages. Search results that exceed maxPages are not returned. </p>
+<p>[optional] <code>string continuationToken</code><br>Retrieves a specific page of the search results. </p>
 <h3 id="response">Response</h3>
 <p>Returns an array of assets matching the search query and the total number of assets returned specified as Total-Count in the HTTP response header. </p>
 <table>
@@ -150,15 +154,18 @@
 <h2 id="search-matched-fields-asset"><code>Search Matched Fields Asset</code></h2>
 <p>Searches all assets and returns a list of asset Ids and their matched fields. Use this API to identify the fields in the asset that match your query string.</p>
 <h3 id="request-1">Request</h3>
-<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/search/Assets?skip={skip}&amp;count={count}&amp;orderby={orderby}&amp;query={queryString} 
+<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/search/Assets?skip={skip}&amp;count={count}&amp;orderby={orderby}&amp;query={queryString}&amp;filter={filterString}&amp;pageSize={pageSize}&amp;maxPages={maxPages}&amp;continuationToken={continuationToken}
 </code></pre><h3 id="parameters-1">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
 <p><code>string queryString</code><br>The asset query string. Search strings are not case-sensitive.</p>
+<p><code>string filterString</code><br>String used to filter the asset search results. Filter strings are not case sensitive. The strings on which you can filter results are limited to the asset AssetTypeName property and the asset metadata properties (using the syntax filter[<em>property_name</em>]=<em>property_value</em>).</p>
 <p>[optional] <code>int skip</code><br>An optional parameter representing the zero-based offset of the first asset to retrieve. If not specified, a default value of 0 is used.</p>
 <p>[optional] <code>int count</code><br>An optional parameter, between 1 and 1000 (inclusive), representing the maximum number of retrieved assets. If not specified, the default is 100.</p>
-<p>[optional] <code>[id|name] [asc|desc|] orderby</code><br>An optional parameter which returns assets ordered either by the asset <code>Id</code> or the asset <code>name</code>. Specify asc or desc to return the results in ascending or descending order. If not specified, the default is ascending order.
-`</p>
+<p>[optional] <code>[id|name] [asc|desc|] orderby</code><br>An optional parameter which returns assets ordered either by the asset <code>Id</code> or the asset <code>name</code>. Specify asc or desc to return the results in ascending or descending order. If not specified, the default is ascending order.</p>
+<p>[optional] <code>int pageSize</code><br>Must be used with <code>maxPages</code> to configure the pages of the search results. This parameter defines the maximum number of assets that are returned on each page. </p>
+<p>[optional] <code>int maxPages</code><br>Must be used with <code>pageSize</code> to configure the pages of the search results. This parameter defines the maximum number of pages. Search results that exceed maxPages are not returned.</p>
+<p>[optional] <code>string continuationToken</code><br>Retrieves a specific page of the search results. </p>
 <h3 id="response-1">Response</h3>
 <p>A list of asset Ids and their matched fields.</p>
 <table>
@@ -325,7 +332,112 @@ Content-Type: application/json
 </tr>
 </tbody>
 </table>
-</article>
+<h3 id="examples-of-asset-filter-strings">Examples of asset filter strings</h3>
+<p>Filter strings are not case sensitive. Numeric types must be passed as strings according to English locale. For example, a double of 1.1 must be sent as &quot;1.1&quot;.</p>
+<table>
+<thead>
+<tr>
+<th>Query String</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>filter[location]=Earth</td>
+<td>Returns all assets that contain a metadata name = <strong>location</strong> and value is <strong>Earth</strong>.</td>
+</tr>
+<tr>
+<td>filter[location]=Earth&amp;filter[device]=tracer</td>
+<td>Returns all assets that contain a metadata name = <strong>location</strong> and value is <strong>Earth</strong> and also contains a metadata with name = <strong>device</strong> and value is <strong>tracer</strong>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="asset-results-by-pages"><code>Asset Results by Pages</code></h2>
+<p>Asset search results can be returned in pages through <code>pageSize</code> ,<code>maxPages</code>, and <code>continuationToken</code> query parameters.</p>
+<p>To return search results in pages, first make a call using the <code>pageSize</code> and <code>maxPages</code> parameters. For example:</p>
+<p><code>GET search/assets?pageSize=10&amp;maxPages=100</code> returns search results with a maximum of 10 assets per page and a maximum of 100 pages. </p>
+<p>The HTTP header of this response of this query will include a &quot;Link&quot; section to which will define either first, next, previous, or last pages. These links can be used directly to follow the pages. For example, the links section may contain:</p>
+<pre><code class="lang-json">&lt;https://{clusterName}/api/v1-preview/tenants/{tenantId}/namespaces/{NamespaceId}/Assets?continuationToken={continuationToken}&gt;; rel=&quot;next&quot;, 
+&lt;https://{clusterName}/api/v1-preview/tenants/{tenantId}/namespaces/{NamespaceId}/Assets?continuationToken={continuationToken}&gt;; rel=&quot;previous&quot;,
+&lt;https://{clusterName}/api/v1-preview/tenants/{tenantId}/namespaces/{NamespaceId}/Assets?continuationToken={continuationToken}&gt;; rel=&quot;first&quot;,
+&lt;https://{clusterName}/api/v1-preview/tenants/{tenantId}/namespaces/{NamespaceId}/Assets?continuationToken={continuationToken}&gt;; rel=&quot;last&quot;
+</code></pre><p>These links can be followed to get the next, previous, first, and last page.  If no pages are requested, the links to the next, previous, first, and last pages time out in 2 minutes.</p>
+<h2 id="asset-faceted-search"><code>Asset Faceted Search</code></h2>
+<p>Asset faceted search allows for searching using asset facets. Asset facets are not case sensitive.  Only asset metadata can be used in asset faceted searches.</p>
+<h3 id="request-2">Request</h3>
+<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/search/Assets/facets?name={category}&amp;count={count}
+</code></pre><h3 id="parameters-2">Parameters</h3>
+<p><code>string tenantId</code><br>The tenant identifier</p>
+<p><code>string namespaceId</code><br>The namespace identifier</p>
+<p><code>string category</code><br>The name of the asset metadata for which you want to retrieve the facet values.</p>
+<p>[optional] <code>int count</code><br>An optional parameter, between 1 and 1000 (inclusive), representing the maximum number of retrieved assets. If not specified, the default is 100.</p>
+<h3 id="response-2">Response</h3>
+<p>A list of asset Ids and their matched fields.</p>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Body Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OK</td>
+<td>Asset facet list</td>
+<td>A list of asset facet values that match the search criteria. An empty array is returned if there are no matching asset metadata with the supplied category.</td>
+</tr>
+<tr>
+<td>204 OK</td>
+<td>empty</td>
+<td>No assets match your search criteria.</td>
+</tr>
+<tr>
+<td>400 Bad Request</td>
+<td>error</td>
+<td>The request is not valid. See the response body for additional details.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example">Example</h3>
+<p>If you have the following assets in your system:</p>
+<table>
+<thead>
+<tr>
+<th>Assets in System</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&quot;Id&quot;: &quot;CaliforniaAsset&quot;,    &quot;Metadata&quot;: [      { &quot;Name&quot;: &quot;Manufacturer&quot;, &quot;Value&quot;: &quot;GE&quot;, &quot;SdsTypeCode&quot;: &quot;String&quot; },      { &quot;Name&quot;: &quot;Location&quot;, &quot;Value&quot;: &quot;California&quot;, &quot;SdsTypeCode&quot;: &quot;String&quot; },    ]</td>
+</tr>
+<tr>
+<td>&quot;Id&quot;: &quot;CaliforniaAsset1&quot;,    &quot;Metadata&quot;: [      { &quot;Name&quot;: &quot;Manufacturer&quot;, &quot;Value&quot;: &quot;Rockwell&quot;, &quot;SdsTypeCode&quot;: &quot;String&quot; },      { &quot;Name&quot;: &quot;Location&quot;, &quot;Value&quot;: &quot;California&quot;, &quot;SdsTypeCode&quot;: &quot;String&quot; },    ]</td>
+</tr>
+<tr>
+<td>&quot;Id&quot;: &quot;PhillyAsset&quot;,    &quot;Metadata&quot;: [      { &quot;Name&quot;: &quot;Manufacturer&quot;, &quot;Value&quot;: &quot;GE&quot;, &quot;SdsTypeCode&quot;: &quot;String&quot; },      { &quot;Name&quot;: &quot;Location&quot;, &quot;Value&quot;: &quot;Philly&quot;, &quot;SdsTypeCode&quot;: &quot;String&quot; },    ]</td>
+</tr>
+</tbody>
+</table>
+<p>Performing a <code>GET search/assets/facets?Name=Location</code> returns the following response. </p>
+<pre><code class="lang-json">HTTP 200 OK 
+Content-Type: application/json
+[
+    {
+        &quot;Name&quot;: &quot;Location&quot;,
+        &quot;FacetValues&quot;: [
+            {
+                &quot;Value&quot;: &quot;California&quot;,
+                &quot;DocumentCount&quot;: 2
+            },
+            {
+                &quot;Value&quot;: &quot;Philly&quot;,
+                &quot;DocumentCount&quot;: 1
+            }
+        ]
+    }
+]
+</code></pre></article>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">

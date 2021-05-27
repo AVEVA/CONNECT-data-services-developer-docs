@@ -82,7 +82,7 @@
 <p>In order to retrieve stream data from an asset, you must first set up stream references for a given asset. The data that is retrieved is based on the resolved asset. By default, data calls return data for all stream references. </p>
 <p>If you are only interested in data from a subset of streams, you must specify the streams encoded as a URL parameter. The format is to add stream={streamName} for each stream you are interested in.</p>
 <p>For example, if a given asset has the following definition and you are only interested in HeaterA and PressureB for the last data call, you would send:</p>
-<pre><code class="lang-text">GET ...Namespaces/{namespaceId}/Assets/AssetStreamFilter/Data/Last?Stream={HeaterA},Stream={PressureB}
+<pre><code class="lang-text">GET ...Namespaces/{namespaceId}/Assets/AssetStreamFilter/data/last?Stream={HeaterA},Stream={PressureB}
 </code></pre><p>Note: Asset stream references can contain commas. In this case, the comma must be properly escaped.</p>
 <pre><code>{
     &quot;Id&quot;: &quot;AssetStreamFilter&quot;,
@@ -135,7 +135,7 @@
 <h2 id="get-asset-last-data"><code>Get Asset Last Data</code></h2>
 <p>Returns the last stored value for SDS streams in the resolved asset.</p>
 <h3 id="request">Request</h3>
-<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/Last?stream={stream 1}[,stream={stream n}]
+<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/data/last?stream={stream 1}[,stream={stream n}]
 </code></pre><h3 id="parameters">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -200,7 +200,7 @@ Content-Type: application/json
 <p>Returns sampled data for referenced Sds streams. </p>
 <p>Note: The inputs to this API matches the SDS stream Get samples values data call.  </p>
 <h3 id="request-1">Request</h3>
-<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/Sampled?startIndex={startIndex}&amp;endIndex={endIndex}&amp;intervals={intervals}&amp;stream={stream 1}[,stream={stream n}]
+<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/data/sampled?startIndex={startIndex}&amp;endIndex={endIndex}&amp;intervals={intervals}&amp;stream={stream 1}[,stream={stream n}]
 </code></pre><h3 id="parameters-1">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier </p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -276,7 +276,7 @@ Content-Type: application/json
 <h2 id="get-asset-summary-data"><code>Get Asset Summary Data</code></h2>
 <p>Returns summary data for referenced SDS streams. </p>
 <h3 id="request-2">Request</h3>
-<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/Summaries?startIndex={startIndex}&amp;endIndex={endIndex}&amp;count={count}&amp;stream={stream 1}[,stream={stream n}]
+<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/data/summaries?startIndex={startIndex}&amp;endIndex={endIndex}&amp;count={count}&amp;stream={stream 1}[,stream={stream n}]
 </code></pre><h3 id="parameters-2">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier </p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -471,7 +471,7 @@ Content-Type: application/json
 <h2 id="get-asset-window-data"><code>Get Asset Window Data</code></h2>
 <p>Returns window data for referenced SDS streams.</p>
 <h3 id="request-3">Request</h3>
-<pre><code>GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data?startIndex={startIndex}&amp;endIndex={endIndex}&amp;stream={stream 1}[,stream={stream n}]
+<pre><code>GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/data?startIndex={startIndex}&amp;endIndex={endIndex}&amp;stream={stream 1}[,stream={stream n}]
 </code></pre><h3 id="parameters-3">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -575,7 +575,7 @@ Content-Type: application/json
 <h2 id="get-asset-interpolated-data"><code>Get Asset Interpolated Data</code></h2>
 <p>Returns interpolated data for referenced SDS streams. </p>
 <h3 id="request-4">Request</h3>
-<pre><code>GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/Interpolated?startIndex={startIndex}&amp;endIndex={endIndex}&amp;count={count}&amp;stream={stream 1}[,stream={stream n}]
+<pre><code>GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/data/interpolated?startIndex={startIndex}&amp;endIndex={endIndex}&amp;count={count}&amp;stream={stream 1}[,stream={stream n}]
 </code></pre><h3 id="parameters-4">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier </p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>

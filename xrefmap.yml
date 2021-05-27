@@ -50,7 +50,7 @@ references:
   name: Asset Centric Data API
   href: Content_Portal/Documentation/Assets/asset-centric-data-api.html
 - uid: AssetOrAssetTypeAccessControlAPI
-  name: Asset and AssetType Access Control API
+  name: Asset and AssetType ACL API
   href: Content_Portal/Documentation/Assets/access-control-api.html
 - uid: AssetResolvedAsset
   name: Resolved Asset
@@ -68,7 +68,7 @@ references:
   name: Assets
   href: Content_Portal/Documentation/Assets/assets.html
 - uid: AssetsSearchAPI
-  name: Assets Search API
+  name: Assets search API
   href: Content_Portal/Documentation/Assets/asset-search-api.html
 - uid: AssetStatus
   name: Asset and Asset Type Status

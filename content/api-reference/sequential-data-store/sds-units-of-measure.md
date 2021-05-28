@@ -23,6 +23,11 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Units
 <br/><br/>`string namespaceId`
 <br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -71,6 +76,11 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Units/{uomId}
 <br/><br/>`string namespaceId`
 <br/><br/>`string uomId`
 <br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 

@@ -11,14 +11,16 @@ Metadata rules allow you to add metadata to streams. For more information about 
 
 ## Procedure
 
- The following are the main steps for creating a metadata rule and applying it to your streams.  Click on each step to go to the procedure for that step. <!-- Note to writer: The following links need to be checked. -->
+ The following are the main steps for creating a metadata rule and applying it to your streams.  Click on each step to go to the procedure for that step. 
 
 1. [Select a stream](#step-1)
 2. [Create the pattern for the metadata rule](#step-2)
 3. [Define metadata mappings](#step-3)
 4. [Apply the rule and preview the results](#step-4)
 
-##  <a name="step-1"><a>Step 1: Select a stream
+<!-- Writer's Comment: You must link using HTML anchors because Markdown does not permit colons in the anchor names -->
+
+## <a name="step-1"></a>Step 1: Select a stream
 
 The first step is to identify and select a stream whose name will be the basis for creating the metadata rule.
 
@@ -34,7 +36,7 @@ The first step is to identify and select a stream whose name will be the basis f
 
 1. Select **MyOCS.NorthAmerica.SLTC.PumpA** and click **Next**. 
 
-## <a name="step-2"><a>Step 2: Create the pattern for the metadata rule
+## <a name="step-2"></a>Step 2: Create the pattern for the metadata rule
 
 In this step, you identify delimiters in the stream name. Delimiters include periods (.), underscores (_), and hyphens (-). For each stream name part, you specify the type of data it is, that is, whether it is metadata, string literal, or wildcard. These settings have implications for the search pattern.
 
@@ -63,12 +65,12 @@ In this step, you identify delimiters in the stream name. Delimiters include per
    <!-- Am I correct that you have to be careful not to have streams with different patterns that could be mistakenly returned? For example, you could not have also have a pattern like MyOCS.{Location}.{Department}.* That is, you have to be sure that your stream pattern is unique and will only return the intended streams. -->
 
 6. Click **Next**. 
-## <a name="step-3"><a>Step 3: Define metadata mappings
+
+## <a name="step-3"></a>Step 3: Define metadata mappings
 
 On the Define Mappings page, you see the following. Below the stream pattern are the two metadata keys that will be mapped in this step. 
-![Define mappings](images/metadata-mapping.png)
 
- 
+![Define mappings](images/metadata-mapping.png)
 
 1. Select **Region**. (This is selected by default.)
 
@@ -105,7 +107,7 @@ On the Define Mappings page, you see the following. Below the stream pattern are
 
 10. Click **Next**.
 
-## <a name="step-4"><a>Step 4: Apply the rule and preview the results
+## <a name="step-4"></a>Step 4: Apply the rule and preview the results
 
 Apply the metadata rule to the streams and review the results. 
 

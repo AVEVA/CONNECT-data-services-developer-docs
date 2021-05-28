@@ -85,6 +85,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "Content_Portal/Documentation/Access_Control.md",
       "output": {
@@ -1318,9 +1321,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Content_Portal/Documentation/developer-guide/identity-dev/Access_Control.md",
       "output": {

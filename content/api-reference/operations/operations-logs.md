@@ -22,13 +22,18 @@ GET /api/v1/tenants/{tenantId}/logs
 
 `string tenantId`
 <br/>Id of the tenant.<br/><br/>
-`[optional] string start`
-<br/>Start timestamp of logs.<br/><br/>`[optional] string end`
-<br/>End timestamp of logs.<br/><br/>`[optional] array source`
-<br/>Filter the logs by one or more sources. This parameter can be repeated multiple times. Valid sources are: *Account Management* and *Identity Management*. Omit this parameter to retrieve all sources. Source values must be alphanumeric (case insensitive), underscore, and whitespace only, between 1 and 50 characters<br/><br/>`[optional] array severity`
-<br/>Filter the logs by one or more severities. This parameter can be repeated multiple times. Valid severities are: *Critical*, *Error*, *Warning*, *Information*, and *Verbose*. Omit this parameter to retrieve all severities.<br/><br/>`[optional] integer skip`
-<br/>Number of logs to skip.<br/><br/>`[optional] integer count`
+`[optional] string start start`
+<br/>Start timestamp of logs.<br/><br/>`[optional] string end end`
+<br/>End timestamp of logs.<br/><br/>`[optional] array source source`
+<br/>Filter the logs by one or more sources. This parameter can be repeated multiple times. Valid sources are: *Account Management* and *Identity Management*. Omit this parameter to retrieve all sources. Source values must be alphanumeric (case insensitive), underscore, and whitespace only, between 1 and 50 characters<br/><br/>`[optional] array severity severity`
+<br/>Filter the logs by one or more severities. This parameter can be repeated multiple times. Valid severities are: *Critical*, *Error*, *Warning*, *Information*, and *Verbose*. Omit this parameter to retrieve all severities.<br/><br/>`[optional] integer skip skip`
+<br/>Number of logs to skip.<br/><br/>`[optional] integer count count`
 <br/>Maximum number of logs to return.<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 #### Enumerated Values
 
@@ -69,13 +74,18 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/logs
 `string tenantId`
 <br/>Id of the tenant.<br/><br/>`string namespaceId`
 <br/>Id of the namespace.<br/><br/>
-`[optional] string start`
-<br/>Start timestamp of logs.<br/><br/>`[optional] string end`
-<br/>End timestamp of logs.<br/><br/>`[optional] array source`
-<br/>Filter the logs by one or more sources. This parameter can be repeated multiple times. Valid sources are: *Data Ingress*, *Data Storage*, *Data Views*, *Metadata*, *PI to OCS*. Omit this parameter to retrieve all sources. Source values must be alphanumeric (case insensitive), underscore, and whitespace only, between 1 and 50 characters<br/><br/>`[optional] array severity`
-<br/>Filter the logs by one or more severities. This parameter can be repeated multiple times. Valid severities are: *Critical*, *Error*, *Warning*, *Information*, and *Verbose*. Omit this parameter to retrieve all severities.<br/><br/>`[optional] integer skip`
-<br/>Number of logs to skip.<br/><br/>`[optional] integer count`
+`[optional] string start start`
+<br/>Start timestamp of logs.<br/><br/>`[optional] string end end`
+<br/>End timestamp of logs.<br/><br/>`[optional] array source source`
+<br/>Filter the logs by one or more sources. This parameter can be repeated multiple times. Valid sources are: *Data Ingress*, *Data Storage*, *Data Views*, *Metadata*, *PI to OCS*. Omit this parameter to retrieve all sources. Source values must be alphanumeric (case insensitive), underscore, and whitespace only, between 1 and 50 characters<br/><br/>`[optional] array severity severity`
+<br/>Filter the logs by one or more severities. This parameter can be repeated multiple times. Valid severities are: *Critical*, *Error*, *Warning*, *Information*, and *Verbose*. Omit this parameter to retrieve all severities.<br/><br/>`[optional] integer skip skip`
+<br/>Number of logs to skip.<br/><br/>`[optional] integer count count`
 <br/>Maximum number of logs to return.<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 #### Enumerated Values
 

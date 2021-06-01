@@ -12,5 +12,5 @@ You can start with any of the clients and progress to the other two.
 
 ## Next step
 
-Continue with [Get started with assets](xref:gpAssets).
+Continue with [Get started with assets](xref:gsAssets).
 

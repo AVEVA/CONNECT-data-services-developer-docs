@@ -1,5 +1,5 @@
 ---
-uid: gpAssetTypes
+uid: gsAssetTypes
 ---
 # Get started with asset types
 
@@ -71,4 +71,4 @@ You can take an existing asset and use it as the basis for creating an asset typ
 
 ## Next step
 
-Continue with [Get started with metadata rules](xref:gpMetadataRules).
+Continue with [Get started with metadata rules](xref:gsMetadataRules).

@@ -1,5 +1,5 @@
 ---
-uid: gpAssets
+uid: gsAssets
 ---
 # Get started with assets
 
@@ -67,4 +67,4 @@ Follow the procedure to create an asset.
 
 ## Next step
 
-Continue with [Get started with asset types](xref:gpAssetTypes).
+Continue with [Get started with asset types](xref:gsAssetTypes).

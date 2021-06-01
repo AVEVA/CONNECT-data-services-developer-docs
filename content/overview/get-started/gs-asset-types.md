@@ -68,4 +68,7 @@ You can take an existing asset and use it as the basis for creating an asset typ
 3. Click **Create**. 
 
    The MyOCS.TankType asset type is added to the asset type list and it changes the MyOCS.Asset asset and it is based on the asset type. Note that **Asset Type** is now set to **MyOCS.TankType**. 
+
 ## Next step
+
+Continue with [Get started with metadata rules](xref:gpMetadataRules).

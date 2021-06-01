@@ -66,3 +66,5 @@ Follow the procedure to create an asset.
    - Table View which displays the assets in a table format 
 
 ## Next step
+
+Continue with [Get started with asset types](xref:gpAssetTypes).

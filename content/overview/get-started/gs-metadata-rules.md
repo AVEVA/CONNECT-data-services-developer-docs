@@ -18,7 +18,7 @@ Metadata rules allow you to add metadata to streams. For more information about 
 3. [Define metadata mappings](#step-3)
 4. [Apply the rule and preview the results](#step-4)
 
-<!-- Writer's Comment: You must link using HTML anchors because Markdown does not permit colons in the anchor names -->
+<!-- Writer's Comment: You must link the steps above to the sections below using HTML anchors because Markdown does not permit colons in anchor names. -->
 
 ## <a name="step-1"></a>Step 1: Select a stream
 

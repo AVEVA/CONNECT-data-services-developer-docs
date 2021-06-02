@@ -9,6 +9,8 @@ uid: assets-request-manager
 
 <a id="opIdRequestManager_Get Assets"></a>
 
+Gets Assets.
+
 ### Request
 ```text 
 GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
@@ -21,7 +23,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 <br/><br/>`string namespaceId`
 <br/><br/>
 `[optional] integer skip skip`
-<br/><br/>`[optional] integer count count`
+<br/>Skip count.<br/><br/>`[optional] integer count count`
 <br/><br/>`[optional] string orderBy orderBy`
 <br/><br/>`[optional] string query query`
 <br/><br/>`[optional] integer pageSize pageSize`
@@ -55,13 +57,15 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|200|string|Asset that was created.|
 
 ---
 
 ## `Create Asset`
 
 <a id="opIdRequestManager_Create Asset"></a>
+
+Creates an Asset.
 
 ### Request
 ```text 
@@ -81,7 +85,7 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 
 ### Request Body
 
-<br/>
+Asset data transfer object.<br/>
 
 ```json
 {
@@ -121,7 +125,7 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|200|string|Asset that was created.|
 
 ---
 

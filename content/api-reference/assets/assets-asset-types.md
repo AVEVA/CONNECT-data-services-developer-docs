@@ -9,6 +9,8 @@ uid: assets-asset-types
 
 <a id="opIdAssetTypes_Get Asset Types"></a>
 
+Gets asset types.
+
 ### Request
 ```text 
 GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetTypes
@@ -21,7 +23,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetTypes
 <br/><br/>`string namespaceId`
 <br/><br/>
 `[optional] integer skip skip`
-<br/><br/>`[optional] integer count count`
+<br/>Skip count.<br/><br/>`[optional] integer count count`
 <br/><br/>`[optional] string query query`
 <br/><br/>
 
@@ -34,7 +36,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetTypes
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|200|string|Asset that was created.|
 
 ---
 

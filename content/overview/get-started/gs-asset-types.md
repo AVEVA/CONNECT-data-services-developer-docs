@@ -9,9 +9,14 @@ An asset type is a template for creating asset that share a common structure or 
 - [PI Server counterpart](xref:AssetTypes#pi-server-counterpart)
 - [Asset types best practices](xref:AssetTypes#asset-types-best-practices)
 
-## Create an asset type using the Asset Explorer 
+You can create an asset type in one of the following ways:
 
-Follow the procedure to use the Asset Explorer to create an asset type from the beginning.
+- [Create an asset type from the beginning](xref:asset type1) 
+- [Convert an existing asset to an asset type](xref:asset type2)
+
+## <a name="asset type1"></a> Create an asset type with the asset explorer
+
+Follow the procedure to use the asset explorer to create an asset type.
 
 1. Click the ![Menu icon](images/menu-icon.png) icon and click **Asset Explorer** (under Visualization).
 
@@ -50,7 +55,7 @@ Follow the procedure to use the Asset Explorer to create an asset type from the 
      -  ![Card view](images/card-view.png) &ndash; Card view which displays the asset types as a series of tiles 
      -  ![Table view](images/table-view.png) &ndash; Table view which displays the asset types in a table format 
 
-## Create an asset type from an asset
+## <a name="asset type2"></a>Create an asset type from an asset
 
 You can take an existing asset and use it as the basis for creating an asset type.
 
@@ -67,7 +72,7 @@ You can take an existing asset and use it as the basis for creating an asset typ
 
 3. Click **Create**. 
 
-   The MyOCS.TankType asset type is added to the asset type list and it changes the MyOCS.Asset asset and it is based on the asset type. Note that **Asset Type** is now set to **MyOCS.TankType**. 
+   The MyOCS.TankType asset type is added to the asset type list. Note that the **Asset Type** for the MyOCS.Asset asset is now set to **MyOCS.TankType**. 
 
 ## Next step
 

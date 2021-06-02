@@ -65,7 +65,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 
 <a id="opIdRequestManager_Create Asset"></a>
 
-Creates an Asset.
+Create a new asset with a specified Id. If the asset you are trying to create references an asset type(through the AssetTypeId property) and if the corresponding asset type has a metadata value with the same Id, then the name and SDS type code of the metadata value on the asset must be null. If the asset type does not have metadata value with a corresponding Id, the name and SDS type code on the asset cannot be null. To support flexibility on creation and update, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is created from an asset type.
 
 ### Request
 ```text 
@@ -85,7 +85,7 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 
 ### Request Body
 
-Asset data transfer object.<br/>
+<br/>
 
 ```json
 {
@@ -125,7 +125,7 @@ Asset data transfer object.<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|Asset that was created.|
+|200|string|The asset as persisted, including values for optional parameters that were omitted in the request.|
 
 ---
 

@@ -28,6 +28,11 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metrics/{collection}/{me
 <br/>Start date of the metric results to return.<br/><br/>`string end`
 <br/>End date of the metric results to return.<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|

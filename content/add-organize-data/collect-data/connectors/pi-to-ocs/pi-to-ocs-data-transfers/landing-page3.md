@@ -2,7 +2,7 @@
 uid: landing-page3
 ---
 
-# View PI system data for transfer
+# View PI System data for transfer
 
 This section contains the following topics:
 

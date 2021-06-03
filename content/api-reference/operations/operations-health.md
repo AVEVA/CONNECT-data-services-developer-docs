@@ -22,6 +22,11 @@ GET /api/v1/tenants/{tenantId}/health
 `string tenantId`
 <br/>Id of the Tenant<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|

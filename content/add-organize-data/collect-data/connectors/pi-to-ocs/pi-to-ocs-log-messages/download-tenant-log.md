@@ -9,7 +9,8 @@ Troubleshooting information can be found in OCS logs. Logs contain messages abou
 ## Download an OCS tenant log
 
 1. Click the waffle icon, then click **Logs**.
-   **Result:** The **Log** page opens to the **Tenant** tab.
+   
+   **Result:** The **Tenant** tab opens on the **Log** page.
 2. **Optional:** To view a log by namespace, click the **Namespace** tab.
 3. **Optional:** Click **Filter Logs** to filter logs by time range, service, and source.
 4. Select a log in the list, then click **Download Logs**.

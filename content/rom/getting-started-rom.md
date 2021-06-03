@@ -20,13 +20,13 @@ Procedure
     
     The asset explorer displays the available assets. In this example, it provides an overview of the health of the fleet of trucks.
 
-    Tip: Click on the icons in the toolbar to toggle between the card and table views of the assets.
+    **Tip**: Click on the icons in the toolbar to toggle between the card and table views of the assets.
     
     ![Card/Table View](images/AssetEditor_icons.png)
 
 3. Scan through the assets and identify any assets with a problematic status.
 
-    Tip: Use the Search box to filter the list of assets displayed.
+    **Tip**: Use the Search box to filter the list of assets displayed.
 
     ![](images/Assets.png)
 

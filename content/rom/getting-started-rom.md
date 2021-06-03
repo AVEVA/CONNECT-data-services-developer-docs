@@ -20,13 +20,13 @@ Procedure
     
     The asset explorer displays the available assets. In this example, it provides an overview of the health of the fleet of trucks.
 
-    **Tip**: Click on the icons in the toolbar to toggle between the card and table views of the assets.
+    **Tip:** Click on the icons in the toolbar to toggle between the card and table views of the assets.
     
     ![Card/Table View](images/AssetEditor_icons.png)
 
 3. Scan through the assets and identify any assets with a problematic status.
 
-    **Tip**: Use the Search box to filter the list of assets displayed.
+    **Tip:** Use the Search box to filter the list of assets displayed.
 
     ![](images/Assets.png)
 
@@ -100,7 +100,7 @@ Procedure
 
 12. Add other cursors at data points of interest.
 
-    Note: When two cursors are locked, the Legend table displays summary calculations for the values between the two cursors.
+    **Note:** When two cursors are locked, the Legend table displays summary calculations for the values between the two cursors.
 
 13. Click the link icon ![Copy link icon](images/copy_url_link.png) in the menu bar to copy the URL of the workspace.
 

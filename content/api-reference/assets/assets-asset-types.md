@@ -5,11 +5,11 @@ uid: assets-asset-types
 
 # Asset Types
 
-## `Get Asset Types`
+## `List Asset Types`
 
-<a id="opIdAssetTypes_Get Asset Types"></a>
+<a id="opIdAssetTypes_List Asset Types"></a>
 
-Gets asset types.
+Gets asset types.123
 
 ### Request
 ```text 
@@ -36,7 +36,54 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetTypes
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|Asset that was created.|
+|200|[AssetType](#schemaassettype)[]|Asset Type that was requested.123|
+|302|[AssetType](#schemaassettype)|The asset you attempted to create is identical to one that already exists.|
+|400|[ErrorResponse](#schemaerrorresponse)|The request is not valid. See the response body for additional details.|
+|403|[ErrorResponse](#schemaerrorresponse)|You are not authorized to get asset types.|
+|409|[ErrorResponse](#schemaerrorresponse)|The asset you attempted to create has a conflict. See the response body for additional details..|
+|500|[ErrorResponse](#schemaerrorresponse)|The asset you attempted to create has a conflict. See the response body for additional details..|
+
+#### Example response body
+> 200 Response
+
+```json
+[
+  {
+    "Id": "string",
+    "Name": "string",
+    "Description": "string",
+    "Metadata": [
+      {
+        "Id": "string",
+        "Name": "string",
+        "Description": "string",
+        "SdsTypeCode": "Empty",
+        "Value": null,
+        "Uom": "string"
+      }
+    ],
+    "TypeReferences": [
+      {
+        "StreamReferenceId": "string",
+        "StreamReferenceName": "string",
+        "Description": "string",
+        "TypeId": "string"
+      }
+    ],
+    "Status": {
+      "StreamReferenceId": "string",
+      "StreamPropertyId": "string",
+      "ValueStatusMappings": [
+        {
+          "Value": null,
+          "Status": null,
+          "DisplayName": null
+        }
+      ]
+    }
+  }
+]
+```
 
 ---
 
@@ -940,6 +987,34 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assetTypes
 |Good|1|
 |Warning|2|
 |Bad|3|
+
+---
+
+### ErrorResponse
+
+<a id="schemaerrorresponse"></a>
+<a id="schema_ErrorResponse"></a>
+<a id="tocSerrorresponse"></a>
+<a id="tocserrorresponse"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|OperationId|string|false|true|None|
+|Error|string|false|true|None|
+|Reason|string|false|true|None|
+|Resolution|string|false|true|None|
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string"
+}
+
+```
 
 ---
 

@@ -10,6 +10,10 @@ aadTenantId:
   type: text/plain
   value: |
     Azure Active Directory tenant identifier
+tenantId-OCS:
+  type: text/plain
+  value: |
+    OCS tenant identifier
 aadCount:
   type: text/plain
   value: |
@@ -18,6 +22,10 @@ aadSkip:
   type: text/plain
   value: |
     Number of Azure Active Directory tenants to skip
+aadQuery:
+  type: text/plain
+  value: |
+    (Not supported) Query identifier
 groupId:
   type: text/plain
   value: |

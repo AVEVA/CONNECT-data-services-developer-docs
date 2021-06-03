@@ -2,7 +2,7 @@
   href: overview-data-transfers.md
 - name: Create a data transfer
   href: create-a-data-transfer.md
-- name: Transfer data to OCS
+- name: View PI system data for transfer
   href: transfer-data-to-ocs.md
 - name: Data transfer statuses
   href: data-transfer-statuses.md

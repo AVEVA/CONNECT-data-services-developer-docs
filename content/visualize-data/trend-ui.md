@@ -4,7 +4,7 @@ uid: TrendUserInterface
 
 # Trend page
 
-The screen capture and table below identify the important elements of the Trend user interface and how to use these elements to interact with the application. For more information on how to use the Trend page to analyze traces, see [Getting Started with Trend Data](xref:GettingStartedWithTrendData).
+The screen capture and table below identify the important elements of the Trend user interface and how to use these elements to interact with the application. For more information on how to use the Trend page to analyze traces, see [Get Started with Trend Data](xref:GettingStartedWithTrendData).
 
 ![Trend page](images/Trend_full_page.png)
 

@@ -2,11 +2,10 @@
 uid: landing-page3
 ---
 
+# View PI system data for transfer
 
-## Transfer PI System data to OCS
-<br>
 This section contains the following topics:
-<br>
+
 <br>
 
 * [Overview of data transfers](xref:overview-data-transfers)

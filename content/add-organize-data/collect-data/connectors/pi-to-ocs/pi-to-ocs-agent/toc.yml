@@ -1,4 +1,4 @@
-- name: PI to OCS Agent maintenance
+- name: Update PI to OCS Agent
   href: update-agent.md
 - name: Uninstall an agent
   href: uninstall-pi-to-ocs-agent.md

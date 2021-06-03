@@ -5,11 +5,15 @@ namespaceId:
 tenantId:
   type: text/plain
   value: |
-    OCS tenant identifier
+    Tenant identifier
 aadTenantId:
   type: text/plain
   value: |
     Azure Active Directory tenant identifier
+tenantId-OCS:
+  type: text/plain
+  value: |
+    OCS tenant identifier
 aadCount:
   type: text/plain
   value: |

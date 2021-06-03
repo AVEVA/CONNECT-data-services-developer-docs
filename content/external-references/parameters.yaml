@@ -29,7 +29,7 @@ clientId:
 id:
   type: text/plain
   value: |
-    Unordered list of Ids for all clients to get. Empty or whitespace Ids will be ignored.
+    Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.
 tag:
   type: text/plain
   value: |

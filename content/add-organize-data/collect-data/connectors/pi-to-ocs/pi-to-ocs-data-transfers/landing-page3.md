@@ -2,7 +2,7 @@
 uid: landing-page3
 ---
 
-# View PI System data for transfer
+# Transfer PI System data to OCS
 
 This section contains the following topics:
 
@@ -10,7 +10,7 @@ This section contains the following topics:
 
 * [Overview of data transfers](xref:overview-data-transfers)
 * [Create a data transfer](xref:create-a-data-transfer)
-* [View PI System data for transfer](xref:transfer-data-to-ocs)
+* [Transfer PI System data to OCS](xref:transfer-data-to-ocs)
 * [Data transfer statuses](xref:data-transfer-statuses)
 * [Point type change](xref:pi-point-change)
 * [Confirm data retrieval](xref:confirm-data-retrieval)

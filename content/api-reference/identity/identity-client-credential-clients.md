@@ -118,9 +118,9 @@ Allowed for these roles:
 
 ---
 
-## `Create Client Credential Client (`v1` path)`
+## `Create Client Credential Client (v1 path)`
 
-<a id="opIdClientCredentialClients_Create Client Credential Client (`v1` path)"></a>
+<a id="opIdClientCredentialClients_Create Client Credential Client (v1 path)"></a>
 
 Creates a client credential client. A client unique identifier and client Secret will be generated to perform authentication. Make sure to store the secret somewhere safe as we do not store the actual value after the creation step. If you do not have access to the secret value, we suggest deleting the secret and adding a new one for this client. Clients have unique Ids in a tenant. Currently there is a limit of 50000 clients (of any type) per tenant.
 
@@ -206,9 +206,9 @@ Allowed for these roles:
 
 ---
 
-## `Get Client Credential Client (`v1` path)`
+## `Get Client Credential Client (v1 path)`
 
-<a id="opIdClientCredentialClients_Get Client Credential Client (`v1` path)"></a>
+<a id="opIdClientCredentialClients_Get Client Credential Client (v1 path)"></a>
 
 Gets a client credential client.
 
@@ -308,9 +308,9 @@ Allowed for these roles:
 
 ---
 
-## `Update Client Credential Client (`v1` path)`
+## `Update Client Credential Client (v1 path)`
 
-<a id="opIdClientCredentialClients_Update Client Credential Client (`v1` path)"></a>
+<a id="opIdClientCredentialClients_Update Client Credential Client (v1 path)"></a>
 
 Updates a client credential client. It can take up to one hour for these values to manifest in the authentication process.
 
@@ -511,9 +511,9 @@ Allowed for these roles:
 
 ---
 
-## `Create Client Credential Client (`v1-preview` path)`
+## `Create Client Credential Client (v1-preview path)`
 
-<a id="opIdClientCredentialClients_Create Client Credential Client (`v1-preview` path)"></a>
+<a id="opIdClientCredentialClients_Create Client Credential Client (v1-preview path)"></a>
 
 Creates a client credential flow client.
 
@@ -596,9 +596,9 @@ Allowed for these roles:
 
 ---
 
-## `Get Client Credential Client (`v1-preview` path)`
+## `Get Client Credential Client (v1-preview path)`
 
-<a id="opIdClientCredentialClients_Get Client Credential Client (`v1-preview` path)"></a>
+<a id="opIdClientCredentialClients_Get Client Credential Client (v1-preview path)"></a>
 
 Gets a client credential client.
 
@@ -655,9 +655,9 @@ Allowed for these roles:
 
 ---
 
-## `Update Client Credential Client (`v1-preview` path)`
+## `Update Client Credential Client (v1-preview path)`
 
-<a id="opIdClientCredentialClients_Update Client Credential Client (`v1-preview` path)"></a>
+<a id="opIdClientCredentialClients_Update Client Credential Client (v1-preview path)"></a>
 
 Update a client credential client.
 

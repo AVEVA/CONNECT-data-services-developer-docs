@@ -6,9 +6,9 @@ uid: identity-client-credential-clients-roles
 # Client Credential Clients Roles
 APIs for getting, updating, and deleting client credential client roles.
 
-## `List Roles for Client Credential Client (`Client Credential Clients` path)`
+## `List Roles for Client Credential Client (Client Credential Clients path)`
 
-<a id="opIdRoles_List Roles for Client Credential Client (`Client Credential Clients` path)"></a>
+<a id="opIdRoles_List Roles for Client Credential Client (Client Credential Clients path)"></a>
 
 Returns a list of roles for the specified client credential client.
 
@@ -72,9 +72,9 @@ Allowed for these roles:
 
 ---
 
-## `Get Roles for Client Credential Client Header (`Client Credential Clients` path)`
+## `Get Roles for Client Credential Client Header (Client Credential Clients path)`
 
-<a id="opIdRoles_Get Roles for Client Credential Client Header (`Client Credential Clients` path)"></a>
+<a id="opIdRoles_Get Roles for Client Credential Client Header (Client Credential Clients path)"></a>
 
 Head request to get the total number of client credential client roles for the specified client credential client
 
@@ -114,9 +114,9 @@ Allowed for these roles:
 
 ---
 
-## `Replace Client Credential Client's Roles (`Client Credential Clients` path)`
+## `Replace Client Credential Client's Roles (Client Credential Clients path)`
 
-<a id="opIdRoles_Replace Client Credential Client's Roles (`Client Credential Clients` path)"></a>
+<a id="opIdRoles_Replace Client Credential Client's Roles (Client Credential Clients path)"></a>
 
 Replaces existing client credential client roles.
 
@@ -192,9 +192,9 @@ Allowed for these roles:
 
 ---
 
-## `List Roles for Client Credential Client (`Clients` path)`
+## `List Roles for Client Credential Client (Clients path)`
 
-<a id="opIdRoles_List Roles for Client Credential Client (`Clients` path)"></a>
+<a id="opIdRoles_List Roles for Client Credential Client (Clients path)"></a>
 
 Returns a list of roles for the specified client credential client.
 
@@ -258,9 +258,9 @@ Allowed for these roles:
 
 ---
 
-## `Get Roles for Client Credential Client Header (`Clients` path)`
+## `Get Roles for Client Credential Client Header (Clients path)`
 
-<a id="opIdRoles_Get Roles for Client Credential Client Header (`Clients` path)"></a>
+<a id="opIdRoles_Get Roles for Client Credential Client Header (Clients path)"></a>
 
 Head request to get the total number of client credential client roles for the specified client credential client
 
@@ -300,9 +300,9 @@ Allowed for these roles:
 
 ---
 
-## `Replace Client Credential Client's Roles (`Clients` path)`
+## `Replace Client Credential Client's Roles (Clients path)`
 
-<a id="opIdRoles_Replace Client Credential Client's Roles (`Clients` path)"></a>
+<a id="opIdRoles_Replace Client Credential Client's Roles (Clients path)"></a>
 
 Replaces existing client credential client roles.
 

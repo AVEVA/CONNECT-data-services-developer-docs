@@ -120,9 +120,9 @@ Allowed for these roles:
 
 ---
 
-## `Create User (`v1` path)`
+## `Create User (v1 path)`
 
-<a id="opIdUsers_Create User (`v1` path)"></a>
+<a id="opIdUsers_Create User (v1 path)"></a>
 
 Creates a user in the tenant. This endpoint does not create an invitation for the user. You will need to create an invitation in the respective endpoint for this user, otherwise they will not be able to finish the sign-up process. Users have unique Ids in a tenant. Currently there is a limit of 50000 users per tenant. For Windows Active Directory users, the externalUserId must be specified.
 
@@ -745,9 +745,9 @@ Allowed for these roles:
 
 ---
 
-## `Create User (`v1-preview` path)`
+## `Create User (v1-preview path)`
 
-<a id="opIdUsers_Create User (`v1-preview` path)"></a>
+<a id="opIdUsers_Create User (v1-preview path)"></a>
 
 Creates a `User`.
 

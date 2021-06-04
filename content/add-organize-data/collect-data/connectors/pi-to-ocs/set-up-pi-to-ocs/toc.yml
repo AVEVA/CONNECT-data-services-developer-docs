@@ -1,6 +1,6 @@
 - name: Access the OCS portal
   href: access-ocs-portal.md
-- name: Create a PI system connection
+- name: Create a PI System connection
   href: create-a-pi-to-ocs-connection.md
 - name: Install the PI to OCS Agent
   href: install-agent.md

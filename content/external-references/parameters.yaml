@@ -97,12 +97,24 @@ identityProviderSkip:
 clientcredentialclientId:
   type: text/plain
   value: |
-    Client credential client identifier
+    Client credential client identifier. Empty, whitespace or null identifiers will be ignored.
+clientcredentialclientQuery:
+  type: text/plain
+  value: |
+    (Not supported) Query identifier
 clientcredentialclientCount:
+  type: text/plain
+  value: |
+    Maximum number of clients to return. Will be ignored if a list of identifiers is passed.
+clientcredentialclientroleCount:
   type: text/plain
   value: |
     Maximum number of roles to return
 clientcredentialclientSkip:
+  type: text/plain
+  value: |
+    Number of clients to skip. Will be ignored if a list of identifiers is passed.
+clientcredentialclientroleSkip:
   type: text/plain
   value: |
     Number of roles to skip
@@ -126,6 +138,18 @@ userId:
   type: text/plain
   value: |
     User identifier
+query-user:
+  type: text/plain
+  value: |
+    (Not supported) Query identifier
+skip-user:
+  type: text/plain
+  value: |
+    Number of roles to skip
+count-user:
+  type: text/plain
+  value: |
+    Maximum number of roles to return
 datasourceId:
   type: text/plain
   value: |

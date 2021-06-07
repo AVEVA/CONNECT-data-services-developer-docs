@@ -59,7 +59,7 @@ In this scenario, the default reference rules resolve as follows:
 ### Request
 
 ```text
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Resolved
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/resolved
 ```
 
 ### Parameters
@@ -92,6 +92,8 @@ Content-Type: application/json
 {
     "Id": "AssetTest",
     "Name": "AssetName",
+    "AssetTypeId": "IdOfAssetType",
+    "AssetTypeName": "NameOfAssetType",
     "Metadata": [
         {
             "Id": "metadataId_101",
@@ -152,7 +154,7 @@ Content-Type: application/json
 
 ### Request
 ```text
-POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets/Resolved
+POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/Assets/resolved
 ```
 
 ### Parameters

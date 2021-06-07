@@ -1,6 +1,5 @@
 ---
 uid: community-invitations
-
 ---
 
 # Invitations
@@ -21,11 +20,6 @@ PUT /api/v1-preview/communityinvitations/{invitationId}
 
 `string invitationId`
 <br/>Invitation identifier<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Request Body
 
@@ -347,10 +341,6 @@ DELETE /api/v1-preview/tenants/{tenantId}/communities/{communityId}/invitations/
 <br/>Community identifier.<br/><br/>`string invitationId`
 <br/>Invitation identifie.r<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 

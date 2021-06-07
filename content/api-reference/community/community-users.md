@@ -1,6 +1,5 @@
 ---
 uid: community-users
-
 ---
 
 # Users

@@ -1,7 +1,7 @@
 ---
 uid: community-summary
-
 ---
+
 
 # Summary
 API that returns the summary information of the community's stream consumption

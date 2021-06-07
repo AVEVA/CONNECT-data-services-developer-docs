@@ -1,4 +1,7 @@
+---
+uid: identity-claim-type-names
 
+---
 
 # Claim Type Names
 An identity provider claim type name is the attribute needed when creating an identity provider claim.

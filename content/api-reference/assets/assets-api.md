@@ -127,7 +127,7 @@ Create a new asset with a specified `Id`.
 If the asset you are trying to create references an asset type (through the AssetTypeId property) and if the corresponding asset type has a metadata value with the same `Id`, then the name and SDS type code of the metadata value on the asset must be null. If the asset type does not have metadata value with a corresponding `Id`, the name and SDS type code on the asset cannot be null.
 
 To support flexibility on creation and update, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is created from an asset type.
-## Examples
+### Examples
 
 | Asset values                                             | Metadata values on the asset type                          | How references are resolved                                             |
 | ----------------------------------------------------| ----------------------------------------------------- | ------------------------------------------------- | 
@@ -189,9 +189,10 @@ The response includes a status code, a body, and the Etag version in the HTTP re
 | Status Code               | Body Type | Description                                     |
 | ------------------------- | --------- | ----------------------------------------------- |
 | 200 OK                    | `Asset`  | The asset as persisted, including values for optional parameters that were omitted in the request.                           |
+| 302 Found | Redirect | The asset you attempted to create is identical to one that already exists |
 | 400 Bad Request           | error     | The request is not valid. See the response body for additional details.      |
 | 403 Forbidden            | error     | You are not authorized to create assets.           |
-| 409 Conflict | error     | The asset create has a conflict. See the response body for additional details. |
+| 409 Conflict | error     | The asset you attempted to create has a conflict. See the response body for additional details. |
 
 ***
 
@@ -202,7 +203,7 @@ Create multiple assets in a single call.
 ### Request 
 
 ```text 
-POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets 
+POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/Assets 
 ```
 
 ### Parameters  
@@ -236,7 +237,7 @@ The response includes a status code and a body.
 Create or update an asset with a specified `Id`. If the asset already exists, you can specify an If-Match property in the HTTP request header to ensure that the asset is modified only if its version matches.
 
 To support flexibility, on creation and update, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is from an asset type.
-## Examples
+### Examples
 | Asset values                                            | Metadata values on the asset type                          | How references are resolved                                              |
 | ----------------------------------------------------| ----------------------------------------------------- | ------------------------------------------------- | 
 | Id = "Metadata Id"​ and Name = Not specified         | Id matches the asset type's Metadata Id | Uses the matching asset type Metadata Name |
@@ -334,7 +335,7 @@ Delete all assets with the specified Ids. Use this API to delete up to a maximum
 ### Request 
 
 ```text 
-DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/assets/delete
+DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/Assets?id={assetId_1}[,id={assetId_n}]
 ```
 
 ### Parameters  
@@ -345,9 +346,8 @@ The tenant identifier
 `string namespaceId`   
 The namespace identifier
 
-#### Request body 
-
-A list of asset `Id`s.
+`string[] ids`  
+A parameter consisting of a comma-separated list of asset Ids that you want to delete.
 
 ### Response 
 
@@ -357,5 +357,4 @@ The response includes a status code and a body.
 | ------------------------- | --------- | ----------------------------------------------- |
 | 204 No Content            | none  | The assets with the specified `Id`s are deleted.                              |
 | 207 Multi-Status | partial success | Array of errors. Assets that did not encounter errors are deleted. |
-| 209 Conflict | error | See response body for additional details. |
 | 400 Bad Request | error | The request is not valid. See the response body for additional details. |

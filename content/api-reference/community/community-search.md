@@ -1,6 +1,5 @@
 ---
 uid: community-search
-
 ---
 
 # Search
@@ -124,5 +123,5 @@ The StreamSearchResult object. This is the model representation exposed to calle
 
 ```
 
----
+
 

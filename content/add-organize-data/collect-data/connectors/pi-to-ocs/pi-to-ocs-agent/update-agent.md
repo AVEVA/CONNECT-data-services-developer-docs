@@ -2,7 +2,7 @@
 uid: agent-maintenance
 ---
 
-# PI to OCS Agent maintenance
+# Update PI to OCS Agent
 
 Enhancements and bug fixes for PI to OCS may require you to update both the PI to OCS Agent and the PI System connection. Since these components work together, updating one usually requires that the other is updated also.
 

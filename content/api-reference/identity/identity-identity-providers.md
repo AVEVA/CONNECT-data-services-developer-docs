@@ -1,4 +1,7 @@
+---
+uid: identity-identity-providers
 
+---
 
 # Identity Providers
 An identity provider provides authentication services and maintains credentials for users that have been provisioned in OCS. Each tenant can have one or more identity providers. Each user is either assigned one of the available identity providers in the tenant or chooses one in the Home Realm Discovery page when accepting the invitation. A user can only log in with the same identity provider they signed up with.

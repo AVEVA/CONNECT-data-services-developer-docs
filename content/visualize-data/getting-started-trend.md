@@ -2,7 +2,7 @@
 uid: GettingStartedWithTrendData
 ---
 
-Getting started with trend data
+Get started with trend data
 =================================================
 
 Use trace data in a trend to monitor assets, anticipate problems, and proactively perform preventative maintenance. The following procedure describes how to display traces in your trend and glean useful information from your data.
@@ -10,9 +10,9 @@ Use trace data in a trend to monitor assets, anticipate problems, and proactivel
 Procedure
 ---------
 
-1.  Log in to OSIsoft Cloud Services.
+1. Log in to OSIsoft Cloud Services.
 
-2.  Click the navigation icon ![](images/icon_navigation_bigger.png) (upper left corner) and click **Trend** (under Visualization). 
+2. Click the navigation icon ![](images/icon_navigation_bigger.png) (upper left corner) and click **Trend** (under Visualization). 
     
 3. In the Add Traces blade, click the **+** sign to add the trace to the trend. 
 

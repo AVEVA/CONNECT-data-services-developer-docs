@@ -14,6 +14,10 @@ The following tasks must be performed before you can complete a data transfer:
 4.	Create a data transfer.
 5.	Validate data flow.
 
-**Note:** If you have slow moving PI points that do not update often, you might want your data in OCS before it is archived on PI Data Archive. To accomplish this task, you will need to turn off compression for these PI points to ensure snapshot data is collected.  
+## Slow moving PI points
+If you have slow moving PI points that do not update often, you might want your data in OCS before it is archived on PI Data Archive. Perform the following steps to accomplish this task:
 
-OSIsoft recommends turning off compression only for slow moving PI points. In general, this practice is not required for most tags and can cause unnecessary overhead and data collection.
+1. Turn off compression for these PI points to ensure snapshot data is collected. 
+2. Be sure to restart the transfer. 
+
+**Note:** OSIsoft recommends only turning off compression for slow moving PI points. In general, this practice is not required for most tags and can cause unnecessary overhead and data collection.

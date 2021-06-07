@@ -42,7 +42,7 @@ To create a new metadata rule, follow these steps:
 17. Enter the metadata rule **Name** and **Description** in the `Preview and Run` page.
 18. Click **Save & Execute**.
 
-   ### Metadata types
+## Metadata types
 
 | Metadata type                       | Description                                        |
 |---------------------------------|------------------------------------------------------------|

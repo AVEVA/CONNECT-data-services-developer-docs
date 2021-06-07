@@ -6,6 +6,42 @@ tenantId:
   type: text/plain
   value: |
     Tenant identifier
+aadTenantId:
+  type: text/plain
+  value: |
+    Azure Active Directory tenant identifier
+tenantId-OCS:
+  type: text/plain
+  value: |
+    OCS tenant identifier
+aadCount:
+  type: text/plain
+  value: |
+    Maximum number of Azure Active Directory tenants to return
+aadSkip:
+  type: text/plain
+  value: |
+    Number of Azure Active Directory tenants to skip
+aadQuery:
+  type: text/plain
+  value: |
+    (Not supported) Query identifier
+groupId:
+  type: text/plain
+  value: |
+    Group identifier
+clientId:
+  type: text/plain
+  value: |
+    Client identifier
+id:
+  type: text/plain
+  value: |
+    Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.
+tag:
+  type: text/plain
+  value: |
+    Only return clients that have these tags
 query:
   type: text/plain
   value: |
@@ -18,6 +54,18 @@ skip:
   type: text/plain
   value: |
     Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.
+query-identity:
+  type: text/plain
+  value: |
+    (Not supported) Query identifier
+count-identity:
+  type: text/plain
+  value: |
+    Maximum number of clients to return. Default value is 100.
+skip-identity:
+  type: text/plain
+  value: |
+    Number of clients to skip
 streamId:
   type: text/plain
   value: |
@@ -30,6 +78,34 @@ identityProviderId:
   type: text/plain
   value: |
     Identity provider identifier
+identityProviderClaimId:
+  type: text/plain
+  value: |
+    Identity provider claim identifier
+identityProviderTypeNameClaimId:
+  type: text/plain
+  value: |
+    Identity provider claim type name identifier
+identityProviderCount:
+  type: text/plain
+  value: |
+    Maximum number of identity providers to return
+identityProviderSkip:
+  type: text/plain
+  value: |
+    Number of identity providers to skip
+clientcredentialclientId:
+  type: text/plain
+  value: |
+    Client credential client identifier
+clientcredentialclientCount:
+  type: text/plain
+  value: |
+    Maximum number of roles to return
+clientcredentialclientSkip:
+  type: text/plain
+  value: |
+    Number of roles to skip
 tenantId-community:
   type: text/plain
   value: |

@@ -87,10 +87,7 @@ POST /api/v1-preview/tenants/{tenantId}/Communities
 `string tenantId`
 <br/>Owning tenant identifier<br/><br/>
 
-#### Request Headers
 
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Request Body
 
@@ -164,10 +161,6 @@ GET /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
 <br/>Owning tenant identifier<br/><br/>`string communityId`
 <br/>Community id<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -229,10 +222,6 @@ PUT /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
 <br/>Owning tenant identifier<br/><br/>`string communityId`
 <br/>Community identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Request Body
 
@@ -300,10 +289,6 @@ DELETE /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
 <br/>Owning tenant identifier<br/><br/>`string communityId`
 <br/>The id of the community to delete.<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 

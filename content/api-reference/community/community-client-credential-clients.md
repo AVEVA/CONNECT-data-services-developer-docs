@@ -85,10 +85,7 @@ HEAD /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/ClientCredenti
 <br/>Tenant identifier<br/><br/>`string communityId`
 <br/>Community identifier<br/><br/>
 
-#### Request Headers
 
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -142,10 +139,6 @@ PUT /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/ClientCredentia
 <br/>Community identifier<br/><br/>`string clientId`
 <br/>Client credential client identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Request Body
 
@@ -215,10 +208,6 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/ClientCreden
 <br/>Community identifier<br/><br/>`string clientId`
 <br/>Client credential client identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 

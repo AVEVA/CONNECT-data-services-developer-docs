@@ -84,11 +84,6 @@ GET /api/v1-preview/communityinvitations/{invitationId}/details
 `string invitationId`
 <br/>Invitation identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -205,11 +200,6 @@ POST /api/v1-preview/tenants/{tenantId}/communities/{communityId}/invitations
 `string tenantId`
 <br/>Owning tenant identifier<br/><br/>`string communityId`
 <br/>Community identifier<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Request Body
 
@@ -337,9 +327,9 @@ DELETE /api/v1-preview/tenants/{tenantId}/communities/{communityId}/invitations/
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string communityId`
-<br/>Community identifier.<br/><br/>`string invitationId`
-<br/>Invitation identifie.r<br/><br/>
+<br/>Tenant identifier<br/><br/>`string communityId`
+<br/>Community identifier<br/><br/>`string invitationId`
+<br/>Invitation identifier<br/><br/>
 
 
 ### Response

@@ -217,7 +217,7 @@ Filter strings are not case sensitive. Numeric types must be passed as strings a
 | filter[location]=Earth                       | Filter that only returns assets that contain the metadata name = **location** with **Earth** as the metadata value. |
 | filter[location]=Earth&filter[device]=tracer | Filter that only returns assets that contain both of the following metadata. The first metadata name = **location** with **Earth** as the metadata value, and the second metadata is name = **device** with **tracer** as the metadata value. |
 | filter[AssetTypeName]=HeaterType             | Filter that only returns assets with an AssetTypeName of "HeaterType." |
-| filter[status]=Bad                           | Filter to ensure that only assets with a bad status. Status filters can contain "Good", "Bad", Warning" and "Unknown". |
+| filter[status]=Bad                           | Filter that returns only assets with a bad status. Status filters can have the values "Good", "Bad", Warning", and "Unknown". |
 
 
 ## `Asset Results by Pages` 

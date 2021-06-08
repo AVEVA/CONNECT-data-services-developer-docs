@@ -6,26 +6,18 @@ tenantId:
   type: text/plain
   value: |
     Tenant identifier
-aadTenantId:
-  type: text/plain
-  value: |
-    Azure Active Directory tenant identifier
 tenantId-OCS:
   type: text/plain
   value: |
     OCS tenant identifier
-aadCount:
+tenantId-community:
   type: text/plain
   value: |
-    Maximum number of Azure Active Directory tenants to return
-aadSkip:
+    Owning tenant identifier
+tenantId-aad:
   type: text/plain
   value: |
-    Number of Azure Active Directory tenants to skip
-aadQuery:
-  type: text/plain
-  value: |
-    (Not supported) Query identifier
+    Azure Active Directory tenant identifier
 groupId:
   type: text/plain
   value: |
@@ -34,46 +26,10 @@ clientId:
   type: text/plain
   value: |
     Client identifier
-id:
-  type: text/plain
-  value: |
-    Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.
-tag:
-  type: text/plain
-  value: |
-    Only return clients that have these tags
-query:
-  type: text/plain
-  value: |
-    Query identifier
-count:
-  type: text/plain
-  value: |
-    Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.
-skip:
-  type: text/plain
-  value: |
-    Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.
-query-identity:
-  type: text/plain
-  value: |
-    (Not supported) Query identifier
-count-identity:
-  type: text/plain
-  value: |
-    Maximum number of clients to return. Default value is 100.
-skip-identity:
-  type: text/plain
-  value: |
-    Number of clients to skip
 streamId:
   type: text/plain
   value: |
     Stream identifier
-key:
-  type: text/plain
-  value: |
-    Key specifying the metadata value of interest
 identityProviderId:
   type: text/plain
   value: |
@@ -86,46 +42,6 @@ identityProviderTypeNameClaimId:
   type: text/plain
   value: |
     Identity provider claim type name identifier
-identityProviderCount:
-  type: text/plain
-  value: |
-    Maximum number of identity providers to return
-identityProviderSkip:
-  type: text/plain
-  value: |
-    Number of identity providers to skip
-clientcredentialclientId:
-  type: text/plain
-  value: |
-    Client credential client identifier. Empty, whitespace or null identifiers will be ignored.
-clientcredentialclientQuery:
-  type: text/plain
-  value: |
-    (Not supported) Query identifier
-clientcredentialclientCount:
-  type: text/plain
-  value: |
-    Maximum number of clients to return. Will be ignored if a list of identifiers is passed.
-clientcredentialclientroleCount:
-  type: text/plain
-  value: |
-    Maximum number of roles to return
-clientcredentialclientSkip:
-  type: text/plain
-  value: |
-    Number of clients to skip. Will be ignored if a list of identifiers is passed.
-clientcredentialclientroleSkip:
-  type: text/plain
-  value: |
-    Number of roles to skip
-tenantId-community:
-  type: text/plain
-  value: |
-    Owning tenant identifier
-query-community:
-  type: text/plain
-  value: |
-    (Not supported) Query identifier
 communityId:
   type: text/plain
   value: |
@@ -138,18 +54,6 @@ userId:
   type: text/plain
   value: |
     User identifier
-query-user:
-  type: text/plain
-  value: |
-    (Not supported) Query identifier
-skip-user:
-  type: text/plain
-  value: |
-    Number of roles to skip
-count-user:
-  type: text/plain
-  value: |
-    Maximum number of roles to return
 datasourceId:
   type: text/plain
   value: |
@@ -158,10 +62,6 @@ dataViewId:
   type: text/plain
   value: |
     Data view identifier
-cancellation-token:
-  type: text/plain
-  value: |
-    Cancellation token
 subscriptionId:
   type: text/plain
   value: |
@@ -170,3 +70,47 @@ topicId:
   type: text/plain
   value: |
     Topic identifier
+secretId:
+  type: text/plain
+  value: |
+    Secret identifier
+id:
+  type: text/plain
+  value: |
+    Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.
+tag:
+  type: text/plain
+  value: |
+    Only return clients that have these tags
+query:
+  type: text/plain
+  value: |
+    Query identifier
+query-community:
+  type: text/plain
+  value: |
+    (Not supported) Query identifier
+query-searchstring:
+  type: text/plain
+  value: |
+    (Not supported) Search string identifier
+count:
+  type: text/plain
+  value: |
+    Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.
+skip:
+  type: text/plain
+  value: |
+    Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.
+key:
+  type: text/plain
+  value: |
+    Key specifying the metadata value of interest
+cancellation-token:
+  type: text/plain
+  value: |
+    Cancellation token
+scheme:
+  type: text/plain
+  value: |
+    Scheme name (for example, AAD or Google)

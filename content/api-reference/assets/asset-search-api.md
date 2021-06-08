@@ -135,7 +135,7 @@ Also returned is a list of `Results`. Each result contains
 - `Name` - asset name.
 - `Description` - asset description.
 - `ETag` - Version tag.
-- `CreatedDate` - Created date of the asset.
+- `CreatedDate` - Asset creation date.
 - `LastModifiedDate` - Last modified date of the asset.
 
 ```json 
@@ -427,4 +427,3 @@ Performing a `GET search/assets/autocomplete?term=t&facetcount=10` returns the f
     "Tokens": []
 }
 ```
-

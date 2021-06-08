@@ -6,9 +6,9 @@ uid: WhoUsesOCS
 
 OCS extends the data infrastructure seamlessly by integrating existing OSIsoft products and third-party vendors from edge to cloud. This allows data to be shared across the entire infrastructure, reaching new data users such as developers creating custom applications, data scientists engaged in data modeling, operations staff who monitor real-time performance, and data analysts using visualized data. OCS enables this diverse group of users to access the data they need to perform their tasks. 
 
-It is important that data is accurate so that the insights it yields are a reliable source of truth for the entire enterprise. OCS extends the data infrastructure to your operational data. 
+Accurate data is critical so that the insights it yields are a reliable source of truth for the entire enterprise. OCS extends the data infrastructure to your operational data. 
 
-Extending the collection and accessibility of operational data allows new analysis and decision-making processes to benefit the company. Who are the users of this data and how do they use it to help in decision-making processes for their business? 
+Extending the collection and accessibility of operational data allows new analysis and decision-making processes to benefit the company. Who uses this data and how does it help in their decision-making processes? 
 
 ## Data scientists use OCS to gain business insight 
 

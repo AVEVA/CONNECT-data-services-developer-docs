@@ -1,3 +1,4 @@
+# Common parameters
 namespaceId:
   type: text/plain
   value: |
@@ -6,14 +7,40 @@ tenantId:
   type: text/plain
   value: |
     Tenant identifier
-tenantId-OCS:
+query:
   type: text/plain
   value: |
-    OCS tenant identifier
+    Query identifier
+count:
+  type: text/plain
+  value: |
+    Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.
+skip:
+  type: text/plain
+  value: |
+    Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.
+key:
+  type: text/plain
+  value: |
+    Key specifying the metadata value of interest
+cancellation-token:
+  type: text/plain
+  value: |
+    Cancellation token
+scheme:
+  type: text/plain
+  value: |
+    Scheme name (for example, AAD or Google)
+# Community parameters
 tenantId-community:
   type: text/plain
   value: |
     Owning tenant identifier
+# Identity parameters
+tenantId-OCS:
+  type: text/plain
+  value: |
+    OCS tenant identifier
 tenantId-aad:
   type: text/plain
   value: |
@@ -82,10 +109,6 @@ tag:
   type: text/plain
   value: |
     Only return clients that have these tags
-query:
-  type: text/plain
-  value: |
-    Query identifier
 query-community:
   type: text/plain
   value: |
@@ -94,23 +117,3 @@ query-searchstring:
   type: text/plain
   value: |
     (Not supported) Search string identifier
-count:
-  type: text/plain
-  value: |
-    Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.
-skip:
-  type: text/plain
-  value: |
-    Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.
-key:
-  type: text/plain
-  value: |
-    Key specifying the metadata value of interest
-cancellation-token:
-  type: text/plain
-  value: |
-    Cancellation token
-scheme:
-  type: text/plain
-  value: |
-    Scheme name (for example, AAD or Google)

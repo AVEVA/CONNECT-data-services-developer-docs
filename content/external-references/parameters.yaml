@@ -31,12 +31,12 @@ scheme:
   type: text/plain
   value: |
     Scheme name (for example, AAD or Google)
-# Community parameters
+# Tenant identifier for community
 tenantId-community:
   type: text/plain
   value: |
     Owning tenant identifier
-# Identity parameters
+# Tenant identifier parameters for AAD when there are different types of tenants to have to consider and distinguish
 tenantId-OCS:
   type: text/plain
   value: |
@@ -57,6 +57,7 @@ streamId:
   type: text/plain
   value: |
     Stream identifier
+# Identity provider focused identifiers
 identityProviderId:
   type: text/plain
   value: |
@@ -69,6 +70,7 @@ identityProviderTypeNameClaimId:
   type: text/plain
   value: |
     Identity provider claim type name identifier
+# Specific types of identifiers
 communityId:
   type: text/plain
   value: |
@@ -101,6 +103,7 @@ secretId:
   type: text/plain
   value: |
     Secret identifier
+# Used for getting a list of identifiers in a GET method
 id:
   type: text/plain
   value: |
@@ -109,10 +112,12 @@ tag:
   type: text/plain
   value: |
     Only return clients that have these tags
+# Query for community 
 query-community:
   type: text/plain
   value: |
     (Not supported) Query identifier
+# Query for wildcard search 
 query-searchstring:
   type: text/plain
   value: |

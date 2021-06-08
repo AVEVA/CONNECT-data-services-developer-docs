@@ -75,6 +75,11 @@ communityId:
   type: text/plain
   value: |
     Community identifier
+# Query for community 
+query-community:
+  type: text/plain
+  value: |
+    (Not supported) Query identifier
 invitationId:
   type: text/plain
   value: |
@@ -91,6 +96,7 @@ dataViewId:
   type: text/plain
   value: |
     Data view identifier
+# OMF parameters
 subscriptionId:
   type: text/plain
   value: |
@@ -112,11 +118,6 @@ tag:
   type: text/plain
   value: |
     Only return clients that have these tags
-# Query for community 
-query-community:
-  type: text/plain
-  value: |
-    (Not supported) Query identifier
 # Query for wildcard search 
 query-searchstring:
   type: text/plain

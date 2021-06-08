@@ -337,7 +337,7 @@ The search term that you want to search for.
 The maximum number of facet autocompleted items to return. The default is 0 which means you will not get any facet suggestions.
 
 [optional] `int termCount`  
-The maximum number of token autocompleted items to return. By default, this value is 0, this means you are not interested in suggestions for tokens.
+The maximum number of token autocompleted items to return. The default is 0 which means you will not get any token suggestions.
 
 ### Example 
 

@@ -214,7 +214,7 @@ Filter strings are not case sensitive. Numeric types must be passed as strings a
 
 | Query String                                 | Description                                                  |
 | -------------------------------------------- | ------------------------------------------------------------ |
-| filter[location]=Earth                       | Filter to ensure that only assets that contain a metadata name = **location** and value is **Earth** is returned. |
+| filter[location]=Earth                       | Filter that only returns assets that contain the metadata name = **location** with **Earth** as the metadata value. |
 | filter[location]=Earth&filter[device]=tracer | Filter to ensure that only assets that contain a metadata name = **location** and value is **Earth** and also contains a metadata with name = **device** and value is **tracer** is returned. |
 | filter[AssetTypeName]=HeaterType             | Filter to ensure that only assets with AssetTypeName HeaterType is returned. |
 | filter[status]=Bad                           | Filter to ensure that only assets with a bad status. Status filters can contain "Good", "Bad", Warning" and "Unknown". |

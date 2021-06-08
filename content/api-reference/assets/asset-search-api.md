@@ -309,7 +309,7 @@ Content-Type: application/json
 
 ## `Asset Autocomplete` 
 
-Asset autocomplete provides a way for you to query assets and retrieve a list of suggested assets based on your search criteria. The following asset properties are capable of autocomplete:
+Asset autocomplete allows you to query assets and retrieve a list of suggested assets based on your search criteria. The autocomplete feature can be used with the following asset properties:
 
 -  Name
 -  Description

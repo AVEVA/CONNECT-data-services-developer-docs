@@ -31,11 +31,19 @@ scheme:
   type: text/plain
   value: |
     Scheme name (for example, AAD or Google)
-# Tenant identifier for community
+# Community parameters
 tenantId-community:
   type: text/plain
   value: |
     Owning tenant identifier
+communityId:
+  type: text/plain
+  value: |
+    Community identifier
+query-community:
+  type: text/plain
+  value: |
+    (Not supported) Query identifier
 # Tenant identifier parameters for AAD when there are different types of tenants to have to consider and distinguish
 tenantId-OCS:
   type: text/plain
@@ -70,16 +78,7 @@ identityProviderTypeNameClaimId:
   type: text/plain
   value: |
     Identity provider claim type name identifier
-# Specific types of identifiers
-communityId:
-  type: text/plain
-  value: |
-    Community identifier
-# Query for community 
-query-community:
-  type: text/plain
-  value: |
-    (Not supported) Query identifier
+# Other types of identifiers
 invitationId:
   type: text/plain
   value: |

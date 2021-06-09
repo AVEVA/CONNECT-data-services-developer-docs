@@ -262,3 +262,49 @@ Authorized for Tenant Administrators of the specified `Tenant`.
 
 ***
 
+## `Get Region`
+
+Returns a RegionBase list for the specified Tenant.
+
+### Request
+
+`GET api/v1/Tenants/{tenantId}/Regions`
+
+### Parameters
+
+```csharp
+[Required]
+[FromRoute]
+string tenantId
+```
+
+The identifier of the `Tenant` for this request.
+
+
+### Authorization
+
+Authorized for Tenant Members of the specified `Tenant`.
+
+### Response
+
+| Status Code | Return Type | Description |
+| --- | --- | ---  |
+| 200 | RegionBase | The RegionBase list associated with the `Tenant`. |
+| 403 | Nothing is returned | Forbidden. |
+| 404 | Nothing is returned | Could not retrieve the RegionBase list due to tenant not found. |
+
+#### Example response body
+> 200 Response
+
+```json
+[
+  {
+    "Id": "string",
+    "Name": "string",
+    "AdministrativeEndpointsWritable": true,
+    "BaseAddress": "string"
+  }
+]
+```
+
+***

@@ -13,11 +13,11 @@ You must have the Tenant Administrator role to add and manage clients in a tenan
 
 ## <a name="client-credentials-client"></a>Client-credentials clients
 
-Use client-credentials clients for server-to-server communication that does not require user interaction. The client typically authenticates with the token endpoint using its client ID and secret. A secret is a unique key generated for each client to connect to OSIsoft assets, resources, and services for a time-limited period.
+Use client-credentials clients for server-to-server communication that does not require user interaction. The client typically authenticates with the token endpoint using its client ID and secret. A secret is a unique key generated for each client to connect to OSIsoft assets, resources, and services for a time-limited period. Because secrets allow access to data, you need to keep them secure.
 
 ### <a name="client-credentials-pi-server"></a>Client-credentials client PI Server counterpart
 
-Client-credentials clients are very similar to Microsoft Windows service accounts that might be used to authenticate against PI Data Archive or PI AF server. Therefore, it is very important to keep secrets secure in the same way that it is important to keep service account passwords secure.
+Client-credentials clients are very similar to Microsoft Windows service accounts that applications can use to authenticate against PI Data Archive or PI AF server. 
 
 ### <a name="client-credentials-bp"></a>Client-credentials client best practices
 

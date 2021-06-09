@@ -4,7 +4,7 @@ uid: lpdatacollection
 
 # Collect data
 
-OCS provides the following methods to collect data. You can ingress data from an external application or from PI Server directly to OCS:
+Collect data from an external application or from PI Server directly to OCS using the following methods:
 
 * Use PI to OCS to set up a transfer of data from an on-premises PI Server to OCS. 
    * PI to OCS maps PI Data Archive points to SDS types and streams.

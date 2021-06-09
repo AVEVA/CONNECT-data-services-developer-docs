@@ -1,5 +1,6 @@
 ---
 uid: community-invitations
+
 ---
 
 # Invitations
@@ -20,6 +21,11 @@ PUT /api/v1-preview/communityinvitations/{invitationId}
 
 `string invitationId`
 <br/>Invitation identifier<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Request Body
 
@@ -84,6 +90,11 @@ GET /api/v1-preview/communityinvitations/{invitationId}/details
 `string invitationId`
 <br/>Invitation identifier<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -133,12 +144,15 @@ GET /api/v1-preview/tenants/{tenantId}/communities/{communityId}/invitations
 `string tenantId`
 <br/>The identifier of the tenant that issued invitations. The tenant must belong to the community.<br/><br/>`string communityId`
 <br/>The identifier of the community to which the recipient of the invitation is being invited.<br/><br/>
-`[optional] string query `
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip `
-<br/>Parameter representing the zero-based offset of the first object to retrieve. If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count `
+`[optional] string query`
+<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
+<br/>Parameter representing the zero-based offset of the first object to retrieve. If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
 
+#### Request Headers
 
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -197,6 +211,11 @@ POST /api/v1-preview/tenants/{tenantId}/communities/{communityId}/invitations
 `string tenantId`
 <br/>Owning tenant identifier<br/><br/>`string communityId`
 <br/>Community identifier<br/><br/>
+
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Request Body
 
@@ -266,7 +285,10 @@ GET /api/v1-preview/tenants/{tenantId}/communities/{communityId}/invitations/{in
 <br/>Community identifier<br/><br/>`string invitationId`
 <br/>Invitation identifier<br/><br/>
 
+#### Request Headers
 
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -321,10 +343,14 @@ DELETE /api/v1-preview/tenants/{tenantId}/communities/{communityId}/invitations/
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/>`string communityId`
-<br/>Community identifier<br/><br/>`string invitationId`
-<br/>Invitation identifier<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string communityId`
+<br/>Community identifier.<br/><br/>`string invitationId`
+<br/>Invitation identifie.r<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 
@@ -378,11 +404,15 @@ GET /api/v1-preview/tenants/{tenantId}/communityinvitations
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
-`[optional] string query `
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip `
+`[optional] string query`
+<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first object to retrieve. If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
 
+#### Request Headers
+
+|Header|Type|Required|Description|
+|---|---|---|---|
 
 ### Response
 

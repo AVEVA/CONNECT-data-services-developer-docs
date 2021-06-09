@@ -22,10 +22,10 @@ GET /api/v1/Tenants/{tenantId}/Invitations
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
-`[optional] string query query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip skip`
-<br/>Number of invitations to skip<br/><br/>`[optional] integer count count`
-<br/>Maximum number of invitations to return<br/><br/>`[optional] boolean includeExpiredInvitations includeExpiredInvitations`
+`[optional] string query`
+<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
+<br/>Number of invitations to skip<br/><br/>`[optional] integer count`
+<br/>Maximum number of invitations to return<br/><br/>`[optional] boolean includeExpiredInvitations`
 <br/>Specify whether to return expired invitations<br/><br/>
 
 #### Request Headers
@@ -86,7 +86,7 @@ HEAD /api/v1/Tenants/{tenantId}/Invitations
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
-`[optional] boolean includeExpiredInvitations includeExpiredInvitations`
+`[optional] boolean includeExpiredInvitations`
 <br/>Specify to return expired invitations<br/><br/>
 
 #### Request Headers
@@ -417,7 +417,7 @@ HEAD /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string userId`
 <br/>User unique identifier<br/><br/>
-`[optional] boolean includeExpiredInvitations includeExpiredInvitations`
+`[optional] boolean includeExpiredInvitations`
 <br/>Specify whether to include expired invitations.<br/><br/>
 
 #### Request Headers

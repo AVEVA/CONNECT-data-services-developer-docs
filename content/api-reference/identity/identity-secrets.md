@@ -23,9 +23,9 @@ GET /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client identifier<br/><br/>
-`[optional] string query query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip skip`
-<br/>Number of clients to skip. From query<br/><br/>`[optional] integer count count`
+`[optional] string query`
+<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
+<br/>Number of clients to skip. From query<br/><br/>`[optional] integer count`
 <br/>Maximum number of clients to return<br/><br/>
 
 #### Request Headers
@@ -417,9 +417,9 @@ GET /api/v1/Tenants/{tenantId}/HybridClients/{clientId}/Secrets
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client identifier<br/><br/>
-`[optional] string query query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip skip`
-<br/>Number of clients to skip<br/><br/>`[optional] integer count count`
+`[optional] string query`
+<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
+<br/>Number of clients to skip<br/><br/>`[optional] integer count`
 <br/>Maximum number of clients to return<br/><br/>
 
 #### Request Headers
@@ -810,9 +810,9 @@ GET /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secret
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client identifier<br/><br/>
-`[optional] string query query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip skip`
-<br/>Number of clients to skip. From query.<br/><br/>`[optional] integer count count`
+`[optional] string query`
+<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
+<br/>Number of clients to skip. From query.<br/><br/>`[optional] integer count`
 <br/>Maximum number of clients to return<br/><br/>
 
 #### Request Headers
@@ -1064,9 +1064,9 @@ GET /api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}/Secrets
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client identifier<br/><br/>
-`[optional] string query query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip skip`
-<br/>Number of clients to skip. From query.<br/><br/>`[optional] integer count count`
+`[optional] string query`
+<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
+<br/>Number of clients to skip. From query.<br/><br/>`[optional] integer count`
 <br/>Maximum number of clients to return<br/><br/>
 
 #### Request Headers

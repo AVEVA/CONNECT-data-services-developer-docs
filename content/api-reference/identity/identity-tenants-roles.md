@@ -22,10 +22,10 @@ GET /api/v1/Tenants/{tenantId}/Roles
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
-`[optional] string query query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip skip`
-<br/>Number of providers to skip<br/><br/>`[optional] integer count count`
-<br/>Max number of providers to return<br/><br/>`[optional] string roleTypeId roleTypeId`
+`[optional] string query`
+<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
+<br/>Number of providers to skip<br/><br/>`[optional] integer count`
+<br/>Max number of providers to return<br/><br/>`[optional] string roleTypeId`
 <br/>Role type identifier<br/><br/>
 
 #### Request Headers

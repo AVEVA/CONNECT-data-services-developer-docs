@@ -22,9 +22,9 @@ GET /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants
 
 `string tenantId`
 <br/>Id of OSIsoft Cloud Services Tenant.<br/><br/>
-`[optional] string query query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip skip`
-<br/>Number of Azure Active Directory tenants to skip<br/><br/>`[optional] integer count count`
+`[optional] string query`
+<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
+<br/>Number of Azure Active Directory tenants to skip<br/><br/>`[optional] integer count`
 <br/>Maximum number of Azure Active Directory tenants to return<br/><br/>
 
 #### Request Headers

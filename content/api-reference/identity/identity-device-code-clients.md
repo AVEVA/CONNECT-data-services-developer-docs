@@ -22,11 +22,11 @@ GET /api/v1/Tenants/{tenantId}/DeviceCodeClients
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
-`[optional] array id id`
-<br/>Unordered list of ids for all clients to get. Empty or whitespace Ids will be ignored.<br/><br/>`[optional] array tag tag`
-<br/>Only return clients that have these tags.<br/><br/>`[optional] string query query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip skip`
-<br/>Number of clients to skip. From query.<br/><br/>`[optional] integer count count`
+`[optional] array id`
+<br/>Unordered list of ids for all clients to get. Empty or whitespace Ids will be ignored.<br/><br/>`[optional] array tag`
+<br/>Only return clients that have these tags.<br/><br/>`[optional] string query`
+<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
+<br/>Number of clients to skip. From query.<br/><br/>`[optional] integer count`
 <br/>Maximum number of clients to return<br/><br/>
 
 #### Request Headers
@@ -90,8 +90,8 @@ HEAD /api/v1/Tenants/{tenantId}/DeviceCodeClients
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
-`[optional] array id id`
-<br/>Unordered list of ids for all clients to get. Empty or whitespace Ids will be ignored.<br/><br/>`[optional] array tag tag`
+`[optional] array id`
+<br/>Unordered list of ids for all clients to get. Empty or whitespace Ids will be ignored.<br/><br/>`[optional] array tag`
 <br/>Only count Clients that have these tags<br/><br/>
 
 #### Request Headers

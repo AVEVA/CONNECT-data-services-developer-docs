@@ -22,11 +22,11 @@ GET /api/v1/Tenants/{tenantId}/HybridClients
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
-`[optional] array id id`
-<br/>Unordered list of hybrid client Ids. Empty, whitespace or null Ids will be ignored.<br/><br/>`[optional] array tag tag`
-<br/>Only return clients that have these tags.<br/><br/>`[optional] string query query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip skip`
-<br/>Number of clients to skip. Will be ignored if a list of Ids is passed.<br/><br/>`[optional] integer count count`
+`[optional] array id`
+<br/>Unordered list of hybrid client Ids. Empty, whitespace or null Ids will be ignored.<br/><br/>`[optional] array tag`
+<br/>Only return clients that have these tags.<br/><br/>`[optional] string query`
+<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
+<br/>Number of clients to skip. Will be ignored if a list of Ids is passed.<br/><br/>`[optional] integer count`
 <br/>Maximum number of clients to return. Will be ignored if a list of Ids is passed.<br/><br/>
 
 #### Request Headers
@@ -97,8 +97,8 @@ HEAD /api/v1/Tenants/{tenantId}/HybridClients
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
-`[optional] array id id`
-<br/>Unordered list of hybrid client Ids. Empty, whitespace or null Ids will be ignored.<br/><br/>`[optional] array tag tag`
+`[optional] array id`
+<br/>Unordered list of hybrid client Ids. Empty, whitespace or null Ids will be ignored.<br/><br/>`[optional] array tag`
 <br/>Only count clients that have these tags<br/><br/>
 
 #### Request Headers
@@ -503,10 +503,10 @@ GET /api/v1-preview/Tenants/{tenantId}/HybridClients
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
-`[optional] array tag tag`
-<br/>Only return Clients that have these tags<br/><br/>`[optional] string query query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip skip`
-<br/>Number of clients to skip. From query.<br/><br/>`[optional] integer count count`
+`[optional] array tag`
+<br/>Only return Clients that have these tags<br/><br/>`[optional] string query`
+<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
+<br/>Number of clients to skip. From query.<br/><br/>`[optional] integer count`
 <br/>Maximum number of clients to return<br/><br/>
 
 #### Request Headers

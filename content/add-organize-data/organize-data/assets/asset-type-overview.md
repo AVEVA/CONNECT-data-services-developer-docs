@@ -24,4 +24,4 @@ Asset types are comparable to element templates in the PI AF server. Like elemen
 
 ## Asset types best practices 
 
-When deciding whether or not to use asset types, consider whether all assets of a given type are homogenous enough that they can be modeled by a type. Additional metadata and stream references cannot be added to assets that are created from an asset type.
+When deciding whether or not to use asset types, consider whether all assets of a given type are similar enough that they can be modeled by a type. Additional metadata and stream references cannot be added to assets that are created from an asset type.

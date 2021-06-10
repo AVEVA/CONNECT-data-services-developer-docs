@@ -50,4 +50,3 @@ Each part of the stream name is assigned a metadata type. The screen capture abo
 ## Related links
 
 - [Create a metadata rule](xref:gpMetadataRules)
-- [Test link](xref:gsMetadataRules#step-2)

@@ -16,7 +16,7 @@ Assets can be searched on the following asset properties:
   - Id, Name, Description, AssetTypeId, AssetTypeName
 
 - Metadata Fields
-  - Name, Description. Value
+  - Name, Description, Value
 
 - Stream Reference Fields
   - StreamReferenceName - Stream Reference Name

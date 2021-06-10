@@ -14,7 +14,7 @@ You can create an asset type in one of the following ways:
 - [Create an asset type from the beginning](xref:#asset-type1) 
 - [Convert an existing asset to an asset type](xref:#asset-type2)
 
-## <a name="asset type1"></a> Create an asset type with the asset explorer
+## <a name="asset-type1"></a> Create an asset type with the asset explorer
 
 Follow the procedure to use the asset explorer to create an asset type.
 

@@ -52,7 +52,7 @@ Follow the procedure to create an asset.
 
    The `Select Property` window lists the properties whose values can be displayed as a status. Only properties with an enumerated state or that have a string value can be displayed.
    
-1. Select the **Output Pump Status | Status** property and click **Continue**. 
+1. Select the **Output Pump Status | Status** property, and then click **Continue**. 
 
    If there are no values in the stream, there will be no eligible values to choose from. If there are eligible values that can be mapped to different statuses, select the value that corresponds to the Good, Warning, and Bad statuses. 
 

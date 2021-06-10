@@ -1,0 +1,26 @@
+- name: OSIsoft Cloud Services
+  href: ocs-content-portal-overview.md
+- name: Get started
+  href: overview/toc.yml
+  topicHref: overview/get-started-overview.md
+- name: Set up the environment
+  href: set-up/toc.yml
+  topicHref: set-up/set-up-overview.md
+- name: Add and organize data
+  href: add-organize-data/toc.yml
+  topicHref: add-organize-data/add-org-data-overview.md
+- name: Visualize data
+  href: visualize-data/toc.yml
+  topicHref: visualize-data/visualize-data-overview.md
+- name: Remote operations monitoring
+  href: rom/toc.yml
+  topicHref: rom/rom-overview.md
+- name: Communities (Preview)
+  href: communities/toc.yml
+  topicHref: communities/communities.md
+- name: API reference
+  href: api-reference/toc.yml
+  topicHref: api-reference/ocs-api-reference.md
+- name: Developer guide
+  href: developer-guide/toc.yml
+  topicHref: developer-guide/dev-guide-introduction.md

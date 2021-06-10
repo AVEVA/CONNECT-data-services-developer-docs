@@ -1,0 +1,14 @@
+- name: Assets
+  href: assets-api.md
+- name: Asset types 
+  href: asset-type.md
+- name: Resolved asset
+  href: asset-resolved-asset.md
+- name: Assets data
+  href: asset-centric-data-api.md
+- name: Asset and asset type status
+  href: asset-status.md
+- name: Assets search
+  href: asset-search-api.md
+- name: Asset and AssetType ACL
+  href: assets-acl-api.md

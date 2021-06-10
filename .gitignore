@@ -2,7 +2,7 @@ _site/
 obj/
 /.vs/OCS-Docs/v16/TestStore/0
 /.vs
-/Documentation/Properties_table_template.md
-/Documentation/Status_Codes.pdf
-/Content_Portal/.vs/Content_Portal/v16/TestStore/0
-/Content_Portal/.vs
+/api-reference/Properties_table_template.md
+/api-reference/Status_Codes.pdf
+/content/.vs/content/v16/TestStore/0
+/content/.vs

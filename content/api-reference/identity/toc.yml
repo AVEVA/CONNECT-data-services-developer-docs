@@ -1,0 +1,28 @@
+- name: Authorization code clients
+  href: identity-authorization-code-clients.md
+- name: Azure Active Directory tenants
+  href: identity-azure-active-directory-tenants.md
+- name: Claims
+  href: identity-claims.md
+- name: Claim type names
+  href: identity-claim-type-names.md
+- name: Client credential clients
+  href: identity-client-credential-clients.md
+- name: Client credential clients roles
+  href: identity-client-credential-clients-roles.md
+- name: Device code clients
+  href: identity-device-code-clients.md
+- name: Hybrid clients
+  href: identity-hybrid-clients.md
+- name: Identity providers
+  href: identity-identity-providers.md
+- name: Invitations
+  href: identity-invitations.md
+- name: Secrets
+  href: identity-secrets.md
+- name: Tenants roles
+  href: identity-tenants-roles.md
+- name: Users roles
+  href: identity-users-roles.md
+- name: Tenants Users
+  href: identity-tenants-users.md 

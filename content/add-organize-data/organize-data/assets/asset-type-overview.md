@@ -16,7 +16,7 @@ There are two ways to create an asset type:
 
 - Take an existing asset and convert it to an asset type. For more information, refer to [Convert an asset to an asset type](xref:ConvertAssetToAssetType).
 
-- Create a new asset type. For more information, refer to [Create an asset type with the asset type editor](xref:CreateAssetType).
+- Create a new asset type. For more information, refer to [Create an asset type with the asset type editor](xref:CreateAssetTypeWithEditor).
 
 ## PI Server counterpart
 

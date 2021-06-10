@@ -97,7 +97,9 @@ On the Define Mappings page, you see the following. Below the stream pattern are
 5. To generate mappings from existing streams, click **Generate Mappings**.
 
    OCS searches and finds any existing streams that match the pattern (in this example, the **MyOCS.{Region}.{Site}.*** pattern). For each stream that matches the pattern, it lists that part of the stream name, in this example, it lists the part that corresponds to the **Site** key.
-   ![Metadata mapping](images/metadata-mapping-site.png)
+   
+
+![Metadata mapping](images/metadata-mapping-site.png)
 
 6. In the **Map To** text box, enter **San Leandro**. 
 

@@ -15,7 +15,7 @@ Follow the procedure to create an asset.
 
 1. Click the ![Menu icon](images/menu-icon.png) icon and click **Asset Explorer** (under Visualization).
 
-1. Click the **Change Namespace** drop-down list.  In the `Select a Namespace` window, click **MyOCS** or another namespace in which you created your stream. 
+1. Click the **Change Namespace** dropdown list.  In the `Select a Namespace` window, click **MyOCS** or another namespace in which you created your stream. 
 
 1. From the  **Assets /Asset Types Selector** drop-down list, ensure that **Assets** is selected.
 

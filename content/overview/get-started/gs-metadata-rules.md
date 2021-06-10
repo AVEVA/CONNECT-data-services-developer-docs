@@ -85,7 +85,8 @@ On the Define Mappings page, you see the following. Below the stream pattern are
 4. Select **Map Values** for the **Mapping Type**.
 
    This option allows you to map the part of the stream name associated with the **Site** key to another value. You may either manually enter the mappings or generate the mappings from existing streams. 
-   **Note:** If OCS encounters a value that does not match any of the mappings, it does not create metadata for that stream. This can be useful in the instance where there are two different metadata rules that have a similar naming pattern, for example:
+  
+    **Note:** If OCS encounters a value that does not match any of the mappings, it does not create metadata for that stream. This can be useful in the instance where there are two different metadata rules that have a similar naming pattern, for example:
 
    - MyOCS.{Region}.{Site}.*
 

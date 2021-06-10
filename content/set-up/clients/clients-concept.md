@@ -57,7 +57,7 @@ Hybrid clients have no direct PI Server equivalent, but they are similar to the 
 
 ### <a name="hybrid-client-bp"></a>Hybrid client best practices
 
-The following best practices are recommended when you use a hybrid client:
+We recommend the following best practices when you use a hybrid client:
 
 - Use hybrid clients in web applications or services where users authenticate against OCS through a web browser, but a secure backend that stores the secrets performs the actual authentication.
 

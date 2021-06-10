@@ -23,7 +23,7 @@ Roles in OCS are comparable to PI identities in PI Data Archive or identities in
 
 ## <a name="roles-bp"></a>Roles best practices
 
-Use the following best practices when you create and assign roles:
+We recommend the following best practices when you create and assign roles:
 
 - Consider whether the read access granted by the Tenant Member role is acceptable for all users and clients in your tenant. Specifically, if you plan to invite users from outside your organization, you may want to limit their read access. One way to do this is to create a custom role for external users so that their permissions can be explicitly managed.
 

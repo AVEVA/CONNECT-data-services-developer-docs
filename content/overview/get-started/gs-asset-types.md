@@ -22,7 +22,7 @@ Follow the procedure to use the asset explorer to create an asset type.
 
 2. Click the **Change Namespace** drop-down list.  In the `Select a Namespace` window, click **MyOCS**.
 
-3. From the **Assets/Asset Types Selector** list, select **Asset Types**.
+3. From the **Asset/Asset Types Selector** list, select **Asset Types**.
 
 4. In the menu bar, click **Add Asset Type** to open a panel on the right side.
 

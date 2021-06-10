@@ -92,7 +92,7 @@ On the Define Mappings page, you see the following. Below the stream pattern are
 
    - MyOCS.{Location}.{Department}.*
 
-     A stream (for example, MyOCS.WestCoast.Mfg.Inventory) can match both patterns, but the values ("WestCoast," "Mfg") are only mapped for only one of the metadata rules (MyOCS.{Location}.{Department}.\*). Therefore, if you execute the MyOCS.{Region}.{Site}.\* rule, it will not generate metadata for the MyOCS.WestCoast.Mfg.Inventory stream.
+     A stream (for example, MyOCS.WestCoast.Mfg.Inventory) can match both patterns, but the values ("WestCoast," "Mfg") are mapped for only one of the metadata rules (MyOCS.{Location}.{Department}.\*). Therefore, if you execute the MyOCS.{Region}.{Site}.\* rule, it will not generate metadata for the MyOCS.WestCoast.Mfg.Inventory stream.
 
 5. To generate mappings from existing streams, click **Generate Mappings**.
 

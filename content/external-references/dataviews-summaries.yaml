@@ -85,15 +85,25 @@ dataviews-acl-update:
     Updates the default [`AccessControlList`](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html#access-control-lists) for the DataViews collection.
 
 # method summaries: requesting data
-data-get:
+data-interpolated-get:
   type: markdown
   value: |
-    Gets data for the provided index parameters with paging. See [documentation on paging](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/GetDataViewData/Quick_Start_Get_Data_View_Data.html#paging) for further information.
+    Gets interpolated data for the provided index parameters with paging. See [documentation on paging](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/GetDataViewData/Quick_Start_Get_Data_View_Data.html#paging) for further information.
 
-data-get-preview:
+data-interpolated-get-preview:
   type: markdown
   value: |
-    Gets data for the provided data view and index parameters with paging. See [documentation on paging](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/GetDataViewData/Quick_Start_Get_Data_View_Data.html#paging) for further information.
+    Gets interpolated data for the provided data view and index parameters with paging. See [documentation on paging](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/GetDataViewData/Quick_Start_Get_Data_View_Data.html#paging) for further information.
+
+data-stored-get:
+  type: markdown
+  value: |
+    Gets stored data for the provided index parameters with paging. See [documentation on paging](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/GetDataViewData/Quick_Start_Get_Data_View_Data.html#paging) for further information.
+
+data-stored-get-preview:
+  type: markdown
+  value: |
+    Gets stored data for the provided data view and index parameters with paging. See [documentation on paging](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/GetDataViewData/Quick_Start_Get_Data_View_Data.html#paging) for further information.
 
 # method summaries: data views
 dataview-create:

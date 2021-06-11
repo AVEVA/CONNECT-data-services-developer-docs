@@ -47,7 +47,7 @@ An asset stream reference represents dynamic stream data associated with an asse
 
 | Property      | Type   | Required? | Description                                                  |
 | ------------- | ------ | --------- | ------------------------------------------------------------ |
-| Id            | String | Required* |  `Id` for this stream reference object.  This `Id` must be unique within the asset.                    |
+| Id            | String | Required*  | `Id` for this stream reference object.  This `Id` must be unique within the asset.                    |
 | Name          | String | Required  | User-friendly name for the stream reference object. If not null, must be unique within an asset. |
 | Description   | String | Optional  | Description text.                                            |
 | StreamId      | String | Required  | The SDS stream `Id` of this stream reference. This SDS stream must exist at the time the asset is created. |
@@ -59,9 +59,9 @@ An asset stream reference represents dynamic stream data associated with an asse
 An asset type type reference represents dynamic stream data associated with an asset. The references must either be an SDS stream or an SDS stream view. Asset-centric data routes provide direct access to dynamic data for a given asset. There are no limitations on the number of references an asset may contain. However, an asset cannot contain multiple references to the same SDS stream. An asset reference does not stand alone. It must be specified within an asset object and, therefore, asset references do not have direct API routes. 
 
 | Property    | Type   | Required? | Description                                                  |
-| ----------- | ------ | --------- | ------------------------------------------------------------- |
-| StreamReferenceId | String | Required | The `Id` for this type reference. If an asset is derived from this asset type, this Id must be referenced in the asset reference type object. This `Id` must be unique within the asset type. |
-| StreamReferenceName  | String | Required  |  The user friendly name for this type reference. If not null, must be unique within an asset type.|
+| ----------- | ------ | --------- | ------------------------------------------------------------ |
+| StreamReferenceId | String | Required |The `Id` for this type reference. If an asset is derived from this asset type, this Id must be referenced in the asset reference type object. This `Id` must be unique within the asset type. |
+| StreamReferenceName  | String | Required  | The user friendly name for this type reference. If not null, must be unique within an asset type.|
 | Description | String | Optional  | Description text                                             |
 | TypeId    | String | Required  | This string must be an SDS stream type `Id` in the referenced SDS stream. |
 
@@ -115,7 +115,7 @@ Asset example
         "Name": "ChargingStationStatus",
         "StreamReferenceId": "Reference1",
         "StreamPropertyId": "Value",
-        "ValueStatusMappings": [{       
+        "ValueStatusMappings": [{
                 "Value": 0,
                 "Status": 0,
                 "DisplayName": "Bad"

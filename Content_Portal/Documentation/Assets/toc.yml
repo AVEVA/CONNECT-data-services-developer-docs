@@ -11,4 +11,4 @@
 - name: Assets Search API
   href: asset-search-api.md
 - name: Asset and AssetType Access Control API
-  href: access-control-api.md
+  href: assets-acl-api.md

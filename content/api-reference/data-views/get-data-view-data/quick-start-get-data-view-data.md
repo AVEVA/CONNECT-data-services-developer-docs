@@ -6,7 +6,7 @@ uid: DataViewsQuickStartGetData
 You retrieve data view data with the [Data API](xref:DataViewsDataAPI). This topic explains the concepts and workflow to retrieve data view data.
 
 ## General concepts
-The supported modes of retrieval are interpolated or stored values within a user-specified range. Several formats are available, such as JSON and CSV.
+The supported modes of retrieval are interpolated and stored values within a user-specified range. Several formats are available, such as JSON and CSV.
 
 ### Index
 All data in a data view is associated with an index value, i.e. a timestamp. If there are multiple groups in the data view, the index and grouping field values together form a unique identifier for each data record.
@@ -43,7 +43,7 @@ If one or more of these parameters is not specified at query time or as a defaul
 Streams in SDS may be configured to have non-default interpolation and extrapolation behavior. These behaviors are observed when stream data is included in data views. Data view data is always treated as dense, even if SDS returns sparse data. See the following section on empty or missing values for details.
 
 #### Stored retrieval
-Stored retrieval mode returns stored or window data only. The resulting data view data will include only index values that exist in the underlying data items' data. If an index exists in one data item but not another, a null will appear for all data fields where the index does not exist. For example:
+Stored retrieval mode returns stored or window data. The resulting data view data will include only index values that exist in the underlying data items' data. If an index exists on one data item but not another, a null will appear for all data fields where the index does not exist. For example:
 
 ```json
 [

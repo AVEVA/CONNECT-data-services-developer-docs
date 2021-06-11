@@ -20,7 +20,7 @@ The following are best practices OSIsoft recommends for creating types and strea
 
 ## Property patterns
 
-When defining what value properties should be added to a type in Sequential Data Store, these are some common patterns that types fall into:
+When defining value properties to add to a type in Sequential Data Store, these are some common patterns that types fall into:
 
 -  Inextricably linked data
    - The data contains multiple properties that must all be present to interpret the data

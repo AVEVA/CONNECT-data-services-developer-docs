@@ -17,6 +17,7 @@ content/communities @dwicinas-osisoft
 content/visualize-data @lassato-OSI @afloresOSI
 ontent/rom @lassato-OSI @afloresOSI
 content/overview @lassato-OSI @afloresOSI
+content/set-up @lassato-OSI @digitaljoshua
 
 # Order is important. The last matching pattern has the most precedence.
 # So if a pull request only touches javascript files, only these owners

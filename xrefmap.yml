@@ -51,7 +51,7 @@ references:
   href: Content_Portal/Documentation/Assets/asset-centric-data-api.html
 - uid: AssetOrAssetTypeAccessControlAPI
   name: Asset and AssetType ACL API
-  href: Content_Portal/Documentation/Assets/access-control-api.html
+  href: Content_Portal/Documentation/Assets/assets-acl-api.html
 - uid: AssetResolvedAsset
   name: Resolved Asset
   href: Content_Portal/Documentation/Assets/asset-resolved-asset.html

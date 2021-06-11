@@ -92,13 +92,13 @@
 </li>
 <li><p>Metadata Fields</p>
 <ul>
-<li>Name, Description. Value</li>
+<li>Name, Description, Value</li>
 </ul>
 </li>
 <li><p>Stream Reference Fields</p>
 <ul>
-<li>StreamReferences - Stream Reference Name</li>
-<li>StreamProperties - Sds Stream Property Ids, not including indices</li>
+<li>StreamReferenceName - Stream Reference Name</li>
+<li>StreamPropertyId - Sds Stream Property Ids, not including indices</li>
 </ul>
 </li>
 </ul>
@@ -106,7 +106,7 @@
 <h2 id="search-assets"><code>Search Assets</code></h2>
 <p>Searches and returns assets matching the search criteria.</p>
 <h3 id="request">Request</h3>
-<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets?skip={skip}&amp;count={count}&amp;orderby={orderby}&amp;query={queryString}&amp;filter={filterString}&amp;pageSize={pageSize}&amp;maxPages={maxPages}&amp;continuationToken={continuationToken}
+<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets?skip={skip}&amp;count={count}&amp;orderby={orderby}&amp;query={queryString}&amp;{filterString}&amp;pageSize={pageSize}&amp;maxPages={maxPages}&amp;continuationToken={continuationToken}
 </code></pre><h3 id="parameters">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -115,9 +115,6 @@
 <p>[optional] <code>int skip</code><br>An optional parameter representing the zero-based offset of the first asset to retrieve. If not specified, a default value of 0 is used.</p>
 <p>[optional] <code>int count</code><br>An optional parameter, between 1 and 1000 (inclusive), that represents the maximum number of assets to retrieve. If not specified, the default is 100.</p>
 <p>[optional] <code>[id|name] [asc|desc|] orderby</code><br>An optional parameter which returns assets ordered either by the asset <code>Id</code> or the asset <code>name</code>. Specify asc or desc to return the results in ascending or descending order. If not specified, the default is ascending order.</p>
-<p>[optional] <code>int pageSize</code><br>Must be used with <code>maxPages</code> to configure the pages of the search results. This parameter defines the maximum number of assets that are returned on each page. </p>
-<p>[optional] <code>int maxPages</code><br>Must be used with <code>pageSize</code> to configure the pages of the search results. This parameter defines the maximum number of pages. Search results that exceed maxPages are not returned. </p>
-<p>[optional] <code>string continuationToken</code><br>Retrieves a specific page of the search results. </p>
 <h3 id="response">Response</h3>
 <p>Returns an array of assets matching the search query and the total number of assets returned specified as Total-Count in the HTTP response header. </p>
 <table>
@@ -154,7 +151,7 @@
 <h2 id="search-matched-fields-asset"><code>Search Matched Fields Asset</code></h2>
 <p>Searches all assets and returns a list of asset Ids and their matched fields. Use this API to identify the fields in the asset that match your query string.</p>
 <h3 id="request-1">Request</h3>
-<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/search/Assets?skip={skip}&amp;count={count}&amp;orderby={orderby}&amp;query={queryString}&amp;filter={filterString}&amp;pageSize={pageSize}&amp;maxPages={maxPages}&amp;continuationToken={continuationToken}
+<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/search/Assets?skip={skip}&amp;count={count}&amp;orderby={orderby}&amp;query={queryString}&amp;{filterString}&amp;pageSize={pageSize}&amp;maxPages={maxPages}&amp;continuationToken={continuationToken}
 </code></pre><h3 id="parameters-1">Parameters</h3>
 <p><code>string tenantId</code><br>The tenant identifier</p>
 <p><code>string namespaceId</code><br>The namespace identifier</p>
@@ -163,9 +160,6 @@
 <p>[optional] <code>int skip</code><br>An optional parameter representing the zero-based offset of the first asset to retrieve. If not specified, a default value of 0 is used.</p>
 <p>[optional] <code>int count</code><br>An optional parameter, between 1 and 1000 (inclusive), representing the maximum number of retrieved assets. If not specified, the default is 100.</p>
 <p>[optional] <code>[id|name] [asc|desc|] orderby</code><br>An optional parameter which returns assets ordered either by the asset <code>Id</code> or the asset <code>name</code>. Specify asc or desc to return the results in ascending or descending order. If not specified, the default is ascending order.</p>
-<p>[optional] <code>int pageSize</code><br>Must be used with <code>maxPages</code> to configure the pages of the search results. This parameter defines the maximum number of assets that are returned on each page. </p>
-<p>[optional] <code>int maxPages</code><br>Must be used with <code>pageSize</code> to configure the pages of the search results. This parameter defines the maximum number of pages. Search results that exceed maxPages are not returned.</p>
-<p>[optional] <code>string continuationToken</code><br>Retrieves a specific page of the search results. </p>
 <h3 id="response-1">Response</h3>
 <p>A list of asset Ids and their matched fields.</p>
 <table>
@@ -205,11 +199,13 @@
 <p>Also returned is a list of <code>Results</code>. Each result contains  </p>
 <ul>
 <li>The <code>MatchProperties</code> - a list of matched property objects. Each <code>MatchProperties</code> object contains the matched fields and their values.</li>
-<li><code>Score</code> - number that indicates the relevancy of the match.</li>
 <li><code>Id</code> - Id of the matched asset.</li>
 <li><code>TypeId</code> - asset type Id of the asset. This is null if the asset does not reference an asset type.</li>
 <li><code>Name</code> - asset name.</li>
 <li><code>Description</code> - asset description.</li>
+<li><code>ETag</code> - Version tag.</li>
+<li><code>CreatedDate</code> - Asset creation date.</li>
+<li><code>LastModifiedDate</code> - Last modified date of the asset.</li>
 </ul>
 <pre><code class="lang-json">HTTP 200 OK 
 Content-Type: application/json
@@ -223,11 +219,13 @@ Content-Type: application/json
                     &quot;Value&quot;: &quot;Asset Tracer ced7ee16-984d-480f-8338-3055f7f39d8b&quot;
                 }
             ],
-            &quot;Score&quot;: 1,
             &quot;Id&quot;: &quot;AssetId2b5f41ae-0929-4977-bfbd-1e046d8a66f4&quot;,
             &quot;TypeId&quot;: &quot;AssetTracerType&quot;,
             &quot;Name&quot;: &quot;Asset Tracer ced7ee16-984d-480f-8338-3055f7f39d8b&quot;,
-            &quot;Description&quot;: &quot;First tracer device&quot;
+            &quot;Description&quot;: &quot;First tracer device&quot;,
+            &quot;ETag&quot;: &quot;1&quot;,
+            &quot;CreatedDate&quot;: &quot;2021-05-26T19:05:33.8979442Z&quot;,
+            &quot;LastModifiedDate&quot;: &quot;2021-05-26T19:05:33.8979442Z&quot;
         },
         {
             &quot;MatchedProperties&quot;: [
@@ -236,11 +234,13 @@ Content-Type: application/json
                     &quot;Value&quot;: &quot;Asset Tracer d6b984dd-b6da-4225-a2e0-59f781d065a4&quot;
                 }
             ],
-            &quot;Score&quot;: 1,
             &quot;Id&quot;: &quot;AssetId3dbfd185-7c62-49ed-b875-7953cba07fc3&quot;,
             &quot;TypeId&quot;: &quot;AssetTracerType&quot;,
             &quot;Name&quot;: &quot;Asset Tracer d6b984dd-b6da-4225-a2e0-59f781d065a4&quot;,
-            &quot;Description&quot;: &quot;Another tracer device&quot;
+            &quot;Description&quot;: &quot;Another tracer device&quot;,
+            &quot;ETag&quot;: &quot;1&quot;,
+            &quot;CreatedDate&quot;: &quot;2021-05-26T19:05:40.9043726Z&quot;,
+            &quot;LastModifiedDate&quot;: &quot;2021-05-26T19:05:40.9043726Z&quot;        
         }
     ]
 }
@@ -302,11 +302,11 @@ Content-Type: application/json
 <td>Returns all assets whose <code>Name</code> field of the asset type matches <strong>HeaterTypeName</strong></td>
 </tr>
 <tr>
-<td>StreamProperties:Pressure</td>
+<td>StreamPropertyId:Pressure</td>
 <td>Returns all assets that have one or more stream references with the stream property ID <strong>Pressure</strong>. Note: This search only searches non-key Sds stream properties.</td>
 </tr>
 <tr>
-<td>StreamReferences:Name1</td>
+<td>StreamReferenceName:Name1</td>
 <td>Returns all assets whose stream references contain a stream reference name that matches <strong>Name1</strong>.</td>
 </tr>
 </tbody>
@@ -344,24 +344,22 @@ Content-Type: application/json
 <tbody>
 <tr>
 <td>filter[location]=Earth</td>
-<td>Returns all assets that contain a metadata name = <strong>location</strong> and value is <strong>Earth</strong>.</td>
+<td>Filter that only returns assets that contain the metadata name = <strong>location</strong> with <strong>Earth</strong> as the metadata value.</td>
 </tr>
 <tr>
 <td>filter[location]=Earth&amp;filter[device]=tracer</td>
-<td>Returns all assets that contain a metadata name = <strong>location</strong> and value is <strong>Earth</strong> and also contains a metadata with name = <strong>device</strong> and value is <strong>tracer</strong>.</td>
+<td>Filter that only returns assets that contain both of the following metadata. The first metadata name = <strong>location</strong> with <strong>Earth</strong> as the metadata value, and the second metadata is name = <strong>device</strong> with <strong>tracer</strong> as the metadata value.</td>
+</tr>
+<tr>
+<td>filter[AssetTypeName]=HeaterType</td>
+<td>Filter that only returns assets with an AssetTypeName of &quot;HeaterType.&quot;</td>
+</tr>
+<tr>
+<td>filter[status]=Bad</td>
+<td>Filter that returns only assets with a bad status. Status filters can have the values &quot;Good&quot;, &quot;Bad&quot;, Warning&quot;, and &quot;Unknown&quot;.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="asset-results-by-pages"><code>Asset Results by Pages</code></h2>
-<p>Asset search results can be returned in pages through <code>pageSize</code> ,<code>maxPages</code>, and <code>continuationToken</code> query parameters.</p>
-<p>To return search results in pages, first make a call using the <code>pageSize</code> and <code>maxPages</code> parameters. For example:</p>
-<p><code>GET search/assets?pageSize=10&amp;maxPages=100</code> returns search results with a maximum of 10 assets per page and a maximum of 100 pages. </p>
-<p>The HTTP header of this response of this query will include a &quot;Link&quot; section to which will define either first, next, previous, or last pages. These links can be used directly to follow the pages. For example, the links section may contain:</p>
-<pre><code class="lang-json">&lt;https://{clusterName}/api/v1-preview/tenants/{tenantId}/namespaces/{NamespaceId}/Assets?continuationToken={continuationToken}&gt;; rel=&quot;next&quot;, 
-&lt;https://{clusterName}/api/v1-preview/tenants/{tenantId}/namespaces/{NamespaceId}/Assets?continuationToken={continuationToken}&gt;; rel=&quot;previous&quot;,
-&lt;https://{clusterName}/api/v1-preview/tenants/{tenantId}/namespaces/{NamespaceId}/Assets?continuationToken={continuationToken}&gt;; rel=&quot;first&quot;,
-&lt;https://{clusterName}/api/v1-preview/tenants/{tenantId}/namespaces/{NamespaceId}/Assets?continuationToken={continuationToken}&gt;; rel=&quot;last&quot;
-</code></pre><p>These links can be followed to get the next, previous, first, and last page.  If no pages are requested, the links to the next, previous, first, and last pages time out in 2 minutes.</p>
 <h2 id="asset-faceted-search"><code>Asset Faceted Search</code></h2>
 <p>Asset faceted search allows for searching using asset facets. Asset facets are not case sensitive.  Only asset metadata can be used in asset faceted searches.</p>
 <h3 id="request-2">Request</h3>
@@ -437,6 +435,111 @@ Content-Type: application/json
         ]
     }
 ]
+</code></pre><h2 id="asset-autocomplete"><code>Asset Autocomplete</code></h2>
+<p>Asset autocomplete allows you to query assets and retrieve a list of suggested assets based on your search criteria. The autocomplete feature can be used with the following asset properties:</p>
+<ul>
+<li>Name</li>
+<li>Description</li>
+<li>AssetTypeName</li>
+<li>Metadata</li>
+</ul>
+<h3 id="request-3">Request</h3>
+<pre><code class="lang-text">GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/search/Assets/autocomplete?term={term}&amp;facetCount={facetCount}&amp;termCount={termCount}
+</code></pre><h3 id="parameters-3">Parameters</h3>
+<p><code>string tenantId</code><br>The tenant identifier</p>
+<p><code>string namespaceId</code><br>The namespace identifier</p>
+<p><code>string term</code><br>The search term that you want to search for.</p>
+<p>[optional] <code>int facetCount</code><br>The maximum number of facet autocompleted items to return. The default is 0 which means you will not get any facet suggestions.</p>
+<p>[optional] <code>int termCount</code><br>The maximum number of token autocompleted items to return. The default is 0 which means you will not get any token suggestions.</p>
+<h3 id="example-1">Example</h3>
+<p>If you have the following assets in your system:</p>
+<table>
+<thead>
+<tr>
+<th>Assets in System</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&quot;Id&quot;: &quot;AutoCompletedAsset_1&quot;, &quot;Name&quot;: &quot;tracerRound&quot;, &quot;Description&quot;: &quot;Traced Asset 1&quot;, &quot;Metadata&quot;: [{ &quot;Id&quot;: &quot;1&quot;, &quot;Name&quot;: &quot;tractorNumber&quot;, &quot;Value&quot;: &quot;t100&quot;, &quot;SdsTypeCode&quot;: &quot;String:}]</td>
+</tr>
+<tr>
+<td>&quot;Id&quot;: &quot;AutoCompletedAsset_2&quot;, &quot;Name&quot;: &quot;tracerRound&quot;, &quot;Description&quot;: &quot;None&quot;, &quot;Metadata&quot;: [{ &quot;Id&quot;: &quot;2&quot;, &quot;Name&quot;: &quot;tractorNumber&quot;, &quot;Value&quot;: &quot;tractor3&quot;,        &quot;SdsTypeCode&quot;: &quot;String&quot;}]</td>
+</tr>
+<tr>
+<td>&quot;Id&quot;: &quot;AutoCompletedAsset_3&quot;, &quot;Name&quot;: &quot;tracerRound_Type2&quot;, &quot;Description&quot;: &quot;None&quot;, &quot;Metadata&quot;: {&quot;Id&quot;: &quot;17&quot;, &quot;Name&quot;: &quot;track&quot;, &quot;SdsTypeCode&quot;: &quot;String&quot;, &quot;Value&quot;: &quot;100&quot;}]</td>
+</tr>
+</tbody>
+</table>
+<p>Performing a <code>GET search/assets/autocomplete?term=t&amp;termcount=10&amp;facetcount=10</code> returns the following response. </p>
+<pre><code class="lang-json">{
+    &quot;Facets&quot;: [
+        {
+            &quot;Value&quot;: &quot;trackUnit1&quot;,
+            &quot;FacetCategories&quot;: [
+                {
+                    &quot;Name&quot;: &quot;track&quot;,
+                    &quot;DocumentCount&quot;: 1
+                }
+            ]
+        },
+        {
+            &quot;Value&quot;: &quot;t1000&quot;,
+            &quot;FacetCategories&quot;: [
+                {
+                    &quot;Name&quot;: &quot;tractorNumber&quot;,
+                    &quot;DocumentCount&quot;: 1
+                }
+            ]
+        }
+    ],
+    &quot;Tokens&quot;: [
+        {
+            &quot;Value&quot;: &quot;tracerround&quot;,
+            &quot;DocumentCount&quot;: 2
+        },
+        {
+            &quot;Value&quot;: &quot;tractornumber&quot;,
+            &quot;DocumentCount&quot;: 2
+        },
+        {
+            &quot;Value&quot;: &quot;tracerround_type2&quot;,
+            &quot;DocumentCount&quot;: 1
+        },
+        {
+            &quot;Value&quot;: &quot;track&quot;,
+            &quot;DocumentCount&quot;: 1
+        },
+        {
+            &quot;Value&quot;: &quot;t1000&quot;,
+            &quot;DocumentCount&quot;: 1
+        }
+    ]
+}
+</code></pre><p>Performing a <code>GET search/assets/autocomplete?term=t&amp;facetcount=10</code> returns the following response. </p>
+<pre><code class="lang-json">{
+    &quot;Facets&quot;: [
+        {
+            &quot;Value&quot;: &quot;trackUnit1&quot;,
+            &quot;FacetCategories&quot;: [
+                {
+                    &quot;Name&quot;: &quot;track&quot;,
+                    &quot;DocumentCount&quot;: 1
+                }
+            ]
+        },
+        {
+            &quot;Value&quot;: &quot;t1000&quot;,
+            &quot;FacetCategories&quot;: [
+                {
+                    &quot;Name&quot;: &quot;tractorNumber&quot;,
+                    &quot;DocumentCount&quot;: 1
+                }
+            ]
+        }
+    ],
+    &quot;Tokens&quot;: []
+}
 </code></pre></article>
           </div>
           

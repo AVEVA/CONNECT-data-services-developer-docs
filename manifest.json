@@ -85,6 +85,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "Content_Portal/Documentation/Access_Control.md",
       "output": {
@@ -122,18 +125,6 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "Content_Portal/Documentation/Assets/access-control-api.md",
-      "output": {
-        ".html": {
-          "relative_path": "Content_Portal/Documentation/Assets/access-control-api.html",
-          "hash": "9PFf0Bp1YU/j2fqZ/hoRsQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
       "source_relative_path": "Content_Portal/Documentation/Assets/asset-centric-data-api.md",
       "output": {
         ".html": {
@@ -150,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Assets/asset-resolved-asset.html",
-          "hash": "7mwPgZRFXfANtQcV2xyK3w=="
+          "hash": "MzFtbemsZa7pVVEHyJWL5w=="
         }
       },
       "is_incremental": false,
@@ -162,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Assets/asset-search-api.html",
-          "hash": "SK/OezICgdlkgJWgDY/sNQ=="
+          "hash": "9NBHgSgdh+VQIpRdm2BK0A=="
         }
       },
       "is_incremental": false,
@@ -194,11 +185,23 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "Content_Portal/Documentation/Assets/assets-acl-api.md",
+      "output": {
+        ".html": {
+          "relative_path": "Content_Portal/Documentation/Assets/assets-acl-api.html",
+          "hash": "OcDeH3yf+CHZDTMeBgZzKg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "Content_Portal/Documentation/Assets/assets-api.md",
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Assets/assets-api.html",
-          "hash": "+pyD3MSlv1OYuDIZFyOVAg=="
+          "hash": "Lu/7N77RopJ0L9tQDJa07w=="
         }
       },
       "is_incremental": false,
@@ -210,7 +213,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/Assets/assets.html",
-          "hash": "Tb3zSKvqFvtqvxra70hsIw=="
+          "hash": "pDscXhLISbn48AGrKG+gKQ=="
         }
       },
       "is_incremental": false,
@@ -618,7 +621,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/Documentation/DataViews/SecureDataViews/Securing_Data_Views.html",
-          "hash": "In3BgMu+Gx6h1HYUkyQEzw=="
+          "hash": "HSSupC4aj+UYfSDSBDhCeQ=="
         }
       },
       "is_incremental": false,
@@ -1318,9 +1321,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Content_Portal/Documentation/developer-guide/identity-dev/Access_Control.md",
       "output": {
@@ -3216,7 +3216,7 @@
       "output": {
         ".html": {
           "relative_path": "Content_Portal/toc.html",
-          "hash": "3i3VZ1ksAuxY6Z7NSnUzVQ=="
+          "hash": "kPfN2WRBiqtCs2oPK2TRZQ=="
         }
       },
       "is_incremental": false,

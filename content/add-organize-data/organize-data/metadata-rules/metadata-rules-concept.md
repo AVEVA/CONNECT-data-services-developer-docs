@@ -4,15 +4,15 @@ uid: ccMetadataRules
 
 # Metadata rules
 
-Whenever possible, OSIsoft recommends that metadata be explicitly included in the streams when they are being created. However, there are situations where this is not possible. In these instances you can establish or leverage an existing consistent naming pattern for your streams and embed metadata such as location, asset class, and asset ID in your stream names.  Then you can create metadata rules that define the pattern of the stream name. The metadata rule identifies all streams that match the defined pattern. OSIsoft Cloud Services (OCS) then parses each stream and builds out the metadata following the defined rules.
+We recommend that you explicitly include metadata when you create streams; but, that is not always possible. In these instances, you can establish or leverage a consistent naming pattern for streams and embed metadata such as location, asset class, and asset ID in the stream names. Then use a metadata rule to describe the pattern of the stream names. The metadata rule identifies all streams that match the pattern. Then OCS parses each stream and builds out the metadata following the defined rules. 
 
 ## PI Server counterpart
 
-Metadata rules do not have a similar counterpart in PI Server because PI points cannot store generic metadata. If a similar feature existed in PI Server, it might be a tool that runs against a list of PI points and fills in their point attributes by parsing out different parts of a structured PI point name.
+Metadata rules do not have a similar counterpart in PI Server because PI points cannot store generic metadata. If a similar feature existed in PI Server, it might be a tool that runs against a list of PI points and fills in their point attributes by parsing out different parts of a structured PI point name. <!-- Angela Flores 6/11/21 - Does the second sentence add value?  >
 
 ## Metadata best practices  
 
-The following best practices are recommended to make it easier to add metadata to your streams:
+We recommend the following best practices to make it easier to add metadata to streams:
 
 - The easiest way to explicitly add metadata is at the time that streams are created. Therefore, whenever possible, OSIsoft recommends that metadata be added during stream creation.
 - There may be situations where streams are created from an external source and you cannot explicitly include metadata fields. If possible, establish and apply a naming pattern for stream names that can be used with metadata rules.  An example of a naming pattern is: {Region}.{Site}.{Equipment}.{Measurement}. Use delimiters to separate the parts in the naming pattern. 
@@ -20,15 +20,13 @@ The following best practices are recommended to make it easier to add metadata t
 
 ## Using metadata rules to add metadata to streams
 
-The following diagram shows metadata in the context of several data streams.![Metadata and streams](images/streams.jpg) 
+The following diagram shows metadata for two turbines named GEO1 and GEO2, each with three data streams.
 
-The diagram above shows two turbines named GEO1 and GEO2, each with three data streams.
-1. The color-coded data streams show the specific data each stream is tracking, detailed in the Stream Metadata column. 
+- The color-coded data streams show the specific data each stream is tracking, which is detailed in the Stream Metadata column. 
+- The basic description of the stream data is encoded in the stream name. For example, for the third stream in the table, the metadata rule translated, GEO1_P.ACT_PV, into meaningful information. You see that GEO1 is the name of the turbine and that Active Power is the measurement in this stream.  
+- A metadata rule based on this stream naming pattern can capture active power values for all turbines in each wind farm. 
 
-2. The basic description of the stream data is encoded in the stream name. For example, looking at the third stream in the table, the metadata rule takes what might have been meaningless to a user, GEO1_P.ACT_PV, and translates this.  The user sees that GEO1 is the name of the turbine and ACT_PV  or Active Power is the measurement in this stream.  
-
-3. A metadata rule based on this stream naming pattern can capture active power values for all turbines in each wind farm. 
-   
+![Metadata and streams](images/streams.jpg) 
 
 The OCS portal provides a wizard to create metadata rules. Users select a stream as the template for creating a metadata rule and define the criteria by which the metadata rule determines matching streams. ![Adding metadata](images/metadata1.jpg)
 

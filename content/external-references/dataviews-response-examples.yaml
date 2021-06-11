@@ -167,8 +167,8 @@ data-stored-get-multiple-formats:
         },
         {
             "Time": "2018-01-01T00:00:32Z",
-            "Temperature": 24,
-            "Flowrate": 44,
+            "Temperature": null,
+            "Flowrate": null,
             "Volume": 245
         }
     ]
@@ -178,9 +178,9 @@ data-stored-get-multiple-formats:
     form=csv
     HTTP 200 OK
     Content-Type: text/csv
-    2018-01-01T00:00:03Z,24,null,245
-    2018-01-01T00:00:14Z,24,44,null
-    2018-01-01T00:00:32Z,24,44,245
+    2018-01-01T00:00:03Z,24,,245
+    2018-01-01T00:00:14Z,24,44,
+    2018-01-01T00:00:32Z,,,245
     ```
 
     ```csv
@@ -188,9 +188,9 @@ data-stored-get-multiple-formats:
     HTTP 200 OK
     Content-Type: text/csv
     Time,Temperature,Flowrate,Volume
-    2018-01-01T00:00:03Z,24,null,245
-    2018-01-01T00:00:14Z,24,44,null
-    2018-01-01T00:00:32Z,24,44,245
+    2018-01-01T00:00:03Z,24,,245
+    2018-01-01T00:00:14Z,24,44,
+    2018-01-01T00:00:32Z,,,245
     ```
 
     ```json
@@ -231,8 +231,8 @@ data-stored-get-multiple-formats:
         ],
         [
           "2018-01-01T00:00:32Z",
-          24,
-          44,
+          null,
+          null,
           245
         ]
       ]
@@ -283,8 +283,8 @@ data-stored-get-multiple-formats:
           ],
           [
               "2018-01-01T00:00:32Z",
-              24,
-              44,
+              null,
+              null,
               245
           ]
        ]

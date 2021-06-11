@@ -19,9 +19,10 @@ See [Search in SDS](xref:sdsSearching#search-for-stream-views) for limitations o
 | TargetTypeId | String                 | Yes    | Yes		   |Identifier of the SdsType to convert events to |
 | Properties   | IList\<SdsStreamViewProperty\> | No    | Yes, with limitations*	  |Property-level mapping |
 
-**\*Notes on `Properties` field**: SdsStreamViewProperty objects are not searchable.
-Only the SdsStreamViewProperty's SdsStreamView is searchable by its `Id`, `SourceTypeId`, and `TargetTypeId`, which are used to return the top level SdsStreamView object when searching.
-The same is true for nested SdsStreamViewProperties. For more information, see [search for stream views](xref:sdsSearching#search-for-stream-views).
+> [!NOTE]
+> SdsStreamViewProperty objects are not searchable.
+> Only the SdsStreamViewProperty's SdsStreamView is searchable by its `Id`, `SourceTypeId`, and `TargetTypeId`, which are used to return the top level SdsStreamView object when searching.
+> The same is true for nested SdsStreamViewProperties. For more information, see [search for stream views](xref:sdsSearching#search-for-stream-views).
 
 **Rules for the Stream View Identifier (SdsStreamView.Id)**  
 

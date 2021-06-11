@@ -68,11 +68,11 @@ In read and write data operations, specify compound indexes in the URI by orderi
  separated by the pipe character, ‘|’. 
 To help those using compound indexes, .NET client libraries methods also allow the use of tuples for indexes.
 
-**Notes:** 
-- Compound indexing only applies to types.
-In other words, there is no compound indexing for secondary indexes that are on streams.
-For more information, see [Streams](xref:sdsStreams#indexes).  
-- The examples below are for compound indexes on types and not of secondary indexes on streams.
+> [!NOTE]
+> - Compound indexing only applies to types.
+> In other words, there is no compound indexing for secondary indexes that are on streams.
+> For more information, see [Streams](xref:sdsStreams#indexes).  
+> - The examples below are for compound indexes on types and not of secondary indexes on streams.
 
 
 **REST API**

@@ -129,7 +129,11 @@ For more information on type properties, see [Types](xref:sdsTypes#typepropertie
 | InterpolationMode | No         |
 | ExtrapolationMode | No         |
 | Properties        | Yes, with limitations* |
-**\*Notes on `Properties` field:** `Name` and `Id` of an SdsType are included in its `Properties` field. Similarly, `Name` and `Id` of a nested type are included in its `Properties`. If there are two types with the same `Properties`, `Name` or `Id`, the search will return both types in the result.
+
+> [!NOTE]
+> `Properties` field  
+> `Name` and `Id` of an SdsType are included in its `Properties` field.
+>  Similarly, `Name` and `Id` of a nested type are included in its `Properties`. If there are two types with the same `Properties`, `Name` or `Id`, the search will return both types in the result.
 
 #### Request
 Search for types using the REST API and specifying the optional `query` parameter:
@@ -164,7 +168,11 @@ For more information on stream view properties, see [Stream Views](xref:sdsStrea
 | SourceTypeId | Yes		|
 | TargetTypeId | Yes		|
 | Properties   | Yes, with limitations* |
-**\*Notes on `Properties` field:** The `Properties` collection contains a list of SdsStreamViewProperty objects. The query will attempt to find a match on the SdsStreamViewProperty's `Id`, `SourceTypeId`, and `TargetTypeId` fields. The `Properties` collection of nested views will also be searched. See example below.  
+
+> [!NOTE]
+> The `Properties` collection contains a list of SdsStreamViewProperty objects. 
+> The query will attempt to find a match on the SdsStreamViewProperty's `Id`, `SourceTypeId`, and `TargetTypeId` fields. 
+> The `Properties` collection of nested views will also be searched. See the example below.  
 
 #### Example
 You can search for ``ComplexView`` using the `Id`("NestedView"), `SourceTypeId`, and `TargetTypeId` of ``NestedView`` but not its `Description`("An example of a nested view").  

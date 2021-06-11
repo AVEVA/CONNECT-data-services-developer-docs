@@ -117,7 +117,7 @@ A serialized list of one or more events of the stream type
 #### Response  
 The response includes a status code
 
-#### Notes  
+#### Note 
 This request will return an error if an event already exists for any index in the request. If any individual index encounters a problem, the entire operation is rolled back and no insertions are made. The `streamId` and `index` that caused the issue are included in the error response.
 
 ##### Example request  
@@ -197,7 +197,7 @@ Let's say that you have a stream `Simple` of `SimpleType`. To change one propert
 
 This request will only change the `Measurement` value at the specified event index. 
 
-#### Notes  
+#### Note 
 Patching is used to patch the events of the selected fields for one or more events in the stream. Only the fields indicated in `selectExpression` are modified. The events to be modified are indicated by the index value of each entry in the collection. 
 
 If there is a problem patching any individual event, the entire operation is rolled back and the error will indicate the `streamId` and `index` of the problem.  
@@ -243,7 +243,7 @@ One or more indexes of events to remove
 #### Response  
 The response includes a status code
 
-#### Notes  
+#### Note 
 If any individual event fails to be removed, the entire operation is rolled back and no events are removed. The streamId and index that caused the issue are included in the error response. 
 
 If you attempt to remove events at indexes that have no events, an error is returned. If this occurs, you can use [Window](#removewindow) request format to remove any events from a specified ‘window’ of indexes, which will not return an error if no data is found.
@@ -289,7 +289,7 @@ The index defining the end of the window
 #### Response  
 The response includes a status code
 
-#### Notes  
+#### Note 
 If any individual event fails to be removed, the entire operation is rolled back and no removes are done.
 
 #### .NET client libraries methods
@@ -327,7 +327,7 @@ A serialized list of one or more events of the stream type
 #### Response  
 The response includes a status code
 
-#### Notes  
+#### Note 
 This request returns an error if the stream does not have an event to be replaced at the specified index. If any individual event fails to be replaced, the entire operation is rolled back and no replaces are performed. The index that caused the issue and the streamId are included in the error response.
 
 #### .NET client libraries methods
@@ -363,7 +363,7 @@ A serialized list of one or more events of the stream type
 #### Response  
 The response includes a status code
 
-#### Notes  
+#### Note 
 This request performs an insert or a replace depending on whether an event already exists at the event indexes. If any item fails to write, the entire operation is rolled back and
 no events are written to the stream. The index that caused the issue is included in the error response.
 

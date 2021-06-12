@@ -5,10 +5,11 @@ uid: ccMetadataRules
 # Metadata rules
 
 We recommend that you explicitly include metadata when you create streams; but, that is not always possible. In these instances, you can establish or leverage a consistent naming pattern for streams and embed metadata such as location, asset class, and asset ID in the stream names. Then use a metadata rule to describe the pattern of the stream names. The metadata rule identifies all streams that match the pattern. Then OCS parses each stream and builds out the metadata following the defined rules. 
+<!-- Angela Flores 6/11/21 -Having read through the topic, I don't understand how you could use a metadata rule to "establish a consistent naming pattern". It seems like if the naming pattern is consistent, you can use metadata rules to decode the information stored in the name. Also, this topic talks about creating metadata rules and how they are applied to data streams, but then what? Where do I see this information? How does it help me? -->
 
 ## PI Server counterpart
 
-Metadata rules do not have a similar counterpart in PI Server because PI points cannot store generic metadata. If a similar feature existed in PI Server, it might be a tool that runs against a list of PI points and fills in their point attributes by parsing out different parts of a structured PI point name. <!-- Angela Flores 6/11/21 - Does the second sentence add value?  >
+Metadata rules do not have a similar counterpart in PI Server because PI points cannot store generic metadata. If a similar feature existed in PI Server, it might be a tool that runs against a list of PI points and fills in their point attributes by parsing out different parts of a structured PI point name. <!-- Angela Flores 6/11/21 - I don't think the second sentence adds value. It is talking about a hypothetical tool. -->
 
 ## Metadata best practices  
 
@@ -28,23 +29,25 @@ The following diagram shows metadata for two turbines named GEO1 and GEO2, each 
 
 ![Metadata and streams](images/streams.jpg) 
 
-The OCS portal provides a wizard to create metadata rules. Users select a stream as the template for creating a metadata rule and define the criteria by which the metadata rule determines matching streams. ![Adding metadata](images/metadata1.jpg)
+Create metadata rules by selecting a stream as a template and then define the criteria to match with other streams. In the example below, OCS shows a stream selected for metadata rule and identifies characters you could use to divide the stream name into parts using a + sign. 
 
-In the screen capture above, the wizard displays the stream name selected by the user, and it identifies each delimiter with a + sign. ![Adding metadata to streams](images/metadata2.jpg)
+![Adding metadata](images/metadata1.jpg)
 
-Each part of the stream name is assigned a metadata type. The screen capture above shows the different metadata types (wildcard, metadata, and string literal) that can be assigned to each delimited part of a stream name. 
+Assign a metadata type to each part of the stream name, using the following metadata types:
 
-*       In this example, all data is coming from wind turbines on a wind farm, The user knows that the first part of the stream name (*GEO1* in the selected stream above) identifies the wind turbine. This rule uses a wildcard to capture streams for all turbines.  
+- wildcard - variable information
+- metadata - a key that identifies values in the stream; part of a key-value pair
+- string literal - static characters that convey information
 
-*       The second part of the stream name (*P.ACT* in the selected stream above) has been assigned a metadata type of metadata. Metadata is defined as key-value pairs. For example*, P.ACT* is the key for *Active Power*. The user defines all key-value pairs for this part of the stream name. 
+In the following example, all data comes from wind turbines on a wind farm and the template stream name has three parts: *GEO1*, *P.ACT*, and *PV*. The first part of the stream name identifies the wind turbine and is different for each wind turbine. This part of the stream name is a wildcard. The second part of the stream name, *P.ACT*, identifies the measurement *Active Power*. This part of the stream name is metadata. The third part of the stream name, *PV*, stands for Pine Valley Wind Farm and is a string literal. 
 
-* *PV* is defined as a string literal. In this example, it refers to the Pine Valley Wind Farm. 
+When the parts are combined, this metadata rule creates metadata for streams coming from turbines for Active Power in the Pine Valley Wind Farm.
 
-  As defined, this metadata rule creates metadata for streams coming from turbines for Active Power in the Pine Valley Wind Farm.
-
-  In addition to being applied to any existing streams, a metadata rule captures any matching streams that are subsequently added to the selected namespace. You can edit a metadata rule. The modified rule may then capture a different set of streams.
-
+![Adding metadata to streams](images/metadata2.jpg)
+ 
+When you create a metadata rule, OCS applies it to all existing streams and subsequently to any new streams added to the namespace. You can edit a metadata rule; but the modified rule may capture a different set of streams. 
 
 ## Related links
 
 - [Create a metadata rule](xref:gpMetadataRules)
+<!-- Angela Flores 6/11/21 - Adding a related links section seems unnecessary. -->

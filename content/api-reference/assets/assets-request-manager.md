@@ -54,6 +54,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[DeprecatedAsset](#schemadeprecatedasset)[]|List of assets in the given namespace.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details..|
 |401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized..|
 |500|[ErrorTemplate](#schemaerrortemplate)|Internal Service Error, please try again later..|
 |503|[ErrorTemplate](#schemaerrortemplate)|Service Unavaiable, please try again later..|
@@ -76,7 +77,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 ]
 ```
 
-> 401 Response
+> 400 Response
 
 ```json
 {

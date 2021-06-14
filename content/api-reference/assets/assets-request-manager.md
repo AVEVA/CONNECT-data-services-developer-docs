@@ -155,19 +155,51 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|None|The asset as persisted, including values for optional parameters that were omitted in the request.|
-|401|[HttpResponse](#schemahttpresponse)|None|
-|403|[HttpResponse](#schemahttpresponse)|You are not authorized to create assets.|
-|404|[HttpResponse](#schemahttpresponse)|None|
-|500|[HttpResponse](#schemahttpresponse)|None|
-|503|[HttpResponse](#schemahttpresponse)|None|
+|200|[DeprecatedAsset](#schemadeprecatedasset)|The asset as persisted, including values for optional parameters that were omitted in the request.|
+|401|[ErrorTemplate](#schemaerrortemplate)|None|
+|403|[ErrorTemplate](#schemaerrortemplate)|You are not authorized to create assets.|
+|404|[ErrorTemplate](#schemaerrortemplate)|None|
+|500|[ErrorTemplate](#schemaerrortemplate)|None|
+|503|[ErrorTemplate](#schemaerrortemplate)|None|
 
 #### Example response body
-> 401 Response
+> 200 Response
 
 ```json
 {
-  "BodyWriter": {}
+  "Id": "string",
+  "AssetTypeId": "string",
+  "Name": "string",
+  "Description": "string",
+  "Metadata": [
+    {
+      "Id": "string",
+      "Name": "string",
+      "Description": "string",
+      "SdsTypeCode": "Empty",
+      "Value": null,
+      "Uom": "string"
+    }
+  ],
+  "StreamReferences": [
+    {
+      "Id": "string",
+      "Name": "string",
+      "Description": "string",
+      "StreamId": "string"
+    }
+  ],
+  "Status": {
+    "StreamReferenceId": "string",
+    "StreamPropertyId": "string",
+    "ValueStatusMappings": [
+      {
+        "Value": null,
+        "Status": "[",
+        "DisplayName": "string"
+      }
+    ]
+  }
 }
 ```
 
@@ -995,42 +1027,6 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/search/assets/fa
 
 ---
 
-### HttpResponse
-
-<a id="schemahttpresponse"></a>
-<a id="schema_HttpResponse"></a>
-<a id="tocShttpresponse"></a>
-<a id="tocshttpresponse"></a>
-
-#### Properties
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|BodyWriter|[PipeWriter](#schemapipewriter)|false|true|None|
-
-```json
-{
-  "BodyWriter": {}
-}
-
-```
-
----
-
-### PipeWriter
-
-<a id="schemapipewriter"></a>
-<a id="schema_PipeWriter"></a>
-<a id="tocSpipewriter"></a>
-<a id="tocspipewriter"></a>
-
-```json
-{}
-
-```
-
----
-
 ### DeprecatedAsset
 
 <a id="schemadeprecatedasset"></a>
@@ -1167,12 +1163,78 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/search/assets/fa
 
 ---
 
+### ErrorTemplate
+
+<a id="schemaerrortemplate"></a>
+<a id="schema_ErrorTemplate"></a>
+<a id="tocSerrortemplate"></a>
+<a id="tocserrortemplate"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|OperationId|string|false|true|None|
+|Error|string|false|true|None|
+|Resolution|string|false|true|None|
+|Reason|string|false|true|None|
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+
+```
+
+---
+
 ### IEqualityComparerOfString
 
 <a id="schemaiequalitycomparerofstring"></a>
 <a id="schema_IEqualityComparerOfString"></a>
 <a id="tocSiequalitycomparerofstring"></a>
 <a id="tocsiequalitycomparerofstring"></a>
+
+```json
+{}
+
+```
+
+---
+
+### HttpResponse
+
+<a id="schemahttpresponse"></a>
+<a id="schema_HttpResponse"></a>
+<a id="tocShttpresponse"></a>
+<a id="tocshttpresponse"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|BodyWriter|[PipeWriter](#schemapipewriter)|false|true|None|
+
+```json
+{
+  "BodyWriter": {}
+}
+
+```
+
+---
+
+### PipeWriter
+
+<a id="schemapipewriter"></a>
+<a id="schema_PipeWriter"></a>
+<a id="tocSpipewriter"></a>
+<a id="tocspipewriter"></a>
 
 ```json
 {}

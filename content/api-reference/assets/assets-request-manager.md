@@ -115,6 +115,55 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 
 ```json
 {
+  "Id": "string",
+  "AssetTypeId": "string",
+  "Name": "string",
+  "Description": "string",
+  "Metadata": [
+    {
+      "Id": "string",
+      "Name": "string",
+      "Description": "string",
+      "SdsTypeCode": "Empty",
+      "Value": null,
+      "Uom": "string"
+    }
+  ],
+  "StreamReferences": [
+    {
+      "Id": "string",
+      "Name": "string",
+      "Description": "string",
+      "StreamId": "string"
+    }
+  ],
+  "Status": {
+    "StreamReferenceId": "string",
+    "StreamPropertyId": "string",
+    "ValueStatusMappings": [
+      {}
+    ]
+  }
+}
+```
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[DeprecatedAsset](#schemadeprecatedasset)|The asset as persisted, including values for optional parameters that were omitted in the request.|
+|302|[DeprecatedAsset](#schemadeprecatedasset)|The asset you attempted to create is identical to one that already exists.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details..|
+|403|[ErrorTemplate](#schemaerrortemplate)|You are not authorized to create assets.|
+|409|[ErrorTemplate](#schemaerrortemplate)|The asset you attempted to create has a conflict. See the response body for additional details..|
+|500|[ErrorTemplate](#schemaerrortemplate)|Internal Service Error, please try again later..|
+|503|[ErrorTemplate](#schemaerrortemplate)|Service Unavaiable, please try again later..|
+
+#### Example response body
+> 200 Response
+
+```json
+{
   "Id": "Heater_01_01_02",
   "Name": "HeaterOnFirstFloor",
   "Description": "This is Asset which represents a heater on the first floor.",
@@ -138,20 +187,7 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 }
 ```
 
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|[DeprecatedAsset](#schemadeprecatedasset)|The asset as persisted, including values for optional parameters that were omitted in the request.|
-|302|[DeprecatedAsset](#schemadeprecatedasset)|The asset you attempted to create is identical to one that already exists.|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details..|
-|403|[ErrorTemplate](#schemaerrortemplate)|You are not authorized to create assets.|
-|409|[ErrorTemplate](#schemaerrortemplate)|The asset you attempted to create has a conflict. See the response body for additional details..|
-|500|[ErrorTemplate](#schemaerrortemplate)|Internal Service Error, please try again later..|
-|503|[ErrorTemplate](#schemaerrortemplate)|Service Unavaiable, please try again later..|
-
-#### Example response body
-> 200 Response
+> 302 Response
 
 ```json
 {

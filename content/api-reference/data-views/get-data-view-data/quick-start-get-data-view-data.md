@@ -23,7 +23,7 @@ Three parameters control the range and granularity of data returned:
 |--|--|--|--|
 | Start index | `startIndex` | `DefaultStartIndex` | The inclusive start boundary of the data view data
 | End index | `endIndex` | `DefaultEndIndex` | The inclusive end boundary of the data view data
-| Interval | `interval` | `DefaultInterval` | The interval between index values. Only applies for interpolated retrieval mode.
+| Interval | `interval` | `DefaultInterval` | The interval between index values: only applies to interpolated retrieval mode
 
 Default values may, optionally, be defined on the data view itself. It is not necessary to define defaults for all three properties. 
 

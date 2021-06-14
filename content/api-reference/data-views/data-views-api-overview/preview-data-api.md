@@ -6,7 +6,7 @@ uid: DataViewsPreviewDataAPI
 The Preview Data API allows users to [retrieve data](xref:DataViewsQuickStartGetData) for a specified data view.  This API is one portion of the [data views API](xref:DataViewsAPIOverview).
 
 ## `Get Data View Interpolated Data`
-Get interpolated data for the provided data view and index parameters with paging. See [documentation on paging](xref:DataViewsQuickStartGetData#paging) for further information.
+Returns interpolated data for the provided data view and index parameters with paging. See [documentation on paging](xref:DataViewsQuickStartGetData#paging) for further information.
 
 ### Request
 ```text
@@ -108,7 +108,7 @@ Successful (200 OK) responses include:
 | First-Page | Hyperlink to the first page of data |
 
 #### Example response body in default format
-An array of json values. Each json property corresponds to a field mapping. Property names are the field mapping `.Id`s.
+An array of json values: each json property corresponds to a field mapping. Property names are the field mapping `.Id`s.
 
 ```json
 HTTP 200 OK
@@ -272,7 +272,7 @@ Time,Temperature,Flowrate,Volume
 ```
 
 ## `Get Data View Stored Data`
-Get stored data for the provided data view and index parameters with paging. See [documentation on paging](xref:DataViewsQuickStartGetData#paging) for further information.
+Returns stored data for the provided data view and index parameters with paging. See [documentation on paging](xref:DataViewsQuickStartGetData#paging) for further information.
 
 ### Request
 ```text
@@ -371,7 +371,7 @@ Successful (200 OK) responses include:
 | First-Page | Hyperlink to the first page of data |
 
 #### Example response body in default format
-An array of json values. Each json property corresponds to a field mapping. Property names are the field mapping `.Id`s.
+An array of json values: each json property corresponds to a field mapping. Property names are the field mapping `.Id`s.
 
 ```json
 HTTP 200 OK

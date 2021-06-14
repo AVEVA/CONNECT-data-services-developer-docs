@@ -63,42 +63,24 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 
 ```json
 [
-  {
-    "Id": "string",
-    "AssetTypeId": "string",
-    "Name": "string",
-    "Description": "string",
-    "Metadata": [
-      {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SdsTypeCode": "Empty",
-        "Value": null,
-        "Uom": "string"
-      }
-    ],
-    "StreamReferences": [
-      {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "StreamId": "string"
-      }
-    ],
-    "Status": {
-      "StreamReferenceId": "string",
-      "StreamPropertyId": "string",
-      "ValueStatusMappings": [
-        {
-          "Value": null,
-          "Status": null,
-          "DisplayName": null
-        }
-      ]
-    }
-  }
+  "Read",
+  "Write",
+  "Delete",
+  "ManageAccessControl"
 ]
+```
+
+> 401 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
 ```
 
 ---

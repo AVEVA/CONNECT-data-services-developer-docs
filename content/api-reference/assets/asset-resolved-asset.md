@@ -119,6 +119,7 @@ Content-Type: application/json
                     },
                     "Source": {
                         "StreamId": "SourceSdsStreamId",
+                        "StreamReferenceName": "SourceSdsStreamName",
                         "PropertyId": "Timestamp"
                     }
                 },
@@ -135,6 +136,7 @@ Content-Type: application/json
                     },
                     "Source": {
                         "StreamId": "SourceSdsStreamId",
+                        "StreamReferenceName": "SourceSdsStreamName",
                         "PropertyId": "Temp"
                     }
                 },

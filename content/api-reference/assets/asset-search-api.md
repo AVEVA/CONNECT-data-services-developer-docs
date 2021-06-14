@@ -16,11 +16,11 @@ Assets can be searched on the following asset properties:
   - Id, Name, Description, AssetTypeId, AssetTypeName
 
 - Metadata Fields
-  - Name, Description. Value
+  - Name, Description, Value
 
 - Stream Reference Fields
-  - StreamReferences - Stream Reference Name
-  - StreamProperties - Sds Stream Property Ids, not including indices
+  - StreamReferenceName - Stream Reference Name
+  - StreamPropertyId - Sds Stream Property Ids, not including indices
 
 Search criteria can be chained together using an **AND**. See examples below. 
 
@@ -29,7 +29,7 @@ Searches and returns assets matching the search criteria.
 
 ### Request 
 ```text 
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets?skip={skip}&count={count}&orderby={orderby}&query={queryString}&filter={filterString}&pageSize={pageSize}&maxPages={maxPages}&continuationToken={continuationToken}
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets?skip={skip}&count={count}&orderby={orderby}&query={queryString}&{filterString}&pageSize={pageSize}&maxPages={maxPages}&continuationToken={continuationToken}
 ```
 
 ### Parameters  
@@ -54,15 +54,6 @@ An optional parameter, between 1 and 1000 (inclusive), that represents the maxim
 [optional] `[id|name] [asc|desc|] orderby`  
 An optional parameter which returns assets ordered either by the asset `Id` or the asset `name`. Specify asc or desc to return the results in ascending or descending order. If not specified, the default is ascending order.
 
-[optional] `int pageSize`   
-Must be used with `maxPages` to configure the pages of the search results. This parameter defines the maximum number of assets that are returned on each page. 
-
-[optional] `int maxPages`   
-Must be used with `pageSize` to configure the pages of the search results. This parameter defines the maximum number of pages. Search results that exceed maxPages are not returned. 
-
-[optional] `string continuationToken`   
-Retrieves a specific page of the search results. 
-
 ### Response 
 Returns an array of assets matching the search query and the total number of assets returned specified as Total-Count in the HTTP response header. 
 
@@ -79,7 +70,7 @@ Searches all assets and returns a list of asset Ids and their matched fields. Us
 
 ### Request 
 ```text 
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/search/Assets?skip={skip}&count={count}&orderby={orderby}&query={queryString}&filter={filterString}&pageSize={pageSize}&maxPages={maxPages}&continuationToken={continuationToken}
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/search/Assets?skip={skip}&count={count}&orderby={orderby}&query={queryString}&{filterString}&pageSize={pageSize}&maxPages={maxPages}&continuationToken={continuationToken}
 ```
 
 ### Parameters  
@@ -104,15 +95,6 @@ An optional parameter, between 1 and 1000 (inclusive), representing the maximum 
 [optional] `[id|name] [asc|desc|] orderby`  
 An optional parameter which returns assets ordered either by the asset `Id` or the asset `name`. Specify asc or desc to return the results in ascending or descending order. If not specified, the default is ascending order.
 
-[optional] `int pageSize`   
-Must be used with `maxPages` to configure the pages of the search results. This parameter defines the maximum number of assets that are returned on each page. 
-
-[optional] `int maxPages`   
-Must be used with `pageSize` to configure the pages of the search results. This parameter defines the maximum number of pages. Search results that exceed maxPages are not returned.
-
-[optional] `string continuationToken`   
-Retrieves a specific page of the search results. 
-
 ### Response 
 A list of asset Ids and their matched fields.
 
@@ -130,11 +112,13 @@ Below is a response when query string is "Name:*Tracer*".
 
 Also returned is a list of `Results`. Each result contains  
 - The `MatchProperties` - a list of matched property objects. Each `MatchProperties` object contains the matched fields and their values.
-- `Score` - number that indicates the relevancy of the match.
 - `Id` - Id of the matched asset.
 - `TypeId` - asset type Id of the asset. This is null if the asset does not reference an asset type.
 - `Name` - asset name.
 - `Description` - asset description.
+- `ETag` - Version tag.
+- `CreatedDate` - Asset creation date.
+- `LastModifiedDate` - Last modified date of the asset.
 
 ```json 
 HTTP 200 OK 
@@ -149,11 +133,13 @@ Content-Type: application/json
                     "Value": "Asset Tracer ced7ee16-984d-480f-8338-3055f7f39d8b"
                 }
             ],
-            "Score": 1,
             "Id": "AssetId2b5f41ae-0929-4977-bfbd-1e046d8a66f4",
             "TypeId": "AssetTracerType",
             "Name": "Asset Tracer ced7ee16-984d-480f-8338-3055f7f39d8b",
-            "Description": "First tracer device"
+            "Description": "First tracer device",
+            "ETag": "1",
+            "CreatedDate": "2021-05-26T19:05:33.8979442Z",
+            "LastModifiedDate": "2021-05-26T19:05:33.8979442Z"
         },
         {
             "MatchedProperties": [
@@ -162,11 +148,13 @@ Content-Type: application/json
                     "Value": "Asset Tracer d6b984dd-b6da-4225-a2e0-59f781d065a4"
                 }
             ],
-            "Score": 1,
             "Id": "AssetId3dbfd185-7c62-49ed-b875-7953cba07fc3",
             "TypeId": "AssetTracerType",
             "Name": "Asset Tracer d6b984dd-b6da-4225-a2e0-59f781d065a4",
-            "Description": "Another tracer device"
+            "Description": "Another tracer device",
+            "ETag": "1",
+            "CreatedDate": "2021-05-26T19:05:40.9043726Z",
+            "LastModifiedDate": "2021-05-26T19:05:40.9043726Z"        
         }
     ]
 }
@@ -174,22 +162,22 @@ Content-Type: application/json
 
 ### Examples of asset query strings
 
-| Query String                   | Description                                                  |
-| ------------------------------ | ------------------------------------------------------------ |
-| Id:Id1                         | Returns the asset with `Id` equal to **Id1**.                  |
-| Id:Id1 Name desc               | Returns the asset with `Id` equal to **Id1** return results in descending order by Name. |
-| Id:Id*                         | Returns all assets with `Id` matching **id*** wildcard. |
-| Name:Name1                     | Returns all asset with a friendly name equal to **Name1**. |
-| Id:Id AND Name:Name1           | Returns all assets with `Id` matching the **id** and with a friendly name equal to **Name1**. |
-| Description:floor1*            | Returns all assets with a description that starts with **floor1**. |
-| Metadata/Name:Building*        | Returns all assets with at least one metadata name whose description contains the string **Building**. |
-| Metadata/Description:heater*   | Returns all assets with at least one metadata whose description starts with **heater**. |
-| Metadata/Value:123             | Returns all assets with at least one metadata whose Value property equals **123**. |
-| Id:X* AND Metadata/Name:B*     | Returns all assets with `Id` starting with **X** and containing at least one metadata value with a name that starts with a **B**. |
-| AssetTypeId:HeaterTypeId       | Returns all assets with `AssetTypeId` matching `HeaterTypeId` |
-| AssetTypeName:HeaterTypeName   | Returns all assets whose `Name` field of the asset type matches **HeaterTypeName** |
-| StreamProperties:Pressure      | Returns all assets that have one or more stream references with the stream property ID **Pressure**. Note: This search only searches non-key Sds stream properties. |
-| StreamReferences:Name1         | Returns all assets whose stream references contain a stream reference name that matches **Name1**. |
+| Query String                 | Description                                                  |
+| ---------------------------- | ------------------------------------------------------------ |
+| Id:Id1                       | Returns the asset with `Id` equal to **Id1**.                |
+| Id:Id1 Name desc             | Returns the asset with `Id` equal to **Id1** return results in descending order by Name. |
+| Id:Id*                       | Returns all assets with `Id` matching **id*** wildcard.      |
+| Name:Name1                   | Returns all asset with a friendly name equal to **Name1**.   |
+| Id:Id AND Name:Name1         | Returns all assets with `Id` matching the **id** and with a friendly name equal to **Name1**. |
+| Description:floor1*          | Returns all assets with a description that starts with **floor1**. |
+| Metadata/Name:Building*      | Returns all assets with at least one metadata name whose description contains the string **Building**. |
+| Metadata/Description:heater* | Returns all assets with at least one metadata whose description starts with **heater**. |
+| Metadata/Value:123           | Returns all assets with at least one metadata whose Value property equals **123**. |
+| Id:X* AND Metadata/Name:B*   | Returns all assets with `Id` starting with **X** and containing at least one metadata value with a name that starts with a **B**. |
+| AssetTypeId:HeaterTypeId     | Returns all assets with `AssetTypeId` matching `HeaterTypeId` |
+| AssetTypeName:HeaterTypeName | Returns all assets whose `Name` field of the asset type matches **HeaterTypeName** |
+| StreamPropertyId:Pressure    | Returns all assets that have one or more stream references with the stream property ID **Pressure**. Note: This search only searches non-key Sds stream properties. |
+| StreamReferenceName:Name1    | Returns all assets whose stream references contain a stream reference name that matches **Name1**. |
 
 ### Special characters in search queries
 
@@ -208,28 +196,10 @@ Filter strings are not case sensitive. Numeric types must be passed as strings a
 
 | Query String                                 | Description                                                  |
 | -------------------------------------------- | ------------------------------------------------------------ |
-| filter[location]=Earth                       | Returns all assets that contain a metadata name = **location** and value is **Earth**. |
-| filter[location]=Earth&filter[device]=tracer | Returns all assets that contain a metadata name = **location** and value is **Earth** and also contains a metadata with name = **device** and value is **tracer**. |
-
-
-## `Asset Results by Pages` 
-
-Asset search results can be returned in pages through `pageSize` ,`maxPages`, and `continuationToken` query parameters.
-
-To return search results in pages, first make a call using the `pageSize` and `maxPages` parameters. For example:
-
-`GET search/assets?pageSize=10&maxPages=100` returns search results with a maximum of 10 assets per page and a maximum of 100 pages. 
-
-The HTTP header of this response of this query will include a "Link" section to which will define either first, next, previous, or last pages. These links can be used directly to follow the pages. For example, the links section may contain:
-
-```json 
-<https://{clusterName}/api/v1-preview/tenants/{tenantId}/namespaces/{NamespaceId}/Assets?continuationToken={continuationToken}>; rel="next", 
-<https://{clusterName}/api/v1-preview/tenants/{tenantId}/namespaces/{NamespaceId}/Assets?continuationToken={continuationToken}>; rel="previous",
-<https://{clusterName}/api/v1-preview/tenants/{tenantId}/namespaces/{NamespaceId}/Assets?continuationToken={continuationToken}>; rel="first",
-<https://{clusterName}/api/v1-preview/tenants/{tenantId}/namespaces/{NamespaceId}/Assets?continuationToken={continuationToken}>; rel="last"
-```
-
-These links can be followed to get the next, previous, first, and last page.  If no pages are requested, the links to the next, previous, first, and last pages time out in 2 minutes.
+| filter[location]=Earth                       | Filter that only returns assets that contain the metadata name = **location** with **Earth** as the metadata value. |
+| filter[location]=Earth&filter[device]=tracer | Filter that only returns assets that contain both of the following metadata. The first metadata name = **location** with **Earth** as the metadata value, and the second metadata is name = **device** with **tracer** as the metadata value. |
+| filter[AssetTypeName]=HeaterType             | Filter that only returns assets with an AssetTypeName of "HeaterType." |
+| filter[status]=Bad                           | Filter that returns only assets with a bad status. Status filters can have the values "Good", "Bad", Warning", and "Unknown". |
 
 ## `Asset Faceted Search` 
 
@@ -297,4 +267,125 @@ Content-Type: application/json
         ]
     }
 ]
+```
+
+## `Asset Autocomplete` 
+
+Asset autocomplete allows you to query assets and retrieve a list of suggested assets based on your search criteria. The autocomplete feature can be used with the following asset properties:
+
+-  Name
+-  Description
+-  AssetTypeName
+-  Metadata
+
+### Request 
+
+```text 
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/search/Assets/autocomplete?term={term}&facetCount={facetCount}&termCount={termCount}
+```
+
+### Parameters  
+
+`string tenantId`  
+The tenant identifier
+
+`string namespaceId`  
+The namespace identifier
+
+`string term`  
+The search term that you want to search for.
+
+[optional] `int facetCount`  
+The maximum number of facet autocompleted items to return. The default is 0 which means you will not get any facet suggestions.
+
+[optional] `int termCount`  
+The maximum number of token autocompleted items to return. The default is 0 which means you will not get any token suggestions.
+
+### Example 
+
+If you have the following assets in your system:
+
+| Assets in System                                             |
+| ------------------------------------------------------------ |
+| "Id": "AutoCompletedAsset_1", "Name": "tracerRound", "Description": "Traced Asset 1", "Metadata": [{ "Id": "1", "Name": "tractorNumber", "Value": "t100", "SdsTypeCode": "String:}] |
+| "Id": "AutoCompletedAsset_2", "Name": "tracerRound", "Description": "None", "Metadata": [{ "Id": "2", "Name": "tractorNumber", "Value": "tractor3",        "SdsTypeCode": "String"}] |
+| "Id": "AutoCompletedAsset_3", "Name": "tracerRound_Type2", "Description": "None", "Metadata": {"Id": "17", "Name": "track", "SdsTypeCode": "String", "Value": "100"}] |
+
+Performing a `GET search/assets/autocomplete?term=t&termcount=10&facetcount=10` returns the following response. 
+
+
+```json 
+{
+    "Facets": [
+        {
+            "Value": "trackUnit1",
+            "FacetCategories": [
+                {
+                    "Name": "track",
+                    "DocumentCount": 1
+                }
+            ]
+        },
+        {
+            "Value": "t1000",
+            "FacetCategories": [
+                {
+                    "Name": "tractorNumber",
+                    "DocumentCount": 1
+                }
+            ]
+        }
+    ],
+    "Tokens": [
+        {
+            "Value": "tracerround",
+            "DocumentCount": 2
+        },
+        {
+            "Value": "tractornumber",
+            "DocumentCount": 2
+        },
+        {
+            "Value": "tracerround_type2",
+            "DocumentCount": 1
+        },
+        {
+            "Value": "track",
+            "DocumentCount": 1
+        },
+        {
+            "Value": "t1000",
+            "DocumentCount": 1
+        }
+    ]
+}
+```
+
+Performing a `GET search/assets/autocomplete?term=t&facetcount=10` returns the following response. 
+
+
+```json 
+{
+    "Facets": [
+        {
+            "Value": "trackUnit1",
+            "FacetCategories": [
+                {
+                    "Name": "track",
+                    "DocumentCount": 1
+                }
+            ]
+        },
+        {
+            "Value": "t1000",
+            "FacetCategories": [
+                {
+                    "Name": "tractorNumber",
+                    "DocumentCount": 1
+                }
+            ]
+        }
+    ],
+    "Tokens": []
+}
 ```

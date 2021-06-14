@@ -32,8 +32,9 @@ for internal SDS use.
 | [Tags](xref:sdsStreamExtra)*		| IList\<String\>					| Optional    | Yes		  | A list of tags denoting special attributes or categories.|
 | [Metadata](xref:sdsStreamExtra)*	| IDictionary\<String, String\>	| Optional    | Yes		  | A dictionary of string keys and associated string values.  |
 
-**\* Notes on stream metadata and tags:** Stream metadata and tags are accessed via the Metadata and Tags API respectively.
-However, they are associated with SdsStream objects and can be used as search criteria.
+> [!NOTE]
+> You can access stream metadata and tags through Metadata API and Tags API respectively.
+> Because they are associated with SdsStream objects, you can use them as search criteria.
 
 **Rules for the stream identifier (SdsStream.Id)**
 1. Is not case sensitive

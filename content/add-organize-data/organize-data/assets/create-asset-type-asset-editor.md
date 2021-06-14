@@ -1,5 +1,5 @@
 ---
-uid: CreateAssetType
+uid: CreateAssetTypeWithEditor
 ---
 
 # Create an asset type

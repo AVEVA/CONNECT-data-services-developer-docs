@@ -23,9 +23,9 @@ GET /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/ClientCredentia
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string communityId`
 <br/>Community identifier<br/><br/>
-`[optional] string query query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip skip`
-<br/>Parameter representing the zero-based offset of the first object to retrieve. If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count count`
+`[optional] string query`
+<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip `
+<br/>Parameter representing the zero-based offset of the first object to retrieve. If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
 
 ### Response
@@ -85,10 +85,7 @@ HEAD /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/ClientCredenti
 <br/>Tenant identifier<br/><br/>`string communityId`
 <br/>Community identifier<br/><br/>
 
-#### Request Headers
 
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -142,10 +139,6 @@ PUT /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/ClientCredentia
 <br/>Community identifier<br/><br/>`string clientId`
 <br/>Client credential client identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Request Body
 
@@ -215,10 +208,6 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/ClientCreden
 <br/>Community identifier<br/><br/>`string clientId`
 <br/>Client credential client identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 

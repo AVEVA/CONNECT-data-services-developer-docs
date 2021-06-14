@@ -4,7 +4,7 @@ uid: assets-request-manager
 ---
 
 # Request Manager
-OSIsoft.Assets.RequestManager.Controllers is the summary
+The asset type API provides methods to create, read, update, and delete asset types.An asset type can be used to build many similar assets.Some of the key benefits of using an asset type as the base model for assets are: - Multiple similar assets can be created more quickly and with less effort. - Maintaining assets is simplified...
 
 ## `List Assets`
 
@@ -128,7 +128,7 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 
 ```json
 {
-  "Id": "00000000-0000-0000-0000-000000000000",
+  "Id": "Heater_01_01_02",
   "Name": "HeaterOnFirstFloor",
   "Description": "This is Asset which represents a heater on the first floor.",
   "Metadata": [

@@ -53,7 +53,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[DeprecatedAsset](#schemadeprecatedasset)[]|Asset that was created.|
+|200|[DeprecatedAsset](#schemadeprecatedasset)[]|List of assets in the given namespace.|
 |401|[HttpResponse](#schemahttpresponse)|None|
 |403|[HttpResponse](#schemahttpresponse)|You are not authorized to create assets.|
 |404|[HttpResponse](#schemahttpresponse)|None|
@@ -155,7 +155,7 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[DeprecatedAsset](#schemadeprecatedasset)|The asset as persisted, including values for optional parameters that were omitted in the request.|
+|200|None|The asset as persisted, including values for optional parameters that were omitted in the request.|
 |401|[HttpResponse](#schemahttpresponse)|None|
 |403|[HttpResponse](#schemahttpresponse)|You are not authorized to create assets.|
 |404|[HttpResponse](#schemahttpresponse)|None|
@@ -163,43 +163,11 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 |503|[HttpResponse](#schemahttpresponse)|None|
 
 #### Example response body
-> 200 Response
+> 401 Response
 
 ```json
 {
-  "Id": "string",
-  "AssetTypeId": "string",
-  "Name": "string",
-  "Description": "string",
-  "Metadata": [
-    {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "SdsTypeCode": "Empty",
-      "Value": null,
-      "Uom": "string"
-    }
-  ],
-  "StreamReferences": [
-    {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "StreamId": "string"
-    }
-  ],
-  "Status": {
-    "StreamReferenceId": "string",
-    "StreamPropertyId": "string",
-    "ValueStatusMappings": [
-      {
-        "Value": null,
-        "Status": "[",
-        "DisplayName": "string"
-      }
-    ]
-  }
+  "BodyWriter": {}
 }
 ```
 
@@ -1027,6 +995,42 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/search/assets/fa
 
 ---
 
+### HttpResponse
+
+<a id="schemahttpresponse"></a>
+<a id="schema_HttpResponse"></a>
+<a id="tocShttpresponse"></a>
+<a id="tocshttpresponse"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|BodyWriter|[PipeWriter](#schemapipewriter)|false|true|None|
+
+```json
+{
+  "BodyWriter": {}
+}
+
+```
+
+---
+
+### PipeWriter
+
+<a id="schemapipewriter"></a>
+<a id="schema_PipeWriter"></a>
+<a id="tocSpipewriter"></a>
+<a id="tocspipewriter"></a>
+
+```json
+{}
+
+```
+
+---
+
 ### DeprecatedAsset
 
 <a id="schemadeprecatedasset"></a>
@@ -1160,42 +1164,6 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/search/assets/fa
 |Good|1|
 |Warning|2|
 |Bad|3|
-
----
-
-### HttpResponse
-
-<a id="schemahttpresponse"></a>
-<a id="schema_HttpResponse"></a>
-<a id="tocShttpresponse"></a>
-<a id="tocshttpresponse"></a>
-
-#### Properties
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|BodyWriter|[PipeWriter](#schemapipewriter)|false|true|None|
-
-```json
-{
-  "BodyWriter": {}
-}
-
-```
-
----
-
-### PipeWriter
-
-<a id="schemapipewriter"></a>
-<a id="schema_PipeWriter"></a>
-<a id="tocSpipewriter"></a>
-<a id="tocspipewriter"></a>
-
-```json
-{}
-
-```
 
 ---
 

@@ -24,8 +24,8 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 <br/><br/>`string namespaceId`
 <br/><br/>
 `[optional] integer skip`
-<br/>Skip count.<br/><br/>`[optional] integer count`
-<br/><br/>`[optional] string orderBy`
+<br/>Skip.<br/><br/>`[optional] integer count`
+<br/>Count.<br/><br/>`[optional] string orderBy`
 <br/><br/>`[optional] string query`
 <br/><br/>`[optional] integer pageSize`
 <br/><br/>`[optional] integer maxPages`
@@ -54,11 +54,9 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[DeprecatedAsset](#schemadeprecatedasset)[]|List of assets in the given namespace.|
-|401|[HttpResponse](#schemahttpresponse)|None|
-|403|[HttpResponse](#schemahttpresponse)|You are not authorized to create assets.|
-|404|[HttpResponse](#schemahttpresponse)|None|
-|500|[HttpResponse](#schemahttpresponse)|None|
-|503|[HttpResponse](#schemahttpresponse)|None|
+|401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized..|
+|500|[ErrorTemplate](#schemaerrortemplate)|Internal Service Error, please try again later..|
+|503|[ErrorTemplate](#schemaerrortemplate)|Service Unavaiable, please try again later..|
 
 #### Example response body
 > 200 Response
@@ -156,11 +154,12 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[DeprecatedAsset](#schemadeprecatedasset)|The asset as persisted, including values for optional parameters that were omitted in the request.|
-|401|[ErrorTemplate](#schemaerrortemplate)|None|
+|302|[DeprecatedAsset](#schemadeprecatedasset)|The asset you attempted to create is identical to one that already exists.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details..|
 |403|[ErrorTemplate](#schemaerrortemplate)|You are not authorized to create assets.|
-|404|[ErrorTemplate](#schemaerrortemplate)|None|
-|500|[ErrorTemplate](#schemaerrortemplate)|None|
-|503|[ErrorTemplate](#schemaerrortemplate)|None|
+|409|[ErrorTemplate](#schemaerrortemplate)|The asset you attempted to create has a conflict. See the response body for additional details..|
+|500|[ErrorTemplate](#schemaerrortemplate)|Internal Service Error, please try again later..|
+|503|[ErrorTemplate](#schemaerrortemplate)|Service Unavaiable, please try again later..|
 
 #### Example response body
 > 200 Response
@@ -1199,42 +1198,6 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/search/assets/fa
 <a id="schema_IEqualityComparerOfString"></a>
 <a id="tocSiequalitycomparerofstring"></a>
 <a id="tocsiequalitycomparerofstring"></a>
-
-```json
-{}
-
-```
-
----
-
-### HttpResponse
-
-<a id="schemahttpresponse"></a>
-<a id="schema_HttpResponse"></a>
-<a id="tocShttpresponse"></a>
-<a id="tocshttpresponse"></a>
-
-#### Properties
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|BodyWriter|[PipeWriter](#schemapipewriter)|false|true|None|
-
-```json
-{
-  "BodyWriter": {}
-}
-
-```
-
----
-
-### PipeWriter
-
-<a id="schemapipewriter"></a>
-<a id="schema_PipeWriter"></a>
-<a id="tocSpipewriter"></a>
-<a id="tocspipewriter"></a>
 
 ```json
 {}

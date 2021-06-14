@@ -63,10 +63,16 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 
 ```json
 [
-  "Read",
-  "Write",
-  "Delete",
-  "ManageAccessControl"
+  {
+    "Id": "Heater_HIJK",
+    "Name": "HeaterOnFirstFloor",
+    "Description": "This is Asset which represents a heater on the first floor."
+  },
+  {
+    "Id": "Heater_ABCDEF",
+    "Name": "HeaterOnFirstFloor",
+    "Description": "This is Asset which represents a heater on the first floor."
+  }
 ]
 ```
 

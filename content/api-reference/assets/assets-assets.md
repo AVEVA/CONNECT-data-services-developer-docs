@@ -21,11 +21,6 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
 <br/><br/>`string namespaceId`
 <br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -49,11 +44,6 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId
 <br/><br/>`string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Request Body
 
@@ -101,9 +91,9 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId
 
 ---
 
-## `Create Or Update Asset`
+## `Create Or Update Asset (assets path)`
 
-<a id="opIdAssets_Create Or Update Asset"></a>
+<a id="opIdAssets_Create Or Update Asset (assets path)"></a>
 
 ### Request
 ```text 
@@ -116,11 +106,6 @@ PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
 <br/><br/>`string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Request Body
 
@@ -184,11 +169,6 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{asset
 <br/><br/>`string namespaceId`
 <br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -213,11 +193,6 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
 <br/><br/>`string namespaceId`
 <br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -241,11 +216,6 @@ PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
 <br/><br/>`string namespaceId`
 <br/><br/>`string assetId`
 <br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Request Body
 
@@ -287,11 +257,6 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
 <br/><br/>`string namespaceId`
 <br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -315,11 +280,6 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
 <br/><br/>`string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -345,11 +305,6 @@ PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
 <br/><br/>`string assetId`
 <br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Request Body
 
 <br/>
@@ -359,6 +314,148 @@ PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
   "Type": 1,
   "ObjectId": "string",
   "TenantId": "string"
+}
+```
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|string|None|
+
+---
+
+## `Get Asset2`
+
+<a id="opIdAssets_Get Asset2"></a>
+
+### Request
+```text 
+GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets2/{assetId}
+```
+
+#### Parameters
+
+`string assetId`
+<br/><br/>`string tenantId`
+<br/><br/>`string namespaceId`
+<br/><br/>
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|string|None|
+
+---
+
+## `Create Asset Type`
+
+<a id="opIdAssets_Create Asset Type"></a>
+
+### Request
+```text 
+POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets2/{assetId}
+```
+
+#### Parameters
+
+`string assetId`
+<br/><br/>`string tenantId`
+<br/><br/>`string namespaceId`
+<br/><br/>
+
+### Request Body
+
+<br/>
+
+```json
+{
+  "Id": "string",
+  "AssetTypeId": "string",
+  "Name": "string",
+  "Description": "string",
+  "Metadata": [
+    {
+      "Id": "string",
+      "Name": "string",
+      "Description": "string",
+      "SdsTypeCode": "Empty",
+      "Value": null,
+      "Uom": "string"
+    }
+  ],
+  "StreamReferences": [
+    {
+      "Id": "string",
+      "Name": "string",
+      "Description": "string",
+      "StreamId": "string"
+    }
+  ],
+  "Status": {
+    "DefinitionType": 0,
+    "Definition": null
+  }
+}
+```
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|string|None|
+
+---
+
+## `Create Or Update Asset (assets2 path)`
+
+<a id="opIdAssets_Create Or Update Asset (assets2 path)"></a>
+
+### Request
+```text 
+PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets2/{assetId}
+```
+
+#### Parameters
+
+`string assetId`
+<br/><br/>`string tenantId`
+<br/><br/>`string namespaceId`
+<br/><br/>
+
+### Request Body
+
+<br/>
+
+```json
+{
+  "Id": "string",
+  "AssetTypeId": "string",
+  "Name": "string",
+  "Description": "string",
+  "Metadata": [
+    {
+      "Id": "string",
+      "Name": "string",
+      "Description": "string",
+      "SdsTypeCode": "Empty",
+      "Value": null,
+      "Uom": "string"
+    }
+  ],
+  "StreamReferences": [
+    {
+      "Id": "string",
+      "Name": "string",
+      "Description": "string",
+      "StreamId": "string"
+    }
+  ],
+  "Status": {
+    "DefinitionType": 0,
+    "Definition": null
+  }
 }
 ```
 
@@ -509,7 +606,7 @@ PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
 |Description|string|false|true|None|
 |Metadata|[[MetadataItem](#schemametadataitem)]|false|true|None|
 |StreamReferences|[[StreamReference](#schemastreamreference)]|false|true|None|
-|Status|[StatusMapping](#schemastatusmapping)|false|true|None|
+|Status|[StatusConfiguration](#schemastatusconfiguration)|false|true|None|
 
 ```json
 {
@@ -536,15 +633,8 @@ PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
     }
   ],
   "Status": {
-    "StreamReferenceId": "string",
-    "StreamPropertyId": "string",
-    "ValueStatusMappings": [
-      {
-        "Value": null,
-        "Status": "[",
-        "DisplayName": "string"
-      }
-    ]
+    "DefinitionType": 0,
+    "Definition": null
   }
 }
 
@@ -812,6 +902,106 @@ PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
   "Name": "string",
   "Description": "string",
   "StreamId": "string"
+}
+
+```
+
+---
+
+### StatusConfiguration
+
+<a id="schemastatusconfiguration"></a>
+<a id="schema_StatusConfiguration"></a>
+<a id="tocSstatusconfiguration"></a>
+<a id="tocsstatusconfiguration"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|DefinitionType|[StatusDefinitionType](#schemastatusdefinitiontype)|false|false|None|
+|Definition|any|false|true|None|
+
+```json
+{
+  "DefinitionType": 0,
+  "Definition": null
+}
+
+```
+
+---
+
+### StatusDefinitionType
+
+<a id="schemastatusdefinitiontype"></a>
+<a id="schema_StatusDefinitionType"></a>
+<a id="tocSstatusdefinitiontype"></a>
+<a id="tocsstatusdefinitiontype"></a>
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|Unspecified|0|
+|StreamPropertyMapping|1|
+
+---
+
+### DeprecatedAsset
+
+<a id="schemadeprecatedasset"></a>
+<a id="schema_DeprecatedAsset"></a>
+<a id="tocSdeprecatedasset"></a>
+<a id="tocsdeprecatedasset"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Id|string|false|true|None|
+|AssetTypeId|string|false|true|None|
+|Name|string|false|true|None|
+|Description|string|false|true|None|
+|Metadata|[[MetadataItem](#schemametadataitem)]|false|true|None|
+|StreamReferences|[[StreamReference](#schemastreamreference)]|false|true|None|
+|Status|[StatusMapping](#schemastatusmapping)|false|true|None|
+
+```json
+{
+  "Id": "string",
+  "AssetTypeId": "string",
+  "Name": "string",
+  "Description": "string",
+  "Metadata": [
+    {
+      "Id": "string",
+      "Name": "string",
+      "Description": "string",
+      "SdsTypeCode": "Empty",
+      "Value": null,
+      "Uom": "string"
+    }
+  ],
+  "StreamReferences": [
+    {
+      "Id": "string",
+      "Name": "string",
+      "Description": "string",
+      "StreamId": "string"
+    }
+  ],
+  "Status": {
+    "StreamReferenceId": "string",
+    "StreamPropertyId": "string",
+    "ValueStatusMappings": [
+      {
+        "Value": null,
+        "Status": "[",
+        "DisplayName": "string"
+      }
+    ]
+  }
 }
 
 ```

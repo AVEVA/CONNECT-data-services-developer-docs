@@ -4,10 +4,11 @@ uid: assets-request-manager
 ---
 
 # Request Manager
+OSIsoft.Assets.RequestManager.Controllers is the summary
 
-## `Get Assets`
+## `List Assets`
 
-<a id="opIdRequestManager_Get Assets"></a>
+<a id="opIdRequestManager_List Assets"></a>
 
 Gets Assets.
 
@@ -22,42 +23,85 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>
-`[optional] integer skip skip`
-<br/>Skip count.<br/><br/>`[optional] integer count count`
-<br/><br/>`[optional] string orderBy orderBy`
-<br/><br/>`[optional] string query query`
-<br/><br/>`[optional] integer pageSize pageSize`
-<br/><br/>`[optional] integer maxPages maxPages`
-<br/><br/>`[optional] string continuationToken continuationToken`
-<br/><br/>`[optional] object Comparer Comparer`
-<br/><br/>`[optional] integer Count Count`
-<br/><br/>`[optional] array Keys Keys`
-<br/><br/>`[optional] array System.Collections.Generic.IDictionary<TKey,TValue>.Keys System.Collections.Generic.IDictionary<TKey,TValue>.Keys`
-<br/><br/>`[optional] array System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys`
-<br/><br/>`[optional] array Values Values`
-<br/><br/>`[optional] array System.Collections.Generic.IDictionary<TKey,TValue>.Values System.Collections.Generic.IDictionary<TKey,TValue>.Values`
-<br/><br/>`[optional] array System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values`
-<br/><br/>`[optional] array Item Item`
-<br/><br/>`[optional] boolean System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly`
-<br/><br/>`[optional] boolean System.Collections.ICollection.IsSynchronized System.Collections.ICollection.IsSynchronized`
-<br/><br/>`[optional] any System.Collections.ICollection.SyncRoot System.Collections.ICollection.SyncRoot`
-<br/><br/>`[optional] boolean System.Collections.IDictionary.IsFixedSize System.Collections.IDictionary.IsFixedSize`
-<br/><br/>`[optional] boolean System.Collections.IDictionary.IsReadOnly System.Collections.IDictionary.IsReadOnly`
-<br/><br/>`[optional] array System.Collections.IDictionary.Keys System.Collections.IDictionary.Keys`
-<br/><br/>`[optional] array System.Collections.IDictionary.Values System.Collections.IDictionary.Values`
-<br/><br/>`[optional] any System.Collections.IDictionary.Item System.Collections.IDictionary.Item`
+`[optional] integer skip`
+<br/>Skip count.<br/><br/>`[optional] integer count`
+<br/><br/>`[optional] string orderBy`
+<br/><br/>`[optional] string query`
+<br/><br/>`[optional] integer pageSize`
+<br/><br/>`[optional] integer maxPages`
+<br/><br/>`[optional] string continuationToken`
+<br/><br/>`[optional] object Comparer`
+<br/><br/>`[optional] integer Count`
+<br/><br/>`[optional] array Keys`
+<br/><br/>`[optional] array System.Collections.Generic.IDictionary<TKey,TValue>.Keys`
+<br/><br/>`[optional] array System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys`
+<br/><br/>`[optional] array Values`
+<br/><br/>`[optional] array System.Collections.Generic.IDictionary<TKey,TValue>.Values`
+<br/><br/>`[optional] array System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values`
+<br/><br/>`[optional] array Item`
+<br/><br/>`[optional] boolean System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly`
+<br/><br/>`[optional] boolean System.Collections.ICollection.IsSynchronized`
+<br/><br/>`[optional] any System.Collections.ICollection.SyncRoot`
+<br/><br/>`[optional] boolean System.Collections.IDictionary.IsFixedSize`
+<br/><br/>`[optional] boolean System.Collections.IDictionary.IsReadOnly`
+<br/><br/>`[optional] array System.Collections.IDictionary.Keys`
+<br/><br/>`[optional] array System.Collections.IDictionary.Values`
+<br/><br/>`[optional] any System.Collections.IDictionary.Item`
 <br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|Asset that was created.|
+|200|[DeprecatedAsset](#schemadeprecatedasset)[]|Asset that was created.|
+|401|[HttpResponse](#schemahttpresponse)|None|
+|403|[HttpResponse](#schemahttpresponse)|You are not authorized to create assets.|
+|404|[HttpResponse](#schemahttpresponse)|None|
+|500|[HttpResponse](#schemahttpresponse)|None|
+|503|[HttpResponse](#schemahttpresponse)|None|
+
+#### Example response body
+> 200 Response
+
+```json
+[
+  {
+    "Id": "string",
+    "AssetTypeId": "string",
+    "Name": "string",
+    "Description": "string",
+    "Metadata": [
+      {
+        "Id": "string",
+        "Name": "string",
+        "Description": "string",
+        "SdsTypeCode": "Empty",
+        "Value": null,
+        "Uom": "string"
+      }
+    ],
+    "StreamReferences": [
+      {
+        "Id": "string",
+        "Name": "string",
+        "Description": "string",
+        "StreamId": "string"
+      }
+    ],
+    "Status": {
+      "StreamReferenceId": "string",
+      "StreamPropertyId": "string",
+      "ValueStatusMappings": [
+        {
+          "Value": null,
+          "Status": null,
+          "DisplayName": null
+        }
+      ]
+    }
+  }
+]
+```
 
 ---
 
@@ -75,13 +119,8 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
+<br/>The tenant identifier<br/><br/>`string namespaceId`
+<br/>The namespace identifier<br/><br/>
 
 ### Request Body
 
@@ -125,7 +164,160 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|The asset as persisted, including values for optional parameters that were omitted in the request.|
+|200|[DeprecatedAsset](#schemadeprecatedasset)|The asset as persisted, including values for optional parameters that were omitted in the request.|
+|401|[HttpResponse](#schemahttpresponse)|None|
+|403|[HttpResponse](#schemahttpresponse)|You are not authorized to create assets.|
+|404|[HttpResponse](#schemahttpresponse)|None|
+|500|[HttpResponse](#schemahttpresponse)|None|
+|503|[HttpResponse](#schemahttpresponse)|None|
+
+#### Example response body
+> 200 Response
+
+```json
+{
+  "Id": "string",
+  "AssetTypeId": "string",
+  "Name": "string",
+  "Description": "string",
+  "Metadata": [
+    {
+      "Id": "string",
+      "Name": "string",
+      "Description": "string",
+      "SdsTypeCode": "Empty",
+      "Value": null,
+      "Uom": "string"
+    }
+  ],
+  "StreamReferences": [
+    {
+      "Id": "string",
+      "Name": "string",
+      "Description": "string",
+      "StreamId": "string"
+    }
+  ],
+  "Status": {
+    "StreamReferenceId": "string",
+    "StreamPropertyId": "string",
+    "ValueStatusMappings": [
+      {
+        "Value": null,
+        "Status": "[",
+        "DisplayName": "string"
+      }
+    ]
+  }
+}
+```
+
+---
+
+## `Get Assets Async2`
+
+<a id="opIdRequestManager_Get Assets Async2"></a>
+
+### Request
+```text 
+GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets2
+?skip={skip}&count={count}&orderBy={orderBy}&query={query}&pageSize={pageSize}&maxPages={maxPages}&continuationToken={continuationToken}&Comparer={Comparer}&Count={Count}&Keys={Keys}&System.Collections.Generic.IDictionary<TKey,TValue>.Keys={System.Collections.Generic.IDictionary<TKey,TValue>.Keys}&System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys={System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys}&Values={Values}&System.Collections.Generic.IDictionary<TKey,TValue>.Values={System.Collections.Generic.IDictionary<TKey,TValue>.Values}&System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values={System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values}&Item={Item}&System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly={System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly}&System.Collections.ICollection.IsSynchronized={System.Collections.ICollection.IsSynchronized}&System.Collections.ICollection.SyncRoot={System.Collections.ICollection.SyncRoot}&System.Collections.IDictionary.IsFixedSize={System.Collections.IDictionary.IsFixedSize}&System.Collections.IDictionary.IsReadOnly={System.Collections.IDictionary.IsReadOnly}&System.Collections.IDictionary.Keys={System.Collections.IDictionary.Keys}&System.Collections.IDictionary.Values={System.Collections.IDictionary.Values}&System.Collections.IDictionary.Item={System.Collections.IDictionary.Item}
+```
+
+#### Parameters
+
+`string tenantId`
+<br/><br/>`string namespaceId`
+<br/><br/>
+`[optional] integer skip`
+<br/><br/>`[optional] integer count`
+<br/><br/>`[optional] string orderBy`
+<br/><br/>`[optional] string query`
+<br/><br/>`[optional] integer pageSize`
+<br/><br/>`[optional] integer maxPages`
+<br/><br/>`[optional] string continuationToken`
+<br/><br/>`[optional] object Comparer`
+<br/><br/>`[optional] integer Count`
+<br/><br/>`[optional] array Keys`
+<br/><br/>`[optional] array System.Collections.Generic.IDictionary<TKey,TValue>.Keys`
+<br/><br/>`[optional] array System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys`
+<br/><br/>`[optional] array Values`
+<br/><br/>`[optional] array System.Collections.Generic.IDictionary<TKey,TValue>.Values`
+<br/><br/>`[optional] array System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values`
+<br/><br/>`[optional] array Item`
+<br/><br/>`[optional] boolean System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly`
+<br/><br/>`[optional] boolean System.Collections.ICollection.IsSynchronized`
+<br/><br/>`[optional] any System.Collections.ICollection.SyncRoot`
+<br/><br/>`[optional] boolean System.Collections.IDictionary.IsFixedSize`
+<br/><br/>`[optional] boolean System.Collections.IDictionary.IsReadOnly`
+<br/><br/>`[optional] array System.Collections.IDictionary.Keys`
+<br/><br/>`[optional] array System.Collections.IDictionary.Values`
+<br/><br/>`[optional] any System.Collections.IDictionary.Item`
+<br/><br/>
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|string|None|
+
+---
+
+## `Create Asset Async2`
+
+<a id="opIdRequestManager_Create Asset Async2"></a>
+
+### Request
+```text 
+POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets2
+```
+
+#### Parameters
+
+`string tenantId`
+<br/><br/>`string namespaceId`
+<br/><br/>
+
+### Request Body
+
+<br/>
+
+```json
+{
+  "Id": "string",
+  "AssetTypeId": "string",
+  "Name": "string",
+  "Description": "string",
+  "Metadata": [
+    {
+      "Id": "string",
+      "Name": "string",
+      "Description": "string",
+      "SdsTypeCode": "Empty",
+      "Value": null,
+      "Uom": "string"
+    }
+  ],
+  "StreamReferences": [
+    {
+      "Id": "string",
+      "Name": "string",
+      "Description": "string",
+      "StreamId": "string"
+    }
+  ],
+  "Status": {
+    "DefinitionType": 0,
+    "Definition": null
+  }
+}
+```
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|string|None|
 
 ---
 
@@ -143,11 +335,6 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assets
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Request Body
 
@@ -216,13 +403,8 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assets
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>
-`[optional] array id id`
+`[optional] array id`
 <br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -246,11 +428,6 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assets/res
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Request Body
 
@@ -285,11 +462,6 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assets/res
 <br/><br/>`string namespaceId`
 <br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Request Body
 
 <br/>
@@ -323,11 +495,6 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assets/sta
 <br/><br/>`string namespaceId`
 <br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Request Body
 
 <br/>
@@ -335,6 +502,66 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assets/sta
 ```json
 [
   "string"
+]
+```
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|string|None|
+
+---
+
+## `Bulk Create Assets Async2`
+
+<a id="opIdRequestManager_Bulk Create Assets Async2"></a>
+
+### Request
+```text 
+POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assets2
+```
+
+#### Parameters
+
+`string tenantId`
+<br/><br/>`string namespaceId`
+<br/><br/>
+
+### Request Body
+
+<br/>
+
+```json
+[
+  {
+    "Id": "string",
+    "AssetTypeId": "string",
+    "Name": "string",
+    "Description": "string",
+    "Metadata": [
+      {
+        "Id": "string",
+        "Name": "string",
+        "Description": "string",
+        "SdsTypeCode": "Empty",
+        "Value": null,
+        "Uom": "string"
+      }
+    ],
+    "StreamReferences": [
+      {
+        "Id": "string",
+        "Name": "string",
+        "Description": "string",
+        "StreamId": "string"
+      }
+    ],
+    "Status": {
+      "DefinitionType": 0,
+      "Definition": null
+    }
+  }
 ]
 ```
 
@@ -361,36 +588,31 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/search/assets
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>
-`[optional] integer skip skip`
-<br/><br/>`[optional] integer count count`
-<br/><br/>`[optional] string orderBy orderBy`
-<br/><br/>`[optional] string query query`
-<br/><br/>`[optional] integer pageSize pageSize`
-<br/><br/>`[optional] integer maxPages maxPages`
-<br/><br/>`[optional] string continuationToken continuationToken`
-<br/><br/>`[optional] object Comparer Comparer`
-<br/><br/>`[optional] integer Count Count`
-<br/><br/>`[optional] array Keys Keys`
-<br/><br/>`[optional] array System.Collections.Generic.IDictionary<TKey,TValue>.Keys System.Collections.Generic.IDictionary<TKey,TValue>.Keys`
-<br/><br/>`[optional] array System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys`
-<br/><br/>`[optional] array Values Values`
-<br/><br/>`[optional] array System.Collections.Generic.IDictionary<TKey,TValue>.Values System.Collections.Generic.IDictionary<TKey,TValue>.Values`
-<br/><br/>`[optional] array System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values`
-<br/><br/>`[optional] array Item Item`
-<br/><br/>`[optional] boolean System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly`
-<br/><br/>`[optional] boolean System.Collections.ICollection.IsSynchronized System.Collections.ICollection.IsSynchronized`
-<br/><br/>`[optional] any System.Collections.ICollection.SyncRoot System.Collections.ICollection.SyncRoot`
-<br/><br/>`[optional] boolean System.Collections.IDictionary.IsFixedSize System.Collections.IDictionary.IsFixedSize`
-<br/><br/>`[optional] boolean System.Collections.IDictionary.IsReadOnly System.Collections.IDictionary.IsReadOnly`
-<br/><br/>`[optional] array System.Collections.IDictionary.Keys System.Collections.IDictionary.Keys`
-<br/><br/>`[optional] array System.Collections.IDictionary.Values System.Collections.IDictionary.Values`
-<br/><br/>`[optional] any System.Collections.IDictionary.Item System.Collections.IDictionary.Item`
+`[optional] integer skip`
+<br/><br/>`[optional] integer count`
+<br/><br/>`[optional] string orderBy`
+<br/><br/>`[optional] string query`
+<br/><br/>`[optional] integer pageSize`
+<br/><br/>`[optional] integer maxPages`
+<br/><br/>`[optional] string continuationToken`
+<br/><br/>`[optional] object Comparer`
+<br/><br/>`[optional] integer Count`
+<br/><br/>`[optional] array Keys`
+<br/><br/>`[optional] array System.Collections.Generic.IDictionary<TKey,TValue>.Keys`
+<br/><br/>`[optional] array System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys`
+<br/><br/>`[optional] array Values`
+<br/><br/>`[optional] array System.Collections.Generic.IDictionary<TKey,TValue>.Values`
+<br/><br/>`[optional] array System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values`
+<br/><br/>`[optional] array Item`
+<br/><br/>`[optional] boolean System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly`
+<br/><br/>`[optional] boolean System.Collections.ICollection.IsSynchronized`
+<br/><br/>`[optional] any System.Collections.ICollection.SyncRoot`
+<br/><br/>`[optional] boolean System.Collections.IDictionary.IsFixedSize`
+<br/><br/>`[optional] boolean System.Collections.IDictionary.IsReadOnly`
+<br/><br/>`[optional] array System.Collections.IDictionary.Keys`
+<br/><br/>`[optional] array System.Collections.IDictionary.Values`
+<br/><br/>`[optional] any System.Collections.IDictionary.Item`
 <br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -419,11 +641,6 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/search/assets/au
 <br/><br/>`string namespaceId`
 <br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -447,14 +664,9 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/search/assets/fa
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>
-`[optional] integer count count`
-<br/><br/>`[optional] string name name`
+`[optional] integer count`
+<br/><br/>`[optional] string name`
 <br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -482,7 +694,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/search/assets/fa
 |Description|string|false|true|None|
 |Metadata|[[MetadataItem](#schemametadataitem)]|false|true|None|
 |StreamReferences|[[StreamReference](#schemastreamreference)]|false|true|None|
-|Status|[StatusMapping](#schemastatusmapping)|false|true|None|
+|Status|[StatusConfiguration](#schemastatusconfiguration)|false|true|None|
 
 ```json
 {
@@ -509,15 +721,8 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/search/assets/fa
     }
   ],
   "Status": {
-    "StreamReferenceId": "string",
-    "StreamPropertyId": "string",
-    "ValueStatusMappings": [
-      {
-        "Value": null,
-        "Status": "[",
-        "DisplayName": "string"
-      }
-    ]
+    "DefinitionType": 0,
+    "Definition": null
   }
 }
 
@@ -791,6 +996,106 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/search/assets/fa
 
 ---
 
+### StatusConfiguration
+
+<a id="schemastatusconfiguration"></a>
+<a id="schema_StatusConfiguration"></a>
+<a id="tocSstatusconfiguration"></a>
+<a id="tocsstatusconfiguration"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|DefinitionType|[StatusDefinitionType](#schemastatusdefinitiontype)|false|false|None|
+|Definition|any|false|true|None|
+
+```json
+{
+  "DefinitionType": 0,
+  "Definition": null
+}
+
+```
+
+---
+
+### StatusDefinitionType
+
+<a id="schemastatusdefinitiontype"></a>
+<a id="schema_StatusDefinitionType"></a>
+<a id="tocSstatusdefinitiontype"></a>
+<a id="tocsstatusdefinitiontype"></a>
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|Unspecified|0|
+|StreamPropertyMapping|1|
+
+---
+
+### DeprecatedAsset
+
+<a id="schemadeprecatedasset"></a>
+<a id="schema_DeprecatedAsset"></a>
+<a id="tocSdeprecatedasset"></a>
+<a id="tocsdeprecatedasset"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Id|string|false|true|None|
+|AssetTypeId|string|false|true|None|
+|Name|string|false|true|None|
+|Description|string|false|true|None|
+|Metadata|[[MetadataItem](#schemametadataitem)]|false|true|None|
+|StreamReferences|[[StreamReference](#schemastreamreference)]|false|true|None|
+|Status|[StatusMapping](#schemastatusmapping)|false|true|None|
+
+```json
+{
+  "Id": "string",
+  "AssetTypeId": "string",
+  "Name": "string",
+  "Description": "string",
+  "Metadata": [
+    {
+      "Id": "string",
+      "Name": "string",
+      "Description": "string",
+      "SdsTypeCode": "Empty",
+      "Value": null,
+      "Uom": "string"
+    }
+  ],
+  "StreamReferences": [
+    {
+      "Id": "string",
+      "Name": "string",
+      "Description": "string",
+      "StreamId": "string"
+    }
+  ],
+  "Status": {
+    "StreamReferenceId": "string",
+    "StreamPropertyId": "string",
+    "ValueStatusMappings": [
+      {
+        "Value": null,
+        "Status": "[",
+        "DisplayName": "string"
+      }
+    ]
+  }
+}
+
+```
+
+---
+
 ### StatusMapping
 
 <a id="schemastatusmapping"></a>
@@ -864,6 +1169,42 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/search/assets/fa
 |Good|1|
 |Warning|2|
 |Bad|3|
+
+---
+
+### HttpResponse
+
+<a id="schemahttpresponse"></a>
+<a id="schema_HttpResponse"></a>
+<a id="tocShttpresponse"></a>
+<a id="tocshttpresponse"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|BodyWriter|[PipeWriter](#schemapipewriter)|false|true|None|
+
+```json
+{
+  "BodyWriter": {}
+}
+
+```
+
+---
+
+### PipeWriter
+
+<a id="schemapipewriter"></a>
+<a id="schema_PipeWriter"></a>
+<a id="tocSpipewriter"></a>
+<a id="tocspipewriter"></a>
+
+```json
+{}
+
+```
 
 ---
 

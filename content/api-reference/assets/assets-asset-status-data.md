@@ -21,10 +21,33 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
 <br/><br/>`string namespaceId`
 <br/><br/>
 
-#### Request Headers
+### Response
 
-|Header|Type|Required|Description|
-|---|---|---|---|
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|string|None|
+
+---
+
+## `Get Asset Status Range Summary Data`
+
+<a id="opIdAssetStatusData_Get Asset Status Range Summary Data"></a>
+
+### Request
+```text 
+GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}/status/summary
+?startIndex={startIndex}&endIndex={endIndex}&intervals={intervals}
+```
+
+#### Parameters
+
+`string assetId`
+<br/><br/>`string startIndex`
+<br/><br/>`string endIndex`
+<br/><br/>`integer intervals`
+<br/><br/>`string tenantId`
+<br/><br/>`string namespaceId`
+<br/><br/>
 
 ### Response
 

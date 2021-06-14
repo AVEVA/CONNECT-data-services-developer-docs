@@ -23,13 +23,8 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
 <br/><br/>`string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>
-`[optional] array stream stream`
+`[optional] array stream`
 <br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -58,13 +53,8 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
 <br/><br/>`string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>
-`[optional] array stream stream`
+`[optional] array stream`
 <br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -90,13 +80,8 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
 <br/><br/>`string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>
-`[optional] array stream stream`
+`[optional] array stream`
 <br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -125,13 +110,8 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
 <br/><br/>`string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>
-`[optional] array stream stream`
+`[optional] array stream`
 <br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -159,14 +139,9 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
 <br/><br/>`string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>
-`[optional] array stream stream`
-<br/><br/>`[optional] integer count count`
+`[optional] array stream`
+<br/><br/>`[optional] integer count`
 <br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 

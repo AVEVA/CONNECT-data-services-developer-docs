@@ -21,11 +21,6 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/{r
 <br/><br/>`string resource`
 <br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -49,11 +44,6 @@ PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/{r
 <br/><br/>`string namespaceId`
 <br/><br/>`string resource`
 <br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Request Body
 
@@ -94,11 +84,6 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/accessrights/{re
 <br/><br/>`string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 

@@ -128,35 +128,26 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 
 ```json
 {
-  "Id": "string",
-  "AssetTypeId": "string",
-  "Name": "string",
-  "Description": "string",
+  "Id": "00000000-0000-0000-0000-000000000000",
+  "Name": "HeaterOnFirstFloor",
+  "Description": "This is Asset which represents a heater on the first floor.",
   "Metadata": [
     {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "SdsTypeCode": "Empty",
-      "Value": null,
-      "Uom": "string"
+      "Id": "17020d80-1dc8-4690-932f-3421c9cff0d1",
+      "Name": "ModelNumber",
+      "Description": "This is attribute with double value representing the model number.",
+      "SdsTypeCode": "Double",
+      "Value": 1.3
     }
   ],
   "StreamReferences": [
     {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "StreamId": "string"
+      "Id": "63c0ba1d-f2db-4b28-b650-7e45afca9ab4",
+      "Name": "Data",
+      "Description": "This is reference to a stream. The stream has data coming from a heater.",
+      "StreamId": "PI_bifrostbigdaddy_1"
     }
-  ],
-  "Status": {
-    "StreamReferenceId": "string",
-    "StreamPropertyId": "string",
-    "ValueStatusMappings": [
-      {}
-    ]
-  }
+  ]
 }
 ```
 

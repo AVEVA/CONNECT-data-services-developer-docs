@@ -16,7 +16,7 @@ Assets can be searched on the following asset properties:
   - Id, Name, Description, AssetTypeId, AssetTypeName
 
 - Metadata Fields
-  - Name, Description. Value
+  - Name, Description, Value
 
 - Stream Reference Fields
   - StreamReferenceName - Stream Reference Name
@@ -53,15 +53,6 @@ An optional parameter, between 1 and 1000 (inclusive), that represents the maxim
 
 [optional] `[id|name] [asc|desc|] orderby`  
 An optional parameter which returns assets ordered either by the asset `Id` or the asset `name`. Specify asc or desc to return the results in ascending or descending order. If not specified, the default is ascending order.
-
-[optional] `int pageSize`   
-Must be used with `maxPages` to configure the pages of the search results. This parameter defines the maximum number of assets that are returned on each page. 
-
-[optional] `int maxPages`   
-Must be used with `pageSize` to configure the pages of the search results. This parameter defines the maximum number of pages. Search results that exceed maxPages are not returned. 
-
-[optional] `string continuationToken`   
-Retrieves a specific page of the search results. 
 
 ### Response 
 Returns an array of assets matching the search query and the total number of assets returned specified as Total-Count in the HTTP response header. 
@@ -103,15 +94,6 @@ An optional parameter, between 1 and 1000 (inclusive), representing the maximum 
 
 [optional] `[id|name] [asc|desc|] orderby`  
 An optional parameter which returns assets ordered either by the asset `Id` or the asset `name`. Specify asc or desc to return the results in ascending or descending order. If not specified, the default is ascending order.
-
-[optional] `int pageSize`   
-Must be used with `maxPages` to configure the pages of the search results. This parameter defines the maximum number of assets that are returned on each page. 
-
-[optional] `int maxPages`   
-Must be used with `pageSize` to configure the pages of the search results. This parameter defines the maximum number of pages. Search results that exceed maxPages are not returned.
-
-[optional] `string continuationToken`   
-Retrieves a specific page of the search results. 
 
 ### Response 
 A list of asset Ids and their matched fields.
@@ -218,26 +200,6 @@ Filter strings are not case sensitive. Numeric types must be passed as strings a
 | filter[location]=Earth&filter[device]=tracer | Filter that only returns assets that contain both of the following metadata. The first metadata name = **location** with **Earth** as the metadata value, and the second metadata is name = **device** with **tracer** as the metadata value. |
 | filter[AssetTypeName]=HeaterType             | Filter that only returns assets with an AssetTypeName of "HeaterType." |
 | filter[status]=Bad                           | Filter that returns only assets with a bad status. Status filters can have the values "Good", "Bad", Warning", and "Unknown". |
-
-
-## `Asset Results by Pages` 
-
-Asset search results can be returned in pages through `pageSize` ,`maxPages`, and `continuationToken` query parameters.
-
-To return search results in pages, first make a call using the `pageSize` and `maxPages` parameters. For example:
-
-`GET search/assets?pageSize=10&maxPages=100` returns search results with a maximum of 10 assets per page and a maximum of 100 pages. 
-
-The HTTP header of this response of this query will include a "Link" section to which will define either first, next, previous, or last pages. These links can be used directly to follow the pages. For example, the links section may contain:
-
-```json 
-<https://{clusterName}/api/v1-preview/tenants/{tenantId}/namespaces/{NamespaceId}/Assets?continuationToken={continuationToken}>; rel="next", 
-<https://{clusterName}/api/v1-preview/tenants/{tenantId}/namespaces/{NamespaceId}/Assets?continuationToken={continuationToken}>; rel="previous",
-<https://{clusterName}/api/v1-preview/tenants/{tenantId}/namespaces/{NamespaceId}/Assets?continuationToken={continuationToken}>; rel="first",
-<https://{clusterName}/api/v1-preview/tenants/{tenantId}/namespaces/{NamespaceId}/Assets?continuationToken={continuationToken}>; rel="last"
-```
-
-These links can be followed to get the next, previous, first, and last page.  If no pages are requested, the links to the next, previous, first, and last pages time out in 2 minutes.
 
 ## `Asset Faceted Search` 
 

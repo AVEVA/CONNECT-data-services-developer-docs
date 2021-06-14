@@ -10,6 +10,8 @@ The asset type API provides methods to create, read, update, and delete asset ty
 
 <a id="opIdRequestManager_List Assets"></a>
 
+Gets Assets 123.
+
 ### Request
 ```text 
 GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
@@ -22,8 +24,8 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 <br/><br/>`string namespaceId`
 <br/><br/>
 `[optional] integer skip`
-<br/><br/>`[optional] integer count`
-<br/><br/>`[optional] string orderBy`
+<br/>Skip.<br/><br/>`[optional] integer count`
+<br/>Count.<br/><br/>`[optional] string orderBy`
 <br/><br/>`[optional] string query`
 <br/><br/>`[optional] integer pageSize`
 <br/><br/>`[optional] integer maxPages`
@@ -51,11 +53,17 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[DeprecatedAsset](#schemadeprecatedasset)[]|None|
-|400|[ErrorTemplate](#schemaerrortemplate)|None|
-|401|[ErrorTemplate](#schemaerrortemplate)|None|
-|500|[ErrorTemplate](#schemaerrortemplate)|None|
-|503|[ErrorTemplate](#schemaerrortemplate)|None|
+|200|[DeprecatedAsset](#schemadeprecatedasset)[]|List of assets in the given namespace.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details..|
+|401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized..|
+|500|[ErrorTemplate](#schemaerrortemplate)|Internal Service Error, please try again later..|
+|503|[ErrorTemplate](#schemaerrortemplate)|Service Unavaiable, please try again later..|
+
+#### Response Headers
+
+|Status|Header|Type|Description|
+|---|---|---|---|
+|200|Total-Count|integer|Total number of sers in the Tenant.|
 
 #### Example response body
 > 200 Response
@@ -63,41 +71,29 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 ```json
 [
   {
-    "Id": "string",
-    "AssetTypeId": "string",
-    "Name": "string",
-    "Description": "string",
-    "Metadata": [
-      {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SdsTypeCode": "Empty",
-        "Value": null,
-        "Uom": "string"
-      }
-    ],
-    "StreamReferences": [
-      {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "StreamId": "string"
-      }
-    ],
-    "Status": {
-      "StreamReferenceId": "string",
-      "StreamPropertyId": "string",
-      "ValueStatusMappings": [
-        {
-          "Value": null,
-          "Status": null,
-          "DisplayName": null
-        }
-      ]
-    }
+    "Id": "Heater_HIJK",
+    "Name": "HeaterOnFirstFloor",
+    "Description": "This is Asset which represents a heater on the first floor."
+  },
+  {
+    "Id": "Heater_ABCDEF",
+    "Name": "HeaterOnFirstFloor",
+    "Description": "This is Asset which represents a heater on the first floor."
   }
 ]
+```
+
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
 ```
 
 ---

@@ -58,7 +58,9 @@ This topic contains these sections:
     * **This account**: Specify a user name and password (domain\account) to connect to PI Data Archive.
     
     **Note:** The service account must have Administrator privileges and read access to certain data on PI Data Archive.
-13. Click **Install**.
+
+12. Click **Install**.
+
     **Result:** The PI to OCS Agent is installed.
     **Note:** Installation may take a few moments.
 

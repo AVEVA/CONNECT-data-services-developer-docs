@@ -12,5 +12,5 @@ This section contains the following topics:
 
 * [Overview of PI to OCS](xref:pi-to-ocs-overview)
 * [PI System connections best practices](xref:bpPISystemConnection)
-* [Minimum system requirements](xref:min-sys-reqmnts)
+* [PI to OCS minimum system requirements](xref:min-sys-reqmnts)
 * [Limitations of PI to OCS](xref:pi-to-ocs-limitations)

@@ -112,8 +112,8 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 #### Parameters
 
 `string tenantId`
-<br/>The tenant identifier<br/><br/>`string namespaceId`
-<br/>The namespace identifier<br/><br/>
+<br/><br/>`string namespaceId`
+<br/><br/>
 
 ### Request Body
 
@@ -164,6 +164,12 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 |409|None|The asset you attempted to create has a conflict. See the response body for additional details..|
 |500|None|Internal Service Error, please try again later..|
 |503|None|Service Unavaiable, please try again later..|
+
+#### Response Headers
+
+|Status|Header|Type|Description|
+|---|---|---|---|
+|302|Location|string|Location to get the identical resource.|
 
 #### Example response body
 > 200 Response

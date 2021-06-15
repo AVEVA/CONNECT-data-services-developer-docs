@@ -410,6 +410,8 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assets
 
 <a id="opIdRequestManager_Bulk Deprecated Get Resolved Assets"></a>
 
+View multiple resolved assets.
+
 ### Request
 ```text 
 POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assets/resolved
@@ -418,16 +420,18 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assets/res
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>The tenant identifier<br/><br/>`string namespaceId`
+<br/>The namespace identifier<br/><br/>
 
 ### Request Body
 
-<br/>
+The assets identifiers you are interested in.<br/>
 
 ```json
 [
-  "string"
+  "AssetId-1",
+  "AssetId-2",
+  "AssetId-3"
 ]
 ```
 
@@ -435,7 +439,7 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assets/res
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|200|string|Returns the resolved view of multiple assets.|
 
 ---
 
@@ -506,10 +510,10 @@ The assets identifiers you are interested in.<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[LastStatusData](#schemalaststatusdata)[]|The last status of assets in the POST body.|
-|207|[MultiStatusResultOfLastStatusDataAndChildErrorTemplate](#schemamultistatusresultoflaststatusdataandchilderrortemplate)|On POST, returns the status of multiple assets. For error responses, check the multi-status response for the error and cause.|
+|207|[MultiStatusResultOfLastStatusDataAndChildErrorTemplate](#schemamultistatusresultoflaststatusdataandchilderrortemplate)|On POST, returns the status of multiple assets.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|500|None|Internal Service Error, please try again later..|
-|503|None|Service Unavaiable, please try again later..|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavaiable, please try again later.|
 
 #### Example response body
 > 200 Response

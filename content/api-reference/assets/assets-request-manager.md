@@ -55,9 +55,9 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 |---|---|---|
 |200|[DeprecatedAsset](#schemadeprecatedasset)[]|List of assets in the given namespace.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized.|
-|500|[ErrorTemplate](#schemaerrortemplate)|Internal Service Error, please try again later.|
-|503|[ErrorTemplate](#schemaerrortemplate)|Service Unavaiable, please try again later.|
+|401|None|Unauthorized.|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavaiable, please try again later.|
 
 #### Response Headers
 
@@ -158,12 +158,12 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[DeprecatedAsset](#schemadeprecatedasset)|The asset as persisted, including values for optional parameters that were omitted in the request.|
-|302|[DeprecatedAsset](#schemadeprecatedasset)|The asset you attempted to create is identical to one that already exists.|
+|302|None|The asset you attempted to create is identical to one that already exists.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details..|
-|403|[ErrorTemplate](#schemaerrortemplate)|You are not authorized to create assets.|
-|409|[ErrorTemplate](#schemaerrortemplate)|The asset you attempted to create has a conflict. See the response body for additional details..|
-|500|[ErrorTemplate](#schemaerrortemplate)|Internal Service Error, please try again later..|
-|503|[ErrorTemplate](#schemaerrortemplate)|Service Unavaiable, please try again later..|
+|403|None|You are not authorized to create assets.|
+|409|None|The asset you attempted to create has a conflict. See the response body for additional details..|
+|500|None|Internal Service Error, please try again later..|
+|503|None|Service Unavaiable, please try again later..|
 
 #### Example response body
 > 200 Response
@@ -193,43 +193,16 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 }
 ```
 
-> 302 Response
+> 400 Response
 
 ```json
 {
-  "Id": "string",
-  "AssetTypeId": "string",
-  "Name": "string",
-  "Description": "string",
-  "Metadata": [
-    {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "SdsTypeCode": "Empty",
-      "Value": null,
-      "Uom": "string"
-    }
-  ],
-  "StreamReferences": [
-    {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "StreamId": "string"
-    }
-  ],
-  "Status": {
-    "StreamReferenceId": "string",
-    "StreamPropertyId": "string",
-    "ValueStatusMappings": [
-      {
-        "Value": null,
-        "Status": "[",
-        "DisplayName": "string"
-      }
-    ]
-  }
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
 }
 ```
 
@@ -537,8 +510,8 @@ The assets identifiers you are interested in.<br/>
 |200|[LastStatusData](#schemalaststatusdata)[]|The last status of assets in the POST body.|
 |207|[MultiStatusResultOfLastStatusDataAndChildErrorTemplate](#schemamultistatusresultoflaststatusdataandchilderrortemplate)|On POST, returns the status of multiple assets. For error responses, check the multi-status response for the error and cause.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|500|[ErrorTemplate](#schemaerrortemplate)|Internal Service Error, please try again later..|
-|503|[ErrorTemplate](#schemaerrortemplate)|Service Unavaiable, please try again later..|
+|500|None|Internal Service Error, please try again later..|
+|503|None|Service Unavaiable, please try again later..|
 
 #### Example response body
 > 200 Response

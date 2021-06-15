@@ -28,7 +28,7 @@ A namespace is a logical unit of organization for data within a tenant. Before a
 
 ### Region 
 
-Regions are geographical area designations associated with OCS resources (for example,<-comma types, streams, and data views). WestUS and WestEurope are regions. OCS provisions a namespace within a single region. After you create a namespace, any resources you create in that namespace are bound to its region. Any data stored in the namespace is stored in that region.
+Regions are geographical area designations associated with OCS resources (for example, types, streams, and data views). WestUS and WestEurope are regions. OCS provisions a namespace within a single region. After you create a namespace, any resources you create in that namespace are bound to its region. Any data stored in the namespace is stored in that region.
 
 ### Identity 
 

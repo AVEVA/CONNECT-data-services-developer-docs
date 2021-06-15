@@ -6,7 +6,7 @@ uid: communityroles
 
 When using Communities, you must [assign users to roles](xref:managecommunityusers#assign-user-roles) that grant permissions for certain types of actions.
 
-In Communities, the following roles are available, ordered from least privileged to most privileged:
+Communities includes the following roles, ordered from least privileged to most privileged.
 
 ## Community Member
 
@@ -29,7 +29,7 @@ Community Moderators can assign the following roles to users in their own tenant
 
 ## Community Administrator
 
-A role that grants full administrative rights. These rights include all the privileges of a Community Moderator plus the ability to:
+A role with full administrative rights. These rights include all the privileges of a Community Moderator plus the ability to:
 
 - Delete the community
 - Invite tenants to the community and confirm those invitations
@@ -39,7 +39,7 @@ Community Administrators only exist in the [community owner's](#community-owner)
 
 ## Related roles and identities
 
-In addition to the roles you can assign in Communities, be aware of the following related roles and identities:
+In addition to the roles you can assign in Communities, be aware of the following related roles and identities.
 
 ### Tenant Administrator
 
@@ -47,4 +47,4 @@ A tenant-level role that allows users to administer their own tenant. The Tenant
 
 ### Community owner
 
-The community owner refers to the tenant that created a community. A community owner is not a role and is not granted any privileges. By default, Tenant Administrators are granted the privilege to create communities.
+The community owner refers to the tenant that created a community. A community owner is not a role and is not granted any privileges. By default, Tenant Administrators have the privilege needed to create communities.

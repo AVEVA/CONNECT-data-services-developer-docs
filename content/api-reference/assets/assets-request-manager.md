@@ -519,14 +519,51 @@ The assets identifiers you are interested in.<br/>
 ```json
 [
   {
-    "Index": null,
-    "Status": 0,
-    "Value": null,
-    "DisplayName": "string",
-    "AssetId": "string",
-    "DataRetrievalTime": "2019-08-24T14:15:22Z"
+    "AssetId": "AssetId-1",
+    "Status": 1,
+    "Value": "85",
+    "DisplayName": "TemperatureSensorBuild1InF",
+    "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z"
+  },
+  {
+    "AssetId": "AssetId-2",
+    "Status": 2,
+    "Value": "185",
+    "DisplayName": "DeviceMeasurement",
+    "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z"
   }
 ]
+```
+
+> 207 Response
+
+```json
+{
+  "Reason": "string",
+  "Error": "string",
+  "OperationId": "string",
+  "Data": [
+    {
+      "Index": null,
+      "Status": 0,
+      "Value": null,
+      "DisplayName": "string",
+      "AssetId": "string",
+      "DataRetrievalTime": "2019-08-24T14:15:22Z"
+    }
+  ],
+  "ChildErrors": [
+    {
+      "OperationId": "string",
+      "Error": "string",
+      "Resolution": "string",
+      "Reason": "string",
+      "StatusCode": 0,
+      "property1": null,
+      "property2": null
+    }
+  ]
+}
 ```
 
 ---

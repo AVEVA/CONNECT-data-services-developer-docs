@@ -1,0 +1,59 @@
+---
+uid: gsStreamviews
+---
+
+# Get started with stream views
+
+Stream views allow you to expose stream data as a different type. 
+
+A stream view serves as a mapping between the actual underlying type and the type in the stream view, enabling you to in effect remove, rename, or add properties on your original stream data. 
+Using a stream view on data retrieval affects only the data retrieved, and does not alter the original source data.
+ 
+For more information about stream views, see the following topics:
+
+- [Streamviews](xref:ccStreamviews)
+- [PI Server counterpart](xref:ccStreamviews#streamviews-pi-server)
+- [Stream views best practices](xref:ccStreamviews#streamviews-bestpractices)
+
+## Procedure
+
+Before following this procedure, repeat the steps in [Get started with types](#gsTypes), but use the ID **MyOCS.PumpState.Temperature** and include only the **Timestamp** and **Temperature** properties. This procedure creates a stream view that maps the **MyOCS.PumpState** type to this new type.
+
+1. Click the ![Menu icon](images/menu-icon.png) icon and choose **Sequential Data Store** (under Data Management).
+
+1. Click the **Namespace** selection button to open the `Select a Namespace` window. In the Select a Namespace window, click **MyOCS**. 
+     ![Namespace list](images/sds-gs-namespace.png)
+
+1. From the **Streams/Types/Stream Views Selector** list, select **Stream Views**.
+
+1. In the menu bar, click **Add Stream View** to open a panel on the right side.
+
+1. In the `Create Stream View` panel at step 1: `Details`, enter the following information:
+
+   - `Id` &ndash; **MyOCS.PumpTemperatureView**
+   - `Name` &ndash; Optionally, give the stream view a different name. Leave this field blank to use the Id as the name.
+   - `SourceType` &ndash; From the list, choose the type **MyOCS.PumpState**.
+   - `TargetType` &ndash; From the list, choose the type **MyOCS.PumpState.Temperature**.
+   - `Description` &ndash; Optionally, add a description for this stream view.
+
+1. In the lower right, click **Next** to proceed to step 2: `Property Mappings`.
+
+1. Click **Add Property Mapping** twice to create two blank property mappings.
+
+1. In the first property mapping row, enter the following information:
+
+   - `Source Id` &ndash; From the list, choose the property **Timestamp**.
+   - `Target Id` &ndash; From the list, choose the property **Timestamp**.
+
+1. In the second property mapping row, enter the following information:
+
+   - `Source Id` &ndash; From the list, choose the property **Temperature**.
+   - `Target Id` &ndash; From the list, choose the property **Temperature**.
+
+1. Click **Save**. This adds the stream view to the list and you can now use it to view data from **MyOCS.PumpState** streams with only the **Timestamp** and **Temperature** fields showing.
+
+1. To test this stream view, click the menu icon and choose **API Console** (under Developer Tools).
+
+1. In the `URI` field enter `/Namespaces/MyOCS/Streams/MyOCS.NorthAmerica.SLTC.PumpA/Data/Transform/Last?streamViewId=MyOCS.PumpTemperatureView`, then click **GET**. Note that if you use a different namespace, you might need to substitute that in place of `/Namespaces/MyOCS`.
+
+This returns the **Timestamp** and **Temperature** of the last event from the **MyOCS.NorthAmerica.SLTC.PumpA** stream, while excluding the **Pressure** and **Status** properties.

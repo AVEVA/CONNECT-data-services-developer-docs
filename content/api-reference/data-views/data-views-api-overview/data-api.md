@@ -54,11 +54,11 @@ The response includes a status code and, in most cases, a body.
 
 | Status code | Body Type | Description |
 |--|--|--|
-| 200 OK                    | data in the requested format  | Successfully retrieved data.  |
-| 400 Bad Request           | error | The request could not be understood by the server due to malformed syntax.
-| 403 Forbidden             | error | User is not authorized for this operation.
-| 404 Not Found             | error | The specified data view identifier is not found.
-| 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
+| 200 OK                    | data in the requested format  | Successfully retrieved data  |
+| 400 Bad request           | error | The request could not be understood by the server due to malformed syntax
+| 403 Forbidden             | error | User is not authorized for this operation
+| 404 Not found             | error | The specified data view identifier is not found
+| 500 Internal server error | error | An error occurred while processing the request: see the response body for details |
 
 #### Response headers
 Successful (200 OK) responses include:
@@ -277,11 +277,11 @@ The response includes a status code and, in most cases, a body.
 
 | Status code | Body Type | Description |
 |--|--|--|
-| 200 OK                    | data in the requested format  | Successfully retrieved data.  |
-| 400 Bad Request           | error | The request could not be understood by the server due to malformed syntax.
-| 403 Forbidden             | error | User is not authorized for this operation.
-| 404 Not Found             | error | The specified data view identifier is not found.
-| 500 Internal Server Error | error | An error occurred while processing the request. See the response body for details |
+| 200 OK                    | data in the requested format  | Successfully retrieved data  |
+| 400 Bad request           | error | The request could not be understood by the server due to malformed syntax
+| 403 Forbidden             | error | User is not authorized for this operation
+| 404 Not found             | error | The specified data view identifier is not found
+| 500 Internal server error | error | An error occurred while processing the request: see the response body for details |
 
 #### Response headers
 Successful (200 OK) responses include:

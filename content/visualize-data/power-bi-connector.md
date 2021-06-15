@@ -13,7 +13,7 @@ To use the OSIsoft Cloud Services data connector, complete the following steps:
 3.	In Microsoft Power BI, in the entry field of the **Get Data** window, type *OSI* . The **OSIsoft Cloud Services Data Views** displays in the **All** pane.
 4.	In the **OCS Power BI Data Connector** dialog, select the OCS tenant (currently tenant Id only) and namespace whose data views you want to access, and then click **OK**. The OSIsoft Cloud Services sign-in dialog displays if you have not already signed into OCS.
 5.	If you have not already signed into OCS, click **Sign in as different user** and complete the OCS user authentication process. The **OSIsoft Cloud Services Data Views** sign-in dialog displays again after you have completed the OCS user authentication process.
-6.	Click **Connect** in the **OSIsoft Cloud Services Data Views** sign-in dialog. The **Navigator** pane displays.
+6.	In the **OSIsoft Cloud Services Data Views** sign-in dialog, click **Connect**. The **Navigator** pane displays.
 7.	Select one or more data views from the **Navigator** pane.
 8.	Specify a Start Index, End Index, and Interval for each of the selected data views, or accept the default values. Click **Apply** to apply the values you have specified to the selected data views.
 9.	Click **Load** at the bottom of the **Navigator** pane to load the selected data view data.

@@ -15,6 +15,6 @@ To use the OSIsoft Cloud Services data connector, complete the following steps:
 5.	If you have not already signed into OCS, click **Sign in as different user** and complete the OCS user authentication process. The **OSIsoft Cloud Services Data Views** sign-in dialog displays again after you have completed the OCS user authentication process.
 6.	In the **OSIsoft Cloud Services Data Views** sign-in dialog, click **Connect**. The **Navigator** pane displays.
 7.	From the **Navigator** pane, select one or more data views .
-8.	Specify a Start Index, End Index, and Interval for each of the selected data views, or accept the default values. Click **Apply** to apply the values you have specified to the selected data views.
+8.	For each of the selected data views, specify a Start Index, End Index, and Interval, or accept the default values. To apply the values you have specified for the selected data views, click **Apply** 
 9.	Click **Load** at the bottom of the **Navigator** pane to load the selected data view data.
 10.	Use the Microsoft Power BI **Visualizations** pane to select the visualizations you want to create.

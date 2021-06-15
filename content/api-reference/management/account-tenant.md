@@ -278,7 +278,7 @@ Returns a list of regions for the specified Tenant.
 string tenantId
 ```
 
-The identifier of the `Tenant` for this request.
+The identifier of the `Tenant` for this request
 
 
 ### Authorization
@@ -289,8 +289,8 @@ Authorized for Tenant Members of the specified `Tenant`.
 
 | Status Code | Return Type | Description |
 | --- | --- | ---  |
-| 200 | Region | The list of regions associated with the `Tenant`. |
-| 403 | Nothing is returned | Forbidden. |
+| 200 | Region | The list of regions associated with the `Tenant` |
+| 403 | Nothing is returned | Forbidden |
 | 404 | Nothing is returned | Could not retrieve the list of regions due to tenant not found. |
 
 #### Example response body

@@ -325,8 +325,8 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assets
 #### Parameters
 
 `string tenantId`
-<br/>The tenant identifier.<br/><br/>`string namespaceId`
-<br/>The namespace identifier.<br/><br/>
+<br/><br/>`string namespaceId`
+<br/><br/>
 
 ### Request Body
 
@@ -420,8 +420,8 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assets/res
 #### Parameters
 
 `string tenantId`
-<br/>The tenant identifier<br/><br/>`string namespaceId`
-<br/>The namespace identifier<br/><br/>
+<br/><br/>`string namespaceId`
+<br/><br/>
 
 ### Request Body
 
@@ -490,8 +490,8 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assets/sta
 #### Parameters
 
 `string tenantId`
-<br/>The tenant identifier<br/><br/>`string namespaceId`
-<br/>The namespace identifier<br/><br/>
+<br/><br/>`string namespaceId`
+<br/><br/>
 
 ### Request Body
 
@@ -582,8 +582,8 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assets2
 #### Parameters
 
 `string tenantId`
-<br/>The tenant identifier.<br/><br/>`string namespaceId`
-<br/>The namespace identifier.<br/><br/>
+<br/><br/>`string namespaceId`
+<br/><br/>
 
 ### Request Body
 

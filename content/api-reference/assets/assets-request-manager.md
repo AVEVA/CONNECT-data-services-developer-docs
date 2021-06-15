@@ -534,8 +534,9 @@ The assets identifiers you are interested in.<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[MultiStatusResultOfLastStatusDataAndChildErrorTemplate](#schemamultistatusresultoflaststatusdataandchilderrortemplate)|The last status of assets in the POST body.|
+|200|[LastStatusData](#schemalaststatusdata)[]|The last status of assets in the POST body.|
 |207|[MultiStatusResultOfLastStatusDataAndChildErrorTemplate](#schemamultistatusresultoflaststatusdataandchilderrortemplate)|On POST, returns the status of multiple assets. For error responses, check the multi-status response for the error and cause.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
 |500|[ErrorTemplate](#schemaerrortemplate)|Internal Service Error, please try again later..|
 |503|[ErrorTemplate](#schemaerrortemplate)|Service Unavaiable, please try again later..|
 
@@ -543,32 +544,16 @@ The assets identifiers you are interested in.<br/>
 > 200 Response
 
 ```json
-{
-  "Reason": "string",
-  "Error": "string",
-  "OperationId": "string",
-  "Data": [
-    {
-      "Index": null,
-      "Status": 0,
-      "Value": null,
-      "DisplayName": "string",
-      "AssetId": "string",
-      "DataRetrievalTime": "2019-08-24T14:15:22Z"
-    }
-  ],
-  "ChildErrors": [
-    {
-      "OperationId": "string",
-      "Error": "string",
-      "Resolution": "string",
-      "Reason": "string",
-      "StatusCode": 0,
-      "property1": null,
-      "property2": null
-    }
-  ]
-}
+[
+  {
+    "Index": null,
+    "Status": 0,
+    "Value": null,
+    "DisplayName": "string",
+    "AssetId": "string",
+    "DataRetrievalTime": "2019-08-24T14:15:22Z"
+  }
+]
 ```
 
 ---
@@ -1276,6 +1261,38 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/search/assets/fa
 
 ---
 
+### LastStatusData
+
+<a id="schemalaststatusdata"></a>
+<a id="schema_LastStatusData"></a>
+<a id="tocSlaststatusdata"></a>
+<a id="tocslaststatusdata"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Index|any|false|true|None|
+|Status|[StatusEnum](#schemastatusenum)|false|false|None|
+|Value|any|false|true|None|
+|DisplayName|string|false|true|None|
+|AssetId|string|false|true|None|
+|DataRetrievalTime|date-time|false|false|None|
+
+```json
+{
+  "Index": null,
+  "Status": 0,
+  "Value": null,
+  "DisplayName": "string",
+  "AssetId": "string",
+  "DataRetrievalTime": "2019-08-24T14:15:22Z"
+}
+
+```
+
+---
+
 ### MultiStatusResultOfLastStatusDataAndChildErrorTemplate
 
 <a id="schemamultistatusresultoflaststatusdataandchilderrortemplate"></a>
@@ -1319,38 +1336,6 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/search/assets/fa
       "property2": null
     }
   ]
-}
-
-```
-
----
-
-### LastStatusData
-
-<a id="schemalaststatusdata"></a>
-<a id="schema_LastStatusData"></a>
-<a id="tocSlaststatusdata"></a>
-<a id="tocslaststatusdata"></a>
-
-#### Properties
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|Index|any|false|true|None|
-|Status|[StatusEnum](#schemastatusenum)|false|false|None|
-|Value|any|false|true|None|
-|DisplayName|string|false|true|None|
-|AssetId|string|false|true|None|
-|DataRetrievalTime|date-time|false|false|None|
-
-```json
-{
-  "Index": null,
-  "Status": 0,
-  "Value": null,
-  "DisplayName": "string",
-  "AssetId": "string",
-  "DataRetrievalTime": "2019-08-24T14:15:22Z"
 }
 
 ```

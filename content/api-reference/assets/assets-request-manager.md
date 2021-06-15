@@ -10,7 +10,7 @@ The asset type API provides methods to create, read, update, and delete asset ty
 
 <a id="opIdRequestManager_List Assets"></a>
 
-Gets Assets 123.
+Gets Assets in a given namespace.
 
 ### Request
 ```text 
@@ -54,10 +54,10 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[DeprecatedAsset](#schemadeprecatedasset)[]|List of assets in the given namespace.|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details..|
-|401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized..|
-|500|[ErrorTemplate](#schemaerrortemplate)|Internal Service Error, please try again later..|
-|503|[ErrorTemplate](#schemaerrortemplate)|Service Unavaiable, please try again later..|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized.|
+|500|[ErrorTemplate](#schemaerrortemplate)|Internal Service Error, please try again later.|
+|503|[ErrorTemplate](#schemaerrortemplate)|Service Unavaiable, please try again later.|
 
 #### Response Headers
 
@@ -505,6 +505,8 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assets/res
 
 <a id="opIdRequestManager_Get Bulk Last Status Data For Assets"></a>
 
+View the status of multiple assets.
+
 ### Request
 ```text 
 POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assets/status/last
@@ -513,16 +515,18 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assets/sta
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>The tenant identifier<br/><br/>`string namespaceId`
+<br/>The namespace identifier<br/><br/>
 
 ### Request Body
 
-<br/>
+The assets identifiers you are interested in.<br/>
 
 ```json
 [
-  "string"
+  "AssetId-1",
+  "AssetId-2",
+  "AssetId-3"
 ]
 ```
 
@@ -530,7 +534,42 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assets/sta
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|200|[MultiStatusResultOfLastStatusDataAndChildErrorTemplate](#schemamultistatusresultoflaststatusdataandchilderrortemplate)|The last status of assets in the POST body.|
+|207|[MultiStatusResultOfLastStatusDataAndChildErrorTemplate](#schemamultistatusresultoflaststatusdataandchilderrortemplate)|On POST, returns the status of multiple assets. For error responses, check the multi-status response for the error and cause.|
+|500|[ErrorTemplate](#schemaerrortemplate)|Internal Service Error, please try again later..|
+|503|[ErrorTemplate](#schemaerrortemplate)|Service Unavaiable, please try again later..|
+
+#### Example response body
+> 200 Response
+
+```json
+{
+  "Reason": "string",
+  "Error": "string",
+  "OperationId": "string",
+  "Data": [
+    {
+      "Index": null,
+      "Status": 0,
+      "Value": null,
+      "DisplayName": "string",
+      "AssetId": "string",
+      "DataRetrievalTime": "2019-08-24T14:15:22Z"
+    }
+  ],
+  "ChildErrors": [
+    {
+      "OperationId": "string",
+      "Error": "string",
+      "Resolution": "string",
+      "Reason": "string",
+      "StatusCode": 0,
+      "property1": null,
+      "property2": null
+    }
+  ]
+}
+```
 
 ---
 
@@ -1232,6 +1271,119 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/search/assets/fa
 
 ```json
 {}
+
+```
+
+---
+
+### MultiStatusResultOfLastStatusDataAndChildErrorTemplate
+
+<a id="schemamultistatusresultoflaststatusdataandchilderrortemplate"></a>
+<a id="schema_MultiStatusResultOfLastStatusDataAndChildErrorTemplate"></a>
+<a id="tocSmultistatusresultoflaststatusdataandchilderrortemplate"></a>
+<a id="tocsmultistatusresultoflaststatusdataandchilderrortemplate"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Reason|string|false|true|None|
+|Error|string|false|true|None|
+|OperationId|string|false|true|None|
+|Data|[[LastStatusData](#schemalaststatusdata)]|false|true|None|
+|ChildErrors|[[ChildErrorTemplate](#schemachilderrortemplate)]|false|true|None|
+
+```json
+{
+  "Reason": "string",
+  "Error": "string",
+  "OperationId": "string",
+  "Data": [
+    {
+      "Index": null,
+      "Status": 0,
+      "Value": null,
+      "DisplayName": "string",
+      "AssetId": "string",
+      "DataRetrievalTime": "2019-08-24T14:15:22Z"
+    }
+  ],
+  "ChildErrors": [
+    {
+      "OperationId": "string",
+      "Error": "string",
+      "Resolution": "string",
+      "Reason": "string",
+      "StatusCode": 0,
+      "property1": null,
+      "property2": null
+    }
+  ]
+}
+
+```
+
+---
+
+### LastStatusData
+
+<a id="schemalaststatusdata"></a>
+<a id="schema_LastStatusData"></a>
+<a id="tocSlaststatusdata"></a>
+<a id="tocslaststatusdata"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Index|any|false|true|None|
+|Status|[StatusEnum](#schemastatusenum)|false|false|None|
+|Value|any|false|true|None|
+|DisplayName|string|false|true|None|
+|AssetId|string|false|true|None|
+|DataRetrievalTime|date-time|false|false|None|
+
+```json
+{
+  "Index": null,
+  "Status": 0,
+  "Value": null,
+  "DisplayName": "string",
+  "AssetId": "string",
+  "DataRetrievalTime": "2019-08-24T14:15:22Z"
+}
+
+```
+
+---
+
+### ChildErrorTemplate
+
+<a id="schemachilderrortemplate"></a>
+<a id="schema_ChildErrorTemplate"></a>
+<a id="tocSchilderrortemplate"></a>
+<a id="tocschilderrortemplate"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|OperationId|string|false|true|None|
+|Error|string|false|true|None|
+|Resolution|string|false|true|None|
+|Reason|string|false|true|None|
+|StatusCode|int32|false|false|None|
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "StatusCode": 0,
+  "property1": null,
+  "property2": null
+}
 
 ```
 

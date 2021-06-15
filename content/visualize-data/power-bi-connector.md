@@ -17,4 +17,4 @@ To use the OSIsoft Cloud Services data connector, complete the following steps:
 7.	From the **Navigator** pane, select one or more data views .
 8.	For each of the selected data views, specify a Start Index, End Index, and Interval, or accept the default values. To apply the values you have specified for the selected data views, click **Apply** 
 9.	To load the selected data view data, click **Load** at the bottom of the **Navigator** pane .
-10.	Use the Microsoft Power BI **Visualizations** pane to select the visualizations you want to create.
+10.	To select the visualizations you want to create, use the Microsoft Power BI **Visualizations** pane .

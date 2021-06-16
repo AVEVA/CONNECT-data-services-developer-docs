@@ -121,35 +121,25 @@ The asset you want to create.<br/>
 
 ```json
 {
-  "Id": "string",
-  "AssetTypeId": "string",
-  "Name": "string",
-  "Description": "string",
+  "Id": "SampleAsset",
+  "Description": "This is a sample asset.",
   "Metadata": [
     {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "SdsTypeCode": "Empty",
-      "Value": null,
-      "Uom": "string"
+      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+      "Name": "ModelNumber",
+      "Description": "This is a static attribute on the asset which represents the model number.",
+      "SdsTypeCode": "Double",
+      "Value": 0.01
     }
   ],
   "StreamReferences": [
     {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "StreamId": "string"
+      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+      "Name": "Data",
+      "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+      "StreamId": "PI_bifrostbigdaddy_1"
     }
-  ],
-  "Status": {
-    "StreamReferenceId": "string",
-    "StreamPropertyId": "string",
-    "ValueStatusMappings": [
-      {}
-    ]
-  }
+  ]
 }
 ```
 

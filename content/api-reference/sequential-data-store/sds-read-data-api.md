@@ -1127,8 +1127,9 @@ Currently, these values can only be calculated for properties of the following t
 | NullableDateTimeOffset | 120           |
 | NullableTimeSpan       | 121           |
 
-**Note:** Properties marked with an ``InterpolationMode`` of ``Discrete`` do not support summaries.
-Unsupported properties will be excluded from the summaries returned.
+> [!NOTE]
+> Properties marked with an ``InterpolationMode`` of ``Discrete`` do not support summaries.
+> Unsupported properties will be excluded from the summaries returned.
 
 #### Request  
  ```text
@@ -1345,8 +1346,9 @@ Similarly, for intervals [12:00:03 PM, 12:00:04 PM] and [12:00:04 PM, 12:00:05 P
 | ContinuousNullableLeading <br> StepwiseContinuousLeading | 1 | 1 |
 | ContinuousNullableTrailing <br> StepwiseContinuousTrailing | 1 | 2 |
 
-**Note:** Non-weighted summaries disregard null values and treat them as non-existent. 
-In the example above, non-weighted summaries for Measurement would be calculated based on (2,2,1,2,3) whereas weighted summaries for Measurement consider null values for its calculation. 
+> [!NOTE]
+> Non-weighted summaries disregard null values and treat them as non-existent. 
+> In the example above, non-weighted summaries for `Measurement` would be calculated based on (2,2,1,2,3) whereas weighted summaries for `Measurement` consider null values for its calculation. 
 
 For more information see [Interpolation](xref:sdsReadingData#interpolation).
 ##### Example request
@@ -1829,7 +1831,9 @@ For more information, see [Interpolation](xref:sdsReadingData#interpolation).
 If the missing values are outside of the boundary values, they are extrapolated.
 For more information, see [Extrapolation](xref:sdsReadingData#extrapolation).
 
-**Note:** The Interpolated SdsJoinMode currently does not support SdsInterpolationModes of the streams. All join requests with interpolations will honor the interpolation mode of the stream type or type property. 
+> [!NOTE]
+> The Interpolated SdsJoinMode currently does not support SdsInterpolationModes of the streams. 
+> All join requests with interpolations will honor the interpolation mode of the stream type or type property. 
 
 ##### Example response body
 

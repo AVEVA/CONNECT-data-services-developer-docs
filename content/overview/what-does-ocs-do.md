@@ -6,7 +6,7 @@ uid: WhatOCSdoes
 
 ![OCS](images/how-does-ocs-work/ocs_intro.png)
 
-OSIsoft Cloud Services (OCS) consists of several different areas of core functionality: tenant management, data collection, data organization, and data analysis. The following sections discuss each in detail:
+OSIsoft Cloud Services (OCS) consists of several different areas of core functionality: tenant management, data collection, data organization, and data analysis. The following sections discuss each area in detail:
 
 * [Tenant management](#tenant-management) - Explains basic concepts in managing OCS, including clients, users, roles, roles-based access control and discusses how administrators can customize OCS based on organizational requirements 
 * [Data collection](#data-collection) - Summarizes techniques to collect and feed data from multiple sources across your organization into a namespace within OCS 

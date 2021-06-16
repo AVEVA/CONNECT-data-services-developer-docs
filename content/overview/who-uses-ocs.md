@@ -14,11 +14,11 @@ Extending the collection and accessibility of operational data allows new analys
 
 Data scientists can easily integrate operational data from multiple sources for a variety of applications, such as process optimization and maintenance. Better data modeling enables smart decision-making based on clear answers about what is most relevant to a company’s goals. OCS uses the entire data infrastructure to gather the right type of data for modeling tools that answer business questions such as maintenance and demand forecasting. 
 
-OCS enables this process by: 
+OCS enables this process in the following ways: 
 
-- Allowing the operations department and data scientists to share data and collaborate more effectively 
-- Providing an environment in which data analysis artifacts are saved, enabling the data scientist to modify their models and workflow more efficiently 
-- Ensuring that high-quality data is available for analysis 
+- Allows the operations department and data scientists to share data and collaborate more effectively 
+- Provides an environment in which data analysis artifacts are saved, enabling the data scientist to modify their models and workflow more efficiently 
+- Ensures that high-quality data is available for analysis 
 
 ### How does OCS enable data scientists? 
 

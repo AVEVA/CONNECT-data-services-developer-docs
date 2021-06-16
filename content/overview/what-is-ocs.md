@@ -47,16 +47,16 @@ Developer-friendly REST APIs provide programmatic access to read and write seque
 
 ## Integration with external tools and applications
 
-OCS allows you to integrate data with many different partner applications, data pipelines and workflows, collaboration tools, business intelligence (BI) and data exploration tools, and custom applications. A few examples include: 
+OCS allows you to integrate data with many different partner applications, data pipelines and workflows, collaboration tools, business intelligence (BI) and data exploration tools, and custom applications. A few examples include these tools: 
 
 - Power BI 
 - Grafana 
 
 You can integrate and view OCS data in the following ways: 
 
-- Building applications with OCS client libraries to read and write data to OCS 
-- Using the OCS REST API to read and write data to OCS 
-- Retrieving tabular data with OCS data views 
+- Build applications with OCS client libraries to read and write data to OCS 
+- Use the OCS REST API to read and write data to OCS 
+- Retrieve tabular data with OCS data views 
 
 OCS also offers opportunities for many new types of data consumers. For example, you could integrate OCS with applications that perform machine learning or AI functions. 
 

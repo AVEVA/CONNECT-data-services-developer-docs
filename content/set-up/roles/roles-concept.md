@@ -5,7 +5,7 @@ uid: ccRoles
 
 Roles are used to manage access to assets, resources, and services in OSIsoft Cloud Services (OCS). Roles are assigned to identities, which includes users, groups, and client-credentials clients. When an identity tries to access a resource in OCS, OCS checks the assigned roles against the permissions on the resource to determine their access level.
 
-There are five built-in roles which cannot be removed from a tenant.
+There are five built-in roles which cannot be removed from a tenant:
 
 - Tenant Administrator - OCS Administrator of OCS who is granted full permissions throughout OCS, by default. This is the highest privilege role, with the ability to create new and remove existing users, clients and secrets. OSIsoft recommends not assigning this role to clients.
 - Tenant Contributor - Granted read and write permissions throughout OCS, by default.

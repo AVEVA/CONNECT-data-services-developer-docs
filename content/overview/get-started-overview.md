@@ -8,7 +8,7 @@ OSIsoft Cloud Services (OCS) is a cloud database platform for storing, retrievin
 
 OCS consists of several different areas of core functionality:
 
-- tenant management
-- data collection
-- data organization
-- data analysis
+- Tenant management
+- Data collection
+- Data organization
+- Data analysis

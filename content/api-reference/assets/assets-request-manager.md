@@ -102,6 +102,8 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 
 <a id="opIdRequestManager_Create Asset"></a>
 
+Creates a new asset. If the asset you are trying to create references an asset type (through the AssetTypeId property) and if the corresponding asset type has a metadata value with the same Id, then the name and SDS type code of the metadata value on the asset must be null. If the asset type does not have metadata value with a corresponding Id, the name and SDS type code on the asset cannot be null. To support flexibility on creation and update, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is created from an asset type.
+
 ### Request
 ```text 
 POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
@@ -115,7 +117,7 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 
 ### Request Body
 
-<br/>
+The asset you want to create.<br/>
 
 ```json
 {
@@ -155,52 +157,58 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[DeprecatedAsset](#schemadeprecatedasset)|None|
-|302|None|None|
-|400|[ErrorTemplate](#schemaerrortemplate)|None|
-|403|None|None|
-|409|None|None|
-|500|None|None|
-|503|None|None|
+|200|[DeprecatedAsset](#schemadeprecatedasset)|The asset that was created.|
+|302|None|The asset you attempted to create is identical to one that already exists.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|403|None|You are not authorized to create assets.|
+|409|None|The asset you attempted to create has a conflict. See the response body for additional details.|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavaiable, please try again later.|
+
+#### Response Headers
+
+|Status|Header|Type|Description|
+|---|---|---|---|
+|302|Location|string|Location to get the identical resource.|
 
 #### Example response body
 > 200 Response
 
 ```json
 {
-  "Id": "string",
-  "AssetTypeId": "string",
-  "Name": "string",
-  "Description": "string",
+  "Id": "Heater_01_01_02",
+  "Name": "HeaterOnFirstFloor",
+  "Description": "This is Asset which represents a heater on the first floor.",
   "Metadata": [
     {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "SdsTypeCode": "Empty",
-      "Value": null,
-      "Uom": "string"
+      "Id": "17020d80-1dc8-4690-932f-3421c9cff0d1",
+      "Name": "ModelNumber",
+      "Description": "This is attribute with double value representing the model number.",
+      "SdsTypeCode": "Double",
+      "Value": 1.3
     }
   ],
   "StreamReferences": [
     {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "StreamId": "string"
+      "Id": "63c0ba1d-f2db-4b28-b650-7e45afca9ab4",
+      "Name": "Data",
+      "Description": "This is reference to a stream. The stream has data coming from a heater.",
+      "StreamId": "PI_bifrostbigdaddy_1"
     }
-  ],
-  "Status": {
-    "StreamReferenceId": "string",
-    "StreamPropertyId": "string",
-    "ValueStatusMappings": [
-      {
-        "Value": null,
-        "Status": "[",
-        "DisplayName": "string"
-      }
-    ]
-  }
+  ]
+}
+```
+
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
 }
 ```
 

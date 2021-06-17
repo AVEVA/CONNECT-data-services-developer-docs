@@ -17,7 +17,7 @@ For more information about stream views, see the following topics:
 
 ## Procedure
 
-Before following this procedure, repeat the steps in [Get started with types](#gsTypes), but use the ID **MyOCS.PumpState.Temperature** and include only the **Timestamp** and **Temperature** properties. This procedure creates a stream view that maps the **MyOCS.PumpState** type to this new type.
+Before following this procedure, repeat the steps in [Get started with types](xref:gsTypes), but use the ID **MyOCS.PumpState.Temperature** and include only the **Timestamp** and **Temperature** properties. This procedure creates a stream view that maps the **MyOCS.PumpState** type to this new type.
 
 1. Click the ![Menu icon](images/menu-icon.png) icon and choose **Sequential Data Store** (under Data Management).
 

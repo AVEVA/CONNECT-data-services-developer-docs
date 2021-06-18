@@ -14,13 +14,16 @@ To use the OSIsoft Cloud Services data connector, complete the following steps:
 
 ![Get Data](images/get-data.png)
 
-4. In the **OCS Power BI Data Connector** dialog, enter the OCS tenant and namespace for the data views you want to access, and then click **OK**. The OSIsoft Cloud Services sign-in dialog displays if you have not already signed into OCS.
-5. If you have not already signed into OCS, click **Sign in as different user** and complete the OCS user authentication process. The **OSIsoft Cloud Services Data Views** sign-in dialog displays again after you have signed in to OCS.
-6. In the **OSIsoft Cloud Services Data Views** sign-in dialog, click **Connect**. The **Navigator** pane displays.
+4. In the **OCS Power BI Data Connector** window, enter the OCS tenant and namespace for the data views you want to access, and then click **OK**. The OSIsoft Cloud Services sign-in window displays if you have not already signed into OCS.
+5. If you have not already signed into OCS, click **Sign in as different user** and complete the OCS user authentication process. The **OSIsoft Cloud Services Data Views** sign-in window displays again after you have signed in to OCS.
+6. In the **OSIsoft Cloud Services Data Views** sign-in window, click **Connect**. The **Navigator** pane displays.
 7. From the **Navigator** pane, select one or more data views.
 8. For each of the selected data views, specify a Start Index, End Index, and Interval. To apply the values you have specified for the selected data views, click **Apply**.
 
    **Note**: If one of the selected data views has default values defined for Start Index, End Index, and Interval, enter new values or accept **Apply** to accept the defaults.
 
-10.	To load the selected data view data, click **Load** at the bottom of the **Navigator** pane.
-11.	To select the visualizations you want to create, use the Microsoft Power BI **Visualizations** pane.
+9.	Check the box for each data view you want to work with in Power BI.
+10. To load the selected data view data, click **Load** at the bottom of the **Navigator** pane.
+11. To select the visualizations you want to create, use the Microsoft Power BI **Visualizations** pane.
+
+    **Note**: Click the **Transform data** button in the Power BI menu to review and edit data types for a selected data view.

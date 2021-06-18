@@ -722,7 +722,7 @@ Object used to create or update an invitation.
 <a id="tocSerrorresponse2"></a>
 <a id="tocserrorresponse2"></a>
 
-Object returned whenever there is an error TODO: Remove this internal model and re-adopt public model when moving to System.Text.Json in WI 202168.
+Object returned whenever there is an error
 
 #### Properties
 

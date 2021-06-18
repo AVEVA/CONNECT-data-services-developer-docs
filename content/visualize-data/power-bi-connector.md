@@ -6,9 +6,9 @@ uid: PowerBI
 
 The OCS Power BI Connector retrieves data views from OSIsoft Cloud Services (OCS) and makes them available in Microsoft Power BI for advanced data visualization and analysis.
 
-To use the OSIsoft Cloud Services data connector, complete the following steps:
+To use the OSIsoft Cloud Services Power BI Connector, complete the following steps:
 
-1. From the Sales Force portal, download the OCSPowerBIConnector.exe file.
+1. From the [MyOSIsoft portal](https://customers.osisoft.com/s/products), download the OCSPowerBIConnector.exe file.
 2. To run the Setup wizard for the OSIsoft Cloud Services Power BI Connector, double click the `OCSPowerBIConnector.exe` file.
 3. In Microsoft Power BI, in the entry field of the **Get Data** window, type *OSI*. The **OSIsoft Cloud Services Data Views** connector file displays in the **All** pane.
 

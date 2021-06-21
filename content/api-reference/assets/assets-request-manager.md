@@ -21,8 +21,8 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>The tenant identifier.<br/><br/>`string namespaceId`
+<br/>The namespace identifier.<br/><br/>
 `[optional] integer skip`
 <br/>An optional parameter representing the zero-based offset of the first asset to retrieve. If not specified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>An optional parameter, between 1 and 1000 (inclusive), that represents the maximum number of retrieved assets. If not specified, the default is 100.<br/><br/>`[optional] string orderBy`
@@ -335,52 +335,6 @@ The list of assets you want to create.<br/>
 ```json
 [
   {
-    "Id": "Heater_01_01_02",
-    "Name": "HeaterOnFirstFloor",
-    "Description": "This is Asset which represents a heater on the first floor.",
-    "Metadata": [
-      {
-        "Id": "17020d80-1dc8-4690-932f-3421c9cff0d1",
-        "Name": "ModelNumber",
-        "Description": "This is attribute with double value representing the model number.",
-        "SdsTypeCode": "Double",
-        "Value": 1.3
-      }
-    ]
-  },
-  {
-    "Id": "TracerUnit_101",
-    "Name": "TracerOnRoof",
-    "Description": "This is Asset which represents a tracer.",
-    "Metadata": [
-      {
-        "Id": "Tracer_1234",
-        "Name": "ModelNumber",
-        "SdsTypeCode": "Double",
-        "Value": 1234
-      }
-    ]
-  }
-]
-```
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|[DeprecatedAsset](#schemadeprecatedasset)[]|The asset that was created.|
-|207|[MultiStatusResultOfDeprecatedAssetAndChildErrorTemplate](#schemamultistatusresultofdeprecatedassetandchilderrortemplate)|The asset that was created.|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|403|None|You are not authorized to create assets.|
-|500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavaiable, please try again later.|
-
-#### Example response body
-> 200 Response
-
-```json
-[
-  {
     "Id": "string",
     "AssetTypeId": "string",
     "Name": "string",
@@ -418,11 +372,113 @@ The list of assets you want to create.<br/>
 ]
 ```
 
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[DeprecatedAsset](#schemadeprecatedasset)[]|The asset that was created.|
+|207|[MultiStatusResultOfDeprecatedAssetAndChildErrorTemplate](#schemamultistatusresultofdeprecatedassetandchilderrortemplate)|The asset that was created.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|403|None|You are not authorized to create assets.|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavaiable, please try again later.|
+
+#### Example response body
+> 200 Response
+
+```json
+[
+  {
+    "Id": "Heater_01_01_02",
+    "Name": "HeaterOnFirstFloor",
+    "Description": "This is Asset which represents a heater on the first floor.",
+    "Metadata": [
+      {
+        "Id": "17020d80-1dc8-4690-932f-3421c9cff0d1",
+        "Name": "ModelNumber",
+        "Description": "This is attribute with double value representing the model number.",
+        "SdsTypeCode": "Double",
+        "Value": 1.3
+      }
+    ]
+  },
+  {
+    "Id": "TracerUnit_101",
+    "Name": "TracerOnRoof",
+    "Description": "This is Asset which represents a tracer.",
+    "Metadata": [
+      {
+        "Id": "Tracer_1234",
+        "Name": "ModelNumber",
+        "SdsTypeCode": "Double",
+        "Value": 1234
+      }
+    ]
+  }
+]
+```
+
+> 207 Response
+
+```json
+{
+  "Reason": "string",
+  "Error": "string",
+  "OperationId": "string",
+  "Data": [
+    {
+      "Id": "string",
+      "AssetTypeId": "string",
+      "Name": "string",
+      "Description": "string",
+      "Metadata": [
+        {
+          "Id": "string",
+          "Name": "string",
+          "Description": "string",
+          "SdsTypeCode": "Empty",
+          "Value": null,
+          "Uom": "string"
+        }
+      ],
+      "StreamReferences": [
+        {
+          "Id": "string",
+          "Name": "string",
+          "Description": "string",
+          "StreamId": "string"
+        }
+      ],
+      "Status": {
+        "StreamReferenceId": "string",
+        "StreamPropertyId": "string",
+        "ValueStatusMappings": [
+          null
+        ]
+      }
+    }
+  ],
+  "ChildErrors": [
+    {
+      "OperationId": "string",
+      "Error": "string",
+      "Resolution": "string",
+      "Reason": "string",
+      "StatusCode": 0,
+      "property1": null,
+      "property2": null
+    }
+  ]
+}
+```
+
 ---
 
 ## `Bulk Delete Assets`
 
 <a id="opIdRequestManager_Bulk Delete Assets"></a>
+
+Delete all assets with the specified Ids.Use this API to delete up to a maximum of 1000 assets in one API call.
 
 ### Request
 ```text 
@@ -433,16 +489,45 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assets
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>The tenant identifier.<br/><br/>`string namespaceId`
+<br/>The namespace identifier.<br/><br/>
 `[optional] array id`
-<br/><br/>
+<br/>A comma-separated list of asset Ids that you want to delete.<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|204|None|The assets with the specified ids has been deleted.|
+|207|[MultiStatusResultOfStringAndChildErrorTemplate](#schemamultistatusresultofstringandchilderrortemplate)|Array of errors. Assets that did not encounter errors are deleted.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavaiable, please try again later.|
+
+#### Example response body
+> 207 Response
+
+```json
+{
+  "Reason": "string",
+  "Error": "string",
+  "OperationId": "string",
+  "Data": [
+    "string"
+  ],
+  "ChildErrors": [
+    {
+      "OperationId": "string",
+      "Error": "string",
+      "Resolution": "string",
+      "Reason": "string",
+      "StatusCode": 0,
+      "property1": null,
+      "property2": null
+    }
+  ]
+}
+```
 
 ---
 
@@ -465,7 +550,7 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assets/res
 
 ### Request Body
 
-The assets identifiers you are interested in.<br/>
+A comma-separated list of asset Ids that you want to resolve.<br/>
 
 ```json
 [
@@ -479,7 +564,64 @@ The assets identifiers you are interested in.<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|Returns the resolved view of multiple assets.|
+|200|[DeprecatedResolvedAsset](#schemadeprecatedresolvedasset)[]|Returns the resolved view of multiple assets.|
+|207|[MultiStatusResultOfStringAndChildErrorTemplate](#schemamultistatusresultofstringandchilderrortemplate)|On POST, returns the resolved view of multiple assets. For error responses, check the multi-status response for the error and cause.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavaiable, please try again later.|
+
+#### Example response body
+> 200 Response
+
+```json
+[
+  {
+    "Id": "string",
+    "Name": "string",
+    "Description": "string",
+    "AssetTypeId": "string",
+    "AssetTypeName": "string",
+    "Metadata": [
+      {
+        "Id": "string",
+        "Name": "string",
+        "Description": "string",
+        "SdsTypeCode": 0,
+        "Value": null,
+        "Uom": "string"
+      }
+    ],
+    "Streams": [
+      {
+        "Name": "string",
+        "Properties": [
+          {
+            "Id": "string",
+            "IsKey": true,
+            "Uom": "string",
+            "Order": 0,
+            "InterpolationMode": "[",
+            "ExtrapolationMode": "[",
+            "SdsType": null,
+            "Source": null
+          }
+        ]
+      }
+    ],
+    "UnresolvedStreams": [
+      {
+        "Name": "string",
+        "Reason": "string"
+      }
+    ],
+    "Status": {
+      "Name": "string",
+      "StreamName": "string",
+      "StreamPropertyId": "string"
+    }
+  }
+]
+```
 
 ---
 
@@ -530,12 +672,12 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assets/sta
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>The tenant identifier.<br/><br/>`string namespaceId`
+<br/>The namespace identifier.<br/><br/>
 
 ### Request Body
 
-The assets identifiers you are interested in.<br/>
+A comma-separated list of asset Ids that you want to get the last status from.<br/>
 
 ```json
 [
@@ -550,7 +692,7 @@ The assets identifiers you are interested in.<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[LastStatusData](#schemalaststatusdata)[]|The last status of assets in the POST body.|
-|207|[MultiStatusResultOfLastStatusDataAndChildErrorTemplate](#schemamultistatusresultoflaststatusdataandchilderrortemplate)|On POST, returns the status of multiple assets.|
+|207|[MultiStatusResultOfLastStatusDataAndChildErrorTemplate](#schemamultistatusresultoflaststatusdataandchilderrortemplate)|On POST, returns the status of multiple assets. Errors are returned for assets which status couldn't resolve.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
 |500|None|Internal Service Error, please try again later.|
 |503|None|Service Unavaiable, please try again later.|
@@ -1432,6 +1574,408 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/search/assets/fa
       "property2": null
     }
   ]
+}
+
+```
+
+---
+
+### MultiStatusResultOfStringAndChildErrorTemplate
+
+<a id="schemamultistatusresultofstringandchilderrortemplate"></a>
+<a id="schema_MultiStatusResultOfStringAndChildErrorTemplate"></a>
+<a id="tocSmultistatusresultofstringandchilderrortemplate"></a>
+<a id="tocsmultistatusresultofstringandchilderrortemplate"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Reason|string|false|true|None|
+|Error|string|false|true|None|
+|OperationId|string|false|true|None|
+|Data|string[]|false|true|None|
+|ChildErrors|[[ChildErrorTemplate](#schemachilderrortemplate)]|false|true|None|
+
+```json
+{
+  "Reason": "string",
+  "Error": "string",
+  "OperationId": "string",
+  "Data": [
+    "string"
+  ],
+  "ChildErrors": [
+    {
+      "OperationId": "string",
+      "Error": "string",
+      "Resolution": "string",
+      "Reason": "string",
+      "StatusCode": 0,
+      "property1": null,
+      "property2": null
+    }
+  ]
+}
+
+```
+
+---
+
+### DeprecatedResolvedAsset
+
+<a id="schemadeprecatedresolvedasset"></a>
+<a id="schema_DeprecatedResolvedAsset"></a>
+<a id="tocSdeprecatedresolvedasset"></a>
+<a id="tocsdeprecatedresolvedasset"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Id|string|false|true|None|
+|Name|string|false|true|None|
+|Description|string|false|true|None|
+|AssetTypeId|string|false|true|None|
+|AssetTypeName|string|false|true|None|
+|Metadata|[[MetadataItem2](#schemametadataitem2)]|false|true|None|
+|Streams|[[DeprecatedResolvedStream](#schemadeprecatedresolvedstream)]|false|true|None|
+|UnresolvedStreams|[[UnresolvedStream](#schemaunresolvedstream)]|false|true|None|
+|Status|[ResolvedStatus](#schemaresolvedstatus)|false|true|None|
+
+```json
+{
+  "Id": "string",
+  "Name": "string",
+  "Description": "string",
+  "AssetTypeId": "string",
+  "AssetTypeName": "string",
+  "Metadata": [
+    {
+      "Id": "string",
+      "Name": "string",
+      "Description": "string",
+      "SdsTypeCode": 0,
+      "Value": null,
+      "Uom": "string"
+    }
+  ],
+  "Streams": [
+    {
+      "Name": "string",
+      "Properties": [
+        {
+          "Id": "string",
+          "IsKey": true,
+          "Uom": "string",
+          "Order": 0,
+          "InterpolationMode": 0,
+          "ExtrapolationMode": 0,
+          "SdsType": null,
+          "Source": null
+        }
+      ]
+    }
+  ],
+  "UnresolvedStreams": [
+    {
+      "Name": "string",
+      "Reason": "string"
+    }
+  ],
+  "Status": {
+    "Name": "string",
+    "StreamName": "string",
+    "StreamPropertyId": "string"
+  }
+}
+
+```
+
+---
+
+### MetadataItem2
+
+<a id="schemametadataitem2"></a>
+<a id="schema_MetadataItem2"></a>
+<a id="tocSmetadataitem2"></a>
+<a id="tocsmetadataitem2"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Id|string|false|true|None|
+|Name|string|false|true|None|
+|Description|string|false|true|None|
+|SdsTypeCode|[SdsTypeCode](#schemasdstypecode)|false|false|None|
+|Value|any|false|true|None|
+|Uom|string|false|true|None|
+
+```json
+{
+  "Id": "string",
+  "Name": "string",
+  "Description": "string",
+  "SdsTypeCode": 0,
+  "Value": null,
+  "Uom": "string"
+}
+
+```
+
+---
+
+### DeprecatedResolvedStream
+
+<a id="schemadeprecatedresolvedstream"></a>
+<a id="schema_DeprecatedResolvedStream"></a>
+<a id="tocSdeprecatedresolvedstream"></a>
+<a id="tocsdeprecatedresolvedstream"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Name|string|false|true|None|
+|Properties|[[ResolvedProperty](#schemaresolvedproperty)]|false|true|None|
+
+```json
+{
+  "Name": "string",
+  "Properties": [
+    {
+      "Id": "string",
+      "IsKey": true,
+      "Uom": "string",
+      "Order": 0,
+      "InterpolationMode": 0,
+      "ExtrapolationMode": 0,
+      "SdsType": {
+        "SdsTypeCode": "[",
+        "Properties": [
+          null
+        ]
+      },
+      "Source": {
+        "StreamId": "string",
+        "PropertyId": "string"
+      }
+    }
+  ]
+}
+
+```
+
+---
+
+### ResolvedProperty
+
+<a id="schemaresolvedproperty"></a>
+<a id="schema_ResolvedProperty"></a>
+<a id="tocSresolvedproperty"></a>
+<a id="tocsresolvedproperty"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Id|string|false|true|None|
+|IsKey|boolean|false|false|None|
+|Uom|string|false|true|None|
+|Order|int32|false|false|None|
+|InterpolationMode|[SdsInterpolationMode](#schemasdsinterpolationmode)|false|false|None|
+|ExtrapolationMode|[SdsExtrapolationMode](#schemasdsextrapolationmode)|false|false|None|
+|SdsType|[ResolvedSdsType](#schemaresolvedsdstype)|false|true|None|
+|Source|[ResolvedSource](#schemaresolvedsource)|false|true|None|
+
+```json
+{
+  "Id": "string",
+  "IsKey": true,
+  "Uom": "string",
+  "Order": 0,
+  "InterpolationMode": 0,
+  "ExtrapolationMode": 0,
+  "SdsType": {
+    "SdsTypeCode": 0,
+    "Properties": [
+      {
+        "Id": "string",
+        "Value": null
+      }
+    ]
+  },
+  "Source": {
+    "StreamId": "string",
+    "PropertyId": "string"
+  }
+}
+
+```
+
+---
+
+### SdsInterpolationMode
+
+<a id="schemasdsinterpolationmode"></a>
+<a id="schema_SdsInterpolationMode"></a>
+<a id="tocSsdsinterpolationmode"></a>
+<a id="tocssdsinterpolationmode"></a>
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|Default|0|
+|Continuous|0|
+|StepwiseContinuousLeading|1|
+|StepwiseContinuousTrailing|2|
+|Discrete|3|
+|ContinuousNullableLeading|4|
+|ContinuousNullableTrailing|5|
+
+---
+
+### SdsExtrapolationMode
+
+<a id="schemasdsextrapolationmode"></a>
+<a id="schema_SdsExtrapolationMode"></a>
+<a id="tocSsdsextrapolationmode"></a>
+<a id="tocssdsextrapolationmode"></a>
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|All|0|
+|None|1|
+|Forward|2|
+|Backward|3|
+
+---
+
+### ResolvedSdsType
+
+<a id="schemaresolvedsdstype"></a>
+<a id="schema_ResolvedSdsType"></a>
+<a id="tocSresolvedsdstype"></a>
+<a id="tocsresolvedsdstype"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|SdsTypeCode|[SdsTypeCode](#schemasdstypecode)|false|false|None|
+|Properties|[[ResolvedEnum](#schemaresolvedenum)]|false|true|None|
+
+```json
+{
+  "SdsTypeCode": 0,
+  "Properties": [
+    {
+      "Id": "string",
+      "Value": null
+    }
+  ]
+}
+
+```
+
+---
+
+### ResolvedEnum
+
+<a id="schemaresolvedenum"></a>
+<a id="schema_ResolvedEnum"></a>
+<a id="tocSresolvedenum"></a>
+<a id="tocsresolvedenum"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Id|string|false|true|None|
+|Value|any|false|true|None|
+
+```json
+{
+  "Id": "string",
+  "Value": null
+}
+
+```
+
+---
+
+### ResolvedSource
+
+<a id="schemaresolvedsource"></a>
+<a id="schema_ResolvedSource"></a>
+<a id="tocSresolvedsource"></a>
+<a id="tocsresolvedsource"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|StreamId|string|false|true|None|
+|PropertyId|string|false|true|None|
+
+```json
+{
+  "StreamId": "string",
+  "PropertyId": "string"
+}
+
+```
+
+---
+
+### UnresolvedStream
+
+<a id="schemaunresolvedstream"></a>
+<a id="schema_UnresolvedStream"></a>
+<a id="tocSunresolvedstream"></a>
+<a id="tocsunresolvedstream"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Name|string|false|true|None|
+|Reason|string|false|true|None|
+
+```json
+{
+  "Name": "string",
+  "Reason": "string"
+}
+
+```
+
+---
+
+### ResolvedStatus
+
+<a id="schemaresolvedstatus"></a>
+<a id="schema_ResolvedStatus"></a>
+<a id="tocSresolvedstatus"></a>
+<a id="tocsresolvedstatus"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Name|string|false|true|None|
+|StreamName|string|false|true|None|
+|StreamPropertyId|string|false|true|None|
+
+```json
+{
+  "Name": "string",
+  "StreamName": "string",
+  "StreamPropertyId": "string"
 }
 
 ```

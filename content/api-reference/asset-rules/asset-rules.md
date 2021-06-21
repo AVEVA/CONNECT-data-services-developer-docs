@@ -107,7 +107,7 @@ The following fields are supported:
 | Name          | "Name"                                    | The stream Name.                                                                                        |
 | Description   | "Description"                             | The stream description                                                                                 |
 | Metadata      | "Metadata\['key']"                        | The stream Metadata. The example extracts the value of the metadata with key 'key'.                     |
-| Type          | "Type.Properties\[?(@.Id == 'Value')].Uom" | The stream Type. The example extracts the unit of measure from the 'Value' property of the stream type. |
+| Type          | "Type.Properties\[?(@.Id == 'Value')].Uom" | The stream type. The example extracts the unit of measure from the 'Value' property of the stream type. |
 
 The Metadata and Type fields are objects rather than values, so [Json Path Syntax][xref:AssetRules#JSON Paths] is required. The extracted value must be a single value, rather than an object or array.
 For Metadata the syntax should always extract the value of a single key in the Metadata collection.

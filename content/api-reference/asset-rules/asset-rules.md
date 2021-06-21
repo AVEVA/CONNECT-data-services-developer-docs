@@ -92,7 +92,7 @@ The asset rules API allows you to programmatically create, read, update, and del
 
 ## Expressions
 
-Rule expressions define which Streams a Rule applies to, and what information is extracted from the stream. For a rule to apply to a stream all of the rule's expressions must match. Expressions have the following properties:
+Rule expressions define which streams a rule applies to and what information is extracted from the stream. For a rule to apply to a stream, all of the rule's expressions must match. Expressions have the following properties:
 
 - Fields &ndash; strings  that determine which stream property to look at for specifications
 - Specifications  &ndash; objects that define specifications of a segment in a pattern. Refer to [Specification Types][xref:AssetRules#specification-types]  and [Specification Objects][xref:AssetRules#specification-objects] for a description.

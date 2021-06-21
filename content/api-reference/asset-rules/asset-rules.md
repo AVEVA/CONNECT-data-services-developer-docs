@@ -110,7 +110,7 @@ The following fields are supported:
 | Type          | "Type.Properties\[?(@.Id == 'Value')].Uom" | The stream type. The example extracts the unit of measure from the 'Value' property of the stream type. |
 
 The `Metadata` and `Type` fields are objects rather than values, so [Json Path Syntax][xref:AssetRules#JSON Paths] is required. The extracted value must be a single value, rather than an object or array.
-For Metadata the syntax should always extract the value of a single key in the Metadata collection.
+For `Metadata`, the syntax should always extract the value of a single key in the `Metadata` collection.
 For more information on available properties for a stream type, see [Sds Types][xref:sdsTypes].
 
 ### Specification Types

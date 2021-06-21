@@ -10,7 +10,7 @@ The asset type API provides methods to create, read, update, and delete asset ty
 
 <a id="opIdRequestManager_List Assets"></a>
 
-Gets Assets in a given namespace.
+Returns an array of assets in a given namespace and the total number of assets returned, specified as Total-Count in the HTTP response header.
 
 ### Request
 ```text 
@@ -24,10 +24,10 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 <br/><br/>`string namespaceId`
 <br/><br/>
 `[optional] integer skip`
-<br/>Skip.<br/><br/>`[optional] integer count`
-<br/>Count.<br/><br/>`[optional] string orderBy`
-<br/><br/>`[optional] string query`
-<br/><br/>`[optional] integer pageSize`
+<br/>An optional parameter representing the zero-based offset of the first asset to retrieve. If not specified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>An optional parameter, between 1 and 1000 (inclusive), that represents the maximum number of retrieved assets. If not specified, the default is 100.<br/><br/>`[optional] string orderBy`
+<br/>Ordering.<br/><br/>`[optional] string query`
+<br/>Query parameter.<br/><br/>`[optional] integer pageSize`
 <br/><br/>`[optional] integer maxPages`
 <br/><br/>`[optional] string continuationToken`
 <br/><br/>`[optional] object Comparer`
@@ -63,7 +63,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
 
 |Status|Header|Type|Description|
 |---|---|---|---|
-|200|Total-Count|integer|Total number of sers in the Tenant.|
+|200|Total-Count|integer|Total number of assets in the namespace.|
 
 #### Example response body
 > 200 Response
@@ -315,6 +315,8 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets2
 
 <a id="opIdRequestManager_Bulk Create Assets"></a>
 
+Bulk create assets. Creates multiple assets in a single call.
+
 ### Request
 ```text 
 POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assets
@@ -328,7 +330,7 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assets
 
 ### Request Body
 
-<br/>
+The list of assets you want to create.<br/>
 
 ```json
 [
@@ -374,7 +376,101 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assets
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|200|[DeprecatedAsset](#schemadeprecatedasset)[]|The asset that was created.|
+|207|[MultiStatusResultOfDeprecatedAssetAndChildErrorTemplate](#schemamultistatusresultofdeprecatedassetandchilderrortemplate)|The asset that was created.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|403|None|You are not authorized to create assets.|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavaiable, please try again later.|
+
+#### Example response body
+> 200 Response
+
+```json
+[
+  {
+    "Id": "Heater_01_01_02",
+    "Name": "HeaterOnFirstFloor",
+    "Description": "This is Asset which represents a heater on the first floor.",
+    "Metadata": [
+      {
+        "Id": "17020d80-1dc8-4690-932f-3421c9cff0d1",
+        "Name": "ModelNumber",
+        "Description": "This is attribute with double value representing the model number.",
+        "SdsTypeCode": "Double",
+        "Value": 1.3
+      }
+    ]
+  },
+  {
+    "Id": "TracerUnit_101",
+    "Name": "TracerOnRoof",
+    "Description": "This is Asset which represents a tracer.",
+    "Metadata": [
+      {
+        "Id": "Tracer_1234",
+        "Name": "ModelNumber",
+        "SdsTypeCode": "Double",
+        "Value": 1234
+      }
+    ]
+  }
+]
+```
+
+> 207 Response
+
+```json
+{
+  "Reason": "string",
+  "Error": "string",
+  "OperationId": "string",
+  "Data": [
+    {
+      "Id": "string",
+      "AssetTypeId": "string",
+      "Name": "string",
+      "Description": "string",
+      "Metadata": [
+        {
+          "Id": "string",
+          "Name": "string",
+          "Description": "string",
+          "SdsTypeCode": "Empty",
+          "Value": null,
+          "Uom": "string"
+        }
+      ],
+      "StreamReferences": [
+        {
+          "Id": "string",
+          "Name": "string",
+          "Description": "string",
+          "StreamId": "string"
+        }
+      ],
+      "Status": {
+        "StreamReferenceId": "string",
+        "StreamPropertyId": "string",
+        "ValueStatusMappings": [
+          null
+        ]
+      }
+    }
+  ],
+  "ChildErrors": [
+    {
+      "OperationId": "string",
+      "Error": "string",
+      "Resolution": "string",
+      "Reason": "string",
+      "StatusCode": 0,
+      "property1": null,
+      "property2": null
+    }
+  ]
+}
+```
 
 ---
 
@@ -565,66 +661,6 @@ The assets identifiers you are interested in.<br/>
   ]
 }
 ```
-
----
-
-## `Bulk Create Assets Async2`
-
-<a id="opIdRequestManager_Bulk Create Assets Async2"></a>
-
-### Request
-```text 
-POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assets2
-```
-
-#### Parameters
-
-`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
-
-### Request Body
-
-<br/>
-
-```json
-[
-  {
-    "Id": "string",
-    "AssetTypeId": "string",
-    "Name": "string",
-    "Description": "string",
-    "Metadata": [
-      {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SdsTypeCode": "Empty",
-        "Value": null,
-        "Uom": "string"
-      }
-    ],
-    "StreamReferences": [
-      {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "StreamId": "string"
-      }
-    ],
-    "Status": {
-      "DefinitionType": 0,
-      "Definition": null
-    }
-  }
-]
-```
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|string|None|
 
 ---
 
@@ -1257,6 +1293,110 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/search/assets/fa
 
 ---
 
+### MultiStatusResultOfDeprecatedAssetAndChildErrorTemplate
+
+<a id="schemamultistatusresultofdeprecatedassetandchilderrortemplate"></a>
+<a id="schema_MultiStatusResultOfDeprecatedAssetAndChildErrorTemplate"></a>
+<a id="tocSmultistatusresultofdeprecatedassetandchilderrortemplate"></a>
+<a id="tocsmultistatusresultofdeprecatedassetandchilderrortemplate"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Reason|string|false|true|None|
+|Error|string|false|true|None|
+|OperationId|string|false|true|None|
+|Data|[[DeprecatedAsset](#schemadeprecatedasset)]|false|true|None|
+|ChildErrors|[[ChildErrorTemplate](#schemachilderrortemplate)]|false|true|None|
+
+```json
+{
+  "Reason": "string",
+  "Error": "string",
+  "OperationId": "string",
+  "Data": [
+    {
+      "Id": "string",
+      "AssetTypeId": "string",
+      "Name": "string",
+      "Description": "string",
+      "Metadata": [
+        {
+          "Id": "string",
+          "Name": "string",
+          "Description": "string",
+          "SdsTypeCode": "Empty",
+          "Value": null,
+          "Uom": "string"
+        }
+      ],
+      "StreamReferences": [
+        {
+          "Id": "string",
+          "Name": "string",
+          "Description": "string",
+          "StreamId": "string"
+        }
+      ],
+      "Status": {
+        "StreamReferenceId": "string",
+        "StreamPropertyId": "string",
+        "ValueStatusMappings": [
+          null
+        ]
+      }
+    }
+  ],
+  "ChildErrors": [
+    {
+      "OperationId": "string",
+      "Error": "string",
+      "Resolution": "string",
+      "Reason": "string",
+      "StatusCode": 0,
+      "property1": null,
+      "property2": null
+    }
+  ]
+}
+
+```
+
+---
+
+### ChildErrorTemplate
+
+<a id="schemachilderrortemplate"></a>
+<a id="schema_ChildErrorTemplate"></a>
+<a id="tocSchilderrortemplate"></a>
+<a id="tocschilderrortemplate"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|OperationId|string|false|true|None|
+|Error|string|false|true|None|
+|Resolution|string|false|true|None|
+|Reason|string|false|true|None|
+|StatusCode|int32|false|false|None|
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "StatusCode": 0,
+  "property1": null,
+  "property2": null
+}
+
+```
+
+---
+
 ### IEqualityComparerOfString
 
 <a id="schemaiequalitycomparerofstring"></a>
@@ -1346,38 +1486,6 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/search/assets/fa
       "property2": null
     }
   ]
-}
-
-```
-
----
-
-### ChildErrorTemplate
-
-<a id="schemachilderrortemplate"></a>
-<a id="schema_ChildErrorTemplate"></a>
-<a id="tocSchilderrortemplate"></a>
-<a id="tocschilderrortemplate"></a>
-
-#### Properties
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|OperationId|string|false|true|None|
-|Error|string|false|true|None|
-|Resolution|string|false|true|None|
-|Reason|string|false|true|None|
-|StatusCode|int32|false|false|None|
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Resolution": "string",
-  "Reason": "string",
-  "StatusCode": 0,
-  "property1": null,
-  "property2": null
 }
 
 ```

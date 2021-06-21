@@ -9,6 +9,8 @@ uid: assets-assets
 
 <a id="opIdAssets_Get Asset"></a>
 
+Returns the specified asset and the version Etag in the HTTP response header.
+
 ### Request
 ```text 
 GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
@@ -17,7 +19,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
 #### Parameters
 
 `string assetId`
-<br/><br/>`string tenantId`
+<br/>The asset identifier<br/><br/>`string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>
 
@@ -25,13 +27,65 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|200|[DeprecatedAsset](#schemadeprecatedasset)|The asset with the specified identifier.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|401|None|Unauthorized.|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavaiable, please try again later.|
+
+#### Response Headers
+
+|Status|Header|Type|Description|
+|---|---|---|---|
+|200|Etag|integer|Version.|
+
+#### Example response body
+> 200 Response
+
+```json
+{
+  "Id": "SampleAsset",
+  "Description": "This is a sample asset.",
+  "Metadata": [
+    {
+      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+      "Name": "ModelNumber",
+      "Description": "This is a static attribute on the asset which represents the model number.",
+      "SdsTypeCode": "Double",
+      "Value": 0.01
+    }
+  ],
+  "StreamReferences": [
+    {
+      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+      "Name": "Data",
+      "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+      "StreamId": "PI_bifrostbigdaddy_1"
+    }
+  ]
+}
+```
+
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+```
 
 ---
 
 ## `Create Asset`
 
 <a id="opIdAssets_Create Asset"></a>
+
+Creates a new asset. If the asset you are trying to create references an asset type (through the AssetTypeId property) and if the corresponding asset type has a metadata value with the same Id, then the name and SDS type code of the metadata value on the asset must be null. If the asset type does not have metadata value with a corresponding Id, the name and SDS type code on the asset cannot be null. To support flexibility on creation and update, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is created from an asset type.
 
 ### Request
 ```text 
@@ -41,45 +95,35 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId
 #### Parameters
 
 `string assetId`
-<br/><br/>`string tenantId`
+<br/>The identifier of the asset you want to create.<br/><br/>`string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>
 
 ### Request Body
 
-<br/>
+The asset you want to create.<br/>
 
 ```json
 {
-  "Id": "string",
-  "AssetTypeId": "string",
-  "Name": "string",
-  "Description": "string",
+  "Id": "SampleAsset",
+  "Description": "This is a sample asset.",
   "Metadata": [
     {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "SdsTypeCode": "Empty",
-      "Value": null,
-      "Uom": "string"
+      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+      "Name": "ModelNumber",
+      "Description": "This is a static attribute on the asset which represents the model number.",
+      "SdsTypeCode": "Double",
+      "Value": 0.01
     }
   ],
   "StreamReferences": [
     {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "StreamId": "string"
+      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+      "Name": "Data",
+      "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+      "StreamId": "PI_bifrostbigdaddy_1"
     }
-  ],
-  "Status": {
-    "StreamReferenceId": "string",
-    "StreamPropertyId": "string",
-    "ValueStatusMappings": [
-      {}
-    ]
-  }
+  ]
 }
 ```
 
@@ -87,7 +131,60 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|200|[DeprecatedAsset](#schemadeprecatedasset)|The asset that was created.|
+|302|None|The asset you attempted to create is identical to one that already exists.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|403|None|You are not authorized to create assets.|
+|409|None|The asset you attempted to create has a conflict. See the response body for additional details.|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavaiable, please try again later.|
+
+#### Response Headers
+
+|Status|Header|Type|Description|
+|---|---|---|---|
+|302|Location|string|Location to get the identical resource.|
+
+#### Example response body
+> 200 Response
+
+```json
+{
+  "Id": "Heater_01_01_02",
+  "Name": "HeaterOnFirstFloor",
+  "Description": "This is Asset which represents a heater on the first floor.",
+  "Metadata": [
+    {
+      "Id": "17020d80-1dc8-4690-932f-3421c9cff0d1",
+      "Name": "ModelNumber",
+      "Description": "This is attribute with double value representing the model number.",
+      "SdsTypeCode": "Double",
+      "Value": 1.3
+    }
+  ],
+  "StreamReferences": [
+    {
+      "Id": "63c0ba1d-f2db-4b28-b650-7e45afca9ab4",
+      "Name": "Data",
+      "Description": "This is reference to a stream. The stream has data coming from a heater.",
+      "StreamId": "PI_bifrostbigdaddy_1"
+    }
+  ]
+}
+```
+
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+```
 
 ---
 
@@ -589,12 +686,12 @@ PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets2/{assetId
 
 ---
 
-### Asset
+### DeprecatedAsset
 
-<a id="schemaasset"></a>
-<a id="schema_Asset"></a>
-<a id="tocSasset"></a>
-<a id="tocsasset"></a>
+<a id="schemadeprecatedasset"></a>
+<a id="schema_DeprecatedAsset"></a>
+<a id="tocSdeprecatedasset"></a>
+<a id="tocsdeprecatedasset"></a>
 
 #### Properties
 
@@ -606,7 +703,7 @@ PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets2/{assetId
 |Description|string|false|true|None|
 |Metadata|[[MetadataItem](#schemametadataitem)]|false|true|None|
 |StreamReferences|[[StreamReference](#schemastreamreference)]|false|true|None|
-|Status|[StatusConfiguration](#schemastatusconfiguration)|false|true|None|
+|Status|[StatusMapping](#schemastatusmapping)|false|true|None|
 
 ```json
 {
@@ -633,8 +730,15 @@ PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets2/{assetId
     }
   ],
   "Status": {
-    "DefinitionType": 0,
-    "Definition": null
+    "StreamReferenceId": "string",
+    "StreamPropertyId": "string",
+    "ValueStatusMappings": [
+      {
+        "Value": null,
+        "Status": "[",
+        "DisplayName": "string"
+      }
+    ]
   }
 }
 
@@ -908,106 +1012,6 @@ PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets2/{assetId
 
 ---
 
-### StatusConfiguration
-
-<a id="schemastatusconfiguration"></a>
-<a id="schema_StatusConfiguration"></a>
-<a id="tocSstatusconfiguration"></a>
-<a id="tocsstatusconfiguration"></a>
-
-#### Properties
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|DefinitionType|[StatusDefinitionType](#schemastatusdefinitiontype)|false|false|None|
-|Definition|any|false|true|None|
-
-```json
-{
-  "DefinitionType": 0,
-  "Definition": null
-}
-
-```
-
----
-
-### StatusDefinitionType
-
-<a id="schemastatusdefinitiontype"></a>
-<a id="schema_StatusDefinitionType"></a>
-<a id="tocSstatusdefinitiontype"></a>
-<a id="tocsstatusdefinitiontype"></a>
-
-#### Enumerated Values
-
-|Property|Value|
-|---|---|
-|Unspecified|0|
-|StreamPropertyMapping|1|
-
----
-
-### DeprecatedAsset
-
-<a id="schemadeprecatedasset"></a>
-<a id="schema_DeprecatedAsset"></a>
-<a id="tocSdeprecatedasset"></a>
-<a id="tocsdeprecatedasset"></a>
-
-#### Properties
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|Id|string|false|true|None|
-|AssetTypeId|string|false|true|None|
-|Name|string|false|true|None|
-|Description|string|false|true|None|
-|Metadata|[[MetadataItem](#schemametadataitem)]|false|true|None|
-|StreamReferences|[[StreamReference](#schemastreamreference)]|false|true|None|
-|Status|[StatusMapping](#schemastatusmapping)|false|true|None|
-
-```json
-{
-  "Id": "string",
-  "AssetTypeId": "string",
-  "Name": "string",
-  "Description": "string",
-  "Metadata": [
-    {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "SdsTypeCode": "Empty",
-      "Value": null,
-      "Uom": "string"
-    }
-  ],
-  "StreamReferences": [
-    {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "StreamId": "string"
-    }
-  ],
-  "Status": {
-    "StreamReferenceId": "string",
-    "StreamPropertyId": "string",
-    "ValueStatusMappings": [
-      {
-        "Value": null,
-        "Status": "[",
-        "DisplayName": "string"
-      }
-    ]
-  }
-}
-
-```
-
----
-
 ### StatusMapping
 
 <a id="schemastatusmapping"></a>
@@ -1081,6 +1085,129 @@ PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets2/{assetId
 |Good|1|
 |Warning|2|
 |Bad|3|
+
+---
+
+### ErrorTemplate
+
+<a id="schemaerrortemplate"></a>
+<a id="schema_ErrorTemplate"></a>
+<a id="tocSerrortemplate"></a>
+<a id="tocserrortemplate"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|OperationId|string|false|true|None|
+|Error|string|false|true|None|
+|Resolution|string|false|true|None|
+|Reason|string|false|true|None|
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+
+```
+
+---
+
+### Asset
+
+<a id="schemaasset"></a>
+<a id="schema_Asset"></a>
+<a id="tocSasset"></a>
+<a id="tocsasset"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Id|string|false|true|None|
+|AssetTypeId|string|false|true|None|
+|Name|string|false|true|None|
+|Description|string|false|true|None|
+|Metadata|[[MetadataItem](#schemametadataitem)]|false|true|None|
+|StreamReferences|[[StreamReference](#schemastreamreference)]|false|true|None|
+|Status|[StatusConfiguration](#schemastatusconfiguration)|false|true|None|
+
+```json
+{
+  "Id": "string",
+  "AssetTypeId": "string",
+  "Name": "string",
+  "Description": "string",
+  "Metadata": [
+    {
+      "Id": "string",
+      "Name": "string",
+      "Description": "string",
+      "SdsTypeCode": "Empty",
+      "Value": null,
+      "Uom": "string"
+    }
+  ],
+  "StreamReferences": [
+    {
+      "Id": "string",
+      "Name": "string",
+      "Description": "string",
+      "StreamId": "string"
+    }
+  ],
+  "Status": {
+    "DefinitionType": 0,
+    "Definition": null
+  }
+}
+
+```
+
+---
+
+### StatusConfiguration
+
+<a id="schemastatusconfiguration"></a>
+<a id="schema_StatusConfiguration"></a>
+<a id="tocSstatusconfiguration"></a>
+<a id="tocsstatusconfiguration"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|DefinitionType|[StatusDefinitionType](#schemastatusdefinitiontype)|false|false|None|
+|Definition|any|false|true|None|
+
+```json
+{
+  "DefinitionType": 0,
+  "Definition": null
+}
+
+```
+
+---
+
+### StatusDefinitionType
+
+<a id="schemastatusdefinitiontype"></a>
+<a id="schema_StatusDefinitionType"></a>
+<a id="tocSstatusdefinitiontype"></a>
+<a id="tocsstatusdefinitiontype"></a>
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|Unspecified|0|
+|StreamPropertyMapping|1|
 
 ---
 

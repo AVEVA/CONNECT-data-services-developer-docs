@@ -96,12 +96,12 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId
 
 `string assetId`
 <br/>The identifier of the asset you want to create.<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>The tenant identifier.<br/><br/>`string namespaceId`
+<br/>The namespace identifier.<br/><br/>
 
 ### Request Body
 
-The asset you want to create.<br/>
+<br/>
 
 ```json
 {
@@ -192,6 +192,8 @@ The asset you want to create.<br/>
 
 <a id="opIdAssets_Create Or Update Asset (assets path)"></a>
 
+Create or update an asset with a specified Id. If the asset already exists, you can specify an If-Match property in the HTTP request header to ensure that the asset is modified only if its version matches. To support flexibility, on creation and update, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is from an asset type.
+
 ### Request
 ```text 
 PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
@@ -200,9 +202,9 @@ PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
 #### Parameters
 
 `string assetId`
-<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>The asset identifier<br/><br/>`string tenantId`
+<br/>The tenant identifier.<br/><br/>`string namespaceId`
+<br/>The namespace identifier.<br/><br/>
 
 ### Request Body
 
@@ -210,35 +212,25 @@ PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
 
 ```json
 {
-  "Id": "string",
-  "AssetTypeId": "string",
-  "Name": "string",
-  "Description": "string",
+  "Id": "SampleAsset",
+  "Description": "This is a sample asset.",
   "Metadata": [
     {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "SdsTypeCode": "Empty",
-      "Value": null,
-      "Uom": "string"
+      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+      "Name": "ModelNumber",
+      "Description": "This is a static attribute on the asset which represents the model number.",
+      "SdsTypeCode": "Double",
+      "Value": 0.01
     }
   ],
   "StreamReferences": [
     {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "StreamId": "string"
+      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+      "Name": "Data",
+      "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+      "StreamId": "PI_bifrostbigdaddy_1"
     }
-  ],
-  "Status": {
-    "StreamReferenceId": "string",
-    "StreamPropertyId": "string",
-    "ValueStatusMappings": [
-      {}
-    ]
-  }
+  ]
 }
 ```
 
@@ -246,13 +238,39 @@ PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|201|None|The asset with the specified identifier.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|401|None|Unauthorized.|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavaiable, please try again later.|
+
+#### Response Headers
+
+|Status|Header|Type|Description|
+|---|---|---|---|
+|201|Etag|integer|Version.|
+
+#### Example response body
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+```
 
 ---
 
 ## `Delete Asset`
 
 <a id="opIdAssets_Delete Asset"></a>
+
+Create or update an asset with a specified Id. If the asset already exists, you can specify an If-Match property in the HTTP request header to ensure that the asset is modified only if its version matches. To support flexibility, on creation and update, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is from an asset type.
 
 ### Request
 ```text 
@@ -262,15 +280,33 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{asset
 #### Parameters
 
 `string assetId`
-<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>The asset identifier<br/><br/>`string tenantId`
+<br/>The tenant identifier.<br/><br/>`string namespaceId`
+<br/>The namespace identifier.<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|204|None|The asset with the specified identifier.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|401|None|Unauthorized.|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavaiable, please try again later.|
+
+#### Example response body
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+```
 
 ---
 

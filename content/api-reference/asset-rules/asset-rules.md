@@ -69,7 +69,7 @@ The asset rules API allows you to programmatically create, read, update, and del
             "StreamReferences":[
                {
                   "Id":"Rule Stream",
-                  "Description":"a stream reference to the input stream that caused the rule to generated this asset",
+                  "Description":"a stream reference to the input stream that caused the rule to generate this asset",
                   "StreamId":"{streamId}"
                }
             ]

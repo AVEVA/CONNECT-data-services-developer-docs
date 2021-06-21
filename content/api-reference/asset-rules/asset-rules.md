@@ -136,7 +136,7 @@ For more information on available properties for a stream type, see [Sds Types][
 
 ### JSON Paths
 
-JSON paths can be used in the Expression Field to retrieve stream metadata and stream type properties. The following are examples of JSON paths.
+JSON paths can be used in the `Expression` `Field` to retrieve stream metadata and stream type properties. The following are examples of JSON paths.
 Note: RegEx in JSON path is not supported in the `Field` specification.
 
 Retrieve the value of the metadata key 'location' for the stream:

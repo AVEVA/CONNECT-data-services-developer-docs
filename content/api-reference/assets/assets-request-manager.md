@@ -335,39 +335,22 @@ The list of assets you want to create.<br/>
 ```json
 [
   {
-    "Id": "string",
-    "AssetTypeId": "string",
-    "Name": "string",
-    "Description": "string",
+    "Id": "FirstAssetToCreate",
+    "Name": "FirstAssetToCreate",
+    "Description": "This is the first Asset to create in this bulk call."
+  },
+  {
+    "Id": "SecondAssetToCreate",
+    "Name": "SecondAssetToCreate",
+    "Description": "This is the second Asset to create in this bulk call.",
     "Metadata": [
       {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SdsTypeCode": "Empty",
-        "Value": null,
-        "Uom": "string"
+        "Id": "FirstMetdataOfTheSecondAsset",
+        "Name": "ModelNumber",
+        "SdsTypeCode": "Double",
+        "Value": 1234
       }
-    ],
-    "StreamReferences": [
-      {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "StreamId": "string"
-      }
-    ],
-    "Status": {
-      "StreamReferenceId": "string",
-      "StreamPropertyId": "string",
-      "ValueStatusMappings": [
-        {
-          "Value": null,
-          "Status": null,
-          "DisplayName": null
-        }
-      ]
-    }
+    ]
   }
 ]
 ```
@@ -576,51 +559,68 @@ A comma-separated list of asset Ids that you want to resolve.<br/>
 ```json
 [
   {
-    "Id": "string",
-    "Name": "string",
-    "Description": "string",
-    "AssetTypeId": "string",
-    "AssetTypeName": "string",
+    "Id": "Asset1",
+    "Name": "Asset1",
+    "Description": "An example asset.",
+    "AssetTypeId": "Asset1Type",
+    "AssetTypeName": "NameOfAsset1Type",
     "Metadata": [
       {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SdsTypeCode": 0,
-        "Value": null,
-        "Uom": "string"
+        "Id": "Metadata1",
+        "Name": "Metadata1",
+        "Description": "Description of Metadata1",
+        "SdsTypeCode": "String",
+        "Value": "This is an example metadata for example asset",
+        "Uom": null
       }
     ],
     "Streams": [
       {
-        "Name": "string",
+        "Name": "StreamReference1",
         "Properties": [
           {
-            "Id": "string",
+            "Id": "pi_bifrostincinerate1",
             "IsKey": true,
-            "Uom": "string",
+            "Uom": null,
             "Order": 0,
-            "InterpolationMode": "[",
-            "ExtrapolationMode": "[",
-            "SdsType": null,
+            "InterpolationMode": "Default",
+            "ExtrapolationMode": "All",
+            "SdsType": "SimpleSdsType",
             "Source": null
           }
         ]
       }
     ],
     "UnresolvedStreams": [
-      {
-        "Name": "string",
-        "Reason": "string"
-      }
+      {}
     ],
-    "Status": {
-      "Name": "string",
-      "StreamName": "string",
-      "StreamPropertyId": "string"
-    }
+    "Status": {}
   }
 ]
+```
+
+> 207 Response
+
+```json
+{
+  "Reason": "string",
+  "Error": "string",
+  "OperationId": "string",
+  "Data": [
+    "string"
+  ],
+  "ChildErrors": [
+    {
+      "OperationId": "string",
+      "Error": "string",
+      "Resolution": "string",
+      "Reason": "string",
+      "StatusCode": 0,
+      "property1": null,
+      "property2": null
+    }
+  ]
+}
 ```
 
 ---

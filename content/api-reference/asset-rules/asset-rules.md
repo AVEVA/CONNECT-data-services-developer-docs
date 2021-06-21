@@ -172,7 +172,7 @@ Retrieve the unit of measure of the 'Value' property from the stream type:
 
 Only asset outputs are supported. 
 
-## Asset Output Objects
+## Asset output objects
 
 | Property Name | Type         | Required? | Description                                                  |
 | ------------- | ------------ | --------- | ------------------------------------------------------------ |

@@ -104,7 +104,7 @@ The following fields are supported:
 | Property Name | Syntax                                    | Description                                                                                             |
 | ------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------- |
 | Id            | "Id"                                      | The stream Id.                                                                                          |
-| Name          | "Name"                                    | The stream Name.                                                                                        |
+| Name          | "Name"                                    | The stream name                                                                                        |
 | Description   | "Description"                             | The stream description                                                                                 |
 | Metadata      | "Metadata\['key']"                        | The stream metadata. The example extracts the value of the metadata with key 'key'.                     |
 | Type          | "Type.Properties\[?(@.Id == 'Value')].Uom" | The stream type. The example extracts the unit of measure from the 'Value' property of the stream type. |

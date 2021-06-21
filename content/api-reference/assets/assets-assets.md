@@ -30,6 +30,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
 |200|[DeprecatedAsset](#schemadeprecatedasset)|The asset with the specified identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
 |401|None|Unauthorized.|
+|404|None|Asset with specified identifier not found.|
 |500|None|Internal Service Error, please try again later.|
 |503|None|Service Unavaiable, please try again later.|
 
@@ -241,6 +242,8 @@ PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
 |201|None|The asset with the specified identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
 |401|None|Unauthorized.|
+|409|None|Conflict.|
+|412|None|Pre-Condition Failed.|
 |500|None|Internal Service Error, please try again later.|
 |503|None|Service Unavaiable, please try again later.|
 
@@ -291,6 +294,8 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{asset
 |204|None|The asset with the specified identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
 |401|None|Unauthorized.|
+|404|None|Not Found.|
+|409|None|Conflict.|
 |500|None|Internal Service Error, please try again later.|
 |503|None|Service Unavaiable, please try again later.|
 
@@ -314,6 +319,8 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{asset
 
 <a id="opIdAssets_Get Asset Acl"></a>
 
+Get the access control list of the specified asset.
+
 ### Request
 ```text 
 GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}/accesscontrol
@@ -322,21 +329,64 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
 #### Parameters
 
 `string assetId`
-<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>The asset identifier<br/><br/>`string tenantId`
+<br/>The tenant identifier.<br/><br/>`string namespaceId`
+<br/>The namespace identifier.<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|200|[AccessControlList](#schemaaccesscontrollist)|The access control list of the asset with the specified identifier.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|401|None|Unauthorized.|
+|404|None|Asset with specified identifier not found.|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavaiable, please try again later.|
+
+#### Example response body
+> 200 Response
+
+```json
+{
+  "RoleTrusteeAccessControlEntries": [
+    {
+      "Trustee": {
+        "Type": 3,
+        "ObjectId": "11111111-1111-1111-1111-111111111111"
+      },
+      "AccessRights": 3
+    },
+    {
+      "Trustee": {
+        "Type": 3,
+        "ObjectId": "22222222-2222-2222-1111-111111111111"
+      }
+    }
+  ]
+}
+```
+
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+```
 
 ---
 
 ## `Update Asset Access Control`
 
 <a id="opIdAssets_Update Asset Access Control"></a>
+
+Get the access control list of the specified asset.
 
 ### Request
 ```text 
@@ -346,9 +396,9 @@ PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>`string assetId`
-<br/><br/>
+<br/>The tenant identifier.<br/><br/>`string namespaceId`
+<br/>The namespace identifier.<br/><br/>`string assetId`
+<br/>The asset identifier<br/><br/>
 
 ### Request Body
 
@@ -358,9 +408,17 @@ PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
 {
   "RoleTrusteeAccessControlEntries": [
     {
-      "Trustee": {},
-      "AccessType": 0,
-      "AccessRights": 0
+      "Trustee": {
+        "Type": 3,
+        "ObjectId": "11111111-1111-1111-1111-111111111111"
+      },
+      "AccessRights": 3
+    },
+    {
+      "Trustee": {
+        "Type": 3,
+        "ObjectId": "22222222-2222-2222-1111-111111111111"
+      }
     }
   ]
 }
@@ -370,13 +428,34 @@ PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|204|None|The access control list of the asset with the specified identifier.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|401|None|Unauthorized.|
+|404|None|Asset with specified identifier not found.|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavaiable, please try again later.|
+
+#### Example response body
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+```
 
 ---
 
-## `Get Asset Access Rights`
+## `List Asset Access Rights`
 
-<a id="opIdAssets_Get Asset Access Rights"></a>
+<a id="opIdAssets_List Asset Access Rights"></a>
+
+Get the access rights of the specified asset.
 
 ### Request
 ```text 
@@ -386,15 +465,45 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
 #### Parameters
 
 `string assetId`
-<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>The asset identifier<br/><br/>`string tenantId`
+<br/>The tenant identifier.<br/><br/>`string namespaceId`
+<br/>The namespace identifier.<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|200|Inline|The access rights of the asset with the specified identifier.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|401|None|Unauthorized.|
+|404|None|Asset with specified identifier not found.|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavaiable, please try again later.|
+
+#### Example response body
+> 200 Response
+
+```json
+[
+  "Read",
+  "Write",
+  "Delete",
+  "ManageAccessControl"
+]
+```
+
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+```
 
 ---
 
@@ -719,6 +828,36 @@ PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets2/{assetId
 |---|---|
 |Allowed|0|
 |Denied|1|
+
+---
+
+### ErrorTemplate
+
+<a id="schemaerrortemplate"></a>
+<a id="schema_ErrorTemplate"></a>
+<a id="tocSerrortemplate"></a>
+<a id="tocserrortemplate"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|OperationId|string|false|true|None|
+|Error|string|false|true|None|
+|Resolution|string|false|true|None|
+|Reason|string|false|true|None|
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+
+```
 
 ---
 
@@ -1121,36 +1260,6 @@ PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets2/{assetId
 |Good|1|
 |Warning|2|
 |Bad|3|
-
----
-
-### ErrorTemplate
-
-<a id="schemaerrortemplate"></a>
-<a id="schema_ErrorTemplate"></a>
-<a id="tocSerrortemplate"></a>
-<a id="tocserrortemplate"></a>
-
-#### Properties
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|OperationId|string|false|true|None|
-|Error|string|false|true|None|
-|Resolution|string|false|true|None|
-|Reason|string|false|true|None|
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Resolution": "string",
-  "Reason": "string",
-  "property1": null,
-  "property2": null
-}
-
-```
 
 ---
 

@@ -13,7 +13,7 @@ Returns the specified asset and the version Etag in the HTTP response header.
 
 ### Request
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/assets/{assetId}
 ```
 
 #### Parameters
@@ -90,7 +90,7 @@ Creates a new asset. If the asset you are trying to create references an asset t
 
 ### Request
 ```text 
-POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/assets/{assetId}
 ```
 
 #### Parameters
@@ -197,7 +197,7 @@ Create or update an asset with a specified Id. If the asset already exists, you 
 
 ### Request
 ```text 
-PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
+PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/assets/{assetId}
 ```
 
 #### Parameters
@@ -277,7 +277,7 @@ Create or update an asset with a specified Id. If the asset already exists, you 
 
 ### Request
 ```text 
-DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
+DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/assets/{assetId}
 ```
 
 #### Parameters
@@ -323,7 +323,7 @@ Get the access control list of the specified asset.
 
 ### Request
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}/accesscontrol
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/assets/{assetId}/accesscontrol
 ```
 
 #### Parameters
@@ -390,7 +390,7 @@ Get the access control list of the specified asset.
 
 ### Request
 ```text 
-PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}/accesscontrol
+PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/assets/{assetId}/accesscontrol
 ```
 
 #### Parameters
@@ -459,7 +459,7 @@ Get the access rights of the specified asset.
 
 ### Request
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}/accessrights
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/assets/{assetId}/accessrights
 ```
 
 #### Parameters
@@ -515,7 +515,7 @@ Get the owner of the specified asset.
 
 ### Request
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}/owner
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/assets/{assetId}/owner
 ```
 
 #### Parameters
@@ -560,7 +560,7 @@ Updates the owner of the specified asset.
 
 ### Request
 ```text 
-PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}/owner
+PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/assets/{assetId}/owner
 ```
 
 #### Parameters
@@ -615,7 +615,7 @@ PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
 
 ### Request
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets2/{assetId}
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/assets2/{assetId}
 ```
 
 #### Parameters
@@ -639,7 +639,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets2/{assetId
 
 ### Request
 ```text 
-POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets2/{assetId}
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/assets2/{assetId}
 ```
 
 #### Parameters
@@ -698,7 +698,7 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets2/{assetI
 
 ### Request
 ```text 
-PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets2/{assetId}
+PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/assets2/{assetId}
 ```
 
 #### Parameters

@@ -14,7 +14,7 @@ Returns an array of assets in a given namespace and the total number of assets r
 
 ### Request
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/assets
 ?skip={skip}&count={count}&orderBy={orderBy}&query={query}&pageSize={pageSize}&maxPages={maxPages}&continuationToken={continuationToken}&Comparer={Comparer}&Count={Count}&Keys={Keys}&System.Collections.Generic.IDictionary<TKey,TValue>.Keys={System.Collections.Generic.IDictionary<TKey,TValue>.Keys}&System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys={System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys}&Values={Values}&System.Collections.Generic.IDictionary<TKey,TValue>.Values={System.Collections.Generic.IDictionary<TKey,TValue>.Values}&System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values={System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values}&Item={Item}&System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly={System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly}&System.Collections.ICollection.IsSynchronized={System.Collections.ICollection.IsSynchronized}&System.Collections.ICollection.SyncRoot={System.Collections.ICollection.SyncRoot}&System.Collections.IDictionary.IsFixedSize={System.Collections.IDictionary.IsFixedSize}&System.Collections.IDictionary.IsReadOnly={System.Collections.IDictionary.IsReadOnly}&System.Collections.IDictionary.Keys={System.Collections.IDictionary.Keys}&System.Collections.IDictionary.Values={System.Collections.IDictionary.Values}&System.Collections.IDictionary.Item={System.Collections.IDictionary.Item}
 ```
 
@@ -106,7 +106,7 @@ Creates a new asset. If the asset you are trying to create references an asset t
 
 ### Request
 ```text 
-POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/assets
 ```
 
 #### Parameters
@@ -210,7 +210,7 @@ The asset you want to create.<br/>
 
 ### Request
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets2
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/assets2
 ?skip={skip}&count={count}&orderBy={orderBy}&query={query}&pageSize={pageSize}&maxPages={maxPages}&continuationToken={continuationToken}&Comparer={Comparer}&Count={Count}&Keys={Keys}&System.Collections.Generic.IDictionary<TKey,TValue>.Keys={System.Collections.Generic.IDictionary<TKey,TValue>.Keys}&System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys={System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys}&Values={Values}&System.Collections.Generic.IDictionary<TKey,TValue>.Values={System.Collections.Generic.IDictionary<TKey,TValue>.Values}&System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values={System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values}&Item={Item}&System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly={System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly}&System.Collections.ICollection.IsSynchronized={System.Collections.ICollection.IsSynchronized}&System.Collections.ICollection.SyncRoot={System.Collections.ICollection.SyncRoot}&System.Collections.IDictionary.IsFixedSize={System.Collections.IDictionary.IsFixedSize}&System.Collections.IDictionary.IsReadOnly={System.Collections.IDictionary.IsReadOnly}&System.Collections.IDictionary.Keys={System.Collections.IDictionary.Keys}&System.Collections.IDictionary.Values={System.Collections.IDictionary.Values}&System.Collections.IDictionary.Item={System.Collections.IDictionary.Item}
 ```
 
@@ -259,7 +259,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets2
 
 ### Request
 ```text 
-POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets2
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/assets2
 ```
 
 #### Parameters
@@ -319,7 +319,7 @@ Bulk create assets. Creates multiple assets in a single call.
 
 ### Request
 ```text 
-POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assets
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/assets
 ```
 
 #### Parameters
@@ -465,7 +465,7 @@ Delete all assets with the specified Ids.Use this API to delete up to a maximum 
 
 ### Request
 ```text 
-DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assets
+DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/assets
 ?id={id}
 ```
 
@@ -522,7 +522,7 @@ View multiple resolved assets.
 
 ### Request
 ```text 
-POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assets/resolved
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/assets/resolved
 ```
 
 #### Parameters
@@ -631,7 +631,7 @@ A comma-separated list of asset Ids that you want to resolve.<br/>
 
 ### Request
 ```text 
-POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assets/resolved2
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/assets/resolved2
 ```
 
 #### Parameters
@@ -666,7 +666,7 @@ View the status of multiple assets.
 
 ### Request
 ```text 
-POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assets/status/last
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/assets/status/last
 ```
 
 #### Parameters
@@ -758,7 +758,7 @@ A comma-separated list of asset Ids that you want to get the last status from.<b
 
 ### Request
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/search/assets
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/search/assets
 ?skip={skip}&count={count}&orderBy={orderBy}&query={query}&pageSize={pageSize}&maxPages={maxPages}&continuationToken={continuationToken}&Comparer={Comparer}&Count={Count}&Keys={Keys}&System.Collections.Generic.IDictionary<TKey,TValue>.Keys={System.Collections.Generic.IDictionary<TKey,TValue>.Keys}&System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys={System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys}&Values={Values}&System.Collections.Generic.IDictionary<TKey,TValue>.Values={System.Collections.Generic.IDictionary<TKey,TValue>.Values}&System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values={System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values}&Item={Item}&System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly={System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly}&System.Collections.ICollection.IsSynchronized={System.Collections.ICollection.IsSynchronized}&System.Collections.ICollection.SyncRoot={System.Collections.ICollection.SyncRoot}&System.Collections.IDictionary.IsFixedSize={System.Collections.IDictionary.IsFixedSize}&System.Collections.IDictionary.IsReadOnly={System.Collections.IDictionary.IsReadOnly}&System.Collections.IDictionary.Keys={System.Collections.IDictionary.Keys}&System.Collections.IDictionary.Values={System.Collections.IDictionary.Values}&System.Collections.IDictionary.Item={System.Collections.IDictionary.Item}
 ```
 
@@ -807,7 +807,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/search/assets
 
 ### Request
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/search/assets/autocomplete
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/search/assets/autocomplete
 ?term={term}&termCount={termCount}&facetCount={facetCount}
 ```
 
@@ -834,7 +834,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/search/assets/au
 
 ### Request
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/search/assets/facets
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/search/assets/facets
 ?count={count}&name={name}
 ```
 

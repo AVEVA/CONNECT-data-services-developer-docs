@@ -12,7 +12,7 @@ To use the OSIsoft Cloud Services Power BI Connector, complete the following ste
 2. To run the Setup wizard for the OSIsoft Cloud Services Power BI Connector, double click the `OCSPowerBIConnector.exe` file.
 3. In Microsoft Power BI, in the entry field of the **Get Data** window, type *OSI*. The **OSIsoft Cloud Services Data Views** connector file displays in the **All** pane.
 
-   ![Get Data]<img src="get-data.png" width="50%"/>
+   ![Get Data](images/get-data.png)
 
 4. Click the **OSIsoft Cloud Services Data Views** connector file, and then click **Connect**.
 5. Click **Continue** in the **Connecting to a third-party service** warning.

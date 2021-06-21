@@ -325,12 +325,58 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assets
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>The tenant identifier.<br/><br/>`string namespaceId`
+<br/>The namespace identifier.<br/><br/>
 
 ### Request Body
 
 The list of assets you want to create.<br/>
+
+```json
+[
+  {
+    "Id": "Heater_01_01_02",
+    "Name": "HeaterOnFirstFloor",
+    "Description": "This is Asset which represents a heater on the first floor.",
+    "Metadata": [
+      {
+        "Id": "17020d80-1dc8-4690-932f-3421c9cff0d1",
+        "Name": "ModelNumber",
+        "Description": "This is attribute with double value representing the model number.",
+        "SdsTypeCode": "Double",
+        "Value": 1.3
+      }
+    ]
+  },
+  {
+    "Id": "TracerUnit_101",
+    "Name": "TracerOnRoof",
+    "Description": "This is Asset which represents a tracer.",
+    "Metadata": [
+      {
+        "Id": "Tracer_1234",
+        "Name": "ModelNumber",
+        "SdsTypeCode": "Double",
+        "Value": 1234
+      }
+    ]
+  }
+]
+```
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[DeprecatedAsset](#schemadeprecatedasset)[]|The asset that was created.|
+|207|[MultiStatusResultOfDeprecatedAssetAndChildErrorTemplate](#schemamultistatusresultofdeprecatedassetandchilderrortemplate)|The asset that was created.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|403|None|You are not authorized to create assets.|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavaiable, please try again later.|
+
+#### Example response body
+> 200 Response
 
 ```json
 [
@@ -370,106 +416,6 @@ The list of assets you want to create.<br/>
     }
   }
 ]
-```
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|[DeprecatedAsset](#schemadeprecatedasset)[]|The asset that was created.|
-|207|[MultiStatusResultOfDeprecatedAssetAndChildErrorTemplate](#schemamultistatusresultofdeprecatedassetandchilderrortemplate)|The asset that was created.|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|403|None|You are not authorized to create assets.|
-|500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavaiable, please try again later.|
-
-#### Example response body
-> 200 Response
-
-```json
-[
-  {
-    "Id": "Heater_01_01_02",
-    "Name": "HeaterOnFirstFloor",
-    "Description": "This is Asset which represents a heater on the first floor.",
-    "Metadata": [
-      {
-        "Id": "17020d80-1dc8-4690-932f-3421c9cff0d1",
-        "Name": "ModelNumber",
-        "Description": "This is attribute with double value representing the model number.",
-        "SdsTypeCode": "Double",
-        "Value": 1.3
-      }
-    ]
-  },
-  {
-    "Id": "TracerUnit_101",
-    "Name": "TracerOnRoof",
-    "Description": "This is Asset which represents a tracer.",
-    "Metadata": [
-      {
-        "Id": "Tracer_1234",
-        "Name": "ModelNumber",
-        "SdsTypeCode": "Double",
-        "Value": 1234
-      }
-    ]
-  }
-]
-```
-
-> 207 Response
-
-```json
-{
-  "Reason": "string",
-  "Error": "string",
-  "OperationId": "string",
-  "Data": [
-    {
-      "Id": "string",
-      "AssetTypeId": "string",
-      "Name": "string",
-      "Description": "string",
-      "Metadata": [
-        {
-          "Id": "string",
-          "Name": "string",
-          "Description": "string",
-          "SdsTypeCode": "Empty",
-          "Value": null,
-          "Uom": "string"
-        }
-      ],
-      "StreamReferences": [
-        {
-          "Id": "string",
-          "Name": "string",
-          "Description": "string",
-          "StreamId": "string"
-        }
-      ],
-      "Status": {
-        "StreamReferenceId": "string",
-        "StreamPropertyId": "string",
-        "ValueStatusMappings": [
-          null
-        ]
-      }
-    }
-  ],
-  "ChildErrors": [
-    {
-      "OperationId": "string",
-      "Error": "string",
-      "Resolution": "string",
-      "Reason": "string",
-      "StatusCode": 0,
-      "property1": null,
-      "property2": null
-    }
-  ]
-}
 ```
 
 ---

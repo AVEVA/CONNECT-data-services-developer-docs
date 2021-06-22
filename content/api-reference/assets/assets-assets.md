@@ -19,9 +19,9 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 #### Parameters
 
 `string assetId`
-<br/>The asset identifier<br/><br/>`string tenantId`
-<br/>The tenant identifier.<br/><br/>`string namespaceId`
-<br/>The namespace identifier.<br/><br/>
+<br/>Asset identifier<br/><br/>`string tenantId`
+<br/>Tenant identifier<br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/>
 
 ### Response
 
@@ -29,7 +29,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |---|---|---|
 |200|[DeprecatedAsset](#schemadeprecatedasset)|The asset with the specified identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|401|None|Unauthorized.|
+|401|None|Unauthorized|
 |404|None|Asset with specified identifier not found.|
 |500|None|Internal Service Error, please try again later.|
 |503|None|Service Unavaiable, please try again later.|
@@ -38,7 +38,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 |Status|Header|Type|Description|
 |---|---|---|---|
-|200|Etag|integer|Version.|
+|200|Etag|integer|Version|
 
 #### Example response body
 > 200 Response
@@ -96,9 +96,9 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId
 #### Parameters
 
 `string assetId`
-<br/>The identifier of the asset you want to create.<br/><br/>`string tenantId`
-<br/>The tenant identifier.<br/><br/>`string namespaceId`
-<br/>The namespace identifier.<br/><br/>
+<br/>Asset identifier<br/><br/>`string tenantId`
+<br/>Tenant identifier<br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/>
 
 ### Request Body
 
@@ -203,9 +203,9 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 #### Parameters
 
 `string assetId`
-<br/>The asset identifier<br/><br/>`string tenantId`
-<br/>The tenant identifier.<br/><br/>`string namespaceId`
-<br/>The namespace identifier.<br/><br/>
+<br/>Asset identifier<br/><br/>`string tenantId`
+<br/>Tenant identifier<br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/>
 
 ### Request Body
 
@@ -241,7 +241,6 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |---|---|---|
 |201|None|The asset with the specified identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|401|None|Unauthorized.|
 |409|None|Conflict.|
 |412|None|Pre-Condition Failed.|
 |500|None|Internal Service Error, please try again later.|
@@ -251,7 +250,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 |Status|Header|Type|Description|
 |---|---|---|---|
-|201|Etag|integer|Version.|
+|201|Etag|integer|Version|
 
 #### Example response body
 > 400 Response
@@ -283,9 +282,9 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{asset
 #### Parameters
 
 `string assetId`
-<br/>The asset identifier<br/><br/>`string tenantId`
-<br/>The tenant identifier.<br/><br/>`string namespaceId`
-<br/>The namespace identifier.<br/><br/>
+<br/>Asset identifier<br/><br/>`string tenantId`
+<br/>Tenant identifier<br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/>
 
 ### Response
 
@@ -293,7 +292,7 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{asset
 |---|---|---|
 |204|None|The asset with the specified identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|401|None|Unauthorized.|
+|401|None|Unauthorized|
 |404|None|Not Found.|
 |409|None|Conflict.|
 |500|None|Internal Service Error, please try again later.|
@@ -329,9 +328,9 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 #### Parameters
 
 `string assetId`
-<br/>The asset identifier<br/><br/>`string tenantId`
-<br/>The tenant identifier.<br/><br/>`string namespaceId`
-<br/>The namespace identifier.<br/><br/>
+<br/>Asset identifier<br/><br/>`string tenantId`
+<br/>Tenant identifier<br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/>
 
 ### Response
 
@@ -339,7 +338,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|The access control list of the asset with the specified identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|401|None|Unauthorized.|
+|401|None|Unauthorized|
 |404|None|Asset with specified identifier not found.|
 |500|None|Internal Service Error, please try again later.|
 |503|None|Service Unavaiable, please try again later.|
@@ -396,9 +395,9 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 #### Parameters
 
 `string tenantId`
-<br/>The tenant identifier.<br/><br/>`string namespaceId`
-<br/>The namespace identifier.<br/><br/>`string assetId`
-<br/>The asset identifier<br/><br/>
+<br/>Tenant identifier<br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/>`string assetId`
+<br/>Asset identifier<br/><br/>
 
 ### Request Body
 
@@ -430,7 +429,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |---|---|---|
 |204|None|The access control list of the asset with the specified identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|401|None|Unauthorized.|
+|401|None|Unauthorized|
 |404|None|Asset with specified identifier not found.|
 |500|None|Internal Service Error, please try again later.|
 |503|None|Service Unavaiable, please try again later.|
@@ -465,9 +464,9 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 #### Parameters
 
 `string assetId`
-<br/>The asset identifier<br/><br/>`string tenantId`
-<br/>The tenant identifier.<br/><br/>`string namespaceId`
-<br/>The namespace identifier.<br/><br/>
+<br/>Asset identifier<br/><br/>`string tenantId`
+<br/>Tenant identifier<br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/>
 
 ### Response
 
@@ -475,7 +474,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |---|---|---|
 |200|Inline|The access rights of the asset with the specified identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|401|None|Unauthorized.|
+|401|None|Unauthorized|
 |404|None|Asset with specified identifier not found.|
 |500|None|Internal Service Error, please try again later.|
 |503|None|Service Unavaiable, please try again later.|
@@ -521,9 +520,9 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 #### Parameters
 
 `string assetId`
-<br/>The asset identifier<br/><br/>`string tenantId`
-<br/>The tenant identifier.<br/><br/>`string namespaceId`
-<br/>The namespace identifier.<br/><br/>
+<br/>Asset identifier<br/><br/>`string tenantId`
+<br/>Tenant identifier<br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/>
 
 ### Response
 
@@ -531,7 +530,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |---|---|---|
 |200|None|The owner of the asset with the specified identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|401|None|Unauthorized.|
+|401|None|Unauthorized|
 |404|None|Asset with specified identifier not found.|
 |500|None|Internal Service Error, please try again later.|
 |503|None|Service Unavaiable, please try again later.|
@@ -566,9 +565,9 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 #### Parameters
 
 `string tenantId`
-<br/>The tenant identifier.<br/><br/>`string namespaceId`
-<br/>The namespace identifier.<br/><br/>`string assetId`
-<br/>The asset identifier<br/><br/>
+<br/>Tenant identifier<br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/>`string assetId`
+<br/>Asset identifier<br/><br/>
 
 ### Request Body
 
@@ -588,7 +587,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |---|---|---|
 |204|None|No content if success.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|401|None|Unauthorized.|
+|401|None|Unauthorized|
 |404|None|Asset with specified identifier not found.|
 |500|None|Internal Service Error, please try again later.|
 |503|None|Service Unavaiable, please try again later.|

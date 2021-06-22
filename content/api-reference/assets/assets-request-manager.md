@@ -21,13 +21,13 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
 #### Parameters
 
 `string tenantId`
-<br/>The tenant identifier.<br/><br/>`string namespaceId`
-<br/>The namespace identifier.<br/><br/>
+<br/>Tenant identifier<br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/>
 `[optional] integer skip`
 <br/>An optional parameter representing the zero-based offset of the first asset to retrieve. If not specified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>An optional parameter, between 1 and 1000 (inclusive), that represents the maximum number of retrieved assets. If not specified, the default is 100.<br/><br/>`[optional] string orderBy`
-<br/>Ordering.<br/><br/>`[optional] string query`
-<br/>Query parameter.<br/><br/>`[optional] integer pageSize`
+<br/>An optional parameter which returns assets ordered either by the asset Id or the asset name. Specify asc or desc to return the results in ascending or descending order. If not specified, the default is ascending order.<br/><br/>`[optional] string query`
+<br/>Query parameter<br/><br/>`[optional] integer pageSize`
 <br/><br/>`[optional] integer maxPages`
 <br/><br/>`[optional] string continuationToken`
 <br/><br/>`[optional] object Comparer`
@@ -55,7 +55,6 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
 |---|---|---|
 |200|[DeprecatedAsset](#schemadeprecatedasset)[]|List of assets in the given namespace.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|401|None|Unauthorized.|
 |500|None|Internal Service Error, please try again later.|
 |503|None|Service Unavaiable, please try again later.|
 
@@ -112,8 +111,8 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
 #### Parameters
 
 `string tenantId`
-<br/>The tenant identifier.<br/><br/>`string namespaceId`
-<br/>The namespace identifier.<br/><br/>
+<br/>Tenant identifier<br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/>
 
 ### Request Body
 
@@ -325,8 +324,8 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets
 #### Parameters
 
 `string tenantId`
-<br/>The tenant identifier.<br/><br/>`string namespaceId`
-<br/>The namespace identifier.<br/><br/>
+<br/>Tenant identifier<br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/>
 
 ### Request Body
 
@@ -362,7 +361,6 @@ The list of assets you want to create.<br/>
 |200|[DeprecatedAsset](#schemadeprecatedasset)[]|The asset that was created.|
 |207|[MultiStatusResultOfDeprecatedAssetAndChildErrorTemplate](#schemamultistatusresultofdeprecatedassetandchilderrortemplate)|The asset that was created.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|403|None|You are not authorized to create assets.|
 |500|None|Internal Service Error, please try again later.|
 |503|None|Service Unavaiable, please try again later.|
 
@@ -472,10 +470,10 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets
 #### Parameters
 
 `string tenantId`
-<br/>The tenant identifier.<br/><br/>`string namespaceId`
-<br/>The namespace identifier.<br/><br/>
+<br/>Tenant identifier<br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/>
 `[optional] array id`
-<br/>A comma-separated list of asset Ids that you want to delete.<br/><br/>
+<br/>Asset identifiers<br/><br/>
 
 ### Response
 
@@ -528,12 +526,12 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets/Res
 #### Parameters
 
 `string tenantId`
-<br/>The tenant identifier.<br/><br/>`string namespaceId`
-<br/>The namespace identifier.<br/><br/>
+<br/>Tenant identifier<br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/>
 
 ### Request Body
 
-A comma-separated list of asset Ids that you want to resolve.<br/>
+Asset identifiers<br/>
 
 ```json
 [
@@ -672,12 +670,12 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets/Sta
 #### Parameters
 
 `string tenantId`
-<br/>The tenant identifier.<br/><br/>`string namespaceId`
-<br/>The namespace identifier.<br/><br/>
+<br/>Tenant identifier<br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/>
 
 ### Request Body
 
-A comma-separated list of asset Ids that you want to get the last status from.<br/>
+Asset identifiers<br/>
 
 ```json
 [

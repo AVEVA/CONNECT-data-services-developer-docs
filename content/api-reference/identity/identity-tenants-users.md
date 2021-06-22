@@ -1025,7 +1025,7 @@ Object for retrieving a user
 <a id="tocSusermultistatusresponse"></a>
 <a id="tocsusermultistatusresponse"></a>
 
-MultiStatusResponse objects returned in a 207 response. TODO: Remove this internal model and re-adopt public model when moving to System.Text.Json in WI 202168.
+MultiStatusResponse objects returned in a 207 response
 
 #### Properties
 
@@ -1084,7 +1084,7 @@ MultiStatusResponse objects returned in a 207 response. TODO: Remove this intern
 <a id="tocSmultistatusresponsechilderror"></a>
 <a id="tocsmultistatusresponsechilderror"></a>
 
-ChildError objects returned in a 207 response. TODO: Remove this internal model and re-adopt public model when moving to System.Text.Json in WI 202168.
+ChildError objects returned in a 207 response
 
 #### Properties
 
@@ -1120,7 +1120,7 @@ ChildError objects returned in a 207 response. TODO: Remove this internal model 
 <a id="tocSerrorresponse"></a>
 <a id="tocserrorresponse"></a>
 
-Object returned whenever there is an error TODO: Remove this internal model and re-adopt public model when moving to System.Text.Json in WI 202168.
+Object returned whenever there is an error
 
 #### Properties
 
@@ -1253,7 +1253,7 @@ Object when updating a user.
 <a id="tocSuserstatusmultistatusresponse"></a>
 <a id="tocsuserstatusmultistatusresponse"></a>
 
-MultiStatusResponse objects returned in a 207 response. TODO: Remove this internal model and re-adopt public model when moving to System.Text.Json in WI 202168.
+MultiStatusResponse objects returned in a 207 response
 
 #### Properties
 

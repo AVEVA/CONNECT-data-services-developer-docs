@@ -11,7 +11,7 @@ uid: assets-access-control-list
 
 ### Request
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/{resource}
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/{resource}
 ```
 
 #### Parameters
@@ -35,7 +35,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/{r
 
 ### Request
 ```text 
-PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/{resource}
+PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/{resource}
 ```
 
 #### Parameters
@@ -75,7 +75,7 @@ PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/{r
 
 ### Request
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/accessrights/{resource}
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessRights/{resource}
 ```
 
 #### Parameters

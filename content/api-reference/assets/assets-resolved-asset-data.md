@@ -11,7 +11,7 @@ uid: assets-resolved-asset-data
 
 ### Request
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}/Data
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data
 ?startIndex={startIndex}&endIndex={endIndex}&stream={stream}
 ```
 
@@ -40,7 +40,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
 
 ### Request
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}/Data/Interpolated
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/Interpolated
 ?startIndex={startIndex}&endIndex={endIndex}&count={count}&stream={stream}
 ```
 
@@ -70,7 +70,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
 
 ### Request
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}/Data/Last
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/Last
 ?stream={stream}
 ```
 
@@ -97,7 +97,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
 
 ### Request
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}/Data/Sampled
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/Sampled
 ?startIndex={startIndex}&endIndex={endIndex}&intervals={intervals}&stream={stream}
 ```
 
@@ -127,7 +127,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
 
 ### Request
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}/Data/Summaries
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/Summaries
 ?startIndex={startIndex}&endIndex={endIndex}&stream={stream}&count={count}
 ```
 

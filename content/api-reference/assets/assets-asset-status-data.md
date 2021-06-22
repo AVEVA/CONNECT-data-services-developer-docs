@@ -11,7 +11,7 @@ uid: assets-asset-status-data
 
 ### Request
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}/status/last
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Status/Last
 ```
 
 #### Parameters
@@ -35,7 +35,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}
 
 ### Request
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assets/{assetId}/status/summary
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Status/Summary
 ?startIndex={startIndex}&endIndex={endIndex}&intervals={intervals}
 ```
 

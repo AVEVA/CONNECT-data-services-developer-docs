@@ -13,7 +13,7 @@ Returns the specified asset and the version Etag in the HTTP response header.
 
 ### Request
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/assets/{assetId}
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 ```
 
 #### Parameters
@@ -90,7 +90,7 @@ Creates a new asset. If the asset you are trying to create references an asset t
 
 ### Request
 ```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/assets/{assetId}
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 ```
 
 #### Parameters
@@ -189,15 +189,15 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/assets/{assetId
 
 ---
 
-## `Create Or Update Asset (assets path)`
+## `Create Or Update Asset (Assets path)`
 
-<a id="opIdAssets_Create Or Update Asset (assets path)"></a>
+<a id="opIdAssets_Create Or Update Asset (Assets path)"></a>
 
 Create or update an asset with a specified Id. If the asset already exists, you can specify an If-Match property in the HTTP request header to ensure that the asset is modified only if its version matches. To support flexibility, on creation and update, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is from an asset type.
 
 ### Request
 ```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/assets/{assetId}
+PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 ```
 
 #### Parameters
@@ -277,7 +277,7 @@ Create or update an asset with a specified Id. If the asset already exists, you 
 
 ### Request
 ```text 
-DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/assets/{assetId}
+DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 ```
 
 #### Parameters
@@ -323,7 +323,7 @@ Get the access control list of the specified asset.
 
 ### Request
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/assets/{assetId}/accesscontrol
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/AccessControl
 ```
 
 #### Parameters
@@ -390,7 +390,7 @@ Get the access control list of the specified asset.
 
 ### Request
 ```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/assets/{assetId}/accesscontrol
+PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/AccessControl
 ```
 
 #### Parameters
@@ -459,7 +459,7 @@ Get the access rights of the specified asset.
 
 ### Request
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/assets/{assetId}/accessrights
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/AccessRights
 ```
 
 #### Parameters
@@ -515,7 +515,7 @@ Get the owner of the specified asset.
 
 ### Request
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/assets/{assetId}/owner
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Owner
 ```
 
 #### Parameters
@@ -560,7 +560,7 @@ Updates the owner of the specified asset.
 
 ### Request
 ```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/assets/{assetId}/owner
+PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Owner
 ```
 
 #### Parameters
@@ -615,7 +615,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/assets/{assetId}
 
 ### Request
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/assets2/{assetId}
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId}
 ```
 
 #### Parameters
@@ -639,7 +639,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/assets2/{assetId
 
 ### Request
 ```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/assets2/{assetId}
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId}
 ```
 
 #### Parameters
@@ -692,13 +692,13 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/assets2/{assetI
 
 ---
 
-## `Create Or Update Asset (assets2 path)`
+## `Create Or Update Asset (Assets2 path)`
 
-<a id="opIdAssets_Create Or Update Asset (assets2 path)"></a>
+<a id="opIdAssets_Create Or Update Asset (Assets2 path)"></a>
 
 ### Request
 ```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/assets2/{assetId}
+PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId}
 ```
 
 #### Parameters

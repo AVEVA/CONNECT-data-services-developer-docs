@@ -5,6 +5,66 @@ uid: assets-asset-types
 
 # Asset Types
 
+## `Create Asset Types`
+
+<a id="opIdAssetTypes_Create Asset Types"></a>
+
+### Request
+```text 
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/assetTypes
+```
+
+#### Parameters
+
+`string tenantId`
+<br/><br/>`string namespaceId`
+<br/><br/>
+
+### Request Body
+
+<br/>
+
+```json
+{
+  "Id": "string",
+  "Name": "string",
+  "Description": "string",
+  "Metadata": [
+    {
+      "Id": "string",
+      "Name": "string",
+      "Description": "string",
+      "SdsTypeCode": "Empty",
+      "Value": null,
+      "Uom": "string"
+    }
+  ],
+  "TypeReferences": [
+    {
+      "StreamReferenceId": "string",
+      "StreamReferenceName": "string",
+      "Description": "string",
+      "TypeId": "string"
+    }
+  ],
+  "Status": {
+    "StreamReferenceId": "string",
+    "StreamPropertyId": "string",
+    "ValueStatusMappings": [
+      {}
+    ]
+  }
+}
+```
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|string|None|
+
+---
+
 ## `List Asset Types`
 
 <a id="opIdAssetTypes_List Asset Types"></a>
@@ -13,7 +73,7 @@ Gets asset types.123
 
 ### Request
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetTypes
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes
 ?skip={skip}&count={count}&query={query}
 ```
 
@@ -75,73 +135,13 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetTypes
 
 ---
 
-## `Create Asset Types2`
-
-<a id="opIdAssetTypes_Create Asset Types2"></a>
-
-### Request
-```text 
-POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetTypes
-```
-
-#### Parameters
-
-`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
-
-### Request Body
-
-<br/>
-
-```json
-{
-  "Id": "string",
-  "Name": "string",
-  "Description": "string",
-  "Metadata": [
-    {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "SdsTypeCode": "Empty",
-      "Value": null,
-      "Uom": "string"
-    }
-  ],
-  "TypeReferences": [
-    {
-      "StreamReferenceId": "string",
-      "StreamReferenceName": "string",
-      "Description": "string",
-      "TypeId": "string"
-    }
-  ],
-  "Status": {
-    "StreamReferenceId": "string",
-    "StreamPropertyId": "string",
-    "ValueStatusMappings": [
-      {}
-    ]
-  }
-}
-```
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|string|None|
-
----
-
 ## `Get Asset Type`
 
 <a id="opIdAssetTypes_Get Asset Type"></a>
 
 ### Request
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetTypes/{assetTypeId}
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}
 ```
 
 #### Parameters
@@ -159,13 +159,13 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetTypes/{asse
 
 ---
 
-## `Create Asset Type (asset Types path)`
+## `Create Asset Type (Asset Types path)`
 
-<a id="opIdAssetTypes_Create Asset Type (asset Types path)"></a>
+<a id="opIdAssetTypes_Create Asset Type (Asset Types path)"></a>
 
 ### Request
 ```text 
-POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetTypes/{assetTypeId}
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}
 ```
 
 #### Parameters
@@ -220,13 +220,13 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetTypes/{ass
 
 ---
 
-## `Create Or Update Asset Type (asset Types path)`
+## `Create Or Update Asset Type (Asset Types path)`
 
-<a id="opIdAssetTypes_Create Or Update Asset Type (asset Types path)"></a>
+<a id="opIdAssetTypes_Create Or Update Asset Type (Asset Types path)"></a>
 
 ### Request
 ```text 
-PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetTypes/{assetTypeId}
+PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}
 ```
 
 #### Parameters
@@ -287,7 +287,7 @@ PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetTypes/{asse
 
 ### Request
 ```text 
-DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetTypes/{assetTypeId}
+DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}
 ?deleteAssets={deleteAssets}
 ```
 
@@ -314,7 +314,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetTypes/{a
 
 ### Request
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/AssetTypes/{assetTypeId}/accesscontrol
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}/AccessControl
 ```
 
 #### Parameters
@@ -338,7 +338,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/AssetTypes/{asse
 
 ### Request
 ```text 
-PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/AssetTypes/{assetTypeId}/accesscontrol
+PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}/AccessControl
 ```
 
 #### Parameters
@@ -378,7 +378,7 @@ PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/AssetTypes/{asse
 
 ### Request
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/AssetTypes/{assetTypeId}/accessrights
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}/AccessRights
 ```
 
 #### Parameters
@@ -402,7 +402,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/AssetTypes/{asse
 
 ### Request
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/AssetTypes/{assetTypeId}/owner
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}/Owner
 ```
 
 #### Parameters
@@ -426,7 +426,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/AssetTypes/{asse
 
 ### Request
 ```text 
-PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/AssetTypes/{assetTypeId}/owner
+PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}/Owner
 ```
 
 #### Parameters
@@ -462,7 +462,7 @@ PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/AssetTypes/{asse
 
 ### Request
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetTypes2
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2
 ?skip={skip}&count={count}&query={query}
 ```
 
@@ -484,70 +484,13 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetTypes2
 
 ---
 
-## `Create Asset Types`
-
-<a id="opIdAssetTypes_Create Asset Types"></a>
-
-### Request
-```text 
-POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetTypes2
-```
-
-#### Parameters
-
-`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
-
-### Request Body
-
-<br/>
-
-```json
-{
-  "Id": "string",
-  "Name": "string",
-  "Description": "string",
-  "Metadata": [
-    {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "SdsTypeCode": "Empty",
-      "Value": null,
-      "Uom": "string"
-    }
-  ],
-  "TypeReferences": [
-    {
-      "StreamReferenceId": "string",
-      "StreamReferenceName": "string",
-      "Description": "string",
-      "TypeId": "string"
-    }
-  ],
-  "Status": {
-    "DefinitionType": 0,
-    "Definition": null
-  }
-}
-```
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|string|None|
-
----
-
 ## `Get Asset Type2`
 
 <a id="opIdAssetTypes_Get Asset Type2"></a>
 
 ### Request
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetTypes2/{assetTypeId}
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{assetTypeId}
 ```
 
 #### Parameters
@@ -565,71 +508,13 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetTypes2/{ass
 
 ---
 
-## `Create Asset Type (asset Types2 path)`
+## `Create Asset Type (Asset Types2 path)`
 
-<a id="opIdAssetTypes_Create Asset Type (asset Types2 path)"></a>
-
-### Request
-```text 
-POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetTypes2/{assetTypeId}
-```
-
-#### Parameters
-
-`string assetTypeId`
-<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
-
-### Request Body
-
-<br/>
-
-```json
-{
-  "Id": "string",
-  "Name": "string",
-  "Description": "string",
-  "Metadata": [
-    {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "SdsTypeCode": "Empty",
-      "Value": null,
-      "Uom": "string"
-    }
-  ],
-  "TypeReferences": [
-    {
-      "StreamReferenceId": "string",
-      "StreamReferenceName": "string",
-      "Description": "string",
-      "TypeId": "string"
-    }
-  ],
-  "Status": {
-    "DefinitionType": 0,
-    "Definition": null
-  }
-}
-```
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|string|None|
-
----
-
-## `Create Or Update Asset Type (asset Types2 path)`
-
-<a id="opIdAssetTypes_Create Or Update Asset Type (asset Types2 path)"></a>
+<a id="opIdAssetTypes_Create Asset Type (Asset Types2 path)"></a>
 
 ### Request
 ```text 
-PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetTypes2/{assetTypeId}
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{assetTypeId}
 ```
 
 #### Parameters
@@ -681,13 +566,71 @@ PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetTypes2/{ass
 
 ---
 
-## `Create Asset Types4`
+## `Create Or Update Asset Type (Asset Types2 path)`
 
-<a id="opIdAssetTypes_Create Asset Types4"></a>
+<a id="opIdAssetTypes_Create Or Update Asset Type (Asset Types2 path)"></a>
 
 ### Request
 ```text 
-POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assetTypes
+PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{assetTypeId}
+```
+
+#### Parameters
+
+`string assetTypeId`
+<br/><br/>`string tenantId`
+<br/><br/>`string namespaceId`
+<br/><br/>
+
+### Request Body
+
+<br/>
+
+```json
+{
+  "Id": "string",
+  "Name": "string",
+  "Description": "string",
+  "Metadata": [
+    {
+      "Id": "string",
+      "Name": "string",
+      "Description": "string",
+      "SdsTypeCode": "Empty",
+      "Value": null,
+      "Uom": "string"
+    }
+  ],
+  "TypeReferences": [
+    {
+      "StreamReferenceId": "string",
+      "StreamReferenceName": "string",
+      "Description": "string",
+      "TypeId": "string"
+    }
+  ],
+  "Status": {
+    "DefinitionType": 0,
+    "Definition": null
+  }
+}
+```
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|string|None|
+
+---
+
+## `Create Asset Types2`
+
+<a id="opIdAssetTypes_Create Asset Types2"></a>
+
+### Request
+```text 
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/assetTypes
 ```
 
 #### Parameters
@@ -747,13 +690,13 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assetTypes
 
 ---
 
-## `Create Asset Types3`
+## `Create Asset Types (`asset Types2` path)`
 
-<a id="opIdAssetTypes_Create Asset Types3"></a>
+<a id="opIdAssetTypes_Create Asset Types (`asset Types2` path)"></a>
 
 ### Request
 ```text 
-POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assetTypes2
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/assetTypes2
 ```
 
 #### Parameters
@@ -796,6 +739,63 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/assetTypes
     }
   }
 ]
+```
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|string|None|
+
+---
+
+## `Create Asset Types (`sset Types2` path)`
+
+<a id="opIdAssetTypes_Create Asset Types (`sset Types2` path)"></a>
+
+### Request
+```text 
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ssetTypes2
+```
+
+#### Parameters
+
+`string tenantId`
+<br/><br/>`string namespaceId`
+<br/><br/>
+
+### Request Body
+
+<br/>
+
+```json
+{
+  "Id": "string",
+  "Name": "string",
+  "Description": "string",
+  "Metadata": [
+    {
+      "Id": "string",
+      "Name": "string",
+      "Description": "string",
+      "SdsTypeCode": "Empty",
+      "Value": null,
+      "Uom": "string"
+    }
+  ],
+  "TypeReferences": [
+    {
+      "StreamReferenceId": "string",
+      "StreamReferenceName": "string",
+      "Description": "string",
+      "TypeId": "string"
+    }
+  ],
+  "Status": {
+    "DefinitionType": 0,
+    "Definition": null
+  }
+}
 ```
 
 ### Response

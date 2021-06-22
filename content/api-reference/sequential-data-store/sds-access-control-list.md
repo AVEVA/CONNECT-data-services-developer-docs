@@ -1915,6 +1915,14 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessRig
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
 #### Example response body
+> 200 Response
+
+```json
+HTTP/1.1 200
+Content-Type: application/json
+
+["Read", "Write"]
+```
 > 400 Response
 
 ```json

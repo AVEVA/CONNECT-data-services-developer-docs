@@ -39,24 +39,66 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities
 > 200 Response
 
 ```json
+HTTP/1.1 200
+Content-Type: application/json
 [
-  {
-    "Id": "string",
-    "Name": "string",
-    "BaseUom": {
-      "Id": "string",
-      "Abbreviation": "string",
-      "Name": "string",
-      "DisplayName": "string",
-      "QuantityId": "string",
-      "ConversionFactor": 0,
-      "ConversionOffset": 0
+{
+    "Id":"Angular Velocity",
+    "Name":"Angular Velocity",
+    "BaseUom":{
+        "Id":"radian per second",
+        "Abbreviation":"rad/s",
+        "Name":"radian per second",
+        "DisplayName":"radian per second",
+        "QuantityId":"Angular Velocity",
+        "ConversionFactor":1
     },
-    "Dimensions": [
-      0
+    "Dimensions":[
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0
     ]
-  }
+},
+{
+    "Id":"Area",
+    "Name":"Area",
+    "BaseUom":{
+        "Id":"square meter",
+        "Abbreviation":"m2",
+        "Name":"square meter",
+        "DisplayName":"square meter",
+        "QuantityId":"Area",
+        "ConversionFactor":1
+    },
+    "Dimensions":[
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+    ]
+}
 ]
+```
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "Parameters": {
+    "property1": "string",
+    "property2": "string"
+  }
+}
 ```
 
 ---
@@ -95,21 +137,42 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}
 > 200 Response
 
 ```json
+HTTP/1.1 200
+Content-Type: application/json
 {
-  "Id": "string",
-  "Name": "string",
-  "BaseUom": {
-    "Id": "string",
-    "Abbreviation": "string",
-    "Name": "string",
-    "DisplayName": "string",
-    "QuantityId": "string",
-    "ConversionFactor": 0,
-    "ConversionOffset": 0
-  },
-  "Dimensions": [
+"Id":"Length",
+"Name":"Length",
+"BaseUom":{
+    "Id":"meter",
+    "Abbreviation":"m",
+    "Name":"meter",
+    "DisplayName":"meter",
+    "QuantityId":"Length",
+    "ConversionFactor":1
+},
+"Dimensions":[
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
     0
-  ]
+]
+}
+```
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "Parameters": {
+    "property1": "string",
+    "property2": "string"
+  }
 }
 ```
 
@@ -149,17 +212,40 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/
 > 200 Response
 
 ```json
+HTTP/1.1 200
+Content-Type: application/json
 [
-  {
-    "Id": "string",
-    "Abbreviation": "string",
-    "Name": "string",
-    "DisplayName": "string",
-    "QuantityId": "string",
-    "ConversionFactor": 0,
-    "ConversionOffset": 0
-  }
+{
+    "Id":"milliampere",
+    "Abbreviation":"mA",
+    "Name":"milliampere",
+    "DisplayName":"milliampere",
+    "QuantityId":"Electric Current",
+    "ConversionFactor":0.001
+},
+{
+    "Id":"ampere",
+    "Abbreviation":"A",
+    "Name":"ampere",
+    "DisplayName":"ampere",
+    "QuantityId":"Electric Current",
+    "ConversionFactor":1
+}
 ]
+```
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "Parameters": {
+    "property1": "string",
+    "property2": "string"
+  }
+}
 ```
 
 ---
@@ -199,14 +285,29 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/
 > 200 Response
 
 ```json
+HTTP/1.1 200
+Content-Type: application/json
 {
-  "Id": "string",
-  "Abbreviation": "string",
-  "Name": "string",
-  "DisplayName": "string",
-  "QuantityId": "string",
-  "ConversionFactor": 0,
-  "ConversionOffset": 0
+    "Id": "mile",
+    "Abbreviation": "mi",
+    "Name": "mile",
+    "DisplayName": "mile",
+    "QuantityId": "Length",
+    "ConversionFactor": 1609.344
+}
+```
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "Parameters": {
+    "property1": "string",
+    "property2": "string"
+  }
 }
 ```
 

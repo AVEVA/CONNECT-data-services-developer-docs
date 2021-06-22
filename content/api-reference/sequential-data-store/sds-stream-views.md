@@ -39,29 +39,50 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews
 > 200 Response
 
 ```json
+HTTP/1.1 200
+Content-Type: application/json
 [
-  {
-    "Id": "string",
-    "Name": "string",
-    "Description": "string",
-    "SourceTypeId": "string",
-    "TargetTypeId": "string",
-    "Properties": [
-      {
-        "SourceId": "string",
-        "TargetId": "string",
-        "SdsStreamView": {
-          "Id": null,
-          "Name": null,
-          "Description": null,
-          "SourceTypeId": null,
-          "TargetTypeId": null,
-          "Properties": null
+{
+    "Id":"StreamView",
+    "Name":"StreamView",
+    "SourceTypeId":"Simple",
+    "TargetTypeId":"Simple3"
+},
+{
+    "Id":"StreamViewWithProperties",
+    "Name":"StreamViewWithProperties",
+    "SourceTypeId":"Simple",
+    "TargetTypeId":"Simple3",
+    "Properties":[
+        {
+            "SourceId":"Time",
+            "TargetId":"Time"
+        },
+        {
+            "SourceId":"State",
+            "TargetId":"State"
+        },
+        {
+            "SourceId":"Measurement",
+            "TargetId":"Value"
         }
-      }
     ]
-  }
+}
 ]
+```
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "Parameters": {
+    "property1": "string",
+    "property2": "string"
+  }
+}
 ```
 
 ---
@@ -100,28 +121,41 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewI
 > 200 Response
 
 ```json
+HTTP/1.1 200
+Content-Type: application/json
 {
-  "Id": "string",
-  "Name": "string",
-  "Description": "string",
-  "SourceTypeId": "string",
-  "TargetTypeId": "string",
-  "Properties": [
+    "Id":"StreamView",
+    "Name":"StreamView",
+    "SourceTypeId":"Simple",
+    "TargetTypeId":"Simple3",
+    "Properties":[
+        {
+            "SourceId":"Time",
+            "TargetId":"Time"
+        },
     {
-      "SourceId": "string",
-      "TargetId": "string",
-      "SdsStreamView": {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SourceTypeId": "string",
-        "TargetTypeId": "string",
-        "Properties": [
-          null
-        ]
-      }
+        "SourceId":"State",
+        "TargetId":"State"
+    },
+    {
+        "SourceId":"Measurement",
+        "TargetId":"Value"
     }
-  ]
+    ]
+}
+```
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "Parameters": {
+    "property1": "string",
+    "property2": "string"
+  }
 }
 ```
 
@@ -334,23 +368,43 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewI
 > 200 Response
 
 ```json
+HTTP/1.1 200
+Content-Type: application/json
 {
-  "SourceTypeId": "string",
-  "TargetTypeId": "string",
-  "Properties": [
-    {
-      "SourceId": "string",
-      "TargetId": "string",
-      "Mode": 0,
-      "StreamViewMap": {
-        "SourceTypeId": "string",
-        "TargetTypeId": "string",
-        "Properties": [
-          null
-        ]
-      }
-    }
-  ]
+    "SourceTypeId": "Simple",
+    "TargetTypeId": "Simple3",
+    "Properties": [
+        {
+            "SourceId": "Time",
+            "TargetId": "Time"
+        },
+        {
+            "SourceId": "Measurement",
+            "TargetId": "Value",
+            "Mode": 20
+        },
+        {
+            "SourceId": "State",
+            "Mode": 2
+        },
+        {
+            "TargetId": "State",
+            "Mode": 1
+        }
+    ]
+}
+```> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "Parameters": {
+    "property1": "string",
+    "property2": "string"
+  }
 }
 ```
 

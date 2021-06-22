@@ -6,9 +6,9 @@ uid: sds-units-of-measure
 # Units Of Measure
 Controller handling requests routed to {namespaceId}/Units/. This controller should have read/get methods only, as update/write operations on units go through the QuantityController
 
-## `List Uoms`
+## `List Units of Measure`
 
-<a id="opIdUnit_List Uoms"></a>
+<a id="opIdUnit_List Units of Measure"></a>
 
 Returns a list of all available units of measure in the system.
 
@@ -39,24 +39,55 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Units
 > 200 Response
 
 ```json
+HTTP/1.1 200
+Content-Type: application/json
 [
-  {
-    "Id": "string",
-    "Abbreviation": "string",
-    "Name": "string",
-    "DisplayName": "string",
-    "QuantityId": "string",
-    "ConversionFactor": 0,
-    "ConversionOffset": 0
-  }
+{
+    "Id":"count",
+    "Abbreviation":"count",
+    "Name":"count",
+    "DisplayName":"count",
+    "QuantityId":"Quantity",
+    "ConversionFactor":1
+},
+{
+    "Id":"Ampere hour",
+    "Abbreviation":"Ah",
+    "Name":"Ampere hour",
+    "DisplayName":"Ampere hour",
+    "QuantityId":"Electric Charge",
+    "ConversionFactor":3600
+},
+{
+    "Id":"coulomb",
+    "Abbreviation":"C",
+    "Name":"coulomb",
+    "DisplayName":"coulomb",
+    "QuantityId":"Electric Charge",
+    "ConversionFactor":1
+}
 ]
+```
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "Parameters": {
+    "property1": "string",
+    "property2": "string"
+  }
+}
 ```
 
 ---
 
-## `Get Uom`
+## `Get Unit of Measure`
 
-<a id="opIdUnit_Get Uom"></a>
+<a id="opIdUnit_Get Unit of Measure"></a>
 
 Returns the unit of measure corresponding to the specified uomId within a given namespace.
 
@@ -88,14 +119,29 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Units/{uomId}
 > 200 Response
 
 ```json
+HTTP/1.1 200
+Content-Type: application/json
 {
-  "Id": "string",
-  "Abbreviation": "string",
-  "Name": "string",
-  "DisplayName": "string",
-  "QuantityId": "string",
-  "ConversionFactor": 0,
-  "ConversionOffset": 0
+    "Id":"ounce",
+    "Abbreviation":"oz",
+    "Name":"ounce",
+    "DisplayName":"ounce",
+    "QuantityId":"Mass",
+    "ConversionFactor":0.028349523
+}
+```
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "Parameters": {
+    "property1": "string",
+    "property2": "string"
+  }
 }
 ```
 

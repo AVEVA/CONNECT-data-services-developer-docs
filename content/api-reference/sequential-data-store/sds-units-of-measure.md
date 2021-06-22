@@ -6,22 +6,22 @@ uid: sds-units-of-measure
 # Units Of Measure
 Controller handling requests routed to {namespaceId}/Units/. This controller should have read/get methods only, as update/write operations on units go through the QuantityController
 
-## `List Units of Measure`
+## `List Uoms`
 
-<a id="opIdUnit_List Units of Measure"></a>
+<a id="opIdUnit_List Uoms"></a>
 
 Returns a list of all available units of measure in the system.
 
 ### Request
 ```text 
-GET /api/v1/Tenants/Namespaces/{namespaceId}/Units
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Units
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>
 
 ### Response
 
@@ -39,69 +39,38 @@ GET /api/v1/Tenants/Namespaces/{namespaceId}/Units
 > 200 Response
 
 ```json
-HTTP/1.1 200
-Content-Type: application/json
 [
-{
-    "Id":"count",
-    "Abbreviation":"count",
-    "Name":"count",
-    "DisplayName":"count",
-    "QuantityId":"Quantity",
-    "ConversionFactor":1
-},
-{
-    "Id":"Ampere hour",
-    "Abbreviation":"Ah",
-    "Name":"Ampere hour",
-    "DisplayName":"Ampere hour",
-    "QuantityId":"Electric Charge",
-    "ConversionFactor":3600
-},
-{
-    "Id":"coulomb",
-    "Abbreviation":"C",
-    "Name":"coulomb",
-    "DisplayName":"coulomb",
-    "QuantityId":"Electric Charge",
-    "ConversionFactor":1
-}
-]
-```
-> 400 Response
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
+  {
+    "Id": "string",
+    "Abbreviation": "string",
+    "Name": "string",
+    "DisplayName": "string",
+    "QuantityId": "string",
+    "ConversionFactor": 0,
+    "ConversionOffset": 0
   }
-}
+]
 ```
 
 ---
 
-## `Get Unit of Measure`
+## `Get Uom`
 
-<a id="opIdUnit_Get Unit of Measure"></a>
+<a id="opIdUnit_Get Uom"></a>
 
 Returns the unit of measure corresponding to the specified uomId within a given namespace.
 
 ### Request
 ```text 
-GET /api/v1/Tenants/Namespaces/{namespaceId}/Units/{uomId}
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Units/{uomId}
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string uomId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string uomId`
+<br/>The unit of measure identifier<br/><br/>
 
 ### Response
 
@@ -119,29 +88,14 @@ GET /api/v1/Tenants/Namespaces/{namespaceId}/Units/{uomId}
 > 200 Response
 
 ```json
-HTTP/1.1 200
-Content-Type: application/json
 {
-    "Id":"ounce",
-    "Abbreviation":"oz",
-    "Name":"ounce",
-    "DisplayName":"ounce",
-    "QuantityId":"Mass",
-    "ConversionFactor":0.028349523
-}
-```
-> 400 Response
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
-  }
+  "Id": "string",
+  "Abbreviation": "string",
+  "Name": "string",
+  "DisplayName": "string",
+  "QuantityId": "string",
+  "ConversionFactor": 0,
+  "ConversionOffset": 0
 }
 ```
 

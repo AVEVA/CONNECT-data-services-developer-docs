@@ -14,14 +14,14 @@ Returns a list of `SdsStreamView`.
 
 ### Request
 ```text 
-GET /api/v1/Tenants/Namespaces/{namespaceId}/StreamViews
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>
 
 ### Response
 
@@ -39,50 +39,29 @@ GET /api/v1/Tenants/Namespaces/{namespaceId}/StreamViews
 > 200 Response
 
 ```json
-HTTP/1.1 200
-Content-Type: application/json
 [
-{
-    "Id":"StreamView",
-    "Name":"StreamView",
-    "SourceTypeId":"Simple",
-    "TargetTypeId":"Simple3"
-},
-{
-    "Id":"StreamViewWithProperties",
-    "Name":"StreamViewWithProperties",
-    "SourceTypeId":"Simple",
-    "TargetTypeId":"Simple3",
-    "Properties":[
-        {
-            "SourceId":"Time",
-            "TargetId":"Time"
-        },
-        {
-            "SourceId":"State",
-            "TargetId":"State"
-        },
-        {
-            "SourceId":"Measurement",
-            "TargetId":"Value"
+  {
+    "Id": "string",
+    "Name": "string",
+    "Description": "string",
+    "SourceTypeId": "string",
+    "TargetTypeId": "string",
+    "Properties": [
+      {
+        "SourceId": "string",
+        "TargetId": "string",
+        "SdsStreamView": {
+          "Id": null,
+          "Name": null,
+          "Description": null,
+          "SourceTypeId": null,
+          "TargetTypeId": null,
+          "Properties": null
         }
+      }
     ]
-}
-]
-```
-> 400 Response
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
   }
-}
+]
 ```
 
 ---
@@ -95,15 +74,15 @@ Returns the `SdsStreamView`.
 
 ### Request
 ```text 
-GET /api/v1/Tenants/Namespaces/{namespaceId}/StreamViews/{streamViewId}
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string streamViewId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string streamViewId`
+<br/>Stream view identifier<br/><br/><br/>
 
 ### Response
 
@@ -121,41 +100,28 @@ GET /api/v1/Tenants/Namespaces/{namespaceId}/StreamViews/{streamViewId}
 > 200 Response
 
 ```json
-HTTP/1.1 200
-Content-Type: application/json
 {
-    "Id":"StreamView",
-    "Name":"StreamView",
-    "SourceTypeId":"Simple",
-    "TargetTypeId":"Simple3",
-    "Properties":[
-        {
-            "SourceId":"Time",
-            "TargetId":"Time"
-        },
+  "Id": "string",
+  "Name": "string",
+  "Description": "string",
+  "SourceTypeId": "string",
+  "TargetTypeId": "string",
+  "Properties": [
     {
-        "SourceId":"State",
-        "TargetId":"State"
-    },
-    {
-        "SourceId":"Measurement",
-        "TargetId":"Value"
+      "SourceId": "string",
+      "TargetId": "string",
+      "SdsStreamView": {
+        "Id": "string",
+        "Name": "string",
+        "Description": "string",
+        "SourceTypeId": "string",
+        "TargetTypeId": "string",
+        "Properties": [
+          null
+        ]
+      }
     }
-    ]
-}
-```
-> 400 Response
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
-  }
+  ]
 }
 ```
 
@@ -169,15 +135,15 @@ If an `SdsStreamView` with a matching identifier already exists, the stream view
 
 ### Request
 ```text 
-POST /api/v1/Tenants/Namespaces/{namespaceId}/StreamViews/{streamViewId}
+POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string streamViewId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string streamViewId`
+<br/>Stream view identifier<br/><br/><br/>
 
 ### Response
 
@@ -232,15 +198,15 @@ Creates or updates the definition of a `SdsStreamView`.
 
 ### Request
 ```text 
-PUT /api/v1/Tenants/Namespaces/{namespaceId}/StreamViews/{streamViewId}
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string streamViewId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string streamViewId`
+<br/>Stream view identifier<br/><br/><br/>
 
 ### Response
 
@@ -294,15 +260,15 @@ Deletes a stream view from the specified tenant and namespace.
 
 ### Request
 ```text 
-DELETE /api/v1/Tenants/Namespaces/{namespaceId}/StreamViews/{streamViewId}
+DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string streamViewId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string streamViewId`
+<br/>Stream view identifier<br/><br/><br/>
 
 ### Response
 
@@ -342,15 +308,15 @@ Returns the `SdsStreamViewMap` corresponding to the specified streamViewId.
 
 ### Request
 ```text 
-GET /api/v1/Tenants/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Map
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Map
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string streamViewId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string streamViewId`
+<br/>Stream view identifier<br/><br/><br/>
 
 ### Response
 
@@ -368,43 +334,23 @@ GET /api/v1/Tenants/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Map
 > 200 Response
 
 ```json
-HTTP/1.1 200
-Content-Type: application/json
 {
-    "SourceTypeId": "Simple",
-    "TargetTypeId": "Simple3",
-    "Properties": [
-        {
-            "SourceId": "Time",
-            "TargetId": "Time"
-        },
-        {
-            "SourceId": "Measurement",
-            "TargetId": "Value",
-            "Mode": 20
-        },
-        {
-            "SourceId": "State",
-            "Mode": 2
-        },
-        {
-            "TargetId": "State",
-            "Mode": 1
-        }
-    ]
-}
-```> 400 Response
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
-  }
+  "SourceTypeId": "string",
+  "TargetTypeId": "string",
+  "Properties": [
+    {
+      "SourceId": "string",
+      "TargetId": "string",
+      "Mode": 0,
+      "StreamViewMap": {
+        "SourceTypeId": "string",
+        "TargetTypeId": "string",
+        "Properties": [
+          null
+        ]
+      }
+    }
+  ]
 }
 ```
 

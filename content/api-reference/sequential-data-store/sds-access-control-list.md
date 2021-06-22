@@ -63,14 +63,14 @@ Updates the default ACL for the Stream Views collection.
 
 ### Request
 ```text 
-PUT /api/v1/Tenants/Namespaces/{namespaceId}/AccessControl
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>
 
 ### Response
 
@@ -110,14 +110,14 @@ Updates the default ACL for the Stream Views collection. This allows the ACL to 
 
 ### Request
 ```text 
-PATCH /api/v1/Tenants/Namespaces/{namespaceId}/AccessControl
+PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>
 
 ### Response
 
@@ -158,14 +158,15 @@ Gets the Access Rights associated with the specified stream view for the request
 
 ### Request
 ```text 
-GET /api/v1/Tenants/Namespaces/{namespaceId}/AccessControl/AccessRights
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/AccessRights
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string streamViewId`
+<br/>Stream view identifier<br/><br/><br/>
 
 ### Response
 
@@ -205,14 +206,15 @@ Returns the Owner of the specified stream view.
 
 ### Request
 ```text 
-GET /api/v1/Tenants/Namespaces/{namespaceId}/AccessControl/Owner
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Owner
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string streamViewId`
+<br/>Stream view identifier<br/><br/><br/>
 
 ### Response
 
@@ -247,14 +249,15 @@ Updates the Owner of the specified stream view.
 
 ### Request
 ```text 
-PUT /api/v1/Tenants/Namespaces/{namespaceId}/AccessControl/Owner
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Owner
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string streamViewId`
+<br/>Stream view identifier<br/><br/><br/>
 
 ### Response
 
@@ -295,14 +298,14 @@ Gets the default ACL for the Quantities collection. An ETag header is returned, 
 
 ### Request
 ```text 
-GET /api/v1/Tenants/Namespaces/{namespaceId}/AccessControl/Quantities
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Quantities
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>
 
 ### Response
 
@@ -344,14 +347,14 @@ Updates the default ACL for the Quantities collection.
 
 ### Request
 ```text 
-PUT /api/v1/Tenants/Namespaces/{namespaceId}/AccessControl/Quantities
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Quantities
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>
 
 ### Response
 
@@ -390,14 +393,14 @@ Updates the default ACL for the Quantities collection using an RFC 6902 complian
 
 ### Request
 ```text 
-PATCH /api/v1/Tenants/Namespaces/{namespaceId}/AccessControl/Quantities
+PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Quantities
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>
 
 ### Response
 
@@ -437,14 +440,14 @@ Gets the default ACL for the Streams collection. An ETag header is returned, whi
 
 ### Request
 ```text 
-GET /api/v1/Tenants/Namespaces/{namespaceId}/AccessControl/Streams
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Streams
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>
 
 ### Response
 
@@ -486,14 +489,14 @@ Updates the default ACL for the Streams collection.
 
 ### Request
 ```text 
-PUT /api/v1/Tenants/Namespaces/{namespaceId}/AccessControl/Streams
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Streams
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>
 
 ### Response
 
@@ -532,14 +535,14 @@ Updates the default ACL for the Streams collection using an RFC 6902 compliant J
 
 ### Request
 ```text 
-PATCH /api/v1/Tenants/Namespaces/{namespaceId}/AccessControl/Streams
+PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Streams
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>
 
 ### Response
 
@@ -579,14 +582,14 @@ Gets the default ACL for the Stream Views collection. An ETag header is returned
 
 ### Request
 ```text 
-GET /api/v1/Tenants/Namespaces/{namespaceId}/AccessControl/StreamViews
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/StreamViews
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>
 
 ### Response
 
@@ -628,14 +631,14 @@ Updates the default ACL for the Stream Views collection.
 
 ### Request
 ```text 
-PUT /api/v1/Tenants/Namespaces/{namespaceId}/AccessControl/StreamViews
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/StreamViews
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>
 
 ### Response
 
@@ -674,14 +677,14 @@ Updates the default ACL for the Stream Views collection using an RFC 6902 compli
 
 ### Request
 ```text 
-PATCH /api/v1/Tenants/Namespaces/{namespaceId}/AccessControl/StreamViews
+PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/StreamViews
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>
 
 ### Response
 
@@ -721,14 +724,14 @@ Gets the default ACL for the Types collection. An ETag header is returned, which
 
 ### Request
 ```text 
-GET /api/v1/Tenants/Namespaces/{namespaceId}/AccessControl/Types
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Types
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>
 
 ### Response
 
@@ -770,14 +773,14 @@ Updates the default ACL for the Types collection.
 
 ### Request
 ```text 
-PUT /api/v1/Tenants/Namespaces/{namespaceId}/AccessControl/Types
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Types
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>
 
 ### Response
 
@@ -816,14 +819,14 @@ Updates the default ACL for the Types collection using an RFC 6902 compliant JSO
 
 ### Request
 ```text 
-PATCH /api/v1/Tenants/Namespaces/{namespaceId}/AccessControl/Types
+PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Types
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>
 
 ### Response
 
@@ -863,15 +866,15 @@ Gets the ACL of the specified quantity
 
 ### Request
 ```text 
-GET /api/v1/Tenants/Namespaces/{namespaceId}/Quantities/{quantityId}/AccessControl
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/AccessControl
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string quantityId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string quantityId`
+<br/>The quantity identifier<br/><br/>
 
 ### Response
 
@@ -914,15 +917,15 @@ Updates the ACL of the specified quantity
 
 ### Request
 ```text 
-PUT /api/v1/Tenants/Namespaces/{namespaceId}/Quantities/{quantityId}/AccessControl
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/AccessControl
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string quantityId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string quantityId`
+<br/>The quantity identifier<br/><br/>
 
 ### Response
 
@@ -963,15 +966,15 @@ Updates the ACL for the specified quantity using an RFC 6902 compliant JSON Patc
 
 ### Request
 ```text 
-PATCH /api/v1/Tenants/Namespaces/{namespaceId}/Quantities/{quantityId}/AccessControl
+PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/AccessControl
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string quantityId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string quantityId`
+<br/>The quantity identifier<br/><br/>
 
 ### Response
 
@@ -1016,15 +1019,15 @@ Gets the Access Rights associated with the specified quantity for the requesting
 
 ### Request
 ```text 
-GET /api/v1/Tenants/Namespaces/{namespaceId}/Quantities/{quantityId}/AccessRights
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/AccessRights
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string quantityId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string quantityId`
+<br/>The quantity identifier<br/><br/>
 
 ### Response
 
@@ -1064,15 +1067,15 @@ Gets the Owner of the specified quantity
 
 ### Request
 ```text 
-GET /api/v1/Tenants/Namespaces/{namespaceId}/Quantities/{quantityId}/Owner
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Owner
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string quantityId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string quantityId`
+<br/>The quantity identifier<br/><br/>
 
 ### Response
 
@@ -1107,15 +1110,15 @@ Updates the Owner of the specified quantity
 
 ### Request
 ```text 
-PUT /api/v1/Tenants/Namespaces/{namespaceId}/Quantities/{quantityId}/Owner
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Owner
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string quantityId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string quantityId`
+<br/>The quantity identifier<br/><br/>
 
 ### Response
 
@@ -1156,16 +1159,16 @@ Gets the ACL of the specified unit of measure
 
 ### Request
 ```text 
-GET /api/v1/Tenants/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/AccessControl
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/AccessControl
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string quantityId`
-<br/><br/>`string uomId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string quantityId`
+<br/>The quantity identifier<br/><br/>`string uomId`
+<br/>The unit of measure identifier<br/><br/>
 
 ### Response
 
@@ -1208,16 +1211,16 @@ Updates the ACL of the specified unit of measure
 
 ### Request
 ```text 
-PUT /api/v1/Tenants/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/AccessControl
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/AccessControl
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string quantityId`
-<br/><br/>`string uomId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string quantityId`
+<br/>The quantity identifier<br/><br/>`string uomId`
+<br/>The unit of measure identifier<br/><br/>
 
 ### Response
 
@@ -1258,16 +1261,16 @@ Updates the ACL for the specified unit of measure using an RFC 6902 compliant JS
 
 ### Request
 ```text 
-PATCH /api/v1/Tenants/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/AccessControl
+PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/AccessControl
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string quantityId`
-<br/><br/>`string uomId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string quantityId`
+<br/>The quantity identifier<br/><br/>`string uomId`
+<br/>The unit of measure identifier<br/><br/>
 
 ### Response
 
@@ -1309,16 +1312,16 @@ Gets the Access Rights associated with the specified unit of measure for the req
 
 ### Request
 ```text 
-GET /api/v1/Tenants/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/AccessRights
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/AccessRights
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string quantityId`
-<br/><br/>`string uomId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string quantityId`
+<br/>The quantity identifier<br/><br/>`string uomId`
+<br/>The unit of measure identifier<br/><br/>
 
 ### Response
 
@@ -1358,16 +1361,16 @@ Gets the Owner of the specified unit of measure
 
 ### Request
 ```text 
-GET /api/v1/Tenants/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/Owner
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/Owner
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string quantityId`
-<br/><br/>`string uomId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string quantityId`
+<br/>The quantity identifier<br/><br/>`string uomId`
+<br/>The unit of measure identifier<br/><br/>
 
 ### Response
 
@@ -1402,16 +1405,16 @@ Updates the Owner of the specified unit of measure
 
 ### Request
 ```text 
-PUT /api/v1/Tenants/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/Owner
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/Owner
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string quantityId`
-<br/><br/>`string uomId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string quantityId`
+<br/>The quantity identifier<br/><br/>`string uomId`
+<br/>The unit of measure identifier<br/><br/>
 
 ### Response
 
@@ -1452,15 +1455,15 @@ Returns the ACL of the specified stream.
 
 ### Request
 ```text 
-GET /api/v1/Tenants/Namespaces/{namespaceId}/Streams/{streamId}/AccessControl
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/AccessControl
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string streamId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string streamId`
+<br/>Stream identifier<br/><br/><br/>
 
 ### Response
 
@@ -1503,15 +1506,15 @@ Updates the ACL of the specified stream.
 
 ### Request
 ```text 
-PUT /api/v1/Tenants/Namespaces/{namespaceId}/Streams/{streamId}/AccessControl
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/AccessControl
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string streamId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string streamId`
+<br/>Stream identifier<br/><br/><br/>
 
 ### Response
 
@@ -1552,15 +1555,15 @@ Updates the ACL of the specified stream using an RFC 6902 compliant JSON Patch d
 
 ### Request
 ```text 
-PATCH /api/v1/Tenants/Namespaces/{namespaceId}/Streams/{streamId}/AccessControl
+PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/AccessControl
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string streamId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string streamId`
+<br/>Stream identifier<br/><br/><br/>
 
 ### Response
 
@@ -1602,15 +1605,15 @@ Returns the access rights associated with the specified stream for the requestin
 
 ### Request
 ```text 
-GET /api/v1/Tenants/Namespaces/{namespaceId}/Streams/{streamId}/AccessRights
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/AccessRights
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string streamId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string streamId`
+<br/>Stream identifier<br/><br/><br/>
 
 ### Response
 
@@ -1650,15 +1653,15 @@ Returns the Owner of the specified stream.
 
 ### Request
 ```text 
-GET /api/v1/Tenants/Namespaces/{namespaceId}/Streams/{streamId}/Owner
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Owner
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string streamId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string streamId`
+<br/>Stream identifier<br/><br/><br/>
 
 ### Response
 
@@ -1693,15 +1696,15 @@ Updates the Owner of the specified stream.
 
 ### Request
 ```text 
-PUT /api/v1/Tenants/Namespaces/{namespaceId}/Streams/{streamId}/Owner
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Owner
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string streamId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string streamId`
+<br/>Stream identifier<br/><br/><br/>
 
 ### Response
 
@@ -1742,14 +1745,14 @@ Gets the ACL of the specified type
 
 ### Request
 ```text 
-GET /api/v1/Tenants/Namespaces/{namespaceId}/Types/{typeId}/AccessControl
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessControl
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string typeId`
+<br/>Namespace identifier<br/><br/><br/>`string typeId`
 <br/><br/>
 
 ### Response
@@ -1793,14 +1796,14 @@ Updates the ACL of the specified type
 
 ### Request
 ```text 
-PUT /api/v1/Tenants/Namespaces/{namespaceId}/Types/{typeId}/AccessControl
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessControl
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string typeId`
+<br/>Namespace identifier<br/><br/><br/>`string typeId`
 <br/><br/>
 
 ### Response
@@ -1841,14 +1844,14 @@ Updates the ACL for the specified type using an RFC 6902 compliant JSON Patch do
 
 ### Request
 ```text 
-PATCH /api/v1/Tenants/Namespaces/{namespaceId}/Types/{typeId}/AccessControl
+PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessControl
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string typeId`
+<br/>Namespace identifier<br/><br/><br/>`string typeId`
 <br/><br/>
 
 ### Response
@@ -1889,14 +1892,14 @@ Gets the Access Rights associated with the specified type for the requesting ide
 
 ### Request
 ```text 
-GET /api/v1/Tenants/Namespaces/{namespaceId}/Types/{typeId}/AccessRights
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessRights
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string typeId`
+<br/>Namespace identifier<br/><br/><br/>`string typeId`
 <br/><br/>
 
 ### Response
@@ -1912,14 +1915,6 @@ GET /api/v1/Tenants/Namespaces/{namespaceId}/Types/{typeId}/AccessRights
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
 #### Example response body
-> 200 Response
-
-```json
-HTTP/1.1 200
-Content-Type: application/json
-
-["Read", "Write"]
-```
 > 400 Response
 
 ```json
@@ -1945,14 +1940,14 @@ Gets the Owner of the specified type
 
 ### Request
 ```text 
-GET /api/v1/Tenants/Namespaces/{namespaceId}/Types/{typeId}/Owner
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Owner
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string typeId`
+<br/>Namespace identifier<br/><br/><br/>`string typeId`
 <br/><br/>
 
 ### Response
@@ -1988,14 +1983,14 @@ Updates the Owner of the specified type
 
 ### Request
 ```text 
-PUT /api/v1/Tenants/Namespaces/{namespaceId}/Types/{typeId}/Owner
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Owner
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string typeId`
+<br/>Namespace identifier<br/><br/><br/>`string typeId`
 <br/><br/>
 
 ### Response

@@ -14,14 +14,14 @@ Returns a list of all quantities available within a given namespace
 
 ### Request
 ```text 
-GET /api/v1/Tenants/Namespaces/{namespaceId}/Quantities
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>
 
 ### Response
 
@@ -39,66 +39,24 @@ GET /api/v1/Tenants/Namespaces/{namespaceId}/Quantities
 > 200 Response
 
 ```json
-HTTP/1.1 200
-Content-Type: application/json
 [
-{
-    "Id":"Angular Velocity",
-    "Name":"Angular Velocity",
-    "BaseUom":{
-        "Id":"radian per second",
-        "Abbreviation":"rad/s",
-        "Name":"radian per second",
-        "DisplayName":"radian per second",
-        "QuantityId":"Angular Velocity",
-        "ConversionFactor":1
+  {
+    "Id": "string",
+    "Name": "string",
+    "BaseUom": {
+      "Id": "string",
+      "Abbreviation": "string",
+      "Name": "string",
+      "DisplayName": "string",
+      "QuantityId": "string",
+      "ConversionFactor": 0,
+      "ConversionOffset": 0
     },
-    "Dimensions":[
-        0,
-        0,
-        -1,
-        0,
-        0,
-        0,
-        0
+    "Dimensions": [
+      0
     ]
-},
-{
-    "Id":"Area",
-    "Name":"Area",
-    "BaseUom":{
-        "Id":"square meter",
-        "Abbreviation":"m2",
-        "Name":"square meter",
-        "DisplayName":"square meter",
-        "QuantityId":"Area",
-        "ConversionFactor":1
-    },
-    "Dimensions":[
-        2,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-    ]
-}
-]
-```
-> 400 Response
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
   }
-}
+]
 ```
 
 ---
@@ -111,15 +69,15 @@ Returns the quantity corresponding to the specified quantityId within a given na
 
 ### Request
 ```text 
-GET /api/v1/Tenants/Namespaces/{namespaceId}/Quantities/{quantityId}
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string quantityId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string quantityId`
+<br/>The quantity identifier<br/><br/>
 
 ### Response
 
@@ -137,42 +95,21 @@ GET /api/v1/Tenants/Namespaces/{namespaceId}/Quantities/{quantityId}
 > 200 Response
 
 ```json
-HTTP/1.1 200
-Content-Type: application/json
 {
-"Id":"Length",
-"Name":"Length",
-"BaseUom":{
-    "Id":"meter",
-    "Abbreviation":"m",
-    "Name":"meter",
-    "DisplayName":"meter",
-    "QuantityId":"Length",
-    "ConversionFactor":1
-},
-"Dimensions":[
-    1,
-    0,
-    0,
-    0,
-    0,
-    0,
+  "Id": "string",
+  "Name": "string",
+  "BaseUom": {
+    "Id": "string",
+    "Abbreviation": "string",
+    "Name": "string",
+    "DisplayName": "string",
+    "QuantityId": "string",
+    "ConversionFactor": 0,
+    "ConversionOffset": 0
+  },
+  "Dimensions": [
     0
-]
-}
-```
-> 400 Response
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
-  }
+  ]
 }
 ```
 
@@ -186,15 +123,15 @@ Returns the list of units of measure that belongs to the quantity with the speci
 
 ### Request
 ```text 
-GET /api/v1/Tenants/Namespaces/{namespaceId}/Quantities/{quantityId}/Units
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string quantityId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string quantityId`
+<br/>The quantity identifier<br/><br/>
 
 ### Response
 
@@ -212,40 +149,17 @@ GET /api/v1/Tenants/Namespaces/{namespaceId}/Quantities/{quantityId}/Units
 > 200 Response
 
 ```json
-HTTP/1.1 200
-Content-Type: application/json
 [
-{
-    "Id":"milliampere",
-    "Abbreviation":"mA",
-    "Name":"milliampere",
-    "DisplayName":"milliampere",
-    "QuantityId":"Electric Current",
-    "ConversionFactor":0.001
-},
-{
-    "Id":"ampere",
-    "Abbreviation":"A",
-    "Name":"ampere",
-    "DisplayName":"ampere",
-    "QuantityId":"Electric Current",
-    "ConversionFactor":1
-}
-]
-```
-> 400 Response
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
+  {
+    "Id": "string",
+    "Abbreviation": "string",
+    "Name": "string",
+    "DisplayName": "string",
+    "QuantityId": "string",
+    "ConversionFactor": 0,
+    "ConversionOffset": 0
   }
-}
+]
 ```
 
 ---
@@ -258,16 +172,16 @@ Returns the unit of measure associated with the specified uomId belonging to the
 
 ### Request
 ```text 
-GET /api/v1/Tenants/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string quantityId`
-<br/><br/>`string uomId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string quantityId`
+<br/>The quantity identifier<br/><br/>`string uomId`
+<br/>The unit of measure identifier<br/><br/>
 
 ### Response
 
@@ -285,29 +199,14 @@ GET /api/v1/Tenants/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomI
 > 200 Response
 
 ```json
-HTTP/1.1 200
-Content-Type: application/json
 {
-    "Id": "mile",
-    "Abbreviation": "mi",
-    "Name": "mile",
-    "DisplayName": "mile",
-    "QuantityId": "Length",
-    "ConversionFactor": 1609.344
-}
-```
-> 400 Response
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
-  }
+  "Id": "string",
+  "Abbreviation": "string",
+  "Name": "string",
+  "DisplayName": "string",
+  "QuantityId": "string",
+  "ConversionFactor": 0,
+  "ConversionOffset": 0
 }
 ```
 

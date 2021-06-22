@@ -29,15 +29,15 @@ SDS supports four ways of specifying which stored events to return:
 
 ### Request
 ```text 
-GET /api/v1/Tenants/Namespaces/{namespaceId}/Streams/{streamId}/Data
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string streamId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string streamId`
+<br/>Stream identifier<br/><br/><br/>
 
 ### Response
 
@@ -100,15 +100,15 @@ The streamId and index that caused the issue are included in the error response.
 
 ### Request
 ```text 
-POST /api/v1/Tenants/Namespaces/{namespaceId}/Streams/{streamId}/Data
+POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string streamId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string streamId`
+<br/>Stream identifier<br/><br/><br/>
 
 ### Response
 
@@ -153,15 +153,15 @@ The index that caused the issue is included in the error response.
 
 ### Request
 ```text 
-PUT /api/v1/Tenants/Namespaces/{namespaceId}/Streams/{streamId}/Data
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string streamId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string streamId`
+<br/>Stream identifier<br/><br/><br/>
 
 ### Response
 
@@ -207,15 +207,15 @@ If there is a problem patching any individual event, the entire operation is rol
 
 ### Request
 ```text 
-PATCH /api/v1/Tenants/Namespaces/{namespaceId}/Streams/{streamId}/Data
+PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string streamId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string streamId`
+<br/>Stream identifier<br/><br/><br/>
 
 ### Response
 
@@ -267,15 +267,15 @@ If this occurs, you can use [Window request](https://ocs-docs.osisoft.com/Conten
 
 ### Request
 ```text 
-DELETE /api/v1/Tenants/Namespaces/{namespaceId}/Streams/{streamId}/Data
+DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string streamId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string streamId`
+<br/>Stream identifier<br/><br/><br/>
 
 ### Response
 
@@ -315,15 +315,15 @@ Returns the first value in the stream. If no values exist in the stream, null is
 
 ### Request
 ```text 
-GET /api/v1/Tenants/Namespaces/{namespaceId}/Streams/{streamId}/Data/First
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/First
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string streamId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string streamId`
+<br/>Stream identifier<br/><br/><br/>
 
 ### Response
 
@@ -377,15 +377,15 @@ If no stored event exists at an index interval, the stream's read characteristic
 
 ### Request
 ```text 
-GET /api/v1/Tenants/Namespaces/{namespaceId}/Streams/{streamId}/Data/Interpolated
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Interpolated
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string streamId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string streamId`
+<br/>Stream identifier<br/><br/><br/>
 
 ### Response
 
@@ -425,15 +425,15 @@ Returns the last value in the stream. If no values exist in the stream, null is 
 
 ### Request
 ```text 
-GET /api/v1/Tenants/Namespaces/{namespaceId}/Streams/{streamId}/Data/Last
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Last
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string streamId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string streamId`
+<br/>Stream identifier<br/><br/><br/>
 
 ### Response
 
@@ -473,15 +473,15 @@ Returns representative data sampled by intervals between a specified start and e
 
 ### Request
 ```text 
-GET /api/v1/Tenants/Namespaces/{namespaceId}/Streams/{streamId}/Data/Sampled
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Sampled
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string streamId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string streamId`
+<br/>Stream identifier<br/><br/><br/>
 
 ### Response
 
@@ -521,15 +521,15 @@ Returns summary intervals between a specified start and end index. Index types t
 
 ### Request
 ```text 
-GET /api/v1/Tenants/Namespaces/{namespaceId}/Streams/{streamId}/Data/Summaries
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Summaries
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string streamId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string streamId`
+<br/>Stream identifier<br/><br/><br/>
 
 ### Response
 

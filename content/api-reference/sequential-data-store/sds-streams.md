@@ -14,14 +14,14 @@ Returns a list of streams.
 
 ### Request
 ```text 
-GET /api/v1/Tenants/Namespaces/{namespaceId}/Streams
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>
 
 ### Response
 
@@ -73,15 +73,15 @@ Returns the specified stream.
 
 ### Request
 ```text 
-GET /api/v1/Tenants/Namespaces/{namespaceId}/Streams/{streamId}
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string streamId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string streamId`
+<br/>Stream identifier<br/><br/><br/>
 
 ### Response
 
@@ -131,15 +131,15 @@ Creates the specified stream. If a stream with a matching identifier already exi
 
 ### Request
 ```text 
-POST /api/v1/Tenants/Namespaces/{namespaceId}/Streams/{streamId}
+POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string streamId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string streamId`
+<br/>Stream identifier<br/><br/><br/>
 
 ### Response
 
@@ -191,15 +191,15 @@ Creates the specified stream. If a stream with the same Id already exists, the d
 
 ### Request
 ```text 
-PUT /api/v1/Tenants/Namespaces/{namespaceId}/Streams/{streamId}
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string streamId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string streamId`
+<br/>Stream identifier<br/><br/><br/>
 
 ### Response
 
@@ -251,15 +251,15 @@ Deletes a stream from the specified tenant and namespace.
 
 ### Request
 ```text 
-DELETE /api/v1/Tenants/Namespaces/{namespaceId}/Streams/{streamId}
+DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string streamId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string streamId`
+<br/>Stream identifier<br/><br/><br/>
 
 ### Response
 
@@ -299,15 +299,15 @@ Returns the type definition that is associated with a given stream.
 
 ### Request
 ```text 
-GET /api/v1/Tenants/Namespaces/{namespaceId}/Streams/{streamId}/Type
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string streamId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string streamId`
+<br/>Stream identifier<br/><br/><br/>
 
 ### Response
 
@@ -646,15 +646,15 @@ Returns the type definition that is associated with a given stream.
 
 ### Request
 ```text 
-PUT /api/v1/Tenants/Namespaces/{namespaceId}/Streams/{streamId}/Type
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/><br/>`string streamId`
-<br/><br/>
+<br/>Namespace identifier<br/><br/><br/>`string streamId`
+<br/>Stream identifier<br/><br/><br/>
 
 ### Response
 

@@ -29,7 +29,7 @@ Community Moderators can assign the following roles to users in their own tenant
 
 ## Community Administrator
 
-A role with full administrative rights. These rights include all the privileges of a Community Moderator plus the following abilities:
+A role with full administrative rights. These rights include all the privileges of a Community Moderator plus the ability to take the following actions:
 
 - Delete the community.
 - Invite tenants to the community and confirm those invitations.

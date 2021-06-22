@@ -4,7 +4,7 @@ uid: transfer-data
 
 # Transfer PI System data to OCS
 
-To transfer PI points into OCS, you must first define transfer settings and then build a PI points transfer table. The data transfer process consists of the following steps:
+To transfer PI points into OCS, you must first define transfer settings and then build a PI points transfer table. The following topics contain the procedures and information you need to transfer data to OCS:
 
 * [Create a transfer](#create-a-transfer)
 * [Overview of the PI Points Search pane](#overview-of-the-pi-points-search-pane)
@@ -48,9 +48,9 @@ Download and install the PI to OCS agent. Register your PI Data Archive with the
    ![Transfer window ](../../images/new-transfer.png)
 
 
-### Overview of the PI Points Search pane
+## Overview of the PI Points Search pane
 
-You build a PI points transfer list in the **PI Points Search** pane. You define search criteria to filter which PI points are returned in the query results.
+You build a PI points transfer list in the **PI Points Search** pane. The screen capture and table below point out the key elements of the **PI Points Search** pane.
 
 ![ ](../../images/pi-pt-search-callouts.png)
 
@@ -69,7 +69,7 @@ No. | Description  |
 11| Navigate through search result pages.  
 12| Add selected PI points to a transfer. 
 
-### Explicit and implicit PI points
+## Explicit and implicit PI points
 
 PI points added to a transfer are assigned one of two reference types:
 
@@ -80,7 +80,7 @@ The reference type indicates a PI point's source and how it was retrieved. The r
 
 The explicit reference type is assigned to PI points directly retrieved from a PI Data Archive.  The implicit reference type is assigned to PI points referenced by AF element attributes that have been retrieved by searching an AF server.
 
-### Build a PI points transfer list
+## Build a PI points transfer list
 
 You build a PI points transfer list to select the PI points you want included in your transfer. 
 
@@ -92,7 +92,7 @@ You build a PI points transfer list to select the PI points you want included in
    **Result:** The **Search** pane opens on the left.
 
 2. Click the **PI Point Search** tab.
-3. Refer to the table below to define your search query and search for PI points:
+3. Refer to the table below to define your search query and search for PI points.
 
    | Specific Values | Action to Take |
    -------------------------- | ------------------------
@@ -122,7 +122,7 @@ You build a PI points transfer list to select the PI points you want included in
 **NOTE:** Once you are done adding PI points, you must save the transfer before you can start to transfer data to OCS.
 
 
-### View PI point details
+## View PI point details
 
 You can view attribute details for a PI point that has been added to a transfer. 
 
@@ -140,11 +140,11 @@ You can view attribute details for a PI point that has been added to a transfer.
 4. Click **x** on the **PI Point Information** pane to close it.
 
 
-### Remove PI points from a transfer
+## Remove PI points from a transfer
 
 You can remove unwanted PI points from a transfer prior to saving the transfer.
 
-#### Procedure
+### Procedure
 
 1. On the PI Points tab, click to select the PI points you wish to remove from your transfer.
 2. Click the **Remove # Selected Items** button, then click **Remove** again.
@@ -152,11 +152,11 @@ You can remove unwanted PI points from a transfer prior to saving the transfer.
    **Result:** The PI point are removed from the transfer.
 3. **Optional:** To remove all PI points from a transfer, click the checkbox to the left of the **PI Point** column header, then click the **Remove # Selected Items** button.
 
-### Save and transfer data to OCS
+## Save and transfer data to OCS
 
 You must save a transfer before you can start to transfer selected data to OCS. During a data transfer, events are sent asynchronously. Historical events are sent first, followed by current events.  The progress of a data transfer is displayed in the Details pane.  
 
-#### Procedure
+### Procedure
 
 1. On the PI Points tab, click the **Save** button in the lower-right corner of the window.
 

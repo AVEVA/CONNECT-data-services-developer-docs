@@ -5,291 +5,6 @@ uid: sds-access-control-list
 
 # Access Control List
 
-## `Get View Access Control List`
-
-<a id="opIdViewAccessControl_Get View Access Control List"></a>
-
-Gets the default ACL for the Stream Views collection.
-
-### Request
-```text 
-GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl
-```
-
-#### Parameters
-
-`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|[AccessControlList](#schemaaccesscontrollist)|Returns the `AccessControlList`|
-|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
-|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
-|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
-|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
-|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
-|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
-
-#### Example response body
-> 200 Response
-
-```json
-{
-  "RoleTrusteeAccessControlEntries": [
-    {
-      "Trustee": {
-        "Type": "[",
-        "ObjectId": "string",
-        "TenantId": "string"
-      },
-      "AccessType": 0,
-      "AccessRights": 0
-    }
-  ]
-}
-```
-
----
-
-## `Update View Access Control List`
-
-<a id="opIdViewAccessControl_Update View Access Control List"></a>
-
-Updates the default ACL for the Stream Views collection.
-
-### Request
-```text 
-PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl
-```
-
-#### Parameters
-
-`string tenantId`
-<br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|204|None|`AccessControlList` was successfully updated|
-|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
-|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
-|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
-|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
-|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
-|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
-
-#### Example response body
-> 400 Response
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
-  }
-}
-```
-
----
-
-## `Patch View Access Control List`
-
-<a id="opIdViewAccessControl_Patch View Access Control List"></a>
-
-Updates the default ACL for the Stream Views collection. This allows the ACL to be modified without submitting the entire Access Control List.
-
-### Request
-```text 
-PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl
-```
-
-#### Parameters
-
-`string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|204|None|`AccessControlList` was successfully updated|
-|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
-|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
-|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
-|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
-|412|[ErrorResponseBody](#schemaerrorresponsebody)|Precondition Failed|
-|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
-|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
-
-#### Example response body
-> 400 Response
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
-  }
-}
-```
-
----
-
-## `List View Access Rights`
-
-<a id="opIdViewAccessControl_List View Access Rights"></a>
-
-Gets the Access Rights associated with the specified stream view for the requesting identity.
-
-### Request
-```text 
-GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/AccessRights
-```
-
-#### Parameters
-
-`string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>`string streamViewId`
-<br/>Stream view identifier<br/><br/><br/>
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|Inline|Returns the `CommonAccessRights`|
-|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
-|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
-|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
-|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
-|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
-|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
-
-#### Example response body
-> 400 Response
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
-  }
-}
-```
-
----
-
-## `Get View Owner`
-
-<a id="opIdViewAccessControl_Get View Owner"></a>
-
-Returns the Owner of the specified stream view.
-
-### Request
-```text 
-GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Owner
-```
-
-#### Parameters
-
-`string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>`string streamViewId`
-<br/>Stream view identifier<br/><br/><br/>
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|[Trustee](#schematrustee)|Returns the `Trustee`|
-|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
-|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
-|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
-|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
-|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
-|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
-
-#### Example response body
-> 200 Response
-
-```json
-{
-  "Type": 1,
-  "ObjectId": "string",
-  "TenantId": "string"
-}
-```
-
----
-
-## `Update View Owner`
-
-<a id="opIdViewAccessControl_Update View Owner"></a>
-
-Updates the Owner of the specified stream view.
-
-### Request
-```text 
-PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Owner
-```
-
-#### Parameters
-
-`string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>`string streamViewId`
-<br/>Stream view identifier<br/><br/><br/>
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|204|None|`Trustee` was successfully returned|
-|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
-|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
-|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
-|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
-|409|[ErrorResponseBody](#schemaerrorresponsebody)|Conflict|
-|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
-|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
-
-#### Example response body
-> 400 Response
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
-  }
-}
-```
-
-# Access Control List
-
 ## `Get Quantities Access Control List`
 
 <a id="opIdNamespaceAccessControl_Get Quantities Access Control List"></a>
@@ -1151,9 +866,9 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/
 
 ---
 
-## `Get Quantity Uom Access Control List`
+## `Get Quantity Unit of Measure Access Control List`
 
-<a id="opIdQuantityAccessControl_Get Quantity Uom Access Control List"></a>
+<a id="opIdQuantityAccessControl_Get Quantity Unit of Measure Access Control List"></a>
 
 Gets the ACL of the specified unit of measure
 
@@ -1203,9 +918,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/
 
 ---
 
-## `Update Quantity Uom Access Control List`
+## `Update Quantity Unit of Measure Access Control List`
 
-<a id="opIdQuantityAccessControl_Update Quantity Uom Access Control List"></a>
+<a id="opIdQuantityAccessControl_Update Quantity Unit of Measure Access Control List"></a>
 
 Updates the ACL of the specified unit of measure
 
@@ -1253,9 +968,9 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/
 
 ---
 
-## `Patch Quantity Uom Access Control List`
+## `Patch Quantity Unit of Measure Access Control List`
 
-<a id="opIdQuantityAccessControl_Patch Quantity Uom Access Control List"></a>
+<a id="opIdQuantityAccessControl_Patch Quantity Unit of Measure Access Control List"></a>
 
 Updates the ACL for the specified unit of measure using an RFC 6902 compliant JSON Patch document. This allows the ACL to be modified without submitting the entire Access Control List.
 
@@ -1304,9 +1019,9 @@ PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId
 
 ---
 
-## `List Quantity Uom Access Rights`
+## `List Quantity Unit of Measure Access Rights`
 
-<a id="opIdQuantityAccessControl_List Quantity Uom Access Rights"></a>
+<a id="opIdQuantityAccessControl_List Quantity Unit of Measure Access Rights"></a>
 
 Gets the Access Rights associated with the specified unit of measure for the requesting identity
 
@@ -1353,9 +1068,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/
 
 ---
 
-## `Get Quantity Uom Owner`
+## `Get Quantity Unit of Measure Owner`
 
-<a id="opIdQuantityAccessControl_Get Quantity Uom Owner"></a>
+<a id="opIdQuantityAccessControl_Get Quantity Unit of Measure Owner"></a>
 
 Gets the Owner of the specified unit of measure
 
@@ -1397,9 +1112,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/
 
 ---
 
-## `Update Quantity Uom Owner`
+## `Update Quantity Unit of Measure Owner`
 
-<a id="opIdQuantityAccessControl_Update Quantity Uom Owner"></a>
+<a id="opIdQuantityAccessControl_Update Quantity Unit of Measure Owner"></a>
 
 Updates the Owner of the specified unit of measure
 
@@ -1737,6 +1452,294 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Owner
 
 # Access Control List
 
+## `Get Stream View Access Control List`
+
+<a id="opIdViewAccessControl_Get Stream View Access Control List"></a>
+
+Gets the ACL of the specified stream view
+
+### Request
+```text 
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/AccessControl
+```
+
+#### Parameters
+
+`string tenantId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/><br/>`string streamViewId`
+<br/>Stream view identifier<br/><br/><br/>
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[AccessControlList](#schemaaccesscontrollist)|Returns the `AccessControlList`|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+#### Example response body
+> 200 Response
+
+```json
+{
+  "RoleTrusteeAccessControlEntries": [
+    {
+      "Trustee": {
+        "Type": "[",
+        "ObjectId": "string",
+        "TenantId": "string"
+      },
+      "AccessType": 0,
+      "AccessRights": 0
+    }
+  ]
+}
+```
+
+---
+
+## `Update Stream View Access Control List`
+
+<a id="opIdViewAccessControl_Update Stream View Access Control List"></a>
+
+Updates the ACL of the specified stream view
+
+### Request
+```text 
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/AccessControl
+```
+
+#### Parameters
+
+`string tenantId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/><br/>`string streamViewId`
+<br/>Stream view identifier<br/><br/><br/>
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|204|None|`AccessControlList` was successfully updated|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+#### Example response body
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "Parameters": {
+    "property1": "string",
+    "property2": "string"
+  }
+}
+```
+
+---
+
+## `Patch Stream View Access Control List`
+
+<a id="opIdViewAccessControl_Patch Stream View Access Control List"></a>
+
+Updates the ACL of the specified stream view using an RFC 6902 compliant JSON Patch document. This allows the ACL to be modified without submitting the entire Access Control List.
+
+### Request
+```text 
+PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/AccessControl
+```
+
+#### Parameters
+
+`string tenantId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/><br/>`string streamViewId`
+<br/>Stream view identifier<br/><br/><br/>
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|204|None|`AccessControlList` was successfully updated|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|412|[ErrorResponseBody](#schemaerrorresponsebody)|Precondition Failed|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+#### Example response body
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "Parameters": {
+    "property1": "string",
+    "property2": "string"
+  }
+}
+```
+
+---
+
+## `List Stream View Access Rights`
+
+<a id="opIdViewAccessControl_List Stream View Access Rights"></a>
+
+Gets the Access Rights associated with the specified stream view for the requesting identity
+
+### Request
+```text 
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/AccessRights
+```
+
+#### Parameters
+
+`string tenantId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/><br/>`string streamViewId`
+<br/>Stream view identifier<br/><br/><br/>
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|Inline|Returns the `CommonAccessRights`|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+#### Example response body
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "Parameters": {
+    "property1": "string",
+    "property2": "string"
+  }
+}
+```
+
+---
+
+## `Get Stream View Owner`
+
+<a id="opIdViewAccessControl_Get Stream View Owner"></a>
+
+Gets the Owner of the specified stream view
+
+### Request
+```text 
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Owner
+```
+
+#### Parameters
+
+`string tenantId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/><br/>`string streamViewId`
+<br/>Stream view identifier<br/><br/><br/>
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[Trustee](#schematrustee)|Returns the `Trustee`|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+#### Example response body
+> 200 Response
+
+```json
+{
+  "Type": 1,
+  "ObjectId": "string",
+  "TenantId": "string"
+}
+```
+
+---
+
+## `Update Stream View Owner`
+
+<a id="opIdViewAccessControl_Update Stream View Owner"></a>
+
+Updates the Owner of the specified stream view
+
+### Request
+```text 
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Owner
+```
+
+#### Parameters
+
+`string tenantId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/><br/>`string streamViewId`
+<br/>Stream view identifier<br/><br/><br/>
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|204|None|`Trustee` was successfully returned|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|409|[ErrorResponseBody](#schemaerrorresponsebody)|Conflict|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+#### Example response body
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "Parameters": {
+    "property1": "string",
+    "property2": "string"
+  }
+}
+```
+
+# Access Control List
+
 ## `Get Type Access Control List`
 
 <a id="opIdTypeAccessControl_Get Type Access Control List"></a>
@@ -1753,7 +1756,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessCon
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier<br/><br/><br/>`string typeId`
-<br/><br/>
+<br/>Type identifier<br/><br/><br/>
 
 ### Response
 
@@ -1804,7 +1807,7 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessCon
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier<br/><br/><br/>`string typeId`
-<br/><br/>
+<br/>Type identifier<br/><br/><br/>
 
 ### Response
 
@@ -1852,7 +1855,7 @@ PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessC
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier<br/><br/><br/>`string typeId`
-<br/><br/>
+<br/>Type identifier<br/><br/><br/>
 
 ### Response
 
@@ -1900,7 +1903,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessRig
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier<br/><br/><br/>`string typeId`
-<br/><br/>
+<br/>Type identifier<br/><br/><br/>
 
 ### Response
 
@@ -1956,7 +1959,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Owner
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier<br/><br/><br/>`string typeId`
-<br/><br/>
+<br/>Type identifier<br/><br/><br/>
 
 ### Response
 
@@ -1999,7 +2002,7 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Owner
 `string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier<br/><br/><br/>`string typeId`
-<br/><br/>
+<br/>Type identifier<br/><br/><br/>
 
 ### Response
 

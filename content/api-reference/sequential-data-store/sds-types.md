@@ -13,19 +13,14 @@ Gets a list of `SdsType` objects. If the optional parameters are not set, this c
 
 ### Request
 ```text 
-GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types
+GET /api/v1/Tenants/Namespaces/{namespaceId}/Types
 ```
 
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -37,6 +32,107 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types
 |404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
 |500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+#### Example response body
+> 200 Response
+
+```json
+HTTP/1.1 200
+Content-Type: application/json
+
+[    
+    {
+    "Id": "Simple",
+    "Name": "Simple",
+    "SdsTypeCode": 1,
+    "Properties": [
+        {
+            "Id": "Time",
+            "Name": "Time",
+            "IsKey": true,
+            "SdsType": {
+                "Id": "19a87a76-614a-385b-ba48-6f8b30ff6ab2",
+                "Name": "DateTime",
+                "SdsTypeCode": 16
+            }
+        },
+        {
+            "Id": "State",
+            "Name": "State",
+            "SdsType": {
+                "Id": "e20bdd7e-590b-3372-ab39-ff61950fb4f3",
+                "Name": "State",
+                "SdsTypeCode": 609,
+                "Properties": [
+                    {
+                        "Id": "Ok",
+                        "Value": 0
+                    },
+                    {
+                        "Id": "Warning",
+                        "Value": 1
+                    },
+                    {
+                        "Id": "Alarm",
+                        "Value": 2
+                    }
+                ]
+            }
+        },
+        {
+            "Id": "Measurement",
+            "Name": "Measurement",
+            "SdsType": {
+                "Id": "6fecef77-20b1-37ae-aa3b-e6bb838d5a86",
+                "Name": "Double",
+                "SdsTypeCode": 14
+            }
+        }
+    ]
+    },
+   
+]
+```
+> 401 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "Parameters": {
+    "property1": "string",
+    "property2": "string"
+  }
+}
+```
+
+---
+
+## `Collection Create Type`
+
+<a id="opIdType_Collection Create Type"></a>
+
+Creates specified types. If a type with a matching identifier already exists, SDS compares the existing type with the type that was sent.
+
+### Request
+```text 
+POST /api/v1/Tenants/Namespaces/{namespaceId}/Types
+```
+
+#### Parameters
+
+`string tenantId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
+<br/><br/>
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[SdsType](#schemasdstype)[]|A list of `SdsType` objects.|
+|201|[SdsType](#schemasdstype)[]|A list of `SdsType` objects.|
 
 #### Example response body
 > 200 Response
@@ -322,20 +418,15 @@ Gets the specified `SdsType`.
 
 ### Request
 ```text 
-GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
+GET /api/v1/Tenants/Namespaces/{namespaceId}/Types/{typeId}
 ```
 
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/><br/>`string typeId`
 <br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -353,314 +444,71 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
 > 200 Response
 
 ```json
+HTTP/1.1 200
+Content-Type: application/json
+
 {
-  "Id": "string",
-  "Name": "string",
-  "Description": "string",
-  "SdsTypeCode": 0,
-  "IsGenericType": true,
-  "IsReferenceType": true,
-  "GenericArguments": [
+"Id":"Simple",
+"Name":"Simple",
+"SdsTypeCode":1,
+"Properties":[
     {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "SdsTypeCode": 0,
-      "IsGenericType": true,
-      "IsReferenceType": true,
-      "GenericArguments": [
-        {
-          "Id": "string",
-          "Name": "string",
-          "Description": "string",
-          "SdsTypeCode": null,
-          "IsGenericType": true,
-          "IsReferenceType": true,
-          "GenericArguments": [
-            {}
-          ],
-          "Properties": [
-            {}
-          ],
-          "BaseType": null,
-          "DerivedTypes": [
-            {}
-          ],
-          "InterpolationMode": null,
-          "ExtrapolationMode": null
+        "Id":"Time",
+        "Name":"Time",
+        "IsKey":true,
+        "SdsType":{
+            "Id":"19a87a76-614a-385b-ba48-6f8b30ff6ab2",
+            "Name":"DateTime",
+            "SdsTypeCode":16
         }
-      ],
-      "Properties": [
-        {
-          "Id": "string",
-          "Name": "string",
-          "Description": "string",
-          "Order": 0,
-          "IsKey": true,
-          "FixedSize": 0,
-          "SdsType": null,
-          "Value": null,
-          "Uom": "string",
-          "InterpolationMode": null,
-          "IsQuality": true
-        }
-      ],
-      "BaseType": {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SdsTypeCode": null,
-        "IsGenericType": true,
-        "IsReferenceType": true,
-        "GenericArguments": [
-          null
-        ],
-        "Properties": [
-          null
-        ],
-        "BaseType": null,
-        "DerivedTypes": [
-          null
-        ],
-        "InterpolationMode": null,
-        "ExtrapolationMode": null
-      },
-      "DerivedTypes": [
-        {
-          "Id": "string",
-          "Name": "string",
-          "Description": "string",
-          "SdsTypeCode": null,
-          "IsGenericType": true,
-          "IsReferenceType": true,
-          "GenericArguments": [
-            {}
-          ],
-          "Properties": [
-            {}
-          ],
-          "BaseType": null,
-          "DerivedTypes": [
-            {}
-          ],
-          "InterpolationMode": null,
-          "ExtrapolationMode": null
-        }
-      ],
-      "InterpolationMode": 0,
-      "ExtrapolationMode": 0
-    }
-  ],
-  "Properties": [
-    {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "Order": 0,
-      "IsKey": true,
-      "FixedSize": 0,
-      "SdsType": {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SdsTypeCode": null,
-        "IsGenericType": true,
-        "IsReferenceType": true,
-        "GenericArguments": [
-          null
-        ],
-        "Properties": [
-          null
-        ],
-        "BaseType": null,
-        "DerivedTypes": [
-          null
-        ],
-        "InterpolationMode": null,
-        "ExtrapolationMode": null
-      },
-      "Value": null,
-      "Uom": "string",
-      "InterpolationMode": 0,
-      "IsQuality": true
-    }
-  ],
-  "BaseType": {
-    "Id": "string",
-    "Name": "string",
-    "Description": "string",
-    "SdsTypeCode": 0,
-    "IsGenericType": true,
-    "IsReferenceType": true,
-    "GenericArguments": [
-      {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SdsTypeCode": null,
-        "IsGenericType": true,
-        "IsReferenceType": true,
-        "GenericArguments": [
-          null
-        ],
-        "Properties": [
-          null
-        ],
-        "BaseType": null,
-        "DerivedTypes": [
-          null
-        ],
-        "InterpolationMode": null,
-        "ExtrapolationMode": null
-      }
-    ],
-    "Properties": [
-      {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "Order": 0,
-        "IsKey": true,
-        "FixedSize": 0,
-        "SdsType": null,
-        "Value": null,
-        "Uom": "string",
-        "InterpolationMode": null,
-        "IsQuality": true
-      }
-    ],
-    "BaseType": {
-      "Id": null,
-      "Name": null,
-      "Description": null,
-      "SdsTypeCode": null,
-      "IsGenericType": null,
-      "IsReferenceType": null,
-      "GenericArguments": null,
-      "Properties": null,
-      "BaseType": null,
-      "DerivedTypes": null,
-      "InterpolationMode": null,
-      "ExtrapolationMode": null
     },
-    "DerivedTypes": [
-      {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SdsTypeCode": null,
-        "IsGenericType": true,
-        "IsReferenceType": true,
-        "GenericArguments": [
-          null
-        ],
-        "Properties": [
-          null
-        ],
-        "BaseType": null,
-        "DerivedTypes": [
-          null
-        ],
-        "InterpolationMode": null,
-        "ExtrapolationMode": null
-      }
-    ],
-    "InterpolationMode": 0,
-    "ExtrapolationMode": 0
-  },
-  "DerivedTypes": [
     {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "SdsTypeCode": 0,
-      "IsGenericType": true,
-      "IsReferenceType": true,
-      "GenericArguments": [
-        {
-          "Id": "string",
-          "Name": "string",
-          "Description": "string",
-          "SdsTypeCode": null,
-          "IsGenericType": true,
-          "IsReferenceType": true,
-          "GenericArguments": [
-            {}
-          ],
-          "Properties": [
-            {}
-          ],
-          "BaseType": null,
-          "DerivedTypes": [
-            {}
-          ],
-          "InterpolationMode": null,
-          "ExtrapolationMode": null
+        "Id":"State",
+        "Name":"State",
+        "SdsType":{
+            "Id":"e20bdd7e-590b-3372-ab39-ff61950fb4f3",
+            "Name":"State",
+            "SdsTypeCode":609,
+            "Properties":[
+                {
+                    "Id":"Ok",
+                    "Value":0
+                },
+                {
+                    "Id":"Warning",
+                    "Value":1
+                },
+                {
+                    "Id":"Alarm",
+                    "Value":2
+                }
+            ]
         }
-      ],
-      "Properties": [
-        {
-          "Id": "string",
-          "Name": "string",
-          "Description": "string",
-          "Order": 0,
-          "IsKey": true,
-          "FixedSize": 0,
-          "SdsType": null,
-          "Value": null,
-          "Uom": "string",
-          "InterpolationMode": null,
-          "IsQuality": true
+    },
+    {
+        "Id":"Measurement",
+        "Name":"Measurement",
+        "SdsType":{
+            "Id":"6fecef77-20b1-37ae-aa3b-e6bb838d5a86",
+            "Name":"Double",
+            "SdsTypeCode":14
         }
-      ],
-      "BaseType": {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SdsTypeCode": null,
-        "IsGenericType": true,
-        "IsReferenceType": true,
-        "GenericArguments": [
-          null
-        ],
-        "Properties": [
-          null
-        ],
-        "BaseType": null,
-        "DerivedTypes": [
-          null
-        ],
-        "InterpolationMode": null,
-        "ExtrapolationMode": null
-      },
-      "DerivedTypes": [
-        {
-          "Id": "string",
-          "Name": "string",
-          "Description": "string",
-          "SdsTypeCode": null,
-          "IsGenericType": true,
-          "IsReferenceType": true,
-          "GenericArguments": [
-            {}
-          ],
-          "Properties": [
-            {}
-          ],
-          "BaseType": null,
-          "DerivedTypes": [
-            {}
-          ],
-          "InterpolationMode": null,
-          "ExtrapolationMode": null
-        }
-      ],
-      "InterpolationMode": 0,
-      "ExtrapolationMode": 0
     }
-  ],
-  "InterpolationMode": 0,
-  "ExtrapolationMode": 0
+]
+}
+```
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "Parameters": {
+    "property1": "string",
+    "property2": "string"
+  }
 }
 ```
 
@@ -674,20 +522,15 @@ Creates the specified type. If a type with a matching identifier already exists,
 
 ### Request
 ```text 
-POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
+POST /api/v1/Tenants/Namespaces/{namespaceId}/Types/{typeId}
 ```
 
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/><br/>`string typeId`
 <br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -1019,6 +862,141 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
 }
 ```
 
+> 201 Response
+
+```json
+HTTP/1.1 201
+Content-Type: application/json
+
+{
+"Id": "Simple",
+"Name": "Simple",
+"Description": null,
+"SdsTypeCode": 1,
+"IsGenericType": false,
+"IsReferenceType": false,
+"GenericArguments": null,
+"Properties": [
+    {
+        "Id": "Time",
+        "Name": "Time",
+        "Description": null,
+        "Order": 0,
+        "IsKey": true,
+        "FixedSize": 0,
+        "SdsType": {
+            "Id": "19a87a76-614a-385b-ba48-6f8b30ff6ab2",
+            "Name": "DateTime",
+            "Description": null,
+            "SdsTypeCode": 16,
+            "IsGenericType": false,
+            "IsReferenceType": false,
+            "GenericArguments": null,
+            "Properties": null,
+            "BaseType": null,
+            "DerivedTypes": null,
+            "InterpolationMode": 0,
+            "ExtrapolationMode": 0
+        },
+        "Value": null,
+        "Uom": null,
+        "InterpolationMode": null
+    },
+    {
+        "Id": "State",
+        "Name": "State",
+        "Description": null,
+        "Order": 0,
+        "IsKey": false,
+        "FixedSize": 0,
+        "SdsType": {
+            "Id": "e20bdd7e-590b-3372-ab39-ff61950fb4f3",
+            "Name": "State",
+            "Description": null,
+            "SdsTypeCode": 609,
+            "IsGenericType": false,
+            "IsReferenceType": false,
+            "GenericArguments": null,
+            "Properties": [
+                {
+                    "Id": "Ok",
+                    "Name": null,
+                    "Description": null,
+                    "Order": 0,
+                    "IsKey": false,
+                    "FixedSize": 0,
+                    "SdsType": null,
+                    "Value": 0,
+                    "Uom": null,
+                    "InterpolationMode": null
+                },
+                {
+                    "Id": "Warning",
+                    "Name": null,
+                    "Description": null,
+                    "Order": 0,
+                    "IsKey": false,
+                    "FixedSize": 0,
+                    "SdsType": null,
+                    "Value": 1,
+                    "Uom": null,
+                    "InterpolationMode": null
+                },
+                {
+                    "Id": "Alarm",
+                    "Name": null,
+                    "Description": null,
+                    "Order": 0,
+                    "IsKey": false,
+                    "FixedSize": 0,
+                    "SdsType": null,
+                    "Value": 2,
+                    "Uom": null,
+                    "InterpolationMode": null
+                }
+            ],
+            "BaseType": null,
+            "DerivedTypes": null,
+            "InterpolationMode": 0,
+            "ExtrapolationMode": 0
+        },
+        "Value": null,
+        "Uom": null,
+        "InterpolationMode": null
+    },
+    {
+        "Id": "Measurement",
+        "Name": "Measurement",
+        "Description": null,
+        "Order": 0,
+        "IsKey": false,
+        "FixedSize": 0,
+        "SdsType": {
+            "Id": "6fecef77-20b1-37ae-aa3b-e6bb838d5a86",
+            "Name": "Double",
+            "Description": null,
+            "SdsTypeCode": 14,
+            "IsGenericType": false,
+            "IsReferenceType": false,
+            "GenericArguments": null,
+            "Properties": null,
+            "BaseType": null,
+            "DerivedTypes": null,
+            "InterpolationMode": 0,
+            "ExtrapolationMode": 0
+        },
+        "Value": null,
+        "Uom": null,
+        "InterpolationMode": null
+    }
+    ],
+    "BaseType": null,
+    "DerivedTypes": null,
+    "InterpolationMode": 0,
+    "ExtrapolationMode": 0
+    }
+    ```
+
 ---
 
 ## `Delete Type`
@@ -1029,20 +1007,15 @@ Deletes a type from the specified tenant and namespace. Note that a type cannot 
 
 ### Request
 ```text 
-DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
+DELETE /api/v1/Tenants/Namespaces/{namespaceId}/Types/{typeId}
 ```
 
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/><br/>`string typeId`
 <br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -1083,20 +1056,15 @@ Returns a dictionary mapping the object name to the number of references held by
 
 ### Request
 ```text 
-GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/ReferenceCount
+GET /api/v1/Tenants/Namespaces/{namespaceId}/Types/{typeId}/ReferenceCount
 ```
 
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/><br/>`string typeId`
 <br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -1111,6 +1079,15 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Reference
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
 #### Example response body
+> 200 Response
+
+```json
+ {
+"SdsStream":3,
+"SdsStreamView":2,
+"SdsType":1
+}
+```
 > 400 Response
 
 ```json

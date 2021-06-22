@@ -19,19 +19,14 @@ GET and POST join requests are supported.
 
 ### Request
 ```text 
-GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
+GET /api/v1/Tenants/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
 ```
 
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -77,19 +72,14 @@ GET and POST join requests are supported.
 
 ### Request
 ```text 
-POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
+POST /api/v1/Tenants/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
 ```
 
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 

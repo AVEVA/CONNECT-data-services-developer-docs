@@ -41,20 +41,15 @@ SDS supports four ways of specifying which stored events to return:
 
 ### Request
 ```text 
-GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform
+GET /api/v1/Tenants/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform
 ```
 
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/><br/>`string streamId`
 <br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -109,20 +104,15 @@ SDS supports four ways of specifying which stored events to return:
 
 ### Request
 ```text 
-POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform
+POST /api/v1/Tenants/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform
 ```
 
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/><br/>`string streamId`
 <br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -162,20 +152,15 @@ Returns the first value in the stream. If no values exist in the stream, null is
 
 ### Request
 ```text 
-GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/First
+GET /api/v1/Tenants/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/First
 ```
 
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/><br/>`string streamId`
 <br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -215,20 +200,15 @@ Returns the first value in the stream. If no values exist in the stream, null is
 
 ### Request
 ```text 
-POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/First
+POST /api/v1/Tenants/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/First
 ```
 
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/><br/>`string streamId`
 <br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -282,20 +262,15 @@ If no stored event exists at an index interval, the stream's read characteristic
 
 ### Request
 ```text 
-GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/Interpolated
+GET /api/v1/Tenants/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/Interpolated
 ```
 
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/><br/>`string streamId`
 <br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -349,20 +324,15 @@ If no stored event exists at an index interval, the stream's read characteristic
 
 ### Request
 ```text 
-POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/Interpolated
+POST /api/v1/Tenants/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/Interpolated
 ```
 
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/><br/>`string streamId`
 <br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -402,20 +372,15 @@ Returns the last value in the stream. If no values exist in the stream, null is 
 
 ### Request
 ```text 
-GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/Last
+GET /api/v1/Tenants/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/Last
 ```
 
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/><br/>`string streamId`
 <br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -455,20 +420,15 @@ Returns the last value in the stream. If no values exist in the stream, null is 
 
 ### Request
 ```text 
-POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/Last
+POST /api/v1/Tenants/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/Last
 ```
 
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/><br/>`string streamId`
 <br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -508,20 +468,15 @@ Returns representative data sampled by intervals between a specified start and e
 
 ### Request
 ```text 
-GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/Sampled
+GET /api/v1/Tenants/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/Sampled
 ```
 
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/><br/>`string streamId`
 <br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -561,20 +516,15 @@ Returns representative data sampled by intervals between a specified start and e
 
 ### Request
 ```text 
-POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/Sampled
+POST /api/v1/Tenants/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/Sampled
 ```
 
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/><br/>`string streamId`
 <br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -614,20 +564,15 @@ Returns summary intervals between a specified start and end index. Index types t
 
 ### Request
 ```text 
-GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/Summaries
+GET /api/v1/Tenants/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/Summaries
 ```
 
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/><br/>`string streamId`
 <br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -667,20 +612,15 @@ Returns summary intervals between a specified start and end index. Index types t
 
 ### Request
 ```text 
-POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/Summaries
+POST /api/v1/Tenants/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/Summaries
 ```
 
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/><br/>`string streamId`
 <br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 

@@ -2,7 +2,7 @@
 uid: Aboutassets
 ---
 
-# Organize steams with assets
+# Organize streams with assets
 
 An asset is a container for data streams associated with a particular device or object. When you create an asset, you select a namespace and a set of streams within that namespace. Assets typically represent devices with multiple data streams; but, you can create an asset with only one stream if needed.
 

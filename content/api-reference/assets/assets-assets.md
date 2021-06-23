@@ -177,9 +177,9 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{asset
 |---|---|---|
 |204|None|The asset with the specified identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|401|None|Unauthorized|
-|404|None|Not Found|
-|409|None|Conflict|
+|401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not Found|
+|409|[ErrorTemplate](#schemaerrortemplate)|Conflict|
 |500|None|Internal Service Error, please try again later.|
 |503|None|Service Unavaiable, please try again later.|
 
@@ -223,8 +223,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|The access control of the asset with the specified identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|401|None|Unauthorized|
-|404|None|Asset with specified identifier not found.|
+|401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
+|404|[ErrorTemplate](#schemaerrortemplate)|Asset with specified identifier not found.|
 |500|None|Internal Service Error, please try again later.|
 |503|None|Service Unavaiable, please try again later.|
 
@@ -314,8 +314,8 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |---|---|---|
 |204|None|The access control of the asset with the specified identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|401|None|Unauthorized|
-|404|None|Asset with specified identifier not found.|
+|401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
+|404|[ErrorTemplate](#schemaerrortemplate)|Asset with specified identifier not found.|
 |500|None|Internal Service Error, please try again later.|
 |503|None|Service Unavaiable, please try again later.|
 
@@ -359,8 +359,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |---|---|---|
 |200|Inline|The access rights of the asset with the specified identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|401|None|Unauthorized|
-|404|None|Asset with specified identifier not found.|
+|401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
+|404|[ErrorTemplate](#schemaerrortemplate)|Asset with specified identifier not found.|
 |500|None|Internal Service Error, please try again later.|
 |503|None|Service Unavaiable, please try again later.|
 
@@ -413,7 +413,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|None|The owner of the asset with the specified identifier.|
+|200|[Trustee](#schematrustee)|The owner of the asset with the specified identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
 |401|None|Unauthorized|
 |404|None|Asset with specified identifier not found.|
@@ -421,6 +421,16 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |503|None|Service Unavaiable, please try again later.|
 
 #### Example response body
+> 200 Response
+
+```json
+{
+  "Type": 1,
+  "TenantId": "55555555-5555-5555-5555-555555555555",
+  "ObjectId": "44444444-4444-4444-4444-444444444444"
+}
+```
+
 > 400 Response
 
 ```json
@@ -472,8 +482,8 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |---|---|---|
 |204|None|No content if success.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|401|None|Unauthorized|
-|404|None|Asset with specified identifier not found.|
+|401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
+|404|[ErrorTemplate](#schemaerrortemplate)|Asset with specified identifier not found.|
 |500|None|Internal Service Error, please try again later.|
 |503|None|Service Unavaiable, please try again later.|
 
@@ -812,36 +822,6 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId
 ---
 ## Definitions
 
-### ErrorTemplate
-
-<a id="schemaerrortemplate"></a>
-<a id="schema_ErrorTemplate"></a>
-<a id="tocSerrortemplate"></a>
-<a id="tocserrortemplate"></a>
-
-#### Properties
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|OperationId|string|false|true|Operation identifier|
-|Error|string|false|true|Error string|
-|Resolution|string|false|true|Resolution string|
-|Reason|string|false|true|Error reason string|
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Resolution": "string",
-  "Reason": "string",
-  "property1": null,
-  "property2": null
-}
-
-```
-
----
-
 ### Trustee
 
 <a id="schematrustee"></a>
@@ -882,6 +862,36 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId
 |User|1|
 |Client|2|
 |Role|3|
+
+---
+
+### ErrorTemplate
+
+<a id="schemaerrortemplate"></a>
+<a id="schema_ErrorTemplate"></a>
+<a id="tocSerrortemplate"></a>
+<a id="tocserrortemplate"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|OperationId|string|false|true|Operation identifier|
+|Error|string|false|true|Error string|
+|Resolution|string|false|true|Resolution string|
+|Reason|string|false|true|Error reason string|
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+
+```
 
 ---
 
@@ -1254,6 +1264,8 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId
 <a id="tocSstreamreference"></a>
 <a id="tocsstreamreference"></a>
 
+An asset stream reference represents dynamic stream data associated with an asset. The references must either be an SDS stream or an SDS stream view. Asset-centric data routes provide direct access to dynamic data for a given asset. There are no limitations on the number of references an asset may contain. However, an asset cannot contain multiple references to the same SDS stream. An asset stream reference does not stand alone. It must be specified within an asset object and, therefore, asset references do not have direct API routes.
+
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
@@ -1331,7 +1343,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId
 |Name|string|false|true|Asset Name|
 |Description|string|false|true|None|
 |Metadata|[[MetadataItem](#schemametadataitem)]|false|true|None|
-|StreamReferences|[[StreamReference](#schemastreamreference)]|false|true|None|
+|StreamReferences|[[StreamReference](#schemastreamreference)]|false|true|[An asset stream reference represents dynamic stream data associated with an asset. The references must either be an SDS stream or an SDS stream view. Asset-centric data routes provide direct access to dynamic data for a given asset. There are no limitations on the number of references an asset may contain. However, an asset cannot contain multiple references to the same SDS stream. An asset stream reference does not stand alone. It must be specified within an asset object and, therefore, asset references do not have direct API routes.]|
 |Status|[StatusMapping](#schemastatusmapping)|false|true|None|
 
 ```json

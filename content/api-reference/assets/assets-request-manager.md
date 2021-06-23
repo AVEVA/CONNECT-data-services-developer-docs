@@ -1205,6 +1205,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets/Fa
 <a id="tocSstreamreference"></a>
 <a id="tocsstreamreference"></a>
 
+An asset stream reference represents dynamic stream data associated with an asset. The references must either be an SDS stream or an SDS stream view. Asset-centric data routes provide direct access to dynamic data for a given asset. There are no limitations on the number of references an asset may contain. However, an asset cannot contain multiple references to the same SDS stream. An asset stream reference does not stand alone. It must be specified within an asset object and, therefore, asset references do not have direct API routes.
+
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
@@ -1312,7 +1314,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets/Fa
 |Name|string|false|true|Asset Name|
 |Description|string|false|true|None|
 |Metadata|[[MetadataItem](#schemametadataitem)]|false|true|None|
-|StreamReferences|[[StreamReference](#schemastreamreference)]|false|true|None|
+|StreamReferences|[[StreamReference](#schemastreamreference)]|false|true|[An asset stream reference represents dynamic stream data associated with an asset. The references must either be an SDS stream or an SDS stream view. Asset-centric data routes provide direct access to dynamic data for a given asset. There are no limitations on the number of references an asset may contain. However, an asset cannot contain multiple references to the same SDS stream. An asset stream reference does not stand alone. It must be specified within an asset object and, therefore, asset references do not have direct API routes.]|
 |Status|[StatusMapping](#schemastatusmapping)|false|true|None|
 
 ```json

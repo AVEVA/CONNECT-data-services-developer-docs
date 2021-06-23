@@ -967,6 +967,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets/Fa
 <a id="tocSmetadataitem"></a>
 <a id="tocsmetadataitem"></a>
 
+An asset or asset type metadata is static information associated with a given asset. A given metadata contains a list of individual metadata values. There is no limit on the number of metadata values defined by an asset. An asset or asset type metadata does not stand alone. It must be specified within an asset or asset type object and, therefore, there are no direct API routes to asset or asset type metadata.
+
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
@@ -1313,7 +1315,7 @@ An asset stream reference represents dynamic stream data associated with an asse
 |AssetTypeId|string|false|true|Asset Type Id|
 |Name|string|false|true|Asset Name|
 |Description|string|false|true|None|
-|Metadata|[[MetadataItem](#schemametadataitem)]|false|true|None|
+|Metadata|[[MetadataItem](#schemametadataitem)]|false|true|[An asset or asset type metadata is static information associated with a given asset. A given metadata contains a list of individual metadata values. There is no limit on the number of metadata values defined by an asset. An asset or asset type metadata does not stand alone. It must be specified within an asset or asset type object and, therefore, there are no direct API routes to asset or asset type metadata.]|
 |StreamReferences|[[StreamReference](#schemastreamreference)]|false|true|[An asset stream reference represents dynamic stream data associated with an asset. The references must either be an SDS stream or an SDS stream view. Asset-centric data routes provide direct access to dynamic data for a given asset. There are no limitations on the number of references an asset may contain. However, an asset cannot contain multiple references to the same SDS stream. An asset stream reference does not stand alone. It must be specified within an asset object and, therefore, asset references do not have direct API routes.]|
 |Status|[StatusMapping](#schemastatusmapping)|false|true|None|
 

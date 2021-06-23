@@ -31,20 +31,19 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/assetTypes
   "Description": "string",
   "Metadata": [
     {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "SdsTypeCode": "Empty",
-      "Value": null,
-      "Uom": "string"
+      "Id": "Sample Metadata Id",
+      "Name": "Asset Model number",
+      "Description": "This metadata represents an model number attribute on the asset.",
+      "SdsTypeCode": "Double",
+      "Value": "RFA-123",
+      "Uom": null
     }
   ],
   "TypeReferences": [
     {
-      "StreamReferenceId": "string",
-      "StreamReferenceName": "string",
-      "Description": "string",
-      "TypeId": "string"
+      "StreamReferenceId": "Reference1",
+      "StreamReferenceName": "ReferenceName",
+      "TypeId": "PI-Float32"
     }
   ],
   "Status": {
@@ -215,8 +214,6 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 
 <a id="opIdAssetTypes_Create Asset Type (Asset Types path)"></a>
 
-Create or update an asset type with a specified Id.
-
 ### Request
 ```text 
 POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}
@@ -225,9 +222,9 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{ass
 #### Parameters
 
 `string assetTypeId`
-<br/>Asset type identifier<br/><br/>`string tenantId`
-<br/>Tenant identifier<br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/>
+<br/><br/>`string tenantId`
+<br/><br/>`string namespaceId`
+<br/><br/>
 
 ### Request Body
 
@@ -235,24 +232,33 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{ass
 
 ```json
 {
-  "Id": "SampleAssetType",
-  "Description": "This is a sample asset type.",
+  "Id": "string",
+  "Name": "string",
+  "Description": "string",
   "Metadata": [
     {
-      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
-      "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
+      "Id": "Sample Metadata Id",
+      "Name": "Asset Model number",
+      "Description": "This metadata represents an model number attribute on the asset.",
       "SdsTypeCode": "Double",
-      "Value": 0.01
+      "Value": "RFA-123",
+      "Uom": null
     }
   ],
   "TypeReferences": [
     {
-      "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+      "StreamReferenceId": "Reference1",
       "StreamReferenceName": "ReferenceName",
       "TypeId": "PI-Float32"
     }
-  ]
+  ],
+  "Status": {
+    "StreamReferenceId": "string",
+    "StreamPropertyId": "string",
+    "ValueStatusMappings": [
+      {}
+    ]
+  }
 }
 ```
 
@@ -260,32 +266,7 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{ass
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|201|None|The asset with the specified identifier.|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|409|None|Conflict.|
-|412|None|Pre-Condition Failed.|
-|500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavaiable, please try again later.|
-
-#### Response Headers
-
-|Status|Header|Type|Description|
-|---|---|---|---|
-|201|Etag|integer|Version|
-
-#### Example response body
-> 400 Response
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Resolution": "string",
-  "Reason": "string",
-  "property1": null,
-  "property2": null
-}
-```
+|200|string|None|
 
 ---
 
@@ -316,20 +297,19 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
   "Description": "string",
   "Metadata": [
     {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "SdsTypeCode": "Empty",
-      "Value": null,
-      "Uom": "string"
+      "Id": "Sample Metadata Id",
+      "Name": "Asset Model number",
+      "Description": "This metadata represents an model number attribute on the asset.",
+      "SdsTypeCode": "Double",
+      "Value": "RFA-123",
+      "Uom": null
     }
   ],
   "TypeReferences": [
     {
-      "StreamReferenceId": "string",
-      "StreamReferenceName": "string",
-      "Description": "string",
-      "TypeId": "string"
+      "StreamReferenceId": "Reference1",
+      "StreamReferenceName": "ReferenceName",
+      "TypeId": "PI-Float32"
     }
   ],
   "Status": {
@@ -581,6 +561,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{ass
 
 <a id="opIdAssetTypes_Create Asset Type (Asset Types2 path)"></a>
 
+Create or update an asset type with a specified Id.
+
 ### Request
 ```text 
 POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{assetTypeId}
@@ -589,9 +571,9 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{as
 #### Parameters
 
 `string assetTypeId`
-<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Asset type identifier<br/><br/>`string tenantId`
+<br/>Tenant identifier<br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/>
 
 ### Request Body
 
@@ -599,31 +581,24 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{as
 
 ```json
 {
-  "Id": "string",
-  "Name": "string",
-  "Description": "string",
+  "Id": "SampleAssetType",
+  "Description": "This is a sample asset type.",
   "Metadata": [
     {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "SdsTypeCode": "Empty",
-      "Value": null,
-      "Uom": "string"
+      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+      "Name": "ModelNumber",
+      "Description": "This is a static attribute on the asset which represents the model number.",
+      "SdsTypeCode": "Double",
+      "Value": 0.01
     }
   ],
   "TypeReferences": [
     {
-      "StreamReferenceId": "string",
-      "StreamReferenceName": "string",
-      "Description": "string",
-      "TypeId": "string"
+      "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+      "StreamReferenceName": "ReferenceName",
+      "TypeId": "PI-Float32"
     }
-  ],
-  "Status": {
-    "DefinitionType": 0,
-    "Definition": null
-  }
+  ]
 }
 ```
 
@@ -631,7 +606,84 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{as
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|200|[AssetType](#schemaassettype)|The asset with the specified identifier.|
+|201|[AssetType](#schemaassettype)|The asset with the specified identifier.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|409|None|Conflict.|
+|412|None|Pre-Condition Failed.|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavaiable, please try again later.|
+
+#### Response Headers
+
+|Status|Header|Type|Description|
+|---|---|---|---|
+|200|Etag|integer|Version|
+|201|Etag|integer|Version|
+
+#### Example response body
+> 200 Response
+
+```json
+{
+  "Id": "SampleAssetType",
+  "Description": "This is a sample asset type.",
+  "Metadata": [
+    {
+      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+      "Name": "ModelNumber",
+      "Description": "This is a static attribute on the asset which represents the model number.",
+      "SdsTypeCode": "Double",
+      "Value": 0.01
+    }
+  ],
+  "TypeReferences": [
+    {
+      "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+      "StreamReferenceName": "ReferenceName",
+      "TypeId": "PI-Float32"
+    }
+  ]
+}
+```
+
+> 201 Response
+
+```json
+{
+  "Id": "SampleAssetType",
+  "Description": "This is a sample asset type.",
+  "Metadata": [
+    {
+      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+      "Name": "ModelNumber",
+      "Description": "This is a static attribute on the asset which represents the model number.",
+      "SdsTypeCode": "Double",
+      "Value": 0.01
+    }
+  ],
+  "TypeReferences": [
+    {
+      "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+      "StreamReferenceName": "ReferenceName",
+      "TypeId": "PI-Float32"
+    }
+  ]
+}
+```
+
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+```
 
 ---
 
@@ -657,31 +709,24 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{ass
 
 ```json
 {
-  "Id": "string",
-  "Name": "string",
-  "Description": "string",
+  "Id": "SampleAssetType",
+  "Description": "This is a sample asset type.",
   "Metadata": [
     {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "SdsTypeCode": "Empty",
-      "Value": null,
-      "Uom": "string"
+      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+      "Name": "ModelNumber",
+      "Description": "This is a static attribute on the asset which represents the model number.",
+      "SdsTypeCode": "Double",
+      "Value": 0.01
     }
   ],
   "TypeReferences": [
     {
-      "StreamReferenceId": "string",
-      "StreamReferenceName": "string",
-      "Description": "string",
-      "TypeId": "string"
+      "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+      "StreamReferenceName": "ReferenceName",
+      "TypeId": "PI-Float32"
     }
-  ],
-  "Status": {
-    "DefinitionType": 0,
-    "Definition": null
-  }
+  ]
 }
 ```
 
@@ -720,20 +765,19 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/assetTypes
     "Description": "string",
     "Metadata": [
       {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SdsTypeCode": "Empty",
-        "Value": null,
-        "Uom": "string"
+        "Id": "Sample Metadata Id",
+        "Name": "Asset Model number",
+        "Description": "This metadata represents an model number attribute on the asset.",
+        "SdsTypeCode": "Double",
+        "Value": "RFA-123",
+        "Uom": null
       }
     ],
     "TypeReferences": [
       {
-        "StreamReferenceId": "string",
-        "StreamReferenceName": "string",
-        "Description": "string",
-        "TypeId": "string"
+        "StreamReferenceId": "Reference1",
+        "StreamReferenceName": "ReferenceName",
+        "TypeId": "PI-Float32"
       }
     ],
     "Status": {
@@ -781,31 +825,24 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/assetTypes
 ```json
 [
   {
-    "Id": "string",
-    "Name": "string",
-    "Description": "string",
+    "Id": "SampleAssetType",
+    "Description": "This is a sample asset type.",
     "Metadata": [
       {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SdsTypeCode": "Empty",
-        "Value": null,
-        "Uom": "string"
+        "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+        "Name": "ModelNumber",
+        "Description": "This is a static attribute on the asset which represents the model number.",
+        "SdsTypeCode": "Double",
+        "Value": 0.01
       }
     ],
     "TypeReferences": [
       {
-        "StreamReferenceId": "string",
-        "StreamReferenceName": "string",
-        "Description": "string",
-        "TypeId": "string"
+        "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+        "StreamReferenceName": "ReferenceName",
+        "TypeId": "PI-Float32"
       }
-    ],
-    "Status": {
-      "DefinitionType": 0,
-      "Definition": null
-    }
+    ]
   }
 ]
 ```
@@ -839,31 +876,24 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ssetTypes2
 
 ```json
 {
-  "Id": "string",
-  "Name": "string",
-  "Description": "string",
+  "Id": "SampleAssetType",
+  "Description": "This is a sample asset type.",
   "Metadata": [
     {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "SdsTypeCode": "Empty",
-      "Value": null,
-      "Uom": "string"
+      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+      "Name": "ModelNumber",
+      "Description": "This is a static attribute on the asset which represents the model number.",
+      "SdsTypeCode": "Double",
+      "Value": 0.01
     }
   ],
   "TypeReferences": [
     {
-      "StreamReferenceId": "string",
-      "StreamReferenceName": "string",
-      "Description": "string",
-      "TypeId": "string"
+      "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+      "StreamReferenceName": "ReferenceName",
+      "TypeId": "PI-Float32"
     }
-  ],
-  "Status": {
-    "DefinitionType": 0,
-    "Definition": null
-  }
+  ]
 }
 ```
 
@@ -901,20 +931,19 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ssetTypes2
   "Description": "string",
   "Metadata": [
     {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "SdsTypeCode": "Empty",
-      "Value": null,
-      "Uom": "string"
+      "Id": "Sample Metadata Id",
+      "Name": "Asset Model number",
+      "Description": "This metadata represents an model number attribute on the asset.",
+      "SdsTypeCode": "Double",
+      "Value": "RFA-123",
+      "Uom": null
     }
   ],
   "TypeReferences": [
     {
-      "StreamReferenceId": "string",
-      "StreamReferenceName": "string",
-      "Description": "string",
-      "TypeId": "string"
+      "StreamReferenceId": "Reference1",
+      "StreamReferenceName": "ReferenceName",
+      "TypeId": "PI-Float32"
     }
   ],
   "Status": {
@@ -945,21 +974,21 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ssetTypes2
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|None|
-|Name|string|false|true|None|
-|Description|string|false|true|None|
-|SdsTypeCode|[SdsTypeCode2](#schemasdstypecode2)|false|false|None|
-|Value|any|false|true|None|
-|Uom|string|false|true|None|
+|Id|string|false|true|Metadata identifier|
+|Name|string|false|true|User-friendly name for the metadata value. If not null, must be unique within an asset or asset type.|
+|Description|string|false|true|Metadata item description.|
+|SdsTypeCode|[SdsTypeCode2](#schemasdstypecode2)|false|false|This integer corresponds to the SdsTypeCode. Asset metadata support the following integer or string values: 11 ("Int64"), 14 ("Double"), 16 ("DateTime"), and 18 ("String").|
+|Value|any|false|true|String representation of the metadata value.|
+|Uom|string|false|true|Asset metadata unit of measurement. Select from the list of supported Uom types.|
 
 ```json
 {
-  "Id": "string",
-  "Name": "string",
-  "Description": "string",
-  "SdsTypeCode": "Empty",
-  "Value": null,
-  "Uom": "string"
+  "Id": "Sample Metadata Id",
+  "Name": "Asset Model number",
+  "Description": "This metadata represents an model number attribute on the asset.",
+  "SdsTypeCode": "Double",
+  "Value": "RFA-123",
+  "Uom": null
 }
 
 ```
@@ -1183,17 +1212,16 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ssetTypes2
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|StreamReferenceId|string|false|true|None|
-|StreamReferenceName|string|false|true|None|
-|Description|string|false|true|None|
-|TypeId|string|true|false|None|
+|StreamReferenceId|string|false|true|The Id for this type reference. If an asset is derived from this asset type, this Id must be referenced in the asset reference type object. This Id must be unique within the asset type.|
+|StreamReferenceName|string|false|true|The user friendly name for this type reference.|
+|Description|string|false|true|Description text|
+|TypeId|string|true|false|This string must be an SDS stream type Id.|
 
 ```json
 {
-  "StreamReferenceId": "string",
-  "StreamReferenceName": "string",
-  "Description": "string",
-  "TypeId": "string"
+  "StreamReferenceId": "Reference1",
+  "StreamReferenceName": "ReferenceName",
+  "TypeId": "PI-Float32"
 }
 
 ```
@@ -1317,40 +1345,33 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ssetTypes2
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|None|
-|Name|string|false|true|None|
-|Description|string|false|true|None|
-|Metadata|[[MetadataItem](#schemametadataitem)]|false|true|None|
-|TypeReferences|[[TypeReference](#schematypereference)]|false|true|None|
-|Status|[StatusConfiguration](#schemastatusconfiguration)|false|true|None|
+|Id|string|false|true|Asset type id|
+|Name|string|false|true|Asset type name|
+|Description|string|false|true|Asset type description|
+|Metadata|[[MetadataItem](#schemametadataitem)]|false|true|Asset type metadata|
+|TypeReferences|[[TypeReference](#schematypereference)]|false|true|Asset type description|
+|Status|[StatusConfiguration](#schemastatusconfiguration)|false|true|Asset type status|
 
 ```json
 {
-  "Id": "string",
-  "Name": "string",
-  "Description": "string",
+  "Id": "SampleAssetType",
+  "Description": "This is a sample asset type.",
   "Metadata": [
     {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "SdsTypeCode": "Empty",
-      "Value": null,
-      "Uom": "string"
+      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+      "Name": "ModelNumber",
+      "Description": "This is a static attribute on the asset which represents the model number.",
+      "SdsTypeCode": "Double",
+      "Value": 0.01
     }
   ],
   "TypeReferences": [
     {
-      "StreamReferenceId": "string",
-      "StreamReferenceName": "string",
-      "Description": "string",
-      "TypeId": "string"
+      "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+      "StreamReferenceName": "ReferenceName",
+      "TypeId": "PI-Float32"
     }
-  ],
-  "Status": {
-    "DefinitionType": 0,
-    "Definition": null
-  }
+  ]
 }
 
 ```

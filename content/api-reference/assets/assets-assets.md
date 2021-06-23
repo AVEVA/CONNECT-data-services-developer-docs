@@ -57,20 +57,20 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId
   "Description": "string",
   "Metadata": [
     {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "SdsTypeCode": "Empty",
-      "Value": null,
-      "Uom": "string"
+      "Id": "Sample Metadata Id",
+      "Name": "Asset Model number",
+      "Description": "This metadata represents an model number attribute on the asset.",
+      "SdsTypeCode": "Double",
+      "Value": "RFA-123",
+      "Uom": null
     }
   ],
   "StreamReferences": [
     {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "StreamId": "string"
+      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+      "Name": "Data",
+      "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+      "StreamId": "PI_bifrostbigdaddy_1"
     }
   ],
   "Status": {
@@ -119,20 +119,20 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
   "Description": "string",
   "Metadata": [
     {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "SdsTypeCode": "Empty",
-      "Value": null,
-      "Uom": "string"
+      "Id": "Sample Metadata Id",
+      "Name": "Asset Model number",
+      "Description": "This metadata represents an model number attribute on the asset.",
+      "SdsTypeCode": "Double",
+      "Value": "RFA-123",
+      "Uom": null
     }
   ],
   "StreamReferences": [
     {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "StreamId": "string"
+      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+      "Name": "Data",
+      "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+      "StreamId": "PI_bifrostbigdaddy_1"
     }
   ],
   "Status": {
@@ -728,8 +728,8 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|None|The asset with the specified identifier.|
-|201|None|The asset with the specified identifier.|
+|200|[Asset](#schemaasset)|The asset with the specified identifier.|
+|201|[Asset](#schemaasset)|The asset with the specified identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
 |409|[ErrorTemplate](#schemaerrortemplate)|Conflict|
 |412|[ErrorTemplate](#schemaerrortemplate)|Pre-Condition Failed|
@@ -744,6 +744,58 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId
 |201|Etag|integer|Version|
 
 #### Example response body
+> 200 Response
+
+```json
+{
+  "Id": "SampleAsset",
+  "Description": "This is a sample asset.",
+  "Metadata": [
+    {
+      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+      "Name": "ModelNumber",
+      "Description": "This is a static attribute on the asset which represents the model number.",
+      "SdsTypeCode": "Double",
+      "Value": 0.01
+    }
+  ],
+  "StreamReferences": [
+    {
+      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+      "Name": "Data",
+      "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+      "StreamId": "PI_bifrostbigdaddy_1"
+    }
+  ]
+}
+```
+
+> 201 Response
+
+```json
+{
+  "Id": "SampleAsset",
+  "Description": "This is a sample asset.",
+  "Metadata": [
+    {
+      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+      "Name": "ModelNumber",
+      "Description": "This is a static attribute on the asset which represents the model number.",
+      "SdsTypeCode": "Double",
+      "Value": 0.01
+    }
+  ],
+  "StreamReferences": [
+    {
+      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+      "Name": "Data",
+      "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+      "StreamId": "PI_bifrostbigdaddy_1"
+    }
+  ]
+}
+```
+
 > 400 Response
 
 ```json
@@ -922,9 +974,9 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|Asset identifier|
-|AssetTypeId|string|false|true|Asset type identifier|
-|Name|string|false|true|Asset name|
+|Id|string|false|true|Asset identifier. If you do not provide an Id, OCS copies the name as the identifierId. If you do not provide a name, OCS assigns a random GUID for the Id.|
+|AssetTypeId|string|false|true|Asset type identifier. Id for the asset type that this asset is derived from. To get the merged view of the asset, get the resolved asset through the /Assets/{assetId}/Resolved route.|
+|Name|string|false|true|User-friendly asset name. Required if Id is not provided. If Name is used as the Id, it must be unique within a given namespace.|
 |Description|string|false|true|Asset description|
 |Metadata|[[MetadataItem](#schemametadataitem)]|false|true|Asset metadata|
 |StreamReferences|[[StreamReference](#schemastreamreference)]|false|true|Asset stream reference|
@@ -932,7 +984,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId
 
 ```json
 {
-  "Id": "SampleNonDeprecatedAsset",
+  "Id": "SampleAsset",
   "Description": "This is a sample asset.",
   "Metadata": [
     {
@@ -968,21 +1020,21 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|None|
-|Name|string|false|true|None|
-|Description|string|false|true|None|
-|SdsTypeCode|[SdsTypeCode2](#schemasdstypecode2)|false|false|None|
-|Value|any|false|true|None|
-|Uom|string|false|true|None|
+|Id|string|false|true|Metadata identifier|
+|Name|string|false|true|User-friendly name for the metadata value. If not null, must be unique within an asset or asset type.|
+|Description|string|false|true|Metadata item description.|
+|SdsTypeCode|[SdsTypeCode2](#schemasdstypecode2)|false|false|This integer corresponds to the SdsTypeCode. Asset metadata support the following integer or string values: 11 ("Int64"), 14 ("Double"), 16 ("DateTime"), and 18 ("String").|
+|Value|any|false|true|String representation of the metadata value.|
+|Uom|string|false|true|Asset metadata unit of measurement. Select from the list of supported Uom types.|
 
 ```json
 {
-  "Id": "string",
-  "Name": "string",
-  "Description": "string",
-  "SdsTypeCode": "Empty",
-  "Value": null,
-  "Uom": "string"
+  "Id": "Sample Metadata Id",
+  "Name": "Asset Model number",
+  "Description": "This metadata represents an model number attribute on the asset.",
+  "SdsTypeCode": "Double",
+  "Value": "RFA-123",
+  "Uom": null
 }
 
 ```
@@ -1213,10 +1265,10 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId
 
 ```json
 {
-  "Id": "string",
-  "Name": "string",
-  "Description": "string",
-  "StreamId": "string"
+  "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+  "Name": "Data",
+  "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+  "StreamId": "PI_bifrostbigdaddy_1"
 }
 
 ```
@@ -1290,20 +1342,20 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId
   "Description": "string",
   "Metadata": [
     {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "SdsTypeCode": "Empty",
-      "Value": null,
-      "Uom": "string"
+      "Id": "Sample Metadata Id",
+      "Name": "Asset Model number",
+      "Description": "This metadata represents an model number attribute on the asset.",
+      "SdsTypeCode": "Double",
+      "Value": "RFA-123",
+      "Uom": null
     }
   ],
   "StreamReferences": [
     {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "StreamId": "string"
+      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+      "Name": "Data",
+      "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+      "StreamId": "PI_bifrostbigdaddy_1"
     }
   ],
   "Status": {

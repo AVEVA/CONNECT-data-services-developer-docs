@@ -1156,10 +1156,10 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets/Fa
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|Stream Reference Id|
-|Name|string|false|true|Stream Reference Name|
+|Id|string|false|true|None|
+|Name|string|false|true|None|
 |Description|string|false|true|Description of this stream reference|
-|StreamId|string|true|false|Sds stream id that's being referenced.|
+|StreamId|string|true|false|None|
 
 ```json
 {
@@ -1224,8 +1224,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets/Fa
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|Asset Id|
-|AssetTypeId|string|false|true|Asset Type Id|
+|Id|string|false|true|None|
+|AssetTypeId|string|false|true|None|
 |Name|string|false|true|None|
 |Description|string|false|true|None|
 |Metadata|[[MetadataItem](#schemametadataitem)]|false|true|None|

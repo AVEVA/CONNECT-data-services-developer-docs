@@ -437,9 +437,9 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets
 
 ---
 
-## `Bulk Deprecated Get Resolved Assets`
+## `Bulk Get Resolved Assets`
 
-<a id="opIdRequestManager_Bulk Deprecated Get Resolved Assets"></a>
+<a id="opIdRequestManager_Bulk Get Resolved Assets"></a>
 
 View multiple resolved assets.
 
@@ -470,7 +470,7 @@ Asset identifiers<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[DeprecatedResolvedAsset](#schemadeprecatedresolvedasset)[]|Returns the resolved view of multiple assets.|
+|200|[ResolvedAsset](#schemaresolvedasset)[]|Returns the resolved view of multiple assets.|
 |207|[MultiStatusResultOfStringAndChildErrorTemplate](#schemamultistatusresultofstringandchilderrortemplate)|On POST, returns the resolved view of multiple assets. For error responses, check the multi-status response for the error and cause.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
 |500|None|Internal Service Error, please try again later.|
@@ -548,9 +548,9 @@ Asset identifiers<br/>
 
 ---
 
-## `Bulk Get Resolved Assets`
+## `Bulk Deprecated Get Resolved Assets`
 
-<a id="opIdRequestManager_Bulk Get Resolved Assets"></a>
+<a id="opIdRequestManager_Bulk Deprecated Get Resolved Assets"></a>
 
 ### Request
 ```text 
@@ -1667,12 +1667,12 @@ An asset stream reference represents dynamic stream data associated with an asse
 
 ---
 
-### DeprecatedResolvedAsset
+### ResolvedAsset
 
-<a id="schemadeprecatedresolvedasset"></a>
-<a id="schema_DeprecatedResolvedAsset"></a>
-<a id="tocSdeprecatedresolvedasset"></a>
-<a id="tocsdeprecatedresolvedasset"></a>
+<a id="schemaresolvedasset"></a>
+<a id="schema_ResolvedAsset"></a>
+<a id="tocSresolvedasset"></a>
+<a id="tocsresolvedasset"></a>
 
 #### Properties
 
@@ -1680,26 +1680,33 @@ An asset stream reference represents dynamic stream data associated with an asse
 |---|---|---|---|---|
 |Id|string|false|true|None|
 |Name|string|false|true|None|
+|Resolved|boolean|false|false|None|
 |Description|string|false|true|None|
 |AssetTypeId|string|false|true|None|
 |AssetTypeName|string|false|true|None|
-|Metadata|[[MetadataItem2](#schemametadataitem2)]|false|true|None|
-|Streams|[[DeprecatedResolvedStream](#schemadeprecatedresolvedstream)]|false|true|None|
+|ShapeId|string|false|true|None|
+|ShapeName|string|false|true|None|
+|Metadata|[[ResolvedMetadataItem](#schemaresolvedmetadataitem)]|false|true|None|
+|Streams|[[ResolvedStream](#schemaresolvedstream)]|false|true|None|
 |UnresolvedStreams|[[UnresolvedStream](#schemaunresolvedstream)]|false|true|None|
-|Status|[ResolvedStatus](#schemaresolvedstatus)|false|true|None|
+|UnresolvedMetadata|[[UnresolvedMetadata](#schemaunresolvedmetadata)]|false|true|None|
+|StatusDefinitionType|[StatusDefinitionType](#schemastatusdefinitiontype)|false|false|None|
+|Status|any|false|true|None|
+|UnresolvedStatus|[UnresolvedStatus](#schemaunresolvedstatus)|false|true|None|
 
 ```json
 {
   "Id": "string",
   "Name": "string",
+  "Resolved": true,
   "Description": "string",
   "AssetTypeId": "string",
   "AssetTypeName": "string",
+  "ShapeId": "string",
+  "ShapeName": "string",
   "Metadata": [
     {
-      "Id": "string",
       "Name": "string",
-      "Description": "string",
       "SdsTypeCode": 0,
       "Value": null,
       "Uom": "string"
@@ -1708,16 +1715,32 @@ An asset stream reference represents dynamic stream data associated with an asse
   "Streams": [
     {
       "Name": "string",
-      "Properties": [
+      "Type": {
+        "Id": "string",
+        "Name": "string",
+        "Description": "string",
+        "SdsTypeCode": "[",
+        "IsGenericType": true,
+        "IsReferenceType": true,
+        "GenericArguments": [
+          null
+        ],
+        "Properties": [
+          null
+        ],
+        "BaseType": null,
+        "DerivedTypes": [
+          null
+        ],
+        "InterpolationMode": "[",
+        "ExtrapolationMode": "["
+      },
+      "StreamReferenceName": "string",
+      "StreamId": "string",
+      "PropertyMaps": [
         {
           "Id": "string",
-          "IsKey": true,
-          "Uom": "string",
-          "Order": 0,
-          "InterpolationMode": 0,
-          "ExtrapolationMode": 0,
-          "SdsType": null,
-          "Source": null
+          "SourcePropertyId": "string"
         }
       ]
     }
@@ -1728,10 +1751,16 @@ An asset stream reference represents dynamic stream data associated with an asse
       "Reason": "string"
     }
   ],
-  "Status": {
-    "Name": "string",
-    "StreamName": "string",
-    "StreamPropertyId": "string"
+  "UnresolvedMetadata": [
+    {
+      "Name": "string",
+      "Reason": "string"
+    }
+  ],
+  "StatusDefinitionType": 0,
+  "Status": null,
+  "UnresolvedStatus": {
+    "Reason": "string"
   }
 }
 
@@ -1739,29 +1768,25 @@ An asset stream reference represents dynamic stream data associated with an asse
 
 ---
 
-### MetadataItem2
+### ResolvedMetadataItem
 
-<a id="schemametadataitem2"></a>
-<a id="schema_MetadataItem2"></a>
-<a id="tocSmetadataitem2"></a>
-<a id="tocsmetadataitem2"></a>
+<a id="schemaresolvedmetadataitem"></a>
+<a id="schema_ResolvedMetadataItem"></a>
+<a id="tocSresolvedmetadataitem"></a>
+<a id="tocsresolvedmetadataitem"></a>
 
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|None|
 |Name|string|false|true|None|
-|Description|string|false|true|None|
 |SdsTypeCode|[SdsTypeCode](#schemasdstypecode)|false|false|None|
 |Value|any|false|true|None|
 |Uom|string|false|true|None|
 
 ```json
 {
-  "Id": "string",
   "Name": "string",
-  "Description": "string",
   "SdsTypeCode": 0,
   "Value": null,
   "Uom": "string"
@@ -1771,41 +1796,114 @@ An asset stream reference represents dynamic stream data associated with an asse
 
 ---
 
-### DeprecatedResolvedStream
+### ResolvedStream
 
-<a id="schemadeprecatedresolvedstream"></a>
-<a id="schema_DeprecatedResolvedStream"></a>
-<a id="tocSdeprecatedresolvedstream"></a>
-<a id="tocsdeprecatedresolvedstream"></a>
+<a id="schemaresolvedstream"></a>
+<a id="schema_ResolvedStream"></a>
+<a id="tocSresolvedstream"></a>
+<a id="tocsresolvedstream"></a>
 
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Name|string|false|true|None|
-|Properties|[[ResolvedProperty](#schemaresolvedproperty)]|false|true|None|
+|Type|[SdsType](#schemasdstype)|false|true|None|
+|StreamReferenceName|string|false|true|None|
+|StreamId|string|false|true|None|
+|PropertyMaps|[[PropertyMap](#schemapropertymap)]|false|true|None|
 
 ```json
 {
   "Name": "string",
-  "Properties": [
-    {
-      "Id": "string",
-      "IsKey": true,
-      "Uom": "string",
-      "Order": 0,
-      "InterpolationMode": 0,
-      "ExtrapolationMode": 0,
-      "SdsType": {
+  "Type": {
+    "Id": "string",
+    "Name": "string",
+    "Description": "string",
+    "SdsTypeCode": 0,
+    "IsGenericType": true,
+    "IsReferenceType": true,
+    "GenericArguments": [
+      {
+        "Id": "string",
+        "Name": "string",
+        "Description": "string",
         "SdsTypeCode": "[",
+        "IsGenericType": true,
+        "IsReferenceType": true,
+        "GenericArguments": [
+          null
+        ],
         "Properties": [
           null
-        ]
-      },
-      "Source": {
-        "StreamId": "string",
-        "PropertyId": "string"
+        ],
+        "BaseType": null,
+        "DerivedTypes": [
+          null
+        ],
+        "InterpolationMode": "[",
+        "ExtrapolationMode": "["
       }
+    ],
+    "Properties": [
+      {
+        "Id": "string",
+        "Name": "string",
+        "Description": "string",
+        "Order": 0,
+        "IsKey": true,
+        "FixedSize": 0,
+        "SdsType": null,
+        "Value": null,
+        "Uom": "string",
+        "InterpolationMode": null
+      }
+    ],
+    "BaseType": {
+      "Id": null,
+      "Name": null,
+      "Description": null,
+      "SdsTypeCode": null,
+      "IsGenericType": null,
+      "IsReferenceType": null,
+      "GenericArguments": null,
+      "Properties": null,
+      "BaseType": null,
+      "DerivedTypes": null,
+      "InterpolationMode": null,
+      "ExtrapolationMode": null
+    },
+    "DerivedTypes": [
+      {
+        "Id": "string",
+        "Name": "string",
+        "Description": "string",
+        "SdsTypeCode": "[",
+        "IsGenericType": true,
+        "IsReferenceType": true,
+        "GenericArguments": [
+          null
+        ],
+        "Properties": [
+          null
+        ],
+        "BaseType": null,
+        "DerivedTypes": [
+          null
+        ],
+        "InterpolationMode": "[",
+        "ExtrapolationMode": "["
+      }
+    ],
+    "InterpolationMode": 0,
+    "ExtrapolationMode": 0
+  },
+  "StreamReferenceName": "string",
+  "StreamId": "string",
+  "PropertyMaps": [
+    {
+      "Id": "string",
+      "SourcePropertyId": "string"
     }
   ]
 }
@@ -1814,47 +1912,456 @@ An asset stream reference represents dynamic stream data associated with an asse
 
 ---
 
-### ResolvedProperty
+### SdsType
 
-<a id="schemaresolvedproperty"></a>
-<a id="schema_ResolvedProperty"></a>
-<a id="tocSresolvedproperty"></a>
-<a id="tocsresolvedproperty"></a>
+<a id="schemasdstype"></a>
+<a id="schema_SdsType"></a>
+<a id="tocSsdstype"></a>
+<a id="tocssdstype"></a>
 
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Id|string|false|true|None|
-|IsKey|boolean|false|false|None|
-|Uom|string|false|true|None|
-|Order|int32|false|false|None|
+|Name|string|false|true|None|
+|Description|string|false|true|None|
+|SdsTypeCode|[SdsTypeCode](#schemasdstypecode)|false|false|None|
+|IsGenericType|boolean|false|false|None|
+|IsReferenceType|boolean|false|false|None|
+|GenericArguments|[[SdsType](#schemasdstype)]|false|true|None|
+|Properties|[[SdsTypeProperty](#schemasdstypeproperty)]|false|true|None|
+|BaseType|[SdsType](#schemasdstype)|false|true|None|
+|DerivedTypes|[[SdsType](#schemasdstype)]|false|true|None|
 |InterpolationMode|[SdsInterpolationMode](#schemasdsinterpolationmode)|false|false|None|
 |ExtrapolationMode|[SdsExtrapolationMode](#schemasdsextrapolationmode)|false|false|None|
-|SdsType|[ResolvedSdsType](#schemaresolvedsdstype)|false|true|None|
-|Source|[ResolvedSource](#schemaresolvedsource)|false|true|None|
 
 ```json
 {
   "Id": "string",
-  "IsKey": true,
-  "Uom": "string",
-  "Order": 0,
-  "InterpolationMode": 0,
-  "ExtrapolationMode": 0,
-  "SdsType": {
+  "Name": "string",
+  "Description": "string",
+  "SdsTypeCode": 0,
+  "IsGenericType": true,
+  "IsReferenceType": true,
+  "GenericArguments": [
+    {
+      "Id": "string",
+      "Name": "string",
+      "Description": "string",
+      "SdsTypeCode": 0,
+      "IsGenericType": true,
+      "IsReferenceType": true,
+      "GenericArguments": [
+        {
+          "Id": "string",
+          "Name": "string",
+          "Description": "string",
+          "SdsTypeCode": 0,
+          "IsGenericType": true,
+          "IsReferenceType": true,
+          "GenericArguments": [
+            {}
+          ],
+          "Properties": [
+            {}
+          ],
+          "BaseType": null,
+          "DerivedTypes": [
+            {}
+          ],
+          "InterpolationMode": 0,
+          "ExtrapolationMode": 0
+        }
+      ],
+      "Properties": [
+        {
+          "Id": "string",
+          "Name": "string",
+          "Description": "string",
+          "Order": 0,
+          "IsKey": true,
+          "FixedSize": 0,
+          "SdsType": null,
+          "Value": null,
+          "Uom": "string",
+          "InterpolationMode": null
+        }
+      ],
+      "BaseType": {
+        "Id": "string",
+        "Name": "string",
+        "Description": "string",
+        "SdsTypeCode": "[",
+        "IsGenericType": true,
+        "IsReferenceType": true,
+        "GenericArguments": [
+          null
+        ],
+        "Properties": [
+          null
+        ],
+        "BaseType": null,
+        "DerivedTypes": [
+          null
+        ],
+        "InterpolationMode": "[",
+        "ExtrapolationMode": "["
+      },
+      "DerivedTypes": [
+        {
+          "Id": "string",
+          "Name": "string",
+          "Description": "string",
+          "SdsTypeCode": 0,
+          "IsGenericType": true,
+          "IsReferenceType": true,
+          "GenericArguments": [
+            {}
+          ],
+          "Properties": [
+            {}
+          ],
+          "BaseType": null,
+          "DerivedTypes": [
+            {}
+          ],
+          "InterpolationMode": 0,
+          "ExtrapolationMode": 0
+        }
+      ],
+      "InterpolationMode": 0,
+      "ExtrapolationMode": 0
+    }
+  ],
+  "Properties": [
+    {
+      "Id": "string",
+      "Name": "string",
+      "Description": "string",
+      "Order": 0,
+      "IsKey": true,
+      "FixedSize": 0,
+      "SdsType": {
+        "Id": "string",
+        "Name": "string",
+        "Description": "string",
+        "SdsTypeCode": "[",
+        "IsGenericType": true,
+        "IsReferenceType": true,
+        "GenericArguments": [
+          null
+        ],
+        "Properties": [
+          null
+        ],
+        "BaseType": null,
+        "DerivedTypes": [
+          null
+        ],
+        "InterpolationMode": "[",
+        "ExtrapolationMode": "["
+      },
+      "Value": null,
+      "Uom": "string",
+      "InterpolationMode": 0
+    }
+  ],
+  "BaseType": {
+    "Id": "string",
+    "Name": "string",
+    "Description": "string",
     "SdsTypeCode": 0,
+    "IsGenericType": true,
+    "IsReferenceType": true,
+    "GenericArguments": [
+      {
+        "Id": "string",
+        "Name": "string",
+        "Description": "string",
+        "SdsTypeCode": "[",
+        "IsGenericType": true,
+        "IsReferenceType": true,
+        "GenericArguments": [
+          null
+        ],
+        "Properties": [
+          null
+        ],
+        "BaseType": null,
+        "DerivedTypes": [
+          null
+        ],
+        "InterpolationMode": "[",
+        "ExtrapolationMode": "["
+      }
+    ],
     "Properties": [
       {
         "Id": "string",
-        "Value": null
+        "Name": "string",
+        "Description": "string",
+        "Order": 0,
+        "IsKey": true,
+        "FixedSize": 0,
+        "SdsType": null,
+        "Value": null,
+        "Uom": "string",
+        "InterpolationMode": null
       }
-    ]
+    ],
+    "BaseType": {
+      "Id": null,
+      "Name": null,
+      "Description": null,
+      "SdsTypeCode": null,
+      "IsGenericType": null,
+      "IsReferenceType": null,
+      "GenericArguments": null,
+      "Properties": null,
+      "BaseType": null,
+      "DerivedTypes": null,
+      "InterpolationMode": null,
+      "ExtrapolationMode": null
+    },
+    "DerivedTypes": [
+      {
+        "Id": "string",
+        "Name": "string",
+        "Description": "string",
+        "SdsTypeCode": "[",
+        "IsGenericType": true,
+        "IsReferenceType": true,
+        "GenericArguments": [
+          null
+        ],
+        "Properties": [
+          null
+        ],
+        "BaseType": null,
+        "DerivedTypes": [
+          null
+        ],
+        "InterpolationMode": "[",
+        "ExtrapolationMode": "["
+      }
+    ],
+    "InterpolationMode": 0,
+    "ExtrapolationMode": 0
   },
-  "Source": {
-    "StreamId": "string",
-    "PropertyId": "string"
-  }
+  "DerivedTypes": [
+    {
+      "Id": "string",
+      "Name": "string",
+      "Description": "string",
+      "SdsTypeCode": 0,
+      "IsGenericType": true,
+      "IsReferenceType": true,
+      "GenericArguments": [
+        {
+          "Id": "string",
+          "Name": "string",
+          "Description": "string",
+          "SdsTypeCode": 0,
+          "IsGenericType": true,
+          "IsReferenceType": true,
+          "GenericArguments": [
+            {}
+          ],
+          "Properties": [
+            {}
+          ],
+          "BaseType": null,
+          "DerivedTypes": [
+            {}
+          ],
+          "InterpolationMode": 0,
+          "ExtrapolationMode": 0
+        }
+      ],
+      "Properties": [
+        {
+          "Id": "string",
+          "Name": "string",
+          "Description": "string",
+          "Order": 0,
+          "IsKey": true,
+          "FixedSize": 0,
+          "SdsType": null,
+          "Value": null,
+          "Uom": "string",
+          "InterpolationMode": null
+        }
+      ],
+      "BaseType": {
+        "Id": "string",
+        "Name": "string",
+        "Description": "string",
+        "SdsTypeCode": "[",
+        "IsGenericType": true,
+        "IsReferenceType": true,
+        "GenericArguments": [
+          null
+        ],
+        "Properties": [
+          null
+        ],
+        "BaseType": null,
+        "DerivedTypes": [
+          null
+        ],
+        "InterpolationMode": "[",
+        "ExtrapolationMode": "["
+      },
+      "DerivedTypes": [
+        {
+          "Id": "string",
+          "Name": "string",
+          "Description": "string",
+          "SdsTypeCode": 0,
+          "IsGenericType": true,
+          "IsReferenceType": true,
+          "GenericArguments": [
+            {}
+          ],
+          "Properties": [
+            {}
+          ],
+          "BaseType": null,
+          "DerivedTypes": [
+            {}
+          ],
+          "InterpolationMode": 0,
+          "ExtrapolationMode": 0
+        }
+      ],
+      "InterpolationMode": 0,
+      "ExtrapolationMode": 0
+    }
+  ],
+  "InterpolationMode": 0,
+  "ExtrapolationMode": 0
+}
+
+```
+
+---
+
+### SdsTypeProperty
+
+<a id="schemasdstypeproperty"></a>
+<a id="schema_SdsTypeProperty"></a>
+<a id="tocSsdstypeproperty"></a>
+<a id="tocssdstypeproperty"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Id|string|false|true|None|
+|Name|string|false|true|None|
+|Description|string|false|true|None|
+|Order|int32|false|false|None|
+|IsKey|boolean|false|false|None|
+|FixedSize|int32|false|false|None|
+|SdsType|[SdsType](#schemasdstype)|false|true|None|
+|Value|any|false|true|None|
+|Uom|string|false|true|None|
+|InterpolationMode|[SdsInterpolationMode](#schemasdsinterpolationmode)|false|true|None|
+
+```json
+{
+  "Id": "string",
+  "Name": "string",
+  "Description": "string",
+  "Order": 0,
+  "IsKey": true,
+  "FixedSize": 0,
+  "SdsType": {
+    "Id": "string",
+    "Name": "string",
+    "Description": "string",
+    "SdsTypeCode": 0,
+    "IsGenericType": true,
+    "IsReferenceType": true,
+    "GenericArguments": [
+      {
+        "Id": "string",
+        "Name": "string",
+        "Description": "string",
+        "SdsTypeCode": "[",
+        "IsGenericType": true,
+        "IsReferenceType": true,
+        "GenericArguments": [
+          null
+        ],
+        "Properties": [
+          null
+        ],
+        "BaseType": null,
+        "DerivedTypes": [
+          null
+        ],
+        "InterpolationMode": "[",
+        "ExtrapolationMode": "["
+      }
+    ],
+    "Properties": [
+      {
+        "Id": "string",
+        "Name": "string",
+        "Description": "string",
+        "Order": 0,
+        "IsKey": true,
+        "FixedSize": 0,
+        "SdsType": null,
+        "Value": null,
+        "Uom": "string",
+        "InterpolationMode": null
+      }
+    ],
+    "BaseType": {
+      "Id": null,
+      "Name": null,
+      "Description": null,
+      "SdsTypeCode": null,
+      "IsGenericType": null,
+      "IsReferenceType": null,
+      "GenericArguments": null,
+      "Properties": null,
+      "BaseType": null,
+      "DerivedTypes": null,
+      "InterpolationMode": null,
+      "ExtrapolationMode": null
+    },
+    "DerivedTypes": [
+      {
+        "Id": "string",
+        "Name": "string",
+        "Description": "string",
+        "SdsTypeCode": "[",
+        "IsGenericType": true,
+        "IsReferenceType": true,
+        "GenericArguments": [
+          null
+        ],
+        "Properties": [
+          null
+        ],
+        "BaseType": null,
+        "DerivedTypes": [
+          null
+        ],
+        "InterpolationMode": "[",
+        "ExtrapolationMode": "["
+      }
+    ],
+    "InterpolationMode": 0,
+    "ExtrapolationMode": 0
+  },
+  "Value": null,
+  "Uom": "string",
+  "InterpolationMode": 0
 }
 
 ```
@@ -1900,77 +2407,24 @@ An asset stream reference represents dynamic stream data associated with an asse
 
 ---
 
-### ResolvedSdsType
+### PropertyMap
 
-<a id="schemaresolvedsdstype"></a>
-<a id="schema_ResolvedSdsType"></a>
-<a id="tocSresolvedsdstype"></a>
-<a id="tocsresolvedsdstype"></a>
-
-#### Properties
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|SdsTypeCode|[SdsTypeCode](#schemasdstypecode)|false|false|None|
-|Properties|[[ResolvedEnum](#schemaresolvedenum)]|false|true|None|
-
-```json
-{
-  "SdsTypeCode": 0,
-  "Properties": [
-    {
-      "Id": "string",
-      "Value": null
-    }
-  ]
-}
-
-```
-
----
-
-### ResolvedEnum
-
-<a id="schemaresolvedenum"></a>
-<a id="schema_ResolvedEnum"></a>
-<a id="tocSresolvedenum"></a>
-<a id="tocsresolvedenum"></a>
+<a id="schemapropertymap"></a>
+<a id="schema_PropertyMap"></a>
+<a id="tocSpropertymap"></a>
+<a id="tocspropertymap"></a>
 
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Id|string|false|true|None|
-|Value|any|false|true|None|
+|SourcePropertyId|string|false|true|None|
 
 ```json
 {
   "Id": "string",
-  "Value": null
-}
-
-```
-
----
-
-### ResolvedSource
-
-<a id="schemaresolvedsource"></a>
-<a id="schema_ResolvedSource"></a>
-<a id="tocSresolvedsource"></a>
-<a id="tocsresolvedsource"></a>
-
-#### Properties
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|StreamId|string|false|true|None|
-|PropertyId|string|false|true|None|
-
-```json
-{
-  "StreamId": "string",
-  "PropertyId": "string"
+  "SourcePropertyId": "string"
 }
 
 ```
@@ -2001,26 +2455,46 @@ An asset stream reference represents dynamic stream data associated with an asse
 
 ---
 
-### ResolvedStatus
+### UnresolvedMetadata
 
-<a id="schemaresolvedstatus"></a>
-<a id="schema_ResolvedStatus"></a>
-<a id="tocSresolvedstatus"></a>
-<a id="tocsresolvedstatus"></a>
+<a id="schemaunresolvedmetadata"></a>
+<a id="schema_UnresolvedMetadata"></a>
+<a id="tocSunresolvedmetadata"></a>
+<a id="tocsunresolvedmetadata"></a>
 
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Name|string|false|true|None|
-|StreamName|string|false|true|None|
-|StreamPropertyId|string|false|true|None|
+|Reason|string|false|true|None|
 
 ```json
 {
   "Name": "string",
-  "StreamName": "string",
-  "StreamPropertyId": "string"
+  "Reason": "string"
+}
+
+```
+
+---
+
+### UnresolvedStatus
+
+<a id="schemaunresolvedstatus"></a>
+<a id="schema_UnresolvedStatus"></a>
+<a id="tocSunresolvedstatus"></a>
+<a id="tocsunresolvedstatus"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Reason|string|false|true|None|
+
+```json
+{
+  "Reason": "string"
 }
 
 ```

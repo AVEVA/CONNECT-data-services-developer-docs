@@ -12,7 +12,7 @@ uid: assets-resolved-asset-data
 ### Request
 ```text 
 GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data
-?startIndex={startIndex}&endIndex={endIndex}&stream={stream}
+?startIndex={startIndex}&endIndex={endIndex}&stream={stream}&boundaryType={boundaryType}&startBoundaryType={startBoundaryType}&endBoundaryType={endBoundaryType}
 ```
 
 #### Parameters
@@ -24,6 +24,9 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 <br/><br/>`string namespaceId`
 <br/><br/>
 `[optional] array stream`
+<br/><br/>`[optional] any boundaryType`
+<br/><br/>`[optional] any startBoundaryType`
+<br/><br/>`[optional] any endBoundaryType`
 <br/><br/>
 
 ### Response
@@ -98,7 +101,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 ### Request
 ```text 
 GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/Sampled
-?startIndex={startIndex}&endIndex={endIndex}&intervals={intervals}&stream={stream}
+?startIndex={startIndex}&endIndex={endIndex}&intervals={intervals}&stream={stream}&boundaryType={boundaryType}&startBoundaryType={startBoundaryType}&endBoundaryType={endBoundaryType}
 ```
 
 #### Parameters
@@ -111,6 +114,9 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 <br/><br/>`string namespaceId`
 <br/><br/>
 `[optional] array stream`
+<br/><br/>`[optional] any boundaryType`
+<br/><br/>`[optional] any startBoundaryType`
+<br/><br/>`[optional] any endBoundaryType`
 <br/><br/>
 
 ### Response
@@ -148,4 +154,25 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|string|None|
+
+---
+## Definitions
+
+### SdsBoundaryType
+
+<a id="schemasdsboundarytype"></a>
+<a id="schema_SdsBoundaryType"></a>
+<a id="tocSsdsboundarytype"></a>
+<a id="tocssdsboundarytype"></a>
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|Exact|0|
+|Inside|1|
+|Outside|2|
+|ExactOrCalculated|3|
+
+---
 

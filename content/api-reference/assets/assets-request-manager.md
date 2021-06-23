@@ -149,8 +149,8 @@ The asset you want to create.<br/>
 |200|[DeprecatedAsset](#schemadeprecatedasset)|The asset that was created.|
 |302|None|The asset you attempted to create is identical to one that already exists.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|403|None|You are not authorized to create assets.|
-|409|None|The asset you attempted to create has a conflict. See the response body for additional details.|
+|403|[ErrorTemplate](#schemaerrortemplate)|You are not authorized to create assets.|
+|409|[ErrorTemplate](#schemaerrortemplate)|The asset you attempted to create has a conflict. See the response body for additional details.|
 |500|None|Internal Service Error, please try again later.|
 |503|None|Service Unavaiable, please try again later.|
 
@@ -1156,10 +1156,10 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets/Fa
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|None|
-|Name|string|false|true|None|
-|Description|string|false|true|None|
-|StreamId|string|true|false|None|
+|Id|string|false|true|Stream Reference Id|
+|Name|string|false|true|Stream Reference Name|
+|Description|string|false|true|Description of this stream reference|
+|StreamId|string|true|false|Sds stream id that's being referenced.|
 
 ```json
 {
@@ -1224,8 +1224,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets/Fa
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|None|
-|AssetTypeId|string|false|true|None|
+|Id|string|false|true|Asset Id|
+|AssetTypeId|string|false|true|Asset Type Id|
 |Name|string|false|true|None|
 |Description|string|false|true|None|
 |Metadata|[[MetadataItem](#schemametadataitem)]|false|true|None|

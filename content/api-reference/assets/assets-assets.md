@@ -144,6 +144,7 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId
 
 |Status|Header|Type|Description|
 |---|---|---|---|
+|200|Etag|integer|Version|
 |302|Location|string|Location to get the identical resource.|
 
 #### Example response body
@@ -241,8 +242,8 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |---|---|---|
 |201|None|The asset with the specified identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|409|None|Conflict.|
-|412|None|Pre-Condition Failed.|
+|409|None|Conflict|
+|412|None|Pre-Condition Failed|
 |500|None|Internal Service Error, please try again later.|
 |503|None|Service Unavaiable, please try again later.|
 
@@ -293,8 +294,8 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{asset
 |204|None|The asset with the specified identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
 |401|None|Unauthorized|
-|404|None|Not Found.|
-|409|None|Conflict.|
+|404|None|Not Found|
+|409|None|Conflict|
 |500|None|Internal Service Error, please try again later.|
 |503|None|Service Unavaiable, please try again later.|
 
@@ -318,7 +319,7 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{asset
 
 <a id="opIdAssets_Get Asset Acl"></a>
 
-Get the access control list of the specified asset.
+Get the access control of the specified asset.
 
 ### Request
 ```text 
@@ -336,7 +337,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[AccessControlList](#schemaaccesscontrollist)|The access control list of the asset with the specified identifier.|
+|200|[AccessControlList](#schemaaccesscontrollist)|The access control of the asset with the specified identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
 |401|None|Unauthorized|
 |404|None|Asset with specified identifier not found.|
@@ -385,7 +386,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 <a id="opIdAssets_Update Asset Access Control"></a>
 
-Get the access control list of the specified asset.
+Updates the access control of the specified asset.
 
 ### Request
 ```text 
@@ -427,7 +428,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|204|None|The access control list of the asset with the specified identifier.|
+|204|None|The access control of the asset with the specified identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
 |401|None|Unauthorized|
 |404|None|Asset with specified identifier not found.|
@@ -913,8 +914,8 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|None|
-|AssetTypeId|string|false|true|None|
+|Id|string|false|true|Asset Id|
+|AssetTypeId|string|false|true|Asset Type Id|
 |Name|string|false|true|None|
 |Description|string|false|true|None|
 |Metadata|[[MetadataItem](#schemametadataitem)]|false|true|None|
@@ -1211,10 +1212,10 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|None|
-|Name|string|false|true|None|
-|Description|string|false|true|None|
-|StreamId|string|true|false|None|
+|Id|string|false|true|Stream Reference Id|
+|Name|string|false|true|Stream Reference Name|
+|Description|string|false|true|Description of this stream reference|
+|StreamId|string|true|false|Sds stream id that's being referenced.|
 
 ```json
 {

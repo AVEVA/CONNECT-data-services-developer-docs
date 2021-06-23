@@ -4,13 +4,13 @@ uid: operations-usage
 ---
 
 # Usage
-APIs related to querying Usage data.
+APIs related to querying usage data
 
 ## `List Namespace Usage`
 
 <a id="opIdQuery_List Namespace Usage"></a>
 
-Gets **Namespace** usage data calculated based on active / completed billing cycles, when the **start** and **end** parameters are omitted. When **start** is provided and **end** is omitted, a single day of usage data is returned. When both **start** and **end** are provided, daily usage data is returned from the provided range.
+Returns namespace usage data, based on active and completed billing cycles, and whether start and end parameters are provided or omitted. When start is provided and end is omitted, a single day of usage data is returned. When both start and end are provided, daily usage data is returned for the range provided.
 
 ### Request
 ```text 
@@ -21,17 +21,17 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/usage
 #### Parameters
 
 `string tenantId`
-<br/>Id of the Tenant<br/><br/>`string namespaceId`
-<br/>Id of the Namespace<br/><br/>
+<br/>Tenant identifier<br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/>
 `[optional] string start`
-<br/>Start date of the usage for daily usage data.<br/><br/>`[optional] string end`
-<br/>End date of the daily usage data, if there is no end date only one summary is returned<br/><br/>
+<br/>Start date of the range for daily usage data<br/><br/>`[optional] string end`
+<br/>End date of the range for daily usage data<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[UsageDataRecord](#schemausagedatarecord)[]|Usage data for the requested **Namespace**|
+|200|[UsageDataRecord](#schemausagedatarecord)[]|Usage data for the requested namespace|
 |400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs|
 |401|None|Unauthorized|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
@@ -61,7 +61,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/usage
 
 <a id="opIdQuery_Get Tenant Resource Usage"></a>
 
-Gets the current resource usage vs the entitled resource usage.
+Returns the current rather than the entitled resource usage.
 
 ### Request
 ```text 
@@ -71,13 +71,13 @@ GET /api/v1/tenants/{tenantId}/resources/usage
 #### Parameters
 
 `string tenantId`
-<br/>Id of the Tenant<br/><br/>
+<br/>Tenant identifier<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[ResourceUsage](#schemaresourceusage)|Current resource usage vs entitled resource usage.|
+|200|[ResourceUsage](#schemaresourceusage)|Current rather than entitled resource usage.|
 |400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs|
 |401|None|Unauthorized|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
@@ -102,7 +102,7 @@ GET /api/v1/tenants/{tenantId}/resources/usage
 
 <a id="opIdQuery_List Tenant Billing Cycles"></a>
 
-Gets the billing cycles for an account inferred from the account's subscription.
+Returns the billing cycles for an account inferred from the account subscription.
 
 ### Request
 ```text 
@@ -112,13 +112,13 @@ GET /api/v1/tenants/{tenantId}/subscriptionterm/billingcycles
 #### Parameters
 
 `string tenantId`
-<br/>Id of the Tenant<br/><br/>
+<br/>Tenant identifier<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[BillingCycle](#schemabillingcycle)[]|List of billing cycles for the account's subscription that have elapsed.|
+|200|[BillingCycle](#schemabillingcycle)[]|List of elapsed billing cycles for an account subscription|
 |400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs|
 |401|None|Unauthorized|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
@@ -142,7 +142,7 @@ GET /api/v1/tenants/{tenantId}/subscriptionterm/billingcycles
 
 <a id="opIdQuery_List Tenant Usage"></a>
 
-Gets **Tenant** usage data calculated based on active / completed billing cycles, when the **start** and **end** parameters are omitted. When **start** is provided and **end** is omitted, a single day of usage data is returned. When both **start** and **end** are provided, daily usage data is returned from the provided range.
+Returns tenant usage data, based on active/completed billing cycles, and whether start and end parameters are provided or omitted. When start is provided and end is omitted, a single day of usage data is returned. When both start and end are provided, daily usage data is returned for the range provided.
 
 ### Request
 ```text 
@@ -153,17 +153,17 @@ GET /api/v1/tenants/{tenantId}/usage
 #### Parameters
 
 `string tenantId`
-<br/>Id of the Tenant<br/><br/>
+<br/>Tenant identifier<br/><br/>
 `[optional] string start`
-<br/>Start date of the usage for daily usage data.<br/><br/>`[optional] string end`
-<br/>End date of the daily usage data, if there is no end date only one summary is returned<br/><br/>`[optional] boolean groupByNamespace`
-<br/>When **true** the usage data is grouped by namespaces.<br/><br/>
+<br/>Start date of the range for daily usage data<br/><br/>`[optional] string end`
+<br/>End date of the range for daily usage data; if no end date is provided, only one summary is returned.<br/><br/>`[optional] boolean groupByNamespace`
+<br/>Selection to order usage data by namespace<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[UsageDataRecord](#schemausagedatarecord)[]|Usage data for the requested **Tenant**|
+|200|[UsageDataRecord](#schemausagedatarecord)[]|Usage data for the requested tenant|
 |400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs|
 |401|None|Unauthorized|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
@@ -197,20 +197,20 @@ GET /api/v1/tenants/{tenantId}/usage
 <a id="tocSusagedatarecord"></a>
 <a id="tocsusagedatarecord"></a>
 
-Model representing Usage within OCS.
+Usage within OCS
 
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Date|date-time|true|false|Represents the date property of a usage record|
-|TenantId|guid|true|false|Represents the tenant name of a usage record|
-|NamespaceId|string|false|true|Represents the namespaceId of a usage record|
-|ClusterRegion|string|false|true|Represents the cluster region the record belongs to|
-|IngressEvents|int64|true|false|Represents the total amount of events ingressed of a usage record|
-|IngressStreamsAccessed|int64|true|false|Represents the count of ingress streams accessed of a usage record|
-|EgressEvents|int64|true|false|Represents the total amount of events egressed of a usage record|
-|EgressStreamsAccessed|int64|true|false|Represents the count of egress streams accessed of a usage record|
+|Date|date-time|true|false|The date property of a usage record|
+|TenantId|guid|true|false|The tenant identifier of a usage record|
+|NamespaceId|string|false|true|The namespace identifier of a usage record|
+|ClusterRegion|string|false|true|The cluster region for the record|
+|IngressEvents|int64|true|false|The count of events ingressed for a usage record|
+|IngressStreamsAccessed|int64|true|false|The count of ingress streams accessed for a usage record|
+|EgressEvents|int64|true|false|The count of events egressed for a usage record|
+|EgressStreamsAccessed|int64|true|false|The count of egress streams accessed for a usage record|
 
 ```json
 {
@@ -241,10 +241,10 @@ Object used to represent error information.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|OperationId|string|false|true|Gets or sets operationId of action that caused the Error.|
-|Error|string|false|true|Gets or sets error description.|
-|Reason|string|false|true|Gets or sets reason for the Error.|
-|Resolution|string|false|true|Gets or set the Resolution for the Error.|
+|OperationId|string|false|true|OperationId of action that caused the error|
+|Error|string|false|true|Error description|
+|Reason|string|false|true|Reason for the error|
+|Resolution|string|false|true|The resolution of the error|
 
 ```json
 {
@@ -271,11 +271,11 @@ Resources currently allocated by an account and their entitled amounts
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|StreamCount|int64|true|false|Streams allocated by the account across all namespaces.|
-|EntitledStreamCount|int64|true|false|Entitled amount of streams that can be allocated.|
-|NamespaceCount|int64|true|false|Number of namespaces allocated by the account.|
-|EntitledNamespaceCount|int64|true|false|Entitled number of namespaces that can be allocated.|
-|EntitledStreamAccessCount|int64|true|false|Entitled number of average streams that can be accessed per day.|
+|StreamCount|int64|true|false|Streams allocated by the account across all namespaces|
+|EntitledStreamCount|int64|true|false|Number of streams entitled to be allocated|
+|NamespaceCount|int64|true|false|Number of namespaces allocated by the account|
+|EntitledNamespaceCount|int64|true|false|Number of namespaces entitled to be allocated|
+|EntitledStreamAccessCount|int64|true|false|Average number of streams entitled to be accessed per day|
 
 ```json
 {

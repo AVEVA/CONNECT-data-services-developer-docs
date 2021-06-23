@@ -914,9 +914,9 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|None|
-|AssetTypeId|string|false|true|None|
-|Name|string|false|true|None|
+|Id|string|false|true|Asset Id|
+|AssetTypeId|string|false|true|Asset Type Id|
+|Name|string|false|true|Asset Name|
 |Description|string|false|true|None|
 |Metadata|[[MetadataItem](#schemametadataitem)]|false|true|None|
 |StreamReferences|[[StreamReference](#schemastreamreference)]|false|true|None|
@@ -1212,10 +1212,10 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|None|
-|Name|string|false|true|None|
+|Id|string|false|true|Stream Reference Id|
+|Name|string|false|true|Stream Reference Name|
 |Description|string|false|true|Description of this stream reference|
-|StreamId|string|true|false|None|
+|StreamId|string|true|false|Sds stream id that's being referenced.|
 
 ```json
 {

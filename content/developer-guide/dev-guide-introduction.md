@@ -1,7 +1,8 @@
 ---
 uid: lp-dev-guide
 --- 
-# OSIsoft Cloud Services developer guide
+
+# Developer guide
 
 OSIsoft Cloud Services (OCS) is a database platform as a service (dbPaaS) designed for real-time operations data.
 Users inside and outside organizations have a flexible, secure, and easy way to access operations data that may be located within a primary control network or at the edge of the industrial network. 
@@ -11,7 +12,7 @@ Use the information in this guide as you programmatically access OCS.
 
 ## Access to OCS
 
-You must acquire an OCS account before interacting with the OCS. 
+You must acquire an account before interacting with OCS. 
 Go to the [OCS page on OSIsoft website](https://www.osisoft.com/pi-system/pi-cloud/osisoft-cloud-services), click [Contact Us](https://www.osisoft.com/contact) and request an OCS account.
 
 

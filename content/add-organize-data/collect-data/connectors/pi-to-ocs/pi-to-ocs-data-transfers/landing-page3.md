@@ -2,17 +2,15 @@
 uid: landing-page3
 ---
 
+# Transfer PI System data to OCS
 
-## Transfer PI System data to OCS
-<br>
 This section contains the following topics:
-<br>
+
 <br>
 
 * [Overview of data transfers](xref:overview-data-transfers)
-* [Create a data transfer](xref:create-a-data-transfer)
-* [Transfer data to OCS](xref:transfer-data-to-ocs)
+* [Transfer PI System data to OCS](xref:transfer-data)
 * [Data transfer statuses](xref:data-transfer-statuses)
+* [Export transfer details](xref:export-transfer-details)
 * [Point type change](xref:pi-point-change)
 * [Confirm data retrieval](xref:confirm-data-retrieval)
-* [Delete a data transfer](xref:delete-data-transfer)

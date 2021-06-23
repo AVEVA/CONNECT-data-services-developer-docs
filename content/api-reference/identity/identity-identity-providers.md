@@ -1223,7 +1223,7 @@ The model for the group level capabilities of an identity provider
 <a id="tocSerrorresponse"></a>
 <a id="tocserrorresponse"></a>
 
-Object returned whenever there is an error TODO: Remove this internal model and re-adopt public model when moving to System.Text.Json in WI 202168.
+Object returned whenever there is an error
 
 #### Properties
 
@@ -1255,7 +1255,7 @@ Object returned whenever there is an error TODO: Remove this internal model and 
 <a id="tocSidentityproviderconsent"></a>
 <a id="tocsidentityproviderconsent"></a>
 
-The model for an identity provider consent in identity storage. TODO: Remove this internal model and re-adopt public model when moving to System.Text.Json in WI 202168.
+The model for an identity provider consent in identity storage
 
 #### Properties
 

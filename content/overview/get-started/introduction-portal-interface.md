@@ -2,11 +2,9 @@
 uid: introPortalInterface
 ---
 
-# Introduction to the portal
+# Introduction to the portal interface
 
-This topic provides a brief overview of the elements you interact with on the OCS portal interface.
-
-When you first access the portal, you see several panes providing information about the state of your system's health as well as quick links to popular documentation topics.
+Access and interact with OCS through the web-based portal. When you first access the portal, you see several panes providing information about the state of your system's health as well as quick links to popular documentation topics.
 
 ![Portal interface](../images/portal-interface.png "OCS portal interface")
 <!--Angela Flores 6/23/21 - This screenshot has a stray tool tip from another application. It needs to be cleaned up. -->

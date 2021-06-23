@@ -51,7 +51,7 @@ After creating the namespace, the next step is to add one or more types. For mor
 
    - `Type` &ndash; Select **DateTime**. <!-- Do we need to mention that you can filter by System or Tenant types? --> 
 
-   - `UOM` &ndash; Select **hour**.
+   - `UOM` &ndash; Leave this blank.
 
 1. Click **Add Property** to add a second property and complete the fields:
    - `Id` &ndash; Enter **Temperature**.
@@ -90,7 +90,6 @@ The following steps explore information about the type you just created.
 1. Click **More options**  and **Get Type Streams**.
 
    This takes you to the **Streams** list and, by default, OCS uses the typeId:MyOCS.PumpState query to filter for any streams with the MyOCS.PumpState type. The list is currently empty, because no streams have yet been created with this type.
-   
 
 ## Next step
 

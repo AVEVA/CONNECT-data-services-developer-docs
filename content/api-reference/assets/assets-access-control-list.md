@@ -9,6 +9,8 @@ uid: assets-access-control-list
 
 <a id="opIdCollectionAcls_Get Collection Acl"></a>
 
+Get the default AccessControlList for the assets collection and asset type collection.
+
 ### Request
 ```text 
 GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/{resource}
@@ -17,21 +19,64 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/{r
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>`string resource`
-<br/><br/>
+<br/>Tenant identifier<br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/>`string resource`
+<br/>Assets or AssetTypes<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|200|[AccessControlList](#schemaaccesscontrollist)|OK|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|403|[ErrorTemplate](#schemaerrortemplate)|Forbidden|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavaiable, please try again later.|
+
+#### Example response body
+> 200 Response
+
+```json
+{
+  "RoleTrusteeAccessControlEntries": [
+    {
+      "Trustee": {
+        "Type": 3,
+        "ObjectId": "11111111-1111-1111-1111-111111111111"
+      },
+      "AccessRights": 3
+    },
+    {
+      "Trustee": {
+        "Type": 3,
+        "ObjectId": "22222222-2222-2222-1111-111111111111"
+      },
+      "AccessRights": 1
+    }
+  ]
+}
+```
+
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+```
 
 ---
 
 ## `Update Collection Acl`
 
 <a id="opIdCollectionAcls_Update Collection Acl"></a>
+
+Updates the default AccessControlList for the assets collection and asset type collection.
 
 ### Request
 ```text 
@@ -41,9 +86,9 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/{r
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>`string resource`
-<br/><br/>
+<br/>Tenant identifier<br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/>`string resource`
+<br/>Assets or AssetTypes<br/><br/>
 
 ### Request Body
 
@@ -53,9 +98,18 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/{r
 {
   "RoleTrusteeAccessControlEntries": [
     {
-      "Trustee": {},
-      "AccessType": 0,
-      "AccessRights": 0
+      "Trustee": {
+        "Type": 3,
+        "ObjectId": "11111111-1111-1111-1111-111111111111"
+      },
+      "AccessRights": 3
+    },
+    {
+      "Trustee": {
+        "Type": 3,
+        "ObjectId": "22222222-2222-2222-1111-111111111111"
+      },
+      "AccessRights": 1
     }
   ]
 }
@@ -65,13 +119,33 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/{r
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|204|None|No Content|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|403|[ErrorTemplate](#schemaerrortemplate)|Forbidden|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavaiable, please try again later.|
+
+#### Example response body
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+```
 
 ---
 
-## `Get Collection Access Rights`
+## `List Collection Access Rights`
 
-<a id="opIdCollectionAcls_Get Collection Access Rights"></a>
+<a id="opIdCollectionAcls_List Collection Access Rights"></a>
+
+Get the default access rights for the assets collection and asset type collection.
 
 ### Request
 ```text 
@@ -81,18 +155,66 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessRights/{re
 #### Parameters
 
 `string resource`
-<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Assets or AssetTypes<br/><br/>`string tenantId`
+<br/>Tenant identifier<br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|200|Inline|OK|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|403|[ErrorTemplate](#schemaerrortemplate)|Forbidden|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavaiable, please try again later.|
+
+#### Example response body
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+```
 
 ---
 ## Definitions
+
+### ErrorTemplate
+
+<a id="schemaerrortemplate"></a>
+<a id="schema_ErrorTemplate"></a>
+<a id="tocSerrortemplate"></a>
+<a id="tocserrortemplate"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|OperationId|string|false|true|Operation identifier|
+|Error|string|false|true|Error string|
+|Resolution|string|false|true|Resolution string|
+|Reason|string|false|true|Error reason string|
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+
+```
+
+---
 
 ### AccessControlList
 

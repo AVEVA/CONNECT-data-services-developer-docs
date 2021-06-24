@@ -415,8 +415,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |---|---|---|
 |200|[Trustee](#schematrustee)|The owner of the asset with the specified identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|401|None|Unauthorized|
-|404|None|Asset with specified identifier not found.|
+|401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
+|404|[ErrorTemplate](#schemaerrortemplate)|Asset with specified identifier not found.|
 |500|None|Internal Service Error, please try again later.|
 |503|None|Service Unavaiable, please try again later.|
 

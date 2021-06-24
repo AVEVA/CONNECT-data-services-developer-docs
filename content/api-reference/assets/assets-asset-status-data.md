@@ -20,8 +20,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 `string assetId`
 <br/>Asset identifier<br/><br/>`string tenantId`
-<br/>Tenant identifier<br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/>
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/><br/>
 
 ### Response
 

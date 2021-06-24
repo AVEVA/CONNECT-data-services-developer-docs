@@ -19,8 +19,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/{r
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/>`string resource`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/><br/>`string resource`
 <br/>Assets or AssetTypes<br/><br/>
 
 ### Response
@@ -86,8 +86,8 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/{r
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/>`string resource`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/><br/>`string resource`
 <br/>Assets or AssetTypes<br/><br/>
 
 ### Request Body
@@ -156,8 +156,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessRights/{re
 
 `string resource`
 <br/>Assets or AssetTypes<br/><br/>`string tenantId`
-<br/>Tenant identifier<br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/>
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/><br/>
 
 ### Response
 

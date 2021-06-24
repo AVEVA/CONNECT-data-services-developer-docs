@@ -99,6 +99,10 @@ secretId:
   type: text/plain
   value: |
     Secret identifier
+regionId:
+  type: text/plain
+  value: |
+    The region identifier in which namespaces should be filtered
 featurestateId:
   type: text/plain
   value: |

@@ -18,11 +18,11 @@ To transfer PI points into OCS, you must first define transfer settings and then
 
 You create a transfer to have a placeholder to store the PI point data you wish to transfer.
 
-#### Before you start
+### Before you start
 
 Download and install the PI to OCS agent. Register your PI Data Archive with the PI to OCS Agent Configuration Utility.
 
-#### Procedure
+### Procedure
 
 1. Log on to the [OCS portal](https://cloud.osisoft.com).
 

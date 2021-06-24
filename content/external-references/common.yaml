@@ -102,7 +102,7 @@ secretId:
 regionId:
   type: text/plain
   value: |
-    The region identifier in which namespaces should be filtered
+    The region identifier
 featurestateId:
   type: text/plain
   value: |

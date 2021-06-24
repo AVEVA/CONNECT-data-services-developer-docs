@@ -4,13 +4,13 @@ uid: operations-health
 ---
 
 # Health
-APIs related to querying OCS service health states
+APIs related to querying OCS Service health states.
 
 ## `Get Tenant Health`
 
 <a id="opIdQuery_Get Tenant Health"></a>
 
-Returns tenant health data. Data contains an aggregated health state and list of tenant related services.
+Get **Tenant** health data containing an aggregated health state and a list of services related to the tenant.
 
 ### Request
 ```text 
@@ -20,13 +20,13 @@ GET /api/v1/tenants/{tenantId}/health
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifer<br/><br/>
+<br/>Id of the Tenant<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[TenantViewModel](#schematenantviewmodel)|Health data for the requested **tenant**|
+|200|[TenantViewModel](#schematenantviewmodel)|Health data for the requested **Tenant**|
 |400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs|
 |401|None|Unauthorized|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
@@ -123,16 +123,16 @@ Represents the various health states a HealthEventViewModel can represent.
 <a id="tocSnamespaceviewmodel"></a>
 <a id="tocsnamespaceviewmodel"></a>
 
-Object for a namespace and underlying services
+This represents a view model of a TenantDbo namespace and its underlying services.
 
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|NamespaceId|string|false|true|Namespace identifier|
-|Region|string|false|true|Namespace region|
-|HealthState|[State](#schemastate)|false|false|Health state of the namespace|
-|Services|[[ServiceForTenantViewModel](#schemaservicefortenantviewmodel)]|false|true|Services scoped to the namespace|
+|NamespaceId|string|false|true|Id of the Namespace|
+|Region|string|false|true|Region of the Namespace|
+|HealthState|[State](#schemastate)|false|false|Health state of the Namespace|
+|Services|[[ServiceForTenantViewModel](#schemaservicefortenantviewmodel)]|false|true|Services scoped to this Namespace|
 
 ```json
 {
@@ -164,7 +164,7 @@ This represents a view model of a ServiceForTenantDbo
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Name|string|false|true|Name of the service|
+|Name|string|false|true|Name of the Service|
 |HealthState|[State](#schemastate)|false|false|Health state of the service|
 
 ```json
@@ -184,16 +184,16 @@ This represents a view model of a ServiceForTenantDbo
 <a id="tocSerrorresponse"></a>
 <a id="tocserrorresponse"></a>
 
-Object used to represent error information
+Object used to represent error information.
 
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|OperationId|string|false|true|Operation Id of the action that caused the error|
-|Error|string|false|true|Error description|
-|Reason|string|false|true|Reason for the error|
-|Resolution|string|false|true|Resolution for the error|
+|OperationId|string|false|true|Gets or sets Operation Id of action that caused the Error.|
+|Error|string|false|true|Gets or sets the Error description.|
+|Reason|string|false|true|Gets or sets the Reason for the Error.|
+|Resolution|string|false|true|Gets or set the Resolution for the Error.|
 
 ```json
 {

@@ -146,7 +146,11 @@ query-searchstring:
 207:
   type: text/plain
   value: |
-    Partial 
+    Partial
+302:
+  type: text/plain
+  value: |
+    Found 
 400:
   type: text/plain
   value: |
@@ -167,7 +171,19 @@ query-searchstring:
   type: text/plain
   value: |
     Operation timed out
+409:
+  type: text/plain
+  value: |
+    Found
+412:
+  type: text/plain
+  value: |
+    Precondition failed
 500:
   type: text/plain
   value: |
     Internal server error
+503:
+  type: text/plain
+  value: |
+    Service unavailable

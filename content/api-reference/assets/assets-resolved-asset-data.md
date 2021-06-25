@@ -337,7 +337,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier<br/><br/><br/>
 `[optional] array stream`
-<br/><br/>`[optional] integer count`
+<br/>An optional parameter consisting of a comma-separated list of stream reference names in the form of stream={stream 1}[,stream={stream n}] that you are interested in. By default, all data calls return data for all stream references.<br/><br/>`[optional] integer count`
 <br/>The number of samples requested.<br/><br/>
 
 ### Response

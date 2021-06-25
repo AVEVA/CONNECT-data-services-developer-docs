@@ -102,7 +102,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Index|any|false|true|None|
-|Status|[StatusEnum](#schemastatusenum)|false|false|None|
+|Status|[StatusEnum](#schemastatusenum)|false|false|Pre-defined asset status values.|
 |Value|any|false|true|None|
 |DisplayName|string|false|true|None|
 |AssetId|string|false|true|None|
@@ -128,6 +128,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 <a id="schema_StatusEnum"></a>
 <a id="tocSstatusenum"></a>
 <a id="tocsstatusenum"></a>
+
+Pre-defined asset status values.
 
 #### Enumerated Values
 

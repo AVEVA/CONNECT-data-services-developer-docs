@@ -39,72 +39,82 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 ```json
 {
-  "Id": "string",
-  "Name": "string",
+  "Id": "Heater-8911ee90-467b-4a3f-bc7b-3b3512c23dfc",
+  "Name": "Heater Asset",
   "Resolved": true,
-  "Description": "string",
-  "AssetTypeId": "string",
-  "AssetTypeName": "string",
-  "ShapeId": "string",
-  "ShapeName": "string",
+  "Description": "Heater Asset on the first floor.",
+  "AssetTypeId": "Heater_AssetType-6f53c911-f5de-4b7f-981f-d6f0ec139d9f",
+  "AssetTypeName": "Heater_AssetType",
   "Metadata": [
     {
-      "Name": "string",
-      "SdsTypeCode": 0,
-      "Value": null,
-      "Uom": "string"
+      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+      "Name": "ModelNumber",
+      "Description": "This is a static attribute on the asset which represents the model number.",
+      "SdsTypeCode": "Double",
+      "Value": 0.01
     }
   ],
   "Streams": [
     {
-      "Name": "string",
+      "Name": "ResolvedReferenceName1",
       "Type": {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SdsTypeCode": "[",
-        "IsGenericType": true,
-        "IsReferenceType": true,
-        "GenericArguments": [
-          null
-        ],
+        "Id": "SdsType-ffdf2227-50e8-4196-b828-f1bd2b3689c8",
+        "SdsTypeCode": "Object",
         "Properties": [
-          null
-        ],
-        "BaseType": null,
-        "DerivedTypes": [
-          null
-        ],
-        "InterpolationMode": "[",
-        "ExtrapolationMode": "["
+          {
+            "Id": "Timestamp",
+            "IsKey": true,
+            "SdsType": {
+              "Id": "0573b425-368a-369b-95d9-71c863df45a5",
+              "SdsTypeCode": "DateTime"
+            },
+            "InterpolationMode": "Continuous"
+          },
+          {
+            "Id": "Pressure",
+            "SdsType": {
+              "Id": "9144b7d6-3d5f-3b29-8131-ff0db551e17c",
+              "SdsTypeCode": "Double"
+            },
+            "Uom": "bar",
+            "InterpolationMode": "Continuous"
+          }
+        ]
       },
-      "StreamReferenceName": "string",
-      "StreamId": "string",
+      "StreamReferenceName": "ResolvedReferenceName1",
+      "StreamId": "Stream-b3c7a344-ce8a-4578-b4cd-1a6d78ca0610",
       "PropertyMaps": [
         {
-          "Id": "string",
-          "SourcePropertyId": "string"
+          "Id": "Timestamp",
+          "SourcePropertyId": "Timestamp"
+        },
+        {
+          "Id": "Pressure",
+          "SourcePropertyId": "Pressure"
         }
       ]
     }
   ],
-  "UnresolvedStreams": [
-    {
-      "Name": "string",
-      "Reason": "string"
-    }
-  ],
-  "UnresolvedMetadata": [
-    {
-      "Name": "string",
-      "Reason": "string"
-    }
-  ],
-  "StatusDefinitionType": 0,
-  "Status": null,
-  "UnresolvedStatus": {
-    "Reason": "string"
+  "UnresolvedStreams": [],
+  "UnresolvedMetadata": [],
+  "StatusDefinitionType": "StreamPropertyMapping",
+  "Status": {
+    "StreamId": "SdsStream_id_1",
+    "SourcePropertyId": "Count"
   }
+}
+```
+
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
 }
 ```
 
@@ -118,93 +128,92 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 <a id="tocSresolvedasset"></a>
 <a id="tocsresolvedasset"></a>
 
+The resolved asset describes the consumption-oriented aspects of an OCS resource rather than describing how the resource is configured. The resolved asset corresponds to its metadata and referenced stream which define how the data is interpreted(that is, SdsTypeCode, InterpolationMode, and UOM).
+
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|None|
-|Name|string|false|true|None|
-|Resolved|boolean|false|false|None|
-|Description|string|false|true|None|
-|AssetTypeId|string|false|true|None|
-|AssetTypeName|string|false|true|None|
-|ShapeId|string|false|true|None|
-|ShapeName|string|false|true|None|
-|Metadata|[[ResolvedMetadataItem](#schemaresolvedmetadataitem)]|false|true|None|
-|Streams|[[ResolvedStream](#schemaresolvedstream)]|false|true|None|
-|UnresolvedStreams|[[UnresolvedStream](#schemaunresolvedstream)]|false|true|None|
-|UnresolvedMetadata|[[UnresolvedMetadata](#schemaunresolvedmetadata)]|false|true|None|
-|StatusDefinitionType|[StatusDefinitionType](#schemastatusdefinitiontype)|false|false|None|
-|Status|any|false|true|None|
-|UnresolvedStatus|[UnresolvedStatus](#schemaunresolvedstatus)|false|true|None|
+|Id|string|false|true|Asset identifier|
+|Name|string|false|true|Asset name|
+|Resolved|boolean|false|false|True if no shape is applied|
+|Description|string|false|true|Asset descriptions|
+|AssetTypeId|string|false|true|Asset asset type id if applicable|
+|AssetTypeName|string|false|true|Asset asset type name if applicable|
+|ShapeId|string|false|true|Shape identifier for future enhancement|
+|ShapeName|string|false|true|Shape name for future enhancement|
+|Metadata|[[ResolvedMetadataItem](#schemaresolvedmetadataitem)]|false|true|Resolved asset metadata|
+|Streams|[[ResolvedStream](#schemaresolvedstream)]|false|true|Resolved asset stream references|
+|UnresolvedStreams|[[UnresolvedStream](#schemaunresolvedstream)]|false|true|Resolved asset unresolved streams|
+|UnresolvedMetadata|[[UnresolvedMetadata](#schemaunresolvedmetadata)]|false|true|Resolved asset unresolved metadata|
+|StatusDefinitionType|[StatusDefinitionType](#schemastatusdefinitiontype)|false|false|Resolved asset status definition|
+|Status|any|false|true|Resolved asset status|
+|UnresolvedStatus|[UnresolvedStatus](#schemaunresolvedstatus)|false|true|Resolved asset unresolved status|
 
 ```json
 {
-  "Id": "string",
-  "Name": "string",
+  "Id": "Heater-8911ee90-467b-4a3f-bc7b-3b3512c23dfc",
+  "Name": "Heater Asset",
   "Resolved": true,
-  "Description": "string",
-  "AssetTypeId": "string",
-  "AssetTypeName": "string",
-  "ShapeId": "string",
-  "ShapeName": "string",
+  "Description": "Heater Asset on the first floor.",
+  "AssetTypeId": "Heater_AssetType-6f53c911-f5de-4b7f-981f-d6f0ec139d9f",
+  "AssetTypeName": "Heater_AssetType",
   "Metadata": [
     {
-      "Name": "string",
-      "SdsTypeCode": 0,
-      "Value": null,
-      "Uom": "string"
+      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+      "Name": "ModelNumber",
+      "Description": "This is a static attribute on the asset which represents the model number.",
+      "SdsTypeCode": "Double",
+      "Value": 0.01
     }
   ],
   "Streams": [
     {
-      "Name": "string",
+      "Name": "ResolvedReferenceName1",
       "Type": {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SdsTypeCode": "[",
-        "IsGenericType": true,
-        "IsReferenceType": true,
-        "GenericArguments": [
-          null
-        ],
+        "Id": "SdsType-ffdf2227-50e8-4196-b828-f1bd2b3689c8",
+        "SdsTypeCode": "Object",
         "Properties": [
-          null
-        ],
-        "BaseType": null,
-        "DerivedTypes": [
-          null
-        ],
-        "InterpolationMode": "[",
-        "ExtrapolationMode": "["
+          {
+            "Id": "Timestamp",
+            "IsKey": true,
+            "SdsType": {
+              "Id": "0573b425-368a-369b-95d9-71c863df45a5",
+              "SdsTypeCode": "DateTime"
+            },
+            "InterpolationMode": "Continuous"
+          },
+          {
+            "Id": "Pressure",
+            "SdsType": {
+              "Id": "9144b7d6-3d5f-3b29-8131-ff0db551e17c",
+              "SdsTypeCode": "Double"
+            },
+            "Uom": "bar",
+            "InterpolationMode": "Continuous"
+          }
+        ]
       },
-      "StreamReferenceName": "string",
-      "StreamId": "string",
+      "StreamReferenceName": "ResolvedReferenceName1",
+      "StreamId": "Stream-b3c7a344-ce8a-4578-b4cd-1a6d78ca0610",
       "PropertyMaps": [
         {
-          "Id": "string",
-          "SourcePropertyId": "string"
+          "Id": "Timestamp",
+          "SourcePropertyId": "Timestamp"
+        },
+        {
+          "Id": "Pressure",
+          "SourcePropertyId": "Pressure"
         }
       ]
     }
   ],
-  "UnresolvedStreams": [
-    {
-      "Name": "string",
-      "Reason": "string"
-    }
-  ],
-  "UnresolvedMetadata": [
-    {
-      "Name": "string",
-      "Reason": "string"
-    }
-  ],
-  "StatusDefinitionType": 0,
-  "Status": null,
-  "UnresolvedStatus": {
-    "Reason": "string"
+  "UnresolvedStreams": [],
+  "UnresolvedMetadata": [],
+  "StatusDefinitionType": "StreamPropertyMapping",
+  "Status": {
+    "StreamId": "SdsStream_id_1",
+    "SourcePropertyId": "Count"
   }
 }
 

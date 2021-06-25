@@ -1276,7 +1276,7 @@ An asset type type reference represents dynamic stream data associated with an a
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Value|any|false|true|None|
-|Status|[StatusEnum](#schemastatusenum)|true|false|None|
+|Status|[StatusEnum](#schemastatusenum)|true|false|Pre-defined asset status values.|
 |DisplayName|string|false|true|None|
 
 ```json
@@ -1296,6 +1296,8 @@ An asset type type reference represents dynamic stream data associated with an a
 <a id="schema_StatusEnum"></a>
 <a id="tocSstatusenum"></a>
 <a id="tocsstatusenum"></a>
+
+Pre-defined asset status values.
 
 #### Enumerated Values
 

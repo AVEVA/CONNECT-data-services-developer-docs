@@ -157,7 +157,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 <a id="opIdAssets_Delete Asset"></a>
 
-Create or update an asset with a specified Id. If the asset already exists, you can specify an If-Match property in the HTTP request header to ensure that the asset is modified only if its version matches. To support flexibility, on creation and update, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is from an asset type.
+Delete the asset with a specified Id.
 
 ### Request
 ```text 
@@ -175,9 +175,9 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{asset
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|204|None|The asset with the specified identifier.|
+|204|None|The asset with specified identifier has been deleted.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|401|[ErrorTemplate](#schemaerrortemplate)|Client or tenant not found<br/>|
+|401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized<br/>|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not Found|
 |409|[ErrorTemplate](#schemaerrortemplate)|Conflict|
 |500|None|Internal server error<br/>|
@@ -634,6 +634,7 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetI
 |302|None|The asset you attempted to create is identical to one that already exists.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
 |403|[ErrorTemplate](#schemaerrortemplate)|You are not authorized to create assets.|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 |409|[ErrorTemplate](#schemaerrortemplate)|The asset you attempted to create has a conflict. See the response body for additional details.|
 |500|None|Internal Service Error, please try again later.|
 |503|None|Service Unavailable, please try again later.|

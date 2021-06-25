@@ -40,9 +40,9 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 ```json
 {
   "AssetId": "AssetId-1",
-  "Status": 1,
+  "Status": "Good",
   "Value": "85",
-  "DisplayName": "TemperatureSensorBuild1InF",
+  "DisplayName": "AssetId-1Good",
   "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z"
 }
 ```
@@ -179,9 +179,9 @@ Asset last status
 ```json
 {
   "AssetId": "AssetId-1",
-  "Status": 1,
+  "Status": "Good",
   "Value": "85",
-  "DisplayName": "TemperatureSensorBuild1InF",
+  "DisplayName": "AssetId-1Good",
   "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z"
 }
 

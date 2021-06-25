@@ -9,6 +9,8 @@ uid: assets-resolved-asset-data
 
 <a id="opIdResolvedAssetData_Get Window Data"></a>
 
+Returns window data for referenced SDS streams.
+
 ### Request
 ```text 
 GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data
@@ -18,28 +20,75 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 #### Parameters
 
 `string assetId`
-<br/><br/>`string startIndex`
-<br/><br/>`string endIndex`
-<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Asset identifier<br/><br/>`string startIndex`
+<br/>Start index<br/><br/>`string endIndex`
+<br/>End index<br/><br/>`string tenantId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/><br/>
 `[optional] array stream`
 <br/><br/>`[optional] any boundaryType`
-<br/><br/>`[optional] any startBoundaryType`
-<br/><br/>`[optional] any endBoundaryType`
-<br/><br/>
+<br/>Sds boundary type to pass to Sds<br/><br/>`[optional] any startBoundaryType`
+<br/>Start Sds boundary type to pass to Sds<br/><br/>`[optional] any endBoundaryType`
+<br/>End Sds boundary type to pass to Sds<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|200|[DataResults](#schemadataresults)|The last status of the specified asset.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavailable, please try again later.|
+
+#### Example response body
+> 200 Response
+
+```json
+{
+  "Results": {
+    "StreamReferenceWithEventsName": [
+      {
+        "Timestamp": "2019-01-02T00:00:01Z",
+        "Temp": 1.045,
+        "Pres": 1
+      },
+      {
+        "Timestamp": "2019-01-02T00:00:02Z",
+        "Temp": 2.045,
+        "Pres": 1
+      },
+      {
+        "Timestamp": "2019-01-02T00:00:03Z",
+        "Temp": 3.045,
+        "Pres": 1
+      }
+    ]
+  },
+  "Errors": null
+}
+```
+
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+```
 
 ---
 
 ## `Get Interpolated Data`
 
 <a id="opIdResolvedAssetData_Get Interpolated Data"></a>
+
+Returns interpolated data for referenced SDS streams.
 
 ### Request
 ```text 
@@ -50,12 +99,12 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 #### Parameters
 
 `string assetId`
-<br/><br/>`string startIndex`
-<br/><br/>`string endIndex`
-<br/><br/>`integer count`
-<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Asset identifier<br/><br/>`string startIndex`
+<br/>Start index<br/><br/>`string endIndex`
+<br/>End index<br/><br/>`integer count`
+<br/>The number of samples requested.<br/><br/>`string tenantId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/><br/>
 `[optional] array stream`
 <br/><br/>
 
@@ -63,13 +112,60 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|200|[DataResults](#schemadataresults)|The last status of the specified asset.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavailable, please try again later.|
+
+#### Example response body
+> 200 Response
+
+```json
+{
+  "Results": {
+    "StreamReferenceWithEventsName": [
+      {
+        "Timestamp": "2019-01-02T00:00:05Z",
+        "Temp": 5.045,
+        "Pres": 1
+      },
+      {
+        "Timestamp": "2020-04-12T08:00:00Z",
+        "Temp": 3.045,
+        "Pres": 11
+      },
+      {
+        "Timestamp": "2020-06-29T05:20:00Z",
+        "Temp": 54.045,
+        "Pres": 11
+      }
+    ]
+  },
+  "Errors": null
+}
+```
+
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+```
 
 ---
 
 ## `Get Last Data`
 
 <a id="opIdResolvedAssetData_Get Last Data"></a>
+
+Returns the last stored value for SDS streams in the resolved asset.
 
 ### Request
 ```text 
@@ -80,9 +176,9 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 #### Parameters
 
 `string assetId`
-<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Asset identifier<br/><br/>`string tenantId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/><br/>
 `[optional] array stream`
 <br/><br/>
 
@@ -90,13 +186,61 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|200|[DataResults](#schemadataresults)|The last status of the specified asset.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavailable, please try again later.|
+
+#### Example response body
+> 200 Response
+
+```json
+{
+  "Results": {
+    "property1": [
+      null
+    ],
+    "property2": [
+      null
+    ]
+  },
+  "Errors": {
+    "OperationId": "string",
+    "Error": "string",
+    "Reason": "string",
+    "ChildErrors": {
+      "property1": null,
+      "property2": null
+    }
+  }
+}
+```
+
+> 400 Response
+
+```json
+{
+  "Results": {
+    "StreamReferenceWithEventsName": [
+      {
+        "Timestamp": "2019-01-02T01:00:00Z",
+        "Temp": 155.5,
+        "Pres": 1
+      }
+    ]
+  },
+  "Errors": null
+}
+```
 
 ---
 
 ## `Get Sampled Data`
 
 <a id="opIdResolvedAssetData_Get Sampled Data"></a>
+
+Returns sampled data for referenced Sds streams.
 
 ### Request
 ```text 
@@ -107,29 +251,76 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 #### Parameters
 
 `string assetId`
-<br/><br/>`string startIndex`
-<br/><br/>`string endIndex`
-<br/><br/>`integer intervals`
-<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Asset identifier<br/><br/>`string startIndex`
+<br/>Start index<br/><br/>`string endIndex`
+<br/>End index<br/><br/>`integer intervals`
+<br/>The number of intervals requested.<br/><br/>`string tenantId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/><br/>
 `[optional] array stream`
 <br/><br/>`[optional] any boundaryType`
-<br/><br/>`[optional] any startBoundaryType`
-<br/><br/>`[optional] any endBoundaryType`
-<br/><br/>
+<br/>Sds boundary type to pass to Sds<br/><br/>`[optional] any startBoundaryType`
+<br/>Start Sds boundary type to pass to Sds<br/><br/>`[optional] any endBoundaryType`
+<br/>End Sds boundary type to pass to Sds<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|200|[DataResults](#schemadataresults)|The last status of the specified asset.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavailable, please try again later.|
+
+#### Example response body
+> 200 Response
+
+```json
+{
+  "Results": {
+    "StreamReferenceWithEventsName": [
+      {
+        "Timestamp": "2019-01-02T00:00:00Z",
+        "Temp": 0.044,
+        "Pres": 1
+      },
+      {
+        "Timestamp": "2019-01-02T00:16:38Z",
+        "Temp": 998.046,
+        "Pres": 1
+      },
+      {
+        "Timestamp": "2019-01-02T01:00:00Z",
+        "Temp": 155.5,
+        "Pres": 1
+      }
+    ]
+  },
+  "Errors": null
+}
+```
+
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+```
 
 ---
 
 ## `Get Summary Data`
 
 <a id="opIdResolvedAssetData_Get Summary Data"></a>
+
+Returns summary data for referenced SDS streams.
 
 ### Request
 ```text 
@@ -140,23 +331,220 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 #### Parameters
 
 `string assetId`
-<br/><br/>`string startIndex`
-<br/><br/>`string endIndex`
-<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Asset identifier<br/><br/>`string startIndex`
+<br/>Start index<br/><br/>`string endIndex`
+<br/>End index<br/><br/>`string tenantId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/><br/>
 `[optional] array stream`
 <br/><br/>`[optional] integer count`
-<br/><br/>
+<br/>The number of samples requested.<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|200|[DataResults](#schemadataresults)|The last status of the specified asset.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavailable, please try again later.|
+
+#### Example response body
+> 200 Response
+
+```json
+{
+  "Results": {
+    "StreamReferenceWithEventsName": [
+      {
+        "Start": {
+          "Timestamp": "2019-01-01T08:00:00Z",
+          "Temp": 0.044,
+          "Pres": 1
+        },
+        "End": {
+          "Timestamp": "2019-02-06T20:00:00Z",
+          "Temp": 155.5,
+          "Pres": 1
+        },
+        "Summaries": {
+          "Count": {
+            "Timestamp": 1000,
+            "Temp": 1000,
+            "Pres": 1000
+          },
+          "Minimum": {
+            "Temp": 0.044,
+            "Pres": 1
+          },
+          "Maximum": {
+            "Temp": 998.046,
+            "Pres": 1
+          },
+          "Range": {
+            "Temp": 998.0020000000001,
+            "Pres": 0
+          },
+          "Total": {
+            "Temp": 498779.61199999356,
+            "Pres": 1001
+          },
+          "Mean": {
+            "Temp": 498.28133066933077,
+            "Pres": 1
+          },
+          "StandardDeviation": {
+            "Temp": 288.4561823749973,
+            "Pres": 0
+          },
+          "PopulationStandardDeviation": {
+            "Temp": 288.31206236481444,
+            "Pres": 0
+          },
+          "WeightedMean": {
+            "Temp": 153.11692828545156,
+            "Pres": 1
+          },
+          "WeightedStandardDeviation": {
+            "Temp": 25.424619899757136,
+            "Pres": 0
+          },
+          "WeightedPopulationStandardDeviation": {
+            "Temp": 25.411917116101474,
+            "Pres": 0
+          },
+          "Skewness": {
+            "Temp": 0.0011013861675857883,
+            "Pres": "NaN"
+          },
+          "Kurtosis": {
+            "Temp": -1.19976760290962,
+            "Pres": "NaN"
+          }
+        }
+      }
+    ]
+  },
+  "Errors": null
+}
+```
+
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+```
 
 ---
 ## Definitions
+
+### DataResults
+
+<a id="schemadataresults"></a>
+<a id="schema_DataResults"></a>
+<a id="tocSdataresults"></a>
+<a id="tocsdataresults"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Results|object|false|true|None|
+|Errors|[DataErrors](#schemadataerrors)|false|true|None|
+
+```json
+{
+  "Results": {
+    "property1": [
+      null
+    ],
+    "property2": [
+      null
+    ]
+  },
+  "Errors": {
+    "OperationId": "string",
+    "Error": "string",
+    "Reason": "string",
+    "ChildErrors": {
+      "property1": null,
+      "property2": null
+    }
+  }
+}
+
+```
+
+---
+
+### DataErrors
+
+<a id="schemadataerrors"></a>
+<a id="schema_DataErrors"></a>
+<a id="tocSdataerrors"></a>
+<a id="tocsdataerrors"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|OperationId|string|false|true|None|
+|Error|string|false|true|None|
+|Reason|string|false|true|None|
+|ChildErrors|object|false|true|None|
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "ChildErrors": {
+    "property1": null,
+    "property2": null
+  }
+}
+
+```
+
+---
+
+### ErrorTemplate
+
+<a id="schemaerrortemplate"></a>
+<a id="schema_ErrorTemplate"></a>
+<a id="tocSerrortemplate"></a>
+<a id="tocserrortemplate"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|OperationId|string|false|true|Operation identifier|
+|Error|string|false|true|Error string|
+|Resolution|string|false|true|Resolution string|
+|Reason|string|false|true|Error reason string|
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+
+```
+
+---
 
 ### SdsBoundaryType
 

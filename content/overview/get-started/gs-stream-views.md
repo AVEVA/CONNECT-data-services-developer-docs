@@ -31,7 +31,8 @@ Repeat the steps in [Get started with types](xref:gsTypes), but use the ID **MyO
 1. In the menu bar, click **Add Stream View** to open a pane on the right side.
 
 
-1. In the `Create Stream View` panel at step 1: `Details`, enter the following information:
+1. In the `Create Stream View` pane at step 1: `Details`, enter the following information:
+
 
    - `Id` &ndash; **MyOCS.PumpTemperatureView**
    - `Name` &ndash; Optionally, give the stream view a different name. Leave this field blank to use the Id as the name.

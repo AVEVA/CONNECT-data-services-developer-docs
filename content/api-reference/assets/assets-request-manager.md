@@ -1685,7 +1685,7 @@ The resolved asset describes the consumption-oriented aspects of an OCS resource
 |Id|string|false|true|Asset identifier|
 |Name|string|false|true|Asset name|
 |Resolved|boolean|false|false|True if no shape is applied|
-|Description|string|false|true|Asset descriptions|
+|Description|string|false|true|Asset description|
 |AssetTypeId|string|false|true|Asset asset type id if applicable|
 |AssetTypeName|string|false|true|Asset asset type name if applicable|
 |ShapeId|string|false|true|Shape identifier for future enhancement|
@@ -1801,7 +1801,7 @@ Resolved metadata is a property of a resolved asset.
 <a id="tocSresolvedstream"></a>
 <a id="tocsresolvedstream"></a>
 
-Resolved stream is a property of the resolved asset
+Resolved stream is a property of the resolved asset.
 
 #### Properties
 
@@ -2414,12 +2414,14 @@ Resolved stream is a property of the resolved asset
 <a id="tocSpropertymap"></a>
 <a id="tocspropertymap"></a>
 
+Property map
+
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|None|
-|SourcePropertyId|string|false|true|None|
+|Id|string|false|true|Property map identifier|
+|SourcePropertyId|string|false|true|Source identifier|
 
 ```json
 {
@@ -2449,8 +2451,8 @@ Unresolved stream is a property of the resolved asset. It represents streams whi
 
 ```json
 {
-  "Name": "string",
-  "Reason": "string"
+  "Name": "StreamNameWhichCouldNotBeResolved",
+  "Reason": "Reason why stream could not be resolved."
 }
 
 ```
@@ -2475,8 +2477,8 @@ Unresolved metadata is a property of the resolved asset. It represents metadata 
 
 ```json
 {
-  "Name": "string",
-  "Reason": "string"
+  "Name": "MetadataNameWhichCouldNotBeResolved",
+  "Reason": "Reason why metadata could not be resolved."
 }
 
 ```
@@ -2500,7 +2502,7 @@ Unresolved status is a property of the resolved asset. It represents statuses wh
 
 ```json
 {
-  "Reason": "string"
+  "Reason": "Reason why status could not be resolved."
 }
 
 ```

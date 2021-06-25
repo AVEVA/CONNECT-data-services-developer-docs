@@ -28,7 +28,8 @@ Repeat the steps in [Get started with types](xref:gsTypes), but use the ID **MyO
 
 1. From the **Streams/Types/Stream Views Selector** list, select **Stream Views**.
 
-1. In the menu bar, click **Add Stream View** to open a panel on the right side.
+1. In the menu bar, click **Add Stream View** to open a pane on the right side.
+
 
 1. In the `Create Stream View` panel at step 1: `Details`, enter the following information:
 

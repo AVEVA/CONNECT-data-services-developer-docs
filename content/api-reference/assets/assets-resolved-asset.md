@@ -240,7 +240,7 @@ Resolved metadata is a property of a resolved asset.
 |Uom|string|false|true|Metadata UOM|
 
 ```json
-"{\n    \"Name\": \"ModelNumber\",\n    \"SdsTypeCode\": \"string\",\n    \"Value\": \"R2-D2,\n    \"Uom\": null\n}"
+"\"Name\": \"ModelNumber\",\n\"Description\": \"This is a static attribute on the asset which represents the model number.\",\n\"SdsTypeCode\": \"Double\",\n\"Value\": 0.01\n            "
 
 ```
 
@@ -1006,7 +1006,7 @@ Unresolved stream is a property of the resolved asset. It represents streams whi
 
 ```json
 {
-  "Name": "StreamNameWhichCouldNotBeResolved",
+  "Name": "Name of stream which could not be resolved",
   "Reason": "Reason why stream could not be resolved."
 }
 
@@ -1032,7 +1032,7 @@ Unresolved metadata is a property of the resolved asset. It represents metadata 
 
 ```json
 {
-  "Name": "MetadataNameWhichCouldNotBeResolved",
+  "Name": "Name of metadata which could not be resolved",
   "Reason": "Reason why metadata could not be resolved."
 }
 

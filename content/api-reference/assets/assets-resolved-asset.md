@@ -240,7 +240,12 @@ Resolved metadata is a property of a resolved asset.
 |Uom|string|false|true|Metadata UOM|
 
 ```json
-"\"Name\": \"ModelNumber\",\n\"Description\": \"This is a static attribute on the asset which represents the model number.\",\n\"SdsTypeCode\": \"Double\",\n\"Value\": 0.01\n            "
+{
+  "Name": "ModelNumber",
+  "Description": "This is a static attribute on the asset which represents the model number.",
+  "SdsTypeCode": "Double",
+  "Value": 0.01
+}
 
 ```
 

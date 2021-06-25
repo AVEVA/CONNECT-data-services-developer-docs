@@ -41,7 +41,8 @@ Repeat the steps in [Get started with types](xref:gsTypes), but use the ID **MyO
 
 1. In the lower right, click **Next** to proceed to step 2: `Property Mappings`.
 
-1. Click **Add Property Mapping** twice to create two blank property mappings.
+1. Click **Add Property Mapping** twice to create two empty property mappings.
+
 
 1. In the first property mapping row, enter the following information:
 

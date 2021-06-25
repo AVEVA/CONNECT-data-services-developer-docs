@@ -1776,22 +1776,19 @@ The resolved asset describes the consumption-oriented aspects of an OCS resource
 <a id="tocSresolvedmetadataitem"></a>
 <a id="tocsresolvedmetadataitem"></a>
 
+Resolved metadata is a property of a resolved asset.
+
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Name|string|false|true|None|
-|SdsTypeCode|[SdsTypeCode](#schemasdstypecode)|false|false|None|
-|Value|any|false|true|None|
-|Uom|string|false|true|None|
+|Name|string|false|true|Metadata name|
+|SdsTypeCode|[SdsTypeCode](#schemasdstypecode)|false|false|Metadata data type represented as an SdsTypeCode|
+|Value|any|false|true|Metadata static value|
+|Uom|string|false|true|Metadata UOM|
 
 ```json
-{
-  "Name": "string",
-  "SdsTypeCode": 0,
-  "Value": null,
-  "Uom": "string"
-}
+"{\n    \"Name\": \"ModelNumber\",\n    \"SdsTypeCode\": \"string\",\n    \"Value\": \"R2-D2,\n    \"Uom\": null\n}"
 
 ```
 
@@ -1804,15 +1801,17 @@ The resolved asset describes the consumption-oriented aspects of an OCS resource
 <a id="tocSresolvedstream"></a>
 <a id="tocsresolvedstream"></a>
 
+Resolved stream is a property of the resolved asset
+
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Name|string|false|true|None|
-|Type|[SdsType](#schemasdstype)|false|true|None|
-|StreamReferenceName|string|false|true|None|
-|StreamId|string|false|true|None|
-|PropertyMaps|[[PropertyMap](#schemapropertymap)]|false|true|None|
+|Name|string|false|true|Resolved stream name|
+|Type|[SdsType](#schemasdstype)|false|true|SdsType of the referenced stream|
+|StreamReferenceName|string|false|true|Stream reference name from the asset|
+|StreamId|string|false|true|Sds stream id of the referenced stream|
+|PropertyMaps|[[PropertyMap](#schemapropertymap)]|false|true|Sds stream property maps|
 
 ```json
 {
@@ -2439,12 +2438,14 @@ The resolved asset describes the consumption-oriented aspects of an OCS resource
 <a id="tocSunresolvedstream"></a>
 <a id="tocsunresolvedstream"></a>
 
+Unresolved stream is a property of the resolved asset. It represents streams which could not be resolved. Check reason as to why.
+
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Name|string|false|true|None|
-|Reason|string|false|true|None|
+|Name|string|false|true|Name of the stream reference that could not be resolved.|
+|Reason|string|false|true|Reason why stream could not be resolved.|
 
 ```json
 {
@@ -2463,12 +2464,14 @@ The resolved asset describes the consumption-oriented aspects of an OCS resource
 <a id="tocSunresolvedmetadata"></a>
 <a id="tocsunresolvedmetadata"></a>
 
+Unresolved metadata is a property of the resolved asset. It represents metadata which could not be resolved. Check reason as to why.
+
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Name|string|false|true|None|
-|Reason|string|false|true|None|
+|Name|string|false|true|Name of metadata item which could not be resolved.|
+|Reason|string|false|true|Reason why metadata could not be resolved.|
 
 ```json
 {
@@ -2487,11 +2490,13 @@ The resolved asset describes the consumption-oriented aspects of an OCS resource
 <a id="tocSunresolvedstatus"></a>
 <a id="tocsunresolvedstatus"></a>
 
+Unresolved status is a property of the resolved asset. It represents statuses which could not be resolved. Check reason as to why.
+
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Reason|string|false|true|None|
+|Reason|string|false|true|Reason why the status could not be resolved.|
 
 ```json
 {

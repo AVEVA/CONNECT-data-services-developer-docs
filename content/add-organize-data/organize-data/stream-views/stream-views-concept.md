@@ -4,7 +4,7 @@ uid: ccStreamviews
 
 # Stream views
 
-A stream view is essentially a logical overlay that enables you to view streaming data in a way that is most useful to you. While you cannot actually change the properties of types themselves, stream views enable you to create a view of a selected stream that appears as if you had changed the type on which it is based. You create a stream view by choosing a source and target type, and then creating a set of mappings between the properties of the two types.
+A stream view is a logical overlay that enables you to customize your view of streaming data in a way that is most useful to you. While you cannot change the properties of types, stream views enable you to create a view of a selected stream that appears as if you had changed the type on which it is based. You create a stream view by choosing a source and target type, and then creating a set of mappings between the properties of the two types.
 
 A stream view serves as a mapping between the true underlying type and the type in the stream view, enabling you to in effect remove, rename, or add properties on your original stream data. 
 Using a stream view on data retrieval affects only the data retrieved, and does not alter the original source data. 

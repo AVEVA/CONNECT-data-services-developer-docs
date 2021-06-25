@@ -15,7 +15,8 @@ For more information about stream views, see the following topics:
 - [PI Server counterpart](xref:ccStreamviews#streamviews-pi-server)
 - [Stream views best practices](xref:ccStreamviews#streamviews-bestpractices)
 
-## Procedure
+## Prerequisite
+
 
 Before following this procedure, repeat the steps in [Get started with types](xref:gsTypes), but use the ID **MyOCS.PumpState.Temperature** and include only the **Timestamp** and **Temperature** properties. This procedure creates a stream view that maps the **MyOCS.PumpState** type to this new type.
 

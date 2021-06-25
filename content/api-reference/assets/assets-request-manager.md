@@ -166,7 +166,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2
 |200|[Asset](#schemaasset)[]|List of assets in the given namespace.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
 |500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavaiable, please try again later.|
+|503|None|Service Unavailable, please try again later.|
 
 #### Response Headers
 
@@ -262,7 +262,7 @@ The asset you want to create.<br/>
 |403|[ErrorTemplate](#schemaerrortemplate)|You are not authorized to create assets.|
 |409|[ErrorTemplate](#schemaerrortemplate)|The asset you attempted to create has a conflict. See the response body for additional details.|
 |500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavaiable, please try again later.|
+|503|None|Service Unavailable, please try again later.|
 
 #### Response Headers
 
@@ -408,7 +408,7 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets
 |207|[MultiStatusResultOfStringAndChildErrorTemplate](#schemamultistatusresultofstringandchilderrortemplate)|Array of errors. Assets that did not encounter errors are deleted.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
 |500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavaiable, please try again later.|
+|503|None|Service Unavailable, please try again later.|
 
 #### Example response body
 > 207 Response
@@ -474,7 +474,7 @@ Asset identifiers<br/>
 |207|[MultiStatusResultOfStringAndChildErrorTemplate](#schemamultistatusresultofstringandchilderrortemplate)|On POST, returns the resolved view of multiple assets. For error responses, check the multi-status response for the error and cause.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
 |500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavaiable, please try again later.|
+|503|None|Service Unavailable, please try again later.|
 
 #### Example response body
 > 200 Response
@@ -618,7 +618,7 @@ Asset identifiers<br/>
 |207|[MultiStatusResultOfLastStatusDataAndChildErrorTemplate](#schemamultistatusresultoflaststatusdataandchilderrortemplate)|On POST, returns the status of multiple assets. Errors are returned for assets which status couldn't resolve.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
 |500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavaiable, please try again later.|
+|503|None|Service Unavailable, please try again later.|
 
 #### Example response body
 > 200 Response
@@ -727,7 +727,7 @@ The list of assets you want to create.<br/>
 |207|[MultiStatusResultOfAssetAndChildErrorTemplate](#schemamultistatusresultofassetandchilderrortemplate)|The asset that was created.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
 |500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavaiable, please try again later.|
+|503|None|Service Unavailable, please try again later.|
 
 #### Example response body
 > 200 Response

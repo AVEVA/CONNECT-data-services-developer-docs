@@ -31,7 +31,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
 |422|None|The request is not valid. See the response body for additional details.|
 |500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavaiable, please try again later.|
+|503|None|Service Unavailable, please try again later.|
 
 #### Example response body
 > 200 Response

@@ -181,7 +181,7 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{asset
 |404|[ErrorTemplate](#schemaerrortemplate)|Not Found|
 |409|[ErrorTemplate](#schemaerrortemplate)|Conflict|
 |500|None|Internal server error<br/>|
-|503|None|Service Unavaiable, please try again later.|
+|503|None|Service Unavailable, please try again later.|
 
 #### Example response body
 > 400 Response
@@ -226,7 +226,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
 |404|[ErrorTemplate](#schemaerrortemplate)|Asset with specified identifier not found.|
 |500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavaiable, please try again later.|
+|503|None|Service Unavailable, please try again later.|
 
 #### Example response body
 > 200 Response
@@ -317,7 +317,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
 |404|[ErrorTemplate](#schemaerrortemplate)|Asset with specified identifier not found.|
 |500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavaiable, please try again later.|
+|503|None|Service Unavailable, please try again later.|
 
 #### Example response body
 > 400 Response
@@ -362,7 +362,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
 |404|[ErrorTemplate](#schemaerrortemplate)|Asset with specified identifier not found.|
 |500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavaiable, please try again later.|
+|503|None|Service Unavailable, please try again later.|
 
 #### Example response body
 > 200 Response
@@ -418,7 +418,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
 |404|[ErrorTemplate](#schemaerrortemplate)|Asset with specified identifier not found.|
 |500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavaiable, please try again later.|
+|503|None|Service Unavailable, please try again later.|
 
 #### Example response body
 > 200 Response
@@ -485,7 +485,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
 |404|[ErrorTemplate](#schemaerrortemplate)|Asset with specified identifier not found.|
 |500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavaiable, please try again later.|
+|503|None|Service Unavailable, please try again later.|
 
 #### Example response body
 > 400 Response
@@ -530,7 +530,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId
 |401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
 |404|[ErrorTemplate](#schemaerrortemplate)|Asset with specified identifier not found.|
 |500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavaiable, please try again later.|
+|503|None|Service Unavailable, please try again later.|
 
 #### Response Headers
 
@@ -636,7 +636,7 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetI
 |403|[ErrorTemplate](#schemaerrortemplate)|You are not authorized to create assets.|
 |409|[ErrorTemplate](#schemaerrortemplate)|The asset you attempted to create has a conflict. See the response body for additional details.|
 |500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavaiable, please try again later.|
+|503|None|Service Unavailable, please try again later.|
 
 #### Response Headers
 
@@ -744,7 +744,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId
 |409|[ErrorTemplate](#schemaerrortemplate)|Conflict|
 |412|[ErrorTemplate](#schemaerrortemplate)|Pre-Condition Failed|
 |500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavaiable, please try again later.|
+|503|None|Service Unavailable, please try again later.|
 
 #### Response Headers
 

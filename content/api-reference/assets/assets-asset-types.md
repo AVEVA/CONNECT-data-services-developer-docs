@@ -5,13 +5,83 @@ uid: assets-asset-types
 
 # Asset Types
 
-## `Create Asset Types`
+## `List Asset Types`
 
-<a id="opIdAssetTypes_Create Asset Types"></a>
+<a id="opIdAssetTypes_List Asset Types"></a>
+
+Returns an array of asset types in a given namespace and the total number of asset types returned, specified as Total-Count in the HTTP response header.
 
 ### Request
 ```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/assetTypes
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes
+?skip={skip}&count={count}&query={query}
+```
+
+#### Parameters
+
+`string tenantId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/><br/>
+`[optional] integer skip`
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>`[optional] string query`
+<br/>Query identifier<br/><br/><br/>
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[DeprecatedAssetType](#schemadeprecatedassettype)[]|List of assets in the given namespace.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavailable, please try again later.|
+
+#### Response Headers
+
+|Status|Header|Type|Description|
+|---|---|---|---|
+|200|Total-Count|integer|Total number of asset types in the namespace.|
+
+#### Example response body
+> 200 Response
+
+```json
+[
+  {
+    "Id": "HeaterType",
+    "Name": "HeaterType",
+    "Description": "This is an Asset Type which represents heater asset."
+  },
+  {
+    "Id": "PressureType",
+    "Name": "PressureType",
+    "Description": "This is an Asset Type which represents pressure asset."
+  }
+]
+```
+
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+```
+
+---
+
+## `Create Asset Types (`Asset Types` path)`
+
+<a id="opIdAssetTypes_Create Asset Types (`Asset Types` path)"></a>
+
+### Request
+```text 
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes
 ```
 
 #### Parameters
@@ -64,76 +134,6 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/assetTypes
 
 ---
 
-## `List Asset Types`
-
-<a id="opIdAssetTypes_List Asset Types"></a>
-
-Returns an array of asset types in a given namespace and the total number of asset types returned, specified as Total-Count in the HTTP response header.
-
-### Request
-```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes
-?skip={skip}&count={count}&query={query}
-```
-
-#### Parameters
-
-`string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>
-`[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>`[optional] string query`
-<br/>Query identifier<br/><br/><br/>
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|[DeprecatedAssetType](#schemadeprecatedassettype)[]|List of assets in the given namespace.|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavaiable, please try again later.|
-
-#### Response Headers
-
-|Status|Header|Type|Description|
-|---|---|---|---|
-|200|Total-Count|integer|Total number of asset types in the namespace.|
-
-#### Example response body
-> 200 Response
-
-```json
-[
-  {
-    "Id": "HeaterType",
-    "Name": "HeaterType",
-    "Description": "This is an Asset Type which represents heater asset."
-  },
-  {
-    "Id": "PressureType",
-    "Name": "PressureType",
-    "Description": "This is an Asset Type which represents pressure asset."
-  }
-]
-```
-
-> 400 Response
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Resolution": "string",
-  "Reason": "string",
-  "property1": null,
-  "property2": null
-}
-```
-
----
-
 ## `Get Asset Type`
 
 <a id="opIdAssetTypes_Get Asset Type"></a>
@@ -161,7 +161,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 |401|None|Unauthorized|
 |404|None|Asset with specified identifier not found.|
 |500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavaiable, please try again later.|
+|503|None|Service Unavailable, please try again later.|
 
 #### Response Headers
 
@@ -533,6 +533,56 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2
 
 ---
 
+## `Create Asset Types (`Asset Types2` path)`
+
+<a id="opIdAssetTypes_Create Asset Types (`Asset Types2` path)"></a>
+
+### Request
+```text 
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2
+```
+
+#### Parameters
+
+`string tenantId`
+<br/><br/>`string namespaceId`
+<br/><br/>
+
+### Request Body
+
+<br/>
+
+```json
+{
+  "Id": "SampleAssetType",
+  "Description": "This is a sample asset type.",
+  "Metadata": [
+    {
+      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+      "Name": "ModelNumber",
+      "Description": "This is a static attribute on the asset which represents the model number.",
+      "SdsTypeCode": "Double",
+      "Value": 0.01
+    }
+  ],
+  "TypeReferences": [
+    {
+      "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+      "StreamReferenceName": "ReferenceName",
+      "TypeId": "PI-Float32"
+    }
+  ]
+}
+```
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|string|None|
+
+---
+
 ## `Get Asset Type2`
 
 <a id="opIdAssetTypes_Get Asset Type2"></a>
@@ -612,7 +662,7 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{as
 |409|None|Conflict.|
 |412|None|Pre-Condition Failed.|
 |500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavaiable, please try again later.|
+|503|None|Service Unavailable, please try again later.|
 
 #### Response Headers
 
@@ -738,9 +788,9 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{ass
 
 ---
 
-## `Create Asset Types2`
+## `Create Asset Types (`asset Types` path)`
 
-<a id="opIdAssetTypes_Create Asset Types2"></a>
+<a id="opIdAssetTypes_Create Asset Types (`asset Types` path)"></a>
 
 ### Request
 ```text 
@@ -845,56 +895,6 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/assetTypes
     ]
   }
 ]
-```
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|string|None|
-
----
-
-## `Create Asset Types (`sset Types2` path)`
-
-<a id="opIdAssetTypes_Create Asset Types (`sset Types2` path)"></a>
-
-### Request
-```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ssetTypes2
-```
-
-#### Parameters
-
-`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
-
-### Request Body
-
-<br/>
-
-```json
-{
-  "Id": "SampleAssetType",
-  "Description": "This is a sample asset type.",
-  "Metadata": [
-    {
-      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
-      "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
-      "SdsTypeCode": "Double",
-      "Value": 0.01
-    }
-  ],
-  "TypeReferences": [
-    {
-      "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-      "StreamReferenceName": "ReferenceName",
-      "TypeId": "PI-Float32"
-    }
-  ]
-}
 ```
 
 ### Response
@@ -1219,7 +1219,7 @@ An asset type type reference represents dynamic stream data associated with an a
 |StreamReferenceId|string|false|true|The Id for this type reference. If an asset is derived from this asset type, this Id must be referenced in the asset reference type object. This Id must be unique within the asset type.|
 |StreamReferenceName|string|false|true|The user friendly name for this type reference.|
 |Description|string|false|true|Description text|
-|TypeId|string|true|false|This string must be an SDS stream type Id.|
+|TypeId|string|true|false|This string must be an SDS Type Id.|
 
 ```json
 {

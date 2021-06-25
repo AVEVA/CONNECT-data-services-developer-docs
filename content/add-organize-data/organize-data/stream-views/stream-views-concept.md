@@ -23,7 +23,7 @@ While there is no direct counterpart for stream views in PI Server, the closest 
 
 ### <a name="streamviews-bestpractices"></a>Stream views best practices
 
-OSIsoft recommends the following best practices when working with stream views.
+OSIsoft recommends the following best practices when working with stream views:
 
 1. Stream views can be useful when you are using PI to OCS. PI to OCS creates streams with many additional flags, for example `IsQuestionable`, `IsSubstituted`, and `IsAnnotated`. 
 You can use stream views to limit these properties or to give them a more meaningful name.

@@ -651,12 +651,11 @@ Asset identifiers<br/>
   "OperationId": "string",
   "Data": [
     {
-      "Index": null,
-      "Status": 0,
-      "Value": null,
-      "DisplayName": "string",
-      "AssetId": "string",
-      "DataRetrievalTime": "2019-08-24T14:15:22Z"
+      "AssetId": "AssetId-1",
+      "Status": 1,
+      "Value": "85",
+      "DisplayName": "TemperatureSensorBuild1InF",
+      "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z"
     }
   ],
   "ChildErrors": [
@@ -1237,12 +1236,14 @@ An asset stream reference represents dynamic stream data associated with an asse
 <a id="tocSstatusconfiguration"></a>
 <a id="tocsstatusconfiguration"></a>
 
+Status is a property of an asset or asset type that defines the simple status of an asset or asset type. There is one status property for each asset or asset type. If an asset references an existing asset type and the asset type has a corresponding type reference, then the status mapping on the asset is ignored.
+
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|DefinitionType|[StatusDefinitionType](#schemastatusdefinitiontype)|false|false|None|
-|Definition|any|false|true|None|
+|DefinitionType|[StatusDefinitionType](#schemastatusdefinitiontype)|false|false|Status definition type. At this moment, only "StreamPropertyMapping" is supported.|
+|Definition|any|false|true|Status definition|
 
 ```json
 {
@@ -1553,25 +1554,26 @@ Pre-defined asset status values.
 <a id="tocSlaststatusdata"></a>
 <a id="tocslaststatusdata"></a>
 
+Asset last status
+
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Index|any|false|true|None|
-|Status|[StatusEnum](#schemastatusenum)|false|false|Pre-defined asset status values.|
-|Value|any|false|true|None|
-|DisplayName|string|false|true|None|
-|AssetId|string|false|true|None|
-|DataRetrievalTime|date-time|false|false|None|
+|Index|any|false|true|Index|
+|Status|[StatusEnum](#schemastatusenum)|false|false|Status enumeration. Valid values are : Unknown, Good, Warning and Bad.|
+|Value|any|false|true|Value of the last data retrieved|
+|DisplayName|string|false|true|Status display name|
+|AssetId|string|false|true|Asset identifier|
+|DataRetrievalTime|date-time|false|false|Date time of the last time the status was updated.|
 
 ```json
 {
-  "Index": null,
-  "Status": 0,
-  "Value": null,
-  "DisplayName": "string",
-  "AssetId": "string",
-  "DataRetrievalTime": "2019-08-24T14:15:22Z"
+  "AssetId": "AssetId-1",
+  "Status": 1,
+  "Value": "85",
+  "DisplayName": "TemperatureSensorBuild1InF",
+  "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z"
 }
 
 ```
@@ -1592,7 +1594,7 @@ Pre-defined asset status values.
 |Reason|string|false|true|None|
 |Error|string|false|true|None|
 |OperationId|string|false|true|None|
-|Data|[[LastStatusData](#schemalaststatusdata)]|false|true|None|
+|Data|[[LastStatusData](#schemalaststatusdata)]|false|true|[Asset last status]|
 |ChildErrors|[[ChildErrorTemplate](#schemachilderrortemplate)]|false|true|None|
 
 ```json
@@ -1602,12 +1604,11 @@ Pre-defined asset status values.
   "OperationId": "string",
   "Data": [
     {
-      "Index": null,
-      "Status": 0,
-      "Value": null,
-      "DisplayName": "string",
-      "AssetId": "string",
-      "DataRetrievalTime": "2019-08-24T14:15:22Z"
+      "AssetId": "AssetId-1",
+      "Status": 1,
+      "Value": "85",
+      "DisplayName": "TemperatureSensorBuild1InF",
+      "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z"
     }
   ],
   "ChildErrors": [

@@ -1393,12 +1393,14 @@ An asset type can be used to create multiple similar assets.A change to the asse
 <a id="tocSstatusconfiguration"></a>
 <a id="tocsstatusconfiguration"></a>
 
+Status is a property of an asset or asset type that defines the simple status of an asset or asset type. There is one status property for each asset or asset type. If an asset references an existing asset type and the asset type has a corresponding type reference, then the status mapping on the asset is ignored.
+
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|DefinitionType|[StatusDefinitionType](#schemastatusdefinitiontype)|false|false|None|
-|Definition|any|false|true|None|
+|DefinitionType|[StatusDefinitionType](#schemastatusdefinitiontype)|false|false|Status definition type. At this moment, only "StreamPropertyMapping" is supported.|
+|Definition|any|false|true|Status definition|
 
 ```json
 {

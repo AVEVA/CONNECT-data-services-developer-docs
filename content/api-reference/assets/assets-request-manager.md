@@ -809,9 +809,11 @@ The list of assets you want to create.<br/>
 
 ---
 
-## `Get Assets In Search Result Format`
+## `List Assets In List Result Format`
 
-<a id="opIdRequestManager_Get Assets In Search Result Format"></a>
+<a id="opIdRequestManager_List Assets In List Result Format"></a>
+
+Searches all assets and returns a list of asset Ids and their matched fields. Use this API to identify the fields in the asset that match your query string.
 
 ### Request
 ```text 
@@ -822,13 +824,13 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/><br/>
 `[optional] integer skip`
-<br/><br/>`[optional] integer count`
-<br/><br/>`[optional] string orderBy`
-<br/><br/>`[optional] string query`
-<br/><br/>`[optional] integer pageSize`
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>`[optional] string orderBy`
+<br/>An optional parameter which returns assets ordered either by the asset Id or the asset name. Specify asc or desc to return the results in ascending or descending order. If not specified, the default is ascending order.<br/><br/>`[optional] string query`
+<br/>The asset query string. Search strings are not case-sensitive.<br/><br/>`[optional] integer pageSize`
 <br/><br/>`[optional] integer maxPages`
 <br/><br/>`[optional] string continuationToken`
 <br/><br/>`[optional] object Comparer`
@@ -854,13 +856,72 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|200|[SearchResult](#schemasearchresult)[]|OK|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavailable, please try again later.|
+
+#### Example response body
+> 200 Response
+
+```json
+{
+  "Count": 2,
+  "Results": [
+    {
+      "MatchedProperties": [
+        {
+          "Field": "Name",
+          "Value": "Asset Tracer ced7ee16-984d-480f-8338-3055f7f39d8b"
+        }
+      ],
+      "Id": "AssetId2b5f41ae-0929-4977-bfbd-1e046d8a66f4",
+      "TypeId": "AssetTracerType",
+      "Name": "Asset Tracer ced7ee16-984d-480f-8338-3055f7f39d8b",
+      "Description": "First tracer device",
+      "ETag": "1",
+      "CreatedDate": "2021-05-26T19:05:33.8979442Z",
+      "LastModifiedDate": "2021-05-26T19:05:33.8979442Z"
+    },
+    {
+      "MatchedProperties": [
+        {
+          "Field": "Name",
+          "Value": "Asset Tracer d6b984dd-b6da-4225-a2e0-59f781d065a4"
+        }
+      ],
+      "Id": "AssetId3dbfd185-7c62-49ed-b875-7953cba07fc3",
+      "TypeId": "AssetTracerType",
+      "Name": "Asset Tracer d6b984dd-b6da-4225-a2e0-59f781d065a4",
+      "Description": "Another tracer device",
+      "ETag": "1",
+      "CreatedDate": "2021-05-26T19:05:40.9043726Z",
+      "LastModifiedDate": "2021-05-26T19:05:40.9043726Z"
+    }
+  ]
+}
+```
+
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+```
 
 ---
 
 ## `Get Autocomplete Results`
 
 <a id="opIdRequestManager_Get Autocomplete Results"></a>
+
+Asset autocomplete allows you to query assets and retrieve a list of suggested assets based on your search criteria. The autocomplete feature can be used with the following asset properties: Name, Description, AssetTypeName, and Metadata.
 
 ### Request
 ```text 
@@ -871,23 +932,79 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets/Au
 #### Parameters
 
 `string term`
-<br/><br/>`integer termCount`
-<br/><br/>`integer facetCount`
-<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>The search term that you want to search for.<br/><br/>`integer termCount`
+<br/>The maximum number of facet autocompleted items to return. The default is 0 which means you will not get any facet suggestions.<br/><br/>`integer facetCount`
+<br/>The maximum number of token autocompleted items to return. The default is 0 which means you will not get any token suggestions.<br/><br/>`string tenantId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|200|[SuggestionResults](#schemasuggestionresults)|Returns the suggestions|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavailable, please try again later.|
+
+#### Example response body
+> 200 Response
+
+```json
+{
+  "Facets": [
+    {
+      "Value": "trackUnit1",
+      "FacetCategories": [
+        {
+          "Name": "track",
+          "DocumentCount": 1
+        }
+      ]
+    },
+    {
+      "Value": "t1000",
+      "FacetCategories": [
+        {
+          "Name": "tractorNumber",
+          "DocumentCount": 1
+        }
+      ]
+    }
+  ],
+  "Tokens": [
+    {
+      "Value": "tracerround",
+      "DocumentCount": 2
+    },
+    {
+      "Value": "t1000",
+      "DocumentCount": 1
+    }
+  ]
+}
+```
+
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+```
 
 ---
 
-## `Get Faceted Search Results`
+## `List Faceted List Results`
 
-<a id="opIdRequestManager_Get Faceted Search Results"></a>
+<a id="opIdRequestManager_List Faceted List Results"></a>
+
+Asset faceted search allows for searching using asset facets. Asset facets are not case sensitive. Only asset metadata can be used in asset faceted searches.
 
 ### Request
 ```text 
@@ -898,17 +1015,54 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets/Fa
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/><br/>
 `[optional] integer count`
-<br/><br/>`[optional] string name`
-<br/><br/>
+<br/>An optional parameter, between 1 and 1000 (inclusive), representing the maximum number of retrieved assets. If not specified, the default is 100.<br/><br/>`[optional] string name`
+<br/>The name of the asset metadata for which you want to retrieve the facet values.<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|200|[FacetResult](#schemafacetresult)[]|OK|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavailable, please try again later.|
+
+#### Example response body
+> 200 Response
+
+```json
+[
+  {
+    "Name": "Location",
+    "FacetValues": [
+      {
+        "Value": "California",
+        "DocumentCount": 2
+      },
+      {
+        "Value": "Philly",
+        "DocumentCount": 1
+      }
+    ]
+  }
+]
+```
+
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+```
 
 ---
 ## Definitions
@@ -1542,6 +1696,144 @@ Pre-defined asset status values.
 
 ```json
 {}
+
+```
+
+---
+
+### SearchResult
+
+<a id="schemasearchresult"></a>
+<a id="schema_SearchResult"></a>
+<a id="tocSsearchresult"></a>
+<a id="tocssearchresult"></a>
+
+Asset search results
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|MatchedFields|[[MatchedField](#schemamatchedfield)]|false|true|None|
+|Score|double|false|false|None|
+|Id|string|false|true|None|
+|TypeId|string|false|true|None|
+|Name|string|false|true|None|
+|Description|string|false|true|None|
+|LastStatus|[StatusData](#schemastatusdata)|false|true|None|
+|ETag|string|false|true|None|
+|CreatedDate|date-time|false|false|None|
+|LastModifiedDate|date-time|false|false|None|
+
+```json
+"/// {\n \"Count\": 2,\n \"Results\": [\n {\n     \"MatchedProperties\": [\n     {\n         \"Field\": \"Name\",\n         \"Value\": \"Asset Tracer ced7ee16-984d-480f-8338-3055f7f39d8b\"\n     }],\n     \"Id\": \"AssetId2b5f41ae-0929-4977-bfbd-1e046d8a66f4\",\n     \"TypeId\": \"AssetTracerType\",\n     \"Name\": \"Asset Tracer ced7ee16-984d-480f-8338-3055f7f39d8b\",\n     \"Description\": \"First tracer device\",\n     \"ETag\": \"1\",\n     \"CreatedDate\": \"2021-05-26T19:05:33.8979442Z\",\n     \"LastModifiedDate\": \"2021-05-26T19:05:33.8979442Z\"\n },\n {\n     \"MatchedProperties\": [\n     {\n         \"Field\": \"Name\",\n         \"Value\": \"Asset Tracer d6b984dd-b6da-4225-a2e0-59f781d065a4\"\n     }],\n     \"Id\": \"AssetId3dbfd185-7c62-49ed-b875-7953cba07fc3\",\n     \"TypeId\": \"AssetTracerType\",\n     \"Name\": \"Asset Tracer d6b984dd-b6da-4225-a2e0-59f781d065a4\",\n     \"Description\": \"Another tracer device\",\n     \"ETag\": \"1\",\n     \"CreatedDate\": \"2021-05-26T19:05:40.9043726Z\",\n     \"LastModifiedDate\": \"2021-05-26T19:05:40.9043726Z\"\n }\n             ]\n            }\n            "
+
+```
+
+---
+
+### MatchedField
+
+<a id="schemamatchedfield"></a>
+<a id="schema_MatchedField"></a>
+<a id="tocSmatchedfield"></a>
+<a id="tocsmatchedfield"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Field|string|false|true|None|
+|Terms|string[]|false|true|None|
+
+```json
+{
+  "Field": "string",
+  "Terms": [
+    "string"
+  ]
+}
+
+```
+
+---
+
+### StatusData
+
+<a id="schemastatusdata"></a>
+<a id="schema_StatusData"></a>
+<a id="tocSstatusdata"></a>
+<a id="tocsstatusdata"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Index|any|false|true|Index|
+|Status|[StatusEnum](#schemastatusenum)|false|false|Status enumeration. Valid values are : Unknown, Good, Warning and Bad.|
+|Value|any|false|true|Value of the last data retrieved|
+|DisplayName|string|false|true|Status display name|
+
+```json
+{
+  "Index": null,
+  "Status": 0,
+  "Value": null,
+  "DisplayName": "string"
+}
+
+```
+
+---
+
+### FacetResult
+
+<a id="schemafacetresult"></a>
+<a id="schema_FacetResult"></a>
+<a id="tocSfacetresult"></a>
+<a id="tocsfacetresult"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Name|string|false|true|None|
+|FacetValues|[[FacetValue](#schemafacetvalue)]|false|true|None|
+
+```json
+{
+  "Name": "string",
+  "FacetValues": [
+    {
+      "Value": "string",
+      "DocumentCount": 0
+    }
+  ]
+}
+
+```
+
+---
+
+### FacetValue
+
+<a id="schemafacetvalue"></a>
+<a id="schema_FacetValue"></a>
+<a id="tocSfacetvalue"></a>
+<a id="tocsfacetvalue"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Value|string|false|true|None|
+|DocumentCount|int32|false|false|None|
+
+```json
+{
+  "Value": "string",
+  "DocumentCount": 0
+}
 
 ```
 
@@ -2509,6 +2801,122 @@ Unresolved status is a property of the resolved asset. It represents statuses wh
 ```json
 {
   "Reason": "Reason why status could not be resolved."
+}
+
+```
+
+---
+
+### SuggestionResults
+
+<a id="schemasuggestionresults"></a>
+<a id="schema_SuggestionResults"></a>
+<a id="tocSsuggestionresults"></a>
+<a id="tocssuggestionresults"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Facets|[[FacetSuggestion](#schemafacetsuggestion)]|false|true|None|
+|Tokens|[[TokenSuggestion](#schematokensuggestion)]|false|true|None|
+
+```json
+{
+  "Facets": [
+    {
+      "Value": "string",
+      "FacetCategories": [
+        {
+          "Name": "string",
+          "DocumentCount": 0
+        }
+      ]
+    }
+  ],
+  "Tokens": [
+    {
+      "Value": "string",
+      "DocumentCount": 0
+    }
+  ]
+}
+
+```
+
+---
+
+### FacetSuggestion
+
+<a id="schemafacetsuggestion"></a>
+<a id="schema_FacetSuggestion"></a>
+<a id="tocSfacetsuggestion"></a>
+<a id="tocsfacetsuggestion"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Value|string|false|true|None|
+|FacetCategories|[[FacetCategory](#schemafacetcategory)]|false|true|None|
+
+```json
+{
+  "Value": "string",
+  "FacetCategories": [
+    {
+      "Name": "string",
+      "DocumentCount": 0
+    }
+  ]
+}
+
+```
+
+---
+
+### FacetCategory
+
+<a id="schemafacetcategory"></a>
+<a id="schema_FacetCategory"></a>
+<a id="tocSfacetcategory"></a>
+<a id="tocsfacetcategory"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Name|string|false|true|None|
+|DocumentCount|int32|false|false|None|
+
+```json
+{
+  "Name": "string",
+  "DocumentCount": 0
+}
+
+```
+
+---
+
+### TokenSuggestion
+
+<a id="schematokensuggestion"></a>
+<a id="schema_TokenSuggestion"></a>
+<a id="tocStokensuggestion"></a>
+<a id="tocstokensuggestion"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Value|string|false|true|None|
+|DocumentCount|int32|false|false|None|
+
+```json
+{
+  "Value": "string",
+  "DocumentCount": 0
 }
 
 ```

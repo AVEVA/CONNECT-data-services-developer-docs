@@ -2,12 +2,15 @@
 uid: AssetCentricDataAPI
 ---
 
-# Asset Centric Data API
+# Assets Data API
+
+<!-- Chris Manhard asked that the TOC heading be changed from "Asset centric data" to "Assets data". So I changed the title of this topic so it would match the TOC. -->
+
 The asset centric data API provides a quick way to retrieve data stored in an asset's referenced streams. 
 
 In order to retrieve stream data from an asset, you must first set up stream references for a given asset. The data that is retrieved is based on the resolved asset. By default, data calls return data for all stream references. 
 
-If you are only interested in data from a subset of streams, you must specify the streams encoded as a URL parameter. The format is to add stream={streamName} for each stream you are interested in.
+If you are only interested in data from a subset of streams, you must specify the streams encoded as a URL parameter. The format is to add `stream={streamName}` for each stream you are interested in.
 
 For example, if a given asset has the following definition and you are only interested in HeaterA and PressureB for the last data call, you would send:
 
@@ -15,7 +18,7 @@ For example, if a given asset has the following definition and you are only inte
 GET ...Namespaces/{namespaceId}/Assets/AssetStreamFilter/data/last?Stream={HeaterA},Stream={PressureB}
 ```
 
-Note: Asset stream references can contain commas. In this case, the comma must be properly escaped.
+**Note:** Asset stream references can contain commas. In this case, the comma must be properly escaped.
 
 ```
 {
@@ -88,7 +91,7 @@ The namespace identifier
 `string assetId`  
 The asset identifier
 
-[optional] string[] stream
+[optional] `string[] stream`
 An optional parameter consisting of a comma-separated list of stream reference names that you are interested in. By default, all data calls return data for all stream references.
 
 ### Response 
@@ -123,9 +126,11 @@ Content-Type: application/json
 ***
 
 ## `Get Asset Sampled Data` 
-Returns sampled data for referenced Sds streams. 
+Returns sampled data for referenced SDS streams. 
 
-Note: The inputs to this API matches the SDS stream Get samples values data call.  
+**Note:** The inputs to this API matches the SDS stream Get samples values data call.  
+
+<!--Anthony, should "Get samples values" be "Get Sampled Values" (https://osisoft-dev.zoominsoftware.io/bundle/ocs/page/api-reference/sequential-data-store/sds-read-data-api.html#get-sampled-values) -->
 
 ### Request 
 ```text 
@@ -151,7 +156,7 @@ The end index for the intervals
 `int intervals`  
 The number of requested intervals
 
-[optional] string[] stream
+[optional] `string[] stream`
 An optional parameter consisting of a comma-separated list of stream reference names that you are interested in. By default, all data calls return data for all stream references.
 
 ### Response 
@@ -221,7 +226,7 @@ The end index for the intervals
 `int count`   
 The number of requested intervals
 
-[optional] string[] stream
+[optional] `string[] stream`
 An optional parameter consisting of a comma-separated list of stream reference names that you are interested in. By default, all data calls return data for all stream references.
 
 ### Response 
@@ -408,7 +413,7 @@ The start index for the intervals
 `string endIndex`   
 The end index for the intervals
 
-[optional] string[] stream
+[optional] `string[] stream`
 An optional parameter consisting of a comma-separated list of stream reference names that you are interested in. By default, all data calls return data for all stream references.
 
 ### Response
@@ -507,7 +512,7 @@ The end index for the intervals
 `int count`   
 The number of requested intervals
 
-[optional] string[] stream
+[optional] `string[] stream`
 An optional parameter consisting of a comma-separated list of stream reference names that you are interested in. By default, all data calls return data for all stream references.
 
 ### Response 

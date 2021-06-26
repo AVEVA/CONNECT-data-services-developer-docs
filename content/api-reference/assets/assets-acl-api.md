@@ -35,10 +35,10 @@ The namespace identifier
 
 The response includes a status code and a body.
 
-| Status Code | Body Type | Description |
-|--|--|--|
-| 200 OK | `AccessControlList` | The default access control list of the assets collection or asset type collection.
-| 403 Forbidden | error | You are not authorized to view the requested asset or asset type collection's access control list. |
+| Status Code   | Body Type           | Description                                                  |
+| ------------- | ------------------- | ------------------------------------------------------------ |
+| 200 OK        | `AccessControlList` | The default access control list of the assets collection or asset type collection. |
+| 403 Forbidden | error               | You are not authorized to view the requested asset or asset type collection's access control list. |
 
 #### Example response body
 ```json 
@@ -74,7 +74,9 @@ HTTP 200 OK
 
 ## `Update Assets or AssetType Access Control List` 
 
-Update the default `AccessControlList` for the assets or asset type collections 
+<!-- Should we make "Assets" singular, as in "Asset" to be consistent with other methods? -->
+
+Update the default `AccessControlList` for the assets or asset type collections. 
 
 ### Request 
 
@@ -244,7 +246,7 @@ The response includes a status code and, in some instances, a body.
 
 ## `Get Asset or AssetType Access Rights` 
 
-Get the calling user or client's access rights to the requested asset or asset type.
+Returns the calling user or client's access rights to the requested asset or asset type.
 
 ### Request 
 
@@ -302,7 +304,7 @@ HTTP 200 OK
 
 ## `Get Asset or AssetType Owner` 
 
-Get the owner `Trustee` of the specified asset or asset type.
+Returns the owner `Trustee` of the specified asset or asset type.
 
 ### Request 
 

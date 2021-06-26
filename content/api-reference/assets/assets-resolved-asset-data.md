@@ -106,7 +106,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier<br/><br/><br/>
 `[optional] array stream`
-<br/><br/>
+<br/>An optional parameter consisting of a comma-separated list of stream reference names in the form of \"stream={stream 1}[,stream={stream n}]\" that you are interested in. By default, all data calls return data for all stream references.<br/><br/>
 
 ### Response
 
@@ -180,7 +180,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier<br/><br/><br/>
 `[optional] array stream`
-<br/><br/>
+<br/>An optional parameter consisting of a comma-separated list of stream reference names in the form of "stream={stream 1}[,stream={stream n}]" that you are interested in. By default, all data calls return data for all stream references.<br/><br/>
 
 ### Response
 
@@ -258,7 +258,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier<br/><br/><br/>
 `[optional] array stream`
-<br/><br/>`[optional] any boundaryType`
+<br/>An optional parameter consisting of a comma-separated list of stream reference names in the form of "stream={stream 1}[,stream={stream n}]" that you are interested in. By default, all data calls return data for all stream references.<br/><br/>`[optional] any boundaryType`
 <br/>Sds boundary type to pass to Sds<br/><br/>`[optional] any startBoundaryType`
 <br/>Start Sds boundary type to pass to Sds<br/><br/>`[optional] any endBoundaryType`
 <br/>End Sds boundary type to pass to Sds<br/><br/>

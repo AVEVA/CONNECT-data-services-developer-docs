@@ -5,11 +5,9 @@ uid: assets-asset-types
 
 # Asset Types
 
-## `List Asset Types`
+## `Get Asset Types`
 
-<a id="opIdAssetTypes_List Asset Types"></a>
-
-Returns an array of asset types in a given namespace and the total number of asset types returned, specified as Total-Count in the HTTP response header.
+<a id="opIdAssetTypes_Get Asset Types"></a>
 
 ### Request
 ```text 
@@ -20,64 +18,24 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>
+<br/><br/>`string namespaceId`
+<br/><br/>
 `[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>`[optional] string query`
-<br/>Query identifier<br/><br/><br/>
+<br/><br/>`[optional] integer count`
+<br/><br/>`[optional] string query`
+<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[DeprecatedAssetType](#schemadeprecatedassettype)[]|List of assets in the given namespace.|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavailable, please try again later.|
-
-#### Response Headers
-
-|Status|Header|Type|Description|
-|---|---|---|---|
-|200|Total-Count|integer|Total number of asset types in the namespace.|
-
-#### Example response body
-> 200 Response
-
-```json
-[
-  {
-    "Id": "HeaterType",
-    "Name": "HeaterType",
-    "Description": "This is an Asset Type which represents heater asset."
-  },
-  {
-    "Id": "PressureType",
-    "Name": "PressureType",
-    "Description": "This is an Asset Type which represents pressure asset."
-  }
-]
-```
-
-> 400 Response
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Resolution": "string",
-  "Reason": "string",
-  "property1": null,
-  "property2": null
-}
-```
+|200|string|None|
 
 ---
 
-## `Create Asset Types (`Asset Types` path)`
+## `Create Asset Types2`
 
-<a id="opIdAssetTypes_Create Asset Types (`Asset Types` path)"></a>
+<a id="opIdAssetTypes_Create Asset Types2"></a>
 
 ### Request
 ```text 
@@ -138,8 +96,6 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes
 
 <a id="opIdAssetTypes_Get Asset Type"></a>
 
-Returns the specified asset type and the version Etag in the HTTP response header.
-
 ### Request
 ```text 
 GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}
@@ -148,65 +104,15 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 #### Parameters
 
 `string assetTypeId`
-<br/>Asset type identifier<br/><br/>`string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>
+<br/><br/>`string tenantId`
+<br/><br/>`string namespaceId`
+<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[DeprecatedAssetType](#schemadeprecatedassettype)|The asset with the specified identifier.|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|401|None|Unauthorized|
-|404|None|Asset with specified identifier not found.|
-|500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavailable, please try again later.|
-
-#### Response Headers
-
-|Status|Header|Type|Description|
-|---|---|---|---|
-|200|Etag|integer|Version|
-
-#### Example response body
-> 200 Response
-
-```json
-{
-  "Id": "SampleAssetType",
-  "Description": "This is a sample asset type.",
-  "Metadata": [
-    {
-      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
-      "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
-      "SdsTypeCode": "Double",
-      "Value": 0.01
-    }
-  ],
-  "TypeReferences": [
-    {
-      "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-      "StreamReferenceName": "ReferenceName",
-      "TypeId": "PI-Float32"
-    }
-  ]
-}
-```
-
-> 400 Response
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Resolution": "string",
-  "Reason": "string",
-  "property1": null,
-  "property2": null
-}
-```
+|200|string|None|
 
 ---
 
@@ -334,6 +240,8 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 
 <a id="opIdAssetTypes_Delete Asset Type"></a>
 
+Delete the asset type with a specified Id.
+
 ### Request
 ```text 
 DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}
@@ -343,23 +251,45 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{a
 #### Parameters
 
 `string assetTypeId`
-<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Asset type identifier<br/><br/>`string tenantId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/><br/>
 `[optional] boolean deleteAssets`
-<br/><br/>
+<br/>This delete call should also delete all assets of this asset type. Default is false.<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|204|None|The asset with specified identifier has been deleted.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized<br/>|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not Found|
+|409|[ErrorTemplate](#schemaerrortemplate)|Conflict|
+|500|None|Internal server error<br/>|
+|503|None|Service Unavailable, please try again later.|
+
+#### Example response body
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+```
 
 ---
 
 ## `Get Asset Type Acl`
 
 <a id="opIdAssetTypes_Get Asset Type Acl"></a>
+
+Get the access control of the specified asset type.
 
 ### Request
 ```text 
@@ -369,21 +299,64 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 #### Parameters
 
 `string assetTypeId`
-<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Asset type identifier<br/><br/>`string tenantId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|200|[AccessControlList](#schemaaccesscontrollist)|The access control of the asset with the specified identifier.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavailable, please try again later.|
+
+#### Example response body
+> 200 Response
+
+```json
+{
+  "RoleTrusteeAccessControlEntries": [
+    {
+      "Trustee": {
+        "Type": 3,
+        "ObjectId": "11111111-1111-1111-1111-111111111111"
+      },
+      "AccessRights": 3
+    },
+    {
+      "Trustee": {
+        "Type": 3,
+        "ObjectId": "22222222-2222-2222-1111-111111111111"
+      }
+    }
+  ]
+}
+```
+
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+```
 
 ---
 
 ## `Update Asset Type Access Control`
 
 <a id="opIdAssetTypes_Update Asset Type Access Control"></a>
+
+Updates the access control of the specified asset type.
 
 ### Request
 ```text 
@@ -393,9 +366,9 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>`string assetTypeId`
-<br/><br/>
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/><br/>`string assetTypeId`
+<br/>Asset identifier<br/><br/>
 
 ### Request Body
 
@@ -405,9 +378,17 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 {
   "RoleTrusteeAccessControlEntries": [
     {
-      "Trustee": {},
-      "AccessType": 0,
-      "AccessRights": 0
+      "Trustee": {
+        "Type": 3,
+        "ObjectId": "11111111-1111-1111-1111-111111111111"
+      },
+      "AccessRights": 3
+    },
+    {
+      "Trustee": {
+        "Type": 3,
+        "ObjectId": "22222222-2222-2222-1111-111111111111"
+      }
     }
   ]
 }
@@ -417,13 +398,34 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|204|None|The access control of the asset type with the specified identifier.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavailable, please try again later.|
+
+#### Example response body
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+```
 
 ---
 
-## `Get Asset Type Access Rights`
+## `List Asset Type Access Rights`
 
-<a id="opIdAssetTypes_Get Asset Type Access Rights"></a>
+<a id="opIdAssetTypes_List Asset Type Access Rights"></a>
+
+Get the access rights of the specified asset type.
 
 ### Request
 ```text 
@@ -433,21 +435,53 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 #### Parameters
 
 `string assetTypeId`
-<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Asset type identifier<br/><br/>`string tenantId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|200|Inline|The access rights of the asset type with the specified identifier.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavailable, please try again later.|
+
+#### Example response body
+> 200 Response
+
+```json
+[
+  "Read",
+  "Write",
+  "Delete",
+  "ManageAccessControl"
+]
+```
+
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+```
 
 ---
 
 ## `Get Asset Type Owner`
 
 <a id="opIdAssetTypes_Get Asset Type Owner"></a>
+
+Get the owner of the specified asset type.
 
 ### Request
 ```text 
@@ -458,20 +492,51 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 
 `string assetTypeId`
 <br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|200|[Trustee](#schematrustee)|The owner of the asset type with the specified identifier.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavailable, please try again later.|
+
+#### Example response body
+> 200 Response
+
+```json
+{
+  "Type": 1,
+  "TenantId": "55555555-5555-5555-5555-555555555555",
+  "ObjectId": "44444444-4444-4444-4444-444444444444"
+}
+```
+
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+```
 
 ---
 
 ## `Update Asset Type Owner`
 
 <a id="opIdAssetTypes_Update Asset Type Owner"></a>
+
+Updates the owner of the specified asset type.
 
 ### Request
 ```text 
@@ -481,9 +546,9 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>`string assetTypeId`
-<br/><br/>
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/><br/>`string assetTypeId`
+<br/>Asset type identifier<br/><br/>
 
 ### Request Body
 
@@ -492,8 +557,8 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 ```json
 {
   "Type": 1,
-  "ObjectId": "string",
-  "TenantId": "string"
+  "TenantId": "55555555-5555-5555-5555-555555555555",
+  "ObjectId": "44444444-4444-4444-4444-444444444444"
 }
 ```
 
@@ -501,13 +566,34 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|204|None|No content if success.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavailable, please try again later.|
+
+#### Example response body
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+```
 
 ---
 
-## `Get Asset Types2`
+## `List Asset Types2`
 
-<a id="opIdAssetTypes_Get Asset Types2"></a>
+<a id="opIdAssetTypes_List Asset Types2"></a>
+
+Returns an array of asset types in a given namespace and the total number of asset types returned, specified as Total-Count in the HTTP response header.
 
 ### Request
 ```text 
@@ -518,24 +604,66 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/><br/>
 `[optional] integer skip`
-<br/><br/>`[optional] integer count`
-<br/><br/>`[optional] string query`
-<br/><br/>
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>`[optional] string query`
+<br/>Query identifier<br/><br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|200|[DeprecatedAssetType](#schemadeprecatedassettype)[]|List of assets in the given namespace.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavailable, please try again later.|
+
+#### Response Headers
+
+|Status|Header|Type|Description|
+|---|---|---|---|
+|200|Total-Count|integer|Total number of asset types in the namespace.|
+
+#### Example response body
+> 200 Response
+
+```json
+[
+  {
+    "Id": "HeaterType",
+    "Name": "HeaterType",
+    "Description": "This is an Asset Type which represents heater asset."
+  },
+  {
+    "Id": "PressureType",
+    "Name": "PressureType",
+    "Description": "This is an Asset Type which represents pressure asset."
+  }
+]
+```
+
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+```
 
 ---
 
-## `Create Asset Types (`Asset Types2` path)`
+## `Create Asset Types`
 
-<a id="opIdAssetTypes_Create Asset Types (`Asset Types2` path)"></a>
+<a id="opIdAssetTypes_Create Asset Types"></a>
+
+Create or update an asset type with a specified Id.
 
 ### Request
 ```text 
@@ -545,8 +673,8 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/><br/>
 
 ### Request Body
 
@@ -579,13 +707,92 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|200|[AssetType](#schemaassettype)|The asset with the specified identifier.|
+|201|[AssetType](#schemaassettype)|The asset with the specified identifier.|
+|302|None|This asset type already exists.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|409|[ErrorTemplate](#schemaerrortemplate)|Conflict.|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavailable, please try again later.|
+
+#### Response Headers
+
+|Status|Header|Type|Description|
+|---|---|---|---|
+|200|Etag|integer|Version|
+|201|Etag|integer|Version|
+
+#### Example response body
+> 200 Response
+
+```json
+{
+  "Id": "SampleAssetType",
+  "Description": "This is a sample asset type.",
+  "Metadata": [
+    {
+      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+      "Name": "ModelNumber",
+      "Description": "This is a static attribute on the asset which represents the model number.",
+      "SdsTypeCode": "Double",
+      "Value": 0.01
+    }
+  ],
+  "TypeReferences": [
+    {
+      "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+      "StreamReferenceName": "ReferenceName",
+      "TypeId": "PI-Float32"
+    }
+  ]
+}
+```
+
+> 201 Response
+
+```json
+{
+  "Id": "SampleAssetType",
+  "Description": "This is a sample asset type.",
+  "Metadata": [
+    {
+      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+      "Name": "ModelNumber",
+      "Description": "This is a static attribute on the asset which represents the model number.",
+      "SdsTypeCode": "Double",
+      "Value": 0.01
+    }
+  ],
+  "TypeReferences": [
+    {
+      "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+      "StreamReferenceName": "ReferenceName",
+      "TypeId": "PI-Float32"
+    }
+  ]
+}
+```
+
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+```
 
 ---
 
-## `Get Asset Type2`
+## `List Asset Type2`
 
-<a id="opIdAssetTypes_Get Asset Type2"></a>
+<a id="opIdAssetTypes_List Asset Type2"></a>
+
+Returns an array of asset types in a given namespace and the total number of asset types returned, specified as Total-Count in the HTTP response header.
 
 ### Request
 ```text 
@@ -596,14 +803,48 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{ass
 
 `string assetTypeId`
 <br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|200|[DeprecatedAssetType](#schemadeprecatedassettype)[]|List of assets in the given namespace.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavailable, please try again later.|
+
+#### Response Headers
+
+|Status|Header|Type|Description|
+|---|---|---|---|
+|200|Etag|integer|Version|
+
+#### Example response body
+> 200 Response
+
+```json
+{
+  "Id": "HeaterType",
+  "Name": "HeaterType",
+  "Description": "This is an Asset Type which represents heater asset."
+}
+```
+
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+```
 
 ---
 
@@ -659,8 +900,8 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{as
 |200|[AssetType](#schemaassettype)|The asset with the specified identifier.|
 |201|[AssetType](#schemaassettype)|The asset with the specified identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|409|None|Conflict.|
-|412|None|Pre-Condition Failed.|
+|409|[ErrorTemplate](#schemaerrortemplate)|Conflict.|
+|412|[ErrorTemplate](#schemaerrortemplate)|Pre-Condition Failed.|
 |500|None|Internal Service Error, please try again later.|
 |503|None|Service Unavailable, please try again later.|
 
@@ -741,6 +982,8 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{as
 
 <a id="opIdAssetTypes_Create Or Update Asset Type (Asset Types2 path)"></a>
 
+Create or update an asset type with a specified Id.
+
 ### Request
 ```text 
 PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{assetTypeId}
@@ -749,13 +992,50 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{ass
 #### Parameters
 
 `string assetTypeId`
-<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Asset identifier<br/><br/>`string tenantId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/><br/>
 
 ### Request Body
 
 <br/>
+
+```json
+{
+  "Id": "TracerAssetType",
+  "Name": "TracerAssetType",
+  "Description": "This is an asset type which represents a tracer unit.",
+  "Metadata": [
+    {
+      "Id": "ModelNumber",
+      "Name": "ModelNumber",
+      "SdsTypeCode": "Double"
+    }
+  ]
+}
+```
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[AssetType](#schemaassettype)|Asset type with specified identifier|
+|201|[AssetType](#schemaassettype)|Asset type with specified identifier|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|409|[ErrorTemplate](#schemaerrortemplate)|Conflict|
+|412|[ErrorTemplate](#schemaerrortemplate)|Pre-Condition Failed|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavailable, please try again later.|
+
+#### Response Headers
+
+|Status|Header|Type|Description|
+|---|---|---|---|
+|200|Etag|integer|Version|
+|201|Etag|integer|Version|
+
+#### Example response body
+> 200 Response
 
 ```json
 {
@@ -780,21 +1060,53 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{ass
 }
 ```
 
-### Response
+> 201 Response
 
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|string|None|
+```json
+{
+  "Id": "SampleAssetType",
+  "Description": "This is a sample asset type.",
+  "Metadata": [
+    {
+      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+      "Name": "ModelNumber",
+      "Description": "This is a static attribute on the asset which represents the model number.",
+      "SdsTypeCode": "Double",
+      "Value": 0.01
+    }
+  ],
+  "TypeReferences": [
+    {
+      "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+      "StreamReferenceName": "ReferenceName",
+      "TypeId": "PI-Float32"
+    }
+  ]
+}
+```
+
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+```
 
 ---
 
-## `Create Asset Types (`asset Types` path)`
+## `Create Asset Types4`
 
-<a id="opIdAssetTypes_Create Asset Types (`asset Types` path)"></a>
+<a id="opIdAssetTypes_Create Asset Types4"></a>
 
 ### Request
 ```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/assetTypes
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/AssetTypes
 ```
 
 #### Parameters
@@ -853,44 +1165,44 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/assetTypes
 
 ---
 
-## `Create Asset Types (`asset Types2` path)`
+## `Create Asset Types3`
 
-<a id="opIdAssetTypes_Create Asset Types (`asset Types2` path)"></a>
+<a id="opIdAssetTypes_Create Asset Types3"></a>
+
+Bulk create asset types. Creates multiple asset types in a single call.
 
 ### Request
 ```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/assetTypes2
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/AssetTypes2
 ```
 
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/><br/>
 
 ### Request Body
 
-<br/>
+The list of asset types you want to create.<br/>
 
 ```json
 [
   {
-    "Id": "SampleAssetType",
-    "Description": "This is a sample asset type.",
+    "Id": "FirstAssetTypeToCreate",
+    "Name": "FirstAssetTypeToCreate",
+    "Description": "This is the first Asset type to create in this bulk call."
+  },
+  {
+    "Id": "SecondAssetTypeToCreate",
+    "Name": "SecondAssetTypeToCreate",
+    "Description": "This is the second Asset type to create in this bulk call.",
     "Metadata": [
       {
-        "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+        "Id": "FirstMetdataOfTheSecondAssetType",
         "Name": "ModelNumber",
-        "Description": "This is a static attribute on the asset which represents the model number.",
         "SdsTypeCode": "Double",
-        "Value": 0.01
-      }
-    ],
-    "TypeReferences": [
-      {
-        "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-        "StreamReferenceName": "ReferenceName",
-        "TypeId": "PI-Float32"
+        "Value": 1234
       }
     ]
   }
@@ -901,7 +1213,87 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/assetTypes
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|200|[AssetType](#schemaassettype)[]|The asset types that was created.|
+|207|[MultiStatusResultOfAssetTypeAndChildErrorTemplate](#schemamultistatusresultofassettypeandchilderrortemplate)|The asset types that was created.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavailable, please try again later.|
+
+#### Example response body
+> 200 Response
+
+```json
+[
+  {
+    "Id": "HeaterAssetType",
+    "Name": "HeaterAssetType",
+    "Description": "This is an asset type which represents heaters",
+    "Metadata": [
+      {
+        "Id": "ModelNumber",
+        "Name": "ModelNumber",
+        "Description": "This is attribute with double value representing the model number.",
+        "SdsTypeCode": "Double"
+      }
+    ]
+  },
+  {
+    "Id": "TracerAssetType",
+    "Name": "TracerAssetType",
+    "Description": "This is an asset type which represents a tracer unit.",
+    "Metadata": [
+      {
+        "Id": "ModelNumber",
+        "Name": "ModelNumber",
+        "SdsTypeCode": "Double"
+      }
+    ]
+  }
+]
+```
+
+> 207 Response
+
+```json
+{
+  "Reason": "string",
+  "Error": "string",
+  "OperationId": "string",
+  "Data": [
+    {
+      "Id": "SampleAssetType",
+      "Description": "This is a sample asset type.",
+      "Metadata": [
+        {
+          "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+          "Name": "ModelNumber",
+          "Description": "This is a static attribute on the asset which represents the model number.",
+          "SdsTypeCode": "Double",
+          "Value": 0.01
+        }
+      ],
+      "TypeReferences": [
+        {
+          "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+          "StreamReferenceName": "ReferenceName",
+          "TypeId": "PI-Float32"
+        }
+      ]
+    }
+  ],
+  "ChildErrors": [
+    {
+      "OperationId": "string",
+      "Error": "string",
+      "Resolution": "string",
+      "Reason": "string",
+      "StatusCode": 0,
+      "property1": null,
+      "property2": null
+    }
+  ]
+}
+```
 
 ---
 ## Definitions
@@ -1358,7 +1750,7 @@ An asset type can be used to create multiple similar assets.A change to the asse
 |Description|string|false|true|Asset type description|
 |Metadata|[[MetadataItem](#schemametadataitem)]|false|true|Asset type metadata|
 |TypeReferences|[[TypeReference](#schematypereference)]|false|true|Asset type description|
-|Status|[StatusConfiguration](#schemastatusconfiguration)|false|true|Asset type status|
+|Status|[StatusConfiguration](#schemastatusconfiguration)|false|true|Asset type status. If an asset of an this asset type, asset type statuses will take precendence over asset status.|
 
 ```json
 {
@@ -1425,6 +1817,99 @@ Status is a property of an asset or asset type that defines the simple status of
 |---|---|
 |Unspecified|0|
 |StreamPropertyMapping|1|
+
+---
+
+### MultiStatusResultOfAssetTypeAndChildErrorTemplate
+
+<a id="schemamultistatusresultofassettypeandchilderrortemplate"></a>
+<a id="schema_MultiStatusResultOfAssetTypeAndChildErrorTemplate"></a>
+<a id="tocSmultistatusresultofassettypeandchilderrortemplate"></a>
+<a id="tocsmultistatusresultofassettypeandchilderrortemplate"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Reason|string|false|true|None|
+|Error|string|false|true|None|
+|OperationId|string|false|true|None|
+|Data|[[AssetType](#schemaassettype)]|false|true|[An asset type can be used to create multiple similar assets.A change to the asset type is reflected in all assets that are derived from the asset type.]|
+|ChildErrors|[[ChildErrorTemplate](#schemachilderrortemplate)]|false|true|None|
+
+```json
+{
+  "Reason": "string",
+  "Error": "string",
+  "OperationId": "string",
+  "Data": [
+    {
+      "Id": "SampleAssetType",
+      "Description": "This is a sample asset type.",
+      "Metadata": [
+        {
+          "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+          "Name": "ModelNumber",
+          "Description": "This is a static attribute on the asset which represents the model number.",
+          "SdsTypeCode": "Double",
+          "Value": 0.01
+        }
+      ],
+      "TypeReferences": [
+        {
+          "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+          "StreamReferenceName": "ReferenceName",
+          "TypeId": "PI-Float32"
+        }
+      ]
+    }
+  ],
+  "ChildErrors": [
+    {
+      "OperationId": "string",
+      "Error": "string",
+      "Resolution": "string",
+      "Reason": "string",
+      "StatusCode": 0,
+      "property1": null,
+      "property2": null
+    }
+  ]
+}
+
+```
+
+---
+
+### ChildErrorTemplate
+
+<a id="schemachilderrortemplate"></a>
+<a id="schema_ChildErrorTemplate"></a>
+<a id="tocSchilderrortemplate"></a>
+<a id="tocschilderrortemplate"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|OperationId|string|false|true|Operation identifier|
+|Error|string|false|true|Error string|
+|Resolution|string|false|true|Resolution string|
+|Reason|string|false|true|Error reason string|
+|StatusCode|int32|false|false|None|
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "StatusCode": 0,
+  "property1": null,
+  "property2": null
+}
+
+```
 
 ---
 

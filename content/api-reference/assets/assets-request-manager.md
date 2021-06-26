@@ -722,8 +722,8 @@ The list of assets you want to create.<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Asset](#schemaasset)[]|The asset that was created.|
-|207|[MultiStatusResultOfAssetAndChildErrorTemplate](#schemamultistatusresultofassetandchilderrortemplate)|The asset that was created.|
+|200|[Asset](#schemaasset)[]|The assets that was created.|
+|207|[MultiStatusResultOfAssetAndChildErrorTemplate](#schemamultistatusresultofassetandchilderrortemplate)|The assets that was created.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
 |500|None|Internal Service Error, please try again later.|
 |503|None|Service Unavailable, please try again later.|
@@ -736,7 +736,7 @@ The list of assets you want to create.<br/>
   {
     "Id": "Heater_01_01_02",
     "Name": "HeaterOnFirstFloor",
-    "Description": "This is Asset which represents a heater on the first floor.",
+    "Description": "This is an Asset which represents a heater on the first floor.",
     "Metadata": [
       {
         "Id": "17020d80-1dc8-4690-932f-3421c9cff0d1",
@@ -750,7 +750,7 @@ The list of assets you want to create.<br/>
   {
     "Id": "TracerUnit_101",
     "Name": "TracerOnRoof",
-    "Description": "This is Asset which represents a tracer.",
+    "Description": "This is an Asset which represents a tracer.",
     "Metadata": [
       {
         "Id": "Tracer_1234",

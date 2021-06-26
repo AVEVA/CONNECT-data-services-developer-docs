@@ -224,7 +224,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |200|[AccessControlList](#schemaaccesscontrollist)|The access control of the asset with the specified identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
 |401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
-|404|[ErrorTemplate](#schemaerrortemplate)|Asset with specified identifier not found.|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 |500|None|Internal Service Error, please try again later.|
 |503|None|Service Unavailable, please try again later.|
 
@@ -315,7 +315,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |204|None|The access control of the asset with the specified identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
 |401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
-|404|[ErrorTemplate](#schemaerrortemplate)|Asset with specified identifier not found.|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 |500|None|Internal Service Error, please try again later.|
 |503|None|Service Unavailable, please try again later.|
 
@@ -360,7 +360,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |200|Inline|The access rights of the asset with the specified identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
 |401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
-|404|[ErrorTemplate](#schemaerrortemplate)|Asset with specified identifier not found.|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 |500|None|Internal Service Error, please try again later.|
 |503|None|Service Unavailable, please try again later.|
 
@@ -416,7 +416,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |200|[Trustee](#schematrustee)|The owner of the asset with the specified identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
 |401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
-|404|[ErrorTemplate](#schemaerrortemplate)|Asset with specified identifier not found.|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 |500|None|Internal Service Error, please try again later.|
 |503|None|Service Unavailable, please try again later.|
 
@@ -483,7 +483,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |204|None|No content if success.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
 |401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
-|404|[ErrorTemplate](#schemaerrortemplate)|Asset with specified identifier not found.|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 |500|None|Internal Service Error, please try again later.|
 |503|None|Service Unavailable, please try again later.|
 
@@ -528,7 +528,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId
 |200|[Asset](#schemaasset)|The asset with the specified identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
 |401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
-|404|[ErrorTemplate](#schemaerrortemplate)|Asset with specified identifier not found.|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 |500|None|Internal Service Error, please try again later.|
 |503|None|Service Unavailable, please try again later.|
 

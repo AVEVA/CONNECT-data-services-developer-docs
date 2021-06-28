@@ -357,7 +357,7 @@ Content-Type: application/json
 
 ## `Update Asset or AssetType Owner` 
 
-Update the owner `Trustee` of the specified asset or asset type.
+Updates the owner `Trustee` of the specified asset or asset type.
 
 ### Request 
 
@@ -378,16 +378,16 @@ PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asset
 ###  Parameters  
 
 `string tenantId`  
-The tenant identifier 
+Tenant identifier 
 
 `string namespaceId`  
-The namespace identifier 
+Namespace identifier 
 
 `string assetId`  
-The asset identifier
+Asset identifier
 
 `string assetTypeId`  
-The AssetType identifier
+AssetType identifier
 
 #### Request body 
 

@@ -116,7 +116,7 @@ Below is a response when query string is "Name:Tracer".
 
  A list of results is returned. Each result contains:  
 -  `MatchProperties` - a list of matched property objects. Each `MatchProperties` object contains the matched fields and their values.
-- `Id` - Id of the matched asset.
+- `Id` - Identifier of the matched asset.
 - `TypeId` - asset type Id of the asset. This is null if the asset does not reference an asset type.
 - `Name` - asset name.
 - `Description` - asset description.

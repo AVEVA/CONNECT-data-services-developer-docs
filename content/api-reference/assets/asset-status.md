@@ -77,7 +77,7 @@ The asset or asset type's `StreamReferences` field has an `Id` property. To assi
 
 ## `Get Asset Status`
 
-View the status of an asset. 
+Returns the status of an asset. 
 
 The status of an asset is determined by an exact match of the SDS stream property value to the value of the `ValueStatusMappings`. If there are no exact matches, the status is a 0 (Unknown).
 
@@ -129,7 +129,7 @@ Content-Type: application/json
 
 ## `Bulk Asset Status`
 
-View the status of multiple assets.
+Returns the status of multiple assets.
 
 ### Request
 

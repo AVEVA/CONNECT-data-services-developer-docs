@@ -39,7 +39,7 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets?skip={skip
 The tenant identifier
 
 `string namespaceId`  
-The namespace identifier
+Namespace identifier
 
 `string queryString`  
 The asset query string. Search strings are not case sensitive.

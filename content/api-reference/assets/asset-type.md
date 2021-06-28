@@ -20,13 +20,13 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asset
 
 ### Parameters
 `string tenantId`   
-The tenant identifier
+Tenant identifier
 
 `string namespaceId`   
-The namespace identifier
+Namespace identifier
 
 `string assetTypeId`  
-The asset type identifier
+Asset type identifier
 
 ### Response 
 The response includes a status code and a response body.
@@ -80,16 +80,16 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes?skip={
 ### Parameters
 
 `string tenantId`   
-The tenant identifier
+Tenant identifier
 
 `string namespaceId`   
-The namespace identifier
+Namespace identifier
 
 [Optional] `int skip`   
 Maximum number of asset types to retrieve. If unspecified, the default (100) is used.
 
 [Optional] `int count`  
-An optional parameter, between 1 and 1000 (inclusive), that represents the maximum number of retrieved assets. If not specified, the default is 100.
+Osptional parameter, between 1 and 1000 (inclusive), that represents the maximum number of retrieved assets. If not specified, the default is 100.
 
 ### Response 
 
@@ -105,7 +105,7 @@ The response includes a status code and a body.
 
 ## `Create AssetType` 
 
-Create a new asset type with a specified identifier.
+Creates a new asset type with a specified identifier.
 
 ### Request 
 
@@ -116,13 +116,13 @@ POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 ### Parameters
 
 `string tenantId`   
-The tenant identifier
+Tenant identifier
 
 `string namespaceId`   
-The namespace identifier
+Namespace identifier
 
 `string assetTypeId`   
-The asset type identifier
+Asset type identifier
 
 #### Request body 
 
@@ -171,7 +171,7 @@ The response includes a status code and a body.
 
 ## `Create AssetTypes (Bulk create)`
 
-Create a new `AssetTypes` object.
+Creates a new `AssetTypes` object.
 
 ### Request 
 
@@ -182,10 +182,10 @@ POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/AssetTypes
 ### Parameters
 
 `string tenantId`   
-The tenant identifier
+Tenant identifier
 
 `string namespaceId`   
-The namespace identifier
+Namespace identifier
 
 #### Request body 
 
@@ -205,7 +205,7 @@ The response includes a status code and a body.
 ***
 ## `Create or Update AssetType`
 
-Create or update an asset type with a specified identifer.
+Creates or updates an asset type with a specified identifer.
 
 When updating an asset type which is referenced by assets, the following behaviors may apply:
 - Deleting a metadata value on the asset type removes the metadata value on the resolved asset of any referenced asset​s.
@@ -221,13 +221,13 @@ PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asset
 ### Parameters
 
 `string tenantId`   
-The tenant identifier
+Tenant identifier
 
 `string namespaceId`   
-The namespace identifier
+Namespace identifier
 
 `string assetTypeId`   
-The asset type identifier
+Asset type identifier
 
 #### Request body 
 
@@ -247,7 +247,7 @@ The response includes a status code and a body.
 ***
 ## `Delete AssetType` 
 
-Delete an asset type with a specified identifier. An `AssetType` resource cannot be deleted if it is referenced by any assets unless the `deleteAssets` parameter is explicitly set to true. 
+Deletes an asset type with a specified identifier. An `AssetType` resource cannot be deleted if it is referenced by any assets unless the `deleteAssets` parameter is explicitly set to true. 
 
 ### Request 
 
@@ -258,13 +258,13 @@ DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{as
 ### Parameters  
 
 `string tenantId`     
-The tenant identifier
+Tenant identifier
 
 `string namespaceId`   
-The namespace identifier
+Namespace identifier
 
 `string assetTypeId`   
-The asset type identifier
+Asset type identifier
 
 `[optional] bool deleteAssets`   
 By default, this value is false and if there are assets based on this asset type, a 409 code is returned.  If this value is set to true, then any assets based on this asset type will be deleted along with the asset type in this one call. 

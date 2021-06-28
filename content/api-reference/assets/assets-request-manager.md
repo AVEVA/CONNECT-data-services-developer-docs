@@ -809,9 +809,9 @@ The list of assets you want to create.<br/>
 
 ---
 
-## `List Assets In List Result Format`
+## `Get Assets In Search Result Format`
 
-<a id="opIdRequestManager_List Assets In List Result Format"></a>
+<a id="opIdRequestManager_Get Assets In Search Result Format"></a>
 
 Searches all assets and returns a list of asset Ids and their matched fields. Use this API to identify the fields in the asset that match your query string.
 
@@ -856,7 +856,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[SearchResult](#schemasearchresult)[]|OK|
+|200|[SearchResult](#schemasearchresult)|OK|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
 |500|None|Internal Service Error, please try again later.|
 |503|None|Service Unavailable, please try again later.|
@@ -865,110 +865,57 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets
 > 200 Response
 
 ```json
-[
-  {
-    "TotalCount": 2,
-    "Results": [
-      {
-        "MatchedFields": [
-          {
-            "Field": "Description",
-            "Terms": [
-              "searchedDescription"
-            ]
-          },
-          {
-            "Field": "Name",
-            "Terms": [
-              "searchedName"
-            ]
-          }
-        ],
-        "Score": 0.07410964510231982,
-        "Id": "AssetsSearchDemo1",
-        "Name": "SearchedName 1",
-        "Description": "SearchedDescription 1",
-        "ETag": "1",
-        "CreatedDate": "2021-06-28T05:57:13.4249707Z",
-        "LastModifiedDate": "2021-06-28T05:57:13.4249707Z"
-      },
-      {
-        "MatchedFields": [
-          {
-            "Field": "Description",
-            "Terms": [
-              "searchedDescription"
-            ]
-          },
-          {
-            "Field": "Name",
-            "Terms": [
-              "searchedName"
-            ]
-          }
-        ],
-        "Score": 0.062210717451675585,
-        "Id": "AssetsSearchDemo2",
-        "Name": "SearchResultName 2",
-        "Description": "SearchResultDescription 2",
-        "ETag": "6",
-        "CreatedDate": "2021-06-28T05:57:13.5965826Z",
-        "LastModifiedDate": "2021-06-28T05:57:13.5965826Z"
-      }
-    ]
-  },
-  {
-    "TotalCount": 2,
-    "Results": [
-      {
-        "MatchedFields": [
-          {
-            "Field": "Description",
-            "Terms": [
-              "searchedDescription"
-            ]
-          },
-          {
-            "Field": "Name",
-            "Terms": [
-              "searchedName"
-            ]
-          }
-        ],
-        "Score": 0.07410964510231982,
-        "Id": "AssetsSearchDemo1",
-        "Name": "SearchedName 1",
-        "Description": "SearchedDescription 1",
-        "ETag": "1",
-        "CreatedDate": "2021-06-28T05:57:13.4249707Z",
-        "LastModifiedDate": "2021-06-28T05:57:13.4249707Z"
-      },
-      {
-        "MatchedFields": [
-          {
-            "Field": "Description",
-            "Terms": [
-              "searchedDescription"
-            ]
-          },
-          {
-            "Field": "Name",
-            "Terms": [
-              "searchedName"
-            ]
-          }
-        ],
-        "Score": 0.062210717451675585,
-        "Id": "AssetsSearchDemo2",
-        "Name": "SearchResultName 2",
-        "Description": "SearchResultDescription 2",
-        "ETag": "6",
-        "CreatedDate": "2021-06-28T05:57:13.5965826Z",
-        "LastModifiedDate": "2021-06-28T05:57:13.5965826Z"
-      }
-    ]
-  }
-]
+{
+  "TotalCount": 2,
+  "Results": [
+    {
+      "MatchedFields": [
+        {
+          "Field": "Description",
+          "Terms": [
+            "searchedDescription"
+          ]
+        },
+        {
+          "Field": "Name",
+          "Terms": [
+            "searchedName"
+          ]
+        }
+      ],
+      "Score": 0.07410964510231982,
+      "Id": "AssetsSearchDemo1",
+      "Name": "SearchedName 1",
+      "Description": "SearchedDescription 1",
+      "ETag": "1",
+      "CreatedDate": "2021-06-28T05:57:13.4249707Z",
+      "LastModifiedDate": "2021-06-28T05:57:13.4249707Z"
+    },
+    {
+      "MatchedFields": [
+        {
+          "Field": "Description",
+          "Terms": [
+            "searchedDescription"
+          ]
+        },
+        {
+          "Field": "Name",
+          "Terms": [
+            "searchedName"
+          ]
+        }
+      ],
+      "Score": 0.062210717451675585,
+      "Id": "AssetsSearchDemo2",
+      "Name": "SearchResultName 2",
+      "Description": "SearchResultDescription 2",
+      "ETag": "6",
+      "CreatedDate": "2021-06-28T05:57:13.5965826Z",
+      "LastModifiedDate": "2021-06-28T05:57:13.5965826Z"
+    }
+  ]
+}
 ```
 
 > 400 Response

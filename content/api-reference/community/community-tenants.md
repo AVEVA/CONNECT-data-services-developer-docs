@@ -24,11 +24,6 @@ DELETE /api/v1-preview/tenants/{callerTenantId}/communities/{communityId}/commun
 <br/>Community identifier<br/><br/>`string tenantIdToRemove`
 <br/>CommunityTenant in the community to remove<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -49,6 +44,7 @@ DELETE /api/v1-preview/tenants/{callerTenantId}/communities/{communityId}/commun
   "Error": "string",
   "Reason": "string",
   "Resolution": "string",
+  "EventId": "string",
   "property1": null,
   "property2": null
 }
@@ -82,11 +78,6 @@ PUT /api/v1-preview/tenants/{callerTenantId}/communities/{communityId}/community
 <br/>Community identifier<br/><br/>`string tenantIdtoUpdate`
 <br/>CommunityTenant in the community to update<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Request Body
 
 CommunityTenant object that contains the attributes to use for the update<br/>
@@ -118,6 +109,7 @@ CommunityTenant object that contains the attributes to use for the update<br/>
   "Error": "string",
   "Reason": "string",
   "Resolution": "string",
+  "EventId": "string",
   "property1": null,
   "property2": null
 }
@@ -150,11 +142,6 @@ PUT /api/v1-preview/tenants/{callerTenantId}/communities/{communityId}/memberten
 <br/>Community identifier<br/><br/>`string tenantIdtoUpdate`
 <br/>CommunityTenant in the community to update<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Request Body
 
 CommunityTenant object that contains the attributes to use for the update<br/>
@@ -186,6 +173,7 @@ CommunityTenant object that contains the attributes to use for the update<br/>
   "Error": "string",
   "Reason": "string",
   "Resolution": "string",
+  "EventId": "string",
   "property1": null,
   "property2": null
 }
@@ -218,6 +206,7 @@ Object returned when there is an error
 |Error|string|true|false|Error description|
 |Reason|string|true|false|Reason for the error|
 |Resolution|string|true|false|Resolution for the error|
+|EventId|string|true|false|EventId for the error|
 
 ```json
 {
@@ -225,6 +214,7 @@ Object returned when there is an error
   "Error": "string",
   "Reason": "string",
   "Resolution": "string",
+  "EventId": "string",
   "property1": null,
   "property2": null
 }

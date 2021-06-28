@@ -27,11 +27,6 @@ GET /api/v1-preview/Communities/{communityId}/Roles
 <br/>Parameter representing the zero-based offset of the first object to retrieve. If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -144,6 +139,7 @@ Object returned when there is an error
 |Error|string|true|false|Error description|
 |Reason|string|true|false|Reason for the error|
 |Resolution|string|true|false|Resolution for the error|
+|EventId|string|true|false|EventId for the error|
 
 ```json
 {
@@ -151,6 +147,7 @@ Object returned when there is an error
   "Error": "string",
   "Reason": "string",
   "Resolution": "string",
+  "EventId": "string",
   "property1": null,
   "property2": null
 }

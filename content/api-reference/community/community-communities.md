@@ -27,11 +27,6 @@ GET /api/v1-preview/tenants/{tenantId}/Communities
 <br/>Parameter representing the zero-based offset of the first object to retrieve. If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -57,6 +52,7 @@ GET /api/v1-preview/tenants/{tenantId}/Communities
       {
         "Id": "string",
         "Name": "string",
+        "Alias": "string",
         "Status": "None",
         "IsOwner": true,
         "UserCount": 0,
@@ -92,11 +88,6 @@ POST /api/v1-preview/tenants/{tenantId}/Communities
 
 `string tenantId`
 <br/>Owning tenant identifier<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Request Body
 
@@ -134,6 +125,7 @@ Community information to create<br/>
     {
       "Id": "string",
       "Name": "string",
+      "Alias": "string",
       "Status": "None",
       "IsOwner": true,
       "UserCount": 0,
@@ -170,11 +162,6 @@ GET /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
 <br/>Owning tenant identifier<br/><br/>`string communityId`
 <br/>Community id<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -199,6 +186,7 @@ GET /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
     {
       "Id": "string",
       "Name": "string",
+      "Alias": "string",
       "Status": "None",
       "IsOwner": true,
       "UserCount": 0,
@@ -234,11 +222,6 @@ PUT /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
 `string tenantId`
 <br/>Owning tenant identifier<br/><br/>`string communityId`
 <br/>Community identifier<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Request Body
 
@@ -305,11 +288,6 @@ DELETE /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
 `string tenantId`
 <br/>Owning tenant identifier<br/><br/>`string communityId`
 <br/>The id of the community to delete.<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -381,6 +359,7 @@ The Community object
     {
       "Id": "string",
       "Name": "string",
+      "Alias": "string",
       "Status": "None",
       "IsOwner": true,
       "UserCount": 0,
@@ -409,6 +388,7 @@ The CommunityTenant object
 |---|---|---|---|---|
 |Id|guid|false|false|Tenant Id|
 |Name|string|false|true|Tenant name|
+|Alias|string|false|true|Tenant alias|
 |Status|[CommunityTenantStatus](#schemacommunitytenantstatus)|false|false|CommunityTenant status in a community|
 |IsOwner|boolean|false|false|Boolean indicating whether the CommunityTenant is the owner of the community|
 |UserCount|integer|false|false|Summary count of the users authorized to access the community within the tenant|
@@ -418,6 +398,7 @@ The CommunityTenant object
 {
   "Id": "string",
   "Name": "string",
+  "Alias": "string",
   "Status": "None",
   "IsOwner": true,
   "UserCount": 0,

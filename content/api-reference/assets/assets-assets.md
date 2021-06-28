@@ -95,6 +95,8 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId
 
 <a id="opIdAssets_Create Or Update Asset (Assets path)"></a>
 
+TODO: REMOVAL! Create or update an asset with a specified Id. If the asset already exists, you can specify an If-Match property in the HTTP request header to ensure that the asset is modified only if its version matches. To support flexibility, on creation and update, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is from an asset type.
+
 ### Request
 ```text 
 PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
@@ -103,9 +105,9 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 #### Parameters
 
 `string assetId`
-<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Asset identifier<br/><br/>`string tenantId`
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/><br/>
 
 ### Request Body
 
@@ -149,7 +151,61 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|200|[DeprecatedAsset](#schemadeprecatedasset)|The asset with the specified identifier.|
+|201|[DeprecatedAsset](#schemadeprecatedasset)|The asset with the specified identifier.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|409|[ErrorTemplate](#schemaerrortemplate)|Conflict|
+|412|[ErrorTemplate](#schemaerrortemplate)|Pre-Condition Failed|
+|500|None|Internal Service Error, please try again later.|
+|503|None|Service Unavailable, please try again later.|
+
+#### Response Headers
+
+|Status|Header|Type|Description|
+|---|---|---|---|
+|200|Etag|integer|Version|
+|201|Etag|integer|Version|
+
+#### Example response body
+> 200 Response
+
+```json
+{
+  "Id": "string",
+  "AssetTypeId": "string",
+  "Name": "string",
+  "Description": "string",
+  "Metadata": [
+    {
+      "Id": "Sample Metadata Id",
+      "Name": "Asset Model number",
+      "Description": "This metadata represents an model number attribute on the asset.",
+      "SdsTypeCode": "Double",
+      "Value": "RFA-123",
+      "Uom": null
+    }
+  ],
+  "StreamReferences": [
+    {
+      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+      "Name": "Data",
+      "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+      "StreamId": "PI_bifrostbigdaddy_1"
+    }
+  ],
+  "Status": {
+    "StreamReferenceId": "string",
+    "StreamPropertyId": "string",
+    "ValueStatusMappings": [
+      {
+        "Value": null,
+        "Status": "[",
+        "DisplayName": "string"
+      }
+    ]
+  }
+}
+```
 
 ---
 

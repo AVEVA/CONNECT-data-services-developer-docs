@@ -856,7 +856,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[SearchResult](#schemasearchresult)|OK|
+|200|[SearchResultsOfSearchResult](#schemasearchresultsofsearchresult)|OK|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
 |500|None|Internal Service Error, please try again later.|
 |503|None|Service Unavailable, please try again later.|
@@ -866,68 +866,63 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets
 
 ```json
 {
-  "TotalCount": 2,
+  "TotalCount": 0,
   "Results": [
     {
-      "MatchedFields": [
+      "TotalCount": 2,
+      "Results": [
         {
-          "Field": "Description",
-          "Terms": [
-            "searchedDescription"
-          ]
+          "MatchedFields": [
+            {
+              "Field": "Description",
+              "Terms": [
+                "searchedDescription"
+              ]
+            },
+            {
+              "Field": "Name",
+              "Terms": [
+                "searchedName"
+              ]
+            }
+          ],
+          "Score": 0.07410964510231982,
+          "Id": "AssetsSearchDemo1",
+          "Name": "SearchedName 1",
+          "Description": "SearchedDescription 1",
+          "ETag": "1",
+          "CreatedDate": "2021-06-28T05:57:13.4249707Z",
+          "LastModifiedDate": "2021-06-28T05:57:13.4249707Z"
         },
         {
-          "Field": "Name",
-          "Terms": [
-            "searchedName"
-          ]
+          "MatchedFields": [
+            {
+              "Field": "Description",
+              "Terms": [
+                "searchedDescription"
+              ]
+            },
+            {
+              "Field": "Name",
+              "Terms": [
+                "searchedName"
+              ]
+            }
+          ],
+          "Score": 0.062210717451675585,
+          "Id": "AssetsSearchDemo2",
+          "Name": "SearchResultName 2",
+          "Description": "SearchResultDescription 2",
+          "ETag": "6",
+          "CreatedDate": "2021-06-28T05:57:13.5965826Z",
+          "LastModifiedDate": "2021-06-28T05:57:13.5965826Z"
         }
-      ],
-      "Score": 0.07410964510231982,
-      "Id": "AssetsSearchDemo1",
-      "Name": "SearchedName 1",
-      "Description": "SearchedDescription 1",
-      "ETag": "1",
-      "CreatedDate": "2021-06-28T05:57:13.4249707Z",
-      "LastModifiedDate": "2021-06-28T05:57:13.4249707Z"
-    },
-    {
-      "MatchedFields": [
-        {
-          "Field": "Description",
-          "Terms": [
-            "searchedDescription"
-          ]
-        },
-        {
-          "Field": "Name",
-          "Terms": [
-            "searchedName"
-          ]
-        }
-      ],
-      "Score": 0.062210717451675585,
-      "Id": "AssetsSearchDemo2",
-      "Name": "SearchResultName 2",
-      "Description": "SearchResultDescription 2",
-      "ETag": "6",
-      "CreatedDate": "2021-06-28T05:57:13.5965826Z",
-      "LastModifiedDate": "2021-06-28T05:57:13.5965826Z"
+      ]
     }
+  ],
+  "ContinuationTokens": [
+    "string"
   ]
-}
-```
-
-> 400 Response
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Resolution": "string",
-  "Reason": "string",
-  "property1": null,
-  "property2": null
 }
 ```
 
@@ -1717,6 +1712,86 @@ Pre-defined asset status values.
 
 ---
 
+### SearchResultsOfSearchResult
+
+<a id="schemasearchresultsofsearchresult"></a>
+<a id="schema_SearchResultsOfSearchResult"></a>
+<a id="tocSsearchresultsofsearchresult"></a>
+<a id="tocssearchresultsofsearchresult"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|TotalCount|int32|false|false|None|
+|Results|[[SearchResult](#schemasearchresult)]|false|true|[Search results]|
+|ContinuationTokens|string[]|false|true|None|
+
+```json
+{
+  "TotalCount": 0,
+  "Results": [
+    {
+      "TotalCount": 2,
+      "Results": [
+        {
+          "MatchedFields": [
+            {
+              "Field": "Description",
+              "Terms": [
+                "searchedDescription"
+              ]
+            },
+            {
+              "Field": "Name",
+              "Terms": [
+                "searchedName"
+              ]
+            }
+          ],
+          "Score": 0.07410964510231982,
+          "Id": "AssetsSearchDemo1",
+          "Name": "SearchedName 1",
+          "Description": "SearchedDescription 1",
+          "ETag": "1",
+          "CreatedDate": "2021-06-28T05:57:13.4249707Z",
+          "LastModifiedDate": "2021-06-28T05:57:13.4249707Z"
+        },
+        {
+          "MatchedFields": [
+            {
+              "Field": "Description",
+              "Terms": [
+                "searchedDescription"
+              ]
+            },
+            {
+              "Field": "Name",
+              "Terms": [
+                "searchedName"
+              ]
+            }
+          ],
+          "Score": 0.062210717451675585,
+          "Id": "AssetsSearchDemo2",
+          "Name": "SearchResultName 2",
+          "Description": "SearchResultDescription 2",
+          "ETag": "6",
+          "CreatedDate": "2021-06-28T05:57:13.5965826Z",
+          "LastModifiedDate": "2021-06-28T05:57:13.5965826Z"
+        }
+      ]
+    }
+  ],
+  "ContinuationTokens": [
+    "string"
+  ]
+}
+
+```
+
+---
+
 ### SearchResult
 
 <a id="schemasearchresult"></a>
@@ -1815,7 +1890,7 @@ Matched fields. Contains the property that matched along with the matched terms.
 |Terms|string[]|false|true|Matching terms|
 
 ```json
-"\"MatchedFields\": [\n{\n    \"Field\": \"Description\",\n    \"Terms\": [\n        \"searchedDescription\"\n    ]\n    },{\n        \"Field\": \"Name\",\n    \"Terms\": [\n        \"searchedName\"\n    ]\n}]"
+"\"MatchedFields\": [\n{\n    \"Field\": \"Description\",\n    \"Terms\": [\n        \"searchedDescription\"\n    ]\n    },{\n    \"Field\": \"Name\",\n    \"Terms\": [\n        \"searchedName\"\n    ]\n}]"
 
 ```
 

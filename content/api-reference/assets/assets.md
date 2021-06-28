@@ -62,7 +62,7 @@ An asset type type reference represents dynamic stream data associated with an a
 | ----------- | ------ | --------- | ------------------------------------------------------------ |
 | StreamReferenceId | String | Required |The `Id` for this type reference. If an asset is derived from this asset type, this `Id` must be referenced in the asset reference type object. This `Id` must be unique within the asset type. |
 | StreamReferenceName  | String | Required  | The user friendly name for this type reference. If not null, must be unique within an asset type.|
-| Description | String | Optional  | Description text.                                            |
+| Description | String | Optional  | Description text                                            |
 | TypeId    | String | Required  | This string must be an SDS stream type `Id` in the referenced SDS stream. |
 
 ## Asset and asset type status mapping properties

@@ -300,10 +300,10 @@ Namespace identifier
 Search term that you want to search for.
 
 [optional] `int facetCount`  
-The maximum number of facet autocompleted items to return. The default is 0 which means you will not get any facet suggestions.
+Maximum number of facet autocompleted items to return. The default is 0 which means you will not get any facet suggestions.
 
 [optional] `int termCount`  
-The maximum number of token autocompleted items to return. The default is 0 which means you will not get any token suggestions.
+Maximum number of token autocompleted items to return. The default is 0 which means you will not get any token suggestions.
 
 ### Example 
 

@@ -89,7 +89,7 @@ Namespace identifier
 Maximum number of asset types to retrieve. If unspecified, the default (100) is used.
 
 [Optional] `int count`  
-Osptional parameter, between 1 and 1000 (inclusive), that represents the maximum number of retrieved assets. If not specified, the default is 100.
+Optional parameter, between 1 and 1000 (inclusive), that represents the maximum number of retrieved assets. If not specified, the default is 100.
 
 ### Response 
 

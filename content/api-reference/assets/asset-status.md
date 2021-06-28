@@ -92,13 +92,13 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/
 ### Parameters
 
 `string tenantId`  
-The tenant identifier
+Tenant identifier
 
 `string namespaceId`  
-The namespace identifier
+Namespace identifier
 
 `string assetId`  
-The asset identifier
+Asset identifier
 
 ### Response
 
@@ -140,13 +140,13 @@ POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/Assets/stat
 ### Parameters
 
 `string tenantId`  
-The tenant identifier
+Tenant identifier
 
 `string namespaceId`  
-The namespace identifier
+Namespace identifier
 
 `string assetId`  
-The asset identifier
+Asset identifier
 
 #### Example POST body
 

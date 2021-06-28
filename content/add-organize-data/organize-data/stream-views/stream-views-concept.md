@@ -19,7 +19,7 @@ For more information about types, see [Types](xref:sdsTypes).
 
 ### <a name="streamviews-pi-server"></a>PI Server counterpart
 
-While there is no direct counterpart for stream views in PI Server, the closest analog is the PI Point Data Reference in PI AF. Like stream views, PI Point Data References allow you to give a friendly name and unit of measure on top of an existing PI point, effectively viewing it in a different way. PI Point Data References do not alter the underlying PI point, just as stream views do not change the source stream or type in the Sequential Data Store.
+While there is no direct counterpart for stream views in PI Server, the closest analog is the PI point data reference in PI AF. Like stream views, PI point data references allow you to give a friendly name and unit of measure on top of an existing PI point, effectively viewing it in a different way. PI point data references do not alter the underlying PI point, just as stream views do not change the source stream or type in the Sequential Data Store.
 
 ### <a name="streamviews-bestpractices"></a>Stream views best practices
 

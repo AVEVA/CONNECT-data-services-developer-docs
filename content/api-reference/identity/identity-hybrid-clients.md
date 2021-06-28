@@ -29,11 +29,6 @@ GET /api/v1/Tenants/{tenantId}/HybridClients
 <br/>Number of clients to skip. Will be ignored if a list of Ids is passed.<br/><br/>`[optional] integer count`
 <br/>Maximum number of clients to return. Will be ignored if a list of Ids is passed.<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -101,11 +96,6 @@ HEAD /api/v1/Tenants/{tenantId}/HybridClients
 <br/>Unordered list of hybrid client Ids. Empty, whitespace or null Ids will be ignored.<br/><br/>`[optional] array tag`
 <br/>Only count clients that have these tags<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -141,11 +131,6 @@ POST /api/v1/Tenants/{tenantId}/HybridClients
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Request Body
 
@@ -245,11 +230,6 @@ GET /api/v1/Tenants/{tenantId}/HybridClients/{clientId}
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -312,11 +292,6 @@ HEAD /api/v1/Tenants/{tenantId}/HybridClients/{clientId}
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -353,11 +328,6 @@ PUT /api/v1/Tenants/{tenantId}/HybridClients/{clientId}
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client identifier<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Request Body
 
@@ -448,11 +418,6 @@ DELETE /api/v1/Tenants/{tenantId}/HybridClients/{clientId}
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -473,6 +438,7 @@ DELETE /api/v1/Tenants/{tenantId}/HybridClients/{clientId}
   "Error": "string",
   "Reason": "string",
   "Resolution": "string",
+  "EventId": "string",
   "property1": null,
   "property2": null
 }
@@ -508,11 +474,6 @@ GET /api/v1-preview/Tenants/{tenantId}/HybridClients
 <br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
 <br/>Number of clients to skip. From query.<br/><br/>`[optional] integer count`
 <br/>Maximum number of clients to return<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -575,11 +536,6 @@ POST /api/v1-preview/Tenants/{tenantId}/HybridClients
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Request Body
 
@@ -677,11 +633,6 @@ GET /api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Id of client<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -742,11 +693,6 @@ PUT /api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Id of client<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Request Body
 
@@ -938,6 +884,7 @@ Object returned when there is an error
 |Error|string|true|false|Error description|
 |Reason|string|true|false|Reason for the error|
 |Resolution|string|true|false|Resolution for the error|
+|EventId|string|true|false|EventId for the error|
 
 ```json
 {
@@ -945,6 +892,7 @@ Object returned when there is an error
   "Error": "string",
   "Reason": "string",
   "Resolution": "string",
+  "EventId": "string",
   "property1": null,
   "property2": null
 }

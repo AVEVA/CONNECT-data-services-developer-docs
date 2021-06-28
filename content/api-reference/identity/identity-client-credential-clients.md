@@ -29,11 +29,6 @@ GET /api/v1/Tenants/{tenantId}/ClientCredentialClients
 <br/>Number of clients to skip. Will be ignored if a list of Ids is passed.<br/><br/>`[optional] integer count`
 <br/>Maximum number of clients to return. Will be ignored if a list of Ids is passed.<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -94,11 +89,6 @@ HEAD /api/v1/Tenants/{tenantId}/ClientCredentialClients
 <br/>Unordered list of client credential client Ids. Empty, whitespace or null Ids will be ignored.<br/><br/>`[optional] array tag`
 <br/>Only count clients that have these tags<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -133,11 +123,6 @@ POST /api/v1/Tenants/{tenantId}/ClientCredentialClients
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Request Body
 
@@ -223,11 +208,6 @@ GET /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -283,11 +263,6 @@ HEAD /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -324,11 +299,6 @@ PUT /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client identifier<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Request Body
 
@@ -405,11 +375,6 @@ DELETE /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -430,6 +395,7 @@ DELETE /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}
   "Error": "string",
   "Reason": "string",
   "Resolution": "string",
+  "EventId": "string",
   "property1": null,
   "property2": null
 }
@@ -465,11 +431,6 @@ GET /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients
 <br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
 <br/>Number of clients to skip. From query.<br/><br/>`[optional] integer count`
 <br/>Maximum number of clients to return<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -526,11 +487,6 @@ POST /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Request Body
 
@@ -613,11 +569,6 @@ GET /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -671,11 +622,6 @@ PUT /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client identifier<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Request Body
 
@@ -834,6 +780,7 @@ Object returned when there is an error
 |Error|string|true|false|Error description|
 |Reason|string|true|false|Reason for the error|
 |Resolution|string|true|false|Resolution for the error|
+|EventId|string|true|false|EventId for the error|
 
 ```json
 {
@@ -841,6 +788,7 @@ Object returned when there is an error
   "Error": "string",
   "Reason": "string",
   "Resolution": "string",
+  "EventId": "string",
   "property1": null,
   "property2": null
 }
@@ -907,6 +855,7 @@ MultiStatusResponse objects returned in a 207 response. TODO: Remove this intern
 |OperationId|string|false|true|Gets or sets operationId that resulted in this error.|
 |Error|string|false|true|Gets or sets string message describing the error.|
 |Reason|string|false|true|Gets or sets reason that caused the error.|
+|EventId|string|false|true|Gets or sets EventId of error.|
 |ChildErrors|[[MultiStatusResponseChildError](#schemamultistatusresponsechilderror)]|false|true|Gets or sets list of ChildErrors.|
 |Data|[[ClientCredentialClient](#schemaclientcredentialclient)]|false|true|Gets or sets data.|
 
@@ -915,12 +864,14 @@ MultiStatusResponse objects returned in a 207 response. TODO: Remove this intern
   "OperationId": "string",
   "Error": "string",
   "Reason": "string",
+  "EventId": "string",
   "ChildErrors": [
     {
       "OperationId": "string",
       "Error": "string",
       "Reason": "string",
       "Resolution": "string",
+      "EventId": "string",
       "StatusCode": 0,
       "ModelId": "string",
       "property1": null,
@@ -964,6 +915,7 @@ ChildError objects returned in a 207 response. TODO: Remove this internal model 
 |Error|string|true|false|Error description|
 |Reason|string|true|false|Reason for the error|
 |Resolution|string|true|false|Resolution for the error|
+|EventId|string|true|false|EventId for the error|
 |StatusCode|int32|false|false|Gets or sets hTTP status code.|
 |ModelId|string|false|true|Gets or sets model ID.|
 
@@ -973,6 +925,7 @@ ChildError objects returned in a 207 response. TODO: Remove this internal model 
   "Error": "string",
   "Reason": "string",
   "Resolution": "string",
+  "EventId": "string",
   "StatusCode": 0,
   "ModelId": "string",
   "property1": null,

@@ -27,11 +27,6 @@ GET /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames
 <br/>Number of identity providers to skip<br/><br/>`[optional] integer count`
 <br/>Maximum number of identity providers to return.<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -80,11 +75,6 @@ HEAD /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames
 `string identityProviderId`
 <br/>Identity provider unique identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -120,11 +110,6 @@ GET /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames/{identityProvi
 `string identityProviderId`
 <br/>Identity provider unique identifier<br/><br/>`string identityProviderClaimTypeNameId`
 <br/>Identity provider claim type name unique identifier<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -175,11 +160,6 @@ HEAD /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames/{identityProv
 `string identityProviderId`
 <br/>Identity provider unique identifier<br/><br/>`string identityProviderClaimTypeNameId`
 <br/>Identity provider claim type name unique identifier<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 

@@ -28,11 +28,6 @@ GET /api/v1/Tenants/{tenantId}/Invitations
 <br/>Maximum number of invitations to return<br/><br/>`[optional] boolean includeExpiredInvitations`
 <br/>Specify whether to return expired invitations<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -89,11 +84,6 @@ HEAD /api/v1/Tenants/{tenantId}/Invitations
 `[optional] boolean includeExpiredInvitations`
 <br/>Specify to return expired invitations<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -130,11 +120,6 @@ GET /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string invitationId`
 <br/>Invitation unique identifier<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -187,11 +172,6 @@ HEAD /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 <br/>Tenant identifier<br/><br/>`string invitationId`
 <br/>Invitation unique identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -227,11 +207,6 @@ PUT /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string invitationId`
 <br/>Invitation unique identifier<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Request Body
 
@@ -299,11 +274,6 @@ DELETE /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 <br/>Tenant identifier<br/><br/>`string invitationId`
 <br/>Invitation unique identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -361,11 +331,6 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 <br/>Tenant identifier<br/><br/>`string userId`
 <br/>User unique identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -420,11 +385,6 @@ HEAD /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 `[optional] boolean includeExpiredInvitations`
 <br/>Specify whether to include expired invitations.<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -461,11 +421,6 @@ POST /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string userId`
 <br/>User unique identifier<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Request Body
 
@@ -535,11 +490,6 @@ PUT /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 <br/>Tenant identifier<br/><br/>`string userId`
 <br/>User unique identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Request Body
 
 InvitationCreateOrUpdate object<br/>
@@ -608,11 +558,6 @@ DELETE /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 <br/>Tenant identifier<br/><br/>`string userId`
 <br/>User unique identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -633,6 +578,7 @@ DELETE /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
   "Error": "string",
   "Reason": "string",
   "Resolution": "string",
+  "EventId": "string",
   "property1": null,
   "property2": null
 }
@@ -787,6 +733,7 @@ Object returned when there is an error
 |Error|string|true|false|Error description|
 |Reason|string|true|false|Reason for the error|
 |Resolution|string|true|false|Resolution for the error|
+|EventId|string|true|false|EventId for the error|
 
 ```json
 {
@@ -794,6 +741,7 @@ Object returned when there is an error
   "Error": "string",
   "Reason": "string",
   "Resolution": "string",
+  "EventId": "string",
   "property1": null,
   "property2": null
 }

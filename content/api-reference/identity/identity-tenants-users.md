@@ -28,11 +28,6 @@ GET /api/v1/Tenants/{tenantId}/Users
 <br/>Number of users to skip. Ignored if a list of Ids is passed.<br/><br/>`[optional] integer count`
 <br/>Maximum number of users to return. Ignored if a list of Ids is passed.<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -96,11 +91,6 @@ HEAD /api/v1/Tenants/{tenantId}/Users
 `[optional] array id`
 <br/>Unordered list of user Ids<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -135,11 +125,6 @@ POST /api/v1/Tenants/{tenantId}/Users
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Request Body
 
@@ -219,11 +204,6 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}
 <br/>Tenant identifier<br/><br/>`string userId`
 <br/>User unique identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -282,11 +262,6 @@ HEAD /api/v1/Tenants/{tenantId}/Users/{userId}
 <br/>Tenant identifier<br/><br/>`string userId`
 <br/>User unique identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -323,11 +298,6 @@ PUT /api/v1/Tenants/{tenantId}/Users/{userId}
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string userId`
 <br/>User unique identifier<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Request Body
 
@@ -410,11 +380,6 @@ DELETE /api/v1/Tenants/{tenantId}/Users/{userId}
 `[optional] boolean force`
 <br/>Forcibly delete a user that can remain due to claim role mappings.<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -436,6 +401,7 @@ DELETE /api/v1/Tenants/{tenantId}/Users/{userId}
   "Error": "string",
   "Reason": "string",
   "Resolution": "string",
+  "EventId": "string",
   "property1": null,
   "property2": null
 }
@@ -467,11 +433,6 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}/Preferences
 <br/>Tenant identifier<br/><br/>`string userId`
 <br/>User unique identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -491,6 +452,7 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}/Preferences
   "Error": "string",
   "Reason": "string",
   "Resolution": "string",
+  "EventId": "string",
   "property1": null,
   "property2": null
 }
@@ -522,11 +484,6 @@ HEAD /api/v1/Tenants/{tenantId}/Users/{userId}/Preferences
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string userId`
 <br/>User unique identifier<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -565,11 +522,6 @@ PUT /api/v1/Tenants/{tenantId}/Users/{userId}/Preferences
 <br/>Tenant identifier<br/><br/>`string userId`
 <br/>User unique identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -590,6 +542,7 @@ PUT /api/v1/Tenants/{tenantId}/Users/{userId}/Preferences
   "Error": "string",
   "Reason": "string",
   "Resolution": "string",
+  "EventId": "string",
   "property1": null,
   "property2": null
 }
@@ -621,11 +574,6 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}/Status
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string userId`
 <br/>User unique identifier<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -694,11 +642,6 @@ GET /api/v1/Tenants/{tenantId}/Users/Status
 <br/>Maximum number of users to return. Ignored if a list of Ids is passed.<br/><br/>`[optional] array status`
 <br/>Only return statuses that match these values. Possible user statuses are: InvitationAccepted, NoInvitation, InvitationNotSent, InvitationSent, InvitationExpired.<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -760,11 +703,6 @@ POST /api/v1-preview/Tenants/{tenantId}/Users
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Request Body
 
@@ -841,11 +779,6 @@ PUT /api/v1-preview/Tenants/{tenantId}/Users/{userId}
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string userId`
 <br/>User unique identifier<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Request Body
 
@@ -928,11 +861,6 @@ GET /api/v1-preview/Tenants/{tenantId}/Users/Ids
 <br/>Items to skip. Currently not supported.<br/><br/>`[optional] integer count`
 <br/>Maximum items to return. Currently not supported.<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -998,11 +926,6 @@ GET /api/v1-preview/Tenants/{tenantId}/Users/Status/Ids
 <br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
 <br/>Items to skip. Currently not supported.<br/><br/>`[optional] integer count`
 <br/>Maximum number of items to retrieve. Currently not supported.<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -1114,6 +1037,7 @@ MultiStatusResponse objects returned in a 207 response. TODO: Remove this intern
 |OperationId|string|false|true|Gets or sets operationId that resulted in this error.|
 |Error|string|false|true|Gets or sets string message describing the error.|
 |Reason|string|false|true|Gets or sets reason that caused the error.|
+|EventId|string|false|true|Gets or sets EventId of error.|
 |ChildErrors|[[MultiStatusResponseChildError](#schemamultistatusresponsechilderror)]|false|true|Gets or sets list of ChildErrors.|
 |Data|[[User](#schemauser)]|false|true|Gets or sets data.|
 
@@ -1122,12 +1046,14 @@ MultiStatusResponse objects returned in a 207 response. TODO: Remove this intern
   "OperationId": "string",
   "Error": "string",
   "Reason": "string",
+  "EventId": "string",
   "ChildErrors": [
     {
       "OperationId": "string",
       "Error": "string",
       "Reason": "string",
       "Resolution": "string",
+      "EventId": "string",
       "StatusCode": 0,
       "ModelId": "string",
       "property1": null,
@@ -1174,6 +1100,7 @@ ChildError objects returned in a 207 response. TODO: Remove this internal model 
 |Error|string|true|false|Error description|
 |Reason|string|true|false|Reason for the error|
 |Resolution|string|true|false|Resolution for the error|
+|EventId|string|true|false|EventId for the error|
 |StatusCode|int32|false|false|Gets or sets hTTP status code.|
 |ModelId|string|false|true|Gets or sets model ID.|
 
@@ -1183,6 +1110,7 @@ ChildError objects returned in a 207 response. TODO: Remove this internal model 
   "Error": "string",
   "Reason": "string",
   "Resolution": "string",
+  "EventId": "string",
   "StatusCode": 0,
   "ModelId": "string",
   "property1": null,
@@ -1210,6 +1138,7 @@ Object returned when there is an error
 |Error|string|true|false|Error description|
 |Reason|string|true|false|Reason for the error|
 |Resolution|string|true|false|Resolution for the error|
+|EventId|string|true|false|EventId for the error|
 
 ```json
 {
@@ -1217,6 +1146,7 @@ Object returned when there is an error
   "Error": "string",
   "Reason": "string",
   "Resolution": "string",
+  "EventId": "string",
   "property1": null,
   "property2": null
 }
@@ -1342,6 +1272,7 @@ MultiStatusResponse objects returned in a 207 response. TODO: Remove this intern
 |OperationId|string|false|true|Gets or sets operationId that resulted in this error.|
 |Error|string|false|true|Gets or sets string message describing the error.|
 |Reason|string|false|true|Gets or sets reason that caused the error.|
+|EventId|string|false|true|Gets or sets EventId of error.|
 |ChildErrors|[[MultiStatusResponseChildError](#schemamultistatusresponsechilderror)]|false|true|Gets or sets list of ChildErrors.|
 |Data|[[UserStatus](#schemauserstatus)]|false|true|Gets or sets data.|
 
@@ -1350,12 +1281,14 @@ MultiStatusResponse objects returned in a 207 response. TODO: Remove this intern
   "OperationId": "string",
   "Error": "string",
   "Reason": "string",
+  "EventId": "string",
   "ChildErrors": [
     {
       "OperationId": "string",
       "Error": "string",
       "Reason": "string",
       "Resolution": "string",
+      "EventId": "string",
       "StatusCode": 0,
       "ModelId": "string",
       "property1": null,

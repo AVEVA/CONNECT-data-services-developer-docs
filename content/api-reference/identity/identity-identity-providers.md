@@ -25,11 +25,6 @@ GET /api/v1/IdentityProviders
 <br/>Number of identity providers to skip<br/><br/>`[optional] integer count`
 <br/>Maximum number of identity providers to return.<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -115,11 +110,6 @@ GET /api/v1/IdentityProviders/{identityProviderId}
 `string identityProviderId`
 <br/>Identity provider unique identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -180,11 +170,6 @@ HEAD /api/v1/IdentityProviders/{identityProviderId}
 `string identityProviderId`
 <br/>Identity provider unique identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -219,11 +204,6 @@ GET /api/v1/IdentityProviders/schemes/{scheme}
 
 `string scheme`
 <br/>Scheme name (for example, AAD or Google).<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -285,11 +265,6 @@ HEAD /api/v1/IdentityProviders/schemes/{scheme}
 `string scheme`
 <br/>Scheme name (for example, AAD or Google).<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -329,11 +304,6 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders
 <br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
 <br/>Number of identity providers to skip<br/><br/>`[optional] integer count`
 <br/>Maximum number of identity providers to return.<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -390,11 +360,6 @@ HEAD /api/v1/Tenants/{tenantId}/IdentityProviders
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -429,11 +394,6 @@ POST /api/v1/Tenants/{tenantId}/IdentityProviders
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Request Body
 
@@ -516,11 +476,6 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}
 <br/>Tenant identifier<br/><br/>`string identityProviderId`
 <br/>Identity provider unique identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -582,11 +537,6 @@ HEAD /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}
 <br/>Tenant identifier<br/><br/>`string identityProviderId`
 <br/>Identity provider unique identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -623,11 +573,6 @@ DELETE /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}
 <br/>Tenant identifier<br/><br/>`string identityProviderId`
 <br/>Identity provider unique identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -648,6 +593,7 @@ DELETE /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}
   "Error": "string",
   "Reason": "string",
   "Resolution": "string",
+  "EventId": "string",
   "property1": null,
   "property2": null
 }
@@ -678,11 +624,6 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Consent
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string identityProviderId`
 <br/>Identity provider unique identifier to check for consent<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -731,11 +672,6 @@ HEAD /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Consent
 <br/>Tenant identifier<br/><br/>`string identityProviderId`
 <br/>Identity provider unique identifier to check for consent<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -755,6 +691,7 @@ HEAD /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Consent
   "Error": "string",
   "Reason": "string",
   "Resolution": "string",
+  "EventId": "string",
   "property1": null,
   "property2": null
 }
@@ -785,11 +722,6 @@ POST /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Consent
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string identityProviderId`
 <br/>Identity provider unique identifier to activate consent<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Request Body
 
@@ -857,11 +789,6 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/groups
 <br/>Maximum number of groups to return.<br/><br/>`[optional] string skipToken`
 <br/>An encoded string that identifies the set of groups that was not returned. For example, if you specify a count of the first 5 groups matching your query, the skipToken identifies the 6th group.<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -917,11 +844,6 @@ POST /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Groups
 <br/>Tenant identifier<br/><br/>`string identityProviderId`
 <br/>Identity provider unique identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Request Body
 
 Group unique identifier list.<br/>
@@ -937,6 +859,7 @@ Group unique identifier list.<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[IdentityProviderResultsOfIdentityProviderGroup](#schemaidentityproviderresultsofidentityprovidergroup)|List of groups|
+|207|[IdentityProviderGroupsMultiStatusResponse](#schemaidentityprovidergroupsmultistatusresponse)|List of groups|
 |400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
@@ -991,11 +914,6 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/groups/{gr
 `[optional] integer count`
 <br/>Maximum number of users to return<br/><br/>`[optional] string skipToken`
 <br/>An encoded string that identifies the set of users that was not returned. For example, if you request a count of the first 50 users matching your query, the skipToken identifies the 51st user.<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -1066,11 +984,6 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/users
 <br/>Maximum number of users to returns.<br/><br/>`[optional] string skipToken`
 <br/>An encoded string that identifies the set of users that was not returned. For example, if you specify a count of the first 50 users matching your query, the skipToken identifies the 51st user.<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -1133,11 +1046,6 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Users/{use
 <br/>Maximum number of groups to return<br/><br/>`[optional] integer timeout`
 <br/>The maximum time to allow for searching groups before returning the groups.<br/><br/>`[optional] string skipToken`
 <br/>An encoded string that identifies the set of groups that was not returned. For example, if you request a count of the first 3 groups matching your query, the skipToken identifies the 4th user.<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -1328,6 +1236,7 @@ Object returned when there is an error
 |Error|string|true|false|Error description|
 |Reason|string|true|false|Reason for the error|
 |Resolution|string|true|false|Resolution for the error|
+|EventId|string|true|false|EventId for the error|
 
 ```json
 {
@@ -1335,6 +1244,7 @@ Object returned when there is an error
   "Error": "string",
   "Reason": "string",
   "Resolution": "string",
+  "EventId": "string",
   "property1": null,
   "property2": null
 }
@@ -1528,6 +1438,101 @@ Base class for identity provider access group.
   "Name": "string",
   "Email": "user@example.com",
   "IsClusterManagementAllowed": true
+}
+
+```
+
+---
+
+### IdentityProviderGroupsMultiStatusResponse
+
+<a id="schemaidentityprovidergroupsmultistatusresponse"></a>
+<a id="schema_IdentityProviderGroupsMultiStatusResponse"></a>
+<a id="tocSidentityprovidergroupsmultistatusresponse"></a>
+<a id="tocsidentityprovidergroupsmultistatusresponse"></a>
+
+MultiStatusResponse objects returned in a 207 response.
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|OperationId|string|false|true|Unique identifier of the operation that resulted in this error.|
+|Error|string|false|true|Message describing the error.|
+|Reason|string|false|true|Reason that caused the error.|
+|ChildErrors|[[MultiStatusResponseChildError](#schemamultistatusresponsechilderror)]|false|true|List of child errors.|
+|Data|[[IdentityProviderGroup](#schemaidentityprovidergroup)]|false|true|Data representing groups.|
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "ChildErrors": [
+    {
+      "OperationId": "string",
+      "Error": "string",
+      "Reason": "string",
+      "Resolution": "string",
+      "DynamicProperties": {
+        "property1": null,
+        "property2": null
+      },
+      "StatusCode": 0,
+      "ModelId": "string",
+      "property1": null,
+      "property2": null
+    }
+  ],
+  "Data": [
+    {
+      "Id": "string",
+      "Name": "string",
+      "Email": "user@example.com",
+      "IsClusterManagementAllowed": true
+    }
+  ]
+}
+
+```
+
+---
+
+### MultiStatusResponseChildError
+
+<a id="schemamultistatusresponsechilderror"></a>
+<a id="schema_MultiStatusResponseChildError"></a>
+<a id="tocSmultistatusresponsechilderror"></a>
+<a id="tocsmultistatusresponsechilderror"></a>
+
+ChildError objects returned in a 207 response.
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|OperationId|string|true|false|Operation unique identifier of action that caused the error.|
+|Error|string|true|false|Error description.|
+|Reason|string|true|false|Reason for the error.|
+|Resolution|string|true|false|Resolution to resolve the error.|
+|DynamicProperties|object|false|true|Additional properties.|
+|StatusCode|int32|false|false|Http status code.|
+|ModelId|string|false|true|Model unique identifier.|
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "DynamicProperties": {
+    "property1": null,
+    "property2": null
+  },
+  "StatusCode": 0,
+  "ModelId": "string",
+  "property1": null,
+  "property2": null
 }
 
 ```

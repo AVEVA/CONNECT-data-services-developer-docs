@@ -28,11 +28,6 @@ GET /api/v1/Tenants/{tenantId}/Roles
 <br/>Max number of providers to return<br/><br/>`[optional] string roleTypeId`
 <br/>Role type identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -85,11 +80,6 @@ HEAD /api/v1/Tenants/{tenantId}/Roles
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -124,11 +114,6 @@ POST /api/v1/Tenants/{tenantId}/Roles
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Request Body
 
@@ -201,11 +186,6 @@ GET /api/v1/Tenants/{tenantId}/Roles/{roleId}
 <br/>Tenant identifier<br/><br/>`string roleId`
 <br/>Role unique identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -257,11 +237,6 @@ HEAD /api/v1/Tenants/{tenantId}/Roles/{roleId}
 <br/>Tenant identifier<br/><br/>`string roleId`
 <br/>Provider unique identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -297,11 +272,6 @@ PUT /api/v1/Tenants/{tenantId}/Roles/{roleId}
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string roleId`
 <br/>Role unique identifier<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Request Body
 
@@ -372,11 +342,6 @@ DELETE /api/v1/Tenants/{tenantId}/Roles/{roleId}
 <br/>Tenant identifier<br/><br/>`string roleId`
 <br/>Role unique identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -398,6 +363,7 @@ DELETE /api/v1/Tenants/{tenantId}/Roles/{roleId}
   "Error": "string",
   "Reason": "string",
   "Resolution": "string",
+  "EventId": "string",
   "property1": null,
   "property2": null
 }
@@ -428,11 +394,6 @@ GET /api/v1/Tenants/{tenantId}/Roles/{roleId}/clientcredentialclients
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string roleId`
 <br/>Role unique identifier<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -490,11 +451,6 @@ HEAD /api/v1/Tenants/{tenantId}/Roles/{roleId}/clientcredentialclients
 <br/>Tenant identifier<br/><br/>`string roleId`
 <br/>Role unique identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -530,11 +486,6 @@ GET /api/v1/Tenants/{tenantId}/Roles/{roleId}/users
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string roleId`
 <br/>Role unique identifier<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -594,11 +545,6 @@ HEAD /api/v1/Tenants/{tenantId}/Roles/{roleId}/users
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string roleId`
 <br/>Role unique identifier<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Response
 
@@ -693,6 +639,7 @@ Object returned when there is an error
 |Error|string|true|false|Error description|
 |Reason|string|true|false|Reason for the error|
 |Resolution|string|true|false|Resolution for the error|
+|EventId|string|true|false|EventId for the error|
 
 ```json
 {
@@ -700,6 +647,7 @@ Object returned when there is an error
   "Error": "string",
   "Reason": "string",
   "Resolution": "string",
+  "EventId": "string",
   "property1": null,
   "property2": null
 }

@@ -28,11 +28,6 @@ GET /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Roles
 <br/>Number of roles to skip<br/><br/>`[optional] integer count`
 <br/>Max number of roles to return<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -89,11 +84,6 @@ HEAD /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Roles
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client credential client unique identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -130,11 +120,6 @@ PUT /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Roles
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client credential client unique identifier<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Request Body
 
@@ -214,11 +199,6 @@ GET /api/v1/Tenants/{tenantId}/Clients/{clientId}/Roles
 <br/>Number of roles to skip<br/><br/>`[optional] integer count`
 <br/>Max number of roles to return<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -275,11 +255,6 @@ HEAD /api/v1/Tenants/{tenantId}/Clients/{clientId}/Roles
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client credential client unique identifier<br/><br/>
 
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
-
 ### Response
 
 |Status Code|Body Type|Description|
@@ -316,11 +291,6 @@ PUT /api/v1/Tenants/{tenantId}/Clients/{clientId}/Roles
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client credential client unique identifier<br/><br/>
-
-#### Request Headers
-
-|Header|Type|Required|Description|
-|---|---|---|---|
 
 ### Request Body
 
@@ -452,6 +422,7 @@ Object returned when there is an error
 |Error|string|true|false|Error description|
 |Reason|string|true|false|Reason for the error|
 |Resolution|string|true|false|Resolution for the error|
+|EventId|string|true|false|EventId for the error|
 
 ```json
 {
@@ -459,6 +430,7 @@ Object returned when there is an error
   "Error": "string",
   "Reason": "string",
   "Resolution": "string",
+  "EventId": "string",
   "property1": null,
   "property2": null
 }

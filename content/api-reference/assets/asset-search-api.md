@@ -36,25 +36,25 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets?skip={skip
 
 ### Parameters  
 `string tenantId`  
-The tenant identifier
+Tenant identifier
 
 `string namespaceId`  
 Namespace identifier
 
 `string queryString`  
-The asset query string. Search strings are not case sensitive.
+Asset query string. Search strings are not case sensitive.
 
 `string filterString`  
 String used to filter the asset search results. Filter strings are not case sensitive. The strings on which you can filter results are limited to the asset `AssetTypeName` property and the asset metadata properties (using the syntax filter[*property_name*]=*property_value*).
 
 [optional] `int skip`   
-An optional parameter representing the zero-based offset of the first asset to retrieve. If not specified, a default value of 0 is used.
+Optional parameter representing the zero-based offset of the first asset to retrieve. If not specified, a default value of 0 is used.
 
 [optional] `int count`   
-An optional parameter, between 1 and 1000 (inclusive), that represents the maximum number of assets to retrieve. If not specified, the default is 100.
+Optional parameter, between 1 and 1000 (inclusive), that represents the maximum number of assets to retrieve. If not specified, the default is 100.
 
 [optional] `[id|name] [asc|desc|] orderby`  
-An optional parameter which returns assets ordered either by the asset `Id` or the asset `Name`. Specify `asc` or `desc` to return the results in ascending or descending order. If not specified, the default is ascending order.
+Optional parameter which returns assets ordered either by the asset `Id` or the asset `Name`. Specify `asc` or `desc` to return the results in ascending or descending order. If not specified, the default is ascending order.
 
 ### Response 
 Returns an array of assets matching the search query and the total number of assets returned specified as `Total-Count` in the HTTP response header. 
@@ -77,25 +77,25 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/search/Assets?ski
 
 ### Parameters  
 `string tenantId`  
-The tenant identifier
+Tenant identifier
 
 `string namespaceId`  
-The namespace identifier
+Namespace identifier
 
 `string queryString`  
-The asset query string. Search strings are not case-sensitive.
+Asset query string. Search strings are not case-sensitive.
 
 `string filterString`  
 String used to filter the asset search results. Filter strings are not case sensitive. The strings on which you can filter results are limited to the asset `AssetTypeName` property and the asset metadata properties (using the syntax filter[*property_name*]=*property_value*).
 
 [optional] `int skip`   
-An optional parameter representing the zero-based offset of the first asset to retrieve. If not specified, a default value of 0 is used.
+Optional parameter representing the zero-based offset of the first asset to retrieve. If not specified, a default value of 0 is used.
 
 [optional] `int count`   
-An optional parameter, between 1 and 1000 (inclusive), representing the maximum number of retrieved assets. If not specified, the default is 100.
+Optional parameter, between 1 and 1000 (inclusive), representing the maximum number of retrieved assets. If not specified, the default is 100.
 
 [optional] `[id|name] [asc|desc|] orderby`  
-An optional parameter which returns assets ordered either by the asset `Id` or the asset `Name`. Specify `asc` or `desc` to return the results in ascending or descending order. If not specified, the default is ascending order.
+Optional parameter which returns assets ordered either by the asset `Id` or the asset `Name`. Specify `asc` or `desc` to return the results in ascending or descending order. If not specified, the default is ascending order.
 
 ### Response 
 A list of asset Ids and their matched fields.

@@ -295,7 +295,7 @@ The response includes a status code, body, and Etag version in the HTTP response
 
 ## `Delete Asset` 
 
-Delete an asset with a specified `Id`. You can include an `If-Match` property in the HTTP request header to specify the asset version. The asset is deleted only if the version matches.
+Deletes an asset with a specified `Id`. You can include an `If-Match` property in the HTTP request header to specify the asset version. The asset is deleted only if the version matches.
 
 ### Request 
 
@@ -306,13 +306,13 @@ DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetI
 ### Parameters  
 
 `string tenantId`   
-The tenant identifier
+Tenant identifier
 
 `string namespaceId`   
-The namespace identifier
+Namespace identifier
 
 `string assetId`  
-The asset identifier
+Asset identifier
 
 #### Request body 
 
@@ -332,7 +332,7 @@ The response includes a status code and a body.
 
 ## `Delete Asset (bulk)`
 
-Delete all assets with the specified Ids. Use this API to delete up to a maximum of 1000 assets in one API call.
+Deletes all assets with the specified Ids. Use this API to delete up to a maximum of 1000 assets in one API call.
 
 ### Request 
 
@@ -343,13 +343,13 @@ DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/Assets?id
 ### Parameters  
 
 `string tenantId`   
-The tenant identifier
+Tenant identifier
 
 `string namespaceId`   
-The namespace identifier
+Namespace identifier
 
 `string[] ids`  
-A parameter consisting of a comma-separated list of asset Ids that you want to delete.
+Parameter consisting of a comma-separated list of asset Ids that you want to delete.
 
 ### Response 
 

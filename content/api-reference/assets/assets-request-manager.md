@@ -865,41 +865,110 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets
 > 200 Response
 
 ```json
-{
-  "Count": 2,
-  "Results": [
-    {
-      "MatchedProperties": [
-        {
-          "Field": "Name",
-          "Value": "Asset Tracer ced7ee16-984d-480f-8338-3055f7f39d8b"
-        }
-      ],
-      "Id": "AssetId2b5f41ae-0929-4977-bfbd-1e046d8a66f4",
-      "TypeId": "AssetTracerType",
-      "Name": "Asset Tracer ced7ee16-984d-480f-8338-3055f7f39d8b",
-      "Description": "First tracer device",
-      "ETag": "1",
-      "CreatedDate": "2021-05-26T19:05:33.8979442Z",
-      "LastModifiedDate": "2021-05-26T19:05:33.8979442Z"
-    },
-    {
-      "MatchedProperties": [
-        {
-          "Field": "Name",
-          "Value": "Asset Tracer d6b984dd-b6da-4225-a2e0-59f781d065a4"
-        }
-      ],
-      "Id": "AssetId3dbfd185-7c62-49ed-b875-7953cba07fc3",
-      "TypeId": "AssetTracerType",
-      "Name": "Asset Tracer d6b984dd-b6da-4225-a2e0-59f781d065a4",
-      "Description": "Another tracer device",
-      "ETag": "1",
-      "CreatedDate": "2021-05-26T19:05:40.9043726Z",
-      "LastModifiedDate": "2021-05-26T19:05:40.9043726Z"
-    }
-  ]
-}
+[
+  {
+    "TotalCount": 2,
+    "Results": [
+      {
+        "MatchedFields": [
+          {
+            "Field": "Description",
+            "Terms": [
+              "searchedDescription"
+            ]
+          },
+          {
+            "Field": "Name",
+            "Terms": [
+              "searchedName"
+            ]
+          }
+        ],
+        "Score": 0.07410964510231982,
+        "Id": "AssetsSearchDemo1",
+        "Name": "SearchedName 1",
+        "Description": "SearchedDescription 1",
+        "ETag": "1",
+        "CreatedDate": "2021-06-28T05:57:13.4249707Z",
+        "LastModifiedDate": "2021-06-28T05:57:13.4249707Z"
+      },
+      {
+        "MatchedFields": [
+          {
+            "Field": "Description",
+            "Terms": [
+              "searchedDescription"
+            ]
+          },
+          {
+            "Field": "Name",
+            "Terms": [
+              "searchedName"
+            ]
+          }
+        ],
+        "Score": 0.062210717451675585,
+        "Id": "AssetsSearchDemo2",
+        "Name": "SearchResultName 2",
+        "Description": "SearchResultDescription 2",
+        "ETag": "6",
+        "CreatedDate": "2021-06-28T05:57:13.5965826Z",
+        "LastModifiedDate": "2021-06-28T05:57:13.5965826Z"
+      }
+    ]
+  },
+  {
+    "TotalCount": 2,
+    "Results": [
+      {
+        "MatchedFields": [
+          {
+            "Field": "Description",
+            "Terms": [
+              "searchedDescription"
+            ]
+          },
+          {
+            "Field": "Name",
+            "Terms": [
+              "searchedName"
+            ]
+          }
+        ],
+        "Score": 0.07410964510231982,
+        "Id": "AssetsSearchDemo1",
+        "Name": "SearchedName 1",
+        "Description": "SearchedDescription 1",
+        "ETag": "1",
+        "CreatedDate": "2021-06-28T05:57:13.4249707Z",
+        "LastModifiedDate": "2021-06-28T05:57:13.4249707Z"
+      },
+      {
+        "MatchedFields": [
+          {
+            "Field": "Description",
+            "Terms": [
+              "searchedDescription"
+            ]
+          },
+          {
+            "Field": "Name",
+            "Terms": [
+              "searchedName"
+            ]
+          }
+        ],
+        "Score": 0.062210717451675585,
+        "Id": "AssetsSearchDemo2",
+        "Name": "SearchResultName 2",
+        "Description": "SearchResultDescription 2",
+        "ETag": "6",
+        "CreatedDate": "2021-06-28T05:57:13.5965826Z",
+        "LastModifiedDate": "2021-06-28T05:57:13.5965826Z"
+      }
+    ]
+  }
+]
 ```
 
 > 400 Response
@@ -1708,25 +1777,75 @@ Pre-defined asset status values.
 <a id="tocSsearchresult"></a>
 <a id="tocssearchresult"></a>
 
-Asset search results
+Search results
 
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|MatchedFields|[[MatchedField](#schemamatchedfield)]|false|true|None|
-|Score|double|false|false|None|
-|Id|string|false|true|None|
-|TypeId|string|false|true|None|
-|Name|string|false|true|None|
-|Description|string|false|true|None|
-|LastStatus|[StatusData](#schemastatusdata)|false|true|None|
-|ETag|string|false|true|None|
-|CreatedDate|date-time|false|false|None|
-|LastModifiedDate|date-time|false|false|None|
+|MatchedFields|[[MatchedField](#schemamatchedfield)]|false|true|A list of matched property objects. Each MatchProperties object contains the matched fields and their values.|
+|Score|double|false|false|Score, internally used.|
+|Id|string|false|true|Identifier of the matched asset.|
+|TypeId|string|false|true|Asset type identifier of the matched asset.|
+|Name|string|false|true|Name of the matched asset.|
+|Description|string|false|true|Description of the matched asset.|
+|LastStatus|[StatusData](#schemastatusdata)|false|true|Last status of the matched asset.|
+|ETag|string|false|true|Etag of the matched asset.|
+|CreatedDate|date-time|false|false|Created date of the matched asset.|
+|LastModifiedDate|date-time|false|false|Modified date of the matched asset.|
 
 ```json
-"/// {\n \"Count\": 2,\n \"Results\": [\n {\n     \"MatchedProperties\": [\n     {\n         \"Field\": \"Name\",\n         \"Value\": \"Asset Tracer ced7ee16-984d-480f-8338-3055f7f39d8b\"\n     }],\n     \"Id\": \"AssetId2b5f41ae-0929-4977-bfbd-1e046d8a66f4\",\n     \"TypeId\": \"AssetTracerType\",\n     \"Name\": \"Asset Tracer ced7ee16-984d-480f-8338-3055f7f39d8b\",\n     \"Description\": \"First tracer device\",\n     \"ETag\": \"1\",\n     \"CreatedDate\": \"2021-05-26T19:05:33.8979442Z\",\n     \"LastModifiedDate\": \"2021-05-26T19:05:33.8979442Z\"\n },\n {\n     \"MatchedProperties\": [\n     {\n         \"Field\": \"Name\",\n         \"Value\": \"Asset Tracer d6b984dd-b6da-4225-a2e0-59f781d065a4\"\n     }],\n     \"Id\": \"AssetId3dbfd185-7c62-49ed-b875-7953cba07fc3\",\n     \"TypeId\": \"AssetTracerType\",\n     \"Name\": \"Asset Tracer d6b984dd-b6da-4225-a2e0-59f781d065a4\",\n     \"Description\": \"Another tracer device\",\n     \"ETag\": \"1\",\n     \"CreatedDate\": \"2021-05-26T19:05:40.9043726Z\",\n     \"LastModifiedDate\": \"2021-05-26T19:05:40.9043726Z\"\n }\n             ]\n            }\n            "
+{
+  "TotalCount": 2,
+  "Results": [
+    {
+      "MatchedFields": [
+        {
+          "Field": "Description",
+          "Terms": [
+            "searchedDescription"
+          ]
+        },
+        {
+          "Field": "Name",
+          "Terms": [
+            "searchedName"
+          ]
+        }
+      ],
+      "Score": 0.07410964510231982,
+      "Id": "AssetsSearchDemo1",
+      "Name": "SearchedName 1",
+      "Description": "SearchedDescription 1",
+      "ETag": "1",
+      "CreatedDate": "2021-06-28T05:57:13.4249707Z",
+      "LastModifiedDate": "2021-06-28T05:57:13.4249707Z"
+    },
+    {
+      "MatchedFields": [
+        {
+          "Field": "Description",
+          "Terms": [
+            "searchedDescription"
+          ]
+        },
+        {
+          "Field": "Name",
+          "Terms": [
+            "searchedName"
+          ]
+        }
+      ],
+      "Score": 0.062210717451675585,
+      "Id": "AssetsSearchDemo2",
+      "Name": "SearchResultName 2",
+      "Description": "SearchResultDescription 2",
+      "ETag": "6",
+      "CreatedDate": "2021-06-28T05:57:13.5965826Z",
+      "LastModifiedDate": "2021-06-28T05:57:13.5965826Z"
+    }
+  ]
+}
 
 ```
 
@@ -1739,20 +1858,17 @@ Asset search results
 <a id="tocSmatchedfield"></a>
 <a id="tocsmatchedfield"></a>
 
+Matched fields. Contains the property that matched along with the matched terms.
+
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Field|string|false|true|None|
-|Terms|string[]|false|true|None|
+|Field|string|false|true|Matching property|
+|Terms|string[]|false|true|Matching terms|
 
 ```json
-{
-  "Field": "string",
-  "Terms": [
-    "string"
-  ]
-}
+"\"MatchedFields\": [\n{\n    \"Field\": \"Description\",\n    \"Terms\": [\n        \"searchedDescription\"\n    ]\n    },{\n        \"Field\": \"Name\",\n    \"Terms\": [\n        \"searchedName\"\n    ]\n}]"
 
 ```
 

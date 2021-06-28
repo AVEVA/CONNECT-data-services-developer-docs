@@ -126,7 +126,7 @@ Content-Type: application/json
 ***
 
 ## `Get Asset Sampled Data` 
-Returns sampled data for referenced SDS streams. 
+Returns sampled data for referenced streams. 
 
 **Note:** The inputs to this API matches the SDS stream Get samples values data call.  
 

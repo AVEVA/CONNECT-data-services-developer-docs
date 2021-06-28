@@ -218,16 +218,16 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/search/Assets/fac
 ### Parameters  
 
 `string tenantId`  
-The tenant identifier
+Tenant identifier
 
 `string namespaceId`  
-The namespace identifier
+Namespace identifier
 
 `string category`  
-The name of the asset metadata for which you want to retrieve the facet values.
+Name of the asset metadata for which you want to retrieve the facet values.
 
 [optional] `int count`   
-An optional parameter, between 1 and 1000 (inclusive), representing the maximum number of retrieved assets. If not specified, the default is 100.
+Optional parameter, between 1 and 1000 (inclusive), representing the maximum number of retrieved assets. If not specified, the default is 100.
 
 ### Response 
 
@@ -291,13 +291,13 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/search/Assets/aut
 ### Parameters  
 
 `string tenantId`  
-The tenant identifier
+Tenant identifier
 
 `string namespaceId`  
-The namespace identifier
+Namespace identifier
 
 `string term`  
-The search term that you want to search for.
+Search term that you want to search for.
 
 [optional] `int facetCount`  
 The maximum number of facet autocompleted items to return. The default is 0 which means you will not get any facet suggestions.

@@ -40,13 +40,13 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 ### Parameters  
 `string tenantId`  
-The tenant identifier
+Tenant identifier
 
 `string namespaceId`  
-The namespace identifier
+Namespace identifier
 
 `string assetId`  
-The asset identifier
+Asset identifier
 
 ### Response 
 
@@ -98,16 +98,16 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets?skip={skip
 
 ### Parameters  
 `string tenantId`   
-The tenant identifier
+Tenant identifier
 
 `string namespaceId`   
-The namespace identifier
+Namespace identifier
 
 [optional] `int skip`   
-An optional parameter representing the zero-based offset of the first asset to retrieve. If not specified, a default value of 0 is used.
+Optional parameter representing the zero-based offset of the first asset to retrieve. If not specified, a default value of 0 is used.
 
 [optional] `int count`   
-An optional parameter, between 1 and 1000 (inclusive), that represents the maximum number of retrieved assets. If not specified, the default is 100.
+Optional parameter, between 1 and 1000 (inclusive), that represents the maximum number of retrieved assets. If not specified, the default is 100.
 
 ### Response 
 The response includes a status code and a body. 
@@ -122,7 +122,7 @@ The response includes a status code and a body.
 ***
 
 ## `Create Asset` 
-Create a new asset with a specified `Id`. 
+Creates a new asset with a specified `Id`. 
 
 If the asset you are trying to create references an asset type (through the `AssetTypeId` property) and if the corresponding asset type has a metadata value with the same `Id`, then the name and SDS type code of the metadata value on the asset must be null. If the asset type does not have metadata value with a corresponding `Id`, the name and SDS type code on the asset cannot be null.
 
@@ -146,13 +146,13 @@ POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 ### Parameters  
 `string tenantId`   
-The tenant identifier
+Tenant identifier
 
 `string namespaceId`   
-The namespace identifier
+Namespace identifier
 
 `string assetId`  
-The asset identifier
+Asset identifier
 
 
 #### Request body 
@@ -200,7 +200,7 @@ The response includes a status code, a body, and the Etag version in the HTTP re
 
 ## `Create Assets (Bulk create)` 
 
-Create multiple assets in a single call.
+Creates multiple assets in a single call.
 
 ### Request 
 
@@ -211,10 +211,10 @@ POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/Assets
 ### Parameters  
 
 `string tenantId`   
-The tenant identifier
+Tenant identifier
 
 `string namespaceId`   
-The namespace identifier
+Namespace identifier
 
 #### Request body 
 
@@ -236,7 +236,7 @@ The response includes a status code and a body.
 
 ## `Create or Update Asset` 
 
-Create or update an asset with a specified `Id`. If the asset already exists, you can specify an `If-Match` property in the HTTP request header to ensure that the asset is modified only if its version matches.
+Creates or updates an asset with a specified `Id`. If the asset already exists, you can specify an `If-Match` property in the HTTP request header to ensure that the asset is modified only if its version matches.
 
 To support flexibility, on creation and update, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is from an asset type.
 ### Examples
@@ -260,13 +260,13 @@ PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 ### Parameters  
 
 `string tenantId`   
-The tenant identifier
+Tenant identifier
 
 `string namespaceId`   
-The namespace identifier
+Namespace identifier
 
 `string assetId`  
-The asset identifier
+Asset identifier
 
 #### Request body 
 

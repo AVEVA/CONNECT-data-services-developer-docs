@@ -1,8 +1,6 @@
-- name: OMF ingress to OCS
-  href: omf-ingress-to-ocs.md
-- name: Use OMF with OCS
+- name: OMF ingress specification
   href: omf-ingress-specification.md
-- name: OMF ingress topics 
+- name: Topics 
   href: omf-ingress-topics.md
-- name: OMF ingress subscriptions 
+- name: Subscriptions 
   href: omf-ingress-subscriptions.md

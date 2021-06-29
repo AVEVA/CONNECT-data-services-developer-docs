@@ -3,9 +3,9 @@ uid: omf-ingress-omf
 
 ---
 
-# Omf
+# OSIsoft Message Format
 
-## `Post Omf Message`
+## `Post OMF Message`
 
 <a id="opIdOmf_Post Omf Message"></a>
 

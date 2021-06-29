@@ -136,7 +136,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2
 `[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>`[optional] string orderBy`
-<br/>An optional parameter which returns assets ordered either by the asset Id or the asset name. Specify asc or desc to return the results in ascending or descending order. If not specified, the default is ascending order.<br/><br/>`[optional] string query`
+<br/>Optional parameter which returns assets ordered either by the asset `Id` or the asset `Name`. Specify `asc` or `desc` to return the results in ascending or descending order. If not specified, the default is ascending order.<br/><br/>`[optional] string query`
 <br/>Query identifier<br/><br/><br/>`[optional] integer pageSize`
 <br/><br/>`[optional] integer maxPages`
 <br/><br/>`[optional] string continuationToken`
@@ -165,8 +165,6 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2
 |---|---|---|
 |200|[Asset](#schemaasset)[]|List of assets in the given namespace.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavailable, please try again later.|
 
 #### Response Headers
 
@@ -226,7 +224,7 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2
 
 ### Request Body
 
-The asset you want to create.<br/>
+Asset you want to create<br/>
 
 ```json
 {
@@ -256,13 +254,11 @@ The asset you want to create.<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Asset](#schemaasset)|The asset that was created.|
-|302|None|The asset you attempted to create is identical to one that already exists.|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|200|[Asset](#schemaasset)|Asset that was created.|
+|302|None|Asset you attempted to create is identical to one that already exists.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 |403|[ErrorTemplate](#schemaerrortemplate)|You are not authorized to create assets.|
-|409|[ErrorTemplate](#schemaerrortemplate)|The asset you attempted to create has a conflict. See the response body for additional details.|
-|500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavailable, please try again later.|
+|409|[ErrorTemplate](#schemaerrortemplate)|Conflict. See the response body for additional details.|
 
 #### Response Headers
 
@@ -404,11 +400,9 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|204|None|The assets with the specified ids has been deleted.|
-|207|[MultiStatusResultOfStringAndChildErrorTemplate](#schemamultistatusresultofstringandchilderrortemplate)|Array of errors. Assets that did not encounter errors are deleted.|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavailable, please try again later.|
+|204|None|Assets with the specified ids has been deleted.|
+|207|[MultiStatusResultOfStringAndChildErrorTemplate](#schemamultistatusresultofstringandchilderrortemplate)|Partial success. Not all assets were deleted. See response body for additional details.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 
 #### Example response body
 > 207 Response
@@ -471,10 +465,8 @@ Asset identifiers<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[ResolvedAsset](#schemaresolvedasset)[]|Returns the resolved view of multiple assets.|
-|207|[MultiStatusResultOfStringAndChildErrorTemplate](#schemamultistatusresultofstringandchilderrortemplate)|On POST, returns the resolved view of multiple assets. For error responses, check the multi-status response for the error and cause.|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavailable, please try again later.|
+|207|[MultiStatusResultOfStringAndChildErrorTemplate](#schemamultistatusresultofstringandchilderrortemplate)|Partial success. Not all assets were able to be resolved. See response body for additional details.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 
 #### Example response body
 > 200 Response
@@ -614,11 +606,9 @@ Asset identifiers<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[LastStatusData](#schemalaststatusdata)[]|The last status of assets in the POST body.|
-|207|[MultiStatusResultOfLastStatusDataAndChildErrorTemplate](#schemamultistatusresultoflaststatusdataandchilderrortemplate)|On POST, returns the status of multiple assets. Errors are returned for assets which status couldn't resolve.|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavailable, please try again later.|
+|200|[LastStatusData](#schemalaststatusdata)[]|Last status of assets in the body.|
+|207|[MultiStatusResultOfLastStatusDataAndChildErrorTemplate](#schemamultistatusresultoflaststatusdataandchilderrortemplate)|Partial success. Some assets encountered errors. See response body for additional details.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 
 #### Example response body
 > 200 Response
@@ -693,7 +683,7 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets2
 
 ### Request Body
 
-The list of assets you want to create.<br/>
+List of assets you want to create.<br/>
 
 ```json
 [
@@ -722,11 +712,9 @@ The list of assets you want to create.<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Asset](#schemaasset)[]|The assets that was created.|
-|207|[MultiStatusResultOfAssetAndChildErrorTemplate](#schemamultistatusresultofassetandchilderrortemplate)|The assets that was created.|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavailable, please try again later.|
+|200|[Asset](#schemaasset)[]|Assets that was created.|
+|207|[MultiStatusResultOfAssetAndChildErrorTemplate](#schemamultistatusresultofassetandchilderrortemplate)|Assets that was created.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 
 #### Example response body
 > 200 Response
@@ -829,8 +817,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets
 `[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>`[optional] string orderBy`
-<br/>An optional parameter which returns assets ordered either by the asset Id or the asset name. Specify asc or desc to return the results in ascending or descending order. If not specified, the default is ascending order.<br/><br/>`[optional] string query`
-<br/>The asset query string. Search strings are not case-sensitive.<br/><br/>`[optional] integer pageSize`
+<br/>Optional parameter which returns assets ordered either by the asset `Id` or the asset `Name`. Specify `asc` or `desc` to return the results in ascending or descending order. If not specified, the default is ascending order.<br/><br/>`[optional] string query`
+<br/>Query identifier<br/><br/><br/>`[optional] integer pageSize`
 <br/><br/>`[optional] integer maxPages`
 <br/><br/>`[optional] string continuationToken`
 <br/><br/>`[optional] object Comparer`
@@ -857,9 +845,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[SearchResultsOfSearchResult](#schemasearchresultsofsearchresult)|OK|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavailable, please try again later.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 
 #### Example response body
 > 200 Response
@@ -943,9 +929,9 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets/Au
 #### Parameters
 
 `string term`
-<br/>The search term that you want to search for.<br/><br/>`integer termCount`
-<br/>The maximum number of facet autocompleted items to return. The default is 0 which means you will not get any facet suggestions.<br/><br/>`integer facetCount`
-<br/>The maximum number of token autocompleted items to return. The default is 0 which means you will not get any token suggestions.<br/><br/>`string tenantId`
+<br/>Search term that you want to search for<br/><br/>`integer termCount`
+<br/>Maximum number of facet autocompleted items to return. Default is 0.<br/><br/>`integer facetCount`
+<br/>Maximum number of token autocompleted items to return. Default is 0.<br/><br/>`string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier<br/><br/><br/>
 
@@ -954,9 +940,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets/Au
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[SuggestionResults](#schemasuggestionresults)|Returns the suggestions|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavailable, please try again later.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 
 #### Example response body
 > 200 Response
@@ -1029,17 +1013,15 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets/Fa
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier<br/><br/><br/>
 `[optional] integer count`
-<br/>An optional parameter, between 1 and 1000 (inclusive), representing the maximum number of retrieved assets. If not specified, the default is 100.<br/><br/>`[optional] string name`
-<br/>The name of the asset metadata for which you want to retrieve the facet values.<br/><br/>
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>`[optional] string name`
+<br/>Name of the asset metadata for which you want to retrieve the facet values.<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[FacetResult](#schemafacetresult)[]|OK|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavailable, please try again later.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 
 #### Example response body
 > 200 Response

@@ -27,12 +27,10 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[ResolvedAsset](#schemaresolvedasset)|The resolved asset with the specified asset identifier.|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|200|[ResolvedAsset](#schemaresolvedasset)|Resolved asset with the specified asset identifier.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
-|500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavailable, please try again later.|
 
 #### Example response body
 > 200 Response

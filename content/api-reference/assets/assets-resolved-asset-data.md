@@ -26,20 +26,18 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier<br/><br/><br/>
 `[optional] array stream`
-<br/>An optional parameter consisting of a comma-separated list of stream reference names in the form of \"stream={stream 1}[,stream={stream n}]\" that you are interested in. By default, all data calls return data for all stream references.<br/><br/>`[optional] any boundaryType`
+<br/>Optional parameter consisting of a comma-separated list of stream reference names in form of `stream={streamName}` for each stream you are interested in. By default, all data calls return data for all stream references.<br/><br/>`[optional] any boundaryType`
 <br/>Sds boundary type to pass to Sds<br/><br/>`[optional] any startBoundaryType`
-<br/>Start Sds boundary type to pass to Sds<br/><br/>`[optional] any endBoundaryType`
+<br/>Start Sds boundary type<br/><br/>`[optional] any endBoundaryType`
 <br/>End Sds boundary type to pass to Sds<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[DataResults](#schemadataresults)|The last status of the specified asset.|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|200|[DataResults](#schemadataresults)|Last status of the specified asset.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
-|500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavailable, please try again later.|
 
 #### Example response body
 > 200 Response
@@ -102,21 +100,19 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 <br/>Asset identifier<br/><br/>`string startIndex`
 <br/>Start index<br/><br/>`string endIndex`
 <br/>End index<br/><br/>`integer count`
-<br/>The number of samples requested.<br/><br/>`string tenantId`
+<br/>Number of samples requested.<br/><br/>`string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier<br/><br/><br/>
 `[optional] array stream`
-<br/>An optional parameter consisting of a comma-separated list of stream reference names in the form of \"stream={stream 1}[,stream={stream n}]\" that you are interested in. By default, all data calls return data for all stream references.<br/><br/>
+<br/>Optional parameter consisting of a comma-separated list of stream reference names in form of `stream={streamName}` for each stream you are interested in. By default, all data calls return data for all stream references.<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[DataResults](#schemadataresults)|The last status of the specified asset.|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|200|[DataResults](#schemadataresults)|Last status of the specified asset.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
-|500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavailable, please try again later.|
 
 #### Example response body
 > 200 Response
@@ -180,44 +176,18 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier<br/><br/><br/>
 `[optional] array stream`
-<br/>An optional parameter consisting of a comma-separated list of stream reference names in the form of "stream={stream 1}[,stream={stream n}]" that you are interested in. By default, all data calls return data for all stream references.<br/><br/>
+<br/>Optional parameter consisting of a comma-separated list of stream reference names in form of `stream={streamName}` for each stream you are interested in. By default, all data calls return data for all stream references.<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[DataResults](#schemadataresults)|The last status of the specified asset.|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|200|[DataResults](#schemadataresults)|Last status of the specified asset.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
-|500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavailable, please try again later.|
 
 #### Example response body
 > 200 Response
-
-```json
-{
-  "Results": {
-    "property1": [
-      null
-    ],
-    "property2": [
-      null
-    ]
-  },
-  "Errors": {
-    "OperationId": "string",
-    "Error": "string",
-    "Reason": "string",
-    "ChildErrors": {
-      "property1": null,
-      "property2": null
-    }
-  }
-}
-```
-
-> 400 Response
 
 ```json
 {
@@ -231,6 +201,19 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
     ]
   },
   "Errors": null
+}
+```
+
+> 400 Response
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
 }
 ```
 
@@ -254,11 +237,11 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 <br/>Asset identifier<br/><br/>`string startIndex`
 <br/>Start index<br/><br/>`string endIndex`
 <br/>End index<br/><br/>`integer intervals`
-<br/>The number of intervals requested.<br/><br/>`string tenantId`
+<br/>Number of intervals requested.<br/><br/>`string tenantId`
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier<br/><br/><br/>
 `[optional] array stream`
-<br/>An optional parameter consisting of a comma-separated list of stream reference names in the form of "stream={stream 1}[,stream={stream n}]" that you are interested in. By default, all data calls return data for all stream references.<br/><br/>`[optional] any boundaryType`
+<br/>Optional parameter consisting of a comma-separated list of stream reference names in form of `stream={streamName}` for each stream you are interested in. By default, all data calls return data for all stream references.<br/><br/>`[optional] any boundaryType`
 <br/>Sds boundary type to pass to Sds<br/><br/>`[optional] any startBoundaryType`
 <br/>Start Sds boundary type to pass to Sds<br/><br/>`[optional] any endBoundaryType`
 <br/>End Sds boundary type to pass to Sds<br/><br/>
@@ -267,11 +250,9 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[DataResults](#schemadataresults)|The last status of the specified asset.|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|200|[DataResults](#schemadataresults)|Last status of the specified asset.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
-|500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavailable, please try again later.|
 
 #### Example response body
 > 200 Response
@@ -337,18 +318,16 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier<br/><br/><br/>
 `[optional] array stream`
-<br/>An optional parameter consisting of a comma-separated list of stream reference names in the form of stream={stream 1}[,stream={stream n}] that you are interested in. By default, all data calls return data for all stream references.<br/><br/>`[optional] integer count`
-<br/>The number of samples requested.<br/><br/>
+<br/>Optional parameter consisting of a comma-separated list of stream reference names in form of `stream={streamName}` for each stream you are interested in. By default, all data calls return data for all stream references.<br/><br/>`[optional] integer count`
+<br/>Number of samples requested<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[DataResults](#schemadataresults)|The last status of the specified asset.|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|200|[DataResults](#schemadataresults)|Last status of the specified asset.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
-|500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavailable, please try again later.|
 
 #### Example response body
 > 200 Response

@@ -9,7 +9,7 @@ uid: assets-asset-status-data
 
 <a id="opIdAssetStatusData_Get Last Asset Status Data"></a>
 
-View the status of an asset. The status of an asset is determined by an exact match of the Sds stream property value to the value of the ValueStatusMapping. If there are no exact matches, the status is a 0 (Unknown).
+View the status of an asset. Status of an asset is determined by an exact match of the Sds stream property value to the value of the ValueStatusMapping. If there are no exact matches, the status is a 0 (Unknown).
 
 ### Request
 ```text 
@@ -27,12 +27,10 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[LastStatusData](#schemalaststatusdata)|The last status of the specified asset.|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|200|[LastStatusData](#schemalaststatusdata)|Last status of the specified asset.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
-|422|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavailable, please try again later.|
+|422|[ErrorTemplate](#schemaerrortemplate)|Cannot be processed. See the response body for additional details.|
 
 #### Example response body
 > 200 Response
@@ -88,13 +86,11 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[StatusRangeSummary](#schemastatusrangesummary)|The last status of the specified asset.|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|200|[StatusRangeSummary](#schemastatusrangesummary)|Last status of the specified asset.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
-|422|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|500|None|Internal Service Error, please try again later.|
+|422|[ErrorTemplate](#schemaerrortemplate)|Cannot be processed. See the response body for additional details.|
 |502|None|Bad gateway|
-|503|None|Service Unavailable, please try again later.|
 
 #### Example response body
 > 200 Response

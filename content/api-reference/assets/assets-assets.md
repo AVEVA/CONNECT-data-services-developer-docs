@@ -153,11 +153,9 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |---|---|---|
 |200|[DeprecatedAsset](#schemadeprecatedasset)|The asset with the specified identifier.|
 |201|[DeprecatedAsset](#schemadeprecatedasset)|The asset with the specified identifier.|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |409|[ErrorTemplate](#schemaerrortemplate)|Conflict|
 |412|[ErrorTemplate](#schemaerrortemplate)|Pre-Condition Failed|
-|500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavailable, please try again later.|
 
 #### Response Headers
 
@@ -231,13 +229,11 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{asset
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|204|None|The asset with specified identifier has been deleted.|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|204|None|Asset with specified identifier has been deleted.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized<br/>|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not Found|
 |409|[ErrorTemplate](#schemaerrortemplate)|Conflict|
-|500|None|Internal server error<br/>|
-|503|None|Service Unavailable, please try again later.|
 
 #### Example response body
 > 400 Response
@@ -259,7 +255,7 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{asset
 
 <a id="opIdAssets_Get Asset Acl"></a>
 
-Get the access control of the specified asset.
+Get access control of the specified asset.
 
 ### Request
 ```text 
@@ -277,12 +273,10 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[AccessControlList](#schemaaccesscontrollist)|The access control of the asset with the specified identifier.|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|200|[AccessControlList](#schemaaccesscontrollist)|Access control of the asset with the specified identifier.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
-|500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavailable, please try again later.|
 
 #### Example response body
 > 200 Response
@@ -326,7 +320,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 <a id="opIdAssets_Update Asset Access Control"></a>
 
-Updates the access control of the specified asset.
+Updates access control of the specified asset.
 
 ### Request
 ```text 
@@ -368,12 +362,10 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|204|None|The access control of the asset with the specified identifier.|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|204|None|Access control of the asset with the specified identifier.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
-|500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavailable, please try again later.|
 
 #### Example response body
 > 400 Response
@@ -395,7 +387,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 <a id="opIdAssets_List Asset Access Rights"></a>
 
-Get the access rights of the specified asset.
+Get access rights of the specified asset.
 
 ### Request
 ```text 
@@ -413,12 +405,10 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|The access rights of the asset with the specified identifier.|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|200|Inline|Access rights of the asset with the specified identifier.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
-|500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavailable, please try again later.|
 
 #### Example response body
 > 200 Response
@@ -451,7 +441,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 <a id="opIdAssets_Get Asset Owner"></a>
 
-Get the owner of the specified asset.
+Get owner of the specified asset.
 
 ### Request
 ```text 
@@ -469,12 +459,10 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Trustee](#schematrustee)|The owner of the asset with the specified identifier.|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|200|[Trustee](#schematrustee)|Owner of the asset with the specified identifier.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
-|500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavailable, please try again later.|
 
 #### Example response body
 > 200 Response
@@ -506,7 +494,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 <a id="opIdAssets_Update Asset Owner"></a>
 
-Updates the owner of the specified asset.
+Updates owner of the specified asset.
 
 ### Request
 ```text 
@@ -537,7 +525,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |Status Code|Body Type|Description|
 |---|---|---|
 |204|None|No content if success.|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 |500|None|Internal Service Error, please try again later.|
@@ -563,7 +551,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 <a id="opIdAssets_Get Asset2"></a>
 
-Returns the specified asset and the version Etag in the HTTP response header.
+Returns specified asset and the version Etag in the HTTP response header.
 
 ### Request
 ```text 
@@ -581,12 +569,10 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Asset](#schemaasset)|The asset with the specified identifier.|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|200|[Asset](#schemaasset)|Asset with the specified identifier.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
-|500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavailable, please try again later.|
 
 #### Response Headers
 
@@ -686,14 +672,12 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetI
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Asset](#schemaasset)|The asset that was created.|
-|302|None|The asset you attempted to create is identical to one that already exists.|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|200|[Asset](#schemaasset)|Asset that was created.|
+|302|None|Asset you attempted to create is identical to one that already exists.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |403|[ErrorTemplate](#schemaerrortemplate)|You are not authorized to create assets.|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
-|409|[ErrorTemplate](#schemaerrortemplate)|The asset you attempted to create has a conflict. See the response body for additional details.|
-|500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavailable, please try again later.|
+|409|[ErrorTemplate](#schemaerrortemplate)|Asset you attempted to create has a conflict. See the response body for additional details.|
 
 #### Response Headers
 
@@ -797,11 +781,9 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId
 |---|---|---|
 |200|[Asset](#schemaasset)|The asset with the specified identifier.|
 |201|[Asset](#schemaasset)|The asset with the specified identifier.|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |409|[ErrorTemplate](#schemaerrortemplate)|Conflict|
 |412|[ErrorTemplate](#schemaerrortemplate)|Pre-Condition Failed|
-|500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavailable, please try again later.|
 
 #### Response Headers
 

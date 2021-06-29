@@ -9,7 +9,7 @@ uid: assets-access-control-list
 
 <a id="opIdCollectionAcls_Get Collection Acl"></a>
 
-Get the default AccessControlList for the assets collection and asset type collection.
+Get default AccessControlList for the assets collection and asset type collection.
 
 ### Request
 ```text 
@@ -28,10 +28,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/{r
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|OK|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 |403|[ErrorTemplate](#schemaerrortemplate)|Forbidden|
-|500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavailable, please try again later.|
 
 #### Example response body
 > 200 Response
@@ -76,7 +74,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/{r
 
 <a id="opIdCollectionAcls_Update Collection Acl"></a>
 
-Updates the default AccessControlList for the assets collection and asset type collection.
+Updates default AccessControlList for the assets collection and asset type collection.
 
 ### Request
 ```text 
@@ -120,10 +118,8 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/{r
 |Status Code|Body Type|Description|
 |---|---|---|
 |204|None|No Content|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 |403|[ErrorTemplate](#schemaerrortemplate)|Forbidden|
-|500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavailable, please try again later.|
 
 #### Example response body
 > 400 Response
@@ -145,7 +141,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/{r
 
 <a id="opIdCollectionAcls_List Collection Access Rights"></a>
 
-Get the default access rights for the assets collection and asset type collection.
+Get default access rights for the assets collection and asset type collection.
 
 ### Request
 ```text 
@@ -164,10 +160,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessRights/{re
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|Inline|OK|
-|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 |403|[ErrorTemplate](#schemaerrortemplate)|Forbidden|
-|500|None|Internal Service Error, please try again later.|
-|503|None|Service Unavailable, please try again later.|
 
 #### Example response body
 > 400 Response

@@ -240,7 +240,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 
 <a id="opIdAssetTypes_Delete Asset Type"></a>
 
-Delete asset type with a specified Id.
+Deletes asset type with a specified identifier.
 
 ### Request
 ```text 
@@ -287,7 +287,7 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{a
 
 <a id="opIdAssetTypes_Get Asset Type Acl"></a>
 
-Get access control of the specified asset type.
+Returns access control of the specified asset type.
 
 ### Request
 ```text 
@@ -419,7 +419,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 
 <a id="opIdAssetTypes_List Asset Type Access Rights"></a>
 
-Get access rights of the specified asset type.
+Returns access rights of specified asset type.
 
 ### Request
 ```text 
@@ -473,7 +473,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 
 <a id="opIdAssetTypes_Get Asset Type Owner"></a>
 
-Get owner of the specified asset type.
+Returns owner of specified asset type.
 
 ### Request
 ```text 
@@ -491,7 +491,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Trustee](#schematrustee)|Owner of the asset type with the specified identifier.|
+|200|[Trustee](#schematrustee)|Owner of asset type with the specified identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 |401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
@@ -526,7 +526,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 
 <a id="opIdAssetTypes_Update Asset Type Owner"></a>
 
-Updates owner of the specified asset type.
+Updates owner of specified asset type.
 
 ### Request
 ```text 
@@ -649,7 +649,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2
 
 <a id="opIdAssetTypes_Create Asset Types"></a>
 
-Create or update an asset type with a specified Id.
+Create or update an asset type with a specified identifier.
 
 ### Request
 ```text 
@@ -834,7 +834,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{ass
 
 <a id="opIdAssetTypes_Create Asset Type (Asset Types2 path)"></a>
 
-Create or update an asset type with a specified Id.
+Creates or updates an asset type with a specified identifier.
 
 ### Request
 ```text 
@@ -962,7 +962,7 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{as
 
 <a id="opIdAssetTypes_Create Or Update Asset Type (Asset Types2 path)"></a>
 
-Create or update an asset type with a specified Id.
+Creates or updates an asset type with a specified identifier.
 
 ### Request
 ```text 
@@ -1149,7 +1149,7 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/AssetTypes
 
 <a id="opIdAssetTypes_Create Asset Types3"></a>
 
-Bulk create asset types. Creates multiple asset types in a single call.
+Bulk creates asset types. Creates multiple asset types in a single call.
 
 ### Request
 ```text 

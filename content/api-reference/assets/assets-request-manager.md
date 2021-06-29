@@ -380,7 +380,7 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets
 
 <a id="opIdRequestManager_Bulk Delete Assets"></a>
 
-Delete all assets with the specified Ids.Use this API to delete up to a maximum of 1000 assets in one API call.
+Deletes all assets with the specified idenftifiers. This API can delete up to a maximum of 1000 assets in one API call.
 
 ### Request
 ```text 
@@ -435,7 +435,7 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets
 
 <a id="opIdRequestManager_Bulk Get Resolved Assets"></a>
 
-View multiple resolved assets.
+Returns multiple resolved assets.
 
 ### Request
 ```text 
@@ -577,7 +577,7 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets/Res
 
 <a id="opIdRequestManager_Get Bulk Last Status Data For Assets"></a>
 
-View the status of multiple assets.
+Returns status of multiple assets.
 
 ### Request
 ```text 
@@ -668,7 +668,7 @@ Asset identifiers<br/>
 
 <a id="opIdRequestManager_Bulk Create Assets Async2"></a>
 
-Bulk create assets. Creates multiple assets in a single call.
+Creates assets in bulk. Creates multiple assets in a single call.
 
 ### Request
 ```text 
@@ -918,7 +918,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets
 
 <a id="opIdRequestManager_Get Autocomplete Results"></a>
 
-Asset autocomplete allows you to query assets and retrieve a list of suggested assets based on your search criteria. The autocomplete feature can be used with the following asset properties: Name, Description, AssetTypeName, and Metadata.
+Returns a list of suggested assets based on your search criteria. The autocomplete feature can be used with the following asset properties: Name, Description, AssetTypeName, and Metadata.
 
 ### Request
 ```text 
@@ -999,7 +999,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets/Au
 
 <a id="opIdRequestManager_List Faceted List Results"></a>
 
-Asset faceted search allows for searching using asset facets. Asset facets are not case sensitive. Only asset metadata can be used in asset faceted searches.
+Searchs for assets using facets. Asset facets are not case sensitive. Only asset metadata can be used in asset faceted searches.
 
 ### Request
 ```text 

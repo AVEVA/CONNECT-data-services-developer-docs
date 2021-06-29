@@ -9,7 +9,7 @@ uid: assets-asset-status-data
 
 <a id="opIdAssetStatusData_Get Last Asset Status Data"></a>
 
-View the status of an asset. Status of an asset is determined by an exact match of the Sds stream property value to the value of the ValueStatusMapping. If there are no exact matches, the status is a 0 (Unknown).
+Returns status of an asset. Status of an asset is determined by an exact match of the Sds stream property value to the value of the ValueStatusMapping. If there are no exact matches, the status is a 0 (Unknown).
 
 ### Request
 ```text 
@@ -64,7 +64,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 <a id="opIdAssetStatusData_Get Asset Status Range Summary Data"></a>
 
-View the status summary of an asset.
+Returns status summary of an asset.
 
 ### Request
 ```text 
@@ -343,7 +343,8 @@ Pre-defined asset status values.
   "Values": [
     {
       "Value": null,
-      "Interval": null
+      "Interval": null,
+      "DisplayName": "string"
     }
   ]
 }
@@ -363,13 +364,15 @@ Pre-defined asset status values.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Value|any|false|true|None|
-|Interval|any|false|true|None|
+|Value|any|false|true|Value object|
+|Interval|any|false|true|Summary interval|
+|DisplayName|string|false|true|User friendly display name|
 
 ```json
 {
   "Value": null,
-  "Interval": null
+  "Interval": null,
+  "DisplayName": "string"
 }
 
 ```

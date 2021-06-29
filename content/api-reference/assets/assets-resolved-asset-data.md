@@ -223,7 +223,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 <a id="opIdResolvedAssetData_Get Sampled Data"></a>
 
-Returns sampled data for referenced Sds streams.
+Returns sampled data for referenced SDS streams.
 
 ### Request
 ```text 

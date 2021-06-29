@@ -9,7 +9,7 @@ uid: assets-access-control-list
 
 <a id="opIdCollectionAcls_Get Collection Acl"></a>
 
-Get default AccessControlList for the assets collection and asset type collection.
+Returns default AccessControlList for the assets collection and asset type collection.
 
 ### Request
 ```text 
@@ -141,7 +141,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/{r
 
 <a id="opIdCollectionAcls_List Collection Access Rights"></a>
 
-Get default access rights for the assets collection and asset type collection.
+Returns default access rights for the assets collection and asset type collection.
 
 ### Request
 ```text 

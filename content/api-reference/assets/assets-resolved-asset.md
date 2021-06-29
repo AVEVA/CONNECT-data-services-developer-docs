@@ -9,7 +9,7 @@ uid: assets-resolved-asset
 
 <a id="opIdResolvedAsset_Get Resolved Asset"></a>
 
-Returns the specified asset and the version Etag in the HTTP response header.
+Returns resolved view of specified asset.
 
 ### Request
 ```text 

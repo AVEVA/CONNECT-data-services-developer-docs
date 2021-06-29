@@ -211,7 +211,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 <a id="opIdAssets_Delete Asset"></a>
 
-Delete the asset with a specified Id.
+Deletes the asset with a specified identifier.
 
 ### Request
 ```text 
@@ -255,7 +255,7 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{asset
 
 <a id="opIdAssets_Get Asset Acl"></a>
 
-Get access control of the specified asset.
+Returns access control of the specified asset.
 
 ### Request
 ```text 
@@ -320,7 +320,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 <a id="opIdAssets_Update Asset Access Control"></a>
 
-Updates access control of the specified asset.
+Updates access control of specified asset.
 
 ### Request
 ```text 
@@ -387,7 +387,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 <a id="opIdAssets_List Asset Access Rights"></a>
 
-Get access rights of the specified asset.
+Returns access rights of specified asset.
 
 ### Request
 ```text 
@@ -441,7 +441,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 <a id="opIdAssets_Get Asset Owner"></a>
 
-Get owner of the specified asset.
+Returns owner of specified asset.
 
 ### Request
 ```text 
@@ -494,7 +494,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 <a id="opIdAssets_Update Asset Owner"></a>
 
-Updates owner of the specified asset.
+Updates owner of specified asset.
 
 ### Request
 ```text 
@@ -733,7 +733,7 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetI
 
 <a id="opIdAssets_Create Or Update Asset (Assets2 path)"></a>
 
-Create or update an asset with a specified Id. If the asset already exists, you can specify an If-Match property in the HTTP request header to ensure that the asset is modified only if its version matches. To support flexibility, on creation and update, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is from an asset type.
+Creates or updates an asset with a specified identifier. If the asset already exists, you can specify an If-Match property in the HTTP request header to ensure that the asset is modified only if its version matches. To support flexibility, on creation and update, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is from an asset type.
 
 ### Request
 ```text 

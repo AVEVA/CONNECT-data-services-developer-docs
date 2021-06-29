@@ -17,13 +17,15 @@ For more information about stream views, see the following topics:
 
 ## Prerequisite
 
+Repeat the steps in [Get started with types](xref:gsTypes) and create a type with the Id **MyOCS.Pump.State.Temperature**. Include only the **Timestamp** and **Temperature** properties. 
 
-Repeat the steps in [Get started with types](xref:gsTypes), but use the ID **MyOCS.PumpState.Temperature** and include only the **Timestamp** and **Temperature** properties. This procedure creates a stream view that maps the **MyOCS.PumpState** type to this new type.
+## Procedure
 
+This procedure creates a stream view that maps the **MyOCS.PumpState** type to this new type.
 
 1. Click the ![Menu icon](images/menu-icon.png) icon and choose **Sequential Data Store** (under Data Management).
 
-1. Click the **Namespace** selection button to open the `Select a Namespace` window. In the Select a Namespace window, click **MyOCS**. 
+1. Click the **Namespace** selection button to open the `Select a Namespace` window. In the `Select a Namespace` window, click **MyOCS**. 
      ![Namespace list](images/sds-gs-namespace.png)
 
 1. From the **Streams/Types/Stream Views Selector** list, select **Stream Views**.
@@ -39,6 +41,7 @@ Repeat the steps in [Get started with types](xref:gsTypes), but use the ID **MyO
    - `SourceType` &ndash; From the list, choose the type **MyOCS.PumpState**.
    - `TargetType` &ndash; From the list, choose the type **MyOCS.PumpState.Temperature**.
    - `Description` &ndash; Optionally, add a description for this stream view.
+
 
 1. In the lower right, click **Next** to proceed to step 2: `Property Mappings`.
 
@@ -59,6 +62,7 @@ Repeat the steps in [Get started with types](xref:gsTypes), but use the ID **MyO
 
 1. To test this stream view, click the menu icon and choose **API Console** (under Developer Tools).
 
-1. In the `URI` field enter `/Namespaces/MyOCS/Streams/MyOCS.NorthAmerica.SLTC.PumpA/Data/Transform/Last?streamViewId=MyOCS.PumpTemperatureView`, then click **GET**. Note that if you use a different namespace, you might need to substitute that in place of `/Namespaces/MyOCS`.
+1. In the `URI` field enter `/Namespaces/MyOCS/Streams/MyOCS.NorthAmerica.SLTC.PumpA/Data/Transform/Last?streamViewId=MyOCS.PumpTemperatureView`, then click **GET**. 
+   **Note**: If you use a different namespace, you might need to substitute that in place of `/Namespaces/MyOCS`.
 
 This returns the **Timestamp** and **Temperature** of the last event from the **MyOCS.NorthAmerica.SLTC.PumpA** stream, while excluding the **Pressure** and **Status** properties.

@@ -4,6 +4,7 @@ uid: assets-asset-status-data
 ---
 
 # Asset Status Data
+Status is a property of an asset or asset type that defines the simple status of an asset or asset type. There is one status property for each asset or asset type. If an asset references an existing asset type and the asset type has a corresponding type reference, then the status mapping on the asset is ignored. Create, read, update, and delete of an asset status mapping is done through the asset or asset type itself.
 
 ## `Get Last Asset Status Data`
 

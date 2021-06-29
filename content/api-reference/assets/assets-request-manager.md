@@ -4,7 +4,7 @@ uid: assets-request-manager
 ---
 
 # Request Manager
-The asset type API provides methods to create, read, update, and delete asset types.An asset type can be used to build many similar assets.Some of the key benefits of using an asset type as the base model for assets are: - Multiple similar assets can be created more quickly and with less effort. - Maintaining assets is simplified...
+The asset API allows you to programmatically model your on-premises assets in OSIsoft Cloud Services (OCS). A single stream with its metadata can be used to model very simple assets. However, in most instances, an asset relates to dynamic data from several streams and to static information that describe the asset. This is better structured as an asset instead of any single stream. The assets feature is well suited to model these aspects of an asset. It allows users to create an asset, add static metadata, and reference streams in a standard, structured way. The asset API includes search capabilities and features to directly retrieve the values of dynamic data associated with a given asset. It also provides methods to configure determining the asset status and to configure different user views of an asset.
 
 ## `Get Assets`
 

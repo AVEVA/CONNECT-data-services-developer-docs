@@ -4,6 +4,7 @@ uid: assets-access-control-list
 ---
 
 # Access Control List
+The access control API is used to secure assets by setting their ownership and permissions.
 
 ## `Get Collection Acl`
 

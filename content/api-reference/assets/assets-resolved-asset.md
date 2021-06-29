@@ -4,6 +4,7 @@ uid: assets-resolved-asset
 ---
 
 # Resolved Asset
+The resolved asset describes the consumption-oriented aspects of an OCS resource rather than describing how the resource is configured. The resolved asset corresponds to its metadata and referenced stream which define how the data is interpreted(that is, SdsTypeCode, InterpolationMode, and UOM).
 
 ## `Get Resolved Asset`
 

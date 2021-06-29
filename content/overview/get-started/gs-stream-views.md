@@ -11,7 +11,7 @@ Using a stream view on data retrieval affects only the data retrieved, and does 
  
 For more information about stream views, see the following topics:
 
-- [Streamviews](xref:ccStreamviews)
+- [Stream views](xref:ccStreamviews)
 - [PI Server counterpart](xref:ccStreamviews#streamviews-pi-server)
 - [Stream views best practices](xref:ccStreamviews#streamviews-bestpractices)
 

@@ -12,7 +12,7 @@ Assets are comparable to elements in PI AF server. Like elements, OCS assets inc
 
 ## Assets best practices
 
-We recommend the following best practices when you create assets:
+OSIsoft recommends the following best practices when you create assets:
 
 - Use OCS assets to bring together in one place the data from multiple streams and the static data associated with a logical asset. OCS assets make it easier to visualize and contextualize the data for a given logical asset.
 - Define the UOM on the type whenever possible. The UOM can also be defined on the stream, but if it is defined in multiple places, ensure that the UOMs match. If a different UOM is configured, there is no conversion between the UOMs.  

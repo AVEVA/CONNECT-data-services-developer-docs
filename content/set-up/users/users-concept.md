@@ -15,7 +15,7 @@ An OCS user is comparable to a mapping in PI Data Archive. For example, in PI Da
 
 ## <a name="users-bp"></a>Users best practices
 
-We recommend the following best practices when you add users:
+OSIsoft recommends the following best practices when you add users:
 
 - Send the OCS invitation to the user at the email address specified in the Contact Email field. Verify that the user's email address is correct to ensure the invitation was received, and not sent to an unintended recipient, unintentionally giving access to OCS.
 

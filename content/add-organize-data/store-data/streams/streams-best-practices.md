@@ -11,5 +11,5 @@ OSIsoft recommends the following best practices when creating streams:
 
 - Use the stream description field, metadata, and tags to capture any other relevant information about the stream. This information is useful to search for specific streams in the system, especially as systems become large. If possible, use consistent patterns in description, metadata, and tags.
    - Use metadata for information that follows a specific or consistent pattern, such as the location, manufacturer, and site. 
-   - Use tags for simple information about the stream that doesn't adhere to any particular pattern.
+   - Use tags for simple information about the stream that does not adhere to any particular pattern.
    - Use the description field for longer descriptions of the stream and what it represents.

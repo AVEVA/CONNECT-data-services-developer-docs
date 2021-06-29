@@ -4,19 +4,21 @@ uid: WhatOCSdoes
 
 # What does OSIsoft Cloud Services do? 
 
-![OCS](images/how-does-ocs-work/ocs_intro.png)
-
 OSIsoft Cloud Services (OCS) consists of several different areas of core functionality: tenant management, data collection, data organization, and data analysis. The following sections discuss each area in detail:
 
-* [Tenant management](#tenant-management) - Explains basic concepts in managing OCS, including clients, users, roles, roles-based access control and discusses how administrators can customize OCS based on organizational requirements 
-* [Data collection](#data-collection) - Summarizes techniques to collect and feed data from multiple sources across your organization into a namespace within OCS 
-* [Data organization](#data-organization) - Provides a high-level description of how OCS stores and retrieves operational data
+* [Tenant management](#tenant-management) - Explains basic concepts in managing OCS, including clients, users, roles, roles-based access control and discusses how administrators can customize OCS based on organizational requirements. 
+* [Data collection](#data-collection) - Summarizes techniques to collect and feed data from multiple sources across your organization into a namespace within OCS. 
+* [Data organization](#data-organization) - Provides a high-level description of how OCS stores and retrieves operational data.
 * [Data analysis](#data-analysis) - Provides users with analytical tools to sort and visualize OCS data.
-* [Data science enablement](#data-science-enablement) - Highlights the capabilities of OCS tools for data grouping and organization to enable the use of third-party data science applications
+* [Data science enablement](#data-science-enablement) - Highlights the capabilities of OCS tools for data grouping and organization to enable the use of third-party data science applications.
 
-## Tenant management    
+The following diagram 
 
-You can customize OCS to meet your organization's requirements and needs. Administrators can create users and clients, define and assign roles, and manage namespaces for their tenant. Authentication and authorization are also customizable on OCS. Configuring the access control list (ACL) for an OCS resources, administrators can define the permissions to a resource. Generally, only administrators should have access to tenant management features. Administrators can perform tenant management using the OCS REST API or the OCS portal. The OCS portal is a web-based user-interface for managing and monitoring your tenant as well as for namespace resources, streams and assets.
+![OCS](images/how-does-ocs-work/ocs_intro.png)
+
+## Tenant management
+
+Customize OCS to meet your organization's requirements and needs. Administrators can create users and clients, define and assign roles, and manage namespaces for their tenant. Authentication and authorization are also customizable on OCS. Configuring the access control list (ACL) for an OCS resources, administrators can define the permissions to a resource. Generally, only administrators should have access to tenant management features. Administrators can perform tenant management using the OCS REST API or the OCS portal. The OCS portal is a web-based user-interface for managing and monitoring your tenant as well as for namespace resources, streams and assets.
 
 ### Tenant 
 

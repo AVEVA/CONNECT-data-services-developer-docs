@@ -4,7 +4,7 @@ uid: bpNamespaces
 
 # Namespaces best practices
 
-We recommend using one of the following strategies when creating namespaces:
+OSIsoft recommends using one of the following strategies when creating namespaces:
 
 - Strategy 1 &ndash; Create a separate namespace for each environment. For example, Production, Development, Staging, and so on.
 - Strategy 2 &ndash; Create a separate namespace for each of your customers.

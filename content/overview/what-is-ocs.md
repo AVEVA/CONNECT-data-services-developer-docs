@@ -39,7 +39,7 @@ Edge Data Store (EDS) uses OMF messages to send data into OCS from edge devices.
 
 ### PI Adapters 
 
-PI Adapters are available to send data into OCS from a variety of data collection devices using OMF messaging. 
+PI Adapters use OMF messaging to send data into OCS from a variety of data collection devices. 
 
 ### REST API 
 
@@ -74,12 +74,12 @@ When a tenant requests a new namespace, OCS provisions a new set of microservice
 
 ## Interruption resilience
 
-To prevent data interruptions or loss, OCS incorporates many safeguards. By design, OCS is built for high availability. You are not required to perform any specific actions to ensure continuous access to reliable, distributed data storage. 
+To prevent data interruptions or loss, OCS incorporates many safeguards. By design, OCS is built for high availability. You are not required to perform any specific actions to ensure continuous access to reliable, distributed data storage.
 
-OSIsoft continuously tests OCS to ensure the platform is performing reliably. Both the platform and the underlying operating systems are updated regularly. In addition, OSIsoft conducts frequent threat analyses to thwart potential exploitations. Load balancing precludes distributed denial of service attacks. A gateway prevents unauthorized access to resources. 
+OSIsoft continuously tests OCS to ensure the platform is performing reliably. Both the platform and the underlying operating systems are updated regularly. In addition, OSIsoft conducts frequent threat analyses to thwart potential exploitations. Load balancing precludes distributed denial of service attacks. A gateway prevents unauthorized access to resources.
 
 ## Easy management and maintenance
 
-OSIsoft manages, operates, and maintains all aspects of the OCS platform. OCS is built and deployed on Microsoft Azure and operates outside the OSIsoft corporate firewall. Currently, OCS runs in two Azure regions: West US and West Europe. By housing the platform in multiple regions, OCS accommodates regulations that mandate where data must be stored. 
+OSIsoft manages, operates, and maintains all aspects of the OCS platform. OCS is built and deployed on Microsoft Azure and operates outside the OSIsoft corporate firewall. Currently, OCS runs in two Azure regions: West US and West Europe. By housing the platform in multiple regions, OCS accommodates regulations that mandate where data must be stored.
 
 Access your data infrastructure through the OCS web-based portal or by using modern, secure, developer-friendly REST APIs.

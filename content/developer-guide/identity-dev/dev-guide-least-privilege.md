@@ -12,4 +12,4 @@ To limit the potential consequences of client credential theft, we advise agains
 
 ## One client per application
 
-We recommend that you create a client in OCS for each instance of a running application. This makes identification easier and decreases the attack surface from a leaked secret. In such an event, only one application needs to be updated.
+OSIsoft recommends creating a client in OCS for each instance of a running application. This makes identification easier and decreases the attack surface from a leaked secret. In such an event, only one application needs to be updated.

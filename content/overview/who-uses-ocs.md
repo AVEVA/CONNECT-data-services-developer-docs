@@ -14,7 +14,7 @@ Extending the collection and accessibility of operational data allows new analys
 
 Data scientists can easily integrate operational data from multiple sources for a variety of applications, such as process optimization and maintenance. Better data modeling enables smart decision-making based on clear answers about what is most relevant to a company’s goals. OCS uses the entire data infrastructure to gather the right type of data for modeling tools that answer business questions such as maintenance and demand forecasting. 
 
-OCS enables this process in the following ways: 
+OCS improves business insight by: 
 
 - Allowing the operations department and data scientists to share data and collaborate more effectively 
 - Providing an environment in which data analysis artifacts are saved, enabling the data scientist to modify their models and workflow more efficiently 
@@ -54,7 +54,7 @@ In the past, data was often left stranded at remote locations due to the lack of
 
 Accessing and integrating these “dark” data locations is possible with edge systems and OCS. With pervasive data collectors, PI Adapters, Edge Data Store, and custom OMF applications, operational assets that were previously inaccessible are now viable data sources. 
 
-Seamless integration of data infrastructure offers the following benefits: 
+The benefits of seamless integration of data infrastructure include: 
 
 - Confidence that data across the entire spectrum is authoritative. 
 - Data is compatible and native to the infrastructure across the spectrum. 

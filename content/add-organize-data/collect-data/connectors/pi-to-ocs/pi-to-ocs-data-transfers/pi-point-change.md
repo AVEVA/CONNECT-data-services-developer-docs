@@ -13,8 +13,8 @@ When the source PI Data Archive tag changes point type, PI to OCS Services detec
 
 Once an SDS stream is created, its underlying SdsType cannot change. As a result, new data from a tag that is assigned a different type cannot be stored in the same stream, and you must decide what to do with the existing SDS stream and data. You can choose from the following corrective actions:
 
-* If you care about the data, and also care about having streaming data for that particular tag, create a new SDS stream and copy the data to that new stream. Once you have done this, delete the SDS stream in question and restart the transfer.
-* If you care about the data, but do not care about streaming data for that particular tag, create a new transfer without the tag in question and start the transfer. 
-* If you do not care about the streaming data that was previously transferred, delete the SDS stream in question and restart the transfer. The transfer will resume streaming data.
+* To maintain the data and continue streaming data for that particular tag, create a new SDS stream and copy the data to that new stream. Then, delete the SDS stream in question and restart the transfer.
+* To maintain the data, but not the streaming data for that particular tag, create a new transfer without the tag in question and start the transfer. 
+* To stream data for that particular tag, but not maintain previously transferred data, delete the SDS stream in question and restart the transfer.
 
 To see what types of point coercions are supported in PI Data Archive, please refer to the ["Allowable point type coercions"](https://docs.osisoft.com/bundle/pi-server/page/allowable-point-type-coercions.html) topic.<!--Angela Flores 6/28/21 should that be "coercions" or "conversions"? -->

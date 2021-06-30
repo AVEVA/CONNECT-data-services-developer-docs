@@ -2,9 +2,9 @@
 uid: introPortalInterface
 ---
 
-# Introduction to the portal interface
+# Introduction to the OCS portal
 
-Access and interact with OCS through the web-based portal. When you first access the portal, you see several panes providing information about the state of your system's health as well as quick links to popular documentation topics.
+Access and interact with OCS through the web-based portal. When you first access the OCS portal, several panes provide information about the system's health as well as quick links to popular documentation topics.
 
 ![Portal interface](../images/portal-interface.png "OCS portal interface")
 <!--Angela Flores 6/23/21 - This screenshot has a stray tool tip from another application. It needs to be cleaned up. -->
@@ -19,7 +19,7 @@ Click the navigation icon to access the OCS features. <!--Angela Flores 6/23/21 
 
 ![Feature menu](../images/feature-menu.png "Feature menu")
 
-Available OCS features include the following:
+OCS includes the following features:
 
 - **Data Management**: Provides tools for setting up basic capabilities of OCS, including tenants, connections to PI Systems, the Sequential Data Store (SDS), and metadata rules for data streams.
 - **Data Collection**: Provides mechanisms to bring data from multiple sources and systems into a namespace within OCS.
@@ -37,8 +37,8 @@ Clicking a menu item takes you to a page for that feature.
 
 Most pages consist of two panes:
 
-- The left pane is where you perform the tasks associated with the OCS resource. For example, the left pane is where you add and edit or manage permissions for the OCS resource.
-- The right pane has one or more tabs:   
+- The left pane is where you perform the tasks associated with the OCS resource. For example, the left pane is where you add and edit the OCS resource or manage its permissions.
+- The right pane has one or more tabs:
   - The Details tab contains additional information about the selected resource.
   - The Information tab provides documentation about the current feature and describes how to perform relevant tasks.
   - Some resources have additional panes for other configuration tasks.

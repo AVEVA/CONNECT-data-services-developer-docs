@@ -3,7 +3,7 @@ uid: ccClients
 ---
 # Clients
 
-Clients allow applications to authenticate against OSIsoft Cloud Services (OCS) from outside the OCS portal. OCS supports different types of clients, each of which support different types of applications, and are described in these topics:
+Clients allow applications to authenticate against OSIsoft Cloud Services (OCS) from outside the OCS portal. OCS supports the following types of clients, each of which support different types of applications:
 
 - [Client-credentials clients](#client-credentials-client)
 - [Authorization code clients](#authorization-code-client)

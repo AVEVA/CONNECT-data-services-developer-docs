@@ -55,33 +55,24 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes
 
 ```json
 {
-  "Id": "string",
-  "Name": "string",
-  "Description": "string",
+  "Id": "SampleAssetType",
+  "Description": "This is a sample asset type.",
   "Metadata": [
     {
-      "Id": "Sample Metadata Id",
-      "Name": "Asset Model number",
-      "Description": "This metadata represents an model number attribute on the asset.",
+      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+      "Name": "ModelNumber",
+      "Description": "This is a static attribute on the asset which represents the model number.",
       "SdsTypeCode": "Double",
-      "Value": "RFA-123",
-      "Uom": null
+      "Value": 0.01
     }
   ],
   "TypeReferences": [
     {
-      "StreamReferenceId": "Reference1",
+      "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
       "StreamReferenceName": "ReferenceName",
       "TypeId": "PI-Float32"
     }
-  ],
-  "Status": {
-    "StreamReferenceId": "string",
-    "StreamPropertyId": "string",
-    "ValueStatusMappings": [
-      {}
-    ]
-  }
+  ]
 }
 ```
 
@@ -139,33 +130,24 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{ass
 
 ```json
 {
-  "Id": "string",
-  "Name": "string",
-  "Description": "string",
+  "Id": "SampleAssetType",
+  "Description": "This is a sample asset type.",
   "Metadata": [
     {
-      "Id": "Sample Metadata Id",
-      "Name": "Asset Model number",
-      "Description": "This metadata represents an model number attribute on the asset.",
+      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+      "Name": "ModelNumber",
+      "Description": "This is a static attribute on the asset which represents the model number.",
       "SdsTypeCode": "Double",
-      "Value": "RFA-123",
-      "Uom": null
+      "Value": 0.01
     }
   ],
   "TypeReferences": [
     {
-      "StreamReferenceId": "Reference1",
+      "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
       "StreamReferenceName": "ReferenceName",
       "TypeId": "PI-Float32"
     }
-  ],
-  "Status": {
-    "StreamReferenceId": "string",
-    "StreamPropertyId": "string",
-    "ValueStatusMappings": [
-      {}
-    ]
-  }
+  ]
 }
 ```
 
@@ -199,33 +181,24 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 
 ```json
 {
-  "Id": "string",
-  "Name": "string",
-  "Description": "string",
+  "Id": "SampleAssetType",
+  "Description": "This is a sample asset type.",
   "Metadata": [
     {
-      "Id": "Sample Metadata Id",
-      "Name": "Asset Model number",
-      "Description": "This metadata represents an model number attribute on the asset.",
+      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+      "Name": "ModelNumber",
+      "Description": "This is a static attribute on the asset which represents the model number.",
       "SdsTypeCode": "Double",
-      "Value": "RFA-123",
-      "Uom": null
+      "Value": 0.01
     }
   ],
   "TypeReferences": [
     {
-      "StreamReferenceId": "Reference1",
+      "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
       "StreamReferenceName": "ReferenceName",
       "TypeId": "PI-Float32"
     }
-  ],
-  "Status": {
-    "StreamReferenceId": "string",
-    "StreamPropertyId": "string",
-    "ValueStatusMappings": [
-      {}
-    ]
-  }
+  ]
 }
 ```
 
@@ -264,7 +237,7 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{a
 |---|---|---|
 |204|None|Asset type with specified identifier has been deleted.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
-|401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized<br/>|
+|403|None|Forbidden<br/>|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not Found|
 |409|[ErrorTemplate](#schemaerrortemplate)|Conflict. See response body for additional details.|
 
@@ -308,7 +281,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|Access control of the asset with the specified identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
-|401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
+|403|None|Forbidden<br/>|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 
 #### Example response body
@@ -397,7 +370,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 |---|---|---|
 |204|None|Access control of the asset type with the specified identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
-|401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
+|403|None|Forbidden<br/>|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 
 #### Example response body
@@ -440,7 +413,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 |---|---|---|
 |200|Inline|Access rights of the asset type with the specified identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
-|401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
+|403|None|Forbidden<br/>|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 
 #### Example response body
@@ -494,7 +467,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 |---|---|---|
 |200|[Trustee](#schematrustee)|Owner of asset type with the specified identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
-|401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
+|403|None|Forbidden<br/>|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 
 #### Example response body
@@ -559,7 +532,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 |---|---|---|
 |204|None|No content if success.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
-|401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
+|403|None|Forbidden<br/>|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 
 #### Example response body
@@ -604,7 +577,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[DeprecatedAssetType](#schemadeprecatedassettype)[]|List of assets in the given namespace|
+|200|[AssetType](#schemaassettype)[]|List of assets in the given namespace|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 
 #### Response Headers
@@ -795,7 +768,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{ass
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[DeprecatedAssetType](#schemadeprecatedassettype)[]|List of assets in the given namespace.|
+|200|[AssetType](#schemaassettype)[]|List of assets in the given namespace.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 
@@ -1103,37 +1076,24 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/AssetTypes
 ```json
 [
   {
-    "Id": "string",
-    "Name": "string",
-    "Description": "string",
+    "Id": "SampleAssetType",
+    "Description": "This is a sample asset type.",
     "Metadata": [
       {
-        "Id": "Sample Metadata Id",
-        "Name": "Asset Model number",
-        "Description": "This metadata represents an model number attribute on the asset.",
+        "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+        "Name": "ModelNumber",
+        "Description": "This is a static attribute on the asset which represents the model number.",
         "SdsTypeCode": "Double",
-        "Value": "RFA-123",
-        "Uom": null
+        "Value": 0.01
       }
     ],
     "TypeReferences": [
       {
-        "StreamReferenceId": "Reference1",
+        "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
         "StreamReferenceName": "ReferenceName",
         "TypeId": "PI-Float32"
       }
-    ],
-    "Status": {
-      "StreamReferenceId": "string",
-      "StreamPropertyId": "string",
-      "ValueStatusMappings": [
-        {
-          "Value": null,
-          "Status": null,
-          "DisplayName": null
-        }
-      ]
-    }
+    ]
   }
 ]
 ```
@@ -1277,57 +1237,46 @@ List of asset types you want to create.<br/>
 ---
 ## Definitions
 
-### DeprecatedAssetType
+### AssetType
 
-<a id="schemadeprecatedassettype"></a>
-<a id="schema_DeprecatedAssetType"></a>
-<a id="tocSdeprecatedassettype"></a>
-<a id="tocsdeprecatedassettype"></a>
+<a id="schemaassettype"></a>
+<a id="schema_AssetType"></a>
+<a id="tocSassettype"></a>
+<a id="tocsassettype"></a>
+
+An asset type can be used to create multiple similar assets.A change to the asset type is reflected in all assets that are derived from the asset type.
 
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|None|
-|Name|string|false|true|None|
-|Description|string|false|true|None|
-|Metadata|[[MetadataItem](#schemametadataitem)]|false|true|[An asset or asset type metadata is static information associated with a given asset. A given metadata contains a list of individual metadata values. There is no limit on the number of metadata values defined by an asset. An asset or asset type metadata does not stand alone. It must be specified within an asset or asset type object and, therefore, there are no direct API routes to asset or asset type metadata.]|
-|TypeReferences|[[TypeReference](#schematypereference)]|false|true|[An asset type type reference represents dynamic stream data associated with an asset. The references must either be an SDS stream or an SDS stream view. Asset-centric data routes provide direct access to dynamic data for a given asset. There are no limitations on the number of references an asset may contain. However, an asset cannot contain multiple references to the same SDS stream. An asset reference does not stand alone. It must be specified within an asset object and, therefore, asset references do not have direct API routes.]|
-|Status|[StatusMapping](#schemastatusmapping)|false|true|None|
+|Id|string|false|true|Asset type id|
+|Name|string|false|true|Asset type name|
+|Description|string|false|true|Asset type description|
+|Metadata|[[MetadataItem](#schemametadataitem)]|false|true|Asset type metadata|
+|TypeReferences|[[TypeReference](#schematypereference)]|false|true|Asset type description|
+|Status|[StatusConfiguration](#schemastatusconfiguration)|false|true|Asset type status. If an asset of an this asset type, asset type statuses will take precendence over asset status.|
 
 ```json
 {
-  "Id": "string",
-  "Name": "string",
-  "Description": "string",
+  "Id": "SampleAssetType",
+  "Description": "This is a sample asset type.",
   "Metadata": [
     {
-      "Id": "Sample Metadata Id",
-      "Name": "Asset Model number",
-      "Description": "This metadata represents an model number attribute on the asset.",
+      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+      "Name": "ModelNumber",
+      "Description": "This is a static attribute on the asset which represents the model number.",
       "SdsTypeCode": "Double",
-      "Value": "RFA-123",
-      "Uom": null
+      "Value": 0.01
     }
   ],
   "TypeReferences": [
     {
-      "StreamReferenceId": "Reference1",
+      "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
       "StreamReferenceName": "ReferenceName",
       "TypeId": "PI-Float32"
     }
-  ],
-  "Status": {
-    "StreamReferenceId": "string",
-    "StreamPropertyId": "string",
-    "ValueStatusMappings": [
-      {
-        "Value": null,
-        "Status": "[",
-        "DisplayName": "string"
-      }
-    ]
-  }
+  ]
 }
 
 ```
@@ -1603,160 +1552,6 @@ An asset type type reference represents dynamic stream data associated with an a
 
 ---
 
-### StatusMapping
-
-<a id="schemastatusmapping"></a>
-<a id="schema_StatusMapping"></a>
-<a id="tocSstatusmapping"></a>
-<a id="tocsstatusmapping"></a>
-
-#### Properties
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|StreamReferenceId|string|true|false|None|
-|StreamPropertyId|string|true|false|None|
-|ValueStatusMappings|[[ValueStatusMapping](#schemavaluestatusmapping)]|false|true|None|
-
-```json
-{
-  "StreamReferenceId": "string",
-  "StreamPropertyId": "string",
-  "ValueStatusMappings": [
-    {
-      "Value": null,
-      "Status": 0,
-      "DisplayName": "string"
-    }
-  ]
-}
-
-```
-
----
-
-### ValueStatusMapping
-
-<a id="schemavaluestatusmapping"></a>
-<a id="schema_ValueStatusMapping"></a>
-<a id="tocSvaluestatusmapping"></a>
-<a id="tocsvaluestatusmapping"></a>
-
-#### Properties
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|Value|any|false|true|None|
-|Status|[StatusEnum](#schemastatusenum)|true|false|Pre-defined asset status values.|
-|DisplayName|string|false|true|None|
-
-```json
-{
-  "Value": null,
-  "Status": 0,
-  "DisplayName": "string"
-}
-
-```
-
----
-
-### StatusEnum
-
-<a id="schemastatusenum"></a>
-<a id="schema_StatusEnum"></a>
-<a id="tocSstatusenum"></a>
-<a id="tocsstatusenum"></a>
-
-Pre-defined asset status values.
-
-#### Enumerated Values
-
-|Property|Value|
-|---|---|
-|Unknown|0|
-|Good|1|
-|Warning|2|
-|Bad|3|
-
----
-
-### ErrorTemplate
-
-<a id="schemaerrortemplate"></a>
-<a id="schema_ErrorTemplate"></a>
-<a id="tocSerrortemplate"></a>
-<a id="tocserrortemplate"></a>
-
-#### Properties
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|OperationId|string|false|true|Operation identifier|
-|Error|string|false|true|Error string|
-|Resolution|string|false|true|Resolution string|
-|Reason|string|false|true|Error reason string|
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Resolution": "string",
-  "Reason": "string",
-  "property1": null,
-  "property2": null
-}
-
-```
-
----
-
-### AssetType
-
-<a id="schemaassettype"></a>
-<a id="schema_AssetType"></a>
-<a id="tocSassettype"></a>
-<a id="tocsassettype"></a>
-
-An asset type can be used to create multiple similar assets.A change to the asset type is reflected in all assets that are derived from the asset type.
-
-#### Properties
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|Id|string|false|true|Asset type id|
-|Name|string|false|true|Asset type name|
-|Description|string|false|true|Asset type description|
-|Metadata|[[MetadataItem](#schemametadataitem)]|false|true|Asset type metadata|
-|TypeReferences|[[TypeReference](#schematypereference)]|false|true|Asset type description|
-|Status|[StatusConfiguration](#schemastatusconfiguration)|false|true|Asset type status. If an asset of an this asset type, asset type statuses will take precendence over asset status.|
-
-```json
-{
-  "Id": "SampleAssetType",
-  "Description": "This is a sample asset type.",
-  "Metadata": [
-    {
-      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
-      "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
-      "SdsTypeCode": "Double",
-      "Value": 0.01
-    }
-  ],
-  "TypeReferences": [
-    {
-      "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-      "StreamReferenceName": "ReferenceName",
-      "TypeId": "PI-Float32"
-    }
-  ]
-}
-
-```
-
----
-
 ### StatusConfiguration
 
 <a id="schemastatusconfiguration"></a>
@@ -1796,6 +1591,36 @@ Status is a property of an asset or asset type that defines the simple status of
 |---|---|
 |Unspecified|0|
 |StreamPropertyMapping|1|
+
+---
+
+### ErrorTemplate
+
+<a id="schemaerrortemplate"></a>
+<a id="schema_ErrorTemplate"></a>
+<a id="tocSerrortemplate"></a>
+<a id="tocserrortemplate"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|OperationId|string|false|true|Operation identifier|
+|Error|string|false|true|Error string|
+|Resolution|string|false|true|Resolution string|
+|Reason|string|false|true|Error reason string|
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+
+```
 
 ---
 

@@ -30,7 +30,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |---|---|---|
 |200|[ResolvedAsset](#schemaresolvedasset)|Resolved asset with the specified asset identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
-|401|[ErrorTemplate](#schemaerrortemplate)|Unauthorized|
+|403|None|Forbidden<br/>|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 
 #### Example response body

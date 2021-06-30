@@ -76,18 +76,15 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
 
 ```json
 {
-  "Id": "string",
-  "AssetTypeId": "string",
-  "Name": "string",
-  "Description": "string",
+  "Id": "SampleAsset",
+  "Description": "This is a sample asset.",
   "Metadata": [
     {
-      "Id": "Sample Metadata Id",
-      "Name": "Asset Model number",
-      "Description": "This metadata represents an model number attribute on the asset.",
+      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+      "Name": "ModelNumber",
+      "Description": "This is a static attribute on the asset which represents the model number.",
       "SdsTypeCode": "Double",
-      "Value": "RFA-123",
-      "Uom": null
+      "Value": 0.01
     }
   ],
   "StreamReferences": [
@@ -97,14 +94,7 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
       "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
       "StreamId": "PI_bifrostbigdaddy_1"
     }
-  ],
-  "Status": {
-    "StreamReferenceId": "string",
-    "StreamPropertyId": "string",
-    "ValueStatusMappings": [
-      {}
-    ]
-  }
+  ]
 }
 ```
 
@@ -331,18 +321,15 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets
 ```json
 [
   {
-    "Id": "string",
-    "AssetTypeId": "string",
-    "Name": "string",
-    "Description": "string",
+    "Id": "SampleAsset",
+    "Description": "This is a sample asset.",
     "Metadata": [
       {
-        "Id": "Sample Metadata Id",
-        "Name": "Asset Model number",
-        "Description": "This metadata represents an model number attribute on the asset.",
+        "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+        "Name": "ModelNumber",
+        "Description": "This is a static attribute on the asset which represents the model number.",
         "SdsTypeCode": "Double",
-        "Value": "RFA-123",
-        "Uom": null
+        "Value": 0.01
       }
     ],
     "StreamReferences": [
@@ -352,18 +339,7 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets
         "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
         "StreamId": "PI_bifrostbigdaddy_1"
       }
-    ],
-    "Status": {
-      "StreamReferenceId": "string",
-      "StreamPropertyId": "string",
-      "ValueStatusMappings": [
-        {
-          "Value": null,
-          "Status": null,
-          "DisplayName": null
-        }
-      ]
-    }
+    ]
   }
 ]
 ```
@@ -1448,144 +1424,6 @@ Status is a property of an asset or asset type that defines the simple status of
 
 ---
 
-### DeprecatedAsset
-
-<a id="schemadeprecatedasset"></a>
-<a id="schema_DeprecatedAsset"></a>
-<a id="tocSdeprecatedasset"></a>
-<a id="tocsdeprecatedasset"></a>
-
-#### Properties
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|Id|string|false|true|Asset Id|
-|AssetTypeId|string|false|true|Asset Type Id|
-|Name|string|false|true|Asset Name|
-|Description|string|false|true|None|
-|Metadata|[[MetadataItem](#schemametadataitem)]|false|true|[An asset or asset type metadata is static information associated with a given asset. A given metadata contains a list of individual metadata values. There is no limit on the number of metadata values defined by an asset. An asset or asset type metadata does not stand alone. It must be specified within an asset or asset type object and, therefore, there are no direct API routes to asset or asset type metadata.]|
-|StreamReferences|[[StreamReference](#schemastreamreference)]|false|true|[An asset stream reference represents dynamic stream data associated with an asset. The references must either be an SDS stream or an SDS stream view. Asset-centric data routes provide direct access to dynamic data for a given asset. There are no limitations on the number of references an asset may contain. However, an asset cannot contain multiple references to the same SDS stream. An asset stream reference does not stand alone. It must be specified within an asset object and, therefore, asset references do not have direct API routes.]|
-|Status|[StatusMapping](#schemastatusmapping)|false|true|None|
-
-```json
-{
-  "Id": "string",
-  "AssetTypeId": "string",
-  "Name": "string",
-  "Description": "string",
-  "Metadata": [
-    {
-      "Id": "Sample Metadata Id",
-      "Name": "Asset Model number",
-      "Description": "This metadata represents an model number attribute on the asset.",
-      "SdsTypeCode": "Double",
-      "Value": "RFA-123",
-      "Uom": null
-    }
-  ],
-  "StreamReferences": [
-    {
-      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-      "Name": "Data",
-      "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
-      "StreamId": "PI_bifrostbigdaddy_1"
-    }
-  ],
-  "Status": {
-    "StreamReferenceId": "string",
-    "StreamPropertyId": "string",
-    "ValueStatusMappings": [
-      {
-        "Value": null,
-        "Status": "[",
-        "DisplayName": "string"
-      }
-    ]
-  }
-}
-
-```
-
----
-
-### StatusMapping
-
-<a id="schemastatusmapping"></a>
-<a id="schema_StatusMapping"></a>
-<a id="tocSstatusmapping"></a>
-<a id="tocsstatusmapping"></a>
-
-#### Properties
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|StreamReferenceId|string|true|false|None|
-|StreamPropertyId|string|true|false|None|
-|ValueStatusMappings|[[ValueStatusMapping](#schemavaluestatusmapping)]|false|true|None|
-
-```json
-{
-  "StreamReferenceId": "string",
-  "StreamPropertyId": "string",
-  "ValueStatusMappings": [
-    {
-      "Value": null,
-      "Status": 0,
-      "DisplayName": "string"
-    }
-  ]
-}
-
-```
-
----
-
-### ValueStatusMapping
-
-<a id="schemavaluestatusmapping"></a>
-<a id="schema_ValueStatusMapping"></a>
-<a id="tocSvaluestatusmapping"></a>
-<a id="tocsvaluestatusmapping"></a>
-
-#### Properties
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|Value|any|false|true|None|
-|Status|[StatusEnum](#schemastatusenum)|true|false|Pre-defined asset status values.|
-|DisplayName|string|false|true|None|
-
-```json
-{
-  "Value": null,
-  "Status": 0,
-  "DisplayName": "string"
-}
-
-```
-
----
-
-### StatusEnum
-
-<a id="schemastatusenum"></a>
-<a id="schema_StatusEnum"></a>
-<a id="tocSstatusenum"></a>
-<a id="tocsstatusenum"></a>
-
-Pre-defined asset status values.
-
-#### Enumerated Values
-
-|Property|Value|
-|---|---|
-|Unknown|0|
-|Good|1|
-|Warning|2|
-|Bad|3|
-
----
-
 ### MultiStatusResultOfAssetAndChildErrorTemplate
 
 <a id="schemamultistatusresultofassetandchilderrortemplate"></a>
@@ -1903,6 +1741,26 @@ Matched fields. Contains the property that matched along with the matched terms.
 }
 
 ```
+
+---
+
+### StatusEnum
+
+<a id="schemastatusenum"></a>
+<a id="schema_StatusEnum"></a>
+<a id="tocSstatusenum"></a>
+<a id="tocsstatusenum"></a>
+
+Pre-defined asset status values.
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|Unknown|0|
+|Good|1|
+|Warning|2|
+|Bad|3|
 
 ---
 

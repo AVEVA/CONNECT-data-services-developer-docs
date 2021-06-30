@@ -33,17 +33,15 @@ This procedure creates a stream view that maps the **MyOCS.PumpState** type to t
 1. In the menu bar, click **Add Stream View** to open a pane on the right side.
 
 
-1. In the `Create Stream View` pane at step 1: `Details`, enter the following information:
-
+1. In the `Create Stream View` pane at Step 1: `Details`, enter the following information:
 
    - `Id` &ndash; **MyOCS.PumpTemperatureView**
    - `Name` &ndash; Optionally, give the stream view a different name. Leave this field blank to use the Id as the name.
    - `SourceType` &ndash; From the list, choose the type **MyOCS.PumpState**.
    - `TargetType` &ndash; From the list, choose the type **MyOCS.PumpState.Temperature**.
    - `Description` &ndash; Optionally, add a description for this stream view.
-
-
-1. In the lower right, click **Next** to proceed to step 2: `Property Mappings`.
+   
+1. In the lower right, click **Next** to proceed to Step 2: `Property Mappings`.
 
 1. Click **Add Property Mapping** twice to create two empty property mappings.
 

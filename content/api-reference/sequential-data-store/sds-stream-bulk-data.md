@@ -10,12 +10,7 @@ Controller for methods hosted at {namespaceId}/Bulk/Streams/Data/Joins
 
 <a id="opIdStreamsData_List Window Values"></a>
 
-Returns data from multiple streams, joined based on the request specifications. Streams must be of the same type.
-GET and POST join requests are supported.
-        
-[GET method](xref:sdsReadingDataApi#getjoin): ``stream``, ``joinMode``, ``startIndex``, and ``endIndex`` are specified in the request URI.
-
-[POST method](xref:sdsReadingDataApi#post-request): only ``joinMode`` is specified in the URI. Streams and read specifications for each stream are specified in the request body.
+ERROR: The URL https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/datacalls.yaml#join-values is invalid and/or its contents could not be read.
 
 ### Request
 ```text 
@@ -25,8 +20,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
 
 ### Response
 
@@ -63,12 +58,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
 
 <a id="opIdStreamsData_Get Window Values2"></a>
 
-Returns data from multiple streams, joined based on the request specifications. Streams must be of the same type.
-GET and POST join requests are supported.
-        
-[GET method](xref:sdsReadingDataApi#getjoin): ``stream``, ``joinMode``, ``startIndex``, and ``endIndex`` are specified in the request URI.
-
-[POST method](xref:sdsReadingDataApi#post-request): only ``joinMode`` is specified in the URI. Streams and read specifications for each stream are specified in the request body.
+ERROR: The URL https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/datacalls.yaml#join-values is invalid and/or its contents could not be read.
 
 ### Request
 ```text 
@@ -78,8 +68,8 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
 
 ### Response
 

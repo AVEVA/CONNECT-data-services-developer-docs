@@ -592,14 +592,44 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2
 ```json
 [
   {
-    "Id": "HeaterType",
-    "Name": "HeaterType",
-    "Description": "This is an Asset Type which represents heater asset."
+    "Id": "SampleAssetType",
+    "Description": "This is a sample asset type.",
+    "Metadata": [
+      {
+        "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+        "Name": "ModelNumber",
+        "Description": "This is a static attribute on the asset which represents the model number.",
+        "SdsTypeCode": "Double",
+        "Value": 0.01
+      }
+    ],
+    "TypeReferences": [
+      {
+        "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+        "StreamReferenceName": "ReferenceName",
+        "TypeId": "PI-Float32"
+      }
+    ]
   },
   {
-    "Id": "PressureType",
-    "Name": "PressureType",
-    "Description": "This is an Asset Type which represents pressure asset."
+    "Id": "SampleAssetType",
+    "Description": "This is a sample asset type.",
+    "Metadata": [
+      {
+        "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+        "Name": "ModelNumber",
+        "Description": "This is a static attribute on the asset which represents the model number.",
+        "SdsTypeCode": "Double",
+        "Value": 0.01
+      }
+    ],
+    "TypeReferences": [
+      {
+        "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+        "StreamReferenceName": "ReferenceName",
+        "TypeId": "PI-Float32"
+      }
+    ]
   }
 ]
 ```
@@ -782,11 +812,48 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{ass
 > 200 Response
 
 ```json
-{
-  "Id": "HeaterType",
-  "Name": "HeaterType",
-  "Description": "This is an Asset Type which represents heater asset."
-}
+[
+  {
+    "Id": "SampleAssetType",
+    "Description": "This is a sample asset type.",
+    "Metadata": [
+      {
+        "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+        "Name": "ModelNumber",
+        "Description": "This is a static attribute on the asset which represents the model number.",
+        "SdsTypeCode": "Double",
+        "Value": 0.01
+      }
+    ],
+    "TypeReferences": [
+      {
+        "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+        "StreamReferenceName": "ReferenceName",
+        "TypeId": "PI-Float32"
+      }
+    ]
+  },
+  {
+    "Id": "SampleAssetType",
+    "Description": "This is a sample asset type.",
+    "Metadata": [
+      {
+        "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+        "Name": "ModelNumber",
+        "Description": "This is a static attribute on the asset which represents the model number.",
+        "SdsTypeCode": "Double",
+        "Value": 0.01
+      }
+    ],
+    "TypeReferences": [
+      {
+        "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+        "StreamReferenceName": "ReferenceName",
+        "TypeId": "PI-Float32"
+      }
+    ]
+  }
+]
 ```
 
 > 400 Response
@@ -956,14 +1023,22 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{ass
 
 ```json
 {
-  "Id": "TracerAssetType",
-  "Name": "TracerAssetType",
-  "Description": "This is an asset type which represents a tracer unit.",
+  "Id": "SampleAssetType",
+  "Description": "This is a sample asset type.",
   "Metadata": [
     {
-      "Id": "ModelNumber",
+      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
       "Name": "ModelNumber",
-      "SdsTypeCode": "Double"
+      "Description": "This is a static attribute on the asset which represents the model number.",
+      "SdsTypeCode": "Double",
+      "Value": 0.01
+    }
+  ],
+  "TypeReferences": [
+    {
+      "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+      "StreamReferenceName": "ReferenceName",
+      "TypeId": "PI-Float32"
     }
   ]
 }
@@ -974,7 +1049,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{ass
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AssetType](#schemaassettype)|Asset type with specified identifier|
-|201|[AssetType](#schemaassettype)|Asset type with specified identifier|
+|201|[AssetType](#schemaassettype)|Asset type created|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
 |409|[ErrorTemplate](#schemaerrortemplate)|Conflict|
 |412|[ErrorTemplate](#schemaerrortemplate)|Pre-Condition Failed|
@@ -1130,20 +1205,22 @@ List of asset types you want to create.<br/>
 ```json
 [
   {
-    "Id": "FirstAssetTypeToCreate",
-    "Name": "FirstAssetTypeToCreate",
-    "Description": "This is the first Asset type to create in this bulk call."
-  },
-  {
-    "Id": "SecondAssetTypeToCreate",
-    "Name": "SecondAssetTypeToCreate",
-    "Description": "This is the second Asset type to create in this bulk call.",
+    "Id": "SampleAssetType",
+    "Description": "This is a sample asset type.",
     "Metadata": [
       {
-        "Id": "FirstMetdataOfTheSecondAssetType",
+        "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
         "Name": "ModelNumber",
+        "Description": "This is a static attribute on the asset which represents the model number.",
         "SdsTypeCode": "Double",
-        "Value": 1234
+        "Value": 0.01
+      }
+    ],
+    "TypeReferences": [
+      {
+        "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+        "StreamReferenceName": "ReferenceName",
+        "TypeId": "PI-Float32"
       }
     ]
   }
@@ -1164,27 +1241,42 @@ List of asset types you want to create.<br/>
 ```json
 [
   {
-    "Id": "HeaterAssetType",
-    "Name": "HeaterAssetType",
-    "Description": "This is an asset type which represents heaters",
+    "Id": "SampleAssetType",
+    "Description": "This is a sample asset type.",
     "Metadata": [
       {
-        "Id": "ModelNumber",
+        "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
         "Name": "ModelNumber",
-        "Description": "This is attribute with double value representing the model number.",
-        "SdsTypeCode": "Double"
+        "Description": "This is a static attribute on the asset which represents the model number.",
+        "SdsTypeCode": "Double",
+        "Value": 0.01
+      }
+    ],
+    "TypeReferences": [
+      {
+        "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+        "StreamReferenceName": "ReferenceName",
+        "TypeId": "PI-Float32"
       }
     ]
   },
   {
-    "Id": "TracerAssetType",
-    "Name": "TracerAssetType",
-    "Description": "This is an asset type which represents a tracer unit.",
+    "Id": "SampleAssetType",
+    "Description": "This is a sample asset type.",
     "Metadata": [
       {
-        "Id": "ModelNumber",
+        "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
         "Name": "ModelNumber",
-        "SdsTypeCode": "Double"
+        "Description": "This is a static attribute on the asset which represents the model number.",
+        "SdsTypeCode": "Double",
+        "Value": 0.01
+      }
+    ],
+    "TypeReferences": [
+      {
+        "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+        "StreamReferenceName": "ReferenceName",
+        "TypeId": "PI-Float32"
       }
     ]
   }

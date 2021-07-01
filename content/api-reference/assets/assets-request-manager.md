@@ -168,14 +168,46 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2
 ```json
 [
   {
-    "Id": "Heater_HIJK",
-    "Name": "HeaterOnFirstFloor",
-    "Description": "This is Asset which represents a heater on the first floor."
+    "Id": "SampleAsset",
+    "Description": "This is a sample asset.",
+    "Metadata": [
+      {
+        "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+        "Name": "ModelNumber",
+        "Description": "This is a static attribute on the asset which represents the model number.",
+        "SdsTypeCode": "Double",
+        "Value": 0.01
+      }
+    ],
+    "StreamReferences": [
+      {
+        "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+        "Name": "Data",
+        "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+        "StreamId": "PI_bifrostbigdaddy_1"
+      }
+    ]
   },
   {
-    "Id": "Heater_ABCDEF",
-    "Name": "HeaterOnFirstFloor",
-    "Description": "This is Asset which represents a heater on the first floor."
+    "Id": "SampleAsset",
+    "Description": "This is a sample asset.",
+    "Metadata": [
+      {
+        "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+        "Name": "ModelNumber",
+        "Description": "This is a static attribute on the asset which represents the model number.",
+        "SdsTypeCode": "Double",
+        "Value": 0.01
+      }
+    ],
+    "StreamReferences": [
+      {
+        "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+        "Name": "Data",
+        "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+        "StreamId": "PI_bifrostbigdaddy_1"
+      }
+    ]
   }
 ]
 ```
@@ -245,6 +277,7 @@ Asset you want to create<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Asset](#schemaasset)|Asset that was created.|
+|201|[Asset](#schemaasset)|Asset that was created.|
 |302|None|Asset you attempted to create is identical to one that already exists.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 |403|[ErrorTemplate](#schemaerrortemplate)|You are not authorized to create assets.|
@@ -254,6 +287,8 @@ Asset you want to create<br/>
 
 |Status|Header|Type|Description|
 |---|---|---|---|
+|200|Etag|integer|Version|
+|201|Etag|integer|Version|
 |302|Location|string|Location to get the identical resource.|
 
 #### Example response body
@@ -261,23 +296,48 @@ Asset you want to create<br/>
 
 ```json
 {
-  "Id": "Heater_01_01_02",
-  "Name": "HeaterOnFirstFloor",
-  "Description": "This is Asset which represents a heater on the first floor.",
+  "Id": "SampleAsset",
+  "Description": "This is a sample asset.",
   "Metadata": [
     {
-      "Id": "17020d80-1dc8-4690-932f-3421c9cff0d1",
+      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
       "Name": "ModelNumber",
-      "Description": "This is attribute with double value representing the model number.",
+      "Description": "This is a static attribute on the asset which represents the model number.",
       "SdsTypeCode": "Double",
-      "Value": 1.3
+      "Value": 0.01
     }
   ],
   "StreamReferences": [
     {
-      "Id": "63c0ba1d-f2db-4b28-b650-7e45afca9ab4",
+      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
       "Name": "Data",
-      "Description": "This is reference to a stream. The stream has data coming from a heater.",
+      "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+      "StreamId": "PI_bifrostbigdaddy_1"
+    }
+  ]
+}
+```
+
+> 201 Response
+
+```json
+{
+  "Id": "SampleAsset",
+  "Description": "This is a sample asset.",
+  "Metadata": [
+    {
+      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+      "Name": "ModelNumber",
+      "Description": "This is a static attribute on the asset which represents the model number.",
+      "SdsTypeCode": "Double",
+      "Value": 0.01
+    }
+  ],
+  "StreamReferences": [
+    {
+      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+      "Name": "Data",
+      "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
       "StreamId": "PI_bifrostbigdaddy_1"
     }
   ]
@@ -664,20 +724,23 @@ List of assets you want to create.<br/>
 ```json
 [
   {
-    "Id": "FirstAssetToCreate",
-    "Name": "FirstAssetToCreate",
-    "Description": "This is the first Asset to create in this bulk call."
-  },
-  {
-    "Id": "SecondAssetToCreate",
-    "Name": "SecondAssetToCreate",
-    "Description": "This is the second Asset to create in this bulk call.",
+    "Id": "SampleAsset",
+    "Description": "This is a sample asset.",
     "Metadata": [
       {
-        "Id": "FirstMetdataOfTheSecondAsset",
+        "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
         "Name": "ModelNumber",
+        "Description": "This is a static attribute on the asset which represents the model number.",
         "SdsTypeCode": "Double",
-        "Value": 1234
+        "Value": 0.01
+      }
+    ],
+    "StreamReferences": [
+      {
+        "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+        "Name": "Data",
+        "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+        "StreamId": "PI_bifrostbigdaddy_1"
       }
     ]
   }
@@ -698,29 +761,44 @@ List of assets you want to create.<br/>
 ```json
 [
   {
-    "Id": "Heater_01_01_02",
-    "Name": "HeaterOnFirstFloor",
-    "Description": "This is an Asset which represents a heater on the first floor.",
+    "Id": "SampleAsset",
+    "Description": "This is a sample asset.",
     "Metadata": [
       {
-        "Id": "17020d80-1dc8-4690-932f-3421c9cff0d1",
+        "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
         "Name": "ModelNumber",
-        "Description": "This is attribute with double value representing the model number.",
+        "Description": "This is a static attribute on the asset which represents the model number.",
         "SdsTypeCode": "Double",
-        "Value": 1.3
+        "Value": 0.01
+      }
+    ],
+    "StreamReferences": [
+      {
+        "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+        "Name": "Data",
+        "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+        "StreamId": "PI_bifrostbigdaddy_1"
       }
     ]
   },
   {
-    "Id": "TracerUnit_101",
-    "Name": "TracerOnRoof",
-    "Description": "This is an Asset which represents a tracer.",
+    "Id": "SampleAsset",
+    "Description": "This is a sample asset.",
     "Metadata": [
       {
-        "Id": "Tracer_1234",
+        "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
         "Name": "ModelNumber",
+        "Description": "This is a static attribute on the asset which represents the model number.",
         "SdsTypeCode": "Double",
-        "Value": 1234
+        "Value": 0.01
+      }
+    ],
+    "StreamReferences": [
+      {
+        "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+        "Name": "Data",
+        "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+        "StreamId": "PI_bifrostbigdaddy_1"
       }
     ]
   }

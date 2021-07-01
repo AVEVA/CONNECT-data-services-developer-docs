@@ -13,9 +13,9 @@ Controller for methods hosted at {namespaceId}/Bulk/Streams/Data/Joins
 Returns data from multiple streams, joined based on the request specifications. Streams must be of the same type.
 GET and POST join requests are supported.
         
-[GET method](https://ocs-docs.osisoft.com/Content_Portal/Documentation/SequentialDataStore/Reading_Data_API.html#getjoin): ``stream``, ``joinMode``, ``startIndex``, and ``endIndex`` are specified in the request URI.
+[GET method](xref:sdsReadingDataApi#getjoin): ``stream``, ``joinMode``, ``startIndex``, and ``endIndex`` are specified in the request URI.
 
-[POST method](https://ocs-docs.osisoft.com/Content_Portal/Documentation/SequentialDataStore/Reading_Data_API.html#post-request): only ``joinMode`` is specified in the URI. Streams and read specifications for each stream are specified in the request body.
+[POST method](xref:sdsReadingDataApi#post-request): only ``joinMode`` is specified in the URI. Streams and read specifications for each stream are specified in the request body.
 
 ### Request
 ```text 
@@ -66,9 +66,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
 Returns data from multiple streams, joined based on the request specifications. Streams must be of the same type.
 GET and POST join requests are supported.
         
-[GET method](https://ocs-docs.osisoft.com/Content_Portal/Documentation/SequentialDataStore/Reading_Data_API.html#getjoin): ``stream``, ``joinMode``, ``startIndex``, and ``endIndex`` are specified in the request URI.
+[GET method](xref:sdsReadingDataApi#getjoin): ``stream``, ``joinMode``, ``startIndex``, and ``endIndex`` are specified in the request URI.
 
-[POST method](https://ocs-docs.osisoft.com/Content_Portal/Documentation/SequentialDataStore/Reading_Data_API.html#post-request): only ``joinMode`` is specified in the URI. Streams and read specifications for each stream are specified in the request body.
+[POST method](xref:sdsReadingDataApi#post-request): only ``joinMode`` is specified in the URI. Streams and read specifications for each stream are specified in the request body.
 
 ### Request
 ```text 

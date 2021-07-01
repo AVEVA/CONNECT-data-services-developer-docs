@@ -13,17 +13,17 @@ Controller for methods hosted at {streamId}/Data/
 Returns a collection of stored values at indexes based on request parameters.
   
 SDS supports four ways of specifying which stored events to return:
-- [Find Distinct Value](https://ocs-docs.osisoft.com/Content_Portal/Documentation/SequentialDataStore/Reading_Data_API.html#find-distinct-value): Returns a stored event based on the specified index and searchMode. 
+- [Find Distinct Value](xref:sdsReadingDataApi#find-distinct-value): Returns a stored event based on the specified index and searchMode. 
     
     **Parameters**: Accepts ``index`` and ``searchMode``.
-- [Filtered](https://ocs-docs.osisoft.com/Content_Portal/Documentation/SequentialDataStore/Reading_Data_API.html#filtered): Returns a collection of stored values as determined by a filter.The filter limits results by applying an expression against event fields. 
+- [Filtered](xref:sdsReadingDataApi#getvaluesfiltered): Returns a collection of stored values as determined by a filter.The filter limits results by applying an expression against event fields. 
     
     **Parameters**: Accepts a ``filter`` expression. 
-- [Range](https://ocs-docs.osisoft.com/Content_Portal/Documentation/SequentialDataStore/Reading_Data_API.html#getvaluesrange): Returns a collection of stored values as determined by a ``startIndex`` and ``count``. 
+- [Range](xref:sdsReadingDataApi#getvaluesrange): Returns a collection of stored values as determined by a ``startIndex`` and ``count``. 
     Additional optional parameters specify the direction of the range, how to handle events near or at the start index, whether to skip a certain number of events at the start of the range, and how to filter the data.
     
     **Parameters**: Accepts ``startIndex`` and ``count``.
-- [Window](https://ocs-docs.osisoft.com/Content_Portal/Documentation/SequentialDataStore/Reading_Data_API.html#getvalueswindow): Returns a collection of stored events based on the specified ``startIndex`` and ``endIndex``. 
+- [Window](xref:sdsReadingDataApi#getvalueswindow): Returns a collection of stored events based on the specified ``startIndex`` and ``endIndex``. 
     
     **Parameters**: Accepts ``startIndex`` and ``endIndex``. This request has an optional continuation token for large collections of events.
 
@@ -253,17 +253,17 @@ PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Dat
 
 There are two options for specifying which events to remove from a stream: index collection and windows
 
-[Index Collection](https://ocs-docs.osisoft.com/Content_Portal/Documentation/SequentialDataStore/Writing_Data_API.html#index-collection): Removes the event at each index from the specified stream. 
+[Index Collection](xref:sdsWritingDataApi#index-collection): Removes the event at each index from the specified stream. 
 Different overloads are available to make it easier to indicate the index where you want to remove a data event. 
 One or more indexes can be specified in the request.
 
-[Window](https://ocs-docs.osisoft.com/Content_Portal/Documentation/SequentialDataStore/Writing_Data_API.html#removewindow): Removes events at and between the start index and end index.
+[Window](xref:sdsWritingDataApi#window): Removes events at and between the start index and end index.
 A window can be specified with a start index and end index.
 
 **Notes**: If any individual event fails to be removed, the entire operation is rolled back and no events are removed.
 The ``streamId`` and ``index`` that caused the issue are included in the error response.
 If you attempt to remove events at indexes that have no events, an error is returned.
-If this occurs, you can use [Window request](https://ocs-docs.osisoft.com/Content_Portal/Documentation/SequentialDataStore/Writing_Data_API.html#request-3) format to remove any events from a specified window of indexes, which will not return an error if no data is found.
+If this occurs, use the [Window](xref:sdsWritingDataApi#window) request format to remove any events from a specified window of indexes, which will not return an error if no data is found.
 
 ### Request
 ```text 
@@ -365,12 +365,12 @@ Interpolation is not supported for streams with compound indexes.
 
 SDS supports two ways of specifying which stored events to return: index collection and interval.
 
-[Index collection](https://ocs-docs.osisoft.com/Content_Portal/Documentation/SequentialDataStore/Reading_Data_API.html#index-collection): Returns events at the specified indexes.
+[Index collection](xref:sdsReadingDataApi#index-collection): Returns events at the specified indexes.
 If no stored event exists at a specified index, the stream's read characteristics determine how the returned event is calculated.
 
 **Parameters**: Accepts ``index``.
 
-[Interval](https://ocs-docs.osisoft.com/Content_Portal/Documentation/SequentialDataStore/Reading_Data_API.html#getvaluesinterpolatedinterval): Returns events at evenly spaced intervals based on the specified ``startIndex``, ``endIndex``, and ``count``. 
+[Interval](xref:sdsReadingDataApi#getvaluesinterpolatedinterval): Returns events at evenly spaced intervals based on the specified ``startIndex``, ``endIndex``, and ``count``. 
 If no stored event exists at an index interval, the stream's read characteristics determine how the returned event is calculated. 
 
 **Parameters**: Accepts ``startIndex``, ``endIndex`` and ``count``.

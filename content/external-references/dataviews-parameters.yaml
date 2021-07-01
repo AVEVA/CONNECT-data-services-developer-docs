@@ -2,14 +2,14 @@
 acl:
   type: markdown
   value: |
-    An [`AccessControlList`](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html#access-control-lists)
+    An [`AccessControlList`](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html#access-control-lists).
 
 # cache
 cache:
   type: text/plain
   value: |
     "Refresh" to force the resource to re-resolve.
-    "Preserve" to use cached information, if available. This is the default value
+    "Preserve" to use cached information, if available. This is the default value.
 
 cache-data:
   type: markdown
@@ -98,7 +98,7 @@ interval:
 owner:
   type: markdown
   value: |
-    A [`Trustee`](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html#owner)
+    A [`Trustee`](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html#owner).
 
 # skip
 skip-dataitems:
@@ -122,4 +122,4 @@ skip-groups:
 start-index:
   type: markdown
   value: |
-    The requested start index, inclusive. The default value is the ```.DefaultStartIndex``` of the data view. Optional if a default value is specified
+    The requested start index, inclusive. The default value is the ```.DefaultStartIndex``` of the data view. Optional if a default value is specified.

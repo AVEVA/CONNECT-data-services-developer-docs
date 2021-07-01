@@ -4,13 +4,39 @@ uid: sds-stream-data-transform
 ---
 
 # Stream Data Transform
-ERROR: The URL https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/datacalls.yaml#stream-data-transform is invalid and/or its contents could not be read.
+Controller for methods hosted at ``{streamId}/Transform/``.
+The Transform route is for SdsStreamView project and unit conversion of stream data.
+- [Reading with SdsStreamViews](https://ocs-docs.osisoft.com/Content_Portal/Documentation/SequentialDataStore/Reading_Data.html#reading-with-sdsstreamviews):Changing the shape of the returned data.
+When transforming data with an SdsStreamView, the data read is converted to the target type specified in the SdsStreamView. 
+All stream view transformations are HTTP GET requests. 
+Specify the stream view ID `(streamViewId={streamViewId})` at the end of the transformation endpoint.
+When data is requested with an SdsStreamView, the read characteristics defined by the target type of the SdsStreamView determine what is returned. 
+- [Unit of measure conversions](https://ocs-docs.osisoft.com/Content_Portal/Documentation/SequentialDataStore/Reading_Data.html#unit-conversion-of-data): Converting the unit of measure of the data. 
+SDS supports assigning Units of Measure (UOM) to stream data.
+If stream data has UOM information associated, SDS supports reading data with unit conversions applied.
+On each read data request, unit conversions are specified by a user defined collection of SdsStreamPropertyOverride objects in read requests. 
+All unit conversions of data are HTTP POST requests with a request body containing a collection of SdsStreamPropertyOverride objects. 
 
 ## `List Data`
 
 <a id="opIdStreamDataTransform_List Data"></a>
 
-ERROR: The URL https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/datacalls.yaml#list-values is invalid and/or its contents could not be read.
+Returns a collection of stored values at indexes based on request parameters.
+  
+SDS supports four ways of specifying which stored events to return:
+- [Find Distinct Value](xref:sdsReadingDataApi#find-distinct-value): Returns a stored event based on the specified index and searchMode. 
+    
+    **Parameters**: Accepts ``index`` and ``searchMode``.
+- [Filtered](xref:sdsReadingDataApi#getvaluesfiltered): Returns a collection of stored values as determined by a filter.The filter limits results by applying an expression against event fields. 
+    
+    **Parameters**: Accepts a ``filter`` expression. 
+- [Range](xref:sdsReadingDataApi#getvaluesrange): Returns a collection of stored values as determined by a ``startIndex`` and ``count``. 
+    Additional optional parameters specify the direction of the range, how to handle events near or at the start index, whether to skip a certain number of events at the start of the range, and how to filter the data.
+    
+    **Parameters**: Accepts ``startIndex`` and ``count``.
+- [Window](xref:sdsReadingDataApi#getvalueswindow): Returns a collection of stored events based on the specified ``startIndex`` and ``endIndex``. 
+    
+    **Parameters**: Accepts ``startIndex`` and ``endIndex``. This request has an optional continuation token for large collections of events.
 
 ### Request
 ```text 
@@ -37,7 +63,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {
@@ -58,7 +84,22 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 
 <a id="opIdStreamDataTransform_Get Data2"></a>
 
-ERROR: The URL https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/datacalls.yaml#list-values is invalid and/or its contents could not be read.
+Returns a collection of stored values at indexes based on request parameters.
+  
+SDS supports four ways of specifying which stored events to return:
+- [Find Distinct Value](xref:sdsReadingDataApi#find-distinct-value): Returns a stored event based on the specified index and searchMode. 
+    
+    **Parameters**: Accepts ``index`` and ``searchMode``.
+- [Filtered](xref:sdsReadingDataApi#getvaluesfiltered): Returns a collection of stored values as determined by a filter.The filter limits results by applying an expression against event fields. 
+    
+    **Parameters**: Accepts a ``filter`` expression. 
+- [Range](xref:sdsReadingDataApi#getvaluesrange): Returns a collection of stored values as determined by a ``startIndex`` and ``count``. 
+    Additional optional parameters specify the direction of the range, how to handle events near or at the start index, whether to skip a certain number of events at the start of the range, and how to filter the data.
+    
+    **Parameters**: Accepts ``startIndex`` and ``count``.
+- [Window](xref:sdsReadingDataApi#getvalueswindow): Returns a collection of stored events based on the specified ``startIndex`` and ``endIndex``. 
+    
+    **Parameters**: Accepts ``startIndex`` and ``endIndex``. This request has an optional continuation token for large collections of events.
 
 ### Request
 ```text 
@@ -85,7 +126,7 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {
@@ -133,7 +174,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {
@@ -181,7 +222,7 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {
@@ -202,7 +243,21 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 
 <a id="opIdStreamDataTransform_List Data Interpolated"></a>
 
-ERROR: The URL https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/datacalls.yaml#interpolated-values is invalid and/or its contents could not be read.
+Returns a collection of values based on request parameters.
+The stream's read characteristics determine how events are calculated for indexes at which no stored event exists.
+Interpolation is not supported for streams with compound indexes.
+
+SDS supports two ways of specifying which stored events to return: index collection and interval.
+
+[Index collection](xref:sdsReadingDataApi#index-collection): Returns events at the specified indexes.
+If no stored event exists at a specified index, the stream's read characteristics determine how the returned event is calculated.
+
+**Parameters**: Accepts ``index``.
+
+[Interval](xref:sdsReadingDataApi#getvaluesinterpolatedinterval): Returns events at evenly spaced intervals based on the specified ``startIndex``, ``endIndex``, and ``count``. 
+If no stored event exists at an index interval, the stream's read characteristics determine how the returned event is calculated. 
+
+**Parameters**: Accepts ``startIndex``, ``endIndex`` and ``count``.
 
 ### Request
 ```text 
@@ -229,7 +284,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {
@@ -250,7 +305,21 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 
 <a id="opIdStreamDataTransform_Get Data Interpolated2"></a>
 
-ERROR: The URL https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/datacalls.yaml#interpolated-values is invalid and/or its contents could not be read.
+Returns a collection of values based on request parameters.
+The stream's read characteristics determine how events are calculated for indexes at which no stored event exists.
+Interpolation is not supported for streams with compound indexes.
+
+SDS supports two ways of specifying which stored events to return: index collection and interval.
+
+[Index collection](xref:sdsReadingDataApi#index-collection): Returns events at the specified indexes.
+If no stored event exists at a specified index, the stream's read characteristics determine how the returned event is calculated.
+
+**Parameters**: Accepts ``index``.
+
+[Interval](xref:sdsReadingDataApi#getvaluesinterpolatedinterval): Returns events at evenly spaced intervals based on the specified ``startIndex``, ``endIndex``, and ``count``. 
+If no stored event exists at an index interval, the stream's read characteristics determine how the returned event is calculated. 
+
+**Parameters**: Accepts ``startIndex``, ``endIndex`` and ``count``.
 
 ### Request
 ```text 
@@ -277,7 +346,7 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {
@@ -325,7 +394,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {
@@ -373,7 +442,7 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {
@@ -421,7 +490,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {
@@ -469,7 +538,7 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {
@@ -517,7 +586,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {
@@ -565,7 +634,7 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {

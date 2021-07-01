@@ -93,7 +93,7 @@ Content-Type: application/json
    
 ]
 ```
-> 401 Response
+> 401 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {
@@ -197,7 +197,7 @@ Content-Type: application/json
 ]
 }
 ```
-> 400 Response
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {
@@ -248,7 +248,7 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
 #### Example response body
-> 200 Response
+> 200 Response ([SdsType](#schemasdstype))
 
 ```json
 {
@@ -731,7 +731,7 @@ DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {
@@ -788,7 +788,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Reference
 "SdsType":1
 }
 ```
-> 400 Response
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {

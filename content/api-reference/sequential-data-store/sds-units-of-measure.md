@@ -68,7 +68,7 @@ Content-Type: application/json
 }
 ]
 ```
-> 400 Response
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {
@@ -130,7 +130,7 @@ Content-Type: application/json
     "ConversionFactor":0.028349523
 }
 ```
-> 400 Response
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {

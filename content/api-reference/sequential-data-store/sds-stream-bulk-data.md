@@ -10,7 +10,12 @@ Controller for methods hosted at {namespaceId}/Bulk/Streams/Data/Joins
 
 <a id="opIdStreamsData_List Window Values"></a>
 
-ERROR: The URL https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/datacalls.yaml#join-values is invalid and/or its contents could not be read.
+Returns data from multiple streams, joined based on the request specifications. Streams must be of the same type.
+GET and POST join requests are supported.
+        
+[GET method](xref:sdsReadingDataApi#getjoin): ``stream``, ``joinMode``, ``startIndex``, and ``endIndex`` are specified in the request URI.
+
+[POST method](xref:sdsReadingDataApi#post-request): only ``joinMode`` is specified in the URI. Streams and read specifications for each stream are specified in the request body.
 
 ### Request
 ```text 
@@ -37,7 +42,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {
@@ -58,7 +63,12 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
 
 <a id="opIdStreamsData_Get Window Values2"></a>
 
-ERROR: The URL https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/datacalls.yaml#join-values is invalid and/or its contents could not be read.
+Returns data from multiple streams, joined based on the request specifications. Streams must be of the same type.
+GET and POST join requests are supported.
+        
+[GET method](xref:sdsReadingDataApi#getjoin): ``stream``, ``joinMode``, ``startIndex``, and ``endIndex`` are specified in the request URI.
+
+[POST method](xref:sdsReadingDataApi#post-request): only ``joinMode`` is specified in the URI. Streams and read specifications for each stream are specified in the request body.
 
 ### Request
 ```text 
@@ -85,7 +95,7 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {

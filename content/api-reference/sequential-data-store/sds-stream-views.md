@@ -70,7 +70,7 @@ Content-Type: application/json
 }
 ]
 ```
-> 400 Response
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {
@@ -144,7 +144,7 @@ Content-Type: application/json
     ]
 }
 ```
-> 400 Response
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {
@@ -194,7 +194,7 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamView
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
 #### Example response body
-> 200 Response
+> 200 Response ([SdsStreamView](#schemasdsstreamview))
 
 ```json
 {
@@ -256,7 +256,7 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewI
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
 #### Example response body
-> 200 Response
+> 200 Response ([SdsStreamView](#schemasdsstreamview))
 
 ```json
 {
@@ -317,7 +317,7 @@ DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamVi
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {
@@ -393,7 +393,7 @@ Content-Type: application/json
         }
     ]
 }
-```> 400 Response
+```> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {

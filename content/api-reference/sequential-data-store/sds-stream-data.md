@@ -10,7 +10,22 @@ Controller for methods hosted at {streamId}/Data/
 
 <a id="opIdStreamData_List Values"></a>
 
-ERROR: The URL https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/datacalls.yaml#list-values is invalid and/or its contents could not be read.
+Returns a collection of stored values at indexes based on request parameters.
+  
+SDS supports four ways of specifying which stored events to return:
+- [Find Distinct Value](xref:sdsReadingDataApi#find-distinct-value): Returns a stored event based on the specified index and searchMode. 
+    
+    **Parameters**: Accepts ``index`` and ``searchMode``.
+- [Filtered](xref:sdsReadingDataApi#getvaluesfiltered): Returns a collection of stored values as determined by a filter.The filter limits results by applying an expression against event fields. 
+    
+    **Parameters**: Accepts a ``filter`` expression. 
+- [Range](xref:sdsReadingDataApi#getvaluesrange): Returns a collection of stored values as determined by a ``startIndex`` and ``count``. 
+    Additional optional parameters specify the direction of the range, how to handle events near or at the start index, whether to skip a certain number of events at the start of the range, and how to filter the data.
+    
+    **Parameters**: Accepts ``startIndex`` and ``count``.
+- [Window](xref:sdsReadingDataApi#getvalueswindow): Returns a collection of stored events based on the specified ``startIndex`` and ``endIndex``. 
+    
+    **Parameters**: Accepts ``startIndex`` and ``endIndex``. This request has an optional continuation token for large collections of events.
 
 ### Request
 ```text 
@@ -56,7 +71,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 ]
 ```
 
-> 400 Response
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {
@@ -77,7 +92,11 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 
 <a id="opIdStreamData_Insert Values"></a>
 
-ERROR: The URL https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/datacalls.yaml#insert-values is invalid and/or its contents could not be read.
+Inserts data into the specified stream. Returns an error if data is already present at the index of any event.
+
+**Notes**: This request will return an error if an event already exists for any index in the request.
+If any individual index encounters a problem, the entire operation is rolled back and no insertions are made.
+The streamId and index that caused the issue are included in the error response.  
 
 ### Request
 ```text 
@@ -105,7 +124,7 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {
@@ -126,7 +145,11 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 
 <a id="opIdStreamData_Update Values"></a>
 
-ERROR: The URL https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/datacalls.yaml#update-values is invalid and/or its contents could not be read.
+Writes one or more events to or over existing events the specified stream. 
+
+**Notes**: This request performs an insert or a replace depending on whether an event already exists at the event indexes.
+If any item fails to write, the entire operation is rolled back and no events are written to the stream.
+The index that caused the issue is included in the error response.
 
 ### Request
 ```text 
@@ -153,7 +176,7 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {
@@ -174,7 +197,13 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 
 <a id="opIdStreamData_Patch Values"></a>
 
-ERROR: The URL https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/datacalls.yaml#patch-values is invalid and/or its contents could not be read.
+Modifies the specified stream event(s). 
+Patching affects only the data item parameters that are included in the call.
+
+**Notes**: Patching is used to patch the events of the selected fields for one or more events in the stream.
+Only the fields indicated in ``selectExpression`` are modified.
+The events to be modified are indicated by the index value of each entry in the collection. 
+If there is a problem patching any individual event, the entire operation is rolled back and the error will indicate the ``streamId`` and ``index`` of the problem.
 
 ### Request
 ```text 
@@ -201,7 +230,7 @@ PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Dat
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {
@@ -222,7 +251,19 @@ PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Dat
 
 <a id="opIdStreamData_Remove Values"></a>
 
-ERROR: The URL https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/datacalls.yaml#remove-values is invalid and/or its contents could not be read.
+There are two options for specifying which events to remove from a stream: index collection and windows
+
+[Index Collection](xref:sdsWritingDataApi#index-collection): Removes the event at each index from the specified stream. 
+Different overloads are available to make it easier to indicate the index where you want to remove a data event. 
+One or more indexes can be specified in the request.
+
+[Window](xref:sdsWritingDataApi#window): Removes events at and between the start index and end index.
+A window can be specified with a start index and end index.
+
+**Notes**: If any individual event fails to be removed, the entire operation is rolled back and no events are removed.
+The ``streamId`` and ``index`` that caused the issue are included in the error response.
+If you attempt to remove events at indexes that have no events, an error is returned.
+If this occurs, use the [Window](xref:sdsWritingDataApi#window) request format to remove any events from a specified window of indexes, which will not return an error if no data is found.
 
 ### Request
 ```text 
@@ -249,7 +290,7 @@ DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Da
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {
@@ -297,7 +338,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {
@@ -318,7 +359,21 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 
 <a id="opIdStreamData_List Interpolated Values"></a>
 
-ERROR: The URL https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/datacalls.yaml#interpolated-values is invalid and/or its contents could not be read.
+Returns a collection of values based on request parameters.
+The stream's read characteristics determine how events are calculated for indexes at which no stored event exists.
+Interpolation is not supported for streams with compound indexes.
+
+SDS supports two ways of specifying which stored events to return: index collection and interval.
+
+[Index collection](xref:sdsReadingDataApi#index-collection): Returns events at the specified indexes.
+If no stored event exists at a specified index, the stream's read characteristics determine how the returned event is calculated.
+
+**Parameters**: Accepts ``index``.
+
+[Interval](xref:sdsReadingDataApi#getvaluesinterpolatedinterval): Returns events at evenly spaced intervals based on the specified ``startIndex``, ``endIndex``, and ``count``. 
+If no stored event exists at an index interval, the stream's read characteristics determine how the returned event is calculated. 
+
+**Parameters**: Accepts ``startIndex``, ``endIndex`` and ``count``.
 
 ### Request
 ```text 
@@ -345,7 +400,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {
@@ -393,7 +448,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {
@@ -441,7 +496,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {
@@ -489,7 +544,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {

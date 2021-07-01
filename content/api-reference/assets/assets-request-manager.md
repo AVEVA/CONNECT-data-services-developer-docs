@@ -153,7 +153,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Asset](#schemaasset)[]|List of assets in the given namespace.|
+|200|[Asset](#schemaasset)[]|List of assets in the system.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
 
 #### Response Headers
@@ -276,8 +276,8 @@ Asset you want to create<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Asset](#schemaasset)|Asset that was created.|
-|201|[Asset](#schemaasset)|Asset that was created.|
+|200|[Asset](#schemaasset)|OK|
+|201|[Asset](#schemaasset)|Asset created|
 |302|None|Asset you attempted to create is identical to one that already exists.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 |403|[ErrorTemplate](#schemaerrortemplate)|You are not authorized to create assets.|

@@ -200,7 +200,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[AccessControlList](#schemaaccesscontrollist)|Access control of the asset with the specified identifier.|
+|200|[AccessControlList](#schemaaccesscontrollist)|Access control list of the asset with given identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |403|None|Forbidden<br/>|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
@@ -289,7 +289,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|204|None|Access control of the asset with the specified identifier.|
+|204|None|Update success.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |403|None|Forbidden<br/>|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
@@ -332,7 +332,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|Access rights of the asset with the specified identifier.|
+|200|Inline|Access control list of the asset with given identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |403|None|Forbidden<br/>|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
@@ -386,7 +386,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Trustee](#schematrustee)|Owner of the asset with the specified identifier.|
+|200|[Trustee](#schematrustee)|OK|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |403|None|Forbidden<br/>|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
@@ -451,7 +451,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|204|None|No content if success.|
+|204|None|Asset owner updated|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |403|None|Forbidden<br/>|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
@@ -494,7 +494,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Asset](#schemaasset)|Asset with the specified identifier.|
+|200|[Asset](#schemaasset)|Assets with specified identifier|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |403|None|Forbidden<br/>|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
@@ -597,7 +597,7 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetI
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Asset](#schemaasset)|Asset that was created.|
+|200|[Asset](#schemaasset)|OK|
 |302|None|Asset you attempted to create is identical to one that already exists.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |403|[ErrorTemplate](#schemaerrortemplate)|You are not authorized to create assets.|
@@ -703,8 +703,8 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Asset](#schemaasset)|The asset with the specified identifier.|
-|201|[Asset](#schemaasset)|The asset with the specified identifier.|
+|200|[Asset](#schemaasset)|OK|
+|201|[Asset](#schemaasset)|Asset created with specified identifier|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |409|[ErrorTemplate](#schemaerrortemplate)|Conflict|
 |412|[ErrorTemplate](#schemaerrortemplate)|Pre-Condition Failed|

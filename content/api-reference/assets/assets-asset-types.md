@@ -61,7 +61,7 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes
     {
       "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
       "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
+      "Description": "This is a static attribute on the asset type which represents the model number.",
       "SdsTypeCode": "Double",
       "Value": 0.01
     }
@@ -136,7 +136,7 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{ass
     {
       "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
       "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
+      "Description": "This is a static attribute on the asset type which represents the model number.",
       "SdsTypeCode": "Double",
       "Value": 0.01
     }
@@ -187,7 +187,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
     {
       "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
       "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
+      "Description": "This is a static attribute on the asset type which represents the model number.",
       "SdsTypeCode": "Double",
       "Value": 0.01
     }
@@ -279,7 +279,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[AccessControlList](#schemaaccesscontrollist)|Access control of the asset with the specified identifier.|
+|200|[AccessControlList](#schemaaccesscontrollist)|Access control list of the asset type with given identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 |403|None|Forbidden<br/>|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
@@ -368,7 +368,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|204|None|Access control of the asset type with the specified identifier.|
+|204|None|Update success.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 |403|None|Forbidden<br/>|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
@@ -411,7 +411,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|Access rights of the asset type with the specified identifier.|
+|200|Inline|Access control list of the asset with given identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 |403|None|Forbidden<br/>|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
@@ -465,7 +465,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Trustee](#schematrustee)|Owner of asset type with the specified identifier.|
+|200|[Trustee](#schematrustee)|OK|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 |403|None|Forbidden<br/>|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
@@ -530,7 +530,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|204|None|No content if success.|
+|204|None|Asset type owner updated|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 |403|None|Forbidden<br/>|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
@@ -598,7 +598,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2
       {
         "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
         "Name": "ModelNumber",
-        "Description": "This is a static attribute on the asset which represents the model number.",
+        "Description": "This is a static attribute on the asset type which represents the model number.",
         "SdsTypeCode": "Double",
         "Value": 0.01
       }
@@ -612,22 +612,22 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2
     ]
   },
   {
-    "Id": "SampleAssetType",
-    "Description": "This is a sample asset type.",
+    "Id": "SecondSampleAssetType",
+    "Description": "This is a second sample asset type.",
     "Metadata": [
       {
-        "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
-        "Name": "ModelNumber",
-        "Description": "This is a static attribute on the asset which represents the model number.",
+        "Id": "e79cdc54-5d94-4e78-ae1e-eb507c40737d",
+        "Name": "ReleaseNumber",
+        "Description": "This is a static attribute on the asset type which represents the model number.",
         "SdsTypeCode": "Double",
-        "Value": 0.01
+        "Value": 54.5
       }
     ],
     "TypeReferences": [
       {
-        "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+        "StreamReferenceId": "d4f0f8b7-208a-4a6c-8a08-aec3577e0640",
         "StreamReferenceName": "ReferenceName",
-        "TypeId": "PI-Float32"
+        "TypeId": "PI-Int32"
       }
     ]
   }
@@ -678,7 +678,7 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2
     {
       "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
       "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
+      "Description": "This is a static attribute on the asset type which represents the model number.",
       "SdsTypeCode": "Double",
       "Value": 0.01
     }
@@ -697,8 +697,8 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[AssetType](#schemaassettype)|The asset with the specified identifier.|
-|201|[AssetType](#schemaassettype)|The asset with the specified identifier.|
+|200|[AssetType](#schemaassettype)|OK|
+|201|[AssetType](#schemaassettype)|Asset type created|
 |302|None|Asset type already exists.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 |409|[ErrorTemplate](#schemaerrortemplate)|Conflict. See response body for additional details.|
@@ -721,7 +721,7 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2
     {
       "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
       "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
+      "Description": "This is a static attribute on the asset type which represents the model number.",
       "SdsTypeCode": "Double",
       "Value": 0.01
     }
@@ -746,7 +746,7 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2
     {
       "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
       "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
+      "Description": "This is a static attribute on the asset type which represents the model number.",
       "SdsTypeCode": "Double",
       "Value": 0.01
     }
@@ -798,7 +798,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{ass
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[AssetType](#schemaassettype)[]|List of assets in the given namespace.|
+|200|[AssetType](#schemaassettype)[]|Asset type with specified identifier|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 
@@ -820,7 +820,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{ass
       {
         "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
         "Name": "ModelNumber",
-        "Description": "This is a static attribute on the asset which represents the model number.",
+        "Description": "This is a static attribute on the asset type which represents the model number.",
         "SdsTypeCode": "Double",
         "Value": 0.01
       }
@@ -840,7 +840,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{ass
       {
         "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
         "Name": "ModelNumber",
-        "Description": "This is a static attribute on the asset which represents the model number.",
+        "Description": "This is a static attribute on the asset type which represents the model number.",
         "SdsTypeCode": "Double",
         "Value": 0.01
       }
@@ -901,7 +901,7 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{as
     {
       "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
       "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
+      "Description": "This is a static attribute on the asset type which represents the model number.",
       "SdsTypeCode": "Double",
       "Value": 0.01
     }
@@ -920,8 +920,8 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{as
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[AssetType](#schemaassettype)|The asset with the specified identifier.|
-|201|[AssetType](#schemaassettype)|The asset with the specified identifier.|
+|200|[AssetType](#schemaassettype)|OK|
+|201|[AssetType](#schemaassettype)|Asset type created|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 |409|[ErrorTemplate](#schemaerrortemplate)|Conflict. See response body for additional details.|
 |412|[ErrorTemplate](#schemaerrortemplate)|Pre-Condition Failed. See response body for additional details.|
@@ -944,7 +944,7 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{as
     {
       "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
       "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
+      "Description": "This is a static attribute on the asset type which represents the model number.",
       "SdsTypeCode": "Double",
       "Value": 0.01
     }
@@ -969,7 +969,7 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{as
     {
       "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
       "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
+      "Description": "This is a static attribute on the asset type which represents the model number.",
       "SdsTypeCode": "Double",
       "Value": 0.01
     }
@@ -1029,7 +1029,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{ass
     {
       "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
       "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
+      "Description": "This is a static attribute on the asset type which represents the model number.",
       "SdsTypeCode": "Double",
       "Value": 0.01
     }
@@ -1074,7 +1074,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{ass
     {
       "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
       "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
+      "Description": "This is a static attribute on the asset type which represents the model number.",
       "SdsTypeCode": "Double",
       "Value": 0.01
     }
@@ -1099,7 +1099,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{ass
     {
       "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
       "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
+      "Description": "This is a static attribute on the asset type which represents the model number.",
       "SdsTypeCode": "Double",
       "Value": 0.01
     }
@@ -1157,7 +1157,7 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/AssetTypes
       {
         "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
         "Name": "ModelNumber",
-        "Description": "This is a static attribute on the asset which represents the model number.",
+        "Description": "This is a static attribute on the asset type which represents the model number.",
         "SdsTypeCode": "Double",
         "Value": 0.01
       }
@@ -1211,7 +1211,7 @@ List of asset types you want to create.<br/>
       {
         "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
         "Name": "ModelNumber",
-        "Description": "This is a static attribute on the asset which represents the model number.",
+        "Description": "This is a static attribute on the asset type which represents the model number.",
         "SdsTypeCode": "Double",
         "Value": 0.01
       }
@@ -1231,8 +1231,8 @@ List of asset types you want to create.<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[AssetType](#schemaassettype)[]|Asset types that were created.|
-|207|[MultiStatusResultOfAssetTypeAndChildErrorTemplate](#schemamultistatusresultofassettypeandchilderrortemplate)|Asset types that were created.|
+|200|[AssetType](#schemaassettype)[]|Asset types as persisted, including values for optional parameters that were omitted in request.|
+|207|[MultiStatusResultOfAssetTypeAndChildErrorTemplate](#schemamultistatusresultofassettypeandchilderrortemplate)|Partial success. Some asset types were created. See response body for additional details.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 
 #### Example response body
@@ -1247,7 +1247,7 @@ List of asset types you want to create.<br/>
       {
         "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
         "Name": "ModelNumber",
-        "Description": "This is a static attribute on the asset which represents the model number.",
+        "Description": "This is a static attribute on the asset type which represents the model number.",
         "SdsTypeCode": "Double",
         "Value": 0.01
       }
@@ -1267,7 +1267,7 @@ List of asset types you want to create.<br/>
       {
         "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
         "Name": "ModelNumber",
-        "Description": "This is a static attribute on the asset which represents the model number.",
+        "Description": "This is a static attribute on the asset type which represents the model number.",
         "SdsTypeCode": "Double",
         "Value": 0.01
       }
@@ -1298,7 +1298,7 @@ List of asset types you want to create.<br/>
         {
           "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
           "Name": "ModelNumber",
-          "Description": "This is a static attribute on the asset which represents the model number.",
+          "Description": "This is a static attribute on the asset type which represents the model number.",
           "SdsTypeCode": "Double",
           "Value": 0.01
         }
@@ -1357,7 +1357,7 @@ An asset type can be used to create multiple similar assets.A change to the asse
     {
       "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
       "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
+      "Description": "This is a static attribute on the asset type which represents the model number.",
       "SdsTypeCode": "Double",
       "Value": 0.01
     }
@@ -1746,7 +1746,7 @@ Status is a property of an asset or asset type that defines the simple status of
         {
           "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
           "Name": "ModelNumber",
-          "Description": "This is a static attribute on the asset which represents the model number.",
+          "Description": "This is a static attribute on the asset type which represents the model number.",
           "SdsTypeCode": "Double",
           "Value": 0.01
         }

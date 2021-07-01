@@ -4,9 +4,10 @@ uid: gsStreamviews
 
 # Get started with stream views
 
-Stream views allow you to expose stream data as a different type. 
+Stream views enable you to expose stream data as a different type, or with different units of measure and property names. 
 
-A stream view serves as a mapping between the actual underlying type and the type in the stream view, enabling you to in effect remove, rename, or add properties on your original stream data. 
+A stream view serves as a mapping between the underlying type in the stream and the type in the stream view. This enables you to in effect remove, rename, or add properties on your stream data. 
+
 Using a stream view on data retrieval affects only the data retrieved, and does not alter the original source data.
  
 For more information about stream views, see the following topics:
@@ -21,7 +22,7 @@ Repeat the steps in [Get started with types](xref:gsTypes) and create a type wit
 
 ## Procedure
 
-This procedure creates a stream view that maps the **MyOCS.PumpState** type to this new type.
+This procedure creates a stream view that maps the **MyOCS.PumpState** type to this new type, **MyOCS.Pump.State.Temperature**.
 
 1. Click the ![Menu icon](images/menu-icon.png) icon and choose **Sequential Data Store** (under Data Management).
 
@@ -31,7 +32,6 @@ This procedure creates a stream view that maps the **MyOCS.PumpState** type to t
 1. From the **Streams/Types/Stream Views Selector** list, select **Stream Views**.
 
 1. In the menu bar, click **Add Stream View** to open a pane on the right side.
-
 
 1. In the `Create Stream View` pane at Step 1: `Details`, enter the following information:
 
@@ -44,7 +44,6 @@ This procedure creates a stream view that maps the **MyOCS.PumpState** type to t
 1. In the lower right, click **Next** to proceed to Step 2: `Property Mappings`.
 
 1. Click **Add Property Mapping** twice to create two empty property mappings.
-
 
 1. In the first property mapping row, enter the following information:
 

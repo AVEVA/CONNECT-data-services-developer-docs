@@ -189,23 +189,23 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2
     ]
   },
   {
-    "Id": "SampleAsset",
-    "Description": "This is a sample asset.",
+    "Id": "SecondSampleAsset",
+    "Description": "This is a scond sample asset.",
     "Metadata": [
       {
-        "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+        "Id": "90ef6205-152b-40ed-8ffa-bac3feff6fa2",
         "Name": "ModelNumber",
         "Description": "This is a static attribute on the asset which represents the model number.",
         "SdsTypeCode": "Double",
-        "Value": 0.01
+        "Value": 900
       }
     ],
     "StreamReferences": [
       {
-        "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+        "Id": "fdda0985-7dba-48aa-95fc-55620a9b59ad",
         "Name": "Data",
-        "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
-        "StreamId": "PI_bifrostbigdaddy_1"
+        "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_2.",
+        "StreamId": "PI_bifrostbigdaddy_2"
       }
     ]
   }
@@ -416,7 +416,7 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets
 
 <a id="opIdRequestManager_Bulk Delete Assets"></a>
 
-Deletes all assets with the specified idenftifiers. This API can delete up to a maximum of 1000 assets in one API call.
+Deletes all assets with the specified identifiers. This API can delete up to a maximum of 1000 assets in one API call.
 
 ### Request
 ```text 
@@ -430,7 +430,7 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets
 <br/>Tenant identifier<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier<br/><br/><br/>
 `[optional] array id`
-<br/>Asset identifiers<br/><br/>
+<br/>Comma separated asset identifiers in the form of id={assetId_1},id={assetId_2}<br/><br/>
 
 ### Response
 
@@ -491,8 +491,7 @@ Asset identifiers<br/>
 ```json
 [
   "AssetId-1",
-  "AssetId-2",
-  "AssetId-3"
+  "AssetId-2"
 ]
 ```
 
@@ -510,7 +509,7 @@ Asset identifiers<br/>
 ```json
 [
   {
-    "Id": "Asset1",
+    "Id": "AssetId-1",
     "Name": "Asset1",
     "Description": "An example asset.",
     "AssetTypeId": "Asset1Type",
@@ -541,6 +540,30 @@ Asset identifiers<br/>
           }
         ]
       }
+    ],
+    "UnresolvedStreams": [
+      {}
+    ],
+    "Status": {}
+  },
+  {
+    "Id": "AssetId-2",
+    "Name": "Asset2",
+    "Description": "A second example asset.",
+    "AssetTypeId": null,
+    "AssetTypeName": null,
+    "Metadata": [
+      {
+        "Id": "Metadata2",
+        "Name": "Metadata2",
+        "Description": "Description of Metadata2",
+        "SdsTypeCode": "String",
+        "Value": "This is an example metadata for example asset 2",
+        "Uom": null
+      }
+    ],
+    "Streams": [
+      {}
     ],
     "UnresolvedStreams": [
       {}
@@ -751,8 +774,8 @@ List of assets you want to create.<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Asset](#schemaasset)[]|Assets that was created.|
-|207|[MultiStatusResultOfAssetAndChildErrorTemplate](#schemamultistatusresultofassetandchilderrortemplate)|Assets that was created.|
+|200|[Asset](#schemaasset)[]|Assets as persisted, including values for optional parameters that were omitted in the request.|
+|207|[MultiStatusResultOfAssetAndChildErrorTemplate](#schemamultistatusresultofassetandchilderrortemplate)|Partial success. Some assets were created. See response body for additional details.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 
 #### Example response body

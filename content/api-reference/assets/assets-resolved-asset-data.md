@@ -6,158 +6,6 @@ uid: assets-resolved-asset-data
 # Resolved Asset Data
 The asset centric data API provides a quick way to retrieve data stored in an asset's referenced streams. In order to retrieve stream data from an asset, you must first set up stream references for a given asset.The data that is retrieved is based on the resolved asset.By default, data calls return data for all stream references. If you are only interested in data from a subset of streams, you must specify the streams encoded as a URL parameter.The format is to add stream={streamName} for each stream you are interested in. For example, if a given asset has the following definition and you are only interested in HeaterA and PressureB for the last data call, you would send: ```text GET ...Namespaces/{namespaceId}/ Assets / AssetStreamFilter / data / last ? Stream ={ HeaterA},Stream ={ PressureB} ``` Note: Asset stream references can contain commas. In this case, the comma must be properly escaped. ``` { "Id": "AssetStreamFilter", "Name": "Demo", "Description": "Only for demoing stream filtering", "StreamReferences": [ { "Id": "StreamReferenceId1", "Name": "StreamReferenceWithEventsName" "StreamId": "PI_buildingMachine" }, { "Id": "HeaterId1", "Name": "HeaterA" "StreamId": "PI_HeaterA" }, { "Id": "PressureId1", "Name": "PressureB" "StreamId": "PI_PressureB" }] } ``` ### Example Asset The following asset is used in all of the sample output in the output below. ``` { "Id": "Idsample", "Name": "SampleForDemo", "Description": "This is a demo asset.", "Metadata": [ { "Id": "b47c9529-7fbf-4b2d-810b-fe79d7fdb2b0", "Name": "RoomLocation", "Description": "This is what room number the asset is located.", "SdsTypeCode": "Double", "Value": 1.0 }], "StreamReferences": [ { "Id": "StreamReferenceId1", "Name": "StreamReferenceWithEventsName" "StreamId": "PI_buildingMachine_1112" }] } ```
 
-## `Get Window Data`
-
-<a id="opIdResolvedAssetData_Get Window Data"></a>
-
-Returns window data for referenced SDS streams.
-
-### Request
-```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data
-?startIndex={startIndex}&endIndex={endIndex}&stream={stream}&boundaryType={boundaryType}&startBoundaryType={startBoundaryType}&endBoundaryType={endBoundaryType}
-```
-
-#### Parameters
-
-`string assetId`
-<br/>Asset identifier<br/><br/>`string startIndex`
-<br/>Start index<br/><br/>`string endIndex`
-<br/>End index<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
-`[optional] array stream`
-<br/>Optional parameter consisting of a comma-separated list of stream reference names in form of `stream={streamName}` for each stream you are interested in. By default, all data calls return data for all stream references.<br/><br/>`[optional] any boundaryType`
-<br/>Sds boundary type to pass to Sds<br/><br/>`[optional] any startBoundaryType`
-<br/>Start Sds boundary type<br/><br/>`[optional] any endBoundaryType`
-<br/>End Sds boundary type to pass to Sds<br/><br/>
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|[DataResults](#schemadataresults)|Last status of the specified asset.|
-|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
-|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
-
-#### Example response body
-> 200 Response
-
-```json
-{
-  "Results": {
-    "StreamReferenceWithEventsName": [
-      {
-        "Timestamp": "2019-01-02T00:00:01Z",
-        "Temp": 1.045,
-        "Pres": 1
-      },
-      {
-        "Timestamp": "2019-01-02T00:00:02Z",
-        "Temp": 2.045,
-        "Pres": 1
-      },
-      {
-        "Timestamp": "2019-01-02T00:00:03Z",
-        "Temp": 3.045,
-        "Pres": 1
-      }
-    ]
-  },
-  "Errors": null
-}
-```
-
-> 400 Response ([ErrorTemplate](#schemaerrortemplate))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Resolution": "string",
-  "Reason": "string",
-  "property1": null,
-  "property2": null
-}
-```
-
----
-
-## `Get Interpolated Data`
-
-<a id="opIdResolvedAssetData_Get Interpolated Data"></a>
-
-Returns interpolated data for referenced SDS streams.
-
-### Request
-```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/Interpolated
-?startIndex={startIndex}&endIndex={endIndex}&count={count}&stream={stream}
-```
-
-#### Parameters
-
-`string assetId`
-<br/>Asset identifier<br/><br/>`string startIndex`
-<br/>Start index<br/><br/>`string endIndex`
-<br/>End index<br/><br/>`integer count`
-<br/>Number of samples requested.<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
-`[optional] array stream`
-<br/>Optional parameter consisting of a comma-separated list of stream reference names in form of `stream={streamName}` for each stream you are interested in. By default, all data calls return data for all stream references.<br/><br/>
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|[DataResults](#schemadataresults)|Last status of the specified asset.|
-|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
-|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
-
-#### Example response body
-> 200 Response
-
-```json
-{
-  "Results": {
-    "StreamReferenceWithEventsName": [
-      {
-        "Timestamp": "2019-01-02T00:00:05Z",
-        "Temp": 5.045,
-        "Pres": 1
-      },
-      {
-        "Timestamp": "2020-04-12T08:00:00Z",
-        "Temp": 3.045,
-        "Pres": 11
-      },
-      {
-        "Timestamp": "2020-06-29T05:20:00Z",
-        "Temp": 54.045,
-        "Pres": 11
-      }
-    ]
-  },
-  "Errors": null
-}
-```
-
-> 400 Response ([ErrorTemplate](#schemaerrortemplate))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Resolution": "string",
-  "Reason": "string",
-  "property1": null,
-  "property2": null
-}
-```
-
----
-
 ## `Get Last Data`
 
 <a id="opIdResolvedAssetData_Get Last Data"></a>
@@ -403,6 +251,158 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
             "Pres": "NaN"
           }
         }
+      }
+    ]
+  },
+  "Errors": null
+}
+```
+
+> 400 Response ([ErrorTemplate](#schemaerrortemplate))
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+```
+
+---
+
+## `Get Interpolated Data`
+
+<a id="opIdResolvedAssetData_Get Interpolated Data"></a>
+
+Returns interpolated data for referenced SDS streams.
+
+### Request
+```text 
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/Interpolated
+?startIndex={startIndex}&endIndex={endIndex}&count={count}&stream={stream}
+```
+
+#### Parameters
+
+`string assetId`
+<br/>Asset identifier<br/><br/>`string startIndex`
+<br/>Start index<br/><br/>`string endIndex`
+<br/>End index<br/><br/>`integer count`
+<br/>Number of samples requested.<br/><br/>`string tenantId`
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
+`[optional] array stream`
+<br/>Optional parameter consisting of a comma-separated list of stream reference names in form of `stream={streamName}` for each stream you are interested in. By default, all data calls return data for all stream references.<br/><br/>
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[DataResults](#schemadataresults)|Last status of the specified asset.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
+
+#### Example response body
+> 200 Response
+
+```json
+{
+  "Results": {
+    "StreamReferenceWithEventsName": [
+      {
+        "Timestamp": "2019-01-02T00:00:05Z",
+        "Temp": 5.045,
+        "Pres": 1
+      },
+      {
+        "Timestamp": "2020-04-12T08:00:00Z",
+        "Temp": 3.045,
+        "Pres": 11
+      },
+      {
+        "Timestamp": "2020-06-29T05:20:00Z",
+        "Temp": 54.045,
+        "Pres": 11
+      }
+    ]
+  },
+  "Errors": null
+}
+```
+
+> 400 Response ([ErrorTemplate](#schemaerrortemplate))
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+```
+
+---
+
+## `Get Window Data`
+
+<a id="opIdResolvedAssetData_Get Window Data"></a>
+
+Returns window data for referenced SDS streams.
+
+### Request
+```text 
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data
+?startIndex={startIndex}&endIndex={endIndex}&stream={stream}&boundaryType={boundaryType}&startBoundaryType={startBoundaryType}&endBoundaryType={endBoundaryType}
+```
+
+#### Parameters
+
+`string assetId`
+<br/>Asset identifier<br/><br/>`string startIndex`
+<br/>Start index<br/><br/>`string endIndex`
+<br/>End index<br/><br/>`string tenantId`
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
+`[optional] array stream`
+<br/>Optional parameter consisting of a comma-separated list of stream reference names in form of `stream={streamName}` for each stream you are interested in. By default, all data calls return data for all stream references.<br/><br/>`[optional] any boundaryType`
+<br/>Sds boundary type to pass to Sds<br/><br/>`[optional] any startBoundaryType`
+<br/>Start Sds boundary type<br/><br/>`[optional] any endBoundaryType`
+<br/>End Sds boundary type to pass to Sds<br/><br/>
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[DataResults](#schemadataresults)|Last status of the specified asset.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
+
+#### Example response body
+> 200 Response
+
+```json
+{
+  "Results": {
+    "StreamReferenceWithEventsName": [
+      {
+        "Timestamp": "2019-01-02T00:00:01Z",
+        "Temp": 1.045,
+        "Pres": 1
+      },
+      {
+        "Timestamp": "2019-01-02T00:00:02Z",
+        "Temp": 2.045,
+        "Pres": 1
+      },
+      {
+        "Timestamp": "2019-01-02T00:00:03Z",
+        "Temp": 3.045,
+        "Pres": 1
       }
     ]
   },

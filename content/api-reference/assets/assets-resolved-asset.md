@@ -1344,8 +1344,23 @@ Status configuration is a property of an asset or asset type that defines the si
 
 ```json
 {
-  "DefinitionType": 0,
-  "Definition": null
+  "DefinitionType": "StreamPropertyMapping",
+  "Definition": {
+    "StreamReferenceId": "StatusMappingOnAssetTypeCrudFunctionalTest_streamRef",
+    "StreamPropertyId": "SystemStateCode",
+    "ValueStatusMappings": [
+      {
+        "Value": 3,
+        "Status": "Bad",
+        "DisplayName": "Bad"
+      },
+      {
+        "Value": 1,
+        "Status": "Good",
+        "DisplayName": "Good"
+      }
+    ]
+  }
 }
 
 ```

@@ -128,7 +128,7 @@ Content-Type: application/json
 ## `Get Asset Sampled Data` 
 Returns sampled data for referenced streams. 
 
-**Note:** The inputs to this API matches the SDS stream Get samples values data call.  
+**Note:** The inputs to this API matches the SDS stream Get sampled values data call.  
 
 <!--Anthony, should "Get samples values" be "Get Sampled Values" (https://osisoft-dev.zoominsoftware.io/bundle/ocs/page/api-reference/sequential-data-store/sds-read-data-api.html#get-sampled-values) -->
 

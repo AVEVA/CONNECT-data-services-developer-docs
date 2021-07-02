@@ -178,6 +178,69 @@ Content-Type: application/json
 
 ---
 
+## `Get Quantity Unit of Measure`
+
+<a id="opIdQuantity_Get Quantity Unit of Measure"></a>
+
+Returns the unit of measure associated with the specified uomId belonging to the quantity with the specified quantityId
+
+### Request
+```text 
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}
+```
+
+#### Parameters
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>`string quantityId`
+<br/>The quantity identifier<br/><br/>`string uomId`
+<br/>The unit of measure identifier<br/><br/>
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[SdsUom](#schemasdsuom)|Returns the `SdsUom`|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+#### Example response body
+> 200 Response
+
+```json
+HTTP/1.1 200
+Content-Type: application/json
+{
+    "Id": "mile",
+    "Abbreviation": "mi",
+    "Name": "mile",
+    "DisplayName": "mile",
+    "QuantityId": "Length",
+    "ConversionFactor": 1609.344
+}
+```
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "Parameters": {
+    "property1": "string",
+    "property2": "string"
+  }
+}
+```
+
+---
+
 ## `List Quantity Units of Measure`
 
 <a id="opIdQuantity_List Quantity Units of Measure"></a>
@@ -232,69 +295,6 @@ Content-Type: application/json
     "ConversionFactor":1
 }
 ]
-```
-> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
-  }
-}
-```
-
----
-
-## `Get Quantity Unit of Measure`
-
-<a id="opIdQuantity_Get Quantity Unit of Measure"></a>
-
-Returns the unit of measure associated with the specified uomId belonging to the quantity with the specified quantityId
-
-### Request
-```text 
-GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}
-```
-
-#### Parameters
-
-`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string quantityId`
-<br/>The quantity identifier<br/><br/>`string uomId`
-<br/>The unit of measure identifier<br/><br/>
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|[SdsUom](#schemasdsuom)|Returns the `SdsUom`|
-|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
-|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
-|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
-|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
-|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
-|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
-
-#### Example response body
-> 200 Response
-
-```json
-HTTP/1.1 200
-Content-Type: application/json
-{
-    "Id": "mile",
-    "Abbreviation": "mi",
-    "Name": "mile",
-    "DisplayName": "mile",
-    "QuantityId": "Length",
-    "ConversionFactor": 1609.344
-}
 ```
 > 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 

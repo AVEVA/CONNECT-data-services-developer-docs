@@ -6,6 +6,102 @@ uid: sds-stream-data
 # Stream Data
 Controller for methods hosted at {streamId}/Data/
 
+## `Get First Value`
+
+<a id="opIdStreamData_Get First Value"></a>
+
+Returns the first value in the stream. If no values exist in the stream, null is returned.
+
+### Request
+```text 
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/First
+```
+
+#### Parameters
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>`string streamId`
+<br/>Stream identifier.<br/><br/><br/>
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|Inline|Returns a serialized event|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+#### Example response body
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "Parameters": {
+    "property1": "string",
+    "property2": "string"
+  }
+}
+```
+
+---
+
+## `Get Last Value`
+
+<a id="opIdStreamData_Get Last Value"></a>
+
+Returns the last value in the stream. If no values exist in the stream, null is returned.
+
+### Request
+```text 
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Last
+```
+
+#### Parameters
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>`string streamId`
+<br/>Stream identifier.<br/><br/><br/>
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|Inline|Returns a serialized event|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+#### Example response body
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "Parameters": {
+    "property1": "string",
+    "property2": "string"
+  }
+}
+```
+
+---
+
 ## `List Values`
 
 <a id="opIdStreamData_List Values"></a>
@@ -307,54 +403,6 @@ DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Da
 
 ---
 
-## `Get First Value`
-
-<a id="opIdStreamData_Get First Value"></a>
-
-Returns the first value in the stream. If no values exist in the stream, null is returned.
-
-### Request
-```text 
-GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/First
-```
-
-#### Parameters
-
-`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/><br/>
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|Inline|Returns a serialized event|
-|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
-|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
-|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
-|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
-|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
-|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
-
-#### Example response body
-> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
-  }
-}
-```
-
----
-
 ## `List Interpolated Values`
 
 <a id="opIdStreamData_List Interpolated Values"></a>
@@ -417,15 +465,15 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 
 ---
 
-## `Get Last Value`
+## `List Summaries`
 
-<a id="opIdStreamData_Get Last Value"></a>
+<a id="opIdStreamData_List Summaries"></a>
 
-Returns the last value in the stream. If no values exist in the stream, null is returned.
+Returns summary intervals between a specified start and end index. Index types that cannot be interpolated do not support summary requests. Strings are an example of indexes that cannot be interpolated. Summaries are not supported for streams with compound indexes. Interpolating between two indexes that consist of multiple properties is not defined and results in non-determinant behavior.
 
 ### Request
 ```text 
-GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Last
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Summaries
 ```
 
 #### Parameters
@@ -439,7 +487,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|Returns a serialized event|
+|200|Inline|Returns a serialized collection of SdsIntervals. Each SdsInterval has a start, end, and collection of summary values.|
 |400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
 |401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
 |403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
@@ -488,54 +536,6 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|Inline|Returns a serialized collection of events|
-|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
-|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
-|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
-|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
-|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
-|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
-
-#### Example response body
-> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
-  }
-}
-```
-
----
-
-## `List Summaries`
-
-<a id="opIdStreamData_List Summaries"></a>
-
-Returns summary intervals between a specified start and end index. Index types that cannot be interpolated do not support summary requests. Strings are an example of indexes that cannot be interpolated. Summaries are not supported for streams with compound indexes. Interpolating between two indexes that consist of multiple properties is not defined and results in non-determinant behavior.
-
-### Request
-```text 
-GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Summaries
-```
-
-#### Parameters
-
-`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/><br/>
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|Inline|Returns a serialized collection of SdsIntervals. Each SdsInterval has a start, end, and collection of summary values.|
 |400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
 |401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
 |403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|

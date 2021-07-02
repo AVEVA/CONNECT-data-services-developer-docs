@@ -16,7 +16,7 @@ The following table lists the most common fields in a status mapping.
 
 | Property            | Type                     | Required? | Searchable? | Description                                                  |
 | ------------------- | ------------------------ | --------- | ----------- | ------------------------------------------------------------ |
-| StreamReferenceId   | String                   | Required  | No          | `Id` for the asset's StreamReference property. <!-- Anthony: Should this be StreamReferences? -->The stream reference must exist before the status mapping can be created. |
+| StreamReferenceId   | String                   | Required  | No          | `Id` for the asset's StreamReferences property. The stream reference must exist before the status mapping can be created. |
 | StreamPropertyId    | String                   | Required  | No          | SDS stream property that status uses for calculations. It must be present on the StreamId property on the asset StreamReference.  <!-- StreamReferences? -->The SDS stream property must be a numeric enumeration, character, or string type. |
 | ValueStatusMappings | List<ValueStatusMapping> | Required  | No          | The value status mapping maps values to a given status. See [Value status mapping properties table](xref:AssetStatus#value-status-mapping-properties-table) |
 ## Value status mapping properties table

@@ -168,7 +168,7 @@ The response includes a status code and a response body.
 | Status Code      | Body Type         | Description                                                  |
 | ---------------- | ----------------- | ------------------------------------------------------------ |
 | 200 OK           | Asset status list | On successful `POST`, returns the status of multiple assets. |
-| 207 Multi Status | Multi Status      | On `POST`, returns the status of multiple assets. For error responses, check the multi-status response for the error and cause. |
+| 207 Multi Status | Multi Status      | Partial success. Not all assets were able to be resolved. See response body for additional details. |
 
 #### Example response body
 

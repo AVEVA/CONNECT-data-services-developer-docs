@@ -81,7 +81,6 @@ Returns the status of an asset.
 
 The status of an asset is determined by an exact match of the SDS stream property value to the value of the `ValueStatusMappings`. If there are no exact matches, the status is a 0 (Unknown).
 
-<!-- Anthony: Would it be correct and clearer to change "SDS stream property value" above to "SDS `StreamPropertyID` value"? -->
 
 ### Request
 

@@ -4,7 +4,7 @@ uid: assets-resolved-asset
 ---
 
 # Resolved Asset
-The resolved asset describes the consumption-oriented aspects of an OCS resource rather than describing how the resource is configured. The resolved asset corresponds to its metadata and referenced stream which define how the data is interpreted(that is, SdsTypeCode, InterpolationMode, and UOM).
+The resolved asset describes the consumption-oriented aspects of an OCS resource rather than describing how the resource is configured. The resolved asset corresponds to its metadata and referenced stream which define how the data is interpreted (that is, SdsTypeCode, InterpolationMode, and UOM).
 
 ## `Get Resolved Asset`
 
@@ -30,7 +30,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |---|---|---|
 |200|[ResolvedAsset](#schemaresolvedasset)|Resolved asset with specified identifier|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
-|403|None|Forbidden.<br/>|
+|403|None|Forbidden|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 
 #### Example response body

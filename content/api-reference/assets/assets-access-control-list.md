@@ -20,8 +20,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/{r
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>`string resource`
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>`string resource`
 <br/>Assets or AssetTypes<br/><br/>
 
 ### Response
@@ -56,7 +56,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/{r
 }
 ```
 
-> 400 Response
+> 400 Response ([ErrorTemplate](#schemaerrortemplate))
 
 ```json
 {
@@ -85,8 +85,8 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/{r
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>`string resource`
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>`string resource`
 <br/>Assets or AssetTypes<br/><br/>
 
 ### Request Body
@@ -123,7 +123,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/{r
 |403|[ErrorTemplate](#schemaerrortemplate)|Forbidden|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorTemplate](#schemaerrortemplate))
 
 ```json
 {
@@ -153,8 +153,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessRights/{re
 
 `string resource`
 <br/>Assets or AssetTypes<br/><br/>`string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
 
 ### Response
 
@@ -165,7 +165,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessRights/{re
 |403|[ErrorTemplate](#schemaerrortemplate)|Forbidden|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorTemplate](#schemaerrortemplate))
 
 ```json
 {

@@ -21,8 +21,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 `string assetId`
 <br/>Asset identifier<br/><br/>`string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
 
 ### Response
 
@@ -30,7 +30,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |---|---|---|
 |200|[ResolvedAsset](#schemaresolvedasset)|Resolved asset with specified identifier|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
-|403|None|Forbidden<br/>|
+|403|None|Forbidden.<br/>|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 
 #### Example response body
@@ -104,7 +104,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 }
 ```
 
-> 400 Response
+> 400 Response ([ErrorTemplate](#schemaerrortemplate))
 
 ```json
 {

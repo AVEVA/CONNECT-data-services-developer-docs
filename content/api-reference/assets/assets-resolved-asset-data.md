@@ -24,8 +24,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 <br/>Asset identifier<br/><br/>`string startIndex`
 <br/>Start index<br/><br/>`string endIndex`
 <br/>End index<br/><br/>`string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
 `[optional] array stream`
 <br/>Optional parameter consisting of a comma-separated list of stream reference names in form of `stream={streamName}` for each stream you are interested in. By default, all data calls return data for all stream references.<br/><br/>`[optional] any boundaryType`
 <br/>Sds boundary type to pass to Sds<br/><br/>`[optional] any startBoundaryType`
@@ -68,7 +68,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 }
 ```
 
-> 400 Response
+> 400 Response ([ErrorTemplate](#schemaerrortemplate))
 
 ```json
 {
@@ -102,8 +102,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 <br/>Start index<br/><br/>`string endIndex`
 <br/>End index<br/><br/>`integer count`
 <br/>Number of samples requested.<br/><br/>`string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
 `[optional] array stream`
 <br/>Optional parameter consisting of a comma-separated list of stream reference names in form of `stream={streamName}` for each stream you are interested in. By default, all data calls return data for all stream references.<br/><br/>
 
@@ -143,7 +143,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 }
 ```
 
-> 400 Response
+> 400 Response ([ErrorTemplate](#schemaerrortemplate))
 
 ```json
 {
@@ -174,8 +174,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 `string assetId`
 <br/>Asset identifier<br/><br/>`string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
 `[optional] array stream`
 <br/>Optional parameter consisting of a comma-separated list of stream reference names in form of `stream={streamName}` for each stream you are interested in. By default, all data calls return data for all stream references.<br/><br/>
 
@@ -205,7 +205,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 }
 ```
 
-> 400 Response
+> 400 Response ([ErrorTemplate](#schemaerrortemplate))
 
 ```json
 {
@@ -239,8 +239,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 <br/>Start index<br/><br/>`string endIndex`
 <br/>End index<br/><br/>`integer intervals`
 <br/>Number of intervals requested.<br/><br/>`string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
 `[optional] array stream`
 <br/>Optional parameter consisting of a comma-separated list of stream reference names in form of `stream={streamName}` for each stream you are interested in. By default, all data calls return data for all stream references.<br/><br/>`[optional] any boundaryType`
 <br/>Sds boundary type to pass to Sds<br/><br/>`[optional] any startBoundaryType`
@@ -283,7 +283,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 }
 ```
 
-> 400 Response
+> 400 Response ([ErrorTemplate](#schemaerrortemplate))
 
 ```json
 {
@@ -316,8 +316,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 <br/>Asset identifier<br/><br/>`string startIndex`
 <br/>Start index<br/><br/>`string endIndex`
 <br/>End index<br/><br/>`string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
 `[optional] array stream`
 <br/>Optional parameter consisting of a comma-separated list of stream reference names in form of `stream={streamName}` for each stream you are interested in. By default, all data calls return data for all stream references.<br/><br/>`[optional] integer count`
 <br/>Number of samples requested<br/><br/>
@@ -410,7 +410,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 }
 ```
 
-> 400 Response
+> 400 Response ([ErrorTemplate](#schemaerrortemplate))
 
 ```json
 {

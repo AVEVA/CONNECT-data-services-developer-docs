@@ -21,8 +21,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 `string assetId`
 <br/>Asset identifier<br/><br/>`string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
 
 ### Response
 
@@ -46,7 +46,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 }
 ```
 
-> 400 Response
+> 400 Response ([ErrorTemplate](#schemaerrortemplate))
 
 ```json
 {
@@ -80,8 +80,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 <br/>Start index<br/><br/>`string endIndex`
 <br/>End index<br/><br/>`integer intervals`
 <br/>Number of intervals<br/><br/>`string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
 
 ### Response
 
@@ -137,7 +137,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 }
 ```
 
-> 400 Response
+> 400 Response ([ErrorTemplate](#schemaerrortemplate))
 
 ```json
 {

@@ -176,7 +176,7 @@ Namespace identifier
 A list of asset `Id`s.
 
 #### Example request body 
-Requesting resolved assets for assets with the following `Id`s: "Asset1", "Asset2", and "Asset3".
+Requesting resolved assets for assets with the following `Id`s: **Asset1**, **Asset2**, and **Asset3**.
 
 <!-- Anthony: I think you put these in quotes to indicate this is a literal value. If i use bold to indicate a literal value, can I take out the quotes, as in: Requesting resolved assets for assets with the following `Id`s: **Asset1**, **Asset2**, and **Asset3**. -->
 

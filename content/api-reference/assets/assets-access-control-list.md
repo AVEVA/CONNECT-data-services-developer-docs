@@ -91,7 +91,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/{r
 
 ### Request Body
 
-<br/>
+Updated ACL<br/>
 
 ```json
 {

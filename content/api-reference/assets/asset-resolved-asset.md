@@ -154,7 +154,7 @@ Content-Type: application/json
 
 ## `Get Resolved Asset (Bulk)`
 
-Returns the resolved assets.
+Returns multiple resolved assets in one call.
 
 <--! Anthony: I think we forgot to add a description here. Please correct and edit, as necessary. thanks -->
 

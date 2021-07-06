@@ -1,10 +1,9 @@
 ---
 uid: sds-streams
-
 ---
 
 # Streams
-Controller for methods hosted at streams/
+Streams API
 
 ## `List Streams`
 

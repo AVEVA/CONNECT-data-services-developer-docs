@@ -1,10 +1,9 @@
 ---
 uid: sds-stream-views
-
 ---
 
-# Stream Views
-Controller for methods hosted at /StreamViews
+# Stream views
+Stream views API
 
 ## `List Stream Views`
 

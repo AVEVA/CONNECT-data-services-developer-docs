@@ -1,10 +1,9 @@
 ---
 uid: sds-types
-
 ---
 
 # Types
-
+Types API
 ## `List Types`
 
 <a id="opIdType_List Types"></a>

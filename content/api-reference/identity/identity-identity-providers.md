@@ -1,4 +1,7 @@
+---
+uid: identity-identity-providers
 
+---
 
 # Identity Providers
 An identity provider provides authentication services and maintains credentials for users that have been provisioned in OCS. Each tenant can have one or more identity providers. Each user is either assigned one of the available identity providers in the tenant or chooses one in the Home Realm Discovery page when accepting the invitation. A user can only log in with the same identity provider they signed up with.
@@ -1220,7 +1223,7 @@ The model for the group level capabilities of an identity provider
 <a id="tocSerrorresponse"></a>
 <a id="tocserrorresponse"></a>
 
-Object returned whenever there is an error TODO: Remove this internal model and re-adopt public model when moving to System.Text.Json in WI 202168.
+Object returned whenever there is an error
 
 #### Properties
 
@@ -1252,7 +1255,7 @@ Object returned whenever there is an error TODO: Remove this internal model and 
 <a id="tocSidentityproviderconsent"></a>
 <a id="tocsidentityproviderconsent"></a>
 
-The model for an identity provider consent in identity storage. TODO: Remove this internal model and re-adopt public model when moving to System.Text.Json in WI 202168.
+The model for an identity provider consent in identity storage
 
 #### Properties
 

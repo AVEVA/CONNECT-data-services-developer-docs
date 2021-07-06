@@ -1,15 +1,15 @@
 - name: Quick start
   href: sds-quick-start.md
 - name: Types
-  href: sds-types.md
+  href: sds-types-dev.md
 - name: Streams
-  href: sds-streams.md
+  href: sds-streams-dev.md
 - name: Stream metadata and tags
   href: sds-stream-metadata-tags.md
 - name: Stream views
-  href: sds-stream-views.md
+  href: sds-stream-views-dev.md
 - name: Indexes
-  href: sds-indexes.md
+  href: sds-index.md
 - name: Units of measure
   href: sds-uom.md
 - name: Read data

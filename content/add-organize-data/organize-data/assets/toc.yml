@@ -1,8 +1,10 @@
+- name: Assets
+  topicHref: asset-concept.md
 - name: Create and configure an asset
   topicHref: create-an-asset.md
 - name: Asset types
   topicHref: asset-type-overview.md
-- name: Create an asset type with an asset types editor
+- name: Create an asset type
   topicHref: create-asset-type-asset-editor.md
 - name: Convert an asset to an asset type
   topicHref: convert-asset-to-asset-type.md

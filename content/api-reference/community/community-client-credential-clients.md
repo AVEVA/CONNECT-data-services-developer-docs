@@ -1,3 +1,6 @@
+---
+uid: community-client-credential-clients
+---
 
 
 # Client Credential Clients
@@ -7,7 +10,7 @@ APIs for getting, adding, or removing client credential clients from communities
 
 <a id="opIdClientCredentialClients_List Client Credential Clients for a Community"></a>
 
-Gets clients associated with a specific tenant and community.
+Gets clients associated with a specific tenant and community
 
 ### Request
 ```text 
@@ -21,7 +24,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/ClientCredentia
 <br/>Tenant identifier<br/><br/>`string communityId`
 <br/>Community identifier<br/><br/>
 `[optional] string query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
+<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip `
 <br/>Parameter representing the zero-based offset of the first object to retrieve. If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
 
@@ -29,7 +32,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/ClientCredentia
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[ClientCredentialClient](#schemaclientcredentialclient)[]|Set of Clients ( `ClientCredentialClient`) associated with the Tenant ( `tenantId`) and Community ( `communityId`).|
+|200|[ClientCredentialClient](#schemaclientcredentialclient)[]|Set of clients ( `ClientCredentialClient`) associated with the tenant ( `tenantId`) and community ( `communityId`)|
 |400|[ErrorResponse](#schemaerrorresponse)|Bad request|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
@@ -69,7 +72,7 @@ Allowed for these roles:
 
 <a id="opIdClientCredentialClients_Get Count of Clients for a Community"></a>
 
-Gets a count of client credential client for a community.
+Gets a count of client credential clients for a community
 
 ### Request
 ```text 
@@ -81,6 +84,8 @@ HEAD /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/ClientCredenti
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string communityId`
 <br/>Community identifier<br/><br/>
+
+
 
 ### Response
 
@@ -120,7 +125,7 @@ Allowed for these roles:
 
 <a id="opIdClientCredentialClients_Add Client Credential Client to a Community"></a>
 
-Adds a client credential client to a community, providing a list of community roles to be assigned to the client.
+Adds a client credential client to a community, providing a list of community roles to be assigned to the client
 
 ### Request
 ```text 
@@ -133,6 +138,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/ClientCredentia
 <br/>Tenant identifier<br/><br/>`string communityId`
 <br/>Community identifier<br/><br/>`string clientId`
 <br/>Client credential client identifier<br/><br/>
+
 
 ### Request Body
 
@@ -188,7 +194,7 @@ Allowed for these roles:
 
 <a id="opIdClientCredentialClients_Remove Client Credential Client from a Community"></a>
 
-Removes a client credential client from a community.
+Removes a client credential client from a community
 
 ### Request
 ```text 
@@ -201,6 +207,7 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/ClientCreden
 <br/>Tenant identifier<br/><br/>`string communityId`
 <br/>Community identifier<br/><br/>`string clientId`
 <br/>Client credential client identifier<br/><br/>
+
 
 ### Response
 
@@ -245,16 +252,16 @@ Allowed for these roles:
 <a id="tocSerrorresponse"></a>
 <a id="tocserrorresponse"></a>
 
-Object returned whenever there is an error TODO: Remove this internal model and re-adopt public model when moving to System.Text.Json in WI 202168.
+Object returned when there is an error
 
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|OperationId|string|true|false|Gets or sets operationId of action that caused the Error.|
-|Error|string|true|false|Gets or sets error description.|
-|Reason|string|true|false|Gets or sets reason for the Error.|
-|Resolution|string|true|false|Gets or sets what can be done to resolve the Error.|
+|OperationId|string|true|false|OperationId of action that caused the error|
+|Error|string|true|false|Error description|
+|Reason|string|true|false|Reason for the error|
+|Resolution|string|true|false|Resolution for the error|
 
 ```json
 {

@@ -1,7 +1,7 @@
 ---
 uid: identityClientCredentialClient
----
 
+---
 
 # Client Credential Clients
 Client credential clients are used for machine-to-machine communication without the presence of a user. These clients are issued an unique identifier and secret upon creation, which are later used for authentication against OCS. More than one secret can be created for a client. Because they access resources on OCS and are not associated to users, these clients can be assigned any of the roles in the tenant. We suggest following a least privilege strategy when assigning roles to these clients, as they are more likely to operate in remote machines with a wider attack surface.
@@ -769,7 +769,7 @@ Object to get or update a ClientCredentialClient
 <a id="tocSerrorresponse"></a>
 <a id="tocserrorresponse"></a>
 
-Object returned whenever there is an error TODO: Remove this internal model and re-adopt public model when moving to System.Text.Json in WI 202168.
+Object returned whenever there is an error
 
 #### Properties
 
@@ -843,7 +843,7 @@ Object used during Client creation.
 <a id="tocSclientcredentialclientmultistatusresponse"></a>
 <a id="tocsclientcredentialclientmultistatusresponse"></a>
 
-MultiStatusResponse objects returned in a 207 response. TODO: Remove this internal model and re-adopt public model when moving to System.Text.Json in WI 202168.
+MultiStatusResponse objects returned in a 207 response
 
 #### Properties
 
@@ -899,7 +899,7 @@ MultiStatusResponse objects returned in a 207 response. TODO: Remove this intern
 <a id="tocSmultistatusresponsechilderror"></a>
 <a id="tocsmultistatusresponsechilderror"></a>
 
-ChildError objects returned in a 207 response. TODO: Remove this internal model and re-adopt public model when moving to System.Text.Json in WI 202168.
+ChildError objects returned in a 207 response
 
 #### Properties
 

@@ -2,7 +2,7 @@
 uid: AssetStatus
 ---
 
-# Asset and asset type status
+# Asset and Asset Type Status
 
 Status is a property of an asset or asset type that defines the simple status of an asset or asset type. There is one status property for each asset or asset type.
 
@@ -16,7 +16,6 @@ The following table lists the most common fields in a status mapping.
 
 | Property            | Type                     | Required? | Searchable? | Description                                                  |
 | ------------------- | ------------------------ | --------- | ----------- | ------------------------------------------------------------ |
-| Name                | String                   | Optional  | No          | `Name` and `Id` for this status mapping.                     |
 | StreamReferenceId   | String                   | Required  | No          | `Id` for the asset's StreamReference property. The stream reference must exist before the status mapping can be created. |
 | StreamPropertyId    | String                   | Required  | No          | SDS stream property that status uses for calculations. It must be present on the StreamId property on the asset StreamReference.  The SDS stream property must be a numeric enumeration, character, or string type. |
 | ValueStatusMappings | List<ValueStatusMapping> | Required  | No          | The value status mapping maps values to a given status. See [Value status mapping properties table](xref:AssetStatus#value-status-mapping-properties-table) |
@@ -47,7 +46,6 @@ The following is an example of a status property which is on the asset or asset 
 
 ```
 "Status": {
-    "Name": "ChargingStationStatus",
     "StreamReferenceId": "Reference1",
     "StreamPropertyId": "Value",
     "ValueStatusMappings": [
@@ -70,7 +68,7 @@ The asset or asset type's 'StreamReferences' field has an 'Id' property. To assi
   "Id": "ChargingStationAsset", 
    "AssetTypeId": null,
   "Metadata": [{ 
-      "Name": "Location",  "Value": "Houston", "SdsTypeCode": 18, "Uom": null​ 
+      "Name": "Location",  "Value": "Houston", "SdsTypeCode": "String", "Uom": null​ 
     }], 
     "StreamReferences": [{ 
       "Id": "AssetStreamReferenceId1", 
@@ -89,7 +87,6 @@ The status of an asset is determined by an exact match of the Sds stream propert
 
 ```text 
 GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/status/last
-
 ```
 
 ### Parameters
@@ -121,10 +118,10 @@ HTTP 200 OK
 Content-Type: application/json
 {
    "AssetId": "TemperatureSensorAsset",
-   "Status": 1, 
+    "Status": 1, 
    "Value": "85",
    "DisplayName": "TemperatureSensorBuild1InF",
-   "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z"
+   "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z"
 }
 ```
 
@@ -137,8 +134,7 @@ View the status of multiple assets.
 ### Request
 
 ```text 
-POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/assets/status/last
-
+POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/Assets/status/last
 ```
 
 ### Parameters

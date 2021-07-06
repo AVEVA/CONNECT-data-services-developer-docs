@@ -2,11 +2,13 @@
 uid: AssetResolvedAsset
 ---
 
-# Resolved asset
+# Resolved Asset
 
 The resolved asset describes the consumption-oriented aspects of an OCS resource rather than describing how the resource is configured. 
 
 The resolved asset corresponds to its metadata and referenced stream which define how the data is interpreted (that is, SdsTypeCode, InterpolationMode, and UOM).
+
+***
 
 ## `Get Resolved Asset`
 
@@ -57,7 +59,7 @@ In this scenario, the default reference rules resolve as follows:
 ### Request
 
 ```text
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Resolved
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/resolved
 ```
 
 ### Parameters
@@ -90,11 +92,13 @@ Content-Type: application/json
 {
     "Id": "AssetTest",
     "Name": "AssetName",
+    "AssetTypeId": "IdOfAssetType",
+    "AssetTypeName": "NameOfAssetType",
     "Metadata": [
         {
             "Id": "metadataId_101",
             "Name": "DateTimeAttr",
-            "SdsTypeCode": 16,
+            "SdsTypeCode": "DateTime",
             "Value": "0001-01-01T00:00:00Z"
         }
     ],
@@ -115,6 +119,7 @@ Content-Type: application/json
                     },
                     "Source": {
                         "StreamId": "SourceSdsStreamId",
+                        "StreamReferenceName": "SourceSdsStreamName",
                         "PropertyId": "Timestamp"
                     }
                 },
@@ -131,6 +136,7 @@ Content-Type: application/json
                     },
                     "Source": {
                         "StreamId": "SourceSdsStreamId",
+                        "StreamReferenceName": "SourceSdsStreamName",
                         "PropertyId": "Temp"
                     }
                 },
@@ -150,7 +156,7 @@ Content-Type: application/json
 
 ### Request
 ```text
-POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets/Resolved
+POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/Assets/resolved
 ```
 
 ### Parameters

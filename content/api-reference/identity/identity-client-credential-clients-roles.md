@@ -1,6 +1,9 @@
+---
+uid: identity-client-credential-clients-roles
 
+---
 
-# Roles
+# Client Credential Clients Roles
 APIs for getting, updating, and deleting client credential client roles.
 
 ## `List Roles for Client Credential Client (`Client Credential Clients` path)`
@@ -409,7 +412,7 @@ The object that represents the scope of a given role
 <a id="tocSerrorresponse"></a>
 <a id="tocserrorresponse"></a>
 
-Object returned whenever there is an error TODO: Remove this internal model and re-adopt public model when moving to System.Text.Json in WI 202168.
+Object returned whenever there is an error
 
 #### Properties
 

@@ -4,166 +4,102 @@ uid: assets-assets
 ---
 
 # Assets
-The Assets API allows you to create, read, update, and delete assets. The asset feature supports the HTTP entity tag(ETag) and If-Match for conditional requests.When a `GET` call is performed, the HTTP response header includes an Etag which indicates what version of the asset resource will be retrieved. #### Example Etag Response Header This is version 7 of this particular asset. ``` Etag: "7" ``` To edit or delete the asset, specify If-Match in the HTTP request header when calling `DELETE` or `PUT`. #### Example If-Match Response Header Modify or delete only if the current asset matches version 7. Otherwise, do not perform this operation.If this condition fails, return a 412. ``` If-Match : "7" ``` Note: If-Match is optional.If you want to delete or modify an asset regardless of the asset version, do not specify an If-Match.
+The Assets API allows you to create, read, update, and delete assets. The asset feature supports the HTTP entity tag(ETag) and If-Match for conditional requests.When a `GET` call is performed, the HTTP response header includes an Etag which indicates what version of the asset resource will be retrieved. #### Example Etag Response Header This is version 7 of a particular asset. ``` Etag: "7" ``` To edit or delete the asset, specify If-Match in the HTTP request header when calling `DELETE` or `PUT`. #### Example If-Match Response Header Modify or delete only if the current asset matches version 7. Otherwise, do not perform this operation.If this condition fails, return a 412. ``` If-Match : "7" ``` Note: If-Match is optional. If you want to delete or modify an asset regardless of the asset version, do not specify an If-Match..
 
-## `Get Asset`
+## `Get Asset Owner`
 
-<a id="opIdAssets_Get Asset"></a>
+<a id="opIdAssets_Get Asset Owner"></a>
 
-### Request
-```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
-```
-
-#### Parameters
-
-`string assetId`
-<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|string|None|
-
----
-
-## `Create Asset`
-
-<a id="opIdAssets_Create Asset"></a>
+Returns owner of specified asset.
 
 ### Request
 ```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
-```
-
-#### Parameters
-
-`string assetId`
-<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
-
-### Request Body
-
-<br/>
-
-```json
-{
-  "Id": "SampleAsset",
-  "Description": "This is a sample asset.",
-  "Metadata": [
-    {
-      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
-      "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
-      "SdsTypeCode": "Double",
-      "Value": 0.01
-    }
-  ],
-  "StreamReferences": [
-    {
-      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-      "Name": "Data",
-      "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
-      "StreamId": "PI_bifrostbigdaddy_1"
-    }
-  ]
-}
-```
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|string|None|
-
----
-
-## `Create Or Update Asset (Assets path)`
-
-<a id="opIdAssets_Create Or Update Asset (Assets path)"></a>
-
-### Request
-```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
-```
-
-#### Parameters
-
-`string assetId`
-<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
-
-### Request Body
-
-<br/>
-
-```json
-{
-  "Id": "SampleAsset",
-  "Description": "This is a sample asset.",
-  "Metadata": [
-    {
-      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
-      "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
-      "SdsTypeCode": "Double",
-      "Value": 0.01
-    }
-  ],
-  "StreamReferences": [
-    {
-      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-      "Name": "Data",
-      "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
-      "StreamId": "PI_bifrostbigdaddy_1"
-    }
-  ]
-}
-```
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|string|None|
-
----
-
-## `Delete Asset`
-
-<a id="opIdAssets_Delete Asset"></a>
-
-Deletes the asset with a specified identifier.
-
-### Request
-```text 
-DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Owner
 ```
 
 #### Parameters
 
 `string assetId`
 <br/>Asset identifier<br/><br/>`string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|204|None|Asset with specified identifier has been deleted.|
+|200|[Trustee](#schematrustee)|OK|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
-|403|None|Forbidden<br/>|
-|404|[ErrorTemplate](#schemaerrortemplate)|Not Found|
-|409|[ErrorTemplate](#schemaerrortemplate)|Conflict|
+|403|None|Forbidden|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 
 #### Example response body
-> 400 Response
+> 200 Response
+
+```json
+{
+  "Type": 1,
+  "TenantId": "55555555-5555-5555-5555-555555555555",
+  "ObjectId": "44444444-4444-4444-4444-444444444444"
+}
+```
+
+> 400 Response ([ErrorTemplate](#schemaerrortemplate))
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+```
+
+---
+
+## `Update Asset Owner`
+
+<a id="opIdAssets_Update Asset Owner"></a>
+
+Updates owner of specified asset.
+
+### Request
+```text 
+PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Owner
+```
+
+#### Parameters
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>`string assetId`
+<br/>Asset identifier<br/><br/>
+
+### Request Body
+
+Updated owner<br/>
+
+```json
+{
+  "Type": 1,
+  "TenantId": "55555555-5555-5555-5555-555555555555",
+  "ObjectId": "44444444-4444-4444-4444-444444444444"
+}
+```
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|204|None|Asset owner updated|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
+|403|None|Forbidden|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
+
+#### Example response body
+> 400 Response ([ErrorTemplate](#schemaerrortemplate))
 
 ```json
 {
@@ -193,8 +129,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 `string assetId`
 <br/>Asset identifier<br/><br/>`string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
 
 ### Response
 
@@ -202,7 +138,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|Access control list of the asset with given identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
-|403|None|Forbidden<br/>|
+|403|None|Forbidden|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 
 #### Example response body
@@ -228,7 +164,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 }
 ```
 
-> 400 Response
+> 400 Response ([ErrorTemplate](#schemaerrortemplate))
 
 ```json
 {
@@ -257,13 +193,13 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>`string assetId`
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>`string assetId`
 <br/>Asset identifier<br/><br/>
 
 ### Request Body
 
-<br/>
+Updated ACL<br/>
 
 ```json
 {
@@ -291,11 +227,11 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |---|---|---|
 |204|None|Update success.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
-|403|None|Forbidden<br/>|
+|403|None|Forbidden|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorTemplate](#schemaerrortemplate))
 
 ```json
 {
@@ -325,8 +261,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 `string assetId`
 <br/>Asset identifier<br/><br/>`string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
 
 ### Response
 
@@ -334,7 +270,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |---|---|---|
 |200|Inline|Access control list of the asset with given identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
-|403|None|Forbidden<br/>|
+|403|None|Forbidden|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 
 #### Example response body
@@ -349,115 +285,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 ]
 ```
 
-> 400 Response
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Resolution": "string",
-  "Reason": "string",
-  "property1": null,
-  "property2": null
-}
-```
-
----
-
-## `Get Asset Owner`
-
-<a id="opIdAssets_Get Asset Owner"></a>
-
-Returns owner of specified asset.
-
-### Request
-```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Owner
-```
-
-#### Parameters
-
-`string assetId`
-<br/>Asset identifier<br/><br/>`string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|[Trustee](#schematrustee)|OK|
-|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
-|403|None|Forbidden<br/>|
-|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
-
-#### Example response body
-> 200 Response
-
-```json
-{
-  "Type": 1,
-  "TenantId": "55555555-5555-5555-5555-555555555555",
-  "ObjectId": "44444444-4444-4444-4444-444444444444"
-}
-```
-
-> 400 Response
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Resolution": "string",
-  "Reason": "string",
-  "property1": null,
-  "property2": null
-}
-```
-
----
-
-## `Update Asset Owner`
-
-<a id="opIdAssets_Update Asset Owner"></a>
-
-Updates owner of specified asset.
-
-### Request
-```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Owner
-```
-
-#### Parameters
-
-`string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>`string assetId`
-<br/>Asset identifier<br/><br/>
-
-### Request Body
-
-<br/>
-
-```json
-{
-  "Type": 1,
-  "TenantId": "55555555-5555-5555-5555-555555555555",
-  "ObjectId": "44444444-4444-4444-4444-444444444444"
-}
-```
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|204|None|Asset owner updated|
-|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
-|403|None|Forbidden<br/>|
-|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
-
-#### Example response body
-> 400 Response
+> 400 Response ([ErrorTemplate](#schemaerrortemplate))
 
 ```json
 {
@@ -487,8 +315,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId
 
 `string assetId`
 <br/>Asset identifier<br/><br/>`string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
 
 ### Response
 
@@ -496,7 +324,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId
 |---|---|---|
 |200|[Asset](#schemaasset)|Assets with specified identifier|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
-|403|None|Forbidden<br/>|
+|403|None|Forbidden|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 
 #### Response Headers
@@ -510,8 +338,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId
 
 ```json
 {
-  "Id": "SampleAsset",
-  "Description": "This is a sample asset.",
+  "Id": "SampleAssetA",
+  "Description": "This is a sample asset a.",
   "Metadata": [
     {
       "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
@@ -532,7 +360,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId
 }
 ```
 
-> 400 Response
+> 400 Response ([ErrorTemplate](#schemaerrortemplate))
 
 ```json
 {
@@ -562,17 +390,17 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetI
 
 `string assetId`
 <br/>Asset identifier<br/><br/>`string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
 
 ### Request Body
 
-<br/>
+Asset to create<br/>
 
 ```json
 {
-  "Id": "SampleAsset",
-  "Description": "This is a sample asset.",
+  "Id": "SampleAssetA",
+  "Description": "This is a sample asset a.",
   "Metadata": [
     {
       "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
@@ -598,9 +426,10 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetI
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Asset](#schemaasset)|OK|
+|201|[Asset](#schemaasset)|Asset created|
 |302|None|Asset you attempted to create is identical to one that already exists.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
-|403|[ErrorTemplate](#schemaerrortemplate)|You are not authorized to create assets.|
+|403|[ErrorTemplate](#schemaerrortemplate)|Forbidden|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 |409|[ErrorTemplate](#schemaerrortemplate)|Asset you attempted to create has a conflict. See the response body for additional details.|
 
@@ -609,6 +438,7 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetI
 |Status|Header|Type|Description|
 |---|---|---|---|
 |200|Etag|integer|Version|
+|201|Etag|integer|Version|
 |302|Location|string|Location to get the identical resource.|
 
 #### Example response body
@@ -616,8 +446,8 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetI
 
 ```json
 {
-  "Id": "SampleAsset",
-  "Description": "This is a sample asset.",
+  "Id": "SampleAssetA",
+  "Description": "This is a sample asset a.",
   "Metadata": [
     {
       "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
@@ -638,7 +468,33 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetI
 }
 ```
 
-> 400 Response
+> 201 Response
+
+```json
+{
+  "Id": "SampleAssetA",
+  "Description": "This is a sample asset a.",
+  "Metadata": [
+    {
+      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+      "Name": "ModelNumber",
+      "Description": "This is a static attribute on the asset which represents the model number.",
+      "SdsTypeCode": "Double",
+      "Value": 0.01
+    }
+  ],
+  "StreamReferences": [
+    {
+      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+      "Name": "Data",
+      "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+      "StreamId": "PI_bifrostbigdaddy_1"
+    }
+  ]
+}
+```
+
+> 400 Response ([ErrorTemplate](#schemaerrortemplate))
 
 ```json
 {
@@ -653,9 +509,9 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetI
 
 ---
 
-## `Create Or Update Asset (Assets2 path)`
+## `Create Or Update Asset`
 
-<a id="opIdAssets_Create Or Update Asset (Assets2 path)"></a>
+<a id="opIdAssets_Create Or Update Asset"></a>
 
 Creates or updates an asset with a specified identifier. If the asset already exists, you can specify an If-Match property in the HTTP request header to ensure that the asset is modified only if its version matches. To support flexibility, on creation and update, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is from an asset type.
 
@@ -668,17 +524,17 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId
 
 `string assetId`
 <br/>Asset identifier<br/><br/>`string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
 
 ### Request Body
 
-<br/>
+Asset to create or update<br/>
 
 ```json
 {
-  "Id": "SampleAsset",
-  "Description": "This is a sample asset.",
+  "Id": "SampleAssetA",
+  "Description": "This is a sample asset a.",
   "Metadata": [
     {
       "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
@@ -706,6 +562,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId
 |200|[Asset](#schemaasset)|OK|
 |201|[Asset](#schemaasset)|Asset created with specified identifier|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
+|403|None|Forbidden|
 |409|[ErrorTemplate](#schemaerrortemplate)|Conflict|
 |412|[ErrorTemplate](#schemaerrortemplate)|Pre-Condition Failed|
 
@@ -721,8 +578,8 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId
 
 ```json
 {
-  "Id": "SampleAsset",
-  "Description": "This is a sample asset.",
+  "Id": "SampleAssetA",
+  "Description": "This is a sample asset a.",
   "Metadata": [
     {
       "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
@@ -747,8 +604,8 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId
 
 ```json
 {
-  "Id": "SampleAsset",
-  "Description": "This is a sample asset.",
+  "Id": "SampleAssetA",
+  "Description": "This is a sample asset a.",
   "Metadata": [
     {
       "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
@@ -769,7 +626,52 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId
 }
 ```
 
-> 400 Response
+> 400 Response ([ErrorTemplate](#schemaerrortemplate))
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+```
+
+---
+
+## `Delete Asset`
+
+<a id="opIdAssets_Delete Asset"></a>
+
+Deletes the asset with a specified identifier.
+
+### Request
+```text 
+DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
+```
+
+#### Parameters
+
+`string assetId`
+<br/>Asset identifier<br/><br/>`string tenantId`
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|204|None|Asset with specified identifier has been deleted.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
+|403|None|Forbidden|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not Found|
+|409|[ErrorTemplate](#schemaerrortemplate)|Conflict|
+|412|[ErrorTemplate](#schemaerrortemplate)|Pre-Condition Failed|
+
+#### Example response body
+> 400 Response ([ErrorTemplate](#schemaerrortemplate))
 
 ```json
 {
@@ -943,6 +845,8 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId
 <a id="tocSasset"></a>
 <a id="tocsasset"></a>
 
+Represents an asset object.
+
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
@@ -957,8 +861,8 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId
 
 ```json
 {
-  "Id": "SampleAsset",
-  "Description": "This is a sample asset.",
+  "Id": "SampleAssetA",
+  "Description": "This is a sample asset a.",
   "Metadata": [
     {
       "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
@@ -1259,7 +1163,7 @@ An asset stream reference represents dynamic stream data associated with an asse
 <a id="tocSstatusconfiguration"></a>
 <a id="tocsstatusconfiguration"></a>
 
-Status is a property of an asset or asset type that defines the simple status of an asset or asset type. There is one status property for each asset or asset type. If an asset references an existing asset type and the asset type has a corresponding type reference, then the status mapping on the asset is ignored.
+Status configuration is a property of an asset or asset type that defines the simple status of an asset or asset type.
 
 #### Properties
 
@@ -1270,8 +1174,23 @@ Status is a property of an asset or asset type that defines the simple status of
 
 ```json
 {
-  "DefinitionType": 0,
-  "Definition": null
+  "DefinitionType": "StreamPropertyMapping",
+  "Definition": {
+    "StreamReferenceId": "StatusMappingOnAssetTypeCrudFunctionalTest_streamRef",
+    "StreamPropertyId": "SystemStateCode",
+    "ValueStatusMappings": [
+      {
+        "Value": 3,
+        "Status": "Bad",
+        "DisplayName": "Bad"
+      },
+      {
+        "Value": 1,
+        "Status": "Good",
+        "DisplayName": "Good"
+      }
+    ]
+  }
 }
 
 ```

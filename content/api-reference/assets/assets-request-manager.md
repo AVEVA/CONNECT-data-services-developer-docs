@@ -4,7 +4,7 @@ uid: assets-request-manager
 ---
 
 # Request Manager
-The asset API allows you to programmatically model your on-premises assets in OSIsoft Cloud Services (OCS). A single stream with its metadata can be used to model very simple assets. However, in most instances, an asset relates to dynamic data from several streams and to static information that describe the asset. This is better structured as an asset instead of any single stream. The assets feature is well suited to model these aspects of an asset. It allows users to create an asset, add static metadata, and reference streams in a standard, structured way. The asset API includes search capabilities and features to directly retrieve the values of dynamic data associated with a given asset. It also provides methods to configure determining the asset status and to configure different user views of an asset..
+The asset API allows you to programmatically model your on-premises assets in OSIsoft Cloud Services (OCS). A single stream with its metadata can be used to model very simple assets. However, in most instances, an asset relates to dynamic data from several streams and to static information that describe the asset. This is better structured as an asset instead of any single stream. The assets feature is well suited to model these aspects of an asset. It allows users to create an asset, add static metadata, and reference streams in a standard, structured way. The asset API includes search capabilities and features to directly retrieve the values of dynamic data associated with a given asset. It also provides methods to configure determining the asset status and to configure different user views of an asset.
 
 ## `List Assets Async2`
 
@@ -259,6 +259,106 @@ Asset you want to create<br/>
 
 ---
 
+## `Get Assets`
+
+<a id="opIdRequestManager_Get Assets"></a>
+
+### Request
+```text 
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
+?skip={skip}&count={count}&orderBy={orderBy}&query={query}&pageSize={pageSize}&maxPages={maxPages}&continuationToken={continuationToken}&Comparer={Comparer}&Count={Count}&Keys={Keys}&System.Collections.Generic.IDictionary<TKey,TValue>.Keys={System.Collections.Generic.IDictionary<TKey,TValue>.Keys}&System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys={System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys}&Values={Values}&System.Collections.Generic.IDictionary<TKey,TValue>.Values={System.Collections.Generic.IDictionary<TKey,TValue>.Values}&System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values={System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values}&Item={Item}&System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly={System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly}&System.Collections.ICollection.IsSynchronized={System.Collections.ICollection.IsSynchronized}&System.Collections.ICollection.SyncRoot={System.Collections.ICollection.SyncRoot}&System.Collections.IDictionary.IsFixedSize={System.Collections.IDictionary.IsFixedSize}&System.Collections.IDictionary.IsReadOnly={System.Collections.IDictionary.IsReadOnly}&System.Collections.IDictionary.Keys={System.Collections.IDictionary.Keys}&System.Collections.IDictionary.Values={System.Collections.IDictionary.Values}&System.Collections.IDictionary.Item={System.Collections.IDictionary.Item}
+```
+
+#### Parameters
+
+`string tenantId`
+<br/><br/>`string namespaceId`
+<br/><br/>
+`[optional] integer skip`
+<br/><br/>`[optional] integer count`
+<br/><br/>`[optional] string orderBy`
+<br/><br/>`[optional] string query`
+<br/><br/>`[optional] integer pageSize`
+<br/><br/>`[optional] integer maxPages`
+<br/><br/>`[optional] string continuationToken`
+<br/><br/>`[optional] object Comparer`
+<br/><br/>`[optional] integer Count`
+<br/><br/>`[optional] array Keys`
+<br/><br/>`[optional] array System.Collections.Generic.IDictionary<TKey,TValue>.Keys`
+<br/><br/>`[optional] array System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys`
+<br/><br/>`[optional] array Values`
+<br/><br/>`[optional] array System.Collections.Generic.IDictionary<TKey,TValue>.Values`
+<br/><br/>`[optional] array System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values`
+<br/><br/>`[optional] array Item`
+<br/><br/>`[optional] boolean System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly`
+<br/><br/>`[optional] boolean System.Collections.ICollection.IsSynchronized`
+<br/><br/>`[optional] any System.Collections.ICollection.SyncRoot`
+<br/><br/>`[optional] boolean System.Collections.IDictionary.IsFixedSize`
+<br/><br/>`[optional] boolean System.Collections.IDictionary.IsReadOnly`
+<br/><br/>`[optional] array System.Collections.IDictionary.Keys`
+<br/><br/>`[optional] array System.Collections.IDictionary.Values`
+<br/><br/>`[optional] any System.Collections.IDictionary.Item`
+<br/><br/>
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|string|None|
+
+---
+
+## `Create Asset`
+
+<a id="opIdRequestManager_Create Asset"></a>
+
+### Request
+```text 
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
+```
+
+#### Parameters
+
+`string tenantId`
+<br/><br/>`string namespaceId`
+<br/><br/>
+
+### Request Body
+
+<br/>
+
+```json
+{
+  "Id": "SampleAssetA",
+  "Description": "This is a sample asset a.",
+  "Metadata": [
+    {
+      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+      "Name": "ModelNumber",
+      "Description": "This is a static attribute on the asset which represents the model number.",
+      "SdsTypeCode": "Double",
+      "Value": 0.01
+    }
+  ],
+  "StreamReferences": [
+    {
+      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+      "Name": "Data",
+      "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+      "StreamId": "PI_bifrostbigdaddy_1"
+    }
+  ]
+}
+```
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|string|None|
+
+---
+
 ## `Bulk Create Assets Async2`
 
 <a id="opIdRequestManager_Bulk Create Assets Async2"></a>
@@ -393,6 +493,114 @@ List of assets you want to create.<br/>
         }
       ]
     }
+  ],
+  "ChildErrors": [
+    {
+      "OperationId": "string",
+      "Error": "string",
+      "Resolution": "string",
+      "Reason": "string",
+      "StatusCode": 0,
+      "property1": null,
+      "property2": null
+    }
+  ]
+}
+```
+
+---
+
+## `Bulk Create Assets`
+
+<a id="opIdRequestManager_Bulk Create Assets"></a>
+
+### Request
+```text 
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets
+```
+
+#### Parameters
+
+`string tenantId`
+<br/><br/>`string namespaceId`
+<br/><br/>
+
+### Request Body
+
+<br/>
+
+```json
+[
+  {
+    "Id": "SampleAssetA",
+    "Description": "This is a sample asset a.",
+    "Metadata": [
+      {
+        "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+        "Name": "ModelNumber",
+        "Description": "This is a static attribute on the asset which represents the model number.",
+        "SdsTypeCode": "Double",
+        "Value": 0.01
+      }
+    ],
+    "StreamReferences": [
+      {
+        "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+        "Name": "Data",
+        "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+        "StreamId": "PI_bifrostbigdaddy_1"
+      }
+    ]
+  }
+]
+```
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|string|None|
+
+---
+
+## `Bulk Delete Assets`
+
+<a id="opIdRequestManager_Bulk Delete Assets"></a>
+
+Deletes all assets with the specified identifiers. This API can delete up to a maximum of 1000 assets in one API call.
+
+### Request
+```text 
+DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets
+?id={id}
+```
+
+#### Parameters
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
+`[optional] array id`
+<br/>Comma separated asset identifiers in the form of id={assetId_1},id={assetId_2}<br/><br/>
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|204|None|Assets with the specified ids has been deleted.|
+|207|[MultiStatusResultOfStringAndChildErrorTemplate](#schemamultistatusresultofstringandchilderrortemplate)|Partial success. Not all assets were deleted. See response body for additional details.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
+
+#### Example response body
+> 207 Response ([MultiStatusResultOfStringAndChildErrorTemplate](#schemamultistatusresultofstringandchilderrortemplate))
+
+```json
+{
+  "Reason": "string",
+  "Error": "string",
+  "OperationId": "string",
+  "Data": [
+    "string"
   ],
   "ChildErrors": [
     {
@@ -667,61 +875,6 @@ Asset identifiers<br/>
       "DisplayName": "AssetId-1Good",
       "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z"
     }
-  ],
-  "ChildErrors": [
-    {
-      "OperationId": "string",
-      "Error": "string",
-      "Resolution": "string",
-      "Reason": "string",
-      "StatusCode": 0,
-      "property1": null,
-      "property2": null
-    }
-  ]
-}
-```
-
----
-
-## `Bulk Delete Assets`
-
-<a id="opIdRequestManager_Bulk Delete Assets"></a>
-
-Deletes all assets with the specified identifiers. This API can delete up to a maximum of 1000 assets in one API call.
-
-### Request
-```text 
-DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets
-?id={id}
-```
-
-#### Parameters
-
-`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
-`[optional] array id`
-<br/>Comma separated asset identifiers in the form of id={assetId_1},id={assetId_2}<br/><br/>
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|204|None|Assets with the specified ids has been deleted.|
-|207|[MultiStatusResultOfStringAndChildErrorTemplate](#schemamultistatusresultofstringandchilderrortemplate)|Partial success. Not all assets were deleted. See response body for additional details.|
-|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
-
-#### Example response body
-> 207 Response ([MultiStatusResultOfStringAndChildErrorTemplate](#schemamultistatusresultofstringandchilderrortemplate))
-
-```json
-{
-  "Reason": "string",
-  "Error": "string",
-  "OperationId": "string",
-  "Data": [
-    "string"
   ],
   "ChildErrors": [
     {

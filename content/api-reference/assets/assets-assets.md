@@ -641,6 +641,30 @@ Asset to create or update<br/>
 
 ---
 
+## `Get Asset`
+
+<a id="opIdAssets_Get Asset"></a>
+
+### Request
+```text 
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
+```
+
+#### Parameters
+
+`string assetId`
+<br/><br/>`string tenantId`
+<br/><br/>`string namespaceId`
+<br/><br/>
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|string|None|
+
+---
+
 ## `Create Asset`
 
 <a id="opIdAssets_Create Asset"></a>

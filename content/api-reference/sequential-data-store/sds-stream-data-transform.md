@@ -4,8 +4,8 @@ uid: sds-stream-data-transform
 ---
 
 # Stream Data Transform
-APIs that transforms the stream data.
-The Transform route is for SdsStreamView project and unit conversion of stream data.
+API that transforms the stream data.  
+The Transform route is for SdsStreamView and unit conversion of stream data.
 - [Reading with SdsStreamViews](xref:sdsReadingData#reading-with-sdsstreamviews):Changing the shape of the returned data.
 When transforming data with an SdsStreamView, the data read is converted to the target type specified in the SdsStreamView. 
 All stream view transformations are HTTP GET requests. 

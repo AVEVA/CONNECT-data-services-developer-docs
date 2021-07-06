@@ -3,7 +3,7 @@
 
 # These owners will be the default owners for everything in the repo.
 *       @digitaljoshua
-content/api-reference/sequential-data-store 
+content/api-reference/sequential-data-store  @digitaljoshua
 content/api-reference/identity @digitaljoshua
 content/api-reference/management @digitaljoshua
 content/api-reference/data-views @osimarkrogers

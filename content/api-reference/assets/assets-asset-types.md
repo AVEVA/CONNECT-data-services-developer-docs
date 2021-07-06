@@ -4,7 +4,7 @@ uid: assets-asset-types
 ---
 
 # Asset Types
-In many instances, you will have multiple assets of the same type.. In this situation, an asset type can be used to create multiple similar assets. A change to the asset type is reflected in all assets that are derived from the asset type..
+In many instances, you will have multiple assets of the same type.. In this situation, an asset type can be used to create multiple similar assets. A change to the asset type is reflected in all assets that are derived from the asset type...
 
 ## `List Asset Types2`
 
@@ -229,6 +229,34 @@ Asset type to create<br/>
   "property2": null
 }
 ```
+
+---
+
+## `Get Asset Types`
+
+<a id="opIdAssetTypes_Get Asset Types"></a>
+
+### Request
+```text 
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes
+?skip={skip}&count={count}&query={query}
+```
+
+#### Parameters
+
+`string tenantId`
+<br/><br/>`string namespaceId`
+<br/><br/>
+`[optional] integer skip`
+<br/><br/>`[optional] integer count`
+<br/><br/>`[optional] string query`
+<br/><br/>
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|string|None|
 
 ---
 

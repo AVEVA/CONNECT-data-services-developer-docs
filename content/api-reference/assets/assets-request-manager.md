@@ -4,107 +4,7 @@ uid: assets-request-manager
 ---
 
 # Request Manager
-The asset API allows you to programmatically model your on-premises assets in OSIsoft Cloud Services (OCS). A single stream with its metadata can be used to model very simple assets. However, in most instances, an asset relates to dynamic data from several streams and to static information that describe the asset. This is better structured as an asset instead of any single stream. The assets feature is well suited to model these aspects of an asset. It allows users to create an asset, add static metadata, and reference streams in a standard, structured way. The asset API includes search capabilities and features to directly retrieve the values of dynamic data associated with a given asset. It also provides methods to configure determining the asset status and to configure different user views of an asset.
-
-## `Get Assets`
-
-<a id="opIdRequestManager_Get Assets"></a>
-
-### Request
-```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
-?skip={skip}&count={count}&orderBy={orderBy}&query={query}&pageSize={pageSize}&maxPages={maxPages}&continuationToken={continuationToken}&Comparer={Comparer}&Count={Count}&Keys={Keys}&System.Collections.Generic.IDictionary<TKey,TValue>.Keys={System.Collections.Generic.IDictionary<TKey,TValue>.Keys}&System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys={System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys}&Values={Values}&System.Collections.Generic.IDictionary<TKey,TValue>.Values={System.Collections.Generic.IDictionary<TKey,TValue>.Values}&System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values={System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values}&Item={Item}&System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly={System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly}&System.Collections.ICollection.IsSynchronized={System.Collections.ICollection.IsSynchronized}&System.Collections.ICollection.SyncRoot={System.Collections.ICollection.SyncRoot}&System.Collections.IDictionary.IsFixedSize={System.Collections.IDictionary.IsFixedSize}&System.Collections.IDictionary.IsReadOnly={System.Collections.IDictionary.IsReadOnly}&System.Collections.IDictionary.Keys={System.Collections.IDictionary.Keys}&System.Collections.IDictionary.Values={System.Collections.IDictionary.Values}&System.Collections.IDictionary.Item={System.Collections.IDictionary.Item}
-```
-
-#### Parameters
-
-`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
-`[optional] integer skip`
-<br/><br/>`[optional] integer count`
-<br/><br/>`[optional] string orderBy`
-<br/><br/>`[optional] string query`
-<br/><br/>`[optional] integer pageSize`
-<br/><br/>`[optional] integer maxPages`
-<br/><br/>`[optional] string continuationToken`
-<br/><br/>`[optional] object Comparer`
-<br/><br/>`[optional] integer Count`
-<br/><br/>`[optional] array Keys`
-<br/><br/>`[optional] array System.Collections.Generic.IDictionary<TKey,TValue>.Keys`
-<br/><br/>`[optional] array System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys`
-<br/><br/>`[optional] array Values`
-<br/><br/>`[optional] array System.Collections.Generic.IDictionary<TKey,TValue>.Values`
-<br/><br/>`[optional] array System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values`
-<br/><br/>`[optional] array Item`
-<br/><br/>`[optional] boolean System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly`
-<br/><br/>`[optional] boolean System.Collections.ICollection.IsSynchronized`
-<br/><br/>`[optional] any System.Collections.ICollection.SyncRoot`
-<br/><br/>`[optional] boolean System.Collections.IDictionary.IsFixedSize`
-<br/><br/>`[optional] boolean System.Collections.IDictionary.IsReadOnly`
-<br/><br/>`[optional] array System.Collections.IDictionary.Keys`
-<br/><br/>`[optional] array System.Collections.IDictionary.Values`
-<br/><br/>`[optional] any System.Collections.IDictionary.Item`
-<br/><br/>
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|string|None|
-
----
-
-## `Create Asset`
-
-<a id="opIdRequestManager_Create Asset"></a>
-
-### Request
-```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
-```
-
-#### Parameters
-
-`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
-
-### Request Body
-
-<br/>
-
-```json
-{
-  "Id": "SampleAsset",
-  "Description": "This is a sample asset.",
-  "Metadata": [
-    {
-      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
-      "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
-      "SdsTypeCode": "Double",
-      "Value": 0.01
-    }
-  ],
-  "StreamReferences": [
-    {
-      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-      "Name": "Data",
-      "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
-      "StreamId": "PI_bifrostbigdaddy_1"
-    }
-  ]
-}
-```
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|string|None|
-
----
+The asset API allows you to programmatically model your on-premises assets in OSIsoft Cloud Services (OCS). A single stream with its metadata can be used to model very simple assets. However, in most instances, an asset relates to dynamic data from several streams and to static information that describe the asset. This is better structured as an asset instead of any single stream. The assets feature is well suited to model these aspects of an asset. It allows users to create an asset, add static metadata, and reference streams in a standard, structured way. The asset API includes search capabilities and features to directly retrieve the values of dynamic data associated with a given asset. It also provides methods to configure determining the asset status and to configure different user views of an asset..
 
 ## `List Assets Async2`
 
@@ -121,16 +21,16 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
 `[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>`[optional] string orderBy`
 <br/>Optional parameter which returns assets ordered either by the asset `Id` or the asset `Name`. Specify `asc` or `desc` to return the results in ascending or descending order. If not specified, the default is ascending order.<br/><br/>`[optional] string query`
-<br/>Query identifier<br/><br/><br/>`[optional] integer pageSize`
-<br/><br/>`[optional] integer maxPages`
-<br/><br/>`[optional] string continuationToken`
-<br/><br/>`[optional] object Comparer`
+<br/>Query identifier.<br/><br/><br/>`[optional] integer pageSize`
+<br/>Page size, internal use only<br/><br/>`[optional] integer maxPages`
+<br/>Max pages, internal use only<br/><br/>`[optional] string continuationToken`
+<br/>Internal use only<br/><br/>`[optional] object Comparer`
 <br/><br/>`[optional] integer Count`
 <br/><br/>`[optional] array Keys`
 <br/><br/>`[optional] array System.Collections.Generic.IDictionary<TKey,TValue>.Keys`
@@ -212,7 +112,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2
 ]
 ```
 
-> 400 Response
+> 400 Response ([ErrorTemplate](#schemaerrortemplate))
 
 ```json
 {
@@ -241,8 +141,8 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
 
 ### Request Body
 
@@ -250,8 +150,8 @@ Asset you want to create<br/>
 
 ```json
 {
-  "Id": "SampleAsset",
-  "Description": "This is a sample asset.",
+  "Id": "SampleAssetA",
+  "Description": "This is a sample asset a.",
   "Metadata": [
     {
       "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
@@ -296,8 +196,8 @@ Asset you want to create<br/>
 
 ```json
 {
-  "Id": "SampleAsset",
-  "Description": "This is a sample asset.",
+  "Id": "SampleAssetA",
+  "Description": "This is a sample asset a.",
   "Metadata": [
     {
       "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
@@ -322,8 +222,8 @@ Asset you want to create<br/>
 
 ```json
 {
-  "Id": "SampleAsset",
-  "Description": "This is a sample asset.",
+  "Id": "SampleAssetA",
+  "Description": "This is a sample asset a.",
   "Metadata": [
     {
       "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
@@ -344,7 +244,7 @@ Asset you want to create<br/>
 }
 ```
 
-> 400 Response
+> 400 Response ([ErrorTemplate](#schemaerrortemplate))
 
 ```json
 {
@@ -359,30 +259,32 @@ Asset you want to create<br/>
 
 ---
 
-## `Bulk Create Assets`
+## `Bulk Create Assets Async2`
 
-<a id="opIdRequestManager_Bulk Create Assets"></a>
+<a id="opIdRequestManager_Bulk Create Assets Async2"></a>
+
+Creates assets in bulk. Creates multiple assets in a single call.
 
 ### Request
 ```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets2
 ```
 
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
 
 ### Request Body
 
-<br/>
+List of assets you want to create.<br/>
 
 ```json
 [
   {
-    "Id": "SampleAsset",
-    "Description": "This is a sample asset.",
+    "Id": "SampleAssetA",
+    "Description": "This is a sample asset a.",
     "Metadata": [
       {
         "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
@@ -408,7 +310,377 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|200|[Asset](#schemaasset)[]|Assets as persisted, including values for optional parameters that were omitted in the request.|
+|207|[MultiStatusResultOfAssetAndChildErrorTemplate](#schemamultistatusresultofassetandchilderrortemplate)|Partial success. Some assets were created. See response body for additional details.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
+
+#### Example response body
+> 200 Response
+
+```json
+[
+  {
+    "Id": "SampleAssetA",
+    "Description": "This is a sample asset a.",
+    "Metadata": [
+      {
+        "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+        "Name": "ModelNumber",
+        "Description": "This is a static attribute on the asset which represents the model number.",
+        "SdsTypeCode": "Double",
+        "Value": 0.01
+      }
+    ],
+    "StreamReferences": [
+      {
+        "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+        "Name": "Data",
+        "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+        "StreamId": "PI_bifrostbigdaddy_1"
+      }
+    ]
+  },
+  {
+    "Id": "SampleAssetA",
+    "Description": "This is a sample asset a.",
+    "Metadata": [
+      {
+        "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+        "Name": "ModelNumber",
+        "Description": "This is a static attribute on the asset which represents the model number.",
+        "SdsTypeCode": "Double",
+        "Value": 0.01
+      }
+    ],
+    "StreamReferences": [
+      {
+        "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+        "Name": "Data",
+        "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+        "StreamId": "PI_bifrostbigdaddy_1"
+      }
+    ]
+  }
+]
+```
+
+> 207 Response ([MultiStatusResultOfAssetAndChildErrorTemplate](#schemamultistatusresultofassetandchilderrortemplate))
+
+```json
+{
+  "Reason": "string",
+  "Error": "string",
+  "OperationId": "string",
+  "Data": [
+    {
+      "Id": "SampleAssetA",
+      "Description": "This is a sample asset a.",
+      "Metadata": [
+        {
+          "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+          "Name": "ModelNumber",
+          "Description": "This is a static attribute on the asset which represents the model number.",
+          "SdsTypeCode": "Double",
+          "Value": 0.01
+        }
+      ],
+      "StreamReferences": [
+        {
+          "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+          "Name": "Data",
+          "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+          "StreamId": "PI_bifrostbigdaddy_1"
+        }
+      ]
+    }
+  ],
+  "ChildErrors": [
+    {
+      "OperationId": "string",
+      "Error": "string",
+      "Resolution": "string",
+      "Reason": "string",
+      "StatusCode": 0,
+      "property1": null,
+      "property2": null
+    }
+  ]
+}
+```
+
+---
+
+## `Get Assets In Search Result Format`
+
+<a id="opIdRequestManager_Get Assets In Search Result Format"></a>
+
+Searches all assets and returns a list of asset Ids and their matched fields. Use this API to identify the fields in the asset that match your query string.
+
+### Request
+```text 
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets
+?skip={skip}&count={count}&orderBy={orderBy}&query={query}&pageSize={pageSize}&maxPages={maxPages}&continuationToken={continuationToken}&Comparer={Comparer}&Count={Count}&Keys={Keys}&System.Collections.Generic.IDictionary<TKey,TValue>.Keys={System.Collections.Generic.IDictionary<TKey,TValue>.Keys}&System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys={System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys}&Values={Values}&System.Collections.Generic.IDictionary<TKey,TValue>.Values={System.Collections.Generic.IDictionary<TKey,TValue>.Values}&System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values={System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values}&Item={Item}&System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly={System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly}&System.Collections.ICollection.IsSynchronized={System.Collections.ICollection.IsSynchronized}&System.Collections.ICollection.SyncRoot={System.Collections.ICollection.SyncRoot}&System.Collections.IDictionary.IsFixedSize={System.Collections.IDictionary.IsFixedSize}&System.Collections.IDictionary.IsReadOnly={System.Collections.IDictionary.IsReadOnly}&System.Collections.IDictionary.Keys={System.Collections.IDictionary.Keys}&System.Collections.IDictionary.Values={System.Collections.IDictionary.Values}&System.Collections.IDictionary.Item={System.Collections.IDictionary.Item}
+```
+
+#### Parameters
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
+`[optional] integer skip`
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>`[optional] string orderBy`
+<br/>Optional parameter which returns assets ordered either by the asset `Id` or the asset `Name`. Specify `asc` or `desc` to return the results in ascending or descending order. If not specified, the default is ascending order.<br/><br/>`[optional] string query`
+<br/>Query identifier.<br/><br/><br/>`[optional] integer pageSize`
+<br/>Page size, internal use only<br/><br/>`[optional] integer maxPages`
+<br/>Max pages, internal use only<br/><br/>`[optional] string continuationToken`
+<br/>Internal use only<br/><br/>`[optional] object Comparer`
+<br/><br/>`[optional] integer Count`
+<br/><br/>`[optional] array Keys`
+<br/><br/>`[optional] array System.Collections.Generic.IDictionary<TKey,TValue>.Keys`
+<br/><br/>`[optional] array System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys`
+<br/><br/>`[optional] array Values`
+<br/><br/>`[optional] array System.Collections.Generic.IDictionary<TKey,TValue>.Values`
+<br/><br/>`[optional] array System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values`
+<br/><br/>`[optional] array Item`
+<br/><br/>`[optional] boolean System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly`
+<br/><br/>`[optional] boolean System.Collections.ICollection.IsSynchronized`
+<br/><br/>`[optional] any System.Collections.ICollection.SyncRoot`
+<br/><br/>`[optional] boolean System.Collections.IDictionary.IsFixedSize`
+<br/><br/>`[optional] boolean System.Collections.IDictionary.IsReadOnly`
+<br/><br/>`[optional] array System.Collections.IDictionary.Keys`
+<br/><br/>`[optional] array System.Collections.IDictionary.Values`
+<br/><br/>`[optional] any System.Collections.IDictionary.Item`
+<br/><br/>
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[SearchResultsOfSearchResult](#schemasearchresultsofsearchresult)|OK|
+|204|None|No assets match your query.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
+
+#### Example response body
+> 200 Response ([SearchResultsOfSearchResult](#schemasearchresultsofsearchresult))
+
+```json
+{
+  "TotalCount": 0,
+  "Results": [
+    {
+      "TotalCount": 2,
+      "Results": [
+        {
+          "MatchedFields": [
+            {
+              "Field": "Description",
+              "Terms": [
+                "searchedDescription"
+              ]
+            },
+            {
+              "Field": "Name",
+              "Terms": [
+                "searchedName"
+              ]
+            }
+          ],
+          "Score": 0.07410964510231982,
+          "Id": "AssetsSearchDemo1",
+          "Name": "SearchedName 1",
+          "Description": "SearchedDescription 1",
+          "ETag": "1",
+          "CreatedDate": "2021-06-28T05:57:13.4249707Z",
+          "LastModifiedDate": "2021-06-28T05:57:13.4249707Z"
+        },
+        {
+          "MatchedFields": [
+            {
+              "Field": "Description",
+              "Terms": [
+                "searchedDescription"
+              ]
+            },
+            {
+              "Field": "Name",
+              "Terms": [
+                "searchedName"
+              ]
+            }
+          ],
+          "Score": 0.062210717451675585,
+          "Id": "AssetsSearchDemo2",
+          "Name": "SearchResultName 2",
+          "Description": "SearchResultDescription 2",
+          "ETag": "6",
+          "CreatedDate": "2021-06-28T05:57:13.5965826Z",
+          "LastModifiedDate": "2021-06-28T05:57:13.5965826Z"
+        }
+      ]
+    }
+  ],
+  "ContinuationTokens": [
+    "string"
+  ]
+}
+```
+
+---
+
+## `List Faceted List Results`
+
+<a id="opIdRequestManager_List Faceted List Results"></a>
+
+Searchs for assets using facets. Asset facets are not case sensitive. Only asset metadata can be used in asset faceted searches.
+
+### Request
+```text 
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets/Facets
+?count={count}&name={name}
+```
+
+#### Parameters
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
+`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>`[optional] string name`
+<br/>Name of the asset metadata for which you want to retrieve the facet values.<br/><br/>
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[FacetResult](#schemafacetresult)[]|OK|
+|204|None|No assets match your query.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
+
+#### Example response body
+> 200 Response
+
+```json
+[
+  {
+    "Name": "Location",
+    "FacetValues": [
+      {
+        "Value": "California",
+        "DocumentCount": 2
+      },
+      {
+        "Value": "Philly",
+        "DocumentCount": 1
+      }
+    ]
+  }
+]
+```
+
+> 400 Response ([ErrorTemplate](#schemaerrortemplate))
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+```
+
+---
+
+## `Get Bulk Last Status Data For Assets`
+
+<a id="opIdRequestManager_Get Bulk Last Status Data For Assets"></a>
+
+Returns status of multiple assets.
+
+### Request
+```text 
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets/Status/Last
+```
+
+#### Parameters
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
+
+### Request Body
+
+Asset identifiers<br/>
+
+```json
+[
+  "AssetId-1",
+  "AssetId-2",
+  "AssetId-3"
+]
+```
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[LastStatusData](#schemalaststatusdata)[]|Last status of assets in the body.|
+|207|[MultiStatusResultOfLastStatusDataAndChildErrorTemplate](#schemamultistatusresultoflaststatusdataandchilderrortemplate)|Partial success. Some assets encountered errors. See response body for additional details.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
+
+#### Example response body
+> 200 Response
+
+```json
+[
+  {
+    "AssetId": "AssetId-1",
+    "Status": 1,
+    "Value": "85",
+    "DisplayName": "TemperatureSensorBuild1InF",
+    "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z"
+  },
+  {
+    "AssetId": "AssetId-2",
+    "Status": 2,
+    "Value": "185",
+    "DisplayName": "DeviceMeasurement",
+    "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z"
+  }
+]
+```
+
+> 207 Response ([MultiStatusResultOfLastStatusDataAndChildErrorTemplate](#schemamultistatusresultoflaststatusdataandchilderrortemplate))
+
+```json
+{
+  "Reason": "string",
+  "Error": "string",
+  "OperationId": "string",
+  "Data": [
+    {
+      "AssetId": "AssetId-1",
+      "Status": "Good",
+      "Value": "85",
+      "DisplayName": "AssetId-1Good",
+      "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z"
+    }
+  ],
+  "ChildErrors": [
+    {
+      "OperationId": "string",
+      "Error": "string",
+      "Resolution": "string",
+      "Reason": "string",
+      "StatusCode": 0,
+      "property1": null,
+      "property2": null
+    }
+  ]
+}
+```
 
 ---
 
@@ -427,8 +699,8 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
 `[optional] array id`
 <br/>Comma separated asset identifiers in the form of id={assetId_1},id={assetId_2}<br/><br/>
 
@@ -441,7 +713,7 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 
 #### Example response body
-> 207 Response
+> 207 Response ([MultiStatusResultOfStringAndChildErrorTemplate](#schemamultistatusresultofstringandchilderrortemplate))
 
 ```json
 {
@@ -481,8 +753,8 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets/Res
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
 
 ### Request Body
 
@@ -573,7 +845,7 @@ Asset identifiers<br/>
 ]
 ```
 
-> 207 Response
+> 207 Response ([MultiStatusResultOfStringAndChildErrorTemplate](#schemamultistatusresultofstringandchilderrortemplate))
 
 ```json
 {
@@ -593,398 +865,6 @@ Asset identifiers<br/>
       "property1": null,
       "property2": null
     }
-  ]
-}
-```
-
----
-
-## `Bulk Deprecated Get Resolved Assets`
-
-<a id="opIdRequestManager_Bulk Deprecated Get Resolved Assets"></a>
-
-### Request
-```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets/Resolved2
-```
-
-#### Parameters
-
-`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
-
-### Request Body
-
-<br/>
-
-```json
-[
-  "string"
-]
-```
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|string|None|
-
----
-
-## `Get Bulk Last Status Data For Assets`
-
-<a id="opIdRequestManager_Get Bulk Last Status Data For Assets"></a>
-
-Returns status of multiple assets.
-
-### Request
-```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets/Status/Last
-```
-
-#### Parameters
-
-`string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>
-
-### Request Body
-
-Asset identifiers<br/>
-
-```json
-[
-  "AssetId-1",
-  "AssetId-2",
-  "AssetId-3"
-]
-```
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|[LastStatusData](#schemalaststatusdata)[]|Last status of assets in the body.|
-|207|[MultiStatusResultOfLastStatusDataAndChildErrorTemplate](#schemamultistatusresultoflaststatusdataandchilderrortemplate)|Partial success. Some assets encountered errors. See response body for additional details.|
-|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
-
-#### Example response body
-> 200 Response
-
-```json
-[
-  {
-    "AssetId": "AssetId-1",
-    "Status": 1,
-    "Value": "85",
-    "DisplayName": "TemperatureSensorBuild1InF",
-    "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z"
-  },
-  {
-    "AssetId": "AssetId-2",
-    "Status": 2,
-    "Value": "185",
-    "DisplayName": "DeviceMeasurement",
-    "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z"
-  }
-]
-```
-
-> 207 Response
-
-```json
-{
-  "Reason": "string",
-  "Error": "string",
-  "OperationId": "string",
-  "Data": [
-    {
-      "AssetId": "AssetId-1",
-      "Status": "Good",
-      "Value": "85",
-      "DisplayName": "AssetId-1Good",
-      "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z"
-    }
-  ],
-  "ChildErrors": [
-    {
-      "OperationId": "string",
-      "Error": "string",
-      "Resolution": "string",
-      "Reason": "string",
-      "StatusCode": 0,
-      "property1": null,
-      "property2": null
-    }
-  ]
-}
-```
-
----
-
-## `Bulk Create Assets Async2`
-
-<a id="opIdRequestManager_Bulk Create Assets Async2"></a>
-
-Creates assets in bulk. Creates multiple assets in a single call.
-
-### Request
-```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets2
-```
-
-#### Parameters
-
-`string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>
-
-### Request Body
-
-List of assets you want to create.<br/>
-
-```json
-[
-  {
-    "Id": "SampleAsset",
-    "Description": "This is a sample asset.",
-    "Metadata": [
-      {
-        "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
-        "Name": "ModelNumber",
-        "Description": "This is a static attribute on the asset which represents the model number.",
-        "SdsTypeCode": "Double",
-        "Value": 0.01
-      }
-    ],
-    "StreamReferences": [
-      {
-        "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-        "Name": "Data",
-        "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
-        "StreamId": "PI_bifrostbigdaddy_1"
-      }
-    ]
-  }
-]
-```
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|[Asset](#schemaasset)[]|Assets as persisted, including values for optional parameters that were omitted in the request.|
-|207|[MultiStatusResultOfAssetAndChildErrorTemplate](#schemamultistatusresultofassetandchilderrortemplate)|Partial success. Some assets were created. See response body for additional details.|
-|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
-
-#### Example response body
-> 200 Response
-
-```json
-[
-  {
-    "Id": "SampleAsset",
-    "Description": "This is a sample asset.",
-    "Metadata": [
-      {
-        "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
-        "Name": "ModelNumber",
-        "Description": "This is a static attribute on the asset which represents the model number.",
-        "SdsTypeCode": "Double",
-        "Value": 0.01
-      }
-    ],
-    "StreamReferences": [
-      {
-        "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-        "Name": "Data",
-        "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
-        "StreamId": "PI_bifrostbigdaddy_1"
-      }
-    ]
-  },
-  {
-    "Id": "SampleAsset",
-    "Description": "This is a sample asset.",
-    "Metadata": [
-      {
-        "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
-        "Name": "ModelNumber",
-        "Description": "This is a static attribute on the asset which represents the model number.",
-        "SdsTypeCode": "Double",
-        "Value": 0.01
-      }
-    ],
-    "StreamReferences": [
-      {
-        "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-        "Name": "Data",
-        "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
-        "StreamId": "PI_bifrostbigdaddy_1"
-      }
-    ]
-  }
-]
-```
-
-> 207 Response
-
-```json
-{
-  "Reason": "string",
-  "Error": "string",
-  "OperationId": "string",
-  "Data": [
-    {
-      "Id": "SampleAsset",
-      "Description": "This is a sample asset.",
-      "Metadata": [
-        {
-          "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
-          "Name": "ModelNumber",
-          "Description": "This is a static attribute on the asset which represents the model number.",
-          "SdsTypeCode": "Double",
-          "Value": 0.01
-        }
-      ],
-      "StreamReferences": [
-        {
-          "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-          "Name": "Data",
-          "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
-          "StreamId": "PI_bifrostbigdaddy_1"
-        }
-      ]
-    }
-  ],
-  "ChildErrors": [
-    {
-      "OperationId": "string",
-      "Error": "string",
-      "Resolution": "string",
-      "Reason": "string",
-      "StatusCode": 0,
-      "property1": null,
-      "property2": null
-    }
-  ]
-}
-```
-
----
-
-## `Get Assets In Search Result Format`
-
-<a id="opIdRequestManager_Get Assets In Search Result Format"></a>
-
-Searches all assets and returns a list of asset Ids and their matched fields. Use this API to identify the fields in the asset that match your query string.
-
-### Request
-```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets
-?skip={skip}&count={count}&orderBy={orderBy}&query={query}&pageSize={pageSize}&maxPages={maxPages}&continuationToken={continuationToken}&Comparer={Comparer}&Count={Count}&Keys={Keys}&System.Collections.Generic.IDictionary<TKey,TValue>.Keys={System.Collections.Generic.IDictionary<TKey,TValue>.Keys}&System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys={System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys}&Values={Values}&System.Collections.Generic.IDictionary<TKey,TValue>.Values={System.Collections.Generic.IDictionary<TKey,TValue>.Values}&System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values={System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values}&Item={Item}&System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly={System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly}&System.Collections.ICollection.IsSynchronized={System.Collections.ICollection.IsSynchronized}&System.Collections.ICollection.SyncRoot={System.Collections.ICollection.SyncRoot}&System.Collections.IDictionary.IsFixedSize={System.Collections.IDictionary.IsFixedSize}&System.Collections.IDictionary.IsReadOnly={System.Collections.IDictionary.IsReadOnly}&System.Collections.IDictionary.Keys={System.Collections.IDictionary.Keys}&System.Collections.IDictionary.Values={System.Collections.IDictionary.Values}&System.Collections.IDictionary.Item={System.Collections.IDictionary.Item}
-```
-
-#### Parameters
-
-`string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>
-`[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>`[optional] string orderBy`
-<br/>Optional parameter which returns assets ordered either by the asset `Id` or the asset `Name`. Specify `asc` or `desc` to return the results in ascending or descending order. If not specified, the default is ascending order.<br/><br/>`[optional] string query`
-<br/>Query identifier<br/><br/><br/>`[optional] integer pageSize`
-<br/><br/>`[optional] integer maxPages`
-<br/><br/>`[optional] string continuationToken`
-<br/><br/>`[optional] object Comparer`
-<br/><br/>`[optional] integer Count`
-<br/><br/>`[optional] array Keys`
-<br/><br/>`[optional] array System.Collections.Generic.IDictionary<TKey,TValue>.Keys`
-<br/><br/>`[optional] array System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys`
-<br/><br/>`[optional] array Values`
-<br/><br/>`[optional] array System.Collections.Generic.IDictionary<TKey,TValue>.Values`
-<br/><br/>`[optional] array System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values`
-<br/><br/>`[optional] array Item`
-<br/><br/>`[optional] boolean System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly`
-<br/><br/>`[optional] boolean System.Collections.ICollection.IsSynchronized`
-<br/><br/>`[optional] any System.Collections.ICollection.SyncRoot`
-<br/><br/>`[optional] boolean System.Collections.IDictionary.IsFixedSize`
-<br/><br/>`[optional] boolean System.Collections.IDictionary.IsReadOnly`
-<br/><br/>`[optional] array System.Collections.IDictionary.Keys`
-<br/><br/>`[optional] array System.Collections.IDictionary.Values`
-<br/><br/>`[optional] any System.Collections.IDictionary.Item`
-<br/><br/>
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|[SearchResultsOfSearchResult](#schemasearchresultsofsearchresult)|OK|
-|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
-
-#### Example response body
-> 200 Response
-
-```json
-{
-  "TotalCount": 0,
-  "Results": [
-    {
-      "TotalCount": 2,
-      "Results": [
-        {
-          "MatchedFields": [
-            {
-              "Field": "Description",
-              "Terms": [
-                "searchedDescription"
-              ]
-            },
-            {
-              "Field": "Name",
-              "Terms": [
-                "searchedName"
-              ]
-            }
-          ],
-          "Score": 0.07410964510231982,
-          "Id": "AssetsSearchDemo1",
-          "Name": "SearchedName 1",
-          "Description": "SearchedDescription 1",
-          "ETag": "1",
-          "CreatedDate": "2021-06-28T05:57:13.4249707Z",
-          "LastModifiedDate": "2021-06-28T05:57:13.4249707Z"
-        },
-        {
-          "MatchedFields": [
-            {
-              "Field": "Description",
-              "Terms": [
-                "searchedDescription"
-              ]
-            },
-            {
-              "Field": "Name",
-              "Terms": [
-                "searchedName"
-              ]
-            }
-          ],
-          "Score": 0.062210717451675585,
-          "Id": "AssetsSearchDemo2",
-          "Name": "SearchResultName 2",
-          "Description": "SearchResultDescription 2",
-          "ETag": "6",
-          "CreatedDate": "2021-06-28T05:57:13.5965826Z",
-          "LastModifiedDate": "2021-06-28T05:57:13.5965826Z"
-        }
-      ]
-    }
-  ],
-  "ContinuationTokens": [
-    "string"
   ]
 }
 ```
@@ -1009,8 +889,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets/Au
 <br/>Search term that you want to search for<br/><br/>`integer termCount`
 <br/>Maximum number of facet autocompleted items to return. Default is 0.<br/><br/>`integer facetCount`
 <br/>Maximum number of token autocompleted items to return. Default is 0.<br/><br/>`string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
 
 ### Response
 
@@ -1057,71 +937,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets/Au
 }
 ```
 
-> 400 Response
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Resolution": "string",
-  "Reason": "string",
-  "property1": null,
-  "property2": null
-}
-```
-
----
-
-## `List Faceted List Results`
-
-<a id="opIdRequestManager_List Faceted List Results"></a>
-
-Searchs for assets using facets. Asset facets are not case sensitive. Only asset metadata can be used in asset faceted searches.
-
-### Request
-```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets/Facets
-?count={count}&name={name}
-```
-
-#### Parameters
-
-`string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>
-`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>`[optional] string name`
-<br/>Name of the asset metadata for which you want to retrieve the facet values.<br/><br/>
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|[FacetResult](#schemafacetresult)[]|OK|
-|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
-
-#### Example response body
-> 200 Response
-
-```json
-[
-  {
-    "Name": "Location",
-    "FacetValues": [
-      {
-        "Value": "California",
-        "DocumentCount": 2
-      },
-      {
-        "Value": "Philly",
-        "DocumentCount": 1
-      }
-    ]
-  }
-]
-```
-
-> 400 Response
+> 400 Response ([ErrorTemplate](#schemaerrortemplate))
 
 ```json
 {
@@ -1144,6 +960,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets/Fa
 <a id="tocSasset"></a>
 <a id="tocsasset"></a>
 
+Represents an asset object.
+
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
@@ -1158,8 +976,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets/Fa
 
 ```json
 {
-  "Id": "SampleAsset",
-  "Description": "This is a sample asset.",
+  "Id": "SampleAssetA",
+  "Description": "This is a sample asset a.",
   "Metadata": [
     {
       "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
@@ -1460,7 +1278,7 @@ An asset stream reference represents dynamic stream data associated with an asse
 <a id="tocSstatusconfiguration"></a>
 <a id="tocsstatusconfiguration"></a>
 
-Status is a property of an asset or asset type that defines the simple status of an asset or asset type. There is one status property for each asset or asset type. If an asset references an existing asset type and the asset type has a corresponding type reference, then the status mapping on the asset is ignored.
+Status configuration is a property of an asset or asset type that defines the simple status of an asset or asset type.
 
 #### Properties
 
@@ -1471,8 +1289,23 @@ Status is a property of an asset or asset type that defines the simple status of
 
 ```json
 {
-  "DefinitionType": 0,
-  "Definition": null
+  "DefinitionType": "StreamPropertyMapping",
+  "Definition": {
+    "StreamReferenceId": "StatusMappingOnAssetTypeCrudFunctionalTest_streamRef",
+    "StreamPropertyId": "SystemStateCode",
+    "ValueStatusMappings": [
+      {
+        "Value": 3,
+        "Status": "Bad",
+        "DisplayName": "Bad"
+      },
+      {
+        "Value": 1,
+        "Status": "Good",
+        "DisplayName": "Good"
+      }
+    ]
+  }
 }
 
 ```
@@ -1539,7 +1372,7 @@ Status is a property of an asset or asset type that defines the simple status of
 |Reason|string|false|true|None|
 |Error|string|false|true|None|
 |OperationId|string|false|true|None|
-|Data|[[Asset](#schemaasset)]|false|true|None|
+|Data|[[Asset](#schemaasset)]|false|true|[Represents an asset object.]|
 |ChildErrors|[[ChildErrorTemplate](#schemachilderrortemplate)]|false|true|None|
 
 ```json
@@ -1549,8 +1382,8 @@ Status is a property of an asset or asset type that defines the simple status of
   "OperationId": "string",
   "Data": [
     {
-      "Id": "SampleAsset",
-      "Description": "This is a sample asset.",
+      "Id": "SampleAssetA",
+      "Description": "This is a sample asset a.",
       "Metadata": [
         {
           "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",

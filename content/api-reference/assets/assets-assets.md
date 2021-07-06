@@ -4,7 +4,7 @@ uid: assets-assets
 ---
 
 # Assets
-The Assets API allows you to create, read, update, and delete assets. The asset feature supports the HTTP entity tag(ETag) and If-Match for conditional requests.When a `GET` call is performed, the HTTP response header includes an Etag which indicates what version of the asset resource will be retrieved. #### Example Etag Response Header This is version 7 of a particular asset. ``` Etag: "7" ``` To edit or delete the asset, specify If-Match in the HTTP request header when calling `DELETE` or `PUT`. #### Example If-Match Response Header Modify or delete only if the current asset matches version 7. Otherwise, do not perform this operation.If this condition fails, return a 412. ``` If-Match : "7" ``` Note: If-Match is optional. If you want to delete or modify an asset regardless of the asset version, do not specify an If-Match..
+The Assets API allows you to create, read, update, and delete assets. The asset feature supports the HTTP entity tag(ETag) and If-Match for conditional requests.When a `GET` call is performed, the HTTP response header includes an Etag which indicates what version of the asset resource will be retrieved. #### Example Etag Response Header This is version 7 of a particular asset. ``` Etag: "7" ``` To edit or delete the asset, specify If-Match in the HTTP request header when calling `DELETE` or `PUT`. #### Example If-Match Response Header Modify or delete only if the current asset matches version 7. Otherwise, do not perform this operation.If this condition fails, return a 412. ``` If-Match : "7" ``` Note: If-Match is optional. If you want to delete or modify an asset regardless of the asset version, do not specify an If-Match...
 
 ## `Get Asset Owner`
 
@@ -509,9 +509,9 @@ Asset to create<br/>
 
 ---
 
-## `Create Or Update Asset`
+## `Create Or Update Asset (Assets2 path)`
 
-<a id="opIdAssets_Create Or Update Asset"></a>
+<a id="opIdAssets_Create Or Update Asset (Assets2 path)"></a>
 
 Creates or updates an asset with a specified identifier. If the asset already exists, you can specify an If-Match property in the HTTP request header to ensure that the asset is modified only if its version matches. To support flexibility, on creation and update, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is from an asset type.
 
@@ -638,6 +638,110 @@ Asset to create or update<br/>
   "property2": null
 }
 ```
+
+---
+
+## `Create Asset`
+
+<a id="opIdAssets_Create Asset"></a>
+
+### Request
+```text 
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
+```
+
+#### Parameters
+
+`string assetId`
+<br/><br/>`string tenantId`
+<br/><br/>`string namespaceId`
+<br/><br/>
+
+### Request Body
+
+<br/>
+
+```json
+{
+  "Id": "SampleAssetA",
+  "Description": "This is a sample asset a.",
+  "Metadata": [
+    {
+      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+      "Name": "ModelNumber",
+      "Description": "This is a static attribute on the asset which represents the model number.",
+      "SdsTypeCode": "Double",
+      "Value": 0.01
+    }
+  ],
+  "StreamReferences": [
+    {
+      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+      "Name": "Data",
+      "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+      "StreamId": "PI_bifrostbigdaddy_1"
+    }
+  ]
+}
+```
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|string|None|
+
+---
+
+## `Create Or Update Asset (Assets path)`
+
+<a id="opIdAssets_Create Or Update Asset (Assets path)"></a>
+
+### Request
+```text 
+PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
+```
+
+#### Parameters
+
+`string assetId`
+<br/><br/>`string tenantId`
+<br/><br/>`string namespaceId`
+<br/><br/>
+
+### Request Body
+
+<br/>
+
+```json
+{
+  "Id": "SampleAssetA",
+  "Description": "This is a sample asset a.",
+  "Metadata": [
+    {
+      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+      "Name": "ModelNumber",
+      "Description": "This is a static attribute on the asset which represents the model number.",
+      "SdsTypeCode": "Double",
+      "Value": 0.01
+    }
+  ],
+  "StreamReferences": [
+    {
+      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+      "Name": "Data",
+      "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+      "StreamId": "PI_bifrostbigdaddy_1"
+    }
+  ]
+}
+```
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|string|None|
 
 ---
 

@@ -1,8 +1,8 @@
 - name: Bulk data
   href: sds-stream-bulk-data.md
 - name: Read data
-  href: sds-streams.md
+  href: sds-read-data-api.md
 - name: Write data
-  href: sds-streams-metadata.md
+  href: sds-write-data-api.md
 - name: Transform data
   href: sds-stream-data-transform.md

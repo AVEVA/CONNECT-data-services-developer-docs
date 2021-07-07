@@ -13,5 +13,7 @@
 - name: Read data
   href: read-data/toc.yml
   topicHref: sds-read-data.md
+- name: Write data
+  href: sds-write-data.md
 - name: Units of measure
   href: sds-uom.md

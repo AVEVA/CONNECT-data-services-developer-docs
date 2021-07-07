@@ -3,7 +3,7 @@ uid: sds-streams-tags
 
 ---
 
-# Streams Tags
+# Streams tags
 Stream metadata is represented as a dictionary of string keys and associated string values. 
 It can be used to associate additional information with a stream. Stream tags are represented 
 as a list of strings. Tags can be used to categorize or denote special attributes of streams. 

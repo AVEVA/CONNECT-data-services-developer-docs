@@ -1,17 +1,19 @@
 - name: Access control list
   href: sds-access-control-list.md
-- name: Data
-  href: data/toc.yml
-  topicHref: sds-stream-data.md
 - name: Streams
   href: sds-streams.md
-- name: Stream metadata
+- name: Stream data
+  href: data/toc.yml
+  topicHref: sds-stream-data.md
+- name: Streams metadata
   href: sds-streams-metadata.md
-- name: Stream tags
+- name: Streams tags
   href: sds-streams-tags.md
 - name: Stream views
   href: sds-stream-views.md
 - name: Types
   href: sds-types.md
-- name: Units
+- name: Quantities
+  href: sds-quantities.md
+- name: Units of measure
   href: sds-units-of-measure.md

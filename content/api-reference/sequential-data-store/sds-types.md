@@ -1,6 +1,5 @@
 ---
 uid: sds-types
-
 ---
 
 # Types

@@ -1,6 +1,5 @@
 ---
 uid: sds-streams
-
 ---
 
 # Streams

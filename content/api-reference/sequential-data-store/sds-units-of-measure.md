@@ -1,9 +1,8 @@
 ---
 uid: sds-units-of-measure
-
 ---
 
-# Units Of Measure
+# Units of measure
 Controller handling requests routed to {namespaceId}/Units/. This controller should have read/get methods only, as update/write operations on units go through the QuantityController
 
 ## `List Units of Measure`

@@ -3,7 +3,7 @@ uid: sds-access-control-list
 
 ---
 
-# Access Control List
+# Access control list
 
 ## `Get Streams Access Control List`
 

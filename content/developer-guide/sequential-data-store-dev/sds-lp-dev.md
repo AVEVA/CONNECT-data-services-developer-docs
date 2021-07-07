@@ -1,5 +1,5 @@
 ---
-uid: sds
+uid: sds-dev-lp
 ---
 
 # Sequential Data Store

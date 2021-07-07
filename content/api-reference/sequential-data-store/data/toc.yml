@@ -1,0 +1,8 @@
+- name: Bulk data
+  href: sds-stream-bulk-data.md
+- name: Read data
+  href: sds-streams.md
+- name: Write data
+  href: sds-streams-metadata.md
+- name: Transform data
+  href: sds-stream-data-transform.md

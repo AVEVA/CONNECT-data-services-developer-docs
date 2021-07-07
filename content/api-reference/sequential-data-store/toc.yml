@@ -1,30 +1,17 @@
-- name: Quick start
-  href: sds-quick-start.md
-- name: Types
-  href: sds-types-dev.md
+- name: Access control list
+  href: sds-access-control-list.md
+- name: Data
+  href: data/toc.yml
+  topicHref: sds-stream-data.md
 - name: Streams
-  href: sds-streams-dev.md
-- name: Stream metadata and tags
-  href: sds-stream-metadata-tags.md
+  href: sds-streams.md
+- name: Stream metadata
+  href: sds-streams-metadata.md
+- name: Stream tags
+  href: sds-streams-tags.md
 - name: Stream views
-  href: sds-stream-views-dev.md
-- name: Indexes
-  href: sds-index.md
-- name: Units of measure
-  href: sds-uom.md
-- name: Read data
-  href: sds-read-data.md
-- name: Read data API
-  href: sds-read-data-api.md
-- name: Write data
-  href: sds-write-data.md
-- name: Write data API
-  href: sds-write-data-api.md
-- name: Compression
-  href: sds-compression.md
-- name: Search in SDS
-  href: sds-search.md
-- name: Filter expressions for SDS values
-  href: sds-filter-expressions.md
-- name: Table format
-  href: sds-table-format.md
+  href: sds-stream-views.md
+- name: Types
+  href: sds-types.md
+- name: Units
+  href: sds-units-of-measure.md

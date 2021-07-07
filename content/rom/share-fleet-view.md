@@ -16,7 +16,7 @@ You may have many hundreds or even thousands of assets in your fleet. Working wi
 
 3. Enter a string in the **Search** box to filter the assets that are displayed.
 
-4. Click the ![link](images/copy_url_link.png) icon in the tool bar. 
+4. Click the ![link](images/share-icon.png) icon in the tool bar. 
 
    This copies the URL to the clipboard. Send this link to your colleagues and partners. When they paste this URL into a browser, they will see the fleet view you captured in the link.
 

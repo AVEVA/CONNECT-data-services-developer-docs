@@ -140,7 +140,7 @@ dataviews-get:
 allfieldsets-get:
   type: text/plain
   value: |
-    Gets the collection of all field sets associated with the data view.
+    Gets the collection of all field sets associated with the data view, including fields which are currently included in the data view.
 
 availablefieldsets-get:
   type: text/plain

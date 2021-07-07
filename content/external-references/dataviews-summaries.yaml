@@ -137,6 +137,11 @@ dataviews-get:
     Returns a list of data views.
 
 # method summaries: resolved routes
+allfieldsets-get:
+  type: text/plain
+  value: |
+    Gets the collection of all field sets associated with the data view.
+
 availablefieldsets-get:
   type: text/plain
   value: |

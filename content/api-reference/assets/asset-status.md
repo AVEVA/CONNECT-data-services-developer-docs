@@ -140,7 +140,7 @@ Content-Type: application/json
 
 ## `Asset Status Range Summary`
 
-Returns the status of multiple assets.
+Returns the status summary of an asset.
 
 ### Request
 

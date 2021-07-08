@@ -57,7 +57,8 @@ This procedure creates a stream view that maps the **MyOCS.PumpState** type to t
 
 1. Click **Save**. This adds the stream view to the list and you can now use it to view data from **MyOCS.PumpState** streams with only the **Timestamp** and **Temperature** fields showing.
 
-1. To test this stream view, click the menu icon and choose **API Console** (under Developer Tools).
+1. To test this stream view, click the menu icon and select **API Console** under Developer Tools.
+
 
 1. In the `URI` field enter `/Namespaces/MyOCS/Streams/MyOCS.NorthAmerica.SLTC.PumpA/Data/Transform/Last?streamViewId=MyOCS.PumpTemperatureView`, then click **GET**. 
 

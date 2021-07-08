@@ -33,7 +33,7 @@ GET /api/v1/tenants/{tenantId}/health
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
 #### Example response body
-> 200 Response
+> 200 Response ([TenantViewModel](#schematenantviewmodel))
 
 ```json
 {

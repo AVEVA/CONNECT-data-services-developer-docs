@@ -27,7 +27,6 @@ This procedure creates a stream view that maps the **MyOCS.PumpState** type to t
 1. Click the ![Menu icon](images/menu-icon.png) icon and choose **Sequential Data Store** (under Data Management).
 
 1. Click the **Namespace** selection button to open the `Select a Namespace` window. In the `Select a Namespace` window, click **MyOCS**. 
-     ![Namespace list](images/sds-gs-namespace.png)
 
 1. From the **Streams/Types/Stream Views Selector** list, select **Stream Views**.
 
@@ -57,13 +56,10 @@ This procedure creates a stream view that maps the **MyOCS.PumpState** type to t
 
 1. Click **Save**. This adds the stream view to the list and you can now use it to view data from **MyOCS.PumpState** streams with only the **Timestamp** and **Temperature** fields showing.
 
-1. To test this stream view, click the menu icon and select **API Console** under Developer Tools.
+1. To test this stream view, click the menu icon and choose **API Console** (under Developer Tools).
 
+1. In the `URI` field enter `/Namespaces/MyOCS/Streams/MyOCS.NorthAmerica.SLTC.PumpA/Data/Transform/Last?streamViewId=MyOCS.PumpTemperatureView`, then click **GET**. 
 
-1. In the `URI` field, enter `/Namespaces/MyOCS/Streams/MyOCS.NorthAmerica.SLTC.PumpA/Data/Transform/Last?streamViewId=MyOCS.PumpTemperatureView`, then click **GET**. 
-
-
-   **Note**: If you use a different namespace, substitute that in place of `/Namespaces/MyOCS`.
-
+   **Note**: If you use a different namespace, you might need to substitute that in place of `/Namespaces/MyOCS`.
 
 This returns the **Timestamp** and **Temperature** of the last event from the **MyOCS.NorthAmerica.SLTC.PumpA** stream, while excluding the **Pressure** and **Status** properties.

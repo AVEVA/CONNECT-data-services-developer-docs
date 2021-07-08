@@ -3,7 +3,7 @@ uid: sds-stream-bulk-data
 
 ---
 
-# Stream Bulk Data
+# Bulk data
 Controller for methods hosted at {namespaceId}/Bulk/Streams/Data/Joins
 
 ## `List Window Values (GET method)`

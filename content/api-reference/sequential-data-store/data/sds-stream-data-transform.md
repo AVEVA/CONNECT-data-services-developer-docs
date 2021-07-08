@@ -3,7 +3,7 @@ uid: sds-stream-data-transform
 
 ---
 
-# Stream Data Transform
+# Transform data
 API that transforms the stream data.  
 The Transform route is for SdsStreamView and unit conversion of stream data.
 - [Reading with SdsStreamViews](xref:sdsReadingData#reading-with-sdsstreamviews):Changing the shape of the returned data.
@@ -209,7 +209,7 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 
 ---
 
-## `List Values (GET method)`
+## `List Data (GET method)`
 
 <a id="opIdStreamDataTransform_List Data"></a>
 
@@ -272,7 +272,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 
 ---
 
-## `Get Values (POST method)`
+## `Get Data (POST method)`
 
 <a id="opIdStreamDataTransform_Get Data2"></a>
 

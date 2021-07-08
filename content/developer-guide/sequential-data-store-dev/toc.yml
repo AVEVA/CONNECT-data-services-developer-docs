@@ -15,5 +15,5 @@
   topicHref: sds-read-data.md
 - name: Write data
   href: sds-write-data.md
-- name: Units of measure
+- name: Units and Quantities
   href: sds-uom.md

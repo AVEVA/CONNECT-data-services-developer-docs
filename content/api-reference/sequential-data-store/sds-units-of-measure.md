@@ -3,7 +3,8 @@ uid: sds-units-of-measure
 ---
 
 # Units of measure
-Controller handling requests routed to {namespaceId}/Units/. This controller should have read/get methods only, as update/write operations on units go through the QuantityController
+The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact with `Units`.
+The APIs are for GET (read) methods. Update (write) operations on `Units` go through [Quantities](xref:sds-quantities).
 
 ## `List Units of Measure`
 

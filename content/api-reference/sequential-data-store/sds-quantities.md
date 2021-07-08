@@ -3,7 +3,7 @@ uid: sds-quantities
 ---
 
 # Quantities
-Controller handling requests that are routed to {namespaceId}/Quantities/
+The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact with `Quantities`.
 
 ## `List Quantities`
 

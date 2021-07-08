@@ -3,7 +3,8 @@ uid: sds-streams
 ---
 
 # Streams
-Controller for methods hosted at streams/
+The REST APIs provide programmatic access to read and write SDS data. The API in this 
+section interacts with streams.
 
 ## `List Streams`
 

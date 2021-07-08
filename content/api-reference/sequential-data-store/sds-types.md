@@ -3,7 +3,7 @@ uid: sds-types
 ---
 
 # Types
-The REST APIs provide programmatic access to read and write data into the SDS. The APIs in this section 
+The REST APIs provide programmatic access to read and write SDS data. The APIs in this section 
 interact with types.
 
 ## `List Types`

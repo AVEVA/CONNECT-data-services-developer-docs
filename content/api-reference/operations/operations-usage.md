@@ -6,6 +6,57 @@ uid: operations-usage
 # Usage
 APIs related to querying usage data
 
+## `List Tenant Usage`
+
+<a id="opIdQuery_List Tenant Usage"></a>
+
+Returns tenant usage data, based on active/completed billing cycles, and whether start and end parameters are provided or omitted. When start is provided and end is omitted, a single day of usage data is returned. When both start and end are provided, daily usage data is returned for the range provided.
+
+### Request
+```text 
+GET /api/v1/tenants/{tenantId}/usage
+?start={start}&end={end}&groupByNamespace={groupByNamespace}
+```
+
+#### Parameters
+
+`string tenantId`
+<br/>Tenant identifier<br/><br/>
+`[optional] string start`
+<br/>Start date of the range for daily usage data<br/><br/>`[optional] string end`
+<br/>End date of the range for daily usage data; if no end date is provided, only one summary is returned.<br/><br/>`[optional] boolean groupByNamespace`
+<br/>Selection to order usage data by namespace<br/><br/>
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[UsageDataRecord](#schemausagedatarecord)[]|Usage data for the requested tenant|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs|
+|401|None|Unauthorized|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
+
+#### Example response body
+> 200 Response ([UsageDataRecord](#schemausagedatarecord)[])
+
+```json
+[
+  {
+    "Date": "2019-08-24T14:15:22Z",
+    "TenantId": "string",
+    "NamespaceId": "string",
+    "ClusterRegion": "string",
+    "IngressEvents": 0,
+    "IngressStreamsAccessed": 0,
+    "EgressEvents": 0,
+    "EgressStreamsAccessed": 0
+  }
+]
+```
+
+---
+
 ## `List Namespace Usage`
 
 <a id="opIdQuery_List Namespace Usage"></a>
@@ -38,7 +89,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/usage
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
 #### Example response body
-> 200 Response
+> 200 Response ([UsageDataRecord](#schemausagedatarecord)[])
 
 ```json
 [
@@ -84,7 +135,7 @@ GET /api/v1/tenants/{tenantId}/resources/usage
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
 #### Example response body
-> 200 Response
+> 200 Response ([ResourceUsage](#schemaresourceusage))
 
 ```json
 {
@@ -125,64 +176,13 @@ GET /api/v1/tenants/{tenantId}/subscriptionterm/billingcycles
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
 #### Example response body
-> 200 Response
+> 200 Response ([BillingCycle](#schemabillingcycle)[])
 
 ```json
 [
   {
     "StartDate": "2019-08-24T14:15:22Z",
     "EndDate": "2019-08-24T14:15:22Z"
-  }
-]
-```
-
----
-
-## `List Tenant Usage`
-
-<a id="opIdQuery_List Tenant Usage"></a>
-
-Returns tenant usage data, based on active/completed billing cycles, and whether start and end parameters are provided or omitted. When start is provided and end is omitted, a single day of usage data is returned. When both start and end are provided, daily usage data is returned for the range provided.
-
-### Request
-```text 
-GET /api/v1/tenants/{tenantId}/usage
-?start={start}&end={end}&groupByNamespace={groupByNamespace}
-```
-
-#### Parameters
-
-`string tenantId`
-<br/>Tenant identifier<br/><br/>
-`[optional] string start`
-<br/>Start date of the range for daily usage data<br/><br/>`[optional] string end`
-<br/>End date of the range for daily usage data; if no end date is provided, only one summary is returned.<br/><br/>`[optional] boolean groupByNamespace`
-<br/>Selection to order usage data by namespace<br/><br/>
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|[UsageDataRecord](#schemausagedatarecord)[]|Usage data for the requested tenant|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs|
-|401|None|Unauthorized|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
-
-#### Example response body
-> 200 Response
-
-```json
-[
-  {
-    "Date": "2019-08-24T14:15:22Z",
-    "TenantId": "string",
-    "NamespaceId": "string",
-    "ClusterRegion": "string",
-    "IngressEvents": 0,
-    "IngressStreamsAccessed": 0,
-    "EgressEvents": 0,
-    "EgressStreamsAccessed": 0
   }
 ]
 ```

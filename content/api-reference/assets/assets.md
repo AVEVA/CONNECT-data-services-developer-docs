@@ -112,20 +112,22 @@ Asset example
             "StreamId": "PI_StreamReference_1010"
    }],
    "Status": {
-        "Name": "ChargingStationStatus",
-        "StreamReferenceId": "Reference1",
-        "StreamPropertyId": "Value",
-        "ValueStatusMappings": [{
-                "Value": 0,
-                "Status": 0,
-                "DisplayName": "Bad"
-            }
-            {
-                "Value": 1,
-                "Status": 1,
-                "DisplayName": "Good"
-            }
-        ]
+   		"DefinitionType": "StreamPropertyMapping",
+  		"Definition": {
+    		"StreamReferenceId": "Reference1",
+    		"StreamPropertyId": "Value",
+    		"ValueStatusMappings": [
+      		{
+        		"Value": 3,
+        		"Status": "Bad",
+        		"DisplayName": "Bad"
+      		},
+      		{
+        		"Value": 1,
+        		"Status": "Good",
+        		"DisplayName": "Good"
+      		}]
+  		}
     }
 } 
 ```

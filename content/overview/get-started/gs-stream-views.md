@@ -63,6 +63,7 @@ This procedure creates a stream view that maps the **MyOCS.PumpState** type to t
 1. In the `URI` field, enter `/Namespaces/MyOCS/Streams/MyOCS.NorthAmerica.SLTC.PumpA/Data/Transform/Last?streamViewId=MyOCS.PumpTemperatureView`, then click **GET**. 
 
 
-   **Note**: If you use a different namespace, you might need to substitute that in place of `/Namespaces/MyOCS`.
+   **Note**: If you use a different namespace, substitute that in place of `/Namespaces/MyOCS`.
+
 
 This returns the **Timestamp** and **Temperature** of the last event from the **MyOCS.NorthAmerica.SLTC.PumpA** stream, while excluding the **Pressure** and **Status** properties.

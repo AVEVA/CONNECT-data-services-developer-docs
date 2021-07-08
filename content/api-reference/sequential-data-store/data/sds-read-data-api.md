@@ -1,7 +1,7 @@
 ---
 uid: sdsReadingDataApi
 ---
-# Read data API
+# Read data
 
 #### Example type, stream, and data
 

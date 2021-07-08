@@ -6,7 +6,7 @@ uid: sds-stream-bulk-data
 # Stream Bulk Data
 Controller for methods hosted at {namespaceId}/Bulk/Streams/Data/Joins
 
-## `List Window Values`
+## `List Window Values (GET method)`
 
 <a id="opIdStreamsData_List Window Values"></a>
 
@@ -59,7 +59,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
 
 ---
 
-## `Get Window Values2`
+## `List Window Values (POST method)`
 
 <a id="opIdStreamsData_Get Window Values2"></a>
 

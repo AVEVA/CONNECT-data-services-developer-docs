@@ -17,7 +17,7 @@ If stream data has UOM information associated, SDS supports reading data with un
 On each read data request, unit conversions are specified by a user defined collection of SdsStreamPropertyOverride objects in read requests. 
 All unit conversions of data are HTTP POST requests with a request body containing a collection of SdsStreamPropertyOverride objects. 
 
-## `Get First`
+## `Get First Value (GET method)`
 
 <a id="opIdStreamDataTransform_Get First"></a>
 
@@ -65,7 +65,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 
 ---
 
-## `Get First2`
+## `Get First Value (POST method)`
 
 <a id="opIdStreamDataTransform_Get First2"></a>
 
@@ -113,7 +113,7 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 
 ---
 
-## `Get Last`
+## `Get Last Value (GET method)`
 
 <a id="opIdStreamDataTransform_Get Last"></a>
 
@@ -161,7 +161,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 
 ---
 
-## `Get Last2`
+## `Get Last Value (POST method)`
 
 <a id="opIdStreamDataTransform_Get Last2"></a>
 
@@ -209,7 +209,7 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 
 ---
 
-## `List Data`
+## `List Values (GET method)`
 
 <a id="opIdStreamDataTransform_List Data"></a>
 
@@ -272,7 +272,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 
 ---
 
-## `Get Data2`
+## `Get Values (POST method)`
 
 <a id="opIdStreamDataTransform_Get Data2"></a>
 
@@ -335,7 +335,7 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 
 ---
 
-## `List Data Interpolated`
+## `List Interpolated Data (GET method)`
 
 <a id="opIdStreamDataTransform_List Data Interpolated"></a>
 
@@ -397,7 +397,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 
 ---
 
-## `Get Data Interpolated2`
+## `Get Interpolated Data (POST method)`
 
 <a id="opIdStreamDataTransform_Get Data Interpolated2"></a>
 
@@ -459,7 +459,7 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 
 ---
 
-## `List Data Summaries`
+## `List Data Summaries (GET method)`
 
 <a id="opIdStreamDataTransform_List Data Summaries"></a>
 
@@ -507,7 +507,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 
 ---
 
-## `Get Data Summaries2`
+## `Get Data Summaries (POST method)`
 
 <a id="opIdStreamDataTransform_Get Data Summaries2"></a>
 
@@ -555,7 +555,7 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 
 ---
 
-## `List Data Samples`
+## `List Data Samples (GET method)`
 
 <a id="opIdStreamDataTransform_List Data Samples"></a>
 
@@ -603,7 +603,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 
 ---
 
-## `Get Data Samples2`
+## `Get Data Samples (POST method)`
 
 <a id="opIdStreamDataTransform_Get Data Samples2"></a>
 

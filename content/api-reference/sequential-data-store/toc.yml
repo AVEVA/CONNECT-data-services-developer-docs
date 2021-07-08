@@ -2,7 +2,7 @@
   href: sds-access-control-list.md
 - name: Streams
   href: sds-streams.md
-- name: Stream data
+- name: Streams data
   href: data/toc.yml
   topicHref: sds-stream-data.md
 - name: Streams metadata

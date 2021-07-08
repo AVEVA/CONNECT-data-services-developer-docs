@@ -40,7 +40,7 @@ This procedure creates a stream view that maps the **MyOCS.PumpState** type to t
    - `TargetType` &ndash; From the list, choose the type **MyOCS.PumpState.Temperature**.
    - `Description` &ndash; Optionally, add a description for this stream view.
    
-1. In the lower right, click **Next** to proceed to Step 2: `Property Mappings`.
+1. Click **Next** to proceed to Step 2: `Property Mappings`.
 
 1. Click **Add Property Mapping** twice to create two empty property mappings.
 

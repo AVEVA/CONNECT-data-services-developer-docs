@@ -482,7 +482,7 @@ The RuleModel object.<br/>
 |201|[RuleModel](#schemarulemodel)|A link to the `RuleModel` object.|
 |302|None|An equivalent rule with the same id and definition already exists.|
 |400|[ResponseBody](#schemaresponsebody)|The rule is malformed or invalid.|
-|403|[ResponseBody](#schemaresponsebody)|None|
+|403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |409|[ResponseBody](#schemaresponsebody)|A non-equivalent rule with the specified id already exists.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
@@ -878,6 +878,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/
 |204|None|No content.|
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |404|[ResponseBody](#schemaresponsebody)|The specified rule was not found.|
+|409|[ResponseBody](#schemaresponsebody)|The automation id was invalid.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
 #### Example response body
@@ -897,6 +898,21 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/
 ```
 
 > 404 Response
+
+```json
+{
+  "OperationId": "00000000-0000-0000-0000-000000000000",
+  "Error": "Error message.",
+  "Reason": "Reason that caused the error.",
+  "Resolution": "Possible resolution for the error.",
+  "Parameters": {
+    "key1": "value1",
+    "key2": "value2"
+  }
+}
+```
+
+> 409 Response
 
 ```json
 {

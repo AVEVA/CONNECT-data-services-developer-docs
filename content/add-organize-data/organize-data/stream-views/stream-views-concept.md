@@ -10,7 +10,7 @@ Using a stream view on data retrieval affects only the data retrieved, and does 
 
 For example, a process engineer and a maintenance technician might want to see different data that exists in the same stream. By creating a stream view, you can change the appearance of the data to meet the needs of both users, without changing the original data. In addition, you can use stream views to convert units of measure and change property names so they are more appropriate for a particular audience.
 
-OCS provides a graphical interface for setting up stream views, or you can use REST APIs to define stream views programmatically. If you are using the .NET framework, OSIsoft also offers client libraries to help you create and use stream views.
+Use the OCS portal to set up stream views, or use REST APIs to define stream views programmatically. If you are using the .NET framework, OSIsoft also offers client libraries to help you create and use stream views.
 For information about setting up a stream view, see [Get started with stream views](xref:gsStreamviews).
 For more information about types, see [Types](xref:sdsTypes).
 

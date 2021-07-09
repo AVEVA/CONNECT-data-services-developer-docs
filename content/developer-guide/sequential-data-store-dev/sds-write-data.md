@@ -26,6 +26,7 @@ The following methods support writing a single or multiple values:
 * [Remove Values](xref:sdsWritingDataApi#remove-values) deletes the events based on the request parameters.
 * [Update Values](xref:sds-stream-data#update-values) add or replaces a collection of events.
 
+<!--removing per Chris' feedback
 The base URI for writing SDS data to a single stream is:
  ```text
       api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data  
@@ -40,7 +41,7 @@ The namespace identifier
 
 ``string streamId``  
 The stream identifier  
-
+-->
 ### Request body format
 With the exception of Remove Values, all single stream write calls require a request body containing the events to insert or modify.
 

@@ -78,6 +78,7 @@ In addition, the following methods support reading multiple values:
   and specified start and end indexes.
 * [List Sampled Values](xref:sds-stream-data#list-sampled-values) retrieves a collection of sampled data based on the request parameters.
 
+<!-- removing per Chris M feedback
 All single stream reads are HTTP GET actions. Reading data involves getting events from streams. The base reading URI from a single stream is as follows:
  ```text
 	api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
@@ -93,12 +94,14 @@ The namespace identifier
 
 ``string streamId``  
 The stream identifier
+-->
 
 ## Bulk reads   
 
 SDS supports reading from multiple streams in one request. The following method for reading data from multiple streams is available:
 * [Join Values](xref:sdsReadingDataApi#join-values) retrieves a collection of events across multiple streams and joins the results based on the request parameters.
 
+<!-- removing per Chris feedback
 Multi-stream reads can be HTTP GET or POST actions. The base reading URI for reading from multiple streams is as follows:
  ```text
     api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
@@ -121,6 +124,7 @@ The default response format for SDS is JSON, which is used in all examples in th
 Verbose JSON responses include all values, including defaults, in the returned JSON payload. To specify verbose JSON return, add the header ``Accept-Verbosity`` with a value of ``verbose`` to the request.  
 
 To specify SDS format, set the ``Accept`` header in the request to ``application/sds``.
+-->
 
 ## Indexes and reading data
 

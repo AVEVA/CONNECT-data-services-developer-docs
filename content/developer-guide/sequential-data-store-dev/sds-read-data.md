@@ -66,17 +66,17 @@ These APIs provide a good high-level view of the values without displaying them 
 ## Single stream reads  
 The following methods for reading a single value are available:
 
-* [Get First Value](xref:sds-stream-data#get-first-value) returns the first value in the stream.
-* [Get Last Value](xref:sds-stream-data#get-last-value) returns the last value in the stream.
+* [Get First Value](xref:sdsReadingDataApi#get-first-value) returns the first value in the stream.
+* [Get Last Value](xref:sdsReadingDataApi#get-last-value) returns the last value in the stream.
 * [Find Distinct Value](xref:sdsReadingDataApi#find-distinct-value) returns a value based on a starting index and search criteria.
 
 In addition, the following methods support reading multiple values:
 
-* [List Values](xref:sds-stream-data#list-values) retrieves a collection of stored values based on the request parameters.
-* [List Interpolated Values](xref:sds-stream-data#list-interpolated-values) retrieves a collection of stored or calculated values based on the request parameters.
-* [List Summaries](xref:sds-stream-data#list-summaries) retrieves a collection of evenly spaced summary intervals based on a count 
+* [List Values](xref:sdsReadingDataApi#list-values) retrieves a collection of stored values based on the request parameters.
+* [List Interpolated Values](xref:sdsReadingDataApi#list-interpolated-values) retrieves a collection of stored or calculated values based on the request parameters.
+* [Get Summaries](xref:sdsReadingDataApi#get-summaries) retrieves a collection of evenly spaced summary intervals based on a count 
   and specified start and end indexes.
-* [List Sampled Values](xref:sds-stream-data#list-sampled-values) retrieves a collection of sampled data based on the request parameters.
+* [Get Sampled Values](xref:sdsReadingDataApi#get-sampled-values) retrieves a collection of sampled data based on the request parameters.
 
 <!-- removing per Chris M feedback
 All single stream reads are HTTP GET actions. Reading data involves getting events from streams. The base reading URI from a single stream is as follows:

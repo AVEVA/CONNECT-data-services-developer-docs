@@ -264,7 +264,7 @@ Returns a collection of *stored* values at indexes based on request parameters.
 SDS supports three ways of specifying which stored events to return:  
 * [Filtered](#getvaluesfiltered): A filtered request accepts a [filter expression](xref:sdsFilterExpressions).
 * [Range](#getvaluesrange): A range request accepts a start index and a count.
-* [Window](#getvalueswindow): A window request accepts a start index and end index. This request has an optional continuation token for large collections of events.
+* [Window](#window): A window request accepts a start index and end index. This request has an optional continuation token for large collections of events.
 
 <a name="getvaluesfiltered"></a>
 ## `Filtered`  
@@ -504,7 +504,7 @@ Content-Type: application/json
     }
 ]
 ```
-
+<a name="getvalueswindow"></a>
 ## `Window`
 
 Returns a collection of stored events based on the specified `startIndex` and `endIndex`. 
@@ -754,7 +754,7 @@ In this case, the results contain the final event. The returned continuation tok
 
 ****
 
-## `Get Interpolated Values`
+## `List Interpolated Values`
 
 Returns a collection of values based on request parameters. The stream's read characteristics determine how events 
 are calculated for indexes at which no stored event exists. For more information, see [Interpolation](xref:sdsReadingData#interpolation) and [Extrapolation](xref:sdsReadingData#extrapolation). Interpolation is not supported for streams with compound indexes.

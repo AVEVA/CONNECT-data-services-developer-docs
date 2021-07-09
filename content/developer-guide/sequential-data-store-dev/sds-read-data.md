@@ -73,10 +73,10 @@ The following methods for reading a single value are available:
 In addition, the following methods support reading multiple values:
 
 * [List Values](xref:sds-stream-data#list-values) retrieves a collection of stored values based on the request parameters.
-* [Get Interpolated Values](xref:sds-stream-data#list-interpolated-values) retrieves a collection of stored or calculated values based on the request parameters.
+* [List Interpolated Values](xref:sds-stream-data#list-interpolated-values) retrieves a collection of stored or calculated values based on the request parameters.
 * [List Summaries](xref:sds-stream-data#list-summaries) retrieves a collection of evenly spaced summary intervals based on a count 
   and specified start and end indexes.
-* [Get Sampled Values](xref:sds-stream-data#list-sampled-values) retrieves a collection of sampled data based on the request parameters.
+* [List Sampled Values](xref:sds-stream-data#list-sampled-values) retrieves a collection of sampled data based on the request parameters.
 
 All single stream reads are HTTP GET actions. Reading data involves getting events from streams. The base reading URI from a single stream is as follows:
  ```text

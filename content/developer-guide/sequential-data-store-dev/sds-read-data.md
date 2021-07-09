@@ -59,9 +59,9 @@ This enables compression. For more information, see [Compression](xref:sdsCompre
 Depending on the scenario, there are different read data APIs available.
 They return an overview of the values instead of reading all values at once.
 These APIs provide a good high-level view of the values without displaying them all at the same time: 
-- [List Values](xref:sds-stream-data#list-values) with filters
-- [List Summaries](xref:sds-stream-data#list-summaries) 
-- [List Sampled Values](xref:sds-stream-data#list-sampled-values) 
+- [List Values](xref:sdsReadingDataApi#list-values) with filters
+- [Get Summaries](xref:sdsReadingDataApi#get-summaries) 
+- [Get Sampled Values](xref:sdsReadingDataApi#get-sampled-values) 
 
 ## Single stream reads  
 The following methods for reading a single value are available:

@@ -398,7 +398,7 @@ If any individual event fails to be removed, the entire operation is rolled back
 
 If you attempt to remove events at indexes that have no events, an error is returned. If this occurs, you can use [Window](#removewindow) request format to remove any events from a specified ‘window’ of indexes, which will not return an error if no data is found.
 
-
+<a name="removewindow"></a>
 ### `Window`
 
 Removes events at and between the start index and end index.

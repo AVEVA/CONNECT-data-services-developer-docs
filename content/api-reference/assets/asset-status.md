@@ -16,14 +16,12 @@ The following table lists the most common fields in a status mapping.
 
 | Property            | Type                     | Required? | Searchable? | Description                                                  |
 | ------------------- | ------------------------ | --------- | ----------- | ------------------------------------------------------------ |
-| StreamReferenceId   | String                   | Required  | No          | `Id` for the asset's StreamReference property. The stream reference must exist before the status mapping can be created. |
-| StreamPropertyId    | String                   | Required  | No          | SDS stream property that status uses for calculations. It must be present on the StreamId property on the asset StreamReference.  The SDS stream property must be a numeric enumeration, character, or string type. |
+| StreamReferenceId   | String                   | Required  | No          | `Id` for the asset's StreamReferences property. The stream reference must exist before the status mapping can be created. |
+| StreamPropertyId    | String                   | Required  | No          | SDS stream property that status uses for calculations. It must be present on the StreamId property on the asset StreamReference.  <!-- StreamReferences? -->The SDS stream property must be a numeric enumeration, character, or string type. |
 | ValueStatusMappings | List<ValueStatusMapping> | Required  | No          | The value status mapping maps values to a given status. See [Value status mapping properties table](xref:AssetStatus#value-status-mapping-properties-table) |
-<!-- Look at StreamPropertyID again. -->
-
 ## Value status mapping properties table
 
-The following table lists the most common fields in a value status mapping. A single value status mapping corresponds to a single status. If you want additional statuses in your asset status mapping, add additional elements in the ValueStatusMapping list.
+The following table lists the most common fields in a value status mapping. A single value status mapping corresponds to a single status. If you want additional statuses in your asset status mapping, add additional elements in the `ValueStatusMappings` list.
 
 | Property    | Type               | Required? | Searchable? | Description                                                  |
 | ----------- | ------------------ | --------- | ----------- | ------------------------------------------------------------ |
@@ -62,7 +60,7 @@ The following is an example of a status property which is on the asset or asset 
     ]
 }
 ```
-The asset or asset type's 'StreamReferences' field has an 'Id' property. To assign a status mapping to an asset or asset type, the value assigned to the Id property must match the StreamReferenceId of the status mapping object. Using the status mapping example above, AssetStreamReferenceId1 is assigned to the asset in the following example. 
+The asset or asset type's `StreamReferences` field has an `Id` property. To assign a status mapping to an asset or asset type, the value assigned to the `Id` property must match the `StreamReferenceId` of the status mapping object. Using the status mapping example above, AssetStreamReferenceId1 is assigned to the asset in the following example. 
 ```
 {
   "Id": "ChargingStationAsset", 
@@ -79,9 +77,10 @@ The asset or asset type's 'StreamReferences' field has an 'Id' property. To assi
 
 ## `Get Asset Status`
 
-View the status of an asset. 
+Returns the status of an asset. 
 
-The status of an asset is determined by an exact match of the Sds stream property value to the value of the ValueStatusMapping. If there are no exact matches, the status is a 0 (Unknown).
+The status of an asset is determined by an exact match of the SDS stream property value to the value of the `ValueStatusMappings`. If there are no exact matches, the status is a 0 (Unknown).
+
 
 ### Request
 
@@ -92,20 +91,20 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/
 ### Parameters
 
 `string tenantId`  
-The tenant identifier
+Tenant identifier
 
 `string namespaceId`  
-The namespace identifier
+Namespace identifier
 
 `string assetId`  
-The asset identifier
+Asset identifier
 
 ### Response
 
 The response includes a status code and a response body.
 | Status Code       | Body Type    | Description                                                  |
 | ----------------- | ------------ | ------------------------------------------------------------ |
-| 200 OK            | Asset status | On successful GET, asset status is returned.                 |
+| 200 OK            | Asset status | The asset status is returned.                                |
 | 400 Bad Request   | error        | The request is not valid. See the response body for additional details. |
 | 403 Forbidden     | error        | You are not authorized to view the requested asset.          |
 | 404 Not Found     | error        | The specified asset with identifier is not found.            |
@@ -129,7 +128,7 @@ Content-Type: application/json
 
 ## `Bulk Asset Status`
 
-View the status of multiple assets.
+Returns the status of multiple assets.
 
 ### Request
 
@@ -140,17 +139,17 @@ POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/Assets/stat
 ### Parameters
 
 `string tenantId`  
-The tenant identifier
+Tenant identifier
 
 `string namespaceId`  
-The namespace identifier
+Namespace identifier
 
 `string assetId`  
-The asset identifier
+Asset identifier
 
 #### Example POST body
 
-Lists the asset `Id`s whose status you are interested in.
+Lists the asset identifiers whose status you are interested in.
 
 ```
 Content-Type: application/json
@@ -167,8 +166,8 @@ The response includes a status code and a response body.
 
 | Status Code      | Body Type         | Description                                                  |
 | ---------------- | ----------------- | ------------------------------------------------------------ |
-| 200 OK           | Asset status list | On successful POST, returns the status of multiple assets.   |
-| 207 Multi Status | Multi Status      | On POST, returns the status of multiple assets. For error responses, check the multi-status response for the error and cause. |
+| 200 OK           | Asset status list | Returns the status of multiple assets. |
+| 207 Multi Status | Multi Status      | Partial success. Not all assets were able to be resolved. See response body for additional details. |
 
 #### Example response body
 

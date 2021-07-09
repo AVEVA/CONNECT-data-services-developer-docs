@@ -28,7 +28,7 @@ When an asset references an asset type, the following rules explain how the valu
 
 The examples in the following table illustrate the resolved asset metadata value rules.
 
-| Example | Metadata value on asset type                          | Metadata value on asset                                      | Metadata value on resolved asset                           | Details                                                      |
+| Example | Metadata value on asset type                          | Metadata value on asset                                      | Metadata value on resolved asset                          | Details                                                      |
 | ------- | ----------------------------------------------------- | ------------------------------------------------------------ | --------------------------------------------------------- | :----------------------------------------------------------- |
 | 1       | `Id` ="md_id"<br/> `Name`="**m1**"<br/>  `Value`=null | `Id`="md_id"<br> `Name`=null<br>  `Value`=null               | `Id`="md_id"<br> `Name`="**m1**"<br> ` Value`=See Details | For a numeric `SdsTypeCode`, the value of the `Value` property for **m1** is 0. For a string `SdsTypeCode`, the value of the `Value` property for **m1** is an empty string. For both, the `Metadata` value is returned, along with the `UOM` and `SdsTypeCode`, for the asset type. |
 | 2       | `Id`="md_id"<br/> `Name`="**m2**"<br/>  `Value`=10    | `Id`="md_id"<br/> `Name`=null<br/> `Value`=null              | `Id`="md_id"<br/> `Name`="**m2**"<br/>  `Value`=10        | **m2** appears on the resolved asset with `Value`=10, along with `UOM` and `SdsTypeCode` from the asset type. |
@@ -36,7 +36,7 @@ The examples in the following table illustrate the resolved asset metadata value
 | 4       | Not present                                           | `Id`="md_id"<br/> `Name`="**m4**"<br/>  `Value`=30           | `Id`="md_id"<br/> `Name`="**m4**"<br/>  `Value`=30        | m4 appears on the resolved asset with value =30, along with `UOM` and `SdsTypeCode` from the asset. Because this metadata value does not exist on the asset type, the metadata value on the resolved asset takes the value of the asset. |
 | 5       | Not present                                           | `Id`="md_id"<br/> `Name`=null<br/>  `Value`=30               | Not present                                               | Because there is no `Metadata` value with `Id` = "md_id" on the asset type and the name of the `Metadata` value on the asset is null, then this `Metadata` value does not appear on the resolved asset. |
 | 6       | `Id`="md_id"<br/> `Name`="**m6**"<br/>  `Value`=10    | `Id`="md_id"<br/> `Name`="anotherName"<br/>  `Value`="1234"  | `Id`="md_id"<br/> `Name`="**m6**"<br/>  `Value`=10        | The `Metadata` value `Name` with `Id`= "md_id" is not null on the asset. Therefore, the resolved asset's `Metadata` value takes the  asset type's `Metadata` value. |
-| 7       | `Id`="md_id"<br/> `Name`="**m7**"<br/>  `Value`=10    | `Id`="md_id"<br/> `Name`=null<br/>  `Value`="a string value" | `Id`="md_id"<br/> `Name`="**m7**"<br/> ` Value`=0         | The `Metadata` value with `Id`="md_id" has different `SdsTypeCode` on the asset and asset type. Therefore, the resolved asset's `Metadata` value coerces the overloaded `Value` from the asset to the `SdsTypecode` on the asset type.  It also takes the  `Metadata` value for `UOM` and `SdsTypeCode` from the asset type. |
+| 7       | `Id`="md_id"<br/> `Name`="**m7**"<br/>  `Value`=10    | `Id`="md_id"<br/> `Name`=null<br/>  `Value`="a string value" | `Id`="md_id"<br/> `Name`="**m7**"<br/> ` Value`=0         | The `Metadata` value with `Id`="md_id" has a different `SdsTypeCode` on the asset and asset type. Therefore, the resolved asset's `Metadata` value coerces the overloaded `Value` from the asset to the `SdsTypecode` on the asset type.  It also takes the  `Metadata` value for `UOM` and `SdsTypeCode` from the asset type. |
 | 8       | `Id`="md_id"<br/> `Name`="**m9**"<br/> ` Value`=10    | `Id`="md_id"<br/> `Name`=null<br/> ` Value`="1.23"           | `Id`="md_id"<br/> `Name`="**m9**"<br/>  `Value`=1         | The `Metadata` value with `Id`="md_id" has a different `SdsTypeCode` on the asset and asset type. Therefore, the resolved asset's `Metadata` value coerces the overloaded `Value` from the asset to the `SdsTypecode` on the asset type. It also takes the  `Metadata` value for `UOM` and `SdsTypeCode` from the asset type. |
 
 ### Resolved Asset Stream Reference Rules
@@ -65,13 +65,13 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/
 ### Parameters
 
 `string tenantId`    
-The tenant identifier
+Tenant identifier
 
 `string namespaceId`  
-The namespace identifier
+Namespace identifier
 
 `string assetId`  
-The asset identifier
+Asset identifier
 
 ### Response
 
@@ -79,7 +79,7 @@ The response includes a status code and a response body.
 
 | Status Code     | Body Type        | Description                                                  |
 | --------------- | ---------------- | ------------------------------------------------------------ |
-| 200 OK          | `Resolved Asset` | The resolved asset                                           |
+| 200 OK          | `Resolved Asset` | The resolved asset.                                          |
 | 400 Bad Request | error            | The request is not valid. See the response body for additional details. |
 | 403 Forbidden   | error            | You are not authorized to view the requested asset.          |
 | 404 Not Found   | error            | The asset with the specified identifier is not found.        |
@@ -154,6 +154,10 @@ Content-Type: application/json
 
 ## `Get Resolved Asset (Bulk)`
 
+Returns multiple resolved assets in one call.
+
+<--! Anthony: I think we forgot to add a description here. Please correct and edit, as necessary. thanks -->
+
 ### Request
 ```text
 POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/Assets/resolved
@@ -162,17 +166,19 @@ POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/Assets/reso
 ### Parameters
 
 `string tenantId`    
-The tenant identifier
+Tenant identifier
 
 `string namespaceId`  
-The namespace identifier
+Namespace identifier
 
 #### Request body 
 
 A list of asset `Id`s.
 
 #### Example request body 
-Requesting resolved assets for assets with the following `Id`s: "Asset1", "Asset2", and "Asset3".
+Requesting resolved assets for assets with the following `Id`s: **Asset1**, **Asset2**, and **Asset3**.
+
+<!-- Anthony: I think you put these in quotes to indicate this is a literal value. If i use bold to indicate a literal value, can I take out the quotes, as in: Requesting resolved assets for assets with the following `Id`s: **Asset1**, **Asset2**, and **Asset3**. -->
 
 ```json
 [
@@ -188,6 +194,6 @@ The response includes a list of resolved assets, a status code and a response bo
 
 | Status Code     | Body Type        | Description                                                  |
 | --------------- | ---------------- | ------------------------------------------------------------ |
-| 200 OK          | `Resolved Asset` List | The resolved assets                                           |
+| 200 OK          | `Resolved Asset` List | The resolved assets.                                          |
 | 207 Multi-status| `Resolved Asset` List and Error List | The resolved assets and errors for assets which could not be resolved.  |
 | 400 Bad Request | error            | The request is not valid. See the response body for additional details. |

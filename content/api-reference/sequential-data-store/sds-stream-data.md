@@ -3,7 +3,7 @@ uid: sds-stream-data
 
 ---
 
-# Streams Data
+# Streams data
 Controller for methods hosted at {streamId}/Data/
 
 ## `Get First Value`

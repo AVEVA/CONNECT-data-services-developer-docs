@@ -91,65 +91,6 @@ var SimpleType = function () {
 All times are represented at offset 0, GMT.
 
 *****
-
-## `Insert Values`
-
-Inserts data into the specified stream. Returns an error if data is already present at the index of any event.
-
-#### Request
- ```text
-    POST api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
- ```
-
-##### Parameters 
-``string tenantId``  
-The tenant identifier  
-
-``string namespaceId``  
-The namespace identifier  
-
-``string streamId``  
-The stream identifier  
-
-##### Request body  
-A serialized list of one or more events of the stream type  
-
-#### Response  
-The response includes a status code
-
-#### Note 
-This request will return an error if an event already exists for any index in the request. If any individual index encounters a problem, the entire operation is rolled back and no insertions are made. The `streamId` and `index` that caused the issue are included in the error response.
-
-##### Example request  
-The following request is used to insert events into stream `Simple` of `SimpleType`:
- ```text
-    POST api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
- ```
-##### Example request body
-The request body specifies the values to insert. 
-```json
-[
-    {
-        "Time": "2017-11-23T17:00:00Z",
-        "State": 0,
-        "Measurement": 50
-    },
-    {
-        "Time": "2017-11-23T18:00:00Z",
-        "State": 0,
-        "Measurement": 60
-    }
-]
-```
-
-#### .NET client libraries methods
-```csharp
-    Task InsertValueAsync<T>(string streamId, T item);
-    Task InsertValuesAsync<T>(string streamId, IList<T> items);
-```
-
-**********************
-
 ## `Patch Values`
 
 Modifies the specified stream event(s). Patching affects only the data item parameters that are included in the call.
@@ -338,39 +279,4 @@ This request returns an error if the stream does not have an event to be replace
 
 ***********************
 
-## `Update Values`
 
-Writes one or more events to the specified stream.
-
-#### Request
- ```text
-    PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
- ```
-
-##### Parameters 
-``string tenantId``  
-The tenant identifier  
-
-``string namespaceId``  
-The namespace identifier   
-
-``string streamId``  
-The stream identifier  
-
-##### Request body  
-A serialized list of one or more events of the stream type
-
-#### Response  
-The response includes a status code
-
-#### Note 
-This request performs an insert or a replace depending on whether an event already exists at the event indexes. If any item fails to write, the entire operation is rolled back and
-no events are written to the stream. The index that caused the issue is included in the error response.
-
-#### .NET client libraries methods
-```csharp
-    Task UpdateValueAsync<T>(string streamId, T item);
-    Task UpdateValuesAsync<T>(string streamId, IList<T> items);
-```
-
-***********************

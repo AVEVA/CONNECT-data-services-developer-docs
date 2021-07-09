@@ -3,7 +3,7 @@ uid: sdsFilterExpressions
 ---
 
 # Filter expressions for SDS values
-Filter expressions can be applied to read operations such as [`Get Values`](xref:sdsReadingDataApi#get-values) and [`Get Summaries`](xref:sdsReadingDataApi#get-summaries) that return Sequential Data Store (SDS) values.
+Filter expressions can be applied to read operations such as [List Values](xref:sds-stream-data#list-values) and [List Summaries](xref:sds-stream-data#list-summaries) that return Sequential Data Store (SDS) values.
 
 
 ## SdsTypeCodes

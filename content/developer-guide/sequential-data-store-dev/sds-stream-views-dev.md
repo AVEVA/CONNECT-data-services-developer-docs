@@ -3,7 +3,7 @@ uid: sdsStreamViews
 ---
 
 # Stream views
-Stream views provide flexibility in the use of types and allow you to expose data as a different type. While you cannot actually change the properties of types themselves, the stream views feature enables you to create a view of a selected stream that appears as if you had changed the type on which it is based. You create a stream view by choosing a source and target type then a set of mappings between properties of those two types. Using a stream view to leverage existing type properties is preferable to creating a new type, because the stream that is based on the type continues to function with its previously archived stream data intact. For more information, see [Update Stream Type](xref:sdsStreams#update-stream-type).
+Stream views provide flexibility in the use of types and allow you to expose data as a different type. While you cannot actually change the properties of types themselves, the stream views feature enables you to create a view of a selected stream that appears as if you had changed the type on which it is based. You create a stream view by choosing a source and target type then a set of mappings between properties of those two types. Using a stream view to leverage existing type properties is preferable to creating a new type, because the stream that is based on the type continues to function with its previously archived stream data intact. For more information, see [Update Stream Type](xref:sds-streams#update-stream-type).
 
 ## SdsStreamView fields and properties table
 <a name="streamviewpropertiestable"></a>
@@ -127,7 +127,7 @@ For code examples, see [Work with SdsStreamViews in .NET framework](#work-with-s
 5. Create another type that will be the target type.
 6. Create a stream view using the source type (step 1) and the target type (step 5).  
     - The mapping between the source and the target type happens automatically if you do not specify it in [SdsStreamViewProperty](#sdsstreamviewproperty).
-7. Get [SdsStreamViewMap](#get-stream-view-map) to see how properties are mapped.
+7. Get [SdsStreamViewMap](xref:sds-stream-views#get-stream-view-map) to see how properties are mapped.
 8. Read data from the stream with the stream view to verify. For more information, see [Reading with SdsStreamViews](xref:sdsReadingData#reading-with-sdsstreamviews).
    
 

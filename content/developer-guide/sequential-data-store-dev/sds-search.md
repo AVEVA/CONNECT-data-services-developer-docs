@@ -81,8 +81,8 @@ For more information on stream properties, see [Streams](xref:sdsStreams#streamp
 **Searcheable Child Resources**
 | Property          | Searchable  |
 |-------------------|-------------|
-| [Metadata](xref:sdsStreamExtra)*		| Yes		  |
-| [Tags](xref:sdsStreamExtra)*	| Yes		  |
+| [Metadata](xref:sds-streams-metadata)*		| Yes		  |
+| [Tags](xref:sds-streams-tags)*	| Yes		  |
 | ACL | No		  |
 | Owner | No		  |
 
@@ -329,7 +329,7 @@ Note that while wildcard (``*``) can be used either in or outside of quotes, it 
 ```
 
 ## <a name="Stream_Metadata_search_topic">How search works with stream metadata</a>
-[Stream metadata](xref:sdsStreamExtra) behaves differently with search syntax rules described in the previous sections. 
+[Stream metadata](xref:sds-streams-metadata) behaves differently with search syntax rules described in the previous sections. 
 
 **A namespace with streams with respective metadata key-value pairs**
 

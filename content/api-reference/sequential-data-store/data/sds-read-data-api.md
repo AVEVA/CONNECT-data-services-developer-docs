@@ -88,63 +88,6 @@ All times are represented at offset 0, GMT.
 
 *****
 
-## ``Get First Value``
-
-Returns the first value in the stream. If no values exist in the stream, null is returned.
-
-#### Request  
- ```text
-    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/First
- ```
-
-##### Parameters
-``string tenantId``  
-The tenant identifier
-
-``string namespaceId``  
-The namespace identifier
-
-``string streamId``  
-The stream identifier
-
-#### Response
-The response includes a status code and a response body containing a serialized event.
-
-#### .NET client libraries method
-```csharp
-   Task<T> GetFirstValueAsync<T>(string streamId, string streamViewId = null);
-```
-****
-
-## ``Get Last Value``
-
-Returns the last value in the stream. If no values exist in the stream, null is returned.
-
-#### Request  
- ```text
-    GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Last
- ```
-
-##### Parameters
-
-``string tenantId``  
-The tenant identifier
-
-``string namespaceId``  
-The namespace identifier 
-
-``string streamId``  
-The stream identifier
-
-#### Response
-The response includes a status code and a response body containing a serialized event.
-
-#### .NET client libraries method
-```csharp
-   Task<T> GetLastValueAsync<T>(string streamId, string streamViewId = null);
-```
-****
-
 ## ``Find Distinct Value``
 
 Returns a stored event based on the specified `index` and `searchMode`. 
@@ -230,8 +173,7 @@ Content-Type: application/json
       SdsSearchMode searchMode = SdsSearchMode.Exact, string streamViewId = null);
 ```
 ****
-
-## ``Get Values``
+## ``List Values``
 
 Returns a collection of *stored* values at indexes based on request parameters. 
 
@@ -853,7 +795,7 @@ In this case, the results contain the final event. The returned continuation tok
 
 ****
 
-## `Get Interpolated Values`
+## `List Interpolated Values`
 
 Returns a collection of values based on request parameters. The stream's read characteristics determine how events 
 are calculated for indexes at which no stored event exists. For more information, see [Interpolation](xref:sdsReadingData#interpolation) and [Extrapolation](xref:sdsReadingData#extrapolation). Interpolation is not supported for streams with compound indexes.

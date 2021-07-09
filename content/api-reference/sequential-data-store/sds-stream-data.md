@@ -418,7 +418,7 @@ If no stored event exists at a specified index, the stream's read characteristic
 
 **Parameters**: Accepts ``index``.
 
-[Interval](xref:sdsReadingDataApi#getvaluesinterpolatedinterval): Returns events at evenly spaced intervals based on the specified ``startIndex``, ``endIndex``, and ``count``. 
+[Interval](xref:sdsReadingDataApi#interval): Returns events at evenly spaced intervals based on the specified ``startIndex``, ``endIndex``, and ``count``. 
 If no stored event exists at an index interval, the stream's read characteristics determine how the returned event is calculated. 
 
 **Parameters**: Accepts ``startIndex``, ``endIndex`` and ``count``.

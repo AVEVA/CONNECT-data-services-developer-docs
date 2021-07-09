@@ -18,7 +18,7 @@ While SDS is a robust data storage, it performs best if you follow certain guide
 
 OSIsoft limits read data API to retrieve less than 250,000 events per request.
 OCS returns an error message when the maximum limit is reached.  
-This maximum limit applies to [Get Values](xref:sdsReadingDataApi#get-values), [Get Summaries](xref:sdsReadingDataApi#get-summaries), [Get Sampled Values](xref:sdsReadingDataApi#get-sampled-values).
+This maximum limit applies to [List Values](xref:sds-stream-data#list-values), [List Summaries](xref:sds-stream-data#list-summaries), [List Sampled Values](xref:sds-stream-data#list-sampled-values).
  
 
 ```text
@@ -59,7 +59,7 @@ This enables compression. For more information, see [Compression](xref:sdsCompre
 Depending on the scenario, there are different read data APIs available.
 They return an overview of the values instead of reading all values at once.
 These APIs provide a good high-level view of the values without displaying them all at the same time: 
-- [Get Values](xref:sdsReadingDataApi#get-values) with filters
+- [List Values](xref:sdsReadingDataApi#list-values) with filters
 - [Get Summaries](xref:sdsReadingDataApi#get-summaries) 
 - [Get Sampled Values](xref:sdsReadingDataApi#get-sampled-values) 
 
@@ -72,12 +72,13 @@ The following methods for reading a single value are available:
 
 In addition, the following methods support reading multiple values:
 
-* [Get Values](xref:sdsReadingDataApi#get-values) retrieves a collection of stored values based on the request parameters.
-* [Get Interpolated Values](xref:sdsReadingDataApi#get-interpolated-values) retrieves a collection of stored or calculated values based on the request parameters.
+* [List Values](xref:sdsReadingDataApi#list-values) retrieves a collection of stored values based on the request parameters.
+* [List Interpolated Values](xref:sdsReadingDataApi#list-interpolated-values) retrieves a collection of stored or calculated values based on the request parameters.
 * [Get Summaries](xref:sdsReadingDataApi#get-summaries) retrieves a collection of evenly spaced summary intervals based on a count 
   and specified start and end indexes.
 * [Get Sampled Values](xref:sdsReadingDataApi#get-sampled-values) retrieves a collection of sampled data based on the request parameters.
 
+<!-- removing per Chris M feedback
 All single stream reads are HTTP GET actions. Reading data involves getting events from streams. The base reading URI from a single stream is as follows:
  ```text
 	api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
@@ -93,12 +94,14 @@ The namespace identifier
 
 ``string streamId``  
 The stream identifier
+-->
 
 ## Bulk reads   
 
 SDS supports reading from multiple streams in one request. The following method for reading data from multiple streams is available:
 * [Join Values](xref:sdsReadingDataApi#join-values) retrieves a collection of events across multiple streams and joins the results based on the request parameters.
 
+<!-- removing per Chris feedback
 Multi-stream reads can be HTTP GET or POST actions. The base reading URI for reading from multiple streams is as follows:
  ```text
     api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
@@ -121,6 +124,7 @@ The default response format for SDS is JSON, which is used in all examples in th
 Verbose JSON responses include all values, including defaults, in the returned JSON payload. To specify verbose JSON return, add the header ``Accept-Verbosity`` with a value of ``verbose`` to the request.  
 
 To specify SDS format, set the ``Accept`` header in the request to ``application/sds``.
+-->
 
 ## Indexes and reading data
 

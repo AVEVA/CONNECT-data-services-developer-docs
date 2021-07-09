@@ -6,7 +6,7 @@ uid: pi-to-ocs-overview
 
 PI to OCS enables data transfer from your on-premises PI Server to OSIsoft Cloud Services (OCS). PI to OCS supports the following features:
 
-* Transfer of a selection of PI Data Archive PI points from PI Servers to OCS Sequential Data Store (SDS) [streams](xref:sdsStreams). Some of the PI point attributes information is transferred as SDS stream [metadata](xref:sdsStreamExtra) and properties.
+* Transfer of a selection of PI Data Archive PI points from PI Servers to OCS Sequential Data Store (SDS) [streams](xref:sdsStreams). Some of the PI point attributes information is transferred as SDS stream [metadata](xref:sds-streams-metadata) and properties.
 * Simultaneous transfer of both historical and streaming data from PI Data Archive to SDS for a selection of PI points
 * Configuration of a PI points selection and data transfer management via the OCS customer portal
 

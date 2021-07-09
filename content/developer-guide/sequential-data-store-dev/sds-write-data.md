@@ -17,15 +17,16 @@ to the request. All references to indexes are to the primary index.
 > Use the ISO 8601 representation of dates and times in SDS, `2020-02-20T08:30:00-08:00` for February 20, 2020 at 8:30 AM PST, for example.
 SDS returns timestamps in UTC if the timestamp is of property `DateTime` and in local time if it is of `DateTimeOffset`. 
 
-### Single stream writes   
+## Single stream writes   
 
 The following methods support writing a single or multiple values:
 * [Insert Values](xref:sdsWritingDataApi#insert-values) inserts a collection of events.
 * [Patch Values](xref:sdsWritingDataApi#patch-values) updates specific fields for a collection of events.
-* [Replace Values](xref:sdsWritingDataApi#remove-values) replaces a collection of events.
+* [Replace Values](xref:sdsWritingDataApi#replace-values) replaces a collection of events.
 * [Remove Values](xref:sdsWritingDataApi#remove-values) deletes the events based on the request parameters.
 * [Update Values](xref:sdsWritingDataApi#update-values) add or replaces a collection of events.
 
+<!--removing per Chris' feedback
 The base URI for writing SDS data to a single stream is:
  ```text
       api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data  
@@ -40,7 +41,7 @@ The namespace identifier
 
 ``string streamId``  
 The stream identifier  
-
+-->
 ### Request body format
 With the exception of Remove Values, all single stream write calls require a request body containing the events to insert or modify.
 
@@ -88,7 +89,7 @@ You can serialize your data using one of many available JSON serializers availab
 
 
 
-### Response format
+## Response format
 Supported response formats include JSON, verbose JSON, and SDS. 
 
 The default response format for SDS is JSON, which is used in all examples in this document. 
@@ -101,7 +102,7 @@ Verbose has no impact on writes; writes return only error messages.
 
 To specify SDS format, set the ``Accept`` header in the request to ``application/sds``.
 
-### Indexes
+## Indexes
 Writing to the SDS relies on the primary index for positioning within the streams and locating existing events. 
 Most writes use the index as specified by the value. Deletes are the exception to this rule. When deleting, 
 indexes are specified as strings in the URI, or, when using the SDS Client Libraries, the index may be 

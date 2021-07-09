@@ -18,7 +18,7 @@ While SDS is a robust data storage, it performs best if you follow certain guide
 
 OSIsoft limits read data API to retrieve less than 250,000 events per request.
 OCS returns an error message when the maximum limit is reached.  
-This maximum limit applies to [Get Values](xref:sdsReadingDataApi#get-values), [Get Summaries](xref:sdsReadingDataApi#get-summaries), [Get Sampled Values](xref:sdsReadingDataApi#get-sampled-values).
+This maximum limit applies to [List Values](xref:sds-stream-data#list-values), [List Summaries](xref:sds-stream-data#list-summaries), [List Sampled Values](xref:sds-stream-data#list-sampled-values).
  
 
 ```text

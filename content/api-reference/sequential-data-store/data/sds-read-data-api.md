@@ -87,7 +87,6 @@ var SimpleType = function () {
 All times are represented at offset 0, GMT.
 
 *****
-
 ## ``Find Distinct Value``
 
 Returns a stored event based on the specified `index` and `searchMode`. 

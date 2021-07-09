@@ -112,14 +112,14 @@ SDS supports four ways of specifying which stored events to return:
 - [Find Distinct Value](xref:sdsReadingDataApi#find-distinct-value): Returns a stored event based on the specified index and searchMode. 
     
     **Parameters**: Accepts ``index`` and ``searchMode``.
-- [Filtered](xref:sdsReadingDataApi#getvaluesfiltered): Returns a collection of stored values as determined by a filter.The filter limits results by applying an expression against event fields. 
+- [Filtered](xref:sdsReadingDataApi#filtered): Returns a collection of stored values as determined by a filter.The filter limits results by applying an expression against event fields. 
     
     **Parameters**: Accepts a ``filter`` expression. 
-- [Range](xref:sdsReadingDataApi#getvaluesrange): Returns a collection of stored values as determined by a ``startIndex`` and ``count``. 
+- [Range](xref:sdsReadingDataApi#range): Returns a collection of stored values as determined by a ``startIndex`` and ``count``. 
     Additional optional parameters specify the direction of the range, how to handle events near or at the start index, whether to skip a certain number of events at the start of the range, and how to filter the data.
     
     **Parameters**: Accepts ``startIndex`` and ``count``.
-- [Window](xref:sdsReadingDataApi#getvalueswindow): Returns a collection of stored events based on the specified ``startIndex`` and ``endIndex``. 
+- [Window](xref:sdsReadingDataApi#window): Returns a collection of stored events based on the specified ``startIndex`` and ``endIndex``. 
     
     **Parameters**: Accepts ``startIndex`` and ``endIndex``. This request has an optional continuation token for large collections of events.
 

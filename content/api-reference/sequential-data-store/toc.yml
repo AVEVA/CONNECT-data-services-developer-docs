@@ -7,7 +7,7 @@
 - name: Read data
   href: sds-read-data-api.md
 - name: Write data
-  href: sds-read-data-api.md
+  href: sds-write-data-api.md
 - name: Transform data
   href: sds-stream-data-transform.md
 - name: Streams metadata

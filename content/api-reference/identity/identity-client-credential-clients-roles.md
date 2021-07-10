@@ -21,24 +21,24 @@ GET /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Roles
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/>`string clientId`
-<br/>Client credential client unique identifier<br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string clientId`
+<br/>Client identifier.<br/><br/><br/>
 `[optional] string query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
-<br/>Number of roles to skip<br/><br/>`[optional] integer count`
-<br/>Max number of roles to return<br/><br/>
+<br/>(Not supported) Search string identifier.<br/><br/><br/>`[optional] integer skip`
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Role](#schemarole)[]|List of client credential client roles|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
-|404|[ErrorResponse](#schemaerrorresponse)|Tenant or client credential client not found|
+|400|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "400" could not be found in external reference file|
+|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
+|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
+|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
 |408|[ErrorResponse](#schemaerrorresponse)|None|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
+|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
 
 #### Example response body
 > 200 Response
@@ -71,7 +71,7 @@ Allowed for these roles:
 
 <a id="opIdRoles_Get Roles for Client Credential Client Header (Client Credential Clients path)"></a>
 
-Head request to get the total number of client credential client roles for the specified client credential client
+Returns the roles for the client credential client header.
 
 ### Request
 ```text 
@@ -81,18 +81,18 @@ HEAD /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Roles
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/>`string clientId`
-<br/>Client credential client unique identifier<br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string clientId`
+<br/>Client identifier.<br/><br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Header for specified client credential client roles|
-|401|None|Unauthorized|
-|403|None|Forbidden|
-|404|None|Tenant or client credential client not found|
-|500|None|Internal server error|
+|401|None|ERROR: Parameter "401" could not be found in external reference file|
+|403|None|ERROR: Parameter "403" could not be found in external reference file|
+|404|None|Client or tenant not found|
+|500|None|ERROR: Parameter "500" could not be found in external reference file|
 
 ### Authorization
 
@@ -118,12 +118,12 @@ PUT /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Roles
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/>`string clientId`
-<br/>Client credential client unique identifier<br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string clientId`
+<br/>Client identifier.<br/><br/><br/>
 
 ### Request Body
 
-Update roles list<br/>
+Updates roles list<br/>
 
 ```json
 [
@@ -144,12 +144,12 @@ Update roles list<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Role](#schemarole)[]|List of updated client credential client roles|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing preferences|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
-|404|[ErrorResponse](#schemaerrorresponse)|Client credential client or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
+|400|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "400" could not be found in external reference file|
+|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
+|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
+|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
+|408|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "408" could not be found in external reference file|
+|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
 
 #### Example response body
 > 200 Response
@@ -192,24 +192,24 @@ GET /api/v1/Tenants/{tenantId}/Clients/{clientId}/Roles
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/>`string clientId`
-<br/>Client credential client unique identifier<br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string clientId`
+<br/>Client identifier.<br/><br/><br/>
 `[optional] string query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
-<br/>Number of roles to skip<br/><br/>`[optional] integer count`
-<br/>Max number of roles to return<br/><br/>
+<br/>(Not supported) Search string identifier.<br/><br/><br/>`[optional] integer skip`
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Role](#schemarole)[]|List of client credential client roles|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
-|404|[ErrorResponse](#schemaerrorresponse)|Tenant or client credential client not found|
+|400|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "400" could not be found in external reference file|
+|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
+|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
+|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
 |408|[ErrorResponse](#schemaerrorresponse)|None|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
+|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
 
 #### Example response body
 > 200 Response
@@ -242,7 +242,7 @@ Allowed for these roles:
 
 <a id="opIdRoles_Get Roles for Client Credential Client Header (Clients path)"></a>
 
-Head request to get the total number of client credential client roles for the specified client credential client
+Returns the roles for the client credential client header.
 
 ### Request
 ```text 
@@ -252,18 +252,18 @@ HEAD /api/v1/Tenants/{tenantId}/Clients/{clientId}/Roles
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/>`string clientId`
-<br/>Client credential client unique identifier<br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string clientId`
+<br/>Client identifier.<br/><br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Header for specified client credential client roles|
-|401|None|Unauthorized|
-|403|None|Forbidden|
-|404|None|Tenant or client credential client not found|
-|500|None|Internal server error|
+|401|None|ERROR: Parameter "401" could not be found in external reference file|
+|403|None|ERROR: Parameter "403" could not be found in external reference file|
+|404|None|Client or tenant not found|
+|500|None|ERROR: Parameter "500" could not be found in external reference file|
 
 ### Authorization
 
@@ -289,12 +289,12 @@ PUT /api/v1/Tenants/{tenantId}/Clients/{clientId}/Roles
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/>`string clientId`
-<br/>Client credential client unique identifier<br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string clientId`
+<br/>Client identifier.<br/><br/><br/>
 
 ### Request Body
 
-Update roles list<br/>
+Updates roles list<br/>
 
 ```json
 [
@@ -315,12 +315,12 @@ Update roles list<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Role](#schemarole)[]|List of updated client credential client roles|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing preferences|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
-|404|[ErrorResponse](#schemaerrorresponse)|Client credential client or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
+|400|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "400" could not be found in external reference file|
+|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
+|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
+|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
+|408|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "408" could not be found in external reference file|
+|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
 
 #### Example response body
 > 200 Response
@@ -356,19 +356,19 @@ Allowed for these roles:
 <a id="tocSrole"></a>
 <a id="tocsrole"></a>
 
-The object for retrieving a role
+Object for retrieving a role
 
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|Role unique identifier. Generated by the server upon creation.|
+|Id|string|false|true|Role identifier. Generated by the server upon creation.|
 |Name|string|false|true|Role name. This cannot be empty.|
-|Description|string|false|true|Role description.|
-|RoleScope|[RoleScope](#schemarolescope)|false|true|Role scope.|
-|TenantId|string|false|true|Tenant unique identifier, if this is a Tenant Role. Otherwise set to null.|
-|CommunityId|string|false|true|Community unique identifier, if this is a Community Role. Otherwise set to null.|
-|RoleTypeId|string|false|true|Role type identifier for built-in roles.|
+|Description|string|false|true|Role description|
+|RoleScope|[RoleScope](#schemarolescope)|false|true|Role scope|
+|TenantId|string|false|true|Tenant identifier, if this is a Tenant Role. Otherwise, set to null.|
+|CommunityId|string|false|true|Community identifier, if this is a Community Role. Otherwise set to null.|
+|RoleTypeId|string|false|true|Role type identifier for built-in roles|
 
 ```json
 {

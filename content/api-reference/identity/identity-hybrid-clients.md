@@ -6,11 +6,11 @@ uid: identityHybridClient
 # Hybrid Clients
 Hybrid clients are used in typical, thick MVC clients with the presence of a user. These clients are issued an unique identifier and secret upon creation, which are later used for authentication against OCS. More than one secret can be created for a client. Hybrid clients can be issued refresh tokens, if requested, alongside access tokens. Refresh tokens typically have a longer lifetime than access tokens, and are used to request a new access token on behalf of the user without them having to log in. It is highly suggested that both the client secret and the refresh token be stored in a secure location.
 
-## `List All Hybrid Client`
+## `List All Hybrid Clients (v1 path)`
 
-<a id="opIdHybridClients_List All Hybrid Client"></a>
+<a id="opIdHybridClients_List All Hybrid Clients (v1 path)"></a>
 
-Gets a list of hybrid clients from a tenant. Optionally, get a list of requested clients. Total number of clients in the tenant set in the Total-Count header.
+Returns a list of hybrid clients from a tenant. Optionally, returns a list of requested clients. Total number of clients in the tenant set in the Total-Count header
 
 ### Request
 ```text 
@@ -21,23 +21,23 @@ GET /api/v1/Tenants/{tenantId}/HybridClients
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>
 `[optional] array id`
-<br/>Unordered list of hybrid client Ids. Empty, whitespace or null Ids will be ignored.<br/><br/>`[optional] array tag`
-<br/>Only return clients that have these tags.<br/><br/>`[optional] string query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
-<br/>Number of clients to skip. Will be ignored if a list of Ids is passed.<br/><br/>`[optional] integer count`
-<br/>Maximum number of clients to return. Will be ignored if a list of Ids is passed.<br/><br/>
+<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/><br/>`[optional] array tag`
+<br/>Only return clients that have these tags.<br/><br/><br/>`[optional] string query`
+<br/>(Not supported) Search string identifier.<br/><br/><br/>`[optional] integer skip`
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[HybridClient](#schemahybridclient)[]|List of all hybrid clients found|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
+|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
+|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
+|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
 
 #### Example response body
 > 200 Response
@@ -80,7 +80,7 @@ Allowed for these roles:
 
 <a id="opIdHybridClients_Get Total Count of Hybrid Clients"></a>
 
-Returns the total number of hybrid clients in a tenant. Optionally, check based on a list of requested clients. The value will be set in the Total-Count header. This endpoint is identical to the GET one but it does not return any objects in the body.
+Returns the total number of hybrid clients in a tenant. Optionally, checks based on a list of requested clients. The value will be set in the Total-Count header. This method is identical to the GET method but it does not return any objects in the body.
 
 ### Request
 ```text 
@@ -91,20 +91,20 @@ HEAD /api/v1/Tenants/{tenantId}/HybridClients
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>
 `[optional] array id`
-<br/>Unordered list of hybrid client Ids. Empty, whitespace or null Ids will be ignored.<br/><br/>`[optional] array tag`
-<br/>Only count clients that have these tags<br/><br/>
+<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/><br/>`[optional] array tag`
+<br/>Only return clients that have these tags.<br/><br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Hybrid client secrets found|
-|401|None|Unauthorized|
-|403|None|Forbidden|
+|401|None|ERROR: Parameter "401" could not be found in external reference file|
+|403|None|ERROR: Parameter "403" could not be found in external reference file|
 |404|None|Client or tenant not found|
-|500|None|Internal server error|
+|500|None|ERROR: Parameter "500" could not be found in external reference file|
 
 ### Authorization
 
@@ -120,7 +120,7 @@ Allowed for these roles:
 
 <a id="opIdHybridClients_Create Hybrid Client (v1 path)"></a>
 
-Creates a hybrid client. A client unique identifier and client secret will be generated to perform authentication. Make sure to store the Secret somewhere safe as we do not store the actual value after the creation step. If you do not have access to the secret value, we suggest deleting the secret and adding a new one for this client. Clients have unique ids in a tenant. Currently there is a limit of 50000 clients (of all types) per tenant.
+Creates a hybrid client. A client unique identifier and client secret will be generated to perform authentication. Make sure to store the secret somewhere safe as we do not store the actual value after the creation step. If you do not have access to the secret value, we suggest deleting the secret and adding a new one for this client. Clients have unique identifiers in a tenant. Currently there is a limit of 50000 clients (of all types) per tenant.
 
 ### Request
 ```text 
@@ -130,7 +130,7 @@ POST /api/v1/Tenants/{tenantId}/HybridClients
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>
 
 ### Request Body
 
@@ -165,13 +165,13 @@ HybridClientCreate object<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |201|[HybridClientCreateResponse](#schemahybridclientcreateresponse)|Information about created hybrid client|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs, or client limit exceeded.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs, or client limit exceeded|
+|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
+|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out|
-|409|[ErrorResponse](#schemaerrorresponse)|Client unique identifier already exists.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
+|408|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "408" could not be found in external reference file|
+|409|[ErrorResponse](#schemaerrorresponse)|Client identifier already exists|
+|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
 
 #### Example response body
 > 201 Response
@@ -217,7 +217,7 @@ Allowed for these roles:
 
 <a id="opIdHybridClients_Get Hybrid Client (v1 path)"></a>
 
-Gets a hybrid client from a tenant.
+Returns a hybrid client from a tenant.
 
 ### Request
 ```text 
@@ -227,18 +227,18 @@ GET /api/v1/Tenants/{tenantId}/HybridClients/{clientId}
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/>`string clientId`
-<br/>Client identifier<br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string clientId`
+<br/>Client identifier.<br/><br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[HybridClient](#schemahybridclient)|Information about specified hybrid client|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
+|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
+|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
 |404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
+|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
 
 #### Example response body
 > 200 Response
@@ -279,7 +279,7 @@ Allowed for these roles:
 
 <a id="opIdHybridClients_Get Header for Hybrid Client"></a>
 
-Validates that a hybrid client exists. This endpoint is identical to the GET one but it does not return any objects in the body.
+Validates that a hybrid client exists. This method is identical to the GET method but it does not return any objects in the body.
 
 ### Request
 ```text 
@@ -289,18 +289,18 @@ HEAD /api/v1/Tenants/{tenantId}/HybridClients/{clientId}
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/>`string clientId`
-<br/>Client identifier<br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string clientId`
+<br/>Client identifier.<br/><br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Header for specified hybrid client|
-|401|None|Unauthorized|
-|403|None|Forbidden|
+|401|None|ERROR: Parameter "401" could not be found in external reference file|
+|403|None|ERROR: Parameter "403" could not be found in external reference file|
 |404|None|Client or tenant not found|
-|500|None|Internal server error|
+|500|None|ERROR: Parameter "500" could not be found in external reference file|
 
 ### Authorization
 
@@ -326,8 +326,8 @@ PUT /api/v1/Tenants/{tenantId}/HybridClients/{clientId}
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/>`string clientId`
-<br/>Client identifier<br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string clientId`
+<br/>Client identifier.<br/><br/><br/>
 
 ### Request Body
 
@@ -360,12 +360,12 @@ HybridClient object. Properties that are not set or are null will not be changed
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[HybridClient](#schemahybridclient)|Information about updated hybrid client|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
+|400|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "400" could not be found in external reference file|
+|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
+|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
 |404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
+|408|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "408" could not be found in external reference file|
+|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
 
 #### Example response body
 > 200 Response
@@ -415,19 +415,19 @@ DELETE /api/v1/Tenants/{tenantId}/HybridClients/{clientId}
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/>`string clientId`
-<br/>Client identifier<br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string clientId`
+<br/>Client identifier.<br/><br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |204|None|No content|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
+|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
+|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
 |404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
+|408|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "408" could not be found in external reference file|
+|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
 
 #### Example response body
 > 401 Response
@@ -453,11 +453,11 @@ Allowed for these roles:
 
 ---
 
-## `List All Hybrid Clients`
+## `List All Hybrid Clients (v1-preview path)`
 
-<a id="opIdHybridClients_List All Hybrid Clients"></a>
+<a id="opIdHybridClients_List All Hybrid Clients (v1-preview path)"></a>
 
-Get all Hybrid Clients.
+Returns all hybrid clients.
 
 ### Request
 ```text 
@@ -468,22 +468,22 @@ GET /api/v1-preview/Tenants/{tenantId}/HybridClients
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>
 `[optional] array tag`
-<br/>Only return Clients that have these tags<br/><br/>`[optional] string query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
-<br/>Number of clients to skip. From query.<br/><br/>`[optional] integer count`
-<br/>Maximum number of clients to return<br/><br/>
+<br/>Only return clients that have these tags.<br/><br/><br/>`[optional] string query`
+<br/>(Not supported) Search string identifier.<br/><br/><br/>`[optional] integer skip`
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[HybridClient2](#schemahybridclient2)[]|List of Hybrid Clients found|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
+|200|[HybridClient2](#schemahybridclient2)[]|List of hybrid clients found|
+|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
+|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
+|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
 
 #### Example response body
 > 200 Response
@@ -525,7 +525,7 @@ Allowed for these roles:
 
 <a id="opIdHybridClients_Create Hybrid Client (v1-preview path)"></a>
 
-Create a Hybrid flow Client.
+Creates a hybrid flow client.
 
 ### Request
 ```text 
@@ -535,7 +535,7 @@ POST /api/v1-preview/Tenants/{tenantId}/HybridClients
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>
 
 ### Request Body
 
@@ -570,13 +570,13 @@ New HybridClientCreate object<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |201|[HybridClientResponse](#schemahybridclientresponse)|Hybrid Client created|
-|400|[ErrorResponse](#schemaerrorresponse)|Client Limit exceeded|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
+|400|[ErrorResponse](#schemaerrorresponse)|Client limit exceeded|
+|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
+|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out|
-|409|[ErrorResponse](#schemaerrorresponse)|Client Id already exists.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
+|408|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "408" could not be found in external reference file|
+|409|[ErrorResponse](#schemaerrorresponse)|Client identifier already exists|
+|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
 
 #### Example response body
 > 201 Response
@@ -620,7 +620,7 @@ Allowed for these roles:
 
 <a id="opIdHybridClients_Get Hybrid Client (v1-preview path)"></a>
 
-Get a Hybrid Client.
+Returns a hybrid client.
 
 ### Request
 ```text 
@@ -630,18 +630,18 @@ GET /api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/>`string clientId`
-<br/>Id of client<br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string clientId`
+<br/>Client identifier.<br/><br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[HybridClient2](#schemahybridclient2)|Hybrid Client specified|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
+|200|[HybridClient2](#schemahybridclient2)|Hybrid client specified|
+|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
+|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
 |404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
+|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
 
 #### Example response body
 > 200 Response
@@ -681,7 +681,7 @@ Allowed for these roles:
 
 <a id="opIdHybridClients_Update Hybrid Client (v1-preview path)"></a>
 
-Update a Hybrid Client.
+Updates a hybrid client.
 
 ### Request
 ```text 
@@ -691,8 +691,8 @@ PUT /api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/>`string clientId`
-<br/>Id of client<br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string clientId`
+<br/>Client identifier.<br/><br/><br/>
 
 ### Request Body
 
@@ -724,13 +724,13 @@ Updated Hybrid Client values<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[HybridClient2](#schemahybridclient2)|Updated Hybrid Client|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
+|200|[HybridClient2](#schemahybridclient2)|Updated hybrid client|
+|400|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "400" could not be found in external reference file|
+|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
+|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
 |404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
+|408|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "408" could not be found in external reference file|
+|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
 
 #### Example response body
 > 200 Response
@@ -774,17 +774,17 @@ Allowed for these roles:
 <a id="tocShybridclientcreateresponse"></a>
 <a id="tocshybridclientcreateresponse"></a>
 
-Secret information returned after a hybrid client is created.
+Secret information returned after a hybrid client is created
 
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Secret|string|false|true|Client secret.|
-|Id|int32|false|false|Secret unique identifier.|
-|Description|string|false|true|Description for the initial secret for the client.|
-|ExpirationDate|date-time|false|true|Expiration date for the initial secret for the client.|
-|Client|[HybridClient](#schemahybridclient)|false|true|Created hybrid client object.|
+|Secret|string|false|true|Client secret|
+|Id|int32|false|false|Secret identifier|
+|Description|string|false|true|Description for the initial secret for the client|
+|ExpirationDate|date-time|false|true|Expiration date for the initial secret for the client|
+|Client|[HybridClient](#schemahybridclient)|false|true|Created hybrid client object|
 
 ```json
 {
@@ -824,7 +824,7 @@ Secret information returned after a hybrid client is created.
 <a id="tocShybridclient"></a>
 <a id="tocshybridclient"></a>
 
-Object used for Hybrid Clients.
+Object used for hybrid clients
 
 #### Properties
 
@@ -832,15 +832,15 @@ Object used for Hybrid Clients.
 |---|---|---|---|---|
 |RedirectUris|string[]|false|true|Allowed URIs to which return tokens or authorization codes can be returned. Wildcards are ignored. URIs must match exactly what you are redirecting to after login. If URIs do not match, the authentication process will fail with a bad_client error. Maximum 10 per client.|
 |PostLogoutRedirectUris|string[]|false|true|Allowed URIs to redirect to after logout. Wildcards are ignored. URIs must match exactly what you are redirecting to after logout. Maximum 10 per client.|
-|ClientUri|string|false|true|URI to a page with information about client (used on consent screen).|
-|LogoUri|string|false|true|URI to client logo (used on consent screen).|
-|Id|string|false|true|Client unique identifier for this client. This unique identifier should be a GUID.|
+|ClientUri|string|false|true|URI to a page with information about client (used on consent screen)|
+|LogoUri|string|false|true|URI to client logo (used on consent screen)|
+|Id|string|false|true|Client identifier for this client. This identifier should be a GUID.|
 |Name|string|false|true|Name of client|
 |Enabled|boolean|false|true|Whether client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.|
 |AccessTokenLifetime|int32|false|true|Lifetime of access token issued for this client after authentication. Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.|
 |Tags|string[]|false|true|Tags for OSIsoft internal use only|
 |AllowOfflineAccess|boolean|false|true|Whether this client can request refresh tokens, by providing the *offline_access* scope.|
-|AllowAccessTokensViaBrowser|boolean|false|true|Whether this HybridClient is allowed to receive access tokens via the browser. This is useful to harden flows that allow multiple response types (for example, by disallowing a hybrid flow client that is supposed to use code *id_token* to add the *token* response type, thus leaking the token to the browser).|
+|AllowAccessTokensViaBrowser|boolean|false|true|Whether this hybrid client is allowed to receive access tokens through the browser. This is useful to harden flows that allow multiple response types (for example, by disallowing a hybrid flow client that is supposed to use code *id_token* to add the *token* response type, thus leaking the token to the browser).|
 
 ```json
 {
@@ -908,24 +908,24 @@ Object returned when there is an error
 <a id="tocShybridclientcreate"></a>
 <a id="tocshybridclientcreate"></a>
 
-Object used during Hybrid Client creation.
+Object used during hybrid client creation
 
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |AllowOfflineAccess|boolean|false|true|Whether this client can request refresh tokens, by providing the *offline_access* scope.|
-|AllowAccessTokensViaBrowser|boolean|false|true|Whether this HybridClient is allowed to receive access tokens via the browser. This is useful to harden flows that allow multiple response types (for example, by disallowing a hybrid flow client that is supposed to use code *id_token* to add the *token* response type, thus leaking the token to the browser).|
+|AllowAccessTokensViaBrowser|boolean|false|true|Whether this hybrid client is allowed to receive access tokens through the browser. This is useful to harden flows that allow multiple response types (for example, by disallowing a hybrid flow client that is supposed to use code *id_token* to add the *token* response type, thus leaking the token to the browser).|
 |RedirectUris|string[]|false|true|Allowed URIs to which return tokens or authorization codes can be returned. Wildcards are ignored. URIs must match exactly what you are redirecting to after login. If URIs do not match, the authentication process will fail with a bad_client error. Maximum 10 per client.|
 |PostLogoutRedirectUris|string[]|false|true|Allowed URIs to redirect to after logout. Wildcards are ignored. URIs must match exactly what you are redirecting to after logout. Maximum 10 per client.|
-|ClientUri|string|false|true|URI to a page with information about client (used on consent screen).|
-|LogoUri|string|false|true|URI to client logo (used on consent screen).|
-|Id|string|false|true|Client unique identifier for this client. This unique identifier should be a GUID.|
+|ClientUri|string|false|true|URI to a page with information about client (used on consent screen)|
+|LogoUri|string|false|true|URI to client logo (used on consent screen)|
+|Id|string|false|true|Client identifier for this client. This identifier should be a GUID.|
 |Name|string|false|true|Name of client|
 |Enabled|boolean|false|true|Whether client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.|
 |AccessTokenLifetime|int32|false|true|Lifetime of access token issued for this client after authentication. Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.|
 |Tags|string[]|false|true|Tags for OSIsoft internal use only|
-|SecretDescription|string|false|true|Description for the initial secret for the client.|
+|SecretDescription|string|false|true|Description for the initial secret for the client|
 |SecretExpirationDate|date-time|false|true|Expiration date for the initial secret for the client. If set to null the secret will never expire. We advise against such practice.|
 
 ```json
@@ -962,27 +962,27 @@ Object used during Hybrid Client creation.
 <a id="tocShybridclientresponse"></a>
 <a id="tocshybridclientresponse"></a>
 
-Object returned after a hybrid client is created.
+Object returned after a hybrid client is created
 
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|SecretDescription|string|false|true|Description for the initial secret for the client /&gt;.|
-|SecretExpirationDate|date-time|false|true|Expiration date for the initial secret for the client /&gt;.|
-|AllowOfflineAccess|boolean|false|true|Value indicating whether client can request refresh tokens, by providing the *offline_access* scopes.|
-|AllowAccessTokensViaBrowser|boolean|false|true|Value indicating whether HybridClient is allowed to receive access tokens via the browser. This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow client that is supposed to use code *id_token* to add the *token* response type, thus leaking the token to the browser).|
-|RedirectUris|string[]|false|true|Allowed URIs to return tokens or authorization codes to.|
-|PostLogoutRedirectUris|string[]|false|true|Allowed URIs to redirect to after logout.|
-|ClientUri|string|false|true|URI to a page with information about client (used on consent screen).|
-|LogoUri|string|false|true|URI to client logo (used on consent screen).|
-|ClientId|string|false|true|Obsolete: Use Id.|
-|Id|string|false|true|Client unique identifier for this Client.|
-|Name|string|false|true|Name of the Client.|
-|Enabled|boolean|false|true|Value indicating whether Client enabled.|
-|Tags|string[]|false|true|List of tags for OSIsoft internal use only.|
+|SecretDescription|string|false|true|Description for the initial secret for the client|
+|SecretExpirationDate|date-time|false|true|Expiration date for the initial secret for the client. If set to null the secret will never expire. We advise against such practice.|
+|AllowOfflineAccess|boolean|false|true|Whether client can request refresh tokens, by providing the *offline_access* scopes.|
+|AllowAccessTokensViaBrowser|boolean|false|true|Whether this hybrid client is allowed to receive access tokens through the browser. This is useful to harden flows that allow multiple response types (for example, by disallowing a hybrid flow client that is supposed to use code *id_token* to add the *token* response type, thus leaking the token to the browser).|
+|RedirectUris|string[]|false|true|Note: Required when creating a client, but optional when updating a client. Allowed URIs to which return tokens or authorization codes can be returned. Wildcards are ignored. URIs must match exactly what you are redirecting to after login. If URIs do not match, the authentication process will fail with a bad_client error. Maximum 10 per client.|
+|PostLogoutRedirectUris|string[]|false|true|Allowed URIs to redirect to after logout. Wildcards are ignored. URIs must match exactly what you are redirecting to after logout. Maximum 10 per client.|
+|ClientUri|string|false|true|URI to a page with information about client (used on consent screen)|
+|LogoUri|string|false|true|URI to client logo (used on consent screen)|
+|ClientId|string|false|true|Obsolete: Use identifier.|
+|Id|string|false|true|Client identifier for this client. This identifier should be a GUID.|
+|Name|string|false|true|Name of client|
+|Enabled|boolean|false|true|Whether client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.|
+|Tags|string[]|false|true|Tags for OSIsoft internal use only|
 |ClientSecret|string|false|true|Client secret. This is the only time the secret will be available. Please store this secret somewhere safe.|
-|SecretId|string|false|true|Secret unique identifier.|
+|SecretId|string|false|true|Secret identifier|
 
 ```json
 {
@@ -1020,25 +1020,25 @@ Object returned after a hybrid client is created.
 <a id="tocShybridclientcreate2"></a>
 <a id="tocshybridclientcreate2"></a>
 
-Object used during hybrid client creation.
+Object used during hybrid client creation
 
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|AllowOfflineAccess|boolean|false|true|Value indicating whether client can request refresh tokens, by providing the *offline_access* scopes.|
-|AllowAccessTokensViaBrowser|boolean|false|true|Value indicating whether HybridClient is allowed to receive access tokens via the browser. This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow client that is supposed to use code *id_token* to add the *token* response type, thus leaking the token to the browser).|
-|RedirectUris|string[]|false|true|Allowed URIs to return tokens or authorization codes to.|
-|PostLogoutRedirectUris|string[]|false|true|Allowed URIs to redirect to after logout.|
-|ClientUri|string|false|true|URI to a page with information about client (used on consent screen).|
-|LogoUri|string|false|true|URI to client logo (used on consent screen).|
-|ClientId|string|false|true|Obsolete: Use Id.|
-|Id|string|false|true|Client unique identifier for this Client.|
-|Name|string|false|true|Name of the Client.|
-|Enabled|boolean|false|true|Value indicating whether Client enabled.|
-|Tags|string[]|false|true|List of tags for OSIsoft internal use only.|
-|SecretDescription|string|false|true|Description for the initial secret for the client /&gt;.|
-|SecretExpirationDate|date-time|false|true|Expiration date for the initial secret for the client /&gt;.|
+|AllowOfflineAccess|boolean|false|true|Whether client can request refresh tokens, by providing the *offline_access* scopes.|
+|AllowAccessTokensViaBrowser|boolean|false|true|Whether this hybrid client is allowed to receive access tokens through the browser. This is useful to harden flows that allow multiple response types (for example, by disallowing a hybrid flow client that is supposed to use code *id_token* to add the *token* response type, thus leaking the token to the browser).|
+|RedirectUris|string[]|false|true|Note: Required when creating a client, but optional when updating a client. Allowed URIs to which return tokens or authorization codes can be returned. Wildcards are ignored. URIs must match exactly what you are redirecting to after login. If URIs do not match, the authentication process will fail with a bad_client error. Maximum 10 per client.|
+|PostLogoutRedirectUris|string[]|false|true|Allowed URIs to redirect to after logout. Wildcards are ignored. URIs must match exactly what you are redirecting to after logout. Maximum 10 per client.|
+|ClientUri|string|false|true|URI to a page with information about client (used on consent screen)|
+|LogoUri|string|false|true|URI to client logo (used on consent screen)|
+|ClientId|string|false|true|Obsolete: Use identifier.|
+|Id|string|false|true|Client identifier for this client. This identifier should be a GUID.|
+|Name|string|false|true|Name of client|
+|Enabled|boolean|false|true|Whether client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.|
+|Tags|string[]|false|true|Tags for OSIsoft internal use only|
+|SecretDescription|string|false|true|Description for the initial secret for the client|
+|SecretExpirationDate|date-time|false|true|Expiration date for the initial secret for the client. If set to null the secret will never expire. We advise against such practice.|
 
 ```json
 {
@@ -1074,23 +1074,23 @@ Object used during hybrid client creation.
 <a id="tocShybridclient2"></a>
 <a id="tocshybridclient2"></a>
 
-Object used for hybrid clients.
+Object used for hybrid clients
 
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|RedirectUris|string[]|false|true|Allowed URIs to return tokens or authorization codes to.|
-|PostLogoutRedirectUris|string[]|false|true|Allowed URIs to redirect to after logout.|
-|ClientUri|string|false|true|URI to a page with information about client (used on consent screen).|
-|LogoUri|string|false|true|URI to client logo (used on consent screen).|
-|ClientId|string|false|true|Obsolete: Use Id.|
-|Id|string|false|true|Client unique identifier for this Client.|
-|Name|string|false|true|Name of the Client.|
-|Enabled|boolean|false|true|Value indicating whether Client enabled.|
-|Tags|string[]|false|true|List of tags for OSIsoft internal use only.|
-|AllowOfflineAccess|boolean|false|true|Value indicating whether client can request refresh tokens, by providing the *offline_access* scopes.|
-|AllowAccessTokensViaBrowser|boolean|false|true|Value indicating whether HybridClient is allowed to receive access tokens via the browser. This is useful to harden flows that allow multiple response types (e.g. by disallowing a hybrid flow client that is supposed to use code *id_token* to add the *token* response type, thus leaking the token to the browser).|
+|RedirectUris|string[]|false|true|Note: Required when creating a client, but optional when updating a client. Allowed URIs to which return tokens or authorization codes can be returned. Wildcards are ignored. URIs must match exactly what you are redirecting to after login. If URIs do not match, the authentication process will fail with a bad_client error. Maximum 10 per client.|
+|PostLogoutRedirectUris|string[]|false|true|Allowed URIs to redirect to after logout. Wildcards are ignored. URIs must match exactly what you are redirecting to after logout. Maximum 10 per client.|
+|ClientUri|string|false|true|URI to a page with information about client (used on consent screen)|
+|LogoUri|string|false|true|URI to client logo (used on consent screen)|
+|ClientId|string|false|true|Obsolete: Use identifier.|
+|Id|string|false|true|Client identifier for this client. This identifier should be a GUID.|
+|Name|string|false|true|Name of client|
+|Enabled|boolean|false|true|Whether client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.|
+|Tags|string[]|false|true|Tags for OSIsoft internal use only|
+|AllowOfflineAccess|boolean|false|true|Whether client can request refresh tokens, by providing the *offline_access* scopes.|
+|AllowAccessTokensViaBrowser|boolean|false|true|Whether this hybrid client is allowed to receive access tokens through the browser. This is useful to harden flows that allow multiple response types (for example, by disallowing a hybrid flow client that is supposed to use code *id_token* to add the *token* response type, thus leaking the token to the browser).|
 
 ```json
 {

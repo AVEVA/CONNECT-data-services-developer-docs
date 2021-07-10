@@ -35,13 +35,13 @@ GET /api/v1/Tenants/{tenantId}/ClientCredentialClients
 |---|---|---|
 |200|[ClientCredentialClient](#schemaclientcredentialclient)[]|Client credential clients found|
 |207|[ClientCredentialClientMultiStatusResponse](#schemaclientcredentialclientmultistatusresponse)|Client credential clients found|
-|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
-|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
 
 #### Example response body
-> 200 Response
+> 200 Response ([ClientCredentialClient](#schemaclientcredentialclient)[])
 
 ```json
 [
@@ -94,10 +94,10 @@ HEAD /api/v1/Tenants/{tenantId}/ClientCredentialClients
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Client credential client headers found|
-|401|None|ERROR: Parameter "401" could not be found in external reference file|
-|403|None|ERROR: Parameter "403" could not be found in external reference file|
+|401|None|Unauthorized.<br/>|
+|403|None|Forbidden.<br/>|
 |404|None|Client or tenant not found|
-|500|None|ERROR: Parameter "500" could not be found in external reference file|
+|500|None|Internal server error.<br/>|
 
 ### Authorization
 
@@ -151,15 +151,15 @@ ClientCredentialClientCreate object<br/>
 |---|---|---|
 |201|[ClientCredentialClientCreateResponse](#schemaclientcredentialclientcreateresponse)|Client credential client details for created client|
 |400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs, or client limit exceeded|
-|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
-|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "408" could not be found in external reference file|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.<br/>|
 |409|[ErrorResponse](#schemaerrorresponse)|Client identifier already exists|
-|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
 
 #### Example response body
-> 201 Response
+> 201 Response ([ClientCredentialClientCreateResponse](#schemaclientcredentialclientcreateresponse))
 
 ```json
 {
@@ -213,13 +213,13 @@ GET /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[ClientCredentialClient](#schemaclientcredentialclient)|Client credential client details for the specified client|
-|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
-|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
 |404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
 
 #### Example response body
-> 200 Response
+> 200 Response ([ClientCredentialClient](#schemaclientcredentialclient))
 
 ```json
 {
@@ -268,10 +268,10 @@ HEAD /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Header for the specified client credential client|
-|401|None|ERROR: Parameter "401" could not be found in external reference file|
-|403|None|ERROR: Parameter "403" could not be found in external reference file|
+|401|None|Unauthorized.<br/>|
+|403|None|Forbidden.<br/>|
 |404|None|Client or tenant not found|
-|500|None|ERROR: Parameter "500" could not be found in external reference file|
+|500|None|Internal server error.<br/>|
 
 ### Authorization
 
@@ -324,15 +324,15 @@ ClientCredentialClient object. Properties that are not set or are null will not 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[ClientCredentialClient](#schemaclientcredentialclient)|Client credential client details for updated client|
-|400|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "400" could not be found in external reference file|
-|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
-|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.<br/>|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
 |404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "408" could not be found in external reference file|
-|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.<br/>|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
 
 #### Example response body
-> 200 Response
+> 200 Response ([ClientCredentialClient](#schemaclientcredentialclient))
 
 ```json
 {
@@ -380,14 +380,14 @@ DELETE /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 |Status Code|Body Type|Description|
 |---|---|---|
 |204|None|No content|
-|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
-|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
 |404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "408" could not be found in external reference file|
-|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.<br/>|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
 
 #### Example response body
-> 401 Response
+> 401 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
 {
@@ -438,13 +438,13 @@ GET /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients
 |---|---|---|
 |200|[ClientCredentialClient2](#schemaclientcredentialclient2)[]|List of client credential clients that are found|
 |207|[ClientCredentialClientMultiStatusResponse2](#schemaclientcredentialclientmultistatusresponse2)|List of client credential clients that are found|
-|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
-|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
 
 #### Example response body
-> 200 Response
+> 200 Response ([ClientCredentialClient2](#schemaclientcredentialclient2)[])
 
 ```json
 [
@@ -515,14 +515,14 @@ ClientCredentialClientCreate object<br/>
 |---|---|---|
 |201|[ClientCredentialClientResponse](#schemaclientcredentialclientresponse)|Hybrid client created|
 |400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid input, or client limit exceeded|
-|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
-|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
 |409|[ErrorResponse](#schemaerrorresponse)|Client identifier already exists.|
-|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
 
 #### Example response body
-> 201 Response
+> 201 Response ([ClientCredentialClientResponse](#schemaclientcredentialclientresponse))
 
 ```json
 {
@@ -574,13 +574,13 @@ GET /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[ClientCredentialClient2](#schemaclientcredentialclient2)|Client credential client specified|
-|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
-|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
 |404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
 
 #### Example response body
-> 200 Response
+> 200 Response ([ClientCredentialClient2](#schemaclientcredentialclient2))
 
 ```json
 {
@@ -647,15 +647,15 @@ Updated client credential client values<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[ClientCredentialClient2](#schemaclientcredentialclient2)|Updated client credential client|
-|400|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "400" could not be found in external reference file|
-|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
-|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.<br/>|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
 |404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "408" could not be found in external reference file|
-|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.<br/>|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
 
 #### Example response body
-> 200 Response
+> 200 Response ([ClientCredentialClient2](#schemaclientcredentialclient2))
 
 ```json
 {

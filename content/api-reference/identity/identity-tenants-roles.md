@@ -33,13 +33,13 @@ GET /api/v1/Tenants/{tenantId}/Roles
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Role](#schemarole)[]|List of roles found|
-|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
-|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
 
 #### Example response body
-> 200 Response
+> 200 Response ([Role](#schemarole)[])
 
 ```json
 [
@@ -85,10 +85,10 @@ HEAD /api/v1/Tenants/{tenantId}/Roles
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Headers for roles found|
-|401|None|ERROR: Parameter "401" could not be found in external reference file|
-|403|None|ERROR: Parameter "403" could not be found in external reference file|
+|401|None|Unauthorized.<br/>|
+|403|None|Forbidden.<br/>|
 |404|None|Tenant not found|
-|500|None|ERROR: Parameter "500" could not be found in external reference file|
+|500|None|Internal server error.<br/>|
 
 ### Authorization
 
@@ -137,16 +137,16 @@ Role to create<br/>
 |---|---|---|
 |201|[Role](#schemarole)|Role created|
 |302|None|A role with the same identifier or name already exists in the tenant.|
-|400|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "400" could not be found in external reference file|
-|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
-|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.<br/>|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant or role not found|
-|408|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "408" could not be found in external reference file|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.<br/>|
 |409|[ErrorResponse](#schemaerrorresponse)|A role with some matching values already exists in tenant.|
-|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
 
 #### Example response body
-> 201 Response
+> 201 Response ([Role](#schemarole))
 
 ```json
 {
@@ -191,13 +191,13 @@ GET /api/v1/Tenants/{tenantId}/Roles/{roleId}/users
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[User](#schemauser)[]|Users for a given role|
-|401|None|ERROR: Parameter "401" could not be found in external reference file|
-|403|None|ERROR: Parameter "403" could not be found in external reference file|
+|401|None|Unauthorized.<br/>|
+|403|None|Forbidden.<br/>|
 |404|None|Tenant or role not found|
-|500|None|ERROR: Parameter "500" could not be found in external reference file|
+|500|None|Internal server error.<br/>|
 
 #### Example response body
-> 200 Response
+> 200 Response ([User](#schemauser)[])
 
 ```json
 [
@@ -250,10 +250,10 @@ HEAD /api/v1/Tenants/{tenantId}/Roles/{roleId}/users
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Headers for roles found|
-|401|None|ERROR: Parameter "401" could not be found in external reference file|
-|403|None|ERROR: Parameter "403" could not be found in external reference file|
+|401|None|Unauthorized.<br/>|
+|403|None|Forbidden.<br/>|
 |404|None|Tenant or role not found|
-|500|None|ERROR: Parameter "500" could not be found in external reference file|
+|500|None|Internal server error.<br/>|
 
 ### Authorization
 
@@ -286,13 +286,13 @@ GET /api/v1/Tenants/{tenantId}/Roles/{roleId}/clientcredentialclients
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[ClientCredentialClient](#schemaclientcredentialclient)[]|Clients for a given role|
-|401|None|ERROR: Parameter "401" could not be found in external reference file|
-|403|None|ERROR: Parameter "403" could not be found in external reference file|
+|401|None|Unauthorized.<br/>|
+|403|None|Forbidden.<br/>|
 |404|None|Tenant or role not found|
-|500|None|ERROR: Parameter "500" could not be found in external reference file|
+|500|None|Internal server error.<br/>|
 
 #### Example response body
-> 200 Response
+> 200 Response ([ClientCredentialClient](#schemaclientcredentialclient)[])
 
 ```json
 [
@@ -342,10 +342,10 @@ HEAD /api/v1/Tenants/{tenantId}/Roles/{roleId}/clientcredentialclients
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Headers for the total number of clients for a given role|
-|401|None|ERROR: Parameter "401" could not be found in external reference file|
-|403|None|ERROR: Parameter "403" could not be found in external reference file|
+|401|None|Unauthorized.<br/>|
+|403|None|Forbidden.<br/>|
 |404|None|Tenant or role not found|
-|500|None|ERROR: Parameter "500" could not be found in external reference file|
+|500|None|Internal server error.<br/>|
 
 ### Authorization
 
@@ -378,13 +378,13 @@ GET /api/v1/Tenants/{tenantId}/Roles/{roleId}
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Role](#schemarole)|Role specified|
-|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
-|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
 |404|[ErrorResponse](#schemaerrorresponse)|Role or tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
 
 #### Example response body
-> 200 Response
+> 200 Response ([Role](#schemarole))
 
 ```json
 {
@@ -429,10 +429,10 @@ HEAD /api/v1/Tenants/{tenantId}/Roles/{roleId}
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Header for role specified|
-|401|None|ERROR: Parameter "401" could not be found in external reference file|
-|403|None|ERROR: Parameter "403" could not be found in external reference file|
+|401|None|Unauthorized.<br/>|
+|403|None|Forbidden.<br/>|
 |404|None|Identity provider or tenant not found|
-|500|None|ERROR: Parameter "500" could not be found in external reference file|
+|500|None|Internal server error.<br/>|
 
 ### Authorization
 
@@ -481,15 +481,15 @@ Role to update<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Role](#schemarole)|Updated role|
-|400|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "400" could not be found in external reference file|
-|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
-|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.<br/>|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant or role not found|
-|408|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "408" could not be found in external reference file|
-|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.<br/>|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
 
 #### Example response body
-> 200 Response
+> 200 Response ([Role](#schemarole))
 
 ```json
 {
@@ -534,15 +534,15 @@ DELETE /api/v1/Tenants/{tenantId}/Roles/{roleId}
 |Status Code|Body Type|Description|
 |---|---|---|
 |204|None|No content|
-|400|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "400" could not be found in external reference file|
-|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
-|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.<br/>|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
 |404|[ErrorResponse](#schemaerrorresponse)|Identity provider or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "408" could not be found in external reference file|
-|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.<br/>|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
 {

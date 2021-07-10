@@ -28,14 +28,14 @@ GET /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{aadTenantId}
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AzureActiveDirectoryTenant](#schemaazureactivedirectorytenant)|AzureActiveDirectory specified|
-|400|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "400" could not be found in external reference file|
-|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
-|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.<br/>|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
 |404|[ErrorResponse](#schemaerrorresponse)|OCS tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
 
 #### Example response body
-> 200 Response
+> 200 Response ([AzureActiveDirectoryTenant](#schemaazureactivedirectorytenant))
 
 ```json
 {
@@ -76,11 +76,11 @@ HEAD /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{aadTenantId}
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Header for specified Azure Active Directory tenant|
-|400|None|ERROR: Parameter "400" could not be found in external reference file|
-|401|None|ERROR: Parameter "401" could not be found in external reference file|
-|403|None|ERROR: Parameter "403" could not be found in external reference file|
+|400|None|Missing or invalid inputs.<br/>|
+|401|None|Unauthorized.<br/>|
+|403|None|Forbidden.<br/>|
 |404|None|OCS tenant not found|
-|500|None|ERROR: Parameter "500" could not be found in external reference file|
+|500|None|Internal server error.<br/>|
 
 ### Authorization
 
@@ -113,16 +113,16 @@ POST /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{aadTenantId}
 |Status Code|Body Type|Description|
 |---|---|---|
 |201|[AzureActiveDirectoryTenant](#schemaazureactivedirectorytenant)|AzureActiveDirectoryTenant object created|
-|400|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "400" could not be found in external reference file|
-|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
-|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.<br/>|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
 |404|[ErrorResponse](#schemaerrorresponse)|OCS tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "408" could not be found in external reference file|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.<br/>|
 |409|[ErrorResponse](#schemaerrorresponse)|Azure Active Directory tenant identifier is already in use on the specified Tenant.|
-|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
 
 #### Example response body
-> 201 Response
+> 201 Response ([AzureActiveDirectoryTenant](#schemaazureactivedirectorytenant))
 
 ```json
 {
@@ -199,12 +199,12 @@ GET /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AzureActiveDirectoryTenant](#schemaazureactivedirectorytenant)[]|List of AzureActiveDirectoryTenants found|
-|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
 |403|[ErrorResponse](#schemaerrorresponse)|or|
-|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
 
 #### Example response body
-> 200 Response
+> 200 Response ([AzureActiveDirectoryTenant](#schemaazureactivedirectorytenant)[])
 
 ```json
 [
@@ -246,11 +246,11 @@ HEAD /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Headers for AzureActiveDirectoryTenants found|
-|400|None|ERROR: Parameter "400" could not be found in external reference file|
-|401|None|ERROR: Parameter "401" could not be found in external reference file|
-|403|None|ERROR: Parameter "403" could not be found in external reference file|
+|400|None|Missing or invalid inputs.<br/>|
+|401|None|Unauthorized.<br/>|
+|403|None|Forbidden.<br/>|
 |404|None|OCS tenant not found|
-|500|None|ERROR: Parameter "500" could not be found in external reference file|
+|500|None|Internal server error.<br/>|
 
 ### Authorization
 
@@ -297,14 +297,14 @@ ConsentInformation object<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |204|None|No content|
-|400|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "400" could not be found in external reference file|
-|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
-|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.<br/>|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
 |404|[ErrorResponse](#schemaerrorresponse)|OCS tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
 {

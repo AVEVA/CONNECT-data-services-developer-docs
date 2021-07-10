@@ -28,13 +28,13 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Invitation](#schemainvitation)|Invitation for the specified user|
-|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
-|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
 |404|[ErrorResponse](#schemaerrorresponse)|Invitation, user, or tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
 
 #### Example response body
-> 200 Response
+> 200 Response ([Invitation](#schemainvitation))
 
 ```json
 {
@@ -82,11 +82,11 @@ HEAD /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Header for invitation for the specified user|
-|400|None|ERROR: Parameter "400" could not be found in external reference file|
-|401|None|ERROR: Parameter "401" could not be found in external reference file|
-|403|None|ERROR: Parameter "403" could not be found in external reference file|
+|400|None|Missing or invalid inputs.<br/>|
+|401|None|Unauthorized.<br/>|
+|403|None|Forbidden.<br/>|
 |404|None|Tenant not found|
-|500|None|ERROR: Parameter "500" could not be found in external reference file|
+|500|None|Internal server error.<br/>|
 
 ### Authorization
 
@@ -133,16 +133,16 @@ InvitationCreateOrUpdate object<br/>
 |---|---|---|
 |201|[Invitation](#schemainvitation)|Invitation created|
 |202|None|Invitation created|
-|400|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "400" could not be found in external reference file|
-|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
-|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.<br/>|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
 |404|[ErrorResponse](#schemaerrorresponse)|User or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "408" could not be found in external reference file|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.<br/>|
 |409|[ErrorResponse](#schemaerrorresponse)|Invitation already exists|
-|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
 
 #### Example response body
-> 201 Response
+> 201 Response ([Invitation](#schemainvitation))
 
 ```json
 {
@@ -201,16 +201,16 @@ InvitationCreateOrUpdate object<br/>
 |---|---|---|
 |200|[Invitation](#schemainvitation)|Invitation created or updated|
 |201|[Invitation](#schemainvitation)|Invitation created or updated|
-|400|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "400" could not be found in external reference file|
-|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
-|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.<br/>|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
 |404|[ErrorResponse](#schemaerrorresponse)|User or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "408" could not be found in external reference file|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.<br/>|
 |409|[ErrorResponse](#schemaerrorresponse)|Invitation already exists|
-|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
 
 #### Example response body
-> 200 Response
+> 200 Response ([Invitation](#schemainvitation))
 
 ```json
 {
@@ -255,14 +255,14 @@ DELETE /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 |Status Code|Body Type|Description|
 |---|---|---|
 |204|None|No content|
-|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
-|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
 |404|[ErrorResponse](#schemaerrorresponse)|Invitation or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "408" could not be found in external reference file|
-|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.<br/>|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
 
 #### Example response body
-> 401 Response
+> 401 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
 {
@@ -308,13 +308,13 @@ GET /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Invitation](#schemainvitation)|Invitation specified|
-|401|[ErrorResponse2](#schemaerrorresponse2)|ERROR: Parameter "401" could not be found in external reference file|
-|403|[ErrorResponse2](#schemaerrorresponse2)|ERROR: Parameter "403" could not be found in external reference file|
+|401|[ErrorResponse2](#schemaerrorresponse2)|Unauthorized.<br/>|
+|403|[ErrorResponse2](#schemaerrorresponse2)|Forbidden.<br/>|
 |404|[ErrorResponse2](#schemaerrorresponse2)|Invitation or tenant not found|
-|500|[ErrorResponse2](#schemaerrorresponse2)|ERROR: Parameter "500" could not be found in external reference file|
+|500|[ErrorResponse2](#schemaerrorresponse2)|Internal server error.<br/>|
 
 #### Example response body
-> 200 Response
+> 200 Response ([Invitation](#schemainvitation))
 
 ```json
 {
@@ -359,10 +359,10 @@ HEAD /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Header for invitation specified|
-|401|None|ERROR: Parameter "401" could not be found in external reference file|
-|403|None|ERROR: Parameter "403" could not be found in external reference file|
+|401|None|Unauthorized.<br/>|
+|403|None|Forbidden.<br/>|
 |404|None|Invitation or tenant not found|
-|500|None|ERROR: Parameter "500" could not be found in external reference file|
+|500|None|Internal server error.<br/>|
 
 ### Authorization
 
@@ -408,15 +408,15 @@ New InvitationCreateOrUpdate object. Properties that are not set or are null wil
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Invitation](#schemainvitation)|Updated invitation|
-|400|[ErrorResponse2](#schemaerrorresponse2)|ERROR: Parameter "400" could not be found in external reference file|
-|401|[ErrorResponse2](#schemaerrorresponse2)|ERROR: Parameter "401" could not be found in external reference file|
-|403|[ErrorResponse2](#schemaerrorresponse2)|ERROR: Parameter "403" could not be found in external reference file|
+|400|[ErrorResponse2](#schemaerrorresponse2)|Missing or invalid inputs.<br/>|
+|401|[ErrorResponse2](#schemaerrorresponse2)|Unauthorized.<br/>|
+|403|[ErrorResponse2](#schemaerrorresponse2)|Forbidden.<br/>|
 |404|[ErrorResponse2](#schemaerrorresponse2)|Invitation or tenant not found|
-|408|[ErrorResponse2](#schemaerrorresponse2)|ERROR: Parameter "408" could not be found in external reference file|
-|500|[ErrorResponse2](#schemaerrorresponse2)|ERROR: Parameter "500" could not be found in external reference file|
+|408|[ErrorResponse2](#schemaerrorresponse2)|Operation timed out.<br/>|
+|500|[ErrorResponse2](#schemaerrorresponse2)|Internal server error.<br/>|
 
 #### Example response body
-> 200 Response
+> 200 Response ([Invitation](#schemainvitation))
 
 ```json
 {
@@ -461,15 +461,15 @@ DELETE /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 |Status Code|Body Type|Description|
 |---|---|---|
 |204|None|No content|
-|400|[ErrorResponse2](#schemaerrorresponse2)|ERROR: Parameter "400" could not be found in external reference file|
-|401|[ErrorResponse2](#schemaerrorresponse2)|ERROR: Parameter "401" could not be found in external reference file|
-|403|[ErrorResponse2](#schemaerrorresponse2)|ERROR: Parameter "403" could not be found in external reference file|
+|400|[ErrorResponse2](#schemaerrorresponse2)|Missing or invalid inputs.<br/>|
+|401|[ErrorResponse2](#schemaerrorresponse2)|Unauthorized.<br/>|
+|403|[ErrorResponse2](#schemaerrorresponse2)|Forbidden.<br/>|
 |404|[ErrorResponse2](#schemaerrorresponse2)|Invitation or tenant not found|
-|408|[ErrorResponse2](#schemaerrorresponse2)|ERROR: Parameter "408" could not be found in external reference file|
-|500|[ErrorResponse2](#schemaerrorresponse2)|ERROR: Parameter "500" could not be found in external reference file|
+|408|[ErrorResponse2](#schemaerrorresponse2)|Operation timed out.<br/>|
+|500|[ErrorResponse2](#schemaerrorresponse2)|Internal server error.<br/>|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorResponse2](#schemaerrorresponse2))
 
 ```json
 {
@@ -522,14 +522,14 @@ GET /api/v1/Tenants/{tenantId}/Invitations
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Invitation](#schemainvitation)[]|Invitations found|
-|400|[ErrorResponse2](#schemaerrorresponse2)|ERROR: Parameter "400" could not be found in external reference file|
-|401|[ErrorResponse2](#schemaerrorresponse2)|ERROR: Parameter "401" could not be found in external reference file|
-|403|[ErrorResponse2](#schemaerrorresponse2)|ERROR: Parameter "403" could not be found in external reference file|
+|400|[ErrorResponse2](#schemaerrorresponse2)|Missing or invalid inputs.<br/>|
+|401|[ErrorResponse2](#schemaerrorresponse2)|Unauthorized.<br/>|
+|403|[ErrorResponse2](#schemaerrorresponse2)|Forbidden.<br/>|
 |404|[ErrorResponse2](#schemaerrorresponse2)|Tenant not found|
-|500|[ErrorResponse2](#schemaerrorresponse2)|ERROR: Parameter "500" could not be found in external reference file|
+|500|[ErrorResponse2](#schemaerrorresponse2)|Internal server error.<br/>|
 
 #### Example response body
-> 200 Response
+> 200 Response ([Invitation](#schemainvitation)[])
 
 ```json
 [
@@ -578,11 +578,11 @@ HEAD /api/v1/Tenants/{tenantId}/Invitations
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Header for invitations found|
-|400|None|ERROR: Parameter "400" could not be found in external reference file|
-|401|None|ERROR: Parameter "401" could not be found in external reference file|
-|403|None|ERROR: Parameter "403" could not be found in external reference file|
+|400|None|Missing or invalid inputs.<br/>|
+|401|None|Unauthorized.<br/>|
+|403|None|Forbidden.<br/>|
 |404|None|Tenant not found|
-|500|None|ERROR: Parameter "500" could not be found in external reference file|
+|500|None|Internal server error.<br/>|
 
 ### Authorization
 

@@ -40,7 +40,7 @@ GET /api/v1/Tenants/{tenantId}/ImplicitClients
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
 #### Example response body
-> 200 Response
+> 200 Response ([ImplicitClient](#schemaimplicitclient)[])
 
 ```json
 [
@@ -174,7 +174,7 @@ New ImplicitClient object.<br/>
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
 #### Example response body
-> 201 Response
+> 201 Response ([ImplicitClient](#schemaimplicitclient))
 
 ```json
 {
@@ -236,7 +236,7 @@ GET /api/v1/Tenants/{tenantId}/ImplicitClients/{clientId}
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
 #### Example response body
-> 200 Response
+> 200 Response ([ImplicitClient](#schemaimplicitclient))
 
 ```json
 {
@@ -365,7 +365,7 @@ Updated implicit client values. Properties that are not set or are null will not
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
 #### Example response body
-> 200 Response
+> 200 Response ([ImplicitClient](#schemaimplicitclient))
 
 ```json
 {
@@ -428,7 +428,7 @@ DELETE /api/v1/Tenants/{tenantId}/ImplicitClients/{clientId}
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
 #### Example response body
-> 401 Response
+> 401 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
 {
@@ -481,13 +481,13 @@ GET /api/v1-preview/Tenants/{tenantId}/ImplicitClients
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[ImplicitClient2](#schemaimplicitclient2)[]|Implicit clients found.|
-|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
-|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
 
 #### Example response body
-> 200 Response
+> 200 Response ([ImplicitClient2](#schemaimplicitclient2)[])
 
 ```json
 [
@@ -572,15 +572,15 @@ New ImplicitClient object<br/>
 |---|---|---|
 |201|[ImplicitClient2](#schemaimplicitclient2)|Implicit Client created.|
 |400|[ErrorResponse](#schemaerrorresponse)|Client limit exceeded|
-|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
-|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "408" could not be found in external reference file|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.<br/>|
 |409|[ErrorResponse](#schemaerrorresponse)|Client Id already exists|
-|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
 
 #### Example response body
-> 201 Response
+> 201 Response ([ImplicitClient2](#schemaimplicitclient2))
 
 ```json
 {
@@ -636,13 +636,13 @@ GET /api/v1-preview/Tenants/{tenantId}/ImplicitClients/{clientId}
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[ImplicitClient2](#schemaimplicitclient2)|Implicit client specified.|
-|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
-|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
 |404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
 
 #### Example response body
-> 200 Response
+> 200 Response ([ImplicitClient2](#schemaimplicitclient2))
 
 ```json
 {
@@ -725,15 +725,15 @@ Updated Implicit Client values<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[ImplicitClient2](#schemaimplicitclient2)|Updated implicit client|
-|400|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "400" could not be found in external reference file|
-|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
-|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.<br/>|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
 |404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "408" could not be found in external reference file|
-|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.<br/>|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
 
 #### Example response body
-> 200 Response
+> 200 Response ([ImplicitClient2](#schemaimplicitclient2))
 
 ```json
 {

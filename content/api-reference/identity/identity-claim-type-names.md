@@ -32,13 +32,13 @@ GET /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[IdentityProviderClaimTypeName](#schemaidentityproviderclaimtypename)[]|List of identity provider type names found|
-|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
-|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
 |404|[ErrorResponse](#schemaerrorresponse)|Identity provider not found|
-|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
 
 #### Example response body
-> 200 Response
+> 200 Response ([IdentityProviderClaimTypeName](#schemaidentityproviderclaimtypename)[])
 
 ```json
 [
@@ -80,10 +80,10 @@ HEAD /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Header for identity provider claim type names|
-|401|None|ERROR: Parameter "401" could not be found in external reference file|
-|403|None|ERROR: Parameter "403" could not be found in external reference file|
+|401|None|Unauthorized.<br/>|
+|403|None|Forbidden.<br/>|
 |404|None|Identity provider not found|
-|500|None|ERROR: Parameter "500" could not be found in external reference file|
+|500|None|Internal server error.<br/>|
 
 ### Authorization
 
@@ -116,13 +116,13 @@ GET /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames/{identityProvi
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[IdentityProviderClaim](#schemaidentityproviderclaim)|Identity provider claim type name specified|
-|401|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "401" could not be found in external reference file|
-|403|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "403" could not be found in external reference file|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
 |404|[ErrorResponse](#schemaerrorresponse)|Identity provider or identity provider claim type name not found|
-|500|[ErrorResponse](#schemaerrorresponse)|ERROR: Parameter "500" could not be found in external reference file|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
 
 #### Example response body
-> 200 Response
+> 200 Response ([IdentityProviderClaim](#schemaidentityproviderclaim))
 
 ```json
 {
@@ -166,10 +166,10 @@ HEAD /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames/{identityProv
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Header for identity provider claim type name specified|
-|401|None|ERROR: Parameter "401" could not be found in external reference file|
-|403|None|ERROR: Parameter "403" could not be found in external reference file|
+|401|None|Unauthorized.<br/>|
+|403|None|Forbidden.<br/>|
 |404|None|Identity provider or identity provider claim type name not found|
-|500|None|ERROR: Parameter "500" could not be found in external reference file|
+|500|None|Internal server error.<br/>|
 
 ### Authorization
 

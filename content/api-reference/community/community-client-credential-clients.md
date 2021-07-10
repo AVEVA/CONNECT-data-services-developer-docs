@@ -284,18 +284,18 @@ Object returned when there is an error
 <a id="tocSclientcredentialclient"></a>
 <a id="tocsclientcredentialclient"></a>
 
-Object to get or update a ClientCredentialClient
+Object to return or update a ClientCredentialClient
 
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|Client unique identifier for this client. This unique identifier should be a GUID.|
+|Id|string|false|true|Client identifier for this client. This identifier should be a GUID.|
 |Name|string|false|true|Name of client|
 |Enabled|boolean|false|true|Whether client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.|
 |AccessTokenLifetime|int32|false|true|Lifetime of access token issued for this client after authentication. Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.|
 |Tags|string[]|false|true|Tags for OSIsoft internal use only|
-|RoleIds|string[]|false|true|List of roles to be assigned to this client. Member role is always required. For security reasons we advise against assigning administrator role to a client.|
+|RoleIds|string[]|false|true|List of roles to be assigned to this client. Member role is always required. For security reasons, we advise against assigning administrator role to a client.|
 
 ```json
 {

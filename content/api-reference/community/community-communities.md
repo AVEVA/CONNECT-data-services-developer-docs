@@ -45,6 +45,7 @@ GET /api/v1-preview/tenants/{tenantId}/Communities
 [
   {
     "Id": "string",
+    "MemberRoleId": "string",
     "Name": "string",
     "Alias": "string",
     "Description": "string",
@@ -118,6 +119,7 @@ Community information to create<br/>
 ```json
 {
   "Id": "string",
+  "MemberRoleId": "string",
   "Name": "string",
   "Alias": "string",
   "Description": "string",
@@ -179,6 +181,7 @@ GET /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
 ```json
 {
   "Id": "string",
+  "MemberRoleId": "string",
   "Name": "string",
   "Alias": "string",
   "Description": "string",
@@ -343,6 +346,7 @@ The Community object
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Id|guid|false|false|Community identifier|
+|MemberRoleId|guid|false|false|Community Member Role Id|
 |Name|string|false|true|Community name|
 |Alias|string|false|true|Requesting tenant's alias for the community|
 |Description|string|false|true|Community description|
@@ -352,6 +356,7 @@ The Community object
 ```json
 {
   "Id": "string",
+  "MemberRoleId": "string",
   "Name": "string",
   "Alias": "string",
   "Description": "string",
@@ -443,11 +448,11 @@ Object returned whenever there is an error
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|OperationId|string|true|false|Operation unique identifier of action that caused the error.|
-|Error|string|true|false|Error description.|
-|Reason|string|true|false|Reason for the error.|
-|Resolution|string|true|false|Resolution to resolve the error.|
-|DynamicProperties|object|false|true|Additional properties.|
+|OperationId|string|true|false|Operation identifier of action that caused the error|
+|Error|string|true|false|Error description|
+|Reason|string|true|false|Reason for the error|
+|Resolution|string|true|false|Resolution to resolve the error|
+|DynamicProperties|object|false|true|Additional properties|
 
 ```json
 {

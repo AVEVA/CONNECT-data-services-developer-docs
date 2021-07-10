@@ -41,7 +41,7 @@ GET /api/v1-preview/tenants/{tenantId}/communities/{communityId}/invitations
 |500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it does not know how to handle.|
 
 #### Example response body
-> 200 Response
+> 200 Response ([CommunityInvitation](#schemacommunityinvitation)[])
 
 ```json
 [
@@ -109,7 +109,7 @@ Invitation to create<br/>
 |500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it does not know how to handle.|
 
 #### Example response body
-> 201 Response
+> 201 Response ([CommunityInvitation](#schemacommunityinvitation))
 
 ```json
 {
@@ -167,7 +167,7 @@ GET /api/v1-preview/tenants/{tenantId}/communities/{communityId}/invitations/{in
 |500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it does not know how to handle.|
 
 #### Example response body
-> 200 Response
+> 200 Response ([CommunityInvitation](#schemacommunityinvitation))
 
 ```json
 {
@@ -224,7 +224,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/communities/{communityId}/invitations/
 |500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it does not know how to handle.|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
 {
@@ -277,7 +277,7 @@ GET /api/v1-preview/communityinvitations/{invitationId}/details
 |500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it does not know how to handle.|
 
 #### Example response body
-> 200 Response
+> 200 Response ([CommunityInvitationDetails](#schemacommunityinvitationdetails))
 
 ```json
 {
@@ -336,7 +336,7 @@ Invitation action<br/>
 |500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it doesn't know how to handle.|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
 {
@@ -394,7 +394,7 @@ GET /api/v1-preview/tenants/{tenantId}/communityinvitations
 |500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it does not know how to handle.|
 
 #### Example response body
-> 200 Response
+> 200 Response ([CommunityInvitation](#schemacommunityinvitation)[])
 
 ```json
 [

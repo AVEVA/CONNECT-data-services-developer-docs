@@ -39,7 +39,7 @@ GET /api/v1-preview/tenants/{tenantId}/Communities
 |500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it doesn't know how to handle.|
 
 #### Example response body
-> 200 Response
+> 200 Response ([Community](#schemacommunity)[])
 
 ```json
 [
@@ -114,7 +114,7 @@ Community information to create<br/>
 |500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it doesn't know how to handle.|
 
 #### Example response body
-> 201 Response
+> 201 Response ([Community](#schemacommunity))
 
 ```json
 {
@@ -176,7 +176,7 @@ GET /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
 |500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it doesn't know how to handle.|
 
 #### Example response body
-> 200 Response
+> 200 Response ([Community](#schemacommunity))
 
 ```json
 {
@@ -249,7 +249,7 @@ The community object that contains the attributes to use for the update.<br/>
 |500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it doesn't know how to handle.|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
 {
@@ -305,7 +305,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
 |500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it does not know how to handle.|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
 {

@@ -39,7 +39,7 @@ GET /api/v1-preview/Communities/{communityId}/Roles
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
 #### Example response body
-> 200 Response
+> 200 Response ([Role](#schemarole)[])
 
 ```json
 [

@@ -47,7 +47,7 @@ List of community roles Ids to assign to the user<br/>
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
 #### Example response body
-> 200 Response
+> 200 Response ([User](#schemauser))
 
 ```json
 {
@@ -107,7 +107,7 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/Users/{userI
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
 {
@@ -165,7 +165,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/Users
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
 #### Example response body
-> 200 Response
+> 200 Response ([User](#schemauser)[])
 
 ```json
 [
@@ -225,7 +225,7 @@ HEAD /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/Users
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
 #### Example response body
-> 400 Response
+> 400 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
 {

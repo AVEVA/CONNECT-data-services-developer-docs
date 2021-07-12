@@ -830,7 +830,7 @@ Object used for hybrid clients
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|RedirectUris|string[]|false|true|Allowed URIs to which return tokens or authorization codes can be returned. Wildcards are ignored. URIs must match exactly what you are redirecting to after login. If URIs do not match, the authentication process will fail with a bad_client error. Maximum 10 per client.|
+|RedirectUris|string[]|false|true|Note: Required when creating a client, but optional when updating a client. Allowed URIs to which return tokens or authorization codes can be returned. Wildcards are ignored. URIs must match exactly what you are redirecting to after login. If URIs do not match, the authentication process will fail with a bad_client error. Maximum 10 per client.|
 |PostLogoutRedirectUris|string[]|false|true|Allowed URIs to redirect to after logout. Wildcards are ignored. URIs must match exactly what you are redirecting to after logout. Maximum 10 per client.|
 |ClientUri|string|false|true|URI to a page with information about client (used on consent screen)|
 |LogoUri|string|false|true|URI to client logo (used on consent screen)|
@@ -916,7 +916,7 @@ Object used during hybrid client creation
 |---|---|---|---|---|
 |AllowOfflineAccess|boolean|false|true|Whether this client can request refresh tokens, by providing the *offline_access* scope.|
 |AllowAccessTokensViaBrowser|boolean|false|true|Whether this hybrid client is allowed to receive access tokens through the browser. This is useful to harden flows that allow multiple response types (for example, by disallowing a hybrid flow client that is supposed to use code *id_token* to add the *token* response type, thus leaking the token to the browser).|
-|RedirectUris|string[]|false|true|Allowed URIs to which return tokens or authorization codes can be returned. Wildcards are ignored. URIs must match exactly what you are redirecting to after login. If URIs do not match, the authentication process will fail with a bad_client error. Maximum 10 per client.|
+|RedirectUris|string[]|false|true|Note: Required when creating a client, but optional when updating a client. Allowed URIs to which return tokens or authorization codes can be returned. Wildcards are ignored. URIs must match exactly what you are redirecting to after login. If URIs do not match, the authentication process will fail with a bad_client error. Maximum 10 per client.|
 |PostLogoutRedirectUris|string[]|false|true|Allowed URIs to redirect to after logout. Wildcards are ignored. URIs must match exactly what you are redirecting to after logout. Maximum 10 per client.|
 |ClientUri|string|false|true|URI to a page with information about client (used on consent screen)|
 |LogoUri|string|false|true|URI to client logo (used on consent screen)|

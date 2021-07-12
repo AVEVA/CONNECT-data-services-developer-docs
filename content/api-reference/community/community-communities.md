@@ -53,7 +53,6 @@ GET /api/v1-preview/tenants/{tenantId}/Communities
       {
         "Id": "string",
         "Name": "string",
-        "Alias": "string",
         "Status": "None",
         "IsOwner": true,
         "UserCount": 0,
@@ -127,7 +126,6 @@ Community information to create<br/>
     {
       "Id": "string",
       "Name": "string",
-      "Alias": "string",
       "Status": "None",
       "IsOwner": true,
       "UserCount": 0,
@@ -189,7 +187,6 @@ GET /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
     {
       "Id": "string",
       "Name": "string",
-      "Alias": "string",
       "Status": "None",
       "IsOwner": true,
       "UserCount": 0,
@@ -364,7 +361,6 @@ The Community object
     {
       "Id": "string",
       "Name": "string",
-      "Alias": "string",
       "Status": "None",
       "IsOwner": true,
       "UserCount": 0,
@@ -393,7 +389,6 @@ The CommunityTenant object
 |---|---|---|---|---|
 |Id|guid|false|false|Tenant Id|
 |Name|string|false|true|Tenant name|
-|Alias|string|false|true|Tenant alias|
 |Status|[CommunityTenantStatus](#schemacommunitytenantstatus)|false|false|CommunityTenant status in a community|
 |IsOwner|boolean|false|false|Boolean indicating whether the CommunityTenant is the owner of the community|
 |UserCount|integer|false|false|Summary count of the users authorized to access the community within the tenant|
@@ -403,7 +398,6 @@ The CommunityTenant object
 {
   "Id": "string",
   "Name": "string",
-  "Alias": "string",
   "Status": "None",
   "IsOwner": true,
   "UserCount": 0,

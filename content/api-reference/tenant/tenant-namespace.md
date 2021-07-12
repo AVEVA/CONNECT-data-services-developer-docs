@@ -1,454 +1,782 @@
 ---
-uid: AccountNamespace_1
+uid: tenant-namespace
+
 ---
 
-# Namespaces
+# Namespace
+A Namespace is a logical unit of organization for data within a tenant. It is a collection of types, streams, and stream views. Each tenant may contain more than one namespace. Before you can put any data into OCS for a given tenant, a namespace must be created within the scope of that tenant. Namespace identifiers are unique within an account. #https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/metadata-tags.yml#namespace-identifier-requirements. In practice, namespaces may correspond to a specific set of infrastructure assets, but more commonly correspond to virtual partitions within a single set of assets. You can create one or more namespaces within a tenant. Each namespace is effectively an instance of SDS, within which you create types and streams, stream views, data views, and metadata.
 
-A namespace is a logical unit of organization for data within a tenant. It is a collection of types, streams, and stream views. Each tenant may contain more than one namespace. Before you can put any data into OCS for a given tenant, a namespace must be created within the scope of that tenant. Namespace identifiers are unique within an account. Requirements for namespace Ids are the following:
+## `List All`
 
-- Must contain 100 characters or fewer
-- Must only contain alphanumeric characters, underscores, dashes, spaces, and periods
-- Must not contain two consecutive periods
-- Must not start or end with a period
-- Must not start with two consecutive underscores
+<a id="opIdNamespace_List All"></a>
 
-In practice, namespaces may correspond to a specific set of infrastructure assets, but more commonly correspond to virtual partitions within a single set of assets. You can create one or more namespaces within a tenant. Each namespace is effectively an instance of SDS, within which you create types and streams, stream views, data views, and metadata.
+Returns all `Namespace`s owned by the specified `Tenant` to which the caller has access.
 
-## Properties
+### Request
+```text 
+GET /api/v1/Tenants/{tenantId}/Namespaces
+?region={region}
+```
 
-For HTTP requests and responses, the Namespace object has the following properties and JSON-serialized body: 
+#### Parameters
 
-| Property Name | Data Type | Description |
-| --- | --- | ---  |
-| Id | string | Nme of this Namespace; unique within a tenant's namespaces. |
-| Region | string | The region that the namespace is provisioned in. |
-| Self | string | The namespace's URI. |
-| Description | string | Description of this namespace. |
-| State | NamespaceProvisioningState | Current state of this namespace. |
+`string tenantId`
+<br/>Tenant identifier.<br/><br/><br/>
+`[optional] string region`
+<br/>The region identifier.<br/><br/><br/>
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[Namespace](#schemanamespace)[]|An array of `Namespace` objects for the namespaces that belong to a tenant with `tenantId`.|
+|400|None|Missing or invalid inputs.<br/>|
+|403|None|Forbidden.<br/>|
+
+#### Example response body
+> 200 Response ([Namespace](#schemanamespace)[])
+
+```json
+[
+  {
+    "Id": "string",
+    "Region": "string",
+    "Self": "string",
+    "Description": "string",
+    "State": 0,
+    "Owner": {
+      "Type": 1,
+      "ObjectId": "string",
+      "TenantId": "string"
+    },
+    "AccessControl": {
+      "RoleTrusteeAccessControlEntries": [
+        {
+          "Trustee": null,
+          "AccessType": null,
+          "AccessRights": null
+        }
+      ]
+    },
+    "RegionId": "string",
+    "InstanceId": "string"
+  }
+]
+```
+
+### Authorization
+
+Allowed for these roles: 
+<ul>
+<li>Tenant Member</li>
+</ul>
+
+---
+
+## `Get Namespace By Id`
+
+<a id="opIdNamespace_Get Namespace By Id"></a>
+
+Returns a `Namespace` with the specified identifier.
+
+### Request
+```text 
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}
+```
+
+#### Parameters
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[Namespace](#schemanamespace)|The `Namespace` with identifier `namespaceId`.|
+|400|None|Missing or invalid inputs.<br/>|
+|403|None|Forbidden.<br/>|
+|404|None|`Namespace` not found in the specified tenant.|
+
+#### Example response body
+> 200 Response ([Namespace](#schemanamespace))
 
 ```json
 {
-	"Id": "id",
-	"Region": "region",
-	"Self": "self",
-	"Description": "description",
-	"State": 0,
+  "Id": "string",
+  "Region": "string",
+  "Self": "string",
+  "Description": "string",
+  "State": 0,
+  "Owner": {
+    "Type": 1,
+    "ObjectId": "string",
+    "TenantId": "string"
+  },
+  "AccessControl": {
+    "RoleTrusteeAccessControlEntries": [
+      {
+        "Trustee": null,
+        "AccessType": "[",
+        "AccessRights": 0
+      }
+    ]
+  },
+  "RegionId": "string",
+  "InstanceId": "string"
 }
 ```
 
-## Region ##
-
-When a namespace is created, all resources are created in the namespace's region. Resources created in this namespace (for example: types, streams, and stream views) will be created in the region of the namespace, and any data stored in the namespace will be stored in that region. Read and write operations at the namespace level and within a namespace utilize the base URL of the region in which the namespace resides. The ``Self`` property on each namespace provides the complete URL for all operations within that namespace.
-
-***
-
-## `Get All Namespaces`
-
-Returns all `Namespaces` owned by the specified `Tenant` that the caller has access to.
-
-### Request
-
-`GET api/v1/Tenants/{tenantId}/Namespaces`
-
-
-### Parameters
-
-```csharp
-[Required]
-[FromRoute]
-string tenantId
-```
-
-The identifier of the tenant to access.
-
-
 ### Authorization
 
-A `Namespace` can only be retrieved if the current principal has Read access.
+Allowed for these roles: 
+<ul>
+<li>Tenant Member</li>
+</ul>
 
-### Response
+---
 
-| Status Code | Return Type | Description |
-| --- | --- | ---  |
-| 200 | [Namespace] | Returns a list of all `Namespace` objects for the specified tenantId that the caller has access to. |
-| 400 | Nothing is returned | Could not retrieve `Namespaces` due to missing or invalid input. |
-| 403 | Nothing is returned | Unauthorized to access the tenant's `Namespaces`. |
+## `Create`
 
-
-***
-
-## `Get Namespace by Id`
-
-Returns a `Namespace` with the specified Id.
-
-### Request
-
-`GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}`
-
-
-### Parameters
-
-```csharp
-[Required]
-[FromRoute]
-string tenantId
-```
-
-The identifier of the tenant to access.
-```csharp
-[Required]
-[FromRoute]
-string namespaceId
-```
-
-The identifier of the `Namespace` to return.
-
-
-### Authorization
-
-A `Namespace` can only be retrieved if the current principal has Read access.
-
-### Response
-
-| Status Code | Return Type | Description | 
- | --- | --- | ---  | 
-| 200 | Namespace | Returns a `Namespace` object with the specified namespaceId. | 
-| 400 | Nothing is returned | Could not retrieve the `Namespace` due to missing or invalid input. | 
-| 403 | Nothing is returned | Unauthorized to access this `Namespace`. | 
-| 404 | Nothing is returned | `Namespace` not found in the specified tenant. | 
-
-
-***
-
-## `Create New Namespace`
+<a id="opIdNamespace_Create"></a>
 
 Creates a new `Namespace` in the specified `Tenant`.
 
 ### Request
-
-`POST api/v1/Tenants/{tenantId}/Namespaces/{namespaceId?}`
-
-
-### Parameters
-
-```csharp
-[Required]
-[FromRoute]
-string tenantId
+```text 
+POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}
+?isServerTest={isServerTest}
 ```
 
-The tenant identifier where the `Namespace` will be created.
-```csharp
-[Required]
-[FromBody]
-Namespace namespaceToCreate
+#### Parameters
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
+`[optional] boolean isServerTest`
+<br/>This parameter is unused and will be removed in the next API version.<br/><br/>
+
+### Request Body
+
+The new Namespace to be created.<br/>
+
+```json
+{
+  "Id": "string",
+  "Region": "string",
+  "Self": "string",
+  "Description": "string",
+  "State": 0,
+  "Owner": {
+    "Type": 1,
+    "ObjectId": "string",
+    "TenantId": "string"
+  },
+  "AccessControl": {
+    "RoleTrusteeAccessControlEntries": [
+      {}
+    ]
+  },
+  "RegionId": "string",
+  "InstanceId": "string"
+}
 ```
-
-The new `Namespace` to be created.
-```csharp
-[Optional]
-[Default = ""]
-[FromRoute]
-string namespaceId
-```
-
-The Id of the new `Namespace`. The Id can also be specified in the namespaceToCreate. If it is omitted in both,
-            the Id will be generated.
-
-
-### Authorization
-
-A `Namespace` can only be created if the current principal has Write access.
 
 ### Response
 
-| Status Code | Return Type | Description | 
- | --- | --- | ---  | 
-| 201 | Namespace | Returns the created `Namespace` object. | 
-| 302 | Nothing is returned | Returns the location of the existing `Namespace` object. | 
-| 400 | Nothing is returned | Could not create the `Namespace` due to missing or invalid input. | 
-| 403 | Nothing is returned | Unauthorized to create a `Namespace` in this tenant. | 
-| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. | 
-| 409 | Nothing is returned | A `Namespace` already exists with different values. | 
+|Status Code|Body Type|Description|
+|---|---|---|
+|201|[Namespace](#schemanamespace)|The created `Namespace`.|
+|302|None|Returns the location of the existing `Namespace` object.|
+|400|None|Missing or invalid inputs.<br/>|
+|403|None|Forbidden.<br/>|
+|405|None|Method not allowed at this base URL. Try the request again at the Global base URL.|
+|409|None|A `Namespace` already exists with different values.|
 
+#### Example response body
+> 201 Response ([Namespace](#schemanamespace))
 
-***
+```json
+{
+  "Id": "string",
+  "Region": "string",
+  "Self": "string",
+  "Description": "string",
+  "State": 0,
+  "Owner": {
+    "Type": 1,
+    "ObjectId": "string",
+    "TenantId": "string"
+  },
+  "AccessControl": {
+    "RoleTrusteeAccessControlEntries": [
+      {
+        "Trustee": null,
+        "AccessType": "[",
+        "AccessRights": 0
+      }
+    ]
+  },
+  "RegionId": "string",
+  "InstanceId": "string"
+}
+```
 
-## `Update Namespace`
+### Authorization
 
-Updates `Namespace` information: Description and TierId. The [AccessControlList](xref:accessControl) and Owner's [Trustee](xref:accessControl#trustee) can
-            only be updated through their own routes.
+Allowed for these roles: 
+<ul>
+<li>Tenant Member</li>
+</ul>
+
+---
+
+## `Update`
+
+<a id="opIdNamespace_Update"></a>
+
+Updates the `Namespace` information: description; the `AccessControlList` and owner's `Trustee` can only be updated through their own routes.
 
 ### Request
-
-`PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}`
-
-
-### Parameters
-
-```csharp
-[Required]
-[FromRoute]
-string tenantId
+```text 
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}
 ```
 
-The identifier of the tenant to access.
-```csharp
-[Required]
-[FromRoute]
-string namespaceId
+#### Parameters
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
+
+### Request Body
+
+The new details to store for the Namespace.<br/>
+
+```json
+{
+  "Id": "string",
+  "Region": "string",
+  "Self": "string",
+  "Description": "string",
+  "State": 0,
+  "Owner": {
+    "Type": 1,
+    "ObjectId": "string",
+    "TenantId": "string"
+  },
+  "AccessControl": {
+    "RoleTrusteeAccessControlEntries": [
+      {}
+    ]
+  },
+  "RegionId": "string",
+  "InstanceId": "string"
+}
 ```
-
-The identifier of the `Namespace` to update.
-```csharp
-[Required]
-[FromBody]
-Namespace newProperties
-```
-
-The new details to store for the `Namespace`.
-
-
-### Authorization
-
-A `Namespace` can only be updated if the current principal has Write access.
 
 ### Response
 
-| Status Code | Return Type | Description |
-| --- | --- | ---  |
-| 200 | Namespace | Returns the updated `Namespace`. |
-| 400 | Nothing is returned | Could not update the `Namespace` due to missing or invalid input. |
-| 403 | Nothing is returned | Unauthorized to update the `Namespace`. |
-| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. |
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[Namespace](#schemanamespace)|The updated `Namespace` with identifier `namespaceId`.|
+|400|None|Missing or invalid inputs.<br/>|
+|403|None|Forbidden.<br/>|
+|405|None|Method not allowed at this base URL. Try the request again at the Global base URL.|
 
-***
+#### Example response body
+> 200 Response ([Namespace](#schemanamespace))
 
-## `Delete Namespace`
+```json
+{
+  "Id": "string",
+  "Region": "string",
+  "Self": "string",
+  "Description": "string",
+  "State": 0,
+  "Owner": {
+    "Type": 1,
+    "ObjectId": "string",
+    "TenantId": "string"
+  },
+  "AccessControl": {
+    "RoleTrusteeAccessControlEntries": [
+      {
+        "Trustee": null,
+        "AccessType": "[",
+        "AccessRights": 0
+      }
+    ]
+  },
+  "RegionId": "string",
+  "InstanceId": "string"
+}
+```
+
+### Authorization
+
+Allowed for these roles: 
+<ul>
+<li>Tenant Member</li>
+</ul>
+
+---
+
+## `Delete`
+
+<a id="opIdNamespace_Delete"></a>
 
 Deletes a `Namespace` in the specified `Tenant`.
 
 ### Request
-
-`DELETE api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}`
-
-
-### Parameters
-
-```csharp
-[Required]
-[FromRoute]
-string tenantId
+```text 
+DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}
+?isServerTest={isServerTest}
 ```
 
-The identifier of the tenant to access.
-```csharp
-[Required]
-[FromRoute]
-string namespaceId
-```
+#### Parameters
 
-The identifier of the `Namespace` to delete.
-
-
-### Authorization
-
-A `Namespace` can only be deleted if the current principal has Delete access.
+`string tenantId`
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
+`[optional] boolean isServerTest`
+<br/>This parameter is unused and will be removed in the next API version.<br/><br/>
 
 ### Response
 
-| Status Code | Return Type | Description |
-| --- | --- | ---  |
-| 204 | Nothing is returned | The `Namespace` was deleted. |
-| 400 | Nothing is returned | Could not delete the `Namespace` due to an invalid state. |
-| 403 | Nothing is returned | Unauthorized to delete the `Namespace`. |
-| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. |
+|Status Code|Body Type|Description|
+|---|---|---|
+|204|None|HTTP status code: 200 on successful deletion or another HTTP status codes on failure.|
+|400|None|Missing or invalid inputs.<br/>|
+|403|None|#403.|
+|405|None|Method not allowed at this base URL. Try the request again at the Global base URL.|
 
+### Authorization
 
-***
+Allowed for these roles: 
+<ul>
+<li>Tenant Member</li>
+</ul>
 
-## `Get Namespace AccessControlList`
+---
 
-Returns the [AccessControlList](xref:accessControl) that is used to authorize access to a `Namespace`.
+## `Get Access Control`
+
+<a id="opIdNamespace_Get Access Control"></a>
+
+Returns the `AccessControlList` that is used to authorize access to a `Namespace`.
 
 ### Request
-
-`GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/accesscontrol`
-
-
-### Parameters
-
-```csharp
-[Required]
-[FromRoute]
-string tenantId
+```text 
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/accesscontrol
 ```
 
-The identifier of the tenant to access.
-```csharp
-[Required]
-[FromRoute]
-string namespaceId
-```
+#### Parameters
 
-The identifier of the `Namespace` to access.
-
-
-### Authorization
-
-An [AccessControlList](xref:accessControl) can only be retrieved if the current principal has Read access.
+`string tenantId`
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
 
 ### Response
 
-| Status Code | Return Type | Description |
-| --- | --- | ---  |
-| 200 | AccessControlList | Returns the [AccessControlList](xref:accessControl) for the specified `Namespace`. |
-| 400 | Nothing is returned | Could not retrieve the [AccessControlList](xref:accessControl) of the specified `Namespace` due to missing or invalid input. |
-| 403 | Nothing is returned | Unauthorized to get the [AccessControlList](xref:accessControl) for the specified `Namespace`. |
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[AccessControlList](#schemaaccesscontrollist)|The `AccessControlList` for the namespace with identifier `namespaceId`.|
+|400|None|Missing or invalid inputs.<br/>|
+|403|None|Forbidden.<br/>|
 
+#### Example response body
+> 200 Response ([AccessControlList](#schemaaccesscontrollist))
 
-***
+```json
+{
+  "RoleTrusteeAccessControlEntries": [
+    {
+      "Trustee": {
+        "Type": "[",
+        "ObjectId": "string",
+        "TenantId": "string"
+      },
+      "AccessType": 0,
+      "AccessRights": 0
+    }
+  ]
+}
+```
 
-## `Set Namespace AccessControlList`
+### Authorization
 
-Updates the [AccessControlList](xref:accessControl) that is used to authorize access to a `Namespace`.
+Allowed for these roles: 
+<ul>
+<li>Tenant Member</li>
+</ul>
+
+---
+
+## `Set Access Control`
+
+<a id="opIdNamespace_Set Access Control"></a>
+
+Updates the `AccessControlList` that is used to authorize access to a `Namespace`.
 
 ### Request
-
-`PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/accesscontrol`
-
-
-### Parameters
-
-```csharp
-[Required]
-[FromRoute]
-string tenantId
+```text 
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/accesscontrol
 ```
 
-The identifier of the tenant to access.
-```csharp
-[Required]
-[FromRoute]
-string namespaceId
+#### Parameters
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
+
+### Request Body
+
+The updated AccessControlList for the Namespace.<br/>
+
+```json
+{
+  "RoleTrusteeAccessControlEntries": [
+    {
+      "Trustee": {},
+      "AccessType": 0,
+      "AccessRights": 0
+    }
+  ]
+}
 ```
-
-The identifier of the `Namespace` to access.
-```csharp
-[Required]
-[FromBody]
-AccessControlList newAccessControlList
-```
-
-The updated [AccessControlList](xref:accessControl) for the `Namespace`.
-
-
-### Authorization
-
-An [AccessControlList](xref:accessControl) can only be updated if the current principal has ManageAccessControl access.
 
 ### Response
 
-| Status Code | Return Type | Description |
-| --- | --- | ---  |
-| 200 | AccessControlList | Returns the updated [AccessControlList](xref:accessControl). |
-| 400 | Nothing is returned | Could not update the [AccessControlList](xref:accessControl) of the specified `Namespace` due to missing or invalid input. |
-| 403 | Nothing is returned | Unauthorized to update the [AccessControlList](xref:accessControl) for the specified `Namespace`. |
-| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. |
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[AccessControlList](#schemaaccesscontrollist)|The updated `AccessControlList` for the namespace with identifier `namespaceId`.|
+|400|None|Missing or invalid inputs.<br/>|
+|403|None|Forbidden.<br/>|
+|405|None|Method not allowed at this base URL. Try the request again at the Global base URL.|
 
+#### Example response body
+> 200 Response ([AccessControlList](#schemaaccesscontrollist))
 
+```json
+{
+  "RoleTrusteeAccessControlEntries": [
+    {
+      "Trustee": {
+        "Type": "[",
+        "ObjectId": "string",
+        "TenantId": "string"
+      },
+      "AccessType": 0,
+      "AccessRights": 0
+    }
+  ]
+}
+```
 
-***
+### Authorization
 
-## `Get Namespace Owner`
+Allowed for these roles: 
+<ul>
+<li>Tenant Member</li>
+</ul>
 
-Returns the Owner's [Trustee](xref:accessControl#trustee) for a given `Namespace`.
+---
+
+## `Get Owner`
+
+<a id="opIdNamespace_Get Owner"></a>
+
+Returns the owner's `Trustee` for a given `Namespace`.
 
 ### Request
-
-`GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/owner`
-
-
-### Parameters
-
-```csharp
-[Required]
-[FromRoute]
-string tenantId
+```text 
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/owner
 ```
 
-The identifier of the tenant to access.
-```csharp
-[Required]
-[FromRoute]
-string namespaceId
-```
+#### Parameters
 
-The identifier of the `Namespace` to access.
-
-
-### Authorization
-
-An Owner's [Trustee](xref:accessControl#trustee) can only be retrieved if the current principal has Read access.
+`string tenantId`
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
 
 ### Response
 
-| Status Code | Return Type | Description |
-| --- | --- | ---  |
-| 200 | Trustee | Returns the Owner's [Trustee](xref:accessControl#trustee) of the specified `Namespace`. |
-| 400 | Nothing is returned | Could not retrieve the Owner's [Trustee](xref:accessControl#trustee) of the specified `Namespace` due to missing or invalid input. |
-| 403 | Nothing is returned | Unauthorized to get the Owner's [Trustee](xref:accessControl#trustee) of the specified `Namespace`. |
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[Trustee](#schematrustee)|The `Trustee` for the namespace with identifier `namespaceId`.|
+|400|None|Missing or invalid inputs.<br/>|
+|403|None|Forbidden.<br/>|
 
+#### Example response body
+> 200 Response ([Trustee](#schematrustee))
 
-***
+```json
+{
+  "Type": 1,
+  "ObjectId": "string",
+  "TenantId": "string"
+}
+```
 
-## `Set Namespace Owner`
+### Authorization
 
-Changes the Owner's [Trustee](xref:accessControl#trustee) for a given `Namespace`.
+Allowed for these roles: 
+<ul>
+<li>Tenant Member</li>
+</ul>
+
+---
+
+## `Set Owner`
+
+<a id="opIdNamespace_Set Owner"></a>
+
+Changes the owner's `Trustee` for a given `Namespace`.
 
 ### Request
-
-`PUT api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/owner`
-
-
-### Parameters
-
-```csharp
-[Required]
-[FromRoute]
-string tenantId
+```text 
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/owner
 ```
 
-The identifier of the tenant to access.
-```csharp
-[Required]
-[FromRoute]
-string namespaceId
+#### Parameters
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
+
+### Request Body
+
+The new owner's Trustee of the Namespace.<br/>
+
+```json
+{
+  "Type": 1,
+  "ObjectId": "string",
+  "TenantId": "string"
+}
 ```
-
-The identifier of the `Namespace` to access.
-```csharp
-[Required]
-[FromBody]
-Trustee newOwner
-```
-
-The new Owner's [Trustee](xref:accessControl#trustee) of the `Namespace`.
-
-
-### Authorization
-
-An Owner's [Trustee](xref:accessControl#trustee) can only be changed if the current principal has ManageAccessControl access.
 
 ### Response
 
-| Status Code | Return Type | Description |
-| --- | --- | ---  |
-| 200 | Trustee | Returns the new Owner's [Trustee](xref:accessControl#trustee) of the specified `Namespace`. |
-| 400 | Nothing is returned | Could not change the Owner's [Trustee](xref:accessControl#trustee) of the specified `Namespace` due to missing or invalid input. |
-| 403 | Nothing is returned | Unauthorized to change the Owner's [Trustee](xref:accessControl#trustee) of the specified `Namespace`. |
-| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. |
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[Trustee](#schematrustee)|The updated `Trustee` for the namespace with identifier `namespaceId`.|
+|400|None|Missing or invalid inputs.<br/>|
+|403|None|Forbidden.<br/>|
+|405|None|Method not allowed at this base URL. Try the request again at the Global base URL.|
 
+#### Example response body
+> 200 Response ([Trustee](#schematrustee))
 
-***
+```json
+{
+  "Type": 1,
+  "ObjectId": "string",
+  "TenantId": "string"
+}
+```
+
+### Authorization
+
+Allowed for these roles: 
+<ul>
+<li>Tenant Member</li>
+</ul>
+
+---
+## Definitions
+
+### Namespace
+
+<a id="schemanamespace"></a>
+<a id="schema_Namespace"></a>
+<a id="tocSnamespace"></a>
+<a id="tocsnamespace"></a>
+
+Representation of a server-side database interpretation of a namespace.
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Id|string|false|true|Name of this namespace; unique within a tenant's namespaces.|
+|Region|string|false|true|Region in which the namespace is provisioned.|
+|Self|string|false|true|Namespace's URI.|
+|Description|string|false|true|Description of this namespace.|
+|State|[NamespaceProvisioningState](#schemanamespaceprovisioningstate)|false|false|Current state of this namespace.|
+|Owner|[Trustee](#schematrustee)|false|true|Owner Trustee of this namespace.|
+|AccessControl|[AccessControlList](#schemaaccesscontrollist)|false|true|AccessControlList that defines access control for this Namespace.|
+|RegionId|string|false|true|Geographic region of deployment in which the namespace is provisioned.|
+|InstanceId|string|false|true|Instance ID for this Namespace.|
+
+```json
+{
+  "Id": "string",
+  "Region": "string",
+  "Self": "string",
+  "Description": "string",
+  "State": 0,
+  "Owner": {
+    "Type": 1,
+    "ObjectId": "string",
+    "TenantId": "string"
+  },
+  "AccessControl": {
+    "RoleTrusteeAccessControlEntries": [
+      {
+        "Trustee": null,
+        "AccessType": "[",
+        "AccessRights": 0
+      }
+    ]
+  },
+  "RegionId": "string",
+  "InstanceId": "string"
+}
+
+```
+
+---
+
+### NamespaceProvisioningState
+
+<a id="schemanamespaceprovisioningstate"></a>
+<a id="schema_NamespaceProvisioningState"></a>
+<a id="tocSnamespaceprovisioningstate"></a>
+<a id="tocsnamespaceprovisioningstate"></a>
+
+Status codes describing a namespace's current provisioning state.
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|Creating|0|
+|Active|1|
+|Deleting|2|
+|Deleted|3|
+
+---
+
+### Trustee
+
+<a id="schematrustee"></a>
+<a id="schema_Trustee"></a>
+<a id="tocStrustee"></a>
+<a id="tocstrustee"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Type|[TrusteeType](#schematrusteetype)|false|false|None|
+|ObjectId|string|false|true|None|
+|TenantId|string|false|true|None|
+
+```json
+{
+  "Type": 1,
+  "ObjectId": "string",
+  "TenantId": "string"
+}
+
+```
+
+---
+
+### TrusteeType
+
+<a id="schematrusteetype"></a>
+<a id="schema_TrusteeType"></a>
+<a id="tocStrusteetype"></a>
+<a id="tocstrusteetype"></a>
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|User|1|
+|Client|2|
+|Role|3|
+
+---
+
+### AccessControlList
+
+<a id="schemaaccesscontrollist"></a>
+<a id="schema_AccessControlList"></a>
+<a id="tocSaccesscontrollist"></a>
+<a id="tocsaccesscontrollist"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|RoleTrusteeAccessControlEntries|[[AccessControlEntry](#schemaaccesscontrolentry)]|false|true|None|
+
+```json
+{
+  "RoleTrusteeAccessControlEntries": [
+    {
+      "Trustee": {
+        "Type": "[",
+        "ObjectId": "string",
+        "TenantId": "string"
+      },
+      "AccessType": 0,
+      "AccessRights": 0
+    }
+  ]
+}
+
+```
+
+---
+
+### AccessControlEntry
+
+<a id="schemaaccesscontrolentry"></a>
+<a id="schema_AccessControlEntry"></a>
+<a id="tocSaccesscontrolentry"></a>
+<a id="tocsaccesscontrolentry"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Trustee|[Trustee](#schematrustee)|false|true|None|
+|AccessType|[AccessType](#schemaaccesstype)|false|false|None|
+|AccessRights|int64|false|false|None|
+
+```json
+{
+  "Trustee": {
+    "Type": 1,
+    "ObjectId": "string",
+    "TenantId": "string"
+  },
+  "AccessType": 0,
+  "AccessRights": 0
+}
+
+```
+
+---
+
+### AccessType
+
+<a id="schemaaccesstype"></a>
+<a id="schema_AccessType"></a>
+<a id="tocSaccesstype"></a>
+<a id="tocsaccesstype"></a>
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|Allowed|0|
+|Denied|1|
+
+---
 

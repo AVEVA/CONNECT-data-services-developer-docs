@@ -12,7 +12,7 @@ namespace-identifier-requirements:
   value: |
     A namespace is a collection of SDS types, streams, and stream views. Namespace identifiers are unique within a tenant. Requirements for namespace identifiers must meet the following critieria:
     
-    - Must contain 260 characters or less 
+    - Must be 1-100 characters in length
         
     - Must only contain alphanumeric characters, underscores, dashes, spaces, and periods 
     

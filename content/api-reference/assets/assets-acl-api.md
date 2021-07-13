@@ -6,7 +6,7 @@ uid: AssetOrAssetTypeAccessControlAPI
 The access control API is used to secure assets by setting their ownership and permissions. For more information about OCS access control, see [Role-based access control][xref:accessControl].
 
 ## `Get Asset or AssetType Access Control List ` 
-Get the default `AccessControlList` for the assets collection and asset type collection.
+Returns the default `AccessControlList` for the assets collection and asset type collection.
 
 ### Request 
 
@@ -25,20 +25,20 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/accessControl/Ass
 ### Parameters  
 `string tenantId` 
 
-The tenant identifier 
+Tenant identifier 
 
 `string namespaceId` 
 
-The namespace identifier 
+Namespace identifier 
 
 ### Response
 
 The response includes a status code and a body.
 
-| Status Code | Body Type | Description |
-|--|--|--|
-| 200 OK | `AccessControlList` | The default access control list of the assets collection or asset type collection.
-| 403 Forbidden | error | You are not authorized to view the requested asset or asset type collection's access control list. |
+| Status Code   | Body Type           | Description                                                  |
+| ------------- | ------------------- | ------------------------------------------------------------ |
+| 200 OK        | `AccessControlList` | The default access control list of the assets collection or asset type collection. |
+| 403 Forbidden | error               | You are not authorized to view the requested asset or asset type collection's access control list. |
 
 #### Example response body
 ```json 
@@ -74,7 +74,9 @@ HTTP 200 OK
 
 ## `Update Assets or AssetType Access Control List` 
 
-Update the default `AccessControlList` for the assets or asset type collections 
+<!-- Should we make "Assets" singular, as in "Asset" to be consistent with other methods? -->
+
+Updates the default `AccessControlList` for the assets or asset type collections. 
 
 ### Request 
 
@@ -95,11 +97,11 @@ PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/accessControl/Ass
 
 `string tenantId` 
 
-The tenant identifier 
+Tenant identifier 
 
 `string namespaceId` 
 
-The namespace identifier 
+Namespace identifier 
 
 
 #### Request body 
@@ -119,7 +121,7 @@ The response includes a status code and, in some instances, a body.
 
 ## `Get Asset or AssetType Access Control List` 
 
-Get the `AssetControlList` of the specified asset or asset type.
+Returns the `AssetControlList` of the specified asset or asset type.
 
 ### Request 
 
@@ -141,19 +143,19 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetType
 
 `string tenantId` 
 
-The tenant identifier 
+Tenant identifier 
 
 `string namespaceId` 
 
-The namespace identifier 
+Namespace identifier 
 
 `string assetId`
 
-The asset identifier
+Asset identifier
 
 `string assetTypeId`
 
-The asset type identifier
+Asset type identifier
 
 ### Response 
 
@@ -192,7 +194,7 @@ HTTP 200 OK
 
 ## `Update Asset or AssetType Access Control List` 
 
-Update the `AccessControlList` of the specified asset or asset type.
+Updates the `AccessControlList` of the specified asset or asset type.
 
 ### Request 
 
@@ -212,19 +214,19 @@ PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetType
 
 `string tenantId` 
 
-The tenant identifier 
+Tenant identifier 
 
 `string namespaceId` 
 
-The namespace identifier 
+Namespace identifier 
 
 `string assetId`
 
-The asset identifier
+Asset identifier
 
 `string assetTypeId`
 
-The asset type identifier
+Asset type identifier
 
 #### Request body 
 
@@ -244,7 +246,7 @@ The response includes a status code and, in some instances, a body.
 
 ## `Get Asset or AssetType Access Rights` 
 
-Get the calling user or client's access rights to the requested asset or asset type.
+Returns the calling user or client's access rights to the requested asset or asset type.
 
 ### Request 
 
@@ -266,16 +268,16 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetType
 ### Parameters  
 
 `string tenantId`  
-The tenant identifier 
+Tenant identifier 
 
 `string namespaceId`  
-The namespace identifier 
+Namespace identifier 
 
 `string assetId`  
-The asset identifier
+Asset identifier
 
 `string assetTypeId`  
-The asset type identifier
+Asset type identifier
 
 ### Response 
 
@@ -302,7 +304,7 @@ HTTP 200 OK
 
 ## `Get Asset or AssetType Owner` 
 
-Get the owner `Trustee` of the specified asset or asset type.
+Returns the owner `Trustee` of the specified asset or asset type.
 
 ### Request 
 
@@ -322,13 +324,13 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetType
 ### Parameters  
 
 `string tenantId`  
-The tenant identifier 
+Tenant identifier 
 
 `string namespaceId`  
-The namespace identifier 
+Namespace identifier 
 
 `string assetTypeId`  
-The asset type identifier
+Asset type identifier
 
 ### Response 
 
@@ -355,7 +357,7 @@ Content-Type: application/json
 
 ## `Update Asset or AssetType Owner` 
 
-Update the owner `Trustee` of the specified asset or asset type.
+Updates the owner `Trustee` of the specified asset or asset type.
 
 ### Request 
 
@@ -376,16 +378,16 @@ PUT api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asset
 ###  Parameters  
 
 `string tenantId`  
-The tenant identifier 
+Tenant identifier 
 
 `string namespaceId`  
-The namespace identifier 
+Namespace identifier 
 
 `string assetId`  
-The asset identifier
+Asset identifier
 
 `string assetTypeId`  
-The AssetType identifier
+AssetType identifier
 
 #### Request body 
 

@@ -2,12 +2,15 @@
 uid: AssetCentricDataAPI
 ---
 
-# Asset Centric Data API
+# Assets Data API
+
+<!-- Chris Manhard asked that the TOC heading be changed from "Asset centric data" to "Assets data". So I changed the title of this topic so it would match the TOC. -->
+
 The asset centric data API provides a quick way to retrieve data stored in an asset's referenced streams. 
 
 In order to retrieve stream data from an asset, you must first set up stream references for a given asset. The data that is retrieved is based on the resolved asset. By default, data calls return data for all stream references. 
 
-If you are only interested in data from a subset of streams, you must specify the streams encoded as a URL parameter. The format is to add stream={streamName} for each stream you are interested in.
+If you are only interested in data from a subset of streams, you must specify the streams encoded as a URL parameter. The format is to add `stream={streamName}` for each stream you are interested in.
 
 For example, if a given asset has the following definition and you are only interested in HeaterA and PressureB for the last data call, you would send:
 
@@ -15,7 +18,7 @@ For example, if a given asset has the following definition and you are only inte
 GET ...Namespaces/{namespaceId}/Assets/AssetStreamFilter/data/last?Stream={HeaterA},Stream={PressureB}
 ```
 
-Note: Asset stream references can contain commas. In this case, the comma must be properly escaped.
+**Note:** Asset stream references can contain commas. In this case, the comma must be properly escaped.
 
 ```
 {
@@ -80,16 +83,16 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/
 
 ### Parameters  
 `string tenantId`   
-The tenant identifier
+Tenant identifier
 
 `string namespaceId`   
-The namespace identifier
+Namespace identifier
 
 `string assetId`  
-The asset identifier
+Asset identifier
 
-[optional] string[] stream
-An optional parameter consisting of a comma-separated list of stream reference names that you are interested in. By default, all data calls return data for all stream references.
+[optional] `string[] stream`
+Optional parameter consisting of a comma-separated list of stream reference names that you are interested in. By default, all data calls return data for all stream references.
 
 ### Response 
 The response includes a status code and a response body.
@@ -123,9 +126,11 @@ Content-Type: application/json
 ***
 
 ## `Get Asset Sampled Data` 
-Returns sampled data for referenced Sds streams. 
+Returns sampled data for referenced streams. 
 
-Note: The inputs to this API matches the SDS stream Get samples values data call.  
+**Note:** The inputs to this API matches the SDS stream Get sampled values data call.  
+
+<!--Anthony, should "Get samples values" be "Get Sampled Values" (https://osisoft-dev.zoominsoftware.io/bundle/ocs/page/api-reference/sequential-data-store/sds-read-data-api.html#get-sampled-values) -->
 
 ### Request 
 ```text 
@@ -134,25 +139,25 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/
 
 ### Parameters  
 `string tenantId`   
-The tenant identifier 
+Tenant identifier 
 
 `string namespaceId`   
-The namespace identifier
+Namespace identifier
 
 `string assetId`  
-The asset identifier
+Asset identifier
 
 `string startIndex`   
-The start index for the intervals
+Start index for the intervals
 
 `string endIndex`   
-The end index for the intervals
+End index for the intervals
 
 `int intervals`  
-The number of requested intervals
+Number of requested intervals
 
-[optional] string[] stream
-An optional parameter consisting of a comma-separated list of stream reference names that you are interested in. By default, all data calls return data for all stream references.
+[optional] `string[] stream`
+Optional parameter consisting of a comma-separated list of stream reference names that you are interested in. By default, all data calls return data for all stream references.
 
 ### Response 
 The response includes a status code and a response body.
@@ -204,25 +209,25 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/
 
 ###  Parameters  
 `string tenantId`   
-The tenant identifier 
+Tenant identifier 
 
 `string namespaceId`   
-The namespace identifier
+Namespace identifier
 
 `string assetId`  
-The asset identifier
+Asset identifier
 
 `string startIndex`   
-The start index for the intervals
+Start index for the intervals
 
 `string endIndex`   
-The end index for the intervals
+End index for the intervals
 
 `int count`   
-The number of requested intervals
+Number of requested intervals
 
-[optional] string[] stream
-An optional parameter consisting of a comma-separated list of stream reference names that you are interested in. By default, all data calls return data for all stream references.
+[optional] `string[] stream`
+Optional parameter consisting of a comma-separated list of stream reference names that you are interested in. By default, all data calls return data for all stream references.
 
 ### Response 
 The response includes a status code and a response body.
@@ -394,22 +399,22 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/
 
 ### Parameters
 `string tenantId`  
-The tenant identifier
+Tenant identifier
 
 `string namespaceId`   
-The namespace identifier
+Namespace identifier
 
 `string assetId`  
-The asset identifier
+Asset identifier
 
 `string startIndex`   
-The start index for the intervals
+Start index for the intervals
 
 `string endIndex`   
-The end index for the intervals
+End index for the intervals
 
-[optional] string[] stream
-An optional parameter consisting of a comma-separated list of stream reference names that you are interested in. By default, all data calls return data for all stream references.
+[optional] `string[] stream`
+Optional parameter consisting of a comma-separated list of stream reference names that you are interested in. By default, all data calls return data for all stream references.
 
 ### Response
 The response includes a status code and a response body.
@@ -490,25 +495,25 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/
 
 ###  Parameters  
 `string tenantId`   
-The tenant identifier 
+Tenant identifier 
 
 `string namespaceId`   
-The namespace identifier
+Namespace identifier
 
 `string assetId`  
-The asset identifier
+Asset identifier
 
 `string startIndex`   
-The start index for the intervals
+Start index for the intervals
 
 `string endIndex`   
-The end index for the intervals
+End index for the intervals
 
 `int count`   
 The number of requested intervals
 
-[optional] string[] stream
-An optional parameter consisting of a comma-separated list of stream reference names that you are interested in. By default, all data calls return data for all stream references.
+[optional] `string[] stream`
+Optional parameter consisting of a comma-separated list of stream reference names that you are interested in. By default, all data calls return data for all stream references.
 
 ### Response 
 The response includes a status code and a response body.

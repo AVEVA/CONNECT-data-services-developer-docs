@@ -209,7 +209,10 @@ The RuleModel object to preview.<br/>
     }
   ],
   "CreationTime": "0001-01-01T00:00:00",
-  "ModifiedTime": "0001-01-01T00:00:00"
+  "ModifiedTime": "0001-01-01T00:00:00",
+  "ErrorInfo": {
+    "ErrorCount": 2
+  }
 }
 ```
 
@@ -511,7 +514,10 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
     }
   ],
   "CreationTime": "0001-01-01T00:00:00",
-  "ModifiedTime": "0001-01-01T00:00:00"
+  "ModifiedTime": "0001-01-01T00:00:00",
+  "ErrorInfo": {
+    "ErrorCount": 2
+  }
 }
 
 ```
@@ -542,6 +548,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
       "Name": "string",
       "CharacterType": "Any",
       "CharacterLength": 0,
+      "StrictValueMappings": true,
       "RequiredDelimiters": [
         "string"
       ],
@@ -573,6 +580,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 |Name|string|false|true|None|
 |CharacterType|[CharacterType](#schemacharactertype)|false|false|None|
 |CharacterLength|int32|false|true|Null represents the longest string length within the group.|
+|StrictValueMappings|boolean|false|false|None|
 |RequiredDelimiters|string[]|false|true|None|
 |ValueMappings|object|false|true|None|
 
@@ -583,6 +591,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
   "Name": "string",
   "CharacterType": "Any",
   "CharacterLength": 0,
+  "StrictValueMappings": true,
   "RequiredDelimiters": [
     "string"
   ],

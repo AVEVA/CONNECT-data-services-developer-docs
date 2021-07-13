@@ -9,8 +9,8 @@ This section of the OCS Content portal contains documentation on how to use PI t
 <br>
 <br>
 
-* [PI to OCS Introduction](xref:landing-page1)
+* [PI to OCS introduction](xref:landing-page1)
 * [Set up PI to OCS](xref:landing-page2)
-* [Transfer PI system data into OCS](xref:landing-page3)
-* [The PI to OCS Agent](xref:landing-page4)
+* [Transfer PI System data into OCS](xref:landing-page3)
+* [PI to OCS Agent maintenance](xref:landing-page4)
 * [View PI to OCS log messages](xref:landing-page5)

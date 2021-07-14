@@ -22,7 +22,7 @@ In this situation, an asset type can be used to create multiple similar assets. 
 | Metadata      | Metadata List     | Optional  | Yes       | Asset and asset type metadata                               | Yes  | Yes            |
 | StreamReferences   | Stream Reference List | Optional  | No       | Asset stream references                                             | Yes  | No            |
 | TypeReferences | Type Reference List | Optional  | No        | Asset type type references                                     | No | Yes            |
-| StatusMapping | Status Mapping | Optional  | No        | Asset and asset type status mapping | Yes | Yes            |
+| Status | Status | Optional  | No        | Asset and asset type status configuration | Yes | Yes            |
 
 For more information on search syntax, see [Assets Search API](xref:AssetsSearchAPI).
 

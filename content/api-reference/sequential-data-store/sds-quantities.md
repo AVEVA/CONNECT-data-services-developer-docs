@@ -15,7 +15,7 @@ Returns a list of all quantities available within a given namespace
 
 ### Request
 ```text 
-GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities?skip={skip}&count={count}
 ```
 
 #### Parameters
@@ -25,10 +25,10 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities
 <br/>Namespace identifier.<br/><br/><br/>
 `[Optional] int skip`  
 Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.
-
+<br/><br/>
 `[Optional] int count`  
 Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.
-
+<br/><br/>
 
 
 ### Response

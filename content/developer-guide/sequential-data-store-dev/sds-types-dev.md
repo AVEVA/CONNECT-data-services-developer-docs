@@ -40,6 +40,9 @@ You can delete a type only if no streams, stream views, or other types reference
 Only the types that are used to define streams or stream views are required to be added to the SDS. 
 Types that define [properties](#sdstypeproperty) or base types are contained within the parent type so they don't need to be added to the SDS independently.
 
+## Types API
+[Types API](xref:sds-types)
+
 ## SdsType fields and properties table
 <a name="typepropertiestable"></a>
 The table below lists required and optional fields in a type. Fields that are not included are reserved for internal SDS use.

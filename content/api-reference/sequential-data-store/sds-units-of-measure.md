@@ -5,6 +5,7 @@ uid: sds-units-of-measure
 # Units of measure
 The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact with `Units`.
 The APIs are for GET (read) methods. Update (write) operations on `Units` go through [Quantities](xref:sds-quantities).
+For more information on unit of measure, see [Units of measure](xref:unitsOfMeasure).
 
 ## `List Units of Measure`
 

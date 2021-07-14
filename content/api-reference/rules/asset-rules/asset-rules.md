@@ -111,7 +111,7 @@ The following fields are supported:
 
 The `Metadata` and `Type` fields are objects rather than values, so [Json Path Syntax][xref:AssetRules#JSON Paths] is required. The extracted value must be a single value, rather than an object or array.
 For `Metadata`, the syntax should always extract the value of a single key in the `Metadata` collection.
-For more information on available properties for a stream type, see [Sds Types][xref:sdsTypes].
+For more information on available properties for a stream type, see [Types][xref:sdsTypes].
 
 ### Specification Types
 

@@ -4,7 +4,7 @@ uid: identity-tenants-roles
 ---
 
 # Tenants Roles
-APIs for creating, getting, updating, and deleting roles on a tenant.
+APIs for creating, getting, updating, and deleting roles on a tenant
 
 ## `List Roles`
 

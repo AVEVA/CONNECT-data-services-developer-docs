@@ -291,6 +291,8 @@ A list of the supported units of measure is below. Supported units of measure ar
 
 ## Associating a unit of measure with a type
 At [type](xref:sdsTypes) creation, SdsUom can be associated with an [SdsTypeProperty](xref:sdsTypes#sdstypeproperty). 
+For types API, see [Types](xref:sds-types).
 
 ## Associating a unit of measure with a stream
 At [stream](xref:sdsStreams) creation, you can override any unit of measure associated with an SdsTypeProperty belonging to the type of the stream. This enables the reuse of a type that may have default unit information associated with it already.
+For streams API, see [Streams](xref:sds-streams).

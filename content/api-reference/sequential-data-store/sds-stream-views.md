@@ -5,7 +5,7 @@ uid: sds-stream-views
 
 # Stream views
 The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact 
-with stream views.
+with stream views. For more information, see [Stream views](xref:sdsStreamViews).
 
 ## `List Stream Views`
 

@@ -3,7 +3,9 @@ uid: sds-quantities
 ---
 
 # Quantities
-The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact with `Quantities`.
+The REST APIs provide programmatic access to read and write SDS data. 
+The APIs in this section interact with `Quantities`.
+For more information, see [Quantities](xref:unitsOfMeasure).
 
 ## `List Quantities`
 

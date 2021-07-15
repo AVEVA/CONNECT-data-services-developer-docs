@@ -1,6 +1,4 @@
 ---
-
-
 uid: AssetRulesAPI
 ---
 

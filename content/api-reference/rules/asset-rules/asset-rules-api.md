@@ -4,7 +4,7 @@
 uid: AssetRulesAPI
 ---
 
-# Asset rules API
+# Asset rules
 
 ## Get Rule
 
@@ -18,7 +18,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rule
 
 ### Parameters
 
-`tenantID`
+`tenantId`
 
 The tenant identifier
 
@@ -116,7 +116,7 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rul
 
 ### Parameters
 
-`tenantID`
+`tenantId`
 
 The tenant identifier
 
@@ -157,7 +157,7 @@ PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rule
 
 ### Parameters
 
-`tenantID`
+`tenantId`
 
 The tenant identifier
 
@@ -197,7 +197,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{r
 
 ### Parameters
 
-`tenantID`
+`tenantId`
 
 The tenant identifier
 
@@ -232,7 +232,7 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rul
 
 ### Parameters
 
-`tenantID`
+`tenantId`
 
 The tenant identifier
 
@@ -268,7 +268,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules
 
 ### Parameters
 
-`tenantID`
+`tenantId`
 
 The tenant identifier
 
@@ -300,7 +300,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rule
 
 ### Parameters
 
-`tenantID`
+`tenantId`
 
 The tenant identifier
 
@@ -335,7 +335,7 @@ PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rule
 
 ### Parameters
 
-`tenantID`
+`tenantId`
 
 The tenant identifier
 
@@ -387,7 +387,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rule
 
 ### Parameters
 
-`tenantID`
+`tenantId`
 
 The tenant identifier
 
@@ -422,7 +422,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rule
 
 ### Parameters
 
-`tenantID`
+`tenantId`
 
 The tenant identifier
 
@@ -460,7 +460,7 @@ PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rule
 
 ### Parameters
 
-`tenantID`
+`tenantId`
 
 The tenant identifier
 

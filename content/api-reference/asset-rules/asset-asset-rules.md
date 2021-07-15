@@ -14,7 +14,7 @@ Gets all `RuleModel` objects from the `IRuleStore` the requesting `Identity` has
 ### Request
 ```text 
 GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules
-?Skip={Skip}&Count={Count}&KeepOldMetadata={KeepOldMetadata}
+?Skip={Skip}&Count={Count}&KeepOldMetadata={KeepOldMetadata}&KeepOldAssets={KeepOldAssets}
 ```
 
 #### Parameters
@@ -25,7 +25,9 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules
 `[optional] integer Skip`
 <br/>An Int32 to determine how many results to skip. Defaults to DefaultSkip<br/><br/>`[optional] integer Count`
 <br/>An Int32 to determine how many results to return. Defaults to DefaultCount<br/><br/>`[optional] boolean KeepOldMetadata`
-<br/>A Boolean to determine whether or not existing metadata should be kept.
+<br/>A Boolean to determine whether or not existing metadata create by the rule should be kept. Only valid for metadata rule delete requests.
+Defaults to false.<br/><br/>`[optional] boolean KeepOldAssets`
+<br/>A Boolean to determine whether or not existing assets created by the rule should be kept. Only valid for asset rule delete requests.
 Defaults to false.<br/><br/>
 
 ### Response
@@ -697,7 +699,7 @@ Creates or updates the specified rule in the `IRuleStore`.
 ### Request
 ```text 
 PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
-?Skip={Skip}&Count={Count}&KeepOldMetadata={KeepOldMetadata}
+?Skip={Skip}&Count={Count}&KeepOldMetadata={KeepOldMetadata}&KeepOldAssets={KeepOldAssets}
 ```
 
 #### Parameters
@@ -710,7 +712,9 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
 `[optional] integer Skip`
 <br/>An Int32 to determine how many results to skip. Defaults to DefaultSkip<br/><br/>`[optional] integer Count`
 <br/>An Int32 to determine how many results to return. Defaults to DefaultCount<br/><br/>`[optional] boolean KeepOldMetadata`
-<br/>A Boolean to determine whether or not existing metadata should be kept.
+<br/>A Boolean to determine whether or not existing metadata create by the rule should be kept. Only valid for metadata rule delete requests.
+Defaults to false.<br/><br/>`[optional] boolean KeepOldAssets`
+<br/>A Boolean to determine whether or not existing assets created by the rule should be kept. Only valid for asset rule delete requests.
 Defaults to false.<br/><br/>
 
 ### Request Body
@@ -893,7 +897,7 @@ Deletes the specified rule from the `IRuleStore`.
 ### Request
 ```text 
 DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
-?Skip={Skip}&Count={Count}&KeepOldMetadata={KeepOldMetadata}
+?Skip={Skip}&Count={Count}&KeepOldMetadata={KeepOldMetadata}&KeepOldAssets={KeepOldAssets}
 ```
 
 #### Parameters
@@ -906,7 +910,9 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
 `[optional] integer Skip`
 <br/>An Int32 to determine how many results to skip. Defaults to DefaultSkip<br/><br/>`[optional] integer Count`
 <br/>An Int32 to determine how many results to return. Defaults to DefaultCount<br/><br/>`[optional] boolean KeepOldMetadata`
-<br/>A Boolean to determine whether or not existing metadata should be kept.
+<br/>A Boolean to determine whether or not existing metadata create by the rule should be kept. Only valid for metadata rule delete requests.
+Defaults to false.<br/><br/>`[optional] boolean KeepOldAssets`
+<br/>A Boolean to determine whether or not existing assets created by the rule should be kept. Only valid for asset rule delete requests.
 Defaults to false.<br/><br/>
 
 ### Response
@@ -1071,6 +1077,33 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/exe
   }
 }
 ```
+
+---
+
+## `Get Progress`
+
+<a id="opIdAssetRules_Get Progress"></a>
+
+Gets a description of the progress of the most recent execution of the rule and any errors.
+
+### Request
+```text 
+GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/progress
+```
+
+#### Parameters
+
+`any routeOptions`
+<br/>The RuleRouteOptions uri route parameters.<br/><br/>`string tenantId`
+<br/><br/>`string namespaceId`
+<br/><br/>`string ruleId`
+<br/><br/>
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|string|A `ExecutionProgress` object for the given rule id.|
 
 ---
 

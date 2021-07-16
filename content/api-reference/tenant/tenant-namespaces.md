@@ -1,9 +1,9 @@
 ---
-uid: tenant-namespace
+uid: tenant-namespaces
 
 ---
 
-# Namespace
+# Namespaces
 A Namespace is a logical unit of organization for data within a tenant. It is a collection of types, streams, and stream views. Each tenant may contain more than one namespace. Before you can put any data into OCS for a given tenant, a namespace must be created within the scope of that tenant. Namespace identifiers are unique within an account. #https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/metadata-tags.yml#namespace-identifier-requirements. In practice, namespaces may correspond to a specific set of infrastructure assets, but more commonly correspond to virtual partitions within a single set of assets. You can create one or more namespaces within a tenant. Each namespace is effectively an instance of SDS, within which you create types and streams, stream views, data views, and metadata.
 
 ## `List All`

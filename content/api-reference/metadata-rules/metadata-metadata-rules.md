@@ -1370,7 +1370,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|RuleId|string|false|true|The id of a rule.|
+|RuleId|string|false|true|The id of a RuleModelrule.|
 
 ```json
 {

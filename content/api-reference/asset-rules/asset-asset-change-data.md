@@ -9,7 +9,7 @@ uid: asset-asset-change-data
 
 <a id="opIdAssetChangeData_Get Statistics For Rule"></a>
 
-Gets the `AssetRuleStatistics` for the `!:ruleId`.
+Gets the `AssetRuleStatistics` for the ruldId.
 
 ### Request
 ```text 
@@ -77,7 +77,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 
 <a id="opIdAssetChangeData_List Change Data For Rule"></a>
 
-Gets the `ICollection`1` for the `!:ruleId`.
+Gets the `ICollection`1` for the ruleId.
 
 ### Request
 ```text 
@@ -247,7 +247,7 @@ Defaults to 100.<br/><br/>
 
 <a id="opIdAssetChangeData_List Change Data For Asset"></a>
 
-Gets the `ICollection`1` for the `!:assetId`.
+Gets the `ICollection`1` for the assetId.
 
 ### Request
 ```text 
@@ -395,7 +395,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 
 <a id="opIdAssetChangeData_List Change Data For Stream"></a>
 
-Gets the `ICollection`1` for the `!:streamId`.
+Gets the `ICollection`1` for the streamId.
 
 ### Request
 ```text 

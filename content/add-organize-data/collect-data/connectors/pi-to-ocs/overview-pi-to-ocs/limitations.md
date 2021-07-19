@@ -4,7 +4,7 @@ uid: pi-to-ocs-limitations
 
 # Limitations of PI to OCS
 
-Here is a list of currently known limitations for PI to OCS:
+This table lists the currently known limitations of PI to OCS.
 
 | Issue | Restrictions | 
 | ------------- | ----------------- | 

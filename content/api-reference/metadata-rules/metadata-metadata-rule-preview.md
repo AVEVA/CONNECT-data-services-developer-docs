@@ -22,8 +22,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 `string token`
 <br/>A Guid which corresponds to a preview that has been created using the CancellationToken) method.<br/><br/>`integer skip`
 <br/>An Int32 to determine the number of preview results to skip.<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
 `[optional] integer count`
 <br/>An Int32 to determine the number of preview results to return.<br/><br/>
 

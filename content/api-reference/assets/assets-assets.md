@@ -4,7 +4,7 @@ uid: assets-assets
 ---
 
 # Assets
-The Assets API allows you to create, read, update, and delete assets. The asset feature supports the HTTP entity tag(ETag) and If-Match for conditional requests.When a `GET` call is performed, the HTTP response header includes an Etag which indicates what version of the asset resource will be retrieved. #### Example Etag Response Header This is version 7 of a particular asset. ``` Etag: "7" ``` To edit or delete the asset, specify If-Match in the HTTP request header when calling `DELETE` or `PUT`. #### Example If-Match Response Header Modify or delete only if the current asset matches version 7. Otherwise, do not perform this operation.If this condition fails, return a 412. ``` If-Match : "7" ``` Note: If-Match is optional. If you want to delete or modify an asset regardless of the asset version, do not specify an If-Match...
+The Assets API allows you to create, read, update, and delete assets. The asset feature supports the HTTP entity tag(ETag) and If-Match for conditional requests.When a `GET` call is performed, the HTTP response header includes an Etag which indicates what version of the asset resource will be retrieved. #### Example Etag Response Header This is version 7 of a particular asset. ``` Etag: "7" ``` To edit or delete the asset, specify If-Match in the HTTP request header when calling `DELETE` or `PUT`. #### Example If-Match Response Header Modify or delete only if the current asset matches version 7. Otherwise, do not perform this operation.If this condition fails, return a 412. ``` If-Match : "7" ``` Note: If-Match is optional. If you want to delete or modify an asset regardless of the asset version, do not specify an If-Match.
 
 ## `Get Asset Owner`
 
@@ -300,15 +300,15 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 ---
 
-## `Get Asset2`
+## `Get Asset`
 
-<a id="opIdAssets_Get Asset2"></a>
+<a id="opIdAssets_Get Asset"></a>
 
 Returns specified asset and the version Etag in the HTTP response header.
 
 ### Request
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId}
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 ```
 
 #### Parameters
@@ -375,15 +375,15 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId
 
 ---
 
-## `Create Asset Type`
+## `Create Asset`
 
-<a id="opIdAssets_Create Asset Type"></a>
+<a id="opIdAssets_Create Asset"></a>
 
 Creates a new asset. If the asset you are trying to create references an asset type (through the AssetTypeId property) and if the corresponding asset type has a metadata value with the same Id, then the name and SDS type code of the metadata value on the asset must be null. If the asset type does not have metadata value with a corresponding Id, the name and SDS type code on the asset cannot be null. To support flexibility on creation and update, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is created from an asset type.
 
 ### Request
 ```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId}
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 ```
 
 #### Parameters
@@ -509,15 +509,15 @@ Asset to create<br/>
 
 ---
 
-## `Create Or Update Asset (Assets2 path)`
+## `Create Or Update Asset`
 
-<a id="opIdAssets_Create Or Update Asset (Assets2 path)"></a>
+<a id="opIdAssets_Create Or Update Asset"></a>
 
 Creates or updates an asset with a specified identifier. If the asset already exists, you can specify an If-Match property in the HTTP request header to ensure that the asset is modified only if its version matches. To support flexibility, on creation and update, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is from an asset type.
 
 ### Request
 ```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2/{assetId}
+PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 ```
 
 #### Parameters
@@ -638,134 +638,6 @@ Asset to create or update<br/>
   "property2": null
 }
 ```
-
----
-
-## `Get Asset`
-
-<a id="opIdAssets_Get Asset"></a>
-
-### Request
-```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
-```
-
-#### Parameters
-
-`string assetId`
-<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|string|None|
-
----
-
-## `Create Asset`
-
-<a id="opIdAssets_Create Asset"></a>
-
-### Request
-```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
-```
-
-#### Parameters
-
-`string assetId`
-<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
-
-### Request Body
-
-<br/>
-
-```json
-{
-  "Id": "SampleAssetA",
-  "Description": "This is a sample asset a.",
-  "Metadata": [
-    {
-      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
-      "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
-      "SdsTypeCode": "Double",
-      "Value": 0.01
-    }
-  ],
-  "StreamReferences": [
-    {
-      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-      "Name": "Data",
-      "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
-      "StreamId": "PI_bifrostbigdaddy_1"
-    }
-  ]
-}
-```
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|string|None|
-
----
-
-## `Create Or Update Asset (Assets path)`
-
-<a id="opIdAssets_Create Or Update Asset (Assets path)"></a>
-
-### Request
-```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
-```
-
-#### Parameters
-
-`string assetId`
-<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
-
-### Request Body
-
-<br/>
-
-```json
-{
-  "Id": "SampleAssetA",
-  "Description": "This is a sample asset a.",
-  "Metadata": [
-    {
-      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
-      "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
-      "SdsTypeCode": "Double",
-      "Value": 0.01
-    }
-  ],
-  "StreamReferences": [
-    {
-      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-      "Name": "Data",
-      "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
-      "StreamId": "PI_bifrostbigdaddy_1"
-    }
-  ]
-}
-```
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|string|None|
 
 ---
 
@@ -1305,7 +1177,7 @@ Status configuration is a property of an asset or asset type that defines the si
   "DefinitionType": "StreamPropertyMapping",
   "Definition": {
     "StreamReferenceId": "StatusMappingOnAssetTypeCrudFunctionalTest_streamRef",
-    "StreamPropertyId": "SystemStateCode",
+    "StreamPropertyId": "Value",
     "ValueStatusMappings": [
       {
         "Value": 3,

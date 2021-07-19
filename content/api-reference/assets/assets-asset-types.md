@@ -6,15 +6,15 @@ uid: assets-asset-types
 # Asset Types
 In many instances, you will have multiple assets of the same type.. In this situation, an asset type can be used to create multiple similar assets. A change to the asset type is reflected in all assets that are derived from the asset type.
 
-## `List Asset Types2`
+## `List Asset Types`
 
-<a id="opIdAssetTypes_List Asset Types2"></a>
+<a id="opIdAssetTypes_List Asset Types"></a>
 
 Returns an array of asset types in a given namespace and the total number of asset types returned, specified as Total-Count in the HTTP response header.
 
 ### Request
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes
 ?skip={skip}&count={count}&query={query}
 ```
 
@@ -104,15 +104,15 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2
 
 ---
 
-## `Create Asset Types`
+## `Create Asset Types (POST Method)`
 
-<a id="opIdAssetTypes_Create Asset Types"></a>
+<a id="opIdAssetTypes_Create Asset Types (POST Method)"></a>
 
 Create or update an asset type with a specified identifier.
 
 ### Request
 ```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes
 ```
 
 #### Parameters
@@ -232,93 +232,15 @@ Asset type to create<br/>
 
 ---
 
-## `Get Asset Types`
+## `Get Asset Type`
 
-<a id="opIdAssetTypes_Get Asset Types"></a>
-
-### Request
-```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes
-?skip={skip}&count={count}&query={query}
-```
-
-#### Parameters
-
-`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
-`[optional] integer skip`
-<br/><br/>`[optional] integer count`
-<br/><br/>`[optional] string query`
-<br/><br/>
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|string|None|
-
----
-
-## `Create Asset Types2`
-
-<a id="opIdAssetTypes_Create Asset Types2"></a>
-
-### Request
-```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes
-```
-
-#### Parameters
-
-`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
-
-### Request Body
-
-<br/>
-
-```json
-{
-  "Id": "SampleAssetType01",
-  "Description": "This is a sample asset type.",
-  "Metadata": [
-    {
-      "Id": "Id-fbd82b97-d29e-4022-968e",
-      "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset type which represents the model number.",
-      "SdsTypeCode": "Double",
-      "Value": 0.01
-    }
-  ],
-  "TypeReferences": [
-    {
-      "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-      "StreamReferenceName": "ReferenceName",
-      "TypeId": "PI-Float32"
-    }
-  ]
-}
-```
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|string|None|
-
----
-
-## `Get Asset Type2`
-
-<a id="opIdAssetTypes_Get Asset Type2"></a>
+<a id="opIdAssetTypes_Get Asset Type"></a>
 
 Returns an array of asset types in a given namespace and the total number of asset types returned, specified as Total-Count in the HTTP response header.
 
 ### Request
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{assetTypeId}
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}
 ```
 
 #### Parameters
@@ -383,15 +305,15 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{ass
 
 ---
 
-## `Create Asset Type (Asset Types2 path)`
+## `Create Asset Type`
 
-<a id="opIdAssetTypes_Create Asset Type (Asset Types2 path)"></a>
+<a id="opIdAssetTypes_Create Asset Type"></a>
 
 Creates or updates an asset type with a specified identifier.
 
 ### Request
 ```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{assetTypeId}
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}
 ```
 
 #### Parameters
@@ -511,15 +433,15 @@ Asset type to create<br/>
 
 ---
 
-## `Create Or Update Asset Type (Asset Types2 path)`
+## `Create Or Update Asset Type`
 
-<a id="opIdAssetTypes_Create Or Update Asset Type (Asset Types2 path)"></a>
+<a id="opIdAssetTypes_Create Or Update Asset Type"></a>
 
 Creates or updates an asset type with a specified identifier.
 
 ### Request
 ```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes2/{assetTypeId}
+PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}
 ```
 
 #### Parameters
@@ -639,132 +561,6 @@ Asset type to create or update<br/>
 
 ---
 
-## `Get Asset Type`
-
-<a id="opIdAssetTypes_Get Asset Type"></a>
-
-### Request
-```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}
-```
-
-#### Parameters
-
-`string assetTypeId`
-<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|string|None|
-
----
-
-## `Create Asset Type (Asset Types path)`
-
-<a id="opIdAssetTypes_Create Asset Type (Asset Types path)"></a>
-
-### Request
-```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}
-```
-
-#### Parameters
-
-`string assetTypeId`
-<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
-
-### Request Body
-
-<br/>
-
-```json
-{
-  "Id": "SampleAssetType01",
-  "Description": "This is a sample asset type.",
-  "Metadata": [
-    {
-      "Id": "Id-fbd82b97-d29e-4022-968e",
-      "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset type which represents the model number.",
-      "SdsTypeCode": "Double",
-      "Value": 0.01
-    }
-  ],
-  "TypeReferences": [
-    {
-      "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-      "StreamReferenceName": "ReferenceName",
-      "TypeId": "PI-Float32"
-    }
-  ]
-}
-```
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|string|None|
-
----
-
-## `Create Or Update Asset Type (Asset Types path)`
-
-<a id="opIdAssetTypes_Create Or Update Asset Type (Asset Types path)"></a>
-
-### Request
-```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}
-```
-
-#### Parameters
-
-`string assetTypeId`
-<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
-
-### Request Body
-
-<br/>
-
-```json
-{
-  "Id": "SampleAssetType01",
-  "Description": "This is a sample asset type.",
-  "Metadata": [
-    {
-      "Id": "Id-fbd82b97-d29e-4022-968e",
-      "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset type which represents the model number.",
-      "SdsTypeCode": "Double",
-      "Value": 0.01
-    }
-  ],
-  "TypeReferences": [
-    {
-      "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-      "StreamReferenceName": "ReferenceName",
-      "TypeId": "PI-Float32"
-    }
-  ]
-}
-```
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|string|None|
-
----
-
 ## `Delete Asset Type`
 
 <a id="opIdAssetTypes_Delete Asset Type"></a>
@@ -813,15 +609,15 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{a
 
 ---
 
-## `Create Asset Types3`
+## `Create Asset Types (Bulk path)`
 
-<a id="opIdAssetTypes_Create Asset Types3"></a>
+<a id="opIdAssetTypes_Create Asset Types (Bulk path)"></a>
 
 Bulk creates asset types. Creates multiple asset types in a single call.
 
 ### Request
 ```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/AssetTypes2
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/AssetTypes
 ```
 
 #### Parameters
@@ -957,58 +753,6 @@ List of asset types you want to create.<br/>
   ]
 }
 ```
-
----
-
-## `Create Asset Types4`
-
-<a id="opIdAssetTypes_Create Asset Types4"></a>
-
-### Request
-```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/AssetTypes
-```
-
-#### Parameters
-
-`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
-
-### Request Body
-
-<br/>
-
-```json
-[
-  {
-    "Id": "SampleAssetType01",
-    "Description": "This is a sample asset type.",
-    "Metadata": [
-      {
-        "Id": "Id-fbd82b97-d29e-4022-968e",
-        "Name": "ModelNumber",
-        "Description": "This is a static attribute on the asset type which represents the model number.",
-        "SdsTypeCode": "Double",
-        "Value": 0.01
-      }
-    ],
-    "TypeReferences": [
-      {
-        "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-        "StreamReferenceName": "ReferenceName",
-        "TypeId": "PI-Float32"
-      }
-    ]
-  }
-]
-```
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|string|None|
 
 ---
 
@@ -1643,7 +1387,7 @@ Status configuration is a property of an asset or asset type that defines the si
   "DefinitionType": "StreamPropertyMapping",
   "Definition": {
     "StreamReferenceId": "StatusMappingOnAssetTypeCrudFunctionalTest_streamRef",
-    "StreamPropertyId": "SystemStateCode",
+    "StreamPropertyId": "Value",
     "ValueStatusMappings": [
       {
         "Value": 3,

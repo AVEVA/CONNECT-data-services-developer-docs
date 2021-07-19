@@ -6,15 +6,15 @@ uid: assets-request-manager
 # Request Manager
 The asset API allows you to programmatically model your on-premises assets in OSIsoft Cloud Services (OCS). A single stream with its metadata can be used to model very simple assets. However, in most instances, an asset relates to dynamic data from several streams and to static information that describe the asset. This is better structured as an asset instead of any single stream. The assets feature is well suited to model these aspects of an asset. It allows users to create an asset, add static metadata, and reference streams in a standard, structured way. The asset API includes search capabilities and features to directly retrieve the values of dynamic data associated with a given asset. It also provides methods to configure determining the asset status and to configure different user views of an asset.
 
-## `List Assets Async2`
+## `List Assets`
 
-<a id="opIdRequestManager_List Assets Async2"></a>
+<a id="opIdRequestManager_List Assets"></a>
 
 Returns an array of assets in a given namespace and the total number of assets returned, specified as Total-Count in the HTTP response header.
 
 ### Request
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
 ?skip={skip}&count={count}&orderBy={orderBy}&query={query}&pageSize={pageSize}&maxPages={maxPages}&continuationToken={continuationToken}&Comparer={Comparer}&Count={Count}&Keys={Keys}&System.Collections.Generic.IDictionary<TKey,TValue>.Keys={System.Collections.Generic.IDictionary<TKey,TValue>.Keys}&System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys={System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys}&Values={Values}&System.Collections.Generic.IDictionary<TKey,TValue>.Values={System.Collections.Generic.IDictionary<TKey,TValue>.Values}&System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values={System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values}&Item={Item}&System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly={System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly}&System.Collections.ICollection.IsSynchronized={System.Collections.ICollection.IsSynchronized}&System.Collections.ICollection.SyncRoot={System.Collections.ICollection.SyncRoot}&System.Collections.IDictionary.IsFixedSize={System.Collections.IDictionary.IsFixedSize}&System.Collections.IDictionary.IsReadOnly={System.Collections.IDictionary.IsReadOnly}&System.Collections.IDictionary.Keys={System.Collections.IDictionary.Keys}&System.Collections.IDictionary.Values={System.Collections.IDictionary.Values}&System.Collections.IDictionary.Item={System.Collections.IDictionary.Item}
 ```
 
@@ -127,15 +127,15 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2
 
 ---
 
-## `Create Asset Async2`
+## `Create Asset`
 
-<a id="opIdRequestManager_Create Asset Async2"></a>
+<a id="opIdRequestManager_Create Asset"></a>
 
 Creates a new asset. If the asset you are trying to create references an asset type (through the AssetTypeId property) and if the corresponding asset type has a metadata value with the same Id, then the name and SDS type code of the metadata value on the asset must be null. If the asset type does not have metadata value with a corresponding Id, the name and SDS type code on the asset cannot be null. To support flexibility on creation and update, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is created from an asset type.
 
 ### Request
 ```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets2
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
 ```
 
 #### Parameters
@@ -259,115 +259,15 @@ Asset you want to create<br/>
 
 ---
 
-## `Get Assets`
+## `Bulk Create Assets`
 
-<a id="opIdRequestManager_Get Assets"></a>
-
-### Request
-```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
-?skip={skip}&count={count}&orderBy={orderBy}&query={query}&pageSize={pageSize}&maxPages={maxPages}&continuationToken={continuationToken}&Comparer={Comparer}&Count={Count}&Keys={Keys}&System.Collections.Generic.IDictionary<TKey,TValue>.Keys={System.Collections.Generic.IDictionary<TKey,TValue>.Keys}&System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys={System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys}&Values={Values}&System.Collections.Generic.IDictionary<TKey,TValue>.Values={System.Collections.Generic.IDictionary<TKey,TValue>.Values}&System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values={System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values}&Item={Item}&System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly={System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly}&System.Collections.ICollection.IsSynchronized={System.Collections.ICollection.IsSynchronized}&System.Collections.ICollection.SyncRoot={System.Collections.ICollection.SyncRoot}&System.Collections.IDictionary.IsFixedSize={System.Collections.IDictionary.IsFixedSize}&System.Collections.IDictionary.IsReadOnly={System.Collections.IDictionary.IsReadOnly}&System.Collections.IDictionary.Keys={System.Collections.IDictionary.Keys}&System.Collections.IDictionary.Values={System.Collections.IDictionary.Values}&System.Collections.IDictionary.Item={System.Collections.IDictionary.Item}
-```
-
-#### Parameters
-
-`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
-`[optional] integer skip`
-<br/><br/>`[optional] integer count`
-<br/><br/>`[optional] string orderBy`
-<br/><br/>`[optional] string query`
-<br/><br/>`[optional] integer pageSize`
-<br/><br/>`[optional] integer maxPages`
-<br/><br/>`[optional] string continuationToken`
-<br/><br/>`[optional] object Comparer`
-<br/><br/>`[optional] integer Count`
-<br/><br/>`[optional] array Keys`
-<br/><br/>`[optional] array System.Collections.Generic.IDictionary<TKey,TValue>.Keys`
-<br/><br/>`[optional] array System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys`
-<br/><br/>`[optional] array Values`
-<br/><br/>`[optional] array System.Collections.Generic.IDictionary<TKey,TValue>.Values`
-<br/><br/>`[optional] array System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values`
-<br/><br/>`[optional] array Item`
-<br/><br/>`[optional] boolean System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly`
-<br/><br/>`[optional] boolean System.Collections.ICollection.IsSynchronized`
-<br/><br/>`[optional] any System.Collections.ICollection.SyncRoot`
-<br/><br/>`[optional] boolean System.Collections.IDictionary.IsFixedSize`
-<br/><br/>`[optional] boolean System.Collections.IDictionary.IsReadOnly`
-<br/><br/>`[optional] array System.Collections.IDictionary.Keys`
-<br/><br/>`[optional] array System.Collections.IDictionary.Values`
-<br/><br/>`[optional] any System.Collections.IDictionary.Item`
-<br/><br/>
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|string|None|
-
----
-
-## `Create Asset`
-
-<a id="opIdRequestManager_Create Asset"></a>
-
-### Request
-```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
-```
-
-#### Parameters
-
-`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
-
-### Request Body
-
-<br/>
-
-```json
-{
-  "Id": "SampleAssetA",
-  "Description": "This is a sample asset a.",
-  "Metadata": [
-    {
-      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
-      "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
-      "SdsTypeCode": "Double",
-      "Value": 0.01
-    }
-  ],
-  "StreamReferences": [
-    {
-      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-      "Name": "Data",
-      "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
-      "StreamId": "PI_bifrostbigdaddy_1"
-    }
-  ]
-}
-```
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|string|None|
-
----
-
-## `Bulk Create Assets Async2`
-
-<a id="opIdRequestManager_Bulk Create Assets Async2"></a>
+<a id="opIdRequestManager_Bulk Create Assets"></a>
 
 Creates assets in bulk. Creates multiple assets in a single call.
 
 ### Request
 ```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets2
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets
 ```
 
 #### Parameters
@@ -507,59 +407,6 @@ List of assets you want to create.<br/>
   ]
 }
 ```
-
----
-
-## `Bulk Create Assets`
-
-<a id="opIdRequestManager_Bulk Create Assets"></a>
-
-### Request
-```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets
-```
-
-#### Parameters
-
-`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
-
-### Request Body
-
-<br/>
-
-```json
-[
-  {
-    "Id": "SampleAssetA",
-    "Description": "This is a sample asset a.",
-    "Metadata": [
-      {
-        "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
-        "Name": "ModelNumber",
-        "Description": "This is a static attribute on the asset which represents the model number.",
-        "SdsTypeCode": "Double",
-        "Value": 0.01
-      }
-    ],
-    "StreamReferences": [
-      {
-        "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-        "Name": "Data",
-        "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
-        "StreamId": "PI_bifrostbigdaddy_1"
-      }
-    ]
-  }
-]
-```
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|string|None|
 
 ---
 
@@ -1445,7 +1292,7 @@ Status configuration is a property of an asset or asset type that defines the si
   "DefinitionType": "StreamPropertyMapping",
   "Definition": {
     "StreamReferenceId": "StatusMappingOnAssetTypeCrudFunctionalTest_streamRef",
-    "StreamPropertyId": "SystemStateCode",
+    "StreamPropertyId": "Value",
     "ValueStatusMappings": [
       {
         "Value": 3,

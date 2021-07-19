@@ -148,8 +148,8 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
 `[optional] boolean KeepOldMetadata`
 <br/><br/>`[optional] integer Skip`
 <br/><br/>`[optional] integer Count`
@@ -308,8 +308,8 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 
 `string token`
 <br/>A Guid which corresponds to a preview that has been created using the CancellationToken) method.<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
 
 ### Response
 

@@ -11,5 +11,4 @@ The SDS stream container uses metadata and tags to define information about the 
 
 ### <a name="streams-pi-server"></a>PI Server counterpart
 
-An SDS stream is comparable to a PI point in the PI Data Archive. For example, a float32 PI point might be sent to OSIsoft Cloud Services as an SDS stream with a type that contains a timestamp index and float32 value. If you use PI to OCS to import data into SDS, each PI point in the PI Data Archive will be created in SDS as individual stream and the data itself will be added as values in the stream.
-<!-- Angela Flores 6/10/21 - The last sentence still has two instances of passive voice. -->
+An SDS stream is comparable to a PI point in the PI Data Archive. For example, a float32 PI point might be sent to OSIsoft Cloud Services as an SDS stream with a type that contains a timestamp index and float32 value. If you use PI to OCS to import data into SDS, each PI point in the PI Data Archive is created in SDS as an individual stream and the data itself is added as values in the stream.

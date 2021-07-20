@@ -9,7 +9,7 @@ uid: asset-asset-change-data
 
 <a id="opIdAssetChangeData_Get Statistics For Rule"></a>
 
-Gets the `AssetRuleStatistics` for the ruldId.
+Gets the `AssetRuleStatistics` for the `!:ruleId`.
 
 ### Request
 ```text 
@@ -20,8 +20,8 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 
 `string ruleId`
 <br/>The Id of an Asset Rule.<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/><br/>`string namespaceId`
+<br/><br/>
 
 ### Response
 
@@ -77,7 +77,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 
 <a id="opIdAssetChangeData_List Change Data For Rule"></a>
 
-Gets the `ICollection`1` for the ruleId.
+Gets the `ICollection`1` for the `!:ruleId`.
 
 ### Request
 ```text 
@@ -89,8 +89,8 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 
 `string ruleId`
 <br/>The Id of an Asset Rule.<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/><br/>`string namespaceId`
+<br/><br/>
 `[optional] integer Skip`
 <br/>An Int32 specifying the number of results to skip.
 Defaults to 0.<br/><br/>`[optional] integer Count`
@@ -247,7 +247,7 @@ Defaults to 100.<br/><br/>
 
 <a id="opIdAssetChangeData_List Change Data For Asset"></a>
 
-Gets the `ICollection`1` for the assetId.
+Gets the `ICollection`1` for the `!:assetId`.
 
 ### Request
 ```text 
@@ -258,8 +258,8 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 
 `string assetId`
 <br/>The Id of an Asset.<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/><br/>`string namespaceId`
+<br/><br/>
 
 ### Response
 
@@ -395,7 +395,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 
 <a id="opIdAssetChangeData_List Change Data For Stream"></a>
 
-Gets the `ICollection`1` for the streamId.
+Gets the `ICollection`1` for the `!:streamId`.
 
 ### Request
 ```text 
@@ -406,8 +406,8 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 
 `string streamId`
 <br/>The Id of a Stream.<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/><br/>`string namespaceId`
+<br/><br/>
 
 ### Response
 

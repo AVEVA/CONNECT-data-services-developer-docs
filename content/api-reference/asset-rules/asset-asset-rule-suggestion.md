@@ -21,8 +21,8 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/asset
 
 `string token`
 <br/>A Guid which corresponds to a SuggestionResponse that has been created using the CancellationToken) method.<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/><br/>`string namespaceId`
+<br/><br/>
 
 ### Response
 
@@ -129,8 +129,8 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/asse
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/><br/>`string namespaceId`
+<br/><br/>
 
 ### Request Body
 
@@ -285,8 +285,8 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/as
 
 `string token`
 <br/>A Guid which corresponds to a SuggestionResponse that has been created using the CancellationToken) method.<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/><br/>`string namespaceId`
+<br/><br/>
 
 ### Response
 

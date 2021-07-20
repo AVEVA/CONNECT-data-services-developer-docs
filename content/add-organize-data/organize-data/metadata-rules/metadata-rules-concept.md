@@ -9,7 +9,7 @@ OSIsoft recommends that you explicitly include metadata when you create streams;
 
 ## PI Server counterpart
 
-Metadata rules do not have a similar counterpart in PI Server because PI points cannot store generic metadata. If a similar feature existed in PI Server, it might be a tool that runs against a list of PI points and fills in their point attributes by parsing out different parts of a structured PI point name. <!-- Angela Flores 6/11/21 - I don't think the second sentence adds value. It is talking about a hypothetical tool. -->
+Metadata rules do not have a similar counterpart in PI Server because PI points cannot store generic metadata. <!--If a similar feature existed in PI Server, it might be a tool that runs against a list of PI points and fills in their point attributes by parsing out different parts of a structured PI point name.--> <!-- Angela Flores 6/11/21 - I don't think the second sentence adds value. It is talking about a hypothetical tool. -->
 
 ## Metadata best practices  
 

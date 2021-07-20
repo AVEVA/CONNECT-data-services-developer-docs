@@ -4,7 +4,7 @@ uid: Roles
 
 # Roles
 
-OCS provides includes the following preconfigured roles:
+OCS includes the following preconfigured roles:
 
 - Tenant Member - Assigned to every user and client credential client. Users and clients issued with this role can generally access information pertaining to themselves.
 

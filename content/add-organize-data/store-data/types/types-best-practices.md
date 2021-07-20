@@ -6,7 +6,7 @@ uid: bpTypes
 
 OSIsoft recommends the following best practices for types and streams:
 
-- When you create SDS types, the most important thing to be aware of is that types are immutable. Once created, additional properties or information cannot be added and existing properties cannot be deleted.
+- When you create SDS types, it is important to remember that types are immutable. Once created, additional properties or information cannot be added and existing properties cannot be deleted.
 
 - An SDS type can include multiple data measurements of different data types. Each data measurement is a property of the type.
 

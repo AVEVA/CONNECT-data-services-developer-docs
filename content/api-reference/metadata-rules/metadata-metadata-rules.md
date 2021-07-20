@@ -20,8 +20,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/><br/>`string namespaceId`
+<br/><br/>
 `[optional] integer Skip`
 <br/>An Int32 to determine how many results to skip. Defaults to DefaultSkip<br/><br/>`[optional] integer Count`
 <br/>An Int32 to determine how many results to return. Defaults to DefaultCount<br/><br/>`[optional] boolean KeepOldMetadata`
@@ -172,8 +172,8 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/><br/>`string namespaceId`
+<br/><br/>
 
 ### Request Body
 
@@ -339,8 +339,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}
 
 `any routeOptions`
 <br/>The RuleRouteOptions uri route parameters.<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string ruleId`
+<br/><br/>`string namespaceId`
+<br/><br/>`string ruleId`
 <br/><br/>
 
 ### Response
@@ -452,8 +452,8 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}
 
 `any routeOptions`
 <br/>The RuleRouteOptions uri route parameters.<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string ruleId`
+<br/><br/>`string namespaceId`
+<br/><br/>`string ruleId`
 <br/><br/>
 
 ### Request Body
@@ -622,8 +622,8 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}
 
 `any routeOptions`
 <br/>The RuleRouteOptions uri route parameters.<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string ruleId`
+<br/><br/>`string namespaceId`
+<br/><br/>`string ruleId`
 <br/><br/>
 `[optional] integer Skip`
 <br/>An Int32 to determine how many results to skip. Defaults to DefaultSkip<br/><br/>`[optional] integer Count`
@@ -820,8 +820,8 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId
 
 `any routeOptions`
 <br/>The RuleRouteOptions uri route parameters.<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string ruleId`
+<br/><br/>`string namespaceId`
+<br/><br/>`string ruleId`
 <br/><br/>
 `[optional] integer Skip`
 <br/>An Int32 to determine how many results to skip. Defaults to DefaultSkip<br/><br/>`[optional] integer Count`
@@ -903,8 +903,8 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/
 
 `any routeOptions`
 <br/>The RuleRouteOptions uri route parameters.<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string ruleId`
+<br/><br/>`string namespaceId`
+<br/><br/>`string ruleId`
 <br/><br/>
 
 ### Response
@@ -995,8 +995,8 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/
 
 `any routeOptions`
 <br/>The RuleRouteOptions uri route parameters.<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string ruleId`
+<br/><br/>`string namespaceId`
+<br/><br/>`string ruleId`
 <br/><br/>
 
 ### Response
@@ -1370,7 +1370,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|RuleId|string|false|true|The id of a RuleModelrule.|
+|RuleId|string|false|true|The id of a rule.|
 
 ```json
 {

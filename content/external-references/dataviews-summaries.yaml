@@ -2,12 +2,12 @@
 class-collectionaccessrightscontroller:
   type: text/plain
   value: |
-    APIs for retrieving access rights on the data views collection
+    APIs for retrieving access rights on the data views collection.
 
 class-collectionaclcontroller:
   type: text/plain
   value: |
-    APIs for working with the Access Control List of the data view collection
+    APIs for working with the Access Control List of the data view collection.
 
 class-dataviewsdatacontroller:
   type: markdown
@@ -72,7 +72,7 @@ dataview-owner-update:
 dataviews-accessrights-get:
   type: text/plain
   value: |
-    Gets the access rights to the data views collection for the calling user or client
+    Gets the access rights to the data views collection for the calling user or client.
 
 dataviews-acl-get:
   type: markdown

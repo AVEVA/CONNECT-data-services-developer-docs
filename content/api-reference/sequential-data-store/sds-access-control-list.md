@@ -41,7 +41,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Streams
   "RoleTrusteeAccessControlEntries": [
     {
       "Trustee": {
-        "Type": "[",
+        "Type": 1,
         "ObjectId": "string",
         "TenantId": "string"
       },
@@ -183,7 +183,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Types
   "RoleTrusteeAccessControlEntries": [
     {
       "Trustee": {
-        "Type": "[",
+        "Type": 1,
         "ObjectId": "string",
         "TenantId": "string"
       },
@@ -325,7 +325,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/StreamView
   "RoleTrusteeAccessControlEntries": [
     {
       "Trustee": {
-        "Type": "[",
+        "Type": 1,
         "ObjectId": "string",
         "TenantId": "string"
       },
@@ -467,7 +467,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Quantities
   "RoleTrusteeAccessControlEntries": [
     {
       "Trustee": {
-        "Type": "[",
+        "Type": 1,
         "ObjectId": "string",
         "TenantId": "string"
       },
@@ -611,7 +611,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessCon
   "RoleTrusteeAccessControlEntries": [
     {
       "Trustee": {
-        "Type": "[",
+        "Type": 1,
         "ObjectId": "string",
         "TenantId": "string"
       },
@@ -905,7 +905,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Acces
   "RoleTrusteeAccessControlEntries": [
     {
       "Trustee": {
-        "Type": "[",
+        "Type": 1,
         "ObjectId": "string",
         "TenantId": "string"
       },
@@ -1195,7 +1195,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewI
   "RoleTrusteeAccessControlEntries": [
     {
       "Trustee": {
-        "Type": "[",
+        "Type": 1,
         "ObjectId": "string",
         "TenantId": "string"
       },
@@ -1483,7 +1483,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/
   "RoleTrusteeAccessControlEntries": [
     {
       "Trustee": {
-        "Type": "[",
+        "Type": 1,
         "ObjectId": "string",
         "TenantId": "string"
       },
@@ -1585,7 +1585,7 @@ PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId
   "RoleTrusteeAccessControlEntries": [
     {
       "Trustee": {
-        "Type": "[",
+        "Type": 1,
         "ObjectId": "string",
         "TenantId": "string"
       },
@@ -1777,7 +1777,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/
   "RoleTrusteeAccessControlEntries": [
     {
       "Trustee": {
-        "Type": "[",
+        "Type": 1,
         "ObjectId": "string",
         "TenantId": "string"
       },
@@ -2053,7 +2053,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/
   "RoleTrusteeAccessControlEntries": [
     {
       "Trustee": {
-        "Type": "[",
+        "Type": 1,
         "ObjectId": "string",
         "TenantId": "string"
       },

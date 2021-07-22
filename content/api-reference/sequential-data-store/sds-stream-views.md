@@ -207,16 +207,7 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamView
     {
       "SourceId": "string",
       "TargetId": "string",
-      "SdsStreamView": {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SourceTypeId": "string",
-        "TargetTypeId": "string",
-        "Properties": [
-          null
-        ]
-      }
+      "SdsStreamView": "<SdsStreamView>"
     }
   ]
 }
@@ -269,16 +260,7 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewI
     {
       "SourceId": "string",
       "TargetId": "string",
-      "SdsStreamView": {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SourceTypeId": "string",
-        "TargetTypeId": "string",
-        "Properties": [
-          null
-        ]
-      }
+      "SdsStreamView": "<SdsStreamView>"
     }
   ]
 }
@@ -442,16 +424,7 @@ A contract defining the stream view
     {
       "SourceId": "string",
       "TargetId": "string",
-      "SdsStreamView": {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SourceTypeId": "string",
-        "TargetTypeId": "string",
-        "Properties": [
-          null
-        ]
-      }
+      "SdsStreamView": "<SdsStreamView>"
     }
   ]
 }
@@ -487,13 +460,7 @@ A contract defining the stream view property
     "Description": "string",
     "SourceTypeId": "string",
     "TargetTypeId": "string",
-    "Properties": [
-      {
-        "SourceId": "string",
-        "TargetId": "string",
-        "SdsStreamView": null
-      }
-    ]
+    "Properties": "[<SdsStreamViewProperty>]"
   }
 }
 
@@ -562,13 +529,7 @@ A contract defining the stream view map
       "SourceId": "string",
       "TargetId": "string",
       "Mode": 0,
-      "StreamViewMap": {
-        "SourceTypeId": "string",
-        "TargetTypeId": "string",
-        "Properties": [
-          null
-        ]
-      }
+      "StreamViewMap": "<SdsStreamViewMap>"
     }
   ]
 }
@@ -603,14 +564,7 @@ A contract defining stream view map property
   "StreamViewMap": {
     "SourceTypeId": "string",
     "TargetTypeId": "string",
-    "Properties": [
-      {
-        "SourceId": "string",
-        "TargetId": "string",
-        "Mode": null,
-        "StreamViewMap": null
-      }
-    ]
+    "Properties": "[<SdsStreamViewMapProperty>]"
   }
 }
 

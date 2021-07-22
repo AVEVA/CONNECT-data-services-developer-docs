@@ -1,6 +1,7 @@
 ---
 uid: gpRoles
 ---
+
 # Add a role
 
 Roles are used to manage access to assets, resources, and services in OSIsoft Cloud Services (OCS). See the following topics for more information about roles:
@@ -13,7 +14,7 @@ Roles are used to manage access to assets, resources, and services in OSIsoft Cl
 
 Follow the procedure to create a role.
 
-1. Click the ![Menu icon](../images/menu-icon.png) icon and click **Roles** (under Security).
+1. Click the ![Menu icon](../images/menu-icon.png) icon and click **Roles** under Security.
 
 1. In the toolbar, click **Add Role**.
 

@@ -4,7 +4,7 @@ uid: tenant-namespaces
 ---
 
 # Namespaces
-A Namespace is a logical unit of organization for data within a tenant. It is a collection of types, streams, and stream views. Each tenant may contain more than one namespace. Before you can put any data into OCS for a given tenant, a namespace must be created within the scope of that tenant. Namespace identifiers are unique within an account. #https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/metadata-tags.yml#namespace-identifier-requirements. In practice, namespaces may correspond to a specific set of infrastructure assets, but more commonly correspond to virtual partitions within a single set of assets. You can create one or more namespaces within a tenant. Each namespace is effectively an instance of SDS, within which you create types and streams, stream views, data views, and metadata.
+A Namespace is a logical unit of organization for data within a tenant. It is a collection of types, streams, and stream views. Each tenant may contain more than one namespace. Before you can put any data into OCS for a given tenant, a namespace must be created within the scope of that tenant. Namespace identifiers are unique within an account. A namespace is a collection of SDS types, streams, and stream views. Namespace identifiers are unique within a tenant. Requirements for namespace identifiers must meet the following critieria: Must contain 100 characters or fewer Must only contain alphanumeric characters, underscores, dashes, spaces, and periods Must not contain two consecutive periods Must not start or end with a period Must not start with two consecutive underscores In practice, namespaces may correspond to a specific set of infrastructure assets, but more commonly correspond to virtual partitions within a single set of assets. You can create one or more namespaces within a tenant. Each namespace is effectively an instance of SDS, within which you create types and streams, stream views, data views, and metadata.
 
 ## `List All`
 
@@ -52,9 +52,13 @@ GET /api/v1/Tenants/{tenantId}/Namespaces
     "AccessControl": {
       "RoleTrusteeAccessControlEntries": [
         {
-          "Trustee": null,
-          "AccessType": null,
-          "AccessRights": null
+          "Trustee": {
+            "Type": 1,
+            "ObjectId": "string",
+            "TenantId": "string"
+          },
+          "AccessType": 0,
+          "AccessRights": 0
         }
       ]
     },
@@ -117,8 +121,12 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}
   "AccessControl": {
     "RoleTrusteeAccessControlEntries": [
       {
-        "Trustee": null,
-        "AccessType": "[",
+        "Trustee": {
+          "Type": 1,
+          "ObjectId": "string",
+          "TenantId": "string"
+        },
+        "AccessType": 0,
         "AccessRights": 0
       }
     ]
@@ -175,7 +183,15 @@ The new Namespace to be created.<br/>
   },
   "AccessControl": {
     "RoleTrusteeAccessControlEntries": [
-      {}
+      {
+        "Trustee": {
+          "Type": 1,
+          "ObjectId": "string",
+          "TenantId": "string"
+        },
+        "AccessType": 0,
+        "AccessRights": 0
+      }
     ]
   },
   "RegionId": "string",
@@ -212,8 +228,12 @@ The new Namespace to be created.<br/>
   "AccessControl": {
     "RoleTrusteeAccessControlEntries": [
       {
-        "Trustee": null,
-        "AccessType": "[",
+        "Trustee": {
+          "Type": 1,
+          "ObjectId": "string",
+          "TenantId": "string"
+        },
+        "AccessType": 0,
         "AccessRights": 0
       }
     ]
@@ -267,7 +287,15 @@ The new details to store for the Namespace.<br/>
   },
   "AccessControl": {
     "RoleTrusteeAccessControlEntries": [
-      {}
+      {
+        "Trustee": {
+          "Type": 1,
+          "ObjectId": "string",
+          "TenantId": "string"
+        },
+        "AccessType": 0,
+        "AccessRights": 0
+      }
     ]
   },
   "RegionId": "string",
@@ -302,8 +330,12 @@ The new details to store for the Namespace.<br/>
   "AccessControl": {
     "RoleTrusteeAccessControlEntries": [
       {
-        "Trustee": null,
-        "AccessType": "[",
+        "Trustee": {
+          "Type": 1,
+          "ObjectId": "string",
+          "TenantId": "string"
+        },
+        "AccessType": 0,
         "AccessRights": 0
       }
     ]
@@ -393,7 +425,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/accesscontrol
   "RoleTrusteeAccessControlEntries": [
     {
       "Trustee": {
-        "Type": "[",
+        "Type": 1,
         "ObjectId": "string",
         "TenantId": "string"
       },
@@ -438,7 +470,11 @@ The updated AccessControlList for the Namespace.<br/>
 {
   "RoleTrusteeAccessControlEntries": [
     {
-      "Trustee": {},
+      "Trustee": {
+        "Type": 1,
+        "ObjectId": "string",
+        "TenantId": "string"
+      },
       "AccessType": 0,
       "AccessRights": 0
     }
@@ -463,7 +499,7 @@ The updated AccessControlList for the Namespace.<br/>
   "RoleTrusteeAccessControlEntries": [
     {
       "Trustee": {
-        "Type": "[",
+        "Type": 1,
         "ObjectId": "string",
         "TenantId": "string"
       },
@@ -625,8 +661,12 @@ Representation of a server-side database interpretation of a namespace.
   "AccessControl": {
     "RoleTrusteeAccessControlEntries": [
       {
-        "Trustee": null,
-        "AccessType": "[",
+        "Trustee": {
+          "Type": 1,
+          "ObjectId": "string",
+          "TenantId": "string"
+        },
+        "AccessType": 0,
         "AccessRights": 0
       }
     ]
@@ -720,7 +760,7 @@ Status codes describing a namespace's current provisioning state.
   "RoleTrusteeAccessControlEntries": [
     {
       "Trustee": {
-        "Type": "[",
+        "Type": 1,
         "ObjectId": "string",
         "TenantId": "string"
       },

@@ -38,7 +38,7 @@ GET /api/v1/Tenants/{tenantId}/AccessControl/Namespaces
   "RoleTrusteeAccessControlEntries": [
     {
       "Trustee": {
-        "Type": "[",
+        "Type": 1,
         "ObjectId": "string",
         "TenantId": "string"
       },
@@ -75,7 +75,11 @@ The new root AccessControlList for Namespaces.<br/>
 {
   "RoleTrusteeAccessControlEntries": [
     {
-      "Trustee": {},
+      "Trustee": {
+        "Type": 1,
+        "ObjectId": "string",
+        "TenantId": "string"
+      },
       "AccessType": 0,
       "AccessRights": 0
     }
@@ -100,7 +104,7 @@ The new root AccessControlList for Namespaces.<br/>
   "RoleTrusteeAccessControlEntries": [
     {
       "Trustee": {
-        "Type": "[",
+        "Type": 1,
         "ObjectId": "string",
         "TenantId": "string"
       },
@@ -132,7 +136,7 @@ The new root AccessControlList for Namespaces.<br/>
   "RoleTrusteeAccessControlEntries": [
     {
       "Trustee": {
-        "Type": "[",
+        "Type": 1,
         "ObjectId": "string",
         "TenantId": "string"
       },

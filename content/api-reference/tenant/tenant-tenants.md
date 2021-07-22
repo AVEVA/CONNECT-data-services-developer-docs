@@ -137,7 +137,12 @@ The updated details of the Tenant.<br/>
   "Alias": "string",
   "Features": [
     {
-      "Feature": {},
+      "Feature": {
+        "Id": "string",
+        "Name": "string",
+        "Description": "string",
+        "DefaultState": 0
+      },
       "CurrentState": 0
     }
   ],

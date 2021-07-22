@@ -102,7 +102,7 @@ The type of data, the location of that data, and the way that a particular sourc
 
 The PI to OCS collection method transfers PI time series data from a local PI Server to OCS. The PI to OCS Agent is installed and configured directly on a designated device. The PI to OCS Agent creates types and streams in OCS based on the PI Tags mapped from PI Data Archive. 
 
-**Note**: OSIsoft recommends installing the PI to OCS Agent and PI Server on seperate devices to avoid the two systems competing for resources.
+**Note**: OSIsoft recommends installing the PI to OCS Agent and PI Server on separate devices to avoid the two systems competing for resources.
 <!--Angela Flores 6/29/21 Too much detail for an overview. -->
 
 #### Custom OMF applications

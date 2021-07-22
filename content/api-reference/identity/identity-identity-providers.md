@@ -45,13 +45,13 @@ GET /api/v1/IdentityProviders/{identityProviderId}
   "IsConfigured": true,
   "Capabilities": {
     "User": {
-      "SignIn": null,
-      "Invitation": null,
-      "Search": null
+      "SignIn": true,
+      "Invitation": true,
+      "Search": true
     },
     "Group": {
-      "Authorize": null,
-      "Search": null
+      "Authorize": true,
+      "Search": true
     }
   }
 }
@@ -140,13 +140,13 @@ GET /api/v1/IdentityProviders/schemes/{scheme}
   "IsConfigured": true,
   "Capabilities": {
     "User": {
-      "SignIn": null,
-      "Invitation": null,
-      "Search": null
+      "SignIn": true,
+      "Invitation": true,
+      "Search": true
     },
     "Group": {
-      "Authorize": null,
-      "Search": null
+      "Authorize": true,
+      "Search": true
     }
   }
 }
@@ -238,8 +238,15 @@ GET /api/v1/IdentityProviders
     "ClientId": "string",
     "IsConfigured": true,
     "Capabilities": {
-      "User": {},
-      "Group": {}
+      "User": {
+        "SignIn": true,
+        "Invitation": true,
+        "Search": true
+      },
+      "Group": {
+        "Authorize": true,
+        "Search": true
+      }
     }
   }
 ]
@@ -328,8 +335,15 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders
     "ClientId": "string",
     "IsConfigured": true,
     "Capabilities": {
-      "User": {},
-      "Group": {}
+      "User": {
+        "SignIn": true,
+        "Invitation": true,
+        "Search": true
+      },
+      "Group": {
+        "Authorize": true,
+        "Search": true
+      }
     }
   }
 ]
@@ -438,13 +452,13 @@ IdentityProviderAdd object<br/>
   "IsConfigured": true,
   "Capabilities": {
     "User": {
-      "SignIn": null,
-      "Invitation": null,
-      "Search": null
+      "SignIn": true,
+      "Invitation": true,
+      "Search": true
     },
     "Group": {
-      "Authorize": null,
-      "Search": null
+      "Authorize": true,
+      "Search": true
     }
   }
 }
@@ -499,13 +513,13 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}
   "IsConfigured": true,
   "Capabilities": {
     "User": {
-      "SignIn": null,
-      "Invitation": null,
-      "Search": null
+      "SignIn": true,
+      "Invitation": true,
+      "Search": true
     },
     "Group": {
-      "Authorize": null,
-      "Search": null
+      "Authorize": true,
+      "Search": true
     }
   }
 }
@@ -1117,13 +1131,13 @@ The IdentityProvider object
   "IsConfigured": true,
   "Capabilities": {
     "User": {
-      "SignIn": null,
-      "Invitation": null,
-      "Search": null
+      "SignIn": true,
+      "Invitation": true,
+      "Search": true
     },
     "Group": {
-      "Authorize": null,
-      "Search": null
+      "Authorize": true,
+      "Search": true
     }
   }
 }

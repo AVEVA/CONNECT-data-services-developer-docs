@@ -1310,7 +1310,7 @@ MultiStatusResponse objects returned in a 207 response
         "ExternalUserId": "string",
         "IdentityProviderId": "string",
         "RoleIds": [
-          null
+          "string"
         ]
       }
     }

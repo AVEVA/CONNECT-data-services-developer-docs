@@ -10,7 +10,7 @@ Use metadata rules to identify groups of similar streams for analytical purposes
 
 To create a new metadata rule, follow these steps:
 
-1. In the OCS portal, click the menu icon and select **Sequential Data Store** under **Data Management**. 
+1. In the OCS portal, click the menu icon, then click **Data Management > Sequential Data Store**. 
 2. On the `Sequential Data Store` page, click **Streams**.
 3. In the **Namespace** drop-down list, select the namespace in which you intend to create the metadata rule.
 4. Expand the `Streams` pane if necessary to copy the full name of the stream that will be the basis for your metadata rule.
@@ -30,7 +30,7 @@ To create a new metadata rule, follow these steps:
 12. After entering all metadata type entries, click **Next**.
 
     **Note**: If you select metadata type **Metadata**, you must also enter a metadata key. A metadata key is the key portion of a key-value pair, typically the type of data provided, such as Measurement. This is helpful when streams that match the rule provide different types of data. Entries in the **Map To** portion of mapping represent the value part of the key-value pair. For example, Power would be the defined key, while different types of data could be Demand, TOTAL/Electricity, or Metering. The mapping entries specify the labels you want to display for each of those values, as in the following image:
-    
+
     ![ ](../../images/define-mappings.png)
 
 13. In the `Define Mappings` page, choose one of the following options:

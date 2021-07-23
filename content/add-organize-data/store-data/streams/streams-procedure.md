@@ -45,7 +45,6 @@ Sequential Data Store (SDS) stream data are values or events of the same SDS typ
 
 1. When you are done, click **Save**.
 
-
 ## Related links
 
 - [Streams](xref:sds-streams) API

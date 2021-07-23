@@ -4,11 +4,11 @@ uid: gpOMFConnection
 
 # Configure an OMF connection
 
-To send OSIsoft Message Format (OMF) data to OCS, you must first configure an OMF connection. 
+To send OSIsoft Message Format (OMF) data to OCS, you must first configure an OMF connection.
 
 ## Procedure
 
-1. Click the ![Menu icon](images\menu-icon.png) icon and click **Clients** (below Security) to open the `Manage Clients` page.
+1. Click the ![Menu icon](images\menu-icon.png) icon, then click **Security > Clients** to open the `Manage Clients` page.
 
 2. Verify that there is at least one client credentials client to use in the OMF connection. If you need to create one, refer to the Clients section.
 
@@ -32,4 +32,3 @@ To send OSIsoft Message Format (OMF) data to OCS, you must first configure an OM
     
 
 An application can now use the selected client credentials client to write OMF data to the specified namespace.
-    

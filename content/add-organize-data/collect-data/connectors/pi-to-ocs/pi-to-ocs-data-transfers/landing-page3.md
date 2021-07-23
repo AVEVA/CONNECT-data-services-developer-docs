@@ -6,8 +6,6 @@ uid: landing-page3
 
 This section contains the following topics:
 
-<br>
-
 * [Overview of data transfers](xref:overview-data-transfers)
 * [Transfer PI System data to OCS](xref:transfer-data)
 * [Data transfer statuses](xref:data-transfer-statuses)

@@ -4,7 +4,7 @@ uid: sds-units-of-measure
 ---
 
 # Units Of Measure
-Controller handling requests routed to {namespaceId}/Units/. This controller should have read/get methods only, as update/write operations on units go through the QuantityController
+The API in this section interacts with units of measure. Read/Get operations only. Update/Write operations interact through the quantity API.
 
 ## `List Units of Measure`
 
@@ -21,7 +21,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Units
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Namespace identifier.<br/><br/><br/>`integer skip`
+<br/>Parameter representing the zero-based offset of the first SdsUomQuantity to retrieve. If not specified, a default value of 0 is used<br/><br/>`integer count`
+<br/>Parameter representing the maximum number of SdsUomQuantity to retrieve. If not specified, a default value of 100 is used<br/><br/>
 
 ### Response
 

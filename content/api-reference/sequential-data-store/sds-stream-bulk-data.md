@@ -4,7 +4,7 @@ uid: sds-stream-bulk-data
 ---
 
 # Stream Bulk Data
-Controller for methods hosted at {namespaceId}/Bulk/Streams/Data/Joins
+The API in this section interacts with data from multiple streams.
 
 ## `List Window Values (GET Method)`
 
@@ -26,7 +26,16 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Namespace identifier.<br/><br/><br/>`string streams`
+<br/>Comma separated list of stream identifiers.<br/><br/>`string joinMode`
+<br/>Type of join: inner, outer, interpolated, merge left, or merge right.<br/><br/>`string startIndex`
+<br/>Index identifying the beginning of the series of events to return.<br/><br/><br/>`string endIndex`
+<br/>Index identifying the end of the series of events to return.<br/><br/><br/>`integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>`string boundaryType`
+<br/>SdsBoundaryType specifying the handling of events at or near the start and end indexes.<br/><br/><br/>`string startBoundaryType`
+<br/>SdsBoundaryType specifying the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/><br/>`string endBoundaryType`
+<br/>SdsBoundaryType specifies the last value in the result in relation to the end index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/><br/>`string filter`
+<br/>Filter expression.<br/><br/><br/>
 
 ### Response
 
@@ -79,7 +88,16 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Namespace identifier.<br/><br/><br/>`string streams`
+<br/>Comma separated list of stream identifiers.<br/><br/>`string joinMode`
+<br/>Type of join: inner, outer, interpolated, merge left, or merge right.<br/><br/>`string startIndex`
+<br/>Index identifying the beginning of the series of events to return.<br/><br/><br/>`string endIndex`
+<br/>Index identifying the end of the series of events to return.<br/><br/><br/>`integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>`string boundaryType`
+<br/>SdsBoundaryType specifying the handling of events at or near the start and end indexes.<br/><br/><br/>`string startBoundaryType`
+<br/>SdsBoundaryType specifying the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/><br/>`string endBoundaryType`
+<br/>SdsBoundaryType specifies the last value in the result in relation to the end index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/><br/>`string filter`
+<br/>Filter expression.<br/><br/><br/>
 
 ### Response
 

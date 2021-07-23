@@ -4,7 +4,7 @@ uid: sds-streams
 ---
 
 # Streams
-Controller for methods hosted at streams/
+The API in this section interacts with streams.
 
 ## `List Streams`
 
@@ -21,7 +21,15 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Namespace identifier.<br/><br/><br/>`string query`
+<br/>Parameter representing a string search.<br/><br/>`integer skip`
+<br/>Parameter representing the zero-based offset of the first SdsType to retrieve. If not specified, a default value of 0 is used.<br/><br/>`integer count`
+<br/>Parameter representing the maximum number of SdsTypes to retrieve. If not specified, a default value of 100 is used.<br/><br/>`string orderby`
+<br/>Parameter representing sorted order which SdsTypes will be returned. A field name is required. The sorting is based on the stored 
+            values for the given field (of type string). For example, orderby=name would sort the returned results by the name values (ascending by default). 
+            Additionally, a value can be provided along with the field name to identify whether to sort ascending or descending, by using values asc or desc, 
+            respectively. For example, orderby=name desc would sort the returned results by the name values, descending. 
+            If no value is specified, there is no sorting of result.<br/><br/>
 
 ### Response
 
@@ -373,7 +381,8 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type
 `string tenantId`
 <br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/><br/>
+<br/>Stream identifier.<br/><br/><br/>`string streamViewId`
+<br/>Stream view identifier.<br/><br/><br/>
 
 ### Response
 

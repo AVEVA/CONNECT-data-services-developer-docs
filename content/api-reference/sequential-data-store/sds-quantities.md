@@ -15,14 +15,16 @@ Returns a list of all quantities available within a given namespace
 ### Request
 ```text 
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities
+?skip={skip}&count={count}
 ```
 
 #### Parameters
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`integer skip`
-<br/>Parameter representing the zero-based offset of the first SdsUomQuantity to retrieve. If not specified, a default value of 0 is used<br/><br/>`integer count`
+<br/>Namespace identifier.<br/><br/><br/>
+`[optional] integer skip`
+<br/>Parameter representing the zero-based offset of the first SdsUomQuantity to retrieve. If not specified, a default value of 0 is used<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of SdsUomQuantity to retrieve. If not specified, a default value of 100 is used<br/><br/>
 
 ### Response

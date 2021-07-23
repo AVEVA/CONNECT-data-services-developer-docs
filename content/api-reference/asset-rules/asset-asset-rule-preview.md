@@ -22,8 +22,8 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/assetrul
 `string token`
 <br/>A Guid which corresponds to a preview that has been created using the CancellationToken) method.<br/><br/>`integer skip`
 <br/>An Int32 to determine the number of preview results to skip.<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
 `[optional] integer count`
 <br/>An Int32 to determine the number of preview results to return.<br/><br/>
 
@@ -170,8 +170,8 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/assetru
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
 `[optional] boolean KeepOldMetadata`
 <br/><br/>`[optional] integer Skip`
 <br/><br/>`[optional] integer Count`
@@ -330,8 +330,8 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 
 `string token`
 <br/>A Guid which corresponds to a preview that has been created using the CancellationToken) method.<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
 
 ### Response
 
@@ -764,7 +764,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
         "Id": "string",
         "Name": "string",
         "Description": "string",
-        "SdsTypeCode": "[",
+        "SdsTypeCode": 0,
         "Value": null,
         "Uom": "string"
       }
@@ -778,9 +778,15 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
       }
     ],
     "Status": {
-      "StreamReferenceId": null,
-      "StreamPropertyId": null,
-      "ValueStatusMappings": null
+      "StreamReferenceId": "string",
+      "StreamPropertyId": "string",
+      "ValueStatusMappings": [
+        {
+          "Value": null,
+          "Status": 0,
+          "DisplayName": "string"
+        }
+      ]
     }
   }
 }
@@ -838,7 +844,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
     "ValueStatusMappings": [
       {
         "Value": null,
-        "Status": "[",
+        "Status": 0,
         "DisplayName": "string"
       }
     ]

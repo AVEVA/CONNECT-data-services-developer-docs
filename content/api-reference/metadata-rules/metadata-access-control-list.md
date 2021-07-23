@@ -20,8 +20,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/a
 
 `any routeOptions`
 <br/>The RuleRouteOptions uri route parameters.<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>`string ruleId`
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>`string ruleId`
 <br/><br/>
 
 ### Response
@@ -107,8 +107,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/a
 
 `any routeOptions`
 <br/>The RuleRouteOptions uri route parameters.<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>`string ruleId`
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>`string ruleId`
 <br/><br/>
 
 ### Response
@@ -200,8 +200,8 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/a
 
 `any routeOptions`
 <br/>The uri route parameters.<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>`string ruleId`
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>`string ruleId`
 <br/><br/>
 
 ### Request Body
@@ -212,7 +212,11 @@ The ACL object.<br/>
 {
   "RoleTrusteeAccessControlEntries": [
     {
-      "Trustee": {},
+      "Trustee": {
+        "Type": 1,
+        "ObjectId": "string",
+        "TenantId": "string"
+      },
       "AccessType": 0,
       "AccessRights": 0
     }
@@ -324,8 +328,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/metadataru
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
 
 ### Response
 
@@ -399,8 +403,8 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/metadataru
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
 
 ### Request Body
 
@@ -410,7 +414,11 @@ The ACL.<br/>
 {
   "RoleTrusteeAccessControlEntries": [
     {
-      "Trustee": {},
+      "Trustee": {
+        "Type": 1,
+        "ObjectId": "string",
+        "TenantId": "string"
+      },
       "AccessType": 0,
       "AccessRights": 0
     }
@@ -507,8 +515,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/o
 
 `any routeOptions`
 <br/>The uri route parameters.<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>`string ruleId`
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>`string ruleId`
 <br/><br/>
 
 ### Response
@@ -593,8 +601,8 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/o
 
 `any routeOptions`
 <br/>The RuleRouteOptions uri route parameters.<br/><br/>`string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>`string ruleId`
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>`string ruleId`
 <br/><br/>
 
 ### Request Body
@@ -766,7 +774,7 @@ The owner.<br/>
   "RoleTrusteeAccessControlEntries": [
     {
       "Trustee": {
-        "Type": "[",
+        "Type": 1,
         "ObjectId": "string",
         "TenantId": "string"
       },

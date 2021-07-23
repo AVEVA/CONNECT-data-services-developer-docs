@@ -19,8 +19,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/admin/metadatarules/stat
 #### Parameters
 
 `string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
 
 ### Response
 

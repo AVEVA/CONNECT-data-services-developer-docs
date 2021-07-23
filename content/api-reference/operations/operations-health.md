@@ -46,7 +46,7 @@ GET /api/v1/tenants/{tenantId}/health
       "Services": [
         {
           "Name": "string",
-          "HealthState": null
+          "HealthState": 0
         }
       ]
     }
@@ -84,7 +84,7 @@ This represents a view model of a TenantDbo
       "Services": [
         {
           "Name": "string",
-          "HealthState": null
+          "HealthState": 0
         }
       ]
     }

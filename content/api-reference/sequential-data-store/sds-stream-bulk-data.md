@@ -30,7 +30,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
 <br/>Namespace identifier.<br/><br/><br/>
 `[optional] string streams`
 <br/>Comma separated list of stream identifiers.<br/><br/>`[optional] string joinMode`
-<br/>Type of join: inner, outer, interpolated, merge left, or merge right.<br/><br/>`[optional] string startIndex`
+<br/>The , type of join: inner, outer, interpolated, merge left, or merge right.<br/><br/>`[optional] string startIndex`
 <br/>Index identifying the beginning of the series of events to return.<br/><br/><br/>`[optional] string endIndex`
 <br/>Index identifying the end of the series of events to return.<br/><br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>`[optional] string boundaryType`
@@ -94,7 +94,7 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
 <br/>Namespace identifier.<br/><br/><br/>
 `[optional] string streams`
 <br/>Comma separated list of stream identifiers.<br/><br/>`[optional] string joinMode`
-<br/>Type of join: inner, outer, interpolated, merge left, or merge right.<br/><br/>`[optional] string startIndex`
+<br/>The , type of join: inner, outer, interpolated, merge left, or merge right.<br/><br/>`[optional] string startIndex`
 <br/>Index identifying the beginning of the series of events to return.<br/><br/><br/>`[optional] string endIndex`
 <br/>Index identifying the end of the series of events to return.<br/><br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>`[optional] string boundaryType`

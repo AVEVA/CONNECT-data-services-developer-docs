@@ -29,37 +29,15 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
 <br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/><br/>
 `[optional] string streams`
-<br/>Comma separated list of stream identifiers.<br/><br/>`[optional] integer joinMode`
+<br/>Comma separated list of stream identifiers.<br/><br/>`[optional] string joinMode`
 <br/>The , type of join: inner, outer, interpolated, merge left, or merge right.<br/><br/>`[optional] string startIndex`
 <br/>Index identifying the beginning of the series of events to return.<br/><br/><br/>`[optional] string endIndex`
 <br/>Index identifying the end of the series of events to return.<br/><br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>`[optional] integer boundaryType`
-<br/>SdsBoundaryType specifying the handling of events at or near the start and end indexes.<br/><br/><br/>`[optional] integer startBoundaryType`
-<br/>SdsBoundaryType specifying the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/><br/>`[optional] integer endBoundaryType`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>`[optional] string boundaryType`
+<br/>SdsBoundaryType specifying the handling of events at or near the start and end indexes.<br/><br/><br/>`[optional] string startBoundaryType`
+<br/>SdsBoundaryType specifying the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/><br/>`[optional] string endBoundaryType`
 <br/>SdsBoundaryType specifies the last value in the result in relation to the end index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/><br/>`[optional] string filter`
 <br/>Filter expression.<br/><br/><br/>
-
-#### Enumerated Values
-
-|Parameter|Value|
-|---|---|
-|joinMode|0|
-|joinMode|1|
-|joinMode|2|
-|joinMode|3|
-|joinMode|4|
-|boundaryType|0|
-|boundaryType|1|
-|boundaryType|2|
-|boundaryType|3|
-|startBoundaryType|0|
-|startBoundaryType|1|
-|startBoundaryType|2|
-|startBoundaryType|3|
-|endBoundaryType|0|
-|endBoundaryType|1|
-|endBoundaryType|2|
-|endBoundaryType|3|
 
 ### Response
 
@@ -115,37 +93,15 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
 <br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/><br/>
 `[optional] string streams`
-<br/>Comma separated list of stream identifiers.<br/><br/>`[optional] integer joinMode`
+<br/>Comma separated list of stream identifiers.<br/><br/>`[optional] string joinMode`
 <br/>The , type of join: inner, outer, interpolated, merge left, or merge right.<br/><br/>`[optional] string startIndex`
 <br/>Index identifying the beginning of the series of events to return.<br/><br/><br/>`[optional] string endIndex`
 <br/>Index identifying the end of the series of events to return.<br/><br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>`[optional] integer boundaryType`
-<br/>SdsBoundaryType specifying the handling of events at or near the start and end indexes.<br/><br/><br/>`[optional] integer startBoundaryType`
-<br/>SdsBoundaryType specifying the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/><br/>`[optional] integer endBoundaryType`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>`[optional] string boundaryType`
+<br/>SdsBoundaryType specifying the handling of events at or near the start and end indexes.<br/><br/><br/>`[optional] string startBoundaryType`
+<br/>SdsBoundaryType specifying the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/><br/>`[optional] string endBoundaryType`
 <br/>SdsBoundaryType specifies the last value in the result in relation to the end index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/><br/>`[optional] string filter`
 <br/>Filter expression.<br/><br/><br/>
-
-#### Enumerated Values
-
-|Parameter|Value|
-|---|---|
-|joinMode|0|
-|joinMode|1|
-|joinMode|2|
-|joinMode|3|
-|joinMode|4|
-|boundaryType|0|
-|boundaryType|1|
-|boundaryType|2|
-|boundaryType|3|
-|startBoundaryType|0|
-|startBoundaryType|1|
-|startBoundaryType|2|
-|startBoundaryType|3|
-|endBoundaryType|0|
-|endBoundaryType|1|
-|endBoundaryType|2|
-|endBoundaryType|3|
 
 ### Response
 
@@ -211,45 +167,6 @@ Contains the error message format that follows the OCS error standards
 }
 
 ```
-
----
-
-### SdsJoinMode
-
-<a id="schemasdsjoinmode"></a>
-<a id="schema_SdsJoinMode"></a>
-<a id="tocSsdsjoinmode"></a>
-<a id="tocssdsjoinmode"></a>
-
-Join modes that specify how streams are joined
-
-#### Enumerated Values
-
-|Property|Value|
-|---|---|
-|Inner|0|
-|Outer|1|
-|Interpolated|2|
-|MergeLeft|3|
-|MergeRight|4|
-
----
-
-### SdsBoundaryType
-
-<a id="schemasdsboundarytype"></a>
-<a id="schema_SdsBoundaryType"></a>
-<a id="tocSsdsboundarytype"></a>
-<a id="tocssdsboundarytype"></a>
-
-#### Enumerated Values
-
-|Property|Value|
-|---|---|
-|Exact|0|
-|Inside|1|
-|Outside|2|
-|ExactOrCalculated|3|
 
 ---
 

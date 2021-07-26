@@ -10,7 +10,30 @@ APIs to manage default access to entities governed by an [AccessControlList](xre
 
 ## `Get Root Namespace AccessControlList`
 
-Retrieves the [AccessControlList](xref:accessControl) that is used to authorize access to a `Namespace` if none is specified during creation.
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[AccessControlList](#schemaaccesscontrollist)|The root `AccessControlList` for `Namespace`.|
+|400|None|Missing or invalid inputs.<br/>|
+|403|None|Forbidden.<br/>|
+
+#### Example response body
+> 200 Response ([AccessControlList](#schemaaccesscontrollist))
+
+```json
+{
+  "RoleTrusteeAccessControlEntries": [
+    {
+      "Trustee": {
+        "Type": 1,
+        "ObjectId": "string",
+        "TenantId": "string"
+      },
+      "AccessType": 0,
+      "AccessRights": 0
+    }
+  ]
+}
+```
 
 ### HTTP
 
@@ -30,16 +53,80 @@ The identifier of the tenant to access.
 
 ### Authorization
 
-A root [AccessControlList](xref:accessControl) can only be retrieved if the current principal has Read access.
+```json
+{
+  "RoleTrusteeAccessControlEntries": [
+    {
+      "Trustee": {
+        "Type": 1,
+        "ObjectId": "string",
+        "TenantId": "string"
+      },
+      "AccessType": 0,
+      "AccessRights": 0
+    }
+  ]
+}
+```
 
 ### Response
 
-| Status Code | Return Type | Description |
-| --- | --- | ---  |
-| 200 | AccessControlList | Returns the root [AccessControlList](xref:accessControl) for `Namespaces`. |
-| 400 | Nothing is returned | Could not retrieve the root [AccessControlList](xref:accessControl) for `Namespaces` due to missing or invalid input. |
-| 403 | Nothing is returned | Unauthorized to retrieve the root [AccessControlList](xref:accessControl) for `Namespaces`. |
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[AccessControlList](#schemaaccesscontrollist)|The new `AccessControlList` for `Namespace`.|
+|400|None|Missing or invalid inputs.<br/>|
+|403|None|Forbidden.<br/>|
+|405|None|Method not allowed at this base URL. Try the request again at the Global base URL.|
 
+#### Example response body
+> 200 Response ([AccessControlList](#schemaaccesscontrollist))
+
+```json
+{
+  "RoleTrusteeAccessControlEntries": [
+    {
+      "Trustee": {
+        "Type": 1,
+        "ObjectId": "string",
+        "TenantId": "string"
+      },
+      "AccessType": 0,
+      "AccessRights": 0
+    }
+  ]
+}
+```
+
+---
+## Definitions
+
+### AccessControlList
+
+<a id="schemaaccesscontrollist"></a>
+<a id="schema_AccessControlList"></a>
+<a id="tocSaccesscontrollist"></a>
+<a id="tocsaccesscontrollist"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|RoleTrusteeAccessControlEntries|[[AccessControlEntry](#schemaaccesscontrolentry)]|false|true|None|
+
+```json
+{
+  "RoleTrusteeAccessControlEntries": [
+    {
+      "Trustee": {
+        "Type": 1,
+        "ObjectId": "string",
+        "TenantId": "string"
+      },
+      "AccessType": 0,
+      "AccessRights": 0
+    }
+  ]
+}
 
 ***
 

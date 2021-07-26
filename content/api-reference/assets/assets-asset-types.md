@@ -4,7 +4,7 @@ uid: assets-asset-types
 ---
 
 # Asset Types
-In many instances, you will have multiple assets of the same type.. In this situation, an asset type can be used to create multiple similar assets. A change to the asset type is reflected in all assets that are derived from the asset type.
+In many instances, you will have multiple assets of the same type. In this situation, an asset type can be used to create multiple similar assets. A change to the asset type is reflected in all assets that are derived from the asset type.
 
 ## `List Asset Types`
 
@@ -760,7 +760,7 @@ List of asset types you want to create.<br/>
 
 <a id="opIdAssetTypes_Get Asset Type Owner"></a>
 
-Returns owner of specified asset type.
+Returns the owner of specified asset type.
 
 ### Request
 ```text 
@@ -813,7 +813,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 
 <a id="opIdAssetTypes_Update Asset Type Owner"></a>
 
-Updates owner of specified asset type.
+Updates the owner of specified asset type.
 
 ### Request
 ```text 
@@ -868,7 +868,7 @@ Updated owner<br/>
 
 <a id="opIdAssetTypes_Get Asset Type Acl"></a>
 
-Returns access control of the specified asset type.
+Returns the access control of the specified asset type.
 
 ### Request
 ```text 
@@ -933,7 +933,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 
 <a id="opIdAssetTypes_Update Asset Type Access Control"></a>
 
-Updates access control of the specified asset type.
+Updates the access control of the specified asset type.
 
 ### Request
 ```text 
@@ -1000,7 +1000,7 @@ Updated ACL<br/>
 
 <a id="opIdAssetTypes_List Asset Type Access Rights"></a>
 
-Returns access rights of specified asset type.
+Returns the access rights of specified asset type.
 
 ### Request
 ```text 
@@ -1064,8 +1064,8 @@ An asset type can be used to create multiple similar assets.A change to the asse
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|Asset type id|
-|Name|string|false|true|Asset type name|
+|Id|string|false|true|Asset type identifier. If you do not provide an Id, OCS copies the name as the identifier. If you do not provide a name, OCS assigns a random GUID for the Id.|
+|Name|string|false|true|User-friendly name for asset type|
 |Description|string|false|true|Asset type description|
 |Metadata|[[MetadataItem](#schemametadataitem)]|false|true|Asset type metadata|
 |TypeReferences|[[TypeReference](#schematypereference)]|false|true|Asset type description|
@@ -1351,9 +1351,9 @@ An asset type type reference represents dynamic stream data associated with an a
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |StreamReferenceId|string|false|true|The Id for this type reference. If an asset is derived from this asset type, this Id must be referenced in the asset reference type object. This Id must be unique within the asset type.|
-|StreamReferenceName|string|false|true|The user friendly name for this type reference.|
-|Description|string|false|true|Description text|
-|TypeId|string|true|false|This string must be an SDS Type Id.|
+|StreamReferenceName|string|false|true|User-friendly name for type reference|
+|Description|string|false|true|Type reference description|
+|TypeId|string|true|false|Referenced SDS Type identifier.|
 
 ```json
 {
@@ -1379,7 +1379,7 @@ Status configuration is a property of an asset or asset type that defines the si
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|DefinitionType|[StatusDefinitionType](#schemastatusdefinitiontype)|false|false|Status definition type. At this moment, only "StreamPropertyMapping" is supported.|
+|DefinitionType|[StatusDefinitionType](#schemastatusdefinitiontype)|false|false|Status definition type. Only "StreamPropertyMapping" is supported.|
 |Definition|any|false|true|Status definition|
 
 ```json
@@ -1607,7 +1607,7 @@ Status configuration is a property of an asset or asset type that defines the si
   "RoleTrusteeAccessControlEntries": [
     {
       "Trustee": {
-        "Type": "[",
+        "Type": 1,
         "ObjectId": "string",
         "TenantId": "string"
       },

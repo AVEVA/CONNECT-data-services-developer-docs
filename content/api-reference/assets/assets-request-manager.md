@@ -83,7 +83,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
       {
         "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
         "Name": "Data",
-        "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+        "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
         "StreamId": "PI_bifrostbigdaddy_1"
       }
     ]
@@ -104,7 +104,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
       {
         "Id": "fdda0985-7dba-48aa-95fc-55620a9b59ad",
         "Name": "Data",
-        "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_2.",
+        "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_2.",
         "StreamId": "PI_bifrostbigdaddy_2"
       }
     ]
@@ -165,7 +165,7 @@ Asset you want to create<br/>
     {
       "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
       "Name": "Data",
-      "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+      "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
       "StreamId": "PI_bifrostbigdaddy_1"
     }
   ]
@@ -211,7 +211,7 @@ Asset you want to create<br/>
     {
       "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
       "Name": "Data",
-      "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+      "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
       "StreamId": "PI_bifrostbigdaddy_1"
     }
   ]
@@ -237,7 +237,7 @@ Asset you want to create<br/>
     {
       "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
       "Name": "Data",
-      "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+      "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
       "StreamId": "PI_bifrostbigdaddy_1"
     }
   ]
@@ -298,7 +298,7 @@ List of assets you want to create.<br/>
       {
         "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
         "Name": "Data",
-        "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+        "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
         "StreamId": "PI_bifrostbigdaddy_1"
       }
     ]
@@ -335,7 +335,7 @@ List of assets you want to create.<br/>
       {
         "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
         "Name": "Data",
-        "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+        "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
         "StreamId": "PI_bifrostbigdaddy_1"
       }
     ]
@@ -356,7 +356,7 @@ List of assets you want to create.<br/>
       {
         "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
         "Name": "Data",
-        "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+        "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
         "StreamId": "PI_bifrostbigdaddy_1"
       }
     ]
@@ -388,7 +388,7 @@ List of assets you want to create.<br/>
         {
           "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
           "Name": "Data",
-          "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+          "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
           "StreamId": "PI_bifrostbigdaddy_1"
         }
       ]
@@ -587,7 +587,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets
 
 <a id="opIdRequestManager_List Faceted List Results"></a>
 
-Searchs for assets using facets. Asset facets are not case sensitive. Only asset metadata can be used in asset faceted searches.
+Searches for assets using facets. Asset facets are not case-sensitive. Only asset metadata can be used in faceted searches.
 
 ### Request
 ```text 
@@ -966,9 +966,9 @@ Represents an asset object.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|Asset identifier. If you do not provide an Id, OCS copies the name as the identifierId. If you do not provide a name, OCS assigns a random GUID for the Id.|
+|Id|string|false|true|Asset identifier. If you do not provide an Id, OCS copies the name as the identifier. If you do not provide a name, OCS assigns a random GUID for the Id.|
 |AssetTypeId|string|false|true|Asset type identifier. Id for the asset type that this asset is derived from. To get the merged view of the asset, get the resolved asset through the /Assets/{assetId}/Resolved route.|
-|Name|string|false|true|User-friendly asset name. Required if Id is not provided. If Name is used as the Id, it must be unique within a given namespace.|
+|Name|string|false|true|User-friendly name for asset. Required if identifier is not provided. If name is used as the identifier, it must be unique within a given namespace.|
 |Description|string|false|true|Asset description|
 |Metadata|[[MetadataItem](#schemametadataitem)]|false|true|Asset metadata|
 |StreamReferences|[[StreamReference](#schemastreamreference)]|false|true|Asset stream reference|
@@ -991,7 +991,7 @@ Represents an asset object.
     {
       "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
       "Name": "Data",
-      "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+      "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
       "StreamId": "PI_bifrostbigdaddy_1"
     }
   ]
@@ -1254,16 +1254,16 @@ An asset stream reference represents dynamic stream data associated with an asse
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|Stream Reference Id|
-|Name|string|false|true|Stream Reference Name|
-|Description|string|false|true|Description of this stream reference|
-|StreamId|string|true|false|Sds stream id that's being referenced.|
+|Id|string|false|true|Stream Reference identifier|
+|Name|string|false|true|User-friendly name for stream reference|
+|Description|string|false|true|Stream reference description|
+|StreamId|string|true|false|SDS stream identifier that's being referenced.|
 
 ```json
 {
   "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
   "Name": "Data",
-  "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+  "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
   "StreamId": "PI_bifrostbigdaddy_1"
 }
 
@@ -1284,7 +1284,7 @@ Status configuration is a property of an asset or asset type that defines the si
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|DefinitionType|[StatusDefinitionType](#schemastatusdefinitiontype)|false|false|Status definition type. At this moment, only "StreamPropertyMapping" is supported.|
+|DefinitionType|[StatusDefinitionType](#schemastatusdefinitiontype)|false|false|Status definition type. Only "StreamPropertyMapping" is supported.|
 |Definition|any|false|true|Status definition|
 
 ```json
@@ -1397,7 +1397,7 @@ Status configuration is a property of an asset or asset type that defines the si
         {
           "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
           "Name": "Data",
-          "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+          "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
           "StreamId": "PI_bifrostbigdaddy_1"
         }
       ]
@@ -1560,7 +1560,7 @@ Search results
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |MatchedFields|[[MatchedField](#schemamatchedfield)]|false|true|A list of matched property objects. Each MatchProperties object contains the matched fields and their values.|
-|Score|double|false|false|Score, internally used.|
+|Score|double|false|false|Calculated score of the match. For internal use.|
 |Id|string|false|true|Identifier of the matched asset.|
 |TypeId|string|false|true|Asset type identifier of the matched asset.|
 |Name|string|false|true|Name of the matched asset.|
@@ -1634,7 +1634,7 @@ Search results
 <a id="tocSmatchedfield"></a>
 <a id="tocsmatchedfield"></a>
 
-Matched fields. Contains the property that matched along with the matched terms.
+Matched fields. Includes the matched property and matched terms.
 
 #### Properties
 
@@ -1662,7 +1662,7 @@ Matched fields. Contains the property that matched along with the matched terms.
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Index|any|false|true|Index|
-|Status|[StatusEnum](#schemastatusenum)|false|false|Status enumeration. Valid values are : Unknown, Good, Warning and Bad.|
+|Status|[StatusEnum](#schemastatusenum)|false|false|Status enumeration. Valid values are: Unknown, Good, Warning and Bad.|
 |Value|any|false|true|Value of the last data retrieved|
 |DisplayName|string|false|true|Status display name|
 
@@ -1758,18 +1758,18 @@ Pre-defined asset status values.
 <a id="tocSlaststatusdata"></a>
 <a id="tocslaststatusdata"></a>
 
-Asset last status
+Asset's last status
 
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Index|any|false|true|Index|
-|Status|[StatusEnum](#schemastatusenum)|false|false|Status enumeration. Valid values are : Unknown, Good, Warning and Bad.|
+|Status|[StatusEnum](#schemastatusenum)|false|false|Status enumeration. Valid values are: Unknown, Good, Warning and Bad.|
 |Value|any|false|true|Value of the last data retrieved|
 |DisplayName|string|false|true|Status display name|
 |AssetId|string|false|true|Asset identifier|
-|DataRetrievalTime|date-time|false|false|Date time of the last time the status was updated.|
+|DataRetrievalTime|date-time|false|false|Date and time when the status was last updated.|
 
 ```json
 {
@@ -1798,7 +1798,7 @@ Asset last status
 |Reason|string|false|true|None|
 |Error|string|false|true|None|
 |OperationId|string|false|true|None|
-|Data|[[LastStatusData](#schemalaststatusdata)]|false|true|[Asset last status]|
+|Data|[[LastStatusData](#schemalaststatusdata)]|false|true|[Asset's last status]|
 |ChildErrors|[[ChildErrorTemplate](#schemachilderrortemplate)]|false|true|None|
 
 ```json
@@ -1881,7 +1881,7 @@ Asset last status
 <a id="tocSresolvedasset"></a>
 <a id="tocsresolvedasset"></a>
 
-The resolved asset describes the consumption-oriented aspects of an OCS resource rather than describing how the resource is configured. The resolved asset corresponds to its metadata and referenced stream which define how the data is interpreted(that is, SdsTypeCode, InterpolationMode, and UOM).
+The resolved asset describes the consumption-oriented aspects of an OCS resource rather than describing how the resource is configured. The resolved asset corresponds to its metadata and referenced stream which define how the data is interpreted (that is, SdsTypeCode, InterpolationMode, and UOM).
 
 #### Properties
 
@@ -1891,8 +1891,8 @@ The resolved asset describes the consumption-oriented aspects of an OCS resource
 |Name|string|false|true|Asset name|
 |Resolved|boolean|false|false|True if no shape is applied|
 |Description|string|false|true|Asset description|
-|AssetTypeId|string|false|true|Asset asset type id if applicable|
-|AssetTypeName|string|false|true|Asset asset type name if applicable|
+|AssetTypeId|string|false|true|Asset type Id of asset, if applicable|
+|AssetTypeName|string|false|true|Asset type name of asset's asset type, if applicable|
 |ShapeId|string|false|true|Shape identifier for future enhancement|
 |ShapeName|string|false|true|Shape name for future enhancement|
 |Metadata|[[ResolvedMetadataItem](#schemaresolvedmetadataitem)]|false|true|Resolved asset metadata|
@@ -2019,9 +2019,9 @@ Resolved stream is a property of the resolved asset.
 |---|---|---|---|---|
 |Name|string|false|true|Resolved stream name|
 |Type|[SdsType](#schemasdstype)|false|true|SdsType of the referenced stream|
-|StreamReferenceName|string|false|true|Stream reference name from the asset|
-|StreamId|string|false|true|Sds stream id of the referenced stream|
-|PropertyMaps|[[PropertyMap](#schemapropertymap)]|false|true|Sds stream property maps|
+|StreamReferenceName|string|false|true|Stream reference name used in the asset|
+|StreamId|string|false|true|SDS stream Id of the referenced stream|
+|PropertyMaps|[[PropertyMap](#schemapropertymap)]|false|true|SDS stream property maps|
 
 ```json
 {
@@ -2033,28 +2033,7 @@ Resolved stream is a property of the resolved asset.
     "SdsTypeCode": 0,
     "IsGenericType": true,
     "IsReferenceType": true,
-    "GenericArguments": [
-      {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SdsTypeCode": "[",
-        "IsGenericType": true,
-        "IsReferenceType": true,
-        "GenericArguments": [
-          null
-        ],
-        "Properties": [
-          null
-        ],
-        "BaseType": null,
-        "DerivedTypes": [
-          null
-        ],
-        "InterpolationMode": "[",
-        "ExtrapolationMode": "["
-      }
-    ],
+    "GenericArguments": "[<SdsType>]",
     "Properties": [
       {
         "Id": "string",
@@ -2063,48 +2042,14 @@ Resolved stream is a property of the resolved asset.
         "Order": 0,
         "IsKey": true,
         "FixedSize": 0,
-        "SdsType": null,
+        "SdsType": "<SdsType>",
         "Value": null,
         "Uom": "string",
-        "InterpolationMode": null
+        "InterpolationMode": 0
       }
     ],
-    "BaseType": {
-      "Id": null,
-      "Name": null,
-      "Description": null,
-      "SdsTypeCode": null,
-      "IsGenericType": null,
-      "IsReferenceType": null,
-      "GenericArguments": null,
-      "Properties": null,
-      "BaseType": null,
-      "DerivedTypes": null,
-      "InterpolationMode": null,
-      "ExtrapolationMode": null
-    },
-    "DerivedTypes": [
-      {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SdsTypeCode": "[",
-        "IsGenericType": true,
-        "IsReferenceType": true,
-        "GenericArguments": [
-          null
-        ],
-        "Properties": [
-          null
-        ],
-        "BaseType": null,
-        "DerivedTypes": [
-          null
-        ],
-        "InterpolationMode": "[",
-        "ExtrapolationMode": "["
-      }
-    ],
+    "BaseType": "<SdsType>",
+    "DerivedTypes": "[<SdsType>]",
     "InterpolationMode": 0,
     "ExtrapolationMode": 0
   },
@@ -2154,96 +2099,7 @@ Resolved stream is a property of the resolved asset.
   "SdsTypeCode": 0,
   "IsGenericType": true,
   "IsReferenceType": true,
-  "GenericArguments": [
-    {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "SdsTypeCode": 0,
-      "IsGenericType": true,
-      "IsReferenceType": true,
-      "GenericArguments": [
-        {
-          "Id": "string",
-          "Name": "string",
-          "Description": "string",
-          "SdsTypeCode": 0,
-          "IsGenericType": true,
-          "IsReferenceType": true,
-          "GenericArguments": [
-            {}
-          ],
-          "Properties": [
-            {}
-          ],
-          "BaseType": null,
-          "DerivedTypes": [
-            {}
-          ],
-          "InterpolationMode": 0,
-          "ExtrapolationMode": 0
-        }
-      ],
-      "Properties": [
-        {
-          "Id": "string",
-          "Name": "string",
-          "Description": "string",
-          "Order": 0,
-          "IsKey": true,
-          "FixedSize": 0,
-          "SdsType": null,
-          "Value": null,
-          "Uom": "string",
-          "InterpolationMode": null
-        }
-      ],
-      "BaseType": {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SdsTypeCode": "[",
-        "IsGenericType": true,
-        "IsReferenceType": true,
-        "GenericArguments": [
-          null
-        ],
-        "Properties": [
-          null
-        ],
-        "BaseType": null,
-        "DerivedTypes": [
-          null
-        ],
-        "InterpolationMode": "[",
-        "ExtrapolationMode": "["
-      },
-      "DerivedTypes": [
-        {
-          "Id": "string",
-          "Name": "string",
-          "Description": "string",
-          "SdsTypeCode": 0,
-          "IsGenericType": true,
-          "IsReferenceType": true,
-          "GenericArguments": [
-            {}
-          ],
-          "Properties": [
-            {}
-          ],
-          "BaseType": null,
-          "DerivedTypes": [
-            {}
-          ],
-          "InterpolationMode": 0,
-          "ExtrapolationMode": 0
-        }
-      ],
-      "InterpolationMode": 0,
-      "ExtrapolationMode": 0
-    }
-  ],
+  "GenericArguments": "[<SdsType>]",
   "Properties": [
     {
       "Id": "string",
@@ -2252,203 +2108,14 @@ Resolved stream is a property of the resolved asset.
       "Order": 0,
       "IsKey": true,
       "FixedSize": 0,
-      "SdsType": {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SdsTypeCode": "[",
-        "IsGenericType": true,
-        "IsReferenceType": true,
-        "GenericArguments": [
-          null
-        ],
-        "Properties": [
-          null
-        ],
-        "BaseType": null,
-        "DerivedTypes": [
-          null
-        ],
-        "InterpolationMode": "[",
-        "ExtrapolationMode": "["
-      },
+      "SdsType": "<SdsType>",
       "Value": null,
       "Uom": "string",
       "InterpolationMode": 0
     }
   ],
-  "BaseType": {
-    "Id": "string",
-    "Name": "string",
-    "Description": "string",
-    "SdsTypeCode": 0,
-    "IsGenericType": true,
-    "IsReferenceType": true,
-    "GenericArguments": [
-      {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SdsTypeCode": "[",
-        "IsGenericType": true,
-        "IsReferenceType": true,
-        "GenericArguments": [
-          null
-        ],
-        "Properties": [
-          null
-        ],
-        "BaseType": null,
-        "DerivedTypes": [
-          null
-        ],
-        "InterpolationMode": "[",
-        "ExtrapolationMode": "["
-      }
-    ],
-    "Properties": [
-      {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "Order": 0,
-        "IsKey": true,
-        "FixedSize": 0,
-        "SdsType": null,
-        "Value": null,
-        "Uom": "string",
-        "InterpolationMode": null
-      }
-    ],
-    "BaseType": {
-      "Id": null,
-      "Name": null,
-      "Description": null,
-      "SdsTypeCode": null,
-      "IsGenericType": null,
-      "IsReferenceType": null,
-      "GenericArguments": null,
-      "Properties": null,
-      "BaseType": null,
-      "DerivedTypes": null,
-      "InterpolationMode": null,
-      "ExtrapolationMode": null
-    },
-    "DerivedTypes": [
-      {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SdsTypeCode": "[",
-        "IsGenericType": true,
-        "IsReferenceType": true,
-        "GenericArguments": [
-          null
-        ],
-        "Properties": [
-          null
-        ],
-        "BaseType": null,
-        "DerivedTypes": [
-          null
-        ],
-        "InterpolationMode": "[",
-        "ExtrapolationMode": "["
-      }
-    ],
-    "InterpolationMode": 0,
-    "ExtrapolationMode": 0
-  },
-  "DerivedTypes": [
-    {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "SdsTypeCode": 0,
-      "IsGenericType": true,
-      "IsReferenceType": true,
-      "GenericArguments": [
-        {
-          "Id": "string",
-          "Name": "string",
-          "Description": "string",
-          "SdsTypeCode": 0,
-          "IsGenericType": true,
-          "IsReferenceType": true,
-          "GenericArguments": [
-            {}
-          ],
-          "Properties": [
-            {}
-          ],
-          "BaseType": null,
-          "DerivedTypes": [
-            {}
-          ],
-          "InterpolationMode": 0,
-          "ExtrapolationMode": 0
-        }
-      ],
-      "Properties": [
-        {
-          "Id": "string",
-          "Name": "string",
-          "Description": "string",
-          "Order": 0,
-          "IsKey": true,
-          "FixedSize": 0,
-          "SdsType": null,
-          "Value": null,
-          "Uom": "string",
-          "InterpolationMode": null
-        }
-      ],
-      "BaseType": {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SdsTypeCode": "[",
-        "IsGenericType": true,
-        "IsReferenceType": true,
-        "GenericArguments": [
-          null
-        ],
-        "Properties": [
-          null
-        ],
-        "BaseType": null,
-        "DerivedTypes": [
-          null
-        ],
-        "InterpolationMode": "[",
-        "ExtrapolationMode": "["
-      },
-      "DerivedTypes": [
-        {
-          "Id": "string",
-          "Name": "string",
-          "Description": "string",
-          "SdsTypeCode": 0,
-          "IsGenericType": true,
-          "IsReferenceType": true,
-          "GenericArguments": [
-            {}
-          ],
-          "Properties": [
-            {}
-          ],
-          "BaseType": null,
-          "DerivedTypes": [
-            {}
-          ],
-          "InterpolationMode": 0,
-          "ExtrapolationMode": 0
-        }
-      ],
-      "InterpolationMode": 0,
-      "ExtrapolationMode": 0
-    }
-  ],
+  "BaseType": "<SdsType>",
+  "DerivedTypes": "[<SdsType>]",
   "InterpolationMode": 0,
   "ExtrapolationMode": 0
 }
@@ -2494,78 +2161,10 @@ Resolved stream is a property of the resolved asset.
     "SdsTypeCode": 0,
     "IsGenericType": true,
     "IsReferenceType": true,
-    "GenericArguments": [
-      {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SdsTypeCode": "[",
-        "IsGenericType": true,
-        "IsReferenceType": true,
-        "GenericArguments": [
-          null
-        ],
-        "Properties": [
-          null
-        ],
-        "BaseType": null,
-        "DerivedTypes": [
-          null
-        ],
-        "InterpolationMode": "[",
-        "ExtrapolationMode": "["
-      }
-    ],
-    "Properties": [
-      {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "Order": 0,
-        "IsKey": true,
-        "FixedSize": 0,
-        "SdsType": null,
-        "Value": null,
-        "Uom": "string",
-        "InterpolationMode": null
-      }
-    ],
-    "BaseType": {
-      "Id": null,
-      "Name": null,
-      "Description": null,
-      "SdsTypeCode": null,
-      "IsGenericType": null,
-      "IsReferenceType": null,
-      "GenericArguments": null,
-      "Properties": null,
-      "BaseType": null,
-      "DerivedTypes": null,
-      "InterpolationMode": null,
-      "ExtrapolationMode": null
-    },
-    "DerivedTypes": [
-      {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SdsTypeCode": "[",
-        "IsGenericType": true,
-        "IsReferenceType": true,
-        "GenericArguments": [
-          null
-        ],
-        "Properties": [
-          null
-        ],
-        "BaseType": null,
-        "DerivedTypes": [
-          null
-        ],
-        "InterpolationMode": "[",
-        "ExtrapolationMode": "["
-      }
-    ],
+    "GenericArguments": "[<SdsType>]",
+    "Properties": "[<SdsTypeProperty>]",
+    "BaseType": "<SdsType>",
+    "DerivedTypes": "[<SdsType>]",
     "InterpolationMode": 0,
     "ExtrapolationMode": 0
   },
@@ -2650,14 +2249,14 @@ Property map
 <a id="tocSunresolvedstream"></a>
 <a id="tocsunresolvedstream"></a>
 
-Unresolved stream is a property of the resolved asset. It represents streams which could not be resolved. Check reason as to why.
+Unresolved stream, a property of the resolved asset, is a stream that could not be resolved.
 
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Name|string|false|true|Name of the stream reference that could not be resolved.|
-|Reason|string|false|true|Reason why stream could not be resolved.|
+|Reason|string|false|true|Reason why the stream could not be resolved.|
 
 ```json
 {
@@ -2676,14 +2275,14 @@ Unresolved stream is a property of the resolved asset. It represents streams whi
 <a id="tocSunresolvedmetadata"></a>
 <a id="tocsunresolvedmetadata"></a>
 
-Unresolved metadata is a property of the resolved asset. It represents metadata which could not be resolved. Check reason as to why.
+Currently not used. Unresolved metadata, a property of the resolved asset, is metadata that could not be resolved.
 
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Name|string|false|true|Name of metadata item which could not be resolved.|
-|Reason|string|false|true|Reason why metadata could not be resolved.|
+|Name|string|false|true|Name of the metadata which could not be resolved.|
+|Reason|string|false|true|Reason why the metadata could not be resolved.|
 
 ```json
 {
@@ -2702,7 +2301,7 @@ Unresolved metadata is a property of the resolved asset. It represents metadata 
 <a id="tocSunresolvedstatus"></a>
 <a id="tocsunresolvedstatus"></a>
 
-Unresolved status is a property of the resolved asset. It represents statuses which could not be resolved. Check reason as to why.
+Unresolved status, a property of the resolved asset, means asset status could not be resolved.
 
 #### Properties
 

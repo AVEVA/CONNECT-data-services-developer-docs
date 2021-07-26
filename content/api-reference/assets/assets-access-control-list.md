@@ -10,7 +10,7 @@ The access control API is used to secure assets by setting their ownership and p
 
 <a id="opIdCollectionAcls_Get Collection Acl"></a>
 
-Returns default AccessControlList for the assets collection and asset type collection.
+Returns the default AccessControlList for the assets collection and asset type collection.
 
 ### Request
 ```text 
@@ -142,7 +142,7 @@ Updated ACL<br/>
 
 <a id="opIdCollectionAcls_List Collection Access Rights"></a>
 
-Returns default access rights for the assets collection and asset type collection.
+Returns the default access rights for the assets collection and asset type collection.
 
 ### Request
 ```text 
@@ -229,7 +229,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessRights/{re
   "RoleTrusteeAccessControlEntries": [
     {
       "Trustee": {
-        "Type": "[",
+        "Type": 1,
         "ObjectId": "string",
         "TenantId": "string"
       },

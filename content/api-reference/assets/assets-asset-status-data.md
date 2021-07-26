@@ -160,18 +160,18 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 <a id="tocSlaststatusdata"></a>
 <a id="tocslaststatusdata"></a>
 
-Asset last status
+Asset's last status
 
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Index|any|false|true|Index|
-|Status|[StatusEnum](#schemastatusenum)|false|false|Status enumeration. Valid values are : Unknown, Good, Warning and Bad.|
+|Status|[StatusEnum](#schemastatusenum)|false|false|Status enumeration. Valid values are: Unknown, Good, Warning and Bad.|
 |Value|any|false|true|Value of the last data retrieved|
 |DisplayName|string|false|true|Status display name|
 |AssetId|string|false|true|Asset identifier|
-|DataRetrievalTime|date-time|false|false|Date time of the last time the status was updated.|
+|DataRetrievalTime|date-time|false|false|Date and time when the status was last updated.|
 
 ```json
 {
@@ -243,12 +243,14 @@ Pre-defined asset status values.
 <a id="tocSstatusrangesummary"></a>
 <a id="tocsstatusrangesummary"></a>
 
+Returns the status summary of an asset.
+
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|RangeValues|[[StatusData](#schemastatusdata)]|false|true|Range of values|
-|Statistics|[[StatusValueStatistics](#schemastatusvaluestatistics)]|false|true|Data statistics|
+|RangeValues|[[StatusData](#schemastatusdata)]|false|true|Status values|
+|Statistics|[[StatusValueStatistics](#schemastatusvaluestatistics)]|false|true|Status data statistics|
 
 ```json
 {
@@ -306,7 +308,7 @@ Pre-defined asset status values.
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Index|any|false|true|Index|
-|Status|[StatusEnum](#schemastatusenum)|false|false|Status enumeration. Valid values are : Unknown, Good, Warning and Bad.|
+|Status|[StatusEnum](#schemastatusenum)|false|false|Status enumeration. Valid values are: Unknown, Good, Warning and Bad.|
 |Value|any|false|true|Value of the last data retrieved|
 |DisplayName|string|false|true|Status display name|
 

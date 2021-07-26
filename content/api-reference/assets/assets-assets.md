@@ -10,7 +10,7 @@ The Assets API allows you to create, read, update, and delete assets. The asset 
 
 <a id="opIdAssets_Get Asset Owner"></a>
 
-Returns owner of specified asset.
+Returns the owner of specified asset.
 
 ### Request
 ```text 
@@ -63,7 +63,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 <a id="opIdAssets_Update Asset Owner"></a>
 
-Updates owner of specified asset.
+Updates the owner of specified asset.
 
 ### Request
 ```text 
@@ -118,7 +118,7 @@ Updated owner<br/>
 
 <a id="opIdAssets_Get Asset Acl"></a>
 
-Returns access control of the specified asset.
+Returns the access control of the specified asset.
 
 ### Request
 ```text 
@@ -183,7 +183,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 <a id="opIdAssets_Update Asset Access Control"></a>
 
-Updates access control of specified asset.
+Updates the access control of specified asset.
 
 ### Request
 ```text 
@@ -250,7 +250,7 @@ Updated ACL<br/>
 
 <a id="opIdAssets_List Asset Access Rights"></a>
 
-Returns access rights of specified asset.
+Returns the access rights of specified asset.
 
 ### Request
 ```text 
@@ -353,7 +353,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
     {
       "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
       "Name": "Data",
-      "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+      "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
       "StreamId": "PI_bifrostbigdaddy_1"
     }
   ]
@@ -414,7 +414,7 @@ Asset to create<br/>
     {
       "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
       "Name": "Data",
-      "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+      "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
       "StreamId": "PI_bifrostbigdaddy_1"
     }
   ]
@@ -461,7 +461,7 @@ Asset to create<br/>
     {
       "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
       "Name": "Data",
-      "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+      "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
       "StreamId": "PI_bifrostbigdaddy_1"
     }
   ]
@@ -487,7 +487,7 @@ Asset to create<br/>
     {
       "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
       "Name": "Data",
-      "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+      "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
       "StreamId": "PI_bifrostbigdaddy_1"
     }
   ]
@@ -548,7 +548,7 @@ Asset to create or update<br/>
     {
       "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
       "Name": "Data",
-      "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+      "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
       "StreamId": "PI_bifrostbigdaddy_1"
     }
   ]
@@ -593,7 +593,7 @@ Asset to create or update<br/>
     {
       "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
       "Name": "Data",
-      "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+      "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
       "StreamId": "PI_bifrostbigdaddy_1"
     }
   ]
@@ -619,7 +619,7 @@ Asset to create or update<br/>
     {
       "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
       "Name": "Data",
-      "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+      "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
       "StreamId": "PI_bifrostbigdaddy_1"
     }
   ]
@@ -778,7 +778,7 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{asset
   "RoleTrusteeAccessControlEntries": [
     {
       "Trustee": {
-        "Type": "[",
+        "Type": 1,
         "ObjectId": "string",
         "TenantId": "string"
       },
@@ -851,9 +851,9 @@ Represents an asset object.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|Asset identifier. If you do not provide an Id, OCS copies the name as the identifierId. If you do not provide a name, OCS assigns a random GUID for the Id.|
+|Id|string|false|true|Asset identifier. If you do not provide an Id, OCS copies the name as the identifier. If you do not provide a name, OCS assigns a random GUID for the Id.|
 |AssetTypeId|string|false|true|Asset type identifier. Id for the asset type that this asset is derived from. To get the merged view of the asset, get the resolved asset through the /Assets/{assetId}/Resolved route.|
-|Name|string|false|true|User-friendly asset name. Required if Id is not provided. If Name is used as the Id, it must be unique within a given namespace.|
+|Name|string|false|true|User-friendly name for asset. Required if identifier is not provided. If name is used as the identifier, it must be unique within a given namespace.|
 |Description|string|false|true|Asset description|
 |Metadata|[[MetadataItem](#schemametadataitem)]|false|true|Asset metadata|
 |StreamReferences|[[StreamReference](#schemastreamreference)]|false|true|Asset stream reference|
@@ -876,7 +876,7 @@ Represents an asset object.
     {
       "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
       "Name": "Data",
-      "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+      "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
       "StreamId": "PI_bifrostbigdaddy_1"
     }
   ]
@@ -1139,16 +1139,16 @@ An asset stream reference represents dynamic stream data associated with an asse
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|Stream Reference Id|
-|Name|string|false|true|Stream Reference Name|
-|Description|string|false|true|Description of this stream reference|
-|StreamId|string|true|false|Sds stream id that's being referenced.|
+|Id|string|false|true|Stream Reference identifier|
+|Name|string|false|true|User-friendly name for stream reference|
+|Description|string|false|true|Stream reference description|
+|StreamId|string|true|false|SDS stream identifier that's being referenced.|
 
 ```json
 {
   "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
   "Name": "Data",
-  "Description": "This is reference to a stream. The stream id is PI_bifrostbigdaddy_1.",
+  "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
   "StreamId": "PI_bifrostbigdaddy_1"
 }
 
@@ -1169,7 +1169,7 @@ Status configuration is a property of an asset or asset type that defines the si
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|DefinitionType|[StatusDefinitionType](#schemastatusdefinitiontype)|false|false|Status definition type. At this moment, only "StreamPropertyMapping" is supported.|
+|DefinitionType|[StatusDefinitionType](#schemastatusdefinitiontype)|false|false|Status definition type. Only "StreamPropertyMapping" is supported.|
 |Definition|any|false|true|Status definition|
 
 ```json

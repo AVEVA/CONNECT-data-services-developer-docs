@@ -85,27 +85,10 @@ Checks if a `Tenant` with a specific ID exists.
 
 ### Parameters
 
-```json
-{
-  "Id": "string",
-  "CompanyName": "string",
-  "State": 0,
-  "Created": "2019-08-24T14:15:22Z",
-  "LastUpdated": "2019-08-24T14:15:22Z",
-  "Alias": "string",
-  "Features": [
-    {
-      "Feature": {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "DefaultState": 0
-      },
-      "CurrentState": 0
-    }
-  ],
-  "ExternalAccountId": "string"
-}
+```csharp
+[Required]
+[FromRoute]
+string tenantId
 ```
 
 The identifier of the `Tenant` for this request.

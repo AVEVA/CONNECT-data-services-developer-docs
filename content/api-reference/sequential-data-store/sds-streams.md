@@ -155,8 +155,8 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[SdsStream](#schemasdsstream)|Returns the `SdsStream`|
-|201|[SdsStream](#schemasdsstream)|Returns the `SdsStream`|
+|200|[SdsStream](#schemasdsstream)|`SdsStream` was successfully returned|
+|201|[SdsStream](#schemasdsstream)|`SdsStream` was successfully created|
 |400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
 |401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
 |403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
@@ -215,8 +215,8 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|201|[SdsStream](#schemasdsstream)|Returns the `SdsStream`|
-|204|None|Returns the `SdsStream`|
+|201|[SdsStream](#schemasdsstream)|`SdsStream` was successfully created|
+|204|None|`SdsStream` was successfully updated|
 |400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
 |401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
 |403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|

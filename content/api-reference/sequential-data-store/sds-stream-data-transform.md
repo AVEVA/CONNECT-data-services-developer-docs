@@ -260,15 +260,37 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 <br/>Index identifying the beginning of the series of events to return.<br/><br/><br/>`[optional] string endIndex`
 <br/>Index identifying the end of the series of events to return.<br/><br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>`[optional] string index`
-<br/>The index.<br/><br/>`[optional] string searchMode`
+<br/>The index.<br/><br/>`[optional] integer searchMode`
 <br/>The , the default is exact<br/><br/>`[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/><br/>`[optional] boolean reversed`
 <br/>Specification of the direction of the request. By default, range requests move forward from startIndex, collecting events after startIndex 
-            from the stream. A reversed request will collect events before startIndex from the stream.<br/><br/>`[optional] string boundaryType`
-<br/>SdsBoundaryType specifying the handling of events at or near the start and end indexes.<br/><br/><br/>`[optional] string startBoundaryType`
-<br/>SdsBoundaryType specifying the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/><br/>`[optional] string endBoundaryType`
+            from the stream. A reversed request will collect events before startIndex from the stream.<br/><br/>`[optional] integer boundaryType`
+<br/>SdsBoundaryType specifying the handling of events at or near the start and end indexes.<br/><br/><br/>`[optional] integer startBoundaryType`
+<br/>SdsBoundaryType specifying the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/><br/>`[optional] integer endBoundaryType`
 <br/>SdsBoundaryType specifies the last value in the result in relation to the end index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/><br/>`[optional] string continuationToken`
 <br/>Token used to retrieve the next page of data. If count is specified, a continuationToken must also be specified.<br/><br/><br/>
+
+#### Enumerated Values
+
+|Parameter|Value|
+|---|---|
+|searchMode|0|
+|searchMode|1|
+|searchMode|2|
+|searchMode|3|
+|searchMode|4|
+|boundaryType|0|
+|boundaryType|1|
+|boundaryType|2|
+|boundaryType|3|
+|startBoundaryType|0|
+|startBoundaryType|1|
+|startBoundaryType|2|
+|startBoundaryType|3|
+|endBoundaryType|0|
+|endBoundaryType|1|
+|endBoundaryType|2|
+|endBoundaryType|3|
 
 ### Response
 
@@ -339,15 +361,37 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 <br/>Index identifying the beginning of the series of events to return.<br/><br/><br/>`[optional] string endIndex`
 <br/>Index identifying the end of the series of events to return.<br/><br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>`[optional] string index`
-<br/>The index.<br/><br/>`[optional] string searchMode`
+<br/>The index.<br/><br/>`[optional] integer searchMode`
 <br/>The , the default is exact<br/><br/>`[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/><br/>`[optional] boolean reversed`
 <br/>Specification of the direction of the request. By default, range requests move forward from startIndex, collecting events after startIndex 
-            from the stream. A reversed request will collect events before startIndex from the stream.<br/><br/>`[optional] string boundaryType`
-<br/>SdsBoundaryType specifying the handling of events at or near the start and end indexes.<br/><br/><br/>`[optional] string startBoundaryType`
-<br/>SdsBoundaryType specifying the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/><br/>`[optional] string endBoundaryType`
+            from the stream. A reversed request will collect events before startIndex from the stream.<br/><br/>`[optional] integer boundaryType`
+<br/>SdsBoundaryType specifying the handling of events at or near the start and end indexes.<br/><br/><br/>`[optional] integer startBoundaryType`
+<br/>SdsBoundaryType specifying the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/><br/>`[optional] integer endBoundaryType`
 <br/>SdsBoundaryType specifies the last value in the result in relation to the end index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/><br/>`[optional] string continuationToken`
 <br/>Token used to retrieve the next page of data. If count is specified, a continuationToken must also be specified.<br/><br/><br/>
+
+#### Enumerated Values
+
+|Parameter|Value|
+|---|---|
+|searchMode|0|
+|searchMode|1|
+|searchMode|2|
+|searchMode|3|
+|searchMode|4|
+|boundaryType|0|
+|boundaryType|1|
+|boundaryType|2|
+|boundaryType|3|
+|startBoundaryType|0|
+|startBoundaryType|1|
+|startBoundaryType|2|
+|startBoundaryType|3|
+|endBoundaryType|0|
+|endBoundaryType|1|
+|endBoundaryType|2|
+|endBoundaryType|3|
 
 ### Response
 
@@ -650,11 +694,28 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 <br/>Index identifying the beginning of the series of events to return.<br/><br/><br/>`[optional] string endIndex`
 <br/>Index identifying the end of the series of events to return.<br/><br/><br/>`[optional] integer intervals`
 <br/>The number of intervals requested.<br/><br/>`[optional] string sampleBy`
-<br/>Property or properties to use when sampling.<br/><br/>`[optional] string boundaryType`
-<br/>SdsBoundaryType specifying the handling of events at or near the start and end indexes.<br/><br/><br/>`[optional] string startBoundaryType`
-<br/>SdsBoundaryType specifying the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/><br/>`[optional] string endBoundaryType`
+<br/>Property or properties to use when sampling.<br/><br/>`[optional] integer boundaryType`
+<br/>SdsBoundaryType specifying the handling of events at or near the start and end indexes.<br/><br/><br/>`[optional] integer startBoundaryType`
+<br/>SdsBoundaryType specifying the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/><br/>`[optional] integer endBoundaryType`
 <br/>SdsBoundaryType specifies the last value in the result in relation to the end index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/><br/>`[optional] string filter`
 <br/>Filter expression.<br/><br/><br/>
+
+#### Enumerated Values
+
+|Parameter|Value|
+|---|---|
+|boundaryType|0|
+|boundaryType|1|
+|boundaryType|2|
+|boundaryType|3|
+|startBoundaryType|0|
+|startBoundaryType|1|
+|startBoundaryType|2|
+|startBoundaryType|3|
+|endBoundaryType|0|
+|endBoundaryType|1|
+|endBoundaryType|2|
+|endBoundaryType|3|
 
 ### Response
 
@@ -709,11 +770,28 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 <br/>Index identifying the beginning of the series of events to return.<br/><br/><br/>`[optional] string endIndex`
 <br/>Index identifying the end of the series of events to return.<br/><br/><br/>`[optional] integer intervals`
 <br/>The number of intervals requested.<br/><br/>`[optional] string sampleBy`
-<br/>Property or properties to use when sampling.<br/><br/>`[optional] string boundaryType`
-<br/>SdsBoundaryType specifying the handling of events at or near the start and end indexes.<br/><br/><br/>`[optional] string startBoundaryType`
-<br/>SdsBoundaryType specifying the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/><br/>`[optional] string endBoundaryType`
+<br/>Property or properties to use when sampling.<br/><br/>`[optional] integer boundaryType`
+<br/>SdsBoundaryType specifying the handling of events at or near the start and end indexes.<br/><br/><br/>`[optional] integer startBoundaryType`
+<br/>SdsBoundaryType specifying the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/><br/>`[optional] integer endBoundaryType`
 <br/>SdsBoundaryType specifies the last value in the result in relation to the end index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/><br/>`[optional] string filter`
 <br/>Filter expression.<br/><br/><br/>
+
+#### Enumerated Values
+
+|Parameter|Value|
+|---|---|
+|boundaryType|0|
+|boundaryType|1|
+|boundaryType|2|
+|boundaryType|3|
+|startBoundaryType|0|
+|startBoundaryType|1|
+|startBoundaryType|2|
+|startBoundaryType|3|
+|endBoundaryType|0|
+|endBoundaryType|1|
+|endBoundaryType|2|
+|endBoundaryType|3|
 
 ### Response
 
@@ -778,6 +856,43 @@ Contains the error message format that follows the OCS error standards
 }
 
 ```
+
+---
+
+### SdsSearchMode
+
+<a id="schemasdssearchmode"></a>
+<a id="schema_SdsSearchMode"></a>
+<a id="tocSsdssearchmode"></a>
+<a id="tocssdssearchmode"></a>
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|Exact|0|
+|ExactOrNext|1|
+|Next|2|
+|ExactOrPrevious|3|
+|Previous|4|
+
+---
+
+### SdsBoundaryType
+
+<a id="schemasdsboundarytype"></a>
+<a id="schema_SdsBoundaryType"></a>
+<a id="tocSsdsboundarytype"></a>
+<a id="tocssdsboundarytype"></a>
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|Exact|0|
+|Inside|1|
+|Outside|2|
+|ExactOrCalculated|3|
 
 ---
 

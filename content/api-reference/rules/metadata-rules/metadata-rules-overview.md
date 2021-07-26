@@ -36,3 +36,6 @@ Metadata rules enable the bulk creation and maintenance of stream metadata, whic
 
 ## Key-value pairs
 Stream name parts designated as metadata are defined as key-value pairs. Each value occupying a part designated as metadata is categorized under a key defined for it. This typically takes the form of values recorded at different timestamp intervals for a particular object or device, or key. The fundamental key-value data structure facilitates analytical processing of stream data returned by a metadata rule. 
+
+## Create metadata rules
+See [Create a metadata rule](xref:gpMetadataRules) for more information.  

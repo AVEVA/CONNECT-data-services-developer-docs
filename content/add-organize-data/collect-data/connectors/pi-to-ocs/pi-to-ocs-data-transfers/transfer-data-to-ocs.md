@@ -4,7 +4,7 @@ uid: transfer-data
 
 # Transfer PI System data to OCS
 
-To transfer PI points into OCS, you must first define transfer settings and then build a PI points transfer table. The data transfer process consists of the following steps:
+To transfer PI points into OCS, you must first define transfer settings and then build a PI points transfer table. The following topics contain the procedures and information you need to transfer data to OCS:
 
 * [Create a transfer](#create-a-transfer)
 * [Overview of the PI Points Search pane](#overview-of-the-pi-points-search-pane)
@@ -12,7 +12,7 @@ To transfer PI points into OCS, you must first define transfer settings and then
 * [Build a PI points transfer list](#build-a-pi-points-transfer-list)
 * [View PI point details](#view-pi-point-details)
 * [Remove PI points from a transfer](#remove-pi-points-from-a-transfer)
-* [Save and transfer data to OCS](#save-and-transfer-data-to-OCS)
+* [Save and transfer data to OCS](#save-and-transfer-data-to-ocs)
 
 ## Create a transfer
 
@@ -50,9 +50,11 @@ Download and install the PI to OCS agent. Register your PI Data Archive with the
 
 ## Overview of the PI Points Search pane
 
-You build a PI points transfer list in the **PI Points Search** pane. You define search criteria to filter which PI points are returned in the query results.
+You build a PI points transfer list in the **PI Points Search** pane. The screen capture and table below point out the key elements of the **PI Points Search** pane.
 
 ![ ](../../images/pi-pt-search-callouts.png)
+
+This table contains descriptions for the numbered fields and controls in the above screen capture.
 
 No. | Description  | 
 ---------|----------
@@ -92,7 +94,8 @@ You build a PI points transfer list to select the PI points you want included in
    **Result:** The **Search** pane opens on the left.
 
 2. Click the **PI Point Search** tab.
-3. Refer to the table below to define your search query and search for PI points:
+
+3. Refer to the table below to define your search query critera.
 
    | Specific Values | Action to Take |
    -------------------------- | ------------------------
@@ -133,7 +136,6 @@ You can view attribute details for a PI point that has been added to a transfer.
 2. Click ![](../../images/view-details-btn.png) at the top right of the **Transfer** pane.
 
    **Result:** The PI Points Information pane opens to the right and the PI point's attributes are shown.
-   ![](../../images/view-details-pane.png)
 
 3. To view another PI point's details, click to unselect the selected PI point, then select the new point.
 
@@ -147,9 +149,11 @@ You can remove unwanted PI points from a transfer prior to saving the transfer.
 ### Procedure
 
 1. On the PI Points tab, click to select the PI points you wish to remove from your transfer.
+
 2. Click the **Remove # Selected Items** button, then click **Remove** again.
 
    **Result:** The PI point are removed from the transfer.
+
 3. **Optional:** To remove all PI points from a transfer, click the checkbox to the left of the **PI Point** column header, then click the **Remove # Selected Items** button.
 
 ## Save and transfer data to OCS
@@ -179,4 +183,5 @@ You must save a transfer before you can start to transfer selected data to OCS. 
    * Historical start and end: The time range of past, historical events transferred to OCS 
 
 5. **Optional:** Click the **Stop Transfer** button, then click **Stop** to stop the transfer of data to OCS.
+
 6. **Optional:** Click the **Remove Transfer** button, then click **Remove** to delete the transfer completely.

@@ -43,6 +43,9 @@ for internal SDS use.
 4. Cannot contain forward slash ("/")
 5. Can contain a maximum of 100 characters
 
+## Streams API
+[Streams API](xref:sds-streams)
+
 ## Indexes
 While you define the primary index on the type, the stream is where you define secondary indexes.
 If the primary index defined on the type is a compound index, secondary indexes on the stream are allowed as long as that compound index does not have more than two properties. For more information on compound indexes, see [Indexes](xref:sdsIndexes#compound-indexes). 

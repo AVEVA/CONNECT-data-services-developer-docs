@@ -1,28 +1,14 @@
 ---
-uid: tenant-root-access-control
-
+uid: AccountRootAccessControl_1
 ---
 
-# Root Access Control
-APIs to manage default access to entities governed by an AccessControlList.
+# Root access control
 
-## `Get Root Namespace Acl`
+APIs to manage default access to entities governed by an [AccessControlList](xref:accessControl).
 
-<a id="opIdRootAccessControl_Get Root Namespace Acl"></a>
+***
 
-Retrieves the `AccessControlList` that is used to authorize access to a `Namespace` if none is specified during creation.
-
-### Request
-```text 
-GET /api/v1/Tenants/{tenantId}/AccessControl/Namespaces
-```
-
-#### Parameters
-
-`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>
-
-### Response
+## `Get Root Namespace AccessControlList`
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -49,27 +35,23 @@ GET /api/v1/Tenants/{tenantId}/AccessControl/Namespaces
 }
 ```
 
----
+### HTTP
 
-## `Set Root Namespace Acl`
+`GET api/v1/Tenants/{tenantId}/AccessControl/Namespaces`
 
-<a id="opIdRootAccessControl_Set Root Namespace Acl"></a>
 
-Modifies the `AccessControlList` that is used to authorize access to a `Namespace` if none is specified during creation.
+### Parameters
 
-### Request
-```text 
-PUT /api/v1/Tenants/{tenantId}/AccessControl/Namespaces
+```csharp
+[Required]
+[FromRoute]
+string tenantId
 ```
 
-#### Parameters
+The identifier of the tenant to access.
 
-`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>
 
-### Request Body
-
-The new root AccessControlList for Namespaces.<br/>
+### Authorization
 
 ```json
 {
@@ -146,96 +128,48 @@ The new root AccessControlList for Namespaces.<br/>
   ]
 }
 
+***
+
+## `Set Root AccessControlList`
+
+Modifies the [AccessControlList](xref:accessControl) that is used to authorize access to a `Namespace` if none is specified during creation.
+
+### Request
+
+`PUT api/v1/Tenants/{tenantId}/AccessControl/Namespaces`
+
+
+### Parameters
+
+```csharp
+[Required]
+[FromRoute]
+string tenantId
 ```
 
----
-
-### AccessControlEntry
-
-<a id="schemaaccesscontrolentry"></a>
-<a id="schema_AccessControlEntry"></a>
-<a id="tocSaccesscontrolentry"></a>
-<a id="tocsaccesscontrolentry"></a>
-
-#### Properties
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|Trustee|[Trustee](#schematrustee)|false|true|None|
-|AccessType|[AccessType](#schemaaccesstype)|false|false|None|
-|AccessRights|int64|false|false|None|
-
-```json
-{
-  "Trustee": {
-    "Type": 1,
-    "ObjectId": "string",
-    "TenantId": "string"
-  },
-  "AccessType": 0,
-  "AccessRights": 0
-}
-
+The identifier of the tenant to modify.
+```csharp
+[Required]
+[FromBody]
+AccessControlList newAccessControlList
 ```
 
----
+The new root [AccessControlList](xref:accessControl) for `Namespaces`.
 
-### Trustee
 
-<a id="schematrustee"></a>
-<a id="schema_Trustee"></a>
-<a id="tocStrustee"></a>
-<a id="tocstrustee"></a>
+### Authorization
 
-#### Properties
+A root [AccessControlList](xref:accessControl) can only be modified if the current principal has ManageAccessControl access.
 
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|Type|[TrusteeType](#schematrusteetype)|false|false|None|
-|ObjectId|string|false|true|None|
-|TenantId|string|false|true|None|
+### Response
 
-```json
-{
-  "Type": 1,
-  "ObjectId": "string",
-  "TenantId": "string"
-}
+| Status Code | Return Type | Description |
+| --- | --- | ---  |
+| 200 | AccessControlList | Returns the modified root [AccessControlList](xref:accessControl) for `Namespaces`. |
+| 400 | Nothing is returned | Could not modify the root [AccessControlList](xref:accessControl) for `Namespaces` due to missing or invalid input. |
+| 403 | Nothing is returned | Unauthorized to change the root [AccessControlList](xref:accessControl) for `Namespaces`. |
+| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. |
 
-```
 
----
-
-### TrusteeType
-
-<a id="schematrusteetype"></a>
-<a id="schema_TrusteeType"></a>
-<a id="tocStrusteetype"></a>
-<a id="tocstrusteetype"></a>
-
-#### Enumerated Values
-
-|Property|Value|
-|---|---|
-|User|1|
-|Client|2|
-|Role|3|
-
----
-
-### AccessType
-
-<a id="schemaaccesstype"></a>
-<a id="schema_AccessType"></a>
-<a id="tocSaccesstype"></a>
-<a id="tocsaccesstype"></a>
-
-#### Enumerated Values
-
-|Property|Value|
-|---|---|
-|Allowed|0|
-|Denied|1|
-
----
+***
 

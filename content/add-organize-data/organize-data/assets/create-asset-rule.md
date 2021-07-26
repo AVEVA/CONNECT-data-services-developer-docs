@@ -111,11 +111,13 @@ The token and the placeholder value, *{site} - PHI*, are added to the **Tokens**
 
    <!--WRITER'S NOTE: These images were taken with SnagIt and reduced by 50%. The resolution may be too fuzzy and they may have to be enlarged. -->
 
-   ![Second token](images/second-token.png) 
+   <!-- ![Second token](images/second-token.png) -->
+   
+   ![](images/second-rule-token-2.png)
    
    The next part of the stream name is a number that identifies the equipment's ID. *03* is matched using  *the next group of numbers*, and this token is assigned the name *equipment_id*. Because we anticipate using this rule to create assets with Ids running into the thousands, we do not use *the next 2 numbers* to match the Id.
-   ![](images/third-token.png)
    
+   ![](images/third-token.png)
    
    
    The last part of the stream name identifies what is being measured in the stream. This token is matched using *the rest of the stream name*, and it is named *measurement*.
@@ -149,7 +151,7 @@ In this step, you specify which part of the stream name identifies the measureme
 
    In our example, the last part of the stream name (Press or Temp) is where the measurement is identified, and we gave this token the name *measurement*. 
 
-   ![Choose stream](images/arb-choose-stream.png)
+   ![Choose stream](images/choose-stream.png)
 
    ****
 

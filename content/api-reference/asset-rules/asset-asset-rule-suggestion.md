@@ -273,7 +273,7 @@ The RuleModel object to create a suggestion for.<br/>
 
 <a id="opIdAssetRuleSuggestion_Cancel Suggestion"></a>
 
-Cancels a running suggestion query.
+Cancels a running suggestion query
 
 ### Request
 ```text 

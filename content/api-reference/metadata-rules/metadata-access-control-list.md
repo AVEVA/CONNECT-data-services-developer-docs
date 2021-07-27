@@ -22,7 +22,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/a
 <br/>The RuleRouteOptions uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/><br/>`string ruleId`
-<br/>The Id of a rule.<br/><br/>
+<br/><br/>
 
 ### Response
 
@@ -109,7 +109,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/a
 <br/>The RuleRouteOptions uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/><br/>`string ruleId`
-<br/>The Id of a rule.<br/><br/>
+<br/><br/>
 
 ### Response
 
@@ -202,7 +202,7 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/a
 <br/>The uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/><br/>`string ruleId`
-<br/>The Id of a rule.<br/><br/>
+<br/><br/>
 
 ### Request Body
 
@@ -517,7 +517,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/o
 <br/>The uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/><br/>`string ruleId`
-<br/>The Id of a rule.<br/><br/>
+<br/><br/>
 
 ### Response
 
@@ -603,7 +603,7 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/o
 <br/>The RuleRouteOptions uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/><br/>`string ruleId`
-<br/>The Id of a rule.<br/><br/>
+<br/><br/>
 
 ### Request Body
 

@@ -50,7 +50,7 @@ Defaults to false.<br/><br/>
     "Description": "description",
     "ExampleStreamId": "exampleId",
     "AutomationId": "00000000-0000-0000-0000-000000000000",
-    "IsDraft": "false",
+    "State": "Started",
     "Expressions": [
       {
         "Field": "Id",
@@ -82,7 +82,7 @@ Defaults to false.<br/><br/>
     "Description": "description",
     "ExampleStreamId": "exampleId",
     "AutomationId": "00000000-0000-0000-0000-000000000000",
-    "IsDraft": "false",
+    "State": "Started",
     "Expressions": [
       {
         "Field": "Id",
@@ -186,7 +186,7 @@ The RuleModel object to create.<br/>
   "Description": "description",
   "ExampleStreamId": "exampleId",
   "AutomationId": "00000000-0000-0000-0000-000000000000",
-  "IsDraft": "false",
+  "State": "Started",
   "Expressions": [
     {
       "Field": "Id",
@@ -234,7 +234,7 @@ The RuleModel object to create.<br/>
   "Description": "description",
   "ExampleStreamId": "exampleId",
   "AutomationId": "00000000-0000-0000-0000-000000000000",
-  "IsDraft": "false",
+  "State": "Started",
   "Expressions": [
     {
       "Field": "Id",
@@ -341,7 +341,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}
 <br/>The RuleRouteOptions uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/><br/>`string ruleId`
-<br/>The Id of a rule.<br/><br/>
+<br/><br/>
 
 ### Response
 
@@ -362,7 +362,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}
   "Description": "description",
   "ExampleStreamId": "exampleId",
   "AutomationId": "00000000-0000-0000-0000-000000000000",
-  "IsDraft": "false",
+  "State": "Started",
   "Expressions": [
     {
       "Field": "Id",
@@ -454,7 +454,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}
 <br/>The RuleRouteOptions uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/><br/>`string ruleId`
-<br/>The Id of a rule.<br/><br/>
+<br/><br/>
 
 ### Request Body
 
@@ -467,7 +467,7 @@ The RuleModel object.<br/>
   "Description": "description",
   "ExampleStreamId": "exampleId",
   "AutomationId": "00000000-0000-0000-0000-000000000000",
-  "IsDraft": "false",
+  "State": "Started",
   "Expressions": [
     {
       "Field": "Id",
@@ -516,7 +516,7 @@ The RuleModel object.<br/>
   "Description": "description",
   "ExampleStreamId": "exampleId",
   "AutomationId": "00000000-0000-0000-0000-000000000000",
-  "IsDraft": "false",
+  "State": "Started",
   "Expressions": [
     {
       "Field": "Id",
@@ -624,7 +624,7 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}
 <br/>The RuleRouteOptions uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/><br/>`string ruleId`
-<br/>The Id of a rule.<br/><br/>
+<br/><br/>
 `[optional] integer Skip`
 <br/>An Int32 to determine how many results to skip. Defaults to DefaultSkip<br/><br/>`[optional] integer Count`
 <br/>An Int32 to determine how many results to return. Defaults to DefaultCount<br/><br/>`[optional] boolean KeepOldMetadata`
@@ -644,7 +644,7 @@ The RuleModel object to create or update.<br/>
   "Description": "description",
   "ExampleStreamId": "exampleId",
   "AutomationId": "00000000-0000-0000-0000-000000000000",
-  "IsDraft": "false",
+  "State": "Started",
   "Expressions": [
     {
       "Field": "Id",
@@ -692,7 +692,7 @@ The RuleModel object to create or update.<br/>
   "Description": "description",
   "ExampleStreamId": "exampleId",
   "AutomationId": "00000000-0000-0000-0000-000000000000",
-  "IsDraft": "false",
+  "State": "Started",
   "Expressions": [
     {
       "Field": "Id",
@@ -729,7 +729,7 @@ The RuleModel object to create or update.<br/>
   "Description": "description",
   "ExampleStreamId": "exampleId",
   "AutomationId": "00000000-0000-0000-0000-000000000000",
-  "IsDraft": "false",
+  "State": "Started",
   "Expressions": [
     {
       "Field": "Id",
@@ -822,7 +822,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId
 <br/>The RuleRouteOptions uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/><br/>`string ruleId`
-<br/>The Id of a rule.<br/><br/>
+<br/><br/>
 `[optional] integer Skip`
 <br/>An Int32 to determine how many results to skip. Defaults to DefaultSkip<br/><br/>`[optional] integer Count`
 <br/>An Int32 to determine how many results to return. Defaults to DefaultCount<br/><br/>`[optional] boolean KeepOldMetadata`
@@ -979,149 +979,6 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/
 ```
 
 ---
-
-## `Publish Draft Rule`
-
-<a id="opIdMetadataRules_Publish Draft Rule"></a>
-
-Publishes a draft `RuleModel` object with the specified id in the `IRuleStore`.
-
-### Request
-```text 
-POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/publish
-```
-
-#### Parameters
-
-`any routeOptions`
-<br/>The RuleRouteOptions uri route parameters.<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string ruleId`
-<br/>The Id of a rule.<br/><br/>
-
-### Response
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|[RuleModel](#schemarulemodel)|A `RuleModel` object.|
-|400|[ResponseBody](#schemaresponsebody)|None|
-|403|[ResponseBody](#schemaresponsebody)|Forbidden.|
-|404|[ResponseBody](#schemaresponsebody)|The specified rule id was not found.|
-|500|[ResponseBody](#schemaresponsebody)|Internal server error.|
-
-#### Example response body
-> 200 Response
-
-```json
-{
-  "Id": "ruleId",
-  "Name": "name",
-  "Description": "description",
-  "AutomationId": "00000000-0000-0000-0000-000000000000",
-  "IsDraft": false,
-  "Expressions": [
-    {
-      "Field": "Id",
-      "Specifications": [
-        {
-          "Type": "Group",
-          "Name": "streamId"
-        }
-      ]
-    }
-  ],
-  "Outputs": [
-    {
-      "Field": "Asset",
-      "Value": {
-        "Id": "assetId",
-        "Name": "name",
-        "Description": "description",
-        "Metadata": [
-          {
-            "Id": "metadataId",
-            "Name": "name",
-            "Description": "description",
-            "SdsTypecode": "18",
-            "Value": "{streamId}"
-          }
-        ],
-        "StreamReferences": [
-          {
-            "Id": "streamReferenceName",
-            "Description": "description",
-            "StreamdId": "{streamId}"
-          }
-        ]
-      }
-    }
-  ],
-  "CreationTime": "0001-01-01T00:00:00",
-  "ModifiedTime": "0001-01-01T00:00:00"
-}
-```
-
-> 400 Response
-
-```json
-{
-  "OperationId": "00000000-0000-0000-0000-000000000000",
-  "Error": "Error message.",
-  "Reason": "Reason that caused the error.",
-  "Resolution": "Possible resolution for the error.",
-  "Parameters": {
-    "key1": "value1",
-    "key2": "value2"
-  }
-}
-```
-
-> 403 Response
-
-```json
-{
-  "OperationId": "00000000-0000-0000-0000-000000000000",
-  "Error": "Error message.",
-  "Reason": "Reason that caused the error.",
-  "Resolution": "Possible resolution for the error.",
-  "Parameters": {
-    "key1": "value1",
-    "key2": "value2"
-  }
-}
-```
-
-> 404 Response
-
-```json
-{
-  "OperationId": "00000000-0000-0000-0000-000000000000",
-  "Error": "Error message.",
-  "Reason": "Reason that caused the error.",
-  "Resolution": "Possible resolution for the error.",
-  "Parameters": {
-    "key1": "value1",
-    "key2": "value2"
-  }
-}
-```
-
-> 500 Response
-
-```json
-{
-  "OperationId": "00000000-0000-0000-0000-000000000000",
-  "Error": "Error message.",
-  "Reason": "Reason that caused the error.",
-  "Resolution": "Possible resolution for the error.",
-  "Parameters": {
-    "key1": "value1",
-    "key2": "value2"
-  }
-}
-```
-
----
 ## Definitions
 
 ### RuleModel
@@ -1140,7 +997,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/
 |Description|string|false|true|None|
 |ExampleStreamId|string|false|true|None|
 |AutomationId|string|false|true|None|
-|IsDraft|boolean|false|false|None|
+|State|[RuleStateEnum](#schemarulestateenum)|false|false|None|
 |Expressions|[[RuleExpression](#schemaruleexpression)]|false|true|None|
 |Outputs|[[RuleOutput](#schemaruleoutput)]|false|true|None|
 |CreationTime|date-time|false|false|None|
@@ -1153,7 +1010,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/
   "Description": "description",
   "ExampleStreamId": "exampleId",
   "AutomationId": "00000000-0000-0000-0000-000000000000",
-  "IsDraft": "false",
+  "State": "Started",
   "Expressions": [
     {
       "Field": "Id",
@@ -1181,6 +1038,22 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/
 }
 
 ```
+
+---
+
+### RuleStateEnum
+
+<a id="schemarulestateenum"></a>
+<a id="schema_RuleStateEnum"></a>
+<a id="tocSrulestateenum"></a>
+<a id="tocsrulestateenum"></a>
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|Started|Started|
+|Stopped|Stopped|
 
 ---
 

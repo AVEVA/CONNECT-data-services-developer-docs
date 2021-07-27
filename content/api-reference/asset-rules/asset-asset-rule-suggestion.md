@@ -143,7 +143,7 @@ The RuleModel object to create a suggestion for.<br/>
   "Description": "description",
   "ExampleStreamId": "exampleId",
   "AutomationId": "00000000-0000-0000-0000-000000000000",
-  "IsDraft": "false",
+  "State": "Started",
   "Expressions": [
     {
       "Field": "Id",
@@ -273,7 +273,7 @@ The RuleModel object to create a suggestion for.<br/>
 
 <a id="opIdAssetRuleSuggestion_Cancel Suggestion"></a>
 
-Cancels a running suggestion query
+Cancels a running suggestion query.
 
 ### Request
 ```text 
@@ -435,7 +435,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/as
 |Description|string|false|true|None|
 |ExampleStreamId|string|false|true|None|
 |AutomationId|string|false|true|None|
-|IsDraft|boolean|false|false|None|
+|State|[RuleStateEnum](#schemarulestateenum)|false|false|None|
 |Expressions|[[RuleExpression](#schemaruleexpression)]|false|true|None|
 |Outputs|[[RuleOutput](#schemaruleoutput)]|false|true|None|
 |CreationTime|date-time|false|false|None|
@@ -448,7 +448,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/as
   "Description": "description",
   "ExampleStreamId": "exampleId",
   "AutomationId": "00000000-0000-0000-0000-000000000000",
-  "IsDraft": "false",
+  "State": "Started",
   "Expressions": [
     {
       "Field": "Id",
@@ -476,6 +476,22 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/as
 }
 
 ```
+
+---
+
+### RuleStateEnum
+
+<a id="schemarulestateenum"></a>
+<a id="schema_RuleStateEnum"></a>
+<a id="tocSrulestateenum"></a>
+<a id="tocsrulestateenum"></a>
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|Started|Started|
+|Stopped|Stopped|
 
 ---
 

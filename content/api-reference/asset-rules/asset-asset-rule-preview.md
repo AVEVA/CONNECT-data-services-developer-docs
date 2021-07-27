@@ -188,7 +188,7 @@ The RuleModel object to preview.<br/>
   "Description": "description",
   "ExampleStreamId": "exampleId",
   "AutomationId": "00000000-0000-0000-0000-000000000000",
-  "IsDraft": "false",
+  "State": "Started",
   "Expressions": [
     {
       "Field": "Id",
@@ -480,7 +480,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 |Description|string|false|true|None|
 |ExampleStreamId|string|false|true|None|
 |AutomationId|string|false|true|None|
-|IsDraft|boolean|false|false|None|
+|State|[RuleStateEnum](#schemarulestateenum)|false|false|None|
 |Expressions|[[RuleExpression](#schemaruleexpression)]|false|true|None|
 |Outputs|[[RuleOutput](#schemaruleoutput)]|false|true|None|
 |CreationTime|date-time|false|false|None|
@@ -493,7 +493,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
   "Description": "description",
   "ExampleStreamId": "exampleId",
   "AutomationId": "00000000-0000-0000-0000-000000000000",
-  "IsDraft": "false",
+  "State": "Started",
   "Expressions": [
     {
       "Field": "Id",
@@ -521,6 +521,22 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 }
 
 ```
+
+---
+
+### RuleStateEnum
+
+<a id="schemarulestateenum"></a>
+<a id="schema_RuleStateEnum"></a>
+<a id="tocSrulestateenum"></a>
+<a id="tocsrulestateenum"></a>
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|Started|Started|
+|Stopped|Stopped|
 
 ---
 

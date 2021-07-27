@@ -2,7 +2,7 @@
 uid: ConvertAssetToAssetType
 ---
 
-# Convert an asset to an asset type 
+# Convert an asset to an asset type
 
 For more information on asset types, see [Asset types](xref:AssetTypes).
 
@@ -17,4 +17,3 @@ For more information on asset types, see [Asset types](xref:AssetTypes).
 1. Enter the name for the asset type.
 2. (Optional) Enter a description for the asset type.
 3. Click **Create**.
-

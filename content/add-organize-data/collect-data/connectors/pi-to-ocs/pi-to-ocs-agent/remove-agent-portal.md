@@ -18,3 +18,4 @@ You can remove an unneeded agent in the PI to OCS Agents page.
 5. Click **Remove**.
 
    **Result:** The agent is removed from the list and deleted from OCS.
+   

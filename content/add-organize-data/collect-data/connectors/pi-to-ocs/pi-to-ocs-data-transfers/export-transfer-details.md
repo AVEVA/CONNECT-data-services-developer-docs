@@ -19,4 +19,3 @@ You can export a list of all the PI points added to a transfer for your records.
 4. Navigate to the location where you want to save the file, enter a name for the .csv file, then click **Save**.
 
    **Result:** A .csv file containing a list of PI points in the transfer is saved.
-

@@ -6,7 +6,7 @@ uid: gpTypes
 
 Sequential Data Store (SDS) types define the shape and structure of events and how to associate events with streams of data. For more information about types, see [Types](xref:ccTypes) and [Types best practices](xref:bpTypes).
 
-After you have created a type, it cannot be modified. 
+After you have created a type, it cannot be modified.
 
 ## Procedure
 

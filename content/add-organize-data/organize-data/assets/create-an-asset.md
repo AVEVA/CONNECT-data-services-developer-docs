@@ -79,7 +79,6 @@ Follow the procedures to create an asset, add and configure its metadata and pro
 
     **Note:** Once you click **Save**, any changes are immediately made to the UOMs on the stream, regardless of any other actions you take on this asset. For example, the UOM changes to the stream are not reversed if you click **Cancel** on the **Properties** tab or if you delete the asset.
 
-
 ## Add status tracking to the asset
 
 1. Click the **Status** tab.

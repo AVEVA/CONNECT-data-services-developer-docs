@@ -2,12 +2,9 @@
 uid: main-landing-page
 ---
 
-
 ## PI to OCS
-<br>
+
 This section of the OCS Content portal contains documentation on how to use PI to OCS to transfer data from your on-prem PI Server to OCS. The PI to OCS content contains the following sections:
-<br>
-<br>
 
 * [PI to OCS introduction](xref:landing-page1)
 * [Set up PI to OCS](xref:landing-page2)

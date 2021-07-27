@@ -917,7 +917,7 @@ Returns a list of all groups that the specified user belongs to on an identity p
 ### Request
 ```text 
 GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Users/{userId}/Groups
-?skip={skip}&count={count}&timeout={timeout}&skipToken={skipToken}
+?skip={skip}&count={count}&skipToken={skipToken}
 ```
 
 #### Parameters
@@ -928,8 +928,7 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Users/{use
 <br/>User identifier.<br/><br/><br/>
 `[optional] integer skip`
 <br/>Indexes into a result set<br/><br/>`[optional] integer count`
-<br/>Maximum number of groups to return<br/><br/>`[optional] integer timeout`
-<br/>The maximum time to allow for searching groups before returning the groups<br/><br/>`[optional] string skipToken`
+<br/>Maximum number of groups to return<br/><br/>`[optional] string skipToken`
 <br/>An encoded string that identifies the set of groups that was not returned. For example, if you request a count of the first 3 groups matching your query, the skipToken identifies the 4th user.<br/><br/>
 
 ### Response
@@ -974,7 +973,7 @@ Allowed for these roles:
 
 <a id="opIdIdentityProviders_Get Identity Provider Groups"></a>
 
-Returns the groups based on the identifiers. Currently, Azure Active Directory provider is the only provider that supports this method.
+Returns the groups based on the identifiers. Only Deeper Integration Identity providers such as Azure Active Directory and AVEVA Connect support this method.
 
 ### Request
 ```text 

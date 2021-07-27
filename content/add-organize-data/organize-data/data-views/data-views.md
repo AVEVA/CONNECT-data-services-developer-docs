@@ -49,6 +49,7 @@ Data views are subsets of data from one or more streams. You create a data view 
 1. Click the **View in API Console** button to display basic parameters of the data view in the API console.
 
 1. Click **Apply** to create the data view with the settings you have selected.
+
 1. Click **Save** to create the data view and continue working, or click **Save and Close** to create and exit.
 
 ## Related links

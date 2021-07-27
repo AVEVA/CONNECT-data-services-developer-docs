@@ -118,7 +118,7 @@ Updated owner<br/>
 
 <a id="opIdAssets_Get Asset Acl"></a>
 
-Returns the access control of the specified asset.
+Returns the access control list of the specified asset.
 
 ### Request
 ```text 
@@ -513,7 +513,7 @@ Asset to create<br/>
 
 <a id="opIdAssets_Create Or Update Asset"></a>
 
-Creates or updates an asset with a specified identifier. If the asset already exists, you can specify an If-Match property in the HTTP request header to ensure that the asset is modified only if its version matches. To support flexibility, on creation and update, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is from an asset type.
+Creates or updates an asset with a specified identifier. If the asset already exists, you can specify an If-Match property in the HTTP request header to ensure that the asset is modified only if its version matches. To support flexibility on creation and update, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is from an asset type.
 
 ### Request
 ```text 
@@ -1141,8 +1141,8 @@ An asset stream reference represents dynamic stream data associated with an asse
 |---|---|---|---|---|
 |Id|string|false|true|Stream Reference identifier|
 |Name|string|false|true|User-friendly name for stream reference|
-|Description|string|false|true|Stream reference description|
-|StreamId|string|true|false|SDS stream identifier that's being referenced.|
+|Description|string|false|true|Description of the stream reference|
+|StreamId|string|true|false|SDS stream Id that is being referenced.|
 
 ```json
 {
@@ -1203,6 +1203,8 @@ Status configuration is a property of an asset or asset type that defines the si
 <a id="schema_StatusDefinitionType"></a>
 <a id="tocSstatusdefinitiontype"></a>
 <a id="tocsstatusdefinitiontype"></a>
+
+Status definition type. Currently, only StreamPropertyMapping is supported.
 
 #### Enumerated Values
 

@@ -406,8 +406,8 @@ Resolved stream is a property of the resolved asset.
   "StreamId": "string",
   "PropertyMaps": [
     {
-      "Id": "string",
-      "SourcePropertyId": "string"
+      "Id": "Timestamp",
+      "SourcePropertyId": "Timestamp"
     }
   ]
 }
@@ -579,12 +579,12 @@ Property map
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Id|string|false|true|Property map identifier|
-|SourcePropertyId|string|false|true|Source identifier|
+|SourcePropertyId|string|false|true|Source property identifier|
 
 ```json
 {
-  "Id": "string",
-  "SourcePropertyId": "string"
+  "Id": "Timestamp",
+  "SourcePropertyId": "Timestamp"
 }
 
 ```
@@ -649,6 +649,8 @@ Currently not used. Unresolved metadata, a property of the resolved asset, is me
 <a id="schema_StatusDefinitionType"></a>
 <a id="tocSstatusdefinitiontype"></a>
 <a id="tocsstatusdefinitiontype"></a>
+
+Status definition type. Currently, only StreamPropertyMapping is supported.
 
 #### Enumerated Values
 

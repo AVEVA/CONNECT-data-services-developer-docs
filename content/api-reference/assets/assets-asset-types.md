@@ -868,7 +868,7 @@ Updated owner<br/>
 
 <a id="opIdAssetTypes_Get Asset Type Acl"></a>
 
-Returns the access control of the specified asset type.
+Returns the access control list of the specified asset type.
 
 ### Request
 ```text 
@@ -1353,7 +1353,7 @@ An asset type type reference represents dynamic stream data associated with an a
 |StreamReferenceId|string|false|true|The Id for this type reference. If an asset is derived from this asset type, this Id must be referenced in the asset reference type object. This Id must be unique within the asset type.|
 |StreamReferenceName|string|false|true|User-friendly name for type reference|
 |Description|string|false|true|Type reference description|
-|TypeId|string|true|false|Referenced SDS Type identifier.|
+|TypeId|string|true|false|Referenced SdsType Id|
 
 ```json
 {
@@ -1414,6 +1414,8 @@ Status configuration is a property of an asset or asset type that defines the si
 <a id="tocSstatusdefinitiontype"></a>
 <a id="tocsstatusdefinitiontype"></a>
 
+Status definition type. Currently, only StreamPropertyMapping is supported.
+
 #### Enumerated Values
 
 |Property|Value|
@@ -1459,6 +1461,8 @@ Status configuration is a property of an asset or asset type that defines the si
 <a id="schema_MultiStatusResultOfAssetTypeAndChildErrorTemplate"></a>
 <a id="tocSmultistatusresultofassettypeandchilderrortemplate"></a>
 <a id="tocsmultistatusresultofassettypeandchilderrortemplate"></a>
+
+A multi status result is returned to indicate a partial success.
 
 #### Properties
 

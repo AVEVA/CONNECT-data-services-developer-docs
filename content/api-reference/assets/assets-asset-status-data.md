@@ -166,7 +166,7 @@ Asset's last status
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Index|any|false|true|Index|
+|Index|any|false|true|Index which the status was last updated|
 |Status|[StatusEnum](#schemastatusenum)|false|false|Status enumeration. Valid values are: Unknown, Good, Warning and Bad.|
 |Value|any|false|true|Value of the last data retrieved|
 |DisplayName|string|false|true|Status display name|
@@ -303,21 +303,23 @@ Returns the status summary of an asset.
 <a id="tocSstatusdata"></a>
 <a id="tocsstatusdata"></a>
 
+Status data that is assocated with asset.
+
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Index|any|false|true|Index|
+|Index|any|false|true|Index which the status was last updated|
 |Status|[StatusEnum](#schemastatusenum)|false|false|Status enumeration. Valid values are: Unknown, Good, Warning and Bad.|
 |Value|any|false|true|Value of the last data retrieved|
 |DisplayName|string|false|true|Status display name|
 
 ```json
 {
-  "Index": null,
-  "Status": 0,
-  "Value": null,
-  "DisplayName": "string"
+  "Index": "2019-01-02T00:00:00Z",
+  "Status": "Warning",
+  "Value": 2,
+  "DisplayName": "AssetInWarning"
 }
 
 ```
@@ -331,13 +333,15 @@ Returns the status summary of an asset.
 <a id="tocSstatusvaluestatistics"></a>
 <a id="tocsstatusvaluestatistics"></a>
 
+Status value statistics returns asset status statistics
+
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Status|[StatusEnum](#schemastatusenum)|false|false|Pre-defined asset status values.|
-|TotalInterval|any|false|true|None|
-|Values|[[UnderlyingValueStatistics](#schemaunderlyingvaluestatistics)]|false|true|None|
+|Status|[StatusEnum](#schemastatusenum)|false|false|Asset status|
+|TotalInterval|any|false|true|Total interval|
+|Values|[[UnderlyingValueStatistics](#schemaunderlyingvaluestatistics)]|false|true|Asset status statistics per interval|
 
 ```json
 {
@@ -363,13 +367,15 @@ Returns the status summary of an asset.
 <a id="tocSunderlyingvaluestatistics"></a>
 <a id="tocsunderlyingvaluestatistics"></a>
 
+Underlying value statistics represents statistics for a single interval
+
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Value|any|false|true|Value object|
+|Value|any|false|true|Value of the status mapping.|
 |Interval|any|false|true|Summary interval|
-|DisplayName|string|false|true|User friendly display name|
+|DisplayName|string|false|true|User-friendly display name for that status mapping|
 
 ```json
 {

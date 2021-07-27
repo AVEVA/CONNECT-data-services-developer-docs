@@ -517,67 +517,41 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 
 #### Example response body
-> 200 Response ([SearchResultsOfSearchResult](#schemasearchresultsofsearchresult))
+> 200 Response
 
 ```json
 {
-  "TotalCount": 0,
+  "Count": 1,
   "Results": [
     {
-      "TotalCount": 2,
-      "Results": [
+      "MatchedProperties": [
         {
-          "MatchedFields": [
-            {
-              "Field": "Description",
-              "Terms": [
-                "searchedDescription"
-              ]
-            },
-            {
-              "Field": "Name",
-              "Terms": [
-                "searchedName"
-              ]
-            }
-          ],
-          "Score": 0.07410964510231982,
-          "Id": "AssetsSearchDemo1",
-          "Name": "SearchedName 1",
-          "Description": "SearchedDescription 1",
-          "ETag": "1",
-          "CreatedDate": "2021-06-28T05:57:13.4249707Z",
-          "LastModifiedDate": "2021-06-28T05:57:13.4249707Z"
-        },
-        {
-          "MatchedFields": [
-            {
-              "Field": "Description",
-              "Terms": [
-                "searchedDescription"
-              ]
-            },
-            {
-              "Field": "Name",
-              "Terms": [
-                "searchedName"
-              ]
-            }
-          ],
-          "Score": 0.062210717451675585,
-          "Id": "AssetsSearchDemo2",
-          "Name": "SearchResultName 2",
-          "Description": "SearchResultDescription 2",
-          "ETag": "6",
-          "CreatedDate": "2021-06-28T05:57:13.5965826Z",
-          "LastModifiedDate": "2021-06-28T05:57:13.5965826Z"
+          "Field": "Name",
+          "Value": "Asset Mine Truck 353e3cfe-f20b-4bef-b9c4-f75fbbdc0818"
         }
-      ]
+      ],
+      "Id": "AssetId2b5f41ae-0929-4977-bfbd-1e046d8a66f4",
+      "TypeId": "AssetMineTruckType",
+      "Name": "Asset Mine Truck 353e3cfe-f20b-4bef-b9c4-f75fbbdc0818",
+      "Description": "First mine truck used the mine diamon hands",
+      "ETag": "1",
+      "CreatedDate": "2021-05-26T19:05:33.8979442Z",
+      "LastModifiedDate": "2021-05-26T19:05:33.8979442Z"
     }
-  ],
-  "ContinuationTokens": [
-    "string"
   ]
+}
+```
+
+> 400 Response ([ErrorTemplate](#schemaerrortemplate))
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
 }
 ```
 
@@ -1256,8 +1230,8 @@ An asset stream reference represents dynamic stream data associated with an asse
 |---|---|---|---|---|
 |Id|string|false|true|Stream Reference identifier|
 |Name|string|false|true|User-friendly name for stream reference|
-|Description|string|false|true|Stream reference description|
-|StreamId|string|true|false|SDS stream identifier that's being referenced.|
+|Description|string|false|true|Description of the stream reference|
+|StreamId|string|true|false|SDS stream Id that is being referenced.|
 
 ```json
 {
@@ -1319,6 +1293,8 @@ Status configuration is a property of an asset or asset type that defines the si
 <a id="tocSstatusdefinitiontype"></a>
 <a id="tocsstatusdefinitiontype"></a>
 
+Status definition type. Currently, only StreamPropertyMapping is supported.
+
 #### Enumerated Values
 
 |Property|Value|
@@ -1364,6 +1340,8 @@ Status configuration is a property of an asset or asset type that defines the si
 <a id="schema_MultiStatusResultOfAssetAndChildErrorTemplate"></a>
 <a id="tocSmultistatusresultofassetandchilderrortemplate"></a>
 <a id="tocsmultistatusresultofassetandchilderrortemplate"></a>
+
+A multi status result is returned to indicate a partial success.
 
 #### Properties
 
@@ -1473,72 +1451,35 @@ Status configuration is a property of an asset or asset type that defines the si
 <a id="tocSsearchresultsofsearchresult"></a>
 <a id="tocssearchresultsofsearchresult"></a>
 
+The set of search results matching search query.
+
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|TotalCount|int32|false|false|None|
-|Results|[[SearchResult](#schemasearchresult)]|false|true|[Search results]|
-|ContinuationTokens|string[]|false|true|None|
+|TotalCount|int32|false|false|Total number of items matching search that is returned.|
+|Results|[[SearchResult](#schemasearchresult)]|false|true|The search results.|
+|ContinuationTokens|string[]|false|true|List of continuation tokens for navigation.|
 
 ```json
 {
-  "TotalCount": 0,
+  "Count": 1,
   "Results": [
     {
-      "TotalCount": 2,
-      "Results": [
+      "MatchedProperties": [
         {
-          "MatchedFields": [
-            {
-              "Field": "Description",
-              "Terms": [
-                "searchedDescription"
-              ]
-            },
-            {
-              "Field": "Name",
-              "Terms": [
-                "searchedName"
-              ]
-            }
-          ],
-          "Score": 0.07410964510231982,
-          "Id": "AssetsSearchDemo1",
-          "Name": "SearchedName 1",
-          "Description": "SearchedDescription 1",
-          "ETag": "1",
-          "CreatedDate": "2021-06-28T05:57:13.4249707Z",
-          "LastModifiedDate": "2021-06-28T05:57:13.4249707Z"
-        },
-        {
-          "MatchedFields": [
-            {
-              "Field": "Description",
-              "Terms": [
-                "searchedDescription"
-              ]
-            },
-            {
-              "Field": "Name",
-              "Terms": [
-                "searchedName"
-              ]
-            }
-          ],
-          "Score": 0.062210717451675585,
-          "Id": "AssetsSearchDemo2",
-          "Name": "SearchResultName 2",
-          "Description": "SearchResultDescription 2",
-          "ETag": "6",
-          "CreatedDate": "2021-06-28T05:57:13.5965826Z",
-          "LastModifiedDate": "2021-06-28T05:57:13.5965826Z"
+          "Field": "Name",
+          "Value": "Asset Mine Truck 353e3cfe-f20b-4bef-b9c4-f75fbbdc0818"
         }
-      ]
+      ],
+      "Id": "AssetId2b5f41ae-0929-4977-bfbd-1e046d8a66f4",
+      "TypeId": "AssetMineTruckType",
+      "Name": "Asset Mine Truck 353e3cfe-f20b-4bef-b9c4-f75fbbdc0818",
+      "Description": "First mine truck used the mine diamon hands",
+      "ETag": "1",
+      "CreatedDate": "2021-05-26T19:05:33.8979442Z",
+      "LastModifiedDate": "2021-05-26T19:05:33.8979442Z"
     }
-  ],
-  "ContinuationTokens": [
-    "string"
   ]
 }
 
@@ -1657,21 +1598,23 @@ Matched fields. Includes the matched property and matched terms.
 <a id="tocSstatusdata"></a>
 <a id="tocsstatusdata"></a>
 
+Status data that is assocated with asset.
+
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Index|any|false|true|Index|
+|Index|any|false|true|Index which the status was last updated|
 |Status|[StatusEnum](#schemastatusenum)|false|false|Status enumeration. Valid values are: Unknown, Good, Warning and Bad.|
 |Value|any|false|true|Value of the last data retrieved|
 |DisplayName|string|false|true|Status display name|
 
 ```json
 {
-  "Index": null,
-  "Status": 0,
-  "Value": null,
-  "DisplayName": "string"
+  "Index": "2019-01-02T00:00:00Z",
+  "Status": "Warning",
+  "Value": 2,
+  "DisplayName": "AssetInWarning"
 }
 
 ```
@@ -1764,7 +1707,7 @@ Asset's last status
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Index|any|false|true|Index|
+|Index|any|false|true|Index which the status was last updated|
 |Status|[StatusEnum](#schemastatusenum)|false|false|Status enumeration. Valid values are: Unknown, Good, Warning and Bad.|
 |Value|any|false|true|Value of the last data retrieved|
 |DisplayName|string|false|true|Status display name|
@@ -1790,6 +1733,8 @@ Asset's last status
 <a id="schema_MultiStatusResultOfLastStatusDataAndChildErrorTemplate"></a>
 <a id="tocSmultistatusresultoflaststatusdataandchilderrortemplate"></a>
 <a id="tocsmultistatusresultoflaststatusdataandchilderrortemplate"></a>
+
+A multi status result is returned to indicate a partial success.
 
 #### Properties
 
@@ -1838,6 +1783,8 @@ Asset's last status
 <a id="schema_MultiStatusResultOfStringAndChildErrorTemplate"></a>
 <a id="tocSmultistatusresultofstringandchilderrortemplate"></a>
 <a id="tocsmultistatusresultofstringandchilderrortemplate"></a>
+
+A multi status result is returned to indicate a partial success.
 
 #### Properties
 
@@ -2057,8 +2004,8 @@ Resolved stream is a property of the resolved asset.
   "StreamId": "string",
   "PropertyMaps": [
     {
-      "Id": "string",
-      "SourcePropertyId": "string"
+      "Id": "Timestamp",
+      "SourcePropertyId": "Timestamp"
     }
   ]
 }
@@ -2230,12 +2177,12 @@ Property map
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Id|string|false|true|Property map identifier|
-|SourcePropertyId|string|false|true|Source identifier|
+|SourcePropertyId|string|false|true|Source property identifier|
 
 ```json
 {
-  "Id": "string",
-  "SourcePropertyId": "string"
+  "Id": "Timestamp",
+  "SourcePropertyId": "Timestamp"
 }
 
 ```

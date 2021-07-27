@@ -438,7 +438,10 @@ DELETE /api/v1/Tenants/{tenantId}/HybridClients/{clientId}
   "Error": "string",
   "Reason": "string",
   "Resolution": "string",
-  "EventId": "string",
+  "DynamicProperties": {
+    "property1": null,
+    "property2": null
+  },
   "property1": null,
   "property2": null
 }
@@ -480,10 +483,10 @@ GET /api/v1-preview/Tenants/{tenantId}/HybridClients
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[HybridClient2](#schemahybridclient2)[]|List of hybrid clients found|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
-|404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
+|401|[ErrorResponse2](#schemaerrorresponse2)|Unauthorized.<br/>|
+|403|[ErrorResponse2](#schemaerrorresponse2)|Forbidden.<br/>|
+|404|[ErrorResponse2](#schemaerrorresponse2)|Tenant not found|
+|500|[ErrorResponse2](#schemaerrorresponse2)|Internal server error.<br/>|
 
 #### Example response body
 > 200 Response ([HybridClient2](#schemahybridclient2)[])
@@ -570,13 +573,13 @@ New HybridClientCreate object<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |201|[HybridClientResponse](#schemahybridclientresponse)|Hybrid Client created|
-|400|[ErrorResponse](#schemaerrorresponse)|Client limit exceeded|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
-|404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.<br/>|
-|409|[ErrorResponse](#schemaerrorresponse)|Client identifier already exists|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
+|400|[ErrorResponse2](#schemaerrorresponse2)|Client limit exceeded|
+|401|[ErrorResponse2](#schemaerrorresponse2)|Unauthorized.<br/>|
+|403|[ErrorResponse2](#schemaerrorresponse2)|Forbidden.<br/>|
+|404|[ErrorResponse2](#schemaerrorresponse2)|Tenant not found|
+|408|[ErrorResponse2](#schemaerrorresponse2)|Operation timed out.<br/>|
+|409|[ErrorResponse2](#schemaerrorresponse2)|Client identifier already exists|
+|500|[ErrorResponse2](#schemaerrorresponse2)|Internal server error.<br/>|
 
 #### Example response body
 > 201 Response ([HybridClientResponse](#schemahybridclientresponse))
@@ -638,10 +641,10 @@ GET /api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[HybridClient2](#schemahybridclient2)|Hybrid client specified|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
-|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
+|401|[ErrorResponse2](#schemaerrorresponse2)|Unauthorized.<br/>|
+|403|[ErrorResponse2](#schemaerrorresponse2)|Forbidden.<br/>|
+|404|[ErrorResponse2](#schemaerrorresponse2)|Client or tenant not found|
+|500|[ErrorResponse2](#schemaerrorresponse2)|Internal server error.<br/>|
 
 #### Example response body
 > 200 Response ([HybridClient2](#schemahybridclient2))
@@ -725,12 +728,12 @@ Updated Hybrid Client values<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[HybridClient2](#schemahybridclient2)|Updated hybrid client|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.<br/>|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
-|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.<br/>|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
+|400|[ErrorResponse2](#schemaerrorresponse2)|Missing or invalid inputs.<br/>|
+|401|[ErrorResponse2](#schemaerrorresponse2)|Unauthorized.<br/>|
+|403|[ErrorResponse2](#schemaerrorresponse2)|Forbidden.<br/>|
+|404|[ErrorResponse2](#schemaerrorresponse2)|Client or tenant not found|
+|408|[ErrorResponse2](#schemaerrorresponse2)|Operation timed out.<br/>|
+|500|[ErrorResponse2](#schemaerrorresponse2)|Internal server error.<br/>|
 
 #### Example response body
 > 200 Response ([HybridClient2](#schemahybridclient2))
@@ -874,17 +877,17 @@ Object used for hybrid clients
 <a id="tocSerrorresponse"></a>
 <a id="tocserrorresponse"></a>
 
-Object returned when there is an error
+Object returned whenever there is an error
 
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|OperationId|string|true|false|OperationId of action that caused the error|
+|OperationId|string|true|false|Operation identifier of action that caused the error|
 |Error|string|true|false|Error description|
 |Reason|string|true|false|Reason for the error|
-|Resolution|string|true|false|Resolution for the error|
-|EventId|string|true|false|EventId for the error|
+|Resolution|string|true|false|Resolution to resolve the error|
+|DynamicProperties|object|false|true|Additional properties|
 
 ```json
 {
@@ -892,7 +895,10 @@ Object returned when there is an error
   "Error": "string",
   "Reason": "string",
   "Resolution": "string",
-  "EventId": "string",
+  "DynamicProperties": {
+    "property1": null,
+    "property2": null
+  },
   "property1": null,
   "property2": null
 }
@@ -1007,6 +1013,40 @@ Object returned after a hybrid client is created
   ],
   "ClientSecret": "string",
   "SecretId": "string"
+}
+
+```
+
+---
+
+### ErrorResponse2
+
+<a id="schemaerrorresponse2"></a>
+<a id="schema_ErrorResponse2"></a>
+<a id="tocSerrorresponse2"></a>
+<a id="tocserrorresponse2"></a>
+
+Object returned when there is an error
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|OperationId|string|true|false|OperationId of action that caused the error|
+|Error|string|true|false|Error description|
+|Reason|string|true|false|Reason for the error|
+|Resolution|string|true|false|Resolution for the error|
+|EventId|string|true|false|EventId for the error|
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "EventId": "string",
+  "property1": null,
+  "property2": null
 }
 
 ```

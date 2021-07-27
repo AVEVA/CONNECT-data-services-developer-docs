@@ -470,7 +470,10 @@ DELETE /api/v1/Tenants/{tenantId}/Users/{userId}
   "Error": "string",
   "Reason": "string",
   "Resolution": "string",
-  "EventId": "string",
+  "DynamicProperties": {
+    "property1": null,
+    "property2": null
+  },
   "property1": null,
   "property2": null
 }
@@ -582,7 +585,10 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}/Preferences
   "Error": "string",
   "Reason": "string",
   "Resolution": "string",
-  "EventId": "string",
+  "DynamicProperties": {
+    "property1": null,
+    "property2": null
+  },
   "property1": null,
   "property2": null
 }
@@ -672,7 +678,10 @@ PUT /api/v1/Tenants/{tenantId}/Users/{userId}/Preferences
   "Error": "string",
   "Reason": "string",
   "Resolution": "string",
-  "EventId": "string",
+  "DynamicProperties": {
+    "property1": null,
+    "property2": null
+  },
   "property1": null,
   "property2": null
 }
@@ -1128,17 +1137,17 @@ ChildError objects returned in a 207 response
 <a id="tocSerrorresponse"></a>
 <a id="tocserrorresponse"></a>
 
-Object returned when there is an error
+Object returned whenever there is an error
 
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|OperationId|string|true|false|OperationId of action that caused the error|
+|OperationId|string|true|false|Operation identifier of action that caused the error|
 |Error|string|true|false|Error description|
 |Reason|string|true|false|Reason for the error|
-|Resolution|string|true|false|Resolution for the error|
-|EventId|string|true|false|EventId for the error|
+|Resolution|string|true|false|Resolution to resolve the error|
+|DynamicProperties|object|false|true|Additional properties|
 
 ```json
 {
@@ -1146,7 +1155,10 @@ Object returned when there is an error
   "Error": "string",
   "Reason": "string",
   "Resolution": "string",
-  "EventId": "string",
+  "DynamicProperties": {
+    "property1": null,
+    "property2": null
+  },
   "property1": null,
   "property2": null
 }

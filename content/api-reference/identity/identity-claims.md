@@ -361,7 +361,10 @@ DELETE /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims/
   "Error": "string",
   "Reason": "string",
   "Resolution": "string",
-  "EventId": "string",
+  "DynamicProperties": {
+    "property1": null,
+    "property2": null
+  },
   "property1": null,
   "property2": null
 }
@@ -416,17 +419,17 @@ Object representing a claim from an identity provider to map to a role
 <a id="tocSerrorresponse"></a>
 <a id="tocserrorresponse"></a>
 
-Object returned when there is an error
+Object returned whenever there is an error
 
 #### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|OperationId|string|true|false|OperationId of action that caused the error|
+|OperationId|string|true|false|Operation identifier of action that caused the error|
 |Error|string|true|false|Error description|
 |Reason|string|true|false|Reason for the error|
-|Resolution|string|true|false|Resolution for the error|
-|EventId|string|true|false|EventId for the error|
+|Resolution|string|true|false|Resolution to resolve the error|
+|DynamicProperties|object|false|true|Additional properties|
 
 ```json
 {
@@ -434,7 +437,10 @@ Object returned when there is an error
   "Error": "string",
   "Reason": "string",
   "Resolution": "string",
-  "EventId": "string",
+  "DynamicProperties": {
+    "property1": null,
+    "property2": null
+  },
   "property1": null,
   "property2": null
 }

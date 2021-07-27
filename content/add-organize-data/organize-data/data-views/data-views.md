@@ -42,7 +42,7 @@ Data views are subsets of data from one or more streams. You create a data view 
 
 1. Click the **Interpolated/Stored** droplist and select **Interpolated** or **Stored** for the data view. 
 
-1. Click the date and time display to set the **Start Index** and **End Index** to specify the time period of the data to include in the data view. For Interpolated data views specify a Time Interval.
+1. Click the date and time display to set the **Start Index** and **End Index** to specify the time period of the data to include in the data view. For interpolated data views, set a `Time Interval`.
 
 1. Click **Apply** to accept the index configuration changes.
 

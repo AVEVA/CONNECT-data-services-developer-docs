@@ -260,7 +260,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 <br/>Index identifying the end of the series of events to return.<br/><br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>`[optional] string index`
 <br/>The index.<br/><br/>`[optional] integer searchMode`
-<br/>The , the default is exact<br/><br/>`[optional] integer skip`
+<br/>The , type of search: Exact (the default), ExactOrNext, Next, ExactOrPrevious, or Previous.<br/><br/>`[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/><br/>`[optional] boolean reversed`
 <br/>Specification of the direction of the request. By default, range requests move forward from startIndex, collecting events after startIndex 
             from the stream. A reversed request will collect events before startIndex from the stream.<br/><br/>`[optional] integer boundaryType`
@@ -361,7 +361,7 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 <br/>Index identifying the end of the series of events to return.<br/><br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>`[optional] string index`
 <br/>The index.<br/><br/>`[optional] integer searchMode`
-<br/>The , the default is exact<br/><br/>`[optional] integer skip`
+<br/>The , type of search: Exact (the default), ExactOrNext, Next, ExactOrPrevious, or Previous.<br/><br/>`[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/><br/>`[optional] boolean reversed`
 <br/>Specification of the direction of the request. By default, range requests move forward from startIndex, collecting events after startIndex 
             from the stream. A reversed request will collect events before startIndex from the stream.<br/><br/>`[optional] integer boundaryType`
@@ -865,6 +865,8 @@ Contains the error message format that follows the OCS error standards
 <a id="tocSsdssearchmode"></a>
 <a id="tocssdssearchmode"></a>
 
+The SdsSearchMode defines search behavior when seeking a stored event near a specified index.
+
 #### Enumerated Values
 
 |Property|Value|
@@ -883,6 +885,8 @@ Contains the error message format that follows the OCS error standards
 <a id="schema_SdsBoundaryType"></a>
 <a id="tocSsdsboundarytype"></a>
 <a id="tocssdsboundarytype"></a>
+
+The SdsBoundaryType defines how data on the boundary of queries is handled: around the start index for range value queries, and around the start and end index for window values
 
 #### Enumerated Values
 

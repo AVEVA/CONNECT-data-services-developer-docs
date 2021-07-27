@@ -44,7 +44,7 @@ Use this procedure to remove a tenant from a community. This action might be nec
 
 After removing a tenant, you can re-invite the tenant to the community but all data that was previously shared must be shared again with the returning tenant.
 
-**Note.** Only an OCS user who has a [Community Administrator](xref:communityroles#community-administrator) role can remove a tenant from a community.  
+**Note:** Only an OCS user who has a [Community Administrator](xref:communityroles#community-administrator) role can remove a tenant from a community.  
 
 1. On the `Communities` overview page, find the community you want to modify and click **Details**.
 2. On the `Community Details` page, click the **Tenants** tab.
@@ -59,7 +59,7 @@ After removing your tenant, you can be re-invited to the community but all data 
 
 If your tenant created a community, you cannot remove your own tenant from the community.
 
-**Note.** Only OCS users who have the [Community Moderator](xref:communityroles#community-moderator) role can remove their own tenant from a community.
+**Note:** Only OCS users who have the [Community Moderator](xref:communityroles#community-moderator) role can remove their own tenant from a community.
 
 1. On the `Communities` overview page, find the community you want to leave and click **Details**.
 2. On the `Community Details` page, click the **Tenants** tab.

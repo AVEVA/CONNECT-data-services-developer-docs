@@ -286,7 +286,7 @@ Once the asset rule is successfully executed, review the created assets and conf
 
     **Tip:** Click the pencil icon in the toolbar to see the individual streams referenced in the asset.
 
-## Related Links
+## See also
 
 [How tokens are used in the Asset Rule Builder to generate assets](xref:TokensGenerateAssets) 
 

@@ -4,7 +4,7 @@ uid: Dataviews1
 
 # Create a data view
 
-Data views are subsets of data from one or more streams. You create a data view by defining the target namespace, and then specifying the source stream or streams, selected data fields, time period, and interpolation interval. 
+Data views are subsets of data from one or more streams. You create a data view by defining the target namespace, and then entering the source stream or streams, selected data fields, time period, and interpolation interval. 
 
 ## Procedure
 
@@ -14,7 +14,7 @@ Data views are subsets of data from one or more streams. You create a data view 
  
 1. Enter the data view name and description in the `Data View Information` pane.
 
-1. Click **Standard** or **Narrow** to specify the general shape of the data display.
+1. Click **Standard** or **Narrow** to enter the general shape of the data display.
 
 1. In the `Query ID` field in the center pane, enter a name for *Query1* in the **Query ID** field, or accept the default name. 
 
@@ -42,7 +42,7 @@ Data views are subsets of data from one or more streams. You create a data view 
 
 1. Click the **Interpolated/Stored** droplist and select **Interpolated** or **Stored** for the data view. 
 
-1. Click the date and time display to set the **Start Index** and **End Index** to specify the time period of the data to include in the data view. For interpolated data views, set a `Time Interval`.
+1. Click the date and time display to set the **Start Index** and **End Index** to enter the time period of the data to include in the data view. For interpolated data views, enter a `Time Interval`.
 
 1. Click **Apply** to accept the index configuration changes.
 

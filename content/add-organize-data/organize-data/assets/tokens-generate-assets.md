@@ -1,12 +1,12 @@
 ---
-uid: TokensAssetConfig
+uid: TokensGenerateAssets
 ---
 
 # How tokens are used to generate assets
 
-<WRITER'S NOTE: I need to update these screen captures to show changes I've made to the Configure Asset dialog and to show that the assets are based on an asset type. But I'm not able to produce the assets in order to take the screen captures. -->
+<!-- WRITER'S NOTE: I need to update these screen captures to show changes I've made to the Configure Asset dialog and to show that the assets are based on an asset type. But I'm not able to produce the assets in order to take the screen captures. -->
 
-The following screen capture shows the `Configure Asset` dialog for the [Tank Rule A example](xref:AssetRules#tank-rule-example). The numbers identify the different fields and the tokens assigned to those fields. These tokens are used to configure the assets created with the rule.![Configure Assets dialog](images/configure-asset.png)
+The following screen capture shows the `Configure Asset` dialog for the [Tank Rule A example](xref:CreateAssetRules#tank). The numbers identify the different fields and the tokens assigned to those fields. These tokens are used to configure the assets created with the rule.![Configure Assets dialog](images/configure-asset.png)
 
 
 The following table shows the token definitions for the Tank rule and the resulting values for one of the assets (Tank 01) when the rule is applied.

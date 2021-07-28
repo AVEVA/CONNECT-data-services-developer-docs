@@ -1,9 +1,9 @@
 ---
-uid: CreateAssetRule
+uid: CreateAssetRules
 ---
 
 
-# Asset rules
+# Create asset rules
 
 Asset rules identify patterns in stream names and use this information to automatically create assets. In order to generate the assets, stream names must have the following characteristics:
 
@@ -21,7 +21,7 @@ Depending on the definition and consistency of the stream names, you may have to
 
 <!-- Writer's Note: This example can be found in the DaedalusTest tenant, VizTesting namespace. See Prachi Bagayatkar or Scott Harrison for access. -->
 
-Throughout the [Create an asset rule](#create) procedure, we refer to the following simple example. There are three tank assets. The following characters in the stream names identify the three assets : SL-Tank01, SL-Tank02, and PHI-Tank03. There are two streams for each tank, one stream with temperature data (indicated by *Temp* in its name) and the other with pressure data (indicated by *Press* in its name).
+Throughout the [Use the Asset Rule Builder to create the asset rule](#create) procedure, we refer to the following simple example. There are three tank assets. The following characters in the stream names identify the three assets : SL-Tank01, SL-Tank02, and PHI-Tank03. There are two streams for each tank, one stream with temperature data (indicated by *Temp* in its name) and the other with pressure data (indicated by *Press* in its name).
 
 We will construct an asset rule, named Tank Rule A, that creates three assets, one for each tank. Each asset will include references to the two streams that belong to that tank. The following table displays the six streams, the asset associated with the stream, and the measurement in each stream. 
 
@@ -55,7 +55,7 @@ We will construct an asset rule, named Tank Rule A, that creates three assets, o
      
      For more information on asset types, see [Asset types](xref:AssetTypes) and [Create an asset from an asset type](xref:CreateAssetFromAssetType).
 
-**Note:** If your rule is not based on an asset type, there are some differences in the procedure. These differences are noted in the steps.
+   **Note:** If your rule is not based on an asset type, there are some differences in the procedure. These differences are noted in the steps.
 
 5. Click **Continue**.
 
@@ -68,7 +68,7 @@ We will construct an asset rule, named Tank Rule A, that creates three assets, o
    
    The `Asset Rule Builder` window displays.
 
-## <a name="create"></a>Create the asset rule
+## <a name="create"></a>Use the Asset Rule Builder to create the asset rule
 
 The Asset Rule Builder walks you through the following steps to create and execute the asset rule:
 
@@ -89,19 +89,18 @@ In this step, you configure the pattern used to find and match the appropriate s
 
 4. Click **Capture**.  
 
-   Referring to our [Tank Rule A example](xref:#tank), the first part of all stream names identifies the site location. This is represented by the characters *SL* or *PHI*. In the PHI-Tank03Press stream, the site location is represented by the characters *PHI*. This part of the stream name is selected in the screen capture below.
+   Referring to our [Tank Rule A example](#tank), the first part of all stream names identifies the site location. This is represented by the characters *SL* or *PHI*. In the PHI-Tank03Press stream, the site location is represented by the characters *PHI*. This part of the stream name is selected in the screen capture below.
 
-The **1. Match** list of choices displays different ways in which this string of characters can be identified by the asset rule. Some of the choices would work with the example stream, but they would fail to identify the site information in all stream names. For example, *the string literal "PHI"* or *the next 3 characters*  would not identify *SL* as the site. 
+   The **1. Match** list of choices displays different ways in which this string of characters can be identified by the asset rule. Some of the choices would work with the example stream, but they would fail to identify the site information in all stream names. For example, *the string literal "PHI"* or *the next 3 characters*  would not identify *SL* as the site. 
 
-As you create your tokens, keep in mind that the descriptor must be able to extract the correct information for all of the streams that you want identified by this rule. The rule must also exclude any streams that you do not want identified with this rule, for example, streams that belong to a pump asset. In this example,  *everything preceding the delimiter"-"* will extract the site information for all streams. 
+   As you create your tokens, keep in mind that the descriptor must be able to extract the correct information for all of the streams that you want identified by this rule. The rule must also exclude any streams that you do not want identified with this rule, for example, streams that belong to a pump asset. In this example,  *everything preceding the delimiter"-"* will extract the site information for all streams. 
 
-The token is assigned the name *site*. 
+   The token is assigned the name *site*. 
 
-<!-- WRITER'S NOTE: All the screen captures need to be reviewed and probably updated. In particular, the screen captures in this "Step 1: Extract the tokens from the stream" will need to be updated. The wording of the choices is being changed. -->
+   <!-- WRITER'S NOTE: All the screen captures need to be reviewed and probably updated. In particular, the screen captures in this "Step 1: Extract the tokens from the stream" will need to be updated. The wording of the choices is being changed. -->
 
-![First token](images/first-token.png)
-
-The token and the placeholder value, *{site} - PHI*, are added to the **Tokens** list in the right pane.
+   ![](images/first-token.png)
+   The token and the placeholder value, *{site} - PHI*, are added to the **Tokens** list in the right pane. 
 
 5. Repeat steps 1-4 for each part of the stream name. 
 
@@ -111,15 +110,12 @@ The token and the placeholder value, *{site} - PHI*, are added to the **Tokens**
 
    <!--WRITER'S NOTE: These images were taken with SnagIt and reduced by 50%. The resolution may be too fuzzy and they may have to be enlarged. -->
 
-   <!-- ![Second token](images/second-token.png) -->
-   
-   ![](images/second-rule-token-2.png)
+   ![Second token](images/second-token.png) 
    
    The next part of the stream name is a number that identifies the equipment's ID. *03* is matched using  *the next group of numbers*, and this token is assigned the name *equipment_id*. Because we anticipate using this rule to create assets with Ids running into the thousands, we do not use *the next 2 numbers* to match the Id.
-   
+
    ![](images/third-token.png)
-   
-   
+
    The last part of the stream name identifies what is being measured in the stream. This token is matched using *the rest of the stream name*, and it is named *measurement*.
    ![Fourth tokebn](images/fourth-token.png)
    
@@ -167,7 +163,7 @@ In this step, you specify which part of the stream name identifies the measureme
 
 3. Select each token in the `Token Mappings Status` list.
 
-4. In the `Token Value Mappings` pane on the right, choose either of the following: <WRITER'S NOTE: Changes are coming. >
+4. In the `Token Value Mappings` pane on the right, choose either of the following: <!-- WRITER'S NOTE: Changes are coming. -->
 
    - **Use Existing Token Values** &ndash; OSIsoft Cloud Services (OCS) replaces the token with the values found in the stream names or in the stream metadata.
    - **Rename Token Values** &ndash; OCS replaces the value in the stream name and stream metadata with the mapped values.
@@ -178,7 +174,7 @@ In this step, you specify which part of the stream name identifies the measureme
 
 5. If you want to map a different value in place of the token values, click the **Rename Token Values** option. Then click **Generate Mappings** to display the list of token values. 
 
-6. in the `Generate Mappings` dialog, click **Generate** to confirm that you want to overwrite mappings with server-generated mappings. < WRITER'S NOTE: This message is changing. >
+6. in the `Generate Mappings` dialog, click **Generate** to confirm that you want to overwrite mappings with server-generated mappings. <!--WRITER'S NOTE: This message is changing. -->
 
    OCS searches for any streams that match the stream pattern, and it provides a list of the token values. 
 
@@ -250,8 +246,6 @@ The asset preview displays a list of the assets that will be created using the a
 
    ![Preview assets](images/preview-assets.png)
 
-   
-
    **Note:** 
 
    - The ![Tag icon](images/tag-icon.png) icon identifies the metadata and the ![Rule icon](images/rule-icon.png) icon identifies the stream references. 
@@ -259,8 +253,9 @@ The asset preview displays a list of the assets that will be created using the a
    - The stream Id is identified for each stream. For example, the Id of the stream in the first row is PHI-TNK01.
 
 1. Use the Table Settings to customize your preview.
-    ![Table settings](images/table-set.png)
-    
+
+   ![Table settings](images/table-set.png)
+   
    Use the metadata filters ![Metadata filter](images/metadata-filter.png) to isolate the assets you want to view.
    
 2. Refer to the asset rule statistics to validate that the rule produced the expected number of assets and the expected number of streams were processed. 
@@ -293,7 +288,7 @@ Once the asset rule is successfully executed, review the created assets and conf
 
 ## Related Links
 
-[How tokens are used in the Asset Rule Builder to generate assets](uid: TokenAssetConfig) 
+[How tokens are used in the Asset Rule Builder to generate assets](xref:TokensGenerateAssets) 
 
-[Using multiple asset rules to create assets](xref:UsingMuiltipleRules)
+[Using multiple asset rules to create assets](xref:UsingMultipleRules)
 

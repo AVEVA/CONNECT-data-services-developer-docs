@@ -16,3 +16,5 @@
   topicHref: tokens-generate-assets.md
 - name: Using multiple rules to create assets
   topicHref: second-rule.md
+- name: Working with assets created with asset rules
+  topicHref: work-with-assets.md

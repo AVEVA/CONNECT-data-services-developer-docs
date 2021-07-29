@@ -20,7 +20,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/assetrul
 #### Parameters
 
 `string token`
-<br/>A Guid which corresponds to a preview that has been created using the CancellationToken) method.<br/><br/>`integer skip`
+<br/>A Guid which corresponds to a preview that has been created using the StartPreview method.<br/><br/>`integer skip`
 <br/>An Int32 to determine the number of preview results to skip.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/><br/>
@@ -329,7 +329,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 #### Parameters
 
 `string token`
-<br/>A Guid which corresponds to a preview that has been created using the CancellationToken) method.<br/><br/>`string tenantId`
+<br/>A Guid which corresponds to a preview that has been created using the StartPreview method.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/><br/>
 
@@ -765,11 +765,34 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |AssetId|string|false|true|None|
+|Streams|[[SdsStream](#schemasdsstream)]|false|true|None|
 |Asset|[Asset](#schemaasset)|false|true|None|
 
 ```json
 {
   "AssetId": "string",
+  "Streams": [
+    {
+      "Id": "string",
+      "Name": "string",
+      "Description": "string",
+      "TypeId": "string",
+      "Indexes": [
+        {
+          "SdsTypePropertyId": "string"
+        }
+      ],
+      "InterpolationMode": 0,
+      "ExtrapolationMode": 0,
+      "PropertyOverrides": [
+        {
+          "SdsTypePropertyId": "string",
+          "Uom": "string",
+          "InterpolationMode": 0
+        }
+      ]
+    }
+  ],
   "Asset": {
     "Id": "string",
     "AssetTypeId": "string",
@@ -805,6 +828,139 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
       ]
     }
   }
+}
+
+```
+
+---
+
+### SdsStream
+
+<a id="schemasdsstream"></a>
+<a id="schema_SdsStream"></a>
+<a id="tocSsdsstream"></a>
+<a id="tocssdsstream"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Id|string|false|true|None|
+|Name|string|false|true|None|
+|Description|string|false|true|None|
+|TypeId|string|false|true|None|
+|Indexes|[[SdsStreamIndex](#schemasdsstreamindex)]|false|true|None|
+|InterpolationMode|[SdsInterpolationMode](#schemasdsinterpolationmode)|false|true|None|
+|ExtrapolationMode|[SdsExtrapolationMode](#schemasdsextrapolationmode)|false|true|None|
+|PropertyOverrides|[[SdsStreamPropertyOverride](#schemasdsstreampropertyoverride)]|false|true|None|
+
+```json
+{
+  "Id": "string",
+  "Name": "string",
+  "Description": "string",
+  "TypeId": "string",
+  "Indexes": [
+    {
+      "SdsTypePropertyId": "string"
+    }
+  ],
+  "InterpolationMode": 0,
+  "ExtrapolationMode": 0,
+  "PropertyOverrides": [
+    {
+      "SdsTypePropertyId": "string",
+      "Uom": "string",
+      "InterpolationMode": 0
+    }
+  ]
+}
+
+```
+
+---
+
+### SdsStreamIndex
+
+<a id="schemasdsstreamindex"></a>
+<a id="schema_SdsStreamIndex"></a>
+<a id="tocSsdsstreamindex"></a>
+<a id="tocssdsstreamindex"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|SdsTypePropertyId|string|false|true|None|
+
+```json
+{
+  "SdsTypePropertyId": "string"
+}
+
+```
+
+---
+
+### SdsInterpolationMode
+
+<a id="schemasdsinterpolationmode"></a>
+<a id="schema_SdsInterpolationMode"></a>
+<a id="tocSsdsinterpolationmode"></a>
+<a id="tocssdsinterpolationmode"></a>
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|Default|0|
+|Continuous|0|
+|StepwiseContinuousLeading|1|
+|StepwiseContinuousTrailing|2|
+|Discrete|3|
+|ContinuousNullableLeading|4|
+|ContinuousNullableTrailing|5|
+
+---
+
+### SdsExtrapolationMode
+
+<a id="schemasdsextrapolationmode"></a>
+<a id="schema_SdsExtrapolationMode"></a>
+<a id="tocSsdsextrapolationmode"></a>
+<a id="tocssdsextrapolationmode"></a>
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|All|0|
+|None|1|
+|Forward|2|
+|Backward|3|
+
+---
+
+### SdsStreamPropertyOverride
+
+<a id="schemasdsstreampropertyoverride"></a>
+<a id="schema_SdsStreamPropertyOverride"></a>
+<a id="tocSsdsstreampropertyoverride"></a>
+<a id="tocssdsstreampropertyoverride"></a>
+
+#### Properties
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|SdsTypePropertyId|string|false|true|None|
+|Uom|string|false|true|None|
+|InterpolationMode|[SdsInterpolationMode](#schemasdsinterpolationmode)|false|true|None|
+
+```json
+{
+  "SdsTypePropertyId": "string",
+  "Uom": "string",
+  "InterpolationMode": 0
 }
 
 ```

@@ -20,7 +20,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/asset
 #### Parameters
 
 `string token`
-<br/>A Guid which corresponds to a SuggestionResponse that has been created using the CancellationToken) method.<br/><br/>`string tenantId`
+<br/>A Guid which corresponds to a SuggestionResponse that has been created using the StartSuggestion method.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/><br/>
 
@@ -284,7 +284,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/as
 #### Parameters
 
 `string token`
-<br/>A Guid which corresponds to a SuggestionResponse that has been created using the CancellationToken) method.<br/><br/>`string tenantId`
+<br/>A Guid which corresponds to a SuggestionResponse that has been created using the StartSuggestion method.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/><br/>
 

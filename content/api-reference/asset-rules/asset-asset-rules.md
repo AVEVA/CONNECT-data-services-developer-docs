@@ -367,7 +367,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
 <br/>The RuleRouteOptions uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/><br/>`string ruleId`
-<br/><br/>
+<br/>The Id of an asset rule.<br/><br/>
 
 ### Response
 
@@ -509,7 +509,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
 <br/>The RuleRouteOptions uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/><br/>`string ruleId`
-<br/><br/>
+<br/>The Id of an asset rule.<br/><br/>
 
 ### Request Body
 
@@ -708,7 +708,7 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
 <br/>The RuleRouteOptions uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/><br/>`string ruleId`
-<br/><br/>
+<br/>The Id of an asset rule.<br/><br/>
 `[optional] integer Skip`
 <br/>An Int32 to determine how many results to skip. Defaults to DefaultSkip<br/><br/>`[optional] integer Count`
 <br/>An Int32 to determine how many results to return. Defaults to DefaultCount<br/><br/>`[optional] boolean KeepOldMetadata`
@@ -906,7 +906,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
 <br/>The RuleRouteOptions uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/><br/>`string ruleId`
-<br/><br/>
+<br/>The Id of an asset rule.<br/><br/>
 `[optional] integer Skip`
 <br/>An Int32 to determine how many results to skip. Defaults to DefaultSkip<br/><br/>`[optional] integer Count`
 <br/>An Int32 to determine how many results to return. Defaults to DefaultCount<br/><br/>`[optional] boolean KeepOldMetadata`
@@ -989,7 +989,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/exe
 <br/>The RuleRouteOptions uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/><br/>`string ruleId`
-<br/><br/>
+<br/>The Id of an asset rule.<br/><br/>
 
 ### Response
 
@@ -1097,7 +1097,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rule
 <br/>The RuleRouteOptions uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/><br/>`string ruleId`
-<br/><br/>
+<br/>The Id of an asset rule.<br/><br/>
 
 ### Response
 

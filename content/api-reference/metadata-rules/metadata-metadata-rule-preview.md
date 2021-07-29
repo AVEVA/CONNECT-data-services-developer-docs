@@ -20,7 +20,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 #### Parameters
 
 `string token`
-<br/>A Guid which corresponds to a preview that has been created using the CancellationToken) method.<br/><br/>`integer skip`
+<br/>A Guid which corresponds to a preview that has been created using the StartPreview method.<br/><br/>`integer skip`
 <br/>An Int32 to determine the number of preview results to skip.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/><br/>
@@ -307,7 +307,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 #### Parameters
 
 `string token`
-<br/>A Guid which corresponds to a preview that has been created using the CancellationToken) method.<br/><br/>`string tenantId`
+<br/>A Guid which corresponds to a preview that has been created using the StartPreview method.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/><br/>
 

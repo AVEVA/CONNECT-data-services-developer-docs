@@ -23,7 +23,7 @@ OSIsoft recommends the following best practices to make it easier to add metadat
 
 The following diagram shows metadata for two turbines named `GEO1` and `GEO2`, each with three data streams:
 
-- The color-coded data streams show the specific data each stream is tracking, which is detailed in the Stream Metadata column.
+- The color-coded data streams show the specific data each stream is tracking, which is detailed in the **Stream Metadata** column.
 - The basic description of the stream data is encoded in the stream name. For example, for the third stream in the table, the metadata rule translated, `GEO1_P.ACT_PV`, into meaningful information. You see that `GEO1` is the name of the turbine and that `Active Power` is the measurement in this stream.  
 - A metadata rule based on this stream naming pattern can capture active power values for all turbines in each wind farm. 
 

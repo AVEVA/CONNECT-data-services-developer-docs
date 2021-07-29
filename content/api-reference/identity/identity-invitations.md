@@ -20,18 +20,18 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string userId`
-<br/>User identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string userId`
+<br/>User identifier.<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Invitation](#schemainvitation)|Invitation for the specified user|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Invitation, user, or tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 #### Example response body
 > 200 Response ([Invitation](#schemainvitation))
@@ -72,8 +72,8 @@ HEAD /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string userId`
-<br/>User identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string userId`
+<br/>User identifier.<br/><br/>
 `[optional] boolean includeExpiredInvitations`
 <br/>Specify whether to include expired invitations.<br/><br/>
 
@@ -82,11 +82,11 @@ HEAD /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Header for invitation for the specified user|
-|400|None|Missing or invalid inputs.<br/>|
-|401|None|Unauthorized.<br/>|
-|403|None|Forbidden.<br/>|
+|400|None|Missing or invalid inputs.|
+|401|None|Unauthorized.|
+|403|None|Forbidden.|
 |404|None|Tenant not found|
-|500|None|Internal server error.<br/>|
+|500|None|Internal server error.|
 
 ### Authorization
 
@@ -111,8 +111,8 @@ POST /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string userId`
-<br/>User identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string userId`
+<br/>User identifier.<br/><br/>
 
 ### Request Body
 
@@ -133,13 +133,13 @@ InvitationCreateOrUpdate object<br/>
 |---|---|---|
 |201|[Invitation](#schemainvitation)|Invitation created|
 |202|None|Invitation created|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.<br/>|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|User or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.<br/>|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
 |409|[ErrorResponse](#schemaerrorresponse)|Invitation already exists|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 #### Example response body
 > 201 Response ([Invitation](#schemainvitation))
@@ -179,8 +179,8 @@ PUT /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string userId`
-<br/>User identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string userId`
+<br/>User identifier.<br/><br/>
 
 ### Request Body
 
@@ -201,13 +201,13 @@ InvitationCreateOrUpdate object<br/>
 |---|---|---|
 |200|[Invitation](#schemainvitation)|Invitation created or updated|
 |201|[Invitation](#schemainvitation)|Invitation created or updated|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.<br/>|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|User or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.<br/>|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
 |409|[ErrorResponse](#schemaerrorresponse)|Invitation already exists|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 #### Example response body
 > 200 Response ([Invitation](#schemainvitation))
@@ -247,19 +247,19 @@ DELETE /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string userId`
-<br/>User identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string userId`
+<br/>User identifier.<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |204|None|No content|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Invitation or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.<br/>|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 #### Example response body
 > 401 Response ([ErrorResponse](#schemaerrorresponse))
@@ -300,18 +300,18 @@ GET /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string invitationId`
-<br/>Invitation identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string invitationId`
+<br/>Invitation identifier.<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Invitation](#schemainvitation)|Invitation specified|
-|401|[ErrorResponse2](#schemaerrorresponse2)|Unauthorized.<br/>|
-|403|[ErrorResponse2](#schemaerrorresponse2)|Forbidden.<br/>|
+|401|[ErrorResponse2](#schemaerrorresponse2)|Unauthorized.|
+|403|[ErrorResponse2](#schemaerrorresponse2)|Forbidden.|
 |404|[ErrorResponse2](#schemaerrorresponse2)|Invitation or tenant not found|
-|500|[ErrorResponse2](#schemaerrorresponse2)|Internal server error.<br/>|
+|500|[ErrorResponse2](#schemaerrorresponse2)|Internal server error.|
 
 #### Example response body
 > 200 Response ([Invitation](#schemainvitation))
@@ -351,18 +351,18 @@ HEAD /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string invitationId`
-<br/>Invitation identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string invitationId`
+<br/>Invitation identifier.<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Header for invitation specified|
-|401|None|Unauthorized.<br/>|
-|403|None|Forbidden.<br/>|
+|401|None|Unauthorized.|
+|403|None|Forbidden.|
 |404|None|Invitation or tenant not found|
-|500|None|Internal server error.<br/>|
+|500|None|Internal server error.|
 
 ### Authorization
 
@@ -387,8 +387,8 @@ PUT /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string invitationId`
-<br/>Invitation identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string invitationId`
+<br/>Invitation identifier.<br/><br/>
 
 ### Request Body
 
@@ -408,12 +408,12 @@ New InvitationCreateOrUpdate object. Properties that are not set or are null wil
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Invitation](#schemainvitation)|Updated invitation|
-|400|[ErrorResponse2](#schemaerrorresponse2)|Missing or invalid inputs.<br/>|
-|401|[ErrorResponse2](#schemaerrorresponse2)|Unauthorized.<br/>|
-|403|[ErrorResponse2](#schemaerrorresponse2)|Forbidden.<br/>|
+|400|[ErrorResponse2](#schemaerrorresponse2)|Missing or invalid inputs.|
+|401|[ErrorResponse2](#schemaerrorresponse2)|Unauthorized.|
+|403|[ErrorResponse2](#schemaerrorresponse2)|Forbidden.|
 |404|[ErrorResponse2](#schemaerrorresponse2)|Invitation or tenant not found|
-|408|[ErrorResponse2](#schemaerrorresponse2)|Operation timed out.<br/>|
-|500|[ErrorResponse2](#schemaerrorresponse2)|Internal server error.<br/>|
+|408|[ErrorResponse2](#schemaerrorresponse2)|Operation timed out.|
+|500|[ErrorResponse2](#schemaerrorresponse2)|Internal server error.|
 
 #### Example response body
 > 200 Response ([Invitation](#schemainvitation))
@@ -453,20 +453,20 @@ DELETE /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string invitationId`
-<br/>Invitation identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string invitationId`
+<br/>Invitation identifier.<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |204|None|No content|
-|400|[ErrorResponse2](#schemaerrorresponse2)|Missing or invalid inputs.<br/>|
-|401|[ErrorResponse2](#schemaerrorresponse2)|Unauthorized.<br/>|
-|403|[ErrorResponse2](#schemaerrorresponse2)|Forbidden.<br/>|
+|400|[ErrorResponse2](#schemaerrorresponse2)|Missing or invalid inputs.|
+|401|[ErrorResponse2](#schemaerrorresponse2)|Unauthorized.|
+|403|[ErrorResponse2](#schemaerrorresponse2)|Forbidden.|
 |404|[ErrorResponse2](#schemaerrorresponse2)|Invitation or tenant not found|
-|408|[ErrorResponse2](#schemaerrorresponse2)|Operation timed out.<br/>|
-|500|[ErrorResponse2](#schemaerrorresponse2)|Internal server error.<br/>|
+|408|[ErrorResponse2](#schemaerrorresponse2)|Operation timed out.|
+|500|[ErrorResponse2](#schemaerrorresponse2)|Internal server error.|
 
 #### Example response body
 > 400 Response ([ErrorResponse2](#schemaerrorresponse2))
@@ -510,11 +510,11 @@ GET /api/v1/Tenants/{tenantId}/Invitations
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>
 `[optional] string query`
-<br/>(Not supported) Search string identifier.<br/><br/><br/>`[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>`[optional] boolean includeExpiredInvitations`
+<br/>(Not supported) Search string identifier.<br/><br/>`[optional] integer skip`
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] boolean includeExpiredInvitations`
 <br/>Specify whether to return expired invitations.<br/><br/>
 
 ### Response
@@ -522,11 +522,11 @@ GET /api/v1/Tenants/{tenantId}/Invitations
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Invitation](#schemainvitation)[]|Invitations found|
-|400|[ErrorResponse2](#schemaerrorresponse2)|Missing or invalid inputs.<br/>|
-|401|[ErrorResponse2](#schemaerrorresponse2)|Unauthorized.<br/>|
-|403|[ErrorResponse2](#schemaerrorresponse2)|Forbidden.<br/>|
+|400|[ErrorResponse2](#schemaerrorresponse2)|Missing or invalid inputs.|
+|401|[ErrorResponse2](#schemaerrorresponse2)|Unauthorized.|
+|403|[ErrorResponse2](#schemaerrorresponse2)|Forbidden.|
 |404|[ErrorResponse2](#schemaerrorresponse2)|Tenant not found|
-|500|[ErrorResponse2](#schemaerrorresponse2)|Internal server error.<br/>|
+|500|[ErrorResponse2](#schemaerrorresponse2)|Internal server error.|
 
 #### Example response body
 > 200 Response ([Invitation](#schemainvitation)[])
@@ -569,7 +569,7 @@ HEAD /api/v1/Tenants/{tenantId}/Invitations
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>
 `[optional] boolean includeExpiredInvitations`
 <br/>Specify to return expired invitations.<br/><br/>
 
@@ -578,11 +578,11 @@ HEAD /api/v1/Tenants/{tenantId}/Invitations
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Header for invitations found|
-|400|None|Missing or invalid inputs.<br/>|
-|401|None|Unauthorized.<br/>|
-|403|None|Forbidden.<br/>|
+|400|None|Missing or invalid inputs.|
+|401|None|Unauthorized.|
+|403|None|Forbidden.|
 |404|None|Tenant not found|
-|500|None|Internal server error.<br/>|
+|500|None|Internal server error.|
 
 ### Authorization
 

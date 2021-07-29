@@ -21,21 +21,21 @@ GET /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames
 #### Parameters
 
 `string identityProviderId`
-<br/>Identity provider identifier.<br/><br/><br/>
+<br/>Identity provider identifier.<br/><br/>
 `[optional] string query`
-<br/>(Not supported) Search string identifier.<br/><br/><br/>`[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>
+<br/>(Not supported) Search string identifier.<br/><br/>`[optional] integer skip`
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[IdentityProviderClaimTypeName](#schemaidentityproviderclaimtypename)[]|List of identity provider type names found|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Identity provider not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 #### Example response body
 > 200 Response ([IdentityProviderClaimTypeName](#schemaidentityproviderclaimtypename)[])
@@ -73,17 +73,17 @@ HEAD /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames
 #### Parameters
 
 `string identityProviderId`
-<br/>Identity provider identifier.<br/><br/><br/>
+<br/>Identity provider identifier.<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Header for identity provider claim type names|
-|401|None|Unauthorized.<br/>|
-|403|None|Forbidden.<br/>|
+|401|None|Unauthorized.|
+|403|None|Forbidden.|
 |404|None|Identity provider not found|
-|500|None|Internal server error.<br/>|
+|500|None|Internal server error.|
 
 ### Authorization
 
@@ -108,18 +108,18 @@ GET /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames/{identityProvi
 #### Parameters
 
 `string identityProviderId`
-<br/>Identity provider identifier.<br/><br/><br/>`string identityProviderClaimTypeNameId`
-<br/>Identity provider claim type name identifier.<br/><br/><br/>
+<br/>Identity provider identifier.<br/><br/>`string identityProviderClaimTypeNameId`
+<br/>Identity provider claim type name identifier.<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[IdentityProviderClaim](#schemaidentityproviderclaim)|Identity provider claim type name specified|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Identity provider or identity provider claim type name not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 #### Example response body
 > 200 Response ([IdentityProviderClaim](#schemaidentityproviderclaim))
@@ -158,18 +158,18 @@ HEAD /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames/{identityProv
 #### Parameters
 
 `string identityProviderId`
-<br/>Identity provider identifier.<br/><br/><br/>`string identityProviderClaimTypeNameId`
-<br/>Identity provider claim type name identifier.<br/><br/><br/>
+<br/>Identity provider identifier.<br/><br/>`string identityProviderClaimTypeNameId`
+<br/>Identity provider claim type name identifier.<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Header for identity provider claim type name specified|
-|401|None|Unauthorized.<br/>|
-|403|None|Forbidden.<br/>|
+|401|None|Unauthorized.|
+|403|None|Forbidden.|
 |404|None|Identity provider or identity provider claim type name not found|
-|500|None|Internal server error.<br/>|
+|500|None|Internal server error.|
 
 ### Authorization
 

@@ -21,11 +21,11 @@ GET /api/v1/Tenants/{tenantId}/Roles
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>
 `[optional] string query`
-<br/>(Not supported) Search string identifier.<br/><br/><br/>`[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>`[optional] string roleTypeId`
+<br/>(Not supported) Search string identifier.<br/><br/>`[optional] integer skip`
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string roleTypeId`
 <br/>Role type identifier<br/><br/>
 
 ### Response
@@ -33,10 +33,10 @@ GET /api/v1/Tenants/{tenantId}/Roles
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Role](#schemarole)[]|List of roles found|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 #### Example response body
 > 200 Response ([Role](#schemarole)[])
@@ -78,17 +78,17 @@ HEAD /api/v1/Tenants/{tenantId}/Roles
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Headers for roles found|
-|401|None|Unauthorized.<br/>|
-|403|None|Forbidden.<br/>|
+|401|None|Unauthorized.|
+|403|None|Forbidden.|
 |404|None|Tenant not found|
-|500|None|Internal server error.<br/>|
+|500|None|Internal server error.|
 
 ### Authorization
 
@@ -113,7 +113,7 @@ POST /api/v1/Tenants/{tenantId}/Roles
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>
 
 ### Request Body
 
@@ -137,13 +137,13 @@ Role to create<br/>
 |---|---|---|
 |201|[Role](#schemarole)|Role created|
 |302|None|A role with the same identifier or name already exists in the tenant.|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.<br/>|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant or role not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.<br/>|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
 |409|[ErrorResponse](#schemaerrorresponse)|A role with some matching values already exists in tenant.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 #### Example response body
 > 201 Response ([Role](#schemarole))
@@ -183,7 +183,7 @@ GET /api/v1/Tenants/{tenantId}/Roles/{roleId}/users
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string roleId`
+<br/>Tenant identifier.<br/><br/>`string roleId`
 <br/>Role identifier<br/><br/>
 
 ### Response
@@ -191,10 +191,10 @@ GET /api/v1/Tenants/{tenantId}/Roles/{roleId}/users
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[User](#schemauser)[]|Users for a given role|
-|401|None|Unauthorized.<br/>|
-|403|None|Forbidden.<br/>|
+|401|None|Unauthorized.|
+|403|None|Forbidden.|
 |404|None|Tenant or role not found|
-|500|None|Internal server error.<br/>|
+|500|None|Internal server error.|
 
 #### Example response body
 > 200 Response ([User](#schemauser)[])
@@ -242,7 +242,7 @@ HEAD /api/v1/Tenants/{tenantId}/Roles/{roleId}/users
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string roleId`
+<br/>Tenant identifier.<br/><br/>`string roleId`
 <br/>Role identifier<br/><br/>
 
 ### Response
@@ -250,10 +250,10 @@ HEAD /api/v1/Tenants/{tenantId}/Roles/{roleId}/users
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Headers for roles found|
-|401|None|Unauthorized.<br/>|
-|403|None|Forbidden.<br/>|
+|401|None|Unauthorized.|
+|403|None|Forbidden.|
 |404|None|Tenant or role not found|
-|500|None|Internal server error.<br/>|
+|500|None|Internal server error.|
 
 ### Authorization
 
@@ -278,7 +278,7 @@ GET /api/v1/Tenants/{tenantId}/Roles/{roleId}/clientcredentialclients
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string roleId`
+<br/>Tenant identifier.<br/><br/>`string roleId`
 <br/>Role identifier<br/><br/>
 
 ### Response
@@ -286,10 +286,10 @@ GET /api/v1/Tenants/{tenantId}/Roles/{roleId}/clientcredentialclients
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[ClientCredentialClient](#schemaclientcredentialclient)[]|Clients for a given role|
-|401|None|Unauthorized.<br/>|
-|403|None|Forbidden.<br/>|
+|401|None|Unauthorized.|
+|403|None|Forbidden.|
 |404|None|Tenant or role not found|
-|500|None|Internal server error.<br/>|
+|500|None|Internal server error.|
 
 #### Example response body
 > 200 Response ([ClientCredentialClient](#schemaclientcredentialclient)[])
@@ -334,7 +334,7 @@ HEAD /api/v1/Tenants/{tenantId}/Roles/{roleId}/clientcredentialclients
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string roleId`
+<br/>Tenant identifier.<br/><br/>`string roleId`
 <br/>Role identifier<br/><br/>
 
 ### Response
@@ -342,10 +342,10 @@ HEAD /api/v1/Tenants/{tenantId}/Roles/{roleId}/clientcredentialclients
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Headers for the total number of clients for a given role|
-|401|None|Unauthorized.<br/>|
-|403|None|Forbidden.<br/>|
+|401|None|Unauthorized.|
+|403|None|Forbidden.|
 |404|None|Tenant or role not found|
-|500|None|Internal server error.<br/>|
+|500|None|Internal server error.|
 
 ### Authorization
 
@@ -370,7 +370,7 @@ GET /api/v1/Tenants/{tenantId}/Roles/{roleId}
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string roleId`
+<br/>Tenant identifier.<br/><br/>`string roleId`
 <br/>Role identifier<br/><br/>
 
 ### Response
@@ -378,10 +378,10 @@ GET /api/v1/Tenants/{tenantId}/Roles/{roleId}
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Role](#schemarole)|Role specified|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Role or tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 #### Example response body
 > 200 Response ([Role](#schemarole))
@@ -421,7 +421,7 @@ HEAD /api/v1/Tenants/{tenantId}/Roles/{roleId}
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string roleId`
+<br/>Tenant identifier.<br/><br/>`string roleId`
 <br/>Provider identifier<br/><br/>
 
 ### Response
@@ -429,10 +429,10 @@ HEAD /api/v1/Tenants/{tenantId}/Roles/{roleId}
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Header for role specified|
-|401|None|Unauthorized.<br/>|
-|403|None|Forbidden.<br/>|
+|401|None|Unauthorized.|
+|403|None|Forbidden.|
 |404|None|Identity provider or tenant not found|
-|500|None|Internal server error.<br/>|
+|500|None|Internal server error.|
 
 ### Authorization
 
@@ -457,7 +457,7 @@ PUT /api/v1/Tenants/{tenantId}/Roles/{roleId}
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string roleId`
+<br/>Tenant identifier.<br/><br/>`string roleId`
 <br/>Role identifier<br/><br/>
 
 ### Request Body
@@ -481,12 +481,12 @@ Role to update<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Role](#schemarole)|Updated role|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.<br/>|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant or role not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.<br/>|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 #### Example response body
 > 200 Response ([Role](#schemarole))
@@ -526,7 +526,7 @@ DELETE /api/v1/Tenants/{tenantId}/Roles/{roleId}
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string roleId`
+<br/>Tenant identifier.<br/><br/>`string roleId`
 <br/>Role identifier<br/><br/>
 
 ### Response
@@ -534,12 +534,12 @@ DELETE /api/v1/Tenants/{tenantId}/Roles/{roleId}
 |Status Code|Body Type|Description|
 |---|---|---|
 |204|None|No content|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.<br/>|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.<br/>|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.<br/>|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Identity provider or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.<br/>|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.<br/>|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 #### Example response body
 > 400 Response ([ErrorResponse](#schemaerrorresponse))

@@ -11,8 +11,8 @@ An asset type is a template for creating assets that share a common structure or
 
 You can create an asset type in one of the following ways:
 
-- [Create an asset type from the beginning](xref:#asset-type1) 
-- [Convert an existing asset to an asset type](xref:#asset-type2)
+- [Create an asset type from the beginning](#asset-type1) 
+- [Convert an existing asset to an asset type](#asset-type2)
 
 ## <a name="asset-type1"></a> Create an asset type with the asset explorer
 

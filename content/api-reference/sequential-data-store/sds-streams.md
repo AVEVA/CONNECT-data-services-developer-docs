@@ -4,7 +4,7 @@ uid: sds-streams
 ---
 
 # Streams
-The API in this section interacts with streams.
+Controller for methods hosted at streams/
 
 ## `List Streams`
 
@@ -15,7 +15,6 @@ Returns a list of streams.
 ### Request
 ```text 
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams
-?query={query}&skip={skip}&count={count}&orderby={orderby}
 ```
 
 #### Parameters
@@ -23,15 +22,6 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
-`[optional] string query`
-<br/>Parameter representing a string search.<br/><br/>`[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first SdsType to retrieve. If not specified, a default value of 0 is used.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of SdsTypes to retrieve. If not specified, a default value of 100 is used.<br/><br/>`[optional] string orderby`
-<br/>Parameter representing sorted order which SdsTypes will be returned. A field name is required. The sorting is based on the stored 
-            values for the given field (of type string). For example, orderby=name would sort the returned results by the name values (ascending by default). 
-            Additionally, a value can be provided along with the field name to identify whether to sort ascending or descending, by using values asc or desc, 
-            respectively. For example, orderby=name desc would sort the returned results by the name values, descending. 
-            If no value is specified, there is no sorting of result.<br/><br/>
 
 ### Response
 
@@ -155,8 +145,8 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[SdsStream](#schemasdsstream)|`SdsStream` was successfully returned|
-|201|[SdsStream](#schemasdsstream)|`SdsStream` was successfully created|
+|200|[SdsStream](#schemasdsstream)|Returns the `SdsStream`|
+|201|[SdsStream](#schemasdsstream)|Returns the `SdsStream`|
 |400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
 |401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
 |403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
@@ -215,8 +205,8 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|201|[SdsStream](#schemasdsstream)|`SdsStream` was successfully created|
-|204|None|`SdsStream` was successfully updated|
+|201|[SdsStream](#schemasdsstream)|Returns the `SdsStream`|
+|204|None|Returns the `SdsStream`|
 |400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
 |401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
 |403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
@@ -376,7 +366,6 @@ Returns the type definition that is associated with a given stream.
 ### Request
 ```text 
 PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type
-?streamViewId={streamViewId}
 ```
 
 #### Parameters
@@ -385,8 +374,6 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string streamId`
 <br/>Stream identifier.<br/><br/>
-`[optional] string streamViewId`
-<br/>Stream view identifier.<br/><br/>
 
 ### Response
 
@@ -426,8 +413,6 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type
 <a id="schema_SdsStream"></a>
 <a id="tocSsdsstream"></a>
 <a id="tocssdsstream"></a>
-
-A contract defining read and write operations on data of SdsType
 
 #### Properties
 
@@ -541,8 +526,6 @@ Defines how a stream responds to requests with indexes that precede or follow al
 <a id="schema_SdsStreamPropertyOverride"></a>
 <a id="tocSsdsstreampropertyoverride"></a>
 <a id="tocssdsstreampropertyoverride"></a>
-
-SdsStreamPropertyOverride object provides a way to override interpolation behavior and unit of measure for individual SdsType Properties for a specific SdsStream.
 
 #### Properties
 

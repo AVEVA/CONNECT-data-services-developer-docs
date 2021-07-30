@@ -4,7 +4,7 @@ uid: sds-quantities
 ---
 
 # Quantities
-The API in this section interacts with quantities and units of measure.
+Controller handling requests that are routed to {namespaceId}/Quantities/
 
 ## `List Quantities`
 
@@ -15,7 +15,6 @@ Returns a list of all quantities available within a given namespace
 ### Request
 ```text 
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities
-?skip={skip}&count={count}
 ```
 
 #### Parameters
@@ -23,9 +22,6 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
-`[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first SdsUomQuantity to retrieve. If not specified, a default value of 0 is used<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of SdsUomQuantity to retrieve. If not specified, a default value of 100 is used<br/><br/>
 
 ### Response
 

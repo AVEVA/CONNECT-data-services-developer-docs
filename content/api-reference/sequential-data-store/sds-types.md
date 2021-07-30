@@ -4,7 +4,6 @@ uid: sds-types
 ---
 
 # Types
-The API in this section interacts with types.
 
 ## `List Types`
 
@@ -15,7 +14,6 @@ Gets a list of `SdsType` objects. If the optional parameters are not set, this c
 ### Request
 ```text 
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types
-?query={query}&skip={skip}&count={count}&orderby={orderby}
 ```
 
 #### Parameters
@@ -23,12 +21,6 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
-`[optional] string query`
-<br/>Parameter representing a string search. See the [Search in SDS](xref:sdsSearching) topic for information about specifying the query parameter.
-<br/><br/>`[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string orderby`
-<br/>Parameter representing sorted order of returned objects. A field name is required. The sorting is based on the stored values for the given field.<br/>For example, ``orderby=name`` would sort the returned results by the ``name`` values (ascending by default).<br/>Additionally, a value can be provided along with the field name to identify whether to sort ascending or descending,<br/>by using values ``asc`` or ``desc``, respectively.<br/>For example, ``orderby=name desc`` would sort the returned results by the ``name`` values, descending.<br/>If no value is specified, there is no sorting of results.<br/><br/>
 
 ### Response
 

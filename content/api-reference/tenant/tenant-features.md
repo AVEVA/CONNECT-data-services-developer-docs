@@ -20,15 +20,15 @@ GET /api/v1/Tenants/{tenantId}/Features
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[FeatureState](#schemafeaturestate)[]|An array of all `Feature`s for the tenant with identifier `tenantId`.|
-|400|None|Missing or invalid inputs.<br/>|
-|403|None|Forbidden.<br/>|
+|400|None|Missing or invalid inputs.|
+|403|None|Forbidden.|
 
 #### Example response body
 > 200 Response ([FeatureState](#schemafeaturestate)[])
@@ -70,16 +70,16 @@ GET /api/v1/Tenants/{tenantId}/Features/{id}
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string id`
-<br/>Feature state identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string id`
+<br/>Feature state identifier.<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[FeatureState](#schemafeaturestate)|The state of the `Feature` for the tenant with identifier `tenantId`.|
-|400|None|Missing or invalid inputs.<br/>|
-|403|None|Forbidden.<br/>|
+|400|None|Missing or invalid inputs.|
+|403|None|Forbidden.|
 
 #### Example response body
 > 200 Response ([FeatureState](#schemafeaturestate))

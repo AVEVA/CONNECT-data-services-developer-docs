@@ -21,17 +21,17 @@ GET /api/v1/Tenants/{tenantId}/Namespaces
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>
 `[optional] string region`
-<br/>The region identifier.<br/><br/><br/>
+<br/>The region identifier.<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Namespace](#schemanamespace)[]|An array of `Namespace` objects for the namespaces that belong to a tenant with `tenantId`.|
-|400|None|Missing or invalid inputs.<br/>|
-|403|None|Forbidden.<br/>|
+|400|None|Missing or invalid inputs.|
+|403|None|Forbidden.|
 
 #### Example response body
 > 200 Response ([Namespace](#schemanamespace)[])
@@ -91,16 +91,16 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Namespace](#schemanamespace)|The `Namespace` with identifier `namespaceId`.|
-|400|None|Missing or invalid inputs.<br/>|
-|403|None|Forbidden.<br/>|
+|400|None|Missing or invalid inputs.|
+|403|None|Forbidden.|
 |404|None|`Namespace` not found in the specified tenant.|
 
 #### Example response body
@@ -160,8 +160,8 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 `[optional] boolean isServerTest`
 <br/>This parameter is unused and will be removed in the next API version.<br/><br/>
 
@@ -205,8 +205,8 @@ The new Namespace to be created.<br/>
 |---|---|---|
 |201|[Namespace](#schemanamespace)|The created `Namespace`.|
 |302|None|Returns the location of the existing `Namespace` object.|
-|400|None|Missing or invalid inputs.<br/>|
-|403|None|Forbidden.<br/>|
+|400|None|Missing or invalid inputs.|
+|403|None|Forbidden.|
 |405|None|Method not allowed at this base URL. Try the request again at the Global base URL.|
 |409|None|A `Namespace` already exists with different values.|
 
@@ -266,8 +266,8 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 
 ### Request Body
 
@@ -308,8 +308,8 @@ The new details to store for the Namespace.<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Namespace](#schemanamespace)|The updated `Namespace` with identifier `namespaceId`.|
-|400|None|Missing or invalid inputs.<br/>|
-|403|None|Forbidden.<br/>|
+|400|None|Missing or invalid inputs.|
+|403|None|Forbidden.|
 |405|None|Method not allowed at this base URL. Try the request again at the Global base URL.|
 
 #### Example response body
@@ -369,8 +369,8 @@ DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 `[optional] boolean isServerTest`
 <br/>This parameter is unused and will be removed in the next API version.<br/><br/>
 
@@ -379,7 +379,7 @@ DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}
 |Status Code|Body Type|Description|
 |---|---|---|
 |204|None|HTTP status code: 200 on successful deletion or another HTTP status codes on failure.|
-|400|None|Missing or invalid inputs.<br/>|
+|400|None|Missing or invalid inputs.|
 |403|None|#403.|
 |405|None|Method not allowed at this base URL. Try the request again at the Global base URL.|
 
@@ -406,16 +406,16 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/accesscontrol
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|The `AccessControlList` for the namespace with identifier `namespaceId`.|
-|400|None|Missing or invalid inputs.<br/>|
-|403|None|Forbidden.<br/>|
+|400|None|Missing or invalid inputs.|
+|403|None|Forbidden.|
 
 #### Example response body
 > 200 Response ([AccessControlList](#schemaaccesscontrollist))
@@ -459,8 +459,8 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/accesscontrol
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 
 ### Request Body
 
@@ -487,8 +487,8 @@ The updated AccessControlList for the Namespace.<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|The updated `AccessControlList` for the namespace with identifier `namespaceId`.|
-|400|None|Missing or invalid inputs.<br/>|
-|403|None|Forbidden.<br/>|
+|400|None|Missing or invalid inputs.|
+|403|None|Forbidden.|
 |405|None|Method not allowed at this base URL. Try the request again at the Global base URL.|
 
 #### Example response body
@@ -533,16 +533,16 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/owner
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Trustee](#schematrustee)|The `Trustee` for the namespace with identifier `namespaceId`.|
-|400|None|Missing or invalid inputs.<br/>|
-|403|None|Forbidden.<br/>|
+|400|None|Missing or invalid inputs.|
+|403|None|Forbidden.|
 
 #### Example response body
 > 200 Response ([Trustee](#schematrustee))
@@ -578,8 +578,8 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/owner
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 
 ### Request Body
 
@@ -598,8 +598,8 @@ The new owner's Trustee of the Namespace.<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Trustee](#schematrustee)|The updated `Trustee` for the namespace with identifier `namespaceId`.|
-|400|None|Missing or invalid inputs.<br/>|
-|403|None|Forbidden.<br/>|
+|400|None|Missing or invalid inputs.|
+|403|None|Forbidden.|
 |405|None|Method not allowed at this base URL. Try the request again at the Global base URL.|
 
 #### Example response body

@@ -20,15 +20,15 @@ GET /api/v1/Tenants/{tenantId}/AccessControl/Namespaces
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>
 
 ### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|The root `AccessControlList` for `Namespace`.|
-|400|None|Missing or invalid inputs.<br/>|
-|403|None|Forbidden.<br/>|
+|400|None|Missing or invalid inputs.|
+|403|None|Forbidden.|
 
 #### Example response body
 > 200 Response ([AccessControlList](#schemaaccesscontrollist))
@@ -65,7 +65,7 @@ PUT /api/v1/Tenants/{tenantId}/AccessControl/Namespaces
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>
 
 ### Request Body
 
@@ -92,8 +92,8 @@ The new root AccessControlList for Namespaces.<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|The new `AccessControlList` for `Namespace`.|
-|400|None|Missing or invalid inputs.<br/>|
-|403|None|Forbidden.<br/>|
+|400|None|Missing or invalid inputs.|
+|403|None|Forbidden.|
 |405|None|Method not allowed at this base URL. Try the request again at the Global base URL.|
 
 #### Example response body

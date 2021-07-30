@@ -63,7 +63,7 @@ GET /api/v1/ServiceBlog/Entries/{id}
 #### Parameters
 
 `string id`
-<br/>Service blog identifier.<br/><br/><br/>
+<br/>Service blog identifier.<br/><br/>
 
 ### Response
 

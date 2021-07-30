@@ -26,18 +26,18 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 `[optional] string streams`
 <br/>Comma separated list of stream identifiers.<br/><br/>`[optional] integer joinMode`
 <br/>The , type of join: Inner, Outer, Interpolated, MergeLeft, or MergeRight.<br/><br/>`[optional] string startIndex`
-<br/>Index identifying the beginning of the series of events to return.<br/><br/><br/>`[optional] string endIndex`
-<br/>Index identifying the end of the series of events to return.<br/><br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>`[optional] integer boundaryType`
-<br/>SdsBoundaryType specifying the handling of events at or near the start and end indexes.<br/><br/><br/>`[optional] integer startBoundaryType`
-<br/>SdsBoundaryType specifying the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/><br/>`[optional] integer endBoundaryType`
-<br/>SdsBoundaryType specifies the last value in the result in relation to the end index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/><br/>`[optional] string filter`
-<br/>Filter expression.<br/><br/><br/>
+<br/>Index identifying the beginning of the series of events to return.<br/><br/>`[optional] string endIndex`
+<br/>Index identifying the end of the series of events to return.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] integer boundaryType`
+<br/>SdsBoundaryType specifying the handling of events at or near the start and end indexes.<br/><br/>`[optional] integer startBoundaryType`
+<br/>SdsBoundaryType specifying the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] integer endBoundaryType`
+<br/>SdsBoundaryType specifies the last value in the result in relation to the end index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] string filter`
+<br/>Filter expression.<br/><br/>
 
 #### Enumerated Values
 
@@ -112,18 +112,18 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 `[optional] string streams`
 <br/>Comma separated list of stream identifiers.<br/><br/>`[optional] integer joinMode`
 <br/>The , type of join: Inner, Outer, Interpolated, MergeLeft, or MergeRight.<br/><br/>`[optional] string startIndex`
-<br/>Index identifying the beginning of the series of events to return.<br/><br/><br/>`[optional] string endIndex`
-<br/>Index identifying the end of the series of events to return.<br/><br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>`[optional] integer boundaryType`
-<br/>SdsBoundaryType specifying the handling of events at or near the start and end indexes.<br/><br/><br/>`[optional] integer startBoundaryType`
-<br/>SdsBoundaryType specifying the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/><br/>`[optional] integer endBoundaryType`
-<br/>SdsBoundaryType specifies the last value in the result in relation to the end index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/><br/>`[optional] string filter`
-<br/>Filter expression.<br/><br/><br/>
+<br/>Index identifying the beginning of the series of events to return.<br/><br/>`[optional] string endIndex`
+<br/>Index identifying the end of the series of events to return.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] integer boundaryType`
+<br/>SdsBoundaryType specifying the handling of events at or near the start and end indexes.<br/><br/>`[optional] integer startBoundaryType`
+<br/>SdsBoundaryType specifying the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] integer endBoundaryType`
+<br/>SdsBoundaryType specifies the last value in the result in relation to the end index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] string filter`
+<br/>Filter expression.<br/><br/>
 
 #### Enumerated Values
 

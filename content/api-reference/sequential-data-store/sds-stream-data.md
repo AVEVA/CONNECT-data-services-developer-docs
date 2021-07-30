@@ -20,9 +20,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string streamId`
+<br/>Stream identifier.<br/><br/>
 
 ### Response
 
@@ -68,9 +68,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string streamId`
+<br/>Stream identifier.<br/><br/>
 
 ### Response
 
@@ -132,23 +132,23 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string streamId`
+<br/>Stream identifier.<br/><br/>
 `[optional] string filter`
-<br/>Filter expression.<br/><br/><br/>`[optional] string startIndex`
-<br/>Index identifying the beginning of the series of events to return.<br/><br/><br/>`[optional] string endIndex`
-<br/>Index identifying the end of the series of events to return.<br/><br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>`[optional] string index`
+<br/>Filter expression.<br/><br/>`[optional] string startIndex`
+<br/>Index identifying the beginning of the series of events to return.<br/><br/>`[optional] string endIndex`
+<br/>Index identifying the end of the series of events to return.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string index`
 <br/>The index.<br/><br/>`[optional] integer searchMode`
 <br/>The , type of search: Exact (the default), ExactOrNext, Next, ExactOrPrevious, or Previous.<br/><br/>`[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/><br/>`[optional] boolean reversed`
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] boolean reversed`
 <br/>Specification of the direction of the request. By default, range requests move forward from startIndex, collecting events after startIndex 
             from the stream. A reversed request will collect events before startIndex from the stream.<br/><br/>`[optional] integer boundaryType`
-<br/>SdsBoundaryType specifying the handling of events at or near the start and end indexes.<br/><br/><br/>`[optional] integer startBoundaryType`
-<br/>SdsBoundaryType specifying the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/><br/>`[optional] integer endBoundaryType`
-<br/>SdsBoundaryType specifies the last value in the result in relation to the end index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/><br/>`[optional] string continuationToken`
-<br/>Token used to retrieve the next page of data. If count is specified, a continuationToken must also be specified.<br/><br/><br/>
+<br/>SdsBoundaryType specifying the handling of events at or near the start and end indexes.<br/><br/>`[optional] integer startBoundaryType`
+<br/>SdsBoundaryType specifying the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] integer endBoundaryType`
+<br/>SdsBoundaryType specifies the last value in the result in relation to the end index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] string continuationToken`
+<br/>Token used to retrieve the next page of data. If count is specified, a continuationToken must also be specified.<br/><br/>
 
 #### Enumerated Values
 
@@ -239,9 +239,9 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string streamId`
+<br/>Stream identifier.<br/><br/>
 
 ### Response
 
@@ -293,9 +293,9 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string streamId`
+<br/>Stream identifier.<br/><br/>
 `[optional] boolean allowCreate`
 <br/>If false, writes one or more events over existing events in the specified stream.<br/><br/>
 
@@ -350,9 +350,9 @@ PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Dat
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string streamId`
+<br/>Stream identifier.<br/><br/>
 `[optional] string selectExpression`
 <br/>Comma separated list of strings that indicates the event fields that will be changed in stream events.<br/><br/>
 
@@ -413,9 +413,9 @@ DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Da
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string streamId`
+<br/>Stream identifier.<br/><br/>
 `[optional] string index`
 <br/>One or more indexes of events to remove.<br/><br/>`[optional] string startIndex`
 <br/>Index identifying the beginning of the window.<br/><br/>`[optional] string endIndex`
@@ -480,14 +480,14 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string streamId`
+<br/>Stream identifier.<br/><br/>
 `[optional] string index`
 <br/>One or more indexes.<br/><br/>`[optional] string startIndex`
-<br/>Index identifying the beginning of the series of events to return.<br/><br/><br/>`[optional] string endIndex`
-<br/>Index identifying the end of the series of events to return.<br/><br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>
+<br/>Index identifying the beginning of the series of events to return.<br/><br/>`[optional] string endIndex`
+<br/>Index identifying the end of the series of events to return.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
 
 ### Response
 
@@ -534,14 +534,14 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string streamId`
+<br/>Stream identifier.<br/><br/>
 `[optional] string startIndex`
-<br/>Index identifying the beginning of the series of events to return.<br/><br/><br/>`[optional] string endIndex`
-<br/>Index identifying the end of the series of events to return.<br/><br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>`[optional] string filter`
-<br/>Filter expression.<br/><br/><br/>
+<br/>Index identifying the beginning of the series of events to return.<br/><br/>`[optional] string endIndex`
+<br/>Index identifying the end of the series of events to return.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string filter`
+<br/>Filter expression.<br/><br/>
 
 ### Response
 
@@ -588,18 +588,18 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string streamId`
+<br/>Stream identifier.<br/><br/>
 `[optional] string startIndex`
-<br/>Index identifying the beginning of the series of events to return.<br/><br/><br/>`[optional] string endIndex`
-<br/>Index identifying the end of the series of events to return.<br/><br/><br/>`[optional] integer intervals`
+<br/>Index identifying the beginning of the series of events to return.<br/><br/>`[optional] string endIndex`
+<br/>Index identifying the end of the series of events to return.<br/><br/>`[optional] integer intervals`
 <br/>The number of intervals requested.<br/><br/>`[optional] string sampleBy`
 <br/>Property or properties to use when sampling.<br/><br/>`[optional] integer boundaryType`
-<br/>SdsBoundaryType specifying the handling of events at or near the start and end indexes.<br/><br/><br/>`[optional] integer startBoundaryType`
-<br/>SdsBoundaryType specifying the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/><br/>`[optional] integer endBoundaryType`
-<br/>SdsBoundaryType specifies the last value in the result in relation to the end index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/><br/>`[optional] string filter`
-<br/>Filter expression.<br/><br/><br/>
+<br/>SdsBoundaryType specifying the handling of events at or near the start and end indexes.<br/><br/>`[optional] integer startBoundaryType`
+<br/>SdsBoundaryType specifying the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] integer endBoundaryType`
+<br/>SdsBoundaryType specifies the last value in the result in relation to the end index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] string filter`
+<br/>Filter expression.<br/><br/>
 
 #### Enumerated Values
 

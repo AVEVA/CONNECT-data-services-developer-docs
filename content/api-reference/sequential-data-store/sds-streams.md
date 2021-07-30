@@ -21,8 +21,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 `[optional] string query`
 <br/>Parameter representing a string search.<br/><br/>`[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first SdsType to retrieve. If not specified, a default value of 0 is used.<br/><br/>`[optional] integer count`
@@ -89,9 +89,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string streamId`
+<br/>Stream identifier.<br/><br/>
 
 ### Response
 
@@ -147,9 +147,9 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string streamId`
+<br/>Stream identifier.<br/><br/>
 
 ### Response
 
@@ -207,9 +207,9 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string streamId`
+<br/>Stream identifier.<br/><br/>
 
 ### Response
 
@@ -267,9 +267,9 @@ DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string streamId`
+<br/>Stream identifier.<br/><br/>
 
 ### Response
 
@@ -315,9 +315,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string streamId`
+<br/>Stream identifier.<br/><br/>
 
 ### Response
 
@@ -382,11 +382,11 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string streamId`
+<br/>Stream identifier.<br/><br/>
 `[optional] string streamViewId`
-<br/>Stream view identifier.<br/><br/><br/>
+<br/>Stream view identifier.<br/><br/>
 
 ### Response
 
@@ -426,6 +426,8 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type
 <a id="schema_SdsStream"></a>
 <a id="tocSsdsstream"></a>
 <a id="tocssdsstream"></a>
+
+A contract defining read and write operations on data of SdsType
 
 #### Properties
 
@@ -539,6 +541,8 @@ Defines how a stream responds to requests with indexes that precede or follow al
 <a id="schema_SdsStreamPropertyOverride"></a>
 <a id="tocSsdsstreampropertyoverride"></a>
 <a id="tocssdsstreampropertyoverride"></a>
+
+SdsStreamPropertyOverride object provides a way to override interpolation behavior and unit of measure for individual SdsType Properties for a specific SdsStream.
 
 #### Properties
 

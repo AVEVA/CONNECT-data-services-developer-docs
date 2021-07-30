@@ -6,14 +6,14 @@ uid: UsingMultipleRules
 
  In [Tank Rule A example](xref:CreateAssetRules#tank), the stream names followed a single pattern that could be defined with one asset rule. There are situations where a single asset rule cannot identify all the streams required to create your assets. Returning to the Tank Rule A example, let us assume that there is one stream name that deviates from this pattern and cannot be identified by this rule. In the table below, PHI-Tank03-Temp differs from the other stream names and contains a hyphen delimiter between the third and fourth parts of its name, that is, between *03* and *Temp*.
 
-| Stream Name                                     | Asset Name | Stream Measurement |
-| ----------------------------------------------- | ---------- | ------------------ |
-| SL-Tank01Press                                  | Tank 01    | Pressure           |
-| SL-Tank01Temp                                   | Tank 01    | Temperature        |
-| SL-Tank02Press                                  | Tank 02    | Pressure           |
-| SL-Tank02Temp                                   | Tank 02    | Temperature        |
-| PHI-Tank03Press                                 | Tank 03    | Pressure           |
-| <span style="color:blue">PHI-Tank03-Temp</span> | Tank 03    | Temperature        |
+| Stream Name         | Asset Name | Stream Measurement |
+| ------------------- | ---------- | ------------------ |
+| SL-Tank01Press      | Tank 01    | Pressure           |
+| SL-Tank01Temp       | Tank 01    | Temperature        |
+| SL-Tank02Press      | Tank 02    | Pressure           |
+| SL-Tank02Temp       | Tank 02    | Temperature        |
+| PHI-Tank03Press     | Tank 03    | Pressure           |
+| **PHI-Tank03-Temp** | Tank 03    | Temperature        |
 
 Therefore, you must create a second asset rule, which we will call Tank Rule B, that can identify this stream. The stream name pattern is identical to Tank Rule A, except for the third part of the stream name.  In Tank Rule A, this part of the stream name was matched with *the next group of numbers*. To correctly identify the PHI-Tank03-Temp stream, *03* must be matched using *everything preceding the delimiter "-"*. This token for the third part of the stream name is assigned the name *equipment_Id*, the same name as in Tank Rule A.
 

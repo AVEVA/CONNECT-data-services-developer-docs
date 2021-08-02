@@ -12,9 +12,9 @@ The supported mode of retrieval is interpolated values within a user-specified r
 All data in a data view is associated with an index value, for example, a timestamp. If there are multiple groups in the data view, the index and grouping field values together form a unique identifier for each data record.
 
 #### Index type
-Though `DateTime` is the most common index type for stream data, data views can target data of other index types, as noted in [Define a Data View](xref:DataViewsQuickStartDefine). 
+The supported index type is `DateTime`, as noted in [Define a Data View](xref:DataViewsQuickStartDefine). Date times should use ISO 8601 format and can be in either UTC or local time. Data retrieved using the [Data API](xref:DataViewsDataAPI) will be returned in UTC.
 
-For `DateTime` indexed data views, index values should use ISO 8601 format and can be in either UTC or local time with an offset specified. Data retrieved using the [Data API](xref:DataViewsDataAPI) will be returned in UTC. Interval timespan values should be formatted using the standard timespan format, ie., d.hh:mm:ss.fffffff.
+Interval timespan values should be formatted using the standard timespan format, ie., d.hh:mm:ss.fffffff.
 
 #### Index range
 Three parameters control the range and granularity of data returned:

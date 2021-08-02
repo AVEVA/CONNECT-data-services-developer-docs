@@ -36,7 +36,7 @@ Data views are subsets of data from one or more streams. You create a data view 
 
 1. In the `Generate Preview` pane, click the **Auto Refresh** toggle button to enable or disable auto refresh. With auto refresh enabled, changes to any of the streams included in the data view will be immediately reflected in the data view.
 
-1. OPTIONAL: Click the **Generate preview** button to generate a preview of the data view with the selected settings.
+1. 	**Optional:** Click the **Generate preview** button to generate a preview of the data view with the selected settings.
 
 1. Click the **Items per page** droplist to select the number of items to be displayed per page in the data view.
 

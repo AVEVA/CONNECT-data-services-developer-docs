@@ -9,7 +9,7 @@ You retrieve data view data with the [Data API](xref:DataViewsDataAPI). This top
 The supported mode of retrieval is interpolated values within a user-specified range. Several formats are available, such as JSON and CSV.
 
 ### Index
-All data in a data view is associated with an index value, for example, a timestamp. If there are multiple groups in the data view, the index and grouping field values together form a unique identifier for each data record.
+All data in a data view is associated with an index value, i.e. a timestamp. If there are multiple groups in the data view, the index and grouping field values together form a unique identifier for each data record.
 
 #### Index type
 The supported index type is `DateTime`, as noted in [Define a Data View](xref:DataViewsQuickStartDefine). Date times should use ISO 8601 format and can be in either UTC or local time. Data retrieved using the [Data API](xref:DataViewsDataAPI) will be returned in UTC.

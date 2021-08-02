@@ -22,8 +22,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 `string token`
 <br/>A Guid which corresponds to a preview that has been created using the StartPreview method.<br/><br/>`integer skip`
 <br/>An Int32 to determine the number of preview results to skip.<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 `[optional] integer count`
 <br/>An Int32 to determine the number of preview results to return.<br/><br/>
 
@@ -148,8 +148,8 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 `[optional] boolean KeepOldMetadata`
 <br/><br/>`[optional] integer Skip`
 <br/><br/>`[optional] integer Count`
@@ -308,8 +308,8 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 
 `string token`
 <br/>A Guid which corresponds to a preview that has been created using the StartPreview method.<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 
 ### Response
 

@@ -20,8 +20,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/acce
 
 `any routeOptions`
 <br/>The RuleRouteOptions uri route parameters.<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string ruleId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string ruleId`
 <br/>The Id of an asset rule.<br/><br/>
 
 ### Response
@@ -107,8 +107,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/acce
 
 `any routeOptions`
 <br/>The RuleRouteOptions uri route parameters.<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string ruleId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string ruleId`
 <br/>The Id of an asset rule.<br/><br/>
 
 ### Response
@@ -200,8 +200,8 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/acce
 
 `any routeOptions`
 <br/>The uri route parameters.<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string ruleId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string ruleId`
 <br/>The Id of an asset rule.<br/><br/>
 
 ### Request Body
@@ -328,8 +328,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/assetrules
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 
 ### Response
 
@@ -403,8 +403,8 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/assetrules
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 
 ### Request Body
 
@@ -515,8 +515,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/owne
 
 `any routeOptions`
 <br/>The uri route parameters.<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string ruleId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string ruleId`
 <br/>The Id of an asset rule.<br/><br/>
 
 ### Response
@@ -601,8 +601,8 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/owne
 
 `any routeOptions`
 <br/>The RuleRouteOptions uri route parameters.<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string ruleId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string ruleId`
 <br/>The Id of an asset rule.<br/><br/>
 
 ### Request Body

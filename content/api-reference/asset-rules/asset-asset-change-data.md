@@ -77,7 +77,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 
 <a id="opIdAssetChangeData_List Change Data For Rule"></a>
 
-Gets the `ICollection`1` for the ruleId.
+Gets the AssetChangeData for the ruleId.
 
 ### Request
 ```text 

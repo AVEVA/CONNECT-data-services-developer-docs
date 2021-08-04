@@ -150,6 +150,28 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 <br/>SdsBoundaryType specifies the last value in the result in relation to the end index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] string continuationToken`
 <br/>Token used to retrieve the next page of data. If count is specified, a continuationToken must also be specified.<br/><br/>
 
+#### Enumerated Values
+
+|Parameter|Value|
+|---|---|
+|searchMode|0|
+|searchMode|1|
+|searchMode|2|
+|searchMode|3|
+|searchMode|4|
+|boundaryType|0|
+|boundaryType|1|
+|boundaryType|2|
+|boundaryType|3|
+|startBoundaryType|0|
+|startBoundaryType|1|
+|startBoundaryType|2|
+|startBoundaryType|3|
+|endBoundaryType|0|
+|endBoundaryType|1|
+|endBoundaryType|2|
+|endBoundaryType|3|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -579,6 +601,23 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 <br/>SdsBoundaryType specifies the last value in the result in relation to the end index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] string filter`
 <br/>Filter expression.<br/><br/>
 
+#### Enumerated Values
+
+|Parameter|Value|
+|---|---|
+|boundaryType|0|
+|boundaryType|1|
+|boundaryType|2|
+|boundaryType|3|
+|startBoundaryType|0|
+|startBoundaryType|1|
+|startBoundaryType|2|
+|startBoundaryType|3|
+|endBoundaryType|0|
+|endBoundaryType|1|
+|endBoundaryType|2|
+|endBoundaryType|3|
+
 ### Response
 
 |Status Code|Body Type|Description|
@@ -642,6 +681,47 @@ Contains the error message format that follows the OCS error standards
 }
 
 ```
+
+---
+
+### SdsSearchMode
+
+<a id="schemasdssearchmode"></a>
+<a id="schema_SdsSearchMode"></a>
+<a id="tocSsdssearchmode"></a>
+<a id="tocssdssearchmode"></a>
+
+The SdsSearchMode defines search behavior when seeking a stored event near a specified index.
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|Exact|0|
+|ExactOrNext|1|
+|Next|2|
+|ExactOrPrevious|3|
+|Previous|4|
+
+---
+
+### SdsBoundaryType
+
+<a id="schemasdsboundarytype"></a>
+<a id="schema_SdsBoundaryType"></a>
+<a id="tocSsdsboundarytype"></a>
+<a id="tocssdsboundarytype"></a>
+
+The SdsBoundaryType defines how data on the boundary of queries is handled: around the start index for range value queries, and around the start and end index for window values
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|Exact|0|
+|Inside|1|
+|Outside|2|
+|ExactOrCalculated|3|
 
 ---
 

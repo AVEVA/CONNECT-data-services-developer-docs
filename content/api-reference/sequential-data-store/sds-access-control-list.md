@@ -121,7 +121,7 @@ PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Streams
 
 |Header|Type|Required|Description|
 |---|---|---|---|
-|If_Match|string|false|The entity tag header from a previous read of the Access Control List (ACL). If provided, the ACL will not be <br/>patched unless the current ETag of the ACL, on the server, matches the value passed into the If-Match header.  |
+|If-Match|string|false|The entity tag header from a previous read of the Access Control List (ACL). If provided, the ACL will not be <br/>patched unless the current ETag of the ACL, on the server, matches the value passed into the If-Match header.  |
 
 ### Response
 
@@ -269,7 +269,7 @@ PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Types
 
 |Header|Type|Required|Description|
 |---|---|---|---|
-|If_Match|string|false|The entity tag header from a previous read of the Access Control List (ACL). If provided, the ACL will not be <br/>patched unless the current ETag of the ACL, on the server, matches the value passed into the If-Match header.  |
+|If-Match|string|false|The entity tag header from a previous read of the Access Control List (ACL). If provided, the ACL will not be <br/>patched unless the current ETag of the ACL, on the server, matches the value passed into the If-Match header.  |
 
 ### Response
 
@@ -417,7 +417,7 @@ PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/StreamVi
 
 |Header|Type|Required|Description|
 |---|---|---|---|
-|If_Match|string|false|The entity tag header from a previous read of the Access Control List (ACL). If provided, the ACL will not be <br/>patched unless the current ETag of the ACL, on the server, matches the value passed into the If-Match header.  |
+|If-Match|string|false|The entity tag header from a previous read of the Access Control List (ACL). If provided, the ACL will not be <br/>patched unless the current ETag of the ACL, on the server, matches the value passed into the If-Match header.  |
 
 ### Response
 
@@ -565,7 +565,7 @@ PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Quantiti
 
 |Header|Type|Required|Description|
 |---|---|---|---|
-|If_Match|string|false|The entity tag header from a previous read of the Access Control List (ACL). If provided, the ACL will not be <br/>patched unless the current ETag of the ACL, on the server, matches the value passed into the If-Match header.  |
+|If-Match|string|false|The entity tag header from a previous read of the Access Control List (ACL). If provided, the ACL will not be <br/>patched unless the current ETag of the ACL, on the server, matches the value passed into the If-Match header.  |
 
 ### Response
 
@@ -718,7 +718,7 @@ PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessC
 
 |Header|Type|Required|Description|
 |---|---|---|---|
-|If_Match|string|false|The entity tag header from a previous read of the Access Control List (ACL). If provided, the ACL will not be <br/>patched unless the current ETag of the ACL, on the server, matches the value passed into the If-Match header.  |
+|If-Match|string|false|The entity tag header from a previous read of the Access Control List (ACL). If provided, the ACL will not be <br/>patched unless the current ETag of the ACL, on the server, matches the value passed into the If-Match header.  |
 
 ### Response
 
@@ -1019,7 +1019,7 @@ PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Acc
 
 |Header|Type|Required|Description|
 |---|---|---|---|
-|If_Match|string|false|The entity tag header from a previous read of the Access Control List (ACL). If provided, the ACL will not be <br/>patched unless the current ETag of the ACL, on the server, matches the value passed into the If-Match header.  |
+|If-Match|string|false|The entity tag header from a previous read of the Access Control List (ACL). If provided, the ACL will not be <br/>patched unless the current ETag of the ACL, on the server, matches the value passed into the If-Match header.  |
 
 ### Response
 
@@ -1314,7 +1314,7 @@ PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamVie
 
 |Header|Type|Required|Description|
 |---|---|---|---|
-|If_Match|string|false|The entity tag header from a previous read of the Access Control List (ACL). If provided, the ACL will not be <br/>patched unless the current ETag of the ACL, on the server, matches the value passed into the If-Match header.  |
+|If-Match|string|false|The entity tag header from a previous read of the Access Control List (ACL). If provided, the ACL will not be <br/>patched unless the current ETag of the ACL, on the server, matches the value passed into the If-Match header.  |
 
 ### Response
 
@@ -1609,7 +1609,7 @@ PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId
 
 |Header|Type|Required|Description|
 |---|---|---|---|
-|If_Match|string|false|The entity tag header from a previous read of the Access Control List (ACL). If provided, the ACL will not be <br/>patched unless the current ETag of the ACL, on the server, matches the value passed into the If-Match header.  |
+|If-Match|string|false|The entity tag header from a previous read of the Access Control List (ACL). If provided, the ACL will not be <br/>patched unless the current ETag of the ACL, on the server, matches the value passed into the If-Match header.  |
 
 ### Response
 
@@ -1911,7 +1911,7 @@ PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId
 
 |Header|Type|Required|Description|
 |---|---|---|---|
-|If_Match|string|false|The entity tag header from a previous read of the Access Control List (ACL). If provided, the ACL will not be <br/>patched unless the current ETag of the ACL, on the server, matches the value passed into the If-Match header.  |
+|If-Match|string|false|The entity tag header from a previous read of the Access Control List (ACL). If provided, the ACL will not be <br/>patched unless the current ETag of the ACL, on the server, matches the value passed into the If-Match header.  |
 
 ### Response
 

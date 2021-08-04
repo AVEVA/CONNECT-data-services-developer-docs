@@ -77,7 +77,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 
 <a id="opIdAssetChangeData_List Change Data For Rule"></a>
 
-Gets the collection which implements `ICollection`1`, where T is `AssetChangeData`, for the ruleId.
+Gets the AssetChangeData for the ruleId.
 
 ### Request
 ```text 
@@ -101,7 +101,7 @@ Defaults to 100.<br/><br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[AssetChangeData](#schemaassetchangedata)[]|The collection which implements `ICollection`1`, where T is `AssetChangeData`, for the ruleId.|
+|200|[AssetChangeData](#schemaassetchangedata)[]|The AssetChangeData for the ruleId.|
 |400|[ResponseBody](#schemaresponsebody)|None|
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
@@ -247,7 +247,7 @@ Defaults to 100.<br/><br/>
 
 <a id="opIdAssetChangeData_List Change Data For Asset"></a>
 
-Gets the collection which implements `ICollection`1`, where T is `AssetChangeData`, for the assetId.
+Gets the AssetChangeData for the assetId.
 
 ### Request
 ```text 
@@ -265,7 +265,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[AssetChangeData](#schemaassetchangedata)[]|The collection which implements `ICollection`1`, where T is `AssetChangeData`, for the assetId.|
+|200|[AssetChangeData](#schemaassetchangedata)[]|The AssetChangeData for the `!:assetId`.|
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
@@ -395,7 +395,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 
 <a id="opIdAssetChangeData_List Change Data For Stream"></a>
 
-Gets the collection which implements `ICollection`1`, where T is `AssetChangeData`, for the streamId.
+Gets the AssetChangeData for the streamId.
 
 ### Request
 ```text 
@@ -413,7 +413,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[AssetChangeData](#schemaassetchangedata)[]|The collection which implements `ICollection`1`, where T is `AssetChangeData`, for the streamId.|
+|200|[AssetChangeData](#schemaassetchangedata)[]|The AssetChangeData for the `!:streamId`.|
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 

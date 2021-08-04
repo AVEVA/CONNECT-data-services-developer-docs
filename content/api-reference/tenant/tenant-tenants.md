@@ -53,6 +53,7 @@ GET /api/v1/Tenants/{tenantId}
     }
   ],
   "ExternalAccountId": "string",
+  "TenantType": "Unlinked",
   "Entitlements": [
     {
       "EntitlementDefinitionId": "string",
@@ -146,7 +147,8 @@ The updated details of the Tenant.<br/>
       "CurrentState": 0
     }
   ],
-  "ExternalAccountId": "string"
+  "ExternalAccountId": "string",
+  "TenantType": "Unlinked"
 }
 ```
 
@@ -181,7 +183,8 @@ The updated details of the Tenant.<br/>
       "CurrentState": 0
     }
   ],
-  "ExternalAccountId": "string"
+  "ExternalAccountId": "string",
+  "TenantType": "Unlinked"
 }
 ```
 
@@ -368,6 +371,7 @@ Allowed for these roles:
 |Alias|string|false|true|Specifies a unique alias for this tenant.|
 |Features|[[FeatureState](#schemafeaturestate)]|false|true|List of feature states for this tenant. Returned during GET methods.|
 |ExternalAccountId|string|false|true|External account identifier for this tenant.|
+|TenantType|string|false|true|Gets or sets tenant type.|
 |Entitlements|[[TenantEntitlementInstance](#schematenantentitlementinstance)]|false|true|[An instance of an entitlement.]|
 
 ```json
@@ -390,6 +394,7 @@ Allowed for these roles:
     }
   ],
   "ExternalAccountId": "string",
+  "TenantType": "Unlinked",
   "Entitlements": [
     {
       "EntitlementDefinitionId": "string",
@@ -581,6 +586,7 @@ Representation of a server-side database interpretation of a tenant.
 |Alias|string|false|true|Specifies a unique alias for this tenant.|
 |Features|[[FeatureState](#schemafeaturestate)]|false|true|List of feature states for this tenant. Returned during GET methods.|
 |ExternalAccountId|string|false|true|External account identifier for this tenant.|
+|TenantType|string|false|true|Gets or sets tenant type.|
 
 ```json
 {
@@ -601,7 +607,8 @@ Representation of a server-side database interpretation of a tenant.
       "CurrentState": 0
     }
   ],
-  "ExternalAccountId": "string"
+  "ExternalAccountId": "string",
+  "TenantType": "Unlinked"
 }
 
 ```

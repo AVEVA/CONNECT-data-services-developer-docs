@@ -41,7 +41,14 @@ Download and install the PI to OCS agent. Register your PI Data Archive with the
 
    **NOTE:** OCS supports out of order events and stores data in chronological order by timestamp. PI Data Archive 2017 SP2 or higher is required for this feature. Enter the historical start date and time correctly to ensure all data is included in the transfer. No data before the historical start time will be captured and stored in SDS.
 
-8. Click **Ok**.
+8. Select the level of data privacy for the transfer by selecting one of the following **Stream Metadata Replication Policy** settings: 
+
+   * **High**: Send all identifying information about an asset with the PI point.
+   * **Medium (default)**: Send metadata without logical addresses from the data source.
+   * **Low**: Does not send any metadata. Locally configured metadata such as point source and local aliases can be sent in the transfer.
+   * **None**: No sensitive data is included in the transfer.
+
+10. Click **Ok**.
 
    **Result:** The new transfer opens in the `PI to OCS Agents` window.
 
@@ -88,7 +95,6 @@ You build a PI points transfer list to select the PI points you want included in
 
 ### Procedure
 
-
 1. Click the **Add** button.
 
    **Result:** The **Search** pane opens on the left.
@@ -120,9 +126,9 @@ You build a PI points transfer list to select the PI points you want included in
 
    **Result:**  The points are added to the transfer.
 
-![ ](../../images/pi-pts-pane.png)
+   ![ ](../../images/pi-pts-pane.png)
 
-**NOTE:** Once you are done adding PI points, you must save the transfer before you can start to transfer data to OCS.
+**NOTE:** Once you have added PI points, you must save the transfer before you can start to transfer data to OCS.
 
 
 ## View PI point details
@@ -159,6 +165,12 @@ You can remove unwanted PI points from a transfer prior to saving the transfer.
 ## Save and transfer data to OCS
 
 You must save a transfer before you can start to transfer selected data to OCS. During a data transfer, events are sent asynchronously. Historical events are sent first, followed by current events.  The progress of a data transfer is displayed in the Details pane.  
+
+**Note:** Modifications to a Data Archive table during a PI to OCS transfer require that you manually stop and restart the transfer to capture all changes. Follow these steps to ensure all data is captured:
+
+   1. Stop the transfer.
+   2. Make modifications to the Data Archive tables.
+   3. Restart the transfer to pick up these changes.
 
 ### Procedure
 

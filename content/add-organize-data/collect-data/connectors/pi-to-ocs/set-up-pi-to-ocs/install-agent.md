@@ -7,7 +7,7 @@ uid: install-agent
 When you install the PI to OCS Agent, make sure to follow these guidelines:
 
 * Install the agent on a host computer separate from your PI Data Archive deployment.
-* Use an account that has been granted Administrator privileges.
+* Use a domain account that has been granted Administrator privileges on a computer registered to the same domain.
 * Enable read access to Data Archive security tables and the PI points and data to be transferred.
 
 You can download the PI to OCS Agent Installation kit and then transfer it to the computer that will host the agent.

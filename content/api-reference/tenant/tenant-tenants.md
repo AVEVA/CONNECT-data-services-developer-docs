@@ -12,17 +12,18 @@ APIs to manage an OCS Customer Tenant. A tenant represents the set of services, 
 
 Returns a specific `Tenant` by the identifier.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -30,7 +31,8 @@ GET /api/v1/Tenants/{tenantId}
 |400|None|Missing or invalid inputs.|
 |403|None|Forbidden.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([TenantWithProperties](#schematenantwithproperties))
 
 ```json
@@ -66,7 +68,7 @@ GET /api/v1/Tenants/{tenantId}
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -81,17 +83,18 @@ Allowed for these roles:
 
 Checks if a `Tenant` with a specific identifier exists.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 HEAD /api/v1/Tenants/{tenantId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -99,7 +102,7 @@ HEAD /api/v1/Tenants/{tenantId}
 |400|None|Missing or invalid inputs.|
 |404|None|Client or tenant not found.|
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -114,17 +117,18 @@ Allowed for these roles:
 
 Updates a specified `Tenant` object.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1/Tenants/{tenantId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 The updated details of the Tenant.<br/>
 
@@ -152,7 +156,7 @@ The updated details of the Tenant.<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -161,7 +165,8 @@ The updated details of the Tenant.<br/>
 |403|None|Forbidden.|
 |405|None|Method not allowed at this base URL. Try the request again at the Global base URL.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([Tenant](#schematenant))
 
 ```json
@@ -188,7 +193,7 @@ The updated details of the Tenant.<br/>
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -203,17 +208,18 @@ Allowed for these roles:
 
 Returns an icon specified by its `Tenant` identifier.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/Icon
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -221,7 +227,7 @@ GET /api/v1/Tenants/{tenantId}/Icon
 |400|None|Missing or invalid inputs.|
 |403|None|Forbidden.|
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -236,17 +242,18 @@ Allowed for these roles:
 
 Creates or updates the icon for a `Tenant`. Note that the icon size must be less than `65536`.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1/Tenants/{tenantId}/Icon
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 The Base64 encoded PNG icon for the Tenant.<br/>
 
@@ -254,7 +261,7 @@ The Base64 encoded PNG icon for the Tenant.<br/>
 "string"
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -263,7 +270,7 @@ The Base64 encoded PNG icon for the Tenant.<br/>
 |403|None|Forbidden.|
 |405|None|Method not allowed at this base URL. Try the request again at the Global base URL.|
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -278,17 +285,18 @@ Allowed for these roles:
 
 Deletes the icon for a `Tenant`.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 DELETE /api/v1/Tenants/{tenantId}/Icon
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -297,7 +305,7 @@ DELETE /api/v1/Tenants/{tenantId}/Icon
 |403|None|Forbidden.|
 |405|None|Method not allowed at this base URL. Try the request again at the Global base URL.|
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -312,17 +320,18 @@ Allowed for these roles:
 
 Returns the `RegionBase` list for the specified `Tenant`.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/Regions
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -330,7 +339,8 @@ GET /api/v1/Tenants/{tenantId}/Regions
 |403|None|Forbidden.|
 |404|None|Client or tenant not found.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([RegionBase](#schemaregionbase))
 
 ```json
@@ -342,7 +352,7 @@ GET /api/v1/Tenants/{tenantId}/Regions
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -359,7 +369,7 @@ Allowed for these roles:
 <a id="tocStenantwithproperties"></a>
 <a id="tocstenantwithproperties"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -419,7 +429,7 @@ Allowed for these roles:
 
 Status codes describing a tenant's current provisioning state.
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -444,7 +454,7 @@ Status codes describing a tenant's current provisioning state.
 
 Representation of a server-side database interpretation of a feature state.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -475,7 +485,7 @@ Representation of a server-side database interpretation of a feature state.
 
 Representation of a server-side database interpretation of a feature.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -505,7 +515,7 @@ Representation of a server-side database interpretation of a feature.
 
 An instance of an entitlement.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -537,7 +547,7 @@ An instance of an entitlement.
 
 The type of entitlement.
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -556,7 +566,7 @@ The type of entitlement.
 
 The limit type of entitlement.
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -574,7 +584,7 @@ The limit type of entitlement.
 
 Representation of a server-side database interpretation of a tenant.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -624,7 +634,7 @@ Representation of a server-side database interpretation of a tenant.
 
 Represents a region within an OCS environment for OCS customers to see.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

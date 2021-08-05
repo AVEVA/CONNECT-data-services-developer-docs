@@ -12,17 +12,18 @@ APIs for managing the feature states of an OCS Tenant.
 
 Returns all `FeatureState`s for the specified `Tenant`.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/Features
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -30,7 +31,8 @@ GET /api/v1/Tenants/{tenantId}/Features
 |400|None|Missing or invalid inputs.|
 |403|None|Forbidden.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([FeatureState](#schemafeaturestate)[])
 
 ```json
@@ -47,7 +49,7 @@ GET /api/v1/Tenants/{tenantId}/Features
 ]
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -62,18 +64,19 @@ Allowed for these roles:
 
 Returns a `FeatureState` with the specified identifier from a `Tenant`.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/Features/{id}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string id`
 <br/>Feature state identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -81,7 +84,8 @@ GET /api/v1/Tenants/{tenantId}/Features/{id}
 |400|None|Missing or invalid inputs.|
 |403|None|Forbidden.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([FeatureState](#schemafeaturestate))
 
 ```json
@@ -96,7 +100,7 @@ GET /api/v1/Tenants/{tenantId}/Features/{id}
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -115,7 +119,7 @@ Allowed for these roles:
 
 Representation of a server-side database interpretation of a feature state.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -146,7 +150,7 @@ Representation of a server-side database interpretation of a feature state.
 
 Representation of a server-side database interpretation of a feature.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

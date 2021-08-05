@@ -12,17 +12,18 @@ APIs to manage default access to entities governed by an AccessControlList.
 
 Retrieves the `AccessControlList` that is used to authorize access to a `Namespace` if none is specified during creation.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/AccessControl/Namespaces
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -30,7 +31,8 @@ GET /api/v1/Tenants/{tenantId}/AccessControl/Namespaces
 |400|None|Missing or invalid inputs.|
 |403|None|Forbidden.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([AccessControlList](#schemaaccesscontrollist))
 
 ```json
@@ -57,17 +59,18 @@ GET /api/v1/Tenants/{tenantId}/AccessControl/Namespaces
 
 Modifies the `AccessControlList` that is used to authorize access to a `Namespace` if none is specified during creation.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1/Tenants/{tenantId}/AccessControl/Namespaces
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 The new root AccessControlList for Namespaces.<br/>
 
@@ -87,7 +90,7 @@ The new root AccessControlList for Namespaces.<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -96,7 +99,8 @@ The new root AccessControlList for Namespaces.<br/>
 |403|None|Forbidden.|
 |405|None|Method not allowed at this base URL. Try the request again at the Global base URL.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([AccessControlList](#schemaaccesscontrollist))
 
 ```json
@@ -125,7 +129,7 @@ The new root AccessControlList for Namespaces.<br/>
 <a id="tocSaccesscontrollist"></a>
 <a id="tocsaccesscontrollist"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -157,7 +161,7 @@ The new root AccessControlList for Namespaces.<br/>
 <a id="tocSaccesscontrolentry"></a>
 <a id="tocsaccesscontrolentry"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -187,7 +191,7 @@ The new root AccessControlList for Namespaces.<br/>
 <a id="tocStrustee"></a>
 <a id="tocstrustee"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -213,7 +217,7 @@ The new root AccessControlList for Namespaces.<br/>
 <a id="tocStrusteetype"></a>
 <a id="tocstrusteetype"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -230,7 +234,7 @@ The new root AccessControlList for Namespaces.<br/>
 <a id="tocSaccesstype"></a>
 <a id="tocsaccesstype"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|

@@ -12,20 +12,21 @@ A Namespace is a logical unit of organization for data within a tenant. It is a 
 
 Returns all `Namespace`s owned by the specified `Tenant` to which the caller has access.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/Namespaces
 ?region={region}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>
 `[optional] string region`
 <br/>The region identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -33,7 +34,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces
 |400|None|Missing or invalid inputs.|
 |403|None|Forbidden.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([Namespace](#schemanamespace)[])
 
 ```json
@@ -68,7 +70,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces
 ]
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -83,18 +85,19 @@ Allowed for these roles:
 
 Returns a `Namespace` with the specified identifier.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -103,7 +106,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}
 |403|None|Forbidden.|
 |404|None|`Namespace` not found in the specified tenant.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([Namespace](#schemanamespace))
 
 ```json
@@ -136,7 +140,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -151,13 +155,14 @@ Allowed for these roles:
 
 Creates a new `Namespace` in the specified `Tenant`.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}
 ?isServerTest={isServerTest}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
@@ -165,7 +170,7 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}
 `[optional] boolean isServerTest`
 <br/>This parameter is unused and will be removed in the next API version.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 The new Namespace to be created.<br/>
 
@@ -199,7 +204,7 @@ The new Namespace to be created.<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -210,7 +215,8 @@ The new Namespace to be created.<br/>
 |405|None|Method not allowed at this base URL. Try the request again at the Global base URL.|
 |409|None|A `Namespace` already exists with different values.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 201 Response ([Namespace](#schemanamespace))
 
 ```json
@@ -243,7 +249,7 @@ The new Namespace to be created.<br/>
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -258,18 +264,19 @@ Allowed for these roles:
 
 Updates the `Namespace` information: description; the `AccessControlList` and owner's `Trustee` can only be updated through their own routes.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 The new details to store for the Namespace.<br/>
 
@@ -303,7 +310,7 @@ The new details to store for the Namespace.<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -312,7 +319,8 @@ The new details to store for the Namespace.<br/>
 |403|None|Forbidden.|
 |405|None|Method not allowed at this base URL. Try the request again at the Global base URL.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([Namespace](#schemanamespace))
 
 ```json
@@ -345,7 +353,7 @@ The new details to store for the Namespace.<br/>
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -360,13 +368,14 @@ Allowed for these roles:
 
 Deletes a `Namespace` in the specified `Tenant`.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}
 ?isServerTest={isServerTest}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
@@ -374,7 +383,7 @@ DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}
 `[optional] boolean isServerTest`
 <br/>This parameter is unused and will be removed in the next API version.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -383,7 +392,7 @@ DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}
 |403|None|#403.|
 |405|None|Method not allowed at this base URL. Try the request again at the Global base URL.|
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -398,18 +407,19 @@ Allowed for these roles:
 
 Returns the `AccessControlList` that is used to authorize access to a `Namespace`.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/accesscontrol
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -417,7 +427,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/accesscontrol
 |400|None|Missing or invalid inputs.|
 |403|None|Forbidden.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([AccessControlList](#schemaaccesscontrollist))
 
 ```json
@@ -436,7 +447,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/accesscontrol
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -451,18 +462,19 @@ Allowed for these roles:
 
 Updates the `AccessControlList` that is used to authorize access to a `Namespace`.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/accesscontrol
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 The updated AccessControlList for the Namespace.<br/>
 
@@ -482,7 +494,7 @@ The updated AccessControlList for the Namespace.<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -491,7 +503,8 @@ The updated AccessControlList for the Namespace.<br/>
 |403|None|Forbidden.|
 |405|None|Method not allowed at this base URL. Try the request again at the Global base URL.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([AccessControlList](#schemaaccesscontrollist))
 
 ```json
@@ -510,7 +523,7 @@ The updated AccessControlList for the Namespace.<br/>
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -525,18 +538,19 @@ Allowed for these roles:
 
 Returns the owner's `Trustee` for a given `Namespace`.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/owner
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -544,7 +558,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/owner
 |400|None|Missing or invalid inputs.|
 |403|None|Forbidden.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([Trustee](#schematrustee))
 
 ```json
@@ -555,7 +570,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/owner
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -570,18 +585,19 @@ Allowed for these roles:
 
 Changes the owner's `Trustee` for a given `Namespace`.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/owner
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 The new owner's Trustee of the Namespace.<br/>
 
@@ -593,7 +609,7 @@ The new owner's Trustee of the Namespace.<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -602,7 +618,8 @@ The new owner's Trustee of the Namespace.<br/>
 |403|None|Forbidden.|
 |405|None|Method not allowed at this base URL. Try the request again at the Global base URL.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([Trustee](#schematrustee))
 
 ```json
@@ -613,7 +630,7 @@ The new owner's Trustee of the Namespace.<br/>
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -632,7 +649,7 @@ Allowed for these roles:
 
 Representation of a server-side database interpretation of a namespace.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -688,7 +705,7 @@ Representation of a server-side database interpretation of a namespace.
 
 Status codes describing a namespace's current provisioning state.
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -706,7 +723,7 @@ Status codes describing a namespace's current provisioning state.
 <a id="tocStrustee"></a>
 <a id="tocstrustee"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -732,7 +749,7 @@ Status codes describing a namespace's current provisioning state.
 <a id="tocStrusteetype"></a>
 <a id="tocstrusteetype"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -749,7 +766,7 @@ Status codes describing a namespace's current provisioning state.
 <a id="tocSaccesscontrollist"></a>
 <a id="tocsaccesscontrollist"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -781,7 +798,7 @@ Status codes describing a namespace's current provisioning state.
 <a id="tocSaccesscontrolentry"></a>
 <a id="tocsaccesscontrolentry"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -811,7 +828,7 @@ Status codes describing a namespace's current provisioning state.
 <a id="tocSaccesstype"></a>
 <a id="tocsaccesstype"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|

@@ -21,7 +21,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/assetrul
 <h4>Parameters</h4>
 
 `string token`
-<br/>A `Guid` which corresponds to a preview that has been created using the StartPreview method.<br/><br/>`integer skip`
+<br/>A `Guid` which corresponds to a preview that has been created using the `StartPreview` method.<br/><br/>`integer skip`
 <br/>An `Int32` to determine the number of preview results to skip.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
@@ -334,7 +334,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 <h4>Parameters</h4>
 
 `string token`
-<br/>A `Guid` which corresponds to a preview that has been created using the StartPreview method.<br/><br/>`string tenantId`
+<br/>A `Guid` which corresponds to a preview that has been created using the `StartPreview` method.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 

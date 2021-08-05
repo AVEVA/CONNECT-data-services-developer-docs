@@ -12,13 +12,14 @@ Client credential clients are used for machine-to-machine communication without 
 
 Returns a list of client credential clients from a tenant. Optionally, returns a list of requested clients. Total number of client credential clients in the tenant set in the Total-Count header.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/ClientCredentialClients
 ?id={id}&tag={tag}&query={query}&skip={skip}&count={count}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>
@@ -29,7 +30,7 @@ GET /api/v1/Tenants/{tenantId}/ClientCredentialClients
 <br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -40,7 +41,8 @@ GET /api/v1/Tenants/{tenantId}/ClientCredentialClients
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([ClientCredentialClient](#schemaclientcredentialclient)[])
 
 ```json
@@ -60,7 +62,7 @@ GET /api/v1/Tenants/{tenantId}/ClientCredentialClients
 ]
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -75,13 +77,14 @@ Allowed for these roles:
 
 Returns the total number of client credential clients in a tenant. Optionally, check based on a list of requested client identifiers. The value will be set in the Total-Count header. This method is identical to the GET method but it does not return any objects in the body.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 HEAD /api/v1/Tenants/{tenantId}/ClientCredentialClients
 ?id={id}&tag={tag}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>
@@ -89,7 +92,7 @@ HEAD /api/v1/Tenants/{tenantId}/ClientCredentialClients
 <br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>`[optional] array tag`
 <br/>Only return clients that have these tags.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -99,7 +102,7 @@ HEAD /api/v1/Tenants/{tenantId}/ClientCredentialClients
 |404|None|Client or tenant not found|
 |500|None|Internal server error.|
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -114,17 +117,18 @@ Allowed for these roles:
 
 Creates a client credential client. A client identifier and client secret will be generated to perform authentication. Make sure to store the secret somewhere safe as we do not store the actual value after the creation step. If you do not have access to the secret value, we suggest deleting the secret and adding a new one for this client. Clients have identifiers in a tenant. Currently there is a limit of 50000 clients (of any type) per tenant.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 POST /api/v1/Tenants/{tenantId}/ClientCredentialClients
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 ClientCredentialClientCreate object<br/>
 
@@ -145,7 +149,7 @@ ClientCredentialClientCreate object<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -158,7 +162,8 @@ ClientCredentialClientCreate object<br/>
 |409|[ErrorResponse](#schemaerrorresponse)|Client identifier already exists|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 201 Response ([ClientCredentialClientCreateResponse](#schemaclientcredentialclientcreateresponse))
 
 ```json
@@ -182,7 +187,7 @@ ClientCredentialClientCreate object<br/>
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -197,18 +202,19 @@ Allowed for these roles:
 
 Returns a client credential client.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string clientId`
 <br/>Client identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -218,7 +224,8 @@ GET /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 |404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([ClientCredentialClient](#schemaclientcredentialclient))
 
 ```json
@@ -236,7 +243,7 @@ GET /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -252,18 +259,19 @@ Allowed for these roles:
 
 Validates that a client credential client exists. This method is identical to the GET method but it does not return any objects in the body.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 HEAD /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string clientId`
 <br/>Client identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -273,7 +281,7 @@ HEAD /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 |404|None|Client or tenant not found|
 |500|None|Internal server error.|
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -289,18 +297,19 @@ Allowed for these roles:
 
 Updates a client credential client. It can take up to one hour for these values to manifest in the authentication process.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string clientId`
 <br/>Client identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 ClientCredentialClient object. Properties that are not set or are null will not be changed.<br/>
 
@@ -319,7 +328,7 @@ ClientCredentialClient object. Properties that are not set or are null will not 
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -331,7 +340,8 @@ ClientCredentialClient object. Properties that are not set or are null will not 
 |408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([ClientCredentialClient](#schemaclientcredentialclient))
 
 ```json
@@ -349,7 +359,7 @@ ClientCredentialClient object. Properties that are not set or are null will not 
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -364,18 +374,19 @@ Allowed for these roles:
 
 Deletes a client credential client. It can take up to one hour for deletion to manifest in the authentication process. Access tokens issued to this client will be valid until their expiration.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 DELETE /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string clientId`
 <br/>Client identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -386,7 +397,8 @@ DELETE /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 |408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 401 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
@@ -404,7 +416,7 @@ DELETE /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -419,13 +431,14 @@ Allowed for these roles:
 
 Returns all client credential clients.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients
 ?tag={tag}&query={query}&skip={skip}&count={count}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>
@@ -435,7 +448,7 @@ GET /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients
 <br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -446,7 +459,8 @@ GET /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients
 |404|[ErrorResponse2](#schemaerrorresponse2)|Tenant not found|
 |500|[ErrorResponse2](#schemaerrorresponse2)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([ClientCredentialClient2](#schemaclientcredentialclient2)[])
 
 ```json
@@ -466,7 +480,7 @@ GET /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients
 ]
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -481,17 +495,18 @@ Allowed for these roles:
 
 Creates a client credential flow client.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 POST /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 ClientCredentialClientCreate object<br/>
 
@@ -512,7 +527,7 @@ ClientCredentialClientCreate object<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -524,7 +539,8 @@ ClientCredentialClientCreate object<br/>
 |409|[ErrorResponse2](#schemaerrorresponse2)|Client identifier already exists.|
 |500|[ErrorResponse2](#schemaerrorresponse2)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 201 Response ([ClientCredentialClientResponse](#schemaclientcredentialclientresponse))
 
 ```json
@@ -546,7 +562,7 @@ ClientCredentialClientCreate object<br/>
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -561,18 +577,19 @@ Allowed for these roles:
 
 Returns a client credential client.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string clientId`
 <br/>Client identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -582,7 +599,8 @@ GET /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 |404|[ErrorResponse2](#schemaerrorresponse2)|Client or tenant not found|
 |500|[ErrorResponse2](#schemaerrorresponse2)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([ClientCredentialClient2](#schemaclientcredentialclient2))
 
 ```json
@@ -600,7 +618,7 @@ GET /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -615,18 +633,19 @@ Allowed for these roles:
 
 Updates a client credential client.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string clientId`
 <br/>Client identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 Updated client credential client values<br/>
 
@@ -645,7 +664,7 @@ Updated client credential client values<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -657,7 +676,8 @@ Updated client credential client values<br/>
 |408|[ErrorResponse2](#schemaerrorresponse2)|Operation timed out.|
 |500|[ErrorResponse2](#schemaerrorresponse2)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([ClientCredentialClient2](#schemaclientcredentialclient2))
 
 ```json
@@ -675,7 +695,7 @@ Updated client credential client values<br/>
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -694,7 +714,7 @@ Allowed for these roles:
 
 Secret information returned after a client credential client is created
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -737,7 +757,7 @@ Secret information returned after a client credential client is created
 
 Object to return or update a ClientCredentialClient
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -775,7 +795,7 @@ Object to return or update a ClientCredentialClient
 
 Object returned whenever there is an error
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -812,7 +832,7 @@ Object returned whenever there is an error
 
 Object used during client creation
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -854,7 +874,7 @@ Object used during client creation
 
 MultiStatusResponse objects returned in a 207 response
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -913,7 +933,7 @@ MultiStatusResponse objects returned in a 207 response
 
 ChildError objects returned in a 207 response
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -951,7 +971,7 @@ ChildError objects returned in a 207 response
 
 Object to return or update the ClientCredentialClient
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -989,7 +1009,7 @@ Object to return or update the ClientCredentialClient
 
 MultiStatusResponse objects returned in a 207 response
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1049,7 +1069,7 @@ MultiStatusResponse objects returned in a 207 response
 
 ChildError objects returned in a 207 response
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1090,7 +1110,7 @@ ChildError objects returned in a 207 response
 
 Object returned when there is an error
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1124,7 +1144,7 @@ Object returned when there is an error
 
 Object returned after a client credential client is created
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1170,7 +1190,7 @@ Object returned after a client credential client is created
 
 Object used during client creation
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

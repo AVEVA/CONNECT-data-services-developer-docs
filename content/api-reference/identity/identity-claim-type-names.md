@@ -12,13 +12,14 @@ An identity provider claim type name is the attribute needed when creating an id
 
 Returns all identity provider claim type names for an identity provider on a tenant.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames
 ?query={query}&skip={skip}&count={count}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string identityProviderId`
 <br/>Identity provider identifier.<br/><br/>
@@ -27,7 +28,7 @@ GET /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames
 <br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -37,7 +38,8 @@ GET /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames
 |404|[ErrorResponse](#schemaerrorresponse)|Identity provider not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([IdentityProviderClaimTypeName](#schemaidentityproviderclaimtypename)[])
 
 ```json
@@ -50,7 +52,7 @@ GET /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames
 ]
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -65,17 +67,18 @@ Allowed for these roles:
 
 Returns a header for all identity provider claim type names for an identity provider on a tenant.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 HEAD /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string identityProviderId`
 <br/>Identity provider identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -85,7 +88,7 @@ HEAD /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames
 |404|None|Identity provider not found|
 |500|None|Internal server error.|
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -100,18 +103,19 @@ Allowed for these roles:
 
 Returns an identity provider claim type name from an identity provider.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames/{identityProviderClaimTypeNameId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string identityProviderId`
 <br/>Identity provider identifier.<br/><br/>`string identityProviderClaimTypeNameId`
 <br/>Identity provider claim type name identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -121,7 +125,8 @@ GET /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames/{identityProvi
 |404|[ErrorResponse](#schemaerrorresponse)|Identity provider or identity provider claim type name not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([IdentityProviderClaim](#schemaidentityproviderclaim))
 
 ```json
@@ -135,7 +140,7 @@ GET /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames/{identityProvi
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -150,18 +155,19 @@ Allowed for these roles:
 
 Returns an identity provider claim type name header from an identity provider.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 HEAD /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames/{identityProviderClaimTypeNameId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string identityProviderId`
 <br/>Identity provider identifier.<br/><br/>`string identityProviderClaimTypeNameId`
 <br/>Identity provider claim type name identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -171,7 +177,7 @@ HEAD /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames/{identityProv
 |404|None|Identity provider or identity provider claim type name not found|
 |500|None|Internal server error.|
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -190,7 +196,7 @@ Allowed for these roles:
 
 Claim type name associated with an identity provider
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -218,7 +224,7 @@ Claim type name associated with an identity provider
 
 Object returned whenever there is an error
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -255,7 +261,7 @@ Object returned whenever there is an error
 
 Object representing a claim from an identity provider to map to a role
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

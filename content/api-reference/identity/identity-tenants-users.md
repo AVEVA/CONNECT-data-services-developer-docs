@@ -12,13 +12,14 @@ Users consume resources in a tenant. They are invited by the administrator of th
 
 Returns a list of users from a tenant. Optionally, returns a list of requested users. Total number of users in the tenant set in the Total-Count header.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/Users
 ?id={id}&query={query}&skip={skip}&count={count}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>
@@ -28,7 +29,7 @@ GET /api/v1/Tenants/{tenantId}/Users
 <br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -40,7 +41,8 @@ GET /api/v1/Tenants/{tenantId}/Users
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([User](#schemauser)[])
 
 ```json
@@ -63,7 +65,7 @@ GET /api/v1/Tenants/{tenantId}/Users
 ]
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -78,20 +80,21 @@ Allowed for these roles:
 
 Returns the total number of users in a tenant. Optionally, check based on a list of requested users. The value will be set in the Total-Count header. This method is identical to the GET method, but it does not return any objects in the body.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 HEAD /api/v1/Tenants/{tenantId}/Users
 ?id={id}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>
 `[optional] array id`
 <br/>Unordered list of user identifiers<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -101,7 +104,7 @@ HEAD /api/v1/Tenants/{tenantId}/Users
 |404|None|User not found|
 |500|None|Internal server error.|
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -116,17 +119,18 @@ Allowed for these roles:
 
 Creates a user in the tenant. This method does not create an invitation for the user. You will need to create an invitation with the respective method for this user, otherwise they will not be able to finish the sign-up process. Users have identifiers in a tenant. Currently there is a limit of 50000 users per tenant. For Windows Active Directory users, the external user identifier must be specified.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 POST /api/v1/Tenants/{tenantId}/Users
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 UserCreateOrUpdate object<br/>
 
@@ -145,7 +149,7 @@ UserCreateOrUpdate object<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -157,7 +161,8 @@ UserCreateOrUpdate object<br/>
 |408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 201 Response ([User](#schemauser))
 
 ```json
@@ -178,7 +183,7 @@ UserCreateOrUpdate object<br/>
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -193,13 +198,14 @@ Allowed for these roles:
 
 Returns the status of the invitations for multiple users. Optionally, restrict it only to users of a specific invitation status. The user status can be: InvitationAccepted (0), NoInvitation (1), InvitationNotSent (2), InvitationSent (3), InvitationExpired (4).
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/Users/Status
 ?id={id}&query={query}&skip={skip}&count={count}&status={status}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>
@@ -210,7 +216,7 @@ GET /api/v1/Tenants/{tenantId}/Users/Status
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] array status`
 <br/>Only return statuses that match these values. Possible user statuses are: InvitationAccepted, NoInvitation, InvitationNotSent, InvitationSent, InvitationExpired.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -221,7 +227,8 @@ GET /api/v1/Tenants/{tenantId}/Users/Status
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([UserStatus](#schemauserstatus)[])
 
 ```json
@@ -247,7 +254,7 @@ GET /api/v1/Tenants/{tenantId}/Users/Status
 ]
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -262,18 +269,19 @@ Allowed for these roles:
 
 Returns a specific user from a tenant.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/Users/{userId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string userId`
 <br/>User identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -283,7 +291,8 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}
 |404|[ErrorResponse](#schemaerrorresponse)|User or tenant not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([User](#schemauser))
 
 ```json
@@ -304,7 +313,7 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -320,18 +329,19 @@ Allowed for these roles:
 
 Validates that a user exists. This method is identical to the GET method, but it does not return an object in the body.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 HEAD /api/v1/Tenants/{tenantId}/Users/{userId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string userId`
 <br/>User identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -341,7 +351,7 @@ HEAD /api/v1/Tenants/{tenantId}/Users/{userId}
 |404|None|User does not exist|
 |500|None|Internal server error.|
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -357,18 +367,19 @@ Allowed for these roles:
 
 Updates a user in a tenant. The user identifier cannot be changed.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1/Tenants/{tenantId}/Users/{userId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string userId`
 <br/>User identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 UserCreateOrUpdate object. Properties that are not set or are null will not be changed.<br/>
 
@@ -387,7 +398,7 @@ UserCreateOrUpdate object. Properties that are not set or are null will not be c
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -399,7 +410,8 @@ UserCreateOrUpdate object. Properties that are not set or are null will not be c
 |408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([User](#schemauser))
 
 ```json
@@ -420,7 +432,7 @@ UserCreateOrUpdate object. Properties that are not set or are null will not be c
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -435,13 +447,14 @@ Allowed for these roles:
 
 Deletes a user. Users cannot delete themselves. Deleting a user does not invalidate any of the existing access tokens, but it prevents this user from being able to authenticate in the future. Existing access tokens for the user will be valid until their expiration date. Refresh tokens on behalf of the user will no longer be valid after the user has been deleted. Deleting a user with explicit and claim role mappings will only have their explicit roles deleted. Forcibly deleting a user will delete a user completely regardless of claim role mappings.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 DELETE /api/v1/Tenants/{tenantId}/Users/{userId}
 ?force={force}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string userId`
@@ -449,7 +462,7 @@ DELETE /api/v1/Tenants/{tenantId}/Users/{userId}
 `[optional] boolean force`
 <br/>Forcibly delete a user that can remain due to claim role mappings.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -461,7 +474,8 @@ DELETE /api/v1/Tenants/{tenantId}/Users/{userId}
 |408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 401 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
@@ -479,7 +493,7 @@ DELETE /api/v1/Tenants/{tenantId}/Users/{userId}
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -494,18 +508,19 @@ Allowed for these roles:
 
 Returns invitation status for a user. It can be: InvitationAccepted (0), NoInvitation (1), InvitationNotSent (2), InvitationSent (3), InvitationExpired (4).
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/Users/{userId}/Status
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string userId`
 <br/>User identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -515,7 +530,8 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}/Status
 |404|[ErrorResponse](#schemaerrorresponse)|User or tenant not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([UserStatus](#schemauserstatus))
 
 ```json
@@ -539,7 +555,7 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}/Status
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -555,18 +571,19 @@ Allowed for these roles:
 
 Returns preferences from a user. User preferences can be any valid JSON object. A common use case is to store UI preferences for the user.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/Users/{userId}/Preferences
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string userId`
 <br/>User identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -576,7 +593,8 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}/Preferences
 |404|[ErrorResponse](#schemaerrorresponse)|User or tenant not found|
 |422|[ErrorResponse](#schemaerrorresponse)|Unprocessable entity|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 401 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
@@ -594,7 +612,7 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}/Preferences
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -610,18 +628,19 @@ Allowed for these roles:
 
 Validates that there are preferences for a user. This method is identical to the GET method, but it does not return any objects in the body.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 HEAD /api/v1/Tenants/{tenantId}/Users/{userId}/Preferences
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string userId`
 <br/>User identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -631,7 +650,7 @@ HEAD /api/v1/Tenants/{tenantId}/Users/{userId}/Preferences
 |404|None|User or tenant not found|
 |500|None|Internal server error.|
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -647,18 +666,19 @@ Allowed for these roles:
 
 Updates preferences for a user.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1/Tenants/{tenantId}/Users/{userId}/Preferences
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string userId`
 <br/>User identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -669,7 +689,8 @@ PUT /api/v1/Tenants/{tenantId}/Users/{userId}/Preferences
 |404|[ErrorResponse](#schemaerrorresponse)|User or tenant not found|
 |408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 400 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
@@ -687,7 +708,7 @@ PUT /api/v1/Tenants/{tenantId}/Users/{userId}/Preferences
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -703,13 +724,14 @@ Allowed for these roles:
 
 Returns an ordered list of user objects based on the user Id for a given tenant or a MultiStatusResponse with a list of user objects and a list of errors.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1-preview/Tenants/{tenantId}/Users/Ids
 ?userId={userId}&query={query}&skip={skip}&count={count}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>
@@ -719,7 +741,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Users/Ids
 <br/><span style="background-color:red;color:white">ERROR: Parameter "skip.%20Currently%20not%20supported" could not be found in external reference file</span><br/><br/>`[optional] integer count`
 <br/><span style="background-color:red;color:white">ERROR: Parameter "count.%20Currently%20not%20supported" could not be found in external reference file</span><br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -731,7 +753,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Users/Ids
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([User](#schemauser)[])
 
 ```json
@@ -754,7 +777,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Users/Ids
 ]
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -769,13 +792,14 @@ Allowed for these roles:
 
 Returns an ordered list of UserStatus objects for a given tenant or a MultiStatusResponse with a list of UserStatus objects and a list of errors.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1-preview/Tenants/{tenantId}/Users/Status/Ids
 ?userId={userId}&query={query}&skip={skip}&count={count}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>
@@ -785,7 +809,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Users/Status/Ids
 <br/><span style="background-color:red;color:white">ERROR: Parameter "skip.%20Currently%20not%20supported" could not be found in external reference file</span><br/><br/>`[optional] integer count`
 <br/><span style="background-color:red;color:white">ERROR: Parameter "count.%20Currently%20not%20supported" could not be found in external reference file</span><br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -797,7 +821,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Users/Status/Ids
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([UserStatus](#schemauserstatus)[])
 
 ```json
@@ -823,7 +848,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Users/Status/Ids
 ]
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -838,17 +863,18 @@ Allowed for these roles:
 
 Creates a user.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 POST /api/v1-preview/Tenants/{tenantId}/Users
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 User values to use during creating<br/>
 
@@ -865,7 +891,7 @@ User values to use during creating<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -877,7 +903,8 @@ User values to use during creating<br/>
 |408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 201 Response ([User](#schemauser))
 
 ```json
@@ -898,7 +925,7 @@ User values to use during creating<br/>
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -913,18 +940,19 @@ Allowed for these roles:
 
 Creates or updates a user.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1-preview/Tenants/{tenantId}/Users/{userId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string userId`
 <br/>User identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 A UserStatus object<br/>
 
@@ -941,7 +969,7 @@ A UserStatus object<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -953,7 +981,8 @@ A UserStatus object<br/>
 |408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([User](#schemauser))
 
 ```json
@@ -974,7 +1003,7 @@ A UserStatus object<br/>
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -993,7 +1022,7 @@ Allowed for these roles:
 
 Object for retrieving a user
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1039,7 +1068,7 @@ Object for retrieving a user
 
 MultiStatusResponse objects returned in a 207 response
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1101,7 +1130,7 @@ MultiStatusResponse objects returned in a 207 response
 
 ChildError objects returned in a 207 response
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1139,7 +1168,7 @@ ChildError objects returned in a 207 response
 
 Object returned whenever there is an error
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1176,7 +1205,7 @@ Object returned whenever there is an error
 
 Object used when returning user status
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1216,7 +1245,7 @@ Object used when returning user status
 
 User Invitation Status
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -1237,7 +1266,7 @@ User Invitation Status
 
 Object when updating a user
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1277,7 +1306,7 @@ Object when updating a user
 
 MultiStatusResponse objects returned in a 207 response
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1342,7 +1371,7 @@ MultiStatusResponse objects returned in a 207 response
 
 Object when updating an user
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

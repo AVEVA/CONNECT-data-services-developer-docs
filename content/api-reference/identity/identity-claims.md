@@ -12,13 +12,14 @@ An identity provider claim provides a mechanism to map a claim from an identity 
 
 Returns all identity provider claims for an identity provider on a tenant.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims
 ?query={query}&skip={skip}&count={count}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string identityProviderId`
@@ -28,7 +29,7 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims
 <br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -39,7 +40,8 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant or identity provider not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([IdentityProviderClaim](#schemaidentityproviderclaim)[])
 
 ```json
@@ -55,7 +57,7 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims
 ]
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -70,18 +72,19 @@ Allowed for these roles:
 
 Returns the header information for all identity provider claims for an identity provider on a tenant.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 HEAD /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string identityProviderId`
 <br/>Identity provider identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -91,7 +94,7 @@ HEAD /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims
 |404|None|Tenant or identity provider not found|
 |500|None|Internal server error.|
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -106,18 +109,19 @@ Allowed for these roles:
 
 Creates a new identity provider claim for an identity provider on a tenant.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 POST /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string identityProviderId`
 <br/>Identity provider identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 Identity provider claim to create<br/>
 
@@ -131,7 +135,7 @@ Identity provider claim to create<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -145,7 +149,8 @@ Identity provider claim to create<br/>
 |409|[ErrorResponse](#schemaerrorresponse)|Identity provider claim configuration already exists|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 201 Response ([IdentityProviderClaim](#schemaidentityproviderclaim))
 
 ```json
@@ -159,7 +164,7 @@ Identity provider claim to create<br/>
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -174,19 +179,20 @@ Allowed for these roles:
 
 Returns an identity provider claim from an identity provider on a tenant.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims/{identityProviderClaimId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string identityProviderId`
 <br/>Identity provider identifier.<br/><br/>`string identityProviderClaimId`
 <br/>Identity provider claim identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -196,7 +202,8 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims/{id
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant, identity provider, or identity provider claim not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([IdentityProviderClaim](#schemaidentityproviderclaim))
 
 ```json
@@ -210,7 +217,7 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims/{id
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -225,19 +232,20 @@ Allowed for these roles:
 
 Returns an identity provider claim header from an identity provider on a tenant.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 HEAD /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims/{identityProviderClaimId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string identityProviderId`
 <br/>Identity provider identifier.<br/><br/>`string identityProviderClaimId`
 <br/>Identity provider claim identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -247,7 +255,7 @@ HEAD /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims/{i
 |404|None|Tenant, identity provider, or identity provider claim not found|
 |500|None|Internal server error.|
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -262,19 +270,20 @@ Allowed for these roles:
 
 Updates a new identity provider claim for an identity provider on a tenant.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims/{identityProviderClaimId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string identityProviderId`
 <br/>Identity provider identifier.<br/><br/>`string identityProviderClaimId`
 <br/>Identity provider claim identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 Updated identity provider claim values<br/>
 
@@ -287,7 +296,7 @@ Updated identity provider claim values<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -300,7 +309,8 @@ Updated identity provider claim values<br/>
 |409|[ErrorResponse](#schemaerrorresponse)|Identity provider claim configuration already exists|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([IdentityProviderClaim](#schemaidentityproviderclaim))
 
 ```json
@@ -314,7 +324,7 @@ Updated identity provider claim values<br/>
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -329,19 +339,20 @@ Allowed for these roles:
 
 Deletes an identity provider claim for an identity provider on a tenant.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 DELETE /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims/{identityProviderClaimId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string identityProviderId`
 <br/>Identity provider identifier.<br/><br/>`string identityProviderClaimId`
 <br/>Identity provider claim identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -352,7 +363,8 @@ DELETE /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims/
 |408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 401 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
@@ -370,7 +382,7 @@ DELETE /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims/
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -389,7 +401,7 @@ Allowed for these roles:
 
 Object representing a claim from an identity provider to map to a role
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -421,7 +433,7 @@ Object representing a claim from an identity provider to map to a role
 
 Object returned whenever there is an error
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -458,7 +470,7 @@ Object returned whenever there is an error
 
 Identity provider claim to create
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -488,7 +500,7 @@ Identity provider claim to create
 
 Update information for an identity provider claim
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

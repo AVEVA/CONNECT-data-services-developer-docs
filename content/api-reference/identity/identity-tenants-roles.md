@@ -12,13 +12,14 @@ APIs for creating, getting, updating, and deleting roles on a tenant
 
 Returns all roles for a tenant including roles for any communities that the tenant belongs.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/Roles
 ?query={query}&skip={skip}&count={count}&roleTypeId={roleTypeId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>
@@ -28,7 +29,7 @@ GET /api/v1/Tenants/{tenantId}/Roles
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string roleTypeId`
 <br/>Role type identifier<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -38,7 +39,8 @@ GET /api/v1/Tenants/{tenantId}/Roles
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([Role](#schemarole)[])
 
 ```json
@@ -55,7 +57,7 @@ GET /api/v1/Tenants/{tenantId}/Roles
 ]
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -70,17 +72,18 @@ Allowed for these roles:
 
 Returns header for roles to get the total number of roles for a given tenant, including community roles for any community the tenant is joined.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 HEAD /api/v1/Tenants/{tenantId}/Roles
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -90,7 +93,7 @@ HEAD /api/v1/Tenants/{tenantId}/Roles
 |404|None|Tenant not found|
 |500|None|Internal server error.|
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -105,17 +108,18 @@ Allowed for these roles:
 
 Creates a new tenant role.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 POST /api/v1/Tenants/{tenantId}/Roles
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 Role to create<br/>
 
@@ -131,7 +135,7 @@ Role to create<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -145,7 +149,8 @@ Role to create<br/>
 |409|[ErrorResponse](#schemaerrorresponse)|A role with some matching values already exists in tenant.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 201 Response ([Role](#schemarole))
 
 ```json
@@ -160,7 +165,7 @@ Role to create<br/>
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -175,18 +180,19 @@ Allowed for these roles:
 
 Returns all users for a given role.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/Roles/{roleId}/users
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string roleId`
 <br/>Role identifier<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -196,7 +202,8 @@ GET /api/v1/Tenants/{tenantId}/Roles/{roleId}/users
 |404|None|Tenant or role not found|
 |500|None|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([User](#schemauser)[])
 
 ```json
@@ -219,7 +226,7 @@ GET /api/v1/Tenants/{tenantId}/Roles/{roleId}/users
 ]
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -234,18 +241,19 @@ Allowed for these roles:
 
 Returns total number of users for a given role.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 HEAD /api/v1/Tenants/{tenantId}/Roles/{roleId}/users
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string roleId`
 <br/>Role identifier<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -255,7 +263,7 @@ HEAD /api/v1/Tenants/{tenantId}/Roles/{roleId}/users
 |404|None|Tenant or role not found|
 |500|None|Internal server error.|
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -270,18 +278,19 @@ Allowed for these roles:
 
 Returns all the clients for a given role.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/Roles/{roleId}/clientcredentialclients
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string roleId`
 <br/>Role identifier<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -291,7 +300,8 @@ GET /api/v1/Tenants/{tenantId}/Roles/{roleId}/clientcredentialclients
 |404|None|Tenant or role not found|
 |500|None|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([ClientCredentialClient](#schemaclientcredentialclient)[])
 
 ```json
@@ -311,7 +321,7 @@ GET /api/v1/Tenants/{tenantId}/Roles/{roleId}/clientcredentialclients
 ]
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -326,18 +336,19 @@ Allowed for these roles:
 
 Returns the total number of clients for a given role.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 HEAD /api/v1/Tenants/{tenantId}/Roles/{roleId}/clientcredentialclients
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string roleId`
 <br/>Role identifier<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -347,7 +358,7 @@ HEAD /api/v1/Tenants/{tenantId}/Roles/{roleId}/clientcredentialclients
 |404|None|Tenant or role not found|
 |500|None|Internal server error.|
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -362,18 +373,19 @@ Allowed for these roles:
 
 Returns the specified role.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/Roles/{roleId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string roleId`
 <br/>Role identifier<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -383,7 +395,8 @@ GET /api/v1/Tenants/{tenantId}/Roles/{roleId}
 |404|[ErrorResponse](#schemaerrorresponse)|Role or tenant not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([Role](#schemarole))
 
 ```json
@@ -398,7 +411,7 @@ GET /api/v1/Tenants/{tenantId}/Roles/{roleId}
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -413,18 +426,19 @@ Allowed for these roles:
 
 Returns the header for a role on a given tenant.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 HEAD /api/v1/Tenants/{tenantId}/Roles/{roleId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string roleId`
 <br/>Provider identifier<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -434,7 +448,7 @@ HEAD /api/v1/Tenants/{tenantId}/Roles/{roleId}
 |404|None|Identity provider or tenant not found|
 |500|None|Internal server error.|
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -449,18 +463,19 @@ Allowed for these roles:
 
 Updates a role for a tenant.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1/Tenants/{tenantId}/Roles/{roleId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string roleId`
 <br/>Role identifier<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 Role to update<br/>
 
@@ -476,7 +491,7 @@ Role to update<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -488,7 +503,8 @@ Role to update<br/>
 |408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([Role](#schemarole))
 
 ```json
@@ -503,7 +519,7 @@ Role to update<br/>
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -518,18 +534,19 @@ Allowed for these roles:
 
 Deletes any tenant-scoped, non built-in role by its role identifier.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 DELETE /api/v1/Tenants/{tenantId}/Roles/{roleId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string roleId`
 <br/>Role identifier<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -541,7 +558,8 @@ DELETE /api/v1/Tenants/{tenantId}/Roles/{roleId}
 |408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 400 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
@@ -559,7 +577,7 @@ DELETE /api/v1/Tenants/{tenantId}/Roles/{roleId}
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -578,7 +596,7 @@ Allowed for these roles:
 
 Object for retrieving a role
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -614,7 +632,7 @@ Object for retrieving a role
 
 The object that represents the scope of a given role
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -634,7 +652,7 @@ The object that represents the scope of a given role
 
 Object returned whenever there is an error
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -671,7 +689,7 @@ Object returned whenever there is an error
 
 Object for retrieving a user
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -717,7 +735,7 @@ Object for retrieving a user
 
 Object to return or update a ClientCredentialClient
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

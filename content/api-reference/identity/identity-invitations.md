@@ -12,18 +12,19 @@ Invitations are issued after the creation of a user object in OCS, to begin the 
 
 Returns an invitation for a user.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string userId`
 <br/>User identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -33,7 +34,8 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 |404|[ErrorResponse](#schemaerrorresponse)|Invitation, user, or tenant not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([Invitation](#schemainvitation))
 
 ```json
@@ -48,7 +50,7 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -63,13 +65,14 @@ Allowed for these roles:
 
 Validates that an invitation exist for a user. This method is identical to the GET method, but it does not return any objects in the body.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 HEAD /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 ?includeExpiredInvitations={includeExpiredInvitations}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string userId`
@@ -77,7 +80,7 @@ HEAD /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 `[optional] boolean includeExpiredInvitations`
 <br/>Specify whether to include expired invitations.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -88,7 +91,7 @@ HEAD /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 |404|None|Tenant not found|
 |500|None|Internal server error.|
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -103,18 +106,19 @@ Allowed for these roles:
 
 Creates an invitation for a user. Use this when no other invitation exists for the user.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 POST /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string userId`
 <br/>User identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 InvitationCreateOrUpdate object<br/>
 
@@ -127,7 +131,7 @@ InvitationCreateOrUpdate object<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -141,7 +145,8 @@ InvitationCreateOrUpdate object<br/>
 |409|[ErrorResponse](#schemaerrorresponse)|Invitation already exists|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 201 Response ([Invitation](#schemainvitation))
 
 ```json
@@ -156,7 +161,7 @@ InvitationCreateOrUpdate object<br/>
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -171,18 +176,19 @@ Allowed for these roles:
 
 Creates or updates an invitation for a user.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string userId`
 <br/>User identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 InvitationCreateOrUpdate object<br/>
 
@@ -195,7 +201,7 @@ InvitationCreateOrUpdate object<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -209,7 +215,8 @@ InvitationCreateOrUpdate object<br/>
 |409|[ErrorResponse](#schemaerrorresponse)|Invitation already exists|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([Invitation](#schemainvitation))
 
 ```json
@@ -224,7 +231,7 @@ InvitationCreateOrUpdate object<br/>
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -239,18 +246,19 @@ Allowed for these roles:
 
 Deletes an invitation for a user.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 DELETE /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string userId`
 <br/>User identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -261,7 +269,8 @@ DELETE /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 |408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 401 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
@@ -276,7 +285,7 @@ DELETE /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -292,18 +301,19 @@ Invitations are issued after the creation of a user object in OCS, to begin the 
 
 Returns an invitation from tenant.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string invitationId`
 <br/>Invitation identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -313,7 +323,8 @@ GET /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 |404|[ErrorResponse2](#schemaerrorresponse2)|Invitation or tenant not found|
 |500|[ErrorResponse2](#schemaerrorresponse2)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([Invitation](#schemainvitation))
 
 ```json
@@ -328,7 +339,7 @@ GET /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -343,18 +354,19 @@ Allowed for these roles:
 
 Validates that an invitation exists. This method is identical to the GET method, but it does not return an object in the body.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 HEAD /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string invitationId`
 <br/>Invitation identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -364,7 +376,7 @@ HEAD /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 |404|None|Invitation or tenant not found|
 |500|None|Internal server error.|
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -379,18 +391,19 @@ Allowed for these roles:
 
 Updates an invitation. Expired invitations will not be extended automatically upon updates.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string invitationId`
 <br/>Invitation identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 New InvitationCreateOrUpdate object. Properties that are not set or are null will not be changed.<br/>
 
@@ -403,7 +416,7 @@ New InvitationCreateOrUpdate object. Properties that are not set or are null wil
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -415,7 +428,8 @@ New InvitationCreateOrUpdate object. Properties that are not set or are null wil
 |408|[ErrorResponse2](#schemaerrorresponse2)|Operation timed out.|
 |500|[ErrorResponse2](#schemaerrorresponse2)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([Invitation](#schemainvitation))
 
 ```json
@@ -430,7 +444,7 @@ New InvitationCreateOrUpdate object. Properties that are not set or are null wil
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -445,18 +459,19 @@ Allowed for these roles:
 
 Deletes an invitation. Users who already have an invitation email will not be able to sign up once the invitation is deleted.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 DELETE /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string invitationId`
 <br/>Invitation identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -468,7 +483,8 @@ DELETE /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 |408|[ErrorResponse2](#schemaerrorresponse2)|Operation timed out.|
 |500|[ErrorResponse2](#schemaerrorresponse2)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 400 Response ([ErrorResponse2](#schemaerrorresponse2))
 
 ```json
@@ -486,7 +502,7 @@ DELETE /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -501,13 +517,14 @@ Allowed for these roles:
 
 Returns all non-expired invitations from a tenant. Optionally, includes expired invitations.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/Invitations
 ?query={query}&skip={skip}&count={count}&includeExpiredInvitations={includeExpiredInvitations}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>
@@ -517,7 +534,7 @@ GET /api/v1/Tenants/{tenantId}/Invitations
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] boolean includeExpiredInvitations`
 <br/>Specify whether to return expired invitations.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -528,7 +545,8 @@ GET /api/v1/Tenants/{tenantId}/Invitations
 |404|[ErrorResponse2](#schemaerrorresponse2)|Tenant not found|
 |500|[ErrorResponse2](#schemaerrorresponse2)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([Invitation](#schemainvitation)[])
 
 ```json
@@ -545,7 +563,7 @@ GET /api/v1/Tenants/{tenantId}/Invitations
 ]
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -560,20 +578,21 @@ Allowed for these roles:
 
 Returns the total number of non-expired invitations in a tenant. Optionally, include expired invitations. The value will be set in the Total-Count header. This method is identical to the GET method, but it does not return any objects in the body.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 HEAD /api/v1/Tenants/{tenantId}/Invitations
 ?includeExpiredInvitations={includeExpiredInvitations}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>
 `[optional] boolean includeExpiredInvitations`
 <br/>Specify to return expired invitations.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -584,7 +603,7 @@ HEAD /api/v1/Tenants/{tenantId}/Invitations
 |404|None|Tenant not found|
 |500|None|Internal server error.|
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -603,7 +622,7 @@ Allowed for these roles:
 
 Object for an invitation
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -639,7 +658,7 @@ Object for an invitation
 
 Invitation states.
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -658,7 +677,7 @@ Invitation states.
 
 Object returned when there is an error
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -692,7 +711,7 @@ Object returned when there is an error
 
 Object used to create or update an invitation
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -722,7 +741,7 @@ Object used to create or update an invitation
 
 Object returned whenever there is an error
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

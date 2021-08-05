@@ -12,13 +12,14 @@ APIs for getting, updating, and deleting client credential client roles.
 
 Returns a list of roles for the specified client credential client.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Roles
 ?query={query}&skip={skip}&count={count}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string clientId`
@@ -28,7 +29,7 @@ GET /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Roles
 <br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -40,7 +41,8 @@ GET /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Roles
 |408|[ErrorResponse](#schemaerrorresponse)|None|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([Role](#schemarole)[])
 
 ```json
@@ -57,7 +59,7 @@ GET /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Roles
 ]
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -73,18 +75,19 @@ Allowed for these roles:
 
 Returns the roles for the client credential client header.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 HEAD /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Roles
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string clientId`
 <br/>Client identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -94,7 +97,7 @@ HEAD /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Roles
 |404|None|Client or tenant not found|
 |500|None|Internal server error.|
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -110,18 +113,19 @@ Allowed for these roles:
 
 Replaces existing client credential client roles.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Roles
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string clientId`
 <br/>Client identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 Updates roles list<br/>
 
@@ -139,7 +143,7 @@ Updates roles list<br/>
 ]
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -151,7 +155,8 @@ Updates roles list<br/>
 |408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([Role](#schemarole)[])
 
 ```json
@@ -168,7 +173,7 @@ Updates roles list<br/>
 ]
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -183,13 +188,14 @@ Allowed for these roles:
 
 Returns a list of roles for the specified client credential client.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/Clients/{clientId}/Roles
 ?query={query}&skip={skip}&count={count}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string clientId`
@@ -199,7 +205,7 @@ GET /api/v1/Tenants/{tenantId}/Clients/{clientId}/Roles
 <br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -211,7 +217,8 @@ GET /api/v1/Tenants/{tenantId}/Clients/{clientId}/Roles
 |408|[ErrorResponse](#schemaerrorresponse)|None|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([Role](#schemarole)[])
 
 ```json
@@ -228,7 +235,7 @@ GET /api/v1/Tenants/{tenantId}/Clients/{clientId}/Roles
 ]
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -244,18 +251,19 @@ Allowed for these roles:
 
 Returns the roles for the client credential client header.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 HEAD /api/v1/Tenants/{tenantId}/Clients/{clientId}/Roles
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string clientId`
 <br/>Client identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -265,7 +273,7 @@ HEAD /api/v1/Tenants/{tenantId}/Clients/{clientId}/Roles
 |404|None|Client or tenant not found|
 |500|None|Internal server error.|
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -281,18 +289,19 @@ Allowed for these roles:
 
 Replaces existing client credential client roles.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1/Tenants/{tenantId}/Clients/{clientId}/Roles
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string clientId`
 <br/>Client identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 Updates roles list<br/>
 
@@ -310,7 +319,7 @@ Updates roles list<br/>
 ]
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -322,7 +331,8 @@ Updates roles list<br/>
 |408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([Role](#schemarole)[])
 
 ```json
@@ -339,7 +349,7 @@ Updates roles list<br/>
 ]
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -358,7 +368,7 @@ Allowed for these roles:
 
 Object for retrieving a role
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -394,7 +404,7 @@ Object for retrieving a role
 
 The object that represents the scope of a given role
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -414,7 +424,7 @@ The object that represents the scope of a given role
 
 Object returned whenever there is an error
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

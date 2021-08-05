@@ -11,20 +11,21 @@ uid: metadata-access-control-list
 
 Gets a list of the `CommonAccessRights` the requesting `Identity` has on the specified rule.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/accessrights
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `any routeOptions`
-<br/>The RuleRouteOptions uri route parameters.<br/><br/>`string tenantId`
+<br/>The `RuleRouteOptions` uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
 <br/>The Id of a rule.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -33,7 +34,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/a
 |404|[ResponseBody](#schemaresponsebody)|The specified rule was not found.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -98,20 +100,21 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/a
 
 Gets the `AccessControlList` of the specified rule.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/accesscontrol
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `any routeOptions`
-<br/>The RuleRouteOptions uri route parameters.<br/><br/>`string tenantId`
+<br/>The `RuleRouteOptions` uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
 <br/>The Id of a rule.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -120,7 +123,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/a
 |404|[ResponseBody](#schemaresponsebody)|The specified rule was not found.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -191,20 +195,21 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/a
 
 Replaces the `AccessControlList` of the specified rule.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/accesscontrol
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `any routeOptions`
-<br/>The uri route parameters.<br/><br/>`string tenantId`
+<br/>The `RuleRouteOptions`<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
 <br/>The Id of a rule.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 The ACL object.<br/>
 
@@ -224,7 +229,7 @@ The ACL object.<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -234,7 +239,8 @@ The ACL object.<br/>
 |404|[ResponseBody](#schemaresponsebody)|The specified rule was not found.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -320,18 +326,19 @@ The ACL object.<br/>
 
 Gets the `AccessControlList` for the rules collection.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/metadatarules
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -339,7 +346,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/metadataru
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -395,18 +403,19 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/metadataru
 
 Replaces the `AccessControlList` for the rules collection.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/metadatarules
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 The ACL.<br/>
 
@@ -426,7 +435,7 @@ The ACL.<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -435,7 +444,8 @@ The ACL.<br/>
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -506,20 +516,21 @@ The ACL.<br/>
 
 Gets the `Trustee` of the specified rule.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/owner
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `any routeOptions`
-<br/>The uri route parameters.<br/><br/>`string tenantId`
+<br/>The `RuleRouteOptions`<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
 <br/>The Id of a rule.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -528,7 +539,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/o
 |404|[ResponseBody](#schemaresponsebody)|The specified rule was not found.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -592,20 +604,21 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/o
 
 Replaces the `Trustee` of the specified rule.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/owner
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `any routeOptions`
-<br/>The RuleRouteOptions uri route parameters.<br/><br/>`string tenantId`
+<br/>The `RuleRouteOptions` uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
 <br/>The Id of a rule.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 The owner.<br/>
 
@@ -617,7 +630,7 @@ The owner.<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -627,7 +640,8 @@ The owner.<br/>
 |404|[ResponseBody](#schemaresponsebody)|The specified rule was not found.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -708,7 +722,7 @@ The owner.<br/>
 <a id="tocSresponsebody"></a>
 <a id="tocsresponsebody"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -741,7 +755,7 @@ The owner.<br/>
 <a id="tocSrulerouteoptions"></a>
 <a id="tocsrulerouteoptions"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -763,7 +777,7 @@ The owner.<br/>
 <a id="tocSaccesscontrollist"></a>
 <a id="tocsaccesscontrollist"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -795,7 +809,7 @@ The owner.<br/>
 <a id="tocSaccesscontrolentry"></a>
 <a id="tocsaccesscontrolentry"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -825,7 +839,7 @@ The owner.<br/>
 <a id="tocStrustee"></a>
 <a id="tocstrustee"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -851,7 +865,7 @@ The owner.<br/>
 <a id="tocStrusteetype"></a>
 <a id="tocstrusteetype"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -868,7 +882,7 @@ The owner.<br/>
 <a id="tocSaccesstype"></a>
 <a id="tocsaccesstype"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|

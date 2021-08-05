@@ -11,23 +11,24 @@ uid: metadata-metadata-rule-preview
 
 Gets a `RulePreviewResult`.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 ?token={token}&skip={skip}&count={count}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string token`
-<br/>A Guid which corresponds to a preview that has been created using the StartPreview method.<br/><br/>`integer skip`
-<br/>An Int32 to determine the number of preview results to skip.<br/><br/>`string tenantId`
+<br/>A `Guid` which corresponds to a preview that has been created using the StartPreview method.<br/><br/>`integer skip`
+<br/>An `Int32` to determine the number of preview results to skip.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 `[optional] integer count`
-<br/>An Int32 to determine the number of preview results to return.<br/><br/>
+<br/>An `Int32` to determine the number of preview results to return.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -37,7 +38,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 |404|[ResponseBody](#schemaresponsebody)|The specified preview was not found.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -139,13 +141,14 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 
 Creates a `RulePreviewResponse` of a `RuleModel` object.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 ?KeepOldMetadata={KeepOldMetadata}&Skip={Skip}&Count={Count}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
@@ -155,7 +158,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 <br/><br/>`[optional] integer Count`
 <br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 The RuleModel object to preview.<br/>
 
@@ -194,7 +197,7 @@ The RuleModel object to preview.<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -205,7 +208,8 @@ The RuleModel object to preview.<br/>
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 |503|[ResponseBody](#schemaresponsebody)|Dependent service error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 202 Response
 
 ```json
@@ -298,20 +302,21 @@ The RuleModel object to preview.<br/>
 
 Cancels a running preview.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 ?token={token}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string token`
-<br/>A Guid which corresponds to a preview that has been created using the StartPreview method.<br/><br/>`string tenantId`
+<br/>A `Guid` which corresponds to a preview that has been created using the StartPreview method.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -321,7 +326,8 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 |404|[ResponseBody](#schemaresponsebody)|The specified preview was not found.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 400 Response
 
 ```json
@@ -392,7 +398,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 <a id="tocSrulepreviewresponse"></a>
 <a id="tocsrulepreviewresponse"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -416,7 +422,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 <a id="tocSresponsebody"></a>
 <a id="tocsresponsebody"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -449,7 +455,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 <a id="tocSrulemodel"></a>
 <a id="tocsrulemodel"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -509,7 +515,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 <a id="tocSrulestateenum"></a>
 <a id="tocsrulestateenum"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -525,7 +531,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 <a id="tocSruleexpression"></a>
 <a id="tocsruleexpression"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -565,7 +571,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 <a id="tocSspecification"></a>
 <a id="tocsspecification"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -606,7 +612,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 <a id="tocSspecificationtype"></a>
 <a id="tocsspecificationtype"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -625,7 +631,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 <a id="tocScharactertype"></a>
 <a id="tocscharactertype"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -643,7 +649,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 <a id="tocSruleoutput"></a>
 <a id="tocsruleoutput"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -667,7 +673,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 <a id="tocSrulepreviewresult"></a>
 <a id="tocsrulepreviewresult"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -716,7 +722,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 <a id="tocSstreampreviewdata"></a>
 <a id="tocsstreampreviewdata"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -762,7 +768,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 <a id="tocSrulepreviewstatistics"></a>
 <a id="tocsrulepreviewstatistics"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

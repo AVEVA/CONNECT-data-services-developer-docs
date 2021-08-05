@@ -12,19 +12,20 @@ APIs for updating and removing community tenant information
 
 Updates the state of a community tenant. The state can be activated, paused, or removed.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1-preview/tenants/{callerTenantId}/communities/{communityId}/communitytenants/{tenantIdtoUpdate}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string callerTenantId`
 <br/>Owning tenant identifier<br/><br/>`string communityId`
 <br/>Community identifier<br/><br/>`string tenantIdtoUpdate`
-<br/>CommunityTenant in the community to update<br/><br/>
+<br/>`CommunityTenant` in the community to update<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 CommunityTenant object that contains the attributes to use for the update<br/>
 
@@ -34,7 +35,7 @@ CommunityTenant object that contains the attributes to use for the update<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -46,7 +47,8 @@ CommunityTenant object that contains the attributes to use for the update<br/>
 |404|[ErrorResponse](#schemaerrorresponse)|Not Found. The requested community tenant was not found.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it does not know how to handle.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 400 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
@@ -61,7 +63,7 @@ CommunityTenant object that contains the attributes to use for the update<br/>
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -76,19 +78,20 @@ Allowed for these roles:
 
 Updates the state of a community tenant. The state can be activated, paused, or removed.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1-preview/tenants/{callerTenantId}/communities/{communityId}/membertenants/{tenantIdtoUpdate}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string callerTenantId`
 <br/>Owning tenant identifier<br/><br/>`string communityId`
 <br/>Community identifier<br/><br/>`string tenantIdtoUpdate`
-<br/>CommunityTenant in the community to update<br/><br/>
+<br/>`CommunityTenant` in the community to update<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 CommunityTenant object that contains the attributes to use for the update<br/>
 
@@ -98,7 +101,7 @@ CommunityTenant object that contains the attributes to use for the update<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -110,7 +113,8 @@ CommunityTenant object that contains the attributes to use for the update<br/>
 |404|[ErrorResponse](#schemaerrorresponse)|Not Found. The requested community tenant was not found.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it does not know how to handle.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 400 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
@@ -125,7 +129,7 @@ CommunityTenant object that contains the attributes to use for the update<br/>
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -140,19 +144,20 @@ Allowed for these roles:
 
 Removes a community tenant from a community
 
-### Request
+<h3>Request</h3>
+
 ```text 
 DELETE /api/v1-preview/tenants/{callerTenantId}/communities/{communityId}/communitytenants/{tenantIdToRemove}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string callerTenantId`
 <br/>Owning tenant identifier<br/><br/>`string communityId`
 <br/>Community identifier<br/><br/>`string tenantIdToRemove`
-<br/>CommunityTenant in the community to remove<br/><br/>
+<br/>`CommunityTenant` in the community to remove<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -163,7 +168,8 @@ DELETE /api/v1-preview/tenants/{callerTenantId}/communities/{communityId}/commun
 |404|[ErrorResponse](#schemaerrorresponse)|Not Found. The requested community tenant was not found.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it does not know how to handle.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 400 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
@@ -178,7 +184,7 @@ DELETE /api/v1-preview/tenants/{callerTenantId}/communities/{communityId}/commun
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -198,7 +204,7 @@ Allowed for these roles:
 
 Object returned when there is an error
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -232,7 +238,7 @@ Object returned when there is an error
 
 The UpdateCommunityTenantInput object
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -256,7 +262,7 @@ The UpdateCommunityTenantInput object
 
 Represents a status of a community tenant
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|

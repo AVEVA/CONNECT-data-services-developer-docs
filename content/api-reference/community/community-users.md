@@ -12,19 +12,20 @@ APIs for getting, updating, and deleting users from communities
 
 Adds a user to a community and provides a list of community role identifiers to be assigned to the user
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/Users/{userId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string communityId`
 <br/>Community identifier<br/><br/>`string userId`
 <br/>User identifier<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 List of community roles Ids to assign to the user<br/>
 
@@ -34,7 +35,7 @@ List of community roles Ids to assign to the user<br/>
 ]
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -46,7 +47,8 @@ List of community roles Ids to assign to the user<br/>
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([User](#schemauser))
 
 ```json
@@ -67,7 +69,7 @@ List of community roles Ids to assign to the user<br/>
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -83,19 +85,20 @@ Allowed for these roles:
 
 Removes a user from a community
 
-### Request
+<h3>Request</h3>
+
 ```text 
 DELETE /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/Users/{userId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string communityId`
 <br/>Community identifier<br/><br/>`string userId`
 <br/>User identifier<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -106,7 +109,8 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/Users/{userI
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 400 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
@@ -121,7 +125,7 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/Users/{userI
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -137,13 +141,14 @@ Allowed for these roles:
 
 Gets users that are associated with a specific tenant and community
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/Users
 ?query={query}&skip={skip}&count={count}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string communityId`
@@ -153,7 +158,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/Users
 <br/>Parameter representing the zero-based offset of the first object to retrieve. If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -164,7 +169,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/Users
 |404|[ErrorResponse](#schemaerrorresponse)|Community roles not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([User](#schemauser)[])
 
 ```json
@@ -187,7 +193,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/Users
 ]
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -200,20 +206,21 @@ Allowed for these roles:
 
 <a id="opIdUsers_Get Count of Users of a Tenant in a Community"></a>
 
-Gets the count of users of the tenant in a community. This method is identical to the `Int32)` endpoint except it does not return a body.
+Gets the count of users of the tenant in a community. This method is identical to the `GetCommunityUsersByTenantAndCommunity` endpoint except it does not return a body.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 HEAD /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/Users
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string communityId`
 <br/>Community identifier<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -224,7 +231,8 @@ HEAD /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/Users
 |404|[ErrorResponse](#schemaerrorresponse)|Community roles not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 400 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
@@ -239,7 +247,7 @@ HEAD /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/Users
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -258,7 +266,7 @@ Allowed for these roles:
 
 Object for retrieving a user
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -304,7 +312,7 @@ Object for retrieving a user
 
 Object returned when there is an error
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

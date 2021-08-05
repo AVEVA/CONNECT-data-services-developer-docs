@@ -12,13 +12,14 @@ A community is an organizational entity that facilitates data sharing across mul
 
 Gets all communities a tenant is joined to.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1-preview/tenants/{tenantId}/Communities
 ?query={query}&skip={skip}&count={count}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Owning tenant identifier<br/><br/>
@@ -27,7 +28,7 @@ GET /api/v1-preview/tenants/{tenantId}/Communities
 <br/>Parameter representing the zero-based offset of the first object to retrieve. If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -38,7 +39,8 @@ GET /api/v1-preview/tenants/{tenantId}/Communities
 |408|[ErrorResponse](#schemaerrorresponse)|Request Timeout. The request has timed out.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it doesn't know how to handle.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([Community](#schemacommunity)[])
 
 ```json
@@ -64,7 +66,7 @@ GET /api/v1-preview/tenants/{tenantId}/Communities
 ]
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -79,17 +81,18 @@ Allowed for these roles:
 
 Creates a new community within a specific tenant. The tenant sending this request will be assigned ownership of the community. The calling user or client will be granted community administrator and member roles for the community.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 POST /api/v1-preview/tenants/{tenantId}/Communities
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Owning tenant identifier<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 Community information to create<br/>
 
@@ -100,7 +103,7 @@ Community information to create<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -112,7 +115,8 @@ Community information to create<br/>
 |409|[ErrorResponse](#schemaerrorresponse)|None|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it doesn't know how to handle.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 201 Response ([Community](#schemacommunity))
 
 ```json
@@ -136,7 +140,7 @@ Community information to create<br/>
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -151,18 +155,19 @@ Allowed for these roles:
 
 Gets a community and related information by Id.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Owning tenant identifier<br/><br/>`string communityId`
 <br/>Community id<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -173,7 +178,8 @@ GET /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
 |408|[ErrorResponse](#schemaerrorresponse)|Request Timeout. The request has timed out.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it doesn't know how to handle.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([Community](#schemacommunity))
 
 ```json
@@ -197,7 +203,7 @@ GET /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -212,18 +218,19 @@ Allowed for these roles:
 
 Updates attributes of a community such as name and description.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Owning tenant identifier<br/><br/>`string communityId`
 <br/>Community identifier<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 The community object that contains the attributes to use for the update.<br/>
 
@@ -234,7 +241,7 @@ The community object that contains the attributes to use for the update.<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -245,7 +252,8 @@ The community object that contains the attributes to use for the update.<br/>
 |408|[ErrorResponse](#schemaerrorresponse)|Request Timeout. The request has timed out.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it doesn't know how to handle.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 400 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
@@ -263,7 +271,7 @@ The community object that contains the attributes to use for the update.<br/>
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -278,18 +286,19 @@ Allowed for these roles:
 
 Deletes a community by Id.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 DELETE /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Owning tenant identifier<br/><br/>`string communityId`
 <br/>The id of the community to delete.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -301,7 +310,8 @@ DELETE /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
 |408|[ErrorResponse](#schemaerrorresponse)|Request Timeout. The request has timed out.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it does not know how to handle.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 400 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
@@ -319,7 +329,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -338,7 +348,7 @@ Allowed for these roles:
 
 The Community object
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -383,7 +393,7 @@ The Community object
 
 The CommunityTenant object
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -417,7 +427,7 @@ The CommunityTenant object
 
 Represents a status of a community tenant
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -438,7 +448,7 @@ Represents a status of a community tenant
 
 Object returned whenever there is an error
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -475,7 +485,7 @@ Object returned whenever there is an error
 
 The CreateCommunityInput object. This is the model input for creating a community.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -501,7 +511,7 @@ The CreateCommunityInput object. This is the model input for creating a communit
 
 The UpdateCommunityInput object
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

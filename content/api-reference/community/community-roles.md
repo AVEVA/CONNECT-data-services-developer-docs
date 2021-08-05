@@ -12,13 +12,14 @@ Cluster APIs for getting community roles
 
 Get community roles associated with a specific community
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1-preview/Communities/{communityId}/Roles
 ?query={query}&skip={skip}&count={count}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string communityId`
 <br/>Community identifier<br/><br/>
@@ -27,7 +28,7 @@ GET /api/v1-preview/Communities/{communityId}/Roles
 <br/>Parameter representing the zero-based offset of the first object to retrieve. If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -38,7 +39,8 @@ GET /api/v1-preview/Communities/{communityId}/Roles
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([Role](#schemarole)[])
 
 ```json
@@ -55,7 +57,7 @@ GET /api/v1-preview/Communities/{communityId}/Roles
 ]
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -75,7 +77,7 @@ Allowed for these roles:
 
 Identity internal representation of role. Unlike the public role model which uses string identifiers, this internal role model uses GUIDs. The public role model originally comes from infrastructure, which uses and persists only string identifiers. In identity, the GUID is currently the type used internally for persisting role identifiers.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -111,7 +113,7 @@ Identity internal representation of role. Unlike the public role model which use
 
 The object that represents the scope of a given role
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -131,7 +133,7 @@ The object that represents the scope of a given role
 
 Object returned when there is an error
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

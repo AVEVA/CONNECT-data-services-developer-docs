@@ -11,13 +11,14 @@ uid: asset-asset-rules
 
 Gets all `RuleModel` objects from the `IRuleStore` the requesting `Identity` has access to.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules
 ?Skip={Skip}&Count={Count}&KeepOldMetadata={KeepOldMetadata}&KeepOldAssets={KeepOldAssets}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
@@ -30,7 +31,7 @@ Defaults to false.<br/><br/>`[optional] boolean KeepOldAssets`
 <br/>A Boolean to determine whether or not existing assets created by the rule should be kept. Only valid for asset rule delete requests.
 Defaults to false.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -39,7 +40,8 @@ Defaults to false.<br/><br/>
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -161,18 +163,19 @@ Defaults to false.<br/><br/>
 
 Creates a `RuleModel` object with a server generated `Id` in the `IRuleStore`.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 The RuleModel object to create.<br/>
 
@@ -211,7 +214,7 @@ The RuleModel object to create.<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -221,7 +224,8 @@ The RuleModel object to create.<br/>
 |409|[ResponseBody](#schemaresponsebody)|A non-equivalent rule with the same id already exists.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 201 Response
 
 ```json
@@ -356,20 +360,21 @@ The RuleModel object to create.<br/>
 
 Gets the specified rule.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `any routeOptions`
-<br/>The RuleRouteOptions uri route parameters.<br/><br/>`string tenantId`
+<br/>The `RuleRouteOptions` uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
 <br/>The Id of an asset rule.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -378,7 +383,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
 |404|[ResponseBody](#schemaresponsebody)|The specified rule was not found.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -498,20 +504,21 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
 
 Gets or creates a `RuleModel` object with the specified id in the `IRuleStore`.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `any routeOptions`
-<br/>The RuleRouteOptions uri route parameters.<br/><br/>`string tenantId`
+<br/>The `RuleRouteOptions` uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
 <br/>The Id of an asset rule.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 The RuleModel object.<br/>
 
@@ -550,7 +557,7 @@ The RuleModel object.<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -561,7 +568,8 @@ The RuleModel object.<br/>
 |409|[ResponseBody](#schemaresponsebody)|A non-equivalent rule with the specified id already exists.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 201 Response
 
 ```json
@@ -696,16 +704,17 @@ The RuleModel object.<br/>
 
 Creates or updates the specified rule in the `IRuleStore`.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
 ?Skip={Skip}&Count={Count}&KeepOldMetadata={KeepOldMetadata}&KeepOldAssets={KeepOldAssets}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `any routeOptions`
-<br/>The RuleRouteOptions uri route parameters.<br/><br/>`string tenantId`
+<br/>The `RuleRouteOptions` uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
 <br/>The Id of an asset rule.<br/><br/>
@@ -717,7 +726,7 @@ Defaults to false.<br/><br/>`[optional] boolean KeepOldAssets`
 <br/>A Boolean to determine whether or not existing assets created by the rule should be kept. Only valid for asset rule delete requests.
 Defaults to false.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 The RuleModel object to create or update.<br/>
 
@@ -756,7 +765,7 @@ The RuleModel object to create or update.<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -766,7 +775,8 @@ The RuleModel object to create or update.<br/>
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -894,16 +904,17 @@ The RuleModel object to create or update.<br/>
 
 Deletes the specified rule from the `IRuleStore`.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
 ?Skip={Skip}&Count={Count}&KeepOldMetadata={KeepOldMetadata}&KeepOldAssets={KeepOldAssets}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `any routeOptions`
-<br/>The RuleRouteOptions uri route parameters.<br/><br/>`string tenantId`
+<br/>The `RuleRouteOptions` uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
 <br/>The Id of an asset rule.<br/><br/>
@@ -915,7 +926,7 @@ Defaults to false.<br/><br/>`[optional] boolean KeepOldAssets`
 <br/>A Boolean to determine whether or not existing assets created by the rule should be kept. Only valid for asset rule delete requests.
 Defaults to false.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -924,7 +935,8 @@ Defaults to false.<br/><br/>
 |404|[ResponseBody](#schemaresponsebody)|The specified rule was not found.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 403 Response
 
 ```json
@@ -978,20 +990,21 @@ Defaults to false.<br/><br/>
 
 Executes the specified rule.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/execute
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `any routeOptions`
-<br/>The RuleRouteOptions uri route parameters.<br/><br/>`string tenantId`
+<br/>The `RuleRouteOptions` uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
 <br/>The Id of an asset rule.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -1002,7 +1015,8 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/exe
 |409|[ResponseBody](#schemaresponsebody)|The automation id was invalid.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 400 Response
 
 ```json
@@ -1086,20 +1100,21 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/exe
 
 Gets a description of the progress of the most recent execution of the rule and any errors.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/progress
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `any routeOptions`
-<br/>The RuleRouteOptions uri route parameters.<br/><br/>`string tenantId`
+<br/>The `RuleRouteOptions` uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
 <br/>The Id of an asset rule.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -1115,7 +1130,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rule
 <a id="tocSrulemodel"></a>
 <a id="tocsrulemodel"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1175,7 +1190,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rule
 <a id="tocSrulestateenum"></a>
 <a id="tocsrulestateenum"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -1191,7 +1206,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rule
 <a id="tocSruleexpression"></a>
 <a id="tocsruleexpression"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1231,7 +1246,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rule
 <a id="tocSspecification"></a>
 <a id="tocsspecification"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1272,7 +1287,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rule
 <a id="tocSspecificationtype"></a>
 <a id="tocsspecificationtype"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -1291,7 +1306,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rule
 <a id="tocScharactertype"></a>
 <a id="tocscharactertype"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -1309,7 +1324,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rule
 <a id="tocSruleoutput"></a>
 <a id="tocsruleoutput"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1333,7 +1348,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rule
 <a id="tocSresponsebody"></a>
 <a id="tocsresponsebody"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1366,7 +1381,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rule
 <a id="tocSrulerouteoptions"></a>
 <a id="tocsrulerouteoptions"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

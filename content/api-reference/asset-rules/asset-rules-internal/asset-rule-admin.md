@@ -11,18 +11,19 @@ uid: ""
 
 Gets the `StoreStatistics` on the `IRuleStore`.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules/statistics
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -30,7 +31,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules/statist
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -77,13 +79,14 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules/statist
 
 Resets the asset tracking table. If is specified, it will only clear the entries for those assets. This will cause Rules to no longer identify rule-generated asset properties as rule-generated. That means Rules will not delete or edit those asset properties. Only call this route if directed to by OCS Support.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules/resetassettracking
 ?assetIds={assetIds}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
@@ -91,7 +94,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules/reseta
 `[optional] array assetIds`
 <br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -99,7 +102,8 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules/reseta
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -150,7 +154,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules/reseta
 
 Statistics on the rule store from /admin/metadatarules/statistics.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -172,7 +176,7 @@ Statistics on the rule store from /admin/metadatarules/statistics.
 <a id="tocSresponsebody"></a>
 <a id="tocsresponsebody"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

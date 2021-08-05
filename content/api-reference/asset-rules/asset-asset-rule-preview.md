@@ -11,23 +11,24 @@ uid: asset-asset-rule-preview
 
 Gets a `AssetRulePreviewResult`.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/assetrules
 ?token={token}&skip={skip}&count={count}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string token`
-<br/>A Guid which corresponds to a preview that has been created using the StartPreview method.<br/><br/>`integer skip`
-<br/>An Int32 to determine the number of preview results to skip.<br/><br/>`string tenantId`
+<br/>A `Guid` which corresponds to a preview that has been created using the StartPreview method.<br/><br/>`integer skip`
+<br/>An `Int32` to determine the number of preview results to skip.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 `[optional] integer count`
-<br/>An Int32 to determine the number of preview results to return.<br/><br/>
+<br/>An `Int32` to determine the number of preview results to return.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -37,7 +38,8 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/assetrul
 |404|[ResponseBody](#schemaresponsebody)|The specified preview was not found.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -161,13 +163,14 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/assetrul
 
 Creates a `RulePreviewResponse` of a `RuleModel` object.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/assetrules
 ?KeepOldMetadata={KeepOldMetadata}&Skip={Skip}&Count={Count}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
@@ -177,7 +180,7 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/assetru
 <br/><br/>`[optional] integer Count`
 <br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 The RuleModel object to preview.<br/>
 
@@ -216,7 +219,7 @@ The RuleModel object to preview.<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -227,7 +230,8 @@ The RuleModel object to preview.<br/>
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 |503|[ResponseBody](#schemaresponsebody)|Dependent service error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 202 Response
 
 ```json
@@ -320,20 +324,21 @@ The RuleModel object to preview.<br/>
 
 Cancels a running preview.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/assetrules
 ?token={token}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string token`
-<br/>A Guid which corresponds to a preview that has been created using the StartPreview method.<br/><br/>`string tenantId`
+<br/>A `Guid` which corresponds to a preview that has been created using the StartPreview method.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -343,7 +348,8 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 |404|[ResponseBody](#schemaresponsebody)|The specified preview was not found.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 400 Response
 
 ```json
@@ -414,7 +420,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 <a id="tocSrulepreviewresponse"></a>
 <a id="tocsrulepreviewresponse"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -438,7 +444,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 <a id="tocSresponsebody"></a>
 <a id="tocsresponsebody"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -471,7 +477,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 <a id="tocSrulemodel"></a>
 <a id="tocsrulemodel"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -531,7 +537,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 <a id="tocSrulestateenum"></a>
 <a id="tocsrulestateenum"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -547,7 +553,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 <a id="tocSruleexpression"></a>
 <a id="tocsruleexpression"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -587,7 +593,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 <a id="tocSspecification"></a>
 <a id="tocsspecification"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -628,7 +634,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 <a id="tocSspecificationtype"></a>
 <a id="tocsspecificationtype"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -647,7 +653,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 <a id="tocScharactertype"></a>
 <a id="tocscharactertype"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -665,7 +671,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 <a id="tocSruleoutput"></a>
 <a id="tocsruleoutput"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -689,7 +695,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 <a id="tocSassetrulepreviewresult"></a>
 <a id="tocsassetrulepreviewresult"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -760,7 +766,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 <a id="tocSassetpreviewdata"></a>
 <a id="tocsassetpreviewdata"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -841,7 +847,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 <a id="tocSsdsstream"></a>
 <a id="tocssdsstream"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -887,7 +893,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 <a id="tocSsdsstreamindex"></a>
 <a id="tocssdsstreamindex"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -909,7 +915,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 <a id="tocSsdsinterpolationmode"></a>
 <a id="tocssdsinterpolationmode"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -930,7 +936,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 <a id="tocSsdsextrapolationmode"></a>
 <a id="tocssdsextrapolationmode"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -948,7 +954,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 <a id="tocSsdsstreampropertyoverride"></a>
 <a id="tocssdsstreampropertyoverride"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -974,7 +980,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 <a id="tocSasset"></a>
 <a id="tocsasset"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1034,7 +1040,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 <a id="tocSmetadataitem"></a>
 <a id="tocsmetadataitem"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1066,7 +1072,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 <a id="tocSsdstypecode"></a>
 <a id="tocssdstypecode"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -1169,7 +1175,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 <a id="tocSstreamreference"></a>
 <a id="tocsstreamreference"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1197,7 +1203,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 <a id="tocSstatusmapping"></a>
 <a id="tocsstatusmapping"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1229,7 +1235,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 <a id="tocSvaluestatusmapping"></a>
 <a id="tocsvaluestatusmapping"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1255,7 +1261,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 <a id="tocSstatusenum"></a>
 <a id="tocsstatusenum"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -1273,7 +1279,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 <a id="tocSassetrulepreviewstatistics"></a>
 <a id="tocsassetrulepreviewstatistics"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

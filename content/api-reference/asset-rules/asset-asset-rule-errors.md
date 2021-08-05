@@ -11,28 +11,30 @@ uid: asset-asset-rule-errors
 
 Gets the `RuleError` objects for the specified ruleId.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/errors
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string ruleId`
 <br/>The rule Id.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[RuleError](#schemaruleerror)[]|An `IEnumerable`1`|
+|200|[RuleError](#schemaruleerror)[]|An `IEnumerable<T>`|
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |404|[ResponseBody](#schemaresponsebody)|The specified rule was not found.|
 |500|[ResponseBody](#schemaresponsebody)|None|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -107,19 +109,20 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rule
 
 Deletes the `RuleError` objects associated with the specified rule.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/errors
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string ruleId`
 <br/>The rule Id.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -128,7 +131,8 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{r
 |404|[ResponseBody](#schemaresponsebody)|The specified rule was not found.|
 |500|[ResponseBody](#schemaresponsebody)|None|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 403 Response
 
 ```json
@@ -184,7 +188,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{r
 <a id="tocSruleerror"></a>
 <a id="tocsruleerror"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -214,7 +218,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{r
 <a id="tocSerrormessagetype"></a>
 <a id="tocserrormessagetype"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -235,7 +239,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{r
 <a id="tocSresponsebody"></a>
 <a id="tocsresponsebody"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

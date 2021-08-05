@@ -11,20 +11,21 @@ uid: asset-asset-rule-suggestion
 
 Gets a `SuggestionResult`.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/assetrules
 ?token={token}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string token`
-<br/>A Guid which corresponds to a SuggestionResponse that has been created using the StartSuggestion method.<br/><br/>`string tenantId`
+<br/>A `Guid` which corresponds to a SuggestionResponse that has been created using the StartSuggestion method.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -34,7 +35,8 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/asset
 |404|[ResponseBody](#schemaresponsebody)|The specified suggestion was not found.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -121,18 +123,19 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/asset
 
 Creates a `SuggestionResponse` for a `RuleModel` object.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/assetrules
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 The RuleModel object to create a suggestion for.<br/>
 
@@ -171,7 +174,7 @@ The RuleModel object to create a suggestion for.<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -182,7 +185,8 @@ The RuleModel object to create a suggestion for.<br/>
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 |503|[ResponseBody](#schemaresponsebody)|Dependent service error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 202 Response
 
 ```json
@@ -275,20 +279,21 @@ The RuleModel object to create a suggestion for.<br/>
 
 Cancels a running suggestion query.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/assetrules
 ?token={token}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string token`
-<br/>A Guid which corresponds to a SuggestionResponse that has been created using the StartSuggestion method.<br/><br/>`string tenantId`
+<br/>A `Guid` which corresponds to a SuggestionResponse that has been created using the StartSuggestion method.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -298,7 +303,8 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/as
 |404|[ResponseBody](#schemaresponsebody)|The specified preview was not found.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 400 Response
 
 ```json
@@ -369,7 +375,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/as
 <a id="tocSsuggestionresponse"></a>
 <a id="tocssuggestionresponse"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -393,7 +399,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/as
 <a id="tocSresponsebody"></a>
 <a id="tocsresponsebody"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -426,7 +432,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/as
 <a id="tocSrulemodel"></a>
 <a id="tocsrulemodel"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -486,7 +492,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/as
 <a id="tocSrulestateenum"></a>
 <a id="tocsrulestateenum"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -502,7 +508,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/as
 <a id="tocSruleexpression"></a>
 <a id="tocsruleexpression"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -542,7 +548,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/as
 <a id="tocSspecification"></a>
 <a id="tocsspecification"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -583,7 +589,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/as
 <a id="tocSspecificationtype"></a>
 <a id="tocsspecificationtype"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -602,7 +608,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/as
 <a id="tocScharactertype"></a>
 <a id="tocscharactertype"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -620,7 +626,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/as
 <a id="tocSruleoutput"></a>
 <a id="tocsruleoutput"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -644,7 +650,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/as
 <a id="tocSsuggestionresult"></a>
 <a id="tocssuggestionresult"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

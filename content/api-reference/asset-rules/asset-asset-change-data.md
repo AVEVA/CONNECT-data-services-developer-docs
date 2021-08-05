@@ -11,19 +11,20 @@ uid: asset-asset-change-data
 
 Gets the `AssetRuleStatistics` for the ruleId.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules/changedata/rule/{ruleId}/statistics
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string ruleId`
 <br/>The Id of an Asset Rule.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -31,7 +32,8 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -79,13 +81,14 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 
 Gets the AssetChangeData for the ruleId.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules/changedata/rule/{ruleId}
 ?Skip={Skip}&Count={Count}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string ruleId`
 <br/>The Id of an Asset Rule.<br/><br/>`string tenantId`
@@ -97,7 +100,7 @@ Defaults to 0.<br/><br/>`[optional] integer Count`
 <br/>An Int32 specifying the number of results to return.
 Defaults to 100.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -106,7 +109,8 @@ Defaults to 100.<br/><br/>
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -249,19 +253,20 @@ Defaults to 100.<br/><br/>
 
 Gets the AssetChangeData for the assetId.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules/changedata/asset/{assetId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string assetId`
 <br/>The Id of an Asset.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -269,7 +274,8 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -397,19 +403,20 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 
 Gets the AssetChangeData for the streamId.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules/changedata/stream/{streamId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string streamId`
 <br/>The Id of a Stream.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -417,7 +424,8 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -547,7 +555,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 <a id="tocSassetrulestatistics"></a>
 <a id="tocsassetrulestatistics"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -571,7 +579,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 <a id="tocSresponsebody"></a>
 <a id="tocsresponsebody"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -604,7 +612,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 <a id="tocSassetchangedata"></a>
 <a id="tocsassetchangedata"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -666,7 +674,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 <a id="tocSasset"></a>
 <a id="tocsasset"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -726,7 +734,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 <a id="tocSmetadataitem"></a>
 <a id="tocsmetadataitem"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -758,7 +766,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 <a id="tocSsdstypecode"></a>
 <a id="tocssdstypecode"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -861,7 +869,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 <a id="tocSstreamreference"></a>
 <a id="tocsstreamreference"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -889,7 +897,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 <a id="tocSstatusmapping"></a>
 <a id="tocsstatusmapping"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -921,7 +929,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 <a id="tocSvaluestatusmapping"></a>
 <a id="tocsvaluestatusmapping"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -947,7 +955,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 <a id="tocSstatusenum"></a>
 <a id="tocsstatusenum"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|

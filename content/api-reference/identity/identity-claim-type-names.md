@@ -136,7 +136,8 @@ GET /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames/{identityProvi
   "Value": "string",
   "RoleIds": [
     "string"
-  ]
+  ],
+  "IsBuiltIn": true
 }
 ```
 
@@ -269,6 +270,7 @@ Object representing a claim from an identity provider to map to a role
 |TypeName|string|false|true|Type name for this identity provider claim|
 |Value|string|false|true|Value for this identity provider claim|
 |RoleIds|string[]|false|true|List of role identifiers that this claim on this identity provider will map|
+|IsBuiltIn|boolean|false|false|Indicates if this claim entry is built-in. When this value is true, callers cannot modify or delete the claim.|
 
 ```json
 {
@@ -277,7 +279,8 @@ Object representing a claim from an identity provider to map to a role
   "Value": "string",
   "RoleIds": [
     "string"
-  ]
+  ],
+  "IsBuiltIn": true
 }
 
 ```

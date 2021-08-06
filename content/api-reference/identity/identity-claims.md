@@ -52,7 +52,8 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims
     "Value": "string",
     "RoleIds": [
       "string"
-    ]
+    ],
+    "IsBuiltIn": true
   }
 ]
 ```
@@ -131,7 +132,8 @@ Identity provider claim to create<br/>
   "IdentityProviderClaimTypeNameId": "string",
   "RoleIds": [
     "string"
-  ]
+  ],
+  "IsBuiltIn": true
 }
 ```
 
@@ -160,7 +162,8 @@ Identity provider claim to create<br/>
   "Value": "string",
   "RoleIds": [
     "string"
-  ]
+  ],
+  "IsBuiltIn": true
 }
 ```
 
@@ -213,7 +216,8 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims/{id
   "Value": "string",
   "RoleIds": [
     "string"
-  ]
+  ],
+  "IsBuiltIn": true
 }
 ```
 
@@ -320,7 +324,8 @@ Updated identity provider claim values<br/>
   "Value": "string",
   "RoleIds": [
     "string"
-  ]
+  ],
+  "IsBuiltIn": true
 }
 ```
 
@@ -409,6 +414,7 @@ Object representing a claim from an identity provider to map to a role
 |TypeName|string|false|true|Type name for this identity provider claim|
 |Value|string|false|true|Value for this identity provider claim|
 |RoleIds|string[]|false|true|List of role identifiers that this claim on this identity provider will map|
+|IsBuiltIn|boolean|false|false|Indicates if this claim entry is built-in. When this value is true, callers cannot modify or delete the claim.|
 
 ```json
 {
@@ -417,7 +423,8 @@ Object representing a claim from an identity provider to map to a role
   "Value": "string",
   "RoleIds": [
     "string"
-  ]
+  ],
+  "IsBuiltIn": true
 }
 
 ```
@@ -477,6 +484,7 @@ Identity provider claim to create
 |Value|string|false|true|Value for this identity provider claim|
 |IdentityProviderClaimTypeNameId|guid|false|false|Identity provider claim type name identifier for this identity provider claim|
 |RoleIds|string[]|false|true|List of role identifiers associated with this identity provider claim|
+|IsBuiltIn|boolean|false|false|Indicates if this claim entry is built-in. This value must be set to false or not specified.|
 
 ```json
 {
@@ -484,7 +492,8 @@ Identity provider claim to create
   "IdentityProviderClaimTypeNameId": "string",
   "RoleIds": [
     "string"
-  ]
+  ],
+  "IsBuiltIn": true
 }
 
 ```

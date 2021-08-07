@@ -55,7 +55,7 @@ GET /api/v1/Tenants/{tenantId}
     }
   ],
   "ExternalAccountId": "string",
-  "TenantType": "Unlinked",
+  "TenantType": "string",
   "Entitlements": [
     {
       "EntitlementDefinitionId": "string",
@@ -152,7 +152,7 @@ The updated details of the Tenant.<br/>
     }
   ],
   "ExternalAccountId": "string",
-  "TenantType": "Unlinked"
+  "TenantType": "string"
 }
 ```
 
@@ -189,7 +189,7 @@ The updated details of the Tenant.<br/>
     }
   ],
   "ExternalAccountId": "string",
-  "TenantType": "Unlinked"
+  "TenantType": "string"
 }
 ```
 
@@ -404,7 +404,7 @@ Allowed for these roles:
     }
   ],
   "ExternalAccountId": "string",
-  "TenantType": "Unlinked",
+  "TenantType": "string",
   "Entitlements": [
     {
       "EntitlementDefinitionId": "string",
@@ -618,7 +618,7 @@ Representation of a server-side database interpretation of a tenant.
     }
   ],
   "ExternalAccountId": "string",
-  "TenantType": "Unlinked"
+  "TenantType": "string"
 }
 
 ```

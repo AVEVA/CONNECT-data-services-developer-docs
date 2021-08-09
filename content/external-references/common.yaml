@@ -95,6 +95,10 @@ dataViewId:
   type: text/plain
   value: |
     Data view identifier.
+ruleId:
+  type: text/plain
+  value: |
+    Rule identifier.
 secretId:
   type: text/plain
   value: |

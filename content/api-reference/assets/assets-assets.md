@@ -12,19 +12,20 @@ The Assets API allows you to create, read, update, and delete assets. The asset 
 
 Returns the owner of specified asset.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Owner
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string assetId`
 <br/>Asset identifier<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -33,7 +34,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |403|None|Forbidden|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -65,19 +67,20 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 Updates the owner of specified asset.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Owner
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string assetId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string assetId`
 <br/>Asset identifier<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 Updated owner<br/>
 
@@ -89,7 +92,7 @@ Updated owner<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -98,7 +101,8 @@ Updated owner<br/>
 |403|None|Forbidden|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 400 Response ([ErrorTemplate](#schemaerrortemplate))
 
 ```json
@@ -120,19 +124,20 @@ Updated owner<br/>
 
 Returns the access control list of the specified asset.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/AccessControl
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string assetId`
 <br/>Asset identifier<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -141,7 +146,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |403|None|Forbidden|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -185,19 +191,20 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 Updates the access control of specified asset.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/AccessControl
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string assetId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string assetId`
 <br/>Asset identifier<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 Updated ACL<br/>
 
@@ -221,7 +228,7 @@ Updated ACL<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -230,7 +237,8 @@ Updated ACL<br/>
 |403|None|Forbidden|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 400 Response ([ErrorTemplate](#schemaerrortemplate))
 
 ```json
@@ -252,19 +260,20 @@ Updated ACL<br/>
 
 Returns the access rights of specified asset.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/AccessRights
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string assetId`
 <br/>Asset identifier<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -273,7 +282,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |403|None|Forbidden|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -306,19 +316,20 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 Returns specified asset and the version Etag in the HTTP response header.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string assetId`
 <br/>Asset identifier<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -327,13 +338,14 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |403|None|Forbidden|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 
-#### Response Headers
+<h4>Response Headers</h4>
 
 |Status|Header|Type|Description|
 |---|---|---|---|
 |200|Etag|integer|Version|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -353,7 +365,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
     {
       "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
       "Name": "Data",
-      "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
+      "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
       "StreamId": "PI_bifrostbigdaddy_1"
     }
   ]
@@ -379,21 +391,22 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 <a id="opIdAssets_Create Asset"></a>
 
-Creates a new asset. If the asset you are trying to create references an asset type (through the AssetTypeId property) and if the corresponding asset type has a metadata value with the same Id, then the name and SDS type code of the metadata value on the asset must be null. If the asset type does not have metadata value with a corresponding Id, the name and SDS type code on the asset cannot be null. To support flexibility on creation and update, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is created from an asset type.
+Creates a new asset. If the asset you are trying to create references an asset type (through the AssetTypeId property) and if the corresponding asset type has a metadata value with the same identifier, then the name and SDS type code of the metadata value on the asset must be null. If the asset type does not have metadata value with a corresponding Id, the name and SDS type code on the asset cannot be null. To support flexibility on creation and update, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is created from an asset type.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string assetId`
 <br/>Asset identifier<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 Asset to create<br/>
 
@@ -414,14 +427,14 @@ Asset to create<br/>
     {
       "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
       "Name": "Data",
-      "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
+      "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
       "StreamId": "PI_bifrostbigdaddy_1"
     }
   ]
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -433,7 +446,7 @@ Asset to create<br/>
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 |409|[ErrorTemplate](#schemaerrortemplate)|Asset you attempted to create has a conflict. See the response body for additional details.|
 
-#### Response Headers
+<h4>Response Headers</h4>
 
 |Status|Header|Type|Description|
 |---|---|---|---|
@@ -441,7 +454,8 @@ Asset to create<br/>
 |201|Etag|integer|Version|
 |302|Location|string|Location to get the identical resource.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -461,7 +475,7 @@ Asset to create<br/>
     {
       "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
       "Name": "Data",
-      "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
+      "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
       "StreamId": "PI_bifrostbigdaddy_1"
     }
   ]
@@ -487,7 +501,7 @@ Asset to create<br/>
     {
       "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
       "Name": "Data",
-      "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
+      "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
       "StreamId": "PI_bifrostbigdaddy_1"
     }
   ]
@@ -515,19 +529,20 @@ Asset to create<br/>
 
 Creates or updates an asset with a specified identifier. If the asset already exists, you can specify an If-Match property in the HTTP request header to ensure that the asset is modified only if its version matches. To support flexibility on creation and update, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is from an asset type.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string assetId`
 <br/>Asset identifier<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 Asset to create or update<br/>
 
@@ -548,14 +563,14 @@ Asset to create or update<br/>
     {
       "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
       "Name": "Data",
-      "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
+      "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
       "StreamId": "PI_bifrostbigdaddy_1"
     }
   ]
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -566,14 +581,15 @@ Asset to create or update<br/>
 |409|[ErrorTemplate](#schemaerrortemplate)|Conflict|
 |412|[ErrorTemplate](#schemaerrortemplate)|Pre-Condition Failed|
 
-#### Response Headers
+<h4>Response Headers</h4>
 
 |Status|Header|Type|Description|
 |---|---|---|---|
 |200|Etag|integer|Version|
 |201|Etag|integer|Version|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -593,7 +609,7 @@ Asset to create or update<br/>
     {
       "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
       "Name": "Data",
-      "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
+      "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
       "StreamId": "PI_bifrostbigdaddy_1"
     }
   ]
@@ -619,7 +635,7 @@ Asset to create or update<br/>
     {
       "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
       "Name": "Data",
-      "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
+      "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
       "StreamId": "PI_bifrostbigdaddy_1"
     }
   ]
@@ -647,19 +663,20 @@ Asset to create or update<br/>
 
 Deletes the asset with a specified identifier.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string assetId`
 <br/>Asset identifier<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -670,7 +687,8 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{asset
 |409|[ErrorTemplate](#schemaerrortemplate)|Conflict|
 |412|[ErrorTemplate](#schemaerrortemplate)|Pre-Condition Failed|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 400 Response ([ErrorTemplate](#schemaerrortemplate))
 
 ```json
@@ -694,7 +712,7 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{asset
 <a id="tocStrustee"></a>
 <a id="tocstrustee"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -720,7 +738,7 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{asset
 <a id="tocStrusteetype"></a>
 <a id="tocstrusteetype"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -737,7 +755,7 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{asset
 <a id="tocSerrortemplate"></a>
 <a id="tocserrortemplate"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -767,7 +785,7 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{asset
 <a id="tocSaccesscontrollist"></a>
 <a id="tocsaccesscontrollist"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -799,7 +817,7 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{asset
 <a id="tocSaccesscontrolentry"></a>
 <a id="tocsaccesscontrolentry"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -829,7 +847,7 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{asset
 <a id="tocSaccesstype"></a>
 <a id="tocsaccesstype"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -847,12 +865,12 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{asset
 
 Represents an asset object.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|Asset identifier. If you do not provide an Id, OCS copies the name as the identifier. If you do not provide a name, OCS assigns a random GUID for the Id.|
-|AssetTypeId|string|false|true|Asset type identifier. Id for the asset type that this asset is derived from. To get the merged view of the asset, get the resolved asset through the /Assets/{assetId}/Resolved route.|
+|Id|string|false|true|Asset identifier. If you do not provide an identifier, OCS copies the name as the identifier. If you do not provide a name, a random GUID will be assigned as the identifier.|
+|AssetTypeId|string|false|true|Asset type identifier. Identifier for the asset type that this asset is derived from. To get the merged view of the asset, get the resolved asset through the /Assets/{assetId}/Resolved route.|
 |Name|string|false|true|User-friendly name for asset. Required if identifier is not provided. If name is used as the identifier, it must be unique within a given namespace.|
 |Description|string|false|true|Asset description|
 |Metadata|[[MetadataItem](#schemametadataitem)]|false|true|Asset metadata|
@@ -876,7 +894,7 @@ Represents an asset object.
     {
       "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
       "Name": "Data",
-      "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
+      "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
       "StreamId": "PI_bifrostbigdaddy_1"
     }
   ]
@@ -895,7 +913,7 @@ Represents an asset object.
 
 An asset or asset type metadata is static information associated with a given asset. A given metadata contains a list of individual metadata values. There is no limit on the number of metadata values defined by an asset. An asset or asset type metadata does not stand alone. It must be specified within an asset or asset type object and, therefore, there are no direct API routes to asset or asset type metadata.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -908,12 +926,12 @@ An asset or asset type metadata is static information associated with a given as
 
 ```json
 {
-  "Id": "Sample Metadata Id",
-  "Name": "Asset Model number",
-  "Description": "This metadata represents an model number attribute on the asset.",
+  "Id": "Sample Metadata identifier",
+  "Name": "Max Pressure",
+  "Description": "This metadata represents the maximum pressure of a given asset.",
   "SdsTypeCode": "Double",
-  "Value": "RFA-123",
-  "Uom": null
+  "Value": 11.2,
+  "Uom": "newton"
 }
 
 ```
@@ -927,7 +945,7 @@ An asset or asset type metadata is static information associated with a given as
 <a id="tocSsdstypecode"></a>
 <a id="tocssdstypecode"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -1030,7 +1048,7 @@ An asset or asset type metadata is static information associated with a given as
 <a id="tocSsdstypecode2"></a>
 <a id="tocssdstypecode2"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -1135,20 +1153,20 @@ An asset or asset type metadata is static information associated with a given as
 
 An asset stream reference represents dynamic stream data associated with an asset. The references must either be an SDS stream or an SDS stream view. Asset-centric data routes provide direct access to dynamic data for a given asset. There are no limitations on the number of references an asset may contain. However, an asset cannot contain multiple references to the same SDS stream. An asset stream reference does not stand alone. It must be specified within an asset object and, therefore, asset references do not have direct API routes.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Id|string|false|true|Stream Reference identifier|
 |Name|string|false|true|User-friendly name for stream reference|
 |Description|string|false|true|Description of the stream reference|
-|StreamId|string|true|false|SDS stream Id that is being referenced.|
+|StreamId|string|true|false|SDS stream identifier that is being referenced.|
 
 ```json
 {
   "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
   "Name": "Data",
-  "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
+  "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
   "StreamId": "PI_bifrostbigdaddy_1"
 }
 
@@ -1165,7 +1183,7 @@ An asset stream reference represents dynamic stream data associated with an asse
 
 Status configuration is a property of an asset or asset type that defines the simple status of an asset or asset type.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1206,7 +1224,7 @@ Status configuration is a property of an asset or asset type that defines the si
 
 Status definition type. Currently, only StreamPropertyMapping is supported.
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|

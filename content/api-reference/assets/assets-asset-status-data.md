@@ -12,19 +12,20 @@ Status is a property of an asset or asset type that defines the simple status of
 
 Returns status of an asset. Status of an asset is determined by an exact match of the Sds stream property value to the value of the ValueStatusMapping. If there are no exact matches, the status is a 0 (Unknown).
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Status/Last
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string assetId`
 <br/>Asset identifier<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -33,7 +34,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 |422|[ErrorTemplate](#schemaerrortemplate)|Cannot be processed. See the response body for additional details.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -67,23 +69,24 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 Returns status summary of an asset.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Status/Summary
 ?startIndex={startIndex}&endIndex={endIndex}&intervals={intervals}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string assetId`
 <br/>Asset identifier<br/><br/>`string startIndex`
 <br/>Start index<br/><br/>`string endIndex`
 <br/>End index<br/><br/>`integer intervals`
 <br/>Number of intervals<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -93,7 +96,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |422|[ErrorTemplate](#schemaerrortemplate)|Cannot be processed. See the response body for additional details.|
 |502|None|Bad gateway|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -162,7 +166,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 Asset's last status
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -195,7 +199,7 @@ Asset's last status
 
 Pre-defined asset status values.
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -213,7 +217,7 @@ Pre-defined asset status values.
 <a id="tocSerrortemplate"></a>
 <a id="tocserrortemplate"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -245,7 +249,7 @@ Pre-defined asset status values.
 
 Returns the status summary of an asset.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -305,7 +309,7 @@ Returns the status summary of an asset.
 
 Status data that is assocated with asset.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -335,7 +339,7 @@ Status data that is assocated with asset.
 
 Status value statistics returns asset status statistics
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -369,7 +373,7 @@ Status value statistics returns asset status statistics
 
 Underlying value statistics represents statistics for a single interval
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

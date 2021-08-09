@@ -4,7 +4,7 @@ uid: assets-resolved-asset
 ---
 
 # Resolved Asset
-The resolved asset describes the consumption-oriented aspects of an OCS resource rather than describing how the resource is configured. The resolved asset corresponds to its metadata and referenced stream which define how the data is interpreted (that is, SdsTypeCode, InterpolationMode, and UOM).
+The resolved asset describes the consumption-oriented aspects of an OCS resource rather than describing how the resource is configured. The resolved asset corresponds to its metadata and referenced stream which define how the data is interpreted (that is, SdsTypeCode, InterpolationMode, and Uom).
 
 ## `Get Resolved Asset`
 
@@ -12,19 +12,20 @@ The resolved asset describes the consumption-oriented aspects of an OCS resource
 
 Returns resolved view of specified asset.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Resolved
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string assetId`
 <br/>Asset identifier<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -33,7 +34,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |403|None|Forbidden|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -127,17 +129,17 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 <a id="tocSresolvedasset"></a>
 <a id="tocsresolvedasset"></a>
 
-The resolved asset describes the consumption-oriented aspects of an OCS resource rather than describing how the resource is configured. The resolved asset corresponds to its metadata and referenced stream which define how the data is interpreted (that is, SdsTypeCode, InterpolationMode, and UOM).
+The resolved asset describes the consumption-oriented aspects of an OCS resource rather than describing how the resource is configured. The resolved asset corresponds to its metadata and referenced stream which define how the data is interpreted (that is, SdsTypeCode, InterpolationMode, and Uom).
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Id|string|false|true|Asset identifier|
 |Name|string|false|true|Asset name|
-|Resolved|boolean|false|false|True if no shape is applied|
+|Resolved|boolean|false|false|For future enhancement, at this moment, always true|
 |Description|string|false|true|Asset description|
-|AssetTypeId|string|false|true|Asset type Id of asset, if applicable|
+|AssetTypeId|string|false|true|Asset type identifier of asset, if applicable|
 |AssetTypeName|string|false|true|Asset type name of asset's asset type, if applicable|
 |ShapeId|string|false|true|Shape identifier for future enhancement|
 |ShapeName|string|false|true|Shape name for future enhancement|
@@ -229,14 +231,14 @@ The resolved asset describes the consumption-oriented aspects of an OCS resource
 
 Resolved metadata is a property of a resolved asset.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Name|string|false|true|Metadata name|
 |SdsTypeCode|[SdsTypeCode](#schemasdstypecode)|false|false|Metadata data type represented as an SdsTypeCode|
 |Value|any|false|true|Metadata static value|
-|Uom|string|false|true|Metadata UOM|
+|Uom|string|false|true|Metadata unit of measurement|
 
 ```json
 {
@@ -257,7 +259,7 @@ Resolved metadata is a property of a resolved asset.
 <a id="tocSsdstypecode"></a>
 <a id="tocssdstypecode"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -362,14 +364,14 @@ Resolved metadata is a property of a resolved asset.
 
 Resolved stream is a property of the resolved asset.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Name|string|false|true|Resolved stream name|
 |Type|[SdsType](#schemasdstype)|false|true|SdsType of the referenced stream|
 |StreamReferenceName|string|false|true|Stream reference name used in the asset|
-|StreamId|string|false|true|SDS stream Id of the referenced stream|
+|StreamId|string|false|true|SDS stream identifier of the referenced stream|
 |PropertyMaps|[[PropertyMap](#schemapropertymap)]|false|true|SDS stream property maps|
 
 ```json
@@ -423,7 +425,7 @@ Resolved stream is a property of the resolved asset.
 <a id="tocSsdstype"></a>
 <a id="tocssdstype"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -480,7 +482,7 @@ Resolved stream is a property of the resolved asset.
 <a id="tocSsdstypeproperty"></a>
 <a id="tocssdstypeproperty"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -533,7 +535,7 @@ Resolved stream is a property of the resolved asset.
 <a id="tocSsdsinterpolationmode"></a>
 <a id="tocssdsinterpolationmode"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -554,7 +556,7 @@ Resolved stream is a property of the resolved asset.
 <a id="tocSsdsextrapolationmode"></a>
 <a id="tocssdsextrapolationmode"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -574,7 +576,7 @@ Resolved stream is a property of the resolved asset.
 
 Property map
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -600,7 +602,7 @@ Property map
 
 Unresolved stream, a property of the resolved asset, is a stream that could not be resolved.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -626,7 +628,7 @@ Unresolved stream, a property of the resolved asset, is a stream that could not 
 
 Currently not used. Unresolved metadata, a property of the resolved asset, is metadata that could not be resolved.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -652,7 +654,7 @@ Currently not used. Unresolved metadata, a property of the resolved asset, is me
 
 Status definition type. Currently, only StreamPropertyMapping is supported.
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -670,7 +672,7 @@ Status definition type. Currently, only StreamPropertyMapping is supported.
 
 Unresolved status, a property of the resolved asset, means asset status could not be resolved.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -692,7 +694,7 @@ Unresolved status, a property of the resolved asset, means asset status could no
 <a id="tocSerrortemplate"></a>
 <a id="tocserrortemplate"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

@@ -12,22 +12,23 @@ The asset API allows you to programmatically model your on-premises assets in OS
 
 Returns an array of assets in a given namespace and the total number of assets returned, specified as Total-Count in the HTTP response header.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
 ?skip={skip}&count={count}&orderBy={orderBy}&query={query}&pageSize={pageSize}&maxPages={maxPages}&continuationToken={continuationToken}&Comparer={Comparer}&Count={Count}&Keys={Keys}&System.Collections.Generic.IDictionary<TKey,TValue>.Keys={System.Collections.Generic.IDictionary<TKey,TValue>.Keys}&System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys={System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys}&Values={Values}&System.Collections.Generic.IDictionary<TKey,TValue>.Values={System.Collections.Generic.IDictionary<TKey,TValue>.Values}&System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values={System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values}&Item={Item}&System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly={System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly}&System.Collections.ICollection.IsSynchronized={System.Collections.ICollection.IsSynchronized}&System.Collections.ICollection.SyncRoot={System.Collections.ICollection.SyncRoot}&System.Collections.IDictionary.IsFixedSize={System.Collections.IDictionary.IsFixedSize}&System.Collections.IDictionary.IsReadOnly={System.Collections.IDictionary.IsReadOnly}&System.Collections.IDictionary.Keys={System.Collections.IDictionary.Keys}&System.Collections.IDictionary.Values={System.Collections.IDictionary.Values}&System.Collections.IDictionary.Item={System.Collections.IDictionary.Item}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 `[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>`[optional] string orderBy`
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string orderBy`
 <br/>Optional parameter which returns assets ordered either by the asset `Id` or the asset `Name`. Specify `asc` or `desc` to return the results in ascending or descending order. If not specified, the default is ascending order.<br/><br/>`[optional] string query`
-<br/>Query identifier.<br/><br/><br/>`[optional] integer pageSize`
+<br/>Query identifier.<br/><br/>`[optional] integer pageSize`
 <br/>Page size, internal use only<br/><br/>`[optional] integer maxPages`
 <br/>Max pages, internal use only<br/><br/>`[optional] string continuationToken`
 <br/>Internal use only<br/><br/>`[optional] object Comparer`
@@ -49,20 +50,21 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
 <br/><br/>`[optional] any System.Collections.IDictionary.Item`
 <br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Asset](#schemaasset)[]|List of assets in the system.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
 
-#### Response Headers
+<h4>Response Headers</h4>
 
 |Status|Header|Type|Description|
 |---|---|---|---|
 |200|Total-Count|integer|Total number of assets in the namespace.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -104,7 +106,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
       {
         "Id": "fdda0985-7dba-48aa-95fc-55620a9b59ad",
         "Name": "Data",
-        "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_2.",
+        "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_2.",
         "StreamId": "PI_bifrostbigdaddy_2"
       }
     ]
@@ -131,20 +133,21 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
 
 <a id="opIdRequestManager_Create Asset"></a>
 
-Creates a new asset. If the asset you are trying to create references an asset type (through the AssetTypeId property) and if the corresponding asset type has a metadata value with the same Id, then the name and SDS type code of the metadata value on the asset must be null. If the asset type does not have metadata value with a corresponding Id, the name and SDS type code on the asset cannot be null. To support flexibility on creation and update, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is created from an asset type.
+Creates a new asset. If the asset you are trying to create references an asset type (through the AssetTypeId property) and if the corresponding asset type has a metadata value with the same identifier, then the name and SDS type code of the metadata value on the asset must be null. If the asset type does not have metadata value with a corresponding Id, the name and SDS type code on the asset cannot be null. To support flexibility on creation and update, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is created from an asset type.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 Asset you want to create<br/>
 
@@ -165,14 +168,14 @@ Asset you want to create<br/>
     {
       "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
       "Name": "Data",
-      "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
+      "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
       "StreamId": "PI_bifrostbigdaddy_1"
     }
   ]
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -183,7 +186,7 @@ Asset you want to create<br/>
 |403|[ErrorTemplate](#schemaerrortemplate)|You are not authorized to create assets.|
 |409|[ErrorTemplate](#schemaerrortemplate)|Conflict. See the response body for additional details.|
 
-#### Response Headers
+<h4>Response Headers</h4>
 
 |Status|Header|Type|Description|
 |---|---|---|---|
@@ -191,7 +194,8 @@ Asset you want to create<br/>
 |201|Etag|integer|Version|
 |302|Location|string|Location to get the identical resource.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -211,7 +215,7 @@ Asset you want to create<br/>
     {
       "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
       "Name": "Data",
-      "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
+      "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
       "StreamId": "PI_bifrostbigdaddy_1"
     }
   ]
@@ -237,7 +241,7 @@ Asset you want to create<br/>
     {
       "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
       "Name": "Data",
-      "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
+      "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
       "StreamId": "PI_bifrostbigdaddy_1"
     }
   ]
@@ -265,18 +269,19 @@ Asset you want to create<br/>
 
 Creates assets in bulk. Creates multiple assets in a single call.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 List of assets you want to create.<br/>
 
@@ -298,7 +303,7 @@ List of assets you want to create.<br/>
       {
         "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
         "Name": "Data",
-        "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
+        "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
         "StreamId": "PI_bifrostbigdaddy_1"
       }
     ]
@@ -306,65 +311,17 @@ List of assets you want to create.<br/>
 ]
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Asset](#schemaasset)[]|Assets as persisted, including values for optional parameters that were omitted in the request.|
+|200|[MultiStatusResultOfAssetAndChildErrorTemplate](#schemamultistatusresultofassetandchilderrortemplate)|Assets as persisted, including values for optional parameters that were omitted in the request.|
 |207|[MultiStatusResultOfAssetAndChildErrorTemplate](#schemamultistatusresultofassetandchilderrortemplate)|Partial success. Some assets were created. See response body for additional details.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 
-#### Example response body
-> 200 Response
+<h4>Example response body</h4>
 
-```json
-[
-  {
-    "Id": "SampleAssetA",
-    "Description": "This is a sample asset a.",
-    "Metadata": [
-      {
-        "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
-        "Name": "ModelNumber",
-        "Description": "This is a static attribute on the asset which represents the model number.",
-        "SdsTypeCode": "Double",
-        "Value": 0.01
-      }
-    ],
-    "StreamReferences": [
-      {
-        "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-        "Name": "Data",
-        "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
-        "StreamId": "PI_bifrostbigdaddy_1"
-      }
-    ]
-  },
-  {
-    "Id": "SampleAssetA",
-    "Description": "This is a sample asset a.",
-    "Metadata": [
-      {
-        "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
-        "Name": "ModelNumber",
-        "Description": "This is a static attribute on the asset which represents the model number.",
-        "SdsTypeCode": "Double",
-        "Value": 0.01
-      }
-    ],
-    "StreamReferences": [
-      {
-        "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-        "Name": "Data",
-        "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
-        "StreamId": "PI_bifrostbigdaddy_1"
-      }
-    ]
-  }
-]
-```
-
-> 207 Response ([MultiStatusResultOfAssetAndChildErrorTemplate](#schemamultistatusresultofassetandchilderrortemplate))
+> 200 Response ([MultiStatusResultOfAssetAndChildErrorTemplate](#schemamultistatusresultofassetandchilderrortemplate))
 
 ```json
 {
@@ -388,7 +345,7 @@ List of assets you want to create.<br/>
         {
           "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
           "Name": "Data",
-          "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
+          "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
           "StreamId": "PI_bifrostbigdaddy_1"
         }
       ]
@@ -416,21 +373,22 @@ List of assets you want to create.<br/>
 
 Deletes all assets with the specified identifiers. This API can delete up to a maximum of 1000 assets in one API call.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets
 ?id={id}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 `[optional] array id`
 <br/>Comma separated asset identifiers in the form of id={assetId_1},id={assetId_2}<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -438,7 +396,8 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets
 |207|[MultiStatusResultOfStringAndChildErrorTemplate](#schemamultistatusresultofstringandchilderrortemplate)|Partial success. Not all assets were deleted. See response body for additional details.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 207 Response ([MultiStatusResultOfStringAndChildErrorTemplate](#schemamultistatusresultofstringandchilderrortemplate))
 
 ```json
@@ -471,22 +430,23 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets
 
 Searches all assets and returns a list of asset Ids and their matched fields. Use this API to identify the fields in the asset that match your query string.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets
 ?skip={skip}&count={count}&orderBy={orderBy}&query={query}&pageSize={pageSize}&maxPages={maxPages}&continuationToken={continuationToken}&Comparer={Comparer}&Count={Count}&Keys={Keys}&System.Collections.Generic.IDictionary<TKey,TValue>.Keys={System.Collections.Generic.IDictionary<TKey,TValue>.Keys}&System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys={System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys}&Values={Values}&System.Collections.Generic.IDictionary<TKey,TValue>.Values={System.Collections.Generic.IDictionary<TKey,TValue>.Values}&System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values={System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values}&Item={Item}&System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly={System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly}&System.Collections.ICollection.IsSynchronized={System.Collections.ICollection.IsSynchronized}&System.Collections.ICollection.SyncRoot={System.Collections.ICollection.SyncRoot}&System.Collections.IDictionary.IsFixedSize={System.Collections.IDictionary.IsFixedSize}&System.Collections.IDictionary.IsReadOnly={System.Collections.IDictionary.IsReadOnly}&System.Collections.IDictionary.Keys={System.Collections.IDictionary.Keys}&System.Collections.IDictionary.Values={System.Collections.IDictionary.Values}&System.Collections.IDictionary.Item={System.Collections.IDictionary.Item}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 `[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>`[optional] string orderBy`
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string orderBy`
 <br/>Optional parameter which returns assets ordered either by the asset `Id` or the asset `Name`. Specify `asc` or `desc` to return the results in ascending or descending order. If not specified, the default is ascending order.<br/><br/>`[optional] string query`
-<br/>Query identifier.<br/><br/><br/>`[optional] integer pageSize`
+<br/>Query identifier.<br/><br/>`[optional] integer pageSize`
 <br/>Page size, internal use only<br/><br/>`[optional] integer maxPages`
 <br/>Max pages, internal use only<br/><br/>`[optional] string continuationToken`
 <br/>Internal use only<br/><br/>`[optional] object Comparer`
@@ -508,7 +468,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets
 <br/><br/>`[optional] any System.Collections.IDictionary.Item`
 <br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -516,7 +476,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets
 |204|None|No assets match your query.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -563,22 +524,23 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets
 
 Searches for assets using facets. Asset facets are not case-sensitive. Only asset metadata can be used in faceted searches.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets/Facets
 ?count={count}&name={name}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 `[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/><br/>`[optional] string name`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string name`
 <br/>Name of the asset metadata for which you want to retrieve the facet values.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -586,7 +548,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets/Fa
 |204|None|No assets match your query.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -628,18 +591,19 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets/Fa
 
 Returns status of multiple assets.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets/Status/Last
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 Asset identifiers<br/>
 
@@ -651,15 +615,16 @@ Asset identifiers<br/>
 ]
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[LastStatusData](#schemalaststatusdata)[]|Last status of assets in the body.|
+|200|[MultiStatusResultOfLastStatusDataAndChildErrorTemplate](#schemamultistatusresultoflaststatusdataandchilderrortemplate)|Last status of assets in the body.|
 |207|[MultiStatusResultOfLastStatusDataAndChildErrorTemplate](#schemamultistatusresultoflaststatusdataandchilderrortemplate)|Partial success. Some assets encountered errors. See response body for additional details.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -719,18 +684,19 @@ Asset identifiers<br/>
 
 Returns multiple resolved assets.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets/Resolved
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 Asset identifiers<br/>
 
@@ -741,15 +707,16 @@ Asset identifiers<br/>
 ]
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[ResolvedAsset](#schemaresolvedasset)[]|Returns the resolved view of multiple assets.|
+|200|[MultiStatusResultOfResolvedAssetAndChildErrorTemplate](#schemamultistatusresultofresolvedassetandchilderrortemplate)|Returns the resolved view of multiple assets.|
 |207|[MultiStatusResultOfStringAndChildErrorTemplate](#schemamultistatusresultofstringandchilderrortemplate)|Partial success. Not all assets were able to be resolved. See response body for additional details.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -851,29 +818,31 @@ Asset identifiers<br/>
 
 Returns a list of suggested assets based on your search criteria. The autocomplete feature can be used with the following asset properties: Name, Description, AssetTypeName, and Metadata.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets/Autocomplete
 ?term={term}&termCount={termCount}&facetCount={facetCount}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string term`
 <br/>Search term that you want to search for<br/><br/>`integer termCount`
 <br/>Maximum number of facet autocompleted items to return. Default is 0.<br/><br/>`integer facetCount`
 <br/>Maximum number of token autocompleted items to return. Default is 0.<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[SuggestionResults](#schemasuggestionresults)|Returns the suggestions|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -936,12 +905,12 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets/Au
 
 Represents an asset object.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|Asset identifier. If you do not provide an Id, OCS copies the name as the identifier. If you do not provide a name, OCS assigns a random GUID for the Id.|
-|AssetTypeId|string|false|true|Asset type identifier. Id for the asset type that this asset is derived from. To get the merged view of the asset, get the resolved asset through the /Assets/{assetId}/Resolved route.|
+|Id|string|false|true|Asset identifier. If you do not provide an identifier, OCS copies the name as the identifier. If you do not provide a name, a random GUID will be assigned as the identifier.|
+|AssetTypeId|string|false|true|Asset type identifier. Identifier for the asset type that this asset is derived from. To get the merged view of the asset, get the resolved asset through the /Assets/{assetId}/Resolved route.|
 |Name|string|false|true|User-friendly name for asset. Required if identifier is not provided. If name is used as the identifier, it must be unique within a given namespace.|
 |Description|string|false|true|Asset description|
 |Metadata|[[MetadataItem](#schemametadataitem)]|false|true|Asset metadata|
@@ -965,7 +934,7 @@ Represents an asset object.
     {
       "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
       "Name": "Data",
-      "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
+      "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
       "StreamId": "PI_bifrostbigdaddy_1"
     }
   ]
@@ -984,7 +953,7 @@ Represents an asset object.
 
 An asset or asset type metadata is static information associated with a given asset. A given metadata contains a list of individual metadata values. There is no limit on the number of metadata values defined by an asset. An asset or asset type metadata does not stand alone. It must be specified within an asset or asset type object and, therefore, there are no direct API routes to asset or asset type metadata.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -997,12 +966,12 @@ An asset or asset type metadata is static information associated with a given as
 
 ```json
 {
-  "Id": "Sample Metadata Id",
-  "Name": "Asset Model number",
-  "Description": "This metadata represents an model number attribute on the asset.",
+  "Id": "Sample Metadata identifier",
+  "Name": "Max Pressure",
+  "Description": "This metadata represents the maximum pressure of a given asset.",
   "SdsTypeCode": "Double",
-  "Value": "RFA-123",
-  "Uom": null
+  "Value": 11.2,
+  "Uom": "newton"
 }
 
 ```
@@ -1016,7 +985,7 @@ An asset or asset type metadata is static information associated with a given as
 <a id="tocSsdstypecode"></a>
 <a id="tocssdstypecode"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -1119,7 +1088,7 @@ An asset or asset type metadata is static information associated with a given as
 <a id="tocSsdstypecode2"></a>
 <a id="tocssdstypecode2"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -1224,20 +1193,20 @@ An asset or asset type metadata is static information associated with a given as
 
 An asset stream reference represents dynamic stream data associated with an asset. The references must either be an SDS stream or an SDS stream view. Asset-centric data routes provide direct access to dynamic data for a given asset. There are no limitations on the number of references an asset may contain. However, an asset cannot contain multiple references to the same SDS stream. An asset stream reference does not stand alone. It must be specified within an asset object and, therefore, asset references do not have direct API routes.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Id|string|false|true|Stream Reference identifier|
 |Name|string|false|true|User-friendly name for stream reference|
 |Description|string|false|true|Description of the stream reference|
-|StreamId|string|true|false|SDS stream Id that is being referenced.|
+|StreamId|string|true|false|SDS stream identifier that is being referenced.|
 
 ```json
 {
   "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
   "Name": "Data",
-  "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
+  "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
   "StreamId": "PI_bifrostbigdaddy_1"
 }
 
@@ -1254,7 +1223,7 @@ An asset stream reference represents dynamic stream data associated with an asse
 
 Status configuration is a property of an asset or asset type that defines the simple status of an asset or asset type.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1295,7 +1264,7 @@ Status configuration is a property of an asset or asset type that defines the si
 
 Status definition type. Currently, only StreamPropertyMapping is supported.
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -1311,7 +1280,7 @@ Status definition type. Currently, only StreamPropertyMapping is supported.
 <a id="tocSerrortemplate"></a>
 <a id="tocserrortemplate"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1343,15 +1312,15 @@ Status definition type. Currently, only StreamPropertyMapping is supported.
 
 A multi status result is returned to indicate a partial success.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Reason|string|false|true|None|
-|Error|string|false|true|None|
-|OperationId|string|false|true|None|
-|Data|[[Asset](#schemaasset)]|false|true|[Represents an asset object.]|
-|ChildErrors|[[ChildErrorTemplate](#schemachilderrortemplate)]|false|true|None|
+|Reason|string|false|true|Failure reason.|
+|Error|string|false|true|Error string|
+|OperationId|string|false|true|Operational identifier of the call. Used for support.|
+|Data|[[Asset](#schemaasset)]|false|true|Requested information from call.|
+|ChildErrors|[[ChildErrorTemplate](#schemachilderrortemplate)]|false|true|Child error pertaining to specific resources.|
 
 ```json
 {
@@ -1375,7 +1344,7 @@ A multi status result is returned to indicate a partial success.
         {
           "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
           "Name": "Data",
-          "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
+          "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
           "StreamId": "PI_bifrostbigdaddy_1"
         }
       ]
@@ -1405,7 +1374,7 @@ A multi status result is returned to indicate a partial success.
 <a id="tocSchilderrortemplate"></a>
 <a id="tocschilderrortemplate"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1453,7 +1422,7 @@ A multi status result is returned to indicate a partial success.
 
 The set of search results matching search query.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1496,7 +1465,7 @@ The set of search results matching search query.
 
 Search results
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1577,7 +1546,7 @@ Search results
 
 Matched fields. Includes the matched property and matched terms.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1600,7 +1569,7 @@ Matched fields. Includes the matched property and matched terms.
 
 Status data that is assocated with asset.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1630,7 +1599,7 @@ Status data that is assocated with asset.
 
 Pre-defined asset status values.
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -1648,7 +1617,7 @@ Pre-defined asset status values.
 <a id="tocSfacetresult"></a>
 <a id="tocsfacetresult"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1677,7 +1646,7 @@ Pre-defined asset status values.
 <a id="tocSfacetvalue"></a>
 <a id="tocsfacetvalue"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1694,39 +1663,6 @@ Pre-defined asset status values.
 
 ---
 
-### LastStatusData
-
-<a id="schemalaststatusdata"></a>
-<a id="schema_LastStatusData"></a>
-<a id="tocSlaststatusdata"></a>
-<a id="tocslaststatusdata"></a>
-
-Asset's last status
-
-#### Properties
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|Index|any|false|true|Index which the status was last updated|
-|Status|[StatusEnum](#schemastatusenum)|false|false|Status enumeration. Valid values are: Unknown, Good, Warning and Bad.|
-|Value|any|false|true|Value of the last data retrieved|
-|DisplayName|string|false|true|Status display name|
-|AssetId|string|false|true|Asset identifier|
-|DataRetrievalTime|date-time|false|false|Date and time when the status was last updated.|
-
-```json
-{
-  "AssetId": "AssetId-1",
-  "Status": "Good",
-  "Value": "85",
-  "DisplayName": "AssetId-1Good",
-  "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z"
-}
-
-```
-
----
-
 ### MultiStatusResultOfLastStatusDataAndChildErrorTemplate
 
 <a id="schemamultistatusresultoflaststatusdataandchilderrortemplate"></a>
@@ -1736,15 +1672,15 @@ Asset's last status
 
 A multi status result is returned to indicate a partial success.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Reason|string|false|true|None|
-|Error|string|false|true|None|
-|OperationId|string|false|true|None|
-|Data|[[LastStatusData](#schemalaststatusdata)]|false|true|[Asset's last status]|
-|ChildErrors|[[ChildErrorTemplate](#schemachilderrortemplate)]|false|true|None|
+|Reason|string|false|true|Failure reason.|
+|Error|string|false|true|Error string|
+|OperationId|string|false|true|Operational identifier of the call. Used for support.|
+|Data|[[LastStatusData](#schemalaststatusdata)]|false|true|Requested information from call.|
+|ChildErrors|[[ChildErrorTemplate](#schemachilderrortemplate)]|false|true|Child error pertaining to specific resources.|
 
 ```json
 {
@@ -1777,6 +1713,39 @@ A multi status result is returned to indicate a partial success.
 
 ---
 
+### LastStatusData
+
+<a id="schemalaststatusdata"></a>
+<a id="schema_LastStatusData"></a>
+<a id="tocSlaststatusdata"></a>
+<a id="tocslaststatusdata"></a>
+
+Asset's last status
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Index|any|false|true|Index which the status was last updated|
+|Status|[StatusEnum](#schemastatusenum)|false|false|Status enumeration. Valid values are: Unknown, Good, Warning and Bad.|
+|Value|any|false|true|Value of the last data retrieved|
+|DisplayName|string|false|true|Status display name|
+|AssetId|string|false|true|Asset identifier|
+|DataRetrievalTime|date-time|false|false|Date and time when the status was last updated.|
+
+```json
+{
+  "AssetId": "AssetId-1",
+  "Status": "Good",
+  "Value": "85",
+  "DisplayName": "AssetId-1Good",
+  "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z"
+}
+
+```
+
+---
+
 ### MultiStatusResultOfStringAndChildErrorTemplate
 
 <a id="schemamultistatusresultofstringandchilderrortemplate"></a>
@@ -1786,15 +1755,15 @@ A multi status result is returned to indicate a partial success.
 
 A multi status result is returned to indicate a partial success.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Reason|string|false|true|None|
-|Error|string|false|true|None|
-|OperationId|string|false|true|None|
-|Data|string[]|false|true|None|
-|ChildErrors|[[ChildErrorTemplate](#schemachilderrortemplate)]|false|true|None|
+|Reason|string|false|true|Failure reason.|
+|Error|string|false|true|Error string|
+|OperationId|string|false|true|Operational identifier of the call. Used for support.|
+|Data|string[]|false|true|Requested information from call.|
+|ChildErrors|[[ChildErrorTemplate](#schemachilderrortemplate)]|false|true|Child error pertaining to specific resources.|
 
 ```json
 {
@@ -1821,6 +1790,114 @@ A multi status result is returned to indicate a partial success.
 
 ---
 
+### MultiStatusResultOfResolvedAssetAndChildErrorTemplate
+
+<a id="schemamultistatusresultofresolvedassetandchilderrortemplate"></a>
+<a id="schema_MultiStatusResultOfResolvedAssetAndChildErrorTemplate"></a>
+<a id="tocSmultistatusresultofresolvedassetandchilderrortemplate"></a>
+<a id="tocsmultistatusresultofresolvedassetandchilderrortemplate"></a>
+
+A multi status result is returned to indicate a partial success.
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Reason|string|false|true|Failure reason.|
+|Error|string|false|true|Error string|
+|OperationId|string|false|true|Operational identifier of the call. Used for support.|
+|Data|[[ResolvedAsset](#schemaresolvedasset)]|false|true|Requested information from call.|
+|ChildErrors|[[ChildErrorTemplate](#schemachilderrortemplate)]|false|true|Child error pertaining to specific resources.|
+
+```json
+{
+  "Reason": "string",
+  "Error": "string",
+  "OperationId": "string",
+  "Data": [
+    {
+      "Id": "Heater-8911ee90-467b-4a3f-bc7b-3b3512c23dfc",
+      "Name": "Heater Asset",
+      "Resolved": true,
+      "Description": "Heater Asset on the first floor.",
+      "AssetTypeId": "Heater_AssetType-6f53c911-f5de-4b7f-981f-d6f0ec139d9f",
+      "AssetTypeName": "Heater_AssetType",
+      "Metadata": [
+        {
+          "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+          "Name": "ModelNumber",
+          "Description": "This is a static attribute on the asset which represents the model number.",
+          "SdsTypeCode": "Double",
+          "Value": 0.01
+        }
+      ],
+      "Streams": [
+        {
+          "Name": "ResolvedReferenceName1",
+          "Type": {
+            "Id": "SdsType-ffdf2227-50e8-4196-b828-f1bd2b3689c8",
+            "SdsTypeCode": "Object",
+            "Properties": [
+              {
+                "Id": "Timestamp",
+                "IsKey": true,
+                "SdsType": {
+                  "Id": "0573b425-368a-369b-95d9-71c863df45a5",
+                  "SdsTypeCode": "DateTime"
+                },
+                "InterpolationMode": "Continuous"
+              },
+              {
+                "Id": "Pressure",
+                "SdsType": {
+                  "Id": "9144b7d6-3d5f-3b29-8131-ff0db551e17c",
+                  "SdsTypeCode": "Double"
+                },
+                "Uom": "bar",
+                "InterpolationMode": "Continuous"
+              }
+            ]
+          },
+          "StreamReferenceName": "ResolvedReferenceName1",
+          "StreamId": "Stream-b3c7a344-ce8a-4578-b4cd-1a6d78ca0610",
+          "PropertyMaps": [
+            {
+              "Id": "Timestamp",
+              "SourcePropertyId": "Timestamp"
+            },
+            {
+              "Id": "Pressure",
+              "SourcePropertyId": "Pressure"
+            }
+          ]
+        }
+      ],
+      "UnresolvedStreams": [],
+      "UnresolvedMetadata": [],
+      "StatusDefinitionType": "StreamPropertyMapping",
+      "Status": {
+        "StreamId": "SdsStream_id_1",
+        "SourcePropertyId": "Count"
+      }
+    }
+  ],
+  "ChildErrors": [
+    {
+      "OperationId": "string",
+      "Error": "string",
+      "Resolution": "string",
+      "Reason": "string",
+      "StatusCode": 0,
+      "property1": null,
+      "property2": null
+    }
+  ]
+}
+
+```
+
+---
+
 ### ResolvedAsset
 
 <a id="schemaresolvedasset"></a>
@@ -1828,17 +1905,17 @@ A multi status result is returned to indicate a partial success.
 <a id="tocSresolvedasset"></a>
 <a id="tocsresolvedasset"></a>
 
-The resolved asset describes the consumption-oriented aspects of an OCS resource rather than describing how the resource is configured. The resolved asset corresponds to its metadata and referenced stream which define how the data is interpreted (that is, SdsTypeCode, InterpolationMode, and UOM).
+The resolved asset describes the consumption-oriented aspects of an OCS resource rather than describing how the resource is configured. The resolved asset corresponds to its metadata and referenced stream which define how the data is interpreted (that is, SdsTypeCode, InterpolationMode, and Uom).
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Id|string|false|true|Asset identifier|
 |Name|string|false|true|Asset name|
-|Resolved|boolean|false|false|True if no shape is applied|
+|Resolved|boolean|false|false|For future enhancement, at this moment, always true|
 |Description|string|false|true|Asset description|
-|AssetTypeId|string|false|true|Asset type Id of asset, if applicable|
+|AssetTypeId|string|false|true|Asset type identifier of asset, if applicable|
 |AssetTypeName|string|false|true|Asset type name of asset's asset type, if applicable|
 |ShapeId|string|false|true|Shape identifier for future enhancement|
 |ShapeName|string|false|true|Shape name for future enhancement|
@@ -1930,14 +2007,14 @@ The resolved asset describes the consumption-oriented aspects of an OCS resource
 
 Resolved metadata is a property of a resolved asset.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Name|string|false|true|Metadata name|
 |SdsTypeCode|[SdsTypeCode](#schemasdstypecode)|false|false|Metadata data type represented as an SdsTypeCode|
 |Value|any|false|true|Metadata static value|
-|Uom|string|false|true|Metadata UOM|
+|Uom|string|false|true|Metadata unit of measurement|
 
 ```json
 {
@@ -1960,14 +2037,14 @@ Resolved metadata is a property of a resolved asset.
 
 Resolved stream is a property of the resolved asset.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Name|string|false|true|Resolved stream name|
 |Type|[SdsType](#schemasdstype)|false|true|SdsType of the referenced stream|
 |StreamReferenceName|string|false|true|Stream reference name used in the asset|
-|StreamId|string|false|true|SDS stream Id of the referenced stream|
+|StreamId|string|false|true|SDS stream identifier of the referenced stream|
 |PropertyMaps|[[PropertyMap](#schemapropertymap)]|false|true|SDS stream property maps|
 
 ```json
@@ -2021,7 +2098,7 @@ Resolved stream is a property of the resolved asset.
 <a id="tocSsdstype"></a>
 <a id="tocssdstype"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -2078,7 +2155,7 @@ Resolved stream is a property of the resolved asset.
 <a id="tocSsdstypeproperty"></a>
 <a id="tocssdstypeproperty"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -2131,7 +2208,7 @@ Resolved stream is a property of the resolved asset.
 <a id="tocSsdsinterpolationmode"></a>
 <a id="tocssdsinterpolationmode"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -2152,7 +2229,7 @@ Resolved stream is a property of the resolved asset.
 <a id="tocSsdsextrapolationmode"></a>
 <a id="tocssdsextrapolationmode"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -2172,7 +2249,7 @@ Resolved stream is a property of the resolved asset.
 
 Property map
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -2198,7 +2275,7 @@ Property map
 
 Unresolved stream, a property of the resolved asset, is a stream that could not be resolved.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -2224,7 +2301,7 @@ Unresolved stream, a property of the resolved asset, is a stream that could not 
 
 Currently not used. Unresolved metadata, a property of the resolved asset, is metadata that could not be resolved.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -2250,7 +2327,7 @@ Currently not used. Unresolved metadata, a property of the resolved asset, is me
 
 Unresolved status, a property of the resolved asset, means asset status could not be resolved.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -2272,7 +2349,7 @@ Unresolved status, a property of the resolved asset, means asset status could no
 <a id="tocSsuggestionresults"></a>
 <a id="tocssuggestionresults"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -2311,7 +2388,7 @@ Unresolved status, a property of the resolved asset, means asset status could no
 <a id="tocSfacetsuggestion"></a>
 <a id="tocsfacetsuggestion"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -2340,7 +2417,7 @@ Unresolved status, a property of the resolved asset, means asset status could no
 <a id="tocSfacetcategory"></a>
 <a id="tocsfacetcategory"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -2364,7 +2441,7 @@ Unresolved status, a property of the resolved asset, means asset status could no
 <a id="tocStokensuggestion"></a>
 <a id="tocstokensuggestion"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

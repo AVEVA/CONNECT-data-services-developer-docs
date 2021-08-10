@@ -15,13 +15,11 @@ uid: UsingMultipleRules
 | PHI-Tank03Press     | Tank 03    | Pressure           |
 | **PHI-Tank03-Temp** | Tank 03    | Temperature        |
 
-Therefore, you must create a second asset rule, which we will call Tank Rule B, that can identify this stream. The stream name pattern is identical to Tank Rule A, except for the third part of the stream name.  In Tank Rule A, this part of the stream name was matched with *the next group of numbers*. To correctly identify the PHI-Tank03-Temp stream, *03* must be matched using *everything preceding the delimiter "-"*. This token for the third part of the stream name is assigned the name *equipment_Id*, the same name as in Tank Rule A.
+Therefore, you must create a second asset rule, which we will call Tank Rule B, to identify this stream. The stream name pattern is identical to Tank Rule A, except for the third part of the stream name. In Tank Rule A, this part of the stream name was matched with *the next group of numbers*. To correctly identify the PHI-Tank03-Temp stream, *03* must be matched using *everything preceding the delimiter "-"*. This token for the third part of the stream name is assigned the name *equipment_Id*, the same name as in Tank Rule A.
 
-**Note:** OSIsoft recommends that you use the same names for all of your tokens in both rules. This will make it easier for you to manage the rules and troubleshoot any problems that may occur.
+**Note:** OSIsoft recommends that you use the same names for all of the tokens in both rules. This will make it easier to manage the rules and troubleshoot any problems that may occur.
 
 ![](images/second-rule-token.png)
-
-
 
 Set up the mappings and configure the asset as described in [Create asset rules](xref:CreateAssetRules).
 

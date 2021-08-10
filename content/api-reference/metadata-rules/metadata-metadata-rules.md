@@ -9,7 +9,7 @@ uid: metadata-metadata-rules
 
 <a id="opIdMetadataRules_List Rules"></a>
 
-Gets all `RuleModel` objects from the `IRuleStore` the requesting `Identity` has access to.
+Returns all `RuleModel` objects from the `IRuleStore` to which the requesting `Identity` has access.
 
 <h3>Request</h3>
 
@@ -36,7 +36,7 @@ Defaults to false.<br/><br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[RuleModel](#schemarulemodel)[]|The `RuleModel` objects.|
-|400|[ResponseBody](#schemaresponsebody)|Invalid uri query parameters.|
+|400|[ResponseBody](#schemaresponsebody)|Missing or invalid inputs.|
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
@@ -222,9 +222,9 @@ The RuleModel object to create.<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |201|[RuleModel](#schemarulemodel)|A link to the `RuleModel` object.|
-|400|[ResponseBody](#schemaresponsebody)|The rule is malformed or invalid.|
+|400|[ResponseBody](#schemaresponsebody)|Missing or invalid inputs.|
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
-|409|[ResponseBody](#schemaresponsebody)|A non-equivalent rule with the same id already exists.|
+|409|[ResponseBody](#schemaresponsebody)|A non-equivalent rule with the same identifier already exists.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
 <h4>Example response body</h4>
@@ -346,7 +346,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}
 <br/>The `RuleRouteOptions` uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
-<br/>The Id of a rule.<br/><br/>
+<br/>Rule identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -447,7 +447,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}
 
 <a id="opIdMetadataRules_Create Rule"></a>
 
-Gets or creates a `RuleModel` object with the specified id in the `IRuleStore`.
+Returns or creates a `RuleModel` object with the specified id in the `IRuleStore`.
 
 <h3>Request</h3>
 
@@ -461,7 +461,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}
 <br/>The `RuleRouteOptions` uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
-<br/>The Id of a rule.<br/><br/>
+<br/>Rule identifier.<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -507,10 +507,10 @@ The RuleModel object.<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |201|[RuleModel](#schemarulemodel)|A link to the `RuleModel` object.|
-|302|None|An equivalent rule with the same id and definition already exists.|
-|400|[ResponseBody](#schemaresponsebody)|The rule is malformed or invalid.|
+|302|None|An equivalent rule with the same identifier and definition already exists.|
+|400|[ResponseBody](#schemaresponsebody)|Missing or invalid inputs.|
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
-|409|[ResponseBody](#schemaresponsebody)|A non-equivalent rule with the specified id already exists.|
+|409|[ResponseBody](#schemaresponsebody)|A non-equivalent rule with the specified identifier already exists.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
 <h4>Example response body</h4>
@@ -633,7 +633,7 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}
 <br/>The `RuleRouteOptions` uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
-<br/>The Id of a rule.<br/><br/>
+<br/>Rule identifier.<br/><br/>
 `[optional] integer Skip`
 <br/>An Int32 to determine how many results to skip. Defaults to DefaultSkip<br/><br/>`[optional] integer Count`
 <br/>An Int32 to determine how many results to return. Defaults to DefaultCount<br/><br/>`[optional] boolean KeepOldMetadata`
@@ -687,7 +687,7 @@ The RuleModel object to create or update.<br/>
 |---|---|---|
 |200|[RuleModel](#schemarulemodel)|The updated `RuleModel` object or a link to the new `RuleModel` object.|
 |201|[RuleModel](#schemarulemodel)|The updated `RuleModel` object or a link to the new `RuleModel` object.|
-|400|[ResponseBody](#schemaresponsebody)|The rule is malformed or invalid.|
+|400|[ResponseBody](#schemaresponsebody)|Missing or invalid inputs.|
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
@@ -833,7 +833,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId
 <br/>The `RuleRouteOptions` uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
-<br/>The Id of a rule.<br/><br/>
+<br/>Rule identifier.<br/><br/>
 `[optional] integer Skip`
 <br/>An Int32 to determine how many results to skip. Defaults to DefaultSkip<br/><br/>`[optional] integer Count`
 <br/>An Int32 to determine how many results to return. Defaults to DefaultCount<br/><br/>`[optional] boolean KeepOldMetadata`
@@ -850,53 +850,6 @@ Defaults to false.<br/><br/>
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |404|[ResponseBody](#schemaresponsebody)|The specified rule was not found.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
-
-<h4>Example response body</h4>
-
-> 403 Response
-
-```json
-{
-  "OperationId": "00000000-0000-0000-0000-000000000000",
-  "Error": "Error message.",
-  "Reason": "Reason that caused the error.",
-  "Resolution": "Possible resolution for the error.",
-  "Parameters": {
-    "key1": "value1",
-    "key2": "value2"
-  }
-}
-```
-
-> 404 Response
-
-```json
-{
-  "OperationId": "00000000-0000-0000-0000-000000000000",
-  "Error": "Error message.",
-  "Reason": "Reason that caused the error.",
-  "Resolution": "Possible resolution for the error.",
-  "Parameters": {
-    "key1": "value1",
-    "key2": "value2"
-  }
-}
-```
-
-> 500 Response
-
-```json
-{
-  "OperationId": "00000000-0000-0000-0000-000000000000",
-  "Error": "Error message.",
-  "Reason": "Reason that caused the error.",
-  "Resolution": "Possible resolution for the error.",
-  "Parameters": {
-    "key1": "value1",
-    "key2": "value2"
-  }
-}
-```
 
 ---
 
@@ -927,70 +880,8 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/
 |204|None|No content.|
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |404|[ResponseBody](#schemaresponsebody)|The specified rule was not found.|
-|409|[ResponseBody](#schemaresponsebody)|The automation id was invalid.|
+|409|[ResponseBody](#schemaresponsebody)|The automation identifier was invalid.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
-
-<h4>Example response body</h4>
-
-> 403 Response
-
-```json
-{
-  "OperationId": "00000000-0000-0000-0000-000000000000",
-  "Error": "Error message.",
-  "Reason": "Reason that caused the error.",
-  "Resolution": "Possible resolution for the error.",
-  "Parameters": {
-    "key1": "value1",
-    "key2": "value2"
-  }
-}
-```
-
-> 404 Response
-
-```json
-{
-  "OperationId": "00000000-0000-0000-0000-000000000000",
-  "Error": "Error message.",
-  "Reason": "Reason that caused the error.",
-  "Resolution": "Possible resolution for the error.",
-  "Parameters": {
-    "key1": "value1",
-    "key2": "value2"
-  }
-}
-```
-
-> 409 Response
-
-```json
-{
-  "OperationId": "00000000-0000-0000-0000-000000000000",
-  "Error": "Error message.",
-  "Reason": "Reason that caused the error.",
-  "Resolution": "Possible resolution for the error.",
-  "Parameters": {
-    "key1": "value1",
-    "key2": "value2"
-  }
-}
-```
-
-> 500 Response
-
-```json
-{
-  "OperationId": "00000000-0000-0000-0000-000000000000",
-  "Error": "Error message.",
-  "Reason": "Reason that caused the error.",
-  "Resolution": "Possible resolution for the error.",
-  "Parameters": {
-    "key1": "value1",
-    "key2": "value2"
-  }
-}
-```
 
 ---
 ## Definitions
@@ -1257,7 +1148,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|RuleId|string|false|true|The id of a rule.|
+|RuleId|string|false|true|The identifier of a rule.|
 
 ```json
 {

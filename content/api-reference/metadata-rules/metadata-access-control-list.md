@@ -9,7 +9,7 @@ uid: metadata-access-control-list
 
 <a id="opIdMetadataRuleAccessRights_List Access Rights"></a>
 
-Gets a list of the `CommonAccessRights` the requesting `Identity` has on the specified rule.
+Returns a list of the `CommonAccessRights` the requesting `Identity` has on the specified rule.
 
 <h3>Request</h3>
 
@@ -23,7 +23,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/a
 <br/>The `RuleRouteOptions` uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
-<br/>The Id of a rule.<br/><br/>
+<br/>Rule identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -98,7 +98,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/a
 
 <a id="opIdMetadataRuleAcl_Get Acl"></a>
 
-Gets the `AccessControlList` of the specified rule.
+Returns the `AccessControlList` of the specified rule.
 
 <h3>Request</h3>
 
@@ -112,7 +112,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/a
 <br/>The `RuleRouteOptions` uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
-<br/>The Id of a rule.<br/><br/>
+<br/>Rule identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -207,7 +207,7 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/a
 <br/>The `RuleRouteOptions`<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
-<br/>The Id of a rule.<br/><br/>
+<br/>Rule identifier.<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -234,7 +234,7 @@ The ACL object.<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|The new `AccessControlList`.|
-|400|[ResponseBody](#schemaresponsebody)|An invalid access control list.|
+|400|[ResponseBody](#schemaresponsebody)|Missing or invalid inputs.|
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |404|[ResponseBody](#schemaresponsebody)|The specified rule was not found.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
@@ -324,7 +324,7 @@ The ACL object.<br/>
 
 <a id="opIdMetadataRuleAcl_Get Collection Acl"></a>
 
-Gets the `AccessControlList` for the rules collection.
+Returns the `AccessControlList` for the rules collection.
 
 <h3>Request</h3>
 
@@ -440,7 +440,7 @@ The ACL.<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|The new `AccessControlList` for the rules collection.|
-|400|[ResponseBody](#schemaresponsebody)|An invalid access control list.|
+|400|[ResponseBody](#schemaresponsebody)|Missing or invalid inputs.|
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
@@ -514,7 +514,7 @@ The ACL.<br/>
 
 <a id="opIdMetadataRuleOwner_Get Owner"></a>
 
-Gets the `Trustee` of the specified rule.
+Returns the `Trustee` of the specified rule.
 
 <h3>Request</h3>
 
@@ -528,7 +528,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/o
 <br/>The `RuleRouteOptions`<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
-<br/>The Id of a rule.<br/><br/>
+<br/>Rule identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -616,7 +616,7 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/o
 <br/>The `RuleRouteOptions` uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
-<br/>The Id of a rule.<br/><br/>
+<br/>Rule identifier.<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -635,7 +635,7 @@ The owner.<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Trustee](#schematrustee)|The new `Trustee` of the specified rule.|
-|400|[ResponseBody](#schemaresponsebody)|An invalid owner.|
+|400|[ResponseBody](#schemaresponsebody)|Missing or invalid inputs.|
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |404|[ResponseBody](#schemaresponsebody)|The specified rule was not found.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
@@ -759,7 +759,7 @@ The owner.<br/>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|RuleId|string|false|true|The id of a rule.|
+|RuleId|string|false|true|The identifier of a rule.|
 
 ```json
 {

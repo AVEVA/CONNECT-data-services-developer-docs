@@ -9,7 +9,7 @@ uid: asset-asset-rule-preview
 
 <a id="opIdAssetRulePreview_Get Preview Results"></a>
 
-Gets a `AssetRulePreviewResult`.
+Returns a `AssetRulePreviewResult`.
 
 <h3>Request</h3>
 
@@ -33,7 +33,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/assetrul
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AssetRulePreviewResult](#schemaassetrulepreviewresult)|A `AssetRulePreviewResult` object.|
-|400|[ResponseBody](#schemaresponsebody)|Invalid uri query parameters.|
+|400|[ResponseBody](#schemaresponsebody)|Missing or invalid inputs.|
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |404|[ResponseBody](#schemaresponsebody)|The specified preview was not found.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
@@ -225,7 +225,7 @@ The RuleModel object to preview.<br/>
 |---|---|---|
 |202|[RulePreviewResponse](#schemarulepreviewresponse)|A `RulePreviewResponse` object.|
 |204|[ResponseBody](#schemaresponsebody)|A `RulePreviewResponse` object.|
-|400|[ResponseBody](#schemaresponsebody)|Invalid rule.|
+|400|[ResponseBody](#schemaresponsebody)|Missing or invalid inputs.|
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 |503|[ResponseBody](#schemaresponsebody)|Dependent service error.|
@@ -343,72 +343,10 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 |Status Code|Body Type|Description|
 |---|---|---|
 |204|None|No content.|
-|400|[ResponseBody](#schemaresponsebody)|Invalid uri query parameters.|
+|400|[ResponseBody](#schemaresponsebody)|Missing or invalid inputs.|
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |404|[ResponseBody](#schemaresponsebody)|The specified preview was not found.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
-
-<h4>Example response body</h4>
-
-> 400 Response
-
-```json
-{
-  "OperationId": "00000000-0000-0000-0000-000000000000",
-  "Error": "Error message.",
-  "Reason": "Reason that caused the error.",
-  "Resolution": "Possible resolution for the error.",
-  "Parameters": {
-    "key1": "value1",
-    "key2": "value2"
-  }
-}
-```
-
-> 403 Response
-
-```json
-{
-  "OperationId": "00000000-0000-0000-0000-000000000000",
-  "Error": "Error message.",
-  "Reason": "Reason that caused the error.",
-  "Resolution": "Possible resolution for the error.",
-  "Parameters": {
-    "key1": "value1",
-    "key2": "value2"
-  }
-}
-```
-
-> 404 Response
-
-```json
-{
-  "OperationId": "00000000-0000-0000-0000-000000000000",
-  "Error": "Error message.",
-  "Reason": "Reason that caused the error.",
-  "Resolution": "Possible resolution for the error.",
-  "Parameters": {
-    "key1": "value1",
-    "key2": "value2"
-  }
-}
-```
-
-> 500 Response
-
-```json
-{
-  "OperationId": "00000000-0000-0000-0000-000000000000",
-  "Error": "Error message.",
-  "Reason": "Reason that caused the error.",
-  "Resolution": "Possible resolution for the error.",
-  "Parameters": {
-    "key1": "value1",
-    "key2": "value2"
-  }
-}
-```
 
 ---
 ## Definitions

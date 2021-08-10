@@ -9,7 +9,7 @@ uid: asset-asset-rule-errors
 
 <a id="opIdRuleErrors_List Rule Errors By Rule Id"></a>
 
-Gets the `RuleError` objects for the specified ruleId.
+Returns the `RuleError` objects for the specified ruleId.
 
 <h3>Request</h3>
 
@@ -20,7 +20,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rule
 <h4>Parameters</h4>
 
 `string ruleId`
-<br/>The rule Id.<br/><br/>`string tenantId`
+<br/>Rule identifier.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 
@@ -118,7 +118,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{r
 <h4>Parameters</h4>
 
 `string ruleId`
-<br/>The rule Id.<br/><br/>`string tenantId`
+<br/>Rule identifier.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 
@@ -130,53 +130,6 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{r
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |404|[ResponseBody](#schemaresponsebody)|The specified rule was not found.|
 |500|[ResponseBody](#schemaresponsebody)|None|
-
-<h4>Example response body</h4>
-
-> 403 Response
-
-```json
-{
-  "OperationId": "00000000-0000-0000-0000-000000000000",
-  "Error": "Error message.",
-  "Reason": "Reason that caused the error.",
-  "Resolution": "Possible resolution for the error.",
-  "Parameters": {
-    "key1": "value1",
-    "key2": "value2"
-  }
-}
-```
-
-> 404 Response
-
-```json
-{
-  "OperationId": "00000000-0000-0000-0000-000000000000",
-  "Error": "Error message.",
-  "Reason": "Reason that caused the error.",
-  "Resolution": "Possible resolution for the error.",
-  "Parameters": {
-    "key1": "value1",
-    "key2": "value2"
-  }
-}
-```
-
-> 500 Response
-
-```json
-{
-  "OperationId": "00000000-0000-0000-0000-000000000000",
-  "Error": "Error message.",
-  "Reason": "Reason that caused the error.",
-  "Resolution": "Possible resolution for the error.",
-  "Parameters": {
-    "key1": "value1",
-    "key2": "value2"
-  }
-}
-```
 
 ---
 ## Definitions

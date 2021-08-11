@@ -9,7 +9,7 @@ uid: metadata-metadata-rule-preview
 
 <a id="opIdMetadataRulePreview_Get Preview Results"></a>
 
-Gets a `RulePreviewResult`.
+Returns a `RulePreviewResult`.
 
 <h3>Request</h3>
 
@@ -33,7 +33,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[RulePreviewResult](#schemarulepreviewresult)|A `RulePreviewResult` object.|
-|400|[ResponseBody](#schemaresponsebody)|Invalid uri query parameters.|
+|400|[ResponseBody](#schemaresponsebody)|Missing or invalid inputs.|
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |404|[ResponseBody](#schemaresponsebody)|The specified preview was not found.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
@@ -203,7 +203,7 @@ The RuleModel object to preview.<br/>
 |---|---|---|
 |202|[RulePreviewResponse](#schemarulepreviewresponse)|A `RulePreviewResponse` object.|
 |204|[ResponseBody](#schemaresponsebody)|A `RulePreviewResponse` object.|
-|400|[ResponseBody](#schemaresponsebody)|Invalid rule.|
+|400|[ResponseBody](#schemaresponsebody)|Missing or invalid inputs.|
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 |503|[ResponseBody](#schemaresponsebody)|Dependent service error.|
@@ -321,7 +321,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 |Status Code|Body Type|Description|
 |---|---|---|
 |204|None|No content.|
-|400|[ResponseBody](#schemaresponsebody)|Invalid uri query parameters.|
+|400|[ResponseBody](#schemaresponsebody)|Missing or invalid inputs.|
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |404|[ResponseBody](#schemaresponsebody)|The specified preview was not found.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|

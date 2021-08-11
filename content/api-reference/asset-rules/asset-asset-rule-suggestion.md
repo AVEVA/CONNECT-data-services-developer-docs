@@ -9,7 +9,7 @@ uid: asset-asset-rule-suggestion
 
 <a id="opIdAssetRuleSuggestion_Get Suggestion Results"></a>
 
-Returns a `SuggestionResult`.
+Gets a `SuggestionResult`.
 
 <h3>Request</h3>
 
@@ -30,7 +30,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/asset
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[SuggestionResult](#schemasuggestionresult)|A `SuggestionResult` object.|
-|400|[ResponseBody](#schemaresponsebody)|Missing or invalid inputs.|
+|400|[ResponseBody](#schemaresponsebody)|Invalid uri query parameters.|
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |404|[ResponseBody](#schemaresponsebody)|The specified suggestion was not found.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
@@ -180,7 +180,7 @@ The RuleModel object to create a suggestion for.<br/>
 |---|---|---|
 |202|[SuggestionResponse](#schemasuggestionresponse)|A `SuggestionResponse` object.|
 |204|[ResponseBody](#schemaresponsebody)|A `SuggestionResponse` object.|
-|400|[ResponseBody](#schemaresponsebody)|Missing or invalid inputs.|
+|400|[ResponseBody](#schemaresponsebody)|Invalid rule.|
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 |503|[ResponseBody](#schemaresponsebody)|Dependent service error.|
@@ -298,7 +298,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/as
 |Status Code|Body Type|Description|
 |---|---|---|
 |204|None|No content.|
-|400|[ResponseBody](#schemaresponsebody)|Missing or invalid inputs.|
+|400|[ResponseBody](#schemaresponsebody)|Invalid uri query parameters.|
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |404|[ResponseBody](#schemaresponsebody)|The specified preview was not found.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|

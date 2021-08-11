@@ -9,7 +9,7 @@ uid: asset-asset-change-data
 
 <a id="opIdAssetChangeData_Get Statistics For Rule"></a>
 
-Returns the `AssetRuleStatistics` for the ruleId.
+Gets the `AssetRuleStatistics` for the ruleId.
 
 <h3>Request</h3>
 
@@ -20,7 +20,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 <h4>Parameters</h4>
 
 `string ruleId`
-<br/>Rule identifier.<br/><br/>`string tenantId`
+<br/>The Id of an Asset Rule.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 
@@ -79,7 +79,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 
 <a id="opIdAssetChangeData_List Change Data For Rule"></a>
 
-Returns the collection of `AssetChangeData` for the ruleId.
+Gets the collection of `AssetChangeData` for the ruleId.
 
 <h3>Request</h3>
 
@@ -91,7 +91,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 <h4>Parameters</h4>
 
 `string ruleId`
-<br/>Rule identifier.<br/><br/>`string tenantId`
+<br/>The Id of an Asset Rule.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 `[optional] integer Skip`
@@ -251,7 +251,7 @@ Defaults to 100.<br/><br/>
 
 <a id="opIdAssetChangeData_List Change Data For Asset"></a>
 
-Returns the collection of `AssetChangeData` for the assetId.
+Gets the collection of `AssetChangeData` for the assetId.
 
 <h3>Request</h3>
 
@@ -262,7 +262,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 <h4>Parameters</h4>
 
 `string assetId`
-<br/>Asset identifier.<br/><br/>`string tenantId`
+<br/>The Id of an Asset.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 
@@ -401,7 +401,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 
 <a id="opIdAssetChangeData_List Change Data For Stream"></a>
 
-Returns the collection of `AssetChangeData` for the streamId.
+Gets the collection of `AssetChangeData` for the streamId.
 
 <h3>Request</h3>
 
@@ -412,7 +412,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 <h4>Parameters</h4>
 
 `string streamId`
-<br/>Stream identifier.<br/><br/>`string tenantId`
+<br/>The Id of a Stream.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 

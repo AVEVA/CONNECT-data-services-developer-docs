@@ -9,7 +9,7 @@ uid: asset-asset-rules
 
 <a id="opIdAssetRules_List Rules"></a>
 
-Returns all `RuleModel` objects from the `IRuleStore` to which the requesting `Identity` has access.
+Gets all `RuleModel` objects from the `IRuleStore` the requesting `Identity` has access to.
 
 <h3>Request</h3>
 
@@ -36,7 +36,7 @@ Defaults to false.<br/><br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[RuleModel](#schemarulemodel)[]|The `RuleModel` objects.|
-|400|[ResponseBody](#schemaresponsebody)|Missing or invalid inputs.|
+|400|[ResponseBody](#schemaresponsebody)|Invalid uri query parameters.|
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
@@ -219,9 +219,9 @@ The RuleModel object to create.<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |201|[RuleModel](#schemarulemodel)|A link to the `RuleModel` object.|
-|400|[ResponseBody](#schemaresponsebody)|Missing or invalid inputs.|
+|400|[ResponseBody](#schemaresponsebody)|The rule is malformed or invalid.|
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
-|409|[ResponseBody](#schemaresponsebody)|A non-equivalent rule with the same identifier already exists.|
+|409|[ResponseBody](#schemaresponsebody)|A non-equivalent rule with the same id already exists.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
 <h4>Example response body</h4>
@@ -358,7 +358,7 @@ The RuleModel object to create.<br/>
 
 <a id="opIdAssetRules_Get Rule"></a>
 
-Returns the specified rule.
+Gets the specified rule.
 
 <h3>Request</h3>
 
@@ -372,7 +372,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
 <br/>The `RuleRouteOptions` uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
-<br/>Rule identifier.<br/><br/>
+<br/>The Id of an asset rule.<br/><br/>
 
 <h3>Response</h3>
 
@@ -502,7 +502,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
 
 <a id="opIdAssetRules_Create Rule"></a>
 
-Returns or creates a `RuleModel` object with the specified identifier in the `IRuleStore`.
+Gets or creates a `RuleModel` object with the specified id in the `IRuleStore`.
 
 <h3>Request</h3>
 
@@ -516,7 +516,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
 <br/>The `RuleRouteOptions` uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
-<br/>Rule identifier.<br/><br/>
+<br/>The Id of an asset rule.<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -562,10 +562,10 @@ The RuleModel object.<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |201|[RuleModel](#schemarulemodel)|A link to the `RuleModel` object.|
-|302|None|An equivalent rule with the same identifier and definition already exists.|
-|400|[ResponseBody](#schemaresponsebody)|Missing or invalid inputs.|
+|302|None|An equivalent rule with the same id and definition already exists.|
+|400|[ResponseBody](#schemaresponsebody)|The rule is malformed or invalid.|
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
-|409|[ResponseBody](#schemaresponsebody)|A non-equivalent rule with the specified identifier already exists.|
+|409|[ResponseBody](#schemaresponsebody)|A non-equivalent rule with the specified id already exists.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
 <h4>Example response body</h4>
@@ -717,7 +717,7 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
 <br/>The `RuleRouteOptions` uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
-<br/>Rule identifier.<br/><br/>
+<br/>The Id of an asset rule.<br/><br/>
 `[optional] integer Skip`
 <br/>An Int32 to determine how many results to skip. Defaults to DefaultSkip<br/><br/>`[optional] integer Count`
 <br/>An Int32 to determine how many results to return. Defaults to DefaultCount<br/><br/>`[optional] boolean KeepOldMetadata`
@@ -771,7 +771,7 @@ The RuleModel object to create or update.<br/>
 |---|---|---|
 |200|[RuleModel](#schemarulemodel)|The updated `RuleModel` object or a link to the new `RuleModel` object.|
 |201|[RuleModel](#schemarulemodel)|The updated `RuleModel` object or a link to the new `RuleModel` object.|
-|400|[ResponseBody](#schemaresponsebody)|Missing or invalid inputs.|
+|400|[ResponseBody](#schemaresponsebody)|The rule is malformed or invalid.|
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
@@ -917,7 +917,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
 <br/>The `RuleRouteOptions` uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
-<br/>Rule identifier.<br/><br/>
+<br/>The Id of an asset rule.<br/><br/>
 `[optional] integer Skip`
 <br/>An Int32 to determine how many results to skip. Defaults to DefaultSkip<br/><br/>`[optional] integer Count`
 <br/>An Int32 to determine how many results to return. Defaults to DefaultCount<br/><br/>`[optional] boolean KeepOldMetadata`
@@ -955,7 +955,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/exe
 <br/>The `RuleRouteOptions` uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
-<br/>Rule identifier.<br/><br/>
+<br/>The Id of an asset rule.<br/><br/>
 
 <h3>Response</h3>
 
@@ -965,7 +965,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/exe
 |400|[ResponseBody](#schemaresponsebody)|None|
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |404|[ResponseBody](#schemaresponsebody)|The specified rule was not found.|
-|409|[ResponseBody](#schemaresponsebody)|The automation identifier was invalid.|
+|409|[ResponseBody](#schemaresponsebody)|The automation id was invalid.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
 ---
@@ -974,7 +974,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/exe
 
 <a id="opIdAssetRules_Get Progress"></a>
 
-Returns a description of the progress of the most recent execution of the rule and any errors.
+Gets a description of the progress of the most recent execution of the rule and any errors.
 
 <h3>Request</h3>
 
@@ -988,7 +988,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rule
 <br/>The `RuleRouteOptions` uri route parameters.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
-<br/>Rule identifier.<br/><br/>
+<br/>The Id of an asset rule.<br/><br/>
 
 <h3>Response</h3>
 
@@ -1261,7 +1261,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rule
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|RuleId|string|false|true|The identifier of a rule.|
+|RuleId|string|false|true|The id of a rule.|
 
 ```json
 {

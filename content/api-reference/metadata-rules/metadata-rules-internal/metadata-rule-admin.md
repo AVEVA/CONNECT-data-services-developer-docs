@@ -9,7 +9,7 @@ uid: ""
 
 <a id="opIdMetadataRuleAdmin_Get Statistics"></a>
 
-Returns the `StoreStatistics` on the `IRuleStore`.
+Gets the `StoreStatistics` on the `IRuleStore`.
 
 <h3>Request</h3>
 

@@ -179,7 +179,7 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/assetru
 <br/>A Boolean to determine whether or not existing metadata create by the rule should be kept.
 Defaults to false.<br/><br/>`[optional] integer Skip`
 <br/>An Int32 to determine how many results to skip.<br/><br/>`[optional] integer Count`
-<br/>An Int32 to determine how many results to return. Defaults to DefaultCount<br/><br/>
+<br/>An Int32 to determine how many results to return.<br/><br/>
 
 <h4>Request Body</h4>
 

@@ -77,7 +77,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules/statist
 
 <a id="opIdAssetRuleAdmin_Reset Tracking"></a>
 
-Resets the asset tracking table. If is specified, it will only clear the entries for those assets. This will cause rules to no longer identify rule-generated asset properties as rule-generated. That means rules will not delete or edit those asset properties. Only call this route if directed by OCS Support.
+Resets the asset tracking table. If assetIds is specified, it will only clear the entries for those assets. This will cause rules to no longer identify rule-generated asset properties as rule-generated. That means rules will not delete or edit those asset properties. Only call this route if directed by OCS Support.
 
 <h3>Request</h3>
 
@@ -92,7 +92,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules/reseta
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 `[optional] array assetIds`
-<br/><br/>
+<br/>The assetIds for which to reset tracking.<br/><br/>
 
 <h3>Response</h3>
 

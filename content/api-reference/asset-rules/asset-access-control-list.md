@@ -20,7 +20,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/acce
 <h4>Parameters</h4>
 
 `any routeOptions`
-<br/>The `RuleRouteOptions` uri route parameters.<br/><br/>`string tenantId`
+<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
 <br/>Rule identifier.<br/><br/>

@@ -9,7 +9,7 @@ uid: asset-asset-rule-errors
 
 <a id="opIdRuleErrors_List Rule Errors By Rule Id"></a>
 
-Gets the `RuleError` objects for the specified ruleId.
+Returns the `RuleError` objects for the specified ruleId.
 
 <h3>Request</h3>
 
@@ -20,7 +20,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rule
 <h4>Parameters</h4>
 
 `string ruleId`
-<br/>The rule Id.<br/><br/>`string tenantId`
+<br/>Rule identifier.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 
@@ -118,7 +118,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{r
 <h4>Parameters</h4>
 
 `string ruleId`
-<br/>The rule Id.<br/><br/>`string tenantId`
+<br/>Rule identifier.<br/><br/>`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 

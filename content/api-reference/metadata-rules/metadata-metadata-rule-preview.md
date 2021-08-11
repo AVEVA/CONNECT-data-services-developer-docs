@@ -154,9 +154,10 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 `[optional] boolean KeepOldMetadata`
-<br/><br/>`[optional] integer Skip`
-<br/><br/>`[optional] integer Count`
-<br/><br/>
+<br/>A Boolean to determine whether or not existing metadata create by the rule should be kept.
+Defaults to false.<br/><br/>`[optional] integer Skip`
+<br/>An Int32 to determine how many results to skip.<br/><br/>`[optional] integer Count`
+<br/>An Int32 to determine how many results to return. Defaults to DefaultCount<br/><br/>
 
 <h4>Request Body</h4>
 

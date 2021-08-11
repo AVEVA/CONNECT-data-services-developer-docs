@@ -4,7 +4,7 @@ uid: sds-stream-views
 ---
 
 # Stream Views
-The API in this section interacts with stream views.
+Controller for methods hosted at /StreamViews
 
 ## `List Stream Views`
 
@@ -16,7 +16,6 @@ Returns a list of `SdsStreamView`.
 
 ```text 
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews
-?query={query}&skip={skip}&count={count}&orderby={orderby}
 ```
 
 <h4>Parameters</h4>
@@ -24,12 +23,6 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
-`[optional] string query`
-<br/>Parameter representing a string search. See the [Search in SDS](xref:sdsSearching) topic for information about specifying the query parameter.
-<br/><br/>`[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string orderby`
-<br/>Parameter representing sorted order of returned objects. A field name is required. The sorting is based on the stored values for the given field.<br/>For example, ``orderby=name`` would sort the returned results by the ``name`` values (ascending by default).<br/>Additionally, a value can be provided along with the field name to identify whether to sort ascending or descending,<br/>by using values ``asc`` or ``desc``, respectively.<br/>For example, ``orderby=name desc`` would sort the returned results by the ``name`` values, descending.<br/>If no value is specified, there is no sorting of results.<br/><br/>
 
 <h3>Response</h3>
 
@@ -313,23 +306,6 @@ DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamVi
 |404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
 |500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
-
-<h4>Example response body</h4>
-
-> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
-  }
-}
-```
 
 ---
 

@@ -4,7 +4,7 @@ uid: sds-stream-data
 ---
 
 # Stream Data
-The API in this section interacts with data from the specified streams.
+Controller for methods hosted at {streamId}/Data/
 
 ## `Get First Value`
 
@@ -36,23 +36,6 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 |404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
 |500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
-
-<h4>Example response body</h4>
-
-> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
-  }
-}
-```
 
 ---
 
@@ -87,23 +70,6 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 |500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
-<h4>Example response body</h4>
-
-> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
-  }
-}
-```
-
 ---
 
 ## `List Values`
@@ -131,7 +97,6 @@ SDS supports four ways of specifying which stored events to return:
 
 ```text 
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
-?filter={filter}&startIndex={startIndex}&endIndex={endIndex}&count={count}&index={index}&searchMode={searchMode}&skip={skip}&reversed={reversed}&boundaryType={boundaryType}&startBoundaryType={startBoundaryType}&endBoundaryType={endBoundaryType}&continuationToken={continuationToken}
 ```
 
 <h4>Parameters</h4>
@@ -140,42 +105,6 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string streamId`
 <br/>Stream identifier.<br/><br/>
-`[optional] string filter`
-<br/>Filter expression.<br/><br/>`[optional] string startIndex`
-<br/>Index identifying the beginning of the series of events to return.<br/><br/>`[optional] string endIndex`
-<br/>Index identifying the end of the series of events to return.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string index`
-<br/>The index.<br/><br/>`[optional] integer searchMode`
-<br/>The , type of search: Exact (the default), ExactOrNext, Next, ExactOrPrevious, or Previous.<br/><br/>`[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] boolean reversed`
-<br/>Specification of the direction of the request. By default, range requests move forward from startIndex, collecting events after startIndex 
-            from the stream. A reversed request will collect events before startIndex from the stream.<br/><br/>`[optional] integer boundaryType`
-<br/>SdsBoundaryType specifying the handling of events at or near the start and end indexes.<br/><br/>`[optional] integer startBoundaryType`
-<br/>SdsBoundaryType specifying the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] integer endBoundaryType`
-<br/>SdsBoundaryType specifies the last value in the result in relation to the end index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] string continuationToken`
-<br/>Token used to retrieve the next page of data. If count is specified, a continuationToken must also be specified.<br/><br/>
-
-<h4>Enumerated Values</h4>
-
-|Parameter|Value|
-|---|---|
-|searchMode|0|
-|searchMode|1|
-|searchMode|2|
-|searchMode|3|
-|searchMode|4|
-|boundaryType|0|
-|boundaryType|1|
-|boundaryType|2|
-|boundaryType|3|
-|startBoundaryType|0|
-|startBoundaryType|1|
-|startBoundaryType|2|
-|startBoundaryType|3|
-|endBoundaryType|0|
-|endBoundaryType|1|
-|endBoundaryType|2|
-|endBoundaryType|3|
 
 <h3>Response</h3>
 
@@ -263,23 +192,6 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 |500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
-<h4>Example response body</h4>
-
-> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
-  }
-}
-```
-
 ---
 
 ## `Update Values`
@@ -296,7 +208,6 @@ The index that caused the issue is included in the error response.
 
 ```text 
 PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
-?allowCreate={allowCreate}
 ```
 
 <h4>Parameters</h4>
@@ -305,8 +216,6 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string streamId`
 <br/>Stream identifier.<br/><br/>
-`[optional] boolean allowCreate`
-<br/>If false, writes one or more events over existing events in the specified stream.<br/><br/>
 
 <h3>Response</h3>
 
@@ -319,23 +228,6 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 |404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
 |500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
-
-<h4>Example response body</h4>
-
-> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
-  }
-}
-```
 
 ---
 
@@ -355,7 +247,6 @@ If there is a problem patching any individual event, the entire operation is rol
 
 ```text 
 PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
-?selectExpression={selectExpression}
 ```
 
 <h4>Parameters</h4>
@@ -364,8 +255,6 @@ PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Dat
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string streamId`
 <br/>Stream identifier.<br/><br/>
-`[optional] string selectExpression`
-<br/>Comma separated list of strings that indicates the event fields that will be changed in stream events.<br/><br/>
 
 <h3>Response</h3>
 
@@ -378,23 +267,6 @@ PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Dat
 |404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
 |500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
-
-<h4>Example response body</h4>
-
-> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
-  }
-}
-```
 
 ---
 
@@ -420,7 +292,6 @@ If this occurs, use the [Window](xref:sdsWritingDataApi#window) request format t
 
 ```text 
 DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
-?index={index}&startIndex={startIndex}&endIndex={endIndex}
 ```
 
 <h4>Parameters</h4>
@@ -429,10 +300,6 @@ DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Da
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string streamId`
 <br/>Stream identifier.<br/><br/>
-`[optional] string index`
-<br/>One or more indexes of events to remove.<br/><br/>`[optional] string startIndex`
-<br/>Index identifying the beginning of the window.<br/><br/>`[optional] string endIndex`
-<br/>Index identifying the end of the window.<br/><br/>
 
 <h3>Response</h3>
 
@@ -445,23 +312,6 @@ DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Da
 |404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
 |500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
-
-<h4>Example response body</h4>
-
-> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
-  }
-}
-```
 
 ---
 
@@ -489,7 +339,6 @@ If no stored event exists at an index interval, the stream's read characteristic
 
 ```text 
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Interpolated
-?index={index}&startIndex={startIndex}&endIndex={endIndex}&count={count}
 ```
 
 <h4>Parameters</h4>
@@ -498,11 +347,6 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string streamId`
 <br/>Stream identifier.<br/><br/>
-`[optional] string index`
-<br/>One or more indexes.<br/><br/>`[optional] string startIndex`
-<br/>Index identifying the beginning of the series of events to return.<br/><br/>`[optional] string endIndex`
-<br/>Index identifying the end of the series of events to return.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
 
 <h3>Response</h3>
 
@@ -516,23 +360,6 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 |500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
-<h4>Example response body</h4>
-
-> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
-  }
-}
-```
-
 ---
 
 ## `List Summaries`
@@ -545,7 +372,6 @@ Returns summary intervals between a specified start and end index. Index types t
 
 ```text 
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Summaries
-?startIndex={startIndex}&endIndex={endIndex}&count={count}&filter={filter}
 ```
 
 <h4>Parameters</h4>
@@ -554,11 +380,6 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string streamId`
 <br/>Stream identifier.<br/><br/>
-`[optional] string startIndex`
-<br/>Index identifying the beginning of the series of events to return.<br/><br/>`[optional] string endIndex`
-<br/>Index identifying the end of the series of events to return.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string filter`
-<br/>Filter expression.<br/><br/>
 
 <h3>Response</h3>
 
@@ -572,23 +393,6 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 |500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
-<h4>Example response body</h4>
-
-> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
-  }
-}
-```
-
 ---
 
 ## `List Sampled Values`
@@ -601,7 +405,6 @@ Returns representative data sampled by intervals between a specified start and e
 
 ```text 
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Sampled
-?startIndex={startIndex}&endIndex={endIndex}&intervals={intervals}&sampleBy={sampleBy}&boundaryType={boundaryType}&startBoundaryType={startBoundaryType}&endBoundaryType={endBoundaryType}&filter={filter}
 ```
 
 <h4>Parameters</h4>
@@ -610,32 +413,6 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string streamId`
 <br/>Stream identifier.<br/><br/>
-`[optional] string startIndex`
-<br/>Index identifying the beginning of the series of events to return.<br/><br/>`[optional] string endIndex`
-<br/>Index identifying the end of the series of events to return.<br/><br/>`[optional] integer intervals`
-<br/>The number of intervals requested.<br/><br/>`[optional] string sampleBy`
-<br/>Property or properties to use when sampling.<br/><br/>`[optional] integer boundaryType`
-<br/>SdsBoundaryType specifying the handling of events at or near the start and end indexes.<br/><br/>`[optional] integer startBoundaryType`
-<br/>SdsBoundaryType specifying the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] integer endBoundaryType`
-<br/>SdsBoundaryType specifies the last value in the result in relation to the end index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] string filter`
-<br/>Filter expression.<br/><br/>
-
-<h4>Enumerated Values</h4>
-
-|Parameter|Value|
-|---|---|
-|boundaryType|0|
-|boundaryType|1|
-|boundaryType|2|
-|boundaryType|3|
-|startBoundaryType|0|
-|startBoundaryType|1|
-|startBoundaryType|2|
-|startBoundaryType|3|
-|endBoundaryType|0|
-|endBoundaryType|1|
-|endBoundaryType|2|
-|endBoundaryType|3|
 
 <h3>Response</h3>
 
@@ -648,23 +425,6 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 |404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
 |500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
-
-<h4>Example response body</h4>
-
-> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
-  }
-}
-```
 
 ---
 ## Definitions
@@ -701,47 +461,6 @@ Contains the error message format that follows the OCS error standards
 }
 
 ```
-
----
-
-### SdsSearchMode
-
-<a id="schemasdssearchmode"></a>
-<a id="schema_SdsSearchMode"></a>
-<a id="tocSsdssearchmode"></a>
-<a id="tocssdssearchmode"></a>
-
-The SdsSearchMode defines search behavior when seeking a stored event near a specified index.
-
-<h4>Enumerated Values</h4>
-
-|Property|Value|
-|---|---|
-|Exact|0|
-|ExactOrNext|1|
-|Next|2|
-|ExactOrPrevious|3|
-|Previous|4|
-
----
-
-### SdsBoundaryType
-
-<a id="schemasdsboundarytype"></a>
-<a id="schema_SdsBoundaryType"></a>
-<a id="tocSsdsboundarytype"></a>
-<a id="tocssdsboundarytype"></a>
-
-The SdsBoundaryType defines how data on the boundary of queries is handled: around the start index for range value queries, and around the start and end index for window values
-
-<h4>Enumerated Values</h4>
-
-|Property|Value|
-|---|---|
-|Exact|0|
-|Inside|1|
-|Outside|2|
-|ExactOrCalculated|3|
 
 ---
 

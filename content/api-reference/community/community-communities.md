@@ -252,25 +252,6 @@ The community object that contains the attributes to use for the update.<br/>
 |408|[ErrorResponse](#schemaerrorresponse)|Request Timeout. The request has timed out.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it doesn't know how to handle.|
 
-<h4>Example response body</h4>
-
-> 400 Response ([ErrorResponse](#schemaerrorresponse))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "DynamicProperties": {
-    "property1": null,
-    "property2": null
-  },
-  "property1": null,
-  "property2": null
-}
-```
-
 <h3>Authorization</h3>
 
 Allowed for these roles: 
@@ -309,25 +290,6 @@ DELETE /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
 |404|[ErrorResponse](#schemaerrorresponse)|Not Found. The community was not found.|
 |408|[ErrorResponse](#schemaerrorresponse)|Request Timeout. The request has timed out.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it does not know how to handle.|
-
-<h4>Example response body</h4>
-
-> 400 Response ([ErrorResponse](#schemaerrorresponse))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "DynamicProperties": {
-    "property1": null,
-    "property2": null
-  },
-  "property1": null,
-  "property2": null
-}
-```
 
 <h3>Authorization</h3>
 

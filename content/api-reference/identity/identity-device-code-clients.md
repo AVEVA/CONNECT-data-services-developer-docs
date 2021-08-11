@@ -409,25 +409,6 @@ DELETE /api/v1/Tenants/{tenantId}/DeviceCodeClients/{clientId}
 |408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-<h4>Example response body</h4>
-
-> 401 Response ([ErrorResponse](#schemaerrorresponse))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "DynamicProperties": {
-    "property1": null,
-    "property2": null
-  },
-  "property1": null,
-  "property2": null
-}
-```
-
 <h3>Authorization</h3>
 
 Allowed for these roles: 

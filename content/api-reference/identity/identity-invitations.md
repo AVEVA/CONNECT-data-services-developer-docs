@@ -269,22 +269,6 @@ DELETE /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 |408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-<h4>Example response body</h4>
-
-> 401 Response ([ErrorResponse](#schemaerrorresponse))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "EventId": "string",
-  "property1": null,
-  "property2": null
-}
-```
-
 <h3>Authorization</h3>
 
 Allowed for these roles: 
@@ -482,25 +466,6 @@ DELETE /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 |404|[ErrorResponse2](#schemaerrorresponse2)|Invitation or tenant not found|
 |408|[ErrorResponse2](#schemaerrorresponse2)|Operation timed out.|
 |500|[ErrorResponse2](#schemaerrorresponse2)|Internal server error.|
-
-<h4>Example response body</h4>
-
-> 400 Response ([ErrorResponse2](#schemaerrorresponse2))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "DynamicProperties": {
-    "property1": null,
-    "property2": null
-  },
-  "property1": null,
-  "property2": null
-}
-```
 
 <h3>Authorization</h3>
 

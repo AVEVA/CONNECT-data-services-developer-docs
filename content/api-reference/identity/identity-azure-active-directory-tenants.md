@@ -313,25 +313,6 @@ ConsentInformation object<br/>
 |404|[ErrorResponse](#schemaerrorresponse)|OCS tenant not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-<h4>Example response body</h4>
-
-> 400 Response ([ErrorResponse](#schemaerrorresponse))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "DynamicProperties": {
-    "property1": null,
-    "property2": null
-  },
-  "property1": null,
-  "property2": null
-}
-```
-
 <h3>Authorization</h3>
 
 Allowed for these roles: 

@@ -145,7 +145,7 @@ Retrieve stream metadata values
 }
 ```
 
-Retrieve UoM of the stream property type
+Retrieve UOM of the stream property type
 
 ```
 {

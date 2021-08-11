@@ -44,7 +44,7 @@ Follow the procedure to create an asset.
 
 1. In the text box below the **Stream References** label, enter **Output Pump State**.  This is the user-friendly name for the stream reference.
 
-1. Click **Configure UOMs** to open a window where you can assign a unit of measure (UoM) to the stream properties.  
+1. Click **Configure UOMs** to open a window where you can assign a unit of measure (UOM) to the stream properties.  
 
    **Note:** If the properties already have UOMs assigned, the UOM you set here will override this. No data conversion occurs between the two UOMs.
    

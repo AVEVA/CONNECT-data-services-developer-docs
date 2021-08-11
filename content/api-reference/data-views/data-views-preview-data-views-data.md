@@ -12,13 +12,14 @@ The Preview Data API allows users to [retrieve data](https://ocs-docs.osisoft.co
 
 Returns interpolated data for the provided data view and index parameters with paging. See [documentation on paging](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/GetDataViewData/Quick_Start_Get_Data_View_Data.html#paging) for further information.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/dataviews/data/interpolated
 ?startIndex={startIndex}&endIndex={endIndex}&interval={interval}&form={form}&continuationToken={continuationToken}&countPerGroup={countPerGroup}&groupCount={groupCount}&count={count}&cache={cache}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
@@ -45,7 +46,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/dataviews/data/
 | `Preserve`| Use cached information, if available.  This is the default value for this API route.  
 <br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 A `DataView` object to get the results for.<br/>
 
@@ -130,7 +131,7 @@ A `DataView` object to get the results for.<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -139,7 +140,7 @@ A `DataView` object to get the results for.<br/>
 |403|[ErrorResponse](#schemaerrorresponse)|You are not authorized for this operation.|
 |500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
-#### Response Headers
+<h4>Response Headers</h4>
 
 |Status|Header|Type|Description|
 |---|---|---|---|
@@ -147,7 +148,8 @@ A `DataView` object to get the results for.<br/>
 |200|Next-Page|string|Hyperlink to the next page of results.|
 |200|First-Page|string|Hyperlink to the first page of results.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -317,15 +319,16 @@ Content-Type: application/json
 
 <a id="opIdPreviewDataViewsData_Get Data View Stored Data"></a>
 
-Gets stored data for the provided data view and index parameters with paging. See [documentation on paging](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/GetDataViewData/Quick_Start_Get_Data_View_Data.html#paging) for further information.
+Returns stored data for the provided data view and index parameters with paging. See [documentation on paging](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/GetDataViewData/Quick_Start_Get_Data_View_Data.html#paging) for further information.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/dataviews/data/stored
 ?startIndex={startIndex}&endIndex={endIndex}&form={form}&continuationToken={continuationToken}&countPerGroup={countPerGroup}&groupCount={groupCount}&count={count}&cache={cache}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
@@ -351,7 +354,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/dataviews/data/
 | `Preserve`| Use cached information, if available.  This is the default value for this API route.  
 <br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 A `DataView` object to get the results for.<br/>
 
@@ -436,7 +439,7 @@ A `DataView` object to get the results for.<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -445,7 +448,7 @@ A `DataView` object to get the results for.<br/>
 |403|[ErrorResponse](#schemaerrorresponse)|You are not authorized for this operation.|
 |500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
-#### Response Headers
+<h4>Response Headers</h4>
 
 |Status|Header|Type|Description|
 |---|---|---|---|
@@ -453,7 +456,8 @@ A `DataView` object to get the results for.<br/>
 |200|Next-Page|string|Hyperlink to the next page of results.|
 |200|First-Page|string|Hyperlink to the first page of results.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -627,7 +631,7 @@ Content-Type: application/json
 <a id="tocSerrorresponse"></a>
 <a id="tocserrorresponse"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -667,7 +671,7 @@ Content-Type: application/json
 
 A declarative way to select, label and shape data from OSIsoft Cloud Services
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -777,7 +781,7 @@ A declarative way to select, label and shape data from OSIsoft Cloud Services
 
 A data field that targets information resolved within its FieldSet
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -817,7 +821,7 @@ A data field that targets information resolved within its FieldSet
 
 The targeted part of a DataItem
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -838,7 +842,7 @@ The targeted part of a DataItem
 <a id="tocSsdssummarytype"></a>
 <a id="tocssdssummarytype"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -868,7 +872,7 @@ The targeted part of a DataItem
 
 Specifies summary direction for a Field
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -886,7 +890,7 @@ Specifies summary direction for a Field
 
 A query for data items of a specified resource type.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -914,7 +918,7 @@ A query for data items of a specified resource type.
 
 The type of resource that a data item represents
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -932,7 +936,7 @@ The type of resource that a data item represents
 
 A set of fields defined for a particular source of data.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -984,7 +988,7 @@ A set of fields defined for a particular source of data.
 <a id="tocSsdstypecode"></a>
 <a id="tocssdstypecode"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -1089,7 +1093,7 @@ A set of fields defined for a particular source of data.
 
 The shape of the data view. By default, each Field will resolve to one or more FieldMappings. In narrow shape, all Fields that map to a DataItem are "pivoted" vertically, into two fields: Label and Value.
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|

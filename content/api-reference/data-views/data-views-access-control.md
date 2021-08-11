@@ -10,20 +10,21 @@ This portion of the [overall data views API](https://ocs-docs.osisoft.com/Conten
 
 <a id="opIdCollectionAccessRights_List Data Views Access Rights"></a>
 
-Gets the access rights to the data views collection for the calling user or client.
+Returns the access rights to the data views collection for the calling user or client.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accessrights/dataviews
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -31,7 +32,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accessrights/dataviews
 |403|[ErrorResponse](#schemaerrorresponse)|You are not authorized to view the requested data view collection's access control list.|
 |500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -69,20 +71,21 @@ This portion of the [overall data views API](https://ocs-docs.osisoft.com/Conten
 
 <a id="opIdCollectionAcl_Get Data Views Access Control List"></a>
 
-Gets the default [`AccessControlList`](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html#access-control-lists) for the DataViews collection.
+Returns the default [`AccessControlList`](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html#access-control-lists) for the DataViews collection.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/dataviews
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -90,7 +93,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/dataviews
 |403|[ErrorResponse](#schemaerrorresponse)|You are not authorized to view the requested data view collection's access control list.|
 |500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -152,18 +156,19 @@ HTTP 200 OK
 
 Updates the default [`AccessControlList`](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html#access-control-lists) for the DataViews collection.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/dataviews
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 An [`AccessControlList`](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html#access-control-lists).<br/>
 
@@ -183,7 +188,7 @@ An [`AccessControlList`](https://ocs-docs.osisoft.com/Content_Portal/Documentati
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -192,26 +197,6 @@ An [`AccessControlList`](https://ocs-docs.osisoft.com/Content_Portal/Documentati
 |403|string|You are not authorized to update the data views collection's default access control list.|
 |500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
-#### Example response body
-> 500 Response ([ErrorResponse](#schemaerrorresponse))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
-  },
-  "ChildErrors": {
-    "property1": null,
-    "property2": null
-  }
-}
-```
-
 # Access Control
 This portion of the [overall data views API](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/DataViewsAPIOverview/Data_Views_API_Overview.html) focuses on [securing data views](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/SecureDataViews/Securing_Data_Views.html) by setting their ownership and permissions.
 
@@ -219,21 +204,22 @@ This portion of the [overall data views API](https://ocs-docs.osisoft.com/Conten
 
 <a id="opIdDataViewsPermissions_Get Data View Access Control List"></a>
 
-Gets the default [`AccessControlList`](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html#access-control-lists) for the DataViews collection.
+Returns the default [`AccessControlList`](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html#access-control-lists) for the DataViews collection.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/accesscontrol
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string id`
 <br/>Data view identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -242,7 +228,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/accesscon
 |404|[ErrorResponse](#schemaerrorresponse)|The requested data view was not found.|
 |500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -304,19 +291,20 @@ HTTP 200 OK
 
 Updates the default [`AccessControlList`](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html#access-control-lists) for the DataViews collection.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/accesscontrol
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string id`
 <br/>Data view identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 An [`AccessControlList`](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html#access-control-lists).<br/>
 
@@ -336,7 +324,7 @@ An [`AccessControlList`](https://ocs-docs.osisoft.com/Content_Portal/Documentati
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -346,47 +334,28 @@ An [`AccessControlList`](https://ocs-docs.osisoft.com/Content_Portal/Documentati
 |404|[ErrorResponse](#schemaerrorresponse)|The requested data view was not found.|
 |500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
-#### Example response body
-> 400 Response ([ErrorResponse](#schemaerrorresponse))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
-  },
-  "ChildErrors": {
-    "property1": null,
-    "property2": null
-  }
-}
-```
-
 ---
 
 ## `Get Data View Owner`
 
 <a id="opIdDataViewsPermissions_Get Data View Owner"></a>
 
-Gets the owner [`Trustee`](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html#owner) of the specified data view.
+Returns the owner [`Trustee`](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html#owner) of the specified data view.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/owner
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string id`
 <br/>Data view identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -395,7 +364,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/owner
 |404|[ErrorResponse](#schemaerrorresponse)|The requested data view was not found.|
 |500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -432,19 +402,20 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/owner
 
 Updates the owner [`Trustee`](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html#owner) of the specified data view.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/owner
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string id`
 <br/>Data view identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 A [`Trustee`](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html#owner).<br/>
 
@@ -456,7 +427,7 @@ A [`Trustee`](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_C
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -466,47 +437,28 @@ A [`Trustee`](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_C
 |404|[ErrorResponse](#schemaerrorresponse)|The requested data view was not found.|
 |500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
-#### Example response body
-> 400 Response ([ErrorResponse](#schemaerrorresponse))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
-  },
-  "ChildErrors": {
-    "property1": null,
-    "property2": null
-  }
-}
-```
-
 ---
 
 ## `List Data View Access Rights`
 
 <a id="opIdDataViewsPermissions_List Data View Access Rights"></a>
 
-Gets the access rights to the requested data view for the calling user or client.
+Returns the access rights to the requested data view for the calling user or client.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/accessrights
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string id`
 <br/>Data view identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -515,7 +467,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/accessrig
 |404|[ErrorResponse](#schemaerrorresponse)|The requested data view was not found.|
 |500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -556,7 +509,7 @@ HTTP 200 OK
 <a id="tocSerrorresponse"></a>
 <a id="tocserrorresponse"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -594,7 +547,7 @@ HTTP 200 OK
 <a id="tocSaccesscontrollist"></a>
 <a id="tocsaccesscontrollist"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -626,7 +579,7 @@ HTTP 200 OK
 <a id="tocSaccesscontrolentry"></a>
 <a id="tocsaccesscontrolentry"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -656,7 +609,7 @@ HTTP 200 OK
 <a id="tocStrustee"></a>
 <a id="tocstrustee"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -682,7 +635,7 @@ HTTP 200 OK
 <a id="tocStrusteetype"></a>
 <a id="tocstrusteetype"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -699,7 +652,7 @@ HTTP 200 OK
 <a id="tocSaccesstype"></a>
 <a id="tocsaccesstype"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|

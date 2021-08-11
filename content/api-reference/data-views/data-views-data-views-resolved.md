@@ -10,15 +10,16 @@ This portion of the overall [data views API](https://ocs-docs.osisoft.com/Conten
 
 <a id="opIdDataViewsResolved_Get Data Items by Query"></a>
 
-Gets the paged collection of data items that are the results of an individual query, and which are eligible for use in the current data view. A data view has a collection of zero or more queries. Each query has an identifier. Those identifiers are used here as part of the request path.
+Returns the paged collection of data items that are the results of an individual query, and which are eligible for use in the current data view. A data view has a collection of zero or more queries. Each query has an identifier. Those identifiers are used here as part of the request path.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/dataitems/{queryid}
 ?cache={cache}&skip={skip}&count={count}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
@@ -30,7 +31,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/
 <br/>An optional parameter representing the zero-based offset of the first data item to retrieve. If not specified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>An optional parameter representing the maximum number of data items to retrieve. If not specified, a default value of 100 is used.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -39,7 +40,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/
 |404|[ErrorResponse](#schemaerrorresponse)|The data view or query does not exist.|
 |500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
-#### Response Headers
+<h4>Response Headers</h4>
 
 |Status|Header|Type|Description|
 |---|---|---|---|
@@ -48,7 +49,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/
 |200|Next-Page|string|Hyperlink to the next page of results.|
 |200|First-Page|string|Hyperlink to the first page of results.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -124,15 +126,16 @@ Content-Type: application/json
 
 <a id="opIdDataViewsResolved_Get Ineligible Data Items by Query"></a>
 
-Gets the paged collection of data items that are the results of an individual query, but which are not eligible for use in the current data view. A common reason for ineligibility is that the item's index property is of a different type than the data view expects. A data view has a collection of zero or more queries. Each query has an identifier. Those identifiers are used here as part of the request path.
+Returns the paged collection of data items that are the results of an individual query, but which are not eligible for use in the current data view. A common reason for ineligibility is that the item's index property is of a different type than the data view expects. A data view has a collection of zero or more queries. Each query has an identifier. Those identifiers are used here as part of the request path.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/ineligibledataitems/{queryid}
 ?cache={cache}&skip={skip}&count={count}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
@@ -144,7 +147,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/
 <br/>An optional parameter representing the zero-based offset of the first data item to retrieve. If not specified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>An optional parameter representing the maximum number of data items to retrieve. If not specified, a default value of 100 is used.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -153,7 +156,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/
 |404|[ErrorResponse](#schemaerrorresponse)|The data view or query does not exist.|
 |500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
-#### Response Headers
+<h4>Response Headers</h4>
 
 |Status|Header|Type|Description|
 |---|---|---|---|
@@ -162,7 +165,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/
 |200|Next-Page|string|Hyperlink to the next page of results.|
 |200|First-Page|string|Hyperlink to the first page of results.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -223,15 +227,16 @@ Content-Type: application/json
 
 <a id="opIdDataViewsResolved_Get Groups"></a>
 
-Gets the collection of `Group`s that resolved for the data view.
+Returns the collection of `Group`s that resolved for the data view.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/groups
 ?cache={cache}&skip={skip}&count={count}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
@@ -242,7 +247,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/
 <br/>An optional parameter representing the zero-based offset of the first group to retrieve. If not specified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>An optional parameter representing the maximum number of groups to retrieve. If not specified, a default value of 100 is used.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -251,7 +256,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/
 |404|[ErrorResponse](#schemaerrorresponse)|The requested data view was not found.|
 |500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
-#### Response Headers
+<h4>Response Headers</h4>
 
 |Status|Header|Type|Description|
 |---|---|---|---|
@@ -260,7 +265,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/
 |200|Next-Page|string|Hyperlink to the next page of results.|
 |200|First-Page|string|Hyperlink to the first page of results.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -348,15 +354,16 @@ Content-Type: application/json
 
 <a id="opIdDataViewsResolved_Get Field Mappings"></a>
 
-Gets the collection of field mappings resolved for the data view. These show the exact data behind every field, for each data item, for each group.
+Returns the collection of field mappings resolved for the data view. These show the exact data behind every field, for each data item, for each group.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/fieldmappings
 ?cache={cache}&skip={skip}&count={count}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
@@ -367,7 +374,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/
 <br/>An optional parameter representing the zero-based offset of the first field mapping to retrieve. If not specified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>An optional parameter representing the maximum number of field mappings to retrieve. If not specified, a default value of 100 is used.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -376,7 +383,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/
 |404|[ErrorResponse](#schemaerrorresponse)|The data view or query does not exist.|
 |500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
-#### Response Headers
+<h4>Response Headers</h4>
 
 |Status|Header|Type|Description|
 |---|---|---|---|
@@ -385,7 +392,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/
 |200|Next-Page|string|Hyperlink to the next page of results.|
 |200|First-Page|string|Hyperlink to the first page of results.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -467,15 +475,16 @@ HTTP 200 OK
 
 <a id="opIdDataViewsResolved_Get Available Field Sets"></a>
 
-Gets the collection of field sets that are available for use in the data view, and which are not already included in the data view.
+Returns the collection of field sets that are available for use in the data view, and which are not already included in the data view.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/availablefieldsets
 ?cache={cache}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
@@ -484,7 +493,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/
 `[optional] string cache`
 <br/>"Refresh" to force the resource to re-resolve.<br/>"Preserve" to use cached information, if available. This is the default value.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -493,7 +502,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/
 |404|[ErrorResponse](#schemaerrorresponse)|The requested data view was not found.|
 |500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -566,13 +576,14 @@ HTTP 200 OK
 
 ERROR: Parameter "allfieldsets-get" could not be found in external reference file
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/allfieldsets
 ?cache={cache}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
@@ -581,7 +592,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/
 `[optional] string cache`
 <br/>"Refresh" to force the resource to re-resolve.<br/>"Preserve" to use cached information, if available. This is the default value.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -590,7 +601,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/
 |404|[ErrorResponse](#schemaerrorresponse)|The requested data view was not found.|
 |500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -624,15 +636,16 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/
 
 <a id="opIdDataViewsResolved_Get Statistics"></a>
 
-Gets the statistics about the size and shape on how the data view resolved. 
+Returns the statistics about the size and shape on how the data view resolved. 
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/statistics
 ?cache={cache}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
@@ -641,7 +654,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/
 `[optional] string cache`
 <br/>"Refresh" to force the resource to re-resolve.<br/>"Preserve" to use cached information, if available. This is the default value.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -650,7 +663,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/
 |404|[ErrorResponse](#schemaerrorresponse)|The specified data view identifier is not found.|
 |500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -725,7 +739,7 @@ HTTP 200 OK
 
 Holds a collection of items that were resolved at a specific time.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -791,7 +805,7 @@ Holds a collection of items that were resolved at a specific time.
 
 A data item resolved by the data view. Can represent various DataItemResourceTypes from OSIsoft Cloud Services
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -859,7 +873,7 @@ A data item resolved by the data view. Can represent various DataItemResourceTyp
 
 The type of resource that a data item represents
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -877,7 +891,7 @@ The type of resource that a data item represents
 
 Individual metadata value from the metadata list of a DataItem
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -907,7 +921,7 @@ Individual metadata value from the metadata list of a DataItem
 <a id="tocSsdstypecode"></a>
 <a id="tocssdstypecode"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -1012,7 +1026,7 @@ Individual metadata value from the metadata list of a DataItem
 
 A field exposed by some DataItem
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1044,7 +1058,7 @@ A field exposed by some DataItem
 <a id="tocSerrorresponse"></a>
 <a id="tocserrorresponse"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1084,7 +1098,7 @@ A field exposed by some DataItem
 
 Holds a collection of items that were resolved at a specific time.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1204,7 +1218,7 @@ Holds a collection of items that were resolved at a specific time.
 
 A group resolved by a data view
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1319,7 +1333,7 @@ A group resolved by a data view
 
 The value resolved by a grouping field defined in the data view
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1347,7 +1361,7 @@ The value resolved by a grouping field defined in the data view
 
 A data item resolved by the data view. Can represent various DataItemResourceTypes from OSIsoft Cloud Services
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1415,7 +1429,7 @@ A data item resolved by the data view. Can represent various DataItemResourceTyp
 
 Holds a collection of items that were resolved at a specific time.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1464,7 +1478,7 @@ Holds a collection of items that were resolved at a specific time.
 
 A resolved field of the data view, identifying its data source for each group.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1514,7 +1528,7 @@ A resolved field of the data view, identifying its data source for each group.
 
 Identifies the type of field
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -1533,7 +1547,7 @@ Identifies the type of field
 <a id="tocSsdssummarytype"></a>
 <a id="tocssdssummarytype"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -1563,7 +1577,7 @@ Identifies the type of field
 
 Specifies summary direction for a Field
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -1581,7 +1595,7 @@ Specifies summary direction for a Field
 
 Information about the data source resolved for an individual Field for a specific Group
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1621,7 +1635,7 @@ Information about the data source resolved for an individual Field for a specifi
 
 Holds a collection of items that were resolved at a specific time.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1679,7 +1693,7 @@ Holds a collection of items that were resolved at a specific time.
 
 A set of fields defined for a particular source of data.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1733,7 +1747,7 @@ A set of fields defined for a particular source of data.
 
 A data field that targets information resolved within its FieldSet
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1773,7 +1787,7 @@ A data field that targets information resolved within its FieldSet
 
 The targeted part of a DataItem
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -1796,7 +1810,7 @@ The targeted part of a DataItem
 
 Holds an item that was resolved at a specific time.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1848,7 +1862,7 @@ Holds an item that was resolved at a specific time.
 
 Statistics about how a data view resolved
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1900,7 +1914,7 @@ Statistics about how a data view resolved
 
 Statistics about the data items associated with a particular query
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1930,7 +1944,7 @@ Statistics about the data items associated with a particular query
 
 Statistics about how a data field set resolved
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1965,7 +1979,7 @@ Statistics about how a data field set resolved
 
 Statistics about how a data field resolved
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

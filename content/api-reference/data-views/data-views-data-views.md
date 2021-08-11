@@ -16,13 +16,14 @@ Other sections of documentation describe how to [secure data views](https://ocs-
 
 Returns a list of data views.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews
 ?skip={skip}&count={count}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
@@ -31,14 +32,14 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews
 <br/>An optional parameter representing the zero-based offset of the first data view to retrieve. If not specified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>An optional parameter representing the maximum number of data views to retrieve. If not specified, a default value of 100 is used.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[DataView](#schemadataview)[]|A page of data views. A response header, Total-Count, indicates the total size of the collection.|
 |500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
-#### Response Headers
+<h4>Response Headers</h4>
 
 |Status|Header|Type|Description|
 |---|---|---|---|
@@ -47,7 +48,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews
 |200|Next-Page|string|Hyperlink to the next page of results.|
 |200|First-Page|string|Hyperlink to the first page of results.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -93,18 +95,19 @@ Content-Type: application/json
 
 Creates a new data view with a system-generated identifier.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 A `DataView` object whose `Id` is `null` or unspecified.<br/>
 
@@ -189,7 +192,7 @@ A `DataView` object whose `Id` is `null` or unspecified.<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -198,7 +201,8 @@ A `DataView` object whose `Id` is `null` or unspecified.<br/>
 |403|[ErrorResponse](#schemaerrorresponse)|You are not authorized to create a data view.|
 |500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 201 Response
 
 ```json
@@ -243,19 +247,20 @@ Content-Type: application/json
 
 Returns the specified data view.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string id`
 <br/>Data view identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -264,7 +269,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}
 |404|[ErrorResponse](#schemaerrorresponse)|The specified data view identifier is not found.|
 |500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -312,21 +318,22 @@ Content-Type: application/json
 
 <a id="opIdDataViews_Get or Create Data View"></a>
 
-This method creates the specified data view. If a data view with the same id already exists, the existing data view is compared with the specified data view. If they are identical, a redirect (`302 Found`) is returned with the `Location` response header indicating the URL where the data view may be retrieved using a Get function. If the data views do not match, the request fails with `409 Conflict`.
+This method creates the specified data view. If a data view with the same identifier already exists, the existing data view is compared with the specified data view. If they are identical, a redirect (`302 Found`) is returned with the `Location` response header indicating the URL where the data view may be retrieved using a Get function. If the data views do not match, the request fails with `409 Conflict`.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string id`
 <br/>Data view identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 A `DataView` object whose `Id` is `null` or unspecified.<br/>
 
@@ -411,7 +418,7 @@ A `DataView` object whose `Id` is `null` or unspecified.<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -422,7 +429,8 @@ A `DataView` object whose `Id` is `null` or unspecified.<br/>
 |409|[ErrorResponse](#schemaerrorresponse)|The specified data view conflicts with an existing data view that is not identical. To forcibly update the data view, see *Create Or Update Data View*.|
 |500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 201 Response
 
 ```json
@@ -465,21 +473,22 @@ Content-Type: application/json
 
 <a id="opIdDataViews_Create or Update Data View"></a>
 
-If a data view with the same id already exists, it is updated to the specified value. Otherwise, a new data view is created.
+If a data view with the same identifier already exists, it is updated to the specified value. Otherwise, a new data view is created.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string id`
 <br/>Data view identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 A `DataView` object whose `Id` matches the `dataViewId` in the URL.<br/>
 
@@ -564,7 +573,7 @@ A `DataView` object whose `Id` matches the `dataViewId` in the URL.<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -574,7 +583,8 @@ A `DataView` object whose `Id` matches the `dataViewId` in the URL.<br/>
 |403|[ErrorResponse](#schemaerrorresponse)|You are not authorized for this operation.|
 |500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 201 Response ([DataView](#schemadataview))
 
 ```json
@@ -666,19 +676,20 @@ A `DataView` object whose `Id` matches the `dataViewId` in the URL.<br/>
 
 Deletes the data view with the specified id.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string id`
 <br/>Data view identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -686,26 +697,6 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}
 |403|[ErrorResponse](#schemaerrorresponse)|You are not authorized for this operation.|
 |404|[ErrorResponse](#schemaerrorresponse)|The specified data view identifier is not found.|
 |500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
-
-#### Example response body
-> 403 Response ([ErrorResponse](#schemaerrorresponse))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
-  },
-  "ChildErrors": {
-    "property1": null,
-    "property2": null
-  }
-}
-```
 
 ---
 ## Definitions
@@ -719,7 +710,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}
 
 A declarative way to select, label and shape data from OSIsoft Cloud Services
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -829,7 +820,7 @@ A declarative way to select, label and shape data from OSIsoft Cloud Services
 
 A data field that targets information resolved within its FieldSet
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -869,7 +860,7 @@ A data field that targets information resolved within its FieldSet
 
 The targeted part of a DataItem
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -890,7 +881,7 @@ The targeted part of a DataItem
 <a id="tocSsdssummarytype"></a>
 <a id="tocssdssummarytype"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -920,7 +911,7 @@ The targeted part of a DataItem
 
 Specifies summary direction for a Field
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -938,7 +929,7 @@ Specifies summary direction for a Field
 
 A query for data items of a specified resource type.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -966,7 +957,7 @@ A query for data items of a specified resource type.
 
 The type of resource that a data item represents
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -984,7 +975,7 @@ The type of resource that a data item represents
 
 A set of fields defined for a particular source of data.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -1036,7 +1027,7 @@ A set of fields defined for a particular source of data.
 <a id="tocSsdstypecode"></a>
 <a id="tocssdstypecode"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -1141,7 +1132,7 @@ A set of fields defined for a particular source of data.
 
 The shape of the data view. By default, each Field will resolve to one or more FieldMappings. In narrow shape, all Fields that map to a DataItem are "pivoted" vertically, into two fields: Label and Value.
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -1157,7 +1148,7 @@ The shape of the data view. By default, each Field will resolve to one or more F
 <a id="tocSerrorresponse"></a>
 <a id="tocserrorresponse"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

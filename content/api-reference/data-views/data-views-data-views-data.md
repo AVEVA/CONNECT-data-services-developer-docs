@@ -12,13 +12,14 @@ The Data API allows users to [retrieve data](https://ocs-docs.osisoft.com/Conten
 
 Returns interpolated data for the provided index parameters with paging. See [documentation on paging](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/GetDataViewData/Quick_Start_Get_Data_View_Data.html#paging) for further information.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/data/interpolated
 ?startIndex={startIndex}&endIndex={endIndex}&interval={interval}&form={form}&continuationToken={continuationToken}&count={count}&cache={cache}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
@@ -44,7 +45,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/data/inte
 | `Preserve`| Use cached information, if available.
 <br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -54,7 +55,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/data/inte
 |404|[ErrorResponse](#schemaerrorresponse)|The specified data view identifier is not found.|
 |500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
-#### Response Headers
+<h4>Response Headers</h4>
 
 |Status|Header|Type|Description|
 |---|---|---|---|
@@ -62,7 +63,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/data/inte
 |200|Next-Page|string|Hyperlink to the next page of results.|
 |200|First-Page|string|Hyperlink to the first page of results.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -96,15 +98,16 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/data/inte
 
 <a id="opIdDataViewsData_Get Data View Stored Data"></a>
 
-Gets stored data for the provided index parameters with paging. See [documentation on paging](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/GetDataViewData/Quick_Start_Get_Data_View_Data.html#paging) for further information.
+Returns stored data for the provided index parameters with paging. See [documentation on paging](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/GetDataViewData/Quick_Start_Get_Data_View_Data.html#paging) for further information.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/data/stored
 ?startIndex={startIndex}&endIndex={endIndex}&form={form}&continuationToken={continuationToken}&count={count}&cache={cache}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
@@ -129,7 +132,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/data/stor
 | `Preserve`| Use cached information, if available.
 <br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -139,7 +142,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/data/stor
 |404|[ErrorResponse](#schemaerrorresponse)|The specified data view identifier is not found.|
 |500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
-#### Response Headers
+<h4>Response Headers</h4>
 
 |Status|Header|Type|Description|
 |---|---|---|---|
@@ -147,7 +150,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/data/stor
 |200|Next-Page|string|Hyperlink to the next page of results.|
 |200|First-Page|string|Hyperlink to the first page of results.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -185,7 +189,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/data/stor
 <a id="tocSerrorresponse"></a>
 <a id="tocserrorresponse"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

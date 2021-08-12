@@ -458,14 +458,14 @@ Enum for Community invitation state.
 
 <h4>Enumerated Values</h4>
 
-|Property|Value|
-|---|---|
-|None|None|
-|InvitationCreated|InvitationCreated|
-|InvitationAccepted|InvitationAccepted|
-|InvitationDeclined|InvitationDeclined|
-|InvitationExpired|InvitationExpired|
-|InvitationCompleted|InvitationCompleted|
+|Property|Value|Description|
+|---|---|---|
+|None|None|No Invitation state specified.|
+|InvitationCreated|InvitationCreated|Invitation email has been sent.|
+|InvitationAccepted|InvitationAccepted|Invitation has been accepted.|
+|InvitationDeclined|InvitationDeclined|Invitation has been declined.|
+|InvitationExpired|InvitationExpired|Invitation has expired.|
+|InvitationCompleted|InvitationCompleted|Invitation has been completed.|
 
 ---
 
@@ -590,12 +590,12 @@ Enumeration of actions taken on community invitations
 
 <h4>Enumerated Values</h4>
 
-|Property|Value|
-|---|---|
-|Accept|Accept|
-|Decline|Decline|
-|Confirm|Confirm|
-|Resend|Resend|
+|Property|Value|Description|
+|---|---|---|
+|Accept|Accept|Accept the invitation.|
+|Decline|Decline|Decline the invitation.|
+|Confirm|Confirm|Confirm the invitation.|
+|Resend|Resend|Resend the invitation.|
 
 ---
 

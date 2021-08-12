@@ -216,13 +216,13 @@ Represents a status of a community tenant
 
 <h4>Enumerated Values</h4>
 
-|Property|Value|
-|---|---|
-|None|None|
-|AwaitingConfirmation|AwaitingConfirmation|
-|Paused|Paused|
-|Active|Active|
-|Remove|Remove|
+|Property|Value|Description|
+|---|---|---|
+|None|None|No community tenant status specified.|
+|AwaitingConfirmation|AwaitingConfirmation|After invite, awaiting confirmation from owner.|
+|Paused|Paused|Community Tenant paused from actively sharing.|
+|Active|Active|Resume sharing from pause or after confirm.|
+|Remove|Remove|Owner removes Tenant or Community Tenant leaves community.|
 
 ---
 

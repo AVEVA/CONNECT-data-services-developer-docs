@@ -431,17 +431,17 @@ Status codes describing a tenant's current provisioning state.
 
 <h4>Enumerated Values</h4>
 
-|Property|Value|
-|---|---|
-|Creating|0|
-|Active|1|
-|Deactivating|2|
-|Deactivated|3|
-|Reactivating|4|
-|Deleting|5|
-|Deleted|6|
-|Purging|7|
-|IsHomeTenant|8|
+|Property|Value|Description|
+|---|---|---|
+|Creating|0|Provisioning cannot be completed until all the Product Services (AF, Sds, etc.) are provisioned successfully. In this state, the tenant is provisioned in Azure AD, and created in the System DB. The provisioning engine now sets the state to Creating, notifies all Services to Activate, and waits for a completion message from all of the services. The customer cannot access any Product Services yet.|
+|Active|1|The tenant is successfully provisioned (a completion message has been received from all Services). This is now a fully Active, functional tenant with full access to all Services.|
+|Deactivating|2|A currently Active tenant is being deactivated (perhaps they haven’t paid their bill). The provisioning engine sets the state to Deactivating and notifies the system services to Deactivate. Until the engine receives a completion message from these services, it will be in this state. The services may become partially non-functional and inaccessible.|
+|Deactivated|3|The tenant is successfully Deactivated (a completion message has been received from all Services). The Services are non-functional and inaccessible to customers. The customer data is still intact and some background activities may still be active.|
+|Reactivating|4|A currently Deactivated tenant needs to be reinstated. The provisioning engine sets the state to Reactivating, notifies the Services to Reactivate, and waits for the completion message from all of the Services. Once completed, the tenant will be Active again. Until they are Active again, the PICS Services may not be fully functional yet.|
+|Deleting|5|The tenant no longer wants to use PICS services or needs to be decommissioned for some reason. The provisioning engine sets the state to Deleting, notifies the Services to Delete, and waits for the completion message from all of the Services. The PICS Services may become partially non-functional and inaccessible.|
+|Deleted|6|The tenant is successfully Deleted. The customer data is marked as Deleted. The PICS Services are non-functional and inaccessible. Records may still need to be archived for a period of time determined by SLA, and may not be physically removed yet for possible auditing requirements.|
+|Purging|7|All customer records from all PICS services, Azure resources, databases, etc., are permanently and physically removed. Data and other resources are now unrecoverable|
+|IsHomeTenant|8|State of the home tenant so it does not return from GetAllTenants|
 
 ---
 

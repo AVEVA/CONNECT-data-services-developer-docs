@@ -4,7 +4,7 @@ uid: sds-streams
 ---
 
 # Streams
-Controller for methods hosted at streams/
+The API in this section interacts with streams.
 
 ## `List Streams`
 
@@ -16,6 +16,7 @@ Returns a list of streams.
 
 ```text 
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams
+?query={query}&skip={skip}&count={count}&orderby={orderby}
 ```
 
 <h4>Parameters</h4>
@@ -23,6 +24,11 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
+`[optional] string query`
+<br/>Parameter representing a string search.<br/><br/>`[optional] integer skip`
+<br/>Parameter representing the zero-based offset of the first SdsType to retrieve. If not specified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of SdsTypes to retrieve. If not specified, a default value of 100 is used.<br/><br/>`[optional] string orderby`
+<br/>Parameter representing sorted order which SdsTypes will be returned. A field name is required. The sorting is based on the stored values for the given field (of type string). For example, orderby=name would sort the returned results by the name values (ascending by default). Additionally, a value can be provided along with the field name to identify whether to sort ascending or descending, by using values asc or desc, respectively. For example, orderby=name desc would sort the returned results by the name values, descending. If no value is specified, there is no sorting of result.<br/><br/>
 
 <h3>Response</h3>
 
@@ -150,8 +156,8 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[SdsStream](#schemasdsstream)|Returns the `SdsStream`|
-|201|[SdsStream](#schemasdsstream)|Returns the `SdsStream`|
+|200|[SdsStream](#schemasdsstream)|`SdsStream` was successfully returned|
+|201|[SdsStream](#schemasdsstream)|`SdsStream` was successfully created|
 |400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
 |401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
 |403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
@@ -212,8 +218,8 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|201|[SdsStream](#schemasdsstream)|Returns the `SdsStream`|
-|204|None|Returns the `SdsStream`|
+|201|[SdsStream](#schemasdsstream)|`SdsStream` was successfully created|
+|204|None|`SdsStream` was successfully updated|
 |400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
 |401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
 |403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
@@ -362,6 +368,7 @@ Returns the type definition that is associated with a given stream.
 
 ```text 
 PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type
+?streamViewId={streamViewId}
 ```
 
 <h4>Parameters</h4>
@@ -370,6 +377,8 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string streamId`
 <br/>Stream identifier.<br/><br/>
+`[optional] string streamViewId`
+<br/>Stream view identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -394,14 +403,16 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type
 <a id="tocSsdsstream"></a>
 <a id="tocssdsstream"></a>
 
+A contract defining read and write operations on data of SdsType
+
 <h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|An unique identifier for the SdsStream object|
+|Id|string|false|true|A unique identifier for the SdsStream object|
 |Name|string|false|true|An optional user-friendly name for the SdsStream object|
 |Description|string|false|true|A brief description of the SdsStream object|
-|TypeId|string|false|true|An unique identifier for the SdsType of the SdsStream object|
+|TypeId|string|false|true|A unique identifier for the SdsType of the SdsStream object|
 |Indexes|[[SdsStreamIndex](#schemasdsstreamindex)]|false|true|List of SdsStreamIndexs to define secondary indexes for the SdsStream|
 |InterpolationMode|[SdsInterpolationMode](#schemasdsinterpolationmode)|false|true|Defines the SdsInterpolationMode of the SdsStream. Default is null.|
 |ExtrapolationMode|[SdsExtrapolationMode](#schemasdsextrapolationmode)|false|true|Defines the SdsExtrapolationMode of the SdsStream. Default is null.|
@@ -446,7 +457,7 @@ Indexes speed up and order the results of stream data filtering. SdsStreamIndex 
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|SdsTypePropertyId|string|false|true|An unique identifier for the SdsTypeProperty|
+|SdsTypePropertyId|string|false|true|A unique identifier for the SdsTypeProperty|
 
 ```json
 {
@@ -468,15 +479,15 @@ Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, 
 
 <h4>Enumerated Values</h4>
 
-|Property|Value|
-|---|---|
-|Default|0|
-|Continuous|0|
-|StepwiseContinuousLeading|1|
-|StepwiseContinuousTrailing|2|
-|Discrete|3|
-|ContinuousNullableLeading|4|
-|ContinuousNullableTrailing|5|
+|Property|Value|Description|
+|---|---|---|
+|Default|0||
+|Continuous|0|Interpolates the data using previous and next index values|
+|StepwiseContinuousLeading|1|Returns the data from the previous index|
+|StepwiseContinuousTrailing|2|Returns the data from the next index|
+|Discrete|3|If set on an SdsStream, returns stored events only. If set on a property of an event, the default value of the property type will be returned.|
+|ContinuousNullableLeading|4|For nullable data types only. If either the previous or next data value is null, returns the data from the previous index|
+|ContinuousNullableTrailing|5|For nullable data types only. If either the previous or next data value is null, returns the data from the next index|
 
 ---
 
@@ -491,12 +502,12 @@ Defines how a stream responds to requests with indexes that precede or follow al
 
 <h4>Enumerated Values</h4>
 
-|Property|Value|
-|---|---|
-|All|0|
-|None|1|
-|Forward|2|
-|Backward|3|
+|Property|Value|Description|
+|---|---|---|
+|All|0|Returns the first data value if the index is before the first event in the stream, and returns the last data value if the index is after the last event in the stream|
+|None|1|No extrapolation occurs|
+|Forward|2|Returns the last data value if the index is after the last event in the stream|
+|Backward|3|Returns the first data value if the index is before the first event in the stream|
 
 ---
 
@@ -507,11 +518,13 @@ Defines how a stream responds to requests with indexes that precede or follow al
 <a id="tocSsdsstreampropertyoverride"></a>
 <a id="tocssdsstreampropertyoverride"></a>
 
+SdsStreamPropertyOverride object provides a way to override interpolation behavior and unit of measure for individual SdsType Properties for a specific SdsStream.
+
 <h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|SdsTypePropertyId|string|false|true|An unique identifier for the SdsTypeProperty object that needs to be overridden|
+|SdsTypePropertyId|string|false|true|A unique identifier for the SdsTypeProperty object that needs to be overridden|
 |Uom|string|false|true|The ID, name, or abbreviation of the unit of measure to be applied to the SdsTypeProperty|
 |InterpolationMode|[SdsInterpolationMode](#schemasdsinterpolationmode)|false|true|Defines the InterpolationMode of the SdsTypeProperty|
 
@@ -630,97 +643,97 @@ A contract defining the type of data to read or write in a SdsStream
 
 <h4>Enumerated Values</h4>
 
-|Property|Value|
-|---|---|
-|Empty|0|
-|Object|1|
-|Boolean|3|
-|Char|4|
-|SByte|5|
-|Byte|6|
-|Int16|7|
-|UInt16|8|
-|Int32|9|
-|UInt32|10|
-|Int64|11|
-|UInt64|12|
-|Single|13|
-|Double|14|
-|Decimal|15|
-|DateTime|16|
-|String|18|
-|Guid|19|
-|DateTimeOffset|20|
-|TimeSpan|21|
-|Version|22|
-|NullableBoolean|103|
-|NullableChar|104|
-|NullableSByte|105|
-|NullableByte|106|
-|NullableInt16|107|
-|NullableUInt16|108|
-|NullableInt32|109|
-|NullableUInt32|110|
-|NullableInt64|111|
-|NullableUInt64|112|
-|NullableSingle|113|
-|NullableDouble|114|
-|NullableDecimal|115|
-|NullableDateTime|116|
-|NullableGuid|119|
-|NullableDateTimeOffset|120|
-|NullableTimeSpan|121|
-|BooleanArray|203|
-|CharArray|204|
-|SByteArray|205|
-|ByteArray|206|
-|Int16Array|207|
-|UInt16Array|208|
-|Int32Array|209|
-|UInt32Array|210|
-|Int64Array|211|
-|UInt64Array|212|
-|SingleArray|213|
-|DoubleArray|214|
-|DecimalArray|215|
-|DateTimeArray|216|
-|StringArray|218|
-|GuidArray|219|
-|DateTimeOffsetArray|220|
-|TimeSpanArray|221|
-|VersionArray|222|
-|Array|400|
-|IList|401|
-|IDictionary|402|
-|IEnumerable|403|
-|SdsType|501|
-|SdsTypeProperty|502|
-|SdsStreamView|503|
-|SdsStreamViewProperty|504|
-|SdsStreamViewMap|505|
-|SdsStreamViewMapProperty|506|
-|SdsStream|507|
-|SdsStreamIndex|508|
-|SdsTable|509|
-|SdsColumn|510|
-|SdsValues|511|
-|SdsObject|512|
-|SByteEnum|605|
-|ByteEnum|606|
-|Int16Enum|607|
-|UInt16Enum|608|
-|Int32Enum|609|
-|UInt32Enum|610|
-|Int64Enum|611|
-|UInt64Enum|612|
-|NullableSByteEnum|705|
-|NullableByteEnum|706|
-|NullableInt16Enum|707|
-|NullableUInt16Enum|708|
-|NullableInt32Enum|709|
-|NullableUInt32Enum|710|
-|NullableInt64Enum|711|
-|NullableUInt64Enum|712|
+|Property|Value|Description|
+|---|---|---|
+|Empty|0||
+|Object|1||
+|Boolean|3||
+|Char|4||
+|SByte|5||
+|Byte|6||
+|Int16|7||
+|UInt16|8||
+|Int32|9||
+|UInt32|10||
+|Int64|11||
+|UInt64|12||
+|Single|13||
+|Double|14||
+|Decimal|15||
+|DateTime|16||
+|String|18||
+|Guid|19||
+|DateTimeOffset|20||
+|TimeSpan|21||
+|Version|22||
+|NullableBoolean|103||
+|NullableChar|104||
+|NullableSByte|105||
+|NullableByte|106||
+|NullableInt16|107||
+|NullableUInt16|108||
+|NullableInt32|109||
+|NullableUInt32|110||
+|NullableInt64|111||
+|NullableUInt64|112||
+|NullableSingle|113||
+|NullableDouble|114||
+|NullableDecimal|115||
+|NullableDateTime|116||
+|NullableGuid|119||
+|NullableDateTimeOffset|120||
+|NullableTimeSpan|121||
+|BooleanArray|203||
+|CharArray|204||
+|SByteArray|205||
+|ByteArray|206||
+|Int16Array|207||
+|UInt16Array|208||
+|Int32Array|209||
+|UInt32Array|210||
+|Int64Array|211||
+|UInt64Array|212||
+|SingleArray|213||
+|DoubleArray|214||
+|DecimalArray|215||
+|DateTimeArray|216||
+|StringArray|218||
+|GuidArray|219||
+|DateTimeOffsetArray|220||
+|TimeSpanArray|221||
+|VersionArray|222||
+|Array|400||
+|IList|401||
+|IDictionary|402||
+|IEnumerable|403||
+|SdsType|501||
+|SdsTypeProperty|502||
+|SdsStreamView|503||
+|SdsStreamViewProperty|504||
+|SdsStreamViewMap|505||
+|SdsStreamViewMapProperty|506||
+|SdsStream|507||
+|SdsStreamIndex|508||
+|SdsTable|509||
+|SdsColumn|510||
+|SdsValues|511||
+|SdsObject|512||
+|SByteEnum|605||
+|ByteEnum|606||
+|Int16Enum|607||
+|UInt16Enum|608||
+|Int32Enum|609||
+|UInt32Enum|610||
+|Int64Enum|611||
+|UInt64Enum|612||
+|NullableSByteEnum|705||
+|NullableByteEnum|706||
+|NullableInt16Enum|707||
+|NullableUInt16Enum|708||
+|NullableInt32Enum|709||
+|NullableUInt32Enum|710||
+|NullableInt64Enum|711||
+|NullableUInt64Enum|712||
 
 ---
 
@@ -737,7 +750,7 @@ A contract defining a property of a SdsType
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|An unique identifier for the SdsTypeProperty object|
+|Id|string|false|true|A unique identifier for the SdsTypeProperty object|
 |Name|string|false|true|An optional user-friendly name for the SdsTypeProperty object|
 |Description|string|false|true|A brief description of the SdsTypeProperty object|
 |Order|int32|false|false|The order used for comparison among SdsTypePropertys if a compound index is specified for SdsType|

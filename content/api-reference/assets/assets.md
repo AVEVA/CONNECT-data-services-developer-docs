@@ -15,8 +15,8 @@ In this situation, an asset type can be used to create multiple similar assets. 
 
 | Property      | Type              | Required? | Searchable? | Description                                                  | Asset Property? | Asset Type Property? |
 | ------------- | ----------------- | --------- | ----------- | ------------------------------------------------------------ | ----- | --------------- |
-| Id           | String            | Required  | Yes         | Asset identifier. If the  `Id` field is not specified, then the  `Name` field is used. If `Name` is absent, then the system autogenerates a GUID. | Yes  | Yes            |
-| Name          | String            | Required only if `Id` is not specified  | Yes         | User-friendly name. Required if `Id` field is not provided. If the `Name` field is used as the identifier, it must be unique within a given namespace. | Yes  | Yes            |
+| Id           | String            | Required  | Yes         | Asset identifier. If the  `Id` field is not specified, the system autogenerates a GUID. | Yes  | Yes            |
+| Name          | String            | Optional | Yes         | User-friendly name. If not specified, name will be set to the same value as the `Id` field. | Yes  | Yes            |
 | Description   | String            | Optional  | Yes         | User-provided description                                   | Yes  | Yes            |
 | AssetTypeId   | String            | Optional  | No          | Identifier for the asset type that this asset is derived from. To get the merged view of the asset, get the resolved asset through the /Assets/{assetId}/Resolved route. | Yes  | No            |
 | Metadata      | Metadata List     | Optional  | Yes       | Asset and asset type metadata                               | Yes  | Yes            |

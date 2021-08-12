@@ -625,11 +625,11 @@ Invitation states.
 
 <h4>Enumerated Values</h4>
 
-|Property|Value|
-|---|---|
-|None|0|
-|InvitationEmailSent|1|
-|InvitationAccepted|2|
+|Property|Value|Description|
+|---|---|---|
+|None|0|No Invitation state specified.|
+|InvitationEmailSent|1|Invitation email has been sent.|
+|InvitationAccepted|2|Invitation has been accepted.|
 
 ---
 

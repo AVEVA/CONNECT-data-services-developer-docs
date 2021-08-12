@@ -362,10 +362,10 @@ Azure Active Directory tenant consent state
 
 <h4>Enumerated Values</h4>
 
-|Property|Value|
-|---|---|
-|NotConsented|0|
-|Consented|1|
+|Property|Value|Description|
+|---|---|---|
+|NotConsented|0|Azure Active Directory tenant consent has not been completed.|
+|Consented|1|Azure Active Directory tenant consent has been completed.|
 
 ---
 

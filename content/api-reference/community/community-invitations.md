@@ -57,7 +57,9 @@ GET /api/v1-preview/tenants/{tenantId}/communities/{communityId}/invitations
     "InvitedTenantId": "string",
     "CommunityId": "string",
     "CommunityName": "string",
-    "InvitationRecipient": "string"
+    "InvitationRecipient": "string",
+    "AcceptedUserEmail": "string",
+    "AcceptedTenantName": "string"
   }
 ]
 ```
@@ -126,7 +128,9 @@ Invitation to create<br/>
   "InvitedTenantId": "string",
   "CommunityId": "string",
   "CommunityName": "string",
-  "InvitationRecipient": "string"
+  "InvitationRecipient": "string",
+  "AcceptedUserEmail": "string",
+  "AcceptedTenantName": "string"
 }
 ```
 
@@ -186,7 +190,9 @@ GET /api/v1-preview/tenants/{tenantId}/communities/{communityId}/invitations/{in
   "InvitedTenantId": "string",
   "CommunityId": "string",
   "CommunityName": "string",
-  "InvitationRecipient": "string"
+  "InvitationRecipient": "string",
+  "AcceptedUserEmail": "string",
+  "AcceptedTenantName": "string"
 }
 ```
 
@@ -390,7 +396,9 @@ GET /api/v1-preview/tenants/{tenantId}/communityinvitations
     "InvitedTenantId": "string",
     "CommunityId": "string",
     "CommunityName": "string",
-    "InvitationRecipient": "string"
+    "InvitationRecipient": "string",
+    "AcceptedUserEmail": "string",
+    "AcceptedTenantName": "string"
   }
 ]
 ```
@@ -428,6 +436,8 @@ Representation of the community invitation
 |CommunityId|guid|false|false|Identifier of the community from which the invitation was issued|
 |CommunityName|string|false|true|Name of the community from which the invitation was issued|
 |InvitationRecipient|string|false|true|Email address of the recipient who will be notified to accept the invitation|
+|AcceptedUserEmail|string|false|true|Email address of the recipient who accepts the invitation|
+|AcceptedTenantName|string|false|true|Name of the tenant accepting the invitation|
 
 ```json
 {
@@ -440,7 +450,9 @@ Representation of the community invitation
   "InvitedTenantId": "string",
   "CommunityId": "string",
   "CommunityName": "string",
-  "InvitationRecipient": "string"
+  "InvitationRecipient": "string",
+  "AcceptedUserEmail": "string",
+  "AcceptedTenantName": "string"
 }
 
 ```

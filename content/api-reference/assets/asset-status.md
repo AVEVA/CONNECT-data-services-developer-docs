@@ -132,7 +132,8 @@ Content-Type: application/json
 	"Status": 1,
 	"Value": "85",
     "DisplayName": "TemperatureSensorBuild1InF",
-    "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z"
+    "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z",
+    "Index": "2020-05-04T16:55:28.00001Z"
 }
 ```
 
@@ -284,7 +285,8 @@ Content-Type: application/json
          "Status": 1, 
          "Value": "85",
          "DisplayName": "TemperatureSensorBuild1InF",
-         "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z"
+         "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z",
+         "Index": "2020-05-04T16:55:28.00001Z"
       },
       {
          "AssetId": "AssetId-2",
@@ -292,6 +294,7 @@ Content-Type: application/json
          "Value": "185",
          "DisplayName": "DeviceMeasurement",
          "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z"
+         "Index": "2020-05-04T16:55:29.00001Z"
       },
       {
          "AssetId": "AssetId-3",
@@ -299,6 +302,7 @@ Content-Type: application/json
          "Value": "75",
          "DisplayName": "TemperatureSensorBuild5450InF",
          "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z"
+         "Index": "2020-05-04T16:55:30.00001Z"
       }
    ]
 }

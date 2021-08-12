@@ -108,7 +108,7 @@ A list of asset Ids and their matched fields.
 #### Example response body
 Below is a response when query string is "Name:Tracer".
 
-- `Count` represents the number of matched assets in the given query.
+- `TotalCount` represents the number of matched assets in the database which matched the given query.
 
  A list of results is returned. Each result contains:  
 -  `MatchProperties` - a list of matched property objects. Each `MatchProperties` object contains the matched fields and their values.
@@ -124,7 +124,7 @@ Below is a response when query string is "Name:Tracer".
 HTTP 200 OK 
 Content-Type: application/json
 {
-    "Count": 2,
+    "TotalCount": 2,
     "Results": [
         {
             "MatchedProperties": [

@@ -30,6 +30,8 @@ To perform this procedure you must have already defined streams.
 
 ## Unshare streams from the `Sequential Data Store`
 
+In addition to unsharing streams, the Sequential Data Store provides many capabilities for managing streams. For more information, see [Manage streams](xref:manage-streams).
+
 1. On the navigation bar, click **Sequential Data Store**.
 2. If necessary, select a namespace or community from the **Change Namespace or Community** dropdown list.<br>![](images\select-namespace-community.png "Select a namespace or community")
 3. Use the toggle switches to filter streams by namespace or community.<br>![](images\namespace-communities-switches.png "Filter by namespace or community")

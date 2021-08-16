@@ -58,10 +58,14 @@ GET /api/v1-preview/tenants/{tenantId}/Communities
         "Status": "None",
         "IsOwner": true,
         "UserCount": 0,
-        "ClientCount": 0
+        "ClientCount": 0,
+        "AccessControlList": "string",
+        "Trustee": "string"
       }
     ],
-    "DateCreated": "2019-08-24T14:15:22Z"
+    "DateCreated": "2019-08-24T14:15:22Z",
+    "AccessControlList": "string",
+    "Trustee": "string"
   }
 ]
 ```
@@ -133,10 +137,14 @@ Community information to create<br/>
       "Status": "None",
       "IsOwner": true,
       "UserCount": 0,
-      "ClientCount": 0
+      "ClientCount": 0,
+      "AccessControlList": "string",
+      "Trustee": "string"
     }
   ],
-  "DateCreated": "2019-08-24T14:15:22Z"
+  "DateCreated": "2019-08-24T14:15:22Z",
+  "AccessControlList": "string",
+  "Trustee": "string"
 }
 ```
 
@@ -196,10 +204,14 @@ GET /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
       "Status": "None",
       "IsOwner": true,
       "UserCount": 0,
-      "ClientCount": 0
+      "ClientCount": 0,
+      "AccessControlList": "string",
+      "Trustee": "string"
     }
   ],
-  "DateCreated": "2019-08-24T14:15:22Z"
+  "DateCreated": "2019-08-24T14:15:22Z",
+  "AccessControlList": "string",
+  "Trustee": "string"
 }
 ```
 
@@ -321,6 +333,8 @@ The Community object
 |Description|string|false|true|Community description|
 |Tenants|[[CommunityTenant](#schemacommunitytenant)]|false|true|List of CommunityTenant that are in the community|
 |DateCreated|date-time|false|true|Date community was created|
+|AccessControlList|string|false|true|Access Control List for a Community resource.|
+|Trustee|string|false|true|The Trustee for a Community resource.|
 
 ```json
 {
@@ -336,10 +350,14 @@ The Community object
       "Status": "None",
       "IsOwner": true,
       "UserCount": 0,
-      "ClientCount": 0
+      "ClientCount": 0,
+      "AccessControlList": "string",
+      "Trustee": "string"
     }
   ],
-  "DateCreated": "2019-08-24T14:15:22Z"
+  "DateCreated": "2019-08-24T14:15:22Z",
+  "AccessControlList": "string",
+  "Trustee": "string"
 }
 
 ```
@@ -365,6 +383,8 @@ The CommunityTenant object
 |IsOwner|boolean|false|false|Boolean indicating whether the CommunityTenant is the owner of the community|
 |UserCount|integer|false|false|Summary count of the users authorized to access the community within the tenant|
 |ClientCount|integer|false|false|Summary count of the clients authorized to access the community within the tenant|
+|AccessControlList|string|false|true|Access Control List for a CommunityTenant resource.|
+|Trustee|string|false|true|The Trustee for a CommunityTenant resource.|
 
 ```json
 {
@@ -373,7 +393,9 @@ The CommunityTenant object
   "Status": "None",
   "IsOwner": true,
   "UserCount": 0,
-  "ClientCount": 0
+  "ClientCount": 0,
+  "AccessControlList": "string",
+  "Trustee": "string"
 }
 
 ```

@@ -385,6 +385,7 @@ Wildcard (``*``) character can be used both in metadata keys and values with one
 ```
 
 ### Special characters in search queries
+<!--- This section is an exact replication of the same titled section in asset-search-api.md -->
 
 Add the backslash escape character ( \ ) before any special characters in search queries. The following special characters require an escape character:   " |  /  *  \  ( )  : 
 

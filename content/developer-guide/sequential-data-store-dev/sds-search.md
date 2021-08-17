@@ -384,3 +384,14 @@ Wildcard (``*``) character can be used both in metadata keys and values with one
 	GetStreamsAsync(query:"manufa*turer:compan*");
 ```
 
+### Special characters in search queries
+<!--- This section is an exact replication of the same titled section in asset-search-api.md -->
+
+Add the backslash escape character ( \ ) before any special characters in search queries. The following special characters require an escape character:   " |  /  *  \  ( )  : 
+
+The following are examples of using the escape character in query strings.
+
+| Example Field Value                    | Query String                               |
+| -------------------------------------- | ------------------------------------------ |
+| Austin\Dallas\Fort Worth               | Austin\\\Dallas\\\Fort Worth               |
+| 1:100                                  | 1\\:100                                    |

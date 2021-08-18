@@ -201,7 +201,7 @@ Filter strings are not case sensitive. Numeric types must be passed as strings a
 | filter[AssetTypeName]=HeaterType             | Filter that only returns assets with an AssetTypeName of **HeaterType**. |
 | filter[status]=Bad                           | Filter that returns only assets with a bad status. Status filters can have the values **Good**, **Bad**, **Warning**, and **Unknown**. |
 
-### Special characters in filter values.
+### Special characters in filter values
 
 Only `" \` special characters need to be escaped with the backslash escape character ( \ ) in filter values.
 

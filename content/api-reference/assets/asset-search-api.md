@@ -190,6 +190,17 @@ The following are examples of using the escape character in query strings.
 | Austin\Dallas\Fort Worth               | Austin\\\Dallas\\\Fort Worth               |
 | 1:100                                  | 1\\:100                                    |
 
+### Special characters in filter
+
+Only `" \` special characters need to be escaped with the backslash escape character ( \ ).
+
+The following are examples of using the escape character in filter value.
+
+| Example Location Value                 | Filter String                              |
+| -------------------------------------- | ------------------------------------------ |
+| Austin\Dallas\Fort Worth               | filter[location]=Austin\\Dallas\\Fort Worth|
+| "Austin" Texas                         | filter[location]=\"Austin\" Texas          |
+
 ### Examples of asset filter strings
 
 Filter strings are not case sensitive. Numeric types must be passed as strings according to English locale. For example, a double of 1.1 must be sent as **"1.1"**.

@@ -190,17 +190,6 @@ The following are examples of using the escape character in query strings.
 | Austin\Dallas\Fort Worth               | Austin\\\Dallas\\\Fort Worth               |
 | 1:100                                  | 1\\:100                                    |
 
-### Special characters in filter values.
-
-Only `" \` special characters need to be escaped with the backslash escape character ( \ ) in filter values.
-
-The following are examples of using the escape character in filter value.
-
-| Example Location Value                 | Filter String                              |
-| -------------------------------------- | ------------------------------------------ |
-| Austin\Dallas\Fort Worth               | filter[location]=Austin\\Dallas\\Fort Worth|
-| "Austin" Texas                         | filter[location]=\"Austin\" Texas          |
-
 ### Examples of asset filter strings
 
 Filter strings are not case sensitive. Numeric types must be passed as strings according to English locale. For example, a double of 1.1 must be sent as **"1.1"**.
@@ -211,6 +200,17 @@ Filter strings are not case sensitive. Numeric types must be passed as strings a
 | filter[location]=Earth&filter[device]=tracer | Filter that only returns assets that contain both of the following metadata. The first metadata name = **location** with **Earth** as the metadata value, and the second metadata is name = **device** with **tracer** as the metadata value. |
 | filter[AssetTypeName]=HeaterType             | Filter that only returns assets with an AssetTypeName of **HeaterType**. |
 | filter[status]=Bad                           | Filter that returns only assets with a bad status. Status filters can have the values **Good**, **Bad**, **Warning**, and **Unknown**. |
+
+### Special characters in filter values.
+
+Only `" \` special characters need to be escaped with the backslash escape character ( \ ) in filter values.
+
+The following are examples of using the escape character in filter value.
+
+| Example Location Value                 | Filter String                              |
+| -------------------------------------- | ------------------------------------------ |
+| Austin\Dallas\Fort Worth               | filter[location]=Austin\\Dallas\\Fort Worth|
+| "Austin" Texas                         | filter[location]=\"Austin\" Texas          |
 
 ## `Asset Faceted Search` 
 

@@ -190,9 +190,9 @@ The following are examples of using the escape character in query strings.
 | Austin\Dallas\Fort Worth               | Austin\\\Dallas\\\Fort Worth               |
 | 1:100                                  | 1\\:100                                    |
 
-### Special characters in filter
+### Special characters in filter values.
 
-Only `" \` special characters need to be escaped with the backslash escape character ( \ ).
+Only `" \` special characters need to be escaped with the backslash escape character ( \ ) in filter values.
 
 The following are examples of using the escape character in filter value.
 

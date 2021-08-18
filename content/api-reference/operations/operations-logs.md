@@ -31,16 +31,6 @@ GET /api/v1/tenants/{tenantId}/logs
 <br/>Number of logs to skip<br/><br/>`[optional] integer count`
 <br/>Maximum number of logs to return<br/><br/>
 
-<h4>Enumerated Values</h4>
-
-|Parameter|Value|
-|---|---|
-|severity|0|
-|severity|1|
-|severity|2|
-|severity|3|
-|severity|4|
-
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
@@ -78,16 +68,6 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/logs
 <br/>One or more severities to filter namespace logs<br/><br/>`[optional] integer skip`
 <br/>Number of logs to skip<br/><br/>`[optional] integer count`
 <br/>Maximum number of logs to return<br/><br/>
-
-<h4>Enumerated Values</h4>
-
-|Parameter|Value|
-|---|---|
-|severity|0|
-|severity|1|
-|severity|2|
-|severity|3|
-|severity|4|
 
 <h3>Response</h3>
 

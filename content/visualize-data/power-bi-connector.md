@@ -42,7 +42,7 @@ Use OSIsoft Cloud Services Power BI Connector to retrieve OCS Data Views for use
 
 1. In the `OSIsoft Cloud Services Data Views` sign-in window, click **Connect**.<br>The `Navigator` pane displays.
 
-1. In the `Navigator` pane, click on either **Interpolated Data Views** or **Stored Data Views**, and select the Data View you want to work with in Microsoft Power BI.
+1. In the `Navigator` pane, click on either **Interpolated Data Views** or **Stored Data Views**, and select the Data View you want to work with in Microsoft Power BI. Choose **Interpolated Data Views** to get data using the interpolated retrieval mode. Choose **Stored Data Views** to get data using the stored retrieval mode.
 
    ![Select Data Views](./images/click-data-view-box.png)
 

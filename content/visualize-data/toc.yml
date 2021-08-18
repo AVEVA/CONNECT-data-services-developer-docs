@@ -4,3 +4,5 @@
   topicHref: trend-ui.md
 - name: Context switch in visual trending
   topicHref: context-switch.md
+- name: OSIsoft Cloud Services Power BI Connector
+  topicHref: power-bi-connector.md

@@ -6,18 +6,13 @@ uid: PowerBI
 
 The OSIsoft Cloud Services Power BI Connector retrieves Data Views from OCS and makes them available in Microsoft Power BI for advanced data visualization and analysis. Install OSIsoft Cloud Services Power BI Connector to retrieve Data Views for use with Microsoft Power BI as described in this section.<br>
 
-## Install requirements
+## System requirements
 
 The following are required before you install and use OSIsoft Cloud Services Power BI Connector.
 
-### Software
-
-- Microsoft Power BI Desktop
-- Microsoft Edge WebView 2 Runtime
-
-### Administrator privileges
-
-- A user account with Administrator privileges to install OSIsoft Cloud Services Power BI Connector on a local machine.
+      - Microsoft Power BI Desktop
+      - Microsoft Edge WebView 2 Runtime
+      - A user account with Administrator privileges to install OSIsoft Cloud Services Power BI Connector on a local machine.
 
 ## Install OSIsoft Cloud Services Power BI Connector
 
@@ -108,7 +103,3 @@ Use Microsoft Power BI to edit the query generated from the connector to modify 
      ![Transform data](./images/mspowerbi-incremental-refresh.png)<br>
      This example shows that incremental refresh is turned on, will cache 30 days of data, and the last 5 days will be a rolling refresh of data.<br><br>
     For more information about incremental refresh, see the Microsoft  [Incremental refresh for datasets](https://docs.microsoft.com/en-us/power-bi/connect-data/incremental-refresh-overview) page.
-
-## Release notes
-
-For details about this release, see the [OSIsoft Cloud Services Power BI Connector Release Notes](https:TBD).

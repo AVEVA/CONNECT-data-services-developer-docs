@@ -24,7 +24,7 @@ The unresolved metadata field will always be an empty list and is reserved for f
 
 ## Resolved Asset Stream
 
-The list of resolved streams come from stream reference definitions on the asset that reference existing streams in the SDS (Sequential Data Store). The resolved streams can have a corresponding type reference, but the type reference is not required. The unresolved streams are identified by the stream id rather than the stream name.
+The list of resolved streams comes from stream reference definitions on the asset that reference existing streams in the SDS (Sequential Data Store). The resolved streams can have a corresponding type reference, but the type reference is not required. The unresolved streams are identified by the stream id rather than the stream name.
 
 An unresolved stream might correspond to a stream reference on the asset that references a stream in SDS that does not exist. An unresolved stream might also correspond to a type reference on an asset type that does not have a corresponding stream reference on the asset. See the reason field in the unresolved stream for the specific reason for the unresolved stream. The unresolved streams are identified by the stream id rather than the stream name.
 

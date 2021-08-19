@@ -56,8 +56,8 @@ Content-Type: application/json
     ],
     "TypeReferences": [
         {
-            "Id": "TypeReferenceId1",
-            "Name": "TemperatureData",
+            "StreamReferenceId": "TypeReferenceId1",
+            "StreamReferenceName": "TemperatureData",
             "TypeId": "PI-Float32"
         }
     ]
@@ -86,10 +86,10 @@ Tenant identifier
 Namespace identifier
 
 [Optional] `int skip`   
-Maximum number of asset types to retrieve. If unspecified, the default (100) is used.
+Optional parameter representing the zero-based offset of the first asset type to retrieve. If not specified, a default value of 0 is used.
 
 [Optional] `int count`  
-Optional parameter, between 1 and 1000 (inclusive), that represents the maximum number of retrieved assets. If not specified, the default is 100.
+Optional parameter, between 1 and 1000 (inclusive), that represents the maximum number of retrieved asset types. If not specified, the default is 100.
 
 ### Response 
 

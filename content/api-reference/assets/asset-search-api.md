@@ -29,7 +29,7 @@ Searches and returns assets matching the search criteria.
 
 ### Request 
 ```text 
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets?skip={skip}&count={count}&orderby={orderby}&query={queryString}&{filterString}&pageSize={pageSize}&maxPages={maxPages}&continuationToken={continuationToken}
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets?skip={skip}&count={count}&orderby={orderby}&query={queryString}&{filterString}
 ```
 
 ### Parameters  
@@ -115,10 +115,11 @@ Below is a response when query string is "Name:Tracer".
 - `Id` - Identifier of the matched asset.
 - `TypeId` - asset type identifier of the asset. This is null if the asset does not reference an asset type.
 - `Name` - asset name.
-- `Description` - asset description.
+- `Description` - Description of the matched asset. If the description of the matched asset is null, the description from the asset type is returned.
 - `ETag` - version tag.
 - `CreatedDate` - asset creation date.
 - `LastModifiedDate` - last modified date of the asset.
+- `LastStatus` - Last status of the matched asset. If a status is not defined for the asset, this field will be null. If a status is defined, this field will correspond to Unknown, Good, Warning, or Bad. The display name of the asset status had no effect on this field.
 
 ```json 
 HTTP 200 OK 
@@ -219,7 +220,7 @@ Tenant identifier
 `string namespaceId`  
 Namespace identifier
 
-`string category`  
+`string name`  
 Name of the asset metadata for which you want to retrieve the facet values.
 
 [optional] `int count`   

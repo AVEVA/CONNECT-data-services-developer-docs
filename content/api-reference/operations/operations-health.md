@@ -12,17 +12,18 @@ APIs related to querying OCS Service health states.
 
 Get **Tenant** health data containing an aggregated health state and a list of services related to the tenant.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/tenants/{tenantId}/health
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Id of the Tenant<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -32,7 +33,8 @@ GET /api/v1/tenants/{tenantId}/health
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([TenantViewModel](#schematenantviewmodel))
 
 ```json
@@ -66,7 +68,7 @@ GET /api/v1/tenants/{tenantId}/health
 
 This represents a view model of a TenantDbo
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -104,15 +106,15 @@ This represents a view model of a TenantDbo
 
 Represents the various health states a HealthEventViewModel can represent.
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
-|Property|Value|
-|---|---|
-|Invalid|0|
-|Ok|1|
-|Warning|2|
-|Error|3|
-|Unknown|65535|
+|Property|Value|Description|
+|---|---|---|
+|Invalid|0|Not used, means the enumeration value is invalid.|
+|Ok|1|Health event is in a good state.|
+|Warning|2|Health event is in a warning state.|
+|Error|3|Health event is in an error state.|
+|Unknown|65535|Health event is in an unknown state indicating the service is starting up.|
 
 ---
 
@@ -125,7 +127,7 @@ Represents the various health states a HealthEventViewModel can represent.
 
 This represents a view model of a TenantDbo namespace and its underlying services.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -160,7 +162,7 @@ This represents a view model of a TenantDbo namespace and its underlying service
 
 This represents a view model of a ServiceForTenantDbo
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -186,7 +188,7 @@ This represents a view model of a ServiceForTenantDbo
 
 Object used to represent error information.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

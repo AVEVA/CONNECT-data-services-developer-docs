@@ -10,9 +10,9 @@ The OSIsoft Cloud Services Power BI Connector retrieves Data Views from OCS and 
 
 The following are required before you install and use OSIsoft Cloud Services Power BI Connector.
 
-      - Microsoft Power BI Desktop
-      - Microsoft Edge WebView 2 Runtime
-      - A user account with Administrator privileges to install OSIsoft Cloud Services Power BI Connector on a local machine.
+- Microsoft Power BI Desktop
+- Microsoft Edge WebView 2 Runtime
+- A user account with Administrator privileges to install OSIsoft Cloud Services Power BI Connector on a local machine.
 
 ## Install OSIsoft Cloud Services Power BI Connector
 

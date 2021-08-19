@@ -16,11 +16,11 @@ There are no known issues at this time.
 
 ## System requirements
 
-Refer to [Install OSIsoft Cloud Services Power BI Connector](xref:PowerBI#system-requirements).
+Refer to [System Requirements](xref:PowerBI#system-requirements).
 
 ## Installation
 
-Refer to [Install OSIsoft Cloud Services Power BI Connector](xref:PowerBI#install-osisoft-cloud- services-power-bi-connector).
+Refer to [Install OSIsoft Cloud Services Power BI Connector](xref:PowerBI#install-osisoft-cloud-services-power-bi-connector).
 
 ## Security information and guidance
 

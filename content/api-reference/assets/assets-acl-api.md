@@ -74,8 +74,6 @@ HTTP 200 OK
 
 ## `Update Assets or AssetType Access Control List` 
 
-<!-- Should we make "Assets" singular, as in "Asset" to be consistent with other methods? -->
-
 Updates the default `AccessControlList` for the assets or asset type collections. 
 
 ### Request 
@@ -294,7 +292,8 @@ HTTP 200 OK
     "Read",
     "Write",
     "Delete",
-    "ManageAccessControl"
+    "ManageAccessControl",
+	"Share"
 ]
 ```
 

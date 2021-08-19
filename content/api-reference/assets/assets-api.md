@@ -129,8 +129,6 @@ If the asset you are trying to create references an asset type (through the `Ass
 To support flexibility on creation and update, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is created from an asset type.
 ### Examples
 
-<!-- I changed the formatting of properties to be consistent with how we format examples for other APIs -->
-
 | Asset values                                      | Metadata values on the asset type                            | How references are resolved                      |
 | ------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------ |
 | `Id` = "Metadata Id"​ and `Name` = Not specified   | `Id` matches the asset type's `Metadata` `Id`                | Uses the matching asset type's `Metadata` `Name` |
@@ -337,7 +335,7 @@ Deletes all assets with the specified Ids. Use this API to delete up to a maximu
 ### Request 
 
 ```text 
-DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/Assets?id={assetId_1}[,id={assetId_n}]
+DELETE api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/Assets?id={assetId_1}[&id={assetId_n}]
 ```
 
 ### Parameters  
@@ -348,8 +346,8 @@ Tenant identifier
 `string namespaceId`   
 Namespace identifier
 
-`string[] ids`  
-Parameter consisting of a comma-separated list of asset Ids that you want to delete.
+`string[] id`  
+Parameter consisting of the asset Ids that you want to delete.
 
 ### Response 
 

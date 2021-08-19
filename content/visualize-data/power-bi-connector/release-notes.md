@@ -4,8 +4,6 @@ uid: PowerBIReleaseNotes
 
 # Release notes
 
-OSIsoft Cloud Services Power BI Connector
-
 ## Overview
 
 The OSIsoft Cloud Services Power BI Connector retrieves Data Views from OCS and makes them available in Microsoft Power BI for advanced data visualization and analysis.

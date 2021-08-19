@@ -202,6 +202,17 @@ Filter strings are not case sensitive. Numeric types must be passed as strings a
 | filter[AssetTypeName]=HeaterType             | Filter that only returns assets with an AssetTypeName of **HeaterType**. |
 | filter[status]=Bad                           | Filter that returns only assets with a bad status. Status filters can have the values **Good**, **Bad**, **Warning**, and **Unknown**. |
 
+### Special characters in filter values
+
+Only `" \` special characters need to be escaped with the backslash escape character ( \ ) in filter values.
+
+The following are examples of using the escape character in filter value.
+
+| Example Location Value                 | Filter String                              |
+| -------------------------------------- | ------------------------------------------ |
+| Austin\Dallas\Fort Worth               | filter[location]=Austin\\Dallas\\Fort Worth|
+| "Austin" Texas                         | filter[location]=\"Austin\" Texas          |
+
 ## `Asset Faceted Search` 
 
 Asset faceted search allows for searching using asset facets. Asset facets are not case sensitive.  Only asset metadata can be used in asset faceted searches.

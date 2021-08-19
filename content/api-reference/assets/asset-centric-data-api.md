@@ -410,7 +410,7 @@ Start index for the intervals
 End index for the intervals
 
 [optional] `string[] stream`
-Optional parameter consisting of the streams that you want to get data from.
+Optional parameter consisting of the streams that you want data from.
 
 ### Response
 The response includes a status code and a response body.

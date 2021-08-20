@@ -21,14 +21,14 @@ To perform this procedure you must have already defined streams.
 8. Select the communities with which you want to share streams and click **Continue**. If necessary, you can filter the list of communities by typing in the **Filter Communities** box.
 9. Click **Continue**. and then click **Share**. When prompted for confirmation, click **Confirm**.<br>All members of the selected communities are able to read data from the shared streams.
 
-## Unshare streams from `Community Details`
+## Unshare streams from Community Details
 
 1. On the `Communities` overview page, find the community where you are sharing streams and click **Details**.
 2. On the `Community Details` page, click the **Tenants** tab.
 3. Select your own tenant.<br>If you have shared streams, a **Streams** tab appears at right.
 4. On the **Streams** tab, select the streams you want to unshare and click **Unshare Streams**. When prompted for confirmation, click **Unshare**.
 
-## Unshare streams from the `Sequential Data Store`
+## Unshare streams from the Sequential Data Store
 
 In addition to unsharing streams, the Sequential Data Store provides many capabilities for managing streams. For more information, see [Manage streams](xref:manage-streams).
 

@@ -16,12 +16,12 @@ To perform this procedure, you must be a [Community Administrator](xref:communit
 
 2. On the `Community Details` page, on the **My Users** tab, click **New User**.
 
-3. Select users. If necessary, you can filter the list of users by typing in the **Filter users** box. You can also filter by role. Selecting any role shown at the top of the user list displays only users who have been assigned that role.
+3. Select users. If necessary, you can filter the list of users by typing in the **Filter users** box. You can also filter by role. Selecting any role shown at the top of the user list displays only users assigned that role.
 
-4. Select the roles to apply to users being added. You can assign the following roles:
+4. Select the roles to apply to users you are adding. You can assign the following roles:
 
    - [Community Administrator](xref:communityroles#community-administrator). Only a Community Administrator can assign the Community Administrator role.
-   - [Community Member](xref:communityroles#community-member)
+   - [Community Member](xref:communityroles#community-member).
    - [Community Moderator](xref:communityroles#community-moderator). 
 
 5. Click **Save**.
@@ -34,7 +34,7 @@ To perform this procedure, you must be a [Community Administrator](xref:communit
 
 1. On the `Communities` overview page, find the community where you want to remove users and click **Details**.
 
-2. On the `Community Details` page, on the **My Users** tab, select one or more users. A details pane appears. If necessary, you can filter the list of users by typing in the **Filter users** box. You can also filter by role. Selecting any role shown at the top of the user list displays only users who have been assigned that role.
+2. On the `Community Details` page, on the **My Users** tab, select one or more users. A details pane appears. If necessary, you can filter the list of users by typing in the **Filter users** box. You can also filter by role. Selecting any role shown at the top of the user list displays only users assigned that role.
 
 3. On the detail pane, click **Remove User**. When prompted for confirmation, click **Remove**.
 

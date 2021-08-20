@@ -4,9 +4,9 @@ uid: add-community
 
 # Create a community
 
-When you create a community, you define a space where external partners share operational data with one another. The community is private; no one outside of your community will have access.
+When you create a community, you define a space where external partners share operational data with one another. The community is private; no one outside of your community has access.
 
-When you create a community, you can designate a [Community Administrator](xref:communityroles#community-administrator) as part of the process.
+When you create a community, you can designate a [Community Administrator](xref:communityroles#community-administrator).
 
 For information about adding or deleting tenants from an existing community, see [Manage tenants in a community](xref:managecommunity).
 

@@ -4,19 +4,19 @@ uid: managecommunity
 
 # Manage tenants in a community
 
-The `Community Details` page lets you perform various tasks for managing tenants that already belong to a community. It also lets you add tenants to a community.
+Use the `Community Details` page to manage tenants that already belong to a community. This page also lets you add tenants to a community.
 
 To create a new community, see [Add a community](xref:add-community).
 
 ## Invite a tenant to a community
 
-OCS lets you invite business partners to join a community so they are enabled to share data. 
+Invite business partners to join a community so they can share data. 
 
 **Note:** The business partner must already belong to a tenant in OCS.
 
 Two different users must perform the following procedure to invite and add a tenant to a community:
 
-- One user, the "inviter," issues an invitation to another tenant to join a community. To be an inviter, you must be a [Community Administrator](xref:communityroles#community-administrator).
+- One user, the "inviter," invites another tenant. To be an inviter, you must be a [Community Administrator](xref:communityroles#community-administrator).
 - Another user, the "invitee," accepts the invitation on behalf of their tenant. To be an invitee, you must be a [Tenant Administrator](xref:communityroles#tenant-administrator) of a separate tenant that does not already belong to the community.
 
 A. **Inviter:** Perform the following steps to issue an invitation:
@@ -35,11 +35,11 @@ B. **Invitee:** Perform the following steps to accept an invitation:
 
   OCS opens and displays a login dialog.
 
-2. Enter the tenant ID or tenant alias of the tenant from which you want to share data and click **Continue**. You must be a Tenant Administrator for this tenant to accept the invitation.
+2. Enter the tenant ID or tenant alias of the tenant from which you want to share data and click **Continue**. You must be a Tenant Administrator to accept the invitation.
 
 3. On the authentication dialog, verify your identity.
 
-  OCS displays a page saying that your tenant will be joining the community from which the invite was issued. Membership in the community does not actually begin until the inviter confirms the invitation in the next step.
+  OCS displays a page saying that your tenant will join the community that issued the the invitation. Membership in the community does not begin until the inviter confirms the invitation in the next step.
 
 4. Click **Join**.
 

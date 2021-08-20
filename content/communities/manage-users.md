@@ -56,9 +56,9 @@ To perform this procedure, you must be a [Community Administrator](xref:communit
 
 1. On the `Communities` overview page, find the community where you want to assign roles and click **Details**.
 
-2. On the `Community Details` page, on the **My Users** tab, select a user. The User Details pane appears at right.  If necessary, you can filter the list of users by typing in the **Filter users** box. You can also filter by role. Selecting any role shown at the top of the user list displays only users who have been assigned that role.
+2. On the `Community Details` page, on the **My Users** tab, select a user. The `User Details` pane appears at right. If necessary, you can filter the list of users by typing in the **Filter users** box. You can also filter by role. Selecting any role shown at the top of the user list displays only users who have been assigned that role.
 
-3. On the details pane, click **Manage Roles**.
+3. On the `User Details` pane, click **Manage Roles**.
 
 4. Select the roles to apply to users being added. The following roles are possible:
 

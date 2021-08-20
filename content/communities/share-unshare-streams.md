@@ -16,7 +16,7 @@ To perform this procedure you must have already defined streams.
 
 2. If necessary, select a namespace at top left.
 
-    ![](images\select-namespace-streams.png "Select a namespace and Streams")
+    ![Select a namespace and streams](images\select-namespace-streams.png "Select a namespace and streams")
 
 3. If it is not already selected, select **Streams** at top left.
 
@@ -56,11 +56,11 @@ To perform this procedure you must have already defined streams.
 
 2. If necessary, select a namespace or community from the **Change Namespace or Community** dropdown list.
 
-    ![](images\select-namespace-community.png "Select a namespace or community")
+    ![Select a namespace or community](images\select-namespace-community.png "Select a namespace or community")
 
 3. Use the toggle switches to filter streams by namespace or community.
 
-    ![](images\namespace-communities-switches.png "Filter by namespace or community")
+    ![Filter by namespace or community](images\namespace-communities-switches.png "Filter by namespace or community")
 
 4. From the list, select a namespace or a community.
 

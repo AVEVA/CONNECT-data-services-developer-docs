@@ -14,9 +14,9 @@ For information about adding or deleting tenants from an existing community, see
 
 1. On the navigation bar, click **Communities**.
 
-2. On the `Communities` page, click **Add Communities**.
+2. On the `Communities` page, click **Add Community**.
 
-3. Enter a name and description for the new community and click **Enter**.
+3. Enter a **Name** and **Description** for the new community and click **Next**.
 
     A dialog opens that allows you to assign a Community Administrator from your tenant.
 

@@ -55,7 +55,7 @@ C. **Inviter:** Perform the following steps to confirm the new tenant:
 
 4. On the `Community Details` page, click the **Invitations** tab.
 
-5. Select an invitation with a status of Invitation Accepted.
+5. Select an invitation with a status of **Invitation Accepted**.
 
   The `Invitation Details` pane opens.
 

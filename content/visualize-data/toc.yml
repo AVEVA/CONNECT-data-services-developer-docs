@@ -4,3 +4,6 @@
   topicHref: trend-ui.md
 - name: Context switch in visual trending
   topicHref: context-switch.md
+- topicUid: PowerBI
+  items:
+  - topicUid: PowerBIReleaseNotes

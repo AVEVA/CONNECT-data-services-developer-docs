@@ -4,7 +4,6 @@ uid: assets-assets
 ---
 
 # Assets
-The Assets API allows you to create, read, update, and delete assets. The asset feature supports the HTTP entity tag(ETag) and If-Match for conditional requests.When a `GET` call is performed, the HTTP response header includes an Etag which indicates what version of the asset resource will be retrieved. #### Example Etag Response Header This is version 7 of a particular asset. ``` Etag: "7" ``` To edit or delete the asset, specify If-Match in the HTTP request header when calling `DELETE` or `PUT`. #### Example If-Match Response Header Modify or delete only if the current asset matches version 7. Otherwise, do not perform this operation.If this condition fails, return a 412. ``` If-Match : "7" ``` Note: If-Match is optional. If you want to delete or modify an asset regardless of the asset version, do not specify an If-Match.
 
 ## `Get Asset Owner`
 
@@ -20,10 +19,10 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 <h4>Parameters</h4>
 
-`string assetId`
-<br/>Asset identifier<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>Namespace identifier.<br/><br/>`string assetId`
+<br/>Asset identifier<br/><br/>
 
 <h3>Response</h3>
 
@@ -31,7 +30,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |---|---|---|
 |200|[Trustee](#schematrustee)|OK|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
-|403|None|Forbidden|
+|403|None|Forbidden.|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 
 <h4>Example response body</h4>
@@ -98,23 +97,8 @@ Updated owner<br/>
 |---|---|---|
 |204|None|Asset owner updated|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
-|403|None|Forbidden|
+|403|None|Forbidden.|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
-
-<h4>Example response body</h4>
-
-> 400 Response ([ErrorTemplate](#schemaerrortemplate))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Resolution": "string",
-  "Reason": "string",
-  "property1": null,
-  "property2": null
-}
-```
 
 ---
 
@@ -132,10 +116,10 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 <h4>Parameters</h4>
 
-`string assetId`
-<br/>Asset identifier<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>Namespace identifier.<br/><br/>`string assetId`
+<br/>Asset identifier<br/><br/>
 
 <h3>Response</h3>
 
@@ -143,7 +127,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|Access control list of the asset with given identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
-|403|None|Forbidden|
+|403|None|Forbidden.|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 
 <h4>Example response body</h4>
@@ -234,23 +218,8 @@ Updated ACL<br/>
 |---|---|---|
 |204|None|Update success.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
-|403|None|Forbidden|
+|403|None|Forbidden.|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
-
-<h4>Example response body</h4>
-
-> 400 Response ([ErrorTemplate](#schemaerrortemplate))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Resolution": "string",
-  "Reason": "string",
-  "property1": null,
-  "property2": null
-}
-```
 
 ---
 
@@ -268,10 +237,10 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 <h4>Parameters</h4>
 
-`string assetId`
-<br/>Asset identifier<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>Namespace identifier.<br/><br/>`string assetId`
+<br/>Asset identifier<br/><br/>
 
 <h3>Response</h3>
 
@@ -279,7 +248,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |---|---|---|
 |200|Inline|Access control list of the asset with given identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
-|403|None|Forbidden|
+|403|None|Forbidden.|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 
 <h4>Example response body</h4>
@@ -324,10 +293,10 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 <h4>Parameters</h4>
 
-`string assetId`
-<br/>Asset identifier<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>Namespace identifier.<br/><br/>`string assetId`
+<br/>Asset identifier<br/><br/>
 
 <h3>Response</h3>
 
@@ -335,7 +304,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |---|---|---|
 |200|[Asset](#schemaasset)|Assets with specified identifier|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
-|403|None|Forbidden|
+|403|None|Forbidden.|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 
 <h4>Response Headers</h4>
@@ -401,10 +370,10 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId
 
 <h4>Parameters</h4>
 
-`string assetId`
-<br/>Asset identifier<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>Namespace identifier.<br/><br/>`string assetId`
+<br/>Asset identifier<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -442,7 +411,7 @@ Asset to create<br/>
 |201|[Asset](#schemaasset)|Asset created|
 |302|None|Asset you attempted to create is identical to one that already exists.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
-|403|[ErrorTemplate](#schemaerrortemplate)|Forbidden|
+|403|[ErrorTemplate](#schemaerrortemplate)|Forbidden.|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 |409|[ErrorTemplate](#schemaerrortemplate)|Asset you attempted to create has a conflict. See the response body for additional details.|
 
@@ -537,10 +506,10 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 <h4>Parameters</h4>
 
-`string assetId`
-<br/>Asset identifier<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>Namespace identifier.<br/><br/>`string assetId`
+<br/>Asset identifier<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -577,7 +546,7 @@ Asset to create or update<br/>
 |200|[Asset](#schemaasset)|OK|
 |201|[Asset](#schemaasset)|Asset created with specified identifier|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
-|403|None|Forbidden|
+|403|None|Forbidden.|
 |409|[ErrorTemplate](#schemaerrortemplate)|Conflict|
 |412|[ErrorTemplate](#schemaerrortemplate)|Pre-Condition Failed|
 
@@ -671,10 +640,10 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{asset
 
 <h4>Parameters</h4>
 
-`string assetId`
-<br/>Asset identifier<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>Namespace identifier.<br/><br/>`string assetId`
+<br/>Asset identifier<br/><br/>
 
 <h3>Response</h3>
 
@@ -682,12 +651,120 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{asset
 |---|---|---|
 |204|None|Asset with specified identifier has been deleted.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
-|403|None|Forbidden|
+|403|None|Forbidden.|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not Found|
 |409|[ErrorTemplate](#schemaerrortemplate)|Conflict|
 |412|[ErrorTemplate](#schemaerrortemplate)|Pre-Condition Failed|
 
+# Assets
+
+## `List Assets`
+
+<a id="opIdRequestManager_List Assets"></a>
+
+Returns an array of assets in a given namespace and the total number of assets returned, specified as Total-Count in the HTTP response header.
+
+<h3>Request</h3>
+
+```text 
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
+?skip={skip}&count={count}&orderBy={orderBy}&Comparer={Comparer}&Count={Count}&Keys={Keys}&System.Collections.Generic.IDictionary<TKey,TValue>.Keys={System.Collections.Generic.IDictionary<TKey,TValue>.Keys}&System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys={System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys}&Values={Values}&System.Collections.Generic.IDictionary<TKey,TValue>.Values={System.Collections.Generic.IDictionary<TKey,TValue>.Values}&System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values={System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values}&Item={Item}&System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly={System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly}&System.Collections.ICollection.IsSynchronized={System.Collections.ICollection.IsSynchronized}&System.Collections.ICollection.SyncRoot={System.Collections.ICollection.SyncRoot}&System.Collections.IDictionary.IsFixedSize={System.Collections.IDictionary.IsFixedSize}&System.Collections.IDictionary.IsReadOnly={System.Collections.IDictionary.IsReadOnly}&System.Collections.IDictionary.Keys={System.Collections.IDictionary.Keys}&System.Collections.IDictionary.Values={System.Collections.IDictionary.Values}&System.Collections.IDictionary.Item={System.Collections.IDictionary.Item}&query={query}&maxPages={maxPages}&pageSize={pageSize}&continuationToken={continuationToken}
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+`[optional] integer skip`
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string orderBy`
+<br/>Optional parameter which returns assets ordered either by the asset `Id` or the asset `Name`. Specify `asc` or `desc` to return the results in ascending or descending order. If not specified, the default is ascending order.<br/><br/>`[optional] object Comparer`
+<br/><br/>`[optional] integer Count`
+<br/><br/>`[optional] array Keys`
+<br/><br/>`[optional] array System.Collections.Generic.IDictionary<TKey,TValue>.Keys`
+<br/><br/>`[optional] array System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys`
+<br/><br/>`[optional] array Values`
+<br/><br/>`[optional] array System.Collections.Generic.IDictionary<TKey,TValue>.Values`
+<br/><br/>`[optional] array System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values`
+<br/><br/>`[optional] array Item`
+<br/><br/>`[optional] boolean System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly`
+<br/><br/>`[optional] boolean System.Collections.ICollection.IsSynchronized`
+<br/><br/>`[optional] any System.Collections.ICollection.SyncRoot`
+<br/><br/>`[optional] boolean System.Collections.IDictionary.IsFixedSize`
+<br/><br/>`[optional] boolean System.Collections.IDictionary.IsReadOnly`
+<br/><br/>`[optional] array System.Collections.IDictionary.Keys`
+<br/><br/>`[optional] array System.Collections.IDictionary.Values`
+<br/><br/>`[optional] any System.Collections.IDictionary.Item`
+<br/><br/>`[optional] string query`
+<br/>Query identifier.<br/><br/>`[optional] integer maxPages`
+<br/>Max pages, internal use only<br/><br/>`[optional] integer pageSize`
+<br/>Page size, internal use only<br/><br/>`[optional] string continuationToken`
+<br/>Internal use only<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[Asset](#schemaasset)[]|List of assets in the system.|
+|400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
+
+<h4>Response Headers</h4>
+
+|Status|Header|Type|Description|
+|---|---|---|---|
+|200|Total-Count|integer|Total number of assets in the namespace.|
+
 <h4>Example response body</h4>
+
+> 200 Response
+
+```json
+[
+  {
+    "Id": "SampleAsset",
+    "Description": "This is a sample asset.",
+    "Metadata": [
+      {
+        "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+        "Name": "ModelNumber",
+        "Description": "This is a static attribute on the asset which represents the model number.",
+        "SdsTypeCode": "Double",
+        "Value": 0.01
+      }
+    ],
+    "StreamReferences": [
+      {
+        "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+        "Name": "Data",
+        "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
+        "StreamId": "PI_bifrostbigdaddy_1"
+      }
+    ]
+  },
+  {
+    "Id": "SecondSampleAsset",
+    "Description": "This is a scond sample asset.",
+    "Metadata": [
+      {
+        "Id": "90ef6205-152b-40ed-8ffa-bac3feff6fa2",
+        "Name": "ModelNumber",
+        "Description": "This is a static attribute on the asset which represents the model number.",
+        "SdsTypeCode": "Double",
+        "Value": 900
+      }
+    ],
+    "StreamReferences": [
+      {
+        "Id": "fdda0985-7dba-48aa-95fc-55620a9b59ad",
+        "Name": "Data",
+        "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_2.",
+        "StreamId": "PI_bifrostbigdaddy_2"
+      }
+    ]
+  }
+]
+```
 
 > 400 Response ([ErrorTemplate](#schemaerrortemplate))
 
@@ -699,6 +776,301 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{asset
   "Reason": "string",
   "property1": null,
   "property2": null
+}
+```
+
+---
+
+## `Create Asset`
+
+<a id="opIdRequestManager_Create Asset"></a>
+
+Creates a new asset. If the asset you are trying to create references an asset type (through the AssetTypeId property) and if the corresponding asset type has a metadata value with the same identifier, then the name and SDS type code of the metadata value on the asset must be null. If the asset type does not have metadata value with a corresponding Id, the name and SDS type code on the asset cannot be null. To support flexibility on creation and update, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is created from an asset type.
+
+<h3>Request</h3>
+
+```text 
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h4>Request Body</h4>
+
+Asset you want to create<br/>
+
+```json
+{
+  "Id": "SampleAssetA",
+  "Description": "This is a sample asset a.",
+  "Metadata": [
+    {
+      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+      "Name": "ModelNumber",
+      "Description": "This is a static attribute on the asset which represents the model number.",
+      "SdsTypeCode": "Double",
+      "Value": 0.01
+    }
+  ],
+  "StreamReferences": [
+    {
+      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+      "Name": "Data",
+      "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
+      "StreamId": "PI_bifrostbigdaddy_1"
+    }
+  ]
+}
+```
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[Asset](#schemaasset)|OK|
+|201|[Asset](#schemaasset)|Asset created|
+|302|None|Asset you attempted to create is identical to one that already exists.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
+|403|[ErrorTemplate](#schemaerrortemplate)|You are not authorized to create assets.|
+|409|[ErrorTemplate](#schemaerrortemplate)|Conflict. See the response body for additional details.|
+
+<h4>Response Headers</h4>
+
+|Status|Header|Type|Description|
+|---|---|---|---|
+|200|Etag|integer|Version|
+|201|Etag|integer|Version|
+|302|Location|string|Location to get the identical resource.|
+
+<h4>Example response body</h4>
+
+> 200 Response
+
+```json
+{
+  "Id": "SampleAssetA",
+  "Description": "This is a sample asset a.",
+  "Metadata": [
+    {
+      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+      "Name": "ModelNumber",
+      "Description": "This is a static attribute on the asset which represents the model number.",
+      "SdsTypeCode": "Double",
+      "Value": 0.01
+    }
+  ],
+  "StreamReferences": [
+    {
+      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+      "Name": "Data",
+      "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
+      "StreamId": "PI_bifrostbigdaddy_1"
+    }
+  ]
+}
+```
+
+> 201 Response
+
+```json
+{
+  "Id": "SampleAssetA",
+  "Description": "This is a sample asset a.",
+  "Metadata": [
+    {
+      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+      "Name": "ModelNumber",
+      "Description": "This is a static attribute on the asset which represents the model number.",
+      "SdsTypeCode": "Double",
+      "Value": 0.01
+    }
+  ],
+  "StreamReferences": [
+    {
+      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+      "Name": "Data",
+      "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
+      "StreamId": "PI_bifrostbigdaddy_1"
+    }
+  ]
+}
+```
+
+> 400 Response ([ErrorTemplate](#schemaerrortemplate))
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+```
+
+---
+
+## `Bulk Create Assets`
+
+<a id="opIdRequestManager_Bulk Create Assets"></a>
+
+Creates assets in bulk. Creates multiple assets in a single call.
+
+<h3>Request</h3>
+
+```text 
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h4>Request Body</h4>
+
+List of assets you want to create.<br/>
+
+```json
+[
+  {
+    "Id": "SampleAssetA",
+    "Description": "This is a sample asset a.",
+    "Metadata": [
+      {
+        "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+        "Name": "ModelNumber",
+        "Description": "This is a static attribute on the asset which represents the model number.",
+        "SdsTypeCode": "Double",
+        "Value": 0.01
+      }
+    ],
+    "StreamReferences": [
+      {
+        "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+        "Name": "Data",
+        "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
+        "StreamId": "PI_bifrostbigdaddy_1"
+      }
+    ]
+  }
+]
+```
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[MultiStatusResultOfAssetAndChildErrorTemplate](#schemamultistatusresultofassetandchilderrortemplate)|Assets as persisted, including values for optional parameters that were omitted in the request.|
+|207|[MultiStatusResultOfAssetAndChildErrorTemplate](#schemamultistatusresultofassetandchilderrortemplate)|Partial success. Some assets were created. See response body for additional details.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
+
+<h4>Example response body</h4>
+
+> 200 Response ([MultiStatusResultOfAssetAndChildErrorTemplate](#schemamultistatusresultofassetandchilderrortemplate))
+
+```json
+{
+  "Reason": "string",
+  "Error": "string",
+  "OperationId": "string",
+  "Data": [
+    {
+      "Id": "SampleAssetA",
+      "Description": "This is a sample asset a.",
+      "Metadata": [
+        {
+          "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+          "Name": "ModelNumber",
+          "Description": "This is a static attribute on the asset which represents the model number.",
+          "SdsTypeCode": "Double",
+          "Value": 0.01
+        }
+      ],
+      "StreamReferences": [
+        {
+          "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+          "Name": "Data",
+          "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
+          "StreamId": "PI_bifrostbigdaddy_1"
+        }
+      ]
+    }
+  ],
+  "ChildErrors": [
+    {
+      "OperationId": "string",
+      "Error": "string",
+      "Resolution": "string",
+      "Reason": "string",
+      "StatusCode": 0,
+      "property1": null,
+      "property2": null
+    }
+  ]
+}
+```
+
+---
+
+## `Bulk Delete Assets`
+
+<a id="opIdRequestManager_Bulk Delete Assets"></a>
+
+Deletes all assets with the specified identifiers. This API can delete up to a maximum of 1000 assets in one API call.
+
+<h3>Request</h3>
+
+```text 
+DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets
+?id={id}
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+`[optional] array id`
+<br/>Comma separated asset identifiers in the form of id={assetId_1},id={assetId_2}<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|204|None|Assets with the specified ids has been deleted.|
+|207|[MultiStatusResultOfStringAndChildErrorTemplate](#schemamultistatusresultofstringandchilderrortemplate)|Partial success. Not all assets were deleted. See response body for additional details.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
+
+<h4>Example response body</h4>
+
+> 207 Response ([MultiStatusResultOfStringAndChildErrorTemplate](#schemamultistatusresultofstringandchilderrortemplate))
+
+```json
+{
+  "Reason": "string",
+  "Error": "string",
+  "OperationId": "string",
+  "Data": [
+    "string"
+  ],
+  "ChildErrors": [
+    {
+      "OperationId": "string",
+      "Error": "string",
+      "Resolution": "string",
+      "Reason": "string",
+      "StatusCode": 0,
+      "property1": null,
+      "property2": null
+    }
+  ]
 }
 ```
 
@@ -740,11 +1112,11 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{asset
 
 <h4>Enumerated Values</h4>
 
-|Property|Value|
-|---|---|
-|User|1|
-|Client|2|
-|Role|3|
+|Property|Value|Description|
+|---|---|---|
+|User|1||
+|Client|2||
+|Role|3||
 
 ---
 
@@ -1230,6 +1602,160 @@ Status definition type. Currently, only StreamPropertyMapping is supported.
 |---|---|
 |Unspecified|0|
 |StreamPropertyMapping|1|
+
+---
+
+### MultiStatusResultOfAssetAndChildErrorTemplate
+
+<a id="schemamultistatusresultofassetandchilderrortemplate"></a>
+<a id="schema_MultiStatusResultOfAssetAndChildErrorTemplate"></a>
+<a id="tocSmultistatusresultofassetandchilderrortemplate"></a>
+<a id="tocsmultistatusresultofassetandchilderrortemplate"></a>
+
+A multi status result is returned to indicate a partial success.
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Reason|string|false|true|Failure reason.|
+|Error|string|false|true|Error string|
+|OperationId|string|false|true|Operational identifier of the call. Used for support.|
+|Data|[[Asset](#schemaasset)]|false|true|Requested information from call.|
+|ChildErrors|[[ChildErrorTemplate](#schemachilderrortemplate)]|false|true|Child error pertaining to specific resources.|
+
+```json
+{
+  "Reason": "string",
+  "Error": "string",
+  "OperationId": "string",
+  "Data": [
+    {
+      "Id": "SampleAssetA",
+      "Description": "This is a sample asset a.",
+      "Metadata": [
+        {
+          "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
+          "Name": "ModelNumber",
+          "Description": "This is a static attribute on the asset which represents the model number.",
+          "SdsTypeCode": "Double",
+          "Value": 0.01
+        }
+      ],
+      "StreamReferences": [
+        {
+          "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+          "Name": "Data",
+          "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
+          "StreamId": "PI_bifrostbigdaddy_1"
+        }
+      ]
+    }
+  ],
+  "ChildErrors": [
+    {
+      "OperationId": "string",
+      "Error": "string",
+      "Resolution": "string",
+      "Reason": "string",
+      "StatusCode": 0,
+      "property1": null,
+      "property2": null
+    }
+  ]
+}
+
+```
+
+---
+
+### ChildErrorTemplate
+
+<a id="schemachilderrortemplate"></a>
+<a id="schema_ChildErrorTemplate"></a>
+<a id="tocSchilderrortemplate"></a>
+<a id="tocschilderrortemplate"></a>
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|OperationId|string|false|true|Operation identifier|
+|Error|string|false|true|Error string|
+|Resolution|string|false|true|Resolution string|
+|Reason|string|false|true|Error reason string|
+|StatusCode|int32|false|false|None|
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "StatusCode": 0,
+  "property1": null,
+  "property2": null
+}
+
+```
+
+---
+
+### IEqualityComparerOfString
+
+<a id="schemaiequalitycomparerofstring"></a>
+<a id="schema_IEqualityComparerOfString"></a>
+<a id="tocSiequalitycomparerofstring"></a>
+<a id="tocsiequalitycomparerofstring"></a>
+
+```json
+{}
+
+```
+
+---
+
+### MultiStatusResultOfStringAndChildErrorTemplate
+
+<a id="schemamultistatusresultofstringandchilderrortemplate"></a>
+<a id="schema_MultiStatusResultOfStringAndChildErrorTemplate"></a>
+<a id="tocSmultistatusresultofstringandchilderrortemplate"></a>
+<a id="tocsmultistatusresultofstringandchilderrortemplate"></a>
+
+A multi status result is returned to indicate a partial success.
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Reason|string|false|true|Failure reason.|
+|Error|string|false|true|Error string|
+|OperationId|string|false|true|Operational identifier of the call. Used for support.|
+|Data|string[]|false|true|Requested information from call.|
+|ChildErrors|[[ChildErrorTemplate](#schemachilderrortemplate)]|false|true|Child error pertaining to specific resources.|
+
+```json
+{
+  "Reason": "string",
+  "Error": "string",
+  "OperationId": "string",
+  "Data": [
+    "string"
+  ],
+  "ChildErrors": [
+    {
+      "OperationId": "string",
+      "Error": "string",
+      "Resolution": "string",
+      "Reason": "string",
+      "StatusCode": 0,
+      "property1": null,
+      "property2": null
+    }
+  ]
+}
+
+```
 
 ---
 

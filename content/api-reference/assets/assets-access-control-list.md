@@ -31,7 +31,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/{r
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|OK|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
-|403|[ErrorTemplate](#schemaerrortemplate)|Forbidden|
+|403|[ErrorTemplate](#schemaerrortemplate)|Forbidden.|
 
 <h4>Example response body</h4>
 
@@ -123,22 +123,7 @@ Updated ACL<br/>
 |---|---|---|
 |204|None|No Content|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
-|403|[ErrorTemplate](#schemaerrortemplate)|Forbidden|
-
-<h4>Example response body</h4>
-
-> 400 Response ([ErrorTemplate](#schemaerrortemplate))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Resolution": "string",
-  "Reason": "string",
-  "property1": null,
-  "property2": null
-}
-```
+|403|[ErrorTemplate](#schemaerrortemplate)|Forbidden.|
 
 ---
 
@@ -156,10 +141,10 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessRights/{re
 
 <h4>Parameters</h4>
 
-`string resource`
-<br/>Assets or AssetTypes<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>Namespace identifier.<br/><br/>`string resource`
+<br/>Assets or AssetTypes<br/><br/>
 
 <h3>Response</h3>
 
@@ -167,22 +152,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessRights/{re
 |---|---|---|
 |200|Inline|OK|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
-|403|[ErrorTemplate](#schemaerrortemplate)|Forbidden|
-
-<h4>Example response body</h4>
-
-> 400 Response ([ErrorTemplate](#schemaerrortemplate))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Resolution": "string",
-  "Reason": "string",
-  "property1": null,
-  "property2": null
-}
-```
+|403|[ErrorTemplate](#schemaerrortemplate)|Forbidden.|
 
 ---
 ## Definitions

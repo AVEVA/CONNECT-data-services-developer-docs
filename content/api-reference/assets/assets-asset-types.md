@@ -250,10 +250,10 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 
 <h4>Parameters</h4>
 
-`string assetTypeId`
-<br/>Asset type identifier<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>Namespace identifier.<br/><br/>`string assetTypeId`
+<br/>Asset type identifier<br/><br/>
 
 <h3>Response</h3>
 
@@ -325,10 +325,10 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{ass
 
 <h4>Parameters</h4>
 
-`string assetTypeId`
-<br/>Asset type identifier<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>Namespace identifier.<br/><br/>`string assetTypeId`
+<br/>Asset type identifier<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -455,10 +455,10 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 
 <h4>Parameters</h4>
 
-`string assetTypeId`
-<br/>Asset type identifier<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>Namespace identifier.<br/><br/>`string assetTypeId`
+<br/>Asset type identifier<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -586,10 +586,10 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{a
 
 <h4>Parameters</h4>
 
-`string assetTypeId`
-<br/>Asset type identifier<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>Namespace identifier.<br/><br/>`string assetTypeId`
+<br/>Asset type identifier<br/><br/>
 `[optional] boolean deleteAssets`
 <br/>Call should also delete all assets of this asset type. Default is false.<br/><br/>
 
@@ -599,25 +599,10 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{a
 |---|---|---|
 |204|None|Asset type with specified identifier has been deleted.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
-|403|None|Forbidden|
+|403|None|Forbidden.|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not Found|
 |409|[ErrorTemplate](#schemaerrortemplate)|Conflict. See response body for additional details.|
 |412|[ErrorTemplate](#schemaerrortemplate)|Pre-Condition Failed. See response body for additional details.|
-
-<h4>Example response body</h4>
-
-> 400 Response ([ErrorTemplate](#schemaerrortemplate))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Resolution": "string",
-  "Reason": "string",
-  "property1": null,
-  "property2": null
-}
-```
 
 ---
 
@@ -737,10 +722,10 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 
 <h4>Parameters</h4>
 
-`string assetTypeId`
-<br/>Asset type identifier<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>Namespace identifier.<br/><br/>`string assetTypeId`
+<br/>Asset type identifier<br/><br/>
 
 <h3>Response</h3>
 
@@ -748,7 +733,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 |---|---|---|
 |200|[Trustee](#schematrustee)|OK|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
-|403|None|Forbidden|
+|403|None|Forbidden.|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 
 <h4>Example response body</h4>
@@ -815,23 +800,8 @@ Updated owner<br/>
 |---|---|---|
 |204|None|Asset type owner updated|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
-|403|None|Forbidden|
+|403|None|Forbidden.|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
-
-<h4>Example response body</h4>
-
-> 400 Response ([ErrorTemplate](#schemaerrortemplate))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Resolution": "string",
-  "Reason": "string",
-  "property1": null,
-  "property2": null
-}
-```
 
 ---
 
@@ -849,10 +819,10 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 
 <h4>Parameters</h4>
 
-`string assetTypeId`
-<br/>Asset type identifier<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>Namespace identifier.<br/><br/>`string assetTypeId`
+<br/>Asset type identifier<br/><br/>
 
 <h3>Response</h3>
 
@@ -860,7 +830,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|Access control list of the asset type with given identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
-|403|None|Forbidden|
+|403|None|Forbidden.|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 
 <h4>Example response body</h4>
@@ -951,23 +921,8 @@ Updated ACL<br/>
 |---|---|---|
 |204|None|Update success.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
-|403|None|Forbidden|
+|403|None|Forbidden.|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
-
-<h4>Example response body</h4>
-
-> 400 Response ([ErrorTemplate](#schemaerrortemplate))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Resolution": "string",
-  "Reason": "string",
-  "property1": null,
-  "property2": null
-}
-```
 
 ---
 
@@ -985,10 +940,10 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 
 <h4>Parameters</h4>
 
-`string assetTypeId`
-<br/>Asset type identifier<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>Namespace identifier.<br/><br/>`string assetTypeId`
+<br/>Asset type identifier<br/><br/>
 
 <h3>Response</h3>
 
@@ -996,7 +951,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 |---|---|---|
 |200|Inline|Access control list of the asset with given identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
-|403|None|Forbidden|
+|403|None|Forbidden.|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 
 <h4>Example response body</h4>
@@ -1562,11 +1517,11 @@ A multi status result is returned to indicate a partial success.
 
 <h4>Enumerated Values</h4>
 
-|Property|Value|
-|---|---|
-|User|1|
-|Client|2|
-|Role|3|
+|Property|Value|Description|
+|---|---|---|
+|User|1||
+|Client|2||
+|Role|3||
 
 ---
 

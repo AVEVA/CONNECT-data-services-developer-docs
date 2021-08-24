@@ -4,7 +4,6 @@ uid: assets-resolved-asset
 ---
 
 # Resolved Asset
-The resolved asset describes the consumption-oriented aspects of an OCS resource rather than describing how the resource is configured. The resolved asset corresponds to its metadata and referenced stream which define how the data is interpreted (that is, SdsTypeCode, InterpolationMode, and Uom).
 
 ## `Get Resolved Asset`
 
@@ -20,10 +19,10 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 <h4>Parameters</h4>
 
-`string assetId`
-<br/>Asset identifier<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>Namespace identifier.<br/><br/>`string assetId`
+<br/>Asset identifier<br/><br/>
 
 <h3>Response</h3>
 
@@ -31,7 +30,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |---|---|---|
 |200|[ResolvedAsset](#schemaresolvedasset)|Resolved asset with specified identifier|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
-|403|None|Forbidden|
+|403|None|Forbidden.|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
 
 <h4>Example response body</h4>
@@ -48,9 +47,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
   "AssetTypeName": "Heater_AssetType",
   "Metadata": [
     {
-      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
       "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
       "SdsTypeCode": "Double",
       "Value": 0.01
     }
@@ -119,6 +116,140 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 }
 ```
 
+# Resolved Asset
+
+## `Bulk Get Resolved Assets`
+
+<a id="opIdRequestManager_Bulk Get Resolved Assets"></a>
+
+Returns multiple resolved assets.
+
+<h3>Request</h3>
+
+```text 
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets/Resolved
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h4>Request Body</h4>
+
+Asset identifiers<br/>
+
+```json
+[
+  "AssetId-1",
+  "AssetId-2"
+]
+```
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[MultiStatusResultOfResolvedAssetAndChildErrorTemplate](#schemamultistatusresultofresolvedassetandchilderrortemplate)|Returns the resolved view of multiple assets.|
+|207|[MultiStatusResultOfStringAndChildErrorTemplate](#schemamultistatusresultofstringandchilderrortemplate)|Partial success. Not all assets were able to be resolved. See response body for additional details.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
+
+<h4>Example response body</h4>
+
+> 200 Response
+
+```json
+[
+  {
+    "Id": "AssetId-1",
+    "Name": "Asset1",
+    "Description": "An example asset.",
+    "AssetTypeId": "Asset1Type",
+    "AssetTypeName": "NameOfAsset1Type",
+    "Metadata": [
+      {
+        "Id": "Metadata1",
+        "Name": "Metadata1",
+        "Description": "Description of Metadata1",
+        "SdsTypeCode": "String",
+        "Value": "This is an example metadata for example asset",
+        "Uom": null
+      }
+    ],
+    "Streams": [
+      {
+        "Name": "StreamReference1",
+        "Properties": [
+          {
+            "Id": "pi_bifrostincinerate1",
+            "IsKey": true,
+            "Uom": null,
+            "Order": 0,
+            "InterpolationMode": "Default",
+            "ExtrapolationMode": "All",
+            "SdsType": "SimpleSdsType",
+            "Source": null
+          }
+        ]
+      }
+    ],
+    "UnresolvedStreams": [
+      {}
+    ],
+    "Status": {}
+  },
+  {
+    "Id": "AssetId-2",
+    "Name": "Asset2",
+    "Description": "A second example asset.",
+    "AssetTypeId": null,
+    "AssetTypeName": null,
+    "Metadata": [
+      {
+        "Id": "Metadata2",
+        "Name": "Metadata2",
+        "Description": "Description of Metadata2",
+        "SdsTypeCode": "String",
+        "Value": "This is an example metadata for example asset 2",
+        "Uom": null
+      }
+    ],
+    "Streams": [
+      {}
+    ],
+    "UnresolvedStreams": [
+      {}
+    ],
+    "Status": {}
+  }
+]
+```
+
+> 207 Response ([MultiStatusResultOfStringAndChildErrorTemplate](#schemamultistatusresultofstringandchilderrortemplate))
+
+```json
+{
+  "Reason": "string",
+  "Error": "string",
+  "OperationId": "string",
+  "Data": [
+    "string"
+  ],
+  "ChildErrors": [
+    {
+      "OperationId": "string",
+      "Error": "string",
+      "Resolution": "string",
+      "Reason": "string",
+      "StatusCode": 0,
+      "property1": null,
+      "property2": null
+    }
+  ]
+}
+```
+
 ---
 ## Definitions
 
@@ -137,16 +268,16 @@ The resolved asset describes the consumption-oriented aspects of an OCS resource
 |---|---|---|---|---|
 |Id|string|false|true|Asset identifier|
 |Name|string|false|true|Asset name|
-|Resolved|boolean|false|false|For future enhancement, at this moment, always true|
-|Description|string|false|true|Asset description|
-|AssetTypeId|string|false|true|Asset type identifier of asset, if applicable|
-|AssetTypeName|string|false|true|Asset type name of asset's asset type, if applicable|
-|ShapeId|string|false|true|Shape identifier for future enhancement|
-|ShapeName|string|false|true|Shape name for future enhancement|
-|Metadata|[[ResolvedMetadataItem](#schemaresolvedmetadataitem)]|false|true|Resolved asset metadata|
+|Resolved|boolean|false|false|Always true. Reserved for future use|
+|Description|string|false|true|Resolved description. If description is null on the asset and the asset has an asset type, then the resolved description comes from the asset type.|
+|AssetTypeId|string|false|true|Asset type identifier of the resolved asset. This field will be null if the asset does not have an asset type.|
+|AssetTypeName|string|false|true|Asset type name of the resolved asset. This field will be null if the asset does not have an asset type.|
+|ShapeId|string|false|true|Reserved for future use|
+|ShapeName|string|false|true|Reserved for future use|
+|Metadata|[[ResolvedMetadataItem](#schemaresolvedmetadataitem)]|false|true|Resolved metadata. The metadata is the union of the metadata from the asset and asset type.|
 |Streams|[[ResolvedStream](#schemaresolvedstream)]|false|true|Resolved asset stream references|
 |UnresolvedStreams|[[UnresolvedStream](#schemaunresolvedstream)]|false|true|Resolved asset unresolved streams|
-|UnresolvedMetadata|[[UnresolvedMetadata](#schemaunresolvedmetadata)]|false|true|Resolved asset unresolved metadata|
+|UnresolvedMetadata|[[UnresolvedMetadata](#schemaunresolvedmetadata)]|false|true|Unresolved metadata will always be empty. Reserved for future use.|
 |StatusDefinitionType|[StatusDefinitionType](#schemastatusdefinitiontype)|false|false|Resolved asset status definition|
 |Status|any|false|true|Resolved asset status|
 |UnresolvedStatus|[UnresolvedStatus](#schemaunresolvedstatus)|false|true|Resolved asset unresolved status|
@@ -161,9 +292,7 @@ The resolved asset describes the consumption-oriented aspects of an OCS resource
   "AssetTypeName": "Heater_AssetType",
   "Metadata": [
     {
-      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
       "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
       "SdsTypeCode": "Double",
       "Value": 0.01
     }
@@ -243,7 +372,6 @@ Resolved metadata is a property of a resolved asset.
 ```json
 {
   "Name": "ModelNumber",
-  "Description": "This is a static attribute on the asset which represents the model number.",
   "SdsTypeCode": "Double",
   "Value": 0.01
 }
@@ -368,7 +496,7 @@ Resolved stream is a property of the resolved asset.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Name|string|false|true|Resolved stream name|
+|Name|string|false|true|Resolved stream name. The resolved stream name corresponds to the stream reference name as defined in the stream reference on the asset.|
 |Type|[SdsType](#schemasdstype)|false|true|SdsType of the referenced stream|
 |StreamReferenceName|string|false|true|Stream reference name used in the asset|
 |StreamId|string|false|true|SDS stream identifier of the referenced stream|
@@ -580,8 +708,8 @@ Property map
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|Property map identifier|
-|SourcePropertyId|string|false|true|Source property identifier|
+|Id|string|false|true|Renamed Stream property identifier. Currently, Id and SourcePropertyId will always be the same. This field mapping is reserved for future use.|
+|SourcePropertyId|string|false|true|The original name of the Stream Property Id as defined in the Sequential Data Store (SDS).|
 
 ```json
 {
@@ -606,14 +734,11 @@ Unresolved stream, a property of the resolved asset, is a stream that could not 
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Name|string|false|true|Name of the stream reference that could not be resolved.|
-|Reason|string|false|true|Reason why the stream could not be resolved.|
+|Name|string|false|true|Name of the stream reference that could not be resolved|
+|Reason|string|false|true|Reason why the stream reference could not be resolved|
 
 ```json
-{
-  "Name": "Name of stream which could not be resolved",
-  "Reason": "Reason why stream could not be resolved."
-}
+"{\n    \"Name\": \"InputTemperature\",\n    \"Reason\": \"SDS Stream 'temperature' not found\"\"\n}"
 
 ```
 
@@ -626,7 +751,7 @@ Unresolved stream, a property of the resolved asset, is a stream that could not 
 <a id="tocSunresolvedmetadata"></a>
 <a id="tocsunresolvedmetadata"></a>
 
-Currently not used. Unresolved metadata, a property of the resolved asset, is metadata that could not be resolved.
+Reserved for future use. In the current implementation, the UnresolvedMetadata will always be an empty list.
 
 <h4>Properties</h4>
 
@@ -637,8 +762,8 @@ Currently not used. Unresolved metadata, a property of the resolved asset, is me
 
 ```json
 {
-  "Name": "Name of metadata which could not be resolved",
-  "Reason": "Reason why metadata could not be resolved."
+  "Name": "string",
+  "Reason": "string"
 }
 
 ```
@@ -656,10 +781,10 @@ Status definition type. Currently, only StreamPropertyMapping is supported.
 
 <h4>Enumerated Values</h4>
 
-|Property|Value|
-|---|---|
-|Unspecified|0|
-|StreamPropertyMapping|1|
+|Property|Value|Description|
+|---|---|---|
+|Unspecified|0||
+|StreamPropertyMapping|1||
 
 ---
 
@@ -711,6 +836,188 @@ Unresolved status, a property of the resolved asset, means asset status could no
   "Reason": "string",
   "property1": null,
   "property2": null
+}
+
+```
+
+---
+
+### MultiStatusResultOfResolvedAssetAndChildErrorTemplate
+
+<a id="schemamultistatusresultofresolvedassetandchilderrortemplate"></a>
+<a id="schema_MultiStatusResultOfResolvedAssetAndChildErrorTemplate"></a>
+<a id="tocSmultistatusresultofresolvedassetandchilderrortemplate"></a>
+<a id="tocsmultistatusresultofresolvedassetandchilderrortemplate"></a>
+
+A multi status result is returned to indicate a partial success.
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Reason|string|false|true|Failure reason.|
+|Error|string|false|true|Error string|
+|OperationId|string|false|true|Operational identifier of the call. Used for support.|
+|Data|[[ResolvedAsset](#schemaresolvedasset)]|false|true|Requested information from call.|
+|ChildErrors|[[ChildErrorTemplate](#schemachilderrortemplate)]|false|true|Child error pertaining to specific resources.|
+
+```json
+{
+  "Reason": "string",
+  "Error": "string",
+  "OperationId": "string",
+  "Data": [
+    {
+      "Id": "Heater-8911ee90-467b-4a3f-bc7b-3b3512c23dfc",
+      "Name": "Heater Asset",
+      "Resolved": true,
+      "Description": "Heater Asset on the first floor.",
+      "AssetTypeId": "Heater_AssetType-6f53c911-f5de-4b7f-981f-d6f0ec139d9f",
+      "AssetTypeName": "Heater_AssetType",
+      "Metadata": [
+        {
+          "Name": "ModelNumber",
+          "SdsTypeCode": "Double",
+          "Value": 0.01
+        }
+      ],
+      "Streams": [
+        {
+          "Name": "ResolvedReferenceName1",
+          "Type": {
+            "Id": "SdsType-ffdf2227-50e8-4196-b828-f1bd2b3689c8",
+            "SdsTypeCode": "Object",
+            "Properties": [
+              {
+                "Id": "Timestamp",
+                "IsKey": true,
+                "SdsType": {
+                  "Id": "0573b425-368a-369b-95d9-71c863df45a5",
+                  "SdsTypeCode": "DateTime"
+                },
+                "InterpolationMode": "Continuous"
+              },
+              {
+                "Id": "Pressure",
+                "SdsType": {
+                  "Id": "9144b7d6-3d5f-3b29-8131-ff0db551e17c",
+                  "SdsTypeCode": "Double"
+                },
+                "Uom": "bar",
+                "InterpolationMode": "Continuous"
+              }
+            ]
+          },
+          "StreamReferenceName": "ResolvedReferenceName1",
+          "StreamId": "Stream-b3c7a344-ce8a-4578-b4cd-1a6d78ca0610",
+          "PropertyMaps": [
+            {
+              "Id": "Timestamp",
+              "SourcePropertyId": "Timestamp"
+            },
+            {
+              "Id": "Pressure",
+              "SourcePropertyId": "Pressure"
+            }
+          ]
+        }
+      ],
+      "UnresolvedStreams": [],
+      "UnresolvedMetadata": [],
+      "StatusDefinitionType": "StreamPropertyMapping",
+      "Status": {
+        "StreamId": "SdsStream_id_1",
+        "SourcePropertyId": "Count"
+      }
+    }
+  ],
+  "ChildErrors": [
+    {
+      "OperationId": "string",
+      "Error": "string",
+      "Resolution": "string",
+      "Reason": "string",
+      "StatusCode": 0,
+      "property1": null,
+      "property2": null
+    }
+  ]
+}
+
+```
+
+---
+
+### ChildErrorTemplate
+
+<a id="schemachilderrortemplate"></a>
+<a id="schema_ChildErrorTemplate"></a>
+<a id="tocSchilderrortemplate"></a>
+<a id="tocschilderrortemplate"></a>
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|OperationId|string|false|true|Operation identifier|
+|Error|string|false|true|Error string|
+|Resolution|string|false|true|Resolution string|
+|Reason|string|false|true|Error reason string|
+|StatusCode|int32|false|false|None|
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "StatusCode": 0,
+  "property1": null,
+  "property2": null
+}
+
+```
+
+---
+
+### MultiStatusResultOfStringAndChildErrorTemplate
+
+<a id="schemamultistatusresultofstringandchilderrortemplate"></a>
+<a id="schema_MultiStatusResultOfStringAndChildErrorTemplate"></a>
+<a id="tocSmultistatusresultofstringandchilderrortemplate"></a>
+<a id="tocsmultistatusresultofstringandchilderrortemplate"></a>
+
+A multi status result is returned to indicate a partial success.
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Reason|string|false|true|Failure reason.|
+|Error|string|false|true|Error string|
+|OperationId|string|false|true|Operational identifier of the call. Used for support.|
+|Data|string[]|false|true|Requested information from call.|
+|ChildErrors|[[ChildErrorTemplate](#schemachilderrortemplate)]|false|true|Child error pertaining to specific resources.|
+
+```json
+{
+  "Reason": "string",
+  "Error": "string",
+  "OperationId": "string",
+  "Data": [
+    "string"
+  ],
+  "ChildErrors": [
+    {
+      "OperationId": "string",
+      "Error": "string",
+      "Resolution": "string",
+      "Reason": "string",
+      "StatusCode": 0,
+      "property1": null,
+      "property2": null
+    }
+  ]
 }
 
 ```

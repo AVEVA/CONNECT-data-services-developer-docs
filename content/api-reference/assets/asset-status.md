@@ -142,6 +142,8 @@ Content-Type: application/json
 
 Returns the status summary of an asset.
 
+Statistics are computed using 'StepwiseContinuousLeading' for interpolation and ‘Forward’ for extrapolation with regard to the status stream property, without regard to the actual interpolation or extrapolation modes configured in SDS for that property.
+
 ### Request
 
 ```text 

@@ -47,21 +47,21 @@ HTTP 200 OK
     "RoleTrusteeAccessControlEntries": [
         {
             "Trustee": {
-                "Type": 3,
+                "Type": "Client",
                 "ObjectId": "11111111-1111-1111-1111-111111111111"
             },
             "AccessRights": 3
         },
         {
             "Trustee": {
-                "Type": 3,
+                "Type": "Client",
                 "ObjectId": "22222222-2222-2222-1111-111111111111"
             },
             "AccessRights": 1
         },
         {
             "Trustee": {
-                "Type": 3,
+                "Type": "Client",
                 "ObjectId": "33333333-3333-3333-1111-111111111111"
             },
             "AccessRights": 15
@@ -170,14 +170,14 @@ HTTP 200 OK
     "RoleTrusteeAccessControlEntries": [
         {
             "Trustee": {
-                "Type": 3,
+                "Type": "User",
                 "ObjectId": "11111111-1111-1111-1111-111111111111"
             },
             "AccessRights": 3
         },
         {
             "Trustee": {
-                "Type": 3,
+                "Type": "Client",
                 "ObjectId": "22222222-2222-2222-1111-111111111111"
             }
         }
@@ -343,7 +343,7 @@ The response includes a status code and a body.
 HTTP 200 OK
 Content-Type: application/json
 {
-    "Type": 1,
+    "Type": "User",
     "TenantId": "55555555-5555-5555-5555-555555555555",
     "ObjectId": "44444444-4444-4444-4444-444444444444"
 }
@@ -392,7 +392,7 @@ A `Trustee`
 
 ```json 
 {
-    "Type": 2,
+    "Type": "User",
     "TenantId": "55555555-5555-5555-5555-555555555555",
     "ObjectId": "44444444-4444-4444-4444-444444444444"
 }

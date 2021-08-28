@@ -524,7 +524,8 @@ Resolved stream is a property of the resolved asset.
         "SdsType": "<SdsType>",
         "Value": null,
         "Uom": "string",
-        "InterpolationMode": 0
+        "InterpolationMode": 0,
+        "IsQuality": true
       }
     ],
     "BaseType": "<SdsType>",
@@ -590,7 +591,8 @@ Resolved stream is a property of the resolved asset.
       "SdsType": "<SdsType>",
       "Value": null,
       "Uom": "string",
-      "InterpolationMode": 0
+      "InterpolationMode": 0,
+      "IsQuality": true
     }
   ],
   "BaseType": "<SdsType>",
@@ -624,6 +626,7 @@ Resolved stream is a property of the resolved asset.
 |Value|any|false|true|None|
 |Uom|string|false|true|None|
 |InterpolationMode|[SdsInterpolationMode](#schemasdsinterpolationmode)|false|true|None|
+|IsQuality|boolean|false|false|None|
 
 ```json
 {
@@ -649,7 +652,8 @@ Resolved stream is a property of the resolved asset.
   },
   "Value": null,
   "Uom": "string",
-  "InterpolationMode": 0
+  "InterpolationMode": 0,
+  "IsQuality": true
 }
 
 ```

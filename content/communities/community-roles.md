@@ -4,7 +4,7 @@ uid: communityroles
 
 # Community roles
 
-When using communities, you must [assign users to roles](xref:managecommunityusers#assign-user-roles) that grant permissions for certain types of actions.
+When using Communities, you must [assign users to roles](xref:managecommunityusers#assign-user-roles) that grant permissions for certain types of actions.
 
 Communities includes the following roles, ordered from least privileged to most privileged.
 
@@ -39,11 +39,11 @@ Community Administrators only exist in the [community owner's](#community-owner)
 
 ## Related roles and identities
 
-In addition to the roles you can assign in communities, be aware of the following related roles and identities.
+In addition to the roles you can assign in Communities, be aware of the following related roles and identities.
 
 ### Tenant Administrator
 
-A tenant-level role that allows users to administer their own tenant. The Tenant Administrator roles applies to all of OCS rather than just communities. For more information about OCS roles, see [Roles](xref:ccRoles). In communities, Tenant Administrators can create a community and accept invitations to join their tenant with other communities.
+A tenant-level role that allows users to administer their own tenant. The Tenant Administrator roles applies to all of OCS rather than just Communities. For more information about OCS roles, see [Roles](xref:ccRoles). In Communities, Tenant Administrators can create a community and accept invitations to join their tenant with other communities.
 
 ### Community owner
 

@@ -199,35 +199,27 @@ In this step, you specify the token that identifies the stream measurement in th
 
 ### <a name="step-3"></a>Step 3: Configure the asset
 
-In this step, you specify how the rule builds the asset by assigning the tokens to different asset fields. When the assets are generated, the tokens are replaced with the value mappings.
+In this step, you specify how the rule builds assets by assigning the tokens to asset fields. When the assets are generated, the tokens are replaced with the value mappings.
 
-1. In the `Configure Asset` pane, click in the text box and enter **{** (left curly bracket symbol) to see a list of tokens.
+1. In the **Id** field in the `Configure Asset` pane, enter the sequence of tokens and characters that resolve to create a unique Id for each asset. To pick from a list of tokens, enter { and select a token.
 
-1. Select a token to add it to the text box. 
+   For the [Tank Rule A example](#tank), a combination of the site, equipment type, and equipment ID creates a unique ID for the tank. If the ID is not unique, the generated assets may incorrectly reference streams that belong to another asset.
 
-   You can string tokens together and separate them with spaces and periods.
+1. In the **Name** field, enter the sequence of tokens and characters that resolve to create the name for each asset. To pick from a list of tokens, enter { and select a token.
 
-   **Note:** **Id** and **Name** are required fields. **Description** is optional.
+1. (Optional) In the **Description** field, enter the sequence of tokens and characters that resolve to create the description for each asset. To pick from a list of tokens, enter { and select a token.
+ 
+   **Note:** The **Stream Reference Name** field shows the token that was provided in [Step 2](#step-2) as the measurement.
 
-   In the following screen capture, the fields are specified with tokens. 
+1. In the **Value Expression** field for each metadata you want defined for your assets, enter the sequence of tokens and characters that resolve to create the value for the metadata. To pick from a list of tokens, enter { and select a token. \Leave the **Value Expression** field blank for metadata you do not want mapped.
+
+   **Note:** The list of metadata is automatically populated based on the asset type. You cannot add or delete metadata. If the asset rule is not based on an asset type, then you must manually enter the metadata name in the **Name** field.
+   
+   The following screen capture shows an example of asset fields and metadata mapped to tokens. 
    
    ![](images/configure-asset-with-tokens.png)
-   
-   **Note:**
-   
-     - The sequence of tokens used to specify the Id must resolve to a unique asset. Referring to the [Tank Rule A example](#tank), a combination of the site, equipment type, and equipment ID creates a unique ID for the tank. If the ID is not unique, the generated assets may incorrectly reference streams that belong to another asset.
 
-     - The **Stream Reference Name** field shows the token that was provided in [Step 2](#step-2) as the measurement.
-
-1. For each of the metadata, click in the **Value Expression** text box, enter **{** (left parentheses symbol), and select the correct token from the list.
-
-   **Note:** 
-
-   - The list of metadata is automatically populated based on the asset type. You cannot add or delete metadata. Select a value expression for the metadata you want defined for your assets and leave the others blank.
-
-   - If your asset rule is not based on an asset type, then you must manually enter the metadata name in the **Name** field and select the correct token in the **Value Expression** field.
-
-1. When you are finished entering the tokens for the asset properties and metadata, click **Next**.
+1. When you are finished mapping tokens to asset fields and metadata, click **Next**.
 
 ### <a name="step-4"></a>Step 4: Preview the assets
 

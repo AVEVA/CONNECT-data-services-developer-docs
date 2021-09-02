@@ -195,26 +195,36 @@ In this step, you specify the token that identifies the stream measurement in th
 
 1. When you have configured the token values for all your tokens, indicated by the green check mark, click **Next**.
 
-    The `Configure Asset` page displays. 
-
 ### <a name="step-3"></a>Step 3: Configure the asset
 
 In this step, you specify how the rule builds assets by assigning the tokens to asset fields. When the assets are generated, the tokens are replaced with the value mappings.
 
-1. In the **Id** field in the `Configure Asset` pane, enter the sequence of tokens and characters that resolve to create a unique Id for each asset. To pick from a list of tokens, enter { and select a token.
+1. In the `Configure Asset` pane, for each of the following asset fields enter the sequence of tokens and characters that resolve to create a value for each asset. To pick from a list of tokens, enter { and select a token. 
 
-   For the [Tank Rule A example](#tank), a combination of the site, equipment type, and equipment ID creates a unique ID for the tank. If the ID is not unique, the generated assets may incorrectly reference streams that belong to another asset.
+  - **Id** - The Id must be unique for each asset. If the ID is not unique, the generated assets may incorrectly reference streams that belong to another asset. 
+  
+  For the [Tank Rule A example](#tank), a combination of the site, equipment type, and equipment ID creates a unique ID for the tank. 
 
-1. In the **Name** field, enter the sequence of tokens and characters that resolve to create the name for each asset. To pick from a list of tokens, enter { and select a token.
+  - **Name** - Enter the sequence of tokens and characters that resolve to create the name for each asset. To pick from a list of tokens, enter { and select a token.
 
-1. (Optional) In the **Description** field, enter the sequence of tokens and characters that resolve to create the description for each asset. To pick from a list of tokens, enter { and select a token.
- 
-   **Note:** The **Stream Reference Name** field shows the token that was provided in [Step 2](#step-2) as the measurement.
+  - **Description** - Optional.
 
-1. In the **Value Expression** field for each metadata you want defined for your assets, enter the sequence of tokens and characters that resolve to create the value for the metadata. To pick from a list of tokens, enter { and select a token. \Leave the **Value Expression** field blank for metadata you do not want mapped.
+   **Note:** The **Stream Reference Name** field shows the token that was configured in [Step 2](#step-2) as the measurement.
 
-   **Note:** The list of metadata is automatically populated based on the asset type. You cannot add or delete metadata. If the asset rule is not based on an asset type, then you must manually enter the metadata name in the **Name** field.
-   
+1. To map metadata values, do one of the following:
+
+  - If the asset rule is based on an asset type, the list of metadata is automatically populated based on the asset type and you cannot add or delete metadata. In the **Value Expression** field for each metadata you want defined for your assets, enter the sequence of tokens and characters that resolve to create the value for the metadata. To pick from a list of tokens, enter { and select a token. Leave the **Value Expression** field blank for metadata you do not want mapped.
+
+  - If the asset rule is not based on an asset type, complete the following steps for each metadata you want to add:
+
+    1. Click **Add Metadata**.
+    
+    1. In the **Name** field, enter the name for the metadata. 
+    
+    1. In the **Value Expression** field, enter the sequence of tokens and characters that resolve to create the value for the metadata. To pick from a list of tokens, enter { and select a token.
+
+    1. In the **Type** field, select the data type for the metadata from the drop-down.
+     
    The following screen capture shows an example of asset fields and metadata mapped to tokens. 
    
    ![](images/configure-asset-with-tokens.png)
@@ -233,17 +243,21 @@ The asset preview displays a list of the assets that will be created using the a
 
    - The ![Tag icon](images/tag-icon.png) icon identifies the metadata and the ![Rule icon](images/rule-icon.png) icon identifies the stream references. 
 
-   - The stream Id is identified for each stream. For example, the Id of the stream in the first row is `PHI-TNK01`.
+   - The stream Id is identified for each stream. In the example above, the Id of the stream in the first row is `PHI-TNK01`.
 
-1. Use the Table Settings to customize the preview.
+1. To show or hide information in the preview, click the `Settings` tab in the `Preview Information` pane, and then click on the following options:
 
-   ![Table settings](images/table-set.png)
-   
-   Use the metadata filters ![Metadata filter](images/metadata-filter.png) to isolate the assets to view.
+  - **Show Asset Type**
+
+  - **Show Metadata**
+
+  - **Show Stream References**
+  
+1. To filter the data in a column, click ![Metadata filter](images/metadata-filter.png) in the column header and enter 
    
 1. Refer to the asset rule statistics to validate that the rule produced the expected number of assets and the expected number of streams were processed. 
 
-   In this example, we expect to see three assets as indicated in the **Total Assets**. **Streams Processed** is the total number of streams in the namespace. The asset rule checks every stream name in the namespace to see if it matches the specified pattern. In this example, six of the nine streams matched the pattern. 
+   In the [Tank Rule A example](#tank), we expect to see three assets as indicated in the **Total Assets**. **Streams Processed** is the total number of streams in the namespace. The asset rule checks every stream name in the namespace to see if it matches the specified pattern. In this example, six of the nine streams matched the pattern. 
    ![Asset Statistics](images/stats.png)
    
 1. To return to earlier steps and make any changes to the tokens, token mapping, or asset configuration, click **Back**. 

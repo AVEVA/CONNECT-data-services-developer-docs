@@ -276,7 +276,7 @@ Once the asset rule is successfully executed, review the created assets and conf
 
 1. From the ![Menu icon](images/menu-icon.png) icon, select **Visualization** > **Asset Explorer**.
 
-1. Use search and the metadata filters to find the assets you expect to be created.<!-- Writer's Note: Add a link to the "Filtering Assets in the Asset Explorer" topic. -->
+1. Use search and the metadata filters to find the assets you expect to be created. For information, see [Filter assets in the Asset Explorer](xref:FilterAssets)
 
 1. Verify that the assets in your preview have been created.
     ![Asset review](images/asset-view.png)

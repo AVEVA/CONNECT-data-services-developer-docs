@@ -95,7 +95,7 @@ The asset rules API allows you to programmatically create, read, update, and del
 Rule expressions define which streams a rule applies to and what information is extracted from the stream. For a rule to apply to a stream, all of the rule's expressions must match. Expressions have the following properties:
 
 - Fields &ndash; strings  that determine which stream property to look at for specifications
-- Specifications  &ndash; objects that define specifications of a segment in a pattern. Refer to [Specification Types][xref:AssetRules#specification-types]  and [Specification Objects][xref:AssetRules#specification-objects] for a description.
+- Specifications  &ndash; objects that define specifications of a segment in a pattern. Refer to [Specification Types](xref:AssetRules#specification-types)  and [Specification Objects](xref:AssetRules#specification-objects) for a description.
 
 ### Fields
 
@@ -109,18 +109,18 @@ The following fields are supported:
 | Metadata      | "Metadata\['key']"                        | The stream metadata. The example extracts the value of the metadata with key 'key'.                     |
 | Type          | "Type.Properties\[?(@.Id == 'Value')].Uom" | The stream type. The example extracts the unit of measure from the 'Value' property of the stream type. |
 
-The `Metadata` and `Type` fields are objects rather than values, so [Json Path Syntax][xref:AssetRules#JSON Paths] is required. The extracted value must be a single value, rather than an object or array.
+The `Metadata` and `Type` fields are objects rather than values, so [Json Path Syntax](xref:AssetRules#json-paths) is required. The extracted value must be a single value, rather than an object or array.
 For `Metadata`, the syntax should always extract the value of a single key in the `Metadata` collection.
-For more information on available properties for a stream type, see [Sds Types][xref:sdsTypes].
+For more information on available properties for a stream type, see [Sds Types](xref:sdsTypes).
 
 ### Specification Types
 
 | Specification | Description                                                  |
 | ------------- | ------------------------------------------------------------ |
 | Wildcard      | Any remaining characters or strings in a stream property. There can be only one wildcard type in a specification. |
-| Group         | Collection of characters that include only specified delimiters. |
+| Group         | Collection of characters of a certain type and/or length. |
 | Literal       | A hard-coded string. Only stream properties with a specified literal are captured by a rule. |
-| Delimiter     | A specific string that interacts with groups. A group must specify a delimiter to use. |
+| Delimiter     | A specific string that interacts with groups as a separater. A group cannot contain a delimiter unless specified in the group's Required Delimiters. |
 
 ### Specification Objects
 

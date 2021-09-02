@@ -253,16 +253,16 @@ The asset preview displays a list of the assets that will be created using the a
 
   - **Show Stream References**
   
-1. To filter the data in a column, click ![Metadata filter](images/metadata-filter.png) in the column header and enter 
+1. To filter the data in a column, click ![filter](images/metadata-filter.png) in the column header, enter the text to find, and press Enter.
    
-1. Refer to the asset rule statistics to validate that the rule produced the expected number of assets and the expected number of streams were processed. 
+1. Click the `Details` tab in the `Preview Information` pane, to review the asset rule statistics to validate that the rule produced the expected number of assets and the expected number of streams were processed. 
 
    In the [Tank Rule A example](#tank), we expect to see three assets as indicated in the **Total Assets**. **Streams Processed** is the total number of streams in the namespace. The asset rule checks every stream name in the namespace to see if it matches the specified pattern. In this example, six of the nine streams matched the pattern. 
    ![Asset Statistics](images/stats.png)
    
 1. To return to earlier steps and make any changes to the tokens, token mapping, or asset configuration, click **Back**. 
 
-1. When you are satisfied with the results, click **Save & Execute**.
+1. To save the rule configuration and run the rule, click **Save & Execute**.
 
    The rule appears in the Asset Rule Builder list and a message confirms that the rule was successfully created. The rule is executed and applied to the streams, and the assets are created.
    

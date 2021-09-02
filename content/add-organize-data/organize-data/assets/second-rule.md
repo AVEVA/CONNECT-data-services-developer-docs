@@ -21,7 +21,7 @@ Therefore, you must create a second asset rule, called Tank Rule B, to identify 
 
 ![](images/second-rule-token.png)
 
-Set up the mappings and configure the asset as described in [Create asset rules](xref:CreateAssetRules).
+Set up the mappings and configure the asset as described in [Create an asset rule](xref:CreateAssetRules).
 
 ![Configure asset - rule 2](images/configure-asset-page-rule2.png)
 

@@ -2,17 +2,17 @@
 uid: CreateAssetRules
 ---
 
-# Create asset rules
+# Create an asset rule
 
-Asset rules identify patterns in stream names and use this information to automatically create assets. In order to generate the assets, stream names must have the following characteristics:
+An asset rule identifies patterns in a stream name and uses this information to automatically create assets. In order to generate assets, the stream names must have the following characteristics:
 
-- Stream names must have a pattern that can be mapped for configuration.
+- A pattern that can be mapped for configuration.
 
-- Stream names must include a set of characters that uniquely identify the asset.
+- A set of characters that uniquely identify the asset.
 
-- The stream name must include a unique set of characters that identifies one stream from another for the same asset.  For example, the stream name could include an abbreviation for the stream measurement. 
+- A unique set of characters that identifies one stream from another for the same asset. For example, the stream name could include an abbreviation for the stream measurement. 
 
- The asset rule identifies the pattern and the parts of the stream name and stream metadata that provide information about the asset. A token is created for each part of the pattern and piece of information. The tokens are used to construct the asset and add references to the relevant streams.
+The asset rule identifies the pattern and the parts of the stream name and stream metadata that provide information about the asset. A token is created for each part of the pattern and piece of information. The tokens are used to construct the asset and add references to the relevant streams. For more information, see [How tokens are used in the Asset Rule Builder to generate assets](xref:TokensGenerateAssets).
 
 Depending on the definition and consistency of the stream names, you may have to create multiple rules to capture all the relevant streams for your asset. For more information, see [Using multiple asset rules to create assets](xref:UsingMultipleRules).
 
@@ -255,17 +255,19 @@ The asset preview displays a list of the assets that will be created using the a
   
 1. To filter the data in a column, click ![filter](images/metadata-filter.png) in the column header, enter the text to find, and press Enter.
    
-1. Click the `Details` tab in the `Preview Information` pane, to review the asset rule statistics to validate that the rule produced the expected number of assets and the expected number of streams were processed. 
+1. Click the `Details` tab in the `Preview Information` pane, to review the asset rule statistics to validate that the rule produced the expected number of assets and the expected number of streams were processed.
 
-   In the [Tank Rule A example](#tank), we expect to see three assets as indicated in the **Total Assets**. **Streams Processed** is the total number of streams in the namespace. The asset rule checks every stream name in the namespace to see if it matches the specified pattern. In this example, six of the nine streams matched the pattern. 
+   In the [Tank Rule A example](#tank), we expect to see three assets as indicated in the **Total Assets**. **Streams Processed** is the total number of streams in the namespace. The asset rule checks every stream name in the namespace to see if it matches the specified pattern. In this example, six of the nine streams matched the pattern.
    ![Asset Statistics](images/stats.png)
-   
-1. To return to earlier steps and make any changes to the tokens, token mapping, or asset configuration, click **Back**. 
+  
+1. To return to earlier steps and make any changes to the tokens, token mapping, or asset configuration, click **Back**.
+
+1. To save the rule configuration without running it, click **Save as Draft**. Use this option to continue modifying the rule later.
 
 1. To save the rule configuration and run the rule, click **Save & Execute**.
 
    The rule appears in the Asset Rule Builder list and a message confirms that the rule was successfully created. The rule is executed and applied to the streams, and the assets are created.
-   
+
    **Note:** Click on the rule in the Asset Rule Builder list to open a pane that displays any errors that occurred during the execution of the rule.
 
 ## Review the assets
@@ -276,15 +278,9 @@ Once the asset rule is successfully executed, review the created assets and conf
 
 1. Use search and the metadata filters to find the assets you expect to be created.<!-- Writer's Note: Add a link to the "Filtering Assets in the Asset Explorer" topic. -->
 
-1. Verify that the assets in your preview have been created. 
+1. Verify that the assets in your preview have been created.
     ![Asset review](images/asset-view.png)
 
-1. Select one of the assets to see the details for the asset. 
+1. Select an asset to see its details.
 
     **Tip:** Click the pencil icon in the toolbar to see the individual streams referenced in the asset.
-
-## See also
-
-[How tokens are used in the Asset Rule Builder to generate assets](xref:TokensGenerateAssets) 
-
-[Using multiple asset rules to create assets](xref:UsingMultipleRules)

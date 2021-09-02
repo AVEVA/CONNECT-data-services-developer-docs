@@ -20,7 +20,7 @@ For a role to perform any actions on a stream, you must grant that role permissi
 
 1. Select one or more streams.
 
-1. Select the **More options** ![More options icon](../../images/more-options-wite-background.png), and then select **Manage Permissions**.
+1. Select **More options** ![More options icon](../../images/more-options-wite-background.png), and then select **Manage Permissions**.
 
 1. In the `Manage Permissions` window, from **Select Role**, choose the role whose permissions you want to modify.
 

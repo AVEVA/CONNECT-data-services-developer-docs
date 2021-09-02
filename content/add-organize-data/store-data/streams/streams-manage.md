@@ -59,4 +59,3 @@ When you remove a stream, you are deleting it from the namespace.
 1. Click **More options** ![More options icon](../../images/more-options-wite-background.png), and then select **Remove Stream**.
 
 1. In the confirmation window, click **Remove** to confirm the deletion.
-

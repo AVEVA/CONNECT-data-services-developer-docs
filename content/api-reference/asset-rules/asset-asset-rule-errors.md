@@ -7,7 +7,7 @@ uid: asset-asset-rule-errors
 
 ## `List Rule Errors By Rule Id`
 
-<a id="opIdRuleErrors_List Rule Errors By Rule Id"></a>
+<a id="opIdAssetRuleErrors_List Rule Errors By Rule Id"></a>
 
 Returns the `RuleError` objects for the specified ruleId.
 
@@ -19,10 +19,10 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rule
 
 <h4>Parameters</h4>
 
-`string ruleId`
-<br/>Rule identifier.<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>Namespace identifier.<br/><br/>`string ruleId`
+<br/>Rule identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -105,7 +105,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rule
 
 ## `Delete Rule Errors By Rule Id`
 
-<a id="opIdRuleErrors_Delete Rule Errors By Rule Id"></a>
+<a id="opIdAssetRuleErrors_Delete Rule Errors By Rule Id"></a>
 
 Deletes the `RuleError` objects associated with the specified rule.
 
@@ -117,10 +117,10 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{r
 
 <h4>Parameters</h4>
 
-`string ruleId`
-<br/>Rule identifier.<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>Namespace identifier.<br/><br/>`string ruleId`
+<br/>Rule identifier.<br/><br/>
 
 <h3>Response</h3>
 

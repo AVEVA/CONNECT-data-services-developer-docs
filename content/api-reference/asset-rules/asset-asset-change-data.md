@@ -19,10 +19,10 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 
 <h4>Parameters</h4>
 
-`string ruleId`
-<br/>Rule identifier.<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>Namespace identifier.<br/><br/>`string ruleId`
+<br/>Rule identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -90,10 +90,10 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 
 <h4>Parameters</h4>
 
-`string ruleId`
-<br/>Rule identifier.<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>Namespace identifier.<br/><br/>`string ruleId`
+<br/>Rule identifier.<br/><br/>
 `[optional] integer Skip`
 <br/>An Int32 specifying the number of results to skip.
 Defaults to 0.<br/><br/>`[optional] integer Count`
@@ -261,10 +261,10 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 
 <h4>Parameters</h4>
 
-`string assetId`
-<br/>Asset identifier.<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>Namespace identifier.<br/><br/>`string assetId`
+<br/>Asset identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -411,10 +411,10 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 
 <h4>Parameters</h4>
 
-`string streamId`
-<br/>Stream identifier.<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>Namespace identifier.<br/><br/>`string streamId`
+<br/>Stream identifier.<br/><br/>
 
 <h3>Response</h3>
 

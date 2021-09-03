@@ -19,11 +19,10 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/acce
 
 <h4>Parameters</h4>
 
-`any routeOptions`
-<br/>`RuleRouteOptions`<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
-<br/><br/>
+<br/>Rule identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -108,8 +107,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/acce
 
 <h4>Parameters</h4>
 
-`any routeOptions`
-<br/>The `RuleRouteOptions` uri route parameters.<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
 <br/>Rule identifier.<br/><br/>
@@ -118,7 +116,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/acce
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[AccessControlList](#schemaaccesscontrollist)|The `AccessControlList` of the specified rule.|
+|200|[AccessControlList](#schemaaccesscontrollist)|Success.|
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |404|[ResponseBody](#schemaresponsebody)|The specified rule was not found.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
@@ -203,8 +201,7 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/acce
 
 <h4>Parameters</h4>
 
-`any routeOptions`
-<br/>The `RuleRouteOptions`<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
 <br/>Rule identifier.<br/><br/>
@@ -524,8 +521,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/owne
 
 <h4>Parameters</h4>
 
-`any routeOptions`
-<br/>The `RuleRouteOptions`<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
 <br/>Rule identifier.<br/><br/>
@@ -612,8 +608,7 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/owne
 
 <h4>Parameters</h4>
 
-`any routeOptions`
-<br/>The `RuleRouteOptions` uri route parameters.<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
 <br/>Rule identifier.<br/><br/>
@@ -712,6 +707,93 @@ The owner.<br/>
 }
 ```
 
+# Access Control List
+
+## `List Access Rights`
+
+<a id="opIdAssetRuleCollectionAccessRights_List Access Rights"></a>
+
+Returns a list of the `CommonAccessRights` the requesting `Identity` has on the assetrules collection.
+
+<h3>Request</h3>
+
+```text 
+GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/AccessRights/AssetRules
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|Inline|The `CommonAccessRights` the requesting `Identity` has on the assetrules collection.|
+|403|[ResponseBody](#schemaresponsebody)|Forbidden.|
+|404|[ResponseBody](#schemaresponsebody)|The specified rule was not found.|
+|500|[ResponseBody](#schemaresponsebody)|Internal server error.|
+
+<h4>Example response body</h4>
+
+> 200 Response
+
+```json
+[
+  "Read",
+  "Write",
+  "Delete",
+  "ManageAccessControl"
+]
+```
+
+> 403 Response
+
+```json
+{
+  "OperationId": "00000000-0000-0000-0000-000000000000",
+  "Error": "Error message.",
+  "Reason": "Reason that caused the error.",
+  "Resolution": "Possible resolution for the error.",
+  "Parameters": {
+    "key1": "value1",
+    "key2": "value2"
+  }
+}
+```
+
+> 404 Response
+
+```json
+{
+  "OperationId": "00000000-0000-0000-0000-000000000000",
+  "Error": "Error message.",
+  "Reason": "Reason that caused the error.",
+  "Resolution": "Possible resolution for the error.",
+  "Parameters": {
+    "key1": "value1",
+    "key2": "value2"
+  }
+}
+```
+
+> 500 Response
+
+```json
+{
+  "OperationId": "00000000-0000-0000-0000-000000000000",
+  "Error": "Error message.",
+  "Reason": "Reason that caused the error.",
+  "Resolution": "Possible resolution for the error.",
+  "Parameters": {
+    "key1": "value1",
+    "key2": "value2"
+  }
+}
+```
+
 ---
 ## Definitions
 
@@ -742,28 +824,6 @@ The owner.<br/>
     "key1": "value1",
     "key2": "value2"
   }
-}
-
-```
-
----
-
-### RuleRouteOptions
-
-<a id="schemarulerouteoptions"></a>
-<a id="schema_RuleRouteOptions"></a>
-<a id="tocSrulerouteoptions"></a>
-<a id="tocsrulerouteoptions"></a>
-
-<h4>Properties</h4>
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|RuleId|string|false|true|The identifier of a rule.|
-
-```json
-{
-  "RuleId": "string"
 }
 
 ```

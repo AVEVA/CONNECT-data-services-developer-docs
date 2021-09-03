@@ -7,7 +7,7 @@ uid: asset-asset-rules
 
 ## `List Rules`
 
-<a id="opIdAssetRules_List Rules"></a>
+<a id="opIdAssetRule_List Rules"></a>
 
 Returns all `RuleModel` objects from the `IRuleStore` to which the requesting `Identity` has access.
 
@@ -26,7 +26,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules
 `[optional] integer Skip`
 <br/>An Int32 to determine how many results to skip. Defaults to DefaultSkip<br/><br/>`[optional] integer Count`
 <br/>An Int32 to determine how many results to return. Defaults to DefaultCount<br/><br/>`[optional] boolean KeepOldMetadata`
-<br/>A Boolean to determine whether or not existing metadata create by the rule should be kept. Only valid for metadata rule delete requests.
+<br/>A Boolean to determine whether or not existing metadata created by the rule should be preserved if the rule were deleted. Only valid for metadata rule delete requests.
 Defaults to false.<br/><br/>`[optional] boolean KeepOldAssets`
 <br/>A Boolean to determine whether or not existing assets created by the rule should be kept. Only valid for asset rule delete requests.
 Defaults to false.<br/><br/>
@@ -159,7 +159,7 @@ Defaults to false.<br/><br/>
 
 ## `Create Rule With Server Generated Id`
 
-<a id="opIdAssetRules_Create Rule With Server Generated Id"></a>
+<a id="opIdAssetRule_Create Rule With Server Generated Id"></a>
 
 Creates a `RuleModel` object with a server generated `Id` in the `IRuleStore`.
 
@@ -356,7 +356,7 @@ The RuleModel object to create.<br/>
 
 ## `Get Rule`
 
-<a id="opIdAssetRules_Get Rule"></a>
+<a id="opIdAssetRule_Get Rule"></a>
 
 Returns the specified rule.
 
@@ -368,8 +368,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
 
 <h4>Parameters</h4>
 
-`any routeOptions`
-<br/>The `RuleRouteOptions` uri route parameters.<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
 <br/>Rule identifier.<br/><br/>
@@ -500,7 +499,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
 
 ## `Create Rule`
 
-<a id="opIdAssetRules_Create Rule"></a>
+<a id="opIdAssetRule_Create Rule"></a>
 
 Returns or creates a `RuleModel` object with the specified identifier in the `IRuleStore`.
 
@@ -512,8 +511,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
 
 <h4>Parameters</h4>
 
-`any routeOptions`
-<br/>The `RuleRouteOptions` uri route parameters.<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
 <br/>Rule identifier.<br/><br/>
@@ -700,7 +698,7 @@ The RuleModel object.<br/>
 
 ## `Create Or Update Rule`
 
-<a id="opIdAssetRules_Create Or Update Rule"></a>
+<a id="opIdAssetRule_Create Or Update Rule"></a>
 
 Creates or updates the specified rule in the `IRuleStore`.
 
@@ -713,15 +711,14 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
 
 <h4>Parameters</h4>
 
-`any routeOptions`
-<br/>The `RuleRouteOptions` uri route parameters.<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
 <br/>Rule identifier.<br/><br/>
 `[optional] integer Skip`
 <br/>An Int32 to determine how many results to skip. Defaults to DefaultSkip<br/><br/>`[optional] integer Count`
 <br/>An Int32 to determine how many results to return. Defaults to DefaultCount<br/><br/>`[optional] boolean KeepOldMetadata`
-<br/>A Boolean to determine whether or not existing metadata create by the rule should be kept. Only valid for metadata rule delete requests.
+<br/>A Boolean to determine whether or not existing metadata created by the rule should be preserved if the rule were deleted. Only valid for metadata rule delete requests.
 Defaults to false.<br/><br/>`[optional] boolean KeepOldAssets`
 <br/>A Boolean to determine whether or not existing assets created by the rule should be kept. Only valid for asset rule delete requests.
 Defaults to false.<br/><br/>
@@ -900,7 +897,7 @@ The RuleModel object to create or update.<br/>
 
 ## `Delete Rule`
 
-<a id="opIdAssetRules_Delete Rule"></a>
+<a id="opIdAssetRule_Delete Rule"></a>
 
 Deletes the specified rule from the `IRuleStore`.
 
@@ -913,15 +910,14 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
 
 <h4>Parameters</h4>
 
-`any routeOptions`
-<br/>The `RuleRouteOptions` uri route parameters.<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
 <br/>Rule identifier.<br/><br/>
 `[optional] integer Skip`
 <br/>An Int32 to determine how many results to skip. Defaults to DefaultSkip<br/><br/>`[optional] integer Count`
 <br/>An Int32 to determine how many results to return. Defaults to DefaultCount<br/><br/>`[optional] boolean KeepOldMetadata`
-<br/>A Boolean to determine whether or not existing metadata create by the rule should be kept. Only valid for metadata rule delete requests.
+<br/>A Boolean to determine whether or not existing metadata created by the rule should be preserved if the rule were deleted. Only valid for metadata rule delete requests.
 Defaults to false.<br/><br/>`[optional] boolean KeepOldAssets`
 <br/>A Boolean to determine whether or not existing assets created by the rule should be kept. Only valid for asset rule delete requests.
 Defaults to false.<br/><br/>
@@ -939,7 +935,7 @@ Defaults to false.<br/><br/>
 
 ## `Execute Rule`
 
-<a id="opIdAssetRules_Execute Rule"></a>
+<a id="opIdAssetRule_Execute Rule"></a>
 
 Executes the specified rule.
 
@@ -951,8 +947,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/exe
 
 <h4>Parameters</h4>
 
-`any routeOptions`
-<br/>The `RuleRouteOptions` uri route parameters.<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
 <br/>Rule identifier.<br/><br/>
@@ -972,20 +967,19 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/exe
 
 ## `Get Progress`
 
-<a id="opIdAssetRules_Get Progress"></a>
+<a id="opIdAssetRule_Get Progress"></a>
 
 Returns a description of the progress of the most recent execution of the rule and any errors.
 
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/progress
+GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/progress
 ```
 
 <h4>Parameters</h4>
 
-`any routeOptions`
-<br/>The `RuleRouteOptions` uri route parameters.<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
 <br/>Rule identifier.<br/><br/>
@@ -994,7 +988,65 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rule
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|A `ExecutionProgress` object for the given rule id.|
+|200|[ExecutionProgress](#schemaexecutionprogress)|A `ExecutionProgress` object for the given rule id.|
+|403|[ResponseBody](#schemaresponsebody)|Forbidden.|
+|404|[ResponseBody](#schemaresponsebody)|The specified rule was not found.|
+|500|[ResponseBody](#schemaresponsebody)|Internal server error.|
+
+<h4>Example response body</h4>
+
+> 200 Response
+
+```json
+{
+  "State": "Running"
+}
+```
+
+> 403 Response
+
+```json
+{
+  "OperationId": "00000000-0000-0000-0000-000000000000",
+  "Error": "Error message.",
+  "Reason": "Reason that caused the error.",
+  "Resolution": "Possible resolution for the error.",
+  "Parameters": {
+    "key1": "value1",
+    "key2": "value2"
+  }
+}
+```
+
+> 404 Response
+
+```json
+{
+  "OperationId": "00000000-0000-0000-0000-000000000000",
+  "Error": "Error message.",
+  "Reason": "Reason that caused the error.",
+  "Resolution": "Possible resolution for the error.",
+  "Parameters": {
+    "key1": "value1",
+    "key2": "value2"
+  }
+}
+```
+
+> 500 Response
+
+```json
+{
+  "OperationId": "00000000-0000-0000-0000-000000000000",
+  "Error": "Error message.",
+  "Reason": "Reason that caused the error.",
+  "Resolution": "Possible resolution for the error.",
+  "Parameters": {
+    "key1": "value1",
+    "key2": "value2"
+  }
+}
+```
 
 ---
 ## Definitions
@@ -1070,8 +1122,8 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rule
 
 |Property|Value|
 |---|---|
-|Started|Started|
-|Stopped|Stopped|
+|Started|0|
+|Stopped|1|
 
 ---
 
@@ -1094,10 +1146,10 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rule
   "Field": "string",
   "Specifications": [
     {
-      "Type": "Unspecified",
+      "Type": 0,
       "Value": "string",
       "Name": "string",
-      "CharacterType": "Any",
+      "CharacterType": 0,
       "CharacterLength": 0,
       "StrictValueMappings": true,
       "RequiredDelimiters": [
@@ -1137,10 +1189,10 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rule
 
 ```json
 {
-  "Type": "Unspecified",
+  "Type": 0,
   "Value": "string",
   "Name": "string",
-  "CharacterType": "Any",
+  "CharacterType": 0,
   "CharacterLength": 0,
   "StrictValueMappings": true,
   "RequiredDelimiters": [
@@ -1167,11 +1219,11 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rule
 
 |Property|Value|
 |---|---|
-|Unspecified|Unspecified|
-|Group|Group|
-|Wildcard|Wildcard|
-|Literal|Literal|
-|Delimiter|Delimiter|
+|Unspecified|0|
+|Group|1|
+|Wildcard|2|
+|Literal|3|
+|Delimiter|4|
 
 ---
 
@@ -1186,10 +1238,10 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rule
 
 |Property|Value|
 |---|---|
-|Any|Any|
-|Letter|Letter|
-|Digit|Digit|
-|Alphanumeric|Alphanumeric|
+|Any|0|
+|Letter|1|
+|Digit|2|
+|Alphanumeric|3|
 
 ---
 
@@ -1250,25 +1302,42 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rule
 
 ---
 
-### RuleRouteOptions
+### ExecutionProgress
 
-<a id="schemarulerouteoptions"></a>
-<a id="schema_RuleRouteOptions"></a>
-<a id="tocSrulerouteoptions"></a>
-<a id="tocsrulerouteoptions"></a>
+<a id="schemaexecutionprogress"></a>
+<a id="schema_ExecutionProgress"></a>
+<a id="tocSexecutionprogress"></a>
+<a id="tocsexecutionprogress"></a>
 
 <h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|RuleId|string|false|true|The identifier of a rule.|
+|State|[ProgressState](#schemaprogressstate)|false|false|None|
 
 ```json
 {
-  "RuleId": "string"
+  "State": 0
 }
 
 ```
+
+---
+
+### ProgressState
+
+<a id="schemaprogressstate"></a>
+<a id="schema_ProgressState"></a>
+<a id="tocSprogressstate"></a>
+<a id="tocsprogressstate"></a>
+
+<h4>Enumerated Values</h4>
+
+|Property|Value|Description|
+|---|---|---|
+|Unknown|0||
+|Running|1||
+|Completed|2||
 
 ---
 

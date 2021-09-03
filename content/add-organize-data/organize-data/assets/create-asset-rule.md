@@ -20,7 +20,7 @@ Depending on the definition and consistency of the stream names, you may have to
 
 <!-- Writer's Note: This example can be found in the DaedalusTest tenant, VizTesting namespace. See Prachi Bagayatkar or Scott Harrison for access. -->
 
-The [Use the Asset Rule Builder to create the asset rule](#create) procedure uses the following simple example to illustrate how to create an asset rule. In this example, there are three tank assets. The following characters in the stream names identify the three assets: `SL-Tank01`, `SL-Tank02`, and `PHI-Tank03`. There are two streams for each tank, one stream with temperature data (indicated by *Temp* in its name) and the other with pressure data (indicated by *Press* in its name). The following table shows the six streams, the asset associated with the stream, and the measurement in each stream. 
+The [Use the Asset Rule Builder to create the asset rule](#create) procedure uses the following simple example to illustrate how to create an asset rule. In this example, there are three tank assets. The following characters in the stream names identify the three assets: `SL-Tank01`, `SL-Tank02`, and `PHI-Tank03`. There are two streams for each tank, one stream with temperature data, indicated by *Temp* in its name, and the other with pressure data, indicated by *Press* in its name. The following table shows the six streams, the asset associated with the stream, and the measurement in each stream. 
 
 | Stream Name     | Asset Name | Stream Measurement |
 | --------------- | ---------- | ------------------ |
@@ -87,41 +87,41 @@ In this step, you specify the naming pattern used to find and match the appropri
 
 1. In the `Stream Name Pattern` pane, move the slider to highlight the first identifiable section of the stream name. 
 
-1. In the **1. Match** list, pick the choice that describes how to identify the value in the stream name. 
+1. In the **Match** list, select the option that describes how to identify the value in the stream name. 
 
-1. In the **and name it** textbox, enter a name for the token.
+1. In the **and name it** text box, enter a name for the token.
 
 1. Click **Capture**.  
 
    In the [Tank Rule A example](#tank), the first part of all stream names identifies the site location. This is represented by the characters *SL* or *PHI*. In the `PHI-Tank03Press` stream, the site location is represented by the characters *PHI*. This part of the stream name is selected in the screen capture below.
 
-   The **1. Match** list of choices displays different ways in which this string of characters can be identified by the asset rule. Some of the choices would work with the example stream, but they would fail to identify the site information in all stream names. For example, *the string literal "PHI"* or *the next 3 characters* would not identify *SL* as the site. 
+   The **1. Match** list of choices displays different ways to identify this string of characters. Some of the choices would work with the example stream, but they would fail to identify the site information in all stream names. For example, *the string literal "PHI"* or *the next 3 characters* would not identify *SL* as the site. 
 
    As you create tokens, keep in mind that the **Match** option selected must identify the correct information for all the streams the rule needs to identify. The rule must also exclude any streams that you do not want identified with this rule, for example, streams that belong to a pump asset. In this example, *everything preceding the delimiter"-"* will extract the site information for all streams. 
 
-   The token is assigned the name *site*. 
+   The token is assigned the name `site`. 
 
    <!-- WRITER'S NOTE: All the screen captures need to be reviewed and probably updated. In particular, the screen captures in this "Step 1: Extract the tokens from the stream" will need to be updated. The wording of the choices is being changed. -->
 
    ![](images/first-token.png)
 
-   The token and the placeholder value, *{site} - PHI*, are added to the **Tokens** pane. 
+   The token and the placeholder value, `{site} - PHI`, are added to the **Tokens** pane. 
 
 1. Repeat steps 1-4 for each part of the stream name. 
 
-   In this example, the second part of the stream name is the type of equipment. Notice that the match options change depending on what portion of the stream name is highlighted. The first option is disabled because it cannot be applied. *Tank* is matched using *the next group of letters* choice. The token is assigned the name *equipment_type*. 
+   In this example, the second part of the stream name is the type of equipment. Notice that the match options change depending on what portion of the stream name is highlighted. The first option is disabled because it cannot be applied. *Tank* is matched using `the next group of letters`. The token is assigned the name `equipment_type`. 
 
-   **Note:** There are other matching options which could be used with our streams, *the string literal "Tank"* or *the next 4 letters*. However, this rule needs to identify equipment other than tanks or equipment with names that are not 4 letters long. Therefore, these are not good choices. 
+   **Note:** There are other matching options which could be used with the example streams, `the string literal "Tank"` or `the next 4 letters`. This rule needs to identify equipment other than tanks and equipment with names that are not 4 letters long, so these are not good choices. 
 
    <!--WRITER'S NOTE: These images were taken with SnagIt and reduced by 50%. The resolution may be too fuzzy and they may have to be enlarged. -->
 
    ![Second token](images/second-token.png) 
    
-   The next part of the stream name is a number that identifies the equipment's ID. *03* is matched using *the next group of numbers*, and this token is assigned the name *equipment_id*. Because we anticipate using this rule to create assets with Ids running into the thousands, we do not use *the next 2 numbers* to match the Id.
+   The next part of the stream name is a number that identifies the equipment Id. `03` is matched using `the next group of numbers`, and this token is assigned the name `equipment_id`. Because we anticipate using this rule to create assets with Ids running into the thousands, we do not use `the next 2 numbers` to match the Id.
 
    ![](images/third-token.png)
 
-   The last part of the stream name identifies what is being measured in the stream. This token uses *the rest of the stream name* and is named *measurement*.
+   The last part of the stream name identifies what is being measured in the stream. This token uses `the rest of the stream name` and is named `measurement`.
 
    ![Fourth token](images/fourth-token.png)
    
@@ -149,13 +149,11 @@ In this step, you specify the token that identifies the stream measurement in th
 
 1. Select the token that identifies the stream measurement and click **Select**. <!--WRITER'S NOTE: This step is still not very clear. Please review it again after the UI changes which may make it clearer. -->
 
-   In the `Tank Rule A` example, the token for the last part of the stream name identifies the measurement, either `Press` or `Temp`, and we gave this token the name *measurement*. 
+ In the `Tank Rule A` example, the token for the last part of the stream name identifies the measurement, either `Press` or `Temp`, and we gave this token the name `measurement`. 
 
-   ![Choose stream](images/choose-stream.png)
-
-   <!-- Writer's Note: The text on this page is changing. -->
+ ![Choose stream](images/choose-stream.png)
    
-   The `Token Mappings Status` pane displays a list of all the tokens identified on the previous page. The token for the measurement is indicated with the ![Measurement icon](images/measurement-icon.png) icon.
+ The `Token Mappings Status` pane displays a list of all the tokens identified on the previous page. The token for the measurement is indicated with the ![Measurement icon](images/measurement-icon.png) icon.
 
  ![Token Status Mapping](images/token-status-mapping.png)
 

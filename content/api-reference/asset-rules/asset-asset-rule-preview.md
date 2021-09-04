@@ -1226,12 +1226,20 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 |StreamsProcessed|int32|false|false|Streams used in the preview.|
 |TotalResults|int32|false|false|Total number of asset results.|
 |ExecutionErrors|int32|false|false|Number of errors generted during execution|
+|StreamsMatched|int32|false|false|The streams that the rule applied to.|
+|StreamReferences|int32|false|false|The total number of stream references that assets have.|
+|Metadatas|int32|false|false|The total number of metadatas contained within the assets.|
+|PercentDone|float|false|false|Percent of streams that have been processed from 0.0 to 1.0.|
 
 ```json
 {
   "StreamsProcessed": 0,
   "TotalResults": 0,
-  "ExecutionErrors": 0
+  "ExecutionErrors": 0,
+  "StreamsMatched": 0,
+  "StreamReferences": 0,
+  "Metadatas": 0,
+  "PercentDone": 0
 }
 
 ```

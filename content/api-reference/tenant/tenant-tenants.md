@@ -640,7 +640,7 @@ Represents a region within an OCS environment for OCS customers to see.
 |---|---|---|---|---|
 |Id|string|false|true|Identifier for the region.|
 |Name|string|false|true|Name associated with the region.|
-|AdministrativeEndpointsWritable|boolean|false|false|Value indicating whether value indicating whether administrative endpoints are writable in the region.|
+|AdministrativeEndpointsWritable|boolean|false|false|Value indicating whether administrative endpoints are writable in the region.|
 |BaseAddress|string|false|true|Base address for the region.|
 
 ```json

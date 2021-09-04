@@ -92,9 +92,9 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |---|---|---|
 |200|[StatusRangeSummary](#schemastatusrangesummary)|Last status of the specified asset.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
-|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found.|
 |422|[ErrorTemplate](#schemaerrortemplate)|Cannot be processed. See the response body for additional details.|
-|502|None|Bad gateway|
+|502|None|Bad gateway.|
 
 <h4>Example response body</h4>
 

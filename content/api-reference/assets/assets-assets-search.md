@@ -16,7 +16,7 @@ Searches all assets and returns a list of asset Ids and their matched fields. Us
 
 ```text 
 GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets
-?query={query}&Comparer={Comparer}&Count={Count}&Keys={Keys}&System.Collections.Generic.IDictionary<TKey,TValue>.Keys={System.Collections.Generic.IDictionary<TKey,TValue>.Keys}&System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys={System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys}&Values={Values}&System.Collections.Generic.IDictionary<TKey,TValue>.Values={System.Collections.Generic.IDictionary<TKey,TValue>.Values}&System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values={System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values}&Item={Item}&System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly={System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly}&System.Collections.ICollection.IsSynchronized={System.Collections.ICollection.IsSynchronized}&System.Collections.ICollection.SyncRoot={System.Collections.ICollection.SyncRoot}&System.Collections.IDictionary.IsFixedSize={System.Collections.IDictionary.IsFixedSize}&System.Collections.IDictionary.IsReadOnly={System.Collections.IDictionary.IsReadOnly}&System.Collections.IDictionary.Keys={System.Collections.IDictionary.Keys}&System.Collections.IDictionary.Values={System.Collections.IDictionary.Values}&System.Collections.IDictionary.Item={System.Collections.IDictionary.Item}&skip={skip}&count={count}&orderBy={orderBy}&maxPages={maxPages}&pageSize={pageSize}&continuationToken={continuationToken}
+?skip={skip}&count={count}&orderBy={orderBy}&query={query}&pageSize={pageSize}&maxPages={maxPages}&continuationToken={continuationToken}&Comparer={Comparer}&Count={Count}&Keys={Keys}&System.Collections.Generic.IDictionary<TKey,TValue>.Keys={System.Collections.Generic.IDictionary<TKey,TValue>.Keys}&System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys={System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys}&Values={Values}&System.Collections.Generic.IDictionary<TKey,TValue>.Values={System.Collections.Generic.IDictionary<TKey,TValue>.Values}&System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values={System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values}&Item={Item}&System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly={System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly}&System.Collections.ICollection.IsSynchronized={System.Collections.ICollection.IsSynchronized}&System.Collections.ICollection.SyncRoot={System.Collections.ICollection.SyncRoot}&System.Collections.IDictionary.IsFixedSize={System.Collections.IDictionary.IsFixedSize}&System.Collections.IDictionary.IsReadOnly={System.Collections.IDictionary.IsReadOnly}&System.Collections.IDictionary.Keys={System.Collections.IDictionary.Keys}&System.Collections.IDictionary.Values={System.Collections.IDictionary.Values}&System.Collections.IDictionary.Item={System.Collections.IDictionary.Item}
 ```
 
 <h4>Parameters</h4>
@@ -24,8 +24,14 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
-`[optional] string query`
-<br/>Query identifier.<br/><br/>`[optional] object Comparer`
+`[optional] integer skip`
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string orderBy`
+<br/>Optional parameter which returns assets ordered either by the asset `Id` or the asset `Name`. Specify `asc` or `desc` to return the results in ascending or descending order. If not specified, the default is ascending order.<br/><br/>`[optional] string query`
+<br/>Query identifier.<br/><br/>`[optional] integer pageSize`
+<br/>Page size, internal use only<br/><br/>`[optional] integer maxPages`
+<br/>Max pages, internal use only<br/><br/>`[optional] string continuationToken`
+<br/>Internal use only<br/><br/>`[optional] object Comparer`
 <br/><br/>`[optional] integer Count`
 <br/><br/>`[optional] array Keys`
 <br/><br/>`[optional] array System.Collections.Generic.IDictionary<TKey,TValue>.Keys`
@@ -42,13 +48,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets
 <br/><br/>`[optional] array System.Collections.IDictionary.Keys`
 <br/><br/>`[optional] array System.Collections.IDictionary.Values`
 <br/><br/>`[optional] any System.Collections.IDictionary.Item`
-<br/><br/>`[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string orderBy`
-<br/>Optional parameter which returns assets ordered either by the asset `Id` or the asset `Name`. Specify `asc` or `desc` to return the results in ascending or descending order. If not specified, the default is ascending order.<br/><br/>`[optional] integer maxPages`
-<br/>Max pages, internal use only<br/><br/>`[optional] integer pageSize`
-<br/>Page size, internal use only<br/><br/>`[optional] string continuationToken`
-<br/>Internal use only<br/><br/>
+<br/><br/>
 
 <h3>Response</h3>
 
@@ -110,7 +110,7 @@ Searches for assets using facets. Asset facets are not case-sensitive. Only asse
 
 ```text 
 GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets/Facets
-?name={name}&count={count}
+?count={count}&name={name}
 ```
 
 <h4>Parameters</h4>
@@ -118,9 +118,9 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets/Fa
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
-`[optional] string name`
-<br/>Name of the asset metadata for which you want to retrieve the facet values.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
+`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string name`
+<br/>Name of the asset metadata for which you want to retrieve the facet values.<br/><br/>
 
 <h3>Response</h3>
 

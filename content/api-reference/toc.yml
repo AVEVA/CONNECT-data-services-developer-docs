@@ -19,7 +19,7 @@
 - name: Rules
   href: rules/toc.yml
   topicHref: rules/rules-overview.md
-- name: Asset store (Preview)
+- name: Asset store
   href: assets/toc.yml
   topicHref: Assets/assets.md
 - name: Communities (Preview)

@@ -20,10 +20,10 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/metadatarules
 
 <h4>Parameters</h4>
 
-`string token`
-<br/>A `Guid` which corresponds to a SuggestionResponse that has been created using the `StartSuggestion` method.<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>Namespace identifier.<br/><br/>`string token`
+<br/>A `Guid` which corresponds to a SuggestionResponse that has been created using the `StartSuggestion` method.<br/><br/>
 
 <h3>Response</h3>
 
@@ -288,10 +288,10 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/metadataru
 
 <h4>Parameters</h4>
 
-`string token`
-<br/>A `Guid` which corresponds to a SuggestionResponse that has been created using the `StartSuggestion` method.<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>Namespace identifier.<br/><br/>`string token`
+<br/>A `Guid` which corresponds to a SuggestionResponse that has been created using the `StartSuggestion` method.<br/><br/>
 
 <h3>Response</h3>
 
@@ -432,10 +432,10 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/metadataru
 
 <h4>Enumerated Values</h4>
 
-|Property|Value|
-|---|---|
-|Started|Started|
-|Stopped|Stopped|
+|Property|Value|Description|
+|---|---|---|
+|Started|0||
+|Stopped|1||
 
 ---
 
@@ -458,10 +458,10 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/metadataru
   "Field": "string",
   "Specifications": [
     {
-      "Type": "Unspecified",
+      "Type": 0,
       "Value": "string",
       "Name": "string",
-      "CharacterType": "Any",
+      "CharacterType": 0,
       "CharacterLength": 0,
       "StrictValueMappings": true,
       "RequiredDelimiters": [
@@ -501,10 +501,10 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/metadataru
 
 ```json
 {
-  "Type": "Unspecified",
+  "Type": 0,
   "Value": "string",
   "Name": "string",
-  "CharacterType": "Any",
+  "CharacterType": 0,
   "CharacterLength": 0,
   "StrictValueMappings": true,
   "RequiredDelimiters": [
@@ -531,11 +531,11 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/metadataru
 
 |Property|Value|
 |---|---|
-|Unspecified|Unspecified|
-|Group|Group|
-|Wildcard|Wildcard|
-|Literal|Literal|
-|Delimiter|Delimiter|
+|Unspecified|0|
+|Group|1|
+|Wildcard|2|
+|Literal|3|
+|Delimiter|4|
 
 ---
 
@@ -550,10 +550,10 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/metadataru
 
 |Property|Value|
 |---|---|
-|Any|Any|
-|Letter|Letter|
-|Digit|Digit|
-|Alphanumeric|Alphanumeric|
+|Any|0|
+|Letter|1|
+|Digit|2|
+|Alphanumeric|3|
 
 ---
 

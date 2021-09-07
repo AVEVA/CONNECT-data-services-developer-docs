@@ -7,7 +7,7 @@ uid: metadata-metadata-rules
 
 ## `List Rules`
 
-<a id="opIdMetadataRules_List Rules"></a>
+<a id="opIdMetadataRule_List Rules"></a>
 
 Returns all `RuleModel` objects from the `IRuleStore` to which the requesting `Identity` has access.
 
@@ -26,7 +26,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules
 `[optional] integer Skip`
 <br/>An Int32 to determine how many results to skip. Defaults to DefaultSkip<br/><br/>`[optional] integer Count`
 <br/>An Int32 to determine how many results to return. Defaults to DefaultCount<br/><br/>`[optional] boolean KeepOldMetadata`
-<br/>A Boolean to determine whether or not existing metadata create by the rule should be kept. Only valid for metadata rule delete requests.
+<br/>A Boolean to determine whether or not existing metadata created by the rule should be preserved if the rule were deleted. Only valid for metadata rule delete requests.
 Defaults to false.<br/><br/>`[optional] boolean KeepOldAssets`
 <br/>A Boolean to determine whether or not existing assets created by the rule should be kept. Only valid for asset rule delete requests.
 Defaults to false.<br/><br/>
@@ -162,7 +162,7 @@ Defaults to false.<br/><br/>
 
 ## `Create Rule With Server Generated Id`
 
-<a id="opIdMetadataRules_Create Rule With Server Generated Id"></a>
+<a id="opIdMetadataRule_Create Rule With Server Generated Id"></a>
 
 Creates a `RuleModel` object with a server generated `Id` in the `IRuleStore`.
 
@@ -330,7 +330,7 @@ The RuleModel object to create.<br/>
 
 ## `Get Rule`
 
-<a id="opIdMetadataRules_Get Rule"></a>
+<a id="opIdMetadataRule_Get Rule"></a>
 
 Gets the specified rule.
 
@@ -342,8 +342,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}
 
 <h4>Parameters</h4>
 
-`any routeOptions`
-<br/>The `RuleRouteOptions` uri route parameters.<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
 <br/>Rule identifier.<br/><br/>
@@ -445,7 +444,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}
 
 ## `Create Rule`
 
-<a id="opIdMetadataRules_Create Rule"></a>
+<a id="opIdMetadataRule_Create Rule"></a>
 
 Returns or creates a `RuleModel` object with the specified id in the `IRuleStore`.
 
@@ -457,8 +456,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}
 
 <h4>Parameters</h4>
 
-`any routeOptions`
-<br/>The `RuleRouteOptions` uri route parameters.<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
 <br/>Rule identifier.<br/><br/>
@@ -616,7 +614,7 @@ The RuleModel object.<br/>
 
 ## `Create Or Update Rule`
 
-<a id="opIdMetadataRules_Create Or Update Rule"></a>
+<a id="opIdMetadataRule_Create Or Update Rule"></a>
 
 Creates or updates the specified rule in the `IRuleStore`.
 
@@ -629,15 +627,14 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}
 
 <h4>Parameters</h4>
 
-`any routeOptions`
-<br/>The `RuleRouteOptions` uri route parameters.<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
 <br/>Rule identifier.<br/><br/>
 `[optional] integer Skip`
 <br/>An Int32 to determine how many results to skip. Defaults to DefaultSkip<br/><br/>`[optional] integer Count`
 <br/>An Int32 to determine how many results to return. Defaults to DefaultCount<br/><br/>`[optional] boolean KeepOldMetadata`
-<br/>A Boolean to determine whether or not existing metadata create by the rule should be kept. Only valid for metadata rule delete requests.
+<br/>A Boolean to determine whether or not existing metadata created by the rule should be preserved if the rule were deleted. Only valid for metadata rule delete requests.
 Defaults to false.<br/><br/>`[optional] boolean KeepOldAssets`
 <br/>A Boolean to determine whether or not existing assets created by the rule should be kept. Only valid for asset rule delete requests.
 Defaults to false.<br/><br/>
@@ -816,7 +813,7 @@ The RuleModel object to create or update.<br/>
 
 ## `Delete Rule`
 
-<a id="opIdMetadataRules_Delete Rule"></a>
+<a id="opIdMetadataRule_Delete Rule"></a>
 
 Deletes the specified rule from the `IRuleStore`.
 
@@ -829,15 +826,14 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId
 
 <h4>Parameters</h4>
 
-`any routeOptions`
-<br/>The `RuleRouteOptions` uri route parameters.<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
 <br/>Rule identifier.<br/><br/>
 `[optional] integer Skip`
 <br/>An Int32 to determine how many results to skip. Defaults to DefaultSkip<br/><br/>`[optional] integer Count`
 <br/>An Int32 to determine how many results to return. Defaults to DefaultCount<br/><br/>`[optional] boolean KeepOldMetadata`
-<br/>A Boolean to determine whether or not existing metadata create by the rule should be kept. Only valid for metadata rule delete requests.
+<br/>A Boolean to determine whether or not existing metadata created by the rule should be preserved if the rule were deleted. Only valid for metadata rule delete requests.
 Defaults to false.<br/><br/>`[optional] boolean KeepOldAssets`
 <br/>A Boolean to determine whether or not existing assets created by the rule should be kept. Only valid for asset rule delete requests.
 Defaults to false.<br/><br/>
@@ -855,7 +851,7 @@ Defaults to false.<br/><br/>
 
 ## `Execute Rule`
 
-<a id="opIdMetadataRules_Execute Rule"></a>
+<a id="opIdMetadataRule_Execute Rule"></a>
 
 Executes the specified rule.
 
@@ -867,11 +863,10 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/
 
 <h4>Parameters</h4>
 
-`any routeOptions`
-<br/>The `RuleRouteOptions` uri route parameters.<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string ruleId`
-<br/><br/>
+<br/>Rule identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -957,8 +952,8 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/
 
 |Property|Value|
 |---|---|
-|Started|Started|
-|Stopped|Stopped|
+|Started|0|
+|Stopped|1|
 
 ---
 
@@ -981,10 +976,10 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/
   "Field": "string",
   "Specifications": [
     {
-      "Type": "Unspecified",
+      "Type": 0,
       "Value": "string",
       "Name": "string",
-      "CharacterType": "Any",
+      "CharacterType": 0,
       "CharacterLength": 0,
       "StrictValueMappings": true,
       "RequiredDelimiters": [
@@ -1024,10 +1019,10 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/
 
 ```json
 {
-  "Type": "Unspecified",
+  "Type": 0,
   "Value": "string",
   "Name": "string",
-  "CharacterType": "Any",
+  "CharacterType": 0,
   "CharacterLength": 0,
   "StrictValueMappings": true,
   "RequiredDelimiters": [
@@ -1054,11 +1049,11 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/
 
 |Property|Value|
 |---|---|
-|Unspecified|Unspecified|
-|Group|Group|
-|Wildcard|Wildcard|
-|Literal|Literal|
-|Delimiter|Delimiter|
+|Unspecified|0|
+|Group|1|
+|Wildcard|2|
+|Literal|3|
+|Delimiter|4|
 
 ---
 
@@ -1073,10 +1068,10 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/
 
 |Property|Value|
 |---|---|
-|Any|Any|
-|Letter|Letter|
-|Digit|Digit|
-|Alphanumeric|Alphanumeric|
+|Any|0|
+|Letter|1|
+|Digit|2|
+|Alphanumeric|3|
 
 ---
 
@@ -1131,28 +1126,6 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/
     "key1": "value1",
     "key2": "value2"
   }
-}
-
-```
-
----
-
-### RuleRouteOptions
-
-<a id="schemarulerouteoptions"></a>
-<a id="schema_RuleRouteOptions"></a>
-<a id="tocSrulerouteoptions"></a>
-<a id="tocsrulerouteoptions"></a>
-
-<h4>Properties</h4>
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|RuleId|string|false|true|The identifier of a rule.|
-
-```json
-{
-  "RuleId": "string"
 }
 
 ```

@@ -20,11 +20,11 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 
 <h4>Parameters</h4>
 
-`string token`
-<br/>A `Guid` which corresponds to a preview that has been created using the `StartPreview` method.<br/><br/>`integer skip`
-<br/>An `Int32` to determine the number of preview results to skip.<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>Namespace identifier.<br/><br/>`string token`
+<br/>A `Guid` which corresponds to a preview that has been created using the `StartPreview` method.<br/><br/>`integer skip`
+<br/>An `Int32` to determine the number of preview results to skip.<br/><br/>
 `[optional] integer count`
 <br/>An `Int32` to determine the number of preview results to return.<br/><br/>
 
@@ -154,7 +154,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 `[optional] boolean KeepOldMetadata`
-<br/>A Boolean to determine whether or not existing metadata create by the rule should be kept.
+<br/>A Boolean to determine whether or not existing metadata created by the rule should be preserved if the rule were deleted.
 Defaults to false.<br/><br/>`[optional] integer Skip`
 <br/>An Int32 to determine how many results to skip.<br/><br/>`[optional] integer Count`
 <br/>An Int32 to determine how many results to return.<br/><br/>
@@ -312,10 +312,10 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 
 <h4>Parameters</h4>
 
-`string token`
-<br/>A `Guid` which corresponds to a preview that has been created using the `StartPreview` method.<br/><br/>`string tenantId`
+`string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>Namespace identifier.<br/><br/>`string token`
+<br/>A `Guid` which corresponds to a preview that has been created using the `StartPreview` method.<br/><br/>
 
 <h3>Response</h3>
 
@@ -456,10 +456,10 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 
 <h4>Enumerated Values</h4>
 
-|Property|Value|
-|---|---|
-|Started|Started|
-|Stopped|Stopped|
+|Property|Value|Description|
+|---|---|---|
+|Started|0||
+|Stopped|1||
 
 ---
 
@@ -482,10 +482,10 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
   "Field": "string",
   "Specifications": [
     {
-      "Type": "Unspecified",
+      "Type": 0,
       "Value": "string",
       "Name": "string",
-      "CharacterType": "Any",
+      "CharacterType": 0,
       "CharacterLength": 0,
       "StrictValueMappings": true,
       "RequiredDelimiters": [
@@ -525,10 +525,10 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 
 ```json
 {
-  "Type": "Unspecified",
+  "Type": 0,
   "Value": "string",
   "Name": "string",
-  "CharacterType": "Any",
+  "CharacterType": 0,
   "CharacterLength": 0,
   "StrictValueMappings": true,
   "RequiredDelimiters": [
@@ -555,11 +555,11 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 
 |Property|Value|
 |---|---|
-|Unspecified|Unspecified|
-|Group|Group|
-|Wildcard|Wildcard|
-|Literal|Literal|
-|Delimiter|Delimiter|
+|Unspecified|0|
+|Group|1|
+|Wildcard|2|
+|Literal|3|
+|Delimiter|4|
 
 ---
 
@@ -574,10 +574,10 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 
 |Property|Value|
 |---|---|
-|Any|Any|
-|Letter|Letter|
-|Digit|Digit|
-|Alphanumeric|Alphanumeric|
+|Any|0|
+|Letter|1|
+|Digit|2|
+|Alphanumeric|3|
 
 ---
 

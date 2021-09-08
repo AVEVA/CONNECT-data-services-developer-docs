@@ -10,8 +10,14 @@ The OSIsoft Cloud Services Power BI Connector retrieves Data Views from OCS and 
 
 The following are required before you install and use OSIsoft Cloud Services Power BI Connector.
 
-- Microsoft Power BI Desktop
+- Operation Systems: Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2016, Windows Server 2019
+
+- For desktop installation: Microsoft Power BI Desktop 2.91.884.0 or later
+
+- For on-premises Data Gateway installation: Microsoft Power BI On-premises Data Gateway 3000.89.6 or later
+
 - Microsoft Edge WebView 2 Runtime
+
 - A user account with Administrator privileges to install OSIsoft Cloud Services Power BI Connector on a local machine.
 
 ## Install OSIsoft Cloud Services Power BI Connector

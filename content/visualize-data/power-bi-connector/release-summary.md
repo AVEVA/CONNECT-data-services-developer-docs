@@ -2,7 +2,9 @@
 uid: PowerBIReleaseSummary
 ---
 
-# Release 1.1.0.140: August 23, 2021
+# Release summary
+
+**Release 1.1.0.140: August 23, 2021**
 
 ## Overview
 

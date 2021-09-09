@@ -69,5 +69,5 @@ Procedure
 
 ## Related topics
 
-[Context switch in visual trending](xref: ContextSwitch)
+[Context switch in visual trending](xref:ContextSwitch)
 

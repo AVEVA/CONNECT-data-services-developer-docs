@@ -3,7 +3,9 @@ uid: UsingMultipleRules
 ---
 
 # Using multiple asset rules to create assets
-There are situations where a single asset rule cannot identify all the streams required to create your assets. In these situations, you must create a second asset rule (or more) to accomodate a different asset naming paterns.
+
+There are situations where a single asset rule cannot identify all the streams required to create your assets. In these situations, you must create additional asset rules to accomodate a different asset naming paterns.
+
 In the [Tank Rule A example](xref:CreateAssetRules#tank), the stream names follow a single pattern that can be defined with one asset rule. There are situations where a single asset rule cannot identify all the streams required to create your assets. Returning to the Tank Rule A example, assume that there is one stream name that deviates from this pattern and cannot be identified by this rule. In the table below, `PHI-Tank03-Temp` differs from the other stream names and contains a hyphen delimiter between the third and fourth parts of its name, that is, between *03* and *Temp*.
 
 | Stream Name         | Asset Name | Stream Measurement |

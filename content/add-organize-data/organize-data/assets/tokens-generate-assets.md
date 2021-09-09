@@ -13,7 +13,7 @@ The following screen capture shows the `Configure Asset` window for the [Tank Ru
 The following table shows the token definitions for the Tank rule and the resulting values for one of the assets (Tank 01) when the rule is applied.
 
 | #                     | Configuration field   | Token definition                       | Values for the Tank 01 asset |
-| --------------------- | --------------------- | -------------------------------------- | ---------------------------- |
+| :-------------------: | --------------------- | -------------------------------------- | ---------------------------- |
 | ![](images/one.png)   | Id                    | {site} {equipment_type}.{equipment_id} | San Leandro Tank.01          |
 | ![](images/two.png)   | Name                  | {equipment_type} {equipment_id}        | Tank 01                      |
 | ![](images/three.png) | Description           | {site}                                 | San Leandro                  |

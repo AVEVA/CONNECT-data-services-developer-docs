@@ -25,7 +25,7 @@ Set up the mappings and configure the asset as described in [Create an asset rul
 
 ![Configure asset - rule 2](images/configure-asset-page-rule2.png)
 
-**Note:** The **Id** and **Name** for both rules must resolve to the same values in order to achieve the intended result, that is one asset that references both streams. If the Ids are different, then two assets with the name `Philadelphia 03` will be created, one that references the `Pressure` stream and the other that references the `Temperature` stream.
+**Note:** The **Id** and **Name** for both rules must resolve to the same values to achieve the intended result, that is one asset that references both streams. If the Ids are different, then two assets with the name `Philadelphia 03` are created, one that references the `Pressure` stream and the other that references the `Temperature` stream.
 
 OSIsoft recommends that you configure the other asset fields, **Description** and **Metadata** the same in both rules.
 

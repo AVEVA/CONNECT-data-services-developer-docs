@@ -35,6 +35,6 @@ The following is the asset preview of Tank Rule B which matches the `PHI-Tank03-
 
 Tank Rule A, applied to the streams in this example, creates three tanks with the `Philadelphia Tank 03` missing the `Temp` measurement as shown below.
 
-![](images/tank-rule-preview.png)
+![tank rule 1 - preview](images/tank-rule-preview.png)
 
 The two rules complement each other and both are required to create the three assets with stream references for pressure and temperature.

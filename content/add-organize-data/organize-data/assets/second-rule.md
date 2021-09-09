@@ -33,7 +33,7 @@ OSIsoft recommends that you configure the other asset fields, **Description** an
 
 The following is the asset preview of Tank Rule B which matches the `PHI-Tank03-Temp` stream for the `Philadelphia Tank 03` asset.
 
-![](images/tank-rule-2-preview.png)
+![tank rule 2 - preview](images/tank-rule-2-preview.png)
 
 Tank Rule A, applied to the streams in this example, creates three tanks with the `Philadelphia Tank 03` missing the `Temp` measurement as shown below.
 

@@ -58,7 +58,7 @@ C. **Inviter:** Perform the following steps to confirm the new tenant:
 
   1. Select an invitation with a status of Invitation Accepted.
   
-   The Invitation Details pane opens.
+   The `Invitation Details` pane opens.
 
   1. Click **Confirm Tenant**. When prompted for confirmation, click **Confirm Tenant** again.
     

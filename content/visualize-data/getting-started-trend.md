@@ -67,3 +67,7 @@ Procedure
 
     You can share this URL with colleagues to give them the same view of the trend which they can use to troubleshoot problems.
 
+## Related topics
+
+[Context switch in visual trending](xref:ContextSwitch)
+

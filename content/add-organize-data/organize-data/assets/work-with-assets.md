@@ -2,7 +2,7 @@
 uid: WorkWithAssets
 ---
 
-# Working with assets created with asset rules
+# Asset rules: Expected behavior
 
 <!-- There may be a better title -->
 

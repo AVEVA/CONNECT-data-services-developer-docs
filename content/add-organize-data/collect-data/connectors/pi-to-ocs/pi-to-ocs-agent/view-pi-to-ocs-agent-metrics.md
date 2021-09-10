@@ -14,4 +14,4 @@ You can quickly view key performance indicator (KPI) metrics for installed PI to
 
    ![](../../images/kpi-tile.png)
 
-2.  View the information in the PI to OCS Agents tile to see the current performance of your agent(s) (Good, Warning, Bad, Stopped).
+2.  View the information in the `PI to OCS Agents` tile to see the current performance of your agent(s) (Good, Warning, Bad, Stopped).

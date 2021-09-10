@@ -78,7 +78,7 @@ After removing a tenant, you can re-invite the tenant to the community but all d
 
 1. Select the tenant you want to remove from the community. The `Tenant Details` pane opens.
 
-1. On the Tenant Details pane, click **Remove Tenant**. When prompted for confirmation, click **Remove Tenant** again.
+1. On the `Tenant Details` pane, click **Remove Tenant**. When prompted for confirmation, click **Remove Tenant** again.
 
 ## Remove your own tenant from a community
 

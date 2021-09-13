@@ -7,14 +7,14 @@ uid: asset-asset-rules
 
 ## `List Rules`
 
-<a id="opIdAssetRule_List Rules"></a>
+<a id="opIdMetadataRule_List Rules"></a>
 
 Returns all `RuleModel` objects from the `IRuleStore` to which the requesting `Identity` has access.
 
 <h3>Request</h3>
 
 ```text 
-GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules
+GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules
 ?Skip={Skip}&Count={Count}&KeepOldMetadata={KeepOldMetadata}&KeepOldAssets={KeepOldAssets}
 ```
 
@@ -67,37 +67,39 @@ Defaults to false.<br/><br/>
       {
         "Field": "Asset",
         "Value": {
-          "Id": "assetId",
-          "Name": "name",
-          "AssetTypeId": "TypeId",
-          "Description": "description",
-          "Metadata": [
-            {
-              "Id": "metadataId",
-              "Name": "name",
-              "Description": "description",
-              "SdsTypeCode": "18",
-              "Value": "{streamId}"
-            }
-          ],
-          "StreamReferences": [
-            {
-              "Id": "StreamRefId",
-              "Description": "description",
-              "StreamId": "{streamId}"
-            }
-          ],
-          "Status": {
-            "StreamReferenceId": "StreamRefId",
-            "StreamPropertyId": "Value",
-            "ValueStatusMappings": [
-              {
-                "Value": "value",
-                "Status": 1,
-                "DisplayName": "Display Name Indicator"
-              }
-            ]
+          "key": "{id}"
+        }
+      }
+    ],
+    "CreationTime": "0001-01-01T00:00:00",
+    "ModifiedTime": "0001-01-01T00:00:00",
+    "ErrorInfo": {
+      "ErrorCount": 2
+    }
+  },
+  {
+    "Id": "ruleId",
+    "Name": "name",
+    "Description": "description",
+    "ExampleStreamId": "exampleId",
+    "AutomationId": "00000000-0000-0000-0000-000000000000",
+    "State": "Started",
+    "Expressions": [
+      {
+        "Field": "Id",
+        "Specification": [
+          {
+            "Type": "Wildcard",
+            "Name": "id"
           }
+        ]
+      }
+    ],
+    "Outputs": [
+      {
+        "Field": "Metadata",
+        "Value": {
+          "key": "{id}"
         }
       }
     ],
@@ -159,7 +161,7 @@ Defaults to false.<br/><br/>
 
 ## `Create Rule With Server Generated Id`
 
-<a id="opIdAssetRule_Create Rule With Server Generated Id"></a>
+<a id="opIdMetadataRule_Create Rule With Server Generated Id"></a>
 
 Creates a `RuleModel` object with a server generated `Id` in the `IRuleStore`.
 
@@ -356,7 +358,7 @@ The RuleModel object to create.<br/>
 
 ## `Get Rule`
 
-<a id="opIdAssetRule_Get Rule"></a>
+<a id="opIdMetadataRule_Get Rule"></a>
 
 Returns the specified rule.
 
@@ -499,9 +501,9 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
 
 ## `Create Rule`
 
-<a id="opIdAssetRule_Create Rule"></a>
+<a id="opIdMetadataRule_Create Rule"></a>
 
-Returns or creates a `RuleModel` object with the specified identifier in the `IRuleStore`.
+Returns or creates a `RuleModel` object with the specified id in the `IRuleStore`.
 
 <h3>Request</h3>
 
@@ -698,14 +700,14 @@ The RuleModel object.<br/>
 
 ## `Create Or Update Rule`
 
-<a id="opIdAssetRule_Create Or Update Rule"></a>
+<a id="opIdMetadataRule_Create Or Update Rule"></a>
 
 Creates or updates the specified rule in the `IRuleStore`.
 
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
+PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}
 ?Skip={Skip}&Count={Count}&KeepOldMetadata={KeepOldMetadata}&KeepOldAssets={KeepOldAssets}
 ```
 
@@ -897,14 +899,14 @@ The RuleModel object to create or update.<br/>
 
 ## `Delete Rule`
 
-<a id="opIdAssetRule_Delete Rule"></a>
+<a id="opIdMetadataRule_Delete Rule"></a>
 
 Deletes the specified rule from the `IRuleStore`.
 
 <h3>Request</h3>
 
 ```text 
-DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
+DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}
 ?Skip={Skip}&Count={Count}&KeepOldMetadata={KeepOldMetadata}&KeepOldAssets={KeepOldAssets}
 ```
 
@@ -935,7 +937,7 @@ Defaults to false.<br/><br/>
 
 ## `Execute Rule`
 
-<a id="opIdAssetRule_Execute Rule"></a>
+<a id="opIdMetadataRule_Execute Rule"></a>
 
 Executes the specified rule.
 
@@ -962,91 +964,6 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/exe
 |404|[ResponseBody](#schemaresponsebody)|The specified rule was not found.|
 |409|[ResponseBody](#schemaresponsebody)|The automation identifier was invalid.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
-
----
-
-## `Get Progress`
-
-<a id="opIdAssetRule_Get Progress"></a>
-
-Returns a description of the progress of the most recent execution of the rule and any errors.
-
-<h3>Request</h3>
-
-```text 
-GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/progress
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string ruleId`
-<br/>Rule identifier.<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|[ExecutionProgress](#schemaexecutionprogress)|A `ExecutionProgress` object for the given rule id.|
-|403|[ResponseBody](#schemaresponsebody)|Forbidden.|
-|404|[ResponseBody](#schemaresponsebody)|The specified rule was not found.|
-|500|[ResponseBody](#schemaresponsebody)|Internal server error.|
-
-<h4>Example response body</h4>
-
-> 200 Response
-
-```json
-{
-  "State": "Running"
-}
-```
-
-> 403 Response
-
-```json
-{
-  "OperationId": "00000000-0000-0000-0000-000000000000",
-  "Error": "Error message.",
-  "Reason": "Reason that caused the error.",
-  "Resolution": "Possible resolution for the error.",
-  "Parameters": {
-    "key1": "value1",
-    "key2": "value2"
-  }
-}
-```
-
-> 404 Response
-
-```json
-{
-  "OperationId": "00000000-0000-0000-0000-000000000000",
-  "Error": "Error message.",
-  "Reason": "Reason that caused the error.",
-  "Resolution": "Possible resolution for the error.",
-  "Parameters": {
-    "key1": "value1",
-    "key2": "value2"
-  }
-}
-```
-
-> 500 Response
-
-```json
-{
-  "OperationId": "00000000-0000-0000-0000-000000000000",
-  "Error": "Error message.",
-  "Reason": "Reason that caused the error.",
-  "Resolution": "Possible resolution for the error.",
-  "Parameters": {
-    "key1": "value1",
-    "key2": "value2"
-  }
-}
-```
 
 ---
 ## Definitions
@@ -1296,28 +1213,6 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/prog
     "key1": "value1",
     "key2": "value2"
   }
-}
-
-```
-
----
-
-### ExecutionProgress
-
-<a id="schemaexecutionprogress"></a>
-<a id="schema_ExecutionProgress"></a>
-<a id="tocSexecutionprogress"></a>
-<a id="tocsexecutionprogress"></a>
-
-<h4>Properties</h4>
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|State|[ProgressState](#schemaprogressstate)|false|false|None|
-
-```json
-{
-  "State": 0
 }
 
 ```

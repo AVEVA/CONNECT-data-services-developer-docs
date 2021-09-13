@@ -4,13 +4,13 @@ uid: data-views-data-views-data
 ---
 
 # Data Views Data
-The Data API allows users to [retrieve data](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/GetDataViewData/Quick_Start_Get_Data_View_Data.html) for a specified data view.  This API is one portion of the [data views API](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/DataViewsAPIOverview/Data_Views_API_Overview.html).
+The Data API allows users to [retrieve data](xref:DataViewsQuickStartGetData) for a specified data view.  This API is one portion of the [data views API](xref:DataViewsAPIOverview).
 
 ## `Get Data View Interpolated Data`
 
 <a id="opIdDataViewsData_Get Data View Interpolated Data"></a>
 
-Returns interpolated data for the provided index parameters with paging. See [documentation on paging](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/GetDataViewData/Quick_Start_Get_Data_View_Data.html#paging) for further information.
+Returns interpolated data for the provided index parameters with paging. See [documentation on paging](xref:DataViewsQuickStartGetData#paging) for further information.
 
 <h3>Request</h3>
 
@@ -30,11 +30,11 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/data/inte
 <br/>The requested end index, inclusive. The default value is the ```.DefaultEndIndex``` of the data view. Optional if a default value is specified.
 <br/><br/>`string interval`
 <br/>The requested interval between index values. The default value is the ```.DefaultInterval``` of the data view. Optional if a default is specified.<br/><br/>`string form`
-<br/>The requested data [output format](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/GetDataViewData/Quick_Start_Get_Data_View_Data.html#format). Output formats: `default`, `table`, `tableh`, `csv`, `csvh`.
+<br/>The requested data [output format](xref:DataViewsQuickStartGetData#format). Output formats: `default`, `table`, `tableh`, `csv`, `csvh`.
 <br/><br/>`string continuationToken`
-<br/>Used only when [paging](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/GetDataViewData/Quick_Start_Get_Data_View_Data.html#paging). Not specified when requesting the first page of data.
+<br/>Used only when [paging](xref:DataViewsQuickStartGetData#paging). Not specified when requesting the first page of data.
 <br/><br/>`integer count`
-<br/>The requested page size. The maximum is 250,000. If the parameter is not provided, [an optimal page size will be calculated](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/GetDataViewData/Quick_Start_Get_Data_View_Data.html#page-size).
+<br/>The requested page size. The maximum is 250,000. If the parameter is not provided, [an optimal page size will be calculated](xref:DataViewsQuickStartGetData#page-size).
 <br/><br/>
 `[optional] string cache`
 <br/>Controls when the data view backing resources are to be refreshed. Used only when requesting the first page of data. Ignored if used with the continuationToken. Values are:
@@ -98,7 +98,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/data/inte
 
 <a id="opIdDataViewsData_Get Data View Stored Data"></a>
 
-Returns stored data for the provided index parameters with paging. See [documentation on paging](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/GetDataViewData/Quick_Start_Get_Data_View_Data.html#paging) for further information.
+Returns stored data for the provided index parameters with paging. See [documentation on paging](xref:DataViewsQuickStartGetData#paging) for further information.
 
 <h3>Request</h3>
 
@@ -117,11 +117,11 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/data/stor
 <br/><br/>`string endIndex`
 <br/>The requested end index, inclusive. The default value is the ```.DefaultEndIndex``` of the data view. Optional if a default value is specified.
 <br/><br/>`string form`
-<br/>The requested data [output format](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/GetDataViewData/Quick_Start_Get_Data_View_Data.html#format). Output formats: `default`, `table`, `tableh`, `csv`, `csvh`.
+<br/>The requested data [output format](xref:DataViewsQuickStartGetData#format). Output formats: `default`, `table`, `tableh`, `csv`, `csvh`.
 <br/><br/>`string continuationToken`
-<br/>Used only when [paging](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/GetDataViewData/Quick_Start_Get_Data_View_Data.html#paging). Not specified when requesting the first page of data.
+<br/>Used only when [paging](xref:DataViewsQuickStartGetData#paging). Not specified when requesting the first page of data.
 <br/><br/>`integer count`
-<br/>The requested page size. The maximum is 250,000. If the parameter is not provided, [an optimal page size will be calculated](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/GetDataViewData/Quick_Start_Get_Data_View_Data.html#page-size).
+<br/>The requested page size. The maximum is 250,000. If the parameter is not provided, [an optimal page size will be calculated](xref:DataViewsQuickStartGetData#page-size).
 <br/><br/>
 `[optional] string cache`
 <br/>Controls when the data view backing resources are to be refreshed. Used only when requesting the first page of data. Ignored if used with the continuationToken. Values are:

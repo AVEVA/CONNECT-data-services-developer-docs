@@ -4,7 +4,7 @@ uid: data-views-access-control
 ---
 
 # Access Control
-This portion of the [overall data views API](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/DataViewsAPIOverview/Data_Views_API_Overview.html) focuses on [securing data views](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/SecureDataViews/Securing_Data_Views.html) by setting their ownership and permissions.
+This portion of the [overall data views API](xref:DataViewsAPIOverview) focuses on [securing data views](xref:DataViewsSecuringDataViews) by setting their ownership and permissions.
 
 ## `List Data Views Access Rights`
 
@@ -65,13 +65,13 @@ HTTP 200 OK
 ```
 
 # Access Control
-This portion of the [overall data views API](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/DataViewsAPIOverview/Data_Views_API_Overview.html) focuses on [securing data views](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/SecureDataViews/Securing_Data_Views.html) by setting their ownership and permissions.
+This portion of the [overall data views API](xref:accessControl#access-control-lists) focuses on [securing data views](xref:DataViewsSecuringDataViews) by setting their ownership and permissions.
 
 ## `Get Data Views Access Control List`
 
 <a id="opIdCollectionAcl_Get Data Views Access Control List"></a>
 
-Returns the default [`AccessControlList`](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html#access-control-lists) for the DataViews collection.
+Returns the default [`AccessControlList`](xref:accessControl#access-control-lists) for the DataViews collection.
 
 <h3>Request</h3>
 
@@ -154,7 +154,7 @@ HTTP 200 OK
 
 <a id="opIdCollectionAcl_Update Data Views Access Control List"></a>
 
-Updates the default [`AccessControlList`](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html#access-control-lists) for the DataViews collection.
+Updates the default [`AccessControlList`](xref:accessControl#access-control-lists) for the DataViews collection.
 
 <h3>Request</h3>
 
@@ -170,7 +170,7 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/dataviews
 
 <h4>Request Body</h4>
 
-An [`AccessControlList`](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html#access-control-lists).<br/>
+An [`AccessControlList`](xref:accessControl#access-control-lists).<br/>
 
 ```json
 {
@@ -198,13 +198,13 @@ An [`AccessControlList`](https://ocs-docs.osisoft.com/Content_Portal/Documentati
 |500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
 # Access Control
-This portion of the [overall data views API](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/DataViewsAPIOverview/Data_Views_API_Overview.html) focuses on [securing data views](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/SecureDataViews/Securing_Data_Views.html) by setting their ownership and permissions.
+This portion of the [overall data views API](DataViewsAPIOverview) focuses on [securing data views](DataViewsSecuringDataViews) by setting their ownership and permissions.
 
 ## `Get Data View Access Control List`
 
 <a id="opIdDataViewsPermissions_Get Data View Access Control List"></a>
 
-Returns the default [`AccessControlList`](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html#access-control-lists) for the DataViews collection.
+Returns the default [`AccessControlList`](xref:accessControl#access-control-lists) for the DataViews collection.
 
 <h3>Request</h3>
 
@@ -289,7 +289,7 @@ HTTP 200 OK
 
 <a id="opIdDataViewsPermissions_Update Data View Access Control List"></a>
 
-Updates the default [`AccessControlList`](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html#access-control-lists) for the DataViews collection.
+Updates the default [`AccessControlList`](xref:accessControl#access-control-lists) for the DataViews collection.
 
 <h3>Request</h3>
 
@@ -306,7 +306,7 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/accesscon
 
 <h4>Request Body</h4>
 
-An [`AccessControlList`](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html#access-control-lists).<br/>
+An [`AccessControlList`](xref:accessControl#access-control-lists).<br/>
 
 ```json
 {
@@ -340,7 +340,7 @@ An [`AccessControlList`](https://ocs-docs.osisoft.com/Content_Portal/Documentati
 
 <a id="opIdDataViewsPermissions_Get Data View Owner"></a>
 
-Returns the owner [`Trustee`](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html#owner) of the specified data view.
+Returns the owner [`Trustee`](xref:accessControl#owner) of the specified data view.
 
 <h3>Request</h3>
 
@@ -400,7 +400,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/owner
 
 <a id="opIdDataViewsPermissions_Update Data View Owner"></a>
 
-Updates the owner [`Trustee`](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html#owner) of the specified data view.
+Updates the owner [`Trustee`](xref:accessControl#owner) of the specified data view.
 
 <h3>Request</h3>
 
@@ -417,7 +417,7 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/owner
 
 <h4>Request Body</h4>
 
-A [`Trustee`](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Access_Control.html#owner).<br/>
+A [`Trustee`](xref:accessControl#owner).<br/>
 
 ```json
 {

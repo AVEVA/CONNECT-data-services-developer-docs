@@ -4,11 +4,11 @@ uid: data-views-data-views
 ---
 
 # Data Views
-The `DataView` API provides mechanisms to create, read, update, and delete data views. This is one portion of the whole [data views API](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/DataViewsAPIOverview/Data_Views_API_Overview.html).
+The `DataView` API provides mechanisms to create, read, update, and delete data views. This is one portion of the whole [data views API](xref:DataViewsAPIOverview).
 
-For a description of the `DataView` object type, see the [DataView documentation](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/Data_Views_Overview.html).
+For a description of the `DataView` object type, see the [DataView documentation](xref:DataViewsOverview).
 
-Other sections of documentation describe how to [secure data views](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/SecureDataViews/Securing_Data_Views.html) by setting their ownership and permissions, and the corresponding [API](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/DataViewsAPIOverview/Access_Control_API.html).
+Other sections of documentation describe how to [secure data views](xref:DataViewsSecuringDataViews) by setting their ownership and permissions, and the corresponding [API](xref:data-views-access-control).
 
 ## `List Data Views`
 

@@ -10,3 +10,11 @@
   topicHref: convert-asset-to-asset-type.md
 - name: Create an asset from an asset type
   topicHref: create-asset-from-type.md
+- name: Create an asset rule (Preview)
+  topicHref: create-asset-rule.md
+- name: How tokens are used to generate assets
+  topicHref: tokens-generate-assets.md
+- name: Using multiple rules to create assets
+  topicHref: second-rule.md
+- name: Asset rules expected behavior
+  topicHref: work-with-assets.md

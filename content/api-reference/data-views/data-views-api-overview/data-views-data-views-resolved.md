@@ -4,7 +4,7 @@ uid: data-views-data-views-resolved
 ---
 
 # Data Views Resolved
-This portion of the overall [data views API](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/DataViewsAPIOverview/Data_Views_API_Overview.html) is the resources that resolve per-user for each data view. For a description of what this information is, and how to use it, see the [documentation](https://ocs-docs.osisoft.com/Content_Portal/Documentation/DataViews/GetResolvedDataView/Resolved_Data_View.html) for resolved data views.
+This portion of the overall [data views API](xref:DataViewsAPIOverview) is the resources that resolve per-user for each data view. For a description of what this information is, and how to use it, see the [documentation](xref:ResolvedDataView) for resolved data views.
 
 ## `Get Data Items by Query`
 

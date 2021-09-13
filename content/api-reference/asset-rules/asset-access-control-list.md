@@ -711,14 +711,14 @@ The owner.<br/>
 
 ## `List Access Rights`
 
-<a id="opIdMetadataRuleCollectionAccessRights_List Access Rights"></a>
+<a id="opIdAssetRuleCollectionAccessRights_List Access Rights"></a>
 
-Returns a list of the `CommonAccessRights` the requesting `Identity` has on the metadatarules collection.
+Returns a list of the `CommonAccessRights` the requesting `Identity` has on the assetrules collection.
 
 <h3>Request</h3>
 
 ```text 
-GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/AccessRights/MetadataRules
+GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/AccessRights/AssetRules
 ```
 
 <h4>Parameters</h4>
@@ -731,7 +731,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/AccessRights/MetadataRul
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|The `CommonAccessRights` the requesting `Identity` has on the metadatarules collection.|
+|200|Inline|The `CommonAccessRights` the requesting `Identity` has on the assetrules collection.|
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |404|[ResponseBody](#schemaresponsebody)|The specified rule was not found.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|

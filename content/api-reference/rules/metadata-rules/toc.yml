@@ -1,5 +1,3 @@
-- name: Metadata rules overview
-  topicHref: metadata-rules-overview.md
 - name: Metadata rules
   topicHref: metadata-metadata-rules.md
 - name: Metadata rules preview

@@ -11,13 +11,14 @@ Access and interact with OCS through the web-based portal. When you first access
 
 ## OCS features
 
-Clicking the navigation icon at top left opens a menu of OCS features. This icon is always available in the OCS portal.
+Expanding the left pane opens a menu of OCS features. This pane is always available in the OCS portal, and you can make menu selections even while collapsed.
 
-![Menu icon](../images/menu-icon.png "Menu icon")
 
-Click the navigation icon to access the OCS features. <!--Angela Flores 6/23/21 - I would take the feature menu screenshot out. The list below explains the contents. Given the rapid pace of development, this screenshot is always going to be out-of-date. -->
+|Pane expanded  | Pane collapsed  |
+|--------|---------|
+| ![pane expanded](../images/left-pane-expanded.png)   | ![pane collapsed](../images/left-pane-collapsed.png)          |
 
-![Feature menu](../images/feature-menu.png "Feature menu")
+
 
 OCS includes the following features:
 

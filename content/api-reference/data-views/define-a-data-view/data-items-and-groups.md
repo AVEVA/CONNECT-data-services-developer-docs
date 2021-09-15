@@ -35,7 +35,7 @@ The resource type `asset` has the following available fields:
 
 ### Adding or removing data items
 
-When requesting for [resolved data items](xref:ResolvedDataViewAPI) or when [getting the data view data](xref:DataViewsDataAPI), the list of data items reflects the list of OCS resources that match one or more queries when the data view was last resolved. This means that if new data items, such as new streams or assets, were added or existing data items were removed, the list of data items will only reflect the latest changes if the data view is re-resolved. For more information, refer to the caching section in the resolved data view resource [page](xref:ResolvedDataView).
+When requesting for [resolved data items](xref:ResolvedDataViewAPI) or when [getting the data view data](xref:DataViewsDataAPI), the list of data items reflects the list of OCS resources that match one or more queries when the data view was last resolved. This means that if new data items, such as new streams or assets, were added or existing data items were removed, the list of data items will only reflect the latest changes if the data view is re-resolved. For more information, refer to the caching section in the [Get resolved data view](xref:ResolvedDataView) topic.
 
 ## Ineligible data items
 

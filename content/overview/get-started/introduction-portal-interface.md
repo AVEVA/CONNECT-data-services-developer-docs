@@ -14,7 +14,7 @@ Access and interact with OCS through the web-based portal. When you first access
 Expanding the left pane opens a menu of OCS features. This pane is always available in the OCS portal, and you can make menu selections even while collapsed.
 
 | Pane expanded | Pane collapsed |
-|--|--|
+|:--:|:--:|
 | ![pane expanded](../images/left-pane-expanded.png) | ![pane collapsed](../images/left-pane-collapsed.png) |
 
 OCS includes the following features:

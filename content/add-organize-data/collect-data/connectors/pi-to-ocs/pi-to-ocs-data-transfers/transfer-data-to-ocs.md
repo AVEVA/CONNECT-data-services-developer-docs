@@ -26,7 +26,7 @@ Download and install the PI to OCS agent. Register your PI Data Archive with the
 
 1. Log on to the [OCS portal](https://cloud.osisoft.com).
 
-2. Click the menu ![ ](../../images/waffle-button.png) icon, then click **Data Collection > PI to OCS Agents**.
+2. In the left pane, select **Data Collection** > **PI to OCS Agent**.
 
 4. In the `PI to OCS Agents` window, select an agent for the data transfer.
 

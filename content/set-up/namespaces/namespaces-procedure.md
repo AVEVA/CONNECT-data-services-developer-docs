@@ -11,8 +11,7 @@ A namespace is a logical unit of organization for data within a tenant. Before a
 
 ## Procedure
 
-1. Click the ![Menu icon](../images/menu-icon.png) icon and click **Namespaces** (under Data Management).
-
+1. In the left pane, select **Data Management** > **Namespaces**.
 
 2. In the `Manage Namespaces` pane, click **Add Namespace**. 
 

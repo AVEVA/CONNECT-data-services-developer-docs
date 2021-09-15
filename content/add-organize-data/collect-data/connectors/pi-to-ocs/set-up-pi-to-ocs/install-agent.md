@@ -35,9 +35,7 @@ This topic contains these sections:
 
 ### Procedure
 
-1. In the OCS portal, click the ![ ](../../images/waffle-button.png) icon, then click **Data Collection > PI to OCS Agents**.
-
-   **Result:** The `PI to OCS Agents` window opens.
+1. In the left pane, select **Data Collection** > **PI to OCS Agents**.
 
 2. Click the **Download Agent** button.
 
@@ -101,7 +99,7 @@ After installation, check that the PI to OCS Agent Windows service is running on
 
 1. On the host machine where you installed the agent, type *services.msc* in the text box next to the Windows menu button, then press ENTER.
 
-2. In the `Services` window, scroll to and verify that that the PI to OCS Agent’s status is running.
+2. In the `Services` window, scroll to and verify that that the PI to OCS Agent's status is running.
 
 ![](../../images/services-window.png)
 

@@ -12,7 +12,7 @@ Use these procedures to share or stop sharing streams of data with other communi
 
 To perform this procedure you must have already defined streams.
 
-1. On the navigation bar, click **Sequential Data Store**.
+1. In the left pane, select **Data Management** > **Sequential Data Store**.
 
 2. If necessary, select a namespace at top left.
 

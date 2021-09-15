@@ -16,7 +16,7 @@ To use PI to OCS to transfer data from your PI System to OCS, you must complete 
 
 ## Set up a PI to OCS transfer
 
-1.  Click the ![Menu icon](images\menu-icon.png) icon, then click **Data Collection** > **PI to OCS Agents**.
+1. In the left pane, select **Data Collection** > **PI to OCS Agents**.
 
 1.  Select **Download Agent**, then follow the instructions in the [Install the PI to OCS Agent](xref:install-agent).
 

@@ -11,7 +11,7 @@ Client-credentials clients are used for server-to-server communication where no 
 
 ## Procedure
 
-1. Click the ![Menu icon](../images/menu-icon.png) icon and click **Clients** (under Security).
+1. In the left pane, select **Security** > **Clients**.
 
 1. From the **Client Type** drop-down list, select **Client-Credentials**. (This is the option that is displayed, by default.)
 

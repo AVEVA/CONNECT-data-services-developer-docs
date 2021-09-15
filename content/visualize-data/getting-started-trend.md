@@ -12,7 +12,7 @@ Procedure
 
 1. Log in to OSIsoft Cloud Services.
 
-2. Click the navigation icon ![](images/icon_navigation_bigger.png) (upper left corner) and click **Trend** (under Visualization). 
+2. In the left pane, select **Visualization** > **Trend**.
    
 3. In the Add Traces blade, click the **+** sign to add the trace to the trend. 
 

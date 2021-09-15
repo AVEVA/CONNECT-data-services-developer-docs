@@ -16,7 +16,7 @@ Procedure
 
 1. Log in to OSIsoft Cloud Services.
 
-2. Click the navigation icon ![](images/menu.png) and select **Visualization > Asset Explorer**. 
+2. From the left pane, select **Visualization** > **Asset Explorer**. 
    
     The asset explorer displays the available assets. In this example, it provides an overview of the health of the fleet of trucks.
 

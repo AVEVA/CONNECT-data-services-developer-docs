@@ -17,8 +17,7 @@ The first task is to create a namespace, a logical unit of organization for data
 
 Creating a namespace is a resource-intensive operation. Therefore, you may prefer to use an existing namespace. In this procedure, the ID assigned to the namespace is MyOCS. Throughout the get started exercises, we refer to the namespace with this name. Substitute MyOCS with the name of an existing namespace or any other name you prefer.
 
-1. Click the ![Menu icon](images/menu-icon.png) icon and click **Namespaces** (under Data Management).
-
+1. In the left pane, select **Data Management** > **Namespaces**.
 
 2. In the left pane, click **Add Namespace**. 
 

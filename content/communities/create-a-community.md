@@ -12,7 +12,7 @@ For information about adding or deleting tenants from an existing community, see
 
 **Note:** Only a [Tenant Administrator](xref:communityroles#tenant-administrator) can perform this procedure.
 
-1. On the navigation bar, click **Communities**.
+1. In the left pane, select **Data Management** > **Communities**.
 
 2. On the `Communities` page, click **Add Community**.
 

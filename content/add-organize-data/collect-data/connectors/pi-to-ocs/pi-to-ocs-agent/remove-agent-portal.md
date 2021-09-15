@@ -7,7 +7,8 @@ uid: remove-agent-portal
 You can remove an unneeded agent in the PI to OCS Agents page.
 
 1. Log on to the [OCS portal](https://cloud.osisoft.com).
-2. Click the menu ![ ](../..\images\waffle-button.png) icon, then click **Data Collection > PI to OCS Agents**.
+
+2. In the left pane, select **Data Collection** > **PI to OCS Agents**.
 
 3. In the `PI to OCS Agents` window, select an agent in the list.
 

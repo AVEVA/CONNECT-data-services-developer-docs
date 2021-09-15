@@ -9,10 +9,9 @@ Troubleshooting information can be found in OCS logs. Logs contain messages abou
 ## Download an OCS tenant log
 
 1. Log on to the [OCS portal](https://cloud.osisoft.com).
-   
-2. Click the menu ![ ](../../images/waffle-button.png) icon, then click **Logs**.
-   **Result:** The **Log** page opens to the **Tenant** tab.
 
+2. In the left pane, select **Support** > **Logs**.
+   
 3. **Optional:** To view a log by namespace, click the **Namespace** tab.
 
 4. **Optional:** Click **Filter Logs** to filter logs by time range, service, and source.

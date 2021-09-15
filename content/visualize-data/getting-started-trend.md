@@ -10,11 +10,9 @@ Use trace data in a trend to monitor assets, anticipate problems, and proactivel
 Procedure
 ---------
 
-1. Log in to OSIsoft Cloud Services.
-
-2. In the left pane, select **Visualization** > **Trend**.
+1. In the left pane, select **Visualization** > **Trend**.
    
-3. In the Add Traces blade, click the **+** sign to add the trace to the trend. 
+1. In the Add Traces blade, click the **+** sign to add the trace to the trend. 
 
    Tip: 
 
@@ -24,23 +22,23 @@ Procedure
 
     ![Search blade](images/Search_blade_75.png)
    
-4. Click the ![Trend views icon](images/trend-views-icon.png)icon to choose one of the three views:
+1. Click the ![Trend views icon](images/trend-views-icon.png)icon to choose one of the three views:
 
    | Trend View                               | Description                                     |
    | ---------------------------------------- | ----------------------------------------------- |
    | ![Single mode](images/Single_mode.png)   | Each trace is displayed in its own trend.       |
-   | ![](images/Multiple_mode.png)            | All measurements are plotted on the same scale. |
+   | ![Multiple mode](images/Multiple_mode.png)            | All measurements are plotted on the same scale. |
    | ![Stacked mode](images/Stacked_mode.png) | All measurements are plotted on its own scale.  |
    
     The following screen capture shows the stacked view.
     ![Trend dislaying traces in stacked view](images/Traces_stacked_view.png)
    
-5. Click the time picker and select the time range you want to view. If the desired time range does not appear in this list, click the **Custom Range** tab and specify your time range.<br>
+1. Click the time picker and select the time range you want to view. If the desired time range does not appear in this list, click the **Custom Range** tab and specify your time range.<br>
 
     ![Time picker](images/Time-picker.png)
 <br>
 
-6. Click **Step backward** or **Step forward** to move the time range of the data displayed in the trend.
+1. Click **Step backward** or **Step forward** to move the time range of the data displayed in the trend.
 
    The trace will move in time increments displayed in the time range picker. If the trend displays the last 8 hours, **Step backward** shows the previous 8-hour period. If it displays the last 30 days, **Step forward** shows the next 30-day period. Click the triangle to select another time range or specify a custom range.
 
@@ -50,12 +48,12 @@ Procedure
 
     ![Legend Table](images/Legend_Table.png)
 
-7. Click on a trace to select it for further analysis.<br>The selected trace is highlighted, and two cursors automatically mark the minimum and maximum values for the displayed time range. These cursors, called *easy cursors,* remain as long as the trace is highlighted.<br>
+1. Click on a trace to select it for further analysis.<br>The selected trace is highlighted, and two cursors automatically mark the minimum and maximum values for the displayed time range. These cursors, called *easy cursors,* remain as long as the trace is highlighted.<br>
 
     ![Maximum and minimum cursors](images/Max_min_cursors.png)
 <br>
 
-8. Click the plus sign (+) above the trace to lock the cursors in place.<br>
+1. Click the plus sign (+) above the trace to lock the cursors in place.<br>
     The *+* turns into an *x*.  To unlock the cursor, click the *x*.
          <br>
          <br>
@@ -63,7 +61,7 @@ Procedure
 
     ![Cursor_view](images/Cursor_view.png)
 
-9. Click the share icon ![share trend session icon](images/share-icon.png) in the menu bar to copy the URL of the workspace.  <br>
+1. Click the share icon ![share trend session icon](images/share-icon.png) in the menu bar to copy the URL of the workspace.  <br>
 
     You can share this URL with colleagues to give them the same view of the trend which they can use to troubleshoot problems.
 

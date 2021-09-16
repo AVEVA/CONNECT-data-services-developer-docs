@@ -14,11 +14,9 @@ Use the global filter feature to filter down a large list of agents to only ones
 
 ## Search for an agent
 
-1. Log on to the [OCS portal](https://cloud.osisoft.com).
+1. In the left pane, select **Data Collection** > **PI to OCS Agents**.
 
-2. In the left pane, select **Data Collection** > **PI to OCS Agents**.
-
-3. In the **Filter Agents** text box, enter the first few characters of the agent's name or version number.  
+1. In the **Filter Agents** text box, enter the first few characters of the agent's name or version number.  
 
    **Result:** If there is a match, any agents that meet the filter criteria are displayed in the list of agents.
 

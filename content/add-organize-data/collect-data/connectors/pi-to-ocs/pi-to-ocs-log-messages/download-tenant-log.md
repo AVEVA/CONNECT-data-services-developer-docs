@@ -8,18 +8,16 @@ Troubleshooting information can be found in OCS logs. Logs contain messages abou
 
 ## Download an OCS tenant log
 
-1. Log on to the [OCS portal](https://cloud.osisoft.com).
-
-2. In the left pane, select **Support** > **Logs**.
+1. In the left pane, select **Support** > **Logs**.
    
-3. **Optional:** To view a log by namespace, click the **Namespace** tab.
+1. **Optional:** To view a log by namespace, click the **Namespace** tab.
 
-4. **Optional:** Click **Filter Logs** to filter logs by time range, service, and source.
+1. **Optional:** Click **Filter Logs** to filter logs by time range, service, and source.
 
-5. Select a log in the list, then click **Download Logs**.
+1. Select a log in the list, then click **Download Logs**.
 
-6. In the **Save As** dialog, save the log file to the desired location.
+1. In the **Save As** dialog, save the log file to the desired location.
 
    **Note:** By default, log files are saved as .csv files.
 
-7. Open and view the log file.
+1. Open and view the log file.

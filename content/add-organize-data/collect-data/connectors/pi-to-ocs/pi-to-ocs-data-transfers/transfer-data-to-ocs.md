@@ -24,31 +24,29 @@ Download and install the PI to OCS agent. Register your PI Data Archive with the
 
 ### Procedure
 
-1. Log on to the [OCS portal](https://cloud.osisoft.com).
+1. In the left pane, select **Data Collection** > **PI to OCS Agent**.
 
-2. In the left pane, select **Data Collection** > **PI to OCS Agent**.
+1. In the `PI to OCS Agents` window, select an agent for the data transfer.
 
-4. In the `PI to OCS Agents` window, select an agent for the data transfer.
-
-5. Click the **Create Transfer** button in the `Details` pane.
+1. Click the **Create Transfer** button in the `Details` pane.
    
    **Result:** The `Transfer Settings` dialog box opens.
    
    ![ ](../../images/transfer-settings.png)
-6. Enter a name and description for the transfer.
+1. Enter a name and description for the transfer.
 
-7. **Optional**: In the **Historical Start time** fields, enter a historical time context for the data retrieval. 
+1. **Optional**: In the **Historical Start time** fields, enter a historical time context for the data retrieval. 
 
    **NOTE:** OCS supports out of order events and stores data in chronological order by timestamp. PI Data Archive 2017 SP2 or higher is required for this feature. Enter the historical start date and time correctly to ensure all data is included in the transfer. No data before the historical start time will be captured and stored in SDS.
 
-8. Select the level of data privacy for the transfer by selecting one of the following **Stream Metadata Replication Policy** settings: 
+1. Select the level of data privacy for the transfer by selecting one of the following **Stream Metadata Replication Policy** settings: 
 
    * **High**: Send all identifying information about an asset with the PI point.
    * **Medium (default)**: Send metadata without logical addresses from the data source.
    * **Low**: Does not send any metadata. Locally configured metadata such as point source and local aliases can be sent in the transfer.
    * **None**: No sensitive data is included in the transfer.
 
-10. Click **Ok**.
+1. Click **Ok**.
 
    **Result:** The new transfer opens in the `PI to OCS Agents` window.
 
@@ -105,7 +103,7 @@ You build a PI points transfer list to select the PI points you want included in
 
    | Specific Values | Action to Take |
    -------------------------- | ------------------------
-   | Common PI point attributes | Enter criteria in any of the following fields:<br /><ul><li>**Name** (alias for tag attribute)</li><li>**Point Source**</li></ul><br />**Note:** The search fields default to * or all PI points if search criteria is not entered. |
+   | Common PI point attributes | Enter criteria in any of the following fields:<br /><ul><li>**Name** (alias for tag attribute)</li><li>**Point Source**</li></ul><br/>**Note:** The search fields default to * or all PI points if search criteria is not entered. |
    | Point descriptions         | Enter criteria in the following fields:<br /><ul><li>**Descriptor** </li><li>**Extended Descriptor**</li></ul> |
    | Engineering units | Enter criteria in the **Engineering Units** field.           |
    | A PI point type            | Select one of the following point types from the **Point Type** drop-down list:<br /><ul><li>**Float32** </li><li>**Float64**</li><li>**Int16**</li><li>**Int32**</li><li>**Digital**</li><li>**Timestamp**</li><li>**String**</li></ul> |

@@ -483,7 +483,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 <a id="tocSerrorresponsebody"></a>
 <a id="tocserrorresponsebody"></a>
 
-Contains the error message format that follows the OCS error standards
+The error response contains standard details on the cause and resolution of the error.
 
 <h4>Properties</h4>
 

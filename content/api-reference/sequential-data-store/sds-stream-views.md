@@ -477,7 +477,7 @@ A contract defining the stream view property
 <a id="tocSerrorresponsebody"></a>
 <a id="tocserrorresponsebody"></a>
 
-Contains the error message format that follows the OCS error standards
+The error response contains standard details on the cause and resolution of the error.
 
 <h4>Properties</h4>
 

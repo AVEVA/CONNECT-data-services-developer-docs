@@ -6,7 +6,7 @@
 content/api-reference/sequential-data-store  @digitaljoshua
 content/api-reference/identity @digitaljoshua
 content/api-reference/management @digitaljoshua
-content/api-reference/data-views @osimarkrogers
+content/api-reference/data-views @rmuolic
 content/api-reference/metadata @osimarkrogers
 content/api-reference/operations @osimarkrogers
 content/api-reference/data-ingress @osimarkrogers
@@ -14,10 +14,11 @@ content/api-reference/assets @lassato-OSI
 content/api-reference/asset-rules @lassato-OSI
 content/add-organize-data @VictoriaTouati-AVEVA @afloresOSI
 content/communities @dwicinas-osisoft
-content/visualize-data @lassato-OSI @afloresOSI
-content/rom @lassato-OSI @afloresOSI
-content/overview @lassato-OSI @afloresOSI
-content/set-up @lassato-OSI @digitaljoshua
+content/visualize-data @afloresOSI @rmuolic
+content/visualize-data/power-bi-connector @rmuolic
+content/rom @afloresOSI
+content/overview @afloresOSI
+content/set-up @digitaljoshua
 
 # Order is important. The last matching pattern has the most precedence.
 # So if a pull request only touches javascript files, only these owners

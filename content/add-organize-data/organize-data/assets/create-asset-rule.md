@@ -35,7 +35,7 @@ We will construct an asset rule, named `Tank Rule A`, that creates three assets,
 
 ## Add an asset rule and select the stream
 
-1. Click the ![Menu icon](images/menu-icon.png) icon and select **Data Management** > **Asset Management**.
+1. In the left pane, select **Data Management** > **Asset Management**.
 
 1. In the `Select a Namespace` window, click the namespace in which to create the asset rule.
 
@@ -97,7 +97,7 @@ In this step, you specify the naming pattern used to find and match the appropri
 
    The **1. Match** list of choices displays different ways to identify this string of characters. Some of the choices would work with the example stream, but they would fail to identify the site information in all stream names. For example, *the string literal "PHI"* or *the next 3 characters* would not identify *SL* as the site. 
 
-   As you create tokens, keep in mind that the **Match** option selected must identify the correct information for all the streams the rule needs to identify. The rule must also exclude any streams that you do not want identified with this rule, for example, streams that belong to a pump asset. In this example, *everything preceding the delimiter"-"* will extract the site information for all streams. 
+   As you create tokens, keep in mind that the **Match** option selected must identify the correct information for all the streams the rule needs to identify. The rule must also exclude any streams that you do not want identified with this rule, for example, streams that belong to a pump asset. In this example, *letters preceding the delimiter"-"* will extract the site information for all streams. 
 
    The token is assigned the name `site`. 
 
@@ -150,8 +150,6 @@ In this step, you specify the token that identifies the stream measurement in th
 1. Select the token that identifies the stream measurement and click **Select**. <!--WRITER'S NOTE: This step is still not very clear. Please review it again after the UI changes which may make it clearer. -->
 
  In the `Tank Rule A` example, the token for the last part of the stream name identifies the measurement, either `Press` or `Temp`, and we gave this token the name `measurement`. 
-
- ![Choose stream](images/choose-stream.png)
    
  The `Token Mappings Status` pane displays a list of all the tokens identified on the previous page. The token for the measurement is indicated with the ![Measurement icon](images/measurement-icon.png) icon.
 
@@ -165,29 +163,19 @@ In this step, you specify the token that identifies the stream measurement in th
 
    - **Rename Token Values** &ndash; Replace the values in the stream name and stream metadata with mapped values.
 
-   In the `Tank Rule A` example, the `equipment_type` and `equipment_id` tokens use the existing token values. The following screen capture shows the token value mapping for the `equipment_type` token. 
+   In the `Tank Rule A` example, the `equipment_type` and `equipment_id` tokens use the existing token values.
 
-   ![Equipment_type mapping](images/equipment-type-mapping.png)
+1. If you selected **Rename Token Values**, click **Generate Mappings** to display the list of token values for streams that match the stream pattern. 
 
-1. If you selected **Rename Token Values**, click **Generate Mappings** to display the list of token values. 
+   In the `Tank Rule A` example, the `site` token is selected. **Rename Token Values** is selected, and **Generate Mappings** generates two values, `PHI` and `SL`. 
 
-   OCS searches for streams that match the stream pattern and provides a list of the token values. 
-
-   In this example, the `site` token is selected. **Rename Token Values** is selected, and **Generate Mappings** generates two values, `PHI` and `SL`. 
-
-   ![Token Value Mapings](images/token-value-mappings.png)
-
-1. For each value on the left, provide the value to use in its place in the text box on the right.
+1. For each value on the left, enter or select the value to use in its place in the text box on the right.
 
    In this example, `PHI` is mapped to `Philadelphia`, and `SL` is mapped to `San Leandro`.
 
    ![Map to values](images/map-to-values.png)
 
    For the measurement token, click in the text box to display a list of measurements or properties that are defined in the asset type and select the value to map to the token value. The values in the list come from the asset type. If the asset rule is not based on a type, then you must manually enter the values for each of the mappings.
-
-   The screen capture below shows the values that are mapped for the `measurement` token.
-
-   ![](images/configured-token-values.png)
 
 1. To manually add additional mappings, click **Add Mapping**. 
 

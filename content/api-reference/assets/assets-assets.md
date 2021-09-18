@@ -714,6 +714,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
 |Status|Header|Type|Description|
 |---|---|---|---|
 |200|Total-Count|integer|Total number of assets in the namespace.|
+|200|Etag|string|Collection ETag. Changes whenever an asset is created, updated, or deleted.|
 
 <h4>Example response body</h4>
 

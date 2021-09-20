@@ -10,17 +10,22 @@ Troubleshooting information can be found in OCS logs. Logs contain messages abou
 
 1. Log on to the [OCS portal](https://cloud.osisoft.com).
    
-2. Click the menu ![ ](../../images/waffle-button.png) icon, then click **Logs**.
-   **Result:** The **Log** page opens to the **Tenant** tab.
+1. Click the menu ![ ](../../images/waffle-button.png) icon, then click **Logs**.
 
-3. **Optional:** To view a log by namespace, click the **Namespace** tab.
+   **Result:** The **Logs** page opens.
 
-4. **Optional:** Click **Filter Logs** to filter logs by time range, service, and source.
+1. **Optional:** To view logs by namespace, select the **Namespace** option.
 
-5. Select a log in the list, then click **Download Logs**.
+1. **Optional:** To filter logs by time range, severity, and/or source, enter filter criteria in these fields:
 
-6. In the **Save As** dialog, save the log file to the desired location.
+    * Start and end date time
+    * Severity level
+    * Source
+
+1. To download the logs, click the **Download Logs** button.
+
+1. In the **Save As** dialog, save the log file to the desired location.
 
    **Note:** By default, log files are saved as .csv files.
 
-7. Open and view the log file.
+1. Open and view the log file.

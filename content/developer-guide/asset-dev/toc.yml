@@ -1,0 +1,14 @@
+- name: Asset Properties
+  href: asset-properties-dev-guide.md
+- name: Asset Parameters
+  href: asset-parameters-dev-guide.md
+- name: Asset Search
+  href: asset-search-dev-guide.md
+- name: Asset Status
+  href: asset-status-dev-guide.md
+- name: Asset Types
+  href: asset-types-dev-guide.md
+- name: Resolved Assets
+  href: asset-resolved-dev-guide.md
+- name: Asset Centric Data
+  href: asset-centric-dev-guide.md

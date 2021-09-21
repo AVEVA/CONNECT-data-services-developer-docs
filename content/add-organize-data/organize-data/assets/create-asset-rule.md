@@ -115,11 +115,7 @@ In this step, you specify the naming pattern used to find and match the appropri
    
    The next part of the stream name is a number that identifies the equipment Id. `03` is matched using `the next group of numbers`, and this token is assigned the name `equipment_id`. Because we anticipate using this rule to create assets with Ids running into the thousands, we do not use `the next 2 numbers` to match the Id.
 
-   ![Third token](images/third-token.png)
-
-   The last part of the stream name identifies what is being measured in the stream. This token uses `the rest of the stream name` and is named `measurement`.
-
-   ![Fourth token](images/fourth-token.png)
+   The last part of the stream name identifies what is being measured in the stream. This token uses `letters until the end of the stream name` and is named `measurement`.
    
 1. In the `Token Sources` pane on the left, click **Stream Metadata**.
 
@@ -255,7 +251,7 @@ The asset preview displays a list of the assets that will be created using the a
 
 Once the asset rule is successfully executed, review the created assets and confirm the results.
 
-1. From the ![Menu icon](images/menu-icon.png) icon, select **Visualization** > **Asset Explorer**.
+1. In the left pane, select **Visualization** > **Asset Explorer**.
 
 1. Use search and the metadata filters to find the assets you expect to be created. For information, see [Filter assets in the Asset Explorer](xref:FilterAssets)
 

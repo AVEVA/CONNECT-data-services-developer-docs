@@ -8,7 +8,7 @@ To send OSIsoft Message Format (OMF) data to OCS, you must first configure an OM
 
 ## Procedure
 
-1. Click the ![Menu icon](images\menu-icon.png) icon and click **Clients** (below Security) to open the `Manage Clients` page.
+1. In the left pane, select **Security** > **Clients**.
 
 2. Verify that there is at least one client credentials client to use in the OMF connection. If you need to create one, refer to the Clients section.
 

@@ -13,7 +13,7 @@ A user is an identity that has access to an OSIsoft Cloud Services (OCS) tenant.
 
 Follow the procedure to invite a user to your tenant.
 
-1. Click the ![Menu icon](../images/menu-icon.png) icon and click **Users** (under Security).
+1. In the left pane, select **Security** > **Users**.
 
 1. In the toolbar, click **Add User**.
 

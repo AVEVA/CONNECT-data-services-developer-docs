@@ -21,7 +21,7 @@ Two different users must perform the following procedure to invite and add a ten
 
 ![Invite process](images/invite-process.drawio.svg)
 
-A. **Inviter:** Perform the following steps to issue an invitation:
+## 1. Inviter sends invite
 
 1. On the `Communities` overview page, find the community you want to share and click **Details**.
 
@@ -31,7 +31,7 @@ A. **Inviter:** Perform the following steps to issue an invitation:
 
   An email is sent to the invitee.
 
-B. **Invitee:** Perform the following steps to accept an invitation:
+## 2. Invitee accepts invite
 
 1. Open the email from OSIsoft Cloud Services Operations and follow the instructions.
 
@@ -47,7 +47,7 @@ B. **Invitee:** Perform the following steps to accept an invitation:
 
   The inviter receives an email asking for confirmation of the pending invitation.
 
-C. **Inviter:** Perform the following steps to confirm the new tenant:
+## 3. Inviter confirms invite
 
 1. Follow the instructions in the email.
 

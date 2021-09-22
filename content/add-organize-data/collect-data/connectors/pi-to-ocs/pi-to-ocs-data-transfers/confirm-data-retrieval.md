@@ -8,16 +8,16 @@ To confirm that SDS streams have been created and your data has being transferre
 
 1. In the left pane, select **Data Management** > **Sequential Data Store**.
 
-2. Click the **Namespace** down arrow, then select the namespace that the SDS streams have been created in.
+1. Select or enter the namespace that the SDS streams have been created in.
 
-   **Note:** By default, the grid displays the SDS stream types created by the PI to OCS data transfer.
+1. Click the **Streams** button.
+   
+   **Note:** By default, the grid displays the SDS streams created by the PI to OCS data transfer. The grid lists the first 50 SDS streams in alphabetical order. You can change how many streams are displayed per page (50, 100, 200).
 
-3.    Click the **Streams** button.
+1. Click the **Streams** down-arrow, then click **Types**.
 
-    **Note:** The grid lists the first 50 SDS streams in alphabetical order. You can change how many streams are displayed per page (50, 100, 200).
-
-4.    **Optional:** Enter search criteria to locate specific streams in the **Search** text box, then press ENTER.
+1. **Optional:** Enter search criteria to locate specific streams in the **Search** text box, then press ENTER.
 
       **Result:** If there are matches, matching streams are shown.
 
-5.    **Optional:** Select a stream, then click **Manage Data** to query SDS for information about that stream.
+1. **Optional:** Select a stream to view details about the stream metadata and type.

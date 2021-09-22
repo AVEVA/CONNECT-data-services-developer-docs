@@ -10,11 +10,15 @@ Troubleshooting information can be found in OCS logs. Logs contain messages abou
 
 1. In the left pane, select **Support** > **Logs**.
    
-1. **Optional:** To view a log by namespace, click the **Namespace** tab.
+1. **Optional:** To view logs by namespace, select the **Namespace** option.
 
-1. **Optional:** Click **Filter Logs** to filter logs by time range, service, and source.
+1. **Optional:** To filter logs by time range, severity, and/or source, enter filter criteria in these fields:
 
-1. Select a log in the list, then click **Download Logs**.
+    * Start and end date time
+    * Severity level
+    * Source
+
+1. To download the logs, click the **Download Logs** button.
 
 1. In the **Save As** dialog, save the log file to the desired location.
 

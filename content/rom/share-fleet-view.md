@@ -8,7 +8,7 @@ You may have many hundreds or even thousands of assets in your fleet. Working wi
 
 Follow this procedure to filter and view a subset of assets:
 
-1. Click the ![Menu icon](images/menu.png) icon and click **Visualization > Asset Explorer**.
+1. In the left pane, select **Visualization** > **Asset Explorer**.
 
 1. Verify that the **Assets/Asset Type** selector is set to **Assets**.
 

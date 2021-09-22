@@ -24,7 +24,7 @@ Metadata rules allow you to add metadata to streams. For more information about 
 
 The first step is to identify and select a stream whose name will be the basis for creating the metadata rule.
 
-1. Click the ![Menu icon](images/menu-icon.png) icon, and click **Metadata Management** (under Data Management).
+1. In the left pane, select **Data Management** > **Metadata Management**.
 
 1. Click the **Change Namespace** drop-down list.  In the `Select a Namespace` window, click **MyOCS**.
 

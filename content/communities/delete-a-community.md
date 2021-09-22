@@ -8,7 +8,7 @@ From the `Community Details` page, you can delete a community. Deleting a commun
 
 **Note:** Only a Community Administrator can perform this procedure.
 
-1. On the navigation bar, click **Communities**.
+1. In the left pane, select **Data Management** > **Communities**.
 
 2. On the `Communities` page, find the community you want to delete and click **Details**.
 

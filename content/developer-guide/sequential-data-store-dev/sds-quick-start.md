@@ -37,7 +37,8 @@ and code samples in various languages which are shown on tabs in the right panel
 
 ## Step 1: Acquire namespace
 
-In the portal, open the navigation menu ![navigation menu](../images/icon-navigation.png) and select **Data Management** > **Namespaces**.
+Log into the portal. In the left pane, select **Data Management** > **Namespaces**.
+
 You can use an existing namespace or create a new one.
 
 ## Step 2: Create data types

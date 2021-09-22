@@ -21,11 +21,13 @@ Two different users must perform the following procedure to invite and add a ten
 
 A. **Inviter:** Perform the following steps to issue an invitation:
 
-1. On the `Communities` overview page, find the community you want to share and click **Details**.
+1. In the left pane, select **Data Management** > **Communities**.
 
-2. On the `Community Details` page, on the **Tenants** tab, click **Invite Tenant**.
+2. Find the community you want to share and click **Details**.
 
-3. Enter the email address of the administrator of the tenant you would like to invite and click **Send**.
+3. On the `Community Details` page, on the **Tenants** tab, click **Invite Tenant**.
+
+4. Enter the email address of the administrator of the tenant you would like to invite and click **Send**.
 
   An email is sent to the invitee.
 
@@ -51,15 +53,17 @@ C. **Inviter:** Perform the following steps to confirm the new tenant:
 
 2. Log into the tenant that owns the community you are sharing.
 
-3. On the `Communities` overview page, find the community to which you have invited another tenant and click **Details**.
+3. In the left pane, select **Data Management** > **Communities**.
 
-4. On the `Community Details` page, click the **Invitations** tab.
+4. On the `Communities` overview page, find the community to which you have invited another tenant and click **Details**.
 
-5. Select an invitation with a status of **Invitation Accepted**.
+5. On the `Community Details` page, click the **Invitations** tab.
+
+6. Select an invitation with a status of **Invitation Accepted**.
 
   The `Invitation Details` pane opens.
 
-6. Click **Confirm Tenant**. When prompted for confirmation, click **Confirm Tenant** again.
+7. Click **Confirm Tenant**. When prompted for confirmation, click **Confirm Tenant** again.
 
   The invitee's tenant is now part of the community.
 
@@ -71,13 +75,15 @@ After removing a tenant, you can re-invite the tenant to the community but all d
 
 **Note:** Only an OCS user who has a [Community Administrator](xref:communityroles#community-administrator) role can remove a tenant from a community.  
 
-1. On the `Communities` overview page, find the community you want to modify and click **Details**.
+1. In the left pane, select **Data Management** > **Communities**.
 
-2. On the `Community Details` page, click the **Tenants** tab.
+2. Find the community you want to modify and click **Details**.
 
-3. Select the tenant you want to remove from the community. The `Tenant Details` pane opens. 
+3. On the `Community Details` page, click the **Tenants** tab.
 
-4. On the `Tenant Details` pane, click **Remove Tenant**. When prompted for confirmation, click **Remove Tenant** again.
+4. Select the tenant you want to remove from the community. The `Tenant Details` pane opens. 
+
+5. On the `Tenant Details` pane, click **Remove Tenant**. When prompted for confirmation, click **Remove Tenant** again.
 
 ## Remove your own tenant from a community
 
@@ -89,14 +95,16 @@ If your tenant created a community, you cannot remove your own tenant from the c
 
 **Note:** Only OCS users who have the [Community Moderator](xref:communityroles#community-moderator) role can remove their own tenant from a community.
 
-1. On the `Communities` overview page, find the community you want to leave and click **Details**.
+1. In the left pane, select **Data Management** > **Communities**.
 
-2. On the `Community Details` page, click the **Tenants** tab.
+2. Find the community you want to leave and click **Details**.
 
-3. Select your own tenant.
+3. On the `Community Details` page, click the **Tenants** tab.
 
-4. Select **More Options** ![More Options](images\more-options.png "More Options") and click **Remove \<*your tenant*\>**.
+4. Select your own tenant.
+
+5. Select **More Options** ![More Options](images\more-options.png "More Options") and click **Remove \<*your tenant*\>**.
 
   A confirmation dialog opens.
 
-5. Enter the name of your own tenant and click **Remove**.
+6. Enter the name of your own tenant and click **Remove**.

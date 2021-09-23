@@ -199,7 +199,3 @@ query-searchstring:
   type: text/plain
   value: |
     Service unavailable.
-josh:
-  type: text/plain
-  value: |
-    josh unavailable.

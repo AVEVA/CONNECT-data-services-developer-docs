@@ -4,6 +4,7 @@ uid: sds-types
 ---
 
 # Types
+The API in this section interacts with types.
 
 ## `List Types`
 
@@ -15,6 +16,7 @@ Gets a list of `SdsType` objects. If the optional parameters are not set, this c
 
 ```text 
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types
+?query={query}&skip={skip}&count={count}&orderby={orderby}
 ```
 
 <h4>Parameters</h4>
@@ -22,6 +24,12 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
+`[optional] string query`
+<br/>Parameter representing a string search. See the [Search in SDS](xref:sdsSearching) topic for information about specifying the query parameter.
+<br/><br/>`[optional] integer skip`
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string orderby`
+<br/>Parameter representing sorted order of returned objects. A field name is required. The sorting is based on the stored values for the given field.<br/>For example, ``orderby=name`` would sort the returned results by the ``name`` values (ascending by default).<br/>Additionally, a value can be provided along with the field name to identify whether to sort ascending or descending,<br/>by using values ``asc`` or ``desc``, respectively.<br/>For example, ``orderby=name desc`` would sort the returned results by the ``name`` values, descending.<br/>If no value is specified, there is no sorting of results.<br/><br/>
 
 <h3>Response</h3>
 
@@ -694,7 +702,7 @@ A contract defining a property of a SdsType
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|An unique identifier for the SdsTypeProperty object|
+|Id|string|false|true|A unique identifier for the SdsTypeProperty object|
 |Name|string|false|true|An optional user-friendly name for the SdsTypeProperty object|
 |Description|string|false|true|A brief description of the SdsTypeProperty object|
 |Order|int32|false|false|The order used for comparison among SdsTypePropertys if a compound index is specified for SdsType|
@@ -788,7 +796,7 @@ Defines how a stream responds to requests with indexes that precede or follow al
 <a id="tocSerrorresponsebody"></a>
 <a id="tocserrorresponsebody"></a>
 
-Contains the error message format that follows the OCS error standards
+The error response contains standard details on the cause and resolution of the error.
 
 <h4>Properties</h4>
 

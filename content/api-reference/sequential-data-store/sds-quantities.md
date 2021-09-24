@@ -4,7 +4,7 @@ uid: sds-quantities
 ---
 
 # Quantities
-Controller handling requests that are routed to {namespaceId}/Quantities/
+The API in this section interacts with quantities and units of measure.
 
 ## `List Quantities`
 
@@ -16,6 +16,7 @@ Returns a list of all quantities available within a given namespace
 
 ```text 
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities
+?skip={skip}&count={count}
 ```
 
 <h4>Parameters</h4>
@@ -23,6 +24,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
+`[optional] integer skip`
+<br/>Parameter representing the zero-based offset of the first SdsUomQuantity to retrieve. If not specified, a default value of 0 is used<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of SdsUomQuantity to retrieve. If not specified, a default value of 100 is used<br/><br/>
 
 <h3>Response</h3>
 
@@ -405,7 +409,7 @@ DataContract representing a unit of measure
 <a id="tocSerrorresponsebody"></a>
 <a id="tocserrorresponsebody"></a>
 
-Contains the error message format that follows the OCS error standards
+The error response contains standard details on the cause and resolution of the error.
 
 <h4>Properties</h4>
 

@@ -4,7 +4,7 @@ uid: AssetStatus
 
 # Asset and Asset Type Status
 
-```
+***
 
 ## `Get Asset Status`
 

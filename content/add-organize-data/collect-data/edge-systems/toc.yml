@@ -1,0 +1,4 @@
+- name: View an edge system
+  href: view-edge-system.md
+- name: Configure an edge system
+  href: configure-edge-system.md

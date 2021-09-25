@@ -12,7 +12,7 @@ Use the following procedure to create an edge system configuration and export it
 
 1. Find and click on the edge device to configure.
 
-1. In the right pane, click **Edit Edge System** or ![Edit Edge System](images/pencil-icon.png).
+1. In the right pane, click **Edit Edge System** or ![Edit](images/pencil-icon.png).
 
 1. To manage the tags for an edge system, click **Add Tag** ![Add Tag](images/edge-system-add-tag.png) and then do the following:
 

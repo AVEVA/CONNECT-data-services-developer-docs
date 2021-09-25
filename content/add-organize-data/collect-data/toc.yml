@@ -5,5 +5,5 @@
   href: connectors/omf/toc.yml
   topicHref: connectors/omf/omf-overview.md
 - name: Edge systems
-  href: connectors/edge-systems/toc.yml
-  topicHref: connectors/edge-systems/edge-systems.md
+  href: edge-systems/toc.yml
+  topicHref: edge-systems/edge-systems.md

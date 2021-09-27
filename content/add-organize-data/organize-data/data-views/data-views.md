@@ -8,13 +8,13 @@ Data views are subsets of data from one or more streams. You create a data view 
 
 ## Procedure
 
-1. Click the menu icon, then click **Analytics** > **Data Views**.
+1. In the left pane, select **Analytics** > **Data Views**.
 
 1. In the `Data Views` pane, click **Add Data View** and enter the data view name and description in the `Data View Information` pane.
 
-1. Click **Standard** or **Narrow** to enter the general shape of the data display.
+1. From **Data View Shape**, select **Standard** or **Narrow** to enter the general shape of the data display.
 
-1. In the `Query ID` field in the center pane, enter a name for *Query1* in the **Query ID** field, or accept the default name.
+1. In the `Query Id` field in the center pane, update the field to a new value or accept the default of  *Query1*.
 
 1. In the `Query Type` section, select **Streams** or **Assets** to indicate which objects you want this query to search.
 
@@ -24,7 +24,7 @@ Data views are subsets of data from one or more streams. You create a data view 
 
    **Note**: If you have created a metadata rule in the same namespace, you can enter a selected metadata key instead of a stream name in the `Search` field to select a more specific set of streams.
 
-1. Select any stream in the query results to display the individual data fields of the stream in the `Data Item Details` pane.
+1. Select any stream or asset in the query results to display the individual data fields of the stream in the `Data Item Details` pane.
 
    **Note**: You can click the **Add Query** button to create as addtional queries.
 
@@ -36,7 +36,6 @@ Data views are subsets of data from one or more streams. You create a data view 
 
 1. **Optional:** Click the **Generate preview** button to generate a preview of the data view with the selected settings.
 
-1. Click the **Items per page** dropdown list to select the number of items to be displayed per page in the data view.
 
 1. Click the **Interpolated/Stored** dropdown list and select **Interpolated** or **Stored** for the data view.
 
@@ -44,7 +43,6 @@ Data views are subsets of data from one or more streams. You create a data view 
 
 1. Click **Apply** to accept the index configuration changes.
 
-1. Click the **View in API Console** button to display basic parameters of the data view in the API console.
 
 1. Click **Save** to create the data view and continue working, or click **Save and Close** to create and exit.
 

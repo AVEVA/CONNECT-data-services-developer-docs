@@ -14,7 +14,7 @@ All data in a data view is associated with an index value, for example, a timest
 #### Index type
 Though `DateTime` is the most common index type for stream data, data views can target data of other index types, as noted in [Define a Data View](xref:DataViewsQuickStartDefine).
 
-For `DateTime` indexed data views, index values should use ISO 8601 format and can be in either UTC or local time with an offset specified. Data retrieved using the [Data API](xref:DataViewsDataAPI) will be returned in UTC. Interval timespan values should be formatted using the standard timespan format, ie., d.hh:mm:ss.fffffff.
+For `DateTime` indexed data views, use the ISO 8601 format as the index value. Format interval timespan values using the standard timespan format. For example, d.hh:mm:ss.fffffff. Use either UTC or local time with an offset specified. Data retrieved using the [Data API](xref:DataViewsDataAPI) returns in UTC.
 
 #### Index range
 Three parameters control the range and granularity of data returned:

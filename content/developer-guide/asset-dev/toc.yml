@@ -8,7 +8,7 @@
   href: asset-status-dev-guide.md
 - name: Asset Types
   href: asset-types-dev-guide.md
-- name: Resolved Assets
+- name: Resolved Assets Metadata
   href: asset-resolved-dev-guide.md
 - name: Asset Centric Data
   href: asset-centric-dev-guide.md

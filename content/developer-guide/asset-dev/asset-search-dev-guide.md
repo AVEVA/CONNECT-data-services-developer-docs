@@ -2,11 +2,15 @@
 uid: asset-search-dev-guide
 ---
 
-# Get Assets by Search Criteria
+# Asset Search Criteria
+
+The assets search API allows you to search for your assets with search criteria.
+
+## Get Assets by Search Criteria
 
 Returns an array of assets that meet the search criteria.
 
-## Searchable Properties
+### Searchable Properties
 Assets can be searched on the following asset properties:
 
 - Asset Top-level Properties
@@ -21,7 +25,11 @@ Assets can be searched on the following asset properties:
 
 Search criteria can be chained together using an **AND**. See examples below. 
 
-## Example response body
+## Search Matched Fields 
+
+Searches all assets and returns a list of asset identifiers and their matched fields. 
+
+### Example response body
 
 Below is a response when query string is "Name:Tracer".
 
@@ -78,7 +86,7 @@ Content-Type: application/json
 }
 ```
 
-## Examples of asset query strings
+### Examples of asset query strings
 
 | Query String                 | Description                                                  |
 | ---------------------------- | ------------------------------------------------------------ |
@@ -97,7 +105,7 @@ Content-Type: application/json
 | StreamPropertyId:Pressure    | Returns all assets that have one or more stream references with the stream property ID **Pressure**. Note: This search only searches non-key Sds stream properties. |
 | StreamReferenceName:Name1    | Returns all assets whose stream references contain a stream reference name that matches **Name1**. |
 
-## Special characters in search queries
+### Special characters in search queries
 
 Add the backslash escape character ( \ ) before any special characters in search queries. The following special characters require an escape character:   " |  /  *  \  ( )  : 
 
@@ -108,7 +116,7 @@ The following are examples of using the escape character in query strings.
 | Austin\Dallas\Fort Worth               | Austin\\\Dallas\\\Fort Worth               |
 | 1:100                                  | 1\\:100                                    |
 
-## Examples of asset filter strings
+### Examples of asset filter strings
 
 Filter strings are not case sensitive. Numeric types must be passed as strings according to English locale. For example, a double of 1.1 must be sent as **"1.1"**.
 
@@ -119,7 +127,7 @@ Filter strings are not case sensitive. Numeric types must be passed as strings a
 | filter[AssetTypeName]=HeaterType             | Filter that only returns assets with an AssetTypeName of **HeaterType**. |
 | filter[status]=Bad                           | Filter that returns only assets with a bad status. Status filters can have the values **Good**, **Bad**, **Warning**, and **Unknown**. |
 
-## Special characters in filter values
+### Special characters in filter values
 
 Only `" \` special characters need to be escaped with the backslash escape character ( \ ) in filter values.
 
@@ -130,7 +138,11 @@ The following are examples of using the escape character in filter value.
 | Austin\Dallas\Fort Worth               | filter[location]=Austin\\Dallas\\Fort Worth|
 | "Austin" Texas                         | filter[location]=\"Austin\" Texas          |
 
-## Example
+## Faceted Search
+
+Asset faceted search allows for searching using asset facets.
+
+### Example
 
 If you have the following assets in your system:
 
@@ -163,7 +175,11 @@ Content-Type: application/json
     }
 ]
 
-## Example 
+## Asset Autocomplete
+
+Asset autocomplete allows you to query assets and retrieve a list of suggested assets based on your search criteria. 
+
+### Example 
 
 Assume you have the following assets in your system.
 

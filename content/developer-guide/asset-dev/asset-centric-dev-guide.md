@@ -2,7 +2,7 @@
 uid: asset-centric-dev-guide
 ---
 
-# Assets Data API
+# Assets Centric Data
 
 The asset data API provides a quick way to retrieve data stored in an asset's referenced streams. 
 

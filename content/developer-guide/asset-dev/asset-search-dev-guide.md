@@ -174,6 +174,7 @@ Content-Type: application/json
         ]
     }
 ]
+```
 
 ## Asset Autocomplete
 

@@ -122,38 +122,6 @@ A list of asset Ids and their matched fields.
 | 204 OK          | empty            | No assets match your search criteria.                        |
 | 400 Bad Request | error            | The request is not valid. See the response body for additional details. |
 
-### Example 
-
-If you have the following assets in your system:
-
-| Assets in System                                             |
-| ------------------------------------------------------------ |
-| "Id": "CaliforniaAsset",    "Metadata": [      { "Name": "Manufacturer", "Value": "GE", "SdsTypeCode": "String" },      { "Name": "Location", "Value": "California", "SdsTypeCode": "String" },    ] |
-| "Id": "CaliforniaAsset1",    "Metadata": [      { "Name": "Manufacturer", "Value": "Rockwell", "SdsTypeCode": "String" },      { "Name": "Location", "Value": "California", "SdsTypeCode": "String" },    ] |
-| "Id": "PhillyAsset",    "Metadata": [      { "Name": "Manufacturer", "Value": "GE", "SdsTypeCode": "String" },      { "Name": "Location", "Value": "Philly", "SdsTypeCode": "String" },    ] |
-
-
-Performing a `GET search/assets/facets?Name=Location` returns the following response. 
-
-
-```json 
-HTTP 200 OK 
-Content-Type: application/json
-[
-    {
-        "Name": "Location",
-        "FacetValues": [
-            {
-                "Value": "California",
-                "DocumentCount": 2
-            },
-            {
-                "Value": "Philly",
-                "DocumentCount": 1
-            }
-        ]
-    }
-]
 ```
 
 ## `Asset Autocomplete` 

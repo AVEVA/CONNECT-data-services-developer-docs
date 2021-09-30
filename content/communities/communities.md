@@ -12,9 +12,13 @@ For example, with Communities, OCS tenants can perform the following actions:
 - Share data without requiring external users to be onsite.
 - Share data with external partners who do not have a PI System or other required software.
 
+![Community diagram](images/community-diagram-simple.drawio.svg)
+
 ## Share data with a partner
 
 The following process lists the high-level steps that you must complete to share data. The process consists of creating a community, inviting other tenants, adding users and clients, and then sharing streams of data.
+
+![Community invitation process diagram](images/community-diagram-invitation-process.svg)
 
 1. [Create a community](xref:add-community).
 2. [Invite another OCS tenant](xref:managecommunity#invite-a-tenant-to-a-community) to join the community.

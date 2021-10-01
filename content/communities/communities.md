@@ -4,24 +4,56 @@ uid: communities
 
 # Communities
 
-OCS Communities allows industrial companies to share their operational data with external business partners, service providers, and analytics providers. <!-- Angela Flores 6/15/21 Why is communities capitalized? -->
+The _communities_ feature lets an OCS tenant create a private group where business partners can share and view each other's operational data. Using communities, industrial companies can share their data streams with external business partners, service providers, and analytics providers. 
 
-For example, with Communities, OCS tenants can perform the following actions:
+Sharing operational data allows you and your partners find value in each other's data: 
 
-- Share data with external partners without bringing their users inside the corporate firewall or taking extra security precautions.
-- Share data without requiring external users to be onsite.
-- Share data with external partners who do not have a PI System or other required software.
+* Collectively operate more efficiently and reduce waste.
+* Detect hidden problems in your equipment and processes, helping to troubleshoot issues.
+* Predict future failures before they occur.
+* Share data across engineering and operational partners.  
+
+**Want to set up a community now?** See <xref:gsCommunities>.
+
+## Community diagram
+
+The following diagram visually displays features and benefits of a community. Within this diagram, **Tenant A** has established a community with **Tenant B**. Both tenants are sharing a limited number of data streams that they can access either within OCS or by API. The numbered callouts are linked to headers below, which include more information on each feature.
 
 ![Community diagram](images/community-diagram-simple.drawio.svg)
 
-## Share data with a partner
+## Connect with business partners
 
-The following process lists the high-level steps that you must complete to share data. The process consists of creating a community, inviting other tenants, adding users and clients, and then sharing streams of data.
+Establish a community by creating it and then inviting other tenants owned by business partners. Each invitation is a three-way handshake. A tenant administrator from the establishing tenant, also known as the _community owner_, sends an email invitation to one or more OCS tenant administrator. The business partner then accepts the invitation before the tenant administrator confirms it. After confirmation, users from the newly confirmed tenant can view data from other community tenants or share data streams from their own tenant with the community.
 
-![Community invitation process diagram](images/community-diagram-invitation-process.svg)
+* For more information on creating a community, see <xref:add-community>.
+* For more information on inviting other tenants to a community, see <xref:managecommunity>.
 
-1. [Create a community](xref:add-community).
-2. [Invite another OCS tenant](xref:managecommunity#invite-a-tenant-to-a-community) to join the community.
-3. [Add users](xref:managecommunityusers#add-users-to-a-community) from your own tenant to the community.
-4. [Add clients](xref:managecommunityclients#add-clients-to-a-community) for programmatic access to the community.
-5. [Share streams](xref:ShareStreams) with the community.
+## Scalable
+
+Communities are scalable and can include multiple partners without increasing overhead on your IT department. Community administrators can invite or remove tenant members while keeping user and permissions separate.
+
+The data streams that you share within your community are scalable as well. You can share no data streams or as many as you like. You can unshare data streams at any time, after which partners can no longer view those streams.
+
+## Multi-tenant users and permissions
+
+Communities support multi-tenant management of users and permissions. Each tenant within the community has individual control over which of its users can access the community or share data within it. Tenant administrators cannot control users or permission in other tenants. Because each tenant self-manages, the IT departments for each tenant only manage access and permissions for their own users, not their business partners, significantly reducing overhead.
+
+Additionally, OCS provides [community roles](xref:communityroles) that allow each tenant to manage users and roles specifically for communities. Users can be assigned granular permission to view community data, share data streams within the community, or manage community access for other tenants.
+
+## Secure data sharing
+
+- Opt in to community.
+- Explicitly choose what streams you want to share.
+- Data is viewed at source and never copied.
+- Stop sharing at any time.
+
+- IT departments for each partner no longer have to manage access for external users
+- No need for workarounds like VPNs or custom apps.
+- No need to allow customers onsite, improving safety and IT security.
+- Share data with external partners without bringing their users inside the corporate firewall or taking extra security precautions.
+
+## Easy setup
+
+Because Communities are in the cloud, using them does not require installation of additional hardware or software.
+
+Communities can accomodate business partners who are not sharing data or do not have a PI system of their own. They can own an OCS tenant without sharing data, allowing them to participate in a partnership without purchasing the full PI System or other required software.

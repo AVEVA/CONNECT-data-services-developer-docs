@@ -6,8 +6,6 @@ uid: gsCommunities
 
 Complete the following procedures to create a community, invite other tenants, add users and clients, and share data streams.
 
-![Community invitation process diagram](../../communities/images/community-diagram-invitation-process.svg)
-
 1. [Create a community](xref:add-community).
 2. [Invite another OCS tenant](xref:managecommunity#invite-a-tenant-to-a-community) to join the community.
 3. [Add users](xref:managecommunityusers#add-users-to-a-community) from your own tenant to the community.

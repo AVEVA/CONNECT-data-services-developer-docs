@@ -19,7 +19,7 @@ Sharing operational data allows you and your partners find value in each other's
 
 The following diagram visually displays features and benefits of a community. Within this diagram, **Tenant A** has established a community with **Tenant B**. Both tenants are sharing a limited number of data streams that they can access either within OCS or by API. The numbered callouts are linked to headers below, which include more information on each feature.
 
-![Community diagram](images/community-diagram-simple.drawio.svg)
+![Community diagram](images/community-diagram.drawio.svg)
 
 ## Connect with business partners
 

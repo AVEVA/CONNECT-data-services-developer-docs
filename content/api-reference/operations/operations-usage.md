@@ -205,7 +205,7 @@ GET /api/v1/tenants/{tenantId}/subscriptionterm/billingcycles
 <a id="tocSusagedatarecord"></a>
 <a id="tocsusagedatarecord"></a>
 
-Usage within OCS
+Represents resource usage for a given namespace
 
 <h4>Properties</h4>
 

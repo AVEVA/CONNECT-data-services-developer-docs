@@ -281,6 +281,7 @@ The resolved asset describes the consumption-oriented aspects of an OCS resource
 |StatusDefinitionType|[StatusDefinitionType](#schemastatusdefinitiontype)|false|false|Resolved asset status definition|
 |Status|any|false|true|Resolved asset status|
 |UnresolvedStatus|[UnresolvedStatus](#schemaunresolvedstatus)|false|true|Resolved asset unresolved status|
+|Tags|string[]|false|true|Resolved asset tags|
 
 ```json
 {

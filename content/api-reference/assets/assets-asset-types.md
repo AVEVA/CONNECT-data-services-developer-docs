@@ -1029,7 +1029,7 @@ An asset type can be used to create multiple similar assets.A change to the asse
 |Description|string|false|true|Asset type description|
 |Metadata|[[MetadataItem](#schemametadataitem)]|false|true|Asset type metadata|
 |TypeReferences|[[TypeReference](#schematypereference)]|false|true|Asset type description|
-|Status|[StatusConfiguration](#schemastatusconfiguration)|false|true|Asset type status. If an asset of an this asset type, asset type statuses will take precendence over asset status.|
+|Status|[StatusConfiguration](#schemastatusconfiguration)|false|true|Asset type status. If an asset of an this asset type, asset type statuses will take precedence over asset status.|
 
 ```json
 {

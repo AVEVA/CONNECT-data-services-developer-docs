@@ -1249,6 +1249,7 @@ Represents an asset object.
 |Metadata|[[MetadataItem](#schemametadataitem)]|false|true|Asset metadata|
 |StreamReferences|[[StreamReference](#schemastreamreference)]|false|true|Asset stream reference|
 |Status|[StatusConfiguration](#schemastatusconfiguration)|false|true|Asset status|
+|Tags|string[]|false|true|Asset tags|
 
 ```json
 {

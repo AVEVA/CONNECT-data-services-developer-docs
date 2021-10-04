@@ -32,7 +32,7 @@ The first step is to identify and select a stream whose name will be the basis f
 
 1. Click the ![Menu icon](images/menu-icon.png) icon, and click **Metadata Management** under Data Management.
 
-1. Click the **Change Namespace** drop-down list. In the `Select a Namespace` window, click **MyOCS**.
+1. Click the **Change Namespace** dropdown list. In the `Select a Namespace` window, click **MyOCS**.
 
 1. Click **Add Metadata Rule**.
 
@@ -52,7 +52,7 @@ In this step, you identify delimiters in the stream name. Delimiters include per
 
    **Note:** You can click on the minus sign (&ndash;) to ignore a delimiter.
 
-1. In the first row, **"MyOCS"**, click the drop-down list and select **String Literal**.
+1. In the first row, **"MyOCS"**, click the dropdown list and select **String Literal**.
 
    The string *MyOCS* will be used to match this part of the stream pattern. However, it is not mapped to metadata.
 

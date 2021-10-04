@@ -22,7 +22,7 @@ To perform this procedure you must have already defined streams.
 
 1. Select one or more streams to share.
 
-1. Select **More Options** ![More Options](images\more-options.png "More Options") and select **Share Stream** from the drop-down menu.
+1. Select **More Options** ![More Options](images\more-options.png "More Options") and select **Share Stream** from the dropdown menu.
 
   If you select multiple streams, a pane appears for managing streams. You can select **Share Streams** on that pane.
 

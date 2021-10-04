@@ -61,7 +61,7 @@ At top right, the View Notifications icon lists any OCS-generated notifications.
 
 ## User and tenant information
 
-At top right, a drop-down menu gives you access to the following information about your user profile and tenant:
+At top right, a dropdown menu gives you access to the following information about your user profile and tenant:
 
 - Tenant information
 

@@ -24,7 +24,7 @@ Follow the procedure to use the asset explorer to create an asset type.
 
 1. Click the ![Menu icon](images/menu-icon.png) icon and click **Asset Explorer** under Visualization.
 
-1. Click the **Change Namespace** drop-down list.  In the `Select a Namespace` window, click **MyOCS**.
+1. Click the **Change Namespace** dropdown list.  In the `Select a Namespace` window, click **MyOCS**.
 
 1. From the **Asset/Asset Types Selector** list, select **Asset Types**.
 
@@ -72,7 +72,7 @@ You can take an existing asset and use it as the basis for creating an asset typ
 
 1. Click the ![Menu icon](images/menu-icon.png) icon and click **Asset Explorer** under Visualization.
 
-1. Click the **Change Namespace** drop-down list. In the `Select a Namespace` window, click **MyOCS**.
+1. Click the **Change Namespace** dropdown list. In the `Select a Namespace` window, click **MyOCS**.
 
 1. Select the **MyOCS.Asset** asset.
 

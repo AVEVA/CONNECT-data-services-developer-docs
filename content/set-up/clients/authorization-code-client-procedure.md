@@ -13,7 +13,7 @@ Authorization code clients are used with customer web applications that use OCS 
 
 1. Click the ![Menu icon](../images/menu-icon.png) icon and click **Clients** under Security.
 
-1. From the Client Type drop-down list, select **Authorization Code**.
+1. From the **Client Type** dropdown list, select **Authorization Code**.
 
 1. In the toolbar, click **Add Client**.
 

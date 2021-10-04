@@ -18,7 +18,7 @@ Use this get started procedure to become familiar with OMF connections.
 
 1. From the **Namespace** field, select **MyOCS**.
 
-1. From the **Type** drop-down list, select **OMF**.
+1. From the **Type** dropdown list, select **OMF**.
 
 1. Click **Add Connection** to open the `Add PI System Connection` window.
 

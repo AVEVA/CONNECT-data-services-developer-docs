@@ -34,7 +34,7 @@ Follow the procedure to create role.
     
 1. Select the *MyOCS.Role* role and click **Manage Identities**.
 
-1. In the `Manage identities for MyOCS.Role Role` window, click the **Add Identity** drop-down list. 
+1. In the `Manage identities for MyOCS.Role Role` window, click the **Add Identity** dropdown list. 
 
     The list displays all users and clients in the tenant. Click **+** to add any users or clients in the list to the role.
 

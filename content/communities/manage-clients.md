@@ -14,22 +14,26 @@ To perform the following procedures, you must be a [Community Administrator](xre
 
 To add a client to a community, the client must already exist in OCS. Only a [Tenant Administrator](xref:communityroles#tenant-administrator) can create a client. For more information about creating clients, see [Add a client credentials client](xref:gpClientCredentialsClient).
 
-1. On the `Communities` overview page, find the community where you want to add clients and click **Details**.
+1. In the left pane, select **Data Management** > **Communities**.
 
-2. On the `Community Details` page, click the **My Clients** tab.
+1. Find the community where you want to add clients and click **Details**.
 
-3. Click **Add Client**.
+1. On the `Community Details` page, click the **My Clients** tab.
 
-4. Select the clients to add. If necessary, you can filter the list of clients by typing in the **Filter clients** box.
+1. Click **Add Client**.
 
-5. Click **Add**.
+1. Select the clients to add. If necessary, you can filter the list of clients by typing in the **Filter clients** box.
+
+1. Click **Add**.
 
 ## Remove a client from a community
 
-1. On the `Communities` overview page, find the community where you want to remove clients and click **Details**.
+1. In the left pane, select **Data Management** > **Communities**.
 
-2. On the `Community Details` page, click the **My Clients** tab.
+1. Find the community where you want to remove clients and click **Details**.
 
-3. Select a client to remove.  If necessary, you can filter the list of clients by typing in the **Filter clients** box. 
+1. On the `Community Details` page, click the **My Clients** tab.
 
-4. Click **Remove Client**.  When prompted for confirmation, click **Remove Client**.
+1. Select a client to remove.  If necessary, you can filter the list of clients by typing in the **Filter clients** box. 
+
+1. Click **Remove Client**.  When prompted for confirmation, click **Remove Client**.

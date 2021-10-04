@@ -10,35 +10,35 @@ Use this get started procedure to become familiar with OMF connections.
 
 ## Procedure
 
-1. Click the ![Menu icon](images\menu-icon.png) icon and click **Clients** (below Security) to open the `Manage Clients` page.
+1. In the left pane, select **Security** > **Clients**.
 
-2. Verify that there is at least one client-credentials client to use in the OMF connection. If you need to create one, refer to the Clients section.
+3. Verify that there is at least one client-credentials client to use in the OMF connection. If you need to create one, refer to the Clients section.
 
-1.  Click on the menu and click **Connections** (under Data Management).
+4.  Click on the menu and click **Connections** (under Data Management).
 
-2.  From the `Namespace` field, select **MyOCS**.
+5.  From the `Namespace` field, select **MyOCS**.
 
-3.  From the **Type** drop-down list, select **OMF**.
+6.  From the **Type** drop-down list, select **OMF**.
 
-4.  Click **Add Connection** to open the `Add PI System Connection` window.
+7.  Click **Add Connection** to open the `Add PI System Connection` window.
 
-5.  In the `Name` field, enter **MyOCS** and click **Next**.
+8.  In the `Name` field, enter **MyOCS** and click **Next**.
 
-6.  In the **Clients** tab, click one of the clients in the **Available** list to add it
+9.  In the **Clients** tab, click one of the clients in the **Available** list to add it
     to the **Selected** list. Click **Next**.
 
     **Note:** For the purposes of this get started exercise, you may choose any client.
 
-7.  In the **Namespaces** tab, verify that the MyOCS namespace appears in the
+10. In the **Namespaces** tab, verify that the MyOCS namespace appears in the
     **Selected** list. Click **Next**.
 
-8.  In the **Review** tab, verify that the **Clients** list shows the client-credentials
+11. In the **Review** tab, verify that the **Clients** list shows the client-credentials
     client you chose, and the **Namespaces** list shows the *MyOCS* namespace.
     Click **Save**.
 
     An application can now use the selected client-credentials client to write OMF data to the MyOCS namespace.
 
-11. Follow these tips to learn more about OMF connections.
+12. Follow these tips to learn more about OMF connections.
 
      **Tip:** Click **Manage Permissions** to open the `Manage Permissions` window.
 

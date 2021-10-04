@@ -103,7 +103,7 @@ The type of data, the location of that data, and the way that a particular sourc
 The PI to OCS collection method transfers PI time series data from a local PI Server to OCS. The PI to OCS Agent is installed and configured directly on a designated device. The PI to OCS Agent creates types and streams in OCS based on the PI Tags mapped from PI Data Archive. 
 
 **Note**: OSIsoft recommends installing the PI to OCS Agent and PI Server on separate devices to avoid the two systems competing for resources.
-<!--Angela Flores 6/29/21 Too much detail for an overview. -->
+<!--Angela Flores 6/29/21 Too much detail for an overview.-->
 
 #### Custom OMF applications
 
@@ -193,10 +193,6 @@ Two analytical tools are available in OCS:
 ### Trend
 
 The Trend feature converts stream data to a graphic view, which can reveal trends, high points, or trouble spots. Use Trend to select data streams in a namespace, specify a time range, and then render a graph of those data values.
-
-The following example shows stream data for two streams over a selected period of several days:
-
-![OCS](images/how-does-ocs-work/trend.jpg)
 
 ### Assets
 

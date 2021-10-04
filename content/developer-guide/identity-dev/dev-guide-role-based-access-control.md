@@ -10,9 +10,9 @@ Use an Access Control List (ACL) to manage role-based access control to entities
 
 Access Control Lists (ACLs) contain sets of Access Control Entries (ACEs), which contain the following information:
 
-- TrusteeType - the role, user, or application for whom access is set 
+- TrusteeType - the role for whom access is set 
 - AccessType - the access permitted, either allowed or denied
-- AccessRights - the 
+- AccessRights - the access rights allowed or denied to the Trustee specified 
 
 A user or application that attempts to read, write, delete, or manage access control of an entity assigned an ACL must be assigned a trustee that has `AccessType` set to `Allowed` for the AccessRight corresponding to that operation.
 

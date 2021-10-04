@@ -31,7 +31,7 @@ The following diagram shows metadata for two turbines named GEO1 and GEO2, each 
 
 Create metadata rules by selecting a stream as a template and then define the criteria to match with other streams. In the example below, OCS shows a stream selected for metadata rule and identifies characters you could use to divide the stream name into parts using a + sign. 
 
-![Adding metadata](images/metadata1.jpg)
+![Adding metadata](images/metadata1.png)
 
 Assign a metadata type to each part of the stream name, using the following metadata types:
 
@@ -43,7 +43,7 @@ In the following example, all data comes from wind turbines on a wind farm and t
 
 When the parts are combined, this metadata rule creates metadata for streams coming from turbines for Active Power in the Pine Valley Wind Farm.
 
-![Adding metadata to streams](images/metadata2.jpg)
+![Adding metadata to streams](images/metadata2.png)
  
 When you create a metadata rule, OCS applies it to all existing streams and subsequently to any new streams added to the namespace. You can edit a metadata rule; but the modified rule may capture a different set of streams. 
 

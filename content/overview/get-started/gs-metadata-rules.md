@@ -24,9 +24,9 @@ Metadata rules allow you to add metadata to streams. For more information about 
 
 The first step is to identify and select a stream whose name will be the basis for creating the metadata rule.
 
-1. Click the ![Menu icon](images/menu-icon.png) icon, and click **Metadata Management** (under Data Management).
+1. In the left pane, select **Data Management** > **Metadata Management**.
 
-1. Click the **Change Namespace** drop-down list.  In the `Select a Namespace` window, click **MyOCS**.
+1. Click the **Change Namespace** button in the upper-right toolbar, then select **MyOCS**.
 
 1. Click **Add Metadata Rule**.
 
@@ -42,11 +42,9 @@ In this step, you identify delimiters in the stream name. Delimiters include per
 
 1. Click the plus sign (**+**) above each of the three delimiters.
 
-    This identifies the different sections of the stream name pattern. A row is added for each part of your stream name. There are four rows as shown below.![Metadata rules](images/metadata-step2.png)
-
    **Note:** You can click on the minus sign (&ndash;) to ignore a delimiter.
 
-2. In the first row ("MyOCS") click the drop-down list and select **String Literal**.
+2. In the first row ("MyOCS") click the dropdown list and select **String Literal**.
 
    The string *MyOCS* will be used to match this part of the stream pattern. However, it is not mapped to metadata.
 
@@ -56,33 +54,29 @@ In this step, you identify delimiters in the stream name. Delimiters include per
 
 4. In the third row, ("SLTC"), accept the default **Metadata** setting, and enter **Site** as the key.
 
-5. In the fourth row, ("PumpA"), click the drop-down list and select **Wildcard**.
+5. In the fourth row, ("PumpA"), click the dropdown list and select **Wildcard**.
 
    The wildcard means that streams with any values in this part of the stream name will match the pattern. However, this part of the stream name is not mapped to metadata.
 
    When you are done, the pattern looks like the following. The stream pattern defined in the table translates to MyOCS.{Region}.{Site}.* This stream pattern returns all streams that start with the string *MyOCS*, followed by three parts delimited with periods. The second part corresponds to the region and the third part corresponds to the site. *Region* and *Site* are metadata.![Medata rule pattern](images/metadata-rule-pattern.png)
 
-   
-
 6. Click **Next**. 
 
 ## <a name="step-3"></a>Step 3: Define metadata mappings
 
-On the Define Mappings page, you see the following. Below the stream pattern are the two metadata keys that will be mapped in this step. 
-
-![Define mappings](images/metadata-mapping.png)
+In this step, you define mappings. 
 
 1. Select the **Region** key. (This is selected by default.)
 
    **Note:** You may change the metadata key name by editing the **Key** text box.
 
-2. Select **Copy Values** for the **Mapping Type**.
+1. Select **Copy Values** for the **Mapping Type**.
 
    **Copy Values** copies the string contained in that part of the stream name and assigns it to the **Region** key.
 
-3. Click **Site**.
+1. Click **Site**.
 
-4. Select **Map Values** for the **Mapping Type**.
+1. Select **Map Values** for the **Mapping Type**.
 
    This option allows you to map the part of the stream name associated with the **Site** key to another value. You may either manually enter the mappings or generate the mappings from existing streams. 
   
@@ -94,24 +88,21 @@ On the Define Mappings page, you see the following. Below the stream pattern are
 
      A stream (for example, MyOCS.WestCoast.Mfg.Inventory) can match both patterns, but the values ("WestCoast," "Mfg") are mapped for only one of the metadata rules (MyOCS.{Location}.{Department}.\*). Therefore, if you execute the MyOCS.{Region}.{Site}.\* rule, it will not generate metadata for the MyOCS.WestCoast.Mfg.Inventory stream.
 
-5. To generate mappings from existing streams, click **Generate Mappings**.
+1. To generate mappings from existing streams, click **Generate Mappings**.
 
-   OCS searches and finds any existing streams that match the pattern (in this example, the **MyOCS.{Region}.{Site}.*** pattern). For each stream that matches the pattern, it lists that part of the stream name, in this example, it lists the part that corresponds to the **Site** key.
+   OCS searches and finds any existing streams that match the pattern (the **MyOCS.{Region}.{Site}.*** pattern). For each stream that matches the pattern, it lists that part of the stream name, and in this example, it lists the part that corresponds to the **Site** key.
    
+1. In the **Map To** text box, enter **San Leandro**. 
 
-![Metadata mapping](images/metadata-mapping-site.png)
+1.  You can create additional mappings for streams which are not yet stored in OCS but which you anticipate in the future. Click **Add Mappings** to add another mapping.
 
-6. In the **Map To** text box, enter **San Leandro**. 
+1. In the **Map From** text box, enter **PHL**. 
 
-7.  You can create additional mappings for streams which are not yet stored in OCS but which you anticipate in the future. Click **Add Mappings** to add another mapping.
-
-8. In the **Map From** text box, enter **PHL**. 
-
-9. In the **Map To** text box, enter **Philadelphia**.
+1. In the **Map To** text box, enter **Philadelphia**.
 
    When you have finished defining the mappings for the metadata keys, a green check mark appears next to the keys.
 
-10. Click **Next**.
+1. Click **Next**.
 
 ## <a name="step-4"></a>Step 4: Apply the rule and preview the results
 

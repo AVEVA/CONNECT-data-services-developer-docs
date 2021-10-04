@@ -66,7 +66,7 @@ The following procedure describes how to use the OCS Portal to monitor your asse
 
     Note the following:
 
-    - The Trend page shows the properties for the same time range shown in the Details pane of the Asset Editor.
+    - The Trend page shows the properties for the same time range shown in the `Details` pane of the Asset Editor.
 
     - There are three views of the trend:
 

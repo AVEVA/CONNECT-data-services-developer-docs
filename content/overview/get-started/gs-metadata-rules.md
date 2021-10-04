@@ -32,7 +32,7 @@ The first step is to identify and select a stream whose name will be the basis f
 
 1. Click the ![Menu icon](images/menu-icon.png) icon, and click **Metadata Management** under Data Management.
 
-1. Click the **Change Namespace** drop-down list. In the `Select a Namespace` window, click **MyOCS**.
+1. Click the **Change Namespace** dropdown list. In the `Select a Namespace` window, click **MyOCS**.
 
 1. Click **Add Metadata Rule**.
 

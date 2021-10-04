@@ -20,7 +20,7 @@ After creating your types, you can add streams and associate a type with the str
 
     ![Namespace list](images/sds-gs-namespace.png)
 
-1. From the **Streams** drop-down list, select **Streams** if it is not already selected.
+1. From the **Streams** dropdown list, select **Streams** if it is not already selected.
 
     ![Streams list](images/streams-list.png)
 

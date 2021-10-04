@@ -18,15 +18,11 @@ Procedure
    
     The asset explorer displays the available assets. In this example, it provides an overview of the health of the fleet of trucks.
 
-    **Tip:** Click on the icons in the toolbar to toggle between the card and table views of the assets.
-    
-    ![Card/Table View](images/AssetEditor_icons.png)
-
-1. Scan through the assets and identify any assets with a problematic status.
+    **Tip:** Click on the ![](images/AssetEditor_icons.png) icons in the toolbar to toggle between the card and table views of the assets.
+ 
+3. Scan through the assets and identify any assets with a problematic status.
 
     **Tip:** Use the Search box to filter the list of assets displayed.
-
-    ![assets](images/Assets.png)
 
     Each asset is identified with one of the following statuses:
 
@@ -34,13 +30,12 @@ Procedure
     | ------ | ------- |
     | ![Okay icon](images/okay-icon.png) | Good    |
     | ![Warning icon](images/warning-icon.png) | Warning |
-    | ![Alarm icon](images/alarm-icon.png)    | Alarm |
+    | ![Alarm icon](images/alarm-icon.png)    | Bad |
+    | ![Unknown icon](images/unknown-icon.png)    | Unknown |
 
 1. Click on an asset to open the Asset Details pane.
 
     The Asset Details pane provides metadata and property data on the asset that you can use to determine the cause of any problems. The **Metadata** tab displays metadata associated with the asset.
-
-    ![Asset Attributes](images/Metadata.png)
 
 1. Click the **Measurements** tab.
 
@@ -49,20 +44,14 @@ Procedure
      - Data associated with the asset. These values are updated in real time.
     
      - A trend of the selected measurements.
-    
-    ![Details pane](images/Details_pane.png)
 
 1. Select one or more of the properties that might be the cause for the warning.
 
 1. Review the history of the selected properties in the trend to see if the data suggests you have identified a potential cause. 
 
-    By default, the trend shows the property data for the last 8-hour period. Click the arrow to pick another time-range option or specify a custom time range.
-
-    ![Time Range options](images/Time_Range_options.png)
+    By default, the trend shows the property data for the last 8-hour period. Use the navigational arrows on the Time picker ![Time picker](images/Time-picker.png) to pick another time-range option or specify a custom time range.
 
 1. To delve further into the details of these properties, click the **View full trend** ![View full trend icon](images/View_full_trend_icon.png) icon to see the Trend page.
-
-    ![View full trend](images/trend-full-display.png)
 
     Note the following:
 
@@ -72,21 +61,19 @@ Procedure
 
       | Trend View                               | Description                                   |
       | ---------------------------------------- | --------------------------------------------- |
-      | ![Single mode](images/Single_mode.png)   | Each trace is displayed in its own trend.     |
-      | ![Multiple mode](images/Multiple_mode.png) | All properties are plotted on the same scale. |
-      | ![Stacked mode](images/Stacked_mode.png) | All properties are plotted on its own scale.  |
+      | Single  | Each trace is displayed in its own trend.     |
+      | Multiple        | All properties are plotted on the same scale. |
+      | Stacked | All properties are plotted on its own scale.  |
 
-1. Click on the ![Trend views icon](images/trend-views-icon.png) icon to toggle through the views.
+1. Click the ![Trend views icon](images/trend-views-icon.png) icon to toggle through the views.
 
-    The Legend table shows the legend for each trace, the last value, minimum, maximum, and average values in the displayed time range.
+    **Note:** The legend table shows the legend for each trace, the last value, minimum, maximum, and average values in the displayed time range.
 
     ![Legend Table](images/Legend_Table_Med.png)
     
 1. The error may not have occurred in the time range currently in view. Click **Step backward** or **Step forward** to move the time range backward or forward.
 
-    The trace will move in increments of time that are displayed in the trend. If the trend displays the last 12 hours, **Step backward** shows the previous 12-hour period. If it displays the last 30 days, **Step forward** shows the next 30-day period.
-
-    ![Step back and step forward](images/Step_back_forward.png)
+    **Note:** The trace will move in increments of time that are displayed in the trend. If the trend displays the last 12 hours, use the step backward arrow in the Time picker to show the previous 12-hour period. If it displays the last 30 days, the step forward arrow shows the next 30-day period.
 
 1. Click on a trace to select it for further analysis.
 
@@ -98,7 +85,7 @@ Procedure
 
 1. Add other cursors at data points of interest.
 
-    **Note:** When two cursors are locked, the Legend table displays summary calculations for the values between the two cursors.
+    **Note:** When two cursors are locked, the legend table displays summary calculations for the values between the two cursors.
 
 1. Click the link icon ![Copy link icon](images/share-icon.png) in the menu bar to copy the URL of the workspace.
 

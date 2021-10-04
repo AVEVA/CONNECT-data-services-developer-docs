@@ -14,11 +14,11 @@ Follow this procedure to filter and view a subset of assets:
 
 1. Enter a string in the **Search** box to filter the assets that are displayed.
 
-1. Click the ![link](images/share-icon.png) icon in the toolbar to copy the URL to the clipboard. 
+1. Click the **Shared Filtered Assets** ![link](images/share-icon.png) icon in the toolbar to copy the URL to the clipboard. 
 
-   Send this link to your colleagues and partners. When they paste this URL into a browser, they will see the fleet view you created.
+   **Note:** Send this link to your colleagues and partners. When they paste this URL into a browser, they will see the fleet view you created.
 
-   **Hint:** Bookmark this link to return to this fleet view.
+   **Tip:** Bookmark this link to return to this fleet view.
 
 ## See also
 

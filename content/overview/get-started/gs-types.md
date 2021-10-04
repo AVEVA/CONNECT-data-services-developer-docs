@@ -14,18 +14,17 @@ After creating the namespace, the next step is to add one or more types. For mor
 
 1. In the left pane, select **Data Management** > **Sequential Data Store**.
 
-1. Click the **Namespace** selection button to open the `Select a Namespace` window. Select the namespace in which you want to create the stream. 
-     ![Namespace list](images/sds-gs-namespace.png)
+1. Click the **Change Namespace** button in the upper-right toolbar, then select the namespace in which you want to create the stream. 
 
-1. From the **Streams** drop-down list, select **Types**.
-     ![Streams list](images/types-list.png)
+1. From the **Streams** dropdown list, select **Types**.
 
-1. Click the ![More options](images/more-options.png) icon on the menu bar and click **Manage Default Permissions**.
-   This opens the `Manage Default Permissions for New Types` window where you can specify the default permissions for new types. 
+1. Click the ![More Options button](images/more-options.png) icon, then click **Manage Default Permissions**.
+ 
+   **Result:** The `Manage Default Permissions for New Types` window opens.
 
    **Note:** By default, you must be assigned the Tenant Administrator role to change the default permissions. Any changes you make only affect new types. The permissions on existing types are not changed.
 
-   When you have finished reviewing the permissions, click **Cancel** to continue.
+1. After reviewing permissions, click **Cancel** to continue.
 
 1. Click **Add Type**.
 
@@ -77,17 +76,13 @@ After creating the namespace, the next step is to add one or more types. For mor
 
 The following steps explore information about the type you just created.
 
-1. Click the checkbox to select the **MyOCS.PumpState** type in the list. Click **More options** and click **Manage Permissions**.
+1. Click the checkbox to select the **MyOCS.PumpState** type in the list. Click the ![More Options button](images/more-options.png) icon, then click **Manage Permissions**.
 
     This opens the `Manage Permissions for MyOCS.PumpState` window where you can override the default permissions and set permissions for the specific type. You must be assigned the Tenant Administrator role to configure the type permissions.
 
     Review the permissions for the MyOCS.PumpState type, and when you have finished exploring this window, click **Cancel** to continue. 
 
-1. Click **More options** and click **View Type**.
-
-   This window shows the type details that you entered when you added the type. Click **Cancel** to continue.
-
-1. Click **More options**  and **Get Type Streams**.
+1. Click the ![More Options button](images/more-options.png) icon, then click **Get Type Streams**.
 
    This takes you to the **Streams** list and, by default, OCS uses the typeId:MyOCS.PumpState query to filter for any streams with the MyOCS.PumpState type. The list is currently empty, because streams have not yet been created with this type.
 

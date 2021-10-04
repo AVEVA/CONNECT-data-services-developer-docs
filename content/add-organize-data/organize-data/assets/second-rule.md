@@ -19,17 +19,15 @@ In the [Tank Rule A example](xref:CreateAssetRules#tank), the stream names follo
 
 Therefore, you must create a second asset rule, called Tank Rule B, to identify this stream. The stream name pattern is identical to Tank Rule A, except for the third part of the stream name. In Tank Rule A, this part of the stream name was matched with `the next group of numbers` option. In Tank Rule B, to correctly identify the `PHI-Tank03-Temp` stream, `03` must be matched using `everything preceding the delimiter "-"` option. This token for the third part of the stream name is assigned the name `equipment_Id`, the same name as in Tank Rule A.
 
-**Note:** OSIsoft recommends that you use the same names for all of the tokens in both rules. This naming patern makes it easier to manage the rules and troubleshoot any problems that may occur.
+**Note:** Use the same names for all of the tokens in both rules. This naming patern makes it easier to manage the rules and troubleshoot any problems that may occur.
 
-![stream name pattern - rule 2 token](images/second-rule-token.png)
+![](images/second-rule-token.png)
 
 Set up the mappings and configure the asset as described in [Create an asset rule](xref:CreateAssetRules).
 
-![Configure asset - rule 2](images/configure-asset-page-rule2.png)
-
 **Note:** The **Id** and **Name** for both rules must resolve to the same values to achieve the intended result, that is one asset that references both streams. If the Ids are different, then two assets with the name `Philadelphia 03` are created, one that references the `Pressure` stream and the other that references the `Temperature` stream.
 
-OSIsoft recommends that you configure the other asset fields, **Description** and **Metadata** the same in both rules.
+Be sure to configure the other asset fields, **Description** and **Metadata** the same in both rules.
 
 The following is the asset preview of Tank Rule B which matches the `PHI-Tank03-Temp` stream for the `Philadelphia Tank 03` asset.
 

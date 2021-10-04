@@ -8,11 +8,9 @@ Use trace data in a trend to monitor assets, anticipate problems, and proactivel
 
 ## Procedure
 
-1. Log in to OSIsoft Cloud Services.
-
-1. Click the navigation icon ![](images/icon_navigation_bigger.png) (upper left corner) and click **Trend** (under Visualization). 
+1. In the left pane, select **Visualization** > **Trend**.
    
-1. In the `Add Traces` pane, click the **+** sign to add the trace to the trend. 
+1. In the Add Traces blade, click the **+** sign to add the trace to the trend. 
 
    **Tips:**
 
@@ -22,16 +20,13 @@ Use trace data in a trend to monitor assets, anticipate problems, and proactivel
 
     ![Search blade](images/Search_blade_75.png)
    
-1. Click the ![Trend views icon](images/trend-views-icon.png) icon to choose one of the three views:
+4. Click the ![Trend views icon](images/trend-views-icon.png) icon to choose one of the three views:
 
    | Trend View                               | Description                                     |
    | ---------------------------------------- | ----------------------------------------------- |
-   | ![Single mode](images/Single_mode.png)   | Each trace is displayed in its own trend.       |
-   | ![](images/Multiple_mode.png)            | All measurements are plotted on the same scale. |
-   | ![Stacked mode](images/Stacked_mode.png) | All measurements are plotted on its own scale.  |
-   
-    The following screen capture shows the stacked view.
-    ![Trend dislaying traces in stacked view](images/Traces_stacked_view.png)
+   | Single mode   | Each trace is displayed in its own trend.       |
+   | Multiple mode            | All measurements are plotted on the same scale. |
+   | Stacked mode | All measurements are plotted on its own scale.  |
    
 1. Click the time picker and select the time range to view. If the time range does not appear in this list, click the **Custom Range** tab and specify the time range.
 
@@ -41,16 +36,11 @@ Use trace data in a trend to monitor assets, anticipate problems, and proactivel
 
    The trace will move in time increments displayed in the time range picker. For example, if the trend displays the last 8 hours, **Step backward** shows the previous 8-hour period. If it displays the last 30 days, **Step forward** shows the next 30-day period. Click the triangle to select another time range or specify a custom range.
 
-   ![Step back and step forward](images/Step_back_forward.png)
-
-   The Legend table displays the Trace view. It shows the legend for each trace, the last value, minimum, maximum, and average values in the displayed time range.
-
-    ![Legend Table](images/Legend_Table.png)
+   The legend table below the trend displays the Trace view. It shows the legend for each trace, the last value, minimum, maximum, and average values in the displayed time range.
 
 1. Click on a trace to select it for further analysis.<br>The selected trace is highlighted, and two cursors automatically mark the minimum and maximum values for the displayed time range. These cursors, called *easy cursors,* remain as long as the trace is highlighted.
 
     ![Maximum and minimum cursors](images/Max_min_cursors.png)
-<br>
 
 8. Click the plus sign (+) above the trace to lock the cursors in place.
     

@@ -14,7 +14,7 @@ Authorization code clients are used with customer web applications that use OCS 
 
 ## Create an authorization code client
 
-1. Click the ![Menu icon](images/menu-icon.png) icon and click **Clients** under Security.
+1. In the left pane, select **Security > Clients**.
 
 1. From the **Client Type** dropdown list, select **Authorization Code**.
 

@@ -14,7 +14,7 @@ For example, with Communities, OCS tenants can perform the following actions:
 
 ## Share data with a partner
 
-The following process lists the high-level steps that are needed to share data. The process consists of creating a community, inviting other tenants, adding users and clients, and then sharing streams of data.
+The following process lists the high-level steps that you must complete to share data. The process consists of creating a community, inviting other tenants, adding users and clients, and then sharing streams of data.
 
 1. [Create a community](xref:add-community).
 2. [Invite another OCS tenant](xref:managecommunity#invite-a-tenant-to-a-community) to join the community.

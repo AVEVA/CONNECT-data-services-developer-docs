@@ -14,7 +14,7 @@ Hybrid clients are used by native and server-side web applications. Authenticati
 
 ## Create a hybrid client
 
-1. Click the ![Menu icon](images/menu-icon.png) icon and click **Clients** under Security.
+1. In the left pane, select **Security** > **Clients**.
 
 1. From the **Client Type** dropdown list, select **Hybrid**.
 

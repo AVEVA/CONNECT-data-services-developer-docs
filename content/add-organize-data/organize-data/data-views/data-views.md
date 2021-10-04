@@ -8,7 +8,7 @@ Data views are subsets of data from one or more streams. You create a data view 
 
 ## Procedure
 
-1. In the OCS Portal, click the menu icon and select **Data Views** under Analytics.
+1. In the left pane, select **Analytics** > **Data Views**.
 2. In the `Data Views` pane of the OCS Portal, click **Add Data View**.
 3. Enter the data view name and description in the `Data View Information` pane.
 4. Click **Standard** or **Narrow** to specify the general shape of the data display.

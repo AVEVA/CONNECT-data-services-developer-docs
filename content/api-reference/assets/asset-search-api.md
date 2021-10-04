@@ -29,7 +29,7 @@ Searches and returns assets matching the search criteria.
 
 ### Request 
 ```text 
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets?skip={skip}&count={count}&orderby={orderby}&query={queryString}&{filterString}&pageSize={pageSize}&maxPages={maxPages}&continuationToken={continuationToken}
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets?skip={skip}&count={count}&orderby={orderby}&query={queryString}&{filterString}
 ```
 
 ### Parameters  
@@ -108,23 +108,24 @@ A list of asset Ids and their matched fields.
 #### Example response body
 Below is a response when query string is "Name:Tracer".
 
-- `Count` represents the number of matched assets in the given query.
+- `TotalCount` represents the number of matched assets in the database which matched the given query.
 
  A list of results is returned. Each result contains:  
 -  `MatchProperties` - a list of matched property objects. Each `MatchProperties` object contains the matched fields and their values.
 - `Id` - Identifier of the matched asset.
 - `TypeId` - asset type identifier of the asset. This is null if the asset does not reference an asset type.
 - `Name` - asset name.
-- `Description` - asset description.
+- `Description` - Description of the matched asset. If the description of the matched asset is null, the description from the asset type is returned.
 - `ETag` - version tag.
 - `CreatedDate` - asset creation date.
 - `LastModifiedDate` - last modified date of the asset.
+- `LastStatus` - Last status of the matched asset. If a status is not defined for the asset, this field will be null. If a status is defined, this field will correspond to Unknown, Good, Warning, or Bad. The display name of the asset status had no effect on this field.
 
 ```json 
 HTTP 200 OK 
 Content-Type: application/json
 {
-    "Count": 2,
+    "TotalCount": 2,
     "Results": [
         {
             "MatchedProperties": [
@@ -201,6 +202,17 @@ Filter strings are not case sensitive. Numeric types must be passed as strings a
 | filter[AssetTypeName]=HeaterType             | Filter that only returns assets with an AssetTypeName of **HeaterType**. |
 | filter[status]=Bad                           | Filter that returns only assets with a bad status. Status filters can have the values **Good**, **Bad**, **Warning**, and **Unknown**. |
 
+### Special characters in filter values
+
+Only `" \` special characters need to be escaped with the backslash escape character ( \ ) in filter values.
+
+The following are examples of using the escape character in filter value.
+
+| Example Location Value                 | Filter String                              |
+| -------------------------------------- | ------------------------------------------ |
+| Austin\Dallas\Fort Worth               | filter[location]=Austin\\Dallas\\Fort Worth|
+| "Austin" Texas                         | filter[location]=\"Austin\" Texas          |
+
 ## `Asset Faceted Search` 
 
 Asset faceted search allows for searching using asset facets. Asset facets are not case sensitive.  Only asset metadata can be used in asset faceted searches.
@@ -219,7 +231,7 @@ Tenant identifier
 `string namespaceId`  
 Namespace identifier
 
-`string category`  
+`string name`  
 Name of the asset metadata for which you want to retrieve the facet values.
 
 [optional] `int count`   

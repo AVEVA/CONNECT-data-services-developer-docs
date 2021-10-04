@@ -14,18 +14,15 @@ After creating your types, you can add streams and associate a type with the str
 
 ## Procedure
 
-1. Click the ![Menu icon](images/menu-icon.png) and click **Sequential Data Store** under Data Management.
+1. In the left pane, select **Data Management** > **Sequential Data Store**.
 
-1. Click the **Namespace** selection button to open the `Select a Namespace` window. Select the namespace in which you want to create the stream. 
+1. Click the **Change Namespace** button in the upper-right toolbar, then select the namespace in which you want to create the stream. 
 
-    ![Namespace list](images/sds-gs-namespace.png)
+1. From the **Streams** dropdown list, select **Streams** if it is not already selected. 
 
-1. From the **Streams** dropdown list, select **Streams** if it is not already selected.
+1. Click the ![More Options button](images/more-options.png) icon, then click **Manage Default Permissions**.  
 
-    ![Streams list](images/streams-list.png)
-
-1. Click the ![More options](images/more-options.png) icon on the menu bar and click **Manage Default Permissions**.  
-    The `Manage Default Permissions for New Streams` window opens. The default permissions for streams created in the selected namespace are configured here.
+   **Result:** The `Manage Default Permissions for New Streams` window opens. The default permissions for streams created in the selected namespace are configured here.
    
     **Note:** By default, you must be assigned the Tenant Administrator role to change the default permissions. Any changes only affect new streams. It does not change the permissions on already existing streams. 
     

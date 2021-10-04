@@ -30,9 +30,9 @@ Metadata rules allow you to add metadata to streams. For more information about 
 
 The first step is to identify and select a stream whose name will be the basis for creating the metadata rule.
 
-1. Click the ![Menu icon](images/menu-icon.png) icon, and click **Metadata Management** under Data Management.
+1. In the left pane, select **Data Management** > **Metadata Management**.
 
-1. Click the **Change Namespace** dropdown list. In the `Select a Namespace` window, click **MyOCS**.
+1. Click the **Change Namespace** button in the upper-right toolbar, then select **MyOCS**.
 
 1. Click **Add Metadata Rule**.
 
@@ -47,8 +47,6 @@ The first step is to identify and select a stream whose name will be the basis f
 In this step, you identify delimiters in the stream name. Delimiters include periods (.), underscores (_), and hyphens (-). For each stream name part, you specify the type of data it is, that is, whether it is metadata, string literal, or wildcard. These settings have implications for the search pattern.
 
 1. Click the plus sign (+) above each of the three delimiters.
-
-    This identifies the different sections of the stream name pattern. A row is added for each part of your stream name. There are four rows as shown below.![Metadata rules](images/metadata-step2.png)
 
    **Note:** You can click on the minus sign (&ndash;) to ignore a delimiter.
 
@@ -72,9 +70,7 @@ In this step, you identify delimiters in the stream name. Delimiters include per
 
 ## <a name="step-3"></a>Step 3: Define metadata mappings
 
-On the Define Mappings page, you see the following. Below the stream pattern are the two metadata keys that will be mapped in this step. 
-
-![Define mappings](images/metadata-mapping.png)
+In this step, you define mappings. 
 
 1. Select the **Region** key. This is selected by default.
 
@@ -84,7 +80,7 @@ On the Define Mappings page, you see the following. Below the stream pattern are
 
    **Copy Values** copies the string contained in that part of the stream name and assigns it to the **Region** key.
 
-1. Click the **Site** key.
+1. Click **Site**.
 
 1. Select **Map Values** for the **Mapping Type**.
 
@@ -100,17 +96,15 @@ On the Define Mappings page, you see the following. Below the stream pattern are
 
 1. To generate mappings from existing streams, click **Generate Mappings**.
 
-   OCS searches and finds any existing streams that match the pattern; in this example, that is the `MyOCS.{Region}.{Site}.\*` pattern. For each stream that matches the pattern, it lists that part of the stream name; in this example, it lists the part that corresponds to the **Site** key.  
+   OCS searches and finds any existing streams that match the pattern (the **MyOCS.{Region}.{Site}.*** pattern). For each stream that matches the pattern, it lists that part of the stream name, and in this example, it lists the part that corresponds to the **Site** key.
+   
+1. In the **Map To** text box, enter **San Leandro**. 
 
-![Metadata mapping](images/metadata-mapping-site.png)
+1.  You can create additional mappings for streams which are not yet stored in OCS but which you anticipate in the future. Click **Add Mappings** to add another mapping.
 
-1. In the **Map To** text box, enter *San Leandro*. 
+1. In the **Map From** text box, enter **PHL**. 
 
-1. You can create additional mappings for streams which are not yet stored in OCS but which you anticipate in the future. Click **Add Mappings** to add another mapping.
-
-1. In the **Map From** text box, enter *PHL*. 
-
-1. In the **Map To** text box, enter *Philadelphia*.
+1. In the **Map To** text box, enter **Philadelphia**.
 
    When you have finished defining the mappings for the metadata keys, a green check mark appears next to the keys.
 

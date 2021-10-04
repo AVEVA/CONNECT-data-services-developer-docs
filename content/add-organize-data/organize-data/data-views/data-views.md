@@ -14,7 +14,7 @@ Data views are subsets of data from one or more streams. You create and configur
 
 1. Next to **Data View Shape**, select **Standard** or **Narrow** to enter the general shape of the data display. **Standard** for a typical wide table or **Narrow** to pivot your data into a Field, Value pair format.
 
-### Specify the source stream or asset for the data view
+## Specify the source stream or asset for the data view
 
 1. In the center pane, update the **Query Id** field to a new value or accept the default of *Query1*.
 
@@ -36,7 +36,7 @@ Data views are subsets of data from one or more streams. You create and configur
 
    The `Add Data Fields` pane displays.
 
-### Add data fields to display as identifying fields for the data view
+## Add data fields to display as identifying fields for the data view
 
 1. In the `Add Data Fields` pane, select each data field or **Select All** data fields to use as an identifying field. **Show Included Fields** highlights identifying fields already included in the data field.
 
@@ -46,7 +46,7 @@ Data views are subsets of data from one or more streams. You create and configur
 
    The `Filter Fields...` and `Generate Preview` panes display.
 
-### Edit the identifying fields, time period, and interpolation interval for the data view
+## Edit the identifying fields, time period, and interpolation interval for the data view
 
 1. In the `Filter Fields...` pane, the **Index Field** and **Grouping Fields** sections are set by default. In the queries section, each data field selected previously in the `Add Data Fields` pane are listed as identifying fields. You can add, edit, or remove identifying fields by clicking on the **Add**, **Edit**, or **Remove** buttons.
 
@@ -58,12 +58,10 @@ Data views are subsets of data from one or more streams. You create and configur
 
 1. Click the **Interpolated/Stored** dropdown list and select **Interpolated** or **Stored** for the data view.
 
-### Generate a preview and save the data view
+## Generate a preview and save the data view
 
 1. Click the **Generate preview** button to generate a preview of the data view with the selected settings.
 
 1. Click **Save** to create the data view and to continue editing, or click **Save and Close** to create the and exit.
-
-## Related links
 
 To define a data view using the OCS API, see [Define a data view](xref:DataViewsQuickStartDefine).

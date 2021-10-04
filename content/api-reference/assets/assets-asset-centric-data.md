@@ -4,7 +4,7 @@ uid: assets-asset-centric-data
 ---
 
 # Asset Centric Data
-The asset centric data API provides a quick way to retrieve data stored in an asset's referenced streams. In order to retrieve stream data from an asset, you must first set up stream references for a given asset.The data that is retrieved is based on the resolved asset.By default, data calls return data for all stream references. If you are only interested in data from a subset of streams, you must specify the streams encoded as a URL parameter.The format is to add stream={streamName} for each stream you are interested in. For example, if a given asset has the following definition and you are only interested in HeaterA and PressureB for the last data call, you would send: ```text GET ...Namespaces/{namespaceId}/ Assets / AssetStreamFilter / data / last ? Stream ={ HeaterA},Stream ={ PressureB} ``` Note: Asset stream references can contain commas. In this case, the comma must be properly escaped. ``` { "Id": "AssetStreamFilter", "Name": "Demo", "Description": "Only for demoing stream filtering", "StreamReferences": [ { "Id": "StreamReferenceId1", "Name": "StreamReferenceWithEventsName" "StreamId": "PI_buildingMachine" }, { "Id": "HeaterId1", "Name": "HeaterA" "StreamId": "PI_HeaterA" }, { "Id": "PressureId1", "Name": "PressureB" "StreamId": "PI_PressureB" }] } ``` ### Example Asset The following asset is used in all of the sample output in the output below. ``` { "Id": "Idsample", "Name": "SampleForDemo", "Description": "This is a demo asset.", "Metadata": [ { "Id": "b47c9529-7fbf-4b2d-810b-fe79d7fdb2b0", "Name": "RoomLocation", "Description": "This is what room number the asset is located.", "SdsTypeCode": "Double", "Value": 1.0 }], "StreamReferences": [ { "Id": "StreamReferenceId1", "Name": "StreamReferenceWithEventsName" "StreamId": "PI_buildingMachine_1114" }] } ```
+The asset centric data API provides a quick way to retrieve data stored in an asset's referenced streams. In order to retrieve stream data from an asset, you must first set up stream references for a given asset.The data that is retrieved is based on the resolved asset.By default, data calls return data for all stream references. If you are only interested in data from a subset of streams, you must specify the streams encoded as a URL parameter.The format is to add stream={streamReferenceName} for each stream you are interested in. For example, if a given asset has the following definition and you are only interested in HeaterA and PressureB for the last data call, you would send: ```text GET ...Namespaces/{namespaceId}/ Assets / AssetStreamFilter / data / last ? Stream ={ HeaterA},Stream ={ PressureB} ``` Note: Asset stream references can contain commas. In this case, the comma must be properly escaped. ``` { "Id": "AssetStreamFilter", "Name": "Demo", "Description": "Only for demoing stream filtering", "StreamReferences": [ { "Id": "StreamReferenceId1", "Name": "StreamReferenceWithEventsName" "StreamId": "PI_buildingMachine" }, { "Id": "HeaterId1", "Name": "HeaterA" "StreamId": "PI_HeaterA" }, { "Id": "PressureId1", "Name": "PressureB" "StreamId": "PI_PressureB" }] } ``` ### Example Asset The following asset is used in all of the sample output in the output below. ``` { "Id": "Idsample", "Name": "SampleForDemo", "Description": "This is a demo asset.", "Metadata": [ { "Id": "b47c9529-7fbf-4b2d-810b-fe79d7fdb2b0", "Name": "RoomLocation", "Description": "This is what room number the asset is located.", "SdsTypeCode": "Double", "Value": 1.0 }], "StreamReferences": [ { "Id": "StreamReferenceId1", "Name": "StreamReferenceWithEventsName" "StreamId": "PI_buildingMachine_1114" }] } ```
 
 ## `Get Last Data`
 
@@ -24,9 +24,9 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string assetId`
-<br/>Asset identifier<br/><br/>
+<br/>Asset identifier.<br/><br/>
 `[optional] array stream`
-<br/>Optional parameter consisting of a comma-separated list of stream reference names in form of `stream={streamName}` for each stream you are interested in. By default, all data calls return data for all stream references.<br/><br/>
+<br/>Optional parameter consisting of a comma-separated list of stream reference names in form of `stream={streamReferenceName}` for each stream you are interested in. By default, all data calls return data for all stream references.<br/><br/>
 
 <h3>Response</h3>
 
@@ -34,7 +34,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |---|---|---|
 |200|[DataResults](#schemadataresults)|Last status of the specified asset.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
-|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found.|
 
 <h4>Example response body</h4>
 
@@ -88,15 +88,15 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string assetId`
-<br/>Asset identifier<br/><br/>`string startIndex`
-<br/>Start index<br/><br/>`string endIndex`
-<br/>End index<br/><br/>`integer intervals`
+<br/>Asset identifier.<br/><br/>`string startIndex`
+<br/>The start index for the intervals.<br/><br/>`string endIndex`
+<br/>The end index for the intervals.<br/><br/>`integer intervals`
 <br/>Number of intervals requested.<br/><br/>
 `[optional] array stream`
-<br/>Optional parameter consisting of a comma-separated list of stream reference names in form of `stream={streamName}` for each stream you are interested in. By default, all data calls return data for all stream references.<br/><br/>`[optional] any boundaryType`
-<br/>Sds boundary type to pass to Sds<br/><br/>`[optional] any startBoundaryType`
-<br/>Start Sds boundary type to pass to Sds<br/><br/>`[optional] any endBoundaryType`
-<br/>End Sds boundary type to pass to Sds<br/><br/>
+<br/>Optional parameter consisting of a comma-separated list of stream reference names in form of `stream={streamReferenceName}` for each stream you are interested in. By default, all data calls return data for all stream references.<br/><br/>`[optional] any boundaryType`
+<br/>Optional SdsBoundaryType specifies the handling of events at or near the startIndex and endIndex.<br/><br/>`[optional] any startBoundaryType`
+<br/>Optional SdsBoundaryType specifies the handling of events at or near the startIndex.<br/><br/>`[optional] any endBoundaryType`
+<br/>Optional SdsBoundaryType specifies the handling of events at or near the endIndex.<br/><br/>
 
 <h3>Response</h3>
 
@@ -104,7 +104,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |---|---|---|
 |200|[DataResults](#schemadataresults)|Last status of the specified asset.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
-|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found.|
 
 <h4>Example response body</h4>
 
@@ -168,12 +168,12 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string assetId`
-<br/>Asset identifier<br/><br/>`string startIndex`
-<br/>Start index<br/><br/>`string endIndex`
-<br/>End index<br/><br/>
+<br/>Asset identifier.<br/><br/>`string startIndex`
+<br/>The start index for the intervals.<br/><br/>`string endIndex`
+<br/>The end index for the intervals.<br/><br/>
 `[optional] array stream`
-<br/>Optional parameter consisting of a comma-separated list of stream reference names in form of `stream={streamName}` for each stream you are interested in. By default, all data calls return data for all stream references.<br/><br/>`[optional] integer count`
-<br/>Number of samples requested<br/><br/>
+<br/>Optional parameter consisting of a comma-separated list of stream reference names in form of `stream={streamReferenceName}` for each stream you are interested in. By default, all data calls return data for all stream references.<br/><br/>`[optional] integer count`
+<br/>The number of intervals requested.<br/><br/>
 
 <h3>Response</h3>
 
@@ -181,7 +181,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |---|---|---|
 |200|[DataResults](#schemadataresults)|Last status of the specified asset.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
-|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found.|
 
 <h4>Example response body</h4>
 
@@ -297,12 +297,12 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string assetId`
-<br/>Asset identifier<br/><br/>`string startIndex`
-<br/>Start index<br/><br/>`string endIndex`
-<br/>End index<br/><br/>`integer count`
-<br/>Number of samples requested<br/><br/>
+<br/>Asset identifier.<br/><br/>`string startIndex`
+<br/>The index defining the beginning of the window.<br/><br/>`string endIndex`
+<br/>The index defining the end of the window.<br/><br/>`integer count`
+<br/>The number of events to return. Read characteristics of the stream determine how the events are constructed.<br/><br/>
 `[optional] array stream`
-<br/>Optional parameter consisting of a comma-separated list of stream reference names in form of `stream={streamName}` for each stream you are interested in. By default, all data calls return data for all stream references.<br/><br/>
+<br/>Optional parameter consisting of a comma-separated list of stream reference names in form of `stream={streamReferenceName}` for each stream you are interested in. By default, all data calls return data for all stream references.<br/><br/>
 
 <h3>Response</h3>
 
@@ -310,7 +310,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |---|---|---|
 |200|[DataResults](#schemadataresults)|Last status of the specified asset.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
-|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found.|
 
 <h4>Example response body</h4>
 
@@ -374,14 +374,14 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string assetId`
-<br/>Asset identifier<br/><br/>`string startIndex`
-<br/>Start index<br/><br/>`string endIndex`
-<br/>End index<br/><br/>
+<br/>Asset identifier.<br/><br/>`string startIndex`
+<br/>Index bounding the beginning of the series of events to return.<br/><br/>`string endIndex`
+<br/>Index bounding the end of the series of events to return.<br/><br/>
 `[optional] array stream`
-<br/>Optional parameter consisting of a comma-separated list of stream reference names in form of `stream={streamName}` for each stream you are interested in. By default, all data calls return data for all stream references.<br/><br/>`[optional] any boundaryType`
-<br/>Sds boundary type to pass to Sds<br/><br/>`[optional] any startBoundaryType`
-<br/>Start Sds boundary type<br/><br/>`[optional] any endBoundaryType`
-<br/>End Sds boundary type to pass to Sds<br/><br/>
+<br/>Optional parameter consisting of a comma-separated list of stream reference names in form of `stream={streamReferenceName}` for each stream you are interested in. By default, all data calls return data for all stream references.<br/><br/>`[optional] any boundaryType`
+<br/>Optional SdsBoundaryType specifies handling of events at or near the start and end indexes.<br/><br/>`[optional] any startBoundaryType`
+<br/>Optional SdsBoundaryType specifies the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] any endBoundaryType`
+<br/>Optional SdsBoundaryType specifies the last value in the result in relation to the end index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>
 
 <h3>Response</h3>
 
@@ -389,7 +389,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |---|---|---|
 |200|[DataResults](#schemadataresults)|Last status of the specified asset.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
-|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found.|
 
 <h4>Example response body</h4>
 

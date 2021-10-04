@@ -22,16 +22,16 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string assetId`
-<br/>Asset identifier<br/><br/>
+<br/>Asset identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[ResolvedAsset](#schemaresolvedasset)|Resolved asset with specified identifier|
+|200|[ResolvedAsset](#schemaresolvedasset)|Resolved asset with specified identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |403|None|Forbidden.|
-|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found.|
 
 <h4>Example response body</h4>
 
@@ -182,7 +182,7 @@ Asset identifiers<br/>
         "Name": "StreamReference1",
         "Properties": [
           {
-            "Id": "pi_bifrostincinerate1",
+            "Id": "SdsStream_1",
             "IsKey": true,
             "Uom": null,
             "Order": 0,

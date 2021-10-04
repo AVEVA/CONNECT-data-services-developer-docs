@@ -32,7 +32,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[AssetType](#schemaassettype)[]|List of assets in the given namespace|
+|200|[AssetType](#schemaassettype)[]|List of assets in the given namespace.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 
 <h4>Response Headers</h4>
@@ -154,7 +154,7 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes
 
 <h4>Request Body</h4>
 
-Asset type to create<br/>
+Asset type to create.<br/>
 
 ```json
 {
@@ -183,8 +183,8 @@ Asset type to create<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[AssetType](#schemaassettype)|OK|
-|201|[AssetType](#schemaassettype)|Asset type created|
+|200|[AssetType](#schemaassettype)|OK.|
+|201|[AssetType](#schemaassettype)|Asset type created.|
 |302|None|Asset type already exists.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 |409|[ErrorTemplate](#schemaerrortemplate)|Conflict. See response body for additional details.|
@@ -194,8 +194,8 @@ Asset type to create<br/>
 
 |Status|Header|Type|Description|
 |---|---|---|---|
-|200|Etag|integer|Version|
-|201|Etag|integer|Version|
+|200|ETag|string|Version.|
+|201|ETag|string|Version.|
 
 <h4>Example response body</h4>
 
@@ -281,21 +281,21 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string assetTypeId`
-<br/>Asset type identifier<br/><br/>
+<br/>Asset type identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[AssetType](#schemaassettype)|Asset type with specified identifier|
+|200|[AssetType](#schemaassettype)|Asset type with specified identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
-|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found.|
 
 <h4>Response Headers</h4>
 
 |Status|Header|Type|Description|
 |---|---|---|---|
-|200|Etag|integer|Version|
+|200|ETag|string|Version.|
 
 <h4>Example response body</h4>
 
@@ -356,11 +356,11 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{ass
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string assetTypeId`
-<br/>Asset type identifier<br/><br/>
+<br/>Asset type identifier.<br/><br/>
 
 <h4>Request Body</h4>
 
-Asset type to create<br/>
+Asset type to create.<br/>
 
 ```json
 {
@@ -389,8 +389,8 @@ Asset type to create<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[AssetType](#schemaassettype)|OK|
-|201|[AssetType](#schemaassettype)|Asset type created|
+|200|[AssetType](#schemaassettype)|OK.|
+|201|[AssetType](#schemaassettype)|Asset type created.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 |409|[ErrorTemplate](#schemaerrortemplate)|Conflict. See response body for additional details.|
 |412|[ErrorTemplate](#schemaerrortemplate)|Pre-Condition Failed. See response body for additional details.|
@@ -399,8 +399,8 @@ Asset type to create<br/>
 
 |Status|Header|Type|Description|
 |---|---|---|---|
-|200|Etag|integer|Version|
-|201|Etag|integer|Version|
+|200|ETag|string|Version.|
+|201|ETag|string|Version.|
 
 <h4>Example response body</h4>
 
@@ -486,11 +486,11 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string assetTypeId`
-<br/>Asset type identifier<br/><br/>
+<br/>Asset type identifier.<br/><br/>
 
 <h4>Request Body</h4>
 
-Asset type to create or update<br/>
+Asset type to create or update.<br/>
 
 ```json
 {
@@ -519,18 +519,18 @@ Asset type to create or update<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[AssetType](#schemaassettype)|Asset type with specified identifier|
-|201|[AssetType](#schemaassettype)|Asset type created|
+|200|[AssetType](#schemaassettype)|Asset type with specified identifier.|
+|201|[AssetType](#schemaassettype)|Asset type created.|
 |400|[ErrorTemplate](#schemaerrortemplate)|The request is not valid. See the response body for additional details.|
-|409|[ErrorTemplate](#schemaerrortemplate)|Conflict|
-|412|[ErrorTemplate](#schemaerrortemplate)|Pre-Condition Failed|
+|409|[ErrorTemplate](#schemaerrortemplate)|Conflict.|
+|412|[ErrorTemplate](#schemaerrortemplate)|Pre-Condition Failed.|
 
 <h4>Response Headers</h4>
 
 |Status|Header|Type|Description|
 |---|---|---|---|
-|200|Etag|integer|Version|
-|201|Etag|integer|Version|
+|200|ETag|string|Version.|
+|201|ETag|string|Version.|
 
 <h4>Example response body</h4>
 
@@ -617,7 +617,7 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{a
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string assetTypeId`
-<br/>Asset type identifier<br/><br/>
+<br/>Asset type identifier.<br/><br/>
 `[optional] boolean deleteAssets`
 <br/>Call should also delete all assets of this asset type. Default is false.<br/><br/>
 
@@ -628,7 +628,7 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{a
 |204|None|Asset type with specified identifier has been deleted.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 |403|None|Forbidden.|
-|404|[ErrorTemplate](#schemaerrortemplate)|Not Found|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not Found.|
 |409|[ErrorTemplate](#schemaerrortemplate)|Conflict. See response body for additional details.|
 |412|[ErrorTemplate](#schemaerrortemplate)|Pre-Condition Failed. See response body for additional details.|
 
@@ -753,16 +753,16 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string assetTypeId`
-<br/>Asset type identifier<br/><br/>
+<br/>Asset type identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Trustee](#schematrustee)|OK|
+|200|[Trustee](#schematrustee)|OK.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 |403|None|Forbidden.|
-|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found.|
 
 <h4>Example response body</h4>
 
@@ -808,11 +808,11 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string assetTypeId`
-<br/>Asset type identifier<br/><br/>
+<br/>Asset type identifier.<br/><br/>
 
 <h4>Request Body</h4>
 
-Updated owner<br/>
+Updated owner.<br/>
 
 ```json
 {
@@ -826,10 +826,10 @@ Updated owner<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|204|None|Asset type owner updated|
+|204|None|Asset type owner updated.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 |403|None|Forbidden.|
-|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found.|
 
 ---
 
@@ -850,7 +850,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string assetTypeId`
-<br/>Asset type identifier<br/><br/>
+<br/>Asset type identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -859,7 +859,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 |200|[AccessControlList](#schemaaccesscontrollist)|Access control list of the asset type with given identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 |403|None|Forbidden.|
-|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found.|
 
 <h4>Example response body</h4>
 
@@ -917,11 +917,11 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string assetTypeId`
-<br/>Asset type identifier<br/><br/>
+<br/>Asset type identifier.<br/><br/>
 
 <h4>Request Body</h4>
 
-Updated ACL<br/>
+Updated ACL.<br/>
 
 ```json
 {
@@ -950,7 +950,7 @@ Updated ACL<br/>
 |204|None|Update success.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 |403|None|Forbidden.|
-|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found.|
 
 ---
 
@@ -971,7 +971,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string assetTypeId`
-<br/>Asset type identifier<br/><br/>
+<br/>Asset type identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -980,7 +980,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 |200|Inline|Access control list of the asset with given identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 |403|None|Forbidden.|
-|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found.|
 
 <h4>Example response body</h4>
 

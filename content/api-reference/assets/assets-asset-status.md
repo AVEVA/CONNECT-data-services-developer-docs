@@ -22,7 +22,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string assetId`
-<br/>Asset identifier<br/><br/>
+<br/>Asset identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -30,7 +30,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |---|---|---|
 |200|[LastStatusData](#schemalaststatusdata)|Last status of the specified asset.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
-|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found.|
 |422|[ErrorTemplate](#schemaerrortemplate)|Cannot be processed. See the response body for additional details.|
 
 <h4>Example response body</h4>
@@ -81,10 +81,10 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string assetId`
-<br/>Asset identifier<br/><br/>`string startIndex`
-<br/>Start index<br/><br/>`string endIndex`
-<br/>End index<br/><br/>`integer intervals`
-<br/>Number of intervals<br/><br/>
+<br/>Asset identifier.<br/><br/>`string startIndex`
+<br/>Start index.<br/><br/>`string endIndex`
+<br/>End index.<br/><br/>`integer intervals`
+<br/>Number of intervals.<br/><br/>
 
 <h3>Response</h3>
 

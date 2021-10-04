@@ -23,13 +23,13 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/{r
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string resource`
-<br/>Assets or AssetTypes<br/><br/>
+<br/>Assets or AssetTypes.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[AccessControlList](#schemaaccesscontrollist)|OK|
+|200|[AccessControlList](#schemaaccesscontrollist)|OK.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 |403|[ErrorTemplate](#schemaerrortemplate)|Forbidden.|
 
@@ -90,11 +90,11 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/{r
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string resource`
-<br/>Assets or AssetTypes<br/><br/>
+<br/>Assets or AssetTypes.<br/><br/>
 
 <h4>Request Body</h4>
 
-Updated ACL<br/>
+Updated ACL.<br/>
 
 ```json
 {
@@ -121,7 +121,7 @@ Updated ACL<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|204|None|No Content|
+|204|None|No Content.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 |403|[ErrorTemplate](#schemaerrortemplate)|Forbidden.|
 
@@ -144,13 +144,13 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessRights/{re
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string resource`
-<br/>Assets or AssetTypes<br/><br/>
+<br/>Assets or AssetTypes.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|OK|
+|200|Inline|OK.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 |403|[ErrorTemplate](#schemaerrortemplate)|Forbidden.|
 

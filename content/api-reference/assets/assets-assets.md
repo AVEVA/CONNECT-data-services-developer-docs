@@ -22,16 +22,16 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string assetId`
-<br/>Asset identifier<br/><br/>
+<br/>Asset identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Trustee](#schematrustee)|OK|
+|200|[Trustee](#schematrustee)|OK.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |403|None|Forbidden.|
-|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found.|
 
 <h4>Example response body</h4>
 
@@ -77,11 +77,11 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string assetId`
-<br/>Asset identifier<br/><br/>
+<br/>Asset identifier.<br/><br/>
 
 <h4>Request Body</h4>
 
-Updated owner<br/>
+Updated owner.<br/>
 
 ```json
 {
@@ -95,7 +95,7 @@ Updated owner<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|204|None|Asset owner updated|
+|204|None|Asset owner updated.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |403|None|Forbidden.|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found|
@@ -119,7 +119,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string assetId`
-<br/>Asset identifier<br/><br/>
+<br/>Asset identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -128,7 +128,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |200|[AccessControlList](#schemaaccesscontrollist)|Access control list of the asset with given identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |403|None|Forbidden.|
-|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found.|
 
 <h4>Example response body</h4>
 
@@ -186,11 +186,11 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string assetId`
-<br/>Asset identifier<br/><br/>
+<br/>Asset identifier.<br/><br/>
 
 <h4>Request Body</h4>
 
-Updated ACL<br/>
+Updated ACL.<br/>
 
 ```json
 {
@@ -219,7 +219,7 @@ Updated ACL<br/>
 |204|None|Update success.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |403|None|Forbidden.|
-|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found.|
 
 ---
 
@@ -240,7 +240,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string assetId`
-<br/>Asset identifier<br/><br/>
+<br/>Asset identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -249,7 +249,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 |200|Inline|Access control list of the asset with given identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |403|None|Forbidden.|
-|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found.|
 
 <h4>Example response body</h4>
 
@@ -283,7 +283,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 <a id="opIdAssets_Get Asset"></a>
 
-Returns specified asset and the version Etag in the HTTP response header.
+Returns specified asset and the version ETag in the HTTP response header.
 
 <h3>Request</h3>
 
@@ -296,62 +296,29 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string assetId`
-<br/>Asset identifier<br/><br/>
+<br/>Asset identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Asset](#schemaasset)|Assets with specified identifier|
+|200|[Asset](#schemaasset)|Assets with specified identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |403|None|Forbidden.|
-|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found.|
 
 <h4>Response Headers</h4>
 
 |Status|Header|Type|Description|
 |---|---|---|---|
-|200|Etag|integer|Version|
+|200|ETag|string|Version.|
 
 <h4>Example response body</h4>
 
-> 200 Response
+> 200 Response ([Asset](#schemaasset))
 
 ```json
-{
-  "Id": "SampleAssetA",
-  "Description": "This is a sample asset a.",
-  "Metadata": [
-    {
-      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
-      "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
-      "SdsTypeCode": "Double",
-      "Value": 0.01
-    }
-  ],
-  "StreamReferences": [
-    {
-      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-      "Name": "Data",
-      "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
-      "StreamId": "PI_bifrostbigdaddy_1"
-    }
-  ]
-}
-```
-
-> 400 Response ([ErrorTemplate](#schemaerrortemplate))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Resolution": "string",
-  "Reason": "string",
-  "property1": null,
-  "property2": null
-}
+"{\n  \"Id\": \"SampleAssetA\",\n  \"Description\": \"This is a sample asset A.\",\n  \"Metadata\": [\n    {\n        \"Id\": \"fbd82b97-d29e-4022-968e-f8492cf86644\",\n        \"Name\": \"ModelNumber\",\n        \"Description\": \"This is a static attribute on the asset which represents the model number.\",\n        \"SdsTypeCode\": \"Double\",\n        \"Value\": 0.01\n    }],\n    \"StreamReferences\": [\n    {\n        \"Id\": \"f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e\",\n        \"Name\": \"Data\",\n        \"Description\": \"This is reference to a stream. The stream identifier is SdsStream_1.\",\n        \"StreamId\": \"SdsStream_1\"\n    }],\n    \"Tags\": [ {\"TagToIdentifyAsset\"} ]\n}    "
 ```
 
 ---
@@ -373,121 +340,42 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string assetId`
-<br/>Asset identifier<br/><br/>
+<br/>Asset identifier.<br/><br/>
 
 <h4>Request Body</h4>
 
-Asset to create<br/>
+Asset to create.<br/>
 
 ```json
-{
-  "Id": "SampleAssetA",
-  "Description": "This is a sample asset a.",
-  "Metadata": [
-    {
-      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
-      "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
-      "SdsTypeCode": "Double",
-      "Value": 0.01
-    }
-  ],
-  "StreamReferences": [
-    {
-      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-      "Name": "Data",
-      "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
-      "StreamId": "PI_bifrostbigdaddy_1"
-    }
-  ]
-}
+"{\n  \"Id\": \"SampleAssetA\",\n  \"Description\": \"This is a sample asset A.\",\n  \"Metadata\": [\n    {\n        \"Id\": \"fbd82b97-d29e-4022-968e-f8492cf86644\",\n        \"Name\": \"ModelNumber\",\n        \"Description\": \"This is a static attribute on the asset which represents the model number.\",\n        \"SdsTypeCode\": \"Double\",\n        \"Value\": 0.01\n    }],\n    \"StreamReferences\": [\n    {\n        \"Id\": \"f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e\",\n        \"Name\": \"Data\",\n        \"Description\": \"This is reference to a stream. The stream identifier is SdsStream_1.\",\n        \"StreamId\": \"SdsStream_1\"\n    }],\n    \"Tags\": [ {\"TagToIdentifyAsset\"} ]\n}    "
 ```
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Asset](#schemaasset)|OK|
-|201|[Asset](#schemaasset)|Asset created|
+|200|[Asset](#schemaasset)|OK.|
+|201|[Asset](#schemaasset)|Asset created.|
 |302|None|Asset you attempted to create is identical to one that already exists.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |403|[ErrorTemplate](#schemaerrortemplate)|Forbidden.|
-|404|[ErrorTemplate](#schemaerrortemplate)|Not found|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not found.|
 |409|[ErrorTemplate](#schemaerrortemplate)|Asset you attempted to create has a conflict. See the response body for additional details.|
 
 <h4>Response Headers</h4>
 
 |Status|Header|Type|Description|
 |---|---|---|---|
-|200|Etag|integer|Version|
-|201|Etag|integer|Version|
+|200|ETag|string|Version.|
+|201|ETag|string|Version.|
 |302|Location|string|Location to get the identical resource.|
 
 <h4>Example response body</h4>
 
-> 200 Response
+> 200 Response ([Asset](#schemaasset))
 
 ```json
-{
-  "Id": "SampleAssetA",
-  "Description": "This is a sample asset a.",
-  "Metadata": [
-    {
-      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
-      "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
-      "SdsTypeCode": "Double",
-      "Value": 0.01
-    }
-  ],
-  "StreamReferences": [
-    {
-      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-      "Name": "Data",
-      "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
-      "StreamId": "PI_bifrostbigdaddy_1"
-    }
-  ]
-}
-```
-
-> 201 Response
-
-```json
-{
-  "Id": "SampleAssetA",
-  "Description": "This is a sample asset a.",
-  "Metadata": [
-    {
-      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
-      "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
-      "SdsTypeCode": "Double",
-      "Value": 0.01
-    }
-  ],
-  "StreamReferences": [
-    {
-      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-      "Name": "Data",
-      "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
-      "StreamId": "PI_bifrostbigdaddy_1"
-    }
-  ]
-}
-```
-
-> 400 Response ([ErrorTemplate](#schemaerrortemplate))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Resolution": "string",
-  "Reason": "string",
-  "property1": null,
-  "property2": null
-}
+"{\n  \"Id\": \"SampleAssetA\",\n  \"Description\": \"This is a sample asset A.\",\n  \"Metadata\": [\n    {\n        \"Id\": \"fbd82b97-d29e-4022-968e-f8492cf86644\",\n        \"Name\": \"ModelNumber\",\n        \"Description\": \"This is a static attribute on the asset which represents the model number.\",\n        \"SdsTypeCode\": \"Double\",\n        \"Value\": 0.01\n    }],\n    \"StreamReferences\": [\n    {\n        \"Id\": \"f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e\",\n        \"Name\": \"Data\",\n        \"Description\": \"This is reference to a stream. The stream identifier is SdsStream_1.\",\n        \"StreamId\": \"SdsStream_1\"\n    }],\n    \"Tags\": [ {\"TagToIdentifyAsset\"} ]\n}    "
 ```
 
 ---
@@ -509,119 +397,40 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string assetId`
-<br/>Asset identifier<br/><br/>
+<br/>Asset identifier.<br/><br/>
 
 <h4>Request Body</h4>
 
-Asset to create or update<br/>
+Asset to create or update.<br/>
 
 ```json
-{
-  "Id": "SampleAssetA",
-  "Description": "This is a sample asset a.",
-  "Metadata": [
-    {
-      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
-      "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
-      "SdsTypeCode": "Double",
-      "Value": 0.01
-    }
-  ],
-  "StreamReferences": [
-    {
-      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-      "Name": "Data",
-      "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
-      "StreamId": "PI_bifrostbigdaddy_1"
-    }
-  ]
-}
+"{\n  \"Id\": \"SampleAssetA\",\n  \"Description\": \"This is a sample asset A.\",\n  \"Metadata\": [\n    {\n        \"Id\": \"fbd82b97-d29e-4022-968e-f8492cf86644\",\n        \"Name\": \"ModelNumber\",\n        \"Description\": \"This is a static attribute on the asset which represents the model number.\",\n        \"SdsTypeCode\": \"Double\",\n        \"Value\": 0.01\n    }],\n    \"StreamReferences\": [\n    {\n        \"Id\": \"f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e\",\n        \"Name\": \"Data\",\n        \"Description\": \"This is reference to a stream. The stream identifier is SdsStream_1.\",\n        \"StreamId\": \"SdsStream_1\"\n    }],\n    \"Tags\": [ {\"TagToIdentifyAsset\"} ]\n}    "
 ```
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Asset](#schemaasset)|OK|
-|201|[Asset](#schemaasset)|Asset created with specified identifier|
+|200|[Asset](#schemaasset)|OK.|
+|201|[Asset](#schemaasset)|Asset created with specified identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |403|None|Forbidden.|
-|409|[ErrorTemplate](#schemaerrortemplate)|Conflict|
-|412|[ErrorTemplate](#schemaerrortemplate)|Pre-Condition Failed|
+|409|[ErrorTemplate](#schemaerrortemplate)|Conflict.|
+|412|[ErrorTemplate](#schemaerrortemplate)|Pre-Condition Failed.|
 
 <h4>Response Headers</h4>
 
 |Status|Header|Type|Description|
 |---|---|---|---|
-|200|Etag|integer|Version|
-|201|Etag|integer|Version|
+|200|ETag|string|Version.|
+|201|ETag|string|Version.|
 
 <h4>Example response body</h4>
 
-> 200 Response
+> 200 Response ([Asset](#schemaasset))
 
 ```json
-{
-  "Id": "SampleAssetA",
-  "Description": "This is a sample asset a.",
-  "Metadata": [
-    {
-      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
-      "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
-      "SdsTypeCode": "Double",
-      "Value": 0.01
-    }
-  ],
-  "StreamReferences": [
-    {
-      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-      "Name": "Data",
-      "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
-      "StreamId": "PI_bifrostbigdaddy_1"
-    }
-  ]
-}
-```
-
-> 201 Response
-
-```json
-{
-  "Id": "SampleAssetA",
-  "Description": "This is a sample asset a.",
-  "Metadata": [
-    {
-      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
-      "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
-      "SdsTypeCode": "Double",
-      "Value": 0.01
-    }
-  ],
-  "StreamReferences": [
-    {
-      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-      "Name": "Data",
-      "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
-      "StreamId": "PI_bifrostbigdaddy_1"
-    }
-  ]
-}
-```
-
-> 400 Response ([ErrorTemplate](#schemaerrortemplate))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Resolution": "string",
-  "Reason": "string",
-  "property1": null,
-  "property2": null
-}
+"{\n  \"Id\": \"SampleAssetA\",\n  \"Description\": \"This is a sample asset A.\",\n  \"Metadata\": [\n    {\n        \"Id\": \"fbd82b97-d29e-4022-968e-f8492cf86644\",\n        \"Name\": \"ModelNumber\",\n        \"Description\": \"This is a static attribute on the asset which represents the model number.\",\n        \"SdsTypeCode\": \"Double\",\n        \"Value\": 0.01\n    }],\n    \"StreamReferences\": [\n    {\n        \"Id\": \"f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e\",\n        \"Name\": \"Data\",\n        \"Description\": \"This is reference to a stream. The stream identifier is SdsStream_1.\",\n        \"StreamId\": \"SdsStream_1\"\n    }],\n    \"Tags\": [ {\"TagToIdentifyAsset\"} ]\n}    "
 ```
 
 ---
@@ -643,7 +452,7 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{asset
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string assetId`
-<br/>Asset identifier<br/><br/>
+<br/>Asset identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -652,9 +461,9 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{asset
 |204|None|Asset with specified identifier has been deleted.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |403|None|Forbidden.|
-|404|[ErrorTemplate](#schemaerrortemplate)|Not Found|
-|409|[ErrorTemplate](#schemaerrortemplate)|Conflict|
-|412|[ErrorTemplate](#schemaerrortemplate)|Pre-Condition Failed|
+|404|[ErrorTemplate](#schemaerrortemplate)|Not Found.|
+|409|[ErrorTemplate](#schemaerrortemplate)|Conflict.|
+|412|[ErrorTemplate](#schemaerrortemplate)|Pre-Condition Failed.|
 
 # Assets
 
@@ -714,7 +523,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
 |Status|Header|Type|Description|
 |---|---|---|---|
 |200|Total-Count|integer|Total number of assets in the namespace.|
-|200|Etag|string|Collection ETag. Changes whenever an asset is created, updated, or deleted.|
+|200|ETag|string|Collection ETag. Changes whenever an asset is created, updated, or deleted.|
 
 <h4>Example response body</h4>
 
@@ -738,8 +547,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
       {
         "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
         "Name": "Data",
-        "Description": "This is reference to a stream. The stream Id is PI_bifrostbigdaddy_1.",
-        "StreamId": "PI_bifrostbigdaddy_1"
+        "Description": "This is reference to a stream. The stream Id is SdsStream_1.",
+        "StreamId": "SdsStream_1"
       }
     ]
   },
@@ -759,8 +568,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
       {
         "Id": "fdda0985-7dba-48aa-95fc-55620a9b59ad",
         "Name": "Data",
-        "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_2.",
-        "StreamId": "PI_bifrostbigdaddy_2"
+        "Description": "This is reference to a stream. The stream identifier is SdsStream_2.",
+        "StreamId": "SdsStream_2"
       }
     ]
   }
@@ -805,34 +614,14 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
 Asset you want to create<br/>
 
 ```json
-{
-  "Id": "SampleAssetA",
-  "Description": "This is a sample asset a.",
-  "Metadata": [
-    {
-      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
-      "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
-      "SdsTypeCode": "Double",
-      "Value": 0.01
-    }
-  ],
-  "StreamReferences": [
-    {
-      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-      "Name": "Data",
-      "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
-      "StreamId": "PI_bifrostbigdaddy_1"
-    }
-  ]
-}
+"{\n  \"Id\": \"SampleAssetA\",\n  \"Description\": \"This is a sample asset A.\",\n  \"Metadata\": [\n    {\n        \"Id\": \"fbd82b97-d29e-4022-968e-f8492cf86644\",\n        \"Name\": \"ModelNumber\",\n        \"Description\": \"This is a static attribute on the asset which represents the model number.\",\n        \"SdsTypeCode\": \"Double\",\n        \"Value\": 0.01\n    }],\n    \"StreamReferences\": [\n    {\n        \"Id\": \"f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e\",\n        \"Name\": \"Data\",\n        \"Description\": \"This is reference to a stream. The stream identifier is SdsStream_1.\",\n        \"StreamId\": \"SdsStream_1\"\n    }],\n    \"Tags\": [ {\"TagToIdentifyAsset\"} ]\n}    "
 ```
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Asset](#schemaasset)|OK|
+|200|[Asset](#schemaasset)|OK.|
 |201|[Asset](#schemaasset)|Asset created|
 |302|None|Asset you attempted to create is identical to one that already exists.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
@@ -843,75 +632,16 @@ Asset you want to create<br/>
 
 |Status|Header|Type|Description|
 |---|---|---|---|
-|200|Etag|integer|Version|
-|201|Etag|integer|Version|
+|200|ETag|string|Version.|
+|201|ETag|string|Version.|
 |302|Location|string|Location to get the identical resource.|
 
 <h4>Example response body</h4>
 
-> 200 Response
+> 200 Response ([Asset](#schemaasset))
 
 ```json
-{
-  "Id": "SampleAssetA",
-  "Description": "This is a sample asset a.",
-  "Metadata": [
-    {
-      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
-      "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
-      "SdsTypeCode": "Double",
-      "Value": 0.01
-    }
-  ],
-  "StreamReferences": [
-    {
-      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-      "Name": "Data",
-      "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
-      "StreamId": "PI_bifrostbigdaddy_1"
-    }
-  ]
-}
-```
-
-> 201 Response
-
-```json
-{
-  "Id": "SampleAssetA",
-  "Description": "This is a sample asset a.",
-  "Metadata": [
-    {
-      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
-      "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
-      "SdsTypeCode": "Double",
-      "Value": 0.01
-    }
-  ],
-  "StreamReferences": [
-    {
-      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-      "Name": "Data",
-      "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
-      "StreamId": "PI_bifrostbigdaddy_1"
-    }
-  ]
-}
-```
-
-> 400 Response ([ErrorTemplate](#schemaerrortemplate))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Resolution": "string",
-  "Reason": "string",
-  "property1": null,
-  "property2": null
-}
+"{\n  \"Id\": \"SampleAssetA\",\n  \"Description\": \"This is a sample asset A.\",\n  \"Metadata\": [\n    {\n        \"Id\": \"fbd82b97-d29e-4022-968e-f8492cf86644\",\n        \"Name\": \"ModelNumber\",\n        \"Description\": \"This is a static attribute on the asset which represents the model number.\",\n        \"SdsTypeCode\": \"Double\",\n        \"Value\": 0.01\n    }],\n    \"StreamReferences\": [\n    {\n        \"Id\": \"f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e\",\n        \"Name\": \"Data\",\n        \"Description\": \"This is reference to a stream. The stream identifier is SdsStream_1.\",\n        \"StreamId\": \"SdsStream_1\"\n    }],\n    \"Tags\": [ {\"TagToIdentifyAsset\"} ]\n}    "
 ```
 
 ---
@@ -940,27 +670,7 @@ List of assets you want to create.<br/>
 
 ```json
 [
-  {
-    "Id": "SampleAssetA",
-    "Description": "This is a sample asset a.",
-    "Metadata": [
-      {
-        "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
-        "Name": "ModelNumber",
-        "Description": "This is a static attribute on the asset which represents the model number.",
-        "SdsTypeCode": "Double",
-        "Value": 0.01
-      }
-    ],
-    "StreamReferences": [
-      {
-        "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-        "Name": "Data",
-        "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
-        "StreamId": "PI_bifrostbigdaddy_1"
-      }
-    ]
-  }
+  "{\n  \"Id\": \"SampleAssetA\",\n  \"Description\": \"This is a sample asset A.\",\n  \"Metadata\": [\n    {\n        \"Id\": \"fbd82b97-d29e-4022-968e-f8492cf86644\",\n        \"Name\": \"ModelNumber\",\n        \"Description\": \"This is a static attribute on the asset which represents the model number.\",\n        \"SdsTypeCode\": \"Double\",\n        \"Value\": 0.01\n    }],\n    \"StreamReferences\": [\n    {\n        \"Id\": \"f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e\",\n        \"Name\": \"Data\",\n        \"Description\": \"This is reference to a stream. The stream identifier is SdsStream_1.\",\n        \"StreamId\": \"SdsStream_1\"\n    }],\n    \"Tags\": [ {\"TagToIdentifyAsset\"} ]\n}    "
 ]
 ```
 
@@ -982,27 +692,7 @@ List of assets you want to create.<br/>
   "Error": "string",
   "OperationId": "string",
   "Data": [
-    {
-      "Id": "SampleAssetA",
-      "Description": "This is a sample asset a.",
-      "Metadata": [
-        {
-          "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
-          "Name": "ModelNumber",
-          "Description": "This is a static attribute on the asset which represents the model number.",
-          "SdsTypeCode": "Double",
-          "Value": 0.01
-        }
-      ],
-      "StreamReferences": [
-        {
-          "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-          "Name": "Data",
-          "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
-          "StreamId": "PI_bifrostbigdaddy_1"
-        }
-      ]
-    }
+    "{\n  \"Id\": \"SampleAssetA\",\n  \"Description\": \"This is a sample asset A.\",\n  \"Metadata\": [\n    {\n        \"Id\": \"fbd82b97-d29e-4022-968e-f8492cf86644\",\n        \"Name\": \"ModelNumber\",\n        \"Description\": \"This is a static attribute on the asset which represents the model number.\",\n        \"SdsTypeCode\": \"Double\",\n        \"Value\": 0.01\n    }],\n    \"StreamReferences\": [\n    {\n        \"Id\": \"f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e\",\n        \"Name\": \"Data\",\n        \"Description\": \"This is reference to a stream. The stream identifier is SdsStream_1.\",\n        \"StreamId\": \"SdsStream_1\"\n    }],\n    \"Tags\": [ {\"TagToIdentifyAsset\"} ]\n}    "
   ],
   "ChildErrors": [
     {
@@ -1252,27 +942,7 @@ Represents an asset object.
 |Tags|string[]|false|true|Asset tags|
 
 ```json
-{
-  "Id": "SampleAssetA",
-  "Description": "This is a sample asset a.",
-  "Metadata": [
-    {
-      "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
-      "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
-      "SdsTypeCode": "Double",
-      "Value": 0.01
-    }
-  ],
-  "StreamReferences": [
-    {
-      "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-      "Name": "Data",
-      "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
-      "StreamId": "PI_bifrostbigdaddy_1"
-    }
-  ]
-}
+"{\n  \"Id\": \"SampleAssetA\",\n  \"Description\": \"This is a sample asset A.\",\n  \"Metadata\": [\n    {\n        \"Id\": \"fbd82b97-d29e-4022-968e-f8492cf86644\",\n        \"Name\": \"ModelNumber\",\n        \"Description\": \"This is a static attribute on the asset which represents the model number.\",\n        \"SdsTypeCode\": \"Double\",\n        \"Value\": 0.01\n    }],\n    \"StreamReferences\": [\n    {\n        \"Id\": \"f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e\",\n        \"Name\": \"Data\",\n        \"Description\": \"This is reference to a stream. The stream identifier is SdsStream_1.\",\n        \"StreamId\": \"SdsStream_1\"\n    }],\n    \"Tags\": [ {\"TagToIdentifyAsset\"} ]\n}    "
 
 ```
 
@@ -1540,8 +1210,8 @@ An asset stream reference represents dynamic stream data associated with an asse
 {
   "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
   "Name": "Data",
-  "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
-  "StreamId": "PI_bifrostbigdaddy_1"
+  "Description": "This is reference to a stream. The stream identifier is SdsStream_1.",
+  "StreamId": "SdsStream_1"
 }
 
 ```
@@ -1632,27 +1302,7 @@ A multi status result is returned to indicate a partial success.
   "Error": "string",
   "OperationId": "string",
   "Data": [
-    {
-      "Id": "SampleAssetA",
-      "Description": "This is a sample asset a.",
-      "Metadata": [
-        {
-          "Id": "fbd82b97-d29e-4022-968e-f8492cf86644",
-          "Name": "ModelNumber",
-          "Description": "This is a static attribute on the asset which represents the model number.",
-          "SdsTypeCode": "Double",
-          "Value": 0.01
-        }
-      ],
-      "StreamReferences": [
-        {
-          "Id": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-          "Name": "Data",
-          "Description": "This is reference to a stream. The stream identifier is PI_bifrostbigdaddy_1.",
-          "StreamId": "PI_bifrostbigdaddy_1"
-        }
-      ]
-    }
+    "{\n  \"Id\": \"SampleAssetA\",\n  \"Description\": \"This is a sample asset A.\",\n  \"Metadata\": [\n    {\n        \"Id\": \"fbd82b97-d29e-4022-968e-f8492cf86644\",\n        \"Name\": \"ModelNumber\",\n        \"Description\": \"This is a static attribute on the asset which represents the model number.\",\n        \"SdsTypeCode\": \"Double\",\n        \"Value\": 0.01\n    }],\n    \"StreamReferences\": [\n    {\n        \"Id\": \"f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e\",\n        \"Name\": \"Data\",\n        \"Description\": \"This is reference to a stream. The stream identifier is SdsStream_1.\",\n        \"StreamId\": \"SdsStream_1\"\n    }],\n    \"Tags\": [ {\"TagToIdentifyAsset\"} ]\n}    "
   ],
   "ChildErrors": [
     {

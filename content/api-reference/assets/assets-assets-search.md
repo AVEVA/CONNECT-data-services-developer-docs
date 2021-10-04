@@ -29,9 +29,9 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string orderBy`
 <br/>Optional parameter which returns assets ordered either by the asset `Id` or the asset `Name`. Specify `asc` or `desc` to return the results in ascending or descending order. If not specified, the default is ascending order.<br/><br/>`[optional] string query`
 <br/>Query identifier.<br/><br/>`[optional] integer pageSize`
-<br/>Page size, internal use only<br/><br/>`[optional] integer maxPages`
-<br/>Max pages, internal use only<br/><br/>`[optional] string continuationToken`
-<br/>Internal use only<br/><br/>`[optional] object Comparer`
+<br/>Page size, internal use only.<br/><br/>`[optional] integer maxPages`
+<br/>Max pages, internal use only.<br/><br/>`[optional] string continuationToken`
+<br/>Internal use only.<br/><br/>`[optional] object Comparer`
 <br/><br/>`[optional] integer Count`
 <br/><br/>`[optional] array Keys`
 <br/><br/>`[optional] array System.Collections.Generic.IDictionary<TKey,TValue>.Keys`
@@ -54,7 +54,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[SearchResultsOfSearchResult](#schemasearchresultsofsearchresult)|OK|
+|200|[SearchResultsOfSearchResult](#schemasearchresultsofsearchresult)|OK.|
 |204|None|No assets match your query.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 
@@ -126,7 +126,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets/Fa
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[FacetResult](#schemafacetresult)[]|OK|
+|200|[FacetResult](#schemafacetresult)[]|OK.|
 |204|None|No assets match your query.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 

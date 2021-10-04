@@ -16,7 +16,7 @@ Hybrid clients are used by native and server-side web applications. Authenticati
 
 1. Click the ![Menu icon](images/menu-icon.png) icon and click **Clients** under Security.
 
-1. From the **Client Type** drop-down list, select **Hybrid**.
+1. From the **Client Type** dropdown list, select **Hybrid**.
 
 1. In the toolbar, click **Add Client**.
 

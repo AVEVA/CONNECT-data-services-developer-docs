@@ -7,28 +7,41 @@ uid: transfer-data
 You initiate a data transfer from the `PI to OCS Agents` window. A transfer can consist of PI points and AF elements or AF elements that reference at least one PI point. This topic contains these sections:
 
 1. [Create a transfer](#create-a-transfer)
+
 1. [Name the transfer and set data privacy settings](#name-the-transfer-and-set-data-privacy-settings)
+
 1. [Build an AF elements transfer list](#build-an-af-elements-transfer-list)
+
 1. [View AF element details](#view-af-element-details)
+
 1. [Build a PI points transfer list](#build-a-pi-points-transfer-list)
+
 1. [View PI point details](#view-pi-point-details)
+
 1. [Save a transfer](#save-a-transfer)
+
 1. [Transfer data to OCS](#transfer-data-to-ocs)
 
 PI points can be added to a transfer explicitly (via a tag search) or implicitly (via AF element references). To learn more about the difference between implicit and explicit references, see [Overview of explicit vs. implicit PI points](#overview-of-explicit-vs.-implicit-pi-points).
 
 **Before you begin:** Download and install the PI to OCS Agent. Register your PI Data Archive and AF data sources using the PI to OCS Agent Configuration Utility. 
 
-### Create a transfer
+## Create a transfer
 
 During transfer creation, you will need to perform the following tasks:
 
 1. Assign a name, description, and optional historical start and end time for data retrieval.
+
 1. Select a level of data privacy to control how much identifying information about an asset is sent with PI point data.
+
 1. Set query criteria and retrieve and add optional AF elements, which reference at least one implicit or explicit PI point, and/or PI point data to your transfer lists.
-1. View transfer details
+
+1. View transfer details.
+
 1. Save your transfer.
+
 1. Optional: Export a file(s) that contains transfer detail information.
+
 1. Initiate your data transfer and monitor its progress. 
 
 **Note:** If you have configured an AF server, you will not be able to create a transfer until AF indexing is complete. AF indexing status is listed on the Details pane in the PI to OCS Agents page.

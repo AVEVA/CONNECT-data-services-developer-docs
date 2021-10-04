@@ -4,7 +4,7 @@ uid: ShareAViewOfYourFleet
 
 # Share a view of your fleet
 
-You may have many hundreds or even thousands of assets in your fleet. Working with colleagues on different computers and in different locations, you need to be looking at the same set of assets. The asset explorer allows you to filter and view a subset of the assets and share this view with others. 
+You may have many hundreds or even thousands of assets in your fleet. Working with colleagues on different computers and in different locations, you need to look at the same set of assets. The asset explorer allows you to filter and view a subset of the assets and share this view with others. 
 
 Follow this procedure to filter and view a subset of assets:
 

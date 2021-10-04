@@ -14,7 +14,7 @@ A role authorized to read any data shared in the community.
 
 ## Community Moderator
 
-A role that manages the community for a tenant. Usually, a Community Moderator is the individual who accepted the invitation to join a community on behalf of a tenant. 
+A role that manages the community for a tenant. Usually, a Community Moderator is the individual who accepted the invitation to join a community on behalf of a tenant.
 
 A Community Moderator's primary purpose is to specify which tenant's users have access to a community. Community Moderators have all privileges of a Community Member, plus the following abilities:  
 

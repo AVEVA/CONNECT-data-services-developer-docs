@@ -44,7 +44,7 @@ The following procedure describes how to use the OCS Portal to monitor your asse
 
 1. Click the **Measurements** tab.
 
-    The Asset Details pane displays the following:
+    The `Asset Details` pane displays the following:
     
     - Data associated with the asset. These values are updated in real time.
     

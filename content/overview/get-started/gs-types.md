@@ -20,7 +20,7 @@ After creating the namespace, the next step is to add one or more types. For mor
 
      ![Namespace list](images/sds-gs-namespace.png)
 
-1. From the **Streams** drop-down list, select **Types**.
+1. From the **Streams** dropdown list, select **Types**.
 
      ![Streams list](images/types-list.png)
 

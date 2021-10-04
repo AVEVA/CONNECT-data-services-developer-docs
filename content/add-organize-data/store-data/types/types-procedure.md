@@ -14,7 +14,7 @@ After you have created a type, it cannot be modified.
 
 1. Click the **Namespace** selection button to open the `Select a Namespace` window and choose the namespace in which you want to create the stream.  ![Namespace list](../images/sds-namespace.png)
 
-1. From the **Streams** drop-down list, select **Types**. ![Streams list](../images/sds-types-procedure-types-list.png)
+1. From the **Streams** dropdown list, select **Types**. ![Streams list](../images/sds-types-procedure-types-list.png)
 
 1. Click **Add Type**.
 

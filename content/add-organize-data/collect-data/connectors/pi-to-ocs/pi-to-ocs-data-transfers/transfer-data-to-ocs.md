@@ -102,7 +102,7 @@ You build a PI points transfer list to select the PI points you want included in
    | Common PI point attributes | Enter criteria in any of the following fields:<br /><ul><li>**Name** (alias for tag attribute)</li><li>**Point Source**</li></ul><br />**Note:** The search fields default to * or all PI points if search criteria is not entered. |
    | Point descriptions         | Enter criteria in the following fields:<br /><ul><li>**Descriptor** </li><li>**Extended Descriptor**</li></ul> |
    | Engineering units | Enter criteria in the **Engineering Units** field.           |
-   | A PI point type            | Select one of the following point types from the **Point Type** drop-down list:<br /><ul><li>**Float32** </li><li>**Float64**</li><li>**Int16**</li><li>**Int32**</li><li>**Digital**</li><li>**Timestamp**</li><li>**String**</li></ul> |
+   | A PI point type            | Select one of the following point types from the **Point Type** dropdown list:<br /><ul><li>**Float32** </li><li>**Float64**</li><li>**Int16**</li><li>**Int32**</li><li>**Digital**</li><li>**Timestamp**</li><li>**String**</li></ul> |
    | Specific location code(s)  | Enter up to five location code values (1-9) in the **Location Codes** field. |
 
 4. **Optional:** Click the **Search Criteria** toggle arrow to hide or show search fields.

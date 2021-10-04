@@ -18,7 +18,7 @@ To create a new metadata rule, follow these steps:
     ![ ](../../images/expand-pane.png)
 
 5. Click the menu icon to display the menu again, and select **Metadata Management** under **Data Management**. The `Metadata Management` page displays.
-6. Click the **Namespace** drop-down list, and choose the namespace in which the model stream resides and where the metadata rule is to be created.
+6. Click the **Namespace** dropdown list, and choose the namespace in which the model stream resides and where the metadata rule is to be created.
 7. Click **Add Metadata Rule**. The `Select Stream` page displays.
 8. Paste the copied stream name into the `Search` field. All streams in the namespace that share the name pattern of the stream you selected display.
 
@@ -26,7 +26,7 @@ To create a new metadata rule, follow these steps:
    
 9. Click the row of the stream name to use for the metadata rule and click **Next**.
 10. In the `Create Pattern` page, click the **+** sign above each selected delimiter to separate sections of the stream name.
-11. For each delimited section of the stream name you select, use the drop-down list to assign a metadata type: Metadata, String Literal, or Wildcard. See the table following this procedure for a description of these metadata types. 
+11. For each delimited section of the stream name you select, use the dropdown list to assign a metadata type: Metadata, String Literal, or Wildcard. See the table following this procedure for a description of these metadata types. 
 12. After entering all metadata type entries, click **Next**.
 
     **Note**: If you select metadata type **Metadata**, you must also enter a metadata key. A metadata key is the key portion of a key-value pair, typically the type of data provided, such as Measurement. This is helpful when streams that match the rule provide different types of data. Entries in the **Map To** portion of mapping represent the value part of the key-value pair. For example, Power would be the defined key, while different types of data could be Demand, TOTAL/Electricity, or Metering. The mapping entries specify the labels you want to display for each of those values, as in the following image:

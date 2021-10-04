@@ -16,7 +16,7 @@ To send OSIsoft Message Format (OMF) data to OCS, you must first configure an OM
 
 2.  From the **Namespace** field, select the namespace in which you want the OMF data written.
 
-3.  From the **Type** drop-down list, select **OMF**.
+3.  From the **Type** dropdown list, select **OMF**.
 
 4.  Click **Add Connection** to open the `Add PI System Connection` window.
 
@@ -28,7 +28,6 @@ To send OSIsoft Message Format (OMF) data to OCS, you must first configure an OM
 7.  In the **Namespaces** tab, verify that the namespace where you want the data written appears in the **Selected** list. Click **Next**.
     
 8.  In the **Review** tab, verify that the **Clients** list shows the client credentials
-    client you chose. Verify that the **Namespace** list displays the namespace where you want the data written. Click **Save**.
-    
+    client you chose. Verify that the **Namespace** list displays the namespace where you want the data written. Click **Save**.  
 
 An application can now use the selected client credentials client to write OMF data to the specified namespace.

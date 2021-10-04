@@ -62,7 +62,7 @@ In this step, you identify delimiters in the stream name. Delimiters include per
 
 1. In the third row, **"SLTC"**, accept the default **Metadata** setting, and enter *Site* as the key.
 
-1. In the fourth row, **"PumpA"**, click the drop-down list and select **Wildcard**.
+1. In the fourth row, **"PumpA"**, click the dropdown list and select **Wildcard**.
 
    The wildcard means that streams with any values in this part of the stream name will match the pattern. However, this part of the stream name is not mapped to metadata.
 

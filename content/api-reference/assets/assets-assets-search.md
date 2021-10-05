@@ -16,7 +16,7 @@ Searches all assets and returns a list of asset Ids and their matched fields. Us
 
 ```text 
 GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets
-?skip={skip}&count={count}&orderBy={orderBy}&query={query}&pageSize={pageSize}&maxPages={maxPages}&continuationToken={continuationToken}&Comparer={Comparer}&Count={Count}&Keys={Keys}&System.Collections.Generic.IDictionary<TKey,TValue>.Keys={System.Collections.Generic.IDictionary<TKey,TValue>.Keys}&System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys={System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys}&Values={Values}&System.Collections.Generic.IDictionary<TKey,TValue>.Values={System.Collections.Generic.IDictionary<TKey,TValue>.Values}&System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values={System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values}&Item={Item}&System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly={System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly}&System.Collections.ICollection.IsSynchronized={System.Collections.ICollection.IsSynchronized}&System.Collections.ICollection.SyncRoot={System.Collections.ICollection.SyncRoot}&System.Collections.IDictionary.IsFixedSize={System.Collections.IDictionary.IsFixedSize}&System.Collections.IDictionary.IsReadOnly={System.Collections.IDictionary.IsReadOnly}&System.Collections.IDictionary.Keys={System.Collections.IDictionary.Keys}&System.Collections.IDictionary.Values={System.Collections.IDictionary.Values}&System.Collections.IDictionary.Item={System.Collections.IDictionary.Item}
+?skip={skip}&count={count}&orderBy={orderBy}&query={query}&filter={filter}
 ```
 
 <h4>Parameters</h4>
@@ -28,27 +28,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets
 <br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string orderBy`
 <br/>Optional parameter which returns assets ordered either by the asset `Id` or the asset `Name`. Specify `asc` or `desc` to return the results in ascending or descending order. If not specified, the default is ascending order.<br/><br/>`[optional] string query`
-<br/>Query identifier.<br/><br/>`[optional] integer pageSize`
-<br/>Page size, internal use only.<br/><br/>`[optional] integer maxPages`
-<br/>Max pages, internal use only.<br/><br/>`[optional] string continuationToken`
-<br/>Internal use only.<br/><br/>`[optional] object Comparer`
-<br/><br/>`[optional] integer Count`
-<br/><br/>`[optional] array Keys`
-<br/><br/>`[optional] array System.Collections.Generic.IDictionary<TKey,TValue>.Keys`
-<br/><br/>`[optional] array System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Keys`
-<br/><br/>`[optional] array Values`
-<br/><br/>`[optional] array System.Collections.Generic.IDictionary<TKey,TValue>.Values`
-<br/><br/>`[optional] array System.Collections.Generic.IReadOnlyDictionary<TKey,TValue>.Values`
-<br/><br/>`[optional] array Item`
-<br/><br/>`[optional] boolean System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.IsReadOnly`
-<br/><br/>`[optional] boolean System.Collections.ICollection.IsSynchronized`
-<br/><br/>`[optional] any System.Collections.ICollection.SyncRoot`
-<br/><br/>`[optional] boolean System.Collections.IDictionary.IsFixedSize`
-<br/><br/>`[optional] boolean System.Collections.IDictionary.IsReadOnly`
-<br/><br/>`[optional] array System.Collections.IDictionary.Keys`
-<br/><br/>`[optional] array System.Collections.IDictionary.Values`
-<br/><br/>`[optional] any System.Collections.IDictionary.Item`
-<br/><br/>
+<br/>Query identifier.<br/><br/>`[optional] string filter`
+<br/>String used to filter the asset search results. Filter strings are not case sensitive. The strings on which you can filter results are limited to the asset `AssetTypeName` property and the asset metadata properties (using the syntax filter[*property_name*]=*property_value*).<br/><br/>
 
 <h3>Response</h3>
 
@@ -473,20 +454,6 @@ Pre-defined asset status values.
   "property1": null,
   "property2": null
 }
-
-```
-
----
-
-### IEqualityComparerOfString
-
-<a id="schemaiequalitycomparerofstring"></a>
-<a id="schema_IEqualityComparerOfString"></a>
-<a id="tocSiequalitycomparerofstring"></a>
-<a id="tocsiequalitycomparerofstring"></a>
-
-```json
-{}
 
 ```
 

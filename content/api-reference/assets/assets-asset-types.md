@@ -130,7 +130,15 @@ HEAD /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|204|None|Call succeeded.|
+|400|[ErrorTemplate](#schemaerrortemplate)|None|
+
+<h4>Response Headers</h4>
+
+|Status|Header|Type|Description|
+|---|---|---|---|
+|204|Total-Count|integer|Total number of asset types accessible to the caller and that match the specified query.|
+|204|ETag|string|Collection ETag. Changes whenever an asset type is created, updated, or deleted.|
 
 ---
 
@@ -1011,6 +1019,36 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 ---
 ## Definitions
 
+### ErrorTemplate
+
+<a id="schemaerrortemplate"></a>
+<a id="schema_ErrorTemplate"></a>
+<a id="tocSerrortemplate"></a>
+<a id="tocserrortemplate"></a>
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|OperationId|string|false|true|Operation identifier|
+|Error|string|false|true|Error string|
+|Resolution|string|false|true|Resolution string|
+|Reason|string|false|true|Error reason string|
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+
+```
+
+---
+
 ### AssetType
 
 <a id="schemaassettype"></a>
@@ -1018,7 +1056,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 <a id="tocSassettype"></a>
 <a id="tocsassettype"></a>
 
-An asset type can be used to create multiple similar assets.A change to the asset type is reflected in all assets that are derived from the asset type.
+An asset type can be used to create multiple similar assets. A change to the asset type is reflected in all assets that are derived from the asset type.
 
 <h4>Properties</h4>
 
@@ -1382,36 +1420,6 @@ Status definition type. Currently, only StreamPropertyMapping is supported.
 |---|---|
 |Unspecified|0|
 |StreamPropertyMapping|1|
-
----
-
-### ErrorTemplate
-
-<a id="schemaerrortemplate"></a>
-<a id="schema_ErrorTemplate"></a>
-<a id="tocSerrortemplate"></a>
-<a id="tocserrortemplate"></a>
-
-<h4>Properties</h4>
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|OperationId|string|false|true|Operation identifier|
-|Error|string|false|true|Error string|
-|Resolution|string|false|true|Resolution string|
-|Reason|string|false|true|Error reason string|
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Resolution": "string",
-  "Reason": "string",
-  "property1": null,
-  "property2": null
-}
-
-```
 
 ---
 

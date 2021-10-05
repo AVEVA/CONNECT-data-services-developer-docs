@@ -19,7 +19,7 @@ Sharing operational data allows you and your partners find value in each other's
 
 The following diagram visually displays an established community. 
 
-![Community diagram](images/community-diagram.drawio.svg)
+![Community diagram](images/community-diagram.svg)
 
 Within this diagram, a [tenant administrator](xref:communityroles#tenant-administrator) (figure **1**) from  **Tenant A** has invited **Tenant B** to form a community. 
 

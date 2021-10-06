@@ -191,46 +191,17 @@ Asset type to create.<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[AssetType](#schemaassettype)|OK.|
 |201|[AssetType](#schemaassettype)|Asset type created.|
-|302|None|Asset type already exists.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
-|409|[ErrorTemplate](#schemaerrortemplate)|Conflict. See response body for additional details.|
 |412|[ErrorTemplate](#schemaerrortemplate)|Pre-Condition Failed. See response body for additional details.|
 
 <h4>Response Headers</h4>
 
 |Status|Header|Type|Description|
 |---|---|---|---|
-|200|ETag|string|Version.|
 |201|ETag|string|Version.|
 
 <h4>Example response body</h4>
-
-> 200 Response
-
-```json
-{
-  "Id": "SampleAssetType01",
-  "Description": "This is a sample asset type.",
-  "Metadata": [
-    {
-      "Id": "Id-fbd82b97-d29e-4022-968e",
-      "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset type which represents the model number.",
-      "SdsTypeCode": "Double",
-      "Value": 0.01
-    }
-  ],
-  "TypeReferences": [
-    {
-      "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
-      "StreamReferenceName": "ReferenceName",
-      "TypeId": "PI-Float32"
-    }
-  ]
-}
-```
 
 > 201 Response
 

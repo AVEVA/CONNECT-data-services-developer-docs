@@ -318,7 +318,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 > 200 Response ([Asset](#schemaasset))
 
 ```json
-"{\n    \"Id\": \"SampleAsset\",\n    \"Description\": \"This is a sample asset.\",\n    \"Metadata\": [{\n        \"Id\": \"Id-abcde\",\n        \"Name\": \"ModelNumber\",\n        \"Description\": \"This is a static attribute on the asset which represents the model number.\",\n        \"SdsTypeCode\": \"Double\",\n        \"Value\": 0.01\n    }],\n    \"StreamReferences\": [{\n        \"Id\": \"IdS21\",\n        \"Name\": \"Data\",\n        \"StreamId\": \"SdsStream_1\"\n    }],\n    \"Tags\": [{ \"SampleTag\" }]\n}"
+"{\n    \"Id\": \"SampleAsset\",\n    \"Description\": \"This is a sample asset.\",\n    \"Metadata\": [{\n        \"Id\": \"Id-abcde\",\n        \"Name\": \"ModelNumber\",\n        \"Description\": \"This is a static attribute on the asset which represents the model number.\",\n        \"SdsTypeCode\": \"Double\",\n        \"Value\": 0.01\n    }],\n    \"StreamReferences\": [{\n        \"Id\": \"IdS21\",\n        \"Name\": \"Data\",\n        \"StreamId\": \"SdsStream_1\"\n    }],\n    \"Tags\": [{ \n        \"SampleTag\" \n    }]\n}"
 ```
 
 ---
@@ -347,7 +347,7 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId
 Asset to create.<br/>
 
 ```json
-"{\n    \"Id\": \"SampleAsset\",\n    \"Description\": \"This is a sample asset.\",\n    \"Metadata\": [{\n        \"Id\": \"Id-abcde\",\n        \"Name\": \"ModelNumber\",\n        \"Description\": \"This is a static attribute on the asset which represents the model number.\",\n        \"SdsTypeCode\": \"Double\",\n        \"Value\": 0.01\n    }],\n    \"StreamReferences\": [{\n        \"Id\": \"IdS21\",\n        \"Name\": \"Data\",\n        \"StreamId\": \"SdsStream_1\"\n    }],\n    \"Tags\": [{ \"SampleTag\" }]\n}"
+"{\n    \"Id\": \"SampleAsset\",\n    \"Description\": \"This is a sample asset.\",\n    \"Metadata\": [{\n        \"Id\": \"Id-abcde\",\n        \"Name\": \"ModelNumber\",\n        \"Description\": \"This is a static attribute on the asset which represents the model number.\",\n        \"SdsTypeCode\": \"Double\",\n        \"Value\": 0.01\n    }],\n    \"StreamReferences\": [{\n        \"Id\": \"IdS21\",\n        \"Name\": \"Data\",\n        \"StreamId\": \"SdsStream_1\"\n    }],\n    \"Tags\": [{ \n        \"SampleTag\" \n    }]\n}"
 ```
 
 <h3>Response</h3>
@@ -375,7 +375,7 @@ Asset to create.<br/>
 > 200 Response ([Asset](#schemaasset))
 
 ```json
-"{\n    \"Id\": \"SampleAsset\",\n    \"Description\": \"This is a sample asset.\",\n    \"Metadata\": [{\n        \"Id\": \"Id-abcde\",\n        \"Name\": \"ModelNumber\",\n        \"Description\": \"This is a static attribute on the asset which represents the model number.\",\n        \"SdsTypeCode\": \"Double\",\n        \"Value\": 0.01\n    }],\n    \"StreamReferences\": [{\n        \"Id\": \"IdS21\",\n        \"Name\": \"Data\",\n        \"StreamId\": \"SdsStream_1\"\n    }],\n    \"Tags\": [{ \"SampleTag\" }]\n}"
+"{\n    \"Id\": \"SampleAsset\",\n    \"Description\": \"This is a sample asset.\",\n    \"Metadata\": [{\n        \"Id\": \"Id-abcde\",\n        \"Name\": \"ModelNumber\",\n        \"Description\": \"This is a static attribute on the asset which represents the model number.\",\n        \"SdsTypeCode\": \"Double\",\n        \"Value\": 0.01\n    }],\n    \"StreamReferences\": [{\n        \"Id\": \"IdS21\",\n        \"Name\": \"Data\",\n        \"StreamId\": \"SdsStream_1\"\n    }],\n    \"Tags\": [{ \n        \"SampleTag\" \n    }]\n}"
 ```
 
 ---
@@ -404,7 +404,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 Asset to create or update.<br/>
 
 ```json
-"{\n    \"Id\": \"SampleAsset\",\n    \"Description\": \"This is a sample asset.\",\n    \"Metadata\": [{\n        \"Id\": \"Id-abcde\",\n        \"Name\": \"ModelNumber\",\n        \"Description\": \"This is a static attribute on the asset which represents the model number.\",\n        \"SdsTypeCode\": \"Double\",\n        \"Value\": 0.01\n    }],\n    \"StreamReferences\": [{\n        \"Id\": \"IdS21\",\n        \"Name\": \"Data\",\n        \"StreamId\": \"SdsStream_1\"\n    }],\n    \"Tags\": [{ \"SampleTag\" }]\n}"
+"{\n    \"Id\": \"SampleAsset\",\n    \"Description\": \"This is a sample asset.\",\n    \"Metadata\": [{\n        \"Id\": \"Id-abcde\",\n        \"Name\": \"ModelNumber\",\n        \"Description\": \"This is a static attribute on the asset which represents the model number.\",\n        \"SdsTypeCode\": \"Double\",\n        \"Value\": 0.01\n    }],\n    \"StreamReferences\": [{\n        \"Id\": \"IdS21\",\n        \"Name\": \"Data\",\n        \"StreamId\": \"SdsStream_1\"\n    }],\n    \"Tags\": [{ \n        \"SampleTag\" \n    }]\n}"
 ```
 
 <h3>Response</h3>
@@ -430,7 +430,7 @@ Asset to create or update.<br/>
 > 200 Response ([Asset](#schemaasset))
 
 ```json
-"{\n    \"Id\": \"SampleAsset\",\n    \"Description\": \"This is a sample asset.\",\n    \"Metadata\": [{\n        \"Id\": \"Id-abcde\",\n        \"Name\": \"ModelNumber\",\n        \"Description\": \"This is a static attribute on the asset which represents the model number.\",\n        \"SdsTypeCode\": \"Double\",\n        \"Value\": 0.01\n    }],\n    \"StreamReferences\": [{\n        \"Id\": \"IdS21\",\n        \"Name\": \"Data\",\n        \"StreamId\": \"SdsStream_1\"\n    }],\n    \"Tags\": [{ \"SampleTag\" }]\n}"
+"{\n    \"Id\": \"SampleAsset\",\n    \"Description\": \"This is a sample asset.\",\n    \"Metadata\": [{\n        \"Id\": \"Id-abcde\",\n        \"Name\": \"ModelNumber\",\n        \"Description\": \"This is a static attribute on the asset which represents the model number.\",\n        \"SdsTypeCode\": \"Double\",\n        \"Value\": 0.01\n    }],\n    \"StreamReferences\": [{\n        \"Id\": \"IdS21\",\n        \"Name\": \"Data\",\n        \"StreamId\": \"SdsStream_1\"\n    }],\n    \"Tags\": [{ \n        \"SampleTag\" \n    }]\n}"
 ```
 
 ---
@@ -595,7 +595,7 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
 Asset you want to create<br/>
 
 ```json
-"{\n    \"Id\": \"SampleAsset\",\n    \"Description\": \"This is a sample asset.\",\n    \"Metadata\": [{\n        \"Id\": \"Id-abcde\",\n        \"Name\": \"ModelNumber\",\n        \"Description\": \"This is a static attribute on the asset which represents the model number.\",\n        \"SdsTypeCode\": \"Double\",\n        \"Value\": 0.01\n    }],\n    \"StreamReferences\": [{\n        \"Id\": \"IdS21\",\n        \"Name\": \"Data\",\n        \"StreamId\": \"SdsStream_1\"\n    }],\n    \"Tags\": [{ \"SampleTag\" }]\n}"
+"{\n    \"Id\": \"SampleAsset\",\n    \"Description\": \"This is a sample asset.\",\n    \"Metadata\": [{\n        \"Id\": \"Id-abcde\",\n        \"Name\": \"ModelNumber\",\n        \"Description\": \"This is a static attribute on the asset which represents the model number.\",\n        \"SdsTypeCode\": \"Double\",\n        \"Value\": 0.01\n    }],\n    \"StreamReferences\": [{\n        \"Id\": \"IdS21\",\n        \"Name\": \"Data\",\n        \"StreamId\": \"SdsStream_1\"\n    }],\n    \"Tags\": [{ \n        \"SampleTag\" \n    }]\n}"
 ```
 
 <h3>Response</h3>
@@ -622,7 +622,7 @@ Asset you want to create<br/>
 > 200 Response ([Asset](#schemaasset))
 
 ```json
-"{\n    \"Id\": \"SampleAsset\",\n    \"Description\": \"This is a sample asset.\",\n    \"Metadata\": [{\n        \"Id\": \"Id-abcde\",\n        \"Name\": \"ModelNumber\",\n        \"Description\": \"This is a static attribute on the asset which represents the model number.\",\n        \"SdsTypeCode\": \"Double\",\n        \"Value\": 0.01\n    }],\n    \"StreamReferences\": [{\n        \"Id\": \"IdS21\",\n        \"Name\": \"Data\",\n        \"StreamId\": \"SdsStream_1\"\n    }],\n    \"Tags\": [{ \"SampleTag\" }]\n}"
+"{\n    \"Id\": \"SampleAsset\",\n    \"Description\": \"This is a sample asset.\",\n    \"Metadata\": [{\n        \"Id\": \"Id-abcde\",\n        \"Name\": \"ModelNumber\",\n        \"Description\": \"This is a static attribute on the asset which represents the model number.\",\n        \"SdsTypeCode\": \"Double\",\n        \"Value\": 0.01\n    }],\n    \"StreamReferences\": [{\n        \"Id\": \"IdS21\",\n        \"Name\": \"Data\",\n        \"StreamId\": \"SdsStream_1\"\n    }],\n    \"Tags\": [{ \n        \"SampleTag\" \n    }]\n}"
 ```
 
 ---
@@ -651,7 +651,7 @@ List of assets you want to create.<br/>
 
 ```json
 [
-  "{\n    \"Id\": \"SampleAsset\",\n    \"Description\": \"This is a sample asset.\",\n    \"Metadata\": [{\n        \"Id\": \"Id-abcde\",\n        \"Name\": \"ModelNumber\",\n        \"Description\": \"This is a static attribute on the asset which represents the model number.\",\n        \"SdsTypeCode\": \"Double\",\n        \"Value\": 0.01\n    }],\n    \"StreamReferences\": [{\n        \"Id\": \"IdS21\",\n        \"Name\": \"Data\",\n        \"StreamId\": \"SdsStream_1\"\n    }],\n    \"Tags\": [{ \"SampleTag\" }]\n}"
+  "{\n    \"Id\": \"SampleAsset\",\n    \"Description\": \"This is a sample asset.\",\n    \"Metadata\": [{\n        \"Id\": \"Id-abcde\",\n        \"Name\": \"ModelNumber\",\n        \"Description\": \"This is a static attribute on the asset which represents the model number.\",\n        \"SdsTypeCode\": \"Double\",\n        \"Value\": 0.01\n    }],\n    \"StreamReferences\": [{\n        \"Id\": \"IdS21\",\n        \"Name\": \"Data\",\n        \"StreamId\": \"SdsStream_1\"\n    }],\n    \"Tags\": [{ \n        \"SampleTag\" \n    }]\n}"
 ]
 ```
 
@@ -673,7 +673,7 @@ List of assets you want to create.<br/>
   "Error": "string",
   "OperationId": "string",
   "Data": [
-    "{\n    \"Id\": \"SampleAsset\",\n    \"Description\": \"This is a sample asset.\",\n    \"Metadata\": [{\n        \"Id\": \"Id-abcde\",\n        \"Name\": \"ModelNumber\",\n        \"Description\": \"This is a static attribute on the asset which represents the model number.\",\n        \"SdsTypeCode\": \"Double\",\n        \"Value\": 0.01\n    }],\n    \"StreamReferences\": [{\n        \"Id\": \"IdS21\",\n        \"Name\": \"Data\",\n        \"StreamId\": \"SdsStream_1\"\n    }],\n    \"Tags\": [{ \"SampleTag\" }]\n}"
+    "{\n    \"Id\": \"SampleAsset\",\n    \"Description\": \"This is a sample asset.\",\n    \"Metadata\": [{\n        \"Id\": \"Id-abcde\",\n        \"Name\": \"ModelNumber\",\n        \"Description\": \"This is a static attribute on the asset which represents the model number.\",\n        \"SdsTypeCode\": \"Double\",\n        \"Value\": 0.01\n    }],\n    \"StreamReferences\": [{\n        \"Id\": \"IdS21\",\n        \"Name\": \"Data\",\n        \"StreamId\": \"SdsStream_1\"\n    }],\n    \"Tags\": [{ \n        \"SampleTag\" \n    }]\n}"
   ],
   "ChildErrors": [
     {
@@ -923,7 +923,7 @@ Represents an asset object.
 |Tags|string[]|false|true|Asset tags|
 
 ```json
-"{\n    \"Id\": \"SampleAsset\",\n    \"Description\": \"This is a sample asset.\",\n    \"Metadata\": [{\n        \"Id\": \"Id-abcde\",\n        \"Name\": \"ModelNumber\",\n        \"Description\": \"This is a static attribute on the asset which represents the model number.\",\n        \"SdsTypeCode\": \"Double\",\n        \"Value\": 0.01\n    }],\n    \"StreamReferences\": [{\n        \"Id\": \"IdS21\",\n        \"Name\": \"Data\",\n        \"StreamId\": \"SdsStream_1\"\n    }],\n    \"Tags\": [{ \"SampleTag\" }]\n}"
+"{\n    \"Id\": \"SampleAsset\",\n    \"Description\": \"This is a sample asset.\",\n    \"Metadata\": [{\n        \"Id\": \"Id-abcde\",\n        \"Name\": \"ModelNumber\",\n        \"Description\": \"This is a static attribute on the asset which represents the model number.\",\n        \"SdsTypeCode\": \"Double\",\n        \"Value\": 0.01\n    }],\n    \"StreamReferences\": [{\n        \"Id\": \"IdS21\",\n        \"Name\": \"Data\",\n        \"StreamId\": \"SdsStream_1\"\n    }],\n    \"Tags\": [{ \n        \"SampleTag\" \n    }]\n}"
 
 ```
 
@@ -1283,7 +1283,7 @@ A multi status result is returned to indicate a partial success.
   "Error": "string",
   "OperationId": "string",
   "Data": [
-    "{\n    \"Id\": \"SampleAsset\",\n    \"Description\": \"This is a sample asset.\",\n    \"Metadata\": [{\n        \"Id\": \"Id-abcde\",\n        \"Name\": \"ModelNumber\",\n        \"Description\": \"This is a static attribute on the asset which represents the model number.\",\n        \"SdsTypeCode\": \"Double\",\n        \"Value\": 0.01\n    }],\n    \"StreamReferences\": [{\n        \"Id\": \"IdS21\",\n        \"Name\": \"Data\",\n        \"StreamId\": \"SdsStream_1\"\n    }],\n    \"Tags\": [{ \"SampleTag\" }]\n}"
+    "{\n    \"Id\": \"SampleAsset\",\n    \"Description\": \"This is a sample asset.\",\n    \"Metadata\": [{\n        \"Id\": \"Id-abcde\",\n        \"Name\": \"ModelNumber\",\n        \"Description\": \"This is a static attribute on the asset which represents the model number.\",\n        \"SdsTypeCode\": \"Double\",\n        \"Value\": 0.01\n    }],\n    \"StreamReferences\": [{\n        \"Id\": \"IdS21\",\n        \"Name\": \"Data\",\n        \"StreamId\": \"SdsStream_1\"\n    }],\n    \"Tags\": [{ \n        \"SampleTag\" \n    }]\n}"
   ],
   "ChildErrors": [
     {

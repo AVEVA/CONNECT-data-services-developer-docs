@@ -4,7 +4,7 @@ uid: assets-asset-types
 ---
 
 # Asset Types
-In many instances, you will have multiple assets of the same type. In this situation, an asset type can be used to create multiple similar assets. A change to the asset type is reflected in all assets that are derived from the asset type.
+The asset types API allows you to create, read, update, and delete assets.
 
 ## `List Asset Types`
 

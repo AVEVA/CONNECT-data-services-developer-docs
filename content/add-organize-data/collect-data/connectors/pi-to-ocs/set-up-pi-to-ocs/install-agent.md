@@ -32,7 +32,6 @@ This topic contains these sections:
 
 * [Verify the PI to OCS Agent is running and registered](#verify-the-pi-to-ocs-agent-is-running-and-registered)
 
-
 ## Install the PI to OCS Agent
 
 ### Procedure

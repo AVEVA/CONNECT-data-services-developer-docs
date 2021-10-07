@@ -6,11 +6,11 @@ uid: WhatOCSdoes
 
 OSIsoft Cloud Services (OCS) consists of several different areas of core functionality: tenant management, data collection, data organization, and data analysis. The following sections discuss each area in detail:
 
-* [Tenant management](#tenant-management) - Explains basic concepts in managing OCS, including clients, users, roles, roles-based access control and discusses how administrators can customize OCS based on organizational requirements. 
-* [Data collection](#data-collection) - Summarizes techniques to collect and feed data from multiple sources across your organization into a namespace within OCS. 
-* [Data organization](#data-organization) - Provides a high-level description of how OCS stores and retrieves operational data.
-* [Data analysis](#data-analysis) - Provides users with analytical tools to sort and visualize OCS data.
-* [Data science enablement](#data-science-enablement) - Highlights the capabilities of OCS tools for data grouping and organization to enable the use of third-party data science applications.
+- [Tenant management](#tenant-management) - Explains basic concepts in managing OCS, including clients, users, roles, roles-based access control and discusses how administrators can customize OCS based on organizational requirements. 
+- [Data collection](#data-collection) - Summarizes techniques to collect and feed data from multiple sources across your organization into a namespace within OCS. 
+- [Data organization](#data-organization) - Provides a high-level description of how OCS stores and retrieves operational data.
+- [Data analysis](#data-analysis) - Provides users with analytical tools to sort and visualize OCS data.
+- [Data science enablement](#data-science-enablement) - Highlights the capabilities of OCS tools for data grouping and organization to enable the use of third-party data science applications.
 
 The following diagram shows how OCS fits in an organization:
 
@@ -31,17 +31,17 @@ A namespace is a logical unit of organization for data within a tenant. Before c
 
 ### Region 
 
-Regions are geographical area designations associated with OCS resources (for example, types, streams, and data views). WestUS and WestEurope are regions. OCS provisions a namespace within a single region. After you create a namespace, any resources you create in that namespace are bound to its region. Any data stored in the namespace is stored in that region.
+Regions are geographical area designations associated with OCS resources, for example, types, streams, and data views. WestUS and WestEurope are regions. OCS provisions a namespace within a single region. After you create a namespace, any resources you create in that namespace are bound to its region. Any data stored in the namespace is stored in that region.
 
 ### Identity 
 
 Identity is the authentication factor used to verify a user or client that requests access to OCS. OCS identity services provide the following functions: 
 
-* Authenticate users with a local account store or through an external identity provider 
-* Provide session management and single sign-on 
-* Authenticate client applications 
-* Issue identity and access tokens to client applications and users 
-* Validate access tokens 
+- Authenticate users with a local account store or through an external identity provider 
+- Provide session management and single sign-on 
+- Authenticate client applications 
+- Issue identity and access tokens to client applications and users 
+- Validate access tokens 
 
 ### User 
 
@@ -51,9 +51,9 @@ A user is an individual identity that represents a person using OCS. When users 
 
 Clients have programmatic access to OCS resources through OCS APIs. There are two primary client types: 
 
-* **Client credential clients** – The most common type of OCS client, used for server-to-server communication without the presence or intervention of a user. Examples include PI Adapters or the Edge Data Store sending data to OCS. This type of client is issued a client ID and secret. After authentication, the client is granted an access token with a defined lifetime. 
+- **Client credential clients** – The most common type of OCS client, used for server-to-server communication without the presence or intervention of a user. Examples include PI Adapters or the Edge Data Store sending data to OCS. This type of client is issued a client ID and secret. After authentication, the client is granted an access token with a defined lifetime. 
 
-* **Authorization code clients** – Used by web-based, mobile, and desktop applications, this client type requires user interaction. Users authenticate with an identity provider. Authorization code clients support silent refresh, which allows the user to automatically receive a new access token, providing for uninterrupted access to the application. 
+- **Authorization code clients** – Used by web-based, mobile, and desktop applications, this client type requires user interaction. Users authenticate with an identity provider. Authorization code clients support silent refresh, which allows the user to automatically receive a new access token, providing for uninterrupted access to the application. 
 
 ### Roles 
 
@@ -78,11 +78,11 @@ Authorization is the process of determining the appropriate access level for a u
 Each OCS service and resource has an access control list (ACL) that defines how much access is granted to assigned roles. The OCS Administrator configures each ACL and specifies types of permissions for each role. When a user or client makes a request to a specific OCS resource, OCS compares their role to the ACL for that resource to determine whether to authorize the request. Users and clients are allowed or denied access permissions to OCS objects based on their assigned roles and the corresponding ACLs.
 
 The types of permissions granted to roles are as follows:
-* Read
-* Write
-* Delete
-* Manage Access Control: Ability to modify the access control list of the resource
-* Owner: An identity that has full permission level
+- Read
+- Write
+- Delete
+- Manage Access Control: Ability to modify the access control list of the resource
+- Owner: An identity that has full permission level
 
 ## Data Collection
 
@@ -92,18 +92,18 @@ After defining tenants, setting permissions and access levels for users, and cre
 
 The type of data, the location of that data, and the way that a particular source sends data all affect how you can collect that data in OCS. Choose the data collection technologies that best meet your specific needs. These technologies include: 
 
-* [PI to OCS](#pi-to-ocs)
-* [Custom OMF applications](#custom-omf-applications)
-* [Edge Data Store](#edge-data-store)
-* [PI Adapters](#pi-adapters)
-* [Programmatic REST API](#programmatic-rest-api) 
+- [PI to OCS](#pi-to-ocs)
+- [Custom OMF applications](#custom-omf-applications)
+- [Edge Data Store](#edge-data-store)
+- [PI Adapters](#pi-adapters)
+- [Programmatic REST API](#programmatic-rest-api) 
 
 #### PI to OCS 
 
 The PI to OCS collection method transfers PI time series data from a local PI Server to OCS. The PI to OCS Agent is installed and configured directly on a designated device. The PI to OCS Agent creates types and streams in OCS based on the PI Tags mapped from PI Data Archive. 
 
 **Note**: OSIsoft recommends installing the PI to OCS Agent and PI Server on separate devices to avoid the two systems competing for resources.
-<!--Angela Flores 6/29/21 Too much detail for an overview. -->
+<!--Angela Flores 6/29/21 Too much detail for an overview.-->
 
 #### Custom OMF applications
 
@@ -137,9 +137,9 @@ After setting up data collection, use the Sequential Data Store (SDS) to store, 
 
 To organize and use the data in the SDS, you need to understand the basic features of the system: 
 
-* [Types](#types) 
-* [Streams](#streams) 
-* [Stream views](#stream-views) 
+- [Types](#types) 
+- [Streams](#streams) 
+- [Stream views](#stream-views) 
 
 ### Types 
 
@@ -187,16 +187,12 @@ After defining types, streams, and stream views, use the analytical tools in OCS
 
 Two analytical tools are available in OCS: 
 
-* [Trend](#trend) 
-* [Assets](#assets) 
+- [Trend](#trend) 
+- [Assets](#assets) 
 
 ### Trend
 
 The Trend feature converts stream data to a graphic view, which can reveal trends, high points, or trouble spots. Use Trend to select data streams in a namespace, specify a time range, and then render a graph of those data values.
-
-The following example shows stream data for two streams over a selected period of several days:
-
-![OCS](images/how-does-ocs-work/trend.jpg)
 
 ### Assets
 
@@ -220,8 +216,8 @@ OCS allows you to group and organize operational PI, IoT, and OCS data. By arran
 
 Two methods are available in OCS, each of which works dynamically, continuing to filter and order data after they are in place. These methods include the following: 
 
-* [Metadata rules](#metadata-rules) - Metadata rules assign metadata to streams matching defined stream name patterns.
-* [Data views](#data-views) - Data views order, index, and organize data from multiple streams. 
+- [Metadata rules](#metadata-rules) - Metadata rules assign metadata to streams matching defined stream name patterns.
+- [Data views](#data-views) - Data views order, index, and organize data from multiple streams. 
 
 ### Metadata rules 
 
@@ -232,9 +228,12 @@ The following diagram shows metadata in the context of several different but sim
 ![OCS](images/how-does-ocs-work/streams.jpg)
 
 The diagram above shows three data streams for turbines named GEO1 and GEO2. 
+
 1. The data in each stream is color-coded, and streams with matching naming patterns are the same color. 
-2. The basic description of the stream data is encoded in the stream name, but it can be difficult to understand. Use metadata rules to decode this information. For example, the metadata rule delineates the stream name, GEO1_P.ACT_PV, as GEO1, *Turbine*, and ACT_PV, *Active Power*.
-3. A metadata rule based on this stream naming pattern can assign metadata for all turbines in each matching stream. 
+
+1. The basic description of the stream data is encoded in the stream name, but it can be difficult to understand. Use metadata rules to decode this information. For example, the metadata rule delineates the stream name, GEO1_P.ACT_PV, as GEO1, *Turbine*, and ACT_PV, *Active Power*.
+
+1. A metadata rule based on this stream naming pattern can assign metadata for all turbines in each matching stream. 
 
 A metadata rule assigns the defined metadata to any matching streams in the selected namespace, as well as matching streams that are subsequently added to the namespace.
 
@@ -246,9 +245,11 @@ Data views serve as a bridge between raw OCS data and data science applications.
 
 The following diagram depicts multiple streams organized into a data view that a third-party data science application can consume: 
 
-1. Data streams from three wind turbines contain metadata assigned by a metadata rule. 
-2. Create a data view in OCS based on streams containing the specified metadata, select specific data elements from the streams, and order and index them as needed. 
-3. Ordered and normalized data is then consumable by data science applications for in-depth analysis. 
+1. Data streams from three wind turbines contain metadata assigned by a metadata rule.
+
+1. Create a data view in OCS based on streams containing the specified metadata, select specific data elements from the streams, and order and index them as needed. 
+
+1. Ordered and normalized data is then consumable by data science applications for in-depth analysis. 
 
 ![OCS](images/how-does-ocs-work/dataviews.jpg)
 

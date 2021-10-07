@@ -4,7 +4,7 @@ uid: ccAssets
 
 # Assets
 
-An asset is a container for metadata, or static information about the asset (such as location or company), and properties which are references to streams in the Sequential Data Store. Assets allow you to retrieve all the stream values associated with an asset and to provide context to this dynamic data. 
+An asset is a container for metadata, or static information about the asset (such as location or company), and properties which are references to streams in the Sequential Data Store. Assets allow you to retrieve all the stream values associated with an asset and to provide context to this dynamic data.
 
 ## PI Server counterpart
 

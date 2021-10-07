@@ -119,7 +119,8 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/shared/streams
   {
     "Id": "string",
     "Name": "string",
-    "TypeId": "string"
+    "TypeId": "string",
+    "Description": "string"
   }
 ]
 ```
@@ -190,7 +191,8 @@ Input used to search namespace.<br/>
   {
     "Id": "string",
     "Name": "string",
-    "TypeId": "string"
+    "TypeId": "string",
+    "Description": "string"
   }
 ]
 ```
@@ -290,12 +292,14 @@ The StreamFromSearchByNamespace object. This is the model representation exposed
 |Id|string|false|true|The Stream Id.|
 |Name|string|false|true|The Stream Name.|
 |TypeId|string|false|true|The Stream TypeId.|
+|Description|string|false|true|The Stream Description.|
 
 ```json
 {
   "Id": "string",
   "Name": "string",
-  "TypeId": "string"
+  "TypeId": "string",
+  "Description": "string"
 }
 
 ```

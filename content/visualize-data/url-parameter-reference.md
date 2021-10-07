@@ -24,7 +24,7 @@ The following example trend URL includes multiple streams and cursors:
 https://{server}/tenant/{tenant id}/trend?namespace={Sample}&trace=Tank%3B123;Temp%3B456&trace=Tank%3B234;Temp%3B789&starttime=2019-10-30T07:06:46.939Z&endtime=2019-10-30T07:06:46.939Z&mode=multiple&cursor=2019-10-30T08:06:46.939Z&cursor=2019-10-30T08:06:46.939Z
 ```
 
-## URL parameters reference 
+## Parameter reference 
 
 The following table describes the available URL parameters.
 

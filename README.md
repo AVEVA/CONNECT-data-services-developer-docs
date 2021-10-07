@@ -1,7 +1,7 @@
 
 # AVEVA Data Hub Docs
 
-AVEVA Data Hub is a cloud data platform for storing, retrieving, and analyzing sequentially indexed data. This repository contains the documentation for AVEVA Data Hub. You can access a readable version of this documentation at [docs.osisoft.com](https://docs.osisoft.com).
+AVEVA Data Hub is an AVEVA Connect application for storing, retrieving, and analyzing sequentially indexed data. This repository contains the documentation for AVEVA Data Hub.
 
 ## Notes
 

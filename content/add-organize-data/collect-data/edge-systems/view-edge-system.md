@@ -10,6 +10,8 @@ Use the following procedure to view an edge system:
 
 1. From the left pane, select **Data Collection** > **Edge Systems**.
 
+1. Verify that the **Edge Systems/Configuration Library** selector is set to **Edge Systems**.
+
 1. **Optional:** Click on a column header to sort by that column in descending order. Click again to sort in ascending order.
 
 1. **Optional:** Click on the filter icon in a column header to filter the edge systems shown based on that column.
@@ -31,6 +33,8 @@ Use the following procedure to view an edge system:
 You can remove edge systems from the list of edge systems in OCS, but the edge system remains on the device. After an edge system is removed from OCS, you can no longer see or manage it from OCS. Use the following procedure to remove an edge system:
 
 1. In the left pane, select **Data Management** > **Edge Systems**.
+
+1. Verify that the **Edge Systems/Configuration Library** selector is set to **Edge Systems**.
 
 1. Find and click on the edge device to remove.
 

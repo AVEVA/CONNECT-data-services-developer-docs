@@ -1,12 +1,12 @@
 ---
-uid: ConfigureEdgeSystem
+uid: EdgeSystemTemplates
 ---
 
-# Configure an edge system
+# Edge system templates
 
-You can manage edge system configurations within OCS. You can create a configuration from scratch, use a default configuration or a configuration template, or import a configuration file. Once the configuration is complete, you can export the configuration file for each component or for the edge system to manually apply to the edge system. You can use an exported configuration file to configure other edge systems by importing it. The maximum size for a configuration file is 16 MB.
+You can create and manage edge system template configurations within OCS. Once the configuration is complete, you can export configuration files by component or edge system to manually apply to the edge system. You can also use an exported configuration file as a template for configuring other edge systems by importing it during configuration. Default configurations are available for supported edge system types. The maximum size for a configuration file is 16 MB.
 
-**Note:** Configuration is available for the following edge system types:
+**Note:** You can create templates for the following edge system types:
 
  - Edge Data Store
 
@@ -14,13 +14,13 @@ You can manage edge system configurations within OCS. You can create a configura
 
  - Modbus TCP adapter
 
-Use the following procedure to modify an edge system configuration and export it for use:
+Use the following procedure to modify an edge system configuration template and export it for use:
 
 1. In the left pane, select **Data Management** > **Edge Systems**.
 
-1. Verify that the **Edge Systems/Configuration Library** selector is set to **Edge Systems**.
+1. Verify that the **Edge Systems/Configuration Library** selector is set to **Configuration Library**.
 
-1. Find and click on the edge device to configure.
+1. Find and click on the template to configure.
 
 1. In the right pane, click **Edit Edge System** or ![Edit](images/pencil-icon.png).
 

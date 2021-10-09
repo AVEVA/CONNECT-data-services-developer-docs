@@ -2,16 +2,13 @@
 uid: AssetStatus
 ---
 
-# Asset and Asset Type Status
-
-***
+# Asset Status
 
 ## `Get Asset Status`
 
 Returns the status of an asset. 
 
 The status of an asset is determined by an exact match of the SDS stream property value to the value of the `ValueStatusMappings`. If there are no exact matches, the status is a 0 (Unknown).
-
 
 ### Request
 
@@ -67,8 +64,7 @@ Statistics are computed using 'StepwiseContinuousLeading' for interpolation and 
 ### Request
 
 ```text 
-POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Status/Summary
-?startIndex={startIndex}&endIndex={endIndex}&intervals={intervals}
+POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Status/Summary?startIndex={startIndex}&endIndex={endIndex}&intervals={intervals}
 ```
 
 ### Parameters

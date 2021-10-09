@@ -4,6 +4,7 @@ uid: assets-assets-search
 ---
 
 # Assets Search
+The asset API allows you to programmatically model your on-premises assets in OSIsoft Cloud Services (OCS). A single stream with its metadata can be used to model very simple assets. However, in most instances, an asset relates to dynamic data from several streams and to static information that describe the asset. This is better structured as an asset instead of any single stream. The assets feature is well suited to model these aspects of an asset. It allows users to create an asset, add static metadata, and reference streams in a standard, structured way. The asset API includes search capabilities and features to directly retrieve the values of dynamic data associated with a given asset. It also provides methods to configure determining the asset status and to configure different user views of an asset.
 
 ## `Get Assets In Search Result Format`
 
@@ -15,7 +16,7 @@ Searches all assets and returns a list of asset Ids and their matched fields. Us
 
 ```text 
 GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets
-?skip={skip}&count={count}&orderBy={orderBy}&query={query}&filter={filter}
+?skip={skip}&count={count}&orderBy={orderBy}&query={query}&pageSize={pageSize}&maxPages={maxPages}&continuationToken={continuationToken}&filter={filter}
 ```
 
 <h4>Parameters</h4>
@@ -27,7 +28,10 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets
 <br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string orderBy`
 <br/>Optional parameter which returns assets ordered either by the asset `Id` or the asset `Name`. Specify `asc` or `desc` to return the results in ascending or descending order. If not specified, the default is ascending order.<br/><br/>`[optional] string query`
-<br/>Query identifier.<br/><br/>`[optional] string filter`
+<br/>Query identifier.<br/><br/>`[optional] integer pageSize`
+<br/>Page size, internal use only.<br/><br/>`[optional] integer maxPages`
+<br/>Max pages, internal use only.<br/><br/>`[optional] string continuationToken`
+<br/>Internal use only.<br/><br/>`[optional] string filter`
 <br/>String used to filter the asset search results. Filter strings are not case sensitive. The strings on which you can filter results are limited to the asset `AssetTypeName` property and the asset metadata properties (using the syntax filter[*property_name*]=*property_value*).<br/><br/>
 
 <h3>Response</h3>

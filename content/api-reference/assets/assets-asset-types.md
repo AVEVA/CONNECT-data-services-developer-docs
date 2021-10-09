@@ -4,7 +4,7 @@ uid: assets-asset-types
 ---
 
 # Asset Types
-The asset types API allows you to create, read, update, and delete assets.
+In many instances, you will have multiple assets of the same type. In this situation, an asset type can be used to create multiple similar assets. A change to the asset type is reflected in all assets that are derived from the asset type.
 
 ## `List Asset Types`
 
@@ -130,21 +130,13 @@ HEAD /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|204|None|Call succeeded.|
-|400|[ErrorTemplate](#schemaerrortemplate)|None|
-
-<h4>Response Headers</h4>
-
-|Status|Header|Type|Description|
-|---|---|---|---|
-|204|Total-Count|integer|Total number of asset types accessible to the caller and that match the specified query.|
-|204|ETag|string|Collection ETag. Changes whenever an asset type is created, updated, or deleted.|
+|200|string|None|
 
 ---
 
-## `Create Asset Types (POST Method)`
+## `Create Asset Type`
 
-<a id="opIdAssetTypes_Create Asset Types (POST Method)"></a>
+<a id="opIdAssetTypes_Create Asset Type"></a>
 
 Create or update an asset type with a specified identifier.
 
@@ -318,9 +310,9 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 
 ---
 
-## `Create Asset Type`
+## `Get Or Create Asset Type`
 
-<a id="opIdAssetTypes_Create Asset Type"></a>
+<a id="opIdAssetTypes_Get Or Create Asset Type"></a>
 
 Creates or updates an asset type with a specified identifier.
 
@@ -613,9 +605,9 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{a
 
 ---
 
-## `Create Asset Types (Bulk path)`
+## `Bulk Create Asset Types`
 
-<a id="opIdAssetTypes_Create Asset Types (Bulk path)"></a>
+<a id="opIdAssetTypes_Bulk Create Asset Types"></a>
 
 Bulk creates asset types. Creates multiple asset types in a single call.
 
@@ -990,36 +982,6 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 ---
 ## Definitions
 
-### ErrorTemplate
-
-<a id="schemaerrortemplate"></a>
-<a id="schema_ErrorTemplate"></a>
-<a id="tocSerrortemplate"></a>
-<a id="tocserrortemplate"></a>
-
-<h4>Properties</h4>
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|OperationId|string|false|true|Operation identifier|
-|Error|string|false|true|Error string|
-|Resolution|string|false|true|Resolution string|
-|Reason|string|false|true|Error reason string|
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Resolution": "string",
-  "Reason": "string",
-  "property1": null,
-  "property2": null
-}
-
-```
-
----
-
 ### AssetType
 
 <a id="schemaassettype"></a>
@@ -1027,7 +989,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 <a id="tocSassettype"></a>
 <a id="tocsassettype"></a>
 
-An asset type can be used to create multiple similar assets. A change to the asset type is reflected in all assets that are derived from the asset type.
+An asset type can be used to create multiple similar assets.A change to the asset type is reflected in all assets that are derived from the asset type.
 
 <h4>Properties</h4>
 
@@ -1391,6 +1353,36 @@ Status definition type. Currently, only StreamPropertyMapping is supported.
 |---|---|
 |Unspecified|0|
 |StreamPropertyMapping|1|
+
+---
+
+### ErrorTemplate
+
+<a id="schemaerrortemplate"></a>
+<a id="schema_ErrorTemplate"></a>
+<a id="tocSerrortemplate"></a>
+<a id="tocserrortemplate"></a>
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|OperationId|string|false|true|Operation identifier|
+|Error|string|false|true|Error string|
+|Resolution|string|false|true|Resolution string|
+|Reason|string|false|true|Error reason string|
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+
+```
 
 ---
 

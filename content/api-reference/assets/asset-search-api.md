@@ -17,10 +17,10 @@ GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets?skip={skip
 
 ### Parameters  
 `string tenantId`  
-Tenant identifier
+Tenant identifier.
 
 `string namespaceId`  
-Namespace identifier
+Namespace identifier.
 
 `string queryString`  
 Asset query string. Search strings are not case sensitive.

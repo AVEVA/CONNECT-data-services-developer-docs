@@ -6,10 +6,6 @@ uid: asset-search-dev-guide
 
 The assets search API allows you to search for your assets with search criteria.
 
-## Get Assets by Search Criteria
-
-Returns an array of assets that meet the search criteria.
-
 ### Searchable Properties
 Assets can be searched on the following asset properties:
 
@@ -104,6 +100,7 @@ Content-Type: application/json
 | AssetTypeName:HeaterTypeName | Returns all assets whose `Name` field of the asset type matches **HeaterTypeName** |
 | StreamPropertyId:Pressure    | Returns all assets that have one or more stream references with the stream property ID **Pressure**. Note: This search only searches non-key Sds stream properties. |
 | StreamReferenceName:Name1    | Returns all assets whose stream references contain a stream reference name that matches **Name1**. |
+| Tags:MarkedAsset             | Returns all assets which has "MarkedAsset" as a tag.         |
 
 ### Special characters in search queries
 

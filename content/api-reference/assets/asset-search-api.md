@@ -53,7 +53,7 @@ Searches all assets and returns a list of asset identifiers and their matched fi
 
 ### Request 
 ```text 
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets?skip={skip}&count={count}&orderby={orderby}&query={queryString}&{filterString}&pageSize={pageSize}&maxPages={maxPages}&continuationToken={continuationToken}
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets?skip={skip}&count={count}&orderby={orderby}&query={queryString}&{filterString}
 ```
 
 ### Parameters  
@@ -122,7 +122,6 @@ A list of asset Ids and their matched fields.
 | 204 OK          | empty            | No assets match your search criteria.                        |
 | 400 Bad Request | error            | The request is not valid. See the response body for additional details. |
 
-```
 
 ## `Asset Autocomplete` 
 
@@ -155,6 +154,3 @@ Maximum number of facet autocompleted items to return. The default is 0 which me
 
 [optional] `int termCount`  
 Maximum number of token autocompleted items to return. The default is 0 which means you will not get any token suggestions.
-
-
-```

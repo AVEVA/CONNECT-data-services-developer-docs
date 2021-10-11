@@ -43,7 +43,9 @@ To create a new metadata rule, follow these steps:
     **Note**: If you select metadata type **Metadata**, you must also enter a metadata key. A metadata key is the key portion of a key-value pair, typically the type of data provided, such as Measurement. This is helpful when streams that match the rule provide different types of data. Entries in the **Map To** portion of mapping represent the value part of the key-value pair. For example, Power would be the defined key, while different types of data could be Demand, TOTAL/Electricity, or Metering. The mapping entries specify the labels you want to display for each of those values.
     
 1. In the `Define Mappings` page, choose one of the following options:
+
      - To display the raw stream data for the specified metadata key, select **Copy Values** under **Mapping Type**.
+     
      - To assign a label to data values, select **Map Values** and click **Generate Mappings**.
 
 1. If you selected **Map Values**, then do the following: In the **Map To** field, enter the label you want to display for each defined metadata key, and click **Next**.

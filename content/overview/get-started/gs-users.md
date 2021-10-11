@@ -1,12 +1,15 @@
 ---
 uid: gsUsers
 ---
+
 # Get started with users
 
-A user is an identity that has access to an OSIsoft Cloud Services (OCS) tenant. Roles assigned to a user determine what permissions the user has on resources in OCS. See the following topics for more information about users:
+A user is an identity that has access to a tenant. Roles assigned to a user determine what permissions the user has on resources. See the following topics for more information about users:
 
 - [Users](xref:ccUsers)
+
 - [PI Server counterpart](xref:ccUsers#users-pi-server)
+
 - [Users best practices](xref:ccUsers#users-bp)
 
 ## Procedure
@@ -29,9 +32,9 @@ Follow the procedure to invite a user to your tenant.
 
 7. Once the information has been entered, click **Add**. 
 
-    OCS sends the invitation to the email address specified in the `Email` field. The `Status` column lists the new user as *Pending* until the invitation is accepted. If the invitation expires, the status changes to *Expired*. Once expired, the invitation can be resent.
+    The invitation is sent to the email address specified in the `Email` field. The `Status` column lists the new user as *Pending* until the invitation is accepted. If the invitation expires, the status changes to *Expired*. Once expired, the invitation can be resent.
 
-8. Once the user receives the invitation, they should log in using the identity provider you specified. Once they have logged in, the status of their user changes to *Active*.
+8. Once the user receives the invitation, they should log in using the identity provider you specified. Once they have logged in, the status of their user changes to **Active**.
 
 ## Next step
 

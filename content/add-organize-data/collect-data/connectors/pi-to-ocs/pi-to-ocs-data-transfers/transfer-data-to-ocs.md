@@ -7,28 +7,41 @@ uid: transfer-data
 You initiate a data transfer from the `PI to OCS Agents` window. A transfer can consist of PI points and AF elements or AF elements that reference at least one PI point. This topic contains these sections:
 
 1. [Create a transfer](#create-a-transfer)
+
 1. [Name the transfer and set data privacy settings](#name-the-transfer-and-set-data-privacy-settings)
+
 1. [Build an AF elements transfer list](#build-an-af-elements-transfer-list)
+
 1. [View AF element details](#view-af-element-details)
+
 1. [Build a PI points transfer list](#build-a-pi-points-transfer-list)
+
 1. [View PI point details](#view-pi-point-details)
+
 1. [Save a transfer](#save-a-transfer)
+
 1. [Transfer data to OCS](#transfer-data-to-ocs)
 
 PI points can be added to a transfer explicitly (via a tag search) or implicitly (via AF element references). To learn more about the difference between implicit and explicit references, see [Overview of explicit vs. implicit PI points](#overview-of-explicit-vs.-implicit-pi-points).
 
 **Before you begin:** Download and install the PI to OCS Agent. Register your PI Data Archive and AF data sources using the PI to OCS Agent Configuration Utility. 
 
-### Create a transfer
+## Create a transfer
 
 During transfer creation, you will need to perform the following tasks:
 
 1. Assign a name, description, and optional historical start and end time for data retrieval.
+
 1. Select a level of data privacy to control how much identifying information about an asset is sent with PI point data.
+
 1. Set query criteria and retrieve and add optional AF elements, which reference at least one implicit or explicit PI point, and/or PI point data to your transfer lists.
-1. View transfer details
+
+1. View transfer details.
+
 1. Save your transfer.
+
 1. Optional: Export a file(s) that contains transfer detail information.
+
 1. Initiate your data transfer and monitor its progress. 
 
 **Note:** If you have configured an AF server, you will not be able to create a transfer until AF indexing is complete. AF indexing status is listed on the Details pane in the PI to OCS Agents page.
@@ -92,7 +105,7 @@ You build an AF elements transfer by setting query criteria and then selecting A
       * Click the operator down arrow, then select an operator (=, <>, <, >, =<, =>, In).
       * In the last text box, enter an attribute value.
 
-   **Note:** Custom unit of measurements (UOMs) are not supported in OCS. During the transfer of AF element data, AF elements with custom UOMs will not have their corresponding asset's UOM property set.
+   **Note:** Custom unit of measurements (UOMs) are not supported. During the transfer of AF element data, AF elements with custom UOMs will not have their corresponding asset’s UOM property set.
 
 1. Optional: Click the **Template** down arrow, then select a template to narrow your search by template name.
 
@@ -241,12 +254,12 @@ The `Details` pane provides information about the agent associated with the tran
 | ---------------- | ------------------------------------------------------------ |
 | **1**            | `Agent Overview:` Lists the agent description (if any), namespace, status, version, and date and time of last connection. |
 | **2**            | `Transfer Overview:` Displays transfer details and progress. Also contains buttons to view, remove or stop a transfer. |
-| **3a**            | Under the registered Data Archive ( ![](../../images/pda-source-icon.png) ), the Streaming and Historical Events Per Second fields list the number of events successfully transferred to OCS. Historical events represent the number of incoming events per second that come from a backlog of events for the PI points associated with the transfer, which are not transferred as "real-time" events. Streaming events represent the number of current, real-time events transferred into OCS. |
-|**3b**            |If an AF server has been added, details about the AF server and transferred elements are shown under the listed  AF server data source ( ![](../../images/af-data-icon.png) ). The AF status fields provide information about the number of AF elements and assets succesfully transferred and created:  <ul><li>**Total Elements in Transfer**: The total number of AF elements in transfer to OCS. </li><li>**Total Elements Transferred**: The number of elements transferred to OCS.</li><li>**Total Assets Created**: The number of assets created in OCS.</li><li>**Assets Updated**: The number of assets updated during the transfer process.</li><li>**Asset Create/Update Errors:** The number of errors generated while creating or updating assets in OCS.</li> |
+| **3a**            | Under the registered Data Archive ( ![](../../images/pda-source-icon.png) ), the Streaming and Historical Events Per Second fields list the number of events successfully transferred to OCS. Historical events represent the number of incoming events per second that come from a backlog of events for the PI points associated with the transfer, which are not transferred as “real-time” events. Streaming events represent the number of current, real-time events transferred into OCS. |
+|**3b**            |If an AF server has been added, details about the AF server and transferred elements are shown under the listed  AF server data source ( ![](../../images/af-data-icon.png) ). The AF status fields provide information about the number of AF elements and assets succesfully transferred and created:  <ul><li>**Total Elements in Transfer**: The total number of AF elements in transfer. </li><li>**Total Elements Transferred**: The number of elements transferred to OCS.</li><li>**Total Assets Created**: The number of assets created in OCS.</li><li>**Assets Updated**: The number of assets updated during the transfer process.</li><li>**Asset Create/Update Errors:** The number of errors generated while creating or updating assets.</li> |
 
 ## Transfer data to OCS
 
-Data is ready for transfer to OCS after the desired PI points and/or AF elements have been added.  During the transfer, events are sent asynchronously. Historical events are sent first, followed by current events. 
+Data is ready for transfer after the desired PI points and/or AF elements have been added.  During the transfer, events are sent asynchronously. Historical events are sent first, followed by current events. 
 
 **Note:** Modifications to an AF database or Data Archive digital state table during a PI to OCS transfer require that you manually stop and restart the transfer to capture all changes. Follow these steps to ensure all data is captured:
 
@@ -268,7 +281,7 @@ Data is ready for transfer to OCS after the desired PI points and/or AF elements
 
    **Result:** The transfer of data begins and the transfer status is reflected in the `Transfer Overview` section.
 
-1. In the `Details` pane, expand the `Data Source` section to view the status of a transfer as data is sent to OCS.
+1. In the `Details` pane, expand the `Data Source` section to view the status of a transfer as data is sent.
 
    **Note:** The rate at which data transfers varies and depends on the density of data in the source PI Data Archive and/or AF server. See [Data transfer statuses](xref:data-transfer-statuses) for a list of transfer statuses and descriptions. To find out more information about an asset error, agent status, or asset create/update error, click the **Logs** button above the list of agents to access more information. Possible statuses that appear in the **Current Activity** field may indicate an issue include Uncategorized Error, PI Point Type Change Detected, and No Valid PI Points In Transfer.   
 

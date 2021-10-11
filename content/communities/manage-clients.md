@@ -4,7 +4,7 @@ uid: managecommunityclients
 
 # Add and remove community clients
 
-In OCS, clients are applications that act on behalf of users and allow programmatic access via APIs to shared data and resources.
+Clients are applications that act on behalf of users and allow programmatic access from APIs to shared data and resources.
 
 The `Community Details` page lets you add and delete clients. Currently, you can only add [client-credentials clients](xref:ccClients) to a community.
 

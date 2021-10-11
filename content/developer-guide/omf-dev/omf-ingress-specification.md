@@ -23,7 +23,7 @@ OMF message types fall into three categories: *type*, *container*, and *data*, w
   + ``id``: Corresponds to the SdsType Id field. It must conform to the rules defined for a 
     typeId specified here: [Types](xref:sdsTypes)
 
-**Note:** For this field, both forward slashes (`/`) and back slashes (`\`) are supported. OCS automatically replaces forward slashes with periods (`.`) when it receives a message.
+**Note:** For this field, both forward slashes (`/`) and back slashes (`\`) are supported. Forward slashes are automatically replaced with periods (`.`) when it receives a message.
 
   + ``classification``: Only the ``dynamic`` classification is currently supported.
   + ``version``: Versioning of SdsTypes is not supported.
@@ -83,7 +83,7 @@ in the *container* definition are interpreted as follows:
 * ``tags``: Corresponds to the SdsStream Tag field. 
 * ``metadata``: Corresponds to the SdsStream Metadata field.        
 
-**Note:** For the `id` and `typeid` fields, both forward slashes (`/`) and back slashes (`\`) are supported. OCS automatically replaces forward slashes with periods (`.`) when it receives a message.
+**Note:** For the `id` and `typeid` fields, both forward slashes (`/`) and back slashes (`\`) are supported. Forward slashes are automatically replaced with periods (`.`) when it receives a message.
 
 ## Data messages
 A *data* message is mapped to generic Sds values in the Sequential Data Store. The keywords in the *data* definitions are interpreted as follows:
@@ -93,4 +93,4 @@ A *data* message is mapped to generic Sds values in the Sequential Data Store. T
 * ``typeversion``: Not supported.
 * ``values``: An array of the generic Sds values.
 
-**Note:** For the `typeid` and `containerid` fields, both forward slashes (`/`) and back slashes (`\`) are supported. OCS automatically replaces forward slashes with periods (`.`) when it receives a message.
+**Note:** For the `typeid` and `containerid` fields, both forward slashes (`/`) and back slashes (`\`) are supported. Forward slashes are automatically replaced with periods (`.`) when it receives a message.

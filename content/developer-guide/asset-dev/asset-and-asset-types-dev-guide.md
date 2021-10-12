@@ -1,5 +1,5 @@
 ﻿---
-uid: asset-properties-dev-guide
+uid: asset-and-asset-types-dev-guide
 ---
 
 # Assets
@@ -21,16 +21,14 @@ In this situation, an asset type can be used to create multiple similar assets. 
 
 | Property      | Type              | Searchable? | Description                                                  | Asset Property? | Asset Type Property? |
 | ------------- | ----------------- | ----------- | ------------------------------------------------------------ | ----- | --------------- |
-| Id           | String             | Yes         | Asset or Asset Type identifier. If the  `Id` field is not specified, the system autogenerates a GUID. | Yes  | Yes            |
+| Id            | String            | Yes         | Asset or Asset Type identifier. If the  `Id` field is not specified, the system autogenerates a GUID. | Yes  | Yes            |
 | Name          | String            | Yes         | User-friendly name. If not specified, name will be set to the same value as the `Id` field. | Yes  | Yes            |
 | Description   | String            | Yes         | User-provided description                                   | Yes  | Yes            |
 | AssetTypeId   | String            | No          | Identifier for the asset type that this asset is derived from. To get the merged view of the asset, get the resolved asset through the /Assets/{assetId}/Resolved route. | Yes  | No            |
-| Metadata      | Metadata List     | Yes       | Asset and asset type metadata                               | Yes  | Yes            |
+| Metadata      | Metadata List     | Yes         | Asset and asset type metadata                               | Yes  | Yes            |
 | StreamReferences   | Stream Reference List  | No       | Asset stream references                                             | Yes  | No            |
 | TypeReferences | Type Reference List | No        | Asset type type references                                     | No | Yes            |
 | Status | Status | No        | Asset and asset type status configuration | Yes | Yes            |
-
-For more information on search syntax, see [Assets Search API](xref:AssetsSearchAPI).
 
 ## Asset and asset type name and id
 The asset and asset type resource has name and id properties. The id property cannot be changed and can be count on to remain constant. All asset and asset type API calls depend on the id. The purpose of the name is be a user-friendly way of displaying a given asset or asset type. This can be changed freely without effecting data egress out of assets.
@@ -79,75 +77,6 @@ An asset type type reference represents dynamic stream data associated with an a
 | StreamReferenceName  | String | Required  | The user friendly name for this type reference. If not null, must be unique within an asset type.|
 | Description | String | Optional  | Description text                                            |
 | TypeId    | String | Required  | This string must be an SDS stream type `Id` in the referenced SDS stream. |
-
-
-
-## Asset and asset type status mapping properties
-For information about asset and asset type status mapping, please refer to [Asset Status](xref:AssetStatus) for more details.
-
-The following is an example of an asset derived from an asset type.
-
-Asset type example
-
-```
-Content-Type: application/json
-{
-  "Id": "ChargingStationType", 
-  "Description": "Charging Station Type", 
-  "Metadata": [{ 
-  	"Id":"d7368dc2-58f0-4669-8e6e-44ac2cc3f47c",
-  	"Name": "Location", 
-  	"SdsTypeCode": "String", 
-  	"Value": null 
-  	"Uom": null 
-  }], 
-  "TypeReferences": [{ 
-  	"StreamReferenceId": "Reference1", 
-  	"StreamReferenceName": "ReferenceName", 
-  	"TypeId": "PI-Float32" 
-   }] 
-}
-```
-
-Asset example
-```
-{ 
-  "Id": "ChargingStation1", 
-  "Name": " ChargingStation1", 
-  "Description": "Charging Station Instance", 
-  "AssetTypeId": "ChargingStationType", 
-  "Metadata": [{ 
-      "Id": "d7368dc2-58f0-4669-8e6e-44ac2cc3f47c",   
-      "Name": null,   
-      "Value": "Houston",  
-      "SdsTypeCode": 18,  
-   }],
-   "StreamReferences": [
-        {
-            "Id": "Reference1",
-            "Name": "ReferenceName",
-            "StreamId": "PI_StreamReference_1010"
-   }],
-   "Status": {
-   		"DefinitionType": "StreamPropertyMapping",
-  		"Definition": {
-    		"StreamReferenceId": "Reference1",
-    		"StreamPropertyId": "Value",
-    		"ValueStatusMappings": [
-      		{
-        		"Value": 3,
-        		"Status": "Bad",
-        		"DisplayName": "Bad"
-      		},
-      		{
-        		"Value": 1,
-        		"Status": "Good",
-        		"DisplayName": "Good"
-      		}]
-  		}
-    }
-} 
-```
 
 ## Asset Type Concordance
 

@@ -80,6 +80,8 @@ An asset type type reference represents dynamic stream data associated with an a
 | Description | String | Optional  | Description text                                            |
 | TypeId    | String | Required  | This string must be an SDS stream type `Id` in the referenced SDS stream. |
 
+
+
 ## Asset and asset type status mapping properties
 For information about asset and asset type status mapping, please refer to [Asset Status](xref:AssetStatus) for more details.
 
@@ -146,3 +148,32 @@ Asset example
     }
 } 
 ```
+
+## Asset Type Concordance
+
+If an asset type `Id` is specified for an asset, then the following is true:
+- The stream references name of an asset is set to null if the stream reference `Id` matches the stream reference `Id` of the asset type.
+- If the asset and asset type have a metadata value with the same `Id`, then the `Name` property on the asset is set to null. 
+
+# Asset and Asset Type ETag
+
+The asset and asset type feature supports the HTTP entity tag (ETag) and If-Match for conditional requests. When a `GET` call is performed, the HTTP response header includes an Etag which indicates what version of the asset or asset type resource that was retrieved.
+
+## Example Etag Response Header
+This is version 7 of this particular asset or asset type.
+
+```
+Etag: "7"
+```
+
+To edit or delete the asset or asset type, specify `If-Match` in the HTTP request header when calling `DELETE` or `PUT`.
+
+## Example If-Match Response Header
+Modify or delete only if the current asset or asset type matches version 7. Otherwise, do not perform this operation. If this condition fails, return a 412. 
+
+```
+If-Match : "7"
+```
+
+**Note:** `If-Match` is optional. If you want to delete or modify regardless of the version, do not specify an `If-Match`.
+

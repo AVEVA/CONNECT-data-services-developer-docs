@@ -6,7 +6,7 @@ uid: communities
 
 The _communities_ feature lets a tenant create a private group where business partners can share and view operational data amongst themselves. Using communities, industrial companies can share their data streams with external business partners, service providers, and analytics providers. 
 
-Sharing operational data allows you and your partners find value in each other's data: 
+Sharing data streams allows you and your partners to find value in each other's operational data: 
 
 * Collectively operate more efficiently and reduce waste.
 * Detect hidden problems in your equipment and processes, helping to troubleshoot issues.
@@ -55,11 +55,11 @@ Additionally, OCS provides [community roles](xref:communityroles) that allow eac
 
 ### Secure data sharing
 
-Communities allow tenants to [securely share data operational data](xref:ShareStreams#share-streams) with their business partners. 
+Communities allow tenants to [securely share operational data](xref:ShareStreams#share-streams) with their business partners. 
 
-Any tenant invited to a community must accept the community invitation before they can share data with other tenants. After joining a community, each tenant must explicitly share any data stream that they want to share with the community. Each tenant can share individual data streams with the community&mdash;not their entire operational data set. 
+Any tenant invited to a community must accept the community invitation before they can share data with other tenants. After joining a community, each tenant must explicitly share any data stream that they want to share with the community. Each tenant shares individual data streams with the community&mdash;not their entire operational data set. 
 
-Each tenant in the community can [stop sharing their data streams](xref:ShareStreams#unshare-streams-from-community-details) at any time. When you stop sharing a data stream, the other tenants within the community can no longer view it, nor its history, as when you share data streams, each community member that views it viewing it from its source&mdash;stream data is never copied. 
+Each tenant in the community can [stop sharing their data streams](xref:ShareStreams#unshare-streams-from-community-details) at any time. When you stop sharing a data stream, the other tenants within the community can no longer view it, nor its history, as when you share data streams, each community member views them from source&mdash;stream data is not copied among tenants. 
 
 Because tenants can share their data natively within OCS, IT departments no longer have to:
 

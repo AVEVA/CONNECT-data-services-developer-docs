@@ -1422,10 +1422,7 @@ MultiStatusResponse objects returned in a 207 response
       "Error": "string",
       "Reason": "string",
       "Resolution": "string",
-      "DynamicProperties": {
-        "property1": null,
-        "property2": null
-      },
+      "EventId": "string",
       "StatusCode": 0,
       "ModelId": "string",
       "property1": null,
@@ -1459,11 +1456,11 @@ ChildError objects returned in a 207 response
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|OperationId|string|true|false|Operation identifier of action that caused the error|
+|OperationId|string|true|false|OperationId of action that caused the error|
 |Error|string|true|false|Error description|
 |Reason|string|true|false|Reason for the error|
-|Resolution|string|true|false|Resolution to resolve the error|
-|DynamicProperties|object|false|true|Additional properties|
+|Resolution|string|true|false|Resolution for the error|
+|EventId|string|true|false|EventId for the error|
 |StatusCode|int32|false|false|Http status code|
 |ModelId|string|false|true|Model identifier|
 
@@ -1473,10 +1470,7 @@ ChildError objects returned in a 207 response
   "Error": "string",
   "Reason": "string",
   "Resolution": "string",
-  "DynamicProperties": {
-    "property1": null,
-    "property2": null
-  },
+  "EventId": "string",
   "StatusCode": 0,
   "ModelId": "string",
   "property1": null,

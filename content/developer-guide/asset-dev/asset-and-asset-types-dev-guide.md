@@ -50,8 +50,6 @@ An asset or asset type metadata is static information associated with a given as
 
 \* If the `Id` property is not specified, the `Name` property must be specified. In this case, a random GUID will be assigned as the `Id` on the metadata.
 
-
-
 ## Asset stream reference properties
 
 An asset stream reference represents dynamic stream data associated with an asset. The references must either be an SDS stream. Asset-centric data routes provide direct access to dynamic data for a given asset. There are no limitations on the number of references an asset may contain. However, an asset cannot contain multiple references to the same SDS stream. An asset stream reference does not stand alone. It must be specified within an asset object and, therefore, asset references do not have direct API routes. 
@@ -80,9 +78,32 @@ An asset type type reference represents dynamic stream data associated with an a
 
 ## Asset Type Concordance
 
-If an asset type `Id` is specified for an asset, then the following is true:
-- The stream references name of an asset is set to null if the stream reference `Id` matches the stream reference `Id` of the asset type.
-- If the asset and asset type have a metadata value with the same `Id`, then the `Name` property on the asset is set to null. 
+If the asset you are trying to create references an asset type (through the `AssetTypeId` property) and if the corresponding asset type has a metadata value with the same `Id`, then the name and SDS type code of the metadata value on the asset must be null. If the asset type does not have metadata value with a corresponding `Id`, the name and SDS type code on the asset cannot be null.
+
+To support flexibility on creation, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is created from an asset type.
+
+| Asset values                                      | Metadata values on the asset type                            | How references are resolved                      |
+| ------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------ |
+| `Id` = "Metadata Id"​ and `Name` = Not specified   | `Id` matches the asset type's `Metadata` `Id`                | Uses the matching asset type's `Metadata` `Name` |
+|                                                   | `Id` does not match any asset type `Metadata` `Id`           | `Id` is used as `Name`                           |
+| `Id` = Not specified​ and `Name` = "Metadata Name" | `Name` matches asset type `Metadata` `Name`                  | Use matching asset type `Metadata` `Id`          |
+|                                                   | `Name` does not match any asset type `Metadata` `Name`       | GUID is generated for`Id`                        |
+| `Id` = "Metadata Id"​ and `Name` = "Metadata Name" | Either `Id` or `Name`, but not both, match asset type `Metadata` `Id` or `Name` | Error.                                           |
+
+
+To support flexibility, on update, the following rules and behaviors are executed for metadata and stream references on a given asset when that asset is from an asset type.
+
+| Asset values                                      | Metadata values on the asset type                            | How references are resolved                                  |
+| ------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `Id` = "Metadata Id"​ and `Name` = Not specified   | `Id` matches the asset type's `Metadata` `Id`                | Uses the matching asset type `Metadata` `Name`               |
+|                                                   | `Id` matches the existing asset type's `Metadata` `Id`       | Uses the existing matching `Metadata` `Name`                 |
+|                                                   | `Id` does not match any asset type `Metadata` `Id`           | `Id` is used as `Name`                                       |
+| `Id` = Not specified​ and `Name` = "Metadata Name" | `Name` matches the asset type's `Metadata` `Name`            | Uses the matching asset type `Metadata` `Id`                 |
+|                                                   | `Name` matches the existing asset type's `Metadata` `Name`   | Uses the matching existing asset type `Metadata` `Id`        |
+|                                                   | `Name` does not match any asset type `Metadata` `Name`       | GUID is generated for `Id`                                   |
+| `Id` = "Metadata Id"​ and `Name` = "Metadata Name" | Only `Id` or `Name` (not both) matches asset type `Metadata`  `Id` or `Name` | Error.                                                       |
+|                                                   | Only `Id` or `Name` (not both) matches existing asset type `Metadata`  `Id` or `Name` | The non-matching `Id` or `Name` of the existing `Metadata` is updated |
+
 
 # Asset and Asset Type ETag
 

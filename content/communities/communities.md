@@ -35,7 +35,7 @@ Communities allow you to easily and securely share operational data with busines
 
 ### Connect with business partners
 
-Establish a community by [creating it](add-community) and then [inviting other tenants](xref:managecommunity) owned by business partners. Each invitation is a three-way handshake. A [tenant administrator](xref:communityroles#tenant-administrator) from the establishing tenant, also known as the [community owner](xref:communityroles#community-owner), sends an email invitation to one or more OCS tenant administrators. The business partner then accepts the invitation before the inviting tenant administrator confirms it. After confirmation, users from the newly confirmed tenant can view data from other community tenants or share data streams from their own tenant with the community.
+Establish a community by [creating it](xref:add-community) and then [inviting other tenants](xref:managecommunity) owned by business partners. Each invitation is a three-way handshake. A [tenant administrator](xref:communityroles#tenant-administrator) from the establishing tenant, also known as the [community owner](xref:communityroles#community-owner), sends an email invitation to one or more OCS tenant administrators. The business partner then accepts the invitation before the inviting tenant administrator confirms it. After confirmation, users from the newly confirmed tenant can view data from other community tenants or share data streams from their own tenant with the community.
 
 ### Scalable
 

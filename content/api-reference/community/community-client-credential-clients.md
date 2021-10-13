@@ -1,7 +1,7 @@
 ---
 uid: community-client-credential-clients
----
 
+---
 
 # Client Credential Clients
 APIs for getting, adding, or removing client credential clients from communities
@@ -12,13 +12,14 @@ APIs for getting, adding, or removing client credential clients from communities
 
 Gets clients associated with a specific tenant and community
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/ClientCredentialClients
 ?query={query}&skip={skip}&count={count}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string communityId`
@@ -28,7 +29,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/ClientCredentia
 <br/>Parameter representing the zero-based offset of the first object to retrieve. If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -39,8 +40,9 @@ GET /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/ClientCredentia
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
-#### Example response body
-> 200 Response
+<h4>Example response body</h4>
+
+> 200 Response ([ClientCredentialClient](#schemaclientcredentialclient)[])
 
 ```json
 [
@@ -59,7 +61,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/ClientCredentia
 ]
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -74,20 +76,19 @@ Allowed for these roles:
 
 Gets a count of client credential clients for a community
 
-### Request
+<h3>Request</h3>
+
 ```text 
 HEAD /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/ClientCredentialClients
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string communityId`
 <br/>Community identifier<br/><br/>
 
-
-
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -98,21 +99,7 @@ HEAD /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/ClientCredenti
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
-#### Example response body
-> 400 Response
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "property1": null,
-  "property2": null
-}
-```
-
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -127,20 +114,20 @@ Allowed for these roles:
 
 Adds a client credential client to a community, providing a list of community roles to be assigned to the client
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/ClientCredentialClients/{clientId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string communityId`
 <br/>Community identifier<br/><br/>`string clientId`
 <br/>Client credential client identifier<br/><br/>
 
-
-### Request Body
+<h4>Request Body</h4>
 
 Community role identifiers to be assigned to the client<br/>
 
@@ -150,7 +137,7 @@ Community role identifiers to be assigned to the client<br/>
 ]
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -162,8 +149,9 @@ Community role identifiers to be assigned to the client<br/>
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
-#### Example response body
-> 200 Response
+<h4>Example response body</h4>
+
+> 200 Response ([ClientCredentialClient](#schemaclientcredentialclient))
 
 ```json
 {
@@ -180,7 +168,7 @@ Community role identifiers to be assigned to the client<br/>
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -196,20 +184,20 @@ Allowed for these roles:
 
 Removes a client credential client from a community
 
-### Request
+<h3>Request</h3>
+
 ```text 
 DELETE /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/ClientCredentialClients/{clientId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string communityId`
 <br/>Community identifier<br/><br/>`string clientId`
 <br/>Client credential client identifier<br/><br/>
 
-
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -220,21 +208,7 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/ClientCreden
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
-#### Example response body
-> 400 Response
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "property1": null,
-  "property2": null
-}
-```
-
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -254,7 +228,7 @@ Allowed for these roles:
 
 Object returned when there is an error
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -262,6 +236,7 @@ Object returned when there is an error
 |Error|string|true|false|Error description|
 |Reason|string|true|false|Reason for the error|
 |Resolution|string|true|false|Resolution for the error|
+|EventId|string|true|false|EventId for the error|
 
 ```json
 {
@@ -269,6 +244,7 @@ Object returned when there is an error
   "Error": "string",
   "Reason": "string",
   "Resolution": "string",
+  "EventId": "string",
   "property1": null,
   "property2": null
 }
@@ -284,18 +260,18 @@ Object returned when there is an error
 <a id="tocSclientcredentialclient"></a>
 <a id="tocsclientcredentialclient"></a>
 
-Object to get or update a ClientCredentialClient
+Object to return or update a ClientCredentialClient
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|Client unique identifier for this client. This unique identifier should be a GUID.|
+|Id|string|false|true|Client identifier for this client. This identifier should be a GUID.|
 |Name|string|false|true|Name of client|
 |Enabled|boolean|false|true|Whether client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.|
 |AccessTokenLifetime|int32|false|true|Lifetime of access token issued for this client after authentication. Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.|
 |Tags|string[]|false|true|Tags for OSIsoft internal use only|
-|RoleIds|string[]|false|true|List of roles to be assigned to this client. Member role is always required. For security reasons we advise against assigning administrator role to a client.|
+|RoleIds|string[]|false|true|List of roles to be assigned to this client. Member role is always required. For security reasons, we advise against assigning administrator role to a client.|
 
 ```json
 {

@@ -14,29 +14,28 @@ Create, read, update, and delete of an asset status mapping is done through the 
 
 The following table lists the most common fields in a status mapping.
 
-| Property       | Type       | Required? | Searchable? | Description                                                  |
-| -------------- | ---------- | --------- | ----------- | ------------------------------------------------------------ |
-| DefinitionType | String     | Required  | No          | At this moment, only the value "StreamPropertyMapping" is supported. |
-| Definition     | Definition | Required  | No          | Status definition.                                           |
+| Property       | Type       | Required? | Description                                                  |
+| -------------- | ---------- | --------- | ------------------------------------------------------------ |
+| DefinitionType | String     | Required  | At this moment, only the value "StreamPropertyMapping" is supported. |
+| Definition     | Definition | Required  | Status definition.                                           |
 
 ## Status definition table
 
 The following table lists the most common fields in a status mapping.
 
-| Property            | Type                     | Required? | Searchable? | Description                                                  |
-| ------------------- | ------------------------ | --------- | ----------- | ------------------------------------------------------------ |
-| StreamReferenceId   | String                   | Required  | No          | `Id` for the asset's StreamReferences property. The stream reference must exist before the status mapping can be created. |
-| StreamPropertyId    | String                   | Required  | No          | SDS stream property that status uses for calculations. It must be present on the StreamId property on the asset StreamReference.  The SDS stream property must be a numeric enumeration, character, or string type. |
-| ValueStatusMappings | List<ValueStatusMapping> | Required  | No          | The value status mapping maps values to a given status. See [Value status mapping properties table](xref:AssetStatus#value-status-mapping-properties-table) |
-## Value status mapping properties table
+| Property            | Type                     | Required? | Description                                                  |
+| ------------------- | ------------------------ | --------- | ------------------------------------------------------------ |
+| StreamReferenceId   | String                   | Required  | `Id` for the asset's StreamReferences property. The stream reference must exist before the status mapping can be created. |
+| StreamPropertyId    | String                   | Required  | SDS stream property that status uses for calculations. It must be present on the StreamId property on the asset StreamReference.  The SDS stream property must be a numeric enumeration, character, or string type. |
+| ValueStatusMappings | List<ValueStatusMapping> | Required  | The value status mapping maps values to a given status. See [Value status mapping properties table](xref:AssetStatus#value-status-mapping-properties-table) |
 
 The following table lists the most common fields in a value status mapping. A single value status mapping corresponds to a single status. If you want additional statuses in your asset status mapping, add additional elements in the `ValueStatusMappings` list.
 
-| Property    | Type               | Required? | Searchable? | Description                                                  |
-| ----------- | ------------------ | --------- | ----------- | ------------------------------------------------------------ |
-| Value       | Object             | Required  | No          | Value of the value status mapping. The values in a status mapping should be unique. |
-| Status      | Status Enumeration | Required  | No          | Description of the value status mapping.                     |
-| DisplayName | String             | Optional  | No          | Display name for this value status mapping.                  |
+| Property    | Type               | Required? | Description                                                  |
+| ----------- | ------------------ | --------- | ------------------------------------------------------------ |
+| Value       | Object             | Required  | The value that must be matched for the status enumeration to be set. If none of the values match, the status is set to Unknown. Since value ranges are not supported, floating point values are not very amendable to mappings at this point. |
+| Status      | Status Enumeration | Required  | Status enumeration can be Unknown, Good, Warning, or Bad.    |
+| DisplayName | String             | Optional  | Display name for this value status mapping.                  |
 
 ## Status enumerations
 
@@ -61,12 +60,12 @@ The following is an example of a status property which is on the asset or asset 
       {
         "Value": 3,
         "Status": "Bad",
-        "DisplayName": "Bad"
+        "DisplayName": "AssetIsInBadState"
       },
       {
         "Value": 1,
         "Status": "Good",
-        "DisplayName": "Good"
+        "DisplayName": "AssetIsInGoodState"
       }
     ]
   }
@@ -132,7 +131,8 @@ Content-Type: application/json
 	"Status": 1,
 	"Value": "85",
     "DisplayName": "TemperatureSensorBuild1InF",
-    "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z"
+    "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z",
+    "Index": "2020-05-04T16:55:28.00001Z"
 }
 ```
 
@@ -141,6 +141,8 @@ Content-Type: application/json
 ## `Asset Status Range Summary`
 
 Returns the status summary of an asset.
+
+Statistics are computed using 'StepwiseContinuousLeading' for interpolation and ‘Forward’ for extrapolation with regard to the status stream property, without regard to the actual interpolation or extrapolation modes configured in SDS for that property.
 
 ### Request
 
@@ -247,9 +249,6 @@ Tenant identifier
 `string namespaceId`  
 Namespace identifier
 
-`string assetId`  
-Asset identifier
-
 #### Example POST body
 
 Lists the asset identifiers whose status you are interested in.
@@ -284,7 +283,8 @@ Content-Type: application/json
          "Status": 1, 
          "Value": "85",
          "DisplayName": "TemperatureSensorBuild1InF",
-         "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z"
+         "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z",
+         "Index": "2020-05-04T16:55:28.00001Z"
       },
       {
          "AssetId": "AssetId-2",
@@ -292,6 +292,7 @@ Content-Type: application/json
          "Value": "185",
          "DisplayName": "DeviceMeasurement",
          "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z"
+         "Index": "2020-05-04T16:55:29.00001Z"
       },
       {
          "AssetId": "AssetId-3",
@@ -299,6 +300,7 @@ Content-Type: application/json
          "Value": "75",
          "DisplayName": "TemperatureSensorBuild5450InF",
          "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z"
+         "Index": "2020-05-04T16:55:30.00001Z"
       }
    ]
 }

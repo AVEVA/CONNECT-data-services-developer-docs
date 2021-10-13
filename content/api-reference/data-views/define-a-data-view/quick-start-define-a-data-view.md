@@ -35,7 +35,7 @@ Within each group, a field set may be associated with multiple data items. It is
 The field used for indexing. If not specified, a default value is applied. If specified, a label is required. Field source and keys are not applicable for index field.
 
 ### Define index type and default range
-The data view is targeted to include Streams and Assets of a common index property type. Often in OCS, data is indexed by its timestamp property (of type "DateTime"). In certain cases, data may instead be indexed by a numeric value such as depth. Data views supports all index type codes allowed by the Sequential Data Store with the exception of TimeSpan. If not specified, the default `.IndexTypeCode` is "DateTime".
+The data view is targeted to include Streams and Assets of a common index property type. Often in OCS, data is indexed by its timestamp property (of type "DateTime"). In certain cases, data may instead be indexed by a numeric value such as depth. Data views supports all index type codes allowed by the Sequential Data Store with the exception of TimeSpan. If not specified, the default `.IndexTypeCode` is "DateTime". Compound index types are not supported.
 
 Default values may be defined for the start index, end index, and/or interval used when data view data is queried.
 

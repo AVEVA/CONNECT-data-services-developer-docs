@@ -59,7 +59,7 @@ Communities allow tenants to [securely share operational data](xref:ShareStreams
 
 Any tenant invited to a community must accept the community invitation before they can share data with other tenants. After joining a community, each tenant must explicitly share any data stream that they want to share with the community. Each tenant shares individual data streams with the community&mdash;not their entire operational data set. 
 
-Each tenant in the community can [stop sharing their data streams](xref:ShareStreams#unshare-streams-from-community-details) at any time. When you stop sharing a data stream, the other tenants within the community can no longer view it, nor its history, as when you share data streams, each community member views them from source&mdash;stream data is not copied among tenants. 
+Each tenant in the community can [stop sharing their data streams](xref:ShareStreams#unshare-streams-from-community-details) at any time. When you stop sharing a data stream, the other tenants within the community can no longer view it, nor its history, as when you share data streams, each community member views them from the source&mdash;stream data is not copied among tenants. 
 
 Because tenants can share their data natively within OCS, IT departments no longer have to:
 

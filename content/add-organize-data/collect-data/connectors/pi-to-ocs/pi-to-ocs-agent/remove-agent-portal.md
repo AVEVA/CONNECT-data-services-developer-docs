@@ -4,7 +4,7 @@ uid: remove-agent-portal
 
 ## Remove an agent
 
-You remove a PI to OCS Agent by first uninstalling it from the host machine and then the OCS portal. There are two parts to removing an agent:
+You remove a PI to OCS Agent by first uninstalling it from the host machine and then the portal. There are two parts to removing an agent:
 
 * Step 1: Uninstall the agent from the host machine
 
@@ -34,9 +34,9 @@ To remove the PI to OCS Agent application from a host machine, you uninstall it 
 
    **Result:** The agent's associated client and connection information is also removed from OCS during the uninstall process.
 
-   **Note:** After uninstalling the agent from the host machine, you still need to remove the agent from the OCS portal. 
+   **Note:** After uninstalling the agent from the host machine, you still need to remove the agent from the portal. 
 
-1. Select the user account you wish to use to log on to OCS, then close the browser window.
+1. Select the user account you wish to use to log on, then close the browser window.
 
    **Result:** You are returned to the **PI to OCS Agent** window.
 
@@ -44,9 +44,9 @@ To remove the PI to OCS Agent application from a host machine, you uninstall it 
 
    **Result:** The PI to OCS Agent application is uninstalled on the host machine.
 
-## Step 2: Remove the PI to OCS Agent on the OCS portal
+## Step 2: Remove the PI to OCS Agent on the portal
 
-After uninstalling an agent from a host machine, you also need to remove it from the OCS portal.
+After uninstalling an agent from a host machine, you also need to remove it from the portal.
 
 1. In the left pane, select **Data Collection** > **PI to OCS Agents**.
 
@@ -58,4 +58,4 @@ After uninstalling an agent from a host machine, you also need to remove it from
 
 1. Click **Remove**.
 
-   **Result:** The agent is removed in OCS.
+   **Result:** The agent is removed in the portal.

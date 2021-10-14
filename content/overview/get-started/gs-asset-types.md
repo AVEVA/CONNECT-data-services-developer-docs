@@ -75,7 +75,8 @@ You can take an existing asset and use it as the basis for creating an asset typ
 1. Click the **Change Namespace** button in the upper-right toolbar, then select **MyOCS**.
 
 1. Select the **MyOCS.Asset** asset.
-    **Note:** In the upper-right corner of the right pane, **Asset Type** is set to *< None >* indicating that this asset is not based on an asset type. 
+
+   **Note:** In the upper-right corner of the right pane, **Asset Type** is set to *< None >* indicating that this asset is not based on an asset type. 
 
 1. Click the ![More Options button](images/more-options.png) icon, then click **Save as Asset Type**.
 

@@ -40,7 +40,7 @@ After you have created a type, it cannot be modified.
    
    - `Type` &ndash;  SDS type of the property
    
-     **Note:** You can filter property types by entering text in the **Filter Types** box. You can also use the **System** or **Tenant** controls to include or exclude these types. *Tenant* includes any types that were previously created in the selected namespace for a particular tenant. *System* includes SDS types that are provided and defined by OCS such as *string*, *integer*, *double*, *datetime*, and *boolean*.
+     **Note:** You can filter on the property types by entering text in the **Filter Types** box. You can also use the **System** or **Tenant** controls to include or exclude these types. *Tenant* includes any types that were previously created in the selected namespace for a particular tenant. *System* includes SDS types that are provided and defined such as *string*, *integer*, *double*, *datetime*, and *boolean*.
    
    - `UOM` &ndash; (Optional) Select a unit of measure from the list. 
    

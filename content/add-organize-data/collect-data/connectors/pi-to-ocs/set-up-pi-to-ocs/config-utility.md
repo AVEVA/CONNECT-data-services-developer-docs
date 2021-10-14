@@ -22,7 +22,7 @@ You use the PI to OCS Agent Configuration Utility to set up and configure AF ser
 
 You can open the PI to OCS Agent Configuration Utility to change server connections and other settings after initial setup. 
 
-**Note:** If you're not the original user who installed the agent, the new user account will need to be authenticated in OCS before access is granted to the utility. 
+**Note:** If you are not the original user who installed the agent, authenticatication with the new user account is required before access is granted to the utility. 
 
 1. Click the Windows start button.
 
@@ -191,7 +191,9 @@ PI mappings enable access to data stored on a PI Data Archive by service account
 
 ## Set data privacy and add an agent description
 
-You can set data privacy settings and assign a descriptive name to an agent. Data privacy controls if a host name of a PI Data Archive is published and displayed in OSIsoft Cloud Services (OCS). By default, OCS does not publish host names.  If you opt to have a host name published, it appears under the **Host Name** column on the `PI to OCS Agents` window. 
+You can set data privacy settings and assign a descriptive name to an agent. Data privacy controls if a host name of a PI Data Archive is published and displayed in OSIsoft Cloud Services (OCS). By default, OCS does not publish host names. If you opt to have a host name published, it appears in the portal on the `PI to OCS Agents` window as shown here. 
+
+![Agent description and hostname displayed in PI to OCS Agents window](../../images/pi-to-ocs-agents-hostname.png)
 
 This description appears where the agent is referenced and allows you to search by agent description.
 

@@ -86,7 +86,7 @@ In this step, you define mappings.
 
    This option allows you to map the part of the stream name associated with the **Site** key to another value. You may either manually enter the mappings or generate the mappings from existing streams. 
   
-    **Note:** If OCS encounters a value that does not match any of the mappings, it does not create metadata for that stream. This can be useful in the instance where there are two different metadata rules that have a similar naming pattern, for example:
+    **Note:** If there is a value that does not match any of the mappings, it does not create metadata for that stream. This can be useful in the instance where there are two different metadata rules that have a similar naming pattern, for example:
 
    - MyOCS.{Region}.{Site}.*
 
@@ -96,12 +96,14 @@ In this step, you define mappings.
 
 1. To generate mappings from existing streams, click **Generate Mappings**.
 
-   OCS searches and finds any existing streams that match the pattern (the **MyOCS.{Region}.{Site}.*** pattern). For each stream that matches the pattern, it lists that part of the stream name, and in this example, it lists the part that corresponds to the **Site** key.
+   Any existing streams that match the pattern are found (in this example, the **MyOCS.{Region}.{Site}.*** pattern). For each stream that matches the pattern, it lists that part of the stream name, in this example, it lists the part that corresponds to the **Site** key.
    
 1. In the **Map To** text box, enter **San Leandro**. 
 
-1. You can create additional mappings for streams which are not yet stored in OCS but which you anticipate in the future. Click **Add Mappings** to add another mapping.
+1. You can create additional mappings for streams which are not yet stored in OCS, but will be created later. Click **Add Mappings** to add another mapping.
 
+   OCS searches and finds any existing streams that match the pattern (the **MyOCS.{Region}.{Site}.*** pattern). For each stream that matches the pattern, it lists that part of the stream name, and in this example, it lists the part that corresponds to the **Site** key.
+   
 1. In the **Map From** text box, enter **PHL**. 
 
 1. In the **Map To** text box, enter **Philadelphia**.
@@ -123,10 +125,10 @@ Apply the metadata rule to the streams and review the results.
 
    <!-- I'd like to include a screen capture of this, but I'm not able to get to the preview page. I get an error: Failed to Load Preview There was an error loading the preview from the server This is due to a bug 216457.-->
 
-2. (Optional) Click **Configure Stream Access** to determine which roles the metadata rule uses to access the streams. 
+1. (Optional) Click **Configure Stream Access** to determine which roles the metadata rule uses to access the streams. 
 
    **Note:** This can be used to limit the streams to which the metadata rule is applied.
 
-3. When you are done, click **Save & Execute**.
+1. When you are done, click **Save & Execute**.
 
    The stream metadata is created for the applicable streams. Once this is completed, examine the streams and verify that the metadata has been created. 

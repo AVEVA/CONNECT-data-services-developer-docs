@@ -92,7 +92,7 @@ The following steps explore information about the type you just created.
 
 1. Click the ![More Options button](images/more-options.png) icon, then click **Get Type Streams**.
 
-   This takes you to the **Streams** list and, by default, OCS uses the typeId:MyOCS.PumpState query to filter for any streams with the MyOCS.PumpState type. The list is currently empty, because streams have not yet been created with this type.
+   This takes you to the **Streams** list and, by default, the typeId:MyOCS.PumpState query is used to filter any streams with the MyOCS.PumpState type. The list is currently empty, because streams have not yet been created with this type.
 
 ## Next step
 

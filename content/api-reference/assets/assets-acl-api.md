@@ -6,7 +6,7 @@ uid: AssetOrAssetTypeAccessControlAPI
 The access control API is used to secure assets by setting their ownership and permissions. For more information about OCS access control, see [Role-based access control][xref:accessControl].
 
 ## `Get Asset or AssetType Access Control List ` 
-Returns the default `AccessControlList` for the assets collection and asset type collection.
+Returns the default `AccessControlList` for the assets collection and asset type collection. Collection access is only checked if a given user does not have access to any assets.
 
 ### Request 
 
@@ -74,7 +74,7 @@ HTTP 200 OK
 
 ## `Update Assets or AssetType Access Control List` 
 
-Updates the default `AccessControlList` for the assets or asset type collections. 
+Updates the default `AccessControlList` for the assets or asset type collections.
 
 ### Request 
 

@@ -14,7 +14,7 @@ Use trace data in a trend to monitor assets, anticipate problems, and proactivel
 
    **Tips:**
 
-   - Specify the stream name or description in the **Search** box to find the OCS streams you are interested in.
+   - Specify the stream name or description in the **Search** box to find the streams you are interested in.
 
    - After you have finished adding the traces, click the **x** in the `Add Traces` pane to hide the pane and maximize the available area to display your trend.
 
@@ -40,13 +40,19 @@ Use trace data in a trend to monitor assets, anticipate problems, and proactivel
 
     ![Maximum and minimum cursors](images/Max_min_cursors.png)
 
-1. Click the plus sign (+) above the trace to lock the cursors in place.<br>
-    The *+* turns into an *x*.  To unlock the cursor, click the *x*.
-        <br>
-        <br>
-    **Note:** When two cursors are locked, the legend table displays summary calculations for the values between the two cursors, known as the Cursor view.
+1. Click the plus sign (+) above the trace to lock the cursors in place.
+    
+    The **+** turns into an **x**.  To unlock the cursor, click the **x**.
 
+    **Note:** When two cursors are locked, the Legend table displays summary calculations for the values between the two cursors, known as the Cursor view.
+
+    ![Cursor_view](images/Cursor_view.png)
+
+<<<<<<< HEAD
 1. Click the Share Trending Session ![share trend session icon](images/share-icon.png) icon in the menu bar to copy the URL of the workspace.  <br>
+=======
+1. Click the share icon ![share trend session icon](images/share-icon.png) in the menu bar to copy the URL of the workspace. 
+>>>>>>> cc8d6f8ac5b965065a705750da3732ed9515037e
 
     You can share this URL with colleagues to give them the same view of the trend which they can use to troubleshoot problems.
 

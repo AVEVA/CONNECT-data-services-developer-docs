@@ -6,7 +6,7 @@
    - topicUid: WhatOCSdoes
 - name: Get started
   href: overview/get-started/toc.yml
-  topicHref: overview/gs-getting-started-intro.md
+  topicHref: overview/get-started/gs-getting-started-intro.md
 - name: Set up the environment
   href: set-up/toc.yml
   topicHref: set-up/set-up-overview.md

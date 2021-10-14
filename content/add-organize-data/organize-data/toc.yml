@@ -1,15 +1,12 @@
-- name: Assets
-  topicHref: asset-concept.md
+- topicUid: ccAssets
   items:
    - topicUid: CreateConfigureAsset
    - topicUid: CreateAssetFromAssetType
-- name: Asset types
-  topicHref: asset-type-overview.md
+- topicUid: AssetTypes
   items:
     - topicUid: CreateAssetTypeWithEditor
     - topicUid: ConvertAssetToAssetType
-- name: Asset rules (Preview)
-  topicHref: asset-rules.md
+- topicUid: AssetRules
   items:
     - topicUid: CreateAssetRules
     - topicUid: TokensGenerateAssets

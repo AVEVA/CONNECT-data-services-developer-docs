@@ -52,7 +52,7 @@ An asset or asset type metadata is static information associated with a given as
 
 ## Asset stream reference properties
 
-An asset stream reference represents dynamic stream data associated with an asset. The references must either be an SDS stream. Asset-centric data routes provide direct access to dynamic data for a given asset. There are no limitations on the number of references an asset may contain. However, an asset cannot contain multiple references to the same SDS stream. An asset stream reference does not stand alone. It must be specified within an asset object and, therefore, asset references do not have direct API routes. 
+An asset stream reference represents dynamic stream data associated with an asset. The references must be an SDS stream. Asset-centric data routes provide direct access to dynamic data for a given asset. There are no limitations on the number of references an asset may contain. However, an asset cannot contain multiple references to the same SDS stream. An asset stream reference does not stand alone. It must be specified within an asset object; therefore, asset references do not have direct API routes. 
 
 | Property      | Type   | Required? | Description                                                  |
 | ------------- | ------ | --------- | ------------------------------------------------------------ |

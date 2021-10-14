@@ -84,7 +84,7 @@ After creating the namespace, the next step is to add one or more types. For mor
 
 The following steps explore information about the type you just created.
 
-1. Click the checkbox to select the `MyOCS.PumpState` type in the list. Click the ![More Options button](images/more-options.png) icon, then click **Manage Permissions**.
+1. Click the checkbox to select the **MyOCS.PumpState** type in the list. Click the ![More Options button](images/more-options.png) icon, then click **Manage Permissions**.
 
     This opens the `Manage Permissions for MyOCS.PumpState` window where you can override the default permissions and set permissions for the specific type. You must be assigned the Tenant Administrator role to configure the type permissions.
 

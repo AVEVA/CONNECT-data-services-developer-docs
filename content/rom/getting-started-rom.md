@@ -18,7 +18,7 @@ The following procedure describes how to use the OCS Portal to monitor your asse
 
     **Tip:** Click on the ![](images/AssetEditor_icons.png) icons in the toolbar to toggle between the card and table views of the assets.
  
-3. Scan through the assets and identify any assets with a problematic status.
+1. Scan through the assets and identify any assets with a problematic status.
 
     **Tip:** Use the Search box to filter the list of assets displayed.
 

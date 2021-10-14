@@ -18,19 +18,19 @@ Follow the procedure to invite a user to your tenant.
 
 1. In the left pane, select **Security** > **Users**.
 
-2. In the toolbar, click **Add User**.
+1. In the toolbar, click **Add User**.
 
-3. If multiple identity providers are enabled in your tenant, you are prompted to select an identity provider. Choose the appropriate identity provider for the user you are adding. After you select an option, you can later switch to a different option.
+1. If multiple identity providers are enabled in your tenant, you are prompted to select an identity provider. Choose the appropriate identity provider for the user you are adding. After you select an option, you can later switch to a different option.
 
-4. In the **User Name** text box, enter a first and last name for the user.  
+1. In the **User Name** text box, enter a first and last name for the user.  
 
-5. Enter the contact email. The invitation to your OCS tenant is sent to the user at this address. Ensure that it is correct so that the invitation is not sent to an unintended recipient.
+1. Enter the contact email. The invitation to your OCS tenant is sent to the user at this address. Ensure that it is correct so that the invitation is not sent to an unintended recipient.
 
-6. (Optional) Select the **MyOCS.Role** role for the user.
+1. (Optional) Select the **MyOCS.Role** role for the user.
 
     By default, the user is assigned the Tenant Member role which cannot be removed. Roles can be modified after the user is invited.
 
-7. Once the information has been entered, click **Add**. 
+1. Once the information has been entered, click **Add**. 
 
     OCS sends the invitation to the email address specified in the **Email** field. The `Status` column lists the new user as `Pending` until the invitation is accepted. If the invitation expires, the status changes to `Expired`. Once expired, the invitation can be resent.
 

@@ -31,7 +31,7 @@ In this situation, an asset type can be used to create multiple similar assets. 
 | Status | Status | No        | Asset and asset type status configuration | Yes | Yes            |
 
 ## Asset and asset type name and id
-The asset and asset type resource has name and id properties. The id property cannot be changed and can be count on to remain constant. All asset and asset type API calls depend on the id. The purpose of the name is be a user-friendly way of displaying a given asset or asset type. This can be changed freely without effecting data egress out of assets.
+The asset and asset type resource has name and Id properties. The Id property cannot be changed; it remains constant. All asset and asset type API calls depend on the Id. The purpose of the name is be a user-friendly way of displaying a given asset or asset type. This can be changed freely without effecting data egress from assets.
 
 ## Asset and asset type metadata properties
 

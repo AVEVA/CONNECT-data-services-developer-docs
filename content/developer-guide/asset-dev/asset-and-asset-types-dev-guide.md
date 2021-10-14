@@ -35,7 +35,7 @@ The asset and asset type resource has name and id properties. The id property ca
 
 ## Asset and asset type metadata properties
 
-An asset or asset type metadata is static information associated with a given asset. A given metadata contains a list of individual metadata values.  There is no limit on the number of metadata values defined by an asset. An asset or asset type metadata does not stand alone. It must be specified within an asset or asset type object and, therefore, there are no direct API routes to asset or asset type metadata.
+An asset or asset type metadata is static information associated with a given asset. A given metadata contains a list of individual metadata values.  There is no limit on the number of metadata values defined by an asset. An asset or asset type metadata does not stand alone. It must be specified within an asset or asset type object; therefore, there are no direct API routes to asset or asset type metadata.
 
 | Property    | Type   | Required? | Description                                                  |
 | ----------- | ------ | --------- | ------------------------------------------------------------ |

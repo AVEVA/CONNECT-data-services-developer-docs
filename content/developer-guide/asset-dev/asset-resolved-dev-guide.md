@@ -20,4 +20,4 @@ An unresolved stream might correspond to a stream reference on the asset that re
 
 If a status is defined on the asset or asset type, this corresponds to the definition type of the status. Currently, the only supported definition type is "StreamPropertyMapping". If a status is not defined, this field will be null.
 
-For a valid "StreamPropertyMapping" on the asset or asset type, the resolved status contains the stream id and stream property id used in the definition. If a status is not defined or if the status cannot be resolved, this field will be null.
+For a valid "StreamPropertyMapping" on the asset or asset type, the resolved status contains the stream Id and stream property Id used in the definition. If a status is not defined or if the status cannot be resolved, this field will be null.

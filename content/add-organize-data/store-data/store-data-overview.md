@@ -8,5 +8,4 @@ Use the Sequential Data Store (SDS) to store, retrieve, and organize any type of
 
 SDS types define the structure of data to be collected. A type is analogous to a template that defines each instance in a stream of data.
 
-SDS stream data contains values or events of the same SDS type and is ordered (indexed) by one or more properties defined by the stream's SDS type, usually a timestamp.
-<!-- Angela Flores 6/10/21 The sentence above still has multiple instances of passive voice and is very difficult to understand. -->
+SDS stream data contains values or events of the same SDS type and is ordered (indexed) by one or more properties defined by the stream's SDS type, usually a timestamp. <!-- Angela Flores 6/10/21 The sentence above still has multiple instances of passive voice and is very difficult to understand. -->

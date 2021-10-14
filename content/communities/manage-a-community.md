@@ -17,6 +17,7 @@ Invite business partners to join a community so they can share data.
 Two different users must perform the following procedure to invite and add a tenant to a community:
 
 - One user, the "inviter," invites another tenant. To be an inviter, you must be a [Community Administrator](xref:communityroles#community-administrator).
+
 - Another user, the "invitee," accepts the invitation on behalf of their tenant. To be an invitee, you must be a [Tenant Administrator](xref:communityroles#tenant-administrator) of a separate tenant that does not already belong to the community.
 
 A. **Inviter:** Perform the following steps to issue an invitation:

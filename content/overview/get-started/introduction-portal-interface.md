@@ -20,11 +20,17 @@ Expanding the left pane opens a menu of OCS features. This pane is always availa
 OCS includes the following features:
 
 - **Data Management**: Provides tools for setting up basic capabilities of OCS, including tenants, the Sequential Data Store (SDS), and metadata rules for data streams.
+
 - **Data Collection**: Provides the ability to bring data from multiple sources and systems into a OCS namespace.
+
 - **Visualization**: Allows you to view data trends and use assets to set up digital twins of real-world physical entities. <!--Angela Flores 6/23/21 - this is the only place in the documentation that uses the phrase "digital twins of real-world physical entities". What feature is that trying to describe? The only thing in the Visualization portion of the documentation is Trend. -->
+
 - **Analytics**: Provides tools for shaping and querying large datasets.
+
 - **Security**: Allows you to specify identity providers for authentication and add groups, users, roles, and clients to your tenant.
+
 - **Developer Tools**: Provides code samples, an API console, and an editor for the OSIsoft Message Format (OMF).
+
 - **Support**: Provides access to documentation, logs, support links, the OCS blog, and other useful information.
 
 ## Feature pages
@@ -36,9 +42,13 @@ Clicking a menu item takes you to the related feature page.
 Most pages consist of two panes:
 
 - The left pane is where you perform the tasks associated with the OCS resource. For example, the left pane is where you add and edit the OCS resource or manage its permissions.
+
 - The right pane has one or more tabs:
-  - The Details tab contains additional information about the selected resource.
-  - The Information tab appears in some windows and provides documentation about the current feature and how to perform relevant tasks.
+
+  - The **Details** tab contains additional information about the selected resource.
+
+  - The **Information** tab appears in some windows and provides documentation about the current feature and how to perform relevant tasks.
+
   - Some resources have additional panes for other configuration tasks.
 
 ## Portal toolbar

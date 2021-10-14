@@ -1,6 +1,7 @@
 ---
 uid: gpRoles
 ---
+
 # Add a role
 
 Roles are used to manage access to assets, resources, and services in OSIsoft Cloud Services (OCS). See the following topics for more information about roles:

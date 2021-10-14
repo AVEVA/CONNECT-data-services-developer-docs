@@ -7,7 +7,9 @@ uid: gsTypes
 After creating the namespace, the next step is to add one or more types. For more information about types, see the following topics:
 
 - [Types](xref:ccTypes)
+
 - [PI Server counterpart](xref:ccTypes#types-pi-server)
+
 - [Types best practices](xref:bpTypes)
 
 ## Procedure
@@ -30,11 +32,11 @@ After creating the namespace, the next step is to add one or more types. For mor
 
 1. In the `Add Type` window, enter the values for these fields:
 
-   - `Id` &ndash; **MyOCS.PumpState**
+   - **Id** &ndash; *MyOCS.PumpState*
 
-   - `Name` &ndash; **MyOCS.PumpState**
+   - **Name** &ndash; *MyOCS.PumpState*
 
-   - `Description` &ndash; **SDS Type used by My OCS**
+   - **Description** &ndash; *SDS Type used by My OCS*
 
     **Note:** You can use an existing SDS type as the starting point for the new type by selecting an existing SDS type from the **Base Type** list. When you add a base type, its properties populate the **Properties** list. You can then add other properties to the type.
 
@@ -42,37 +44,43 @@ After creating the namespace, the next step is to add one or more types. For mor
 
 1. Complete the following fields for the first property:
 
-   - `Key` &ndash; Select the checkbox.
+   - `**Key** &ndash; Select the checkbox.
 
      **Note:** The `Key` field identifies this property as the index. 
 
-   - `Id` &ndash; Enter **Timestamp**.
+   - **Id** &ndash; Enter *Timestamp*.
 
-   - `Type` &ndash; Select **DateTime**. <!-- Do we need to mention that you can filter by System or Tenant types? --> 
+   - **Type** &ndash; Select *DateTime*. <!-- Do we need to mention that you can filter by System or Tenant types? --> 
 
-   - `UOM` &ndash; Leave this blank.
+   - **UOM** &ndash; Leave this blank.
 
 1. Click **Add Property** to add a second property and complete the fields:
-   - `Id` &ndash; Enter **Temperature**.
-   - `Type` &ndash; Select **Double**.
-   - `UOM` &dash; Select **degree Celsius**.
+
+   - **Id** &ndash; Enter *Temperature*.
+
+   - **Type** &ndash; Select *Double*.
+
+   - **UOM** &dash; Select *degree Celsius*.
    
 1. Click **Add Property** to add a third property and complete the fields:
 
-   - `Id` &ndash; Enter **Pressure**.
-   - `Type` &ndash; Select **Double**.
-   - `UOM` &ndash; Select **kilogram per cubic meter**.
+   - **Id** &ndash; Enter *Pressure*.
+
+   - **Type** &ndash; Select *Double*.
+   
+   - **UOM** &ndash; Select *kilogram per cubic meter*.
 
 1. Click  **Add Property** to add a fourth property and complete the fields:
 
-      - `Id` &ndash; Enter **Status**.
-      - `Type` &ndash; Select **String**.
-      - `UOM` &ndash; Leave this blank.
+      - **Id** &ndash; Enter *Status*.
+
+      - **Type** &ndash; Select *String*.
+
+      - **UOM** &ndash; Leave this blank.
 
       **Note:** You can select up to three properties as indexes. Drag and drop the properties in the list to order the index keys. For this exercise, we will only use the Timestamp property as an index.
 
 1. Click **Apply**.
-
 
 The following steps explore information about the type you just created.
 

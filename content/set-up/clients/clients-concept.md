@@ -1,6 +1,7 @@
 ---
 uid: ccClients
 ---
+
 # Clients
 
 Clients allow applications to authenticate against OSIsoft Cloud Services (OCS) from outside the OCS portal. OCS supports the following types of clients, each of which support different types of applications:
@@ -21,7 +22,7 @@ Client-credentials clients are very similar to Microsoft Windows service account
 
 ### <a name="client-credentials-bp"></a>Client-credentials client best practices
 
-Use following best practices with a client credentials client:
+OSIsoft recommends the following best practices with a client credentials client:
 
 - Create a separate client-credentials client for each device or instance of an application that connects to OCS. This ensures that secrets can be discretely managed for individual applications and that you know which applications are connecting to OCS.
 
@@ -41,7 +42,7 @@ Authorization code clients have no direct PI Server equivalent, but they are sim
 
 ### <a name="authorization-code-bp"></a>Authorization code client best practices
 
-The following best practices are recommended when you use an authorization code client:
+OSIsoft recommends the following best practices for an authorization code client:
 
 - Use authorization code clients in web applications or with services where users must be authenticated and it is not possible to store a client secret securely.
 
@@ -57,7 +58,7 @@ Hybrid clients have no direct PI Server equivalent, but they are similar to the 
 
 ### <a name="hybrid-client-bp"></a>Hybrid client best practices
 
-OSIsoft recommends the following best practices when you use a hybrid client:
+OSIsoft recommends the following best practices for a hybrid client:
 
 - Use hybrid clients in web applications or services where users authenticate against OCS through a web browser, but a secure backend that stores the secrets performs the actual authentication.
 

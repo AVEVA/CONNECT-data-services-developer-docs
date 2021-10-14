@@ -2,8 +2,7 @@
 uid: GetStartedROM
 ---
 
-Get started with remote operations monitoring
-=================================================
+# Get started with remote operations monitoring
 
 OSIsoft Cloud Services (OCS) makes it possible to monitor remote assets in real time. The immediate access to data about the status of assets gives you the ability to anticipate problems and proactively perform preventative maintenance.
 
@@ -11,8 +10,7 @@ For example, a fleet manager of a mining truck dealer sells trucks to companies 
 
 The following procedure describes how to use the OCS Portal to monitor your assets and quickly identify problems. The screen captures are taken from the scenario described in the example above.
 
-Procedure
----------
+## Procedure
 
 1. From the left pane, select **Visualization** > **Asset Explorer**. 
    
@@ -20,7 +18,7 @@ Procedure
 
     **Tip:** Click on the ![](images/AssetEditor_icons.png) icons in the toolbar to toggle between the card and table views of the assets.
  
-3. Scan through the assets and identify any assets with a problematic status.
+1. Scan through the assets and identify any assets with a problematic status.
 
     **Tip:** Use the Search box to filter the list of assets displayed.
 
@@ -33,13 +31,13 @@ Procedure
     | ![Alarm icon](images/alarm-icon.png)    | Bad |
     | ![Unknown icon](images/unknown-icon.png)    | Unknown |
 
-1. Click on an asset to open the Asset Details pane.
+1. Click on an asset to open the `Asset Details` pane.
 
-    The Asset Details pane provides metadata and property data on the asset that you can use to determine the cause of any problems. The **Metadata** tab displays metadata associated with the asset.
+    The `Asset Details` pane provides metadata and property data on the asset that you can use to determine the cause of any problems. The **Metadata** tab displays metadata associated with the asset.
 
 1. Click the **Measurements** tab.
 
-    The Asset Details pane displays the following:
+    The `Asset Details` pane displays the following:
     
      - Data associated with the asset. These values are updated in real time.
     
@@ -51,11 +49,11 @@ Procedure
 
     By default, the trend shows the property data for the last 8-hour period. Use the navigational arrows on the Time picker ![Time picker](images/Time-picker.png) to pick another time-range option or specify a custom time range.
 
-1. To delve further into the details of these properties, click the **View full trend** ![View full trend icon](images/View_full_trend_icon.png) icon to see the Trend page.
+1. To see the details of these properties, click the **View full trend** ![View full trend icon](images/View_full_trend_icon.png) icon to see the Trend page.
 
     Note the following:
 
-     - The Trend page shows the properties for the same time range shown in the Details pane of the Asset Editor.
+     - The Trend page shows the properties for the same time range shown in the `Details` pane of the Asset Editor.
 
      - There are three views of the trend:
 

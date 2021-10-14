@@ -100,7 +100,7 @@ In this step, you define mappings.
    
 1. In the **Map To** text box, enter **San Leandro**. 
 
-1. You can create additional mappings for streams which are not yet stored in OCS but which you anticipate in the future. Click **Add Mappings** to add another mapping.
+1.  You can create additional mappings for streams which are not yet stored in OCS but which you anticipate in the future. Click **Add Mappings** to add another mapping.
 
 1. In the **Map From** text box, enter **PHL**. 
 

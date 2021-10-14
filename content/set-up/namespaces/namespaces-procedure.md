@@ -13,13 +13,11 @@ A namespace is a logical unit of organization for data within a tenant. Before a
 
 1. In the left pane, select **Data Management** > **Namespaces**.
 
-1. Click **Add Namespace**.
-
-1. In the **Namespace Id** field, enter the namespace Id, enter a description, and select a region. 
+3. In the **Namespace Id** field, enter the namespace Id, enter a description, and select a region. 
 
    **Note:** Once the namespace is created, the **Namespace Id** and **Region** fields cannot be changed.
 
-1. Click **Add**.
+4. Click **Add**.
 
    **Note:** Click **Display Details** in the menu bar to see the following information about the namespace:
 

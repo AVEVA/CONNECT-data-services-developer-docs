@@ -67,7 +67,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 
 <a id="opIdAssetStatusData_Get Asset Status Range Summary Data"></a>
 
-Returns status summary of an asset. Statistics are computed using 'StepwiseContinuousLeading' for interpolation and ‘Forward’ for extrapolation with regard to the status stream property, without regard to the actual interpolation or extrapolation modes configured in SDS for that property.
+Returns status summary of an asset. Statistics are computed using 'StepwiseContinuousLeading' for interpolation and 'Forward' for extrapolation with regard to the status stream property, without regard to the actual interpolation or extrapolation modes configured in SDS for that property.
 
 <h3>Request</h3>
 

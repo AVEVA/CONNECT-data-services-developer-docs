@@ -198,7 +198,7 @@ An [`AccessControlList`](xref:accessControl#access-control-lists).<br/>
 |500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
 # Access Control
-This portion of the [overall data views API](DataViewsAPIOverview) focuses on [securing data views](DataViewsSecuringDataViews) by setting their ownership and permissions.
+This portion of the [overall data views API](xref:DataViewsAPIOverview) focuses on [securing data views](xref:DataViewsSecuringDataViews) by setting their ownership and permissions.
 
 ## `Get Data View Access Control List`
 

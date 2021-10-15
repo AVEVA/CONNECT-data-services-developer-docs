@@ -520,11 +520,10 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/AccessRights/AssetRules
 ```
 
 <h4>Parameters</h4>
+
 `string tenantId`
-=======
-<br/>Namespace identifier.<br/><br/>`string ruleId`
-<br/>Rule identifier.<br/><br/>
->>>>>>> 142c199d4ccfd24435cbcb8a59c52ec89e5d654e
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 
 <h3>Response</h3>
 

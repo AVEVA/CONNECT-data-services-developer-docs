@@ -73,7 +73,7 @@ interpolated-values:
     
     **Parameters**: Accepts ``index``.
     
-    [Interval](xref:sdsReadingDataApi#getvaluesinterpolatedinterval): Returns events at evenly spaced intervals based on the specified ``startIndex``, ``endIndex``, and ``count``. 
+    [Interval](xref:sdsReadingDataApi#interval): Returns events at evenly spaced intervals based on the specified ``startIndex``, ``endIndex``, and ``count``. 
     If no stored event exists at an index interval, the stream's read characteristics determine how the returned event is calculated. 
     
     **Parameters**: Accepts ``startIndex``, ``endIndex`` and ``count``.
@@ -89,9 +89,8 @@ join-values:
 stream-data-transform:
   type: markdown
   value: |
-    API that transforms the stream data.  
-    The Transform route is for SdsStreamView and unit conversion of stream data.
-    - [Reading with SdsStreamViews](xref:sdsReadingData#reading-with-sdsstreamviews):Changing the shape of the returned data.
+    The API in this section transforms data from the specified stream.
+    - [Reading with SdsStreamViews](https://ocs-docs.osisoft.com/Content_Portal/Documentation/SequentialDataStore/Reading_Data.html#reading-with-sdsstreamviews):Changing the shape of the returned data.
     When transforming data with an SdsStreamView, the data read is converted to the target type specified in the SdsStreamView. 
     All stream view transformations are HTTP GET requests. 
     Specify the stream view ID `(streamViewId={streamViewId})` at the end of the transformation endpoint.

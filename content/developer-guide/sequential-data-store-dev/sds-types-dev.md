@@ -6,7 +6,7 @@ uid: sdsTypes
 
 The Sequential Data Store (SDS) stores streams of events and provides convenient ways to find and associate 
 events. Events are stored in streams.
-A primitive type is available in the OCS and is used within the API and REST definitions to identify a stream type.
+A primitive type is available in OCS and is used within the API and REST definitions to identify a stream type.
 
 You can define simple atomic types, such as integers, floats, strings, arrays, and dictionaries, or 
 complex or nested types using the [Properties collection of SdsTypes](#sdstypeproperty). 
@@ -39,6 +39,9 @@ You can delete a type only if no streams, stream views, or other types reference
 
 Only the types that are used to define streams or stream views are required to be added to the SDS. 
 Types that define [properties](#sdstypeproperty) or base types are contained within the parent type so they don't need to be added to the SDS independently.
+
+## Types API
+[Types API](xref:sds-types)
 
 ## SdsType fields and properties table
 <a name="typepropertiestable"></a>

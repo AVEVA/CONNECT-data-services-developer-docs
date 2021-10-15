@@ -4,7 +4,7 @@ uid: sdsStreams
 
 # Streams
 
-Streams are a container for sequential data of some type of sequentially occurring values indexed by a single property, typically time series data. You define streams to organize incoming data from another system into the OCS.
+Streams are a container for sequential data of some type of sequentially occurring values indexed by a single property, typically time series data. You define streams to organize incoming data from another system into OCS.
 To define a stream, you must first define a type, which defines the structure of the data you want to stream into a selected namespace.
 
 SDS stores collections of events and provides convenient ways to find and associate events.
@@ -42,6 +42,9 @@ for internal SDS use.
 3. Cannot contain leading or trailing whitespace
 4. Cannot contain forward slash ("/")
 5. Can contain a maximum of 100 characters
+
+## Streams API
+[Streams API](xref:sds-streams)
 
 ## Indexes
 While you define the primary index on the type, the stream is where you define secondary indexes.

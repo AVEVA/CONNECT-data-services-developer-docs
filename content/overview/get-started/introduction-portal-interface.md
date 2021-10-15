@@ -4,7 +4,7 @@ uid: introPortalInterface
 
 # Introduction to the OCS portal
 
-Access and interact with OCS through the web-based portal. When you first access the OCS portal, several panes provide information about the system's health as well as quick links to popular documentation topics.
+Access and interact with OCS through the web-based portal. When you first access the portal, several panes provide information about the system's health as well as quick links to popular documentation topics.
 
 ![Portal window](../images/portal-interface.png "OCS portal interface")
 <!--Angela Flores 6/23/21 - This screenshot has a stray tool tip from another application. It needs to be cleaned up. --> <!--VT, 8/4/21 - Screenshot replaced & published. -->
@@ -41,7 +41,7 @@ Clicking a menu item takes you to the related feature page.
 
 Most pages consist of two panes:
 
-- The left pane is where you perform the tasks associated with the OCS resource. For example, the left pane is where you add and edit the OCS resource or manage its permissions.
+- The left pane is where you perform the tasks associated with the resource. For example, the left pane is where you add and edit the resource or manage its permissions.
 
 - The right pane has one or more tabs:
 

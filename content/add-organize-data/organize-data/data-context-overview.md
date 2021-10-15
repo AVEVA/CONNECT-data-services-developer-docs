@@ -4,7 +4,7 @@ uid: lporganizedata
 
 # Organize data
 
-OCS includes various ways to organize and simplify how you view data. You can create asset definitions to help organize and visualize information about a particular asset, such as a truck or a mixing tank. As an example, you might want to create the following information:
+There are various ways to organize and simplify how data is viewed. You can create asset definitions to help organize and visualize information about a particular asset, such as a truck or a mixing tank. As an example, you might want to create the following information:
 
 - Metadata, such as make and model
 - Measurements, such as location or temperature

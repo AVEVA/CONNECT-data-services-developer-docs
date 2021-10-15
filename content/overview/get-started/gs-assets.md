@@ -20,7 +20,7 @@ Follow the procedure to create an asset.
 
 1. Click the **Change Namespace** button in the upper-right toolbar, then click **MyOCS** or another namespace in which you created your stream. 
 
-1. From the  **Asset/Asset Types Selector** dropdown list, ensure that **Assets** is selected.
+1. From the **Asset/Asset Types Selector** dropdown list, ensure that **Assets** is selected.
 
 1. In the toolbar, click **Add Asset**. 
 

@@ -908,8 +908,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/
 |500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
-<h4>Example response body</h4>
-
+#### Example response body
 > 200 Response ([Trustee](#schematrustee))
 
 ```json
@@ -922,31 +921,29 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/
 
 ---
 
-## `Update Quantity Unit of Measure Owner`
+## `Update Stream Owner`
 
-<a id="opIdQuantityAccessControl_Update Quantity Unit of Measure Owner"></a>
+<a id="opIdStreamAccessControl_Update Stream Owner"></a>
 
-Updates the Owner of the specified unit of measure
+Updates the Owner of the specified stream.
 
-<h3>Request</h3>
-
+### Request
 ```text 
-PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}/Owner
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Owner
 ```
 
-<h4>Parameters</h4>
+#### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string quantityId`
-<br/>The quantity identifier<br/><br/>`string uomId`
-<br/>The unit of measure identifier<br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>`string streamId`
+<br/>Stream identifier.<br/><br/><br/>
 
-<h3>Response</h3>
+### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|204|None|Returns the `Trustee`|
+|204|None|`Trustee` was successfully returned|
 |400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
 |401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
 |403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|

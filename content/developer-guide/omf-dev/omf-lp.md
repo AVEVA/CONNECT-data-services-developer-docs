@@ -1,5 +1,5 @@
 ---
-uid: dataIngress
+uid: OsiSoftMessageFormat
 ---
 
 # OSIsoft Message Format

@@ -11,12 +11,12 @@ You use the PI to OCS Agent Configuration Utility to set up and configure AF ser
 * [Access the PI to OCS Agent Configuration Utility](#access-the-pi-to-ocs-agent-configuration-utility)
 * [Overview of the PI to OCS Agent Configuration Utility](#overview-of-the-pi-to-ocs-agent-configuration-utility)
 * [Add an AF server](#add-an-af-server)
-* [Select the default Data Archive in PI System Explorer](#set-the-default-data-archive-in-PI-System-Explorer)
-* [Create an AF mapping](#create-an-af-mapping)
+* [Select the default Data Archive in PI System Explorer](#select-the-default-data-archive-in-pi-system-explorer)
+* [Create an AF Mapping](#create-an-af-mapping)
 * [Add a PI Data Archive](#add-a-pi-data-archive)
 * [Create a PI mapping](#create-a-pi-mapping)
-* [List of agent status states](#list-of-agent-status-states)
 * [Set data privacy and add an agent description](#set-data-privacy-and-add-an-agent-description)
+* [List of agent status states](#list-of-agent-status-states)
 
 ## Access the PI to OCS Agent Configuration Utility
 
@@ -73,7 +73,7 @@ The utility validates an AF server connection to ensure the following criteria i
 
    ![Agent status and state after refresh](../../images/af-details-refreshed.png)
 
-​	 **Note:** Once an AF Server has been added, the utility searches for PI Data Archives that are referenced by the AF Server. 
+​     **Note:** Once an AF Server has been added, the utility searches for PI Data Archives that are referenced by the AF Server. 
 
 1. Optional: Select one of the Data Archives listed under **Detected Data Archives**, then click **Add Selected Data Archive**.
 
@@ -84,7 +84,7 @@ The utility validates an AF server connection to ensure the following criteria i
 
 1. **Optional:** Click the pencil icon next to the **Connection Timeout** field to change the time the agent checks for a server connection before timing out.
 
-1. Click **Save** to keep the current AF server configuration settings and restart the agent.    																								
+1. Click **Save** to keep the current AF server configuration settings and restart the agent.                                                                                                    
 1. **Optional**: Click **Test Connection** to check that the connection to the AF server is working.
 
 1. **Optional**: To delete a server connection, click the **Remove Server** button, then click **Yes**. 
@@ -125,8 +125,8 @@ You can assign an AF mapping to an AF identity. AF mappings enable a specific se
 1. Click **Save**.
   
    **Result:** If successful, the AF mapping is created for the selected identity.
-  											
-	**Note:** If an AF mapping has been created with another tool, a warning is displayed.
+                                              
+    **Note:** If an AF mapping has been created with another tool, a warning is displayed.
 
 1. Optional: Repeat steps 3-4 as needed.  
    
@@ -215,7 +215,7 @@ It may take a few minutes for a PI System to register with OCS. The table below 
 
 | **State**                     | **Description**                                              |
 | ----------------------------- | ------------------------------------------------------------ |
-| Data  Source Connection Issue | Indicates  the PI To OCS Agent isn’t able to connect to the PI Data Archive. Some  reasons for this status include the PI Data Archive is turned off, a firewall  issue is preventing connections or an incorrect name is configured for the  Data Archive (for example, trying to connect to a machine that doesn’t  exist/was renamed). There may be additional reasons for this status. |
+| Data  Source Connection Issue | Indicates  the PI To OCS Agent isn't able to connect to the PI Data Archive. Some  reasons for this status include the PI Data Archive is turned off, a firewall  issue is preventing connections or an incorrect name is configured for the  Data Archive (for example, trying to connect to a machine that doesn't  exist/was renamed). There may be additional reasons for this status. |
 | Data  Source Security Issue   | Indicates  the PI Data Archive connection is unsecure and security settings need to be  addressed. |
 | Missing Configuration         | The PI Data Archive server has not been configured in the PI to OCS Agent. |
 | Registration Failed           | Contact OSIsoft Customer support for assistance.             |

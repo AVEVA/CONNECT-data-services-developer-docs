@@ -8,7 +8,7 @@ OSIsoft Cloud Services (OCS) makes it possible to monitor remote assets in real 
 
 For example, a fleet manager of a mining truck dealer sells trucks to companies worldwide. His company provides monitoring and maintenance services to their customers. With remote monitoring, he reviews the status of the trucks each day, identifies trucks with problems, uses the data collected on different measurements to identify possible causes, reviews the history of these measurements over time, and shares the information with colleagues in the field who can follow up on the problem.
 
-The following procedure describes how to use the OCS Portal to monitor your assets and quickly identify problems. The screen captures are taken from the scenario described in the example above.
+The following procedure describes how to use the portal to monitor your assets and quickly identify problems. The screen captures are taken from the scenario described in the example above.
 
 ## Procedure
 
@@ -33,7 +33,7 @@ The following procedure describes how to use the OCS Portal to monitor your asse
 
 1. Click on an asset to open the `Asset Details` pane.
 
-    The `Asset Details` pane provides metadata and property data on the asset that you can use to determine the cause of any problems. The **Metadata** tab displays metadata associated with the asset.
+   The `Asset Details` pane provides metadata and property data on the asset that you can use to determine the cause of any problems. The **Metadata** tab displays metadata associated with the asset.
 
 1. Click the **Measurements** tab.
 

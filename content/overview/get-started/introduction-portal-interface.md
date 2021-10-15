@@ -4,24 +4,24 @@ uid: introPortalInterface
 
 # Introduction to the OCS portal
 
-Access and interact with OCS through the web-based portal. When you first access the OCS portal, several panes provide information about the system's health as well as quick links to popular documentation topics.
+Access and interact with OCS through the web-based portal. When you first access the portal, several panes provide information about the system's health as well as quick links to popular documentation topics.
 
-![Portal window](../images/portal-interface.png "OCS portal interface")
+![Portal window](../images/portal-interface.png "Portal interface")
 <!--Angela Flores 6/23/21 - This screenshot has a stray tool tip from another application. It needs to be cleaned up. --> <!--VT, 8/4/21 - Screenshot replaced & published. -->
 
 ## OCS features
 
-Expanding the left pane opens a menu of OCS features. This pane is always available in the OCS portal, and you can make menu selections even while collapsed.
+Expanding the left pane opens a menu of OCS features. This pane is always available in the portal, and you can make menu selections even while collapsed.
 
 | Pane expanded | Pane collapsed |
 |:--:|:--:|
 | ![pane expanded](../images/left-pane-expanded.png) | ![pane collapsed](../images/left-pane-collapsed.png) |
 
-OCS includes the following features:
+The following features can be accessed from the menu:
 
-- **Data Management**: Provides tools for setting up basic capabilities of OCS, including tenants, the Sequential Data Store (SDS), and metadata rules for data streams.
+- **Data Management**: Provides tools for setting up basic capabilities, including tenants, the Sequential Data Store (SDS), and metadata rules for data streams.
 
-- **Data Collection**: Provides the ability to bring data from multiple sources and systems into a OCS namespace.
+- **Data Collection**: Provides the ability to bring data from multiple sources and systems into a namespace.
 
 - **Visualization**: Allows you to view data trends and use assets to set up digital twins of real-world physical entities. <!--Angela Flores 6/23/21 - this is the only place in the documentation that uses the phrase "digital twins of real-world physical entities". What feature is that trying to describe? The only thing in the Visualization portion of the documentation is Trend. -->
 
@@ -41,7 +41,7 @@ Clicking a menu item takes you to the related feature page.
 
 Most pages consist of two panes:
 
-- The left pane is where you perform the tasks associated with the OCS resource. For example, the left pane is where you add and edit the OCS resource or manage its permissions.
+- The left pane is where you perform the tasks associated with the resource. For example, the left pane is where you add and edit the resource or manage its permissions.
 
 - The right pane has one or more tabs:
 

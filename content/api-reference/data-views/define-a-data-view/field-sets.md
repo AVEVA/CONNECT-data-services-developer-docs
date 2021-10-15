@@ -215,7 +215,7 @@ There are seven special parameters available for use in field labels:
 - `{IdentifyingValue}` - the value of the identifying field
 - `{Key}` - the value of the first of the `"Keys"` specified on the field
 - `{StreamReferenceName}` - the value of the first of the `"StreamReferenceNames"` specified on the field
-- `{Uom}` - the value of the unit of measure of the field (if uom is present in the source)
+- `{Uom}` - the value of the unit of measure of the field (if UOM is present in the source)
 - `{SummaryType}` - the value of the summary type of the field (if defined)
 - `{SummaryDirection}` - the value of the summary direction of the field (if summary type is defined)
 - `{QueryId}` - the id of the query that produced the field

@@ -49,7 +49,7 @@ Creating a namespace is a resource-intensive operation. Therefore, you may prefe
 <!-- DB: I think it makes sense to have that discussion as part of the Roles discussion, since that's the explicit purpose of Roles. But agreed it shouldn't be repeated in every page. --> 
 <!-- LA: I will make a pass through all the topics once we've created the Roles topic. -->
 
-Access control is managed by assigning permissions to roles. Each role is granted (Allow) or denied (Deny) permission to perform an access operation (read, write, delete, or manage permissions). Users are assigned to a role that determines their access to OCS resources. 
+Access control is managed by assigning permissions to roles. Each role is granted (Allow) or denied (Deny) permission to perform an access operation (read, write, delete, or manage permissions). Users are assigned to a role that determines their access to resources. 
 
 **Note:** The remaining steps are optional. 
 

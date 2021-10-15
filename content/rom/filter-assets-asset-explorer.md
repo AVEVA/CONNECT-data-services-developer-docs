@@ -14,11 +14,7 @@ Monitor and manage assets by applying filters in the Asset Explorer. Filters all
  
 Follow this procedure to filter assets in the Asset Explorer:
 
-1. Log in to OSIsoft Cloud Services.
-
-1. Click the navigation icon ![](images/menu.png) and select **Visualization > Asset Explorer**. 
-   
-    The asset explorer displays the available assets. 
+1. In the left pane, select **Visualization** > **Asset Explorer**. 
 
 1. Click the ![Metdata filter icon](images/metadata-filter-icon.png) icon to open the `Metadata Filters` pane.
 

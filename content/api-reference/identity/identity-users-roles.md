@@ -1,6 +1,9 @@
+---
+uid: identity-users-roles
 
+---
 
-# Roles
+# Users Roles
 APIs for getting, updating, and deleting users roles.
 
 ## `List Roles for User`
@@ -9,35 +12,37 @@ APIs for getting, updating, and deleting users roles.
 
 Returns a list of roles for a given user.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/Users/{userId}/Roles
 ?query={query}&skip={skip}&count={count}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/>`string userId`
-<br/>User unique identifier<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string userId`
+<br/>User identifier.<br/><br/>
 `[optional] string query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
-<br/>Number of roles to skip<br/><br/>`[optional] integer count`
-<br/>Max number of roles to return<br/><br/>
+<br/>(Not supported) Search string identifier.<br/><br/>`[optional] integer skip`
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Role](#schemarole)[]|List of roles found|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant or user not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
-> 200 Response
+<h4>Example response body</h4>
+
+> 200 Response ([Role](#schemarole)[])
 
 ```json
 [
@@ -53,7 +58,7 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}/Roles
 ]
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -67,30 +72,31 @@ Allowed for these roles:
 
 <a id="opIdRoles_Get Roles for User Header"></a>
 
-Head request to get the total number of user roles for the specified user.
+Head request to return the total number of user roles for the specified user.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 HEAD /api/v1/Tenants/{tenantId}/Users/{userId}/Roles
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/>`string userId`
-<br/>User unique identifier<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string userId`
+<br/>User identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Headers for roles found|
-|401|None|Unauthorized|
-|403|None|Forbidden|
+|401|None|Unauthorized.|
+|403|None|Forbidden.|
 |404|None|Tenant or user not found|
-|500|None|Internal server error|
+|500|None|Internal server error.|
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -106,20 +112,21 @@ Allowed for these roles:
 
 Replaces existing user roles.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1/Tenants/{tenantId}/Users/{userId}/Roles
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/>`string userId`
-<br/>User unique identifier<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string userId`
+<br/>User identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
-Update roles list<br/>
+Updates roles list<br/>
 
 ```json
 [
@@ -135,20 +142,21 @@ Update roles list<br/>
 ]
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Role](#schemarole)[]|List of updated user roles|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing preferences|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|User or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
-> 200 Response
+<h4>Example response body</h4>
+
+> 200 Response ([Role](#schemarole)[])
 
 ```json
 [
@@ -164,7 +172,7 @@ Update roles list<br/>
 ]
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -181,19 +189,19 @@ Allowed for these roles:
 <a id="tocSrole"></a>
 <a id="tocsrole"></a>
 
-The object for retrieving a role
+Object for retrieving a role
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|Role unique identifier. Generated by the server upon creation.|
+|Id|string|false|true|Role identifier. Generated by the server upon creation.|
 |Name|string|false|true|Role name. This cannot be empty.|
-|Description|string|false|true|Role description.|
-|RoleScope|[RoleScope](#schemarolescope)|false|true|Role scope.|
-|TenantId|string|false|true|Tenant unique identifier, if this is a Tenant Role. Otherwise set to null.|
-|CommunityId|string|false|true|Community unique identifier, if this is a Community Role. Otherwise set to null.|
-|RoleTypeId|string|false|true|Role type identifier for built-in roles.|
+|Description|string|false|true|Role description|
+|RoleScope|[RoleScope](#schemarolescope)|false|true|Role scope|
+|TenantId|string|false|true|Tenant identifier, if this is a Tenant Role. Otherwise, set to null.|
+|CommunityId|string|false|true|Community identifier, if this is a Community Role. Otherwise set to null.|
+|RoleTypeId|string|false|true|Role type identifier for built-in roles|
 
 ```json
 {
@@ -219,7 +227,7 @@ The object for retrieving a role
 
 The object that represents the scope of a given role
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -237,16 +245,17 @@ The object that represents the scope of a given role
 <a id="tocSerrorresponse"></a>
 <a id="tocserrorresponse"></a>
 
-Object returned whenever there is an error TODO: Remove this internal model and re-adopt public model when moving to System.Text.Json in WI 202168.
+Object returned whenever there is an error
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|OperationId|string|true|false|Gets or sets operationId of action that caused the Error.|
-|Error|string|true|false|Gets or sets error description.|
-|Reason|string|true|false|Gets or sets reason for the Error.|
-|Resolution|string|true|false|Gets or sets what can be done to resolve the Error.|
+|OperationId|string|true|false|Operation identifier of action that caused the error|
+|Error|string|true|false|Error description|
+|Reason|string|true|false|Reason for the error|
+|Resolution|string|true|false|Resolution to resolve the error|
+|DynamicProperties|object|false|true|Additional properties|
 
 ```json
 {
@@ -254,6 +263,10 @@ Object returned whenever there is an error TODO: Remove this internal model and 
   "Error": "string",
   "Reason": "string",
   "Resolution": "string",
+  "DynamicProperties": {
+    "property1": null,
+    "property2": null
+  },
   "property1": null,
   "property2": null
 }

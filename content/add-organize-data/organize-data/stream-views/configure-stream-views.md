@@ -3,14 +3,16 @@ uid: task-configureStreamViews
 ---
 
 # Configure stream views
-Stream views provide flexibility in the use of types and allow you to expose data as a different type. 
-While you cannot actually change the properties of types themselves, the stream views feature enables you to create a view of a selected stream that appears as if you had changed the type on which it is based.
-You can use stream views to change the appearance of the data stream while keeping the archived events intact. 
-You create a stream view by choosing a source and target type and mapping properties of the two types.
+Stream views provide flexibility in the use of types and allow you to expose data as a different type. While you cannot actually change the properties of types themselves, the stream views feature enables you to create a view of a selected stream that appears as if you had changed the type on which it is based.
+
+You can use stream views to change the appearance of the data stream while keeping the archived events intact. You create a stream view by choosing a source and target type and mapping properties of the two types.
 Note that you can only map properties of the same data type (double with int16, for example).
 
 For more information, see [stream views](xref:WhatOCSdoes#stream-views).
-If you already have types and streams configured with data, go directly to step 4:
+
+## Procedure
+
+**Note:** If you already have types and streams configured with data, go directly to step 4:
 
 1. Create types. Go to **Data Management** > **Sequential Data Store**.
   - Click **Types**.
@@ -77,4 +79,5 @@ If you already have types and streams configured with data, go directly to step 
  { "timestamp-target": "2021-02-3T04:00:00Z", "measurement": -24, }, 
  { "timestamp-target": "2021-02-208T06:00:00Z", "measurement": 0 }, 
  { "timestamp-target": "2021-03-8T08:00:00Z", "measurement": 2001}
-``` 
+```
+ 

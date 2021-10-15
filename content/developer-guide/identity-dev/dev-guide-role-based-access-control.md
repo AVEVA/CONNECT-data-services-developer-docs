@@ -4,15 +4,15 @@ uid: accessControl
 
 # Role-based access control
 
-Use an Access Control List (ACL) to manage role-based access control to entities such as namespaces and streams. ACLs control user access to entities based on their OCS roles. Each entity has an owner, who has access for all operations regardless of the contents of the ACL. Not all entities in the OCS system support role-based access control.  <!--Angela Flores 6/23/21 We should not talk about unreleased functionality or future functionality in the end-user documentation. Original text "Not all entities in the OCS system support role-based access control at this time, but the list will quickly grow and currently includes Namespaces and several unreleased entities." We should list all the entities that do support an ACL. How does access work for entities that don't support an ACL? -->
+Use an Access Control List (ACL) to manage role-based access control to entities such as namespaces and streams. ACLs control user access to entities based on their roles. Each entity has an owner, who has access for all operations regardless of the contents of the ACL. Not all entities support role-based access control.  <!--Angela Flores 6/23/21 We should not talk about unreleased functionality or future functionality in the end-user documentation. Original text "Not all entities in the OCS system support role-based access control at this time, but the list will quickly grow and currently includes Namespaces and several unreleased entities." We should list all the entities that do support an ACL. How does access work for entities that don't support an ACL? -->
 
 ## Access Control Lists
 
 Access Control Lists (ACLs) contain sets of Access Control Entries (ACEs), which contain the following information:
 
-- TrusteeType - the role, user, or application for whom access is set 
+- TrusteeType - the role for whom access is set 
 - AccessType - the access permitted, either allowed or denied
-- AccessRights - the 
+- AccessRights - the access rights allowed or denied to the Trustee specified 
 
 A user or application that attempts to read, write, delete, or manage access control of an entity assigned an ACL must be assigned a trustee that has `AccessType` set to `Allowed` for the AccessRight corresponding to that operation.
 
@@ -39,20 +39,20 @@ The following table shows AccessTypes and the corresponding TypeIds.
 | Allowed               | 0      |
 | Denied                | 1      |
 
-### CommonAccessRightsEnum 
-<!-- Angela Flores 6/23/21 why does this table get a heading, but the others don't? What does CommonAccessRightsEnum mean, it isn't mentioned anywhere else?-->
-The following table shows AccessRights and the corresponding int and bitwise information.
+### Common access rights
+The following table shows predefined access rights and their corresponding integer and bitwise information.
 
 | AccessRights          | int  | bitwise |
 |-----------------------|------|---------|
-| None                  | 0    |    0000 |
-| Read                  | 1    |    0001 |
-| Write                 | 2    |    0010 |
-| Delete                | 4    |    0100 |
-| ManageAccessControl   | 8    |    1000 |
-| All                   | 15   |    1111 |
+| None                  | 0    |   00000 |
+| Read                  | 1    |   00001 |
+| Write                 | 2    |   00010 |
+| Delete                | 4    |   00100 |
+| ManageAccessControl   | 8    |   01000 |
+| Share                 | 16   |   10000 |
+| All                   | 31   |   11111 |
 
-AccessRights are the bitwise union of all the access rights they encompass. For example, `AccessRights: 3` indicates that Read and Write access is permitted. <!--Angela Flores 6/23/21 - this bitwise union example needs more explanation. if Read is bitwise `0001` and Write is `0010`, wouldn't that be bitwise `0011`? It seems to be the sum of the assigned int-->
+Access rights are determined by the union or summation of one or more individual access rights. For example `AccessRights: 3` indicates that the `Read (1)` and `Write (2)` access are permitted.
 
 ### Sample Access Control List
 

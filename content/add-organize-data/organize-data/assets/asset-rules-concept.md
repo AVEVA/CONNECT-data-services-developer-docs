@@ -1,5 +1,5 @@
 ---
-Uid: AssetRulesConcept
+Uid: AssetRulesCC
 ---
 
 # Asset Rules (Preview)

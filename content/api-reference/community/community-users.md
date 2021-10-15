@@ -1,6 +1,5 @@
 ---
 uid: community-users
-
 ---
 
 # Users
@@ -98,12 +97,7 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/Users/{userI
 <br/>Community identifier<br/><br/>`string userId`
 <br/>User identifier<br/><br/>
 
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
 |204|None|Removed|
-|400|[ErrorResponse](#schemaerrorresponse)|Bad request|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|

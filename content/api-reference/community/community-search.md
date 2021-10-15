@@ -1,6 +1,5 @@
 ---
 uid: community-search
-
 ---
 
 # Search

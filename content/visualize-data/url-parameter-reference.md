@@ -14,7 +14,7 @@ To manually create a trend URL, add query string parameters to the base URL path
 
 - Separate each query string parameter with an ampersand (&).
 
-**Note:** A URL must include URL-encoded characters where needed. For example, the plus sign (+) indicates `Space` in HTML. To enter an actual plus sign as part of a URL, it must be encoded as `%2B`. For the URL syntax: `&EndTime=+8h` you need to use: `&EndTime=%2B8h`. For more information about URL encoding, see the w3schools.com article [HTML URL Encoding Reference](xref:https://www.w3schools.com/tags/ref_urlencode.asp).
+**Note:** A URL must include URL-encoded characters where needed. For example, the plus sign (+) indicates `Space` in HTML. To enter an actual plus sign as part of a URL, it must be encoded as `%2B`. For the URL syntax: `&EndTime=+8h` you need to use: `&EndTime=%2B8h`. For more information about URL encoding, see the w3schools.com article [HTML URL Encoding Reference](https://www.w3schools.com/tags/ref_urlencode.asp).
 
 ## Trend URL example
 

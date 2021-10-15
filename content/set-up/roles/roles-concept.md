@@ -8,22 +8,25 @@ Roles are used to manage access to assets, resources, and services. Roles are as
 
 There are five built-in roles which cannot be removed from a tenant:
 
-- Tenant Administrator - OCS Administrator who has full permissions by default. This is the highest privilege role, with the ability to create new and remove existing users, clients and secrets.
-  
+- Tenant Administrator - Administrator with full permissions by default. This is the highest privilege role, with the ability to create new and remove existing users, clients and secrets.
+
   **Note:** Do not assign the Tenant Administrator role to clients.
 
 - Tenant Contributor - Granted read and write permissions by default.
+
 - Tenant Data Steward - No specific permissions are granted to this role by default.
+
 - Tenant Viewer - No specific permissions are granted to this role by default.
-- Tenant Member - This role is assigned to all users or clients. Tenant members are granted read access throughout OCS, by default.
+
+- Tenant Member - This role is assigned to all users or clients. Tenant members are granted read access by default.
 
 You can add roles to further control access. By default, added roles do not have any specific permissions. You must have the Tenant Administrator role to add and manage roles in a tenant. 
 
-Assigning a role to a user or client does not determine access. For any resource in OCS, you set access on the resource for specific roles, rather than for specific users or clients. Manage access using Manage Permissions for the given resource. For each role, you set access to the following access types: Read, Write, Delete, and Manage Permissions.
+Assigning a role to a user or client does not determine access. For any resource, you set access on the resource for specific roles, rather than for specific users or clients. Manage access using Manage Permissions for the given resource. For each role, you set access to the following access types: Read, Write, Delete, and Manage Permissions.
 
 ## <a name="roles-pi-server"></a>PI Server counterpart
 
-Roles in OCS are comparable to PI identities in PI Data Archive or identities in PI AF server. Throughout OCS, permissions are granted to roles instead of directly to individual users or clients. This is similar to how identities in PI Server are used to assign permissions for a set of users or clients.
+Roles are comparable to PI identities in PI Data Archive or identities in PI AF server. Permissions are granted to roles instead of directly to individual users or clients. This is similar to how identities in PI Server are used to assign permissions for a set of users or clients.
 
 ## <a name="roles-bp"></a>Roles best practices
 

@@ -6,7 +6,7 @@
   items:
     - topicUid: CreateAssetTypeWithEditor
     - topicUid: ConvertAssetToAssetType
-- topicUid: AssetRules
+- topicUid: AssetRulesCC
   items:
     - topicUid: CreateAssetRules
     - topicUid: TokensGenerateAssets

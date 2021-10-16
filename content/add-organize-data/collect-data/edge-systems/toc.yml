@@ -1,3 +1,5 @@
 - topicUid: ViewEdgeSystem
-- topicUid: ConfigureEdgeSystem
+- topicUid: 
 - topicUid: EdgeSystemTemplates
+- topicUid: DeployConfig
+- topicUid: EditEdgeSystem

@@ -2,20 +2,18 @@
 uid: EdgeSystems
 ---
 
-# Edge systems
+# Edge systems software management
 
-Edge systems provides a centralized location to monitor the health and manage the configuration of edge systems on remote devices, including Edge Data Store and PI Adapters, giving you visibility into the data collection solution. Edge systems are automatically listed based on health data sent to OCS. 
+Edge systems software management provides a centralized location to monitor the health and manage the software configuration of edge systems, including Edge Data Store and PI Adapters. This gives you visibility into the data collection software that is deployed on remote devices. You can also monitor PI Interface health. 
 
-Use the portal to see the current status of each system and when it last communicated with OCS. Use sort and filter functionality to pinpoint problems and identify gaps in data collection. Review detailed information about each edge system device, its components, and its configurations.
+## Health monitoring
 
-Create, edit, and manage edge system configuration and manually apply new or updated configurations to edge systems. You can manually reconcile configuration changes made in the field with configurations created in the portal, and you can create configurations for system types that are not yet deployed in the field. 
+The `Edge Systems` page displays a list of edge system digital twins. Each edge system twin is a virtual representation of an actual edge system that is currently writing health data to the selected namespace. You can review health information for edge systems, including the current status of each system and when it last communicated with OCS. Use sort and filter functionality to navigate among edge system twins to pinpoint problems and identify gaps in data collection. View detailed health information for your edge systems to understand their overall health.
 
-**Note:** Configuration is available for the following edge system types:
+## Configuration management
 
- - Edge Data Store
+Use the `Edge Systems` page to review detailed information about each edge system, its components, and its configurations. You can also manage, create, and edit edge system software configurations.
 
- - OPC UA adapter
+Use the Configuration Library to create and maintain a collection of configuration templates. Base each configuration template on either a default configuration or an imported configuration. The portal's built-in configuration editor identifies formatting errors as you work, helping you avoid problems later. Export a configuration template to manually apply it to a physical edge system.
 
- - Modbus TCP adapter
-
-View detailed health information for your edge systems to understand the overall health of these edge systems. Additionally, PI Interfaces that are configured to send health messages directly to OCS are included in the health information. 
+In the field, you may customize a software configuration for a specific system. Once an edge system is writing data to OCS, the `Edge Systems` page shows its corresponding edge system twin. To store, review, and access configurations from a central location, import software configurations from the field to the corresponding edge system twins. 

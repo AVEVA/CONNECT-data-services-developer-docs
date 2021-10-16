@@ -2,9 +2,9 @@
 uid: ViewEdgeSystem
 ---
 
-# View an edge system
+# View and monitor an edge system
 
-View the edge systems, including Edge Data Store and PI Adapters, for a selected namespace to review current status and configuration information. You can filter and sort the list of edge devices, and open a trend displaying diagnostic data for a specific device or component.
+View the edge systems, including Edge Data Store and PI Adapters, for a selected namespace to review current status and configuration information. You can filter and sort the list of edge devices, and open a trend displaying diagnostic data for a specific device or component. Once an edge system is writing data to OCS, it appears on the `Edge Systems` page.
 
 Use the following procedure to view an edge system:
 
@@ -30,7 +30,7 @@ Use the following procedure to view an edge system:
 
 ## Remove an edge system
 
-You can remove edge systems from the list of edge systems in OCS, but the edge system remains on the device. After an edge system is removed from OCS, you can no longer see or manage it from OCS. Use the following procedure to remove an edge system:
+You can remove edge systems from the list of edge systems in OCS, but the edge system remains on the device. After an edge system is removed from OCS and it is no longer sending data to OCS, you can no longer see or manage it from OCS. If an edge system sends data to OCS after it has been removed from the list of edge systems, it will reappear in the list of edge systems. Use the following procedure to remove an edge system:
 
 1. In the left pane, select **Data Management** > **Edge Systems**.
 

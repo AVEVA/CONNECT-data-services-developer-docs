@@ -17,12 +17,6 @@ Returns a list of `SdsStreamView`.
 ```text 
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews
 ?query={query}&skip={skip}&count={count}&orderby={orderby}
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 `[optional] string query`
 <br/>Parameter representing a string search. See the [Search in SDS](xref:sdsSearching) topic for information about specifying the query parameter.
@@ -377,7 +371,8 @@ Content-Type: application/json
         }
     ]
 }
-```> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
+```
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {
@@ -581,6 +576,9 @@ A contract defining stream view map property
 <a id="tocSsdsstreamviewmode"></a>
 <a id="tocssdsstreamviewmode"></a>
 
+<h4>Enumerated Values</h4>
+
+|Property|Value|
 |---|---|
 |FieldAdd|1|
 |FieldRemove|2|

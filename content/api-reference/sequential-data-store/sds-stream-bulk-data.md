@@ -3,7 +3,7 @@ uid: sds-stream-bulk-data
 
 ---
 
-# Stream Bulk Data
+# Stream bulk data
 The API in this section interacts with data from multiple streams.
 
 ## `List Window Values (GET Method)`

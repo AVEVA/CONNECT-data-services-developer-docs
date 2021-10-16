@@ -3,7 +3,7 @@ uid: sds-stream-data-transform
 
 ---
 
-# Stream Data Transform
+# Stream data transform
 The API in this section transforms data from the specified stream.
 - [Reading with SdsStreamViews](https://ocs-docs.osisoft.com/Content_Portal/Documentation/SequentialDataStore/Reading_Data.html#reading-with-sdsstreamviews):Changing the shape of the returned data.
 When transforming data with an SdsStreamView, the data read is converted to the target type specified in the SdsStreamView. 

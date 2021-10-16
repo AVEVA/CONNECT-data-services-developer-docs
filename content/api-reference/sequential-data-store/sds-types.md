@@ -755,7 +755,7 @@ A contract defining a property of a SdsType
 
 Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects
 
-<h4>Enumerated Values</h4>
+<h4>Enumerated values</h4>
 
 |Property|Value|
 |---|---|

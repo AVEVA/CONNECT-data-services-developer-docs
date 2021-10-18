@@ -8,7 +8,7 @@ Edge systems software management provides a centralized location to monitor the 
 
 ## Health monitoring
 
-The `Edge Systems` page displays a list of edge system digital twins. Each edge system twin is a virtual representation of an actual edge system that is currently writing health data to the selected namespace. You can review health information for edge systems, including the current status of each system and when it last communicated with OCS. Use sort and filter functionality to navigate among edge system twins to pinpoint problems and identify gaps in data collection. View detailed health information for your edge systems to understand their overall health.
+The `Edge Systems` page displays a list of edge system digital twins. Each edge system twin is a virtual representation of an actual edge system that is currently writing health data to the selected namespace. You can review health information for edge systems, including the current status of each system and when it last communicated with AVEVA™ Data Hub. Use sort and filter functionality to navigate among edge system twins to pinpoint problems and identify gaps in data collection. View detailed health information for your edge systems to understand their overall health.
 
 ## Configuration management
 

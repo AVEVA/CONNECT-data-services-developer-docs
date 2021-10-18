@@ -4,7 +4,7 @@ uid: EditEdgeSystem
 
 # Edit edge system configuration
 
-You can edit edge system configurations within OCS. You can create a configuration from scratch, use a default configuration or a configuration template, or import a configuration file. Once the configuration is complete, you can export the configuration file for each component or for the edge system to manually apply to the edge system. You can use an exported configuration file to configure other edge systems by importing it. The maximum size for a configuration file is 16 MB.
+You can edit edge system configurations within AVEVA™ Data Hub. You can create a configuration from scratch, use a default configuration or a configuration template, or import a configuration file. Once the configuration is complete, you can export the configuration file for each component or for the edge system to manually apply to the edge system. You can use an exported configuration file to configure other edge systems by importing it. The maximum size for a configuration file is 16 MB.
 
 **Note:** Configuration is available for the following edge system types:
 

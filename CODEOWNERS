@@ -2,15 +2,24 @@
 # Each line is a file pattern followed by one or more owners.
 
 # These owners will be the default owners for everything in the repo.
-*       @GiselleLeeOSI @digitaljoshua
-content/api-reference/SequentialDataStore @GiselleLeeOSI @afloresOSI
-content/api-reference/Identity @digitaljoshua
-content/api-reference/Management @digitaljoshua
-content/api-reference/DataViews @osimarkrogers
-content/api-reference/Metadata @osimarkrogers
-content/api-reference/Operations @osimarkrogers
-content/api-reference/DataIngress @osimarkrogers
-content/api-reference/Assets @lassato-OSI
+*       @osisoft-mbishop
+content/api-reference/sequential-data-store @afloresOSI @osisoft-mbishop
+content/api-reference/identity @afloresOSI @osisoft-mbishop
+content/api-reference/management @afloresOSI @osisoft-mbishop
+content/api-reference/data-views @rmuolic @osisoft-mbishop
+content/api-reference/metadata @afloresOSI @osisoft-mbishop
+content/api-reference/operations @afloresOSI @osisoft-mbishop
+content/api-reference/data-ingress @afloresOSI @osisoft-mbishop
+content/api-reference/assets @afloresOSI @osisoft-mbishop
+content/api-reference/asset-rules @afloresOSI @osisoft-mbishop
+content/add-organize-data @afloresOSI @OSIVictoriaTouati-AVEVA
+content/communities @afloresOSI @osisoft-mbishop 
+content/developer-guide @afloresOSI @osisoft-mbishop
+content/visualize-data @afloresOSI @rmuolic
+content/visualize-data/power-bi-connector @rmuolic
+content/rom @afloresOSI @OSIVictoriaTouati-AVEVA
+content/overview @afloresOSI @OSIVictoriaTouati-AVEVA
+content/set-up @afloresOSI @OSIVictoriaTouati-AVEVA
 
 # Order is important. The last matching pattern has the most precedence.
 # So if a pull request only touches javascript files, only these owners

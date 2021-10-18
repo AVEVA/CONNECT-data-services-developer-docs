@@ -12,13 +12,14 @@ Implicit client has been deprecated. We suggest using an authorization code clie
 
 Gets all implicit clients from a tenant. Optionally, get a list of requested clients. Total number of clients in the tenant set in the Total-Count header.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/ImplicitClients
 ?id={id}&tag={tag}&query={query}&skip={skip}&count={count}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>
@@ -29,7 +30,7 @@ GET /api/v1/Tenants/{tenantId}/ImplicitClients
 <br/>Number of clients to skip. Will be ignored if a list of Ids is passed.<br/><br/>`[optional] integer count`
 <br/>Maximum number of clients to return. Will be ignored if a list of Ids is passed.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -39,8 +40,9 @@ GET /api/v1/Tenants/{tenantId}/ImplicitClients
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
-#### Example response body
-> 200 Response
+<h4>Example response body</h4>
+
+> 200 Response ([ImplicitClient](#schemaimplicitclient)[])
 
 ```json
 [
@@ -67,7 +69,7 @@ GET /api/v1/Tenants/{tenantId}/ImplicitClients
 ]
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -83,13 +85,14 @@ Allowed for these roles:
 
 Returns the total number of implicit clients in a tenant. Optionally, check based on a list of requested clients. The value will be set in the Total-Count header. This endpoint is identical to the GET one but it does not return any objects in the body.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 HEAD /api/v1/Tenants/{tenantId}/ImplicitClients
 ?id={id}&tag={tag}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>
@@ -97,7 +100,7 @@ HEAD /api/v1/Tenants/{tenantId}/ImplicitClients
 <br/>Unordered list of Ids for all clients to get. Empty or whitespace Ids will be ignored.<br/><br/>`[optional] array tag`
 <br/>Only count clients that have these tags.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -107,7 +110,7 @@ HEAD /api/v1/Tenants/{tenantId}/ImplicitClients
 |404|None|Client or tenant not found|
 |500|None|Internal server error|
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -123,17 +126,18 @@ Allowed for these roles:
 
 Creates an implicit client in a tenant. No secret will be generated for this client.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 POST /api/v1/Tenants/{tenantId}/ImplicitClients
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant unique identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 New ImplicitClient object.<br/>
 
@@ -160,7 +164,7 @@ New ImplicitClient object.<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -173,8 +177,9 @@ New ImplicitClient object.<br/>
 |409|[ErrorResponse](#schemaerrorresponse)|Client unique identifier already exists.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
-#### Example response body
-> 201 Response
+<h4>Example response body</h4>
+
+> 201 Response ([ImplicitClient](#schemaimplicitclient))
 
 ```json
 {
@@ -199,7 +204,7 @@ New ImplicitClient object.<br/>
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -214,18 +219,19 @@ Allowed for these roles:
 
 Gets an implicit client from a tenant.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/ImplicitClients/{clientId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string clientId`
 <br/>Client identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -235,8 +241,9 @@ GET /api/v1/Tenants/{tenantId}/ImplicitClients/{clientId}
 |404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
-#### Example response body
-> 200 Response
+<h4>Example response body</h4>
+
+> 200 Response ([ImplicitClient](#schemaimplicitclient))
 
 ```json
 {
@@ -261,7 +268,7 @@ GET /api/v1/Tenants/{tenantId}/ImplicitClients/{clientId}
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -277,18 +284,19 @@ Allowed for these roles:
 
 Validates that an implicit client exists.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 HEAD /api/v1/Tenants/{tenantId}/ImplicitClients/{clientId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string clientId`
 <br/>Client identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -298,7 +306,7 @@ HEAD /api/v1/Tenants/{tenantId}/ImplicitClients/{clientId}
 |404|None|Client or tenant not found|
 |500|None|Internal server error|
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -314,18 +322,19 @@ Allowed for these roles:
 
 Updates an implicit client. It can take up to one hour for update to manifest in the authentication process.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1/Tenants/{tenantId}/ImplicitClients/{clientId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client identifier<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 Updated implicit client values. Properties that are not set or are null will not be changed.<br/>
 
@@ -352,7 +361,7 @@ Updated implicit client values. Properties that are not set or are null will not
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -364,8 +373,9 @@ Updated implicit client values. Properties that are not set or are null will not
 |408|[ErrorResponse](#schemaerrorresponse)|Operation timed out|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
-#### Example response body
-> 200 Response
+<h4>Example response body</h4>
+
+> 200 Response ([ImplicitClient](#schemaimplicitclient))
 
 ```json
 {
@@ -390,7 +400,7 @@ Updated implicit client values. Properties that are not set or are null will not
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -405,18 +415,19 @@ Allowed for these roles:
 
 Deletes an implicit client. It can take up to one hour for deletion to manifest in the authentication process. Access tokens issued to this client will be valid until their expiration.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 DELETE /api/v1/Tenants/{tenantId}/ImplicitClients/{clientId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string clientId`
 <br/>Client identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -427,25 +438,7 @@ DELETE /api/v1/Tenants/{tenantId}/ImplicitClients/{clientId}
 |408|[ErrorResponse](#schemaerrorresponse)|Operation timed out|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
-#### Example response body
-> 401 Response
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "DynamicProperties": {
-    "property1": null,
-    "property2": null
-  },
-  "property1": null,
-  "property2": null
-}
-```
-
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -458,36 +451,38 @@ Allowed for these roles:
 
 <a id="opIdImplicitClients_List All Implicit Clients (Obsolete)"></a>
 
-Get all Implicit Clients.
+Returns all Implicit Clients.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1-preview/Tenants/{tenantId}/ImplicitClients
 ?tag={tag}&query={query}&skip={skip}&count={count}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/>
+<br/>Tenant identifier.<br/><br/>
 `[optional] array tag`
-<br/>Only return Clients that have these tags.<br/><br/>`[optional] string query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
-<br/>Number of clients to skip. From query.<br/><br/>`[optional] integer count`
-<br/>Maximum number of clients to return.<br/><br/>
+<br/>Only return clients that have these tags.<br/><br/>`[optional] string query`
+<br/>(Not supported) Search string identifier.<br/><br/>`[optional] integer skip`
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[ImplicitClient2](#schemaimplicitclient2)[]|Implicit Clients found.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
+|200|[ImplicitClient2](#schemaimplicitclient2)[]|Implicit clients found.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
-> 200 Response
+<h4>Example response body</h4>
+
+> 200 Response ([ImplicitClient2](#schemaimplicitclient2)[])
 
 ```json
 [
@@ -514,7 +509,7 @@ GET /api/v1-preview/Tenants/{tenantId}/ImplicitClients
 ]
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -527,21 +522,22 @@ Allowed for these roles:
 
 <a id="opIdImplicitClients_Create Implicit Client (Obsolete)"></a>
 
-Create an Implicit flow Clients.
+Creates an implicit flow clients.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 POST /api/v1-preview/Tenants/{tenantId}/ImplicitClients
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/>
+<br/>Tenant identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
-New ImplicitClient object.<br/>
+New ImplicitClient object<br/>
 
 ```json
 {
@@ -566,21 +562,22 @@ New ImplicitClient object.<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |201|[ImplicitClient2](#schemaimplicitclient2)|Implicit Client created.|
-|400|[ErrorResponse](#schemaerrorresponse)|Client limit exceeded.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
+|400|[ErrorResponse](#schemaerrorresponse)|Client limit exceeded|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out|
-|409|[ErrorResponse](#schemaerrorresponse)|Client Id already exists.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
+|409|[ErrorResponse](#schemaerrorresponse)|Client Id already exists|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
-> 201 Response
+<h4>Example response body</h4>
+
+> 201 Response ([ImplicitClient2](#schemaimplicitclient2))
 
 ```json
 {
@@ -605,7 +602,7 @@ New ImplicitClient object.<br/>
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -618,31 +615,33 @@ Allowed for these roles:
 
 <a id="opIdImplicitClients_Get Implicit Client (Obsolete)"></a>
 
-Get an Implicit Client.
+Returns an implicit client.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1-preview/Tenants/{tenantId}/ImplicitClients/{clientId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/>`string clientId`
-<br/>Id of client.<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string clientId`
+<br/>Client identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[ImplicitClient2](#schemaimplicitclient2)|Implicit Client specified.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
+|200|[ImplicitClient2](#schemaimplicitclient2)|Implicit client specified.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
-> 200 Response
+<h4>Example response body</h4>
+
+> 200 Response ([ImplicitClient2](#schemaimplicitclient2))
 
 ```json
 {
@@ -667,7 +666,7 @@ GET /api/v1-preview/Tenants/{tenantId}/ImplicitClients/{clientId}
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -680,22 +679,23 @@ Allowed for these roles:
 
 <a id="opIdImplicitClients_Update Implicit Client (Obsolete)"></a>
 
-Update an Implicit Client.
+Updates an Implicit Client.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1-preview/Tenants/{tenantId}/ImplicitClients/{clientId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/>`string clientId`
-<br/>Id of client.<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string clientId`
+<br/>Client identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
-Updated Implicit Client values.<br/>
+Updated Implicit Client values<br/>
 
 ```json
 {
@@ -720,20 +720,21 @@ Updated Implicit Client values.<br/>
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[ImplicitClient2](#schemaimplicitclient2)|Updated Implicit Client.|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
+|200|[ImplicitClient2](#schemaimplicitclient2)|Updated implicit client|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
-> 200 Response
+<h4>Example response body</h4>
+
+> 200 Response ([ImplicitClient2](#schemaimplicitclient2))
 
 ```json
 {
@@ -758,7 +759,7 @@ Updated Implicit Client values.<br/>
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -775,22 +776,22 @@ Allowed for these roles:
 <a id="tocSimplicitclient"></a>
 <a id="tocsimplicitclient"></a>
 
-Object used during implicit client creation.
+Object used during implicit client creation
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|RedirectUris|string[]|false|true|Allowed URIs to which return tokens or authorization codes can be returned. Wildcards are ignored. URIs must match exactly what you are redirecting to after login. If URIs do not match, the authentication process will fail with a bad_client error. Maximum 10 per client.|
+|RedirectUris|string[]|false|true|Note: Required when creating a client, but optional when updating a client. Allowed URIs to which return tokens or authorization codes can be returned. Wildcards are ignored. URIs must match exactly what you are redirecting to after login. If URIs do not match, the authentication process will fail with a bad_client error. Maximum 10 per client.|
 |PostLogoutRedirectUris|string[]|false|true|Allowed URIs to redirect to after logout. Wildcards are ignored. URIs must match exactly what you are redirecting to after logout. Maximum 10 per client.|
-|ClientUri|string|false|true|URI to a page with information about client (used on consent screen).|
-|LogoUri|string|false|true|URI to client logo (used on consent screen).|
-|Id|string|false|true|Client unique identifier for this client. This unique identifier should be a GUID.|
+|ClientUri|string|false|true|URI to a page with information about client (used on consent screen)|
+|LogoUri|string|false|true|URI to client logo (used on consent screen)|
+|Id|string|false|true|Client identifier for this client. This identifier should be a GUID.|
 |Name|string|false|true|Name of client|
 |Enabled|boolean|false|true|Whether client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.|
 |AccessTokenLifetime|int32|false|true|Lifetime of access token issued for this client after authentication. Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.|
 |Tags|string[]|false|true|Tags for OSIsoft internal use only|
-|AllowedCorsOrigins|string[]|false|true|Values used by the default CORS policy service implementations to build a CORS policy for JavaScript clients. Maximum 10 per client.|
+|AllowedCorsOrigins|string[]|false|true|Values used by the default CORS policy service implementations to build a CORS policy for JavaScript clients. Maximum is 10 per client.|
 
 ```json
 {
@@ -827,15 +828,15 @@ Object used during implicit client creation.
 
 Object returned whenever there is an error
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|OperationId|string|true|false|Operation unique identifier of action that caused the error.|
-|Error|string|true|false|Error description.|
-|Reason|string|true|false|Reason for the error.|
-|Resolution|string|true|false|Resolution to resolve the error.|
-|DynamicProperties|object|false|true|Additional properties.|
+|OperationId|string|true|false|Operation identifier of action that caused the error|
+|Error|string|true|false|Error description|
+|Reason|string|true|false|Reason for the error|
+|Resolution|string|true|false|Resolution to resolve the error|
+|DynamicProperties|object|false|true|Additional properties|
 
 ```json
 {
@@ -862,22 +863,22 @@ Object returned whenever there is an error
 <a id="tocSimplicitclient2"></a>
 <a id="tocsimplicitclient2"></a>
 
-Object used during implicit client creation.
+Object used during implicit client creation
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|RedirectUris|string[]|false|true|Allowed URIs to return tokens or authorization codes to.|
-|PostLogoutRedirectUris|string[]|false|true|Allowed URIs to redirect to after logout.|
-|ClientUri|string|false|true|URI to a page with information about client (used on consent screen).|
-|LogoUri|string|false|true|URI to client logo (used on consent screen).|
-|ClientId|string|false|true|Obsolete: Use Id.|
-|Id|string|false|true|Client unique identifier for this Client.|
-|Name|string|false|true|Name of the Client.|
-|Enabled|boolean|false|true|Value indicating whether Client enabled.|
-|Tags|string[]|false|true|List of tags for OSIsoft internal use only.|
-|AllowedCorsOrigins|string[]|false|true|Values used by the default CORS policy service implementations to build a CORS policy for JavaScript clients.|
+|RedirectUris|string[]|false|true|Note: Required when creating a client, but optional when updating a client. Allowed URIs to which return tokens or authorization codes can be returned. Wildcards are ignored. URIs must match exactly what you are redirecting to after login. If URIs do not match, the authentication process will fail with a bad_client error. Maximum 10 per client.|
+|PostLogoutRedirectUris|string[]|false|true|Allowed URIs to redirect to after logout. Wildcards are ignored. URIs must match exactly what you are redirecting to after logout. Maximum 10 per client.|
+|ClientUri|string|false|true|URI to a page with information about client (used on consent screen)|
+|LogoUri|string|false|true|URI to client logo (used on consent screen)|
+|ClientId|string|false|true|Obsolete: Use identifier.|
+|Id|string|false|true|Client identifier for this client. This identifier should be a GUID.|
+|Name|string|false|true|Name of client|
+|Enabled|boolean|false|true|Whether client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.|
+|Tags|string[]|false|true|Tags for OSIsoft internal use only|
+|AllowedCorsOrigins|string[]|false|true|Values used by the default CORS policy service implementations to build a CORS policy for JavaScript clients|
 
 ```json
 {

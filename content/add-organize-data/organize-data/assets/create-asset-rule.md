@@ -25,7 +25,7 @@ We will construct an asset rule, named `Tank Rule A`, that creates three assets,
 
 ## Add an asset rule and select the stream
 
-1. In the left pane, select **Data Management** > **Asset Management**.
+1. In the left pane, select **Data Management** > **Asset Rules**.
 
 1. Click the **Change Namespace** button in the upper-right toolbar, then select the desired namespace.
 

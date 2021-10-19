@@ -52,7 +52,7 @@ Any user can perform this procedure.
 
 1. Find the community where you want to remove users and click **Details**.
 
-1. Select **More Options** ![More Options](images\more-options.png) and click **Leave Community**. A confirmation dialog opens.
+1. Click the **More Options** ![More Options](images\more-options.png) icon, then click **Leave Community**. A confirmation dialog opens.
 
 1. Click **Leave**.
 

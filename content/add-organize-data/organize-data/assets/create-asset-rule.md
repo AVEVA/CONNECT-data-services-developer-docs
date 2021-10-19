@@ -4,23 +4,13 @@ uid: CreateAssetRules
 
 # Create an asset rule
 
-An asset rule identifies patterns in a stream name and uses this information to automatically create assets. In order to generate assets, the stream names must have the following characteristics:
-
-- A pattern that can be mapped for configuration.
-
-- A set of characters that uniquely identify the asset.
-
-- A unique set of characters that identifies one stream from another for the same asset. For example, the stream name could include an abbreviation for the stream measurement. 
-
-The asset rule identifies the pattern and the parts of the stream name and stream metadata that provide information about the asset. A token is created for each part of the pattern and piece of information. The tokens are used to construct the asset and add references to the relevant streams. For more information, see [How tokens are used in the Asset Rule Builder to generate assets](xref:TokensGenerateAssets).
-
-Depending on the definition and consistency of the stream names, you may have to create multiple rules to capture all the relevant streams for your asset. For more information, see [Using multiple asset rules to create assets](xref:UsingMultipleRules).
+Use the following procedure to create an asset rule.
 
 ## <a name="tank"></a>Tank Rule A example
 
 <!-- Writer's Note: This example can be found in the DaedalusTest tenant, VizTesting namespace. See Prachi Bagayatkar or Scott Harrison for access. -->
 
-The [Use the Asset Rule Builder to create the asset rule](#create) procedure uses the following simple example to illustrate how to create an asset rule. In this example, there are three tank assets. The following characters in the stream names identify the three assets: `SL-Tank01`, `SL-Tank02`, and `PHI-Tank03`. There are two streams for each tank, one stream with temperature data, indicated by *Temp* in its name, and the other with pressure data, indicated by *Press* in its name. The following table shows the six streams, the asset associated with the stream, and the measurement in each stream. 
+The [Use the Asset Rule Builder to create the asset rule](#create) procedure uses the following simple example to illustrate how to create an asset rule. For example, the following stream names could be used to identify three tank assets: `SL-Tank01`, `SL-Tank02`, and `PHI-Tank03`. There are two streams for each tank, one stream with temperature data, indicated by *Temp* in its name, and the other with pressure data, indicated by *Press* in its name. The following table shows the six streams, the asset associated with the stream, and the measurement in each stream. 
 
 | Stream Name     | Asset Name | Stream Measurement |
 | --------------- | ---------- | ------------------ |
@@ -35,9 +25,9 @@ We will construct an asset rule, named `Tank Rule A`, that creates three assets,
 
 ## Add an asset rule and select the stream
 
-1. In the left pane, select **Data Management** > **Asset Management**.
+1. In the left pane, select **Data Management** > **Asset Rules**.
 
-1. In the `Select a Namespace` window, click the namespace in which to create the asset rule.
+1. Click the **Change Namespace** button in the upper-right toolbar, then select the desired namespace.
 
 1. Click **Add a Rule**.
 
@@ -51,7 +41,7 @@ We will construct an asset rule, named `Tank Rule A`, that creates three assets,
    
    - **Asset Type** &ndash; (Optional) Asset type on which the asset is based. The assets created with the asset rule inherit the properties of the asset type, including stream type, metadata, and status configurations.
    
-     In this example, the asset type is named Boiler Tank.
+     For example, the asset type is named Boiler Tank.
      
      For more information on asset types, see [Asset types](xref:AssetTypes) and [Create an asset from an asset type](xref:CreateAssetFromAssetType).
 
@@ -61,7 +51,7 @@ We will construct an asset rule, named `Tank Rule A`, that creates three assets,
 
 1. In the `Select Stream` window, click the stream to use as the basis of the naming pattern for the asset rule. 
 
-   OSIsoft recommends that you pick a stream with a name that models the pattern of the stream names this rule should identify.
+   **Tip:** Select a stream with a name that models the pattern of the stream names the rule is intended to identify.
    
    The `Tank Rule A` examples uses the `PHI-Tank03Press` stream to create the stream pattern.
 
@@ -101,7 +91,7 @@ In this step, you specify the naming pattern used to find and match the appropri
 
    The token is assigned the name `site`. 
 
-   ![First token](images/first-token.png)
+   <!-- WRITER'S NOTE: All the screen captures need to be reviewed and probably updated. In particular, the screen captures in this "Step 1: Extract the tokens from the stream" will need to be updated. The wording of the choices is being changed. -->
 
    The token and the placeholder value, `{site} - PHI`, are added to the **Tokens** pane. 
 
@@ -111,12 +101,12 @@ In this step, you specify the naming pattern used to find and match the appropri
 
    **Note:** There are other matching options which could be used with the example streams, `the string literal "Tank"` or `the next 4 letters`. This rule needs to identify equipment other than tanks and equipment with names that are not 4 letters long, so these are not good choices. 
 
-   ![Second token](images/second-token.png) 
-   
+   <!--WRITER'S NOTE: These images were taken with SnagIt and reduced by 50%. The resolution may be too fuzzy and they may have to be enlarged. -->
+
    The next part of the stream name is a number that identifies the equipment Id. `03` is matched using `the next group of numbers`, and this token is assigned the name `equipment_id`. Because we anticipate using this rule to create assets with Ids running into the thousands, we do not use `the next 2 numbers` to match the Id.
 
-   The last part of the stream name identifies what is being measured in the stream. This token uses `letters until the end of the stream name` and is named `measurement`.
-   
+   The last part of the stream name identifies what is being measured in the stream. This token uses `the rest of the stream name` and is named `measurement`.
+
 1. In the `Token Sources` pane on the left, click **Stream Metadata**.
 
    The stream metadata are displayed in the center pane.
@@ -129,21 +119,17 @@ In this step, you specify the naming pattern used to find and match the appropri
 
    The description of the stream pattern is displayed in the `Stream Name Pattern` pane. The `Tokens` pane shows the tokens that make up the stream name pattern.
 
-   ![Stream name pattern](images/stream-name-pattern.png)
-
 1. When you have completed identifying all the tokens in the stream name, click **Next**.
 
 ### <a name="step-2"></a>Step 2: Map the tokens to values
 
 In this step, you specify the token that identifies the stream measurement in the stream. Then you map values for each token.
 
-1. In the `Configure Stream Reference Name Token` pane, click the ![Select token icon](images/select-token-icon.png) icon to open the `Select Stream Reference Name Token` window.
+1. In the `Configure Stream Reference Name Token` pane, click the ![Select token icon](images/change-property-icon.png) icon to open the `Select Stream Reference Name Token` window.
 
-1. Select the token that identifies the stream measurement and click **Select**. <!--WRITER'S NOTE: This step is still not very clear. Please review it again after the UI changes which may make it clearer. -->
+1. Select the token that identifies the stream measurement and click **Select**. <!--WRITER'S NOTE: This step is still not very clear. Please review it again after the UI changes which may make it clearer. --> <!--VTT, 9/23/21: Agreed. QA testing of procedures is recommended for the new UI rebranding effort.-->
 
- In the `Tank Rule A` example, the token for the last part of the stream name identifies the measurement, either `Press` or `Temp`, and we gave this token the name `measurement`. 
-   
- The `Token Mappings Status` pane displays a list of all the tokens identified on the previous page. The token for the measurement is indicated with the ![Measurement icon](images/measurement-icon.png) icon.
+ In the `Tank Rule A` example, the token for the last part of the stream name identifies the measurement, either `Press` or `Temp`, and we gave this token the name `measurement`. The `Token Mappings Status` pane displays a list of all the tokens identified on the previous page. The token for the measurement is indicated with the ![Measurement icon](images/measurement-icon.png) icon.
 
 1. Select a token in the `Token Mappings Status` list.
 
@@ -199,13 +185,9 @@ In this step, you specify how the rule builds assets by assigning the tokens to 
     
     1. In the **Value Expression** field, enter the sequence of tokens and characters that resolve to create the value for the metadata. To pick from a list of tokens, enter { and select a token.
 
-    1. In the **Type** field, select the data type for the metadata from the drop-down.
+    1. In the **Type** field, select the data type for the metadata from the dropdown list.
      
-   The following screen capture shows an example of asset fields and metadata mapped to tokens. 
-   
-   ![](images/configure-asset-with-tokens.png)
-
-1. When you are finished mapping tokens to asset fields and metadata, click **Next**.
+    1. When you are finished mapping tokens to asset fields and metadata, click **Next**.
 
 ### <a name="step-4"></a>Step 4: Preview the assets
 
@@ -213,11 +195,9 @@ The asset preview displays a list of the assets that will be created using the a
 
 1. Review the assets. Verify that they are created as you expect and verify that the correct streams are referenced.
 
-   ![Preview assets](images/preview-assets.png)
-
    **Note:** 
 
-   - The ![Tag icon](images/tag-icon.png) icon identifies the metadata and the ![Rule icon](images/rule-icon.png) icon identifies the stream references. 
+   - The ![Tag icon](images/tag-icon.png) icon identifies the metadata and the ![Rule icon](images/measurement-icon.png) icon identifies the stream references. 
 
    - The stream Id is identified for each stream. In the example above, the Id of the stream in the first row is `PHI-TNK01`.
 
@@ -253,7 +233,7 @@ Once the asset rule is successfully executed, review the created assets and conf
 
 1. In the left pane, select **Visualization** > **Asset Explorer**.
 
-1. Use search and the metadata filters to find the assets you expect to be created. For information, see [Filter assets in the Asset Explorer](xref:FilterAssets)
+1. Use search and the metadata filters to find the assets you expect to be created. For information, see [Filter assets in the Asset Explorer](xref:FilterAssets).
 
 1. Select an asset to see its details.
 

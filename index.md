@@ -2,7 +2,7 @@
 uid: index
 ---
 
-# OCS Content Portal
+# AVEVA<sup>TM</sup> Data Hub
 
 ## [Overview](xref:WhatIsOCS)
 

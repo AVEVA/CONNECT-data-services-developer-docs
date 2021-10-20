@@ -17,6 +17,12 @@ Returns a list of `SdsStreamView`.
 ```text 
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews
 ?query={query}&skip={skip}&count={count}&orderby={orderby}
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 `[optional] string query`
 <br/>Parameter representing a string search. See the [Search in SDS](xref:sdsSearching) topic for information about specifying the query parameter.
@@ -26,6 +32,154 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews
 <br/>Parameter representing sorted order of returned objects. A field name is required. The sorting is based on the stored values for the given field.<br/>For example, ``orderby=name`` would sort the returned results by the ``name`` values (ascending by default).<br/>Additionally, a value can be provided along with the field name to identify whether to sort ascending or descending,<br/>by using values ``asc`` or ``desc``, respectively.<br/>For example, ``orderby=name desc`` would sort the returned results by the ``name`` values, descending.<br/>If no value is specified, there is no sorting of results.<br/><br/>
 
 <h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[SdsStreamView](#schemasdsstreamview)[]|Returns a list of `SdsStreamView` objects|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+<h4>Example response body</h4>
+
+> 200 Response
+
+```json
+HTTP/1.1 200
+Content-Type: application/json
+[
+{
+    "Id":"StreamView",
+    "Name":"StreamView",
+    "SourceTypeId":"Simple",
+    "TargetTypeId":"Simple3"
+},
+{
+    "Id":"StreamViewWithProperties",
+    "Name":"StreamViewWithProperties",
+    "SourceTypeId":"Simple",
+    "TargetTypeId":"Simple3",
+    "Properties":[
+        {
+            "SourceId":"Time",
+            "TargetId":"Time"
+        },
+        {
+            "SourceId":"State",
+            "TargetId":"State"
+        },
+        {
+            "SourceId":"Measurement",
+            "TargetId":"Value"
+        }
+    ]
+}
+]
+```
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "Parameters": {
+    "property1": "string",
+    "property2": "string"
+  }
+}
+```
+
+---
+
+## `Get Stream View`
+
+<a id="opIdView_Get Stream View"></a>
+
+Returns the `SdsStreamView`.
+
+<h3>Request</h3>
+
+```text 
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string streamViewId`
+<br/>Stream view identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[SdsStreamView](#schemasdsstreamview)|Returns the `SdsStreamView`|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+<h4>Example response body</h4>
+
+> 200 Response
+
+```json
+HTTP/1.1 200
+Content-Type: application/json
+{
+    "Id":"StreamView",
+    "Name":"StreamView",
+    "SourceTypeId":"Simple",
+    "TargetTypeId":"Simple3",
+    "Properties":[
+        {
+            "SourceId":"Time",
+            "TargetId":"Time"
+        },
+    {
+        "SourceId":"State",
+        "TargetId":"State"
+    },
+    {
+        "SourceId":"Measurement",
+        "TargetId":"Value"
+    }
+    ]
+}
+```
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "Parameters": {
+    "property1": "string",
+    "property2": "string"
+  }
+}
+```
+
+---
+
+## `Get Or Create Stream View`
+
+<a id="opIdView_Get Or Create Stream View"></a>
+
+If an `SdsStreamView` with a matching identifier already exists, the stream view passed in is compared with the existing stream view. If the stream views are identical, a Found (302) status is returned and the stream view. If the stream views are different, the Conflict (409) error is returned. If no matching identifier is found, the specified stream view is created.
+
+<h3>Request</h3>
+
 ```text 
 POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
 ```
@@ -223,8 +377,7 @@ Content-Type: application/json
         }
     ]
 }
-```
-> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
+```> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {

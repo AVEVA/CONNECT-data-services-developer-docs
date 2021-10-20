@@ -660,6 +660,300 @@ Allowed for these roles:
 </ul>
 
 ---
+
+## `List Users By Ids`
+
+<a id="opIdUsers_List Users By Ids"></a>
+
+Returns an ordered list of user objects based on the user Id for a given tenant or a MultiStatusResponse with a list of user objects and a list of errors.
+
+<h3>Request</h3>
+
+```text 
+GET /api/v1-preview/Tenants/{tenantId}/Users/Ids
+?userId={userId}&query={query}&skip={skip}&count={count}
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>
+`[optional] array userId`
+<br/>Unordered list of identifiers of all users to return<br/><br/>`[optional] string query`
+<br/>(Not supported) Search string identifier.<br/><br/>`[optional] integer skip`
+<br/><span style="background-color:red;color:white">ERROR: Parameter "skip.%20Currently%20not%20supported" could not be found in external reference file</span><br/><br/>`[optional] integer count`
+<br/><span style="background-color:red;color:white">ERROR: Parameter "count.%20Currently%20not%20supported" could not be found in external reference file</span><br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[User](#schemauser)[]|List of users found|
+|207|[UserMultiStatusResponse](#schemausermultistatusresponse)|List of users found|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+
+<h4>Example response body</h4>
+
+> 200 Response ([User](#schemauser)[])
+
+```json
+[
+  {
+    "Id": "string",
+    "GivenName": "string",
+    "Surname": "string",
+    "Name": "string",
+    "Email": "string",
+    "ContactEmail": "string",
+    "ContactGivenName": "string",
+    "ContactSurname": "string",
+    "ExternalUserId": "string",
+    "IdentityProviderId": "string",
+    "RoleIds": [
+      "string"
+    ]
+  }
+]
+```
+
+<h3>Authorization</h3>
+
+Allowed for these roles: 
+<ul>
+<li>Tenant Administrator</li>
+</ul>
+
+---
+
+## `List Users' Status by Ids`
+
+<a id="opIdUsers_List Users' Status by Ids"></a>
+
+Returns an ordered list of UserStatus objects for a given tenant or a MultiStatusResponse with a list of UserStatus objects and a list of errors.
+
+<h3>Request</h3>
+
+```text 
+GET /api/v1-preview/Tenants/{tenantId}/Users/Status/Ids
+?userId={userId}&query={query}&skip={skip}&count={count}
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>
+`[optional] array userId`
+<br/>Unordered list of identifiers for all users<br/><br/>`[optional] string query`
+<br/>(Not supported) Search string identifier.<br/><br/>`[optional] integer skip`
+<br/><span style="background-color:red;color:white">ERROR: Parameter "skip.%20Currently%20not%20supported" could not be found in external reference file</span><br/><br/>`[optional] integer count`
+<br/><span style="background-color:red;color:white">ERROR: Parameter "count.%20Currently%20not%20supported" could not be found in external reference file</span><br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[UserStatus](#schemauserstatus)[]|List of user statuses found|
+|207|[UserStatusMultiStatusResponse](#schemauserstatusmultistatusresponse)|List of user statuses found|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+
+<h4>Example response body</h4>
+
+> 200 Response ([UserStatus](#schemauserstatus)[])
+
+```json
+[
+  {
+    "InvitationStatus": 0,
+    "User": {
+      "Id": "string",
+      "GivenName": "string",
+      "Surname": "string",
+      "Name": "string",
+      "Email": "string",
+      "ContactEmail": "string",
+      "ContactGivenName": "string",
+      "ContactSurname": "string",
+      "ExternalUserId": "string",
+      "IdentityProviderId": "string",
+      "RoleIds": [
+        "string"
+      ]
+    }
+  }
+]
+```
+
+<h3>Authorization</h3>
+
+Allowed for these roles: 
+<ul>
+<li>Tenant Administrator</li>
+</ul>
+
+---
+
+## `Create User (v1-preview path)`
+
+<a id="opIdUsers_Create User (v1-preview path)"></a>
+
+Creates a user.
+
+<h3>Request</h3>
+
+```text 
+POST /api/v1-preview/Tenants/{tenantId}/Users
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>
+
+<h4>Request Body</h4>
+
+User values to use during creating<br/>
+
+```json
+{
+  "UserId": "string",
+  "ContactGivenName": "string",
+  "ContactSurname": "string",
+  "ContactEmail": "user@example.com",
+  "RoleIds": [
+    "string"
+  ],
+  "IdentityProviderId": "string"
+}
+```
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|201|[User](#schemauser)|User created|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid input, or user limit exceeded|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+
+<h4>Example response body</h4>
+
+> 201 Response ([User](#schemauser))
+
+```json
+{
+  "Id": "string",
+  "GivenName": "string",
+  "Surname": "string",
+  "Name": "string",
+  "Email": "string",
+  "ContactEmail": "string",
+  "ContactGivenName": "string",
+  "ContactSurname": "string",
+  "ExternalUserId": "string",
+  "IdentityProviderId": "string",
+  "RoleIds": [
+    "string"
+  ]
+}
+```
+
+<h3>Authorization</h3>
+
+Allowed for these roles: 
+<ul>
+<li>Tenant Administrator</li>
+</ul>
+
+---
+
+## `Update User`
+
+<a id="opIdUsers_Update User"></a>
+
+Creates or updates a user.
+
+<h3>Request</h3>
+
+```text 
+PUT /api/v1-preview/Tenants/{tenantId}/Users/{userId}
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string userId`
+<br/>User identifier.<br/><br/>
+
+<h4>Request Body</h4>
+
+A UserStatus object<br/>
+
+```json
+{
+  "UserId": "string",
+  "ContactGivenName": "string",
+  "ContactSurname": "string",
+  "ContactEmail": "user@example.com",
+  "RoleIds": [
+    "string"
+  ],
+  "IdentityProviderId": "string"
+}
+```
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[User](#schemauser)|Updated user|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|404|[ErrorResponse](#schemaerrorresponse)|User or tenant not found|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+
+<h4>Example response body</h4>
+
+> 200 Response ([User](#schemauser))
+
+```json
+{
+  "Id": "string",
+  "GivenName": "string",
+  "Surname": "string",
+  "Name": "string",
+  "Email": "string",
+  "ContactEmail": "string",
+  "ContactGivenName": "string",
+  "ContactSurname": "string",
+  "ExternalUserId": "string",
+  "IdentityProviderId": "string",
+  "RoleIds": [
+    "string"
+  ]
+}
+```
+
+<h3>Authorization</h3>
+
+Allowed for these roles: 
+<ul>
+<li>Tenant Administrator</li>
+</ul>
+
+---
 ## Definitions
 
 ### User

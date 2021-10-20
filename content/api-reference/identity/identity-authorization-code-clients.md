@@ -4,7 +4,7 @@ uid: identity-authorization-code-clients
 ---
 
 # Authorization Code Clients
-Authorization code clients are used in JavaScript/Browser (SPA) based applications or native mobile applications with the presence of a user. These clients are issued a unique identifier. You can read more about these clients [here](https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/AUTHENTICATION_README.md#authorization-code-flow-with-pkce). Authorization code clients are not issued secrets or refresh tokens. For some guidelines on use of secrets, refer to the [Credential management](xref:CredentialManagement) topic. For some recommendations on least privilege for users and clients, refer to the [Least privilege](xref:LeastPrivilege) topic.
+Authorization code clients are used in JavaScript/Browser (SPA) based applications or native mobile applications with the presence of a user. These clients are issued an unique identifier. You can read more about these clients [here](https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/AUTHENTICATION_README.md#authorization-code-flow-with-pkce). Authorization code clients are not issued secrets or refresh tokens. For some guidelines on use of secrets, refer to the [Credential management](xref:CredentialManagement) topic. For some recommendations on least privilege for users and clients, refer to the [Least privilege](xref:LeastPrivilege) topic.
 
 ## `List All Authorization Code Clients from Tenant`
 

@@ -6,11 +6,7 @@ uid: communities
 
 The _communities_ feature lets a tenant create a private group where business partners can share and view operational data across tenants. Using communities, industrial companies can share their data streams with external business partners, service providers, and analytics providers. 
 
-<<<<<<< HEAD
 Sharing data streams allows you and your partners to find value in each other's operational data: 
-=======
-For example, with Communities, tenants can perform the following actions:
->>>>>>> 0bcc92b99a695d41ca9a70f46c565cf8de05be08
 
 * Collectively operate more efficiently and reduce waste.
 * Detect hidden problems in your equipment and processes, helping to troubleshoot issues.
@@ -21,7 +17,6 @@ For example, with Communities, tenants can perform the following actions:
 
 ## Community diagram
 
-<<<<<<< HEAD
 The following diagram visually displays an established community. 
 
 ![Community diagram](images/community-diagram.svg)
@@ -73,10 +68,3 @@ Because tenants can share their data natively within OCS, IT departments no long
 Because communities are in the cloud, using them does not require installation of additional hardware or software.
 
 Communities can accommodate business partners who are not sharing data or do not have a PI system of their own. They can provision their own OCS tenant without sharing data, allowing them to participate in a partnership without purchasing the full PI System or other software.
-=======
-1. [Create a community](xref:add-community).
-2. [Invite another tenant](xref:managecommunity#invite-a-tenant-to-a-community) to join the community.
-3. [Add users](xref:managecommunityusers#add-users-to-a-community) from your own tenant to the community.
-4. [Add clients](xref:managecommunityclients#add-clients-to-a-community) for programmatic access to the community.
-5. [Share streams](xref:ShareStreams) with the community.
->>>>>>> 0bcc92b99a695d41ca9a70f46c565cf8de05be08

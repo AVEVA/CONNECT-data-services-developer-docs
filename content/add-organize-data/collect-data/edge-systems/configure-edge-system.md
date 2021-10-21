@@ -10,9 +10,13 @@ You can edit edge system configurations within AVEVA™ Data Hub. You can create
 
  - Edge Data Store
 
- - OPC UA adapter
-
- - Modbus TCP adapter
+ - PI Adapter for BACnet
+ 
+ - PI Adapter for DNP3
+ 
+ - PI Adapter for Modbus TCP
+ 
+ - PI Adapter for OPC UA
 
 Use the following procedure to modify an edge system configuration and export it for use:
 
@@ -20,9 +24,9 @@ Use the following procedure to modify an edge system configuration and export it
 
 1. Verify that the **Edge Systems/Configuration Library** selector is set to **Edge Systems**.
 
-1. Find and click on the edge device to configure.
+1. Find and select the edge device to configure.
 
-1. In the right pane, click **Edit Edge System** or ![Edit](images/pencil-icon.png).
+1. In the right pane, select **Edit Edge System** or ![Edit](images/pencil-icon.png).
 
 1. To manage the tags for an edge system, click **Add Tag** ![Add Tag](images/edge-system-add-tag.png) and then do the following:
 
@@ -32,9 +36,9 @@ Use the following procedure to modify an edge system configuration and export it
 
 1. To create the configuration, do one of the following:
 
- - Click **Start With Default** to use the default configuration for the edge system type.
+ - Select **Start With Default** to use the default configuration for the edge system type.
  
- - Click **Import Configuration** to select a JSON file that contains the configuration.
+ - Select **Import Configuration** to select a JSON file that contains the configuration.
 
 1. In the **Section Select** field, select the section of the configuration to modify or select `JSON Configuration` to see the entire configuration.
 
@@ -46,12 +50,12 @@ Use the following procedure to modify an edge system configuration and export it
 
 1. To export the completed configuration, do one of the following:
 
- - Click **Export Section** in the right pane to export just the selected section. 
+ - Select **Export Section** in the right pane to export just the selected section. 
 
- - Click **Export Configuration** to export the entire configuration in one file.
+ - Select **Export Configuration** to export the entire configuration in one file.
 
  The JSON file is downloaded to your browser.
 
-1. When you have finished configuring the edge system, click **Save & Close**.
+1. When you have finished configuring the edge system, select **Save & Close**.
 
-1. Click **Save & Close** to confirm the changes. 
+1. Select **Save & Close** to confirm the changes. 

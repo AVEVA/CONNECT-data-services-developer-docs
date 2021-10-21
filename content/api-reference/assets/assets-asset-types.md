@@ -4,7 +4,7 @@ uid: assets-asset-types
 ---
 
 # Asset Types
-In many instances, you will have multiple assets of the same type. In this situation, an asset type can be used to create multiple similar assets. A change to the asset type is reflected in all assets that are derived from the asset type.
+The asset types API allows you to create, read, update, and delete asset types.
 
 ## `List Asset Types`
 
@@ -32,7 +32,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[AssetType](#schemaassettype)[]|List of assets in the given namespace.|
+|200|[AssetType](#schemaassettype)[]|List of asset types in the given namespace.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 
 <h4>Response Headers</h4>
@@ -130,7 +130,15 @@ HEAD /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|None|
+|204|None|Call succeeded.|
+|400|[ErrorTemplate](#schemaerrortemplate)|None|
+
+<h4>Response Headers</h4>
+
+|Status|Header|Type|Description|
+|---|---|---|---|
+|204|Total-Count|integer|Total number of asset types accessible to the caller and that match the specified query.|
+|204|ETag|string|Collection ETag. Changes whenever an asset type is created, updated, or deleted.|
 
 ---
 
@@ -948,7 +956,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|Access control list of the asset with given identifier.|
+|200|Inline|Access control list of the asset type with given identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
 |403|None|Forbidden.|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found.|
@@ -982,6 +990,36 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 ---
 ## Definitions
 
+### ErrorTemplate
+
+<a id="schemaerrortemplate"></a>
+<a id="schema_ErrorTemplate"></a>
+<a id="tocSerrortemplate"></a>
+<a id="tocserrortemplate"></a>
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|OperationId|string|false|true|Operation identifier|
+|Error|string|false|true|Error string|
+|Resolution|string|false|true|Resolution string|
+|Reason|string|false|true|Error reason string|
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+
+```
+
+---
+
 ### AssetType
 
 <a id="schemaassettype"></a>
@@ -989,14 +1027,14 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{asse
 <a id="tocSassettype"></a>
 <a id="tocsassettype"></a>
 
-An asset type can be used to create multiple similar assets.A change to the asset type is reflected in all assets that are derived from the asset type.
+An asset type can be used to create multiple similar assets. A change to the asset type is reflected in all assets that are derived from the asset type.
 
 <h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|Asset type identifier. If you do not provide an identifier, OCS copies the name as the identifier. If you do not provide a name, a random GUID will be assigned as the identifier.|
-|Name|string|false|true|User-friendly name for asset type|
+|Id|string|false|true|Asset type identifier. If you do not provide an identifier, a random GUID will be assigned as the identifier.|
+|Name|string|false|true|User-friendly name for asset type. If not specified, name will be set to the same value as the `Id` field.|
 |Description|string|false|true|Asset type description|
 |Metadata|[[MetadataItem](#schemametadataitem)]|false|true|Asset type metadata|
 |TypeReferences|[[TypeReference](#schematypereference)]|false|true|Asset type description|
@@ -1353,36 +1391,6 @@ Status definition type. Currently, only StreamPropertyMapping is supported.
 |---|---|
 |Unspecified|0|
 |StreamPropertyMapping|1|
-
----
-
-### ErrorTemplate
-
-<a id="schemaerrortemplate"></a>
-<a id="schema_ErrorTemplate"></a>
-<a id="tocSerrortemplate"></a>
-<a id="tocserrortemplate"></a>
-
-<h4>Properties</h4>
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|OperationId|string|false|true|Operation identifier|
-|Error|string|false|true|Error string|
-|Resolution|string|false|true|Resolution string|
-|Reason|string|false|true|Error reason string|
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Resolution": "string",
-  "Reason": "string",
-  "property1": null,
-  "property2": null
-}
-
-```
 
 ---
 

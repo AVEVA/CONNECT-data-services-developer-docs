@@ -64,7 +64,9 @@ In this step, you identify delimiters in the stream name. Delimiters include per
 
    The wildcard means that streams with any values in this part of the stream name will match the pattern. However, this part of the stream name is not mapped to metadata.
 
-   When you are done, the pattern looks like the following. The stream pattern defined in the table translates to MyOCS.{Region}.{Site}.* This stream pattern returns all streams that start with the string *MyOCS*, followed by three parts delimited with periods. The second part corresponds to the region and the third part corresponds to the site. *Region* and *Site* are metadata.![Medata rule pattern](images/metadata-rule-pattern.png)
+   When you are done, the pattern looks like the following. The stream pattern defined in the table translates to MyOCS.{Region}.{Site}.* This stream pattern returns all streams that start with the string *MyOCS*, followed by three parts delimited with periods. The second part corresponds to the region and the third part corresponds to the site. *Region* and *Site* are metadata.
+
+   ![Medata rule pattern](images/metadata-rule-pattern.png)
   
 1. Click **Next**. 
 

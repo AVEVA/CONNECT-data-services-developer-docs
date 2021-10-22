@@ -1,7 +1,7 @@
 ---
-uid: lpsetupOCS
+uid: lpsetupADH
 ---
 
 # Set up the environment
 
-You can customize the OCS environment to meet your organization's requirements and needs. As an administrator, you can create users and clients, define and assign roles, and manage namespaces for your tenant.
+You can customize the AVEVA™ Data Hub environment to meet your organization's requirements and needs. As an administrator, you can create users and clients, define and assign roles, and manage namespaces for your tenant.

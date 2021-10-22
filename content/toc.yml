@@ -1,6 +1,6 @@
-- name: OSIsoft Cloud Services
-  href: ocs-content-portal-overview.md
-- name: Get started
+- name: AVEVA™ Data Hub
+  href: adh-content-portal-overview.md
+- name: Get started with AVEVA™ Data Hub
   href: overview/toc.yml
   topicHref: overview/get-started-overview.md
 - name: Set up the environment

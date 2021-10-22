@@ -5,5 +5,7 @@
 - name: What does AVEVA™ Data Hub? 
   href: what-does-adh-do.md
 - name: AVEVA™ Data Hub and OSIsoft Cloud Services (OCS) 
-  href: get-started/toc.yml 
-  topicHref: get-started/gs-getting-started-intro.md
+  href: gs-aveva-cnnxt.md
+- name: Get started with AVEVA™ Connect
+  href: gs-aveva-cnnxt.md
+  topicref: aveva-cnnxt/toc.yml  

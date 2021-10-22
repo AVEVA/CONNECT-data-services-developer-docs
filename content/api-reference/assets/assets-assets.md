@@ -763,6 +763,45 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
 
 ---
 
+## `Head Assets`
+
+<a id="opIdRequestManager_Head Assets"></a>
+
+Returns the Headers corresponding to the GET Assets call, including a collection ETag and, optionally, Total-Count. The collection ETag changes whenever an asset type is created, updated, or deleted.
+
+<h3>Request</h3>
+
+```text 
+HEAD /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
+?query={query}&includeTotalCount={includeTotalCount}&filter={filter}
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+`[optional] string query`
+<br/>Search query. Defaults to all assets if unspecified.<br/><br/>`[optional] boolean includeTotalCount`
+<br/>Optional parameter. If set to false, Total-Count header will not be included.<br/><br/>`[optional] string filter`
+<br/>String used to filter the asset search results. Filter strings are not case-sensitive. Filters can be applied for the `AssetTypeName` property, the `Status` property, and the asset metadata properties, using the syntax filter[*property_name*]=*property_value*.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|204|None|Call succeeded.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Invalid query syntax.|
+
+<h4>Response Headers</h4>
+
+|Status|Header|Type|Description|
+|---|---|---|---|
+|204|Total-Count|integer|Total number of assets in the matching the query and filter criteria and which the caller has permission to read.|
+|204|ETag|string|Collection ETag. Changes whenever an asset is created, updated, or deleted.|
+
+---
+
 ## `Create Asset`
 
 <a id="opIdRequestManager_Create Asset"></a>

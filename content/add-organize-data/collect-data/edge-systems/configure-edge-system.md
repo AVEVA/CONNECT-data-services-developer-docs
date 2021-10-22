@@ -2,9 +2,9 @@
 uid: EditEdgeSystem
 ---
 
-# Edit edge system configuration
+# Manage edge system configurations
 
-You can edit edge system configurations within AVEVA™ Data Hub. You can create a configuration from scratch, use a default configuration or a configuration template, or import a configuration file. Once the configuration is complete, you can export the configuration file for each component or for the edge system to manually apply to the edge system. You can use an exported configuration file to configure other edge systems by importing it. The maximum size for a configuration file is 16 MB.
+You can import an edge system configuration from the field to its corresponding edge system digital twin as a record. You can also create a new configuration, using a default configuration or a configuration template. Once the configuration is complete, you can export the configuration file for each component or for the edge system to manually apply to the edge system. You can use an exported configuration file to configure other edge systems by importing it. The maximum size for a configuration file is 16 MB.
 
 **Note:** Configuration is available for the following edge system types:
 
@@ -18,7 +18,19 @@ You can edit edge system configurations within AVEVA™ Data Hub. You can create
  
  - PI Adapter for OPC UA
 
-Use the following procedure to modify an edge system configuration and export it for use:
+## Import an edge system configuration
+
+Use the following procedure to import an edge system configuration from the field to the corresponding edge system digital twin:
+
+1. In the left pane, select **Data Management** > **Edge Systems**.
+
+1. Verify that the **Edge Systems/Configuration Library** selector is set to **Edge Systems**.
+
+1. Find and select the edge device to configure.
+
+## Edit an edge system configuration
+
+Use the following procedure to edit an edge system configuration and export it for use:
 
 1. In the left pane, select **Data Management** > **Edge Systems**.
 

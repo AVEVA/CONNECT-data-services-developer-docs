@@ -1033,10 +1033,10 @@ An asset type can be used to create multiple similar assets. A change to the ass
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|Asset type identifier. If you do not provide an identifier, a random GUID will be assigned as the identifier.|
-|Name|string|false|true|User-friendly name for asset type. If not specified, name will be set to the same value as the `Id` field.|
-|Description|string|false|true|Asset type description|
-|Metadata|[[MetadataItem](#schemametadataitem)]|false|true|Asset type metadata|
+|Id|string|false|true|Identifier. If you do not provide an identifier, a random GUID will be assigned as the identifier.|
+|Name|string|false|true|User-friendly name. If not specified, name will be set to the same value as the `Id` field.|
+|Description|string|false|true|Description|
+|Metadata|[[MetadataItem](#schemametadataitem)]|false|true|Metadata|
 |TypeReferences|[[TypeReference](#schematypereference)]|false|true|Asset type description|
 |Status|[StatusConfiguration](#schemastatusconfiguration)|false|true|Asset type status. If an asset of an this asset type, asset type statuses will take precedence over asset status.|
 

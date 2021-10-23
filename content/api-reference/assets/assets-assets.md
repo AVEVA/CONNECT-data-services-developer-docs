@@ -1231,11 +1231,11 @@ Represents an asset object.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|Asset identifier. If you do not provide an identifier, a random GUID will be assigned as the identifier.|
+|Id|string|false|true|Identifier. If you do not provide an identifier, a random GUID will be assigned as the identifier.|
+|Name|string|false|true|User-friendly name. If not specified, name will be set to the same value as the `Id` field.|
+|Description|string|false|true|Description|
+|Metadata|[[MetadataItem](#schemametadataitem)]|false|true|Metadata|
 |AssetTypeId|string|false|true|Asset type identifier. Identifier for the asset type that this asset is derived from. To get the merged view of the asset, get the resolved asset through the /Assets/{assetId}/Resolved route.|
-|Name|string|false|true|User-friendly name for asset. If not specified, name will be set to the same value as the `Id` field.|
-|Description|string|false|true|Asset description|
-|Metadata|[[MetadataItem](#schemametadataitem)]|false|true|Asset metadata|
 |StreamReferences|[[StreamReference](#schemastreamreference)]|false|true|Asset stream reference|
 |Status|[StatusConfiguration](#schemastatusconfiguration)|false|true|Asset status|
 |Tags|string[]|false|true|Asset tags|

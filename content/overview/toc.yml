@@ -2,7 +2,7 @@
   href: what-is-adh.md
 - name: Who uses AVEVA™ Data Hub? 
   href: who-uses-adh.md
-- name: What does AVEVA™ Data Hub? 
+- name: What does AVEVA™ Data Hub do? 
   href: what-does-adh-do.md
 - name: Introduction to the AVEVA™ Data Hub portal
   href: introduction-portal-interface.md    
@@ -10,4 +10,4 @@
   href: gs-aveva-cnnxt.md
 - name: Get started with AVEVA™ Connect
   href: gs-aveva-cnnxt.md
-  topicref: aveva-cnnxt/toc.yml
+  topicref: overview/aveva-cnnxt/toc.yml

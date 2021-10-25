@@ -14,13 +14,13 @@ Use trace data in a trend to monitor assets, anticipate problems, and proactivel
 
    **Tips:**
 
-   - Specify the stream name or description in the **Search** box to find the OCS streams you are interested in.
+   - Specify the stream name or description in the **Search** box to find the streams you are interested in.
 
    - After you have finished adding the traces, click the **x** in the `Add Traces` pane to hide the pane and maximize the available area to display your trend.
 
     ![Search blade](images/Search_blade_75.png)
    
-4. Click the ![Trend views icon](images/trend-views-icon.png) icon to choose one of the three views:
+1. Click the ![Trend views icon](images/trend-views-icon.png) icon to choose one of the three views:
 
    | Trend View                               | Description                                     |
    | ---------------------------------------- | ----------------------------------------------- |
@@ -42,11 +42,14 @@ Use trace data in a trend to monitor assets, anticipate problems, and proactivel
 
     ![Maximum and minimum cursors](images/Max_min_cursors.png)
 
-8. Click the plus sign (+) above the trace to lock the cursors in place.
+1. Click the plus sign (+) above the trace to lock the cursors in place.
     
     The **+** turns into an **x**.  To unlock the cursor, click the **x**.
 
     **Note:** When two cursors are locked, the Legend table displays summary calculations for the values between the two cursors, known as the Cursor view.
+
+
+1. Click the share icon ![share trend session icon](images/share-icon.png) in the menu bar to copy the URL of the workspace. 
 
     ![Cursor_view](images/Cursor_view.png)
 

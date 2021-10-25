@@ -57,9 +57,9 @@ Clients have programmatic access to AVEVA™ Data Hub resources through AVEVA™
 
 ### Roles 
 
-A role is a representation of an identity’s job function that determines whether the user can have access to resources needed to accomplish a job. You can assign multiple roles to a user or client-credential client. The user or client’s role, in combination with the access control list (ACL) for a resource or service, determines access permissions to that resource or service. The Tenant Administrator creates roles and assigns those roles to users and clients. 
+A role is a representation of an identity's job function that determines whether the user can have access to resources needed to accomplish a job. You can assign multiple roles to a user or client-credential client. The user or client's role, in combination with the access control list (ACL) for a resource or service, determines access permissions to that resource or service. The Tenant Administrator creates roles and assigns those roles to users and clients. 
 
-For both users and clients, roles authorize API requests for access, such as access to data streams. All clients have the Tenant Member role, which provides Read access to resources. 
+For both users and clients, roles authorize API requests for access, such as access to data streams. All clients have the Tenant Member role, which provides read access to resources. 
 
 ### Identity provider 
 
@@ -209,9 +209,9 @@ Use API calls to define asset rules, which bulk create or update assets accordin
 
 ## Data science enablement
 
-AVEVA™ Data Hub allows you to group and organize operational PI, IoT, and AVEVA™ Data Hub data. By arranging data into forms that can be consumed by third-party data science applications, data scientists can conduct deep analysis to detect unrealized patterns and insights. Data science enablement efforts allow for better informed planning, predictive maintenance, and operational optimization. 
+You can group and organize operational PI, IoT, and OCS data. By arranging data into forms that can be consumed by third-party data science applications, data scientists can conduct deep analysis to detect unrealized patterns and insights. Data science enablement efforts allow for better informed planning, predictive maintenance, and operational optimization. 
 
-Two methods are available in AVEVA™ Data Hub, each of which works dynamically, continuing to filter and order data after they are in place. These methods include the following: 
+Two dynamic methods are available to allow you to filter and order data after they are in place. These methods include the following: 
 
 - [Metadata rules](#metadata-rules) - Metadata rules assign metadata to streams matching defined stream name patterns.
 - [Data views](#data-views) - Data views order, index, and organize data from multiple streams. 
@@ -222,7 +222,7 @@ Select a stream name to use as a name pattern and assign metadata to selected st
 
 The following diagram shows metadata in the context of several different but similar data streams: 
 
-![OCS](images/how-does-ocs-work/streams.jpg)
+![](images/how-does-ocs-work/streams.jpg)
 
 The diagram above shows three data streams for turbines named GEO1 and GEO2. 
 
@@ -242,12 +242,12 @@ Data views serve as a bridge between raw AVEVA™ Data Hub data and data science
 
 The following diagram depicts multiple streams organized into a data view that a third-party data science application can consume: 
 
-1. Data streams from three wind turbines contain metadata assigned by a metadata rule.
+1. Data streams from three wind turbines contain metadata assigned by a metadata rule. 
 
-1. Create a data view in AVEVA™ Data Hub based on streams containing the specified metadata, select specific data elements from the streams, and order and index them as needed. 
+1. Create a data view based on streams containing the specified metadata, select specific data elements from the streams, and order and index them as needed. 
 
 1. Ordered and normalized data is then consumable by data science applications for in-depth analysis. 
 
-![AVEVA™ Data Hub](images/how-does-ocs-work/dataviews.jpg)
+![](images/how-does-ocs-work/dataviews.jpg)
 
 **Note**: You can reference metadata defined in a metadata rule when creating a data view. This action will include all streams containing the specified metadata.

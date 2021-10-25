@@ -4,7 +4,7 @@ uid: bpTypes
 
 # Types best practices
 
-OSIsoft recommends the following best practices for types and streams:
+The following best practices are recommended for types and streams:
 
 - When you create SDS types, it is important to remember that types are immutable. Once created, additional properties or information cannot be added and existing properties cannot be deleted.
 
@@ -18,7 +18,7 @@ OSIsoft recommends the following best practices for types and streams:
 
 - If properties are added to a type later, you must create a new type that includes all the properties of the original type, plus the new properties. Use a stream view to convert the existing streams to the new stream type and migrate the data. There are no values for the new properties for the existing streams, and null values are assigned. Before you migrate your data, consider the effect of the null values on your application and ensure that the application will not break if it encounters null values.
 
-- For custom applications using the SDS client libraries or OSIsoft Messaging Format (OMF), use the client libraries to define the type rather than defining them in the OCS portal. This ensures that the type the application expects matches the type in the Sequential Data Store. You can also take advantage of the custom property fields such as UOM when defining a property using the .NET client libraries methods.
+- For custom applications using the SDS client libraries or OSIsoft Messaging Format (OMF), use the client libraries to define the type rather than defining them in the portal. This ensures that the type the application expects matches the type in the Sequential Data Store. You can also take advantage of the custom property fields such as UOM when defining a property using the .NET client libraries methods.
 
 ## Property patterns
 

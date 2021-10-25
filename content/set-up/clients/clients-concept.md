@@ -4,7 +4,7 @@ uid: ccClients
 
 # Clients
 
-Clients allow applications to authenticate against OSIsoft Cloud Services (OCS) from outside the OCS portal. OCS supports the following types of clients, each of which support different types of applications:
+Clients allow applications to authenticate against OCS from outside the portal. The following types of clients are supported, and each support different types of applications:
 
 - [Client-credentials clients](#client-credentials-client)
 - [Authorization code clients](#authorization-code-client)
@@ -32,13 +32,13 @@ OSIsoft recommends the following best practices with a client credentials client
 
 ##  <a name="authorization-code-client"></a>Authorization code clients
 
-Authorization code clients are used with customer web applications that use OCS as their backend. They provide a secure means of authenticating users of the website to view OCS assets. The authorization code client is paired with a client ID. The web application that is using the client to authenticate users must include the client ID in its code.
+Authorization code clients are used with customer web applications that use OCS as their backend. They provide a secure means of authenticating users of the website to view assets. The authorization code client is paired with a client ID. The web application that is using the client to authenticate users must include the client ID in its code.
 
 Authorization code clients are used to authenticate using any browser. Upon successful authentication, an authorization code is provided to the client. This authorization code is exchanged for an access token using PKCE (Proof Code for Code Exchange) which is a more secure authentication flow. No refresh token is provided.
 
 ### <a name="authorization-code-pi-server"></a>Authorization code client PI Server counterpart
 
-Authorization code clients have no direct PI Server equivalent, but they are similar to the combined behavior of a trust and mappings in PI Data Archive. These clients are similar to trusts because they only allow users to access OCS if the application that uses them meets certain criteria, for example, the application must be served at a specific URL. However, like a mapping, authorization code clients require the user to authenticate as a known user account within the tenant.
+Authorization code clients have no direct PI Server equivalent, but they are similar to the combined behavior of a trust and mappings in PI Data Archive. These clients are similar to trusts because they only allow users to access the portal if the application that uses them meets certain criteria, for example, the application must be served at a specific URL. However, like a mapping, authorization code clients require the user to authenticate as a known user account within the tenant.
 
 ### <a name="authorization-code-bp"></a>Authorization code client best practices
 
@@ -54,7 +54,7 @@ Hybrid clients are used by native and server-side web applications. This client 
 
 ### <a name="hybrid-client-pi-server"></a>Hybrid client PI Server counterpart
 
-Hybrid clients have no direct PI Server equivalent, but they are similar to the combined behavior of a trust and mappings in PI Data Archive. These clients are similar to trusts because they only allow users to access OCS if the application that uses them meets certain criteria, for example, the application must be served at a specific URL. However, like a mapping, hybrid clients require the user to authenticate as a known user account within the tenant.
+Hybrid clients have no direct PI Server equivalent, but they are similar to the combined behavior of a trust and mappings in PI Data Archive. These clients are similar to trusts because they only allow users to access the portal if the application that uses them meets certain criteria, for example, the application must be served at a specific URL. However, like a mapping, hybrid clients require the user to authenticate as a known user account within the tenant.
 
 ### <a name="hybrid-client-bp"></a>Hybrid client best practices
 

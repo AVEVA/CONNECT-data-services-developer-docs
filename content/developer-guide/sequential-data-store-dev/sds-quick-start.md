@@ -191,9 +191,8 @@ Host: dat-b.osisoft.com
     "ExtrapolationMode": 0
 }
 ```
-To help users develop .NET client applications for SDS, OSIsoft provides OCS client libraries through NuGet packages, 
-[OCSClients](https://www.nuget.org/packages/OSIsoft.OCSClients/). OCSClients consists of necessary libraries
-to connect to OCS and manage data. Note that SDS client libraries are only available in .NET.
+To help users develop .NET client applications for SDS, OSIsoft provides client libraries through NuGet packages, 
+[OCSClients](https://www.nuget.org/packages/OSIsoft.OCSClients/). OCSClients consists of necessary libraries to connect to OCS and manage data. Note that SDS client libraries are only available in .NET.
 
 You can use ``SdsTypeBuilder`` in .NET client libraries to create types:
 

@@ -56,7 +56,7 @@ After creating your types, you can add streams and associate a type with the str
 
 1. In the **Search** field, enter *Site:SLTC*
 
-    OCS searches for streams that have the metadata key *Site* and the value *SLTC*. This search query returns the MyOCS stream. 
+    This search query searches for streams that have the metadata key *Site* and the value *SLTC*, and returns the MyOCS stream. 
    
     **Note:** 
     

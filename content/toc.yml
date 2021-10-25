@@ -1,5 +1,5 @@
 - name: AVEVA™ Data Hub
-  href: adh-content-portal-overview.md
+  topicHref: adh-content-portal-overview.md
 - name: Get started with AVEVA™ Data Hub
   href: overview/toc.yml
   topicHref: overview/get-started-overview.md

@@ -1,10 +1,11 @@
 - name: What is AVEVA™ Connect? 
   href: what-is-cnnxt.md
-- name: Sign in to and out of AVEVA™ Connect 
+- name: Sign in to AVEVA™ Connect 
   href: sign-in-cnnxt.md
+  topicref: adh-users/toc.yml
 - name: AVEVA™ Cloud Services Catalogue 
   href: aveva-cloud-svcs-cat.md
-- name: Overview of service status 
-  href: service-status.md
-- name: Configuration of AVEVA™ Connect for heritage OSIsoft users
+- name: Service status
+  href: service-status.md     
+- name: Configuration of AVEVA™ Connect for Heritage OSIsoft users
   href: config-heritage-osi-cnnxt.md

@@ -119,11 +119,11 @@ Within a data item of resource kind `.Stream`, this corresponds to a stream prop
 |--|--|--|
 | Id | string | The data item field's unique identifier 
 | Name | string | The data item field's friendly name
+| StreamReferenceName | string | The asset stream reference name. Only applies to asset property data item fields.
+| StreamId | string | Stream id corresponding to the asset stream reference. Only applies to asset property data item fields.
 | TypeCode | SdsTypeCode| The name of the field's data type
 | Uom | bool | The unit of measure id for the data item field
 | IsKey | bool | True if the field is the primary index of the data item. False otherwise.
-| StreamReferenceName | string | The asset stream reference name. Only applies to asset property data item fields.
-| StreamId | string | Stream id corresponding to the asset stream reference. Only applies to asset property data item fields.
 
 ### SummaryDirection enumeration
 Direction used in the summary calculation.

@@ -5,7 +5,7 @@
 - name: What does AVEVA™ Data Hub? 
   href: what-does-adh-do.md
 - name: Introduction to the AVEVA™ Data Hub portal
-  topicHref: introduction-portal-interface.md    
+  href: introduction-portal-interface.md    
 - name: AVEVA™ Data Hub and OSIsoft Cloud Services (OCS) 
   href: gs-aveva-cnnxt.md
 - name: Get started with AVEVA™ Connect

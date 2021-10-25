@@ -1,0 +1,12 @@
+- name: Overview of user and access management in AVEVA™ Data Hub
+  topicHref: user-access-adh.md
+- name: How AVEVA™ Connect roles work  in Data Hub 
+  topicHref: cnnxt-roles.md
+- name: Create users and groups
+  topicHref: create-users-groups.md
+- name: Create folders
+  topicHref: create-folders.md
+- name: Assign users to groups
+  topicHref: assign-users.md
+- name: Import users in bulk
+  topicHref: import-users.md

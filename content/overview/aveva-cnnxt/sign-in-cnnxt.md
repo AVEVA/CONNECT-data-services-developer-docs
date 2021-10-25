@@ -15,8 +15,7 @@ This topic explains how to sign in to and out of AVEVA™ Connect for the follow
 
 ## Single user sign-in
 
-
-## Launching a service
+<!--Be sure to link sign-in subtopics to the "Launch a service" topic.-->
 
 
 ## Corporate sign-in: Federation for single sign-on

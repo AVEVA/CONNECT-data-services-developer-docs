@@ -1,6 +1,3 @@
-- name: Namespaces
-  topicHref: namespaces/namespaces-concept.md
-  href: namespaces/toc.yml
 - name: Roles
   topicHref: roles/roles-concept.md
   href: roles/toc.yml

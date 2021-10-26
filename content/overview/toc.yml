@@ -6,6 +6,3 @@
   href: what-does-adh-do.md
 - name: AVEVA™ Data Hub and OSIsoft Cloud Services (OCS) 
   href: gs-aveva-cnnxt.md
-- name: What is AVEVA™ Connect?
-  href: what-is-cnnxt.md
-  topicref: overview/aveva-cnnxt/toc.yml

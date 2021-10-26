@@ -4,7 +4,7 @@ uid: EdgeSystemTemplates
 
 # Configuration templates
 
-You can create and manage edge system template configurations within AVEVA™ Data Hub. Once the configuration is complete, you can export configuration files by component or edge system to manually apply it to the edge system in the field. You can also use an exported configuration file as a template for configuring other edge systems by importing it during configuration. Default configurations are available for supported edge system types. The maximum size for a configuration file is 16 MB.
+You can create and manage edge system template configurations within OCS. Once the configuration is complete, you can export configuration files by component or edge system to manually apply it to the edge system in the field. You can also use an exported configuration file as a template for configuring other edge systems by importing it during configuration. Default configurations are available for supported edge system types. The maximum size for a configuration file is 16 MB.
 
 **Note:** You can create configuration templates for the following edge system types:
 

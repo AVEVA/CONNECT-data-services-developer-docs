@@ -8,4 +8,4 @@ AVEVA&trade; Data Hub is a database platform as a service (dbPaaS) designed for 
 
 ## Access to AVEVA&trade; Data Hub
 
-You must have an account to use AVEVA&trade; Data Hub. To request an AVEVA&trade; Data Hub tenant account, go to the [AVEVA&trade; Data Hub page on OSIsoft website](https://) and click [Contact Us]().
+You must have an account to use AVEVA&trade; Data Hub. To request an AVEVA&trade; Data Hub tenant account, contact AVEVA™ at https://www.aveva.com/en/contact/.

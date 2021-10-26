@@ -4,7 +4,7 @@ uid: dataIngress
 
 # Data collection
 
-You use OSIsoft Message Format (OMF) to achieve high-throughput asynchronous data collection
+You use Open Message Format (OMF) to achieve high-throughput asynchronous data collection
 into the Sequential Data Store. The following terms are useful for understanding the information
 in this and subsequent sections:
 

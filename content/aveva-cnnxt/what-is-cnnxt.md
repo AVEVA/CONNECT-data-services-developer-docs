@@ -18,7 +18,6 @@ Folders in AVEVA™ Connect are used to partition data. They work analogously to
 
 ## What about permissions?
 
+This content will be added once have been sorted out in Connect & ADH.
+
 <!--V.Touati, 10/21/21: TBD per F. Scott. Talk about where permissions are managed here. Are they managed in DataHub and duplicated in Connect, or are permissions managed in Connect and just mirrored in DataHub?-->
-
-
-

@@ -10,7 +10,6 @@ This topic explains how to sign in to and out of AVEVA™ Connect for the follow
 * [Corporate sign-in: Federation for single sign-on](#corporate-sign-in:-federation-for-single-sign-on)
 * [Users with access to multiple accounts](#users-with-access-to-multiple-accounts)
 * [Third-party user access](third-party-user-access)
-* [Sign out](#sign-out)
 
 ## Single user sign-in
 
@@ -61,15 +60,3 @@ Follow these steps to sign in as a third-party user using a connection code.
 1.	Click on the desired account.
 
     **Result:** The AVEVA™ Connect home page is displayed for the selected account.
-
-## Sign out
-
-Some AVEVA™ Connect application environments are independent of each other. To switch between application environments you should sign out before attempting to sign in to another application.
-
-When you have completed your session within AVEVA™ Connect, you must sign out. To do this, click the profile icon (top-right) in AVEVA™ Connect, and then click **Sign Out**. 
-
-![Sign out of Connect](images/sign-out-cnnxt.png)
- 
-Within an application, the log out process is similar. 
-
-![Sign out of an application](images/sign-out-app.png)
